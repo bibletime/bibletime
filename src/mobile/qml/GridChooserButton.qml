@@ -28,7 +28,7 @@ Rectangle {
 
     width: buttonWidth
     height: buttonHeight
-    color: buttonColor
+    color: btStyle.textBackgroundColor
     smooth: true
 
     border {
@@ -45,7 +45,7 @@ Rectangle {
 
         width: buttonWidth-8
         anchors.centerIn: parent
-        color: button.textColor
+        color: btStyle.textColor
         font.pointSize: parent.textHeight
         elide: Text.ElideRight
     }

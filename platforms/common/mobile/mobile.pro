@@ -88,6 +88,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/Progress.qml \
     ../../../src/mobile/qml/Question.qml \
     ../../../src/mobile/qml/Search.qml \
+    ../../../src/mobile/qml/SearchIcon.qml \
     ../../../src/mobile/qml/SearchResults.qml \
     ../../../src/mobile/qml/SetFont.qml \
     ../../../src/mobile/qml/Settings.qml \

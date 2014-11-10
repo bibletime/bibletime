@@ -30,13 +30,14 @@ Rectangle {
 
         border.color: "black"
         border.width: 1
-        height: btStyle.uiFontPointSize * 3;
+        height: btStyle.uiFontPointSize * 4;
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.leftMargin: 3
         anchors.rightMargin: 3
         anchors.topMargin: 3
+        color: btStyle.textBackgroundColor
 
         Text {
             id: title
@@ -47,6 +48,7 @@ Rectangle {
             verticalAlignment: Text.AlignBottom
             style: Text.Sunken
             font.pointSize: btStyle.uiFontPointSize
+            color: btStyle.textColor
         }
     }
 
@@ -64,19 +66,27 @@ Rectangle {
         }
 
         Rectangle {
+            id: background
+
+            color: btStyle.textBackgroundColor
+            anchors.fill: parent
+            z: -1
+        }
+
+        Rectangle {
             id: scrollbar
             anchors.right: listView.right
             y: listView.visibleArea.yPosition * listView.height
             width: 7
             height: listView.visibleArea.heightRatio * listView.height
-            color: "black"
+            color: btStyle.textColor
             visible: listView.visibleArea.heightRatio < 0.99
         }
 
         delegate: Rectangle {
             id: entry
 
-            color: "white"
+            color: btStyle.textBackgroundColor
             border.width: 1
             border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
             width: parent.width
@@ -182,6 +192,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 text: "<b>" + title + "</b> - " + desc
                 font.pointSize: btStyle.uiFontPointSize
+                color: btStyle.textColor
             }
         }
 

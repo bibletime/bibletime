@@ -21,6 +21,11 @@ namespace btm {
 class BtStyle : public QObject {
     Q_OBJECT
 
+    Q_PROPERTY(QColor textColor             READ getTextColor NOTIFY changed)
+    Q_PROPERTY(QColor linkColor             READ getLinkColor NOTIFY changed)
+    Q_PROPERTY(QColor textBackgroundColor   READ getTextBackgroundColor NOTIFY changed)
+    Q_PROPERTY(QColor textBackgroundHighlightColor   READ getTextBackgroundHighlightColor NOTIFY changed)
+
     Q_PROPERTY(QColor buttonColor           READ getButtonColor NOTIFY changed)
     Q_PROPERTY(QColor buttonBackground      READ getButtonBackground NOTIFY changed)
     Q_PROPERTY(QColor buttonTextColor       READ getButtonTextColor NOTIFY changed)
@@ -45,7 +50,7 @@ class BtStyle : public QObject {
     Q_PROPERTY(int    menuHeight            READ getMenuHeight() NOTIFY changed)
 
     Q_PROPERTY(QColor toolbarColor          READ getToolbarColor NOTIFY changed)
-    Q_PROPERTY(QColor toolbarButton         READ getToolbarButton NOTIFY changed)
+    Q_PROPERTY(QColor toolbarTextColor      READ getToolbarTextColor NOTIFY changed)
     Q_PROPERTY(QColor toolbarButtonText     READ getToolbarButtonText NOTIFY changed)
     Q_PROPERTY(double toolbarTextPointSize  READ getToolbarTextPointSize NOTIFY changed);
 
@@ -64,12 +69,24 @@ public:
     Q_INVOKABLE void setStyle(int style);
 
     enum Style {
-        gnome = 1,
-        android = 2
+        nightTheme = 1,
+        dayTheme = 2
     };
 
 
     BtStyle(QObject *parent = 0);
+
+    QColor getTextColor() const;
+    void setTextColor(const QColor& color);
+
+    QColor getLinkColor() const;
+    void setLinkColor(const QColor& color);
+
+    QColor getTextBackgroundColor() const;
+    void setTextBackgroundColor(const QColor& color);
+
+    QColor getTextBackgroundHighlightColor() const;
+    void setTextBackgroundHighlightColor(const QColor& color);
 
     QColor getButtonColor() const;
     void setButtonColor(const QColor& color);
@@ -128,8 +145,8 @@ public:
     QColor getToolbarColor() const;
     void setToolbarColor(const QColor& color);
 
-    QColor getToolbarButton() const;
-    void setToolbarButton(const QColor& color);
+    QColor getToolbarTextColor() const;
+    void setToolbarTextColor(const QColor& color);
 
     QColor getToolbarButtonText() const;
     void setToolbarButtonText(const QColor& color);

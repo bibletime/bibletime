@@ -26,8 +26,8 @@ Rectangle {
 
     signal accepted(int pointSize);
 
-    color: "#f8f8f8"
-    border.color: "black"
+    color: btStyle.textBackgroundColor
+    border.color: btStyle.textColor
     border.width: 3
     anchors.right: parent.right
     anchors.bottom: parent.bottom
@@ -69,6 +69,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 20
         font.pointSize: btStyle.uiFontPointSize
+        color: btStyle.textColor
     }
 
     Slider {

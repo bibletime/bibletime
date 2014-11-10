@@ -48,7 +48,7 @@ SplitView {
         }
 
         color: btStyle.toolbarColor
-        border.color: "black"
+        border.color: btStyle.textColor
         border.width: 2
 
         Text {
@@ -56,7 +56,7 @@ SplitView {
             text: {
                 return btWindowInterface.moduleName + "   " +  btWindowInterface.reference;
             }
-            color: "black"
+            color: btStyle.toolbarTextColor
             font.pointSize: btStyle.uiFontPointSize
             anchors.fill: parent
             horizontalAlignment: Text.AlignHCenter
@@ -97,6 +97,7 @@ SplitView {
 
         width: parent.width
         height: parent.height * searchResults.topBottomSplit
+        color: btStyle.textBackgroundColor
 
         SplitView {
             id: topSplitter
@@ -114,7 +115,7 @@ SplitView {
             Rectangle {
                 id: modules
 
-                color: "white"
+                color: btStyle.textBackgroundColor
                 anchors.left: parent.left
                 anchors.top: parent.top
                 width: parent.width * searchResults.leftRightSplit
@@ -187,7 +188,7 @@ SplitView {
     Rectangle {
         id: text
 
-        color: "white"
+        color: btStyle.textBackgroundColor
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         width: parent.width
@@ -218,7 +219,7 @@ SplitView {
                 text: line
                 textFormat: Text.RichText
                 width: parent.width
-                color: "black"
+                color: btStyle.textColor
                 font.family: btWindowInterface.fontName
                 font.pointSize: btWindowInterface.fontSize
                 wrapMode: Text.WordWrap

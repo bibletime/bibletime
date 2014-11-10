@@ -25,6 +25,7 @@
         <file>qml/rightarrow.svg</file>
         <file>qml/search.svg</file>
         <file>qml/Search.qml</file>
+        <file>qml/SearchIcon.qml</file>
         <file>qml/SearchResults.qml</file>
         <file>qml/Settings.qml</file>
         <file>qml/StartupBookshelfManager.qml</file>

@@ -37,7 +37,7 @@ Rectangle {
 
     visible: false
     anchors.fill: parent
-    color: "#f0f0f0"
+    color: btStyle.textBackgroundColor
 
     BtStyle {
         id: btStyle
@@ -49,14 +49,14 @@ Rectangle {
         Rectangle {
             width: menu.width
             height: menuHeight
-            color: "white"
-            border.color: "#f0f0f0"
+            color: btStyle.textBackgroundColor
+            border.color: btStyle.menuBorder
             border.width: 2
 
             Text {
                 text: qsTranslate("main", title)
                 font.pointSize: btStyle.uiFontPointSize
-                color: "black"
+                color: btStyle.textColor
                 anchors.fill: parent
                 anchors.leftMargin: leftMenuMargin
                 verticalAlignment: Text.AlignVCenter

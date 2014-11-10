@@ -143,9 +143,9 @@ Rectangle {
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.leftMargin: parent.height * 0.1
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
-            color: btStyle.toolbarButton
+            color: btStyle.textBackgroundColor
             border.color: btStyle.buttonBorder
-            border.width: 1
+            border.width: 2
 
             Text {
                 id: text
@@ -155,7 +155,7 @@ Rectangle {
                 anchors.rightMargin: 4
                 font.pointSize: btStyle.uiFontPointSize
                 elide: Text.ElideMiddle
-                color: btStyle.toolbarButtonText
+                color: btStyle.textColor
                 text: btWindowInterface.moduleName
             }
 
@@ -187,7 +187,7 @@ Rectangle {
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.leftMargin:  parent.height * 0.1
-            color: btStyle.toolbarButton
+            color: btStyle.textBackgroundColor
             border.color: btStyle.buttonBorder
             border.width: 1
 
@@ -200,7 +200,7 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
                 font.pointSize: btStyle.uiFontPointSize
                 elide: Text.ElideMiddle
-                color: btStyle.toolbarButtonText
+                color: btStyle.textColor
                 text: btWindowInterface.reference
             }
 
@@ -219,7 +219,7 @@ Rectangle {
     Rectangle {
         id: mainTextView
 
-        color: "white"
+        color: btStyle.textBackgroundColor
         anchors.top: toolbar.bottom
         anchors.left: windowView.left
         anchors.right: windowView.right
@@ -247,7 +247,7 @@ Rectangle {
                 text: line
                 textFormat: Text.RichText
                 width: parent.width
-                color: "black"
+                color: btStyle.textColor
                 font.family: btWindowInterface.fontName
                 font.pointSize: btWindowInterface.fontSize
                 wrapMode: Text.WordWrap

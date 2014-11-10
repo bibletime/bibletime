@@ -28,9 +28,10 @@ Rectangle {
     Rectangle {
         id: titleRect
 
-        border.color: "black"
+        border.color: btStyle.textColor
         border.width: 1
-        height: btStyle.uiFontPointSize * 3;
+        color: btStyle.textBackgroundColor
+        height: btStyle.uiFontPointSize * 4;
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -45,6 +46,7 @@ Rectangle {
             horizontalAlignment: Text.AlignCenter
             verticalAlignment: Text.AlignBottom
             style: Text.Sunken
+            color: btStyle.textColor
             font.pointSize: btStyle.uiFontPointSize
         }
     }
@@ -63,6 +65,7 @@ Rectangle {
         highlightFollowsCurrentItem: true
         currentIndex: 2
 
+
         function selectItem(x, y) {
             var index = listView.indexAt(x+contentX,y+contentY);
             currentIndex = index;
@@ -70,12 +73,20 @@ Rectangle {
         }
 
         Rectangle {
+            id: background
+
+            color: btStyle.textBackgroundColor
+            anchors.fill: parent
+            z: -1
+        }
+
+        Rectangle {
             id: scrollbar
             anchors.right: listView.right
             y: listView.visibleArea.yPosition * listView.height
-            width: 7
+            width: 10
             height: listView.visibleArea.heightRatio * listView.height
-            color: "black"
+            color: btStyle.textColor
             visible: listView.visibleArea.heightRatio < 0.99
         }
 
@@ -85,7 +96,7 @@ Rectangle {
             property bool selected: ListView.isCurrentItem ? true : false
             objectName: "entry"
 
-            color: (highlight && ListView.isCurrentItem) ? "#ffeeaa" : "white"
+            color: (highlight && ListView.isCurrentItem) ? btStyle.textBackgroundHighlightColor : btStyle.textBackgroundColor
             border.width: buttonMouseArea.pressed ? 5 :1
             border.color: "darkgray"
             width: parent.width
@@ -105,6 +116,7 @@ Rectangle {
                 anchors.topMargin: 10
                 verticalAlignment: Text.AlignVCenter
                 text: modelText
+                color: btStyle.textColor
                 font.pointSize: btStyle.uiFontPointSize - 1
                 font.bold: highlight && entry.selected
             }

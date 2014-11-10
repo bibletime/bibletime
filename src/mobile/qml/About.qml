@@ -17,7 +17,7 @@ import BibleTime 1.0
 Rectangle {
     id: aboutDialog
 
-    color: "white"
+    color: btStyle.textBackgroundColor
     anchors.fill: parent
 
     BtStyle {
@@ -55,6 +55,7 @@ Rectangle {
                 width: aboutDialog.width
                 horizontalAlignment: Text.AlignHCenter
                 font.pointSize: btStyle.uiFontPointSize + 4
+                color: btStyle.textColor
             }
 
             Text {
@@ -66,6 +67,7 @@ Rectangle {
                 textFormat: Text.RichText
                 text: formatText();
                 font.pointSize: btStyle.uiFontPointSize
+                color: btStyle.textColor
                 onLinkActivated: {
                     Qt.openUrlExternally(link);
                 }

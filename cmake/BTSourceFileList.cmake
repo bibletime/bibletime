@@ -560,6 +560,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/Progress.qml
     src/mobile/qml/Question.qml
     src/mobile/qml/Search.qml
+    src/mobile/qml/SearchIcon.qml
     src/mobile/qml/SearchResults.qml
     src/mobile/qml/Settings.qml
     src/mobile/qml/SimpleComboBox.qml

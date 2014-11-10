@@ -33,8 +33,8 @@ Rectangle {
     Image {
         id: logo
 
-        width: parent.height
-        height: parent.height
+        width: parent.height-10
+        height: parent.height-10
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.topMargin: 5
@@ -45,7 +45,7 @@ Rectangle {
 
     Text {
         id: title
-        color: "black"
+        color: btStyle.toolbarTextColor
         font.pointSize: btStyle.uiFontPointSize
         anchors.left: logo.right
         anchors.top: parent.top
@@ -67,17 +67,15 @@ Rectangle {
         }
     }
 
-    Image {
-        id: searchIcon
+    SearchIcon {
+        id: searchIconQml
 
         width: parent.height
         height: parent.height
         anchors.right: menuButton.left
         anchors.top: parent.top
-        anchors.topMargin: 5
-        anchors.bottomMargin: 5
-        anchors.rightMargin: 10
-        source: "search.svg"
+        anchors.rightMargin: 0
+        strokeStyle: btStyle.textColor
 
         MouseArea {
             anchors.fill: parent

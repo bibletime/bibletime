@@ -50,7 +50,7 @@ FocusScope {
     Rectangle{
 
         anchors.fill: parent
-        color: "lightgray"
+        color: btStyle.textBackgroundColor
 
         Rectangle {
             id: searchTitleBar
@@ -62,7 +62,7 @@ FocusScope {
 
             Text {
                 id: title
-                color: "black"
+                color: btStyle.toolbarTextColor
                 font.pointSize: btStyle.uiFontPointSize
                 anchors.left: parent.left
                 anchors.top: parent.top
@@ -86,30 +86,40 @@ FocusScope {
 
                 spacing: btStyle.pixelsPerMillimeterY
 
-                Rectangle {
-                    color: "white"
-                    width: search.width -searchButton.width - search.spacing * 3
-                    height:searchButton.height
-
                     TextField {
                         id: textInput
 
-                        anchors.fill: parent
+                        width: search.width -searchButton.width - search.spacing * 3
                         font.pointSize: btStyle.uiFontPointSize
                         verticalAlignment: Text.AlignVCenter
                         inputMethodHints: Qt.ImhNoAutoUppercase
                         focus: true
                         text: ""
+                        textColor: btStyle.textColor
+
+                        style: TextFieldStyle {
+                            textColor: btStyle.textColor
+                            background: Rectangle {
+                                radius: 6
+                                anchors.fill: parent
+                                border.color: btStyle.textColor
+                                border.width: 1
+                                color: btStyle.textBackgroundColor
+//                                color: "#808080"
+                            }
+                        }
+
                         onAccepted: {
                             search.setupSearch();
                         }
-                    }
+//                    }
                 }
             }
 
             Button {
                 id: searchButton
                 text: "Search"
+                height: textInput.height
                 style: ButtonStyle {
                     label: Text {
                         anchors.verticalCenter: parent.verticalCenter
@@ -137,8 +147,8 @@ FocusScope {
             anchors.topMargin: btStyle.pixelsPerMillimeterY*5
             font.pointSize: btStyle.uiFontPointSize
             text: qsTr("Find")
+            color: btStyle.textColor
         }
-
 
         GroupBox {
             id: findWords
@@ -148,7 +158,7 @@ FocusScope {
             anchors.leftMargin: search.spacing
             title: ""
 
-            Row {
+            Column {
                 spacing: 30
                 ExclusiveGroup { id: group }
                 RadioButton {
@@ -162,6 +172,7 @@ FocusScope {
                             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                             font.pointSize: btStyle.uiFontPointSize
                             text: control.text
+                            color: btStyle.textColor
                         }
                     }
                     checked: true
@@ -177,6 +188,7 @@ FocusScope {
                             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                             font.pointSize: btStyle.uiFontPointSize
                             text: control.text
+                            color: btStyle.textColor
                         }
                     }
                 }
@@ -191,6 +203,7 @@ FocusScope {
                             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                             font.pointSize: btStyle.uiFontPointSize
                             text: control.text
+                            color: btStyle.textColor
                         }
                     }
                 }
@@ -211,6 +224,7 @@ FocusScope {
                 text: "Search in"
                 font.pointSize: btStyle.uiFontPointSize
                 height: searchInLabel.contentHeight
+                color: btStyle.textColor
             }
 
             ComboBox {

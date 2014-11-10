@@ -22,6 +22,8 @@ Rectangle {
 
     signal itemSelected(int index)
 
+    color: btStyle.textBackgroundColor
+
     ListView {
         id: listView
 
@@ -43,9 +45,9 @@ Rectangle {
             id: scrollbar
             anchors.right: listView.right
             y: listView.visibleArea.yPosition * listView.height
-            width: 7
+            width: btStyle.pixelsPerMillimeterX
             height: listView.visibleArea.heightRatio * listView.height
-            color: "black"
+            color: btStyle.textColor
             visible: listView.visibleArea.heightRatio < 0.99
         }
 
@@ -55,7 +57,7 @@ Rectangle {
             property bool selected: ListView.isCurrentItem ? true : false
             objectName: "entry"
 
-            color: (highlight && ListView.isCurrentItem) ? "#ffeedd" : "white"
+            color: (highlight && ListView.isCurrentItem) ? btStyle.textBackgroundHighlightColor : btStyle.textBackgroundColor
             border.width: buttonMouseArea.pressed ? 5 :1
             border.color: "darkgray"
             width: parent.width
@@ -76,6 +78,7 @@ Rectangle {
                 text: model.text
                 font.pointSize: btStyle.uiFontPointSize
                 font.bold: highlight && entry.selected
+                color: btStyle.textColor
             }
         }
 

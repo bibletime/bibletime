@@ -28,20 +28,20 @@ Rectangle {
         id: column
         property real ppmy: btStyle.pixelsPerMillimeterY
 
-        spacing: column.ppmy * 0.6
+        spacing: menuButton.height*0.1
 
         Rectangle {
-            color: "black";
-            width: column.ppmy * 0.8
-            height:column.ppmy * 0.8
+            color: btStyle.textColor
+            width: column.ppmy * 0.7
+            height:column.ppmy * 0.7
         }
         Rectangle {
-            color: "black";
+            color: btStyle.textColor
             width:column.ppmy * 0.7
             height:column.ppmy * 0.7
         }
         Rectangle {
-            color: "black";
+            color: btStyle.textColor
             width:column.ppmy * 0.7
             height:column.ppmy * 0.7
         }

@@ -30,9 +30,9 @@ Rectangle {
         width = width - 2 * anchors.rightMargin
         return width;
     }
-    color: "#ffffff"
+    color: btStyle.textBackgroundColor
     border.width: 3
-    border.color: "black"
+    border.color: btStyle.textColor
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
@@ -109,6 +109,7 @@ Rectangle {
             elide: Text.ElideRight
             text: qsTr("For Language")
             font.pointSize: btStyle.uiFontPointSize
+            color: btStyle.textColor
         }
 
         ComboBox {
@@ -143,6 +144,7 @@ Rectangle {
             elide: Text.ElideRight
             text: qsTr("Font")
             font.pointSize: btStyle.uiFontPointSize
+            color: btStyle.textColor
         }
 
         ComboBox {

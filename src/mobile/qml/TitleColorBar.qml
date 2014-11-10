@@ -30,7 +30,7 @@ Rectangle {
 
     Text {
         id: title
-        color: "black"
+        color: btStyle.toolbarTextColor
         font.pointSize: btStyle.uiFontPointSize
         anchors.fill: parent
         horizontalAlignment: Text.AlignHCenter

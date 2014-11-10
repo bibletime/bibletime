@@ -329,6 +329,8 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
         ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
         ListElement { title: QT_TR_NOOP("About");                     action: "about" }
+        ListElement { title: QT_TR_NOOP("Night Theme");               action: "night" }
+        ListElement { title: QT_TR_NOOP("Day Theme");                 action: "day" }
     }
 
     Menus {
@@ -349,10 +351,10 @@ Rectangle {
                 windowManager.createWindowMenus(closeWindowsModel);
                 closeWindowsMenus.visible = true;
             }
-            else if (action == "gnomeStyle") {
+            else if (action == "night") {
                 btStyle.setStyle(1)
             }
-            else if (action == "androidStyle") {
+            else if (action == "day") {
                 btStyle.setStyle(2)
             }
             else if (action == "install") {

@@ -30,7 +30,7 @@ namespace btm {
 ViewManager::ViewManager()
     : viewer_(new QtQuick2ApplicationViewer()) {
     BtStyle style;
-    style.setStyle(BtStyle::gnome);
+    style.setStyle(BtStyle::nightTheme);
     initialize_string_list_chooser_model();
     initialize_main_qml();
 }
