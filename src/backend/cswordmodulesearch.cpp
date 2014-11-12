@@ -171,7 +171,7 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     // made a simple parser.
     //===========================================================
     QStringList words = queryParser(newSearchText);
-    qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
+    //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     foreach (QString word, words) { //search for every word in the list
         QRegExp findExp;
         if (word.contains("*")) {
@@ -206,7 +206,7 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
             index += length;
         }
     }
-    qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
+    //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     //qWarning("\n\n\n%s", ret.latin1());
     return ret;
 }
