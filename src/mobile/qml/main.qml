@@ -324,13 +324,12 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
         ListElement { title: QT_TR_NOOP("Close Window");              action: "close window" }
+        ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
         ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
-        ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
+        ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
         ListElement { title: QT_TR_NOOP("About");                     action: "about" }
-        ListElement { title: QT_TR_NOOP("Night Theme");               action: "night" }
-        ListElement { title: QT_TR_NOOP("Day Theme");                 action: "day" }
     }
 
     Menus {
@@ -351,11 +350,8 @@ Rectangle {
                 windowManager.createWindowMenus(closeWindowsModel);
                 closeWindowsMenus.visible = true;
             }
-            else if (action == "night") {
-                btStyle.setStyle(1)
-            }
-            else if (action == "day") {
-                btStyle.setStyle(2)
+            else if (action == "colortheme") {
+                colorThemeMenus.visible = true;
             }
             else if (action == "install") {
                 installModules();
@@ -417,6 +413,31 @@ Rectangle {
         }
 
         model: windowArrangementModel
+    }
+
+    ListModel {
+        id: colorThemeModel
+
+        ListElement { title: QT_TR_NOOP("Dark");                  action: "dark" }
+        ListElement { title: QT_TR_NOOP("Light Blue");            action: "lightblue" }
+    }
+
+    Menus {
+        id: colorThemeMenus
+
+        Component.onCompleted: menuSelected.connect(colorThemeMenus.doAction)
+
+        function doAction(action) {
+            colorThemeMenus.visible = false;
+            if (action == "dark") {
+                btStyle.setStyle(1)
+            }
+            else if (action == "lightblue") {
+                btStyle.setStyle(2)
+            }
+        }
+
+        model: colorThemeModel
     }
 
     Menus {
