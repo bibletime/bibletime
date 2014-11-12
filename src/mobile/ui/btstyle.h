@@ -69,8 +69,9 @@ public:
     Q_INVOKABLE void setStyle(int style);
 
     enum Style {
-        nightTheme = 1,
-        dayTheme = 2
+        darkTheme = 1,
+        lightBlueTheme = 2,
+        crimsonTheme = 3
     };
 
 

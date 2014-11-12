@@ -420,6 +420,7 @@ Rectangle {
 
         ListElement { title: QT_TR_NOOP("Dark");                  action: "dark" }
         ListElement { title: QT_TR_NOOP("Light Blue");            action: "lightblue" }
+        ListElement { title: QT_TR_NOOP("Crimson");               action: "crimson" }
     }
 
     Menus {
@@ -434,6 +435,9 @@ Rectangle {
             }
             else if (action == "lightblue") {
                 btStyle.setStyle(2)
+            }
+            else if (action == "crimson") {
+                btStyle.setStyle(3)
             }
         }
 

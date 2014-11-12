@@ -62,6 +62,8 @@ Rectangle {
         height: parent.height
         anchors.right: parent.right
         anchors.top: parent.top
+        foreground: btStyle.toolbarTextColor
+        background: btStyle.toolbarColor
         onButtonClicked: {
             toolbar.buttonClicked()
         }
@@ -75,7 +77,7 @@ Rectangle {
         anchors.right: menuButton.left
         anchors.top: parent.top
         anchors.rightMargin: 0
-        strokeStyle: btStyle.textColor
+        strokeStyle: btStyle.toolbarTextColor
 
         MouseArea {
             anchors.fill: parent

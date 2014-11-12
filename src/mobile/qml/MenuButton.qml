@@ -16,13 +16,14 @@ import BibleTime 1.0
 Rectangle {
     id: menuButton
 
+
+    property color foreground: "#444444"
+    property color background: "#cccccc"
+
     signal buttonClicked
 
-    color: btStyle.toolbarColor
 
-    BtStyle {
-        id: btStyle
-    }
+    color: background
 
     Column {
         id: column
@@ -31,17 +32,17 @@ Rectangle {
         spacing: menuButton.height*0.1
 
         Rectangle {
-            color: btStyle.textColor
+            color: foreground
             width: column.ppmy * 0.7
             height:column.ppmy * 0.7
         }
         Rectangle {
-            color: btStyle.textColor
+            color: foreground
             width:column.ppmy * 0.7
             height:column.ppmy * 0.7
         }
         Rectangle {
-            color: btStyle.textColor
+            color: foreground
             width:column.ppmy * 0.7
             height:column.ppmy * 0.7
         }

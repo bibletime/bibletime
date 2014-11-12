@@ -26,7 +26,7 @@ Rectangle {
     property int spacing: btStyle.pixelsPerMillimeterX
 
     objectName: "installManager"
-    color: btStyle.textBackgroundColor
+    color: btStyle.toolbarColor
     border.color: "black"
     border.width: 2
 

@@ -82,44 +82,7 @@ static void emitChanged() {
 }
 
 void BtStyle::setStyle(int style) {
-    if (style == BtStyle::dayTheme) {
-
-        BtModuleTextModel::setLinkColor(QColor(0,0,255));
-        BtModuleTextModel::setHighlightColor(QColor(255,255,0));
-        BtModuleTextModel::setJesusWordsColor(QColor(255,0,0));
-
-        setTextColor(QColor(0,0,0));
-        setLinkColor(QColor(0,0,220));
-        setTextBackgroundColor(QColor(255,255,255));
-        setTextBackgroundHighlightColor(QColor(255,240,170));
-
-        setButtonColor(QColor(0,0,0));
-        setButtonBackground(QColor(190,220,255));
-        setButtonTextColor(QColor(0,0,0));
-        setButtonHighlightedText(QColor(0,0,255));
-        setButtonBorder(QColor(80,80,0));
-        setButtonRadius(3);
-        setButtonGradient0(QColor(180,180,255));
-        setButtonGradient1(QColor(255,255,255));
-        setButtonGradient2(QColor(255,255,255));
-        setButtonGradient3(QColor(180,180,255));
-
-        setWindowTab(QColor(245,245,245));
-        setWindowTabSelected(QColor(255,255,180));
-        setWindowTabText(QColor(0,0,0));
-        setWindowTabTextSelected(QColor(0,0,0));
-
-        setMenu(QColor(255,255,255));
-        setMenuBorder(QColor(220,220,220));
-        setMenuText(QColor(0,0,0));
-        setMenuHeight(40);
-
-        setToolbarColor(QColor(190,220,255));
-        setToolbarTextColor(QColor(0,0,0));
-        setToolbarButtonText(QColor(0,0,0));
-        setToolbarTextPointSize(10);
-    }
-    else if (style == BtStyle::nightTheme) {
+    if (style == BtStyle::darkTheme) {
 
         BtModuleTextModel::setLinkColor(QColor(0,191,255));
         BtModuleTextModel::setHighlightColor(QColor(255,255,0));
@@ -156,7 +119,80 @@ void BtStyle::setStyle(int style) {
         setToolbarButtonText(QColor(255,255,255));
         setToolbarTextPointSize(10);
     }
+    else if (style == BtStyle::lightBlueTheme) {
 
+        BtModuleTextModel::setLinkColor(QColor(0,0,255));
+        BtModuleTextModel::setHighlightColor(QColor(0,0,255));
+        BtModuleTextModel::setJesusWordsColor(QColor(255,0,0));
+
+        setTextColor(QColor(0,0,0));
+        setLinkColor(QColor(0,0,220));
+        setTextBackgroundColor(QColor(255,255,255));
+        setTextBackgroundHighlightColor(QColor(255,240,170));
+
+        setButtonColor(QColor(0,0,0));
+        setButtonBackground(QColor(190,220,255));
+        setButtonTextColor(QColor(0,0,0));
+        setButtonHighlightedText(QColor(0,0,255));
+        setButtonBorder(QColor(80,80,0));
+        setButtonRadius(3);
+        setButtonGradient0(QColor(180,180,255));
+        setButtonGradient1(QColor(255,255,255));
+        setButtonGradient2(QColor(255,255,255));
+        setButtonGradient3(QColor(180,180,255));
+
+        setWindowTab(QColor(245,245,245));
+        setWindowTabSelected(QColor(255,255,180));
+        setWindowTabText(QColor(0,0,0));
+        setWindowTabTextSelected(QColor(0,0,0));
+
+        setMenu(QColor(255,255,255));
+        setMenuBorder(QColor(220,220,220));
+        setMenuText(QColor(0,0,0));
+        setMenuHeight(40);
+
+        setToolbarColor(QColor(190,220,255));
+        setToolbarTextColor(QColor(0,0,0));
+        setToolbarButtonText(QColor(0,0,0));
+        setToolbarTextPointSize(10);
+    }
+    else if (style == BtStyle::crimsonTheme) {
+
+        BtModuleTextModel::setLinkColor(QColor(0,0,255));
+        BtModuleTextModel::setHighlightColor(QColor(0,0,255));
+        BtModuleTextModel::setJesusWordsColor(QColor(170,0,0));
+
+        setTextColor(QColor(0,0,0));
+        setLinkColor(QColor(0,0,220));
+        setTextBackgroundColor(QColor(255,255,255));
+        setTextBackgroundHighlightColor(QColor(255,240,170));
+
+        setButtonColor(QColor(0,0,0));
+        setButtonBackground(QColor(190,220,255));
+        setButtonTextColor(QColor(0,0,0));
+        setButtonHighlightedText(QColor(0,0,255));
+        setButtonBorder(QColor(80,80,0));
+        setButtonRadius(3);
+        setButtonGradient0(QColor(180,180,255));
+        setButtonGradient1(QColor(255,255,255));
+        setButtonGradient2(QColor(255,255,255));
+        setButtonGradient3(QColor(180,180,255));
+
+        setWindowTab(QColor(245,245,245));
+        setWindowTabSelected(QColor(255,255,180));
+        setWindowTabText(QColor(0,0,0));
+        setWindowTabTextSelected(QColor(0,0,0));
+
+        setMenu(QColor(255,255,255));
+        setMenuBorder(QColor(220,220,220));
+        setMenuText(QColor(0,0,0));
+        setMenuHeight(40);
+
+        setToolbarColor(QColor(99,0,0));
+        setToolbarTextColor(QColor(255,255,255));
+        setToolbarButtonText(QColor(0,0,0));
+        setToolbarTextPointSize(10);
+    }
     emitChanged();
 }
 
