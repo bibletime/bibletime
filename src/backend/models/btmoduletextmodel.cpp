@@ -22,6 +22,26 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/ctextrendering.h"
 
+
+// Static so all models use the same colors
+static QColor s_linkColor = QColor(0,191,255);
+static QColor s_highlightColor = QColor(255,255,0);
+static QColor s_jesusWordsColor = QColor(255,0,0);
+
+/*static*/ void BtModuleTextModel::setLinkColor(const QColor& color) {
+    s_linkColor = color;
+}
+
+/*static*/ void BtModuleTextModel::setHighlightColor(const QColor& color) {
+    s_highlightColor = color;
+}
+
+/*static*/ void BtModuleTextModel::setJesusWordsColor(const QColor& color) {
+    s_jesusWordsColor = color;
+}
+
+
+
 BtModuleTextModel::BtModuleTextModel(QObject *parent)
     : QAbstractListModel(parent), m_firstEntry(0), m_maxEntries(0) {
     QHash<int, QByteArray> roleNames;
@@ -108,6 +128,7 @@ QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) con
         QString text = entryDisplay.text(moduleList, keyName,
             m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
+        text = replaceColors(text);
         return text;
     }
     else if (role == ModuleEntry::ReferenceRole){
@@ -129,6 +150,7 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
                                                      m_displayOptions, m_filterOptions,
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         text.replace("#CHAPTERTITLE#", "");
+        text = replaceColors(text);
         return text;
     }
     return QString();
@@ -151,9 +173,18 @@ QVariant BtModuleTextModel::verseData(const QModelIndex & index, int role) const
             key.key(), m_displayOptions, m_filterOptions,
             Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         text.replace("#CHAPTERTITLE#", chapterTitle);
+        text = replaceColors(text);
         return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
     }
     return QString();
+}
+
+QString BtModuleTextModel::replaceColors(const QString& text) const {
+    QString newText = text;
+    newText.replace("#JESUS_WORDS_COLOR#", s_jesusWordsColor.name());
+    newText.replace("#LINK_COLOR#", s_linkColor.name());
+    newText.replace("#HIGHLIGHT_COLOR#", s_highlightColor.name());
+    return newText;
 }
 
 int BtModuleTextModel::columnCount(const QModelIndex & /*parent*/) const {

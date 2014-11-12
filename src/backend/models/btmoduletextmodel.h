@@ -14,6 +14,7 @@
 #define BTMODULETEXTMODEL_H
 
 #include <QAbstractListModel>
+#include <QColor>
 #include <QStringList>
 #include "btglobal.h"
 #include "backend/keys/cswordversekey.h"
@@ -73,12 +74,18 @@ public:
     void setRoleNames(const QHash<int, QByteArray> &roleNames);
     void setHighlightWords(const QString& highlightWords);
 
+    static void setLinkColor(const QColor& color);
+    static void setHighlightColor(const QColor& color);
+    static void setJesusWordsColor(const QColor& color);
+
 private:
 
     /** returns text string for each model index */
     QVariant bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QVariant verseData(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QVariant lexiconData(const QModelIndex & index, int role = Qt::DisplayRole) const;
+
+    QString replaceColors(const QString& text) const;
 
     QList<const CSwordModuleInfo*> m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;
