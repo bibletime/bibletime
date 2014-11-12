@@ -16,6 +16,7 @@
 #include <QPointer>
 #include <QScreen>
 #include "backend/config/btconfig.h"
+#include "backend/models/btmoduletextmodel.h"
 
 // BtStyle is a class that is registered at a QML item. It can be placed into
 // QML files and its properties are available to be used in QML. It contains
@@ -82,6 +83,11 @@ static void emitChanged() {
 
 void BtStyle::setStyle(int style) {
     if (style == BtStyle::dayTheme) {
+
+        BtModuleTextModel::setLinkColor(QColor(0,0,255));
+        BtModuleTextModel::setHighlightColor(QColor(255,255,0));
+        BtModuleTextModel::setJesusWordsColor(QColor(255,0,0));
+
         setTextColor(QColor(0,0,0));
         setLinkColor(QColor(0,0,220));
         setTextBackgroundColor(QColor(255,255,255));
@@ -114,6 +120,11 @@ void BtStyle::setStyle(int style) {
         setToolbarTextPointSize(10);
     }
     else if (style == BtStyle::nightTheme) {
+
+        BtModuleTextModel::setLinkColor(QColor(0,191,255));
+        BtModuleTextModel::setHighlightColor(QColor(255,255,0));
+        BtModuleTextModel::setJesusWordsColor(QColor(255,0,0));
+
         setTextColor(QColor(255,255,255));
         setLinkColor(QColor(0,0,80));
         setTextBackgroundColor(QColor(0,0,0));
