@@ -58,8 +58,6 @@ Rectangle {
 
     property var __popup: popup
 
-//    style: Qt.createComponent(Settings.style + "/ComboBoxStyle.qml", comboBox)
-
     activeFocusOnTab: true
 
     Accessible.role: Accessible.ComboBox

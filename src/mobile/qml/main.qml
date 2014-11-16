@@ -124,12 +124,6 @@ Rectangle {
 
     }
 
-    Settings {
-        id: settings
-
-        visible: false;
-    }
-
     GridChooser {
         id: gridChooser
 

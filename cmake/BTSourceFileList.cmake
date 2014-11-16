@@ -545,7 +545,6 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/ContextMenu.qml
     src/mobile/qml/GridChooserButton.qml
     src/mobile/qml/GridChooser.qml
-    src/mobile/qml/ImageButton.qml
     src/mobile/qml/InstallManagerChooser.qml
     src/mobile/qml/KeyNameChooser.qml
     src/mobile/qml/LeftArrow.qml
@@ -556,7 +555,6 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/MainToolbar.qml
     src/mobile/qml/Menus.qml
     src/mobile/qml/MenuButton.qml
-    src/mobile/qml/MenuView.qml
     src/mobile/qml/ModuleChooser.qml
     src/mobile/qml/Progress.qml
     src/mobile/qml/Question.qml
@@ -564,7 +562,6 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/Search.qml
     src/mobile/qml/SearchIcon.qml
     src/mobile/qml/SearchResults.qml
-    src/mobile/qml/Settings.qml
     src/mobile/qml/SimpleComboBox.qml
     src/mobile/qml/StartupBookshelfManager.qml
     src/mobile/qml/TitleColorBar.qml
@@ -572,9 +569,6 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/TreeChooser.qml
     src/mobile/qml/Window.qml
     src/mobile/qml/WindowManager.qml
-    src/mobile/qml/checkmark.svg
-    src/mobile/qml/leftarrow.svg
-    src/mobile/qml/rightarrow.svg
 )
 
 SET(bibletime_FRONTEND_MOBILE_SOURCES

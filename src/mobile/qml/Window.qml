@@ -58,10 +58,6 @@ Rectangle {
         btWindowInterface.setModuleToBeginning();
     }
 
-    function contextMenus() {
-        contextMenu.visible = true;
-    }
-
     color: "black"
 
     BtWindowInterface {
@@ -302,22 +298,4 @@ Rectangle {
             }
         }
     }
-
-    ListModel {
-        id: contextMenuModel
-
-        ListElement { title: QT_TR_NOOP("Text Font Size"); action: "textSize" }
-    }
-
-    ContextMenu {
-        id: contextMenu
-
-        function doAction(action) {
-        }
-
-        model: contextMenuModel
-        visible: false
-        Component.onCompleted: contextMenu.accepted.connect(contextMenu.doAction)
-    }
-
 }
