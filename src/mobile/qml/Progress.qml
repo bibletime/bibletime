@@ -23,8 +23,8 @@ Rectangle {
     property alias maximumValue: progressBar.maximumValue
     property alias text: label.text
 
-    color: btStyle.buttonBackground
-    border.color: "black"
+    color: btStyle.textBackgroundColor
+    border.color: btStyle.textColor
     border.width: 5
 
     signal cancel()
@@ -40,6 +40,7 @@ Rectangle {
         anchors.bottom: progressBar.top
         anchors.bottomMargin: parent.height / 8
         font.pointSize: btStyle.uiFontPointSize
+        color: btStyle.textColor
     }
 
     ProgressBar {
@@ -48,30 +49,35 @@ Rectangle {
         anchors.centerIn: parent
         width: parent.width - 100
         height: parent.height /10
+        style: ProgressBarStyle {
+            background: Rectangle {
+                radius: 2
+                color: "lightgray"
+                border.color: "gray"
+                border.width: 1
+                implicitWidth: 200
+                implicitHeight: 24
+            }
+        }
     }
 
-    Rectangle {
-        color: "white"
-        border.color: "black"
-        border.width: 3
-        width: btStyle.pixelsPerMillimeterX * 25
+    Action {
+        id: cancelAction
+        text: QT_TR_NOOP("Cancel")
+        onTriggered: {
+            cancel();
+        }
+    }
+
+    Button {
+        id: cancelButton
         height: btStyle.pixelsPerMillimeterY * 7
+        width: btStyle.pixelsPerMillimeterY * 25
         anchors.top: progressBar.bottom
         anchors.topMargin: parent.height / 8
         anchors.horizontalCenter: parent.horizontalCenter
-
-        Text {
-            anchors.centerIn: parent
-            text: qsTranslate("Progress", "Cancel")
-            font.pointSize: btStyle.uiFontPointSize
-
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                cancel();
-            }
+        action: cancelAction
+        style: BtButtonStyle {
         }
     }
 }

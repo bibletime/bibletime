@@ -11,6 +11,7 @@
         <file>qml/InstallManagerChooser.qml</file>
         <file>qml/KeyNameChooser.qml</file>
         <file>qml/leftarrow.svg</file>
+        <file>qml/LeftArrow.qml</file>
         <file>qml/ListSelectView.qml</file>
         <file>qml/ListTextView.qml</file>
         <file>qml/ListWorksView.qml</file>
@@ -23,6 +24,7 @@
         <file>qml/Progress.qml</file>
         <file>qml/Question.qml</file>
         <file>qml/rightarrow.svg</file>
+        <file>qml/RightArrow.qml</file>
         <file>qml/search.svg</file>
         <file>qml/Search.qml</file>
         <file>qml/SearchIcon.qml</file>

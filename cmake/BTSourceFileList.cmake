@@ -548,6 +548,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/ImageButton.qml
     src/mobile/qml/InstallManagerChooser.qml
     src/mobile/qml/KeyNameChooser.qml
+    src/mobile/qml/LeftArrow.qml
     src/mobile/qml/ListSelectView.qml
     src/mobile/qml/ListTextView.qml
     src/mobile/qml/ListWorksView.qml
@@ -559,6 +560,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/ModuleChooser.qml
     src/mobile/qml/Progress.qml
     src/mobile/qml/Question.qml
+    src/mobile/qml/RightArrow.qml
     src/mobile/qml/Search.qml
     src/mobile/qml/SearchIcon.qml
     src/mobile/qml/SearchResults.qml

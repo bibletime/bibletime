@@ -20,9 +20,9 @@ Rectangle {
     property string path: ""
     property int pathCount: 0
 
-    color: "white"
+    color: btStyle.textBackgroundColor
     border.width: 2
-    border.color: "black"
+    border.color: btStyle.textColor
 
     signal back()
     signal next(string childText)
@@ -40,7 +40,7 @@ Rectangle {
 
         border.color: "black"
         border.width: 0
-        color: "white"
+        color: btStyle.textBackgroundColor
 
         height: btStyle.uiFontPointSize * (5 + pathCount *3);
         anchors.right: parent.right
@@ -64,15 +64,19 @@ Rectangle {
             return newPath;
         }
 
-        ImageButton {
+        LeftArrow {
             id: backButton
 
-            icon: "leftarrow.svg"
-            height: btStyle.uiFontPointSize * 4;
-            width:  btStyle.uiFontPointSize * 4;
+            height: {
+                var pixel = btStyle.pixelsPerMillimeterY * 8;
+                var uiFont = btStyle.uiFontPointSize * 4.5;
+                return Math.max(pixel, uiFont);
+            }
+            width:  height
             anchors.verticalCenter: parent.verticalCenter
             anchors.right : parent.right
             anchors.topMargin: 2
+            color: btStyle.textColor
             visible: true
 
             MouseArea {
@@ -93,6 +97,7 @@ Rectangle {
             anchors.right: backButton.left
             anchors.leftMargin: 10
             elide: Text.ElideRight
+            color: btStyle.textColor
         }
     }
 
@@ -124,12 +129,12 @@ Rectangle {
 
             property string action: ""
 
-
+            color: btStyle.textBackgroundColor
             border.color: "#eeeeee"
             border.width: 1
             width: parent.width
             height: {
-                var pixel = btStyle.pixelsPerMillimeterY * 7;
+                var pixel = btStyle.pixelsPerMillimeterY * 8;
                 var uiFont = btStyle.uiFontPointSize * 4.5;
                 return Math.max(pixel, uiFont);
             }
@@ -147,17 +152,18 @@ Rectangle {
                 anchors.topMargin: 10
                 text: name
                 elide: Text.ElideRight
+                color: btStyle.textColor
             }
 
-            ImageButton {
+            RightArrow {
                 id: imageButton
-                icon: "rightarrow.svg"
 
                 height: entry.height;
                 width:  entry.height;
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.topMargin: 2
+                color: btStyle.textColor
                 visible: childcount > 0
 
                 MouseArea {

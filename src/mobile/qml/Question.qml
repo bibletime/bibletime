@@ -24,9 +24,32 @@ Rectangle {
     signal finished();
 
     anchors.fill: parent
-    color: background
+    color: btStyle.textBackgroundColor
     visible: false
     width: parent.width
+
+    Image {
+        id: logo
+
+        width: btStyle.pixelsPerMillimeterX*12
+        height: width
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.topMargin: width * 0.2
+        anchors.leftMargin: width * 0.2
+        source: "qrc:/share/bibletime/icons/bibletime.svg"
+    }
+
+    Text {
+        id: questionTitle
+
+        color: btStyle.textColor
+        font.pointSize: btStyle.uiFontPointSize+2
+        text: "BibleTime"
+        anchors.left: logo.right
+        anchors.verticalCenter: logo.verticalCenter
+        anchors.leftMargin: logo.width * 0.2
+    }
 
     Text {
         id: questionText
@@ -38,6 +61,7 @@ Rectangle {
         wrapMode: Text.WordWrap
         font.pointSize: btStyle.uiFontPointSize
         anchors.margins: 60
+        color: btStyle.textColor
     }
 
     Grid {

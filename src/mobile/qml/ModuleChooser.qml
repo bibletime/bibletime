@@ -12,6 +12,7 @@
 
 import QtQuick 2.2
 import QtQuick.Controls 1.2
+import QtQuick.Controls.Styles 1.2
 import BibleTime 1.0
 
 Rectangle {
@@ -76,7 +77,7 @@ Rectangle {
 
         z: 100
         visible: false
-        color: "lightBlue"
+        color: btStyle.textBackgroundColor
         anchors.fill: parent
 
         signal finished(string unlockKey);
@@ -92,6 +93,7 @@ Rectangle {
             font.pointSize: btStyle.uiFontPointSize
             width: parent.width
             height: contentHeight * 1.1
+            color: btStyle.textColor
         }
 
         TextField {
@@ -101,6 +103,17 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width/2
             font.pointSize: btStyle.uiFontPointSize
+            textColor: btStyle.textColor
+            style: TextFieldStyle {
+                textColor: btStyle.textColor
+                background: Rectangle {
+                    radius: 6
+                    anchors.fill: parent
+                    border.color: btStyle.textColor
+                    border.width: 1
+                    color: btStyle.textBackgroundColor
+                }
+            }
         }
 
         Action {
