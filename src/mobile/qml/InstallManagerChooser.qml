@@ -24,6 +24,7 @@ Rectangle {
     property alias categoryIndex: categoryView.currentIndex
     property alias languageIndex: languageView.currentIndex
     property int spacing: btStyle.pixelsPerMillimeterX
+    property bool refreshOnOpen: false
 
     objectName: "installManager"
     color: btStyle.toolbarColor
@@ -37,6 +38,13 @@ Rectangle {
     signal cancel();
     signal installRemove();
     signal refreshLists();
+
+    onVisibleChanged: {
+        if (refreshOnOpen) {
+            refreshOnOpen =false;
+            refreshAction.trigger();
+        }
+    }
 
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && installManager.visible == true) {
@@ -115,7 +123,7 @@ Rectangle {
 
         Action {
             id: refreshAction
-            text: qsTranslate("InstallManagerChooser", "Refresh Lists")
+            text: qsTranslate("InstallManagerChooser", "Refresh Sources")
             onTriggered: {
                 installManager.refreshLists();
             }

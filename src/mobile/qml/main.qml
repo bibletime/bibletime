@@ -176,16 +176,19 @@ Rectangle {
         visible: false
     }
 
-    StartupBookshelfManager {
+    Question {
         id: startupBookshelfManager
 
         objectName: "startupBookshelfManager"
-        visible: false
-        width: windowManager.width
-        height: windowManager.height
-        anchors.centerIn: windowManager
-        onBookshelfRequested: {
-            installModules();
+        background: btStyle.toolbarColor
+        text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
+                  "There are currently no documents. Do you want to install documents now?")
+        onFinished: {
+            startupBookshelfManager.visible = false;
+            if (answer == true) {
+                installManagerChooser.refreshOnOpen = true;
+                installModules();
+            }
         }
     }
 
