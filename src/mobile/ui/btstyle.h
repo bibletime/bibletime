@@ -74,92 +74,94 @@ public:
         crimsonTheme = 3
     };
 
+    static int getCurrentStyle();
+    static void setCurrentStyle(int style);
 
     BtStyle(QObject *parent = 0);
 
-    QColor getTextColor() const;
-    void setTextColor(const QColor& color);
+    static QColor getTextColor();
+    static void setTextColor(const QColor& color);
 
-    QColor getLinkColor() const;
-    void setLinkColor(const QColor& color);
+    static QColor getLinkColor();
+    static void setLinkColor(const QColor& color);
 
-    QColor getTextBackgroundColor() const;
-    void setTextBackgroundColor(const QColor& color);
+    static QColor getTextBackgroundColor();
+    static void setTextBackgroundColor(const QColor& color);
 
-    QColor getTextBackgroundHighlightColor() const;
-    void setTextBackgroundHighlightColor(const QColor& color);
+    static QColor getTextBackgroundHighlightColor();
+    static void setTextBackgroundHighlightColor(const QColor& color);
 
-    QColor getButtonColor() const;
-    void setButtonColor(const QColor& color);
+    static QColor getButtonColor();
+    static void setButtonColor(const QColor& color);
 
-    QColor getButtonBackground() const;
-    void setButtonBackground(const QColor& color);
+    static QColor getButtonBackground();
+    static void setButtonBackground(const QColor& color);
 
-    QColor getButtonTextColor() const;
-    void setButtonTextColor(const QColor& color);
+    static QColor getButtonTextColor();
+    static void setButtonTextColor(const QColor& color);
 
-    QColor getButtonHighlightedText() const;
-    void setButtonHighlightedText(const QColor& color);
+    static QColor getButtonHighlightedText();
+    static void setButtonHighlightedText(const QColor& color);
 
-    QColor getButtonBorder() const;
-    void setButtonBorder(const QColor& color);
+    static QColor getButtonBorder();
+    static void setButtonBorder(const QColor& color);
 
-    int getButtonRadius() const;
-    void setButtonRadius(int radius);
+    static int getButtonRadius();
+    static void setButtonRadius(int radius);
 
-    QColor getButtonGradient0() const;
-    void setButtonGradient0(const QColor& color);
+    static QColor getButtonGradient0();
+    static void setButtonGradient0(const QColor& color);
 
-    QColor getButtonGradient1() const;
-    void setButtonGradient1(const QColor& color);
+    static QColor getButtonGradient1();
+    static void setButtonGradient1(const QColor& color);
 
-    QColor getButtonGradient2() const;
-    void setButtonGradient2(const QColor& color);
+    static QColor getButtonGradient2();
+    static void setButtonGradient2(const QColor& color);
 
-    QColor getButtonGradient3() const;
-    void setButtonGradient3(const QColor& color);
+    static QColor getButtonGradient3();
+    static void setButtonGradient3(const QColor& color);
 
-    QColor getWindowTab() const;
-    void setWindowTab(const QColor& color);
+    static QColor getWindowTab();
+    static void setWindowTab(const QColor& color);
 
-    QColor getWindowTabSelected() const;
-    void setWindowTabSelected(const QColor& color);
+    static QColor getWindowTabSelected();
+    static void setWindowTabSelected(const QColor& color);
 
-    QColor getWindowTabText() const;
-    void setWindowTabText(const QColor& color);
+    static QColor getWindowTabText();
+    static void setWindowTabText(const QColor& color);
 
-    QColor getWindowTabTextSelected() const;
-    void setWindowTabTextSelected(const QColor& color);
+    static QColor getWindowTabTextSelected();
+    static void setWindowTabTextSelected(const QColor& color);
 
-    QColor getMenu() const;
-    void setMenu(const QColor& color);
+    static QColor getMenu();
+    static void setMenu(const QColor& color);
 
-    QColor getMenuBorder() const;
-    void setMenuBorder(const QColor& color);
+    static QColor getMenuBorder();
+    static void setMenuBorder(const QColor& color);
 
-    QColor getMenuText() const;
-    void setMenuText(const QColor& color);
+    static QColor getMenuText();
+    static void setMenuText(const QColor& color);
 
-    int getMenuHeight() const;
-    void setMenuHeight(int height);
+    static int getMenuHeight();
+    static void setMenuHeight(int height);
 
-    QColor getToolbarColor() const;
-    void setToolbarColor(const QColor& color);
+    static QColor getToolbarColor();
+    static void setToolbarColor(const QColor& color);
 
-    QColor getToolbarTextColor() const;
-    void setToolbarTextColor(const QColor& color);
+    static QColor getToolbarTextColor();
+    static void setToolbarTextColor(const QColor& color);
 
-    QColor getToolbarButtonText() const;
-    void setToolbarButtonText(const QColor& color);
+    static QColor getToolbarButtonText();
+    static void setToolbarButtonText(const QColor& color);
 
-    double getToolbarTextPointSize() const;
-    void setToolbarTextPointSize(double pointSize);
+    static double getToolbarTextPointSize();
+    static void setToolbarTextPointSize(double pointSize);
 
-    double getUiFontPointSize() const;
-    void setUiFontPointSize(double pointSize);
+    static double getUiFontPointSize();
+    static void setUiFontPointSize(double pointSize);
 
-    int pixelsPerMillimeterX() const;
-    int pixelsPerMillimeterY() const;
+    static int pixelsPerMillimeterX();
+    static int pixelsPerMillimeterY();
 
     QString getAppVersion() const;
     QString getGitVersion() const;

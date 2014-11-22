@@ -15,6 +15,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "mobile/util/findqmlobject.h"
+#include "mobile/ui/btstyle.h"
 #include <QGenericReturnArgument>
 #include <QMetaObject>
 #include <QQuickItem>
@@ -29,6 +30,9 @@ SessionManager::SessionManager(QObject* parent)
 
 void SessionManager::loadDefaultSession() {
     loadWindows();
+
+    int colorTheme = getColorTheme();
+    BtStyle::setCurrentStyle(colorTheme);
 
     int windowArrangementMode = getWindowArrangementMode();
     m_windowMgr->setProperty("windowArrangement", windowArrangementMode);
@@ -75,9 +79,18 @@ int SessionManager::getWindowArrangementMode() {
     return conf.sessionValue<int>("MainWindow/MDIArrangementMode");
 }
 
+int SessionManager::getColorTheme() {
+    BtConfig & conf = btConfig();
+    return conf.sessionValue<int>("ColorTheme", BtStyle::darkTheme);
+}
+
 void SessionManager::saveDefaultSession() {
 
     BtConfig & conf = btConfig();
+
+    int currentStyle = BtStyle::getCurrentStyle();
+    conf.setSessionValue("ColorTheme",currentStyle);
+
     int windowArrangementMode = m_windowMgr->property("windowArrangement").toInt();
     conf.setSessionValue("MainWindow/MDIArrangementMode", windowArrangementMode);
 

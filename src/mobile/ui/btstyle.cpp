@@ -68,6 +68,7 @@ static QColor toolbarTextColor        = QColor();
 static QColor toolbarButtonText       = QColor();
 static double toolbarTextPointSize    = 6;
 
+int currentStyle = BtStyle::darkTheme;
 
 static QList<QPointer<BtStyle> > styles;
 
@@ -81,8 +82,19 @@ static void emitChanged() {
     }
 }
 
+int BtStyle::getCurrentStyle() {
+    return currentStyle;
+}
+
 void BtStyle::setStyle(int style) {
+    setCurrentStyle(style);
+    emitChanged();
+}
+
+void BtStyle::setCurrentStyle(int style) {
     if (style == BtStyle::darkTheme) {
+
+        currentStyle = style;
 
         BtModuleTextModel::setLinkColor(QColor(0,191,255));
         BtModuleTextModel::setHighlightColor(QColor(255,255,0));
@@ -121,6 +133,8 @@ void BtStyle::setStyle(int style) {
     }
     else if (style == BtStyle::lightBlueTheme) {
 
+        currentStyle = style;
+
         BtModuleTextModel::setLinkColor(QColor(0,0,255));
         BtModuleTextModel::setHighlightColor(QColor(0,0,255));
         BtModuleTextModel::setJesusWordsColor(QColor(255,0,0));
@@ -158,6 +172,8 @@ void BtStyle::setStyle(int style) {
     }
     else if (style == BtStyle::crimsonTheme) {
 
+        currentStyle = style;
+
         BtModuleTextModel::setLinkColor(QColor(0,0,255));
         BtModuleTextModel::setHighlightColor(QColor(0,0,255));
         BtModuleTextModel::setJesusWordsColor(QColor(170,0,0));
@@ -193,7 +209,6 @@ void BtStyle::setStyle(int style) {
         setToolbarButtonText(QColor(0,0,0));
         setToolbarTextPointSize(10);
     }
-    emitChanged();
 }
 
 BtStyle::BtStyle(QObject* parent)
@@ -201,7 +216,7 @@ BtStyle::BtStyle(QObject* parent)
     styles.append(this);
 }
 
-QColor BtStyle::getTextColor() const {
+QColor BtStyle::getTextColor() {
     return textColor;
 }
 void BtStyle::setTextColor(const QColor& color) {
@@ -210,7 +225,7 @@ void BtStyle::setTextColor(const QColor& color) {
 }
 
 
-QColor BtStyle::getLinkColor() const {
+QColor BtStyle::getLinkColor() {
     return linkColor;
 }
 void BtStyle::setLinkColor(const QColor& color) {
@@ -219,7 +234,7 @@ void BtStyle::setLinkColor(const QColor& color) {
 }
 
 
-QColor BtStyle::getTextBackgroundColor() const {
+QColor BtStyle::getTextBackgroundColor() {
     return textBackgroundColor;
 }
 void BtStyle::setTextBackgroundColor(const QColor& color) {
@@ -228,7 +243,7 @@ void BtStyle::setTextBackgroundColor(const QColor& color) {
 }
 
 
-QColor BtStyle::getTextBackgroundHighlightColor() const {
+QColor BtStyle::getTextBackgroundHighlightColor() {
     return textBackgroundHighlightColor;
 }
 void BtStyle::setTextBackgroundHighlightColor(const QColor& color) {
@@ -237,7 +252,7 @@ void BtStyle::setTextBackgroundHighlightColor(const QColor& color) {
 }
 
 
-QColor BtStyle::getButtonColor() const {
+QColor BtStyle::getButtonColor() {
     return buttonColor;
 }
 void BtStyle::setButtonColor(const QColor& color) {
@@ -246,7 +261,7 @@ void BtStyle::setButtonColor(const QColor& color) {
 }
 
 
-QColor BtStyle::getButtonBackground() const {
+QColor BtStyle::getButtonBackground() {
     return buttonBackground;
 }
 void BtStyle::setButtonBackground(const QColor& color) {
@@ -255,7 +270,7 @@ void BtStyle::setButtonBackground(const QColor& color) {
 }
 
 
-QColor BtStyle::getButtonTextColor() const {
+QColor BtStyle::getButtonTextColor() {
     return buttonTextColor;
 }
 void BtStyle::setButtonTextColor(const QColor& color) {
@@ -264,7 +279,7 @@ void BtStyle::setButtonTextColor(const QColor& color) {
 }
 
 
-QColor BtStyle::getButtonHighlightedText() const {
+QColor BtStyle::getButtonHighlightedText() {
     return buttonHighlightedText;
 }
 void BtStyle::setButtonHighlightedText(const QColor& color) {
@@ -273,7 +288,7 @@ void BtStyle::setButtonHighlightedText(const QColor& color) {
 }
 
 
-QColor BtStyle::getButtonBorder() const {
+QColor BtStyle::getButtonBorder() {
     return buttonBorder;
 }
 void BtStyle::setButtonBorder(const QColor& color) {
@@ -281,7 +296,7 @@ void BtStyle::setButtonBorder(const QColor& color) {
     emitChanged();
 }
 
-int BtStyle::getButtonRadius() const {
+int BtStyle::getButtonRadius() {
     return buttonRadius;
 }
 void BtStyle::setButtonRadius(int radius) {
@@ -289,7 +304,7 @@ void BtStyle::setButtonRadius(int radius) {
     emitChanged();
 }
 
-QColor BtStyle::getButtonGradient0() const {
+QColor BtStyle::getButtonGradient0() {
     return buttonGradient0;
 }
 void BtStyle::setButtonGradient0(const QColor& color) {
@@ -297,7 +312,7 @@ void BtStyle::setButtonGradient0(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getButtonGradient1() const {
+QColor BtStyle::getButtonGradient1() {
     return buttonGradient1;
 }
 void BtStyle::setButtonGradient1(const QColor& color) {
@@ -305,7 +320,7 @@ void BtStyle::setButtonGradient1(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getButtonGradient2() const {
+QColor BtStyle::getButtonGradient2() {
     return buttonGradient2;
 }
 void BtStyle::setButtonGradient2(const QColor& color) {
@@ -313,7 +328,7 @@ void BtStyle::setButtonGradient2(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getButtonGradient3() const {
+QColor BtStyle::getButtonGradient3() {
     return buttonGradient3;
 }
 void BtStyle::setButtonGradient3(const QColor& color) {
@@ -321,7 +336,7 @@ void BtStyle::setButtonGradient3(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getWindowTab() const {
+QColor BtStyle::getWindowTab() {
     return windowTab;
 }
 
@@ -330,7 +345,7 @@ void BtStyle::setWindowTab(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getWindowTabSelected() const {
+QColor BtStyle::getWindowTabSelected() {
     return windowTabSelected;
 }
 
@@ -339,7 +354,7 @@ void BtStyle::setWindowTabSelected(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getWindowTabText() const {
+QColor BtStyle::getWindowTabText() {
     return windowTabText;
 }
 
@@ -348,7 +363,7 @@ void BtStyle::setWindowTabText(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getWindowTabTextSelected() const {
+QColor BtStyle::getWindowTabTextSelected() {
     return windowTabTextSelected;
 }
 
@@ -357,7 +372,7 @@ void BtStyle::setWindowTabTextSelected(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getMenu() const {
+QColor BtStyle::getMenu() {
     return menu;
 }
 
@@ -366,7 +381,7 @@ void BtStyle::setMenu(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getMenuBorder() const {
+QColor BtStyle::getMenuBorder() {
     return menuBorder;
 }
 
@@ -375,7 +390,7 @@ void BtStyle::setMenuBorder(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getMenuText() const {
+QColor BtStyle::getMenuText() {
     return menuText;
 }
 
@@ -384,7 +399,7 @@ void BtStyle::setMenuText(const QColor& color) {
     emitChanged();
 }
 
-int BtStyle::getMenuHeight() const {
+int BtStyle::getMenuHeight() {
     return menuHeight;
 }
 void BtStyle::setMenuHeight(int height) {
@@ -392,7 +407,7 @@ void BtStyle::setMenuHeight(int height) {
     emitChanged();
 }
 
-QColor BtStyle::getToolbarColor() const {
+QColor BtStyle::getToolbarColor() {
     return toolbarColor;
 }
 void BtStyle::setToolbarColor(const QColor& color) {
@@ -400,7 +415,7 @@ void BtStyle::setToolbarColor(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getToolbarTextColor() const {
+QColor BtStyle::getToolbarTextColor() {
     return toolbarTextColor;
 }
 void BtStyle::setToolbarTextColor(const QColor& color) {
@@ -408,7 +423,7 @@ void BtStyle::setToolbarTextColor(const QColor& color) {
     emitChanged();
 }
 
-QColor BtStyle::getToolbarButtonText() const {
+QColor BtStyle::getToolbarButtonText() {
     return toolbarButtonText;
 }
 void BtStyle::setToolbarButtonText(const QColor& color) {
@@ -416,7 +431,7 @@ void BtStyle::setToolbarButtonText(const QColor& color) {
     emitChanged();
 }
 
-double BtStyle::getToolbarTextPointSize() const {
+double BtStyle::getToolbarTextPointSize() {
     return toolbarTextPointSize;
 }
 
@@ -425,7 +440,7 @@ void BtStyle::setToolbarTextPointSize(double pointSize) {
     emitChanged();
 }
 
-double BtStyle::getUiFontPointSize() const {
+double BtStyle::getUiFontPointSize() {
     return btConfig().value<int>("ui/uiFontSize",18);
 }
 
@@ -434,12 +449,12 @@ void BtStyle::setUiFontPointSize(double pointSize) {
     emitChanged();
 }
 
-int BtStyle::pixelsPerMillimeterX() const {
+int BtStyle::pixelsPerMillimeterX() {
     QScreen* screen = QGuiApplication::screens().at(0);
     return screen->physicalDotsPerInchX() / millimeterPerInch;
 }
 
-int BtStyle::pixelsPerMillimeterY() const {
+int BtStyle::pixelsPerMillimeterY() {
     QScreen* screen = QGuiApplication::screens().at(0);
     int dpm = screen->physicalDotsPerInchY() / millimeterPerInch;
     return dpm;

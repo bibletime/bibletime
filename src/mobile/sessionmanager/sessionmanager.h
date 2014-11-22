@@ -29,6 +29,7 @@ public:
     void saveDefaultSession();
 
 private:
+    int getColorTheme();
     int getWindowArrangementMode();
     int getWindowCount();
     void loadWindow(const QStringList& moduleNames, const QString& key);
