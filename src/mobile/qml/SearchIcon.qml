@@ -21,7 +21,7 @@ import QtQuick 2.3
                 ctx.fillStyle = canvas.fillStyle
                 ctx.globalAlpha = canvas.alpha
 
-                ctx.lineWidth = width * 0.05
+                ctx.lineWidth = width * 0.08
                 ctx.beginPath();
                 ctx.arc(width*.48,height*0.42,width*0.2,0,Math.PI*2,true);
                 ctx.stroke();

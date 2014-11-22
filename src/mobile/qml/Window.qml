@@ -75,7 +75,7 @@ Rectangle {
 
         width: parent.width
         height: {
-            var pixel = btStyle.pixelsPerMillimeterY * 7.5;
+            var pixel = btStyle.pixelsPerMillimeterY * 8;
             var uiFont = btStyle.uiFontPointSize * 4.4;
             var mix = pixel * 0.7 + uiFont * 0.3;
             return Math.max(pixel, mix);
@@ -86,45 +86,39 @@ Rectangle {
         border.width: 1
         border.color: "black"
 
-        Image {
-            id: backHistory
+        PrevNextArrow {
+            id: prevHistory
 
+            background: btStyle.toolbarColor
+            textColor: btStyle.toolbarTextColor
+            prev: true
             width: parent.height * 0.80
             height: parent.height * 0.80
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.margins: parent.height * 0.1;
-            source: "qrc:/share/bibletime/icons/back.svg"
-            opacity: btWindowInterface.historyBackwardVisible? 1 : 0.4
-
-            MouseArea {
-                anchors.fill: parent
-
-                onClicked: {
-                    if (backHistory.opacity > 0.9)
-                        btWindowInterface.moveHistoryBackward();
-                }
+            show: btWindowInterface.historyBackwardVisible
+            onClicked: {
+                if (show)
+                    btWindowInterface.moveHistoryBackward();
             }
         }
 
-        Image {
-            id: forwardHistory
+        PrevNextArrow {
+            id: nextHistory
 
-            width: parent.height * 0.8
-            height: parent.height * 0.8
-            anchors.left: backHistory.right
+            background: btStyle.toolbarColor
+            textColor: btStyle.toolbarTextColor
+            prev: false
+            width: parent.height * 0.80
+            height: parent.height * 0.80
+            anchors.left: prevHistory.right
             anchors.top: parent.top
             anchors.margins: parent.height * 0.1;
-            source: "qrc:/share/bibletime/icons/forward.svg"
-            opacity: btWindowInterface.historyForwardVisible? 1 : 0.4
-
-            MouseArea {
-                anchors.fill: parent
-
-                onClicked: {
-                    if (forwardHistory.opacity > 0.9)
-                        btWindowInterface.moveHistoryForward();
-                }
+            show: btWindowInterface.historyForwardVisible
+            onClicked: {
+                if (show)
+                    btWindowInterface.moveHistoryForward();
             }
         }
 
@@ -133,7 +127,7 @@ Rectangle {
 
             width: text.width + 30
             radius:btStyle.pixelsPerMillimeterX
-            anchors.left: forwardHistory.right
+            anchors.left: nextHistory.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
@@ -170,8 +164,8 @@ Rectangle {
             id: referenceDisplay
 
             width: {
-                var w2 = toolbar.width - backHistory.width -backHistory.anchors.margins*2;
-                w2 = w2 - forwardHistory.width -forwardHistory.anchors.margins*2;
+                var w2 = toolbar.width - prevHistory.width -prevHistory.anchors.margins*2;
+                w2 = w2 - nextHistory.width -nextHistory.anchors.margins*2;
                 w2 = w2 - moduleDisplay.width - moduleDisplay.anchors.leftMargin - moduleDisplay.anchors.rightMargin;
                 w2 - w2 - parent.height * 0.2;
                 return w2;

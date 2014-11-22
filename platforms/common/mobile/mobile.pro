@@ -80,6 +80,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/Menus.qml \
     ../../../src/mobile/qml/MenuButton.qml \
     ../../../src/mobile/qml/ModuleChooser.qml \
+    ../../../src/mobile/qml/PrevNextArrow.qml \
     ../../../src/mobile/qml/Progress.qml \
     ../../../src/mobile/qml/Question.qml \
     ../../../src/mobile/qml/RightArrow.qml \

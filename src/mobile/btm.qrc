@@ -17,6 +17,7 @@
         <file>qml/MenuButton.qml</file>
         <file>qml/Menus.qml</file>
         <file>qml/ModuleChooser.qml</file>
+        <file>qml/PrevNextArrow.qml</file>
         <file>qml/Progress.qml</file>
         <file>qml/Question.qml</file>
         <file>qml/RightArrow.qml</file>
