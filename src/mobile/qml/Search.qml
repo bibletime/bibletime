@@ -28,8 +28,9 @@ FocusScope {
     signal searchRequest();
 
     function setupSearch() {
-        InputMethod.hide = true; // hide keyboard
-        searchText = textInput.text;
+
+        Qt.inputMethod.hide(); // hide keyboard
+        searchText = textInput.displayText;
         if (radioAny.checked)
             findChoice = "or";
         if (radioAll.checked)
@@ -47,7 +48,7 @@ FocusScope {
         }
     }
 
-    Rectangle{
+    Rectangle {
 
         anchors.fill: parent
         color: btStyle.textBackgroundColor
@@ -105,14 +106,12 @@ FocusScope {
                                 border.color: btStyle.textColor
                                 border.width: 1
                                 color: btStyle.textBackgroundColor
-//                                color: "#808080"
                             }
                         }
 
                         onAccepted: {
                             search.setupSearch();
                         }
-//                    }
                 }
             }
 
