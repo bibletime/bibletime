@@ -358,7 +358,12 @@ CSwordKey* BtWindowInterface::getKey() const {
 }
 
 QString BtWindowInterface::getFontName() const {
-    const CLanguageMgr::Language* lang = module()->language();
+    const CSwordModuleInfo* m = module();
+    if (m == nullptr)
+        return QString();
+    const CLanguageMgr::Language* lang = m->language();
+    if (lang == nullptr)
+        return QString();
     BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
     if (fontPair.first) {
         QFont font = fontPair.second;
