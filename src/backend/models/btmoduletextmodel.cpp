@@ -129,7 +129,7 @@ QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) con
             m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
         text = replaceColors(text);
-        return text;
+        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
     }
     else if (role == ModuleEntry::ReferenceRole){
         return keyName;
@@ -150,7 +150,7 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
                                                      m_displayOptions, m_filterOptions,
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         text.replace("#CHAPTERTITLE#", "");
-        text = replaceColors(text);
+        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
         return text;
     }
     return QString();
