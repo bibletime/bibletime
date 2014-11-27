@@ -84,13 +84,14 @@ Rectangle {
 
         color: btStyle.toolbarColor
         border.width: 1
-        border.color: "black"
+        border.color: btStyle.toolbarColor
 
         PrevNextArrow {
             id: prevHistory
 
             background: btStyle.toolbarColor
             textColor: btStyle.toolbarTextColor
+            borderColor: btStyle.toolbarTextColor
             prev: true
             width: parent.height * 0.80
             height: parent.height * 0.80
@@ -109,6 +110,7 @@ Rectangle {
 
             background: btStyle.toolbarColor
             textColor: btStyle.toolbarTextColor
+            borderColor: btStyle.toolbarTextColor
             prev: false
             width: parent.height * 0.80
             height: parent.height * 0.80
@@ -134,7 +136,7 @@ Rectangle {
             anchors.leftMargin: parent.height * 0.1
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             color: btStyle.textBackgroundColor
-            border.color: btStyle.buttonBorder
+            border.color: btStyle.toolbarTextColor
             border.width: 2
 
             Text {
@@ -178,8 +180,8 @@ Rectangle {
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.leftMargin:  parent.height * 0.1
             color: btStyle.textBackgroundColor
-            border.color: btStyle.buttonBorder
-            border.width: 1
+            border.color: btStyle.toolbarTextColor
+            border.width: 2
 
             Text {
                 id: referenceText

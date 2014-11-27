@@ -7,6 +7,7 @@ Item {
     property color background: "#000000"
     property bool show: false
     property bool prev: false
+    property color borderColor: "black"
     property color textColor: Qt.rgba(1,1,1, 1)
     onTextColorChanged: canvas.requestPaint();
 
@@ -16,6 +17,14 @@ Item {
         anchors.fill: parent
         color: background
         opacity: show ? 0 : 0.7
+        z: 2
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        color: Qt.rgba(0,0,0,0)
+        border.width: 1
+        border.color: borderColor
         z: 1
     }
 
