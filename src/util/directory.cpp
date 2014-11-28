@@ -90,14 +90,14 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
-#ifndef BT_MINI
+#if !defined BT_MINI && !defined BT_MOBILE
     if (!cachedApplicationSwordDir->cd("share/sword") || !cachedApplicationSwordDir->isReadable()) {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
 #endif
 
-#ifndef Q_OS_WINCE
+#if !defined Q_OS_WINCE && !defined BT_MOBILE
     cachedSharedSwordDir.reset(new QDir(qgetenv("ALLUSERSPROFILE"))); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd("Application Data")) {
         qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data";
