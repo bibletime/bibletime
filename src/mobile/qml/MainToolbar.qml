@@ -20,7 +20,7 @@ Rectangle {
     z:0
     onEnabledChanged: {
         menuButton.visible = toolbar.enabled
-        searchIcon.visible = toolbar.enabled
+        searchIconQml.visible = toolbar.enabled
     }
 
     signal buttonClicked

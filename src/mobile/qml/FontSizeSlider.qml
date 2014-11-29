@@ -38,6 +38,7 @@ Rectangle {
         var height = titleText.contentHeight + slider.height * 1.4 + buttons.height;
         height = height + titleText.anchors.topMargin;
         height = height + buttons.anchors.bottomMargin + buttons.anchors.topMargin;
+        height = height + btStyle.pixelsPerMillimeterX*3
         return height;
     }
     width: {
@@ -107,8 +108,8 @@ Rectangle {
 
         Button {
             id: okButton
-            height: btStyle.pixelsPerMillimeterY * 5
-            width: btStyle.pixelsPerMillimeterY * 18
+            height: titleText.height
+            width: fontPointSize.width/4
             action: okAction
             style: BtButtonStyle {
             }
@@ -125,8 +126,8 @@ Rectangle {
 
         Button {
             id: cancelButton
-            height: btStyle.pixelsPerMillimeterY * 5
-            width: btStyle.pixelsPerMillimeterY * 18
+            height: titleText.height
+            width: fontPointSize.width/4
             action: cancelAction
             style: BtButtonStyle {
             }

@@ -94,7 +94,7 @@ Rectangle {
                 var pixel = btStyle.pixelsPerMillimeterY * 7;
                 var uiFont = titleText.contentHeight;
                 var uiHeight = Math.max(pixel, uiFont);
-                return uiHeight * 1.1;
+                return uiHeight * 1.25;
             }
 
             Action {
@@ -120,14 +120,14 @@ Rectangle {
 
             Gradient {
                 id: gradient2
-                GradientStop { position: 0 ; color: manageButton.pressed ? "#dbb" : "#fdd" }
-                GradientStop { position: 1 ; color: manageButton.pressed ? "#b99" : "#dbb" }
+                GradientStop { position: 0 ; color: manageButton.pressed ? "#daa" : "#fcc" }
+                GradientStop { position: 1 ; color: manageButton.pressed ? "#b88" : "#daa" }
             }
 
             Gradient {
                 id: gradient3
-                GradientStop { position: 0 ; color: manageButton.pressed ? "#bdb" : "#dfd" }
-                GradientStop { position: 1 ; color: manageButton.pressed ? "#9b9" : "#bdb" }
+                GradientStop { position: 0 ; color: manageButton.pressed ? "#ada" : "#cfc" }
+                GradientStop { position: 1 ; color: manageButton.pressed ? "#8b8" : "#ada" }
             }
 
             Button{
@@ -161,7 +161,7 @@ Rectangle {
                     background: Rectangle {
                         implicitWidth: 100
                         implicitHeight: 25
-                        border.width: manageButton.checked ? 7 : 1
+                        border.width: manageButton.checked ? 4 : 1
                         border.color: manageButton.checked ? "black" : "#777"
                         radius: 4
 

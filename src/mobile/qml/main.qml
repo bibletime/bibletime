@@ -79,8 +79,8 @@ Rectangle {
         mainMenus.visible = ! mainMenus.visible
     }
 
-    width:  480
-    height: 800
+    width:  1000
+    height: 750
 
     rotation: 0
 

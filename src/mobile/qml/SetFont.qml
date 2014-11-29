@@ -24,7 +24,7 @@ Rectangle {
 
     signal textFontChanged
 
-    height: languageRow.height + slider.height + buttons.height + buttons.anchors.bottomMargin + languageRow.anchors.bottomMargin
+    height: languageRow.height + slider.height + buttons.height + buttons.anchors.bottomMargin + languageRow.anchors.bottomMargin +btStyle.pixelsPerMillimeterX*3
     width: {
         var width = Math.min(parent.width, parent.height);
         width = width - 2 * anchors.rightMargin
@@ -101,7 +101,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: btStyle.pixelsPerMillimeterX * 2
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: btStyle.pixelsPerMillimeterX * 1.8
+        spacing: btStyle.pixelsPerMillimeterX * 2
 
         Text {
             id: title
@@ -185,6 +185,7 @@ Rectangle {
             id: slider
 
             width: languageCombo.width
+            height: fontSize.height
             minimumValue: 10
             maximumValue: 30
             onValueChanged: {
@@ -216,8 +217,8 @@ Rectangle {
 
         Button {
             id: okButton
-            height: btStyle.pixelsPerMillimeterY * 5
-            width: btStyle.pixelsPerMillimeterY * 18
+            height: fontCombo.height
+            width: languageCombo.width/3
             action: okAction
             style: BtButtonStyle {
             }
@@ -235,8 +236,8 @@ Rectangle {
 
         Button {
             id: cancelButton
-            height: btStyle.pixelsPerMillimeterY * 5
-            width: btStyle.pixelsPerMillimeterY * 18
+            height: fontCombo.height
+            width: languageCombo.width/3
             action: cancelAction
             style: BtButtonStyle {
             }

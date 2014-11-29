@@ -28,23 +28,27 @@ Rectangle {
     Column {
         id: column
         property real ppmy: btStyle.pixelsPerMillimeterY
+        property real buttonWidth: {
+            var w = column.ppmy * 0.7;
+            return Math.max(3, w);
+        }
 
         spacing: menuButton.height*0.1
 
         Rectangle {
             color: foreground
-            width: column.ppmy * 0.7
-            height:column.ppmy * 0.7
+            width: column.buttonWidth
+            height:column.buttonWidth
         }
         Rectangle {
             color: foreground
-            width:column.ppmy * 0.7
-            height:column.ppmy * 0.7
+            width: column.buttonWidth
+            height:column.buttonWidth
         }
         Rectangle {
             color: foreground
-            width:column.ppmy * 0.7
-            height:column.ppmy * 0.7
+            width: column.buttonWidth
+            height:column.buttonWidth
         }
 
         anchors.centerIn: parent
