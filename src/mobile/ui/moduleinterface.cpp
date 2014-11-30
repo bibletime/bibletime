@@ -85,6 +85,7 @@ void ModuleInterface::updateCategoryAndLanguageModels() {
     getCategoriesAndLanguages();
     setupTextModel(m_categories, &m_categoryModel);
     setupTextModel(m_languages, &m_languageModel);
+    updateWorksModel();
     object->setProperty("categoryModel", QVariant::fromValue(&m_categoryModel));
     object->setProperty("languageModel", QVariant::fromValue(&m_languageModel));
 }
