@@ -52,6 +52,7 @@ QScopedPointer<QDir> cachedSwordLocalesDir;
 
 #ifdef Q_OS_ANDROID
 QScopedPointer<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
+static const char AND_BIBLE[] = "/storage/sdcard0/Android/data/net.bible.android.activity/files";
 #endif
 
 #if defined Q_OS_WIN || defined Q_OS_SYMBIAN
@@ -84,7 +85,10 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_ANDROID
     cachedSharedSwordDir.reset(new QDir());
-    cachedSharedSwordDir->cd("/storage/sdcard0/Android/data/net.bible.android.activity/files");
+    if (!cachedSharedSwordDir->cd(AND_BIBLE)) {
+        cachedSharedSwordDir->mkpath(AND_BIBLE);
+        cachedSharedSwordDir->cd(AND_BIBLE);
+    }
 #endif
 
 
