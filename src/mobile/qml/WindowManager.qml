@@ -232,6 +232,8 @@ Rectangle {
     }
 
     function layoutWindows() {
+        tipText.visible = (windows.length == 0);
+
         tabbedWindows.z = -2;
         gridWindows.z = -3;
 
@@ -253,6 +255,16 @@ Rectangle {
     }
 
     onWindowArrangementChanged: layoutWindows()
+
+    Text {
+        id: tipText
+
+        text: QT_TR_NOOP("Use the \"New Window\" menu to open a document.")
+        anchors.centerIn: parent
+        font.pointSize: btStyle.uiFontPointSize;
+        color: btStyle.textColor
+        z: +10
+    }
 
     Grid {
         id: gridWindows
