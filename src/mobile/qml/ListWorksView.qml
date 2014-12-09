@@ -97,6 +97,13 @@ Rectangle {
                 return uiHeight * 1.25;
             }
 
+            Text {
+                id: dummyTextForHeight
+                text: "x"
+                font.pointSize: btStyle.uiFontPointSize
+                visible: false
+            }
+
             Action {
                 id: manageAction
                 text: {
@@ -152,7 +159,7 @@ Rectangle {
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 width: btStyle.uiFontPointSize * 11
-                height: entry.height * 0.8
+                height: dummyTextForHeight.height*1.5
 
                 checkable: true;
                 style: ButtonStyle {

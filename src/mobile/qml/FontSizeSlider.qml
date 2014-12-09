@@ -108,7 +108,7 @@ Rectangle {
 
         Button {
             id: okButton
-            height: titleText.height
+            height: titleText.height*1.5
             width: fontPointSize.width/4
             action: okAction
             style: BtButtonStyle {
@@ -126,7 +126,7 @@ Rectangle {
 
         Button {
             id: cancelButton
-            height: titleText.height
+            height: titleText.height*1.5
             width: fontPointSize.width/4
             action: cancelAction
             style: BtButtonStyle {

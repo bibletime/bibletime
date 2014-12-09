@@ -87,6 +87,7 @@ Rectangle {
         Button {
             id: yesButton
             width: btStyle.pixelsPerMillimeterY * 25
+            height: questionText.height*1.5
             action: yesAction
             style: BtButtonStyle {
             }
@@ -105,6 +106,7 @@ Rectangle {
         Button {
             id: noButton
             width: btStyle.pixelsPerMillimeterY * 25
+            height: questionText.height*1.5
             action: noAction
             style: BtButtonStyle {
             }

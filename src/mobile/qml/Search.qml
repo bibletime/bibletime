@@ -58,8 +58,6 @@ FocusScope {
             color: btStyle.toolbarColor
             width: parent.width
             height: btStyle.pixelsPerMillimeterY * 7
-            border.color: "black"
-            border.width: 1
 
             Text {
                 id: title
@@ -91,6 +89,7 @@ FocusScope {
                         id: textInput
 
                         width: search.width -searchButton.width - search.spacing * 3
+                        height: searchIn.height*1.4
                         font.pointSize: btStyle.uiFontPointSize
                         verticalAlignment: Text.AlignVCenter
                         inputMethodHints: Qt.ImhNoAutoUppercase
@@ -104,7 +103,7 @@ FocusScope {
                                 radius: 6
                                 anchors.fill: parent
                                 border.color: btStyle.textColor
-                                border.width: 1
+                                border.width: 2
                                 color: btStyle.textBackgroundColor
                             }
                         }
@@ -222,7 +221,6 @@ FocusScope {
                 id: searchInLabel
                 text: "Search in"
                 font.pointSize: btStyle.uiFontPointSize
-                height: searchInLabel.contentHeight
                 color: btStyle.textColor
             }
 
@@ -230,6 +228,7 @@ FocusScope {
                 id: searchComboBox
 
                 width: search.width * 2 / 3
+
 
                 style: ComboBoxStyle {
                     label: Text {
@@ -242,7 +241,6 @@ FocusScope {
                     }
                 }
 
-                model: [ "ESV, KJV, Josephus", "ESV", "KJV", "Josephus" ]
             }
         }
 

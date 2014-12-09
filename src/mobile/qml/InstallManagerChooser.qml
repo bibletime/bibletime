@@ -112,6 +112,14 @@ Rectangle {
         }
     }
 
+    Text {
+        id: dummyTextForHeight
+        text: "x"
+        font.pointSize: btStyle.uiFontPointSize
+        visible: false
+    }
+
+
     Row {
         id: buttonRow
 
@@ -131,7 +139,8 @@ Rectangle {
 
         Button {
             id: refreshButton
-            width: installManager.width * 4.8 / 10;
+            width: installManager.width * 4.5 / 10;
+            height: dummyTextForHeight.height*1.5
             action: refreshAction
             style: BtButtonStyle {
             }
@@ -147,7 +156,8 @@ Rectangle {
 
         Button {
             id: installRemoveButton
-            width: installManager.width * 4.8 / 10;
+            width: installManager.width * 4.5 / 10;
+            height: dummyTextForHeight.height*1.5
             action: installRemoveAction
             style: BtButtonStyle {
             }
