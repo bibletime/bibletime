@@ -260,10 +260,16 @@ Rectangle {
         id: tipText
 
         text: QT_TR_NOOP("Use the \"New Window\" menu to open a document.")
-        anchors.centerIn: parent
+        anchors.left: windowManager.left
+        anchors.right: windowManager.right
+        anchors.verticalCenter: windowManager.verticalCenter
+        anchors.margins: btStyle.pixelsPerMillimeterX*6
+        horizontalAlignment: Text.AlignJustify
         font.pointSize: btStyle.uiFontPointSize;
         color: btStyle.textColor
-        z: +10
+        visible: false
+        wrapMode: Text.Wrap
+        z: 10
     }
 
     Grid {
