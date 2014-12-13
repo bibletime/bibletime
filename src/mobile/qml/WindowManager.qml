@@ -185,6 +185,7 @@ Rectangle {
             window.height = height;
             window.width = width;
             window.parent = gridWindows;
+            window.border.width = 1;
         }
     }
 
@@ -194,7 +195,8 @@ Rectangle {
         for (var i=0; i<windows.length; ++i) {
             var window = windows[i];
             window.parent = tabbedWindowsStack;
-            window.anchors.fill = tabbedWindowsStack
+            window.anchors.fill = tabbedWindowsStack;
+            window.border.width = 0;
         }
     }
 
@@ -205,6 +207,7 @@ Rectangle {
             var window = windows[i];
             window.parent = tabbedWindowsStack;
             window.anchors.fill = tabbedWindowsStack
+            window.border.width = 0;
         }
     }
 
@@ -278,7 +281,7 @@ Rectangle {
         objectName: "gridWindows"
         anchors.fill: parent
         columns: 2
-        spacing: 2
+        spacing: 0
         z: 2
         onWidthChanged: {
             layoutWindows();

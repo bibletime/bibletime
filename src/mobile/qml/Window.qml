@@ -18,6 +18,8 @@ Rectangle {
 
     property string title: toolbar.title
 
+    border.color: btStyle.toolbarTextColor
+
     signal swipeLeft
     signal swipeRight
 
@@ -73,18 +75,19 @@ Rectangle {
 
         property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
 
-        width: parent.width
         height: {
             var pixel = btStyle.pixelsPerMillimeterY * 8;
             var uiFont = btStyle.uiFontPointSize * 4.4;
             var mix = pixel * 0.7 + uiFont * 0.3;
             return Math.max(pixel, mix);
         }
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.margins: 1
 
 
         color: btStyle.toolbarColor
-        border.width: 1
-        border.color: btStyle.toolbarColor
 
         PrevNextArrow {
             id: prevHistory
@@ -216,6 +219,7 @@ Rectangle {
         anchors.left: windowView.left
         anchors.right: windowView.right
         anchors.bottom: windowView.bottom
+        anchors.margins: 2
 
         ListView {
             id: listView
