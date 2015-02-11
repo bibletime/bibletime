@@ -434,7 +434,7 @@ private: /* Methods: */
 
     /**
       Initializes CSwordModuleInfo::m_cachedLanguage.
-      \pre CSwordModuleInfo::m_cachedLanguage must be set
+      \pre CSwordModuleInfo::m_cachedCategory must be set
     */
     void initCachedLanguage();
 
