@@ -1,0 +1,30 @@
+language: cpp
+
+branches:
+  only:
+    - master
+    - /stable-.*/
+
+os:
+  - linux
+
+compiler:
+  - gcc
+  - clang
+
+install:
+  - svn checkout https://crosswire.org/svn/sword/trunk sword-trunk
+  - cd sword-trunk
+  - mkdir b
+  - cd b
+  - cmake ..
+  - make
+  - sudo make install
+  - cd ../..
+
+script:
+  - mkdir b
+  - cd b
+  - cmake ..
+  - make
+  - sudo make install
