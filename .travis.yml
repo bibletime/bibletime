@@ -40,5 +40,21 @@ script:
   - make
   - sudo make install
 
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "VjsU8+6Sca7TXbR5zQstHw6eb4Dv0ZifqE29DRT+n64VKxAWFaWazJ4VJNlHvd8ChiJRfFcXVVXfNgNMAHE/JJHt1GgSPwIqSEE2mQh+7tqfSeBV/5yBkF7Fs4QIOrWjdEhEHTt0+wc6wtoVghEHvWlk3Lymb4x0UQDZtz/a4cI="
+
+addons:
+  coverity_scan:
+    project:
+      name: "bibletime/bibletime"
+      description: "BibleTime build submitted via Travis CI"
+    notification_email: bibletime-coverity@heh.ee
+    build_command_prepend: "mkdir b && cd b && /usr/local/bin/cmake .."
+    build_command:   "make && sudo make install"
+    branch_pattern: /.*_coverity_scan$/
+
 notifications:
   irc: "chat.freenode.net#bibletime"
