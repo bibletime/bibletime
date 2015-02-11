@@ -39,3 +39,6 @@ script:
   - cmake ..
   - make
   - sudo make install
+
+notifications:
+  irc: "chat.freenode.net#bibletime"
