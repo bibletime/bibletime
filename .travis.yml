@@ -12,8 +12,12 @@ compiler:
   - gcc
   - clang
 
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libqt4-dev qt4-qmake libclucene-dev
+
 install:
-  - svn checkout https://crosswire.org/svn/sword/trunk sword-trunk
+  - svn checkout --non-interactive --trust-server-cert https://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
   - mkdir b
   - cd b
