@@ -45,7 +45,7 @@ addons:
       description: "BibleTime build submitted via Travis CI"
     notification_email: bibletime-coverity@heh.ee
     build_command_prepend: "mkdir b && cd b && /usr/local/bin/cmake .."
-    build_command:   "make && sudo make install"
+    build_command: "make"
     branch_pattern: .*_coverity_scan
 
 notifications:
