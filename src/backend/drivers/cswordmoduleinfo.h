@@ -425,19 +425,6 @@ protected: /* Methods: */
     QString getSimpleConfigEntry(const QString & name) const;
     QString getFormattedConfigEntry(const QString & name) const;
 
-private: /* Methods: */
-
-    /**
-      Initializes CSwordModuleInfo::m_cachedCategory.
-    */
-    void initCachedCategory();
-
-    /**
-      Initializes CSwordModuleInfo::m_cachedLanguage.
-      \pre CSwordModuleInfo::m_cachedCategory must be set
-    */
-    void initCachedLanguage();
-
 signals:
 
     void hasIndexChanged(bool hasIndex);

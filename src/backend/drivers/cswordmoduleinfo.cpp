@@ -61,8 +61,49 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
       m_cachedName(QString::fromUtf8(module->getName())),
       m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
 {
-    initCachedCategory();
-    initCachedLanguage();
+    // Initialize m_cachedCategory:
+    {
+        /// \todo Maybe we can use raw string comparsion instead of QString?
+        QString const cat(m_module->getConfigEntry("Category"));
+
+        /// \warning cat has to be checked before m_type !!!
+        if (cat == "Cults / Unorthodox / Questionable Material") {
+            m_cachedCategory = Cult;
+        } else if (cat == "Daily Devotional"
+                   || m_module->getConfig().has("Feature","DailyDevotion"))
+        {
+            m_cachedCategory = DailyDevotional;
+        } else if (cat == "Glossaries"
+                   || m_module->getConfig().has("Feature", "Glossary"))
+        {
+            m_cachedCategory = Glossary;
+        } else if (cat == "Images" || cat == "Maps") {
+            m_cachedCategory = Images;
+        } else {
+            switch (m_type) {
+                case Bible:       m_cachedCategory = Bibles; break;
+                case Commentary:  m_cachedCategory = Commentaries; break;
+                case Lexicon:     m_cachedCategory = Lexicons; break;
+                case GenericBook: m_cachedCategory = Books; break;
+                case Unknown: // Fall thru
+                default:          m_cachedCategory = UnknownCategory; break;
+            }
+        }
+    }
+
+    // Initialize m_cachedLanguage:
+    {
+        CLanguageMgr const & lm = *CLanguageMgr::instance();
+        if (m_cachedCategory == Glossary) {
+            /*
+              Special handling for glossaries, we use the "from language" as
+              language for the module.
+            */
+            m_cachedLanguage = lm.languageForAbbrev(config(GlossaryFrom));
+        } else {
+            m_cachedLanguage = lm.languageForAbbrev(m_module->getLanguage());
+        }
+    }
 
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",
                                              QStringList()).contains(m_cachedName);
@@ -699,48 +740,6 @@ void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
                      ? key->key().toUtf8().constData()
                      : key->key().toLocal8Bit().constData());
     m_module->deleteEntry();
-}
-
-void CSwordModuleInfo::initCachedCategory() {
-    /// \todo Maybe we can use raw string comparsion instead of QString?
-    const QString cat(m_module->getConfigEntry("Category"));
-
-    /// \warning cat has to be checked before m_type !!!
-    if (cat == "Cults / Unorthodox / Questionable Material") {
-        m_cachedCategory = Cult;
-    } else if (cat == "Daily Devotional"
-               || m_module->getConfig().has("Feature","DailyDevotion"))
-    {
-        m_cachedCategory = DailyDevotional;
-    } else if (cat == "Glossaries"
-               || m_module->getConfig().has("Feature", "Glossary"))
-    {
-        m_cachedCategory = Glossary;
-    } else if (cat == "Images" || cat == "Maps") {
-        m_cachedCategory = Images;
-    } else {
-        switch (m_type) {
-            case Bible:       m_cachedCategory = Bibles; break;
-            case Commentary:  m_cachedCategory = Commentaries; break;
-            case Lexicon:     m_cachedCategory = Lexicons; break;
-            case GenericBook: m_cachedCategory = Books; break;
-            case Unknown: // Fall thru
-            default:          m_cachedCategory = UnknownCategory; break;
-        }
-    }
-}
-
-void CSwordModuleInfo::initCachedLanguage() {
-    const CLanguageMgr & lm = *CLanguageMgr::instance();
-    if (m_cachedCategory == Glossary) {
-        /*
-          Special handling for glossaries, we use the "from language" as
-          language for the module.
-        */
-        m_cachedLanguage = lm.languageForAbbrev(config(GlossaryFrom));
-    } else {
-        m_cachedLanguage = lm.languageForAbbrev(m_module->getLanguage());
-    }
 }
 
 Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
