@@ -46,7 +46,7 @@ addons:
     notification_email: bibletime-coverity@heh.ee
     build_command_prepend: "mkdir b && cd b && /usr/local/bin/cmake .."
     build_command:   "make && sudo make install"
-    branch_pattern: /.*_coverity_scan$/
+    branch_pattern: .*_coverity_scan
 
 notifications:
   irc: "chat.freenode.net#bibletime"
