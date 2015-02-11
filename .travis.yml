@@ -13,6 +13,16 @@ compiler:
   - clang
 
 before_install:
+  - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
+  - cd sword-trunk
+  - mkdir b
+  - cd b
+  - cmake ..
+  - make
+  - sudo make install
+  - cd ../..
+
+install:
   - wget http://www.cmake.org/files/v2.8/cmake-2.8.9.tar.gz
   - tar -xzf cmake-2.8.9.tar.gz
   - cd cmake-2.8.9
@@ -22,16 +32,6 @@ before_install:
   - cd ..
   - sudo apt-get update -qq
   - sudo apt-get install -qq libqt4-dev qt4-qmake libclucene-dev
-
-install:
-  - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
-  - cd sword-trunk
-  - mkdir b
-  - cd b
-  - cmake ..
-  - make
-  - sudo make install
-  - cd ../..
 
 script:
   - mkdir b
