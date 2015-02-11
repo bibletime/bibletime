@@ -31,9 +31,10 @@ QString CrossRefRendering::finishText(const QString &text, const KeyTree &tree) 
 QString CrossRefRendering::entryLink(const KeyTreeItem &item,
                                      const CSwordModuleInfo *module)
 {
+    Q_ASSERT(module);
     QString linkText;
 
-    const bool isBible = module && (module->type() == CSwordModuleInfo::Bible);
+    const bool isBible = (module->type() == CSwordModuleInfo::Bible);
     CSwordVerseKey vk(module); //only valid for bible modules, i.e. isBible == true
     if (isBible) {
         vk.setKey(item.key());
