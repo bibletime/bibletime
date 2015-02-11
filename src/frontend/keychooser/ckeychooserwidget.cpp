@@ -157,17 +157,13 @@ void CKeyChooserWidget::reset(const QStringList * list, int index, bool do_emit)
     //DON'T REMOVE THE HIDE: Otherwise QComboBox's sizeHint() function won't work properly
     m_comboBox->hide();
     m_comboBox->clear();
-    if (list)
-        m_comboBox->insertItems(-1, *list);
-
-    if (!list || (list && !list->count())) { // nothing in the combobox
-        setEnabled(false);
-    } else if (!isEnabled()) { // was disabled
+    if (list && !list->empty()) {
+        m_comboBox->insertItems(0, *list); // Prepend items
         setEnabled(true);
-    }
-
-    if (list && list->count())
         m_comboBox->setCurrentIndex(index);
+    } else {
+        setEnabled(false);
+    }
 
     if (do_emit)
         emit changed(m_comboBox->currentIndex());
