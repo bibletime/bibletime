@@ -19,7 +19,7 @@
     </author>
     <author>
       <firstname></firstname>
-      <surname>O Time BibleTime</surname>
+      <surname>The BibleTime Team</surname>
     </author>
   </authorgroup>
   
@@ -27,8 +27,8 @@
 <copyright> <year>1999-2014</year> <holder>The &bibletime; Team
 (bt-devel@crosswire.org)</holder> </copyright>
   <legalnotice>
-    <para>Este documento foi originalmente criado pelo Sr. Bob Harman e é licenciado
-pelos termos da licença<ulink
+    <para>This document was originally created by Mr. Bob Harman and is licensed under
+the terms of the license <ulink
 url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons
 Attribution-Share Alike"</ulink>.</para>
     <para>Citações das Escrituras no original em inglês são da New American Standard
@@ -39,12 +39,12 @@ Bible.Na tradução em português foi usada a edição Almeida e Corrigida Fiel
     <title>Resumo</title>
     <para>O <application>Estudo Bíblico HowTo</application> é um guia para estudo da
 Bíblia.</para>
-    <para>A esperança do time do &bibletime; é que esse Como Fazer incentive os
-leitores a estudar as escrituras e ver o que elas dizem. Esse guia de estudo
-particular foi escolhido porque não promove nenhuma doutrina denominacional
-em particular. Nós esperamos que você leia e estude as escrituras para
-entender o que elas dizem. Se você começar com a atitude de querer que o
-Senhor mostre sua Palavra em seu coração, Ele não desapontará você.</para>
+    <para>It is the hope of the &bibletime; team that this HowTo will provoke the
+readers to study the scriptures to see what they say. This particular study
+guide has been chosen as it takes care not to advocate any particular
+denominational doctrine. We recommend you to read and study the scriptures
+to understand what they say. If you start with the attitude that you want to
+have the Lord sow his word in your heart He will not disappoint you.</para>
   </abstract>
   <keywordset>
     <keyword>Bíblia</keyword>

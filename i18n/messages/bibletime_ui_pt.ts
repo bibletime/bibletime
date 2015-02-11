@@ -52,7 +52,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="120"/>
         <source>&amp;Show toolbar</source>
-        <translation>&amp;Ver barra de ferramentas</translation>
+        <translation>&amp;Mostrar barra de ferramentas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="113"/>
@@ -77,7 +77,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="729"/>
         <source>&amp;Load session</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Carregar sessão</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="730"/>
@@ -192,7 +192,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="163"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation>Organizar automaticamente as janelas abertas horizontalmente (arranjo uma em cima da outra)</translation>
+        <translation>Organizar automaticamente as janelas abertas horizontalmente (colocar uma em cima da outra)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="167"/>
@@ -207,7 +207,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Ta&amp;bbed</source>
-        <translation>Separa&amp;dores&amp;</translation>
+        <translation>Separa&amp;dores</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="177"/>
@@ -292,7 +292,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="373"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation>Mudar a visibilidade da estante</translation>
+        <translation>Mudar a visibilidade da janela da estante</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="377"/>
@@ -332,7 +332,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="728"/>
         <source>&amp;Save session</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Guardar sessão</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="752"/>
@@ -442,17 +442,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime.cpp" line="196"/>
         <source>Enter the unlock key for %1.</source>
-        <translation>Entre com a chave para %1.</translation>
+        <translation>Introduza a chave de desbloqueio para %1.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="216"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation>Atenção: Chave inválida!</translation>
+        <translation>Aviso: Chave de desbloqueio inválida!</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="217"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation>A chave fornecida não desbloqueou este módulo correctamente. Por favor, tente novamente.</translation>
+        <translation>A chave de desbloqueio fornecida não desbloqueou este módulo correctamente. Por favor, tente novamente.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="257"/>
@@ -488,7 +488,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation>Bibletime é lançado sob a licença GPL. Você pode descarregar e usar o programa para propósitos pessoais, privados, públicos ou comerciais, sem restrições, mas para ceder ou distribuir o programa, você tem que necessariamente distribuir o correspondente código fonte.</translation>
+        <translation>O Bibletime é lançado sob a licença GPL. Você pode trasnferir e usar o programa para propósitos pessoais, privados, públicos ou comerciais sem restrições, mas para ceder ou distribuir o programa, você tem que necessariamente distribuir o código fonte correspondente.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
@@ -513,7 +513,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished"/>
+        <translation>(c)1999-2011, A Equipa do BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -528,12 +528,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="153"/>
         <source>documentation and translation manager</source>
-        <translation>Gestor de documentação e traduções</translation>
+        <translation>gestor de documentação e traduções</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
         <source>project manager</source>
-        <translation>administrador do projeto</translation>
+        <translation>gestor do projeto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -548,12 +548,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation>Alguns nomes podem ter sido esquecidos, por favor, envie um e-mail %1 para nos avisar erros e omissões.</translation>
+        <translation>Alguns nomes podem ter sido esquecidos, por favor, envie um e-mail %1 se notar erros ou omissões.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime faz uso do SWORD Project. O SWORD Project é um projecto de software livre da sociedade bíblica Crosswire. O seu propósito é criar ferramentas de código aberto e independentes de plataforma &amp;mdash; cobertas pela Licença Pública Geral GNU &amp;mdash; que permite programadores e sociedades bíblicas escreverem novos softwares bíblicos de maneira rápida e fácil.</translation>
+        <translation>BibleTime faz uso do Projecto SWORD. O Projecto SWORD é o projecto de software livre da Sociedade Bíblica Crosswire. O seu propósito é criar ferramentas de código aberto e independentes de plataforma &amp;mdash; cobertas pela Licença Pública Geral GNU &amp;mdash; que permite programadores e sociedades bíblicas escreverem novos softwares bíblicos de maneira mais rápida e fácil.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
@@ -568,7 +568,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
         <source>Qt toolkit version %1</source>
-        <translation>Qt kit de ferramentas versão %1</translation>
+        <translation>Kit de ferramentas Qt versão %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
@@ -656,7 +656,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="112"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Rolar através das entradas da lista. Pressione o botão e mova o rato para incrementar ou decrementar o item.</translation>
+        <translation>Mova-se através das entradas da lista. Pressione o botão e mova o rato para aumentar ou diminuir o item.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
@@ -752,7 +752,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="174"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation>Você está a tentar aceder a um módulo encriptado. Por favor, forneça uma chave no próximo diálogo para abrir o módulo.</translation>
+        <translation>Você está a tentar aceder a um módulo encriptado. Por favor, forneça uma chave de desbloqueio no próximo diálogo para abrir o módulo.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="223"/>
@@ -1313,7 +1313,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="51"/>
         <source>Stop</source>
-        <translation type="unfinished"/>
+        <translation>Parar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="75"/>
@@ -1328,7 +1328,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="134"/>
         <source>Cancelled</source>
-        <translation type="unfinished"/>
+        <translation>Cancelado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="61"/>
@@ -1361,7 +1361,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="unfinished"/>
+        <translation>As linguagens que podem ser usadas para os nomes de livros biblicos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="132"/>
@@ -1713,7 +1713,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="161"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation>Você pode procurar por números em negrito numa obra. Inicie com uma obra que possui números a negrito e passe o cursor por cima de uma palavra. Clique com o botão direito sobre a palavra e utilize o menu Procurar Negritos. Um diálogo de pesquisa aparecerá e permitirá que você use o mesmo número em negrito em outros lugares da obra.</translation>
+        <translation>Você pode procurar pelos números de Strong numa obra. Inicie com uma obra que possui números a negrito e passe o cursor por cima de uma palavra. Clique com o botão direito sobre a palavra e utilize o menu Procura de Strong. Um diálogo de pesquisa aparecerá e permitirá que você use o mesmo número em negrito em outros lugares da obra.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="176"/>
@@ -1728,7 +1728,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="172"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Você pode visualizar a informação do número Strong na janela Lupa passando o cursor sobre uma palavra na Bíblia que possui os números Strong. Você deve ter os léxicos StrongsGreek e StrongsHebrew de Crosswire instalados.</translation>
+        <translation>Você pode visualizar a informação do número de Strong na janela Lupa passando o cursor sobre uma palavra na Bíblia que possui os números de Strong. Você deve ter os léxicos StrongsGreek e StrongsHebrew de Crosswire instalados.</translation>
     </message>
 </context>
 <context>
@@ -1744,7 +1744,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="133"/>
         <source>Choose action group:</source>
-        <translation>Escolha um grupo de acções:</translation>
+        <translation>Escolha um grupo de acção:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="135"/>
@@ -2043,12 +2043,12 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="104"/>
         <source>Display templates</source>
-        <translation>Mostrar modelos</translation>
+        <translation>Modelos de exibição</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="111"/>
         <source>Available display styles:</source>
-        <translation>Estilos de exposição disponíveis:</translation>
+        <translation>Estilos de exibição disponíveis:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="112"/>
@@ -2058,32 +2058,32 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation>Porque Deus amou o mundo de tal maneira que deu o seu unico Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.</translation>
+        <translation>Tanto amou Deus o mundo, que lhe entregou o seu Filho Unigénito, a fim de que todo o que nele crê não se perca, mas tenha a vida eterna.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="137"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation>Porque Deus enviou o seu Filho ao mundo, não para que condenasse o mundo, mas para que o mundo fosse salvo através ele.</translation>
+        <translation>De facto, Deus não enviou o seu Filho ao mundo para condenar o mundo, mas para que o mundo seja salvo por Ele.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="144"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation>Quem crê nele não é julgado; mas quem não crê já está condenado, porque  não crê no nome do Filho unigênito de Deus.</translation>
+        <translation>Quem nele crê não é condenado, mas quem não crê já está condenado, por não crer no Filho Unigénito de Deus.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="154"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation>Porque todo aquele que faz o mal odeia a luz, e não vem para a luz, para que as suas obras não sejam reprovadas.</translation>
+        <translation>De facto, quem pratica o mal odeia a Luz e não se aproxima da Luz para que as suas acções não sejam desmascaradas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="159"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation>Mas quem pratica a verdade vem para a luz, a fim de que as suas obras sejam manifestas, porque são feitas em Deus.</translation>
+        <translation>Mas quem pratica a verdade aproxima-se da Luz, de modo a tornar-se claro que os seus actos são feitos segundo Deus.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="105"/>
         <source>Display templates define how text is displayed.</source>
-        <translation>Mostrar modelos define como o texto é exibido.</translation>
+        <translation>Modelos de exibição definem como o texto é exibido.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="109"/>
@@ -2098,7 +2098,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="149"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation>E a condenaçäo é esta: Que a luz veio ao mundo, e os homens amaram mais as trevas do que a luz, porque as suas obras eram más. </translation>
+        <translation>E a condenação está nisto: a Luz veio ao mundo, e os homens preferiram as trevas à Luz, porque as suas obras eram más.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="100"/>
@@ -2111,7 +2111,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="139"/>
         <source>Back in history</source>
-        <translation>Voltar no histórico</translation>
+        <translation>Regredir no histórico</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="147"/>
@@ -2136,7 +2136,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
         <source>Change location</source>
-        <translation>Mudar local</translation>
+        <translation>Mudar localização</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="133"/>
@@ -2208,17 +2208,17 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Font</source>
-        <translation>Fonte</translation>
+        <translation>Tipo de letra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="208"/>
         <source>Font size</source>
-        <translation>Tamanho da Fonte</translation>
+        <translation>Tamanho do tipo de letra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="217"/>
         <source>Font color</source>
-        <translation>Cor da Fonte</translation>
+        <translation>Cor do tipo de letra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="72"/>
@@ -2254,7 +2254,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="47"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Rolar através das entradas da lista. Prima o botão e mova o rato para aumentar ou diminuir o item.</translation>
+        <translation>Mova-se através das entradas da lista. Pressione o botão e mova o rato para aumentar ou diminuir o item.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="45"/>
@@ -2287,12 +2287,12 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="58"/>
         <source>Copy reference only</source>
-        <translation>Copiar somente as referências</translation>
+        <translation>Copiar somente a referência</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="61"/>
         <source>Save entry as HTML</source>
-        <translation>Guardar entradas como HTML</translation>
+        <translation>Guardar entrada como HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="64"/>
@@ -2302,7 +2302,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="76"/>
         <source>Strong&apos;s Search</source>
-        <translation>Procura por Negritos</translation>
+        <translation>Procura de Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="67"/>
@@ -2407,7 +2407,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="228"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation type="unfinished"/>
+        <translation>Ficheiros HTML (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="245"/>
@@ -2417,7 +2417,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="246"/>
         <source>Search text :</source>
-        <translation type="unfinished"/>
+        <translation>Procurar texto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
@@ -2734,18 +2734,18 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="110"/>
         <source>Save text before closing?</source>
-        <translation type="unfinished"/>
+        <translation>Guardar texto antes de fechar?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="140"/>
         <source>Save changed text?</source>
-        <translation type="unfinished"/>
+        <translation>Guardar texto alterado?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="110"/>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="140"/>
         <source>Save Text?</source>
-        <translation type="unfinished"/>
+        <translation>Guardar Texto?</translation>
     </message>
 </context>
 <context>
@@ -2774,7 +2774,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="392"/>
         <source>Strongs</source>
-        <translation>Negritos</translation>
+        <translation>Strong&apos;s</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="474"/>
@@ -2813,7 +2813,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="408"/>
         <source>An internal error occurred while building the index: %1</source>
-        <translation>Ocorreu um erro interno durante a construção do índice. %1</translation>
+        <translation>Ocorreu um erro interno durante a construção do índice: %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
@@ -2893,7 +2893,7 @@ Deseja continuar?</translation>
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
         <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
-        <translation type="unfinished"/>
+        <translation>Nomes de idiomas</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
@@ -3025,7 +3025,7 @@ Deseja continuar?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="222"/>
         <source>Czech</source>
         <extracomment>Language name cs</extracomment>
-        <translation>Tcheco</translation>
+        <translation>Checo</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
@@ -3391,7 +3391,7 @@ Deseja continuar?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="398"/>
         <source>Nepali</source>
         <extracomment>Language name ne</extracomment>
-        <translation type="unfinished"/>
+        <translation>Nepalês</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="400"/>
@@ -3628,13 +3628,13 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="469"/>
         <source>Sranan</source>
         <extracomment>Language name srn</extracomment>
-        <translation>sranam tongo (taki-taki)</translation>
+        <translation>Surinamês</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="521"/>
         <source>Yiddish</source>
         <extracomment>Language name yi</extracomment>
-        <translation>Iídiche</translation>
+        <translation>Ídiche</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="526"/>
@@ -3765,7 +3765,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
         <source>Export</source>
-        <translation type="unfinished"/>
+        <translation>Exportar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>
@@ -3775,47 +3775,47 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="31"/>
         <source>Remote</source>
-        <translation type="unfinished"/>
+        <translation>Remoto</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="417"/>
         <source>Old testament</source>
-        <translation type="unfinished"/>
+        <translation>Antigo Testamento</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="418"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished"/>
+        <translation>Moisés/Pentateuco/Torá</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="419"/>
         <source>History</source>
-        <translation type="unfinished"/>
+        <translation>História</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="420"/>
         <source>Prophets</source>
-        <translation type="unfinished"/>
+        <translation>Profetas</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="421"/>
         <source>New testament</source>
-        <translation type="unfinished"/>
+        <translation>Novo Testamento</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="422"/>
         <source>Gospels</source>
-        <translation type="unfinished"/>
+        <translation>Evangelhos</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="423"/>
         <source>Letters/Epistles</source>
-        <translation type="unfinished"/>
+        <translation>Cartas/Epístolas</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="424"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished"/>
+        <translation>Epístolas de Paulo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>
@@ -3854,7 +3854,7 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="37"/>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="48"/>
         <source>BibleTime bookmark files</source>
-        <translation>Ficheiros marcadores do BibleTime</translation>
+        <translation>Ficheiros dos marcadores do BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="125"/>
@@ -3886,7 +3886,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="57"/>
         <source>The file couldn&apos;t be saved.</source>
-        <translation type="unfinished"/>
+        <translation>O ficheiro não pode ser guardado</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="58"/>
@@ -3906,7 +3906,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="187"/>
         <source>Encrypted - needs unlock key</source>
-        <translation>Encriptado - precisa da chave de desbloqueamento</translation>
+        <translation>Encriptado - precisa da chave de desbloqueio</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="211"/>
@@ -4041,7 +4041,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="556"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation>Analisar Números Strong</translation>
+        <translation>A analisar Números de Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="159"/>
@@ -4257,7 +4257,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
         <source>The text you want to search for</source>
-        <translation>O texto que você deseja pesquisar</translation>
+        <translation>O texto que quer procurar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
@@ -4552,7 +4552,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation>Localiza versículos com o número grego 846</translation>
+        <translation>Localiza versículos com o número grego de Strong 846</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
@@ -4813,87 +4813,87 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="234"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"/>
+        <translation>Obras padrões são usadas quando nenhuma obra particular é especificada, por exemplo quando uma hiperligação para uma Bíblia ou lexico foi clicada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="237"/>
         <source>Bible:</source>
-        <translation type="unfinished"/>
+        <translation>Bíblia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="238"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished"/>
+        <translation>A Bíblia padrão é usada quando uma hiperligação para uma Bíblia é clicada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="240"/>
         <source>Commentary:</source>
-        <translation type="unfinished"/>
+        <translation>Comentário</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="241"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished"/>
+        <translation>O comentário padrão é usado quando uma hiperligação para um comentário é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="243"/>
         <source>Lexicon:</source>
-        <translation type="unfinished"/>
+        <translation>Léxico</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="244"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished"/>
+        <translation>O léxico padrão é usado quando uma hiperligação para um léxico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="246"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished"/>
+        <translation>Devocionais Diárias</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="247"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished"/>
+        <translation>O devocional padrão será utilizado para exibir um curta devocional inicial</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="249"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished"/>
+        <translation>Léxico Hebraico de Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="250"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished"/>
+        <translation>O léxico Hebraico padrão é usado quando uma hiperligação para um léxico Hebraico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="252"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished"/>
+        <translation>Léxico Grego de Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="253"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished"/>
+        <translation>O léxico Grego padrão é usado quando uma hiperligação para um léxico Grego é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="255"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished"/>
+        <translation>Léxico morfológico Hebraico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="256"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished"/>
+        <translation>O léxico morfológico padrão para textos Hebraicos é usado quando uma hiperligação de uma etiqueta morfológica num texto Hebraico é clicada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="258"/>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished"/>
+        <translation>Léxico morfológico Grego</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="259"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished"/>
+        <translation>O léxico morfológico padrão para textos Gregos é usado quando uma hiperligação de uma etiqueta morfológica num texto Grego é clicada</translation>
     </message>
 </context>
 <context>
@@ -4901,52 +4901,52 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished"/>
+        <translation>Os filtros controlam a aparência do texto. Aqui pode especificar as definições padrão para todos os filtros. Pode alterar estas definições em cada janela exibida.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished"/>
+        <translation>Inserir quebras de linha após cada versículo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar número dos versículos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
         <source>Show section headings</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar títulos de secção</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar referências-cruzadas das escrituras</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar acentos Gregos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar pontos vogais hebraicos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar marcas de cantilena Hebraica</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar segmentação de morfemas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
         <source>Use textual variants</source>
-        <translation type="unfinished"/>
+        <translation>Usar variantes textuais</translation>
     </message>
 </context>
 <context>
@@ -4954,52 +4954,52 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="13"/>
         <source>Find Text</source>
-        <translation type="unfinished"/>
+        <translation>Encontrar Texto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="41"/>
         <source>The text you want to search for</source>
-        <translation type="unfinished"/>
+        <translation>O texto que quer procurar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
         <source>Search with case sensitivity</source>
-        <translation type="unfinished"/>
+        <translation>Procurar com sensibilidade de maiúsculas e minúsculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
         <source>Case &amp;sensitive</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Sensivel a maiúsculas de minúsculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>
         <source>Find the previous location of the text</source>
-        <translation type="unfinished"/>
+        <translation>Encontrar a localização anterior do texto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="95"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Anterior</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="102"/>
         <source>Find the next location of the text</source>
-        <translation type="unfinished"/>
+        <translation>Encontrar a localização seguinte do texto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="105"/>
         <source>&amp;Next</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Seguinte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="115"/>
         <source>Close the dialog</source>
-        <translation type="unfinished"/>
+        <translation>Fechar o diálogo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="118"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Fechar</translation>
     </message>
 </context>
 </TS>

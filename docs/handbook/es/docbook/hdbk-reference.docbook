@@ -20,11 +20,12 @@ linkend="hdbk-reference-shortcuts">sección atajos</link>.</para>
             <term>
               <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Archivo</guimenu> <guimenuitem>Abrir obra</guimenuitem>
+</menuchoice>
             </term>
             <listitem>
-              <para><action>Open work.</action> This will give you a menu that will allow you to
-open installed books.</para>
+              <para><action>Abrir obra.</action> Esto le dará un menú que le permitirá abrir los
+libros instalados.</para>
             </listitem>
           </varlistentry>
 
@@ -71,7 +72,7 @@ opción para maximizar la ventana de &bibletime;.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Ver</guimenu> <guimenuitem>Mostrar biblioteca</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -86,7 +87,7 @@ ser útil si necesita más espacio para el Lente.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Ver</guimenu> <guimenuitem>Mostrar Marcadores</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -101,7 +102,7 @@ puede ser útil si necesita más espacio para el Lente.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Ver</guimenu> <guimenuitem>Mostrar Lupa</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -114,13 +115,14 @@ para agrgar o quitar el Lente en el panel izquierdo.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ver</guimenu> <guimenuitem>Mostrar cabeceras de texto en
+paralelo</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
-            <action>Toggles viewing of additional works</action> Toggle this setting to
-allow you to view additional works in parallel to your current open books.</para>
+            <action>Alterna la visualización de las obras complementarias</action>
+Activa esta opción para que usted pueda ver las obras complementarias en
+paralelo a sus libros abiertos actuales.</para>
           </listitem>
         </varlistentry>
 
@@ -509,12 +511,12 @@ Palabra en su corazón, Él no le defraudará.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Ayuda</guimenu> <guimenuitem>Sugerencia del día</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
-            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
-tip that will assist in the use of &bibletime;.</para>
+            <para><action>Abre una sugerencia útil</action> La Sugerencia del día ofrece un
+consejo útil que le ayuda en el uso de &bibletime;.</para>
           </listitem>
         </varlistentry>
 
@@ -1037,8 +1039,8 @@ Biblia.</entry>
               <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
-Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+            <menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Sugerencia del
+día</guimenuitem> </menuchoice> Abre un consejo útil para usar &bibletime;.</entry>
           </row>
 
           <row>
