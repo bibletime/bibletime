@@ -434,9 +434,14 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, const QModelIndex
         QString keyText = mdata->bookmark().key();
         QString description = mdata->bookmark().description();
         CSwordModuleInfo *minfo = CSwordBackend::instance()->findModuleByName(moduleName);
+        Q_ASSERT(minfo);
 
         /// \todo add title
-        m_bookmarksModel->addBookmark(indexInParent, parentItem, minfo, keyText, description);
+        m_bookmarksModel->addBookmark(indexInParent,
+                                      parentItem,
+                                      *minfo,
+                                      keyText,
+                                      description);
     }
 }
 

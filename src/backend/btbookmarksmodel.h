@@ -60,8 +60,12 @@ public: /* Methods: */
     /**
       \brief add new item with given parameters
     */
-    QModelIndex addBookmark(int row, const QModelIndex & parent, const CSwordModuleInfo * module,
-                        const QString & key, const QString & description = QString(), const QString & title = QString());
+    QModelIndex addBookmark(int const row,
+                            QModelIndex const & parent,
+                            CSwordModuleInfo const & module,
+                            QString const & key,
+                            QString const & description = QString(),
+                            QString const & title = QString());
 
     /**
       \brief add new folder.

@@ -164,7 +164,7 @@ public: /* Tyepes */
         BookmarkItem(BookmarkItemBase * parent);
 
         /** Creates a bookmark with module, key and description. */
-        BookmarkItem(const CSwordModuleInfo * module, const QString & key,
+        BookmarkItem(const CSwordModuleInfo & module, const QString & key,
                        const QString & description, const QString & title);
 
         /** Creates a copy. */
@@ -499,16 +499,16 @@ BookmarkFolder* BookmarkFolder::deepCopy() {
     return newFolder;
 }
 
-BookmarkItem::BookmarkItem(const CSwordModuleInfo * module,
+BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
                                const QString & key,
                                const QString & description,
                                const QString & title)
         : m_description(description)
-        , m_moduleName(module ? module->name() : QString::null)
+        , m_moduleName(module.name())
 {
     Q_UNUSED(title);
 
-    if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
+    if (((module.type() == CSwordModuleInfo::Bible) || (module.type() == CSwordModuleInfo::Commentary))) {
         CSwordVerseKey vk(0);
         vk.setKey(key);
         vk.setLocale("en");
@@ -519,7 +519,7 @@ BookmarkItem::BookmarkItem(const CSwordModuleInfo * module,
     };
 
     setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module ? module->name() : QObject::tr("unknown")));
+    setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module.name()));
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
 }
 
@@ -898,7 +898,12 @@ void BtBookmarksModel::setDescription(const QModelIndex &index, const QString &d
     d->needSave();
 }
 
-QModelIndex BtBookmarksModel::addBookmark(int row, const QModelIndex &parent, const CSwordModuleInfo *module, const QString &key, const QString &description, const QString &title)
+QModelIndex BtBookmarksModel::addBookmark(int const row,
+                                          QModelIndex const & parent,
+                                          CSwordModuleInfo const & module,
+                                          QString const & key,
+                                          QString const & description,
+                                          QString const & title)
 {
     Q_D(BtBookmarksModel);
 
