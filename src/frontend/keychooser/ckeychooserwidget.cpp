@@ -166,7 +166,7 @@ void CKeyChooserWidget::reset(const QStringList * list, int index, bool do_emit)
         setEnabled(true);
     }
 
-    if (list->count())
+    if (list && list->count())
         m_comboBox->setCurrentIndex(index);
 
     if (do_emit)
