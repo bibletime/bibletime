@@ -693,16 +693,12 @@ void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
                        : newText.toLocal8Bit().constData());
 }
 
-bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
+void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
+    Q_ASSERT(key);
     m_module->setKey(isUnicode()
                      ? key->key().toUtf8().constData()
                      : key->key().toLocal8Bit().constData());
-
-    if (m_module) {
-        m_module->deleteEntry();
-        return true;
-    }
-    return false;
+    m_module->deleteEntry();
 }
 
 void CSwordModuleInfo::initCachedCategory() {
