@@ -3,7 +3,8 @@ language: cpp
 branches:
   only:
     - master
-    - /stable-.*/
+    - master_coverity_scan
+    - /^stable-.*$/
 
 os:
   - linux
@@ -34,6 +35,7 @@ install:
   - sudo apt-get install -qq libqt4-dev qt4-qmake libclucene-dev
 
 script:
+  - if [ ${COVERITY_SCAN_BRANCH} = 1 ]; exit; fi
   - mkdir b
   - cd b
   - /usr/local/bin/cmake ..
