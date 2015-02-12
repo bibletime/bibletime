@@ -60,7 +60,7 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
     const int oldOffset = m_key->getOffset();
 
     QStringList siblings; // Split up key
-    if (!oldKey.isEmpty())
+    if (m_key && !oldKey.isEmpty())
         siblings = oldKey.split('/', QString::SkipEmptyParts);
 
     int depth = 0;
