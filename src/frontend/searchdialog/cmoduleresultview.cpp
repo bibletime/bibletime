@@ -198,24 +198,15 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
 
 /** Returns the currently active module. */
 CSwordModuleInfo* CModuleResultView::activeModule() {
-    Q_ASSERT(currentItem());
-
-    QTreeWidgetItem* item = currentItem();
-    if (!item) {
-        return 0;
-    }
+    QTreeWidgetItem * item = currentItem();
+    Q_ASSERT(item);
 
     // we need to find the parent most node because that is the node
     // that is the module name.
-    while (item->parent()) {
+    while (item->parent())
         item = item->parent();
-    }
 
-    if (item) {
-        return CSwordBackend::instance()->findModuleByName(item->text(0));
-    }
-
-    return 0;
+    return CSwordBackend::instance()->findModuleByName(item->text(0));
 }
 
 /** Reimplementation from QWidget. */
