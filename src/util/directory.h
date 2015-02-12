@@ -50,13 +50,6 @@ void removeRecursive(const QString &dir);
  */
 unsigned long getDirSizeRecursive(const QString &dir);
 
-/** Recursively copies one directory into another.  This WILL OVERWRITE
- * any existing files of the same name, and WILL NOT handle symlinks.
- *
- * This probably won't need to be used for large directory structures.
- */
-void copyRecursive(const QString &src, const QString &dest);
-
 /** Convert directory path separators to those for each platform
  *  Windows = "\", Others = "/"
  */

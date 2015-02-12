@@ -348,29 +348,6 @@ unsigned long getDirSizeRecursive(const QString &dir) {
     return size;
 }
 
-/**Recursively copies a directory, overwriting existing files*/
-void copyRecursive(const QString &src, const QString &dest) {
-    QDir srcDir(src);
-    QDir destDir(dest);
-    //Copy files
-    QStringList files = srcDir.entryList(QDir::Files);
-    for (QStringList::iterator it = files.begin(); it != files.end(); ++it) {
-        QFile currFile(src + "/" + *it);
-        QString newFileLoc = dest + "/" + *it;
-        QFile newFile(newFileLoc);
-        newFile.remove();
-        currFile.copy(newFileLoc);
-    }
-    QStringList dirs = srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
-    for (QStringList::iterator it = dirs.begin(); it != dirs.end(); ++it) {
-        QString temp = *it;
-        if (!destDir.cd(*it)) {
-            destDir.mkdir(*it);
-        }
-        copyRecursive(src + "/" + *it, dest + "/" + *it);
-    }
-}
-
 QString convertDirSeparators(const QString& path) {
     QString result = path;
 #ifdef Q_OS_WIN
