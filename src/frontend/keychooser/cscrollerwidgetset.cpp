@@ -70,16 +70,12 @@ void CScrollerWidgetSet::setToolTips(const QString & nextEntryTip,
 
 
 void CScrollerWidgetSet::wheelEvent(QWheelEvent * e) {
-    /**
-    * The problem is, that wheel events do everytime have the delta value 120
-    */
-    const int vchange = ((e->delta() > 0) ? -1 : 1);
-
-    if (vchange != 0) { // Do not emit a change with value 0
-        emit change(vchange);
-        e->accept();
-    } else {
+    int const delta = e->delta();
+    if (delta == 0) {
         e->ignore();
+    } else {
+        emit change((delta > 0) ? -1 : 1);
+        e->accept();
     }
 }
 
