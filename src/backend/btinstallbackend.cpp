@@ -163,23 +163,21 @@ bool setTargetList( const QStringList& targets ) {
     //QString filename = util::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
     //bool directAccess = false;
     QString filename = swordConfigFilename();
-    QFileInfo i(filename);
-    QFileInfo dirInfo(i.absolutePath());
-
-
-    if ( !i.exists() && dirInfo.isWritable() ) {
-        // if the file doesn't exist but the parent is writable, create it
-        qWarning() << "The Sword config file does not exist, it has to be created";
+    {
         QFile f(filename);
-        f.open(QIODevice::WriteOnly);
-        f.close();
-        i.refresh();
-    }
-    if (!i.exists() || !i.isWritable()) {
-        // There is no way to save to the file
-        qWarning() << "The Sword config file is not writable!";
-        message::showWarning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
-        return false;
+        if (!f.exists()) {
+            if (!f.open(QIODevice::ReadWrite)) {
+                qWarning() << "The Sword config file can't be created!";
+                message::showWarning(
+                    0,
+                    QObject::tr("Can't write file"),
+                    QObject::tr("The Sword config file can't be created!"));
+                return false;
+            }
+            f.close();
+            qDebug() << "The Sword config file \"" << filename
+                     << "\" had to be (re)created!";
+        }
     }
 
     filename = util::directory::convertDirSeparators(filename);
