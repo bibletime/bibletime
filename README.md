@@ -3,18 +3,17 @@ README for BibleTime
 
 BibleTime is a Bible study application based on Qt.
 
-1. INSTALLATION
+## INSTALLATION
 
-1.1 BUILD REQUIREMENTS
-	-QT 4.5+
-	-Sword 1.7.0+ (http://crosswire.org/sword)
-	-CLucene 0.9.16a+ (http://clucene.sf.net)
-	-cmake 2.6.0+ (http://cmake.org)
+### BUILD REQUIREMENTS
+ -QT 4.5+
+ -Sword 1.7.0+ (http://crosswire.org/sword)
+ -CLucene 0.9.16a+ (http://clucene.sf.net)
+ -cmake 2.6.0+ (http://cmake.org)
 
-1.2 DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
-	-po4a
-	-xsltproc, docbook-xml, docbook-xsl
-	-xml2po (part of the package gnome-doc-utils on some distributions)
+### DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
+ -po4a
+ -xsltproc, docbook-xml, docbook-xsl
 
 These packages are used by BT committers to prepare
 the documentation for the Handbook, Howto and the
@@ -24,7 +23,7 @@ There is no need to rely on these packages to bundle
 BibleTime for distribution as the compiled documentation
 is in the source tree ready for installation.
 
-1.3 PROCEDURE
+### PROCEDURE
 
 In the toplevel directory of this package, you can find
 the scripts "build-debug.sh" and "build-release.sh".
@@ -38,22 +37,19 @@ For a real installation, run "build-release.sh". This will
 also build in ./build/, but then install to /usr/local.
 
 
-2. FEEDBACK
+## FEEDBACK
 
 Please report any bugs your find to
+[our issue tracker](https://github.com/bibletime/bibletime/issues)
+or see [the BibleTime homepage](http://www.bibletime.info/) for additional information.
 
-  https://github.com/bibletime/bibletime/issues
-
-or see http://www.bibletime.info/ for additional information.
-
-3. DOCUMENTATION
+## DOCUMENTATION
 
 You can find information about BibleTime, the installation
 and its usage in the following places:
-	o http://www.bibletime.info/
-	o The BibleTime handbook available in the Help menu
-		of the BibleTime application
-	o There's a Bible study tutorial in the help menu
+ - http://www.bibletime.info/
+ - The BibleTime handbook available in the Help menu of the BibleTime application.
+ - There's a Bible study tutorial in the help menu.
 
 May God, our Lord, use BibleTime for his glory.
 
