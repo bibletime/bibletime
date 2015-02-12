@@ -30,15 +30,15 @@ is in the source tree ready for installation.
 ### PROCEDURE
 
 In the toplevel directory of this package, you can find
-the scripts "build-debug.sh" and "build-release.sh".
+the scripts `build-debug.sh` and `build-release.sh`.
 
-Run "build-debug.sh" to build BibleTime in debug mode.
-It will build in the directory ./build/ and install to
-./build/install/. You can run it just there, you do not
-have to install it to /usr/.
+Run `build-debug.sh` to build BibleTime in debug mode.
+It will build in the directory `./build/` and install to
+`./build/install/`. You can run it just there, you do not
+have to install it to `/usr/`.
 
-For a real installation, run "build-release.sh". This will
-also build in ./build/, but then install to /usr/local.
+For a real installation, run `build-release.sh`. This will
+also build in `./build/`, but then install to `/usr/local`.
 
 
 ## FEEDBACK
