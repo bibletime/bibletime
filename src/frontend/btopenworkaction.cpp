@@ -42,6 +42,8 @@ void BtOpenWorkActionMenu::setSourceModel(QAbstractItemModel *model) {
 }
 
 void BtOpenWorkActionMenu::retranslateUi() {
+    if (!m_groupingMenu)
+        return;
     m_groupingMenu->setTitle(tr("&Grouping order"));
     m_groupingMenu->setStatusTip(tr("Sets the grouping order for the items in "
                                     "this menu."));
