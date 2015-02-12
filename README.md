@@ -1,4 +1,4 @@
-README for BibleTime
+README for BibleTime [![Build Status](https://travis-ci.org/bibletime/bibletime.svg?branch=master)](https://travis-ci.org/bibletime/bibletime)
 ====================
 
 BibleTime is a Bible study application based on Qt.
