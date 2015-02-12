@@ -43,16 +43,13 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e) {
     QToolButton::mousePressEvent(e);
 }
 
-void BtDropdownChooserButton::wheelEvent(QWheelEvent* e) {
-    // The problem is, that wheel events do everytime have the delta value 120
-    const int vchange = ((e->delta() > 0) ? (-1) : (1));
-
-    if (vchange != 0) {//do not emit a change with value 0
-        emit stepItem(vchange);
-        e->accept();
-    }
-    else {
+void BtDropdownChooserButton::wheelEvent(QWheelEvent * e) {
+    int const delta = e->delta();
+    if (delta == 0) {
         e->ignore();
+    } else {
+        emit stepItem((delta > 0) ? -1 : 1);
+        e->accept();
     }
 }
 
