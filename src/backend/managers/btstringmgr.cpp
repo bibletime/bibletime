@@ -13,7 +13,7 @@
 #include "util/macros.h"
 
 
-char * BtStringMgr::upperUTF8(char * const text, unsigned int maxlen) const {
+char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
     size_t max = (maxlen > 0u) ? maxlen : strlen(text);
 
     if (LIKELY(max > 1u)) {
@@ -34,7 +34,7 @@ char * BtStringMgr::upperUTF8(char * const text, unsigned int maxlen) const {
     return text;
 }
 
-char * BtStringMgr::upperLatin1(char * const text, unsigned int maxlen) const {
+char * BtStringMgr::upperLatin1(char * text, unsigned int maxlen) const {
     size_t max = (maxlen > 0u) ? maxlen : strlen(text);
 
     if (LIKELY(max > 1u)) {
