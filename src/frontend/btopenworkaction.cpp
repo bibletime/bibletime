@@ -21,8 +21,11 @@
 
 BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
                                            QWidget *parent)
-    : BtMenuView(parent), m_treeModel(0), m_postFilterModel(0),
-      m_groupingConfigKey(groupingConfigKey)
+    : BtMenuView(parent)
+    , m_treeModel(0)
+    , m_postFilterModel(0)
+    , m_groupingMenu(0)
+    , m_groupingConfigKey(groupingConfigKey)
 {
     // Setup models:
     m_treeModel = new BtBookshelfTreeModel(groupingConfigKey, this);
