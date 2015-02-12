@@ -5,15 +5,19 @@ BibleTime is a Bible study application based on Qt.
 
 ## INSTALLATION
 
+You can just download and install BibleTime from
+[the BibleTime website](http://bibletime.info/en/download).
+The following requirements are needed only if you want to develop BibleTime.
+
 ### BUILD REQUIREMENTS
- -QT 4.5+
- -Sword 1.7.0+ (http://crosswire.org/sword)
- -CLucene 0.9.16a+ (http://clucene.sf.net)
- -cmake 2.6.0+ (http://cmake.org)
+ - QT 4.5+
+ - Sword 1.7.0+ (http://crosswire.org/sword)
+ - CLucene 0.9.16a+ (http://clucene.sf.net)
+ - cmake 2.6.0+ (http://cmake.org)
 
 ### DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
- -po4a
- -xsltproc, docbook-xml, docbook-xsl
+ - po4a
+ - xsltproc, docbook-xml, docbook-xsl
 
 These packages are used by BT committers to prepare
 the documentation for the Handbook, Howto and the
