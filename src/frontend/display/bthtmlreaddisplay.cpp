@@ -106,15 +106,8 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 if (module->type() == CSwordModuleInfo::Lexicon ||
                         module->type() == CSwordModuleInfo::Commentary ||
                         module->type() == CSwordModuleInfo::GenericBook) {
-                    /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
-                    FilterOptions filterOptions;
-                    filterOptions.footnotes = false;
-                    filterOptions.strongNumbers = false;
-                    filterOptions.morphTags = false;
-                    filterOptions.lemmas = false;
-                    filterOptions.scriptureReferences = false;
-                    filterOptions.textualVariants = false;
 
+                    FilterOptions filterOptions;
                     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
                     return QString(key->strippedText()).append("\n(")
@@ -172,15 +165,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->setKey(keyName);
 
-                /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
                 FilterOptions filterOptions;
-                filterOptions.footnotes = false;
-                filterOptions.strongNumbers = false;
-                filterOptions.morphTags = false;
-                filterOptions.lemmas = false;
-                filterOptions.scriptureReferences = false;
-                filterOptions.textualVariants = false;
-
                 CSwordBackend::instance()->setFilterOptions(filterOptions);
 
                 return QString(key->strippedText()).append("\n(")

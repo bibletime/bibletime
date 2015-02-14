@@ -35,6 +35,7 @@ struct FilterOptions {
     int redLetterWords; /**< 0 for disabled, 1 for enabled */
     int scriptureReferences; /**< 0 for disabled, 1 for enabled */
     int morphSegmentation; /**< 0 for disabled, 1 for enabled */
+    FilterOptions();
 };
 Q_DECLARE_METATYPE(FilterOptions)
 
