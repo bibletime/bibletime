@@ -209,13 +209,6 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
     dispOpts.verseNumbers = true;
 
     FilterOptions filterOpts;
-    filterOpts.headings    = false;
-    filterOpts.strongNumbers  = false;
-    filterOpts.morphTags    = false;
-    filterOpts.lemmas     = false;
-    filterOpts.footnotes   = false;
-    filterOpts.scriptureReferences = false;
-
     CrossRefRendering renderer(dispOpts, filterOpts);
     CTextRendering::KeyTree tree;
 
@@ -302,14 +295,7 @@ const QString CInfoDisplay::decodeFootnote(const QString & data) {
         return QString::null;
 
     FilterOptions filterOpts;
-    filterOpts.headings    = false;
-    filterOpts.strongNumbers  = false;
-    filterOpts.morphTags    = false;
-    filterOpts.lemmas     = false;
     filterOpts.footnotes   = true;
-    // turn scripRefs off, so that they do not show up as footnotes in the OSIS filter's EntryAttributes
-    filterOpts.scriptureReferences = false;
-
     CSwordBackend::instance()->setFilterOptions(filterOpts);
 
     const QString modulename = list.first();
