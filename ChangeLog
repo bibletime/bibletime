@@ -1,3 +1,6 @@
+2015-02-15 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #26 Screen contents do not autoadjust when window size is adjusted
+
 2010-08-21 Martin Gruner <mgruner@crosswire.org>
     * Added new Lithuanian language translations. Updated toolchain to work with homebrew on OS X.
 

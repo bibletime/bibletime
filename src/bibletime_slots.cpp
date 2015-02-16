@@ -427,7 +427,8 @@ void BibleTime::reloadProfile() {
     setQActionCheckedNoTrigger(m_showFormatToolbarAction, conf.sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     setQActionCheckedNoTrigger(m_toolbarsInEachWindow, conf.sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
 
-    m_mdi->setMDIArrangementMode(static_cast<MAM>(conf.sessionValue<int>("MainWindow/MDIArrangementMode")));
+    m_mdi->setMDIArrangementMode(static_cast<MAM>(
+                                     conf.sessionValue<int>("MainWindow/MDIArrangementMode"),CMDIArea::ArrangementModeTile));
 
     m_findWidget->setVisible(conf.sessionValue<bool>("FindIsVisible", false));
 
