@@ -53,7 +53,8 @@ SOURCES += \
     ../../../src/backend/filters/btosismorphsegmentation.cpp \
     ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.cpp \
     ../../../src/backend/rendering/cplaintextexportrendering.cpp \
-    ../../../src/backend/models/btmoduletextmodel.cpp
+    ../../../src/backend/models/btmoduletextmodel.cpp \
+    ../../../src/btglobal.cpp
 
 	
 HEADERS += \
