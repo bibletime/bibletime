@@ -196,6 +196,18 @@ QString ModuleInterface::category(int index) {
     return module->categoryName(category);
 }
 
+QString ModuleInterface::englishCategory(int index) {
+    if (index < 0 || index >= m_modules.count())
+        return "";
+    CSwordModuleInfo* module = m_modules.at(index);
+    if (module == 0)
+        return "";
+    CSwordModuleInfo::Category category = module->category();
+    if (category == 0)
+        return "";
+    return module->englishCategoryName(category);
+}
+
 QString ModuleInterface::language(int index) {
     if (index < 0 || index >= m_modules.count())
         return "";

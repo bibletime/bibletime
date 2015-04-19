@@ -37,6 +37,7 @@ public:
     Q_INVOKABLE void updateCategoryAndLanguageModels();
     Q_INVOKABLE void updateWorksModel();
     Q_INVOKABLE QString category(int index);
+    Q_INVOKABLE QString englishCategory(int index);
     Q_INVOKABLE QString language(int index);
     Q_INVOKABLE QString module(int index);
     Q_INVOKABLE bool isLocked(const QString& moduleName);

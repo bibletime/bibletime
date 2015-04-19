@@ -404,6 +404,12 @@ wrong, or if the config file was write protected return false.
     */
     static QString categoryName(const CSwordModuleInfo::Category & category);
 
+    /**
+      Returns a english name for the given category.
+      \param[in] module The category whose english name to return.
+    */
+    static QString englishCategoryName(const CSwordModuleInfo::Category & category);
+
 public slots:
 
     inline void cancelIndexing() {

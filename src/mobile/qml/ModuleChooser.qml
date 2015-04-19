@@ -199,7 +199,7 @@ Rectangle {
         highlight: false
         onItemSelected: {
             selectedModule = moduleInterface.module(index);
-            selectedCategory = moduleInterface.category(index);
+            selectedCategory = moduleInterface.englishCategory(index);
             if (moduleInterface.isLocked(selectedModule)) {
                 requestModuleUnlockKey();
                 return;
