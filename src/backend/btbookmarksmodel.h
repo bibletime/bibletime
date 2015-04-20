@@ -117,6 +117,13 @@ public: /* Methods: */
      */
     QString key(const QModelIndex & index) const;
 
+    /**
+      \param[in] parent sort items under specified index, if invalid sort all
+                        items.
+    */
+    void sortItems(QModelIndex const & parent = QModelIndex(),
+                   Qt::SortOrder const order = Qt::AscendingOrder);
+
 
 public slots:
 
@@ -140,11 +147,6 @@ public slots:
       \returns true if success.
     */
     bool load(QString fileName = QString(), const QModelIndex & rootItem = QModelIndex());
-
-    /**
-      \param[in] parent sort items under specified index, if invalid sort all items.
-    */
-    void sort(const QModelIndex & parent = QModelIndex(), Qt::SortOrder order = Qt::AscendingOrder);
 
 
 private: /* Fields: */

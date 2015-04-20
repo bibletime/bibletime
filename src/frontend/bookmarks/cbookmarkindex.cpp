@@ -623,7 +623,7 @@ void CBookmarkIndex::editBookmark() {
 /** Sorts the current folder bookmarks. */
 void CBookmarkIndex::sortFolderBookmarks() {
     if (m_bookmarksModel->isFolder(currentIndex())) {
-        m_bookmarksModel->sort(currentIndex());
+        m_bookmarksModel->sortItems(currentIndex());
     }
     else
         Q_ASSERT(false);
@@ -631,7 +631,7 @@ void CBookmarkIndex::sortFolderBookmarks() {
 
 /** Sorts all bookmarks. */
 void CBookmarkIndex::sortAllBookmarks() {
-    m_bookmarksModel->sort();
+    m_bookmarksModel->sortItems();
     if(m_extraItem.row() != m_bookmarksModel->rowCount() - 1) {
         m_bookmarksModel->removeRow(m_extraItem.row(), m_extraItem.parent());
         if(m_bookmarksModel->insertRows(m_bookmarksModel->rowCount(), 1))

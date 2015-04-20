@@ -962,7 +962,8 @@ bool BtBookmarksModelSortDescending(BookmarkItemBase * i1, BookmarkItemBase * i2
     return i1->text().localeAwareCompare(i2->text()) > 0;
 }
 
-void BtBookmarksModel::sort(const QModelIndex & parent, Qt::SortOrder order)
+void BtBookmarksModel::sortItems(QModelIndex const & parent,
+                                 Qt::SortOrder const order)
 {
     Q_D(BtBookmarksModel);
 
