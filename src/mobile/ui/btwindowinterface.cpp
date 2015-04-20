@@ -295,13 +295,28 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
     }
 }
 
+static QString getEnglishKey(CSwordKey* m_key) {
+    sword::VerseKey * vk = dynamic_cast<sword::VerseKey*>(m_key);
+    QString oldLang;
+    if (vk) {
+        // Save keys in english only:
+        const QString oldLang = QString::fromLatin1(vk->getLocale());
+        vk->setLocale("en");
+        QString englishKey = m_key->key();
+        vk->setLocale(oldLang.toLatin1());
+        return englishKey;
+    } else {
+        return m_key->key();
+    }
+}
+
 void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
     const QString windowKey = QString::number(windowIndex);
     const QString windowGroup = "window/" + windowKey + '/';
 
     BtConfig & conf = btConfig();
     conf.beginGroup(windowGroup);
-    conf.setSessionValue("key", m_key->key());
+    conf.setSessionValue("key", getEnglishKey(m_key));
     QStringList modules;
     QString moduleName = getModuleName();
     modules.append(moduleName);

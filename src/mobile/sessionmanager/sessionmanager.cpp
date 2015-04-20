@@ -60,7 +60,7 @@ void SessionManager::loadWindow(const QStringList& moduleNames, const QString& k
     if (m == 0)
         return;
     CSwordModuleInfo::Category category = m->category();
-    const QString categoryName = m->categoryName(category);
+    const QString categoryName = m->englishCategoryName(category);
     newWindow(categoryName, moduleName, key);
 }
 
