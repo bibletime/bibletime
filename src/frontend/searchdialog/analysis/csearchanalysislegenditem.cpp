@@ -18,25 +18,10 @@
 
 namespace Search {
 
-const int SPACE_BETWEEN_PARTS = 5;
-const int RIGHT_BORDER = 15;
-const int LEFT_BORDER = 15;
-const int LOWER_BORDER = 10;
-const int UPPER_BORDER = 10;
-
 const int ITEM_TEXT_SIZE = 8;
-const int LABEL_TEXT_SIZE = 6;
-
-//used for the shift between the bars
-const int BAR_DELTAX = 4;
-const int BAR_DELTAY = 2;
-const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the label font size
-// Used for the text below the bars
-const int BAR_LOWER_BORDER = 100;
 
 const int LEGEND_INNER_BORDER = 5;
 const int LEGEND_DELTAY = 4;
-const int LEGEND_WIDTH = 85;
 
 
 void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {

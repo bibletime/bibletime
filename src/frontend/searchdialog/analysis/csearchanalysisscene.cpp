@@ -31,7 +31,6 @@ const int LOWER_BORDER = 10;
 const int UPPER_BORDER = 10;
 
 const int ITEM_TEXT_SIZE = 8;
-const int LABEL_TEXT_SIZE = 6;
 
 //used for the shift between the bars
 const int BAR_DELTAX = 4;
