@@ -37,12 +37,12 @@
 <context>
     <name>FontSizeSlider</name>
     <message>
-        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="103"/>
+        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="121"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="120"/>
+        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="138"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -191,12 +191,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SetFont.qml" line="212"/>
+        <location filename="../../src/mobile/qml/SetFont.qml" line="230"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SetFont.qml" line="229"/>
+        <location filename="../../src/mobile/qml/SetFont.qml" line="247"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>

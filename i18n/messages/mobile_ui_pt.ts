@@ -2431,12 +2431,12 @@ Deseja continuar?</translation>
 <context>
     <name>FontSizeSlider</name>
     <message>
-        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="103"/>
+        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="121"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="120"/>
+        <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="138"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -2509,7 +2509,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="134"/>
         <source>Refresh Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizar Fontes</translation>
     </message>
     <message>
         <source>Refresh Lists</source>
@@ -2617,6 +2617,10 @@ Deseja continuar?</translation>
     <message>
         <source>Can&apos;t write file</source>
         <translation type="vanished">O ficheiro não pôde ser escrito</translation>
+    </message>
+    <message>
+        <source>The Sword config file can&apos;t be created!</source>
+        <translation type="vanished">O ficheiro de configuração Sword não pode ser criado!</translation>
     </message>
     <message>
         <source>The Sword config file can&apos;t be written!</source>
@@ -4222,27 +4226,27 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="110"/>
         <source>For Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Para Liguagem</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="145"/>
         <source>Font</source>
-        <translation type="unfinished">Tipo de letra</translation>
+        <translation>Tipo de letra</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="180"/>
         <source>Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho da Letra</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SetFont.qml" line="212"/>
+        <location filename="../../src/mobile/qml/SetFont.qml" line="230"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SetFont.qml" line="229"/>
+        <location filename="../../src/mobile/qml/SetFont.qml" line="247"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -4265,7 +4269,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/qml/StartupBookshelfManager.qml" line="26"/>
         <source>There are currently no documents installed. Please click on the Ok button below to install new documents.</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualmente não existem documentos instalados. Por favor clique no botão Ok abaixo para instalar novos documentos.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/StartupBookshelfManager.qml" line="51"/>
@@ -4290,7 +4294,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/qml/WindowManager.qml" line="265"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
-        <translation type="unfinished"></translation>
+        <translation>Use o menu &quot;Nova Janela&quot; para abrir um documento.</translation>
     </message>
 </context>
 <context>
@@ -4368,17 +4372,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="418"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Escuro</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="419"/>
         <source>Light Blue</source>
-        <translation type="unfinished"></translation>
+        <translation>Azul Claro</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="420"/>
         <source>Crimson</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor de Vinho</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="495"/>
@@ -4393,17 +4397,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="178"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
-        <translation type="unfinished"></translation>
+        <translation>O Bibletime visualiza documentos como Bíblias e comentários. Estes documentos são transferidos e armazenados localmente.De momento não existem documentos. Pretender instalar documentos agora?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="325"/>
         <source>Text Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de Letra do Texto</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="328"/>
         <source>Color Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema de Cor</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="382"/>
