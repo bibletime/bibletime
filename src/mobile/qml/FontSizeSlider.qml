@@ -65,7 +65,7 @@ Rectangle {
     Text {
         id: titleText
 
-        text: qsTranslate("main", title)
+        text: title
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: 20
