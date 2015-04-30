@@ -63,7 +63,7 @@ Rectangle {
 
     Action {
         id: cancelAction
-        text: QT_TR_NOOP("Cancel")
+        text: qsTranslate("Progress", "Cancel")
         onTriggered: {
             cancel();
         }

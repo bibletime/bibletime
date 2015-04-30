@@ -73,7 +73,7 @@ Rectangle {
     TitleColorBar {
         id: title
 
-        title: titleText
+        title: qsTranslate("Choose Reference", titleText)
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
     }

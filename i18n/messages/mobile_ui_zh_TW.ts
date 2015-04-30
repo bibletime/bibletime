@@ -58,6 +58,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>Install Documents</name>
+    <message>
+        <location filename="../../src/mobile/qml/ListWorksView.qml" line="111"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/ListWorksView.qml" line="113"/>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InstallManagerChooser</name>
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="73"/>
@@ -87,19 +100,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="151"/>
         <source>Install / Remove</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ListWorksView</name>
-    <message>
-        <location filename="../../src/mobile/qml/ListWorksView.qml" line="111"/>
-        <source>Remove</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/ListWorksView.qml" line="113"/>
-        <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -156,9 +156,18 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>Quit</name>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="495"/>
+        <source>Are you sure you want to quit?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Search</name>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="71"/>
+        <location filename="../../src/mobile/qml/Search.qml" line="119"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -180,6 +189,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="196"/>
         <source>Regular Expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Search.qml" line="222"/>
+        <source>Search in</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -230,10 +244,36 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
-    <name>WindowManager</name>
+    <name>Welcome</name>
     <message>
         <location filename="../../src/mobile/qml/WindowManager.qml" line="265"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallProgress</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
+        <source>Installing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
+        <source>Downloading</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>btm::VerseChooser</name>
+    <message>
+        <location filename="../../src/mobile/keychooser/versechooser.cpp" line="61"/>
+        <source>Chapter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/keychooser/versechooser.cpp" line="68"/>
+        <source>Verse</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -293,11 +333,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="420"/>
         <source>Crimson</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/main.qml" line="495"/>
-        <source>Are you sure you want to quit?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -58,14 +58,14 @@ void VerseChooser::stringAccepted(const QString& value) {
         m_state = CHAPTER;
         setBook(value);
         QStringList chapters = getChapters();
-        m_gridChooser->open(chapters, m_oldChapter, "Chapter");
+        m_gridChooser->open(chapters, m_oldChapter, QT_TR_NOOP("Chapter"));
     }
     else if (m_state == CHAPTER) {
         m_newChapter = value;
         m_state = VERSE;
         setChapter(value);
         QStringList verses = getVerses();
-        m_gridChooser->open(verses, m_oldVerse, "Verse");
+        m_gridChooser->open(verses, m_oldVerse, QT_TR_NOOP("Verse"));
     }
     else if (m_state == VERSE) {
         m_newVerse = value;

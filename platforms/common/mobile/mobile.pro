@@ -97,6 +97,9 @@ OTHER_FILES += \
 
 lupdate_only {
     SOURCES = ../../../src/mobile/qml/*.qml
+    SOURCES += ../../../src/mobile/keychooser/versechooser.cpp
+    SOURCES += ../../../src/mobile/bookshelfmanager/installprogress.cpp
+    SOURCES += ../../../src/mobile/qml/StartupBookshelfManager.qml
 }
 
 RESOURCES += \

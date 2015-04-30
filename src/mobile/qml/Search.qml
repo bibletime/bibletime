@@ -116,7 +116,7 @@ FocusScope {
 
             Button {
                 id: searchButton
-                text: "Search"
+                text: qsTranslate("Search", "Search")
                 height: textInput.height
                 style: ButtonStyle {
                     label: Text {
@@ -219,7 +219,7 @@ FocusScope {
 
             Text {
                 id: searchInLabel
-                text: "Search in"
+                text: qsTranslate("Search", "Search in")
                 font.pointSize: btStyle.uiFontPointSize
                 color: btStyle.textColor
             }

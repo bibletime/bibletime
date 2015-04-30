@@ -123,6 +123,7 @@ TRANSLATIONS += \
     ../../../i18n/messages/mobile_ui_fr.ts \
     ../../../i18n/messages/mobile_ui_hu.ts \
     ../../../i18n/messages/mobile_ui_it.ts \
+    ../../../i18n/messages/mobile_ui_lt.ts \
     ../../../i18n/messages/mobile_ui_pl.ts \
     ../../../i18n/messages/mobile_ui_pt_BR.ts \
     ../../../i18n/messages/mobile_ui_pt.ts \

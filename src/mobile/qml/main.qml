@@ -492,7 +492,7 @@ Rectangle {
     Question {
         id: quitQuestion
         background: btStyle.toolbarColor
-        text: QT_TR_NOOP("Are you sure you want to quit?")
+        text: qsTranslate("Quit", "Are you sure you want to quit?")
         onFinished: {
             if (answer == true)
                 Qt.quit();

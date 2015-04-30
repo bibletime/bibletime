@@ -262,7 +262,7 @@ Rectangle {
     Text {
         id: tipText
 
-        text: QT_TR_NOOP("Use the \"New Window\" menu to open a document.")
+        text: qsTranslate("Welcome", "Use the \"New Window\" menu to open a document.")
         anchors.left: windowManager.left
         anchors.right: windowManager.right
         anchors.verticalCenter: windowManager.verticalCenter

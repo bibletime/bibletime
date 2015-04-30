@@ -76,7 +76,7 @@ Rectangle {
 
         Action {
             id: yesAction
-            text: QT_TR_NOOP("Yes")
+            text: qsTranslate("Question","Yes")
             onTriggered: {
                 question.visible = false;
                 answer = true;
@@ -95,7 +95,7 @@ Rectangle {
 
         Action {
             id: noAction
-            text: QT_TR_NOOP("No")
+            text: qsTranslate("Question","No")
             onTriggered: {
                 question.visible = false;
                 answer = false;
