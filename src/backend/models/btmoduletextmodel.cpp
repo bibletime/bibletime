@@ -80,8 +80,10 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     if (isBible() || isCommentary())
     {
         const CSwordBibleModuleInfo *bm = qobject_cast<const CSwordBibleModuleInfo*>(firstModule);
-        m_firstEntry = bm->lowerBound().getIndex();
-        m_maxEntries = bm->upperBound().getIndex() - m_firstEntry + 1;
+        bm->module()->setPosition(sword::TOP);
+        m_firstEntry = bm->module()->getIndex();
+        bm->module()->setPosition(sword::BOTTOM);
+        m_maxEntries = bm->module()->getIndex() - m_firstEntry + 1;
     }
 
     else if(isLexicon())
