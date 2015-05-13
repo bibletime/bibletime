@@ -104,5 +104,6 @@ lupdate_only {
 
 RESOURCES += \
     ../../../src/mobile/btm.qrc \
-    ../../../i18n/messages/mobile_translate.qrc
+    ../../../i18n/messages/mobile_translate.qrc \
+    ../../../src/mobile/locales.qrc
 

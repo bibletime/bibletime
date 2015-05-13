@@ -68,6 +68,33 @@ void openBookshelfManager() {
 
 }
 
+// Copies locale.qrc files into home sword directory under locales.d directory
+static void installSwordLocales(QDir& homeSword)
+{
+    QDir sourceSwordLocales(":/sword/locales.d");
+    if (!sourceSwordLocales.exists())
+        return;
+
+    QStringList filters;
+    filters << "*.conf";
+    QFileInfoList fileInfoList = sourceSwordLocales.entryInfoList(filters);
+
+    if (!homeSword.exists("locales.d"))
+        homeSword.mkdir(("locales.d"));
+    homeSword.cd("locales.d");
+
+    for (auto fileInfo : fileInfoList) {
+        QString fileName = fileInfo.fileName();
+        QString sourceFilePath = fileInfo.absoluteFilePath();
+        QFileInfo destinationFileInfo(homeSword, fileName);
+        if (!destinationFileInfo.exists()) {
+            QString destinationFilePath = destinationFileInfo.absoluteFilePath();
+            QFile sourceFile(sourceFilePath);
+            sourceFile.copy(destinationFilePath);
+        }
+    }
+}
+
 /*******************************************************************************
   Handle Qt's meta type system.
 *******************************************************************************/
@@ -109,6 +136,8 @@ int main(int argc, char *argv[]) {
     QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
     QDir dir;
     dir.setCurrent(homeSwordDir);
+
+    installSwordLocales(dir);
 #endif
 
     app.startInit();
