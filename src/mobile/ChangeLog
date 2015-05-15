@@ -1,5 +1,10 @@
 ChangeLog for BibleTime Mobile
 
+2015-05-14
+    Version 1.02
+    Improve the Portuguese translation
+    Fix problem with upper bound of some modules.
+
 2015-04-25
     Add localization and Portuguese translation
     Improve font size sliders
