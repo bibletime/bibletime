@@ -460,7 +460,7 @@ int BtStyle::pixelsPerMillimeterY() {
     return dpm;
 }
 
-QString BtStyle::getAppVersion() const {
+QString BtStyle::getAppVersion() {
     return  "1.02";
 }
 

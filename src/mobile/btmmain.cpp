@@ -27,6 +27,7 @@
 #include "util/findqmlobject.h"
 #include <QBrush>
 #include <QColor>
+#include <QDateTime>
 #include <QGuiApplication>
 #include <QPalette>
 #include <QQuickItem>
@@ -83,15 +84,18 @@ static void installSwordLocales(QDir& homeSword)
         homeSword.mkdir(("locales.d"));
     homeSword.cd("locales.d");
 
-    for (auto fileInfo : fileInfoList) {
-        QString fileName = fileInfo.fileName();
-        QString sourceFilePath = fileInfo.absoluteFilePath();
+    for (auto sourceFileInfo : fileInfoList) {
+
+        QString fileName = sourceFileInfo.fileName();
+        QString sourceFilePath = sourceFileInfo.absoluteFilePath();
+        QFile sourceFile(sourceFilePath);
+
         QFileInfo destinationFileInfo(homeSword, fileName);
-        if (!destinationFileInfo.exists()) {
-            QString destinationFilePath = destinationFileInfo.absoluteFilePath();
-            QFile sourceFile(sourceFilePath);
-            sourceFile.copy(destinationFilePath);
-        }
+        QString destinationFilePath = destinationFileInfo.absoluteFilePath();
+        QFile destinationFile(destinationFileInfo.absoluteFilePath());
+
+        destinationFile.remove();
+        sourceFile.copy(destinationFilePath);
     }
 }
 
@@ -136,14 +140,19 @@ int main(int argc, char *argv[]) {
     QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
     QDir dir;
     dir.setCurrent(homeSwordDir);
-
-    installSwordLocales(dir);
 #endif
 
     app.startInit();
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
     }
+
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+    if (btm::BtStyle::getAppVersion() > btConfig().value<QString>("btm/version")) {
+        installSwordLocales(dir);
+        btConfig().setValue<QString>("btm/version", btm::BtStyle::getAppVersion());
+    }
+#endif
 
     //first install QT's own translations
     QTranslator qtTranslator;

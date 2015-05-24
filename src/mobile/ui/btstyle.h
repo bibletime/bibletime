@@ -163,7 +163,7 @@ public:
     static int pixelsPerMillimeterX();
     static int pixelsPerMillimeterY();
 
-    QString getAppVersion() const;
+    static QString getAppVersion();
     QString getGitVersion() const;
     QString getQtVersion() const;
     QString getSwordVersion() const;
