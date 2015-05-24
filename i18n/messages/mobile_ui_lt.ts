@@ -2387,6 +2387,11 @@ spartusis klavišas</translation>
 <context>
     <name>btm::VerseChooser</name>
     <message>
+        <location filename="../../src/mobile/keychooser/versechooser.cpp" line="52"/>
+        <source>Book</source>
+        <translation type="unfinished">Knyga</translation>
+    </message>
+    <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="61"/>
         <source>Chapter</source>
         <translation type="unfinished"></translation>
