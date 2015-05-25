@@ -461,7 +461,7 @@ int BtStyle::pixelsPerMillimeterY() {
 }
 
 QString BtStyle::getAppVersion() {
-    return  "1.03";
+    return  "1.04";
 }
 
 QString BtStyle::getGitVersion() const {
