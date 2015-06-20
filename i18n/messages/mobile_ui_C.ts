@@ -135,12 +135,12 @@
 <context>
     <name>Question</name>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="79"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="86"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="98"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="105"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -184,6 +184,19 @@
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="222"/>
         <source>Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchResults</name>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="127"/>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="158"/>
+        <source>References</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

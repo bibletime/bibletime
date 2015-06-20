@@ -1,12 +1,14 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pt">
 <context>
-    <name/>
+    <name></name>
     <message>
-        <source/>
+        <source></source>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation type="unfinished"/>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -143,12 +145,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Question</name>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="79"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="86"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="98"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="105"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
@@ -193,6 +195,19 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/Search.qml" line="222"/>
         <source>Search in</source>
         <translation>Procurar em</translation>
+    </message>
+</context>
+<context>
+    <name>SearchResults</name>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="127"/>
+        <source>Documents</source>
+        <translation>Documentos</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="158"/>
+        <source>References</source>
+        <translation>Referências</translation>
     </message>
 </context>
 <context>
