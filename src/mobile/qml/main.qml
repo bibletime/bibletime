@@ -230,7 +230,7 @@ Rectangle {
     Question {
         id: indexQuestion
         background: btStyle.toolbarColor
-        text: QT_TR_NOOP("Some of the modules you want to search need to be indexed. Do you want to index them now?")
+        text: qsTr("Some of the modules you want to search need to be indexed. Do you want to index them now?")
         onFinished: {
             indexQuestion.visible = false;
 

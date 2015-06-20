@@ -64,6 +64,13 @@ Rectangle {
         color: btStyle.textColor
     }
 
+    Text {
+        id: dummyTextForHeight
+        text: "x"
+        font.pointSize: btStyle.uiFontPointSize
+        visible: false
+    }
+
     Grid {
         id: buttons
 
@@ -87,7 +94,7 @@ Rectangle {
         Button {
             id: yesButton
             width: btStyle.pixelsPerMillimeterY * 25
-            height: questionText.height*1.5
+            height: dummyTextForHeight.height*1.5
             action: yesAction
             style: BtButtonStyle {
             }
@@ -106,7 +113,7 @@ Rectangle {
         Button {
             id: noButton
             width: btStyle.pixelsPerMillimeterY * 25
-            height: questionText.height*1.5
+            height: dummyTextForHeight.height*1.5
             action: noAction
             style: BtButtonStyle {
             }

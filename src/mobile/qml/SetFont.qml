@@ -236,7 +236,7 @@ Rectangle {
         Button {
             id: okButton
             height: fontCombo.height
-            width: languageCombo.width/2
+            width: setFont.width/3
             action: okAction
             style: BtButtonStyle {
             }
@@ -255,7 +255,7 @@ Rectangle {
         Button {
             id: cancelButton
             height: fontCombo.height
-            width: languageCombo.width/2
+            width: setFont.width/3
             action: cancelAction
             style: BtButtonStyle {
             }

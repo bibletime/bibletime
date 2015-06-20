@@ -124,7 +124,7 @@ SplitView {
                 TitleColorBar {
                     id: titleBar1
 
-                    title: "Documents"
+                    title: qsTr("Documents")
                     width: parent.width
                     anchors.left: parent.left
                     anchors.top: parent.top
@@ -155,7 +155,7 @@ SplitView {
 
                 TitleColorBar {
                     id: titleBar2
-                    title: "References"
+                    title: qsTr("References")
                     width: parent.width
                 }
 
