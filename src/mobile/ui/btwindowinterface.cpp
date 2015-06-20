@@ -162,6 +162,9 @@ void BtWindowInterface::setReference(const QString& key) {
     if (m_key && m_key->key() == key)
         return;
     if (m_key) {
+        CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+        if (verseKey)
+            verseKey->setIntros(true);
         m_key->setKey(key);
         referenceChanged();
     }
