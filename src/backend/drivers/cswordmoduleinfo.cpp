@@ -530,6 +530,10 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
         lucene::document::Document * doc = 0;
         QSharedPointer<sword::SWKey> swKey(m_module->createKey());
 
+        sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
+        if (vk)
+            vk->setIntros(true);
+
 #ifdef CLUCENE2
         for (unsigned int i = 0; i < h->length(); ++i) {
 #else
@@ -539,6 +543,7 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
             lucene_wcstoutf8(utfBuffer,
                              static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
                              BT_MAX_LUCENE_FIELD_LENGTH);
+
 
             swKey->setText(utfBuffer);
 
