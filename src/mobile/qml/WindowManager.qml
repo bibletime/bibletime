@@ -155,13 +155,13 @@ Rectangle {
         }
         else {
             window.setModule(module);
+            window.setModuleToBeginning();
             window.swipeLeft.connect(windowManager,setPreviousWindow)
             window.swipeRight.connect(windowManager,setNextWindow)
             windows.push(window)
             layoutWindows();
             var curWindow = windows.length -1;
             selectWindow(curWindow);
-            window.setModuleToBeginning();
             if (key !== "")
                 window.setKey(key);
             window.setHistoryPoint();
