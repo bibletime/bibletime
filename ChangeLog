@@ -1,3 +1,6 @@
+2015-05-04 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix Qt5 build by adding PrintSupport and Svg
+
 2015-02-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #26 Screen contents do not autoadjust when window size is adjusted
 
