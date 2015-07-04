@@ -54,13 +54,14 @@ const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
                                    CSwordBackend & backend,
                                    ModuleType type)
-    : m_module((Q_ASSERT(module), module)),
+    : m_module(module),
       m_backend(backend),
       m_type(type),
       m_cancelIndexing(false),
       m_cachedName(QString::fromUtf8(module->getName())),
       m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
 {
+    Q_ASSERT(module);
     // Initialize m_cachedCategory:
     {
         /// \todo Maybe we can use raw string comparsion instead of QString?
