@@ -42,7 +42,7 @@ void InstallSourcesManager::refreshSources() {
     m_progressObject->setProperty("maximumValue", 100.0);
     m_progressObject->setProperty("value", 0.0);
     m_progressObject->setProperty("visible", true);
-    m_progressObject->setProperty("text", "Refreshing Source List");
+    m_progressObject->setProperty("text", tr("Refreshing Source List"));
 
     runThread();
 }

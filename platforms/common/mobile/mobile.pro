@@ -99,7 +99,10 @@ lupdate_only {
     SOURCES = ../../../src/mobile/qml/*.qml
     SOURCES += ../../../src/mobile/keychooser/versechooser.cpp
     SOURCES += ../../../src/mobile/bookshelfmanager/installprogress.cpp
+    SOURCES += ../../../src/mobile/bookshelfmanager/installsources.cpp
+    SOURCES += ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp
     SOURCES += ../../../src/mobile/qml/StartupBookshelfManager.qml
+    SOURCES += ../../../src/mobile/ui/btsearchinterface.cpp
 }
 
 RESOURCES += \

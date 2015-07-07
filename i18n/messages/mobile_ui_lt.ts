@@ -265,6 +265,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>btm::BtSearchInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
+        <source>Indexing</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
@@ -275,6 +283,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading</source>
         <translation>Atsiunčiama</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
+        <source>Refreshing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSourcesManager</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
+        <source>Refreshing Source List</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

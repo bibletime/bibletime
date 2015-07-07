@@ -95,7 +95,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="134"/>
         <source>Refresh Sources</source>
-        <translation>Actualizar Fontes</translation>
+        <translation type="unfinished">Actualizar Fontes</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="151"/>
@@ -265,6 +265,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>btm::BtSearchInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
+        <source>Indexing</source>
+        <translation>A indexar</translation>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
@@ -275,6 +283,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading</source>
         <translation>A transferir</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
+        <source>Refreshing</source>
+        <translation>A actualizar</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished">Falhou ao actualizar a fonte %1</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSourcesManager</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
+        <source>Refreshing Source List</source>
+        <translation>A actualizar lista de fontes</translation>
     </message>
 </context>
 <context>
