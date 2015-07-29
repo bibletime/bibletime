@@ -2,24 +2,15 @@
 # Make sure variable CURL_PATH and CURL_LIB points to correct location
 # This library must be built separately
 
-isEmpty(CURL_PATH):CURL_PATH = ../../../../curl-7.34.0
-isEmpty(CURL_LIB):CURL_LIB = $${PWD}/libcurl.a
-
+isEmpty(CURL_PATH):CURL_PATH = ../../../../curl/curl-7.33.0
 
 INCLUDEPATH += $${CURL_PATH}/include
 
 DEFINES += CURL_STATICLIB
 
 
-!isEmpty(BT_VERSION) {
-# Linking to library
 DEFINES += CURLAVAILABLE CURLSFTPAVAILABLE
-LIBS += $${CURL_LIB}
-}
-else {
-# Building library
-TEMPLATE = lib
-CONFIG += staticlib
+
 DEFINES += CURL_DISABLE_TFTP
 #DEFINES += CURL_DISABLE_FTP
 DEFINES += CURL_DISABLE_LDAP
@@ -136,18 +127,15 @@ SOURCES += \
     $${CURL_PATH}/lib/gskit.c \
     $${CURL_PATH}/lib/http2.c \
     #$${CURL_PATH}/lib/libcurl.rc \
-    $${CURL_PATH}/lib/rawstr.c \
-    $${CURL_PATH}/lib/url.c \
+    $${CURL_PATH}/lib/curl_rawstr.c \
+    $${CURL_PATH}/lib/curl_url.c \
 
-!contains($${DEFINES}, CURL_DISABLE_FILE):SOURCES += $${CURL_PATH}/lib/file.c
-!contains($${DEFINES}, CURL_DISABLE_TFTP):SOURCES += $${CURL_PATH}/lib/tftp.c
-!contains($${DEFINES}, CURL_DISABLE_TELNET):SOURCES += $${CURL_PATH}/lib/telnet.c
-!contains($${DEFINES}, CURL_DISABLE_DICT):SOURCES += $${CURL_PATH}/lib/dict.c
-!contains($${DEFINES}, CURL_DISABLE_POP3):SOURCES += $${CURL_PATH}/lib/pop3.c
-!contains($${DEFINES}, CURL_DISABLE_IMAP):SOURCES += $${CURL_PATH}/lib/imap.c
-!contains($${DEFINES}, CURL_DISABLE_SMTP):SOURCES += $${CURL_PATH}/lib/smtp.c
-!contains($${DEFINES}, CURL_DISABLE_RTSP):SOURCES += $${CURL_PATH}/lib/rtsp.c
-!contains($${DEFINES}, CURL_DISABLE_GOPHER):SOURCES += $${CURL_PATH}/lib/gopher.c
-
-DESTDIR = $${PWD}
-}
+!contains(DEFINES, CURL_DISABLE_FILE):SOURCES += $${CURL_PATH}/lib/file.c
+!contains(DEFINES, CURL_DISABLE_TFTP):SOURCES += $${CURL_PATH}/lib/tftp.c
+!contains(DEFINES, CURL_DISABLE_TELNET):SOURCES += $${CURL_PATH}/lib/telnet.c
+!contains(DEFINES, CURL_DISABLE_DICT):SOURCES += $${CURL_PATH}/lib/dict.c
+!contains(DEFINES, CURL_DISABLE_POP3):SOURCES += $${CURL_PATH}/lib/pop3.c
+!contains(DEFINES, CURL_DISABLE_IMAP):SOURCES += $${CURL_PATH}/lib/imap.c
+!contains(DEFINES, CURL_DISABLE_SMTP):SOURCES += $${CURL_PATH}/lib/smtp.c
+!contains(DEFINES, CURL_DISABLE_RTSP):SOURCES += $${CURL_PATH}/lib/rtsp.c
+!contains(DEFINES, CURL_DISABLE_GOPHER):SOURCES += $${CURL_PATH}/lib/gopher.c
