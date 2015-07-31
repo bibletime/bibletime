@@ -139,3 +139,6 @@ SOURCES += \
 !contains(DEFINES, CURL_DISABLE_SMTP):SOURCES += $${CURL_PATH}/lib/smtp.c
 !contains(DEFINES, CURL_DISABLE_RTSP):SOURCES += $${CURL_PATH}/lib/rtsp.c
 !contains(DEFINES, CURL_DISABLE_GOPHER):SOURCES += $${CURL_PATH}/lib/gopher.c
+
+# do we really need CRYPTO_AUTH?
+DEFINES += CURL_DISABLE_CRYPTO_AUTH
