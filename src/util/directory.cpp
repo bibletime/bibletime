@@ -101,7 +101,7 @@ bool initDirectoryCache() {
     }
 #endif
 
-#if !defined Q_OS_WINCE && !defined BT_MOBILE
+#if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
     cachedSharedSwordDir.reset(new QDir(qgetenv("ALLUSERSPROFILE"))); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd("Application Data")) {
         qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data";
@@ -208,7 +208,9 @@ bool initDirectoryCache() {
     }
 #endif
 
-#ifdef Q_OS_WIN
+#ifdef Q_OS_WINRT
+    cachedUserHomeDir.reset(new QDir(""));
+#elif defined Q_OS_WIN
     cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
 #elif defined(ANDROID)
     cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
