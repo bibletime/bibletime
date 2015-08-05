@@ -66,19 +66,18 @@ public: /* Fields: */
     RegularIcon const icon_commentary;
     RegularIcon const icon_configure;
     RegularIcon const icon_contents2;
+    RegularIcon const icon_delete;
     RegularIcon const icon_dictionary;
     RegularIcon const icon_displayconfig;
     RegularIcon const icon_document_magnifier;
     RegularIcon const icon_edit_clear_locationbar;
     RegularIcon const icon_edit_copy;
-    RegularIcon const icon_edit_delete;
     RegularIcon const icon_exit;
     RegularIcon const icon_export;
     RegularIcon const icon_file_save;
     RegularIcon const icon_fileclose;
     RegularIcon const icon_find;
     RegularIcon const icon_flag;
-    RegularIcon const icon_folder_new;
     RegularIcon const icon_folder_open;
     RegularIcon const icon_folder;
     RegularIcon const icon_fonts;
@@ -124,13 +123,16 @@ public: /* Fields: */
 
     /* Overlayed icons: */
     OverlayedIcon const icon_bible_add;
+    OverlayedIcon const icon_bible_install;
     OverlayedIcon const icon_bible_locked;
     OverlayedIcon const icon_bible_remove;
+    OverlayedIcon const icon_bible_uninstall;
     OverlayedIcon const icon_book_add;
     OverlayedIcon const icon_book_locked;
     OverlayedIcon const icon_cascade_auto;
     OverlayedIcon const icon_commentary_add;
     OverlayedIcon const icon_commentary_locked;
+    OverlayedIcon const icon_folder_add;
     OverlayedIcon const icon_lexicon_add;
     OverlayedIcon const icon_lexicon_locked;
     OverlayedIcon const icon_tile_auto;

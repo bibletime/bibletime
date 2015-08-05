@@ -338,7 +338,7 @@ extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace deleteEntry {
-BT_GETICON(edit_delete)
+BT_GETICON(delete)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
@@ -401,7 +401,7 @@ BT_GETICON(find)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
-namespace newFolder { BT_GETICON(folder_new) }
+namespace newFolder { BT_GETICON(folder_add) }
 namespace changeFolder { BT_GETICON(folder) }
 namespace openedFolder { BT_GETICON(folder_open) }
 namespace closedFolder { BT_GETICON(folder) }
@@ -413,7 +413,7 @@ namespace sortAllBookmarks { BT_GETICON(null) }
 namespace importBookmarks { BT_GETICON(import) }
 namespace exportBookmarks { BT_GETICON(export) }
 namespace printBookmarks { BT_GETICON(print) }
-namespace deleteItems { BT_GETICON(edit_delete) }
+namespace deleteItems { BT_GETICON(delete) }
 
 namespace editModuleMenu { BT_GETICON(pencil) }
 namespace editModulePlain { BT_GETICON(pencil) }
@@ -426,26 +426,26 @@ namespace grouping { BT_GETICON(view_tree) }
 
 namespace bookshelfmgr {
 namespace installpage {
-BT_GETICON(bible_add)
+BT_GETICON(bible_install)
 BT_GETICON2(icon_refresh, refresh)
-BT_GETICON2(icon_delete, trash)
-BT_GETICON2(icon_add, plus)
-BT_GETICON2(icon_install, bible_add)
+BT_GETICON2(icon_addSource, plus)
+BT_GETICON2(icon_deleteSource, delete)
+BT_GETICON2(icon_install, plus)
 BT_GETICON2(icon_path, configure)
 }
 namespace removepage {
-BT_GETICON(bible_remove)
-BT_GETICON2(icon_remove, trash)
+BT_GETICON(bible_uninstall)
+BT_GETICON2(icon_remove, delete)
 }
 namespace indexpage {
 BT_GETICON(document_magnifier)
-BT_GETICON2(icon_create, folder_new)
-BT_GETICON2(icon_delete, trash)
+BT_GETICON2(icon_create, plus)
+BT_GETICON2(icon_delete, delete)
 }
 namespace paths {
-BT_GETICON2(icon_add, plus)
+BT_GETICON2(icon_add, add)
 BT_GETICON2(icon_edit, pencil)
-BT_GETICON2(icon_remove, trash)
+BT_GETICON2(icon_remove, remove)
 }
 }
 }

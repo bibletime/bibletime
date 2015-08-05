@@ -85,10 +85,10 @@ void BtInstallPage::initView() {
     initSourcesCombo();
 
     m_sourceAddButton = new QPushButton(this);
-    m_sourceAddButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_add());
+    m_sourceAddButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_addSource());
 
     m_sourceDeleteButton = new QPushButton(this);
-    m_sourceDeleteButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_delete());
+    m_sourceDeleteButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_deleteSource());
 
     QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
     sourceChooserLayout->setContentsMargins(0, 8, 0, 0);
