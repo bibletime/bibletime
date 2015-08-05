@@ -81,13 +81,13 @@ bool savePlainFile(const QString & filename,
     return false;
 }
 
+namespace {
 
-QIcon getIconForModule(const CSwordModuleInfo * const module) {
-    return util::getIcon(getIconNameForModule(module));
-}
-
-QString getIconNameForModule(const CSwordModuleInfo * const module) {
-    //qDebug() << "util::tool::getIconNameForModule";
+/**
+  \param[in] module the module whose icon name to return.
+  \returns the icon name used for the a module.
+*/
+static QString getIconNameForModule(CSwordModuleInfo const * const module) {
     if (!module)
         return CResMgr::modules::book::icon_locked;
 
@@ -132,6 +132,11 @@ QString getIconNameForModule(const CSwordModuleInfo * const module) {
             break;
     }
     return CResMgr::modules::book::icon_unlocked;
+}
+} // anonymous namespace
+
+QIcon getIconForModule(const CSwordModuleInfo * const module) {
+    return util::getIcon(getIconNameForModule(module));
 }
 
 QLabel * explanationLabel(QWidget * const parent,

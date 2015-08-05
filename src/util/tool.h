@@ -47,12 +47,6 @@ bool savePlainFile(const QString & filename,
 QIcon getIconForModule(const CSwordModuleInfo * module);
 
 /**
-  \param[in] module the module whose icon name to return.
-  \returns the icon name used for the a module.
-*/
-QString getIconNameForModule(const CSwordModuleInfo * module);
-
-/**
   Creates a new explanation label.
 
   \param[in] parent the parent widget.
