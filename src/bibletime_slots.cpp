@@ -57,7 +57,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = btConfig().value<QString>("language", QLocale::system().name());
+    const QString language = btConfig().value<QString>("GUI/booknameLanguage", QLocale::system().name());
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
