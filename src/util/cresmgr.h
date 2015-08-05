@@ -247,8 +247,6 @@ namespace printMenu { BT_GETICON(print) }
 }
 }
 
-namespace workspace {}
-
 namespace displaywindows {
 namespace displaySettings {
 BT_GETICON(displayconfig)
@@ -385,16 +383,12 @@ namespace fontSize {
 extern const QKeySequence accel;
 extern const char* actionName;
 }
-namespace fontColor {
-}
-
 }
 }
 
 namespace settings {
 namespace startup { BT_GETICON(startconfig) }
 namespace fonts { BT_GETICON(fonts) }
-namespace languages { BT_GETICON(flag) }
 namespace profiles { BT_GETICON(view_profile) }
 namespace sword { BT_GETICON(swordconfig) }
 namespace keys { BT_GETICON(key_bindings) }
