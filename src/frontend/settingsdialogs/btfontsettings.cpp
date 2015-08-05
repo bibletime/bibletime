@@ -152,5 +152,4 @@ void BtFontSettingsPage::retranslateUi() {
     m_languageLabel->setText(tr("&Language:"));
     m_languageComboBox->setToolTip(tr("The font selection below will apply to all texts in this language"));
     m_languageCheckBox->setText(tr("Use custom font"));
-    m_fontsGroupBox->setTitle(tr("Optionally specify a custom font for each language:"));
 }

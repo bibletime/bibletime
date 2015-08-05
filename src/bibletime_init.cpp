@@ -34,7 +34,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/bookmarks/cbookmarkindex.h"
-#include "frontend/settingsdialogs/btlanguagesettings.h"
+#include "frontend/settingsdialogs/cdisplaysettings.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -887,7 +887,7 @@ void BibleTime::initBackends() {
       sync with the language of the book names displayed, so that both would
       always use the same setting.
     */
-    BtLanguageSettingsPage::resetLanguage(); /// \todo refactor this hack
+    CDisplaySettingsPage::resetLanguage(); /// \todo refactor this hack
 
 
     CSwordBackend *backend = CSwordBackend::createInstance();

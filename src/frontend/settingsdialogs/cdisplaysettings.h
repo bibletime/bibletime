@@ -33,6 +33,8 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         void save();
 
+        static void resetLanguage();
+
     protected: /* Methods: */
 
         void retranslateUi();
@@ -41,10 +43,17 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         /** Update the style preview widget. */
         void updateStylePreview();
 
+    private: /* Methods: */
+
+        static QVector<QString> bookNameAbbreviationsTryVector();
+        void initSwordLocaleCombo();
+
     private: /* Fields: */
 
+        QLabel* m_showLogoLabel;
         QCheckBox* m_showLogoCheck;
-        QLabel *m_explanationLabel;
+        QLabel *m_languageNamesLabel;
+        QComboBox* m_swordLocaleCombo;
         QComboBox* m_styleChooserCombo;
         QLabel *m_availableLabel;
         QWebView* m_stylePreviewViewer;

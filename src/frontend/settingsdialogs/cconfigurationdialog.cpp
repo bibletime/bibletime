@@ -18,7 +18,6 @@
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 #include "frontend/settingsdialogs/cdisplaysettings.h"
 #include "frontend/settingsdialogs/btfontsettings.h"
-#include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "frontend/settingsdialogs/cswordsettings.h"
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
@@ -36,7 +35,6 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
         m_swordPage(0),
         m_acceleratorsPage(0),
         m_fontsPage(0),
-        m_languagesPage(0),
         m_bbox(0) {
     setWindowTitle(tr("Configure BibleTime"));
     setAttribute(Qt::WA_DeleteOnClose);
@@ -48,10 +46,6 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
     // Add "Desk" (sword) page
     m_swordPage = new CSwordSettingsPage(this);
     addPage(m_swordPage);
-
-    // Add "Languages" page
-    m_languagesPage = new BtLanguageSettingsPage(this);
-    addPage(m_languagesPage);
 
     // Add "Fonts" page
     m_fontsPage = new BtFontSettingsPage(this);
@@ -83,7 +77,6 @@ CConfigurationDialog::~CConfigurationDialog() {
 /** Save the dialog settings **/
 void CConfigurationDialog::save() {
     m_acceleratorsPage->save();
-    m_languagesPage->save();
     m_fontsPage->save();
     m_swordPage->save();
     m_displayPage->save();
