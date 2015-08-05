@@ -251,6 +251,7 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
 
     action = new QAction(a);
     action->setText(tr("&About BibleTime"));
+    action->setIcon(CResMgr::mainMenu::help::aboutBibleTime::icon());
     action->setToolTip(tr("Information about the BibleTime program"));
     a->addAction("aboutBibleTime", action);
 

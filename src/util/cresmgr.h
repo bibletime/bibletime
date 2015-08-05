@@ -216,6 +216,7 @@ BT_GETICON(light_bulb)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
+namespace aboutBibleTime { BT_GETICON(bibletime) }
 }
 }  //end of main menu
 
