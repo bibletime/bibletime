@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:ns="http://ns.adobe.com/SaveForWeb/1.0/"
-   xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1053,14 +1052,7 @@
        fy="115.70919"
        r="63.912209"
        gradientTransform="matrix(1,0,0,0.197802,0,92.82166)"
-       gradientUnits="userSpaceOnUse" /><foreignObject
-       requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"
-       x="0"
-       y="0"
-       width="1"
-       height="1"
-       id="foreignObject2872"><i:pgfRef
-         xlink:href="#adobe_illustrator_pgf" /></foreignObject><radialGradient
+       gradientUnits="userSpaceOnUse" /><radialGradient
        gradientUnits="userSpaceOnUse"
        r="137.8933"
        cy="111.1299"
