@@ -22,5 +22,10 @@
 
     <key>MDItemKeywords</key>
     <string>BibleTime Bible bible time study</string>
-</dict>
+
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+
+    <key>NSHighResolutionCapable</key>
+    <string>True</string></dict>
 </plist>
