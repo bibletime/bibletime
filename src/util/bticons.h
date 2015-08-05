@@ -90,6 +90,7 @@ public: /* Fields: */
     RegularIcon const icon_lexicon;
     RegularIcon const icon_light_bulb;
     RegularIcon const icon_lock;
+    RegularIcon const icon_manual;
     RegularIcon const icon_map;
     RegularIcon const icon_pencil;
     RegularIcon const icon_plus;

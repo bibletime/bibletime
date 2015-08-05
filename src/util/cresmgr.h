@@ -129,7 +129,7 @@ extern const QKeySequence accel;
 extern const char* actionName;
 
 namespace manual {
-BT_GETICON(tile)
+BT_GETICON(manual)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
