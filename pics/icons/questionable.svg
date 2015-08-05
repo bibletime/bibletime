@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -7,19 +6,10 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="128"
    height="128"
-   id="svg3669"
-   sodipodi:version="0.32"
-   inkscape:version="0.45+devel"
-   sodipodi:docname="dialog-cancel.svgz"
-   inkscape:output_extension="org.inkscape.output.svgz.inkscape"
-   inkscape:export-filename="/home/pinheiro/pics/oxygen/scalable/actions/dialog-cancel.png"
-   inkscape:export-xdpi="180"
-   inkscape:export-ydpi="180">
+   id="svg3669">
   <metadata
      id="metadata754">
     <rdf:RDF>
@@ -31,24 +21,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     inkscape:window-height="654"
-     inkscape:window-width="990"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     guidetolerance="10.0"
-     gridtolerance="10.0"
-     objecttolerance="10.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
-     pagecolor="#ffffff"
-     id="base"
-     inkscape:zoom="2.4251553"
-     inkscape:cx="96.875159"
-     inkscape:cy="71.316359"
-     inkscape:window-x="4"
-     inkscape:window-y="23"
-     inkscape:current-layer="svg3669" />
   <defs
      id="defs3671">
     <linearGradient
@@ -143,15 +115,13 @@
        id="filter4055">
       <feGaussianBlur
          id="feGaussianBlur4057"
-         stdDeviation="0.16412598"
-         inkscape:collect="always" />
+         stdDeviation="0.16412598" />
     </filter>
     <filter
        id="filter4134">
       <feGaussianBlur
          id="feGaussianBlur4136"
-         stdDeviation="0.28743233"
-         inkscape:collect="always" />
+         stdDeviation="0.28743233" />
     </filter>
     <filter
        height="1.2074844"
@@ -161,8 +131,7 @@
        id="filter4176">
       <feGaussianBlur
          id="feGaussianBlur4178"
-         stdDeviation="1.3102854"
-         inkscape:collect="always" />
+         stdDeviation="1.3102854" />
     </filter>
     <filter
        height="1.2557172"
@@ -172,8 +141,7 @@
        id="filter4202">
       <feGaussianBlur
          id="feGaussianBlur4204"
-         stdDeviation="0.59781314"
-         inkscape:collect="always" />
+         stdDeviation="0.59781314" />
     </filter>
     <filter
        height="1.5161119"
@@ -183,8 +151,7 @@
        id="filter4248">
       <feGaussianBlur
          id="feGaussianBlur4250"
-         stdDeviation="0.66853052"
-         inkscape:collect="always" />
+         stdDeviation="0.66853052" />
     </filter>
     <clipPath
        id="clipPath4258">
@@ -203,7 +170,6 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(-827.27922,0)" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3671"
        id="linearGradient3434"
        gradientUnits="userSpaceOnUse"
@@ -213,7 +179,6 @@
        x2="14.440878"
        y2="155.10976" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3835"
        id="radialGradient3440"
        gradientUnits="userSpaceOnUse"
@@ -224,7 +189,6 @@
        fy="232.61047"
        r="23.9375" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3706"
        id="radialGradient3442"
        gradientUnits="userSpaceOnUse"
@@ -235,7 +199,6 @@
        fy="315.76404"
        r="17.75" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3598"
        id="radialGradient3444"
        gradientUnits="userSpaceOnUse"
@@ -246,7 +209,6 @@
        fy="337.20309"
        r="14.765625" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3260-778"
        id="radialGradient3446"
        gradientUnits="userSpaceOnUse"
@@ -257,7 +219,6 @@
        fy="275.74124"
        r="18.125" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient2929"
        id="linearGradient3456"
        gradientUnits="userSpaceOnUse"
@@ -267,7 +228,6 @@
        x2="7.3560495"
        y2="232.5502" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient2929"
        id="linearGradient3460"
        gradientUnits="userSpaceOnUse"
@@ -277,7 +237,6 @@
        x2="7.3560495"
        y2="232.5502" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3260-778"
        id="linearGradient3467"
        gradientUnits="userSpaceOnUse"
@@ -287,7 +246,6 @@
        x2="-84.772652"
        y2="19.43148" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3260-778"
        id="linearGradient3471"
        gradientUnits="userSpaceOnUse"
@@ -297,7 +255,6 @@
        x2="-73.8125"
        y2="76.000023" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3598"
        id="linearGradient3474"
        gradientUnits="userSpaceOnUse"
@@ -307,7 +264,6 @@
        x2="-73.8125"
        y2="76.000023" />
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3527"
        id="radialGradient3477"
        gradientUnits="userSpaceOnUse"
@@ -318,7 +274,6 @@
        fy="81.75"
        r="43.5" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3671"
        id="linearGradient3485"
        gradientUnits="userSpaceOnUse"
@@ -328,7 +283,6 @@
        x2="19.390625"
        y2="206.375" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient3551"
        id="linearGradient3488"
        gradientUnits="userSpaceOnUse"
@@ -338,18 +292,14 @@
        x2="0.390625"
        y2="351.875" />
     <filter
-       inkscape:collect="always"
        id="filter4068">
       <feGaussianBlur
-         inkscape:collect="always"
          stdDeviation="0.57539064"
          id="feGaussianBlur4070" />
     </filter>
     <filter
-       inkscape:collect="always"
        id="filter4076">
       <feGaussianBlur
-         inkscape:collect="always"
          stdDeviation="0.27544051"
          id="feGaussianBlur4078" />
     </filter>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -7,16 +6,10 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="120"
    height="24"
-   id="svg2"
-   sodipodi:version="0.32"
-   inkscape:version="0.46"
-   sodipodi:docname="pointing_arrow2.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   id="svg2">
   <metadata
      id="metadata2393">
     <rdf:RDF>
@@ -28,40 +21,8 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     inkscape:window-height="827"
-     inkscape:window-width="1440"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     guidetolerance="10.0"
-     gridtolerance="10.0"
-     objecttolerance="10.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
-     pagecolor="#ffffff"
-     id="base"
-     showgrid="true"
-     inkscape:zoom="10.907787"
-     inkscape:cx="-63.159873"
-     inkscape:cy="19.054558"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:current-layer="g2435">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2397"
-       visible="true"
-       enabled="true" />
-  </sodipodi:namedview>
   <defs
      id="defs4">
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 526.18109 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="744.09448 : 526.18109 : 1"
-       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
-       id="perspective2395" />
     <linearGradient
        id="linearGradient2438">
       <stop
@@ -82,7 +43,6 @@
        xlink:href="#linearGradient2438"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient2438"
        id="linearGradient3169"
        gradientUnits="userSpaceOnUse"
@@ -101,8 +61,7 @@
       <path
          d="M 18.872484,131.67216 L -0.1275164,143.67216 L 18.872484,155.67216 M 18.872484,148.67216 L 117.87248,148.67216 L 117.87248,138.67216 L 18.872484,138.67216"
          id="rect2427"
-         style="fill:url(#linearGradient3169);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.11654347000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         sodipodi:nodetypes="ccccccc" />
+         style="fill:url(#linearGradient3169);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.11654347000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
   </g>
 </svg>

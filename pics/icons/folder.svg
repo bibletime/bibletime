@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="128"
    height="128"
    id="svg2196"
-   sodipodi:version="0.32"
-   inkscape:version="0.45+devel"
-   version="1.0"
-   sodipodi:docbase="/Users/david/Desktop/send"
-   sodipodi:docname="folder.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   version="1.0">
   <defs
      id="defs2198">
     <radialGradient
@@ -37,7 +29,6 @@
          id="stop46" />
     </radialGradient>
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#path2489_1_"
        id="radialGradient2421"
        gradientUnits="userSpaceOnUse"
@@ -64,7 +55,6 @@
          id="stop40" />
     </radialGradient>
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#path4248_1_"
        id="radialGradient2424"
        gradientUnits="userSpaceOnUse"
@@ -89,7 +79,6 @@
          id="stop34" />
     </radialGradient>
     <radialGradient
-       inkscape:collect="always"
        xlink:href="#path2471_1_"
        id="radialGradient2427"
        gradientUnits="userSpaceOnUse"
@@ -127,7 +116,6 @@
          id="stop28" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#front_1_"
        id="linearGradient2430"
        gradientUnits="userSpaceOnUse"
@@ -166,7 +154,6 @@
          id="stop14" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#XMLID_1_"
        id="linearGradient2433"
        gradientUnits="userSpaceOnUse"
@@ -176,36 +163,16 @@
        x2="63.4995"
        y2="9.3269" />
     <filter
-       inkscape:collect="always"
        x="-0.025317477"
        width="1.050635"
        y="-0.46119942"
        height="1.9223988"
        id="filter3021">
       <feGaussianBlur
-         inkscape:collect="always"
          stdDeviation="1.1814823"
          id="feGaussianBlur3023" />
     </filter>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="64"
-     inkscape:cy="63.5"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     height="128px"
-     width="128px"
-     inkscape:window-width="762"
-     inkscape:window-height="590"
-     inkscape:window-x="395"
-     inkscape:window-y="42" />
   <metadata
      id="metadata2201">
     <rdf:RDF>
@@ -218,8 +185,6 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Livello 1"
-     inkscape:groupmode="layer"
      id="layer1">
     <g
        id="g2866"

@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="156.021"
    height="137.01669"
    id="svg2472"
-   sodipodi:version="0.32"
-   inkscape:version="0.45"
-   sodipodi:docbase="/work/temp"
-   sodipodi:docname="cascade.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0">
   <defs
      id="defs2474">
@@ -63,7 +55,6 @@
        spreadMethod="pad"
        gradientTransform="scale(1.083042,0.9233252)" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient457"
        id="linearGradient3214"
        gradientUnits="userSpaceOnUse"
@@ -74,7 +65,6 @@
        x2="75.574921"
        y2="255.44344" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient448"
        id="linearGradient3216"
        gradientUnits="userSpaceOnUse"
@@ -85,7 +75,6 @@
        x2="69.209984"
        y2="276.96136" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient457"
        id="linearGradient3218"
        gradientUnits="userSpaceOnUse"
@@ -96,7 +85,6 @@
        x2="75.574921"
        y2="255.44344" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient448"
        id="linearGradient3220"
        gradientUnits="userSpaceOnUse"
@@ -107,7 +95,6 @@
        x2="69.209984"
        y2="276.96136" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient457"
        id="linearGradient3222"
        gradientUnits="userSpaceOnUse"
@@ -118,7 +105,6 @@
        x2="75.574921"
        y2="255.44344" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient448"
        id="linearGradient3224"
        gradientUnits="userSpaceOnUse"
@@ -129,30 +115,6 @@
        x2="69.209984"
        y2="276.96136" />
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     gridtolerance="10000"
-     guidetolerance="10"
-     objecttolerance="10"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="375"
-     inkscape:cy="-111.6809"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:window-width="748"
-     inkscape:window-height="572"
-     inkscape:window-x="59"
-     inkscape:window-y="0"
-     width="128px"
-     height="128px"
-     showborder="true"
-     borderlayer="false"
-     inkscape:showpageshadow="false" />
   <metadata
      id="metadata2477">
     <rdf:RDF>
@@ -176,8 +138,6 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-181.98951,-553.77737)">
     <g
@@ -188,13 +148,11 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
          id="g2029">
         <path
            transform="matrix(8.513864e-2,0,0,8.513869e-2,164.9181,302.4474)"
-           sodipodi:nodetypes="ccccccc"
            id="path2030"
            d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
            style="font-size:12px;fill:#000000;fill-opacity:0.18181799;fill-rule:evenodd;stroke:none;stroke-width:3.28521991" />
         <path
            transform="matrix(8.513864e-2,0,0,8.513869e-2,165.8064,303.4459)"
-           sodipodi:nodetypes="ccccccc"
            id="path2031"
            d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
            style="font-size:12px;fill:#000000;fill-opacity:0.18181799;fill-rule:evenodd;stroke:none;stroke-width:3.28521991" />
@@ -203,7 +161,6 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
            id="g2032">
           <path
              transform="matrix(8.513864e-2,0,0,8.513869e-2,164.0392,301.5685)"
-             sodipodi:nodetypes="ccccccc"
              id="path2033"
              d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
              style="font-size:12px;fill:url(#linearGradient3214);fill-rule:evenodd;stroke:#0000ff;stroke-width:3.28521991" />
@@ -222,13 +179,11 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
          id="g2035">
         <path
            transform="matrix(8.513864e-2,0,0,8.513869e-2,164.9181,302.4474)"
-           sodipodi:nodetypes="ccccccc"
            id="path2036"
            d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
            style="font-size:12px;fill:#000000;fill-opacity:0.18181799;fill-rule:evenodd;stroke:none;stroke-width:3.28521991" />
         <path
            transform="matrix(8.513864e-2,0,0,8.513869e-2,165.8064,303.4459)"
-           sodipodi:nodetypes="ccccccc"
            id="path2037"
            d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
            style="font-size:12px;fill:#000000;fill-opacity:0.18181799;fill-rule:evenodd;stroke:none;stroke-width:3.28521991" />
@@ -237,7 +192,6 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
            id="g2038">
           <path
              transform="matrix(8.513864e-2,0,0,8.513869e-2,164.0392,301.5685)"
-             sodipodi:nodetypes="ccccccc"
              id="path2039"
              d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
              style="font-size:12px;fill:url(#linearGradient3218);fill-rule:evenodd;stroke:#0000ff;stroke-width:3.28521991" />
@@ -256,13 +210,11 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
          id="g2041">
         <path
            transform="matrix(8.513864e-2,0,0,8.513869e-2,164.9181,302.4474)"
-           sodipodi:nodetypes="ccccccc"
            id="path2042"
            d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
            style="font-size:12px;fill:#000000;fill-opacity:0.18181799;fill-rule:evenodd;stroke:none;stroke-width:3.28521991" />
         <path
            transform="matrix(8.513864e-2,0,0,8.513869e-2,165.8064,303.4459)"
-           sodipodi:nodetypes="ccccccc"
            id="path2043"
            d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
            style="font-size:12px;fill:#000000;fill-opacity:0.18181799;fill-rule:evenodd;stroke:none;stroke-width:3.28521991" />
@@ -271,7 +223,6 @@ http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html (or any later version)</d
            id="g2044">
           <path
              transform="matrix(8.513864e-2,0,0,8.513869e-2,164.0392,301.5685)"
-             sodipodi:nodetypes="ccccccc"
              id="path2045"
              d="M 77.578,600.387 C 75.8915,600.387 521.122,600.386 521.122,600.386 C 521.122,600.386 521.809,257.232 520.123,257.232 C 517.438,229.671 508.185,223.302 492.874,222.615 C 335.254,222.925 255.812,222.615 108.445,222.925 C 85.3889,222.615 79.575,232.179 78.2658,257.919 C 76.5794,303.455 79.2645,597.014 77.578,600.387 z "
              style="font-size:12px;fill:url(#linearGradient3222);fill-rule:evenodd;stroke:#0000ff;stroke-width:3.28521991" />
