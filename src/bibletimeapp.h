@@ -38,6 +38,4 @@ class BibleTimeApp : public QApplication {
 
 };
 
-#define bApp (static_cast<BibleTimeApp *>(QCoreApplication::instance()))
-
 #endif
