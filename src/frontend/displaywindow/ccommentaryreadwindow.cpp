@@ -22,7 +22,6 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
@@ -52,7 +51,7 @@ void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
     a->addAction("previousVerse", qaction);
 
-    qaction = new QAction(QIcon(util::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
+    qaction = new QAction(CResMgr::displaywindows::commentaryWindow::syncWindow::icon(),
         tr("Synchronize"), a);
     qaction->setCheckable(true);
     qaction->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);

@@ -15,11 +15,10 @@
 #include "frontend/settingsdialogs/bttextfilterstab.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog * parent)
-        : BtConfigDialog::Page(util::getIcon(CResMgr::settings::sword::icon), parent)
+        : BtConfigDialog::Page(CResMgr::settings::sword::icon(), parent)
 {
     static const QString nullString;
 

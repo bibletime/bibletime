@@ -160,8 +160,12 @@ private:
     void initView();
 
     /** Convenience function for creating a new action. */
-    QAction * newQAction(const QString & text, const QString & pix, int shortcut, const QObject * receiver,
-                         const char * slot, QObject * parent);
+    QAction * newQAction(QString const & text,
+                         QIcon const & pix,
+                         int shortcut,
+                         QObject const * receiver,
+                         char const * slot,
+                         QObject * parent);
 
     /**
     * Returns true if more than one entry is supported by this action type.

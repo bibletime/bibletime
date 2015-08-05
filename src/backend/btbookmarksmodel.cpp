@@ -46,7 +46,6 @@
 #include "bibletimeapp.h"
 #include "btglobal.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 #include "util/directory.h"
 
@@ -452,7 +451,7 @@ BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setText(name);
     setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(util::getIcon(CResMgr::mainIndex::closedFolder::icon));
+    setIcon(CResMgr::mainIndex::closedFolder::icon());
 }
 
 QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
@@ -518,7 +517,7 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
         m_key = key;
     };
 
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module.name()));
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
 }
@@ -526,7 +525,7 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
 BookmarkItem::BookmarkItem(BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
 }
 
@@ -536,7 +535,7 @@ BookmarkItem::BookmarkItem(const BookmarkItem & other)
         , m_description(other.m_description)
         , m_moduleName(other.m_moduleName)
 {
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
 }
 

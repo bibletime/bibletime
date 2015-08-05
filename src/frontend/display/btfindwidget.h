@@ -38,7 +38,9 @@ class BtFindWidget : public QWidget {
         void createLayout();
         void createSpacer();
         void createTextEditor();
-        void createToolButton(const QString& iconName, const QString& text, const char* slot);
+        void createToolButton(QIcon const & icon,
+                              QString const & text,
+                              char const * slot);
         void highlightText(const QString& searchText);
 
         QHBoxLayout* m_layout;

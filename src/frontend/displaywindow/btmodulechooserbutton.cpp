@@ -20,7 +20,6 @@
 #include "bibletimeapp.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)
@@ -35,18 +34,26 @@ void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString th
     updateMenu(newModulesToUse, thisModule, newIndex, leftLikeModules);
 }
 
-const QString BtModuleChooserButton::iconName() {
+QIcon const & BtModuleChooserButton::icon() {
     switch (m_moduleType) {
         case CSwordModuleInfo::Bible:
-            return (m_hasModule) ? CResMgr::modules::bible::icon_unlocked : CResMgr::modules::bible::icon_add;
+            return m_hasModule
+                    ? CResMgr::modules::bible::icon_unlocked()
+                    : CResMgr::modules::bible::icon_add();
         case CSwordModuleInfo::Commentary:
-            return (m_hasModule) ? CResMgr::modules::commentary::icon_unlocked : CResMgr::modules::commentary::icon_add;
+            return m_hasModule
+                   ? CResMgr::modules::commentary::icon_unlocked()
+                   : CResMgr::modules::commentary::icon_add();
         case CSwordModuleInfo::Lexicon:
-            return m_hasModule ? CResMgr::modules::lexicon::icon_unlocked : CResMgr::modules::lexicon::icon_add;
+            return m_hasModule
+                   ? CResMgr::modules::lexicon::icon_unlocked()
+                   : CResMgr::modules::lexicon::icon_add();
         case CSwordModuleInfo::GenericBook:
-            return m_hasModule ? CResMgr::modules::book::icon_unlocked : CResMgr::modules::book::icon_add;
+            return m_hasModule
+                   ? CResMgr::modules::book::icon_unlocked()
+                   : CResMgr::modules::book::icon_add();
         default: //return as default the bible icon
-            return CResMgr::modules::bible::icon_unlocked;
+            return CResMgr::modules::bible::icon_unlocked();
     }
 }
 
@@ -70,7 +77,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
         }
     }
     m_noneAction->setChecked(m_hasModule ? false : true);
-    setIcon(util::getIcon(iconName()));
+    setIcon(icon());
 
     if (m_hasModule) {
         setToolTip( QString(tr("Select a work [%1]")).arg(m_module) );

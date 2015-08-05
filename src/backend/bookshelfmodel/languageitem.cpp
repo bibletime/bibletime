@@ -12,7 +12,7 @@
 
 #include "backend/bookshelfmodel/languageitem.h"
 
-#include "util/geticon.h"
+#include "util/bticons.h"
 
 
 namespace BookshelfModel {
@@ -24,7 +24,7 @@ QVariant LanguageItem::data(int role) const {
             return m_language->translatedName();
 
         case Qt::DecorationRole:
-            return util::getIcon("flag.svg");
+            return BtIcons::instance().icon_flag;
 
         default:
             return Item::data(role);

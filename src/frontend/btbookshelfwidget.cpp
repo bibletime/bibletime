@@ -32,7 +32,6 @@
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
@@ -94,19 +93,14 @@ void BtBookshelfWidget::setRightCornerWidget(QWidget *w) {
 }
 
 void BtBookshelfWidget::initActions() {
-    namespace RM = CResMgr::mainIndex;
-
     m_showHideAction = new QAction(this);
-    m_showHideAction->setIcon(util::getIcon("layer-visible-on.svg"));
+    m_showHideAction->setIcon(CResMgr::mainIndex::showHide::icon());
     m_showHideAction->setCheckable(true);
     connect(m_showHideAction, SIGNAL(toggled(bool)),
             m_postFilterModel, SLOT(setShowHidden(bool)));
 }
 
 void BtBookshelfWidget::initMenus() {
-    namespace DU = util::directory;
-    namespace RM = CResMgr::mainIndex;
-
     // Grouping menu:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
     connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),

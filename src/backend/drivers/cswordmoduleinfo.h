@@ -378,25 +378,13 @@ wrong, or if the config file was write protected return false.
       Returns an icon for the given module.
       \param[in] module The module whose icon to return.
     */
-    static QIcon moduleIcon(const CSwordModuleInfo & module);
-
-    /**
-      Returns the icon filename for the given module.
-      \param[in] module The module whose icon filename to return.
-    */
-    static const QString & moduleIconFilename(const CSwordModuleInfo & module);
+    static QIcon const & moduleIcon(CSwordModuleInfo const & module);
 
     /**
       Returns an icon for the category of given module.
       \param[in] module The module whose category icon to return.
     */
-    static QIcon categoryIcon(const CSwordModuleInfo::Category & category);
-
-    /**
-      Returns the icon filename for the category of given module.
-      \param[in] module The module whose category icon filename to return.
-    */
-    static const QString & categoryIconFilename(const CSwordModuleInfo::Category & category);
+    static QIcon const & categoryIcon(CSwordModuleInfo::Category category);
 
     /**
       Returns a translated name for the given category.

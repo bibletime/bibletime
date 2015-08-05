@@ -16,14 +16,13 @@
 #include <QToolButton>
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
         : QToolButton(parent) {
     initMenu();
 
-    setIcon(util::getIcon(CResMgr::displaywindows::displaySettings::icon));
+    setIcon(CResMgr::displaywindows::displaySettings::icon());
     setPopupMode(QToolButton::InstantPopup);
     setEnabled(false);
 

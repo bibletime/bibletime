@@ -14,197 +14,187 @@
 
 #include <QKeySequence>
 #include <QString>
+#include "bticons.h"
+
+#define BT_GETICON2(fname,name) \
+    inline QIcon const & fname() { return BtIcons::instance().icon_ ## name; }
+#define BT_GETICON(name) BT_GETICON2(icon,name)
 
 namespace CResMgr {
 
+BT_GETICON2(icon_clearEdit, edit_clear_locationbar)
+
 namespace mainWindow {
-extern const QString icon;
+BT_GETICON(bibletime)
+BT_GETICON2(icon_openAction, folder_open)
 }
 namespace modules {
+
+BT_GETICON2(icon_cult, stop)
+
 namespace bible {
-extern const QString icon_unlocked;
-extern const QString icon_locked;
-extern const QString icon_add;
-}
+BT_GETICON2(icon_unlocked, bible)
+BT_GETICON2(icon_locked, bible_locked)
+BT_GETICON2(icon_add, bible_add)
+} /* namespace bible { */
+
 namespace commentary {
-extern const QString icon_unlocked;
-extern const QString icon_locked;
-extern const QString icon_add;
-}
+BT_GETICON2(icon_unlocked, commentary)
+BT_GETICON2(icon_locked, commentary_locked)
+BT_GETICON2(icon_add, commentary_add)
+} /* namespace commentary { */
+
 namespace lexicon {
-extern const QString icon_unlocked;
-extern const QString icon_locked;
-extern const QString icon_add;
-}
+BT_GETICON2(icon_unlocked, lexicon)
+BT_GETICON2(icon_locked, lexicon_locked)
+BT_GETICON2(icon_add, lexicon_add)
+} /* namespace lexicon { */
+
 namespace book {
-extern const QString icon_unlocked;
-extern const QString icon_locked;
-extern const QString icon_add;
-}
-}
+BT_GETICON2(icon_unlocked, book)
+BT_GETICON2(icon_locked, book_locked)
+BT_GETICON2(icon_add, book_add)
+} /* namespace book { */
+} /* namespace modules { */
 
 namespace categories {
-namespace bibles {
-extern const QString icon;
-}
-namespace commentaries {
-extern const QString icon;
-}
-namespace lexicons {
-extern const QString icon;
-}
-namespace dailydevotional {
-extern const QString icon;
-}
-namespace books {
-extern const QString icon;
-}
-namespace glossary {
-extern const QString icon;
-}
-namespace images {
-extern const QString icon;
-}
-namespace cults {
-extern const QString icon;
-}
-}
+namespace bibles { BT_GETICON(bible) }
+namespace commentaries { BT_GETICON(commentary) }
+namespace lexicons { BT_GETICON(lexicon) }
+namespace dailydevotional { BT_GETICON(calendar) }
+namespace books { BT_GETICON(books) }
+namespace glossary { BT_GETICON(dictionary) }
+namespace images { BT_GETICON(map) }
+namespace cults { BT_GETICON(questionable) }
+} /* namespace categories { */
 
-namespace mainMenu { //Main menu
+namespace mainMenu { // Main menu
 
-namespace view { //Main menu->View
-namespace showBookshelf {
-extern const QString icon;
-}
-namespace showBookmarks {
-extern const QString icon;
-}
-namespace showMag {
-extern const QString icon;
-}
+namespace view { // Main menu->View
+namespace showBookshelf { BT_GETICON(books) }
+namespace showBookmarks { BT_GETICON(bookmark) }
+namespace showMag { BT_GETICON(document_magnifier) }
 namespace showMainIndex {
-extern const QString icon;
+BT_GETICON(view_index)
 extern const QKeySequence accel;
 extern const char* actionName;
-}
+} /* namespace showMainIndex { */
 namespace showInfoDisplay {
-extern const QString icon;
+BT_GETICON(view_mag)
 extern const QKeySequence accel;
 extern const char* actionName;
-}
-}
+} /* namespace showInfoDisplay { */
+} /* namespace view { */
 
 namespace mainIndex { //configuration for the main index and the view->search menu
 namespace search {
-extern const QString icon;
+BT_GETICON(find)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace searchdefaultbible {
-extern const QString icon;
+BT_GETICON(find)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 }
 
 namespace window { //Main menu->Window
+namespace quit { BT_GETICON(exit) }
 namespace loadProfile {
-extern const QString icon;
+BT_GETICON(view_profile)
 extern const char* actionName;
 }
 namespace saveProfile {
-extern const QString icon;
+BT_GETICON(view_profile)
 extern const char* actionName;
 }
 namespace saveToNewProfile {
-extern const QString icon;
+BT_GETICON(view_profile)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace deleteProfile {
-extern const QString icon;
+BT_GETICON(view_profile)
 extern const char* actionName;
 }
 namespace showFullscreen {
-extern const QString icon;
+BT_GETICON(window_fullscreen)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace arrangementMode {
-extern const QString icon;
+BT_GETICON(cascade_auto)
 extern const QKeySequence accel;
 extern const char* actionName;
 
 namespace manual {
-extern const QString icon;
-extern const QKeySequence accel;
-extern const char* actionName;
-}
-namespace autoTileVertical {
-extern const QString icon;
+BT_GETICON(tile)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoTileHorizontal {
-extern const QString icon;
+BT_GETICON(tile_horiz)
+extern const QKeySequence accel;
+extern const char* actionName;
+}
+namespace autoTileVertical {
+BT_GETICON(tile_vert)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoTile {
-extern const QString icon;
+BT_GETICON(tile_auto);
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoTabbed {
-extern const QString icon;
+BT_GETICON(tabbed)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoCascade {
-extern const QString icon;
+BT_GETICON(cascade_auto)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
-}
-namespace tileVertical {
-extern const QString icon;
-extern const QKeySequence accel;
-extern const char* actionName;
 }
 namespace tileHorizontal {
-extern const QString icon;
+BT_GETICON(tile_horiz)
+extern const QKeySequence accel;
+extern const char* actionName;
+}
+namespace tileVertical {
+BT_GETICON(tile_vert)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace tile {
-extern const QString icon;
+BT_GETICON(tile)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace cascade {
-extern const QString icon;
+BT_GETICON(cascade)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace close {
-extern const QString icon;
+BT_GETICON(fileclose)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace closeAll {
-extern const QString icon;
+BT_GETICON(fileclose)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 }
 
 namespace settings { //Main menu->Settings
-namespace editToolBar { // available as KStdAction
-}
-namespace optionsDialog { // available as KStdAction
-}
+namespace configureDialog { BT_GETICON(configure) }
 namespace swordSetupDialog {
-extern const QString icon;
+BT_GETICON(swordconfig)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
@@ -212,17 +202,17 @@ extern const char* actionName;
 
 namespace help { //Main menu->Help
 namespace handbook {
-extern const QString icon;
+BT_GETICON(contents2)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace bibleStudyHowTo {
-extern const QString icon;
+BT_GETICON(contents2)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace tipOfTheDay {
-extern const QString icon;
+BT_GETICON(light_bulb)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
@@ -230,43 +220,28 @@ extern const char* actionName;
 }  //end of main menu
 
 namespace findWidget {
-extern const QString close_icon;
-extern const QString previous_icon;
-extern const QString next_icon;
+BT_GETICON2(icon_close, stop)
+BT_GETICON2(icon_previous, back)
+BT_GETICON2(icon_next, forward)
 }
 
 namespace searchdialog {
-extern const QString icon;
-extern const QString close_icon;
-extern const QString help_icon;
-extern const QString chooseworks_icon;
-extern const QString setupscope_icon;
+BT_GETICON(find)
+BT_GETICON2(icon_close, stop)
+BT_GETICON2(icon_help, questionmark)
+BT_GETICON2(icon_chooseWorks, checkbox)
+BT_GETICON2(icon_setupScope, configure)
 
 namespace result {
 namespace moduleList {
-
-namespace copyMenu {
-extern const QString icon;
-}
-namespace saveMenu {
-extern const QString icon;
-}
-namespace printMenu {
-extern const QString icon;
-}
+namespace copyMenu { BT_GETICON(edit_copy) }
+namespace saveMenu { BT_GETICON(file_save) }
+namespace printMenu { BT_GETICON(print) }
 }
 namespace foundItems {
-
-namespace copyMenu {
-extern const QString icon;
-}
-namespace saveMenu {
-extern const QString icon;
-}
-namespace printMenu {
-extern const QString icon;
-}
-
+namespace copyMenu { BT_GETICON(edit_copy) }
+namespace saveMenu { BT_GETICON(file_save) }
+namespace printMenu { BT_GETICON(print) }
 }
 }
 }
@@ -274,36 +249,32 @@ extern const QString icon;
 namespace workspace {}
 
 namespace displaywindows {
-namespace transliteration {
-extern const QString icon;
-}
 namespace displaySettings {
-extern const QString icon;
+BT_GETICON(displayconfig)
 }
 
 namespace general {
-extern const QString removemoduleicon;
-extern const QString addmoduleicon;
-extern const QString replacemoduleicon;
+BT_GETICON2(icon_removeModule, fileclose)
+BT_GETICON2(icon_addModule, plus)
+BT_GETICON2(icon_replaceModule, checkbox)
 namespace search {
-extern const QString icon;
+BT_GETICON(find)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 
 namespace backInHistory {
-extern const QString icon;
+BT_GETICON(back)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace forwardInHistory {
-extern const QString icon;
+BT_GETICON(forward)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 
 namespace findStrongs {
-extern const QString icon;
 extern const QKeySequence accel;
 extern const char* actionName;
 }
@@ -331,19 +302,13 @@ namespace previousVerse {
 extern const QKeySequence accel;
 }
 
-namespace copyMenu {
-extern const QString icon;
-}
-namespace saveMenu {
-extern const QString icon;
-}
-namespace printMenu {
-extern const QString icon;
-}
+namespace copyMenu { BT_GETICON(edit_copy) }
+namespace saveMenu { BT_GETICON(file_save) }
+namespace printMenu { BT_GETICON(print) }
 }
 namespace commentaryWindow {
 namespace syncWindow {
-extern const QString icon;
+BT_GETICON(sync)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
@@ -357,80 +322,60 @@ extern const QKeySequence accel;
 namespace previousEntry {
 extern const QKeySequence accel;
 }
-
-namespace copyMenu {
-extern const QString icon;
+namespace copyMenu { BT_GETICON(edit_copy) }
+namespace saveMenu { BT_GETICON(file_save) }
+namespace printMenu { BT_GETICON(print) }
 }
-namespace saveMenu {
-extern const QString icon;
-}
-namespace printMenu {
-extern const QString icon;
-}
-}
-namespace bookWindow {
-namespace toggleTree {
-extern const QString icon;
-extern const QKeySequence accel;
-}
-}
-
 
 namespace writeWindow {
 namespace saveText {
-extern const QString icon;
+BT_GETICON(file_save)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace restoreText {
-extern const QString icon;
+BT_GETICON(import)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace deleteEntry {
-extern const QString icon;
+BT_GETICON(edit_delete)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 
 //formatting buttons
 namespace boldText {
-extern const QString icon;
+BT_GETICON(text_bold)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace italicText {
-extern const QString icon;
+BT_GETICON(text_italic)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace underlinedText {
-extern const QString icon;
+BT_GETICON(text_under)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 
 namespace alignLeft {
-extern const QString icon;
+BT_GETICON(text_leftalign)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace alignCenter {
-extern const QString icon;
+BT_GETICON(text_center)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace alignRight {
-extern const QString icon;
+BT_GETICON(text_rightalign)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
-namespace alignJustify {
-extern const QString icon;
-extern const QKeySequence accel;
-extern const char* actionName;
-}
-
 namespace fontFamily {
 extern const QKeySequence accel;
 extern const char* actionName;
@@ -446,116 +391,71 @@ namespace fontColor {
 }
 
 namespace settings {
-namespace startup {
-extern const QString icon;
-}
-namespace fonts {
-extern const QString icon;
-}
-namespace languages {
-extern const QString icon;
-}
-namespace profiles {
-extern const QString icon;
-}
-namespace sword {
-extern const QString icon;
-
-}
-namespace keys {
-extern const QString icon;
-}
+namespace startup { BT_GETICON(startconfig) }
+namespace fonts { BT_GETICON(fonts) }
+namespace languages { BT_GETICON(flag) }
+namespace profiles { BT_GETICON(view_profile) }
+namespace sword { BT_GETICON(swordconfig) }
+namespace keys { BT_GETICON(key_bindings) }
 }
 
 namespace mainIndex { //configuration for the main index and the view->search menu
+namespace showHide { BT_GETICON(layer_visible_on) }
 namespace search {
-extern const QString icon;
+BT_GETICON(find)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
-namespace newFolder {
-extern const QString icon;
-}
-namespace changeFolder {
-extern const QString icon;
-}
-namespace openedFolder {
-extern const QString icon;
-}
-namespace closedFolder {
-extern const QString icon;
-}
+namespace newFolder { BT_GETICON(folder_new) }
+namespace changeFolder { BT_GETICON(folder) }
+namespace openedFolder { BT_GETICON(folder_open) }
+namespace closedFolder { BT_GETICON(folder) }
 
-namespace bookmark {
-extern const QString icon;
-}
-namespace editBookmark {
-extern const QString icon;
-}
-namespace sortFolderBookmarks {
-extern const QString icon;
-}
-namespace sortAllBookmarks {
-extern const QString icon;
-}
-namespace importBookmarks {
-extern const QString icon;
-}
-namespace exportBookmarks {
-extern const QString icon;
-}
-namespace printBookmarks {
-extern const QString icon;
-}
-namespace deleteItems {
-extern const QString icon;
-}
+namespace bookmark { BT_GETICON(bookmark) }
+namespace editBookmark { BT_GETICON(bookmark) }
+namespace sortFolderBookmarks { BT_GETICON(null) }
+namespace sortAllBookmarks { BT_GETICON(null) }
+namespace importBookmarks { BT_GETICON(import) }
+namespace exportBookmarks { BT_GETICON(export) }
+namespace printBookmarks { BT_GETICON(print) }
+namespace deleteItems { BT_GETICON(edit_delete) }
 
-namespace editModuleMenu {
-extern const QString icon;
-}
-namespace editModulePlain {
-extern const QString icon;
-}
-namespace editModuleHTML {
-extern const QString icon;
-}
+namespace editModuleMenu { BT_GETICON(pencil) }
+namespace editModulePlain { BT_GETICON(pencil) }
+namespace editModuleHTML { BT_GETICON(pencil) }
 
-namespace unlockModule {
-extern const QString icon;
-}
-namespace aboutModule {
-extern const QString icon;
-}
-namespace grouping {
-extern const QString icon;
-}
+namespace unlockModule { BT_GETICON(unlock) }
+namespace aboutModule { BT_GETICON(info) }
+namespace grouping { BT_GETICON(view_tree) }
 }
 
 namespace bookshelfmgr {
 namespace installpage {
-extern const QString icon;
-extern const QString refresh_icon;
-extern const QString delete_icon;
-extern const QString add_icon;
-extern const QString install_icon;
-extern const QString path_icon;
+BT_GETICON(bible_add)
+BT_GETICON2(icon_refresh, refresh)
+BT_GETICON2(icon_delete, trash)
+BT_GETICON2(icon_add, plus)
+BT_GETICON2(icon_install, bible_add)
+BT_GETICON2(icon_path, configure)
 }
 namespace removepage {
-extern const QString icon;
-extern const QString remove_icon;
+BT_GETICON(bible_remove)
+BT_GETICON2(icon_remove, trash)
 }
 namespace indexpage {
-extern const QString icon;
-extern const QString create_icon;
-extern const QString delete_icon;
+BT_GETICON(document_magnifier)
+BT_GETICON2(icon_create, folder_new)
+BT_GETICON2(icon_delete, trash)
 }
 namespace paths {
-extern const QString add_icon;
-extern const QString edit_icon;
-extern const QString remove_icon;
+BT_GETICON2(icon_add, plus)
+BT_GETICON2(icon_edit, pencil)
+BT_GETICON2(icon_remove, trash)
 }
 }
 }
+
+#undef BT_GETICON
+#undef BT_GETICON2
 
 #endif

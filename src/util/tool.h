@@ -44,7 +44,7 @@ bool savePlainFile(const QString & filename,
   \param[in] module the module whose icon to return.
   \returns the icon used for the a module.
 */
-QIcon getIconForModule(const CSwordModuleInfo * module);
+QIcon const & getIconForModule(const CSwordModuleInfo * module);
 
 /**
   Creates a new explanation label.

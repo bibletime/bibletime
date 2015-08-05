@@ -10,17 +10,18 @@
 #include "bibletimeapp.h"
 
 #include <QDebug>
-#include <QFile>
+#include <QPainter>
 #include "frontend/messagedialog.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-#include "util/geticon.h"
+#include "util/bticons.h"
 
 
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QApplication(argc, argv)
     , m_init(false)
+    , m_icons(NULL)
 {
     setApplicationName("bibletime");
     setApplicationVersion(BT_VERSION);
@@ -38,7 +39,7 @@ BibleTimeApp::~BibleTimeApp() {
     delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
-    util::clearIconCache();
+    delete m_icons;
 
     BtConfig::destroyInstance();
 }
@@ -60,3 +61,4 @@ bool BibleTimeApp::initDisplayTemplateManager() {
     return false;
 }
 
+void BibleTimeApp::initIcons() { m_icons = new BtIcons(); }

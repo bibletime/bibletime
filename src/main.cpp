@@ -313,6 +313,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    app.initIcons();
+
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 

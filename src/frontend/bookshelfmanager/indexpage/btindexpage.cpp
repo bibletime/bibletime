@@ -23,12 +23,11 @@
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btmoduleindexdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 
 BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(util::getIcon(CResMgr::bookshelfmgr::indexpage::icon), parent)
+        : BtConfigDialog::Page(CResMgr::bookshelfmgr::indexpage::icon(), parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     QHBoxLayout *hboxLayout;
@@ -62,8 +61,8 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // icons for our buttons
-    m_createButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
-    m_deleteButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
+    m_createButton->setIcon(CResMgr::bookshelfmgr::indexpage::icon_create());
+    m_deleteButton->setIcon(CResMgr::bookshelfmgr::indexpage::icon_delete());
 
     // connect our signals/slots
     connect(m_createButton, SIGNAL(clicked()),

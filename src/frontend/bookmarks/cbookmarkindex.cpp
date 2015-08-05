@@ -37,10 +37,10 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/bookmarks/bteditbookmarkdialog.h"
 #include "frontend/bookmarks/cbookmarkindex.h"
+#include "util/bticons.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
@@ -88,18 +88,18 @@ void CBookmarkIndex::initView() {
     m_popup = new QMenu(viewport());
     m_popup->setTitle(tr("Bookmarks"));
 
-    m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
-    m_actions.changeFolder = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
+    m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon(), 0, this, SLOT(createNewFolder()), this);
+    m_actions.changeFolder = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon(), 0, this, SLOT(changeFolder()), this);
 
-    m_actions.editBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::editBookmark::icon, 0, this, SLOT(editBookmark()), this);
+    m_actions.editBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::editBookmark::icon(), 0, this, SLOT(editBookmark()), this);
     /// \todo Add icons for sorting bookmarks
-    m_actions.sortFolderBookmarks = newQAction(tr("Sort folder bookmarks..."), QString::null, 0, this, SLOT(sortFolderBookmarks()), this);
-    m_actions.sortAllBookmarks = newQAction(tr("Sort all bookmarks..."), QString::null, 0, this, SLOT(sortAllBookmarks()), this);
-    m_actions.importBookmarks = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
-    m_actions.exportBookmarks = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
-    m_actions.printBookmarks = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
+    m_actions.sortFolderBookmarks = newQAction(tr("Sort folder bookmarks..."), CResMgr::mainIndex::sortFolderBookmarks::icon(), 0, this, SLOT(sortFolderBookmarks()), this);
+    m_actions.sortAllBookmarks = newQAction(tr("Sort all bookmarks..."), CResMgr::mainIndex::sortAllBookmarks::icon(), 0, this, SLOT(sortAllBookmarks()), this);
+    m_actions.importBookmarks = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon(), 0, this, SLOT(importBookmarks()), this);
+    m_actions.exportBookmarks = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon(), 0, this, SLOT(exportBookmarks()), this);
+    m_actions.printBookmarks = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon(), 0, this, SLOT(printBookmarks()), this);
 
-    m_actions.deleteEntries = newQAction(tr("Remove selected items..."), CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
+    m_actions.deleteEntries = newQAction(tr("Remove selected items..."), CResMgr::mainIndex::deleteItems::icon(), 0, this, SLOT(deleteEntries()), this);
 
 
     //fill the popup menu itself
@@ -124,13 +124,14 @@ void CBookmarkIndex::initView() {
 * Should be replaced with something better; it was easier to make a new function
 * than to modify all QAction constructors.
 */
-QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    QAction *action;
-    if (pix.isEmpty()) {
-        action = new QAction(text, parent);
-    } else {
-        action = new QAction(util::getIcon(pix), text, parent);
-    }
+QAction* CBookmarkIndex::newQAction(QString const & text,
+                                    QIcon const & pix,
+                                    int const /*shortcut*/,
+                                    QObject const * receiver,
+                                    char const * slot,
+                                    QObject * parent)
+{
+    QAction * const action = new QAction(pix, text, parent);
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;
 }
@@ -239,21 +240,7 @@ void CBookmarkIndex::paintEvent(QPaintEvent* event) {
     if (!arrowInitialized) {
         arrowInitialized = true;
         int arrowSize = util::tool::mWidth(this, 1);
-        QString fileName;
-        if (DU::getIconDir().exists("pointing_arrow.svg")) {
-            fileName = DU::getIconDir().filePath("pointing_arrow.svg");
-        }
-        else {
-            if (DU::getIconDir().exists("pointing_arrow.png")) {
-                fileName = DU::getIconDir().filePath("pointing_arrow.png");
-            }
-            else {
-                qWarning() << "Picture file pointing_arrow.svg or .png not found!";
-            }
-        }
-
-        pix = QPixmap(fileName);
-        pix = pix.scaled(arrowSize, arrowSize, Qt::KeepAspectRatioByExpanding);
+        pix = BtIcons::instance().icon_pointing_arrow.pixmap(arrowSize);
         halfPixHeight = pix.height() / 2;
     }
 

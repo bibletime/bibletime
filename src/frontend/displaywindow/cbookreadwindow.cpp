@@ -69,7 +69,7 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     qaction = new QAction( /* QIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon), */
         tr("Toggle tree view"), a);
     qaction->setCheckable(true);
-    qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
+    // qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
     a->addAction("toggleTree", qaction);
 }
 

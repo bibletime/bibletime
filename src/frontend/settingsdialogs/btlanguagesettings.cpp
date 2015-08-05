@@ -18,7 +18,6 @@
 #include "bibletimeapp.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 // Sword includes:
@@ -30,7 +29,7 @@ typedef std::list<sword::SWBuf>::const_iterator SBLCI;
 
 
 BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(util::getIcon(CResMgr::settings::languages::icon), parent)
+        : BtConfigDialog::Page(CResMgr::settings::languages::icon(), parent)
 {
     m_swordLocaleCombo = new QComboBox(this);
     m_languageNamesLabel = new QLabel(this);

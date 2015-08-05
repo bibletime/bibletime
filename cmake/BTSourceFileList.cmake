@@ -114,9 +114,9 @@ SOURCE_GROUP("src\\backend\\models" FILES ${bibletime_SRC_BACKEND_MODELS})
 SET(bibletime_SRC_UTIL
     # Utilities:
     src/util/cresmgr.cpp
-    src/util/directory.cpp
+    src/util/bticons.cpp
     src/util/btmodules.cpp
-    src/util/geticon.cpp
+    src/util/directory.cpp
     src/util/tool.cpp
 )
 

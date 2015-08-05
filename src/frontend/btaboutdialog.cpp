@@ -19,6 +19,7 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWebView>
+#include "util/bticons.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -58,7 +59,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     QWidget *top = new QWidget(this);
     QHBoxLayout *topLayout = new QHBoxLayout;
     m_iconLabel = new QLabel(this);
-    m_iconLabel->setPixmap(QIcon(util::directory::getIconDir().path() + "/bibletime.svg").pixmap(48));
+    m_iconLabel->setPixmap(BtIcons::instance().icon_bibletime.pixmap(48));
     topLayout->addWidget(m_iconLabel);
     m_versionLabel = new QLabel(this);
     QFont font = m_versionLabel->font();

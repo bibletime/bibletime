@@ -30,7 +30,6 @@
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 namespace {
@@ -83,7 +82,7 @@ CSearchDialog* CSearchDialog::getSearchDialog() {
 CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
         m_searchResultArea(0), m_searchOptionsArea(0) {
-    setWindowIcon(util::getIcon(CResMgr::searchdialog::icon));
+    setWindowIcon(CResMgr::searchdialog::icon());
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -246,7 +245,7 @@ void CSearchDialog::initView() {
 
     m_closeButton = new QPushButton(this);
     m_closeButton->setText(tr("&Close"));
-    m_closeButton->setIcon(util::getIcon(CResMgr::searchdialog::close_icon));
+    m_closeButton->setIcon(CResMgr::searchdialog::icon_close());
     horizontalLayout->addWidget(m_closeButton);
 
     verticalLayout->addLayout(horizontalLayout);

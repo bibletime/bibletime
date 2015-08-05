@@ -15,6 +15,8 @@
 #include <QApplication>
 
 
+class BtIcons;
+
 /**
   The BibleTimeApp class is used to clean up all instances of the backend and to
   delete all created module objects.
@@ -31,10 +33,12 @@ class BibleTimeApp : public QApplication {
         inline void startInit() { m_init = true; }
         bool initBtConfig();
         bool initDisplayTemplateManager();
+        void initIcons();
 
     private: /* Fields: */
 
         bool m_init;
+        BtIcons * m_icons;
 
 };
 

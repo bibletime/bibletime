@@ -79,8 +79,9 @@ class BtModuleChooserButton : public QToolButton  {
         void moduleChosen(QAction* action );
 
     private:
+
         /** Returns the icon used for the current status.*/
-        const QString iconName();
+        QIcon const & icon();
 
         /**
         * Populates the menu with language submenus and module items without setting

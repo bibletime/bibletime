@@ -17,16 +17,15 @@
 #include "QToolButton"
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 BtFindWidget::BtFindWidget(QWidget* parent)
         : QWidget(parent) {
     createLayout();
-    createToolButton(CResMgr::findWidget::close_icon, "", SLOT(hide()));
+    createToolButton(CResMgr::findWidget::icon_close(), "", SLOT(hide()));
     createTextEditor();
-    createToolButton(CResMgr::findWidget::previous_icon, tr("Previous"), SLOT(findPrevious()));
-    createToolButton(CResMgr::findWidget::next_icon, tr("Next"), SLOT(findNext()));
+    createToolButton(CResMgr::findWidget::icon_previous(), tr("Previous"), SLOT(findPrevious()));
+    createToolButton(CResMgr::findWidget::icon_next(), tr("Next"), SLOT(findNext()));
     createCaseCheckBox();
     createSpacer();
     setFocusProxy(m_textEditor);
@@ -41,9 +40,12 @@ void BtFindWidget::createLayout() {
     m_layout->setSpacing(8);
 }
 
-void BtFindWidget::createToolButton(const QString& iconName, const QString& text, const char* slot) {
+void BtFindWidget::createToolButton(QIcon const & icon,
+                                    QString const & text,
+                                    char const * slot)
+{
     QToolButton* button = new QToolButton(this);
-    button->setIcon(util::getIcon(iconName));
+    button->setIcon(icon);
     button->setIconSize(QSize(16,16));
     button->setText(text);
     button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);

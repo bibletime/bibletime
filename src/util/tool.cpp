@@ -22,7 +22,6 @@
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
 namespace util {
@@ -81,62 +80,41 @@ bool savePlainFile(const QString & filename,
     return false;
 }
 
-namespace {
-
-/**
-  \param[in] module the module whose icon name to return.
-  \returns the icon name used for the a module.
-*/
-static QString getIconNameForModule(CSwordModuleInfo const * const module) {
+QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
     if (!module)
-        return CResMgr::modules::book::icon_locked;
+        return CResMgr::modules::book::icon_locked();
 
     if (module->category() == CSwordModuleInfo::Cult)
-        return "stop.svg";
+        return CResMgr::modules::icon_cult();
 
     switch (module->type()) {
         case CSwordModuleInfo::Bible:
             if (module->isLocked())
-                return CResMgr::modules::bible::icon_locked;
-            else
-                return CResMgr::modules::bible::icon_unlocked;
-            break;
+                return CResMgr::modules::bible::icon_locked();
+            return CResMgr::modules::bible::icon_unlocked();
 
         case CSwordModuleInfo::Lexicon:
             if (module->isLocked())
-                return CResMgr::modules::lexicon::icon_locked;
-            else
-                return CResMgr::modules::lexicon::icon_unlocked;
-            break;
+                return CResMgr::modules::lexicon::icon_locked();
+            return CResMgr::modules::lexicon::icon_unlocked();
 
         case CSwordModuleInfo::Commentary:
             if (module->isLocked())
-                return CResMgr::modules::commentary::icon_locked;
-            else
-                return CResMgr::modules::commentary::icon_unlocked;
-            break;
+                return CResMgr::modules::commentary::icon_locked();
+            return CResMgr::modules::commentary::icon_unlocked();
 
         case CSwordModuleInfo::GenericBook:
             if (module->isLocked())
-                return CResMgr::modules::book::icon_locked;
-            else
-                return CResMgr::modules::book::icon_unlocked;
-            break;
+                return CResMgr::modules::book::icon_locked();
+            return CResMgr::modules::book::icon_unlocked();
 
         case CSwordModuleInfo::Unknown: //fallback
         default:
             if (module->isLocked())
-                return CResMgr::modules::book::icon_locked;
-            else
-                return CResMgr::modules::book::icon_unlocked;
-            break;
+                return CResMgr::modules::book::icon_locked();
+            return CResMgr::modules::book::icon_unlocked();
     }
-    return CResMgr::modules::book::icon_unlocked;
-}
-} // anonymous namespace
-
-QIcon getIconForModule(const CSwordModuleInfo * const module) {
-    return util::getIcon(getIconNameForModule(module));
+    return CResMgr::modules::book::icon_unlocked();
 }
 
 QLabel * explanationLabel(QWidget * const parent,

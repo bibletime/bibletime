@@ -288,7 +288,7 @@ public slots:
         /**
         * Initializes one action object
         */
-        QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel,
+        QAction* initAction(QAction* action, QString text, QIcon const & icon, QKeySequence accel,
                             const QString& tooltip, const QString& actionName, const char* slot );
         /**
         * Refreshes all presenter supporting at least in of the features given as parameter.

@@ -27,7 +27,6 @@
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 
@@ -102,17 +101,17 @@ void BtSearchOptionsArea::initView() {
 
     m_searchButton = new QPushButton(this);
     m_searchButton->setText(tr("&Search"));
-    m_searchButton->setIcon(util::getIcon(CResMgr::searchdialog::icon));
+    m_searchButton->setIcon(CResMgr::searchdialog::icon());
     m_searchButton->setToolTip(tr("Start to search the text in the chosen works"));
     gridLayout->addWidget(m_searchButton, 0, 2);
 
     m_chooseModulesButton = new QPushButton(tr("Ch&oose..."), searchGroupBox);
-    m_chooseModulesButton->setIcon(util::getIcon(CResMgr::searchdialog::chooseworks_icon));
+    m_chooseModulesButton->setIcon(CResMgr::searchdialog::icon_chooseWorks());
     m_chooseModulesButton->setToolTip( tr("Choose works for the search"));
     gridLayout->addWidget(m_chooseModulesButton, 2, 2);
 
     m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
-    m_chooseRangeButton->setIcon(util::getIcon(CResMgr::searchdialog::setupscope_icon));
+    m_chooseRangeButton->setIcon(CResMgr::searchdialog::icon_setupScope());
     m_chooseRangeButton->setToolTip(tr("Configure predefined scopes for search"));
     gridLayout->addWidget(m_chooseRangeButton, 3, 2);
 

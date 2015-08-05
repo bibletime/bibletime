@@ -31,7 +31,6 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/exceptions.h"
-#include "util/geticon.h"
 #include "util/htmlescape.h"
 
 // Sword includes:
@@ -878,35 +877,28 @@ QString CSwordModuleInfo::aboutText() const {
     return text;
 }
 
-QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
-    const QString & filename = moduleIconFilename(module);
-    if (filename.isEmpty())
-        return QIcon();
-    return util::getIcon(filename);
-}
-
-const QString & CSwordModuleInfo::moduleIconFilename(const CSwordModuleInfo & module) {
-    const CSwordModuleInfo::Category cat(module.m_cachedCategory);
+QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
+    CSwordModuleInfo::Category const cat(module.m_cachedCategory);
     switch (cat) {
         case CSwordModuleInfo::Bibles:
             return module.isLocked()
-                   ? CResMgr::modules::bible::icon_locked
-                   : CResMgr::modules::bible::icon_unlocked;
+                   ? CResMgr::modules::bible::icon_locked()
+                   : CResMgr::modules::bible::icon_unlocked();
 
         case CSwordModuleInfo::Commentaries:
             return module.isLocked()
-                   ? CResMgr::modules::commentary::icon_locked
-                   : CResMgr::modules::commentary::icon_unlocked;
+                   ? CResMgr::modules::commentary::icon_locked()
+                   : CResMgr::modules::commentary::icon_unlocked();
 
         case CSwordModuleInfo::Lexicons:
             return module.isLocked()
-                   ? CResMgr::modules::lexicon::icon_locked
-                   : CResMgr::modules::lexicon::icon_unlocked;
+                   ? CResMgr::modules::lexicon::icon_locked()
+                   : CResMgr::modules::lexicon::icon_unlocked();
 
         case CSwordModuleInfo::Books:
             return module.isLocked()
-                   ? CResMgr::modules::book::icon_locked
-                   : CResMgr::modules::book::icon_unlocked;
+                   ? CResMgr::modules::book::icon_locked()
+                   : CResMgr::modules::book::icon_unlocked();
 
         case CSwordModuleInfo::Cult:
         case CSwordModuleInfo::Images:
@@ -914,40 +906,31 @@ const QString & CSwordModuleInfo::moduleIconFilename(const CSwordModuleInfo & mo
         case CSwordModuleInfo::Glossary:
         case CSwordModuleInfo::UnknownCategory:
         default:
-            return categoryIconFilename(cat);
+            return categoryIcon(cat);
     }
 }
 
-QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category & category) {
-    const QString filename(categoryIconFilename(category));
-    if (filename.isEmpty())
-        return QIcon();
-    return util::getIcon(filename);
-}
-
-const QString & CSwordModuleInfo::categoryIconFilename(const CSwordModuleInfo::Category & category) {
-    static const QString noFilename;
-
+QIcon const & CSwordModuleInfo::categoryIcon(CSwordModuleInfo::Category category) {
     switch (category) {
         case CSwordModuleInfo::Bibles:
-            return CResMgr::categories::bibles::icon;
+            return CResMgr::categories::bibles::icon();
         case CSwordModuleInfo::Commentaries:
-            return CResMgr::categories::commentaries::icon;
+            return CResMgr::categories::commentaries::icon();
         case CSwordModuleInfo::Books:
-            return CResMgr::categories::books::icon;
+            return CResMgr::categories::books::icon();
         case CSwordModuleInfo::Cult:
-            return CResMgr::categories::cults::icon;
+            return CResMgr::categories::cults::icon();
         case CSwordModuleInfo::Images:
-            return CResMgr::categories::images::icon;
+            return CResMgr::categories::images::icon();
         case CSwordModuleInfo::DailyDevotional:
-            return CResMgr::categories::dailydevotional::icon;
+            return CResMgr::categories::dailydevotional::icon();
         case CSwordModuleInfo::Lexicons:
-            return CResMgr::categories::lexicons::icon;
+            return CResMgr::categories::lexicons::icon();
         case CSwordModuleInfo::Glossary:
-            return CResMgr::categories::glossary::icon;
+            return CResMgr::categories::glossary::icon();
         case CSwordModuleInfo::UnknownCategory:
         default:
-            return noFilename;
+            return BtIcons::instance().icon_null;
     }
 }
 

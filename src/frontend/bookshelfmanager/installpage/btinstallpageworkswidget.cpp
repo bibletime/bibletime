@@ -22,7 +22,6 @@
 #include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 namespace {
@@ -66,7 +65,7 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
     m_sourceRefreshButton = new QToolButton(this);
     m_sourceRefreshButton->setAutoRaise(true);
     m_sourceRefreshButton->setToolTip(tr("Refresh the list of works from this source"));
-    m_sourceRefreshButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
+    m_sourceRefreshButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_refresh());
     setRightCornerWidget(m_sourceRefreshButton);
 
     connect(m_sourceRefreshButton, SIGNAL(clicked()),
