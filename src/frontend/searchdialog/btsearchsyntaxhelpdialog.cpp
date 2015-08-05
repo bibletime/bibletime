@@ -14,7 +14,6 @@
 #include <QVBoxLayout>
 #include <QWebView>
 #include "frontend/messagedialog.h"
-#include "util/directory.h"
 
 
 namespace Search {
@@ -42,8 +41,6 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
 }
 
 void BtSearchSyntaxHelpDialog::retranslateUi() {
-    namespace DU = util::directory;
-
     QString theTitle(tr("Search Syntax Help"));
     setWindowTitle(theTitle);
 
@@ -212,7 +209,7 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
                 .arg("http://lucene.apache.org/java/1_4_3/queryparsersyntax.html");
     html += "</p></body></html>";
 
-    m_webView->setHtml(html, QUrl::fromLocalFile(DU::getIconDir().path()));
+    m_webView->setHtml(html);
 
     message::prepareDialogBox(m_buttons);
 }
