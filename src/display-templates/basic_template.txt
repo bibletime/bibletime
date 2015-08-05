@@ -9,6 +9,10 @@
 a { }
 a:hover { }
 
+.inline {
+    display: inline;
+}
+
 /* An entry is the generic element used for all content items.
  In Bibles an entry contains a verse, in commentaries the comment to a verse range,
  in lexicons an simple item and in book the text of an item with other .entry elements as childs.

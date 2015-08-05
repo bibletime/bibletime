@@ -20,6 +20,7 @@
 
 
 #define CSSTEMPLATEBASE "Basic.tmpl"
+#define CSSTEMPLATEBASEMOBILE "Basic-mobile.tmpl"
 
 namespace {
 
@@ -80,6 +81,8 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
     m_availableTemplateNamesCache = m_templateMap.keys();
     const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
     Q_ASSERT(b);
+    const bool bm = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASEMOBILE);
+    Q_ASSERT(bm);
     m_availableTemplateNamesCache.append(m_cssMap.keys());
     qSort(m_availableTemplateNamesCache);
 

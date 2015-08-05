@@ -35,6 +35,10 @@ a:hover {
     padding:0 2px;
 }
 
+.inline {
+    display: inline;
+}
+
 
 /* Settings which apply to all entries in all modules */
 .entry {
@@ -63,6 +67,9 @@ td.entry, td.currententry {
 }
 .currententry[dir=rtl] {
     text-align:right !important;
+}
+.currententry.inline {
+    line-height:1.4em;
 }
 div.currententry {
 }

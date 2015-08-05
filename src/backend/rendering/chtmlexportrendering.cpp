@@ -172,11 +172,12 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
             }
         }
 
-        entry.append(m_displayOptions.lineBreaks  ? "<div "  : "<div style=\"display: inline;\" ");
+        entry.append(m_displayOptions.lineBreaks  ? "<div class=\""  : "<div class=\"inline ");
 
         if (modules.count() == 1) { //insert only the class if we're not in a td
-            entry.append( i.settings().highlight  ? "class=\"currententry\" " : "class=\"entry\" " );
+            entry.append( i.settings().highlight  ? "currententry " : "entry " );
         }
+        entry.append( "\"" );
 
         entry.append(langAttr).append(isRTL ? " dir=\"rtl\">" : " dir=\"ltr\">");
 

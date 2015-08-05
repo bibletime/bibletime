@@ -41,6 +41,10 @@ body {
 a { color:#FF0004; padding:0; }
 a:hover { }
 
+.inline {
+    display: inline;
+}
+
 /* An entry is the generic element used for all content items.
  In Bibles an entry contains a verse, in commentaries the comment to a verse range,
  in lexicons an simple item and in book the text of an item with other .entry elements as childs.
@@ -76,12 +80,13 @@ td.entry, td.currententry {
  */
 .currententry {
     padding:0.3em;
-    line-height:1.6em;
     background-color:#D3E5FF;
     /*border: thin solid black;*/
 
 }
-
+.currententry.inline {
+    line-height:1.6em;
+}
 table .currententry:nth-child(1) {
     margin-left:0;
     border-left:10px solid #99B4FF;
