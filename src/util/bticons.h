@@ -53,6 +53,7 @@ public: /* Fields: */
 
     /* Regular icons: */
     RegularIcon const icon_add;
+    RegularIcon const icon_automatically;
     RegularIcon const icon_back;
     RegularIcon const icon_bible;
     RegularIcon const icon_bibletime;
@@ -61,7 +62,6 @@ public: /* Fields: */
     RegularIcon const icon_books;
     RegularIcon const icon_calendar;
     RegularIcon const icon_cascade;
-    RegularIcon const icon_cascade_auto;
     RegularIcon const icon_checkbox;
     RegularIcon const icon_commentary;
     RegularIcon const icon_configure;
@@ -112,7 +112,6 @@ public: /* Fields: */
     RegularIcon const icon_text_rightalign;
     RegularIcon const icon_text_under;
     RegularIcon const icon_tile;
-    RegularIcon const icon_tile_auto;
     RegularIcon const icon_tile_horiz;
     RegularIcon const icon_tile_vert;
     RegularIcon const icon_trash;
@@ -129,10 +128,14 @@ public: /* Fields: */
     OverlayedIcon const icon_bible_remove;
     OverlayedIcon const icon_book_add;
     OverlayedIcon const icon_book_locked;
+    OverlayedIcon const icon_cascade_auto;
     OverlayedIcon const icon_commentary_add;
     OverlayedIcon const icon_commentary_locked;
     OverlayedIcon const icon_lexicon_add;
     OverlayedIcon const icon_lexicon_locked;
+    OverlayedIcon const icon_tile_auto;
+    OverlayedIcon const icon_tile_horiz_auto;
+    OverlayedIcon const icon_tile_vert_auto;
 
 };
 

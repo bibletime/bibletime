@@ -134,12 +134,12 @@ extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoTileHorizontal {
-BT_GETICON(tile_horiz)
+BT_GETICON(tile_horiz_auto)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoTileVertical {
-BT_GETICON(tile_vert)
+BT_GETICON(tile_vert_auto)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
