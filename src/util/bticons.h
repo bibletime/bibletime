@@ -13,15 +13,28 @@
 #define BTICONS_H
 
 #include <QIcon>
-#include <QMap>
 #include <QString>
 
 
 class BtIcons {
 
-private: /* Types: */
+public: /* Types: */
 
-    typedef QMap<QString, QIcon> IconCache;
+    class RegularIcon: public QIcon {
+
+    public: /* Methods: */
+
+        RegularIcon(char const * const name);
+
+    };
+
+    class OverlayedIcon: public QIcon {
+
+    public: /* Methods: */
+
+        OverlayedIcon(QIcon const & icon, QIcon const & overlayedIcon);
+
+    };
 
 public: /* Methods: */
 
@@ -30,106 +43,101 @@ public: /* Methods: */
     static inline BtIcons & instance()
     { return (Q_ASSERT(m_instance), *m_instance); }
 
-private: /* Methods: */
-
-    QIcon const & loadIcon(QString const & name);
-
 private: /* Fields: */
 
     static BtIcons * m_instance;
-    IconCache m_iconCache;
 
 public: /* Fields: */
 
     QIcon const icon_null;
 
     /* Regular icons: */
-    QIcon const icon_add;
-    QIcon const icon_back;
-    QIcon const icon_bible;
-    QIcon const icon_bibletime;
-    QIcon const icon_book;
-    QIcon const icon_bookmark;
-    QIcon const icon_books;
-    QIcon const icon_calendar;
-    QIcon const icon_cascade;
-    QIcon const icon_cascade_auto;
-    QIcon const icon_checkbox;
-    QIcon const icon_commentary;
-    QIcon const icon_configure;
-    QIcon const icon_contents2;
-    QIcon const icon_default;
-    QIcon const icon_dictionary;
-    QIcon const icon_displayconfig;
-    QIcon const icon_displaytranslit;
-    QIcon const icon_document_magnifier;
-    QIcon const icon_edit_clear;
-    QIcon const icon_edit_clear_locationbar;
-    QIcon const icon_edit_copy;
-    QIcon const icon_edit_delete;
-    QIcon const icon_edit_undo;
-    QIcon const icon_exit;
-    QIcon const icon_export;
-    QIcon const icon_file_save;
-    QIcon const icon_fileclose;
-    QIcon const icon_fileprint;
-    QIcon const icon_find;
-    QIcon const icon_flag;
-    QIcon const icon_folder_new;
-    QIcon const icon_folder_open;
-    QIcon const icon_folder;
-    QIcon const icon_fontconfig;
-    QIcon const icon_fonts;
-    QIcon const icon_forward;
-    QIcon const icon_import;
-    QIcon const icon_info;
-    QIcon const icon_key_bindings;
-    QIcon const icon_layer_visible_on;
-    QIcon const icon_lexicon;
-    QIcon const icon_light_bulb;
-    QIcon const icon_lock;
-    QIcon const icon_map;
-    QIcon const icon_pencil;
-    QIcon const icon_plus;
-    QIcon const icon_pointing_arrow;
-    QIcon const icon_print;
-    QIcon const icon_remove;
-    QIcon const icon_questionable;
-    QIcon const icon_questionmark;
-    QIcon const icon_refresh;
-    QIcon const icon_startconfig;
-    QIcon const icon_stop;
-    QIcon const icon_swordconfig;
-    QIcon const icon_sync;
-    QIcon const icon_tabbed;
-    QIcon const icon_text_bold;
-    QIcon const icon_text_center;
-    QIcon const icon_text_italic;
-    QIcon const icon_text_leftalign;
-    QIcon const icon_text_rightalign;
-    QIcon const icon_text_under;
-    QIcon const icon_tile;
-    QIcon const icon_tile_auto;
-    QIcon const icon_tile_horiz;
-    QIcon const icon_tile_vert;
-    QIcon const icon_trash;
-    QIcon const icon_unlock;
-    QIcon const icon_view_tree;
-    QIcon const icon_view_index;
-    QIcon const icon_view_mag;
-    QIcon const icon_view_profile;
-    QIcon const icon_window_fullscreen;
+    RegularIcon const icon_add;
+    RegularIcon const icon_back;
+    RegularIcon const icon_bible;
+    RegularIcon const icon_bibletime;
+    RegularIcon const icon_book;
+    RegularIcon const icon_bookmark;
+    RegularIcon const icon_books;
+    RegularIcon const icon_calendar;
+    RegularIcon const icon_cascade;
+    RegularIcon const icon_cascade_auto;
+    RegularIcon const icon_checkbox;
+    RegularIcon const icon_commentary;
+    RegularIcon const icon_configure;
+    RegularIcon const icon_contents2;
+    RegularIcon const icon_default;
+    RegularIcon const icon_dictionary;
+    RegularIcon const icon_displayconfig;
+    RegularIcon const icon_displaytranslit;
+    RegularIcon const icon_document_magnifier;
+    RegularIcon const icon_edit_clear;
+    RegularIcon const icon_edit_clear_locationbar;
+    RegularIcon const icon_edit_copy;
+    RegularIcon const icon_edit_delete;
+    RegularIcon const icon_edit_undo;
+    RegularIcon const icon_exit;
+    RegularIcon const icon_export;
+    RegularIcon const icon_file_save;
+    RegularIcon const icon_fileclose;
+    RegularIcon const icon_fileprint;
+    RegularIcon const icon_find;
+    RegularIcon const icon_flag;
+    RegularIcon const icon_folder_new;
+    RegularIcon const icon_folder_open;
+    RegularIcon const icon_folder;
+    RegularIcon const icon_fontconfig;
+    RegularIcon const icon_fonts;
+    RegularIcon const icon_forward;
+    RegularIcon const icon_import;
+    RegularIcon const icon_info;
+    RegularIcon const icon_key_bindings;
+    RegularIcon const icon_layer_visible_on;
+    RegularIcon const icon_lexicon;
+    RegularIcon const icon_light_bulb;
+    RegularIcon const icon_lock;
+    RegularIcon const icon_map;
+    RegularIcon const icon_pencil;
+    RegularIcon const icon_plus;
+    RegularIcon const icon_pointing_arrow;
+    RegularIcon const icon_print;
+    RegularIcon const icon_remove;
+    RegularIcon const icon_questionable;
+    RegularIcon const icon_questionmark;
+    RegularIcon const icon_refresh;
+    RegularIcon const icon_startconfig;
+    RegularIcon const icon_stop;
+    RegularIcon const icon_swordconfig;
+    RegularIcon const icon_sync;
+    RegularIcon const icon_tabbed;
+    RegularIcon const icon_text_bold;
+    RegularIcon const icon_text_center;
+    RegularIcon const icon_text_italic;
+    RegularIcon const icon_text_leftalign;
+    RegularIcon const icon_text_rightalign;
+    RegularIcon const icon_text_under;
+    RegularIcon const icon_tile;
+    RegularIcon const icon_tile_auto;
+    RegularIcon const icon_tile_horiz;
+    RegularIcon const icon_tile_vert;
+    RegularIcon const icon_trash;
+    RegularIcon const icon_unlock;
+    RegularIcon const icon_view_tree;
+    RegularIcon const icon_view_index;
+    RegularIcon const icon_view_mag;
+    RegularIcon const icon_view_profile;
+    RegularIcon const icon_window_fullscreen;
 
     /* Overlayed icons: */
-    QIcon const icon_bible_add;
-    QIcon const icon_bible_locked;
-    QIcon const icon_bible_remove;
-    QIcon const icon_book_add;
-    QIcon const icon_book_locked;
-    QIcon const icon_commentary_add;
-    QIcon const icon_commentary_locked;
-    QIcon const icon_lexicon_add;
-    QIcon const icon_lexicon_locked;
+    OverlayedIcon const icon_bible_add;
+    OverlayedIcon const icon_bible_locked;
+    OverlayedIcon const icon_bible_remove;
+    OverlayedIcon const icon_book_add;
+    OverlayedIcon const icon_book_locked;
+    OverlayedIcon const icon_commentary_add;
+    OverlayedIcon const icon_commentary_locked;
+    OverlayedIcon const icon_lexicon_add;
+    OverlayedIcon const icon_lexicon_locked;
 
 };
 
