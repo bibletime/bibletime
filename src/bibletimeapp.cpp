@@ -11,6 +11,7 @@
 
 #include <QDebug>
 #include <QPainter>
+#include <QtGlobal>
 #include "frontend/messagedialog.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
@@ -25,8 +26,11 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
 {
     setApplicationName("bibletime");
     setApplicationVersion(BT_VERSION);
+
     // Support for retina displays
+    #if QT_VERSION >= 0x050200
     this->setAttribute(Qt::AA_UseHighDpiPixmaps);
+    #endif
 }
 
 BibleTimeApp::~BibleTimeApp() {
