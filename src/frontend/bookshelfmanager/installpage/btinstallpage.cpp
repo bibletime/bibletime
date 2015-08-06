@@ -262,7 +262,7 @@ void BtInstallPage::retranslateInstallGroupBox() {
 void BtInstallPage::retranslateUi() {
     setHeaderText(tr("Install/Update"));
 
-    util::tool::initExplanationLabel(m_warningLabel, tr("WARNING!!!"),
+    util::tool::initExplanationLabel(m_warningLabel, tr("WARNING"),
             tr("If you live in a persecuted country and don't want to risk "
                "detection don't use remote sources."));
 
