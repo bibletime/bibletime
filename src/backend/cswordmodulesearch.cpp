@@ -214,7 +214,6 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
 QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     QString token;
     QStringList tokenList;
-    int pos;
 
     token = "";
     for (int cnt = 0; cnt < queryString.length();) {
@@ -314,6 +313,7 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
 
     QStringList::iterator it;
     for (it = tokenList.begin(); it != tokenList.end(); ++it) {
+        int pos;
         //-----------------------------------------------------------
         // remove all the NOT(!) tokens - these do not need to be
         // highlighted in the highlighter
