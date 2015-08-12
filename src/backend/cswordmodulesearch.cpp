@@ -69,12 +69,10 @@ QList<const CSwordModuleInfo*> CSwordModuleSearch::unindexedModules(
 QString CSwordModuleSearch::highlightSearchedText(const QString& content, const QString& searchedText) {
     QString ret = content;
 
-    const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
+    static Qt::CaseSensitivity const cs = Qt::CaseInsensitive;
 
     //   int index = 0;
     int index = ret.indexOf("<body", 0);
-    int matchLen = 0;
-    int length = searchedText.length();
 
     // Highlighting constants -
     // \todo We need to make the highlight color configurable.
@@ -162,6 +160,8 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     // since I could not figure out the lucene query parser, I
     // made a simple parser.
     //===========================================================
+    int length = searchedText.length();
+    int matchLen = 0;
     QStringList words(queryParser(searchedText));
     //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     foreach (QString word, words) { //search for every word in the list
