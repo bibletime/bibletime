@@ -313,7 +313,6 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     if ((token != "*") && (token != ""))
         tokenList.append(token);
 
-    cnt = 0;
     QStringList::iterator it;
     for (it = tokenList.begin(); it != tokenList.end(); ++it) {
         //-----------------------------------------------------------
