@@ -20,7 +20,7 @@
 void CSwordModuleSearch::startSearch() {
     // Clear old search results:
     m_results.clear();
-    m_foundItems = 0;
+    m_foundItems = 0u;
 
     /// \todo What is the purpose of the following statement?
     CSwordBackend::instance()->setFilterOptions(btConfig().getFilterOptions());
@@ -28,8 +28,9 @@ void CSwordModuleSearch::startSearch() {
     // Search module-by-module:
     Q_FOREACH(const CSwordModuleInfo *m, m_searchModules) {
         sword::ListKey results;
-        int found = m->searchIndexed(m_searchText, m_searchScope, results);
-        if (found > 0) {
+        size_t const found =
+                m->searchIndexed(m_searchText, m_searchScope, results);
+        if (found > 0u) {
             m_results.insert(m, results);
             m_foundItems += found;
         }

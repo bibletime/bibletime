@@ -484,9 +484,9 @@ unsigned long CSwordModuleInfo::indexSize() const {
     return DU::getDirSizeRecursive(getModuleBaseIndexLocation());
 }
 
-int CSwordModuleInfo::searchIndexed(const QString & searchedText,
-                                    const sword::ListKey & scope,
-                                    sword::ListKey & results) const
+size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
+                                       const sword::ListKey & scope,
+                                       sword::ListKey & results) const
 {
     QScopedPointer<char, QScopedPointerArrayDeleter<char> >
         sPutfBuffer(new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
@@ -568,13 +568,13 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
                           QCoreApplication::tr("Search aborted"),
                           QCoreApplication::tr("An internal error occurred "
                                                "while executing your search."));
-        return 0;
+        return 0u;
     }
 
     qDeleteAll(list);
     list.clear();
 
-    return results.getCount();
+    return static_cast<size_t>(results.getCount());
 }
 
 sword::SWVersion CSwordModuleInfo::minimumSwordVersion() const {

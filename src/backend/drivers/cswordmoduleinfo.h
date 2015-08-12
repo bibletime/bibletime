@@ -262,9 +262,9 @@ wrong, or if the config file was write protected return false.
       overwrites the variable containing the last search result.
       \returns the number of results found
     */
-    int searchIndexed(const QString & searchedText,
-                      const sword::ListKey & scope,
-                      sword::ListKey & results) const;
+    size_t searchIndexed(const QString & searchedText,
+                         const sword::ListKey & scope,
+                         sword::ListKey & results) const;
 
     /**
       \returns the type of the module.

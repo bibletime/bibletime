@@ -162,7 +162,7 @@ void CSearchDialog::startSearch() {
     m_searcher.startSearch();
 
     // Display the search results:
-    if (m_searcher.foundItems() > 0) {
+    if (m_searcher.foundItems() > 0u) {
         m_searchResultArea->setSearchResult(m_searcher.results());
     } else {
         m_searchResultArea->reset();

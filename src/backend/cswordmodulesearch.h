@@ -38,7 +38,7 @@ class CSwordModuleSearch: public QObject {
 
     public: /* Methods: */
         inline CSwordModuleSearch()
-            : m_foundItems(0) {}
+            : m_foundItems(0u) {}
 
         /**
           Sets the text which should be search in the modules.
@@ -86,7 +86,7 @@ class CSwordModuleSearch: public QObject {
         /**
           \returns the number of found items in the last search.
         */
-        inline unsigned long foundItems() const {
+        inline size_t foundItems() const {
             return m_foundItems;
         }
 
@@ -120,7 +120,7 @@ class CSwordModuleSearch: public QObject {
         QList<const CSwordModuleInfo*> m_searchModules;
 
         Results                        m_results;
-        unsigned long                  m_foundItems;
+        size_t                         m_foundItems;
 };
 
 #endif
