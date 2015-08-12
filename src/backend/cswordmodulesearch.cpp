@@ -92,51 +92,42 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     const unsigned int repLength = rep1.length() + rep1.length();
     const unsigned int rep3Length = rep3.length();
 
-
-    QString newSearchText;
-
-    newSearchText = searchedText;
-
     // find the strongs search lemma and highlight it
     // search the searched text for "strong:" until it is not found anymore
-    QStringList list;
-
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
-    QString regExp = "\\s";
-    list = searchedText.split(QRegExp(regExp));
-    foreach (QString newSearchText, list) {
-        int sstIndex; // strong search text index for finding "strong:"
-        int idx1, idx2;
-        QString sNumber, lemmaText;
-
-        sstIndex = newSearchText.indexOf("strong:");
+    Q_FOREACH (QString const & newSearchText,
+               searchedText.split(QRegExp("\\s")))
+    {
+        // strong search text index for finding "strong:"
+        int sstIndex = newSearchText.indexOf("strong:");
         if (sstIndex == -1)
             continue;
-
-        // set the start index to the start of <body>
-        int strongIndex = index;
 
         // Get the strongs number from the search text.
         // First, find the first space after "strong:"
         sstIndex = sstIndex + 7;
+
+        // set the start index to the start of <body>
+        int strongIndex = index;
+
         // get the strongs number -> the text following "strong:" to the end of the string.
-        sNumber = newSearchText.mid(sstIndex, -1);
         // find all the "lemma=" inside the the content
         while ((strongIndex = ret.indexOf("lemma=", strongIndex, cs)) != -1) {
             // get the strongs number after the lemma and compare it with the
             // strongs number we are looking for
-            idx1 = ret.indexOf("\"", strongIndex) + 1;
-            idx2 = ret.indexOf("\"", idx1 + 1);
-            lemmaText = ret.mid(idx1, idx2 - idx1);
+            int const idx1 = ret.indexOf("\"", strongIndex) + 1;
+            int const idx2 = ret.indexOf("\"", idx1 + 1);
 
             // this is interesting because we could have a strongs number like: G3218|G300
             // To handle this we will use some extra cpu cycles and do a partial match against
             // the lemmaText
-            if (lemmaText.contains(sNumber)) {
+            if (ret.mid(idx1, idx2 - idx1).contains(newSearchText.mid(sstIndex,
+                                                                      -1)))
+            {
                 // strongs number is found now we need to highlight it
                 // I believe the easiest way is to insert rep3 just before "lemma="
-                ret = ret.insert(strongIndex, rep3);
+                ret = ret.insert(strongIndex, rep3); /// \bug ?
                 strongIndex += rep3Length;
             }
             strongIndex += 6; // 6 is the length of "lemma="
@@ -171,7 +162,7 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     // since I could not figure out the lucene query parser, I
     // made a simple parser.
     //===========================================================
-    QStringList words = queryParser(newSearchText);
+    QStringList words(queryParser(searchedText));
     //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     foreach (QString word, words) { //search for every word in the list
         QRegExp findExp;
