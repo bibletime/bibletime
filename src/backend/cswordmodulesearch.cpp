@@ -214,11 +214,10 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
 QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     QString token;
     QStringList tokenList;
-    int cnt, pos;
+    int pos;
 
     token = "";
-    cnt = 0;
-    while (cnt < queryString.length()) {
+    for (int cnt = 0; cnt < queryString.length();) {
         // add to token
         if ((queryString[cnt]).isLetterOrNumber() || (queryString[cnt] == '*')) {
             token = token + queryString[cnt];
