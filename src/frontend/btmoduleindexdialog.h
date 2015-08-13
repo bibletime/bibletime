@@ -39,7 +39,7 @@ class BtModuleIndexDialog: public QProgressDialog {
           \pre all given modules are unindexed
           \returns whether the indexing was finished successfully.
         */
-        static bool indexAllModules(const QList<const CSwordModuleInfo*> &modules);
+        static bool indexAllModules(const QList<CSwordModuleInfo*> &modules);
 
     private: /* Methods: */
         BtModuleIndexDialog(int numModules);
@@ -53,7 +53,7 @@ class BtModuleIndexDialog: public QProgressDialog {
           \pre all given modules are unindexed
           \returns whether the indexing was finished successfully.
         */
-        bool indexAllModules2(const QList<const CSwordModuleInfo*> &modules);
+        bool indexAllModulesPrivate(const QList<CSwordModuleInfo*> &modules);
 
     private slots:
         void slotModuleProgress(int percentage);

@@ -16,8 +16,7 @@
 
 QMutex BtModuleIndexDialog::m_singleInstanceMutex;
 
-bool BtModuleIndexDialog::indexAllModules(
-        const QList<const CSwordModuleInfo*> &modules)
+bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)
 {
     QMutexLocker lock(&m_singleInstanceMutex);
 
@@ -26,7 +25,7 @@ bool BtModuleIndexDialog::indexAllModules(
     BtModuleIndexDialog d(modules.size());
     d.show();
     d.raise();
-    return d.indexAllModules2(modules);
+    return d.indexAllModulesPrivate(modules);
 }
 
 BtModuleIndexDialog::BtModuleIndexDialog(int numModules)
@@ -38,17 +37,13 @@ BtModuleIndexDialog::BtModuleIndexDialog(int numModules)
     setModal(true);
 }
 
-bool BtModuleIndexDialog::indexAllModules2(
-        const QList<const CSwordModuleInfo*> &modules)
+bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> &modules)
 {
     bool success = true;
 
-    QList<CSwordModuleInfo *> indexedModules;
-    Q_FOREACH(const CSwordModuleInfo *cm, modules) {
-        Q_ASSERT(!cm->hasIndex());
-
-        /// \warning const_cast
-        CSwordModuleInfo *m = const_cast<CSwordModuleInfo*>(cm);
+    QList <CSwordModuleInfo*> indexedModules;
+    Q_FOREACH(CSwordModuleInfo *m, modules) {
+        Q_ASSERT(!m->hasIndex());
 
         /*
           Keep track of created indices to delete them on failure or
