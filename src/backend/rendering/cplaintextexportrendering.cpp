@@ -9,7 +9,6 @@
 
 #include "backend/rendering/cplaintextexportrendering.h"
 
-#include <QSharedPointer>
 #include "backend/keys/cswordkey.h"
 
 
