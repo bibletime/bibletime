@@ -48,7 +48,7 @@ CLanguageMgr::~CLanguageMgr() {
 }
 
 const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
-    QList<CSwordModuleInfo*> mods = CSwordBackend::instance()->moduleList();
+    QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
 
     if ( m_availableModulesCache.moduleCount != (unsigned int)mods.count() ) { //we have to refill the cached map
         m_availableModulesCache.availableLanguages.clear();
