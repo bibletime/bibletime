@@ -9,7 +9,7 @@
 
 #include "backend/rendering/cbookdisplay.h"
 
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QtAlgorithms>
 
 #include "backend/drivers/cswordbookmoduleinfo.h"
@@ -38,9 +38,8 @@ const QString Rendering::CBookDisplay::text(
     // the number of levels which should be display together, 1 means display no entries together
     int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
 
-    QSharedPointer<CSwordTreeKey> key (
-        dynamic_cast<CSwordTreeKey*>( CSwordKey::createInstance(book) )
-    );
+    QScopedPointer<CSwordTreeKey> key(
+            dynamic_cast<CSwordTreeKey *>(CSwordKey::createInstance(book)));
     key->setKey(keyName); //set the key to position we'd like to get
 
     const unsigned long offset = key->getOffset();
