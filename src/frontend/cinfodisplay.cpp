@@ -285,14 +285,9 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
            .arg(renderer.renderKeyTree(tree));
 }
 
-/*!
-    \fn CInfoDisplay::decodeFootnote(const QString & data)
-    */
 const QString CInfoDisplay::decodeFootnote(const QString & data) {
-    QStringList list = data.split("/");
+    QStringList const list = data.split("/");
     Q_ASSERT(list.count() >= 3);
-    if (!list.count())
-        return QString::null;
 
     FilterOptions filterOpts;
     filterOpts.footnotes   = true;
@@ -301,18 +296,9 @@ const QString CInfoDisplay::decodeFootnote(const QString & data) {
     const QString modulename = list.first();
     const QString swordFootnote = list.last();
 
-    // remove the first and the last and then rejoin it to get a key
-    list.pop_back();
-    list.pop_front();
-    const QString keyname = list.join("/");
-
     CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByName(modulename);
     if (!module)
         return QString::null;
-
-    QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
-    key->setKey(keyname);
-    key->renderedText(CSwordKey::ProcessEntryAttributesOnly); // force entryAttributes
 
     const char * const note =
         module->module()->getEntryAttributes()
