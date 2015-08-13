@@ -10,7 +10,7 @@
 #include "frontend/display/bthtmljsobject.h"
 
 #include <QDrag>
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
@@ -89,7 +89,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
                 drag->setMimeData(mimedata);
                 //add real Bible text from module/key
                 if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+                    QScopedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                     key->setKey(keyName);
                     mimedata->setText(key->strippedText()); // This works across applications!
                 }
