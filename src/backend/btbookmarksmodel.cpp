@@ -53,6 +53,11 @@
 #define CURRENT_SYNTAX_VERSION 1
 
 
+namespace {
+inline QString toHeader(QString const & key, QString const & moduleName)
+{ return QString::fromLatin1("%1 (%2)").arg(key).arg(moduleName); }
+}
+
 class BtBookmarksModelPrivate {
 
 public: /* Tyepes */
@@ -518,7 +523,7 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
     };
 
     setIcon(CResMgr::mainIndex::bookmark::icon());
-    setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module.name()));
+    setText(toHeader(key, module.name()));
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
 }
 
@@ -526,7 +531,7 @@ BookmarkItem::BookmarkItem(BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
     setIcon(CResMgr::mainIndex::bookmark::icon());
-    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
+    setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
 BookmarkItem::BookmarkItem(const BookmarkItem & other)
@@ -536,7 +541,7 @@ BookmarkItem::BookmarkItem(const BookmarkItem & other)
         , m_moduleName(other.m_moduleName)
 {
     setIcon(CResMgr::mainIndex::bookmark::icon());
-    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
+    setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
 CSwordModuleInfo *BookmarkItem::module() const {
@@ -579,9 +584,7 @@ QString BookmarkItem::toolTip() const {
     // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
     Q_ASSERT(k.data());
-    QString header = QString::fromLatin1("%1 (%2)")
-              .arg(key())
-              .arg(module()->name());
+    QString const header(toHeader(key(), module()->name()));
     if (text() != header) {
         ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
               .arg(header)
