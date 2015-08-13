@@ -9,7 +9,7 @@
 
 #include "backend/rendering/chtmlexportrendering.h"
 
-#include <QSharedPointer>
+#include <QScopedPointer>
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -90,7 +90,8 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
         return ""; //no module present for rendering
     }
 
-    QSharedPointer<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
+    QScopedPointer<CSwordKey> scoped_key(
+            !k ? CSwordKey::createInstance(modules.first()) : 0);
     CSwordKey* key = k ? k : scoped_key.data();
     Q_ASSERT(key);
 
