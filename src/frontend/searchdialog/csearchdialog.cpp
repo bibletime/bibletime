@@ -96,7 +96,6 @@ CSearchDialog::~CSearchDialog() {
 }
 
 void CSearchDialog::startSearch() {
-    typedef QList<const CSwordModuleInfo*> ML;
     QString originalSearchText(m_searchOptionsArea->searchText());
 
     // first check the search string for errors
@@ -113,7 +112,12 @@ void CSearchDialog::startSearch() {
     m_searchOptionsArea->addToHistory(originalSearchText);
 
     // Check that we have the indices we need for searching
-    ML unindexedModules = CSwordModuleSearch::unindexedModules(modules());
+    /// \warning indexing is some kind of internal optimization, so we leave
+    /// modules const, but unconst them here only
+    QList<CSwordModuleInfo*> unindexedModules;
+    foreach(const CSwordModuleInfo *m, CSwordModuleSearch::unindexedModules(modules()))
+        unindexedModules.append(const_cast<CSwordModuleInfo*>(m));
+
     if (unindexedModules.size() > 0) {
         // Build the list of module names:
         QStringList moduleNameList;
