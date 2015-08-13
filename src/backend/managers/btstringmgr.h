@@ -46,14 +46,6 @@ class BtStringMgr : public sword::StringMgr {
         */
         virtual bool supportsUnicode() const;
 
-        /** CODE TAKEN FROM KDELIBS 3.2, which is licensed under the LGPL 2.
-        *
-        * This code was taken from KStringHandler, which is part of the KDE libraries.
-        *
-        * This function checks whether a string is utf8 or not.
-        * It was taken from kdelibs so we do not depend on KDE 3.2.
-        */
-        bool isUtf8(const char *buf) const;
 };
 
 #endif /* BTSTRINGMGR_H */

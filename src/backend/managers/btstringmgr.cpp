@@ -13,48 +13,16 @@
 #include "util/macros.h"
 
 
-char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
-    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
+namespace {
 
-    if (LIKELY(max > 1u)) {
-        max--;
-        if (isUtf8(text)) {
-            strncpy(text, QString::fromUtf8(text).toUpper().toUtf8().constData(), max);
-        }
-        else {
-            strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
-        }
-        text[max] = '\0';
-    } else if (max == 1u) {
-        text[0u] = '\0';
-    } else {
-        Q_ASSERT(max == 0u);
-    }
-
-    return text;
-}
-
-char * BtStringMgr::upperLatin1(char * text, unsigned int maxlen) const {
-    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
-
-    if (LIKELY(max > 1u)) {
-        max--;
-        strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
-        text[max] = '\0';
-    } else if (max == 1u) {
-        text[0u] = '\0';
-    } else {
-        Q_ASSERT(max == 0u);
-    }
-
-    return text;
-}
-
-bool BtStringMgr::supportsUnicode() const {
-    return true;
-}
-
-bool BtStringMgr::isUtf8(const char *buf) const {
+/** CODE TAKEN FROM KDELIBS 3.2, which is licensed under the LGPL 2.
+*
+* This code was taken from KStringHandler, which is part of the KDE libraries.
+*
+* This function checks whether a string is utf8 or not.
+* It was taken from kdelibs so we do not depend on KDE 3.2.
+*/
+bool isUtf8(const char * buf) {
     int i, n;
     register unsigned char c;
     bool gotone = false;
@@ -85,6 +53,9 @@ bool BtStringMgr::isUtf8(const char *buf) const {
         I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I,  /* 0xeX */
         I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I   /* 0xfX */
     };
+    #undef F
+    #undef I
+    #undef X
 
     /* *ulen = 0; */
 
@@ -97,6 +68,7 @@ bool BtStringMgr::isUtf8(const char *buf) const {
 
             if (text_chars[c] != T)
                 return false;
+    #undef T
 
         }
         else if ((c & 0x40) == 0) { /* 10xxxxxx never 1st byte */
@@ -141,7 +113,45 @@ done:
     return gotone;   /* don't claim it's UTF-8 if it's all 7-bit */
 }
 
-#undef F
-#undef T
-#undef I
-#undef X
+} // anonymous namespace
+
+char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
+    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
+
+    if (LIKELY(max > 1u)) {
+        max--;
+        if (isUtf8(text)) {
+            strncpy(text, QString::fromUtf8(text).toUpper().toUtf8().constData(), max);
+        }
+        else {
+            strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
+        }
+        text[max] = '\0';
+    } else if (max == 1u) {
+        text[0u] = '\0';
+    } else {
+        Q_ASSERT(max == 0u);
+    }
+
+    return text;
+}
+
+char * BtStringMgr::upperLatin1(char * text, unsigned int maxlen) const {
+    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
+
+    if (LIKELY(max > 1u)) {
+        max--;
+        strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
+        text[max] = '\0';
+    } else if (max == 1u) {
+        text[0u] = '\0';
+    } else {
+        Q_ASSERT(max == 0u);
+    }
+
+    return text;
+}
+
+bool BtStringMgr::supportsUnicode() const {
+    return true;
+}
