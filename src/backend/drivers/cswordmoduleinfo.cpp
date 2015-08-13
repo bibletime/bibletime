@@ -16,7 +16,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QSettings>
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QTextDocument>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
@@ -281,7 +281,7 @@ bool CSwordModuleInfo::buildIndex() {
 
         // Always create a new index:
         typedef lucene::index::IndexWriter IW;
-        QSharedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
+        QScopedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
 #ifndef CLUCENE2
@@ -338,7 +338,8 @@ bool CSwordModuleInfo::buildIndex() {
                with entry attributes this doesn't work any more. Hits in the
                search dialog will show up as 1:1 (instead of 0). */
 
-            QSharedPointer<lucene::document::Document> doc(new lucene::document::Document());
+            QScopedPointer<lucene::document::Document> doc(
+                    new lucene::document::Document());
 
             //index the key
             lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
@@ -433,6 +434,7 @@ bool CSwordModuleInfo::buildIndex() {
         if (!m_cancelIndexing)
             writer->optimize();
         writer->close();
+        writer.reset();
 
         if (m_cancelIndexing) {
             deleteIndex();
@@ -498,8 +500,8 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     Q_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
-    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(this));
     {
+        QScopedPointer<CSwordKey> key(CSwordKey::createInstance(this));
         const sword::SWKey * const s = dynamic_cast<sword::SWKey *>(key.data());
         if (s)
             m_module->setKey(*s);
@@ -514,11 +516,11 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
         lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
         lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
         lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-        QSharedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
+        QScopedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
                                                                                         static_cast<const TCHAR *>(_T("content")),
                                                                                         &analyzer));
 
-        QSharedPointer<lucene::search::Hits> h(searcher.search(q.data(),
+        QScopedPointer<lucene::search::Hits> h(searcher.search(q.data(),
                                                                #ifdef CLUCENE2
                                                                lucene::search::Sort::INDEXORDER()));
                                                                #else
@@ -528,7 +530,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
         const bool useScope = (scope.getCount() > 0);
 
         lucene::document::Document * doc = 0;
-        QSharedPointer<sword::SWKey> swKey(m_module->createKey());
+        QScopedPointer<sword::SWKey> swKey(m_module->createKey());
 
         sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
         if (vk)
