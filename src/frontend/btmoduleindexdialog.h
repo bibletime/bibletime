@@ -14,8 +14,6 @@
 
 #include <QProgressDialog>
 
-#include <QMutex>
-
 
 class CSwordModuleInfo;
 
@@ -60,7 +58,6 @@ class BtModuleIndexDialog: public QProgressDialog {
         void slotFinished();
 
     private: /* Fields: */
-        static QMutex m_singleInstanceMutex;
         int m_currentModuleIndex;
 };
 

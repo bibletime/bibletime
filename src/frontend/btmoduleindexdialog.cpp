@@ -14,11 +14,10 @@
 #include "backend/managers/cswordbackend.h"
 
 
-QMutex BtModuleIndexDialog::m_singleInstanceMutex;
-
 bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)
 {
-    QMutexLocker lock(&m_singleInstanceMutex);
+    static QMutex mutex;
+    QMutexLocker lock(&mutex);
 
     if (modules.empty()) return true;
 
