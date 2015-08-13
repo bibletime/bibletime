@@ -20,7 +20,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPaintEvent>
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QTimer>
 #include <QToolTip>
 
@@ -684,9 +684,10 @@ void CBookmarkIndex::printBookmarks() {
         qWarning("Tried to print empty bookmark list.");
         return;
     }
-    QSharedPointer<Printing::CPrinter> printer(
-        new Printing::CPrinter( this, btConfig().getDisplayOptions(), btConfig().getFilterOptions() )
-    );
+    QScopedPointer<Printing::CPrinter> printer(
+            new Printing::CPrinter(this,
+                                   btConfig().getDisplayOptions(),
+                                   btConfig().getFilterOptions()));
     printer->printKeyTree(tree);
 }
 
