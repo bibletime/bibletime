@@ -567,16 +567,14 @@ QString BookmarkItem::key() const {
 }
 
 QString BookmarkItem::toolTip() const {
-    if (!module()) {
+    if (!module())
         return QString::null;
-    }
 
     FilterOptions filterOptions = btConfig().getFilterOptions();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-    QString ret;
     QScopedPointer<CSwordKey> k(CSwordKey::createInstance(module()));
     k->setKey(key());
 
@@ -585,21 +583,12 @@ QString BookmarkItem::toolTip() const {
 
     Q_ASSERT(k.data());
     QString const header(toHeader(key(), module()->name()));
-    if (text() != header) {
-        ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
-              .arg(header)
-              .arg(text())
-              .arg(description())
-              ;
-    }
-    else {
-        ret = QString::fromLatin1("<b>%1</b><hr>%2")
-              .arg(header)
-              .arg(description())
-              ;
-    }
-
-    return ret;
+    QString ret("<b>");
+    ret.append(header).append(")</b>");
+    QString const txt(text());
+    if (txt != header)
+        ret.append("<br>").append(txt);
+    return ret.append("<hr>").append(description());
 }
 
 
