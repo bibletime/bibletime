@@ -40,6 +40,7 @@
 
 // Sword includes:
 #include <swlog.h>
+#include <swmgr.h>
 
 #ifdef BT_DEBUG
 #include <QLabel>
@@ -868,7 +869,8 @@ void BibleTime::initSwordConfigFile() {
 void BibleTime::initBackends() {
     initSwordConfigFile();
 
-    sword::StringMgr::setSystemStringMgr( new BtStringMgr() );
+    if (!sword::SWMgr::isICU)
+        sword::StringMgr::setSystemStringMgr(new BtStringMgr());
     sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
 
     if (qApp->property("--debug").toBool()) {

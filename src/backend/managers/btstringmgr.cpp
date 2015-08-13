@@ -31,7 +31,6 @@ bool isUtf8(const char * buf) {
 #define T 1   /* character appears in plain ASCII text */
 #define I 2   /* character appears in ISO-8859 text */
 #define X 3   /* character appears in non-ISO extended ASCII (Mac, IBM PC) */
-
     static const unsigned char text_chars[256] = {
         /*                  BEL BS HT LF    FF CR    */
         F, F, F, F, F, F, F, T, T, T, T, F, T, T, F, F,  /* 0x0X */
