@@ -35,7 +35,7 @@
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
-#include <QSharedPointer>
+#include <QScopedPointer>
 
 #include "bibletimeapp.h"
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -572,7 +572,7 @@ QString BookmarkItem::toolTip() const {
     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
     QString ret;
-    QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
+    QScopedPointer<CSwordKey> k(CSwordKey::createInstance(module()));
     k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
