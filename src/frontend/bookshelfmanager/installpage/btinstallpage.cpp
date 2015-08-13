@@ -16,7 +16,7 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QStackedLayout>
 #include <QToolButton>
 #include "backend/config/btconfig.h"
@@ -361,7 +361,7 @@ void BtInstallPage::slotEditPaths() {
 void BtInstallPage::slotSourceAdd() {
     typedef CSwordSetupInstallSourcesDialog SSISD;
 
-    QSharedPointer<SSISD> dlg(new SSISD());
+    QScopedPointer<SSISD> dlg(new SSISD());
     if (dlg->exec() == QDialog::Accepted) {
         if (dlg->wasRemoteListAdded()) {
             initSourcesCombo();
