@@ -535,12 +535,9 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
     else {     //given module not displayed in this window
         //if the module is displayed in another display window we assume a wrong drop
         //create a new window for the given module
-        QList<CSwordModuleInfo*> mList;
-        mList.append(m);
-
         BibleTime *mainWindow = btMainWindow();
         Q_ASSERT(mainWindow != 0);
-        mainWindow->createReadDisplayWindow(mList, keyName);
+        mainWindow->createReadDisplayWindow(QList<CSwordModuleInfo*>() << m, keyName);
     }
 }
 

@@ -175,9 +175,8 @@ void CBookmarkIndex::slotExecuted( const QModelIndex &index ) {
     //clicked on a bookmark
     if (m_bookmarksModel->isBookmark(index)) {
         if (CSwordModuleInfo * mod = m_bookmarksModel->module(index)) {
-            QList<CSwordModuleInfo*> modules;
-            modules.append(mod);
-            emit createReadDisplayWindow(modules, m_bookmarksModel->key(index));
+            emit createReadDisplayWindow(QList<CSwordModuleInfo*>() << mod,
+                                         m_bookmarksModel->key(index));
         }
     }
 }
