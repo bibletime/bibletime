@@ -27,7 +27,7 @@
 namespace {
 
 /** Filters out already installed modules which can't be updated right now. */
-bool filter(CSwordModuleInfo *mInfo) {
+bool filter(const CSwordModuleInfo *mInfo) {
     typedef CSwordModuleInfo CSMI;
     typedef sword::SWVersion SV;
 

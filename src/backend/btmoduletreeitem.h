@@ -72,7 +72,7 @@ class BTModuleTreeItem {
         *    BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
         */
         struct Filter {
-            virtual bool filter(CSwordModuleInfo*) = 0;
+            virtual bool filter(const CSwordModuleInfo*) = 0;
         };
 
         /**
@@ -80,7 +80,7 @@ class BTModuleTreeItem {
         * set "hidden" it will be filtered out.
         */
         struct HiddenOff : public Filter {
-            inline bool filter(CSwordModuleInfo* mi) {
+            inline bool filter(const CSwordModuleInfo* mi) {
                 return !mi->isHidden();
             }
         };

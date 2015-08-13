@@ -46,7 +46,7 @@ class BtTextWindowHeaderWidget : public QWidget {
             TypeFilter(CSwordModuleInfo::ModuleType t) {
                 m_mType = t;
             }
-            bool filter(CSwordModuleInfo* mi) {
+            bool filter(const CSwordModuleInfo* mi) {
                 return ((mi->type() == m_mType) && !mi->isLocked());
             }
             CSwordModuleInfo::ModuleType m_mType;
