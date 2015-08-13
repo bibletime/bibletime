@@ -16,7 +16,6 @@
 
 #include <QMutex>
 #include <QMutexLocker>
-#include <QSharedPointer>
 #include "backend/btinstallmgr.h"
 
 
