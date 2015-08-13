@@ -9,7 +9,6 @@
 
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 
-#include <QSharedPointer>
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfo>
