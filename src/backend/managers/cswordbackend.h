@@ -108,9 +108,13 @@ public: /* Methods: */
       \note This method is equivalent to model()->modules().
       \returns The list of modules managed by this backend.
     */
-    inline const QList<CSwordModuleInfo *> & moduleList() const;
+    inline const QList<CSwordModuleInfo*> & moduleList() const {
+        return m_dataModel.moduleList();
+    }
 
-    inline BtBookshelfModel * model();
+    inline BtBookshelfModel * model() {
+        return &m_dataModel;
+    }
 
     /**
       \brief Initializes the Sword modules.
@@ -165,7 +169,9 @@ public: /* Methods: */
       \returns The global config object containing the configs of all modules
                merged together.
     */
-    inline sword::SWConfig * getConfig() const;
+    inline sword::SWConfig * getConfig() const {
+        return config;
+    }
 
     /**
       \param[in] option The option name to return.
@@ -268,19 +274,5 @@ private: /* Fields: */
     static CSwordBackend * m_instance;
 
 };
-
-/**Returns The list of modules managed by this backend*/
-inline const QList<CSwordModuleInfo *> & CSwordBackend::moduleList() const {
-    return m_dataModel.moduleList();
-}
-
-inline BtBookshelfModel * CSwordBackend::model() {
-    return &m_dataModel;
-}
-
-/** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
-inline sword::SWConfig * CSwordBackend::getConfig() const {
-    return config;
-}
 
 #endif
