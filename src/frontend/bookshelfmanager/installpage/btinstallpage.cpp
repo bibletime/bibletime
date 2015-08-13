@@ -362,22 +362,20 @@ void BtInstallPage::slotSourceAdd() {
     typedef CSwordSetupInstallSourcesDialog SSISD;
 
     QScopedPointer<SSISD> dlg(new SSISD());
-    if (dlg->exec() == QDialog::Accepted) {
-        if (dlg->wasRemoteListAdded()) {
-            initSourcesCombo();
-        }
-        else {
-            sword::InstallSource newSource = dlg->getSource();
-            if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
-                BtInstallBackend::addSource(newSource);
-            }
-            initSourcesCombo();
-            for (int i = 0; i < m_sourceComboBox->count(); i++) {
-                if (m_sourceComboBox->itemText(i) == newSource.caption) {
-                    m_sourceComboBox->setCurrentIndex(i);
-                    break;
-                }
-            }
+    if (dlg->exec() != QDialog::Accepted)
+        return;
+    if (dlg->wasRemoteListAdded()) {
+        initSourcesCombo();
+        return;
+    }
+    sword::InstallSource newSource = dlg->getSource();
+    if (*(newSource.type.c_str()) != '\0') // we have a valid source to add
+        BtInstallBackend::addSource(newSource);
+    initSourcesCombo();
+    for (int i = 0; i < m_sourceComboBox->count(); i++) {
+        if (m_sourceComboBox->itemText(i) == newSource.caption) {
+            m_sourceComboBox->setCurrentIndex(i);
+            break;
         }
     }
 }
