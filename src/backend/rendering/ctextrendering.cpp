@@ -9,9 +9,8 @@
 
 #include "backend/rendering/ctextrendering.h"
 
-#include <QSharedPointer>
-
 #include <QRegExp>
+#include <QScopedPointer>
 #include <QtAlgorithms>
 
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -177,11 +176,10 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     QString t;
 
     //optimization for entries with the same key
-    QSharedPointer<CSwordKey> key(
-        (modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
-    );
 
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
+        QScopedPointer<CSwordKey> key(
+                CSwordKey::createInstance(modules.first()));
         Q_FOREACH (const KeyTreeItem * const c, tree) {
             key->setKey(c->key());
             t.append( renderEntry( *c, key.data()) );
@@ -207,10 +205,10 @@ const QString CTextRendering::renderKeyRange(
     const CSwordModuleInfo *module = modules.first();
     //qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
 
-    QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
+    QScopedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
     lowerBound->setKey(start);
 
-    QSharedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
+    QScopedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
     upperBound->setKey(stop);
 
     sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.data());
