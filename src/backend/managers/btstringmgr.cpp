@@ -10,6 +10,7 @@
 #include "backend/managers/btstringmgr.h"
 
 #include <cstring>
+#include <QString>
 #include "util/macros.h"
 
 

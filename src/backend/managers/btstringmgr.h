@@ -12,9 +12,6 @@
 #ifndef BTSTRINGMGR_H
 #define BTSTRINGMGR_H
 
-#include <QString>
-
-/* Sword includes: */
 #include <stringmgr.h>
 
 
