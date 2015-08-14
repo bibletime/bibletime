@@ -15,6 +15,7 @@
 
 #include "frontend/btmodulechooserdialog.h"
 
+#include "backend/drivers/btmoduleset.h"
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h"
 
 
@@ -33,9 +34,8 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
                                      QWidget *parent = 0,
                                      Qt::WindowFlags flags = 0);
 
-        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
-            return bookshelfWidget()->treeModel()->checkedModules();
-        }
+        inline BtModuleSet const & checkedModules() const
+        { return bookshelfWidget()->treeModel()->checkedModules(); }
 
         void addModuleItem(CSwordModuleInfo *module, const QString &sourceName);
 
