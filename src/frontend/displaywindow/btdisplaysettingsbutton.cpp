@@ -54,7 +54,7 @@ void BtDisplaySettingsButton::setFilterOptions(
 }
 
 void BtDisplaySettingsButton::setModules(
-        const QList<const CSwordModuleInfo*> &modules)
+        const BtConstModuleList &modules)
 {
     m_modules = modules;
     repopulateMenu();

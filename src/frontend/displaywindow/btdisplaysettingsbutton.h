@@ -36,12 +36,12 @@ class BtDisplaySettingsButton: public QToolButton {
         void setFilterOptions(const FilterOptions &moduleSettings,
                               bool repopulate = true);
 
-        void setModules(const QList<const CSwordModuleInfo*> &modules);
+        void setModules(const BtConstModuleList &modules);
 
     signals:
         void sigFilterOptionsChanged(FilterOptions filterOptions);
         void sigDisplayOptionsChanged(DisplayOptions displayOptions);
-        void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
+        void sigModulesChanged(const BtConstModuleList &modules);
         void sigChanged(void);
 
     protected slots:
@@ -59,7 +59,7 @@ class BtDisplaySettingsButton: public QToolButton {
     private:
         FilterOptions  m_filterOptions;
         DisplayOptions m_displayOptions;
-        QList<const CSwordModuleInfo*> m_modules;
+        BtConstModuleList m_modules;
 
         QMenu *m_popup;
         QAction *m_lineBreakAction;

@@ -33,7 +33,7 @@ namespace Search {
 class CSearchDialog : public QDialog {
         Q_OBJECT
     public:
-        static void openDialog(const QList<const CSwordModuleInfo*> modules,
+        static void openDialog(const BtConstModuleList modules,
                                const QString &searchText = QString::null,
                                QWidget *parentDialog = 0);
 
@@ -60,7 +60,7 @@ class CSearchDialog : public QDialog {
         /**
           Starts the search with the given module list and given search text.
         */
-        void startSearch(const QList<const CSwordModuleInfo*> modules,
+        void startSearch(const BtConstModuleList modules,
                          const QString &searchText);
 
         /**Prepares the search string given by user for a specific search type */
@@ -69,14 +69,14 @@ class CSearchDialog : public QDialog {
         /**
           Sets the list of modules for the search.
         */
-        void setModules(const QList<const CSwordModuleInfo*> modules) {
+        void setModules(const BtConstModuleList modules) {
             m_searchOptionsArea->setModules(modules);
         }
 
         /**
           Returns the list of used modules.
         */
-        inline QList<const CSwordModuleInfo*> modules() const {
+        inline BtConstModuleList modules() const {
             return m_searchOptionsArea->modules();
         }
 

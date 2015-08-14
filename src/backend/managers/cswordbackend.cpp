@@ -102,10 +102,8 @@ QList<CSwordModuleInfo *> CSwordBackend::getPointerList(const QStringList & name
     return list;
 }
 
-QList<const CSwordModuleInfo *> CSwordBackend::getConstPointerList(
-        const QStringList & names) const
-{
-    QList<const CSwordModuleInfo *> list;
+BtConstModuleList CSwordBackend::getConstPointerList(const QStringList & names) const {
+    BtConstModuleList list;
     Q_FOREACH (const QString & name, names) {
         const CSwordModuleInfo * const mInfo = findModuleByName(name);
         if (mInfo)

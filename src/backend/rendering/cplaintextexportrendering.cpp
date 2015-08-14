@@ -31,7 +31,7 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
     if (!m_addText)
         return QString(i.key()).append("\n");
 
-    const QList<const CSwordModuleInfo*> modules = i.modules();
+    const BtConstModuleList modules = i.modules();
     CSwordKey * key = CSwordKey::createInstance(modules.first());
     QString renderedText = QString(i.key()).append(":\n");
 

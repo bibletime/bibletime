@@ -31,7 +31,7 @@ class CBookKeyChooser: public CKeyChooser {
 
 public:
 
-    CBookKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+    CBookKeyChooser(const BtConstModuleList & modules,
                     BTHistory * history,
                     CSwordKey * key = 0,
                     QWidget * parent = 0);
@@ -44,7 +44,7 @@ public:
     /**
     * Sets another module to this keychooser
     */
-    virtual void setModules(const QList<const CSwordModuleInfo *> & modules,
+    virtual void setModules(const BtConstModuleList & modules,
                             bool refresh = false);
     /**
     * Returns the key of this keychooser

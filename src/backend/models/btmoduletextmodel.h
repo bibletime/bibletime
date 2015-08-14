@@ -17,11 +17,11 @@
 #include <QColor>
 #include <QStringList>
 #include "btglobal.h"
+#include "backend/drivers/btmodulelist.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/keys/cswordldkey.h"
 
-class CSwordModuleInfo;
 
 struct ModuleEntry {
     enum TextRoles {
@@ -87,7 +87,7 @@ private:
 
     QString replaceColors(const QString& text) const;
 
-    QList<const CSwordModuleInfo*> m_moduleInfoList;
+    BtConstModuleList m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;
     QStringList m_modules;
     QString m_highlightWords;

@@ -71,7 +71,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
 
     QString text;
 
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
     modules.append(key->module());
 
     CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
@@ -172,7 +172,7 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
         return false;
 
     QString text;
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
     modules.append(key->module());
 
     CTextRendering * render = newRenderer(format, addText);

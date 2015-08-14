@@ -27,7 +27,7 @@ class CChapterDisplay: public CEntryDisplay {
 
     public: /* Methods: */
 
-        virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
+        virtual const QString text(const BtConstModuleList &modules,
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);

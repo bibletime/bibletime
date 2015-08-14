@@ -14,11 +14,11 @@
 
 #include <QWidget>
 
+#include "backend/drivers/btmodulelist.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/searchdialog/chistorycombobox.h"
 
 
-class CSwordModuleInfo;
 class QComboBox;
 class QEvent;
 class QGridLayout;
@@ -63,7 +63,7 @@ class BtSearchOptionsArea : public QWidget {
         /**
           Returns the list of used modules.
         */
-        inline QList<const CSwordModuleInfo*> modules() const {
+        inline const BtConstModuleList & modules() const {
             return m_modules;
         }
 
@@ -99,7 +99,7 @@ class BtSearchOptionsArea : public QWidget {
         /**
           Sets the modules used by the search.
         */
-        void setModules(const QList<const CSwordModuleInfo*> &modules);
+        void setModules(const BtConstModuleList &modules);
 
         /** Sets the modules when user selects them from the combobox.*/
         void moduleListTextSelected(int index);
@@ -128,7 +128,7 @@ class BtSearchOptionsArea : public QWidget {
         void sigStartSearch();
 
     private:
-        QList<const CSwordModuleInfo*> m_modules;
+        BtConstModuleList m_modules;
 
         QHBoxLayout *hboxLayout;
         QGroupBox *searchGroupBox;

@@ -34,7 +34,7 @@ class CLexiconKeyChooser : public CKeyChooser {
         Q_OBJECT
 
     public:
-        CLexiconKeyChooser(const QList<const CSwordModuleInfo*> &modules,
+        CLexiconKeyChooser(const BtConstModuleList &modules,
                            BTHistory *history, CSwordKey *key = 0,
                            QWidget *parent = 0);
 
@@ -64,7 +64,7 @@ class CLexiconKeyChooser : public CKeyChooser {
         /**
           Reimplemented from CKeyChooser::setModules().
         */
-        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+        virtual void setModules(const BtConstModuleList &modules,
                                 bool refresh = true);
 
     protected:

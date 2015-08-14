@@ -210,14 +210,14 @@ public: /* Methods: */
       \returns a list of pointers to modules, created from a list of module
                names.
     */
-    QList<CSwordModuleInfo *> getPointerList(const QStringList & names) const;
+    QList<CSwordModuleInfo*> getPointerList(const QStringList & names) const;
 
     /**
       \param[in] names The names of the modules to return.
       \returns a list of pointers to const modules, created from a list of
                module names.
     */
-    QList<const CSwordModuleInfo *> getConstPointerList(const QStringList & names) const;
+    BtConstModuleList getConstPointerList(const QStringList & names) const;
 
     /**
       \brief Sword prefix list.

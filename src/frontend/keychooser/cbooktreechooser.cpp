@@ -19,7 +19,7 @@
 #include "frontend/keychooser/bthistory.h"
 
 
-CBookTreeChooser::CBookTreeChooser(const QList<const CSwordModuleInfo *> & modules,
+CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
                                    BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
@@ -85,7 +85,7 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
     }
 }
 
-void CBookTreeChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+void CBookTreeChooser::setModules(const BtConstModuleList &modules,
                                   bool refresh)
 {
     typedef CSwordBookModuleInfo CSBMI;

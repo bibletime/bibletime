@@ -16,9 +16,10 @@
 #include <QSharedPointer>
 #include <QString>
 
+#include "backend/drivers/btmodulelist.h"
+
 
 class CSwordKey;
-class CSwordModuleInfo;
 
 namespace Rendering {
 
@@ -78,7 +79,7 @@ class CTextRendering {
                             const Settings &settings);
 
                 KeyTreeItem(const QString &key,
-                            const QList<const CSwordModuleInfo*> &modules,
+                            const BtConstModuleList &modules,
                             const Settings &settings);
 
                 KeyTreeItem(const QString &startKey,
@@ -102,7 +103,7 @@ class CTextRendering {
                     return !m_alternativeContent.isNull();
                 }
 
-                inline const QList<const CSwordModuleInfo*>& modules() const {
+                inline const BtConstModuleList& modules() const {
                     return m_moduleList;
                 }
 
@@ -125,7 +126,7 @@ class CTextRendering {
             private: /* Fields: */
 
                 Settings m_settings;
-                QList<const CSwordModuleInfo*> m_moduleList;
+                BtConstModuleList m_moduleList;
                 QString m_key;
                 mutable KeyTree m_childList;
 
@@ -143,18 +144,18 @@ class CTextRendering {
         const QString renderKeyRange(
                 const QString &start,
                 const QString &stop,
-                const QList<const CSwordModuleInfo*> &modules,
+                const BtConstModuleList &modules,
                 const QString &hightlightKey = QString::null,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
         const QString renderSingleKey(
                 const QString &key,
-                const QList<const CSwordModuleInfo*> &modules,
+                const BtConstModuleList &modules,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
     protected: /* Methods: */
 
-        QList<const CSwordModuleInfo*> collectModules(const KeyTree &tree) const;
+        BtConstModuleList collectModules(const KeyTree &tree) const;
         virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0) = 0;
         virtual QString finishText(const QString &text, const KeyTree &tree) = 0;
         virtual void initRendering() = 0;

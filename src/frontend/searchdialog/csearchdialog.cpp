@@ -40,7 +40,7 @@ namespace Search {
 
 static CSearchDialog* m_staticDialog = 0;
 
-void CSearchDialog::openDialog(const QList<const CSwordModuleInfo*> modules,
+void CSearchDialog::openDialog(const BtConstModuleList modules,
                                const QString &searchText, QWidget *parentDialog)
 {
     if (!m_staticDialog) {
@@ -207,7 +207,7 @@ QString CSearchDialog::prepareSearchText(const QString& orig) {
     return text;
 }
 
-void CSearchDialog::startSearch(const QList<const CSwordModuleInfo*> modules,
+void CSearchDialog::startSearch(const BtConstModuleList modules,
                                 const QString &searchText)
 {
     m_searchResultArea->reset();

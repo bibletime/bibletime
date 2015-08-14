@@ -18,7 +18,7 @@
 
 
 const QString Rendering::CBookDisplay::text(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)

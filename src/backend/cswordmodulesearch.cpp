@@ -54,10 +54,10 @@ void CSwordModuleSearch::setSearchScope(const sword::ListKey &scope) {
     }
 }
 
-QList<const CSwordModuleInfo*> CSwordModuleSearch::unindexedModules(
-        const QList<const CSwordModuleInfo*> &modules)
+const BtConstModuleList CSwordModuleSearch::unindexedModules(
+        const BtConstModuleList &modules)
 {
-    QList<const CSwordModuleInfo*> unindexed;
+    BtConstModuleList unindexed;
     Q_FOREACH (const CSwordModuleInfo *m, modules) {
         if (!m->hasIndex()) {
             unindexed.append(m);

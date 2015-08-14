@@ -21,7 +21,7 @@
 
 #define ID_PROPERTY_NAME "CBookKeyChooser_ID"
 
-CBookKeyChooser::CBookKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
                                  BTHistory * historyPtr,
                                  CSwordKey * key,
                                  QWidget * parent)
@@ -119,7 +119,7 @@ CSwordKey * CBookKeyChooser::key() {
 }
 
 /** Sets another module to this keychooser */
-void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo *> & modules,
+void CBookKeyChooser::setModules(const BtConstModuleList & modules,
                                  bool refresh)
 {
     typedef CSwordBookModuleInfo CSBMI;

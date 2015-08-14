@@ -20,7 +20,7 @@
 #include "util/cresmgr.h"
 
 
-CBibleKeyChooser::CBibleKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
                                    BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
@@ -94,7 +94,7 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
     setUpdatesEnabled(true);
 }
 
-void CBibleKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
                                   bool refresh)
 {
     typedef CSwordBibleModuleInfo CSBMI;

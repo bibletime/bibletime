@@ -24,7 +24,7 @@
 using namespace Rendering;
 
 const QString CEntryDisplay::text(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions) {
@@ -33,7 +33,7 @@ const QString CEntryDisplay::text(
 }
 
 const QString CEntryDisplay::textKeyRendering(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions,

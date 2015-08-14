@@ -33,7 +33,7 @@ class BTHistory;
 class CBookTreeChooser : public CKeyChooser {
         Q_OBJECT
     public:
-        CBookTreeChooser(const QList<const CSwordModuleInfo*> &modules,
+        CBookTreeChooser(const BtConstModuleList &modules,
                          BTHistory *history, CSwordKey *key = 0,
                          QWidget *parent = 0);
 
@@ -45,7 +45,7 @@ class CBookTreeChooser : public CKeyChooser {
         /**
           Reimplemented from CKeyChooser::setModules().
         */
-        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+        virtual void setModules(const BtConstModuleList &modules,
                                 bool refresh = true);
 
         /**

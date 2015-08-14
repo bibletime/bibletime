@@ -19,8 +19,8 @@
 // Sword includes:
 #include <listkey.h>
 
+#include "backend/drivers/btmodulelist.h"
 
-class CSwordModuleInfo;
 
 /**
  * CSwordModuleSearch manages the search on Sword modules. It manages the thread(s)
@@ -52,7 +52,7 @@ class CSwordModuleSearch: public QObject {
           Set the modules which should be searched.
           \param[in] modules the modules to search in.
         */
-        inline void setModules(const QList<const CSwordModuleInfo*> &modules) {
+        inline void setModules(const BtConstModuleList &modules) {
             Q_ASSERT(!modules.empty());
             Q_ASSERT(unindexedModules(modules).empty());
             m_searchModules = modules;
@@ -100,8 +100,7 @@ class CSwordModuleSearch: public QObject {
         /**
           \returns the list of unindexed modules in the given list.
         */
-        static QList<const CSwordModuleInfo*> unindexedModules(
-                const QList<const CSwordModuleInfo*> &modules);
+        static const BtConstModuleList unindexedModules(const BtConstModuleList & modules);
 
         /**
         * This function highlights the searched text in the content using the search type given by search flags
@@ -117,7 +116,7 @@ class CSwordModuleSearch: public QObject {
     private: /* Fields: */
         QString                        m_searchText;
         sword::ListKey                 m_searchScope;
-        QList<const CSwordModuleInfo*> m_searchModules;
+        BtConstModuleList              m_searchModules;
 
         Results                        m_results;
         size_t                         m_foundItems;

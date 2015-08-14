@@ -14,10 +14,11 @@
 
 #include <QWidget>
 
+#include "backend/drivers/btmodulelist.h"
+
 
 class BTHistory;
 class CSwordKey;
-class CSwordModuleInfo;
 class QAction;
 
 /**
@@ -45,7 +46,7 @@ public: /* Methods: */
     * @param key if not NULL, the @ref CKey the KeyChooser should be set to
     * @param parent the parent of the widget to create
     */
-    static CKeyChooser * createInstance(const QList<const CSwordModuleInfo *> & modules,
+    static CKeyChooser * createInstance(const BtConstModuleList & modules,
                                         BTHistory * history,
                                         CSwordKey * key,
                                         QWidget * parent);
@@ -72,7 +73,7 @@ public slots:
     /**
       Sets the module of this keychooser and refreshes the comboboxes
     */
-    virtual void setModules(const QList<const CSwordModuleInfo *> & modules,
+    virtual void setModules(const BtConstModuleList & modules,
                             bool refresh = true) = 0;
 
     /**
@@ -89,7 +90,7 @@ signals:
 
 protected: /* Methods: */
 
-    CKeyChooser(const QList<const CSwordModuleInfo *> & info,
+    CKeyChooser(const BtConstModuleList & info,
                 BTHistory * history,
                 QWidget * parent = 0);
 

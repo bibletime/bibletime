@@ -48,7 +48,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &content,
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
-                                         const QList<const CSwordModuleInfo*> &mods,
+                                         const BtConstModuleList &mods,
                                          const Settings &settings)
         : m_settings( settings ),
         m_moduleList( mods ),
@@ -155,9 +155,9 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
 }
 
-QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree &tree) const {
+BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     //collect all modules which are available and used by child items
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
 
     Q_FOREACH (const KeyTreeItem * const c, tree) {
         Q_ASSERT(c != 0);
@@ -172,7 +172,7 @@ QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree &tre
 const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     initRendering();
 
-    const QList<const CSwordModuleInfo*> modules = collectModules(tree);
+    const BtConstModuleList modules = collectModules(tree);
     QString t;
 
     //optimization for entries with the same key
@@ -197,7 +197,7 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
 const QString CTextRendering::renderKeyRange(
         const QString &start,
         const QString &stop,
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &highlightKey,
         const KeyTreeItem::Settings &keySettings)
 {
@@ -260,7 +260,7 @@ const QString CTextRendering::renderKeyRange(
 
 const QString CTextRendering::renderSingleKey(
         const QString &key,
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const KeyTreeItem::Settings &settings)
 {
     KeyTree tree;

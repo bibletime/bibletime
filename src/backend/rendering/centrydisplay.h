@@ -17,9 +17,11 @@
 // Sword includes:
 #include <swdisp.h>
 #include <swmodule.h>
+
+#include "backend/drivers/btmodulelist.h"
 #include "ctextrendering.h"
 
-class CSwordModuleInfo;
+
 struct DisplayOptions;
 struct FilterOptions;
 
@@ -33,12 +35,12 @@ class CEntryDisplay: public sword::SWDisplay {
           \returns the rendered text using the modules in the list and using the
                    key parameter.
         */
-        virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
+        virtual const QString text(const BtConstModuleList &modules,
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
 
-    const QString textKeyRendering(const QList<const CSwordModuleInfo*> &modules,
+    const QString textKeyRendering(const BtConstModuleList &modules,
                                const QString &key,
                                const DisplayOptions &displayOptions,
                                const FilterOptions &filterOptions,

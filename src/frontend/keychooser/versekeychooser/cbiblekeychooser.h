@@ -37,7 +37,7 @@ class CBibleKeyChooser : public CKeyChooser  {
         Q_OBJECT
 
     public:
-        CBibleKeyChooser(const QList<const CSwordModuleInfo*> &modules,
+        CBibleKeyChooser(const BtConstModuleList &modules,
                          BTHistory *history, CSwordKey *key = 0,
                          QWidget *parent = 0);
 
@@ -55,7 +55,7 @@ class CBibleKeyChooser : public CKeyChooser  {
         /**
           Reimplemented from CKeyChooser::setModules().
         */
-        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+        virtual void setModules(const BtConstModuleList &modules,
                                 bool refresh = true);
 
         /**

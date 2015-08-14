@@ -69,7 +69,7 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
         if (!i.childList()->isEmpty()) {
             const KeyTree & tree = *i.childList();
 
-            const QList<const CSwordModuleInfo*> modules = collectModules(tree);
+            const BtConstModuleList modules = collectModules(tree);
 
             if (modules.count() == 1) { //insert the direction into the surrounding div
                 ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
@@ -85,7 +85,7 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
     }
 
 
-    const QList<const CSwordModuleInfo*> &modules(i.modules());
+    const BtConstModuleList &modules(i.modules());
     if (modules.isEmpty()) {
         return ""; //no module present for rendering
     }
@@ -111,9 +111,9 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
     QString langAttr;
     QString key_renderedText;
 
-    QList<const CSwordModuleInfo*>::const_iterator end_modItr = modules.end();
+    BtConstModuleList::const_iterator end_modItr = modules.end();
 
-    for (QList<const CSwordModuleInfo*>::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
+    for (BtConstModuleList::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
         key->setModule(*mod_Itr);
         key->setKey(i.key());
 

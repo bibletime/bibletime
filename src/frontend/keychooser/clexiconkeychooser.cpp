@@ -19,7 +19,7 @@
 #include "util/cresmgr.h"
 
 
-CLexiconKeyChooser::CLexiconKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
                                        BTHistory * historyPtr,
                                        CSwordKey * key,
                                        QWidget * parent)
@@ -149,7 +149,7 @@ void CLexiconKeyChooser::refreshContent() {
 
 }
 
-void CLexiconKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
                                     bool refresh)
 {
     typedef CSwordLexiconModuleInfo CSLMI;

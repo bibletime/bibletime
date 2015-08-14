@@ -174,7 +174,7 @@ CDisplayWindow* BibleTime::moduleEditHtml(CSwordModuleInfo *module) {
 
 void BibleTime::searchInModule(CSwordModuleInfo *module) {
     /// \todo Refactor this.
-    QList<const CSwordModuleInfo *> modules;
+    BtConstModuleList modules;
     modules.append(module);
     Search::CSearchDialog::openDialog(modules, QString::null);
 }

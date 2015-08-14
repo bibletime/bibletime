@@ -121,7 +121,7 @@ QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) con
     int row = index.row();
 
     const CSwordLexiconModuleInfo *lexiconModule = qobject_cast<const CSwordLexiconModuleInfo*>(m_moduleInfoList.at(0));
-    QList<const CSwordModuleInfo*> moduleList;
+    BtConstModuleList moduleList;
     moduleList << lexiconModule;
     QString keyName = lexiconModule->entries()[row];
 
@@ -146,7 +146,7 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
         int bookIndex = index.row() * 4;
         key.setIndex(bookIndex);
         Rendering::CEntryDisplay entryDisplay;
-        QList<const CSwordModuleInfo*> moduleList;
+        BtConstModuleList moduleList;
         moduleList << bookModule;
         QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
                                                      m_displayOptions, m_filterOptions,

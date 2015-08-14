@@ -113,7 +113,7 @@ const QString CDisplayWindow::windowCaption() {
 }
 
 /** Returns the used modules as a pointer list */
-const QList<const CSwordModuleInfo*> CDisplayWindow::modules() const {
+const BtConstModuleList CDisplayWindow::modules() const {
     return CSwordBackend::instance()->getConstPointerList(m_modules);
 }
 
@@ -471,8 +471,8 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
         button, SLOT(setDisplayOptions(const DisplayOptions&)));
     connect(this, SIGNAL(sigFilterOptionsChanged(const FilterOptions&)),
         button, SLOT(setFilterOptions(const FilterOptions&)));
-    connect(this, SIGNAL(sigModulesChanged(const QList<const CSwordModuleInfo*>&)),
-        button, SLOT(setModules(const QList<const CSwordModuleInfo*>&)));
+    connect(this, SIGNAL(sigModulesChanged(const BtConstModuleList&)),
+        button, SLOT(setModules(const BtConstModuleList&)));
 
     button->setDisplayOptions(displayOptions(), false);
     button->setFilterOptions(filterOptions(), false);

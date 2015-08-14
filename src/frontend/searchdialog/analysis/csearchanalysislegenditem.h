@@ -14,14 +14,13 @@
 
 #include <QGraphicsRectItem>
 
-
-class CSwordModuleInfo;
+#include "backend/drivers/btmodulelist.h"
 
 namespace Search {
 
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
     public: /* Methods: */
-        inline CSearchAnalysisLegendItem(const QList<const CSwordModuleInfo*> &modules)
+        inline CSearchAnalysisLegendItem(const BtConstModuleList &modules)
             : m_moduleList(modules) {}
 
     private: /* Methods: */
@@ -29,7 +28,7 @@ class CSearchAnalysisLegendItem : public QGraphicsRectItem {
         virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
     private: /* Fields: */
-        QList<const CSwordModuleInfo*> m_moduleList;
+        BtConstModuleList m_moduleList;
 
 };
 

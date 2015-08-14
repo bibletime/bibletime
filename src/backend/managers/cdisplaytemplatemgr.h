@@ -14,7 +14,8 @@
 
 #include <QHash>
 #include <QStringList>
-#include "../drivers/cswordmoduleinfo.h"
+#include "backend/drivers/btmodulelist.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 
 /**
@@ -39,7 +40,7 @@ class CDisplayTemplateMgr {
             }
 
             /** The list of modules */
-            QList<const CSwordModuleInfo *> modules;
+            BtConstModuleList modules;
 
             /** The title which is used for the new processed HTML page */
             QString title;

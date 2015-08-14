@@ -140,7 +140,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         QString text;
         CDisplayRendering render;
 
-        QList<const CSwordModuleInfo*> modules;
+        BtConstModuleList modules;
         modules.append(module);
 
         CTextRendering::KeyTreeItem::Settings settings;
@@ -266,7 +266,7 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
         return;
 
     CTextRendering::KeyTreeItem::Settings settings;
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
     modules.append(module);
     clear();
 

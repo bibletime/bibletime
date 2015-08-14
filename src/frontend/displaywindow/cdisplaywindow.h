@@ -58,7 +58,7 @@ class CDisplayWindow : public QMainWindow {
         const QString windowCaption();
 
         /** Returns the used modules as a pointer list.*/
-        const QList<const CSwordModuleInfo*> modules() const;
+        const BtConstModuleList modules() const;
 
         /** Returns the used modules as a string list. */
         inline const QStringList &getModuleList() const {
@@ -198,7 +198,7 @@ class CDisplayWindow : public QMainWindow {
         void sigFilterOptionsChanged(const FilterOptions &filterOptions);
 
         /**  signal for change of modules */
-        void sigModulesChanged(const QList<const CSwordModuleInfo*> &modules);
+        void sigModulesChanged(const BtConstModuleList &modules);
 
         /**  signal for sword key change */
         void sigKeyChanged(CSwordKey* key);
