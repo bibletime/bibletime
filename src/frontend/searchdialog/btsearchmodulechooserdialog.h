@@ -15,6 +15,7 @@
 
 #include "frontend/btmodulechooserdialog.h"
 
+#include "backend/drivers/btconstmoduleset.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
@@ -27,12 +28,11 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
         BtSearchModuleChooserDialog(QWidget *parent = 0,
                                     Qt::WindowFlags flags = 0);
 
-        inline void setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
-            bookshelfWidget()->treeModel()->setCheckedModules(modules);
-        }
-        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
-            return bookshelfWidget()->treeModel()->checkedModules();
-        }
+        inline void setCheckedModules(BtConstModuleSet const & modules)
+        { bookshelfWidget()->treeModel()->setCheckedModules(modules); }
+
+        inline BtConstModuleSet checkedModules() const
+        { return bookshelfWidget()->treeModel()->checkedModules(); }
 
     protected slots:
         void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
