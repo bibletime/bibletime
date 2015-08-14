@@ -21,6 +21,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/drivers/btconstmoduleset.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "bibletimeapp.h"
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
@@ -260,12 +261,7 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
 
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
-    QSet<CSwordModuleInfo*> ms;
-    Q_FOREACH (const CSwordModuleInfo *module, modules()) {
-        ms.insert(const_cast<CSwordModuleInfo*>(module));
-    }
-
-    dlg->setCheckedModules(ms);
+    dlg->setCheckedModules(BtConstModuleSet::fromList(modules()));
     if (dlg->exec() == QDialog::Accepted) {
         QList<const CSwordModuleInfo*> ms;
         Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
