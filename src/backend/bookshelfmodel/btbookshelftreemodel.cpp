@@ -12,7 +12,6 @@
 
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
-#include <QSet>
 #include "backend/bookshelfmodel/categoryitem.h"
 #include "backend/bookshelfmodel/indexingitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
@@ -292,7 +291,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
     m_groupingOrder = groupingOrder;
 
     if (m_sourceModel != 0) {
-        const QSet<CSwordModuleInfo *> checked(m_checkedModulesCache);
+        BtModuleSet const checked(m_checkedModulesCache);
         m_checkedModulesCache.clear();
 
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
@@ -326,7 +325,7 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
     resetData();
 }
 
-void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo *> & modules) {
+void BtBookshelfTreeModel::setCheckedModules(BtConstModuleSet const & modules) {
     typedef ModuleItemMap::const_iterator MIMCI;
 
     for (MIMCI it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {

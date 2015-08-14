@@ -18,7 +18,8 @@
 #include <QList>
 #include <QMap>
 #include <QPersistentModelIndex>
-#include <QSet>
+#include "backend/drivers/btconstmoduleset.h"
+#include "backend/drivers/btmoduleset.h"
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/item.h"
 
@@ -119,7 +120,7 @@ public: /* Methods: */
     inline bool checkable() const { return m_checkable; }
     inline CheckedBehavior defaultChecked() const { return m_defaultChecked; }
     inline QList<CSwordModuleInfo *> modules() const { return m_modules.keys(); }
-    inline const QSet<CSwordModuleInfo *> & checkedModules() const {
+    inline BtModuleSet const & checkedModules() const {
         return m_checkedModulesCache;
     }
 
@@ -132,7 +133,7 @@ public slots:
     inline void setDefaultChecked(CheckedBehavior b) {
         m_defaultChecked = b;
     }
-    void setCheckedModules(const QSet<CSwordModuleInfo *> & modules);
+    void setCheckedModules(BtConstModuleSet const & modules);
 
 signals:
 
@@ -191,7 +192,7 @@ private: /* Fields: */
     CheckedBehavior m_defaultChecked;
     bool m_checkable;
 
-    QSet<CSwordModuleInfo *> m_checkedModulesCache;
+    BtModuleSet m_checkedModulesCache;
 
 };
 
