@@ -13,7 +13,6 @@
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 
 #include <QIcon>
-#include <QSet>
 #include "util/macros.h"
 
 
@@ -135,7 +134,7 @@ void BtBookshelfModel::addModules(const QList<CSwordModuleInfo *> & modules) {
     addModules(modules.toSet());
 }
 
-void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> & modules) {
+void BtBookshelfModel::addModules(BtModuleSet const & modules) {
     QList<CSwordModuleInfo *> newModules;
     Q_FOREACH (CSwordModuleInfo * module, modules)
         if (!m_data.contains(module))
@@ -184,9 +183,7 @@ void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
     removeModules(modules.toSet(), destroy);
 }
 
-void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> & modules,
-                                     bool destroy)
-{
+void BtBookshelfModel::removeModules(BtModuleSet const & modules, bool destroy){
     // This is inefficient, since signals are emitted for each removed module:
     Q_FOREACH (CSwordModuleInfo * module, modules)
         removeModule(module, destroy);

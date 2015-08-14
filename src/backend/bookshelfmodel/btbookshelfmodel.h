@@ -15,6 +15,7 @@
 
 #include <QAbstractListModel>
 
+#include "backend/drivers/btmoduleset.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
 
@@ -87,7 +88,7 @@ public: /* Methods: */
       Appends the all the modules in the given set to this model.
       \param[in] modules Set of modules to add.
     */
-    void addModules(const QSet<CSwordModuleInfo *> & modules);
+    void addModules(BtModuleSet const & modules);
 
     /**
       Appends the all the modules in the given list to this model.
@@ -109,7 +110,7 @@ public: /* Methods: */
       \param[in] modules The set of modules to remove from this model.
       \param[in] destroy If true, the given CSwordModuleInfo instances are destroyed.
     */
-    void removeModules(const QSet<CSwordModuleInfo *> & modules,
+    void removeModules(BtModuleSet const & modules,
                        bool destroy = false);
 
     /**
