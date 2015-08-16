@@ -164,7 +164,7 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     int matchLen = 0;
     QStringList words(queryParser(searchedText));
     //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
-    foreach (QString word, words) { //search for every word in the list
+    Q_FOREACH (QString word, words) { //search for every word in the list
         QRegExp findExp;
         if (word.contains("*")) {
             length = word.length() - 1;

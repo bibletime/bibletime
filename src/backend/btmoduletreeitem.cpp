@@ -58,7 +58,7 @@ BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& 
 
 BTModuleTreeItem::~BTModuleTreeItem() {
     // this works recursively
-    foreach(BTModuleTreeItem* i, children()) {
+    Q_FOREACH(BTModuleTreeItem* i, children()) {
         delete i;
     }
 }
@@ -95,10 +95,10 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters) {
 }
 
 void BTModuleTreeItem::add_items(QList<BTModuleTreeItem::Filter*>& filters) {
-    foreach (CSwordModuleInfo* info, m_originalModuleList) {
+    Q_FOREACH (CSwordModuleInfo* info, m_originalModuleList) {
         bool included;
         included = true;
-        foreach (BTModuleTreeItem::Filter* f, filters) {
+        Q_FOREACH (BTModuleTreeItem::Filter* f, filters) {
             if (!f->filter(info)) {
                 included = false;
                 break;
@@ -154,7 +154,7 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
     BTModuleTreeItem::Type type,
     CSwordModuleInfo::Category category) {
     BTModuleTreeItem* item = 0;
-    foreach(BTModuleTreeItem* it, parentGroup->children()) {
+    Q_FOREACH(BTModuleTreeItem* it, parentGroup->children()) {
         if (it->text() == itemText) {
             item = it;
             break;
@@ -168,7 +168,7 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
     // sort each child recursively depth-first
-    foreach(BTModuleTreeItem* item, parent->children()) {
+    Q_FOREACH(BTModuleTreeItem* item, parent->children()) {
         sort_children(item);
     }
 
@@ -179,7 +179,7 @@ void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
         //put the children back to tree in sorted order
         BTModuleTreeItem* first = items.at(0);
         BTModuleTreeItem* prev = first;
-        foreach (BTModuleTreeItem* item2, items) {
+        Q_FOREACH (BTModuleTreeItem* item2, items) {
             prev->m_next = item2;
             prev = item2;
         }

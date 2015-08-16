@@ -186,7 +186,7 @@ QMimeData* CBookmarkIndex::dragObject() {
     BTMimeData::ItemList dndItems;
     BTMimeData* mimeData = new BTMimeData;
 
-    foreach(QModelIndex widgetItem, selectedIndexes() ) {
+    Q_FOREACH(QModelIndex widgetItem, selectedIndexes() ) {
         if (!widgetItem.isValid())
             break;
         if (m_bookmarksModel->isBookmark(widgetItem)) {
@@ -348,7 +348,7 @@ void CBookmarkIndex::dropEvent( QDropEvent* event ) {
         QModelIndexList list(selectedIndexes());
         QModelIndexList newList;
 
-        foreach(QModelIndex index, list) {
+        Q_FOREACH(QModelIndex index, list) {
             if (m_bookmarksModel->isFolder(index)) {
                 bookmarksOnly = false;
                 if (list.count() > 1) { // only one item allowed if a folder is selected
@@ -548,7 +548,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
         for (int index = ActionBegin; index <= ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
             bool enable = isMultiAction(actionType);
-            foreach(QModelIndex i, items) {
+            Q_FOREACH(QModelIndex i, items) {
                 enable = enable && enableAction(i, actionType);
             }
             if (enable) {
@@ -714,10 +714,10 @@ void CBookmarkIndex::deleteEntries(bool confirm) {
     // will be invalidated. Need to delete per index because selected indexes
     // would be under different parents.
     QList<QPersistentModelIndex> list;
-    foreach(QModelIndex i, selectedIndexes())
+    Q_FOREACH(QModelIndex i, selectedIndexes())
         list.append(i);
 
-    foreach (QModelIndex i, list)
+    Q_FOREACH (QModelIndex i, list)
         model()->removeRows(i.row(), 1, i.parent());
 }
 

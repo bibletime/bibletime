@@ -65,7 +65,7 @@ BtBookDropdownChooserButton::BtBookDropdownChooserButton(BtBibleKeyWidget* ref)
 void BtBookDropdownChooserButton::newList() {
     QMenu* m = menu();
     QStringList* booklist = ref()->m_module->books();
-    foreach (QString bookname, *booklist) {
+    Q_FOREACH (QString bookname, *booklist) {
         m->addAction(bookname);
     }
 }

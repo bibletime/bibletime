@@ -57,14 +57,14 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
         //collect the languages abbrevs of all modules
         QStringList abbrevs;
 
-        foreach (const CSwordModuleInfo* mod,  mods) {
+        Q_FOREACH (const CSwordModuleInfo* mod,  mods) {
             if (!abbrevs.contains(mod->module()->getLanguage())) {
                 abbrevs.append(mod->module()->getLanguage());
             }
         }
 
         //now create a map of available langs
-        foreach ( QString abbrev, abbrevs ) {
+        Q_FOREACH ( QString abbrev, abbrevs ) {
             const Language* const lang = languageForAbbrev(abbrev);
 
             if (lang->isValid()) {
@@ -85,7 +85,7 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     if (it != m_langMap.constEnd()) return *it; //Language is already here
 
     //try to search in the alternative abbrevs
-    foreach (const Language* lang, m_langList ) {
+    Q_FOREACH (const Language* lang, m_langList ) {
         if (lang->alternativeAbbrevs().contains(abbrev)) return lang;
     }
 
@@ -97,7 +97,7 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
 }
 
 const CLanguageMgr::Language* CLanguageMgr::languageForTranslatedName( const QString& name ) const {
-    foreach ( const Language* lang, m_langList ) {
+    Q_FOREACH ( const Language* lang, m_langList ) {
         if (lang->translatedName() == name) return lang;
     }
     return &m_defaultLanguage; //invalid language
@@ -524,7 +524,7 @@ void CLanguageMgr::init() {
     //: Language name zu
     m_langList.append( new Language("zu", "Zulu", QObject::tr("Zulu")) );
 
-    foreach (Language* lang, m_langList) {
+    Q_FOREACH (Language* lang, m_langList) {
         m_langMap.insert( lang->abbrev(), lang);
     }
 }

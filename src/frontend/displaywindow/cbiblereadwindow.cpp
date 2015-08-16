@@ -452,7 +452,7 @@ void CBibleReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 }
 
 void CBibleReadWindow::syncWindows() {
-    foreach (QMdiSubWindow* subWindow, mdi()->subWindowList()) {
+    Q_FOREACH (QMdiSubWindow* subWindow, mdi()->subWindowList()) {
         CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
         if (w && w->syncAllowed()) {
             w->lookupKey( key()->key() );

@@ -128,7 +128,7 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, const QStringList 
     QTreeWidgetItem* oldItem = 0;
     QTreeWidgetItem* item = 0;
 
-    foreach (QString s, vList) {
+    Q_FOREACH (QString s, vList) {
         item = new QTreeWidgetItem(this, oldItem);
         item->setText(0, (s));
         oldItem = item;
@@ -163,7 +163,7 @@ void CSearchResultView::printItems() {
     CExportManager mgr(true, tr("Printing search result"));
 
     QStringList list;
-    foreach (QTreeWidgetItem* k, items) {
+    Q_FOREACH (QTreeWidgetItem* k, items) {
         list.append( k->text(0) );
     }
     mgr.printKeyList( list, module(), btConfig().getDisplayOptions(), btConfig().getFilterOptions() );
@@ -176,7 +176,7 @@ void CSearchResultView::saveItems() {
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -194,7 +194,7 @@ void CSearchResultView::saveItemsWithText() {
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -212,7 +212,7 @@ void CSearchResultView::copyItems() {
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -230,7 +230,7 @@ void CSearchResultView::copyItemsWithText() {
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -261,7 +261,7 @@ void CSearchResultView::copyItemsWithText() {
 
 QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items ) const {
     BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString::null);
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH (QTreeWidgetItem* i, items) {
         mdata->appendBookmark(m_module->name(), i->text(0), QString::null);
     }
     return mdata;

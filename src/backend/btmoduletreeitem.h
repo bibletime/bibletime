@@ -36,7 +36,7 @@ Example:
     add_to_view(&root, qtreewidget->invisibleRootItem());
     ...
     void add_to_view(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
-        foreach (BTModuleTreeItem* i, item->children()) {
+        Q_FOREACH (BTModuleTreeItem* i, item->children()) {
             add_to_view(i, new QTreeWidgetItem(widgetItem));
         }
         if (item->type() == BTModuleTreeItem::Category) prepare_category_item(widgetItem, item);

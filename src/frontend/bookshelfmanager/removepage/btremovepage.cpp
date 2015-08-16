@@ -154,7 +154,7 @@ void BtRemovePage::slotRemoveModules() {
 
         sword::InstallMgr installMgr;
         QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-        foreach ( CSwordModuleInfo* mInfo, toBeDeleted ) {
+        Q_FOREACH ( CSwordModuleInfo* mInfo, toBeDeleted ) {
             Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
             // Find the install path for the sword manager
             QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";

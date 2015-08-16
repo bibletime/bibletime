@@ -115,7 +115,7 @@ void CSearchDialog::startSearch() {
     /// \warning indexing is some kind of internal optimization, so we leave
     /// modules const, but unconst them here only
     QList<CSwordModuleInfo*> unindexedModules;
-    foreach(const CSwordModuleInfo *m, CSwordModuleSearch::unindexedModules(modules()))
+    Q_FOREACH(const CSwordModuleInfo *m, CSwordModuleSearch::unindexedModules(modules()))
         unindexedModules.append(const_cast<CSwordModuleInfo*>(m));
 
     if (unindexedModules.size() > 0) {

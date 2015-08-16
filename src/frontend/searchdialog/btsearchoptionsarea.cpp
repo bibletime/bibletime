@@ -252,7 +252,7 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
     QString text = m_modulesCombo->itemText(index);
     QStringList moduleNamesList = text.split(", ");
     BtConstModuleList moduleList;
-    foreach(QString name, moduleNamesList) {
+    Q_FOREACH(QString name, moduleNamesList) {
         moduleList.append(CSwordBackend::instance()->findModuleByName(name));
     }
     //set the list and the combobox list and text

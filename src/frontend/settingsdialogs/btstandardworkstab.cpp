@@ -58,7 +58,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     //fill the comboboxes with the right modules
 
     QString modDescript;
-    foreach(const CSwordModuleInfo *m, CSwordBackend::instance()->moduleList()) {
+    Q_FOREACH(const CSwordModuleInfo *m, CSwordBackend::instance()->moduleList()) {
         modDescript = m->config(CSwordModuleInfo::Description);
 
         switch (m->type()) {

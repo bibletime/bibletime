@@ -67,7 +67,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
 
     QStringList targets = BtInstallBackend::targetList();
 
-    foreach (QString pathname, targets)  {
+    Q_FOREACH (QString pathname, targets)  {
         addPathToList(pathname);
     }
     updateTopLevelItems();

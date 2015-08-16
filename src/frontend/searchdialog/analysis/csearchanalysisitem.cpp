@@ -52,7 +52,7 @@ CSearchAnalysisItem::~CSearchAnalysisItem() {
 }
 
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
-    foreach (const int hits, m_resultCountArray) {
+    Q_FOREACH (const int hits, m_resultCountArray) {
         if (hits) return true;
     }
     return false;

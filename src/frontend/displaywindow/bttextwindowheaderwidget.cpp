@@ -91,7 +91,7 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
     QListIterator<QMenu*> it(m_submenus);
     while (it.hasNext()) {
         QMenu* popup = it.next();
-        foreach (QAction* a, popup->actions()) {
+        Q_FOREACH (QAction* a, popup->actions()) {
             a->setChecked( (a->text() == thisModule) ? true : false );
             a->setDisabled( newModulesToUse.contains(a->text()) ? true : false );
         }
@@ -169,7 +169,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
     toplevelMenus.append(replaceItem);
     toplevelMenus.append(addItem);
 
-    foreach(QMenu* menu, toplevelMenus) {
+    Q_FOREACH(QMenu* menu, toplevelMenus) {
         // ******* Add categories, languages and modules ********
         // Filters: add only non-hidden, non-locked and correct type
         BTModuleTreeItem::HiddenOff hiddenFilter;
@@ -201,7 +201,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
 }
 
 void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType) {
-    foreach (BTModuleTreeItem* i, item->children()) {
+    Q_FOREACH (BTModuleTreeItem* i, item->children()) {
 
         if (i->type() == BTModuleTreeItem::Language ||
             i->type() == BTModuleTreeItem::Category) {
