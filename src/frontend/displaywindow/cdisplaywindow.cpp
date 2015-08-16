@@ -157,7 +157,7 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
 
     // Save list of modules:
     QStringList mods;
-    Q_FOREACH (const CSwordModuleInfo * module, modules())
+    Q_FOREACH(CSwordModuleInfo const * const module, modules())
         mods.append(module->name());
     conf.setSessionValue("modules", mods);
 
@@ -407,9 +407,8 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
 void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
     m_modules.clear();
 
-    Q_FOREACH (CSwordModuleInfo* mod, newModules) {
+    Q_FOREACH(CSwordModuleInfo const * const mod, newModules)
         m_modules.append(mod->name());
-    }
 }
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */

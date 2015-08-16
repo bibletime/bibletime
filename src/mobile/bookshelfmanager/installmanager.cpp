@@ -341,7 +341,7 @@ void InstallManager::updateWorksModel()
 void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
 
     QStringList moduleNames;
-    Q_FOREACH ( CSwordModuleInfo* mInfo, modules ) {
+    Q_FOREACH(CSwordModuleInfo const * const mInfo, modules) {
         QString moduleName = mInfo->name();
         moduleNames.append(moduleName);
     }
@@ -351,7 +351,7 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
 
     sword::InstallMgr installMgr;
     QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-    Q_FOREACH ( CSwordModuleInfo* mInfo, toBeDeleted ) {
+    Q_FOREACH(CSwordModuleInfo * const mInfo, toBeDeleted) {
         Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
         // Find the install path for the sword manager
         QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";

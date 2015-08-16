@@ -320,11 +320,10 @@ void BtInstallPage::slotInstall() {
     BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(m_groupingOrder, this);
 
     // Add all checked modules from all tabs:
-    Q_FOREACH (BtInstallPageWorksWidget *w, m_sourceMap.values()) {
-        Q_FOREACH (CSwordModuleInfo *module, w->treeModel()->checkedModules()) {
+    Q_FOREACH(BtInstallPageWorksWidget const * const w, m_sourceMap.values())
+        Q_FOREACH(CSwordModuleInfo * const module,
+                  w->treeModel()->checkedModules())
             dlg->addModuleItem(module, QString(w->installSource().caption));
-        }
-    }
 
     if (dlg->exec() == QDialog::Accepted) {
         QList<CSwordModuleInfo *> modules(dlg->checkedModules().toList());
@@ -418,9 +417,8 @@ void BtInstallPage::slotSourceIndexChanged(int index) {
 void BtInstallPage::slotSelectedModulesChanged() {
     m_modulesSelected = 0;
     m_modulesSelectedSources = 0;
-    Q_FOREACH (BtInstallPageWorksWidget *w, m_sourceMap.values()) {
-        int selected = w->treeModel()->checkedModules().size();
-        if (selected > 0) {
+    Q_FOREACH(BtInstallPageWorksWidget const * const w, m_sourceMap.values()) {
+        if (int const selected = w->treeModel()->checkedModules().size()) {
             m_modulesSelectedSources++;
             m_modulesSelected += selected;
         }

@@ -71,7 +71,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     QListIterator<QMenu*> it(m_submenus);
     while (it.hasNext()) {
         QMenu* popup = it.next();
-        Q_FOREACH (QAction* a, popup->actions()) {
+        Q_FOREACH(QAction * const a, popup->actions()) {
             a->setChecked( (a->text() == thisModule) ? true : false );
             a->setDisabled( newModulesToUse.contains(a->text()) ? true : false );
         }
@@ -173,8 +173,7 @@ void BtModuleChooserButton::populateMenu() {
 }
 
 void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
-    Q_FOREACH (BTModuleTreeItem* i, item->children()) {
-
+    Q_FOREACH(BTModuleTreeItem * const i, item->children()) {
         if (i->type() == BTModuleTreeItem::Language ||
             i->type() == BTModuleTreeItem::Category ) {
             // argument menu was m_popup, create and add a new lang menu to it

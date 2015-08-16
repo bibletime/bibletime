@@ -107,7 +107,7 @@ public: /* Tyepes */
         }
 
         inline void insertChildren(int index, QList<BookmarkItemBase *> children) {
-            Q_FOREACH(BookmarkItemBase *c, children)
+            Q_FOREACH(BookmarkItemBase * const c, children)
                 insertChild(index++, c);
         }
 
@@ -213,10 +213,10 @@ public: /* Tyepes */
         QList<BookmarkItemBase *> getChildList() const;
 
         /** Returns true if the given item is this or a direct or indirect subitem of this. */
-        bool hasDescendant(BookmarkItemBase * item) const;
+        bool hasDescendant(BookmarkItemBase const * item) const;
 
         /** Creates a deep copy of this item. */
-        BookmarkFolder * deepCopy();
+        BookmarkFolder * deepCopy() const;
 
     };
 
@@ -467,37 +467,30 @@ QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
     return list;
 }
 
-bool BookmarkFolder::hasDescendant(BookmarkItemBase* item) const {
-    if (this == item) {
+bool BookmarkFolder::hasDescendant(BookmarkItemBase const * const item) const {
+    if (this == item)
         return true;
-    }
-    if (getChildList().indexOf(item) > -1) {
+    if (getChildList().indexOf(const_cast<BookmarkItemBase *>(item)) > -1)
         return true;
-    }
-    Q_FOREACH(BookmarkItemBase* childItem, getChildList()) {
-        bool subresult = false;
-        BookmarkFolder* folder = 0;
-        if ( (folder = dynamic_cast<BookmarkFolder*>(childItem)) ) {
-            subresult = folder->hasDescendant(childItem);
-        }
-
-        if (subresult == true) {
-            return true;
-        }
-    }
+    Q_FOREACH(BookmarkItemBase const * const childItem, getChildList())
+        if (BookmarkFolder const * const folder =
+                dynamic_cast<BookmarkFolder const *>(childItem))
+            if (folder->hasDescendant(childItem))
+                return true;
     return false;
 }
 
-BookmarkFolder* BookmarkFolder::deepCopy() {
+BookmarkFolder * BookmarkFolder::deepCopy() const {
     BookmarkFolder* newFolder = new BookmarkFolder(this->text());
-    Q_FOREACH(BookmarkItemBase* subitem, getChildList()) {
-        if (BookmarkItem* bmItem = dynamic_cast<BookmarkItem*>(subitem)) {
+    Q_FOREACH(BookmarkItemBase const * const subitem, getChildList()) {
+        if (BookmarkItem const * const bmItem =
+                dynamic_cast<BookmarkItem const *>(subitem))
+        {
             newFolder->addChild(new BookmarkItem(*bmItem));
-        }
-        else {
-            if (BookmarkFolder* bmFolder = dynamic_cast<BookmarkFolder*>(subitem)) {
-                newFolder->addChild(bmFolder->deepCopy());
-            }
+        } else if (BookmarkFolder const * const bmFolder =
+                           dynamic_cast<BookmarkFolder const *>(subitem))
+        {
+            newFolder->addChild(bmFolder->deepCopy());
         }
     }
     return newFolder;
@@ -805,7 +798,7 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
 
     QList<BookmarkItemBase *> newList;
 
-    Q_FOREACH(QModelIndex index, toCopy) {
+    Q_FOREACH(QModelIndex const index, toCopy) {
         if(BookmarkFolder * folder = dynamic_cast<BookmarkFolder*>(d->item(index))) {
             bookmarksOnly = false;
             if (toCopy.count() > 1) { // only one item allowed if a folder is selected
@@ -972,7 +965,7 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
         else
             parents.append(f);
 
-        Q_FOREACH(BookmarkFolder * f, parents) {
+        Q_FOREACH(BookmarkFolder * const f, parents) {
             emit layoutAboutToBeChanged();
 
             QModelIndexList indexes;

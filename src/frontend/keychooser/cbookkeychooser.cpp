@@ -126,7 +126,7 @@ void CBookKeyChooser::setModules(const BtConstModuleList & modules,
     m_modules.clear();
 
     //   for (modules.first(); modules.current(); modules.next()) {
-    Q_FOREACH(const CSwordModuleInfo * m, modules) {
+    Q_FOREACH(const CSwordModuleInfo * const m, modules) {
         if (m->type() == CSwordModuleInfo::GenericBook ) {
             const CSBMI * const book = dynamic_cast<const CSBMI *>(m);
             if (book != 0)

@@ -23,11 +23,11 @@ class BtConstModuleList : public QList<CSwordModuleInfo const *> {
 public: /* Methods */
     inline BtConstModuleList() {}
     inline BtConstModuleList(BtModuleList const & other) {
-        Q_FOREACH(CSwordModuleInfo *m, other)
+        Q_FOREACH(CSwordModuleInfo const * const m, other)
             this->append(m);
     }
     inline BtConstModuleList(QList<CSwordModuleInfo const *> const & other) {
-        Q_FOREACH(CSwordModuleInfo const *m, other)
+        Q_FOREACH(CSwordModuleInfo const * const m, other)
             this->append(m);
     }
 };

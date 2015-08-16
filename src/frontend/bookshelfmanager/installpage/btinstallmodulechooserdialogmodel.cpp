@@ -109,7 +109,7 @@ void BtInstallModuleChooserDialogModel::parentDataChanged(const QModelIndex &top
 
 bool BtInstallModuleChooserDialogModel::isMulti(CSwordModuleInfo * m1) const {
     if (m1 != 0 && checkedModules().contains(m1))
-        Q_FOREACH (CSwordModuleInfo * m2, modules())
+        Q_FOREACH(CSwordModuleInfo const * const m2, modules())
             if (m1 != m2 && checkedModules().contains(m2) && m1->name() == m2->name())
                 return true;
     return false;

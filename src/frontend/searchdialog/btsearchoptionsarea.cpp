@@ -252,9 +252,8 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
     QString text = m_modulesCombo->itemText(index);
     QStringList moduleNamesList = text.split(", ");
     BtConstModuleList moduleList;
-    Q_FOREACH(QString name, moduleNamesList) {
+    Q_FOREACH(QString const & name, moduleNamesList)
         moduleList.append(CSwordBackend::instance()->findModuleByName(name));
-    }
     //set the list and the combobox list and text
     setModules(moduleList);
 }
@@ -264,9 +263,8 @@ void BtSearchOptionsArea::chooseModules() {
     dlg->setCheckedModules(BtConstModuleSet::fromList(modules()));
     if (dlg->exec() == QDialog::Accepted) {
         BtConstModuleList ms;
-        Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
+        Q_FOREACH(CSwordModuleInfo const * const m, dlg->checkedModules())
             ms.append(m);
-        }
         setModules(ms);
     }
     delete dlg;

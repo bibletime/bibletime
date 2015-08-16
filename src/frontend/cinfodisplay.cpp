@@ -356,7 +356,7 @@ const QString CInfoDisplay::decodeMorph(const QString & data) {
     QStringList morphs = data.split("|");
     QString ret;
 
-    Q_FOREACH (QString morph, morphs) {
+    Q_FOREACH(QString const & morph, morphs) {
         //qDebug() << "CInfoDisplay::decodeMorph, morph: " << morph;
         CSwordModuleInfo * module = 0;
         bool skipFirstChar = false;

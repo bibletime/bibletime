@@ -225,11 +225,10 @@ void BibleTime::moduleAbout(CSwordModuleInfo *module) {
 
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() const {
-    Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
-        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+    Q_FOREACH(QMdiSubWindow const * const subWindow, m_mdi->subWindowList())
+        if (CDisplayWindow * const window =
+                dynamic_cast<CDisplayWindow*>(subWindow->widget()))
             window->reload(CSwordBackend::OtherChange);
-        }
-    }
 }
 
 /** Refresh main window accelerators */

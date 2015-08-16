@@ -237,8 +237,8 @@ void BtDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
 }
 
 bool BtDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
-    Q_FOREACH (const CSwordModuleInfo *module, m_modules) {
-        if (module->has(option)) return true;
-    }
+    Q_FOREACH(CSwordModuleInfo const * const module, m_modules)
+        if (module->has(option))
+            return true;
     return false;
 }

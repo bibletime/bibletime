@@ -140,7 +140,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
         // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        Q_FOREACH(const CSwordModuleInfo * mi, settings.modules) {
+        Q_FOREACH(const CSwordModuleInfo * const mi, settings.modules) {
             header.append("<th style=\"width:")
             .append(QString::number(int( 100.0 / (float)moduleCount )))
             .append("%;\">")
@@ -166,7 +166,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     }
     {
         const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
-        Q_FOREACH (const CLanguageMgr::Language * lang, langMap) {
+        Q_FOREACH(const CLanguageMgr::Language * const lang, langMap) {
             if (lang->abbrev().isEmpty())
                 continue;
 

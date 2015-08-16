@@ -52,9 +52,9 @@ CSearchAnalysisItem::~CSearchAnalysisItem() {
 }
 
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
-    Q_FOREACH (const int hits, m_resultCountArray) {
-        if (hits) return true;
-    }
+    Q_FOREACH(int const hits, m_resultCountArray)
+        if (hits)
+            return true;
     return false;
 }
 

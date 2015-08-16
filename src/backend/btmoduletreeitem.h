@@ -36,9 +36,8 @@ Example:
     add_to_view(&root, qtreewidget->invisibleRootItem());
     ...
     void add_to_view(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
-        Q_FOREACH (BTModuleTreeItem* i, item->children()) {
+        Q_FOREACH(BTModuleTreeItem * const i, item->children())
             add_to_view(i, new QTreeWidgetItem(widgetItem));
-        }
         if (item->type() == BTModuleTreeItem::Category) prepare_category_item(widgetItem, item);
         ...
     }
@@ -72,7 +71,7 @@ class BTModuleTreeItem {
         *    BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
         */
         struct Filter {
-            virtual bool filter(const CSwordModuleInfo*) = 0;
+            virtual bool filter(CSwordModuleInfo const &) const = 0;
         };
 
         /**
@@ -80,9 +79,8 @@ class BTModuleTreeItem {
         * set "hidden" it will be filtered out.
         */
         struct HiddenOff : public Filter {
-            inline bool filter(const CSwordModuleInfo* mi) {
-                return !mi->isHidden();
-            }
+            inline bool filter(CSwordModuleInfo const & mi) const
+            { return !mi.isHidden(); }
         };
 
         /**

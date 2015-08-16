@@ -135,7 +135,7 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             triggerWindowUpdate();
             break;
     }
-    Q_FOREACH (QTabBar* tab, findChildren<QTabBar *>()) {
+    Q_FOREACH(QTabBar * const tab, findChildren<QTabBar *>()) {
         QObject* parent = tab->parent();
         if (parent == this) {
             tab->setTabsClosable(true);
@@ -292,11 +292,9 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     //Take care: when new windows are added, they will not appear
     //in subWindowList() when their ChildAdded-Event is triggered
     QList<QMdiSubWindow*> ret;
-    Q_FOREACH (QMdiSubWindow * const w, subWindowList()) {
-        if (!w->isHidden()) {
+    Q_FOREACH(QMdiSubWindow * const w, subWindowList())
+        if (!w->isHidden())
             ret.append(w);
-        }
-    }
     return ret;
 }
 

@@ -136,9 +136,9 @@ void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem*
 void BtFontChooserWidget::loadFonts() {
     m_fontListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH (const QString &font, database.families()) {
+    Q_FOREACH(QString const & font, database.families())
         m_fontListWidget->addItem(font);
-    }
+
     // This triggers loading the styles for the first font
     m_fontListWidget->setCurrentRow(0);
 }
@@ -159,9 +159,8 @@ void BtFontChooserWidget::loadSizes(const QString& font, const QString& style) {
     // Put new values into listWidget
     m_sizeListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH (int size, database.pointSizes(font, style)) {
+    Q_FOREACH(int const size, database.pointSizes(font, style))
         m_sizeListWidget->addItem(QString::number(size));
-    }
 
     restoreListWidgetValue(m_sizeListWidget, saveText);
 }

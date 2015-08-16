@@ -90,9 +90,8 @@ QString CPrinter::renderEntry(const KeyTreeItem &i, CSwordKey * key) {
         if (!i.childList()->isEmpty()) {
             KeyTree const * tree = i.childList();
 
-            Q_FOREACH (const KeyTreeItem * const c, *tree) {
+            Q_FOREACH (const KeyTreeItem * const c, *tree)
                 ret.append( CDisplayRendering::renderEntry( *c ) );
-            }
         }
 
         ret.append("</div>");

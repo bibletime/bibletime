@@ -32,7 +32,7 @@ BtSearchInterface::~BtSearchInterface() {
 static const CSwordModuleInfo* getModuleFromResults(const CSwordModuleSearch::Results& results, int index) {
 
     int moduleIndex = 0;
-    Q_FOREACH(const CSwordModuleInfo* module, results.keys()) {
+    Q_FOREACH(CSwordModuleInfo const * const module, results.keys()) {
         if (moduleIndex == index)
             return module;
         ++moduleIndex;
@@ -86,7 +86,7 @@ bool BtSearchInterface::indexModules() {
         m_progressObject = findQmlObject("indexProgress");
 
     QList<CSwordModuleInfo *> nonIndexedModules;
-    Q_FOREACH(const CSwordModuleInfo *cm, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const cm, modules) {
         if (cm->hasIndex())
             continue;
         CSwordModuleInfo *m = const_cast<CSwordModuleInfo*>(cm);
@@ -171,7 +171,7 @@ void BtSearchInterface::setupModuleModel(const CSwordModuleSearch::Results & res
     m_modulesModel.setRoleNames(roleNames);
 
     m_modulesModel.clear();
-    Q_FOREACH(const CSwordModuleInfo* m, results.keys()) {
+    Q_FOREACH(CSwordModuleInfo const * const m, results.keys()) {
         const int count = sword::ListKey(results.value(m)).getCount();
         QString moduleName = m->name();
         QString moduleEntry = moduleName + "(" +QString::number(count) + ")";

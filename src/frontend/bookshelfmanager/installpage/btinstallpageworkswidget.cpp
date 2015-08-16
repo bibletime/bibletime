@@ -74,9 +74,9 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
     m_backend = BtInstallBackend::backend(m_source);
     Q_ASSERT(m_backend != 0);
     m_myModel = new BtBookshelfModel(this);
-    Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
-        if (filter(module)) m_myModel->addModule(module);
-    }
+    Q_FOREACH(CSwordModuleInfo * const module, m_backend->moduleList())
+        if (filter(module))
+            m_myModel->addModule(module);
     setSourceModel(m_myModel);
 }
 
@@ -101,9 +101,9 @@ void BtInstallPageWorksWidget::updateTree() {
     m_backend = BtInstallBackend::backend(m_source);
 
     // Repopulate model:
-    Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
-        if (filter(module)) m_myModel->addModule(module);
-    }
+    Q_FOREACH(CSwordModuleInfo * const module, m_backend->moduleList())
+        if (filter(module))
+            m_myModel->addModule(module);
 }
 
 void BtInstallPageWorksWidget::slotSourceRefresh() {

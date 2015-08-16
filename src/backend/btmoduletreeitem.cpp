@@ -58,9 +58,8 @@ BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& 
 
 BTModuleTreeItem::~BTModuleTreeItem() {
     // this works recursively
-    Q_FOREACH(BTModuleTreeItem* i, children()) {
+    Q_FOREACH(BTModuleTreeItem * const i, children())
         delete i;
-    }
 }
 
 QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
@@ -95,11 +94,11 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters) {
 }
 
 void BTModuleTreeItem::add_items(QList<BTModuleTreeItem::Filter*>& filters) {
-    Q_FOREACH (CSwordModuleInfo* info, m_originalModuleList) {
+    Q_FOREACH(CSwordModuleInfo * const info, m_originalModuleList) {
         bool included;
         included = true;
-        Q_FOREACH (BTModuleTreeItem::Filter* f, filters) {
-            if (!f->filter(info)) {
+        Q_FOREACH(BTModuleTreeItem::Filter const * const f, filters) {
+            if (!f->filter(*info)) {
                 included = false;
                 break;
             }
@@ -152,25 +151,18 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
     BTModuleTreeItem* parentGroup,
     const QString& itemText,
     BTModuleTreeItem::Type type,
-    CSwordModuleInfo::Category category) {
-    BTModuleTreeItem* item = 0;
-    Q_FOREACH(BTModuleTreeItem* it, parentGroup->children()) {
-        if (it->text() == itemText) {
-            item = it;
-            break;
-        }
-    }
-    if (!item)
-        item = new BTModuleTreeItem(parentGroup, itemText, type, 0, category);
-
-    return item;
+    CSwordModuleInfo::Category category)
+{
+    Q_FOREACH(BTModuleTreeItem * const item, parentGroup->children())
+        if (item->text() == itemText)
+            return item;
+    return new BTModuleTreeItem(parentGroup, itemText, type, 0, category);
 }
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
     // sort each child recursively depth-first
-    Q_FOREACH(BTModuleTreeItem* item, parent->children()) {
+    Q_FOREACH(BTModuleTreeItem * const item, parent->children())
         sort_children(item);
-    }
 
     QList<BTModuleTreeItem*> items = parent->children();
     if (items.size() > 0) {
@@ -179,7 +171,7 @@ void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
         //put the children back to tree in sorted order
         BTModuleTreeItem* first = items.at(0);
         BTModuleTreeItem* prev = first;
-        Q_FOREACH (BTModuleTreeItem* item2, items) {
+        Q_FOREACH(BTModuleTreeItem * const item2, items) {
             prev->m_next = item2;
             prev = item2;
         }

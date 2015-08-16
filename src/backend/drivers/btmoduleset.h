@@ -17,6 +17,21 @@
 
 class CSwordModuleInfo;
 
-typedef QSet<CSwordModuleInfo *> BtModuleSet;
+class BtModuleSet: public QSet<CSwordModuleInfo *> {
+
+public: /* Methods: */
+
+    inline BtModuleSet() {};
+
+    inline BtModuleSet(QSet<CSwordModuleInfo *> const & copy)
+        : QSet<CSwordModuleInfo *>(copy)
+    {}
+
+    inline bool contains(CSwordModuleInfo const * const m) const {
+        return this->QSet<CSwordModuleInfo *>::contains(
+                const_cast<CSwordModuleInfo *>(m));
+    }
+
+};
 
 #endif /* BTMODULESET_H */

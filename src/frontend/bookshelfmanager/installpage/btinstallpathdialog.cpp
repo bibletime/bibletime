@@ -67,9 +67,8 @@ BtInstallPathDialog::BtInstallPathDialog() {
 
     QStringList targets = BtInstallBackend::targetList();
 
-    Q_FOREACH (QString pathname, targets)  {
+    Q_FOREACH(QString const & pathname, targets)
         addPathToList(pathname);
-    }
     updateTopLevelItems();
 
     viewLayout->addWidget(m_swordPathListBox);

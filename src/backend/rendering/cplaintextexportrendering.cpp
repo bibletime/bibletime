@@ -36,7 +36,7 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
     QString renderedText = QString(i.key()).append(":\n");
 
     QString entry;
-    Q_FOREACH(const CSwordModuleInfo * module, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const module, modules) {
         key->setModule(module);
         key->setKey(i.key());
 

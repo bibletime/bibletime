@@ -596,8 +596,8 @@ QDataStream & operator <<(QDataStream & os,
                           const BtBookshelfTreeModel::Grouping & o)
 {
     os << o.size();
-    Q_FOREACH(BtBookshelfTreeModel::Group g, o)
-        os << static_cast<int>(g);
+    Q_FOREACH(BtBookshelfTreeModel::Group const g, o)
+        os << static_cast<int const>(g);
     return os;
 }
 

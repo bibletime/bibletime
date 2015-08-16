@@ -26,7 +26,7 @@ void CSwordModuleSearch::startSearch() {
     CSwordBackend::instance()->setFilterOptions(btConfig().getFilterOptions());
 
     // Search module-by-module:
-    Q_FOREACH(const CSwordModuleInfo *m, m_searchModules) {
+    Q_FOREACH(CSwordModuleInfo const * const m, m_searchModules) {
         sword::ListKey results;
         size_t const found =
                 m->searchIndexed(m_searchText, m_searchScope, results);
@@ -58,11 +58,9 @@ const BtConstModuleList CSwordModuleSearch::unindexedModules(
         const BtConstModuleList &modules)
 {
     BtConstModuleList unindexed;
-    Q_FOREACH (const CSwordModuleInfo *m, modules) {
-        if (!m->hasIndex()) {
+    Q_FOREACH(CSwordModuleInfo const * const m, modules)
+        if (!m->hasIndex())
             unindexed.append(m);
-        }
-    }
     return unindexed;
 }
 
@@ -162,9 +160,11 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     //===========================================================
     int length = searchedText.length();
     int matchLen = 0;
-    QStringList words(queryParser(searchedText));
-    //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
-    Q_FOREACH (QString word, words) { //search for every word in the list
+    for (QStringList words(queryParser(searchedText));
+         !words.empty();
+         words.pop_front())
+    {
+        QString & word = words.first();
         QRegExp findExp;
         if (word.contains("*")) {
             length = word.length() - 1;

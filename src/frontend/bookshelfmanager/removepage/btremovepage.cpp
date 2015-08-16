@@ -130,10 +130,9 @@ void BtRemovePage::slotRemoveModules() {
     const int textHeight = fontMetrics().height();
     /// \bug <nobr> is not working, Qt bug
     const QString moduleString("<nobr>%1&nbsp;%2</nobr>");
-    Q_FOREACH(const CSwordModuleInfo * m,
+    Q_FOREACH(const CSwordModuleInfo * const m,
               m_bookshelfWidget->treeModel()->checkedModules())
     {
-        const QIcon icon = CSwordModuleInfo::moduleIcon(*m);
         prettyModuleNames.append(moduleString
                                  .arg(iconToHtml(CSwordModuleInfo::moduleIcon(*m),
                                                  textHeight))
@@ -154,7 +153,7 @@ void BtRemovePage::slotRemoveModules() {
 
         sword::InstallMgr installMgr;
         QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-        Q_FOREACH ( CSwordModuleInfo* mInfo, toBeDeleted ) {
+        Q_FOREACH(CSwordModuleInfo const * const mInfo, toBeDeleted) {
             Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
             // Find the install path for the sword manager
             QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";

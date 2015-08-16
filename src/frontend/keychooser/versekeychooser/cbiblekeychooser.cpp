@@ -101,16 +101,11 @@ void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
 
     m_modules.clear();
 
-    Q_FOREACH (const CSwordModuleInfo *mod, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const mod, modules)
         if (mod->type() == CSwordModuleInfo::Bible
             || mod->type() == CSwordModuleInfo::Commentary)
-        {
-            const CSBMI* bible = dynamic_cast<const CSBMI*>(mod);
-            if (bible != 0) {
+            if (CSBMI const * const bible = dynamic_cast<CSBMI const *>(mod))
                 m_modules.append(bible);
-            }
-        }
-    }
 
     // First time this is called we havnt set up w_ref.
     if (w_ref) w_ref->setModule(dynamic_cast<const CSwordBibleModuleInfo*>(m_modules.first()));

@@ -154,7 +154,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     }
 
     // Unlock modules if keys are present:
-    Q_FOREACH(CSwordModuleInfo * mod, m_dataModel.moduleList()) {
+    Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
         if (mod->isEncrypted()) {
             const QString unlockKey = btConfig().getModuleEncryptionKey(mod->name());
             if (!unlockKey.isNull())
@@ -256,21 +256,21 @@ void CSwordBackend::setFilterOptions(const FilterOptions & options) {
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & description) const {
-    Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList())
+    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->config(CSwordModuleInfo::Description) == description)
             return mod;
     return 0;
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
-    Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList())
+    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->name() == name)
             return mod;
     return 0;
 }
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
-    Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList())
+    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->module() == swmodule)
             return mod;
     return 0;
@@ -375,7 +375,7 @@ const QString CSwordBackend::booknameLanguage(const QString & language) {
         // Use what sword returns, language may be different.
         const QByteArray newLocaleName(QString(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()).toUtf8());
 
-        Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList()) {
+        Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
             if (mod->type() == CSwordModuleInfo::Bible
                 || mod->type() == CSwordModuleInfo::Commentary)
             {
