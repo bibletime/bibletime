@@ -2,9 +2,12 @@
 # make sure variable below points to correct location
 
 isEmpty(SWORD_PATH):SWORD_PATH = ../../../../sword
+isEmpty(SWORD_VERSION_NUM):SWORD_VERSION_NUM = 107005000
+
 
 
 INCLUDEPATH += $${SWORD_PATH}/include
+
 
 SOURCES += \
     $${SWORD_PATH}/src/frontend/swdisp.cpp \
@@ -146,21 +149,7 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/zlib/adler32.c \
 
 
-# Sword 1.7
-true {
-SOURCES += \
-    $${SWORD_PATH}/src/mgr/remotetrans.cpp \
-    $${SWORD_PATH}/src/modules/common/xzcomprs.cpp \
-    $${SWORD_PATH}/src/modules/common/bz2comprs.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisglosses.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisenum.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisreferencelinks.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisxlit.cpp \
-    $${SWORD_PATH}/src/modules/filters/scsuutf8.cpp \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
-}
-else {
+lessThan(SWORD_VERSION_NUM, 107000000) { # 1.6 series
 SOURCES += \
     $${SWORD_PATH}/src/mgr/ftptrans.cpp \
     $${SWORD_PATH}/src/modules/filters/plainhtml.cpp \
@@ -171,6 +160,37 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/zlib/infblock.c \
     $${SWORD_PATH}/src/utilfuns/zlib/gzio.c \
 }
+else { # 1.7 series
+SOURCES += \
+    $${SWORD_PATH}/src/mgr/remotetrans.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisglosses.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisenum.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisreferencelinks.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisxlit.cpp \
+    $${SWORD_PATH}/src/modules/filters/scsuutf8.cpp \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
+
+
+# Compressors
+windows|android:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
+
+!contains(DEFINES, EXCLUDEXZ):SOURCES    += $${SWORD_PATH}/src/modules/common/xzcomprs.cpp
+!contains(DEFINES, EXCLUDEBZIP2):SOURCES += $${SWORD_PATH}/src/modules/common/bz2comprs.cpp
+
+
+!lessThan(SWORD_VERSION_NUM, 107005000) {
+SOURCES += \
+    $${SWORD_PATH}/src/modules/filters/gbflatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/osislatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/thmllatex.cpp \
+    $${SWORD_PATH}/src/modules/texts/ztext4/ztext4.cpp \
+    $${SWORD_PATH}/src/modules/comments/zcom4/zcom4.cpp \
+    $${SWORD_PATH}/src/modules/common/zverse4.cpp \
+    $${SWORD_PATH}/src/modules/filters/teilatex.cpp \
+}
+}
+
 
 # CURL
 curl {
@@ -185,18 +205,19 @@ SOURCES += $${SWORD_PATH}/src/mgr/ftplibftpt.cpp
 !symbian {
 INCLUDEPATH += $${SWORD_PATH}/include/internal/regex
 
-SOURCES += $${SWORD_PATH}/src/utilfuns/regex.c \
-    $${SWORD_PATH}/src/utilfuns/ftplib.c \
+SOURCES += $${SWORD_PATH}/src/utilfuns/regex.c
+
+!curl:SOURCES += $${SWORD_PATH}/src/utilfuns/ftplib.c
 }
 else {
 # include ftplib from Symbian folder
-SOURCES += ftplib.c
+!curl:SOURCES += ftplib.c
 }
 
 
 # Windows platform
 windows {
-DEFINES += _CRT_SECURE_NO_WARNINGS REGEX_MALLOC BUILDING_LIBRARY
+DEFINES += _CRT_SECURE_NO_WARNINGS REGEX_MALLOC
 
 INCLUDEPATH += $${SWORD_PATH}/src/utilfuns/win32
 
@@ -208,4 +229,10 @@ LIBS += -lws2_32
 # MeeGo platform
 unix:contains(MEEGO_EDITION,harmattan) {
 DEFINES += STDC_HEADERS
+}
+
+# Blackberry
+blackberry {
+!contains($${DEFINES}, EXCLUDEXZ):LIBS += -llzma
+!contains($${DEFINES}, EXCLUDEBZIP2):LIBS += -lbz2
 }

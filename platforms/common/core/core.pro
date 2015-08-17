@@ -1,6 +1,10 @@
 # BibleTime Core, could be used for Desktop, Mini and Mobile
-BT_VERSION = 2.10.0
+BT_VERSION = 2.10.0_rc1
 DEFINES += BT_VERSION=\\\"$${BT_VERSION}\\\"
+
+# Useless warnings
+gcc:QMAKE_CXXFLAGS_DEBUG += -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-reorder -Wno-missing-field-initializers
+
 
 INCLUDEPATH += ../../../src
 
@@ -18,7 +22,6 @@ SOURCES += \
     ../../../src/backend/config/btconfig.cpp \
     ../../../src/backend/config/btconfigcore.cpp \
     ../../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp \
-    ../../../src/backend/btbookmarksmodel.cpp \
     ../../../src/backend/btinstallmgr.cpp \
     ../../../src/backend/keys/cswordversekey.cpp \
     ../../../src/backend/keys/cswordldkey.cpp \
@@ -27,6 +30,7 @@ SOURCES += \
     ../../../src/backend/drivers/cswordlexiconmoduleinfo.cpp \
     ../../../src/backend/drivers/cswordcommentarymoduleinfo.cpp \
     ../../../src/backend/drivers/cswordbiblemoduleinfo.cpp \
+    ../../../src/backend/rendering/btinforendering.cpp \
     ../../../src/backend/rendering/ctextrendering.cpp \
     ../../../src/backend/rendering/chtmlexportrendering.cpp \
     ../../../src/backend/rendering/centrydisplay.cpp \
@@ -35,9 +39,11 @@ SOURCES += \
     ../../../src/backend/bookshelfmodel/languageitem.cpp \
     ../../../src/backend/bookshelfmodel/item.cpp \
     ../../../src/backend/bookshelfmodel/categoryitem.cpp \
+    ../../../src/frontend/cinfodisplay.cpp \
     ../../../src/backend/btinstallthread.cpp \
     ../../../src/util/tool.cpp \
-    ../../../src/util/geticon.cpp \
+    ../../../src/frontend/messagedialog.cpp \
+    #../../../src/util/geticon.cpp \
     ../../../src/backend/rendering/cchapterdisplay.cpp \
     ../../../src/backend/rendering/cbookdisplay.cpp \
     ../../../src/backend/filters/thmltohtml.cpp \
@@ -48,13 +54,16 @@ SOURCES += \
     ../../../src/backend/bookshelfmodel/btbookshelfmodel.cpp \
     ../../../src/backend/filters/thmltoplain.cpp \
     ../../../src/backend/drivers/cswordbookmoduleinfo.cpp \
+    ../../../src/frontend/displaywindow/btactioncollection.cpp \
     ../../../src/backend/bookshelfmodel/indexingitem.cpp \
     ../../../src/backend/keys/cswordtreekey.cpp \
+    ../../../src/frontend/crossrefrendering.cpp \
     ../../../src/backend/filters/btosismorphsegmentation.cpp \
     ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.cpp \
     ../../../src/backend/rendering/cplaintextexportrendering.cpp \
-    ../../../src/backend/models/btmoduletextmodel.cpp \
-    ../../../src/btglobal.cpp
+    ../../../src/backend/btbookmarksmodel.cpp \
+    ../../../src/btglobal.cpp \
+    ../../../src/util/bticons.cpp \
 
 	
 HEADERS += \
@@ -71,9 +80,11 @@ HEADERS += \
     ../../../src/backend/config/btconfig.h \
     ../../../src/backend/config/btconfigcore.h \
     ../../../src/backend/bookshelfmodel/btbookshelftreemodel.h \
-    ../../../src/backend/btbookmarksmodel.h \
     ../../../src/backend/btinstallmgr.h \
     ../../../src/backend/btinstallthread.h \
+    ../../../src/frontend/cinfodisplay.h \
+    ../../../src/frontend/displaywindow/btactioncollection.h \
+    ../../../src/frontend/crossrefrendering.h \
     ../../../src/backend/keys/cswordversekey.h \
     ../../../src/backend/keys/cswordldkey.h \
     ../../../src/backend/keys/cswordkey.h \
@@ -92,6 +103,7 @@ HEADERS += \
     ../../../src/backend/bookshelfmodel/item.h \
     ../../../src/backend/bookshelfmodel/categoryitem.h \
     ../../../src/util/tool.h \
+    ../../../src/frontend/messagedialog.h \
     ../../../src/util/btsignal.h \
     ../../../src/backend/rendering/cchapterdisplay.h \
     ../../../src/backend/rendering/cbookdisplay.h \
@@ -105,33 +117,15 @@ HEADERS += \
     ../../../src/backend/drivers/cswordbookmoduleinfo.h \
     ../../../src/backend/bookshelfmodel/indexingitem.h \
     ../../../src/backend/keys/cswordtreekey.h \
+    ../../../src/frontend/crossrefrendering.h \
     ../../../src/backend/filters/btosismorphsegmentation.h \
     ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h \
-    ../../../src/backend/models/btmoduletextmodel.h
+    ../../../src/backend/btbookmarksmodel.h
 	
 
 # Translation
 TRANSLATIONS += \
-    ../../../i18n/messages/mobile_ui_ar.ts \
-    ../../../i18n/messages/mobile_ui_cs.ts \
-    ../../../i18n/messages/mobile_ui_da.ts \
-    ../../../i18n/messages/mobile_ui_de.ts \
-    ../../../i18n/messages/mobile_ui_en_GB.ts \
-    ../../../i18n/messages/mobile_ui_es.ts \
-    ../../../i18n/messages/mobile_ui_et.ts \
-    ../../../i18n/messages/mobile_ui_fi.ts \
-    ../../../i18n/messages/mobile_ui_fr.ts \
-    ../../../i18n/messages/mobile_ui_hu.ts \
-    ../../../i18n/messages/mobile_ui_it.ts \
-    ../../../i18n/messages/mobile_ui_lt.ts \
-    ../../../i18n/messages/mobile_ui_pl.ts \
-    ../../../i18n/messages/mobile_ui_pt_BR.ts \
-    ../../../i18n/messages/mobile_ui_pt.ts \
-    ../../../i18n/messages/mobile_ui_ru.ts \
-    ../../../i18n/messages/mobile_ui_sk.ts \
-    ../../../i18n/messages/mobile_ui.ts \
-    ../../../i18n/messages/mobile_ui_zh_TW.ts \
-    ../../../i18n/messages/mobile_ui_C.ts
+    ../../../i18n/messages/bibletime_ui_ru.ts \
 
 
 # Core Platform Section
@@ -141,13 +135,28 @@ mac:CONFIG -= webkit
 
 # Android platform
 android {
-greaterThan(QT_MAJOR_VERSION, 4):CONFIG -= webkit
+!lessThan(QT_MAJOR_VERSION, 5):CONFIG -= webkit
 DEFINES += STDC_HEADERS
+
+#CONFIG += rtti
+#CONFIG += exceptions
+#QMAKE_CXXFLAGS_EXCEPTIONS_ON += -fexceptions
+#LIBS += -l$$ANDROID_SOURCES_CXX_STL_LIBDIR/libgnustl_static.a
+#LIBS -= -lgnustl_shared
 }
 
 # Symbian platform
 # on S60 webkit not works, maybe wrong packaging?
-symbian:!greaterThan(S60_VERSION, 5.0):CONFIG -= webkit
+symbian {
+DEFINES -= BT_VERSION=\\\"$${BT_VERSION}\\\"
+greaterThan(S60_VERSION, 5.0) {
+DEFINES += BT_VERSION=\"$${BT_VERSION}\"
+}
+else {
+DEFINES += BT_VERSION=\"\\\"$${BT_VERSION}\\\"\"
+CONFIG -= webkit
+}
+}
 
 # BlackBerry10 Platform
 blackberry {
@@ -158,11 +167,12 @@ LIBS += -lsocket
 
 # Qt
 greaterThan(QT_MAJOR_VERSION, 4):QT += widgets
+
 svg:QT += svg xml
-qml {
-DEFINES += BT_MINI_QML
-QT += qml quick
-}
+
+qml:DEFINES += BT_MINI_QML
+qml:QT += qml quick
+
 
 # Core Configuration Section
 
@@ -191,7 +201,7 @@ curl:include(../../common/curl/curl.pro)
 
 # ICU
 # optional
-curl:include(../../common/icu/icu.pro)
+icu:include(../../common/icu/icu.pro)
 
 # Sword
 include(../../common/sword/sword.pro)
