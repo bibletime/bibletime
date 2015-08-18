@@ -253,8 +253,14 @@ INSTALL(FILES ${INSTALL_ICONS_LIST}
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
-INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/"
-        DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
+
+FILE(GLOB INSTALL_TMPL_LIST 
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt)
+INSTALL(FILES ${INSTALL_TMPL_LIST}
+         DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
+
 INSTALL(FILES "src/frontend/display/bthtml.js"
         DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
 INSTALL(FILES "docs/license.html"
