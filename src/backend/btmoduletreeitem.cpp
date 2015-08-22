@@ -75,49 +75,6 @@ QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
     return childList;
 }
 
-/// \todo
-QString BTModuleTreeItem::iconName() const {
-    if (m_type == Category) {
-        switch ( m_category) {
-            case CSwordModuleInfo::Bibles:
-                return CResMgr::categories::bibles::icon;
-                break;
-            case CSwordModuleInfo::Commentaries:
-                return CResMgr::categories::commentaries::icon;
-                break;
-            case CSwordModuleInfo::Books:
-                return CResMgr::categories::books::icon;
-                break;
-            case CSwordModuleInfo::Cult:
-                return CResMgr::categories::cults::icon;
-                break;
-            case CSwordModuleInfo::Images:
-                return CResMgr::categories::images::icon;
-                break;
-            case CSwordModuleInfo::DailyDevotional:
-                return CResMgr::categories::dailydevotional::icon;
-                break;
-            case CSwordModuleInfo::Lexicons:
-                return CResMgr::categories::lexicons::icon;
-                break;
-            case CSwordModuleInfo::Glossary:
-                return CResMgr::categories::glossary::icon;
-                break;
-            default:
-                break;
-        }
-    }
-    else if (m_type == Module) {
-        return util::tool::getIconNameForModule(m_moduleInfo);
-    }
-    else if (m_type == Language) {
-        /// \todo don't hardcode here
-        return "flag.svg";
-    }
-
-    return QString::null;
-}
-
 bool BTModuleTreeItem::m_map_initialized = false;
 QMap<CSwordModuleInfo::Category, QString> BTModuleTreeItem::m_CategoryNamesMap;
 
