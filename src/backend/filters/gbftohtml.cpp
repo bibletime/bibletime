@@ -225,61 +225,72 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     return 1;
 }
 
+namespace {
+int hexDigitValue(char const hex) {
+    switch (hex) {
+        case '0' ... '9': return hex - '0';      break;
+        case 'a' ... 'f': return hex - 'a' + 10; break;
+        case 'A' ... 'F': return hex - 'A' + 10; break;
+        default: Q_ASSERT(false && "Invalid hex code in GBF");
+    }
+}
+
+char hexToChar(char const * const hex) {
+    int const first = hexDigitValue(hex[0u]);
+    return (first * 16u) + hexDigitValue(hex[1u]);
+}
+}
+
 bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
-    if (!substituteToken(buf, token)) {  //more than a simple replace
-        const unsigned int tokenLength = strlen(token);
+    if (!substituteToken(buf, token)) { // More than a simple replace
+        size_t const tokenLength = strlen(token);
 
-        UserData* myUserData = dynamic_cast<UserData*>(userData);
-        sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
+        Q_ASSERT(dynamic_cast<UserData *>(userData));
+        UserData * const myUserData = static_cast<UserData *>(userData);
+        // Hack to be able to call stuff like Lang():
+        sword::SWModule * const myModule =
+                const_cast<sword::SWModule *>(myUserData->module);
 
-        if (  !strncmp(token, "WG", 2)
-                || !strncmp(token, "WH", 2)
-                || !strncmp(token, "WT", 2) ) {
-            buf.append('<');
-            buf.append(token);
-            buf.append('>');
-        }
-        else if (!strncmp(token, "RB", 2)) {
+        /* We use several append calls because appendFormatted slows down
+           filtering, which should be fast. */
+
+        if (!strncmp(token, "WG", 2u)
+            || !strncmp(token, "WH", 2u)
+            || !strncmp(token, "WT", 2u))
+        {
+            buf.append('<').append(token).append('>');
+        } else if (!strncmp(token, "RB", 2u)) {
             myUserData->hasFootnotePreTag = true;
             buf.append("<span class=\"footnotepre\">");
-        }
-        else if (!strncmp(token, "RF", 2)) {
-            //we use several append calls because appendFormatted slows down filtering, which should be fast
-
+        } else if (!strncmp(token, "RF", 2u)) {
             if (myUserData->hasFootnotePreTag) {
                 //     qWarning("inserted footnotepre end");
                 buf.append("</span>");
                 myUserData->hasFootnotePreTag = false;
             }
 
-            buf.append(" <span class=\"footnote\" note=\"");
-            buf.append(myModule->getName());
-            buf.append('/');
-            buf.append(myUserData->key->getShortText());
-            buf.append('/');
-            buf.append( QString::number(myUserData->swordFootnote++).toUtf8().constData() );
-            buf.append("\">*</span> ");
-
+            buf.append(" <span class=\"footnote\" note=\"")
+               .append(myModule->getName())
+               .append('/')
+               .append(myUserData->key->getShortText())
+               .append('/')
+               .append(QString::number(myUserData->swordFootnote).toUtf8().constData())
+               .append("\">*</span> ");
+            myUserData->swordFootnote++;
             userData->suspendTextPassThru = true;
-        }
-        else if (!strncmp(token, "Rf", 2)) { //end of footnote
+        } else if (!strncmp(token, "Rf", 2u)) { // End of footnote
             userData->suspendTextPassThru = false;
-        }
-        else if (!strncmp(token, "FN", 2)) { //the end </font> tag is inserted in addTokenSubsitute
+        } else if (!strncmp(token, "FN", 2u)) {
+            // The end </font> tag is inserted in addTokenSubsitute
             buf.append("<font face=\"");
-
-            for (unsigned long i = 2; i < tokenLength; i++) {
-                if (token[i] != '\"') {
-                    buf.append( token[i] );
-                }
-            }
-
+            for (size_t i = 2u; i < tokenLength; i++)
+                if (token[i] != '\"')
+                    buf.append(token[i]);
             buf.append("\">");
-        }
-        else if (!strncmp(token, "CA", 2)) { // ASCII value
-            buf.append( (char)atoi(&token[2]) );
-        }
-        else {
+        } else if (!strncmp(token, "CA", 2u)) { // ASCII value <CA##> in hex
+            Q_ASSERT(tokenLength == 4u);
+            buf.append(static_cast<char>(hexToChar(token + 2u)));
+        } else {
             return GBFHTML::handleToken(buf, token, userData);
         }
     }
