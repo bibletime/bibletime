@@ -204,13 +204,13 @@ bool BTModuleTreeItem::localeAwareLessThan(BTModuleTreeItem* first, BTModuleTree
 }
 
 QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &grouping) {
-    out << (qint8) grouping;
+    out << static_cast<qint8>(grouping);
     return out;
 }
 
 QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &grouping) {
     qint8 i;
     in >> i;
-    grouping = (BTModuleTreeItem::Grouping) i;
+    grouping = static_cast<BTModuleTreeItem::Grouping>(i);
     return in;
 }
