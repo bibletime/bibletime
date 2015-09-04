@@ -191,9 +191,8 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
         result.append( e );
     }
 
-    if (list.count()) {
-        buf = (const char*)result.toUtf8();
-    }
+    if (list.count())
+        buf = result.toUtf8();
 
     return 1;
 }
@@ -297,10 +296,10 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                 );
 
                                 buf.append("\" crossrefs=\"");
-                                buf.append((const char*)completeRef.toUtf8());
+                                buf.append(completeRef.toUtf8().constData());
                                 buf.append("\">");
 
-                                buf.append((const char*)(*it).toUtf8());
+                                buf.append(it->toUtf8().constData());
 
                                 buf.append("</a>");
 
@@ -342,7 +341,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                             ).toUtf8().constData()
                         );
                         buf.append("\" crossrefs=\"");
-                        buf.append((const char*)completeRef.toUtf8());
+                        buf.append(completeRef.toUtf8().constData());
                         buf.append("\">");
                     }
                     else {
