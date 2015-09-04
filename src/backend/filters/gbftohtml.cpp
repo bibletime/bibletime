@@ -219,9 +219,8 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         result += e;
     }
 
-    if (list.count()) {
-        buf = (const char*)result.toUtf8().constData();
-    }
+    if (list.count())
+        buf = result.toUtf8().constData();
 
     return 1;
 }
