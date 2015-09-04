@@ -27,7 +27,10 @@ CSwordLDKey::CSwordLDKey(const CSwordModuleInfo *module) {
 }
 
 /** No descriptions */
-CSwordLDKey::CSwordLDKey( const CSwordLDKey &k ) : CSwordKey(k), SWKey((const char*)k) {}
+CSwordLDKey::CSwordLDKey(CSwordLDKey const & k)
+    : CSwordKey(k)
+    , SWKey(k.getText())
+{}
 
 /** No descriptions */
 CSwordLDKey::CSwordLDKey(const SWKey *k, const CSwordModuleInfo *module)
@@ -57,10 +60,9 @@ QString CSwordLDKey::key() const {
     Q_ASSERT(m_module);
 
     if (m_module->isUnicode()) {
-        return QString::fromUtf8((const char*)*this);
-    }
-    else {
-        return cp1252Codec()->toUnicode((const char*)*this);
+        return QString::fromUtf8(getText());
+    } else {
+        return cp1252Codec()->toUnicode(getText());
     }
 }
 
