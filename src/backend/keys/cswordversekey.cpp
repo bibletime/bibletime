@@ -27,7 +27,7 @@ CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
     typedef CSwordBibleModuleInfo CSBMI;
     if (const CSBMI *bible = dynamic_cast<const CSBMI*>(module) ) {
         // Copy important settings like versification system
-        copyFrom((sword::VerseKey*) bible->module()->getKey());
+        copyFrom(static_cast<sword::VerseKey*>(bible->module()->getKey()));
 
         setKey( bible->lowerBound().key() );
     }
@@ -185,35 +185,36 @@ bool CSwordVerseKey::next( const JumpType type ) {
         }
 
         case UseVerse: {
-            if (m_module && m_module->module()) {
-                const bool oldStatus = m_module->module()->isSkipConsecutiveLinks();
-                m_module->module()->setSkipConsecutiveLinks(true);
+            if (!m_module) {
+                setVerse(getVerse() + 1);
+            } else if (sword::SWModule * const swModule = m_module->module()) {
+                const bool oldStatus = swModule->isSkipConsecutiveLinks();
+                swModule->setSkipConsecutiveLinks(true);
 
-                //disable headings for next verse
-                const bool useHeaders = 1; //(Verse() == 0);
-                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->isIntros();
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros( useHeaders );
+                VerseKey * vKey = static_cast<VerseKey *>(swModule->getKey());
+
+                // disable headings for next verse
+                bool const oldHeadingsStatus = vKey->isIntros();
+                vKey->setIntros(true);
                 //don't use setKey(), that would create a new key without Headings set
-                m_module->module()->getKey()->setText( key().toUtf8().constData() );
+                vKey->setText(key().toUtf8().constData());
 
-                (*(m_module->module()) )++;
+                (*swModule)++;
 
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros(oldHeadingsStatus);
-                m_module->module()->setSkipConsecutiveLinks(oldStatus);
+                vKey = static_cast<VerseKey *>(swModule->getKey());
+                vKey->setIntros(oldHeadingsStatus);
+                swModule->setSkipConsecutiveLinks(oldStatus);
 
-                if (!m_module->module()->popError()) {
-                    setKey(QString::fromUtf8(m_module->module()->getKeyText()));
-                }
-                else {
+                if (!swModule->popError()) {
+                    setKey(QString::fromUtf8(vKey->getText()));
+                } else {
                     //         Verse(Verse()+1);
                     //don't change the key, restore the module's position
-                    m_module->module()->getKey()->setText( key().toUtf8().constData() );
+                    vKey->setText(key().toUtf8().constData());
                     ret = false;
                     break;
                 }
-
-            }
-            else {
+            } else {
                 setVerse(getVerse() + 1);
             }
 
@@ -277,30 +278,33 @@ bool CSwordVerseKey::previous( const JumpType type ) {
         }
 
         case UseVerse: {
-            if (m_module && m_module->module()) {
-                const bool useHeaders = 1; //(Verse() == 0);
-                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->isIntros();
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros( useHeaders );
+            if (!m_module) {
+                setVerse(getVerse() - 1);
+            } else if (sword::SWModule * const swModule = m_module->module()) {
+                VerseKey * vKey = static_cast<VerseKey *>(swModule->getKey());
+                bool const oldHeadingsStatus = vKey->isIntros();
+                vKey->setIntros(true);
+                vKey->setText(key().toUtf8().constData());
 
-                m_module->module()->getKey()->setText( key().toUtf8().constData() );
+                bool const oldStatus = swModule->isSkipConsecutiveLinks();
+                swModule->setSkipConsecutiveLinks(true);
+                (*swModule)--;
 
-                const bool oldStatus = m_module->module()->isSkipConsecutiveLinks();
-                m_module->module()->setSkipConsecutiveLinks(true);
-                ( *( m_module->module() ) )--;
+                vKey = static_cast<VerseKey *>(swModule->getKey());
+                vKey->setIntros(oldHeadingsStatus);
+                swModule->setSkipConsecutiveLinks(oldStatus);
 
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros( oldHeadingsStatus );
-                m_module->module()->setSkipConsecutiveLinks(oldStatus);
-
-                if (!m_module->module()->popError()) {
-                    setKey(QString::fromUtf8(m_module->module()->getKeyText())); // don't use fromUtf8
-                }
-                else {
+                if (!swModule->popError()) {
+                    /// \warning Weird comment:
+                    // don't use fromUtf8:
+                    setKey(QString::fromUtf8(vKey->getText()));
+                } else {
                     ret = false;
                     //         Verse(Verse()-1);
-                    m_module->module()->getKey()->setText( key().toUtf8().constData() ); //restore module's key
+                    // Restore module's key:
+                    vKey->setText(key().toUtf8().constData());
                 }
-            }
-            else {
+            } else {
                 setVerse(getVerse() - 1);
             }
 
