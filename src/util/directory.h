@@ -48,7 +48,7 @@ void removeRecursive(const QString &dir);
  *
  * @return The size of the dir in bytes
  */
-unsigned long getDirSizeRecursive(const QString &dir);
+size_t getDirSizeRecursive(QString const & dir);
 
 /** Convert directory path separators to those for each platform
  *  Windows = "\", Others = "/"

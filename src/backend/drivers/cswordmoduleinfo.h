@@ -255,7 +255,7 @@ wrong, or if the config file was write protected return false.
     /**
       \returns index size
     */
-    unsigned long indexSize() const;
+    size_t indexSize() const;
 
     /**
       This function uses CLucene to perform and index based search. It also

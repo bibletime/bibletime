@@ -482,7 +482,7 @@ void CSwordModuleInfo::deleteIndexForModule(const QString & name) {
     util::directory::removeRecursive(getGlobalBaseIndexLocation() + "/" + name);
 }
 
-unsigned long CSwordModuleInfo::indexSize() const {
+size_t CSwordModuleInfo::indexSize() const {
     namespace DU = util::directory;
     return DU::getDirSizeRecursive(getModuleBaseIndexLocation());
 }
