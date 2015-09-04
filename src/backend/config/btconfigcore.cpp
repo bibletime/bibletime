@@ -55,7 +55,8 @@ BtConfigCore::BtConfigCore(const QString & settingsFile)
         || !m_sessionNames.contains(m_currentSessionKey))
     {
         if (m_sessionNames.isEmpty()) {
-            const QString &newSessionName = QString::number((qulonglong) 0u, 36);
+            QString const & newSessionName =
+                    QString::number(static_cast<qulonglong>(0u), 36);
             m_currentSessionKey = newSessionName;
             m_settings.setValue(KEY_CURRENT_SESSION, newSessionName);
             m_settings.setValue(KEY_SESSION_NAME.arg(newSessionName),
