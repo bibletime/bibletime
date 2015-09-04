@@ -248,7 +248,7 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
         Q_ASSERT(dynamic_cast<UserData *>(userData));
         UserData * const myUserData = static_cast<UserData *>(userData);
         // Hack to be able to call stuff like Lang():
-        sword::SWModule * const myModule =
+        sword::SWModule const * const myModule =
                 const_cast<sword::SWModule *>(myUserData->module);
 
         /* We use several append calls because appendFormatted slows down
