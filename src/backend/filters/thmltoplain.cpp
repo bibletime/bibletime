@@ -214,7 +214,7 @@ char ThmlToPlain::processText(sword::SWBuf &text,
             text += *from;
         }
     }
-    text += (char)0;
+    text += '\0';
 
     return 0;
 }
