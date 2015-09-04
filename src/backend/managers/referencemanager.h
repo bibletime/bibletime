@@ -71,14 +71,27 @@ ReferenceManager::Type typeFromModule( const CSwordModuleInfo::ModuleType type )
 
 
 struct ParseOptions {
-    QString refDestinationModule;
-    QString refBase; /* only valid for verse based destination modules*/
-    QString sourceLanguage; /* only valid for verse based destination modules*/
-    QString destinationLanguage; /* only valid for verse based destination modules*/
 
-    ParseOptions() {
-        destinationLanguage = "en";
-    };
+/* Methods: */
+
+    inline ParseOptions(QString const & refDestinationModule_ = QString::null,
+                        QString const & refBase_ = QString::null,
+                        QString const & sourceLanguage_ = QString::null,
+                        QString const & destinationLanguage_ = "en")
+        : refDestinationModule(refDestinationModule_)
+        , refBase(refBase_)
+        , sourceLanguage(sourceLanguage_)
+        , destinationLanguage(destinationLanguage_)
+    {}
+
+/* Fields: */
+
+    QString refDestinationModule;
+    /* The following are only valid for verse-based destination modules: */
+    QString refBase;
+    QString sourceLanguage;
+    QString destinationLanguage;
+
 };
 
 /** Parses the given verse references using the given language and the module.
