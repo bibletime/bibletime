@@ -47,7 +47,8 @@ void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx * const key,
 
 /** Returns a treekey filled with the structure of this module */
 sword::TreeKeyIdx* CSwordBookModuleInfo::tree() const {
-    sword::TreeKeyIdx* treeKey = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey*) * (module()));
+    sword::TreeKeyIdx * const treeKey =
+            dynamic_cast<sword::TreeKeyIdx *>(module()->getKey());
     Q_ASSERT(treeKey);
     return treeKey;
 }
