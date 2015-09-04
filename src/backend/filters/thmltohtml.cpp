@@ -202,52 +202,51 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                              sword::BasicFilterUserData *userData)
 {
     if (!substituteToken(buf, token) && !substituteEscapeString(buf, token)) {
-        sword::XMLTag tag(token);
-        UserData* myUserData = dynamic_cast<UserData*>(userData);
-        sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
+        sword::XMLTag const tag(token);
+        Q_ASSERT(dynamic_cast<UserData *>(userData));
+        UserData * const myUserData = static_cast<UserData *>(userData);
+        // Hack to be able to call stuff like Lang():
+        sword::SWModule const * const myModule =
+                const_cast<sword::SWModule *>(myUserData->module);
+        char const * const tagName = tag.getName();
+        if (!tagName) // unknown tag, pass through:
+            return sword::ThMLHTML::handleToken(buf, token, userData);
+        if (!sword::stricmp(tagName, "foreign")) {
+            // A text part in another language, we have to set the right font
 
-        if ( tag.getName() && !sword::stricmp(tag.getName(), "foreign") ) { // a text part in another language, we have to set the right font
+            if (const char * const tagLang = tag.getAttribute("lang"))
+                buf.append("<span class=\"foreign\" lang=\"")
+                   .append(tagLang)
+                   .append("\">");
+        } else if (!sword::stricmp(tagName, "sync")) {
+            // If Morph or Strong or Lemma:
+            if (const char * const tagType = tag.getAttribute("type"))
+                if (!sword::stricmp(tagType, "morph")
+                    || !sword::stricmp(tagType, "Strongs")
+                    || !sword::stricmp(tagType, "lemma"))
+                    buf.append('<').append(token).append('>');
+        } else if (!sword::stricmp(tagName, "note")) { // <note> tag
+            if (!tag.isEmpty()) {
+                if (!tag.isEndTag()) {
+                    buf.append(" <span class=\"footnote\" note=\"")
+                       .append(myModule->getName())
+                       .append('/')
+                       .append(myUserData->key->getShortText())
+                       .append('/')
+                       .append(QString::number(myUserData->swordFootnote).toUtf8().constData())
+                       .append("\">*</span> ");
 
-            if (tag.getAttribute("lang")) {
-                const char* abbrev = tag.getAttribute("lang");
-                //const CLanguageMgr::Language* const language = CLanguageMgr::instance()->languageForAbbrev( QString::fromLatin1(abbrev) );
-
-                buf.append("<span class=\"foreign\" lang=\"");
-                buf.append(abbrev);
-                buf.append("\">");
+                    myUserData->swordFootnote++;
+                    myUserData->suspendTextPassThru = true;
+                    myUserData->inFootnoteTag = true;
+                } else if (tag.isEndTag()) { // end tag
+                    // buf += ")</span>";
+                    myUserData->suspendTextPassThru = false;
+                    myUserData->inFootnoteTag = false;
+                }
             }
-        }
-        else if (tag.getName() && !sword::stricmp(tag.getName(), "sync")) { //lemmas, morph codes or strongs
-
-            if (tag.getAttribute("type") && (!sword::stricmp(tag.getAttribute("type"), "morph") || !sword::stricmp(tag.getAttribute("type"), "Strongs") || !sword::stricmp(tag.getAttribute("type"), "lemma"))) { // Morph or Strong
-                buf.append('<');
-                buf.append(token);
-                buf.append('>');
-            }
-        }
-        else if (tag.getName() && !sword::stricmp(tag.getName(), "note")) { // <note> tag
-
-            if (!tag.isEndTag() && !tag.isEmpty()) {
-                //appending is faster than appendFormatted
-                buf.append(" <span class=\"footnote\" note=\"");
-                buf.append(myModule->getName());
-                buf.append('/');
-                buf.append(myUserData->key->getShortText());
-                buf.append('/');
-                buf.append( QString::number(myUserData->swordFootnote++).toUtf8().constData() );
-                buf.append("\">*</span> ");
-
-                myUserData->suspendTextPassThru = true;
-                myUserData->inFootnoteTag = true;
-            }
-            else if (tag.isEndTag() && !tag.isEmpty()) { //end tag
-                //buf += ")</span>";
-                myUserData->suspendTextPassThru = false;
-                myUserData->inFootnoteTag = false;
-            }
-        }
-        else if (tag.getName() && !sword::stricmp(tag.getName(), "scripRef")) { // a scripRef
-            //scrip refs which are embeded in footnotes may not be displayed!
+        } else if (!sword::stricmp(tagName, "scripRef")) { // a scripRef
+            // scrip refs which are embeded in footnotes may not be displayed!
 
             if (!myUserData->inFootnoteTag) {
                 if (tag.isEndTag()) {
@@ -256,136 +255,131 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
 
                         myUserData->inscriptRef = false;
                         myUserData->suspendTextPassThru = false;
-                    }
-                    else { // like "<scripRef>John 3:16</scripRef>"
-
-                        CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType("standardBible");
-                        //Q_ASSERT(mod); tested later
-                        if (mod) {
-                            ReferenceManager::ParseOptions options;
-                            options.refBase = QString::fromUtf8(myUserData->key->getText()); //current module key
-                            options.refDestinationModule = QString(mod->name());
-                            options.sourceLanguage = QString(myModule->getLanguage());
-                            options.destinationLanguage = QString("en");
+                    } else { // like "<scripRef>John 3:16</scripRef>"
+                        if (CSwordModuleInfo const * const mod =
+                                btConfig().getDefaultSwordModuleByType(
+                                        "standardBible"))
+                        {
+                            ReferenceManager::ParseOptions options(
+                                    mod->name(),
+                                    // current module key:
+                                    QString::fromUtf8(myUserData->key->getText()),
+                                    myModule->getLanguage());
 
                             //it's ok to split the reference, because to descriptive text is given
                             bool insertSemicolon = false;
                             buf.append("<span class=\"crossreference\">");
-                            QStringList refs = QString::fromUtf8(myUserData->lastTextNode.c_str()).split(";");
-                            QString oldRef; //the previous reference to use as a base for the next refs
-                            for (QStringList::iterator it(refs.begin()); it != refs.end(); ++it) {
+                            QStringList const refs(
+                                QString::fromUtf8(
+                                    myUserData->lastTextNode.c_str()).split(";"));
+                            QString oldRef; // the previous reference to use as a base for the next refs
+                            for (QStringList::const_iterator it(refs.begin());
+                                 it != refs.end();
+                                 ++it)
+                            {
+                                if (!oldRef.isEmpty())
+                                    options.refBase = oldRef; // Use the last ref as a base, e.g. Rom 1,2-3, when the next ref is only 3:3-10
 
-                                if (! oldRef.isEmpty() ) {
-                                    options.refBase = oldRef; //use the last ref as a base, e.g. Rom 1,2-3, when the next ref is only 3:3-10
-                                }
-                                const QString completeRef( ReferenceManager::parseVerseReference((*it), options) );
+                                // Use the parsed result as the base for the next ref:
+                                oldRef = ReferenceManager::parseVerseReference(
+                                                (*it),
+                                                options);
 
-                                oldRef = completeRef; //use the parsed result as the base for the next ref.
-
-                                if (insertSemicolon) { //prepend a ref divider if we're after the first one
+                                // Prepend a ref divider if we're after the first one
+                                if (insertSemicolon)
                                     buf.append("; ");
-                                }
 
-                                buf.append("<a href=\"");
-                                buf.append(
-                                    ReferenceManager::encodeHyperlink(
-                                        mod->name(),
-                                        completeRef,
-                                        ReferenceManager::typeFromModule(mod->type())
-                                    ).toUtf8().constData()
-                                );
-
-                                buf.append("\" crossrefs=\"");
-                                buf.append(completeRef.toUtf8().constData());
-                                buf.append("\">");
-
-                                buf.append(it->toUtf8().constData());
-
-                                buf.append("</a>");
-
+                                buf.append("<a href=\"")
+                                   .append(
+                                        ReferenceManager::encodeHyperlink(
+                                            mod->name(),
+                                            oldRef,
+                                            ReferenceManager::typeFromModule(mod->type())
+                                        ).toUtf8().constData()
+                                    )
+                                   .append("\" crossrefs=\"")
+                                   .append(oldRef.toUtf8().constData())
+                                   .append("\">")
+                                   .append(it->toUtf8().constData())
+                                   .append("</a>");
                                 insertSemicolon = true;
                             }
                             buf.append("</span>"); //crossref end
                         }
-
                         myUserData->suspendTextPassThru = false;
                     }
-                }
-                else if (tag.getAttribute("passage") ) { //the passage was given as a parameter value
+                } else if (tag.getAttribute("passage") ) {
+                    // The passage was given as a parameter value
                     myUserData->inscriptRef = true;
                     myUserData->suspendTextPassThru = false;
 
-                    const char* ref = tag.getAttribute("passage");
-                    Q_ASSERT(ref);
-
-                    CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType("standardBible");
-                    //Q_ASSERT(mod); tested later
-
-                    ReferenceManager::ParseOptions options;
-                    options.refBase = QString::fromUtf8(myUserData->key->getText());
-
-                    options.sourceLanguage = myModule->getLanguage();
-                    options.destinationLanguage = QString("en");
-
-                    const QString completeRef = ReferenceManager::parseVerseReference(QString::fromUtf8(ref), options);
-
-                    if (mod) {
-                        options.refDestinationModule = QString(mod->name());
-                        buf.append("<span class=\"crossreference\">");
-                        buf.append("<a href=\"");
-                        buf.append(
-                            ReferenceManager::encodeHyperlink(
-                                mod->name(),
-                                completeRef,
-                                ReferenceManager::typeFromModule(mod->type())
-                            ).toUtf8().constData()
-                        );
-                        buf.append("\" crossrefs=\"");
-                        buf.append(completeRef.toUtf8().constData());
-                        buf.append("\">");
-                    }
-                    else {
+                    if (CSwordModuleInfo const * const mod =
+                            btConfig().getDefaultSwordModuleByType(
+                                    "standardBible"))
+                    {
+                        ;
+                        Q_ASSERT(tag.getAttribute("passage"));
+                        QString const completeRef(
+                                ReferenceManager::parseVerseReference(
+                                    QString::fromUtf8(
+                                            tag.getAttribute("passage")),
+                                    ReferenceManager::ParseOptions(
+                                        mod->name(),
+                                        QString::fromUtf8(
+                                                myUserData->key->getText()),
+                                        myModule->getLanguage())));
+                        buf.append("<span class=\"crossreference\">")
+                           .append("<a href=\"")
+                           .append(
+                                ReferenceManager::encodeHyperlink(
+                                    mod->name(),
+                                    completeRef,
+                                    ReferenceManager::typeFromModule(
+                                        mod->type())
+                                ).toUtf8().constData()
+                            )
+                           .append("\" crossrefs=\"")
+                           .append(completeRef.toUtf8().constData())
+                           .append("\">");
+                    } else {
                         buf.append("<span><a>");
                     }
-                }
-                else if ( !tag.getAttribute("passage") ) { // we're starting a scripRef like "<scripRef>John 3:16</scripRef>"
+                } else { // We're starting a scripRef like "<scripRef>John 3:16</scripRef>"
                     myUserData->inscriptRef = false;
-
-                    // let's stop text from going to output, the text get's added in the -tag handler
+                    /* Let's stop text from going to output, the text get's
+                       added in the -tag handler: */
                     myUserData->suspendTextPassThru = true;
                 }
             }
-        }
-        else if (tag.getName() && !sword::stricmp(tag.getName(), "div")) {
+        } else if (!sword::stricmp(tagName, "div")) {
             if (tag.isEndTag()) {
                 buf.append("</div>");
+            } else if (char const * const tagClass = tag.getAttribute("class")){
+                if (!sword::stricmp(tagClass, "sechead") ) {
+                    buf.append("<div class=\"sectiontitle\">");
+                } else if (!sword::stricmp(tagClass, "title")) {
+                    buf.append("<div class=\"booktitle\">");
+                }
             }
-            else if ( tag.getAttribute("class") && !sword::stricmp(tag.getAttribute("class"), "sechead") ) {
-                buf.append("<div class=\"sectiontitle\">");
-            }
-            else if (tag.getAttribute("class") && !sword::stricmp(tag.getAttribute("class"), "title")) {
-                buf.append("<div class=\"booktitle\">");
-            }
-        }
-        else if (tag.getName() && !sword::stricmp(tag.getName(), "img") && tag.getAttribute("src")) {
-            const char* value = tag.getAttribute("src");
+        } else if (!sword::stricmp(tagName, "img") && tag.getAttribute("src")) {
+            const char * value = tag.getAttribute("src");
 
-            if (value[0] == '/') {
+            if (value[0] == '/')
                 value++; //strip the first /
-            }
 
-            buf.append("<img src=\"");
-            QString absPath(QTextCodec::codecForLocale()->toUnicode(myUserData->module->getConfigEntry("AbsoluteDataPath")));
-            QString relPath(QString::fromUtf8(value));
-            QString url(QUrl::fromLocalFile(absPath.append('/').append(relPath)).toString());
-            buf.append(url.toUtf8().data());
-            buf.append("\" />");
-        }
-        else { // let unknown token pass thru
+            buf.append("<img src=\"")
+               .append(
+                    QUrl::fromLocalFile(
+                        QTextCodec::codecForLocale()->toUnicode(
+                            myUserData->module->getConfigEntry(
+                                "AbsoluteDataPath")
+                        ).append('/').append(QString::fromUtf8(value))
+                    ).toString().toUtf8().constData())
+               .append("\" />");
+        } else { // Let unknown token pass thru:
             return sword::ThMLHTML::handleToken(buf, token, userData);
         }
     }
-
     return true;
 }
 
