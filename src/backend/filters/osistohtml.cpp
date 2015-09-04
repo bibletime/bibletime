@@ -585,7 +585,7 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
                 ).toUtf8().constData()
             );
             buf.append("\" crossrefs=\"");
-            buf.append((const char*)ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
+            buf.append(ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
             buf.append("\">");
         }
         // should we add something if there were no referenced module available?
