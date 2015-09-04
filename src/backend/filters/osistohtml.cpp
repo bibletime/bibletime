@@ -570,23 +570,22 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
         }
 
         if (mod) {
-            ReferenceManager::ParseOptions options;
-            options.refBase = QString::fromUtf8(myUserData->key->getText());
-            options.refDestinationModule = QString(mod->name());
-            options.sourceLanguage = QString(myModule->getLanguage());
-            options.destinationLanguage = QString("en");
-
-            buf.append("<a href=\"");
-            buf.append( //create the hyperlink with key and mod
-                ReferenceManager::encodeHyperlink(
+            ReferenceManager::ParseOptions const options(
                     mod->name(),
-                    ReferenceManager::parseVerseReference(hrefRef, options),
-                    ReferenceManager::typeFromModule(mod->type())
-                ).toUtf8().constData()
-            );
-            buf.append("\" crossrefs=\"");
-            buf.append(ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
-            buf.append("\">");
+                    QString::fromUtf8(myUserData->key->getText()),
+                    myModule->getLanguage());
+
+            buf.append("<a href=\"")
+               .append( //create the hyperlink with key and mod
+                    ReferenceManager::encodeHyperlink(
+                        mod->name(),
+                        ReferenceManager::parseVerseReference(hrefRef, options),
+                        ReferenceManager::typeFromModule(mod->type())
+                    ).toUtf8().constData()
+                )
+               .append("\" crossrefs=\"")
+               .append(ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()) //ref must contain the osisRef module marker if there was any
+               .append("\">");
         }
         // should we add something if there were no referenced module available?
     }
