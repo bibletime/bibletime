@@ -241,7 +241,12 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
 
     if (module && (module->type() == CSwordModuleInfo::Bible)) {
         VerseKey vk;
-        sword::ListKey refs = vk.parseVerseList((const char*) data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
+        sword::ListKey refs =
+                vk.parseVerseList(data.mid((pos == -1)
+                                           ? 0
+                                           : pos + 1).toUtf8().constData(),
+                                  "Gen 1:1",
+                                  true);
 
         for (int i = 0; i < refs.getCount(); i++) {
             SWKey * const key = refs.getElement(i);
