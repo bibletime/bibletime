@@ -380,13 +380,8 @@ public: /* Loader */
 
     /** Takes one item and saves the tree which is under it to a named file
     * or to the default bookmarks file, asking the user about overwriting if necessary. */
-    void saveTreeFromRootItem(BookmarkItemBase* rootItem, QString fileName = QString::null, bool forceOverwrite = true) {
-        namespace DU = util::directory;
-
+    QString serializeTreeFromRootItem(BookmarkItemBase * rootItem) {
         Q_ASSERT(rootItem);
-        if (fileName.isNull()) {
-            fileName = DU::getUserBaseDir().absolutePath() + "/bookmarks.xml";
-        }
 
         QDomDocument doc("DOC");
         doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
@@ -400,8 +395,7 @@ public: /* Loader */
         for (int i = 0; i < rootItem->childCount(); i++) {
             saveItem(rootItem->child(i), content);
         }
-        util::tool::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
-
+        return doc.toString();
     }
 
     /** Writes one item to a document element. */
@@ -737,8 +731,15 @@ bool BtBookmarksModel::insertRows(int row, int count, const QModelIndex &parent)
 bool BtBookmarksModel::save(QString fileName, const QModelIndex & rootItem) {
     Q_D(BtBookmarksModel);
 
-    BookmarkItemBase * i = d->item(rootItem);
-    d->saveTreeFromRootItem(i, fileName, fileName.isEmpty());
+    QString const serializedTree(
+            d->serializeTreeFromRootItem(d->item(rootItem)));
+    if (fileName.isEmpty())
+        fileName = util::directory::getUserBaseDir().absolutePath()
+                   + "/bookmarks.xml";
+    util::tool::savePlainFile(fileName,
+                              serializedTree,
+                              true,
+                              QTextCodec::codecForName("UTF-8"));
 
     if(d->m_saveTimer.isActive())
         d->m_saveTimer.stop();
