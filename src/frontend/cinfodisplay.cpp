@@ -241,7 +241,7 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
 
     if (module && (module->type() == CSwordModuleInfo::Bible)) {
         VerseKey vk;
-        sword::ListKey refs =
+        sword::ListKey const refs =
                 vk.parseVerseList(data.mid((pos == -1)
                                            ? 0
                                            : pos + 1).toUtf8().constData(),
@@ -249,9 +249,9 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
                                   true);
 
         for (int i = 0; i < refs.getCount(); i++) {
-            SWKey * const key = refs.getElement(i);
+            SWKey const * const key = refs.getElement(i);
             Q_ASSERT(key);
-            VerseKey * const vk = dynamic_cast<VerseKey*>(key);
+            VerseKey const * const vk = dynamic_cast<VerseKey const *>(key);
 
             if (vk && vk->isBoundSet()) { // render a range of keys
                 tree.append(new CTextRendering::KeyTreeItem(
