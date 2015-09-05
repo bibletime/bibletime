@@ -28,8 +28,9 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
     painter->save();
 
     //the outer rectangle
-    QPoint p1( (int)(rect().x()), (int)(rect().y()) );
-    QPoint p2( (int)(rect().x() + rect().width() ), (int)(rect().y() + rect().height()));
+    #define S(...) static_cast<int>(__VA_ARGS__)
+    QPoint p1(S(rect().x()), S(rect().y()));
+    QPoint p2(S(rect().x() + rect().width()), S(rect().y() + rect().height()));
     QRect r(p1, p2);
     r = r.normalized();
     painter->drawRect(r);
@@ -42,7 +43,8 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
     int moduleIndex = 0;
     Q_FOREACH(CSwordModuleInfo const * const m, m_moduleList) {
         // the module color indicators
-        QPoint p1( (int)(rect().x()) + LEGEND_INNER_BORDER, (int)(rect().y()) + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
+        QPoint p1(S(rect().x()) + LEGEND_INNER_BORDER, S(rect().y()) + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE));
+    #undef S
         QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
         QRect r(p1, p2);
         painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
