@@ -294,16 +294,19 @@ void CBibleReadWindow::setupPopupMenu() {
 void CBibleReadWindow::updatePopupMenu() {
     qWarning("CBibleReadWindow::updatePopupMenu()");
 
-    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
+    CReadDisplay const & display =
+            *static_cast<CReadDisplay *>(displayWidget());
+    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
-    m_actions.copy.referenceOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
-    m_actions.copy.referenceTextOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
-    m_actions.copy.referenceAndText->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
-    m_actions.copy.selectedText->setEnabled( ((CReadDisplay*)displayWidget())->hasSelection() );
+    bool const hasActiveAnchor = display.hasActiveAnchor();
+    m_actions.copy.referenceOnly->setEnabled(hasActiveAnchor);
+    m_actions.copy.referenceTextOnly->setEnabled(hasActiveAnchor);
+    m_actions.copy.referenceAndText->setEnabled(hasActiveAnchor);
+    m_actions.copy.selectedText->setEnabled(display.hasSelection());
 
-    m_actions.save.referenceAndText->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+    m_actions.save.referenceAndText->setEnabled(hasActiveAnchor);
 
-    m_actions.print.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+    m_actions.print.reference->setEnabled(hasActiveAnchor);
 }
 
 /** Moves to the next book. */
