@@ -78,7 +78,7 @@ void CSearchAnalysisScene::analyse(
                       LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules - 1) );
     m_legend->show();
 
-    int xPos = (int)(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
+    int xPos = static_cast<int>(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
     int moduleIndex = 0;
     m_maxCount = 0;
     int count = 0;
@@ -105,7 +105,7 @@ void CSearchAnalysisScene::analyse(
             QString tip = analysisItem->getToolTip();
             analysisItem->setToolTip(tip);
             analysisItem->show();
-            xPos += (int)analysisItem->width() + SPACE_BETWEEN_PARTS;
+            xPos += static_cast<int>(analysisItem->width() + SPACE_BETWEEN_PARTS);
         }
         ok = key.next(CSwordVerseKey::UseBook);
         analysisItem = m_itemList[key.book()];
@@ -163,8 +163,8 @@ void CSearchAnalysisScene::reset() {
 
 /** No descriptions */
 void CSearchAnalysisScene::slotResized() {
-    m_scaleFactor = (double)( (double)(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
-                              / (double)m_maxCount);
+    m_scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
+                    / static_cast<double>(m_maxCount);
     QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
     while ( it.hasNext() ) {
         it.next();
@@ -213,7 +213,7 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
     unsigned int count = 0;
     const unsigned int resultCount = result.getCount();
     while (i < resultCount) {
-        if (strncmp(book.toUtf8(), (const char *) *result.getElement(i), length))
+        if (strncmp(book.toUtf8(), result.getElement(i)->getText(), length))
             break;
         i++;
         ++count;
