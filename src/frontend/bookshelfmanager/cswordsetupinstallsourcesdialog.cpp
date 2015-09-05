@@ -107,7 +107,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
     //BTInstallMgr iMgr;
     //sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
     sword::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
-    if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
+    if (is.caption.c_str() == m_captionEdit->text()) { // source already exists
         message::showInformation( this, tr( "Error" ),
                                tr("A source with this caption already exists. Please provide a different caption."));
         return;
