@@ -48,7 +48,7 @@ void CPlainWriteDisplay::setText( const QString& newText ) {
     QTextEdit::setText(text);
 }
 
-bool CPlainWriteDisplay::hasSelection() {
+bool CPlainWriteDisplay::hasSelection() const {
     /// \todo test this
     return textCursor().hasSelection();
 }

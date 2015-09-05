@@ -213,7 +213,7 @@ QString BtHtmlReadDisplay::getCurrentSource( ) {
 }
 
 // See if any text is selected
-bool BtHtmlReadDisplay::hasSelection() {
+bool BtHtmlReadDisplay::hasSelection() const {
     if (selectedText().isEmpty())
         return false;
     return true;

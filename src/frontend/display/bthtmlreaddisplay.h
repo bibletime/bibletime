@@ -49,7 +49,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         // Get the current source
         virtual QString getCurrentSource();
 
-        virtual bool hasSelection();
+        virtual bool hasSelection() const;
 
         // Reimplementation.
         virtual void selectAll();

@@ -39,7 +39,7 @@ class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
         /**
         * Returns true if the display widget has a selection. Otherwise false.
         */
-        virtual bool hasSelection();
+        virtual bool hasSelection() const;
         /**
         * Returns the view of this display widget.
         */

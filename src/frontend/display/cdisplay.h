@@ -61,7 +61,7 @@ class CDisplay {
         /**
         * Returns true if the display widget has a selection. Otherwise false.
         */
-        virtual bool hasSelection() = 0;
+        virtual bool hasSelection() const = 0;
         /**
         * Returns the view of this display widget.
         */
