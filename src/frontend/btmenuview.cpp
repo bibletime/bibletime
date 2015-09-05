@@ -91,10 +91,10 @@ QAction *BtMenuView::newAction(QMenu *parentMenu, const QModelIndex &itemIndex) 
     // Set checked:
     QVariant checkData(m_model->data(itemIndex, Qt::CheckStateRole));
     bool ok;
-    Qt::CheckState state = (Qt::CheckState) checkData.toInt(&ok);
-    if (ok) {
+    Qt::CheckState const state =
+            static_cast<Qt::CheckState>(checkData.toInt(&ok));
+    if (ok)
         childAction->setChecked(state == Qt::Checked);
-    }
 
     return childAction;
 }
