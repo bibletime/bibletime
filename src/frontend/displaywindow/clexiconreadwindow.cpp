@@ -306,12 +306,16 @@ void CLexiconReadWindow::setupPopupMenu() {
 void CLexiconReadWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
 
-    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
+    CReadDisplay const & display =
+            *static_cast<CReadDisplay *>(displayWidget());
 
-    m_actions.copy.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
-    m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );
+    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
-    m_actions.print.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+    bool const hasActiveAnchor = display.hasActiveAnchor();
+    m_actions.copy.reference->setEnabled(hasActiveAnchor);
+    m_actions.copy.selectedText->setEnabled(display.hasSelection());
+
+    m_actions.print.reference->setEnabled(hasActiveAnchor);
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
