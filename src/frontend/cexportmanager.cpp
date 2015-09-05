@@ -34,6 +34,8 @@
 using namespace Rendering;
 using namespace Printing;
 
+typedef CTextRendering::KeyTreeItem KTI;
+
 CExportManager::CExportManager(const bool showProgress,
                                const QString &progressLabel,
                                const FilterOptions &filterOptions,
@@ -106,13 +108,15 @@ bool CExportManager::saveKeyList(const sword::ListKey & l,
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(l.getCount());
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     sword::ListKey list(l);
     list.setPosition(sword::TOP);
     while (!list.popError() && !progressWasCancelled()) {
-        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
+        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
+                            module,
+                            itemSettings));
         incProgress();
 
         list.increment();
@@ -145,13 +149,13 @@ bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.count());
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     QListIterator<CSwordKey*> it(list);
     while (it.hasNext() && !progressWasCancelled()) {
         CSwordKey* k = it.next();
-        tree.append( new CTextRendering::KeyTreeItem(k->key(), k->module(), itemSettings) );
+        tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
@@ -204,12 +208,14 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
         return false;
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     list.setPosition(sword::TOP);
     while (!list.popError() && !progressWasCancelled()) {
-        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
+        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
+                            module,
+                            itemSettings));
 
         list.increment();
     }
@@ -232,13 +238,13 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     QListIterator<CSwordKey*> it(list);
     while (it.hasNext() && !progressWasCancelled()) {
         CSwordKey* k = it.next();
-        tree.append( new CTextRendering::KeyTreeItem(k->key(), k->module(), itemSettings) );
+        tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
@@ -267,17 +273,11 @@ bool CExportManager::printKeyList(const sword::ListKey & list,
         const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
         if (vKey != 0) {
             QString startKey = vKey->getText();
-            tree.append(new CTextRendering::KeyTreeItem(startKey,
-                startKey,
-                module,
-                settings));
+            tree.append(new KTI(startKey, startKey, module, settings));
         }
         else {
             QString key = swKey->getText();
-            tree.append(new CTextRendering::KeyTreeItem(key,
-                key,
-                module,
-                settings));
+            tree.append(new KTI(key, key, module, settings));
         }
         incProgress();
         if (progressWasCancelled())
@@ -367,11 +367,16 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
     if (module) {
         //check if we have a range of entries or a single one
         if ((module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary)) {
-            sword::ListKey verses = sword::VerseKey().parseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
+            sword::ListKey const verses =
+                    sword::VerseKey().parseVerseList(
+                            keyName.toUtf8().constData(),
+                            "Genesis 1:1",
+                            true);
 
             for (int i = 0; i < verses.getCount(); i++) {
-                sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.getElement(i));
-                if (element) {
+                if (sword::VerseKey const * const element =
+                    dynamic_cast<sword::VerseKey const *>(verses.getElement(i)))
+                {
                     const QString startKey = QString::fromUtf8(element->getLowerBound().getText());
                     const QString stopKey =  QString::fromUtf8(element->getUpperBound().getText());
 
