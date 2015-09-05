@@ -185,7 +185,9 @@ void BtBookshelfWidget::slotShowContextMenu(const QPoint &pos) {
 void BtBookshelfWidget::slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos)
 {
     if (m_itemContextMenu != 0) {
-        m_itemContextMenu->setProperty("BtModule", qVariantFromValue((void*) module));
+        m_itemContextMenu->setProperty("BtModule",
+                                       qVariantFromValue(
+                                           static_cast<void *>(module)));
         m_itemContextMenu->popup(pos);
     } else {
         m_itemContextMenu = m_contextMenu;
