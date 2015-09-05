@@ -42,7 +42,7 @@ QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon,
     messageBox.setStandardButtons(buttons);
     messageBox.setDefaultButton(defaultButton);
     prepareDialogBox(box);
-    return (QMessageBox::StandardButton)messageBox.exec();
+    return static_cast<QMessageBox::StandardButton>(messageBox.exec());
 }
 
 } // anonymous namespace
