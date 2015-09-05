@@ -28,7 +28,6 @@
 #include "backend/cswordmodulesearch.h"
 #include "bibletimeapp.h"
 #include "btglobal.h"
-#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/exceptions.h"
@@ -497,67 +496,58 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
 
     results.clear();
 
-    try {
-        // do not use any stop words
-        static const TCHAR * stop_words[1u]  = { NULL };
-        lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
-        lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
-        lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-        QScopedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
-                                                                                        static_cast<const TCHAR *>(_T("content")),
-                                                                                        &analyzer));
+    // do not use any stop words
+    static const TCHAR * stop_words[1u]  = { NULL };
+    lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
+    lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
+    lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
+    QScopedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
+                                                                                    static_cast<const TCHAR *>(_T("content")),
+                                                                                    &analyzer));
 
-        QScopedPointer<lucene::search::Hits> h(searcher.search(q.data(),
-                                                               #ifdef CLUCENE2
-                                                               lucene::search::Sort::INDEXORDER()));
-                                                               #else
-                                                               lucene::search::Sort::INDEXORDER));
-                                                               #endif
+    QScopedPointer<lucene::search::Hits> h(searcher.search(q.data(),
+                                                           #ifdef CLUCENE2
+                                                           lucene::search::Sort::INDEXORDER()));
+                                                           #else
+                                                           lucene::search::Sort::INDEXORDER));
+                                                           #endif
 
-        const bool useScope = (scope.getCount() > 0);
+    const bool useScope = (scope.getCount() > 0);
 
-        lucene::document::Document * doc = 0;
-        QScopedPointer<sword::SWKey> swKey(m_module->createKey());
+    lucene::document::Document * doc = 0;
+    QScopedPointer<sword::SWKey> swKey(m_module->createKey());
 
-        sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
-        if (vk)
-            vk->setIntros(true);
+    sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
+    if (vk)
+        vk->setIntros(true);
 
 #ifdef CLUCENE2
-        for (size_t i = 0; i < h->length(); ++i) {
+    for (size_t i = 0; i < h->length(); ++i) {
 #else
-        for (int i = 0; i < h->length(); ++i) {
+    for (int i = 0; i < h->length(); ++i) {
 #endif
-            doc = &h->doc(i);
-            lucene_wcstoutf8(utfBuffer,
-                             static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
-                             BT_MAX_LUCENE_FIELD_LENGTH);
+        doc = &h->doc(i);
+        lucene_wcstoutf8(utfBuffer,
+                         static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
+                         BT_MAX_LUCENE_FIELD_LENGTH);
 
 
-            swKey->setText(utfBuffer);
+        swKey->setText(utfBuffer);
 
-            // Limit results based on scope:
-            if (useScope) {
-                for (int j = 0; j < scope.getCount(); j++) {
-                    Q_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
-                    const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
-                    if (vkey->getLowerBound().compare(*swKey) <= 0
-                        && vkey->getUpperBound().compare(*swKey) >= 0)
-                    {
-                        results.add(*swKey);
-                    }
+        // Limit results based on scope:
+        if (useScope) {
+            for (int j = 0; j < scope.getCount(); j++) {
+                Q_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
+                const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
+                if (vkey->getLowerBound().compare(*swKey) <= 0
+                    && vkey->getUpperBound().compare(*swKey) >= 0)
+                {
+                    results.add(*swKey);
                 }
-            } else {
-                results.add(*swKey); // No scope, give me all buffers
             }
+        } else {
+            results.add(*swKey); // No scope, give me all buffers
         }
-    } catch (...) {
-        qWarning("CLucene exception occurred");
-        message::showWarning(0,
-                          QCoreApplication::tr("Search aborted"),
-                          QCoreApplication::tr("An internal error occurred "
-                                               "while executing your search."));
-        return 0u;
     }
 
     qDeleteAll(list);

@@ -41,7 +41,11 @@ QStringList BibleTime::searchInModule(const QString& moduleName, const QString& 
 
         //mod->search(searchText, CSwordModuleSearch::multipleWords, sword::ListKey());
         sword::ListKey scope;
-        mod->searchIndexed(searchText, scope, result);
+        try {
+            mod->searchIndexed(searchText, scope, result);
+        } catch (...) {
+            return ret;
+        }
 
         const QString lead = QString("[%1] ").arg(moduleName);
 

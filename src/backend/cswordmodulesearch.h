@@ -80,6 +80,7 @@ class CSwordModuleSearch: public QObject {
 
         /**
           Starts the search for the search text.
+          \throws on error
         */
         void startSearch();
 

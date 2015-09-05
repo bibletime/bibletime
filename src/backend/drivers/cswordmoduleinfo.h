@@ -261,6 +261,7 @@ wrong, or if the config file was write protected return false.
       This function uses CLucene to perform and index based search. It also
       overwrites the variable containing the last search result.
       \returns the number of results found
+      \throws on error
     */
     size_t searchIndexed(const QString & searchedText,
                          const sword::ListKey & scope,
