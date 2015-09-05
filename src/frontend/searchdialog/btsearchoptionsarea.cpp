@@ -348,9 +348,10 @@ sword::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
         BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
         QString scope = map[ m_rangeChooserCombo->currentText() ];
-        if (!scope.isEmpty()) {
-            return sword::VerseKey().parseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);
-        }
+        if (!scope.isEmpty())
+            return sword::VerseKey().parseVerseList(scope.toUtf8().constData(),
+                                                    "Genesis 1:1",
+                                                    true);
     }
     return sword::ListKey();
 }
@@ -417,6 +418,6 @@ QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::Sea
 QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType) {
     qint8 i;
     in >> i;
-    searchType = (Search::BtSearchOptionsArea::SearchType) i;
+    searchType = static_cast<Search::BtSearchOptionsArea::SearchType>(i);
     return in;
 }
