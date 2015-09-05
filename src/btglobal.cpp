@@ -4,14 +4,14 @@
 
 
 QDataStream &operator<<(QDataStream &out, const alignmentMode &mode) {
-    out << (qint8) mode;
+    out << static_cast<qint8>(mode);
     return out;
 }
 
 QDataStream &operator>>(QDataStream &in, alignmentMode &mode) {
     qint8 i;
     in >> i;
-    mode = (alignmentMode) i;
+    mode = static_cast<alignmentMode>(i);
     return in;
 }
 
