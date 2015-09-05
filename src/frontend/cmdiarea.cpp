@@ -380,8 +380,9 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
 
     switch (e->type()) {
         case QEvent::WindowStateChange: {
-            Qt::WindowStates newState(w->windowState());
-            Qt::WindowStates oldState(((QWindowStateChangeEvent*)e)->oldState());
+            Qt::WindowStates const newState(w->windowState());
+            Qt::WindowStates const oldState(
+                    static_cast<QWindowStateChangeEvent *>(e)->oldState());
 
             /*
               Do not handle window activation or deactivation here, it will
