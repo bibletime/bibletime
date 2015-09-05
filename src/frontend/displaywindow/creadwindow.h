@@ -21,52 +21,52 @@
 class BtActionCollection;
 class QResizeEvent;
 
-/**
-  \brief The base class for all read-only display windows.
-*/
+/** \brief The base class for all read-only display windows. */
 class CReadWindow: public CDisplayWindow {
-        Q_OBJECT
-    public:
 
-        /** Insert the keyboard accelerators of this window into the given actioncollection.*/
-        static void insertKeyboardActions( BtActionCollection* const a );
+    Q_OBJECT
 
-        CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+public: /* Methods: */
 
-    protected:
-        /**
-        * Sets the display widget of this display window.
-        */
-        virtual void setDisplayWidget( CDisplay* newDisplay );
-        /**
-         * Reimplemented Qt function for resize of window.
-         */
-        virtual void resizeEvent(QResizeEvent* e);
+    CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent);
 
-        /** Called to add actions to mainWindow toolbars.*/
-        virtual void setupMainWindowToolBars() = 0;
+    /**
+       Inserts the keyboard accelerators of this window into the given
+       collection.
+    */
+    static void insertKeyboardActions(BtActionCollection * const a);
 
-    protected slots:
-        /**
-        * Load the text using the key
-        */
-        virtual void lookupSwordKey( CSwordKey* );
-        /**
-        * Catch the signal when the KHTMLPart has finished the layout (anchors are not ready before that).
-        */
-        virtual void slotMoveToAnchor();
+protected: /* Methods: */
 
-        /**
-        * Update the status of the popup menu entries.
-        */
-        virtual void copyDisplayedText();
-        /**
-         * Open the search dialog with the strong info of the last clicked word.
-        */
-        void openSearchStrongsDialog();
+    /** Sets the display widget of this display window. */
+    virtual void setDisplayWidget(CDisplay * newDisplay);
 
-    private:
-        CReadDisplay* m_readDisplayWidget;
+    virtual void resizeEvent(QResizeEvent * e);
+
+    /** Adds actions to mainWindow toolbars. */
+    virtual void setupMainWindowToolBars() = 0;
+
+protected slots:
+
+    /** Loads the text using the key. */
+    virtual void lookupSwordKey(CSwordKey *);
+
+    /**
+      Catches the signal when the KHTMLPart has finished the layout (anchors are
+      not ready before that).
+    */
+    virtual void slotMoveToAnchor();
+
+    /** Updates the status of the popup menu entries. */
+    virtual void copyDisplayedText();
+
+    /** Opens the search dialog with the strong info of the last clicked word.*/
+    void openSearchStrongsDialog();
+
+private: /* Fields: */
+
+    CReadDisplay * m_readDisplayWidget;
+
 };
 
-#endif
+#endif /* CREADWINDOW_H */
