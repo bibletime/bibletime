@@ -142,7 +142,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
 
         Q_FOREACH(const CSwordModuleInfo * const mi, settings.modules) {
             header.append("<th style=\"width:")
-            .append(QString::number(int( 100.0 / (float)moduleCount )))
+            .append(QString::number(static_cast<int>(100.0 / moduleCount)))
             .append("%;\">")
             .append(mi->name())
             .append("</th>");
