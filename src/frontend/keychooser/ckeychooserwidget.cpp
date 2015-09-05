@@ -85,7 +85,7 @@ bool CKCComboBox::eventFilter(QObject * o, QEvent * e) {
 void CKCComboBox::wheelEvent(QWheelEvent * e) {
     return QComboBox::wheelEvent(e); /// \bug rest method won't get executed.
 
-    const signed int change = (int)((float)e->delta() / (float)120);
+    int const change = static_cast<int>(static_cast<float>(e->delta()) / 120);
     int current = currentIndex();
 
     if ((current + change >= 0) && (current + change < count()) ) {
