@@ -42,7 +42,9 @@ const QString Rendering::CChapterDisplay::text(
     Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
 
     if (module->type() == CSwordModuleInfo::Bible) {
-        ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
+        // HACK: enable headings for VerseKeys:
+        static_cast<sword::VerseKey *>(module->module()->getKey())
+                ->setIntros(true);
 
         Q_ASSERT(dynamic_cast<const CSBMI*>(module) != 0);
         const CSBMI *bible = static_cast<const CSBMI*>(module);
