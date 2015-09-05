@@ -248,9 +248,9 @@ wrong, or if the config file was write protected return false.
 
     /**
       Builds a search index for this module
-      \returns Whether indexing this module was successful.
+      \throws when unsuccessful
     */
-    bool buildIndex();
+    void buildIndex();
 
     /**
       \returns index size

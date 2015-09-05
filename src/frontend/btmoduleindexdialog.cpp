@@ -12,6 +12,7 @@
 #include <QApplication>
 #include <QMutexLocker>
 #include "backend/managers/cswordbackend.h"
+#include "frontend/messagedialog.h"
 
 
 bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)
@@ -60,7 +61,15 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
         // Single module indexing blocks until finished:
         setLabelText(tr("Creating index for work: %1").arg(m->name()));
 
-        if (!m->buildIndex()) success = false;
+        try {
+            m->buildIndex();
+        } catch (...) {
+            message::showWarning(this,
+                                 tr("Indexing aborted"),
+                                 tr("An internal error occurred while building "
+                                    "the index."));
+            success = false;
+        }
 
         m_currentModuleIndex++;
 

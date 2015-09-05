@@ -247,7 +247,7 @@ bool CSwordModuleInfo::hasIndex() const {
                                                    .toLatin1().constData());
 }
 
-bool CSwordModuleInfo::buildIndex() {
+void CSwordModuleInfo::buildIndex() {
     m_cancelIndexing = false;
 
     try {
@@ -451,27 +451,12 @@ bool CSwordModuleInfo::buildIndex() {
             module_config.setValue("index-version", INDEX_VERSION);
             emit hasIndexChanged(true);
         }
-    } catch (CLuceneError & e) {
-        qWarning() << "CLucene exception occurred while indexing:" << e.what();
-        message::showWarning(0,
-                          QCoreApplication::tr("Indexing aborted"),
-                          QCoreApplication::tr("An internal error occurred "
-                                               "while building the index: %1")
-                          .arg(e.what()));
-        deleteIndex();
-        m_cancelIndexing = false;
-        return false;
+    // } catch (CLuceneError & e) {
     } catch (...) {
-        qWarning("CLucene exception occurred while indexing");
-        message::showWarning(0,
-                          QCoreApplication::tr("Indexing aborted"),
-                          QCoreApplication::tr("An internal error occurred "
-                                               "while building the index."));
         deleteIndex();
         m_cancelIndexing = false;
-        return false;
+        throw;
     }
-    return true;
 }
 
 void CSwordModuleInfo::deleteIndex() {
