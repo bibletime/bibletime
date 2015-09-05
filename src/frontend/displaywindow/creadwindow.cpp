@@ -102,7 +102,8 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 }
 
 void CReadWindow::slotMoveToAnchor() {
-    ((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
+    static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+            Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
 void CReadWindow::insertKeyboardActions( BtActionCollection* const ) {}
@@ -117,9 +118,9 @@ void CReadWindow::copyDisplayedText() {
     \fn CReadWindow::resizeEvent(QResizeEvent* e)
  */
 void CReadWindow::resizeEvent(QResizeEvent* /*e*/) {
-    if (displayWidget()) {
-        ((CReadDisplay*)displayWidget())->moveToAnchor(Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
-    }
+    if (displayWidget())
+        static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
 void CReadWindow::openSearchStrongsDialog() {
