@@ -192,7 +192,9 @@ void BtBookshelfDockWidget::slotModuleChecked(CSwordModuleInfo *module, bool c) 
 }
 
 void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
-    CSwordModuleInfo *module((CSwordModuleInfo*) m_itemContextMenu->property("BtModule").value<void*>());
+    CSwordModuleInfo * const module =
+        static_cast<CSwordModuleInfo *>(
+                m_itemContextMenu->property("BtModule").value<void *>());
     if (module == 0) return;
 
     if (action == m_itemOpenAction) {
