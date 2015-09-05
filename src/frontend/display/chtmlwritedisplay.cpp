@@ -205,7 +205,7 @@ void CHTMLWriteDisplay::slotCurrentCharFormatChanged(const QTextCharFormat &) {
 
 void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
     if (!m_handingFormatChangeFromEditor)
-        setFontPointSize((qreal)newSize);
+        setFontPointSize(static_cast<qreal>(newSize));
 }
 
 /** Is called when a new color was selected. */
