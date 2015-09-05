@@ -161,7 +161,8 @@ void CBookKeyChooser::setModules(const BtConstModuleList & modules,
                 }
             }
 
-            int maxWidth = (int) ((float) totalWidth / (float) m_modules.first()->depth());
+            int maxWidth = static_cast<int>(static_cast<float>(totalWidth)
+                                            / m_modules.first()->depth());
 
             w->comboBox().setMaximumWidth(maxWidth);
             w->comboBox().setCurrentIndex(0);
