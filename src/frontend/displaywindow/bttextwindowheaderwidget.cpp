@@ -180,6 +180,8 @@ void BtTextWindowHeaderWidget::populateMenu() {
         TypeFilter typeFilter(m_moduleType);
         filters.append(&typeFilter);
 
+        TypeOfAction const typeOfAction =
+                static_cast<TypeOfAction>(menu->property(ActionType).toInt());
         if (m_moduleType == CSwordModuleInfo::Bible) {
             BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
             QList<BTModuleTreeItem::Filter*> filters2;
@@ -191,11 +193,11 @@ void BtTextWindowHeaderWidget::populateMenu() {
                 filters2.append(&typeFilter2);
                 root.add_items(filters2);
             }
-            addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+            addItemToMenu(&root, menu, typeOfAction);
         }
         else {
             BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-            addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+            addItemToMenu(&root, menu, typeOfAction);
         }
     }
 }
