@@ -51,6 +51,12 @@ private: /* Types: */
 
     typedef QHash<const CLanguageMgr::Language *, FontSettingsPair> FontCacheMap;
 
+    enum InitState {
+        INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE = -2,
+        INIT_OK = 0,
+        INIT_NEED_UNIMPLEMENTED_FORWARD_MIGRATE = 2,
+    };
+
 public: /* Methods: */
 
     static BtConfig & getInstance();
@@ -218,7 +224,8 @@ private: /* Methods: */
 
     explicit BtConfig(const QString & settingsFile);
 
-    static bool initBtConfig();
+    static InitState initBtConfig();
+    static void forceMigrate();
 
     static void destroyInstance();
 
