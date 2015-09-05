@@ -82,10 +82,12 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
     while (drawn < m_moduleCount) {
         for (index = 0; index < m_moduleCount; index++) {
             if (m_resultCountArray[index] == Value) {
-                QPoint p1((int)rect().x() + (m_moduleCount - drawn - 1)*BAR_DELTAX,
-                          (int)rect().height() + (int)y() - BAR_LOWER_BORDER - (m_moduleCount - drawn)*BAR_DELTAY);
+                #define S(...) static_cast<int>(__VA_ARGS__)
+                QPoint p1(S(rect().x()) + (m_moduleCount - drawn - 1)*BAR_DELTAX,
+                          S(rect().height()) + S(y()) - BAR_LOWER_BORDER - (m_moduleCount - drawn)*BAR_DELTAY);
                 QPoint p2(p1.x() + BAR_WIDTH,
-                          p1.y() - (int)( !m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))) );
+                          p1.y() - S(!m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))));
+                #undef S
                 QRect r(p1, p2);
                 painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );
                 painter->drawRect(r);
