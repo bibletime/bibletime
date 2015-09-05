@@ -346,8 +346,8 @@ void BtSearchOptionsArea::refreshRanges() {
 
 sword::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
-        BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
-        QString scope = map[ m_rangeChooserCombo->currentText() ];
+        QString const scope = btConfig().getSearchScopesForCurrentLocale()[
+                                    m_rangeChooserCombo->currentText()];
         if (!scope.isEmpty())
             return sword::VerseKey().parseVerseList(scope.toUtf8().constData(),
                                                     "Genesis 1:1",
