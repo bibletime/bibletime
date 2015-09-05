@@ -539,7 +539,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
             vk->setIntros(true);
 
 #ifdef CLUCENE2
-        for (unsigned int i = 0; i < h->length(); ++i) {
+        for (size_t i = 0; i < h->length(); ++i) {
 #else
         for (int i = 0; i < h->length(); ++i) {
 #endif
