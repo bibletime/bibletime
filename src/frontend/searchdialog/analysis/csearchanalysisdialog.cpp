@@ -37,7 +37,7 @@ CSearchAnalysisDialog::CSearchAnalysisDialog(
 
     // Set initial width based on the search data, but limit to the
     // width of the desktop
-    int width = (int)( m_analysis->width() + DIALOG_BORDER );
+    int width = static_cast<int>(m_analysis->width() + DIALOG_BORDER);
     int desktopWidth = QApplication::desktop()->screenGeometry(this).width();
     if (width > desktopWidth)
         width = desktopWidth;
