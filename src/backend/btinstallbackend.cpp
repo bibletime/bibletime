@@ -16,7 +16,6 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/btinstallmgr.h"
 #include "util/directory.h"
-#include "frontend/messagedialog.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -170,10 +169,6 @@ bool setTargetList( const QStringList& targets ) {
         if (!f.exists()) {
             if (!f.open(QIODevice::ReadWrite)) {
                 qWarning() << "The Sword config file can't be created!";
-                message::showWarning(
-                    0,
-                    QObject::tr("Can't write file"),
-                    QObject::tr("The Sword config file can't be created!"));
                 return false;
             }
             f.close();

@@ -225,7 +225,11 @@ void BtInstallPathDialog::writeSwordConfig() {
         ++it;
     }
     qDebug() << "save the target list" << targets;
-    BtInstallBackend::setTargetList(targets); //creates new Sword config
+    if (!BtInstallBackend::setTargetList(targets)) {
+        message::showWarning(this,
+                             tr("Can't write file"),
+                             tr("The Sword config file can't be created!"));
+    }
 }
 
 void BtInstallPathDialog::accept() {
