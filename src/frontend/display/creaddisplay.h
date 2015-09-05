@@ -28,11 +28,11 @@ class CReadDisplay :  public CDisplay {
         /**
         * Returns true if the display has an active anchor.
         */
-        bool hasActiveAnchor();
+        bool hasActiveAnchor() const;
         /**
         * Returns the current active anchor.
         */
-        const QString& activeAnchor();
+        QString const & activeAnchor() const;
         /**
         * Moves the widget to the given anchor.
         */

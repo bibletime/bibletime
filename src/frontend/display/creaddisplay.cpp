@@ -28,7 +28,7 @@ CReadDisplay::CReadDisplay(CReadWindow* readWindow) :
         m_useMouseTracking(true) {}
 
 /** Returns the current active anchor. */
-const QString& CReadDisplay::activeAnchor() {
+const QString& CReadDisplay::activeAnchor() const {
     return m_activeAnchor;
 }
 
@@ -39,7 +39,7 @@ void CReadDisplay::setActiveAnchor( const QString& anchor ) {
 
 
 /** Returns true if the display has an active anchor. */
-bool CReadDisplay::hasActiveAnchor() {
+bool CReadDisplay::hasActiveAnchor() const {
     return !activeAnchor().isEmpty();
 }
 
