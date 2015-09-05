@@ -420,13 +420,14 @@ bool CSwordModuleInfo::buildIndex() {
             }
 
             if (verseIndex % 200 == 0) {
-                int indexingProgressValue;
                 if (verseSpan == 0) { // Prevent division by zero
-                    indexingProgressValue = 0;
+                    emit indexingProgress(0);
                 } else {
-                    indexingProgressValue = (int)((100 * (verseIndex - verseLowIndex)) / (verseSpan));
+                    emit indexingProgress(
+                            static_cast<int>(
+                                    (100 * (verseIndex - verseLowIndex))
+                                    / verseSpan));
                 }
-                emit indexingProgress(indexingProgressValue);
             }
 
             m_module->increment();
