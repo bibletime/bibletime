@@ -38,11 +38,14 @@ inline void initializeGroups() {
 }
 
 inline void setActionRef(QAction *a, const BtBookshelfTreeModel::Grouping &g) {
-    a->setProperty("groupingPointer", QVariant::fromValue((void*) &g));
+    a->setProperty("groupingPointer",
+                   QVariant::fromValue(
+                       const_cast<void *>(static_cast<void const *>(&g))));
 }
 
 inline const BtBookshelfTreeModel::Grouping &getActionRef(const QAction *a) {
-    return *((const BtBookshelfTreeModel::Grouping*) a->property("groupingPointer").value<void*>());
+    return *static_cast<BtBookshelfTreeModel::Grouping const *>(
+                a->property("groupingPointer").value<void *>());
 }
 
 } // anonymous namespace
