@@ -64,12 +64,12 @@ public slots:
 
 private: /* Methods: */
 
-    const QString decodeAbbreviation(const QString & data);
-    const QString decodeCrossReference(const QString & data);
-    const QString decodeFootnote(const QString & data);
-    const QString decodeStrongs(const QString & data);
-    const QString decodeMorph(const QString & data);
-    const QString getWordTranslation(const QString & data);
+    QString decodeAbbreviation(QString const & data);
+    QString decodeCrossReference(QString const & data);
+    QString decodeFootnote(QString const & data);
+    QString decodeStrongs(QString const & data);
+    QString decodeMorph(QString const & data);
+    QString getWordTranslation(QString const & data);
 
 private slots:
 

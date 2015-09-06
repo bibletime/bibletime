@@ -188,7 +188,7 @@ void CInfoDisplay::selectAll() {
     m_htmlPart->selectAll();
 }
 
-const QString CInfoDisplay::decodeAbbreviation(const QString & data) {
+QString CInfoDisplay::decodeAbbreviation(QString const & data) {
     // QStringList strongs = QStringList::split("|", data);
     return QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
         .arg(tr("Abbreviation"))
@@ -196,7 +196,7 @@ const QString CInfoDisplay::decodeAbbreviation(const QString & data) {
         .arg(data);
 }
 
-const QString CInfoDisplay::decodeCrossReference(const QString & data) {
+QString CInfoDisplay::decodeCrossReference(QString const & data) {
     Q_ASSERT(!data.isEmpty());
     if (data.isEmpty())
         return QString("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
@@ -290,7 +290,7 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
            .arg(renderer.renderKeyTree(tree));
 }
 
-const QString CInfoDisplay::decodeFootnote(const QString & data) {
+QString CInfoDisplay::decodeFootnote(QString const & data) {
     QStringList const list = data.split("/");
     Q_ASSERT(list.count() >= 3);
 
@@ -321,7 +321,7 @@ const QString CInfoDisplay::decodeFootnote(const QString & data) {
            .arg(text);
 }
 
-const QString CInfoDisplay::decodeStrongs(const QString & data) {
+QString CInfoDisplay::decodeStrongs(QString const & data) {
     QStringList strongs = data.split("|");
     QString ret;
 
@@ -357,7 +357,7 @@ const QString CInfoDisplay::decodeStrongs(const QString & data) {
     return ret;
 }
 
-const QString CInfoDisplay::decodeMorph(const QString & data) {
+QString CInfoDisplay::decodeMorph(QString const & data) {
     QStringList morphs = data.split("|");
     QString ret;
 
@@ -434,7 +434,7 @@ const QString CInfoDisplay::decodeMorph(const QString & data) {
     return ret;
 }
 
-const QString CInfoDisplay::getWordTranslation(const QString & data) {
+QString CInfoDisplay::getWordTranslation(QString const & data) {
     CSwordModuleInfo * const module = btConfig().getDefaultSwordModuleByType("standardLexicon");
     if (!module)
         return QString::null;
