@@ -113,10 +113,12 @@ void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::Mo
 }
 
 void BtModuleChooserBar::updateButtonMenus() {
-    int leftLikeModules = leftLikeParallelModules(m_modules);
-    for (int i = 0; i < m_buttonList.count(); i++) {
-        BtModuleChooserButton* button = m_buttonList.at(i);
-        QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
-        button->updateMenu(m_modules, moduleName, i, leftLikeModules);
-    }
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_buttonList.count(); i++)
+        m_buttonList.at(i)->updateMenu(m_modules,
+                                       (i >= m_modules.count())
+                                       ? QString::null
+                                       : m_modules.at(i),
+                                       i,
+                                       leftLikeModules);
 }
