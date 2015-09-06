@@ -44,13 +44,12 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
     adjustWidgetCount();
 
     //recreate all widgets from scratch
-    for (int i = 0; i < m_widgetList.count(); i++) {
-        BtTextWindowHeaderWidget* widgt = m_widgetList.at(i);
-        QString moduleName = m_modules.at(i);
-        qDebug() << "refresh button's menu:" << moduleName << i;
-        int leftLikeModules = leftLikeParallelModules(m_modules);
-        widgt->recreateWidget(m_modules, moduleName, i, leftLikeModules);
-    }
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_widgetList.count(); i++)
+        m_widgetList.at(i)->recreateWidget(m_modules,
+                                           m_modules.at(i),
+                                           i,
+                                           leftLikeModules);
 }
 
 void BtTextWindowHeader::slotWindowModulesChanged() {
