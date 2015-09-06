@@ -30,7 +30,6 @@
 #include "btglobal.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/exceptions.h"
 #include "util/htmlescape.h"
 
 // Sword includes:
