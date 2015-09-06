@@ -13,7 +13,6 @@
 #include "backend/bookshelfmodel/moduleitem.h"
 
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "util/cresmgr.h"
 
 
 namespace BookshelfModel {

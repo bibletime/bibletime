@@ -13,7 +13,6 @@
 #include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "util/cresmgr.h"
 #include "util/tool.h"
 
 
