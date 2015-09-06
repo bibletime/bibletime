@@ -115,10 +115,10 @@ void BtTextWindowHeader::setModules( QStringList useModules ) {
 }
 
 void BtTextWindowHeader::updateWidgets() {
-    int leftLikeModules = leftLikeParallelModules(m_modules);
-    for (int i = 0; i < m_widgetList.count(); i++) {
-        BtTextWindowHeaderWidget* w = m_widgetList.at(i);
-        //QString moduleName = m_modules.at(i);
-        w->updateWidget(m_modules, m_modules.at(i), i, leftLikeModules);
-    }
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_widgetList.count(); i++)
+        m_widgetList.at(i)->updateWidget(m_modules,
+                                         m_modules.at(i),
+                                         i,
+                                         leftLikeModules);
 }
