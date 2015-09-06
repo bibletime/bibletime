@@ -30,6 +30,8 @@ BT_GETICON2(icon_openAction, folder_open)
 }
 namespace modules {
 
+BT_GETICON2(icon_moduleLanguage, flag)
+
 BT_GETICON2(icon_cult, stop)
 
 namespace bible {
