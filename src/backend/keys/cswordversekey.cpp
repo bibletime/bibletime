@@ -14,7 +14,6 @@
 
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "util/btsignal.h"
 
 // Sword includes:
 #include <swmodule.h>

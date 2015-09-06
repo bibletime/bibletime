@@ -24,7 +24,6 @@
 #include "bibletimeapp.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
-#include "util/btsignal.h"
 #include "util/cresmgr.h"
 
 

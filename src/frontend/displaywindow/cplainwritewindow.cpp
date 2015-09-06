@@ -21,7 +21,6 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
-#include "util/btsignal.h"
 #include "util/cresmgr.h"
 
 
