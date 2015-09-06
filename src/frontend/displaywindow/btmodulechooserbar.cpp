@@ -29,17 +29,17 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
 
 void BtModuleChooserBar::slotBackendModulesChanged() {
     m_modules = m_window->getModuleList();
-
     adjustButtonCount();
 
-    //recreate all menus from scratch
-    for (int i = 0; i < m_buttonList.count(); i++) {
-        BtModuleChooserButton* button = m_buttonList.at(i);
-        QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
-        qDebug() << "refresh button's menu:" << moduleName << i;
-        int leftLikeModules = leftLikeParallelModules(m_modules);
-        button->recreateMenu(m_modules, moduleName, i, leftLikeModules);
-    }
+    // Recreate all menus from scratch:
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_buttonList.count(); i++)
+        m_buttonList.at(i)->recreateMenu(m_modules,
+                                         (i >= m_modules.count())
+                                         ? QString::null
+                                         : m_modules.at(i),
+                                         i,
+                                         leftLikeModules);
 }
 
 void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
