@@ -9,13 +9,11 @@
 
 #include "frontend/display/btfindwidget.h"
 
-#include "QApplication"
 #include "QCheckBox"
 #include "QHBoxLayout"
 #include "QLineEdit"
 #include "QSpacerItem"
 #include "QToolButton"
-#include "bibletimeapp.h"
 #include "util/cresmgr.h"
 
 

@@ -14,8 +14,6 @@
 
 #include <QWidget>
 
-#include <QWebPage>
-
 
 class QCheckBox;
 class QHBoxLayout;
