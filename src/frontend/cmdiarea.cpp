@@ -337,7 +337,8 @@ void CMDIArea::findPreviousTextInActiveWindow(const QString& text, bool caseSens
     QWebView* activeWebView = getActiveWebView();
     if (activeWebView == 0)
         return;
-    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument
+                                  | QWebPage::FindBackward;
     if (caseSensitive)
         options |= QWebPage::FindCaseSensitively;
     activeWebView->findText(text, options);
