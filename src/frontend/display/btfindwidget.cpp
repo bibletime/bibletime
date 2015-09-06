@@ -72,6 +72,9 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
+    ok = connect(m_caseCheckBox, SIGNAL(stateChanged(int)),
+                 this,           SLOT(caseStateChanged(int)));
+    Q_ASSERT(ok);
     m_layout->addWidget(m_caseCheckBox);
 
     // Spacer:
@@ -95,21 +98,7 @@ void BtFindWidget::retranslateUi() {
 bool BtFindWidget::caseSensitive() const
 { return m_caseCheckBox->checkState() == Qt::Checked; }
 
-QString BtFindWidget::text() const
-{ return m_textEditor->text(); }
-
-void BtFindWidget::returnPressed() {
-    bool const cs = caseSensitive();
-    QString const t(text());
-    emit highlightText(t, cs);
-    emit findNext(t, cs);
-}
-
-void BtFindWidget::textChanged(QString const & text) {
-    bool const cs = caseSensitive();
-    emit highlightText(text, cs);
-    emit findNext(text, cs);
-}
+QString BtFindWidget::text() const { return m_textEditor->text(); }
 
 void BtFindWidget::showAndSelect() {
     setVisible(true);

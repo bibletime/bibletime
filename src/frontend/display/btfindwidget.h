@@ -37,8 +37,9 @@ private slots:
 
     void findNext() { emit findNext(text(), caseSensitive()); }
     void findPrevious() { emit findPrevious(text(), caseSensitive()); }
-    void returnPressed();
-    void textChanged(QString const & text);
+    void returnPressed() { emitChange(text(), caseSensitive()); }
+    void textChanged(QString const & txt) { emitChange(txt, caseSensitive()); }
+    void caseStateChanged(int st) { emitChange(text(), st == Qt::Checked); }
 
 private: /* Methods: */
 
@@ -50,6 +51,11 @@ private: /* Methods: */
     bool caseSensitive() const;
 
     QString text() const;
+
+    void emitChange(QString const & text, bool const caseSensitive) {
+        emit highlightText(text, caseSensitive);
+        emit findNext(text, caseSensitive);
+    }
 
 signals:
 
