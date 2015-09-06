@@ -13,46 +13,58 @@
 #define BTFINDIDGET_H
 
 #include <QWidget>
+
 #include <QWebPage>
+
+
 class QCheckBox;
-class QLineEdit;
 class QHBoxLayout;
+class QLineEdit;
 class QString;
+class QToolButton;
 
-class BtFindWidget : public QWidget {
-        Q_OBJECT
+class BtFindWidget: public QWidget {
 
-    public:
-        BtFindWidget(QWidget* parent = 0);
-        ~BtFindWidget();
-        void showAndSelect();
+    Q_OBJECT
 
-    private slots:
-        void findNext();
-        void findPrevious();
-        void returnPressed();
-        void textChanged(const QString& text);
+public: /* Methods: */
 
-    private:
-        void createCaseCheckBox();
-        void createLayout();
-        void createSpacer();
-        void createTextEditor();
-        void createToolButton(QIcon const & icon,
-                              QString const & text,
-                              char const * slot);
-        void highlightText(const QString& searchText);
+    BtFindWidget(QWidget * parent = 0);
 
-        QHBoxLayout* m_layout;
-        QLineEdit* m_textEditor;
-        QCheckBox* m_caseCheckBox;
+    void showAndSelect();
 
-    signals:
-        void findPrevious(const QString & text, bool caseSensitive);
-        void findNext(const QString & text, bool caseSensitive);
-        void highlightText(const QString & text, bool caseSensitive);
+private slots:
+
+    void findNext() { emit findNext(text(), caseSensitive()); }
+    void findPrevious() { emit findPrevious(text(), caseSensitive()); }
+    void returnPressed();
+    void textChanged(QString const & text);
+
+private: /* Methods: */
+
+    void retranslateUi();
+
+    void highlightText(QString const & text)
+    { emit highlightText(text, caseSensitive()); }
+
+    bool caseSensitive() const;
+
+    QString text() const;
+
+signals:
+
+    void findPrevious(QString const & text, bool caseSensitive);
+    void findNext(QString const & text, bool caseSensitive);
+    void highlightText(QString const & text, bool caseSensitive);
+
+private: /* Fields: */
+
+    QHBoxLayout * m_layout;
+    QLineEdit * m_textEditor;
+    QToolButton * m_nextButton;
+    QToolButton * m_previousButton;
+    QCheckBox * m_caseCheckBox;
+
 };
 
 #endif
-
-
