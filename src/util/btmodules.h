@@ -9,10 +9,8 @@
 *
 **********/
 
-#include <QString>
 #include <QStringList>
 
-bool equalModuleCategories(const QString& name1, const QString& name2);
 
 int  leftLikeParallelModules(const QStringList modules);
 

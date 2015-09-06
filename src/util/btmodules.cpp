@@ -12,6 +12,7 @@
 #include "backend/managers/cswordbackend.h"
 
 
+namespace {
 bool equalModuleCategories(const QString& name1, const QString& name2) {
     CSwordModuleInfo* m1 = CSwordBackend::instance()->findModuleByName(name1);
     CSwordModuleInfo* m2 = CSwordBackend::instance()->findModuleByName(name2);
@@ -21,6 +22,7 @@ bool equalModuleCategories(const QString& name1, const QString& name2) {
         return true;
     }
     return false;
+}
 }
 
 int  leftLikeParallelModules(const QStringList modules) {
