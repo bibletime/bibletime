@@ -144,6 +144,10 @@ class CMDIArea: public QMdiArea {
 
     protected: /* Methods: */
 
+        void findTextInActiveWindow(QString const & text,
+                                    bool caseSensitive,
+                                    bool backward);
+
         /**
           Reimplementation of QWidget::resizeEvent() to handle our automatic
           tiling properly.

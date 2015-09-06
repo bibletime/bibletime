@@ -323,26 +323,11 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     }
 }
 
-void CMDIArea::findNextTextInActiveWindow(const QString& text, bool caseSensitive) {
-    QWebView* activeWebView = getActiveWebView();
-    if (activeWebView == 0)
-        return;
-    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
-    if (caseSensitive)
-        options |= QWebPage::FindCaseSensitively;
-    activeWebView->findText(text, options);
-}
+void CMDIArea::findNextTextInActiveWindow(QString const & text, bool cs)
+{ findTextInActiveWindow(text, cs, false); }
 
-void CMDIArea::findPreviousTextInActiveWindow(const QString& text, bool caseSensitive) {
-    QWebView* activeWebView = getActiveWebView();
-    if (activeWebView == 0)
-        return;
-    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument
-                                  | QWebPage::FindBackward;
-    if (caseSensitive)
-        options |= QWebPage::FindCaseSensitively;
-    activeWebView->findText(text, options);
-}
+void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
+{ findTextInActiveWindow(text, cs, true); }
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
     QWebView* activeWebView = getActiveWebView();
@@ -353,6 +338,20 @@ void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensiti
         options |= QWebPage::FindCaseSensitively;
     activeWebView->findText("", options); // clear old highlight
     activeWebView->findText(text, options);
+}
+
+void CMDIArea::findTextInActiveWindow(QString const & text,
+                                      bool caseSensitive,
+                                      bool backward)
+{
+    if (QWebView * const activeWebView = getActiveWebView()) {
+        QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+        if (backward)
+            options |= QWebPage::FindBackward;
+        if (caseSensitive)
+            options |= QWebPage::FindCaseSensitively;
+        activeWebView->findText(text, options);
+    }
 }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {
