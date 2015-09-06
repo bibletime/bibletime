@@ -13,27 +13,23 @@
 
 
 namespace {
-bool equalModuleCategories(const QString& name1, const QString& name2) {
-    CSwordModuleInfo* m1 = CSwordBackend::instance()->findModuleByName(name1);
-    CSwordModuleInfo* m2 = CSwordBackend::instance()->findModuleByName(name2);
-    if (m1 == 0 || m2 == 0)
-        return false;
-    if (m1->category() == m2->category()) {
-        return true;
-    }
+inline bool equalModuleCategories(QString const & n1, QString const & n2) {
+    if (CSwordModuleInfo const * const m1 =
+                CSwordBackend::instance()->findModuleByName(n1))
+        if (CSwordModuleInfo const * const m2 =
+                    CSwordBackend::instance()->findModuleByName(n2))
+            return m1->category() == m2->category();
     return false;
 }
-}
+} // anonymous namespace
 
-int  leftLikeParallelModules(const QStringList modules) {
+int leftLikeParallelModules(QStringList const & modules) {
     // Count the number of leftmost modules that are of the same category
     int leftLikeModules = 0;
     for (int i = 0; i < modules.count(); i++) {
-        if ( ! equalModuleCategories(modules.at(0), modules.at(i))) {
+        if (!equalModuleCategories(modules.at(0), modules.at(i)))
             break;
-        }
         leftLikeModules++;
     }
     return leftLikeModules;
 }
-

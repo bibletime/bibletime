@@ -12,5 +12,4 @@
 #include <QStringList>
 
 
-int  leftLikeParallelModules(const QStringList modules);
-
+int leftLikeParallelModules(QStringList const & modules);
