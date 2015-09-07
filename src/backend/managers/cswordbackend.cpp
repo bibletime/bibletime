@@ -20,7 +20,6 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/filters/btosismorphsegmentation.h"
 #include "backend/filters/thmltoplain.h"
 #include "btglobal.h"
 #include "util/directory.h"
@@ -60,16 +59,6 @@ CSwordBackend::~CSwordBackend() {
 }
 
 void CSwordBackend::filterInit() {
-    // HACK: replace Sword's OSISMorphSegmentation filter, seems to be buggy, ours works
-    if (sword::SWOptionFilter * const filter = optionFilters["OSISMorphSegmentation"]) {
-        cleanupFilters.remove(filter);
-        optionFilters.erase("OSISMorphSegmentation");
-        delete filter;
-    }
-    sword::SWOptionFilter * const tmpFilter = new Filters::BtOSISMorphSegmentation();
-    optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
-    cleanupFilters.push_back(tmpFilter);
-
     // HACK: replace Sword's ThML strip filter with our own version
     // Remove this hack as soon as Sword is fixed
     cleanupFilters.remove(thmlplain);
