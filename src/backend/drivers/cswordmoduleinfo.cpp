@@ -812,10 +812,7 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("About"))
             .arg(config(AboutInformation)); // May contain HTML, don't escape
 
-    typedef QMap<CSwordModuleInfo::ConfigEntry, QString> MapConfigEntry;
-
-    MapConfigEntry entryMap;
-
+    QMap<CSwordModuleInfo::ConfigEntry, QString> entryMap;
     entryMap[DistributionLicense] = tr("Distribution license");
     entryMap[DistributionSource] = tr("Distribution source");
     entryMap[DistributionNotes] = tr("Distribution notes");
