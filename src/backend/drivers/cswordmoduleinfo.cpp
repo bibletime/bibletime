@@ -812,21 +812,6 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("About"))
             .arg(config(AboutInformation)); // May contain HTML, don't escape
 
-    typedef QList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
-
-    ListConfigEntry entries;
-
-    entries.append(DistributionLicense);
-    entries.append(DistributionSource);
-    entries.append(DistributionNotes);
-    entries.append(TextSource);
-    entries.append(CopyrightNotes);
-    entries.append(CopyrightHolder);
-    entries.append(CopyrightDate);
-    entries.append(CopyrightContactName);
-    entries.append(CopyrightContactAddress);
-    entries.append(CopyrightContactEmail);
-
     typedef QMap<CSwordModuleInfo::ConfigEntry, QString> MapConfigEntry;
 
     MapConfigEntry entryMap;
@@ -844,7 +829,21 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += ("<hr><table>");
 
-    for (ListConfigEntry::iterator it(entries.begin()); it != entries.end(); ++it)
+    static CSwordModuleInfo::ConfigEntry const entries[] = {
+        DistributionLicense,
+        DistributionSource,
+        DistributionNotes,
+        TextSource,
+        CopyrightNotes,
+        CopyrightHolder,
+        CopyrightDate,
+        CopyrightContactName,
+        CopyrightContactAddress,
+        CopyrightContactEmail
+    };
+    for (CSwordModuleInfo::ConfigEntry const * it = &entries[0u];
+         it != &entries[sizeof(entries) / sizeof(entries[0u])];
+         ++it)
         if (!config(*it).isEmpty())
             text += row
                     .arg(htmlEscape(entryMap[*it]))
