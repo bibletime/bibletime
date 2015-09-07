@@ -110,11 +110,11 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
     bool strongsAvailable = false;
 
     Q_FOREACH(const CSwordModuleInfo * m, results.keys()) {
-        /// \todo Remove this constructor hack once sword gets it right:
-        const int count = sword::ListKey(results.value(m)).getCount();
-        QTreeWidgetItem * item = new QTreeWidgetItem(this,
-                                                     QStringList(m->name())
-                                                       << QString::number(count));
+        QTreeWidgetItem * const item =
+                new QTreeWidgetItem(this,
+                                    QStringList(m->name())
+                                    << QString::number(
+                                            results.value(m).getCount()));
 
         item->setIcon(0, util::tool::getIconForModule(m));
         /*
