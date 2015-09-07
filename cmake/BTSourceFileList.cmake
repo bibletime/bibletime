@@ -65,7 +65,6 @@ SET(bibletime_SRC_BACKEND_FILTERS
     src/backend/filters/plaintohtml.cpp
     src/backend/filters/teitohtml.cpp
     src/backend/filters/thmltohtml.cpp
-    src/backend/filters/thmltoplain.cpp
 )
 
 SOURCE_GROUP("src\\backend\\filters" FILES ${bibletime_SRC_BACKEND_FILTERS})

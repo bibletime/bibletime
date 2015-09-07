@@ -20,7 +20,6 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/filters/thmltoplain.h"
 #include "btglobal.h"
 #include "util/directory.h"
 
@@ -42,29 +41,16 @@ CSwordBackend::CSwordBackend()
         : sword::SWMgr(0, 0, false,
                        new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
         , m_dataModel(this)
-{
-    filterInit();
-}
+{}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0,
                        false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
                        false, augmentHome)
-{ // don't allow module renaming, because we load from a path
-    filterInit();
-}
+{}
 
 CSwordBackend::~CSwordBackend() {
     shutdownModules();
-}
-
-void CSwordBackend::filterInit() {
-    // HACK: replace Sword's ThML strip filter with our own version
-    // Remove this hack as soon as Sword is fixed
-    cleanupFilters.remove(thmlplain);
-    delete thmlplain;
-    thmlplain = new Filters::ThmlToPlain();
-    cleanupFilters.push_back(thmlplain);
 }
 
 QList<CSwordModuleInfo *> CSwordBackend::takeModulesFromList(const QStringList & names) {

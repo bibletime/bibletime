@@ -248,9 +248,6 @@ protected: /* Methods: */
     void AddRenderFilters(sword::SWModule * module,
                           sword::ConfigEntMap & section);
 
-    /** Overrides Sword filters which appear to be buggy. */
-    void filterInit();
-
     QStringList getSharedSwordConfigFiles() const;
     QString getPrivateSwordConfigPath() const;
     QString getPrivateSwordConfigFile() const;
