@@ -208,9 +208,8 @@ void CRangeChooserDialog::updateResultList() {
 
     m_resultList->clear();
 
-    /// \todo remove this hack:
-    //HACK: repair range to work with Sword 1.5.6
-    const QString range = m_rangeEdit->toPlainText().replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
+    QString const range =
+            m_rangeEdit->toPlainText().replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
 
     sword::ListKey verses = VK().parseVerseList(range.toUtf8().constData(),
                                                 "Genesis 1:1", true);
