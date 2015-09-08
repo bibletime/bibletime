@@ -53,6 +53,15 @@ CSwordBackend::~CSwordBackend() {
     shutdownModules();
 }
 
+BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
+{
+    BtModuleList l;
+    Q_FOREACH(CSwordModuleInfo * m, moduleList())
+        if(m->type() == type)
+            l.append(m);
+    return l;
+}
+
 QList<CSwordModuleInfo *> CSwordBackend::takeModulesFromList(const QStringList & names) {
     QList<CSwordModuleInfo *> list;
     Q_FOREACH (const QString & name, names) {

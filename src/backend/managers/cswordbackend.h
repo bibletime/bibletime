@@ -111,6 +111,7 @@ public: /* Methods: */
     inline const QList<CSwordModuleInfo*> & moduleList() const {
         return m_dataModel.moduleList();
     }
+    BtModuleList moduleList(CSwordModuleInfo::ModuleType type) const;
 
     inline BtBookshelfModel * model() {
         return &m_dataModel;
