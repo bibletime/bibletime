@@ -118,24 +118,9 @@ void BtHtmlJsObject::timeOutEvent(const QString & attributes) {
         return;
 
     m_prev_attributes = "";
-    CInfoDisplay::ListInfoData infoList;
-    const QStringList attrList = attributes.split("||");
-    for (int i = 0; i < attrList.count(); i++) {
-        const QStringList attr(attrList[i].split('='));
-        if (attr.count() == 2) {
-            if (attr[0] == "note") {
-                infoList.append(qMakePair(CInfoDisplay::Footnote, attr[1]));
-            } else if (attr[0] == "lemma") {
-                infoList.append(qMakePair(CInfoDisplay::Lemma, attr[1]));
-            } else if (attr[0] == "morph") {
-                infoList.append(qMakePair(CInfoDisplay::Morph, attr[1]));
-            } else if (attr[0] == "expansion") {
-                infoList.append(qMakePair(CInfoDisplay::Abbreviation, attr[1]));
-            } else if (attr[0] == "crossrefs") {
-                infoList.append(qMakePair(CInfoDisplay::CrossReference, attr[1]));
-            }
-        }
-    }
+
+    Bt::Rendering::ListInfoData infoList(Bt::Rendering::detectInfo(attributes));
+
     // Update the mag if valid attributes were found
     if (!(infoList.isEmpty()))
         BibleTime::instance()->infoDisplay()->setInfo(infoList);

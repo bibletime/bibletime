@@ -16,7 +16,7 @@
 
 #include <QList>
 #include <QPair>
-#include "backend/rendering/ctextrendering.h"
+#include "backend/rendering/btinforendering.h"
 
 
 class CReadDisplay;
@@ -31,22 +31,6 @@ class CInfoDisplay: public QWidget {
 
     Q_OBJECT
 
-public: /* Types: */
-
-    enum InfoType {
-        Abbreviation,
-        CrossReference,
-        Footnote,
-        Lemma,
-        Morph,
-        WordTranslation,
-        WordGloss,
-        Text
-    };
-
-    typedef QPair<InfoType, QString> InfoData;
-    typedef QList<InfoData> ListInfoData;
-
 public: /* Methods: */
 
     CInfoDisplay(BibleTime * parent = NULL);
@@ -54,22 +38,13 @@ public: /* Methods: */
     void unsetInfo();
     void setInfo(const QString & renderedData,
                  const QString & lang = QString());
-    void setInfo(const InfoType, const QString & data);
-    void setInfo(const ListInfoData &);
+    void setInfo(const Bt::Rendering::InfoType, const QString & data);
+    void setInfo(const Bt::Rendering::ListInfoData &);
     QSize sizeHint() const;
 
 public slots:
 
     void setInfo(CSwordModuleInfo * module);
-
-private: /* Methods: */
-
-    QString decodeAbbreviation(QString const & data);
-    QString decodeCrossReference(QString const & data);
-    QString decodeFootnote(QString const & data);
-    QString decodeStrongs(QString const & data);
-    QString decodeMorph(QString const & data);
-    QString getWordTranslation(QString const & data);
 
 private slots:
 

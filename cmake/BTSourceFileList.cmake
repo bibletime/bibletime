@@ -88,6 +88,7 @@ SET(bibletime_SRC_BACKEND_RENDERING
     src/backend/rendering/chtmlexportrendering.cpp
     src/backend/rendering/cplaintextexportrendering.cpp
     src/backend/rendering/ctextrendering.cpp
+    src/backend/rendering/btinforendering.cpp
 )
 
 SOURCE_GROUP("src\\backend\\rendering" FILES ${bibletime_SRC_BACKEND_RENDERING})
