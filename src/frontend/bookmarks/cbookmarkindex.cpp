@@ -792,24 +792,29 @@ void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event) {
 }
 
 void CBookmarkIndex::magTimeout() {
-    QModelIndex itemUnderPointer;
-    if (underMouse()) {
-        itemUnderPointer = indexAt(mapFromGlobal(QCursor::pos()));
-    }
-    // if the mouse pointer have been over the same item since the timer was started
-    if (itemUnderPointer.isValid() && (m_previousEventItem == itemUnderPointer)) {
-        if (m_bookmarksModel->isBookmark(itemUnderPointer)) {
-            // Update the mag
-            CSwordModuleInfo * module = m_bookmarksModel->module(itemUnderPointer);
-            if (module) {
-                (BibleTime::instance()->infoDisplay())->setInfo(
-                    Rendering::CrossReference,
-                    module->name() + ":" + m_bookmarksModel->key(itemUnderPointer));
-            }
-            else {
-                (BibleTime::instance()->infoDisplay())->setInfo(Rendering::Text, tr(
-                     "The work to which the bookmark points to is not installed."));
-            }
+    if (!underMouse())
+        return;
+
+    /* Update the Mag only if the mouse pointer have been over the same item
+       since the timer was started. */
+    QModelIndex const itemUnderPointer(indexAt(mapFromGlobal(QCursor::pos())));
+    if (itemUnderPointer.isValid()
+        && m_previousEventItem == itemUnderPointer
+        && m_bookmarksModel->isBookmark(itemUnderPointer))
+    {
+        Q_ASSERT(BibleTime::instance()->infoDisplay());
+        InfoDisplay::CInfoDisplay & infoDisplay =
+                *(BibleTime::instance()->infoDisplay());
+        if (CSwordModuleInfo const * const module =
+            m_bookmarksModel->module(itemUnderPointer))
+        {
+            infoDisplay.setInfo(
+                Rendering::CrossReference,
+                module->name() + ":" + m_bookmarksModel->key(itemUnderPointer));
+        } else {
+            infoDisplay.setInfo(Rendering::Text,
+                                tr("The work to which the bookmark points to "
+                                   "is not installed."));
         }
     }
 }
