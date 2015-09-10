@@ -23,9 +23,7 @@
 using namespace Rendering;
 using namespace sword;
 
-namespace Bt {
 namespace Rendering {
-
 
 class CrossRefRendering : public CHTMLExportRendering {
 public:
@@ -497,5 +495,4 @@ QString getWordTranslation(QString const & data) {
                   .arg(key->renderedText());
 }
 
-}
-}
+} // namespace Rendering {

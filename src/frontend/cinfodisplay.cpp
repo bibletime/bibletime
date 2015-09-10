@@ -85,7 +85,7 @@ void CInfoDisplay::unsetInfo() {
 }
 
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
-    m_htmlPart->setText(Bt::Rendering::formatInfo(renderedData, lang));
+    m_htmlPart->setText(Rendering::formatInfo(renderedData, lang));
 }
 
 void CInfoDisplay::lookupInfo(const QString & mod_name,
@@ -103,12 +103,12 @@ void CInfoDisplay::lookupInfo(const QString & mod_name,
     setInfo(key->renderedText(), m->language()->abbrev());
 }
 
-void CInfoDisplay::setInfo(const Bt::Rendering::InfoType type, const QString & data) {
-    setInfo(Bt::Rendering::ListInfoData() << qMakePair(type, data));
+void CInfoDisplay::setInfo(const Rendering::InfoType type, const QString & data) {
+    setInfo(Rendering::ListInfoData() << qMakePair(type, data));
 }
 
 
-void CInfoDisplay::setInfo(const Bt::Rendering::ListInfoData & list) {
+void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
     // If the widget is hidden it would be inefficient to render and display the data
     if (!isVisible())
         return;
@@ -122,7 +122,7 @@ void CInfoDisplay::setInfo(const Bt::Rendering::ListInfoData & list) {
     const CSwordModuleInfo * m(m_mainWindow->getCurrentModule());
     if(m != 0)
         l.append(m);
-    setInfo(Bt::Rendering::formatInfo(list, l));
+    setInfo(Rendering::formatInfo(list, l));
 }
 
 void CInfoDisplay::setInfo(CSwordModuleInfo * const module) {

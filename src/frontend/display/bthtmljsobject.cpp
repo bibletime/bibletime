@@ -119,7 +119,7 @@ void BtHtmlJsObject::timeOutEvent(const QString & attributes) {
 
     m_prev_attributes = "";
 
-    Bt::Rendering::ListInfoData infoList(Bt::Rendering::detectInfo(attributes));
+    Rendering::ListInfoData infoList(Rendering::detectInfo(attributes));
 
     // Update the mag if valid attributes were found
     if (!(infoList.isEmpty()))

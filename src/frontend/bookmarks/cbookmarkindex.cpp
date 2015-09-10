@@ -803,11 +803,11 @@ void CBookmarkIndex::magTimeout() {
             CSwordModuleInfo * module = m_bookmarksModel->module(itemUnderPointer);
             if (module) {
                 (BibleTime::instance()->infoDisplay())->setInfo(
-                    Bt::Rendering::CrossReference,
+                    Rendering::CrossReference,
                     module->name() + ":" + m_bookmarksModel->key(itemUnderPointer));
             }
             else {
-                (BibleTime::instance()->infoDisplay())->setInfo(Bt::Rendering::Text, tr(
+                (BibleTime::instance()->infoDisplay())->setInfo(Rendering::Text, tr(
                      "The work to which the bookmark points to is not installed."));
             }
         }

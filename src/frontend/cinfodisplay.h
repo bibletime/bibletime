@@ -38,8 +38,8 @@ public: /* Methods: */
     void unsetInfo();
     void setInfo(const QString & renderedData,
                  const QString & lang = QString());
-    void setInfo(const Bt::Rendering::InfoType, const QString & data);
-    void setInfo(const Bt::Rendering::ListInfoData &);
+    void setInfo(Rendering::InfoType const, QString const & data);
+    void setInfo(Rendering::ListInfoData const &);
     QSize sizeHint() const;
 
 public slots:
