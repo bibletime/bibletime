@@ -114,8 +114,21 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
     BtConstModuleList::const_iterator end_modItr = modules.end();
 
     for (BtConstModuleList::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
-        key->setModule(*mod_Itr);
-        key->setKey(i.key());
+        if(myVK) {
+            key->setModule(*modules.begin());
+            key->setKey(i.key());
+
+            // this would change key position due to v11n translation
+            key->setModule(*mod_Itr);
+        }
+        else {
+            key->setModule(*mod_Itr);
+            key->setKey(i.key());
+        }
+
+        // indicate that key was changed
+        i.setMappedKey(key->key() != i.key() ? key : 0);
+
 
         isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString::null;
@@ -135,7 +148,23 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
                        .append("\"");
         }
 
-        key_renderedText = key->renderedText();
+        if(key->isValid()) {
+            key_renderedText = key->renderedText();
+
+            // if key was expanded
+            if(CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key)) {
+                if(vk->isBoundSet() && i.mappedKey()) {
+                    CSwordVerseKey pk(*vk);
+                    for(int i = vk->getLowerBound().getIndex() + 1; i <= vk->getUpperBound().getIndex(); ++i) {
+                        key_renderedText += " ";
+                        pk.setIndex(i);
+                        key_renderedText += pk.renderedText();
+                    }
+                }
+            }
+        }
+        else
+            key_renderedText = "<span class=\"inactive\">&#8212;</span>";
 
         if (m_filterOptions.headings) {
 
@@ -207,6 +236,9 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
             renderedText.append("\t\t<td class=\"")
             .append(i.settings().highlight ? "currententry" : "entry")
             .append("\" ")
+            .append("width=\"")
+            .append(QString::number(100 / modules.count()))
+            .append("%\" ")
             .append(langAttr)
             .append(" dir=\"")
             .append(isRTL ? "rtl" : "ltr")

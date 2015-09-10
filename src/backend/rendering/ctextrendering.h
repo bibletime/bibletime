@@ -119,6 +119,14 @@ class CTextRendering {
                     return &m_childList;
                 }
 
+                inline void setMappedKey(CSwordKey *key) const {
+                    m_mappedKey = key;
+                }
+
+                inline CSwordKey * mappedKey() const {
+                    return m_mappedKey;
+                }
+
             protected: /* Methods: */
 
                 KeyTreeItem();
@@ -128,6 +136,7 @@ class CTextRendering {
                 Settings m_settings;
                 BtConstModuleList m_moduleList;
                 QString m_key;
+                mutable CSwordKey *m_mappedKey;
                 mutable KeyTree m_childList;
 
                 QString m_stopKey;
