@@ -674,21 +674,19 @@ void CBookmarkIndex::saveBookmarks() {
 }
 
 void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event) {
-
-    // Restart the mag timer if we have moved to another item and shift was not pressed.
-    QModelIndex itemUnderPointer = indexAt(event->pos());
-    if (itemUnderPointer.isValid() && (itemUnderPointer != m_previousEventItem) ) {
-        if ( !(event->modifiers() & Qt::ShiftModifier)) {
-            m_magTimer.start(); // see the ctor for the timer properties
-        }
-    }
+    /* Restart the mag timer if we have moved to another item and shift was not
+       pressed: */
+    QModelIndex const itemUnderPointer(indexAt(event->pos()));
+    if (itemUnderPointer.isValid()
+        && (itemUnderPointer != m_previousEventItem)
+        && !(event->modifiers() & Qt::ShiftModifier))
+        m_magTimer.start();
     m_previousEventItem = itemUnderPointer;
 
-    // Clear the extra item text unless we are on top of it
-    if ( (itemUnderPointer != m_extraItem) && !m_extraItem.data().toString().isNull()) {
-        /// \ todo m_extraItem->setText(0, QString::null);
+    // Clear the extra item text unless we are on top of it:
+    if ((itemUnderPointer != m_extraItem)
+        && !m_extraItem.data().toString().isNull())
         model()->setData(m_extraItem, QString());
-    }
 
     QTreeView::mouseMoveEvent(event);
 }
