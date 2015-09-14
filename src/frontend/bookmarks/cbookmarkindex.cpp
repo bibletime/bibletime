@@ -659,9 +659,9 @@ a BibleTime mimedata object. It can be dragged and dropped to a text view or som
 The internal drag is handled differently, it doesn't use the mimedata (see dropEvent()).
 */
 void CBookmarkIndex::startDrag(Qt::DropActions) {
-
-    QMimeData* mData = dragObject(); // create the data which can be used in other widgets
-    QDrag* drag = new QDrag(this);
+    // Create the data which can be used in other widgets:
+    QMimeData * const mData = dragObject();
+    QDrag * const drag = new QDrag(this);
     drag->setMimeData(mData);
     drag->exec();
 
