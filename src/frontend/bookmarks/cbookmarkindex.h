@@ -165,12 +165,6 @@ private:
                          char const * slot,
                          QObject * parent);
 
-    /**
-    * Returns true if more than one entry is supported by this action type.
-    * Returns false for actions which support only one entry.
-    */
-    bool isMultiAction(const MenuAction type) const;
-
     /** A helper function for d'n'd which creates a new bookmark item when drop happens. */
     void createBookmarkFromDrop(QDropEvent * event, const QModelIndex & parentItem, int indexInParent);
 

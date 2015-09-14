@@ -524,7 +524,8 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
         //enable the menu items depending on the types of the selected items.
         for (int index = ActionBegin; index <= ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
-            bool enable = isMultiAction(actionType);
+            bool enable = (actionType == PrintBookmarks)
+                          || (actionType == DeleteEntries);
             Q_FOREACH(QModelIndex const & i, items)
                 if (!enableAction(i, actionType))
                     enable = false;
@@ -714,36 +715,6 @@ void CBookmarkIndex::startDrag(Qt::DropActions) {
     drag->exec();
 
     viewport()->update(); // because of the arrow
-}
-
-/* Returns true if more than one entry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
-bool CBookmarkIndex::isMultiAction(const MenuAction type) const {
-    switch (type) {
-        case NewFolder:
-            return false;
-        case ChangeFolder:
-            return false;
-
-        case EditBookmark:
-            return false;
-        case SortFolderBookmarks:
-            return false;
-        case SortAllBookmarks:
-            return false;
-        case ImportBookmarks:
-            return false;
-        case ExportBookmarks:
-            return false;
-        case PrintBookmarks:
-            return true;
-
-        case DeleteEntries:
-            return true;
-        default:
-            break;
-    }
-
-    return false;
 }
 
 /* Saves the bookmarks to the default bookmarks file. */
