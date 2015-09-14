@@ -500,8 +500,10 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
     } else { // Enable actions depending on the the selected items:
         for (int index = ActionBegin; index < ActionEnd; ++index)
             m_actions[index]->setEnabled(
-                    ((index == PrintBookmarks) || (index == DeleteEntries))
-                    && enableAction(items, static_cast<MenuAction>(index)));
+                    (index == DeleteEntries)
+                    || ((index == PrintBookmarks)
+                        && enableAction(items,
+                                        static_cast<MenuAction>(index))));
     }
 
     m_popup->exec(mapToGlobal(p));
