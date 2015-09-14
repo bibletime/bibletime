@@ -475,12 +475,10 @@ void CBookmarkIndex::initTree() {
 }
 
 void CBookmarkIndex::slotItemEntered(const QModelIndex & index) {
-    if (index == m_extraItem) {
-        model()->setData(m_extraItem, tr("Drag references from text views to this view"));
-    }
-    else {
-        model()->setData(m_extraItem, QString());
-    }
+    model()->setData(m_extraItem,
+                     index == m_extraItem
+                     ? tr("Drag references from text views to this view")
+                     : QString::null);
 }
 
 /** Shows the context menu at the given position. */
