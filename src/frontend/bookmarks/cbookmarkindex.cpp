@@ -524,39 +524,30 @@ void CBookmarkIndex::createNewFolder() {
 
 /** Opens a dialog to change the current folder. */
 void CBookmarkIndex::changeFolder() {
-    if (m_bookmarksModel->isFolder(currentIndex())) {
-        edit(currentIndex());
-    }
-    else
-        Q_ASSERT(false);
+    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    edit(currentIndex());
 }
 
 /** Edits the current bookmark. */
 void CBookmarkIndex::editBookmark() {
     QModelIndex index(currentIndex());
-    if (m_bookmarksModel->isBookmark(index)) {
-        CSwordModuleInfo * module(m_bookmarksModel->module(index));
-        BtEditBookmarkDialog d(QString::fromLatin1("%1 (%2)").arg(m_bookmarksModel->key(index)).arg(
-                                   module ? module->name() : QObject::tr("unknown")),
-                               index.data().toString(),
-                               m_bookmarksModel->description(index), this);
+    Q_ASSERT(m_bookmarksModel->isBookmark(index));
+    CSwordModuleInfo * module(m_bookmarksModel->module(index));
+    BtEditBookmarkDialog d(QString::fromLatin1("%1 (%2)").arg(m_bookmarksModel->key(index)).arg(
+                               module ? module->name() : QObject::tr("unknown")),
+                           index.data().toString(),
+                           m_bookmarksModel->description(index), this);
 
-        if (d.exec() == QDialog::Accepted) {
-            m_bookmarksModel->setData(index, d.titleText());
-            m_bookmarksModel->setDescription(index, d.descriptionText());
-        }
+    if (d.exec() == QDialog::Accepted) {
+        m_bookmarksModel->setData(index, d.titleText());
+        m_bookmarksModel->setDescription(index, d.descriptionText());
     }
-    else
-        Q_ASSERT(false);
 }
 
 /** Sorts the current folder bookmarks. */
 void CBookmarkIndex::sortFolderBookmarks() {
-    if (m_bookmarksModel->isFolder(currentIndex())) {
-        m_bookmarksModel->sortItems(currentIndex());
-    }
-    else
-        Q_ASSERT(false);
+    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    m_bookmarksModel->sortItems(currentIndex());
 }
 
 /** Sorts all bookmarks. */
@@ -571,29 +562,23 @@ void CBookmarkIndex::sortAllBookmarks() {
 
 /** Exports the bookmarks being in the selected folder. */
 void CBookmarkIndex::exportBookmarks() {
-    if(m_bookmarksModel->isFolder(currentIndex())) {
-        QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
-        QString fileName  = QFileDialog::getSaveFileName(0, QObject::tr("Export Bookmarks"), "", filter);
+    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
+    QString fileName  = QFileDialog::getSaveFileName(0, QObject::tr("Export Bookmarks"), "", filter);
 
-        if (!fileName.isEmpty()) {
-            m_bookmarksModel->save(fileName, currentIndex());
-        };
-    }
-    else
-        Q_ASSERT(false);
+    if (!fileName.isEmpty()) {
+        m_bookmarksModel->save(fileName, currentIndex());
+    };
 }
 
 /** Import bookmarks from a file and add them to the selected folder. */
 void CBookmarkIndex::importBookmarks() {
-    if(m_bookmarksModel->isFolder(currentIndex())) {
-        QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
-        QString fileName = QFileDialog::getOpenFileName(0, QObject::tr("Import bookmarks"), "", filter);
-        if (!fileName.isEmpty()) {
-            m_bookmarksModel->load(fileName, currentIndex());
-        }
+    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
+    QString fileName = QFileDialog::getOpenFileName(0, QObject::tr("Import bookmarks"), "", filter);
+    if (!fileName.isEmpty()) {
+        m_bookmarksModel->load(fileName, currentIndex());
     }
-    else
-        Q_ASSERT(false);
 }
 
 /** Prints the selected bookmarks. */
