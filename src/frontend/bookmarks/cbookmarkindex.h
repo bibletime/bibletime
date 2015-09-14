@@ -170,6 +170,8 @@ private:
 
     /** \todo document */
     bool enableAction(const QModelIndex & index, MenuAction type) const;
+    bool enableAction(QModelIndexList const & indeces,
+                      MenuAction const type) const;
 
     QAction * m_actions[ActionCount];
 

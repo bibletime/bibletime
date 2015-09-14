@@ -454,6 +454,15 @@ bool CBookmarkIndex::enableAction(const QModelIndex &index, CBookmarkIndex::Menu
     }
 }
 
+bool CBookmarkIndex::enableAction(QModelIndexList const & indeces,
+                                  MenuAction const type) const
+{
+    Q_FOREACH(QModelIndex const & i, indeces)
+        if (!enableAction(i, type))
+            return false;
+    return true;
+}
+
 
 /** Load the tree from file */
 void CBookmarkIndex::initTree() {
@@ -476,68 +485,27 @@ void CBookmarkIndex::slotItemEntered(const QModelIndex & index) {
 
 /** Shows the context menu at the given position. */
 void CBookmarkIndex::contextMenu(const QPoint& p) {
-    //setup menu entries depending on current selection
-    QModelIndex i = indexAt(p);
-    QModelIndexList items = selectedIndexes();
-    //The item which was clicked may not be selected
-    if (i.isValid() && !items.contains(i) && i != m_extraItem)
-        items.append(i);
-
-    if (items.isEmpty()) {
-        //special handling for no selection
-        MenuAction actionType;
-        for (int index = ActionBegin; index < ActionEnd; ++index) {
-            actionType = static_cast<MenuAction>(index);
-            if (QAction * const a = m_actions[actionType]) {
-                switch (index) {
-                        //case ExportBookmarks:
-                        //case ImportBookmarks:
-                    case NewFolder:
-            case SortAllBookmarks:
-                        //case PrintBookmarks:
-                        a->setEnabled(true);
-                        break;
-                    default:
-                        a->setEnabled(false);
-                }
-            }
-        }
-    }
-    else if (items.count() == 1) {
-        //special handling for one selected item
-
-        MenuAction actionType;
-        for (int index = ActionBegin; index < ActionEnd; ++index) {
-            actionType = static_cast<MenuAction>(index);
-            if (QAction * const a = m_actions[actionType])
-                a->setEnabled( enableAction(items.at(0), actionType) );
-        }
-    }
-    else {
-        //first disable all actions
-        MenuAction actionType;
-        for (int index = ActionBegin; index < ActionEnd; ++index) {
-            actionType = static_cast<MenuAction>(index);
-            if (QAction* a = m_actions[actionType])
-                a->setEnabled(false);
-        }
-        //enable the menu items depending on the types of the selected items.
-        for (int index = ActionBegin; index < ActionEnd; ++index) {
-            actionType = static_cast<MenuAction>(index);
-            bool enable = (actionType == PrintBookmarks)
-                          || (actionType == DeleteEntries);
-            Q_FOREACH(QModelIndex const & i, items)
-                if (!enableAction(i, actionType))
-                    enable = false;
-            if (enable) {
-                QAction * const a = m_actions[actionType];
-                if (i.isValid() && a)
-                    a->setEnabled(enable);
-            }
-        }
+    // Enable actions based on the selected items (if any):
+    QModelIndex const i(indexAt(p));
+    QModelIndexList const items(selectedIndexes());
+    if (items.isEmpty()) { // Special handling for no selection:
+        for (int index = ActionBegin; index < ActionEnd; ++index)
+            m_actions[index]->setEnabled((index == NewFolder)
+                                         || (index == SortAllBookmarks));
+    } else if (items.count() == 1) { // Special handling for one selected item:
+        for (int index = ActionBegin; index < ActionEnd; ++index)
+            m_actions[index]->setEnabled(
+                enableAction(items.at(0), static_cast<MenuAction>(index)));
+    } else if (!i.isValid()) { // Disable all actions for invalid index:
+        for (int index = ActionBegin; index < ActionEnd; ++index)
+            m_actions[index]->setEnabled(false);
+    } else { // Enable actions depending on the the selected items:
+        for (int index = ActionBegin; index < ActionEnd; ++index)
+            m_actions[index]->setEnabled(
+                    ((index == PrintBookmarks) || (index == DeleteEntries))
+                    && enableAction(items, static_cast<MenuAction>(index)));
     }
 
-    //finally, open the popup
     m_popup->exec(mapToGlobal(p));
 }
 
