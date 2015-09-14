@@ -589,7 +589,7 @@ void CBookmarkIndex::printBookmarks() {
     Printing::CPrinter::KeyTreeItem::Settings settings;
     settings.keyRenderingFace = Printing::CPrinter::KeyTreeItem::Settings::CompleteShort;
 
-    QList<QModelIndex> items;
+    QModelIndexList items;
 
     if (m_bookmarksModel->isFolder(currentIndex())) {
         for(int i = 0; i < model()->rowCount(currentIndex()); ++i)
