@@ -88,36 +88,36 @@ void CBookmarkIndex::initView() {
     m_popup = new QMenu(viewport());
     m_popup->setTitle(tr("Bookmarks"));
 
-    m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon(), 0, this, SLOT(createNewFolder()), this);
-    m_actions.changeFolder = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon(), 0, this, SLOT(changeFolder()), this);
+    m_actions[NewFolder] = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon(), 0, this, SLOT(createNewFolder()), this);
+    m_actions[ChangeFolder] = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon(), 0, this, SLOT(changeFolder()), this);
 
-    m_actions.editBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::editBookmark::icon(), 0, this, SLOT(editBookmark()), this);
+    m_actions[EditBookmark] = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::editBookmark::icon(), 0, this, SLOT(editBookmark()), this);
     /// \todo Add icons for sorting bookmarks
-    m_actions.sortFolderBookmarks = newQAction(tr("Sort folder bookmarks..."), CResMgr::mainIndex::sortFolderBookmarks::icon(), 0, this, SLOT(sortFolderBookmarks()), this);
-    m_actions.sortAllBookmarks = newQAction(tr("Sort all bookmarks..."), CResMgr::mainIndex::sortAllBookmarks::icon(), 0, this, SLOT(sortAllBookmarks()), this);
-    m_actions.importBookmarks = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon(), 0, this, SLOT(importBookmarks()), this);
-    m_actions.exportBookmarks = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon(), 0, this, SLOT(exportBookmarks()), this);
-    m_actions.printBookmarks = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon(), 0, this, SLOT(printBookmarks()), this);
+    m_actions[SortFolderBookmarks] = newQAction(tr("Sort folder bookmarks..."), CResMgr::mainIndex::sortFolderBookmarks::icon(), 0, this, SLOT(sortFolderBookmarks()), this);
+    m_actions[SortAllBookmarks] = newQAction(tr("Sort all bookmarks..."), CResMgr::mainIndex::sortAllBookmarks::icon(), 0, this, SLOT(sortAllBookmarks()), this);
+    m_actions[ImportBookmarks] = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon(), 0, this, SLOT(importBookmarks()), this);
+    m_actions[ExportBookmarks] = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon(), 0, this, SLOT(exportBookmarks()), this);
+    m_actions[PrintBookmarks] = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon(), 0, this, SLOT(printBookmarks()), this);
 
-    m_actions.deleteEntries = newQAction(tr("Remove selected items..."), CResMgr::mainIndex::deleteItems::icon(), 0, this, SLOT(deleteEntries()), this);
+    m_actions[DeleteEntries] = newQAction(tr("Remove selected items..."), CResMgr::mainIndex::deleteItems::icon(), 0, this, SLOT(deleteEntries()), this);
 
 
     //fill the popup menu itself
-    m_popup->addAction(m_actions.newFolder);
-    m_popup->addAction(m_actions.changeFolder);
+    m_popup->addAction(m_actions[NewFolder]);
+    m_popup->addAction(m_actions[ChangeFolder]);
     QAction* separator = new QAction(this);
     separator->setSeparator(true);
     m_popup->addAction(separator);
-    m_popup->addAction(m_actions.editBookmark);
-    m_popup->addAction(m_actions.sortFolderBookmarks);
-    m_popup->addAction(m_actions.sortAllBookmarks);
-    m_popup->addAction(m_actions.importBookmarks);
-    m_popup->addAction(m_actions.exportBookmarks);
-    m_popup->addAction(m_actions.printBookmarks);
+    m_popup->addAction(m_actions[EditBookmark]);
+    m_popup->addAction(m_actions[SortFolderBookmarks]);
+    m_popup->addAction(m_actions[SortAllBookmarks]);
+    m_popup->addAction(m_actions[ImportBookmarks]);
+    m_popup->addAction(m_actions[ExportBookmarks]);
+    m_popup->addAction(m_actions[PrintBookmarks]);
     separator = new QAction(this);
     separator->setSeparator(true);
     m_popup->addAction(separator);
-    m_popup->addAction(m_actions.deleteEntries);
+    m_popup->addAction(m_actions[DeleteEntries]);
 }
 
 /** Convenience function for creating a new QAction.
@@ -474,36 +474,6 @@ void CBookmarkIndex::slotItemEntered(const QModelIndex & index) {
     }
 }
 
-
-/** Returns the correct QAction object for the given type of action. */
-QAction* CBookmarkIndex::action(MenuAction type) const {
-    switch (type) {
-        case NewFolder:
-            return m_actions.newFolder;
-        case ChangeFolder:
-            return m_actions.changeFolder;
-
-        case EditBookmark:
-            return m_actions.editBookmark;
-        case SortFolderBookmarks:
-            return m_actions.sortFolderBookmarks;
-        case SortAllBookmarks:
-            return m_actions.sortAllBookmarks;
-        case ImportBookmarks:
-            return m_actions.importBookmarks;
-        case ExportBookmarks:
-            return m_actions.exportBookmarks;
-        case PrintBookmarks:
-            return m_actions.printBookmarks;
-
-        case DeleteEntries:
-            return m_actions.deleteEntries;
-
-        default:
-            return 0;
-    }
-}
-
 /** Shows the context menu at the given position. */
 void CBookmarkIndex::contextMenu(const QPoint& p) {
     //setup menu entries depending on current selection
@@ -518,7 +488,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
         MenuAction actionType;
         for (int index = ActionBegin; index <= ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
-            if (QAction* a = action(actionType)) {
+            if (QAction * const a = m_actions[actionType]) {
                 switch (index) {
                         //case ExportBookmarks:
                         //case ImportBookmarks:
@@ -539,7 +509,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
         MenuAction actionType;
         for (int index = ActionBegin; index <= ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
-            if (QAction* a = action(actionType))
+            if (QAction * const a = m_actions[actionType])
                 a->setEnabled( enableAction(items.at(0), actionType) );
         }
     }
@@ -548,7 +518,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
         MenuAction actionType;
         for (int index = ActionBegin; index <= ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
-            if (QAction* a = action(actionType))
+            if (QAction* a = m_actions[actionType])
                 a->setEnabled(false);
         }
         //enable the menu items depending on the types of the selected items.
@@ -559,7 +529,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
                 if (!enableAction(i, actionType))
                     enable = false;
             if (enable) {
-                QAction* a = action(actionType);
+                QAction * const a = m_actions[actionType];
                 if (i.isValid() && a)
                     a->setEnabled(enable);
             }
@@ -769,6 +739,8 @@ bool CBookmarkIndex::isMultiAction(const MenuAction type) const {
 
         case DeleteEntries:
             return true;
+        default:
+            break;
     }
 
     return false;

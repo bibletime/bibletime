@@ -51,6 +51,7 @@ public: /* Types: */
 
         DeleteEntries,
 
+        ActionCount,
         ActionBegin = NewFolder,
         ActionEnd = DeleteEntries
     };
@@ -97,9 +98,6 @@ protected:
     virtual void dragMoveEvent( QDragMoveEvent * event );
     virtual void dropEvent( QDropEvent * event );
     virtual void dragLeaveEvent( QDragLeaveEvent * event );
-
-    /** Returns the correct action object for the given type of action. */
-    QAction * action(MenuAction type) const;
 
     /** Reimplementation from QAbstractItemView. Takes care of movable items. */
     virtual void startDrag(Qt::DropActions supportedActions);
@@ -179,19 +177,7 @@ private:
     /** \todo document */
     bool enableAction(const QModelIndex & index, MenuAction type) const;
 
-    struct Actions {
-        QAction * newFolder;
-        QAction * changeFolder;
-
-        QAction * editBookmark;
-        QAction * sortFolderBookmarks;
-        QAction * sortAllBookmarks;
-        QAction * importBookmarks;
-        QAction * exportBookmarks;
-        QAction * printBookmarks;
-
-        QAction * deleteEntries;
-    } m_actions;
+    QAction * m_actions[ActionCount];
 
     QMenu * m_popup;
     QTimer m_magTimer;
