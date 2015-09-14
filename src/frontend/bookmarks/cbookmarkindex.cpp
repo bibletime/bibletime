@@ -433,17 +433,25 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, const QModelIndex
 
 bool CBookmarkIndex::enableAction(const QModelIndex &index, CBookmarkIndex::MenuAction type) const
 {
-    if(m_bookmarksModel->isFolder(index)) {
-        if (type == ChangeFolder || type == NewFolder || type == DeleteEntries || type == ImportBookmarks
-                || type == SortFolderBookmarks || type == ExportBookmarks || type == ImportBookmarks
-                || ((type == PrintBookmarks) && m_bookmarksModel->rowCount(index)))
+    switch (type) {
+        case NewFolder:
+        case ChangeFolder:
+        case SortFolderBookmarks:
+        case ImportBookmarks:
+        case ExportBookmarks:
+            return m_bookmarksModel->isFolder(index);
+        case DeleteEntries:
             return true;
+        case PrintBookmarks:
+            return ((m_bookmarksModel->isFolder(index)
+                     && m_bookmarksModel->rowCount(index))
+                    || (m_bookmarksModel->isBookmark(index)
+                        && m_bookmarksModel->module(index)));
+        case EditBookmark:
+            return m_bookmarksModel->isBookmark(index);
+        default:
+            return false;
     }
-    else if(m_bookmarksModel->isBookmark(index)) {
-        if (type == EditBookmark || (m_bookmarksModel->module(index) && (type == PrintBookmarks)) || type == DeleteEntries)
-            return true;
-    }
-    return false;
 }
 
 
