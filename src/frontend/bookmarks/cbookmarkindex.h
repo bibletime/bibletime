@@ -143,8 +143,11 @@ protected slots:
     /** Import bookmarks from a file and add them to the selected folder. */
     void importBookmarks();
 
+    /** Deletes the selected entries after user confirmation. */
+    void confirmDeleteEntries();
+
     /** Deletes the selected entries. */
-    void deleteEntries(bool confirm = true);
+    void deleteEntries();
 
     /** Prints the selected bookmarks. */
     void printBookmarks();

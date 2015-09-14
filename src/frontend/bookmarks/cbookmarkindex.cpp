@@ -99,7 +99,7 @@ void CBookmarkIndex::initView() {
     m_actions[ExportBookmarks] = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon(), 0, this, SLOT(exportBookmarks()), this);
     m_actions[PrintBookmarks] = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon(), 0, this, SLOT(printBookmarks()), this);
 
-    m_actions[DeleteEntries] = newQAction(tr("Remove selected items..."), CResMgr::mainIndex::deleteItems::icon(), 0, this, SLOT(deleteEntries()), this);
+    m_actions[DeleteEntries] = newQAction(tr("Remove selected items..."), CResMgr::mainIndex::deleteItems::icon(), 0, this, SLOT(confirmDeleteEntries()), this);
 
 
     //fill the popup menu itself
@@ -393,7 +393,7 @@ void CBookmarkIndex::dropEvent( QDropEvent* event ) {
         }
         else if (dropAction == move) {
             m_bookmarksModel->copyItems(indexUnderParent, parentIndex, newList);
-            deleteEntries(false);
+            deleteEntries();
         }
         else  {
             QObject::disconnect(this, SIGNAL(collapsed(const QModelIndex &)),
@@ -619,29 +619,20 @@ void CBookmarkIndex::printBookmarks() {
     printer->printKeyTree(tree);
 }
 
-/** Deletes the selected entries. */
-void CBookmarkIndex::deleteEntries(bool confirm) {
-    if (confirm) {
-        if (!selectedIndexes().count()) {            
-            if (m_bookmarksModel->isBookmark(currentIndex())) {
-                selectionModel()->select(currentIndex(), QItemSelectionModel::Select);
-            }
-            else {
-                return;
-            }
-        }
+void CBookmarkIndex::confirmDeleteEntries() {
+    if (message::showQuestion(
+            this,
+            tr("Delete Items"),
+            tr("Do you really want to delete the selected items and folders?"),
+            QMessageBox::Yes | QMessageBox::No,
+            QMessageBox::No) == QMessageBox::Yes)
+        deleteEntries();
+}
 
-        if (message::showQuestion(this, tr("Delete Items"),
-                               tr("Do you really want to delete the selected items and child-items?"),
-                               QMessageBox::Yes | QMessageBox::No, QMessageBox::No )
-                != QMessageBox::Yes) {
-            return;
-        }
-    }
-
-    // Need to use QPersistentModelIndex because after removeRows QModelIndex
-    // will be invalidated. Need to delete per index because selected indexes
-    // would be under different parents.
+void CBookmarkIndex::deleteEntries() {
+    /* We need to use QPersistentModelIndex because after removeRows QModelIndex
+       will be invalidated. Need to delete per index because selected indexes
+       might be under different parents. */
     QList<QPersistentModelIndex> list;
     Q_FOREACH(QModelIndex const & i, selectedIndexes())
         list.append(i);
