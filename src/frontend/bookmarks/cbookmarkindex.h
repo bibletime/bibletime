@@ -34,6 +34,7 @@ class QPaintEvent;
 * \author The BibleTime team
 */
 class CBookmarkIndex : public QTreeView {
+
     Q_OBJECT
 
 public: /* Types: */
@@ -73,7 +74,7 @@ signals:
     /**
     * Is emitted when a module should be opened,
     */
-    void createReadDisplayWindow( QList<CSwordModuleInfo *>, const QString & );
+    void createReadDisplayWindow(QList<CSwordModuleInfo *>, QString const &);
 
 
 protected:
@@ -94,30 +95,28 @@ protected:
     * D'n'd methods are reimplementations from QTreeWidget or its ancestors.
     * In these we handle creating, moving and copying bookmarks with d'n'd.
     */
-    virtual void dragEnterEvent( QDragEnterEvent * event );
-    virtual void dragMoveEvent( QDragMoveEvent * event );
-    virtual void dropEvent( QDropEvent * event );
-    virtual void dragLeaveEvent( QDragLeaveEvent * event );
+    virtual void dragEnterEvent(QDragEnterEvent * event);
+    virtual void dragMoveEvent(QDragMoveEvent * event);
+    virtual void dropEvent(QDropEvent * event);
+    virtual void dragLeaveEvent(QDragLeaveEvent * event);
 
     /** Reimplementation from QAbstractItemView. Takes care of movable items. */
     virtual void startDrag(Qt::DropActions supportedActions);
 
     /** Handle mouse moving (mag updates) */
-    virtual void mouseMoveEvent(QMouseEvent* event);
+    virtual void mouseMoveEvent(QMouseEvent * event);
 
 
 protected slots:
 
     /** Prevents annoying folder collapsing while dropping. */
-    void expandAutoCollapsedItem(const QModelIndex & index) {
-        expand(index);
-    }
+    void expandAutoCollapsedItem(QModelIndex const & index) { expand(index); }
 
     /** Is called when an item was clicked or activated. */
-    void slotExecuted( const QModelIndex & index );
+    void slotExecuted(QModelIndex const & index);
 
     /** Shows the context menu at the given position. */
-    void contextMenu(const QPoint&);
+    void contextMenu(QPoint const & p);
 
     /** Adds a new subfolder to the current item. */
     void createNewFolder();
@@ -138,7 +137,7 @@ protected slots:
     void sortAllBookmarks();
 
     /** Helps with the extra item. */
-    void slotItemEntered(const QModelIndex & index);
+    void slotItemEntered(QModelIndex const & index);
 
     /** Import bookmarks from a file and add them to the selected folder. */
     void importBookmarks();
@@ -155,7 +154,7 @@ protected slots:
     /** Slot for the mag update timer. */
     void magTimeout();
 
-private:
+private: /* Methods: */
 
     /** Initializes the view. */
     void initView();
@@ -168,13 +167,18 @@ private:
                          char const * slot,
                          QObject * parent);
 
-    /** A helper function for d'n'd which creates a new bookmark item when drop happens. */
-    void createBookmarkFromDrop(QDropEvent * event, const QModelIndex & parentItem, int indexInParent);
+    /** A helper function for d'n'd which creates a new bookmark item when drop
+       happens. */
+    void createBookmarkFromDrop(QDropEvent * event,
+                                QModelIndex const & parentItem,
+                                int indexInParent);
 
     /** \todo document */
-    bool enableAction(const QModelIndex & index, MenuAction type) const;
+    bool enableAction(QModelIndex const & index, MenuAction type) const;
     bool enableAction(QModelIndexList const & indeces,
                       MenuAction const type) const;
+
+private: /* Fields: */
 
     QAction * m_actions[ActionCount];
 
