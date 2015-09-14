@@ -175,8 +175,8 @@ private: /* Methods: */
 
     /** \todo document */
     bool enableAction(QModelIndex const & index, MenuAction type) const;
-    bool enableAction(QModelIndexList const & indeces,
-                      MenuAction const type) const;
+
+    bool hasBookmarksRecursively(QModelIndexList selected) const;
 
 private: /* Fields: */
 

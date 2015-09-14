@@ -443,10 +443,7 @@ bool CBookmarkIndex::enableAction(const QModelIndex &index, CBookmarkIndex::Menu
         case DeleteEntries:
             return true;
         case PrintBookmarks:
-            return ((m_bookmarksModel->isFolder(index)
-                     && m_bookmarksModel->rowCount(index))
-                    || (m_bookmarksModel->isBookmark(index)
-                        && m_bookmarksModel->module(index)));
+            return hasBookmarksRecursively(QModelIndexList() << index);
         case EditBookmark:
             return m_bookmarksModel->isBookmark(index);
         default:
@@ -454,13 +451,20 @@ bool CBookmarkIndex::enableAction(const QModelIndex &index, CBookmarkIndex::Menu
     }
 }
 
-bool CBookmarkIndex::enableAction(QModelIndexList const & indeces,
-                                  MenuAction const type) const
+bool CBookmarkIndex::hasBookmarksRecursively(QModelIndexList items)
+        const
 {
-    Q_FOREACH(QModelIndex const & i, indeces)
-        if (!enableAction(i, type))
-            return false;
-    return true;
+    while (!items.empty()) {
+        QModelIndex index(items.takeFirst());
+        if (m_bookmarksModel->isBookmark(index))
+            return true;
+        if (m_bookmarksModel->isFolder(index)) {
+            int const numChildren = m_bookmarksModel->rowCount(index);
+            for (int i = 0; i < numChildren; i++)
+                items.append(index.child(i, 0));
+        }
+    }
+    return false;
 }
 
 
@@ -502,8 +506,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
             m_actions[index]->setEnabled(
                     (index == DeleteEntries)
                     || ((index == PrintBookmarks)
-                        && enableAction(items,
-                                        static_cast<MenuAction>(index))));
+                        && hasBookmarksRecursively(items)));
     }
 
     m_popup->exec(mapToGlobal(p));
@@ -585,40 +588,34 @@ void CBookmarkIndex::importBookmarks() {
 
 /** Prints the selected bookmarks. */
 void CBookmarkIndex::printBookmarks() {
+    Q_ASSERT(!hasBookmarksRecursively(selectedIndexes()));
     Printing::CPrinter::KeyTree tree;
-    Printing::CPrinter::KeyTreeItem::Settings settings;
-    settings.keyRenderingFace = Printing::CPrinter::KeyTreeItem::Settings::CompleteShort;
-
-    QModelIndexList items;
-
-    if (m_bookmarksModel->isFolder(currentIndex())) {
-        for(int i = 0; i < model()->rowCount(currentIndex()); ++i)
-            items.append(model()->index(i , 0, currentIndex()));
-    }
-    else {
-        items = selectedIndexes();
-    }
-
-    //create a tree of keytreeitems using the bookmark hierarchy.
-    QListIterator<QModelIndex> it(items);
-    while (it.hasNext()) {
-        QModelIndex item(it.next());
-        if (item.isValid() && m_bookmarksModel->isBookmark(item)) {
-            qDebug() << "printBookmarks: add to list" << m_bookmarksModel->key(item);
-            tree.append( new Printing::CPrinter::KeyTreeItem( m_bookmarksModel->key(item),
-                                                              m_bookmarksModel->module(item), settings ) );
+    {
+        Printing::CPrinter::KeyTreeItem::Settings const settings(
+                false,
+                Printing::CPrinter::KeyTreeItem::Settings::CompleteShort);
+        QModelIndexList items(selectedIndexes());
+        while (!items.empty()) {
+            QModelIndex const index(items.takeFirst());
+            if (m_bookmarksModel->isBookmark(index)) {
+                typedef Printing::CPrinter::KeyTreeItem KTI;
+                tree.append(new KTI(m_bookmarksModel->key(index),
+                                m_bookmarksModel->module(index),
+                                settings));
+            } else if (m_bookmarksModel->isFolder(index)) {
+                int const numChildren = m_bookmarksModel->rowCount(index);
+                for (int i = 0; i < numChildren; i++)
+                    items.append(index.child(i, 0));
+            }
         }
     }
+    Q_ASSERT(!tree.isEmpty());
 
-    if (items.isEmpty()) {
-        qWarning("Tried to print empty bookmark list.");
-        return;
-    }
-    QScopedPointer<Printing::CPrinter> printer(
-            new Printing::CPrinter(this,
-                                   btConfig().getDisplayOptions(),
-                                   btConfig().getFilterOptions()));
-    printer->printKeyTree(tree);
+    QScopedPointer<Printing::CPrinter>(
+            new Printing::CPrinter(
+                    this,
+                    btConfig().getDisplayOptions(),
+                    btConfig().getFilterOptions()))->printKeyTree(tree);
 }
 
 void CBookmarkIndex::confirmDeleteEntries() {
