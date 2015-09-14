@@ -486,7 +486,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
     if (items.isEmpty()) {
         //special handling for no selection
         MenuAction actionType;
-        for (int index = ActionBegin; index <= ActionEnd; ++index) {
+        for (int index = ActionBegin; index < ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
             if (QAction * const a = m_actions[actionType]) {
                 switch (index) {
@@ -507,7 +507,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
         //special handling for one selected item
 
         MenuAction actionType;
-        for (int index = ActionBegin; index <= ActionEnd; ++index) {
+        for (int index = ActionBegin; index < ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
             if (QAction * const a = m_actions[actionType])
                 a->setEnabled( enableAction(items.at(0), actionType) );
@@ -516,13 +516,13 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
     else {
         //first disable all actions
         MenuAction actionType;
-        for (int index = ActionBegin; index <= ActionEnd; ++index) {
+        for (int index = ActionBegin; index < ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
             if (QAction* a = m_actions[actionType])
                 a->setEnabled(false);
         }
         //enable the menu items depending on the types of the selected items.
-        for (int index = ActionBegin; index <= ActionEnd; ++index) {
+        for (int index = ActionBegin; index < ActionEnd; ++index) {
             actionType = static_cast<MenuAction>(index);
             bool enable = (actionType == PrintBookmarks)
                           || (actionType == DeleteEntries);

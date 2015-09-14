@@ -53,7 +53,7 @@ public: /* Types: */
 
         ActionCount,
         ActionBegin = NewFolder,
-        ActionEnd = DeleteEntries
+        ActionEnd = ActionCount
     };
 
 public: /* Methods: */
