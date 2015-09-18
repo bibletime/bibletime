@@ -499,10 +499,12 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
     Q_UNUSED(title);
 
     if (((module.type() == CSwordModuleInfo::Bible) || (module.type() == CSwordModuleInfo::Commentary))) {
-        CSwordVerseKey vk(0);
-        vk.setKey(key);
-        vk.setLocale("en");
-        m_key = vk.key(); //the m_key member is always the english key!
+        /// here we only translate \param key into english
+        sword::VerseKey vk(key.toUtf8().constData(), key.toUtf8().constData(),
+            static_cast<sword::VerseKey *>(module.module()->getKey())->getVersificationSystem());
+        CSwordVerseKey k(&vk, &module);
+        k.setLocale("en");
+        m_key = k.key();
     }
     else {
         m_key = key;
@@ -542,11 +544,12 @@ QString BookmarkItem::key() const {
 
     QString returnKeyName = englishKeyName;
     if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
-        CSwordVerseKey vk(0);
-        vk.setKey(englishKeyName);
-        vk.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
-
-        returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
+        /// here we only translate \param key into current book name language
+        sword::VerseKey vk(englishKeyName.toUtf8().constData(), englishKeyName.toUtf8().constData(),
+            static_cast<sword::VerseKey *>(module()->module()->getKey())->getVersificationSystem());
+        CSwordVerseKey k(&vk, module());
+        k.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
+        returnKeyName = k.key();
     }
 
     return returnKeyName;
