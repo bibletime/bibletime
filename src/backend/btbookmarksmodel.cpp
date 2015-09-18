@@ -232,8 +232,8 @@ public: /* Methods */
     }
     ~BtBookmarksModelPrivate() { delete m_rootItem; }
 
-    QString defaultBookmarksFile() {
-        return QString();
+    inline static QString defaultBookmarksFile() {
+        return util::directory::getUserBaseDir().absolutePath() + "/bookmarks.xml";
     }
 
     BookmarkItemBase * item(const QModelIndex & index) const {
@@ -357,11 +357,10 @@ public: /* Loader */
 
     /** Loads a bookmark XML document from a named file or from the default bookmarks file. */
     QString loadXmlFromFile(QString fileName = QString::null) {
-        namespace DU = util::directory;
 
-        if (fileName.isNull()) {
-            fileName = DU::getUserBaseDir().absolutePath() + "/bookmarks.xml";
-        }
+        if (fileName.isEmpty())
+            fileName = defaultBookmarksFile();
+
         QFile file(fileName);
         if (!file.exists())
             return QString::null;
@@ -734,8 +733,8 @@ bool BtBookmarksModel::save(QString fileName, const QModelIndex & rootItem) {
     QString const serializedTree(
             d->serializeTreeFromRootItem(d->item(rootItem)));
     if (fileName.isEmpty())
-        fileName = util::directory::getUserBaseDir().absolutePath()
-                   + "/bookmarks.xml";
+        fileName = BtBookmarksModelPrivate::defaultBookmarksFile();
+
     util::tool::savePlainFile(fileName,
                               serializedTree,
                               true,
