@@ -625,7 +625,7 @@ QModelIndex BtBookmarksModel::index(int row, int column, const QModelIndex & par
     Q_D(const BtBookmarksModel);
 
     const BookmarkItemBase * i = d->item(parent);
-    if(i->childCount() > row)
+    if(i->childCount() > row && row >= 0)
         return createIndex(row, column, i->child(row));
     return QModelIndex();
 }
@@ -894,10 +894,12 @@ QModelIndex BtBookmarksModel::addBookmark(int const row,
 
     BookmarkFolder * i = dynamic_cast<BookmarkFolder *>(d->item(parent));
     if(i) {
-        beginInsertRows(parent, row, row);
+        int r = row < 0 ? row + rowCount(parent) + 1 : row;
+
+        beginInsertRows(parent, r, r);
 
         BookmarkItem * c = new BookmarkItem(module, key, description, title);
-        i->insertChild(row, c);
+        i->insertChild(r, c);
 
         endInsertRows();
 
