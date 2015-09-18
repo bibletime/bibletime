@@ -755,15 +755,6 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
     BookmarkItemBase * i = d->item(rootItem);
     QList<BookmarkItemBase *> items = d->loadTree(fileName);
 
-    if(items.size() == 0)
-        return false;
-
-    beginInsertRows(rootItem, i->childCount(), i->childCount() + items.size() - 1);
-
-    i->insertChildren(i->childCount(), items);
-
-    endInsertRows();
-
     if(!rootItem.isValid() && fileName.isEmpty()) {
         if(!d->m_defaultModel) {
             connect(&d->m_saveTimer, SIGNAL(timeout()), this, SLOT(save()));
@@ -773,8 +764,15 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
             Q_ASSERT_X(false, "BtBookmarksModel::load" ,
                        "no more than one default bookmarks model is allowed");
     }
-    else
-        d->needSave();
+
+    if(items.size() == 0)
+        return false;
+
+    beginInsertRows(rootItem, i->childCount(), i->childCount() + items.size() - 1);
+
+    i->insertChildren(i->childCount(), items);
+
+    endInsertRows();
 
     return true;
 }
