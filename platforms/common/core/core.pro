@@ -110,30 +110,6 @@ HEADERS += \
     ../../../src/util/tool.h \
 
 
-# Translation
-TRANSLATIONS += \
-    ../../../i18n/messages/mobile_ui_ar.ts \
-    ../../../i18n/messages/mobile_ui_cs.ts \
-    ../../../i18n/messages/mobile_ui_da.ts \
-    ../../../i18n/messages/mobile_ui_de.ts \
-    ../../../i18n/messages/mobile_ui_en_GB.ts \
-    ../../../i18n/messages/mobile_ui_es.ts \
-    ../../../i18n/messages/mobile_ui_et.ts \
-    ../../../i18n/messages/mobile_ui_fi.ts \
-    ../../../i18n/messages/mobile_ui_fr.ts \
-    ../../../i18n/messages/mobile_ui_hu.ts \
-    ../../../i18n/messages/mobile_ui_it.ts \
-    ../../../i18n/messages/mobile_ui_lt.ts \
-    ../../../i18n/messages/mobile_ui_pl.ts \
-    ../../../i18n/messages/mobile_ui_pt_BR.ts \
-    ../../../i18n/messages/mobile_ui_pt.ts \
-    ../../../i18n/messages/mobile_ui_ru.ts \
-    ../../../i18n/messages/mobile_ui_sk.ts \
-    ../../../i18n/messages/mobile_ui.ts \
-    ../../../i18n/messages/mobile_ui_zh_TW.ts \
-    ../../../i18n/messages/mobile_ui_C.ts
-
-
 # Core Platform Section
 
 # iOS Platform
