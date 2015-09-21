@@ -1,20 +1,39 @@
 # Curl is optional package (http://curl.haxx.se/download/curl-7.34.0.tar.gz)
-# make sure variable below points to correct location
+# make sure variable CURL_PATH and CURL_LIB points to correct location
 
 isEmpty(CURL_PATH):CURL_PATH = ../../../../curl-7.34.0
+isEmpty(CURL_LIB):CURL_LIB = $${PWD}/libcurl.a
+
 
 INCLUDEPATH += $${CURL_PATH}/include
 
-#DEFINES += CURLAVAILABLE CURLSFTPAVAILABLE
-
 !isEmpty(BT_VERSION) {
 # Linking to library
+DEFINES += CURLAVAILABLE CURLSFTPAVAILABLE CURL_STATICLIB
+LIBS += $${CURL_LIB}
 }
 else {
 # Building library
+TEMPLATE = lib
+CONFIG += staticlib
+DEFINES += CURL_STATICLIB
+DEFINES += CURL_DISABLE_TFTP
+#DEFINES += CURL_DISABLE_FTP
+DEFINES += CURL_DISABLE_LDAP
+DEFINES += CURL_DISABLE_TELNET
+DEFINES += CURL_DISABLE_DICT
+DEFINES += CURL_DISABLE_FILE
+DEFINES += CURL_DISABLE_POP3
+DEFINES += CURL_DISABLE_IMAP
+DEFINES += CURL_DISABLE_SMTP
+DEFINES += CURL_DISABLE_RTSP
+#DEFINES += CURL_DISABLE_RTMP
+DEFINES += CURL_DISABLE_GOPHER
+
+
 SOURCES += \
     $${CURL_PATH}/lib/easy.c \
-    $${CURL_PATH}/lib/file.c \
+    #$${CURL_PATH}/lib/file.c \
     $${CURL_PATH}/lib/timeval.c \
     $${CURL_PATH}/lib/base64.c \
     $${CURL_PATH}/lib/hostip.c \
@@ -24,16 +43,15 @@ SOURCES += \
     $${CURL_PATH}/lib/http.c \
     $${CURL_PATH}/lib/sendf.c \
     $${CURL_PATH}/lib/ftp.c \
-    $${CURL_PATH}/lib/dict.c \
+    #$${CURL_PATH}/lib/dict.c \
     $${CURL_PATH}/lib/if2ip.c \
     $${CURL_PATH}/lib/speedcheck.c \
-    $${CURL_PATH}/lib/ldap.c \
     $${CURL_PATH}/lib/ssluse.c \
     $${CURL_PATH}/lib/version.c \
     $${CURL_PATH}/lib/getenv.c \
     $${CURL_PATH}/lib/escape.c \
     $${CURL_PATH}/lib/mprintf.c \
-    $${CURL_PATH}/lib/telnet.c \
+    #$${CURL_PATH}/lib/telnet.c \
     $${CURL_PATH}/lib/netrc.c \
     $${CURL_PATH}/lib/getinfo.c \
     $${CURL_PATH}/lib/transfer.c \
@@ -70,7 +88,7 @@ SOURCES += \
     $${CURL_PATH}/lib/select.c \
     $${CURL_PATH}/lib/gtls.c \
     $${CURL_PATH}/lib/sslgen.c \
-    $${CURL_PATH}/lib/tftp.c \
+    #$${CURL_PATH}/lib/tftp.c \
     $${CURL_PATH}/lib/splay.c \
     $${CURL_PATH}/lib/strdup.c \
     $${CURL_PATH}/lib/socks.c \
@@ -84,20 +102,20 @@ SOURCES += \
     $${CURL_PATH}/lib/slist.c \
     $${CURL_PATH}/lib/nonblock.c \
     $${CURL_PATH}/lib/curl_memrchr.c \
-    $${CURL_PATH}/lib/imap.c \
-    $${CURL_PATH}/lib/pop3.c \
-    $${CURL_PATH}/lib/smtp.c \
+    #$${CURL_PATH}/lib/imap.c \
+    #$${CURL_PATH}/lib/pop3.c \
+    #$${CURL_PATH}/lib/smtp.c \
     $${CURL_PATH}/lib/pingpong.c \
-    $${CURL_PATH}/lib/rtsp.c \
+    #$${CURL_PATH}/lib/rtsp.c \
     $${CURL_PATH}/lib/curl_threads.c \
     $${CURL_PATH}/lib/warnless.c \
     $${CURL_PATH}/lib/hmac.c \
     $${CURL_PATH}/lib/polarssl.c \
     $${CURL_PATH}/lib/polarssl_threadlock.c \
     $${CURL_PATH}/lib/curl_rtmp.c \
-    $${CURL_PATH}/lib/openldap.c \
+    #$${CURL_PATH}/lib/openldap.c \
     $${CURL_PATH}/lib/curl_gethostname.c \
-    $${CURL_PATH}/lib/gopher.c \
+    #$${CURL_PATH}/lib/gopher.c \
     $${CURL_PATH}/lib/axtls.c \
     $${CURL_PATH}/lib/idn_win32.c \
     $${CURL_PATH}/lib/http_negotiate_sspi.c \
@@ -127,12 +145,5 @@ SOURCES += \
     $${CURL_PATH}/lib/rawstr.c \
     $${CURL_PATH}/lib/url.c \
 
-COLLISIONS += \
-    rawstr.c
-
-windows {
-foreach(file, COLLISIONS) {
-    system("copy $${CURL_PATH}/lib/$${file} $${PWD}/rawstr.c")
-}
-}
+DESTDIR = $${PWD}
 }
