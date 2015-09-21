@@ -6,7 +6,7 @@
 VERSION = 2.10.0_dev
 CONFIG += clucene svg xml webkit
 
-QMAKE_CXXFLAGS_DEBUG += -Wno-switch -Wno-unused-parameter # useless warning
+debug:DEFINES += BT_DEBUG
 
 INCLUDEPATH += . \
 
@@ -17,7 +17,6 @@ SOURCES += \
     ../../../src/bibletime_init.cpp \
     ../../../src/bibletime_slots.cpp \
     ../../../src/bibletimeapp.cpp \
-    ../../../src/btglobal.cpp \
     ../../../src/main.cpp \
     ../../../src/frontend/btaboutdialog.cpp \
     ../../../src/frontend/btaboutmoduledialog.cpp \
@@ -33,9 +32,6 @@ SOURCES += \
     ../../../src/frontend/cexportmanager.cpp \
     ../../../src/frontend/cmdiarea.cpp \
     ../../../src/frontend/cprinter.cpp \
-    ../../../src/frontend/bookmarks/btbookmarkfolder.cpp \
-    ../../../src/frontend/bookmarks/btbookmarkitem.cpp \
-    ../../../src/frontend/bookmarks/btbookmarkloader.cpp \
     ../../../src/frontend/bookmarks/bteditbookmarkdialog.cpp \
     ../../../src/frontend/bookmarks/cbookmarkindex.cpp \
     ../../../src/frontend/bookshelfmanager/btconfigdialog.cpp \
@@ -137,10 +133,6 @@ HEADERS += \
     ../../../src/frontend/cexportmanager.h \
     ../../../src/frontend/cmdiarea.h \
     ../../../src/frontend/cprinter.h \
-    ../../../src/frontend/bookmarks/btbookmarkfolder.h \
-    ../../../src/frontend/bookmarks/btbookmarkitem.h \
-    ../../../src/frontend/bookmarks/btbookmarkitembase.h \
-    ../../../src/frontend/bookmarks/btbookmarkloader.h \
     ../../../src/frontend/bookmarks/bteditbookmarkdialog.h \
     ../../../src/frontend/bookmarks/cbookmarkindex.h \
     ../../../src/frontend/bookshelfmanager/btconfigdialog.h \
