@@ -209,12 +209,13 @@ SOURCES += $${SWORD_PATH}/src/mgr/ftplibftpt.cpp
 !symbian {
 INCLUDEPATH += $${SWORD_PATH}/include/internal/regex
 
-SOURCES += $${SWORD_PATH}/src/utilfuns/regex.c \
-    $${SWORD_PATH}/src/utilfuns/ftplib.c \
+SOURCES += $${SWORD_PATH}/src/utilfuns/regex.c
+
+!curl:SOURCES += $${SWORD_PATH}/src/utilfuns/ftplib.c
 }
 else {
 # include ftplib from Symbian folder
-SOURCES += ftplib.c
+!curl:SOURCES += ftplib.c
 }
 
 
