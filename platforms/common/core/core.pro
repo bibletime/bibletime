@@ -106,8 +106,7 @@ HEADERS += \
     ../../../src/backend/bookshelfmodel/indexingitem.h \
     ../../../src/backend/keys/cswordtreekey.h \
     ../../../src/backend/filters/btosismorphsegmentation.h \
-    ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h \
-    ../../../src/backend/models/btmoduletextmodel.h
+    ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h
 	
 
 # Translation
