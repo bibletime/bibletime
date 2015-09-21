@@ -170,6 +170,21 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
     $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
 
+# Compressors
+windows|android:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
+
+!contains(DEFINES, EXCLUDEXZ)
+{
+    SOURCES += $${SWORD_PATH}/src/modules/common/xzcomprs.cpp
+    LIBS    += -llzma
+}
+!contains(DEFINES, EXCLUDEBZIP2)
+{
+    SOURCES += $${SWORD_PATH}/src/modules/common/bz2comprs.cpp
+    LIBS    += -lbz2
+}
+
+
 !lessThan(SWORD_VERSION_NUM, 107005000) {
 SOURCES += \
     $${SWORD_PATH}/src/modules/filters/gbflatex.cpp \
