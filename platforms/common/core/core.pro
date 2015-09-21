@@ -56,10 +56,10 @@ SOURCES += \
     ../../../src/backend/filters/btosismorphsegmentation.cpp \
     ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.cpp \
     ../../../src/backend/rendering/cplaintextexportrendering.cpp \
-    ../../../src/backend/models/btmoduletextmodel.cpp \
-    ../../../src/btglobal.cpp
+    ../../../src/btglobal.cpp \
+    ../../../src/backend/btbookmarksmodel.cpp \
 
-	
+
 HEADERS += \
     ../../../src/backend/cswordmodulesearch.h \
     ../../../src/backend/btmoduletreeitem.h \
@@ -109,8 +109,8 @@ HEADERS += \
     ../../../src/backend/bookshelfmodel/indexingitem.h \
     ../../../src/backend/keys/cswordtreekey.h \
     ../../../src/backend/filters/btosismorphsegmentation.h \
-    ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h
-	
+    ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h \
+    ../../../src/backend/btbookmarksmodel.h
 
 # Translation
 TRANSLATIONS += \
