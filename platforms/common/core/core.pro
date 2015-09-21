@@ -143,7 +143,7 @@ mac:CONFIG -= webkit
 
 # Android platform
 android {
-greaterThan(QT_MAJOR_VERSION, 4):CONFIG -= webkit
+!lessThan(QT_MAJOR_VERSION, 5):CONFIG -= webkit
 DEFINES += STDC_HEADERS
 }
 
