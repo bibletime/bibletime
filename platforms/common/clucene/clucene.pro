@@ -1,11 +1,13 @@
 # Clucene from Qt distribution required:
 # 1. download qtttols (https://qt.gitorious.org/qt/qttools/archive-tarball/stable)
 # 2. extract .\src\assistant\3rdparty\clucene folder somewhere or on the same level as BibleTime repository
-# 3. make sure variable below (CLUCENE_PATH) points to correct location, it  would be corrected in main *.pro file
+# 3. make sure variable CLUCENE_PATH points to correct location, it  would be corrected in main *.pro file
+#    or by passing additional argument "CLUCENE_PATH = ..." to qmake
+# This library could not be built separately at moment
 # Symbian: apply platfoms/symbian/btmini/compiler.h.diff to corresponding file
 
 isEmpty(CLUCENE_PATH):CLUCENE_PATH = ../../../../clucene/src
-
+isEmpty(CLUCENE_LIB):CLUCENE_LIB = libclucene.a
 
 DEFINES += _CL_DISABLE_MULTITHREADING LUCENE_DISABLE_MEMTRACKING
 !symbian:DEFINES += _UCS2
@@ -15,6 +17,16 @@ INCLUDEPATH += \
         $${CLUCENE_PATH} \
         ../../common/clucene \
 
+clucenelib {
+
+}
+else {
+# Building lib
+!clucene {
+TEMPLATE = lib
+CONFIG += staticlib
+DESTDIR = $${PWD}
+}
 
 SOURCES += \
     $${CLUCENE_PATH}/CLucene/analysis/AnalysisHeader.cpp \
@@ -109,3 +121,4 @@ SOURCES += \
 
 
 !android:!windows:SOURCES += $${CLUCENE_PATH}/CLucene/config/repl_tprintf.cpp
+}
