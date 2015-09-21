@@ -149,7 +149,16 @@ DEFINES += STDC_HEADERS
 
 # Symbian platform
 # on S60 webkit not works, maybe wrong packaging?
-symbian:!greaterThan(S60_VERSION, 5.0):CONFIG -= webkit
+symbian {
+DEFINES -= BT_VERSION=\\\"$${BT_VERSION}\\\"
+greaterThan(S60_VERSION, 5.0) {
+DEFINES += BT_VERSION=\"$${BT_VERSION}\"
+}
+else {
+DEFINES += BT_VERSION=\"\\\"$${BT_VERSION}\\\"\"
+CONFIG -= webkit
+}
+}
 
 # BlackBerry10 Platform
 blackberry {
