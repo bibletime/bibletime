@@ -202,7 +202,7 @@ curl:include(../../common/curl/curl.pro)
 
 # ICU
 # optional
-curl:include(../../common/icu/icu.pro)
+icu:include(../../common/icu/icu.pro)
 
 # Sword
 include(../../common/sword/sword.pro)
