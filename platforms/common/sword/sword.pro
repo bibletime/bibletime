@@ -2,9 +2,11 @@
 # make sure variable below points to correct location
 
 isEmpty(SWORD_PATH):SWORD_PATH = ../../../../sword
+isEmpty(SWORD_VERSION_NUM):SWORD_VERSION_NUM = 107005000
 
 
 INCLUDEPATH += $${SWORD_PATH}/include
+
 
 SOURCES += \
     $${SWORD_PATH}/src/frontend/swdisp.cpp \
@@ -146,21 +148,7 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/zlib/adler32.c \
 
 
-# Sword 1.7
-true {
-SOURCES += \
-    $${SWORD_PATH}/src/mgr/remotetrans.cpp \
-    $${SWORD_PATH}/src/modules/common/xzcomprs.cpp \
-    $${SWORD_PATH}/src/modules/common/bz2comprs.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisglosses.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisenum.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisreferencelinks.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisxlit.cpp \
-    $${SWORD_PATH}/src/modules/filters/scsuutf8.cpp \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
-}
-else {
+lessThan(SWORD_VERSION_NUM, 107000000) { # 1.6 series
 SOURCES += \
     $${SWORD_PATH}/src/mgr/ftptrans.cpp \
     $${SWORD_PATH}/src/modules/filters/plainhtml.cpp \
@@ -170,6 +158,27 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/zlib/infcodes.c \
     $${SWORD_PATH}/src/utilfuns/zlib/infblock.c \
     $${SWORD_PATH}/src/utilfuns/zlib/gzio.c \
+}
+else { # 1.7 series
+SOURCES += \
+    $${SWORD_PATH}/src/mgr/remotetrans.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisglosses.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisenum.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisreferencelinks.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisxlit.cpp \
+    $${SWORD_PATH}/src/modules/filters/scsuutf8.cpp \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
+
+!lessThan(SWORD_VERSION_NUM, 107005000) {
+SOURCES += \
+    $${SWORD_PATH}/src/modules/filters/gbflatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/osislatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/thmllatex.cpp \
+    $${SWORD_PATH}/src/modules/texts/ztext4/ztext4.cpp \
+    $${SWORD_PATH}/src/modules/comments/zcom4/zcom4.cpp \
+    $${SWORD_PATH}/src/modules/common/zverse4.cpp \
+    $${SWORD_PATH}/src/modules/filters/teilatex.cpp \
 }
 
 # CURL
