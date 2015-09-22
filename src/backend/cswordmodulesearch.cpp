@@ -323,7 +323,7 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
         }
         // if the token contains a ^ then trim the remainder of the
         // token from the ^
-        //What??? error: invalid conversion from â€˜const void*â€™ to â€˜intâ€™
+        //What??? error: invalid conversion from ‘const void*’ to ‘int’
         // and how come "contains" returns bool but is used as int?
         //else if ( (pos = (*it).contains("^")) >= 0 ) {
         else if ( (pos = (*it).indexOf("^") ) >= 0 ) {
@@ -336,4 +336,44 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
         }
     }
     return(tokenList);
+}
+
+QString CSwordModuleSearch::prepareSearchText(const QString& orig, SearchType const & searchType) {
+    qDebug() << "Original search text:" << orig;
+    static const QRegExp syntaxCharacters("[+\\-()!\"~]");
+    static const QRegExp andWords("\\band\\b", Qt::CaseInsensitive);
+    static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
+    QString text("");
+    if (searchType == AndType) {
+        text = orig.simplified();
+        text.remove(syntaxCharacters);
+        qDebug() << "After syntax characters removed:" << text;
+        text.replace(andWords, "\"and\"");
+        text.replace(orWords, "\"or\"");
+        qDebug() << "After \"and\" and \"or\" replaced:" << text;
+        text.replace(" ", " AND ");
+    }
+    if (searchType == OrType) {
+        text = orig.simplified();
+        text.remove(syntaxCharacters);
+        text.replace(andWords, "\"and\"");
+        text.replace(orWords, "\"or\"");
+    }
+    if (searchType == FullType) {
+        text = orig;
+    }
+    qDebug() << "The final search string:" << text;
+    return text;
+}
+
+QDataStream &operator<<(QDataStream &out, const CSwordModuleSearch::SearchType &searchType) {
+    out << static_cast<qint8>(searchType);
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, CSwordModuleSearch::SearchType &searchType) {
+    qint8 i;
+    in >> i;
+    searchType = static_cast<CSwordModuleSearch::SearchType>(i);
+    return in;
 }

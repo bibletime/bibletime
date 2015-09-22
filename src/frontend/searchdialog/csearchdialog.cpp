@@ -106,7 +106,7 @@ void CSearchDialog::startSearch() {
             return;
         }
     }
-    QString searchText = prepareSearchText(originalSearchText);
+    QString searchText = CSwordModuleSearch::prepareSearchText(originalSearchText, m_searchOptionsArea->searchType());
 
     // Insert search text into history list of combobox
     m_searchOptionsArea->addToHistory(originalSearchText);
@@ -189,34 +189,6 @@ void CSearchDialog::startSearch() {
     // Re-enable the dialog:
     setEnabled(true);
     setCursor(Qt::ArrowCursor);
-}
-
-QString CSearchDialog::prepareSearchText(const QString& orig) {
-    qDebug() << "Original search text:" << orig;
-    static const QRegExp syntaxCharacters("[+\\-()!\"~]");
-    static const QRegExp andWords("\\band\\b", Qt::CaseInsensitive);
-    static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
-    QString text("");
-    if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::AndType) {
-        text = orig.simplified();
-        text.remove(syntaxCharacters);
-        qDebug() << "After syntax characters removed:" << text;
-        text.replace(andWords, "\"and\"");
-        text.replace(orWords, "\"or\"");
-        qDebug() << "After \"and\" and \"or\" replaced:" << text;
-        text.replace(" ", " AND ");
-    }
-    if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::OrType) {
-        text = orig.simplified();
-        text.remove(syntaxCharacters);
-        text.replace(andWords, "\"and\"");
-        text.replace(orWords, "\"or\"");
-    }
-    if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::FullType) {
-        text = orig;
-    }
-    qDebug() << "The final search string:" << text;
-    return text;
 }
 
 void CSearchDialog::startSearch(const BtConstModuleList modules,

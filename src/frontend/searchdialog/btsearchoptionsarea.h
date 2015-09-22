@@ -14,6 +14,7 @@
 
 #include <QWidget>
 
+#include "backend/cswordmodulesearch.h"
 #include "backend/drivers/btmodulelist.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/searchdialog/chistorycombobox.h"
@@ -35,12 +36,6 @@ class BtSearchOptionsArea : public QWidget {
         Q_OBJECT
     public:
 
-        enum SearchType { /* Values provided for serialization */
-            AndType = 0,
-            OrType = 1,
-            FullType = 2
-        };
-
         BtSearchOptionsArea(QWidget *parent = 0);
         ~BtSearchOptionsArea();
         /*
@@ -56,7 +51,7 @@ class BtSearchOptionsArea : public QWidget {
         */
         QString searchText() const;
 
-        SearchType searchType();
+        CSwordModuleSearch::SearchType searchType();
 
         inline QPushButton * searchButton() const { return m_searchButton; }
 
@@ -151,8 +146,5 @@ class BtSearchOptionsArea : public QWidget {
 
 }
 
-QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType);
-QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType);
-Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType)
 
 #endif

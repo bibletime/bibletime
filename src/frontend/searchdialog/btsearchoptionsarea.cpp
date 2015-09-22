@@ -52,14 +52,14 @@ QString BtSearchOptionsArea::searchText() const {
     return m_searchTextCombo->currentText();
 }
 
-BtSearchOptionsArea::SearchType BtSearchOptionsArea::searchType() {
+CSwordModuleSearch::SearchType BtSearchOptionsArea::searchType() {
     if (m_typeAndButton->isChecked()) {
-        return BtSearchOptionsArea::AndType;
+        return CSwordModuleSearch::AndType;
     }
     if (m_typeOrButton->isChecked()) {
-        return BtSearchOptionsArea::OrType;
+        return CSwordModuleSearch::OrType;
     }
-    return BtSearchOptionsArea::FullType;
+    return CSwordModuleSearch::FullType;
 }
 
 void BtSearchOptionsArea::setSearchText(const QString& text) {
@@ -277,12 +277,12 @@ void BtSearchOptionsArea::reset() {
 
 void BtSearchOptionsArea::saveSettings() {
     btConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
-    SearchType t = FullType;
+    CSwordModuleSearch::SearchType t = CSwordModuleSearch::FullType;
     if (m_typeAndButton->isChecked()) {
-        t = AndType;
+        t = CSwordModuleSearch::AndType;
     }
     if (m_typeOrButton->isChecked()) {
-        t = OrType;
+        t = CSwordModuleSearch::OrType;
     }
     btConfig().setValue(SearchTypeKey, t);
 }
@@ -302,12 +302,12 @@ void BtSearchOptionsArea::readSettings() {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = btConfig().value<int>(SearchTypeKey, AndType);
+    int stype = btConfig().value<int>(SearchTypeKey, CSwordModuleSearch::AndType);
     switch (stype) {
-        case AndType:
+        case CSwordModuleSearch::AndType:
             m_typeAndButton->setChecked(true);
             break;
-        case OrType:
+        case CSwordModuleSearch::OrType:
             m_typeOrButton->setChecked(true);
             break;
         default:
@@ -410,14 +410,3 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 
 } // namespace Search
 
-QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType) {
-    out << static_cast<qint8>(searchType);
-    return out;
-}
-
-QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType) {
-    qint8 i;
-    in >> i;
-    searchType = static_cast<Search::BtSearchOptionsArea::SearchType>(i);
-    return in;
-}

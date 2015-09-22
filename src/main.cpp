@@ -200,8 +200,8 @@ void registerMetaTypes() {
     qRegisterMetaType<alignmentMode>("alignmentMode");
     qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
 
-    qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
-    qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
+    qRegisterMetaType<CSwordModuleSearch::SearchType>("SearchType");
+    qRegisterMetaTypeStreamOperators<CSwordModuleSearch::SearchType>("SearchType");
 
     qRegisterMetaType<BtConfig::StringMap>("StringMap");
     qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
