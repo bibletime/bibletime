@@ -144,10 +144,7 @@ LIBS += -lsocket
 # Qt
 greaterThan(QT_MAJOR_VERSION, 4):QT += widgets
 svg:QT += svg xml
-qml {
-DEFINES += BT_MINI_QML
-QT += qml quick
-}
+
 
 # Core Configuration Section
 
