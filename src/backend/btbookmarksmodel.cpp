@@ -850,9 +850,9 @@ CSwordModuleInfo * BtBookmarksModel::module(const QModelIndex & index) const
 {
     Q_D(const BtBookmarksModel);
 
-    BookmarkItem const * const i =
-        dynamic_cast<const BookmarkItem *>(d->item(index));
-    if(i) return i->module();
+    if (BookmarkItem const * const i =
+            dynamic_cast<BookmarkItem const *>(d->item(index)))
+        return i->module();
     return 0;
 }
 
@@ -860,9 +860,9 @@ QString BtBookmarksModel::key(const QModelIndex & index) const
 {
     Q_D(const BtBookmarksModel);
 
-    BookmarkItem const * const i =
-            dynamic_cast<const BookmarkItem *>(d->item(index));
-    if(i) return i->key();
+    if (BookmarkItem const * const i =
+            dynamic_cast<BookmarkItem const *>(d->item(index)))
+        return i->key();
     return QString();
 }
 
@@ -870,9 +870,9 @@ QString BtBookmarksModel::description(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
 
-    BookmarkItem const * const i =
-            dynamic_cast<const BookmarkItem *>(d->item(index));
-    if(i) return i->description();
+    if (BookmarkItem const * const i =
+            dynamic_cast<BookmarkItem const *>(d->item(index)))
+        return i->description();
     return QString();
 }
 
@@ -880,8 +880,8 @@ void BtBookmarksModel::setDescription(const QModelIndex &index, const QString &d
 {
     Q_D(BtBookmarksModel);
 
-    BookmarkItem * const i = dynamic_cast<BookmarkItem *>(d->item(index));
-    if(i) return i->setDescription(description);
+    if (BookmarkItem * const i = dynamic_cast<BookmarkItem *>(d->item(index)))
+        return i->setDescription(description);
 
     d->needSave();
 }
@@ -895,8 +895,9 @@ QModelIndex BtBookmarksModel::addBookmark(int const row,
 {
     Q_D(BtBookmarksModel);
 
-    BookmarkFolder * const i = dynamic_cast<BookmarkFolder *>(d->item(parent));
-    if(i) {
+    if (BookmarkFolder * const i =
+            dynamic_cast<BookmarkFolder *>(d->item(parent)))
+    {
         int r = row < 0 ? row + rowCount(parent) + 1 : row;
 
         beginInsertRows(parent, r, r);
@@ -917,8 +918,9 @@ QModelIndex BtBookmarksModel::addFolder(int row, const QModelIndex &parent, cons
 {
     Q_D(BtBookmarksModel);
 
-    BookmarkFolder * const i = dynamic_cast<BookmarkFolder *>(d->item(parent));
-    if(i) {
+    if (BookmarkFolder * const i =
+            dynamic_cast<BookmarkFolder *>(d->item(parent)))
+    {
         beginInsertRows(parent, row, row);
 
         BookmarkFolder * c = new BookmarkFolder(name.isEmpty() ? QObject::tr("New folder") : name);
