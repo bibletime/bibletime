@@ -6,8 +6,6 @@
 VERSION = 2.10.0_dev
 CONFIG += clucene svg xml webkit
 
-DEFINES += BT_VERSION=\\\"$${VERSION}\\\"
-
 QMAKE_CXXFLAGS_DEBUG += -Wno-switch -Wno-unused-parameter # useless warning
 
 INCLUDEPATH += . \
