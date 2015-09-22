@@ -880,10 +880,10 @@ void BtBookmarksModel::setDescription(const QModelIndex &index, const QString &d
 {
     Q_D(BtBookmarksModel);
 
-    if (BookmarkItem * const i = dynamic_cast<BookmarkItem *>(d->item(index)))
-        return i->setDescription(description);
-
-    d->needSave();
+    if (BookmarkItem * const i = dynamic_cast<BookmarkItem *>(d->item(index))) {
+        i->setDescription(description);
+        d->needSave();
+    }
 }
 
 QModelIndex BtBookmarksModel::addBookmark(int const row,
