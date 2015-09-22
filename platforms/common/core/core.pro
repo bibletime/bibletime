@@ -1,5 +1,5 @@
 # BibleTime Core, could be used for Desktop, Mini and Mobile
-BT_VERSION = 2.10.0
+BT_VERSION = 2.10.0_rc1
 DEFINES += BT_VERSION=\\\"$${BT_VERSION}\\\"
 
 # Useless warnings
