@@ -258,6 +258,10 @@ public: /* Methods */
             return m_rootItem;
     }
 
+    template <typename T>
+    inline T * itemAs(QModelIndex const & index) const
+    { return dynamic_cast<T *>(item(index)); }
+
     /// \test
     void printItems() const {
         QList<BookmarkItemBase *> items;
@@ -780,13 +784,13 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
 bool BtBookmarksModel::isFolder(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
-    return dynamic_cast<const BookmarkFolder*>(d->item(index));
+    return d->itemAs<BookmarkFolder const>(index);
 }
 
 bool BtBookmarksModel::isBookmark(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
-    return dynamic_cast<const BookmarkItem*>(d->item(index));
+    return d->itemAs<BookmarkItem const>(index);
 }
 
 QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy)
@@ -800,7 +804,9 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
     QList<BookmarkItemBase *> newList;
 
     Q_FOREACH(QModelIndex const index, toCopy) {
-        if(BookmarkFolder * folder = dynamic_cast<BookmarkFolder*>(d->item(index))) {
+        if (BookmarkFolder const * const folder =
+                d->itemAs<BookmarkFolder const>(index))
+        {
             bookmarksOnly = false;
             if (toCopy.count() > 1) { // only one item allowed if a folder is selected
                 moreThanOneFolder = true;
@@ -812,15 +818,12 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
             }
         }
         else {
-            newList.append( new BookmarkItem(*(dynamic_cast<BookmarkItem *>(d->item(index))) ));
+            newList.append(new BookmarkItem(*(d->itemAs<BookmarkItem>(index))));
         }
     }
 
-    if (!bookmarksOnly && toCopy.count() == 1) {
-        BookmarkFolder* folder = dynamic_cast<BookmarkFolder*>(d->item(toCopy[0]));
-        BookmarkFolder* copy = folder->deepCopy();
-        newList.append(copy);
-    }
+    if (!bookmarksOnly && toCopy.count() == 1)
+        newList.append(d->itemAs<BookmarkFolder const>(toCopy[0])->deepCopy());
     if (!bookmarksOnly && toCopy.count() > 1) {
         // wrong amount of items
         moreThanOneFolder = true;
@@ -850,8 +853,7 @@ CSwordModuleInfo * BtBookmarksModel::module(const QModelIndex & index) const
 {
     Q_D(const BtBookmarksModel);
 
-    if (BookmarkItem const * const i =
-            dynamic_cast<BookmarkItem const *>(d->item(index)))
+    if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
         return i->module();
     return 0;
 }
@@ -860,8 +862,7 @@ QString BtBookmarksModel::key(const QModelIndex & index) const
 {
     Q_D(const BtBookmarksModel);
 
-    if (BookmarkItem const * const i =
-            dynamic_cast<BookmarkItem const *>(d->item(index)))
+    if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
         return i->key();
     return QString();
 }
@@ -870,8 +871,7 @@ QString BtBookmarksModel::description(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
 
-    if (BookmarkItem const * const i =
-            dynamic_cast<BookmarkItem const *>(d->item(index)))
+    if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
         return i->description();
     return QString();
 }
@@ -880,7 +880,7 @@ void BtBookmarksModel::setDescription(const QModelIndex &index, const QString &d
 {
     Q_D(BtBookmarksModel);
 
-    if (BookmarkItem * const i = dynamic_cast<BookmarkItem *>(d->item(index))) {
+    if (BookmarkItem * const i = d->itemAs<BookmarkItem>(index)) {
         i->setDescription(description);
         d->needSave();
     }
@@ -895,9 +895,7 @@ QModelIndex BtBookmarksModel::addBookmark(int const row,
 {
     Q_D(BtBookmarksModel);
 
-    if (BookmarkFolder * const i =
-            dynamic_cast<BookmarkFolder *>(d->item(parent)))
-    {
+    if (BookmarkFolder * const i = d->itemAs<BookmarkFolder>(parent)) {
         int r = row < 0 ? row + rowCount(parent) + 1 : row;
 
         beginInsertRows(parent, r, r);
@@ -918,9 +916,7 @@ QModelIndex BtBookmarksModel::addFolder(int row, const QModelIndex &parent, cons
 {
     Q_D(BtBookmarksModel);
 
-    if (BookmarkFolder * const i =
-            dynamic_cast<BookmarkFolder *>(d->item(parent)))
-    {
+    if (BookmarkFolder * const i = d->itemAs<BookmarkFolder>(parent)) {
         beginInsertRows(parent, row, row);
 
         BookmarkFolder * c = new BookmarkFolder(name.isEmpty() ? QObject::tr("New folder") : name);
@@ -939,7 +935,8 @@ bool BtBookmarksModel::hasDescendant(const QModelIndex &baseIndex, const QModelI
 {
     Q_D(const BtBookmarksModel);
 
-    if(const BookmarkFolder * f = dynamic_cast<const BookmarkFolder *>(d->item(baseIndex)))
+    if (BookmarkFolder const * const f =
+            d->itemAs<BookmarkFolder const>(baseIndex))
         return f->hasDescendant(d->item(testIndex));
     return false;
 }
@@ -959,7 +956,7 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
 {
     Q_D(BtBookmarksModel);
 
-    if(BookmarkFolder * f = dynamic_cast<BookmarkFolder *>(d->item(parent))) {
+    if(BookmarkFolder * const f = d->itemAs<BookmarkFolder>(parent)) {
         QList<BookmarkFolder *> parents;
         if(f == d->m_rootItem) {
             QList<BookmarkItemBase *> items;
