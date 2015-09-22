@@ -63,9 +63,6 @@ class CSearchDialog : public QDialog {
         void startSearch(const BtConstModuleList modules,
                          const QString &searchText);
 
-        /**Prepares the search string given by user for a specific search type */
-        QString prepareSearchText(const QString& orig);
-
         /**
           Sets the list of modules for the search.
         */

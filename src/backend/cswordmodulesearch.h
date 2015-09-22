@@ -35,6 +35,12 @@ class CSwordModuleSearch: public QObject {
     public: /* Types: */
         typedef QHash<const CSwordModuleInfo*, sword::ListKey> Results;
 
+        enum SearchType { /* Values provided for serialization */
+            AndType = 0,
+            OrType = 1,
+            FullType = 2
+        };
+
     public: /* Methods: */
         inline CSwordModuleSearch()
             : m_foundItems(0u) {}
@@ -107,6 +113,11 @@ class CSwordModuleSearch: public QObject {
         */
         static QString highlightSearchedText(const QString& content, const QString& searchedText);
 
+        /**
+          Prepares the search string given by user for a specific search type
+        */
+        static QString prepareSearchText(QString const & orig, SearchType const & searchType);
+
     protected:
         /**
         * This function breakes the queryString into clucene tokens
@@ -121,5 +132,9 @@ class CSwordModuleSearch: public QObject {
         Results                        m_results;
         size_t                         m_foundItems;
 };
+
+QDataStream &operator<<(QDataStream &out, const CSwordModuleSearch::SearchType &searchType);
+QDataStream &operator>>(QDataStream &in, CSwordModuleSearch::SearchType &searchType);
+Q_DECLARE_METATYPE(CSwordModuleSearch::SearchType)
 
 #endif
