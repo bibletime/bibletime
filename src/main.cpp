@@ -225,11 +225,10 @@ int main(int argc, char* argv[]) {
     // Parse command line arguments:
     bool ignoreSession = false;
     QString openBibleKey;
-    int r = parseCommandLine(showDebugMessages, ignoreSession, openBibleKey);
-    if (r != 0) {
-        if (r < 0) return EXIT_SUCCESS;
-        return EXIT_FAILURE;
-    }
+    if (int const r = parseCommandLine(showDebugMessages,
+                                       ignoreSession,
+                                       openBibleKey))
+        return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
 
     // Initialize random number generator:
     srand(qHash(QDateTime::currentDateTime().toString(Qt::ISODate)));
@@ -341,7 +340,6 @@ int main(int argc, char* argv[]) {
     if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
-    r = app.exec();
-    return r;
+    return app.exec();
 }
 
