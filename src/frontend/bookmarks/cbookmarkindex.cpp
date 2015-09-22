@@ -147,8 +147,6 @@ void CBookmarkIndex::initConnections() {
     Q_ASSERT(ok);
     ok = connect(&m_magTimer, SIGNAL(timeout()), this, SLOT(magTimeout()));
     Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(entered(const QModelIndex &)), this, SLOT(slotItemEntered(const QModelIndex &)) );
-    Q_ASSERT(ok);
 }
 
 
@@ -476,13 +474,21 @@ void CBookmarkIndex::initTree() {
     // add the invisible extra item at the end
     if(m_bookmarksModel->insertRows(m_bookmarksModel->rowCount(), 1))
         m_extraItem = m_bookmarksModel->index(m_bookmarksModel->rowCount() - 1, 0);
+    showExtraItem();
 }
 
-void CBookmarkIndex::slotItemEntered(const QModelIndex & index) {
+void CBookmarkIndex::showExtraItem() {
     model()->setData(m_extraItem,
-                     index == m_extraItem
-                     ? tr("Drag references from text views to this view")
-                     : QString::null);
+                     tr("Drag references from text views to this view"));
+}
+
+void CBookmarkIndex::hideExtraItem()
+{ model()->setData(m_extraItem, QVariant()); }
+
+void CBookmarkIndex::leaveEvent(QEvent * event) {
+    showExtraItem();
+    update();
+    QTreeView::leaveEvent(event);
 }
 
 /** Shows the context menu at the given position. */
@@ -673,10 +679,14 @@ void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event) {
         m_magTimer.start();
     m_previousEventItem = itemUnderPointer;
 
-    // Clear the extra item text unless we are on top of it:
-    if ((itemUnderPointer != m_extraItem)
-        && !m_extraItem.data().toString().isNull())
-        model()->setData(m_extraItem, QString());
+    if (!itemUnderPointer.isValid()
+        || itemUnderPointer == m_extraItem)
+    {
+        showExtraItem();
+    } else {
+        hideExtraItem();
+    }
+    update();
 
     QTreeView::mouseMoveEvent(event);
 }

@@ -106,6 +106,8 @@ protected:
     /** Handle mouse moving (mag updates) */
     virtual void mouseMoveEvent(QMouseEvent * event);
 
+    virtual void leaveEvent(QEvent * event);
+
 
 protected slots:
 
@@ -135,9 +137,6 @@ protected slots:
 
     /** Sorts all bookmarks. */
     void sortAllBookmarks();
-
-    /** Helps with the extra item. */
-    void slotItemEntered(QModelIndex const & index);
 
     /** Import bookmarks from a file and add them to the selected folder. */
     void importBookmarks();
@@ -177,6 +176,9 @@ private: /* Methods: */
     bool enableAction(QModelIndex const & index, MenuAction type) const;
 
     bool hasBookmarksRecursively(QModelIndexList selected) const;
+
+    void showExtraItem();
+    void hideExtraItem();
 
 private: /* Fields: */
 
