@@ -81,8 +81,10 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
     m_availableTemplateNamesCache = m_templateMap.keys();
     const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
     Q_ASSERT(b);
+#ifdef BT_MOBILE
     const bool bm = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASEMOBILE);
     Q_ASSERT(bm);
+#endif
     m_availableTemplateNamesCache.append(m_cssMap.keys());
     qSort(m_availableTemplateNamesCache);
 
