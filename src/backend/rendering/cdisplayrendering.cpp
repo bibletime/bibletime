@@ -37,7 +37,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
     vk.setIntros(true);
 
     if (isBible) {
-        vk.setKey(item.key());
+        vk.setKey(item.mappedKey() ? item.mappedKey()->key() : item.key());
     }
 
     if (isBible && (vk.getVerse() == 0)) {
@@ -71,7 +71,31 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
         case KeyTreeItem::Settings::SimpleKey: {
             if (isBible) {
-                linkText = QString::number(vk.getVerse());
+                if(item.mappedKey() != 0)
+                {
+                    CSwordVerseKey baseKey(*item.modules().begin());
+                    baseKey.setKey(item.key());
+
+                    if(vk.book() != baseKey.book())
+                        linkText = QString::fromUtf8(vk.getShortText());
+                    else if(vk.getChapter() != baseKey.getChapter())
+                        linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
+                    else
+                        linkText = QString::number(vk.getVerse());
+
+                    if(vk.isBoundSet())
+                    {
+                        linkText += "-";
+                        if(vk.getUpperBound().getBook() != vk.getLowerBound().getBook())
+                            linkText += QString::fromUtf8(vk.getUpperBound().getShortText());
+                        else if(vk.getUpperBound().getChapter() != vk.getLowerBound().getChapter())
+                            linkText += QString("%1:%2").arg(vk.getUpperBound().getChapter()).arg(vk.getUpperBound().getVerse());
+                        else
+                            linkText += QString::number(vk.getUpperBound().getVerse());
+                    }
+                }
+                else
+                    linkText = QString::number(vk.getVerse());
                 break;
             }
 
