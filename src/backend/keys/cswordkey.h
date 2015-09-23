@@ -96,6 +96,9 @@ public: /* Types: */
     */
     static CSwordKey * createInstance(const CSwordModuleInfo * module);
 
+    /** Check whether key is valid. Can be invalidated during av11n mapping. */
+    inline bool isValid() const { return m_valid; }
+
     /**
       This is called before a key change to emit a signal
     */
@@ -109,10 +112,12 @@ public: /* Types: */
 protected: /* Methods: */
 
     inline CSwordKey(const CSwordModuleInfo * const module = 0)
-        : m_module(module) {}
+        : m_module(module)
+        , m_valid(true) {}
 
     inline CSwordKey(const CSwordKey & copy)
-        : m_module(copy.m_module) {}
+        : m_module(copy.m_module)
+        , m_valid(copy.m_valid) {}
 
     /**
       \returns the encoded key appropriate for use directly with Sword.
@@ -135,6 +140,7 @@ protected: /* Fields: */
     QPointer<BtSignal> m_beforeChangedSignaller;
     QPointer<BtSignal> m_afterChangedSignaller;
 
+    bool m_valid;
 };
 
 #endif
