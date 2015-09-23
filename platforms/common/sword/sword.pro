@@ -173,13 +173,11 @@ SOURCES += \
 # Compressors
 windows|android:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
 
-!contains(DEFINES, EXCLUDEXZ)
-{
+!contains(DEFINES, EXCLUDEXZ) {
     SOURCES += $${SWORD_PATH}/src/modules/common/xzcomprs.cpp
     LIBS    += -llzma
 }
-!contains(DEFINES, EXCLUDEBZIP2)
-{
+!contains(DEFINES, EXCLUDEBZIP2) {
     SOURCES += $${SWORD_PATH}/src/modules/common/bz2comprs.cpp
     LIBS    += -lbz2
 }
@@ -194,6 +192,7 @@ SOURCES += \
     $${SWORD_PATH}/src/modules/comments/zcom4/zcom4.cpp \
     $${SWORD_PATH}/src/modules/common/zverse4.cpp \
     $${SWORD_PATH}/src/modules/filters/teilatex.cpp \
+}
 }
 
 # CURL
