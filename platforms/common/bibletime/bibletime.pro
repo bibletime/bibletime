@@ -5,6 +5,7 @@
 # Configuration
 VERSION = 2.10.0_dev
 CONFIG += clucene svg xml webkit
+QT += printsupport
 
 debug:DEFINES += BT_DEBUG
 
@@ -48,6 +49,7 @@ SOURCES += \
     ../../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp \
     ../../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp \
     ../../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp \
+    ../../../src/frontend/cinfodisplay.cpp \
     ../../../src/frontend/display/btcolorwidget.cpp \
     ../../../src/frontend/display/btfindwidget.cpp \
     ../../../src/frontend/display/btfontsizewidget.cpp \
@@ -57,6 +59,7 @@ SOURCES += \
     ../../../src/frontend/display/chtmlwritedisplay.cpp \
     ../../../src/frontend/display/cplainwritedisplay.cpp \
     ../../../src/frontend/display/creaddisplay.cpp \
+    ../../../src/frontend/displaywindow/btactioncollection.cpp \
     ../../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp \
     ../../../src/frontend/displaywindow/btmodulechooserbar.cpp \
     ../../../src/frontend/displaywindow/btmodulechooserbutton.cpp \
@@ -84,6 +87,7 @@ SOURCES += \
     ../../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp \
     ../../../src/frontend/keychooser/versekeychooser/btversekeymenu.cpp \
     ../../../src/frontend/keychooser/versekeychooser/cbiblekeychooser.cpp \
+    ../../../src/frontend/messagedialog.cpp \
     ../../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp \
     ../../../src/frontend/searchdialog/btsearchoptionsarea.cpp \
     ../../../src/frontend/searchdialog/btsearchresultarea.cpp \
@@ -100,7 +104,6 @@ SOURCES += \
     ../../../src/frontend/searchdialog/analysis/csearchanalysisview.cpp \
     ../../../src/frontend/settingsdialogs/btfontchooserwidget.cpp \
     ../../../src/frontend/settingsdialogs/btfontsettings.cpp \
-    ../../../src/frontend/settingsdialogs/btlanguagesettings.cpp \
     ../../../src/frontend/settingsdialogs/btshortcutsdialog.cpp \
     ../../../src/frontend/settingsdialogs/btshortcutseditor.cpp \
     ../../../src/frontend/settingsdialogs/btstandardworkstab.cpp \
@@ -111,7 +114,9 @@ SOURCES += \
     ../../../src/frontend/settingsdialogs/clistwidget.cpp \
     ../../../src/frontend/settingsdialogs/cswordsettings.cpp \
     ../../../src/frontend/tips/bttipdialog.cpp \
-    ../../../src/util/btmodules.cpp
+    ../../../src/util/bticons.cpp \
+    ../../../src/util/btmodules.cpp \
+
 
 HEADERS += \
     ../../../src/bibletimeapp.h \
@@ -149,6 +154,7 @@ HEADERS += \
     ../../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h \
     ../../../src/frontend/bookshelfmanager/removepage/btremovepage.h \
     ../../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h \
+    ../../../src/frontend/cinfodisplay.h \
     ../../../src/frontend/display/btcolorwidget.h \
     ../../../src/frontend/display/btfindwidget.h \
     ../../../src/frontend/display/btfontsizewidget.h \
@@ -158,6 +164,7 @@ HEADERS += \
     ../../../src/frontend/display/chtmlwritedisplay.h \
     ../../../src/frontend/display/cplainwritedisplay.h \
     ../../../src/frontend/display/creaddisplay.h \
+    ../../../src/frontend/displaywindow/btactioncollection.h \
     ../../../src/frontend/displaywindow/btdisplaysettingsbutton.h \
     ../../../src/frontend/displaywindow/btmodulechooserbar.h \
     ../../../src/frontend/displaywindow/btmodulechooserbutton.h \
@@ -202,7 +209,6 @@ HEADERS += \
     ../../../src/frontend/searchdialog/analysis/csearchanalysisview.h \
     ../../../src/frontend/settingsdialogs/btfontchooserwidget.h \
     ../../../src/frontend/settingsdialogs/btfontsettings.h \
-    ../../../src/frontend/settingsdialogs/btlanguagesettings.h \
     ../../../src/frontend/settingsdialogs/btshortcutsdialog.h \
     ../../../src/frontend/settingsdialogs/btshortcutseditor.h \
     ../../../src/frontend/settingsdialogs/btstandardworkstab.h \
@@ -214,8 +220,6 @@ HEADERS += \
     ../../../src/frontend/settingsdialogs/cswordsettings.h \
     ../../../src/frontend/tips/bttipdialog.h \
     ../../../src/util/btmodules.h \
-    ../../../src/util/exceptions.h \
-    ../../../src/util/geticon.h \
     ../../../src/util/macros.h
 
 

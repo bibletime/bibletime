@@ -29,13 +29,11 @@ SOURCES += \
     ../../../src/backend/drivers/cswordcommentarymoduleinfo.cpp \
     ../../../src/backend/drivers/cswordlexiconmoduleinfo.cpp \
     ../../../src/backend/drivers/cswordmoduleinfo.cpp \
-    ../../../src/backend/filters/btosismorphsegmentation.cpp \
     ../../../src/backend/filters/gbftohtml.cpp \
     ../../../src/backend/filters/osistohtml.cpp \
     ../../../src/backend/filters/plaintohtml.cpp \
     ../../../src/backend/filters/teitohtml.cpp \
     ../../../src/backend/filters/thmltohtml.cpp \
-    ../../../src/backend/filters/thmltoplain.cpp \
     ../../../src/backend/keys/cswordkey.cpp \
     ../../../src/backend/keys/cswordldkey.cpp \
     ../../../src/backend/keys/cswordtreekey.cpp \
@@ -45,6 +43,7 @@ SOURCES += \
     ../../../src/backend/managers/clanguagemgr.cpp \
     ../../../src/backend/managers/cswordbackend.cpp \
     ../../../src/backend/managers/referencemanager.cpp \
+    ../../../src/backend/rendering/btinforendering.cpp \
     ../../../src/backend/rendering/cbookdisplay.cpp \
     ../../../src/backend/rendering/cchapterdisplay.cpp \
     ../../../src/backend/rendering/cdisplayrendering.cpp \
@@ -55,7 +54,6 @@ SOURCES += \
     ../../../src/btglobal.cpp \
     ../../../src/util/cresmgr.cpp \
     ../../../src/util/directory.cpp \
-    ../../../src/util/geticon.cpp \
     ../../../src/util/tool.cpp \
 
 
@@ -81,13 +79,11 @@ HEADERS += \
     ../../../src/backend/drivers/cswordcommentarymoduleinfo.h \
     ../../../src/backend/drivers/cswordlexiconmoduleinfo.h \
     ../../../src/backend/drivers/cswordmoduleinfo.h \
-    ../../../src/backend/filters/btosismorphsegmentation.h \
     ../../../src/backend/filters/gbftohtml.h \
     ../../../src/backend/filters/osistohtml.h \
     ../../../src/backend/filters/plaintohtml.h \
     ../../../src/backend/filters/teitohtml.h \
     ../../../src/backend/filters/thmltohtml.h \
-    ../../../src/backend/filters/thmltoplain.h \
     ../../../src/backend/managers/btstringmgr.h \
     ../../../src/backend/managers/cdisplaytemplatemgr.h \
     ../../../src/backend/managers/clanguagemgr.h \
