@@ -71,6 +71,7 @@ HEADERS += \
     ../../../src/backend/btinstallmgr.h \
     ../../../src/backend/btinstallthread.h \
     ../../../src/backend/btmoduletreeitem.h \
+    ../../../src/backend/btsignal.h \
     ../../../src/backend/config/btconfig.h \
     ../../../src/backend/config/btconfigcore.h \
     ../../../src/backend/cswordmodulesearch.h \
@@ -100,7 +101,6 @@ HEADERS += \
     ../../../src/backend/rendering/chtmlexportrendering.h \
     ../../../src/backend/rendering/cplaintextexportrendering.h \
     ../../../src/backend/rendering/ctextrendering.h \
-    ../../../src/util/btsignal.h \
     ../../../src/util/cresmgr.h \
     ../../../src/util/directory.h \
     ../../../src/util/tool.h \

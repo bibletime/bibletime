@@ -302,6 +302,7 @@ SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPL
 
 # Mocable headers:
 SET(bibletime_COMMON_MOCABLE_HEADERS
+    src/backend/btsignal.h
     src/backend/bookshelfmodel/btbookshelffiltermodel.h
     src/backend/bookshelfmodel/btbookshelfmodel.h
     src/backend/bookshelfmodel/btbookshelftreemodel.h
@@ -313,7 +314,6 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
     src/backend/models/btmoduletextmodel.h
-    src/util/btsignal.h
     src/backend/btinstallmgr.h
     src/backend/btinstallthread.h
     src/backend/btbookmarksmodel.h

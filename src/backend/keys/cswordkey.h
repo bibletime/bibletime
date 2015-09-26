@@ -14,7 +14,7 @@
 
 #include <QPointer>
 #include <QString>
-#include "util/btsignal.h"
+#include "../btsignal.h"
 
 
 class CSwordModuleInfo;
