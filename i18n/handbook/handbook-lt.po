@@ -2822,9 +2822,9 @@ msgstr "Abthorpe"
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid ""
-"<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> "
+"<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> "
 "</copyright>"
-msgstr "<copyright> <year>1999-2011</year> <holder>&bibletime; Komanda</holder> </copyright>"
+msgstr "<copyright> <year>1999-2015</year> <holder>&bibletime; Komanda</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
