@@ -7,17 +7,17 @@
 *
 **********/
 
-#include "backend/rendering/ctextrendering.h"
+#include "ctextrendering.h"
 
 #include <QRegExp>
 #include <QScopedPointer>
 #include <QtAlgorithms>
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
 
 // Sword includes:
 #include <swkey.h>

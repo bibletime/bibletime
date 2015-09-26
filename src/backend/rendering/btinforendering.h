@@ -17,7 +17,7 @@
 #include <QPair>
 #include <QString>
 
-#include "backend/drivers/btmodulelist.h"
+#include "../drivers/btmodulelist.h"
 
 
 namespace Rendering {

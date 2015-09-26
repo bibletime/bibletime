@@ -13,6 +13,7 @@
 #define BTINSTALLMGR_H
 
 #include <QObject>
+
 // Sword includes:
 #include <installmgr.h>
 #include <remotetrans.h>

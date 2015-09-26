@@ -12,7 +12,7 @@
 #ifndef CSWORDLEXICONMODULEINFO_H
 #define CSWORDLEXICONMODULEINFO_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
 #include <QStringList>
 

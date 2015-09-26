@@ -12,10 +12,10 @@
 #ifndef CSWORDBIBLEMODULEINFO_H
 #define CSWORDBIBLEMODULEINFO_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
 #include <QStringList>
-#include "backend/keys/cswordversekey.h"
+#include "../keys/cswordversekey.h"
 
 
 /**

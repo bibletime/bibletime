@@ -14,8 +14,8 @@
 
 #include <QHash>
 #include <QStringList>
-#include "backend/drivers/btmodulelist.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/btmodulelist.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 /**

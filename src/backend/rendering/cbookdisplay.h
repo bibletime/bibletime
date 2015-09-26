@@ -12,9 +12,9 @@
 #ifndef RENDERINGCBOOKDISPLAY_H
 #define RENDERINGCBOOKDISPLAY_H
 
-#include "backend/rendering/centrydisplay.h"
+#include "centrydisplay.h"
 
-#include "backend/rendering/ctextrendering.h"
+#include "ctextrendering.h"
 
 
 class CSwordTreeKey;

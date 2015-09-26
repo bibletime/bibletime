@@ -7,15 +7,15 @@
 *
 **********/
 
-#include "backend/managers/referencemanager.h"
+#include "referencemanager.h"
 
 #include <algorithm>
 #include <QRegExp>
 #include <QDebug>
-#include "backend/config/btconfig.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
+#include "../config/btconfig.h"
+#include "../keys/cswordversekey.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordbackend.h"
 
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */

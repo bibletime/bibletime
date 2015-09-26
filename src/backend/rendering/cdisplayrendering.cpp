@@ -7,15 +7,15 @@
 *
 **********/
 
-#include "backend/rendering/cdisplayrendering.h"
+#include "cdisplayrendering.h"
 
-#include <QString>
 #include <QRegExp>
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/config/btconfig.h"
+#include <QString>
+#include "../config/btconfig.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
 
 
 namespace Rendering {

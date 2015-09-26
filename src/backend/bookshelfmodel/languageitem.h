@@ -13,10 +13,10 @@
 #ifndef LANGUAGEITEM_H
 #define LANGUAGEITEM_H
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "btbookshelfmodel.h"
 
 
 namespace BookshelfModel {

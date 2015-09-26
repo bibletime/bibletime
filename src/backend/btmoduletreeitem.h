@@ -14,7 +14,7 @@
 
 #include <QMap>
 #include <QString>
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "drivers/cswordmoduleinfo.h"
 
 
 /**

@@ -36,18 +36,15 @@
 #include <QTime>
 #include <QTimer>
 #include <QScopedPointer>
-
-#include "bibletimeapp.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "bibletimeapp.h"
-#include "btglobal.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
-#include "util/directory.h"
+#include "../bibletimeapp.h"
+#include "../btglobal.h"
+#include "../util/cresmgr.h"
+#include "../util/directory.h"
+#include "../util/tool.h"
+#include "config/btconfig.h"
+#include "drivers/cswordmoduleinfo.h"
+#include "keys/cswordversekey.h"
+#include "managers/cswordbackend.h"
 
 
 #define CURRENT_SYNTAX_VERSION 1

@@ -13,10 +13,10 @@
 #ifndef MODULEITEM_H
 #define MODULEITEM_H
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "btbookshelfmodel.h"
 
 
 class BtBookshelfTreeModel;

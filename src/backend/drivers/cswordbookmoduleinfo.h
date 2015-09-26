@@ -12,7 +12,7 @@
 #ifndef CSWORDGENBOOKMODULEINFO_H
 #define CSWORDGENBOOKMODULEINFO_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
 // Sword includes:
 #include <treekeyidx.h>

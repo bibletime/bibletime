@@ -12,7 +12,7 @@
 #ifndef RENDERINGCCHAPTERDISPLAY_H
 #define RENDERINGCCHAPTERDISPLAY_H
 
-#include "backend/rendering/centrydisplay.h"
+#include "centrydisplay.h"
 
 
 namespace Rendering {

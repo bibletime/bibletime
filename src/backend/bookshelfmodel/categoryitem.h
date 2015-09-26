@@ -13,11 +13,11 @@
 #ifndef CATEGORYITEM_H
 #define CATEGORYITEM_H
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
 #include <QCoreApplication>
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "btbookshelfmodel.h"
 
 
 namespace BookshelfModel {

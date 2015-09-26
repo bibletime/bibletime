@@ -7,9 +7,9 @@
 *
 **********/
 
-#include "backend/rendering/cplaintextexportrendering.h"
+#include "cplaintextexportrendering.h"
 
-#include "backend/keys/cswordkey.h"
+#include "../keys/cswordkey.h"
 
 
 namespace Rendering {

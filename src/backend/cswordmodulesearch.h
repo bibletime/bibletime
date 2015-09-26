@@ -15,11 +15,10 @@
 #include <QObject>
 
 #include <QHash>
+#include "drivers/btmodulelist.h"
 
 // Sword includes:
 #include <listkey.h>
-
-#include "backend/drivers/btmodulelist.h"
 
 
 /**

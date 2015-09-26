@@ -10,9 +10,9 @@
 *
 **********/
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "btbookshelfmodel.h"
 
 
 namespace BookshelfModel {

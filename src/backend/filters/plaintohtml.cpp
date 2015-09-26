@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/filters/plaintohtml.h"
+#include "plaintohtml.h"
 
 #include <QDebug>
 

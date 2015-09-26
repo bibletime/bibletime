@@ -7,14 +7,13 @@
 *
 **********/
 
+#include "cswordmodulesearch.h"
+
 #include <QDebug>
-
-#include "backend/cswordmodulesearch.h"
-
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "btglobal.h"
-#include "util/tool.h"
+#include "../btglobal.h"
+#include "../util/tool.h"
+#include "config/btconfig.h"
+#include "managers/cswordbackend.h"
 
 
 void CSwordModuleSearch::startSearch() {

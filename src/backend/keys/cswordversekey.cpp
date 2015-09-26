@@ -7,13 +7,13 @@
 *
 **********/
 
-#include "backend/keys/cswordversekey.h"
+#include "cswordversekey.h"
 
-#include <QStringList>
 #include <QDebug>
+#include <QStringList>
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../drivers/cswordcommentarymoduleinfo.h"
 
 // Sword includes:
 #include <swmodule.h>

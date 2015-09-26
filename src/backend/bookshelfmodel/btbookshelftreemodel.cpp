@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "btbookshelftreemodel.h"
 
-#include "backend/bookshelfmodel/categoryitem.h"
-#include "backend/bookshelfmodel/indexingitem.h"
-#include "backend/bookshelfmodel/languageitem.h"
-#include "backend/bookshelfmodel/moduleitem.h"
-#include "backend/config/btconfig.h"
-#include "util/macros.h"
+#include "../../util/macros.h"
+#include "../config/btconfig.h"
+#include "categoryitem.h"
+#include "indexingitem.h"
+#include "languageitem.h"
+#include "moduleitem.h"
 
 
 using namespace BookshelfModel;

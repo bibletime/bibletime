@@ -15,16 +15,16 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/filters/gbftohtml.h"
-#include "backend/filters/osistohtml.h"
-#include "backend/filters/plaintohtml.h"
-#include "backend/filters/teitohtml.h"
-#include "backend/filters/thmltohtml.h"
-#include "backend/rendering/cbookdisplay.h"
-#include "backend/rendering/cchapterdisplay.h"
-#include "backend/rendering/centrydisplay.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../bookshelfmodel/btbookshelfmodel.h"
+#include "../filters/gbftohtml.h"
+#include "../filters/osistohtml.h"
+#include "../filters/plaintohtml.h"
+#include "../filters/teitohtml.h"
+#include "../filters/thmltohtml.h"
+#include "../rendering/cbookdisplay.h"
+#include "../rendering/cchapterdisplay.h"
+#include "../rendering/centrydisplay.h"
 
 // Sword includes:
 #include <swmgr.h>

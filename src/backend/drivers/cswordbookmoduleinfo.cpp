@@ -7,9 +7,9 @@
 *
 **********/
 
-#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "cswordbookmoduleinfo.h"
 
-#include "backend/keys/cswordtreekey.h"
+#include "../keys/cswordtreekey.h"
 
 // Sword includes:
 #include <treekey.h>

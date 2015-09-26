@@ -15,8 +15,8 @@
 
 #include <QAbstractListModel>
 
-#include "backend/drivers/btmoduleset.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/btmoduleset.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 /**

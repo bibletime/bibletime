@@ -13,11 +13,11 @@
 
 #include <QStringList>
 
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/rendering/chtmlexportrendering.h"
-#include "btglobal.h"
+#include "../../btglobal.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
+#include "chtmlexportrendering.h"
 
 
 using namespace Rendering;

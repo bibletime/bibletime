@@ -12,7 +12,7 @@
 #ifndef CSWORDTREEKEYIDX_H
 #define CSWORDTREEKEYIDX_H
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 // Sword includes:
 #include <treekeyidx.h>

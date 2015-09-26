@@ -11,12 +11,12 @@
 
 #include <QDebug>
 #include <QLocale>
-#include "backend/btmoduletreeitem.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "util/directory.h" // DU::getUserBaseDir()
+#include "../../util/directory.h" // DU::getUserBaseDir()
+#include "../btmoduletreeitem.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/cswordbackend.h"
 
 // Sword includes:
-#include <backend/managers/cswordbackend.h>
 #include <versekey.h> // For search scope configuration
 
 

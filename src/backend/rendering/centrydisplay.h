@@ -13,13 +13,12 @@
 #define CENTRYDISPLAY_H
 
 #include <QString>
+#include "../drivers/btmodulelist.h"
+#include "ctextrendering.h"
 
 // Sword includes:
 #include <swdisp.h>
 #include <swmodule.h>
-
-#include "backend/drivers/btmodulelist.h"
-#include "ctextrendering.h"
 
 
 struct DisplayOptions;

@@ -14,7 +14,7 @@
 
 #include <QDir>
 #include <QString>
-#include "backend/managers/cswordbackend.h"
+#include "managers/cswordbackend.h"
 
 // Sword includes:
 #include <installmgr.h>

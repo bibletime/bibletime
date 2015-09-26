@@ -7,10 +7,10 @@
 *
 **********/
 
-#include "backend/keys/cswordldkey.h"
+#include "cswordldkey.h"
 
 #include <QTextCodec>
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../drivers/cswordlexiconmoduleinfo.h"
 
 // Sword includes:
 #include <swmodule.h>

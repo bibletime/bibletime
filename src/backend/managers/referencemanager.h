@@ -13,7 +13,7 @@
 #define REFERENCEMANAGER_H
 
 #include <QString>
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 /** Contains functions to work with references used for Drag & Drop and for hyperlinks used in our

@@ -12,7 +12,7 @@
 #ifndef CSWORDMODULEINFO_H
 #define CSWORDMODULEINFO_H
 
-#include "backend/managers/clanguagemgr.h"
+#include "../managers/clanguagemgr.h"
 
 #include <QIcon>
 #include <QList>
@@ -25,6 +25,7 @@
 #include <swmodule.h>
 #include <swsearchable.h>
 #include <swversion.h>
+
 
 #ifdef CLUCENE2
 // CLucene no longer lists the following functions in its headers

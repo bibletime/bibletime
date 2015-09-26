@@ -16,11 +16,11 @@
 #include <QAbstractListModel>
 #include <QColor>
 #include <QStringList>
-#include "btglobal.h"
-#include "backend/drivers/btmodulelist.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordldkey.h"
+#include "../../btglobal.h"
+#include "../drivers/btmodulelist.h"
+#include "../keys/cswordversekey.h"
+#include "../keys/cswordtreekey.h"
+#include "../keys/cswordldkey.h"
 
 
 struct ModuleEntry {

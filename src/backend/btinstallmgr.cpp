@@ -7,9 +7,9 @@
 *
 **********/
 
-#include "backend/btinstallmgr.h"
+#include "btinstallmgr.h"
 
-#include "backend/btinstallbackend.h"
+#include "btinstallbackend.h"
 
 
 namespace {

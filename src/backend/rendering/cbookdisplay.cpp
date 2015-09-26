@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "backend/rendering/cbookdisplay.h"
+#include "cbookdisplay.h"
 
 #include <QScopedPointer>
 #include <QtAlgorithms>
 
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/rendering/cdisplayrendering.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../keys/cswordtreekey.h"
+#include "cdisplayrendering.h"
 
 
 const QString Rendering::CBookDisplay::text(

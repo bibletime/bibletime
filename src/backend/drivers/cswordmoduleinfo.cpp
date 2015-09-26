@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
 #include <CLucene.h>
 #include <QByteArray>
@@ -19,18 +19,16 @@
 #include <QScopedArrayPointer>
 #include <QScopedPointer>
 #include <QTextDocument>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/rendering/centrydisplay.h"
-#include "backend/cswordmodulesearch.h"
-#include "bibletimeapp.h"
-#include "btglobal.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
-#include "util/htmlescape.h"
+#include "../../util/cresmgr.h"
+#include "../../util/directory.h"
+#include "../../util/htmlescape.h"
+#include "../config/btconfig.h"
+#include "../keys/cswordkey.h"
+#include "../managers/clanguagemgr.h"
+#include "../managers/cswordbackend.h"
+#include "../rendering/centrydisplay.h"
+#include "../cswordmodulesearch.h"
+#include "cswordlexiconmoduleinfo.h"
 
 // Sword includes:
 #include <listkey.h>

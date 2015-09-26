@@ -7,7 +7,8 @@
 *
 **********/
 
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "cswordcommentarymoduleinfo.h"
+
 
 bool CSwordCommentaryModuleInfo::isWritable() const {
     /*

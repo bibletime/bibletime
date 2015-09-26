@@ -15,7 +15,7 @@
 
 #include <QSortFilterProxyModel>
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 class BtBookshelfFilterModel: public QSortFilterProxyModel {

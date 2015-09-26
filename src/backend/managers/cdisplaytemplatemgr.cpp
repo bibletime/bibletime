@@ -7,16 +7,16 @@
 *
 **********/
 
-#include "backend/managers/cdisplaytemplatemgr.h"
+#include "cdisplaytemplatemgr.h"
 
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>
 #include <QTextStream>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/clanguagemgr.h"
-#include "util/directory.h"
+#include "../../util/directory.h"
+#include "../config/btconfig.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "clanguagemgr.h"
 
 
 #define CSSTEMPLATEBASE "Basic.tmpl"

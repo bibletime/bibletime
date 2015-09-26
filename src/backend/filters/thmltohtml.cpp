@@ -7,17 +7,17 @@
 *
 **********/
 
-#include "backend/filters/thmltohtml.h"
+#include "thmltohtml.h"
 
-#include <QString>
 #include <QRegExp>
-#include <QUrl>
+#include <QString>
 #include <QTextCodec>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/managers/cswordbackend.h"
+#include <QUrl>
+#include "../config/btconfig.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../managers/clanguagemgr.h"
+#include "../managers/cswordbackend.h"
+#include "../managers/referencemanager.h"
 
 // Sword includes:
 #include <swmodule.h>

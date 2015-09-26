@@ -7,15 +7,15 @@
 *
 **********/
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 #include <QRegExp>
 #include <QString>
 #include <QTextCodec>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordversekey.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordldkey.h"
+#include "cswordtreekey.h"
+#include "cswordversekey.h"
 
 // Sword includes:
 #include <swkey.h>

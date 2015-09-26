@@ -12,7 +12,7 @@
 #ifndef CSWORDVERSEKEY_H
 #define CSWORDVERSEKEY_H
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 #include <QString>
 

@@ -7,11 +7,11 @@
 *
 **********/
 
-#include "backend/rendering/cchapterdisplay.h"
+#include "cchapterdisplay.h"
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/rendering/cdisplayrendering.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../keys/cswordversekey.h"
+#include "cdisplayrendering.h"
 
 
 const QString Rendering::CChapterDisplay::text(

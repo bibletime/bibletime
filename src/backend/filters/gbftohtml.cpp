@@ -7,12 +7,12 @@
 *
 **********/
 
-#include "backend/filters/gbftohtml.h"
+#include "gbftohtml.h"
 
 #include <QRegExp>
 #include <QString>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../managers/cswordbackend.h"
 
 // Sword includes:
 #include <utilxml.h>

@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "cswordlexiconmoduleinfo.h"
 
 #include <QFile>
 #include <QDataStream>
 #include <QTextCodec>
 #include <QDebug>
 
-#include "util/directory.h"
+#include "../../util/directory.h"
 
 // Sword includes:
 #include <swmodule.h>

@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "backend/filters/teitohtml.h"
+#include "teitohtml.h"
 
 #include <QString>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/managers/cswordbackend.h"
+#include "../config/btconfig.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../managers/clanguagemgr.h"
+#include "../managers/cswordbackend.h"
+#include "../managers/referencemanager.h"
 
 // Sword includes:
 #include <swbuf.h>

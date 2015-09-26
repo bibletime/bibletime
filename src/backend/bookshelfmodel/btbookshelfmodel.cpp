@@ -10,10 +10,10 @@
 *
 **********/
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "btbookshelfmodel.h"
 
 #include <QIcon>
-#include "util/macros.h"
+#include "../../util/macros.h"
 
 
 int BtBookshelfModel::rowCount(const QModelIndex & parent) const {

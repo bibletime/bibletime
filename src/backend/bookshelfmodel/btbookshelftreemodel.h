@@ -18,10 +18,10 @@
 #include <QList>
 #include <QMap>
 #include <QPersistentModelIndex>
-#include "backend/drivers/btconstmoduleset.h"
-#include "backend/drivers/btmoduleset.h"
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/bookshelfmodel/item.h"
+#include "../drivers/btconstmoduleset.h"
+#include "../drivers/btmoduleset.h"
+#include "btbookshelfmodel.h"
+#include "item.h"
 
 
 namespace BookshelfModel { class ModuleItem; }

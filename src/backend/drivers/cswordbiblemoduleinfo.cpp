@@ -7,11 +7,11 @@
 *
 **********/
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "cswordbiblemoduleinfo.h"
 
 #include <QScopedPointer>
 #include <QFile>
-#include "backend/managers/cswordbackend.h"
+#include "../managers/cswordbackend.h"
 
 // Sword includes:
 #include <versekey.h>

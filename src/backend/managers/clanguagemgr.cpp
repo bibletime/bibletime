@@ -7,10 +7,10 @@
 *
 **********/
 
-#include "backend/managers/clanguagemgr.h"
+#include "clanguagemgr.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordbackend.h"
 
 
 /****************************************************/

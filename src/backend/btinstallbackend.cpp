@@ -7,15 +7,15 @@
 *
 **********/
 
-#include "backend/btinstallbackend.h"
+#include "btinstallbackend.h"
 
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include "backend/managers/cswordbackend.h"
-#include "backend/btinstallmgr.h"
-#include "util/directory.h"
+#include "../util/directory.h"
+#include "managers/cswordbackend.h"
+#include "btinstallmgr.h"
 
 // Sword includes:
 #include <filemgr.h>

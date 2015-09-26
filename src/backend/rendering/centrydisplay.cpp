@@ -7,18 +7,18 @@
 *
 **********/
 
-#include "backend/rendering/centrydisplay.h"
+#include "centrydisplay.h"
 
 #include <QApplication>
 #include <QRegExp>
 
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "backend/rendering/ctextrendering.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
+#include "cdisplayrendering.h"
+#include "ctextrendering.h"
 
 
 using namespace Rendering;

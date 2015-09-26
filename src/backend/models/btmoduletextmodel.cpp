@@ -12,15 +12,15 @@
 
 #include "btmoduletextmodel.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/cswordmodulesearch.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/rendering/ctextrendering.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../drivers/cswordlexiconmoduleinfo.h"
+#include "../cswordmodulesearch.h"
+#include "../keys/cswordtreekey.h"
+#include "../keys/cswordldkey.h"
+#include "../managers/cswordbackend.h"
+#include "../rendering/ctextrendering.h"
 
 
 // Static so all models use the same colors

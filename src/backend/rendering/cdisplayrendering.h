@@ -12,8 +12,9 @@
 #ifndef RENDERINGCDISPLAYRENDERING_H
 #define RENDERINGCDISPLAYRENDERING_H
 
-#include "backend/rendering/chtmlexportrendering.h"
-#include "backend/config/btconfig.h"
+#include "chtmlexportrendering.h"
+
+#include "../config/btconfig.h"
 
 
 namespace Rendering {

@@ -10,9 +10,9 @@
 *
 **********/
 
-#include "backend/bookshelfmodel/languageitem.h"
+#include "languageitem.h"
 
-#include "util/cresmgr.h"
+#include "../../util/cresmgr.h"
 
 
 namespace BookshelfModel {

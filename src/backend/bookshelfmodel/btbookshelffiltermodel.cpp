@@ -10,9 +10,9 @@
 *
 **********/
 
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "btbookshelffiltermodel.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "btbookshelfmodel.h"
 
 
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * parent)

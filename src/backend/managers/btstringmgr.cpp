@@ -7,11 +7,11 @@
 *
 **********/
 
-#include "backend/managers/btstringmgr.h"
+#include "btstringmgr.h"
 
 #include <cstring>
 #include <QString>
-#include "util/macros.h"
+#include "../../util/macros.h"
 
 
 namespace {

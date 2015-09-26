@@ -13,9 +13,9 @@
 #ifndef INDEXINGITEM_H
 #define INDEXINGITEM_H
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 namespace BookshelfModel {

@@ -22,12 +22,10 @@
 #include <QString>
 #include <QStringList>
 #include <QVariant>
-
-#include "backend/config/btconfigcore.h"
-
-#include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "btglobal.h"
+#include "../../btglobal.h"
+#include "../btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
+#include "../drivers/cswordmoduleinfo.h"
+#include "btconfigcore.h"
 
 
 class BibleTimeApp;

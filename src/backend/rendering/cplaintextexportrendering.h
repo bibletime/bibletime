@@ -12,8 +12,8 @@
 #ifndef RENDERINGCPLAINTEXTEXPORTRENDERING_H
 #define RENDERINGCPLAINTEXTEXPORTRENDERING_H
 
-#include "backend/rendering/chtmlexportrendering.h"
-#include "backend/config/btconfig.h"
+#include "../config/btconfig.h"
+#include "chtmlexportrendering.h"
 
 
 namespace Rendering {

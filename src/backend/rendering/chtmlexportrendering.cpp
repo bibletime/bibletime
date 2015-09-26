@@ -7,15 +7,14 @@
 *
 **********/
 
-#include "backend/rendering/chtmlexportrendering.h"
+#include "chtmlexportrendering.h"
 
 #include <QScopedPointer>
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/clanguagemgr.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/clanguagemgr.h"
 
 
 #if 0

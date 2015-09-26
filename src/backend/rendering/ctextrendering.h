@@ -16,7 +16,7 @@
 #include <QSharedPointer>
 #include <QString>
 
-#include "backend/drivers/btmodulelist.h"
+#include "../drivers/btmodulelist.h"
 
 
 class CSwordKey;

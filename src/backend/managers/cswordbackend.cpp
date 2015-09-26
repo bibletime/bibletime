@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/managers/cswordbackend.h"
+#include "cswordbackend.h"
 
 #include <QDebug>
 #include <QDir>
@@ -15,13 +15,13 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "btglobal.h"
-#include "util/directory.h"
+#include "../../btglobal.h"
+#include "../../util/directory.h"
+#include "../config/btconfig.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../drivers/cswordcommentarymoduleinfo.h"
+#include "../drivers/cswordlexiconmoduleinfo.h"
 
 // Sword includes:
 #include <encfiltmgr.h>

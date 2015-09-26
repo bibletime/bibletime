@@ -12,7 +12,7 @@
 #ifndef CSWORDCOMMENTARYMODULEINFO_H
 #define CSWORDCOMMENTARYMODULEINFO_H
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "cswordbiblemoduleinfo.h"
 
 
 /**

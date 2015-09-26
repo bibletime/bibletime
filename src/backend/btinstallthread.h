@@ -16,7 +16,7 @@
 
 #include <QMutex>
 #include <QMutexLocker>
-#include "backend/btinstallmgr.h"
+#include "btinstallmgr.h"
 
 
 class BtInstallProgressDialog;

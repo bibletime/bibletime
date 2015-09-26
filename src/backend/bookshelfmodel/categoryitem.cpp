@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "backend/bookshelfmodel/categoryitem.h"
+#include "categoryitem.h"
 
 
 namespace BookshelfModel {
