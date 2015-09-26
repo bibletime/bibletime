@@ -37,10 +37,10 @@
 #include <QTimer>
 #include <QScopedPointer>
 #include "../bibletimeapp.h"
-#include "../btglobal.h"
 #include "../util/cresmgr.h"
 #include "../util/directory.h"
 #include "../util/tool.h"
+#include "btglobal.h"
 #include "config/btconfig.h"
 #include "drivers/cswordmoduleinfo.h"
 #include "keys/cswordversekey.h"

@@ -122,7 +122,6 @@ HEADERS += \
     ../../../src/bibletimeapp.h \
     ../../../src/bibletime.h \
     ../../../src/bibletime_dbus_adaptor.h \
-    ../../../src/btglobal.h \
     ../../../src/frontend/btaboutdialog.h \
     ../../../src/frontend/btaboutmoduledialog.h \
     ../../../src/frontend/btbookshelfdockwidget.h \

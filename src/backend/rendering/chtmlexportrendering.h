@@ -14,7 +14,7 @@
 
 #include "ctextrendering.h"
 
-#include "../../btglobal.h"
+#include "../btglobal.h"
 #include "../config/btconfig.h"
 #include "../managers/cswordbackend.h"
 

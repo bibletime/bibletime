@@ -7,7 +7,6 @@ SET(bibletime_SRC
     src/bibletime_init.cpp
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
-    src/btglobal.cpp
     src/main.cpp
 )
 
@@ -21,6 +20,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/btinstallmgr.cpp
     src/backend/btinstallthread.cpp
     src/backend/btbookmarksmodel.cpp
+    src/backend/btglobal.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})

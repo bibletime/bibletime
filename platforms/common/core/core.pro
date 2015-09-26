@@ -17,6 +17,7 @@ SOURCES += \
     ../../../src/backend/bookshelfmodel/categoryitem.cpp \
     ../../../src/backend/bookshelfmodel/indexingitem.cpp \
     ../../../src/backend/btbookmarksmodel.cpp \
+    ../../../src/backend/btglobal.cpp \
     ../../../src/backend/btinstallbackend.cpp \
     ../../../src/backend/btinstallmgr.cpp \
     ../../../src/backend/btinstallthread.cpp \
@@ -51,7 +52,6 @@ SOURCES += \
     ../../../src/backend/rendering/chtmlexportrendering.cpp \
     ../../../src/backend/rendering/cplaintextexportrendering.cpp \
     ../../../src/backend/rendering/ctextrendering.cpp \
-    ../../../src/btglobal.cpp \
     ../../../src/util/cresmgr.cpp \
     ../../../src/util/directory.cpp \
     ../../../src/util/tool.cpp \
@@ -67,6 +67,7 @@ HEADERS += \
     ../../../src/backend/bookshelfmodel/languageitem.h \
     ../../../src/backend/bookshelfmodel/moduleitem.h \
     ../../../src/backend/btbookmarksmodel.h \
+    ../../../src/backend/btglobal.h \
     ../../../src/backend/btinstallbackend.h \
     ../../../src/backend/btinstallmgr.h \
     ../../../src/backend/btinstallthread.h \

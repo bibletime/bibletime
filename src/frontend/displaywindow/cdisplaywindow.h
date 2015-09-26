@@ -15,8 +15,8 @@
 #include <QMainWindow>
 
 #include <QStringList>
+#include "backend/btglobal.h"
 #include "backend/managers/cswordbackend.h"
-#include "btglobal.h"
 
 
 class BtActionCollection;

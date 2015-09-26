@@ -13,7 +13,7 @@
 
 #include <QStringList>
 
-#include "../../btglobal.h"
+#include "../btglobal.h"
 #include "../keys/cswordversekey.h"
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/referencemanager.h"

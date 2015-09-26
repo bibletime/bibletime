@@ -14,8 +14,9 @@
 
 #include <QList>
 #include <QString>
+#include "backend/btglobal.h"
 #include "backend/config/btconfig.h"
-#include "btglobal.h"
+
 
 class CSwordKey;
 class CSwordModuleInfo;

@@ -16,7 +16,7 @@
 #include <QAbstractListModel>
 #include <QColor>
 #include <QStringList>
-#include "../../btglobal.h"
+#include "../btglobal.h"
 #include "../drivers/btmodulelist.h"
 #include "../keys/cswordversekey.h"
 #include "../keys/cswordtreekey.h"

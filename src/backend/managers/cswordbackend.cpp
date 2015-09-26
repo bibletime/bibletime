@@ -15,8 +15,8 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
-#include "../../btglobal.h"
 #include "../../util/directory.h"
+#include "../btglobal.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../drivers/cswordbookmoduleinfo.h"

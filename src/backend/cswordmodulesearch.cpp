@@ -10,8 +10,8 @@
 #include "cswordmodulesearch.h"
 
 #include <QDebug>
-#include "../btglobal.h"
 #include "../util/tool.h"
+#include "btglobal.h"
 #include "config/btconfig.h"
 #include "managers/cswordbackend.h"
 
