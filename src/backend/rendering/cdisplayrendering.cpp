@@ -51,16 +51,30 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
             break; //no key is valid for all modules
         }
 
-        case KeyTreeItem::Settings::CompleteShort: {
-            if (isBible) {
-                linkText = QString::fromUtf8(vk.getShortText());
-                break;
-            }
+    case KeyTreeItem::Settings::ExpandedShort: {
+        if (isBible) {
+            linkText = module->name() + ':' + QString::fromUtf8(vk.getShortText());
+            break;
+        }
+    }
 
-            //fall through for non-Bible modules
+    case KeyTreeItem::Settings::CompleteShort: {
+        if (isBible) {
+            linkText = QString::fromUtf8(vk.getShortText());
+            break;
         }
 
-        case KeyTreeItem::Settings::CompleteLong: {
+        //fall through for non-Bible modules
+    }
+
+    case KeyTreeItem::Settings::ExpandedLong: {
+        if (isBible) {
+            linkText = QString("%1 (%2)").arg(vk.key()).arg(module->name());
+            break;
+        }
+    }
+
+    case KeyTreeItem::Settings::CompleteLong: {
             if (isBible) {
                 linkText = vk.key();
                 break;
