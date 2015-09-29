@@ -58,7 +58,9 @@ class CTextRendering {
                         NoKey, //< means no key shown at all
                         SimpleKey, //< means only versenumber or only lexicon entry name
                         CompleteShort, //< means key like "Gen 1:1"
-                        CompleteLong //< means "Genesis 1:1"
+                        CompleteLong, //< means "Genesis 1:1"
+                        ExpandedShort, // means "KJV:Gen 1:1"
+                        ExpandedLong   // means "Genesis 1:1 (KJV)"
                     };
 
                     Settings(const bool highlight = false,
