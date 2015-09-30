@@ -397,7 +397,7 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
 QStringList CSwordBackend::getSharedSwordConfigFiles() const {
 #ifdef Q_OS_WIN
     //  %ALLUSERSPROFILE%\Sword\sword.conf
-    return QStringList(util::directory::convertDirSeparators(QString(getenv("SWORD_PATH"))) += "/Sword/sword.conf");
+    return QStringList(util::directory::convertDirSeparators(qgetenv("SWORD_PATH")) += "/Sword/sword.conf");
 #else
     // /etc/sword.conf, /usr/local/etc/sword.conf
     return QString(globalConfPath).split(":");
@@ -439,7 +439,7 @@ QStringList CSwordBackend::swordDirList() const {
           private sword.conf will have it. The user could decide to delete this
           shared path and it will not automatically come back.
         */
-        swordDirSet << DU::convertDirSeparators(QString(getenv("SWORD_PATH")));
+        swordDirSet << DU::convertDirSeparators(qgetenv("SWORD_PATH"));
 #endif
     }
 
