@@ -146,30 +146,23 @@ bool CSwordVerseKey::setKey(const QString &newKey) {
 }
 
 bool CSwordVerseKey::setKey(const char *newKey) {
-    typedef CSwordBibleModuleInfo CSBMI;
+    emitBeforeChanged();
 
-    /// \todo Is this check necessary?
-    if (newKey) {
-        /// \todo Is this check necessary?
-        // Check if empty string:
-        if (*newKey != '\0') {
-            QString newKeyStr = newKey;
-            emitBeforeChanged();
-            positionFrom(newKey);
-        } else {
-            const CSwordModuleInfo *m = module();
-            if (m->type() == CSwordModuleInfo::Bible) {
-                Q_ASSERT(dynamic_cast<const CSBMI*>(m) != 0);
-                const CSBMI *bible = static_cast<const CSBMI*>(m);
-                emitBeforeChanged();
-                positionFrom(bible->lowerBound().key().toUtf8().constData());
-            }
-        }
+    if(QByteArray(newKey).contains('-')) {
+        VerseKey vk(newKey, newKey, getVersificationSystem());
+        setLowerBound(vk.getLowerBound());
+        setUpperBound(vk.getUpperBound());
+        setPosition(sword::TOP);
+    } else {
+        clearBounds();
+        positionFrom(newKey);
     }
 
-    /// \todo Do we ALWAYS need to emit this signal and check for errors?
-    emitAfterChanged();
-    return !popError();
+    m_valid = !popError();
+
+    emitAfterChanged(); /// \todo Do we ALWAYS need to emit this signal
+
+    return m_valid;
 }
 
 bool CSwordVerseKey::next( const JumpType type ) {
