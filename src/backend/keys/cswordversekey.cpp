@@ -23,12 +23,13 @@
 CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
     : CSwordKey(module)
 {
-    typedef CSwordBibleModuleInfo CSBMI;
-    if (const CSBMI *bible = dynamic_cast<const CSBMI*>(module) ) {
-        // Copy important settings like versification system
-        copyFrom(static_cast<sword::VerseKey*>(bible->module()->getKey()));
+    if(module) {
+        CSwordBibleModuleInfo const * bible = dynamic_cast<CSwordBibleModuleInfo const *>(module);
+        Q_CHECK_PTR(bible);
 
-        setKey( bible->lowerBound().key() );
+        // Copy important settings like versification system
+        copyFrom(bible->module()->getKey());
+        setKey(bible->lowerBound().key());
     }
     this->VerseKey::setAutoNormalize(true);
 }
