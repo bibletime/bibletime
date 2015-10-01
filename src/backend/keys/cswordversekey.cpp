@@ -52,25 +52,43 @@ CSwordKey* CSwordVerseKey::copy() const {
 
 /** Sets the module for this key */
 void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
-    typedef CSwordBibleModuleInfo CSBMI;
-
     Q_ASSERT(newModule);
     if (m_module == newModule) return;
-    Q_ASSERT(newModule->type() == CSwordModuleInfo::Bible
-             || newModule->type() == CSwordModuleInfo::Commentary);
+    Q_ASSERT(newModule->type() == CSwordModuleInfo::Bible ||
+             newModule->type() == CSwordModuleInfo::Commentary);
+
+    CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);
+    const char * newVersification =
+            static_cast<VerseKey*>(bible->module()->getKey())->getVersificationSystem();
+    bool inVersification = true;
+
+    emitBeforeChanged();
+
+    if(strcmp(getVersificationSystem(), newVersification)) {
+        /// Remap key position to new versification
+        sword::VerseKey oldKey(*this);
+
+        setVersificationSystem(newVersification);
+
+        positionFrom(oldKey);
+        inVersification = !popError();
+    }
 
     m_module = newModule;
 
-    //check if the module contains the key we present
-    const CSBMI* bible = dynamic_cast<const CSBMI*>(newModule);
+    emitAfterChanged();
 
-    if (_compare(bible->lowerBound()) < 0) {
-        setKey(bible->lowerBound());
+    if(inVersification) {
+        /// Limit to Bible bounds
+        if (_compare(bible->lowerBound()) < 0) {
+            setKey(bible->lowerBound());
+        }
+        if (_compare(bible->upperBound()) > 0) {
+            setKey(bible->upperBound());
+        }
     }
 
-    if (_compare(bible->upperBound()) > 0) {
-        setKey(bible->upperBound());
-    }
+    m_valid = inVersification;
 }
 
 /** Returns the current book as Text, not as integer. */
