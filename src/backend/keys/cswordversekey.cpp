@@ -134,7 +134,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
 
 /** Sets the key we use to the parameter. */
 QString CSwordVerseKey::key() const {
-    return QString::fromUtf8(getText());
+    return QString::fromUtf8(isBoundSet() ? getRangeText() : getText());
 }
 
 const char * CSwordVerseKey::rawKey() const {
