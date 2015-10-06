@@ -32,17 +32,17 @@ class BtBookshelfModel: public QAbstractListModel {
 public: /* Types: */
 
     enum ModuleRole {
-        ModuleNameRole = Qt::DisplayRole,
-        ModuleIconRole = Qt::DecorationRole,
-        ModulePointerRole  = Qt::UserRole,
-        ModuleCategoryRole = Qt::UserRole + 1,
-        ModuleLanguageRole = Qt::UserRole + 2,
-        ModuleHiddenRole = Qt::UserRole + 3,
-        ModuleInstallPathRole = Qt::UserRole + 4,
-        ModuleHasIndexRole = Qt::UserRole + 5,
-        ModuleIndexSizeRole = Qt::UserRole + 6,
-        ModuleDescriptionRole = Qt::UserRole + 7,
-        UserRole = Qt::UserRole + 100
+        ModuleNameRole = Qt::UserRole,
+        ModuleIconRole,
+        ModulePointerRole,
+        ModuleCategoryRole,
+        ModuleLanguageRole,
+        ModuleHiddenRole,
+        ModuleInstallPathRole,
+        ModuleHasIndexRole,
+        ModuleIndexSizeRole,
+        ModuleDescriptionRole,
+        UserRole
     };
 
 public: /* Methods: */
