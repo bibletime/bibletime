@@ -26,9 +26,11 @@ int BtBookshelfModel::rowCount(const QModelIndex & parent) const {
 QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
     Q_ASSERT(module);
     switch (role) {
-        case ModuleNameRole: // Qt::DisplayRole
+        case Qt::DisplayRole:
+        case ModuleNameRole:
             return module->name();
-        case ModuleIconRole: // Qt::DecorationRole
+        case Qt::DecorationRole:
+        case ModuleIconRole:
             return CSwordModuleInfo::moduleIcon(*module);
         case ModulePointerRole:
             return qVariantFromValue(static_cast<void *>(module));
