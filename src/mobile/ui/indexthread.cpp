@@ -57,7 +57,13 @@ void IndexThread::indexModule() {
     emit beginIndexingModule(moduleName);
     bool ok = connect(module, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)));
     Q_ASSERT(ok);
-    bool success = module->buildIndex();
+    bool success = true;
+    try {
+        module->buildIndex();
+    }
+    catch (...) {
+        success = false;
+    }
     emit endIndexingModule(moduleName, success);
 }
 

@@ -44,6 +44,7 @@ SOURCES += \
     ../../../src/backend/managers/clanguagemgr.cpp \
     ../../../src/backend/managers/cswordbackend.cpp \
     ../../../src/backend/managers/referencemanager.cpp \
+    ../../../src/backend/models/btmoduletextmodel.cpp \
     ../../../src/backend/rendering/btinforendering.cpp \
     ../../../src/backend/rendering/cbookdisplay.cpp \
     ../../../src/backend/rendering/cchapterdisplay.cpp \
@@ -54,6 +55,8 @@ SOURCES += \
     ../../../src/backend/rendering/ctextrendering.cpp \
     ../../../src/util/cresmgr.cpp \
     ../../../src/util/directory.cpp \
+    ../../../src/util/bticons.cpp \
+    ../../../src/util/btmodules.cpp \
     ../../../src/util/tool.cpp \
 
 
@@ -95,6 +98,7 @@ HEADERS += \
     ../../../src/backend/keys/cswordldkey.h \
     ../../../src/backend/keys/cswordtreekey.h \
     ../../../src/backend/keys/cswordversekey.h \
+    ../../../src/backend/models/btmoduletextmodel.h \
     ../../../src/backend/rendering/cbookdisplay.h \
     ../../../src/backend/rendering/cchapterdisplay.h \
     ../../../src/backend/rendering/cdisplayrendering.h \
@@ -104,6 +108,8 @@ HEADERS += \
     ../../../src/backend/rendering/ctextrendering.h \
     ../../../src/util/cresmgr.h \
     ../../../src/util/directory.h \
+    ../../../src/util/bticons.h \
+    ../../../src/util/btmodules.h \
     ../../../src/util/tool.h \
 
 

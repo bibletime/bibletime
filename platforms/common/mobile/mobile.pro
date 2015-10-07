@@ -1,4 +1,5 @@
-CONFIG += clucene svg xml mobile qml quick c++11
+CONFIG += clucene  mobile c++11
+QT += svg xml qml quick
 
 QML_ROOT_PATH = /home/gary/shared/sw/bibletime/src/mobile/qml
 

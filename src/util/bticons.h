@@ -41,7 +41,7 @@ public: /* Methods: */
     BtIcons();
 
     static inline BtIcons & instance()
-    { return (Q_ASSERT(m_instance), *m_instance); }
+    { Q_ASSERT(m_instance); return *m_instance; }
 
 private: /* Fields: */
 
