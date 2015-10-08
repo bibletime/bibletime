@@ -40,8 +40,10 @@ public: /* Methods: */
 
     BtIcons();
 
-    static inline BtIcons & instance()
-    { Q_ASSERT(m_instance); return *m_instance; }
+    static inline BtIcons & instance() { 
+        Q_ASSERT(m_instance); 
+        return *m_instance; 
+    }
 
 private: /* Fields: */
 
