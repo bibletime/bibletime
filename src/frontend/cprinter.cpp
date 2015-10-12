@@ -20,23 +20,28 @@
 
 namespace Printing {
 
+namespace {
+
+inline FilterOptions mangleFilterOptions(FilterOptions const & fo) {
+    FilterOptions r(fo);
+    r.footnotes = false;
+    r.scriptureReferences = false;
+    r.strongNumbers = false;
+    r.morphTags = false;
+    r.headings = false;
+    return r;
+}
+
+} // anonymous namespace
+
 /// \todo WHY IS parent NOT USED!?
 CPrinter::CPrinter(QObject *,
                    const DisplayOptions &displayOptions,
                    const FilterOptions &filterOptions)
         : QObject(0),
-          CDisplayRendering(displayOptions, filterOptions),
+          CDisplayRendering(displayOptions, mangleFilterOptions(filterOptions)),
           m_htmlPage(new QWebPage())
-{
-    m_htmlPage->setParent(this);
-
-    //override the filteroptions set in the c-tor of CDisplayRendering
-    m_filterOptions.footnotes = false;
-    m_filterOptions.scriptureReferences = false;
-    m_filterOptions.strongNumbers = false;
-    m_filterOptions.morphTags = false;
-    m_filterOptions.headings = false;
-}
+{ m_htmlPage->setParent(this); }
 
 CPrinter::~CPrinter() {
     delete m_htmlPage;
