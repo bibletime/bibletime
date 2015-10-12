@@ -17,31 +17,6 @@
 #include "../managers/clanguagemgr.h"
 
 
-#if 0
-#include <QDebug>
-
-namespace {
-
-/** Helper function to dump a verse with all its enty attributes. */
-void dumpEntryAttributes(sword::SWModule *module) {
-    qDebug() << "Attributes for key: " << module->getKeyText();
-    sword::AttributeTypeList::iterator i1;
-    sword::AttributeList::iterator i2;
-    sword::AttributeValue::iterator i3;
-    for (i1 = module->getEntryAttributes().begin(); i1 != module->getEntryAttributes().end(); i1++) {
-        qDebug() << "[ " << i1->first << " ]";
-        for (i2 = i1->second.begin(); i2 != i1->second.end(); i2++) {
-            qDebug() << "\t[ " << i2->first << " ]";
-            for (i3 = i2->second.begin(); i3 != i2->second.end(); i3++) {
-               qDebug() << "\t\t" << i3->first << " = " << i3->second;
-            }
-        }
-    }
-}
-
-} // anonymous namespace
-#endif
-
 namespace Rendering {
 
 CHTMLExportRendering::CHTMLExportRendering(
