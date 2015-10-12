@@ -323,7 +323,7 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
         }
         // if the token contains a ^ then trim the remainder of the
         // token from the ^
-        //What??? error: invalid conversion from ‘const void*’ to ‘int’
+        //What??? error: invalid conversion from 'const void*' to 'int'
         // and how come "contains" returns bool but is used as int?
         //else if ( (pos = (*it).contains("^")) >= 0 ) {
         else if ( (pos = (*it).indexOf("^") ) >= 0 ) {
