@@ -306,9 +306,9 @@ void CSwordModuleInfo::buildIndex() {
         else
         {
             m_module->setPosition(sword::TOP);
-            verseLowIndex = m_module->Index();
+            verseLowIndex = m_module->getIndex();
             m_module->setPosition(sword::BOTTOM);
-            verseHighIndex = m_module->Index();
+            verseHighIndex = m_module->getIndex();
         }
 
         // verseLowIndex is not 0 in all cases (i.e. NT-only modules)
