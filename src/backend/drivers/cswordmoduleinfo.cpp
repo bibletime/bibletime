@@ -729,11 +729,11 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
                                      name.toUtf8().constData());
 }
 
-CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const {
-    return (config(TextDir) == "RtoL")
-           ? CSwordModuleInfo::RightToLeft
-           : CSwordModuleInfo::LeftToRight;
-}
+CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const
+{ return (config(TextDir) == "RtoL") ? RightToLeft : LeftToRight; }
+
+char const * CSwordModuleInfo::textDirectionAsHtml() const
+{ return textDirection() == RightToLeft ? "rtl" : "ltr"; }
 
 void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
     m_module->setKey(key->key().toUtf8().constData());

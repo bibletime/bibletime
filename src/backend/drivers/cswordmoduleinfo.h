@@ -305,10 +305,11 @@ wrong, or if the config file was write protected return false.
 
     bool has(const CSwordModuleInfo::FilterTypes ) const;
 
-    /**
-      \returns the text direction of the module's text.
-    */
+    /** \returns the text direction of the module's text. */
     CSwordModuleInfo::TextDirection textDirection() const;
+
+    /** \returns the text direction of the module's text as an HTML value. */
+    char const * textDirectionAsHtml() const;
 
     /**
       Writes the new text at the given position into the module. This does
