@@ -216,7 +216,9 @@ QString CSwordModuleInfo::getModuleStandardIndexLocation() const {
 }
 
 bool CSwordModuleInfo::hasIndex() const {
-#ifndef BT_NO_LUCENE
+#ifdef BT_NO_LUCENE
+    return false;
+#else
     { // Is this a directory?
         QFileInfo fi(getModuleStandardIndexLocation());
         if (!fi.isDir())
@@ -245,8 +247,6 @@ bool CSwordModuleInfo::hasIndex() const {
     // Is the index there?
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation()
                                                    .toLatin1().constData());
-#else
-    return false;
 #endif
 }
 
