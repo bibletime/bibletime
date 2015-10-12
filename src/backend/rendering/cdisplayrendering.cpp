@@ -83,38 +83,38 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
             //fall through for non-Bible modules
         }
 
-        case KeyTreeItem::Settings::SimpleKey: {
+        case KeyTreeItem::Settings::SimpleKey:
             if (isBible) {
-                if(item.mappedKey() != 0)
-                {
+                if(item.mappedKey() != 0) {
                     CSwordVerseKey baseKey(*item.modules().begin());
                     baseKey.setKey(item.key());
 
-                    if(vk.book() != baseKey.book())
+                    if (vk.book() != baseKey.book()) {
                         linkText = QString::fromUtf8(vk.getShortText());
-                    else if(vk.getChapter() != baseKey.getChapter())
+                    } else if (vk.getChapter() != baseKey.getChapter()) {
                         linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
-                    else
+                    } else {
                         linkText = QString::number(vk.getVerse());
-
-                    if(vk.isBoundSet())
-                    {
-                        linkText += "-";
-                        if(vk.getUpperBound().getBook() != vk.getLowerBound().getBook())
-                            linkText += QString::fromUtf8(vk.getUpperBound().getShortText());
-                        else if(vk.getUpperBound().getChapter() != vk.getLowerBound().getChapter())
-                            linkText += QString("%1:%2").arg(vk.getUpperBound().getChapter()).arg(vk.getUpperBound().getVerse());
-                        else
-                            linkText += QString::number(vk.getUpperBound().getVerse());
                     }
-                }
-                else
-                    linkText = QString::number(vk.getVerse());
-                break;
-            }
 
-            //fall through for non-Bible modules
-        }
+                    if(vk.isBoundSet()) {
+                        linkText += "-";
+                        sword::VerseKey const & upper = vk.getUpperBound();
+                        sword::VerseKey const & lower = vk.getLowerBound();
+                        if (upper.getBook() != lower.getBook()) {
+                            linkText += QString::fromUtf8(upper.getShortText());
+                        } else if(upper.getChapter() != lower.getChapter()) {
+                            linkText += QString("%1:%2").arg(upper.getChapter())
+                                                        .arg(lower.getVerse());
+                        } else {
+                            linkText += QString::number(upper.getVerse());
+                        }
+                    }
+                } else {
+                    linkText = QString::number(vk.getVerse());
+                }
+                break;
+            } // else fall through for non-Bible modules
 
         default: { //default behaviour to return the passed key
             linkText = item.key();
