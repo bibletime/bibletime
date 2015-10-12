@@ -22,35 +22,35 @@
 namespace Rendering {
 
 /**
- * This CTextRenerding implementation
- * creates HTML specially made for export as HTML files.
- * @short HTML rendering for export.
- * @author The BibleTime team
- */
+  \brief Provides HTML rendering for export.
+  This CTextRenerding implementation creates HTML specially made for export as
+  HTML files.
+*/
 class CHTMLExportRendering: public CTextRendering {
 
-    public: /* Methods: */
+public: /* Methods: */
 
-        CHTMLExportRendering(
-            bool addText,
-            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = btConfig().getFilterOptions());
+    CHTMLExportRendering(
+        bool addText,
+        DisplayOptions const & displayOptions =
+                btConfig().getDisplayOptions(),
+        FilterOptions const & filterOptions =
+                btConfig().getFilterOptions());
 
-        ~CHTMLExportRendering() {};
+protected: /* Methods: */
 
-    protected: /* Methods: */
+    virtual QString renderEntry(KeyTreeItem const & item,
+                                CSwordKey * key = 0);
+    virtual QString finishText(QString const & text, KeyTree const & tree);
+    virtual QString entryLink(KeyTreeItem const & item,
+                              CSwordModuleInfo const * module);
+    virtual void initRendering();
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
-        virtual QString finishText(const QString &text, const KeyTree &tree);
-        virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo *module);
-        virtual void initRendering();
+protected: /* Fields: */
 
-    protected: /* Fields: */
-
-        DisplayOptions m_displayOptions;
-        FilterOptions m_filterOptions;
-        bool m_addText;
+    DisplayOptions const m_displayOptions;
+    FilterOptions const m_filterOptions;
+    bool const m_addText;
 
 }; /* class CHTMLExportRendering */
 
