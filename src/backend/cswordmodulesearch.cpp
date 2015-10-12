@@ -338,30 +338,22 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     return(tokenList);
 }
 
-QString CSwordModuleSearch::prepareSearchText(const QString& orig, SearchType const & searchType) {
+QString CSwordModuleSearch::prepareSearchText(
+        QString const & orig,
+        SearchType const searchType)
+{
+    if (searchType == FullType)
+        return orig;
     qDebug() << "Original search text:" << orig;
     static const QRegExp syntaxCharacters("[+\\-()!\"~]");
     static const QRegExp andWords("\\band\\b", Qt::CaseInsensitive);
     static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
-    QString text("");
-    if (searchType == AndType) {
-        text = orig.simplified();
-        text.remove(syntaxCharacters);
-        qDebug() << "After syntax characters removed:" << text;
-        text.replace(andWords, "\"and\"");
-        text.replace(orWords, "\"or\"");
-        qDebug() << "After \"and\" and \"or\" replaced:" << text;
+    QString text(orig.simplified());
+    text.remove(syntaxCharacters);
+    text.replace(andWords, "\"and\"");
+    text.replace(orWords, "\"or\"");
+    if (searchType == AndType)
         text.replace(" ", " AND ");
-    }
-    if (searchType == OrType) {
-        text = orig.simplified();
-        text.remove(syntaxCharacters);
-        text.replace(andWords, "\"and\"");
-        text.replace(orWords, "\"or\"");
-    }
-    if (searchType == FullType) {
-        text = orig;
-    }
     qDebug() << "The final search string:" << text;
     return text;
 }

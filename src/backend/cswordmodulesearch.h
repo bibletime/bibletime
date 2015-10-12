@@ -116,7 +116,8 @@ class CSwordModuleSearch: public QObject {
         /**
           Prepares the search string given by user for a specific search type
         */
-        static QString prepareSearchText(QString const & orig, SearchType const & searchType);
+        static QString prepareSearchText(QString const & orig,
+                                         SearchType const searchType);
 
     protected:
         /**
