@@ -69,6 +69,7 @@ void openBookshelfManager() {
 
 }
 
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
 // Copies locale.qrc files into home sword directory under locales.d directory
 static void installSwordLocales(QDir& homeSword)
 {
@@ -98,6 +99,7 @@ static void installSwordLocales(QDir& homeSword)
         sourceFile.copy(destinationFilePath);
     }
 }
+#endif
 
 /*******************************************************************************
   Handle Qt's meta type system.
