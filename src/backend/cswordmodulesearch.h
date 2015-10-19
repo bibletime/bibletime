@@ -15,6 +15,7 @@
 #include <QObject>
 
 #include <QHash>
+#include <QMetaType>
 #include "drivers/btmodulelist.h"
 
 // Sword includes:
