@@ -60,64 +60,6 @@ void printHelp(const QString &executable) {
 }
 
 /*******************************************************************************
-  Parsing command-line arguments
-*******************************************************************************/
-
-/**
-  Parses all command-line arguments.
-  \param[out] showDebugMessages Whether --debug was specified.
-  \param[out] ignoreSession Whether --ignore-session was specified.
-  \param[out] openBibleKey Will be set to --open-default-bible if specified.
-  \retval -1 Parsing was successful, the application should exit with
-             EXIT_SUCCESS.
-  \retval 0 Parsing was successful.
-  \retval 1 Parsing failed, the application should exit with EXIT_FAILURE.
-*/
-int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
-                     QString &openBibleKey)
-{
-    QStringList args = BibleTimeApp::arguments();
-    for (int i = 1; i < args.size(); i++) {
-        const QString &arg = args.at(i);
-        if (arg == "--help"
-            || arg == "-h"
-            || arg == "/?"
-            || arg == "/h")
-        {
-            printHelp(args.at(0));
-            return -1;
-        } else if (arg == "--version"
-                   || arg == "-V")
-        {
-            std::cout << "BibleTime " BT_VERSION << std::endl;
-            return -1;
-        } else if (arg == "--debug") {
-            showDebugMessages = true;
-        } else if (arg == "--ignore-session") {
-            ignoreSession = true;
-        } else if (arg == "--open-default-bible") {
-            i++;
-            if (i < args.size()) {
-                openBibleKey = args.at(i);
-            } else {
-                std::cerr << qPrintable(QObject::tr(
-                        "Error: %1 expects an argument.")
-                    .arg("--open-default-bible")) << ' '
-                        << qPrintable(QObject::tr("See --help for details."))
-                        << std::endl;
-                return 1;
-            }
-        } else {
-            std::cerr << qPrintable(QObject::tr(
-                "Error: Invalid command-line argument: %1")
-                .arg(arg)) << std::endl;
-            return 1;
-        }
-    }
-    return 0;
-}
-
-/*******************************************************************************
   Console messaging.
 *******************************************************************************/
 
@@ -191,6 +133,61 @@ void myMessageOutput(
 }
 
 /*******************************************************************************
+  Parsing command-line arguments
+*******************************************************************************/
+
+/**
+  Parses all command-line arguments.
+  \param[out] ignoreSession Whether --ignore-session was specified.
+  \param[out] openBibleKey Will be set to --open-default-bible if specified.
+  \retval -1 Parsing was successful, the application should exit with
+             EXIT_SUCCESS.
+  \retval 0 Parsing was successful.
+  \retval 1 Parsing failed, the application should exit with EXIT_FAILURE.
+*/
+int parseCommandLine(bool & ignoreSession, QString & openBibleKey) {
+    QStringList args = BibleTimeApp::arguments();
+    for (int i = 1; i < args.size(); i++) {
+        const QString &arg = args.at(i);
+        if (arg == "--help"
+            || arg == "-h"
+            || arg == "/?"
+            || arg == "/h")
+        {
+            printHelp(args.at(0));
+            return -1;
+        } else if (arg == "--version"
+                   || arg == "-V")
+        {
+            std::cout << "BibleTime " BT_VERSION << std::endl;
+            return -1;
+        } else if (arg == "--debug") {
+            showDebugMessages = true;
+        } else if (arg == "--ignore-session") {
+            ignoreSession = true;
+        } else if (arg == "--open-default-bible") {
+            i++;
+            if (i < args.size()) {
+                openBibleKey = args.at(i);
+            } else {
+                std::cerr << qPrintable(QObject::tr(
+                        "Error: %1 expects an argument.")
+                    .arg("--open-default-bible")) << ' '
+                        << qPrintable(QObject::tr("See --help for details."))
+                        << std::endl;
+                return 1;
+            }
+        } else {
+            std::cerr << qPrintable(QObject::tr(
+                "Error: Invalid command-line argument: %1")
+                .arg(arg)) << std::endl;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+/*******************************************************************************
   Handle Qt's meta type system.
 *******************************************************************************/
 
@@ -230,9 +227,7 @@ int main(int argc, char* argv[]) {
     // Parse command line arguments:
     bool ignoreSession = false;
     QString openBibleKey;
-    if (int const r = parseCommandLine(showDebugMessages,
-                                       ignoreSession,
-                                       openBibleKey))
+    if (int const r = parseCommandLine(ignoreSession, openBibleKey))
         return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
 
     // Initialize random number generator:
