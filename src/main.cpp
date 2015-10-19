@@ -165,7 +165,8 @@ int parseCommandLine(bool & ignoreSession, QString & openBibleKey) {
             printHelp(args.at(0));
             return -1;
         } else if (arg == "--version"
-                   || arg == "-V")
+                   || arg == "-V"
+                   || arg == "/V")
         {
             std::cout << "BibleTime " BT_VERSION << std::endl;
             return -1;
