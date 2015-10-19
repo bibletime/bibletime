@@ -132,6 +132,14 @@ void myMessageOutput(
     }
 }
 
+inline void installMessageHandler() {
+    #if QT_VERSION >= 0x050000
+    qInstallMessageHandler(myMessageOutput);
+    #else
+    qInstallMsgHandler(myMessageOutput);
+    #endif
+}
+
 /*******************************************************************************
   Parsing command-line arguments
 *******************************************************************************/
@@ -240,20 +248,12 @@ int main(int argc, char* argv[]) {
     if (showDebugMessages) {
         debugStream.reset(new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
         debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
-#if QT_VERSION >= 0x050000
-        qInstallMessageHandler(myMessageOutput);
-#else
-        qInstallMsgHandler(myMessageOutput);
-#endif
+        installMessageHandler();
     }
 #else
     debugStream.reset(new QFile);
     debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
-#if QT_VERSION >= 0x050000
-        qInstallMessageHandler(myMessageOutput);
-#else
-        qInstallMsgHandler(myMessageOutput);
-#endif
+    installMessageHandler();
 #endif
 
 #ifdef Q_OS_WIN
