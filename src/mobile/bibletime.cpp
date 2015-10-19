@@ -16,6 +16,7 @@
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "util/directory.h"
 #include <QLocale>
 #include <QTextStream>
@@ -35,11 +36,9 @@ void BibleTime::initBackends() {
     initSwordConfigFile();
 
     sword::StringMgr::setSystemStringMgr( new BtStringMgr() );
-    sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
-
-    if (qApp->property("--debug").toBool()) {
-        sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_DEBUG);
-    }
+    sword::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
+                                              ? sword::SWLog::LOG_DEBUG
+                                              : sword::SWLog::LOG_ERROR);
 
 #ifdef Q_OS_MAC
     // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS

@@ -10,7 +10,6 @@
 #include "frontend/displaywindow/cbiblereadwindow.h"
 
 #include <QAction>
-#include <QApplication>
 #include <QEvent>
 #include <QMdiSubWindow>
 #include <QMenu>
@@ -18,6 +17,7 @@
 #include <QWidget>
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
+#include "bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/creaddisplay.h"
@@ -277,7 +277,7 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.saveMenu->addAction(m_actions.save.chapterAsHTML);
 
     // Save raw HTML action for debugging purposes
-    if (qApp->property("--debug").toBool()) {
+    if (btApp->debugMode()) {
         QAction* debugAction = new QAction("Raw HTML", this);
         QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
         m_actions.saveMenu->addAction(debugAction);

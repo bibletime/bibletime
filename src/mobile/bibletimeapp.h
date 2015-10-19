@@ -29,13 +29,20 @@ class BibleTimeApp : public QGuiApplication {
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
 
-        inline void startInit() { m_init = true; }
+        inline void startInit(bool const debugMode = false) {
+            m_init = true;
+            m_debugMode = debugMode;
+        }
+
         bool initBtConfig();
         bool initDisplayTemplateManager();
+
+        bool debugMode() const { return m_debugMode; }
 
     private: /* Fields: */
 
         bool m_init;
+        bool m_debugMode;
 
 };
 

@@ -22,6 +22,7 @@
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QApplication(argc, argv)
     , m_init(false)
+    , m_debugMode(false)
     , m_icons(NULL)
 {
     setApplicationName("bibletime");

@@ -10,7 +10,6 @@
 #include "frontend/displaywindow/clexiconreadwindow.h"
 
 #include <QAction>
-#include <QApplication>
 #include <QFile>
 #include <QFileDialog>
 #include <QMenu>
@@ -19,6 +18,7 @@
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
 #include "bibletime.h"
+#include "bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
@@ -285,7 +285,7 @@ void CLexiconReadWindow::setupPopupMenu() {
     m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
     // Save raw HTML action for debugging purposes
-    if (qApp->property("--debug").toBool()) {
+    if (btApp->debugMode()) {
         QAction* debugAction = new QAction("Raw HTML", this);
         QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
         m_actions.saveMenu->addAction(debugAction);

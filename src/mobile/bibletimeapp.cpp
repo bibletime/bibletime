@@ -24,7 +24,9 @@
 
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QGuiApplication(argc, argv)
-    , m_init(false) {
+    , m_init(false)
+    , m_debugMode(false)
+{
     setApplicationName("bibletime");
     setApplicationVersion(BT_VERSION);
 }

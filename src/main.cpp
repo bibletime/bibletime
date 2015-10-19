@@ -275,7 +275,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    app.startInit();
+    app.startInit(showDebugMessages);
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
     }
@@ -304,8 +304,6 @@ int main(int argc, char* argv[]) {
     QTranslator BibleTimeTranslator;
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
-
-    app.setProperty("--debug", QVariant(showDebugMessages));
 
     // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {
