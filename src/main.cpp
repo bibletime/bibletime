@@ -146,7 +146,6 @@ void myMessageOutput(
 #else
         const char *msg ) {
 #endif
-    // We use this messagehandler to switch debugging off in final releases
     switch (type) {
         case QtDebugMsg:
             if (showDebugMessages) { // Only show messages if they are enabled!
@@ -157,12 +156,10 @@ void myMessageOutput(
             }
             break;
         case QtWarningMsg:
-#ifndef QT_NO_DEBUG  // don't show in release builds so users don't get our debug warnings
             debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
             debugStream->write(msg);
             debugStream->write("\n");
             debugStream->flush();
-#endif
             break;
         case QtCriticalMsg:
             debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
