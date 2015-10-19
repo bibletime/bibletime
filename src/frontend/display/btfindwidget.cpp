@@ -33,7 +33,9 @@ inline QToolButton * newToolButton(QIcon const & icon,
     bool const ok =
     #endif
         QObject::connect(button, SIGNAL(released()), parent, slot);
+    #ifndef QT_NO_DEBUG
     Q_ASSERT(ok);
+    #endif
     return button;
 }
 } // anonymous namespace
