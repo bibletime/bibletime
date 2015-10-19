@@ -9,7 +9,6 @@
 
 #include "cswordmodulesearch.h"
 
-#include <QDebug>
 #include "../util/tool.h"
 #include "btglobal.h"
 #include "config/btconfig.h"
@@ -197,8 +196,6 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
             index += length;
         }
     }
-    //qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
-    //qWarning("\n\n\n%s", ret.latin1());
     return ret;
 }
 
@@ -344,7 +341,6 @@ QString CSwordModuleSearch::prepareSearchText(
 {
     if (searchType == FullType)
         return orig;
-    qDebug() << "Original search text:" << orig;
     static const QRegExp syntaxCharacters("[+\\-()!\"~]");
     static const QRegExp andWords("\\band\\b", Qt::CaseInsensitive);
     static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
@@ -354,7 +350,6 @@ QString CSwordModuleSearch::prepareSearchText(
     text.replace(orWords, "\"or\"");
     if (searchType == AndType)
         text.replace(" ", " AND ");
-    qDebug() << "The final search string:" << text;
     return text;
 }
 
