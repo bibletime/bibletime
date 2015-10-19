@@ -9,6 +9,7 @@
 
 #include "gbftohtml.h"
 
+#include <cstdlib>
 #include <QRegExp>
 #include <QString>
 #include "../drivers/cswordmoduleinfo.h"
@@ -231,7 +232,9 @@ int hexDigitValue(char const hex) {
         case '0' ... '9': return hex - '0';      break;
         case 'a' ... 'f': return hex - 'a' + 10; break;
         case 'A' ... 'F': return hex - 'A' + 10; break;
-        default: Q_ASSERT(false && "Invalid hex code in GBF");
+        default:
+            Q_ASSERT(false && "Invalid hex code in GBF");
+            abort();
     }
 }
 
