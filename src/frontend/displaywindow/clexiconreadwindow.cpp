@@ -16,9 +16,9 @@
 #include <QMenu>
 #include <QDebug>
 
-#include "bibletime.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
+#include "bibletime.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
