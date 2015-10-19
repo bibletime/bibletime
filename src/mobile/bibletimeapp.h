@@ -39,6 +39,6 @@ class BibleTimeApp : public QGuiApplication {
 
 };
 
-#define bApp (static_cast<BibleTimeApp *>(QCoreApplication::instance()))
+#define btApp (static_cast<BibleTimeApp *>(BibleTimeApp::instance()))
 
 #endif
