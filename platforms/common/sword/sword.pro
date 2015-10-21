@@ -171,15 +171,13 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
 
 # Compressors
-windows|android:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
+windows:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
 
 !contains(DEFINES, EXCLUDEXZ) {
     SOURCES += $${SWORD_PATH}/src/modules/common/xzcomprs.cpp
-    LIBS    += -llzma
 }
 !contains(DEFINES, EXCLUDEBZIP2) {
     SOURCES += $${SWORD_PATH}/src/modules/common/bz2comprs.cpp
-    LIBS    += -lbz2
 }
 
 
