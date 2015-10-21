@@ -84,9 +84,6 @@ void BibleTime::initSwordConfigFile() {
 #ifdef Q_OS_ANDROID
     QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
     QFile file(configFile);
-    if (file.exists()) {
-        return;
-    }
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         return;
     }
