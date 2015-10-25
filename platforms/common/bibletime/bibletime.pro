@@ -70,7 +70,6 @@ SOURCES += \
     ../../../src/frontend/displaywindow/cbookreadwindow.cpp \
     ../../../src/frontend/displaywindow/ccommentaryreadwindow.cpp \
     ../../../src/frontend/displaywindow/cdisplaywindow.cpp \
-    ../../../src/frontend/displaywindow/cdisplaywindowfactory.cpp \
     ../../../src/frontend/displaywindow/chtmlwritewindow.cpp \
     ../../../src/frontend/displaywindow/clexiconreadwindow.cpp \
     ../../../src/frontend/displaywindow/cplainwritewindow.cpp \
@@ -175,7 +174,6 @@ HEADERS += \
     ../../../src/frontend/displaywindow/cbookreadwindow.h \
     ../../../src/frontend/displaywindow/ccommentaryreadwindow.h \
     ../../../src/frontend/displaywindow/cdisplaywindow.h \
-    ../../../src/frontend/displaywindow/cdisplaywindowfactory.h \
     ../../../src/frontend/displaywindow/chtmlwritewindow.h \
     ../../../src/frontend/displaywindow/clexiconreadwindow.h \
     ../../../src/frontend/displaywindow/cplainwritewindow.h \

@@ -291,7 +291,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
     src/frontend/displaywindow/cbookreadwindow.cpp
     src/frontend/displaywindow/ccommentaryreadwindow.cpp
     src/frontend/displaywindow/cdisplaywindow.cpp
-    src/frontend/displaywindow/cdisplaywindowfactory.cpp
     src/frontend/displaywindow/chtmlwritewindow.cpp
     src/frontend/displaywindow/clexiconreadwindow.cpp
     src/frontend/displaywindow/cplainwritewindow.cpp
