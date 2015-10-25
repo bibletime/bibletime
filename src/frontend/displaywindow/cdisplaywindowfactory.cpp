@@ -13,9 +13,7 @@
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/cbookreadwindow.h"
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
-#include "frontend/displaywindow/chtmlwritewindow.h"
 #include "frontend/displaywindow/clexiconreadwindow.h"
-#include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/cmdiarea.h"
 
@@ -40,14 +38,4 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(const QList<CSwordModuleI
             break;
     }
     return win;
-}
-
-CPlainWriteWindow * CDisplayWindowFactory::createWriteInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type) {
-    if (type == CPlainWriteWindow::HTMLWindow) {
-        return new CHTMLWriteWindow(modules, parent);
-    }
-    else {
-        return new CPlainWriteWindow(modules, parent);
-    }
-    return 0;
 }

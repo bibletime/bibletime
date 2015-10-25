@@ -23,7 +23,6 @@ class CSwordModuleInfo;
 class CDisplayWindowFactory {
     public:
         static CReadWindow* createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-        static CPlainWriteWindow* createWriteInstance(const QList<CSwordModuleInfo*> & modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type = CPlainWriteWindow::HTMLWindow);
 
     private:
         CDisplayWindowFactory();

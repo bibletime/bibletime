@@ -33,6 +33,8 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
+#include "frontend/displaywindow/chtmlwritewindow.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
@@ -141,17 +143,17 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
 CDisplayWindow * BibleTime::createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
-    CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(
-                QList<CSwordModuleInfo*>() << module, m_mdi, type);
-    if ( displayWindow ) {
-        displayWindow->init();
-        m_mdi->addSubWindow(displayWindow);
-        if (m_mdi->subWindowList().isEmpty())
-            displayWindow->showMaximized();
-        else
-            displayWindow->show();
-        displayWindow->lookupKey(key);
-    }
+    CDisplayWindow * const displayWindow =
+        (type == CPlainWriteWindow::HTMLWindow)
+        ? new CHTMLWriteWindow(QList<CSwordModuleInfo *>() << module, m_mdi)
+        : new CPlainWriteWindow(QList<CSwordModuleInfo *>() << module, m_mdi);
+    displayWindow->init();
+    m_mdi->addSubWindow(displayWindow);
+    if (m_mdi->subWindowList().isEmpty())
+        displayWindow->showMaximized();
+    else
+        displayWindow->show();
+    displayWindow->lookupKey(key);
 
     qApp->restoreOverrideCursor();
     return displayWindow;
