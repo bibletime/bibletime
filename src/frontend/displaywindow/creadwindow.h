@@ -36,6 +36,8 @@ public: /* Methods: */
     */
     static void insertKeyboardActions(BtActionCollection * const a);
 
+    virtual CSwordModuleInfo::ModuleType moduleType() const = 0;
+
 protected: /* Methods: */
 
     /** Sets the display widget of this display window. */

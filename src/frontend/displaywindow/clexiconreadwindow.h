@@ -38,6 +38,9 @@ class CLexiconReadWindow : public CReadWindow  {
         CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
         virtual ~CLexiconReadWindow();
 
+        virtual CSwordModuleInfo::ModuleType moduleType() const
+        { return CSwordModuleInfo::Lexicon; }
+
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 

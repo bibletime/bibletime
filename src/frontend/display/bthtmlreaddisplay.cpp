@@ -20,7 +20,6 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/display/bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "util/directory.h"
 
@@ -324,7 +323,7 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
         return;
 
     CSwordModuleInfo::ModuleType bookmarkType = m->type();
-    CSwordModuleInfo::ModuleType windowType = CDisplayWindowFactory::getModuleType(m_readWindow);
+    CSwordModuleInfo::ModuleType windowType = m_readWindow->moduleType();
 
     // Is bible reference bookmark compatible with the window type?
     if ((bookmarkType == CSwordModuleInfo::Bible ||

@@ -28,6 +28,9 @@ class CBookReadWindow: public CLexiconReadWindow {
             , m_treeAction(0)
             , m_treeChooser(0) {}
 
+        virtual CSwordModuleInfo::ModuleType moduleType() const
+        { return CSwordModuleInfo::GenericBook; }
+
         virtual void storeProfileSettings(QString const & windowGroup) const;
         virtual void applyProfileSettings(const QString & windowGroup);
         static void insertKeyboardActions(BtActionCollection * const a);
