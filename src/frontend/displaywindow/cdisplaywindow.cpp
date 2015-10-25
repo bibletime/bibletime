@@ -292,12 +292,12 @@ void CDisplayWindow::initActions() {
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
-    //first make sure all used Sword modules are still present
-    QMutableStringListIterator it(m_modules);
-    while (it.hasNext()) {
-        if (!CSwordBackend::instance()->findModuleByName(it.next())) {
-            it.remove();
-        }
+    { // First make sure all used Sword modules are still present:
+        CSwordBackend & backend = *(CSwordBackend::instance());
+        QMutableStringListIterator it(m_modules);
+        while (it.hasNext())
+            if (!backend.findModuleByName(it.next()))
+                it.remove();
     }
 
     if (m_modules.isEmpty()) {
@@ -305,12 +305,13 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         return;
     }
 
-    if (keyChooser()) keyChooser()->setModules( modules(), false );
+    if (CKeyChooser * const kc = keyChooser())
+        kc->setModules(modules(), false);
 
     lookup();
 
-    actionCollection()->readShortcuts("DisplayWindow shortcuts");
-    actionCollection()->readShortcuts("Readwindow shortcuts");
+    m_actionCollection->readShortcuts("DisplayWindow shortcuts");
+    m_actionCollection->readShortcuts("Readwindow shortcuts");
     emit sigModuleListSet(m_modules);
 }
 
