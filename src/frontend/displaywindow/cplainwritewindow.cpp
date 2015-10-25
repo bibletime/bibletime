@@ -121,7 +121,7 @@ void CPlainWriteWindow::initConnections() {
     QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
-void CPlainWriteWindow::storeProfileSettings(const QString & windowGroup) {
+void CPlainWriteWindow::storeProfileSettings(QString const & windowGroup) const {
     CDisplayWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);

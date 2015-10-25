@@ -121,7 +121,7 @@ const BtConstModuleList CDisplayWindow::modules() const {
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */
-void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
+void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
     BtConfig & conf = btConfig();
 
     conf.beginGroup(windowGroup);

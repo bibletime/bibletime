@@ -63,7 +63,7 @@ class CDisplayWindow : public QMainWindow {
         }
 
         /** Store the settings of this window in the given CProfileWindow object.*/
-        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const;
 
         /** Load the settings the given CProfileWindow object into this window.*/
         virtual void applyProfileSettings(const QString & windowGroup);

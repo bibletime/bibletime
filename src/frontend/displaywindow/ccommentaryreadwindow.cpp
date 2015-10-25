@@ -124,7 +124,9 @@ void CCommentaryReadWindow::applyProfileSettings(const QString & windowGroup) {
     m_syncButton->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncEnabled", false));
 }
 
-void CCommentaryReadWindow::storeProfileSettings(const QString & windowGroup) {
+void CCommentaryReadWindow::storeProfileSettings(QString const & windowGroup)
+        const
+{
     CLexiconReadWindow::storeProfileSettings(windowGroup);
 
     Q_ASSERT(windowGroup.endsWith('/'));

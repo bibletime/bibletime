@@ -46,7 +46,7 @@ void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
     lookup();
 }
 
-void CBibleReadWindow::storeProfileSettings(const QString & windowGroup) {
+void CBibleReadWindow::storeProfileSettings(QString const & windowGroup) const {
     BtConfig & conf = btConfig();
     conf.beginGroup(windowGroup);
     conf.setFilterOptions(filterOptions());

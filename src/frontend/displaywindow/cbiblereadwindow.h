@@ -33,7 +33,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const;
         virtual void applyProfileSettings(const QString & windowGroup);
         static void insertKeyboardActions( BtActionCollection* const a );
 

@@ -42,7 +42,7 @@ class CPlainWriteWindow : public CDisplayWindow {
         */
         void setDisplayWidget( CDisplay* display );
 
-        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const;
         virtual void applyProfileSettings(const QString & windowGroup);
 
         /**

@@ -60,7 +60,7 @@ void CHTMLWriteWindow::initToolbars() {
     m_writeDisplay->setupToolbar( formatToolBar(), actionCollection() );
 }
 
-void CHTMLWriteWindow::storeProfileSettings(const QString & windowGroup) {
+void CHTMLWriteWindow::storeProfileSettings(QString const & windowGroup) const {
     CPlainWriteWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);

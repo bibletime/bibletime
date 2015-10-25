@@ -28,7 +28,7 @@ class CBookReadWindow: public CLexiconReadWindow {
             , m_treeAction(0)
             , m_treeChooser(0) {}
 
-        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const;
         virtual void applyProfileSettings(const QString & windowGroup);
         static void insertKeyboardActions(BtActionCollection * const a);
 

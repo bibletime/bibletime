@@ -34,7 +34,7 @@ void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {
         m_treeAction->activate(QAction::Trigger);
 }
 
-void CBookReadWindow::storeProfileSettings(const QString & windowGroup) {
+void CBookReadWindow::storeProfileSettings(QString const & windowGroup) const {
     CLexiconReadWindow::storeProfileSettings(windowGroup);
 
     Q_ASSERT(windowGroup.endsWith('/'));
