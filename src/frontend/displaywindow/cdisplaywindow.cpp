@@ -349,11 +349,6 @@ void CDisplayWindow::setFilterOptions(const FilterOptions &filterOptions) {
     emit sigFilterOptionsChanged(m_filterOptions);
 }
 
-/** Set the ready status */
-void CDisplayWindow::setReady(bool ready) {
-    m_isReady = ready;
-}
-
 /** Returns true if the window may be closed. */
 bool CDisplayWindow::queryClose() {
     return true;
@@ -446,7 +441,7 @@ bool CDisplayWindow::init() {
     emit sigFilterOptionsChanged(m_filterOptions);
     emit sigModulesChanged(modules());
 
-    setReady(true);
+    m_isReady = true;
     return true;
 }
 

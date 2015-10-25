@@ -78,9 +78,6 @@ class CDisplayWindow : public QMainWindow {
             return m_filterOptions;
         }
 
-        /** Set the ready status. */
-        void setReady(bool ready);
-
         /** Returns true if the widget is ready for use. */
         inline bool isReady() const {
             return m_isReady;
