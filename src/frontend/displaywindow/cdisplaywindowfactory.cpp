@@ -7,35 +7,3 @@
 *
 **********/
 
-#include "frontend/displaywindow/cdisplaywindowfactory.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/displaywindow/cbiblereadwindow.h"
-#include "frontend/displaywindow/cbookreadwindow.h"
-#include "frontend/displaywindow/ccommentaryreadwindow.h"
-#include "frontend/displaywindow/clexiconreadwindow.h"
-#include "frontend/displaywindow/creadwindow.h"
-#include "frontend/cmdiarea.h"
-
-
-CReadWindow* CDisplayWindowFactory::createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent) {
-    CReadWindow* win = 0;
-    switch (modules.first()->type()) {
-        case CSwordModuleInfo::Bible:
-            win = new CBibleReadWindow(modules, parent);
-        break;
-        case CSwordModuleInfo::Commentary:
-            win = new CCommentaryReadWindow(modules, parent);
-        break;
-        case CSwordModuleInfo::Lexicon:
-            win = new CLexiconReadWindow(modules, parent);
-        break;
-        case CSwordModuleInfo::GenericBook:
-            win = new CBookReadWindow(modules, parent);
-        break;
-        default:
-            qWarning("unknown module type");
-            break;
-    }
-    return win;
-}

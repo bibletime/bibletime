@@ -12,18 +12,7 @@
 #ifndef CDISPLAYWINDOWFACTORY_H
 #define CDISPLAYWINDOWFACTORY_H
 
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cplainwritewindow.h"
-
-
-class CReadWindow;
-class CSwordModuleInfo;
-
-/// \todo Make CDisplayWindowFactory a namespace instead?
 class CDisplayWindowFactory {
-    public:
-        static CReadWindow* createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-
     private:
         CDisplayWindowFactory();
 };

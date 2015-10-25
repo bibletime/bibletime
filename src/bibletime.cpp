@@ -31,9 +31,12 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "frontend/displaywindow/cbookreadwindow.h"
+#include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/chtmlwritewindow.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
@@ -113,11 +116,34 @@ BibleTime::~BibleTime() {
     saveProfile();
 }
 
+namespace {
+
+CReadWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
+                                 CMDIArea * const parent)
+{
+    switch (modules.first()->type()) {
+        case CSwordModuleInfo::Bible:
+            return new CBibleReadWindow(modules, parent);
+        case CSwordModuleInfo::Commentary:
+            return new CCommentaryReadWindow(modules, parent);
+        case CSwordModuleInfo::Lexicon:
+            return new CLexiconReadWindow(modules, parent);
+        case CSwordModuleInfo::GenericBook:
+            return new CBookReadWindow(modules, parent);
+        default:
+            qFatal("unknown module type");
+            Q_ASSERT(false);
+            return NULL;
+    }
+}
+
+} // anonymous namespace
+
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
     // qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
-    CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
+    CDisplayWindow * const displayWindow = createReadInstance(modules, m_mdi);
     if ( displayWindow ) {
         displayWindow->init();
         m_mdi->addSubWindow(displayWindow);
