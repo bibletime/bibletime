@@ -107,7 +107,7 @@ class CDisplayWindow : public QMainWindow {
         * Initialize the window. Call this method from the outside,
         * because calling this in the constructor is not possible!
         */
-        virtual bool init();
+        bool init();
 
         /** Sets and inits the properties of the main navigation toolbar.*/
         void setMainToolBar( QToolBar* bar );
