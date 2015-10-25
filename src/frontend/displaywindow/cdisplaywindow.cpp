@@ -132,7 +132,10 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
     */
     const QRect rect(w->x(), w->y(), w->width(), w->height());
     conf.setSessionValue<QRect>("windowRect", rect);
-
+    conf.setSessionValue<bool>("staysOnTop",
+                               w->windowFlags() & Qt::WindowStaysOnTopHint);
+    conf.setSessionValue<bool>("staysOnBottom",
+                               w->windowFlags() & Qt::WindowStaysOnBottomHint);
     conf.setSessionValue("maximized", w->isMaximized());
 
     bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
@@ -179,7 +182,10 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
     const QRect rect = conf.sessionValue<QRect>("windowRect");
     w->resize(rect.width(), rect.height());
     w->move(rect.x(), rect.y());
-
+    if (conf.sessionValue<bool>("staysOnTop", false))
+        w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnTopHint);
+    if (conf.sessionValue<bool>("staysOnBottom", false))
+        w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnBottomHint);
     if (conf.sessionValue<bool>("maximized"))
         w->showMaximized();
 
