@@ -157,9 +157,7 @@ class CDisplayWindow : public QMainWindow {
         * Returns whether syncs to the active window are allowed at this time for this display window
         * @return boolean value whether sync is allowed
         */
-        virtual bool syncAllowed() const {
-            return false;
-        };
+        virtual bool syncAllowed() const { return false; }
 
         /**
         * Return pointer to the BibleTime main window
