@@ -46,9 +46,6 @@ class CDisplayWindow : public QMainWindow {
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        /** Returns a pointer to the parent widget of type QMdiSubWindow or pointer to self if none found. */
-        QWidget * getProfileWindow() const;
-
         /** Returns pointer to the mdi area object.*/
         inline CMDIArea *mdi() const {
             return m_mdi;

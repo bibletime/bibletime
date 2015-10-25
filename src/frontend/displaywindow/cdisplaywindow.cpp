@@ -31,6 +31,18 @@
 #include "util/cresmgr.h"
 
 
+namespace {
+
+inline QWidget * getProfileWindow(QWidget * w) {
+    for (; w; w = w->parentWidget())
+        if (QMdiSubWindow * const sw = qobject_cast<QMdiSubWindow *>(w))
+            return sw;
+    return NULL;
+}
+
+}
+
+
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
         : QMainWindow(parent),
         m_actionCollection(0),
@@ -65,15 +77,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
 CDisplayWindow::~CDisplayWindow() {
     delete m_swordKey;
     m_swordKey = 0;
-}
-
-QWidget * CDisplayWindow::getProfileWindow() const {
-    for (QWidget * w = parentWidget(); w; w = w->parentWidget()) {
-        QMdiSubWindow * sw = qobject_cast<QMdiSubWindow *>(w);
-        if (sw)
-            return sw;
-    }
-    return const_cast<CDisplayWindow *>(this);
 }
 
 BibleTime* CDisplayWindow::btMainWindow() {
@@ -123,7 +126,8 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
 
     conf.beginGroup(windowGroup);
 
-    QWidget * w = getProfileWindow();
+    QWidget const * const w = getProfileWindow(parentWidget());
+    Q_ASSERT(w);
 
     /**
       \note We don't use saveGeometry/restoreGeometry for MDI subwindows,
@@ -172,7 +176,8 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
     conf.beginGroup(windowGroup);
     setUpdatesEnabled(false);
 
-    QWidget * w = getProfileWindow();
+    QWidget * const w = getProfileWindow(parentWidget());
+    Q_ASSERT(w);
 
     /**
       \note We don't use restoreGeometry/saveGeometry for MDI subwindows,
