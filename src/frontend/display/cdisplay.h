@@ -157,10 +157,6 @@ class CDisplayConnections : public QObject {
     private:
         CDisplay* m_display;
 
-        struct {
-            QString module;
-            QString key;
-        } m_referenceClickedCache;
 };
 
 #endif
