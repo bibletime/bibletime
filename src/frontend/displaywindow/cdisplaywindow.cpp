@@ -160,10 +160,7 @@ void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
     }
 
     // Save list of modules:
-    QStringList mods;
-    Q_FOREACH(CSwordModuleInfo const * const module, modules())
-        mods.append(module->name());
-    conf.setSessionValue("modules", mods);
+    conf.setSessionValue("modules", m_modules);
 
     conf.endGroup();
 }
