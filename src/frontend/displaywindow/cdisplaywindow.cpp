@@ -85,14 +85,14 @@ BibleTime* CDisplayWindow::btMainWindow() {
 
 void CDisplayWindow::setToolBarsHidden() {
     // Hide current window toolbars
-    if (mainToolBar())
-        mainToolBar()->setHidden(true);
-    if (buttonsToolBar())
-        buttonsToolBar()->setHidden(true);
-    if (moduleChooserBar())
-        moduleChooserBar()->setHidden(true);
-    if (formatToolBar())
-        formatToolBar()->setHidden(true);
+    if (m_mainToolBar)
+        m_mainToolBar->setHidden(true);
+    if (m_buttonsToolBar)
+        m_buttonsToolBar->setHidden(true);
+    if (m_moduleChooserBar)
+        m_moduleChooserBar->setHidden(true);
+    if (m_formatToolBar)
+        m_formatToolBar->setHidden(true);
 }
 void CDisplayWindow::clearMainWindowToolBars() {
     // Clear main window toolbars, except for works toolbar
