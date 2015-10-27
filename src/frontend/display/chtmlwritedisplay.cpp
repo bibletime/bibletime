@@ -210,8 +210,7 @@ void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
 
 /** Is called when a new color was selected. */
 void CHTMLWriteDisplay::slotFontColorChosen( const QColor& c) {
-    if (!m_handingFormatChangeFromEditor)
-        setTextColor( c );
+    setTextColor(c);
 }
 
 void CHTMLWriteDisplay::slotFontFamilyChosen(const QFont& font) {
