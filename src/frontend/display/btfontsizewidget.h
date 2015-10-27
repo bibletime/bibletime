@@ -15,22 +15,34 @@
 #include <QComboBox>
 
 
-class BtFontSizeWidget : public QComboBox {
-        Q_OBJECT
+class QIntValidator;
 
-    public:
-        BtFontSizeWidget(QWidget* parent = 0);
-        ~BtFontSizeWidget();
-        int fontSize() const;
+class BtFontSizeWidget: public QComboBox {
 
-    public slots:
-        void setFontSize(int size);
+    Q_OBJECT
 
-    private slots:
-        virtual void changed(const QString& text);
+public: /* Methods: */
 
-    signals:
-        void fontSizeChanged( int );
-};
+    BtFontSizeWidget(QWidget * parent = 0);
+
+    int fontSize() const;
+
+public slots:
+
+    void setFontSize(int size);
+
+private slots:
+
+    virtual void changed(QString const & text);
+
+signals:
+
+    void fontSizeChanged(int);
+
+private: /* Fields: */
+
+    QIntValidator * const m_validator;
+
+}; /* class BtFontSizeWidget { */
 
 #endif
