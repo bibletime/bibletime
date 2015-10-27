@@ -9,51 +9,39 @@
 
 #include "frontend/display/btcolorwidget.h"
 
-#include <QColor>
 #include <QColorDialog>
 #include <QMouseEvent>
 #include <QPalette>
 
 
-BtColorWidget::BtColorWidget(QWidget* parent)
-        : QFrame(parent) {
+BtColorWidget::BtColorWidget(QWidget * parent)
+        : QFrame(parent)
+{
     setFrameShadow(QFrame::Sunken);
     setFrameShape(QFrame::StyledPanel);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     setAutoFillBackground(true);
+    setBackgroundRole(QPalette::Window);
 }
 
-BtColorWidget::~BtColorWidget() {
-}
+QSize BtColorWidget::sizeHint() const { return QSize(35, 18); }
 
-QSize BtColorWidget::sizeHint() const {
-    return QSize(35, 18);
-}
-
-void BtColorWidget::setColor(const QColor& color) {
-    QPalette p = palette();
+void BtColorWidget::setColor(QColor const & color) {
+    QPalette p(palette());
     p.setColor(QPalette::Normal, QPalette::Window, color);
     setPalette(p);
-
-    if (color.isValid())
-        m_color = color;
-    else
-        m_color = QColor(0, 0, 0);
     update();
 }
 
-void BtColorWidget::mouseReleaseEvent(QMouseEvent* event) {
+void BtColorWidget::mouseReleaseEvent(QMouseEvent * event) {
     if (event->button() == Qt::LeftButton) {
         event->accept();
-        showColorDialog();
-        return;
-    }
-}
-
-void BtColorWidget::showColorDialog() {
-    QColor color = QColorDialog::getColor(m_color, this);
-    if (color.isValid()) {
-        m_color = color;
-        emit changed(m_color);
+        QColor const color(QColorDialog::getColor(
+            palette().color(QPalette::Normal, QPalette::Window),
+            this));
+        if (color.isValid()) {
+            setColor(color);
+            emit changed(color);
+        }
     }
 }

@@ -15,29 +15,28 @@
 #include <QFrame>
 
 
-class QPaintEvent;
+class BtColorWidget: public QFrame {
 
-class BtColorWidget : public QFrame {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        BtColorWidget(QWidget* parent = 0);
-        ~BtColorWidget();
-        QSize sizeHint() const;
+public:
 
-    public slots:
-        void setColor(const QColor& color);
+    BtColorWidget(QWidget * parent = 0);
 
-    protected:
-        void mouseReleaseEvent(QMouseEvent* event);
+    QSize sizeHint() const;
 
-    private:
-        void showColorDialog();
+public slots:
 
-        QColor m_color;
+    void setColor(QColor const & color);
 
-    signals:
-        void changed(const QColor& color);
+protected: /* Methods: */
+
+    virtual void mouseReleaseEvent(QMouseEvent * event);
+
+signals:
+
+    void changed(QColor const & color);
+
 };
 
 #endif
