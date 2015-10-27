@@ -64,7 +64,6 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
 
         void slotFontFamilyChosen(const QFont&);
         void slotFontSizeChosen(int);
-        void slotFontColorChosen( const QColor& );
 
         void slotCurrentCharFormatChanged(const QTextCharFormat &);
 

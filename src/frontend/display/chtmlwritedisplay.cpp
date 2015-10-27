@@ -208,11 +208,6 @@ void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
         setFontPointSize(static_cast<qreal>(newSize));
 }
 
-/** Is called when a new color was selected. */
-void CHTMLWriteDisplay::slotFontColorChosen( const QColor& c) {
-    setTextColor(c);
-}
-
 void CHTMLWriteDisplay::slotFontFamilyChosen(const QFont& font) {
     if (!m_handingFormatChangeFromEditor)
         setFontFamily(font.family());
@@ -253,7 +248,8 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * action
     fontColorChooser->setToolTip(tr("Font color"));
     bar->addWidget(fontColorChooser);
     ok = connect(fontColorChooser, SIGNAL(changed(const QColor&)),
-                 this,             SLOT(slotFontColorChosen(const QColor&)), Qt::DirectConnection);
+                 this,             SLOT(setTextColor(QColor const &)),
+                 Qt::DirectConnection);
     Q_ASSERT(ok);
     ok = connect(this,             SIGNAL(signalFontColorChanged(const QColor&)),
                  fontColorChooser, SLOT(setColor(QColor)), Qt::DirectConnection);
