@@ -233,7 +233,7 @@ ELSE()
   ENDIF()
   IF(APPLE)
     # enable support MacOS 10.5+
-    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/")
     SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T}")
     SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T} -F /Library/Frameworks/")
     UNSET(T)
@@ -254,7 +254,7 @@ FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibleti
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
 
-FILE(GLOB INSTALL_TMPL_LIST 
+FILE(GLOB INSTALL_TMPL_LIST
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt)
