@@ -25,11 +25,11 @@ CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
 {
     if(module) {
         CSwordBibleModuleInfo const * bible = dynamic_cast<CSwordBibleModuleInfo const *>(module);
-        Q_CHECK_PTR(bible);
-
-        // Copy important settings like versification system
-        copyFrom(bible->module()->getKey());
-        setKey(bible->lowerBound().key());
+        if(bible) {
+            // Copy important settings like versification system
+            copyFrom(bible->module()->getKey());
+            setKey(bible->lowerBound().key());
+        }
     }
     this->VerseKey::setAutoNormalize(true);
 }
