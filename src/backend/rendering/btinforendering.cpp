@@ -33,7 +33,7 @@ public:
      : CHTMLExportRendering(true, displayOptions, filterOptions) {;}
 
     virtual QString entryLink(const KeyTreeItem &item, const CSwordModuleInfo *module) {
-        Q_CHECK_PTR(module);
+        Q_ASSERT(module);
 
         QString linkText;
 
