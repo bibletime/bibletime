@@ -9,6 +9,7 @@
 
 #include "cswordmoduleinfo.h"
 
+#include <cassert>
 #ifndef BT_NO_LUCENE
 #include <CLucene.h>
 #endif
@@ -50,47 +51,58 @@ const unsigned int INDEX_VERSION = 7;
 //Lucene default is too small
 const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 
+namespace {
+
+inline CSwordModuleInfo::Category retrieveCategory(
+    CSwordModuleInfo::ModuleType const type,
+    sword::SWModule * module)
+{
+    /// \todo Maybe we can use raw string comparsion instead of QString?
+    QString const cat(module->getConfigEntry("Category"));
+
+    // Category has to be checked before type:
+    if (cat == "Cults / Unorthodox / Questionable Material") {
+        return CSwordModuleInfo::Cult;
+    } else if (cat == "Daily Devotional"
+               || module->getConfig().has("Feature","DailyDevotion"))
+    {
+        return CSwordModuleInfo::DailyDevotional;
+    } else if (cat == "Glossaries"
+               || module->getConfig().has("Feature", "Glossary"))
+    {
+        return CSwordModuleInfo::Glossary;
+    } else if (cat == "Images" || cat == "Maps") {
+        return CSwordModuleInfo::Images;
+    } else {
+        switch (type) {
+            case CSwordModuleInfo::Bible:
+                return CSwordModuleInfo::Bibles;
+            case CSwordModuleInfo::Commentary:
+                return CSwordModuleInfo::Commentaries;
+            case CSwordModuleInfo::Lexicon:
+                return CSwordModuleInfo::Lexicons;
+            case CSwordModuleInfo::GenericBook:
+                return CSwordModuleInfo::Books;
+            case CSwordModuleInfo::Unknown: // Fall thru
+            default:
+                return CSwordModuleInfo::UnknownCategory;
+        }
+    }
+}
+
+}
+
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
                                    CSwordBackend & backend,
                                    ModuleType type)
-    : m_module(module),
-      m_backend(backend),
-      m_type(type),
-      m_cancelIndexing(false),
-      m_cachedName(QString::fromUtf8(module->getName())),
-      m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
+    : m_module((assert(module), module))
+    , m_backend(backend)
+    , m_type(type)
+    , m_cancelIndexing(false)
+    , m_cachedName(QString::fromUtf8(module->getName()))
+    , m_cachedCategory(retrieveCategory(type, module))
+    , m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
 {
-    Q_ASSERT(module);
-    // Initialize m_cachedCategory:
-    {
-        /// \todo Maybe we can use raw string comparsion instead of QString?
-        QString const cat(m_module->getConfigEntry("Category"));
-
-        /// \warning cat has to be checked before m_type !!!
-        if (cat == "Cults / Unorthodox / Questionable Material") {
-            m_cachedCategory = Cult;
-        } else if (cat == "Daily Devotional"
-                   || m_module->getConfig().has("Feature","DailyDevotion"))
-        {
-            m_cachedCategory = DailyDevotional;
-        } else if (cat == "Glossaries"
-                   || m_module->getConfig().has("Feature", "Glossary"))
-        {
-            m_cachedCategory = Glossary;
-        } else if (cat == "Images" || cat == "Maps") {
-            m_cachedCategory = Images;
-        } else {
-            switch (m_type) {
-                case Bible:       m_cachedCategory = Bibles; break;
-                case Commentary:  m_cachedCategory = Commentaries; break;
-                case Lexicon:     m_cachedCategory = Lexicons; break;
-                case GenericBook: m_cachedCategory = Books; break;
-                case Unknown: // Fall thru
-                default:          m_cachedCategory = UnknownCategory; break;
-            }
-        }
-    }
-
     // Initialize m_cachedLanguage:
     {
         CLanguageMgr const & lm = *CLanguageMgr::instance();

@@ -434,13 +434,13 @@ private: /* Fields: */
 
     sword::SWModule * const m_module;
     CSwordBackend & m_backend;
-    ModuleType m_type;
+    ModuleType const m_type;
     bool m_hidden;
     bool m_cancelIndexing;
 
     // Cached data:
     const QString m_cachedName;
-    CSwordModuleInfo::Category m_cachedCategory;
+    CSwordModuleInfo::Category const m_cachedCategory;
     const CLanguageMgr::Language * m_cachedLanguage;
     bool m_cachedHasVersion;
 
