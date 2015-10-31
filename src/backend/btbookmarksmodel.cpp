@@ -140,7 +140,7 @@ public: /* Tyepes */
           \returns index of this item in parent's child array.
          */
         inline int index() const {
-            Q_CHECK_PTR(parent());
+            Q_ASSERT(parent());
             for(int i = 0; i < parent()->childCount(); ++i)
                 if(parent()->child(i) == this)
                     return i;
