@@ -439,10 +439,10 @@ private: /* Fields: */
     bool m_cancelIndexing;
 
     // Cached data:
-    const QString m_cachedName;
+    QString const m_cachedName;
     CSwordModuleInfo::Category const m_cachedCategory;
     const CLanguageMgr::Language * const m_cachedLanguage;
-    bool m_cachedHasVersion;
+    bool const m_cachedHasVersion;
 
 };
 
