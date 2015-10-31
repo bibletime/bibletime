@@ -101,22 +101,15 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
     , m_cancelIndexing(false)
     , m_cachedName(QString::fromUtf8(module->getName()))
     , m_cachedCategory(retrieveCategory(type, module))
+    , m_cachedLanguage(
+        CLanguageMgr::instance()->languageForAbbrev(
+            m_cachedCategory == Glossary
+            /* Special handling for glossaries, we use the "from language" as
+               language for the module: */
+            ? config(GlossaryFrom)
+            : module->getLanguage()))
     , m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
 {
-    // Initialize m_cachedLanguage:
-    {
-        CLanguageMgr const & lm = *CLanguageMgr::instance();
-        if (m_cachedCategory == Glossary) {
-            /*
-              Special handling for glossaries, we use the "from language" as
-              language for the module.
-            */
-            m_cachedLanguage = lm.languageForAbbrev(config(GlossaryFrom));
-        } else {
-            m_cachedLanguage = lm.languageForAbbrev(m_module->getLanguage());
-        }
-    }
-
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",
                                              QStringList()).contains(m_cachedName);
 

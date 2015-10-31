@@ -441,7 +441,7 @@ private: /* Fields: */
     // Cached data:
     const QString m_cachedName;
     CSwordModuleInfo::Category const m_cachedCategory;
-    const CLanguageMgr::Language * m_cachedLanguage;
+    const CLanguageMgr::Language * const m_cachedLanguage;
     bool m_cachedHasVersion;
 
 };
