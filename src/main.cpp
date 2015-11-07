@@ -10,9 +10,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <QDateTime>
-#ifndef NO_DBUS
-#include <QDBusConnection>
-#endif
 #include <QFile>
 #include <QLocale>
 #include <QTextCodec>
@@ -20,7 +17,6 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/btconfig.h"
 #include "bibletime.h"
-#include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/directory.h"
@@ -328,13 +324,6 @@ int main(int argc, char* argv[]) {
 
     // The following must be done after the bibletime window is visible:
     mainWindow->processCommandline(ignoreSession, openBibleKey);
-
-#ifndef NO_DBUS
-    new BibleTimeDBusAdaptor(mainWindow);
-    // connect to D-Bus and register as an object:
-    QDBusConnection::sessionBus().registerService("info.bibletime.BibleTime");
-    QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
-#endif
 
     if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();

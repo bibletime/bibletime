@@ -128,7 +128,6 @@ class QSignalMapper;
  */
 class BibleTime : public QMainWindow {
         friend class CDisplayWindow;
-        friend class BibleTimeDBusAdaptor;
         Q_OBJECT
 
     public:
@@ -507,7 +506,7 @@ public slots:
         BtFindWidget* m_findWidget;
 
 
-    protected: //DBUS interface implementation
+    protected:
         void closeAllModuleWindows();
         void syncAllBibles(const QString& key);
         void syncAllCommentaries(const QString& key);

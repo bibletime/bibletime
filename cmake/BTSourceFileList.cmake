@@ -2,8 +2,6 @@
 SET(bibletime_SRC
     # Toplevel files:
     src/bibletime.cpp
-    src/bibletime_dbus.cpp
-    src/bibletime_dbus_adaptor.cpp
     src/bibletime_init.cpp
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
@@ -318,12 +316,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/btbookmarksmodel.h
 )
 
-IF(BT_Use_DBus)
-    SET(bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS src/bibletime_dbus_adaptor.h)
-ENDIF()
-
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
-    ${bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS}
     src/bibletime.h
     src/bibletimeapp.h
     src/frontend/bookmarks/bteditbookmarkdialog.h

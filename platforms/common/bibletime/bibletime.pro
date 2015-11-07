@@ -13,8 +13,6 @@ INCLUDEPATH += . \
 
 SOURCES += \
     ../../../src/bibletime.cpp \
-    ../../../src/bibletime_dbus.cpp \
-    ../../../src/bibletime_dbus_adaptor.cpp \
     ../../../src/bibletime_init.cpp \
     ../../../src/bibletime_slots.cpp \
     ../../../src/bibletimeapp.cpp \
@@ -120,7 +118,6 @@ SOURCES += \
 HEADERS += \
     ../../../src/bibletimeapp.h \
     ../../../src/bibletime.h \
-    ../../../src/bibletime_dbus_adaptor.h \
     ../../../src/frontend/btaboutdialog.h \
     ../../../src/frontend/btaboutmoduledialog.h \
     ../../../src/frontend/btbookshelfdockwidget.h \
@@ -225,11 +222,6 @@ RESOURCES += \
 
 OTHER_FILES += \
 
-
-# Windows platfrom
-windows {
-DEFINES += NO_DBUS
-}
 
 # BibleTime Core
 include(../../common/core/core.pro)
