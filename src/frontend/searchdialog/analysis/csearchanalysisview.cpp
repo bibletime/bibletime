@@ -36,14 +36,4 @@ void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
     scene()->setSceneRect(0, 0, scene()->sceneRect().width(), viewport()->height() );
 }
 
-
-/** Returns the item at position p. If there no item at that point return 0.
-Is needed?
-*/
-//CSearchAnalysisItem* CSearchAnalysisView::itemAt( const QPoint& p )
-//{
-//}
-
-
-
 }

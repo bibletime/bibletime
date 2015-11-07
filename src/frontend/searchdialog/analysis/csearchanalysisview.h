@@ -37,11 +37,6 @@ class CSearchAnalysisView : public QGraphicsView {
             */
         virtual QSize sizeHint() const;
 
-        /**
-        * Returns the item at position p or 0 if there is no item.
-        */
-        //CSearchAnalysisItem* itemAt( const QPoint& p );
-
     protected:
         /**
         * Reimplementation.
