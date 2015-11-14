@@ -14,6 +14,7 @@ compiler:
   - clang
 
 before_install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-5.2" CC="gcc-5.2"; fi
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
   - mkdir b
@@ -39,6 +40,13 @@ env:
    - secure: "VjsU8+6Sca7TXbR5zQstHw6eb4Dv0ZifqE29DRT+n64VKxAWFaWazJ4VJNlHvd8ChiJRfFcXVVXfNgNMAHE/JJHt1GgSPwIqSEE2mQh+7tqfSeBV/5yBkF7Fs4QIOrWjdEhEHTt0+wc6wtoVghEHvWlk3Lymb4x0UQDZtz/a4cI="
 
 addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    - llvm-toolchain-precise
+    packages:
+    - clang-3.7
+    - g++-5
   coverity_scan:
     project:
       name: "bibletime/bibletime"
