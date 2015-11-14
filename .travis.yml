@@ -18,9 +18,9 @@ before_install:
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
   - sudo add-apt-repository ppa:libreoffice/ppa --yes
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
-  - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.7 main' --yes
+  - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise main' --yes
   - sudo apt-get update -qq
-  - sudo apt-get install -qq --force-yes clang-3.7 g++-4.9 cmake libqt4-dev qt4-qmake libclucene-dev
+  - sudo apt-get install -qq --force-yes clang-3.8 g++-4.9 cmake libqt4-dev qt4-qmake libclucene-dev
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
