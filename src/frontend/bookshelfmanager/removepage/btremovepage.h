@@ -32,7 +32,7 @@ class BtRemovePage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        BtRemovePage(BtModuleManagerDialog *parent = 0);
+        BtRemovePage(BtModuleManagerDialog *parent = nullptr);
 
     public: /* Methods: */
 

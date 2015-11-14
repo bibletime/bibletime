@@ -91,9 +91,9 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    BtBookshelfTreeModel(QObject * parent = 0);
-    BtBookshelfTreeModel(const QString & configKey, QObject * parent = 0);
-    BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = 0);
+    BtBookshelfTreeModel(QObject * parent = nullptr);
+    BtBookshelfTreeModel(const QString & configKey, QObject * parent = nullptr);
+    BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = nullptr);
     virtual ~BtBookshelfTreeModel();
 
     virtual int rowCount(const QModelIndex & parent = QModelIndex()) const;

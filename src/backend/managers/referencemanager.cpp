@@ -247,7 +247,7 @@ bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
 /** Returns the preferred module name for the given type. */
 const QString ReferenceManager::preferredModule( const ReferenceManager::Type type ) {
     QString moduleName = QString::null;
-    CSwordModuleInfo* module = 0;
+    CSwordModuleInfo* module = nullptr;
 
     switch (type) {
 
@@ -273,7 +273,7 @@ const QString ReferenceManager::preferredModule( const ReferenceManager::Type ty
             module = btConfig().getDefaultSwordModuleByType( "standardGreekMorphLexicon" );
             break;
         default:
-            module = 0;
+            module = nullptr;
             break;
     }
 
@@ -332,7 +332,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
     QString ret;
     QStringList refList = ref.split(";");
 
-    CSwordVerseKey baseKey(0);
+    CSwordVerseKey baseKey(nullptr);
     baseKey.setLocale( sourceLanguage.toUtf8().constData() );
     baseKey.setKey(options.refBase); //probably in the sourceLanguage
     baseKey.setLocale( "en_US" ); //english works in all environments as base

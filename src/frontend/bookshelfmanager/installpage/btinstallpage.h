@@ -39,7 +39,7 @@ class BtInstallPage: public BtConfigDialog::Page {
 
     public:
 
-        BtInstallPage(BtModuleManagerDialog *parent = 0);
+        BtInstallPage(BtModuleManagerDialog *parent = nullptr);
 
         void setInstallEnabled(bool b);
 

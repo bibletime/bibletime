@@ -99,7 +99,7 @@ class CDisplayWindow : public QMainWindow {
 
         /** Returns the key of this display window. */
         inline CSwordKey *key() const {
-            Q_ASSERT(m_swordKey != 0);
+            Q_ASSERT(m_swordKey != nullptr);
             return m_swordKey;
         }
 
@@ -143,7 +143,7 @@ class CDisplayWindow : public QMainWindow {
 
         /** Returns the display widget used by this implementation of CDisplayWindow. */
         virtual inline CDisplay *displayWidget() const {
-            Q_ASSERT(m_displayWidget != 0);
+            Q_ASSERT(m_displayWidget != nullptr);
             return m_displayWidget;
         }
 

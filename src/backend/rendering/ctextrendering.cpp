@@ -160,7 +160,7 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     BtConstModuleList modules;
 
     Q_FOREACH (const KeyTreeItem * const c, tree) {
-        Q_ASSERT(c != 0);
+        Q_ASSERT(c != nullptr);
         Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
             if (!modules.contains(mod))
                 modules.append(mod);

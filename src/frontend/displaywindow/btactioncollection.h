@@ -34,11 +34,11 @@ class BtActionCollection: public QObject {
 
     public: /* Methods: */
 
-        inline BtActionCollection(QObject *parent = 0) : QObject(parent) {}
+        inline BtActionCollection(QObject *parent = nullptr) : QObject(parent) {}
 
         QAction* addAction(const QString& name, QAction* action);
 
-        QAction* addAction(const QString &name, const QObject *receiver, const char* member = 0);
+        QAction* addAction(const QString &name, const QObject *receiver, const char* member = nullptr);
 
         QList<QAction*> actions();
 

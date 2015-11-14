@@ -38,8 +38,8 @@ class CBibleKeyChooser : public CKeyChooser  {
 
     public:
         CBibleKeyChooser(const BtConstModuleList &modules,
-                         BTHistory *history, CSwordKey *key = 0,
-                         QWidget *parent = 0);
+                         BTHistory *history, CSwordKey *key = nullptr,
+                         QWidget *parent = nullptr);
 
     public slots:
         /**

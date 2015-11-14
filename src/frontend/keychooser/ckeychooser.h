@@ -92,7 +92,7 @@ protected: /* Methods: */
 
     CKeyChooser(const BtConstModuleList & info,
                 BTHistory * history,
-                QWidget * parent = 0);
+                QWidget * parent = nullptr);
 
     /**
       Resets the appropriate font to for the modules.

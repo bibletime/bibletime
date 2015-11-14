@@ -188,7 +188,7 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
         qWarning("InstallMgr: getting remote list returned an error.");
     }
     delete m_progressDialog;
-    m_progressDialog = 0;
+    m_progressDialog = nullptr;
 }
 
 void CSwordSetupInstallSourcesDialog::slotRefreshProgress(const int, const int current) {

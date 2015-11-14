@@ -126,7 +126,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
 }
 
 CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & copy)
-    : QObject(NULL)
+    : QObject(nullptr)
     , m_module(copy.m_module)
     , m_backend(copy.m_backend)
     , m_type(copy.m_type)
@@ -276,7 +276,7 @@ void CSwordModuleInfo::buildIndex() {
         m_backend.setOption(CSwordModuleInfo::redLetterWords, false);
 
         // Do not use any stop words:
-        static const TCHAR * stop_words[1u]  = { NULL };
+        static const TCHAR * stop_words[1u]  = { nullptr };
         lucene::analysis::standard::StandardAnalyzer an(static_cast<const TCHAR **>(stop_words));
         const QString index(getModuleStandardIndexLocation());
 
@@ -528,7 +528,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
 
 #ifndef BT_NO_LUCENE
     // do not use any stop words
-    static const TCHAR * stop_words[1u]  = { NULL };
+    static const TCHAR * stop_words[1u]  = { nullptr };
     lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
     lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
     lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
@@ -545,7 +545,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
 
     const bool useScope = (scope.getCount() > 0);
 
-    lucene::document::Document * doc = 0;
+    lucene::document::Document * doc = nullptr;
     QScopedPointer<sword::SWKey> swKey(m_module->createKey());
 
     sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
@@ -1005,7 +1005,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
                         .toUtf8().constData());
         if (RTF_Buffer.length() > 0) {
             sword::RTFHTML RTF_Filter;
-            RTF_Filter.processText(RTF_Buffer, 0, 0);
+            RTF_Filter.processText(RTF_Buffer, nullptr, nullptr);
             return isUnicode()
                    ? QString::fromUtf8(RTF_Buffer.c_str())
                    : QString::fromLatin1(RTF_Buffer.c_str());

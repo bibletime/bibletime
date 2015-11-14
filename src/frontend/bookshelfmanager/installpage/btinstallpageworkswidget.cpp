@@ -52,8 +52,8 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
             : BtBookshelfWidget(parent, flags)
             , m_source(source)
             , m_parent(parent)
-            , m_backend(0)
-            , m_myModel(0)
+            , m_backend(nullptr)
+            , m_myModel(nullptr)
 {
 
     setTreeModel(new BtInstallPageModel(g, this));
@@ -72,7 +72,7 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
             this,                  SLOT(slotSourceRefresh()));
 
     m_backend = BtInstallBackend::backend(m_source);
-    Q_ASSERT(m_backend != 0);
+    Q_ASSERT(m_backend != nullptr);
     m_myModel = new BtBookshelfModel(this);
     Q_FOREACH(CSwordModuleInfo * const module, m_backend->moduleList())
         if (filter(module))

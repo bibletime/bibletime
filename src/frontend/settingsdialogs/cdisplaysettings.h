@@ -29,7 +29,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        CDisplaySettingsPage(CConfigurationDialog *parent = 0);
+        CDisplaySettingsPage(CConfigurationDialog *parent = nullptr);
 
         void save();
 

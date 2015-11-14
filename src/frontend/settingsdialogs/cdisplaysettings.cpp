@@ -33,7 +33,7 @@ typedef std::list<sword::SWBuf>::const_iterator SBLCI;
 // Container for QWebView to control its size
 class CWebViewerWidget : public QWidget {
     public:
-        CWebViewerWidget(QWidget* parent = 0);
+        CWebViewerWidget(QWidget* parent = nullptr);
         ~CWebViewerWidget();
         virtual QSize sizeHint () const;
 };

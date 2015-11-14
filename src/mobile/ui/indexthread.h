@@ -23,7 +23,7 @@ class IndexThread: public QThread {
         Q_OBJECT
 
     public:
-        explicit IndexThread(const QList<CSwordModuleInfo*>& modules, QObject* const parent = 0);
+        explicit IndexThread(const QList<CSwordModuleInfo*>& modules, QObject* const parent = nullptr);
         void stopIndex();
 
     signals:

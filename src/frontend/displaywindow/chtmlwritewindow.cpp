@@ -64,7 +64,7 @@ void CHTMLWriteWindow::storeProfileSettings(QString const & windowGroup) const {
     CPlainWriteWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     Q_ASSERT(windowGroup.endsWith('/'));
     btConfig().setSessionValue(windowGroup + "syncWindowEnabled", action->isChecked());
 }
@@ -73,7 +73,7 @@ void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
     CPlainWriteWindow::applyProfileSettings(windowGroup);
 
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     Q_ASSERT(windowGroup.endsWith('/'));
     action->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled", false));
 }
@@ -81,10 +81,10 @@ void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
 /** Is called when the current text was changed. */
 void CHTMLWriteWindow::textChanged() {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     action->setEnabled(m_writeDisplay->isModified());
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     action->setEnabled(m_writeDisplay->isModified());
 }
 
@@ -97,7 +97,7 @@ void CHTMLWriteWindow::restoreText() {
 
 bool CHTMLWriteWindow::syncAllowed() const {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     return action->isChecked();
 }
 

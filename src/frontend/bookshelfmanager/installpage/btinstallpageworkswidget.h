@@ -28,7 +28,7 @@ class BtInstallPageWorksWidget: public BtBookshelfWidget {
 
         BtInstallPageWorksWidget(const sword::InstallSource &source,
                                  const BtBookshelfTreeModel::Grouping &g,
-                                 BtInstallPage *parent, Qt::WindowFlags f = 0);
+                                 BtInstallPage *parent, Qt::WindowFlags f = nullptr);
 
         ~BtInstallPageWorksWidget();
 

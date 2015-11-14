@@ -22,7 +22,7 @@ class BtRefreshProgressDialog: public QProgressDialog {
 
     public: /* Methods: */
         BtRefreshProgressDialog(sword::InstallSource &source,
-                                QWidget *parent = 0, Qt::WindowFlags f = 0);
+                                QWidget *parent = nullptr, Qt::WindowFlags f = nullptr);
 
         bool runAndDelete();
 

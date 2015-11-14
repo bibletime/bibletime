@@ -31,7 +31,7 @@ class BtSignal: public QObject {
 
 public:
 
-    inline BtSignal(QObject *parent = 0)
+    inline BtSignal(QObject *parent = nullptr)
         : QObject(parent) {}
 
     /**

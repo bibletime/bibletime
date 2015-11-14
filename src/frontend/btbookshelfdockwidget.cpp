@@ -32,12 +32,12 @@ namespace {
 const QString groupingOrderKey("GUI/MainWindow/Docks/Bookshelf/grouping");
 }
 
-BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = 0;
+BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = nullptr;
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f)
 {
-    Q_ASSERT(m_instance == 0);
+    Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
     setObjectName("BookshelfDock");
@@ -180,7 +180,7 @@ void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
         if (BibleTime::moduleUnlock(module)) {
             // Re-initialize module pointer:
             module = CSwordBackend::instance()->findModuleByName(moduleName);
-            Q_ASSERT(module != 0);
+            Q_ASSERT(module != nullptr);
 
             emit moduleOpenTriggered(module);
         }
@@ -195,7 +195,7 @@ void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
     CSwordModuleInfo * const module =
         static_cast<CSwordModuleInfo *>(
                 m_itemContextMenu->property("BtModule").value<void *>());
-    if (module == 0) return;
+    if (module == nullptr) return;
 
     if (action == m_itemOpenAction) {
         emit moduleOpenTriggered(module);

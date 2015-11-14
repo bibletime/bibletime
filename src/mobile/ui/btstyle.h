@@ -77,7 +77,7 @@ public:
     static int getCurrentStyle();
     static void setCurrentStyle(int style);
 
-    BtStyle(QObject *parent = 0);
+    BtStyle(QObject *parent = nullptr);
 
     static QColor getTextColor();
     static void setTextColor(const QColor& color);

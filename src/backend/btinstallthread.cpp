@@ -85,7 +85,7 @@ void BtInstallThread::installModule() {
     sword::SWMgr lMgr(m_destination.toLatin1());
     if (BtInstallBackend::isRemote(installSource)) {
         int status = m_iMgr.installModule(&lMgr,
-                                          0,
+                                          nullptr,
                                           module->name().toLatin1(),
                                           &installSource);
         if (status == 0) {

@@ -25,7 +25,7 @@ namespace btm {
 SessionManager::SessionManager(QObject* parent)
     : QObject(parent) {
     m_windowMgr = findQmlObject("WindowManager");
-    Q_ASSERT(m_windowMgr != 0);
+    Q_ASSERT(m_windowMgr != nullptr);
 }
 
 void SessionManager::loadDefaultSession() {
@@ -57,7 +57,7 @@ void SessionManager::loadWindow(const QStringList& moduleNames, const QString& k
 
     const QString moduleName = moduleNames.at(0); // We don't support parallel yet!
     CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
-    if (m == 0)
+    if (m == nullptr)
         return;
     CSwordModuleInfo::Category category = m->category();
     const QString categoryName = m->englishCategoryName(category);

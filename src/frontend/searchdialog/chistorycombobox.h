@@ -20,7 +20,7 @@ namespace Search {
 class CHistoryComboBox : public QComboBox {
         Q_OBJECT
     public:
-        CHistoryComboBox(QWidget* parent = 0);
+        CHistoryComboBox(QWidget* parent = nullptr);
         ~CHistoryComboBox();
         void addToHistory(const QString& item);
         QStringList historyItems() const;

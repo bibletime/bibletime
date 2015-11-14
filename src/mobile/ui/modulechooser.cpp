@@ -31,20 +31,20 @@ ModuleChooser::ModuleChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterfac
 
 void ModuleChooser::open() {
     QQuickItem* item = findQmlObject("moduleChooser");
-    Q_ASSERT(item != 0);
-    if (item == 0)
+    Q_ASSERT(item != nullptr);
+    if (item == nullptr)
         return;
 
     item->setProperty("visible", true);
-    disconnect(item, SIGNAL(moduleSelected()), 0, 0);
+    disconnect(item, SIGNAL(moduleSelected()), nullptr, nullptr);
     bool ok = connect(item, SIGNAL(moduleSelected()), this, SLOT(moduleSelectedSlot()));
     Q_ASSERT(ok);
 }
 
 void ModuleChooser::moduleSelectedSlot() {
     QQuickItem* item = findQmlObject("moduleChooser");
-    Q_ASSERT(item != 0);
-    if (item == 0)
+    Q_ASSERT(item != nullptr);
+    if (item == nullptr)
         return;
 
     item->setProperty("visible", false);

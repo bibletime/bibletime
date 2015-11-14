@@ -17,15 +17,15 @@
 /******************** CLanguageMgr ******************/
 /****************************************************/
 
-CLanguageMgr *CLanguageMgr::m_instance = 0;
+CLanguageMgr *CLanguageMgr::m_instance = nullptr;
 
 void CLanguageMgr::destroyInstance() {
     delete m_instance;
-    m_instance = 0;
+    m_instance = nullptr;
 }
 
 CLanguageMgr *CLanguageMgr::instance() {
-    if (m_instance == 0) {
+    if (m_instance == nullptr) {
         m_instance = new CLanguageMgr();
     }
 

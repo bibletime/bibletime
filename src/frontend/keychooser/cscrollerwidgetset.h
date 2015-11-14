@@ -30,7 +30,7 @@ class CScrollerWidgetSet: public QWidget {
 
 public: /* Methods: */
 
-    CScrollerWidgetSet(QWidget * parent = 0);
+    CScrollerWidgetSet(QWidget * parent = nullptr);
 
     /**
     * Sets the tooltips for the given entries using the parameters as text.

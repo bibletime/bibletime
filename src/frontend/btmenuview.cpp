@@ -16,7 +16,7 @@
 
 
 BtMenuView::BtMenuView(QWidget *parent)
-    : QMenu(parent), m_model(0), m_parentIndex(QModelIndex()), m_actions(0)
+    : QMenu(parent), m_model(nullptr), m_parentIndex(QModelIndex()), m_actions(nullptr)
 {
     connect(this, SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShow()));
@@ -31,7 +31,7 @@ BtMenuView::~BtMenuView() {
 void BtMenuView::setModel(QAbstractItemModel *model) {
     m_model = model;
     delete m_actions;
-    m_actions = 0;
+    m_actions = nullptr;
     m_indexMap.clear();
     m_parentIndex = QModelIndex();
 }
@@ -137,8 +137,8 @@ QMenu *BtMenuView::newMenu(QMenu *parentMenu, const QModelIndex &itemIndex) {
 }
 
 void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
-    Q_ASSERT(m_model != 0);
-    Q_ASSERT(m_actions != 0);
+    Q_ASSERT(m_model != nullptr);
+    Q_ASSERT(m_actions != nullptr);
 
     int children = m_model->rowCount(parentIndex);
     for (int i = 0; i < children; i++) {
@@ -147,7 +147,7 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
         if (m_model->rowCount(childIndex) > 0) {
             QMenu *childMenu = newMenu(parentMenu, childIndex);
 
-            if (childMenu != 0) {
+            if (childMenu != nullptr) {
                 // Add the child menu and populate it:
                 parentMenu->addMenu(childMenu);
                 buildMenu(childMenu, childIndex);
@@ -155,7 +155,7 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
         } else {
             QAction *childAction = newAction(parentMenu, childIndex);
 
-            if (childAction != 0) {
+            if (childAction != nullptr) {
                 // Map index
                 m_indexMap.insert(childAction, childIndex);
 
@@ -175,12 +175,12 @@ void BtMenuView::slotAboutToShow() {
     // to remove the menus here.
     removeMenus();
     delete m_actions;
-    m_actions = 0;
+    m_actions = nullptr;
     m_indexMap.clear();
 
     preBuildMenu();
 
-    if (m_model != 0) {
+    if (m_model != nullptr) {
         m_actions = new QActionGroup(this);
 
         buildMenu(this, m_parentIndex);

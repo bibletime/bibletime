@@ -39,9 +39,9 @@ public: /* Methods: */
       \param[in] rootFolder would be used if you need only to display particular
           bookmarks folder.
     */
-    BtBookmarksModel(QObject * parent = 0);
+    BtBookmarksModel(QObject * parent = nullptr);
     BtBookmarksModel(const QString & fileName = QString(),
-                     const QString & rootFolder = QString(), QObject * parent = 0);
+                     const QString & rootFolder = QString(), QObject * parent = nullptr);
     ~BtBookmarksModel();
 
     /** Reimplemented from QAbstractItemModel */

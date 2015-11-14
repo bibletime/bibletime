@@ -63,7 +63,7 @@ public:
     Q_INVOKABLE void setHistoryPoint();
     Q_INVOKABLE void setModuleToBeginning();
 
-    BtWindowInterface(QObject *parent = 0);
+    BtWindowInterface(QObject *parent = nullptr);
 
     int getCurrentModelIndex() const;
     int getFontSize() const;

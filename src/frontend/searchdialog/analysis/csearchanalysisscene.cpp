@@ -47,7 +47,7 @@ const int LEGEND_WIDTH = 85;
 CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
         : QGraphicsScene(parent),
         m_scaleFactor(0.0),
-        m_legend(0) {
+        m_legend(nullptr) {
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
 }
@@ -82,7 +82,7 @@ void CSearchAnalysisScene::analyse(
     int moduleIndex = 0;
     m_maxCount = 0;
     int count = 0;
-    CSwordVerseKey key(0);
+    CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
 
     CSearchAnalysisItem* analysisItem = m_itemList[key.book()];
@@ -129,8 +129,8 @@ void CSearchAnalysisScene::setResults(
     }
 
     m_itemList.clear();
-    CSearchAnalysisItem* analysisItem = 0;
-    CSwordVerseKey key(0);
+    CSearchAnalysisItem* analysisItem = nullptr;
+    CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
         analysisItem = new CSearchAnalysisItem(m_results.count(), key.book(), &m_scaleFactor, m_results);
@@ -156,7 +156,7 @@ void CSearchAnalysisScene::reset() {
     if (m_legend) m_legend->hide();
 
     delete m_legend;
-    m_legend = 0;
+    m_legend = nullptr;
 
     update();
 }
@@ -227,7 +227,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     typedef CSwordModuleSearch::Results::const_iterator RCI;
 
-    const QString fileName = QFileDialog::getSaveFileName(0,
+    const QString fileName = QFileDialog::getSaveFileName(nullptr,
                                                           tr("Save Search Analysis"),
                                                           QString::null,
                                                           tr("XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)"));
@@ -271,7 +271,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     }
     text += "</tr>";
 
-    CSwordVerseKey key(0);
+    CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
 
     do {

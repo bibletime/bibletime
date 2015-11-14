@@ -46,7 +46,7 @@
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
         : QTreeView(parent)
         , m_magTimer(this)
-        , m_bookmarksModel(0)
+        , m_bookmarksModel(nullptr)
 {
     setMouseTracking(true);
     m_magTimer.setSingleShot(true);
@@ -575,7 +575,7 @@ void CBookmarkIndex::sortAllBookmarks() {
 void CBookmarkIndex::exportBookmarks() {
     Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
     QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
-    QString fileName  = QFileDialog::getSaveFileName(0, QObject::tr("Export Bookmarks"), "", filter);
+    QString fileName  = QFileDialog::getSaveFileName(nullptr, QObject::tr("Export Bookmarks"), "", filter);
 
     if (!fileName.isEmpty()) {
         m_bookmarksModel->save(fileName, currentIndex());
@@ -586,7 +586,7 @@ void CBookmarkIndex::exportBookmarks() {
 void CBookmarkIndex::importBookmarks() {
     Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
     QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
-    QString fileName = QFileDialog::getOpenFileName(0, QObject::tr("Import bookmarks"), "", filter);
+    QString fileName = QFileDialog::getOpenFileName(nullptr, QObject::tr("Import bookmarks"), "", filter);
     if (!fileName.isEmpty()) {
         m_bookmarksModel->load(fileName, currentIndex());
     }

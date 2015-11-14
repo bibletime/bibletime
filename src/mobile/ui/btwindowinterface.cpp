@@ -43,16 +43,16 @@ namespace btm {
 
 BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
-      m_key(0),
+      m_key(nullptr),
       m_textModel(new RoleItemModel()),
       m_moduleTextModel(new BtModuleTextModel(this)),
-      m_bookKeyChooser(0),
-      m_keyNameChooser(0),
-      m_verseKeyChooser(0),
+      m_bookKeyChooser(nullptr),
+      m_keyNameChooser(nullptr),
+      m_verseKeyChooser(nullptr),
       m_historyIndex(-1) {
 
     ViewManager* viewManager = getViewManager();
-    if (viewManager == 0)
+    if (viewManager == nullptr)
         return;
     QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
@@ -120,7 +120,7 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
 }
 
 int BtWindowInterface::getCurrentModelIndex() const {
-    if (m_key == 0)
+    if (m_key == nullptr)
         return 0;
     if (moduleIsBibleOrCommentary(module())) {
         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
@@ -247,7 +247,7 @@ void BtWindowInterface::updateTextFonts() {
 
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
 {
-    if (currentKey == 0)
+    if (currentKey == nullptr)
         return;
 
     CSwordTreeKey localKey(*currentKey);
@@ -330,19 +330,19 @@ void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
 
 void BtWindowInterface::changeReference() {
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-    if (verseKey != 0) {
+    if (verseKey != nullptr) {
         m_verseKeyChooser->open(verseKey);
     }
 
     CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
-    if (treeKey != 0) {
+    if (treeKey != nullptr) {
         QStringList keyPath;
         QStringList children;
         parseKey(treeKey, &keyPath, &children);
         m_bookKeyChooser->open();
     }
     CSwordLDKey* lexiconKey = dynamic_cast<CSwordLDKey*>(m_key);
-    if (lexiconKey != 0) {
+    if (lexiconKey != nullptr) {
         m_keyNameChooser->open(m_moduleTextModel);
     }
 }

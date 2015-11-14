@@ -46,17 +46,17 @@
 #include "util/directory.h"
 
 
-BibleTime *BibleTime::m_instance = 0;
+BibleTime *BibleTime::m_instance = nullptr;
 
 BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     namespace DU = util::directory;
 
-    Q_ASSERT(m_instance == 0);
+    Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
-    QSplashScreen *splash = 0;
+    QSplashScreen *splash = nullptr;
     QString splashHtml;
 
     if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
@@ -85,14 +85,14 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     }
     initBackends();
 
-    if (splash != 0) {
+    if (splash != nullptr) {
         splash->showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
                             Qt::AlignCenter);
         qApp->processEvents();
     }
     initView();
 
-    if (splash != 0) {
+    if (splash != nullptr) {
         splash->showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
                             Qt::AlignCenter);
         qApp->processEvents();
@@ -133,7 +133,7 @@ CReadWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
         default:
             qFatal("unknown module type");
             Q_ASSERT(false);
-            return NULL;
+            return nullptr;
     }
 }
 
@@ -229,7 +229,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
             CSwordBackend *backend = CSwordBackend::instance();
             backend->reloadModules(CSwordBackend::OtherChange);
             module = backend->findModuleByName(moduleName);
-            Q_ASSERT(module != 0);
+            Q_ASSERT(module != nullptr);
         }
 
         if (!module->isLocked()) break;
@@ -297,7 +297,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
     if (!bibleKey.isNull()) {
         CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
         if (bibleKey == "random") {
-            CSwordVerseKey vk(0);
+            CSwordVerseKey vk(nullptr);
             const int maxIndex = 31100;
             int newIndex = rand() % maxIndex;
             vk.setPosition(sword::TOP);
@@ -332,10 +332,10 @@ bool BibleTime::event(QEvent* event) {
 const CSwordModuleInfo* BibleTime::getCurrentModule() {
     QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
     if (!activeSubWindow)
-        return 0;
+        return nullptr;
     CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
     if (!w)
-        return 0;
+        return nullptr;
     return w->modules().first();
 }
 

@@ -76,7 +76,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
         // If we have not started dragging, but the mouse button is down, create a the mime data
         QPoint current(x, y);
         if ((current - m_dndData.startPos).manhattanLength() > 4 /*qApp->startDragDistance()*/ ) {
-            QDrag* drag = 0;
+            QDrag* drag = nullptr;
             if (!m_dndData.url.isEmpty()) {
                 // create a new bookmark drag!
                 QString moduleName = QString::null;

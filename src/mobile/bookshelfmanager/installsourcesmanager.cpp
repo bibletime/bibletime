@@ -24,7 +24,7 @@
 namespace btm {
 
 InstallSourcesManager::InstallSourcesManager(QObject* /* parent */)
-    : m_worker(0) {
+    : m_worker(nullptr) {
 }
 
 InstallSourcesManager::~InstallSourcesManager() {
@@ -32,8 +32,8 @@ InstallSourcesManager::~InstallSourcesManager() {
 
 void InstallSourcesManager::refreshSources() {
     findProgressObject();
-    Q_ASSERT(m_progressObject != 0);
-    if (m_progressObject == 0)
+    Q_ASSERT(m_progressObject != nullptr);
+    if (m_progressObject == nullptr)
         return;
     m_progressObject->disconnect(this);
     connect(m_progressObject, SIGNAL(cancel()), this, SLOT(cancel()));
@@ -77,10 +77,10 @@ void InstallSourcesManager::percentComplete(int percent, const QString& title) {
 
 void InstallSourcesManager::findProgressObject() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    QQuickItem * rootObject = 0;
-    if (viewer != 0)
+    QQuickItem * rootObject = nullptr;
+    if (viewer != nullptr)
         rootObject = viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_progressObject = rootObject->findChild<QQuickItem*>("progress");
 }
 

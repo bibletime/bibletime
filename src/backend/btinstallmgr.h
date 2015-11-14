@@ -32,7 +32,7 @@ class BtInstallMgr
 
 public: /* Methods: */
 
-    BtInstallMgr(QObject * parent = 0);
+    BtInstallMgr(QObject * parent = nullptr);
     ~BtInstallMgr();
 
     virtual bool isUserDisclaimerConfirmed() const;

@@ -128,7 +128,7 @@ void BtInstallProgressDialog::slotStatusUpdated(int moduleIndex, int status) {
 void BtInstallProgressDialog::slotOneItemCompleted(int moduleIndex, bool successful) {
 QTreeWidgetItem * const item = m_statusWidget->topLevelItem(moduleIndex);
     // update the list item
-    m_statusWidget->setItemWidget(item, 1, NULL);
+    m_statusWidget->setItemWidget(item, 1, nullptr);
     item->setText(1, successful ? tr("Completed") : tr("Failed"));
     item->setDisabled(true);
 }

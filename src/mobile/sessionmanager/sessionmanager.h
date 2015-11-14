@@ -24,7 +24,7 @@ class SessionManager : public QObject {
     Q_OBJECT
 
 public:
-    SessionManager(QObject* parent = 0);
+    SessionManager(QObject* parent = nullptr);
     void loadDefaultSession();
     void saveDefaultSession();
 

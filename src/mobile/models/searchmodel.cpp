@@ -21,7 +21,7 @@ namespace btm {
 
 int SearchModel::indexMatchingKeyName(const QString& keyName, const QVariant& vModel) {
     BtModuleTextModel* model = vModel.value<BtModuleTextModel*>();
-    if (model == 0)
+    if (model == nullptr)
         return 0;
 
     int first = 0;

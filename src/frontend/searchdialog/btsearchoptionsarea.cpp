@@ -211,7 +211,7 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
 
     for (BtConstModuleList::const_iterator it(modules.begin()); it != end_it; ++it) {
         /// \todo Check for containsRef compat
-        if (*it == 0) { //don't operate on null modules.
+        if (*it == nullptr) { //don't operate on null modules.
             continue;
         }
         qDebug() << "new module:" << (*it)->name();

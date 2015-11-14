@@ -19,7 +19,7 @@ namespace {
 
 class BtToolButton: public QToolButton {
     public:
-        inline BtToolButton(QWidget *parent = 0)
+        inline BtToolButton(QWidget *parent = nullptr)
             : QToolButton(parent) {}
     private:
         virtual inline void nextCheckState() {}

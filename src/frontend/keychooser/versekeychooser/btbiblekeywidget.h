@@ -29,12 +29,12 @@ class BtBibleKeyWidget : public QWidget  {
 
     public:
         BtBibleKeyWidget(const CSwordBibleModuleInfo *module,
-                         CSwordVerseKey *key, QWidget *parent = 0,
-                         const char *name = 0);
+                         CSwordVerseKey *key, QWidget *parent = nullptr,
+                         const char *name = nullptr);
 
         ~BtBibleKeyWidget();
         bool setKey(CSwordVerseKey* key);
-        void setModule(const CSwordBibleModuleInfo *m = 0);
+        void setModule(const CSwordBibleModuleInfo *m = nullptr);
         bool eventFilter(QObject *o, QEvent *e);
 
     signals:

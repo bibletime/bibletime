@@ -26,7 +26,7 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        CSwordSettingsPage(CConfigurationDialog * parent = 0);
+        CSwordSettingsPage(CConfigurationDialog * parent = nullptr);
 
         void save();
 

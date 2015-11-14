@@ -24,11 +24,11 @@ class QActionGroup;
 class BtBookshelfGroupingMenu: public QMenu {
     Q_OBJECT
     public:
-        explicit inline BtBookshelfGroupingMenu(QWidget *parent = 0)
+        explicit inline BtBookshelfGroupingMenu(QWidget *parent = nullptr)
             : QMenu(parent) { initMenu(true); }
 
         explicit inline BtBookshelfGroupingMenu(bool showNoGrouping,
-                                                QWidget *parent = 0)
+                                                QWidget *parent = nullptr)
         : QMenu(parent) { initMenu(showNoGrouping); }
 
     signals:

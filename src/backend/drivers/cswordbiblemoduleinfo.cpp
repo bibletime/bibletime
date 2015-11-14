@@ -22,9 +22,9 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
                                              ModuleType type)
         : CSwordModuleInfo(module, backend, type)
         , m_boundsInitialized(false)
-        , m_lowerBound(0)
-        , m_upperBound(0)
-        , m_bookList(0)
+        , m_lowerBound(nullptr)
+        , m_upperBound(nullptr)
+        , m_bookList(nullptr)
 {
     // Intentionally empty
 }
@@ -63,7 +63,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
             // Reset the booklist because the locale has changed
             m_cachedLocale = b.booknameLanguage();
             delete m_bookList;
-            m_bookList = 0;
+            m_bookList = nullptr;
         }
     }
 

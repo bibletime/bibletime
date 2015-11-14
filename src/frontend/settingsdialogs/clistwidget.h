@@ -18,7 +18,7 @@
 class CListWidget : public QListWidget {
         Q_OBJECT
     public:
-        CListWidget(QWidget* parent = 0);
+        CListWidget(QWidget* parent = nullptr);
 
         virtual QSize sizeHint () const;
         void setCharWidth(int width);

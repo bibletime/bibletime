@@ -32,7 +32,7 @@ class BtInstallThread: public QThread {
 
         BtInstallThread(const QList<CSwordModuleInfo *> & modules,
                         const QString & destination,
-                        QObject * const parent = 0)
+                        QObject * const parent = nullptr)
             : QThread(parent)
             , m_modules(modules)
             , m_destination(destination)

@@ -20,7 +20,7 @@ namespace {
 const QString GeometryKey = "GUI/BookshelfManager/ModuleManagerDialog/geometry";
 } // anonymous namespace
 
-static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
+static BtModuleManagerDialog *m_staticModuleManagerDialog = nullptr;
 
 BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget *parent,
                                                           Qt::WindowFlags flags)
@@ -59,7 +59,7 @@ void BtModuleManagerDialog::retranslateUi() {
 
 BtModuleManagerDialog::~BtModuleManagerDialog() {
     saveDialogSettings();
-    m_staticModuleManagerDialog = 0;
+    m_staticModuleManagerDialog = nullptr;
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {

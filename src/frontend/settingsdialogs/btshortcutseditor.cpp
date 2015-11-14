@@ -48,7 +48,7 @@ class BtShortcutsEditorItem : public QTableWidgetItem {
 };
 
 BtShortcutsEditorItem::BtShortcutsEditorItem(QAction* action)
-        : m_action(action), m_newFirstHotkey(0), m_newSecondHotkey(0) {
+        : m_action(action), m_newFirstHotkey(nullptr), m_newSecondHotkey(nullptr) {
     QList<QKeySequence> list = m_action->shortcuts();
     if (list.count() > 0)
         m_newFirstHotkey = new QKeySequence(list.at(0));
@@ -74,13 +74,13 @@ void BtShortcutsEditorItem::setDefaultKeys(QKeySequence keys) {
 }
 
 void BtShortcutsEditorItem::setFirstHotkey(QKeySequence keys) {
-    if (m_newFirstHotkey == 0)
+    if (m_newFirstHotkey == nullptr)
         m_newFirstHotkey = new QKeySequence();
     *m_newFirstHotkey = keys;
 }
 
 void BtShortcutsEditorItem::setSecondHotkey(const QString& keys) {
-    if (m_newSecondHotkey == 0)
+    if (m_newSecondHotkey == nullptr)
         m_newSecondHotkey = new QKeySequence();
     *m_newSecondHotkey = QKeySequence(keys);
 }
@@ -88,22 +88,22 @@ void BtShortcutsEditorItem::setSecondHotkey(const QString& keys) {
 // Deletes hotkey information
 void BtShortcutsEditorItem::deleteHotkeys() {
     delete m_newFirstHotkey;
-    m_newFirstHotkey = 0;
+    m_newFirstHotkey = nullptr;
     delete m_newSecondHotkey;
-    m_newSecondHotkey = 0;
+    m_newSecondHotkey = nullptr;
 }
 
 // Moves the hotkey information into the QAction variable
 void BtShortcutsEditorItem::commitChanges() {
     QString actionName = text();
     QList<QKeySequence> list;
-    if ( (m_newFirstHotkey != 0) && (*m_newFirstHotkey != QKeySequence()) ) {
+    if ( (m_newFirstHotkey != nullptr) && (*m_newFirstHotkey != QKeySequence()) ) {
         list << *m_newFirstHotkey;
     }
-    if ( (m_newSecondHotkey != 0) && (*m_newSecondHotkey != QKeySequence()) )
+    if ( (m_newSecondHotkey != nullptr) && (*m_newSecondHotkey != QKeySequence()) )
         list << *m_newSecondHotkey;
 
-    if (m_action != 0)
+    if (m_action != nullptr)
         m_action->setShortcuts(list);
 }
 
@@ -111,8 +111,8 @@ void BtShortcutsEditorItem::commitChanges() {
 // ******************* BtShortcutsEditor *******************************************************
 
 BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* parent)
-        : QWidget(parent), m_dlg(new BtShortcutsDialog(this)), m_table(0), m_shortcutChooser(0), m_noneButton(0), m_defaultButton(0),
-        m_customButton(0), m_defaultLabelValue(0), m_currentRow(-1) {
+        : QWidget(parent), m_dlg(new BtShortcutsDialog(this)), m_table(nullptr), m_shortcutChooser(nullptr), m_noneButton(nullptr), m_defaultButton(nullptr),
+        m_customButton(nullptr), m_defaultLabelValue(nullptr), m_currentRow(-1) {
     init();
     addCollection(collection);
     bool ok = connect(m_dlg, SIGNAL(keyChangeRequest(const QString&)), this, SLOT(makeKeyChangeRequest(const QString&)) );
@@ -120,7 +120,7 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
 }
 
 BtShortcutsEditor::BtShortcutsEditor(QWidget* parent)
-        : QWidget(parent), m_table(0) {
+        : QWidget(parent), m_table(nullptr) {
     init();
 }
 
@@ -148,7 +148,7 @@ void BtShortcutsEditor::commitChanges() {
     int rows = m_table->rowCount();
     for (int row = 0; row < rows; row++) {
         BtShortcutsEditorItem* btItem = getShortcutsEditor(row);
-        if (btItem != 0)
+        if (btItem != nullptr)
             btItem->commitChanges();
     }
 }

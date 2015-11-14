@@ -36,8 +36,8 @@
 #include <QTranslator>
 #include "util/directory.h"
 
-btm::ViewManager* mgr = 0;
-btm::SessionManager* sessionMgr = 0;
+btm::ViewManager* mgr = nullptr;
+btm::SessionManager* sessionMgr = nullptr;
 static QFont defaultFont;
 
 void register_gml_classes() {
@@ -61,8 +61,8 @@ QFont getDefaultFont() {
 
 void openBookshelfManager() {
     QQuickItem* item = btm::findQmlObject("startupBookshelfManager");
-    Q_ASSERT(item != 0);
-    if (item == 0)
+    Q_ASSERT(item != nullptr);
+    if (item == nullptr)
         return;
 
     item->setProperty("visible", true);

@@ -27,7 +27,7 @@ class BtFindWidget: public QWidget {
 
 public: /* Methods: */
 
-    BtFindWidget(QWidget * parent = 0);
+    BtFindWidget(QWidget * parent = nullptr);
 
     void showAndSelect();
 

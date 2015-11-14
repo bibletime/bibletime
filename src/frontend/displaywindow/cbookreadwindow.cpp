@@ -48,14 +48,14 @@ void CBookReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     QAction *a = ac->action("nextEntry");
-    Q_ASSERT(a != 0);
+    Q_ASSERT(a != nullptr);
     a->setEnabled(false);
     a = ac->action("previousEntry");
-    Q_ASSERT(a != 0);
+    Q_ASSERT(a != nullptr);
     a->setEnabled(false);
 
     m_treeAction = ac->action("toggleTree");
-    Q_ASSERT(m_treeAction != 0);
+    Q_ASSERT(m_treeAction != nullptr);
     QObject::connect(m_treeAction, SIGNAL(triggered()),
                      this,         SLOT(treeToggled()));
     addAction(m_treeAction);
@@ -126,7 +126,7 @@ void CBookReadWindow::initToolbars() {
     setDisplaySettingsButton(button);
     buttonsToolBar()->addWidget(button);  // Display settings
     QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    if (action != 0) {
+    if (action != nullptr) {
         buttonsToolBar()->addAction(action);  // Search
     }
 }
@@ -151,7 +151,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);  // Display settings
     QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    if (action != 0) {
+    if (action != nullptr) {
         btMainWindow()->toolsToolBar()->addAction(action);  // Search
     }
 }

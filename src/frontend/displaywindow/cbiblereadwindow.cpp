@@ -131,102 +131,102 @@ void CBibleReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     qaction = ac->action("nextEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     qaction->setEnabled(false);
     qaction = ac->action("previousEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     qaction->setEnabled(false);
 
 
     qaction = m_actionCollection->action("nextBook");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousBook");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("nextChapter");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousChapter");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("nextVerse");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousVerse");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
     addAction(qaction);
 
     m_actions.selectAll = ac->action("selectAll");
-    Q_ASSERT(m_actions.selectAll != 0);
+    Q_ASSERT(m_actions.selectAll != nullptr);
 
     m_actions.findText = ac->action("findText");
-    Q_ASSERT(m_actions.findText != 0);
+    Q_ASSERT(m_actions.findText != nullptr);
 
     m_actions.findStrongs = m_actionCollection->action(CResMgr::displaywindows::general::findStrongs::actionName);
-    Q_ASSERT(m_actions.findStrongs != 0);
+    Q_ASSERT(m_actions.findStrongs != nullptr);
 
     m_actions.copy.referenceOnly = m_actionCollection->action("copyReferenceOnly");
-    Q_ASSERT(m_actions.copy.referenceOnly != 0);
+    Q_ASSERT(m_actions.copy.referenceOnly != nullptr);
 
     m_actions.copy.referenceTextOnly = m_actionCollection->action("copyTextOfReference");
-    Q_ASSERT(m_actions.copy.referenceTextOnly != 0);
+    Q_ASSERT(m_actions.copy.referenceTextOnly != nullptr);
     QObject::connect(m_actions.copy.referenceTextOnly,    SIGNAL(triggered()),
                      displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()));
     addAction(m_actions.copy.referenceTextOnly);
 
     m_actions.copy.referenceAndText = m_actionCollection->action("copyReferenceWithText");
-    Q_ASSERT(m_actions.copy.referenceAndText != 0);
+    Q_ASSERT(m_actions.copy.referenceAndText != nullptr);
     QObject::connect(m_actions.copy.referenceAndText,     SIGNAL(triggered()),
                      displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()));
     addAction(m_actions.copy.referenceAndText);
 
     m_actions.copy.chapter = m_actionCollection->action("copyChapter");
-    Q_ASSERT(m_actions.copy.chapter != 0);
+    Q_ASSERT(m_actions.copy.chapter != nullptr);
     QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()),
                      this,                   SLOT(copyDisplayedText()));
     addAction(m_actions.copy.chapter);
 
     m_actions.copy.selectedText = ac->action("copySelectedText");
-    Q_ASSERT(m_actions.copy.selectedText != 0);
+    Q_ASSERT(m_actions.copy.selectedText != nullptr);
 
     m_actions.save.referenceAndText = m_actionCollection->action("saveReferenceWithText");
-    Q_ASSERT(m_actions.save.referenceAndText != 0);
+    Q_ASSERT(m_actions.save.referenceAndText != nullptr);
     QObject::connect(m_actions.save.referenceAndText,     SIGNAL(triggered()),
                      displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()));
     addAction(m_actions.copy.chapter);
 
     m_actions.save.chapterAsPlain = m_actionCollection->action("saveChapterAsPlainText");
-    Q_ASSERT(m_actions.save.chapterAsPlain != 0);
+    Q_ASSERT(m_actions.save.chapterAsPlain != nullptr);
     QObject::connect(m_actions.save.chapterAsPlain, SIGNAL(triggered()),
                      this,                          SLOT(saveChapterPlain()));
     addAction(m_actions.save.referenceAndText);
 
     m_actions.save.chapterAsHTML = m_actionCollection->action("saveChapterAsHTML");
-    Q_ASSERT(m_actions.save.chapterAsHTML != 0);
+    Q_ASSERT(m_actions.save.chapterAsHTML != nullptr);
     QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()),
                      this,                         SLOT(saveChapterHTML()));
     addAction(m_actions.save.chapterAsHTML);
 
     m_actions.print.reference = m_actionCollection->action("printReferenceWithText");
-    Q_ASSERT(m_actions.print.reference != 0);
+    Q_ASSERT(m_actions.print.reference != nullptr);
     QObject::connect(m_actions.print.reference, SIGNAL(triggered()),
                      this,                      SLOT(printAnchorWithText()));
     addAction(m_actions.print.reference);
 
     m_actions.print.chapter = m_actionCollection->action("printChapter");
-    Q_ASSERT(m_actions.print.chapter != 0);
+    Q_ASSERT(m_actions.print.chapter != nullptr);
     QObject::connect(m_actions.print.chapter, SIGNAL(triggered()),
                      this,                    SLOT(printAll()));
     addAction(m_actions.print.chapter);
@@ -378,7 +378,7 @@ void CBibleReadWindow::copyDisplayedText() {
 /** Saves the chapter as valid HTML page. */
 void CBibleReadWindow::saveChapterHTML() {
     //saves the complete chapter to disk
-    Q_ASSERT(dynamic_cast<const CSwordBibleModuleInfo*>(modules().first()) != 0);
+    Q_ASSERT(dynamic_cast<const CSwordBibleModuleInfo*>(modules().first()) != nullptr);
     const CSwordBibleModuleInfo *bible = static_cast<const CSwordBibleModuleInfo*>(modules().first());
 
     CSwordVerseKey dummy(*verseKey());

@@ -23,7 +23,7 @@ class QLabel;
 class BtAboutDialog: public QDialog {
         Q_OBJECT
     public:
-        BtAboutDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        BtAboutDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
     protected:
         virtual void resizeEvent(QResizeEvent* event);

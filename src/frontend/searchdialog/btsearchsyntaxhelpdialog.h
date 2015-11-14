@@ -23,7 +23,7 @@ namespace Search {
 class BtSearchSyntaxHelpDialog: public QDialog {
         Q_OBJECT
     public:
-        BtSearchSyntaxHelpDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        BtSearchSyntaxHelpDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
     protected:
         void retranslateUi();

@@ -146,7 +146,7 @@ void BtInstallPathDialog::updateTopLevelItems() {
 
 void BtInstallPathDialog::addPathToList(QString pathname) {
     if (pathname.isEmpty()) return;
-    QTreeWidgetItem* i = 0;
+    QTreeWidgetItem* i = nullptr;
     QDir dir(pathname);
     if (!dir.exists()) {
         i = new QTreeWidgetItem(m_nonexistingItem, QStringList(pathname) );

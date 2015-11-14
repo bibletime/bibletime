@@ -36,7 +36,7 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        CAcceleratorSettingsPage(CConfigurationDialog *parent = 0);
+        CAcceleratorSettingsPage(CConfigurationDialog *parent = nullptr);
 
         void save();
 
@@ -58,13 +58,13 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
             QString title;
 
             WindowType() {
-                keyChooser = 0;
-                actionCollection = 0;
+                keyChooser = nullptr;
+                actionCollection = nullptr;
             };
             WindowType(const QString& newTitle) {
                 title = newTitle;
-                keyChooser = 0;
-                actionCollection = 0;
+                keyChooser = nullptr;
+                actionCollection = nullptr;
             }
         };
 

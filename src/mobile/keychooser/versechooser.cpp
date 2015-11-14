@@ -30,9 +30,9 @@ namespace btm {
 
 VerseChooser::VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* bibleVerse)
     : m_viewer(viewer),
-      m_gridChooser(0),
+      m_gridChooser(nullptr),
       bibleVerse_(bibleVerse),
-      m_key(0),
+      m_key(nullptr),
       m_state(CLOSED ) {
     m_gridChooser = new GridChooser(m_viewer);
     bool ok = connect(m_gridChooser, SIGNAL(accepted(const QString&)),
@@ -41,7 +41,7 @@ VerseChooser::VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface*
 }
 
 void VerseChooser::open(CSwordVerseKey* key) {
-    if (key == 0)
+    if (key == nullptr)
         return;
     m_key = key;
     m_oldBook = getBook();

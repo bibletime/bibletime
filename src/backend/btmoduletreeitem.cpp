@@ -18,9 +18,9 @@
 
 //This ctor creates the root item and the tree.
 BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules)
-        : m_moduleInfo(0),
-        m_firstChild(0),
-        m_next(0),
+        : m_moduleInfo(nullptr),
+        m_firstChild(nullptr),
+        m_next(nullptr),
         m_type(BTModuleTreeItem::Root),
         m_category(CSwordModuleInfo::UnknownCategory),
         m_grouping (grouping) {
@@ -41,8 +41,8 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
 BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo* info, CSwordModuleInfo::Category category)
         : m_moduleInfo(info),
         m_text(text),
-        m_firstChild(0),
-        m_next(0),
+        m_firstChild(nullptr),
+        m_next(nullptr),
         m_type(type),
         m_category(category) {
     if (info) {
@@ -155,7 +155,7 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
     Q_FOREACH(BTModuleTreeItem * const item, parentGroup->children())
         if (item->text() == itemText)
             return item;
-    return new BTModuleTreeItem(parentGroup, itemText, type, 0, category);
+    return new BTModuleTreeItem(parentGroup, itemText, type, nullptr, category);
 }
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
@@ -174,7 +174,7 @@ void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
             prev->m_next = item2;
             prev = item2;
         }
-        prev->m_next = 0;
+        prev->m_next = nullptr;
         parent->m_firstChild = first; // attach the partial tree to the parent
     }
 }

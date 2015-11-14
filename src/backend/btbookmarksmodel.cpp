@@ -63,7 +63,7 @@ public: /* Tyepes */
 
     public: /* Methods: */
 
-        inline BookmarkItemBase(BookmarkItemBase * parent = 0)
+        inline BookmarkItemBase(BookmarkItemBase * parent = nullptr)
             : m_parent(parent) {
             if(m_parent) {
                 Q_ASSERT(!m_parent->m_children.contains(this));
@@ -204,7 +204,7 @@ public: /* Tyepes */
     class BookmarkFolder : public BookmarkItemBase {
     public:
 
-        BookmarkFolder(const QString & name, BookmarkItemBase * parent = 0);
+        BookmarkFolder(const QString & name, BookmarkItemBase * parent = nullptr);
 
         /** Returns a list of direct childs of this item. */
         QList<BookmarkItemBase *> getChildList() const;
@@ -303,7 +303,7 @@ public: /* Loader */
         QDomElement child = document.firstChild().toElement();
 
         while ( !child.isNull() && child.parentNode() == document) {
-            BookmarkItemBase* i = handleXmlElement(child, 0);
+            BookmarkItemBase* i = handleXmlElement(child, nullptr);
             itemList.append(i);
             if (!child.nextSibling().isNull()) {
                 child = child.nextSibling().toElement();
@@ -319,7 +319,7 @@ public: /* Loader */
 
     /** Create a new item from a document element. */
     BookmarkItemBase * handleXmlElement(QDomElement & element, BookmarkItemBase * parent) {
-        BookmarkItemBase* newItem = 0;
+        BookmarkItemBase* newItem = nullptr;
         if (element.tagName() == "Folder") {
             BookmarkFolder* newFolder = new BookmarkFolder(QString::null, parent);
             if (element.hasAttribute("caption")) {
@@ -400,8 +400,8 @@ public: /* Loader */
 
     /** Writes one item to a document element. */
     void saveItem(BookmarkItemBase * item, QDomElement & parentElement) {
-        BookmarkFolder* folderItem = 0;
-        BookmarkItem* bookmarkItem = 0;
+        BookmarkFolder* folderItem = nullptr;
+        BookmarkItem* bookmarkItem = nullptr;
 
         if ((folderItem = dynamic_cast<BookmarkFolder*>(item))) {
             QDomElement elem = parentElement.ownerDocument().createElement("Folder");
@@ -439,7 +439,7 @@ public: /* Fields */
 
 };
 
-BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = 0;
+BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = nullptr;
 
 typedef BtBookmarksModelPrivate::BookmarkItemBase BookmarkItemBase;
 typedef BtBookmarksModelPrivate::BookmarkItem BookmarkItem;
@@ -635,7 +635,7 @@ QModelIndex BtBookmarksModel::parent(const QModelIndex & index) const {
     Q_D(const BtBookmarksModel);
 
     const BookmarkItemBase * i = d->item(index);
-    return (i->parent() == 0 || i->parent()->parent() == 0) ?
+    return (i->parent() == nullptr || i->parent()->parent() == nullptr) ?
                 QModelIndex() : createIndex(i->parent()->index(), 0, i->parent());
 }
 
@@ -852,7 +852,7 @@ CSwordModuleInfo * BtBookmarksModel::module(const QModelIndex & index) const
 
     if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
         return i->module();
-    return 0;
+    return nullptr;
 }
 
 QString BtBookmarksModel::key(const QModelIndex & index) const

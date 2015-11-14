@@ -35,16 +35,16 @@
 
 using namespace Rendering;
 
-CSwordBackend * CSwordBackend::m_instance = 0;
+CSwordBackend * CSwordBackend::m_instance = nullptr;
 
 CSwordBackend::CSwordBackend()
-        : sword::SWMgr(0, 0, false,
+        : sword::SWMgr(nullptr, nullptr, false,
                        new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
         , m_dataModel(this)
 {}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
-        : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0,
+        : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
                        false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
                        false, augmentHome)
 {}
@@ -243,21 +243,21 @@ CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & descri
     Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->config(CSwordModuleInfo::Description) == description)
             return mod;
-    return 0;
+    return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
     Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->name() == name)
             return mod;
-    return 0;
+    return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
     Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->module() == swmodule)
             return mod;
-    return 0;
+    return nullptr;
 }
 
 QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
@@ -381,7 +381,7 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
 
     if (myconfig) { // force reload on config object because we may have changed the paths
         delete myconfig;
-        config = myconfig = 0;
+        config = myconfig = nullptr;
         // we need to call findConfig to make sure that augPaths are reloaded
         findConfig(&configType, &prefixPath, &configPath, &augPaths, &sysConfig);
         // now re-read module configuration files

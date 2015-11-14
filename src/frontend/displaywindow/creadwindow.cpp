@@ -24,7 +24,7 @@
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
     : CDisplayWindow(modules, parent)
-    , m_readDisplayWidget(NULL)
+    , m_readDisplayWidget(nullptr)
 {}
 
 void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
@@ -112,5 +112,5 @@ void CReadWindow::openSearchStrongsDialog() {
                     '|',
                     QString::SkipEmptyParts))
         searchText.append("strong:").append(strongNumber).append(' ');
-    Search::CSearchDialog::openDialog(modules(), searchText, NULL);
+    Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
 }

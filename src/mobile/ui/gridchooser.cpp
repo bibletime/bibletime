@@ -26,9 +26,9 @@ namespace btm {
 
 GridChooser::GridChooser(QtQuick2ApplicationViewer* viewer)
     : viewer_(viewer),
-      gridChooserObject_(0) {
+      gridChooserObject_(nullptr) {
     QQuickItem * rootObject = viewer_->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         gridChooserObject_ = rootObject->findChild<QQuickItem*>("gridChooser");
 }
 
@@ -36,8 +36,8 @@ GridChooser::~GridChooser() {
 }
 
 void GridChooser::open(const QStringList& stringList, const QString& highlight, const QString& title) {
-    Q_ASSERT(gridChooserObject_ != 0);
-    if (gridChooserObject_ == 0)
+    Q_ASSERT(gridChooserObject_ != nullptr);
+    if (gridChooserObject_ == nullptr)
         return;
 
     gridChooserObject_->disconnect();

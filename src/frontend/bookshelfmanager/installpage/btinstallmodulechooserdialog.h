@@ -31,8 +31,8 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
     Q_OBJECT
     public:
         BtInstallModuleChooserDialog(const BtBookshelfTreeModel::Grouping &g,
-                                     QWidget *parent = 0,
-                                     Qt::WindowFlags flags = 0);
+                                     QWidget *parent = nullptr,
+                                     Qt::WindowFlags flags = nullptr);
 
         inline BtModuleSet const & checkedModules() const
         { return bookshelfWidget()->treeModel()->checkedModules(); }

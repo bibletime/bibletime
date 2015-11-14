@@ -81,8 +81,8 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     m_mainLayout->addWidget(m_verseScroller);
 
 
-    setTabOrder(m_textbox, 0);
-    m_dropDownButtons = new QWidget(0);
+    setTabOrder(m_textbox, nullptr);
+    m_dropDownButtons = new QWidget(nullptr);
     m_dropDownButtons->setWindowFlags(Qt::Popup);
     m_dropDownButtons->setAttribute(Qt::WA_WindowPropagation);
     m_dropDownButtons->setCursor(Qt::ArrowCursor);

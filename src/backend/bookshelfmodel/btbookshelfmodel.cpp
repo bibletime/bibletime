@@ -115,7 +115,7 @@ void BtBookshelfModel::clear(bool destroy) {
 }
 
 void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
-    Q_ASSERT(module != 0);
+    Q_ASSERT(module != nullptr);
 
     if (m_data.contains(module))
         return;
@@ -195,23 +195,23 @@ CSwordModuleInfo * BtBookshelfModel::getModule(const QString & name) const {
     Q_FOREACH(CSwordModuleInfo * const module, m_data)
         if (UNLIKELY(module->name() == name))
             return module;
-    return 0;
+    return nullptr;
 }
 
 void BtBookshelfModel::moduleHidden(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != 0);
+    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleIndexed(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != 0);
+    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleUnlocked(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != 0);
+    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }

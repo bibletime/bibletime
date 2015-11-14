@@ -22,7 +22,7 @@
 // A dialog to allow the user to input a shortcut for a primary and alternate key
 
 BtShortcutsDialog::BtShortcutsDialog(QWidget* parent)
-        : QDialog(parent), m_primaryLabel(0), m_alternateLabel(0), m_primaryButton(0), m_alternateButton(0) {
+        : QDialog(parent), m_primaryLabel(nullptr), m_alternateLabel(nullptr), m_primaryButton(nullptr), m_alternateButton(nullptr) {
     setWindowTitle(tr("Configure shortcuts"));
     setMinimumWidth(350);
 

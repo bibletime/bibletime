@@ -74,7 +74,7 @@ void BtTextWindowHeader::adjustWidgetCount(bool adjustToZero) {
         while (widgetCountDifference) {
             // it should be safe to delete the button later
             BtTextWindowHeaderWidget* w = m_widgetList.takeFirst();
-            w->setParent(0);
+            w->setParent(nullptr);
             w->deleteLater();
             widgetCountDifference--;
         }

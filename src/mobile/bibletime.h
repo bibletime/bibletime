@@ -20,7 +20,7 @@ class BibleTime : public QObject {
     Q_OBJECT
 
 public:
-    BibleTime(QObject* parent = 0);
+    BibleTime(QObject* parent = nullptr);
 
 private:
     void initBackends();

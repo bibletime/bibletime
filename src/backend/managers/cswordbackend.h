@@ -100,7 +100,7 @@ public: /* Methods: */
     /** \brief Destroys the singleton instance, if one exists. */
     static inline void destroyInstance() {
         delete m_instance;
-        m_instance = NULL;
+        m_instance = nullptr;
     }
 
     /**

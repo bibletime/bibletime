@@ -29,11 +29,11 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
 {
     typedef CSwordBibleModuleInfo CSBMI;
 
-    w_ref = 0;
+    w_ref = nullptr;
     setModules(modules, false);
     if (!m_modules.count()) {
         qWarning() << "CBibleKeyChooser: module is not a Bible or commentary!";
-        m_key = 0;
+        m_key = nullptr;
         return;
     }
     QHBoxLayout* layout = new QHBoxLayout(this);
@@ -64,7 +64,7 @@ CSwordKey* CBibleKeyChooser::key() {
 
 void CBibleKeyChooser::setKey(CSwordKey* key) {
     Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
-    if (dynamic_cast<CSwordVerseKey*>(key) == 0) return;
+    if (dynamic_cast<CSwordVerseKey*>(key) == nullptr) return;
 
     m_key = dynamic_cast<CSwordVerseKey*>(key);
     w_ref->setKey(m_key);

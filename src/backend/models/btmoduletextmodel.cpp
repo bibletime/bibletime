@@ -207,28 +207,28 @@ void BtModuleTextModel::setRoleNames(const QHash<int, QByteArray> &roleNames) {
 
 bool BtModuleTextModel::isBible() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::Bible;
 }
 
 bool BtModuleTextModel::isBook() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::GenericBook;
 }
 
 bool BtModuleTextModel::isCommentary() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::Commentary;
 }
 
 bool BtModuleTextModel::isLexicon() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::Lexicon;
 }

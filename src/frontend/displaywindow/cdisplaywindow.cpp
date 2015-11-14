@@ -37,7 +37,7 @@ inline QWidget * getProfileWindow(QWidget * w) {
     for (; w; w = w->parentWidget())
         if (QMdiSubWindow * const sw = qobject_cast<QMdiSubWindow *>(w))
             return sw;
-    return NULL;
+    return nullptr;
 }
 
 }
@@ -45,19 +45,19 @@ inline QWidget * getProfileWindow(QWidget * w) {
 
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
         : QMainWindow(parent),
-        m_actionCollection(0),
+        m_actionCollection(nullptr),
         m_mdi(parent),
-        m_keyChooser(0),
-        m_swordKey(0),
+        m_keyChooser(nullptr),
+        m_swordKey(nullptr),
         m_isReady(false),
-        m_moduleChooserBar(0),
-        m_mainToolBar(0),
-        m_buttonsToolBar(0),
-        m_formatToolBar(0),
-        m_headerBar(0),
-        m_popupMenu(0),
-        m_displayWidget(0),
-        m_history(0) {
+        m_moduleChooserBar(nullptr),
+        m_mainToolBar(nullptr),
+        m_buttonsToolBar(nullptr),
+        m_formatToolBar(nullptr),
+        m_headerBar(nullptr),
+        m_popupMenu(nullptr),
+        m_displayWidget(nullptr),
+        m_history(nullptr) {
     setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
     m_actionCollection = new BtActionCollection(this);
     setModules(modules);
@@ -76,7 +76,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
 
 CDisplayWindow::~CDisplayWindow() {
     delete m_swordKey;
-    m_swordKey = 0;
+    m_swordKey = nullptr;
 }
 
 BibleTime* CDisplayWindow::btMainWindow() {
@@ -237,45 +237,45 @@ void CDisplayWindow::initActions() {
     CDisplayWindow::insertKeyboardActions(ac);
 
     QAction* actn = ac->action(CResMgr::displaywindows::general::search::actionName);
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      this, SLOT(slotSearchInModules()));
 
     CDisplayConnections* conn = displayWidget()->connectionsProxy();
 
     actn = ac->action("openLocation");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      this, SLOT(setFocusKeyChooser()));
     addAction(actn);
 
     actn = ac->action("selectAll");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(selectAll()));
     addAction(actn);
 
     actn = ac->action("copySelectedText");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(copySelection()));
     addAction(actn);
 
     actn = ac->action("findText");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(openFindTextDialog()));
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     bool ok = QObject::connect(actn,                    SIGNAL(triggered()),
                                keyChooser()->history(), SLOT(back()));
     Q_ASSERT(ok);
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     ok = QObject::connect(actn,                    SIGNAL(triggered()),
                           keyChooser()->history(), SLOT(fw()));
     Q_ASSERT(ok);
@@ -361,7 +361,7 @@ void CDisplayWindow::setKey( CSwordKey* key ) {
 }
 
 BTHistory* CDisplayWindow::history() {
-    if (m_history == 0)
+    if (m_history == nullptr)
         m_history = new BTHistory(this);
     return m_history;
 }
@@ -536,7 +536,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         //if the module is displayed in another display window we assume a wrong drop
         //create a new window for the given module
         BibleTime *mainWindow = btMainWindow();
-        Q_ASSERT(mainWindow != 0);
+        Q_ASSERT(mainWindow != nullptr);
         mainWindow->createReadDisplayWindow(QList<CSwordModuleInfo*>() << m, keyName);
     }
 }

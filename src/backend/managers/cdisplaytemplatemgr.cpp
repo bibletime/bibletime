@@ -31,10 +31,10 @@ inline QString readFileToString(const QString & filename) {
 
 } // anonymous namespace
 
-CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = 0;
+CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = nullptr;
 
 CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
-    Q_ASSERT(m_instance == 0);
+    Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
     {

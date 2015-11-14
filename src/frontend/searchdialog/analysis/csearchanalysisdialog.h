@@ -36,7 +36,7 @@ class CSearchAnalysisDialog : public QDialog {
         Q_OBJECT
     public:
         CSearchAnalysisDialog(const CSwordModuleSearch::Results &results,
-                              QWidget *parentDialog = 0);
+                              QWidget *parentDialog = nullptr);
 
     protected: // Protected methods
         /**

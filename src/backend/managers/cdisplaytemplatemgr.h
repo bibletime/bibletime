@@ -101,7 +101,7 @@ class CDisplayTemplateMgr {
           \returns The singleton instance of the instance of this class.
         */
         static inline CDisplayTemplateMgr * instance() {
-            Q_ASSERT(m_instance != 0);
+            Q_ASSERT(m_instance != nullptr);
             return m_instance;
         }
 

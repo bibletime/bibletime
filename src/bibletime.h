@@ -132,7 +132,7 @@ class BibleTime : public QMainWindow {
 
     public:
 
-        BibleTime(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        BibleTime(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
         ~BibleTime();
 
@@ -187,7 +187,7 @@ class BibleTime : public QMainWindow {
           \param[in] parent The parent widget for the unlock dialogs.
           \returns whether the module was successfully unlocked.
         */
-        static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = 0);
+        static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = nullptr);
 
         /**
           Get a pointer to the module associated with the current window

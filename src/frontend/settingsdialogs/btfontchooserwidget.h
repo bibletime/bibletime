@@ -30,7 +30,7 @@ class BtFontChooserWidget : public QFrame {
 
     public: /* Methods: */
 
-        BtFontChooserWidget(QWidget *parent = 0);
+        BtFontChooserWidget(QWidget *parent = nullptr);
 
         void setFont(const QFont &font);
         void setSampleText(const QString &text);

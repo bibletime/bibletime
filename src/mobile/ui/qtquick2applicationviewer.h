@@ -29,7 +29,7 @@ class QtQuick2ApplicationViewer : public QQuickView {
     Q_OBJECT
 
 public:
-    explicit QtQuick2ApplicationViewer(QWindow *parent = 0);
+    explicit QtQuick2ApplicationViewer(QWindow *parent = nullptr);
     virtual ~QtQuick2ApplicationViewer();
 
     void setMainQmlFile(const QString &file);

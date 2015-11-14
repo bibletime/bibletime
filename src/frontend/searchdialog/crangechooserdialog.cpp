@@ -178,7 +178,7 @@ void CRangeChooserDialog::selectedRangeChanged(QListWidgetItem * current,
 {
     Q_UNUSED(current);
     if (previous) {
-        Q_ASSERT(dynamic_cast<RangeItem*>(previous) != 0);
+        Q_ASSERT(dynamic_cast<RangeItem*>(previous) != nullptr);
         saveCurrentToRange(static_cast<RangeItem*>(previous));
     }
 
@@ -187,20 +187,20 @@ void CRangeChooserDialog::selectedRangeChanged(QListWidgetItem * current,
 
 void CRangeChooserDialog::resetEditControls() {
     const QListWidgetItem * const item = m_rangeList->currentItem();
-    Q_ASSERT(item == 0 || dynamic_cast<const RangeItem *>(item) != 0);
+    Q_ASSERT(item == nullptr || dynamic_cast<const RangeItem *>(item) != nullptr);
     const RangeItem * rangeItem = static_cast<const RangeItem *>(item);
 
-    m_nameEdit->setEnabled(item != 0);
-    m_rangeEdit->setEnabled(item != 0);
-    m_resultList->setEnabled(item != 0);
-    m_deleteRangeButton->setEnabled(item != 0);
-    m_nameEdit->setText(item != 0 ? rangeItem->caption() : "");
-    m_rangeEdit->setText(item != 0 ? rangeItem->range() : "");
+    m_nameEdit->setEnabled(item != nullptr);
+    m_rangeEdit->setEnabled(item != nullptr);
+    m_resultList->setEnabled(item != nullptr);
+    m_deleteRangeButton->setEnabled(item != nullptr);
+    m_nameEdit->setText(item != nullptr ? rangeItem->caption() : "");
+    m_rangeEdit->setText(item != nullptr ? rangeItem->range() : "");
 
-    if (item != 0)
+    if (item != nullptr)
         m_nameEdit->setFocus();
 
-    nameEditTextChanged(item != 0 ? rangeItem->caption() : "");
+    nameEditTextChanged(item != nullptr ? rangeItem->caption() : "");
 }
 
 void CRangeChooserDialog::updateResultList() {
@@ -220,7 +220,7 @@ void CRangeChooserDialog::updateResultList() {
 }
 
 void CRangeChooserDialog::deleteCurrentRange() {
-    Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->currentItem()) != 0);
+    Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->currentItem()) != nullptr);
     QListWidgetItem *i = m_rangeList->currentItem();
     m_rangeList->removeItemWidget(i);
     delete i;
@@ -231,8 +231,8 @@ void CRangeChooserDialog::deleteCurrentRange() {
 void CRangeChooserDialog::accept() {
     // Update the active item:
     QListWidgetItem *currentItem = m_rangeList->currentItem();
-    if (currentItem != 0) {
-        Q_ASSERT(dynamic_cast<RangeItem*>(currentItem) != 0);
+    if (currentItem != nullptr) {
+        Q_ASSERT(dynamic_cast<RangeItem*>(currentItem) != nullptr);
         saveCurrentToRange(static_cast<RangeItem*>(currentItem));
     }
 
@@ -240,7 +240,7 @@ void CRangeChooserDialog::accept() {
     m_rangeList->sortItems();
     BtConfig::StringMap map;
     for (int i = 0; i < m_rangeList->count(); i++) {
-        Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->item(i)) != 0);
+        Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->item(i)) != nullptr);
         const RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
         map[item->caption()] = item->range();
     }
@@ -258,7 +258,7 @@ void CRangeChooserDialog::restoreDefaults() {
     for (SMCI it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
     };
-    m_rangeList->setCurrentItem(0);
+    m_rangeList->setCurrentItem(nullptr);
     resetEditControls();
 }
 

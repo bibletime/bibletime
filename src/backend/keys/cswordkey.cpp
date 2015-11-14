@@ -71,7 +71,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         return QString::null;
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
-    QString text = QString::fromUtf8(m_module->module()->renderText(0, -1, DoRender));
+    QString text = QString::fromUtf8(m_module->module()->renderText(nullptr, -1, DoRender));
     if (!DoRender)
         return QString::null;
 
@@ -148,7 +148,7 @@ void CSwordKey::emitAfterChanged() {
 
 CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
     if (!module)
-        return 0;
+        return nullptr;
 
     sword::SWKey * const key = module->module()->getKey();
 
@@ -157,7 +157,7 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
         case CSwordModuleInfo::Bible: // Fall through
         case CSwordModuleInfo::Commentary:
 
-            Q_ASSERT(dynamic_cast<sword::VerseKey *>(key) != 0);
+            Q_ASSERT(dynamic_cast<sword::VerseKey *>(key) != nullptr);
             return new CSwordVerseKey(static_cast<sword::VerseKey *>(key),
                                       module);
 
@@ -167,13 +167,13 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
 
         case CSwordModuleInfo::GenericBook:
 
-            Q_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key) != 0);
+            Q_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key) != nullptr);
             return new CSwordTreeKey(dynamic_cast<sword::TreeKeyIdx *>(key),
                                      module );
 
         default:
 
-            return 0;
+            return nullptr;
 
     }
 }

@@ -24,8 +24,8 @@ KeyNameChooser::KeyNameChooser(QtQuick2ApplicationViewer* viewer,
                                BtWindowInterface* windowInterface)
     : m_viewer(viewer),
       m_windowInterface(windowInterface),
-      m_key(0),
-      m_keyNameChooserObject(0) {
+      m_key(nullptr),
+      m_keyNameChooserObject(nullptr) {
     findKeyNameChooserObject();
 }
 
@@ -35,8 +35,8 @@ void KeyNameChooser::open(BtModuleTextModel* model) {
 }
 
 void KeyNameChooser::openChooser(bool open) {
-    Q_ASSERT(m_keyNameChooserObject != 0);
-    if (m_keyNameChooserObject == 0)
+    Q_ASSERT(m_keyNameChooserObject != nullptr);
+    if (m_keyNameChooserObject == nullptr)
         return;
 
     m_keyNameChooserObject->disconnect();
@@ -53,9 +53,9 @@ void KeyNameChooser::selected(int index) {
 
 void KeyNameChooser::findKeyNameChooserObject() {
     QQuickItem * rootObject = m_viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_keyNameChooserObject = rootObject->findChild<QQuickItem*>("keyNameChooser");
-    Q_ASSERT(m_keyNameChooserObject != 0);
+    Q_ASSERT(m_keyNameChooserObject != nullptr);
 }
 
 

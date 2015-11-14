@@ -148,7 +148,7 @@ bool BtBookshelfFilterModel::nameFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != 0);
+    Q_ASSERT(m != nullptr);
 
     QModelIndex itemIndex(m->index(row, m_nameFilterColumn, parent));
     int numChildren(m->rowCount(itemIndex));
@@ -170,7 +170,7 @@ bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != 0);
+    Q_ASSERT(m != nullptr);
 
     const QModelIndex itemIndex = m->index(row, m_hiddenFilterColumn, parent);
     const int numChildren = m->rowCount(itemIndex);
@@ -193,7 +193,7 @@ bool BtBookshelfFilterModel::categoryFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != 0);
+    Q_ASSERT(m != nullptr);
 
     const QModelIndex itemIndex(m->index(row, m_categoryFilterColumn, parent));
     const int numChildren(m->rowCount(itemIndex));

@@ -24,7 +24,7 @@ class InstallSourcesManager :public QObject {
     Q_OBJECT
 
 public:
-    InstallSourcesManager(QObject* parent = 0);
+    InstallSourcesManager(QObject* parent = nullptr);
     ~InstallSourcesManager();
 
     void refreshSources();

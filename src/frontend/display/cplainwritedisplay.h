@@ -26,7 +26,7 @@ class QToolBar;
 class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
     public:
 
-        CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent = 0);
+        CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent = nullptr);
 
         /**
         * Reimplementation.

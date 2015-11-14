@@ -46,7 +46,7 @@ const QString Rendering::CChapterDisplay::text(
         static_cast<sword::VerseKey *>(module->module()->getKey())
                 ->setIntros(true);
 
-        Q_ASSERT(dynamic_cast<const CSBMI*>(module) != 0);
+        Q_ASSERT(dynamic_cast<const CSBMI*>(module) != nullptr);
         const CSBMI *bible = static_cast<const CSBMI*>(module);
 
         CSwordVerseKey k1(module);

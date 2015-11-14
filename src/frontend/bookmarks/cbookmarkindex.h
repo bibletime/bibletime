@@ -59,7 +59,7 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    CBookmarkIndex(QWidget * parent = 0);
+    CBookmarkIndex(QWidget * parent = nullptr);
     virtual ~CBookmarkIndex();
 
     void initTree();

@@ -47,7 +47,7 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    inline BtBookshelfModel(QObject * const parent = 0)
+    inline BtBookshelfModel(QObject * const parent = nullptr)
         : QAbstractListModel(parent) {}
 
     // Virtual methods implemented from QAbstractListModel:

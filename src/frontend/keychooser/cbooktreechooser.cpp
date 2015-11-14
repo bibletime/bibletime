@@ -32,7 +32,7 @@ CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
     //if there is no module there is no key either
     if (!modules.count()) {
         m_modules.clear();
-        m_key = 0;
+        m_key = nullptr;
     }
 
     //now setup the keychooser widgets
@@ -94,7 +94,7 @@ void CBookTreeChooser::setModules(const BtConstModuleList &modules,
     m_modules.clear();
     Q_FOREACH(CSwordModuleInfo const * const m, modules) {
         const CSBMI *book = dynamic_cast<const CSBMI*>(m);
-        if (book != 0) {
+        if (book != nullptr) {
             m_modules.append(book);
         }
     }

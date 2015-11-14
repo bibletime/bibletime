@@ -21,7 +21,7 @@ namespace btm {
 class InstallSources : public QObject {
         Q_OBJECT
     public:
-        InstallSources(QObject *parent = 0);
+        InstallSources(QObject *parent = nullptr);
 
         ~InstallSources();
 

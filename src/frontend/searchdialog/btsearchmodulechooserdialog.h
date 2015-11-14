@@ -25,8 +25,8 @@ class CSwordModuleInfo;
 class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
     Q_OBJECT
     public:
-        BtSearchModuleChooserDialog(QWidget *parent = 0,
-                                    Qt::WindowFlags flags = 0);
+        BtSearchModuleChooserDialog(QWidget *parent = nullptr,
+                                    Qt::WindowFlags flags = nullptr);
 
         inline void setCheckedModules(BtConstModuleSet const & modules)
         { bookshelfWidget()->treeModel()->setCheckedModules(modules); }

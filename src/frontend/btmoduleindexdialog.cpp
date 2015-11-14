@@ -30,7 +30,7 @@ bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modul
 
 BtModuleIndexDialog::BtModuleIndexDialog(int numModules)
     : QProgressDialog(tr("Preparing to index modules..."), tr("Cancel"), 0,
-                      numModules * 100, 0),
+                      numModules * 100, nullptr),
       m_currentModuleIndex(0)
 {
     setWindowTitle(tr("Creating indices"));

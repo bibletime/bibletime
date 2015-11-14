@@ -34,8 +34,8 @@ class CBookTreeChooser : public CKeyChooser {
         Q_OBJECT
     public:
         CBookTreeChooser(const BtConstModuleList &modules,
-                         BTHistory *history, CSwordKey *key = 0,
-                         QWidget *parent = 0);
+                         BTHistory *history, CSwordKey *key = nullptr,
+                         QWidget *parent = nullptr);
 
         /**
           Reimplemented from CKeyChooser::refreshContent().

@@ -35,7 +35,7 @@ class CSearchDialog : public QDialog {
     public:
         static void openDialog(const BtConstModuleList modules,
                                const QString &searchText = QString::null,
-                               QWidget *parentDialog = 0);
+                               QWidget *parentDialog = nullptr);
 
         static void closeDialog();
 

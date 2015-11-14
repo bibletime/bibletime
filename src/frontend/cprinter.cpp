@@ -38,14 +38,14 @@ inline FilterOptions mangleFilterOptions(FilterOptions const & fo) {
 CPrinter::CPrinter(QObject *,
                    const DisplayOptions &displayOptions,
                    const FilterOptions &filterOptions)
-        : QObject(0),
+        : QObject(nullptr),
           CDisplayRendering(displayOptions, mangleFilterOptions(filterOptions)),
           m_htmlPage(new QWebPage())
 { m_htmlPage->setParent(this); }
 
 CPrinter::~CPrinter() {
     delete m_htmlPage;
-    m_htmlPage = 0;
+    m_htmlPage = nullptr;
 }
 
 void CPrinter::printKeyTree( KeyTree& tree ) {

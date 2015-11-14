@@ -48,7 +48,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
     layout->setContentsMargins(2, 2, 2, 2); // Leave small border
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    m_htmlPart = new BtHtmlReadDisplay(0, this);
+    m_htmlPart = new BtHtmlReadDisplay(nullptr, this);
     m_htmlPart->setMouseTracking(false); // We don't want strong/lemma/note mouse infos
     m_htmlPart->view()->setAcceptDrops(false);
 
@@ -120,7 +120,7 @@ void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
 
     BtConstModuleList l;
     const CSwordModuleInfo * m(m_mainWindow->getCurrentModule());
-    if(m != 0)
+    if(m != nullptr)
         l.append(m);
     setInfo(Rendering::formatInfo(list, l));
 }

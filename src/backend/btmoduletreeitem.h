@@ -110,7 +110,7 @@ class BTModuleTreeItem {
         * (by default CSwordBackend::instance()()->moduleList() is used).
         */
         BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
-                         BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = 0);
+                         BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = nullptr);
 
         /** When the root item is deleted the whole tree is deleted. */
         ~BTModuleTreeItem();
@@ -157,7 +157,7 @@ class BTModuleTreeItem {
         /**
         * Private constructor which sets the members.
         */
-        BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info = 0, CSwordModuleInfo::Category category = CSwordModuleInfo::UnknownCategory);
+        BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info = nullptr, CSwordModuleInfo::Category category = CSwordModuleInfo::UnknownCategory);
         /** Default ctor is private because it is not to be called.*/
         BTModuleTreeItem();
 

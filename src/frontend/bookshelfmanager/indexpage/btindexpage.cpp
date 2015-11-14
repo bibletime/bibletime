@@ -98,7 +98,7 @@ void BtIndexPage::populateModuleList() {
 
     const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
     for (MLCI it(modules.begin()); it != modules.end(); ++it) {
-        QTreeWidgetItem* item = 0;
+        QTreeWidgetItem* item = nullptr;
 
         if ((*it)->hasIndex()) {
             item = new QTreeWidgetItem(m_modsWithIndices);

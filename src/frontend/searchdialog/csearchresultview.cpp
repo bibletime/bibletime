@@ -27,7 +27,7 @@ namespace Search {
 
 CSearchResultView::CSearchResultView(QWidget* parent)
         : QTreeWidget(parent),
-        m_module(0) {
+        m_module(nullptr) {
     initView();
     initConnections();
 }
@@ -102,8 +102,8 @@ void CSearchResultView::setupTree(const CSwordModuleInfo *m,
 
     setUpdatesEnabled(false);
 
-    QTreeWidgetItem* oldItem = 0;
-    QTreeWidgetItem* item = 0;
+    QTreeWidgetItem* oldItem = nullptr;
+    QTreeWidgetItem* item = nullptr;
     for (int index = 0; index < count; index++) {
         item = new QTreeWidgetItem(this, oldItem);
         item->setText(0, QString::fromUtf8(result.getElement(index)->getText()));
@@ -125,8 +125,8 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, const QStringList 
 
     setUpdatesEnabled(false);
 
-    QTreeWidgetItem* oldItem = 0;
-    QTreeWidgetItem* item = 0;
+    QTreeWidgetItem* oldItem = nullptr;
+    QTreeWidgetItem* item = nullptr;
 
     Q_FOREACH(QString const & s, vList) {
         item = new QTreeWidgetItem(this, oldItem);
@@ -172,7 +172,7 @@ void CSearchResultView::saveItems() {
     CExportManager mgr(true, tr("Saving search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
     Q_FOREACH(QTreeWidgetItem const * const i, items) {
@@ -190,7 +190,7 @@ void CSearchResultView::saveItemsWithText() {
     CExportManager mgr(true, tr("Saving search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
     Q_FOREACH(QTreeWidgetItem const * const i, items) {
@@ -208,7 +208,7 @@ void CSearchResultView::copyItems() {
     CExportManager mgr(true, tr("Copying search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
     Q_FOREACH(QTreeWidgetItem const * const i, items) {
@@ -226,7 +226,7 @@ void CSearchResultView::copyItemsWithText() {
     CExportManager mgr(true, tr("Copying search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
     Q_FOREACH(QTreeWidgetItem const * const i, items) {

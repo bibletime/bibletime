@@ -20,9 +20,9 @@
 
 BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
         : QToolBar(parent),
-        BtWindowModuleChooser(CSwordModuleInfo::Unknown, 0),
+        BtWindowModuleChooser(CSwordModuleInfo::Unknown, nullptr),
         m_idCounter(0),
-        m_window(0) {
+        m_window(nullptr) {
     setAllowedAreas(Qt::TopToolBarArea);
     setFloatable(false);
 }

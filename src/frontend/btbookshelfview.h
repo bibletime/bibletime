@@ -21,7 +21,7 @@ class CSwordModuleInfo;
 class BtBookshelfView: public QTreeView {
         Q_OBJECT
     public:
-        BtBookshelfView(QWidget *parent = 0);
+        BtBookshelfView(QWidget *parent = nullptr);
 
         CSwordModuleInfo *getModule(const QModelIndex &index) const;
 

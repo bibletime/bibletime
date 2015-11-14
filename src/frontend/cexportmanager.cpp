@@ -45,11 +45,11 @@ CExportManager::CExportManager(const bool showProgress,
     m_displayOptions = displayOptions;
 
     if (showProgress) {
-        m_progressDialog = new QProgressDialog(0, Qt::Dialog);
+        m_progressDialog = new QProgressDialog(nullptr, Qt::Dialog);
         m_progressDialog->setWindowTitle("BibleTime");
         m_progressDialog->setLabelText(progressLabel);
     } else {
-        m_progressDialog = 0;
+        m_progressDialog = nullptr;
     }
 }
 
@@ -271,7 +271,7 @@ bool CExportManager::printKeyList(const sword::ListKey & list,
     for (int i=0; i< list.getCount(); i++) {
         const sword::SWKey* swKey = list.getElement(i);
         const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
-        if (vKey != 0) {
+        if (vKey != nullptr) {
             QString startKey = vKey->getText();
             tree.append(new KTI(startKey, startKey, module, settings));
         }
@@ -286,7 +286,7 @@ bool CExportManager::printKeyList(const sword::ListKey & list,
 
 
     if (!progressWasCancelled()) {
-        CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+        CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
         printer->printKeyTree(tree);
         delete printer;
         closeProgressDialog();
@@ -316,7 +316,7 @@ bool CExportManager::printKey(const CSwordModuleInfo *module,
         tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
     }
 
-    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
     printer->printKeyTree(tree);
     delete printer;
     return true;
@@ -335,7 +335,7 @@ bool CExportManager::printKey(const CSwordKey *key,
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     tree.append( new CPrinter::KeyTreeItem(key->key(), key->module(), settings) );
 
-    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
     printer->printKeyTree(tree);
     delete printer;
     return true;
@@ -394,7 +394,7 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
         }
     }
 
-    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
     printer->printKeyTree(tree);
     delete printer;
     return true;
@@ -422,7 +422,7 @@ bool CExportManager::printKeyList(const QStringList &list,
 
 
     if (!progressWasCancelled()) {
-        CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+        CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
         printer->printKeyTree(tree);
         delete printer;
         closeProgressDialog();
@@ -446,7 +446,7 @@ const QString CExportManager::filterString( const Format format ) {
 
 /** Returns a filename to save a file. */
 const QString CExportManager::getSaveFileName(const Format format) {
-    return QFileDialog::getSaveFileName(0, QObject::tr("Save file"), "", filterString(format), 0);
+    return QFileDialog::getSaveFileName(nullptr, QObject::tr("Save file"), "", filterString(format), nullptr);
 }
 
 CTextRendering * CExportManager::newRenderer(const Format format, bool addText) {

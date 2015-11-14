@@ -36,7 +36,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        BtFontSettingsPage(CConfigurationDialog *parent = 0);
+        BtFontSettingsPage(CConfigurationDialog *parent = nullptr);
 
         void save() const;
 

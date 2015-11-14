@@ -37,7 +37,7 @@ enum WorksRoles {
 
 static bool moduleInstalled(const CSwordModuleInfo& moduleInfo) {
     const CSwordModuleInfo *installedModule = CSwordBackend::instance()->findModuleByName(moduleInfo.name());
-    return installedModule != 0;
+    return installedModule != nullptr;
 }
 
 static void setupTextModel(const QStringList& modelList, RoleItemModel* model) {
@@ -83,9 +83,9 @@ static void setupWorksModel(const QStringList& titleList,
 }
 
 InstallManager::InstallManager(QObject* /* parent */)
-    : m_installManagerChooserObject(0),
-      m_btInstallMgr(0),
-      m_backend(0) {
+    : m_installManagerChooserObject(nullptr),
+      m_btInstallMgr(nullptr),
+      m_backend(nullptr) {
 
     bool ok = connect(&m_installSourcesManager, SIGNAL(sourcesUpdated()),
                       this, SLOT(updateModels()));
@@ -94,9 +94,9 @@ InstallManager::InstallManager(QObject* /* parent */)
 
 void InstallManager::openChooser() {
 
-    if (m_installManagerChooserObject == 0)
+    if (m_installManagerChooserObject == nullptr)
         findInstallManagerObject();
-    if (m_installManagerChooserObject == 0)
+    if (m_installManagerChooserObject == nullptr)
         return;
 
     m_modulesToInstallRemove.clear();
@@ -114,19 +114,19 @@ void InstallManager::updateModels() {
 void InstallManager::findInstallManagerObject() {
 
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    QQuickItem * rootObject = 0;
-    if (viewer != 0)
+    QQuickItem * rootObject = nullptr;
+    if (viewer != nullptr)
         rootObject = viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_installManagerChooserObject = rootObject->findChild<QQuickItem*>("installManagerChooser");
 }
 
 void InstallManager::findProgressObject() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    QQuickItem * rootObject = 0;
-    if (viewer != 0)
+    QQuickItem * rootObject = nullptr;
+    if (viewer != nullptr)
         rootObject = viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_progressObject = rootObject->findChild<QQuickItem*>("progress");
 }
 
@@ -249,7 +249,7 @@ void InstallManager::installRemove() {
 
 void InstallManager::updateCategoryAndLanguageModels()
 {
-    if (m_backend == 0)
+    if (m_backend == nullptr)
         return;
     const QList<CSwordModuleInfo*> modules = m_backend->moduleList();
 
@@ -306,7 +306,7 @@ void InstallManager::updateWorksModel()
     QString categoryName = getCurrentListItem("categoryIndex", m_categoryList);
     QString languageName = getCurrentListItem("languageIndex", m_languageList);
 
-    if (m_backend == 0)
+    if (m_backend == nullptr)
         return;
     const QList<CSwordModuleInfo*> modules = m_backend->moduleList();
 

@@ -33,7 +33,7 @@ class BtIndexPage: public BtConfigDialog::Page {
 
     public:
 
-        BtIndexPage(BtModuleManagerDialog *parent = 0);
+        BtIndexPage(BtModuleManagerDialog *parent = nullptr);
         ~BtIndexPage();
 
     public slots:

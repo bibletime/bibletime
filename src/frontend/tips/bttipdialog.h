@@ -31,7 +31,7 @@ class BtTipDialog: public QDialog {
 
     public: /* Methods: */
 
-        BtTipDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        BtTipDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
     private: /* Methods: */
 

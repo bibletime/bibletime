@@ -33,7 +33,7 @@ const char* ActionType = "ActionType";
 BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype)
         : QWidget(parent),
         m_moduleType(mtype),
-        m_popup(0) {
+        m_popup(nullptr) {
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
@@ -112,7 +112,7 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
             if (typeText != QObject::tr("Replace"))
                 continue;
             QMenu* menuType = actionType->menu();
-            if (menuType == 0)
+            if (menuType == nullptr)
                 continue;
             QList<QAction*> actions = menuType->actions();
             for (int i=0; i<actions.count(); i++) {

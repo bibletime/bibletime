@@ -46,21 +46,21 @@ class BtConfigDialog : public QDialog {
             public: /* Methods: */
 
                 inline Page(BtConfigDialog *parent)
-                    : QWidget(parent), m_listWidgetItem(0) {}
+                    : QWidget(parent), m_listWidgetItem(nullptr) {}
                 inline Page(const QIcon &icon, BtConfigDialog *parent)
-                    : QWidget(parent), m_icon(icon), m_listWidgetItem(0) {}
+                    : QWidget(parent), m_icon(icon), m_listWidgetItem(nullptr) {}
 
                 inline const QIcon &icon() const { return m_icon; }
                 inline void setIcon(const QIcon &icon) {
                     m_icon = icon;
-                    if (m_listWidgetItem != 0)
+                    if (m_listWidgetItem != nullptr)
                         m_listWidgetItem->setIcon(icon);
                 }
 
                 inline const QString &headerText() const { return m_headerText; }
                 inline void setHeaderText(const QString &headerText) {
                     m_headerText = headerText;
-                    if (m_listWidgetItem != 0)
+                    if (m_listWidgetItem != nullptr)
                         m_listWidgetItem->setText(headerText);
                 }
 
@@ -80,7 +80,7 @@ class BtConfigDialog : public QDialog {
 
     public: /* Methods: */
 
-        BtConfigDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        BtConfigDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
         /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
         void addPage(Page *pageWidget);

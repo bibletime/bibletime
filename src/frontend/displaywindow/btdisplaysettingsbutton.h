@@ -28,7 +28,7 @@ class BtDisplaySettingsButton: public QToolButton {
         Q_OBJECT
 
     public:
-        BtDisplaySettingsButton(QWidget *parent = 0);
+        BtDisplaySettingsButton(QWidget *parent = nullptr);
 
     public slots:
         void setDisplayOptions(const DisplayOptions &displaySettings,

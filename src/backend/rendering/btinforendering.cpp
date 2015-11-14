@@ -139,7 +139,7 @@ ListInfoData detectInfo(QString const &data)
 
 QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules)
 {
-    Q_ASSERT(!modules.contains(0) && (modules.size() <= 1 && "not implemented"));
+    Q_ASSERT(!modules.contains(nullptr) && (modules.size() <= 1 && "not implemented"));
 
     if (list.isEmpty())
         return QString();
@@ -204,7 +204,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
 
 QString formatInfo(QString const & info, QString const & lang) {
     CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
-    Q_ASSERT(mgr != 0);
+    Q_ASSERT(mgr != nullptr);
 
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
@@ -247,7 +247,7 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
     CTextRendering::KeyTree tree;
 
     // const bool isBible = true;
-    const CSwordModuleInfo * module(0);
+    const CSwordModuleInfo * module(nullptr);
 
     // a prefixed module gives the module to look into
     QRegExp re("^[^ ]+:");
@@ -407,7 +407,7 @@ QString decodeMorph(QString const & data) {
 
     Q_FOREACH (QString morph, morphs) {
         //qDebug() << "CInfoDisplay::decodeMorph, morph: " << morph;
-        CSwordModuleInfo * module = 0;
+        CSwordModuleInfo * module = nullptr;
         bool skipFirstChar = false;
         QString value = "";
         QString valueClass = "";

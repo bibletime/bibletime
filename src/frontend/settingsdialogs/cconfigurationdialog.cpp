@@ -31,11 +31,11 @@ const QString GeometryKey = "GUI/SettingsDialog/geometry";
 CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection* actionCollection )
         : BtConfigDialog(parent),
         m_actionCollection(actionCollection),
-        m_displayPage(0),
-        m_swordPage(0),
-        m_acceleratorsPage(0),
-        m_fontsPage(0),
-        m_bbox(0) {
+        m_displayPage(nullptr),
+        m_swordPage(nullptr),
+        m_acceleratorsPage(nullptr),
+        m_fontsPage(nullptr),
+        m_bbox(nullptr) {
     setWindowTitle(tr("Configure BibleTime"));
     setAttribute(Qt::WA_DeleteOnClose);
 

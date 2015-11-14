@@ -102,7 +102,7 @@ void CDisplayConnections::openFindTextDialog() {
 CDisplay::CDisplay(CDisplayWindow* parent) :
         m_parentWindow(parent),
         m_connections( new CDisplayConnections( this ) ),
-        m_popup(0) {}
+        m_popup(nullptr) {}
 
 CDisplay::~CDisplay() {
     delete m_connections;
@@ -127,7 +127,7 @@ bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart p
             break;
     }
 
-    const QString filename = QFileDialog::getSaveFileName(0, QObject::tr("Save document ..."), "", filter);
+    const QString filename = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save document ..."), "", filter);
 
     if (!filename.isEmpty()) {
         util::tool::savePlainFile(filename, content);

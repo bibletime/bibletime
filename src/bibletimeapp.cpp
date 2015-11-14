@@ -23,7 +23,7 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QApplication(argc, argv)
     , m_init(false)
     , m_debugMode(false)
-    , m_icons(NULL)
+    , m_icons(nullptr)
 {
     setApplicationName("bibletime");
     setApplicationVersion(BT_VERSION);
@@ -36,7 +36,7 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
 
 BibleTimeApp::~BibleTimeApp() {
     // Prevent writing to the log file before the directory cache is init:
-    if (!m_init || BtConfig::m_instance == 0)
+    if (!m_init || BtConfig::m_instance == nullptr)
         return;
 
     //we can set this safely now because we close now (hopyfully without crash)
@@ -61,7 +61,7 @@ bool BibleTimeApp::initBtConfig() {
         /// \todo Migrate from btConfigOldApi to BTCONFIG_API_VERSION
         qWarning() << "BibleTime configuration migration is not yet implemented!!!";
         if (message::showWarning(
-                    NULL,
+                    nullptr,
                     tr("Warning!"),
                     tr("Migration to the new configuration system is not yet "
                        "implemented. Proceeding might result in <b>loss of data"
@@ -74,7 +74,7 @@ bool BibleTimeApp::initBtConfig() {
     } else {
         Q_ASSERT(r == BtConfig::INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE);
         if (message::showWarning(
-                    NULL,
+                    nullptr,
                     tr("Error loading configuration!"),
                     tr("Failed to load BibleTime's configuration, because it "
                        "appears that the configuration file corresponds to a "
@@ -99,7 +99,7 @@ bool BibleTimeApp::initDisplayTemplateManager() {
     new CDisplayTemplateMgr(errorMessage);
     if (errorMessage.isNull())
         return true;
-    message::showCritical(0, tr("Fatal error!"), errorMessage);
+    message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
     return false;
 }
 

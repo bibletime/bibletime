@@ -33,8 +33,8 @@ public:
 
     CBookKeyChooser(const BtConstModuleList & modules,
                     BTHistory * history,
-                    CSwordKey * key = 0,
-                    QWidget * parent = 0);
+                    CSwordKey * key = nullptr,
+                    QWidget * parent = nullptr);
 
     /**
       Reimplemented from CKeyChooser.

@@ -31,8 +31,8 @@ public: /* Methods: */
 
     BtInstallProgressDialog(const QList<CSwordModuleInfo *> & modules,
                             const QString & destination,
-                            QWidget * parent = 0,
-                            Qt::WindowFlags flags = 0);
+                            QWidget * parent = nullptr,
+                            Qt::WindowFlags flags = nullptr);
     ~BtInstallProgressDialog();
 
 public slots:

@@ -23,7 +23,7 @@ namespace btm {
 typedef QList<const CSwordModuleInfo*> CSMI;
 
 BtSearchInterface::BtSearchInterface(QObject* parent)
-    : QObject(parent), m_searchType(AndType), m_progressObject(0), m_wasCancelled(false) {
+    : QObject(parent), m_searchType(AndType), m_progressObject(nullptr), m_wasCancelled(false) {
 }
 
 BtSearchInterface::~BtSearchInterface() {
@@ -37,7 +37,7 @@ static const CSwordModuleInfo* getModuleFromResults(const CSwordModuleSearch::Re
             return module;
         ++moduleIndex;
     }
-    return 0;
+    return nullptr;
 }
 
 bool BtSearchInterface::modulesAreIndexed() {
@@ -50,7 +50,7 @@ bool BtSearchInterface::modulesAreIndexed() {
 }
 
 void BtSearchInterface::slotModuleProgress(int value) {
-    if (m_progressObject != 0)
+    if (m_progressObject != nullptr)
         m_progressObject->setProperty("value", value);
 }
 
@@ -82,7 +82,7 @@ bool BtSearchInterface::indexModules() {
     bool success = true;
     m_wasCancelled = false;
 
-    if (m_progressObject == 0)
+    if (m_progressObject == nullptr)
         m_progressObject = findQmlObject("indexProgress");
 
     QList<CSwordModuleInfo *> nonIndexedModules;

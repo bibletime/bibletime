@@ -40,7 +40,7 @@ CSearchAnalysisItem::CSearchAnalysisItem(
           m_scaleFactor(scaleFactor),
           m_bookName(bookname),
           m_moduleCount(moduleCount),
-          m_bufferPixmap(0)
+          m_bufferPixmap(nullptr)
 {
     m_resultCountArray.resize(m_moduleCount);
     int index = 0;

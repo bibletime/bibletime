@@ -24,7 +24,7 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
 
 public: /* Methods: */
 
-    BtBookshelfFilterModel(QObject * parent = 0);
+    BtBookshelfFilterModel(QObject * parent = nullptr);
 
     inline bool enabled() const {
         return m_enabled;

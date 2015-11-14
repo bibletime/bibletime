@@ -31,7 +31,7 @@ class BtEditBookmarkDialog : public QDialog  {
         BtEditBookmarkDialog(const QString &key,
                              const QString &title,
                              const QString &description,
-                             QWidget *parent = 0,
+                             QWidget *parent = nullptr,
                              Qt::WindowFlags wflags = Qt::Dialog);
 
         /**

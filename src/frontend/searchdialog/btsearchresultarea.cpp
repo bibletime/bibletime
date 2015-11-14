@@ -81,7 +81,7 @@ void BtSearchResultArea::initView() {
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
-    m_previewDisplay = new BtHtmlReadDisplay(0, m_displayFrame);
+    m_previewDisplay = new BtHtmlReadDisplay(nullptr, m_displayFrame);
     m_previewDisplay->view()->setToolTip(tr("Text of the selected search result item"));
     frameLayout->addWidget(m_previewDisplay->view());
 
@@ -115,7 +115,7 @@ void BtSearchResultArea::setSearchResult(
     // Pre-select the first module in the list:
     m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 
-    Q_ASSERT(qobject_cast<CSearchDialog*>(parent()) != 0);
+    Q_ASSERT(qobject_cast<CSearchDialog*>(parent()) != nullptr);
     static_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(true);
 }
 
@@ -277,7 +277,7 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
     // for whatever reason the text "Parsing...translations." does not appear.
     // this is not critical but the text is necessary to get the dialog box
     // to be wide enough.
-    QProgressDialog progress(QObject::tr("Parsing Strong's Numbers"), 0, 0, count);
+    QProgressDialog progress(QObject::tr("Parsing Strong's Numbers"), nullptr, 0, count);
     //0, "progressDialog", tr("Parsing Strong's Numbers"), tr("Parsing Strong's numbers for translations."), true);
     //progress->setAllowCancel(false);
     //progress->setMinimumDuration(0);

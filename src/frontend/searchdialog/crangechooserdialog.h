@@ -39,7 +39,7 @@ private: /* Types: */
 
         inline RangeItem(const QString &caption,
                          const QString &range = QString::null,
-                         QListWidget * parent = 0)
+                         QListWidget * parent = nullptr)
             : QListWidgetItem(caption, parent)
             , m_range(range) {}
 
@@ -56,7 +56,7 @@ private: /* Types: */
 
 public: /* Methods: */
 
-    CRangeChooserDialog(QWidget *parentDialog = 0);
+    CRangeChooserDialog(QWidget *parentDialog = nullptr);
 
     virtual void accept();
 

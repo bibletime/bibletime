@@ -38,7 +38,7 @@ class CPrinter : public QObject, public Rendering::CDisplayRendering {
         virtual QString entryLink(const KeyTreeItem &item,
                                   const CSwordModuleInfo * module);
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
         virtual QString finishText(const QString &text, const KeyTree &tree);
 
     private:

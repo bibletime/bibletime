@@ -92,7 +92,7 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
         m_groupingActionGroup->addAction(m_groupingNoneAction);
         addAction(m_groupingNoneAction);
     } else {
-        m_groupingNoneAction = 0;
+        m_groupingNoneAction = nullptr;
     }
 
     retranslateUi();
@@ -104,7 +104,7 @@ void BtBookshelfGroupingMenu::retranslateUi() {
     m_groupingLangCatAction->setText(tr("Language/Category"));
     m_groupingLangAction->setText(tr("Language"));
 
-    if (m_groupingNoneAction != 0) {
+    if (m_groupingNoneAction != nullptr) {
         m_groupingNoneAction->setText(tr("No grouping"));
     }
 }

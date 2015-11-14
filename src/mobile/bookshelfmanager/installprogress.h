@@ -28,7 +28,7 @@ class InstallProgress: public QObject {
     Q_OBJECT
 
 public:
-    InstallProgress(QObject* parent = 0);
+    InstallProgress(QObject* parent = nullptr);
 
     void openProgress(const QList<CSwordModuleInfo*>& modules);
 

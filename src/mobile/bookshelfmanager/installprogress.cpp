@@ -24,8 +24,8 @@
 namespace btm {
 
 InstallProgress::InstallProgress(QObject* parent)
-    : QObject(parent), m_progressObject(0),
-      m_thread(0), m_nextInstallIndex(0) {
+    : QObject(parent), m_progressObject(nullptr),
+      m_thread(nullptr), m_nextInstallIndex(0) {
 }
 
 void InstallProgress::openProgress(const QList<CSwordModuleInfo*>& modules) {
@@ -34,9 +34,9 @@ void InstallProgress::openProgress(const QList<CSwordModuleInfo*>& modules) {
 
     m_nextInstallIndex = 0;
     m_modules = modules;
-    if (m_progressObject == 0)
+    if (m_progressObject == nullptr)
         findProgressObject();
-    if (m_progressObject == 0)
+    if (m_progressObject == nullptr)
         return;
 
     QString destination = getSourcePath();
@@ -117,10 +117,10 @@ void InstallProgress::slotThreadFinished() {
 
 void InstallProgress::findProgressObject() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    QQuickItem * rootObject = 0;
-    if (viewer != 0)
+    QQuickItem * rootObject = nullptr;
+    if (viewer != nullptr)
         rootObject = viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_progressObject = rootObject->findChild<QQuickItem*>("progress");
 }
 

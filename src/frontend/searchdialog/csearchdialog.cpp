@@ -38,7 +38,7 @@ const QString GeometryKey = "GUI/SearchDialog/geometry";
 
 namespace Search {
 
-static CSearchDialog* m_staticDialog = 0;
+static CSearchDialog* m_staticDialog = nullptr;
 
 void CSearchDialog::openDialog(const BtConstModuleList modules,
                                const QString &searchText, QWidget *parentDialog)
@@ -70,7 +70,7 @@ void CSearchDialog::openDialog(const BtConstModuleList modules,
 }
 
 void CSearchDialog::closeDialog() {
-    if (m_staticDialog != 0)
+    if (m_staticDialog != nullptr)
         m_staticDialog->closeButtonClicked();
 }
 
@@ -80,8 +80,8 @@ CSearchDialog* CSearchDialog::getSearchDialog() {
 }
 
 CSearchDialog::CSearchDialog(QWidget *parent)
-        : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
-        m_searchResultArea(0), m_searchOptionsArea(0) {
+        : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(nullptr),
+        m_searchResultArea(nullptr), m_searchOptionsArea(nullptr) {
     setWindowIcon(CResMgr::searchdialog::icon());
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
@@ -92,7 +92,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 
 CSearchDialog::~CSearchDialog() {
     saveDialogSettings();
-    m_staticDialog = 0;
+    m_staticDialog = nullptr;
 }
 
 void CSearchDialog::startSearch() {
@@ -225,7 +225,7 @@ void CSearchDialog::initView() {
 
     QHBoxLayout* horizontalLayout = new QHBoxLayout();
 
-    m_analyseButton = new QPushButton(tr("&Analyze results..."), 0);
+    m_analyseButton = new QPushButton(tr("&Analyze results..."), nullptr);
     m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
     QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
     horizontalLayout->addWidget(m_analyseButton);

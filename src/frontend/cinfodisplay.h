@@ -33,7 +33,7 @@ class CInfoDisplay: public QWidget {
 
 public: /* Methods: */
 
-    CInfoDisplay(BibleTime * parent = NULL);
+    CInfoDisplay(BibleTime * parent = nullptr);
 
     void unsetInfo();
     void setInfo(const QString & renderedData,

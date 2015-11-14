@@ -21,7 +21,7 @@
 class BtInstallModuleChooserDialogModel: public BtBookshelfTreeModel {
     Q_OBJECT
     public:
-        BtInstallModuleChooserDialogModel(const Grouping &grouping, QObject *parent = 0);
+        BtInstallModuleChooserDialogModel(const Grouping &grouping, QObject *parent = nullptr);
 
         QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
         int columnCount(const QModelIndex &parent = QModelIndex()) const;

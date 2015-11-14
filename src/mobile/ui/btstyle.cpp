@@ -77,7 +77,7 @@ static double millimeterPerInch = 25.4;
 static void emitChanged() {
     for (int i=0; i<styles.count(); ++i) {
         QPointer<BtStyle> style = styles.at(i);
-        if (style != 0)
+        if (style != nullptr)
             style->changed();
     }
 }

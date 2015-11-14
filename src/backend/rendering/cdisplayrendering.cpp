@@ -85,7 +85,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
         case KeyTreeItem::Settings::SimpleKey:
             if (isBible) {
-                if(item.mappedKey() != 0) {
+                if(item.mappedKey() != nullptr) {
                     CSwordVerseKey baseKey(*item.modules().begin());
                     baseKey.setKey(item.key());
 

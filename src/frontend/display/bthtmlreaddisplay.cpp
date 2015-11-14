@@ -29,7 +29,7 @@ using namespace InfoDisplay;
 static QString javascript; // Initialized from file bthtml.js
 
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
-        : QWebPage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(0), m_jsObject(0)
+        : QWebPage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(nullptr), m_jsObject(nullptr)
 
 {
     settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
@@ -45,7 +45,7 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
 }
 
 BtHtmlReadDisplay::~BtHtmlReadDisplay() {
-    setView(0);
+    setView(nullptr);
 }
 
 // Read javascript into memory once and create the c++ javascript object
@@ -78,7 +78,7 @@ void BtHtmlReadDisplay::loadJSObject() {
     // as causing a cross site security problem when a new page is loaded. Deleting
     // the object and creating it new for each page loaded allows the object to access
     // javascript variables without this security issue.
-    if (m_jsObject != 0)
+    if (m_jsObject != nullptr)
         delete m_jsObject;
     m_jsObject = new BtHtmlJsObject(this);
     m_jsObject->setObjectName("btHtmlJsObject");
@@ -197,7 +197,7 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
 
     // Disconnect any previous connections and connect to slot that loads the javascript object
     QWebFrame* frame = mainFrame();
-    disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), 0, 0);
+    disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), nullptr, nullptr);
     bool ok = connect(frame, SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(loadJSObject()));
     Q_ASSERT(ok);
 
@@ -273,7 +273,7 @@ BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, Q
 }
 
 BtHtmlReadDisplayView::~BtHtmlReadDisplayView() {
-    setPage(0);
+    setPage(nullptr);
 }
 
 // Create the right mouse context menus
@@ -288,9 +288,9 @@ void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) {
     if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
         //see docs for BTMimeData and QMimeData
         const QMimeData* mimedata = e->mimeData();
-        if (mimedata != 0) {
+        if (mimedata != nullptr) {
             const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
-            if (btmimedata != 0) {
+            if (btmimedata != nullptr) {
                 BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
                 m_display->connectionsProxy()->emitReferenceDropped(item.key());
                 e->acceptProposedAction();
@@ -308,18 +308,18 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
         return;
 
     const QMimeData* mimedata = e->mimeData();
-    if (mimedata == 0)
+    if (mimedata == nullptr)
         return;
 
     const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
-    if (btmimedata == 0)
+    if (btmimedata == nullptr)
         return;
 
     BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
     QString moduleName = item.module();
     CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
     Q_ASSERT(m);
-    if (m == 0)
+    if (m == nullptr)
         return;
 
     CSwordModuleInfo::ModuleType bookmarkType = m->type();

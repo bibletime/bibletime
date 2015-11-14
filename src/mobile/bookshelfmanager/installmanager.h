@@ -31,7 +31,7 @@ class InstallManager :public QObject {
     Q_OBJECT
 
 public:
-    InstallManager(QObject* parent = 0);
+    InstallManager(QObject* parent = nullptr);
 
     Q_PROPERTY(int installedModuleCount READ getInstalledModuleCount)
 

@@ -97,7 +97,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
     int max = 1;
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
-    if (bible != 0) {
+    if (bible != nullptr) {
         const bool hasOT = bible->hasOldTestament();
         const bool hasNT = bible->hasNewTestament();
 
@@ -236,7 +236,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
     }
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
-    if (bible != 0) {
+    if (bible != nullptr) {
         if (_compare(bible->lowerBound()) < 0 ) {
             emitBeforeChanged();
             setKey(bible->lowerBound());
@@ -326,7 +326,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
     }
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
-    if (bible != 0) {
+    if (bible != nullptr) {
         if (_compare(bible->lowerBound()) < 0 ) {
             emitBeforeChanged();
             setKey(bible->lowerBound());

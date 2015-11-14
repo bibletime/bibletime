@@ -36,7 +36,7 @@ class SearchModel: public QObject {
     Q_OBJECT
 
 public:
-    SearchModel(QObject* parent = 0)
+    SearchModel(QObject* parent = nullptr)
         : QObject(parent) { }
 
     Q_INVOKABLE static int indexMatchingKeyName(const QString& keyName, const QVariant& vModel);

@@ -21,7 +21,7 @@ class BtColorWidget: public QFrame {
 
 public:
 
-    BtColorWidget(QWidget * parent = 0);
+    BtColorWidget(QWidget * parent = nullptr);
 
     QSize sizeHint() const;
 

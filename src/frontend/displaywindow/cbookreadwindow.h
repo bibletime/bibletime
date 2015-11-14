@@ -25,8 +25,8 @@ class CBookReadWindow: public CLexiconReadWindow {
 
         inline CBookReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
             : CLexiconReadWindow(modules, parent)
-            , m_treeAction(0)
-            , m_treeChooser(0) {}
+            , m_treeAction(nullptr)
+            , m_treeChooser(nullptr) {}
 
         virtual CSwordModuleInfo::ModuleType moduleType() const
         { return CSwordModuleInfo::GenericBook; }

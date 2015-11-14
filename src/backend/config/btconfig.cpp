@@ -30,7 +30,7 @@ const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
  * set the instance variable initially to 0, so it can be safely checked
  * whether the variable has been initialized yet.
  */
-BtConfig * BtConfig::m_instance = NULL;
+BtConfig * BtConfig::m_instance = nullptr;
 
 BtConfig::StringMap BtConfig::m_defaultSearchScopes;
 
@@ -83,7 +83,7 @@ BtConfig& BtConfig::getInstance() {
 
 void BtConfig::destroyInstance() {
     delete m_instance;
-    m_instance = NULL;
+    m_instance = nullptr;
 }
 
 void BtConfig::setModuleEncryptionKey(const QString & name,
@@ -275,7 +275,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
         for (int i = 0; i < list.getCount(); i++) {
             sword::VerseKey * verse(dynamic_cast<sword::VerseKey *>(list.getElement(i)));
 
-            if (verse != 0) {
+            if (verse != nullptr) {
                 verse->setLocale("en");
                 data.append(QString::fromUtf8(verse->getRangeText()));
                 data.append(";");
@@ -300,7 +300,7 @@ void BtConfig::deleteSearchScopesWithCurrentLocale() {
 CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleType) {
     const QString moduleName = value<QString>("settings/defaults/" + moduleType, QString());
     if (moduleName.isEmpty())
-        return 0;
+        return nullptr;
 
     return CSwordBackend::instance()->findModuleByName(moduleName);
 }
@@ -309,7 +309,7 @@ void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,
                                            const CSwordModuleInfo * const module)
 {
     setValue("settings/defaults/" + moduleType,
-             module != 0 ? module->name() : QString::null);
+             module != nullptr ? module->name() : QString::null);
 }
 
 /**

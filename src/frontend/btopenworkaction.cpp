@@ -22,9 +22,9 @@
 BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
                                            QWidget *parent)
     : BtMenuView(parent)
-    , m_treeModel(0)
-    , m_postFilterModel(0)
-    , m_groupingMenu(0)
+    , m_treeModel(nullptr)
+    , m_postFilterModel(nullptr)
+    , m_groupingMenu(nullptr)
     , m_groupingConfigKey(groupingConfigKey)
 {
     // Setup models:
@@ -65,7 +65,7 @@ void BtOpenWorkActionMenu::slotIndexTriggered(const QModelIndex &index) {
 
     CSwordModuleInfo *i;
     i = static_cast<CSwordModuleInfo *>(model()->data(index, MPR).value<void*>());
-    if (i != 0) {
+    if (i != nullptr) {
         emit triggered(i);
     }
 }

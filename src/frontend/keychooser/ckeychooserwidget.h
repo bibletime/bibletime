@@ -35,7 +35,7 @@ class CKCComboBox: public QComboBox {
 
 public: /* Methods: */
 
-    CKCComboBox(QWidget * parent = 0);
+    CKCComboBox(QWidget * parent = nullptr);
 
 protected: /* Methods: */
 
@@ -65,11 +65,11 @@ class CKeyChooserWidget: public QWidget  {
 
 public: /* Methods: */
 
-    CKeyChooserWidget(QStringList * list = 0,
-                      QWidget * parent = 0);
+    CKeyChooserWidget(QStringList * list = nullptr,
+                      QWidget * parent = nullptr);
 
     CKeyChooserWidget(int count = 0,
-                      QWidget * parent = 0);
+                      QWidget * parent = nullptr);
 
     /**
     * This function does clear the combobox, then fill in

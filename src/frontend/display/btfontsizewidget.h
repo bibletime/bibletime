@@ -23,7 +23,7 @@ class BtFontSizeWidget: public QComboBox {
 
 public: /* Methods: */
 
-    BtFontSizeWidget(QWidget * parent = 0);
+    BtFontSizeWidget(QWidget * parent = nullptr);
 
     int fontSize() const;
 

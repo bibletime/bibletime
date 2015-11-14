@@ -29,7 +29,7 @@ class QStackedWidget;
 class BtBookshelfDockWidget: public QDockWidget {
         Q_OBJECT
     public:
-        BtBookshelfDockWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
+        BtBookshelfDockWidget(QWidget *parent = nullptr, Qt::WindowFlags f = nullptr);
 
         static inline BtBookshelfDockWidget *getInstance() { return m_instance; }
 

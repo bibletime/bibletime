@@ -22,7 +22,7 @@ namespace {
 void replaceText(QDialogButtonBox *box, QDialogButtonBox::StandardButton flag,
                  const QString &text) {
     QPushButton *button(box->button(flag));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setText(text);
     }
 }

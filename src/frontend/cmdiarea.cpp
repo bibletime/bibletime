@@ -30,10 +30,10 @@ inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) 
 
 inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
     if (!displayWindow)
-        return NULL;
+        return nullptr;
     CDisplay * const display = displayWindow->displayWidget();
     if (!display)
-        return NULL;
+        return nullptr;
     return qobject_cast<QWebView *>(display->view());
 }
 
@@ -43,10 +43,10 @@ inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displ
 CMDIArea::CMDIArea(BibleTime *parent)
         : QMdiArea(parent)
         , m_mdiArrangementMode(ArrangementModeManual)
-        , m_activeWindow(0)
+        , m_activeWindow(nullptr)
         , m_bibleTime(parent)
 {
-    Q_ASSERT(parent != 0);
+    Q_ASSERT(parent != nullptr);
 
     #if QT_VERSION >= 0x040500
     // Set document-style tabs (for Mac):
@@ -182,7 +182,7 @@ void CMDIArea::myTileVertical() {
         x += actWidth;
     }
 
-    if (active != 0) {
+    if (active != nullptr) {
         active->setFocus();
     }
 
@@ -215,7 +215,7 @@ void CMDIArea::myTileHorizontal() {
         y += actHeight;
     }
 
-    if (active != 0) {
+    if (active != nullptr) {
         active->setFocus();
     }
 
@@ -310,14 +310,14 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     if (subWindowList().isEmpty())
         m_bibleTime->clearMdiToolBars();
 
-    if (client == 0) {
+    if (client == nullptr) {
         return;
     }
     emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 
     // Notify child window it is active
     CDisplayWindow* const activeWindow = getDisplayWindow(client);
-    if (activeWindow != 0 && activeWindow != m_activeWindow) {
+    if (activeWindow != nullptr && activeWindow != m_activeWindow) {
         m_activeWindow = activeWindow;
         activeWindow->windowActivated();
     }
@@ -331,7 +331,7 @@ void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
     QWebView* activeWebView = getActiveWebView();
-    if (activeWebView == 0)
+    if (activeWebView == nullptr)
         return;
     QWebPage::FindFlags options = QWebPage::HighlightAllOccurrences;
     if (caseSensitive)
@@ -375,7 +375,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
     const QMdiSubWindow * const w = qobject_cast<QMdiSubWindow*>(o);
 
     // Let the event be handled by other filters:
-    if (w == 0)
+    if (w == nullptr)
         return QMdiArea::eventFilter(o, e);
 
     switch (e->type()) {

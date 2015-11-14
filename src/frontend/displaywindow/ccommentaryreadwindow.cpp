@@ -66,50 +66,50 @@ void CCommentaryReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     QAction *qaction = ac->action("nextEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     qaction->setEnabled(false);
     qaction = ac->action("previousEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     qaction->setEnabled(false);
 
     qaction = ac->action("nextBook");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(nextBook()));
     addAction(qaction);
 
     qaction = ac->action("previousBook");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(previousBook()));
     addAction(qaction);
 
     qaction = ac->action("nextChapter");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(nextChapter()));
     addAction(qaction);
 
     qaction = ac->action("previousChapter");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(previousChapter()));
     addAction(qaction);
 
     qaction = ac->action("nextVerse");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(nextVerse()));
     addAction(qaction);
 
     qaction = ac->action("previousVerse");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(previousVerse()));
     addAction(qaction);
 
     qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     m_syncButton = qaction;
     addAction(qaction);
 

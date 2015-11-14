@@ -95,7 +95,7 @@ class StrongsResultList: public QList<StrongsResult> {
 class BtSearchResultArea : public QWidget {
         Q_OBJECT
     public: /* Methods: */
-        BtSearchResultArea(QWidget *parent = 0);
+        BtSearchResultArea(QWidget *parent = nullptr);
         inline ~BtSearchResultArea() { saveDialogSettings(); }
 
         /**

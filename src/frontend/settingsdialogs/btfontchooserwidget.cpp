@@ -26,7 +26,7 @@ class BtFontPreviewWebView: public QWebView {
 
     public: /* Methods: */
 
-        inline BtFontPreviewWebView(QWidget *parent = 0)
+        inline BtFontPreviewWebView(QWidget *parent = nullptr)
             : QWebView(parent)
         {
             setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -123,7 +123,7 @@ void BtFontChooserWidget::connectListWidgets() {
 }
 
 void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == 0)
+    if (current == nullptr)
         return;
 
     const QString fontFamily = current->text();
@@ -219,9 +219,9 @@ QString BtFontChooserWidget::saveListWidgetValue(QListWidget* listWidget) {
 }
 
 void BtFontChooserWidget::setFont(const QFont& font) {
-    disconnect(m_fontListWidget, 0, 0, 0);
-    disconnect(m_styleListWidget, 0, 0, 0);
-    disconnect(m_sizeListWidget, 0, 0, 0);
+    disconnect(m_fontListWidget, nullptr, nullptr, nullptr);
+    disconnect(m_styleListWidget, nullptr, nullptr, nullptr);
+    disconnect(m_sizeListWidget, nullptr, nullptr, nullptr);
 
     // set the font
     m_font = font;
@@ -255,7 +255,7 @@ void BtFontChooserWidget::setSampleText(const QString& htmlText) {
 }
 
 void BtFontChooserWidget::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == 0)
+    if (current == nullptr)
         return;
 
     m_font.setPointSize(m_sizeListWidget->currentItem()->text().toInt());
@@ -269,7 +269,7 @@ QSize BtFontChooserWidget::sizeHint() const {
 }
 
 void BtFontChooserWidget::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == 0)
+    if (current == nullptr)
         return;
 
     QString styleString = current->text();

@@ -225,8 +225,8 @@ void BtInstallPage::initSourcesCombo() {
 
 void BtInstallPage::activateSource(const sword::InstallSource &src) {
     qApp->setOverrideCursor(Qt::WaitCursor);
-    BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), 0);
-    if (w == 0) {
+    BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), nullptr);
+    if (w == nullptr) {
         window()->setEnabled(false);
         qApp->processEvents();
         w = new BtInstallPageWorksWidget(src, m_groupingOrder, this);
@@ -290,7 +290,7 @@ void BtInstallPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Groupin
 
 void BtInstallPage::slotHeaderChanged() {
     typedef BtInstallPageWorksWidget IPWW;
-    Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != 0);
+    Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != nullptr);
     IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
     m_headerState = w->treeView()->header()->saveState();
     btConfig().setValue(headerStateKey, m_headerState);

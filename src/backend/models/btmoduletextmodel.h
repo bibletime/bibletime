@@ -49,7 +49,7 @@ class BtModuleTextModel: public QAbstractListModel {
 
 public:
 
-    BtModuleTextModel(QObject *parent = 0);
+    BtModuleTextModel(QObject *parent = nullptr);
 
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);

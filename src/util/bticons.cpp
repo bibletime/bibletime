@@ -85,7 +85,7 @@ BtIcons::OverlayedIcon::OverlayedIcon(QIcon const & icon,
     : QIcon(new BtOverlayIconEngine(icon, overlayedIcon))
 {}
 
-BtIcons * BtIcons::m_instance = NULL;
+BtIcons * BtIcons::m_instance = nullptr;
 
 BtIcons::BtIcons()
     /* Regular icons: */

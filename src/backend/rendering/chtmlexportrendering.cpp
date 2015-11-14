@@ -61,7 +61,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         return ""; // no module present for rendering
 
     QScopedPointer<CSwordKey> scoped_key(
-            !k ? CSwordKey::createInstance(modules.first()) : 0);
+            !k ? CSwordKey::createInstance(modules.first()) : nullptr);
     CSwordKey * const key = k ? k : scoped_key.data();
     Q_ASSERT(key);
 
@@ -94,7 +94,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         }
 
         // indicate that key was changed
-        i.setMappedKey(key->key() != i.key() ? key : 0);
+        i.setMappedKey(key->key() != i.key() ? key : nullptr);
 
 
         isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);
@@ -140,7 +140,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         if (m_filterOptions.headings) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
-            (*mod_Itr)->module()->renderText(0, -1, 0);
+            (*mod_Itr)->module()->renderText(nullptr, -1, 0);
 
             sword::AttributeValue::const_iterator it =
                 (*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].begin();

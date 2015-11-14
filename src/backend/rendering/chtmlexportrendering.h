@@ -40,7 +40,7 @@ public: /* Methods: */
 protected: /* Methods: */
 
     virtual QString renderEntry(KeyTreeItem const & item,
-                                CSwordKey * key = 0);
+                                CSwordKey * key = nullptr);
     virtual QString finishText(QString const & text, KeyTree const & tree);
     virtual QString entryLink(KeyTreeItem const & item,
                               CSwordModuleInfo const * module);

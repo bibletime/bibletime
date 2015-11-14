@@ -79,7 +79,7 @@ static CSwordModuleInfo* getModule(BtBookshelfModel* bookshelfModel, const QMode
 
 void ModuleInterface::updateCategoryAndLanguageModels() {
     QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == 0)
+    if (object == nullptr)
         return;
 
     getCategoriesAndLanguages();
@@ -96,11 +96,11 @@ void ModuleInterface::getCategoriesAndLanguages() {
     m_languages.clear();
 
     QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == 0)
+    if (object == nullptr)
         return;
 
     BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
-    if (bookshelfModel == 0)
+    if (bookshelfModel == nullptr)
         return;
     int count = bookshelfModel->rowCount();
     for (int row=0; row<count; ++row) {
@@ -137,7 +137,7 @@ void ModuleInterface::updateWorksModel() {
     m_worksModel.setRoleNames(roleNames);
 
     BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
-    if (bookshelfModel == 0)
+    if (bookshelfModel == nullptr)
         return;
     int count = bookshelfModel->rowCount();
     for (int row=0; row<count; ++row) {
@@ -158,14 +158,14 @@ void ModuleInterface::updateWorksModel() {
     }
 
     QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == 0)
+    if (object == nullptr)
         return;
     object->setProperty("worksModel", QVariant::fromValue(&m_worksModel));
 }
 
 QString ModuleInterface::currentLanguage() const {
     QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == 0)
+    if (object == nullptr)
         return "";
     int row = object->property("languageIndex").toInt();
     QModelIndex modelIndex = m_languageModel.index(row,0);
@@ -176,7 +176,7 @@ QString ModuleInterface::currentLanguage() const {
 
 QString ModuleInterface::currentCategory() const {
     QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == 0)
+    if (object == nullptr)
         return "";
     int row = object->property("categoryIndex").toInt();
     QModelIndex modelIndex = m_categoryModel.index(row,0);
@@ -188,7 +188,7 @@ QString ModuleInterface::category(int index) {
     if (index < 0 || index >= m_modules.count())
         return "";
     CSwordModuleInfo* module = m_modules.at(index);
-    if (module == 0)
+    if (module == nullptr)
         return "";
     CSwordModuleInfo::Category category = module->category();
     if (category == 0)
@@ -200,7 +200,7 @@ QString ModuleInterface::englishCategory(int index) {
     if (index < 0 || index >= m_modules.count())
         return "";
     CSwordModuleInfo* module = m_modules.at(index);
-    if (module == 0)
+    if (module == nullptr)
         return "";
     CSwordModuleInfo::Category category = module->category();
     if (category == 0)
@@ -212,10 +212,10 @@ QString ModuleInterface::language(int index) {
     if (index < 0 || index >= m_modules.count())
         return "";
     CSwordModuleInfo* module = m_modules.at(index);
-    if (module == 0)
+    if (module == nullptr)
         return "";
     const CLanguageMgr::Language* language = module->language();
-    if (language == 0)
+    if (language == nullptr)
         return "";
     return language->translatedName();
 }
@@ -224,7 +224,7 @@ QString ModuleInterface::module(int index) {
     if (index < 0 || index >= m_modules.count())
         return "";
     CSwordModuleInfo* module = m_modules.at(index);
-    if (module == 0)
+    if (module == nullptr)
         return "";
     return module->name();
 }

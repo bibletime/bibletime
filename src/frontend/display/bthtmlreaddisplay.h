@@ -36,7 +36,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
 
     public:
 
-        BtHtmlReadDisplay( CReadWindow* readWindow, QWidget* parent = 0 );
+        BtHtmlReadDisplay( CReadWindow* readWindow, QWidget* parent = nullptr );
         virtual ~BtHtmlReadDisplay();
 
         //reimplemented functions from CDisplay

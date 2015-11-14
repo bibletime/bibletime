@@ -111,7 +111,7 @@ public: /* Types: */
 
 protected: /* Methods: */
 
-    inline CSwordKey(const CSwordModuleInfo * const module = 0)
+    inline CSwordKey(const CSwordModuleInfo * const module = nullptr)
         : m_module(module)
         , m_valid(true) {}
 

@@ -217,7 +217,7 @@ void CModuleResultView::contextMenuEvent( QContextMenuEvent * event ) {
 /** Copies the whole search result into the clipboard. */
 void CModuleResultView::copyResult() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Copying search result"));
 
         mgr.copyKeyList(m_results[m], m, CExportManager::Text, false);
@@ -227,7 +227,7 @@ void CModuleResultView::copyResult() {
 /** Copies the whole search result with the text into the clipboard. */
 void CModuleResultView::copyResultWithText() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Copying search result"));
         mgr.copyKeyList(m_results[m], m, CExportManager::Text, true);
     };
@@ -236,7 +236,7 @@ void CModuleResultView::copyResultWithText() {
 /** Saves the search result keys. */
 void CModuleResultView::saveResult() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Saving search result"));
         mgr.saveKeyList(m_results[m], m, CExportManager::Text, false);
     };
@@ -245,7 +245,7 @@ void CModuleResultView::saveResult() {
 /** Saves the search result with it's text. */
 void CModuleResultView::saveResultWithText() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Saving search result"));
         mgr.saveKeyList(m_results[m], m, CExportManager::Text, true);
     };
@@ -254,7 +254,7 @@ void CModuleResultView::saveResultWithText() {
 /** Appends the whole search result to the printer queue. */
 void CModuleResultView::printResult() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Printing search result"));
         mgr.printKeyList(m_results[m], m, btConfig().getDisplayOptions(),
                          btConfig().getFilterOptions());

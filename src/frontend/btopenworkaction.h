@@ -28,7 +28,7 @@ class BtOpenWorkActionMenu: public BtMenuView {
     Q_OBJECT
     public:
         BtOpenWorkActionMenu(const QString &groupingConfigKey,
-                             QWidget *parent = 0);
+                             QWidget *parent = nullptr);
 
         void setSourceModel(QAbstractItemModel *model);
         inline QAbstractItemModel *sourceModel() const { return m_treeModel->sourceModel(); }
@@ -62,7 +62,7 @@ class BtOpenWorkAction: public QAction {
     Q_OBJECT
     public:
         explicit BtOpenWorkAction(const QString &groupingConfigKey,
-                                  QObject *parent = 0);
+                                  QObject *parent = nullptr);
         ~BtOpenWorkAction();
 
     signals:

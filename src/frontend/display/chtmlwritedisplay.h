@@ -32,7 +32,7 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         Q_OBJECT
     public:
 
-        CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget * parent = 0);
+        CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget * parent = nullptr);
 
         /**
         * Sets the new text for this display widget. (CPlainWriteDisplay).

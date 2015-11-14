@@ -59,7 +59,7 @@ public:
     Q_INVOKABLE QString getReference(int index);
     Q_INVOKABLE void cancel();
 
-    BtSearchInterface(QObject *parent = 0);
+    BtSearchInterface(QObject *parent = nullptr);
     ~BtSearchInterface();
 
     QString getSearchText() const;
