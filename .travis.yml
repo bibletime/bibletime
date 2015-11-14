@@ -30,7 +30,7 @@ before_install:
   - cd ../..
 
 script:
-  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && /usr/local/bin/cmake .. && make && sudo make install; fi
+  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && cmake .. && make && sudo make install; fi
 
 env:
   global:
@@ -44,7 +44,7 @@ addons:
       name: "bibletime/bibletime"
       description: "BibleTime build submitted via Travis CI"
     notification_email: bibletime-coverity@heh.ee
-    build_command_prepend: "mkdir b && cd b && /usr/local/bin/cmake .."
+    build_command_prepend: "mkdir b && cd b && cmake .."
     build_command: "make"
     branch_pattern: .*_coverity_scan
 
