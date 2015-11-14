@@ -20,8 +20,9 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
   - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise main' --yes
   - sudo apt-get update -qq
-  - sudo apt-get install -qq --force-yes clang-3.8 g++-4.9 cmake libqt4-dev qt4-qmake libclucene-dev
+  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq --force-yes g++-4.9; else sudo apt-get install -qq --force-yes clang-3.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
+  - sudo apt-get install -qq --force-yes cmake libqt4-dev qt4-qmake libclucene-dev
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
   - mkdir b
