@@ -18,7 +18,7 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
   - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.7 main' --yes
   - sudo apt-get update -qq
-  - sudo apt-get install -qq clang-3.7 g++-5 libqt4-dev qt4-qmake libclucene-dev
+  - sudo apt-get install -qq --force-yes clang-3.7 g++-5 libqt4-dev qt4-qmake libclucene-dev
   - if [ "$CXX" = "g++" ]; then export CXX="g++-5.2" CC="gcc-5.2"; fi
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
