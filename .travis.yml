@@ -24,7 +24,7 @@ before_install:
   - cd ../..
 
 install:
-  - wget http://www.cmake.org/files/v3.1/cmake-3.1.2-Linux-x86_64.sh
+  - wget --no-check-certificate http://www.cmake.org/files/v3.1/cmake-3.1.2-Linux-x86_64.sh
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
   - sudo apt-get update -qq
   - sudo apt-get install -qq libqt4-dev qt4-qmake libclucene-dev
