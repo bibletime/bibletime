@@ -16,6 +16,7 @@ compiler:
 before_install:
   - wget --no-check-certificate http://www.cmake.org/files/v3.1/cmake-3.1.2-Linux-x86_64.sh
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
+  - sudo add-apt-repository ppa:libreoffice/ppa --yes
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
   - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.7 main' --yes
   - sudo apt-get update -qq
