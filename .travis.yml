@@ -14,6 +14,11 @@ compiler:
   - clang
 
 before_install:
+  - sudo add-apt-repository ppa:george-edison55/cmake-3.x --yes
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
+  - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.7 main' --yes
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq clang-3.7 g++-5 libqt4-dev qt4-qmake libclucene-dev
   - if [ "$CXX" = "g++" ]; then export CXX="g++-5.2" CC="gcc-5.2"; fi
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
@@ -27,8 +32,6 @@ before_install:
 install:
   - wget --no-check-certificate http://www.cmake.org/files/v3.1/cmake-3.1.2-Linux-x86_64.sh
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libqt4-dev qt4-qmake libclucene-dev
 
 script:
   - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && /usr/local/bin/cmake .. && make && sudo make install; fi
@@ -40,13 +43,6 @@ env:
    - secure: "VjsU8+6Sca7TXbR5zQstHw6eb4Dv0ZifqE29DRT+n64VKxAWFaWazJ4VJNlHvd8ChiJRfFcXVVXfNgNMAHE/JJHt1GgSPwIqSEE2mQh+7tqfSeBV/5yBkF7Fs4QIOrWjdEhEHTt0+wc6wtoVghEHvWlk3Lymb4x0UQDZtz/a4cI="
 
 addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    - llvm-toolchain-precise
-    packages:
-    - clang-3.7
-    - g++-5
   coverity_scan:
     project:
       name: "bibletime/bibletime"
