@@ -22,7 +22,6 @@
 #include "frontend/messagedialog.h"
 #include "util/bticons.h"
 #include "util/directory.h"
-#include "util/htmlescape.h"
 
 
 namespace {

@@ -24,7 +24,6 @@
 #include <QTextDocument>
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
-#include "../../util/htmlescape.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
 #include "../managers/clanguagemgr.h"
@@ -763,8 +762,6 @@ Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 }
 
 QString CSwordModuleInfo::aboutText() const {
-    using util::htmlEscape;
-
     static const QString row("<tr><td><b>%1</b></td><td>%2</td></tr>");
 
     QString text;
@@ -773,7 +770,7 @@ QString CSwordModuleInfo::aboutText() const {
     text += row
             .arg(tr("Version"))
             .arg(m_cachedHasVersion
-                 ? htmlEscape(config(CSwordModuleInfo::ModuleVersion))
+                 ? config(CSwordModuleInfo::ModuleVersion).toHtmlEscaped()
                  : tr("unknown"));
 
     {
@@ -781,27 +778,25 @@ QString CSwordModuleInfo::aboutText() const {
         text += row
                 .arg(tr("Markup"))
                 .arg(!sourceType.isEmpty()
-                     ? htmlEscape(sourceType)
+                     ? sourceType.toHtmlEscaped()
                      : tr("unknown"));
     }
 
     text += row
             .arg(tr("Location"))
-            .arg(htmlEscape(config(CSwordModuleInfo::AbsoluteDataPath)));
+            .arg(config(CSwordModuleInfo::AbsoluteDataPath).toHtmlEscaped());
 
     text += row
             .arg(tr("Language"))
-            .arg(htmlEscape(m_cachedLanguage->translatedName()));
+            .arg(m_cachedLanguage->translatedName().toHtmlEscaped());
 
-    if (m_module->getConfigEntry("Category"))
-        text += row
-                .arg(tr("Category"))
-                .arg(htmlEscape(m_module->getConfigEntry("Category")));
+    if (char const * const e = m_module->getConfigEntry("Category"))
+        text += row.arg(tr("Category"))
+                   .arg(QString{e}.toHtmlEscaped());
 
-    if (m_module->getConfigEntry("LCSH"))
-        text += row
-                .arg(tr("LCSH"))
-                .arg(htmlEscape(m_module->getConfigEntry("LCSH")));
+    if (char const * const e = m_module->getConfigEntry("LCSH"))
+        text += row.arg(tr("LCSH"))
+                   .arg(QString{e}.toHtmlEscaped());
 
     text += row
             .arg(tr("Writable"))
@@ -810,7 +805,7 @@ QString CSwordModuleInfo::aboutText() const {
     if (isEncrypted())
         text += row
                 .arg(tr("Unlock key"))
-                .arg(htmlEscape(config(CSwordModuleInfo::CipherKey)));
+                .arg(config(CSwordModuleInfo::CipherKey).toHtmlEscaped());
 
     QString options;
 
@@ -831,7 +826,7 @@ QString CSwordModuleInfo::aboutText() const {
     if (!options.isEmpty())
         text += row
                 .arg(tr("Features"))
-                .arg(htmlEscape(options));
+                .arg(options.toHtmlEscaped());
 
     text += "</table><hr>";
 
@@ -876,8 +871,8 @@ QString CSwordModuleInfo::aboutText() const {
          ++it)
         if (!config(*it).isEmpty())
             text += row
-                    .arg(htmlEscape(entryMap[*it]))
-                    .arg(htmlEscape(config(*it)));
+                    .arg(entryMap[*it].toHtmlEscaped())
+                    .arg(config(*it).toHtmlEscaped());
 
     text += "</table></font>";
 

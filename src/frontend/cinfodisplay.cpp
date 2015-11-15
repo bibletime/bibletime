@@ -29,7 +29,6 @@
 #include "bibletime.h"
 #include "frontend/crossrefrendering.h"
 #include "frontend/display/bthtmlreaddisplay.h"
-#include "util/htmlescape.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -126,13 +125,11 @@ void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
 }
 
 void CInfoDisplay::setInfo(CSwordModuleInfo * const module) {
-    using util::htmlEscape;
-
     if (module) {
         setInfo(tr("<div class=\"moduleinfo\"><h3>%1</h3><p>%2</p><p>Version: %3</p></div>")
-                .arg(htmlEscape(module->name()))
-                .arg(htmlEscape(module->config(CSwordModuleInfo::Description)))
-                .arg(htmlEscape(module->config(CSwordModuleInfo::ModuleVersion))));
+                .arg(module->name().toHtmlEscaped())
+                .arg(module->config(CSwordModuleInfo::Description).toHtmlEscaped())
+                .arg(module->config(CSwordModuleInfo::ModuleVersion).toHtmlEscaped()));
     } else {
         unsetInfo();
     }
