@@ -62,11 +62,7 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
     m_bookshelfWidget->showHideAction()->setVisible(false);
     m_bookshelfWidget->showHideButton()->hide();
     m_bookshelfWidget->treeView()->header()->show();
-#if QT_VERSION < 0x050000
-    m_bookshelfWidget->treeView()->header()->setResizeMode(QHeaderView::ResizeToContents);
-#else
     m_bookshelfWidget->treeView()->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
-#endif
     wLayout->addWidget(m_bookshelfWidget);
 
     m_uninstallGroupBox = new QGroupBox(this);

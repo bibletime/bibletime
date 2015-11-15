@@ -356,9 +356,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
     if (m_modules.contains(&module))
         return;
 
-#if QT_VERSION >= 0x040600
     beginResetModel();
-#endif
     Grouping g(m_groupingOrder);
     addModule(module, QModelIndex(), g, checked);
 
@@ -369,11 +367,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
            themselves.
     */
 
-#if QT_VERSION >= 0x040600
     endResetModel();
-#else
-    reset();
-#endif
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,

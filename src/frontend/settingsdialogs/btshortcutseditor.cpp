@@ -204,11 +204,7 @@ QTableWidget* BtShortcutsEditor::createShortcutsTable() {
     QStringList headerList;
     headerList << tr("Action\nname") << tr("First\nshortcut") << tr("Second\nshortcut");
     table->setHorizontalHeaderLabels(headerList);
-#if QT_VERSION < 0x050000
-    table->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
-#else
     table->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-#endif
     table->horizontalHeader()->resizeSection(0, 180);
     table->horizontalHeader()->resizeSection(1, 100);
     table->horizontalHeader()->setStretchLastSection(true);

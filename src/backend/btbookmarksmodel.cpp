@@ -326,11 +326,7 @@ public: /* Loader */
                 newFolder->setText(element.attribute("caption"));
             }
             QDomNodeList childList = element.childNodes();
-    #if QT_VERSION < 0x050000
-            for (unsigned int i = 0; i < childList.length(); i++) {
-    #else
             for (int i = 0; i < childList.length(); i++) {
-    #endif
                 QDomElement newElement = childList.at(i).toElement();
                 handleXmlElement(newElement, newFolder); // passing parent in constructor will add items to tree
             }

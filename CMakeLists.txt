@@ -98,25 +98,10 @@ ELSE()
   SET(BT_SHARE_PATH "share")
 ENDIF()
 
-IF(NOT BT_FORCE_USE_QT4)
-  # Automatically use Qt5 if available
-  FIND_PACKAGE(Qt5Core QUIET)
-ENDIF()
-
-# Find required packages
-IF(Qt5Core_FOUND)
-  FIND_PACKAGE(Qt5LinguistTools REQUIRED)
-  FIND_PACKAGE(Qt5Gui REQUIRED)
-  FIND_PACKAGE(Qt5Widgets REQUIRED)
-  MESSAGE( "-- Found Qt " ${Qt5Core_VERSION})
-ELSE()
-  SET(QT_MIN_VERSION 4.8.0)
-  SET(QT_USE_QTXML 1)
-  SET(QT_USE_QTWEBKIT 1)
-  SET(QT_USE_QTMAIN 1)
-  FIND_PACKAGE(Qt4 REQUIRED)
-  MESSAGE( "-- Found Qt " ${QTVERSION})
-ENDIF()
+FIND_PACKAGE(Qt5Core REQUIRED)
+FIND_PACKAGE(Qt5LinguistTools REQUIRED)
+FIND_PACKAGE(Qt5Gui REQUIRED)
+FIND_PACKAGE(Qt5Widgets REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
@@ -165,24 +150,15 @@ IF (NOT ${bibletime_LINK_TRANSLATION_FILES})
     INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 ENDIF()
 
-IF(Qt5Core_FOUND)
-  TARGET_LINK_LIBRARIES("bibletime"
-      ${CLucene_LIBRARY}
-      ${Sword_LDFLAGS}
-  )
+TARGET_LINK_LIBRARIES("bibletime"
+    ${CLucene_LIBRARY}
+    ${Sword_LDFLAGS}
+)
 
-  IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    qt5_use_modules("bibletime" Widgets Qml Quick Xml Network PrintSupport Svg)
-  ELSE()
-    qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
-  ENDIF()
+IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+  qt5_use_modules("bibletime" Widgets Qml Quick Xml Network PrintSupport Svg)
 ELSE()
-  INCLUDE(${QT_USE_FILE})
-  TARGET_LINK_LIBRARIES("bibletime"
-      ${QT_LIBRARIES}
-      ${CLucene_LIBRARY}
-      ${Sword_LDFLAGS}
-  )
+  qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
 ENDIF()
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")

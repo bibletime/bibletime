@@ -59,31 +59,14 @@ void printHelp(const QString &executable) {
   Console messaging.
 *******************************************************************************/
 
-#if QT_VERSION >= 0x040600
 QScopedPointer<QFile> debugStream;
-#else
-struct DebugStreamPtr {
-    QFile * m_f;
-    inline DebugStreamPtr() : m_f(0) {}
-    inline ~DebugStreamPtr() { delete m_f; }
-    inline void reset(QFile * f) { m_f = f; }
-    inline QFile * operator->() const {
-        Q_ASSERT(m_f);
-        return m_f;
-    }
-} debugStream;
-#endif
 bool showDebugMessages = false;
 
 void myMessageOutput(
         QtMsgType type,
-#if QT_VERSION >= 0x050000
         const QMessageLogContext&,
         const QString& message ) {
     QByteArray msg = message.toLatin1();
-#else
-        const char *msg ) {
-#endif
     switch (type) {
         case QtDebugMsg:
             if (showDebugMessages) { // Only show messages if they are enabled!
@@ -129,11 +112,7 @@ void myMessageOutput(
 }
 
 inline void installMessageHandler() {
-    #if QT_VERSION >= 0x050000
     qInstallMessageHandler(myMessageOutput);
-    #else
-    qInstallMsgHandler(myMessageOutput);
-    #endif
 }
 
 /*******************************************************************************

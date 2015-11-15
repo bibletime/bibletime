@@ -48,10 +48,8 @@ CMDIArea::CMDIArea(BibleTime *parent)
 {
     Q_ASSERT(parent != nullptr);
 
-    #if QT_VERSION >= 0x040500
     // Set document-style tabs (for Mac):
     setDocumentMode(true);
-    #endif
 
     /*
       Activate windows based on the history of activation, e.g. when one has window A
@@ -137,14 +135,8 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
     }
     Q_FOREACH(QTabBar * const tab, findChildren<QTabBar *>()) {
         QObject* parent = tab->parent();
-        if (parent == this) {
+        if (parent == this)
             tab->setTabsClosable(true);
-// As of version 4.8, Qt does the close for us.
-#if QT_VERSION < 0x040800
-            disconnect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
-            connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
-#endif
-        }
     }
 }
 

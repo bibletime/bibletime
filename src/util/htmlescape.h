@@ -13,19 +13,12 @@
 #define UTIL_HTMLESCAPE_H
 
 #include <QString>
-#if QT_VERSION < 0x050000
-#include <QTextDocument>
-#endif
 
 
 namespace util {
 
 inline QString htmlEscape(const QString & str) {
-#if QT_VERSION < 0x050000
-    return Qt::escape(str);
-#else
     return str.toHtmlEscaped();
-#endif
 }
 
 } /* namespace util { */

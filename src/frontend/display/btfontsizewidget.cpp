@@ -40,18 +40,7 @@ void BtFontSizeWidget::changed(QString const & text) {
 void BtFontSizeWidget::setFontSize(int size) {
     if ((size < 1) || (size > m_validator->top()))
         size = 12;
-    #if QT_VERSION >= 0x050000
     setCurrentText(QString::number(size));
-    #else
-    QString const newText(QString::number(size));
-    for (int i = 0; i < count(); i++) {
-        if (itemText(i) == newText) {
-            setCurrentIndex(i);
-            return;
-        }
-    }
-    setEditText(newText);
-    #endif
 }
 
 int BtFontSizeWidget::fontSize() const {
