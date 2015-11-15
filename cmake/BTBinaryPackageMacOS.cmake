@@ -1,42 +1,28 @@
 IF(APPLE)
     # Qt Plugins
-    IF(Qt5Core_FOUND)
+    MACRO(InstallPlugin _QtTarget)
+        GET_TARGET_PROPERTY(_QtLocation ${_QtTarget} LOCATION)
+        # Get the Qt plugin directory for our SVG hack below...
+        STRING(REGEX MATCH ".*/plugins/"    _QtPluginBase ${_QtLocation})
+        STRING(REGEX MATCH "plugins/[^/]+/" _QtPluginPath ${_QtLocation})
+        #MESSAGE("INSTALL ${_QtLocation} DESTINATION ${BT_DESTINATION}/${_QtPluginPath}" )
+        INSTALL(FILES ${_QtLocation} DESTINATION "${BT_DESTINATION}/${_QtPluginPath}")
+    ENDMACRO(InstallPlugin)
 
-        MACRO(InstallPlugin _QtTarget)
-            GET_TARGET_PROPERTY(_QtLocation ${_QtTarget} LOCATION)
-            # Get the Qt plugin directory for our SVG hack below...
-            STRING(REGEX MATCH ".*/plugins/"    _QtPluginBase ${_QtLocation})
-            STRING(REGEX MATCH "plugins/[^/]+/" _QtPluginPath ${_QtLocation})
-            #MESSAGE("INSTALL ${_QtLocation} DESTINATION ${BT_DESTINATION}/${_QtPluginPath}" )
-            INSTALL(FILES ${_QtLocation} DESTINATION "${BT_DESTINATION}/${_QtPluginPath}")
-        ENDMACRO(InstallPlugin)
-
-        FOREACH(Plugin ${Qt5Gui_PLUGINS})
-            InstallPlugin(${Plugin})
-        ENDFOREACH()
-        FOREACH(Plugin ${Qt5Widget_PLUGINS})
-            InstallPlugin(${Plugin})
-        ENDFOREACH()
-        # SVG plugin handling was buggy before QT 5.3.1, see
-        # https://bugreports.qt-project.org/browse/QTBUG-39171?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel
-        FOREACH(Plugin ${Qt5Svg_PLUGINS})
-            InstallPlugin(${Plugin})
-        ENDFOREACH()
-        # With this workaround it works with earlier QT versions
-        #INSTALL(FILES "${_QtPluginBase}/imageformats/libqsvg.dylib" DESTINATION "${BT_DESTINATION}/plugins/imageformats")
-        #INSTALL(FILES "${_QtPluginBase}/iconengines/libqsvgicon.dylib" DESTINATION "${BT_DESTINATION}/plugins/iconengines")
-
-    ELSE(Qt5Core_FOUND)
-        INSTALL(
-            DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats"
-            DESTINATION "${BT_DESTINATION}/plugins"
-        )
-
-        INSTALL(
-            DIRECTORY "${QT_LIBRARY_DIR}/QtGui.framework/Resources/qt_menu.nib"
-            DESTINATION "${BT_DESTINATION}/../Frameworks/QtGui.framework/Resources"
-        )
-    ENDIF(Qt5Core_FOUND)
+    FOREACH(Plugin ${Qt5Gui_PLUGINS})
+        InstallPlugin(${Plugin})
+    ENDFOREACH()
+    FOREACH(Plugin ${Qt5Widget_PLUGINS})
+        InstallPlugin(${Plugin})
+    ENDFOREACH()
+    # SVG plugin handling was buggy before QT 5.3.1, see
+    # https://bugreports.qt-project.org/browse/QTBUG-39171?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel
+    FOREACH(Plugin ${Qt5Svg_PLUGINS})
+        InstallPlugin(${Plugin})
+    ENDFOREACH()
+    # With this workaround it works with earlier QT versions
+    #INSTALL(FILES "${_QtPluginBase}/imageformats/libqsvg.dylib" DESTINATION "${BT_DESTINATION}/plugins/imageformats")
+    #INSTALL(FILES "${_QtPluginBase}/iconengines/libqsvgicon.dylib" DESTINATION "${BT_DESTINATION}/plugins/iconengines")
 
     INSTALL(
         FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/qt.conf"
