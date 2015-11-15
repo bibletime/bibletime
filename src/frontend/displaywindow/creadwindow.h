@@ -45,9 +45,6 @@ protected: /* Methods: */
 
     virtual void resizeEvent(QResizeEvent * e) override;
 
-    /** Adds actions to mainWindow toolbars. */
-    virtual void setupMainWindowToolBars() = 0;
-
 protected slots:
 
     /** Loads the text using the key. */
