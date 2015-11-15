@@ -67,10 +67,10 @@ public:
     QString indexToKeyName(int index) const;
 
     /** Reimplemented from QAbstractItemModel. */
-    int columnCount(const QModelIndex & parent = QModelIndex()) const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    QHash<int, QByteArray> roleNames() const;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    QHash<int, QByteArray> roleNames() const override;
     void setRoleNames(const QHash<int, QByteArray> &roleNames);
     void setHighlightWords(const QString& highlightWords);
 

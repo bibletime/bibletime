@@ -48,7 +48,7 @@ class BtShortcutsDialog : public QDialog {
 
     protected:
         // get key from users input, put into primary or alternate label for display to user
-        void keyReleaseEvent(QKeyEvent* event);
+        void keyReleaseEvent(QKeyEvent* event) override;
 
     private:
         QLabel* m_primaryLabel;

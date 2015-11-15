@@ -185,7 +185,7 @@ public: /* Tyepes */
         inline void setDescription(const QString & description) { m_description = description; }
 
         /** Returns a tooltip for this bookmark. */
-        QString toolTip() const;
+        QString toolTip() const override;
 
         /** Returns the english key.*/
         inline const QString & englishKey() const { return m_key; }

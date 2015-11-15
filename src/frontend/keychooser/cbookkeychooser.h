@@ -39,22 +39,22 @@ public:
     /**
       Reimplemented from CKeyChooser.
     */
-    virtual void refreshContent();
+    virtual void refreshContent() override;
 
     /**
     * Sets another module to this keychooser
     */
     virtual void setModules(const BtConstModuleList & modules,
-                            bool refresh = false);
+                            bool refresh = false) override;
     /**
     * Returns the key of this keychooser
     */
-    virtual CSwordKey * key();
+    virtual CSwordKey * key() override;
 
     /**
     * Sets a new key to this keychooser
     */
-    virtual void setKey(CSwordKey * key);
+    virtual void setKey(CSwordKey * key) override;
 
     /**
     * Sets a new key to this keychooser
@@ -66,7 +66,7 @@ public slots: // Public slots
     /**
     * Updates the keychoosers for the given key but emit no signal.
     */
-    void updateKey(CSwordKey * key);
+    void updateKey(CSwordKey * key) override;
 
 protected: /* Methods: */
 
@@ -77,7 +77,7 @@ protected: /* Methods: */
     void setupCombo(const QString & key, const int depth, const int currentItem);
 
     /** No descriptions */
-    virtual void adjustFont();
+    virtual void adjustFont() override;
 
 protected slots:
 
@@ -86,7 +86,7 @@ protected slots:
     */
     void keyChooserChanged(int);
 
-    virtual void setKey(const QString & newKey);
+    virtual void setKey(const QString & newKey) override;
 
 private: /* Fields: */
 

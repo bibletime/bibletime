@@ -27,43 +27,43 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
     public:
         CHTMLWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
 
-        virtual void storeProfileSettings(QString const & windowGroup) const;
-        virtual void applyProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const override;
+        virtual void applyProfileSettings(const QString & windowGroup) override;
 
         /**
          * Returns true if the sync toolbar is enabled.
          */
-        virtual bool syncAllowed() const;
+        virtual bool syncAllowed() const override;
 
     protected:
         /**
         * Initialize the state of this widget.
         */
-        virtual void initView();
-        virtual void initConnections();
-        virtual void initToolbars();
+        virtual void initView() override;
+        virtual void initConnections() override;
+        virtual void initToolbars() override;
 
-        virtual WriteWindowType writeWindowType() const {
+        virtual WriteWindowType writeWindowType() const override {
             return HTMLWindow;
         }
         /**
          * Called to add actions to mainWindow toolbars
          */
-        virtual void setupMainWindowToolBars();
+        virtual void setupMainWindowToolBars() override;
 
     protected slots:
         /**
         * Is called when the current text was changed.
         */
-        virtual void textChanged();
+        virtual void textChanged() override;
         /**
         * Loads the original text from the module.
         */
-        virtual void restoreText();
+        virtual void restoreText() override;
         /**
         * Saves the text for the current key. Directly writes the changed text into the module.
         */
-        virtual void saveCurrentText( const QString& );
+        virtual void saveCurrentText( const QString& ) override;
 
 };
 

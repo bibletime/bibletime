@@ -88,7 +88,7 @@ class BtSearchOptionsArea : public QWidget {
         * Reads the settings for the searchdialog from disk.
         */
         void saveSettings();
-        bool eventFilter(QObject* obj, QEvent* event);
+        bool eventFilter(QObject* obj, QEvent* event) override;
 
     public slots:
         /**

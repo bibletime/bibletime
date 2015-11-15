@@ -36,10 +36,10 @@ class CPrinter : public QObject, public Rendering::CDisplayRendering {
 
     protected:
         virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo * module);
+                                  const CSwordModuleInfo * module) override;
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
-        virtual QString finishText(const QString &text, const KeyTree &tree);
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
+        virtual QString finishText(const QString &text, const KeyTree &tree) override;
 
     private:
         QWebPage* m_htmlPage;

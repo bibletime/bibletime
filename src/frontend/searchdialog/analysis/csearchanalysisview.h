@@ -35,13 +35,13 @@ class CSearchAnalysisView : public QGraphicsView {
             * We give back the size of the parent widgetas default.
             * This is a reimplementation from QCanvasView::sizeHint().
             */
-        virtual QSize sizeHint() const;
+        virtual QSize sizeHint() const override;
 
     protected:
         /**
         * Reimplementation.
         */
-        virtual void resizeEvent(QResizeEvent* e);
+        virtual void resizeEvent(QResizeEvent* e) override;
 
 };
 

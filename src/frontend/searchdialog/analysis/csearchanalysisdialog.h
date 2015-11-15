@@ -43,7 +43,7 @@ class CSearchAnalysisDialog : public QDialog {
          * Initializes this dialog.
          */
         void initView();
-        void resizeEvent(QResizeEvent* event);
+        void resizeEvent(QResizeEvent* event) override;
 
     private slots:
         void buttonClicked(QAbstractButton* button);

@@ -44,7 +44,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         /**
           Jumps to the closest entry in the module.
         */
-        virtual inline bool snap() const {
+        virtual inline bool snap() const override {
             return module()->getRawEntry();
         }
 

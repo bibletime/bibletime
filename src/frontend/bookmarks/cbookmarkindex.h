@@ -80,10 +80,10 @@ signals:
 protected:
 
     /** A hack to get the modifiers. */
-    virtual void mouseReleaseEvent(QMouseEvent * event);
+    virtual void mouseReleaseEvent(QMouseEvent * event) override;
 
     /** Needed to paint an drag pointer arrow. */
-    virtual void paintEvent(QPaintEvent * event);
+    virtual void paintEvent(QPaintEvent * event) override;
 
     /** Initialize the SIGNAL<->SLOT connections. */
     void initConnections();
@@ -95,18 +95,18 @@ protected:
     * D'n'd methods are reimplementations from QTreeWidget or its ancestors.
     * In these we handle creating, moving and copying bookmarks with d'n'd.
     */
-    virtual void dragEnterEvent(QDragEnterEvent * event);
-    virtual void dragMoveEvent(QDragMoveEvent * event);
-    virtual void dropEvent(QDropEvent * event);
-    virtual void dragLeaveEvent(QDragLeaveEvent * event);
+    virtual void dragEnterEvent(QDragEnterEvent * event) override;
+    virtual void dragMoveEvent(QDragMoveEvent * event) override;
+    virtual void dropEvent(QDropEvent * event) override;
+    virtual void dragLeaveEvent(QDragLeaveEvent * event) override;
 
     /** Reimplementation from QAbstractItemView. Takes care of movable items. */
-    virtual void startDrag(Qt::DropActions supportedActions);
+    virtual void startDrag(Qt::DropActions supportedActions) override;
 
     /** Handle mouse moving (mag updates) */
-    virtual void mouseMoveEvent(QMouseEvent * event);
+    virtual void mouseMoveEvent(QMouseEvent * event) override;
 
-    virtual void leaveEvent(QEvent * event);
+    virtual void leaveEvent(QEvent * event) override;
 
 
 protected slots:

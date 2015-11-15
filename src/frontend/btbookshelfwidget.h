@@ -68,7 +68,7 @@ class BtBookshelfWidget: public QWidget {
         inline void setContextMenu(QMenu *newMenu) { m_contextMenu = newMenu; }
         inline void setItemContextMenu(QMenu *newMenu) { m_itemContextMenu = newMenu; }
 
-        bool eventFilter(QObject *object, QEvent *event);
+        bool eventFilter(QObject *object, QEvent *event) override;
 
     protected:
         void initActions();

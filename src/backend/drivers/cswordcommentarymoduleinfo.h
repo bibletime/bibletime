@@ -32,7 +32,7 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
                                     CSwordModuleInfo::Commentary) {}
 
         /* Reimplementation of CSwordModuleInfo::isWritable(). */
-        virtual bool isWritable() const;
+        virtual bool isWritable() const override;
 };
 
 #endif

@@ -28,9 +28,9 @@ public: /* Methods: */
     inline LanguageItem(const CSwordModuleInfo & module)
         : m_language(module.language()) {}
 
-    QVariant data(int role = Qt::DisplayRole) const;
+    QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const {
+    inline bool fitFor(const CSwordModuleInfo & module) const override {
         return module.language() == m_language;
     }
 

@@ -40,11 +40,11 @@ public: /* Methods: */
 protected: /* Methods: */
 
     virtual QString renderEntry(KeyTreeItem const & item,
-                                CSwordKey * key = nullptr);
-    virtual QString finishText(QString const & text, KeyTree const & tree);
+                                CSwordKey * key = nullptr) override;
+    virtual QString finishText(QString const & text, KeyTree const & tree) override;
     virtual QString entryLink(KeyTreeItem const & item,
                               CSwordModuleInfo const * module);
-    virtual void initRendering();
+    virtual void initRendering() override;
 
 protected: /* Fields: */
 

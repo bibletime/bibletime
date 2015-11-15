@@ -26,7 +26,7 @@ class BtAboutDialog: public QDialog {
         BtAboutDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
     protected:
-        virtual void resizeEvent(QResizeEvent* event);
+        virtual void resizeEvent(QResizeEvent* event) override;
 
     private:
         void initTab(QWebView *&tab);

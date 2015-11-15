@@ -45,7 +45,7 @@ class CEntryDisplay: public sword::SWDisplay {
                                const FilterOptions &filterOptions,
                                CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering);
 
-        virtual char display(sword::SWModule& mod) { (void)mod; return 'c';}
+        virtual char display(sword::SWModule& mod) override { (void)mod; return 'c';}
 
 }; /* class CEntryDisplay */
 

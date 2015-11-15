@@ -58,7 +58,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         const QString getToolTip();
 
     private:
-        virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
+        virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
     private: /* Fields: */
         CSwordModuleSearch::Results m_results;

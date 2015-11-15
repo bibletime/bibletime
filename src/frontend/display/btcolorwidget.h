@@ -23,7 +23,7 @@ public:
 
     BtColorWidget(QWidget * parent = nullptr);
 
-    QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 public slots:
 
@@ -31,7 +31,7 @@ public slots:
 
 protected: /* Methods: */
 
-    virtual void mouseReleaseEvent(QMouseEvent * event);
+    virtual void mouseReleaseEvent(QMouseEvent * event) override;
 
 signals:
 

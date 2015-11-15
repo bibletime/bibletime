@@ -51,15 +51,15 @@ public: /* Methods: */
         : QAbstractListModel(parent) {}
 
     // Virtual methods implemented from QAbstractListModel:
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
     QVariant data(CSwordModuleInfo * module, int role) const;
-    QVariant data(const QModelIndex & index, int role) const;
+    QVariant data(const QModelIndex & index, int role) const override;
     QVariant headerData(int section,
                         Qt::Orientation orientation,
-                        int role = Qt::DisplayRole) const;
+                        int role = Qt::DisplayRole) const override;
     bool setData(const QModelIndex & index,
                  const QVariant & value,
-                 int role = ModuleHiddenRole);
+                 int role = ModuleHiddenRole) override;
 
     /**
       Given an index of this model, this method returns a pointer to the underlying

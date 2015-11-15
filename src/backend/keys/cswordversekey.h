@@ -75,23 +75,23 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         /**
           Reimplementation of CSwordKey::copy().
         */
-        virtual CSwordKey* copy() const;
+        virtual CSwordKey* copy() const override;
 
         /**
         * Set/get the key. If the parameter is not set (means equal to QString::null)
         * the used key is returned. Otherwise the key is set and the new on ei returned.
         */
-        virtual QString key() const;
+        virtual QString key() const override;
 
         /**
           Reimplemented from CSwordKey::setKey(const QString &key).
         */
-        virtual bool setKey(const QString &key);
+        virtual bool setKey(const QString &key) override;
 
         /**
           Reimplemented from CSwordKey::setKey(const char *key).
         */
-        virtual bool setKey(const char *key);
+        virtual bool setKey(const char *key) override;
 
         /**
         * Jumps to the next entry of the given type
@@ -112,19 +112,19 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         /**
           Sets the module for this key.
         */
-        virtual void setModule(const CSwordModuleInfo *newModule);
+        virtual void setModule(const CSwordModuleInfo *newModule) override;
 
     protected:
         /**
          * Returns the raw key appropriate for use directly with Sword.
          */
-        virtual const char * rawKey() const;
+        virtual const char * rawKey() const override;
 
     private:
         /** Disable assignment operator    */
         CSwordVerseKey& operator= (const CSwordVerseKey&);
         /** Disable from base class to prevent compiler warnings */
-        inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) {
+        inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) override {
             return (*this);
         };
 };

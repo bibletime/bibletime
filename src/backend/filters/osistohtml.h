@@ -56,13 +56,13 @@ class OsisToHtml: public sword::OSISHTMLHREF {
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual bool handleToken(sword::SWBuf &buf,
                                  const char *token,
-                                 sword::BasicFilterUserData *userData);
+                                 sword::BasicFilterUserData *userData) override;
 
     protected: /* Methods: */
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual inline sword::BasicFilterUserData *createUserData(
                 const sword::SWModule *module,
-                const sword::SWKey *key)
+                const sword::SWKey *key) override
         {
             return new UserData(module, key);
         }

@@ -27,9 +27,9 @@ public: /* Methods: */
     inline IndexingItem(const CSwordModuleInfo & module)
         : m_indexed(module.hasIndex()) {}
 
-    QVariant data(int role = Qt::DisplayRole) const;
+    QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const {
+    inline bool fitFor(const CSwordModuleInfo & module) const override {
         return module.hasIndex() == m_indexed;
     }
 

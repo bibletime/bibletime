@@ -107,14 +107,14 @@ class BtSearchResultArea : public QWidget {
         /**
           Reimplemented from QWidget::sizeHint().
         */
-        virtual QSize sizeHint() const {
+        virtual QSize sizeHint() const override {
             return baseSize();
         }
 
         /**
           Reimplemented from QWidget::minimumSizeHint().
         */
-        virtual QSize minimumSizeHint() const {
+        virtual QSize minimumSizeHint() const override {
             return minimumSize();
         }
 

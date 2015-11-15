@@ -34,8 +34,8 @@ class CPlainTextExportRendering: public CHTMLExportRendering {
 
     protected: /* Methods: */
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
-        virtual QString finishText(const QString &text, const KeyTree &tree);
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
+        virtual QString finishText(const QString &text, const KeyTree &tree) override;
 
 }; /* class CPlainTextExportRendering */
 

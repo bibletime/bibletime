@@ -33,12 +33,12 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         inline CCommentaryReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual CSwordModuleInfo::ModuleType moduleType() const
+        virtual CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Commentary; }
 
-        virtual void storeProfileSettings(QString const & windowGroup) const;
-        virtual void applyProfileSettings(const QString & windowGroup);
-        virtual bool syncAllowed() const;
+        virtual void storeProfileSettings(QString const & windowGroup) const override;
+        virtual void applyProfileSettings(const QString & windowGroup) override;
+        virtual bool syncAllowed() const override;
 
     public slots: // Public slots
         void nextBook();
@@ -50,19 +50,19 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         /**
         * Reimplementation to handle the keychooser refresh.
         */
-        virtual void reload(CSwordBackend::SetupChangedReason);
+        virtual void reload(CSwordBackend::SetupChangedReason) override;
 
     protected:
-        virtual void initActions();
-        virtual void initToolbars();
+        virtual void initActions() override;
+        virtual void initToolbars() override;
         /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
+        virtual void setupMainWindowToolBars() override;
 
     private:
         QAction* m_syncButton;
         CSwordVerseKey* verseKey();
     protected:
-        virtual void setupPopupMenu();
+        virtual void setupPopupMenu() override;
 };
 
 #endif

@@ -42,23 +42,23 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         //reimplemented functions from CDisplay
         // Returns the right text part in the specified format.
         virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText,
-                                    const CDisplay::TextPart part = CDisplay::Document );
+                                    const CDisplay::TextPart part = CDisplay::Document ) override;
 
         // Sets the new text for this display widget.
-        virtual void setText( const QString& newText );
+        virtual void setText( const QString& newText ) override;
         // Get the current source
         virtual QString getCurrentSource();
 
-        virtual bool hasSelection() const;
+        virtual bool hasSelection() const override;
 
         // Reimplementation.
-        virtual void selectAll();
-        virtual void moveToAnchor( const QString& anchor );
-        virtual void openFindTextDialog();
-        inline virtual QString getCurrentNodeInfo() const {
+        virtual void selectAll() override;
+        virtual void moveToAnchor( const QString& anchor ) override;
+        virtual void openFindTextDialog() override;
+        inline virtual QString getCurrentNodeInfo() const override {
             return m_nodeInfo;
         }
-        QWidget* view();
+        QWidget* view() override;
         void setLemma(const QString& lemma);
 
     public slots:
@@ -107,17 +107,17 @@ class BtHtmlReadDisplayView : public QWebView {
         Q_OBJECT
     protected:
         friend class BtHtmlReadDisplay;
-        void contextMenuEvent(QContextMenuEvent* event);
+        void contextMenuEvent(QContextMenuEvent* event) override;
         BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent, CReadWindow* readWindow);
         ~BtHtmlReadDisplayView();
-        bool event(QEvent* e);
+        bool event(QEvent* e) override;
 
     private:
         BtHtmlReadDisplay* m_display;
         CReadWindow* m_readWindow;
-        void dropEvent( QDropEvent* e );
-        void dragEnterEvent( QDragEnterEvent* e );
-        void dragMoveEvent( QDragMoveEvent* e );
+        void dropEvent( QDropEvent* e ) override;
+        void dragEnterEvent( QDragEnterEvent* e ) override;
+        void dragMoveEvent( QDragMoveEvent* e ) override;
 };
 
 #endif

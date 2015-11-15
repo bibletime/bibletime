@@ -79,7 +79,7 @@ class BTModuleTreeItem {
         * set "hidden" it will be filtered out.
         */
         struct HiddenOff : public Filter {
-            inline bool filter(CSwordModuleInfo const & mi) const
+            inline bool filter(CSwordModuleInfo const & mi) const override
             { return !mi.isHidden(); }
         };
 

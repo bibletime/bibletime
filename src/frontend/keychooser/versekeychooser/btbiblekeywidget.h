@@ -35,16 +35,16 @@ class BtBibleKeyWidget : public QWidget  {
         ~BtBibleKeyWidget();
         bool setKey(CSwordVerseKey* key);
         void setModule(const CSwordBibleModuleInfo *m = nullptr);
-        bool eventFilter(QObject *o, QEvent *e);
+        bool eventFilter(QObject *o, QEvent *e) override;
 
     signals:
         void beforeChange(CSwordVerseKey* key);
         void changed(CSwordVerseKey* key);
 
     protected:
-        void enterEvent(QEvent *event);
-        void leaveEvent(QEvent *event);
-        void resizeEvent(QResizeEvent *event);
+        void enterEvent(QEvent *event) override;
+        void leaveEvent(QEvent *event) override;
+        void resizeEvent(QResizeEvent *event) override;
         void resetDropDownButtons();
 
     protected slots: // Protected slots

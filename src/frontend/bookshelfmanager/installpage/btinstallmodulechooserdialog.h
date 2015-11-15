@@ -41,7 +41,7 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
 
     protected:
         void retranslateUi();
-        void showEvent(QShowEvent *event);
+        void showEvent(QShowEvent *event) override;
 
     protected slots:
         void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);

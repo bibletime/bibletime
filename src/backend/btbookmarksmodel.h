@@ -45,17 +45,17 @@ public: /* Methods: */
     ~BtBookmarksModel();
 
     /** Reimplemented from QAbstractItemModel */
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    int columnCount(const QModelIndex & parent = QModelIndex()) const;
-    bool hasChildren(const QModelIndex & parent = QModelIndex()) const;
-    QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const;
-    QModelIndex parent(const QModelIndex & index) const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
-    Qt::ItemFlags flags(const QModelIndex & index) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole);
-    bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex());
-    bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    bool hasChildren(const QModelIndex & parent = QModelIndex()) const override;
+    QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const override;
+    QModelIndex parent(const QModelIndex & index) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
+    Qt::ItemFlags flags(const QModelIndex & index) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole) override;
+    bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex()) override;
+    bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
     /**
       \brief add new item with given parameters

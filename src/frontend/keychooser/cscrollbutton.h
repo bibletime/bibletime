@@ -53,19 +53,19 @@ class CScrollButton: public QToolButton {
         /**
         * \brief Grabs the mouse on left button click and emits lock().
         */
-        virtual void mousePressEvent(QMouseEvent *e);
+        virtual void mousePressEvent(QMouseEvent *e) override;
 
         /**
         * \brief If the mouse is grabbed and we release the left mouse button,
         *        releases the mouse and emits unlock().
         */
-        virtual void mouseReleaseEvent(QMouseEvent *e);
+        virtual void mouseReleaseEvent(QMouseEvent *e) override;
 
         /**
         * \brief Reimplementation of QWidget::mouseMoveEvent() to process mouse
                  move events.
         */
-        virtual void mouseMoveEvent(QMouseEvent *e);
+        virtual void mouseMoveEvent(QMouseEvent *e) override;
 
     protected:
         /**

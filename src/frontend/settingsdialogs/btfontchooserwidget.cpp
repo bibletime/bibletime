@@ -32,7 +32,7 @@ class BtFontPreviewWebView: public QWebView {
             setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         }
 
-        virtual inline QSize sizeHint() const {
+        virtual inline QSize sizeHint() const override {
             return QSize(100, 100);
         }
 

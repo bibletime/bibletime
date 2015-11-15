@@ -96,24 +96,24 @@ public: /* Methods: */
     BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = nullptr);
     virtual ~BtBookshelfTreeModel();
 
-    virtual int rowCount(const QModelIndex & parent = QModelIndex()) const;
+    virtual int rowCount(const QModelIndex & parent = QModelIndex()) const override;
     virtual int columnCount(const QModelIndex & parent = QModelIndex())
-    const;
+    const override;
     virtual bool hasChildren(const QModelIndex & parent = QModelIndex())
-    const;
+    const override;
     virtual QModelIndex index(int row,
                               int column,
                               const QModelIndex & parent = QModelIndex())
-    const;
-    virtual QModelIndex parent(const QModelIndex & index) const;
-    virtual QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    const override;
+    virtual QModelIndex parent(const QModelIndex & index) const override;
+    virtual QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
     QVariant data(CSwordModuleInfo & module, int role = Qt::DisplayRole) const;
-    virtual Qt::ItemFlags flags(const QModelIndex & index) const;
+    virtual Qt::ItemFlags flags(const QModelIndex & index) const override;
     virtual QVariant headerData(int section, Qt::Orientation orientation,
-                                int role = Qt::DisplayRole) const;
+                                int role = Qt::DisplayRole) const override;
     virtual bool setData(const QModelIndex & index,
                          const QVariant & value,
-                         int role);
+                         int role) override;
 
     inline QAbstractItemModel * sourceModel() const { return m_sourceModel; }
     inline const Grouping & groupingOrder() const { return m_groupingOrder; }

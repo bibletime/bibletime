@@ -33,13 +33,13 @@ public: /* Methods: */
         return m_category;
     }
 
-    QVariant data(int role = Qt::DisplayRole) const;
+    QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const {
+    inline bool fitFor(const CSwordModuleInfo & module) const override {
         return module.category() == m_category;
     }
 
-    bool operator<(const Item & other) const;
+    bool operator<(const Item & other) const override;
 
 private: /* Fields: */
 

@@ -32,7 +32,7 @@ public:
             const FilterOptions &filterOptions = btConfig().getFilterOptions())
      : CHTMLExportRendering(true, displayOptions, filterOptions) {;}
 
-    virtual QString entryLink(const KeyTreeItem &item, const CSwordModuleInfo *module) {
+    virtual QString entryLink(const KeyTreeItem &item, const CSwordModuleInfo *module) override {
         Q_ASSERT(module);
 
         QString linkText;
@@ -91,7 +91,7 @@ public:
         return QString::null;
     }
 
-    virtual QString finishText(const QString &text, const KeyTree &tree) {
+    virtual QString finishText(const QString &text, const KeyTree &tree) override {
         Q_UNUSED(tree);
         return text;
     }

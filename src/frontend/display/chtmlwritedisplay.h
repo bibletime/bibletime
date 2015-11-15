@@ -37,17 +37,17 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         /**
         * Sets the new text for this display widget. (CPlainWriteDisplay).
         */
-        virtual void setText( const QString& newText );
+        virtual void setText( const QString& newText ) override;
         /**
         * Returns the text of this edit widget. (CPlainWriteDisplay).
         */
-        virtual const QString plainText();
+        virtual const QString plainText() override;
 
         /**
         * Creates the necessary action objects and puts them on the toolbar.
         * (CPlainWriteDisplay)
         */
-        virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection);
+        virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection) override;
 
     protected:
 

@@ -23,10 +23,10 @@ class BtInstallPageModel: public BtBookshelfTreeModel {
     public:
         BtInstallPageModel(const Grouping &grouping, QObject *parent = nullptr);
 
-        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-        int columnCount(const QModelIndex &parent = QModelIndex()) const;
+        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+        int columnCount(const QModelIndex &parent = QModelIndex()) const override;
         QVariant headerData(int section, Qt::Orientation orientation,
-                            int role = Qt::DisplayRole) const;
+                            int role = Qt::DisplayRole) const override;
 };
 
 #endif // BTINSTALLPAGEMODEL_H

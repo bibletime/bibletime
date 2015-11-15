@@ -42,12 +42,12 @@ class CLexiconKeyChooser : public CKeyChooser {
         /**
           Reimplemented from CKeyChooser::key().
         */
-        virtual CSwordKey *key();
+        virtual CSwordKey *key() override;
 
         /**
           Reimplemented from CKeyChooser::setKey().
         */
-        virtual void setKey(CSwordKey* key);
+        virtual void setKey(CSwordKey* key) override;
 
         /**
         * used to react to changes in the @ref CKeyChooserWidget
@@ -59,13 +59,13 @@ class CLexiconKeyChooser : public CKeyChooser {
         /**
           Reimplemented from CKeyChooser::refreshContent().
         */
-        virtual void refreshContent();
+        virtual void refreshContent() override;
 
         /**
           Reimplemented from CKeyChooser::setModules().
         */
         virtual void setModules(const BtConstModuleList &modules,
-                                bool refresh = true);
+                                bool refresh = true) override;
 
     protected:
         CKeyChooserWidget *m_widget;
@@ -73,13 +73,13 @@ class CLexiconKeyChooser : public CKeyChooser {
         QList<const CSwordLexiconModuleInfo*> m_modules;
         QHBoxLayout *m_layout;
 
-        virtual inline void adjustFont() {}
+        virtual inline void adjustFont() override {}
 
     public slots: // Public slots
-        virtual void updateKey(CSwordKey* key);
+        virtual void updateKey(CSwordKey* key) override;
 
     protected slots:
-        virtual void setKey(const QString & newKey);
+        virtual void setKey(const QString & newKey) override;
 
 };
 

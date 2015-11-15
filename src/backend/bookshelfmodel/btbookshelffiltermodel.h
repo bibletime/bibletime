@@ -30,7 +30,7 @@ public: /* Methods: */
         return m_enabled;
     }
 
-    virtual bool filterAcceptsRow(int row, const QModelIndex & parent) const;
+    virtual bool filterAcceptsRow(int row, const QModelIndex & parent) const override;
 
     // Name filter:
     inline int nameFilterRole() const {

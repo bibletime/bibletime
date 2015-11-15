@@ -28,9 +28,9 @@ class CrossRefRendering : public Rendering::CHTMLExportRendering {
         );
 
         virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo *module);
+                                  const CSwordModuleInfo *module) override;
 
-        virtual QString finishText(const QString &text, const KeyTree &tree);
+        virtual QString finishText(const QString &text, const KeyTree &tree) override;
 };
 
 

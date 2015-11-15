@@ -278,7 +278,7 @@ class CDisplayWindow : public QMainWindow {
         /** Called to add actions to mainWindow toolbars */
         virtual void setupMainWindowToolBars() = 0;
 
-        virtual void closeEvent(QCloseEvent* e);
+        virtual void closeEvent(QCloseEvent* e) override;
 
         void setToolBarsHidden();
         void clearMainWindowToolBars();

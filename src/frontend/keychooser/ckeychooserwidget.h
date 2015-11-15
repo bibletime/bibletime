@@ -39,9 +39,9 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    virtual bool eventFilter(QObject * o, QEvent * e);
+    virtual bool eventFilter(QObject * o, QEvent * e) override;
 
-    virtual void wheelEvent(QWheelEvent * e);
+    virtual void wheelEvent(QWheelEvent * e) override;
 
 signals:
 

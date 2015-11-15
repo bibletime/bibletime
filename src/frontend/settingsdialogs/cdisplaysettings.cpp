@@ -35,7 +35,7 @@ class CWebViewerWidget : public QWidget {
     public:
         CWebViewerWidget(QWidget* parent = nullptr);
         ~CWebViewerWidget();
-        virtual QSize sizeHint () const;
+        virtual QSize sizeHint () const override;
 };
 
 CWebViewerWidget::CWebViewerWidget(QWidget* parent)

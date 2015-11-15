@@ -25,7 +25,7 @@ public:
     //  is associated with what name on QML side (e.g. 'bookTitle')
     //  RoleItemModel(const QHash<int, QByteArray> &roleNames);
 
-    QHash<int, QByteArray> roleNames() const;
+    QHash<int, QByteArray> roleNames() const override;
     void setRoleNames(const QHash<int, QByteArray> &roleNames);
 
 private:

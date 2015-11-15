@@ -31,12 +31,12 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
           The backend module list was updated, module list and widgets must be updated from
           scratch.
         */
-        void slotBackendModulesChanged();
+        void slotBackendModulesChanged() override;
 
         /**
           The window module list was updated, module list and widgets must be updated.
         */
-        void slotWindowModulesChanged();
+        void slotWindowModulesChanged() override;
 
     signals:
         /** User selected a module from menu to replace another module*/

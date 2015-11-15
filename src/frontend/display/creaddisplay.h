@@ -40,7 +40,7 @@ class CReadDisplay :  public CDisplay {
 
         virtual void print(const CDisplay::TextPart,
                            const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions);
+                           const FilterOptions &filterOptions) override;
 
         void setMouseTracking(const bool trackingEnabled) {
             m_useMouseTracking = trackingEnabled;

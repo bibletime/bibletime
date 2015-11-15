@@ -33,33 +33,33 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual CSwordModuleInfo::ModuleType moduleType() const
+        virtual CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Bible; }
 
-        virtual void storeProfileSettings(QString const & windowGroup) const;
-        virtual void applyProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const override;
+        virtual void applyProfileSettings(const QString & windowGroup) override;
         static void insertKeyboardActions( BtActionCollection* const a );
 
     protected: /* Methods: */
 
-        virtual void initActions();
-        virtual void initToolbars();
-        virtual void initConnections();
-        virtual void initView();
+        virtual void initActions() override;
+        virtual void initToolbars() override;
+        virtual void initConnections() override;
+        virtual void initView() override;
         /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
+        virtual void setupMainWindowToolBars() override;
         /**
         * Reimplementation.
         */
-        virtual void setupPopupMenu();
+        virtual void setupPopupMenu() override;
         /**
         * Reimplemented.
         */
-        virtual void updatePopupMenu();
+        virtual void updatePopupMenu() override;
         /** Event filter.
         * Reimplementation of the event filter to filter out events like focus in.
         */
-        virtual bool eventFilter( QObject* o, QEvent* e);
+        virtual bool eventFilter( QObject* o, QEvent* e) override;
 
         struct {
             QAction* selectAll;
@@ -105,14 +105,14 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         /**
         * Refreshes the content of this display window and the content of the keychooser.
         */
-        virtual void reload(CSwordBackend::SetupChangedReason reason);
+        virtual void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected slots:
 
         /**
         * Copies the current chapter into the clipboard.
         */
-        void copyDisplayedText();
+        void copyDisplayedText() override;
         /**
         * Saves the chapter as valid HTML page.
         */
@@ -121,7 +121,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         * Saves the chapter as valid HTML page.
         */
         void saveChapterPlain();
-        virtual void lookupSwordKey( CSwordKey* newKey );
+        virtual void lookupSwordKey( CSwordKey* newKey ) override;
         void syncWindows();
 
     private: /* Methods: */

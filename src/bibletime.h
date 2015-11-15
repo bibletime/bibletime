@@ -239,7 +239,7 @@ public slots:
         /**
         * Catch QMainWindow events
         */
-        bool event(QEvent* event);
+        bool event(QEvent* event) override;
         /**
         * Create the main window menu and toolbar
         */
@@ -301,7 +301,7 @@ public slots:
         /**
         * Reimplemented from QWidget.
         */
-        void closeEvent(QCloseEvent *event);
+        void closeEvent(QCloseEvent *event) override;
 
     protected slots:
         /**

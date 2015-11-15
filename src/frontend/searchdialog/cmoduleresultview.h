@@ -45,7 +45,7 @@ class CModuleResultView : public QTreeWidget {
         */
         CSwordModuleInfo* activeModule();
 
-        virtual QSize sizeHint() const {
+        virtual QSize sizeHint() const override {
             return m_size;
         }
 
@@ -81,7 +81,7 @@ class CModuleResultView : public QTreeWidget {
         /**
         * This event handler (reimplemented from QWidget) opens the popup menu at the given position.
         */
-        void contextMenuEvent( QContextMenuEvent * event );
+        void contextMenuEvent( QContextMenuEvent * event ) override;
         /**
         * Appends the whole search result to the printer queue.
         */

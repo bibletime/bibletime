@@ -33,7 +33,7 @@ class PlainToHtml: public sword::SWFilter {
         /** Reimplemented from sword::SWFilter. */
         virtual char processText(sword::SWBuf &buf,
                                  const sword::SWKey *key,
-                                 const sword::SWModule *module = nullptr);
+                                 const sword::SWModule *module = nullptr) override;
 
 };
 

@@ -20,7 +20,7 @@ class CListWidget : public QListWidget {
     public:
         CListWidget(QWidget* parent = nullptr);
 
-        virtual QSize sizeHint () const;
+        virtual QSize sizeHint () const override;
         void setCharWidth(int width);
 };
 

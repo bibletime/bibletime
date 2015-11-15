@@ -33,7 +33,7 @@ class BtLineEdit : public QLineEdit {
                 : QLineEdit(parent) {
         }
     protected:
-        void focusInEvent(QFocusEvent* event) {
+        void focusInEvent(QFocusEvent* event) override {
             Qt::FocusReason reason = event->reason();
             if (reason == Qt::OtherFocusReason) {
                 selectAll();

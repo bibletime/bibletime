@@ -247,7 +247,7 @@ protected: /* Methods: */
 
     /** Reimplemented from sword::SWMgr. */
     void AddRenderFilters(sword::SWModule * module,
-                          sword::ConfigEntMap & section);
+                          sword::ConfigEntMap & section) override;
 
     QStringList getSharedSwordConfigFiles() const;
     QString getPrivateSwordConfigPath() const;

@@ -35,7 +35,7 @@ public: /* Methods: */
     BtInstallMgr(QObject * parent = nullptr);
     ~BtInstallMgr();
 
-    virtual bool isUserDisclaimerConfirmed() const;
+    virtual bool isUserDisclaimerConfirmed() const override;
 
 signals:
 
@@ -50,7 +50,7 @@ signals:
 protected: /* Methods: */
 
     /** \note Reimplementation of sword::StatusReporter::statusUpdate(). */
-    virtual void statusUpdate(double dltotal, double dlnow);
+    virtual void statusUpdate(double dltotal, double dlnow) override;
 
     /**
     * \note Reimplementation of sword::StatusReporter::preStatus().
@@ -61,7 +61,7 @@ protected: /* Methods: */
     */
     virtual void preStatus(long totalBytes,
                            long completedBytes,
-                           const char * message);
+                           const char * message) override;
 
 private: /* Fields: */
 

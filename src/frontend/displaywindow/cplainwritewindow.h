@@ -40,52 +40,52 @@ class CPlainWriteWindow : public CDisplayWindow {
         /**
         * Set the displayWidget which is a subclass of QWebPage.
         */
-        void setDisplayWidget( CDisplay* display );
+        void setDisplayWidget( CDisplay* display ) override;
 
-        virtual void storeProfileSettings(QString const & windowGroup) const;
-        virtual void applyProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const override;
+        virtual void applyProfileSettings(const QString & windowGroup) override;
 
         /**
          * Setups the popup menu of this display widget.
          */
-        virtual void setupPopupMenu();
+        virtual void setupPopupMenu() override;
 
         /**
          * Returns true if the sync toolbar is enabled.
          */
-        virtual bool syncAllowed() const;
+        virtual bool syncAllowed() const override;
 
     public slots:
 
         /**
           Look up the given key and display the text. In our case we offer to edit the text.
         */
-        virtual void lookupSwordKey(CSwordKey * key);
+        virtual void lookupSwordKey(CSwordKey * key) override;
 
     protected: // Protected methods
         /**
         * Initialize the state of this widget.
         */
-        virtual void initView();
-        virtual void initConnections();
-        virtual void initToolbars();
+        virtual void initView() override;
+        virtual void initConnections() override;
+        virtual void initToolbars() override;
         virtual WriteWindowType writeWindowType() const {
             return PlainTextWindow;
         }
 
         /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
+        virtual void setupMainWindowToolBars() override;
         /**
          * Initializes the intern keyboard actions.
          */
-        virtual void initActions();
+        virtual void initActions() override;
         /**
         * Insert the keyboard accelerators of this window into the given KAccel object.
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
         /** \returns whether the window may be closed.*/
-        virtual bool queryClose();
+        virtual bool queryClose() override;
 
     protected slots: // Protected slots
 

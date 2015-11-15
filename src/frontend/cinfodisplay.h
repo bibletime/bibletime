@@ -40,7 +40,7 @@ public: /* Methods: */
                  const QString & lang = QString());
     void setInfo(Rendering::InfoType const, QString const & data);
     void setInfo(Rendering::ListInfoData const &);
-    QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 public slots:
 

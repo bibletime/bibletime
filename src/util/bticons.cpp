@@ -29,13 +29,13 @@ public: /* Methods: */
         , m_overlayIcon(overlay)
     {}
 
-    virtual QIconEngine * clone() const
+    virtual QIconEngine * clone() const override
     { return new BtOverlayIconEngine(m_icon, m_overlayIcon); }
 
     virtual void paint(QPainter * painter,
                        QRect const & rect,
                        QIcon::Mode mode,
-                       QIcon::State state)
+                       QIcon::State state) override
     {
         {
             QBrush brush(painter->background());
@@ -57,7 +57,7 @@ public: /* Methods: */
 
     virtual QPixmap pixmap(QSize const & size,
                            QIcon::Mode mode,
-                           QIcon::State state)
+                           QIcon::State state) override
     {
         QImage img(size, QImage::Format_ARGB32);
         img.fill(qRgba(0,0,0,0));

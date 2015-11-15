@@ -27,7 +27,7 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    virtual void focusInEvent(QFocusEvent * event) {
+    virtual void focusInEvent(QFocusEvent * event) override {
         const Qt::FocusReason reason = event->reason();
         if (reason == Qt::OtherFocusReason)
             selectAll();

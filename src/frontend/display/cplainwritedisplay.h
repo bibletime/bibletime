@@ -31,27 +31,27 @@ class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
         /**
         * Reimplementation.
         */
-        virtual void selectAll();
+        virtual void selectAll() override;
         /**
         * Sets the new text for this display widget.
         */
-        virtual void setText( const QString& newText );
+        virtual void setText( const QString& newText ) override;
         /**
         * Returns true if the display widget has a selection. Otherwise false.
         */
-        virtual bool hasSelection() const;
+        virtual bool hasSelection() const override;
         /**
         * Returns the view of this display widget.
         */
-        virtual QWidget* view();
-        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
+        virtual QWidget* view() override;
+        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document ) override;
 
         /**
           Reimplemented from CDisplay.
         */
         virtual inline void print(const CDisplay::TextPart,
                                   const DisplayOptions &,
-                                  const FilterOptions &) {}
+                                  const FilterOptions &) override {}
 
         virtual bool isModified() const;
         /**
@@ -72,15 +72,15 @@ class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
         /**
         * Reimplementation from QTextEdit to manage drops of our drag and drop objects.
         */
-        virtual void dropEvent( QDropEvent* e );
+        virtual void dropEvent( QDropEvent* e ) override;
         /**
         * Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
         */
-        virtual void dragEnterEvent( QDragEnterEvent* e );
+        virtual void dragEnterEvent( QDragEnterEvent* e ) override;
         /**
         * Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
         */
-        virtual void dragMoveEvent( QDragMoveEvent* e );
+        virtual void dragMoveEvent( QDragMoveEvent* e ) override;
 
 };
 

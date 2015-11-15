@@ -68,7 +68,7 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         /**
           Reimplementation of CSwordKey::copy()
         */
-        virtual CSwordLDKey* copy() const;
+        virtual CSwordLDKey* copy() const override;
         /**
         * Uses the parameter to returns the next entry afer this key.
         */
@@ -81,28 +81,28 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         /**
           Sets the module of this key.
         */
-        virtual void setModule(const CSwordModuleInfo *module);
+        virtual void setModule(const CSwordModuleInfo *module) override;
 
         /**
         * Returns the current key as a QString
         */
-        virtual QString key() const;
+        virtual QString key() const override;
 
         /**
           Reimplemented from CSwordKey::setKey(const QString &key).
         */
-        virtual bool setKey(const QString &newKey);
+        virtual bool setKey(const QString &newKey) override;
 
         /**
           Reimplemented from CSwordKey::setKey(const char *key).
         */
-        virtual bool setKey(const char *key);
+        virtual bool setKey(const char *key) override;
 
     protected:
         /**
          * Returns the raw key appropriate for use directly with Sword.
          */
-        virtual const char* rawKey() const;
+        virtual const char* rawKey() const override;
 
     private:
         /**

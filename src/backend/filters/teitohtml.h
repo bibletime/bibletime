@@ -27,7 +27,7 @@ class TeiToHtml: public sword::TEIHTMLHREF {
 
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual bool handleToken(sword::SWBuf &buf, const char *token,
-                                 sword::BasicFilterUserData *userData);
+                                 sword::BasicFilterUserData *userData) override;
 
     private: /* Methods: */
         void renderReference(const char *osisRef, sword::SWBuf &buf,

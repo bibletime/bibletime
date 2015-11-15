@@ -33,12 +33,12 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         * The signal comes from the window, not from the backend. The new list can
         * be shorter but not longer than the old list.
         */
-        void slotBackendModulesChanged();
+        void slotBackendModulesChanged() override;
 
         /**
         * The window module list was changed, i.e. 1 module added, removed or replaced.
         */
-        void slotWindowModulesChanged();
+        void slotWindowModulesChanged() override;
 
     private:
         /** Adds an empty button to the toolbar.*/

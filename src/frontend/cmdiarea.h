@@ -152,13 +152,13 @@ class CMDIArea: public QMdiArea {
           Reimplementation of QWidget::resizeEvent() to handle our automatic
           tiling properly.
         */
-        void resizeEvent(QResizeEvent *e);
+        void resizeEvent(QResizeEvent *e) override;
 
         /**
           Reimplementation of QObject::eventFilter() used to handle some MDI
           subwindow events.
         */
-        bool eventFilter(QObject *o, QEvent *e);
+        bool eventFilter(QObject *o, QEvent *e) override;
 
         void emitWindowCaptionChanged();
 

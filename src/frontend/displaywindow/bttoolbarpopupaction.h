@@ -32,10 +32,10 @@ class BtToolBarPopupAction : public QWidgetAction {
         QMenu* popupMenu() const;
 
 // Function to catch the Shortcut event and emit the triggered signal
-        virtual bool event(QEvent* e);
+        virtual bool event(QEvent* e) override;
 
     protected:
-        QWidget* createWidget(QWidget* parent);
+        QWidget* createWidget(QWidget* parent) override;
 
     private slots:
 

@@ -43,17 +43,17 @@ class ThmlToHtml: public sword::ThMLHTML {
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual bool handleToken(sword::SWBuf &buf,
                                  const char *token,
-                                 sword::BasicFilterUserData *userData);
+                                 sword::BasicFilterUserData *userData) override;
 
         /** Reimplemented from sword::SWFilter. */
         virtual char processText(sword::SWBuf &buf,
                                  const sword::SWKey *key,
-                                 const sword::SWModule *module = nullptr);
+                                 const sword::SWModule *module = nullptr) override;
 
     protected: /* Methods: */
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module, const sword::SWKey *key)
+                const sword::SWModule *module, const sword::SWKey *key) override
         {
             return new UserData(module, key);
         }

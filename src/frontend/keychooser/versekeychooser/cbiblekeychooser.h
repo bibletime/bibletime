@@ -45,18 +45,18 @@ class CBibleKeyChooser : public CKeyChooser  {
         /**
           Reimplemented from CKeyChooser::key().
         */
-        CSwordKey* key();
+        CSwordKey* key() override;
 
         /**
           Reimplemented from CKeyChooser::setKey().
         */
-        virtual void setKey(CSwordKey *key);
+        virtual void setKey(CSwordKey *key) override;
 
         /**
           Reimplemented from CKeyChooser::setModules().
         */
         virtual void setModules(const BtConstModuleList &modules,
-                                bool refresh = true);
+                                bool refresh = true) override;
 
         /**
         * used to do actions before key changes
@@ -67,13 +67,13 @@ class CBibleKeyChooser : public CKeyChooser  {
         */
         void refChanged(CSwordVerseKey *key);
 
-        void updateKey(CSwordKey* key);
-        void adjustFont();
-        void refreshContent();
+        void updateKey(CSwordKey* key) override;
+        void adjustFont() override;
+        void refreshContent() override;
 
     protected slots:
 
-        virtual void setKey(const QString & newKey);
+        virtual void setKey(const QString & newKey) override;
 
     private:
         BtBibleKeyWidget* w_ref;
