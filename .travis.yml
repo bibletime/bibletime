@@ -24,6 +24,9 @@ before_install:
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq --force-yes g++-4.9; else sudo apt-get install -qq --force-yes clang-3.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; else export CXX="clang++-3.8" CC="clang-3.8"; fi
   - sudo apt-get install -qq --force-yes cmake qtbase5-dev qt5-qmake libqt5core5 libqt5widgets5 libqt5gui5 qttools5-dev libqt5svg5-dev libqt5network5 libqt5printsupport5 libqt5xml5 libqt5webkit5-dev libqt5declarative5 qtquick1-5-dev libqt5qml5 libqt5quick5 qtdeclarative5-dev qtdeclarative5-dev-tools libqt5opengl5-dev qtlocation5-dev qtsensors5-dev qtchooser qttools5-dev-tools libclucene-dev
+  - sudo sed -e 's/class Q_CORE_EXPORT QUrl/class QUrl;\nQ_CORE_EXPORT uint qHash(const QUrl \&url, uint seed = 0) Q_DECL_NOTHROW;\n&/' -e 's/\(friend Q_CORE_EXPORT uint qHash(const .*, uint seed\) = 0/\1/' -i /usr/include/qt5/QtCore/qurl.h || true
+  - sudo sed -e 's/class Q_CORE_EXPORT QPersistentModelIndex/class QPersistentModelIndex;\nQ_CORE_EXPORT uint qHash(const QPersistentModelIndex \&, uint seed = 0) Q_DECL_NOTHROW;\n&/' -e 's/\(friend uint qHash(const .*, uint seed\) = 0/\1/' -i /usr/include/qt5/QtCore/qabstractitemmodel.h || true
+  - sudo sed -e 's/class Q_NETWORK_EXPORT QHostAddress/class QHostAddress;\nQ_NETWORK_EXPORT uint qHash(const QHostAddress \&, uint seed = 0) Q_DECL_NOTHROW;\n&/' -e 's/\(friend Q_NETWORK_EXPORT uint qHash(const .*, uint seed\) = 0/\1/' -i /usr/include/qt5/QtNetwork/qhostaddress.h || true
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
   - mkdir b
