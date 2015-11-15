@@ -19,10 +19,11 @@ before_install:
   - sudo add-apt-repository ppa:libreoffice/ppa --yes
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
   - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise main' --yes
+  - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa --yes
   - sudo apt-get update -qq
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq --force-yes g++-4.9; else sudo apt-get install -qq --force-yes clang-3.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; else export CXX="clang++-3.8" CC="clang-3.8"; fi
-  - sudo apt-get install -qq --force-yes cmake libqt4-dev qt4-qmake libclucene-dev
+  - sudo apt-get install -qq --force-yes cmake qtbase5-dev qt5-qmake libqt5core5 libqt5widgets5 libqt5gui5 libclucene-dev
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
   - mkdir b
