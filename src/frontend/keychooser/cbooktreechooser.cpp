@@ -144,9 +144,8 @@ void CBookTreeChooser::updateKey( CSwordKey* key ) {
 }
 
 /** Reimplementation to handle tree creation on show. */
-void CBookTreeChooser::show() {
-    CKeyChooser::show();
-
+void CBookTreeChooser::doShow() {
+    show();
     if (!m_treeView->topLevelItemCount()) {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
         setupTree(); //create the tree structure

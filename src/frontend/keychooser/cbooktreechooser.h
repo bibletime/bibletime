@@ -65,11 +65,8 @@ class CBookTreeChooser : public CKeyChooser {
 
     public slots: // Public slots
         virtual void updateKey( CSwordKey* ) override;
-        /**
-        * Reimplementation to handle tree creation on show.
-        */
-        virtual void show();
 
+        void doShow();
 
     protected: // Protected methods
         /**
