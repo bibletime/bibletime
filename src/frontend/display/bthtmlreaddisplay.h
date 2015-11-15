@@ -46,8 +46,8 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
                 override;
 
         void setText( const QString& newText ) override;
-        // Get the current source
-        virtual QString getCurrentSource();
+
+        QString getCurrentSource();
 
         bool hasSelection() const override;
 
