@@ -24,12 +24,6 @@ CSearchAnalysisView::CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* p
     resize(sizeHint());
 }
 
-
-/** Returns the sizeHint for this view */
-QSize CSearchAnalysisView::sizeHint() const {
-    return QGraphicsView::sizeHint();
-}
-
 /** No descriptions */
 void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
     QGraphicsView::resizeEvent(e);

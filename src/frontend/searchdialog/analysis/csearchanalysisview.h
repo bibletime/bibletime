@@ -30,13 +30,6 @@ class CSearchAnalysisView : public QGraphicsView {
     public:
         CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* parent);
 
-        /**
-            * Returns the sizeHint for this view
-            * We give back the size of the parent widgetas default.
-            * This is a reimplementation from QCanvasView::sizeHint().
-            */
-        virtual QSize sizeHint() const override;
-
     protected:
         /**
         * Reimplementation.
