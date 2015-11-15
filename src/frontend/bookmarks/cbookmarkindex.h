@@ -60,7 +60,7 @@ public: /* Types: */
 public: /* Methods: */
 
     CBookmarkIndex(QWidget * parent = nullptr);
-    virtual ~CBookmarkIndex();
+    ~CBookmarkIndex() override;
 
     void initTree();
 
@@ -80,33 +80,33 @@ signals:
 protected:
 
     /** A hack to get the modifiers. */
-    virtual void mouseReleaseEvent(QMouseEvent * event) override;
+    void mouseReleaseEvent(QMouseEvent * event) override;
 
     /** Needed to paint an drag pointer arrow. */
-    virtual void paintEvent(QPaintEvent * event) override;
+    void paintEvent(QPaintEvent * event) override;
 
     /** Initialize the SIGNAL<->SLOT connections. */
     void initConnections();
 
     /** Returns the drag object for the current selection. */
-    virtual QMimeData * dragObject();
+    QMimeData * dragObject();
 
     /**
     * D'n'd methods are reimplementations from QTreeWidget or its ancestors.
     * In these we handle creating, moving and copying bookmarks with d'n'd.
     */
-    virtual void dragEnterEvent(QDragEnterEvent * event) override;
-    virtual void dragMoveEvent(QDragMoveEvent * event) override;
-    virtual void dropEvent(QDropEvent * event) override;
-    virtual void dragLeaveEvent(QDragLeaveEvent * event) override;
+    void dragEnterEvent(QDragEnterEvent * event) override;
+    void dragMoveEvent(QDragMoveEvent * event) override;
+    void dropEvent(QDropEvent * event) override;
+    void dragLeaveEvent(QDragLeaveEvent * event) override;
 
     /** Reimplementation from QAbstractItemView. Takes care of movable items. */
-    virtual void startDrag(Qt::DropActions supportedActions) override;
+    void startDrag(Qt::DropActions supportedActions) override;
 
     /** Handle mouse moving (mag updates) */
-    virtual void mouseMoveEvent(QMouseEvent * event) override;
+    void mouseMoveEvent(QMouseEvent * event) override;
 
-    virtual void leaveEvent(QEvent * event) override;
+    void leaveEvent(QEvent * event) override;
 
 
 protected slots:

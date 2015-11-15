@@ -36,30 +36,26 @@ class CLexiconReadWindow : public CReadWindow  {
         Q_OBJECT
     public:
         CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-        virtual ~CLexiconReadWindow();
+        ~CLexiconReadWindow() override;
 
-        virtual CSwordModuleInfo::ModuleType moduleType() const override
+        CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Lexicon; }
 
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
     public slots:
-        /**
-        * Refreshes the content of this display window and the content of the keychooser.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason reason) override;
+        void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected:
-        virtual void initActions() override;
-        virtual void initToolbars() override;
-        virtual void initConnections() override;
-        virtual void initView() override;
-        virtual void updatePopupMenu() override;
-        virtual void setupPopupMenu() override;
+        void initActions() override;
+        void initToolbars() override;
+        void initConnections() override;
+        void initView() override;
+        void updatePopupMenu() override;
+        void setupPopupMenu() override;
 
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars() override;
+        void setupMainWindowToolBars() override;
 
         struct ActionsStruct {
             BtToolBarPopupAction* backInHistory;

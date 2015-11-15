@@ -35,7 +35,7 @@ public: /* Methods: */
     BtInstallMgr(QObject * parent = nullptr);
     ~BtInstallMgr();
 
-    virtual bool isUserDisclaimerConfirmed() const override;
+    bool isUserDisclaimerConfirmed() const override;
 
 signals:
 
@@ -50,7 +50,7 @@ signals:
 protected: /* Methods: */
 
     /** \note Reimplementation of sword::StatusReporter::statusUpdate(). */
-    virtual void statusUpdate(double dltotal, double dlnow) override;
+    void statusUpdate(double dltotal, double dlnow) override;
 
     /**
     * \note Reimplementation of sword::StatusReporter::preStatus().
@@ -59,9 +59,9 @@ protected: /* Methods: */
     * The sword message is not i18n'ed, it's in the form "Downloading (1 of 6): nt.bzs".
     * This function is not utilized in the UI ATM.
     */
-    virtual void preStatus(long totalBytes,
-                           long completedBytes,
-                           const char * message) override;
+    void preStatus(long totalBytes,
+                   long completedBytes,
+                   const char * message) override;
 
 private: /* Fields: */
 

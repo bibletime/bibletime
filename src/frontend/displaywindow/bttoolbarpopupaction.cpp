@@ -22,7 +22,7 @@ class BtToolButton: public QToolButton {
         inline BtToolButton(QWidget *parent = nullptr)
             : QToolButton(parent) {}
     private:
-        virtual inline void nextCheckState() override {}
+        inline void nextCheckState() override {}
 };
 
 } // anonymous namespace

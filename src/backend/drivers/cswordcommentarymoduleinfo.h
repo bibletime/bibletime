@@ -31,8 +31,7 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
                                     backend,
                                     CSwordModuleInfo::Commentary) {}
 
-        /* Reimplementation of CSwordModuleInfo::isWritable(). */
-        virtual bool isWritable() const override;
+        bool isWritable() const override;
 };
 
 #endif

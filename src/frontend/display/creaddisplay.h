@@ -38,9 +38,9 @@ class CReadDisplay :  public CDisplay {
         */
         virtual void moveToAnchor( const QString& ) = 0;
 
-        virtual void print(const CDisplay::TextPart,
-                           const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions) override;
+        void print(const CDisplay::TextPart,
+                   const DisplayOptions &displayOptions,
+                   const FilterOptions &filterOptions) override;
 
         void setMouseTracking(const bool trackingEnabled) {
             m_useMouseTracking = trackingEnabled;

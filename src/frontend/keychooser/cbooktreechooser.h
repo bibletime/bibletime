@@ -37,34 +37,22 @@ class CBookTreeChooser : public CKeyChooser {
                          BTHistory *history, CSwordKey *key = nullptr,
                          QWidget *parent = nullptr);
 
-        /**
-          Reimplemented from CKeyChooser::refreshContent().
-        */
-        virtual void refreshContent() override;
+        void refreshContent() override;
 
-        /**
-          Reimplemented from CKeyChooser::setModules().
-        */
-        virtual void setModules(const BtConstModuleList &modules,
-                                bool refresh = true) override;
+        void setModules(const BtConstModuleList &modules,
+                        bool refresh = true) override;
 
-        /**
-          Reimplemented from CKeyChooser::key().
-        */
-        virtual inline CSwordKey *key() override {
+        inline CSwordKey *key() override {
             return m_key;
         }
 
-        /**
-          Reimplemented from CKeyChooser::setKey().
-        */
-        virtual void setKey(CSwordKey *key) override;
+        void setKey(CSwordKey *key) override;
 
 
         void setKey(CSwordKey*, const bool emitSinal);
 
     public slots: // Public slots
-        virtual void updateKey( CSwordKey* ) override;
+        void updateKey( CSwordKey* ) override;
 
         void doShow();
 
@@ -73,7 +61,7 @@ class CBookTreeChooser : public CKeyChooser {
         * Creates the first level of the tree structure.
         */
         void setupTree();
-        virtual void adjustFont() override;
+        void adjustFont() override;
         void addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item);
 
     protected slots: // Protected slots

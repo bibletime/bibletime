@@ -45,7 +45,7 @@ class CModuleResultView : public QTreeWidget {
         */
         CSwordModuleInfo* activeModule();
 
-        virtual QSize sizeHint() const override {
+        QSize sizeHint() const override {
             return m_size;
         }
 

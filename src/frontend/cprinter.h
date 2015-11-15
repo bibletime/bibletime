@@ -31,15 +31,15 @@ class CPrinter : public QObject, public Rendering::CDisplayRendering {
                  const DisplayOptions &displayOptions,
                  const FilterOptions &filterOptions);
 
-        virtual ~CPrinter();
+        ~CPrinter() override;
         void printKeyTree( KeyTree& );
 
     protected:
-        virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo * module) override;
+        QString entryLink(const KeyTreeItem &item,
+                          const CSwordModuleInfo * module) override;
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
-        virtual QString finishText(const QString &text, const KeyTree &tree) override;
+        QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
+        QString finishText(const QString &text, const KeyTree &tree) override;
 
     private:
         QWebPage* m_htmlPage;

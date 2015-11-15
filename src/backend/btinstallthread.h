@@ -67,7 +67,7 @@ class BtInstallThread: public QThread {
 
     protected: /* Methods: */
 
-        virtual void run() override;
+        void run() override;
 
     private: /* Methods: */
 

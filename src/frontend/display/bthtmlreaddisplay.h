@@ -37,25 +37,24 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
     public:
 
         BtHtmlReadDisplay( CReadWindow* readWindow, QWidget* parent = nullptr );
-        virtual ~BtHtmlReadDisplay();
+        ~BtHtmlReadDisplay() override;
 
         //reimplemented functions from CDisplay
         // Returns the right text part in the specified format.
-        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText,
-                                    const CDisplay::TextPart part = CDisplay::Document ) override;
+        const QString text(const CDisplay::TextType format = CDisplay::HTMLText,
+                           const CDisplay::TextPart part = CDisplay::Document)
+                override;
 
-        // Sets the new text for this display widget.
-        virtual void setText( const QString& newText ) override;
+        void setText( const QString& newText ) override;
         // Get the current source
         virtual QString getCurrentSource();
 
-        virtual bool hasSelection() const override;
+        bool hasSelection() const override;
 
-        // Reimplementation.
-        virtual void selectAll() override;
-        virtual void moveToAnchor( const QString& anchor ) override;
-        virtual void openFindTextDialog() override;
-        inline virtual QString getCurrentNodeInfo() const override {
+        void selectAll() override;
+        void moveToAnchor( const QString& anchor ) override;
+        void openFindTextDialog() override;
+        inline QString getCurrentNodeInfo() const override {
             return m_nodeInfo;
         }
         QWidget* view() override;

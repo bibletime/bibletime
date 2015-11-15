@@ -31,10 +31,8 @@ class CSearchAnalysisView : public QGraphicsView {
         CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* parent);
 
     protected:
-        /**
-        * Reimplementation.
-        */
-        virtual void resizeEvent(QResizeEvent* e) override;
+
+        void resizeEvent(QResizeEvent* e) override;
 
 };
 

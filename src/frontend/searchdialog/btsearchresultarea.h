@@ -104,17 +104,11 @@ class BtSearchResultArea : public QWidget {
         void setSearchResult(
             const CSwordModuleSearch::Results &results);
 
-        /**
-          Reimplemented from QWidget::sizeHint().
-        */
-        virtual QSize sizeHint() const override {
+        QSize sizeHint() const override {
             return baseSize();
         }
 
-        /**
-          Reimplemented from QWidget::minimumSizeHint().
-        */
-        virtual QSize minimumSizeHint() const override {
+        QSize minimumSizeHint() const override {
             return minimumSize();
         }
 

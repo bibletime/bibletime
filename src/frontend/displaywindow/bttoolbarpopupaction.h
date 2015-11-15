@@ -31,8 +31,7 @@ class BtToolBarPopupAction : public QWidgetAction {
 // return the QMenu object so a popup menu can be constructed
         QMenu* popupMenu() const;
 
-// Function to catch the Shortcut event and emit the triggered signal
-        virtual bool event(QEvent* e) override;
+        bool event(QEvent* e) override;
 
     protected:
         QWidget* createWidget(QWidget* parent) override;

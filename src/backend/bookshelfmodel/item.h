@@ -163,9 +163,7 @@ public: /* Methods: */
     inline RootItem()
         : Item(Item::ITEM_ROOT) {}
 
-    inline virtual bool fitFor(const CSwordModuleInfo &) const override {
-        return true;
-    }
+    inline bool fitFor(const CSwordModuleInfo &) const override { return true; }
 
 };
 

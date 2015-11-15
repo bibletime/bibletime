@@ -33,33 +33,23 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual CSwordModuleInfo::ModuleType moduleType() const override
+        CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Bible; }
 
-        virtual void storeProfileSettings(QString const & windowGroup) const override;
-        virtual void applyProfileSettings(const QString & windowGroup) override;
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
         static void insertKeyboardActions( BtActionCollection* const a );
 
     protected: /* Methods: */
 
-        virtual void initActions() override;
-        virtual void initToolbars() override;
-        virtual void initConnections() override;
-        virtual void initView() override;
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars() override;
-        /**
-        * Reimplementation.
-        */
-        virtual void setupPopupMenu() override;
-        /**
-        * Reimplemented.
-        */
-        virtual void updatePopupMenu() override;
-        /** Event filter.
-        * Reimplementation of the event filter to filter out events like focus in.
-        */
-        virtual bool eventFilter( QObject* o, QEvent* e) override;
+        void initActions() override;
+        void initToolbars() override;
+        void initConnections() override;
+        void initView() override;
+        void setupMainWindowToolBars() override;
+        void setupPopupMenu() override;
+        void updatePopupMenu() override;
+        bool eventFilter( QObject* o, QEvent* e) override;
 
         struct {
             QAction* selectAll;
@@ -102,10 +92,8 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         void previousChapter();
         void nextVerse();
         void previousVerse();
-        /**
-        * Refreshes the content of this display window and the content of the keychooser.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason reason) override;
+
+        void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected slots:
 
@@ -121,7 +109,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         * Saves the chapter as valid HTML page.
         */
         void saveChapterPlain();
-        virtual void lookupSwordKey( CSwordKey* newKey ) override;
+        void lookupSwordKey(CSwordKey * newKey) override;
         void syncWindows();
 
     private: /* Methods: */

@@ -58,7 +58,7 @@ public: /* Methods: */
 
     CRangeChooserDialog(QWidget *parentDialog = nullptr);
 
-    virtual void accept() override;
+    void accept() override;
 
 private: /* Methods: */
 

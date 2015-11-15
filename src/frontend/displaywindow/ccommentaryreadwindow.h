@@ -33,36 +33,32 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         inline CCommentaryReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual CSwordModuleInfo::ModuleType moduleType() const override
+        CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Commentary; }
 
-        virtual void storeProfileSettings(QString const & windowGroup) const override;
-        virtual void applyProfileSettings(const QString & windowGroup) override;
-        virtual bool syncAllowed() const override;
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
+        bool syncAllowed() const override;
 
-    public slots: // Public slots
+    public slots:
         void nextBook();
         void previousBook();
         void nextChapter();
         void previousChapter();
         void nextVerse();
         void previousVerse();
-        /**
-        * Reimplementation to handle the keychooser refresh.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason) override;
+        void reload(CSwordBackend::SetupChangedReason) override;
 
     protected:
-        virtual void initActions() override;
-        virtual void initToolbars() override;
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars() override;
+        void initActions() override;
+        void initToolbars() override;
+        void setupMainWindowToolBars() override;
 
     private:
         QAction* m_syncButton;
         CSwordVerseKey* verseKey();
     protected:
-        virtual void setupPopupMenu() override;
+        void setupPopupMenu() override;
 };
 
 #endif

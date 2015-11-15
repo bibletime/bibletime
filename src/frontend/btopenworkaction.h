@@ -41,8 +41,7 @@ class BtOpenWorkActionMenu: public BtMenuView {
     private:
         void retranslateUi();
 
-        /* Reimplemented from BtMenuView. */
-        virtual void postBuildMenu() override;
+        void postBuildMenu() override;
 
     private slots:
         void slotIndexTriggered(const QModelIndex &index);

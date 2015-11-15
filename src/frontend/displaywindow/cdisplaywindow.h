@@ -224,7 +224,7 @@ class CDisplayWindow : public QMainWindow {
         friend class CBibleReadWindow;
 
         CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-        virtual ~CDisplayWindow();
+        ~CDisplayWindow() override;
 
         /**
           \returns the display options used by this display window.
@@ -278,7 +278,7 @@ class CDisplayWindow : public QMainWindow {
         /** Called to add actions to mainWindow toolbars */
         virtual void setupMainWindowToolBars() = 0;
 
-        virtual void closeEvent(QCloseEvent* e) override;
+        void closeEvent(QCloseEvent* e) override;
 
         void setToolBarsHidden();
         void clearMainWindowToolBars();

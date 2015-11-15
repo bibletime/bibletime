@@ -30,21 +30,14 @@
 class BtStringMgr : public sword::StringMgr {
 
     public:
-        /** Converts the param to an upper case Utf8 string
-        * @param The text encoded in utf8 which should be turned into an upper case string
-        */
-        virtual char *upperUTF8(char *text, unsigned int max = 0) const override;
 
-        /** Converts the param to an uppercase latin1 string
-        * @param The text encoded in latin1 which should be turned into an upper case string
-        */
-        virtual char *upperLatin1(char *text, unsigned int max = 0) const override;
+        char *upperUTF8(char *text, unsigned int max = 0) const override;
+
+        char *upperLatin1(char *text, unsigned int max = 0) const override;
 
     protected:
-        /** Enable Unicode support.
-        * Reimplementation to show unicode support.
-        */
-        virtual bool supportsUnicode() const override;
+
+        bool supportsUnicode() const override;
 
 };
 

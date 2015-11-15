@@ -42,21 +42,13 @@ class CBibleKeyChooser : public CKeyChooser  {
                          QWidget *parent = nullptr);
 
     public slots:
-        /**
-          Reimplemented from CKeyChooser::key().
-        */
+
         CSwordKey* key() override;
 
-        /**
-          Reimplemented from CKeyChooser::setKey().
-        */
-        virtual void setKey(CSwordKey *key) override;
+        void setKey(CSwordKey *key) override;
 
-        /**
-          Reimplemented from CKeyChooser::setModules().
-        */
-        virtual void setModules(const BtConstModuleList &modules,
-                                bool refresh = true) override;
+        void setModules(const BtConstModuleList &modules,
+                        bool refresh = true) override;
 
         /**
         * used to do actions before key changes
@@ -73,7 +65,7 @@ class CBibleKeyChooser : public CKeyChooser  {
 
     protected slots:
 
-        virtual void setKey(const QString & newKey) override;
+        void setKey(const QString & newKey) override;
 
     private:
         BtBibleKeyWidget* w_ref;

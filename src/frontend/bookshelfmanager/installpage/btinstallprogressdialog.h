@@ -50,7 +50,7 @@ protected: /* Methods: */
       Handles closing by the window close button, Cancel (Stop) All button, or
       completing the downloads.
     */
-    virtual void closeEvent(QCloseEvent * event) override;
+    void closeEvent(QCloseEvent * event) override;
 
 private: /* Methods: */
 

@@ -39,9 +39,9 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    virtual bool eventFilter(QObject * o, QEvent * e) override;
+    bool eventFilter(QObject * o, QEvent * e) override;
 
-    virtual void wheelEvent(QWheelEvent * e) override;
+    void wheelEvent(QWheelEvent * e) override;
 
 signals:
 
@@ -90,7 +90,7 @@ public: /* Methods: */
     * Initializes this widget. We need this function because
     * we have more than one constructor.
     */
-    virtual void init();
+    void init();
 
     /**
     * Sets the tooltips for the given entries using the parameters as text.

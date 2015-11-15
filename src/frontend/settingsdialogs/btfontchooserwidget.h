@@ -35,8 +35,7 @@ class BtFontChooserWidget : public QFrame {
         void setFont(const QFont &font);
         void setSampleText(const QString &text);
 
-        // Inherited from QWidget:
-        virtual QSize sizeHint() const override;
+        QSize sizeHint() const override;
 
     signals:
 

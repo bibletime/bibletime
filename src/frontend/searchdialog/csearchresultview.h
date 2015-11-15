@@ -45,8 +45,8 @@ class CSearchResultView  : public QTreeWidget {
         void initConnections();
 
         //from QTreeWidget
-        virtual QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const override;
-        virtual QStringList mimeTypes () const override;
+        QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const override;
+        QStringList mimeTypes () const override;
 
     public slots: // Public slots
         void saveItems();
@@ -60,10 +60,8 @@ class CSearchResultView  : public QTreeWidget {
         void copyItemsWithText();
         void copyItems();
         void saveItemsWithText();
-        /**
-        * Reimplementation to show the popup menu.
-        */
-        virtual void contextMenuEvent(QContextMenuEvent* event) override;
+
+        void contextMenuEvent(QContextMenuEvent* event) override;
 
     protected slots: // Protected slots
         void printItems();

@@ -24,8 +24,7 @@ class CSearchAnalysisLegendItem : public QGraphicsRectItem {
             : m_moduleList(modules) {}
 
     private: /* Methods: */
-        /** Reimplementation of QGraphicsItem::paint. */
-        virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
+        void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
     private: /* Fields: */
         BtConstModuleList m_moduleList;

@@ -28,37 +28,30 @@ class CBookReadWindow: public CLexiconReadWindow {
             , m_treeAction(nullptr)
             , m_treeChooser(nullptr) {}
 
-        virtual CSwordModuleInfo::ModuleType moduleType() const override
+        CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::GenericBook; }
 
-        virtual void storeProfileSettings(QString const & windowGroup) const override;
-        virtual void applyProfileSettings(const QString & windowGroup) override;
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
         static void insertKeyboardActions(BtActionCollection * const a);
 
     public slots:
 
-        /**
-        * Refreshes the content of this display window and the content of the keychooser.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason reason) override;
+        void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected: /* Methods: */
 
-        virtual void initActions() override;
-        virtual void initToolbars() override;
-        virtual void initConnections() override;
-        virtual void initView() override;
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars() override;
+        void initActions() override;
+        void initToolbars() override;
+        void initConnections() override;
+        void initView() override;
+        void setupMainWindowToolBars() override;
 
-        virtual void setupPopupMenu() override;
+        void setupPopupMenu() override;
 
     protected slots:
 
-        /**
-         * Reimplementation to take care of the tree chooser.
-         */
-        virtual void modulesChanged() override;
+        void modulesChanged() override;
 
     private slots:
 

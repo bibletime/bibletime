@@ -36,25 +36,13 @@ public:
                     CSwordKey * key = nullptr,
                     QWidget * parent = nullptr);
 
-    /**
-      Reimplemented from CKeyChooser.
-    */
-    virtual void refreshContent() override;
+    void refreshContent() override;
 
-    /**
-    * Sets another module to this keychooser
-    */
-    virtual void setModules(const BtConstModuleList & modules,
-                            bool refresh = false) override;
-    /**
-    * Returns the key of this keychooser
-    */
-    virtual CSwordKey * key() override;
+    void setModules(const BtConstModuleList & modules,
+                    bool refresh = false) override;
+    CSwordKey * key() override;
 
-    /**
-    * Sets a new key to this keychooser
-    */
-    virtual void setKey(CSwordKey * key) override;
+    void setKey(CSwordKey * key) override;
 
     /**
     * Sets a new key to this keychooser
@@ -76,8 +64,7 @@ protected: /* Methods: */
     */
     void setupCombo(const QString & key, const int depth, const int currentItem);
 
-    /** No descriptions */
-    virtual void adjustFont() override;
+    void adjustFont() override;
 
 protected slots:
 
@@ -86,7 +73,7 @@ protected slots:
     */
     void keyChooserChanged(int);
 
-    virtual void setKey(const QString & newKey) override;
+    void setKey(const QString & newKey) override;
 
 private: /* Fields: */
 

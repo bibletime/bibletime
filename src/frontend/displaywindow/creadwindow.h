@@ -40,15 +40,13 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    /** Sets the display widget of this display window. */
-    virtual void setDisplayWidget(CDisplay * newDisplay) override;
+    void setDisplayWidget(CDisplay * newDisplay) override;
 
-    virtual void resizeEvent(QResizeEvent * e) override;
+    void resizeEvent(QResizeEvent * e) override;
 
 protected slots:
 
-    /** Loads the text using the key. */
-    virtual void lookupSwordKey(CSwordKey *) override;
+    void lookupSwordKey(CSwordKey *) override;
 
     /**
       Catches the signal when the KHTMLPart has finished the layout (anchors are

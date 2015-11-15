@@ -33,7 +33,7 @@ class IndexThread: public QThread {
         void endIndexingModule(const QString& moduleName, bool success);
 
     protected:
-        virtual void run() override;
+        void run() override;
 
     private:
         void indexModule();

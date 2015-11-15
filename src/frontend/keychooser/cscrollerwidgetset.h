@@ -54,7 +54,7 @@ signals:
 
 protected: /* Methods: */
 
-    virtual void wheelEvent(QWheelEvent * e) override;
+    void wheelEvent(QWheelEvent * e) override;
 
 protected slots:
 

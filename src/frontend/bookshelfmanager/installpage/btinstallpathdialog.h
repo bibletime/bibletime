@@ -26,7 +26,8 @@ class BtInstallPathDialog : public QDialog {
         ~BtInstallPathDialog();
 
     public slots:
-        virtual void accept() override;
+
+        void accept() override;
 
     private slots:
         void slotAddClicked();

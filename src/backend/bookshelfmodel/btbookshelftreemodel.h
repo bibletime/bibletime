@@ -94,26 +94,26 @@ public: /* Methods: */
     BtBookshelfTreeModel(QObject * parent = nullptr);
     BtBookshelfTreeModel(const QString & configKey, QObject * parent = nullptr);
     BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = nullptr);
-    virtual ~BtBookshelfTreeModel();
+    ~BtBookshelfTreeModel() override;
 
-    virtual int rowCount(const QModelIndex & parent = QModelIndex()) const override;
-    virtual int columnCount(const QModelIndex & parent = QModelIndex())
-    const override;
-    virtual bool hasChildren(const QModelIndex & parent = QModelIndex())
-    const override;
-    virtual QModelIndex index(int row,
-                              int column,
-                              const QModelIndex & parent = QModelIndex())
-    const override;
-    virtual QModelIndex parent(const QModelIndex & index) const override;
-    virtual QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    bool hasChildren(const QModelIndex & parent = QModelIndex()) const override;
+    QModelIndex index(int row,
+                      int column,
+                      const QModelIndex & parent = QModelIndex())
+            const override;
+    QModelIndex parent(const QModelIndex & index) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
+            const override;
     QVariant data(CSwordModuleInfo & module, int role = Qt::DisplayRole) const;
-    virtual Qt::ItemFlags flags(const QModelIndex & index) const override;
-    virtual QVariant headerData(int section, Qt::Orientation orientation,
-                                int role = Qt::DisplayRole) const override;
-    virtual bool setData(const QModelIndex & index,
-                         const QVariant & value,
-                         int role) override;
+    Qt::ItemFlags flags(const QModelIndex & index) const override;
+    QVariant headerData(int section,
+                        Qt::Orientation orientation,
+                        int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex & index,
+                 const QVariant & value,
+                 int role) override;
 
     inline QAbstractItemModel * sourceModel() const { return m_sourceModel; }
     inline const Grouping & groupingOrder() const { return m_groupingOrder; }

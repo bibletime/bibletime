@@ -31,7 +31,7 @@ public slots:
 
 protected: /* Methods: */
 
-    virtual void mouseReleaseEvent(QMouseEvent * event) override;
+    void mouseReleaseEvent(QMouseEvent * event) override;
 
 signals:
 

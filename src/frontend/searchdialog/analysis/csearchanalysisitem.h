@@ -51,14 +51,14 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         /**
         * Returns the width of this item.
         */
-        virtual int width();
+        int width();
         /**
         * Returns the tooltip for this item.
         */
         const QString getToolTip();
 
     private:
-        virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
+        void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
     private: /* Fields: */
         CSwordModuleSearch::Results m_results;

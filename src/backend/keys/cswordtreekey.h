@@ -37,15 +37,9 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
         CSwordTreeKey( const CSwordTreeKey& k );
 
-        /**
-          Reimplemented from CSwordKey.
-        */
-        virtual void setModule(const CSwordModuleInfo *newModule) override;
+        void setModule(const CSwordModuleInfo *newModule) override;
 
-        /** Copy method.
-        * @return A new copy of this object.
-        */
-        virtual CSwordTreeKey* copy() const override;
+        CSwordTreeKey* copy() const override;
 
         /**
         * Returns the TreeKeyIdx::getLocalKey value in unicode.
@@ -53,32 +47,22 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
         * Use this instead of getLocalKey() to avoid encoding problems.
         */
         QString getLocalNameUnicode();
-        /**
-        * Returns the current key as unicode decoded QString.
-        */
-        virtual QString key() const override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const QString &key).
-        */
-        virtual bool setKey(const QString &key) override;
+        QString key() const override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const char *key).
-        */
-        virtual bool setKey(const char *key) override;
+        bool setKey(const QString &key) override;
+
+        bool setKey(const char *key) override;
 
     protected:
-        /**
-         * Returns the raw key appropriate for use directly with Sword.
-         */
-        virtual const char * rawKey() const override;
+
+        const char * rawKey() const override;
 
     private:
         /** Disable assignment operator */
         CSwordTreeKey& operator= (const CSwordTreeKey&);
         /** Disable from base class to prevent compiler warnings */
-        inline virtual CSwordTreeKey& operator= (const sword::TreeKeyIdx&) override {
+        inline CSwordTreeKey& operator= (const sword::TreeKeyIdx&) override {
             return (*this);
         };
 };

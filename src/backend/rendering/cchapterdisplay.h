@@ -27,10 +27,10 @@ class CChapterDisplay: public CEntryDisplay {
 
     public: /* Methods: */
 
-        virtual const QString text(const BtConstModuleList &modules,
-                                   const QString &key,
-                                   const DisplayOptions &displayOptions,
-                                   const FilterOptions &filterOptions) override;
+        const QString text(const BtConstModuleList &modules,
+                           const QString &key,
+                           const DisplayOptions &displayOptions,
+                           const FilterOptions &filterOptions) override;
 
 }; /* class CChapterDisplay */
 

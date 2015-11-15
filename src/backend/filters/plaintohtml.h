@@ -31,9 +31,9 @@ class PlainToHtml: public sword::SWFilter {
     protected: /* Methods: */
 
         /** Reimplemented from sword::SWFilter. */
-        virtual char processText(sword::SWBuf &buf,
-                                 const sword::SWKey *key,
-                                 const sword::SWModule *module = nullptr) override;
+        char processText(sword::SWBuf &buf,
+                         const sword::SWKey *key,
+                         const sword::SWModule *module = nullptr) override;
 
 };
 

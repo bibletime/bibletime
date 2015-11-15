@@ -37,13 +37,13 @@ public: /* Methods: */
       Reimplementation of Item::data() which dispatches all
       requests to the parent model (BtBookshelfTreeModel).
     */
-    virtual QVariant data(int role = Qt::DisplayRole) const override;
+    QVariant data(int role = Qt::DisplayRole) const override;
 
     inline CSwordModuleInfo & moduleInfo() const {
         return m_moduleInfo;
     }
 
-    inline virtual bool fitFor(const CSwordModuleInfo &) const override {
+    inline bool fitFor(const CSwordModuleInfo &) const override {
         return false;
     }
 
