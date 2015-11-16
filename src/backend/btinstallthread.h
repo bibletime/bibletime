@@ -14,8 +14,7 @@
 
 #include <QThread>
 
-#include <QMutex>
-#include <QMutexLocker>
+#include <atomic>
 #include "btinstallmgr.h"
 
 
@@ -46,10 +45,8 @@ class BtInstallThread: public QThread {
                     Qt::QueuedConnection);
         }
 
-        void stopInstall() {
-            const QMutexLocker lock(&m_stopRequestedMutex);
-            m_stopRequested = true;
-        }
+        void stopInstall()
+        { m_stopRequested.store(true, std::memory_order_relaxed); }
 
     signals:
 
@@ -85,8 +82,7 @@ class BtInstallThread: public QThread {
         const QString m_destination;
         BtInstallMgr m_iMgr;
         int m_currentModuleIndex;
-        QMutex m_stopRequestedMutex;
-        bool m_stopRequested;
+        std::atomic<bool> m_stopRequested;
 
 };
 
