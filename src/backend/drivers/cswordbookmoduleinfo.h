@@ -32,9 +32,6 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         CSwordBookModuleInfo(sword::SWModule * module,
                              CSwordBackend & usedBackend);
 
-        inline CSwordBookModuleInfo(const CSwordBookModuleInfo &copy)
-            : CSwordModuleInfo(copy), m_depth(copy.m_depth) {}
-
         /**
           \returns the maximal depth of sections and subsections.
         */

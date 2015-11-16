@@ -28,9 +28,6 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
                                        CSwordBackend & backend)
                 : CSwordModuleInfo(module, backend, Lexicon) {}
 
-        inline CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy)
-            : CSwordModuleInfo(copy), m_entries(copy.m_entries) {}
-
         /**
           This method returns the entries of the modules represented by this
           object. If this function is called for the first time the list is load
