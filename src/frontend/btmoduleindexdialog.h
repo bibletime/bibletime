@@ -24,7 +24,6 @@ class CSwordModuleInfo;
 */
 class BtModuleIndexDialog: public QProgressDialog {
         Q_OBJECT
-        Q_DISABLE_COPY(BtModuleIndexDialog)
 
     public: /* Methods: */
         /**
