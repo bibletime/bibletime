@@ -32,8 +32,6 @@ class BibleTimeApp;
 
 class BtConfig: public BtConfigCore {
 
-    Q_DISABLE_COPY(BtConfig)
-
     friend class BibleTimeApp;
 
 public: /* Types: */

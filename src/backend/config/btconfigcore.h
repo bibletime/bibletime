@@ -27,7 +27,6 @@
 */
 class BtConfigCore {
 
-    Q_DISABLE_COPY(BtConfigCore)
     Q_DECLARE_TR_FUNCTIONS(BtConfigCore)
 
 public: /* Types: */
@@ -35,6 +34,9 @@ public: /* Types: */
     typedef QHash<QString, QString> SessionNamesHashMap;
 
 public: /* Methods: */
+
+    BtConfigCore(BtConfigCore const &) = delete;
+    BtConfigCore & operator=(BtConfigCore const &) = delete;
 
     /**
       \param[in] settingsFile The filename of the settings file.
