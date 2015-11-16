@@ -47,12 +47,16 @@ class CSwordModuleInfo;
 
 class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
 
-    public:
+    public: /* Types: */
         enum JumpType {
             UseBook,
             UseChapter,
             UseVerse
         };
+
+    public: /* Methods: */
+
+        CSwordVerseKey & operator=(CSwordVerseKey const &) = delete;
 
         /**
           Constructs a versekey with the current module position and setups
@@ -102,13 +106,6 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
 
         const char * rawKey() const override;
 
-    private:
-        /** Disable assignment operator    */
-        CSwordVerseKey& operator= (const CSwordVerseKey&);
-        /** Disable from base class to prevent compiler warnings */
-        inline CSwordVerseKey& operator= (const sword::VerseKey&) override {
-            return (*this);
-        };
 };
 
 #endif

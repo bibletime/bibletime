@@ -31,6 +31,10 @@ public: /* Types: */
         ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
     };
 
+public: /* Methods: */
+
+    CSwordKey & operator=(CSwordKey const &) = delete;
+
     virtual inline ~CSwordKey() { delete m_beforeChangedSignaller; }
 
     /**
@@ -125,13 +129,6 @@ protected: /* Methods: */
     virtual const char * rawKey() const = 0;
 
     static inline const QTextCodec * cp1252Codec() { return m_cp1252Codec; }
-
-private: /* Methods: */
-
-    /**
-      Disable the assignment operator
-    */
-    CSwordKey & operator=(const CSwordKey &);
 
 protected: /* Fields: */
 

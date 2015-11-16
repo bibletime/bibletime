@@ -53,6 +53,9 @@ class CSwordModuleInfo;
 class CSwordLDKey : public CSwordKey, public sword::SWKey {
 
     public:
+
+        CSwordLDKey & operator=(CSwordLDKey const &) = delete;
+
         /**
           \todo Document param
         */
@@ -86,12 +89,6 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
     protected:
 
         const char* rawKey() const override;
-
-    private:
-        /**
-        * Disable assignment operator
-        */
-        CSwordLDKey& operator= (const CSwordLDKey& );
 
 };
 

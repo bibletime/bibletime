@@ -28,6 +28,9 @@ class CSwordModuleInfo;
 class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
     public:
+
+        CSwordTreeKey & operator=(CSwordTreeKey const &) = delete;
+
         /**
           \param k The Sword tree key which belongs to this key
           \param module The module which belongs to this key
@@ -57,14 +60,6 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
     protected:
 
         const char * rawKey() const override;
-
-    private:
-        /** Disable assignment operator */
-        CSwordTreeKey& operator= (const CSwordTreeKey&);
-        /** Disable from base class to prevent compiler warnings */
-        inline CSwordTreeKey& operator= (const sword::TreeKeyIdx&) override {
-            return (*this);
-        };
 };
 
 #endif
