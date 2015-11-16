@@ -42,7 +42,7 @@ class BtDisplaySettingsButton: public QToolButton {
         void sigFilterOptionsChanged(FilterOptions filterOptions);
         void sigDisplayOptionsChanged(DisplayOptions displayOptions);
         void sigModulesChanged(const BtConstModuleList &modules);
-        void sigChanged(void);
+        void sigChanged();
 
     protected slots:
         void slotOptionToggled(QAction *action);

@@ -72,11 +72,11 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         /**
         * Uses the parameter to returns the next entry afer this key.
         */
-        CSwordLDKey* NextEntry( void );
+        CSwordLDKey* NextEntry();
         /**
         * Uses the parameter to returns the previous entry afer this key.
         */
-        CSwordLDKey* PreviousEntry( void );
+        CSwordLDKey* PreviousEntry();
 
         void setModule(const CSwordModuleInfo *module) override;
 
