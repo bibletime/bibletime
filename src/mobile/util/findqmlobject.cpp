@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -21,13 +21,13 @@ namespace btm {
 QQuickItem* findQmlObject(const QString& objectName) {
 
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    QQuickItem * rootObject = 0;
-    if (viewer != 0)
+    QQuickItem * rootObject = nullptr;
+    if (viewer != nullptr)
         rootObject = viewer->rootObject();
-    QQuickItem* object = 0;
-    if (rootObject != 0)
+    QQuickItem* object = nullptr;
+    if (rootObject != nullptr)
         object = rootObject->findChild<QQuickItem*>(objectName);
-    Q_ASSERT(object != 0);
+    Q_ASSERT(object != nullptr);
     return object;
 }
 

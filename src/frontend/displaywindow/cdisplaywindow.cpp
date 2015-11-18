@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -29,24 +29,35 @@
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
+
+
+namespace {
+
+inline QWidget * getProfileWindow(QWidget * w) {
+    for (; w; w = w->parentWidget())
+        if (QMdiSubWindow * const sw = qobject_cast<QMdiSubWindow *>(w))
+            return sw;
+    return nullptr;
+}
+
+}
 
 
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
         : QMainWindow(parent),
-        m_actionCollection(0),
+        m_actionCollection(nullptr),
         m_mdi(parent),
-        m_keyChooser(0),
-        m_swordKey(0),
+        m_keyChooser(nullptr),
+        m_swordKey(nullptr),
         m_isReady(false),
-        m_moduleChooserBar(0),
-        m_mainToolBar(0),
-        m_buttonsToolBar(0),
-        m_formatToolBar(0),
-        m_headerBar(0),
-        m_popupMenu(0),
-        m_displayWidget(0),
-        m_history(0) {
+        m_moduleChooserBar(nullptr),
+        m_mainToolBar(nullptr),
+        m_buttonsToolBar(nullptr),
+        m_formatToolBar(nullptr),
+        m_headerBar(nullptr),
+        m_popupMenu(nullptr),
+        m_displayWidget(nullptr),
+        m_history(nullptr) {
     setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
     m_actionCollection = new BtActionCollection(this);
     setModules(modules);
@@ -65,16 +76,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
 
 CDisplayWindow::~CDisplayWindow() {
     delete m_swordKey;
-    m_swordKey = 0;
-}
-
-QWidget * CDisplayWindow::getProfileWindow() const {
-    for (QWidget * w = parentWidget(); w; w = w->parentWidget()) {
-        QMdiSubWindow * sw = qobject_cast<QMdiSubWindow *>(w);
-        if (sw)
-            return sw;
-    }
-    return const_cast<CDisplayWindow *>(this);
+    m_swordKey = nullptr;
 }
 
 BibleTime* CDisplayWindow::btMainWindow() {
@@ -83,14 +85,14 @@ BibleTime* CDisplayWindow::btMainWindow() {
 
 void CDisplayWindow::setToolBarsHidden() {
     // Hide current window toolbars
-    if (mainToolBar())
-        mainToolBar()->setHidden(true);
-    if (buttonsToolBar())
-        buttonsToolBar()->setHidden(true);
-    if (moduleChooserBar())
-        moduleChooserBar()->setHidden(true);
-    if (formatToolBar())
-        formatToolBar()->setHidden(true);
+    if (m_mainToolBar)
+        m_mainToolBar->setHidden(true);
+    if (m_buttonsToolBar)
+        m_buttonsToolBar->setHidden(true);
+    if (m_moduleChooserBar)
+        m_moduleChooserBar->setHidden(true);
+    if (m_formatToolBar)
+        m_formatToolBar->setHidden(true);
 }
 void CDisplayWindow::clearMainWindowToolBars() {
     // Clear main window toolbars, except for works toolbar
@@ -114,17 +116,18 @@ const QString CDisplayWindow::windowCaption() {
 }
 
 /** Returns the used modules as a pointer list */
-const QList<const CSwordModuleInfo*> CDisplayWindow::modules() const {
+const BtConstModuleList CDisplayWindow::modules() const {
     return CSwordBackend::instance()->getConstPointerList(m_modules);
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */
-void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
+void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
     BtConfig & conf = btConfig();
 
     conf.beginGroup(windowGroup);
 
-    QWidget * w = getProfileWindow();
+    QWidget const * const w = getProfileWindow(parentWidget());
+    Q_ASSERT(w);
 
     /**
       \note We don't use saveGeometry/restoreGeometry for MDI subwindows,
@@ -133,7 +136,10 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
     */
     const QRect rect(w->x(), w->y(), w->width(), w->height());
     conf.setSessionValue<QRect>("windowRect", rect);
-
+    conf.setSessionValue<bool>("staysOnTop",
+                               w->windowFlags() & Qt::WindowStaysOnTopHint);
+    conf.setSessionValue<bool>("staysOnBottom",
+                               w->windowFlags() & Qt::WindowStaysOnBottomHint);
     conf.setSessionValue("maximized", w->isMaximized());
 
     bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
@@ -141,11 +147,8 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
     // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
 
     // Save current key:
-    if (key()) {
-        CSwordKey * k = key();
-        sword::VerseKey * vk = dynamic_cast<sword::VerseKey*>(k);
-        QString oldLang;
-        if (vk) {
+    if (CSwordKey * const k = key()) {
+        if (sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(k)) {
             // Save keys in english only:
             const QString oldLang = QString::fromLatin1(vk->getLocale());
             vk->setLocale("en");
@@ -157,10 +160,7 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
     }
 
     // Save list of modules:
-    QStringList mods;
-    Q_FOREACH (const CSwordModuleInfo * module, modules())
-        mods.append(module->name());
-    conf.setSessionValue("modules", mods);
+    conf.setSessionValue("modules", m_modules);
 
     conf.endGroup();
 }
@@ -170,7 +170,8 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
     conf.beginGroup(windowGroup);
     setUpdatesEnabled(false);
 
-    QWidget * w = getProfileWindow();
+    QWidget * const w = getProfileWindow(parentWidget());
+    Q_ASSERT(w);
 
     /**
       \note We don't use restoreGeometry/saveGeometry for MDI subwindows,
@@ -180,7 +181,10 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
     const QRect rect = conf.sessionValue<QRect>("windowRect");
     w->resize(rect.width(), rect.height());
     w->move(rect.x(), rect.y());
-
+    if (conf.sessionValue<bool>("staysOnTop", false))
+        w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnTopHint);
+    if (conf.sessionValue<bool>("staysOnBottom", false))
+        w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnBottomHint);
     if (conf.sessionValue<bool>("maximized"))
         w->showMaximized();
 
@@ -205,13 +209,13 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
 
-    actn = new QAction(QIcon(util::getIcon(CResMgr::displaywindows::general::search::icon)),
+    actn = new QAction(CResMgr::displaywindows::general::search::icon(),
                        tr("Search with works of this window"), a);
     actn->setShortcut(CResMgr::displaywindows::general::search::accel);
     a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
 
     BtToolBarPopupAction* action = new BtToolBarPopupAction(
-        QIcon(util::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
+        CResMgr::displaywindows::general::backInHistory::icon(),
         tr("Back in history"),
         a
     );
@@ -219,7 +223,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
     action = new BtToolBarPopupAction(
-        QIcon(util::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
+        CResMgr::displaywindows::general::forwardInHistory::icon(),
         tr("Forward in history"),
         a
     );
@@ -233,45 +237,45 @@ void CDisplayWindow::initActions() {
     CDisplayWindow::insertKeyboardActions(ac);
 
     QAction* actn = ac->action(CResMgr::displaywindows::general::search::actionName);
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      this, SLOT(slotSearchInModules()));
 
     CDisplayConnections* conn = displayWidget()->connectionsProxy();
 
     actn = ac->action("openLocation");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      this, SLOT(setFocusKeyChooser()));
     addAction(actn);
 
     actn = ac->action("selectAll");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(selectAll()));
     addAction(actn);
 
     actn = ac->action("copySelectedText");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(copySelection()));
     addAction(actn);
 
     actn = ac->action("findText");
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(openFindTextDialog()));
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     bool ok = QObject::connect(actn,                    SIGNAL(triggered()),
                                keyChooser()->history(), SLOT(back()));
     Q_ASSERT(ok);
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    Q_ASSERT(actn != 0);
+    Q_ASSERT(actn != nullptr);
     ok = QObject::connect(actn,                    SIGNAL(triggered()),
                           keyChooser()->history(), SLOT(fw()));
     Q_ASSERT(ok);
@@ -282,12 +286,12 @@ void CDisplayWindow::initActions() {
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
-    //first make sure all used Sword modules are still present
-    QMutableStringListIterator it(m_modules);
-    while (it.hasNext()) {
-        if (!CSwordBackend::instance()->findModuleByName(it.next())) {
-            it.remove();
-        }
+    { // First make sure all used Sword modules are still present:
+        CSwordBackend & backend = *(CSwordBackend::instance());
+        QMutableStringListIterator it(m_modules);
+        while (it.hasNext())
+            if (!backend.findModuleByName(it.next()))
+                it.remove();
     }
 
     if (m_modules.isEmpty()) {
@@ -295,12 +299,13 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         return;
     }
 
-    if (keyChooser()) keyChooser()->setModules( modules(), false );
+    if (CKeyChooser * const kc = keyChooser())
+        kc->setModules(modules(), false);
 
     lookup();
 
-    actionCollection()->readShortcuts("DisplayWindow shortcuts");
-    actionCollection()->readShortcuts("Readwindow shortcuts");
+    m_actionCollection->readShortcuts("DisplayWindow shortcuts");
+    m_actionCollection->readShortcuts("Readwindow shortcuts");
     emit sigModuleListSet(m_modules);
 }
 
@@ -339,11 +344,6 @@ void CDisplayWindow::setFilterOptions(const FilterOptions &filterOptions) {
     emit sigFilterOptionsChanged(m_filterOptions);
 }
 
-/** Set the ready status */
-void CDisplayWindow::setReady(bool ready) {
-    m_isReady = ready;
-}
-
 /** Returns true if the window may be closed. */
 bool CDisplayWindow::queryClose() {
     return true;
@@ -361,7 +361,7 @@ void CDisplayWindow::setKey( CSwordKey* key ) {
 }
 
 BTHistory* CDisplayWindow::history() {
-    if (m_history == 0)
+    if (m_history == nullptr)
         m_history = new BTHistory(this);
     return m_history;
 }
@@ -408,9 +408,8 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
 void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
     m_modules.clear();
 
-    foreach (CSwordModuleInfo* mod, newModules) {
+    Q_FOREACH(CSwordModuleInfo const * const mod, newModules)
         m_modules.append(mod->name());
-    }
 }
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
@@ -437,7 +436,7 @@ bool CDisplayWindow::init() {
     emit sigFilterOptionsChanged(m_filterOptions);
     emit sigModulesChanged(modules());
 
-    setReady(true);
+    m_isReady = true;
     return true;
 }
 
@@ -472,8 +471,8 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
         button, SLOT(setDisplayOptions(const DisplayOptions&)));
     connect(this, SIGNAL(sigFilterOptionsChanged(const FilterOptions&)),
         button, SLOT(setFilterOptions(const FilterOptions&)));
-    connect(this, SIGNAL(sigModulesChanged(const QList<const CSwordModuleInfo*>&)),
-        button, SLOT(setModules(const QList<const CSwordModuleInfo*>&)));
+    connect(this, SIGNAL(sigModulesChanged(const BtConstModuleList&)),
+        button, SLOT(setModules(const BtConstModuleList&)));
 
     button->setDisplayOptions(displayOptions(), false);
     button->setFilterOptions(filterOptions(), false);
@@ -536,12 +535,9 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
     else {     //given module not displayed in this window
         //if the module is displayed in another display window we assume a wrong drop
         //create a new window for the given module
-        QList<CSwordModuleInfo*> mList;
-        mList.append(m);
-
         BibleTime *mainWindow = btMainWindow();
-        Q_ASSERT(mainWindow != 0);
-        mainWindow->createReadDisplayWindow(mList, keyName);
+        Q_ASSERT(mainWindow != nullptr);
+        mainWindow->createReadDisplayWindow(QList<CSwordModuleInfo*>() << m, keyName);
     }
 }
 

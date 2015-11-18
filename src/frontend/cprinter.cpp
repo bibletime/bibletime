@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -20,27 +20,32 @@
 
 namespace Printing {
 
+namespace {
+
+inline FilterOptions mangleFilterOptions(FilterOptions const & fo) {
+    FilterOptions r(fo);
+    r.footnotes = false;
+    r.scriptureReferences = false;
+    r.strongNumbers = false;
+    r.morphTags = false;
+    r.headings = false;
+    return r;
+}
+
+} // anonymous namespace
+
 /// \todo WHY IS parent NOT USED!?
 CPrinter::CPrinter(QObject *,
                    const DisplayOptions &displayOptions,
                    const FilterOptions &filterOptions)
-        : QObject(0),
-          CDisplayRendering(displayOptions, filterOptions),
+        : QObject(nullptr),
+          CDisplayRendering(displayOptions, mangleFilterOptions(filterOptions)),
           m_htmlPage(new QWebPage())
-{
-    m_htmlPage->setParent(this);
-
-    //override the filteroptions set in the c-tor of CDisplayRendering
-    m_filterOptions.footnotes = false;
-    m_filterOptions.scriptureReferences = false;
-    m_filterOptions.strongNumbers = false;
-    m_filterOptions.morphTags = false;
-    m_filterOptions.headings = false;
-}
+{ m_htmlPage->setParent(this); }
 
 CPrinter::~CPrinter() {
     delete m_htmlPage;
-    m_htmlPage = 0;
+    m_htmlPage = nullptr;
 }
 
 void CPrinter::printKeyTree( KeyTree& tree ) {
@@ -90,9 +95,8 @@ QString CPrinter::renderEntry(const KeyTreeItem &i, CSwordKey * key) {
         if (!i.childList()->isEmpty()) {
             KeyTree const * tree = i.childList();
 
-            Q_FOREACH (const KeyTreeItem * const c, *tree) {
+            Q_FOREACH (const KeyTreeItem * const c, *tree)
                 ret.append( CDisplayRendering::renderEntry( *c ) );
-            }
         }
 
         ret.append("</div>");
@@ -102,7 +106,7 @@ QString CPrinter::renderEntry(const KeyTreeItem &i, CSwordKey * key) {
 }
 
 QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
-    QList<const CSwordModuleInfo*> modules = collectModules(tree);
+    BtConstModuleList modules = collectModules(tree);
     Q_ASSERT(modules.count() > 0);
 
     const CLanguageMgr::Language* const lang = modules.first()->language();

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -18,7 +18,6 @@
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 #include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/htmlescape.h"
 #include "util/tool.h"
 
 
@@ -31,7 +30,6 @@ const int LOWER_BORDER = 10;
 const int UPPER_BORDER = 10;
 
 const int ITEM_TEXT_SIZE = 8;
-const int LABEL_TEXT_SIZE = 6;
 
 //used for the shift between the bars
 const int BAR_DELTAX = 4;
@@ -48,7 +46,7 @@ const int LEGEND_WIDTH = 85;
 CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
         : QGraphicsScene(parent),
         m_scaleFactor(0.0),
-        m_legend(0) {
+        m_legend(nullptr) {
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
 }
@@ -79,11 +77,11 @@ void CSearchAnalysisScene::analyse(
                       LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules - 1) );
     m_legend->show();
 
-    int xPos = (int)(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
+    int xPos = static_cast<int>(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
     int moduleIndex = 0;
     m_maxCount = 0;
     int count = 0;
-    CSwordVerseKey key(0);
+    CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
 
     CSearchAnalysisItem* analysisItem = m_itemList[key.book()];
@@ -106,7 +104,7 @@ void CSearchAnalysisScene::analyse(
             QString tip = analysisItem->getToolTip();
             analysisItem->setToolTip(tip);
             analysisItem->show();
-            xPos += (int)analysisItem->width() + SPACE_BETWEEN_PARTS;
+            xPos += static_cast<int>(analysisItem->width() + SPACE_BETWEEN_PARTS);
         }
         ok = key.next(CSwordVerseKey::UseBook);
         analysisItem = m_itemList[key.book()];
@@ -130,8 +128,8 @@ void CSearchAnalysisScene::setResults(
     }
 
     m_itemList.clear();
-    CSearchAnalysisItem* analysisItem = 0;
-    CSwordVerseKey key(0);
+    CSearchAnalysisItem* analysisItem = nullptr;
+    CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
         analysisItem = new CSearchAnalysisItem(m_results.count(), key.book(), &m_scaleFactor, m_results);
@@ -157,15 +155,15 @@ void CSearchAnalysisScene::reset() {
     if (m_legend) m_legend->hide();
 
     delete m_legend;
-    m_legend = 0;
+    m_legend = nullptr;
 
     update();
 }
 
 /** No descriptions */
 void CSearchAnalysisScene::slotResized() {
-    m_scaleFactor = (double)( (double)(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
-                              / (double)m_maxCount);
+    m_scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
+                    / static_cast<double>(m_maxCount);
     QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
     while ( it.hasNext() ) {
         it.next();
@@ -214,7 +212,7 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
     unsigned int count = 0;
     const unsigned int resultCount = result.getCount();
     while (i < resultCount) {
-        if (strncmp(book.toUtf8(), (const char *) *result.getElement(i), length))
+        if (strncmp(book.toUtf8(), result.getElement(i)->getText(), length))
             break;
         i++;
         ++count;
@@ -224,11 +222,9 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-    using util::htmlEscape;
-
     typedef CSwordModuleSearch::Results::const_iterator RCI;
 
-    const QString fileName = QFileDialog::getSaveFileName(0,
+    const QString fileName = QFileDialog::getSaveFileName(nullptr,
                                                           tr("Save Search Analysis"),
                                                           QString::null,
                                                           tr("XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)"));
@@ -258,7 +254,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += "</h1><p><span style=\"font-weight:bold\">";
     text += tr("Search text:");
     text += "</span>&nbsp;";
-    text += htmlEscape(CSearchDialog::getSearchDialog()->searchText());
+    text += CSearchDialog::getSearchDialog()->searchText().toHtmlEscaped();
     text += "</p><table><caption>";
     text += tr("Results by work and book");
     text += "</caption><tr><th>";
@@ -267,18 +263,18 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         text += "<th>";
-        text += htmlEscape(it.key()->name());
+        text += it.key()->name().toHtmlEscaped();
         text += "</th>";
     }
     text += "</tr>";
 
-    CSwordVerseKey key(0);
+    CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
 
     do {
         text += "<tr><td>";
         const QString keyBook(key.book());
-        text += htmlEscape(keyBook);
+        text += keyBook.toHtmlEscaped();
         text += "</td>";
 
         int mi = 0; // Module index

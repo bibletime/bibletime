@@ -2,20 +2,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/rendering/cdisplayrendering.h"
+#include "cdisplayrendering.h"
 
-#include <QString>
 #include <QRegExp>
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/config/btconfig.h"
+#include <QString>
+#include "../config/btconfig.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
 
 
 namespace Rendering {
@@ -37,7 +37,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
     vk.setIntros(true);
 
     if (isBible) {
-        vk.setKey(item.key());
+        vk.setKey(item.mappedKey() ? item.mappedKey()->key() : item.key());
     }
 
     if (isBible && (vk.getVerse() == 0)) {
@@ -51,16 +51,30 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
             break; //no key is valid for all modules
         }
 
-        case KeyTreeItem::Settings::CompleteShort: {
-            if (isBible) {
-                linkText = QString::fromUtf8(vk.getShortText());
-                break;
-            }
+    case KeyTreeItem::Settings::ExpandedShort: {
+        if (isBible) {
+            linkText = module->name() + ':' + QString::fromUtf8(vk.getShortText());
+            break;
+        }
+    }
 
-            //fall through for non-Bible modules
+    case KeyTreeItem::Settings::CompleteShort: {
+        if (isBible) {
+            linkText = QString::fromUtf8(vk.getShortText());
+            break;
         }
 
-        case KeyTreeItem::Settings::CompleteLong: {
+        //fall through for non-Bible modules
+    }
+
+    case KeyTreeItem::Settings::ExpandedLong: {
+        if (isBible) {
+            linkText = QString("%1 (%2)").arg(vk.key()).arg(module->name());
+            break;
+        }
+    }
+
+    case KeyTreeItem::Settings::CompleteLong: {
             if (isBible) {
                 linkText = vk.key();
                 break;
@@ -69,14 +83,38 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
             //fall through for non-Bible modules
         }
 
-        case KeyTreeItem::Settings::SimpleKey: {
+        case KeyTreeItem::Settings::SimpleKey:
             if (isBible) {
-                linkText = QString::number(vk.getVerse());
-                break;
-            }
+                if(item.mappedKey() != nullptr) {
+                    CSwordVerseKey baseKey(*item.modules().begin());
+                    baseKey.setKey(item.key());
 
-            //fall through for non-Bible modules
-        }
+                    if (vk.book() != baseKey.book()) {
+                        linkText = QString::fromUtf8(vk.getShortText());
+                    } else if (vk.getChapter() != baseKey.getChapter()) {
+                        linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
+                    } else {
+                        linkText = QString::number(vk.getVerse());
+                    }
+
+                    if(vk.isBoundSet()) {
+                        linkText += "-";
+                        sword::VerseKey const & upper = vk.getUpperBound();
+                        sword::VerseKey const & lower = vk.getLowerBound();
+                        if (upper.getBook() != lower.getBook()) {
+                            linkText += QString::fromUtf8(upper.getShortText());
+                        } else if(upper.getChapter() != lower.getChapter()) {
+                            linkText += QString("%1:%2").arg(upper.getChapter())
+                                                        .arg(lower.getVerse());
+                        } else {
+                            linkText += QString::number(upper.getVerse());
+                        }
+                    }
+                } else {
+                    linkText = QString::number(vk.getVerse());
+                }
+                break;
+            } // else fall through for non-Bible modules
 
         default: { //default behaviour to return the passed key
             linkText = item.key();
@@ -107,7 +145,7 @@ QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
 }
 
 QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) {
-    QList<const CSwordModuleInfo*> modules = collectModules(tree);
+    BtConstModuleList modules = collectModules(tree);
 
     //marking words is very slow, we have to find a better solution
 

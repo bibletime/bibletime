@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,8 +15,8 @@
 #include <QMainWindow>
 
 #include <QStringList>
+#include "backend/btglobal.h"
 #include "backend/managers/cswordbackend.h"
-#include "btglobal.h"
 
 
 class BtActionCollection;
@@ -46,9 +46,6 @@ class CDisplayWindow : public QMainWindow {
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        /** Returns a pointer to the parent widget of type QMdiSubWindow or pointer to self if none found. */
-        QWidget * getProfileWindow() const;
-
         /** Returns pointer to the mdi area object.*/
         inline CMDIArea *mdi() const {
             return m_mdi;
@@ -58,7 +55,7 @@ class CDisplayWindow : public QMainWindow {
         const QString windowCaption();
 
         /** Returns the used modules as a pointer list.*/
-        const QList<const CSwordModuleInfo*> modules() const;
+        const BtConstModuleList modules() const;
 
         /** Returns the used modules as a string list. */
         inline const QStringList &getModuleList() const {
@@ -66,7 +63,7 @@ class CDisplayWindow : public QMainWindow {
         }
 
         /** Store the settings of this window in the given CProfileWindow object.*/
-        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void storeProfileSettings(QString const & windowGroup) const;
 
         /** Load the settings the given CProfileWindow object into this window.*/
         virtual void applyProfileSettings(const QString & windowGroup);
@@ -80,9 +77,6 @@ class CDisplayWindow : public QMainWindow {
         inline const FilterOptions &filterOptions() const {
             return m_filterOptions;
         }
-
-        /** Set the ready status. */
-        void setReady(bool ready);
 
         /** Returns true if the widget is ready for use. */
         inline bool isReady() const {
@@ -105,7 +99,7 @@ class CDisplayWindow : public QMainWindow {
 
         /** Returns the key of this display window. */
         inline CSwordKey *key() const {
-            Q_ASSERT(m_swordKey != 0);
+            Q_ASSERT(m_swordKey != nullptr);
             return m_swordKey;
         }
 
@@ -113,7 +107,7 @@ class CDisplayWindow : public QMainWindow {
         * Initialize the window. Call this method from the outside,
         * because calling this in the constructor is not possible!
         */
-        virtual bool init();
+        bool init();
 
         /** Sets and inits the properties of the main navigation toolbar.*/
         void setMainToolBar( QToolBar* bar );
@@ -149,7 +143,7 @@ class CDisplayWindow : public QMainWindow {
 
         /** Returns the display widget used by this implementation of CDisplayWindow. */
         virtual inline CDisplay *displayWidget() const {
-            Q_ASSERT(m_displayWidget != 0);
+            Q_ASSERT(m_displayWidget != nullptr);
             return m_displayWidget;
         }
 
@@ -160,9 +154,7 @@ class CDisplayWindow : public QMainWindow {
         * Returns whether syncs to the active window are allowed at this time for this display window
         * @return boolean value whether sync is allowed
         */
-        virtual bool syncAllowed() const {
-            return false;
-        };
+        virtual bool syncAllowed() const { return false; }
 
         /**
         * Return pointer to the BibleTime main window
@@ -198,7 +190,7 @@ class CDisplayWindow : public QMainWindow {
         void sigFilterOptionsChanged(const FilterOptions &filterOptions);
 
         /**  signal for change of modules */
-        void sigModulesChanged(const QList<const CSwordModuleInfo*> &modules);
+        void sigModulesChanged(const BtConstModuleList &modules);
 
         /**  signal for sword key change */
         void sigKeyChanged(CSwordKey* key);
@@ -232,7 +224,7 @@ class CDisplayWindow : public QMainWindow {
         friend class CBibleReadWindow;
 
         CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-        virtual ~CDisplayWindow();
+        ~CDisplayWindow() override;
 
         /**
           \returns the display options used by this display window.
@@ -286,7 +278,7 @@ class CDisplayWindow : public QMainWindow {
         /** Called to add actions to mainWindow toolbars */
         virtual void setupMainWindowToolBars() = 0;
 
-        virtual void closeEvent(QCloseEvent* e);
+        void closeEvent(QCloseEvent* e) override;
 
         void setToolBarsHidden();
         void clearMainWindowToolBars();

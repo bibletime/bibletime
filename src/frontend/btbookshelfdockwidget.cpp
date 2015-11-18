@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -26,19 +26,18 @@
 #include "frontend/btbookshelfwidget.h"
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 namespace {
 const QString groupingOrderKey("GUI/MainWindow/Docks/Bookshelf/grouping");
 }
 
-BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = 0;
+BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = nullptr;
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f)
 {
-    Q_ASSERT(m_instance == 0);
+    Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
     setObjectName("BookshelfDock");
@@ -115,30 +114,30 @@ void BtBookshelfDockWidget::initMenus() {
     m_itemContextMenu->addAction(m_itemOpenAction);
 
     m_itemSearchAction = new QAction(this);
-    m_itemSearchAction->setIcon(util::getIcon(RM::search::icon));
+    m_itemSearchAction->setIcon(RM::search::icon());
     m_itemActionGroup->addAction(m_itemSearchAction);
     m_itemContextMenu->addAction(m_itemSearchAction);
 
     m_itemEditMenu = new QMenu(this);
-    m_itemEditMenu->setIcon(util::getIcon(RM::editModuleMenu::icon));
+    m_itemEditMenu->setIcon(RM::editModuleMenu::icon());
     m_itemContextMenu->addMenu(m_itemEditMenu);
     m_itemEditPlainAction = new QAction(this);
-    m_itemEditPlainAction->setIcon(util::getIcon(RM::editModulePlain::icon));
+    m_itemEditPlainAction->setIcon(RM::editModulePlain::icon());
     m_itemActionGroup->addAction(m_itemEditPlainAction);
     m_itemEditMenu->addAction(m_itemEditPlainAction);
 
     m_itemEditHtmlAction = new QAction(this);
-    m_itemEditHtmlAction->setIcon(util::getIcon(RM::editModuleHTML::icon));
+    m_itemEditHtmlAction->setIcon(RM::editModuleHTML::icon());
     m_itemActionGroup->addAction(m_itemEditHtmlAction);
     m_itemEditMenu->addAction(m_itemEditHtmlAction);
 
     m_itemUnlockAction = new QAction(this);
-    m_itemUnlockAction->setIcon(util::getIcon(RM::unlockModule::icon));
+    m_itemUnlockAction->setIcon(RM::unlockModule::icon());
     m_itemActionGroup->addAction(m_itemUnlockAction);
     m_itemContextMenu->addAction(m_itemUnlockAction);
 
     m_itemAboutAction = new QAction(this);
-    m_itemAboutAction->setIcon(util::getIcon(RM::aboutModule::icon));
+    m_itemAboutAction->setIcon(RM::aboutModule::icon());
     m_itemActionGroup->addAction(m_itemAboutAction);
     m_itemContextMenu->addAction(m_itemAboutAction);
 
@@ -181,7 +180,7 @@ void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
         if (BibleTime::moduleUnlock(module)) {
             // Re-initialize module pointer:
             module = CSwordBackend::instance()->findModuleByName(moduleName);
-            Q_ASSERT(module != 0);
+            Q_ASSERT(module != nullptr);
 
             emit moduleOpenTriggered(module);
         }
@@ -193,8 +192,10 @@ void BtBookshelfDockWidget::slotModuleChecked(CSwordModuleInfo *module, bool c) 
 }
 
 void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
-    CSwordModuleInfo *module((CSwordModuleInfo*) m_itemContextMenu->property("BtModule").value<void*>());
-    if (module == 0) return;
+    CSwordModuleInfo * const module =
+        static_cast<CSwordModuleInfo *>(
+                m_itemContextMenu->property("BtModule").value<void *>());
+    if (module == nullptr) return;
 
     if (action == m_itemOpenAction) {
         emit moduleOpenTriggered(module);

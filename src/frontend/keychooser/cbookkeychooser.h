@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,30 +31,18 @@ class CBookKeyChooser: public CKeyChooser {
 
 public:
 
-    CBookKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+    CBookKeyChooser(const BtConstModuleList & modules,
                     BTHistory * history,
-                    CSwordKey * key = 0,
-                    QWidget * parent = 0);
+                    CSwordKey * key = nullptr,
+                    QWidget * parent = nullptr);
 
-    /**
-      Reimplemented from CKeyChooser.
-    */
-    virtual void refreshContent();
+    void refreshContent() override;
 
-    /**
-    * Sets another module to this keychooser
-    */
-    virtual void setModules(const QList<const CSwordModuleInfo *> & modules,
-                            bool refresh = false);
-    /**
-    * Returns the key of this keychooser
-    */
-    virtual CSwordKey * key();
+    void setModules(const BtConstModuleList & modules,
+                    bool refresh = false) override;
+    CSwordKey * key() override;
 
-    /**
-    * Sets a new key to this keychooser
-    */
-    virtual void setKey(CSwordKey * key);
+    void setKey(CSwordKey * key) override;
 
     /**
     * Sets a new key to this keychooser
@@ -66,7 +54,7 @@ public slots: // Public slots
     /**
     * Updates the keychoosers for the given key but emit no signal.
     */
-    void updateKey(CSwordKey * key);
+    void updateKey(CSwordKey * key) override;
 
 protected: /* Methods: */
 
@@ -76,8 +64,7 @@ protected: /* Methods: */
     */
     void setupCombo(const QString & key, const int depth, const int currentItem);
 
-    /** No descriptions */
-    virtual void adjustFont();
+    void adjustFont() override;
 
 protected slots:
 
@@ -86,7 +73,7 @@ protected slots:
     */
     void keyChooserChanged(int);
 
-    virtual void setKey(const QString & newKey);
+    void setKey(const QString & newKey) override;
 
 private: /* Fields: */
 

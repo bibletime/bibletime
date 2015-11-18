@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,7 +22,6 @@
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
 namespace util {
@@ -43,7 +42,7 @@ bool savePlainFile(const QString & filename,
 
     if (saveFile.exists()) {
         if (!forceOverwrite
-            && message::showQuestion(0, QObject::tr("Overwrite File?"),
+            && message::showQuestion(nullptr, QObject::tr("Overwrite File?"),
                 QString::fromLatin1("<qt><b>%1</b><br/>%2</qt>")
                 .arg( QObject::tr("The file already exists.") )
                 .arg( QObject::tr("Do you want to overwrite it?")),
@@ -66,13 +65,13 @@ bool savePlainFile(const QString & filename,
         if (saveFile.error() == QFile::NoError)
             return true;
 
-        QMessageBox::critical(0, QObject::tr("Error"),
+        QMessageBox::critical(nullptr, QObject::tr("Error"),
                               QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
                                   .arg(QObject::tr("Error while writing to file."))
                                   .arg(QObject::tr("Please check that enough disk space is available.")));
     }
     else {
-        QMessageBox::critical(0, QObject::tr("Error"),
+        QMessageBox::critical(nullptr, QObject::tr("Error"),
                               QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
                                   .arg(QObject::tr("The file couldn't be opened for saving."))
                                   .arg(QObject::tr("Please check permissions etc.")));
@@ -81,57 +80,41 @@ bool savePlainFile(const QString & filename,
     return false;
 }
 
-
-QIcon getIconForModule(const CSwordModuleInfo * const module) {
-    return util::getIcon(getIconNameForModule(module));
-}
-
-QString getIconNameForModule(const CSwordModuleInfo * const module) {
-    //qDebug() << "util::tool::getIconNameForModule";
+QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
     if (!module)
-        return CResMgr::modules::book::icon_locked;
+        return CResMgr::modules::book::icon_locked();
 
     if (module->category() == CSwordModuleInfo::Cult)
-        return "stop.svg";
+        return CResMgr::modules::icon_cult();
 
     switch (module->type()) {
         case CSwordModuleInfo::Bible:
             if (module->isLocked())
-                return CResMgr::modules::bible::icon_locked;
-            else
-                return CResMgr::modules::bible::icon_unlocked;
-            break;
+                return CResMgr::modules::bible::icon_locked();
+            return CResMgr::modules::bible::icon_unlocked();
 
         case CSwordModuleInfo::Lexicon:
             if (module->isLocked())
-                return CResMgr::modules::lexicon::icon_locked;
-            else
-                return CResMgr::modules::lexicon::icon_unlocked;
-            break;
+                return CResMgr::modules::lexicon::icon_locked();
+            return CResMgr::modules::lexicon::icon_unlocked();
 
         case CSwordModuleInfo::Commentary:
             if (module->isLocked())
-                return CResMgr::modules::commentary::icon_locked;
-            else
-                return CResMgr::modules::commentary::icon_unlocked;
-            break;
+                return CResMgr::modules::commentary::icon_locked();
+            return CResMgr::modules::commentary::icon_unlocked();
 
         case CSwordModuleInfo::GenericBook:
             if (module->isLocked())
-                return CResMgr::modules::book::icon_locked;
-            else
-                return CResMgr::modules::book::icon_unlocked;
-            break;
+                return CResMgr::modules::book::icon_locked();
+            return CResMgr::modules::book::icon_unlocked();
 
         case CSwordModuleInfo::Unknown: //fallback
         default:
             if (module->isLocked())
-                return CResMgr::modules::book::icon_locked;
-            else
-                return CResMgr::modules::book::icon_unlocked;
-            break;
+                return CResMgr::modules::book::icon_locked();
+            return CResMgr::modules::book::icon_unlocked();
     }
-    return CResMgr::modules::book::icon_unlocked;
+    return CResMgr::modules::book::icon_unlocked();
 }
 
 QLabel * explanationLabel(QWidget * const parent,

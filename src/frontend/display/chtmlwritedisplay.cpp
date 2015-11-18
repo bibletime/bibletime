@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,7 +21,6 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/chtmlwritewindow.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 class BtActionCollection;
@@ -44,7 +43,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------bold toggle-------------------------
     m_actions.bold = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
+        CResMgr::displaywindows::writeWindow::boldText::icon(),
         tr("Bold"),
         this);
     m_actions.bold->setCheckable(true);
@@ -56,7 +55,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------italic toggle-------------------------
     m_actions.italic = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
+        CResMgr::displaywindows::writeWindow::italicText::icon(),
         tr("Italic"),
         this );
     m_actions.italic->setCheckable(true);
@@ -68,7 +67,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------underline toggle-------------------------
     m_actions.underline = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
+        CResMgr::displaywindows::writeWindow::underlinedText::icon(),
         tr("Underline"),
         this );
     m_actions.underline->setCheckable(true);
@@ -80,7 +79,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------align left toggle-------------------------
     m_actions.alignLeft = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
+        CResMgr::displaywindows::writeWindow::alignLeft::icon(),
         tr("Left"), this);
     m_actions.alignLeft->setCheckable(true);
     m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
@@ -90,7 +89,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------align center toggle-------------------------
     m_actions.alignCenter = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
+        CResMgr::displaywindows::writeWindow::alignCenter::icon(),
         tr("Center"), this);
     m_actions.alignCenter->setCheckable(true);
     m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
@@ -100,7 +99,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------align right toggle-------------------------
     m_actions.alignRight = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
+        CResMgr::displaywindows::writeWindow::alignRight::icon(),
         tr("Right"), this);
     m_actions.alignRight->setCheckable(true);
     m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
@@ -206,13 +205,7 @@ void CHTMLWriteDisplay::slotCurrentCharFormatChanged(const QTextCharFormat &) {
 
 void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
     if (!m_handingFormatChangeFromEditor)
-        setFontPointSize((qreal)newSize);
-}
-
-/** Is called when a new color was selected. */
-void CHTMLWriteDisplay::slotFontColorChosen( const QColor& c) {
-    if (!m_handingFormatChangeFromEditor)
-        setTextColor( c );
+        setFontPointSize(static_cast<qreal>(newSize));
 }
 
 void CHTMLWriteDisplay::slotFontFamilyChosen(const QFont& font) {
@@ -255,7 +248,8 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * action
     fontColorChooser->setToolTip(tr("Font color"));
     bar->addWidget(fontColorChooser);
     ok = connect(fontColorChooser, SIGNAL(changed(const QColor&)),
-                 this,             SLOT(slotFontColorChosen(const QColor&)), Qt::DirectConnection);
+                 this,             SLOT(setTextColor(QColor const &)),
+                 Qt::DirectConnection);
     Q_ASSERT(ok);
     ok = connect(this,             SIGNAL(signalFontColorChanged(const QColor&)),
                  fontColorChooser, SLOT(setColor(QColor)), Qt::DirectConnection);

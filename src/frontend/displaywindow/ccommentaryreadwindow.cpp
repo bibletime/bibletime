@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,7 +22,6 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
@@ -52,7 +51,7 @@ void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
     a->addAction("previousVerse", qaction);
 
-    qaction = new QAction(QIcon(util::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
+    qaction = new QAction(CResMgr::displaywindows::commentaryWindow::syncWindow::icon(),
         tr("Synchronize"), a);
     qaction->setCheckable(true);
     qaction->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
@@ -67,50 +66,50 @@ void CCommentaryReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     QAction *qaction = ac->action("nextEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     qaction->setEnabled(false);
     qaction = ac->action("previousEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     qaction->setEnabled(false);
 
     qaction = ac->action("nextBook");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(nextBook()));
     addAction(qaction);
 
     qaction = ac->action("previousBook");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(previousBook()));
     addAction(qaction);
 
     qaction = ac->action("nextChapter");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(nextChapter()));
     addAction(qaction);
 
     qaction = ac->action("previousChapter");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(previousChapter()));
     addAction(qaction);
 
     qaction = ac->action("nextVerse");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(nextVerse()));
     addAction(qaction);
 
     qaction = ac->action("previousVerse");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     QObject::connect(qaction, SIGNAL(triggered()),
                      this,    SLOT(previousVerse()));
     addAction(qaction);
 
     qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     m_syncButton = qaction;
     addAction(qaction);
 
@@ -125,7 +124,9 @@ void CCommentaryReadWindow::applyProfileSettings(const QString & windowGroup) {
     m_syncButton->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncEnabled", false));
 }
 
-void CCommentaryReadWindow::storeProfileSettings(const QString & windowGroup) {
+void CCommentaryReadWindow::storeProfileSettings(QString const & windowGroup)
+        const
+{
     CLexiconReadWindow::storeProfileSettings(windowGroup);
 
     Q_ASSERT(windowGroup.endsWith('/'));

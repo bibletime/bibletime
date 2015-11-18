@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,45 +12,45 @@
 #ifndef RENDERINGCHTMLEXPORTRENDERING_H
 #define RENDERINGCHTMLEXPORTRENDERING_H
 
-#include "backend/rendering/ctextrendering.h"
+#include "ctextrendering.h"
 
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "btglobal.h"
+#include "../btglobal.h"
+#include "../config/btconfig.h"
+#include "../managers/cswordbackend.h"
 
 
 namespace Rendering {
 
 /**
- * This CTextRenerding implementation
- * creates HTML specially made for export as HTML files.
- * @short HTML rendering for export.
- * @author The BibleTime team
- */
+  \brief Provides HTML rendering for export.
+  This CTextRenerding implementation creates HTML specially made for export as
+  HTML files.
+*/
 class CHTMLExportRendering: public CTextRendering {
 
-    public: /* Methods: */
+public: /* Methods: */
 
-        CHTMLExportRendering(
-            bool addText,
-            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = btConfig().getFilterOptions());
+    CHTMLExportRendering(
+        bool addText,
+        DisplayOptions const & displayOptions =
+                btConfig().getDisplayOptions(),
+        FilterOptions const & filterOptions =
+                btConfig().getFilterOptions());
 
-        ~CHTMLExportRendering() {};
+protected: /* Methods: */
 
-    protected: /* Methods: */
+    QString renderEntry(KeyTreeItem const & item,
+                        CSwordKey * key = nullptr) override;
+    QString finishText(QString const & text, KeyTree const & tree) override;
+    virtual QString entryLink(KeyTreeItem const & item,
+                              CSwordModuleInfo const * module);
+    void initRendering() override;
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
-        virtual QString finishText(const QString &text, const KeyTree &tree);
-        virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo *module);
-        virtual void initRendering();
+protected: /* Fields: */
 
-    protected: /* Fields: */
-
-        DisplayOptions m_displayOptions;
-        FilterOptions m_filterOptions;
-        bool m_addText;
+    DisplayOptions const m_displayOptions;
+    FilterOptions const m_filterOptions;
+    bool const m_addText;
 
 }; /* class CHTMLExportRendering */
 

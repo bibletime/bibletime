@@ -2,23 +2,22 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/rendering/ctextrendering.h"
-
-#include <QSharedPointer>
+#include "ctextrendering.h"
 
 #include <QRegExp>
+#include <QScopedPointer>
 #include <QtAlgorithms>
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
 
 // Sword includes:
 #include <swkey.h>
@@ -49,7 +48,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &content,
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
-                                         const QList<const CSwordModuleInfo*> &mods,
+                                         const BtConstModuleList &mods,
                                          const Settings &settings)
         : m_settings( settings ),
         m_moduleList( mods ),
@@ -156,12 +155,12 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
 }
 
-QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree &tree) const {
+BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     //collect all modules which are available and used by child items
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
 
     Q_FOREACH (const KeyTreeItem * const c, tree) {
-        Q_ASSERT(c != 0);
+        Q_ASSERT(c != nullptr);
         Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
             if (!modules.contains(mod))
                 modules.append(mod);
@@ -173,15 +172,14 @@ QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree &tre
 const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     initRendering();
 
-    const QList<const CSwordModuleInfo*> modules = collectModules(tree);
+    const BtConstModuleList modules = collectModules(tree);
     QString t;
 
     //optimization for entries with the same key
-    QSharedPointer<CSwordKey> key(
-        (modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
-    );
 
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
+        QScopedPointer<CSwordKey> key(
+                CSwordKey::createInstance(modules.first()));
         Q_FOREACH (const KeyTreeItem * const c, tree) {
             key->setKey(c->key());
             t.append( renderEntry( *c, key.data()) );
@@ -199,7 +197,7 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
 const QString CTextRendering::renderKeyRange(
         const QString &start,
         const QString &stop,
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &highlightKey,
         const KeyTreeItem::Settings &keySettings)
 {
@@ -207,10 +205,10 @@ const QString CTextRendering::renderKeyRange(
     const CSwordModuleInfo *module = modules.first();
     //qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
 
-    QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
+    QScopedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
     lowerBound->setKey(start);
 
-    QSharedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
+    QScopedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
     upperBound->setKey(stop);
 
     sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.data());
@@ -262,7 +260,7 @@ const QString CTextRendering::renderKeyRange(
 
 const QString CTextRendering::renderSingleKey(
         const QString &key,
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const KeyTreeItem::Settings &settings)
 {
     KeyTree tree;

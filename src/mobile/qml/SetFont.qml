@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -179,6 +179,7 @@ Rectangle {
             elide: Text.ElideRight
             text: qsTr("Font Size")
             font.pointSize: btStyle.uiFontPointSize
+            color: btStyle.textColor
         }
 
         Slider {
@@ -188,6 +189,23 @@ Rectangle {
             height: fontSize.height
             minimumValue: 10
             maximumValue: 30
+            style: SliderStyle {
+                    groove: Rectangle {
+                        implicitWidth: 200
+                        implicitHeight: 8
+                        color: btStyle.textColor
+                        radius: 8
+                    }
+                    handle: Rectangle {
+                        anchors.centerIn: parent
+                        color: btStyle.textBackgroundColor
+                        border.color: btStyle.textColor
+                        border.width: 3
+                        implicitWidth: btStyle.pixelsPerMillimeterY * 4
+                        implicitHeight: btStyle.pixelsPerMillimeterY * 4
+                        radius: btStyle.pixelsPerMillimeterY * 2
+                    }
+                }
             onValueChanged: {
 
                 var fontName = fontCombo.currentText
@@ -218,7 +236,7 @@ Rectangle {
         Button {
             id: okButton
             height: fontCombo.height
-            width: languageCombo.width/3
+            width: setFont.width/3
             action: okAction
             style: BtButtonStyle {
             }
@@ -237,7 +255,7 @@ Rectangle {
         Button {
             id: cancelButton
             height: fontCombo.height
-            width: languageCombo.width/3
+            width: setFont.width/3
             action: cancelAction
             style: BtButtonStyle {
             }

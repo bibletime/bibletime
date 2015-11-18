@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -30,13 +30,12 @@ class BtFontChooserWidget : public QFrame {
 
     public: /* Methods: */
 
-        BtFontChooserWidget(QWidget *parent = 0);
+        BtFontChooserWidget(QWidget *parent = nullptr);
 
         void setFont(const QFont &font);
         void setSampleText(const QString &text);
 
-        // Inherited from QWidget:
-        virtual QSize sizeHint() const;
+        QSize sizeHint() const override;
 
     signals:
 

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -34,38 +34,27 @@ class CLexiconKeyChooser : public CKeyChooser {
         Q_OBJECT
 
     public:
-        CLexiconKeyChooser(const QList<const CSwordModuleInfo*> &modules,
-                           BTHistory *history, CSwordKey *key = 0,
-                           QWidget *parent = 0);
+        CLexiconKeyChooser(const BtConstModuleList &modules,
+                           BTHistory *history, CSwordKey *key = nullptr,
+                           QWidget *parent = nullptr);
 
     public slots:
-        /**
-          Reimplemented from CKeyChooser::key().
-        */
-        virtual CSwordKey *key();
 
-        /**
-          Reimplemented from CKeyChooser::setKey().
-        */
-        virtual void setKey(CSwordKey* key);
+        CSwordKey *key() override;
+
+        void setKey(CSwordKey* key) override;
 
         /**
         * used to react to changes in the @ref CKeyChooserWidget
         *
         * @param index not used
         **/
-        virtual void activated(int index);
+        void activated(int index);
 
-        /**
-          Reimplemented from CKeyChooser::refreshContent().
-        */
-        virtual void refreshContent();
+        void refreshContent() override;
 
-        /**
-          Reimplemented from CKeyChooser::setModules().
-        */
-        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
-                                bool refresh = true);
+        void setModules(const BtConstModuleList &modules,
+                        bool refresh = true) override;
 
     protected:
         CKeyChooserWidget *m_widget;
@@ -73,13 +62,13 @@ class CLexiconKeyChooser : public CKeyChooser {
         QList<const CSwordLexiconModuleInfo*> m_modules;
         QHBoxLayout *m_layout;
 
-        virtual inline void adjustFont() {}
+        inline void adjustFont() override {}
 
     public slots: // Public slots
-        virtual void updateKey(CSwordKey* key);
+        void updateKey(CSwordKey* key) override;
 
     protected slots:
-        virtual void setKey(const QString & newKey);
+        void setKey(const QString & newKey) override;
 
 };
 

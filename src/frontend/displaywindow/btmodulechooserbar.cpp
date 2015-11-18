@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -20,26 +20,26 @@
 
 BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
         : QToolBar(parent),
-        BtWindowModuleChooser(CSwordModuleInfo::Unknown, 0),
+        BtWindowModuleChooser(CSwordModuleInfo::Unknown, nullptr),
         m_idCounter(0),
-        m_window(0) {
+        m_window(nullptr) {
     setAllowedAreas(Qt::TopToolBarArea);
     setFloatable(false);
 }
 
 void BtModuleChooserBar::slotBackendModulesChanged() {
     m_modules = m_window->getModuleList();
-
     adjustButtonCount();
 
-    //recreate all menus from scratch
-    for (int i = 0; i < m_buttonList.count(); i++) {
-        BtModuleChooserButton* button = m_buttonList.at(i);
-        QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
-        qDebug() << "refresh button's menu:" << moduleName << i;
-        int leftLikeModules = leftLikeParallelModules(m_modules);
-        button->recreateMenu(m_modules, moduleName, i, leftLikeModules);
-    }
+    // Recreate all menus from scratch:
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_buttonList.count(); i++)
+        m_buttonList.at(i)->recreateMenu(m_modules,
+                                         (i >= m_modules.count())
+                                         ? QString::null
+                                         : m_modules.at(i),
+                                         i,
+                                         leftLikeModules);
 }
 
 void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
@@ -113,10 +113,12 @@ void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::Mo
 }
 
 void BtModuleChooserBar::updateButtonMenus() {
-    int leftLikeModules = leftLikeParallelModules(m_modules);
-    for (int i = 0; i < m_buttonList.count(); i++) {
-        BtModuleChooserButton* button = m_buttonList.at(i);
-        QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
-        button->updateMenu(m_modules, moduleName, i, leftLikeModules);
-    }
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_buttonList.count(); i++)
+        m_buttonList.at(i)->updateMenu(m_modules,
+                                       (i >= m_modules.count())
+                                       ? QString::null
+                                       : m_modules.at(i),
+                                       i,
+                                       leftLikeModules);
 }

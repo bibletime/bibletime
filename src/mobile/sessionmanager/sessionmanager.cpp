@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -25,7 +25,7 @@ namespace btm {
 SessionManager::SessionManager(QObject* parent)
     : QObject(parent) {
     m_windowMgr = findQmlObject("WindowManager");
-    Q_ASSERT(m_windowMgr != 0);
+    Q_ASSERT(m_windowMgr != nullptr);
 }
 
 void SessionManager::loadDefaultSession() {
@@ -57,10 +57,10 @@ void SessionManager::loadWindow(const QStringList& moduleNames, const QString& k
 
     const QString moduleName = moduleNames.at(0); // We don't support parallel yet!
     CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
-    if (m == 0)
+    if (m == nullptr)
         return;
     CSwordModuleInfo::Category category = m->category();
-    const QString categoryName = m->categoryName(category);
+    const QString categoryName = m->englishCategoryName(category);
     newWindow(categoryName, moduleName, key);
 }
 

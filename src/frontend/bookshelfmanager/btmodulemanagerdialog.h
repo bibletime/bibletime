@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -24,13 +24,13 @@ class BtModuleManagerDialog: public BtConfigDialog {
 
     public:
 
-        static BtModuleManagerDialog *getInstance(QWidget *parent = 0,
-                                                  Qt::WindowFlags flags = 0);
+        static BtModuleManagerDialog *getInstance(QWidget *parent = nullptr,
+                                                  Qt::WindowFlags flags = nullptr);
         ~BtModuleManagerDialog();
 
     private:
 
-        BtModuleManagerDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        BtModuleManagerDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
         void retranslateUi();
 

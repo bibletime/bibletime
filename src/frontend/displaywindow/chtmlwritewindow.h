@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -27,43 +27,27 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
     public:
         CHTMLWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
 
-        virtual void storeProfileSettings(const QString & windowGroup);
-        virtual void applyProfileSettings(const QString & windowGroup);
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
 
-        /**
-         * Returns true if the sync toolbar is enabled.
-         */
-        virtual bool syncAllowed() const;
+        bool syncAllowed() const override;
 
     protected:
-        /**
-        * Initialize the state of this widget.
-        */
-        virtual void initView();
-        virtual void initConnections();
-        virtual void initToolbars();
+        void initView() override;
+        void initConnections() override;
+        void initToolbars() override;
 
-        virtual WriteWindowType writeWindowType() const {
+        WriteWindowType writeWindowType() const override {
             return HTMLWindow;
         }
-        /**
-         * Called to add actions to mainWindow toolbars
-         */
-        virtual void setupMainWindowToolBars();
+
+        void setupMainWindowToolBars() override;
 
     protected slots:
-        /**
-        * Is called when the current text was changed.
-        */
-        virtual void textChanged();
-        /**
-        * Loads the original text from the module.
-        */
-        virtual void restoreText();
-        /**
-        * Saves the text for the current key. Directly writes the changed text into the module.
-        */
-        virtual void saveCurrentText( const QString& );
+
+        void textChanged() override;
+        void restoreText() override;
+        void saveCurrentText(QString const &) override;
 
 };
 

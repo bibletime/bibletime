@@ -2,20 +2,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/rendering/cchapterdisplay.h"
+#include "cchapterdisplay.h"
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/rendering/cdisplayrendering.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../keys/cswordversekey.h"
+#include "cdisplayrendering.h"
 
 
 const QString Rendering::CChapterDisplay::text(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
@@ -42,9 +42,11 @@ const QString Rendering::CChapterDisplay::text(
     Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
 
     if (module->type() == CSwordModuleInfo::Bible) {
-        ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
+        // HACK: enable headings for VerseKeys:
+        static_cast<sword::VerseKey *>(module->module()->getKey())
+                ->setIntros(true);
 
-        Q_ASSERT(dynamic_cast<const CSBMI*>(module) != 0);
+        Q_ASSERT(dynamic_cast<const CSBMI*>(module) != nullptr);
         const CSBMI *bible = static_cast<const CSBMI*>(module);
 
         CSwordVerseKey k1(module);

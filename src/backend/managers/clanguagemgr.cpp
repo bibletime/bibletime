@@ -2,30 +2,30 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/managers/clanguagemgr.h"
+#include "clanguagemgr.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordbackend.h"
 
 
 /****************************************************/
 /******************** CLanguageMgr ******************/
 /****************************************************/
 
-CLanguageMgr *CLanguageMgr::m_instance = 0;
+CLanguageMgr *CLanguageMgr::m_instance = nullptr;
 
 void CLanguageMgr::destroyInstance() {
     delete m_instance;
-    m_instance = 0;
+    m_instance = nullptr;
 }
 
 CLanguageMgr *CLanguageMgr::instance() {
-    if (m_instance == 0) {
+    if (m_instance == nullptr) {
         m_instance = new CLanguageMgr();
     }
 
@@ -48,23 +48,22 @@ CLanguageMgr::~CLanguageMgr() {
 }
 
 const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
-    QList<CSwordModuleInfo*> mods = CSwordBackend::instance()->moduleList();
+    QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
 
-    if ( m_availableModulesCache.moduleCount != (unsigned int)mods.count() ) { //we have to refill the cached map
+    // Do we have to refill the cached map?
+    if (m_availableModulesCache.moduleCount != mods.count()) {
         m_availableModulesCache.availableLanguages.clear();
         m_availableModulesCache.moduleCount = mods.count();
 
         //collect the languages abbrevs of all modules
         QStringList abbrevs;
 
-        foreach (const CSwordModuleInfo* mod,  mods) {
-            if (!abbrevs.contains(mod->module()->getLanguage())) {
+        Q_FOREACH(const CSwordModuleInfo * const mod,  mods)
+            if (!abbrevs.contains(mod->module()->getLanguage()))
                 abbrevs.append(mod->module()->getLanguage());
-            }
-        }
 
         //now create a map of available langs
-        foreach ( QString abbrev, abbrevs ) {
+        Q_FOREACH(QString const & abbrev, abbrevs) {
             const Language* const lang = languageForAbbrev(abbrev);
 
             if (lang->isValid()) {
@@ -85,9 +84,9 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     if (it != m_langMap.constEnd()) return *it; //Language is already here
 
     //try to search in the alternative abbrevs
-    foreach (const Language* lang, m_langList ) {
-        if (lang->alternativeAbbrevs().contains(abbrev)) return lang;
-    }
+    Q_FOREACH(const Language * const lang, m_langList)
+        if (lang->alternativeAbbrevs().contains(abbrev))
+            return lang;
 
     // Invalid lang used by a modules, create a new language using the abbrev
     Language* newLang = new Language(abbrev, abbrev, abbrev); //return a language which holds the valid abbrev
@@ -97,9 +96,9 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
 }
 
 const CLanguageMgr::Language* CLanguageMgr::languageForTranslatedName( const QString& name ) const {
-    foreach ( const Language* lang, m_langList ) {
-        if (lang->translatedName() == name) return lang;
-    }
+    Q_FOREACH(const Language * const lang, m_langList)
+        if (lang->translatedName() == name)
+            return lang;
     return &m_defaultLanguage; //invalid language
 }
 
@@ -524,7 +523,6 @@ void CLanguageMgr::init() {
     //: Language name zu
     m_langList.append( new Language("zu", "Zulu", QObject::tr("Zulu")) );
 
-    foreach (Language* lang, m_langList) {
+    Q_FOREACH(Language * const lang, m_langList)
         m_langMap.insert( lang->abbrev(), lang);
-    }
 }

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -33,9 +33,9 @@ namespace Search {
 class CSearchDialog : public QDialog {
         Q_OBJECT
     public:
-        static void openDialog(const QList<const CSwordModuleInfo*> modules,
+        static void openDialog(const BtConstModuleList modules,
                                const QString &searchText = QString::null,
-                               QWidget *parentDialog = 0);
+                               QWidget *parentDialog = nullptr);
 
         static void closeDialog();
 
@@ -60,23 +60,20 @@ class CSearchDialog : public QDialog {
         /**
           Starts the search with the given module list and given search text.
         */
-        void startSearch(const QList<const CSwordModuleInfo*> modules,
+        void startSearch(const BtConstModuleList modules,
                          const QString &searchText);
-
-        /**Prepares the search string given by user for a specific search type */
-        QString prepareSearchText(const QString& orig);
 
         /**
           Sets the list of modules for the search.
         */
-        void setModules(const QList<const CSwordModuleInfo*> modules) {
+        void setModules(const BtConstModuleList modules) {
             m_searchOptionsArea->setModules(modules);
         }
 
         /**
           Returns the list of used modules.
         */
-        inline QList<const CSwordModuleInfo*> modules() const {
+        inline BtConstModuleList modules() const {
             return m_searchOptionsArea->modules();
         }
 

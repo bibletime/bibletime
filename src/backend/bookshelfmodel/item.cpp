@@ -4,15 +4,15 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
 **********/
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "btbookshelfmodel.h"
 
 
 namespace BookshelfModel {
@@ -50,7 +50,7 @@ QVariant Item::data(int role) const {
             if (m_children.empty())
                 return true;
 
-            Q_FOREACH (Item * child, m_children)
+            Q_FOREACH(Item const * const child, m_children)
                 if (!child->data(role).toBool())
                     return false;
             return true;

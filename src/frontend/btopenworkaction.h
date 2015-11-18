@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -28,7 +28,7 @@ class BtOpenWorkActionMenu: public BtMenuView {
     Q_OBJECT
     public:
         BtOpenWorkActionMenu(const QString &groupingConfigKey,
-                             QWidget *parent = 0);
+                             QWidget *parent = nullptr);
 
         void setSourceModel(QAbstractItemModel *model);
         inline QAbstractItemModel *sourceModel() const { return m_treeModel->sourceModel(); }
@@ -41,8 +41,7 @@ class BtOpenWorkActionMenu: public BtMenuView {
     private:
         void retranslateUi();
 
-        /* Reimplemented from BtMenuView. */
-        virtual void postBuildMenu();
+        void postBuildMenu() override;
 
     private slots:
         void slotIndexTriggered(const QModelIndex &index);
@@ -62,7 +61,7 @@ class BtOpenWorkAction: public QAction {
     Q_OBJECT
     public:
         explicit BtOpenWorkAction(const QString &groupingConfigKey,
-                                  QObject *parent = 0);
+                                  QObject *parent = nullptr);
         ~BtOpenWorkAction();
 
     signals:

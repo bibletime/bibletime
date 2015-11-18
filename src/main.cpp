@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,9 +10,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <QDateTime>
-#ifndef NO_DBUS
-#include <QDBusConnection>
-#endif
 #include <QFile>
 #include <QLocale>
 #include <QTextCodec>
@@ -20,7 +17,6 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/btconfig.h"
 #include "bibletime.h"
-#include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/directory.h"
@@ -60,12 +56,71 @@ void printHelp(const QString &executable) {
 }
 
 /*******************************************************************************
+  Console messaging.
+*******************************************************************************/
+
+QScopedPointer<QFile> debugStream;
+bool showDebugMessages = false;
+
+void myMessageOutput(
+        QtMsgType type,
+        const QMessageLogContext&,
+        const QString& message ) {
+    QByteArray msg = message.toLatin1();
+    switch (type) {
+        case QtDebugMsg:
+            if (showDebugMessages) { // Only show messages if they are enabled!
+                debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
+                debugStream->write(msg);
+                debugStream->write("\n");
+                debugStream->flush();
+            }
+            break;
+#if QT_VERSION >= 0x050500
+        case QtInfoMsg:
+            debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
+            debugStream->write(msg);
+            debugStream->write("\n");
+            debugStream->flush();
+            break;
+#endif
+        case QtWarningMsg:
+            debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
+            debugStream->write(msg);
+            debugStream->write("\n");
+            debugStream->flush();
+            break;
+        case QtCriticalMsg:
+            debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
+            debugStream->write(msg);
+            debugStream->write("\nPlease report this bug at "
+                               "https://github.com/bibletime/bibletime/issues"
+                               "\n");
+            debugStream->flush();
+            break;
+        case QtFatalMsg:
+            debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
+            debugStream->write(msg);
+            debugStream->write("\nPlease report this bug at "
+                               "https://github.com/bibletime/bibletime/issues"
+                               "\n");
+
+            // Dump core on purpose (see qInstallMsgHandler documentation):
+            debugStream->close();
+            abort();
+    }
+}
+
+inline void installMessageHandler() {
+    qInstallMessageHandler(myMessageOutput);
+}
+
+/*******************************************************************************
   Parsing command-line arguments
 *******************************************************************************/
 
 /**
   Parses all command-line arguments.
-  \param[out] showDebugMessages Whether --debug was specified.
   \param[out] ignoreSession Whether --ignore-session was specified.
   \param[out] openBibleKey Will be set to --open-default-bible if specified.
   \retval -1 Parsing was successful, the application should exit with
@@ -73,9 +128,7 @@ void printHelp(const QString &executable) {
   \retval 0 Parsing was successful.
   \retval 1 Parsing failed, the application should exit with EXIT_FAILURE.
 */
-int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
-                     QString &openBibleKey)
-{
+int parseCommandLine(bool & ignoreSession, QString & openBibleKey) {
     QStringList args = BibleTimeApp::arguments();
     for (int i = 1; i < args.size(); i++) {
         const QString &arg = args.at(i);
@@ -87,7 +140,8 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
             printHelp(args.at(0));
             return -1;
         } else if (arg == "--version"
-                   || arg == "-V")
+                   || arg == "-V"
+                   || arg == "/V")
         {
             std::cout << "BibleTime " BT_VERSION << std::endl;
             return -1;
@@ -118,72 +172,6 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
 }
 
 /*******************************************************************************
-  Console messaging.
-*******************************************************************************/
-
-#if QT_VERSION >= 0x040600
-QScopedPointer<QFile> debugStream;
-#else
-struct DebugStreamPtr {
-    QFile * m_f;
-    inline DebugStreamPtr() : m_f(0) {}
-    inline ~DebugStreamPtr() { delete m_f; }
-    inline void reset(QFile * f) { m_f = f; }
-    inline QFile * operator->() const {
-        Q_ASSERT(m_f);
-        return m_f;
-    }
-} debugStream;
-#endif
-bool showDebugMessages = false;
-
-void myMessageOutput(
-        QtMsgType type,
-#if QT_VERSION >= 0x050000
-        const QMessageLogContext&,
-        const QString& message ) {
-    QByteArray msg = message.toLatin1();
-#else
-        const char *msg ) {
-#endif
-    // We use this messagehandler to switch debugging off in final releases
-    switch (type) {
-        case QtDebugMsg:
-            if (showDebugMessages) { // Only show messages if they are enabled!
-                debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
-                debugStream->write(msg);
-                debugStream->write("\n");
-                debugStream->flush();
-            }
-            break;
-        case QtWarningMsg:
-#ifndef QT_NO_DEBUG  // don't show in release builds so users don't get our debug warnings
-            debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
-            debugStream->write(msg);
-            debugStream->write("\n");
-            debugStream->flush();
-#endif
-            break;
-        case QtCriticalMsg:
-            debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
-            debugStream->write(msg);
-            debugStream->write("\nPlease report this bug at "
-                               "https://github.com/bibletime/bibletime/issues");
-            debugStream->flush();
-            break;
-        case QtFatalMsg:
-            debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
-            debugStream->write(msg);
-            debugStream->write("\nPlease report this bug at "
-                               "https://github.com/bibletime/bibletime/issues");
-
-            // Dump core on purpose (see qInstallMsgHandler documentation):
-            debugStream->close();
-            abort();
-    }
-}
-
-/*******************************************************************************
   Handle Qt's meta type system.
 *******************************************************************************/
 
@@ -198,8 +186,8 @@ void registerMetaTypes() {
     qRegisterMetaType<alignmentMode>("alignmentMode");
     qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
 
-    qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
-    qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
+    qRegisterMetaType<CSwordModuleSearch::SearchType>("SearchType");
+    qRegisterMetaTypeStreamOperators<CSwordModuleSearch::SearchType>("SearchType");
 
     qRegisterMetaType<BtConfig::StringMap>("StringMap");
     qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
@@ -223,11 +211,8 @@ int main(int argc, char* argv[]) {
     // Parse command line arguments:
     bool ignoreSession = false;
     QString openBibleKey;
-    int r = parseCommandLine(showDebugMessages, ignoreSession, openBibleKey);
-    if (r != 0) {
-        if (r < 0) return EXIT_SUCCESS;
-        return EXIT_FAILURE;
-    }
+    if (int const r = parseCommandLine(ignoreSession, openBibleKey))
+        return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
 
     // Initialize random number generator:
     srand(qHash(QDateTime::currentDateTime().toString(Qt::ISODate)));
@@ -239,20 +224,12 @@ int main(int argc, char* argv[]) {
     if (showDebugMessages) {
         debugStream.reset(new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
         debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
-#if QT_VERSION >= 0x050000
-        qInstallMessageHandler(myMessageOutput);
-#else
-        qInstallMsgHandler(myMessageOutput);
-#endif
+        installMessageHandler();
     }
 #else
     debugStream.reset(new QFile);
     debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
-#if QT_VERSION >= 0x050000
-        qInstallMessageHandler(myMessageOutput);
-#else
-        qInstallMsgHandler(myMessageOutput);
-#endif
+    installMessageHandler();
 #endif
 
 #ifdef Q_OS_WIN
@@ -273,7 +250,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    app.startInit();
+    app.startInit(showDebugMessages);
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
     }
@@ -303,13 +280,13 @@ int main(int argc, char* argv[]) {
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
 
-    app.setProperty("--debug", QVariant(showDebugMessages));
-
     // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {
         qFatal("Error initializing display template manager!");
         return EXIT_FAILURE;
     }
+
+    app.initIcons();
 
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
@@ -327,17 +304,9 @@ int main(int argc, char* argv[]) {
     // The following must be done after the bibletime window is visible:
     mainWindow->processCommandline(ignoreSession, openBibleKey);
 
-#ifndef NO_DBUS
-    new BibleTimeDBusAdaptor(mainWindow);
-    // connect to D-Bus and register as an object:
-    QDBusConnection::sessionBus().registerService("info.bibletime.BibleTime");
-    QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
-#endif
-
     if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
-    r = app.exec();
-    return r;
+    return app.exec();
 }
 

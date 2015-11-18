@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -29,9 +29,11 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        CDisplaySettingsPage(CConfigurationDialog *parent = 0);
+        CDisplaySettingsPage(CConfigurationDialog *parent = nullptr);
 
         void save();
+
+        static void resetLanguage();
 
     protected: /* Methods: */
 
@@ -41,10 +43,17 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         /** Update the style preview widget. */
         void updateStylePreview();
 
+    private: /* Methods: */
+
+        static QVector<QString> bookNameAbbreviationsTryVector();
+        void initSwordLocaleCombo();
+
     private: /* Fields: */
 
+        QLabel* m_showLogoLabel;
         QCheckBox* m_showLogoCheck;
-        QLabel *m_explanationLabel;
+        QLabel *m_languageNamesLabel;
+        QComboBox* m_swordLocaleCombo;
         QComboBox* m_styleChooserCombo;
         QLabel *m_availableLabel;
         QWebView* m_stylePreviewViewer;

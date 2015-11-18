@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -13,10 +13,10 @@
 #ifndef LANGUAGEITEM_H
 #define LANGUAGEITEM_H
 
-#include "backend/bookshelfmodel/item.h"
+#include "item.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "btbookshelfmodel.h"
 
 
 namespace BookshelfModel {
@@ -28,9 +28,9 @@ public: /* Methods: */
     inline LanguageItem(const CSwordModuleInfo & module)
         : m_language(module.language()) {}
 
-    QVariant data(int role = Qt::DisplayRole) const;
+    QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const {
+    inline bool fitFor(const CSwordModuleInfo & module) const override {
         return module.language() == m_language;
     }
 

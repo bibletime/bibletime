@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -24,11 +24,11 @@ class QActionGroup;
 class BtBookshelfGroupingMenu: public QMenu {
     Q_OBJECT
     public:
-        explicit inline BtBookshelfGroupingMenu(QWidget *parent = 0)
+        explicit inline BtBookshelfGroupingMenu(QWidget *parent = nullptr)
             : QMenu(parent) { initMenu(true); }
 
         explicit inline BtBookshelfGroupingMenu(bool showNoGrouping,
-                                                QWidget *parent = 0)
+                                                QWidget *parent = nullptr)
         : QMenu(parent) { initMenu(showNoGrouping); }
 
     signals:

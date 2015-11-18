@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -45,8 +45,8 @@ class CSearchResultView  : public QTreeWidget {
         void initConnections();
 
         //from QTreeWidget
-        virtual QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const;
-        virtual QStringList mimeTypes () const;
+        QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const override;
+        QStringList mimeTypes () const override;
 
     public slots: // Public slots
         void saveItems();
@@ -60,10 +60,8 @@ class CSearchResultView  : public QTreeWidget {
         void copyItemsWithText();
         void copyItems();
         void saveItemsWithText();
-        /**
-        * Reimplementation to show the popup menu.
-        */
-        virtual void contextMenuEvent(QContextMenuEvent* event);
+
+        void contextMenuEvent(QContextMenuEvent* event) override;
 
     protected slots: // Protected slots
         void printItems();

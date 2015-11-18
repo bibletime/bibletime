@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -55,7 +55,7 @@ class CMDIArea: public QMdiArea {
           Reimplementation of QMdiArea::addSubWindow().
         */
         QMdiSubWindow * addSubWindow(QWidget * widget,
-                                     Qt::WindowFlags windowFlags = 0);
+                                     Qt::WindowFlags windowFlags = nullptr);
 
         /**
           Returns the BibleTime main window
@@ -144,17 +144,21 @@ class CMDIArea: public QMdiArea {
 
     protected: /* Methods: */
 
+        void findTextInActiveWindow(QString const & text,
+                                    bool caseSensitive,
+                                    bool backward);
+
         /**
           Reimplementation of QWidget::resizeEvent() to handle our automatic
           tiling properly.
         */
-        void resizeEvent(QResizeEvent *e);
+        void resizeEvent(QResizeEvent *e) override;
 
         /**
           Reimplementation of QObject::eventFilter() used to handle some MDI
           subwindow events.
         */
-        bool eventFilter(QObject *o, QEvent *e);
+        bool eventFilter(QObject *o, QEvent *e) override;
 
         void emitWindowCaptionChanged();
 

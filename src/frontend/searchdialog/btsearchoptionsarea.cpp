@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,13 +21,13 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/drivers/btconstmoduleset.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "bibletimeapp.h"
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 
@@ -52,14 +52,14 @@ QString BtSearchOptionsArea::searchText() const {
     return m_searchTextCombo->currentText();
 }
 
-BtSearchOptionsArea::SearchType BtSearchOptionsArea::searchType() {
+CSwordModuleSearch::SearchType BtSearchOptionsArea::searchType() {
     if (m_typeAndButton->isChecked()) {
-        return BtSearchOptionsArea::AndType;
+        return CSwordModuleSearch::AndType;
     }
     if (m_typeOrButton->isChecked()) {
-        return BtSearchOptionsArea::OrType;
+        return CSwordModuleSearch::OrType;
     }
-    return BtSearchOptionsArea::FullType;
+    return CSwordModuleSearch::FullType;
 }
 
 void BtSearchOptionsArea::setSearchText(const QString& text) {
@@ -102,17 +102,17 @@ void BtSearchOptionsArea::initView() {
 
     m_searchButton = new QPushButton(this);
     m_searchButton->setText(tr("&Search"));
-    m_searchButton->setIcon(util::getIcon(CResMgr::searchdialog::icon));
+    m_searchButton->setIcon(CResMgr::searchdialog::icon());
     m_searchButton->setToolTip(tr("Start to search the text in the chosen works"));
     gridLayout->addWidget(m_searchButton, 0, 2);
 
     m_chooseModulesButton = new QPushButton(tr("Ch&oose..."), searchGroupBox);
-    m_chooseModulesButton->setIcon(util::getIcon(CResMgr::searchdialog::chooseworks_icon));
+    m_chooseModulesButton->setIcon(CResMgr::searchdialog::icon_chooseWorks());
     m_chooseModulesButton->setToolTip( tr("Choose works for the search"));
     gridLayout->addWidget(m_chooseModulesButton, 2, 2);
 
     m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
-    m_chooseRangeButton->setIcon(util::getIcon(CResMgr::searchdialog::setupscope_icon));
+    m_chooseRangeButton->setIcon(CResMgr::searchdialog::icon_setupScope());
     m_chooseRangeButton->setToolTip(tr("Configure predefined scopes for search"));
     gridLayout->addWidget(m_chooseRangeButton, 3, 2);
 
@@ -203,15 +203,15 @@ void BtSearchOptionsArea::initConnections() {
 }
 
 /** Sets the modules used by the search. */
-void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modules) {
+void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
     QString t;
 
     m_modules.clear(); //remove old modules
-    QList<const CSwordModuleInfo*>::const_iterator end_it = modules.end();
+    BtConstModuleList::const_iterator end_it = modules.end();
 
-    for (QList<const CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
+    for (BtConstModuleList::const_iterator it(modules.begin()); it != end_it; ++it) {
         /// \todo Check for containsRef compat
-        if (*it == 0) { //don't operate on null modules.
+        if (*it == nullptr) { //don't operate on null modules.
             continue;
         }
         qDebug() << "new module:" << (*it)->name();
@@ -251,27 +251,20 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
     //create the module list
     QString text = m_modulesCombo->itemText(index);
     QStringList moduleNamesList = text.split(", ");
-    QList<const CSwordModuleInfo*> moduleList;
-    foreach(QString name, moduleNamesList) {
+    BtConstModuleList moduleList;
+    Q_FOREACH(QString const & name, moduleNamesList)
         moduleList.append(CSwordBackend::instance()->findModuleByName(name));
-    }
     //set the list and the combobox list and text
     setModules(moduleList);
 }
 
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
-    QSet<CSwordModuleInfo*> ms;
-    Q_FOREACH (const CSwordModuleInfo *module, modules()) {
-        ms.insert(const_cast<CSwordModuleInfo*>(module));
-    }
-
-    dlg->setCheckedModules(ms);
+    dlg->setCheckedModules(BtConstModuleSet::fromList(modules()));
     if (dlg->exec() == QDialog::Accepted) {
-        QList<const CSwordModuleInfo*> ms;
-        Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
+        BtConstModuleList ms;
+        Q_FOREACH(CSwordModuleInfo const * const m, dlg->checkedModules())
             ms.append(m);
-        }
         setModules(ms);
     }
     delete dlg;
@@ -284,12 +277,12 @@ void BtSearchOptionsArea::reset() {
 
 void BtSearchOptionsArea::saveSettings() {
     btConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
-    SearchType t = FullType;
+    CSwordModuleSearch::SearchType t = CSwordModuleSearch::FullType;
     if (m_typeAndButton->isChecked()) {
-        t = AndType;
+        t = CSwordModuleSearch::AndType;
     }
     if (m_typeOrButton->isChecked()) {
-        t = OrType;
+        t = CSwordModuleSearch::OrType;
     }
     btConfig().setValue(SearchTypeKey, t);
 }
@@ -309,12 +302,12 @@ void BtSearchOptionsArea::readSettings() {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = btConfig().value<int>(SearchTypeKey, AndType);
+    int stype = btConfig().value<int>(SearchTypeKey, CSwordModuleSearch::AndType);
     switch (stype) {
-        case AndType:
+        case CSwordModuleSearch::AndType:
             m_typeAndButton->setChecked(true);
             break;
-        case OrType:
+        case CSwordModuleSearch::OrType:
             m_typeOrButton->setChecked(true);
             break;
         default:
@@ -353,11 +346,12 @@ void BtSearchOptionsArea::refreshRanges() {
 
 sword::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
-        BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
-        QString scope = map[ m_rangeChooserCombo->currentText() ];
-        if (!scope.isEmpty()) {
-            return sword::VerseKey().parseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);
-        }
+        QString const scope = btConfig().getSearchScopesForCurrentLocale()[
+                                    m_rangeChooserCombo->currentText()];
+        if (!scope.isEmpty())
+            return sword::VerseKey().parseVerseList(scope.toUtf8().constData(),
+                                                    "Genesis 1:1",
+                                                    true);
     }
     return sword::ListKey();
 }
@@ -416,14 +410,3 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 
 } // namespace Search
 
-QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType) {
-    out << static_cast<qint8>(searchType);
-    return out;
-}
-
-QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType) {
-    qint8 i;
-    in >> i;
-    searchType = (Search::BtSearchOptionsArea::SearchType) i;
-    return in;
-}

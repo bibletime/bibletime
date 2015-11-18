@@ -2,16 +2,16 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "cswordbiblemoduleinfo.h"
 
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QFile>
-#include "backend/managers/cswordbackend.h"
+#include "../managers/cswordbackend.h"
 
 // Sword includes:
 #include <versekey.h>
@@ -22,9 +22,9 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
                                              ModuleType type)
         : CSwordModuleInfo(module, backend, type)
         , m_boundsInitialized(false)
-        , m_lowerBound(0)
-        , m_upperBound(0)
-        , m_bookList(0)
+        , m_lowerBound(nullptr)
+        , m_upperBound(nullptr)
+        , m_bookList(nullptr)
 {
     // Intentionally empty
 }
@@ -63,7 +63,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
             // Reset the booklist because the locale has changed
             m_cachedLocale = b.booknameLanguage();
             delete m_bookList;
-            m_bookList = 0;
+            m_bookList = nullptr;
         }
     }
 
@@ -86,7 +86,8 @@ QStringList *CSwordBibleModuleInfo::books() const {
         if (min > max) {
             qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module()->getName());
         } else {
-            QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
+            QScopedPointer<sword::VerseKey> key(
+                    static_cast<sword::VerseKey *>(module()->createKey()));
             key->setPosition(sword::TOP);
 
             for (key->setTestament(min); !key->popError() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
@@ -101,7 +102,8 @@ QStringList *CSwordBibleModuleInfo::books() const {
 unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const {
     int result = 0;
 
-    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
+    QScopedPointer<sword::VerseKey> key(
+            static_cast<sword::VerseKey *>(module()->createKey()));
     key->setPosition(sword::TOP);
 
     // works for old and new versions
@@ -123,7 +125,8 @@ unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
 {
     unsigned int result = 0;
 
-    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
+    QScopedPointer<sword::VerseKey> key(
+            static_cast<sword::VerseKey *>(module()->createKey()));
     key->setPosition(sword::TOP);
 
     // works for old and new versions
@@ -144,7 +147,8 @@ unsigned int CSwordBibleModuleInfo::verseCount(const QString &book,
 unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     unsigned int bookNumber = 0;
 
-    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
+    QScopedPointer<sword::VerseKey> key(
+            static_cast<sword::VerseKey *>(module()->createKey()));
     key->setPosition(sword::TOP);
 
     key->setBookName(book.toUtf8().constData());

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -30,10 +30,10 @@ inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) 
 
 inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
     if (!displayWindow)
-        return NULL;
+        return nullptr;
     CDisplay * const display = displayWindow->displayWidget();
     if (!display)
-        return NULL;
+        return nullptr;
     return qobject_cast<QWebView *>(display->view());
 }
 
@@ -43,15 +43,13 @@ inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displ
 CMDIArea::CMDIArea(BibleTime *parent)
         : QMdiArea(parent)
         , m_mdiArrangementMode(ArrangementModeManual)
-        , m_activeWindow(0)
+        , m_activeWindow(nullptr)
         , m_bibleTime(parent)
 {
-    Q_ASSERT(parent != 0);
+    Q_ASSERT(parent != nullptr);
 
-    #if QT_VERSION >= 0x040500
     // Set document-style tabs (for Mac):
     setDocumentMode(true);
-    #endif
 
     /*
       Activate windows based on the history of activation, e.g. when one has window A
@@ -135,16 +133,10 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             triggerWindowUpdate();
             break;
     }
-    Q_FOREACH (QTabBar* tab, findChildren<QTabBar *>()) {
+    Q_FOREACH(QTabBar * const tab, findChildren<QTabBar *>()) {
         QObject* parent = tab->parent();
-        if (parent == this) {
+        if (parent == this)
             tab->setTabsClosable(true);
-// As of version 4.8, Qt does the close for us.
-#if QT_VERSION < 0x040800
-            disconnect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
-            connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
-#endif
-        }
     }
 }
 
@@ -182,7 +174,7 @@ void CMDIArea::myTileVertical() {
         x += actWidth;
     }
 
-    if (active != 0) {
+    if (active != nullptr) {
         active->setFocus();
     }
 
@@ -215,7 +207,7 @@ void CMDIArea::myTileHorizontal() {
         y += actHeight;
     }
 
-    if (active != 0) {
+    if (active != nullptr) {
         active->setFocus();
     }
 
@@ -292,11 +284,9 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     //Take care: when new windows are added, they will not appear
     //in subWindowList() when their ChildAdded-Event is triggered
     QList<QMdiSubWindow*> ret;
-    Q_FOREACH (QMdiSubWindow * const w, subWindowList()) {
-        if (!w->isHidden()) {
+    Q_FOREACH(QMdiSubWindow * const w, subWindowList())
+        if (!w->isHidden())
             ret.append(w);
-        }
-    }
     return ret;
 }
 
@@ -312,48 +302,48 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     if (subWindowList().isEmpty())
         m_bibleTime->clearMdiToolBars();
 
-    if (client == 0) {
+    if (client == nullptr) {
         return;
     }
     emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 
     // Notify child window it is active
     CDisplayWindow* const activeWindow = getDisplayWindow(client);
-    if (activeWindow != 0 && activeWindow != m_activeWindow) {
+    if (activeWindow != nullptr && activeWindow != m_activeWindow) {
         m_activeWindow = activeWindow;
         activeWindow->windowActivated();
     }
 }
 
-void CMDIArea::findNextTextInActiveWindow(const QString& text, bool caseSensitive) {
-    QWebView* activeWebView = getActiveWebView();
-    if (activeWebView == 0)
-        return;
-    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
-    if (caseSensitive)
-        options |= QWebPage::FindCaseSensitively;
-    activeWebView->findText(text, options);
-}
+void CMDIArea::findNextTextInActiveWindow(QString const & text, bool cs)
+{ findTextInActiveWindow(text, cs, false); }
 
-void CMDIArea::findPreviousTextInActiveWindow(const QString& text, bool caseSensitive) {
-    QWebView* activeWebView = getActiveWebView();
-    if (activeWebView == 0)
-        return;
-    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
-    if (caseSensitive)
-        options |= QWebPage::FindCaseSensitively;
-    activeWebView->findText(text, options);
-}
+void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
+{ findTextInActiveWindow(text, cs, true); }
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
     QWebView* activeWebView = getActiveWebView();
-    if (activeWebView == 0)
+    if (activeWebView == nullptr)
         return;
     QWebPage::FindFlags options = QWebPage::HighlightAllOccurrences;
     if (caseSensitive)
         options |= QWebPage::FindCaseSensitively;
     activeWebView->findText("", options); // clear old highlight
     activeWebView->findText(text, options);
+}
+
+void CMDIArea::findTextInActiveWindow(QString const & text,
+                                      bool caseSensitive,
+                                      bool backward)
+{
+    if (QWebView * const activeWebView = getActiveWebView()) {
+        QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+        if (backward)
+            options |= QWebPage::FindBackward;
+        if (caseSensitive)
+            options |= QWebPage::FindCaseSensitively;
+        activeWebView->findText(text, options);
+    }
 }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {
@@ -377,13 +367,14 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
     const QMdiSubWindow * const w = qobject_cast<QMdiSubWindow*>(o);
 
     // Let the event be handled by other filters:
-    if (w == 0)
+    if (w == nullptr)
         return QMdiArea::eventFilter(o, e);
 
     switch (e->type()) {
         case QEvent::WindowStateChange: {
-            Qt::WindowStates newState(w->windowState());
-            Qt::WindowStates oldState(((QWindowStateChangeEvent*)e)->oldState());
+            Qt::WindowStates const newState(w->windowState());
+            Qt::WindowStates const oldState(
+                    static_cast<QWindowStateChangeEvent *>(e)->oldState());
 
             /*
               Do not handle window activation or deactivation here, it will

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -51,7 +51,7 @@ Rectangle {
             Text {
                 id: titleText
 
-                text: "BibleTime Mobile"
+                text: qsTranslate("About", "BibleTime Mobile")
                 width: aboutDialog.width
                 horizontalAlignment: Text.AlignHCenter
                 font.pointSize: btStyle.uiFontPointSize + 4
@@ -73,20 +73,20 @@ Rectangle {
                 }
 
                 function formatText() {
-                    var btstr = "Brought to you by the <a href=\"http://www.bibletime.info\">BibleTime Team</a><br><br>";
-                    var appstr = "Version<br>"
+                    var btstr = qsTranslate("About", "Brought to you by the") + " <a href=\"http://www.bibletime.info\">BibleTime Team</a><br><br>";
+                    var appstr = qsTranslate("About", "Version") + "<br>"
                     appstr += btStyle.appVersion;
                     appstr += "<br><br>";
 
-                    var qtstr = "Qt version<br>"
+                    var qtstr = qsTranslate("About", "Qt version") + "<br>"
                     qtstr += btStyle.qtVersion;
                     qtstr += "<br><br>";
 
-                    var swordstr = "Sword version<br>"
+                    var swordstr = qsTranslate("About", "Sword version") + "<br>"
                     swordstr += btStyle.swordVersion;
                     swordstr += "<br><br>";
 
-                    var gplstr = "Licensed Under the<br><a href=\"http://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License Version 2</a><br><br>"
+                    var gplstr = qsTranslate("About", "Licensed Under the") + "<br><a href=\"http://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License Version 2</a><br><br>"
 
                     var gitstr = "";
                     var gitversion = btStyle.gitVersion;

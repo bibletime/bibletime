@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -77,7 +77,7 @@ public:
     static int getCurrentStyle();
     static void setCurrentStyle(int style);
 
-    BtStyle(QObject *parent = 0);
+    BtStyle(QObject *parent = nullptr);
 
     static QColor getTextColor();
     static void setTextColor(const QColor& color);
@@ -163,7 +163,7 @@ public:
     static int pixelsPerMillimeterX();
     static int pixelsPerMillimeterY();
 
-    QString getAppVersion() const;
+    static QString getAppVersion();
     QString getGitVersion() const;
     QString getQtVersion() const;
     QString getSwordVersion() const;

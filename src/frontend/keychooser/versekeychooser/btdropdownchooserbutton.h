@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -26,7 +26,7 @@ class BtDropdownChooserButton : public QToolButton {
         BtDropdownChooserButton(BtBibleKeyWidget* ref);
 
         /** The item list is constructed here just before the menu is shown.*/
-        virtual void mousePressEvent(QMouseEvent* event);
+        void mousePressEvent(QMouseEvent* event) override;
         /** Recreates the menu list.*/
         virtual void newList() = 0;
         /** Returns the verse reference widget which this button belongs to.*/
@@ -38,7 +38,7 @@ class BtDropdownChooserButton : public QToolButton {
         virtual void slotMenuTriggered(QAction* action) = 0;
     protected:
         BtBibleKeyWidget* m_ref;
-        void wheelEvent(QWheelEvent* event);
+        void wheelEvent(QWheelEvent* event) override;
     signals:
         void stepItem(int step);
 };
@@ -48,9 +48,9 @@ class BtBookDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtBookDropdownChooserButton(BtBibleKeyWidget* ref);
-        virtual void newList();
+        void newList() override;
     public slots:
-        virtual void slotMenuTriggered(QAction* action);
+        void slotMenuTriggered(QAction* action) override;
 };
 
 /** See BtDropdownChooserButton.*/
@@ -58,9 +58,9 @@ class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtChapterDropdownChooserButton(BtBibleKeyWidget* ref);
-        virtual void newList();
+        void newList() override;
     public slots:
-        virtual void slotMenuTriggered(QAction* action);
+        void slotMenuTriggered(QAction* action) override;
 };
 
 /** See BtDropdownChooserButton.*/
@@ -68,8 +68,8 @@ class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
-        virtual void newList();
+        void newList() override;
     public slots:
-        virtual void slotMenuTriggered(QAction* action);
+        void slotMenuTriggered(QAction* action) override;
 };
 #endif

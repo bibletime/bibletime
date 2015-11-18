@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,6 +14,7 @@
 #include <QDesktopWidget>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QtGlobal>
 #include <QVBoxLayout>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/searchdialog/analysis/csearchanalysisscene.h"
@@ -37,11 +38,10 @@ CSearchAnalysisDialog::CSearchAnalysisDialog(
 
     // Set initial width based on the search data, but limit to the
     // width of the desktop
-    int width = (int)( m_analysis->width() + DIALOG_BORDER );
-    int desktopWidth = QApplication::desktop()->screenGeometry(this).width();
-    if (width > desktopWidth)
-        width = desktopWidth;
-    resize(width, DIALOG_HEIGHT);
+    int const width = static_cast<int>(m_analysis->width() + DIALOG_BORDER);
+    int const desktopWidth =
+        QApplication::desktop()->screenGeometry(this).width();
+    resize(qMin(width, desktopWidth), DIALOG_HEIGHT);
 }
 
 /** Initializes this dialog. */

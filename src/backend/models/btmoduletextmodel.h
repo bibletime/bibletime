@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -16,12 +16,12 @@
 #include <QAbstractListModel>
 #include <QColor>
 #include <QStringList>
-#include "btglobal.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordldkey.h"
+#include "../btglobal.h"
+#include "../drivers/btmodulelist.h"
+#include "../keys/cswordversekey.h"
+#include "../keys/cswordtreekey.h"
+#include "../keys/cswordldkey.h"
 
-class CSwordModuleInfo;
 
 struct ModuleEntry {
     enum TextRoles {
@@ -49,7 +49,7 @@ class BtModuleTextModel: public QAbstractListModel {
 
 public:
 
-    BtModuleTextModel(QObject *parent = 0);
+    BtModuleTextModel(QObject *parent = nullptr);
 
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);
@@ -67,10 +67,10 @@ public:
     QString indexToKeyName(int index) const;
 
     /** Reimplemented from QAbstractItemModel. */
-    int columnCount(const QModelIndex & parent = QModelIndex()) const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    QHash<int, QByteArray> roleNames() const;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    QHash<int, QByteArray> roleNames() const override;
     void setRoleNames(const QHash<int, QByteArray> &roleNames);
     void setHighlightWords(const QString& highlightWords);
 
@@ -87,7 +87,7 @@ private:
 
     QString replaceColors(const QString& text) const;
 
-    QList<const CSwordModuleInfo*> m_moduleInfoList;
+    BtConstModuleList m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;
     QStringList m_modules;
     QString m_highlightWords;

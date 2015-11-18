@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,7 +21,7 @@ class BtActionItem: public QObject {
 
     public: /* Methods: */
 
-        BtActionItem(QAction *action, QObject *parent = 0)
+        BtActionItem(QAction *action, QObject *parent = nullptr)
                 : QObject(parent), defaultKeys(action->shortcut()), action(action)
         {
             // Intentionally empty
@@ -51,11 +51,11 @@ QAction *BtActionCollection::action(const QString &name) const {
         return (*it)->action;
 
     qWarning() << "A QAction for a shortcut named" << name << "was requested but it is not defined.";
-    return 0;
+    return nullptr;
 }
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     ActionMap::iterator it = m_actions.find(name);
     if (it != m_actions.constEnd())
         delete *it;
@@ -93,7 +93,7 @@ void BtActionCollection::readShortcuts(const QString &group) {
                                                              ++iter)
     {
         QAction *a = action(iter.key());
-        if (a == 0)
+        if (a == nullptr)
             continue;
         action(iter.key())->setShortcuts(iter.value());
     }

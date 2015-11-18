@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,9 +12,9 @@
 #ifndef RENDERINGCBOOKDISPLAY_H
 #define RENDERINGCBOOKDISPLAY_H
 
-#include "backend/rendering/centrydisplay.h"
+#include "centrydisplay.h"
 
-#include "backend/rendering/ctextrendering.h"
+#include "ctextrendering.h"
 
 
 class CSwordTreeKey;
@@ -31,10 +31,10 @@ class CBookDisplay: public CEntryDisplay {
 
     public: /* Methods: */
 
-        virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
-                                   const QString &key,
-                                   const DisplayOptions &displayOptions,
-                                   const FilterOptions &filterOptions);
+        const QString text(const BtConstModuleList &modules,
+                           const QString &key,
+                           const DisplayOptions &displayOptions,
+                           const FilterOptions &filterOptions) override;
 
     protected: /* Methods: */
 

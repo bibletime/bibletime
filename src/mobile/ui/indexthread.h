@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,7 +23,7 @@ class IndexThread: public QThread {
         Q_OBJECT
 
     public:
-        explicit IndexThread(const QList<CSwordModuleInfo*>& modules, QObject* const parent = 0);
+        explicit IndexThread(const QList<CSwordModuleInfo*>& modules, QObject* const parent = nullptr);
         void stopIndex();
 
     signals:
@@ -33,7 +33,7 @@ class IndexThread: public QThread {
         void endIndexingModule(const QString& moduleName, bool success);
 
     protected:
-        virtual void run();
+        void run() override;
 
     private:
         void indexModule();

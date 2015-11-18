@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -15,6 +15,7 @@
 
 #include "frontend/btmodulechooserdialog.h"
 
+#include "backend/drivers/btconstmoduleset.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
@@ -24,15 +25,14 @@ class CSwordModuleInfo;
 class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
     Q_OBJECT
     public:
-        BtSearchModuleChooserDialog(QWidget *parent = 0,
-                                    Qt::WindowFlags flags = 0);
+        BtSearchModuleChooserDialog(QWidget *parent = nullptr,
+                                    Qt::WindowFlags flags = nullptr);
 
-        inline void setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
-            bookshelfWidget()->treeModel()->setCheckedModules(modules);
-        }
-        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
-            return bookshelfWidget()->treeModel()->checkedModules();
-        }
+        inline void setCheckedModules(BtConstModuleSet const & modules)
+        { bookshelfWidget()->treeModel()->setCheckedModules(modules); }
+
+        inline BtConstModuleSet checkedModules() const
+        { return bookshelfWidget()->treeModel()->checkedModules(); }
 
     protected slots:
         void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);

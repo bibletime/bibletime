@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -20,7 +20,6 @@
 #include "frontend/cdragdrop.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "backend/config/btconfig.h"
 
 
@@ -28,7 +27,7 @@ namespace Search {
 
 CSearchResultView::CSearchResultView(QWidget* parent)
         : QTreeWidget(parent),
-        m_module(0) {
+        m_module(nullptr) {
     initView();
     initConnections();
 }
@@ -45,7 +44,7 @@ void CSearchResultView::initView() {
     m_popup = new QMenu(this);
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
-    m_actions.copyMenu->setIcon(util::getIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon));
+    m_actions.copyMenu->setIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon());
 
     m_actions.copy.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyItems()) );
@@ -59,7 +58,7 @@ void CSearchResultView::initView() {
     m_popup->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
-    m_actions.saveMenu->setIcon(util::getIcon(CResMgr::searchdialog::result::foundItems::saveMenu::icon));
+    m_actions.saveMenu->setIcon(CResMgr::searchdialog::result::foundItems::saveMenu::icon());
 
     m_actions.save.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveItems()) );
@@ -71,7 +70,7 @@ void CSearchResultView::initView() {
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
-    m_actions.printMenu->setIcon(util::getIcon(CResMgr::searchdialog::result::foundItems::printMenu::icon));
+    m_actions.printMenu->setIcon(CResMgr::searchdialog::result::foundItems::printMenu::icon());
 
     m_actions.print.result = new QAction(tr("Reference with text"), this);
     QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printItems()) );
@@ -103,8 +102,8 @@ void CSearchResultView::setupTree(const CSwordModuleInfo *m,
 
     setUpdatesEnabled(false);
 
-    QTreeWidgetItem* oldItem = 0;
-    QTreeWidgetItem* item = 0;
+    QTreeWidgetItem* oldItem = nullptr;
+    QTreeWidgetItem* item = nullptr;
     for (int index = 0; index < count; index++) {
         item = new QTreeWidgetItem(this, oldItem);
         item->setText(0, QString::fromUtf8(result.getElement(index)->getText()));
@@ -126,10 +125,10 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, const QStringList 
 
     setUpdatesEnabled(false);
 
-    QTreeWidgetItem* oldItem = 0;
-    QTreeWidgetItem* item = 0;
+    QTreeWidgetItem* oldItem = nullptr;
+    QTreeWidgetItem* item = nullptr;
 
-    foreach (QString s, vList) {
+    Q_FOREACH(QString const & s, vList) {
         item = new QTreeWidgetItem(this, oldItem);
         item->setText(0, (s));
         oldItem = item;
@@ -164,9 +163,8 @@ void CSearchResultView::printItems() {
     CExportManager mgr(true, tr("Printing search result"));
 
     QStringList list;
-    foreach (QTreeWidgetItem* k, items) {
+    Q_FOREACH(QTreeWidgetItem const * const k, items)
         list.append( k->text(0) );
-    }
     mgr.printKeyList( list, module(), btConfig().getDisplayOptions(), btConfig().getFilterOptions() );
 }
 
@@ -174,10 +172,10 @@ void CSearchResultView::saveItems() {
     CExportManager mgr(true, tr("Saving search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH(QTreeWidgetItem const * const i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -192,10 +190,10 @@ void CSearchResultView::saveItemsWithText() {
     CExportManager mgr(true, tr("Saving search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH(QTreeWidgetItem const * const i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -210,10 +208,10 @@ void CSearchResultView::copyItems() {
     CExportManager mgr(true, tr("Copying search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH(QTreeWidgetItem const * const i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -228,10 +226,10 @@ void CSearchResultView::copyItemsWithText() {
     CExportManager mgr(true, tr("Copying search result"));
 
     const CSwordModuleInfo *m = module();
-    CSwordKey* k = 0;
+    CSwordKey* k = nullptr;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH(QTreeWidgetItem const * const i, items) {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
@@ -262,9 +260,8 @@ void CSearchResultView::copyItemsWithText() {
 
 QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items ) const {
     BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString::null);
-    foreach (QTreeWidgetItem* i, items) {
+    Q_FOREACH(QTreeWidgetItem const * const i, items)
         mdata->appendBookmark(m_module->name(), i->text(0), QString::null);
-    }
     return mdata;
 }
 

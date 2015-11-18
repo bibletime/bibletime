@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,7 +22,7 @@
 // A dialog to allow the user to input a shortcut for a primary and alternate key
 
 BtShortcutsDialog::BtShortcutsDialog(QWidget* parent)
-        : QDialog(parent), m_primaryLabel(0), m_alternateLabel(0), m_primaryButton(0), m_alternateButton(0) {
+        : QDialog(parent), m_primaryLabel(nullptr), m_alternateLabel(nullptr), m_primaryButton(nullptr), m_alternateButton(nullptr) {
     setWindowTitle(tr("Configure shortcuts"));
     setMinimumWidth(350);
 

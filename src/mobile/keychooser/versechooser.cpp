@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -30,9 +30,9 @@ namespace btm {
 
 VerseChooser::VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* bibleVerse)
     : m_viewer(viewer),
-      m_gridChooser(0),
+      m_gridChooser(nullptr),
       bibleVerse_(bibleVerse),
-      m_key(0),
+      m_key(nullptr),
       m_state(CLOSED ) {
     m_gridChooser = new GridChooser(m_viewer);
     bool ok = connect(m_gridChooser, SIGNAL(accepted(const QString&)),
@@ -41,7 +41,7 @@ VerseChooser::VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface*
 }
 
 void VerseChooser::open(CSwordVerseKey* key) {
-    if (key == 0)
+    if (key == nullptr)
         return;
     m_key = key;
     m_oldBook = getBook();
@@ -49,7 +49,7 @@ void VerseChooser::open(CSwordVerseKey* key) {
     m_oldVerse = getVerse();
     m_state = BOOK;
     QStringList books = getBooks();
-    m_gridChooser->open(books, m_oldBook, "Book");
+    m_gridChooser->open(books, m_oldBook, tr("Book"));
 }
 
 void VerseChooser::stringAccepted(const QString& value) {
@@ -58,14 +58,14 @@ void VerseChooser::stringAccepted(const QString& value) {
         m_state = CHAPTER;
         setBook(value);
         QStringList chapters = getChapters();
-        m_gridChooser->open(chapters, m_oldChapter, "Chapter");
+        m_gridChooser->open(chapters, m_oldChapter, tr("Chapter"));
     }
     else if (m_state == CHAPTER) {
         m_newChapter = value;
         m_state = VERSE;
         setChapter(value);
         QStringList verses = getVerses();
-        m_gridChooser->open(verses, m_oldVerse, "Verse");
+        m_gridChooser->open(verses, m_oldVerse, tr("Verse"));
     }
     else if (m_state == VERSE) {
         m_newVerse = value;

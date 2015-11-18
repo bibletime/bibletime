@@ -2,20 +2,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/managers/referencemanager.h"
+#include "referencemanager.h"
 
 #include <algorithm>
 #include <QRegExp>
 #include <QDebug>
-#include "backend/config/btconfig.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
+#include "../config/btconfig.h"
+#include "../keys/cswordversekey.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordbackend.h"
 
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
@@ -247,7 +247,7 @@ bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
 /** Returns the preferred module name for the given type. */
 const QString ReferenceManager::preferredModule( const ReferenceManager::Type type ) {
     QString moduleName = QString::null;
-    CSwordModuleInfo* module = 0;
+    CSwordModuleInfo* module = nullptr;
 
     switch (type) {
 
@@ -273,7 +273,7 @@ const QString ReferenceManager::preferredModule( const ReferenceManager::Type ty
             module = btConfig().getDefaultSwordModuleByType( "standardGreekMorphLexicon" );
             break;
         default:
-            module = 0;
+            module = nullptr;
             break;
     }
 
@@ -332,7 +332,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
     QString ret;
     QStringList refList = ref.split(";");
 
-    CSwordVerseKey baseKey(0);
+    CSwordVerseKey baseKey(nullptr);
     baseKey.setLocale( sourceLanguage.toUtf8().constData() );
     baseKey.setKey(options.refBase); //probably in the sourceLanguage
     baseKey.setLocale( "en_US" ); //english works in all environments as base

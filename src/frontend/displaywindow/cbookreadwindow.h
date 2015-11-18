@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's BtActionCollection code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime BtActionCollection code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -25,37 +25,33 @@ class CBookReadWindow: public CLexiconReadWindow {
 
         inline CBookReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
             : CLexiconReadWindow(modules, parent)
-            , m_treeAction(0)
-            , m_treeChooser(0) {}
+            , m_treeAction(nullptr)
+            , m_treeChooser(nullptr) {}
 
-        virtual void storeProfileSettings(const QString & windowGroup);
-        virtual void applyProfileSettings(const QString & windowGroup);
+        CSwordModuleInfo::ModuleType moduleType() const override
+        { return CSwordModuleInfo::GenericBook; }
+
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
         static void insertKeyboardActions(BtActionCollection * const a);
 
     public slots:
 
-        /**
-        * Refreshes the content of this display window and the content of the keychooser.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason reason);
+        void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected: /* Methods: */
 
-        virtual void initActions();
-        virtual void initToolbars();
-        virtual void initConnections();
-        virtual void initView();
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
+        void initActions() override;
+        void initToolbars() override;
+        void initConnections() override;
+        void initView() override;
+        void setupMainWindowToolBars() override;
 
-        virtual void setupPopupMenu();
+        void setupPopupMenu() override;
 
     protected slots:
 
-        /**
-         * Reimplementation to take care of the tree chooser.
-         */
-        virtual void modulesChanged();
+        void modulesChanged() override;
 
     private slots:
 

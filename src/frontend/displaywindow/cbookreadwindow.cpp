@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -34,7 +34,7 @@ void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {
         m_treeAction->activate(QAction::Trigger);
 }
 
-void CBookReadWindow::storeProfileSettings(const QString & windowGroup) {
+void CBookReadWindow::storeProfileSettings(QString const & windowGroup) const {
     CLexiconReadWindow::storeProfileSettings(windowGroup);
 
     Q_ASSERT(windowGroup.endsWith('/'));
@@ -48,14 +48,14 @@ void CBookReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     QAction *a = ac->action("nextEntry");
-    Q_ASSERT(a != 0);
+    Q_ASSERT(a != nullptr);
     a->setEnabled(false);
     a = ac->action("previousEntry");
-    Q_ASSERT(a != 0);
+    Q_ASSERT(a != nullptr);
     a->setEnabled(false);
 
     m_treeAction = ac->action("toggleTree");
-    Q_ASSERT(m_treeAction != 0);
+    Q_ASSERT(m_treeAction != nullptr);
     QObject::connect(m_treeAction, SIGNAL(triggered()),
                      this,         SLOT(treeToggled()));
     addAction(m_treeAction);
@@ -69,7 +69,7 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     qaction = new QAction( /* QIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon), */
         tr("Toggle tree view"), a);
     qaction->setCheckable(true);
-    qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
+    // qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
     a->addAction("toggleTree", qaction);
 }
 
@@ -126,7 +126,7 @@ void CBookReadWindow::initToolbars() {
     setDisplaySettingsButton(button);
     buttonsToolBar()->addWidget(button);  // Display settings
     QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    if (action != 0) {
+    if (action != nullptr) {
         buttonsToolBar()->addAction(action);  // Search
     }
 }
@@ -151,7 +151,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);  // Display settings
     QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    if (action != 0) {
+    if (action != nullptr) {
         btMainWindow()->toolsToolBar()->addAction(action);  // Search
     }
 }
@@ -159,7 +159,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
 /** Is called when the action was executed to toggle the tree view. */
 void CBookReadWindow::treeToggled() {
     if (m_treeAction->isChecked()) {
-        m_treeChooser->show();
+        m_treeChooser->doShow();
     }
     else {
         m_treeChooser->hide();

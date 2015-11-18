@@ -4,21 +4,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
 **********/
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "btbookshelftreemodel.h"
 
-#include <QSet>
-#include "backend/bookshelfmodel/categoryitem.h"
-#include "backend/bookshelfmodel/indexingitem.h"
-#include "backend/bookshelfmodel/languageitem.h"
-#include "backend/bookshelfmodel/moduleitem.h"
-#include "backend/config/btconfig.h"
-#include "util/macros.h"
+#include "../../util/macros.h"
+#include "../config/btconfig.h"
+#include "categoryitem.h"
+#include "indexingitem.h"
+#include "languageitem.h"
+#include "moduleitem.h"
 
 
 using namespace BookshelfModel;
@@ -40,7 +39,7 @@ void BtBookshelfTreeModel::Grouping::saveTo(const QString & configKey) const {
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
     : QAbstractItemModel(parent)
-    , m_sourceModel(0)
+    , m_sourceModel(nullptr)
     , m_rootItem(new RootItem)
     , m_defaultChecked(MODULE_HIDDEN)
     , m_checkable(false) {}
@@ -48,7 +47,7 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
 BtBookshelfTreeModel::BtBookshelfTreeModel(const QString & configKey,
                                            QObject * parent)
        : QAbstractItemModel(parent)
-       , m_sourceModel(0)
+       , m_sourceModel(nullptr)
        , m_rootItem(new RootItem)
        , m_groupingOrder(configKey)
        , m_defaultChecked(MODULE_HIDDEN)
@@ -57,7 +56,7 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(const QString & configKey,
 BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping & grouping,
                                            QObject * parent)
         : QAbstractItemModel(parent)
-        , m_sourceModel(0)
+        , m_sourceModel(nullptr)
         , m_rootItem(new RootItem)
         , m_groupingOrder(grouping)
         , m_defaultChecked(MODULE_HIDDEN)
@@ -99,9 +98,9 @@ QModelIndex BtBookshelfTreeModel::parent(const QModelIndex & index) const {
         return QModelIndex();
 
     Item * childItem(static_cast<Item*>(index.internalPointer()));
-    Q_ASSERT(childItem != 0);
+    Q_ASSERT(childItem != nullptr);
     Item * parentItem(childItem->parent());
-    Q_ASSERT(parentItem != 0);
+    Q_ASSERT(parentItem != nullptr);
 
     if (parentItem == m_rootItem)
         return QModelIndex();
@@ -114,7 +113,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
         return QVariant();
 
     const Item * const i = static_cast<Item*>(index.internalPointer());
-    Q_ASSERT(i != 0);
+    Q_ASSERT(i != nullptr);
     switch (role) {
 
         case Qt::CheckStateRole:
@@ -169,7 +168,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
         newState = Qt::Checked;
 
     Item * item = static_cast<Item *>(itemIndex.internalPointer());
-    Q_ASSERT(item != 0);
+    Q_ASSERT(item != nullptr);
     if (item->checkState() == newState) return false;
 
     // Recursively (un)check all children:
@@ -209,7 +208,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
 
 Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex & index) const {
     if (!index.isValid())
-        return 0;
+        return nullptr;
 
     Qt::ItemFlags f(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 
@@ -238,7 +237,7 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel * sourceModel) {
     if (m_sourceModel == sourceModel)
         return;
 
-    if (m_sourceModel != 0) {
+    if (m_sourceModel != nullptr) {
         disconnect(this, SLOT(moduleInserted(QModelIndex, int, int)));
         disconnect(this, SLOT(moduleRemoved(QModelIndex, int, int)));
         disconnect(this, SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
@@ -253,7 +252,7 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel * sourceModel) {
 
     m_sourceModel = sourceModel;
 
-    if (sourceModel != 0) {
+    if (sourceModel != nullptr) {
         connect(sourceModel, SIGNAL(rowsAboutToBeRemoved(QModelIndex, int, int)),
                 this,        SLOT(moduleRemoved(QModelIndex, int, int)));
         connect(sourceModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
@@ -291,8 +290,8 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
 
     m_groupingOrder = groupingOrder;
 
-    if (m_sourceModel != 0) {
-        const QSet<CSwordModuleInfo *> checked(m_checkedModulesCache);
+    if (m_sourceModel != nullptr) {
+        BtModuleSet const checked(m_checkedModulesCache);
         m_checkedModulesCache.clear();
 
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
@@ -319,14 +318,14 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
     if (m_checkable == checkable)
         return;
     m_checkable = checkable;
-    if (m_sourceModel == 0)
+    if (m_sourceModel == nullptr)
         return;
 
     // Notify views that flags changed for all items:
     resetData();
 }
 
-void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo *> & modules) {
+void BtBookshelfTreeModel::setCheckedModules(BtConstModuleSet const & modules) {
     typedef ModuleItemMap::const_iterator MIMCI;
 
     for (MIMCI it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
@@ -357,9 +356,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
     if (m_modules.contains(&module))
         return;
 
-#if QT_VERSION >= 0x040600
     beginResetModel();
-#endif
     Grouping g(m_groupingOrder);
     addModule(module, QModelIndex(), g, checked);
 
@@ -370,11 +367,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module, bool checked) {
            themselves.
     */
 
-#if QT_VERSION >= 0x040600
     endResetModel();
-#else
-    reset();
-#endif
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
@@ -597,8 +590,8 @@ QDataStream & operator <<(QDataStream & os,
                           const BtBookshelfTreeModel::Grouping & o)
 {
     os << o.size();
-    Q_FOREACH(BtBookshelfTreeModel::Group g, o)
-        os << static_cast<int>(g);
+    Q_FOREACH(BtBookshelfTreeModel::Group const g, o)
+        os << static_cast<int const>(g);
     return os;
 }
 

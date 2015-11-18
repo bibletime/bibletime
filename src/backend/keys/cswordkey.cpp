@@ -2,20 +2,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 #include <QRegExp>
 #include <QString>
 #include <QTextCodec>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordversekey.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordldkey.h"
+#include "cswordtreekey.h"
+#include "cswordversekey.h"
 
 // Sword includes:
 #include <swkey.h>
@@ -71,7 +71,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         return QString::null;
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
-    QString text = QString::fromUtf8(m_module->module()->renderText(0, -1, DoRender));
+    QString text = QString::fromUtf8(m_module->module()->renderText(nullptr, -1, DoRender));
     if (!DoRender)
         return QString::null;
 
@@ -148,7 +148,7 @@ void CSwordKey::emitAfterChanged() {
 
 CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
     if (!module)
-        return 0;
+        return nullptr;
 
     sword::SWKey * const key = module->module()->getKey();
 
@@ -157,7 +157,7 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
         case CSwordModuleInfo::Bible: // Fall through
         case CSwordModuleInfo::Commentary:
 
-            Q_ASSERT(dynamic_cast<sword::VerseKey *>(key) != 0);
+            Q_ASSERT(dynamic_cast<sword::VerseKey *>(key) != nullptr);
             return new CSwordVerseKey(static_cast<sword::VerseKey *>(key),
                                       module);
 
@@ -167,13 +167,13 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
 
         case CSwordModuleInfo::GenericBook:
 
-            Q_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key) != 0);
+            Q_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key) != nullptr);
             return new CSwordTreeKey(dynamic_cast<sword::TreeKeyIdx *>(key),
                                      module );
 
         default:
 
-            return 0;
+            return nullptr;
 
     }
 }

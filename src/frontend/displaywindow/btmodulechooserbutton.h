@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -36,9 +36,8 @@ class BtModuleChooserButton : public QToolButton  {
             TypeFilter(CSwordModuleInfo::ModuleType t) {
                 m_mType = t;
             }
-            bool filter(CSwordModuleInfo* mi) {
-                return ((mi->type() == m_mType) && !mi->isLocked());
-            }
+            bool filter(CSwordModuleInfo const & mi) const override
+            { return ((mi.type() == m_mType) && !mi.isLocked()); }
             CSwordModuleInfo::ModuleType m_mType;
         };
 
@@ -79,8 +78,9 @@ class BtModuleChooserButton : public QToolButton  {
         void moduleChosen(QAction* action );
 
     private:
+
         /** Returns the icon used for the current status.*/
-        const QString iconName();
+        QIcon const & icon();
 
         /**
         * Populates the menu with language submenus and module items without setting

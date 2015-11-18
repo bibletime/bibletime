@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,8 +12,9 @@
 #ifndef RENDERINGCDISPLAYRENDERING_H
 #define RENDERINGCDISPLAYRENDERING_H
 
-#include "backend/rendering/chtmlexportrendering.h"
-#include "backend/config/btconfig.h"
+#include "chtmlexportrendering.h"
+
+#include "../config/btconfig.h"
 
 
 namespace Rendering {
@@ -35,10 +36,10 @@ class CDisplayRendering : public CHTMLExportRendering {
 
     protected: /* Methods: */
 
-        virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo * module);
+        QString entryLink(const KeyTreeItem &item,
+                          const CSwordModuleInfo * module) override;
 
-        virtual QString finishText(const QString &text, const KeyTree &tree);
+        QString finishText(const QString &text, const KeyTree &tree) override;
 
 }; /* class CDisplayRendering */
 

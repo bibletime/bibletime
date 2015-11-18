@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,22 +15,34 @@
 #include <QComboBox>
 
 
-class BtFontSizeWidget : public QComboBox {
-        Q_OBJECT
+class QIntValidator;
 
-    public:
-        BtFontSizeWidget(QWidget* parent = 0);
-        ~BtFontSizeWidget();
-        int fontSize() const;
+class BtFontSizeWidget: public QComboBox {
 
-    public slots:
-        void setFontSize(int size);
+    Q_OBJECT
 
-    private slots:
-        virtual void changed(const QString& text);
+public: /* Methods: */
 
-    signals:
-        void fontSizeChanged( int );
-};
+    BtFontSizeWidget(QWidget * parent = nullptr);
+
+    int fontSize() const;
+
+public slots:
+
+    void setFontSize(int size);
+
+private slots:
+
+    virtual void changed(QString const & text);
+
+signals:
+
+    void fontSizeChanged(int);
+
+private: /* Fields: */
+
+    QIntValidator * const m_validator;
+
+}; /* class BtFontSizeWidget { */
 
 #endif

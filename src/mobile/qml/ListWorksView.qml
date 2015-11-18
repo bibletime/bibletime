@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -108,9 +108,9 @@ Rectangle {
                 id: manageAction
                 text: {
                  if (installed)
-                    return QT_TR_NOOP("Remove");
+                    return qsTranslate("Install Documents", "Remove");
                  else
-                     return QT_TR_NOOP("Install");
+                     return qsTranslate("Install Documents", "Install");
                 }
                 onTriggered: {
                     listView.itemSelected(index);
@@ -158,7 +158,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: 10
-                width: btStyle.uiFontPointSize * 11
+                width: btStyle.uiFontPointSize * 12
                 height: dummyTextForHeight.height*1.5
 
                 checkable: true;

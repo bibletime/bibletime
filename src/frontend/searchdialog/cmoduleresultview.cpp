@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,7 +21,6 @@
 #include "bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 #include "backend/config/btconfig.h"
 
@@ -62,7 +61,7 @@ void CModuleResultView::initView() {
     m_popup = new QMenu(this);
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
-    m_actions.copyMenu->setIcon(util::getIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
+    m_actions.copyMenu->setIcon(CResMgr::searchdialog::result::moduleList::copyMenu::icon());
     m_actions.copy.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
     m_actions.copyMenu->addAction(m_actions.copy.result);
@@ -72,7 +71,7 @@ void CModuleResultView::initView() {
     m_popup->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
-    m_actions.saveMenu->setIcon(util::getIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
+    m_actions.saveMenu->setIcon(CResMgr::searchdialog::result::moduleList::saveMenu::icon());
     m_actions.save.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveResult()) );
     m_actions.saveMenu->addAction(m_actions.save.result);
@@ -82,7 +81,7 @@ void CModuleResultView::initView() {
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
-    m_actions.printMenu->setIcon(util::getIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
+    m_actions.printMenu->setIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon());
     m_actions.print.result = new QAction(tr("Reference with text"), this);
     QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
     m_actions.printMenu->addAction(m_actions.print.result);
@@ -111,11 +110,11 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
     bool strongsAvailable = false;
 
     Q_FOREACH(const CSwordModuleInfo * m, results.keys()) {
-        /// \todo Remove this constructor hack once sword gets it right:
-        const int count = sword::ListKey(results.value(m)).getCount();
-        QTreeWidgetItem * item = new QTreeWidgetItem(this,
-                                                     QStringList(m->name())
-                                                       << QString::number(count));
+        QTreeWidgetItem * const item =
+                new QTreeWidgetItem(this,
+                                    QStringList(m->name())
+                                    << QString::number(
+                                            results.value(m).getCount()));
 
         item->setIcon(0, util::tool::getIconForModule(m));
         /*
@@ -218,7 +217,7 @@ void CModuleResultView::contextMenuEvent( QContextMenuEvent * event ) {
 /** Copies the whole search result into the clipboard. */
 void CModuleResultView::copyResult() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Copying search result"));
 
         mgr.copyKeyList(m_results[m], m, CExportManager::Text, false);
@@ -228,7 +227,7 @@ void CModuleResultView::copyResult() {
 /** Copies the whole search result with the text into the clipboard. */
 void CModuleResultView::copyResultWithText() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Copying search result"));
         mgr.copyKeyList(m_results[m], m, CExportManager::Text, true);
     };
@@ -237,7 +236,7 @@ void CModuleResultView::copyResultWithText() {
 /** Saves the search result keys. */
 void CModuleResultView::saveResult() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Saving search result"));
         mgr.saveKeyList(m_results[m], m, CExportManager::Text, false);
     };
@@ -246,7 +245,7 @@ void CModuleResultView::saveResult() {
 /** Saves the search result with it's text. */
 void CModuleResultView::saveResultWithText() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Saving search result"));
         mgr.saveKeyList(m_results[m], m, CExportManager::Text, true);
     };
@@ -255,7 +254,7 @@ void CModuleResultView::saveResultWithText() {
 /** Appends the whole search result to the printer queue. */
 void CModuleResultView::printResult() {
     CSwordModuleInfo *m = activeModule();
-    if (m != 0) {
+    if (m != nullptr) {
         CExportManager mgr(true, tr("Printing search result"));
         mgr.printKeyList(m_results[m], m, btConfig().getDisplayOptions(),
                          btConfig().getFilterOptions());

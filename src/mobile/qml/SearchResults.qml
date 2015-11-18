@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -124,7 +124,7 @@ SplitView {
                 TitleColorBar {
                     id: titleBar1
 
-                    title: "Documents"
+                    title: qsTr("Documents")
                     width: parent.width
                     anchors.left: parent.left
                     anchors.top: parent.top
@@ -155,7 +155,7 @@ SplitView {
 
                 TitleColorBar {
                     id: titleBar2
-                    title: "References"
+                    title: qsTr("References")
                     width: parent.width
                 }
 

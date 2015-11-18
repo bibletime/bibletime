@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,6 +13,7 @@
 #define BTINSTALLMGR_H
 
 #include <QObject>
+
 // Sword includes:
 #include <installmgr.h>
 #include <remotetrans.h>
@@ -31,10 +32,10 @@ class BtInstallMgr
 
 public: /* Methods: */
 
-    BtInstallMgr(QObject * parent = 0);
+    BtInstallMgr(QObject * parent = nullptr);
     ~BtInstallMgr();
 
-    virtual bool isUserDisclaimerConfirmed() const;
+    bool isUserDisclaimerConfirmed() const override;
 
 signals:
 
@@ -49,7 +50,7 @@ signals:
 protected: /* Methods: */
 
     /** \note Reimplementation of sword::StatusReporter::statusUpdate(). */
-    virtual void statusUpdate(double dltotal, double dlnow);
+    void statusUpdate(double dltotal, double dlnow) override;
 
     /**
     * \note Reimplementation of sword::StatusReporter::preStatus().
@@ -58,9 +59,9 @@ protected: /* Methods: */
     * The sword message is not i18n'ed, it's in the form "Downloading (1 of 6): nt.bzs".
     * This function is not utilized in the UI ATM.
     */
-    virtual void preStatus(long totalBytes,
-                           long completedBytes,
-                           const char * message);
+    void preStatus(long totalBytes,
+                   long completedBytes,
+                   const char * message) override;
 
 private: /* Fields: */
 

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -15,7 +15,7 @@
 
 #include <QSortFilterProxyModel>
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 class BtBookshelfFilterModel: public QSortFilterProxyModel {
@@ -24,13 +24,13 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
 
 public: /* Methods: */
 
-    BtBookshelfFilterModel(QObject * parent = 0);
+    BtBookshelfFilterModel(QObject * parent = nullptr);
 
     inline bool enabled() const {
         return m_enabled;
     }
 
-    virtual bool filterAcceptsRow(int row, const QModelIndex & parent) const;
+    bool filterAcceptsRow(int row, const QModelIndex & parent) const override;
 
     // Name filter:
     inline int nameFilterRole() const {

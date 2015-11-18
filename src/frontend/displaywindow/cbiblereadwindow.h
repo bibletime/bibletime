@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -33,30 +33,23 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual void storeProfileSettings(const QString & windowGroup);
-        virtual void applyProfileSettings(const QString & windowGroup);
+        CSwordModuleInfo::ModuleType moduleType() const override
+        { return CSwordModuleInfo::Bible; }
+
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
         static void insertKeyboardActions( BtActionCollection* const a );
 
     protected: /* Methods: */
 
-        virtual void initActions();
-        virtual void initToolbars();
-        virtual void initConnections();
-        virtual void initView();
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
-        /**
-        * Reimplementation.
-        */
-        virtual void setupPopupMenu();
-        /**
-        * Reimplemented.
-        */
-        virtual void updatePopupMenu();
-        /** Event filter.
-        * Reimplementation of the event filter to filter out events like focus in.
-        */
-        virtual bool eventFilter( QObject* o, QEvent* e);
+        void initActions() override;
+        void initToolbars() override;
+        void initConnections() override;
+        void initView() override;
+        void setupMainWindowToolBars() override;
+        void setupPopupMenu() override;
+        void updatePopupMenu() override;
+        bool eventFilter( QObject* o, QEvent* e) override;
 
         struct {
             QAction* selectAll;
@@ -99,17 +92,15 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         void previousChapter();
         void nextVerse();
         void previousVerse();
-        /**
-        * Refreshes the content of this display window and the content of the keychooser.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason reason);
+
+        void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected slots:
 
         /**
         * Copies the current chapter into the clipboard.
         */
-        void copyDisplayedText();
+        void copyDisplayedText() override;
         /**
         * Saves the chapter as valid HTML page.
         */
@@ -118,7 +109,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
         * Saves the chapter as valid HTML page.
         */
         void saveChapterPlain();
-        virtual void lookupSwordKey( CSwordKey* newKey );
+        void lookupSwordKey(CSwordKey * newKey) override;
         void syncWindows();
 
     private: /* Methods: */

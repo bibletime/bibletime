@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,7 +16,7 @@
 
 #include <QList>
 #include <QPair>
-#include "backend/rendering/ctextrendering.h"
+#include "backend/rendering/btinforendering.h"
 
 
 class CReadDisplay;
@@ -31,45 +31,20 @@ class CInfoDisplay: public QWidget {
 
     Q_OBJECT
 
-public: /* Types: */
-
-    enum InfoType {
-        Abbreviation,
-        CrossReference,
-        Footnote,
-        Lemma,
-        Morph,
-        WordTranslation,
-        WordGloss,
-        Text
-    };
-
-    typedef QPair<InfoType, QString> InfoData;
-    typedef QList<InfoData> ListInfoData;
-
 public: /* Methods: */
 
-    CInfoDisplay(BibleTime * parent = NULL);
+    CInfoDisplay(BibleTime * parent = nullptr);
 
     void unsetInfo();
     void setInfo(const QString & renderedData,
                  const QString & lang = QString());
-    void setInfo(const InfoType, const QString & data);
-    void setInfo(const ListInfoData &);
-    QSize sizeHint() const;
+    void setInfo(Rendering::InfoType const, QString const & data);
+    void setInfo(Rendering::ListInfoData const &);
+    QSize sizeHint() const override;
 
 public slots:
 
     void setInfo(CSwordModuleInfo * module);
-
-private: /* Methods: */
-
-    const QString decodeAbbreviation(const QString & data);
-    const QString decodeCrossReference(const QString & data);
-    const QString decodeFootnote(const QString & data);
-    const QString decodeStrongs(const QString & data);
-    const QString decodeMorph(const QString & data);
-    const QString getWordTranslation(const QString & data);
 
 private slots:
 

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -81,7 +81,7 @@ void BtSearchResultArea::initView() {
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
-    m_previewDisplay = new BtHtmlReadDisplay(0, m_displayFrame);
+    m_previewDisplay = new BtHtmlReadDisplay(nullptr, m_displayFrame);
     m_previewDisplay->view()->setToolTip(tr("Text of the selected search result item"));
     frameLayout->addWidget(m_previewDisplay->view());
 
@@ -115,7 +115,7 @@ void BtSearchResultArea::setSearchResult(
     // Pre-select the first module in the list:
     m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 
-    Q_ASSERT(qobject_cast<CSearchDialog*>(parent()) != 0);
+    Q_ASSERT(qobject_cast<CSearchDialog*>(parent()) != nullptr);
     static_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(true);
 }
 
@@ -140,7 +140,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         QString text;
         CDisplayRendering render;
 
-        QList<const CSwordModuleInfo*> modules;
+        BtConstModuleList modules;
         modules.append(module);
 
         CTextRendering::KeyTreeItem::Settings settings;
@@ -151,7 +151,9 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.setIntros(true);
             vk.setKey(key);
 
-            ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
+            // HACK: enable headings for VerseKeys:
+            static_cast<sword::VerseKey *>(module->module()->getKey())
+                    ->setIntros(true);
 
             //first go back and then go forward the keys to be in context
             vk.previous(CSwordVerseKey::UseVerse);
@@ -182,7 +184,9 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.setIntros(true);
             vk.setKey(key);
 
-            ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
+            // HACK: enable headings for VerseKeys:
+            static_cast<sword::VerseKey *>(module->module()->getKey())
+                    ->setIntros(true);
 
             //include Headings in display, they are indexed and searched too
             if (vk.getVerse() == 1) {
@@ -266,14 +270,14 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
         return;
 
     CTextRendering::KeyTreeItem::Settings settings;
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
     modules.append(module);
     clear();
 
     // for whatever reason the text "Parsing...translations." does not appear.
     // this is not critical but the text is necessary to get the dialog box
     // to be wide enough.
-    QProgressDialog progress(QObject::tr("Parsing Strong's Numbers"), 0, 0, count);
+    QProgressDialog progress(QObject::tr("Parsing Strong's Numbers"), nullptr, 0, count);
     //0, "progressDialog", tr("Parsing Strong's Numbers"), tr("Parsing Strong's numbers for translations."), true);
     //progress->setAllowCancel(false);
     //progress->setMinimumDuration(0);

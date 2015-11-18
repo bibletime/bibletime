@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,7 +13,7 @@
 #define REFERENCEMANAGER_H
 
 #include <QString>
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 /** Contains functions to work with references used for Drag & Drop and for hyperlinks used in our
@@ -71,14 +71,27 @@ ReferenceManager::Type typeFromModule( const CSwordModuleInfo::ModuleType type )
 
 
 struct ParseOptions {
-    QString refDestinationModule;
-    QString refBase; /* only valid for verse based destination modules*/
-    QString sourceLanguage; /* only valid for verse based destination modules*/
-    QString destinationLanguage; /* only valid for verse based destination modules*/
 
-    ParseOptions() {
-        destinationLanguage = "en";
-    };
+/* Methods: */
+
+    inline ParseOptions(QString const & refDestinationModule_ = QString::null,
+                        QString const & refBase_ = QString::null,
+                        QString const & sourceLanguage_ = QString::null,
+                        QString const & destinationLanguage_ = "en")
+        : refDestinationModule(refDestinationModule_)
+        , refBase(refBase_)
+        , sourceLanguage(sourceLanguage_)
+        , destinationLanguage(destinationLanguage_)
+    {}
+
+/* Fields: */
+
+    QString refDestinationModule;
+    /* The following are only valid for verse-based destination modules: */
+    QString refBase;
+    QString sourceLanguage;
+    QString destinationLanguage;
+
 };
 
 /** Parses the given verse references using the given language and the module.

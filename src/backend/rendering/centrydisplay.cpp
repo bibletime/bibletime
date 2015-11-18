@@ -2,29 +2,29 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/rendering/centrydisplay.h"
+#include "centrydisplay.h"
 
 #include <QApplication>
 #include <QRegExp>
 
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "backend/rendering/ctextrendering.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../keys/cswordkey.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/referencemanager.h"
+#include "cdisplayrendering.h"
+#include "ctextrendering.h"
 
 
 using namespace Rendering;
 
 const QString CEntryDisplay::text(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions) {
@@ -33,7 +33,7 @@ const QString CEntryDisplay::text(
 }
 
 const QString CEntryDisplay::textKeyRendering(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions,
@@ -52,7 +52,9 @@ const QString CEntryDisplay::textKeyRendering(
 
     //in Bibles and Commentaries we need to check if 0:0 and X:0 contain something
     if (module->type() == CSwordModuleInfo::Bible || module->type() == CSwordModuleInfo::Commentary) {
-        ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
+        // HACK: enable headings for VerseKeys
+        static_cast<sword::VerseKey *>(module->module()->getKey())
+                ->setIntros(true);
 
         CSwordVerseKey k1(module);
         k1.setIntros(true);

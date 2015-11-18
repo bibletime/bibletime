@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -26,7 +26,7 @@ class QWidget;
 class CScrollButton: public QToolButton {
         Q_OBJECT
     public:
-        CScrollButton(QWidget *parent = 0);
+        CScrollButton(QWidget *parent = nullptr);
 
     signals:
         /**
@@ -53,19 +53,15 @@ class CScrollButton: public QToolButton {
         /**
         * \brief Grabs the mouse on left button click and emits lock().
         */
-        virtual void mousePressEvent(QMouseEvent *e);
+        void mousePressEvent(QMouseEvent *e) override;
 
         /**
         * \brief If the mouse is grabbed and we release the left mouse button,
         *        releases the mouse and emits unlock().
         */
-        virtual void mouseReleaseEvent(QMouseEvent *e);
+        void mouseReleaseEvent(QMouseEvent *e) override;
 
-        /**
-        * \brief Reimplementation of QWidget::mouseMoveEvent() to process mouse
-                 move events.
-        */
-        virtual void mouseMoveEvent(QMouseEvent *e);
+        void mouseMoveEvent(QMouseEvent *e) override;
 
     protected:
         /**

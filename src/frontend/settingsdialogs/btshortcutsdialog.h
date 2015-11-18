@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -48,7 +48,7 @@ class BtShortcutsDialog : public QDialog {
 
     protected:
         // get key from users input, put into primary or alternate label for display to user
-        void keyReleaseEvent(QKeyEvent* event);
+        void keyReleaseEvent(QKeyEvent* event) override;
 
     private:
         QLabel* m_primaryLabel;

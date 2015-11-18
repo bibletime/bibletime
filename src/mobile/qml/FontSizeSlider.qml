@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -13,6 +13,7 @@
 import QtQuick 2.2
 import BibleTime 1.0
 import QtQuick.Controls 1.2
+import QtQuick.Controls.Styles 1.3
 
 Rectangle {
     id: fontPointSize
@@ -82,6 +83,23 @@ Rectangle {
         anchors.topMargin: 20
         minimumValue: fontPointSize.min
         maximumValue: fontPointSize.max
+        style: SliderStyle {
+                groove: Rectangle {
+                    implicitWidth: 200
+                    implicitHeight: 8
+                    color: btStyle.textColor
+                    radius: 8
+                }
+                handle: Rectangle {
+                    anchors.centerIn: parent
+                    color: btStyle.textBackgroundColor
+                    border.color: btStyle.textColor
+                    border.width: 3
+                    implicitWidth: btStyle.pixelsPerMillimeterY * 4
+                    implicitHeight: btStyle.pixelsPerMillimeterY * 4
+                    radius: btStyle.pixelsPerMillimeterY * 2
+                }
+            }
         onValueChanged: {
             if (fontPointSize.ready)
                  accepted(slider.value);
@@ -109,7 +127,7 @@ Rectangle {
         Button {
             id: okButton
             height: titleText.height*1.5
-            width: fontPointSize.width/4
+            width: fontPointSize.width/3
             action: okAction
             style: BtButtonStyle {
             }
@@ -127,7 +145,7 @@ Rectangle {
         Button {
             id: cancelButton
             height: titleText.height*1.5
-            width: fontPointSize.width/4
+            width: fontPointSize.width/3
             action: cancelAction
             style: BtButtonStyle {
             }

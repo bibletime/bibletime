@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -24,26 +24,10 @@ CSearchAnalysisView::CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* p
     resize(sizeHint());
 }
 
-
-/** Returns the sizeHint for this view */
-QSize CSearchAnalysisView::sizeHint() const {
-    return QGraphicsView::sizeHint();
-}
-
 /** No descriptions */
 void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
     QGraphicsView::resizeEvent(e);
     scene()->setSceneRect(0, 0, scene()->sceneRect().width(), viewport()->height() );
 }
-
-
-/** Returns the item at position p. If there no item at that point return 0.
-Is needed?
-*/
-//CSearchAnalysisItem* CSearchAnalysisView::itemAt( const QPoint& p )
-//{
-//}
-
-
 
 }

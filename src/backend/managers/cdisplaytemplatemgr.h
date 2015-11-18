@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,6 +14,7 @@
 
 #include <QHash>
 #include <QStringList>
+#include "../drivers/btmodulelist.h"
 #include "../drivers/cswordmoduleinfo.h"
 
 
@@ -39,7 +40,7 @@ class CDisplayTemplateMgr {
             }
 
             /** The list of modules */
-            QList<const CSwordModuleInfo *> modules;
+            BtConstModuleList modules;
 
             /** The title which is used for the new processed HTML page */
             QString title;
@@ -100,7 +101,7 @@ class CDisplayTemplateMgr {
           \returns The singleton instance of the instance of this class.
         */
         static inline CDisplayTemplateMgr * instance() {
-            Q_ASSERT(m_instance != 0);
+            Q_ASSERT(m_instance != nullptr);
             return m_instance;
         }
 

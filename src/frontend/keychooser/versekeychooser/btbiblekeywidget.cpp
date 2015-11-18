@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -24,9 +24,7 @@
 #include "bibletimeapp.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
-#include "util/btsignal.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 class BtLineEdit : public QLineEdit {
@@ -35,7 +33,7 @@ class BtLineEdit : public QLineEdit {
                 : QLineEdit(parent) {
         }
     protected:
-        void focusInEvent(QFocusEvent* event) {
+        void focusInEvent(QFocusEvent* event) override {
             Qt::FocusReason reason = event->reason();
             if (reason == Qt::OtherFocusReason) {
                 selectAll();
@@ -59,7 +57,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     setFocusPolicy(Qt::WheelFocus);
 
     QToolButton* clearRef = new QToolButton(this);
-    clearRef->setIcon(util::getIcon("edit_clear_locationbar"));
+    clearRef->setIcon(CResMgr::icon_clearEdit());
     clearRef->setAutoRaise(true);
     clearRef->setStyleSheet("QToolButton{margin:0px;}");
     connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );
@@ -83,8 +81,8 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     m_mainLayout->addWidget(m_verseScroller);
 
 
-    setTabOrder(m_textbox, 0);
-    m_dropDownButtons = new QWidget(0);
+    setTabOrder(m_textbox, nullptr);
+    m_dropDownButtons = new QWidget(nullptr);
     m_dropDownButtons->setWindowFlags(Qt::Popup);
     m_dropDownButtons->setAttribute(Qt::WA_WindowPropagation);
     m_dropDownButtons->setCursor(Qt::ArrowCursor);

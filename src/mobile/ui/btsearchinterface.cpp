@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -23,7 +23,7 @@ namespace btm {
 typedef QList<const CSwordModuleInfo*> CSMI;
 
 BtSearchInterface::BtSearchInterface(QObject* parent)
-    : QObject(parent), m_searchType(AndType), m_progressObject(0), m_wasCancelled(false) {
+    : QObject(parent), m_searchType(AndType), m_progressObject(nullptr), m_wasCancelled(false) {
 }
 
 BtSearchInterface::~BtSearchInterface() {
@@ -32,12 +32,12 @@ BtSearchInterface::~BtSearchInterface() {
 static const CSwordModuleInfo* getModuleFromResults(const CSwordModuleSearch::Results& results, int index) {
 
     int moduleIndex = 0;
-    Q_FOREACH(const CSwordModuleInfo* module, results.keys()) {
+    Q_FOREACH(CSwordModuleInfo const * const module, results.keys()) {
         if (moduleIndex == index)
             return module;
         ++moduleIndex;
     }
-    return 0;
+    return nullptr;
 }
 
 bool BtSearchInterface::modulesAreIndexed() {
@@ -50,12 +50,12 @@ bool BtSearchInterface::modulesAreIndexed() {
 }
 
 void BtSearchInterface::slotModuleProgress(int value) {
-    if (m_progressObject != 0)
+    if (m_progressObject != nullptr)
         m_progressObject->setProperty("value", value);
 }
 
 void BtSearchInterface::slotBeginModuleIndexing(const QString& moduleName) {
-    QString title = "Indexing " + moduleName;
+    QString title = tr("Indexing") + " " + moduleName;
     m_progressObject->setProperty("text", title);
 }
 void BtSearchInterface::slotIndexingFinished() {
@@ -82,11 +82,11 @@ bool BtSearchInterface::indexModules() {
     bool success = true;
     m_wasCancelled = false;
 
-    if (m_progressObject == 0)
+    if (m_progressObject == nullptr)
         m_progressObject = findQmlObject("indexProgress");
 
     QList<CSwordModuleInfo *> nonIndexedModules;
-    Q_FOREACH(const CSwordModuleInfo *cm, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const cm, modules) {
         if (cm->hasIndex())
             continue;
         CSwordModuleInfo *m = const_cast<CSwordModuleInfo*>(cm);
@@ -171,7 +171,7 @@ void BtSearchInterface::setupModuleModel(const CSwordModuleSearch::Results & res
     m_modulesModel.setRoleNames(roleNames);
 
     m_modulesModel.clear();
-    Q_FOREACH(const CSwordModuleInfo* m, results.keys()) {
+    Q_FOREACH(CSwordModuleInfo const * const m, results.keys()) {
         const int count = sword::ListKey(results.value(m)).getCount();
         QString moduleName = m->name();
         QString moduleEntry = moduleName + "(" +QString::number(count) + ")";

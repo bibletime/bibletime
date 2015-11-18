@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,16 +15,16 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/filters/gbftohtml.h"
-#include "backend/filters/osistohtml.h"
-#include "backend/filters/plaintohtml.h"
-#include "backend/filters/teitohtml.h"
-#include "backend/filters/thmltohtml.h"
-#include "backend/rendering/cbookdisplay.h"
-#include "backend/rendering/cchapterdisplay.h"
-#include "backend/rendering/centrydisplay.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../bookshelfmodel/btbookshelfmodel.h"
+#include "../filters/gbftohtml.h"
+#include "../filters/osistohtml.h"
+#include "../filters/plaintohtml.h"
+#include "../filters/teitohtml.h"
+#include "../filters/thmltohtml.h"
+#include "../rendering/cbookdisplay.h"
+#include "../rendering/cchapterdisplay.h"
+#include "../rendering/centrydisplay.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -100,7 +100,7 @@ public: /* Methods: */
     /** \brief Destroys the singleton instance, if one exists. */
     static inline void destroyInstance() {
         delete m_instance;
-        m_instance = NULL;
+        m_instance = nullptr;
     }
 
     /**
@@ -108,9 +108,14 @@ public: /* Methods: */
       \note This method is equivalent to model()->modules().
       \returns The list of modules managed by this backend.
     */
-    inline const QList<CSwordModuleInfo *> & moduleList() const;
+    inline const QList<CSwordModuleInfo*> & moduleList() const {
+        return m_dataModel.moduleList();
+    }
+    BtModuleList moduleList(CSwordModuleInfo::ModuleType type) const;
 
-    inline BtBookshelfModel * model();
+    inline BtBookshelfModel * model() {
+        return &m_dataModel;
+    }
 
     /**
       \brief Initializes the Sword modules.
@@ -165,7 +170,9 @@ public: /* Methods: */
       \returns The global config object containing the configs of all modules
                merged together.
     */
-    inline sword::SWConfig * getConfig() const;
+    inline sword::SWConfig * getConfig() const {
+        return config;
+    }
 
     /**
       \param[in] option The option name to return.
@@ -204,14 +211,14 @@ public: /* Methods: */
       \returns a list of pointers to modules, created from a list of module
                names.
     */
-    QList<CSwordModuleInfo *> getPointerList(const QStringList & names) const;
+    QList<CSwordModuleInfo*> getPointerList(const QStringList & names) const;
 
     /**
       \param[in] names The names of the modules to return.
       \returns a list of pointers to const modules, created from a list of
                module names.
     */
-    QList<const CSwordModuleInfo *> getConstPointerList(const QStringList & names) const;
+    BtConstModuleList getConstPointerList(const QStringList & names) const;
 
     /**
       \brief Sword prefix list.
@@ -240,10 +247,7 @@ protected: /* Methods: */
 
     /** Reimplemented from sword::SWMgr. */
     void AddRenderFilters(sword::SWModule * module,
-                          sword::ConfigEntMap & section);
-
-    /** Overrides Sword filters which appear to be buggy. */
-    void filterInit();
+                          sword::ConfigEntMap & section) override;
 
     QStringList getSharedSwordConfigFiles() const;
     QString getPrivateSwordConfigPath() const;
@@ -268,19 +272,5 @@ private: /* Fields: */
     static CSwordBackend * m_instance;
 
 };
-
-/**Returns The list of modules managed by this backend*/
-inline const QList<CSwordModuleInfo *> & CSwordBackend::moduleList() const {
-    return m_dataModel.moduleList();
-}
-
-inline BtBookshelfModel * CSwordBackend::model() {
-    return &m_dataModel;
-}
-
-/** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
-inline sword::SWConfig * CSwordBackend::getConfig() const {
-    return config;
-}
 
 #endif

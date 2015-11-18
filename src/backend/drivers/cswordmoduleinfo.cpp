@@ -2,37 +2,36 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
+#include <cassert>
+#ifndef BT_NO_LUCENE
 #include <CLucene.h>
+#endif
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QSettings>
-#include <QSharedPointer>
+#include <QScopedArrayPointer>
+#include <QScopedPointer>
 #include <QTextDocument>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/rendering/centrydisplay.h"
-#include "backend/cswordmodulesearch.h"
-#include "bibletimeapp.h"
-#include "btglobal.h"
-#include "frontend/messagedialog.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
-#include "util/exceptions.h"
-#include "util/geticon.h"
-#include "util/htmlescape.h"
+#include "../../util/cresmgr.h"
+#include "../../util/directory.h"
+#include "../config/btconfig.h"
+#include "../keys/cswordkey.h"
+#include "../managers/clanguagemgr.h"
+#include "../managers/cswordbackend.h"
+#include "../rendering/centrydisplay.h"
+#include "../cswordmodulesearch.h"
+#include "cswordbiblemoduleinfo.h"
+#include "cswordlexiconmoduleinfo.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -51,60 +50,65 @@ const unsigned int INDEX_VERSION = 7;
 //Lucene default is too small
 const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 
+namespace {
+
+inline CSwordModuleInfo::Category retrieveCategory(
+    CSwordModuleInfo::ModuleType const type,
+    sword::SWModule * module)
+{
+    /// \todo Maybe we can use raw string comparsion instead of QString?
+    QString const cat(module->getConfigEntry("Category"));
+
+    // Category has to be checked before type:
+    if (cat == "Cults / Unorthodox / Questionable Material") {
+        return CSwordModuleInfo::Cult;
+    } else if (cat == "Daily Devotional"
+               || module->getConfig().has("Feature","DailyDevotion"))
+    {
+        return CSwordModuleInfo::DailyDevotional;
+    } else if (cat == "Glossaries"
+               || module->getConfig().has("Feature", "Glossary"))
+    {
+        return CSwordModuleInfo::Glossary;
+    } else if (cat == "Images" || cat == "Maps") {
+        return CSwordModuleInfo::Images;
+    } else {
+        switch (type) {
+            case CSwordModuleInfo::Bible:
+                return CSwordModuleInfo::Bibles;
+            case CSwordModuleInfo::Commentary:
+                return CSwordModuleInfo::Commentaries;
+            case CSwordModuleInfo::Lexicon:
+                return CSwordModuleInfo::Lexicons;
+            case CSwordModuleInfo::GenericBook:
+                return CSwordModuleInfo::Books;
+            case CSwordModuleInfo::Unknown: // Fall thru
+            default:
+                return CSwordModuleInfo::UnknownCategory;
+        }
+    }
+}
+
+}
+
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
                                    CSwordBackend & backend,
                                    ModuleType type)
-    : m_module((Q_ASSERT(module), module)),
-      m_backend(backend),
-      m_type(type),
-      m_cancelIndexing(false),
-      m_cachedName(QString::fromUtf8(module->getName())),
-      m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
+    : m_module((assert(module), module))
+    , m_backend(backend)
+    , m_type(type)
+    , m_cancelIndexing(false)
+    , m_cachedName(QString::fromUtf8(module->getName()))
+    , m_cachedCategory(retrieveCategory(type, module))
+    , m_cachedLanguage(
+        CLanguageMgr::instance()->languageForAbbrev(
+            m_cachedCategory == Glossary
+            /* Special handling for glossaries, we use the "from language" as
+               language for the module: */
+            ? config(GlossaryFrom)
+            : module->getLanguage()))
+    , m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
 {
-    // Initialize m_cachedCategory:
-    {
-        /// \todo Maybe we can use raw string comparsion instead of QString?
-        QString const cat(m_module->getConfigEntry("Category"));
-
-        /// \warning cat has to be checked before m_type !!!
-        if (cat == "Cults / Unorthodox / Questionable Material") {
-            m_cachedCategory = Cult;
-        } else if (cat == "Daily Devotional"
-                   || m_module->getConfig().has("Feature","DailyDevotion"))
-        {
-            m_cachedCategory = DailyDevotional;
-        } else if (cat == "Glossaries"
-                   || m_module->getConfig().has("Feature", "Glossary"))
-        {
-            m_cachedCategory = Glossary;
-        } else if (cat == "Images" || cat == "Maps") {
-            m_cachedCategory = Images;
-        } else {
-            switch (m_type) {
-                case Bible:       m_cachedCategory = Bibles; break;
-                case Commentary:  m_cachedCategory = Commentaries; break;
-                case Lexicon:     m_cachedCategory = Lexicons; break;
-                case GenericBook: m_cachedCategory = Books; break;
-                case Unknown: // Fall thru
-                default:          m_cachedCategory = UnknownCategory; break;
-            }
-        }
-    }
-
-    // Initialize m_cachedLanguage:
-    {
-        CLanguageMgr const & lm = *CLanguageMgr::instance();
-        if (m_cachedCategory == Glossary) {
-            /*
-              Special handling for glossaries, we use the "from language" as
-              language for the module.
-            */
-            m_cachedLanguage = lm.languageForAbbrev(config(GlossaryFrom));
-        } else {
-            m_cachedLanguage = lm.languageForAbbrev(m_module->getLanguage());
-        }
-    }
-
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",
                                              QStringList()).contains(m_cachedName);
 
@@ -121,7 +125,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
 }
 
 CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & copy)
-    : QObject(NULL)
+    : QObject(nullptr)
     , m_module(copy.m_module)
     , m_backend(copy.m_backend)
     , m_type(copy.m_type)
@@ -216,6 +220,9 @@ QString CSwordModuleInfo::getModuleStandardIndexLocation() const {
 }
 
 bool CSwordModuleInfo::hasIndex() const {
+#ifdef BT_NO_LUCENE
+    return false;
+#else
     { // Is this a directory?
         QFileInfo fi(getModuleStandardIndexLocation());
         if (!fi.isDir())
@@ -244,11 +251,13 @@ bool CSwordModuleInfo::hasIndex() const {
     // Is the index there?
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation()
                                                    .toLatin1().constData());
+#endif
 }
 
-bool CSwordModuleInfo::buildIndex() {
+void CSwordModuleInfo::buildIndex() {
     m_cancelIndexing = false;
 
+#ifndef BT_NO_LUCENE
     try {
         // Without this we don't get strongs, lemmas, etc.
         m_backend.setFilterOptions(btConfig().getFilterOptions());
@@ -266,7 +275,7 @@ bool CSwordModuleInfo::buildIndex() {
         m_backend.setOption(CSwordModuleInfo::redLetterWords, false);
 
         // Do not use any stop words:
-        static const TCHAR * stop_words[1u]  = { NULL };
+        static const TCHAR * stop_words[1u]  = { nullptr };
         lucene::analysis::standard::StandardAnalyzer an(static_cast<const TCHAR **>(stop_words));
         const QString index(getModuleStandardIndexLocation());
 
@@ -281,17 +290,30 @@ bool CSwordModuleInfo::buildIndex() {
 
         // Always create a new index:
         typedef lucene::index::IndexWriter IW;
-        QSharedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
+        QScopedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
 #ifndef CLUCENE2
         writer->setMinMergeDocs(1000);
 #endif
 
-        m_module->setPosition(sword::TOP);
-        unsigned long verseLowIndex = m_module->getIndex();
-        m_module->setPosition(sword::BOTTOM);
-        unsigned long verseHighIndex = m_module->getIndex();
+        CSwordBibleModuleInfo *bm = qobject_cast<CSwordBibleModuleInfo*>(this);
+
+        unsigned long verseLowIndex;
+        unsigned long verseHighIndex;
+
+        if(bm)
+        {
+            verseLowIndex = bm->lowerBound().getIndex();
+            verseHighIndex = bm->upperBound().getIndex();
+        }
+        else
+        {
+            m_module->setPosition(sword::TOP);
+            verseLowIndex = m_module->getIndex();
+            m_module->setPosition(sword::BOTTOM);
+            verseHighIndex = m_module->getIndex();
+        }
 
         // verseLowIndex is not 0 in all cases (i.e. NT-only modules)
         unsigned long verseIndex = verseLowIndex + 1;
@@ -324,12 +346,16 @@ bool CSwordModuleInfo::buildIndex() {
         // because key is a pointer to the modules key
         m_module->setSkipConsecutiveLinks(true);
 
-        QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> >
-            sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+        QScopedArrayPointer<wchar_t> sPwcharBuffer(
+                new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
         wchar_t * const wcharBuffer = sPwcharBuffer.data();
         Q_ASSERT(wcharBuffer);
 
-        m_module->setPosition(sword::TOP);
+        if(bm)
+            vk->setIndex(bm->lowerBound().getIndex());
+        else
+            m_module->setPosition(sword::TOP);
+
         while (!(m_module->popError()) && !m_cancelIndexing) {
 
             /* Also index Chapter 0 and Verse 0, because they might have
@@ -338,7 +364,8 @@ bool CSwordModuleInfo::buildIndex() {
                with entry attributes this doesn't work any more. Hits in the
                search dialog will show up as 1:1 (instead of 0). */
 
-            QSharedPointer<lucene::document::Document> doc(new lucene::document::Document());
+            QScopedPointer<lucene::document::Document> doc(
+                    new lucene::document::Document());
 
             //index the key
             lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
@@ -418,13 +445,14 @@ bool CSwordModuleInfo::buildIndex() {
             }
 
             if (verseIndex % 200 == 0) {
-                int indexingProgressValue;
                 if (verseSpan == 0) { // Prevent division by zero
-                    indexingProgressValue = 0;
+                    emit indexingProgress(0);
                 } else {
-                    indexingProgressValue = (int)((100 * (verseIndex - verseLowIndex)) / (verseSpan));
+                    emit indexingProgress(
+                            static_cast<int>(
+                                    (100 * (verseIndex - verseLowIndex))
+                                    / verseSpan));
                 }
-                emit indexingProgress(indexingProgressValue);
             }
 
             m_module->increment();
@@ -433,6 +461,7 @@ bool CSwordModuleInfo::buildIndex() {
         if (!m_cancelIndexing)
             writer->optimize();
         writer->close();
+        writer.reset();
 
         if (m_cancelIndexing) {
             deleteIndex();
@@ -447,27 +476,15 @@ bool CSwordModuleInfo::buildIndex() {
             module_config.setValue("index-version", INDEX_VERSION);
             emit hasIndexChanged(true);
         }
-    } catch (CLuceneError & e) {
-        qWarning() << "CLucene exception occurred while indexing:" << e.what();
-        message::showWarning(0,
-                          QCoreApplication::tr("Indexing aborted"),
-                          QCoreApplication::tr("An internal error occurred "
-                                               "while building the index: %1")
-                          .arg(e.what()));
-        deleteIndex();
-        m_cancelIndexing = false;
-        return false;
+    // } catch (CLuceneError & e) {
     } catch (...) {
-        qWarning("CLucene exception occurred while indexing");
-        message::showWarning(0,
-                          QCoreApplication::tr("Indexing aborted"),
-                          QCoreApplication::tr("An internal error occurred "
-                                               "while building the index."));
         deleteIndex();
         m_cancelIndexing = false;
-        return false;
+        throw;
     }
-    return true;
+#else
+    return false;
+#endif
 }
 
 void CSwordModuleInfo::deleteIndex() {
@@ -479,27 +496,27 @@ void CSwordModuleInfo::deleteIndexForModule(const QString & name) {
     util::directory::removeRecursive(getGlobalBaseIndexLocation() + "/" + name);
 }
 
-unsigned long CSwordModuleInfo::indexSize() const {
+size_t CSwordModuleInfo::indexSize() const {
     namespace DU = util::directory;
     return DU::getDirSizeRecursive(getModuleBaseIndexLocation());
 }
 
-int CSwordModuleInfo::searchIndexed(const QString & searchedText,
-                                    const sword::ListKey & scope,
-                                    sword::ListKey & results) const
+size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
+                                       const sword::ListKey & scope,
+                                       sword::ListKey & results) const
 {
-    QScopedPointer<char, QScopedPointerArrayDeleter<char> >
-        sPutfBuffer(new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-    QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> >
-        sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    QScopedArrayPointer<char> sPutfBuffer(
+            new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    QScopedArrayPointer<wchar_t> sPwcharBuffer(
+            new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
     char * const utfBuffer = sPutfBuffer.data();
     Q_ASSERT(utfBuffer);
     wchar_t * const wcharBuffer = sPwcharBuffer.data();
     Q_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
-    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(this));
     {
+        QScopedPointer<CSwordKey> key(CSwordKey::createInstance(this));
         const sword::SWKey * const s = dynamic_cast<sword::SWKey *>(key.data());
         if (s)
             m_module->setKey(*s);
@@ -508,68 +525,66 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
 
     results.clear();
 
-    try {
-        // do not use any stop words
-        static const TCHAR * stop_words[1u]  = { NULL };
-        lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
-        lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
-        lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-        QSharedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
-                                                                                        static_cast<const TCHAR *>(_T("content")),
-                                                                                        &analyzer));
+#ifndef BT_NO_LUCENE
+    // do not use any stop words
+    static const TCHAR * stop_words[1u]  = { nullptr };
+    lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
+    lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
+    lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
+    QScopedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
+                                                                                    static_cast<const TCHAR *>(_T("content")),
+                                                                                    &analyzer));
 
-        QSharedPointer<lucene::search::Hits> h(searcher.search(q.data(),
-                                                               #ifdef CLUCENE2
-                                                               lucene::search::Sort::INDEXORDER()));
-                                                               #else
-                                                               lucene::search::Sort::INDEXORDER));
-                                                               #endif
+    QScopedPointer<lucene::search::Hits> h(searcher.search(q.data(),
+                                                           #ifdef CLUCENE2
+                                                           lucene::search::Sort::INDEXORDER()));
+                                                           #else
+                                                           lucene::search::Sort::INDEXORDER));
+                                                           #endif
 
-        const bool useScope = (scope.getCount() > 0);
+    const bool useScope = (scope.getCount() > 0);
 
-        lucene::document::Document * doc = 0;
-        QSharedPointer<sword::SWKey> swKey(m_module->createKey());
+    lucene::document::Document * doc = nullptr;
+    QScopedPointer<sword::SWKey> swKey(m_module->createKey());
+
+    sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
+    if (vk)
+        vk->setIntros(true);
 
 #ifdef CLUCENE2
-        for (unsigned int i = 0; i < h->length(); ++i) {
+    for (size_t i = 0; i < h->length(); ++i) {
 #else
-        for (int i = 0; i < h->length(); ++i) {
+    for (int i = 0; i < h->length(); ++i) {
 #endif
-            doc = &h->doc(i);
-            lucene_wcstoutf8(utfBuffer,
-                             static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
-                             BT_MAX_LUCENE_FIELD_LENGTH);
+        doc = &h->doc(i);
+        lucene_wcstoutf8(utfBuffer,
+                         static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
+                         BT_MAX_LUCENE_FIELD_LENGTH);
 
-            swKey->setText(utfBuffer);
 
-            // Limit results based on scope:
-            if (useScope) {
-                for (int j = 0; j < scope.getCount(); j++) {
-                    Q_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
-                    const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
-                    if (vkey->getLowerBound().compare(*swKey) <= 0
-                        && vkey->getUpperBound().compare(*swKey) >= 0)
-                    {
-                        results.add(*swKey);
-                    }
+        swKey->setText(utfBuffer);
+
+        // Limit results based on scope:
+        if (useScope) {
+            for (int j = 0; j < scope.getCount(); j++) {
+                Q_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
+                const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
+                if (vkey->getLowerBound().compare(*swKey) <= 0
+                    && vkey->getUpperBound().compare(*swKey) >= 0)
+                {
+                    results.add(*swKey);
                 }
-            } else {
-                results.add(*swKey); // No scope, give me all buffers
             }
+        } else {
+            results.add(*swKey); // No scope, give me all buffers
         }
-    } catch (...) {
-        qWarning("CLucene exception occurred");
-        message::showWarning(0,
-                          QCoreApplication::tr("Search aborted"),
-                          QCoreApplication::tr("An internal error occurred "
-                                               "while executing your search."));
-        return 0;
     }
+#endif
 
     qDeleteAll(list);
     list.clear();
 
-    return results.getCount();
+    return static_cast<size_t>(results.getCount());
 }
 
 sword::SWVersion CSwordModuleInfo::minimumSwordVersion() const {
@@ -718,11 +733,11 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
                                      name.toUtf8().constData());
 }
 
-CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const {
-    return (config(TextDir) == "RtoL")
-           ? CSwordModuleInfo::RightToLeft
-           : CSwordModuleInfo::LeftToRight;
-}
+CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const
+{ return (config(TextDir) == "RtoL") ? RightToLeft : LeftToRight; }
+
+char const * CSwordModuleInfo::textDirectionAsHtml() const
+{ return textDirection() == RightToLeft ? "rtl" : "ltr"; }
 
 void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
     m_module->setKey(key->key().toUtf8().constData());
@@ -747,8 +762,6 @@ Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 }
 
 QString CSwordModuleInfo::aboutText() const {
-    using util::htmlEscape;
-
     static const QString row("<tr><td><b>%1</b></td><td>%2</td></tr>");
 
     QString text;
@@ -757,7 +770,7 @@ QString CSwordModuleInfo::aboutText() const {
     text += row
             .arg(tr("Version"))
             .arg(m_cachedHasVersion
-                 ? htmlEscape(config(CSwordModuleInfo::ModuleVersion))
+                 ? config(CSwordModuleInfo::ModuleVersion).toHtmlEscaped()
                  : tr("unknown"));
 
     {
@@ -765,27 +778,25 @@ QString CSwordModuleInfo::aboutText() const {
         text += row
                 .arg(tr("Markup"))
                 .arg(!sourceType.isEmpty()
-                     ? htmlEscape(sourceType)
+                     ? sourceType.toHtmlEscaped()
                      : tr("unknown"));
     }
 
     text += row
             .arg(tr("Location"))
-            .arg(htmlEscape(config(CSwordModuleInfo::AbsoluteDataPath)));
+            .arg(config(CSwordModuleInfo::AbsoluteDataPath).toHtmlEscaped());
 
     text += row
             .arg(tr("Language"))
-            .arg(htmlEscape(m_cachedLanguage->translatedName()));
+            .arg(m_cachedLanguage->translatedName().toHtmlEscaped());
 
-    if (m_module->getConfigEntry("Category"))
-        text += row
-                .arg(tr("Category"))
-                .arg(htmlEscape(m_module->getConfigEntry("Category")));
+    if (char const * const e = m_module->getConfigEntry("Category"))
+        text += row.arg(tr("Category"))
+                   .arg(QString{e}.toHtmlEscaped());
 
-    if (m_module->getConfigEntry("LCSH"))
-        text += row
-                .arg(tr("LCSH"))
-                .arg(htmlEscape(m_module->getConfigEntry("LCSH")));
+    if (char const * const e = m_module->getConfigEntry("LCSH"))
+        text += row.arg(tr("LCSH"))
+                   .arg(QString{e}.toHtmlEscaped());
 
     text += row
             .arg(tr("Writable"))
@@ -794,7 +805,7 @@ QString CSwordModuleInfo::aboutText() const {
     if (isEncrypted())
         text += row
                 .arg(tr("Unlock key"))
-                .arg(htmlEscape(config(CSwordModuleInfo::CipherKey)));
+                .arg(config(CSwordModuleInfo::CipherKey).toHtmlEscaped());
 
     QString options;
 
@@ -815,7 +826,7 @@ QString CSwordModuleInfo::aboutText() const {
     if (!options.isEmpty())
         text += row
                 .arg(tr("Features"))
-                .arg(htmlEscape(options));
+                .arg(options.toHtmlEscaped());
 
     text += "</table><hr>";
 
@@ -829,25 +840,7 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("About"))
             .arg(config(AboutInformation)); // May contain HTML, don't escape
 
-    typedef QList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
-
-    ListConfigEntry entries;
-
-    entries.append(DistributionLicense);
-    entries.append(DistributionSource);
-    entries.append(DistributionNotes);
-    entries.append(TextSource);
-    entries.append(CopyrightNotes);
-    entries.append(CopyrightHolder);
-    entries.append(CopyrightDate);
-    entries.append(CopyrightContactName);
-    entries.append(CopyrightContactAddress);
-    entries.append(CopyrightContactEmail);
-
-    typedef QMap<CSwordModuleInfo::ConfigEntry, QString> MapConfigEntry;
-
-    MapConfigEntry entryMap;
-
+    QMap<CSwordModuleInfo::ConfigEntry, QString> entryMap;
     entryMap[DistributionLicense] = tr("Distribution license");
     entryMap[DistributionSource] = tr("Distribution source");
     entryMap[DistributionNotes] = tr("Distribution notes");
@@ -861,46 +854,53 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += ("<hr><table>");
 
-    for (ListConfigEntry::iterator it(entries.begin()); it != entries.end(); ++it)
+    static CSwordModuleInfo::ConfigEntry const entries[] = {
+        DistributionLicense,
+        DistributionSource,
+        DistributionNotes,
+        TextSource,
+        CopyrightNotes,
+        CopyrightHolder,
+        CopyrightDate,
+        CopyrightContactName,
+        CopyrightContactAddress,
+        CopyrightContactEmail
+    };
+    for (CSwordModuleInfo::ConfigEntry const * it = &entries[0u];
+         it != &entries[sizeof(entries) / sizeof(entries[0u])];
+         ++it)
         if (!config(*it).isEmpty())
             text += row
-                    .arg(htmlEscape(entryMap[*it]))
-                    .arg(htmlEscape(config(*it)));
+                    .arg(entryMap[*it].toHtmlEscaped())
+                    .arg(config(*it).toHtmlEscaped());
 
     text += "</table></font>";
 
     return text;
 }
 
-QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
-    const QString & filename = moduleIconFilename(module);
-    if (filename.isEmpty())
-        return QIcon();
-    return util::getIcon(filename);
-}
-
-const QString & CSwordModuleInfo::moduleIconFilename(const CSwordModuleInfo & module) {
-    const CSwordModuleInfo::Category cat(module.m_cachedCategory);
+QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
+    CSwordModuleInfo::Category const cat(module.m_cachedCategory);
     switch (cat) {
         case CSwordModuleInfo::Bibles:
             return module.isLocked()
-                   ? CResMgr::modules::bible::icon_locked
-                   : CResMgr::modules::bible::icon_unlocked;
+                   ? CResMgr::modules::bible::icon_locked()
+                   : CResMgr::modules::bible::icon_unlocked();
 
         case CSwordModuleInfo::Commentaries:
             return module.isLocked()
-                   ? CResMgr::modules::commentary::icon_locked
-                   : CResMgr::modules::commentary::icon_unlocked;
+                   ? CResMgr::modules::commentary::icon_locked()
+                   : CResMgr::modules::commentary::icon_unlocked();
 
         case CSwordModuleInfo::Lexicons:
             return module.isLocked()
-                   ? CResMgr::modules::lexicon::icon_locked
-                   : CResMgr::modules::lexicon::icon_unlocked;
+                   ? CResMgr::modules::lexicon::icon_locked()
+                   : CResMgr::modules::lexicon::icon_unlocked();
 
         case CSwordModuleInfo::Books:
             return module.isLocked()
-                   ? CResMgr::modules::book::icon_locked
-                   : CResMgr::modules::book::icon_unlocked;
+                   ? CResMgr::modules::book::icon_locked()
+                   : CResMgr::modules::book::icon_unlocked();
 
         case CSwordModuleInfo::Cult:
         case CSwordModuleInfo::Images:
@@ -908,40 +908,31 @@ const QString & CSwordModuleInfo::moduleIconFilename(const CSwordModuleInfo & mo
         case CSwordModuleInfo::Glossary:
         case CSwordModuleInfo::UnknownCategory:
         default:
-            return categoryIconFilename(cat);
+            return categoryIcon(cat);
     }
 }
 
-QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category & category) {
-    const QString filename(categoryIconFilename(category));
-    if (filename.isEmpty())
-        return QIcon();
-    return util::getIcon(filename);
-}
-
-const QString & CSwordModuleInfo::categoryIconFilename(const CSwordModuleInfo::Category & category) {
-    static const QString noFilename;
-
+QIcon const & CSwordModuleInfo::categoryIcon(CSwordModuleInfo::Category category) {
     switch (category) {
         case CSwordModuleInfo::Bibles:
-            return CResMgr::categories::bibles::icon;
+            return CResMgr::categories::bibles::icon();
         case CSwordModuleInfo::Commentaries:
-            return CResMgr::categories::commentaries::icon;
+            return CResMgr::categories::commentaries::icon();
         case CSwordModuleInfo::Books:
-            return CResMgr::categories::books::icon;
+            return CResMgr::categories::books::icon();
         case CSwordModuleInfo::Cult:
-            return CResMgr::categories::cults::icon;
+            return CResMgr::categories::cults::icon();
         case CSwordModuleInfo::Images:
-            return CResMgr::categories::images::icon;
+            return CResMgr::categories::images::icon();
         case CSwordModuleInfo::DailyDevotional:
-            return CResMgr::categories::dailydevotional::icon;
+            return CResMgr::categories::dailydevotional::icon();
         case CSwordModuleInfo::Lexicons:
-            return CResMgr::categories::lexicons::icon;
+            return CResMgr::categories::lexicons::icon();
         case CSwordModuleInfo::Glossary:
-            return CResMgr::categories::glossary::icon;
+            return CResMgr::categories::glossary::icon();
         case CSwordModuleInfo::UnknownCategory:
         default:
-            return noFilename;
+            return BtIcons::instance().icon_null;
     }
 }
 
@@ -968,6 +959,29 @@ QString CSwordModuleInfo::categoryName(const CSwordModuleInfo::Category & catego
     }
 }
 
+QString CSwordModuleInfo::englishCategoryName(const CSwordModuleInfo::Category & category) {
+    switch (category) {
+        case CSwordModuleInfo::Bibles:
+            return "Bibles";
+        case CSwordModuleInfo::Commentaries:
+            return "Commentaries";
+        case CSwordModuleInfo::Books:
+            return "Books";
+        case CSwordModuleInfo::Cult:
+            return "Cults/Unorthodox";
+        case CSwordModuleInfo::Images:
+            return "Maps and Images";
+        case CSwordModuleInfo::DailyDevotional:
+            return "Daily Devotionals";
+        case CSwordModuleInfo::Lexicons:
+            return  "Lexicons and Dictionaries";
+        case CSwordModuleInfo::Glossary:
+            return "Glossaries";
+        default:
+            return "Unknown";
+    }
+}
+
 QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
     QString ret = isUnicode()
                   ? QString::fromUtf8(m_module->getConfigEntry(name.toUtf8().constData()))
@@ -986,7 +1000,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
                         .toUtf8().constData());
         if (RTF_Buffer.length() > 0) {
             sword::RTFHTML RTF_Filter;
-            RTF_Filter.processText(RTF_Buffer, 0, 0);
+            RTF_Filter.processText(RTF_Buffer, nullptr, nullptr);
             return isUnicode()
                    ? QString::fromUtf8(RTF_Buffer.c_str())
                    : QString::fromLatin1(RTF_Buffer.c_str());

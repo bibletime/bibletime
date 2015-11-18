@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,113 +22,95 @@
 #include "frontend/searchdialog/csearchdialog.h"
 
 
-CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
-        : CDisplayWindow(modules, parent),
-        m_readDisplayWidget(0) {
-    //   installEventFilter(this);
-}
+CReadWindow::CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
+    : CDisplayWindow(modules, parent)
+    , m_readDisplayWidget(nullptr)
+{}
 
-/** Sets the display widget of this display window. */
-void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
+void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     // Lets be orwellianly paranoid here:
-    Q_ASSERT(dynamic_cast<CReadDisplay*>(newDisplay) != 0);
+    Q_ASSERT(dynamic_cast<CReadDisplay *>(newDisplay));
 
     CDisplayWindow::setDisplayWidget(newDisplay);
     if (m_readDisplayWidget) {
-        disconnect(m_readDisplayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)),
-                   this, SLOT(lookupModKey(const QString&, const QString&)));
-        disconnect(m_readDisplayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)),
-                   this, SLOT(lookupKey(const QString&)));
+        disconnect(m_readDisplayWidget->connectionsProxy(),
+                   SIGNAL(referenceClicked(QString const &, QString const &)),
+                   this,
+                   SLOT(lookupModKey(QString const &, QString const &)));
+        disconnect(m_readDisplayWidget->connectionsProxy(),
+                   SIGNAL(referenceDropped(QString const &)),
+                   this,
+                   SLOT(lookupKey(QString const &)));
 
-        BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_readDisplayWidget);
-        if (v) {
-            QObject::disconnect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
-        }
-
+        if (BtHtmlReadDisplay * const v =
+                dynamic_cast<BtHtmlReadDisplay *>(m_readDisplayWidget))
+            QObject::disconnect(v,    SIGNAL(completed()),
+                                this, SLOT(slotMoveToAnchor()));
     }
 
-    m_readDisplayWidget = static_cast<CReadDisplay*>(newDisplay);
-    connect(
-        m_readDisplayWidget->connectionsProxy(),
-        SIGNAL(referenceClicked(const QString&, const QString&)),
-        this,
-        SLOT(lookupModKey(const QString&, const QString&))
-    );
+    m_readDisplayWidget = static_cast<CReadDisplay *>(newDisplay);
+    connect(m_readDisplayWidget->connectionsProxy(),
+            SIGNAL(referenceClicked(QString const &, QString const &)),
+            this,
+            SLOT(lookupModKey(QString const &, QString const &)));
 
-    connect(
-        m_readDisplayWidget->connectionsProxy(),
-        SIGNAL(referenceDropped(const QString&)),
-        this,
-        SLOT(lookupKey(const QString&))
-    );
-    BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_readDisplayWidget);
-    if (v) {
-        QObject::connect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
-    }
+    connect(m_readDisplayWidget->connectionsProxy(),
+            SIGNAL(referenceDropped(QString const &)),
+            this,
+            SLOT(lookupKey(QString const &)));
+
+    if (BtHtmlReadDisplay * const v =
+            dynamic_cast<BtHtmlReadDisplay *>(m_readDisplayWidget))
+        QObject::connect(v,    SIGNAL(completed()),
+                         this, SLOT(slotMoveToAnchor()));
 }
 
-/** Lookup the given entry. */
-void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
+void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
     Q_ASSERT(newKey);
 
-    using namespace Rendering;
-
-//    Q_ASSERT(isReady() && newKey && modules().first());
-    if (!isReady() || !newKey || modules().empty() || !modules().first()) {
+    if (!isReady() || !newKey || modules().empty() || !modules().first())
         return;
-    }
 
-    if (key() != newKey) {
+    if (key() != newKey)
         key()->setKey(newKey->key());
-    }
 
     /// \todo next-TODO how about options?
-    Q_ASSERT(modules().first()->getDisplay());
-    CEntryDisplay* display = modules().first()->getDisplay();
-    if (display) { //do we have a display object?
-        displayWidget()->setText(
-            display->text(
-                modules(),
-                newKey->key(),
-                displayOptions(),
-                filterOptions()
-            )
-        );
-    }
+    Rendering::CEntryDisplay * const display = modules().first()->getDisplay();
+    Q_ASSERT(display);
+    displayWidget()->setText(display->text(modules(),
+                                           newKey->key(),
+                                           displayOptions(),
+                                           filterOptions()));
 
     setWindowTitle(windowCaption());
-
-    // moving to anchor happens in slotMoveToAnchor which catches the completed() signal from KHTMLPart
+    /* Moving to anchor happens in slotMoveToAnchor which catches the
+       completed() signal from KHTMLPart. */
 }
 
 void CReadWindow::slotMoveToAnchor() {
-    ((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
+    static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+            Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
-void CReadWindow::insertKeyboardActions( BtActionCollection* const ) {}
+void CReadWindow::insertKeyboardActions(BtActionCollection * const)
+{}
 
-/** No descriptions */
-void CReadWindow::copyDisplayedText() {
-    CExportManager().copyKey(key(), CExportManager::Text, true);
-}
+void CReadWindow::copyDisplayedText()
+{ CExportManager().copyKey(key(), CExportManager::Text, true); }
 
-
-/*!
-    \fn CReadWindow::resizeEvent(QResizeEvent* e)
- */
-void CReadWindow::resizeEvent(QResizeEvent* /*e*/) {
-    if (displayWidget()) {
-        ((CReadDisplay*)displayWidget())->moveToAnchor(Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
-    }
+void CReadWindow::resizeEvent(QResizeEvent * e) {
+    Q_UNUSED(e)
+    if (displayWidget())
+        static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
 void CReadWindow::openSearchStrongsDialog() {
     QString searchText;
-    Q_FOREACH (const QString &strongNumber,
-               displayWidget()->getCurrentNodeInfo().split('|', QString::SkipEmptyParts))
-    {
+    Q_FOREACH(QString const & strongNumber,
+              displayWidget()->getCurrentNodeInfo().split(
+                    '|',
+                    QString::SkipEmptyParts))
         searchText.append("strong:").append(strongNumber).append(' ');
-    }
-
-    Search::CSearchDialog::openDialog( modules(), searchText, 0 );
+    Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
 }

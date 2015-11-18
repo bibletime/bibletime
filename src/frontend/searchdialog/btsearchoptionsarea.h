@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,11 +14,12 @@
 
 #include <QWidget>
 
+#include "backend/cswordmodulesearch.h"
+#include "backend/drivers/btmodulelist.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/searchdialog/chistorycombobox.h"
 
 
-class CSwordModuleInfo;
 class QComboBox;
 class QEvent;
 class QGridLayout;
@@ -35,13 +36,7 @@ class BtSearchOptionsArea : public QWidget {
         Q_OBJECT
     public:
 
-        enum SearchType { /* Values provided for serialization */
-            AndType = 0,
-            OrType = 1,
-            FullType = 2
-        };
-
-        BtSearchOptionsArea(QWidget *parent = 0);
+        BtSearchOptionsArea(QWidget *parent = nullptr);
         ~BtSearchOptionsArea();
         /*
         * Add text to search combox box history
@@ -56,14 +51,14 @@ class BtSearchOptionsArea : public QWidget {
         */
         QString searchText() const;
 
-        SearchType searchType();
+        CSwordModuleSearch::SearchType searchType();
 
         inline QPushButton * searchButton() const { return m_searchButton; }
 
         /**
           Returns the list of used modules.
         */
-        inline QList<const CSwordModuleInfo*> modules() const {
+        inline const BtConstModuleList & modules() const {
             return m_modules;
         }
 
@@ -93,13 +88,13 @@ class BtSearchOptionsArea : public QWidget {
         * Reads the settings for the searchdialog from disk.
         */
         void saveSettings();
-        bool eventFilter(QObject* obj, QEvent* event);
+        bool eventFilter(QObject* obj, QEvent* event) override;
 
     public slots:
         /**
           Sets the modules used by the search.
         */
-        void setModules(const QList<const CSwordModuleInfo*> &modules);
+        void setModules(const BtConstModuleList &modules);
 
         /** Sets the modules when user selects them from the combobox.*/
         void moduleListTextSelected(int index);
@@ -128,7 +123,7 @@ class BtSearchOptionsArea : public QWidget {
         void sigStartSearch();
 
     private:
-        QList<const CSwordModuleInfo*> m_modules;
+        BtConstModuleList m_modules;
 
         QHBoxLayout *hboxLayout;
         QGroupBox *searchGroupBox;
@@ -151,8 +146,5 @@ class BtSearchOptionsArea : public QWidget {
 
 }
 
-QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType);
-QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType);
-Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType)
 
 #endif

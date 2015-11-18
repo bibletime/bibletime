@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -48,7 +48,7 @@ void removeRecursive(const QString &dir);
  *
  * @return The size of the dir in bytes
  */
-unsigned long getDirSizeRecursive(const QString &dir);
+size_t getDirSizeRecursive(QString const & dir);
 
 /** Convert directory path separators to those for each platform
  *  Windows = "\", Others = "/"

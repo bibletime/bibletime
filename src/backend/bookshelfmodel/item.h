@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -37,7 +37,7 @@ public: /* Methods: */
 
     inline Item(Type type)
         : m_type(type)
-        , m_parent(0)
+        , m_parent(nullptr)
         , m_checkState(Qt::Unchecked) {}
 
     virtual ~Item();
@@ -69,7 +69,7 @@ public: /* Methods: */
       \retval -1 if this item has no parent.
     */
     inline int childIndex() const {
-        return m_parent == 0
+        return m_parent == nullptr
                ? -1
                : m_parent->m_children.indexOf(const_cast<Item *>(this));
     }
@@ -88,7 +88,7 @@ public: /* Methods: */
       \param[in] newItem The item to insert.
     */
     inline void insertChild(int index, Item * newItem) {
-        Q_ASSERT(newItem != 0);
+        Q_ASSERT(newItem != nullptr);
         Q_ASSERT(index >= 0 && index <= m_children.size());
         m_children.insert(index, newItem);
         newItem->setParent(this);
@@ -104,7 +104,7 @@ public: /* Methods: */
                 return item;
             }
         }
-        return 0;
+        return nullptr;
     }
 
     /**
@@ -143,7 +143,7 @@ public: /* Methods: */
 private: /* Methods: */
 
     inline void setParent(Item * parent) {
-        Q_ASSERT(parent != 0);
+        Q_ASSERT(parent != nullptr);
         m_parent = parent;
     }
 
@@ -163,9 +163,7 @@ public: /* Methods: */
     inline RootItem()
         : Item(Item::ITEM_ROOT) {}
 
-    inline virtual bool fitFor(const CSwordModuleInfo &) const {
-        return true;
-    }
+    inline bool fitFor(const CSwordModuleInfo &) const override { return true; }
 
 };
 

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -128,12 +128,11 @@ class QSignalMapper;
  */
 class BibleTime : public QMainWindow {
         friend class CDisplayWindow;
-        friend class BibleTimeDBusAdaptor;
         Q_OBJECT
 
     public:
 
-        BibleTime(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        BibleTime(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
         ~BibleTime();
 
@@ -188,7 +187,7 @@ class BibleTime : public QMainWindow {
           \param[in] parent The parent widget for the unlock dialogs.
           \returns whether the module was successfully unlocked.
         */
-        static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = 0);
+        static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = nullptr);
 
         /**
           Get a pointer to the module associated with the current window
@@ -240,7 +239,7 @@ public slots:
         /**
         * Catch QMainWindow events
         */
-        bool event(QEvent* event);
+        bool event(QEvent* event) override;
         /**
         * Create the main window menu and toolbar
         */
@@ -288,7 +287,7 @@ public slots:
         /**
         * Initializes one action object
         */
-        QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel,
+        QAction* initAction(QAction* action, QString text, QIcon const & icon, QKeySequence accel,
                             const QString& tooltip, const QString& actionName, const char* slot );
         /**
         * Refreshes all presenter supporting at least in of the features given as parameter.
@@ -302,7 +301,7 @@ public slots:
         /**
         * Reimplemented from QWidget.
         */
-        void closeEvent(QCloseEvent *event);
+        void closeEvent(QCloseEvent *event) override;
 
     protected slots:
         /**
@@ -507,7 +506,7 @@ public slots:
         BtFindWidget* m_findWidget;
 
 
-    protected: //DBUS interface implementation
+    protected:
         void closeAllModuleWindows();
         void syncAllBibles(const QString& key);
         void syncAllCommentaries(const QString& key);

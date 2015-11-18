@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -33,33 +33,32 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         inline CCommentaryReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
             : CLexiconReadWindow(modules, parent) {}
 
-        virtual void storeProfileSettings(const QString & windowGroup);
-        virtual void applyProfileSettings(const QString & windowGroup);
-        virtual bool syncAllowed() const;
+        CSwordModuleInfo::ModuleType moduleType() const override
+        { return CSwordModuleInfo::Commentary; }
 
-    public slots: // Public slots
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
+        bool syncAllowed() const override;
+
+    public slots:
         void nextBook();
         void previousBook();
         void nextChapter();
         void previousChapter();
         void nextVerse();
         void previousVerse();
-        /**
-        * Reimplementation to handle the keychooser refresh.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason);
+        void reload(CSwordBackend::SetupChangedReason) override;
 
     protected:
-        virtual void initActions();
-        virtual void initToolbars();
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
+        void initActions() override;
+        void initToolbars() override;
+        void setupMainWindowToolBars() override;
 
     private:
         QAction* m_syncButton;
         CSwordVerseKey* verseKey();
     protected:
-        virtual void setupPopupMenu();
+        void setupPopupMenu() override;
 };
 
 #endif

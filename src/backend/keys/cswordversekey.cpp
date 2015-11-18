@@ -2,19 +2,18 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/keys/cswordversekey.h"
+#include "cswordversekey.h"
 
-#include <QStringList>
 #include <QDebug>
+#include <QStringList>
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "util/btsignal.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../drivers/cswordcommentarymoduleinfo.h"
 
 // Sword includes:
 #include <swmodule.h>
@@ -24,12 +23,12 @@
 CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
     : CSwordKey(module)
 {
-    typedef CSwordBibleModuleInfo CSBMI;
-    if (const CSBMI *bible = dynamic_cast<const CSBMI*>(module) ) {
+    if(CSwordBibleModuleInfo const * bible =
+            dynamic_cast<CSwordBibleModuleInfo const *>(module))
+    {
         // Copy important settings like versification system
-        copyFrom((sword::VerseKey*) bible->module()->getKey());
-
-        setKey( bible->lowerBound().key() );
+        copyFrom(bible->module()->getKey());
+        setKey(bible->lowerBound().key());
     }
     this->VerseKey::setAutoNormalize(true);
 }
@@ -52,25 +51,43 @@ CSwordKey* CSwordVerseKey::copy() const {
 
 /** Sets the module for this key */
 void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
-    typedef CSwordBibleModuleInfo CSBMI;
-
     Q_ASSERT(newModule);
     if (m_module == newModule) return;
-    Q_ASSERT(newModule->type() == CSwordModuleInfo::Bible
-             || newModule->type() == CSwordModuleInfo::Commentary);
+    Q_ASSERT(newModule->type() == CSwordModuleInfo::Bible ||
+             newModule->type() == CSwordModuleInfo::Commentary);
+
+    CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);
+    const char * newVersification =
+            static_cast<VerseKey*>(bible->module()->getKey())->getVersificationSystem();
+    bool inVersification = true;
+
+    emitBeforeChanged();
+
+    if(strcmp(getVersificationSystem(), newVersification)) {
+        /// Remap key position to new versification
+        sword::VerseKey oldKey(*this);
+
+        setVersificationSystem(newVersification);
+
+        positionFrom(oldKey);
+        inVersification = !popError();
+    }
 
     m_module = newModule;
 
-    //check if the module contains the key we present
-    const CSBMI* bible = dynamic_cast<const CSBMI*>(newModule);
+    emitAfterChanged();
 
-    if (_compare(bible->lowerBound()) < 0) {
-        setKey(bible->lowerBound());
+    if(inVersification) {
+        /// Limit to Bible bounds
+        if (_compare(bible->lowerBound()) < 0) {
+            setKey(bible->lowerBound());
+        }
+        if (_compare(bible->upperBound()) > 0) {
+            setKey(bible->upperBound());
+        }
     }
 
-    if (_compare(bible->upperBound()) > 0) {
-        setKey(bible->upperBound());
-    }
+    m_valid = inVersification;
 }
 
 /** Returns the current book as Text, not as integer. */
@@ -80,7 +97,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
     int max = 1;
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
-    if (bible != 0) {
+    if (bible != nullptr) {
         const bool hasOT = bible->hasOldTestament();
         const bool hasNT = bible->hasNewTestament();
 
@@ -116,7 +133,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
 
 /** Sets the key we use to the parameter. */
 QString CSwordVerseKey::key() const {
-    return QString::fromUtf8(getText());
+    return QString::fromUtf8(isBoundSet() ? getRangeText() : getText());
 }
 
 const char * CSwordVerseKey::rawKey() const {
@@ -128,30 +145,23 @@ bool CSwordVerseKey::setKey(const QString &newKey) {
 }
 
 bool CSwordVerseKey::setKey(const char *newKey) {
-    typedef CSwordBibleModuleInfo CSBMI;
+    emitBeforeChanged();
 
-    /// \todo Is this check necessary?
-    if (newKey) {
-        /// \todo Is this check necessary?
-        // Check if empty string:
-        if (*newKey != '\0') {
-            QString newKeyStr = newKey;
-            emitBeforeChanged();
-            positionFrom(newKey);
-        } else {
-            const CSwordModuleInfo *m = module();
-            if (m->type() == CSwordModuleInfo::Bible) {
-                Q_ASSERT(dynamic_cast<const CSBMI*>(m) != 0);
-                const CSBMI *bible = static_cast<const CSBMI*>(m);
-                emitBeforeChanged();
-                positionFrom(bible->lowerBound().key().toUtf8().constData());
-            }
-        }
+    if(QByteArray(newKey).contains('-')) {
+        VerseKey vk(newKey, newKey, getVersificationSystem());
+        setLowerBound(vk.getLowerBound());
+        setUpperBound(vk.getUpperBound());
+        setPosition(sword::TOP);
+    } else {
+        clearBounds();
+        positionFrom(newKey);
     }
 
-    /// \todo Do we ALWAYS need to emit this signal and check for errors?
-    emitAfterChanged();
-    return !popError();
+    m_valid = !popError();
+
+    emitAfterChanged(); /// \todo Do we ALWAYS need to emit this signal
+
+    return m_valid;
 }
 
 bool CSwordVerseKey::next( const JumpType type ) {
@@ -185,35 +195,36 @@ bool CSwordVerseKey::next( const JumpType type ) {
         }
 
         case UseVerse: {
-            if (m_module && m_module->module()) {
-                const bool oldStatus = m_module->module()->isSkipConsecutiveLinks();
-                m_module->module()->setSkipConsecutiveLinks(true);
+            if (!m_module) {
+                setVerse(getVerse() + 1);
+            } else if (sword::SWModule * const swModule = m_module->module()) {
+                const bool oldStatus = swModule->isSkipConsecutiveLinks();
+                swModule->setSkipConsecutiveLinks(true);
 
-                //disable headings for next verse
-                const bool useHeaders = 1; //(Verse() == 0);
-                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->isIntros();
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros( useHeaders );
+                VerseKey * vKey = static_cast<VerseKey *>(swModule->getKey());
+
+                // disable headings for next verse
+                bool const oldHeadingsStatus = vKey->isIntros();
+                vKey->setIntros(true);
                 //don't use setKey(), that would create a new key without Headings set
-                m_module->module()->getKey()->setText( key().toUtf8().constData() );
+                vKey->setText(key().toUtf8().constData());
 
-                (*(m_module->module()) )++;
+                (*swModule)++;
 
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros(oldHeadingsStatus);
-                m_module->module()->setSkipConsecutiveLinks(oldStatus);
+                vKey = static_cast<VerseKey *>(swModule->getKey());
+                vKey->setIntros(oldHeadingsStatus);
+                swModule->setSkipConsecutiveLinks(oldStatus);
 
-                if (!m_module->module()->popError()) {
-                    setKey(QString::fromUtf8(m_module->module()->getKeyText()));
-                }
-                else {
+                if (!swModule->popError()) {
+                    setKey(QString::fromUtf8(vKey->getText()));
+                } else {
                     //         Verse(Verse()+1);
                     //don't change the key, restore the module's position
-                    m_module->module()->getKey()->setText( key().toUtf8().constData() );
+                    vKey->setText(key().toUtf8().constData());
                     ret = false;
                     break;
                 }
-
-            }
-            else {
+            } else {
                 setVerse(getVerse() + 1);
             }
 
@@ -225,7 +236,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
     }
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
-    if (bible != 0) {
+    if (bible != nullptr) {
         if (_compare(bible->lowerBound()) < 0 ) {
             emitBeforeChanged();
             setKey(bible->lowerBound());
@@ -277,30 +288,33 @@ bool CSwordVerseKey::previous( const JumpType type ) {
         }
 
         case UseVerse: {
-            if (m_module && m_module->module()) {
-                const bool useHeaders = 1; //(Verse() == 0);
-                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->isIntros();
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros( useHeaders );
+            if (!m_module) {
+                setVerse(getVerse() - 1);
+            } else if (sword::SWModule * const swModule = m_module->module()) {
+                VerseKey * vKey = static_cast<VerseKey *>(swModule->getKey());
+                bool const oldHeadingsStatus = vKey->isIntros();
+                vKey->setIntros(true);
+                vKey->setText(key().toUtf8().constData());
 
-                m_module->module()->getKey()->setText( key().toUtf8().constData() );
+                bool const oldStatus = swModule->isSkipConsecutiveLinks();
+                swModule->setSkipConsecutiveLinks(true);
+                (*swModule)--;
 
-                const bool oldStatus = m_module->module()->isSkipConsecutiveLinks();
-                m_module->module()->setSkipConsecutiveLinks(true);
-                ( *( m_module->module() ) )--;
+                vKey = static_cast<VerseKey *>(swModule->getKey());
+                vKey->setIntros(oldHeadingsStatus);
+                swModule->setSkipConsecutiveLinks(oldStatus);
 
-                ((VerseKey*)(m_module->module()->getKey()))->setIntros( oldHeadingsStatus );
-                m_module->module()->setSkipConsecutiveLinks(oldStatus);
-
-                if (!m_module->module()->popError()) {
-                    setKey(QString::fromUtf8(m_module->module()->getKeyText())); // don't use fromUtf8
-                }
-                else {
+                if (!swModule->popError()) {
+                    /// \warning Weird comment:
+                    // don't use fromUtf8:
+                    setKey(QString::fromUtf8(vKey->getText()));
+                } else {
                     ret = false;
                     //         Verse(Verse()-1);
-                    m_module->module()->getKey()->setText( key().toUtf8().constData() ); //restore module's key
+                    // Restore module's key:
+                    vKey->setText(key().toUtf8().constData());
                 }
-            }
-            else {
+            } else {
                 setVerse(getVerse() - 1);
             }
 
@@ -312,7 +326,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
     }
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
-    if (bible != 0) {
+    if (bible != nullptr) {
         if (_compare(bible->lowerBound()) < 0 ) {
             emitBeforeChanged();
             setKey(bible->lowerBound());

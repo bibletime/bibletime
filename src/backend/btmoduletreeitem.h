@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,7 +14,7 @@
 
 #include <QMap>
 #include <QString>
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "drivers/cswordmoduleinfo.h"
 
 
 /**
@@ -36,9 +36,8 @@ Example:
     add_to_view(&root, qtreewidget->invisibleRootItem());
     ...
     void add_to_view(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
-        foreach (BTModuleTreeItem* i, item->children()) {
+        Q_FOREACH(BTModuleTreeItem * const i, item->children())
             add_to_view(i, new QTreeWidgetItem(widgetItem));
-        }
         if (item->type() == BTModuleTreeItem::Category) prepare_category_item(widgetItem, item);
         ...
     }
@@ -72,7 +71,7 @@ class BTModuleTreeItem {
         *    BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
         */
         struct Filter {
-            virtual bool filter(CSwordModuleInfo*) = 0;
+            virtual bool filter(CSwordModuleInfo const &) const = 0;
         };
 
         /**
@@ -80,9 +79,8 @@ class BTModuleTreeItem {
         * set "hidden" it will be filtered out.
         */
         struct HiddenOff : public Filter {
-            inline bool filter(CSwordModuleInfo* mi) {
-                return !mi->isHidden();
-            }
+            inline bool filter(CSwordModuleInfo const & mi) const override
+            { return !mi.isHidden(); }
         };
 
         /**
@@ -112,7 +110,7 @@ class BTModuleTreeItem {
         * (by default CSwordBackend::instance()()->moduleList() is used).
         */
         BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
-                         BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = 0);
+                         BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = nullptr);
 
         /** When the root item is deleted the whole tree is deleted. */
         ~BTModuleTreeItem();
@@ -159,7 +157,7 @@ class BTModuleTreeItem {
         /**
         * Private constructor which sets the members.
         */
-        BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info = 0, CSwordModuleInfo::Category category = CSwordModuleInfo::UnknownCategory);
+        BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info = nullptr, CSwordModuleInfo::Category category = CSwordModuleInfo::UnknownCategory);
         /** Default ctor is private because it is not to be called.*/
         BTModuleTreeItem();
 

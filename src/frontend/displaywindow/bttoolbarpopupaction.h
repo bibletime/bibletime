@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,11 +31,10 @@ class BtToolBarPopupAction : public QWidgetAction {
 // return the QMenu object so a popup menu can be constructed
         QMenu* popupMenu() const;
 
-// Function to catch the Shortcut event and emit the triggered signal
-        virtual bool event(QEvent* e);
+        bool event(QEvent* e) override;
 
     protected:
-        QWidget* createWidget(QWidget* parent);
+        QWidget* createWidget(QWidget* parent) override;
 
     private slots:
 

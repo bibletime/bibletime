@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -37,26 +37,18 @@ class CBibleKeyChooser : public CKeyChooser  {
         Q_OBJECT
 
     public:
-        CBibleKeyChooser(const QList<const CSwordModuleInfo*> &modules,
-                         BTHistory *history, CSwordKey *key = 0,
-                         QWidget *parent = 0);
+        CBibleKeyChooser(const BtConstModuleList &modules,
+                         BTHistory *history, CSwordKey *key = nullptr,
+                         QWidget *parent = nullptr);
 
     public slots:
-        /**
-          Reimplemented from CKeyChooser::key().
-        */
-        CSwordKey* key();
 
-        /**
-          Reimplemented from CKeyChooser::setKey().
-        */
-        virtual void setKey(CSwordKey *key);
+        CSwordKey* key() override;
 
-        /**
-          Reimplemented from CKeyChooser::setModules().
-        */
-        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
-                                bool refresh = true);
+        void setKey(CSwordKey *key) override;
+
+        void setModules(const BtConstModuleList &modules,
+                        bool refresh = true) override;
 
         /**
         * used to do actions before key changes
@@ -67,13 +59,13 @@ class CBibleKeyChooser : public CKeyChooser  {
         */
         void refChanged(CSwordVerseKey *key);
 
-        void updateKey(CSwordKey* key);
-        void adjustFont();
-        void refreshContent();
+        void updateKey(CSwordKey* key) override;
+        void adjustFont() override;
+        void refreshContent() override;
 
     protected slots:
 
-        virtual void setKey(const QString & newKey);
+        void setKey(const QString & newKey) override;
 
     private:
         BtBibleKeyWidget* w_ref;

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,12 +23,11 @@
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btmoduleindexdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 
 BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(util::getIcon(CResMgr::bookshelfmgr::indexpage::icon), parent)
+        : BtConfigDialog::Page(CResMgr::bookshelfmgr::indexpage::icon(), parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     QHBoxLayout *hboxLayout;
@@ -62,8 +61,8 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // icons for our buttons
-    m_createButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
-    m_deleteButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
+    m_createButton->setIcon(CResMgr::bookshelfmgr::indexpage::icon_create());
+    m_deleteButton->setIcon(CResMgr::bookshelfmgr::indexpage::icon_delete());
 
     // connect our signals/slots
     connect(m_createButton, SIGNAL(clicked()),
@@ -99,7 +98,7 @@ void BtIndexPage::populateModuleList() {
 
     const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
     for (MLCI it(modules.begin()); it != modules.end(); ++it) {
-        QTreeWidgetItem* item = 0;
+        QTreeWidgetItem* item = nullptr;
 
         if ((*it)->hasIndex()) {
             item = new QTreeWidgetItem(m_modsWithIndices);
@@ -136,7 +135,7 @@ void BtIndexPage::retranslateUi() {
 /** Creates indices for selected modules if no index currently exists */
 void BtIndexPage::createIndices() {
     bool indicesCreated = false;
-    QList<const CSwordModuleInfo*> moduleList;
+    QList<CSwordModuleInfo*> moduleList;
 
     for (int i = 0; i < m_modsWithoutIndices->childCount(); i++) {
         if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {

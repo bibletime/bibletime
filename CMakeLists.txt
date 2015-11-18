@@ -98,36 +98,10 @@ ELSE()
   SET(BT_SHARE_PATH "share")
 ENDIF()
 
-IF(NOT BT_FORCE_USE_QT4)
-  # Automatically use Qt5 if available
-  FIND_PACKAGE(Qt5Core QUIET)
-ENDIF()
-
-# Find required packages
-IF(Qt5Core_FOUND)
-  FIND_PACKAGE(Qt5LinguistTools REQUIRED)
-  FIND_PACKAGE(Qt5Gui REQUIRED)
-  FIND_PACKAGE(Qt5Widgets REQUIRED)
-  FIND_PACKAGE(Qt5DBus QUIET)
-  IF(Qt5DBus_FOUND AND NOT APPLE)
-    set(BT_Use_DBus TRUE)
-  ELSE()
-    set(BT_Use_DBus FALSE)
-  ENDIF()
-  MESSAGE( "-- Found Qt " ${Qt5Core_VERSION})
-ELSE()
-  SET(QT_MIN_VERSION 4.8.0)
-  SET(QT_USE_QTXML 1)
-  SET(QT_USE_QTWEBKIT 1)
-  SET(QT_USE_QTMAIN 1)
-  FIND_PACKAGE(Qt4 REQUIRED)
-  IF(QT_QTDBUS_FOUND AND NOT APPLE)
-    set(BT_Use_DBus TRUE)
-  ELSE()
-    set(BT_Use_DBus FALSE)
-  ENDIF()
-  MESSAGE( "-- Found Qt " ${QTVERSION})
-ENDIF()
+FIND_PACKAGE(Qt5Core REQUIRED)
+FIND_PACKAGE(Qt5LinguistTools REQUIRED)
+FIND_PACKAGE(Qt5Gui REQUIRED)
+FIND_PACKAGE(Qt5Widgets REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
@@ -176,64 +150,34 @@ IF (NOT ${bibletime_LINK_TRANSLATION_FILES})
     INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 ENDIF()
 
-IF(Qt5Core_FOUND)
-  TARGET_LINK_LIBRARIES("bibletime"
-      ${CLucene_LIBRARY}
-      ${Sword_LDFLAGS}
-  )
+TARGET_LINK_LIBRARIES("bibletime"
+    ${CLucene_LIBRARY}
+    ${Sword_LDFLAGS}
+)
 
-  IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    qt5_use_modules("bibletime" Widgets Qml Quick Xml Network PrintSupport Svg)
-  ELSE()
-    IF(BT_Use_DBus)
-      qt5_use_modules("bibletime" DBus Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
-      MESSAGE(STATUS "Using DBUS")
-    ELSE()
-      qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
-      MESSAGE(STATUS "No DBUS found")
-      ADD_DEFINITIONS("-DNO_DBUS")
-    ENDIF()
-  ENDIF()
+IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+  qt5_use_modules("bibletime" Widgets Qml Quick Xml Network PrintSupport Svg)
 ELSE()
-  IF(BT_Use_DBus)
-    SET(QT_USE_QTDBUS 1) # Required by INCLUDE(${QT_USE_FILE}) below
-    MESSAGE(STATUS "Using DBUS")
-  ELSE()
-    ADD_DEFINITIONS("-DNO_DBUS")
-    MESSAGE(STATUS "No DBUS found")
-  ENDIF()
-  # If cmake says that qdbusxml2cpp is missing, uncomment the following line
-  #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
-  INCLUDE(${QT_USE_FILE})
-  TARGET_LINK_LIBRARIES("bibletime"
-      ${QT_LIBRARIES}
-      ${CLucene_LIBRARY}
-      ${Sword_LDFLAGS}
-  )
+  qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
 ENDIF()
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
 ENDIF()
 
-SET(BibleTime_CFLAGS "-Wall")
+SET(BibleTime_CFLAGS "-Wall -Wextra -std=c++11 -O2")
 SET(BibleTime_LDFLAGS "")
 IF(MSVC)
-  SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
-  SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
+  SET(CMAKE_CXX_FLAGS_RELEASE "-DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
+  SET(CMAKE_CXX_FLAGS_DEBUG   "-DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
   SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} /SUBSYSTEM:WINDOWS")
 ELSE()
-  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -Wextra -fPIE -fexceptions")
-  IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    SET(CMAKE_CXX_FLAGS_RELEASE "-O2 -std=c++11")
-    SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb -std=c++11")
-  ELSE()
-    SET(CMAKE_CXX_FLAGS_RELEASE "-O2")
-    SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb")
-  ENDIF()
+  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -fPIE -fexceptions")
+  SET(CMAKE_CXX_FLAGS_RELEASE "")
+  SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb")
   IF(APPLE)
     # enable support MacOS 10.5+
-    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/")
     SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T}")
     SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T} -F /Library/Frameworks/")
     UNSET(T)
@@ -253,8 +197,14 @@ INSTALL(FILES ${INSTALL_ICONS_LIST}
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
-INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/"
-        DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
+
+FILE(GLOB INSTALL_TMPL_LIST
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt)
+INSTALL(FILES ${INSTALL_TMPL_LIST}
+         DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
+
 INSTALL(FILES "src/frontend/display/bthtml.js"
         DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
 INSTALL(FILES "docs/license.html"

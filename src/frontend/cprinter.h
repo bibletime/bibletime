@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,15 +31,15 @@ class CPrinter : public QObject, public Rendering::CDisplayRendering {
                  const DisplayOptions &displayOptions,
                  const FilterOptions &filterOptions);
 
-        virtual ~CPrinter();
+        ~CPrinter() override;
         void printKeyTree( KeyTree& );
 
     protected:
-        virtual QString entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo * module);
+        QString entryLink(const KeyTreeItem &item,
+                          const CSwordModuleInfo * module) override;
 
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
-        virtual QString finishText(const QString &text, const KeyTree &tree);
+        QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
+        QString finishText(const QString &text, const KeyTree &tree) override;
 
     private:
         QWebPage* m_htmlPage;

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,29 +15,28 @@
 #include <QFrame>
 
 
-class QPaintEvent;
+class BtColorWidget: public QFrame {
 
-class BtColorWidget : public QFrame {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        BtColorWidget(QWidget* parent = 0);
-        ~BtColorWidget();
-        QSize sizeHint() const;
+public:
 
-    public slots:
-        void setColor(const QColor& color);
+    BtColorWidget(QWidget * parent = nullptr);
 
-    protected:
-        void mouseReleaseEvent(QMouseEvent* event);
+    QSize sizeHint() const override;
 
-    private:
-        void showColorDialog();
+public slots:
 
-        QColor m_color;
+    void setColor(QColor const & color);
 
-    signals:
-        void changed(const QColor& color);
+protected: /* Methods: */
+
+    void mouseReleaseEvent(QMouseEvent * event) override;
+
+signals:
+
+    void changed(QColor const & color);
+
 };
 
 #endif

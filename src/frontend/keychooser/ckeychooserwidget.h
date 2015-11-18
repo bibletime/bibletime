@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -35,13 +35,13 @@ class CKCComboBox: public QComboBox {
 
 public: /* Methods: */
 
-    CKCComboBox(QWidget * parent = 0);
+    CKCComboBox(QWidget * parent = nullptr);
 
 protected: /* Methods: */
 
-    virtual bool eventFilter(QObject * o, QEvent * e);
+    bool eventFilter(QObject * o, QEvent * e) override;
 
-    virtual void wheelEvent(QWheelEvent * e);
+    void wheelEvent(QWheelEvent * e) override;
 
 signals:
 
@@ -65,11 +65,11 @@ class CKeyChooserWidget: public QWidget  {
 
 public: /* Methods: */
 
-    CKeyChooserWidget(QStringList * list = 0,
-                      QWidget * parent = 0);
+    CKeyChooserWidget(QStringList * list = nullptr,
+                      QWidget * parent = nullptr);
 
     CKeyChooserWidget(int count = 0,
-                      QWidget * parent = 0);
+                      QWidget * parent = nullptr);
 
     /**
     * This function does clear the combobox, then fill in
@@ -90,7 +90,7 @@ public: /* Methods: */
     * Initializes this widget. We need this function because
     * we have more than one constructor.
     */
-    virtual void init();
+    void init();
 
     /**
     * Sets the tooltips for the given entries using the parameters as text.

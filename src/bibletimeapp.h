@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,6 +14,8 @@
 
 #include <QApplication>
 
+
+class BtIcons;
 
 /**
   The BibleTimeApp class is used to clean up all instances of the backend and to
@@ -28,16 +30,25 @@ class BibleTimeApp : public QApplication {
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
 
-        inline void startInit() { m_init = true; }
+        inline void startInit(bool const debugMode = false) {
+            m_init = true;
+            m_debugMode = debugMode;
+        }
+
         bool initBtConfig();
         bool initDisplayTemplateManager();
+        void initIcons();
+
+        bool debugMode() const { return m_debugMode; }
 
     private: /* Fields: */
 
         bool m_init;
+        bool m_debugMode;
+        BtIcons * m_icons;
 
 };
 
-#define bApp (static_cast<BibleTimeApp *>(QCoreApplication::instance()))
+#define btApp (static_cast<BibleTimeApp *>(BibleTimeApp::instance()))
 
 #endif

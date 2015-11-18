@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,9 +31,9 @@ class PlainToHtml: public sword::SWFilter {
     protected: /* Methods: */
 
         /** Reimplemented from sword::SWFilter. */
-        virtual char processText(sword::SWBuf &buf,
-                                 const sword::SWKey *key,
-                                 const sword::SWModule *module = 0);
+        char processText(sword::SWBuf &buf,
+                         const sword::SWKey *key,
+                         const sword::SWModule *module = nullptr) override;
 
 };
 

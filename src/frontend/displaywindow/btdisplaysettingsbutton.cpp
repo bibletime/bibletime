@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,14 +16,13 @@
 #include <QToolButton>
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
         : QToolButton(parent) {
     initMenu();
 
-    setIcon(util::getIcon(CResMgr::displaywindows::displaySettings::icon));
+    setIcon(CResMgr::displaywindows::displaySettings::icon());
     setPopupMode(QToolButton::InstantPopup);
     setEnabled(false);
 
@@ -55,7 +54,7 @@ void BtDisplaySettingsButton::setFilterOptions(
 }
 
 void BtDisplaySettingsButton::setModules(
-        const QList<const CSwordModuleInfo*> &modules)
+        const BtConstModuleList &modules)
 {
     m_modules = modules;
     repopulateMenu();
@@ -238,8 +237,8 @@ void BtDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
 }
 
 bool BtDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
-    Q_FOREACH (const CSwordModuleInfo *module, m_modules) {
-        if (module->has(option)) return true;
-    }
+    Q_FOREACH(CSwordModuleInfo const * const module, m_modules)
+        if (module->has(option))
+            return true;
     return false;
 }

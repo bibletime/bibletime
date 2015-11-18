@@ -2,15 +2,15 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 #include "frontend/display/bthtmlreaddisplay.h"
 
-#include <QSharedPointer>
 #include <QMenu>
+#include <QScopedPointer>
 #include <QString>
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
@@ -20,7 +20,6 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/display/bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "util/directory.h"
 
@@ -30,7 +29,7 @@ using namespace InfoDisplay;
 static QString javascript; // Initialized from file bthtml.js
 
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
-        : QWebPage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(0), m_jsObject(0)
+        : QWebPage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(nullptr), m_jsObject(nullptr)
 
 {
     settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
@@ -46,7 +45,7 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
 }
 
 BtHtmlReadDisplay::~BtHtmlReadDisplay() {
-    setView(0);
+    setView(nullptr);
 }
 
 // Read javascript into memory once and create the c++ javascript object
@@ -79,7 +78,7 @@ void BtHtmlReadDisplay::loadJSObject() {
     // as causing a cross site security problem when a new page is loaded. Deleting
     // the object and creating it new for each page loaded allows the object to access
     // javascript variables without this security issue.
-    if (m_jsObject != 0)
+    if (m_jsObject != nullptr)
         delete m_jsObject;
     m_jsObject = new BtHtmlJsObject(this);
     m_jsObject->setObjectName("btHtmlJsObject");
@@ -147,7 +146,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+                QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
                 key->setKey(keyName);
 
                 return key->strippedText();
@@ -162,7 +161,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+                QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
                 key->setKey(keyName);
 
                 FilterOptions filterOptions;
@@ -198,7 +197,7 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
 
     // Disconnect any previous connections and connect to slot that loads the javascript object
     QWebFrame* frame = mainFrame();
-    disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), 0, 0);
+    disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), nullptr, nullptr);
     bool ok = connect(frame, SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(loadJSObject()));
     Q_ASSERT(ok);
 
@@ -213,10 +212,8 @@ QString BtHtmlReadDisplay::getCurrentSource( ) {
 }
 
 // See if any text is selected
-bool BtHtmlReadDisplay::hasSelection() {
-    if (selectedText().isEmpty())
-        return false;
-    return true;
+bool BtHtmlReadDisplay::hasSelection() const {
+    return !selectedText().isEmpty();
 }
 
 // Reimplementation
@@ -232,11 +229,7 @@ void BtHtmlReadDisplay::selectAll() {
 
 // Scroll QWebView to the correct location as specified by the anchor
 void BtHtmlReadDisplay::moveToAnchor( const QString& anchor ) {
-#if QT_VERSION >= 0x040700
     mainFrame()->scrollToAnchor(anchor);
-#else
-    slotGoToAnchor(anchor);
-#endif
 }
 
 // Scroll the QWebView to the correct location specified by anchor
@@ -276,7 +269,7 @@ BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, Q
 }
 
 BtHtmlReadDisplayView::~BtHtmlReadDisplayView() {
-    setPage(0);
+    setPage(nullptr);
 }
 
 // Create the right mouse context menus
@@ -291,9 +284,9 @@ void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) {
     if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
         //see docs for BTMimeData and QMimeData
         const QMimeData* mimedata = e->mimeData();
-        if (mimedata != 0) {
+        if (mimedata != nullptr) {
             const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
-            if (btmimedata != 0) {
+            if (btmimedata != nullptr) {
                 BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
                 m_display->connectionsProxy()->emitReferenceDropped(item.key());
                 e->acceptProposedAction();
@@ -311,22 +304,22 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
         return;
 
     const QMimeData* mimedata = e->mimeData();
-    if (mimedata == 0)
+    if (mimedata == nullptr)
         return;
 
     const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
-    if (btmimedata == 0)
+    if (btmimedata == nullptr)
         return;
 
     BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
     QString moduleName = item.module();
     CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
     Q_ASSERT(m);
-    if (m == 0)
+    if (m == nullptr)
         return;
 
     CSwordModuleInfo::ModuleType bookmarkType = m->type();
-    CSwordModuleInfo::ModuleType windowType = CDisplayWindowFactory::getModuleType(m_readWindow);
+    CSwordModuleInfo::ModuleType windowType = m_readWindow->moduleType();
 
     // Is bible reference bookmark compatible with the window type?
     if ((bookmarkType == CSwordModuleInfo::Bible ||

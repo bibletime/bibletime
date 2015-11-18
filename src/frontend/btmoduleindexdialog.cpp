@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,43 +12,38 @@
 #include <QApplication>
 #include <QMutexLocker>
 #include "backend/managers/cswordbackend.h"
+#include "frontend/messagedialog.h"
 
 
-QMutex BtModuleIndexDialog::m_singleInstanceMutex;
-
-bool BtModuleIndexDialog::indexAllModules(
-        const QList<const CSwordModuleInfo*> &modules)
+bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)
 {
-    QMutexLocker lock(&m_singleInstanceMutex);
+    static QMutex mutex;
+    QMutexLocker lock(&mutex);
 
     if (modules.empty()) return true;
 
     BtModuleIndexDialog d(modules.size());
     d.show();
     d.raise();
-    return d.indexAllModules2(modules);
+    return d.indexAllModulesPrivate(modules);
 }
 
 BtModuleIndexDialog::BtModuleIndexDialog(int numModules)
     : QProgressDialog(tr("Preparing to index modules..."), tr("Cancel"), 0,
-                      numModules * 100, 0),
+                      numModules * 100, nullptr),
       m_currentModuleIndex(0)
 {
     setWindowTitle(tr("Creating indices"));
     setModal(true);
 }
 
-bool BtModuleIndexDialog::indexAllModules2(
-        const QList<const CSwordModuleInfo*> &modules)
+bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> &modules)
 {
     bool success = true;
 
-    QList<CSwordModuleInfo *> indexedModules;
-    Q_FOREACH(const CSwordModuleInfo *cm, modules) {
-        Q_ASSERT(!cm->hasIndex());
-
-        /// \warning const_cast
-        CSwordModuleInfo *m = const_cast<CSwordModuleInfo*>(cm);
+    QList <CSwordModuleInfo*> indexedModules;
+    Q_FOREACH(CSwordModuleInfo * const m, modules) {
+        Q_ASSERT(!m->hasIndex());
 
         /*
           Keep track of created indices to delete them on failure or
@@ -66,7 +61,15 @@ bool BtModuleIndexDialog::indexAllModules2(
         // Single module indexing blocks until finished:
         setLabelText(tr("Creating index for work: %1").arg(m->name()));
 
-        if (!m->buildIndex()) success = false;
+        try {
+            m->buildIndex();
+        } catch (...) {
+            message::showWarning(this,
+                                 tr("Indexing aborted"),
+                                 tr("An internal error occurred while building "
+                                    "the index."));
+            success = false;
+        }
 
         m_currentModuleIndex++;
 
@@ -82,14 +85,11 @@ bool BtModuleIndexDialog::indexAllModules2(
         if (!success) break;
     }
 
-    if (!success) {
+    if (!success)
         // Delete already created indices:
-        Q_FOREACH(CSwordModuleInfo *m, indexedModules) {
-            if (m->hasIndex()) {
+        Q_FOREACH(CSwordModuleInfo * const m, indexedModules)
+            if (m->hasIndex())
                 m->deleteIndex();
-            }
-        }
-    }
     return success;
 }
 

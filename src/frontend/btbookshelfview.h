@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -21,7 +21,7 @@ class CSwordModuleInfo;
 class BtBookshelfView: public QTreeView {
         Q_OBJECT
     public:
-        BtBookshelfView(QWidget *parent = 0);
+        BtBookshelfView(QWidget *parent = nullptr);
 
         CSwordModuleInfo *getModule(const QModelIndex &index) const;
 
@@ -33,8 +33,8 @@ class BtBookshelfView: public QTreeView {
         void moduleHovered(CSwordModuleInfo *item);
 
     protected:
-        void keyPressEvent(QKeyEvent *event);
-        void mousePressEvent(QMouseEvent *event);
+        void keyPressEvent(QKeyEvent *event) override;
+        void mousePressEvent(QMouseEvent *event) override;
 
     protected slots:
         void slotItemActivated(const QModelIndex &index);

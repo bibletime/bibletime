@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,9 +16,10 @@
 #include <QSharedPointer>
 #include <QString>
 
+#include "../drivers/btmodulelist.h"
+
 
 class CSwordKey;
-class CSwordModuleInfo;
 
 namespace Rendering {
 
@@ -57,7 +58,9 @@ class CTextRendering {
                         NoKey, //< means no key shown at all
                         SimpleKey, //< means only versenumber or only lexicon entry name
                         CompleteShort, //< means key like "Gen 1:1"
-                        CompleteLong //< means "Genesis 1:1"
+                        CompleteLong, //< means "Genesis 1:1"
+                        ExpandedShort, // means "KJV:Gen 1:1"
+                        ExpandedLong   // means "Genesis 1:1 (KJV)"
                     };
 
                     Settings(const bool highlight = false,
@@ -78,7 +81,7 @@ class CTextRendering {
                             const Settings &settings);
 
                 KeyTreeItem(const QString &key,
-                            const QList<const CSwordModuleInfo*> &modules,
+                            const BtConstModuleList &modules,
                             const Settings &settings);
 
                 KeyTreeItem(const QString &startKey,
@@ -102,7 +105,7 @@ class CTextRendering {
                     return !m_alternativeContent.isNull();
                 }
 
-                inline const QList<const CSwordModuleInfo*>& modules() const {
+                inline const BtConstModuleList& modules() const {
                     return m_moduleList;
                 }
 
@@ -118,6 +121,14 @@ class CTextRendering {
                     return &m_childList;
                 }
 
+                inline void setMappedKey(CSwordKey const * key) const {
+                    m_mappedKey = key;
+                }
+
+                inline CSwordKey const * mappedKey() const {
+                    return m_mappedKey;
+                }
+
             protected: /* Methods: */
 
                 KeyTreeItem();
@@ -125,8 +136,9 @@ class CTextRendering {
             private: /* Fields: */
 
                 Settings m_settings;
-                QList<const CSwordModuleInfo*> m_moduleList;
+                BtConstModuleList m_moduleList;
                 QString m_key;
+                mutable CSwordKey const * m_mappedKey;
                 mutable KeyTree m_childList;
 
                 QString m_stopKey;
@@ -143,19 +155,19 @@ class CTextRendering {
         const QString renderKeyRange(
                 const QString &start,
                 const QString &stop,
-                const QList<const CSwordModuleInfo*> &modules,
+                const BtConstModuleList &modules,
                 const QString &hightlightKey = QString::null,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
         const QString renderSingleKey(
                 const QString &key,
-                const QList<const CSwordModuleInfo*> &modules,
+                const BtConstModuleList &modules,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
     protected: /* Methods: */
 
-        QList<const CSwordModuleInfo*> collectModules(const KeyTree &tree) const;
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0) = 0;
+        BtConstModuleList collectModules(const KeyTree &tree) const;
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) = 0;
         virtual QString finishText(const QString &text, const KeyTree &tree) = 0;
         virtual void initRendering() = 0;
 

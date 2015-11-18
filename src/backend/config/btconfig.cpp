@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,13 +11,12 @@
 
 #include <QDebug>
 #include <QLocale>
-#include "backend/btmoduletreeitem.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "frontend/messagedialog.h"
-#include "util/directory.h" // DU::getUserBaseDir()
+#include "../../util/directory.h" // DU::getUserBaseDir()
+#include "../btmoduletreeitem.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/cswordbackend.h"
 
 // Sword includes:
-#include <backend/managers/cswordbackend.h>
 #include <versekey.h> // For search scope configuration
 
 
@@ -31,7 +30,7 @@ const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
  * set the instance variable initially to 0, so it can be safely checked
  * whether the variable has been initialized yet.
  */
-BtConfig * BtConfig::m_instance = NULL;
+BtConfig * BtConfig::m_instance = nullptr;
 
 BtConfig::StringMap BtConfig::m_defaultSearchScopes;
 
@@ -54,7 +53,7 @@ BtConfig::BtConfig(const QString & settingsFile)
     }
 }
 
-bool BtConfig::initBtConfig() {
+BtConfig::InitState BtConfig::initBtConfig() {
     Q_ASSERT(!m_instance);
 
     const QString confFileName = util::directory::getUserBaseDir().absolutePath()
@@ -63,45 +62,19 @@ bool BtConfig::initBtConfig() {
     m_instance = new BtConfig(confFileName);
     if (!confExisted) {
         m_instance->setValue<int>(BTCONFIG_API_VERSION_KEY, BTCONFIG_API_VERSION);
-        return true;
+        return INIT_OK;
     }
 
     int btConfigOldApi = m_instance->value<int>(BTCONFIG_API_VERSION_KEY, 0);
     if (btConfigOldApi == BTCONFIG_API_VERSION)
-        return true;
-
-    bool cont;
-    if (btConfigOldApi < BTCONFIG_API_VERSION) {
-        /// \todo Migrate from btConfigOldApi to BTCONFIG_API_VERSION
-        qWarning() << "BibleTime configuration migration is not yet implemented!!!";
-        cont = message::showWarning(
-                    0, "Warning!",
-                    "Migration to the new configuration system is not yet "
-                    "implemented. Proceeding might result in <b>loss of data"
-                    "</b>. Please backup your configuration files before you "
-                    "continue!<br/><br/>Do you want to continue? Press \"No\" "
-                    "to quit BibleTime immediately.",
-                    QMessageBox::Yes | QMessageBox::No,
-                    QMessageBox::No) == QMessageBox::Yes;
-    } else {
-        Q_ASSERT(btConfigOldApi > BTCONFIG_API_VERSION);
-        cont = message::showWarning(
-                    0, tr("Error loading configuration!"),
-                    tr("Failed to load BibleTime's configuration, because it "
-                       "appears that the configuration file corresponds to a "
-                       "newer version of BibleTime. This is likely caused by "
-                       "BibleTime being downgraded. Loading the new "
-                       "configuration file may result in <b>loss of data</b>."
-                       "<br/><br/>Do you still want to try to load the new "
-                       "configuration file? Press \"No\" to quit BibleTime "
-                       "immediately."),
-                    QMessageBox::Yes | QMessageBox::No,
-                    QMessageBox::No) == QMessageBox::Yes;
-    }
-    if (cont)
-        m_instance->setValue<int>(BTCONFIG_API_VERSION_KEY, BTCONFIG_API_VERSION);
-    return cont;
+        return INIT_OK;
+    return (btConfigOldApi < BTCONFIG_API_VERSION)
+           ? INIT_NEED_UNIMPLEMENTED_FORWARD_MIGRATE
+           : INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE;
 }
+
+void BtConfig::forceMigrate()
+{ m_instance->setValue<int>(BTCONFIG_API_VERSION_KEY, BTCONFIG_API_VERSION); }
 
 BtConfig& BtConfig::getInstance() {
     Q_ASSERT_X(m_instance, "BtConfig", "Not yet initialized!");
@@ -110,7 +83,7 @@ BtConfig& BtConfig::getInstance() {
 
 void BtConfig::destroyInstance() {
     delete m_instance;
-    m_instance = NULL;
+    m_instance = nullptr;
 }
 
 void BtConfig::setModuleEncryptionKey(const QString & name,
@@ -302,7 +275,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
         for (int i = 0; i < list.getCount(); i++) {
             sword::VerseKey * verse(dynamic_cast<sword::VerseKey *>(list.getElement(i)));
 
-            if (verse != 0) {
+            if (verse != nullptr) {
                 verse->setLocale("en");
                 data.append(QString::fromUtf8(verse->getRangeText()));
                 data.append(";");
@@ -327,7 +300,7 @@ void BtConfig::deleteSearchScopesWithCurrentLocale() {
 CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleType) {
     const QString moduleName = value<QString>("settings/defaults/" + moduleType, QString());
     if (moduleName.isEmpty())
-        return 0;
+        return nullptr;
 
     return CSwordBackend::instance()->findModuleByName(moduleName);
 }
@@ -336,7 +309,7 @@ void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,
                                            const CSwordModuleInfo * const module)
 {
     setValue("settings/defaults/" + moduleType,
-             module != 0 ? module->name() : QString::null);
+             module != nullptr ? module->name() : QString::null);
 }
 
 /**

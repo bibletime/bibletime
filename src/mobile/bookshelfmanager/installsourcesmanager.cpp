@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -24,7 +24,7 @@
 namespace btm {
 
 InstallSourcesManager::InstallSourcesManager(QObject* /* parent */)
-    : m_worker(0) {
+    : m_worker(nullptr) {
 }
 
 InstallSourcesManager::~InstallSourcesManager() {
@@ -32,8 +32,8 @@ InstallSourcesManager::~InstallSourcesManager() {
 
 void InstallSourcesManager::refreshSources() {
     findProgressObject();
-    Q_ASSERT(m_progressObject != 0);
-    if (m_progressObject == 0)
+    Q_ASSERT(m_progressObject != nullptr);
+    if (m_progressObject == nullptr)
         return;
     m_progressObject->disconnect(this);
     connect(m_progressObject, SIGNAL(cancel()), this, SLOT(cancel()));
@@ -42,7 +42,7 @@ void InstallSourcesManager::refreshSources() {
     m_progressObject->setProperty("maximumValue", 100.0);
     m_progressObject->setProperty("value", 0.0);
     m_progressObject->setProperty("visible", true);
-    m_progressObject->setProperty("text", "Refreshing Source List");
+    m_progressObject->setProperty("text", tr("Refreshing Source List"));
 
     runThread();
 }
@@ -77,10 +77,10 @@ void InstallSourcesManager::percentComplete(int percent, const QString& title) {
 
 void InstallSourcesManager::findProgressObject() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    QQuickItem * rootObject = 0;
-    if (viewer != 0)
+    QQuickItem * rootObject = nullptr;
+    if (viewer != nullptr)
         rootObject = viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_progressObject = rootObject->findChild<QQuickItem*>("progress");
 }
 

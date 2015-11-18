@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,7 +16,7 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QStackedLayout>
 #include <QToolButton>
 #include "backend/config/btconfig.h"
@@ -32,7 +32,6 @@
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 
@@ -49,7 +48,8 @@ const QString installPathKey   ("GUI/BookshelfManager/InstallPage/installPathInd
 // *********************************************************
 
 BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(util::getIcon(CResMgr::bookshelfmgr::installpage::icon), parent)
+        : BtConfigDialog::Page(CResMgr::bookshelfmgr::installpage::icon(),
+                               parent)
         , m_groupingOrder(groupingOrderKey)
         , m_modulesSelected(0)
         , m_modulesSelectedSources(0)
@@ -85,10 +85,10 @@ void BtInstallPage::initView() {
     initSourcesCombo();
 
     m_sourceAddButton = new QPushButton(this);
-    m_sourceAddButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
+    m_sourceAddButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_addSource());
 
     m_sourceDeleteButton = new QPushButton(this);
-    m_sourceDeleteButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
+    m_sourceDeleteButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_deleteSource());
 
     QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
     sourceChooserLayout->setContentsMargins(0, 8, 0, 0);
@@ -119,10 +119,10 @@ void BtInstallPage::initView() {
     initPathCombo();
 
     m_configurePathButton = new QToolButton(this);
-    m_configurePathButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
+    m_configurePathButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_path());
 
     m_installButton = new QPushButton(this);
-    m_installButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
+    m_installButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_install());
     m_installButton->setEnabled(false);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();
@@ -225,8 +225,8 @@ void BtInstallPage::initSourcesCombo() {
 
 void BtInstallPage::activateSource(const sword::InstallSource &src) {
     qApp->setOverrideCursor(Qt::WaitCursor);
-    BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), 0);
-    if (w == 0) {
+    BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), nullptr);
+    if (w == nullptr) {
         window()->setEnabled(false);
         qApp->processEvents();
         w = new BtInstallPageWorksWidget(src, m_groupingOrder, this);
@@ -262,7 +262,7 @@ void BtInstallPage::retranslateInstallGroupBox() {
 void BtInstallPage::retranslateUi() {
     setHeaderText(tr("Install/Update"));
 
-    util::tool::initExplanationLabel(m_warningLabel, tr("WARNING!!!"),
+    util::tool::initExplanationLabel(m_warningLabel, tr("WARNING"),
             tr("If you live in a persecuted country and don't want to risk "
                "detection don't use remote sources."));
 
@@ -290,7 +290,7 @@ void BtInstallPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Groupin
 
 void BtInstallPage::slotHeaderChanged() {
     typedef BtInstallPageWorksWidget IPWW;
-    Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != 0);
+    Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != nullptr);
     IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
     m_headerState = w->treeView()->header()->saveState();
     btConfig().setValue(headerStateKey, m_headerState);
@@ -320,11 +320,10 @@ void BtInstallPage::slotInstall() {
     BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(m_groupingOrder, this);
 
     // Add all checked modules from all tabs:
-    Q_FOREACH (BtInstallPageWorksWidget *w, m_sourceMap.values()) {
-        Q_FOREACH (CSwordModuleInfo *module, w->treeModel()->checkedModules()) {
+    Q_FOREACH(BtInstallPageWorksWidget const * const w, m_sourceMap.values())
+        Q_FOREACH(CSwordModuleInfo * const module,
+                  w->treeModel()->checkedModules())
             dlg->addModuleItem(module, QString(w->installSource().caption));
-        }
-    }
 
     if (dlg->exec() == QDialog::Accepted) {
         QList<CSwordModuleInfo *> modules(dlg->checkedModules().toList());
@@ -361,23 +360,21 @@ void BtInstallPage::slotEditPaths() {
 void BtInstallPage::slotSourceAdd() {
     typedef CSwordSetupInstallSourcesDialog SSISD;
 
-    QSharedPointer<SSISD> dlg(new SSISD());
-    if (dlg->exec() == QDialog::Accepted) {
-        if (dlg->wasRemoteListAdded()) {
-            initSourcesCombo();
-        }
-        else {
-            sword::InstallSource newSource = dlg->getSource();
-            if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
-                BtInstallBackend::addSource(newSource);
-            }
-            initSourcesCombo();
-            for (int i = 0; i < m_sourceComboBox->count(); i++) {
-                if (m_sourceComboBox->itemText(i) == newSource.caption) {
-                    m_sourceComboBox->setCurrentIndex(i);
-                    break;
-                }
-            }
+    QScopedPointer<SSISD> dlg(new SSISD());
+    if (dlg->exec() != QDialog::Accepted)
+        return;
+    if (dlg->wasRemoteListAdded()) {
+        initSourcesCombo();
+        return;
+    }
+    sword::InstallSource newSource = dlg->getSource();
+    if (*(newSource.type.c_str()) != '\0') // we have a valid source to add
+        BtInstallBackend::addSource(newSource);
+    initSourcesCombo();
+    for (int i = 0; i < m_sourceComboBox->count(); i++) {
+        if (m_sourceComboBox->itemText(i) == newSource.caption) {
+            m_sourceComboBox->setCurrentIndex(i);
+            break;
         }
     }
 }
@@ -420,9 +417,8 @@ void BtInstallPage::slotSourceIndexChanged(int index) {
 void BtInstallPage::slotSelectedModulesChanged() {
     m_modulesSelected = 0;
     m_modulesSelectedSources = 0;
-    Q_FOREACH (BtInstallPageWorksWidget *w, m_sourceMap.values()) {
-        int selected = w->treeModel()->checkedModules().size();
-        if (selected > 0) {
+    Q_FOREACH(BtInstallPageWorksWidget const * const w, m_sourceMap.values()) {
+        if (int const selected = w->treeModel()->checkedModules().size()) {
             m_modulesSelectedSources++;
             m_modulesSelected += selected;
         }

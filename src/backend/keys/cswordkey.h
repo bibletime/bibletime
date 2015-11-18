@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,7 +14,7 @@
 
 #include <QPointer>
 #include <QString>
-#include "util/btsignal.h"
+#include "../btsignal.h"
 
 
 class CSwordModuleInfo;
@@ -30,6 +30,10 @@ public: /* Types: */
         HTMLEscaped = 1,
         ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
     };
+
+public: /* Methods: */
+
+    CSwordKey & operator=(CSwordKey const &) = delete;
 
     virtual inline ~CSwordKey() { delete m_beforeChangedSignaller; }
 
@@ -96,6 +100,9 @@ public: /* Types: */
     */
     static CSwordKey * createInstance(const CSwordModuleInfo * module);
 
+    /** Check whether key is valid. Can be invalidated during av11n mapping. */
+    inline bool isValid() const { return m_valid; }
+
     /**
       This is called before a key change to emit a signal
     */
@@ -108,11 +115,13 @@ public: /* Types: */
 
 protected: /* Methods: */
 
-    inline CSwordKey(const CSwordModuleInfo * const module = 0)
-        : m_module(module) {}
+    inline CSwordKey(const CSwordModuleInfo * const module = nullptr)
+        : m_module(module)
+        , m_valid(true) {}
 
     inline CSwordKey(const CSwordKey & copy)
-        : m_module(copy.m_module) {}
+        : m_module(copy.m_module)
+        , m_valid(copy.m_valid) {}
 
     /**
       \returns the encoded key appropriate for use directly with Sword.
@@ -121,13 +130,6 @@ protected: /* Methods: */
 
     static inline const QTextCodec * cp1252Codec() { return m_cp1252Codec; }
 
-private: /* Methods: */
-
-    /**
-      Disable the assignment operator
-    */
-    CSwordKey & operator=(const CSwordKey &);
-
 protected: /* Fields: */
 
     static const QTextCodec * m_cp1252Codec;
@@ -135,6 +137,7 @@ protected: /* Fields: */
     QPointer<BtSignal> m_beforeChangedSignaller;
     QPointer<BtSignal> m_afterChangedSignaller;
 
+    bool m_valid;
 };
 
 #endif

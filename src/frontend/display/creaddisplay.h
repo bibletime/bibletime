@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -28,19 +28,19 @@ class CReadDisplay :  public CDisplay {
         /**
         * Returns true if the display has an active anchor.
         */
-        bool hasActiveAnchor();
+        bool hasActiveAnchor() const;
         /**
         * Returns the current active anchor.
         */
-        const QString& activeAnchor();
+        QString const & activeAnchor() const;
         /**
         * Moves the widget to the given anchor.
         */
         virtual void moveToAnchor( const QString& ) = 0;
 
-        virtual void print(const CDisplay::TextPart,
-                           const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions);
+        void print(const CDisplay::TextPart,
+                   const DisplayOptions &displayOptions,
+                   const FilterOptions &filterOptions) override;
 
         void setMouseTracking(const bool trackingEnabled) {
             m_useMouseTracking = trackingEnabled;

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,6 +13,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QFormLayout>
 #include <QWebView>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
@@ -20,17 +21,21 @@
 #include "bibletimeapp.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
+// Sword includes:
+#include <localemgr.h>
+#include <swlocale.h>
+
+typedef std::list<sword::SWBuf>::const_iterator SBLCI;
 
 // ***********************
 // Container for QWebView to control its size
 class CWebViewerWidget : public QWidget {
     public:
-        CWebViewerWidget(QWidget* parent = 0);
+        CWebViewerWidget(QWidget* parent = nullptr);
         ~CWebViewerWidget();
-        virtual QSize sizeHint () const;
+        QSize sizeHint() const override;
 };
 
 CWebViewerWidget::CWebViewerWidget(QWidget* parent)
@@ -47,21 +52,24 @@ QSize CWebViewerWidget::sizeHint () const {
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(util::getIcon(CResMgr::settings::startup::icon), parent)
+        : BtConfigDialog::Page(CResMgr::settings::startup::icon(), parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    { //startup logo
-        m_showLogoCheck = new QCheckBox(this);
-        m_showLogoCheck->setChecked(btConfig().value<bool>("GUI/showSplashScreen", true));
-        mainLayout->addWidget(m_showLogoCheck);
-    }
-    mainLayout->addSpacing(20);
+    QFormLayout *formLayout = new QFormLayout();
 
-    m_explanationLabel = new QLabel(this);
-    mainLayout->addWidget(m_explanationLabel);
+    //startup logo
+    m_showLogoLabel = new QLabel(this);
+    m_showLogoCheck = new QCheckBox(this);
+    m_showLogoCheck->setChecked(btConfig().value<bool>("GUI/showSplashScreen", true));
+    formLayout->addRow(m_showLogoLabel, m_showLogoCheck);
 
-    QHBoxLayout* hboxlayout = new QHBoxLayout();
+    m_swordLocaleCombo = new QComboBox(this);
+    m_languageNamesLabel = new QLabel(this);
+    m_languageNamesLabel->setBuddy(m_swordLocaleCombo);
+    formLayout->addRow(m_languageNamesLabel, m_swordLocaleCombo);
+
+    initSwordLocaleCombo();
 
     m_styleChooserCombo = new QComboBox( this ); //create first to enable buddy for label
     connect( m_styleChooserCombo, SIGNAL( activated( int ) ),
@@ -69,10 +77,8 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     m_availableLabel = new QLabel(this);
     m_availableLabel->setBuddy(m_styleChooserCombo);
-    hboxlayout->addWidget(m_availableLabel);
-    hboxlayout->addWidget( m_styleChooserCombo );
-    hboxlayout->addStretch();
-    mainLayout->addLayout( hboxlayout );
+    formLayout->addRow(m_availableLabel, m_styleChooserCombo );
+    mainLayout->addLayout(formLayout);
 
     QWidget* webViewWidget = new CWebViewerWidget(this);
     QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
@@ -100,19 +106,99 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 void CDisplaySettingsPage::retranslateUi() {
     setHeaderText(tr("Display"));
 
-    util::tool::initExplanationLabel(
-        m_explanationLabel,
-        tr("Display templates"),
-        tr("Display templates define how text is displayed.")
-    );
+    m_languageNamesLabel->setText(tr("Language for names of Bible books:"));
+    const QString toolTip(tr("The languages which can be used for the biblical book names. Translations are provided by the Sword library."));
+    m_languageNamesLabel->setToolTip(toolTip);
+    m_swordLocaleCombo->setToolTip(toolTip);
 
-    m_showLogoCheck->setText(tr("Show startup logo"));
-    m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
+    m_showLogoLabel->setText(tr("Show startup logo:"));
+    m_showLogoLabel->setToolTip(tr("Show the BibleTime logo on startup."));
 
     m_availableLabel->setText(tr("Available display styles:"));
     m_previewLabel->setText(tr("Style preview"));
 
     updateStylePreview();
+}
+
+void CDisplaySettingsPage::resetLanguage() {
+    QVector<QString> atv = bookNameAbbreviationsTryVector();
+
+    QString best = "en_US";
+    Q_ASSERT(atv.contains(best));
+    int i = atv.indexOf(best);
+    if (i > 0) {
+        atv.resize(i);
+        const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
+        for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
+            const char * abbr = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+            i = atv.indexOf(abbr);
+            if (i >= 0) {
+                best = abbr;
+                if (i == 0)
+                    break;
+                atv.resize(i);
+            }
+        }
+    }
+    btConfig().setValue("GUI/booknameLanguage", best);
+}
+
+QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
+    QVector<QString> atv;
+    atv.reserve(4);
+    {
+        QString settingsLanguage = btConfig().value<QString>("GUI/booknameLanguage");
+        if (!settingsLanguage.isEmpty())
+            atv.append(settingsLanguage);
+    }
+    {
+        const QString localeLanguageAndCountry = QLocale::system().name();
+        if (!localeLanguageAndCountry.isEmpty()) {
+            atv.append(localeLanguageAndCountry);
+            int i = localeLanguageAndCountry.indexOf('_');
+            if (i > 0)
+                atv.append(localeLanguageAndCountry.left(i));
+        }
+    }
+    Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    atv.append("en_US");
+    return atv;
+}
+
+void CDisplaySettingsPage::initSwordLocaleCombo() {
+    typedef QMap<QString, QString>::const_iterator SSMCI;
+
+    QMap<QString, QString> languageNames;
+    Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    languageNames.insert(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName(), "en_US");
+
+    const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
+    for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
+        const char * const abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+        const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForAbbrev(abbreviation);
+
+        if (l->isValid()) {
+            languageNames.insert(l->translatedName(), abbreviation);
+        } else {
+            languageNames.insert(
+                sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getDescription(),
+                abbreviation);
+        }
+    }
+
+    int index = 0;
+    QVector<QString> atv = bookNameAbbreviationsTryVector();
+    for (SSMCI it = languageNames.constBegin(); it != languageNames.constEnd(); ++it) {
+        if (!atv.isEmpty()) {
+            int i = atv.indexOf(it.value());
+            if (i >= 0) {
+                atv.resize(i);
+                index = m_swordLocaleCombo->count();
+            }
+        }
+        m_swordLocaleCombo->addItem(it.key(), it.value());
+    }
+    m_swordLocaleCombo->setCurrentIndex(index);
 }
 
 
@@ -172,4 +258,5 @@ void CDisplaySettingsPage::updateStylePreview() {
 void CDisplaySettingsPage::save() {
     btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
     btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
+    btConfig().setValue("GUI/booknameLanguage", m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()));
 }

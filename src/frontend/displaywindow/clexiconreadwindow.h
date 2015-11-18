@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -36,27 +36,26 @@ class CLexiconReadWindow : public CReadWindow  {
         Q_OBJECT
     public:
         CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-        virtual ~CLexiconReadWindow();
+        ~CLexiconReadWindow() override;
+
+        CSwordModuleInfo::ModuleType moduleType() const override
+        { return CSwordModuleInfo::Lexicon; }
 
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
     public slots:
-        /**
-        * Refreshes the content of this display window and the content of the keychooser.
-        */
-        virtual void reload(CSwordBackend::SetupChangedReason reason);
+        void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected:
-        virtual void initActions();
-        virtual void initToolbars();
-        virtual void initConnections();
-        virtual void initView();
-        virtual void updatePopupMenu();
-        virtual void setupPopupMenu();
+        void initActions() override;
+        void initToolbars() override;
+        void initConnections() override;
+        void initView() override;
+        void updatePopupMenu() override;
+        void setupPopupMenu() override;
 
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
+        void setupMainWindowToolBars() override;
 
         struct ActionsStruct {
             BtToolBarPopupAction* backInHistory;

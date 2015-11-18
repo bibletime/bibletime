@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -19,6 +19,7 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWebView>
+#include "util/bticons.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -58,7 +59,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     QWidget *top = new QWidget(this);
     QHBoxLayout *topLayout = new QHBoxLayout;
     m_iconLabel = new QLabel(this);
-    m_iconLabel->setPixmap(QIcon(util::directory::getIconDir().path() + "/bibletime.svg").pixmap(48));
+    m_iconLabel->setPixmap(BtIcons::instance().icon_bibletime.pixmap(48));
     topLayout->addWidget(m_iconLabel);
     m_versionLabel = new QLabel(this);
     QFont font = m_versionLabel->font();
@@ -127,7 +128,7 @@ void BtAboutDialog::retranslateBtTab() {
                   "our team, please send an email to %1.")
                .arg(MAKE_LINK_STATIC("mailto:info@bibletime.info", "info@bibletime.info"));
     content += "</p><p>";
-    content += tr("(c)1999-2014, The BibleTime Team");
+    content += tr("(c)1999-2015, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("http://www.bibletime.info", "www.bibletime.info")
                "</p>";
     m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));

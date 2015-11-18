@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -230,7 +230,7 @@ Rectangle {
     Question {
         id: indexQuestion
         background: btStyle.toolbarColor
-        text: QT_TR_NOOP("Some of the modules you want to search need to be indexed. Do you want to index them now?")
+        text: qsTr("Some of the modules you want to search need to be indexed. Do you want to index them now?")
         onFinished: {
             indexQuestion.visible = false;
 
@@ -492,7 +492,7 @@ Rectangle {
     Question {
         id: quitQuestion
         background: btStyle.toolbarColor
-        text: QT_TR_NOOP("Are you sure you want to quit?")
+        text: qsTranslate("Quit", "Are you sure you want to quit?")
         onFinished: {
             if (answer == true)
                 Qt.quit();

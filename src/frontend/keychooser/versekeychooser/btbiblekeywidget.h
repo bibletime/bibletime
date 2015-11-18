@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -29,22 +29,22 @@ class BtBibleKeyWidget : public QWidget  {
 
     public:
         BtBibleKeyWidget(const CSwordBibleModuleInfo *module,
-                         CSwordVerseKey *key, QWidget *parent = 0,
-                         const char *name = 0);
+                         CSwordVerseKey *key, QWidget *parent = nullptr,
+                         const char *name = nullptr);
 
         ~BtBibleKeyWidget();
         bool setKey(CSwordVerseKey* key);
-        void setModule(const CSwordBibleModuleInfo *m = 0);
-        bool eventFilter(QObject *o, QEvent *e);
+        void setModule(const CSwordBibleModuleInfo *m = nullptr);
+        bool eventFilter(QObject *o, QEvent *e) override;
 
     signals:
         void beforeChange(CSwordVerseKey* key);
         void changed(CSwordVerseKey* key);
 
     protected:
-        void enterEvent(QEvent *event);
-        void leaveEvent(QEvent *event);
-        void resizeEvent(QResizeEvent *event);
+        void enterEvent(QEvent *event) override;
+        void leaveEvent(QEvent *event) override;
+        void resizeEvent(QResizeEvent *event) override;
         void resetDropDownButtons();
 
     protected slots: // Protected slots

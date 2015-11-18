@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -34,6 +34,7 @@ class QPaintEvent;
 * \author The BibleTime team
 */
 class CBookmarkIndex : public QTreeView {
+
     Q_OBJECT
 
 public: /* Types: */
@@ -51,14 +52,15 @@ public: /* Types: */
 
         DeleteEntries,
 
+        ActionCount,
         ActionBegin = NewFolder,
-        ActionEnd = DeleteEntries
+        ActionEnd = ActionCount
     };
 
 public: /* Methods: */
 
-    CBookmarkIndex(QWidget * parent = 0);
-    virtual ~CBookmarkIndex();
+    CBookmarkIndex(QWidget * parent = nullptr);
+    ~CBookmarkIndex() override;
 
     void initTree();
 
@@ -72,54 +74,51 @@ signals:
     /**
     * Is emitted when a module should be opened,
     */
-    void createReadDisplayWindow( QList<CSwordModuleInfo *>, const QString & );
+    void createReadDisplayWindow(QList<CSwordModuleInfo *>, QString const &);
 
 
 protected:
 
     /** A hack to get the modifiers. */
-    virtual void mouseReleaseEvent(QMouseEvent * event);
+    void mouseReleaseEvent(QMouseEvent * event) override;
 
     /** Needed to paint an drag pointer arrow. */
-    virtual void paintEvent(QPaintEvent * event);
+    void paintEvent(QPaintEvent * event) override;
 
     /** Initialize the SIGNAL<->SLOT connections. */
     void initConnections();
 
     /** Returns the drag object for the current selection. */
-    virtual QMimeData * dragObject();
+    QMimeData * dragObject();
 
     /**
     * D'n'd methods are reimplementations from QTreeWidget or its ancestors.
     * In these we handle creating, moving and copying bookmarks with d'n'd.
     */
-    virtual void dragEnterEvent( QDragEnterEvent * event );
-    virtual void dragMoveEvent( QDragMoveEvent * event );
-    virtual void dropEvent( QDropEvent * event );
-    virtual void dragLeaveEvent( QDragLeaveEvent * event );
-
-    /** Returns the correct action object for the given type of action. */
-    QAction * action(MenuAction type) const;
+    void dragEnterEvent(QDragEnterEvent * event) override;
+    void dragMoveEvent(QDragMoveEvent * event) override;
+    void dropEvent(QDropEvent * event) override;
+    void dragLeaveEvent(QDragLeaveEvent * event) override;
 
     /** Reimplementation from QAbstractItemView. Takes care of movable items. */
-    virtual void startDrag(Qt::DropActions supportedActions);
+    void startDrag(Qt::DropActions supportedActions) override;
 
     /** Handle mouse moving (mag updates) */
-    virtual void mouseMoveEvent(QMouseEvent* event);
+    void mouseMoveEvent(QMouseEvent * event) override;
+
+    void leaveEvent(QEvent * event) override;
 
 
 protected slots:
 
     /** Prevents annoying folder collapsing while dropping. */
-    void expandAutoCollapsedItem(const QModelIndex & index) {
-        expand(index);
-    }
+    void expandAutoCollapsedItem(QModelIndex const & index) { expand(index); }
 
     /** Is called when an item was clicked or activated. */
-    void slotExecuted( const QModelIndex & index );
+    void slotExecuted(QModelIndex const & index);
 
     /** Shows the context menu at the given position. */
-    void contextMenu(const QPoint&);
+    void contextMenu(QPoint const & p);
 
     /** Adds a new subfolder to the current item. */
     void createNewFolder();
@@ -139,14 +138,14 @@ protected slots:
     /** Sorts all bookmarks. */
     void sortAllBookmarks();
 
-    /** Helps with the extra item. */
-    void slotItemEntered(const QModelIndex & index);
-
     /** Import bookmarks from a file and add them to the selected folder. */
     void importBookmarks();
 
+    /** Deletes the selected entries after user confirmation. */
+    void confirmDeleteEntries();
+
     /** Deletes the selected entries. */
-    void deleteEntries(bool confirm = true);
+    void deleteEntries();
 
     /** Prints the selected bookmarks. */
     void printBookmarks();
@@ -154,40 +153,36 @@ protected slots:
     /** Slot for the mag update timer. */
     void magTimeout();
 
-private:
+private: /* Methods: */
 
     /** Initializes the view. */
     void initView();
 
     /** Convenience function for creating a new action. */
-    QAction * newQAction(const QString & text, const QString & pix, int shortcut, const QObject * receiver,
-                         const char * slot, QObject * parent);
+    QAction * newQAction(QString const & text,
+                         QIcon const & pix,
+                         int shortcut,
+                         QObject const * receiver,
+                         char const * slot,
+                         QObject * parent);
 
-    /**
-    * Returns true if more than one entry is supported by this action type.
-    * Returns false for actions which support only one entry.
-    */
-    bool isMultiAction(const MenuAction type) const;
-
-    /** A helper function for d'n'd which creates a new bookmark item when drop happens. */
-    void createBookmarkFromDrop(QDropEvent * event, const QModelIndex & parentItem, int indexInParent);
+    /** A helper function for d'n'd which creates a new bookmark item when drop
+       happens. */
+    void createBookmarkFromDrop(QDropEvent * event,
+                                QModelIndex const & parentItem,
+                                int indexInParent);
 
     /** \todo document */
-    bool enableAction(const QModelIndex & index, MenuAction type) const;
+    bool enableAction(QModelIndex const & index, MenuAction type) const;
 
-    struct Actions {
-        QAction * newFolder;
-        QAction * changeFolder;
+    bool hasBookmarksRecursively(QModelIndexList selected) const;
 
-        QAction * editBookmark;
-        QAction * sortFolderBookmarks;
-        QAction * sortAllBookmarks;
-        QAction * importBookmarks;
-        QAction * exportBookmarks;
-        QAction * printBookmarks;
+    void showExtraItem();
+    void hideExtraItem();
 
-        QAction * deleteEntries;
-    } m_actions;
+private: /* Fields: */
+
+    QAction * m_actions[ActionCount];
 
     QMenu * m_popup;
     QTimer m_magTimer;

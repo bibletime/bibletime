@@ -1,4 +1,6 @@
 
+SWORD_VERSION_NUM = 107004000
+
 include(../../common/mobile/mobile.pro)
 
 OTHER_FILES += \

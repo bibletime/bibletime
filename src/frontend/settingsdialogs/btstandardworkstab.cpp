@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,8 +23,6 @@
 BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     : QWidget(parent)
 {
-    typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
-
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(5);
     mainLayout->setSpacing(2);
@@ -59,12 +57,13 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
 
     //fill the comboboxes with the right modules
 
-    const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
     QString modDescript;
-    for (MLCI it(modules.begin()); it != modules.end(); it++) {
-        modDescript = (*it)->config(CSwordModuleInfo::Description);
+    Q_FOREACH(CSwordModuleInfo const * const m,
+              CSwordBackend::instance()->moduleList())
+    {
+        modDescript = m->config(CSwordModuleInfo::Description);
 
-        switch ((*it)->type()) {
+        switch (m->type()) {
             case CSwordModuleInfo::Bible:
                 m_standardBibleCombo->addItem(modDescript);
                 break;
@@ -73,23 +72,23 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
                 break;
             case CSwordModuleInfo::Lexicon: {
                 bool inserted = false;
-                if ((*it)->has(CSwordModuleInfo::HebrewDef)) {
+                if (m->has(CSwordModuleInfo::HebrewDef)) {
                     m_standardHebrewStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
-                if ((*it)->has(CSwordModuleInfo::GreekDef)) {
+                if (m->has(CSwordModuleInfo::GreekDef)) {
                     m_standardGreekStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
-                if ((*it)->has(CSwordModuleInfo::HebrewParse)) {
+                if (m->has(CSwordModuleInfo::HebrewParse)) {
                     m_standardHebrewMorphLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
-                if ((*it)->has(CSwordModuleInfo::GreekParse)) {
+                if (m->has(CSwordModuleInfo::GreekParse)) {
                     m_standardGreekMorphLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
-                if ((*it)->category() == CSwordModuleInfo::DailyDevotional) {
+                if (m->category() == CSwordModuleInfo::DailyDevotional) {
                     m_standardDailyDevotionalCombo->addItem(modDescript);
                     inserted = true;
                 }
@@ -109,7 +108,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     QStringList moduleList;
 
     // fill combobox and modulelist
-        const CSwordModuleInfo*  m;
+    const CSwordModuleInfo* m;
 
 #define STANDARD_WORKS_COMBO_ADD(name) \
     comboList.append(m_ ## name ## Combo); \

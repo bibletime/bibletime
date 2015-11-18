@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,12 +31,12 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
           The backend module list was updated, module list and widgets must be updated from
           scratch.
         */
-        void slotBackendModulesChanged();
+        void slotBackendModulesChanged() override;
 
         /**
           The window module list was updated, module list and widgets must be updated.
         */
-        void slotWindowModulesChanged();
+        void slotWindowModulesChanged() override;
 
     signals:
         /** User selected a module from menu to replace another module*/

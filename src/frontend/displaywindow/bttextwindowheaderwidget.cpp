@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,7 +22,6 @@
 #include "bibletimeapp.h"
 #include "frontend/displaywindow/bttextwindowheader.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 namespace {
@@ -34,7 +33,7 @@ const char* ActionType = "ActionType";
 BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype)
         : QWidget(parent),
         m_moduleType(mtype),
-        m_popup(0) {
+        m_popup(nullptr) {
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
@@ -92,7 +91,7 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
     QListIterator<QMenu*> it(m_submenus);
     while (it.hasNext()) {
         QMenu* popup = it.next();
-        foreach (QAction* a, popup->actions()) {
+        Q_FOREACH(QAction * const a, popup->actions()) {
             a->setChecked( (a->text() == thisModule) ? true : false );
             a->setDisabled( newModulesToUse.contains(a->text()) ? true : false );
         }
@@ -113,7 +112,7 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
             if (typeText != QObject::tr("Replace"))
                 continue;
             QMenu* menuType = actionType->menu();
-            if (menuType == 0)
+            if (menuType == nullptr)
                 continue;
             QList<QAction*> actions = menuType->actions();
             for (int i=0; i<actions.count(); i++) {
@@ -152,25 +151,25 @@ void BtTextWindowHeaderWidget::populateMenu() {
 
     m_removeAction = new QAction(tr("Remove"), m_popup);
     m_removeAction->setProperty(ActionType, RemoveAction);
-    m_removeAction->setIcon(util::getIcon(CResMgr::displaywindows::general::removemoduleicon));
+    m_removeAction->setIcon(CResMgr::displaywindows::general::icon_removeModule());
     m_popup->addAction(m_removeAction);
 
     // Add Replace and Add menus, both have all modules in them
     QMenu* replaceItem = new QMenu(tr("Replace"), m_popup);
-    replaceItem->setIcon(util::getIcon(CResMgr::displaywindows::general::replacemoduleicon));
+    replaceItem->setIcon(CResMgr::displaywindows::general::icon_replaceModule());
     replaceItem->setProperty(ActionType, ReplaceAction);
     m_popup->addMenu(replaceItem);
 
     QMenu* addItem = new QMenu(tr("Add"), m_popup);
     addItem->setProperty(ActionType, AddAction);
-    addItem->setIcon(util::getIcon(CResMgr::displaywindows::general::addmoduleicon));
+    addItem->setIcon(CResMgr::displaywindows::general::icon_addModule());
     m_popup->addMenu(addItem);
 
     QList<QMenu*> toplevelMenus;
     toplevelMenus.append(replaceItem);
     toplevelMenus.append(addItem);
 
-    foreach(QMenu* menu, toplevelMenus) {
+    Q_FOREACH(QMenu * const menu, toplevelMenus) {
         // ******* Add categories, languages and modules ********
         // Filters: add only non-hidden, non-locked and correct type
         BTModuleTreeItem::HiddenOff hiddenFilter;
@@ -181,6 +180,8 @@ void BtTextWindowHeaderWidget::populateMenu() {
         TypeFilter typeFilter(m_moduleType);
         filters.append(&typeFilter);
 
+        TypeOfAction const typeOfAction =
+                static_cast<TypeOfAction>(menu->property(ActionType).toInt());
         if (m_moduleType == CSwordModuleInfo::Bible) {
             BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
             QList<BTModuleTreeItem::Filter*> filters2;
@@ -192,18 +193,17 @@ void BtTextWindowHeaderWidget::populateMenu() {
                 filters2.append(&typeFilter2);
                 root.add_items(filters2);
             }
-            addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+            addItemToMenu(&root, menu, typeOfAction);
         }
         else {
             BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-            addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+            addItemToMenu(&root, menu, typeOfAction);
         }
     }
 }
 
 void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType) {
-    foreach (BTModuleTreeItem* i, item->children()) {
-
+    Q_FOREACH(BTModuleTreeItem * const i, item->children()) {
         if (i->type() == BTModuleTreeItem::Language ||
             i->type() == BTModuleTreeItem::Category) {
             // argument menu was m_popup, create and add a new lang menu to it

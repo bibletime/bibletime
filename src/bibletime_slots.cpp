@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -49,7 +49,7 @@ void BibleTime::slotSettingsOptions() {
 
 /** Save the settings, used when no settings have been saved before **/
 void BibleTime::saveConfigSettings() {
-    CConfigurationDialog* dlg = new CConfigurationDialog(this, 0);
+    CConfigurationDialog* dlg = new CConfigurationDialog(this, nullptr);
     dlg->save();
     delete dlg;
 }
@@ -57,7 +57,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = btConfig().value<QString>("language", QLocale::system().name());
+    const QString language = btConfig().value<QString>("GUI/booknameLanguage", QLocale::system().name());
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
@@ -282,11 +282,11 @@ void BibleTime::slotSetActiveSubWindow(QWidget* window) {
 
 void BibleTime::slotSearchModules() {
     //get the modules of the open windows
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
 
     Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
         const CDisplayWindow * const w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
-        if (w != 0) {
+        if (w != nullptr) {
             modules << w->modules();
         }
     }
@@ -295,7 +295,7 @@ void BibleTime::slotSearchModules() {
 
 void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
 {
-    if (window == 0)
+    if (window == nullptr)
         m_findWidget->setVisible(false);
 }
 
@@ -303,7 +303,7 @@ void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
  * Call CSearchDialog::openDialog with only the default bible module
  */
 void BibleTime::slotSearchDefaultBible() {
-    QList<const CSwordModuleInfo*> module;
+    BtConstModuleList module;
     CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
     if (bible) {
         module.append(bible);
@@ -387,7 +387,7 @@ namespace {
 
 /// Helper object for reloadProfile()
 struct WindowLoadStatus {
-    inline WindowLoadStatus() : window(0) {}
+    inline WindowLoadStatus() : window(nullptr) {}
     QStringList failedModules;
     QList<CSwordModuleInfo*> okModules;
     CDisplayWindow * window;
@@ -432,7 +432,7 @@ void BibleTime::reloadProfile() {
 
     m_findWidget->setVisible(conf.sessionValue<bool>("FindIsVisible", false));
 
-    QWidget * focusWindow = 0;
+    QWidget * focusWindow = nullptr;
     QMap<QString, WindowLoadStatus> failedWindows;
     Q_FOREACH (const QString & w,
                conf.sessionValue<QStringList>("windowsList"))

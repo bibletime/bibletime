@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -12,15 +12,15 @@
 
 #include "btmoduletextmodel.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/cswordmodulesearch.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/rendering/ctextrendering.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../drivers/cswordlexiconmoduleinfo.h"
+#include "../cswordmodulesearch.h"
+#include "../keys/cswordtreekey.h"
+#include "../keys/cswordldkey.h"
+#include "../managers/cswordbackend.h"
+#include "../rendering/ctextrendering.h"
 
 
 // Static so all models use the same colors
@@ -80,8 +80,10 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     if (isBible() || isCommentary())
     {
         const CSwordBibleModuleInfo *bm = qobject_cast<const CSwordBibleModuleInfo*>(firstModule);
-        m_firstEntry = bm->lowerBound().getIndex();
-        m_maxEntries = bm->upperBound().getIndex() - m_firstEntry + 1;
+        bm->module()->setPosition(sword::TOP);
+        m_firstEntry = bm->module()->getIndex();
+        bm->module()->setPosition(sword::BOTTOM);
+        m_maxEntries = bm->module()->getIndex() - m_firstEntry + 1;
     }
 
     else if(isLexicon())
@@ -119,7 +121,7 @@ QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) con
     int row = index.row();
 
     const CSwordLexiconModuleInfo *lexiconModule = qobject_cast<const CSwordLexiconModuleInfo*>(m_moduleInfoList.at(0));
-    QList<const CSwordModuleInfo*> moduleList;
+    BtConstModuleList moduleList;
     moduleList << lexiconModule;
     QString keyName = lexiconModule->entries()[row];
 
@@ -144,7 +146,7 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
         int bookIndex = index.row() * 4;
         key.setIndex(bookIndex);
         Rendering::CEntryDisplay entryDisplay;
-        QList<const CSwordModuleInfo*> moduleList;
+        BtConstModuleList moduleList;
         moduleList << bookModule;
         QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
                                                      m_displayOptions, m_filterOptions,
@@ -205,28 +207,28 @@ void BtModuleTextModel::setRoleNames(const QHash<int, QByteArray> &roleNames) {
 
 bool BtModuleTextModel::isBible() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::Bible;
 }
 
 bool BtModuleTextModel::isBook() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::GenericBook;
 }
 
 bool BtModuleTextModel::isCommentary() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::Commentary;
 }
 
 bool BtModuleTextModel::isLexicon() const {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    if (module == 0)
+    if (module == nullptr)
         return false;
     return module->type() == CSwordModuleInfo::Lexicon;
 }

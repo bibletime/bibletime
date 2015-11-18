@@ -2,15 +2,14 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/rendering/cplaintextexportrendering.h"
+#include "cplaintextexportrendering.h"
 
-#include <QSharedPointer>
-#include "backend/keys/cswordkey.h"
+#include "../keys/cswordkey.h"
 
 
 namespace Rendering {
@@ -32,12 +31,12 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
     if (!m_addText)
         return QString(i.key()).append("\n");
 
-    const QList<const CSwordModuleInfo*> modules = i.modules();
+    const BtConstModuleList modules = i.modules();
     CSwordKey * key = CSwordKey::createInstance(modules.first());
     QString renderedText = QString(i.key()).append(":\n");
 
     QString entry;
-    Q_FOREACH(const CSwordModuleInfo * module, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const module, modules) {
         key->setModule(module);
         key->setKey(i.key());
 

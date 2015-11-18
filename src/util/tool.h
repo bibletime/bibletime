@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -44,13 +44,7 @@ bool savePlainFile(const QString & filename,
   \param[in] module the module whose icon to return.
   \returns the icon used for the a module.
 */
-QIcon getIconForModule(const CSwordModuleInfo * module);
-
-/**
-  \param[in] module the module whose icon name to return.
-  \returns the icon name used for the a module.
-*/
-QString getIconNameForModule(const CSwordModuleInfo * module);
+QIcon const & getIconForModule(const CSwordModuleInfo * module);
 
 /**
   Creates a new explanation label.

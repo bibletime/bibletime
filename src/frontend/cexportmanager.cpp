@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -34,6 +34,8 @@
 using namespace Rendering;
 using namespace Printing;
 
+typedef CTextRendering::KeyTreeItem KTI;
+
 CExportManager::CExportManager(const bool showProgress,
                                const QString &progressLabel,
                                const FilterOptions &filterOptions,
@@ -43,11 +45,11 @@ CExportManager::CExportManager(const bool showProgress,
     m_displayOptions = displayOptions;
 
     if (showProgress) {
-        m_progressDialog = new QProgressDialog(0, Qt::Dialog);
+        m_progressDialog = new QProgressDialog(nullptr, Qt::Dialog);
         m_progressDialog->setWindowTitle("BibleTime");
         m_progressDialog->setLabelText(progressLabel);
     } else {
-        m_progressDialog = 0;
+        m_progressDialog = nullptr;
     }
 }
 
@@ -71,7 +73,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
 
     QString text;
 
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
     modules.append(key->module());
 
     CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
@@ -106,13 +108,15 @@ bool CExportManager::saveKeyList(const sword::ListKey & l,
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(l.getCount());
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     sword::ListKey list(l);
     list.setPosition(sword::TOP);
     while (!list.popError() && !progressWasCancelled()) {
-        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
+        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
+                            module,
+                            itemSettings));
         incProgress();
 
         list.increment();
@@ -145,13 +149,13 @@ bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.count());
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     QListIterator<CSwordKey*> it(list);
     while (it.hasNext() && !progressWasCancelled()) {
         CSwordKey* k = it.next();
-        tree.append( new CTextRendering::KeyTreeItem(k->key(), k->module(), itemSettings) );
+        tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
@@ -172,7 +176,7 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
         return false;
 
     QString text;
-    QList<const CSwordModuleInfo*> modules;
+    BtConstModuleList modules;
     modules.append(key->module());
 
     CTextRendering * render = newRenderer(format, addText);
@@ -204,12 +208,14 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
         return false;
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     list.setPosition(sword::TOP);
     while (!list.popError() && !progressWasCancelled()) {
-        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
+        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
+                            module,
+                            itemSettings));
 
         list.increment();
     }
@@ -232,13 +238,13 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    CTextRendering::KeyTreeItem::Settings itemSettings;
+    KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
     QListIterator<CSwordKey*> it(list);
     while (it.hasNext() && !progressWasCancelled()) {
         CSwordKey* k = it.next();
-        tree.append( new CTextRendering::KeyTreeItem(k->key(), k->module(), itemSettings) );
+        tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
@@ -265,19 +271,13 @@ bool CExportManager::printKeyList(const sword::ListKey & list,
     for (int i=0; i< list.getCount(); i++) {
         const sword::SWKey* swKey = list.getElement(i);
         const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
-        if (vKey != 0) {
+        if (vKey != nullptr) {
             QString startKey = vKey->getText();
-            tree.append(new CTextRendering::KeyTreeItem(startKey,
-                startKey,
-                module,
-                settings));
+            tree.append(new KTI(startKey, startKey, module, settings));
         }
         else {
             QString key = swKey->getText();
-            tree.append(new CTextRendering::KeyTreeItem(key,
-                key,
-                module,
-                settings));
+            tree.append(new KTI(key, key, module, settings));
         }
         incProgress();
         if (progressWasCancelled())
@@ -286,7 +286,7 @@ bool CExportManager::printKeyList(const sword::ListKey & list,
 
 
     if (!progressWasCancelled()) {
-        CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+        CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
         printer->printKeyTree(tree);
         delete printer;
         closeProgressDialog();
@@ -316,7 +316,7 @@ bool CExportManager::printKey(const CSwordModuleInfo *module,
         tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
     }
 
-    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
     printer->printKeyTree(tree);
     delete printer;
     return true;
@@ -335,7 +335,7 @@ bool CExportManager::printKey(const CSwordKey *key,
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     tree.append( new CPrinter::KeyTreeItem(key->key(), key->module(), settings) );
 
-    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
     printer->printKeyTree(tree);
     delete printer;
     return true;
@@ -367,11 +367,16 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
     if (module) {
         //check if we have a range of entries or a single one
         if ((module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary)) {
-            sword::ListKey verses = sword::VerseKey().parseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
+            sword::ListKey const verses =
+                    sword::VerseKey().parseVerseList(
+                            keyName.toUtf8().constData(),
+                            "Genesis 1:1",
+                            true);
 
             for (int i = 0; i < verses.getCount(); i++) {
-                sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.getElement(i));
-                if (element) {
+                if (sword::VerseKey const * const element =
+                    dynamic_cast<sword::VerseKey const *>(verses.getElement(i)))
+                {
                     const QString startKey = QString::fromUtf8(element->getLowerBound().getText());
                     const QString stopKey =  QString::fromUtf8(element->getUpperBound().getText());
 
@@ -389,7 +394,7 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
         }
     }
 
-    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
     printer->printKeyTree(tree);
     delete printer;
     return true;
@@ -417,7 +422,7 @@ bool CExportManager::printKeyList(const QStringList &list,
 
 
     if (!progressWasCancelled()) {
-        CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
+        CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
         printer->printKeyTree(tree);
         delete printer;
         closeProgressDialog();
@@ -441,7 +446,7 @@ const QString CExportManager::filterString( const Format format ) {
 
 /** Returns a filename to save a file. */
 const QString CExportManager::getSaveFileName(const Format format) {
-    return QFileDialog::getSaveFileName(0, QObject::tr("Save file"), "", filterString(format), 0);
+    return QFileDialog::getSaveFileName(nullptr, QObject::tr("Save file"), "", filterString(format), nullptr);
 }
 
 CTextRendering * CExportManager::newRenderer(const Format format, bool addText) {

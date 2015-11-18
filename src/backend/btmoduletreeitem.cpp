@@ -2,26 +2,25 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/btmoduletreeitem.h"
+#include "btmoduletreeitem.h"
 
 #include <QList>
 #include <QString>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "drivers/cswordmoduleinfo.h"
+#include "managers/cswordbackend.h"
+#include "../util/tool.h"
 
 
 //This ctor creates the root item and the tree.
 BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules)
-        : m_moduleInfo(0),
-        m_firstChild(0),
-        m_next(0),
+        : m_moduleInfo(nullptr),
+        m_firstChild(nullptr),
+        m_next(nullptr),
         m_type(BTModuleTreeItem::Root),
         m_category(CSwordModuleInfo::UnknownCategory),
         m_grouping (grouping) {
@@ -42,8 +41,8 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
 BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo* info, CSwordModuleInfo::Category category)
         : m_moduleInfo(info),
         m_text(text),
-        m_firstChild(0),
-        m_next(0),
+        m_firstChild(nullptr),
+        m_next(nullptr),
         m_type(type),
         m_category(category) {
     if (info) {
@@ -58,9 +57,8 @@ BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& 
 
 BTModuleTreeItem::~BTModuleTreeItem() {
     // this works recursively
-    foreach(BTModuleTreeItem* i, children()) {
+    Q_FOREACH(BTModuleTreeItem * const i, children())
         delete i;
-    }
 }
 
 QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
@@ -73,49 +71,6 @@ QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
         }
     }
     return childList;
-}
-
-/// \todo
-QString BTModuleTreeItem::iconName() const {
-    if (m_type == Category) {
-        switch ( m_category) {
-            case CSwordModuleInfo::Bibles:
-                return CResMgr::categories::bibles::icon;
-                break;
-            case CSwordModuleInfo::Commentaries:
-                return CResMgr::categories::commentaries::icon;
-                break;
-            case CSwordModuleInfo::Books:
-                return CResMgr::categories::books::icon;
-                break;
-            case CSwordModuleInfo::Cult:
-                return CResMgr::categories::cults::icon;
-                break;
-            case CSwordModuleInfo::Images:
-                return CResMgr::categories::images::icon;
-                break;
-            case CSwordModuleInfo::DailyDevotional:
-                return CResMgr::categories::dailydevotional::icon;
-                break;
-            case CSwordModuleInfo::Lexicons:
-                return CResMgr::categories::lexicons::icon;
-                break;
-            case CSwordModuleInfo::Glossary:
-                return CResMgr::categories::glossary::icon;
-                break;
-            default:
-                break;
-        }
-    }
-    else if (m_type == Module) {
-        return util::tool::getIconNameForModule(m_moduleInfo);
-    }
-    else if (m_type == Language) {
-        /// \todo don't hardcode here
-        return "flag.svg";
-    }
-
-    return QString::null;
 }
 
 bool BTModuleTreeItem::m_map_initialized = false;
@@ -138,11 +93,11 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters) {
 }
 
 void BTModuleTreeItem::add_items(QList<BTModuleTreeItem::Filter*>& filters) {
-    foreach (CSwordModuleInfo* info, m_originalModuleList) {
+    Q_FOREACH(CSwordModuleInfo * const info, m_originalModuleList) {
         bool included;
         included = true;
-        foreach (BTModuleTreeItem::Filter* f, filters) {
-            if (!f->filter(info)) {
+        Q_FOREACH(BTModuleTreeItem::Filter const * const f, filters) {
+            if (!f->filter(*info)) {
                 included = false;
                 break;
             }
@@ -195,25 +150,18 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
     BTModuleTreeItem* parentGroup,
     const QString& itemText,
     BTModuleTreeItem::Type type,
-    CSwordModuleInfo::Category category) {
-    BTModuleTreeItem* item = 0;
-    foreach(BTModuleTreeItem* it, parentGroup->children()) {
-        if (it->text() == itemText) {
-            item = it;
-            break;
-        }
-    }
-    if (!item)
-        item = new BTModuleTreeItem(parentGroup, itemText, type, 0, category);
-
-    return item;
+    CSwordModuleInfo::Category category)
+{
+    Q_FOREACH(BTModuleTreeItem * const item, parentGroup->children())
+        if (item->text() == itemText)
+            return item;
+    return new BTModuleTreeItem(parentGroup, itemText, type, nullptr, category);
 }
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
     // sort each child recursively depth-first
-    foreach(BTModuleTreeItem* item, parent->children()) {
+    Q_FOREACH(BTModuleTreeItem * const item, parent->children())
         sort_children(item);
-    }
 
     QList<BTModuleTreeItem*> items = parent->children();
     if (items.size() > 0) {
@@ -222,11 +170,11 @@ void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
         //put the children back to tree in sorted order
         BTModuleTreeItem* first = items.at(0);
         BTModuleTreeItem* prev = first;
-        foreach (BTModuleTreeItem* item2, items) {
+        Q_FOREACH(BTModuleTreeItem * const item2, items) {
             prev->m_next = item2;
             prev = item2;
         }
-        prev->m_next = 0;
+        prev->m_next = nullptr;
         parent->m_firstChild = first; // attach the partial tree to the parent
     }
 }
@@ -255,13 +203,13 @@ bool BTModuleTreeItem::localeAwareLessThan(BTModuleTreeItem* first, BTModuleTree
 }
 
 QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &grouping) {
-    out << (qint8) grouping;
+    out << static_cast<qint8>(grouping);
     return out;
 }
 
 QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &grouping) {
     qint8 i;
     in >> i;
-    grouping = (BTModuleTreeItem::Grouping) i;
+    grouping = static_cast<BTModuleTreeItem::Grouping>(i);
     return in;
 }

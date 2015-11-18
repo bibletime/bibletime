@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -35,24 +35,25 @@
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
-#include <QSharedPointer>
-
-#include "bibletimeapp.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "bibletimeapp.h"
+#include <QScopedPointer>
+#include "../bibletimeapp.h"
+#include "../util/cresmgr.h"
+#include "../util/directory.h"
+#include "../util/tool.h"
 #include "btglobal.h"
-#include "util/cresmgr.h"
-#include "util/geticon.h"
-#include "util/tool.h"
-#include "util/directory.h"
+#include "config/btconfig.h"
+#include "drivers/cswordmoduleinfo.h"
+#include "keys/cswordversekey.h"
+#include "managers/cswordbackend.h"
 
 
 #define CURRENT_SYNTAX_VERSION 1
 
+
+namespace {
+inline QString toHeader(QString const & key, QString const & moduleName)
+{ return QString::fromLatin1("%1 (%2)").arg(key).arg(moduleName); }
+}
 
 class BtBookmarksModelPrivate {
 
@@ -62,7 +63,7 @@ public: /* Tyepes */
 
     public: /* Methods: */
 
-        inline BookmarkItemBase(BookmarkItemBase * parent = 0)
+        inline BookmarkItemBase(BookmarkItemBase * parent = nullptr)
             : m_parent(parent) {
             if(m_parent) {
                 Q_ASSERT(!m_parent->m_children.contains(this));
@@ -103,7 +104,7 @@ public: /* Tyepes */
         }
 
         inline void insertChildren(int index, QList<BookmarkItemBase *> children) {
-            foreach(BookmarkItemBase *c, children)
+            Q_FOREACH(BookmarkItemBase * const c, children)
                 insertChild(index++, c);
         }
 
@@ -139,7 +140,7 @@ public: /* Tyepes */
           \returns index of this item in parent's child array.
          */
         inline int index() const {
-            Q_CHECK_PTR(parent());
+            Q_ASSERT(parent());
             for(int i = 0; i < parent()->childCount(); ++i)
                 if(parent()->child(i) == this)
                     return i;
@@ -184,7 +185,7 @@ public: /* Tyepes */
         inline void setDescription(const QString & description) { m_description = description; }
 
         /** Returns a tooltip for this bookmark. */
-        QString toolTip() const;
+        QString toolTip() const override;
 
         /** Returns the english key.*/
         inline const QString & englishKey() const { return m_key; }
@@ -203,16 +204,16 @@ public: /* Tyepes */
     class BookmarkFolder : public BookmarkItemBase {
     public:
 
-        BookmarkFolder(const QString & name, BookmarkItemBase * parent = 0);
+        BookmarkFolder(const QString & name, BookmarkItemBase * parent = nullptr);
 
         /** Returns a list of direct childs of this item. */
         QList<BookmarkItemBase *> getChildList() const;
 
         /** Returns true if the given item is this or a direct or indirect subitem of this. */
-        bool hasDescendant(BookmarkItemBase * item) const;
+        bool hasDescendant(BookmarkItemBase const * item) const;
 
         /** Creates a deep copy of this item. */
-        BookmarkFolder * deepCopy();
+        BookmarkFolder * deepCopy() const;
 
     };
 
@@ -228,8 +229,8 @@ public: /* Methods */
     }
     ~BtBookmarksModelPrivate() { delete m_rootItem; }
 
-    QString defaultBookmarksFile() {
-        return QString();
+    inline static QString defaultBookmarksFile() {
+        return util::directory::getUserBaseDir().absolutePath() + "/bookmarks.xml";
     }
 
     BookmarkItemBase * item(const QModelIndex & index) const {
@@ -253,6 +254,10 @@ public: /* Methods */
         else
             return m_rootItem;
     }
+
+    template <typename T>
+    inline T * itemAs(QModelIndex const & index) const
+    { return dynamic_cast<T *>(item(index)); }
 
     /// \test
     void printItems() const {
@@ -298,7 +303,7 @@ public: /* Loader */
         QDomElement child = document.firstChild().toElement();
 
         while ( !child.isNull() && child.parentNode() == document) {
-            BookmarkItemBase* i = handleXmlElement(child, 0);
+            BookmarkItemBase* i = handleXmlElement(child, nullptr);
             itemList.append(i);
             if (!child.nextSibling().isNull()) {
                 child = child.nextSibling().toElement();
@@ -314,18 +319,14 @@ public: /* Loader */
 
     /** Create a new item from a document element. */
     BookmarkItemBase * handleXmlElement(QDomElement & element, BookmarkItemBase * parent) {
-        BookmarkItemBase* newItem = 0;
+        BookmarkItemBase* newItem = nullptr;
         if (element.tagName() == "Folder") {
             BookmarkFolder* newFolder = new BookmarkFolder(QString::null, parent);
             if (element.hasAttribute("caption")) {
                 newFolder->setText(element.attribute("caption"));
             }
             QDomNodeList childList = element.childNodes();
-    #if QT_VERSION < 0x050000
-            for (unsigned int i = 0; i < childList.length(); i++) {
-    #else
             for (int i = 0; i < childList.length(); i++) {
-    #endif
                 QDomElement newElement = childList.at(i).toElement();
                 handleXmlElement(newElement, newFolder); // passing parent in constructor will add items to tree
             }
@@ -353,11 +354,10 @@ public: /* Loader */
 
     /** Loads a bookmark XML document from a named file or from the default bookmarks file. */
     QString loadXmlFromFile(QString fileName = QString::null) {
-        namespace DU = util::directory;
 
-        if (fileName.isNull()) {
-            fileName = DU::getUserBaseDir().absolutePath() + "/bookmarks.xml";
-        }
+        if (fileName.isEmpty())
+            fileName = defaultBookmarksFile();
+
         QFile file(fileName);
         if (!file.exists())
             return QString::null;
@@ -376,13 +376,8 @@ public: /* Loader */
 
     /** Takes one item and saves the tree which is under it to a named file
     * or to the default bookmarks file, asking the user about overwriting if necessary. */
-    void saveTreeFromRootItem(BookmarkItemBase* rootItem, QString fileName = QString::null, bool forceOverwrite = true) {
-        namespace DU = util::directory;
-
+    QString serializeTreeFromRootItem(BookmarkItemBase * rootItem) {
         Q_ASSERT(rootItem);
-        if (fileName.isNull()) {
-            fileName = DU::getUserBaseDir().absolutePath() + "/bookmarks.xml";
-        }
 
         QDomDocument doc("DOC");
         doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
@@ -396,14 +391,13 @@ public: /* Loader */
         for (int i = 0; i < rootItem->childCount(); i++) {
             saveItem(rootItem->child(i), content);
         }
-        util::tool::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
-
+        return doc.toString();
     }
 
     /** Writes one item to a document element. */
     void saveItem(BookmarkItemBase * item, QDomElement & parentElement) {
-        BookmarkFolder* folderItem = 0;
-        BookmarkItem* bookmarkItem = 0;
+        BookmarkFolder* folderItem = nullptr;
+        BookmarkItem* bookmarkItem = nullptr;
 
         if ((folderItem = dynamic_cast<BookmarkFolder*>(item))) {
             QDomElement elem = parentElement.ownerDocument().createElement("Folder");
@@ -441,7 +435,7 @@ public: /* Fields */
 
 };
 
-BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = 0;
+BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = nullptr;
 
 typedef BtBookmarksModelPrivate::BookmarkItemBase BookmarkItemBase;
 typedef BtBookmarksModelPrivate::BookmarkItem BookmarkItem;
@@ -452,7 +446,7 @@ BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setText(name);
     setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(util::getIcon(CResMgr::mainIndex::closedFolder::icon));
+    setIcon(CResMgr::mainIndex::closedFolder::icon());
 }
 
 QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
@@ -463,37 +457,30 @@ QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
     return list;
 }
 
-bool BookmarkFolder::hasDescendant(BookmarkItemBase* item) const {
-    if (this == item) {
+bool BookmarkFolder::hasDescendant(BookmarkItemBase const * const item) const {
+    if (this == item)
         return true;
-    }
-    if (getChildList().indexOf(item) > -1) {
+    if (getChildList().indexOf(const_cast<BookmarkItemBase *>(item)) > -1)
         return true;
-    }
-    foreach(BookmarkItemBase* childItem, getChildList()) {
-        bool subresult = false;
-        BookmarkFolder* folder = 0;
-        if ( (folder = dynamic_cast<BookmarkFolder*>(childItem)) ) {
-            subresult = folder->hasDescendant(childItem);
-        }
-
-        if (subresult == true) {
-            return true;
-        }
-    }
+    Q_FOREACH(BookmarkItemBase const * const childItem, getChildList())
+        if (BookmarkFolder const * const folder =
+                dynamic_cast<BookmarkFolder const *>(childItem))
+            if (folder->hasDescendant(childItem))
+                return true;
     return false;
 }
 
-BookmarkFolder* BookmarkFolder::deepCopy() {
+BookmarkFolder * BookmarkFolder::deepCopy() const {
     BookmarkFolder* newFolder = new BookmarkFolder(this->text());
-    foreach(BookmarkItemBase* subitem, getChildList()) {
-        if (BookmarkItem* bmItem = dynamic_cast<BookmarkItem*>(subitem)) {
+    Q_FOREACH(BookmarkItemBase const * const subitem, getChildList()) {
+        if (BookmarkItem const * const bmItem =
+                dynamic_cast<BookmarkItem const *>(subitem))
+        {
             newFolder->addChild(new BookmarkItem(*bmItem));
-        }
-        else {
-            if (BookmarkFolder* bmFolder = dynamic_cast<BookmarkFolder*>(subitem)) {
-                newFolder->addChild(bmFolder->deepCopy());
-            }
+        } else if (BookmarkFolder const * const bmFolder =
+                           dynamic_cast<BookmarkFolder const *>(subitem))
+        {
+            newFolder->addChild(bmFolder->deepCopy());
         }
     }
     return newFolder;
@@ -509,25 +496,27 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
     Q_UNUSED(title);
 
     if (((module.type() == CSwordModuleInfo::Bible) || (module.type() == CSwordModuleInfo::Commentary))) {
-        CSwordVerseKey vk(0);
-        vk.setKey(key);
-        vk.setLocale("en");
-        m_key = vk.key(); //the m_key member is always the english key!
+        /// here we only translate \param key into english
+        sword::VerseKey vk(key.toUtf8().constData(), key.toUtf8().constData(),
+            static_cast<sword::VerseKey *>(module.module()->getKey())->getVersificationSystem());
+        CSwordVerseKey k(&vk, &module);
+        k.setLocale("en");
+        m_key = k.key();
     }
     else {
         m_key = key;
     };
 
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module.name()));
+    setIcon(CResMgr::mainIndex::bookmark::icon());
+    setText(toHeader(key, module.name()));
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
 }
 
 BookmarkItem::BookmarkItem(BookmarkItemBase * parent)
         : BookmarkItemBase(parent) {
     setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
+    setIcon(CResMgr::mainIndex::bookmark::icon());
+    setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
 BookmarkItem::BookmarkItem(const BookmarkItem & other)
@@ -536,8 +525,8 @@ BookmarkItem::BookmarkItem(const BookmarkItem & other)
         , m_description(other.m_description)
         , m_moduleName(other.m_moduleName)
 {
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
+    setIcon(CResMgr::mainIndex::bookmark::icon());
+    setText(toHeader(key(), module() ? module()->name() : QObject::tr("unknown")));
 }
 
 CSwordModuleInfo *BookmarkItem::module() const {
@@ -552,52 +541,40 @@ QString BookmarkItem::key() const {
 
     QString returnKeyName = englishKeyName;
     if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
-        CSwordVerseKey vk(0);
-        vk.setKey(englishKeyName);
-        vk.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
-
-        returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
+        /// here we only translate \param key into current book name language
+        sword::VerseKey vk(englishKeyName.toUtf8().constData(), englishKeyName.toUtf8().constData(),
+            static_cast<sword::VerseKey *>(module()->module()->getKey())->getVersificationSystem());
+        CSwordVerseKey k(&vk, module());
+        k.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
+        returnKeyName = k.key();
     }
 
     return returnKeyName;
 }
 
 QString BookmarkItem::toolTip() const {
-    if (!module()) {
+    if (!module())
         return QString::null;
-    }
 
     FilterOptions filterOptions = btConfig().getFilterOptions();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-    QString ret;
-    QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
+    QScopedPointer<CSwordKey> k(CSwordKey::createInstance(module()));
     k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
     // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
     Q_ASSERT(k.data());
-    QString header = QString::fromLatin1("%1 (%2)")
-              .arg(key())
-              .arg(module()->name());
-    if (text() != header) {
-        ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
-              .arg(header)
-              .arg(text())
-              .arg(description())
-              ;
-    }
-    else {
-        ret = QString::fromLatin1("<b>%1</b><hr>%2")
-              .arg(header)
-              .arg(description())
-              ;
-    }
-
-    return ret;
+    QString const header(toHeader(key(), module()->name()));
+    QString ret("<b>");
+    ret.append(header).append(")</b>");
+    QString const txt(text());
+    if (txt != header)
+        ret.append("<br>").append(txt);
+    return ret.append("<hr>").append(description());
 }
 
 
@@ -645,7 +622,7 @@ QModelIndex BtBookmarksModel::index(int row, int column, const QModelIndex & par
     Q_D(const BtBookmarksModel);
 
     const BookmarkItemBase * i = d->item(parent);
-    if(i->childCount() > row)
+    if(i->childCount() > row && row >= 0)
         return createIndex(row, column, i->child(row));
     return QModelIndex();
 }
@@ -654,7 +631,7 @@ QModelIndex BtBookmarksModel::parent(const QModelIndex & index) const {
     Q_D(const BtBookmarksModel);
 
     const BookmarkItemBase * i = d->item(index);
-    return (i->parent() == 0 || i->parent()->parent() == 0) ?
+    return (i->parent() == nullptr || i->parent()->parent() == nullptr) ?
                 QModelIndex() : createIndex(i->parent()->index(), 0, i->parent());
 }
 
@@ -753,8 +730,15 @@ bool BtBookmarksModel::insertRows(int row, int count, const QModelIndex &parent)
 bool BtBookmarksModel::save(QString fileName, const QModelIndex & rootItem) {
     Q_D(BtBookmarksModel);
 
-    BookmarkItemBase * i = d->item(rootItem);
-    d->saveTreeFromRootItem(i, fileName, fileName.isEmpty());
+    QString const serializedTree(
+            d->serializeTreeFromRootItem(d->item(rootItem)));
+    if (fileName.isEmpty())
+        fileName = BtBookmarksModelPrivate::defaultBookmarksFile();
+
+    util::tool::savePlainFile(fileName,
+                              serializedTree,
+                              true,
+                              QTextCodec::codecForName("UTF-8"));
 
     if(d->m_saveTimer.isActive())
         d->m_saveTimer.stop();
@@ -768,15 +752,6 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
     BookmarkItemBase * i = d->item(rootItem);
     QList<BookmarkItemBase *> items = d->loadTree(fileName);
 
-    if(items.size() == 0)
-        return false;
-
-    beginInsertRows(rootItem, i->childCount(), i->childCount() + items.size() - 1);
-
-    i->insertChildren(i->childCount(), items);
-
-    endInsertRows();
-
     if(!rootItem.isValid() && fileName.isEmpty()) {
         if(!d->m_defaultModel) {
             connect(&d->m_saveTimer, SIGNAL(timeout()), this, SLOT(save()));
@@ -786,8 +761,15 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
             Q_ASSERT_X(false, "BtBookmarksModel::load" ,
                        "no more than one default bookmarks model is allowed");
     }
-    else
-        d->needSave();
+
+    if(items.size() == 0)
+        return false;
+
+    beginInsertRows(rootItem, i->childCount(), i->childCount() + items.size() - 1);
+
+    i->insertChildren(i->childCount(), items);
+
+    endInsertRows();
 
     return true;
 }
@@ -795,13 +777,13 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
 bool BtBookmarksModel::isFolder(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
-    return dynamic_cast<const BookmarkFolder*>(d->item(index));
+    return d->itemAs<BookmarkFolder const>(index);
 }
 
 bool BtBookmarksModel::isBookmark(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
-    return dynamic_cast<const BookmarkItem*>(d->item(index));
+    return d->itemAs<BookmarkItem const>(index);
 }
 
 QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy)
@@ -814,8 +796,10 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
 
     QList<BookmarkItemBase *> newList;
 
-    foreach(QModelIndex index, toCopy) {
-        if(BookmarkFolder * folder = dynamic_cast<BookmarkFolder*>(d->item(index))) {
+    Q_FOREACH(QModelIndex const index, toCopy) {
+        if (BookmarkFolder const * const folder =
+                d->itemAs<BookmarkFolder const>(index))
+        {
             bookmarksOnly = false;
             if (toCopy.count() > 1) { // only one item allowed if a folder is selected
                 moreThanOneFolder = true;
@@ -827,15 +811,12 @@ QModelIndexList BtBookmarksModel::copyItems(int row, const QModelIndex & parent,
             }
         }
         else {
-            newList.append( new BookmarkItem(*(dynamic_cast<BookmarkItem *>(d->item(index))) ));
+            newList.append(new BookmarkItem(*(d->itemAs<BookmarkItem>(index))));
         }
     }
 
-    if (!bookmarksOnly && toCopy.count() == 1) {
-        BookmarkFolder* folder = dynamic_cast<BookmarkFolder*>(d->item(toCopy[0]));
-        BookmarkFolder* copy = folder->deepCopy();
-        newList.append(copy);
-    }
+    if (!bookmarksOnly && toCopy.count() == 1)
+        newList.append(d->itemAs<BookmarkFolder const>(toCopy[0])->deepCopy());
     if (!bookmarksOnly && toCopy.count() > 1) {
         // wrong amount of items
         moreThanOneFolder = true;
@@ -865,17 +846,17 @@ CSwordModuleInfo * BtBookmarksModel::module(const QModelIndex & index) const
 {
     Q_D(const BtBookmarksModel);
 
-    const BookmarkItem * i = dynamic_cast<const BookmarkItem *>(d->item(index));
-    if(i) return i->module();
-    return 0;
+    if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
+        return i->module();
+    return nullptr;
 }
 
 QString BtBookmarksModel::key(const QModelIndex & index) const
 {
     Q_D(const BtBookmarksModel);
 
-    const BookmarkItem * i = dynamic_cast<const BookmarkItem *>(d->item(index));
-    if(i) return i->key();
+    if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
+        return i->key();
     return QString();
 }
 
@@ -883,8 +864,8 @@ QString BtBookmarksModel::description(const QModelIndex &index) const
 {
     Q_D(const BtBookmarksModel);
 
-    const BookmarkItem * i = dynamic_cast<const BookmarkItem *>(d->item(index));
-    if(i) return i->description();
+    if (BookmarkItem const * const i = d->itemAs<BookmarkItem const>(index))
+        return i->description();
     return QString();
 }
 
@@ -892,10 +873,10 @@ void BtBookmarksModel::setDescription(const QModelIndex &index, const QString &d
 {
     Q_D(BtBookmarksModel);
 
-    BookmarkItem * i = dynamic_cast<BookmarkItem *>(d->item(index));
-    if(i) return i->setDescription(description);
-
-    d->needSave();
+    if (BookmarkItem * const i = d->itemAs<BookmarkItem>(index)) {
+        i->setDescription(description);
+        d->needSave();
+    }
 }
 
 QModelIndex BtBookmarksModel::addBookmark(int const row,
@@ -907,12 +888,13 @@ QModelIndex BtBookmarksModel::addBookmark(int const row,
 {
     Q_D(BtBookmarksModel);
 
-    BookmarkFolder * i = dynamic_cast<BookmarkFolder *>(d->item(parent));
-    if(i) {
-        beginInsertRows(parent, row, row);
+    if (BookmarkFolder * const i = d->itemAs<BookmarkFolder>(parent)) {
+        int r = row < 0 ? row + rowCount(parent) + 1 : row;
+
+        beginInsertRows(parent, r, r);
 
         BookmarkItem * c = new BookmarkItem(module, key, description, title);
-        i->insertChild(row, c);
+        i->insertChild(r, c);
 
         endInsertRows();
 
@@ -927,8 +909,7 @@ QModelIndex BtBookmarksModel::addFolder(int row, const QModelIndex &parent, cons
 {
     Q_D(BtBookmarksModel);
 
-    BookmarkFolder * i = dynamic_cast<BookmarkFolder *>(d->item(parent));
-    if(i) {
+    if (BookmarkFolder * const i = d->itemAs<BookmarkFolder>(parent)) {
         beginInsertRows(parent, row, row);
 
         BookmarkFolder * c = new BookmarkFolder(name.isEmpty() ? QObject::tr("New folder") : name);
@@ -947,7 +928,8 @@ bool BtBookmarksModel::hasDescendant(const QModelIndex &baseIndex, const QModelI
 {
     Q_D(const BtBookmarksModel);
 
-    if(const BookmarkFolder * f = dynamic_cast<const BookmarkFolder *>(d->item(baseIndex)))
+    if (BookmarkFolder const * const f =
+            d->itemAs<BookmarkFolder const>(baseIndex))
         return f->hasDescendant(d->item(testIndex));
     return false;
 }
@@ -962,11 +944,12 @@ bool BtBookmarksModelSortDescending(BookmarkItemBase * i1, BookmarkItemBase * i2
     return i1->text().localeAwareCompare(i2->text()) > 0;
 }
 
-void BtBookmarksModel::sort(const QModelIndex & parent, Qt::SortOrder order)
+void BtBookmarksModel::sortItems(QModelIndex const & parent,
+                                 Qt::SortOrder const order)
 {
     Q_D(BtBookmarksModel);
 
-    if(BookmarkFolder * f = dynamic_cast<BookmarkFolder *>(d->item(parent))) {
+    if(BookmarkFolder * const f = d->itemAs<BookmarkFolder>(parent)) {
         QList<BookmarkFolder *> parents;
         if(f == d->m_rootItem) {
             QList<BookmarkItemBase *> items;
@@ -980,7 +963,7 @@ void BtBookmarksModel::sort(const QModelIndex & parent, Qt::SortOrder order)
         else
             parents.append(f);
 
-        foreach(BookmarkFolder * f, parents) {
+        Q_FOREACH(BookmarkFolder * const f, parents) {
             emit layoutAboutToBeChanged();
 
             QModelIndexList indexes;

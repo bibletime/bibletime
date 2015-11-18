@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,7 +23,7 @@ namespace Search {
 class BtSearchSyntaxHelpDialog: public QDialog {
         Q_OBJECT
     public:
-        BtSearchSyntaxHelpDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        BtSearchSyntaxHelpDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
     protected:
         void retranslateUi();

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -44,13 +44,12 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
     adjustWidgetCount();
 
     //recreate all widgets from scratch
-    for (int i = 0; i < m_widgetList.count(); i++) {
-        BtTextWindowHeaderWidget* widgt = m_widgetList.at(i);
-        QString moduleName = m_modules.at(i);
-        qDebug() << "refresh button's menu:" << moduleName << i;
-        int leftLikeModules = leftLikeParallelModules(m_modules);
-        widgt->recreateWidget(m_modules, moduleName, i, leftLikeModules);
-    }
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_widgetList.count(); i++)
+        m_widgetList.at(i)->recreateWidget(m_modules,
+                                           m_modules.at(i),
+                                           i,
+                                           leftLikeModules);
 }
 
 void BtTextWindowHeader::slotWindowModulesChanged() {
@@ -75,7 +74,7 @@ void BtTextWindowHeader::adjustWidgetCount(bool adjustToZero) {
         while (widgetCountDifference) {
             // it should be safe to delete the button later
             BtTextWindowHeaderWidget* w = m_widgetList.takeFirst();
-            w->setParent(0);
+            w->setParent(nullptr);
             w->deleteLater();
             widgetCountDifference--;
         }
@@ -115,10 +114,10 @@ void BtTextWindowHeader::setModules( QStringList useModules ) {
 }
 
 void BtTextWindowHeader::updateWidgets() {
-    int leftLikeModules = leftLikeParallelModules(m_modules);
-    for (int i = 0; i < m_widgetList.count(); i++) {
-        BtTextWindowHeaderWidget* w = m_widgetList.at(i);
-        //QString moduleName = m_modules.at(i);
-        w->updateWidget(m_modules, m_modules.at(i), i, leftLikeModules);
-    }
+    int const leftLikeModules = leftLikeParallelModules(m_modules);
+    for (int i = 0; i < m_widgetList.count(); i++)
+        m_widgetList.at(i)->updateWidget(m_modules,
+                                         m_modules.at(i),
+                                         i,
+                                         leftLikeModules);
 }

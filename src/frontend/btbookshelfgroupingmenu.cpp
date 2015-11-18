@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -15,7 +15,6 @@
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
 namespace {
@@ -39,22 +38,23 @@ inline void initializeGroups() {
 }
 
 inline void setActionRef(QAction *a, const BtBookshelfTreeModel::Grouping &g) {
-    a->setProperty("groupingPointer", QVariant::fromValue((void*) &g));
+    a->setProperty("groupingPointer",
+                   QVariant::fromValue(
+                       const_cast<void *>(static_cast<void const *>(&g))));
 }
 
 inline const BtBookshelfTreeModel::Grouping &getActionRef(const QAction *a) {
-    return *((const BtBookshelfTreeModel::Grouping*) a->property("groupingPointer").value<void*>());
+    return *static_cast<BtBookshelfTreeModel::Grouping const *>(
+                a->property("groupingPointer").value<void *>());
 }
 
 } // anonymous namespace
 
 
 void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
-    namespace RM = CResMgr::mainIndex;
-
     if (!groupsInitialized) initializeGroups();
 
-    setIcon(util::getIcon(RM::grouping::icon));
+    setIcon(CResMgr::mainIndex::grouping::icon());
 
     m_groupingActionGroup = new QActionGroup(this);
     m_groupingActionGroup->setExclusive(true);
@@ -92,7 +92,7 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
         m_groupingActionGroup->addAction(m_groupingNoneAction);
         addAction(m_groupingNoneAction);
     } else {
-        m_groupingNoneAction = 0;
+        m_groupingNoneAction = nullptr;
     }
 
     retranslateUi();
@@ -104,7 +104,7 @@ void BtBookshelfGroupingMenu::retranslateUi() {
     m_groupingLangCatAction->setText(tr("Language/Category"));
     m_groupingLangAction->setText(tr("Language"));
 
-    if (m_groupingNoneAction != 0) {
+    if (m_groupingNoneAction != nullptr) {
         m_groupingNoneAction->setText(tr("No grouping"));
     }
 }

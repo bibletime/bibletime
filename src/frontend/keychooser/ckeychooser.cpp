@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,7 +21,7 @@
 #include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
 
 
-CKeyChooser::CKeyChooser(const QList<const CSwordModuleInfo *> &,
+CKeyChooser::CKeyChooser(const BtConstModuleList &,
                          BTHistory * historyPtr,
                          QWidget * parent)
     : QWidget(parent)
@@ -32,7 +32,7 @@ CKeyChooser::CKeyChooser(const QList<const CSwordModuleInfo *> &,
     Q_ASSERT(ok);
 }
 
-CKeyChooser * CKeyChooser::createInstance(const QList<const CSwordModuleInfo *> & modules,
+CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,
                                           BTHistory * historyPtr,
                                           CSwordKey * key,
                                           QWidget * parent)

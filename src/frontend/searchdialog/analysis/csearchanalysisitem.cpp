@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -17,19 +17,11 @@
 #include <QRect>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/searchdialog/analysis/csearchanalysisscene.h"
-#include "util/htmlescape.h"
 
 
 namespace Search {
 
-const int SPACE_BETWEEN_PARTS = 5;
-const int RIGHT_BORDER = 15;
-const int LEFT_BORDER = 15;
-const int LOWER_BORDER = 10;
-const int UPPER_BORDER = 10;
-
 const int ITEM_TEXT_SIZE = 8;
-const int LABEL_TEXT_SIZE = 6;
 
 //used for the shift between the bars
 const int BAR_DELTAX = 4;
@@ -37,10 +29,6 @@ const int BAR_DELTAY = 2;
 const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the label font size
 // Used for the text below the bars
 const int BAR_LOWER_BORDER = 100;
-
-const int LEGEND_INNER_BORDER = 5;
-const int LEGEND_DELTAY = 4;
-const int LEGEND_WIDTH = 85;
 
 CSearchAnalysisItem::CSearchAnalysisItem(
         const int moduleCount,
@@ -51,7 +39,7 @@ CSearchAnalysisItem::CSearchAnalysisItem(
           m_scaleFactor(scaleFactor),
           m_bookName(bookname),
           m_moduleCount(moduleCount),
-          m_bufferPixmap(0)
+          m_bufferPixmap(nullptr)
 {
     m_resultCountArray.resize(m_moduleCount);
     int index = 0;
@@ -63,9 +51,9 @@ CSearchAnalysisItem::~CSearchAnalysisItem() {
 }
 
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
-    foreach (const int hits, m_resultCountArray) {
-        if (hits) return true;
-    }
+    Q_FOREACH(int const hits, m_resultCountArray)
+        if (hits)
+            return true;
     return false;
 }
 
@@ -93,10 +81,12 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
     while (drawn < m_moduleCount) {
         for (index = 0; index < m_moduleCount; index++) {
             if (m_resultCountArray[index] == Value) {
-                QPoint p1((int)rect().x() + (m_moduleCount - drawn - 1)*BAR_DELTAX,
-                          (int)rect().height() + (int)y() - BAR_LOWER_BORDER - (m_moduleCount - drawn)*BAR_DELTAY);
+                #define S(...) static_cast<int>(__VA_ARGS__)
+                QPoint p1(S(rect().x()) + (m_moduleCount - drawn - 1)*BAR_DELTAX,
+                          S(rect().height()) + S(y()) - BAR_LOWER_BORDER - (m_moduleCount - drawn)*BAR_DELTAY);
                 QPoint p2(p1.x() + BAR_WIDTH,
-                          p1.y() - (int)( !m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))) );
+                          p1.y() - S(!m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))));
+                #undef S
                 QRect r(p1, p2);
                 painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );
                 painter->drawRect(r);
@@ -132,12 +122,12 @@ int CSearchAnalysisItem::width() {
 /** Returns the tooltip for this item. */
 const QString CSearchAnalysisItem::getToolTip() {
     typedef CSwordModuleSearch::Results::const_iterator RCI;
-    using util::htmlEscape;
 
     QString toolTipString("<center><b>");
-    toolTipString.append(htmlEscape(m_bookName)).append("</b></center><hr/>")
-                 .append("<table cellspacing=\"0\" cellpadding=\"3\" width=\"10"
-                         "0%\" height=\"100%\" align=\"center\">");
+    toolTipString.append(m_bookName.toHtmlEscaped())
+                 .append("</b></center><hr/><table cellspacing=\"0\" "
+                         "cellpadding=\"3\" width=\"100%\" height=\"100%\" "
+                         "align=\"center\">");
 
     /// \todo Fix that loop
     int i = 0;

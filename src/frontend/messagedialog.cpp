@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,7 +22,7 @@ namespace {
 void replaceText(QDialogButtonBox *box, QDialogButtonBox::StandardButton flag,
                  const QString &text) {
     QPushButton *button(box->button(flag));
-    if (button != 0) {
+    if (button != nullptr) {
         button->setText(text);
     }
 }
@@ -42,7 +42,7 @@ QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon,
     messageBox.setStandardButtons(buttons);
     messageBox.setDefaultButton(defaultButton);
     prepareDialogBox(box);
-    return (QMessageBox::StandardButton)messageBox.exec();
+    return static_cast<QMessageBox::StandardButton>(messageBox.exec());
 }
 
 } // anonymous namespace

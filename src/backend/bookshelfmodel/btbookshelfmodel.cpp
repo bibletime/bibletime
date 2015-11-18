@@ -4,17 +4,16 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
 **********/
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "btbookshelfmodel.h"
 
 #include <QIcon>
-#include <QSet>
-#include "util/macros.h"
+#include "../../util/macros.h"
 
 
 int BtBookshelfModel::rowCount(const QModelIndex & parent) const {
@@ -27,9 +26,11 @@ int BtBookshelfModel::rowCount(const QModelIndex & parent) const {
 QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
     Q_ASSERT(module);
     switch (role) {
-        case ModuleNameRole: // Qt::DisplayRole
+        case Qt::DisplayRole:
+        case ModuleNameRole:
             return module->name();
-        case ModuleIconRole: // Qt::DecorationRole
+        case Qt::DecorationRole:
+        case ModuleIconRole:
             return CSwordModuleInfo::moduleIcon(*module);
         case ModulePointerRole:
             return qVariantFromValue(static_cast<void *>(module));
@@ -44,7 +45,7 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
         case ModuleHasIndexRole:
             return module->hasIndex();
         case ModuleIndexSizeRole:
-            return (qulonglong) module->indexSize();
+            return static_cast<qulonglong>(module->indexSize());
         case ModuleDescriptionRole:
             return module->config(CSwordModuleInfo::Description);
         case Qt::ToolTipRole:
@@ -114,7 +115,7 @@ void BtBookshelfModel::clear(bool destroy) {
 }
 
 void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
-    Q_ASSERT(module != 0);
+    Q_ASSERT(module != nullptr);
 
     if (m_data.contains(module))
         return;
@@ -135,9 +136,9 @@ void BtBookshelfModel::addModules(const QList<CSwordModuleInfo *> & modules) {
     addModules(modules.toSet());
 }
 
-void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> & modules) {
+void BtBookshelfModel::addModules(BtModuleSet const & modules) {
     QList<CSwordModuleInfo *> newModules;
-    Q_FOREACH (CSwordModuleInfo * module, modules)
+    Q_FOREACH(CSwordModuleInfo * const module, modules)
         if (!m_data.contains(module))
             newModules.append(module);
 
@@ -147,7 +148,7 @@ void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> & modules) {
     beginInsertRows(QModelIndex(),
                     m_data.size(),
                     m_data.size() + newModules.size() - 1);
-    Q_FOREACH (CSwordModuleInfo * module, newModules) {
+    Q_FOREACH(CSwordModuleInfo * const module, newModules) {
         m_data.append(module);
         connect(module, SIGNAL(hiddenChanged(bool)),
                 this, SLOT(moduleHidden(bool)));
@@ -184,36 +185,33 @@ void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
     removeModules(modules.toSet(), destroy);
 }
 
-void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> & modules,
-                                     bool destroy)
-{
+void BtBookshelfModel::removeModules(BtModuleSet const & modules, bool destroy){
     // This is inefficient, since signals are emitted for each removed module:
-    Q_FOREACH (CSwordModuleInfo * module, modules)
+    Q_FOREACH(CSwordModuleInfo * const module, modules)
         removeModule(module, destroy);
 }
 
 CSwordModuleInfo * BtBookshelfModel::getModule(const QString & name) const {
-    Q_FOREACH (CSwordModuleInfo * module, m_data)
+    Q_FOREACH(CSwordModuleInfo * const module, m_data)
         if (UNLIKELY(module->name() == name))
             return module;
-
-    return 0;
+    return nullptr;
 }
 
 void BtBookshelfModel::moduleHidden(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != 0);
+    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleIndexed(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != 0);
+    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleUnlocked(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != 0);
+    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }

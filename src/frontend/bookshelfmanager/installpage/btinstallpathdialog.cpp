@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -25,7 +25,6 @@
 #include "frontend/messagedialog.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 #include "util/tool.h"
 
 
@@ -68,9 +67,8 @@ BtInstallPathDialog::BtInstallPathDialog() {
 
     QStringList targets = BtInstallBackend::targetList();
 
-    foreach (QString pathname, targets)  {
+    Q_FOREACH(QString const & pathname, targets)
         addPathToList(pathname);
-    }
     updateTopLevelItems();
 
     viewLayout->addWidget(m_swordPathListBox);
@@ -79,19 +77,19 @@ BtInstallPathDialog::BtInstallPathDialog() {
 
     m_addButton = new QPushButton(tr("&Add..."), this);
     m_addButton->setToolTip(tr("Add new folder"));
-    m_addButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::paths::add_icon));
+    m_addButton->setIcon(CResMgr::bookshelfmgr::paths::icon_add());
     connect(m_addButton, SIGNAL(clicked()), this, SLOT(slotAddClicked()));
     buttonLayout->addWidget(m_addButton);
 
     m_editButton = new QPushButton(tr("&Edit..."), this);
     m_editButton->setToolTip(tr("Edit the selected folder"));
-    m_editButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::paths::edit_icon));
+    m_editButton->setIcon(CResMgr::bookshelfmgr::paths::icon_edit());
     connect(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
     buttonLayout->addWidget(m_editButton);
 
     m_removeButton = new QPushButton(tr("&Remove"), this);
     m_removeButton->setToolTip(tr("Remove the selected folder"));
-    m_removeButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::paths::remove_icon));
+    m_removeButton->setIcon(CResMgr::bookshelfmgr::paths::icon_remove());
     connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveClicked()));
     buttonLayout->addWidget(m_removeButton);
 
@@ -148,7 +146,7 @@ void BtInstallPathDialog::updateTopLevelItems() {
 
 void BtInstallPathDialog::addPathToList(QString pathname) {
     if (pathname.isEmpty()) return;
-    QTreeWidgetItem* i = 0;
+    QTreeWidgetItem* i = nullptr;
     QDir dir(pathname);
     if (!dir.exists()) {
         i = new QTreeWidgetItem(m_nonexistingItem, QStringList(pathname) );
@@ -227,7 +225,11 @@ void BtInstallPathDialog::writeSwordConfig() {
         ++it;
     }
     qDebug() << "save the target list" << targets;
-    BtInstallBackend::setTargetList(targets); //creates new Sword config
+    if (!BtInstallBackend::setTargetList(targets)) {
+        message::showWarning(this,
+                             tr("Can't write file"),
+                             tr("The Sword config file can't be created!"));
+    }
 }
 
 void BtInstallPathDialog::accept() {

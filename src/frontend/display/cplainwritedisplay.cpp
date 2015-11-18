@@ -2,18 +2,18 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 #include "frontend/display/cplainwritedisplay.h"
 
-#include <QSharedPointer>
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QMenu>
+#include <QScopedPointer>
 
 #include "backend/keys/cswordkey.h"
 #include "frontend/cdragdrop.h"
@@ -48,7 +48,7 @@ void CPlainWriteDisplay::setText( const QString& newText ) {
     QTextEdit::setText(text);
 }
 
-bool CPlainWriteDisplay::hasSelection() {
+bool CPlainWriteDisplay::hasSelection() const {
     /// \todo test this
     return textCursor().hasSelection();
 }
@@ -123,7 +123,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
         for (it = items.begin(); it != items.end(); ++it) {
 
             CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName((*it).module());
-            QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+            QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
             key->setKey((*it).key());
             QString moduleText = key->strippedText();
 

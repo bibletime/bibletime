@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,8 +14,8 @@
 
 #include <QToolButton>
 
+#include "backend/btglobal.h"
 #include "backend/managers/cswordbackend.h"
-#include "btglobal.h"
 
 
 class CSwordModuleInfo;
@@ -28,7 +28,7 @@ class BtDisplaySettingsButton: public QToolButton {
         Q_OBJECT
 
     public:
-        BtDisplaySettingsButton(QWidget *parent = 0);
+        BtDisplaySettingsButton(QWidget *parent = nullptr);
 
     public slots:
         void setDisplayOptions(const DisplayOptions &displaySettings,
@@ -36,13 +36,13 @@ class BtDisplaySettingsButton: public QToolButton {
         void setFilterOptions(const FilterOptions &moduleSettings,
                               bool repopulate = true);
 
-        void setModules(const QList<const CSwordModuleInfo*> &modules);
+        void setModules(const BtConstModuleList &modules);
 
     signals:
         void sigFilterOptionsChanged(FilterOptions filterOptions);
         void sigDisplayOptionsChanged(DisplayOptions displayOptions);
-        void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
-        void sigChanged(void);
+        void sigModulesChanged(const BtConstModuleList &modules);
+        void sigChanged();
 
     protected slots:
         void slotOptionToggled(QAction *action);
@@ -59,7 +59,7 @@ class BtDisplaySettingsButton: public QToolButton {
     private:
         FilterOptions  m_filterOptions;
         DisplayOptions m_displayOptions;
-        QList<const CSwordModuleInfo*> m_modules;
+        BtConstModuleList m_modules;
 
         QMenu *m_popup;
         QAction *m_lineBreakAction;

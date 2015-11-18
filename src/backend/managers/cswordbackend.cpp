@@ -2,12 +2,12 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/managers/cswordbackend.h"
+#include "cswordbackend.h"
 
 #include <QDebug>
 #include <QDir>
@@ -15,15 +15,13 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/filters/btosismorphsegmentation.h"
-#include "backend/filters/thmltoplain.h"
-#include "btglobal.h"
-#include "util/directory.h"
+#include "../../util/directory.h"
+#include "../btglobal.h"
+#include "../config/btconfig.h"
+#include "../drivers/cswordbiblemoduleinfo.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../drivers/cswordcommentarymoduleinfo.h"
+#include "../drivers/cswordlexiconmoduleinfo.h"
 
 // Sword includes:
 #include <encfiltmgr.h>
@@ -37,45 +35,31 @@
 
 using namespace Rendering;
 
-CSwordBackend * CSwordBackend::m_instance = 0;
+CSwordBackend * CSwordBackend::m_instance = nullptr;
 
 CSwordBackend::CSwordBackend()
-        : sword::SWMgr(0, 0, false,
+        : sword::SWMgr(nullptr, nullptr, false,
                        new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
         , m_dataModel(this)
-{
-    filterInit();
-}
+{}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
-        : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0,
+        : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
                        false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
                        false, augmentHome)
-{ // don't allow module renaming, because we load from a path
-    filterInit();
-}
+{}
 
 CSwordBackend::~CSwordBackend() {
     shutdownModules();
 }
 
-void CSwordBackend::filterInit() {
-    // HACK: replace Sword's OSISMorphSegmentation filter, seems to be buggy, ours works
-    if (sword::SWOptionFilter * const filter = optionFilters["OSISMorphSegmentation"]) {
-        cleanupFilters.remove(filter);
-        optionFilters.erase("OSISMorphSegmentation");
-        delete filter;
-    }
-    sword::SWOptionFilter * const tmpFilter = new Filters::BtOSISMorphSegmentation();
-    optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
-    cleanupFilters.push_back(tmpFilter);
-
-    // HACK: replace Sword's ThML strip filter with our own version
-    // Remove this hack as soon as Sword is fixed
-    cleanupFilters.remove(thmlplain);
-    delete thmlplain;
-    thmlplain = new Filters::ThmlToPlain();
-    cleanupFilters.push_back(thmlplain);
+BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
+{
+    BtModuleList l;
+    Q_FOREACH(CSwordModuleInfo * m, moduleList())
+        if(m->type() == type)
+            l.append(m);
+    return l;
 }
 
 QList<CSwordModuleInfo *> CSwordBackend::takeModulesFromList(const QStringList & names) {
@@ -102,10 +86,8 @@ QList<CSwordModuleInfo *> CSwordBackend::getPointerList(const QStringList & name
     return list;
 }
 
-QList<const CSwordModuleInfo *> CSwordBackend::getConstPointerList(
-        const QStringList & names) const
-{
-    QList<const CSwordModuleInfo *> list;
+BtConstModuleList CSwordBackend::getConstPointerList(const QStringList & names) const {
+    BtConstModuleList list;
     Q_FOREACH (const QString & name, names) {
         const CSwordModuleInfo * const mInfo = findModuleByName(name);
         if (mInfo)
@@ -156,7 +138,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     }
 
     // Unlock modules if keys are present:
-    Q_FOREACH(CSwordModuleInfo * mod, m_dataModel.moduleList()) {
+    Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
         if (mod->isEncrypted()) {
             const QString unlockKey = btConfig().getModuleEncryptionKey(mod->name());
             if (!unlockKey.isNull())
@@ -258,24 +240,24 @@ void CSwordBackend::setFilterOptions(const FilterOptions & options) {
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & description) const {
-    Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList())
+    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->config(CSwordModuleInfo::Description) == description)
             return mod;
-    return 0;
+    return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
-    Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList())
+    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->name() == name)
             return mod;
-    return 0;
+    return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
-    Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList())
+    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (mod->module() == swmodule)
             return mod;
-    return 0;
+    return nullptr;
 }
 
 QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
@@ -377,7 +359,7 @@ const QString CSwordBackend::booknameLanguage(const QString & language) {
         // Use what sword returns, language may be different.
         const QByteArray newLocaleName(QString(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()).toUtf8());
 
-        Q_FOREACH (CSwordModuleInfo * mod, m_dataModel.moduleList()) {
+        Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
             if (mod->type() == CSwordModuleInfo::Bible
                 || mod->type() == CSwordModuleInfo::Commentary)
             {
@@ -399,7 +381,7 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
 
     if (myconfig) { // force reload on config object because we may have changed the paths
         delete myconfig;
-        config = myconfig = 0;
+        config = myconfig = nullptr;
         // we need to call findConfig to make sure that augPaths are reloaded
         findConfig(&configType, &prefixPath, &configPath, &augPaths, &sysConfig);
         // now re-read module configuration files
@@ -415,7 +397,7 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
 QStringList CSwordBackend::getSharedSwordConfigFiles() const {
 #ifdef Q_OS_WIN
     //  %ALLUSERSPROFILE%\Sword\sword.conf
-    return QStringList(util::directory::convertDirSeparators(QString(getenv("SWORD_PATH"))) += "/Sword/sword.conf");
+    return QStringList(util::directory::convertDirSeparators(qgetenv("SWORD_PATH")) += "/Sword/sword.conf");
 #else
     // /etc/sword.conf, /usr/local/etc/sword.conf
     return QString(globalConfPath).split(":");
@@ -457,7 +439,7 @@ QStringList CSwordBackend::swordDirList() const {
           private sword.conf will have it. The user could decide to delete this
           shared path and it will not automatically come back.
         */
-        swordDirSet << DU::convertDirSeparators(QString(getenv("SWORD_PATH")));
+        swordDirSet << DU::convertDirSeparators(qgetenv("SWORD_PATH"));
 #endif
     }
 

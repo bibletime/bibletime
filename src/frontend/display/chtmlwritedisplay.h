@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -32,22 +32,13 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         Q_OBJECT
     public:
 
-        CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget * parent = 0);
+        CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget * parent = nullptr);
 
-        /**
-        * Sets the new text for this display widget. (CPlainWriteDisplay).
-        */
-        virtual void setText( const QString& newText );
-        /**
-        * Returns the text of this edit widget. (CPlainWriteDisplay).
-        */
-        virtual const QString plainText();
+        void setText( const QString& newText ) override;
 
-        /**
-        * Creates the necessary action objects and puts them on the toolbar.
-        * (CPlainWriteDisplay)
-        */
-        virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection);
+        const QString plainText() override;
+
+        void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection) override;
 
     protected:
 
@@ -64,7 +55,6 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
 
         void slotFontFamilyChosen(const QFont&);
         void slotFontSizeChosen(int);
-        void slotFontColorChosen( const QColor& );
 
         void slotCurrentCharFormatChanged(const QTextCharFormat &);
 

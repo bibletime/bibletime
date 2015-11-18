@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -28,7 +28,7 @@ class InstallProgress: public QObject {
     Q_OBJECT
 
 public:
-    InstallProgress(QObject* parent = 0);
+    InstallProgress(QObject* parent = nullptr);
 
     void openProgress(const QList<CSwordModuleInfo*>& modules);
 

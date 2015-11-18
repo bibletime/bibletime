@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -37,8 +37,8 @@ BookKeyChooser::BookKeyChooser(QtQuick2ApplicationViewer* viewer,
                                BtWindowInterface* windowInterface)
     : m_viewer(viewer),
       m_windowInterface(windowInterface),
-      m_key(0),
-      m_treeChooserObject(0),
+      m_key(nullptr),
+      m_treeChooserObject(nullptr),
       m_state(CLOSED ) {
     findTreeChooserObject();
     initializeRoleNameModel();
@@ -53,7 +53,7 @@ void BookKeyChooser::copyKey()
 
 void BookKeyChooser::findTreeChooserObject() {
     QQuickItem * rootObject = m_viewer->rootObject();
-    if (rootObject != 0)
+    if (rootObject != nullptr)
         m_treeChooserObject = rootObject->findChild<QQuickItem*>("treeChooser");
 }
 
@@ -179,8 +179,8 @@ void BookKeyChooser::setProperties() {
 }
 
 void BookKeyChooser::openChooser(bool open) {
-    Q_ASSERT(m_treeChooserObject != 0);
-    if (m_treeChooserObject == 0)
+    Q_ASSERT(m_treeChooserObject != nullptr);
+    if (m_treeChooserObject == nullptr)
         return;
 
     m_treeChooserObject->disconnect();

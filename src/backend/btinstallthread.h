@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,10 +14,8 @@
 
 #include <QThread>
 
-#include <QMutex>
-#include <QMutexLocker>
-#include <QSharedPointer>
-#include "backend/btinstallmgr.h"
+#include <atomic>
+#include "btinstallmgr.h"
 
 
 class BtInstallProgressDialog;
@@ -33,7 +31,7 @@ class BtInstallThread: public QThread {
 
         BtInstallThread(const QList<CSwordModuleInfo *> & modules,
                         const QString & destination,
-                        QObject * const parent = 0)
+                        QObject * const parent = nullptr)
             : QThread(parent)
             , m_modules(modules)
             , m_destination(destination)
@@ -47,10 +45,8 @@ class BtInstallThread: public QThread {
                     Qt::QueuedConnection);
         }
 
-        void stopInstall() {
-            const QMutexLocker lock(&m_stopRequestedMutex);
-            m_stopRequested = true;
-        }
+        void stopInstall()
+        { m_stopRequested.store(true, std::memory_order_relaxed); }
 
     signals:
 
@@ -68,7 +64,7 @@ class BtInstallThread: public QThread {
 
     protected: /* Methods: */
 
-        virtual void run();
+        void run() override;
 
     private: /* Methods: */
 
@@ -86,8 +82,7 @@ class BtInstallThread: public QThread {
         const QString m_destination;
         BtInstallMgr m_iMgr;
         int m_currentModuleIndex;
-        QMutex m_stopRequestedMutex;
-        bool m_stopRequested;
+        std::atomic<bool> m_stopRequested;
 
 };
 

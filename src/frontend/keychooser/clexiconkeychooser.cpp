@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -19,7 +19,7 @@
 #include "util/cresmgr.h"
 
 
-CLexiconKeyChooser::CLexiconKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
                                        BTHistory * historyPtr,
                                        CSwordKey * key,
                                        QWidget * parent)
@@ -149,7 +149,7 @@ void CLexiconKeyChooser::refreshContent() {
 
 }
 
-void CLexiconKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
                                     bool refresh)
 {
     typedef CSwordLexiconModuleInfo CSLMI;
@@ -157,12 +157,9 @@ void CLexiconKeyChooser::setModules(const QList<const CSwordModuleInfo*> &module
     while (!m_modules.isEmpty())
         m_modules.takeFirst(); // not deleting the pointer
 
-    Q_FOREACH(const CSwordModuleInfo *m, modules) {
-        const CSLMI *lexicon = dynamic_cast<const CSLMI*>(m);
-        if (lexicon != 0) {
+    Q_FOREACH(CSwordModuleInfo const * const m, modules)
+        if (CSLMI const * const lexicon = dynamic_cast<CSLMI const *>(m))
             m_modules.append(lexicon);
-        }
-    }
 
     if (refresh) {
         refreshContent();

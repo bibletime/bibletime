@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,7 +10,7 @@
 #include "frontend/display/bthtmljsobject.h"
 
 #include <QDrag>
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
@@ -76,7 +76,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
         // If we have not started dragging, but the mouse button is down, create a the mime data
         QPoint current(x, y);
         if ((current - m_dndData.startPos).manhattanLength() > 4 /*qApp->startDragDistance()*/ ) {
-            QDrag* drag = 0;
+            QDrag* drag = nullptr;
             if (!m_dndData.url.isEmpty()) {
                 // create a new bookmark drag!
                 QString moduleName = QString::null;
@@ -89,7 +89,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
                 drag->setMimeData(mimedata);
                 //add real Bible text from module/key
                 if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+                    QScopedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                     key->setKey(keyName);
                     mimedata->setText(key->strippedText()); // This works across applications!
                 }
@@ -118,24 +118,9 @@ void BtHtmlJsObject::timeOutEvent(const QString & attributes) {
         return;
 
     m_prev_attributes = "";
-    CInfoDisplay::ListInfoData infoList;
-    const QStringList attrList = attributes.split("||");
-    for (int i = 0; i < attrList.count(); i++) {
-        const QStringList attr(attrList[i].split('='));
-        if (attr.count() == 2) {
-            if (attr[0] == "note") {
-                infoList.append(qMakePair(CInfoDisplay::Footnote, attr[1]));
-            } else if (attr[0] == "lemma") {
-                infoList.append(qMakePair(CInfoDisplay::Lemma, attr[1]));
-            } else if (attr[0] == "morph") {
-                infoList.append(qMakePair(CInfoDisplay::Morph, attr[1]));
-            } else if (attr[0] == "expansion") {
-                infoList.append(qMakePair(CInfoDisplay::Abbreviation, attr[1]));
-            } else if (attr[0] == "crossrefs") {
-                infoList.append(qMakePair(CInfoDisplay::CrossReference, attr[1]));
-            }
-        }
-    }
+
+    Rendering::ListInfoData infoList(Rendering::detectInfo(attributes));
+
     // Update the mag if valid attributes were found
     if (!(infoList.isEmpty()))
         BibleTime::instance()->infoDisplay()->setInfo(infoList);

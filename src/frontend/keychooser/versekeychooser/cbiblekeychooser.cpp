@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -20,7 +20,7 @@
 #include "util/cresmgr.h"
 
 
-CBibleKeyChooser::CBibleKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
                                    BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
@@ -29,11 +29,11 @@ CBibleKeyChooser::CBibleKeyChooser(const QList<const CSwordModuleInfo *> & modul
 {
     typedef CSwordBibleModuleInfo CSBMI;
 
-    w_ref = 0;
+    w_ref = nullptr;
     setModules(modules, false);
     if (!m_modules.count()) {
         qWarning() << "CBibleKeyChooser: module is not a Bible or commentary!";
-        m_key = 0;
+        m_key = nullptr;
         return;
     }
     QHBoxLayout* layout = new QHBoxLayout(this);
@@ -64,7 +64,7 @@ CSwordKey* CBibleKeyChooser::key() {
 
 void CBibleKeyChooser::setKey(CSwordKey* key) {
     Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
-    if (dynamic_cast<CSwordVerseKey*>(key) == 0) return;
+    if (dynamic_cast<CSwordVerseKey*>(key) == nullptr) return;
 
     m_key = dynamic_cast<CSwordVerseKey*>(key);
     w_ref->setKey(m_key);
@@ -94,23 +94,18 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
     setUpdatesEnabled(true);
 }
 
-void CBibleKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
                                   bool refresh)
 {
     typedef CSwordBibleModuleInfo CSBMI;
 
     m_modules.clear();
 
-    Q_FOREACH (const CSwordModuleInfo *mod, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const mod, modules)
         if (mod->type() == CSwordModuleInfo::Bible
             || mod->type() == CSwordModuleInfo::Commentary)
-        {
-            const CSBMI* bible = dynamic_cast<const CSBMI*>(mod);
-            if (bible != 0) {
+            if (CSBMI const * const bible = dynamic_cast<CSBMI const *>(mod))
                 m_modules.append(bible);
-            }
-        }
-    }
 
     // First time this is called we havnt set up w_ref.
     if (w_ref) w_ref->setModule(dynamic_cast<const CSwordBibleModuleInfo*>(m_modules.first()));

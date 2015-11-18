@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -52,13 +52,13 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
         if (vchange != 0) {
             // Adapt the change value, so we get a more natural feeling:
             if(vchange > 0)
-                m_movement += pow((float)vchange/10.0, 1.2);
+                m_movement += pow(vchange/10.0f, 1.2);
             else // (vchange < 0)
-                m_movement -= pow(-(float)vchange/10.0, 1.2);
+                m_movement -= pow(-vchange/10.0f, 1.2);
 
             // Emit the change request signal only when the mouse was moved far enough
             if (m_movement >= 1.0 || m_movement <= -1.0) {
-                emit change_requested((int) m_movement);
+                emit change_requested(static_cast<int>(m_movement));
                 m_movement = 0.0;
             }
         }

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -26,13 +26,13 @@ class BtFontPreviewWebView: public QWebView {
 
     public: /* Methods: */
 
-        inline BtFontPreviewWebView(QWidget *parent = 0)
+        inline BtFontPreviewWebView(QWidget *parent = nullptr)
             : QWebView(parent)
         {
             setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         }
 
-        virtual inline QSize sizeHint() const {
+        inline QSize sizeHint() const override {
             return QSize(100, 100);
         }
 
@@ -123,7 +123,7 @@ void BtFontChooserWidget::connectListWidgets() {
 }
 
 void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == 0)
+    if (current == nullptr)
         return;
 
     const QString fontFamily = current->text();
@@ -136,9 +136,9 @@ void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem*
 void BtFontChooserWidget::loadFonts() {
     m_fontListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH (const QString &font, database.families()) {
+    Q_FOREACH(QString const & font, database.families())
         m_fontListWidget->addItem(font);
-    }
+
     // This triggers loading the styles for the first font
     m_fontListWidget->setCurrentRow(0);
 }
@@ -159,9 +159,8 @@ void BtFontChooserWidget::loadSizes(const QString& font, const QString& style) {
     // Put new values into listWidget
     m_sizeListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH (int size, database.pointSizes(font, style)) {
+    Q_FOREACH(int const size, database.pointSizes(font, style))
         m_sizeListWidget->addItem(QString::number(size));
-    }
 
     restoreListWidgetValue(m_sizeListWidget, saveText);
 }
@@ -220,9 +219,9 @@ QString BtFontChooserWidget::saveListWidgetValue(QListWidget* listWidget) {
 }
 
 void BtFontChooserWidget::setFont(const QFont& font) {
-    disconnect(m_fontListWidget, 0, 0, 0);
-    disconnect(m_styleListWidget, 0, 0, 0);
-    disconnect(m_sizeListWidget, 0, 0, 0);
+    disconnect(m_fontListWidget, nullptr, nullptr, nullptr);
+    disconnect(m_styleListWidget, nullptr, nullptr, nullptr);
+    disconnect(m_sizeListWidget, nullptr, nullptr, nullptr);
 
     // set the font
     m_font = font;
@@ -256,7 +255,7 @@ void BtFontChooserWidget::setSampleText(const QString& htmlText) {
 }
 
 void BtFontChooserWidget::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == 0)
+    if (current == nullptr)
         return;
 
     m_font.setPointSize(m_sizeListWidget->currentItem()->text().toInt());
@@ -270,7 +269,7 @@ QSize BtFontChooserWidget::sizeHint() const {
 }
 
 void BtFontChooserWidget::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == 0)
+    if (current == nullptr)
         return;
 
     QString styleString = current->text();

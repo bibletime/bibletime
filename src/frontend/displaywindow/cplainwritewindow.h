@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -40,52 +40,35 @@ class CPlainWriteWindow : public CDisplayWindow {
         /**
         * Set the displayWidget which is a subclass of QWebPage.
         */
-        void setDisplayWidget( CDisplay* display );
+        void setDisplayWidget( CDisplay* display ) override;
 
-        virtual void storeProfileSettings(const QString & windowGroup);
-        virtual void applyProfileSettings(const QString & windowGroup);
+        void storeProfileSettings(QString const & windowGroup) const override;
+        void applyProfileSettings(const QString & windowGroup) override;
 
-        /**
-         * Setups the popup menu of this display widget.
-         */
-        virtual void setupPopupMenu();
+        void setupPopupMenu() override;
 
-        /**
-         * Returns true if the sync toolbar is enabled.
-         */
-        virtual bool syncAllowed() const;
+        bool syncAllowed() const override;
 
     public slots:
 
-        /**
-          Look up the given key and display the text. In our case we offer to edit the text.
-        */
-        virtual void lookupSwordKey(CSwordKey * key);
+        void lookupSwordKey(CSwordKey * key) override;
 
     protected: // Protected methods
-        /**
-        * Initialize the state of this widget.
-        */
-        virtual void initView();
-        virtual void initConnections();
-        virtual void initToolbars();
+        void initView() override;
+        void initConnections() override;
+        void initToolbars() override;
         virtual WriteWindowType writeWindowType() const {
             return PlainTextWindow;
         }
 
-        /** Called to add actions to mainWindow toolbars */
-        virtual void setupMainWindowToolBars();
-        /**
-         * Initializes the intern keyboard actions.
-         */
-        virtual void initActions();
+        void setupMainWindowToolBars() override;
+        void initActions() override;
         /**
         * Insert the keyboard accelerators of this window into the given KAccel object.
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        /** \returns whether the window may be closed.*/
-        virtual bool queryClose();
+        bool queryClose() override;
 
     protected slots: // Protected slots
 

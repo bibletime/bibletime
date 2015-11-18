@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,13 +22,12 @@
 #include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 namespace {
 
 /** Filters out already installed modules which can't be updated right now. */
-bool filter(CSwordModuleInfo *mInfo) {
+bool filter(const CSwordModuleInfo *mInfo) {
     typedef CSwordModuleInfo CSMI;
     typedef sword::SWVersion SV;
 
@@ -53,8 +52,8 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
             : BtBookshelfWidget(parent, flags)
             , m_source(source)
             , m_parent(parent)
-            , m_backend(0)
-            , m_myModel(0)
+            , m_backend(nullptr)
+            , m_myModel(nullptr)
 {
 
     setTreeModel(new BtInstallPageModel(g, this));
@@ -66,18 +65,18 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
     m_sourceRefreshButton = new QToolButton(this);
     m_sourceRefreshButton->setAutoRaise(true);
     m_sourceRefreshButton->setToolTip(tr("Refresh the list of works from this source"));
-    m_sourceRefreshButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
+    m_sourceRefreshButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_refresh());
     setRightCornerWidget(m_sourceRefreshButton);
 
     connect(m_sourceRefreshButton, SIGNAL(clicked()),
             this,                  SLOT(slotSourceRefresh()));
 
     m_backend = BtInstallBackend::backend(m_source);
-    Q_ASSERT(m_backend != 0);
+    Q_ASSERT(m_backend != nullptr);
     m_myModel = new BtBookshelfModel(this);
-    Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
-        if (filter(module)) m_myModel->addModule(module);
-    }
+    Q_FOREACH(CSwordModuleInfo * const module, m_backend->moduleList())
+        if (filter(module))
+            m_myModel->addModule(module);
     setSourceModel(m_myModel);
 }
 
@@ -102,9 +101,9 @@ void BtInstallPageWorksWidget::updateTree() {
     m_backend = BtInstallBackend::backend(m_source);
 
     // Repopulate model:
-    Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
-        if (filter(module)) m_myModel->addModule(module);
-    }
+    Q_FOREACH(CSwordModuleInfo * const module, m_backend->moduleList())
+        if (filter(module))
+            m_myModel->addModule(module);
 }
 
 void BtInstallPageWorksWidget::slotSourceRefresh() {

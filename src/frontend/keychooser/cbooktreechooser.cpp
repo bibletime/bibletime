@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -19,7 +19,7 @@
 #include "frontend/keychooser/bthistory.h"
 
 
-CBookTreeChooser::CBookTreeChooser(const QList<const CSwordModuleInfo *> & modules,
+CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
                                    BTHistory * historyPtr,
                                    CSwordKey * key,
                                    QWidget * parent)
@@ -32,7 +32,7 @@ CBookTreeChooser::CBookTreeChooser(const QList<const CSwordModuleInfo *> & modul
     //if there is no module there is no key either
     if (!modules.count()) {
         m_modules.clear();
-        m_key = 0;
+        m_key = nullptr;
     }
 
     //now setup the keychooser widgets
@@ -85,16 +85,16 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
     }
 }
 
-void CBookTreeChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+void CBookTreeChooser::setModules(const BtConstModuleList &modules,
                                   bool refresh)
 {
     typedef CSwordBookModuleInfo CSBMI;
 
     //Add given modules into private list
     m_modules.clear();
-    Q_FOREACH (const CSwordModuleInfo *m, modules) {
+    Q_FOREACH(CSwordModuleInfo const * const m, modules) {
         const CSBMI *book = dynamic_cast<const CSBMI*>(m);
-        if (book != 0) {
+        if (book != nullptr) {
             m_modules.append(book);
         }
     }
@@ -144,9 +144,8 @@ void CBookTreeChooser::updateKey( CSwordKey* key ) {
 }
 
 /** Reimplementation to handle tree creation on show. */
-void CBookTreeChooser::show() {
-    CKeyChooser::show();
-
+void CBookTreeChooser::doShow() {
+    show();
     if (!m_treeView->topLevelItemCount()) {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
         setupTree(); //create the tree structure

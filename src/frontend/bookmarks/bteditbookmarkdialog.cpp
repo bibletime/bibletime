@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -19,7 +19,6 @@
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "frontend/messagedialog.h"
-#include "util/geticon.h"
 
 
 BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
@@ -32,7 +31,7 @@ BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     resize(400, 300);
-    setWindowIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setWindowIcon(CResMgr::mainIndex::bookmark::icon());
 
     m_layout = new QFormLayout;
 

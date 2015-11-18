@@ -2,21 +2,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/btinstallbackend.h"
+#include "btinstallbackend.h"
 
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include "backend/managers/cswordbackend.h"
-#include "backend/btinstallmgr.h"
-#include "util/directory.h"
-#include "frontend/messagedialog.h"
+#include "../util/directory.h"
+#include "managers/cswordbackend.h"
+#include "btinstallmgr.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -130,9 +129,11 @@ bool deleteSource(const QString &name) {
 }
 
 /** Returns the moduleinfo list for the source. Delete the pointer after using. IS THIS POSSIBLE?*/
-QList<CSwordModuleInfo*> moduleList(QString /*name*/) {
-    QList<CSwordModuleInfo*> list; /// \todo dummy
-    return list;
+QList<CSwordModuleInfo*> moduleList(QString name) {
+    /// \todo dummy
+    Q_UNUSED(name);
+    Q_ASSERT(false && "not implemented");
+    return QList<CSwordModuleInfo*>();
 }
 
 bool isRemote(const sword::InstallSource& source) {
@@ -168,10 +169,6 @@ bool setTargetList( const QStringList& targets ) {
         if (!f.exists()) {
             if (!f.open(QIODevice::ReadWrite)) {
                 qWarning() << "The Sword config file can't be created!";
-                message::showWarning(
-                    0,
-                    QObject::tr("Can't write file"),
-                    QObject::tr("The Sword config file can't be created!"));
                 return false;
             }
             f.close();

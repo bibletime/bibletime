@@ -4,15 +4,15 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
 **********/
 
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "btbookshelffiltermodel.h"
 
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "btbookshelfmodel.h"
 
 
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * parent)
@@ -148,7 +148,7 @@ bool BtBookshelfFilterModel::nameFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != 0);
+    Q_ASSERT(m != nullptr);
 
     QModelIndex itemIndex(m->index(row, m_nameFilterColumn, parent));
     int numChildren(m->rowCount(itemIndex));
@@ -170,7 +170,7 @@ bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != 0);
+    Q_ASSERT(m != nullptr);
 
     const QModelIndex itemIndex = m->index(row, m_hiddenFilterColumn, parent);
     const int numChildren = m->rowCount(itemIndex);
@@ -193,7 +193,7 @@ bool BtBookshelfFilterModel::categoryFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != 0);
+    Q_ASSERT(m != nullptr);
 
     const QModelIndex itemIndex(m->index(row, m_categoryFilterColumn, parent));
     const int numChildren(m->rowCount(itemIndex));

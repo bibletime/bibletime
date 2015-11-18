@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -18,9 +18,10 @@
 #include <QList>
 #include <QMap>
 #include <QPersistentModelIndex>
-#include <QSet>
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/bookshelfmodel/item.h"
+#include "../drivers/btconstmoduleset.h"
+#include "../drivers/btmoduleset.h"
+#include "btbookshelfmodel.h"
+#include "item.h"
 
 
 namespace BookshelfModel { class ModuleItem; }
@@ -90,36 +91,36 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    BtBookshelfTreeModel(QObject * parent = 0);
-    BtBookshelfTreeModel(const QString & configKey, QObject * parent = 0);
-    BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = 0);
-    virtual ~BtBookshelfTreeModel();
+    BtBookshelfTreeModel(QObject * parent = nullptr);
+    BtBookshelfTreeModel(const QString & configKey, QObject * parent = nullptr);
+    BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = nullptr);
+    ~BtBookshelfTreeModel() override;
 
-    virtual int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    virtual int columnCount(const QModelIndex & parent = QModelIndex())
-    const;
-    virtual bool hasChildren(const QModelIndex & parent = QModelIndex())
-    const;
-    virtual QModelIndex index(int row,
-                              int column,
-                              const QModelIndex & parent = QModelIndex())
-    const;
-    virtual QModelIndex parent(const QModelIndex & index) const;
-    virtual QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    bool hasChildren(const QModelIndex & parent = QModelIndex()) const override;
+    QModelIndex index(int row,
+                      int column,
+                      const QModelIndex & parent = QModelIndex())
+            const override;
+    QModelIndex parent(const QModelIndex & index) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole)
+            const override;
     QVariant data(CSwordModuleInfo & module, int role = Qt::DisplayRole) const;
-    virtual Qt::ItemFlags flags(const QModelIndex & index) const;
-    virtual QVariant headerData(int section, Qt::Orientation orientation,
-                                int role = Qt::DisplayRole) const;
-    virtual bool setData(const QModelIndex & index,
-                         const QVariant & value,
-                         int role);
+    Qt::ItemFlags flags(const QModelIndex & index) const override;
+    QVariant headerData(int section,
+                        Qt::Orientation orientation,
+                        int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex & index,
+                 const QVariant & value,
+                 int role) override;
 
     inline QAbstractItemModel * sourceModel() const { return m_sourceModel; }
     inline const Grouping & groupingOrder() const { return m_groupingOrder; }
     inline bool checkable() const { return m_checkable; }
     inline CheckedBehavior defaultChecked() const { return m_defaultChecked; }
     inline QList<CSwordModuleInfo *> modules() const { return m_modules.keys(); }
-    inline const QSet<CSwordModuleInfo *> & checkedModules() const {
+    inline BtModuleSet const & checkedModules() const {
         return m_checkedModulesCache;
     }
 
@@ -132,7 +133,7 @@ public slots:
     inline void setDefaultChecked(CheckedBehavior b) {
         m_defaultChecked = b;
     }
-    void setCheckedModules(const QSet<CSwordModuleInfo *> & modules);
+    void setCheckedModules(BtConstModuleSet const & modules);
 
 signals:
 
@@ -191,7 +192,7 @@ private: /* Fields: */
     CheckedBehavior m_defaultChecked;
     bool m_checkable;
 
-    QSet<CSwordModuleInfo *> m_checkedModulesCache;
+    BtModuleSet m_checkedModulesCache;
 
 };
 

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -43,16 +43,16 @@ namespace btm {
 
 BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
-      m_key(0),
+      m_key(nullptr),
       m_textModel(new RoleItemModel()),
       m_moduleTextModel(new BtModuleTextModel(this)),
-      m_bookKeyChooser(0),
-      m_keyNameChooser(0),
-      m_verseKeyChooser(0),
+      m_bookKeyChooser(nullptr),
+      m_keyNameChooser(nullptr),
+      m_verseKeyChooser(nullptr),
       m_historyIndex(-1) {
 
     ViewManager* viewManager = getViewManager();
-    if (viewManager == 0)
+    if (viewManager == nullptr)
         return;
     QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
@@ -120,7 +120,7 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
 }
 
 int BtWindowInterface::getCurrentModelIndex() const {
-    if (m_key == 0)
+    if (m_key == nullptr)
         return 0;
     if (moduleIsBibleOrCommentary(module())) {
         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
@@ -162,6 +162,9 @@ void BtWindowInterface::setReference(const QString& key) {
     if (m_key && m_key->key() == key)
         return;
     if (m_key) {
+        CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+        if (verseKey)
+            verseKey->setIntros(true);
         m_key->setKey(key);
         referenceChanged();
     }
@@ -177,6 +180,7 @@ void BtWindowInterface::setModuleToBeginning() {
     if (moduleIsBibleOrCommentary(m_key->module())) {
          CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
          verseKey->setPosition(sword::TOP);
+         emit referenceChange();
     }
 }
 
@@ -243,7 +247,7 @@ void BtWindowInterface::updateTextFonts() {
 
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
 {
-    if (currentKey == 0)
+    if (currentKey == nullptr)
         return;
 
     CSwordTreeKey localKey(*currentKey);
@@ -295,13 +299,28 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
     }
 }
 
+static QString getEnglishKey(CSwordKey* m_key) {
+    sword::VerseKey * vk = dynamic_cast<sword::VerseKey*>(m_key);
+    QString oldLang;
+    if (vk) {
+        // Save keys in english only:
+        const QString oldLang = QString::fromLatin1(vk->getLocale());
+        vk->setLocale("en");
+        QString englishKey = m_key->key();
+        vk->setLocale(oldLang.toLatin1());
+        return englishKey;
+    } else {
+        return m_key->key();
+    }
+}
+
 void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
     const QString windowKey = QString::number(windowIndex);
     const QString windowGroup = "window/" + windowKey + '/';
 
     BtConfig & conf = btConfig();
     conf.beginGroup(windowGroup);
-    conf.setSessionValue("key", m_key->key());
+    conf.setSessionValue("key", getEnglishKey(m_key));
     QStringList modules;
     QString moduleName = getModuleName();
     modules.append(moduleName);
@@ -311,19 +330,19 @@ void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
 
 void BtWindowInterface::changeReference() {
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-    if (verseKey != 0) {
+    if (verseKey != nullptr) {
         m_verseKeyChooser->open(verseKey);
     }
 
     CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
-    if (treeKey != 0) {
+    if (treeKey != nullptr) {
         QStringList keyPath;
         QStringList children;
         parseKey(treeKey, &keyPath, &children);
         m_bookKeyChooser->open();
     }
     CSwordLDKey* lexiconKey = dynamic_cast<CSwordLDKey*>(m_key);
-    if (lexiconKey != 0) {
+    if (lexiconKey != nullptr) {
         m_keyNameChooser->open(m_moduleTextModel);
     }
 }

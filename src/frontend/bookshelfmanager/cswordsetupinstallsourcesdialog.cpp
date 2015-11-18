@@ -2,14 +2,13 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 
-#include <QSharedPointer>
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfo>
@@ -108,7 +107,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
     //BTInstallMgr iMgr;
     //sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
     sword::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
-    if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
+    if (is.caption.c_str() == m_captionEdit->text()) { // source already exists
         message::showInformation( this, tr( "Error" ),
                                tr("A source with this caption already exists. Please provide a different caption."));
         return;
@@ -189,7 +188,7 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
         qWarning("InstallMgr: getting remote list returned an error.");
     }
     delete m_progressDialog;
-    m_progressDialog = 0;
+    m_progressDialog = nullptr;
 }
 
 void CSwordSetupInstallSourcesDialog::slotRefreshProgress(const int, const int current) {

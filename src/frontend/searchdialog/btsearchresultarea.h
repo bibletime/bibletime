@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -95,7 +95,7 @@ class StrongsResultList: public QList<StrongsResult> {
 class BtSearchResultArea : public QWidget {
         Q_OBJECT
     public: /* Methods: */
-        BtSearchResultArea(QWidget *parent = 0);
+        BtSearchResultArea(QWidget *parent = nullptr);
         inline ~BtSearchResultArea() { saveDialogSettings(); }
 
         /**
@@ -104,17 +104,11 @@ class BtSearchResultArea : public QWidget {
         void setSearchResult(
             const CSwordModuleSearch::Results &results);
 
-        /**
-          Reimplemented from QWidget::sizeHint().
-        */
-        virtual QSize sizeHint() const {
+        QSize sizeHint() const override {
             return baseSize();
         }
 
-        /**
-          Reimplemented from QWidget::minimumSizeHint().
-        */
-        virtual QSize minimumSizeHint() const {
+        QSize minimumSizeHint() const override {
             return minimumSize();
         }
 

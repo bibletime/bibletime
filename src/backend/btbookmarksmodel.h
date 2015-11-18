@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -39,23 +39,23 @@ public: /* Methods: */
       \param[in] rootFolder would be used if you need only to display particular
           bookmarks folder.
     */
-    BtBookmarksModel(QObject * parent = 0);
+    BtBookmarksModel(QObject * parent = nullptr);
     BtBookmarksModel(const QString & fileName = QString(),
-                     const QString & rootFolder = QString(), QObject * parent = 0);
+                     const QString & rootFolder = QString(), QObject * parent = nullptr);
     ~BtBookmarksModel();
 
     /** Reimplemented from QAbstractItemModel */
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    int columnCount(const QModelIndex & parent = QModelIndex()) const;
-    bool hasChildren(const QModelIndex & parent = QModelIndex()) const;
-    QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const;
-    QModelIndex parent(const QModelIndex & index) const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
-    Qt::ItemFlags flags(const QModelIndex & index) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole);
-    bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex());
-    bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    bool hasChildren(const QModelIndex & parent = QModelIndex()) const override;
+    QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const override;
+    QModelIndex parent(const QModelIndex & index) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
+    Qt::ItemFlags flags(const QModelIndex & index) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole) override;
+    bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex()) override;
+    bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
     /**
       \brief add new item with given parameters
@@ -117,6 +117,13 @@ public: /* Methods: */
      */
     QString key(const QModelIndex & index) const;
 
+    /**
+      \param[in] parent sort items under specified index, if invalid sort all
+                        items.
+    */
+    void sortItems(QModelIndex const & parent = QModelIndex(),
+                   Qt::SortOrder const order = Qt::AscendingOrder);
+
 
 public slots:
 
@@ -140,11 +147,6 @@ public slots:
       \returns true if success.
     */
     bool load(QString fileName = QString(), const QModelIndex & rootItem = QModelIndex());
-
-    /**
-      \param[in] parent sort items under specified index, if invalid sort all items.
-    */
-    void sort(const QModelIndex & parent = QModelIndex(), Qt::SortOrder order = Qt::AscendingOrder);
 
 
 private: /* Fields: */

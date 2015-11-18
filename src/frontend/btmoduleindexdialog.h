@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,8 +13,6 @@
 #define BTMODULEINDEXDIALOG_H
 
 #include <QProgressDialog>
-
-#include <QMutex>
 
 
 class CSwordModuleInfo;
@@ -26,7 +24,6 @@ class CSwordModuleInfo;
 */
 class BtModuleIndexDialog: public QProgressDialog {
         Q_OBJECT
-        Q_DISABLE_COPY(BtModuleIndexDialog)
 
     public: /* Methods: */
         /**
@@ -39,7 +36,7 @@ class BtModuleIndexDialog: public QProgressDialog {
           \pre all given modules are unindexed
           \returns whether the indexing was finished successfully.
         */
-        static bool indexAllModules(const QList<const CSwordModuleInfo*> &modules);
+        static bool indexAllModules(const QList<CSwordModuleInfo*> &modules);
 
     private: /* Methods: */
         BtModuleIndexDialog(int numModules);
@@ -53,14 +50,13 @@ class BtModuleIndexDialog: public QProgressDialog {
           \pre all given modules are unindexed
           \returns whether the indexing was finished successfully.
         */
-        bool indexAllModules2(const QList<const CSwordModuleInfo*> &modules);
+        bool indexAllModulesPrivate(const QList<CSwordModuleInfo*> &modules);
 
     private slots:
         void slotModuleProgress(int percentage);
         void slotFinished();
 
     private: /* Fields: */
-        static QMutex m_singleInstanceMutex;
         int m_currentModuleIndex;
 };
 

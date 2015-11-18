@@ -19,7 +19,6 @@ IF(WIN32 AND NOT UNIX)
     # We need the libraries, and they're not pulled in automatically
     SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
 
-IF (Qt5Core_FOUND)
     SET(QT_BINARY_DIR "${Qt5Core_DIR}/../../../bin")
     INSTALL(FILES
         "${QT_BINARY_DIR}/icudt51d.dll"
@@ -103,51 +102,6 @@ IF (Qt5Core_FOUND)
         DESTINATION "${BT_DESTINATION}/plugins/imageformats"
         CONFIGURATIONS "Release"
     )
-ELSE (Qt5Core_FOUND)
-    SET(QT_BINARY_DIR "${QT_LIBRARY_DIR}/../bin")
-    INSTALL(FILES
-        "${QT_BINARY_DIR}/QtWebKitd4.dll"
-        "${QT_BINARY_DIR}/QtGuid4.dll"
-        "${QT_BINARY_DIR}/QtXmld4.dll"
-        "${QT_BINARY_DIR}/QtTestd4.dll"
-        "${QT_BINARY_DIR}/QtNetworkd4.dll"
-        "${QT_BINARY_DIR}/QtCored4.dll"
-        "${QT_BINARY_DIR}/phonond4.dll"
-        "${QT_BINARY_DIR}/QtSvgd4.dll"
-        "${QT_BINARY_DIR}/QtXmlPatternsd4.dll"
-        DESTINATION "${BT_DESTINATION}"
-        CONFIGURATIONS "Debug"
-    )
-    INSTALL(FILES
-        "${QT_BINARY_DIR}/QtWebKit4.dll"
-        "${QT_BINARY_DIR}/QtGui4.dll"
-        "${QT_BINARY_DIR}/QtXml4.dll"
-        "${QT_BINARY_DIR}/QtTest4.dll"
-        "${QT_BINARY_DIR}/QtNetwork4.dll"
-        "${QT_BINARY_DIR}/QtCore4.dll"
-        "${QT_BINARY_DIR}/phonon4.dll"
-        "${QT_BINARY_DIR}/QtSvg4.dll"
-        "${QT_BINARY_DIR}/QtXmlPatterns4.dll"
-        DESTINATION "${BT_DESTINATION}"
-        CONFIGURATIONS "Release"
-    )
-    # Qt Plugins
-    INSTALL(FILES
-        "${QT_PLUGINS_DIR}/iconengines/qsvgicon4.dll"
-        DESTINATION "${BT_DESTINATION}/plugins/iconengines"
-        CONFIGURATIONS "Release"
-    )
-    INSTALL(FILES
-        "${QT_PLUGINS_DIR}/imageformats/qgif4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qico4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qmng4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qsvg4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qtiff4.dll"
-        DESTINATION "${BT_DESTINATION}/plugins/imageformats"
-        CONFIGURATIONS "Release"
-    )
-ENDIF (Qt5Core_FOUND)
 
     # This adds in the required Windows system libraries
     MESSAGE(STATUS  "INSTALL Microsoft Redist ${MSVC_REDIST}" )

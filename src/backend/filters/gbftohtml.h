@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -40,19 +40,19 @@ class GbfToHtml: public sword::GBFHTML {
         GbfToHtml();
 
         /** Reimplemented from sword::OSISHTMLHREF. */
-        virtual bool handleToken(sword::SWBuf &buf,
-                                 const char *token,
-                                 sword::BasicFilterUserData *userData);
+        bool handleToken(sword::SWBuf &buf,
+                         const char *token,
+                         sword::BasicFilterUserData *userData) override;
 
         /** Reimplemented from sword::SWFilter. */
-        virtual char processText(sword::SWBuf &buf,
-                                 const sword::SWKey *key,
-                                 const sword::SWModule *module = 0);
+        char processText(sword::SWBuf &buf,
+                         const sword::SWKey *key,
+                         const sword::SWModule *module = nullptr) override;
 
     protected: /* Methods: */
         /** Reimplemented from sword::OSISHTMLHREF. */
-        virtual inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module, const sword::SWKey *key)
+        inline sword::BasicFilterUserData *createUserData(
+                const sword::SWModule *module, const sword::SWKey *key) override
         {
             return new UserData(module, key);
         }

@@ -2,12 +2,9 @@
 SET(bibletime_SRC
     # Toplevel files:
     src/bibletime.cpp
-    src/bibletime_dbus.cpp
-    src/bibletime_dbus_adaptor.cpp
     src/bibletime_init.cpp
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
-    src/btglobal.cpp
     src/main.cpp
 )
 
@@ -21,6 +18,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/btinstallmgr.cpp
     src/backend/btinstallthread.cpp
     src/backend/btbookmarksmodel.cpp
+    src/backend/btglobal.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -65,8 +63,6 @@ SET(bibletime_SRC_BACKEND_FILTERS
     src/backend/filters/plaintohtml.cpp
     src/backend/filters/teitohtml.cpp
     src/backend/filters/thmltohtml.cpp
-    src/backend/filters/thmltoplain.cpp
-    src/backend/filters/btosismorphsegmentation.cpp
 )
 
 SOURCE_GROUP("src\\backend\\filters" FILES ${bibletime_SRC_BACKEND_FILTERS})
@@ -90,6 +86,7 @@ SET(bibletime_SRC_BACKEND_RENDERING
     src/backend/rendering/chtmlexportrendering.cpp
     src/backend/rendering/cplaintextexportrendering.cpp
     src/backend/rendering/ctextrendering.cpp
+    src/backend/rendering/btinforendering.cpp
 )
 
 SOURCE_GROUP("src\\backend\\rendering" FILES ${bibletime_SRC_BACKEND_RENDERING})
@@ -114,9 +111,9 @@ SOURCE_GROUP("src\\backend\\models" FILES ${bibletime_SRC_BACKEND_MODELS})
 SET(bibletime_SRC_UTIL
     # Utilities:
     src/util/cresmgr.cpp
-    src/util/directory.cpp
+    src/util/bticons.cpp
     src/util/btmodules.cpp
-    src/util/geticon.cpp
+    src/util/directory.cpp
     src/util/tool.cpp
 )
 
@@ -227,7 +224,6 @@ SET(bibletime_SRC_FRONTEND_SETTINGSDIALOG
     src/frontend/settingsdialogs/cdisplaysettings.cpp
     src/frontend/settingsdialogs/btfontchooserwidget.cpp
     src/frontend/settingsdialogs/btfontsettings.cpp
-    src/frontend/settingsdialogs/btlanguagesettings.cpp
     src/frontend/settingsdialogs/clistwidget.cpp
     src/frontend/settingsdialogs/cswordsettings.cpp
 )
@@ -293,7 +289,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
     src/frontend/displaywindow/cbookreadwindow.cpp
     src/frontend/displaywindow/ccommentaryreadwindow.cpp
     src/frontend/displaywindow/cdisplaywindow.cpp
-    src/frontend/displaywindow/cdisplaywindowfactory.cpp
     src/frontend/displaywindow/chtmlwritewindow.cpp
     src/frontend/displaywindow/clexiconreadwindow.cpp
     src/frontend/displaywindow/cplainwritewindow.cpp
@@ -304,6 +299,7 @@ SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPL
 
 # Mocable headers:
 SET(bibletime_COMMON_MOCABLE_HEADERS
+    src/backend/btsignal.h
     src/backend/bookshelfmodel/btbookshelffiltermodel.h
     src/backend/bookshelfmodel/btbookshelfmodel.h
     src/backend/bookshelfmodel/btbookshelftreemodel.h
@@ -315,18 +311,12 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
     src/backend/models/btmoduletextmodel.h
-    src/util/btsignal.h
     src/backend/btinstallmgr.h
     src/backend/btinstallthread.h
     src/backend/btbookmarksmodel.h
 )
 
-IF(BT_Use_DBus)
-    SET(bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS src/bibletime_dbus_adaptor.h)
-ENDIF()
-
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
-    ${bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS}
     src/bibletime.h
     src/bibletimeapp.h
     src/frontend/bookmarks/bteditbookmarkdialog.h
@@ -413,7 +403,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/settingsdialogs/cdisplaysettings.h
     src/frontend/settingsdialogs/btfontchooserwidget.h
     src/frontend/settingsdialogs/btfontsettings.h
-    src/frontend/settingsdialogs/btlanguagesettings.h
     src/frontend/settingsdialogs/clistwidget.h
     src/frontend/settingsdialogs/cswordsettings.h
     src/frontend/tips/bttipdialog.h
@@ -627,14 +616,9 @@ SET(bibletime_TRANSLATION_FILE_PREFIX "${bibletime_${BIBLETIME_FRONTEND}_TRANSLA
 SET(bibletime_LINK_TRANSLATION_FILES "${bibletime_LINK_${BIBLETIME_FRONTEND}_TRANSLATION_FILES}")
 SET(bibletime_TRANSLATION_RESOURCE_FILE "${bibletime_${BIBLETIME_FRONTEND}_TRANSLATION_RESOURCE_FILE}")
 
-IF(Qt5Core_FOUND)
-  QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-  QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-  QT5_ADD_RESOURCES(bibletime_RESOURCE_SOURCES ${bibletime_RESOURCE_FILES})
-ELSE()
-  QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-  QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-ENDIF()
+QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
+QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+QT5_ADD_RESOURCES(bibletime_RESOURCE_SOURCES ${bibletime_RESOURCE_FILES})
 
 SET(common_bibletime_SOURCES
     ${bibletime_SOURCES}

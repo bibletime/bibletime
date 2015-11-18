@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDTREEKEYIDX_H
 #define CSWORDTREEKEYIDX_H
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 // Sword includes:
 #include <treekeyidx.h>
@@ -28,6 +28,9 @@ class CSwordModuleInfo;
 class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
     public:
+
+        CSwordTreeKey & operator=(CSwordTreeKey const &) = delete;
+
         /**
           \param k The Sword tree key which belongs to this key
           \param module The module which belongs to this key
@@ -37,15 +40,9 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
         CSwordTreeKey( const CSwordTreeKey& k );
 
-        /**
-          Reimplemented from CSwordKey.
-        */
-        virtual void setModule(const CSwordModuleInfo *newModule);
+        void setModule(const CSwordModuleInfo *newModule) override;
 
-        /** Copy method.
-        * @return A new copy of this object.
-        */
-        virtual CSwordTreeKey* copy() const;
+        CSwordTreeKey* copy() const override;
 
         /**
         * Returns the TreeKeyIdx::getLocalKey value in unicode.
@@ -53,34 +50,16 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
         * Use this instead of getLocalKey() to avoid encoding problems.
         */
         QString getLocalNameUnicode();
-        /**
-        * Returns the current key as unicode decoded QString.
-        */
-        virtual QString key() const;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const QString &key).
-        */
-        virtual bool setKey(const QString &key);
+        QString key() const override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const char *key).
-        */
-        virtual bool setKey(const char *key);
+        bool setKey(const QString &key) override;
+
+        bool setKey(const char *key) override;
 
     protected:
-        /**
-         * Returns the raw key appropriate for use directly with Sword.
-         */
-        virtual const char * rawKey() const;
 
-    private:
-        /** Disable assignment operator */
-        CSwordTreeKey& operator= (const CSwordTreeKey&);
-        /** Disable from base class to prevent compiler warnings */
-        inline virtual CSwordTreeKey& operator= (const sword::TreeKeyIdx&) {
-            return (*this);
-        };
+        const char * rawKey() const override;
 };
 
 #endif

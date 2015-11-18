@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,12 +15,12 @@
 #include <QObject>
 
 #include <QHash>
+#include <QMetaType>
+#include "drivers/btmodulelist.h"
 
 // Sword includes:
 #include <listkey.h>
 
-
-class CSwordModuleInfo;
 
 /**
  * CSwordModuleSearch manages the search on Sword modules. It manages the thread(s)
@@ -36,9 +36,15 @@ class CSwordModuleSearch: public QObject {
     public: /* Types: */
         typedef QHash<const CSwordModuleInfo*, sword::ListKey> Results;
 
+        enum SearchType { /* Values provided for serialization */
+            AndType = 0,
+            OrType = 1,
+            FullType = 2
+        };
+
     public: /* Methods: */
         inline CSwordModuleSearch()
-            : m_foundItems(0) {}
+            : m_foundItems(0u) {}
 
         /**
           Sets the text which should be search in the modules.
@@ -52,7 +58,7 @@ class CSwordModuleSearch: public QObject {
           Set the modules which should be searched.
           \param[in] modules the modules to search in.
         */
-        inline void setModules(const QList<const CSwordModuleInfo*> &modules) {
+        inline void setModules(const BtConstModuleList &modules) {
             Q_ASSERT(!modules.empty());
             Q_ASSERT(unindexedModules(modules).empty());
             m_searchModules = modules;
@@ -80,13 +86,14 @@ class CSwordModuleSearch: public QObject {
 
         /**
           Starts the search for the search text.
+          \throws on error
         */
         void startSearch();
 
         /**
           \returns the number of found items in the last search.
         */
-        inline unsigned long foundItems() const {
+        inline size_t foundItems() const {
             return m_foundItems;
         }
 
@@ -100,13 +107,18 @@ class CSwordModuleSearch: public QObject {
         /**
           \returns the list of unindexed modules in the given list.
         */
-        static QList<const CSwordModuleInfo*> unindexedModules(
-                const QList<const CSwordModuleInfo*> &modules);
+        static const BtConstModuleList unindexedModules(const BtConstModuleList & modules);
 
         /**
         * This function highlights the searched text in the content using the search type given by search flags
         */
         static QString highlightSearchedText(const QString& content, const QString& searchedText);
+
+        /**
+          Prepares the search string given by user for a specific search type
+        */
+        static QString prepareSearchText(QString const & orig,
+                                         SearchType const searchType);
 
     protected:
         /**
@@ -117,10 +129,14 @@ class CSwordModuleSearch: public QObject {
     private: /* Fields: */
         QString                        m_searchText;
         sword::ListKey                 m_searchScope;
-        QList<const CSwordModuleInfo*> m_searchModules;
+        BtConstModuleList              m_searchModules;
 
         Results                        m_results;
-        unsigned long                  m_foundItems;
+        size_t                         m_foundItems;
 };
+
+QDataStream &operator<<(QDataStream &out, const CSwordModuleSearch::SearchType &searchType);
+QDataStream &operator>>(QDataStream &in, CSwordModuleSearch::SearchType &searchType);
+Q_DECLARE_METATYPE(CSwordModuleSearch::SearchType)
 
 #endif

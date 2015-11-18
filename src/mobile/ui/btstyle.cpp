@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -77,7 +77,7 @@ static double millimeterPerInch = 25.4;
 static void emitChanged() {
     for (int i=0; i<styles.count(); ++i) {
         QPointer<BtStyle> style = styles.at(i);
-        if (style != 0)
+        if (style != nullptr)
             style->changed();
     }
 }
@@ -460,8 +460,8 @@ int BtStyle::pixelsPerMillimeterY() {
     return dpm;
 }
 
-QString BtStyle::getAppVersion() const {
-    return  "1.0";
+QString BtStyle::getAppVersion() {
+    return  "1.09";
 }
 
 QString BtStyle::getGitVersion() const {

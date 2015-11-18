@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -40,13 +40,8 @@ BtInstallProgressDialog::BtInstallProgressDialog(const QList<CSwordModuleInfo *>
     m_statusWidget->setRootIsDecorated(false);
     m_statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress"));
     m_statusWidget->header()->setStretchLastSection(false);
-#if QT_VERSION < 0x050000
-    m_statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
-    m_statusWidget->header()->setMovable(false);
-#else
     m_statusWidget->header()->setSectionResizeMode(1, QHeaderView::Stretch);
     m_statusWidget->header()->setSectionsMovable(false);
-#endif
 
     Q_FOREACH(const CSwordModuleInfo * module, modules) {
         QTreeWidgetItem * progressItem = new QTreeWidgetItem(m_statusWidget);
@@ -83,11 +78,6 @@ BtInstallProgressDialog::BtInstallProgressDialog(const QList<CSwordModuleInfo *>
     connect(m_thread, SIGNAL(finished()),
             this,     SLOT(slotThreadFinished()),
             Qt::QueuedConnection);
-    #if QT_VERSION < 0x050000
-    connect(m_thread, SIGNAL(terminated()),
-            this,     SLOT(slotThreadFinished()),
-            Qt::QueuedConnection);
-    #endif
     m_thread->start();
 }
 
@@ -128,7 +118,7 @@ void BtInstallProgressDialog::slotStatusUpdated(int moduleIndex, int status) {
 void BtInstallProgressDialog::slotOneItemCompleted(int moduleIndex, bool successful) {
 QTreeWidgetItem * const item = m_statusWidget->topLevelItem(moduleIndex);
     // update the list item
-    m_statusWidget->setItemWidget(item, 1, NULL);
+    m_statusWidget->setItemWidget(item, 1, nullptr);
     item->setText(1, successful ? tr("Completed") : tr("Failed"));
     item->setDisabled(true);
 }

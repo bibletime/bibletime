@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,36 +11,36 @@
 
 #include <QCompleter>
 #include <QFontDatabase>
+#include <QValidator>
 
 
-BtFontSizeWidget::BtFontSizeWidget(QWidget* parent)
-        : QComboBox(parent) {
+BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
+        : QComboBox(parent)
+        , m_validator(new QIntValidator(1, 99, this))
+{
     setEditable(true);
+    setValidator(m_validator);
     completer()->setCompletionMode(QCompleter::PopupCompletion);
 
-    QFontDatabase database;
-    const QList<int> sizes = database.standardSizes();
-    QStringList list;
-    for ( QList<int>::ConstIterator it = sizes.begin(); it != sizes.end(); ++it )
-        list.append( QString::number( *it ) );
-    addItems(list);
+    Q_FOREACH (int const size, QFontDatabase().standardSizes()) {
+        if (size > m_validator->top())
+            m_validator->setTop(size);
+        addItem(QString::number(size), QVariant(size));
+    }
 
-    bool ok = connect(this, SIGNAL(currentIndexChanged(const QString&)),
-                      this, SLOT(changed(const QString&)));
+    bool ok = connect(this, SIGNAL(currentIndexChanged(QString const &)),
+                      this, SLOT(changed(QString const &)));
     Q_ASSERT(ok);
 }
 
-BtFontSizeWidget::~BtFontSizeWidget() {
-}
-
-void BtFontSizeWidget::changed(const QString& text) {
+void BtFontSizeWidget::changed(QString const & text) {
     emit fontSizeChanged(text.toInt());
 }
 
 void BtFontSizeWidget::setFontSize(int size) {
-    int index = findText(QString::number(size));
-    if (index >= 0)
-        setCurrentIndex(index);
+    if ((size < 1) || (size > m_validator->top()))
+        size = 12;
+    setCurrentText(QString::number(size));
 }
 
 int BtFontSizeWidget::fontSize() const {

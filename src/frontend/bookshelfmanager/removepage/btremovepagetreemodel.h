@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -19,12 +19,12 @@ class BtRemovePageTreeModel: public BtBookshelfTreeModel {
         Q_OBJECT
 
     public:
-        BtRemovePageTreeModel(const QString &configKey, QObject *parent = 0);
+        BtRemovePageTreeModel(const QString &configKey, QObject *parent = nullptr);
 
-        int columnCount(const QModelIndex &parent = QModelIndex()) const;
-        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+        int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
         QVariant headerData(int section, Qt::Orientation orientation,
-                            int role = Qt::DisplayRole) const;
+                            int role = Qt::DisplayRole) const override;
 };
 
 #endif // BTREMOVEPAGETREEMODEL_H

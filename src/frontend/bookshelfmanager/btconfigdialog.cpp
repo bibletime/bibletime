@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,8 +23,8 @@
 
 BtConfigDialog::BtConfigDialog(QWidget* parent, Qt::WindowFlags flags)
         : QDialog(parent, flags)
-        , m_buttonBoxRuler(0)
-        , m_buttonBox(0)
+        , m_buttonBoxRuler(nullptr)
+        , m_buttonBox(nullptr)
         , m_maxItemWidth(0)
         , m_previousPageIndex(-2)
 {
@@ -71,9 +71,9 @@ void BtConfigDialog::addPage(Page* pageWidget) {
 }
 
 void BtConfigDialog::setButtonBox(QDialogButtonBox *box) {
-    Q_ASSERT(box != 0);
-    Q_ASSERT(m_buttonBox == 0);
-    Q_ASSERT(m_buttonBoxRuler == 0);
+    Q_ASSERT(box != nullptr);
+    Q_ASSERT(m_buttonBox == nullptr);
+    Q_ASSERT(m_buttonBoxRuler == nullptr);
 
     m_buttonBox = box;
 

@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -46,9 +46,8 @@ class BtTextWindowHeaderWidget : public QWidget {
             TypeFilter(CSwordModuleInfo::ModuleType t) {
                 m_mType = t;
             }
-            bool filter(CSwordModuleInfo* mi) {
-                return ((mi->type() == m_mType) && !mi->isLocked());
-            }
+            bool filter(CSwordModuleInfo const & mi) const override
+            { return ((mi.type() == m_mType) && !mi.isLocked()); }
             CSwordModuleInfo::ModuleType m_mType;
         };
 

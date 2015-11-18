@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDLDKEY_H
 #define CSWORDLDKEY_H
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 #include <QString>
 
@@ -53,6 +53,9 @@ class CSwordModuleInfo;
 class CSwordLDKey : public CSwordKey, public sword::SWKey {
 
     public:
+
+        CSwordLDKey & operator=(CSwordLDKey const &) = delete;
+
         /**
           \todo Document param
         */
@@ -65,50 +68,27 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         */
         CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module);
 
-        /**
-          Reimplementation of CSwordKey::copy()
-        */
-        virtual CSwordLDKey* copy() const;
+        CSwordLDKey* copy() const override;
         /**
         * Uses the parameter to returns the next entry afer this key.
         */
-        CSwordLDKey* NextEntry( void );
+        CSwordLDKey* NextEntry();
         /**
         * Uses the parameter to returns the previous entry afer this key.
         */
-        CSwordLDKey* PreviousEntry( void );
+        CSwordLDKey* PreviousEntry();
 
-        /**
-          Sets the module of this key.
-        */
-        virtual void setModule(const CSwordModuleInfo *module);
+        void setModule(const CSwordModuleInfo *module) override;
 
-        /**
-        * Returns the current key as a QString
-        */
-        virtual QString key() const;
+        QString key() const override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const QString &key).
-        */
-        virtual bool setKey(const QString &newKey);
+        bool setKey(const QString &newKey) override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const char *key).
-        */
-        virtual bool setKey(const char *key);
+        bool setKey(const char *key) override;
 
     protected:
-        /**
-         * Returns the raw key appropriate for use directly with Sword.
-         */
-        virtual const char* rawKey() const;
 
-    private:
-        /**
-        * Disable assignment operator
-        */
-        CSwordLDKey& operator= (const CSwordLDKey& );
+        const char* rawKey() const override;
 
 };
 

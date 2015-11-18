@@ -2,19 +2,19 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/filters/osistohtml.h"
+#include "osistohtml.h"
 
 #include <QString>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/managers/cswordbackend.h"
+#include "../config/btconfig.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../managers/clanguagemgr.h"
+#include "../managers/cswordbackend.h"
+#include "../managers/referencemanager.h"
 
 // Sword includes:
 #include <swbuf.h>
@@ -570,23 +570,22 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
         }
 
         if (mod) {
-            ReferenceManager::ParseOptions options;
-            options.refBase = QString::fromUtf8(myUserData->key->getText());
-            options.refDestinationModule = QString(mod->name());
-            options.sourceLanguage = QString(myModule->getLanguage());
-            options.destinationLanguage = QString("en");
-
-            buf.append("<a href=\"");
-            buf.append( //create the hyperlink with key and mod
-                ReferenceManager::encodeHyperlink(
+            ReferenceManager::ParseOptions const options(
                     mod->name(),
-                    ReferenceManager::parseVerseReference(hrefRef, options),
-                    ReferenceManager::typeFromModule(mod->type())
-                ).toUtf8().constData()
-            );
-            buf.append("\" crossrefs=\"");
-            buf.append((const char*)ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
-            buf.append("\">");
+                    QString::fromUtf8(myUserData->key->getText()),
+                    myModule->getLanguage());
+
+            buf.append("<a href=\"")
+               .append( //create the hyperlink with key and mod
+                    ReferenceManager::encodeHyperlink(
+                        mod->name(),
+                        ReferenceManager::parseVerseReference(hrefRef, options),
+                        ReferenceManager::typeFromModule(mod->type())
+                    ).toUtf8().constData()
+                )
+               .append("\" crossrefs=\"")
+               .append(ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()) //ref must contain the osisRef module marker if there was any
+               .append("\">");
         }
         // should we add something if there were no referenced module available?
     }

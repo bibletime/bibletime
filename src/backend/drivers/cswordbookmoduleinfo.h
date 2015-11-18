@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDGENBOOKMODULEINFO_H
 #define CSWORDGENBOOKMODULEINFO_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
 // Sword includes:
 #include <treekeyidx.h>
@@ -31,9 +31,6 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         */
         CSwordBookModuleInfo(sword::SWModule * module,
                              CSwordBackend & usedBackend);
-
-        inline CSwordBookModuleInfo(const CSwordBookModuleInfo &copy)
-            : CSwordModuleInfo(copy), m_depth(copy.m_depth) {}
 
         /**
           \returns the maximal depth of sections and subsections.

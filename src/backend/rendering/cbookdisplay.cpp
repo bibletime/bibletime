@@ -2,23 +2,23 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/rendering/cbookdisplay.h"
+#include "cbookdisplay.h"
 
-#include <QSharedPointer>
+#include <QScopedPointer>
 #include <QtAlgorithms>
 
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/rendering/cdisplayrendering.h"
+#include "../drivers/cswordbookmoduleinfo.h"
+#include "../keys/cswordtreekey.h"
+#include "cdisplayrendering.h"
 
 
 const QString Rendering::CBookDisplay::text(
-        const QList<const CSwordModuleInfo*> &modules,
+        const BtConstModuleList &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
@@ -38,9 +38,8 @@ const QString Rendering::CBookDisplay::text(
     // the number of levels which should be display together, 1 means display no entries together
     int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
 
-    QSharedPointer<CSwordTreeKey> key (
-        dynamic_cast<CSwordTreeKey*>( CSwordKey::createInstance(book) )
-    );
+    QScopedPointer<CSwordTreeKey> key(
+            dynamic_cast<CSwordTreeKey *>(CSwordKey::createInstance(book)));
     key->setKey(keyName); //set the key to position we'd like to get
 
     const unsigned long offset = key->getOffset();

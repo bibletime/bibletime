@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,28 +31,32 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "frontend/displaywindow/cbookreadwindow.h"
+#include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cdisplaywindowfactory.h"
+#include "frontend/displaywindow/chtmlwritewindow.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
-BibleTime *BibleTime::m_instance = 0;
+BibleTime *BibleTime::m_instance = nullptr;
 
 BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     namespace DU = util::directory;
 
-    Q_ASSERT(m_instance == 0);
+    Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
-    QSplashScreen *splash = 0;
+    QSplashScreen *splash = nullptr;
     QString splashHtml;
 
     if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
@@ -81,14 +85,14 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     }
     initBackends();
 
-    if (splash != 0) {
+    if (splash != nullptr) {
         splash->showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
                             Qt::AlignCenter);
         qApp->processEvents();
     }
     initView();
 
-    if (splash != 0) {
+    if (splash != nullptr) {
         splash->showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
                             Qt::AlignCenter);
         qApp->processEvents();
@@ -99,7 +103,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     initConnections();
 
     setWindowTitle("BibleTime " BT_VERSION);
-    setWindowIcon(util::getIcon(CResMgr::mainWindow::icon));
+    setWindowIcon(CResMgr::mainWindow::icon());
     retranslateUi();
 }
 
@@ -112,11 +116,34 @@ BibleTime::~BibleTime() {
     saveProfile();
 }
 
+namespace {
+
+CReadWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
+                                 CMDIArea * const parent)
+{
+    switch (modules.first()->type()) {
+        case CSwordModuleInfo::Bible:
+            return new CBibleReadWindow(modules, parent);
+        case CSwordModuleInfo::Commentary:
+            return new CCommentaryReadWindow(modules, parent);
+        case CSwordModuleInfo::Lexicon:
+            return new CLexiconReadWindow(modules, parent);
+        case CSwordModuleInfo::GenericBook:
+            return new CBookReadWindow(modules, parent);
+        default:
+            qFatal("unknown module type");
+            Q_ASSERT(false);
+            return nullptr;
+    }
+}
+
+} // anonymous namespace
+
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
     // qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
-    CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
+    CDisplayWindow * const displayWindow = createReadInstance(modules, m_mdi);
     if ( displayWindow ) {
         displayWindow->init();
         m_mdi->addSubWindow(displayWindow);
@@ -136,28 +163,23 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modu
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, const QString& key) {
-    QList<CSwordModuleInfo*> list;
-    list.append(module);
-
-    return createReadDisplayWindow(list, key);
+    return createReadDisplayWindow(QList<CSwordModuleInfo*>() << module, key);
 }
 
 CDisplayWindow * BibleTime::createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
-    QList<CSwordModuleInfo*> modules;
-    modules.append(module);
-
-    CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);
-    if ( displayWindow ) {
-        displayWindow->init();
-        m_mdi->addSubWindow(displayWindow);
-        if (m_mdi->subWindowList().isEmpty())
-            displayWindow->showMaximized();
-        else
-            displayWindow->show();
-        displayWindow->lookupKey(key);
-    }
+    CDisplayWindow * const displayWindow =
+        (type == CPlainWriteWindow::HTMLWindow)
+        ? new CHTMLWriteWindow(QList<CSwordModuleInfo *>() << module, m_mdi)
+        : new CPlainWriteWindow(QList<CSwordModuleInfo *>() << module, m_mdi);
+    displayWindow->init();
+    m_mdi->addSubWindow(displayWindow);
+    if (m_mdi->subWindowList().isEmpty())
+        displayWindow->showMaximized();
+    else
+        displayWindow->show();
+    displayWindow->lookupKey(key);
 
     qApp->restoreOverrideCursor();
     return displayWindow;
@@ -180,7 +202,7 @@ CDisplayWindow* BibleTime::moduleEditHtml(CSwordModuleInfo *module) {
 
 void BibleTime::searchInModule(CSwordModuleInfo *module) {
     /// \todo Refactor this.
-    QList<const CSwordModuleInfo *> modules;
+    BtConstModuleList modules;
     modules.append(module);
     Search::CSearchDialog::openDialog(modules, QString::null);
 }
@@ -207,7 +229,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
             CSwordBackend *backend = CSwordBackend::instance();
             backend->reloadModules(CSwordBackend::OtherChange);
             module = backend->findModuleByName(moduleName);
-            Q_ASSERT(module != 0);
+            Q_ASSERT(module != nullptr);
         }
 
         if (!module->isLocked()) break;
@@ -231,11 +253,10 @@ void BibleTime::moduleAbout(CSwordModuleInfo *module) {
 
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() const {
-    Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
-        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+    Q_FOREACH(QMdiSubWindow const * const subWindow, m_mdi->subWindowList())
+        if (CDisplayWindow * const window =
+                dynamic_cast<CDisplayWindow*>(subWindow->widget()))
             window->reload(CSwordBackend::OtherChange);
-        }
-    }
 }
 
 /** Refresh main window accelerators */
@@ -276,7 +297,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
     if (!bibleKey.isNull()) {
         CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
         if (bibleKey == "random") {
-            CSwordVerseKey vk(0);
+            CSwordVerseKey vk(nullptr);
             const int maxIndex = 31100;
             int newIndex = rand() % maxIndex;
             vk.setPosition(sword::TOP);
@@ -311,10 +332,10 @@ bool BibleTime::event(QEvent* event) {
 const CSwordModuleInfo* BibleTime::getCurrentModule() {
     QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
     if (!activeSubWindow)
-        return 0;
+        return nullptr;
     CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
     if (!w)
-        return 0;
+        return nullptr;
     return w->modules().first();
 }
 

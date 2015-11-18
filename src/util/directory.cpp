@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -52,7 +52,7 @@ QScopedPointer<QDir> cachedSwordLocalesDir;
 
 #ifdef Q_OS_ANDROID
 QScopedPointer<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
-static const char AND_BIBLE[] = "/storage/sdcard0/Android/data/net.bible.android.activity/files";
+static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity/files";
 #endif
 
 #if defined Q_OS_WIN || defined Q_OS_SYMBIAN
@@ -101,7 +101,7 @@ bool initDirectoryCache() {
     }
 #endif
 
-#if !defined Q_OS_WINCE && !defined BT_MOBILE
+#if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
     cachedSharedSwordDir.reset(new QDir(qgetenv("ALLUSERSPROFILE"))); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd("Application Data")) {
         qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data";
@@ -130,7 +130,7 @@ bool initDirectoryCache() {
 #else
     cachedSwordPathDir.reset(new QDir());
     char* swordPath = qgetenv(SWORD_PATH).data();
-    if (swordPath != 0) {
+    if (swordPath != nullptr) {
         cachedSwordPathDir.reset(new QDir(swordPath));
         // We unset the SWORD_PATH so libsword finds paths correctly
         qputenv(SWORD_PATH, "");
@@ -208,7 +208,9 @@ bool initDirectoryCache() {
     }
 #endif
 
-#ifdef Q_OS_WIN
+#ifdef Q_OS_WINRT
+    cachedUserHomeDir.reset(new QDir(""));
+#elif defined Q_OS_WIN
     cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
 #elif defined(ANDROID)
     cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
@@ -322,17 +324,19 @@ void removeRecursive(const QString &dir) {
 
 /** Returns the size of the directory including the size of all it's files and it's subdirs.
  */
-unsigned long getDirSizeRecursive(const QString &dir) {
+size_t getDirSizeRecursive(QString const & dir) {
     //Check for validity of argument
     QDir d(dir);
-    if (!d.exists()) return 0;
+    if (!d.exists())
+        return 0u;
 
-    unsigned long size = 0;
+    size_t size = 0u;
 
     //First get the size of all files int this folder
     d.setFilter(QDir::Files);
     const QFileInfoList infoList = d.entryInfoList();
     for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); ++it) {
+        Q_ASSERT(it->size() > 0);
         size += it->size();
     }
 

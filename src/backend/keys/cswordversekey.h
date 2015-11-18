@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDVERSEKEY_H
 #define CSWORDVERSEKEY_H
 
-#include "backend/keys/cswordkey.h"
+#include "cswordkey.h"
 
 #include <QString>
 
@@ -47,12 +47,16 @@ class CSwordModuleInfo;
 
 class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
 
-    public:
+    public: /* Types: */
         enum JumpType {
             UseBook,
             UseChapter,
             UseVerse
         };
+
+    public: /* Methods: */
+
+        CSwordVerseKey & operator=(CSwordVerseKey const &) = delete;
 
         /**
           Constructs a versekey with the current module position and setups
@@ -72,26 +76,13 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         CSwordVerseKey(const sword::VerseKey *k,
                        const CSwordModuleInfo *module);
 
-        /**
-          Reimplementation of CSwordKey::copy().
-        */
-        virtual CSwordKey* copy() const;
+        CSwordKey* copy() const override;
 
-        /**
-        * Set/get the key. If the parameter is not set (means equal to QString::null)
-        * the used key is returned. Otherwise the key is set and the new on ei returned.
-        */
-        virtual QString key() const;
+        QString key() const override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const QString &key).
-        */
-        virtual bool setKey(const QString &key);
+        bool setKey(const QString &key) override;
 
-        /**
-          Reimplemented from CSwordKey::setKey(const char *key).
-        */
-        virtual bool setKey(const char *key);
+        bool setKey(const char *key) override;
 
         /**
         * Jumps to the next entry of the given type
@@ -109,24 +100,12 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         */
         QString book(const QString& newBook = QString::null);
 
-        /**
-          Sets the module for this key.
-        */
-        virtual void setModule(const CSwordModuleInfo *newModule);
+        void setModule(const CSwordModuleInfo *newModule) override;
 
     protected:
-        /**
-         * Returns the raw key appropriate for use directly with Sword.
-         */
-        virtual const char * rawKey() const;
 
-    private:
-        /** Disable assignment operator    */
-        CSwordVerseKey& operator= (const CSwordVerseKey&);
-        /** Disable from base class to prevent compiler warnings */
-        inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) {
-            return (*this);
-        };
+        const char * rawKey() const override;
+
 };
 
 #endif

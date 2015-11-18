@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,15 +10,15 @@
 #include "frontend/displaywindow/clexiconreadwindow.h"
 
 #include <QAction>
-#include <QApplication>
 #include <QFile>
 #include <QFileDialog>
 #include <QMenu>
 #include <QDebug>
 
-#include "bibletime.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
+#include "bibletime.h"
+#include "bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
@@ -81,55 +81,55 @@ void CLexiconReadWindow::initActions() {
     CLexiconReadWindow::insertKeyboardActions(ac);
 
     QAction *qaction = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     m_actions.backInHistory = dynamic_cast<BtToolBarPopupAction*>(qaction);
     Q_ASSERT(m_actions.backInHistory);
     addAction(m_actions.backInHistory);
 
     qaction = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     m_actions.forwardInHistory = dynamic_cast<BtToolBarPopupAction*>(qaction);
     Q_ASSERT(m_actions.forwardInHistory);
     addAction(m_actions.forwardInHistory);
 
     qaction = ac->action("nextEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     connect(qaction, SIGNAL(triggered()),
             this,    SLOT(nextEntry()));
     addAction(qaction);
 
     qaction = ac->action("previousEntry");
-    Q_ASSERT(qaction != 0);
+    Q_ASSERT(qaction != nullptr);
     connect(qaction, SIGNAL(triggered()),
             this,   SLOT(previousEntry()));
     addAction(qaction);
 
     m_actions.selectAll = ac->action("selectAll");
-    Q_ASSERT(m_actions.selectAll != 0);
+    Q_ASSERT(m_actions.selectAll != nullptr);
 
     m_actions.findText = ac->action("findText");
-    Q_ASSERT(m_actions.findText != 0);
+    Q_ASSERT(m_actions.findText != nullptr);
 
     m_actions.findStrongs = ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
-    Q_ASSERT(m_actions.findStrongs != 0);
+    Q_ASSERT(m_actions.findStrongs != nullptr);
     connect(m_actions.findStrongs, SIGNAL(triggered()),
             this,                  SLOT(openSearchStrongsDialog()) );
     addAction(m_actions.findStrongs);
 
     m_actions.copy.reference = ac->action("copyReferenceOnly");
-    Q_ASSERT(m_actions.copy.reference != 0);
+    Q_ASSERT(m_actions.copy.reference != nullptr);
     connect(m_actions.copy.reference,            SIGNAL(triggered()),
             displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()));
     addAction(m_actions.copy.reference);
 
     m_actions.copy.entry = ac->action("copyEntryWithText");
-    Q_ASSERT(m_actions.copy.entry != 0);
+    Q_ASSERT(m_actions.copy.entry != nullptr);
     connect(m_actions.copy.entry,                SIGNAL(triggered()),
             displayWidget()->connectionsProxy(), SLOT(copyAll()));
     addAction(m_actions.copy.entry);
 
     m_actions.copy.selectedText = ac->action("copySelectedText");
-    Q_ASSERT(m_actions.copy.selectedText != 0);
+    Q_ASSERT(m_actions.copy.selectedText != nullptr);
 
     m_actions.save.entryAsPlain = new QAction(tr("Entry as plain text"), ac );
     connect(m_actions.save.entryAsPlain, SIGNAL(triggered()),
@@ -137,19 +137,19 @@ void CLexiconReadWindow::initActions() {
     addAction(m_actions.save.entryAsPlain);
 
     m_actions.save.entryAsHTML = ac->action("saveHtml");
-    Q_ASSERT(m_actions.save.entryAsHTML != 0);
+    Q_ASSERT(m_actions.save.entryAsHTML != nullptr);
     connect(m_actions.save.entryAsHTML, SIGNAL(triggered()),
             this,                       SLOT(saveAsHTML()));
     addAction(m_actions.save.entryAsHTML);
 
     m_actions.print.reference = ac->action("printReferenceOnly");
-    Q_ASSERT(m_actions.print.reference != 0);
+    Q_ASSERT(m_actions.print.reference != nullptr);
     connect(m_actions.print.reference, SIGNAL(triggered()),
             this,                      SLOT(printAnchorWithText()));
     addAction(m_actions.print.reference);
 
     m_actions.print.entry = ac->action("printEntryWithText");
-    Q_ASSERT(m_actions.print.entry != 0);
+    Q_ASSERT(m_actions.print.entry != nullptr);
     connect(m_actions.print.entry, SIGNAL(triggered()),
             this,                  SLOT(printAll()));
     addAction(m_actions.print.entry);
@@ -226,7 +226,7 @@ void CLexiconReadWindow::initToolbars() {
 
     //Tools toolbar
     QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     buttonsToolBar()->addAction(action);
 
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
@@ -254,7 +254,7 @@ void CLexiconReadWindow::setupMainWindowToolBars() {
 
     // Tools toolbar
     QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     btMainWindow()->toolsToolBar()->addAction(action);
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
@@ -285,7 +285,7 @@ void CLexiconReadWindow::setupPopupMenu() {
     m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
     // Save raw HTML action for debugging purposes
-    if (qApp->property("--debug").toBool()) {
+    if (btApp->debugMode()) {
         QAction* debugAction = new QAction("Raw HTML", this);
         QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
         m_actions.saveMenu->addAction(debugAction);
@@ -306,12 +306,16 @@ void CLexiconReadWindow::setupPopupMenu() {
 void CLexiconReadWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
 
-    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
+    CReadDisplay const & display =
+            *static_cast<CReadDisplay *>(displayWidget());
 
-    m_actions.copy.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
-    m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );
+    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
-    m_actions.print.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+    bool const hasActiveAnchor = display.hasActiveAnchor();
+    m_actions.copy.reference->setEnabled(hasActiveAnchor);
+    m_actions.copy.selectedText->setEnabled(display.hasSelection());
+
+    m_actions.print.reference->setEnabled(hasActiveAnchor);
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {

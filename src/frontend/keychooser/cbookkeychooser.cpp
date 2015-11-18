@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,17 +21,17 @@
 
 #define ID_PROPERTY_NAME "CBookKeyChooser_ID"
 
-CBookKeyChooser::CBookKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
                                  BTHistory * historyPtr,
                                  CSwordKey * key,
                                  QWidget * parent)
     : CKeyChooser(modules, historyPtr, parent)
-    , m_layout(0)
+    , m_layout(nullptr)
 {
     setModules(modules, false);
     m_key = dynamic_cast<CSwordTreeKey * >(key);
     if (!m_modules.count())
-        m_key = 0;
+        m_key = nullptr;
 
     setModules(modules, true);
     setKey(key);
@@ -119,17 +119,17 @@ CSwordKey * CBookKeyChooser::key() {
 }
 
 /** Sets another module to this keychooser */
-void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo *> & modules,
+void CBookKeyChooser::setModules(const BtConstModuleList & modules,
                                  bool refresh)
 {
     typedef CSwordBookModuleInfo CSBMI;
     m_modules.clear();
 
     //   for (modules.first(); modules.current(); modules.next()) {
-    Q_FOREACH(const CSwordModuleInfo * m, modules) {
+    Q_FOREACH(const CSwordModuleInfo * const m, modules) {
         if (m->type() == CSwordModuleInfo::GenericBook ) {
             const CSBMI * const book = dynamic_cast<const CSBMI *>(m);
-            if (book != 0)
+            if (book != nullptr)
                 m_modules.append(book);
         }
     }
@@ -161,7 +161,8 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo *> & modules
                 }
             }
 
-            int maxWidth = (int) ((float) totalWidth / (float) m_modules.first()->depth());
+            int maxWidth = static_cast<int>(static_cast<float>(totalWidth)
+                                            / m_modules.first()->depth());
 
             w->comboBox().setMaximumWidth(maxWidth);
             w->comboBox().setCurrentIndex(0);
@@ -176,8 +177,8 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo *> & modules
 
         //set the tab order of the key chooser widgets
 
-        CKeyChooserWidget * chooser = 0;
-        CKeyChooserWidget * chooser_prev = 0;
+        CKeyChooserWidget * chooser = nullptr;
+        CKeyChooserWidget * chooser_prev = nullptr;
         const int count = m_chooserWidgets.count();
         for (int i = 0; i < count; i++) {
             chooser = m_chooserWidgets.at(i);
@@ -187,7 +188,7 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo *> & modules
 
             chooser_prev = chooser;
         }
-        QWidget::setTabOrder(chooser, 0);
+        QWidget::setTabOrder(chooser, nullptr);
 
         updateKey(m_key);
         adjustFont(); // only when refresh is set.

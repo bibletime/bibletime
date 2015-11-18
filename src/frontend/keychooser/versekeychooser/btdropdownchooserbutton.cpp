@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -65,9 +65,8 @@ BtBookDropdownChooserButton::BtBookDropdownChooserButton(BtBibleKeyWidget* ref)
 void BtBookDropdownChooserButton::newList() {
     QMenu* m = menu();
     QStringList* booklist = ref()->m_module->books();
-    foreach (QString bookname, *booklist) {
+    Q_FOREACH(QString const & bookname, *booklist)
         m->addAction(bookname);
-    }
 }
 
 void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action) {

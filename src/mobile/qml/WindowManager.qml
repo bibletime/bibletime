@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -155,13 +155,13 @@ Rectangle {
         }
         else {
             window.setModule(module);
+            window.setModuleToBeginning();
             window.swipeLeft.connect(windowManager,setPreviousWindow)
             window.swipeRight.connect(windowManager,setNextWindow)
             windows.push(window)
             layoutWindows();
             var curWindow = windows.length -1;
             selectWindow(curWindow);
-            window.setModuleToBeginning();
             if (key !== "")
                 window.setKey(key);
             window.setHistoryPoint();
@@ -262,7 +262,7 @@ Rectangle {
     Text {
         id: tipText
 
-        text: QT_TR_NOOP("Use the \"New Window\" menu to open a document.")
+        text: qsTranslate("Welcome", "Use the \"New Window\" menu to open a document.")
         anchors.left: windowManager.left
         anchors.right: windowManager.right
         anchors.verticalCenter: windowManager.verticalCenter

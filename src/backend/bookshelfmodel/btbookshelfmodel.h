@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -15,7 +15,8 @@
 
 #include <QAbstractListModel>
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../drivers/btmoduleset.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 
 /**
@@ -31,34 +32,34 @@ class BtBookshelfModel: public QAbstractListModel {
 public: /* Types: */
 
     enum ModuleRole {
-        ModuleNameRole = Qt::DisplayRole,
-        ModuleIconRole = Qt::DecorationRole,
-        ModulePointerRole  = Qt::UserRole,
-        ModuleCategoryRole = Qt::UserRole + 1,
-        ModuleLanguageRole = Qt::UserRole + 2,
-        ModuleHiddenRole = Qt::UserRole + 3,
-        ModuleInstallPathRole = Qt::UserRole + 4,
-        ModuleHasIndexRole = Qt::UserRole + 5,
-        ModuleIndexSizeRole = Qt::UserRole + 6,
-        ModuleDescriptionRole = Qt::UserRole + 7,
-        UserRole = Qt::UserRole + 100
+        ModuleNameRole = Qt::UserRole,
+        ModuleIconRole,
+        ModulePointerRole,
+        ModuleCategoryRole,
+        ModuleLanguageRole,
+        ModuleHiddenRole,
+        ModuleInstallPathRole,
+        ModuleHasIndexRole,
+        ModuleIndexSizeRole,
+        ModuleDescriptionRole,
+        UserRole
     };
 
 public: /* Methods: */
 
-    inline BtBookshelfModel(QObject * const parent = 0)
+    inline BtBookshelfModel(QObject * const parent = nullptr)
         : QAbstractListModel(parent) {}
 
     // Virtual methods implemented from QAbstractListModel:
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
     QVariant data(CSwordModuleInfo * module, int role) const;
-    QVariant data(const QModelIndex & index, int role) const;
+    QVariant data(const QModelIndex & index, int role) const override;
     QVariant headerData(int section,
                         Qt::Orientation orientation,
-                        int role = Qt::DisplayRole) const;
+                        int role = Qt::DisplayRole) const override;
     bool setData(const QModelIndex & index,
                  const QVariant & value,
-                 int role = ModuleHiddenRole);
+                 int role = ModuleHiddenRole) override;
 
     /**
       Given an index of this model, this method returns a pointer to the underlying
@@ -87,7 +88,7 @@ public: /* Methods: */
       Appends the all the modules in the given set to this model.
       \param[in] modules Set of modules to add.
     */
-    void addModules(const QSet<CSwordModuleInfo *> & modules);
+    void addModules(BtModuleSet const & modules);
 
     /**
       Appends the all the modules in the given list to this model.
@@ -109,7 +110,7 @@ public: /* Methods: */
       \param[in] modules The set of modules to remove from this model.
       \param[in] destroy If true, the given CSwordModuleInfo instances are destroyed.
     */
-    void removeModules(const QSet<CSwordModuleInfo *> & modules,
+    void removeModules(BtModuleSet const & modules,
                        bool destroy = false);
 
     /**

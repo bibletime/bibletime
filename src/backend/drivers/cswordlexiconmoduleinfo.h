@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDLEXICONMODULEINFO_H
 #define CSWORDLEXICONMODULEINFO_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "cswordmoduleinfo.h"
 
 #include <QStringList>
 
@@ -28,9 +28,6 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
                                        CSwordBackend & backend)
                 : CSwordModuleInfo(module, backend, Lexicon) {}
 
-        inline CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy)
-            : CSwordModuleInfo(copy), m_entries(copy.m_entries) {}
-
         /**
           This method returns the entries of the modules represented by this
           object. If this function is called for the first time the list is load
@@ -44,7 +41,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         /**
           Jumps to the closest entry in the module.
         */
-        virtual inline bool snap() const {
+        inline bool snap() const override {
             return module()->getRawEntry();
         }
 

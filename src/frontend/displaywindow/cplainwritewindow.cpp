@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -21,14 +21,12 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
-#include "util/btsignal.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 CPlainWriteWindow::CPlainWriteWindow(const QList<CSwordModuleInfo*> & moduleList, CMDIArea * parent)
     : CDisplayWindow(moduleList, parent)
-    , m_writeDisplay(0)
+    , m_writeDisplay(nullptr)
 {
     setKey( CSwordKey::createInstance(moduleList.first()) );
 }
@@ -81,16 +79,16 @@ void CPlainWriteWindow::initToolbars() {
 
     // Tools toolbar
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     buttonsToolBar()->addAction(action);
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     buttonsToolBar()->addAction(action);
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::deleteEntry::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     buttonsToolBar()->addAction(action);
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     buttonsToolBar()->addAction(action);
 }
 
@@ -103,16 +101,16 @@ void CPlainWriteWindow::setupMainWindowToolBars() {
 
     // Tools toolbar
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     btMainWindow()->toolsToolBar()->addAction(action);
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     btMainWindow()->toolsToolBar()->addAction(action);
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::deleteEntry::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     btMainWindow()->toolsToolBar()->addAction(action);
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     btMainWindow()->toolsToolBar()->addAction(action);
 }
 
@@ -123,7 +121,7 @@ void CPlainWriteWindow::initConnections() {
     QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
-void CPlainWriteWindow::storeProfileSettings(const QString & windowGroup) {
+void CPlainWriteWindow::storeProfileSettings(QString const & windowGroup) const {
     CDisplayWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
@@ -138,7 +136,7 @@ void CPlainWriteWindow::applyProfileSettings(const QString & windowGroup) {
     CDisplayWindow::applyProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     Q_ASSERT(windowGroup.endsWith('/'));
     action->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled", false));
 }
@@ -178,10 +176,10 @@ void CPlainWriteWindow::restoreText() {
 /** Is called when the current text was changed. */
 void CPlainWriteWindow::textChanged() {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     action->setEnabled(m_writeDisplay->isModified());
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     action->setEnabled(m_writeDisplay->isModified());
 }
 
@@ -197,7 +195,7 @@ void CPlainWriteWindow::setupPopupMenu() {}
 
 bool CPlainWriteWindow::syncAllowed() const {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     return action->isChecked();
 }
 
@@ -205,25 +203,25 @@ void CPlainWriteWindow::initActions() {
     insertKeyboardActions(actionCollection());
 
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     bool ok = QObject::connect(action, SIGNAL(triggered()),
                                this,   SLOT(saveCurrentText()));
     Q_ASSERT(ok);
 
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     ok = QObject::connect(action, SIGNAL(triggered()),
                           this,   SLOT(saveCurrentText()));
     Q_ASSERT(ok);
 
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::deleteEntry::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     ok = QObject::connect(action, SIGNAL(triggered()),
                           this,   SLOT(deleteEntry()));
     Q_ASSERT(ok);
 
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    Q_ASSERT(action != 0);
+    Q_ASSERT(action != nullptr);
     ok = QObject::connect(action, SIGNAL(triggered()),
                           this,   SLOT(restoreText()));
     Q_ASSERT(ok);
@@ -231,7 +229,7 @@ void CPlainWriteWindow::initActions() {
 
 void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     QAction* action = new QAction(
-        util::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+        CResMgr::displaywindows::commentaryWindow::syncWindow::icon(),
         tr("Sync with active Bible"),
         a
     );
@@ -241,7 +239,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, action);
 
     action = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+        CResMgr::displaywindows::writeWindow::saveText::icon(),
         tr("Save text"),
         a
     );
@@ -250,7 +248,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, action);
 
     action = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+        CResMgr::displaywindows::writeWindow::deleteEntry::icon(),
         tr("Delete current entry"),
         a
     );
@@ -259,7 +257,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, action);
 
     action = new QAction(
-        util::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+        CResMgr::displaywindows::writeWindow::restoreText::icon(),
         tr("Restore original text"),
         a
     );
@@ -300,7 +298,7 @@ void CPlainWriteWindow::beforeKeyChange() {
     // Get current key string for this window
     QString thisWindowsKey;
     CSwordKey* oldKey = key();
-    if (oldKey == 0)
+    if (oldKey == nullptr)
         return;
     thisWindowsKey = oldKey->key();
 

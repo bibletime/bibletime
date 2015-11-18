@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -26,32 +26,23 @@ class QToolBar;
 class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
     public:
 
-        CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent = 0);
+        CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent = nullptr);
 
-        /**
-        * Reimplementation.
-        */
-        virtual void selectAll();
-        /**
-        * Sets the new text for this display widget.
-        */
-        virtual void setText( const QString& newText );
-        /**
-        * Returns true if the display widget has a selection. Otherwise false.
-        */
-        virtual bool hasSelection();
-        /**
-        * Returns the view of this display widget.
-        */
-        virtual QWidget* view();
-        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
+        void selectAll() override;
 
-        /**
-          Reimplemented from CDisplay.
-        */
-        virtual inline void print(const CDisplay::TextPart,
-                                  const DisplayOptions &,
-                                  const FilterOptions &) {}
+        void setText(const QString & newText) override;
+
+        bool hasSelection() const override;
+
+        QWidget* view() override;
+
+        const QString text(const CDisplay::TextType format = CDisplay::HTMLText,
+                           const CDisplay::TextPart part = CDisplay::Document )
+                override;
+
+        inline void print(const CDisplay::TextPart,
+                          const DisplayOptions &,
+                          const FilterOptions &) override {}
 
         virtual bool isModified() const;
         /**
@@ -69,18 +60,11 @@ class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
 
     protected:
 
-        /**
-        * Reimplementation from QTextEdit to manage drops of our drag and drop objects.
-        */
-        virtual void dropEvent( QDropEvent* e );
-        /**
-        * Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
-        */
-        virtual void dragEnterEvent( QDragEnterEvent* e );
-        /**
-        * Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
-        */
-        virtual void dragMoveEvent( QDragMoveEvent* e );
+        void dropEvent(QDropEvent * e) override;
+
+        void dragEnterEvent(QDragEnterEvent * e) override;
+
+        void dragMoveEvent(QDragMoveEvent * e) override;
 
 };
 

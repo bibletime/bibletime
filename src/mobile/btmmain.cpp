@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -27,6 +27,7 @@
 #include "util/findqmlobject.h"
 #include <QBrush>
 #include <QColor>
+#include <QDateTime>
 #include <QGuiApplication>
 #include <QPalette>
 #include <QQuickItem>
@@ -35,8 +36,8 @@
 #include <QTranslator>
 #include "util/directory.h"
 
-btm::ViewManager* mgr = 0;
-btm::SessionManager* sessionMgr = 0;
+btm::ViewManager* mgr = nullptr;
+btm::SessionManager* sessionMgr = nullptr;
 static QFont defaultFont;
 
 void register_gml_classes() {
@@ -60,13 +61,45 @@ QFont getDefaultFont() {
 
 void openBookshelfManager() {
     QQuickItem* item = btm::findQmlObject("startupBookshelfManager");
-    Q_ASSERT(item != 0);
-    if (item == 0)
+    Q_ASSERT(item != nullptr);
+    if (item == nullptr)
         return;
 
     item->setProperty("visible", true);
 
 }
+
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+// Copies locale.qrc files into home sword directory under locales.d directory
+static void installSwordLocales(QDir& homeSword)
+{
+    QDir sourceSwordLocales(":/sword/locales.d");
+    if (!sourceSwordLocales.exists())
+        return;
+
+    QStringList filters;
+    filters << "*.conf";
+    QFileInfoList fileInfoList = sourceSwordLocales.entryInfoList(filters);
+
+    if (!homeSword.exists("locales.d"))
+        homeSword.mkdir(("locales.d"));
+    homeSword.cd("locales.d");
+
+    for (auto sourceFileInfo : fileInfoList) {
+
+        QString fileName = sourceFileInfo.fileName();
+        QString sourceFilePath = sourceFileInfo.absoluteFilePath();
+        QFile sourceFile(sourceFilePath);
+
+        QFileInfo destinationFileInfo(homeSword, fileName);
+        QString destinationFilePath = destinationFileInfo.absoluteFilePath();
+        QFile destinationFile(destinationFileInfo.absoluteFilePath());
+
+        destinationFile.remove();
+        sourceFile.copy(destinationFilePath);
+    }
+}
+#endif
 
 /*******************************************************************************
   Handle Qt's meta type system.
@@ -115,6 +148,13 @@ int main(int argc, char *argv[]) {
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
     }
+
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+    if (btm::BtStyle::getAppVersion() > btConfig().value<QString>("btm/version")) {
+        installSwordLocales(dir);
+        btConfig().setValue<QString>("btm/version", btm::BtStyle::getAppVersion());
+    }
+#endif
 
     //first install QT's own translations
     QTranslator qtTranslator;

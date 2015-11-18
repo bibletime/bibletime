@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -64,6 +64,13 @@ Rectangle {
         color: btStyle.textColor
     }
 
+    Text {
+        id: dummyTextForHeight
+        text: "x"
+        font.pointSize: btStyle.uiFontPointSize
+        visible: false
+    }
+
     Grid {
         id: buttons
 
@@ -76,7 +83,7 @@ Rectangle {
 
         Action {
             id: yesAction
-            text: QT_TR_NOOP("Yes")
+            text: qsTranslate("Question","Yes")
             onTriggered: {
                 question.visible = false;
                 answer = true;
@@ -87,7 +94,7 @@ Rectangle {
         Button {
             id: yesButton
             width: btStyle.pixelsPerMillimeterY * 25
-            height: questionText.height*1.5
+            height: dummyTextForHeight.height*1.5
             action: yesAction
             style: BtButtonStyle {
             }
@@ -95,7 +102,7 @@ Rectangle {
 
         Action {
             id: noAction
-            text: QT_TR_NOOP("No")
+            text: qsTranslate("Question","No")
             onTriggered: {
                 question.visible = false;
                 answer = false;
@@ -106,7 +113,7 @@ Rectangle {
         Button {
             id: noButton
             width: btStyle.pixelsPerMillimeterY * 25
-            height: questionText.height*1.5
+            height: dummyTextForHeight.height*1.5
             action: noAction
             style: BtButtonStyle {
             }

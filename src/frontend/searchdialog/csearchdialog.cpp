@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -30,7 +30,6 @@
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
-#include "util/geticon.h"
 
 
 namespace {
@@ -39,9 +38,9 @@ const QString GeometryKey = "GUI/SearchDialog/geometry";
 
 namespace Search {
 
-static CSearchDialog* m_staticDialog = 0;
+static CSearchDialog* m_staticDialog = nullptr;
 
-void CSearchDialog::openDialog(const QList<const CSwordModuleInfo*> modules,
+void CSearchDialog::openDialog(const BtConstModuleList modules,
                                const QString &searchText, QWidget *parentDialog)
 {
     if (!m_staticDialog) {
@@ -71,7 +70,7 @@ void CSearchDialog::openDialog(const QList<const CSwordModuleInfo*> modules,
 }
 
 void CSearchDialog::closeDialog() {
-    if (m_staticDialog != 0)
+    if (m_staticDialog != nullptr)
         m_staticDialog->closeButtonClicked();
 }
 
@@ -81,9 +80,9 @@ CSearchDialog* CSearchDialog::getSearchDialog() {
 }
 
 CSearchDialog::CSearchDialog(QWidget *parent)
-        : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
-        m_searchResultArea(0), m_searchOptionsArea(0) {
-    setWindowIcon(util::getIcon(CResMgr::searchdialog::icon));
+        : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(nullptr),
+        m_searchResultArea(nullptr), m_searchOptionsArea(nullptr) {
+    setWindowIcon(CResMgr::searchdialog::icon());
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -93,11 +92,10 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 
 CSearchDialog::~CSearchDialog() {
     saveDialogSettings();
-    m_staticDialog = 0;
+    m_staticDialog = nullptr;
 }
 
 void CSearchDialog::startSearch() {
-    typedef QList<const CSwordModuleInfo*> ML;
     QString originalSearchText(m_searchOptionsArea->searchText());
 
     // first check the search string for errors
@@ -108,13 +106,19 @@ void CSearchDialog::startSearch() {
             return;
         }
     }
-    QString searchText = prepareSearchText(originalSearchText);
+    QString searchText = CSwordModuleSearch::prepareSearchText(originalSearchText, m_searchOptionsArea->searchType());
 
     // Insert search text into history list of combobox
     m_searchOptionsArea->addToHistory(originalSearchText);
 
     // Check that we have the indices we need for searching
-    ML unindexedModules = CSwordModuleSearch::unindexedModules(modules());
+    /// \warning indexing is some kind of internal optimization, so we leave
+    /// modules const, but unconst them here only
+    QList<CSwordModuleInfo*> unindexedModules;
+    Q_FOREACH(const CSwordModuleInfo * const m,
+              CSwordModuleSearch::unindexedModules(modules()))
+        unindexedModules.append(const_cast<CSwordModuleInfo*>(m));
+
     if (unindexedModules.size() > 0) {
         // Build the list of module names:
         QStringList moduleNameList;
@@ -160,10 +164,21 @@ void CSearchDialog::startSearch() {
     setCursor(Qt::WaitCursor);
 
     // Execute search:
-    m_searcher.startSearch();
+    try {
+        m_searcher.startSearch();
+    } catch (...) {
+        message::showWarning(this,
+                             tr("Search aborted"),
+                             tr("An internal error occurred while executing "
+                                "your search."));
+        // Re-enable the dialog:
+        setEnabled(true);
+        setCursor(Qt::ArrowCursor);
+        return;
+    }
 
     // Display the search results:
-    if (m_searcher.foundItems() > 0) {
+    if (m_searcher.foundItems() > 0u) {
         m_searchResultArea->setSearchResult(m_searcher.results());
     } else {
         m_searchResultArea->reset();
@@ -176,35 +191,7 @@ void CSearchDialog::startSearch() {
     setCursor(Qt::ArrowCursor);
 }
 
-QString CSearchDialog::prepareSearchText(const QString& orig) {
-    qDebug() << "Original search text:" << orig;
-    static const QRegExp syntaxCharacters("[+\\-()!\"~]");
-    static const QRegExp andWords("\\band\\b", Qt::CaseInsensitive);
-    static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
-    QString text("");
-    if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::AndType) {
-        text = orig.simplified();
-        text.remove(syntaxCharacters);
-        qDebug() << "After syntax characters removed:" << text;
-        text.replace(andWords, "\"and\"");
-        text.replace(orWords, "\"or\"");
-        qDebug() << "After \"and\" and \"or\" replaced:" << text;
-        text.replace(" ", " AND ");
-    }
-    if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::OrType) {
-        text = orig.simplified();
-        text.remove(syntaxCharacters);
-        text.replace(andWords, "\"and\"");
-        text.replace(orWords, "\"or\"");
-    }
-    if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::FullType) {
-        text = orig;
-    }
-    qDebug() << "The final search string:" << text;
-    return text;
-}
-
-void CSearchDialog::startSearch(const QList<const CSwordModuleInfo*> modules,
+void CSearchDialog::startSearch(const BtConstModuleList modules,
                                 const QString &searchText)
 {
     m_searchResultArea->reset();
@@ -238,7 +225,7 @@ void CSearchDialog::initView() {
 
     QHBoxLayout* horizontalLayout = new QHBoxLayout();
 
-    m_analyseButton = new QPushButton(tr("&Analyze results..."), 0);
+    m_analyseButton = new QPushButton(tr("&Analyze results..."), nullptr);
     m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
     QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
     horizontalLayout->addWidget(m_analyseButton);
@@ -246,7 +233,7 @@ void CSearchDialog::initView() {
 
     m_closeButton = new QPushButton(this);
     m_closeButton->setText(tr("&Close"));
-    m_closeButton->setIcon(util::getIcon(CResMgr::searchdialog::close_icon));
+    m_closeButton->setIcon(CResMgr::searchdialog::icon_close());
     horizontalLayout->addWidget(m_closeButton);
 
     verticalLayout->addLayout(horizontalLayout);

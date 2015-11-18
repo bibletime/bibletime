@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -36,7 +36,7 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        CAcceleratorSettingsPage(CConfigurationDialog *parent = 0);
+        CAcceleratorSettingsPage(CConfigurationDialog *parent = nullptr);
 
         void save();
 
@@ -58,13 +58,13 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
             QString title;
 
             WindowType() {
-                keyChooser = 0;
-                actionCollection = 0;
+                keyChooser = nullptr;
+                actionCollection = nullptr;
             };
             WindowType(const QString& newTitle) {
                 title = newTitle;
-                keyChooser = 0;
-                actionCollection = 0;
+                keyChooser = nullptr;
+                actionCollection = nullptr;
             }
         };
 

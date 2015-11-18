@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -32,15 +32,14 @@
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/geticon.h"
 
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
         : QWidget(parent, flags)
-        , m_sourceModel(0)
-        , m_treeModel(0)
-        , m_leftCornerWidget(0)
-        , m_rightCornerWidget(0)
+        , m_sourceModel(nullptr)
+        , m_treeModel(nullptr)
+        , m_leftCornerWidget(nullptr)
+        , m_rightCornerWidget(nullptr)
 {
     // Setup post-filter:
     m_postFilterModel = new BtBookshelfFilterModel(this);
@@ -64,18 +63,18 @@ BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
 }
 
 void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
-    Q_ASSERT(model != 0);
+    Q_ASSERT(model != nullptr);
     m_sourceModel = model;
-    if (m_treeModel != 0) {
+    if (m_treeModel != nullptr) {
         m_treeModel->setSourceModel(model);
     }
 }
 
 void BtBookshelfWidget::setTreeModel(BtBookshelfTreeModel *model) {
-    Q_ASSERT(model != 0);
-    Q_ASSERT(m_treeModel == 0);
+    Q_ASSERT(model != nullptr);
+    Q_ASSERT(m_treeModel == nullptr);
     m_treeModel = model;
-    if (m_sourceModel != 0) {
+    if (m_sourceModel != nullptr) {
         model->setSourceModel(m_sourceModel);
     }
     m_postFilterModel->setSourceModel(model);
@@ -94,19 +93,14 @@ void BtBookshelfWidget::setRightCornerWidget(QWidget *w) {
 }
 
 void BtBookshelfWidget::initActions() {
-    namespace RM = CResMgr::mainIndex;
-
     m_showHideAction = new QAction(this);
-    m_showHideAction->setIcon(util::getIcon("layer-visible-on.svg"));
+    m_showHideAction->setIcon(CResMgr::mainIndex::showHide::icon());
     m_showHideAction->setCheckable(true);
     connect(m_showHideAction, SIGNAL(toggled(bool)),
             m_postFilterModel, SLOT(setShowHidden(bool)));
 }
 
 void BtBookshelfWidget::initMenus() {
-    namespace DU = util::directory;
-    namespace RM = CResMgr::mainIndex;
-
     // Grouping menu:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
     connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
@@ -190,8 +184,10 @@ void BtBookshelfWidget::slotShowContextMenu(const QPoint &pos) {
 
 void BtBookshelfWidget::slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos)
 {
-    if (m_itemContextMenu != 0) {
-        m_itemContextMenu->setProperty("BtModule", qVariantFromValue((void*) module));
+    if (m_itemContextMenu != nullptr) {
+        m_itemContextMenu->setProperty("BtModule",
+                                       qVariantFromValue(
+                                           static_cast<void *>(module)));
         m_itemContextMenu->popup(pos);
     } else {
         m_itemContextMenu = m_contextMenu;

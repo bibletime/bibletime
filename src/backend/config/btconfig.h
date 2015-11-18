@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,19 +22,15 @@
 #include <QString>
 #include <QStringList>
 #include <QVariant>
-
-#include "backend/config/btconfigcore.h"
-
-#include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "btglobal.h"
+#include "../btglobal.h"
+#include "../btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
+#include "../drivers/cswordmoduleinfo.h"
+#include "btconfigcore.h"
 
 
 class BibleTimeApp;
 
 class BtConfig: public BtConfigCore {
-
-    Q_DISABLE_COPY(BtConfig)
 
     friend class BibleTimeApp;
 
@@ -50,6 +46,12 @@ public: /* Types: */
 private: /* Types: */
 
     typedef QHash<const CLanguageMgr::Language *, FontSettingsPair> FontCacheMap;
+
+    enum InitState {
+        INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE = -2,
+        INIT_OK = 0,
+        INIT_NEED_UNIMPLEMENTED_FORWARD_MIGRATE = 2,
+    };
 
 public: /* Methods: */
 
@@ -218,7 +220,8 @@ private: /* Methods: */
 
     explicit BtConfig(const QString & settingsFile);
 
-    static bool initBtConfig();
+    static InitState initBtConfig();
+    static void forceMigrate();
 
     static void destroyInstance();
 

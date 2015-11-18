@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -47,16 +47,16 @@ QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role)
                 case 1:
                 {
                     CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
-                    if (module != 0) return module->property("installSourceName");
+                    if (module != nullptr) return module->property("installSourceName");
                     break;
                 }
                 case 2:
                 {
                     CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
-                    if (module == 0) break;
+                    if (module == nullptr) break;
                     CSwordBackend *b = CSwordBackend::instance();
                     CSwordModuleInfo *imodule = b->findModuleByName(module->name());
-                    if (imodule == 0) {
+                    if (imodule == nullptr) {
                         return module->config(CSwordModuleInfo::ModuleVersion);
                     } else {
                         return imodule->config(CSwordModuleInfo::ModuleVersion)
@@ -108,8 +108,8 @@ void BtInstallModuleChooserDialogModel::parentDataChanged(const QModelIndex &top
 }
 
 bool BtInstallModuleChooserDialogModel::isMulti(CSwordModuleInfo * m1) const {
-    if (m1 != 0 && checkedModules().contains(m1))
-        Q_FOREACH (CSwordModuleInfo * m2, modules())
+    if (m1 != nullptr && checkedModules().contains(m1))
+        Q_FOREACH(CSwordModuleInfo const * const m2, modules())
             if (m1 != m2 && checkedModules().contains(m2) && m1->name() == m2->name())
                 return true;
     return false;

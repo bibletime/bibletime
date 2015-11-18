@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -57,7 +57,13 @@ void IndexThread::indexModule() {
     emit beginIndexingModule(moduleName);
     bool ok = connect(module, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)));
     Q_ASSERT(ok);
-    bool success = module->buildIndex();
+    bool success = true;
+    try {
+        module->buildIndex();
+    }
+    catch (...) {
+        success = false;
+    }
     emit endIndexingModule(moduleName, success);
 }
 

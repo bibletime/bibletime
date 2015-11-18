@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDMODULEINFO_H
 #define CSWORDMODULEINFO_H
 
-#include "backend/managers/clanguagemgr.h"
+#include "../managers/clanguagemgr.h"
 
 #include <QIcon>
 #include <QList>
@@ -25,6 +25,7 @@
 #include <swmodule.h>
 #include <swsearchable.h>
 #include <swversion.h>
+
 
 #ifdef CLUCENE2
 // CLucene no longer lists the following functions in its headers
@@ -248,23 +249,24 @@ wrong, or if the config file was write protected return false.
 
     /**
       Builds a search index for this module
-      \returns Whether indexing this module was successful.
+      \throws when unsuccessful
     */
-    bool buildIndex();
+    void buildIndex();
 
     /**
       \returns index size
     */
-    unsigned long indexSize() const;
+    size_t indexSize() const;
 
     /**
       This function uses CLucene to perform and index based search. It also
       overwrites the variable containing the last search result.
       \returns the number of results found
+      \throws on error
     */
-    int searchIndexed(const QString & searchedText,
-                      const sword::ListKey & scope,
-                      sword::ListKey & results) const;
+    size_t searchIndexed(const QString & searchedText,
+                         const sword::ListKey & scope,
+                         sword::ListKey & results) const;
 
     /**
       \returns the type of the module.
@@ -303,10 +305,11 @@ wrong, or if the config file was write protected return false.
 
     bool has(const CSwordModuleInfo::FilterTypes ) const;
 
-    /**
-      \returns the text direction of the module's text.
-    */
+    /** \returns the text direction of the module's text. */
     CSwordModuleInfo::TextDirection textDirection() const;
+
+    /** \returns the text direction of the module's text as an HTML value. */
+    char const * textDirectionAsHtml() const;
 
     /**
       Writes the new text at the given position into the module. This does
@@ -378,31 +381,25 @@ wrong, or if the config file was write protected return false.
       Returns an icon for the given module.
       \param[in] module The module whose icon to return.
     */
-    static QIcon moduleIcon(const CSwordModuleInfo & module);
-
-    /**
-      Returns the icon filename for the given module.
-      \param[in] module The module whose icon filename to return.
-    */
-    static const QString & moduleIconFilename(const CSwordModuleInfo & module);
+    static QIcon const & moduleIcon(CSwordModuleInfo const & module);
 
     /**
       Returns an icon for the category of given module.
       \param[in] module The module whose category icon to return.
     */
-    static QIcon categoryIcon(const CSwordModuleInfo::Category & category);
-
-    /**
-      Returns the icon filename for the category of given module.
-      \param[in] module The module whose category icon filename to return.
-    */
-    static const QString & categoryIconFilename(const CSwordModuleInfo::Category & category);
+    static QIcon const & categoryIcon(CSwordModuleInfo::Category category);
 
     /**
       Returns a translated name for the given category.
       \param[in] module The category whose translated name to return.
     */
     static QString categoryName(const CSwordModuleInfo::Category & category);
+
+    /**
+      Returns a english name for the given category.
+      \param[in] module The category whose english name to return.
+    */
+    static QString englishCategoryName(const CSwordModuleInfo::Category & category);
 
 public slots:
 
@@ -437,15 +434,15 @@ private: /* Fields: */
 
     sword::SWModule * const m_module;
     CSwordBackend & m_backend;
-    ModuleType m_type;
+    ModuleType const m_type;
     bool m_hidden;
     bool m_cancelIndexing;
 
     // Cached data:
-    const QString m_cachedName;
-    CSwordModuleInfo::Category m_cachedCategory;
-    const CLanguageMgr::Language * m_cachedLanguage;
-    bool m_cachedHasVersion;
+    QString const m_cachedName;
+    CSwordModuleInfo::Category const m_cachedCategory;
+    const CLanguageMgr::Language * const m_cachedLanguage;
+    bool const m_cachedHasVersion;
 
 };
 

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -20,9 +20,8 @@
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "frontend/messagedialog.h"
+#include "util/bticons.h"
 #include "util/directory.h"
-#include "util/geticon.h"
-#include "util/htmlescape.h"
 
 
 namespace {
@@ -50,13 +49,6 @@ inline QString make_html(QWidget *widget, const QString &text) {
             + vertical_align(text) + "</body></html>";
 }
 
-inline QString make_icon(const QString &icon) {
-    namespace DU = util::directory;
-    QString fileName = DU::getIconDir().filePath(icon);
-    QString iconUrl = QUrl::fromLocalFile(fileName).toString();
-    return "<img src=\"" + util::htmlEscape(iconUrl) + "\" width=\"32\" />";
-}
-
 const QString LastTipNumberKey = "GUI/lastTipNumber";
 
 } // anonymous namespace
@@ -67,7 +59,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("Tip Of The Day"));
-    setWindowIcon(util::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
+    setWindowIcon(CResMgr::mainMenu::help::tipOfTheDay::icon());
     resize(450, 240);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -125,18 +117,18 @@ void BtTipDialog::initTips() {
 
     m_tips << tr("To add multiple Bible works in parallel in your active Bible window"
         " select this icon and choose another Bible work.")
-        + "<br><center>" + make_icon(CResMgr::modules::bible::icon_add) + "</center>";
+        + "<br><center>" + iconToHtml(CResMgr::modules::bible::icon_add()) + "</center>";
 
     m_tips << tr("To add multiple commentary works in parallel in your active commentary window"
         " select this icon and choose another commentary work.")
-        + "<br><center>" + make_icon(CResMgr::modules::commentary::icon_add) + "</center>";
+        + "<br><center>" + iconToHtml(CResMgr::modules::commentary::icon_add()) + "</center>";
 
     m_tips << tr("To learn more about the BibleTime project please go to our web site.")
         + "<br><center><a href=\"http://www.bibletime.info\">www.bibletime.info</a></center>";
 
     m_tips << tr("To synchronize a commentary window with the active Bible window, activate the"
         " commentary window and select this icon.") + "<br><center>"
-        + make_icon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)
+        + iconToHtml(CResMgr::displaywindows::commentaryWindow::syncWindow::icon())
         + "</center><br>" + tr("Select the icon again to stop the synchronization.");
 
     m_tips << tr("To create a bookmark drag any verse reference from a Bible or commentary work"

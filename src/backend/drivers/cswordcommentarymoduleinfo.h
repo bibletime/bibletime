@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,7 +12,7 @@
 #ifndef CSWORDCOMMENTARYMODULEINFO_H
 #define CSWORDCOMMENTARYMODULEINFO_H
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "cswordbiblemoduleinfo.h"
 
 
 /**
@@ -31,8 +31,7 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
                                     backend,
                                     CSwordModuleInfo::Commentary) {}
 
-        /* Reimplementation of CSwordModuleInfo::isWritable(). */
-        virtual bool isWritable() const;
+        bool isWritable() const override;
 };
 
 #endif

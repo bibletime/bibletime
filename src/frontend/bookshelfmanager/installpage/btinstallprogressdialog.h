@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,8 +31,8 @@ public: /* Methods: */
 
     BtInstallProgressDialog(const QList<CSwordModuleInfo *> & modules,
                             const QString & destination,
-                            QWidget * parent = 0,
-                            Qt::WindowFlags flags = 0);
+                            QWidget * parent = nullptr,
+                            Qt::WindowFlags flags = nullptr);
     ~BtInstallProgressDialog();
 
 public slots:
@@ -50,7 +50,7 @@ protected: /* Methods: */
       Handles closing by the window close button, Cancel (Stop) All button, or
       completing the downloads.
     */
-    virtual void closeEvent(QCloseEvent * event);
+    void closeEvent(QCloseEvent * event) override;
 
 private: /* Methods: */
 

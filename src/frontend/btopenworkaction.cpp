@@ -4,7 +4,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -16,15 +16,15 @@
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/btbookshelfgroupingmenu.h"
-#include "util/geticon.h"
+#include "util/cresmgr.h"
 
 
 BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
                                            QWidget *parent)
     : BtMenuView(parent)
-    , m_treeModel(0)
-    , m_postFilterModel(0)
-    , m_groupingMenu(0)
+    , m_treeModel(nullptr)
+    , m_postFilterModel(nullptr)
+    , m_groupingMenu(nullptr)
     , m_groupingConfigKey(groupingConfigKey)
 {
     // Setup models:
@@ -65,7 +65,7 @@ void BtOpenWorkActionMenu::slotIndexTriggered(const QModelIndex &index) {
 
     CSwordModuleInfo *i;
     i = static_cast<CSwordModuleInfo *>(model()->data(index, MPR).value<void*>());
-    if (i != 0) {
+    if (i != nullptr) {
         emit triggered(i);
     }
 }
@@ -83,7 +83,7 @@ BtOpenWorkAction::BtOpenWorkAction(const QString &groupingConfigKey,
     m_menu->setSourceModel(CSwordBackend::instance()->model());
 
     setMenu(m_menu);
-    setIcon(util::getIcon("folder-open.svg"));
+    setIcon(CResMgr::mainWindow::icon_openAction());
     retranslateUi();
     slotModelChanged();
 

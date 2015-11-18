@@ -2,24 +2,25 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2014 by the BibleTime developers.
+* Copyright 1999-2015 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "backend/managers/cdisplaytemplatemgr.h"
+#include "cdisplaytemplatemgr.h"
 
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>
 #include <QTextStream>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/clanguagemgr.h"
-#include "util/directory.h"
+#include "../../util/directory.h"
+#include "../config/btconfig.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "clanguagemgr.h"
 
 
 #define CSSTEMPLATEBASE "Basic.tmpl"
+#define CSSTEMPLATEBASEMOBILE "Basic-mobile.tmpl"
 
 namespace {
 
@@ -30,10 +31,10 @@ inline QString readFileToString(const QString & filename) {
 
 } // anonymous namespace
 
-CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = 0;
+CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = nullptr;
 
 CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
-    Q_ASSERT(m_instance == 0);
+    Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
     {
@@ -137,9 +138,9 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
         // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        Q_FOREACH(const CSwordModuleInfo * mi, settings.modules) {
+        Q_FOREACH(const CSwordModuleInfo * const mi, settings.modules) {
             header.append("<th style=\"width:")
-            .append(QString::number(int( 100.0 / (float)moduleCount )))
+            .append(QString::number(static_cast<int>(100.0 / moduleCount)))
             .append("%;\">")
             .append(mi->name())
             .append("</th>");
@@ -163,7 +164,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     }
     {
         const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
-        Q_FOREACH (const CLanguageMgr::Language * lang, langMap) {
+        Q_FOREACH(const CLanguageMgr::Language * const lang, langMap) {
             if (lang->abbrev().isEmpty())
                 continue;
 
