@@ -510,10 +510,19 @@ void BibleTime::deleteProfile(QAction* action) {
     QVariant keyProperty = action->property("ProfileKey");
     Q_ASSERT(keyProperty.type() == QVariant::String);
     Q_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
+    QString sessionName = action->text();
+
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, tr("Message"), tr("Are you sure you want to delete the session: '%1'?").arg(sessionName),
+				  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+      btConfig().deleteSession(keyProperty.toString());
+      refreshProfileMenus();
+    } else {
+      refreshProfileMenus();
+    }
 
     /// \todo Ask for confirmation
-    btConfig().deleteSession(keyProperty.toString());
-    refreshProfileMenus();
 }
 
 void BibleTime::toggleFullscreen() {
