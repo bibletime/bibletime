@@ -21,6 +21,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "backend/btinstallmgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
@@ -33,7 +34,6 @@
 
 // Sword includes:
 #include <swmgr.h>
-#include <installmgr.h>
 
 
 namespace {
@@ -147,7 +147,7 @@ void BtRemovePage::slotRemoveModules() {
         QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
         Q_ASSERT(toBeDeleted.size() == moduleNames.size());
 
-        sword::InstallMgr installMgr;
+        BtInstallMgr installMgr;
         QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
         Q_FOREACH(CSwordModuleInfo const * const mInfo, toBeDeleted) {
             Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
