@@ -65,8 +65,7 @@ BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
 QList<CSwordModuleInfo *> CSwordBackend::takeModulesFromList(const QStringList & names) {
     QList<CSwordModuleInfo *> list;
     Q_FOREACH (const QString & name, names) {
-        CSwordModuleInfo * const mInfo = findModuleByName(name);
-        if (mInfo) {
+        if (CSwordModuleInfo * const mInfo = findModuleByName(name)) {
             m_dataModel.removeModule(mInfo);
             list.append(mInfo);
         }
@@ -78,21 +77,17 @@ QList<CSwordModuleInfo *> CSwordBackend::takeModulesFromList(const QStringList &
 
 QList<CSwordModuleInfo *> CSwordBackend::getPointerList(const QStringList & names) const {
     QList<CSwordModuleInfo *> list;
-    Q_FOREACH (const QString & name, names) {
-        CSwordModuleInfo * const mInfo = findModuleByName(name);
-        if (mInfo)
+    Q_FOREACH (const QString & name, names)
+        if (CSwordModuleInfo * const mInfo = findModuleByName(name))
             list.append(mInfo);
-    }
     return list;
 }
 
 BtConstModuleList CSwordBackend::getConstPointerList(const QStringList & names) const {
     BtConstModuleList list;
-    Q_FOREACH (const QString & name, names) {
-        const CSwordModuleInfo * const mInfo = findModuleByName(name);
-        if (mInfo)
+    Q_FOREACH (const QString & name, names)
+        if (CSwordModuleInfo const * const mInfo = findModuleByName(name))
             list.append(mInfo);
-    }
     return list;
 }
 
@@ -477,8 +472,7 @@ void CSwordBackend::deleteOrphanedIndices() {
     Q_FOREACH(const QString & entry, entries) {
         if (entry == "." || entry == "..")
             continue;
-        CSwordModuleInfo * const module = findModuleByName(entry);
-        if (module) { //mod exists
+        if (CSwordModuleInfo * const module = findModuleByName(entry)) {
             if (!module->hasIndex()) { //index files found, but wrong version etc.
                 qDebug() << "deleting outdated index for module" << entry;
                 CSwordModuleInfo::deleteIndexForModule(entry);
