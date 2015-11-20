@@ -16,9 +16,6 @@
 
 #include "backend/cswordmodulesearch.h"
 
-// Sword includes
-#include <listkey.h>
-
 
 class CSwordModuleInfo;
 class QAbstractButton;

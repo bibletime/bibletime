@@ -23,10 +23,6 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
-// Sword includes:
-#include <localemgr.h>
-#include <swlocale.h>
-
 
 BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
         : BtConfigDialog::Page(CResMgr::settings::fonts::icon(), parent)

@@ -30,9 +30,6 @@
 #include "frontend/crossrefrendering.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 
-// Sword includes:
-#include <listkey.h>
-
 
 using namespace Rendering;
 using namespace sword;
