@@ -27,112 +27,108 @@ namespace Rendering {
 class CTextRendering;
 }
 
-/** Contains the functions to export text to disk, clipboard or printer.
-  * @author The BibleTime team
-  */
 class CExportManager {
-    public:
-        /** The format the export actions should have
-        */
-        enum Format {
-            HTML,
-            Text
-        };
 
-        CExportManager(const bool showProgress = true,
-                       const QString &progressLabel = QString::null,
-                       const FilterOptions &filterOptions = btConfig().getFilterOptions(),
-                       const DisplayOptions &displayOptions = btConfig().getDisplayOptions());
-        ~CExportManager();
+public: /* Types: */
 
-        bool saveKey(CSwordKey* key, const Format format, const bool addText);
+    /** The format the export actions should have. */
+    enum Format {
+        HTML,
+        Text
+    };
 
-        bool saveKeyList(const sword::ListKey &list,
-                         const CSwordModuleInfo *module,
-                         Format format,
-                         bool addText);
+public: /* Methods: */
 
-        bool saveKeyList(const QList<CSwordKey*> &list,
-                         Format format,
-                         const bool addText );
+    CExportManager(const bool showProgress = true,
+                   const QString &progressLabel = QString::null,
+                   const FilterOptions &filterOptions = btConfig().getFilterOptions(),
+                   const DisplayOptions &displayOptions = btConfig().getDisplayOptions());
+    ~CExportManager();
 
-        bool copyKey(CSwordKey* key, const Format format, const bool addText);
+    bool saveKey(CSwordKey const * const key,
+                 Format const format,
+                 bool const addText);
 
-        bool copyKeyList(const sword::ListKey &list,
-                         const CSwordModuleInfo *module,
-                         Format format,
-                         bool addText);
+    bool saveKeyList(sword::ListKey const & list,
+                     CSwordModuleInfo const * const module,
+                     Format const format,
+                     bool const addText);
 
-        bool copyKeyList(const QList<CSwordKey*> &list,
-                         Format format,
-                         bool addText);
+    bool saveKeyList(QList<CSwordKey *> const & list,
+                     Format const format,
+                     bool const addText);
 
-        bool printKey(const CSwordKey *key,
-                      const DisplayOptions &displayOptions,
-                      const FilterOptions &filterOptions);
+    bool copyKey(CSwordKey const * const key,
+                 Format const format,
+                 bool const addText);
 
-        bool printKey(const CSwordModuleInfo *module,
-                      const QString &startKey,
-                      const QString &stopKey,
-                      const DisplayOptions &displayOptions,
-                      const FilterOptions &filterOptions);
+    bool copyKeyList(sword::ListKey const & list,
+                     CSwordModuleInfo const * const module,
+                     Format const format,
+                     bool const addText);
 
-        /**
-          Prints a key using the hyperlink created by CReferenceManager.
-        */
-        bool printByHyperlink(const QString &hyperlink,
-                              const DisplayOptions &displayOptions,
-                              const FilterOptions &filterOptions);
+    bool copyKeyList(QList<CSwordKey *> const & list,
+                     Format const format,
+                     bool const addText);
 
-        bool printKeyList(const sword::ListKey &list,
-                          const CSwordModuleInfo *module,
-                          const DisplayOptions &displayOptions,
-                          const FilterOptions &filterOptions);
+    bool printKey(CSwordKey const * const key,
+                  DisplayOptions const & displayOptions,
+                  FilterOptions const & filterOptions);
 
-        bool printKeyList(const QStringList &list,
-                          const CSwordModuleInfo *module,
-                          const DisplayOptions &displayOptions,
-                          const FilterOptions &filterOptions);
+    bool printKey(CSwordModuleInfo const * const module,
+                  QString const & startKey,
+                  QString const & stopKey,
+                  DisplayOptions const & displayOptions,
+                  FilterOptions const & filterOptions);
 
-    protected: // Protected methods
-        /**
-        * Returns the string for the filedialogs to show the correct files.
-        */
-        const QString filterString( const Format format );
-        /**
-        * Returns a filename to save a file.
-        */
-        const QString getSaveFileName(const Format format);
+    /**
+      \brief Prints a key using the hyperlink created by CReferenceManager.
+    */
+    bool printByHyperlink(QString const & hyperlink,
+                          DisplayOptions const & displayOptions,
+                          FilterOptions const & filterOptions);
 
-    private: /* Methods: */
+    bool printKeyList(sword::ListKey const & list,
+                      CSwordModuleInfo const * const module,
+                      DisplayOptions const & displayOptions,
+                      FilterOptions const & filterOptions);
 
-        std::unique_ptr<Rendering::CTextRendering> newRenderer(
-                Format const format,
-                bool const addText);
+    bool printKeyList(QStringList const & list,
+                      CSwordModuleInfo const * const module,
+                      DisplayOptions const & displayOptions,
+                      FilterOptions const & filterOptions);
 
-        /**
-        * Returns the CSS string used in HTML pages.
-        */
-        void setProgressRange( const int item );
+protected: /* Methods: */
 
-        /**
-        * Increments the progress by one item.
-        */
-        inline void incProgress();
+    /** \returns the string for the filedialogs to show the correct files.*/
+    const QString filterString(Format const format);
 
-        bool progressWasCancelled();
+    /** \returns a filename to save a file. */
+    const QString getSaveFileName(Format const format);
 
-        /**
-        * Closes the progress dialog immediately.
-        */
-        void closeProgressDialog();
+private: /* Methods: */
 
-    private:
+    std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format,
+                                                           bool const addText);
 
-        FilterOptions m_filterOptions;
-        DisplayOptions m_displayOptions;
+    /** \returns the CSS string used in HTML pages. */
+    void setProgressRange(int const items);
 
-        QProgressDialog* m_progressDialog;
+    /** \brief Increments the progress by one item. */
+    void incProgress();
+
+    bool progressWasCancelled();
+
+    /** \brief Closes the progress dialog immediately. */
+    void closeProgressDialog();
+
+private: /* Fields: */
+
+    FilterOptions m_filterOptions;
+    DisplayOptions m_displayOptions;
+
+    QProgressDialog * m_progressDialog;
+
 };
 
 #endif

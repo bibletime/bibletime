@@ -34,18 +34,29 @@
 using namespace Rendering;
 using namespace Printing;
 
-typedef CTextRendering::KeyTreeItem KTI;
+using KTI = CTextRendering::KeyTreeItem;
 
-CExportManager::CExportManager(const bool showProgress,
-                               const QString &progressLabel,
-                               const FilterOptions &filterOptions,
-                               const DisplayOptions &displayOptions)
+
+namespace {
+
+QTextCodec * getCodec(CExportManager::Format const format) {
+    if (format == CExportManager::HTML)
+        return QTextCodec::codecForName("UTF-8");
+    return QTextCodec::codecForLocale();
+}
+
+} // anonymous namespace
+
+CExportManager::CExportManager(bool const showProgress,
+                               QString const & progressLabel,
+                               FilterOptions const & filterOptions,
+                               DisplayOptions const & displayOptions)
 {
     m_filterOptions = filterOptions;
     m_displayOptions = displayOptions;
 
     if (showProgress) {
-        m_progressDialog = new QProgressDialog(nullptr, Qt::Dialog);
+        m_progressDialog = new QProgressDialog{nullptr, Qt::Dialog};
         m_progressDialog->setWindowTitle("BibleTime");
         m_progressDialog->setLabelText(progressLabel);
     } else {
@@ -57,52 +68,47 @@ CExportManager::~CExportManager() {
     delete m_progressDialog;
 }
 
-bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool addText) {
-    if (!key) {
+bool CExportManager::saveKey(CSwordKey const * const key,
+                             Format const format,
+                             bool const addText)
+{
+    if (!key || !key->module())
         return false;
-    }
-    if (!key->module()) {
+    QString const filename = getSaveFileName(format);
+    if (filename.isEmpty())
         return false;
-    }
-    const QString filename = getSaveFileName(format);
-    if (filename.isEmpty()) {
-        return false;
-    }
-
 
     QString text;
-
     {
         BtConstModuleList modules;
         modules.append(key->module());
-        CSwordVerseKey * const vk = dynamic_cast<CSwordVerseKey*>(key);
+        CSwordVerseKey const * const vk =
+                dynamic_cast<CSwordVerseKey const *>(key);
         auto const render = newRenderer(format, addText);
         if (vk && vk->isBoundSet()) {
-            text = render->renderKeyRange( QString::fromUtf8(vk->getLowerBound()), QString::fromUtf8(vk->getUpperBound()), modules );
+            text = render->renderKeyRange(
+                        QString::fromUtf8(vk->getLowerBound()),
+                        QString::fromUtf8(vk->getUpperBound()),
+                        modules);
         } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
         }
     }
-
-    util::tool::savePlainFile(filename, text, false,
-                              (format == HTML)
-                              ? QTextCodec::codecForName("UTF-8")
-                              : QTextCodec::codecForLocale());
+    util::tool::savePlainFile(filename, text, false, getCodec(format));
     return true;
 }
 
-bool CExportManager::saveKeyList(const sword::ListKey & l,
-                                 const CSwordModuleInfo *module,
-                                 Format format,
-                                 bool addText)
+bool CExportManager::saveKeyList(sword::ListKey const & l,
+                                 CSwordModuleInfo const * module,
+                                 Format const format,
+                                 bool const addText)
 {
     if (!l.getCount())
         return false;
 
-    const QString filename = getSaveFileName(format);
-    if (filename.isEmpty()) {
+    QString const filename = getSaveFileName(format);
+    if (filename.isEmpty())
         return false;
-    }
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
@@ -112,61 +118,63 @@ bool CExportManager::saveKeyList(const sword::ListKey & l,
 
     sword::ListKey list(l);
     list.setPosition(sword::TOP);
-    while (!list.popError() && !progressWasCancelled()) {
+    while (!list.popError()) {
+        if (progressWasCancelled())
+            return false;
         tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
                             module,
                             itemSettings));
         incProgress();
-
         list.increment();
     }
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
-
-    if (!progressWasCancelled()) {
-        util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
-        closeProgressDialog();
-        return true;
-    }
-    return false;
+    util::tool::savePlainFile(filename, text, false, getCodec(format));
+    closeProgressDialog();
+    return true;
 }
 
-bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
-                                 Format format,
-                                 bool addText)
+bool CExportManager::saveKeyList(QList<CSwordKey *> const & list,
+                                 Format const format,
+                                 bool const addText)
 {
-    if (!list.count())
+    if (list.empty())
         return false;
 
     const QString filename = getSaveFileName(format);
-    if (filename.isEmpty()) {
+    if (filename.isEmpty())
         return false;
-    }
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    setProgressRange(list.count());
     KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
-    QListIterator<CSwordKey*> it(list);
-    while (it.hasNext() && !progressWasCancelled()) {
-        CSwordKey* k = it.next();
+    setProgressRange(list.count());
+    for (CSwordKey const * const k : list) {
+        if (progressWasCancelled())
+            return false;
         tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
-
-    if (!progressWasCancelled()) {
-        util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
-        closeProgressDialog();
-        return true;
-    }
-    return false;
+    util::tool::savePlainFile(filename, text, false, getCodec(format));
+    closeProgressDialog();
+    return true;
 }
 
-bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool addText) {
+namespace {
+
+template <typename Arg> inline void copyToClipboard(Arg && arg)
+{ QApplication::clipboard()->setText(std::forward<Arg>(arg)); }
+
+} // anonymous namespace
+
+bool CExportManager::copyKey(CSwordKey const * const key,
+                             Format const format,
+                             bool const addText)
+{
     if (!key || !key->module())
         return false;
 
@@ -176,7 +184,8 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
 
     {
         auto const render = newRenderer(format, addText);
-        CSwordVerseKey * const vk = dynamic_cast<CSwordVerseKey *>(key);
+        CSwordVerseKey const * const vk =
+                dynamic_cast<CSwordVerseKey const *>(key);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange(
                        QString::fromUtf8(vk->getLowerBound()),
@@ -188,14 +197,14 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
         }
     }
 
-    QApplication::clipboard()->setText(text);
+    copyToClipboard(text);
     return true;
 }
 
-bool CExportManager::copyKeyList(const sword::ListKey &l,
-                                 const CSwordModuleInfo *module,
-                                 Format format,
-                                 bool addText)
+bool CExportManager::copyKeyList(sword::ListKey const & l,
+                                 CSwordModuleInfo const * const module,
+                                 Format const format,
+                                 bool const addText)
 {
     sword::ListKey list = l;
     if (!list.getCount())
@@ -206,235 +215,215 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
     itemSettings.highlight = false;
 
     list.setPosition(sword::TOP);
-    while (!list.popError() && !progressWasCancelled()) {
+    while (!list.popError()) {
+        if (progressWasCancelled())
+            return false;
         tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
                             module,
                             itemSettings));
-
         list.increment();
     }
 
-    QApplication::clipboard()->setText(
-            newRenderer(format, addText)->renderKeyTree(tree));
+    copyToClipboard(newRenderer(format, addText)->renderKeyTree(tree));
+    closeProgressDialog();
     return true;
 }
 
 
-bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
-                                 Format format,
-                                 bool addText)
+bool CExportManager::copyKeyList(QList<CSwordKey *> const & list,
+                                 Format const format,
+                                 bool const addText)
 {
-    if (!list.count())
+    if (list.empty())
         return false;
 
-
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-
     KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
-    QListIterator<CSwordKey*> it(list);
-    while (it.hasNext() && !progressWasCancelled()) {
-        CSwordKey * const k = it.next();
+    setProgressRange(list.count());
+    for (CSwordKey const * const k : list) {
+        if (progressWasCancelled())
+            return false;
         tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
-    QApplication::clipboard()->setText(
-            newRenderer(format, addText)->renderKeyTree(tree));
-    if (!progressWasCancelled())
-        closeProgressDialog();
+    copyToClipboard(newRenderer(format, addText)->renderKeyTree(tree));
+    closeProgressDialog();
     return true;
 }
 
-bool CExportManager::printKeyList(const sword::ListKey & list,
-                                  const CSwordModuleInfo *module,
-                                  const DisplayOptions &displayOptions,
-                                  const FilterOptions &filterOptions)
+namespace {
+
+struct PrintSettings: CPrinter::KeyTreeItem::Settings {
+
+    PrintSettings(DisplayOptions const & displayOptions)
+        : CPrinter::KeyTreeItem::Settings{
+            false,
+            displayOptions.verseNumbers ? Settings::SimpleKey : Settings::NoKey}
+    {}
+
+};
+
+} // anonymous namespace
+
+bool CExportManager::printKey(CSwordKey const * const key,
+                              DisplayOptions const & displayOptions,
+                              FilterOptions const & filterOptions)
 {
-    CPrinter::KeyTreeItem::Settings settings;
+    PrintSettings settings{displayOptions};
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-
-    setProgressRange(list.getCount());
-    for (int i=0; i< list.getCount(); i++) {
-        const sword::SWKey* swKey = list.getElement(i);
-        const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
-        if (vKey != nullptr) {
-            QString startKey = vKey->getText();
-            tree.append(new KTI(startKey, startKey, module, settings));
-        }
-        else {
-            QString key = swKey->getText();
-            tree.append(new KTI(key, key, module, settings));
-        }
-        incProgress();
-        if (progressWasCancelled())
-            break;
-    }
-
-
-    if (!progressWasCancelled()) {
-        CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
-        printer->printKeyTree(tree);
-        delete printer;
-        closeProgressDialog();
-        return true;
-    }
-
-    return false;
+    tree.append(new CPrinter::KeyTreeItem(key->key(), key->module(), settings));
+    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    return true;
 }
 
-bool CExportManager::printKey(const CSwordModuleInfo *module,
-                              const QString &startKey,
-                              const QString &stopKey,
-                              const DisplayOptions &displayOptions,
-                              const FilterOptions &filterOptions)
+bool CExportManager::printKey(CSwordModuleInfo const * const module,
+                              QString const & startKey,
+                              QString const & stopKey,
+                              DisplayOptions const & displayOptions,
+                              FilterOptions const & filterOptions)
 {
-    CPrinter::KeyTreeItem::Settings settings;
-    settings.keyRenderingFace =
-        displayOptions.verseNumbers
-        ? CPrinter::KeyTreeItem::Settings::SimpleKey
-        : CPrinter::KeyTreeItem::Settings::NoKey;
-
+    PrintSettings settings{displayOptions};
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     if (startKey != stopKey) {
-        tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
+        tree.append(new CPrinter::KeyTreeItem(startKey, stopKey, module, settings));
+    } else {
+        tree.append(new CPrinter::KeyTreeItem(startKey, module, settings));
     }
-    else {
-        tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
-    }
-
-    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
-    printer->printKeyTree(tree);
-    delete printer;
+    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
-bool CExportManager::printKey(const CSwordKey *key,
-                              const DisplayOptions &displayOptions,
-                              const FilterOptions &filterOptions)
-{
-    CPrinter::KeyTreeItem::Settings settings;
-    settings.keyRenderingFace =
-        displayOptions.verseNumbers
-        ? CPrinter::KeyTreeItem::Settings::SimpleKey
-        : CPrinter::KeyTreeItem::Settings::NoKey;
-
-    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    tree.append( new CPrinter::KeyTreeItem(key->key(), key->module(), settings) );
-
-    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
-    printer->printKeyTree(tree);
-    delete printer;
-    return true;
-}
-
-bool CExportManager::printByHyperlink(const QString &hyperlink,
-                                      const DisplayOptions &displayOptions,
-                                      const FilterOptions &filterOptions)
+bool CExportManager::printByHyperlink(QString const & hyperlink,
+                                      DisplayOptions const & displayOptions,
+                                      FilterOptions const & filterOptions)
 {
     QString moduleName;
     QString keyName;
     ReferenceManager::Type type;
-
     ReferenceManager::decodeHyperlink(hyperlink, moduleName, keyName, type);
-    if (moduleName.isEmpty()) {
+    if (moduleName.isEmpty())
         moduleName = ReferenceManager::preferredModule(type);
-    }
 
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    CPrinter::KeyTreeItem::Settings settings;
-    settings.keyRenderingFace =
-        displayOptions.verseNumbers
-        ? CPrinter::KeyTreeItem::Settings::SimpleKey
-        : CPrinter::KeyTreeItem::Settings::NoKey;
-
-    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    PrintSettings settings{displayOptions};
+    CSwordModuleInfo const * module =
+            CSwordBackend::instance()->findModuleByName(moduleName);
     Q_ASSERT(module);
+    //check if we have a range of entries or a single one
+    if ((module->type() == CSwordModuleInfo::Bible)
+        || (module->type() == CSwordModuleInfo::Commentary))
+    {
+        sword::ListKey const verses =
+                sword::VerseKey().parseVerseList(
+                        keyName.toUtf8().constData(),
+                        "Genesis 1:1",
+                        true);
 
-    if (module) {
-        //check if we have a range of entries or a single one
-        if ((module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary)) {
-            sword::ListKey const verses =
-                    sword::VerseKey().parseVerseList(
-                            keyName.toUtf8().constData(),
-                            "Genesis 1:1",
-                            true);
-
-            for (int i = 0; i < verses.getCount(); i++) {
-                if (sword::VerseKey const * const element =
+        for (int i = 0; i < verses.getCount(); i++) {
+            if (sword::VerseKey const * const element =
                     dynamic_cast<sword::VerseKey const *>(verses.getElement(i)))
-                {
-                    const QString startKey = QString::fromUtf8(element->getLowerBound().getText());
-                    const QString stopKey =  QString::fromUtf8(element->getUpperBound().getText());
-
-                    tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
-                }
-                else if (verses.getElement(i)) {
-                    const QString key =  QString::fromUtf8(verses.getElement(i)->getText());
-
-                    tree.append( new CPrinter::KeyTreeItem(key, module, settings) );
-                }
+            {
+                tree.append(
+                        new CPrinter::KeyTreeItem(
+                                QString::fromUtf8(
+                                        element->getLowerBound().getText()),
+                                QString::fromUtf8(
+                                        element->getUpperBound().getText()),
+                                module,
+                                settings) );
+            } else if (verses.getElement(i)) {
+                tree.append(
+                        new CPrinter::KeyTreeItem(
+                            QString::fromUtf8(verses.getElement(i)->getText()),
+                            module,
+                            settings) );
             }
         }
-        else {
-            tree.append( new CPrinter::KeyTreeItem(keyName, module, settings) );
-        }
+    } else {
+        tree.append(new CPrinter::KeyTreeItem(keyName, module, settings));
     }
-
-    CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
-    printer->printKeyTree(tree);
-    delete printer;
+    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
-bool CExportManager::printKeyList(const QStringList &list,
-                                  const CSwordModuleInfo *module,
-                                  const DisplayOptions &displayOptions,
-                                  const FilterOptions &filterOptions)
+bool CExportManager::printKeyList(sword::ListKey const & list,
+                                  CSwordModuleInfo const * const module,
+                                  DisplayOptions const & displayOptions,
+                                  FilterOptions const & filterOptions)
 {
-    CPrinter::KeyTreeItem::Settings settings;
-    settings.keyRenderingFace =
-        displayOptions.verseNumbers
-        ? CPrinter::KeyTreeItem::Settings::SimpleKey
-        : CPrinter::KeyTreeItem::Settings::NoKey;
-
+    if (!list.getCount())
+        return false;
+    PrintSettings settings{displayOptions};
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    setProgressRange(list.count());
 
-    const QStringList::const_iterator end = list.constEnd();
-    for (QStringList::const_iterator it = list.constBegin(); (it != end) && !progressWasCancelled(); ++it) {
-        tree.append( new CPrinter::KeyTreeItem(*it, module, settings) );
+    setProgressRange(list.getCount());
+    for (int i = 0; i < list.getCount(); i++) {
+        if (progressWasCancelled())
+            return false;
+        sword::SWKey const * const swKey = list.getElement(i);
+        if (sword::VerseKey const * const vKey =
+                    dynamic_cast<const sword::VerseKey*>(swKey))
+        {
+            QString const startKey = vKey->getText();
+            tree.append(new KTI(startKey, startKey, module, settings));
+        } else {
+            QString const key = swKey->getText();
+            tree.append(new KTI(key, key, module, settings));
+        }
         incProgress();
     }
+    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    closeProgressDialog();
+    return true;
+}
 
+bool CExportManager::printKeyList(QStringList const & list,
+                                  CSwordModuleInfo const * const module,
+                                  DisplayOptions const & displayOptions,
+                                  FilterOptions const & filterOptions)
+{
+    if (list.empty())
+        return false;
 
-    if (!progressWasCancelled()) {
-        CPrinter * printer = new CPrinter(nullptr, displayOptions, filterOptions);
-        printer->printKeyTree(tree);
-        delete printer;
-        closeProgressDialog();
-        return true;
+    PrintSettings settings{displayOptions};
+    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+
+    setProgressRange(list.count());
+    for (QString const & key: list) {
+        if (progressWasCancelled())
+            return false;
+        tree.append(new CPrinter::KeyTreeItem(key, module, settings));
+        incProgress();
     }
-
-    return false;
+    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    closeProgressDialog();
+    return true;
 }
 
 /** Returns the string for the filedialogs to show the correct files. */
 const QString CExportManager::filterString( const Format format ) {
+    QString const allFiles = QObject::tr("All files") + QString(" (*.*)");
     switch (format) {
         case HTML:
-            return QObject::tr("HTML files") + QString(" (*.html *.htm);;") + QObject::tr("All files") + QString(" (*.*)");
+            return allFiles + QObject::tr("HTML files")
+                            + QString(" (*.html *.htm);;");
         case Text:
-            return QObject::tr("Text files") + QString(" (*.txt);;") + QObject::tr("All files") + QString(" (*.*)");
+            return allFiles + QObject::tr("Text files") + QString(" (*.txt);;");
         default:
-            return QObject::tr("All files") + QString(" (*.*)");
+            return allFiles;
     }
 }
 
 /** Returns a filename to save a file. */
 const QString CExportManager::getSaveFileName(const Format format) {
-    return QFileDialog::getSaveFileName(nullptr, QObject::tr("Save file"), "", filterString(format), nullptr);
+    return QFileDialog::getSaveFileName(nullptr,
+                                        QObject::tr("Save file"),
+                                        "",
+                                        filterString(format),
+                                        nullptr);
 }
 
 std::unique_ptr<CTextRendering> CExportManager::newRenderer(Format const format,
@@ -459,7 +448,7 @@ std::unique_ptr<CTextRendering> CExportManager::newRenderer(Format const format,
                                            filterOptions)};
 }
 
-void CExportManager::setProgressRange( const int items ) {
+void CExportManager::setProgressRange(int const items) {
     if (!m_progressDialog)
         return;
 
@@ -478,10 +467,7 @@ void CExportManager::incProgress() {
 }
 
 bool CExportManager::progressWasCancelled() {
-    if (m_progressDialog)
-        return m_progressDialog->wasCanceled();
-
-    return false;
+    return m_progressDialog ? m_progressDialog->wasCanceled() : false;
 }
 
 /** Closes the progress dialog immediatly. */
@@ -490,6 +476,5 @@ void CExportManager::closeProgressDialog() {
         m_progressDialog->close();
         m_progressDialog->reset();
     }
-
     qApp->processEvents(); //do not lock the GUI!
 }
