@@ -20,9 +20,6 @@
 #include "backend/cswordmodulesearch.h"
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 
-// Sword includes
-#include <listkey.h>
-
 
 class CSwordModuleInfo;
 

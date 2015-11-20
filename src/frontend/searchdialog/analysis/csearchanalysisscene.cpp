@@ -20,6 +20,9 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/tool.h"
 
+// Sword includes
+#include <listkey.h>
+
 
 namespace Search {
 
