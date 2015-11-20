@@ -15,10 +15,10 @@
 #include <QDialog>
 
 class QDialogButtonBox;
+class QLabel;
 class QTabWidget;
 class QUrl;
 class QWebView;
-class QLabel;
 
 class BtAboutDialog: public QDialog {
         Q_OBJECT
