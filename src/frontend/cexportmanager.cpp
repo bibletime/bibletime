@@ -79,8 +79,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
         auto const render = newRenderer(format, addText);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange( QString::fromUtf8(vk->getLowerBound()), QString::fromUtf8(vk->getUpperBound()), modules );
-        }
-        else { //no range supported
+        } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
         }
     }
@@ -177,15 +176,14 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
 
     {
         auto const render = newRenderer(format, addText);
-        CSwordVerseKey * vk = dynamic_cast<CSwordVerseKey *>(key);
+        CSwordVerseKey * const vk = dynamic_cast<CSwordVerseKey *>(key);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange(
                        QString::fromUtf8(vk->getLowerBound()),
                        QString::fromUtf8(vk->getUpperBound()),
                        modules
                    );
-        }
-        else { // no range supported
+        } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
         }
     }
@@ -237,16 +235,15 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
 
     QListIterator<CSwordKey*> it(list);
     while (it.hasNext() && !progressWasCancelled()) {
-        CSwordKey* k = it.next();
+        CSwordKey * const k = it.next();
         tree.append(new KTI(k->key(), k->module(), itemSettings));
         incProgress();
     };
 
     QApplication::clipboard()->setText(
             newRenderer(format, addText)->renderKeyTree(tree));
-    if (!progressWasCancelled()) {
+    if (!progressWasCancelled())
         closeProgressDialog();
-    }
     return true;
 }
 
