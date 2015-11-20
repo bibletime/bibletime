@@ -12,6 +12,7 @@
 #ifndef CEXPORTMANAGER_H
 #define CEXPORTMANAGER_H
 
+#include <memory>
 #include <QList>
 #include <QString>
 #include "backend/btglobal.h"
@@ -105,8 +106,9 @@ class CExportManager {
 
     private: /* Methods: */
 
-        Rendering::CTextRendering * newRenderer(const Format format,
-                                                bool addText);
+        std::unique_ptr<Rendering::CTextRendering> newRenderer(
+                Format const format,
+                bool const addText);
 
         /**
         * Returns the CSS string used in HTML pages.

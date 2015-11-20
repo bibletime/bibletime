@@ -69,21 +69,21 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
         return false;
     }
 
-    CTextRendering * render = newRenderer(format, addText);
 
     QString text;
 
-    BtConstModuleList modules;
-    modules.append(key->module());
-
-    CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
-    if (vk && vk->isBoundSet()) {
-        text = render->renderKeyRange( QString::fromUtf8(vk->getLowerBound()), QString::fromUtf8(vk->getUpperBound()), modules );
+    {
+        BtConstModuleList modules;
+        modules.append(key->module());
+        CSwordVerseKey * const vk = dynamic_cast<CSwordVerseKey*>(key);
+        auto const render = newRenderer(format, addText);
+        if (vk && vk->isBoundSet()) {
+            text = render->renderKeyRange( QString::fromUtf8(vk->getLowerBound()), QString::fromUtf8(vk->getUpperBound()), modules );
+        }
+        else { //no range supported
+            text = render->renderSingleKey(key->key(), modules);
+        }
     }
-    else { //no range supported
-        text = render->renderSingleKey(key->key(), modules);
-    }
-    delete render;
 
     util::tool::savePlainFile(filename, text, false,
                               (format == HTML)
@@ -122,9 +122,7 @@ bool CExportManager::saveKeyList(const sword::ListKey & l,
         list.increment();
     }
 
-    CTextRendering * render = newRenderer(format, addText);
-    const QString text = render->renderKeyTree(tree);
-    delete render;
+    QString const text = newRenderer(format, addText)->renderKeyTree(tree);
 
     if (!progressWasCancelled()) {
         util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
@@ -159,9 +157,7 @@ bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
         incProgress();
     };
 
-    CTextRendering * render = newRenderer(format, addText);
-    const QString text = render->renderKeyTree(tree);
-    delete render;
+    QString const text = newRenderer(format, addText)->renderKeyTree(tree);
 
     if (!progressWasCancelled()) {
         util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
@@ -179,20 +175,20 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
     BtConstModuleList modules;
     modules.append(key->module());
 
-    CTextRendering * render = newRenderer(format, addText);
-    CSwordVerseKey * vk = dynamic_cast<CSwordVerseKey*>(key);
-    if (vk && vk->isBoundSet()) {
-        text = render->renderKeyRange(
-                   QString::fromUtf8(vk->getLowerBound()),
-                   QString::fromUtf8(vk->getUpperBound()),
-                   modules
-               );
+    {
+        auto const render = newRenderer(format, addText);
+        CSwordVerseKey * vk = dynamic_cast<CSwordVerseKey *>(key);
+        if (vk && vk->isBoundSet()) {
+            text = render->renderKeyRange(
+                       QString::fromUtf8(vk->getLowerBound()),
+                       QString::fromUtf8(vk->getUpperBound()),
+                       modules
+                   );
+        }
+        else { // no range supported
+            text = render->renderSingleKey(key->key(), modules);
+        }
     }
-    else { //no range supported
-        text = render->renderSingleKey(key->key(), modules);
-    }
-
-    delete render;
 
     QApplication::clipboard()->setText(text);
     return true;
@@ -220,10 +216,8 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
         list.increment();
     }
 
-    CTextRendering * render = newRenderer(format, addText);
-    const QString text = render->renderKeyTree(tree);
-    delete render;
-    QApplication::clipboard()->setText(text);
+    QApplication::clipboard()->setText(
+            newRenderer(format, addText)->renderKeyTree(tree));
     return true;
 }
 
@@ -248,11 +242,8 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
         incProgress();
     };
 
-    CTextRendering * render = newRenderer(format, addText);
-    const QString text = render->renderKeyTree(tree);
-    delete render;
-
-    QApplication::clipboard()->setText(text);
+    QApplication::clipboard()->setText(
+            newRenderer(format, addText)->renderKeyTree(tree));
     if (!progressWasCancelled()) {
         closeProgressDialog();
     }
@@ -449,7 +440,9 @@ const QString CExportManager::getSaveFileName(const Format format) {
     return QFileDialog::getSaveFileName(nullptr, QObject::tr("Save file"), "", filterString(format), nullptr);
 }
 
-CTextRendering * CExportManager::newRenderer(const Format format, bool addText) {
+std::unique_ptr<CTextRendering> CExportManager::newRenderer(Format const format,
+                                                            bool const addText)
+{
     FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
@@ -458,12 +451,15 @@ CTextRendering * CExportManager::newRenderer(const Format format, bool addText) 
     filterOptions.scriptureReferences = false;
     filterOptions.textualVariants = false;
 
-    if (format == HTML) {
-        return new CHTMLExportRendering(addText, m_displayOptions, filterOptions);
-    } else {
-        Q_ASSERT(format == Text);
-        return new CPlainTextExportRendering(addText, m_displayOptions, filterOptions);
-    }
+    using R = std::unique_ptr<CTextRendering>;
+    Q_ASSERT((format == Text) || (format == HTML));
+    if (format == HTML)
+        return R{new CHTMLExportRendering(addText,
+                                          m_displayOptions,
+                                          filterOptions)};
+    return R{new CPlainTextExportRendering(addText,
+                                           m_displayOptions,
+                                           filterOptions)};
 }
 
 void CExportManager::setProgressRange( const int items ) {
