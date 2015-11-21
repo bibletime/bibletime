@@ -33,7 +33,7 @@ class QPaintEvent;
 *
 * \author The BibleTime team
 */
-class CBookmarkIndex : public QTreeView {
+class CBookmarkIndex: public QTreeView {
 
     Q_OBJECT
 
@@ -59,55 +59,26 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    CBookmarkIndex(QWidget * parent = nullptr);
-    ~CBookmarkIndex() override;
-
-    void initTree();
-
-    /**
-    * Saves the bookmarks to disk
-    */
-    void saveBookmarks();
+    CBookmarkIndex(QWidget * const parent = nullptr);
 
 signals:
 
-    /**
-    * Is emitted when a module should be opened,
-    */
+    /** \brief Emitted when a module should be opened. */
     void createReadDisplayWindow(QList<CSwordModuleInfo *>, QString const &);
 
+protected: /* Methods: */
 
-protected:
-
-    /** A hack to get the modifiers. */
-    void mouseReleaseEvent(QMouseEvent * event) override;
-
-    /** Needed to paint an drag pointer arrow. */
-    void paintEvent(QPaintEvent * event) override;
-
-    /** Initialize the SIGNAL<->SLOT connections. */
-    void initConnections();
-
-    /** Returns the drag object for the current selection. */
     QMimeData * dragObject();
 
-    /**
-    * D'n'd methods are reimplementations from QTreeWidget or its ancestors.
-    * In these we handle creating, moving and copying bookmarks with d'n'd.
-    */
+    void mouseReleaseEvent(QMouseEvent * event) override;
+    void paintEvent(QPaintEvent * event) override;
     void dragEnterEvent(QDragEnterEvent * event) override;
     void dragMoveEvent(QDragMoveEvent * event) override;
     void dropEvent(QDropEvent * event) override;
     void dragLeaveEvent(QDragLeaveEvent * event) override;
-
-    /** Reimplementation from QAbstractItemView. Takes care of movable items. */
     void startDrag(Qt::DropActions supportedActions) override;
-
-    /** Handle mouse moving (mag updates) */
     void mouseMoveEvent(QMouseEvent * event) override;
-
     void leaveEvent(QEvent * event) override;
-
 
 protected slots:
 
@@ -155,25 +126,8 @@ protected slots:
 
 private: /* Methods: */
 
-    /** Initializes the view. */
-    void initView();
-
-    /** Convenience function for creating a new action. */
-    QAction * newQAction(QString const & text,
-                         QIcon const & pix,
-                         int shortcut,
-                         QObject const * receiver,
-                         char const * slot,
-                         QObject * parent);
-
-    /** A helper function for d'n'd which creates a new bookmark item when drop
-       happens. */
-    void createBookmarkFromDrop(QDropEvent * event,
-                                QModelIndex const & parentItem,
-                                int indexInParent);
-
-    /** \todo document */
-    bool enableAction(QModelIndex const & index, MenuAction type) const;
+    bool enableAction(QModelIndex const & index,
+                      MenuAction const type) const;
 
     bool hasBookmarksRecursively(QModelIndexList selected) const;
 
