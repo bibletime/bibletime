@@ -15,12 +15,13 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QWidget>
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "bibletimeapp.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cexportmanager.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
-#include "backend/config/btconfig.h"
 
 
 namespace Search {
@@ -47,12 +48,13 @@ void CSearchResultView::initView() {
     m_actions.copyMenu->setIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon());
 
     m_actions.copy.result = new QAction(tr("Reference only"), this);
-    QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyItems()) );
+    BT_CONNECT(m_actions.copy.result, SIGNAL(triggered()),
+               this,                  SLOT(copyItems()));
     m_actions.copyMenu->addAction(m_actions.copy.result);
 
     m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
-    QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()),
-                     this, SLOT(copyItemsWithText()));
+    BT_CONNECT(m_actions.copy.resultWithText, SIGNAL(triggered()),
+               this,                          SLOT(copyItemsWithText()));
     m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
 
     m_popup->addMenu(m_actions.copyMenu);
@@ -61,31 +63,35 @@ void CSearchResultView::initView() {
     m_actions.saveMenu->setIcon(CResMgr::searchdialog::result::foundItems::saveMenu::icon());
 
     m_actions.save.result = new QAction(tr("Reference only"), this);
-    QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveItems()) );
+    BT_CONNECT(m_actions.save.result, SIGNAL(triggered()),
+               this,                  SLOT(saveItems()) );
     m_actions.saveMenu->addAction(m_actions.save.result);
 
     m_actions.save.resultWithText = new QAction(tr("Reference with text"), this);
     m_actions.saveMenu->addAction(m_actions.save.resultWithText);
-    QObject::connect(m_actions.save.resultWithText, SIGNAL(triggered()), this, SLOT(saveItemsWithText()));
+    BT_CONNECT(m_actions.save.resultWithText, SIGNAL(triggered()),
+               this,                          SLOT(saveItemsWithText()));
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
     m_actions.printMenu->setIcon(CResMgr::searchdialog::result::foundItems::printMenu::icon());
 
     m_actions.print.result = new QAction(tr("Reference with text"), this);
-    QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printItems()) );
+    BT_CONNECT(m_actions.print.result, SIGNAL(triggered()),
+               this,                   SLOT(printItems()));
     m_actions.printMenu->addAction(m_actions.print.result);
     m_popup->addMenu(m_actions.printMenu);
 }
 
 /** No descriptions */
 void CSearchResultView::initConnections() {
-    //  connect(this, SIGNAL(executed(QListViewItem*)),
-    //   this, SLOT(executed(QListViewItem*)));
+    //  BT_CONNECT(this, SIGNAL(executed(QListViewItem *)),
+    //             this, SLOT(executed(QListViewItem *)));
     /// \todo are these right after porting?
     //items: current, previous
-    connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
-            this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
+    BT_CONNECT(this,
+               SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
+               this, SLOT(executed(QTreeWidgetItem *, QTreeWidgetItem *)));
 }
 
 /** Setups the list with the given module. */

@@ -10,6 +10,7 @@
 #include "bibletime.h"
 
 #include <cstdlib>
+#include <exception>
 #include <QAction>
 #include <QApplication>
 #include <QCloseEvent>
@@ -42,6 +43,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
+#include "util/btassert.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -53,7 +55,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 {
     namespace DU = util::directory;
 
-    Q_ASSERT(m_instance == nullptr);
+    BT_ASSERT(!m_instance);
     m_instance = this;
 
     QSplashScreen *splash = nullptr;
@@ -132,8 +134,7 @@ CReadWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
             return new CBookReadWindow(modules, parent);
         default:
             qFatal("unknown module type");
-            Q_ASSERT(false);
-            return nullptr;
+            std::terminate();
     }
 }
 
@@ -229,7 +230,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
             CSwordBackend *backend = CSwordBackend::instance();
             backend->reloadModules(CSwordBackend::OtherChange);
             module = backend->findModuleByName(moduleName);
-            Q_ASSERT(module != nullptr);
+            BT_ASSERT(module);
         }
 
         if (!module->isLocked()) break;

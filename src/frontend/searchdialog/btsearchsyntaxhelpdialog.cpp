@@ -14,6 +14,7 @@
 #include <QVBoxLayout>
 #include <QWebView>
 #include "frontend/messagedialog.h"
+#include "util/btconnect.h"
 
 
 namespace Search {
@@ -27,12 +28,12 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
 
     m_webView = new QWebView(this);
     m_webView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);
-    connect(m_webView, SIGNAL(linkClicked(QUrl)),
-            this,      SLOT(linkClicked(QUrl)));
+    BT_CONNECT(m_webView, SIGNAL(linkClicked(QUrl)),
+               this,      SLOT(linkClicked(QUrl)));
     l->addWidget(m_webView);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    connect(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
     l->addWidget(m_buttons);
 
     setLayout(l);

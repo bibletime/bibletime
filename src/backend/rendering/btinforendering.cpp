@@ -12,7 +12,7 @@
 #include "btinforendering.h"
 
 #include <QStringList>
-
+#include "../../util/btassert.h"
 #include "../btglobal.h"
 #include "../keys/cswordversekey.h"
 #include "../managers/cdisplaytemplatemgr.h"
@@ -33,7 +33,7 @@ public:
      : CHTMLExportRendering(true, displayOptions, filterOptions) {;}
 
     QString entryLink(const KeyTreeItem &item, const CSwordModuleInfo *module) override {
-        Q_ASSERT(module);
+        BT_ASSERT(module);
 
         QString linkText;
 
@@ -139,7 +139,7 @@ ListInfoData detectInfo(QString const &data)
 
 QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules)
 {
-    Q_ASSERT(!modules.contains(nullptr) && (modules.size() <= 1 && "not implemented"));
+    BT_ASSERT(!modules.contains(nullptr) && (modules.size() <= 1 && "not implemented"));
 
     if (list.isEmpty())
         return QString();
@@ -184,7 +184,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                     else if((*it).second.contains("HEBREW"))
                         v.prepend('H');
                     else
-                        Q_ASSERT(false && "not implemented");
+                        BT_ASSERT(false && "not implemented");
 
                     text.append(decodeStrongs(v));
                 }
@@ -193,7 +193,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                     //text.append("Not implemented yet.");
                 }
                 else
-                    Q_ASSERT(false);
+                    BT_ASSERT(false); /// \todo Why is this here?
             default:
                 continue;
         };
@@ -204,7 +204,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
 
 QString formatInfo(QString const & info, QString const & lang) {
     CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
-    Q_ASSERT(mgr != nullptr);
+    BT_ASSERT(mgr);
 
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
@@ -231,7 +231,7 @@ QString decodeAbbreviation(QString const & data) {
 
 QString decodeCrossReference(QString const & data, BtConstModuleList const & modules) {
 
-    Q_ASSERT(!data.isEmpty());
+    BT_ASSERT(!data.isEmpty());
     if (data.isEmpty())
         return QString("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
                .arg(QObject::tr("Cross references"));
@@ -268,7 +268,7 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
     if (!module && modules.size() > 0)
         module = modules.at(0);
 
-    // Q_ASSERT(module); // why? the existense of the module is tested later
+    // BT_ASSERT(module); // why? the existense of the module is tested later
     CTextRendering::KeyTreeItem::Settings settings(
         false,
         CTextRendering::KeyTreeItem::Settings::CompleteShort
@@ -280,7 +280,7 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
 
         for (int i = 0; i < refs.getCount(); i++) {
             sword::SWKey * const key = refs.getElement(i);
-            Q_ASSERT(key);
+            BT_ASSERT(key);
             sword::VerseKey * const vk = dynamic_cast<sword::VerseKey*>(key);
 
             if (vk && vk->isBoundSet()) { // render a range of keys
@@ -325,7 +325,7 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
     */
 QString decodeFootnote(QString const & data) {
     QStringList list = data.split("/");
-    Q_ASSERT(list.count() >= 3);
+    BT_ASSERT(list.count() >= 3);
     if (!list.count())
         return QString::null;
 
@@ -449,13 +449,13 @@ QString decodeMorph(QString const & data) {
         }
 
         QString text;
-        // Q_ASSERT(module);
+        // BT_ASSERT(module);
         if (module) {
             QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
 
             // skip H or G (language sign) if we have to skip it
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
-            // Q_ASSERT(isOk);
+            // BT_ASSERT(isOk);
             if (!isOk) { // try to use the other morph lexicon, because this one failed with the current morph code
                 key->setModule(btConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); /// \todo: what if the module doesn't exist?
                 key->setKey(skipFirstChar ? value.mid(1) : value);

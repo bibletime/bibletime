@@ -14,6 +14,7 @@
 
 #include <QIcon>
 #include <QString>
+#include "btassert.h"
 
 
 class BtIcons {
@@ -41,7 +42,7 @@ public: /* Methods: */
     BtIcons();
 
     static inline BtIcons & instance() { 
-        Q_ASSERT(m_instance); 
+        BT_ASSERT(m_instance);
         return *m_instance; 
     }
 

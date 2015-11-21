@@ -10,6 +10,15 @@
 *
 **********/
 
+#include <QBrush>
+#include <QColor>
+#include <QDateTime>
+#include <QGuiApplication>
+#include <QPalette>
+#include <QQuickItem>
+#include <QQmlDebuggingEnabler>
+#include <QMetaType>
+#include <QTranslator>
 #include "bibletime.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
@@ -24,17 +33,10 @@
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
-#include "util/findqmlobject.h"
-#include <QBrush>
-#include <QColor>
-#include <QDateTime>
-#include <QGuiApplication>
-#include <QPalette>
-#include <QQuickItem>
-#include <QQmlDebuggingEnabler>
-#include <QMetaType>
-#include <QTranslator>
+#include "util/btassert.h"
 #include "util/directory.h"
+#include "util/findqmlobject.h"
+
 
 btm::ViewManager* mgr = nullptr;
 btm::SessionManager* sessionMgr = nullptr;
@@ -61,7 +63,7 @@ QFont getDefaultFont() {
 
 void openBookshelfManager() {
     QQuickItem* item = btm::findQmlObject("startupBookshelfManager");
-    Q_ASSERT(item != nullptr);
+    BT_ASSERT(item);
     if (item == nullptr)
         return;
 

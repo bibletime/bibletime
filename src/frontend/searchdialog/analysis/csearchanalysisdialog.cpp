@@ -20,6 +20,7 @@
 #include "frontend/searchdialog/analysis/csearchanalysisscene.h"
 #include "frontend/searchdialog/analysis/csearchanalysisview.h"
 #include "frontend/messagedialog.h"
+#include "util/btconnect.h"
 
 
 namespace Search {
@@ -62,10 +63,9 @@ void CSearchAnalysisDialog::initView() {
     message::prepareDialogBox(m_buttonBox);
     vboxLayout->addWidget(m_buttonBox);
 
-    bool ok = QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    Q_ASSERT(ok);
-    ok = QObject::connect(m_buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(buttonClicked(QAbstractButton*)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttonBox, SIGNAL(clicked(QAbstractButton *)),
+               this, SLOT(buttonClicked(QAbstractButton *)));
 }
 
 void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button) {

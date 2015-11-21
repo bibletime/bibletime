@@ -11,6 +11,7 @@
 
 #include <memory>
 #include <QFile>
+#include "../../util/btassert.h"
 #include "../managers/cswordbackend.h"
 
 // Sword includes:
@@ -32,7 +33,7 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule & module,
 void CSwordBibleModuleInfo::initBounds() const {
     /// \todo The fields calculated by this method could be cached to disk.
 
-    Q_ASSERT(!m_boundsInitialized);
+    BT_ASSERT(!m_boundsInitialized);
 
     auto & m = module();
     const bool oldStatus = m.isSkipConsecutiveLinks();

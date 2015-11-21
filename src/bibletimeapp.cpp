@@ -16,6 +16,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
+#include "util/btassert.h"
 #include "util/bticons.h"
 
 
@@ -52,7 +53,7 @@ BibleTimeApp::~BibleTimeApp() {
 }
 
 bool BibleTimeApp::initBtConfig() {
-    Q_ASSERT(m_init);
+    BT_ASSERT(m_init);
 
     BtConfig::InitState const r = BtConfig::initBtConfig();
     if (r == BtConfig::INIT_OK)
@@ -72,7 +73,7 @@ bool BibleTimeApp::initBtConfig() {
                     QMessageBox::No) == QMessageBox::No)
             return false;
     } else {
-        Q_ASSERT(r == BtConfig::INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE);
+        BT_ASSERT(r == BtConfig::INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE);
         if (message::showWarning(
                     nullptr,
                     tr("Error loading configuration!"),
@@ -93,7 +94,7 @@ bool BibleTimeApp::initBtConfig() {
 }
 
 bool BibleTimeApp::initDisplayTemplateManager() {
-    Q_ASSERT(m_init);
+    BT_ASSERT(m_init);
 
     QString errorMessage;
     new CDisplayTemplateMgr(errorMessage);

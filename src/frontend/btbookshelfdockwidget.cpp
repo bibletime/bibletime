@@ -25,6 +25,8 @@
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -37,7 +39,7 @@ BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = nullptr;
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f)
 {
-    Q_ASSERT(m_instance == nullptr);
+    BT_ASSERT(!m_instance);
     m_instance = this;
 
     setObjectName("BookshelfDock");
@@ -81,22 +83,29 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     setWidget(m_stackedWidget);
 
     // Connect signals:
-    connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
-            this,                          SLOT(slotModuleActivated(CSwordModuleInfo*)));
-    connect(m_bookshelfWidget->treeView(), SIGNAL(moduleHovered(CSwordModuleInfo*)),
-            this,                          SIGNAL(moduleHovered(CSwordModuleInfo*)));
-    connect(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
-            this,        SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
-    connect(m_treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,        SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
-    connect(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
-            m_treeModel,                         SLOT(setCheckable(bool)));
-    connect(bookshelfModel, SIGNAL(rowsInserted(const QModelIndex&,int,int)),
-            this,           SLOT(slotModulesChanged()));
-    connect(bookshelfModel, SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
-            this,           SLOT(slotModulesChanged()));
-    connect(m_installButton,       SIGNAL(clicked()),
-            BibleTime::instance(), SLOT(slotSwordSetupDialog()));
+    BT_CONNECT(m_bookshelfWidget->treeView(),
+               SIGNAL(moduleActivated(CSwordModuleInfo *)),
+               this, SLOT(slotModuleActivated(CSwordModuleInfo *)));
+    BT_CONNECT(m_bookshelfWidget->treeView(),
+               SIGNAL(moduleHovered(CSwordModuleInfo *)),
+               this, SIGNAL(moduleHovered(CSwordModuleInfo *)));
+    BT_CONNECT(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo *, bool)),
+               this,        SLOT(slotModuleChecked(CSwordModuleInfo *, bool)));
+    BT_CONNECT(m_treeModel,
+               SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+               this,
+               SLOT(slotGroupingOrderChanged(
+                            BtBookshelfTreeModel::Grouping const &)));
+    BT_CONNECT(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
+               m_treeModel,                         SLOT(setCheckable(bool)));
+    BT_CONNECT(bookshelfModel,
+               SIGNAL(rowsInserted(QModelIndex const &, int, int)),
+               this, SLOT(slotModulesChanged()));
+    BT_CONNECT(bookshelfModel,
+               SIGNAL(rowsRemoved(QModelIndex const &, int, int)),
+               this, SLOT(slotModulesChanged()));
+    BT_CONNECT(m_installButton,       SIGNAL(clicked()),
+               BibleTime::instance(), SLOT(slotSwordSetupDialog()));
 
     retranslateUi();
 }
@@ -106,8 +115,8 @@ void BtBookshelfDockWidget::initMenus() {
 
     m_itemContextMenu = new QMenu(this);
     m_itemActionGroup = new QActionGroup(this);
-    connect(m_itemActionGroup, SIGNAL(triggered(QAction*)),
-            this,              SLOT(slotItemActionTriggered(QAction*)));
+    BT_CONNECT(m_itemActionGroup, SIGNAL(triggered(QAction *)),
+               this,              SLOT(slotItemActionTriggered(QAction *)));
 
     m_itemOpenAction = new QAction(this);
     m_itemActionGroup->addAction(m_itemOpenAction);
@@ -141,8 +150,8 @@ void BtBookshelfDockWidget::initMenus() {
     m_itemActionGroup->addAction(m_itemAboutAction);
     m_itemContextMenu->addAction(m_itemAboutAction);
 
-    connect(m_itemContextMenu, SIGNAL(aboutToShow()),
-            this,              SLOT(slotPrepareItemContextMenu()));
+    BT_CONNECT(m_itemContextMenu, SIGNAL(aboutToShow()),
+               this,              SLOT(slotPrepareItemContextMenu()));
 }
 
 void BtBookshelfDockWidget::retranslateUi() {
@@ -180,7 +189,7 @@ void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
         if (BibleTime::moduleUnlock(module)) {
             // Re-initialize module pointer:
             module = CSwordBackend::instance()->findModuleByName(moduleName);
-            Q_ASSERT(module != nullptr);
+            BT_ASSERT(module);
 
             emit moduleOpenTriggered(module);
         }

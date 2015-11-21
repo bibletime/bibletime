@@ -13,6 +13,8 @@
 #include "frontend/btbookshelfgroupingmenu.h"
 
 #include "bibletimeapp.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -26,11 +28,11 @@ BtBookshelfTreeModel::Grouping groupingLang(true);
 BtBookshelfTreeModel::Grouping groupingLangCat(true);
 
 inline void initializeGroups() {
-    Q_ASSERT(groupingNone.empty());
+    BT_ASSERT(groupingNone.empty());
     groupingCat.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    Q_ASSERT(groupingCatLang.size() == 2);
-    Q_ASSERT(groupingCatLang.at(0) == BtBookshelfTreeModel::GROUP_CATEGORY);
-    Q_ASSERT(groupingCatLang.at(1) == BtBookshelfTreeModel::GROUP_LANGUAGE);
+    BT_ASSERT(groupingCatLang.size() == 2);
+    BT_ASSERT(groupingCatLang.at(0) == BtBookshelfTreeModel::GROUP_CATEGORY);
+    BT_ASSERT(groupingCatLang.at(1) == BtBookshelfTreeModel::GROUP_LANGUAGE);
     groupingLang.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
     groupingLangCat.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
     groupingLangCat.append(BtBookshelfTreeModel::GROUP_CATEGORY);
@@ -58,8 +60,8 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
 
     m_groupingActionGroup = new QActionGroup(this);
     m_groupingActionGroup->setExclusive(true);
-    connect(m_groupingActionGroup, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotGroupingActionTriggered(QAction*)));
+    BT_CONNECT(m_groupingActionGroup, SIGNAL(triggered(QAction *)),
+               this, SLOT(slotGroupingActionTriggered(QAction *)));
 
     m_groupingCatLangAction = new QAction(this);
     m_groupingCatLangAction->setCheckable(true);

@@ -13,6 +13,7 @@
 #include <QPrinter>
 #include <QWebFrame>
 #include <QWebPage>
+#include "../util/btassert.h"
 #include "config/btconfig.h"
 #include "keys/cswordversekey.h"
 #include "managers/cdisplaytemplatemgr.h"
@@ -51,7 +52,7 @@ void BtPrinter::printKeyTree(KeyTree const & tree) {
 QString BtPrinter::entryLink(KeyTreeItem const & item,
                              CSwordModuleInfo const * module)
 {
-    Q_ASSERT(module);
+    BT_ASSERT(module);
     if (module->type() != CSwordModuleInfo::Bible)
         return item.key();
 
@@ -75,7 +76,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
 
 QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
     Q_UNUSED(key);
-    Q_ASSERT(dynamic_cast<BtPrinter::KeyTreeItem const *>(&i));
+    BT_ASSERT(dynamic_cast<BtPrinter::KeyTreeItem const *>(&i));
     BtPrinter::KeyTreeItem const * const printItem =
             static_cast<BtPrinter::KeyTreeItem const *>(&i);
 
@@ -95,10 +96,10 @@ QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
 
 QString BtPrinter::finishText(QString const & text, KeyTree const & tree) {
     BtConstModuleList const modules = collectModules(tree);
-    Q_ASSERT(!modules.empty());
+    BT_ASSERT(!modules.empty());
 
     CLanguageMgr::Language const * const lang = modules.first()->language();
-    Q_ASSERT(lang);
+    BT_ASSERT(lang);
 
     CDisplayTemplateMgr::Settings settings;
     //settings.modules = modules;

@@ -22,6 +22,7 @@
 #include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btmoduleindexdialog.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -65,12 +66,13 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     m_deleteButton->setIcon(CResMgr::bookshelfmgr::indexpage::icon_delete());
 
     // connect our signals/slots
-    connect(m_createButton, SIGNAL(clicked()),
-            this,           SLOT(createIndices()));
-    connect(m_deleteButton, SIGNAL(clicked()),
-            this,           SLOT(deleteIndices()));
-    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-            this,                      SLOT(slotSwordSetupChanged()));
+    BT_CONNECT(m_createButton, SIGNAL(clicked()),
+               this,           SLOT(createIndices()));
+    BT_CONNECT(m_deleteButton, SIGNAL(clicked()),
+               this,           SLOT(deleteIndices()));
+    BT_CONNECT(CSwordBackend::instance(),
+               SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+               this, SLOT(slotSwordSetupChanged()));
 
     retranslateUi(); // also calls populateModuleList();
 }

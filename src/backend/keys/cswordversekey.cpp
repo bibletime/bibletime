@@ -11,7 +11,7 @@
 
 #include <QDebug>
 #include <QStringList>
-
+#include "../../util/btassert.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../drivers/cswordcommentarymoduleinfo.h"
 
@@ -51,9 +51,9 @@ CSwordKey* CSwordVerseKey::copy() const {
 
 /** Sets the module for this key */
 void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
-    Q_ASSERT(newModule);
+    BT_ASSERT(newModule);
     if (m_module == newModule) return;
-    Q_ASSERT(newModule->type() == CSwordModuleInfo::Bible ||
+    BT_ASSERT(newModule->type() == CSwordModuleInfo::Bible ||
              newModule->type() == CSwordModuleInfo::Commentary);
 
     CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);

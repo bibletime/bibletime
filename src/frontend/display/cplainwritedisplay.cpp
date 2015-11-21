@@ -14,12 +14,12 @@
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QMenu>
-
 #include "backend/keys/cswordkey.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"
+#include "util/btconnect.h"
 
 
 CPlainWriteDisplay::CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent)
@@ -30,8 +30,8 @@ CPlainWriteDisplay::CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);
 
-    connect(this, SIGNAL(textChanged()),
-            connectionsProxy(), SLOT(emitTextChanged()));
+    BT_CONNECT(this, SIGNAL(textChanged()),
+               connectionsProxy(), SLOT(emitTextChanged()));
 }
 
 /** Reimplementation. */

@@ -22,6 +22,8 @@
 #include <QVBoxLayout>
 #include "backend/managers/cswordbackend.h"
 #include "backend/btinstallthread.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 BtInstallProgressDialog::BtInstallProgressDialog(const QList<CSwordModuleInfo *> & modules,
@@ -58,26 +60,26 @@ BtInstallProgressDialog::BtInstallProgressDialog(const QList<CSwordModuleInfo *>
     layout->addWidget(m_statusWidget);
     layout->addWidget(m_stopAllButton);
 
-    connect(m_stopAllButton, SIGNAL(clicked()),
-            this,            SLOT(slotStopInstall()));
+    BT_CONNECT(m_stopAllButton, SIGNAL(clicked()),
+               this,            SLOT(slotStopInstall()));
 
     m_thread = new BtInstallThread(modules, destination, this);
     // Connect the signals between the dialog, items and threads
-    connect(m_thread, SIGNAL(preparingInstall(int)),
-            this,     SLOT(slotInstallStarted(int)),
-            Qt::QueuedConnection);
-    connect(m_thread, SIGNAL(downloadStarted(int)),
-            this,     SLOT(slotDownloadStarted(int)),
-            Qt::QueuedConnection);
-    connect(m_thread, SIGNAL(statusUpdated(int, int)),
-            this,     SLOT(slotStatusUpdated(int, int)),
-            Qt::QueuedConnection);
-    connect(m_thread, SIGNAL(installCompleted(int, bool)),
-            this,     SLOT(slotOneItemCompleted(int, bool)),
-            Qt::QueuedConnection);
-    connect(m_thread, SIGNAL(finished()),
-            this,     SLOT(slotThreadFinished()),
-            Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(preparingInstall(int)),
+               this,     SLOT(slotInstallStarted(int)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(downloadStarted(int)),
+               this,     SLOT(slotDownloadStarted(int)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(statusUpdated(int, int)),
+               this,     SLOT(slotStatusUpdated(int, int)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(installCompleted(int, bool)),
+               this,     SLOT(slotOneItemCompleted(int, bool)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(finished()),
+               this,     SLOT(slotThreadFinished()),
+               Qt::QueuedConnection);
     m_thread->start();
 }
 
@@ -97,7 +99,7 @@ void BtInstallProgressDialog::slotStopInstall() {
 }
 
 void BtInstallProgressDialog::slotInstallStarted(int moduleIndex) {
-    Q_ASSERT(moduleIndex == m_nextInstallIndex);
+    BT_ASSERT(moduleIndex == m_nextInstallIndex);
     m_nextInstallIndex++;
     QTreeWidgetItem * const item = m_statusWidget->topLevelItem(moduleIndex);
     item->setText(1, tr("Preparing install..."));

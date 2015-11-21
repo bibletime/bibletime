@@ -10,6 +10,7 @@
 #include "osistohtml.h"
 
 #include <QString>
+#include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../managers/clanguagemgr.h"
@@ -272,7 +273,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 }
             }
             else { //if (tag.isEndTag()) {
-                Q_ASSERT(myUserData->noteType != UserData::Unknown);
+                BT_ASSERT(myUserData->noteType != UserData::Unknown);
 
                 if (myUserData->noteType == UserData::CrossReference) {
                     buf.append("</span> ");
@@ -540,7 +541,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, UserData *myUserData) {
     QString ref( osisRef );
     QString hrefRef( ref );
-    //Q_ASSERT(!ref.isEmpty()); checked later
+    //BT_ASSERT(!ref.isEmpty()); checked later
 
     if (!ref.isEmpty()) {
         //find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
@@ -548,14 +549,14 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
         // modulename is given, so we'll use that one
 
         CSwordModuleInfo* mod = CSwordBackend::instance()->findSwordModuleByPointer(myModule);
-        //Q_ASSERT(mod); checked later
+        //BT_ASSERT(mod); checked later
         if (!mod || (mod->type() != CSwordModuleInfo::Bible
                      && mod->type() != CSwordModuleInfo::Commentary)) {
 
             mod = btConfig().getDefaultSwordModuleByType("standardBible");
         }
 
-        // Q_ASSERT(mod); There's no necessarily a module or standard Bible
+        // BT_ASSERT(mod); There's no necessarily a module or standard Bible
 
         //if the osisRef like "GerLut:key" contains a module, use that
         int pos = ref.indexOf(":");

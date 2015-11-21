@@ -20,6 +20,7 @@
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "frontend/messagedialog.h"
+#include "util/btconnect.h"
 #include "util/tool.h"
 
 
@@ -32,16 +33,15 @@ BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags fl
     mainLayout->addWidget(m_captionLabel);
 
     m_bookshelfWidget = new BtBookshelfWidget(this);
-    connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
-            this,                          SLOT(slotModuleAbout(CSwordModuleInfo*)));
+    BT_CONNECT(m_bookshelfWidget->treeView(),
+               SIGNAL(moduleActivated(CSwordModuleInfo *)),
+               this, SLOT(slotModuleAbout(CSwordModuleInfo *)));
     mainLayout->addWidget(m_bookshelfWidget);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok,
                                        Qt::Horizontal, this);
-    connect(m_buttonBox, SIGNAL(accepted()),
-            this,        SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(rejected()),
-            this,        SLOT(reject()));
+    BT_CONNECT(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
     mainLayout->addWidget(m_buttonBox);
 
     setLayout(mainLayout);

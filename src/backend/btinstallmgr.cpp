@@ -9,6 +9,7 @@
 
 #include "btinstallmgr.h"
 
+#include "../util/btassert.h"
 #include "btinstallbackend.h"
 
 
@@ -25,8 +26,8 @@ inline T normalizeCompletionPercentage(const T value) {
 
 template <typename T>
 inline int calculateIntPercentage(T done, T total) {
-    Q_ASSERT(done >= 0);
-    Q_ASSERT(total >= 0);
+    BT_ASSERT(done >= 0);
+    BT_ASSERT(total >= 0);
 
     // Special care (see warning in BtInstallMgr::statusUpdate()).
     if (done > total)
@@ -89,7 +90,7 @@ void BtInstallMgr::preStatus(long totalBytes,
                              const char * message)
 {
     Q_UNUSED(message);
-    Q_ASSERT(completedBytes <= totalBytes);
+    BT_ASSERT(completedBytes <= totalBytes);
     if (m_firstCallOfPreStatus) {
         m_firstCallOfPreStatus = false;
         emit downloadStarted();

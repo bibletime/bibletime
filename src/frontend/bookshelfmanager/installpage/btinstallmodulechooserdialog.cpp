@@ -17,6 +17,7 @@
 #include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "frontend/btbookshelfview.h"
+#include "util/btconnect.h"
 #include "util/tool.h"
 
 
@@ -39,8 +40,11 @@ BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(const BtBookshelfTree
 
     BtInstallModuleChooserDialogModel *treeModel;
     treeModel = new BtInstallModuleChooserDialogModel(groupingOrder, this);
-    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,      SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
+    BT_CONNECT(treeModel,
+               SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+               this,
+               SLOT(slotGroupingOrderChanged(
+                            BtBookshelfTreeModel::Grouping const &)));
 
     m_bookshelfModel = new BtBookshelfModel(this);
     bookshelfWidget()->postFilterModel()->setShowShown(true);

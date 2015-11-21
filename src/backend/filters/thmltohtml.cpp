@@ -13,6 +13,7 @@
 #include <QString>
 #include <QTextCodec>
 #include <QUrl>
+#include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../managers/clanguagemgr.h"
@@ -203,7 +204,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
 {
     if (!substituteToken(buf, token) && !substituteEscapeString(buf, token)) {
         sword::XMLTag const tag(token);
-        Q_ASSERT(dynamic_cast<UserData *>(userData));
+        BT_ASSERT(dynamic_cast<UserData *>(userData));
         UserData * const myUserData = static_cast<UserData *>(userData);
         // Hack to be able to call stuff like Lang():
         sword::SWModule const * const myModule =
@@ -318,7 +319,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                     "standardBible"))
                     {
                         ;
-                        Q_ASSERT(tag.getAttribute("passage"));
+                        BT_ASSERT(tag.getAttribute("passage"));
                         QString const completeRef(
                                 ReferenceManager::parseVerseReference(
                                     QString::fromUtf8(

@@ -19,7 +19,6 @@
 #include <QRegExp>
 #include <QVBoxLayout>
 #include <QWidget>
-
 #include "backend/config/btconfig.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
@@ -29,6 +28,8 @@
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -75,7 +76,7 @@ void CSearchDialog::closeDialog() {
 }
 
 CSearchDialog* CSearchDialog::getSearchDialog() {
-    Q_ASSERT(m_staticDialog);
+    BT_ASSERT(m_staticDialog);
     return m_staticDialog;
 }
 
@@ -248,15 +249,16 @@ void CSearchDialog::showModulesSelector() {
 /** Initializes the signal slot connections */
 void CSearchDialog::initConnections() {
     // Search button is clicked
-    bool ok = connect(m_searchOptionsArea->searchButton(), SIGNAL(clicked()), this, SLOT(startSearch()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_searchOptionsArea->searchButton(), SIGNAL(clicked()),
+               this,                                SLOT(startSearch()));
     // Return/Enter is pressed in the search text field
-    ok = connect(m_searchOptionsArea, SIGNAL(sigStartSearch()), this, SLOT(startSearch()) );
-    Q_ASSERT(ok);
-    ok = connect(m_closeButton, SIGNAL(clicked()), this, SLOT(closeButtonClicked()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_searchOptionsArea, SIGNAL(sigStartSearch()),
+               this,                SLOT(startSearch()) );
+    BT_CONNECT(m_closeButton, SIGNAL(clicked()),
+               this,          SLOT(closeButtonClicked()));
 
-    connect(m_analyseButton, SIGNAL(clicked()), m_searchResultArea, SLOT(showAnalysis()));
+    BT_CONNECT(m_analyseButton, SIGNAL(clicked()),
+               m_searchResultArea, SLOT(showAnalysis()));
 
 }
 

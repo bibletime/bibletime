@@ -24,6 +24,7 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/chtmlexportrendering.h"
 #include "backend/rendering/cplaintextexportrendering.h"
+#include "util/btassert.h"
 #include "util/tool.h"
 
 // Sword includes:
@@ -310,7 +311,7 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     PrintSettings settings{displayOptions};
     CSwordModuleInfo const * module =
             CSwordBackend::instance()->findModuleByName(moduleName);
-    Q_ASSERT(module);
+    BT_ASSERT(module);
     //check if we have a range of entries or a single one
     if ((module->type() == CSwordModuleInfo::Bible)
         || (module->type() == CSwordModuleInfo::Commentary))
@@ -437,7 +438,7 @@ std::unique_ptr<CTextRendering> CExportManager::newRenderer(Format const format,
     filterOptions.textualVariants = false;
 
     using R = std::unique_ptr<CTextRendering>;
-    Q_ASSERT((format == Text) || (format == HTML));
+    BT_ASSERT((format == Text) || (format == HTML));
     if (format == HTML)
         return R{new CHTMLExportRendering(addText,
                                           m_displayOptions,

@@ -9,6 +9,7 @@
 
 #include "cchapterdisplay.h"
 
+#include "../../util/btassert.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../keys/cswordversekey.h"
 #include "cdisplayrendering.h"
@@ -22,8 +23,8 @@ const QString Rendering::CChapterDisplay::text(
 {
     using CSBMI = CSwordBibleModuleInfo;
 
-    Q_ASSERT( modules.count() >= 1 );
-    Q_ASSERT( !keyName.isEmpty() );
+    BT_ASSERT(modules.count() >= 1);
+    BT_ASSERT(!keyName.isEmpty());
 
     const CSwordModuleInfo *module = modules.first();
 
@@ -40,14 +41,14 @@ const QString Rendering::CChapterDisplay::text(
     QString endKey = startKey;
 
     //check whether there's an intro we have to include
-    Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
+    BT_ASSERT((module->type() == CSwordModuleInfo::Bible));
 
     if (module->type() == CSwordModuleInfo::Bible) {
         // HACK: enable headings for VerseKeys:
         static_cast<sword::VerseKey *>(module->module().getKey())
                 ->setIntros(true);
 
-        Q_ASSERT(dynamic_cast<const CSBMI*>(module) != nullptr);
+        BT_ASSERT(dynamic_cast<CSBMI const *>(module));
         const CSBMI *bible = static_cast<const CSBMI*>(module);
 
         CSwordVerseKey k1(module);

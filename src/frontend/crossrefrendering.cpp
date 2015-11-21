@@ -12,6 +12,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/referencemanager.h"
+#include "util/btassert.h"
 
 
 namespace InfoDisplay {
@@ -31,7 +32,7 @@ QString CrossRefRendering::finishText(const QString &text, const KeyTree &tree) 
 QString CrossRefRendering::entryLink(const KeyTreeItem &item,
                                      const CSwordModuleInfo *module)
 {
-    Q_ASSERT(module);
+    BT_ASSERT(module);
     QString linkText;
 
     const bool isBible = (module->type() == CSwordModuleInfo::Bible);

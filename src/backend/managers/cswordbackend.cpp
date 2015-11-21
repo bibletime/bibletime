@@ -102,7 +102,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
 
     for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
         sword::SWModule * const curMod = it->second;
-        Q_ASSERT(curMod);
+        BT_ASSERT(curMod);
         CSwordModuleInfo * newModule;
 
         const char * const modType = curMod->getType();

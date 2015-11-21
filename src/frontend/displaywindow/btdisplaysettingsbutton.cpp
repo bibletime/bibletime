@@ -15,6 +15,8 @@
 #include <QToolTip>
 #include <QToolButton>
 #include "bibletimeapp.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -29,8 +31,8 @@ BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
     initMenu();
     retranslateUi();
 
-    connect(m_popup, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotOptionToggled(QAction*)));
+    BT_CONNECT(m_popup, SIGNAL(triggered(QAction *)),
+               this, SLOT(slotOptionToggled(QAction *)));
 }
 
 void BtDisplaySettingsButton::setDisplayOptions(
@@ -160,7 +162,7 @@ void BtDisplaySettingsButton::slotOptionToggled(QAction *action) {
         m_filterOptions.redLetterWords = checked;
         emit sigFilterOptionsChanged(m_filterOptions);
     } else {
-        Q_ASSERT(false);
+        BT_ASSERT(false && "Shouldn't happen!");
         return;
     }
 

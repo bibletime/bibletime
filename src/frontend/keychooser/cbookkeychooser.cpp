@@ -17,6 +17,8 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/keychooser/bthistory.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 #define ID_PROPERTY_NAME "CBookKeyChooser_ID"
@@ -37,8 +39,8 @@ CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
     setKey(key);
 
     adjustFont();
-    connect(this,      SIGNAL(keyChanged(CSwordKey *)),
-            history(), SLOT(add(CSwordKey *)));
+    BT_CONNECT(this,      SIGNAL(keyChanged(CSwordKey *)),
+               history(), SLOT(add(CSwordKey *)));
 }
 
 void CBookKeyChooser::setKey(CSwordKey * newKey) {
@@ -167,8 +169,8 @@ void CBookKeyChooser::setModules(const BtConstModuleList & modules,
             w->comboBox().setMaximumWidth(maxWidth);
             w->comboBox().setCurrentIndex(0);
 
-            connect(w, SIGNAL(changed(int)),  SLOT(keyChooserChanged(int)));
-            connect(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
+            BT_CONNECT(w, SIGNAL(changed(int)),  SLOT(keyChooserChanged(int)));
+            BT_CONNECT(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
 
             m_layout->addWidget(w);
             w->setProperty(ID_PROPERTY_NAME, i+1);
@@ -182,7 +184,7 @@ void CBookKeyChooser::setModules(const BtConstModuleList & modules,
         const int count = m_chooserWidgets.count();
         for (int i = 0; i < count; i++) {
             chooser = m_chooserWidgets.at(i);
-            Q_ASSERT(chooser);
+            BT_ASSERT(chooser);
             if (chooser_prev)
                 QWidget::setTabOrder(chooser_prev, chooser);
 
@@ -241,7 +243,7 @@ void CBookKeyChooser::keyChooserChanged(int newIndex) {
                              sender()->property(ID_PROPERTY_NAME).toInt());
     for (int i = 0; i < max; i++) {
         CKeyChooserWidget * const chooser = m_chooserWidgets.at(i);
-        Q_ASSERT(chooser);
+        BT_ASSERT(chooser);
         const QString currentText = chooser->comboBox().currentText();
         if (currentText.isEmpty())
             break;

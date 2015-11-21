@@ -16,6 +16,7 @@
 #include <QMouseEvent>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "util/btconnect.h"
 
 
 BtBookshelfView::BtBookshelfView(QWidget *parent)
@@ -31,10 +32,10 @@ BtBookshelfView::BtBookshelfView(QWidget *parent)
     */
     // setRootIsDecorated(false);
 
-    connect(this, SIGNAL(activated(QModelIndex)),
-            this, SLOT(slotItemActivated(QModelIndex)));
-    connect(this, SIGNAL(entered(QModelIndex)),
-            this, SLOT(slotItemHovered(QModelIndex)));
+    BT_CONNECT(this, SIGNAL(activated(QModelIndex)),
+               this, SLOT(slotItemActivated(QModelIndex)));
+    BT_CONNECT(this, SIGNAL(entered(QModelIndex)),
+               this, SLOT(slotItemHovered(QModelIndex)));
 }
 
 CSwordModuleInfo * BtBookshelfView::getModule(const QModelIndex & index) const {

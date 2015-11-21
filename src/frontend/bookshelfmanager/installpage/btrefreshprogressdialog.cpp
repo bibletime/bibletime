@@ -3,6 +3,8 @@
 #include <QApplication>
 #include "backend/btinstallbackend.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 BtRefreshProgressDialog::BtRefreshProgressDialog(sword::InstallSource &source,
@@ -11,20 +13,20 @@ BtRefreshProgressDialog::BtRefreshProgressDialog(sword::InstallSource &source,
              : QProgressDialog(parent, flags)
              , m_source(source)
 {
-    Q_ASSERT(BtInstallBackend::isRemote(source));
+    BT_ASSERT(BtInstallBackend::isRemote(source));
     setWindowTitle(tr("Refreshing source %1").arg(QString(source.caption)));
     setCancelButtonText(tr("&Cancel"));
     setLabelText(tr("Connecting..."));
-    Q_ASSERT(minimum() == 0);
+    BT_ASSERT(minimum() == 0);
     setMaximum(100);
     setValue(0);
     setWindowModality(Qt::ApplicationModal);
     setMinimumDuration(1000);
 
-    connect(this, SIGNAL(canceled()),
-            this, SLOT(slotCanceled()));
-    connect(&m_installMgr, SIGNAL(percentCompleted(int,int)),
-            this,          SLOT(slotPercentCompleted(int,int)));
+    BT_CONNECT(this, SIGNAL(canceled()),
+               this, SLOT(slotCanceled()));
+    BT_CONNECT(&m_installMgr, SIGNAL(percentCompleted(int, int)),
+               this,          SLOT(slotPercentCompleted(int, int)));
 }
 
 void BtRefreshProgressDialog::slotPercentCompleted(int, int current) {

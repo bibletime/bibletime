@@ -10,11 +10,13 @@
 *
 **********/
 
-#include "mobile/util/findqmlobject.h"
+#include "findqmlobject.h"
+
 #include <QQuickItem>
 #include "mobile/btmmain.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
+#include "util/btassert.h"
 
 namespace btm {
 
@@ -27,7 +29,7 @@ QQuickItem* findQmlObject(const QString& objectName) {
     QQuickItem* object = nullptr;
     if (rootObject != nullptr)
         object = rootObject->findChild<QQuickItem*>(objectName);
-    Q_ASSERT(object != nullptr);
+    BT_ASSERT(object);
     return object;
 }
 

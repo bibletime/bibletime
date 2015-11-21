@@ -16,6 +16,7 @@
 
 #include <atomic>
 #include "btinstallmgr.h"
+#include "../util/btconnect.h"
 
 
 class BtInstallProgressDialog;
@@ -37,12 +38,12 @@ class BtInstallThread: public QThread {
             , m_destination(destination)
             , m_stopRequested(false)
         {
-            connect(&m_iMgr, SIGNAL(percentCompleted(int, int)),
-                    this,    SLOT(slotManagerStatusUpdated(int, int)),
-                    Qt::QueuedConnection);
-            connect(&m_iMgr, SIGNAL(downloadStarted()),
-                    this,    SLOT(slotDownloadStarted()),
-                    Qt::QueuedConnection);
+            BT_CONNECT(&m_iMgr, SIGNAL(percentCompleted(int, int)),
+                       this,    SLOT(slotManagerStatusUpdated(int, int)),
+                       Qt::QueuedConnection);
+            BT_CONNECT(&m_iMgr, SIGNAL(downloadStarted()),
+                       this,    SLOT(slotDownloadStarted()),
+                       Qt::QueuedConnection);
         }
 
         void stopInstall()

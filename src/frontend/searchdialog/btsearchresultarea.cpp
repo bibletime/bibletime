@@ -26,6 +26,8 @@
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/tool.h"
 
 
@@ -87,11 +89,11 @@ void BtSearchResultArea::initView() {
 
     QAction* selectAllAction = new QAction(QIcon(), tr("Select all"), this);
     selectAllAction->setShortcut(QKeySequence::SelectAll);
-    QObject::connect(selectAllAction, SIGNAL(triggered()), this, SLOT(selectAll()) );
+    BT_CONNECT(selectAllAction, SIGNAL(triggered()), this, SLOT(selectAll()));
 
     QAction* copyAction = new QAction(tr("Copy"), this);
     copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
-    QObject::connect(copyAction, SIGNAL(triggered()), this, SLOT(copySelection()) );
+    BT_CONNECT(copyAction, SIGNAL(triggered()), this, SLOT(copySelection()));
 
     QMenu* menu = new QMenu();
     menu->addAction(selectAllAction);
@@ -115,7 +117,7 @@ void BtSearchResultArea::setSearchResult(
     // Pre-select the first module in the list:
     m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 
-    Q_ASSERT(qobject_cast<CSearchDialog*>(parent()) != nullptr);
+    BT_ASSERT(qobject_cast<CSearchDialog *>(parent()));
     static_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(true);
 }
 
@@ -214,17 +216,23 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
 /** Initializes the signal slot conections of the child widgets, */
 void BtSearchResultArea::initConnections() {
-    connect(m_resultListBox, SIGNAL(keySelected(const QString&)), this, SLOT(updatePreview(const QString&)));
-    connect(m_resultListBox, SIGNAL(keyDeselected()), this, SLOT(clearPreview()));
-    connect(m_moduleListBox,
-            SIGNAL(moduleSelected(const CSwordModuleInfo*, const sword::ListKey&)),
-            m_resultListBox,
-            SLOT(setupTree(const CSwordModuleInfo*, const sword::ListKey&)));
-    connect(m_moduleListBox, SIGNAL(moduleChanged()), m_previewDisplay->connectionsProxy(), SLOT(clear()));
+    BT_CONNECT(m_resultListBox, SIGNAL(keySelected(QString const &)),
+               this,            SLOT(updatePreview(QString const &)));
+    BT_CONNECT(m_resultListBox, SIGNAL(keyDeselected()), this, SLOT(clearPreview()));
+    BT_CONNECT(m_moduleListBox,
+               SIGNAL(moduleSelected(CSwordModuleInfo const *,
+                                     sword::ListKey const &)),
+               m_resultListBox,
+               SLOT(setupTree(CSwordModuleInfo const *,
+                              sword::ListKey const &)));
+    BT_CONNECT(m_moduleListBox,                      SIGNAL(moduleChanged()),
+               m_previewDisplay->connectionsProxy(), SLOT(clear()));
 
     // connect the strongs list
-    connect(m_moduleListBox, SIGNAL(strongsSelected(CSwordModuleInfo*, const QStringList&)),
-            m_resultListBox, SLOT(setupStrongsTree(CSwordModuleInfo*, const QStringList&)));
+    BT_CONNECT(m_moduleListBox,
+               SIGNAL(strongsSelected(CSwordModuleInfo *, QStringList const &)),
+               m_resultListBox,
+               SLOT(setupStrongsTree(CSwordModuleInfo *, QStringList const &)));
 }
 
 /**

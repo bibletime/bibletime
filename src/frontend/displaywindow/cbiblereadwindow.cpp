@@ -25,6 +25,8 @@
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
@@ -131,104 +133,104 @@ void CBibleReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     qaction = ac->action("nextEntry");
-    Q_ASSERT(qaction != nullptr);
+    BT_ASSERT(qaction);
     qaction->setEnabled(false);
     qaction = ac->action("previousEntry");
-    Q_ASSERT(qaction != nullptr);
+    BT_ASSERT(qaction);
     qaction->setEnabled(false);
 
 
     qaction = m_actionCollection->action("nextBook");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextBook()));
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousBook");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousBook()));
     addAction(qaction);
 
     qaction = m_actionCollection->action("nextChapter");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()));
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousChapter");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("nextVerse");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousVerse");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
     addAction(qaction);
 
     m_actions.selectAll = ac->action("selectAll");
-    Q_ASSERT(m_actions.selectAll != nullptr);
+    BT_ASSERT(m_actions.selectAll);
 
     m_actions.findText = ac->action("findText");
-    Q_ASSERT(m_actions.findText != nullptr);
+    BT_ASSERT(m_actions.findText);
 
     m_actions.findStrongs = m_actionCollection->action(CResMgr::displaywindows::general::findStrongs::actionName);
-    Q_ASSERT(m_actions.findStrongs != nullptr);
+    BT_ASSERT(m_actions.findStrongs);
 
     m_actions.copy.referenceOnly = m_actionCollection->action("copyReferenceOnly");
-    Q_ASSERT(m_actions.copy.referenceOnly != nullptr);
+    BT_ASSERT(m_actions.copy.referenceOnly);
 
     m_actions.copy.referenceTextOnly = m_actionCollection->action("copyTextOfReference");
-    Q_ASSERT(m_actions.copy.referenceTextOnly != nullptr);
-    QObject::connect(m_actions.copy.referenceTextOnly,    SIGNAL(triggered()),
-                     displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()));
+    BT_ASSERT(m_actions.copy.referenceTextOnly);
+    BT_CONNECT(m_actions.copy.referenceTextOnly,    SIGNAL(triggered()),
+               displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()));
     addAction(m_actions.copy.referenceTextOnly);
 
     m_actions.copy.referenceAndText = m_actionCollection->action("copyReferenceWithText");
-    Q_ASSERT(m_actions.copy.referenceAndText != nullptr);
-    QObject::connect(m_actions.copy.referenceAndText,     SIGNAL(triggered()),
-                     displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()));
+    BT_ASSERT(m_actions.copy.referenceAndText);
+    BT_CONNECT(m_actions.copy.referenceAndText,     SIGNAL(triggered()),
+               displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()));
     addAction(m_actions.copy.referenceAndText);
 
     m_actions.copy.chapter = m_actionCollection->action("copyChapter");
-    Q_ASSERT(m_actions.copy.chapter != nullptr);
-    QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()),
-                     this,                   SLOT(copyDisplayedText()));
+    BT_ASSERT(m_actions.copy.chapter);
+    BT_CONNECT(m_actions.copy.chapter, SIGNAL(triggered()),
+               this,                   SLOT(copyDisplayedText()));
     addAction(m_actions.copy.chapter);
 
     m_actions.copy.selectedText = ac->action("copySelectedText");
-    Q_ASSERT(m_actions.copy.selectedText != nullptr);
+    BT_ASSERT(m_actions.copy.selectedText);
 
     m_actions.save.referenceAndText = m_actionCollection->action("saveReferenceWithText");
-    Q_ASSERT(m_actions.save.referenceAndText != nullptr);
-    QObject::connect(m_actions.save.referenceAndText,     SIGNAL(triggered()),
-                     displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()));
+    BT_ASSERT(m_actions.save.referenceAndText);
+    BT_CONNECT(m_actions.save.referenceAndText,     SIGNAL(triggered()),
+               displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()));
     addAction(m_actions.copy.chapter);
 
     m_actions.save.chapterAsPlain = m_actionCollection->action("saveChapterAsPlainText");
-    Q_ASSERT(m_actions.save.chapterAsPlain != nullptr);
-    QObject::connect(m_actions.save.chapterAsPlain, SIGNAL(triggered()),
-                     this,                          SLOT(saveChapterPlain()));
+    BT_ASSERT(m_actions.save.chapterAsPlain);
+    BT_CONNECT(m_actions.save.chapterAsPlain, SIGNAL(triggered()),
+               this,                          SLOT(saveChapterPlain()));
     addAction(m_actions.save.referenceAndText);
 
     m_actions.save.chapterAsHTML = m_actionCollection->action("saveChapterAsHTML");
-    Q_ASSERT(m_actions.save.chapterAsHTML != nullptr);
-    QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()),
-                     this,                         SLOT(saveChapterHTML()));
+    BT_ASSERT(m_actions.save.chapterAsHTML);
+    BT_CONNECT(m_actions.save.chapterAsHTML, SIGNAL(triggered()),
+               this,                         SLOT(saveChapterHTML()));
     addAction(m_actions.save.chapterAsHTML);
 
     m_actions.print.reference = m_actionCollection->action("printReferenceWithText");
-    Q_ASSERT(m_actions.print.reference != nullptr);
-    QObject::connect(m_actions.print.reference, SIGNAL(triggered()),
-                     this,                      SLOT(printAnchorWithText()));
+    BT_ASSERT(m_actions.print.reference);
+    BT_CONNECT(m_actions.print.reference, SIGNAL(triggered()),
+               this,                      SLOT(printAnchorWithText()));
     addAction(m_actions.print.reference);
 
     m_actions.print.chapter = m_actionCollection->action("printChapter");
-    Q_ASSERT(m_actions.print.chapter != nullptr);
-    QObject::connect(m_actions.print.chapter, SIGNAL(triggered()),
-                     this,                    SLOT(printAll()));
+    BT_ASSERT(m_actions.print.chapter);
+    BT_CONNECT(m_actions.print.chapter, SIGNAL(triggered()),
+               this,                    SLOT(printAll()));
     addAction(m_actions.print.chapter);
 
     ac->readShortcuts("Bible shortcuts");
@@ -279,7 +281,7 @@ void CBibleReadWindow::setupPopupMenu() {
     // Save raw HTML action for debugging purposes
     if (btApp->debugMode()) {
         QAction* debugAction = new QAction("Raw HTML", this);
-        QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
+        BT_CONNECT(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
         m_actions.saveMenu->addAction(debugAction);
     } // end of Save Raw HTML
     popup()->addMenu(m_actions.saveMenu);
@@ -354,7 +356,7 @@ void CBibleReadWindow::previousVerse() {
 /** wrapper around key() to return the right type of key. */
 CSwordVerseKey* CBibleReadWindow::verseKey() {
     CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
-    Q_ASSERT(k);
+    BT_ASSERT(k);
 
     return k;
 }
@@ -378,7 +380,7 @@ void CBibleReadWindow::copyDisplayedText() {
 /** Saves the chapter as valid HTML page. */
 void CBibleReadWindow::saveChapterHTML() {
     //saves the complete chapter to disk
-    Q_ASSERT(dynamic_cast<const CSwordBibleModuleInfo*>(modules().first()) != nullptr);
+    BT_ASSERT(dynamic_cast<CSwordBibleModuleInfo const *>(modules().first()));
     const CSwordBibleModuleInfo *bible = static_cast<const CSwordBibleModuleInfo*>(modules().first());
 
     CSwordVerseKey dummy(*verseKey());
@@ -431,7 +433,7 @@ void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
 bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
     const bool ret = CLexiconReadWindow::eventFilter(o, e);
 
-    //   Q_ASSERT(o->inherits("CDisplayWindow"));
+    //   BT_ASSERT(o->inherits("CDisplayWindow"));
     //   qWarning("class: %s", o->className());
     if (e && (e->type() == QEvent::FocusIn)) { //sync other windows to this active
 

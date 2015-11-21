@@ -17,6 +17,7 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/keychooser/bthistory.h"
+#include "util/btconnect.h"
 
 
 CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
@@ -45,11 +46,14 @@ CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
     m_treeView->setHeaderHidden(true);
 
     //when user selects the item whe must react
-    connect(m_treeView, SIGNAL(currentItemChanged ( QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(itemActivated(QTreeWidgetItem*)));
+    BT_CONNECT(m_treeView,
+               SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
+               SLOT(itemActivated(QTreeWidgetItem *)));
 
     setKey(key);
     adjustFont();
-    connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+    BT_CONNECT(this, SIGNAL(keyChanged(CSwordKey *)),
+               history(), SLOT(add(CSwordKey *)));
 }
 
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */

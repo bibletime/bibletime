@@ -11,6 +11,7 @@
 
 #include <cstring>
 #include <QString>
+#include "../../util/btassert.h"
 #include "../../util/macros.h"
 
 
@@ -130,7 +131,7 @@ char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
     } else if (max == 1u) {
         text[0u] = '\0';
     } else {
-        Q_ASSERT(max == 0u);
+        BT_ASSERT(max == 0u);
     }
 
     return text;
@@ -146,7 +147,7 @@ char * BtStringMgr::upperLatin1(char * text, unsigned int maxlen) const {
     } else if (max == 1u) {
         text[0u] = '\0';
     } else {
-        Q_ASSERT(max == 0u);
+        BT_ASSERT(max == 0u);
     }
 
     return text;

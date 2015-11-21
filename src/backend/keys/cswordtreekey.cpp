@@ -11,6 +11,7 @@
 
 #include <QDebug>
 #include <QTextCodec>
+#include "../../util/btassert.h"
 #include "../drivers/cswordbookmoduleinfo.h"
 
 
@@ -30,7 +31,7 @@ CSwordTreeKey* CSwordTreeKey::copy() const {
 /** Sets the key of this instance */
 QString CSwordTreeKey::key() const {
     //return getTextUnicode();
-    Q_ASSERT(m_module);
+    BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
         return QString::fromUtf8(getText());
     }
@@ -46,7 +47,7 @@ const char * CSwordTreeKey::rawKey() const {
 bool CSwordTreeKey::setKey(const QString &newKey) {
     //return key( newKey.toLocal8Bit().constData() );
     //return key(m_module->getTextCodec()->fromUnicode(newKey).constData());
-    Q_ASSERT(m_module);
+    BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
         return setKey(newKey.toUtf8().constData());
     }
@@ -56,7 +57,7 @@ bool CSwordTreeKey::setKey(const QString &newKey) {
 }
 
 bool CSwordTreeKey::setKey(const char *newKey) {
-    Q_ASSERT(newKey);
+    BT_ASSERT(newKey);
 
     if (newKey) {
         TreeKeyIdx::operator = (newKey);
@@ -71,7 +72,7 @@ bool CSwordTreeKey::setKey(const char *newKey) {
 QString CSwordTreeKey::getLocalNameUnicode() {
     //return m_module->getTextCodec()->toUnicode(getLocalName());
     //Only UTF-8 and latin1 are legal Sword module encodings
-    Q_ASSERT(m_module);
+    BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
         return QString::fromUtf8(getLocalName());
     }
@@ -81,9 +82,9 @@ QString CSwordTreeKey::getLocalNameUnicode() {
 }
 
 void CSwordTreeKey::setModule(const CSwordModuleInfo *newModule) {
-    Q_ASSERT(newModule);
+    BT_ASSERT(newModule);
     if (m_module == newModule) return;
-    Q_ASSERT(newModule->type() == CSwordModuleInfo::GenericBook);
+    BT_ASSERT(newModule->type() == CSwordModuleInfo::GenericBook);
 
     m_module = newModule;
 

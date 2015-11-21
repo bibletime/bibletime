@@ -21,6 +21,8 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/cbooktreechooser.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -28,8 +30,8 @@
 void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {
     CLexiconReadWindow::applyProfileSettings(windowGroup);
 
-    Q_ASSERT(m_treeAction);
-    Q_ASSERT(windowGroup.endsWith('/'));
+    BT_ASSERT(m_treeAction);
+    BT_ASSERT(windowGroup.endsWith('/'));
     if (btConfig().sessionValue<bool>(windowGroup + "treeShown", true) != m_treeAction->isChecked())
         m_treeAction->activate(QAction::Trigger);
 }
@@ -37,7 +39,7 @@ void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {
 void CBookReadWindow::storeProfileSettings(QString const & windowGroup) const {
     CLexiconReadWindow::storeProfileSettings(windowGroup);
 
-    Q_ASSERT(windowGroup.endsWith('/'));
+    BT_ASSERT(windowGroup.endsWith('/'));
     btConfig().setSessionValue(windowGroup + "treeShown", m_treeAction->isChecked());
 }
 
@@ -48,16 +50,15 @@ void CBookReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     QAction *a = ac->action("nextEntry");
-    Q_ASSERT(a != nullptr);
+    BT_ASSERT(a);
     a->setEnabled(false);
     a = ac->action("previousEntry");
-    Q_ASSERT(a != nullptr);
+    BT_ASSERT(a);
     a->setEnabled(false);
 
     m_treeAction = ac->action("toggleTree");
-    Q_ASSERT(m_treeAction != nullptr);
-    QObject::connect(m_treeAction, SIGNAL(triggered()),
-                     this,         SLOT(treeToggled()));
+    BT_ASSERT(m_treeAction);
+    BT_CONNECT(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()));
     addAction(m_treeAction);
 
     ac->readShortcuts("Book shortcuts");
@@ -77,9 +78,12 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 void CBookReadWindow::initConnections() {
     CLexiconReadWindow::initConnections();
 
-    connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
-    connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)), keyChooser(), SLOT(updateKey(CSwordKey*)));
-    connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), m_treeChooser, SLOT(updateKey(CSwordKey*)));
+    BT_CONNECT(m_treeChooser, SIGNAL(keyChanged(CSwordKey *)),
+               this,          SLOT(lookupSwordKey(CSwordKey *)));
+    BT_CONNECT(m_treeChooser, SIGNAL(keyChanged(CSwordKey *)),
+               keyChooser(),  SLOT(updateKey(CSwordKey *)));
+    BT_CONNECT(keyChooser(),  SIGNAL(keyChanged(CSwordKey *)),
+               m_treeChooser, SLOT(updateKey(CSwordKey *)));
 }
 
 /** Init the view */
@@ -112,8 +116,8 @@ void CBookReadWindow::initView() {
 }
 
 void CBookReadWindow::initToolbars() {
-    Q_ASSERT(m_treeAction);
-    Q_ASSERT(m_actions.backInHistory);
+    BT_ASSERT(m_treeAction);
+    BT_ASSERT(m_actions.backInHistory);
 
     mainToolBar()->addAction(m_actions.backInHistory);
     mainToolBar()->addAction(m_actions.forwardInHistory);
@@ -137,10 +141,10 @@ void CBookReadWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
     CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
     btMainWindow()->navToolBar()->addWidget(keyChooser);
-    bool ok = connect(keyChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
-    Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(sigKeyChanged(CSwordKey*)), keyChooser, SLOT(updateKey(CSwordKey*)) );
-    Q_ASSERT(ok);
+    BT_CONNECT(keyChooser, SIGNAL(keyChanged(CSwordKey *)),
+               this,       SLOT(lookupSwordKey(CSwordKey *)));
+    BT_CONNECT(this,       SIGNAL(sigKeyChanged(CSwordKey *)),
+               keyChooser, SLOT(updateKey(CSwordKey *)));
 
     // Works toolbar
     btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);

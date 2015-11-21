@@ -12,6 +12,14 @@
 
 #include "btwindowinterface.h"
 
+#include <QDebug>
+#include <QFile>
+#include <QObject>
+#include <QQmlContext>
+#include <QQmlEngine>
+#include <QQuickItem>
+#include <QStringList>
+#include <swkey.h>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
@@ -21,22 +29,15 @@
 #include "backend/keys/cswordtreekey.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/models/btmoduletextmodel.h"
-#include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
+#include "backend/rendering/centrydisplay.h"
 #include "mobile/btmmain.h"
 #include "mobile/keychooser/bookkeychooser.h"
 #include "mobile/keychooser/keynamechooser.h"
 #include "mobile/keychooser/versechooser.h"
 #include "mobile/ui/modulechooser.h"
 #include "mobile/ui/viewmanager.h"
-#include <QDebug>
-#include <QFile>
-#include <QObject>
-#include <QQmlContext>
-#include <QQmlEngine>
-#include <QQuickItem>
-#include <QStringList>
-#include <swkey.h>
+#include "util/btconnect.h"
 
 
 namespace btm {
@@ -57,22 +58,21 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
     QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
 
-    bool ok = connect(m_verseKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_verseKeyChooser, SIGNAL(referenceChanged()),
+               this,              SLOT(referenceChosen()));
 
     m_bookKeyChooser = new BookKeyChooser(viewer, this);
-    ok = connect(m_bookKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_bookKeyChooser, SIGNAL(referenceChanged()),
+               this,             SLOT(referenceChosen()));
 
     m_keyNameChooser = new KeyNameChooser(viewer, this);
-    ok = connect(m_keyNameChooser, SIGNAL(referenceChanged(int)), this, SLOT(referenceChosen(int)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_keyNameChooser, SIGNAL(referenceChanged(int)),
+               this,             SLOT(referenceChosen(int)));
 
-    ok = connect(CSwordBackend::instance(),
-            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-                 this,
-            SLOT(reloadModules(CSwordBackend::SetupChangedReason)));
-    Q_ASSERT(ok);
+    BT_CONNECT(CSwordBackend::instance(),
+               SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+               this,
+               SLOT(reloadModules(CSwordBackend::SetupChangedReason)));
 }
 
 void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {

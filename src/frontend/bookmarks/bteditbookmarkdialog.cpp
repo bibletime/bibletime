@@ -10,15 +10,16 @@
 #include "bteditbookmarkdialog.h"
 
 #include <QDialogButtonBox>
-#include <QVBoxLayout>
 #include <QFormLayout>
 #include <QLabel>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QVBoxLayout>
 #include <QWidget>
 #include "bibletimeapp.h"
-#include "util/cresmgr.h"
 #include "frontend/messagedialog.h"
+#include "util/btconnect.h"
+#include "util/cresmgr.h"
 
 
 BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
@@ -58,8 +59,8 @@ BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
     message::prepareDialogBox(m_buttonBox);
     mainLayout->addWidget(m_buttonBox);
 
-    QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
     retranslateUi();
 

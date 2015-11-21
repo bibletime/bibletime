@@ -30,6 +30,8 @@
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"
@@ -141,21 +143,21 @@ void BtInstallPage::initView() {
 }
 
 void BtInstallPage::initConnections() {
-    connect(m_sourceComboBox, SIGNAL(currentIndexChanged(int)),
-            this,             SLOT(slotSourceIndexChanged(int)));
-    connect(m_sourceAddButton, SIGNAL(clicked()),
-            this,              SLOT(slotSourceAdd()));
-    connect(m_sourceDeleteButton, SIGNAL(clicked()),
-            this,                 SLOT(slotSourceDelete()));
-    connect(m_installButton, SIGNAL(clicked()),
-            this,            SLOT(slotInstall()));
-    connect(m_pathCombo, SIGNAL(activated(const QString&)),
-            this , SLOT(slotPathChanged(const QString&)));
-    connect(m_configurePathButton, SIGNAL(clicked()),
-            this, SLOT(slotEditPaths()));
-    connect(CSwordBackend::instance(),
-            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-            this, SLOT(slotSwordSetupChanged()));
+    BT_CONNECT(m_sourceComboBox, SIGNAL(currentIndexChanged(int)),
+               this,             SLOT(slotSourceIndexChanged(int)));
+    BT_CONNECT(m_sourceAddButton, SIGNAL(clicked()),
+               this,              SLOT(slotSourceAdd()));
+    BT_CONNECT(m_sourceDeleteButton, SIGNAL(clicked()),
+               this,                 SLOT(slotSourceDelete()));
+    BT_CONNECT(m_installButton, SIGNAL(clicked()),
+               this,            SLOT(slotInstall()));
+    BT_CONNECT(m_pathCombo, SIGNAL(activated(QString const &)),
+               this , SLOT(slotPathChanged(QString const &)));
+    BT_CONNECT(m_configurePathButton, SIGNAL(clicked()),
+               this, SLOT(slotEditPaths()));
+    BT_CONNECT(CSwordBackend::instance(),
+               SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+               this, SLOT(slotSwordSetupChanged()));
 }
 
 void BtInstallPage::initPathCombo() {
@@ -198,7 +200,7 @@ void BtInstallPage::initSourcesCombo() {
         BtInstallBackend::addSource(is);
 
         sourceList = BtInstallBackend::sourceNameList();
-        Q_ASSERT(!sourceList.empty());
+        BT_ASSERT(!sourceList.empty());
     }
 
     // Read selected module from config:
@@ -232,10 +234,14 @@ void BtInstallPage::activateSource(const sword::InstallSource &src) {
         w = new BtInstallPageWorksWidget(src, m_groupingOrder, this);
         m_sourceMap.insert(QString(src.caption), w);
         m_worksLayout->addWidget(w);
-        connect(w->treeModel(), SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-                this,           SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
-        connect(w->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
-                this,           SLOT(slotSelectedModulesChanged()));
+        BT_CONNECT(w->treeModel(),
+                   SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+                   this,
+                   SLOT(slotGroupingOrderChanged(
+                                BtBookshelfTreeModel::Grouping const &)));
+        BT_CONNECT(w->treeModel(),
+                   SIGNAL(moduleChecked(CSwordModuleInfo *, bool)),
+                   this, SLOT(slotSelectedModulesChanged()));
         window()->setEnabled(true);
     } else {
         disconnect(w->treeView()->header(), SIGNAL(geometriesChanged()),
@@ -244,8 +250,8 @@ void BtInstallPage::activateSource(const sword::InstallSource &src) {
     m_worksLayout->setCurrentWidget(w);
     w->treeModel()->setGroupingOrder(m_groupingOrder);
     w->treeView()->header()->restoreState(m_headerState);
-    connect(w->treeView()->header(), SIGNAL(geometriesChanged()),
-            this,                    SLOT(slotHeaderChanged()));
+    BT_CONNECT(w->treeView()->header(), SIGNAL(geometriesChanged()),
+               this,                    SLOT(slotHeaderChanged()));
     qApp->restoreOverrideCursor();
 }
 
@@ -290,7 +296,7 @@ void BtInstallPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Groupin
 
 void BtInstallPage::slotHeaderChanged() {
     using IPWW = BtInstallPageWorksWidget;
-    Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != nullptr);
+    BT_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()));
     IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
     m_headerState = w->treeView()->header()->saveState();
     btConfig().setValue(headerStateKey, m_headerState);
@@ -389,7 +395,7 @@ void BtInstallPage::slotSourceDelete() {
     if (ret == QMessageBox::Yes) {
         qApp->setOverrideCursor(Qt::WaitCursor);
         window()->setEnabled(false);
-        Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()));
+        BT_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()));
         IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
         m_sourceMap.remove(QString(w->installSource().caption));
         w->deleteSource();

@@ -12,8 +12,6 @@
 
 #include "gridchooser.h"
 
-#include "qtquick2applicationviewer.h"
-
 #include <algorithm>
 #include <cmath>
 #include <QEventLoop>
@@ -21,6 +19,10 @@
 #include <QQmlContext>
 #include <QDebug>
 #include <QCoreApplication>
+#include "qtquick2applicationviewer.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -36,14 +38,13 @@ GridChooser::~GridChooser() {
 }
 
 void GridChooser::open(const QStringList& stringList, const QString& highlight, const QString& title) {
-    Q_ASSERT(gridChooserObject_ != nullptr);
+    BT_ASSERT(gridChooserObject_);
     if (gridChooserObject_ == nullptr)
         return;
 
     gridChooserObject_->disconnect();
-    bool ok = connect(gridChooserObject_, SIGNAL(accepted(QString)),
-                      this, SLOT(gridChooserAccepted(QString)));
-    Q_ASSERT(ok);
+    BT_CONNECT(gridChooserObject_, SIGNAL(accepted(QString)),
+               this,               SLOT(gridChooserAccepted(QString)));
     setProperties(stringList, highlight, title);
 }
 

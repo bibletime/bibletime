@@ -21,6 +21,7 @@
 #include <QFileInfo>
 #include <QSettings>
 #include <QTextDocument>
+#include "../../util/btassert.h"
 #include "../../util/btscopeexit.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
@@ -335,7 +336,7 @@ void CSwordModuleInfo::buildIndex() {
         std::unique_ptr<wchar_t[]> sPwcharBuffer(
                 new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
         wchar_t * const wcharBuffer = sPwcharBuffer.get();
-        Q_ASSERT(wcharBuffer);
+        BT_ASSERT(wcharBuffer);
 
         if(bm)
             vk->setIndex(bm->lowerBound().getIndex());
@@ -494,9 +495,9 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     std::unique_ptr<wchar_t[]> sPwcharBuffer(
             new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
     char * const utfBuffer = sPutfBuffer.get();
-    Q_ASSERT(utfBuffer);
+    BT_ASSERT(utfBuffer);
     wchar_t * const wcharBuffer = sPwcharBuffer.get();
-    Q_ASSERT(wcharBuffer);
+    BT_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
     {
@@ -551,7 +552,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
         // Limit results based on scope:
         if (useScope) {
             for (int j = 0; j < scope.getCount(); j++) {
-                Q_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
+                BT_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
                 const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
                 if (vkey->getLowerBound().compare(*swKey) <= 0
                     && vkey->getUpperBound().compare(*swKey) >= 0)
@@ -734,7 +735,7 @@ void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
 }
 
 void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
-    Q_ASSERT(key);
+    BT_ASSERT(key);
     m_module.setKey(isUnicode()
                     ? key->key().toUtf8().constData()
                     : key->key().toLocal8Bit().constData());
@@ -999,7 +1000,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
 
     m_hidden = hide;
     QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules"));
-    Q_ASSERT(hiddenModules.contains(m_cachedName) != hide);
+    BT_ASSERT(hiddenModules.contains(m_cachedName) != hide);
     if (hide) {
         hiddenModules.append(m_cachedName);
     } else {

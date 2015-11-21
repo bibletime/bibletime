@@ -12,6 +12,7 @@
 
 #include "btmoduletextmodel.h"
 
+#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../drivers/cswordbookmoduleinfo.h"
@@ -93,7 +94,7 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
                         ->tree());
         tk.root();
         tk.firstChild();
-        Q_ASSERT(tk.getOffset() == 4);
+        BT_ASSERT(tk.getOffset() == 4);
         tk.setPosition(sword::BOTTOM);
         m_maxEntries = tk.getOffset() / 4;
     }

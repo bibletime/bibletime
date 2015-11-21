@@ -17,6 +17,7 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QLocale>
+#include "btassert.h"
 
 
 namespace util {
@@ -337,7 +338,7 @@ size_t getDirSizeRecursive(QString const & dir) {
     d.setFilter(QDir::Files);
     const QFileInfoList infoList = d.entryInfoList();
     for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); ++it) {
-        Q_ASSERT(it->size() > 0);
+        BT_ASSERT(it->size() > 0);
         size += it->size();
     }
 
@@ -420,7 +421,7 @@ const QDir &getDisplayTemplatesDir() {
 
 const QDir &getQmlDir() {
 #ifndef BT_MOBILE
-    Q_ASSERT(false && "Qml files currently required for BibleTime Mobile frontend only.");
+    BT_ASSERT(false && "Qml files currently required for BibleTime Mobile frontend only.");
 #endif
     return *cachedQmlDir;
 }

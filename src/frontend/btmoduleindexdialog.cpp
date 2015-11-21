@@ -13,6 +13,8 @@
 #include <QMutexLocker>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)
@@ -43,7 +45,7 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
 
     QList <CSwordModuleInfo*> indexedModules;
     Q_FOREACH(CSwordModuleInfo * const m, modules) {
-        Q_ASSERT(!m->hasIndex());
+        BT_ASSERT(!m->hasIndex());
 
         /*
           Keep track of created indices to delete them on failure or
@@ -51,12 +53,10 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
         */
         indexedModules.append(m);
 
-        connect(this, SIGNAL(canceled()),
-                m,    SLOT(cancelIndexing()));
-        connect(m,    SIGNAL(indexingFinished()),
-                this, SLOT(slotFinished()));
-        connect(m,    SIGNAL(indexingProgress(int)),
-                this, SLOT(slotModuleProgress(int)));
+        BT_CONNECT(this, SIGNAL(canceled()), m, SLOT(cancelIndexing()));
+        BT_CONNECT(m, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
+        BT_CONNECT(m,    SIGNAL(indexingProgress(int)),
+                   this, SLOT(slotModuleProgress(int)));
 
         // Single module indexing blocks until finished:
         setLabelText(tr("Creating index for work: %1").arg(m->name()));

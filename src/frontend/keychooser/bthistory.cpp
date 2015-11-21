@@ -12,6 +12,7 @@
 #include <QAction>
 #include <QList>
 #include "backend/keys/cswordkey.h"
+#include "util/btassert.h"
 
 
 BTHistory::BTHistory(QWidget* parent)
@@ -19,11 +20,11 @@ BTHistory::BTHistory(QWidget* parent)
         m_index(-1),
         m_inHistoryFunction(false) {
     setParent(parent);
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
 }
 
 void BTHistory::add(CSwordKey* newKey) {
-    Q_ASSERT(newKey);
+    BT_ASSERT(newKey);
     // Add new key Action after current index if we were not using the history functions,
     // if it's not a duplicate and if it's not empty.
     if (!m_inHistoryFunction &&    ((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) )) {
@@ -33,12 +34,12 @@ void BTHistory::add(CSwordKey* newKey) {
         // \todo history limit?
         sendChangedSignal();
     }
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
 }
 
 void BTHistory::move(QAction* historyItem) {
-    //Q_ASSERT(historyItem);
-    Q_ASSERT(m_historyList.count());
+    //BT_ASSERT(historyItem);
+    BT_ASSERT(m_historyList.count());
 
     m_inHistoryFunction = true;
     //find the action in the list
@@ -48,21 +49,21 @@ void BTHistory::move(QAction* historyItem) {
     sendChangedSignal();
 
     m_inHistoryFunction = false;
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
 }
 
 void BTHistory::back() {
     if ( m_index >= 1) {
         move(m_historyList.at(m_index - 1));
     }
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
 }
 
 void BTHistory::fw() {
     if (m_index < (m_historyList.size() - 1)) {
         move(m_historyList.at(m_index + 1));
     }
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
 }
 
 QList<QAction*> BTHistory::getBackList() {
@@ -72,7 +73,7 @@ QList<QAction*> BTHistory::getBackList() {
         list.append(m_historyList.at(i));
     }
 
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
     return list;
 }
 
@@ -82,7 +83,7 @@ QList<QAction*> BTHistory::getFwList() {
         list.append(m_historyList.at(i));
     }
 
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
     return list;
 }
 
@@ -90,7 +91,7 @@ void BTHistory::sendChangedSignal() {
     bool backEnabled = m_index > 0; //there are items in the back list
     bool fwEnabled = m_historyList.size() > m_index + 1; //there are items in the fw list
     emit historyChanged(backEnabled, fwEnabled);
-    Q_ASSERT(class_invariant());
+    BT_ASSERT(class_invariant());
 }
 
 bool BTHistory::class_invariant() {

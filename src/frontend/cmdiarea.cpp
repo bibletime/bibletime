@@ -7,10 +7,8 @@
 *
 **********/
 
-#include "bibletime.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/display/cdisplay.h"
+
 #include <QEvent>
 #include <QMdiSubWindow>
 #include <QMenu>
@@ -20,6 +18,10 @@
 #include <QToolBar>
 #include <QWebView>
 #include <QWindowStateChangeEvent>
+#include "bibletime.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
+#include "frontend/display/cdisplay.h"
+#include "util/btconnect.h"
 
 
 namespace {
@@ -40,14 +42,12 @@ inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displ
 } // anonymous namespace
 
 
-CMDIArea::CMDIArea(BibleTime *parent)
-        : QMdiArea(parent)
+CMDIArea::CMDIArea(BibleTime * parent)
+        : QMdiArea((BT_ASSERT(parent), parent))
         , m_mdiArrangementMode(ArrangementModeManual)
         , m_activeWindow(nullptr)
         , m_bibleTime(parent)
 {
-    Q_ASSERT(parent != nullptr);
-
     // Set document-style tabs (for Mac):
     setDocumentMode(true);
 
@@ -61,8 +61,8 @@ CMDIArea::CMDIArea(BibleTime *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-    connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)),
-            this, SLOT(slotSubWindowActivated(QMdiSubWindow*)));
+    BT_CONNECT(this, SIGNAL(subWindowActivated(QMdiSubWindow *)),
+               this, SLOT(slotSubWindowActivated(QMdiSubWindow *)));
 }
 
 void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {

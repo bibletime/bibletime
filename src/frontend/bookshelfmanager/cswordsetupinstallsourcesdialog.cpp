@@ -25,6 +25,9 @@
 #include <QApplication>
 #include "backend/btinstallbackend.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path
 const QString PROTO_FTP( QObject::tr("Remote FTP") ); //Remote path
@@ -90,11 +93,12 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
     getListButton->setToolTip(tr("Download a list of sources from CrossWire server and add sources"));
     buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
-    connect(getListButton, SIGNAL(clicked()), SLOT(slotGetListClicked()));
+    BT_CONNECT(getListButton, SIGNAL(clicked()), SLOT(slotGetListClicked()));
     mainLayout->addWidget(buttonBox);
-    connect(buttonBox, SIGNAL(accepted()), SLOT(slotOk()));
-    connect(buttonBox, SIGNAL(rejected()), SLOT(reject()));
-    connect( m_protocolCombo, SIGNAL( activated(int) ), this, SLOT( slotProtocolChanged() ) );
+    BT_CONNECT(buttonBox, SIGNAL(accepted()), SLOT(slotOk()));
+    BT_CONNECT(buttonBox, SIGNAL(rejected()), SLOT(reject()));
+    BT_CONNECT(m_protocolCombo, SIGNAL(activated(int)),
+               this,            SLOT(slotProtocolChanged()));
 }
 
 void CSwordSetupInstallSourcesDialog::slotOk() {
@@ -166,10 +170,12 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     m_progressDialog = new QProgressDialog("", tr("Cancel"), 0 , 100, this);
     m_progressDialog->setWindowTitle(tr("Downloading List"));
     m_progressDialog->setMinimumDuration(0);
-    connect(m_progressDialog, SIGNAL(canceled()), SLOT(slotRefreshCanceled()));
+    BT_CONNECT(m_progressDialog, SIGNAL(canceled()),
+               SLOT(slotRefreshCanceled()));
     m_currentInstallMgr = &iMgr; //for the progress dialog
     // connect this directly to the dialog setValue(int) if possible
-    connect(&iMgr, SIGNAL(percentCompleted(const int, const int)), SLOT(slotRefreshProgress(const int, const int)));
+    BT_CONNECT(&iMgr, SIGNAL(percentCompleted(const int, const int)),
+               SLOT(slotRefreshProgress(const int, const int)));
 
     m_progressDialog->show();
     qApp->processEvents();
@@ -202,7 +208,7 @@ void CSwordSetupInstallSourcesDialog::slotRefreshProgress(const int, const int c
 }
 
 void CSwordSetupInstallSourcesDialog::slotRefreshCanceled() {
-    Q_ASSERT(m_currentInstallMgr);
+    BT_ASSERT(m_currentInstallMgr);
     if (m_currentInstallMgr) {
         m_currentInstallMgr->terminate();
     }

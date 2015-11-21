@@ -15,6 +15,7 @@
 #include <QBrush>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "util/btconnect.h"
 
 
 #define MODULEPOINTERFORINDEX(i) static_cast<CSwordModuleInfo *>(\
@@ -27,9 +28,9 @@ BtInstallModuleChooserDialogModel::BtInstallModuleChooserDialogModel(
 {
     setDefaultChecked(BtBookshelfTreeModel::CHECKED);
     setCheckable(true);
-    connect(this, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(parentDataChanged(QModelIndex,QModelIndex)),
-            Qt::DirectConnection);
+    BT_CONNECT(this, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
+               this, SLOT(parentDataChanged(QModelIndex, QModelIndex)),
+               Qt::DirectConnection);
 }
 
 QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role) const {

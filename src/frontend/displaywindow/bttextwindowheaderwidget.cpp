@@ -9,18 +9,18 @@
 
 #include "frontend/displaywindow/bttextwindowheaderwidget.h"
 
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QMenu>
-#include <QString>
 #include <QToolButton>
 #include <QToolTip>
-#include <QHBoxLayout>
 #include <QSizePolicy>
-#include <QLabel>
-
+#include <QString>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/displaywindow/bttextwindowheader.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -146,7 +146,8 @@ void BtTextWindowHeaderWidget::populateMenu() {
     delete m_popup;
     m_popup = new QMenu(m_button);
 
-    connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
+    BT_CONNECT(m_popup, SIGNAL(triggered(QAction *)),
+               this,    SLOT(moduleChosen(QAction *)));
     m_button->setMenu(m_popup);
 
     m_removeAction = new QAction(tr("Remove"), m_popup);

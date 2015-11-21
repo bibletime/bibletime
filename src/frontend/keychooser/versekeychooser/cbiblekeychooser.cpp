@@ -17,6 +17,8 @@
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/keychooser/cscrollbutton.h"
 #include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -46,16 +48,15 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 
-    bool ok = connect(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)), SLOT(beforeRefChange(CSwordVerseKey *)));
-    Q_ASSERT(ok);
-
-    ok =connect(w_ref, SIGNAL(changed(CSwordVerseKey *)), SLOT(refChanged(CSwordVerseKey *)));
-    Q_ASSERT(ok);
+    BT_CONNECT(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)),
+               SLOT(beforeRefChange(CSwordVerseKey *)));
+    BT_CONNECT(w_ref, SIGNAL(changed(CSwordVerseKey *)),
+               SLOT(refChanged(CSwordVerseKey *)));
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
-    ok = connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
-    Q_ASSERT(ok);
+    BT_CONNECT(this,      SIGNAL(keyChanged(CSwordKey *)),
+               history(), SLOT(add(CSwordKey *)));
 }
 
 CSwordKey* CBibleKeyChooser::key() {
@@ -63,7 +64,7 @@ CSwordKey* CBibleKeyChooser::key() {
 }
 
 void CBibleKeyChooser::setKey(CSwordKey* key) {
-    Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
+    BT_ASSERT(dynamic_cast<CSwordVerseKey *>(key));
     if (dynamic_cast<CSwordVerseKey*>(key) == nullptr) return;
 
     m_key = dynamic_cast<CSwordVerseKey*>(key);
@@ -74,15 +75,15 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
 void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
     Q_UNUSED(key);
 
-    Q_ASSERT(m_key);
+    BT_ASSERT(m_key);
 
     if (!updatesEnabled())
         return;
 }
 
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
-    Q_ASSERT(m_key);
-    Q_ASSERT(key);
+    BT_ASSERT(m_key);
+    BT_ASSERT(key);
 
     if (!updatesEnabled())
         return;

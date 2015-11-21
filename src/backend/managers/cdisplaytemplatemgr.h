@@ -14,6 +14,7 @@
 
 #include <QHash>
 #include <QStringList>
+#include "../../util/btassert.h"
 #include "../drivers/btmodulelist.h"
 #include "../drivers/cswordmoduleinfo.h"
 
@@ -101,7 +102,7 @@ class CDisplayTemplateMgr {
           \returns The singleton instance of the instance of this class.
         */
         static inline CDisplayTemplateMgr * instance() {
-            Q_ASSERT(m_instance != nullptr);
+            BT_ASSERT(m_instance);
             return m_instance;
         }
 

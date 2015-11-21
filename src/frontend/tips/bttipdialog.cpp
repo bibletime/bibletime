@@ -18,9 +18,10 @@
 #include <QWebView>
 #include "backend/config/btconfig.h"
 #include "bibletimeapp.h"
-#include "util/cresmgr.h"
 #include "frontend/messagedialog.h"
+#include "util/btconnect.h"
 #include "util/bticons.h"
+#include "util/cresmgr.h"
 #include "util/directory.h"
 
 
@@ -90,22 +91,14 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
     mainLayout->addLayout(hLayout);
     setLayout(mainLayout);
 
-    bool ok;
-    ok = connect(m_showTipsCheckBox, SIGNAL(toggled(bool)),
-                     this,               SLOT(startupBoxChanged(bool)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_buttonBox, SIGNAL(rejected()),
-                     this,        SLOT(reject()));
-    Q_ASSERT(ok);
-
-    ok = connect(nextButton, SIGNAL(clicked()),
-                     this,       SLOT(nextTip()));
-    Q_ASSERT(ok);
-
-    ok = connect(m_tipView->page(), SIGNAL(linkClicked(const QUrl&)),
-                     this,              SLOT(linkClicked(const QUrl&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_showTipsCheckBox, SIGNAL(toggled(bool)),
+               this,               SLOT(startupBoxChanged(bool)));
+    BT_CONNECT(m_buttonBox, SIGNAL(rejected()),
+               this,        SLOT(reject()));
+    BT_CONNECT(nextButton, SIGNAL(clicked()),
+               this,       SLOT(nextTip()));
+    BT_CONNECT(m_tipView->page(), SIGNAL(linkClicked(QUrl const &)),
+               this,              SLOT(linkClicked(QUrl const &)));
 
     m_tipNumber = btConfig().value<int>(LastTipNumberKey, 0);
     initTips();

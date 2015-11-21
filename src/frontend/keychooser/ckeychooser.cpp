@@ -19,6 +19,8 @@
 #include "frontend/keychooser/cbookkeychooser.h"
 #include "frontend/keychooser/clexiconkeychooser.h"
 #include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 CKeyChooser::CKeyChooser(const BtConstModuleList &,
@@ -27,9 +29,8 @@ CKeyChooser::CKeyChooser(const BtConstModuleList &,
     : QWidget(parent)
     , m_history(historyPtr)
 {
-    bool ok = QObject::connect(history(), SIGNAL(historyMoved(QString)),
-                               this,      SLOT(setKey(const QString &)));
-    Q_ASSERT(ok);
+    BT_CONNECT(history(), SIGNAL(historyMoved(QString)),
+               this,      SLOT(setKey(QString const &)));
 }
 
 CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,
@@ -37,8 +38,8 @@ CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,
                                           CSwordKey * key,
                                           QWidget * parent)
 {
-    Q_ASSERT(!modules.empty());
-    Q_ASSERT(modules.first()->type() == CSwordModuleInfo::Commentary
+    BT_ASSERT(!modules.empty());
+    BT_ASSERT(modules.first()->type() == CSwordModuleInfo::Commentary
              || modules.first()->type() == CSwordModuleInfo::Bible
              || modules.first()->type() == CSwordModuleInfo::Lexicon
              || modules.first()->type() == CSwordModuleInfo::GenericBook);

@@ -19,6 +19,8 @@
 #include <QListView>
 #include <QStackedWidget>
 #include <QVBoxLayout>
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 BtConfigDialog::BtConfigDialog(QWidget* parent, Qt::WindowFlags flags)
@@ -42,8 +44,8 @@ BtConfigDialog::BtConfigDialog(QWidget* parent, Qt::WindowFlags flags)
     mainLayout->addWidget(m_contentsList);
     mainLayout->addLayout(m_pageLayout);
 
-    connect(m_contentsList, SIGNAL(currentRowChanged(int)),
-            this,           SLOT(slotChangePage(int)));
+    BT_CONNECT(m_contentsList, SIGNAL(currentRowChanged(int)),
+               this,           SLOT(slotChangePage(int)));
 }
 
 void BtConfigDialog::addPage(Page* pageWidget) {
@@ -71,9 +73,9 @@ void BtConfigDialog::addPage(Page* pageWidget) {
 }
 
 void BtConfigDialog::setButtonBox(QDialogButtonBox *box) {
-    Q_ASSERT(box != nullptr);
-    Q_ASSERT(m_buttonBox == nullptr);
-    Q_ASSERT(m_buttonBoxRuler == nullptr);
+    BT_ASSERT(box);
+    BT_ASSERT(!m_buttonBox);
+    BT_ASSERT(!m_buttonBoxRuler);
 
     m_buttonBox = box;
 

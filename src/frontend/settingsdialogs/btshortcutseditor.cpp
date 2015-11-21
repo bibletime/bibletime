@@ -22,6 +22,7 @@
 #include <QVBoxLayout>
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/settingsdialogs/btshortcutsdialog.h"
+#include "util/btconnect.h"
 
 
 // *************** BtShortcutsEditorItem *******************************************************************
@@ -115,8 +116,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
         m_customButton(nullptr), m_defaultLabelValue(nullptr), m_currentRow(-1) {
     init();
     addCollection(collection);
-    bool ok = connect(m_dlg, SIGNAL(keyChangeRequest(const QString&)), this, SLOT(makeKeyChangeRequest(const QString&)) );
-    Q_ASSERT(ok);
+    BT_CONNECT(m_dlg, SIGNAL(keyChangeRequest(QString const &)),
+               this, SLOT(makeKeyChangeRequest(QString const &)));
 }
 
 BtShortcutsEditor::BtShortcutsEditor(QWidget* parent)
@@ -210,8 +211,8 @@ QTableWidget* BtShortcutsEditor::createShortcutsTable() {
     table->horizontalHeader()->setStretchLastSection(true);
     table->verticalHeader()->setVisible(false);
     table->setShowGrid(false);
-    bool ok = connect(table, SIGNAL(cellClicked(int, int)), this, SLOT(changeRow(int, int)));
-    Q_ASSERT(ok);
+    BT_CONNECT(table, SIGNAL(cellClicked(int, int)),
+               this,  SLOT(changeRow(int, int)));
     return table;
 }
 
@@ -254,18 +255,18 @@ QWidget* BtShortcutsEditor::createShortcutChooser() {
 
     m_noneButton = new QRadioButton(tr("None"), box);
     hLayout->addWidget(m_noneButton);
-    bool ok = connect(m_noneButton, SIGNAL(clicked(bool)), this, SLOT(noneButtonClicked(bool)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_noneButton, SIGNAL(clicked(bool)),
+               this, SLOT(noneButtonClicked(bool)));
 
     m_defaultButton = new QRadioButton(tr("Default"), box);
     hLayout->addWidget(m_defaultButton);
-    ok = connect(m_defaultButton, SIGNAL(clicked(bool)), this, SLOT(defaultButtonClicked(bool)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_defaultButton, SIGNAL(clicked(bool)),
+               this,            SLOT(defaultButtonClicked(bool)));
 
     m_customButton = new QRadioButton(tr("Custom"), box);
     hLayout->addWidget(m_customButton);
-    ok = connect(m_customButton, SIGNAL(clicked(bool)), this, SLOT(customButtonClicked(bool)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_customButton, SIGNAL(clicked(bool)),
+               this,           SLOT(customButtonClicked(bool)));
 
     m_customPushButton = new QPushButton(box);
     m_customPushButton->setMinimumWidth(140);

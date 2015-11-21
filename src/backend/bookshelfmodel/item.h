@@ -15,6 +15,7 @@
 
 #include <QList>
 #include <QVariant>
+#include "../../util/btassert.h"
 
 
 class CSwordModuleInfo;
@@ -88,8 +89,8 @@ public: /* Methods: */
       \param[in] newItem The item to insert.
     */
     inline void insertChild(int index, Item * newItem) {
-        Q_ASSERT(newItem != nullptr);
-        Q_ASSERT(index >= 0 && index <= m_children.size());
+        BT_ASSERT(newItem);
+        BT_ASSERT(index >= 0 && index <= m_children.size());
         m_children.insert(index, newItem);
         newItem->setParent(this);
     }
@@ -97,7 +98,7 @@ public: /* Methods: */
     template <class T>
     inline T * getGroupItem(CSwordModuleInfo & module, int & outIndex) {
         for (int i = 0; i < m_children.size(); i++) {
-            Q_ASSERT(m_children.at(i)->type() == T::staticItemType());
+            BT_ASSERT(m_children.at(i)->type() == T::staticItemType());
             T * item = static_cast<T *>(m_children.at(i));
             if (item->fitFor(module)) {
                 outIndex = i;
@@ -142,10 +143,8 @@ public: /* Methods: */
 
 private: /* Methods: */
 
-    inline void setParent(Item * parent) {
-        Q_ASSERT(parent != nullptr);
-        m_parent = parent;
-    }
+    inline void setParent(Item * parent) noexcept
+    { m_parent = (BT_ASSERT(parent), parent); }
 
 private: /* Fields: */
 

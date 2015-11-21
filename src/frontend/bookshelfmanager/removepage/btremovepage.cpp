@@ -28,6 +28,8 @@
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/bticons.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
@@ -52,8 +54,11 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
 
     BtRemovePageTreeModel *treeModel = new BtRemovePageTreeModel(groupingOrderKey,
                                                                  this);
-    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,      SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
+    BT_CONNECT(treeModel,
+               SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+               this,
+               SLOT(slotGroupingOrderChanged(
+                            BtBookshelfTreeModel::Grouping const &)));
 
     m_bookshelfWidget = new BtBookshelfWidget(this);
     m_bookshelfWidget->postFilterModel()->setShowHidden(true);
@@ -81,12 +86,14 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
     mainLayout->addWidget(m_worksGroupBox, 1);
     mainLayout->addWidget(m_uninstallGroupBox);
 
-    connect(m_removeButton, SIGNAL(clicked()),
-            this, SLOT(slotRemoveModules()));
-    connect(m_bookshelfWidget->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
-            this,                           SLOT(slotResetRemoveButton()));
-    connect(m_bookshelfWidget->treeModel(), SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
-            this,                           SLOT(slotResetRemoveButton()));
+    BT_CONNECT(m_removeButton, SIGNAL(clicked()),
+               this,           SLOT(slotRemoveModules()));
+    BT_CONNECT(m_bookshelfWidget->treeModel(),
+               SIGNAL(moduleChecked(CSwordModuleInfo *, bool)),
+               this, SLOT(slotResetRemoveButton()));
+    BT_CONNECT(m_bookshelfWidget->treeModel(),
+               SIGNAL(rowsRemoved(QModelIndex const &, int, int)),
+               this, SLOT(slotResetRemoveButton()));
 
     retranslateUi();
 }
@@ -145,12 +152,12 @@ void BtRemovePage::slotRemoveModules() {
 
         // Update the module list before really removing. Remember deleting the pointers later.
         QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
-        Q_ASSERT(toBeDeleted.size() == moduleNames.size());
+        BT_ASSERT(toBeDeleted.size() == moduleNames.size());
 
         BtInstallMgr installMgr;
         QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
         Q_FOREACH(CSwordModuleInfo const * const mInfo, toBeDeleted) {
-            Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
+            BT_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
             // Find the install path for the sword manager
             QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
             QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);

@@ -12,6 +12,7 @@
 #include <QRegExp>
 #include <QString>
 #include <QTextCodec>
+#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "cswordldkey.h"
 #include "cswordtreekey.h"
@@ -43,7 +44,7 @@ QString CSwordKey::rawText() {
 }
 
 QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
-    Q_ASSERT(m_module);
+    BT_ASSERT(m_module);
 
     sword::SWKey * const k = dynamic_cast<sword::SWKey *>(this);
 
@@ -160,7 +161,7 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
         case CSwordModuleInfo::Bible: // Fall through
         case CSwordModuleInfo::Commentary:
 
-            Q_ASSERT(dynamic_cast<sword::VerseKey *>(key) != nullptr);
+            BT_ASSERT(dynamic_cast<sword::VerseKey *>(key));
             return new CSwordVerseKey(static_cast<sword::VerseKey *>(key),
                                       module);
 
@@ -170,7 +171,7 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
 
         case CSwordModuleInfo::GenericBook:
 
-            Q_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key) != nullptr);
+            BT_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(key));
             return new CSwordTreeKey(dynamic_cast<sword::TreeKeyIdx *>(key),
                                      module );
 

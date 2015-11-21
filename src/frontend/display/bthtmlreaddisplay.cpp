@@ -21,6 +21,8 @@
 #include "frontend/display/bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/creadwindow.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/directory.h"
 
 
@@ -40,8 +42,8 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
     m_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_view->setHtml("");
     initJavascript();
-    bool ok = connect(this, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
-    Q_ASSERT(ok);
+    BT_CONNECT(this, SIGNAL(loadFinished(bool)),
+               this, SLOT(slotLoadFinished(bool)));
 }
 
 BtHtmlReadDisplay::~BtHtmlReadDisplay() {
@@ -99,7 +101,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 //This is never used for Bibles, so it is not implemented for
                 //them.  If it should be, see CReadDisplay::print() for example
                 //code.
-                Q_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
+                BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
                          module->type() == CSwordModuleInfo::Commentary ||
                          module->type() == CSwordModuleInfo::GenericBook);
                 if (module->type() == CSwordModuleInfo::Lexicon ||
@@ -198,8 +200,8 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
     // Disconnect any previous connections and connect to slot that loads the javascript object
     QWebFrame* frame = mainFrame();
     disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), nullptr, nullptr);
-    bool ok = connect(frame, SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(loadJSObject()));
-    Q_ASSERT(ok);
+    BT_CONNECT(frame, SIGNAL(javaScriptWindowObjectCleared()),
+               this, SLOT(loadJSObject()));
 
     // Send text to the html viewer
     m_view->setHtml(jsText);
@@ -314,9 +316,7 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
     BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
     QString moduleName = item.module();
     CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
-    Q_ASSERT(m);
-    if (m == nullptr)
-        return;
+    BT_ASSERT(m);
 
     CSwordModuleInfo::ModuleType bookmarkType = m->type();
     CSwordModuleInfo::ModuleType windowType = m_readWindow->moduleType();

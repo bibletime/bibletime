@@ -9,19 +9,20 @@
 
 #include "bttextwindowheader.h"
 
-#include "bttextwindowheaderwidget.h"
-#include "clexiconreadwindow.h"
-#include "util/btmodules.h"
-
-#include <QStringList>
-#include <QWidget>
+#include <QAction>
+#include <QDebug>
+#include <QFrame>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSizePolicy>
+#include <QStringList>
 #include <QToolButton>
-#include <QFrame>
-#include <QAction>
-#include <QDebug>
+#include <QWidget>
+#include "bttextwindowheaderwidget.h"
+#include "clexiconreadwindow.h"
+#include "util/btconnect.h"
+#include "util/btmodules.h"
+
 
 BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
                                        QStringList modules,
@@ -34,8 +35,10 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     setLayoutDirection(Qt::LeftToRight);
     setModules(modules);
-    connect(window, SIGNAL(sigModuleListSet(QStringList)), SLOT(slotBackendModulesChanged()));
-    connect(window, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
+    BT_CONNECT(window, SIGNAL(sigModuleListSet(QStringList)),
+               SLOT(slotBackendModulesChanged()));
+    BT_CONNECT(window, SIGNAL(sigModuleListChanged()),
+               SLOT(slotWindowModulesChanged()));
 }
 
 void BtTextWindowHeader::slotBackendModulesChanged() {
@@ -95,9 +98,12 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
 
     // the button sends signals directly to the window which then signals back when the module
     // list has changed
-    connect(w, SIGNAL(sigModuleAdd(int, QString)), m_window, SLOT(slotAddModule(int, QString)));
-    connect(w, SIGNAL(sigModuleReplace(int, QString)), m_window, SLOT(slotReplaceModule(int, QString)));
-    connect(w, SIGNAL(sigModuleRemove(int)), m_window, SLOT(slotRemoveModule(int)));
+    BT_CONNECT(w,        SIGNAL(sigModuleAdd(int, QString)),
+               m_window, SLOT(slotAddModule(int, QString)));
+    BT_CONNECT(w,        SIGNAL(sigModuleReplace(int, QString)),
+               m_window, SLOT(slotReplaceModule(int, QString)));
+    BT_CONNECT(w,        SIGNAL(sigModuleRemove(int)),
+               m_window, SLOT(slotRemoveModule(int)));
 
     return w;
 }

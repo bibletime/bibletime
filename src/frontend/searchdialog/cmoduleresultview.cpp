@@ -16,13 +16,14 @@
 #include <QStringList>
 #include <QTreeWidget>
 #include <QtAlgorithms>
-
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "bibletimeapp.h"
 #include "frontend/cexportmanager.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
-#include "backend/config/btconfig.h"
 
 
 namespace Search {
@@ -63,27 +64,32 @@ void CModuleResultView::initView() {
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
     m_actions.copyMenu->setIcon(CResMgr::searchdialog::result::moduleList::copyMenu::icon());
     m_actions.copy.result = new QAction(tr("Reference only"), this);
-    QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
+    BT_CONNECT(m_actions.copy.result, SIGNAL(triggered()),
+               this,                  SLOT(copyResult()));
     m_actions.copyMenu->addAction(m_actions.copy.result);
     m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
-    QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()), this, SLOT(copyResultWithText()) );
+    BT_CONNECT(m_actions.copy.resultWithText, SIGNAL(triggered()),
+               this,                           SLOT(copyResultWithText()));
     m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
     m_popup->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
     m_actions.saveMenu->setIcon(CResMgr::searchdialog::result::moduleList::saveMenu::icon());
     m_actions.save.result = new QAction(tr("Reference only"), this);
-    QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveResult()) );
+    BT_CONNECT(m_actions.save.result, SIGNAL(triggered()),
+               this,                  SLOT(saveResult()));
     m_actions.saveMenu->addAction(m_actions.save.result);
     m_actions.save.resultWithText = new QAction(tr("Reference with text"), this);
-    QObject::connect(m_actions.save.resultWithText, SIGNAL(triggered()), this, SLOT(saveResultWithText()) );
+    BT_CONNECT(m_actions.save.resultWithText, SIGNAL(triggered()),
+               this,                          SLOT(saveResultWithText()));
     m_actions.saveMenu->addAction(m_actions.save.resultWithText);
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
     m_actions.printMenu->setIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon());
     m_actions.print.result = new QAction(tr("Reference with text"), this);
-    QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
+    BT_CONNECT(m_actions.print.result, SIGNAL(triggered()),
+               this,                   SLOT(printResult()));
     m_actions.printMenu->addAction(m_actions.print.result);
     m_popup->addMenu(m_actions.printMenu);
 }
@@ -91,8 +97,10 @@ void CModuleResultView::initView() {
 /** Initializes the connections of this widget, */
 void CModuleResultView::initConnections() {
     /// \todo
-    connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
-            this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
+    BT_CONNECT(this,
+               SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
+               this,
+               SLOT(executed(QTreeWidgetItem *, QTreeWidgetItem *)));
 }
 
 void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
@@ -198,7 +206,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
 /** Returns the currently active module. */
 CSwordModuleInfo* CModuleResultView::activeModule() {
     QTreeWidgetItem * item = currentItem();
-    Q_ASSERT(item);
+    BT_ASSERT(item);
 
     // we need to find the parent most node because that is the node
     // that is the module name.

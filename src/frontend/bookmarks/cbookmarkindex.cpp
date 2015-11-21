@@ -35,6 +35,7 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/bookmarks/bteditbookmarkdialog.h"
 #include "frontend/bookmarks/cbookmarkindex.h"
+#include "util/btassert.h"
 #include "util/btconnect.h"
 #include "util/bticons.h"
 #include "util/btscopeexit.h"
@@ -86,7 +87,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                                    char const * const slot)
     {
         QAction * const action = new QAction{pix, text, this};
-        QObject::connect(action, SIGNAL(triggered()), this, slot);
+        BT_CONNECT(action, SIGNAL(triggered()), this, slot);
         return action;
     };
 
@@ -339,7 +340,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
             QString const description(mdata->bookmark().description());
             CSwordModuleInfo * minfo =
                     CSwordBackend::instance()->findModuleByName(moduleName);
-            Q_ASSERT(minfo);
+            BT_ASSERT(minfo);
 
             /// \todo add title
             m_bookmarksModel->addBookmark(indexUnderParent,
@@ -501,14 +502,14 @@ void CBookmarkIndex::createNewFolder() {
 
 /** Opens a dialog to change the current folder. */
 void CBookmarkIndex::changeFolder() {
-    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    BT_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
     edit(currentIndex());
 }
 
 /** Edits the current bookmark. */
 void CBookmarkIndex::editBookmark() {
     QModelIndex const index = currentIndex();
-    Q_ASSERT(m_bookmarksModel->isBookmark(index));
+    BT_ASSERT(m_bookmarksModel->isBookmark(index));
     CSwordModuleInfo * const module = m_bookmarksModel->module(index);
     BtEditBookmarkDialog d{
             QString::fromLatin1("%1 (%2)").arg(m_bookmarksModel->key(index))
@@ -526,7 +527,7 @@ void CBookmarkIndex::editBookmark() {
 
 /** Sorts the current folder bookmarks. */
 void CBookmarkIndex::sortFolderBookmarks() {
-    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    BT_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
     m_bookmarksModel->sortItems(currentIndex());
 }
 
@@ -542,7 +543,7 @@ void CBookmarkIndex::sortAllBookmarks() {
 
 /** Exports the bookmarks being in the selected folder. */
 void CBookmarkIndex::exportBookmarks() {
-    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    BT_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
     QString const fileName =
             QFileDialog::getSaveFileName(
                 nullptr,
@@ -556,7 +557,7 @@ void CBookmarkIndex::exportBookmarks() {
 
 /** Import bookmarks from a file and add them to the selected folder. */
 void CBookmarkIndex::importBookmarks() {
-    Q_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
+    BT_ASSERT(m_bookmarksModel->isFolder(currentIndex()));
     QString const fileName =
             QFileDialog::getOpenFileName(
                     nullptr,
@@ -571,7 +572,7 @@ void CBookmarkIndex::importBookmarks() {
 
 /** Prints the selected bookmarks. */
 void CBookmarkIndex::printBookmarks() {
-    Q_ASSERT(!hasBookmarksRecursively(selectedIndexes()));
+    BT_ASSERT(!hasBookmarksRecursively(selectedIndexes()));
     BtPrinter::KeyTree tree;
     {
         BtPrinter::KeyTreeItem::Settings const settings{
@@ -593,7 +594,7 @@ void CBookmarkIndex::printBookmarks() {
             }
         }
     }
-    Q_ASSERT(!tree.isEmpty());
+    BT_ASSERT(!tree.isEmpty());
 
     BtPrinter{btConfig().getDisplayOptions(),
               btConfig().getFilterOptions(),
@@ -671,7 +672,7 @@ void CBookmarkIndex::magTimeout() {
         && m_previousEventItem == itemUnderPointer
         && m_bookmarksModel->isBookmark(itemUnderPointer))
     {
-        Q_ASSERT(BibleTime::instance()->infoDisplay());
+        BT_ASSERT(BibleTime::instance()->infoDisplay());
         InfoDisplay::CInfoDisplay & infoDisplay =
                 *(BibleTime::instance()->infoDisplay());
         if (CSwordModuleInfo const * const module =

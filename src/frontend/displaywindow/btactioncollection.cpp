@@ -14,6 +14,8 @@
 #include <QKeySequence>
 #include <QString>
 #include <QStringList>
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/directory.h"
 
 
@@ -55,7 +57,7 @@ QAction *BtActionCollection::action(const QString &name) const {
 }
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
-    Q_ASSERT(action != nullptr);
+    BT_ASSERT(action);
     ActionMap::iterator it = m_actions.find(name);
     if (it != m_actions.constEnd())
         delete *it;
@@ -66,11 +68,9 @@ QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
 
 QAction* BtActionCollection::addAction(const QString &name, const QObject *receiver, const char* member) {
     QAction* action = new QAction(name, this);
-    if (receiver && member) {
-        bool ok = connect(action,   SIGNAL(triggered()),
-                          receiver, SLOT(triggered()));
-        Q_ASSERT(ok);
-    }
+    if (receiver && member)
+        BT_CONNECT(action,   SIGNAL(triggered()),
+                   receiver, SLOT(triggered()));
     return addAction(name, action);
 }
 

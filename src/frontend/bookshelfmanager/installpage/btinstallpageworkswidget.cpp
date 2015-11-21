@@ -21,6 +21,8 @@
 #include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
 #include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 #include "frontend/btbookshelfview.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -68,11 +70,11 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
     m_sourceRefreshButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_refresh());
     setRightCornerWidget(m_sourceRefreshButton);
 
-    connect(m_sourceRefreshButton, SIGNAL(clicked()),
-            this,                  SLOT(slotSourceRefresh()));
+    BT_CONNECT(m_sourceRefreshButton, SIGNAL(clicked()),
+               this,                  SLOT(slotSourceRefresh()));
 
     m_backend = BtInstallBackend::backend(m_source);
-    Q_ASSERT(m_backend != nullptr);
+    BT_ASSERT(m_backend);
     m_myModel = new BtBookshelfModel(this);
     Q_FOREACH(CSwordModuleInfo * const module, m_backend->moduleList())
         if (filter(module))

@@ -12,6 +12,7 @@
 #include <QCompleter>
 #include <QFontDatabase>
 #include <QValidator>
+#include "util/btconnect.h"
 
 
 BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
@@ -28,9 +29,8 @@ BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
         addItem(QString::number(size), QVariant(size));
     }
 
-    bool ok = connect(this, SIGNAL(currentIndexChanged(QString const &)),
-                      this, SLOT(changed(QString const &)));
-    Q_ASSERT(ok);
+    BT_CONNECT(this, SIGNAL(currentIndexChanged(QString const &)),
+               this, SLOT(changed(QString const &)));
 }
 
 void BtFontSizeWidget::changed(QString const & text) {

@@ -15,6 +15,7 @@
 #include <QComboBox>
 
 #include <QStringList>
+#include "util/btassert.h"
 
 
 class CLexiconKeyChooser;
@@ -109,7 +110,7 @@ public: /* Methods: */
     * Return the combobox of this key chooser widget.
     */
     QComboBox & comboBox() const {
-        Q_ASSERT(m_comboBox);
+        BT_ASSERT(m_comboBox);
         return *m_comboBox;
     }
 

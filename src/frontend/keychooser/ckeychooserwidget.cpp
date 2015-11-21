@@ -16,6 +16,7 @@
 #include <QString>
 #include <QWheelEvent>
 #include "frontend/keychooser/cscrollerwidgetset.h"
+#include "util/btconnect.h"
 
 
 class BtKeyLineEdit : public QLineEdit {
@@ -205,14 +206,13 @@ void CKeyChooserWidget::init() {
     setTabOrder(m_comboBox, nullptr);
     setFocusProxy(m_comboBox);
 
-    connect(m_scroller, SIGNAL(scroller_pressed()),  SLOT(lock()));
-    connect(m_scroller, SIGNAL(scroller_released()), SLOT(unlock()));
-    connect(m_scroller, SIGNAL(change(int)),         SLOT(changeCombo(int)));
-    connect(m_comboBox, SIGNAL(activated(int)),      SLOT(slotComboChanged(int)));
-    //  connect(m_comboBox, SIGNAL(activated(const QString&)), SLOT(slotReturnPressed(const QString&)));
-    connect(m_comboBox->lineEdit(), SIGNAL(returnPressed()),
-                                    SLOT(slotReturnPressed()));
-    connect(m_comboBox, SIGNAL(focusOut(int)), SIGNAL(focusOut(int)));
+    BT_CONNECT(m_scroller, SIGNAL(scroller_pressed()),  SLOT(lock()));
+    BT_CONNECT(m_scroller, SIGNAL(scroller_released()), SLOT(unlock()));
+    BT_CONNECT(m_scroller, SIGNAL(change(int)),         SLOT(changeCombo(int)));
+    BT_CONNECT(m_comboBox, SIGNAL(activated(int)), SLOT(slotComboChanged(int)));
+    BT_CONNECT(m_comboBox->lineEdit(), SIGNAL(returnPressed()),
+               SLOT(slotReturnPressed()));
+    BT_CONNECT(m_comboBox, SIGNAL(focusOut(int)), SIGNAL(focusOut(int)));
 
     updatelock = false;
     m_isResetting = false;
@@ -220,7 +220,7 @@ void CKeyChooserWidget::init() {
 
 /** Is called when the return key was presed in the combobox. */
 void CKeyChooserWidget::slotReturnPressed() {
-    Q_ASSERT(m_comboBox->lineEdit());
+    BT_ASSERT(m_comboBox->lineEdit());
 
     const QString text(m_comboBox->lineEdit()->text());
     for (int index = 0; index < m_comboBox->count(); ++index) {

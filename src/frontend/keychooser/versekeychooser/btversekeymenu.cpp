@@ -12,6 +12,7 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QTimerEvent>
+#include "util/btconnect.h"
 
 
 BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)
@@ -19,8 +20,8 @@ BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)
         , m_timerId(0)
         , m_firstClickLock(true)
 {
-    connect(this, SIGNAL(aboutToShow()),
-            this, SLOT(startFirstClickDelayTimer()));
+    BT_CONNECT(this, SIGNAL(aboutToShow()),
+               this, SLOT(startFirstClickDelayTimer()));
 }
 
 void BtVerseKeyMenu::startFirstClickDelayTimer() {

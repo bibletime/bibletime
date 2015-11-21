@@ -20,6 +20,8 @@
 #include "backend/rendering/cdisplayrendering.h"
 #include "bibletimeapp.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -72,8 +74,8 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     initSwordLocaleCombo();
 
     m_styleChooserCombo = new QComboBox( this ); //create first to enable buddy for label
-    connect( m_styleChooserCombo, SIGNAL( activated( int ) ),
-             this, SLOT( updateStylePreview() ) );
+    BT_CONNECT(m_styleChooserCombo, SIGNAL(activated(int)),
+               this,                SLOT(updateStylePreview()));
 
     m_availableLabel = new QLabel(this);
     m_availableLabel->setBuddy(m_styleChooserCombo);
@@ -124,7 +126,7 @@ void CDisplaySettingsPage::resetLanguage() {
     QVector<QString> atv = bookNameAbbreviationsTryVector();
 
     QString best = "en_US";
-    Q_ASSERT(atv.contains(best));
+    BT_ASSERT(atv.contains(best));
     int i = atv.indexOf(best);
     if (i > 0) {
         atv.resize(i);
@@ -160,7 +162,7 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
                 atv.append(localeLanguageAndCountry.left(i));
         }
     }
-    Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    BT_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
     atv.append("en_US");
     return atv;
 }
@@ -169,7 +171,7 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
     using SSMCI = QMap<QString, QString>::const_iterator;
 
     QMap<QString, QString> languageNames;
-    Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    BT_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
     languageNames.insert(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName(), "en_US");
 
     const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();

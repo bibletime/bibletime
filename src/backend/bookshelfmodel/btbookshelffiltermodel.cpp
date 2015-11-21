@@ -13,6 +13,7 @@
 #include "btbookshelffiltermodel.h"
 
 #include "btbookshelfmodel.h"
+#include "../../util/btassert.h"
 
 
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * parent)
@@ -148,7 +149,7 @@ bool BtBookshelfFilterModel::nameFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != nullptr);
+    BT_ASSERT(m);
 
     QModelIndex itemIndex(m->index(row, m_nameFilterColumn, parent));
     int numChildren(m->rowCount(itemIndex));
@@ -170,7 +171,7 @@ bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != nullptr);
+    BT_ASSERT(m);
 
     const QModelIndex itemIndex = m->index(row, m_hiddenFilterColumn, parent);
     const int numChildren = m->rowCount(itemIndex);
@@ -193,7 +194,7 @@ bool BtBookshelfFilterModel::categoryFilterAcceptsRow(int row,
         return true;
 
     const QAbstractItemModel * const m = sourceModel();
-    Q_ASSERT(m != nullptr);
+    BT_ASSERT(m);
 
     const QModelIndex itemIndex(m->index(row, m_categoryFilterColumn, parent));
     const int numChildren(m->rowCount(itemIndex));

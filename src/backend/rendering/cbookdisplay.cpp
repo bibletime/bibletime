@@ -11,7 +11,7 @@
 
 #include <memory>
 #include <QtAlgorithms>
-
+#include "../../util/btassert.h"
 #include "../drivers/cswordbookmoduleinfo.h"
 #include "../keys/cswordtreekey.h"
 #include "cdisplayrendering.h"
@@ -26,7 +26,7 @@ const QString Rendering::CBookDisplay::text(
     using CSBMI = CSwordBookModuleInfo;
 
     const CSBMI* book = dynamic_cast<const CSBMI*>(modules.first());
-    Q_ASSERT(book);
+    BT_ASSERT(book);
 
     DisplayOptions dOpts = displayOptions;
     dOpts.lineBreaks = true; //books should render with blocks, not with inlined sections

@@ -13,6 +13,8 @@
 #include "btbookshelfmodel.h"
 
 #include <QIcon>
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
 #include "../../util/macros.h"
 
 
@@ -24,7 +26,7 @@ int BtBookshelfModel::rowCount(const QModelIndex & parent) const {
 }
 
 QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
-    Q_ASSERT(module);
+    BT_ASSERT(module);
     switch (role) {
         case Qt::DisplayRole:
         case ModuleNameRole:
@@ -115,7 +117,7 @@ void BtBookshelfModel::clear(bool destroy) {
 }
 
 void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
-    Q_ASSERT(module != nullptr);
+    BT_ASSERT(module);
 
     if (m_data.contains(module))
         return;
@@ -123,12 +125,12 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     const int index(m_data.size());
     beginInsertRows(QModelIndex(), index, index);
     m_data.append(module);
-    connect(module, SIGNAL(hiddenChanged(bool)),
-            this, SLOT(moduleHidden(bool)));
-    connect(module, SIGNAL(hasIndexChanged(bool)),
-            this,   SLOT(moduleIndexed(bool)));
-    connect(module, SIGNAL(unlockedChanged(bool)),
-            this,   SLOT(moduleUnlocked(bool)));
+    BT_CONNECT(module, SIGNAL(hiddenChanged(bool)),
+               this, SLOT(moduleHidden(bool)));
+    BT_CONNECT(module, SIGNAL(hasIndexChanged(bool)),
+               this,   SLOT(moduleIndexed(bool)));
+    BT_CONNECT(module, SIGNAL(unlockedChanged(bool)),
+               this,   SLOT(moduleUnlocked(bool)));
     endInsertRows();
 }
 
@@ -150,12 +152,12 @@ void BtBookshelfModel::addModules(BtModuleSet const & modules) {
                     m_data.size() + newModules.size() - 1);
     Q_FOREACH(CSwordModuleInfo * const module, newModules) {
         m_data.append(module);
-        connect(module, SIGNAL(hiddenChanged(bool)),
-                this, SLOT(moduleHidden(bool)));
-        connect(module, SIGNAL(hasIndexChanged(bool)),
-                this,   SLOT(moduleIndexed(bool)));
-        connect(module, SIGNAL(unlockedChanged(bool)),
-                this,   SLOT(moduleUnlocked(bool)));
+        BT_CONNECT(module, SIGNAL(hiddenChanged(bool)),
+                   this, SLOT(moduleHidden(bool)));
+        BT_CONNECT(module, SIGNAL(hasIndexChanged(bool)),
+                   this,   SLOT(moduleIndexed(bool)));
+        BT_CONNECT(module, SIGNAL(unlockedChanged(bool)),
+                   this,   SLOT(moduleUnlocked(bool)));
     }
     endInsertRows();
 }
@@ -199,25 +201,25 @@ CSwordModuleInfo * BtBookshelfModel::getModule(const QString & name) const {
 }
 
 void BtBookshelfModel::moduleHidden(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
+    BT_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()));
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleIndexed(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
+    BT_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()));
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleUnlocked(bool) {
-    Q_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()) != nullptr);
+    BT_ASSERT(qobject_cast<CSwordModuleInfo *>(sender()));
 
     moduleDataChanged(static_cast<CSwordModuleInfo *>(sender()));
 }
 
 void BtBookshelfModel::moduleDataChanged(CSwordModuleInfo * module) {
-    Q_ASSERT(m_data.count(module) == 1);
+    BT_ASSERT(m_data.count(module) == 1);
 
     QModelIndex i(index(m_data.indexOf(module), 0));
     emit dataChanged(i, i);

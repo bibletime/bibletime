@@ -21,6 +21,8 @@
 #include <QVBoxLayout>
 #include "backend/config/btconfig.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 // Sword includes:
 #include "versekey.h"
@@ -107,27 +109,27 @@ void CRangeChooserDialog::initView() {
 }
 
 void CRangeChooserDialog::initConnections() {
-    connect(m_rangeList, SIGNAL(currentItemChanged(QListWidgetItem*,
-                                                   QListWidgetItem*)),
-            this,        SLOT(selectedRangeChanged(QListWidgetItem*,
-                                                   QListWidgetItem*)));
-    connect(m_nameEdit, SIGNAL(textEdited(QString)),
-            this,       SLOT(nameEditTextChanged(QString)));
-    connect(m_rangeEdit, SIGNAL(textChanged()),
-           this,        SLOT(updateResultList()));
+    BT_CONNECT(m_rangeList, SIGNAL(currentItemChanged(QListWidgetItem *,
+                                                      QListWidgetItem *)),
+               this,        SLOT(selectedRangeChanged(QListWidgetItem *,
+                                                      QListWidgetItem *)));
+    BT_CONNECT(m_nameEdit, SIGNAL(textEdited(QString)),
+               this,       SLOT(nameEditTextChanged(QString)));
+    BT_CONNECT(m_rangeEdit, SIGNAL(textChanged()),
+               this,        SLOT(updateResultList()));
 
     // Connect buttons:
-    connect(m_buttonBox, SIGNAL(accepted()),
-            this,        SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(rejected()),
-            this,        SLOT(reject()));
-    connect(m_newRangeButton, SIGNAL(clicked()),
-            this,             SLOT(addNewRange()));
-    connect(m_deleteRangeButton, SIGNAL(clicked()),
-            this,                SLOT(deleteCurrentRange()));
+    BT_CONNECT(m_buttonBox, SIGNAL(accepted()),
+               this,        SLOT(accept()));
+    BT_CONNECT(m_buttonBox, SIGNAL(rejected()),
+               this,        SLOT(reject()));
+    BT_CONNECT(m_newRangeButton, SIGNAL(clicked()),
+               this,             SLOT(addNewRange()));
+    BT_CONNECT(m_deleteRangeButton, SIGNAL(clicked()),
+               this,                SLOT(deleteCurrentRange()));
     QPushButton * defaultsButton = m_buttonBox->button(QDialogButtonBox::RestoreDefaults);
-    connect(defaultsButton, SIGNAL(clicked()),
-            this,           SLOT(restoreDefaults()));
+    BT_CONNECT(defaultsButton, SIGNAL(clicked()),
+               this,           SLOT(restoreDefaults()));
 }
 
 void CRangeChooserDialog::retranslateUi() {
@@ -178,7 +180,7 @@ void CRangeChooserDialog::selectedRangeChanged(QListWidgetItem * current,
 {
     Q_UNUSED(current);
     if (previous) {
-        Q_ASSERT(dynamic_cast<RangeItem*>(previous) != nullptr);
+        BT_ASSERT(dynamic_cast<RangeItem *>(previous));
         saveCurrentToRange(static_cast<RangeItem*>(previous));
     }
 
@@ -187,7 +189,7 @@ void CRangeChooserDialog::selectedRangeChanged(QListWidgetItem * current,
 
 void CRangeChooserDialog::resetEditControls() {
     const QListWidgetItem * const item = m_rangeList->currentItem();
-    Q_ASSERT(item == nullptr || dynamic_cast<const RangeItem *>(item) != nullptr);
+    BT_ASSERT(!item || dynamic_cast<RangeItem const *>(item));
     const RangeItem * rangeItem = static_cast<const RangeItem *>(item);
 
     m_nameEdit->setEnabled(item != nullptr);
@@ -220,7 +222,7 @@ void CRangeChooserDialog::updateResultList() {
 }
 
 void CRangeChooserDialog::deleteCurrentRange() {
-    Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->currentItem()) != nullptr);
+    BT_ASSERT(dynamic_cast<RangeItem *>(m_rangeList->currentItem()));
     QListWidgetItem *i = m_rangeList->currentItem();
     m_rangeList->removeItemWidget(i);
     delete i;
@@ -232,7 +234,7 @@ void CRangeChooserDialog::accept() {
     // Update the active item:
     QListWidgetItem *currentItem = m_rangeList->currentItem();
     if (currentItem != nullptr) {
-        Q_ASSERT(dynamic_cast<RangeItem*>(currentItem) != nullptr);
+        BT_ASSERT(dynamic_cast<RangeItem *>(currentItem));
         saveCurrentToRange(static_cast<RangeItem*>(currentItem));
     }
 
@@ -240,7 +242,7 @@ void CRangeChooserDialog::accept() {
     m_rangeList->sortItems();
     BtConfig::StringMap map;
     for (int i = 0; i < m_rangeList->count(); i++) {
-        Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->item(i)) != nullptr);
+        BT_ASSERT(dynamic_cast<RangeItem *>(m_rangeList->item(i)));
         const RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
         map[item->caption()] = item->range();
     }

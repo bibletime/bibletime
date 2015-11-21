@@ -20,6 +20,7 @@
 #include "bibletimeapp.h"
 #include "frontend/settingsdialogs/btfontchooserwidget.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -31,8 +32,8 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     m_languageComboBox = new QComboBox(this);
     m_languageLabel->setBuddy(m_languageComboBox);
     m_languageCheckBox = new QCheckBox(this);
-    connect(m_languageCheckBox, SIGNAL(toggled(bool)),
-            this,               SLOT(useOwnFontClicked(bool)) );
+    BT_CONNECT(m_languageCheckBox, SIGNAL(toggled(bool)),
+               this,               SLOT(useOwnFontClicked(bool)) );
 
 
     QHBoxLayout *hLayout = new QHBoxLayout;
@@ -74,10 +75,10 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     */
     // m_fontChooser->setSampleText("SOMETHING");
 
-    connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)),
-            this,          SLOT(newDisplayWindowFontSelected(const QFont&)));
-    connect(m_languageComboBox, SIGNAL(activated(const QString&)),
-            this,               SLOT(newDisplayWindowFontAreaSelected(const QString&)));
+    BT_CONNECT(m_fontChooser, SIGNAL(fontSelected(QFont const &)),
+               this, SLOT(newDisplayWindowFontSelected(QFont const &)));
+    BT_CONNECT(m_languageComboBox, SIGNAL(activated(QString const &)),
+               this, SLOT(newDisplayWindowFontAreaSelected(QString const &)));
 
     const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
     m_fontChooser->setFont(v.second);

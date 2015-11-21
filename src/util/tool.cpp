@@ -20,6 +20,7 @@
 #include "../backend/managers/cswordbackend.h"
 #include "../bibletimeapp.h"
 #include "../frontend/messagedialog.h"
+#include "btassert.h"
 #include "cresmgr.h"
 #include "directory.h"
 
@@ -35,8 +36,8 @@ bool savePlainFile(const QString & filename,
                    const bool forceOverwrite,
                    QTextCodec * const fileCodec)
 {
-    Q_ASSERT(fileCodec);
-    Q_ASSERT(!filename.isEmpty());
+    BT_ASSERT(fileCodec);
+    BT_ASSERT(!filename.isEmpty());
 
     QFile saveFile(filename);
 

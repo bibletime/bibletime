@@ -25,6 +25,7 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
 #include <QtQml/QQmlEngine>
+#include "util/btconnect.h"
 
 class QtQuick2ApplicationViewerPrivate {
     QString mainQmlFile;
@@ -49,7 +50,7 @@ QString QtQuick2ApplicationViewerPrivate::adjustPath(const QString &path) {
 QtQuick2ApplicationViewer::QtQuick2ApplicationViewer(QWindow *parent)
     : QQuickView(parent)
     , d(new QtQuick2ApplicationViewerPrivate()) {
-    connect(engine(), SIGNAL(quit()), SLOT(close()));
+    BT_CONNECT(engine(), SIGNAL(quit()), SLOT(close()));
     setResizeMode(QQuickView::SizeRootObjectToView);
 }
 

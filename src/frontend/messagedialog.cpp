@@ -13,6 +13,7 @@
 #include <QDialogButtonBox>
 #include <QMessageBox>
 #include <QPushButton>
+#include "util/btassert.h"
 
 
 namespace message {
@@ -38,7 +39,7 @@ QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon,
     messageBox.setTextFormat(Qt::RichText);
     //We need the button box to translate the strings (the idea of this whole function)
     QDialogButtonBox* box = dynamic_cast<QDialogButtonBox*>(messageBox.button(QMessageBox::Ok)->parent());
-    Q_ASSERT(box);
+    BT_ASSERT(box);
     messageBox.setStandardButtons(buttons);
     messageBox.setDefaultButton(defaultButton);
     prepareDialogBox(box);
@@ -48,7 +49,7 @@ QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon,
 } // anonymous namespace
 
 void setQActionCheckedNoTrigger(QAction * const action, const bool checked) {
-    Q_ASSERT(action);
+    BT_ASSERT(action);
     const bool signalsWereBlocked = action->blockSignals(true);
     action->setChecked(checked);
     action->blockSignals(signalsWereBlocked);

@@ -10,6 +10,7 @@
 #include "cswordldkey.h"
 
 #include <QTextCodec>
+#include "../../util/btassert.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
 
 // Sword includes:
@@ -46,9 +47,9 @@ CSwordLDKey* CSwordLDKey::copy() const {
 
 /** Sets the module of this key. */
 void CSwordLDKey::setModule(const CSwordModuleInfo *newModule) {
-    Q_ASSERT(newModule);
+    BT_ASSERT(newModule);
     if (m_module == newModule) return;
-    Q_ASSERT(newModule->type() == CSwordModuleInfo::Lexicon);
+    BT_ASSERT(newModule->type() == CSwordModuleInfo::Lexicon);
 
     const QString oldKey = key();
     m_module = newModule;
@@ -57,7 +58,7 @@ void CSwordLDKey::setModule(const CSwordModuleInfo *newModule) {
 
 QString CSwordLDKey::key() const {
     //return QString::fromUtf8((const char*)*this);
-    Q_ASSERT(m_module);
+    BT_ASSERT(m_module);
 
     if (m_module->isUnicode()) {
         return QString::fromUtf8(getText());
@@ -71,7 +72,7 @@ const char * CSwordLDKey::rawKey() const {
 }
 
 bool CSwordLDKey::setKey(const QString &newKey) {
-    Q_ASSERT(m_module);
+    BT_ASSERT(m_module);
 
     if (m_module->isUnicode()) {
         return setKey(newKey.toUtf8().constData());
@@ -84,7 +85,7 @@ bool CSwordLDKey::setKey(const QString &newKey) {
 
 /** Sets the key of this instance */
 bool CSwordLDKey::setKey(const char *newKey) {
-    Q_ASSERT(newKey);
+    BT_ASSERT(newKey);
 
     if (newKey) {
         SWKey::operator = (newKey); //set the key

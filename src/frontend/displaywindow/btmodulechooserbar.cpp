@@ -8,14 +8,15 @@
 **********/
 
 #include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/displaywindow/btmodulechooserbutton.h"
-#include "creadwindow.h"
-#include "util/btmodules.h"
 
 #include <QAction>
 #include <QDebug>
 #include <QList>
 #include <QToolBar>
+#include "frontend/displaywindow/btmodulechooserbutton.h"
+#include "creadwindow.h"
+#include "util/btconnect.h"
+#include "util/btmodules.h"
 
 
 BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
@@ -80,9 +81,12 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
 
     // the button sends signals directly to the window which then signals back when the module
     // list has changed
-    connect(b, SIGNAL(sigModuleAdd(int, QString)), m_window, SLOT(slotAddModule(int, QString)));
-    connect(b, SIGNAL(sigModuleReplace(int, QString)), m_window, SLOT(slotReplaceModule(int, QString)));
-    connect(b, SIGNAL(sigModuleRemove(int)), m_window, SLOT(slotRemoveModule(int)));
+    BT_CONNECT(b,        SIGNAL(sigModuleAdd(int, QString)),
+               m_window, SLOT(slotAddModule(int, QString)));
+    BT_CONNECT(b,        SIGNAL(sigModuleReplace(int, QString)),
+               m_window, SLOT(slotReplaceModule(int, QString)));
+    BT_CONNECT(b,        SIGNAL(sigModuleRemove(int)),
+               m_window, SLOT(slotRemoveModule(int)));
 
     a->setVisible(true);
     return b;
@@ -108,8 +112,10 @@ void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::Mo
     }
     updateButtonMenus();
 
-    connect(m_window, SIGNAL(sigModuleListSet(QStringList)), SLOT(slotBackendModulesChanged()));
-    connect(m_window, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
+    BT_CONNECT(m_window, SIGNAL(sigModuleListSet(QStringList)),
+               SLOT(slotBackendModulesChanged()));
+    BT_CONNECT(m_window, SIGNAL(sigModuleListChanged()),
+               SLOT(slotWindowModulesChanged()));
 }
 
 void BtModuleChooserBar::updateButtonMenus() {

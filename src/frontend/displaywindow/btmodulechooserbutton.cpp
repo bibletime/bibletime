@@ -19,6 +19,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -139,7 +140,8 @@ void BtModuleChooserButton::populateMenu() {
     if (m_module.isEmpty()) m_noneAction->setChecked(true);
 
     m_popup->addSeparator();
-    connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
+    BT_CONNECT(m_popup, SIGNAL(triggered(QAction *)),
+               this, SLOT(moduleChosen(QAction *)));
     setMenu(m_popup);
 
 

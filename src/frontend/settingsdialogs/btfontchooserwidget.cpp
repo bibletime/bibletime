@@ -18,6 +18,7 @@
 #include <QWebSettings>
 #include <QWebView>
 #include "frontend/settingsdialogs/clistwidget.h"
+#include "util/btconnect.h"
 
 
 namespace {
@@ -100,26 +101,20 @@ void BtFontChooserWidget::retranslateUi() {
 }
 
 void BtFontChooserWidget::connectListWidgets() {
-    bool ok = connect(
-                  m_fontListWidget,
-                  SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
-                  this,
-                  SLOT(fontChanged(QListWidgetItem *, QListWidgetItem *)));
-    Q_ASSERT(ok);
-
-    ok = connect(
+    BT_CONNECT(m_fontListWidget,
+               SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
+               this,
+               SLOT(fontChanged(QListWidgetItem *, QListWidgetItem *)));
+    BT_CONNECT(
              m_styleListWidget,
              SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
              this,
              SLOT(styleChanged(QListWidgetItem *, QListWidgetItem *)));
-    Q_ASSERT(ok);
-
-    ok = connect(
+    BT_CONNECT(
              m_sizeListWidget,
              SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
              this,
              SLOT(sizeChanged(QListWidgetItem *, QListWidgetItem *)));
-    Q_ASSERT(ok);
 }
 
 void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {

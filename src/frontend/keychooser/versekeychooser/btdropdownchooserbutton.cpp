@@ -12,6 +12,7 @@
 #include <QWheelEvent>
 #include "frontend/keychooser/versekeychooser/btversekeymenu.h"
 #include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
+#include "util/btconnect.h"
 
 
 const unsigned int ARROW_HEIGHT = 15;
@@ -31,7 +32,8 @@ BtDropdownChooserButton::BtDropdownChooserButton(BtBibleKeyWidget* ref)
     BtVerseKeyMenu* m = new BtVerseKeyMenu(this);
 //    KAcceleratorManager::setNoAccel(m);
     setMenu(m);
-    QObject::connect(m, SIGNAL(triggered(QAction*)), this, SLOT(slotMenuTriggered(QAction*)));
+    BT_CONNECT(m,    SIGNAL(triggered(QAction *)),
+               this, SLOT(slotMenuTriggered(QAction *)));
 }
 
 
@@ -59,7 +61,7 @@ void BtDropdownChooserButton::wheelEvent(QWheelEvent * e) {
 BtBookDropdownChooserButton::BtBookDropdownChooserButton(BtBibleKeyWidget* ref)
         : BtDropdownChooserButton(ref) {
     setToolTip(tr("Select book"));
-    QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepBook(int)));
+    BT_CONNECT(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepBook(int)));
 }
 
 void BtBookDropdownChooserButton::newList() {
@@ -79,7 +81,7 @@ void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action) {
 BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(BtBibleKeyWidget* ref)
         : BtDropdownChooserButton(ref) {
     setToolTip(tr("Select chapter"));
-    QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepChapter(int)));
+    BT_CONNECT(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepChapter(int)));
 }
 
 void BtChapterDropdownChooserButton::newList() {
@@ -100,7 +102,7 @@ void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* action) {
 BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(BtBibleKeyWidget* ref)
         : BtDropdownChooserButton(ref) {
     setToolTip(tr("Select verse"));
-    QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepVerse(int)));
+    BT_CONNECT(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepVerse(int)));
 }
 
 void BtVerseDropdownChooserButton::newList() {

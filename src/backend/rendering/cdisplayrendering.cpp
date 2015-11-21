@@ -182,7 +182,7 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
 
-    //Q_ASSERT(modules.count() >= 1);
+    //BT_ASSERT(modules.count() >= 1);
 
     CDisplayTemplateMgr::Settings settings;
     settings.modules = modules;

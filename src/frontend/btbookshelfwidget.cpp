@@ -30,6 +30,8 @@
 #include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfgroupingmenu.h"
 #include "frontend/btbookshelfview.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -54,16 +56,17 @@ BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
 
     retranslateUi();
 
-    connect(m_nameFilterEdit,  SIGNAL(textEdited(QString)),
-            m_postFilterModel, SLOT(setNameFilterFixedString(QString)));
-    connect(m_treeView, SIGNAL(contextMenuActivated(QPoint)),
-            this,       SLOT(slotShowContextMenu(QPoint)));
-    connect(m_treeView, SIGNAL(moduleContextMenuActivated(CSwordModuleInfo*, QPoint)),
-            this,       SLOT(slotShowItemContextMenu(CSwordModuleInfo*, QPoint)));
+    BT_CONNECT(m_nameFilterEdit,  SIGNAL(textEdited(QString)),
+               m_postFilterModel, SLOT(setNameFilterFixedString(QString)));
+    BT_CONNECT(m_treeView, SIGNAL(contextMenuActivated(QPoint)),
+               this,       SLOT(slotShowContextMenu(QPoint)));
+    BT_CONNECT(m_treeView,
+               SIGNAL(moduleContextMenuActivated(CSwordModuleInfo *, QPoint)),
+               this, SLOT(slotShowItemContextMenu(CSwordModuleInfo *, QPoint)));
 }
 
 void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
-    Q_ASSERT(model != nullptr);
+    BT_ASSERT(model);
     m_sourceModel = model;
     if (m_treeModel != nullptr) {
         m_treeModel->setSourceModel(model);
@@ -71,8 +74,8 @@ void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
 }
 
 void BtBookshelfWidget::setTreeModel(BtBookshelfTreeModel *model) {
-    Q_ASSERT(model != nullptr);
-    Q_ASSERT(m_treeModel == nullptr);
+    BT_ASSERT(model);
+    BT_ASSERT(!m_treeModel);
     m_treeModel = model;
     if (m_sourceModel != nullptr) {
         model->setSourceModel(m_sourceModel);
@@ -96,15 +99,19 @@ void BtBookshelfWidget::initActions() {
     m_showHideAction = new QAction(this);
     m_showHideAction->setIcon(CResMgr::mainIndex::showHide::icon());
     m_showHideAction->setCheckable(true);
-    connect(m_showHideAction, SIGNAL(toggled(bool)),
-            m_postFilterModel, SLOT(setShowHidden(bool)));
+    BT_CONNECT(m_showHideAction,  SIGNAL(toggled(bool)),
+               m_postFilterModel, SLOT(setShowHidden(bool)));
 }
 
 void BtBookshelfWidget::initMenus() {
     // Grouping menu:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
-    connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,           SLOT(slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping)));
+    BT_CONNECT(m_groupingMenu,
+               SIGNAL(signalGroupingOrderChanged(
+                              BtBookshelfTreeModel::Grouping)),
+               this,
+               SLOT(slotGroupingActionTriggered(
+                            BtBookshelfTreeModel::Grouping)));
 
     // Context menu
     m_contextMenu = new QMenu(this);
@@ -156,7 +163,7 @@ void BtBookshelfWidget::retranslateUi() {
 }
 
 bool BtBookshelfWidget::eventFilter(QObject *object, QEvent *event) {
-    Q_ASSERT(object == m_nameFilterEdit);
+    BT_ASSERT(object == m_nameFilterEdit);
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *e = static_cast<QKeyEvent*>(event);
         switch (e->key()) {

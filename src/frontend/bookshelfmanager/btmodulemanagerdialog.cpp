@@ -14,6 +14,7 @@
 #include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
+#include "util/btassert.h"
 
 
 namespace {
@@ -30,7 +31,7 @@ BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget *parent,
     } else {
         m_staticModuleManagerDialog = new BtModuleManagerDialog(parent, flags);
     }
-    Q_ASSERT(m_staticModuleManagerDialog);
+    BT_ASSERT(m_staticModuleManagerDialog);
     return m_staticModuleManagerDialog;
 }
 

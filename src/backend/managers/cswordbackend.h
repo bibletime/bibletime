@@ -15,6 +15,7 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../bookshelfmodel/btbookshelfmodel.h"
 #include "../filters/gbftohtml.h"
@@ -89,7 +90,7 @@ public: /* Methods: */
 
     /** \returns the CSwordBackend singleton instance (created if needed). */
     static inline CSwordBackend * createInstance() {
-        Q_ASSERT(!m_instance);
+        BT_ASSERT(!m_instance);
         m_instance = new CSwordBackend();
         return m_instance;
     }

@@ -16,6 +16,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/btbookshelfgroupingmenu.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -33,8 +34,8 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
     m_postFilterModel->setSourceModel(m_treeModel);
     setModel(m_postFilterModel);
 
-    connect(this, SIGNAL(triggered(QModelIndex)),
-            this, SLOT(slotIndexTriggered(QModelIndex)));
+    BT_CONNECT(this, SIGNAL(triggered(QModelIndex)),
+               this, SLOT(slotIndexTriggered(QModelIndex)));
 }
 
 void BtOpenWorkActionMenu::setSourceModel(QAbstractItemModel *model) {
@@ -53,8 +54,12 @@ void BtOpenWorkActionMenu::postBuildMenu() {
     addSeparator();
     m_groupingMenu = new BtBookshelfGroupingMenu(false, this);
 
-    connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,           SLOT(slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping)));
+    BT_CONNECT(m_groupingMenu,
+               SIGNAL(signalGroupingOrderChanged(
+                              BtBookshelfTreeModel::Grouping)),
+               this,
+               SLOT(slotGroupingActionTriggered(
+                            BtBookshelfTreeModel::Grouping)));
 
     retranslateUi();
     addMenu(m_groupingMenu);
@@ -88,16 +93,16 @@ BtOpenWorkAction::BtOpenWorkAction(const QString &groupingConfigKey,
     slotModelChanged();
 
     BtBookshelfFilterModel *filterModel = m_menu->postFilterModel();
-    connect(m_menu, SIGNAL(triggered(CSwordModuleInfo*)),
-            this,   SIGNAL(triggered(CSwordModuleInfo*)));
-    connect(filterModel, SIGNAL(layoutChanged()),
-            this,        SLOT(slotModelChanged()));
-    connect(filterModel, SIGNAL(modelReset()),
-            this,        SLOT(slotModelChanged()));
-    connect(filterModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
-            this,        SLOT(slotModelChanged()));
-    connect(filterModel, SIGNAL(rowsRemoved(QModelIndex, int, int)),
-            this,        SLOT(slotModelChanged()));
+    BT_CONNECT(m_menu, SIGNAL(triggered(CSwordModuleInfo *)),
+               this,   SIGNAL(triggered(CSwordModuleInfo *)));
+    BT_CONNECT(filterModel, SIGNAL(layoutChanged()),
+               this,        SLOT(slotModelChanged()));
+    BT_CONNECT(filterModel, SIGNAL(modelReset()),
+               this,        SLOT(slotModelChanged()));
+    BT_CONNECT(filterModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
+               this,        SLOT(slotModelChanged()));
+    BT_CONNECT(filterModel, SIGNAL(rowsRemoved(QModelIndex, int, int)),
+               this,        SLOT(slotModelChanged()));
 }
 
 BtOpenWorkAction::~BtOpenWorkAction() {

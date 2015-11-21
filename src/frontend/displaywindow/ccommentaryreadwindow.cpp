@@ -21,6 +21,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -66,50 +67,44 @@ void CCommentaryReadWindow::initActions() {
 
     //cleanup, not a clean oo-solution
     QAction *qaction = ac->action("nextEntry");
-    Q_ASSERT(qaction != nullptr);
+    BT_ASSERT(qaction);
     qaction->setEnabled(false);
     qaction = ac->action("previousEntry");
-    Q_ASSERT(qaction != nullptr);
+    BT_ASSERT(qaction);
     qaction->setEnabled(false);
 
     qaction = ac->action("nextBook");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()),
-                     this,    SLOT(nextBook()));
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextBook()));
     addAction(qaction);
 
     qaction = ac->action("previousBook");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()),
-                     this,    SLOT(previousBook()));
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousBook()));
     addAction(qaction);
 
     qaction = ac->action("nextChapter");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()),
-                     this,    SLOT(nextChapter()));
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()));
     addAction(qaction);
 
     qaction = ac->action("previousChapter");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()),
-                     this,    SLOT(previousChapter()));
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()));
     addAction(qaction);
 
     qaction = ac->action("nextVerse");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()),
-                     this,    SLOT(nextVerse()));
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()));
     addAction(qaction);
 
     qaction = ac->action("previousVerse");
-    Q_ASSERT(qaction != nullptr);
-    QObject::connect(qaction, SIGNAL(triggered()),
-                     this,    SLOT(previousVerse()));
+    BT_ASSERT(qaction);
+    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()));
     addAction(qaction);
 
     qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(qaction != nullptr);
+    BT_ASSERT(qaction);
     m_syncButton = qaction;
     addAction(qaction);
 
@@ -119,8 +114,8 @@ void CCommentaryReadWindow::initActions() {
 void CCommentaryReadWindow::applyProfileSettings(const QString & windowGroup) {
     CLexiconReadWindow::applyProfileSettings(windowGroup);
 
-    Q_ASSERT(windowGroup.endsWith('/'));
-    Q_ASSERT(m_syncButton);
+    BT_ASSERT(windowGroup.endsWith('/'));
+    BT_ASSERT(m_syncButton);
     m_syncButton->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncEnabled", false));
 }
 
@@ -129,8 +124,8 @@ void CCommentaryReadWindow::storeProfileSettings(QString const & windowGroup)
 {
     CLexiconReadWindow::storeProfileSettings(windowGroup);
 
-    Q_ASSERT(windowGroup.endsWith('/'));
-    Q_ASSERT(m_syncButton);
+    BT_ASSERT(windowGroup.endsWith('/'));
+    BT_ASSERT(m_syncButton);
     btConfig().setSessionValue(windowGroup + "syncEnabled", m_syncButton->isChecked());
 }
 
@@ -158,7 +153,7 @@ void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
 /** rapper around key() to return the right type of key. */
 CSwordVerseKey* CCommentaryReadWindow::verseKey() {
     CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
-    Q_ASSERT(k);
+    BT_ASSERT(k);
     return k;
 }
 

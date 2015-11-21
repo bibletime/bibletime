@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <QRegExp>
 #include <QString>
+#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../managers/cswordbackend.h"
 
@@ -233,7 +234,7 @@ int hexDigitValue(char const hex) {
         case 'a' ... 'f': return hex - 'a' + 10; break;
         case 'A' ... 'F': return hex - 'A' + 10; break;
         default:
-            Q_ASSERT(false && "Invalid hex code in GBF");
+            BT_ASSERT(false && "Invalid hex code in GBF");
             abort();
     }
 }
@@ -248,7 +249,7 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
     if (!substituteToken(buf, token)) { // More than a simple replace
         size_t const tokenLength = strlen(token);
 
-        Q_ASSERT(dynamic_cast<UserData *>(userData));
+        BT_ASSERT(dynamic_cast<UserData *>(userData));
         UserData * const myUserData = static_cast<UserData *>(userData);
         // Hack to be able to call stuff like Lang():
         sword::SWModule const * const myModule =
@@ -291,7 +292,7 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
                     buf.append(token[i]);
             buf.append("\">");
         } else if (!strncmp(token, "CA", 2u)) { // ASCII value <CA##> in hex
-            Q_ASSERT(tokenLength == 4u);
+            BT_ASSERT(tokenLength == 4u);
             buf.append(static_cast<char>(hexToChar(token + 2u)));
         } else {
             return GBFHTML::handleToken(buf, token, userData);

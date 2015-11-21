@@ -10,6 +10,7 @@
 #include "chtmlexportrendering.h"
 
 #include <memory>
+#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
 #include "../keys/cswordversekey.h"
@@ -63,7 +64,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     std::unique_ptr<CSwordKey> scoped_key(
             !k ? CSwordKey::createInstance(modules.first()) : nullptr);
     CSwordKey * const key = k ? k : scoped_key.get();
-    Q_ASSERT(key);
+    BT_ASSERT(key);
 
     CSwordVerseKey * const myVK = dynamic_cast<CSwordVerseKey *>(key);
     if (myVK)

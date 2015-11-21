@@ -16,6 +16,7 @@
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/keychooser/ckeychooserwidget.h"
 #include "frontend/keychooser/cscrollbutton.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -51,12 +52,13 @@ CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,
 
     m_layout->addWidget(m_widget, 0, Qt::AlignLeft);
 
-    connect(m_widget, SIGNAL(changed(int)), SLOT(activated(int)));
-    connect(m_widget, SIGNAL(focusOut(int)), SLOT(activated(int)));
+    BT_CONNECT(m_widget, SIGNAL(changed(int)), SLOT(activated(int)));
+    BT_CONNECT(m_widget, SIGNAL(focusOut(int)), SLOT(activated(int)));
 
     setModules(modules, true);
     setKey(key);
-    connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+    BT_CONNECT(this,      SIGNAL(keyChanged(CSwordKey *)),
+               history(), SLOT(add(CSwordKey *)) );
 }
 
 CSwordKey* CLexiconKeyChooser::key() {

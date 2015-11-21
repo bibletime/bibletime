@@ -23,8 +23,9 @@
 #include "backend/btinstallbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/messagedialog.h"
-#include "util/directory.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
+#include "util/directory.h"
 #include "util/tool.h"
 
 
@@ -78,19 +79,20 @@ BtInstallPathDialog::BtInstallPathDialog() {
     m_addButton = new QPushButton(tr("&Add..."), this);
     m_addButton->setToolTip(tr("Add new folder"));
     m_addButton->setIcon(CResMgr::bookshelfmgr::paths::icon_add());
-    connect(m_addButton, SIGNAL(clicked()), this, SLOT(slotAddClicked()));
+    BT_CONNECT(m_addButton, SIGNAL(clicked()), this, SLOT(slotAddClicked()));
     buttonLayout->addWidget(m_addButton);
 
     m_editButton = new QPushButton(tr("&Edit..."), this);
     m_editButton->setToolTip(tr("Edit the selected folder"));
     m_editButton->setIcon(CResMgr::bookshelfmgr::paths::icon_edit());
-    connect(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
+    BT_CONNECT(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
     buttonLayout->addWidget(m_editButton);
 
     m_removeButton = new QPushButton(tr("&Remove"), this);
     m_removeButton->setToolTip(tr("Remove the selected folder"));
     m_removeButton->setIcon(CResMgr::bookshelfmgr::paths::icon_remove());
-    connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveClicked()));
+    BT_CONNECT(m_removeButton, SIGNAL(clicked()),
+               this,           SLOT(slotRemoveClicked()));
     buttonLayout->addWidget(m_removeButton);
 
     QSpacerItem* spacerItem = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -104,8 +106,8 @@ BtInstallPathDialog::BtInstallPathDialog() {
     buttonBox->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::NoButton | QDialogButtonBox::Ok);
     message::prepareDialogBox(buttonBox);
     mainLayout->addWidget(buttonBox);
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    BT_CONNECT(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
     //clumsy way to set width. Could someone please fix Qt to have an easy way to set widget sizes?
     int textWidth = fontMetrics().width(rwfolderitem.append("MMMMMMMMMM"));
     int buttonWidth = m_addButton->width();

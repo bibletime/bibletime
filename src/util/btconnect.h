@@ -12,8 +12,8 @@
 #ifndef BTCONNECT_H
 #define BTCONNECT_H
 
-#include <cassert>
 #include <QObject>
+#include "btassert.h"
 #include "btwrap.h"
 
 
@@ -21,7 +21,7 @@
 #define BT_CONNECT_WITH(with, ...) \
     do { \
         bool const ok = with connect(__VA_ARGS__); \
-        assert(ok); \
+        BT_ASSERT(ok); \
     } while (false)
 #define BT_CONNECT(...)         BT_CONNECT_WITH(,         BT_WRAP(__VA_ARGS__))
 #define BT_CONNECT_QOBJECT(...) BT_CONNECT_WITH(QObject::,BT_WRAP(__VA_ARGS__))

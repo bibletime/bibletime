@@ -12,14 +12,17 @@
 
 #include "installsourcesmanager.h"
 
-#include "installsources.h"
-#include "backend/btinstallbackend.h"
-#include "mobile/btmmain.h"
-#include "mobile/ui/qtquick2applicationviewer.h"
-#include "mobile/ui/viewmanager.h"
 #include <QDebug>
 #include <QQuickItem>
 #include <QThread>
+#include "backend/btinstallbackend.h"
+#include "mobile/bookshelfmanager/installsources.h"
+#include "mobile/btmmain.h"
+#include "mobile/ui/qtquick2applicationviewer.h"
+#include "mobile/ui/viewmanager.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -32,11 +35,11 @@ InstallSourcesManager::~InstallSourcesManager() {
 
 void InstallSourcesManager::refreshSources() {
     findProgressObject();
-    Q_ASSERT(m_progressObject != nullptr);
+    BT_ASSERT(m_progressObject);
     if (m_progressObject == nullptr)
         return;
     m_progressObject->disconnect(this);
-    connect(m_progressObject, SIGNAL(cancel()), this, SLOT(cancel()));
+    BT_CONNECT(m_progressObject, SIGNAL(cancel()), this, SLOT(cancel()));
 
     m_progressObject->setProperty("minimumValue", 0.0);
     m_progressObject->setProperty("maximumValue", 100.0);
@@ -56,13 +59,14 @@ void InstallSourcesManager::runThread() {
     QThread* thread = new QThread;
     m_worker = new InstallSources();
     m_worker->moveToThread(thread);
-//    connect(m_worker, SIGNAL(error(QString)), this, SLOT(errorString(QString)));
-    connect(thread, SIGNAL(started()), m_worker, SLOT(process()));
-    connect(m_worker, SIGNAL(finished()), thread, SLOT(quit()));
-    connect(m_worker, SIGNAL(finished()), m_worker, SLOT(deleteLater()));
-    connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-    connect(m_worker, SIGNAL(percentComplete(int, const QString&)),
-            this, SLOT(percentComplete(int, const QString&)));
+//    BT_CONNECT(m_worker, SIGNAL(error(QString)),
+//               this,     SLOT(errorString(QString)));
+    BT_CONNECT(thread, SIGNAL(started()), m_worker, SLOT(process()));
+    BT_CONNECT(m_worker, SIGNAL(finished()), thread, SLOT(quit()));
+    BT_CONNECT(m_worker, SIGNAL(finished()), m_worker, SLOT(deleteLater()));
+    BT_CONNECT(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+    BT_CONNECT(m_worker, SIGNAL(percentComplete(int, QString const &)),
+               this,     SLOT(percentComplete(int, QString const &)));
     thread->start();
 }
 

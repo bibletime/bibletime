@@ -175,7 +175,7 @@ BtIcons::BtIcons()
     , icon_tile_horiz_auto(icon_tile_horiz, icon_automatically)
     , icon_tile_vert_auto(icon_tile_vert, icon_automatically)
 {
-    Q_ASSERT(!m_instance);
+    BT_ASSERT(!m_instance);
     m_instance = this;
 }
 

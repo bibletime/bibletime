@@ -15,6 +15,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/messagedialog.h"
+#include "util/btconnect.h"
 
 
 BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
@@ -32,13 +33,12 @@ BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
     vboxLayout->addWidget(m_textEdit);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    QObject::connect(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
     vboxLayout->addWidget(m_buttons);
 
     retranslateUi();
 
-    connect(moduleInfo, SIGNAL(destroyed()),
-            this,       SLOT(close()));
+    BT_CONNECT(moduleInfo, SIGNAL(destroyed()), this, SLOT(close()));
 }
 
 void BTAboutModuleDialog::retranslateUi() {

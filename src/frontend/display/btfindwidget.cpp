@@ -14,6 +14,7 @@
 #include "QLineEdit"
 #include "QSpacerItem"
 #include "QToolButton"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -29,13 +30,7 @@ inline QToolButton * newToolButton(QIcon const & icon,
     button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     button->setAutoRaise(true);
     layout->addWidget(button);
-    #ifndef QT_NO_DEBUG
-    bool const ok =
-    #endif
-        QObject::connect(button, SIGNAL(released()), parent, slot);
-    #ifndef QT_NO_DEBUG
-    Q_ASSERT(ok);
-    #endif
+    BT_CONNECT_QOBJECT(button, SIGNAL(released()), parent, slot);
     return button;
 }
 } // anonymous namespace
@@ -57,12 +52,10 @@ BtFindWidget::BtFindWidget(QWidget * parent)
     // Text editor:
     m_textEditor = new QLineEdit(this);
     m_layout->addWidget(m_textEditor);
-    bool ok = connect(m_textEditor, SIGNAL(textChanged(QString const &)),
-                      this,         SLOT(textChanged(QString const &)));
-    Q_ASSERT(ok);
-    ok = connect(m_textEditor, SIGNAL(returnPressed()),
-                 this,         SLOT(returnPressed()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_textEditor, SIGNAL(textChanged(QString const &)),
+               this,         SLOT(textChanged(QString const &)));
+    BT_CONNECT(m_textEditor, SIGNAL(returnPressed()),
+              this,          SLOT(returnPressed()));
 
     // Next and Previous buttons:
     m_previousButton = newButton(CResMgr::findWidget::icon_previous(),
@@ -72,9 +65,8 @@ BtFindWidget::BtFindWidget(QWidget * parent)
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
-    ok = connect(m_caseCheckBox, SIGNAL(stateChanged(int)),
-                 this,           SLOT(caseStateChanged(int)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_caseCheckBox, SIGNAL(stateChanged(int)),
+               this,           SLOT(caseStateChanged(int)));
     m_layout->addWidget(m_caseCheckBox);
 
     // Spacer:

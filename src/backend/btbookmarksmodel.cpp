@@ -35,6 +35,8 @@
 #include <QTime>
 #include <QTimer>
 #include "../bibletimeapp.h"
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
 #include "../util/cresmgr.h"
 #include "../util/directory.h"
 #include "../util/tool.h"
@@ -64,7 +66,7 @@ public: /* Tyepes */
         inline BookmarkItemBase(BookmarkItemBase * parent = nullptr)
             : m_parent(parent) {
             if(m_parent) {
-                Q_ASSERT(!m_parent->m_children.contains(this));
+                BT_ASSERT(!m_parent->m_children.contains(this));
                 m_parent->m_children.append(this);
             }
         }
@@ -81,7 +83,7 @@ public: /* Tyepes */
         /** Children routines. */
         inline void addChild(BookmarkItemBase * child) {
             child->setParent(this);
-            Q_ASSERT(!m_children.contains(child));
+            BT_ASSERT(!m_children.contains(child));
             m_children.append(child);
         }
 
@@ -97,7 +99,7 @@ public: /* Tyepes */
 
         inline void insertChild(int index, BookmarkItemBase * child) {
             child->setParent(this);
-            Q_ASSERT(!m_children.contains(child));
+            BT_ASSERT(!m_children.contains(child));
             m_children.insert(index, child);
         }
 
@@ -138,7 +140,7 @@ public: /* Tyepes */
           \returns index of this item in parent's child array.
          */
         inline int index() const {
-            Q_ASSERT(parent());
+            BT_ASSERT(parent());
             for(int i = 0; i < parent()->childCount(); ++i)
                 if(parent()->child(i) == this)
                     return i;
@@ -243,7 +245,7 @@ public: /* Methods */
                         break;
                     if(items[c]->childCount())
                         items.append(items[c]->children());
-                    Q_ASSERT(c < items.size());
+                    BT_ASSERT(c < items.size());
                 }
             }
 #endif
@@ -375,7 +377,7 @@ public: /* Loader */
     /** Takes one item and saves the tree which is under it to a named file
     * or to the default bookmarks file, asking the user about overwriting if necessary. */
     QString serializeTreeFromRootItem(BookmarkItemBase * rootItem) {
-        Q_ASSERT(rootItem);
+        BT_ASSERT(rootItem);
 
         QDomDocument doc("DOC");
         doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
@@ -560,7 +562,7 @@ QString BookmarkItem::toolTip() const {
     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
     std::unique_ptr<CSwordKey> k(CSwordKey::createInstance(module()));
-    Q_ASSERT(k);
+    BT_ASSERT(k);
     k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
@@ -588,7 +590,7 @@ BtBookmarksModel::BtBookmarksModel(const QString & fileName, const QString & roo
     , d_ptr(new BtBookmarksModelPrivate(this))
 {
     /// \todo take into account rootFolder
-    Q_ASSERT(rootFolder.isEmpty() && "specifying root folder for bookmarks is not supported at moment");
+    BT_ASSERT(rootFolder.isEmpty() && "specifying root folder for bookmarks is not supported at moment");
 
     load(fileName);
 }
@@ -694,7 +696,7 @@ bool BtBookmarksModel::removeRows(int row, int count, const QModelIndex & parent
 {
     Q_D(BtBookmarksModel);
 
-    Q_ASSERT(rowCount(parent) >= row + count);
+    BT_ASSERT(rowCount(parent) >= row + count);
 
     beginRemoveRows(parent, row, row + count - 1);
 
@@ -712,7 +714,7 @@ bool BtBookmarksModel::insertRows(int row, int count, const QModelIndex &parent)
 {
     Q_D(BtBookmarksModel);
 
-    Q_ASSERT(rowCount(parent) >= row + count - 1);
+    BT_ASSERT(rowCount(parent) >= row + count - 1);
 
     beginInsertRows(parent, row, row + count - 1);
 
@@ -751,13 +753,9 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
     QList<BookmarkItemBase *> items = d->loadTree(fileName);
 
     if(!rootItem.isValid() && fileName.isEmpty()) {
-        if(!d->m_defaultModel) {
-            connect(&d->m_saveTimer, SIGNAL(timeout()), this, SLOT(save()));
-            d->m_defaultModel = this;
-        }
-        else
-            Q_ASSERT_X(false, "BtBookmarksModel::load" ,
-                       "no more than one default bookmarks model is allowed");
+        BT_ASSERT(d->m_defaultModel && "Only one default model allowed!");
+        BT_CONNECT(&d->m_saveTimer, SIGNAL(timeout()), this, SLOT(save()));
+        d->m_defaultModel = this;
     }
 
     if(items.size() == 0)

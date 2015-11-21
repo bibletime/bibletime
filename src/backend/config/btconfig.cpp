@@ -11,6 +11,7 @@
 
 #include <QDebug>
 #include <QLocale>
+#include "../../util/btassert.h"
 #include "../../util/directory.h" // DU::getUserBaseDir()
 #include "../btmoduletreeitem.h"
 #include "../managers/cdisplaytemplatemgr.h"
@@ -38,7 +39,7 @@ BtConfig::StringMap BtConfig::m_defaultSearchScopes;
 BtConfig::BtConfig(const QString & settingsFile)
     : BtConfigCore(settingsFile)
 {
-    Q_ASSERT_X(!m_instance, "BtConfig", "Already initialized!");
+    BT_ASSERT(!m_instance && "BtConfig already initialized!");
     m_instance = this;
 
     if (m_defaultSearchScopes.isEmpty()) {
@@ -54,7 +55,7 @@ BtConfig::BtConfig(const QString & settingsFile)
 }
 
 BtConfig::InitState BtConfig::initBtConfig() {
-    Q_ASSERT(!m_instance);
+    BT_ASSERT(!m_instance);
 
     const QString confFileName = util::directory::getUserBaseDir().absolutePath()
                                  + "/bibletimerc";
@@ -77,7 +78,7 @@ void BtConfig::forceMigrate()
 { m_instance->setValue<int>(BTCONFIG_API_VERSION_KEY, BTCONFIG_API_VERSION); }
 
 BtConfig& BtConfig::getInstance() {
-    Q_ASSERT_X(m_instance, "BtConfig", "Not yet initialized!");
+    BT_ASSERT(m_instance && "BtConfig not yet initialized!");
     return *m_instance;
 }
 
@@ -89,12 +90,12 @@ void BtConfig::destroyInstance() {
 void BtConfig::setModuleEncryptionKey(const QString & name,
                                       const QString & key)
 {
-    Q_ASSERT(!name.isEmpty());
+    BT_ASSERT(!name.isEmpty());
     setValue("Module keys/" + name, key);
 }
 
 QString BtConfig::getModuleEncryptionKey(const QString & name) {
-    Q_ASSERT(!name.isEmpty());
+    BT_ASSERT(!name.isEmpty());
     return value<QString>("Module keys/" + name, QString::null);
 }
 
@@ -199,7 +200,7 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
                                   const FontSettingsPair & fontSettings)
 {
     const QString & englishName = language.englishName();
-    Q_ASSERT(!englishName.isEmpty());
+    BT_ASSERT(!englishName.isEmpty());
 
     QMutexLocker lock(&this->m_mutex);
     // write the language to the settings
@@ -214,7 +215,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
         const CLanguageMgr::Language & language)
 {
     const QString & englishName = language.englishName();
-    Q_ASSERT(!englishName.isEmpty());
+    BT_ASSERT(!englishName.isEmpty());
 
     QMutexLocker lock(&this->m_mutex);
     // Check the cache first:

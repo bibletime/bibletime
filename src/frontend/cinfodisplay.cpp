@@ -19,7 +19,6 @@
 #include <QVBoxLayout>
 #include <QtAlgorithms>
 #include <QMenu>
-
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -29,6 +28,8 @@
 #include "bibletime.h"
 #include "frontend/crossrefrendering.h"
 #include "frontend/display/bthtmlreaddisplay.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 using namespace Rendering;
@@ -50,22 +51,22 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
 
     QAction * const selectAllAction = new QAction(QIcon(), tr("Select all"), this);
     selectAllAction->setShortcut(QKeySequence::SelectAll);
-    QObject::connect(selectAllAction, SIGNAL(triggered()),
-                     this,            SLOT(selectAll()));
+    BT_CONNECT(selectAllAction, SIGNAL(triggered()),
+               this,            SLOT(selectAll()));
 
     QAction * const copyAction = new QAction(tr("Copy"), this);
     copyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
-    QObject::connect(copyAction,                     SIGNAL(triggered()),
-                     m_htmlPart->connectionsProxy(), SLOT(copySelection()));
+    BT_CONNECT(copyAction,                     SIGNAL(triggered()),
+               m_htmlPart->connectionsProxy(), SLOT(copySelection()));
 
     QMenu * const menu = new QMenu(this);
     menu->addAction(selectAllAction);
     menu->addAction(copyAction);
     m_htmlPart->installPopup(menu);
 
-    QObject::connect(m_htmlPart->connectionsProxy(),
-                     SIGNAL(referenceClicked(const QString &, const QString &)),
-                     SLOT(lookupInfo(const QString &, const QString &)));
+    BT_CONNECT(m_htmlPart->connectionsProxy(),
+               SIGNAL(referenceClicked(QString const &, QString const &)),
+               SLOT(lookupInfo(QString const &, QString const &)));
 
     layout->addWidget(m_htmlPart->view());
 
@@ -90,9 +91,7 @@ void CInfoDisplay::lookupInfo(const QString & mod_name,
     qDebug() << "CInfoDisplay::lookup";
     qDebug() <<  mod_name <<  key_text;
     CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(mod_name);
-    Q_ASSERT(m);
-    if (!m)
-        return;
+    BT_ASSERT(m);
     std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));
     key->setKey(key_text);
 

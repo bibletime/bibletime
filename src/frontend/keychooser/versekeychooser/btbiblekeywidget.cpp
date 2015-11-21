@@ -24,6 +24,7 @@
 #include "bibletimeapp.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -60,7 +61,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     clearRef->setIcon(CResMgr::icon_clearEdit());
     clearRef->setAutoRaise(true);
     clearRef->setStyleSheet("QToolButton{margin:0px;}");
-    connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );
+    BT_CONNECT(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );
 
     m_bookScroller = new CScrollerWidgetSet(this);
 
@@ -102,8 +103,8 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 
     m_dropDownHoverTimer.setInterval(500);
     m_dropDownHoverTimer.setSingleShot(true);
-    connect(&m_dropDownHoverTimer, SIGNAL(timeout()),
-            m_dropDownButtons, SLOT(hide()));
+    BT_CONNECT(&m_dropDownHoverTimer, SIGNAL(timeout()),
+               m_dropDownButtons, SLOT(hide()));
 
     QString scrollButtonToolTip(tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."));
     m_bookScroller->setToolTips(
@@ -124,18 +125,26 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 
     // signals and slots connections
 
-    connect(m_bookScroller, SIGNAL(change(int)), SLOT(slotStepBook(int)));
-    connect(m_bookScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
-    connect(m_bookScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
-    connect(m_textbox, SIGNAL(returnPressed()), SLOT(slotReturnPressed()));
-    connect(m_chapterScroller, SIGNAL(change(int)), SLOT(slotStepChapter(int)));
-    connect(m_chapterScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
-    connect(m_chapterScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
-    connect(m_verseScroller, SIGNAL(change(int)), SLOT(slotStepVerse(int)));
-    connect(m_verseScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
-    connect(m_verseScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
-    bool ok = connect(m_key->afterChangedSignaller(), SIGNAL(signal()), this, SLOT(updateText()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_bookScroller, SIGNAL(change(int)), SLOT(slotStepBook(int)));
+    BT_CONNECT(m_bookScroller, SIGNAL(scroller_pressed()),
+               SLOT(slotUpdateLock()));
+    BT_CONNECT(m_bookScroller, SIGNAL(scroller_released()),
+               SLOT(slotUpdateUnlock()));
+    BT_CONNECT(m_textbox, SIGNAL(returnPressed()),
+               SLOT(slotReturnPressed()));
+    BT_CONNECT(m_chapterScroller, SIGNAL(change(int)),
+               SLOT(slotStepChapter(int)));
+    BT_CONNECT(m_chapterScroller, SIGNAL(scroller_pressed()),
+               SLOT(slotUpdateLock()));
+    BT_CONNECT(m_chapterScroller, SIGNAL(scroller_released()),
+               SLOT(slotUpdateUnlock()));
+    BT_CONNECT(m_verseScroller, SIGNAL(change(int)), SLOT(slotStepVerse(int)));
+    BT_CONNECT(m_verseScroller, SIGNAL(scroller_pressed()),
+               SLOT(slotUpdateLock()));
+    BT_CONNECT(m_verseScroller, SIGNAL(scroller_released()),
+               SLOT(slotUpdateUnlock()));
+    BT_CONNECT(m_key->afterChangedSignaller(), SIGNAL(signal()),
+               this,                           SLOT(updateText()));
 
     setKey(key);    // The order of these two functions is important.
     setModule();

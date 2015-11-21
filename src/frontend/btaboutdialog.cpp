@@ -19,6 +19,7 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWebView>
+#include "util/btconnect.h"
 #include "util/bticons.h"
 #include "util/directory.h"
 
@@ -83,8 +84,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     mainLayout->addWidget(m_buttonBox);
     setLayout(mainLayout);
 
-    connect(m_buttonBox, SIGNAL(rejected()),
-            this,        SLOT(reject()));
+    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
     retranslateUi();
 }
@@ -103,7 +103,7 @@ void BtAboutDialog::initTab(QWebView *&tab) {
     tab = new QWebView(this);
     m_tabWidget->addTab(tab, "");
     tab->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
-    connect(tab, SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
+    BT_CONNECT(tab, SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
 }
 
 void BtAboutDialog::retranslateUi() {

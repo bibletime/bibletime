@@ -13,8 +13,6 @@
 #include "bookkeychooser.h"
 
 #include <cmath>
-#include "mobile/ui/btwindowinterface.h"
-#include "mobile/ui/qtquick2applicationviewer.h"
 #include <QCoreApplication>
 #include <QDebug>
 #include <QQmlProperty>
@@ -23,6 +21,11 @@
 #include <QQuickItem>
 #include <QStandardItem>
 #include <QString>
+#include "mobile/ui/btwindowinterface.h"
+#include "mobile/ui/qtquick2applicationviewer.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -66,7 +69,7 @@ void BookKeyChooser::initializeRoleNameModel() {
 
 void BookKeyChooser::populateRoleNameModel(const QStringList& sibblings, const QList<int>& sibblingChildCounts) {
     m_roleItemModel.clear();
-    Q_ASSERT(sibblings.count() == sibblingChildCounts.count());
+    BT_ASSERT(sibblings.count() == sibblingChildCounts.count());
     for (int i=0; i< sibblings.count(); ++i) {
         QString sibbling = sibblings.at(i);
         int childCount = sibblingChildCounts.at(i);
@@ -179,22 +182,17 @@ void BookKeyChooser::setProperties() {
 }
 
 void BookKeyChooser::openChooser(bool open) {
-    Q_ASSERT(m_treeChooserObject != nullptr);
+    BT_ASSERT(m_treeChooserObject);
     if (m_treeChooserObject == nullptr)
         return;
 
     m_treeChooserObject->disconnect();
-    bool ok = connect(m_treeChooserObject, SIGNAL(select(QString)),
-                      this, SLOT(select(QString)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_treeChooserObject, SIGNAL(next(QString)),
-                 this, SLOT(next(QString)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_treeChooserObject, SIGNAL(back()),
-                 this, SLOT(back()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_treeChooserObject, SIGNAL(select(QString)),
+               this,                SLOT(select(QString)));
+    BT_CONNECT(m_treeChooserObject, SIGNAL(next(QString)),
+               this,                SLOT(next(QString)));
+    BT_CONNECT(m_treeChooserObject, SIGNAL(back()),
+               this,                SLOT(back()));
 
     setProperties();
 

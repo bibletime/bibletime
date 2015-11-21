@@ -12,14 +12,17 @@
 
 #include "installprogress.h"
 
+#include <QDebug>
+#include <QQuickItem>
 #include "backend/btinstallbackend.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/btinstallthread.h"
 #include "mobile/btmmain.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
-#include <QQuickItem>
-#include <QDebug>
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -47,27 +50,21 @@ void InstallProgress::openProgress(const QList<CSwordModuleInfo*>& modules) {
 
     m_thread = new BtInstallThread(m_modules, destination, this);
     // Connect the signals between the dialog, items and threads
-    bool ok = false;
-    ok = connect(m_thread, SIGNAL(preparingInstall(int)),
-            this,     SLOT(slotInstallStarted(int)),
-            Qt::QueuedConnection);
-    Q_ASSERT(ok);
-    ok = connect(m_thread, SIGNAL(downloadStarted(int)),
-            this,     SLOT(slotDownloadStarted(int)),
-            Qt::QueuedConnection);
-    Q_ASSERT(ok);
-    ok = connect(m_thread, SIGNAL(statusUpdated(int, int)),
-            this,     SLOT(slotStatusUpdated(int, int)),
-            Qt::QueuedConnection);
-    Q_ASSERT(ok);
-    ok = connect(m_thread, SIGNAL(installCompleted(int, bool)),
-            this,     SLOT(slotOneItemCompleted(int, bool)),
-            Qt::QueuedConnection);
-    Q_ASSERT(ok);
-    ok = connect(m_thread, SIGNAL(finished()),
-            this,     SLOT(slotThreadFinished()),
-            Qt::QueuedConnection);
-    Q_ASSERT(ok);
+    BT_CONNECT(m_thread, SIGNAL(preparingInstall(int)),
+               this,     SLOT(slotInstallStarted(int)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(downloadStarted(int)),
+               this,     SLOT(slotDownloadStarted(int)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(statusUpdated(int, int)),
+               this,     SLOT(slotStatusUpdated(int, int)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(installCompleted(int, bool)),
+               this,     SLOT(slotOneItemCompleted(int, bool)),
+               Qt::QueuedConnection);
+    BT_CONNECT(m_thread, SIGNAL(finished()),
+               this,     SLOT(slotThreadFinished()),
+               Qt::QueuedConnection);
     m_thread->start();
 }
 
@@ -85,13 +82,13 @@ void InstallProgress::slotStopInstall() {
 }
 
 QString InstallProgress::getModuleName(int moduleIndex) {
-    Q_ASSERT(moduleIndex < m_modules.count());
+    BT_ASSERT(moduleIndex < m_modules.count());
     CSwordModuleInfo * module = m_modules.at(moduleIndex);
     return module->name();
 }
 
 void InstallProgress::slotInstallStarted(int moduleIndex) {
-    Q_ASSERT(moduleIndex == m_nextInstallIndex);
+    BT_ASSERT(moduleIndex == m_nextInstallIndex);
     m_nextInstallIndex++;
     QString message = tr("Installing") + " " + getModuleName(moduleIndex);
     m_progressObject->setProperty("text", message);

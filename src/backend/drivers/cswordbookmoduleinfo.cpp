@@ -9,6 +9,7 @@
 
 #include "cswordbookmoduleinfo.h"
 
+#include "../../util/btassert.h"
 #include "../keys/cswordtreekey.h"
 
 // Sword includes:
@@ -49,6 +50,6 @@ void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx * const key,
 sword::TreeKeyIdx* CSwordBookModuleInfo::tree() const {
     sword::TreeKeyIdx * const treeKey =
             dynamic_cast<sword::TreeKeyIdx *>(module().getKey());
-    Q_ASSERT(treeKey);
+    BT_ASSERT(treeKey);
     return treeKey;
 }

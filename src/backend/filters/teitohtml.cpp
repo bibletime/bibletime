@@ -111,7 +111,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
 
         CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType( "standardBible" );
 
-        // Q_ASSERT(mod); There's no necessarily a module or standard Bible
+        // BT_ASSERT(mod); There's no necessarily a module or standard Bible
 
         //if the osisRef like "GerLut:key" contains a module, use that
         int pos = ref.indexOf(":");

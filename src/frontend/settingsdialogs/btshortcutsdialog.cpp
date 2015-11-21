@@ -16,6 +16,7 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QVBoxLayout>
+#include "util/btconnect.h"
 
 
 // *************** BtShortcutsDialog ***************************************************************************
@@ -59,8 +60,8 @@ BtShortcutsDialog::BtShortcutsDialog(QWidget* parent)
     message::prepareDialogBox(buttons);
     vLayout->addWidget(buttons);
 
-    connect(buttons, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(buttons, SIGNAL(accepted()), this, SLOT(accept()));
+    BT_CONNECT(buttons, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
 // get new primary key from dialog

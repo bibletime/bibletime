@@ -28,6 +28,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/searchdialog/csearchdialog.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -63,15 +64,20 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     setModules(modules);
 
     // Connect this to the backend module list changes
-    connect(CSwordBackend::instance(),
-            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-            SLOT(reload(CSwordBackend::SetupChangedReason)));
+    BT_CONNECT(CSwordBackend::instance(),
+               SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+               SLOT(reload(CSwordBackend::SetupChangedReason)));
     BibleTime* mainwindow = btMainWindow();
-    connect(mainwindow, SIGNAL(toggledTextWindowHeader(bool)), SLOT(slotShowHeader(bool)) );
-    connect(mainwindow, SIGNAL(toggledTextWindowNavigator(bool)), SLOT(slotShowNavigator(bool)) );
-    connect(mainwindow, SIGNAL(toggledTextWindowToolButtons(bool)), SLOT(slotShowToolButtons(bool)) );
-    connect(mainwindow, SIGNAL(toggledTextWindowModuleChooser(bool)), SLOT(slotShowModuleChooser(bool)) );
-    connect(mainwindow, SIGNAL(toggledTextWindowFormatToolbar(bool)), SLOT(slotShowFormatToolBar(bool)) );
+    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowHeader(bool)),
+               SLOT(slotShowHeader(bool)));
+    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowNavigator(bool)),
+               SLOT(slotShowNavigator(bool)));
+    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowToolButtons(bool)),
+               SLOT(slotShowToolButtons(bool)));
+    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowModuleChooser(bool)),
+               SLOT(slotShowModuleChooser(bool)));
+    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowFormatToolbar(bool)),
+               SLOT(slotShowFormatToolBar(bool)));
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -127,7 +133,7 @@ void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
     conf.beginGroup(windowGroup);
 
     QWidget const * const w = getProfileWindow(parentWidget());
-    Q_ASSERT(w);
+    BT_ASSERT(w);
 
     /**
       \note We don't use saveGeometry/restoreGeometry for MDI subwindows,
@@ -171,7 +177,7 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
     setUpdatesEnabled(false);
 
     QWidget * const w = getProfileWindow(parentWidget());
-    Q_ASSERT(w);
+    BT_ASSERT(w);
 
     /**
       \note We don't use restoreGeometry/saveGeometry for MDI subwindows,
@@ -237,48 +243,46 @@ void CDisplayWindow::initActions() {
     CDisplayWindow::insertKeyboardActions(ac);
 
     QAction* actn = ac->action(CResMgr::displaywindows::general::search::actionName);
-    Q_ASSERT(actn != nullptr);
-    QObject::connect(actn, SIGNAL(triggered()),
-                     this, SLOT(slotSearchInModules()));
+    BT_ASSERT(actn);
+    BT_CONNECT(actn, SIGNAL(triggered()),
+               this, SLOT(slotSearchInModules()));
 
     CDisplayConnections* conn = displayWidget()->connectionsProxy();
 
     actn = ac->action("openLocation");
-    Q_ASSERT(actn != nullptr);
-    QObject::connect(actn, SIGNAL(triggered()),
-                     this, SLOT(setFocusKeyChooser()));
+    BT_ASSERT(actn);
+    BT_CONNECT(actn, SIGNAL(triggered()),
+               this, SLOT(setFocusKeyChooser()));
     addAction(actn);
 
     actn = ac->action("selectAll");
-    Q_ASSERT(actn != nullptr);
-    QObject::connect(actn, SIGNAL(triggered()),
-                     conn, SLOT(selectAll()));
+    BT_ASSERT(actn);
+    BT_CONNECT(actn, SIGNAL(triggered()),
+               conn, SLOT(selectAll()));
     addAction(actn);
 
     actn = ac->action("copySelectedText");
-    Q_ASSERT(actn != nullptr);
-    QObject::connect(actn, SIGNAL(triggered()),
-                     conn, SLOT(copySelection()));
+    BT_ASSERT(actn);
+    BT_CONNECT(actn, SIGNAL(triggered()),
+               conn, SLOT(copySelection()));
     addAction(actn);
 
     actn = ac->action("findText");
-    Q_ASSERT(actn != nullptr);
-    QObject::connect(actn, SIGNAL(triggered()),
-                     conn, SLOT(openFindTextDialog()));
+    BT_ASSERT(actn);
+    BT_CONNECT(actn, SIGNAL(triggered()),
+               conn, SLOT(openFindTextDialog()));
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    Q_ASSERT(actn != nullptr);
-    bool ok = QObject::connect(actn,                    SIGNAL(triggered()),
-                               keyChooser()->history(), SLOT(back()));
-    Q_ASSERT(ok);
+    BT_ASSERT(actn);
+    BT_CONNECT(actn,                    SIGNAL(triggered()),
+               keyChooser()->history(), SLOT(back()));
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    Q_ASSERT(actn != nullptr);
-    ok = QObject::connect(actn,                    SIGNAL(triggered()),
-                          keyChooser()->history(), SLOT(fw()));
-    Q_ASSERT(ok);
+    BT_ASSERT(actn);
+    BT_CONNECT(actn,                    SIGNAL(triggered()),
+               keyChooser()->history(), SLOT(fw()));
     addAction(actn);
 
     ac->readShortcuts("Displaywindow shortcuts");
@@ -356,7 +360,7 @@ void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
 
 /** Sets the new sword key. */
 void CDisplayWindow::setKey( CSwordKey* key ) {
-    Q_ASSERT( key );
+    BT_ASSERT(key);
     m_swordKey = key;
 }
 
@@ -467,23 +471,23 @@ void CDisplayWindow::setFormatToolBar( QToolBar* bar ) {
 
 /** Sets the display settings button. */
 void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
-    connect(this, SIGNAL(sigDisplayOptionsChanged(const DisplayOptions&)),
-        button, SLOT(setDisplayOptions(const DisplayOptions&)));
-    connect(this, SIGNAL(sigFilterOptionsChanged(const FilterOptions&)),
-        button, SLOT(setFilterOptions(const FilterOptions&)));
-    connect(this, SIGNAL(sigModulesChanged(const BtConstModuleList&)),
-        button, SLOT(setModules(const BtConstModuleList&)));
+    BT_CONNECT(this,   SIGNAL(sigDisplayOptionsChanged(DisplayOptions const &)),
+               button, SLOT(setDisplayOptions(DisplayOptions const &)));
+    BT_CONNECT(this,   SIGNAL(sigFilterOptionsChanged(FilterOptions const &)),
+               button, SLOT(setFilterOptions(FilterOptions const &)));
+    BT_CONNECT(this,   SIGNAL(sigModulesChanged(BtConstModuleList const &)),
+               button, SLOT(setModules(BtConstModuleList const &)));
 
     button->setDisplayOptions(displayOptions(), false);
     button->setFilterOptions(filterOptions(), false);
     button->setModules(modules());
 
-    connect(button, SIGNAL(sigFilterOptionsChanged(const FilterOptions&)),
-            this, SLOT(setFilterOptions(const FilterOptions&)));
-    connect(button, SIGNAL(sigDisplayOptionsChanged(const DisplayOptions&)),
-            this, SLOT(setDisplayOptions(const DisplayOptions&)));
-    connect(button, SIGNAL(sigChanged()),
-            this, SLOT(lookup()));
+    BT_CONNECT(button, SIGNAL(sigFilterOptionsChanged(FilterOptions const &)),
+               this,   SLOT(setFilterOptions(FilterOptions const &)));
+    BT_CONNECT(button, SIGNAL(sigDisplayOptionsChanged(DisplayOptions const &)),
+               this,   SLOT(setDisplayOptions(DisplayOptions const &)));
+    BT_CONNECT(button, SIGNAL(sigChanged()),
+               this,   SLOT(lookup()));
 }
 
 void CDisplayWindow::slotShowHeader(bool show) {
@@ -536,7 +540,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         //if the module is displayed in another display window we assume a wrong drop
         //create a new window for the given module
         BibleTime *mainWindow = btMainWindow();
-        Q_ASSERT(mainWindow != nullptr);
+        BT_ASSERT(mainWindow);
         mainWindow->createReadDisplayWindow(QList<CSwordModuleInfo*>() << m, keyName);
     }
 }
@@ -544,7 +548,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
 void CDisplayWindow::lookupKey( const QString& keyName ) {
     /* This function is called for example after a bookmark was dropped on this window
     */
-    Q_ASSERT(modules().first());
+    BT_ASSERT(modules().first());
 
     lookupModKey(modules().first()->name(), keyName);
 }
@@ -560,7 +564,8 @@ QMenu* CDisplayWindow::popup() {
     // qWarning("CReadWindow::popup()");
     if (!m_popupMenu) {
         m_popupMenu = new QMenu(this);
-        connect(m_popupMenu, SIGNAL(aboutToShow()), this, SLOT(updatePopupMenu()));
+        BT_CONNECT(m_popupMenu, SIGNAL(aboutToShow()),
+                   this,        SLOT(updatePopupMenu()));
         if (displayWidget()) {
             displayWidget()->installPopup(m_popupMenu);
         }

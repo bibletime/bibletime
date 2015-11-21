@@ -35,6 +35,8 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "frontend/tips/bttipdialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/directory.h"
 
 
@@ -42,7 +44,8 @@
 void BibleTime::slotSettingsOptions() {
     qDebug() << "BibleTime::slotSettingsOptions";
     CConfigurationDialog *dlg = new CConfigurationDialog(this, m_actionCollection);
-    QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
+    BT_CONNECT(dlg,  SIGNAL(signalSettingsChanged()),
+               this, SLOT(slotSettingsChanged()) );
 
     dlg->show();
 }
@@ -88,7 +91,7 @@ void BibleTime::slotSwordSetupDialog() {
 
 /** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {
-    Q_ASSERT(m_windowMenu);
+    BT_ASSERT(m_windowMenu);
 
     const int numSubWindows = m_mdi->subWindowList().count();
     m_windowCloseAction->setEnabled(numSubWindows);
@@ -104,21 +107,22 @@ void BibleTime::slotWindowMenuAboutToShow() {
 
 /** Is called just before the open windows menu is shown. */
 void BibleTime::slotOpenWindowsMenuAboutToShow() {
-    Q_ASSERT(m_openWindowsMenu);
+    BT_ASSERT(m_openWindowsMenu);
 
     m_openWindowsMenu->clear();
     Q_FOREACH (QMdiSubWindow * const window, m_mdi->usableWindowList()) {
         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
         openWindowAction->setCheckable(true);
         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
-        connect(openWindowAction, SIGNAL(triggered()), m_windowMapper, SLOT(map()));
+        BT_CONNECT(openWindowAction, SIGNAL(triggered()),
+                   m_windowMapper,   SLOT(map()));
         m_windowMapper->setMapping(openWindowAction, window);
     }
 }
 
 /** This slot is connected with the windowAutoTileAction object */
 void BibleTime::slotUpdateWindowArrangementActions(QAction * trigerredAction) {
-    Q_ASSERT(trigerredAction);
+    BT_ASSERT(trigerredAction);
 
     if (trigerredAction == m_windowAutoTileVerticalAction) {
         m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTileVertical);
@@ -141,7 +145,7 @@ void BibleTime::slotUpdateWindowArrangementActions(QAction * trigerredAction) {
         btConfig().setSessionValue("GUI/alignmentMode", autoCascade);
     }
     else {
-        Q_ASSERT(trigerredAction == m_windowManualModeAction
+        BT_ASSERT(trigerredAction == m_windowManualModeAction
                  || trigerredAction == m_windowTileAction
                  || trigerredAction == m_windowCascadeAction
                  || trigerredAction == m_windowTileVerticalAction
@@ -187,7 +191,7 @@ void BibleTime::slotTileHorizontal() {
 
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
-    Q_ASSERT(m_mainToolBar);
+    BT_ASSERT(m_mainToolBar);
     bool currentState = btConfig().sessionValue<bool>("GUI/showMainToolbar", true);
     btConfig().setSessionValue("GUI/showMainToolbar", !currentState);
     if ( m_showMainWindowToolbarAction->isChecked()) {
@@ -357,15 +361,15 @@ void BibleTime::saveProfile() {
 }
 
 void BibleTime::loadProfile(QAction * action) {
-    Q_ASSERT(action);
+    BT_ASSERT(action);
     QVariant keyProperty = action->property("ProfileKey");
-    Q_ASSERT(keyProperty.type() == QVariant::String);
-    Q_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
+    BT_ASSERT(keyProperty.type() == QVariant::String);
+    BT_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
     loadProfile(keyProperty.toString());
 }
 
 void BibleTime::loadProfile(const QString & profileKey) {
-    Q_ASSERT(btConfig().sessionNames().contains(profileKey));
+    BT_ASSERT(btConfig().sessionNames().contains(profileKey));
 
     // do nothing if requested session is the current session
     if (profileKey == btConfig().currentSessionKey())
@@ -463,7 +467,7 @@ void BibleTime::reloadProfile() {
             failedWindows.insert(w, wls);
 
         // Try to respawn the window:
-        Q_ASSERT(!wls.window);
+        BT_ASSERT(!wls.window);
         const QString key = conf.sessionValue<QString>(windowGroup + "key");
         WWT wwt = static_cast<WWT>(conf.sessionValue<int>(windowGroup + "writeWindowType", 0));
         if (wwt > 0) {
@@ -506,10 +510,10 @@ void BibleTime::reloadProfile() {
 }
 
 void BibleTime::deleteProfile(QAction* action) {
-    Q_ASSERT(action);
+    BT_ASSERT(action);
     QVariant keyProperty = action->property("ProfileKey");
-    Q_ASSERT(keyProperty.type() == QVariant::String);
-    Q_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
+    BT_ASSERT(keyProperty.type() == QVariant::String);
+    BT_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
 
     /// \todo Ask for confirmation
     btConfig().deleteSession(keyProperty.toString());

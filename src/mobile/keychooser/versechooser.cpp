@@ -12,19 +12,21 @@
 
 #include "versechooser.h"
 
-#include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordmoduleinfo.h"
 #include <cmath>
-#include "mobile/ui/btwindowinterface.h"
-#include "mobile/ui/gridchooser.h"
-#include "mobile/ui/qtquick2applicationviewer.h"
 #include <QQuickItem>
 #include <QQmlProperty>
 #include <QQmlContext>
 #include <QDebug>
 #include <QQmlProperty>
 #include <QCoreApplication>
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "mobile/ui/btwindowinterface.h"
+#include "mobile/ui/gridchooser.h"
+#include "mobile/ui/qtquick2applicationviewer.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -35,9 +37,8 @@ VerseChooser::VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface*
       m_key(nullptr),
       m_state(CLOSED ) {
     m_gridChooser = new GridChooser(m_viewer);
-    bool ok = connect(m_gridChooser, SIGNAL(accepted(const QString&)),
-                      this, SLOT(stringAccepted(const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_gridChooser, SIGNAL(accepted(QString const &)),
+               this,          SLOT(stringAccepted(QString const &)));
 }
 
 void VerseChooser::open(CSwordVerseKey* key) {

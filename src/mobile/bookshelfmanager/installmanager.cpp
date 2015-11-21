@@ -12,15 +12,18 @@
 
 #include "installmanager.h"
 
+#include <QDebug>
+#include <QQuickItem>
+#include <QtAlgorithms>
 #include "backend/btinstallbackend.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/btinstallmgr.h"
 #include "mobile/btmmain.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
-#include <QDebug>
-#include <QQuickItem>
-#include <QtAlgorithms>
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -58,8 +61,8 @@ static void setupWorksModel(const QStringList& titleList,
                             const QStringList& descriptionList,
                             const QList<int>& installedList,
                             RoleItemModel* model) {
-    Q_ASSERT(titleList.count() == descriptionList.count());
-    Q_ASSERT(titleList.count() == installedList.count());
+    BT_ASSERT(titleList.count() == descriptionList.count());
+    BT_ASSERT(titleList.count() == installedList.count());
 
     QHash<int, QByteArray> roleNames;
     roleNames[TitleRole] =  "title";
@@ -87,9 +90,8 @@ InstallManager::InstallManager(QObject* /* parent */)
       m_btInstallMgr(nullptr),
       m_backend(nullptr) {
 
-    bool ok = connect(&m_installSourcesManager, SIGNAL(sourcesUpdated()),
-                      this, SLOT(updateModels()));
-    Q_ASSERT(ok);
+    BT_CONNECT(&m_installSourcesManager, SIGNAL(sourcesUpdated()),
+               this,                     SLOT(updateModels()));
 }
 
 void InstallManager::openChooser() {
@@ -140,33 +142,20 @@ void InstallManager::makeConnections()
 {
     m_installManagerChooserObject->disconnect();
 
-    bool ok = connect(m_installManagerChooserObject, SIGNAL(sourceChanged(int)),
-                      this, SLOT(sourceIndexChanged(int)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_installManagerChooserObject, SIGNAL(categoryChanged(int)),
-                      this, SLOT(categoryIndexChanged(int)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_installManagerChooserObject, SIGNAL(languageChanged(int)),
-                      this, SLOT(languageIndexChanged(int)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_installManagerChooserObject, SIGNAL(workSelected(int)),
-                      this, SLOT(workSelected(int)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_installManagerChooserObject, SIGNAL(cancel()),
-                      this, SLOT(cancel()));
-    Q_ASSERT(ok);
-
-    ok = connect(m_installManagerChooserObject, SIGNAL(installRemove()),
-                      this, SLOT(installRemove()));
-    Q_ASSERT(ok);
-
-    ok = connect(m_installManagerChooserObject, SIGNAL(refreshLists()),
-                      this, SLOT(refreshLists()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(sourceChanged(int)),
+               this,                          SLOT(sourceIndexChanged(int)));
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(categoryChanged(int)),
+               this,                          SLOT(categoryIndexChanged(int)));
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(languageChanged(int)),
+               this,                          SLOT(languageIndexChanged(int)));
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(workSelected(int)),
+               this,                          SLOT(workSelected(int)));
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(cancel()),
+               this,                          SLOT(cancel()));
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(installRemove()),
+               this,                          SLOT(installRemove()));
+    BT_CONNECT(m_installManagerChooserObject, SIGNAL(refreshLists()),
+               this,                          SLOT(refreshLists()));
 }
 
 void InstallManager::setProperties() {
@@ -347,12 +336,12 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
     }
     // Update the module list before really removing. Remember deleting the pointers later.
     QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
-    Q_ASSERT(toBeDeleted.size() == moduleNames.size());
+    BT_ASSERT(toBeDeleted.size() == moduleNames.size());
 
     sword::InstallMgr installMgr;
     QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
     Q_FOREACH(CSwordModuleInfo * const mInfo, toBeDeleted) {
-        Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
+        BT_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
         // Find the install path for the sword manager
         QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
         QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);

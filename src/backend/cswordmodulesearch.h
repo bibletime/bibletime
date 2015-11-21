@@ -16,6 +16,7 @@
 
 #include <QHash>
 #include <QMetaType>
+#include "../util/btassert.h"
 #include "drivers/btmodulelist.h"
 
 // Sword includes:
@@ -59,8 +60,8 @@ class CSwordModuleSearch: public QObject {
           \param[in] modules the modules to search in.
         */
         inline void setModules(const BtConstModuleList &modules) {
-            Q_ASSERT(!modules.empty());
-            Q_ASSERT(unindexedModules(modules).empty());
+            BT_ASSERT(!modules.empty());
+            BT_ASSERT(unindexedModules(modules).empty());
             m_searchModules = modules;
         }
 

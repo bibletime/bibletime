@@ -20,6 +20,8 @@
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/csearchdialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
@@ -29,7 +31,7 @@ CReadWindow::CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
 
 void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     // Lets be orwellianly paranoid here:
-    Q_ASSERT(dynamic_cast<CReadDisplay *>(newDisplay));
+    BT_ASSERT(dynamic_cast<CReadDisplay *>(newDisplay));
 
     CDisplayWindow::setDisplayWidget(newDisplay);
     if (m_readDisplayWidget) {
@@ -49,24 +51,23 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     }
 
     m_readDisplayWidget = static_cast<CReadDisplay *>(newDisplay);
-    connect(m_readDisplayWidget->connectionsProxy(),
-            SIGNAL(referenceClicked(QString const &, QString const &)),
-            this,
-            SLOT(lookupModKey(QString const &, QString const &)));
+    BT_CONNECT(m_readDisplayWidget->connectionsProxy(),
+               SIGNAL(referenceClicked(QString const &, QString const &)),
+               this,
+               SLOT(lookupModKey(QString const &, QString const &)));
 
-    connect(m_readDisplayWidget->connectionsProxy(),
-            SIGNAL(referenceDropped(QString const &)),
-            this,
-            SLOT(lookupKey(QString const &)));
+    BT_CONNECT(m_readDisplayWidget->connectionsProxy(),
+               SIGNAL(referenceDropped(QString const &)),
+               this,
+               SLOT(lookupKey(QString const &)));
 
     if (BtHtmlReadDisplay * const v =
             dynamic_cast<BtHtmlReadDisplay *>(m_readDisplayWidget))
-        QObject::connect(v,    SIGNAL(completed()),
-                         this, SLOT(slotMoveToAnchor()));
+        BT_CONNECT(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()));
 }
 
 void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
-    Q_ASSERT(newKey);
+    BT_ASSERT(newKey);
 
     if (!isReady() || !newKey || modules().empty() || !modules().first())
         return;
@@ -76,7 +77,7 @@ void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
 
     /// \todo next-TODO how about options?
     Rendering::CEntryDisplay * const display = modules().first()->getDisplay();
-    Q_ASSERT(display);
+    BT_ASSERT(display);
     displayWidget()->setText(display->text(modules(),
                                            newKey->key(),
                                            displayOptions(),

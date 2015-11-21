@@ -12,20 +12,22 @@
 
 #include "sessionmanager.h"
 
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "mobile/util/findqmlobject.h"
-#include "mobile/ui/btstyle.h"
 #include <QGenericReturnArgument>
 #include <QMetaObject>
 #include <QQuickItem>
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
+#include "mobile/ui/btstyle.h"
+#include "mobile/util/findqmlobject.h"
+#include "util/btassert.h"
+
 
 namespace btm {
 
 SessionManager::SessionManager(QObject* parent)
     : QObject(parent) {
     m_windowMgr = findQmlObject("WindowManager");
-    Q_ASSERT(m_windowMgr != nullptr);
+    BT_ASSERT(m_windowMgr);
 }
 
 void SessionManager::loadDefaultSession() {

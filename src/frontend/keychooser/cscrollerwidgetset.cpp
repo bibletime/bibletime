@@ -14,6 +14,7 @@
 #include <QVBoxLayout>
 #include <QWheelEvent>
 #include "frontend/keychooser/cscrollbutton.h"
+#include "util/btconnect.h"
 
 
 #define WIDTH (static_cast<unsigned int>(16))
@@ -51,11 +52,12 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget * parent)
     m_layout->addWidget(m_buttonDown, 0);
     setMinimumWidth(WIDTH); // Kludge to add some spacing but seems to work.
 
-    connect(m_scrollButton, SIGNAL(lock()),                SLOT(slotLock()));
-    connect(m_scrollButton, SIGNAL(unlock()),              SLOT(slotUnlock()));
-    connect(m_scrollButton, SIGNAL(change_requested(int)), SLOT(slotScroller(int)));
-    connect(m_buttonUp,     SIGNAL(clicked()),             SLOT(slotUpClick()));
-    connect(m_buttonDown,   SIGNAL(clicked()),             SLOT(slotDownClick()));
+    BT_CONNECT(m_scrollButton, SIGNAL(lock()), SLOT(slotLock()));
+    BT_CONNECT(m_scrollButton, SIGNAL(unlock()), SLOT(slotUnlock()));
+    BT_CONNECT(m_scrollButton, SIGNAL(change_requested(int)),
+               SLOT(slotScroller(int)));
+    BT_CONNECT(m_buttonUp, SIGNAL(clicked()), SLOT(slotUpClick()));
+    BT_CONNECT(m_buttonDown, SIGNAL(clicked()), SLOT(slotDownClick()));
 }
 
 /** Sets the tooltips for the given entries using the parameters as text. */

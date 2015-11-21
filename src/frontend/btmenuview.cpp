@@ -13,15 +13,17 @@
 #include "frontend/btmenuview.h"
 
 #include <QActionGroup>
+#include "util/btassert.h"
+#include "util/btconnect.h"
 
 
 BtMenuView::BtMenuView(QWidget *parent)
     : QMenu(parent), m_model(nullptr), m_parentIndex(QModelIndex()), m_actions(nullptr)
 {
-    connect(this, SIGNAL(aboutToShow()),
-            this, SLOT(slotAboutToShow()));
-    connect(this, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotActionTriggered(QAction*)));
+    BT_CONNECT(this, SIGNAL(aboutToShow()),
+               this, SLOT(slotAboutToShow()));
+    BT_CONNECT(this, SIGNAL(triggered(QAction*)),
+               this, SLOT(slotActionTriggered(QAction*)));
 }
 
 BtMenuView::~BtMenuView() {
@@ -137,8 +139,8 @@ QMenu *BtMenuView::newMenu(QMenu *parentMenu, const QModelIndex &itemIndex) {
 }
 
 void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
-    Q_ASSERT(m_model != nullptr);
-    Q_ASSERT(m_actions != nullptr);
+    BT_ASSERT(m_model);
+    BT_ASSERT(m_actions);
 
     int children = m_model->rowCount(parentIndex);
     for (int i = 0; i < children; i++) {

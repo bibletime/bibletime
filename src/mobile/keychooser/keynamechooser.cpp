@@ -12,11 +12,14 @@
 
 #include "keynamechooser.h"
 
+#include <QQuickItem>
 #include "backend/keys/cswordldkey.h"
 #include "backend/models/btmoduletextmodel.h"
 #include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
-#include <QQuickItem>
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -35,14 +38,13 @@ void KeyNameChooser::open(BtModuleTextModel* model) {
 }
 
 void KeyNameChooser::openChooser(bool open) {
-    Q_ASSERT(m_keyNameChooserObject != nullptr);
+    BT_ASSERT(m_keyNameChooserObject);
     if (m_keyNameChooserObject == nullptr)
         return;
 
     m_keyNameChooserObject->disconnect();
-    bool ok = connect(m_keyNameChooserObject, SIGNAL(itemSelected(int)),
-                      this, SLOT(selected(int)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_keyNameChooserObject, SIGNAL(itemSelected(int)),
+               this,                   SLOT(selected(int)));
 
     m_keyNameChooserObject->setProperty("visible",open);
 }
@@ -55,7 +57,7 @@ void KeyNameChooser::findKeyNameChooserObject() {
     QQuickItem * rootObject = m_viewer->rootObject();
     if (rootObject != nullptr)
         m_keyNameChooserObject = rootObject->findChild<QQuickItem*>("keyNameChooser");
-    Q_ASSERT(m_keyNameChooserObject != nullptr);
+    BT_ASSERT(m_keyNameChooserObject);
 }
 
 

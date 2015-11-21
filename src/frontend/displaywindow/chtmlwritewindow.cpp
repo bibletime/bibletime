@@ -18,6 +18,8 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 
@@ -27,7 +29,7 @@ CHTMLWriteWindow::CHTMLWriteWindow(const QList<CSwordModuleInfo *> & modules, CM
 
 void CHTMLWriteWindow::initView() {
     m_writeDisplay = new CHTMLWriteDisplay(this, this);
-    Q_ASSERT(m_writeDisplay);
+    BT_ASSERT(m_writeDisplay);
     setDisplayWidget(m_writeDisplay);
     setCentralWidget(m_writeDisplay->view() );
 
@@ -47,8 +49,10 @@ void CHTMLWriteWindow::initView() {
 void CHTMLWriteWindow::initConnections() {
     CPlainWriteWindow::initConnections();
 
-    connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
-    connect(m_writeDisplay->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
+    BT_CONNECT(keyChooser(), SIGNAL(keyChanged(CSwordKey *)),
+               this,         SLOT(lookupSwordKey(CSwordKey *)));
+    BT_CONNECT(m_writeDisplay->connectionsProxy(), SIGNAL(textChanged()),
+               this,                               SLOT(textChanged()));
 }
 
 void CHTMLWriteWindow::initToolbars() {
@@ -64,8 +68,8 @@ void CHTMLWriteWindow::storeProfileSettings(QString const & windowGroup) const {
     CPlainWriteWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != nullptr);
-    Q_ASSERT(windowGroup.endsWith('/'));
+    BT_ASSERT(action);
+    BT_ASSERT(windowGroup.endsWith('/'));
     btConfig().setSessionValue(windowGroup + "syncWindowEnabled", action->isChecked());
 }
 
@@ -73,18 +77,18 @@ void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
     CPlainWriteWindow::applyProfileSettings(windowGroup);
 
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != nullptr);
-    Q_ASSERT(windowGroup.endsWith('/'));
+    BT_ASSERT(action);
+    BT_ASSERT(windowGroup.endsWith('/'));
     action->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled", false));
 }
 
 /** Is called when the current text was changed. */
 void CHTMLWriteWindow::textChanged() {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    Q_ASSERT(action != nullptr);
+    BT_ASSERT(action);
     action->setEnabled(m_writeDisplay->isModified());
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    Q_ASSERT(action != nullptr);
+    BT_ASSERT(action);
     action->setEnabled(m_writeDisplay->isModified());
 }
 
@@ -97,7 +101,7 @@ void CHTMLWriteWindow::restoreText() {
 
 bool CHTMLWriteWindow::syncAllowed() const {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != nullptr);
+    BT_ASSERT(action);
     return action->isChecked();
 }
 

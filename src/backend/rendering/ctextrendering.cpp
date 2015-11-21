@@ -12,7 +12,7 @@
 #include <memory>
 #include <QRegExp>
 #include <QtAlgorithms>
-
+#include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
 #include "../keys/cswordversekey.h"
@@ -92,7 +92,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
         m_childList(),
         m_stopKey( stopKey ),
         m_alternativeContent( QString::null ) {
-    Q_ASSERT(module);
+    BT_ASSERT(module);
     m_moduleList.append(module);
 
     //use the start and stop key to ceate our child items
@@ -160,7 +160,7 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     BtConstModuleList modules;
 
     Q_FOREACH (const KeyTreeItem * const c, tree) {
-        Q_ASSERT(c != nullptr);
+        BT_ASSERT(c);
         Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
             if (!modules.contains(mod))
                 modules.append(mod);
@@ -214,7 +214,7 @@ const QString CTextRendering::renderKeyRange(
     sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.get());
     sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.get());
 
-    Q_ASSERT((*sw_start == *sw_stop) || (*sw_start < *sw_stop));
+    BT_ASSERT((*sw_start == *sw_stop) || (*sw_start < *sw_stop));
 
     if (*sw_start == *sw_stop) { //same key, render single key
         return renderSingleKey(lowerBound->key(), modules);
@@ -224,10 +224,10 @@ const QString CTextRendering::renderKeyRange(
         KeyTreeItem::Settings settings = keySettings;
 
         CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.get());
-        Q_ASSERT(vk_start);
+        BT_ASSERT(vk_start);
 
         CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.get());
-        Q_ASSERT(vk_stop);
+        BT_ASSERT(vk_stop);
 
         while ((*vk_start < *vk_stop) || (*vk_start == *vk_stop)) {
 

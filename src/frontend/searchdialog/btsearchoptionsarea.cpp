@@ -27,6 +27,7 @@
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -192,14 +193,18 @@ void BtSearchOptionsArea::initView() {
 }
 
 void BtSearchOptionsArea::initConnections() {
-    QObject::connect( m_searchTextCombo->lineEdit(), SIGNAL(returnPressed ()),
-                      this, SLOT( slotSearchTextEditReturnPressed() )
-                    );
-    connect(m_chooseModulesButton, SIGNAL(clicked()), this, SLOT(chooseModules()));
-    connect(m_chooseRangeButton, SIGNAL(clicked()), this, SLOT(setupRanges()));
-    connect(m_modulesCombo, SIGNAL(activated(int)), this, SLOT(moduleListTextSelected(int) ) );
-    connect(m_helpLabel, SIGNAL(linkActivated(QString)), this, SLOT(syntaxHelp()));
-    connect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
+    BT_CONNECT(m_searchTextCombo->lineEdit(), SIGNAL(returnPressed()),
+               this, SLOT(slotSearchTextEditReturnPressed()));
+    BT_CONNECT(m_chooseModulesButton, SIGNAL(clicked()),
+               this,                  SLOT(chooseModules()));
+    BT_CONNECT(m_chooseRangeButton, SIGNAL(clicked()),
+               this,                SLOT(setupRanges()));
+    BT_CONNECT(m_modulesCombo, SIGNAL(activated(int)),
+               this,           SLOT(moduleListTextSelected(int)));
+    BT_CONNECT(m_helpLabel, SIGNAL(linkActivated(QString)),
+               this,        SLOT(syntaxHelp()));
+    BT_CONNECT(m_searchTextCombo, SIGNAL(editTextChanged(QString const &)),
+               this,              SLOT(slotValidateText(QString const &)));
 }
 
 /** Sets the modules used by the search. */
@@ -295,7 +300,8 @@ void BtSearchOptionsArea::readSettings() {
         if (text.size() > 0)
             m_searchTextCombo->addItem(text);
     }
-    connect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
+    BT_CONNECT(m_searchTextCombo, SIGNAL(editTextChanged(QString const &)),
+               this,              SLOT(slotValidateText(QString const &)));
 
     m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory", QStringList()));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {

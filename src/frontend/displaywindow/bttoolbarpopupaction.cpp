@@ -13,6 +13,7 @@
 #include <QEvent>
 #include <QMenu>
 #include <QToolButton>
+#include "util/btconnect.h"
 
 
 namespace {
@@ -53,8 +54,7 @@ QWidget* BtToolBarPopupAction::createWidget(QWidget* parent) {
     m_button->setDefaultAction(this);
     m_button->setPopupMode(QToolButton::MenuButtonPopup);
     m_button->setMenu(m_menu);
-    bool ok = connect(m_button, SIGNAL(pressed()), this, SLOT(buttonPressed()));
-    Q_ASSERT(ok);;
+    BT_CONNECT(m_button, SIGNAL(pressed()), this, SLOT(buttonPressed()));
     return m_button;
 }
 

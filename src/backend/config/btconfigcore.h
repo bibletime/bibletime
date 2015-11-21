@@ -18,6 +18,7 @@
 #include <QHash>
 #include <QMutex>
 #include <QStringList>
+#include "../../util/btassert.h"
 
 
 /**
@@ -61,7 +62,7 @@ public: /* Methods: */
         QMutexLocker lock(&m_mutex);
         using SSHCI = QHash<QString, QString>::const_iterator;
         SSHCI it = m_sessionNames.constFind(m_currentSessionKey);
-        Q_ASSERT(it != m_sessionNames.constEnd());
+        BT_ASSERT(it != m_sessionNames.constEnd());
         return it.value();
     }
 
@@ -241,13 +242,13 @@ public: /* Methods: */
       \param[in] prefix the prefix to append
     */
     inline void beginGroup(QString prefix) {
-        Q_ASSERT(!prefix.isEmpty());
+        BT_ASSERT(!prefix.isEmpty());
         while (prefix.startsWith('/'))
             prefix.remove(0, 1);
-        Q_ASSERT(!prefix.isEmpty());
+        BT_ASSERT(!prefix.isEmpty());
         while (prefix.endsWith('/'))
             prefix.chop(1);
-        Q_ASSERT(!prefix.isEmpty());
+        BT_ASSERT(!prefix.isEmpty());
 
         m_mutex.lock();
         m_groups.append(prefix);
@@ -264,7 +265,8 @@ public: /* Methods: */
       \warning Locks the object (recursively) until endGroup().
     */
     inline void endGroup() {
-        Q_ASSERT_X(!m_groups.isEmpty(), "BtConfig", "endGroup() called, but no beginGroup() active.");
+        BT_ASSERT(!m_groups.isEmpty()
+                  && "BtConfig::endGroup() called, but no beginGroup() active");
         m_groups.removeLast();
         m_cachedGroup = QString();
         m_mutex.unlock();

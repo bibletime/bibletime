@@ -13,6 +13,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include "../util/btassert.h"
 #include "../util/directory.h"
 #include "managers/cswordbackend.h"
 #include "btinstallmgr.h"
@@ -132,7 +133,7 @@ bool deleteSource(const QString &name) {
 QList<CSwordModuleInfo*> moduleList(QString name) {
     /// \todo dummy
     Q_UNUSED(name);
-    Q_ASSERT(false && "not implemented");
+    BT_ASSERT(false && "not implemented");
     return QList<CSwordModuleInfo*>();
 }
 
@@ -214,7 +215,7 @@ bool setTargetList( const QStringList& targets ) {
 
 QStringList sourceNameList() {
     BtInstallMgr mgr;
-    Q_ASSERT(mgr.installConf);
+    BT_ASSERT(mgr.installConf);
 
     QStringList names;
 

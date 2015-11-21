@@ -34,7 +34,7 @@ inline QString readFileToString(const QString & filename) {
 CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = nullptr;
 
 CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
-    Q_ASSERT(m_instance == nullptr);
+    BT_ASSERT(m_instance);
     m_instance = this;
 
     {
@@ -80,7 +80,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
     // Create template names cache:
     m_availableTemplateNamesCache = m_templateMap.keys();
     const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
-    Q_ASSERT(b);
+    BT_ASSERT(b);
     m_availableTemplateNamesCache.append(m_cssMap.keys());
     qSort(m_availableTemplateNamesCache);
 
@@ -91,10 +91,10 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                                           const QString & content,
                                           const Settings & settings) const
 {
-    Q_ASSERT(name != CSSTEMPLATEBASE);
-    Q_ASSERT(name.endsWith(".css") || name.endsWith(".tmpl"));
-    Q_ASSERT(!name.endsWith(".css") || m_cssMap.contains(name));
-    Q_ASSERT(!name.endsWith(".tmpl") || m_templateMap.contains(name));
+    BT_ASSERT(name != CSSTEMPLATEBASE);
+    BT_ASSERT(name.endsWith(".css") || name.endsWith(".tmpl"));
+    BT_ASSERT(!name.endsWith(".css") || m_cssMap.contains(name));
+    BT_ASSERT(!name.endsWith(".tmpl") || m_templateMap.contains(name));
     const bool templateIsCss = name.endsWith(".css");
 
     QString displayTypeString;
@@ -212,17 +212,17 @@ QString CDisplayTemplateMgr::activeTemplateName() {
 }
 
 void CDisplayTemplateMgr::loadTemplate(const QString & filename) {
-    Q_ASSERT(filename.endsWith(".tmpl"));
-    Q_ASSERT(QFileInfo(filename).isFile());
+    BT_ASSERT(filename.endsWith(".tmpl"));
+    BT_ASSERT(QFileInfo(filename).isFile());
     const QString templateString = readFileToString(filename);
     if (!templateString.isEmpty())
         m_templateMap.insert(QFileInfo(filename).fileName(), templateString);
 }
 
 void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
-    Q_ASSERT(filename.endsWith(".css"));
+    BT_ASSERT(filename.endsWith(".css"));
     const QFileInfo fi(filename);
-    Q_ASSERT(fi.isFile());
+    BT_ASSERT(fi.isFile());
     if (fi.isReadable())
         m_cssMap.insert(fi.fileName(), filename);
 }

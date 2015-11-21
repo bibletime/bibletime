@@ -12,12 +12,14 @@
 
 #include "btsearchinterface.h"
 
-#include "backend/managers/cswordbackend.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "mobile/ui/indexthread.h"
-#include "../util/findqmlobject.h"
 #include <QDebug>
 #include <QQuickItem>
+#include "../util/findqmlobject.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "mobile/ui/indexthread.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 using CSMI = QList<CSwordModuleInfo const *>;
@@ -93,15 +95,12 @@ bool BtSearchInterface::indexModules() {
         nonIndexedModules.append(m);
     }
     m_thread = new IndexThread(nonIndexedModules);
-    bool ok = connect(m_thread, SIGNAL(indexingProgress(int)),
-                 this, SLOT(slotModuleProgress(int)));
-    Q_ASSERT(ok);
-    ok = connect(m_thread, SIGNAL(beginIndexingModule(const QString&)),
-                 this, SLOT(slotBeginModuleIndexing(const QString&)));
-    Q_ASSERT(ok);
-    ok = connect(m_thread, SIGNAL(indexingFinished()),
-                 this, SLOT(slotIndexingFinished()));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_thread, SIGNAL(indexingProgress(int)),
+               this,      SLOT(slotModuleProgress(int)));
+    BT_CONNECT(m_thread, SIGNAL(beginIndexingModule(QString const &)),
+               this,     SLOT(slotBeginModuleIndexing(QString const &)));
+    BT_CONNECT(m_thread, SIGNAL(indexingFinished()),
+               this, SLOT(slotIndexingFinished()));
 
     m_thread->start();
     return success;

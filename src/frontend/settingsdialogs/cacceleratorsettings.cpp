@@ -26,6 +26,7 @@
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/messagedialog.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -43,9 +44,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_typeChooser = new QComboBox(this);
     layoutForWindowTypeChooser->addWidget(m_typeChooser);
 
-    bool ok = connect(m_typeChooser, SIGNAL(activated(const QString&)),
-                      SLOT(slotKeyChooserTypeChanged(const QString&)) );
-    Q_ASSERT(ok);
+    BT_CONNECT(m_typeChooser, SIGNAL(activated(QString const &)),
+               SLOT(slotKeyChooserTypeChanged(QString const &)) );
 
     // m_*.title strings are empty here, they are filled and added to the stacked widget in the retranslateUi() function
     m_keyChooserStack = new QStackedWidget(this);
@@ -59,9 +59,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_application.actionCollection->readShortcuts("Application shortcuts");
     m_application.keyChooser = new BtShortcutsEditor(m_application.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_application.keyChooser);
-    ok = connect(m_application.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
-                 this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_application.keyChooser,
+               SIGNAL(keyChangeRequest(BtShortcutsEditor *, QString const &)),
+               this,
+               SLOT(completeKeyChangeRequest(BtShortcutsEditor *,
+                                             QString const &)));
 
     // ----- All display windows ------ //
     m_general.actionCollection = new BtActionCollection(this);
@@ -69,9 +71,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_general.actionCollection->readShortcuts("Displaywindow shortcuts");
     m_general.keyChooser = new BtShortcutsEditor(m_general.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_general.keyChooser);
-    ok = connect(m_general.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
-                 this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_general.keyChooser,
+               SIGNAL(keyChangeRequest(BtShortcutsEditor *, QString const &)),
+               this,
+               SLOT(completeKeyChangeRequest(BtShortcutsEditor *,
+                                             QString const &)));
 
     // ----- Bible windows ------ //
     m_bible.actionCollection = new BtActionCollection(this);
@@ -79,9 +83,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_bible.actionCollection->readShortcuts("Bible shortcuts");
     m_bible.keyChooser = new BtShortcutsEditor(m_bible.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_bible.keyChooser);
-    ok = connect(m_bible.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
-                 this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_bible.keyChooser,
+               SIGNAL(keyChangeRequest(BtShortcutsEditor *, QString const &)),
+               this,
+               SLOT(completeKeyChangeRequest(BtShortcutsEditor *,
+                                             QString const &)));
 
     // ----- Commentary windows ------ //
     m_commentary.actionCollection = new BtActionCollection(this);
@@ -89,9 +95,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_commentary.actionCollection->readShortcuts("Commentary shortcuts");
     m_commentary.keyChooser = new BtShortcutsEditor(m_commentary.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_commentary.keyChooser);
-    ok = connect(m_commentary.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
-                 this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_commentary.keyChooser,
+               SIGNAL(keyChangeRequest(BtShortcutsEditor *, QString const &)),
+               this,
+               SLOT(completeKeyChangeRequest(BtShortcutsEditor *,
+                                             QString const &)));
 
     // ----- Lexicon windows ------ //
     m_lexicon.actionCollection = new BtActionCollection(this);
@@ -99,9 +107,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_lexicon.actionCollection->readShortcuts("Lexicon shortcuts");
     m_lexicon.keyChooser = new BtShortcutsEditor(m_lexicon.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_lexicon.keyChooser);
-    ok = connect(m_lexicon.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
-                 this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_lexicon.keyChooser,
+               SIGNAL(keyChangeRequest(BtShortcutsEditor *, QString const &)),
+               this,
+               SLOT(completeKeyChangeRequest(BtShortcutsEditor *,
+                                             QString const &)));
 
     // ----- Book windows ------ //
     m_book.actionCollection = new BtActionCollection(this);
@@ -109,9 +119,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_book.actionCollection->readShortcuts("Book shortcuts");
     m_book.keyChooser = new BtShortcutsEditor(m_book.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_book.keyChooser);
-    ok = connect(m_book.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
-                 this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
-    Q_ASSERT(ok);
+    BT_CONNECT(m_book.keyChooser,
+               SIGNAL(keyChangeRequest(BtShortcutsEditor *, QString const &)),
+               this,
+               SLOT(completeKeyChangeRequest(BtShortcutsEditor *,
+                                             QString const &)));
 
     mainLayout->addWidget(m_keyChooserStack);
     slotKeyChooserTypeChanged(m_application.title);

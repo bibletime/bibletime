@@ -69,10 +69,10 @@ BtConfigCore::BtConfigCore(const QString & settingsFile)
 }
 
 void BtConfigCore::setCurrentSession(const QString & key) {
-    Q_ASSERT(!key.isEmpty());
+    BT_ASSERT(!key.isEmpty());
 
     QMutexLocker lock(&m_mutex);
-    Q_ASSERT(m_sessionNames.contains(key));
+    BT_ASSERT(m_sessionNames.contains(key));
     m_currentSessionKey = key;
     m_cachedCurrentSessionGroup = GROUP_SESSION.arg(key);
 
@@ -81,7 +81,7 @@ void BtConfigCore::setCurrentSession(const QString & key) {
 }
 
 QString BtConfigCore::addSession(const QString & name) {
-    Q_ASSERT(!name.isEmpty());
+    BT_ASSERT(!name.isEmpty());
 
     // Generate a new session key:
     QString key = QString::number(0u, 36);
@@ -101,7 +101,7 @@ QString BtConfigCore::addSession(const QString & name) {
             }
         };
     }
-    Q_ASSERT(!m_sessionNames.contains(key));
+    BT_ASSERT(!m_sessionNames.contains(key));
     m_sessionNames.insert(key, name);
 
     m_settings.setValue(KEY_SESSION_NAME.arg(key), name);
@@ -112,8 +112,8 @@ QString BtConfigCore::addSession(const QString & name) {
 
 void BtConfigCore::deleteSession(const QString & key) {
     QMutexLocker lock(&m_mutex);
-    Q_ASSERT(m_sessionNames.contains(key));
-    Q_ASSERT(key != m_currentSessionKey);
+    BT_ASSERT(m_sessionNames.contains(key));
+    BT_ASSERT(key != m_currentSessionKey);
     m_sessionNames.remove(key);
 
     m_settings.remove(GROUP_SESSIONS + key);

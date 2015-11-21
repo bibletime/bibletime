@@ -12,15 +12,17 @@
 
 #include "modulechooser.h"
 
-#include "qtquick2applicationviewer.h"
-
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/managers/cswordbackend.h"
 #include <cmath>
 #include <QQuickItem>
 #include <QQmlProperty>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "backend/managers/cswordbackend.h"
 #include "btwindowinterface.h"
 #include "mobile/util/findqmlobject.h"
+#include "qtquick2applicationviewer.h"
+#include "util/btassert.h"
+#include "util/btconnect.h"
+
 
 namespace btm {
 
@@ -31,19 +33,19 @@ ModuleChooser::ModuleChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterfac
 
 void ModuleChooser::open() {
     QQuickItem* item = findQmlObject("moduleChooser");
-    Q_ASSERT(item != nullptr);
+    BT_ASSERT(item);
     if (item == nullptr)
         return;
 
     item->setProperty("visible", true);
     disconnect(item, SIGNAL(moduleSelected()), nullptr, nullptr);
-    bool ok = connect(item, SIGNAL(moduleSelected()), this, SLOT(moduleSelectedSlot()));
-    Q_ASSERT(ok);
+    BT_CONNECT(item, SIGNAL(moduleSelected()),
+               this, SLOT(moduleSelectedSlot()));
 }
 
 void ModuleChooser::moduleSelectedSlot() {
     QQuickItem* item = findQmlObject("moduleChooser");
-    Q_ASSERT(item != nullptr);
+    BT_ASSERT(item);
     if (item == nullptr)
         return;
 

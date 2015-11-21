@@ -12,11 +12,13 @@
 #include <QDebug>
 #include <QString>
 #include <QThread>
-#include "backend/managers/cswordbackend.h"
 #include "backend/btinstallbackend.h"
+#include "backend/managers/cswordbackend.h"
+#include "util/btconnect.h"
 
 // Sword includes:
 #include <filemgr.h>
+
 
 IndexThread::IndexThread(const QList<CSwordModuleInfo*>& modules, QObject* const parent)
     : QThread(parent)
@@ -55,8 +57,8 @@ void IndexThread::indexModule() {
     CSwordModuleInfo* module = m_modules.at(m_currentModuleIndex);
     QString moduleName = module->name();
     emit beginIndexingModule(moduleName);
-    bool ok = connect(module, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)));
-    Q_ASSERT(ok);
+    BT_CONNECT(module, SIGNAL(indexingProgress(int)),
+               this,   SLOT(slotModuleProgress(int)));
     bool success = true;
     try {
         module->buildIndex();
