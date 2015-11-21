@@ -22,6 +22,7 @@
 #include <QScopedArrayPointer>
 #include <QScopedPointer>
 #include <QTextDocument>
+#include "../../util/btscopeexit.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
 #include "../config/btconfig.h"
@@ -240,7 +241,8 @@ bool CSwordModuleInfo::hasIndex() const {
 }
 
 void CSwordModuleInfo::buildIndex() {
-    m_cancelIndexing = false;
+    BT_SCOPE_EXIT(m_cancelIndexing.store(false, std::memory_order_relaxed););
+#define CANCEL_INDEXING (m_cancelIndexing.load(std::memory_order_relaxed))
 
 #ifndef BT_NO_LUCENE
     try {
@@ -341,7 +343,7 @@ void CSwordModuleInfo::buildIndex() {
         else
             m_module->setPosition(sword::TOP);
 
-        while (!(m_module->popError()) && !m_cancelIndexing) {
+        while (!(m_module->popError()) && !CANCEL_INDEXING) {
 
             /* Also index Chapter 0 and Verse 0, because they might have
                information in the entry attributes. We used to just put their
@@ -441,16 +443,15 @@ void CSwordModuleInfo::buildIndex() {
             }
 
             m_module->increment();
-        } // while (!(m_module->Error()) && !m_cancelIndexing)
+        } // while (!(m_module->Error()) && !CANCEL_INDEXING)
 
-        if (!m_cancelIndexing)
+        if (!CANCEL_INDEXING)
             writer->optimize();
         writer->close();
         writer.reset();
 
-        if (m_cancelIndexing) {
+        if (CANCEL_INDEXING) {
             deleteIndex();
-            m_cancelIndexing = false;
         } else {
             QSettings module_config(getModuleBaseIndexLocation()
                                     + QString("/bibletime-index.conf"),
@@ -464,7 +465,6 @@ void CSwordModuleInfo::buildIndex() {
     // } catch (CLuceneError & e) {
     } catch (...) {
         deleteIndex();
-        m_cancelIndexing = false;
         throw;
     }
 #else

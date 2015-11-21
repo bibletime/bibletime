@@ -14,6 +14,7 @@
 
 #include "../managers/clanguagemgr.h"
 
+#include <atomic>
 #include <QIcon>
 #include <QList>
 #include <QMetaType>
@@ -410,9 +411,9 @@ wrong, or if the config file was write protected return false.
 
 public slots:
 
-    inline void cancelIndexing() {
-        m_cancelIndexing = true;
-    }
+    inline void cancelIndexing(std::memory_order const memoryOrder =
+                                        std::memory_order_relaxed) noexcept
+    { m_cancelIndexing.store(true, memoryOrder); }
 
 protected: /* Methods: */
 
@@ -441,7 +442,7 @@ private: /* Fields: */
     CSwordBackend & m_backend;
     ModuleType const m_type;
     bool m_hidden;
-    bool m_cancelIndexing;
+    std::atomic<bool> m_cancelIndexing;
 
     // Cached data:
     QString const m_cachedName;
