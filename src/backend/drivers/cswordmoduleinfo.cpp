@@ -45,11 +45,11 @@
 
 //Increment this, if the index format changes
 //Then indices on the user's systems will be rebuilt
-const unsigned int INDEX_VERSION = 7;
+constexpr static unsigned const INDEX_VERSION = 7;
 
 //Maximum index entry size, 1MiB for now
 //Lucene default is too small
-const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
+constexpr static unsigned long const BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 
 namespace {
 
