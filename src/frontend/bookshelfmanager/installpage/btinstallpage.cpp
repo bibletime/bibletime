@@ -9,6 +9,7 @@
 
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 
+#include <memory>
 #include <QApplication>
 #include <QComboBox>
 #include <QGroupBox>
@@ -16,7 +17,6 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>
-#include <QScopedPointer>
 #include <QStackedLayout>
 #include <QToolButton>
 #include "backend/config/btconfig.h"
@@ -360,7 +360,7 @@ void BtInstallPage::slotEditPaths() {
 void BtInstallPage::slotSourceAdd() {
     using SSISD = CSwordSetupInstallSourcesDialog;
 
-    QScopedPointer<SSISD> dlg(new SSISD());
+    std::unique_ptr<SSISD> dlg(new SSISD());
     if (dlg->exec() != QDialog::Accepted)
         return;
     if (dlg->wasRemoteListAdded()) {

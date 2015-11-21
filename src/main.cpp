@@ -9,6 +9,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <memory>
 #include <QDateTime>
 #include <QFile>
 #include <QLocale>
@@ -59,7 +60,7 @@ void printHelp(const QString &executable) {
   Console messaging.
 *******************************************************************************/
 
-QScopedPointer<QFile> debugStream;
+std::unique_ptr<QFile> debugStream;
 bool showDebugMessages = false;
 
 void myMessageOutput(

@@ -9,7 +9,7 @@
 
 #include "cbookdisplay.h"
 
-#include <QScopedPointer>
+#include <memory>
 #include <QtAlgorithms>
 
 #include "../drivers/cswordbookmoduleinfo.h"
@@ -38,7 +38,7 @@ const QString Rendering::CBookDisplay::text(
     // the number of levels which should be display together, 1 means display no entries together
     int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
 
-    QScopedPointer<CSwordTreeKey> key(
+    std::unique_ptr<CSwordTreeKey> key(
             dynamic_cast<CSwordTreeKey *>(CSwordKey::createInstance(book)));
     key->setKey(keyName); //set the key to position we'd like to get
 
@@ -109,7 +109,7 @@ const QString Rendering::CBookDisplay::text(
     //const bool hasToplevelText = !key->strippedText().isEmpty();
     key->firstChild(); //go to the first sibling on the same level
 
-    setupRenderTree(key.data(), &tree, keyName);
+    setupRenderTree(key.get(), &tree, keyName);
 
     const QString renderedText = render.renderKeyTree(tree);
 

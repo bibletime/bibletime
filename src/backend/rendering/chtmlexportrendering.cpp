@@ -9,7 +9,7 @@
 
 #include "chtmlexportrendering.h"
 
-#include <QScopedPointer>
+#include <memory>
 #include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
 #include "../keys/cswordversekey.h"
@@ -60,9 +60,9 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     if (modules.isEmpty())
         return ""; // no module present for rendering
 
-    QScopedPointer<CSwordKey> scoped_key(
+    std::unique_ptr<CSwordKey> scoped_key(
             !k ? CSwordKey::createInstance(modules.first()) : nullptr);
-    CSwordKey * const key = k ? k : scoped_key.data();
+    CSwordKey * const key = k ? k : scoped_key.get();
     Q_ASSERT(key);
 
     CSwordVerseKey * const myVK = dynamic_cast<CSwordVerseKey *>(key);

@@ -9,6 +9,7 @@
 
 #include "cswordmoduleinfo.h"
 
+#include <memory>
 #include <cassert>
 #ifndef BT_NO_LUCENE
 #include <CLucene.h>
@@ -19,8 +20,6 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QSettings>
-#include <QScopedArrayPointer>
-#include <QScopedPointer>
 #include <QTextDocument>
 #include "../../util/btscopeexit.h"
 #include "../../util/cresmgr.h"
@@ -277,7 +276,7 @@ void CSwordModuleInfo::buildIndex() {
 
         // Always create a new index:
         using IW = lucene::index::IndexWriter;
-        QScopedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
+        std::unique_ptr<IW> writer(new IW(index.toLatin1().constData(), &an, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
 #ifndef CLUCENE2
@@ -333,9 +332,9 @@ void CSwordModuleInfo::buildIndex() {
         // because key is a pointer to the modules key
         m_module.setSkipConsecutiveLinks(true);
 
-        QScopedArrayPointer<wchar_t> sPwcharBuffer(
+        std::unique_ptr<wchar_t[]> sPwcharBuffer(
                 new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-        wchar_t * const wcharBuffer = sPwcharBuffer.data();
+        wchar_t * const wcharBuffer = sPwcharBuffer.get();
         Q_ASSERT(wcharBuffer);
 
         if(bm)
@@ -351,7 +350,7 @@ void CSwordModuleInfo::buildIndex() {
                with entry attributes this doesn't work any more. Hits in the
                search dialog will show up as 1:1 (instead of 0). */
 
-            QScopedPointer<lucene::document::Document> doc(
+            std::unique_ptr<lucene::document::Document> doc(
                     new lucene::document::Document());
 
             //index the key
@@ -422,7 +421,7 @@ void CSwordModuleInfo::buildIndex() {
                 }
             }
 
-            writer->addDocument(doc.data());
+            writer->addDocument(doc.get());
             //Index() is not implemented properly for lexicons, so we use a
             //workaround.
             if (m_type == CSwordModuleInfo::Lexicon) {
@@ -490,19 +489,19 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
                                        const sword::ListKey & scope,
                                        sword::ListKey & results) const
 {
-    QScopedArrayPointer<char> sPutfBuffer(
+    std::unique_ptr<char[]> sPutfBuffer(
             new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-    QScopedArrayPointer<wchar_t> sPwcharBuffer(
+    std::unique_ptr<wchar_t[]> sPwcharBuffer(
             new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-    char * const utfBuffer = sPutfBuffer.data();
+    char * const utfBuffer = sPutfBuffer.get();
     Q_ASSERT(utfBuffer);
-    wchar_t * const wcharBuffer = sPwcharBuffer.data();
+    wchar_t * const wcharBuffer = sPwcharBuffer.get();
     Q_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
     {
-        QScopedPointer<CSwordKey> key(CSwordKey::createInstance(this));
-        const sword::SWKey * const s = dynamic_cast<sword::SWKey *>(key.data());
+        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(this));
+        const sword::SWKey * const s = dynamic_cast<sword::SWKey *>(key.get());
         if (s)
             m_module.setKey(*s);
     }
@@ -516,11 +515,11 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
     lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
     lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-    QScopedPointer<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
-                                                                                    static_cast<const TCHAR *>(_T("content")),
-                                                                                    &analyzer));
+    std::unique_ptr<lucene::search::Query> q(lucene::queryParser::QueryParser::parse(static_cast<const TCHAR *>(wcharBuffer),
+                                                                                     static_cast<const TCHAR *>(_T("content")),
+                                                                                     &analyzer));
 
-    QScopedPointer<lucene::search::Hits> h(searcher.search(q.data(),
+    std::unique_ptr<lucene::search::Hits> h(searcher.search(q.get(),
                                                            #ifdef CLUCENE2
                                                            lucene::search::Sort::INDEXORDER()));
                                                            #else
@@ -530,9 +529,9 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     const bool useScope = (scope.getCount() > 0);
 
     lucene::document::Document * doc = nullptr;
-    QScopedPointer<sword::SWKey> swKey(m_module.createKey());
+    std::unique_ptr<sword::SWKey> swKey(m_module.createKey());
 
-    sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
+    sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.get());
     if (vk)
         vk->setIntros(true);
 

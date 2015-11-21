@@ -9,8 +9,8 @@
 
 #include "frontend/display/bthtmlreaddisplay.h"
 
+#include <memory>
 #include <QMenu>
-#include <QScopedPointer>
 #include <QString>
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
@@ -146,7 +146,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
                 key->setKey(keyName);
 
                 return key->strippedText();
@@ -161,7 +161,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
                 key->setKey(keyName);
 
                 FilterOptions filterOptions;

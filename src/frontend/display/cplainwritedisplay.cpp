@@ -9,11 +9,11 @@
 
 #include "frontend/display/cplainwritedisplay.h"
 
+#include <memory>
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QMenu>
-#include <QScopedPointer>
 
 #include "backend/keys/cswordkey.h"
 #include "frontend/cdragdrop.h"
@@ -123,7 +123,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
         for (it = items.begin(); it != items.end(); ++it) {
 
             CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName((*it).module());
-            QScopedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+            std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
             key->setKey((*it).key());
             QString moduleText = key->strippedText();
 

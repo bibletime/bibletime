@@ -9,6 +9,7 @@
 
 #include "util/directory.h"
 
+#include <memory>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
@@ -23,35 +24,35 @@ namespace directory {
 
 namespace {
 
-QScopedPointer<QDir> cachedIconDir;
-QScopedPointer<QDir> cachedJavascriptDir;
-QScopedPointer<QDir> cachedLicenseDir;
-QScopedPointer<QDir> cachedPicsDir;
-QScopedPointer<QDir> cachedLocaleDir;
-QScopedPointer<QDir> cachedHandbookDir;
-QScopedPointer<QDir> cachedHowtoDir;
-QScopedPointer<QDir> cachedDisplayTemplatesDir;
-QScopedPointer<QDir> cachedQmlDir;
-QScopedPointer<QDir> cachedUserDisplayTemplatesDir;
-QScopedPointer<QDir> cachedUserBaseDir;
-QScopedPointer<QDir> cachedUserHomeDir;
-QScopedPointer<QDir> cachedUserHomeSwordDir;
-QScopedPointer<QDir> cachedUserHomeSwordModsDir;
-QScopedPointer<QDir> cachedUserSessionsDir;
-QScopedPointer<QDir> cachedUserCacheDir;
-QScopedPointer<QDir> cachedUserIndexDir;
-QScopedPointer<QDir> cachedSwordPathDir;
+std::unique_ptr<QDir> cachedIconDir;
+std::unique_ptr<QDir> cachedJavascriptDir;
+std::unique_ptr<QDir> cachedLicenseDir;
+std::unique_ptr<QDir> cachedPicsDir;
+std::unique_ptr<QDir> cachedLocaleDir;
+std::unique_ptr<QDir> cachedHandbookDir;
+std::unique_ptr<QDir> cachedHowtoDir;
+std::unique_ptr<QDir> cachedDisplayTemplatesDir;
+std::unique_ptr<QDir> cachedQmlDir;
+std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
+std::unique_ptr<QDir> cachedUserBaseDir;
+std::unique_ptr<QDir> cachedUserHomeDir;
+std::unique_ptr<QDir> cachedUserHomeSwordDir;
+std::unique_ptr<QDir> cachedUserHomeSwordModsDir;
+std::unique_ptr<QDir> cachedUserSessionsDir;
+std::unique_ptr<QDir> cachedUserCacheDir;
+std::unique_ptr<QDir> cachedUserIndexDir;
+std::unique_ptr<QDir> cachedSwordPathDir;
 #ifdef Q_OS_WIN
-QScopedPointer<QDir> cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
-QScopedPointer<QDir> cachedSharedSwordDir;
+std::unique_ptr<QDir> cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
+std::unique_ptr<QDir> cachedSharedSwordDir;
 #endif
 
 #ifdef Q_OS_MAC
-QScopedPointer<QDir> cachedSwordLocalesDir;
+std::unique_ptr<QDir> cachedSwordLocalesDir;
 #endif
 
 #ifdef Q_OS_ANDROID
-QScopedPointer<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
+std::unique_ptr<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
 static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity/files";
 #endif
 

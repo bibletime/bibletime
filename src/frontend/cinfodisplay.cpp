@@ -9,7 +9,7 @@
 
 #include "frontend/cinfodisplay.h"
 
-#include <QScopedPointer>
+#include <memory>
 #include <QAction>
 #include <QDebug>
 #include <QLabel>
@@ -93,7 +93,7 @@ void CInfoDisplay::lookupInfo(const QString & mod_name,
     Q_ASSERT(m);
     if (!m)
         return;
-    QScopedPointer<CSwordKey> key(CSwordKey::createInstance(m));
+    std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));
     key->setKey(key_text);
 
     setInfo(key->renderedText(), m->language()->abbrev());

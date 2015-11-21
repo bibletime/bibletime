@@ -9,7 +9,7 @@
 
 #include "cswordbiblemoduleinfo.h"
 
-#include <QScopedPointer>
+#include <memory>
 #include <QFile>
 #include "../managers/cswordbackend.h"
 
@@ -86,7 +86,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
         if (min > max) {
             qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module().getName());
         } else {
-            QScopedPointer<sword::VerseKey> key(
+            std::unique_ptr<sword::VerseKey> key(
                     static_cast<sword::VerseKey *>(module().createKey()));
             key->setPosition(sword::TOP);
 
@@ -102,7 +102,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
 unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const {
     int result = 0;
 
-    QScopedPointer<sword::VerseKey> key(
+    std::unique_ptr<sword::VerseKey> key(
             static_cast<sword::VerseKey *>(module().createKey()));
     key->setPosition(sword::TOP);
 
@@ -125,7 +125,7 @@ unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
 {
     unsigned int result = 0;
 
-    QScopedPointer<sword::VerseKey> key(
+    std::unique_ptr<sword::VerseKey> key(
             static_cast<sword::VerseKey *>(module().createKey()));
     key->setPosition(sword::TOP);
 
@@ -147,7 +147,7 @@ unsigned int CSwordBibleModuleInfo::verseCount(const QString &book,
 unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     unsigned int bookNumber = 0;
 
-    QScopedPointer<sword::VerseKey> key(
+    std::unique_ptr<sword::VerseKey> key(
             static_cast<sword::VerseKey *>(module().createKey()));
     key->setPosition(sword::TOP);
 

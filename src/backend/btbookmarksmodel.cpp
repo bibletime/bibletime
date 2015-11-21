@@ -23,6 +23,7 @@
 
 #include "btbookmarksmodel.h"
 
+#include <memory>
 #include <QtDebug>
 
 #include <QDomElement>
@@ -35,7 +36,6 @@
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
-#include <QScopedPointer>
 #include "../bibletimeapp.h"
 #include "../util/cresmgr.h"
 #include "../util/directory.h"
@@ -561,13 +561,13 @@ QString BookmarkItem::toolTip() const {
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-    QScopedPointer<CSwordKey> k(CSwordKey::createInstance(module()));
+    std::unique_ptr<CSwordKey> k(CSwordKey::createInstance(module()));
+    Q_ASSERT(k);
     k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
     // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
-    Q_ASSERT(k.data());
     QString const header(toHeader(key(), module()->name()));
     QString ret("<b>");
     ret.append(header).append(")</b>");
