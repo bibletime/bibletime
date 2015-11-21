@@ -24,8 +24,6 @@
 #include "btbookmarksmodel.h"
 
 #include <memory>
-#include <QtDebug>
-
 #include <QDomElement>
 #include <QDomNode>
 #include <QFile>
@@ -266,8 +264,8 @@ public: /* Methods */
         items << m_rootItem;
         spaces << 0;
         for(int c = 0; c < items.size(); ++c) {
-            qDebug() << QString().fill('\t', spaces[c]) << items[c]->text().left(24) << items[c]
-                     << items[c]->parent() << items[c]->childCount();
+            // qDebug() << QString().fill('\t', spaces[c]) << items[c]->text().left(24) << items[c]
+            //       << items[c]->parent() << items[c]->childCount();
             if(items[c]->childCount())
                 for(int i = 0; i < items[c]->childCount(); ++i) {
                     items.insert(c + i + 1, items[c]->children()[i]);
