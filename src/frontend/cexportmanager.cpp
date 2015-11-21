@@ -275,7 +275,7 @@ bool CExportManager::printKey(CSwordKey const * const key,
     PrintSettings settings{displayOptions};
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     tree.append(new CPrinter::KeyTreeItem(key->key(), key->module(), settings));
-    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
@@ -292,7 +292,7 @@ bool CExportManager::printKey(CSwordModuleInfo const * const module,
     } else {
         tree.append(new CPrinter::KeyTreeItem(startKey, module, settings));
     }
-    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
@@ -345,7 +345,7 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     } else {
         tree.append(new CPrinter::KeyTreeItem(keyName, module, settings));
     }
-    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
@@ -375,7 +375,7 @@ bool CExportManager::printKeyList(sword::ListKey const & list,
         }
         incProgress();
     }
-    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     closeProgressDialog();
     return true;
 }
@@ -398,7 +398,7 @@ bool CExportManager::printKeyList(QStringList const & list,
         tree.append(new CPrinter::KeyTreeItem(key, module, settings));
         incProgress();
     }
-    CPrinter{nullptr, displayOptions, filterOptions}.printKeyTree(tree);
+    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     closeProgressDialog();
     return true;
 }

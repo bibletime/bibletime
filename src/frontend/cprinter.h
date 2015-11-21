@@ -18,31 +18,30 @@
 #include "backend/managers/cswordbackend.h"
 
 
-class QWebPage;
-
 namespace Printing {
 
-// The CPrinter class manages the print item queue and the printing of them to the printer.
+/** \brief Manages the print item queue and printing. */
+class CPrinter final: public QObject, public Rendering::CDisplayRendering {
 
-class CPrinter : public QObject, public Rendering::CDisplayRendering {
-        Q_OBJECT
-    public:
-        CPrinter(QObject *parent,
-                 const DisplayOptions &displayOptions,
-                 const FilterOptions &filterOptions);
+    Q_OBJECT
 
-        ~CPrinter() override;
-        void printKeyTree( KeyTree& );
+public: /* Methods: */
 
-    protected:
-        QString entryLink(const KeyTreeItem &item,
-                          const CSwordModuleInfo * module) override;
+    CPrinter(DisplayOptions const & displayOptions,
+             FilterOptions const & filterOptions,
+             QObject * const parent = nullptr);
 
-        QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
-        QString finishText(const QString &text, const KeyTree &tree) override;
+    void printKeyTree(KeyTree const &);
 
-    private:
-        QWebPage* m_htmlPage;
+private: /* Methods: */
+
+    QString entryLink(KeyTreeItem const & item,
+                      CSwordModuleInfo const * module) override;
+
+    QString renderEntry(KeyTreeItem const & item,
+                        CSwordKey * const key = nullptr) override;
+    QString finishText(QString const & text, KeyTree const & tree) override;
+
 };
 
 } //namespace Printing

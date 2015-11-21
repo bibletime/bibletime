@@ -22,94 +22,84 @@ namespace Printing {
 
 namespace {
 
-inline FilterOptions mangleFilterOptions(FilterOptions const & fo) {
-    FilterOptions r(fo);
-    r.footnotes = false;
-    r.scriptureReferences = false;
-    r.strongNumbers = false;
-    r.morphTags = false;
-    r.headings = false;
-    return r;
+inline FilterOptions mangleFilterOptions(FilterOptions fo) {
+    fo.footnotes = false;
+    fo.scriptureReferences = false;
+    fo.strongNumbers = false;
+    fo.morphTags = false;
+    fo.headings = false;
+    return fo;
 }
 
 } // anonymous namespace
 
-/// \todo WHY IS parent NOT USED!?
-CPrinter::CPrinter(QObject *,
-                   const DisplayOptions &displayOptions,
-                   const FilterOptions &filterOptions)
-        : QObject(nullptr),
-          CDisplayRendering(displayOptions, mangleFilterOptions(filterOptions)),
-          m_htmlPage(new QWebPage())
-{ m_htmlPage->setParent(this); }
+CPrinter::CPrinter(DisplayOptions const & displayOptions,
+                   FilterOptions const & filterOptions,
+                   QObject * const parent)
+        : QObject{parent}
+        , CDisplayRendering{displayOptions, mangleFilterOptions(filterOptions)}
+{}
 
-CPrinter::~CPrinter() {
-    delete m_htmlPage;
-    m_htmlPage = nullptr;
-}
-
-void CPrinter::printKeyTree( KeyTree& tree ) {
-    m_htmlPage->mainFrame()->setHtml(renderKeyTree(tree));
+void CPrinter::printKeyTree(KeyTree const & tree) {
+    QWebPage htmlPage;
+    htmlPage.mainFrame()->setHtml(renderKeyTree(tree));
 
     QPrinter printer;
     QPrintDialog printDialog(&printer);
-    if (printDialog.exec() == QDialog::Accepted) {
-        m_htmlPage->mainFrame()->print(&printer);
-    }
+    if (printDialog.exec() == QDialog::Accepted)
+        htmlPage.mainFrame()->print(&printer);
 }
 
-QString CPrinter::entryLink(const KeyTreeItem &item,
-                            const CSwordModuleInfo * module)
+QString CPrinter::entryLink(KeyTreeItem const & item,
+                            CSwordModuleInfo const * module)
 {
     Q_ASSERT(module);
-    if (module->type() == CSwordModuleInfo::Bible) {
-        CSwordVerseKey vk(module);
-        vk.setKey(item.key());
-        switch (item.settings().keyRenderingFace) {
-            case KeyTreeItem::Settings::CompleteShort:
-                return QString::fromUtf8(vk.getShortText());
+    if (module->type() != CSwordModuleInfo::Bible)
+        return item.key();
 
-            case KeyTreeItem::Settings::CompleteLong:
-                return vk.key();
+    CSwordVerseKey vk(module);
+    vk.setKey(item.key());
+    switch (item.settings().keyRenderingFace) {
+        case KeyTreeItem::Settings::CompleteShort:
+            return QString::fromUtf8(vk.getShortText());
 
-            case KeyTreeItem::Settings::NoKey:
-                return QString::null;
+        case KeyTreeItem::Settings::CompleteLong:
+            return vk.key();
 
-            case KeyTreeItem::Settings::SimpleKey: //fall through
-            default:
-                return QString::number(vk.getVerse());
-        }
+        case KeyTreeItem::Settings::NoKey:
+            return QString::null;
+
+        case KeyTreeItem::Settings::SimpleKey: // fall through:
+        default:
+            return QString::number(vk.getVerse());
     }
-    return item.key();
 }
 
-QString CPrinter::renderEntry(const KeyTreeItem &i, CSwordKey * key) {
+QString CPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
     Q_UNUSED(key);
+    Q_ASSERT(dynamic_cast<CPrinter::KeyTreeItem const *>(&i));
+    CPrinter::KeyTreeItem const * const printItem =
+            static_cast<CPrinter::KeyTreeItem const *>(&i);
 
-    const CPrinter::KeyTreeItem* printItem = dynamic_cast<const CPrinter::KeyTreeItem*>(&i);
-    Q_ASSERT(printItem);
-
-    if (printItem && printItem->hasAlternativeContent()) {
-        QString ret = QString::fromLatin1("<div class=\"entry\"><div class=\"rangeheading\">%1</div>").arg(printItem->getAlternativeContent());
-
-        if (!i.childList()->isEmpty()) {
-            KeyTree const * tree = i.childList();
-
-            Q_FOREACH (const KeyTreeItem * const c, *tree)
-                ret.append( CDisplayRendering::renderEntry( *c ) );
-        }
-
+    if (printItem->hasAlternativeContent()) {
+        QString ret =
+                QString::fromLatin1("<div class=\"entry\"><div class=\""
+                                    "rangeheading\">%1</div>").arg(
+                                            printItem->getAlternativeContent());
+        if (!i.childList()->isEmpty())
+            Q_FOREACH (const KeyTreeItem * const c, *i.childList())
+                ret.append(CDisplayRendering::renderEntry(*c));
         ret.append("</div>");
         return ret;
     }
     return CDisplayRendering::renderEntry(i);
 }
 
-QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
-    BtConstModuleList modules = collectModules(tree);
-    Q_ASSERT(modules.count() > 0);
+QString CPrinter::finishText(QString const & text, KeyTree const & tree) {
+    BtConstModuleList const modules = collectModules(tree);
+    Q_ASSERT(!modules.empty());
 
-    const CLanguageMgr::Language* const lang = modules.first()->language();
+    CLanguageMgr::Language const * const lang = modules.first()->language();
     Q_ASSERT(lang);
 
     CDisplayTemplateMgr::Settings settings;
@@ -121,8 +111,10 @@ QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
     if (modules.count() == 1)
         settings.textDirection = modules.first()->textDirection();
 
-    CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
-    return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
+    return CDisplayTemplateMgr::instance()->fillTemplate(
+                CDisplayTemplateMgr::activeTemplateName(),
+                text,
+                settings);
 }
 
 } //end of namespace

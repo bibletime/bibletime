@@ -20,7 +20,6 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPaintEvent>
-#include <QScopedPointer>
 #include <QTimer>
 #include <QToolTip>
 
@@ -617,11 +616,9 @@ void CBookmarkIndex::printBookmarks() {
     }
     Q_ASSERT(!tree.isEmpty());
 
-    QScopedPointer<Printing::CPrinter>(
-            new Printing::CPrinter(
-                    this,
-                    btConfig().getDisplayOptions(),
-                    btConfig().getFilterOptions()))->printKeyTree(tree);
+    Printing::CPrinter{btConfig().getDisplayOptions(),
+                       btConfig().getFilterOptions(),
+                       this}.printKeyTree(tree);
 }
 
 void CBookmarkIndex::confirmDeleteEntries() {
