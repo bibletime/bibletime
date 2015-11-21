@@ -34,7 +34,7 @@ inline QString readFileToString(const QString & filename) {
 CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = nullptr;
 
 CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
-    BT_ASSERT(m_instance);
+    BT_ASSERT(!m_instance);
     m_instance = this;
 
     {
