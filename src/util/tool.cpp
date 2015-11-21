@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "util/tool.h"
+#include "tool.h"
 
 #include <QApplication>
 #include <QFile>
@@ -16,12 +16,12 @@
 #include <QRegExp>
 #include <QTextStream>
 #include <QWidget>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-#include "bibletimeapp.h"
-#include "frontend/messagedialog.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../backend/managers/cswordbackend.h"
+#include "../bibletimeapp.h"
+#include "../frontend/messagedialog.h"
+#include "cresmgr.h"
+#include "directory.h"
 
 
 namespace util {

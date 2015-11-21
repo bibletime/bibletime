@@ -15,7 +15,7 @@
 #include <QDebug>
 #include <QIconEngine>
 #include <QPainter>
-#include "../util/directory.h"
+#include "directory.h"
 
 
 namespace {

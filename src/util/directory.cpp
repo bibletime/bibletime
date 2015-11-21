@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "util/directory.h"
+#include "directory.h"
 
 #include <memory>
 #include <QCoreApplication>
