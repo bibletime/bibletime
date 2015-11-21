@@ -20,7 +20,7 @@
 #include <QQuickItem>
 
 namespace btm {
-typedef QList<const CSwordModuleInfo*> CSMI;
+using CSMI = QList<CSwordModuleInfo const *>;
 
 BtSearchInterface::BtSearchInterface(QObject* parent)
     : QObject(parent), m_searchType(AndType), m_progressObject(nullptr), m_wasCancelled(false) {

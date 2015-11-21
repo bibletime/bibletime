@@ -153,7 +153,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
                                    const QVariant & value,
                                    int role) {
     Q_ASSERT(itemIndex.isValid());
-    typedef QPair<Item *, QModelIndex> IP;
+    using IP = QPair<Item *, QModelIndex>;
 
     if (UNLIKELY(role != Qt::CheckStateRole))
         return false;
@@ -326,7 +326,7 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
 }
 
 void BtBookshelfTreeModel::setCheckedModules(BtConstModuleSet const & modules) {
-    typedef ModuleItemMap::const_iterator MIMCI;
+    using MIMCI = ModuleItemMap::const_iterator;
 
     for (MIMCI it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
         if (modules.contains(it.key())) {
@@ -415,7 +415,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
 }
 
 void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
-    typedef ModuleItemMap::iterator MIMI;
+    using MIMI = ModuleItemMap::iterator;
     const MIMI it = m_modules.find(&module);
     if (it == m_modules.end())
         return;

@@ -30,7 +30,7 @@ class BtActionCollection: public QObject {
 
     private: /* Types: */
 
-        typedef QMap<QString, BtActionItem*> ActionMap;
+        using ActionMap = QMap<QString, BtActionItem *>;
 
     public: /* Methods: */
 

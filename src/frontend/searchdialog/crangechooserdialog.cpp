@@ -204,7 +204,7 @@ void CRangeChooserDialog::resetEditControls() {
 }
 
 void CRangeChooserDialog::updateResultList() {
-    typedef sword::VerseKey VK;
+    using VK = sword::VerseKey;
 
     m_resultList->clear();
 
@@ -250,7 +250,7 @@ void CRangeChooserDialog::accept() {
 }
 
 void CRangeChooserDialog::restoreDefaults() {
-    typedef BtConfig::StringMap::ConstIterator SMCI;
+    using SMCI = BtConfig::StringMap::ConstIterator;
 
     m_rangeList->clear();
     btConfig().deleteSearchScopesWithCurrentLocale();

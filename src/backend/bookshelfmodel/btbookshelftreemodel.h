@@ -35,8 +35,8 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
 
 private: /* Types: */
 
-    typedef QMap<CSwordModuleInfo *, BookshelfModel::ModuleItem *> ModuleItemMap;
-    typedef QMap<CSwordModuleInfo *, QPersistentModelIndex> SourceIndexMap;
+    using ModuleItemMap = QMap<CSwordModuleInfo *, BookshelfModel::ModuleItem *>;
+    using SourceIndexMap = QMap<CSwordModuleInfo *, QPersistentModelIndex>;
 
 public: /* Types: */
 

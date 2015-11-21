@@ -58,7 +58,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
 void CSearchAnalysisScene::analyse(
         const CSwordModuleSearch::Results &results)
 {
-    typedef CSwordModuleSearch::Results::const_iterator RCI;
+    using RCI = CSwordModuleSearch::Results::const_iterator;
 
     /**
     * Steps of analysing our search result;
@@ -120,7 +120,7 @@ void CSearchAnalysisScene::analyse(
 void CSearchAnalysisScene::setResults(
         const CSwordModuleSearch::Results &results)
 {
-    typedef CSwordModuleSearch::Results::const_iterator RCI;
+    using RCI = CSwordModuleSearch::Results::const_iterator;
 
     m_results.clear();
     for (RCI it = results.begin(); it != results.end(); ++it) {
@@ -225,7 +225,7 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-    typedef CSwordModuleSearch::Results::const_iterator RCI;
+    using RCI = CSwordModuleSearch::Results::const_iterator;
 
     const QString fileName = QFileDialog::getSaveFileName(nullptr,
                                                           tr("Save Search Analysis"),

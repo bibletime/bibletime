@@ -27,7 +27,7 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     : CKeyChooser(modules, historyPtr, parent)
     , m_key(dynamic_cast<CSwordVerseKey *>(key))
 {
-    typedef CSwordBibleModuleInfo CSBMI;
+    using CSBMI = CSwordBibleModuleInfo;
 
     w_ref = nullptr;
     setModules(modules, false);
@@ -97,7 +97,7 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
 void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
                                   bool refresh)
 {
-    typedef CSwordBibleModuleInfo CSBMI;
+    using CSBMI = CSwordBibleModuleInfo;
 
     m_modules.clear();
 

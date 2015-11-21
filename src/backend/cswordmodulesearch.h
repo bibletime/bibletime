@@ -34,7 +34,7 @@ class CSwordModuleSearch: public QObject {
         Q_OBJECT
 
     public: /* Types: */
-        typedef QHash<const CSwordModuleInfo*, sword::ListKey> Results;
+        using Results = QHash<const CSwordModuleInfo*, sword::ListKey>;
 
         enum SearchType { /* Values provided for serialization */
             AndType = 0,

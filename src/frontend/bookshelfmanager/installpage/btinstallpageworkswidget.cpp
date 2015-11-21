@@ -28,8 +28,8 @@ namespace {
 
 /** Filters out already installed modules which can't be updated right now. */
 bool filter(const CSwordModuleInfo *mInfo) {
-    typedef CSwordModuleInfo CSMI;
-    typedef sword::SWVersion SV;
+    using CSMI = CSwordModuleInfo;
+    using SV = sword::SWVersion;
 
     const CSMI *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
     if (installedModule) {

@@ -16,8 +16,8 @@
 
 class CSwordModuleInfo;
 
-typedef QList<CSwordModuleInfo *> BtModuleList;/*
-typedef QList<CSwordModuleInfo const *> BtConstModuleList;*/
+using BtModuleList = QList<CSwordModuleInfo *>; /*
+using BtConstModuleList = QList<CSwordModuleInfo const *>; */
 
 class BtConstModuleList : public QList<CSwordModuleInfo const *> {
 public: /* Methods */

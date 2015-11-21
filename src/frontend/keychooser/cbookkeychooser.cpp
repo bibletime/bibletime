@@ -122,7 +122,7 @@ CSwordKey * CBookKeyChooser::key() {
 void CBookKeyChooser::setModules(const BtConstModuleList & modules,
                                  bool refresh)
 {
-    typedef CSwordBookModuleInfo CSBMI;
+    using CSBMI = CSwordBookModuleInfo;
     m_modules.clear();
 
     //   for (modules.first(); modules.current(); modules.next()) {

@@ -121,7 +121,7 @@ int CSearchAnalysisItem::width() {
 
 /** Returns the tooltip for this item. */
 const QString CSearchAnalysisItem::getToolTip() {
-    typedef CSwordModuleSearch::Results::const_iterator RCI;
+    using RCI = CSwordModuleSearch::Results::const_iterator;
 
     QString toolTipString("<center><b>");
     toolTipString.append(m_bookName.toHtmlEscaped())

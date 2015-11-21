@@ -27,7 +27,7 @@
 #include <localemgr.h>
 #include <swlocale.h>
 
-typedef std::list<sword::SWBuf>::const_iterator SBLCI;
+using SBLCI = std::list<sword::SWBuf>::const_iterator;
 
 // ***********************
 // Container for QWebView to control its size
@@ -166,7 +166,7 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
 }
 
 void CDisplaySettingsPage::initSwordLocaleCombo() {
-    typedef QMap<QString, QString>::const_iterator SSMCI;
+    using SSMCI = QMap<QString, QString>::const_iterator;
 
     QMap<QString, QString> languageNames;
     Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));

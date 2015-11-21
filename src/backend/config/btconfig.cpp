@@ -127,7 +127,7 @@ QHash<QString, QList<QKeySequence> > BtConfig::getShortcuts(const QString & shor
 void BtConfig::setShortcuts(const QString & shortcutGroup,
                             const QHash<QString, QList<QKeySequence> > & shortcuts)
 {
-    typedef QHash<QString, QList<QKeySequence> >::const_iterator SHMCI;
+    using SHMCI = QHash<QString, QList<QKeySequence> >::const_iterator;
 
     beginGroup(shortcutGroup);
         for (SHMCI it = shortcuts.begin(); it != shortcuts.end(); ++it) {

@@ -47,7 +47,7 @@ enum TextRoles {
     TextRole = Qt::UserRole + 1
 };
 
-typedef BtBookshelfModel::ModuleRole MRole;
+using MRole = BtBookshelfModel::ModuleRole;
 static const MRole HR(BtBookshelfModel::ModuleHiddenRole);
 static const MRole PR(BtBookshelfModel::ModulePointerRole);
 static const MRole IR(BtBookshelfModel::ModuleHasIndexRole);

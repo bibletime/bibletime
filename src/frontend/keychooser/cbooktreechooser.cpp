@@ -88,7 +88,7 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 void CBookTreeChooser::setModules(const BtConstModuleList &modules,
                                   bool refresh)
 {
-    typedef CSwordBookModuleInfo CSBMI;
+    using CSBMI = CSwordBookModuleInfo;
 
     //Add given modules into private list
     m_modules.clear();

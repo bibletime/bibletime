@@ -437,9 +437,9 @@ public: /* Fields */
 
 BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = nullptr;
 
-typedef BtBookmarksModelPrivate::BookmarkItemBase BookmarkItemBase;
-typedef BtBookmarksModelPrivate::BookmarkItem BookmarkItem;
-typedef BtBookmarksModelPrivate::BookmarkFolder BookmarkFolder;
+using BookmarkItemBase = BtBookmarksModelPrivate::BookmarkItemBase;
+using BookmarkItem = BtBookmarksModelPrivate::BookmarkItem;
+using BookmarkFolder = BtBookmarksModelPrivate::BookmarkFolder;
 
 
 BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)

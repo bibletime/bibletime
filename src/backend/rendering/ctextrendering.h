@@ -46,7 +46,7 @@ class CTextRendering {
                 inline operator const KeyTreeItem * () const { return data(); }
         };
 
-        typedef QList<KeyTreeSharedPointer> KeyTree;
+        using KeyTree = QList<KeyTreeSharedPointer>;
 
         class KeyTreeItem {
 

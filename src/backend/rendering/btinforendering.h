@@ -35,8 +35,8 @@ enum InfoType {
     Key        // sword key reference for commentary display
 };
 
-typedef QPair<InfoType, QString> InfoData;
-typedef QList<InfoData> ListInfoData;
+using InfoData = QPair<InfoType, QString>;
+using ListInfoData = QList<InfoData>;
 
 
 /** Parse string for attributes */

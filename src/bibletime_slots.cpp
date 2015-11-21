@@ -396,8 +396,8 @@ struct WindowLoadStatus {
 } // anonymous namespace
 
 void BibleTime::reloadProfile() {
-    typedef CMDIArea::MDIArrangementMode MAM;
-    typedef CPlainWriteWindow::WriteWindowType WWT;
+    using MAM = CMDIArea::MDIArrangementMode;
+    using WWT = CPlainWriteWindow::WriteWindowType;
     using message::setQActionCheckedNoTrigger;
 
     // Cache pointer to config:
@@ -562,8 +562,8 @@ void BibleTime::saveToNewProfile() {
 
 /** Slot to refresh the saved profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
-    typedef BtConfig::SessionNamesHashMap SNHM;
-    typedef SNHM::const_iterator SNHMCI;
+    using SNHM = BtConfig::SessionNamesHashMap;
+    using SNHMCI = SNHM::const_iterator;
 
     m_windowLoadProfileMenu->clear();
     m_windowDeleteProfileMenu->clear();

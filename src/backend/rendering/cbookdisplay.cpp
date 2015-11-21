@@ -23,7 +23,7 @@ const QString Rendering::CBookDisplay::text(
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
 {
-    typedef CSwordBookModuleInfo CSBMI;
+    using CSBMI = CSwordBookModuleInfo;
 
     const CSBMI* book = dynamic_cast<const CSBMI*>(modules.first());
     Q_ASSERT(book);

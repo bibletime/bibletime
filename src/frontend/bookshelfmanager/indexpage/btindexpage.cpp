@@ -81,7 +81,7 @@ BtIndexPage::~BtIndexPage() {
 
 /** Populates the module list with installed modules and orphaned indices */
 void BtIndexPage::populateModuleList() {
-    typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
+    using MLCI = QList<CSwordModuleInfo*>::const_iterator;
 
     m_moduleList->clear();
 

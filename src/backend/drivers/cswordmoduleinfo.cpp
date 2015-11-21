@@ -176,7 +176,7 @@ bool CSwordModuleInfo::isEncrypted() const {
 
     /* This code is still right, though we do no longer write to the module
        config files any more. */
-    typedef sword::SectionMap::const_iterator SMCI;
+    using SMCI = sword::SectionMap::const_iterator;
     SMCI it = m_backend.getConfig()->Sections.find(m_cachedName.toUtf8().constData());
     if (it == m_backend.getConfig()->Sections.end())
         return false;
@@ -289,7 +289,7 @@ void CSwordModuleInfo::buildIndex() {
                 lucene::index::IndexReader::unlock(index.toLatin1().constData());
 
         // Always create a new index:
-        typedef lucene::index::IndexWriter IW;
+        using IW = lucene::index::IndexWriter;
         QScopedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
@@ -388,8 +388,8 @@ void CSwordModuleInfo::buildIndex() {
                                                    | lucene::document::Field::INDEX_TOKENIZED)));
             textBuffer.clear();
 
-            typedef sword::AttributeList::iterator ALI;
-            typedef sword::AttributeValue::iterator AVI;
+            using ALI = sword::AttributeList::iterator;
+            using AVI = sword::AttributeValue::iterator;
 
             for (ALI it = m_module->getEntryAttributes()["Footnote"].begin();
                  it != m_module->getEntryAttributes()["Footnote"].end();
@@ -818,7 +818,7 @@ QString CSwordModuleInfo::aboutText() const {
         if (has(static_cast < CSwordModuleInfo::FilterTypes > (opts))) {
             if (!options.isEmpty())
                 options += QString::fromLatin1(", ");
-            typedef CSwordModuleInfo::FilterTypes FT;
+            using FT = CSwordModuleInfo::FilterTypes;
             options += CSwordBackend::translatedOptionName(static_cast<FT>(opts));
         }
     }

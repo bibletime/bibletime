@@ -48,7 +48,7 @@ void CReadDisplay::print(const CDisplay::TextPart type,
                          const DisplayOptions &displayOptions,
                          const FilterOptions &filterOptions)
 {
-    typedef CSwordBibleModuleInfo CSBiMI;
+    using CSBiMI = CSwordBibleModuleInfo;
     CDisplayWindow* window = parentWindow();
     CSwordKey* const key = window->key();
     const CSwordModuleInfo *module = key->module();

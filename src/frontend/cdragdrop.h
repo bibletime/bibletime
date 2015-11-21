@@ -72,7 +72,7 @@ class BTMimeData: public QMimeData {
     public: /* Types: */
 
         /** Type for bookmark item list. Usage: BTMimeData::ItemList. */
-        typedef QList<BookmarkItem> ItemList;
+        using ItemList = QList<BookmarkItem>;
 
     public: /* Methods: */
 

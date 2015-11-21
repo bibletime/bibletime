@@ -31,7 +31,7 @@ class BtConfigCore {
 
 public: /* Types: */
 
-    typedef QHash<QString, QString> SessionNamesHashMap;
+    using SessionNamesHashMap = QHash<QString, QString>;
 
 public: /* Methods: */
 
@@ -59,7 +59,7 @@ public: /* Methods: */
     */
     inline const QString & currentSessionName() const {
         QMutexLocker lock(&m_mutex);
-        typedef QHash<QString, QString>::const_iterator SSHCI;
+        using SSHCI = QHash<QString, QString>::const_iterator;
         SSHCI it = m_sessionNames.constFind(m_currentSessionKey);
         Q_ASSERT(it != m_sessionNames.constEnd());
         return it.value();

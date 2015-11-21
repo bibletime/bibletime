@@ -20,7 +20,7 @@ const QString Rendering::CChapterDisplay::text(
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
 {
-    typedef CSwordBibleModuleInfo CSBMI;
+    using CSBMI = CSwordBibleModuleInfo;
 
     Q_ASSERT( modules.count() >= 1 );
     Q_ASSERT( !keyName.isEmpty() );

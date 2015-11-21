@@ -42,7 +42,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     hLayout->addWidget(m_languageCheckBox);
 
     CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
-    typedef CLanguageMgr::Language L;
+    using L = CLanguageMgr::Language;
     for (CLanguageMgr::LangMapIterator it = langMap.constBegin();
          it != langMap.constEnd();
          it++)

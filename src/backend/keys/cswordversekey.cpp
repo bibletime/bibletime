@@ -92,7 +92,7 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
 
 /** Returns the current book as Text, not as integer. */
 QString CSwordVerseKey::book( const QString& newBook ) {
-    typedef CSwordBibleModuleInfo CSBMI;
+    using CSBMI = CSwordBibleModuleInfo;
     int min = 0;
     int max = 1;
 
@@ -165,7 +165,7 @@ bool CSwordVerseKey::setKey(const char *newKey) {
 }
 
 bool CSwordVerseKey::next( const JumpType type ) {
-    typedef CSwordBibleModuleInfo CSBMI;
+    using CSBMI = CSwordBibleModuleInfo;
 
     popError(); //clear Error status
     bool ret = true;
@@ -261,7 +261,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
 }
 
 bool CSwordVerseKey::previous( const JumpType type ) {
-    typedef CSwordBibleModuleInfo CSBMI;
+    using CSBMI = CSwordBibleModuleInfo;
 
     bool ret = true;
 

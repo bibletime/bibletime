@@ -185,7 +185,7 @@ void CSwordBackend::shutdownModules() {
      * modules. If these modules are removed, the filters need to be removed as well,
      * so that they are re-created for the new module objects.
      */
-    typedef sword::FilterMap::const_iterator FMCI;
+    using FMCI = sword::FilterMap::const_iterator;
     for (FMCI it = cipherFilters.begin(); it != cipherFilters.end(); ++it) {
         //Delete the Filter and remove it from the cleanup list
         cleanupFilters.remove(it->second);
@@ -359,7 +359,7 @@ const QString CSwordBackend::booknameLanguage(const QString & language) {
                 || mod->type() == CSwordModuleInfo::Commentary)
             {
                 // Create a new key, it will get the default bookname language:
-                typedef sword::VerseKey VK;
+                using VK = sword::VerseKey;
                 VK & vk = *static_cast<VK *>(mod->module()->getKey());
                 vk.setLocale(newLocaleName.constData());
             }
@@ -411,7 +411,7 @@ QString CSwordBackend::getPrivateSwordConfigFile() const {
 // Return a list of used Sword dirs. Useful for the installer.
 QStringList CSwordBackend::swordDirList() const {
     namespace DU = util::directory;
-    typedef QStringList::const_iterator SLCI;
+    using SLCI = QStringList::const_iterator;
 
     // Get the set of sword directories that could contain modules:
     QSet<QString> swordDirSet;
@@ -451,7 +451,7 @@ QStringList CSwordBackend::swordDirList() const {
         swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
         const sword::ConfigEntMap group(conf["Install"]);
-        typedef sword::ConfigEntMap::const_iterator CEMCI;
+        using CEMCI = sword::ConfigEntMap::const_iterator ;
         for (std::pair<CEMCI, CEMCI> its = group.equal_range("AugmentPath");
              its.first != its.second;
              ++(its.first))

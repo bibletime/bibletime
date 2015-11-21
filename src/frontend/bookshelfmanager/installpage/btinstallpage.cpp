@@ -289,7 +289,7 @@ void BtInstallPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Groupin
 }
 
 void BtInstallPage::slotHeaderChanged() {
-    typedef BtInstallPageWorksWidget IPWW;
+    using IPWW = BtInstallPageWorksWidget;
     Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != nullptr);
     IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
     m_headerState = w->treeView()->header()->saveState();
@@ -334,7 +334,7 @@ void BtInstallPage::slotInstall() {
         // but what modules? all with the same real name? (there may be _n modules...)
 
         // progressDialog is WA_DeleteOnClose
-        typedef BtInstallProgressDialog BIPD;
+        using BIPD = BtInstallProgressDialog;
         BIPD * const progressDialog = new BIPD(modules, selectedInstallPath(), this);
         m_installButton->setEnabled(false);
         // the progress dialog is now modal, it can be made modeless later.
@@ -358,7 +358,7 @@ void BtInstallPage::slotEditPaths() {
 }
 
 void BtInstallPage::slotSourceAdd() {
-    typedef CSwordSetupInstallSourcesDialog SSISD;
+    using SSISD = CSwordSetupInstallSourcesDialog;
 
     QScopedPointer<SSISD> dlg(new SSISD());
     if (dlg->exec() != QDialog::Accepted)
@@ -380,7 +380,7 @@ void BtInstallPage::slotSourceAdd() {
 }
 
 void BtInstallPage::slotSourceDelete() {
-    typedef BtInstallPageWorksWidget IPWW;
+    using IPWW = BtInstallPageWorksWidget;
 
     int ret = message::showWarning(this, tr("Delete Source?"),
                                 tr("Do you really want to delete this source?"),

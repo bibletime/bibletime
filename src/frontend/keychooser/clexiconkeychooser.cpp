@@ -109,7 +109,7 @@ void CLexiconKeyChooser::refreshContent() {
         //     qWarning("resetted");
     }
     else {
-        typedef std::multimap<unsigned int, const QStringList*> EntryMap;
+        using EntryMap = std::multimap<unsigned int, QStringList const *>;
         EntryMap entryMap;
 
         QListIterator<const CSwordLexiconModuleInfo*> mit(m_modules);
@@ -152,7 +152,7 @@ void CLexiconKeyChooser::refreshContent() {
 void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
                                     bool refresh)
 {
-    typedef CSwordLexiconModuleInfo CSLMI;
+    using CSLMI = CSwordLexiconModuleInfo;
 
     while (!m_modules.isEmpty())
         m_modules.takeFirst(); // not deleting the pointer

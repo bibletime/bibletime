@@ -291,7 +291,7 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     if ((token != "*") && (token != ""))
         tokenList.append(token);
 
-    typedef QStringList::iterator TLI;
+    using TLI = QStringList::iterator;
     for (TLI it = tokenList.begin(); it != tokenList.end(); ++it) {
         int pos;
         //-----------------------------------------------------------

@@ -40,12 +40,12 @@ public: /* Types: */
     * The first parameter indicates whether the custom font should be used or not.
     * The second parameter is the custom font that has been set.
     */
-    typedef QPair<bool, QFont> FontSettingsPair;
-    typedef QMap<QString, QString> StringMap;
+    using FontSettingsPair = QPair<bool, QFont>;
+    using StringMap = QMap<QString, QString>;
 
 private: /* Types: */
 
-    typedef QHash<const CLanguageMgr::Language *, FontSettingsPair> FontCacheMap;
+    using FontCacheMap = QHash<const CLanguageMgr::Language *, FontSettingsPair>;
 
     enum InitState {
         INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE = -2,

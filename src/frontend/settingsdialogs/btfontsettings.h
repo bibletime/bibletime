@@ -32,7 +32,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
     private: /* Types: */
 
-        typedef QMap<QString, BtConfig::FontSettingsPair> FontMap;
+        using FontMap = QMap<QString, BtConfig::FontSettingsPair>;
 
     public: /* Methods: */
 
