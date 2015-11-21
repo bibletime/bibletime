@@ -54,7 +54,7 @@ class CSwordModuleInfo: public QObject {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: /* Types: */
 
     /**
      * These are the options which could be supported by modules and by this backend.
@@ -155,6 +155,8 @@ public: /* Methods: */
         AllCategories   = 0xff
     };
     Q_DECLARE_FLAGS(Categories, Category)
+
+public: /* Methods: */
 
     /**
     * Returns the base directory for search indices
