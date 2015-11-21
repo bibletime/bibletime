@@ -158,6 +158,11 @@ public: /* Types: */
 
 public: /* Methods: */
 
+    CSwordModuleInfo(CSwordModuleInfo &&) = delete;
+    CSwordModuleInfo(CSwordModuleInfo const &) = delete;
+    CSwordModuleInfo & operator=(CSwordModuleInfo &&) = delete;
+    CSwordModuleInfo & operator=(CSwordModuleInfo const &) = delete;
+
     /**
     * Returns the base directory for search indices
     */
@@ -414,8 +419,6 @@ protected: /* Methods: */
     CSwordModuleInfo(sword::SWModule * module,
                      CSwordBackend & backend,
                      ModuleType type);
-
-    CSwordModuleInfo(const CSwordModuleInfo & copy);
 
     inline CSwordBackend & backend() const {
         return m_backend;

@@ -124,21 +124,6 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
     }
 }
 
-CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & copy)
-    : QObject(nullptr)
-    , m_module(copy.m_module)
-    , m_backend(copy.m_backend)
-    , m_type(copy.m_type)
-    , m_hidden(copy.m_hidden)
-    , m_cancelIndexing(copy.m_cancelIndexing)
-    , m_cachedName(copy.m_cachedName)
-    , m_cachedCategory(copy.m_cachedCategory)
-    , m_cachedLanguage(copy.m_cachedLanguage)
-    , m_cachedHasVersion(copy.m_cachedHasVersion)
-{
-    // Intentionally empty
-}
-
 bool CSwordModuleInfo::unlock(const QString & unlockKey) {
     if (!isEncrypted())
         return false;
