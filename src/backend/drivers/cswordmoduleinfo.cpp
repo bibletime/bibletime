@@ -55,20 +55,20 @@ namespace {
 
 inline CSwordModuleInfo::Category retrieveCategory(
     CSwordModuleInfo::ModuleType const type,
-    sword::SWModule * module)
+    sword::SWModule & module)
 {
     /// \todo Maybe we can use raw string comparsion instead of QString?
-    QString const cat(module->getConfigEntry("Category"));
+    QString const cat(module.getConfigEntry("Category"));
 
     // Category has to be checked before type:
     if (cat == "Cults / Unorthodox / Questionable Material") {
         return CSwordModuleInfo::Cult;
     } else if (cat == "Daily Devotional"
-               || module->getConfig().has("Feature","DailyDevotion"))
+               || module.getConfig().has("Feature","DailyDevotion"))
     {
         return CSwordModuleInfo::DailyDevotional;
     } else if (cat == "Glossaries"
-               || module->getConfig().has("Feature", "Glossary"))
+               || module.getConfig().has("Feature", "Glossary"))
     {
         return CSwordModuleInfo::Glossary;
     } else if (cat == "Images" || cat == "Maps") {
@@ -92,14 +92,14 @@ inline CSwordModuleInfo::Category retrieveCategory(
 
 }
 
-CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
+CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                                    CSwordBackend & backend,
                                    ModuleType type)
-    : m_module((assert(module), module))
+    : m_module{module}
     , m_backend(backend)
     , m_type(type)
     , m_cancelIndexing(false)
-    , m_cachedName(QString::fromUtf8(module->getName()))
+    , m_cachedName(QString::fromUtf8(module.getName()))
     , m_cachedCategory(retrieveCategory(type, module))
     , m_cachedLanguage(
         CLanguageMgr::instance()->languageForAbbrev(
@@ -107,8 +107,8 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
             /* Special handling for glossaries, we use the "from language" as
                language for the module: */
             ? config(GlossaryFrom)
-            : module->getLanguage()))
-    , m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
+            : module.getLanguage()))
+    , m_cachedHasVersion(!QString((*m_backend.getConfig())[module.getName()]["Version"]).isEmpty())
 {
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",
                                              QStringList()).contains(m_cachedName);
@@ -138,7 +138,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
        backend->setCipherKey() does not work correctly for modules from which
        data was already fetched. Therefore we have to reload the modules in
        bibletime.cpp */
-    m_backend.setCipherKey(m_module->getName(), unlockKey.toUtf8().constData());
+    m_backend.setCipherKey(m_module.getName(), unlockKey.toUtf8().constData());
 
     /// \todo write to Sword config as well
 
@@ -172,7 +172,7 @@ bool CSwordModuleInfo::isEncrypted() const {
 }
 
 bool CSwordModuleInfo::unlockKeyIsValid() const {
-    m_module->setPosition(sword::TOP);
+    m_module.setPosition(sword::TOP);
 
     /* This needs to use ::fromLatin1 because if the text is still locked, a lot
        of garbage will show up. It will also work with properly decrypted
@@ -180,8 +180,8 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
        and therefore contain no control (nonprintable) characters, which are all
        <127. */
     const QString test(isUnicode()
-                       ? QString::fromUtf8(m_module->getRawEntryBuf().c_str())
-                       : QString::fromLatin1(m_module->getRawEntryBuf().c_str()));
+                       ? QString::fromUtf8(m_module.getRawEntryBuf().c_str())
+                       : QString::fromLatin1(m_module.getRawEntryBuf().c_str()));
 
     if (test.isEmpty())
         return false;
@@ -296,10 +296,10 @@ void CSwordModuleInfo::buildIndex() {
         }
         else
         {
-            m_module->setPosition(sword::TOP);
-            verseLowIndex = m_module->getIndex();
-            m_module->setPosition(sword::BOTTOM);
-            verseHighIndex = m_module->getIndex();
+            m_module.setPosition(sword::TOP);
+            verseLowIndex = m_module.getIndex();
+            m_module.setPosition(sword::BOTTOM);
+            verseHighIndex = m_module.getIndex();
         }
 
         // verseLowIndex is not 0 in all cases (i.e. NT-only modules)
@@ -315,7 +315,7 @@ void CSwordModuleInfo::buildIndex() {
 
         emit indexingProgress(0);
 
-        sword::SWKey * const key = m_module->getKey();
+        sword::SWKey * const key = m_module.getKey();
         sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(key);
 
         if (vk) {
@@ -331,7 +331,7 @@ void CSwordModuleInfo::buildIndex() {
 
         // we start with the first module entry, key is automatically updated
         // because key is a pointer to the modules key
-        m_module->setSkipConsecutiveLinks(true);
+        m_module.setSkipConsecutiveLinks(true);
 
         QScopedArrayPointer<wchar_t> sPwcharBuffer(
                 new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
@@ -341,9 +341,9 @@ void CSwordModuleInfo::buildIndex() {
         if(bm)
             vk->setIndex(bm->lowerBound().getIndex());
         else
-            m_module->setPosition(sword::TOP);
+            m_module.setPosition(sword::TOP);
 
-        while (!(m_module->popError()) && !CANCEL_INDEXING) {
+        while (!(m_module.popError()) && !CANCEL_INDEXING) {
 
             /* Also index Chapter 0 and Verse 0, because they might have
                information in the entry attributes. We used to just put their
@@ -365,7 +365,7 @@ void CSwordModuleInfo::buildIndex() {
             /* At this point we have to make sure we disabled the strongs and
                the other options, so the plain filters won't include the numbers
                somehow. */
-            textBuffer.append(m_module->stripText());
+            textBuffer.append(m_module.stripText());
             lucene_utf8towcs(wcharBuffer,
                              static_cast<const char *>(textBuffer),
                              BT_MAX_LUCENE_FIELD_LENGTH);
@@ -378,8 +378,8 @@ void CSwordModuleInfo::buildIndex() {
             using ALI = sword::AttributeList::iterator;
             using AVI = sword::AttributeValue::iterator;
 
-            for (ALI it = m_module->getEntryAttributes()["Footnote"].begin();
-                 it != m_module->getEntryAttributes()["Footnote"].end();
+            for (ALI it = m_module.getEntryAttributes()["Footnote"].begin();
+                 it != m_module.getEntryAttributes()["Footnote"].end();
                  ++it)
             {
                 lucene_utf8towcs(wcharBuffer, it->second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
@@ -390,8 +390,8 @@ void CSwordModuleInfo::buildIndex() {
             }
 
             // Headings
-            for (AVI it = m_module->getEntryAttributes()["Heading"]["Preverse"].begin();
-                 it != m_module->getEntryAttributes()["Heading"]["Preverse"].end();
+            for (AVI it = m_module.getEntryAttributes()["Heading"]["Preverse"].begin();
+                 it != m_module.getEntryAttributes()["Heading"]["Preverse"].end();
                  ++it)
             {
                 lucene_utf8towcs(wcharBuffer, it->second, BT_MAX_LUCENE_FIELD_LENGTH);
@@ -402,8 +402,8 @@ void CSwordModuleInfo::buildIndex() {
             }
 
             // Strongs/Morphs
-            for (ALI it = m_module->getEntryAttributes()["Word"].begin();
-                 it != m_module->getEntryAttributes()["Word"].end();
+            for (ALI it = m_module.getEntryAttributes()["Word"].begin();
+                 it != m_module.getEntryAttributes()["Word"].end();
                  ++it)
             {
                 if (it->second["LemmaClass"] == "strong") {
@@ -428,7 +428,7 @@ void CSwordModuleInfo::buildIndex() {
             if (m_type == CSwordModuleInfo::Lexicon) {
                 verseIndex++;
             } else {
-                verseIndex = m_module->getIndex();
+                verseIndex = m_module.getIndex();
             }
 
             if (verseIndex % 200 == 0) {
@@ -442,8 +442,8 @@ void CSwordModuleInfo::buildIndex() {
                 }
             }
 
-            m_module->increment();
-        } // while (!(m_module->Error()) && !CANCEL_INDEXING)
+            m_module.increment();
+        } // while (!(m_module.Error()) && !CANCEL_INDEXING)
 
         if (!CANCEL_INDEXING)
             writer->optimize();
@@ -504,7 +504,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
         QScopedPointer<CSwordKey> key(CSwordKey::createInstance(this));
         const sword::SWKey * const s = dynamic_cast<sword::SWKey *>(key.data());
         if (s)
-            m_module->setKey(*s);
+            m_module.setKey(*s);
     }
     QList<sword::VerseKey *> list;
 
@@ -530,7 +530,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     const bool useScope = (scope.getCount() > 0);
 
     lucene::document::Document * doc = nullptr;
-    QScopedPointer<sword::SWKey> swKey(m_module->createKey());
+    QScopedPointer<sword::SWKey> swKey(m_module.createKey());
 
     sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.data());
     if (vk)
@@ -585,7 +585,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
 
         case CipherKey: {
             if (btConfig().getModuleEncryptionKey(m_cachedName).isNull()) {
-                return QString(m_module->getConfigEntry("CipherKey")); // Fallback
+                return QString(m_module.getConfigEntry("CipherKey")); // Fallback
             } else {
                 return btConfig().getModuleEncryptionKey(m_cachedName);
             }
@@ -695,10 +695,10 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
     switch (feature) {
-        case GreekDef: return m_module->getConfig().has("Feature", "GreekDef");
-        case HebrewDef: return m_module->getConfig().has("Feature", "HebrewDef");
-        case GreekParse: return m_module->getConfig().has("Feature", "GreekParse");
-        case HebrewParse: return m_module->getConfig().has("Feature", "HebrewParse");
+        case GreekDef: return m_module.getConfig().has("Feature", "GreekDef");
+        case HebrewDef: return m_module.getConfig().has("Feature", "HebrewDef");
+        case GreekParse: return m_module.getConfig().has("Feature", "GreekParse");
+        case HebrewParse: return m_module.getConfig().has("Feature", "HebrewParse");
     }
     return false;
 }
@@ -706,16 +706,16 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
     const QString name = m_backend.configOptionName(option);
-    return m_module->getConfig().has("GlobalOptionFilter",
-                                     QString("OSIS").append(name).toUtf8().constData())
-        || m_module->getConfig().has("GlobalOptionFilter",
-                                     QString("GBF").append(name).toUtf8().constData())
-        || m_module->getConfig().has("GlobalOptionFilter",
-                                     QString("ThML").append(name).toUtf8().constData())
-        || m_module->getConfig().has("GlobalOptionFilter",
-                                     QString("UTF8").append(name).toUtf8().constData())
-        || m_module->getConfig().has("GlobalOptionFilter",
-                                     name.toUtf8().constData());
+    return m_module.getConfig().has("GlobalOptionFilter",
+                                    QString("OSIS").append(name).toUtf8().constData())
+        || m_module.getConfig().has("GlobalOptionFilter",
+                                    QString("GBF").append(name).toUtf8().constData())
+        || m_module.getConfig().has("GlobalOptionFilter",
+                                    QString("ThML").append(name).toUtf8().constData())
+        || m_module.getConfig().has("GlobalOptionFilter",
+                                    QString("UTF8").append(name).toUtf8().constData())
+        || m_module.getConfig().has("GlobalOptionFilter",
+                                    name.toUtf8().constData());
 }
 
 CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const
@@ -725,25 +725,25 @@ char const * CSwordModuleInfo::textDirectionAsHtml() const
 { return textDirection() == RightToLeft ? "rtl" : "ltr"; }
 
 void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
-    m_module->setKey(key->key().toUtf8().constData());
+    m_module.setKey(key->key().toUtf8().constData());
 
     /* Don't store a pointer to the const char* value somewhere because QCString
       doesn't keep the value of it. */
-    m_module->setEntry(isUnicode()
-                       ? newText.toUtf8().constData()
-                       : newText.toLocal8Bit().constData());
+    m_module.setEntry(isUnicode()
+                      ? newText.toUtf8().constData()
+                      : newText.toLocal8Bit().constData());
 }
 
 void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
     Q_ASSERT(key);
-    m_module->setKey(isUnicode()
-                     ? key->key().toUtf8().constData()
-                     : key->key().toLocal8Bit().constData());
-    m_module->deleteEntry();
+    m_module.setKey(isUnicode()
+                    ? key->key().toUtf8().constData()
+                    : key->key().toLocal8Bit().constData());
+    m_module.deleteEntry();
 }
 
 Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
-    return dynamic_cast<Rendering::CEntryDisplay *>(m_module->getDisplay());
+    return dynamic_cast<Rendering::CEntryDisplay *>(m_module.getDisplay());
 }
 
 QString CSwordModuleInfo::aboutText() const {
@@ -759,7 +759,7 @@ QString CSwordModuleInfo::aboutText() const {
                  : tr("unknown"));
 
     {
-        const QString sourceType(m_module->getConfigEntry("SourceType"));
+        const QString sourceType(m_module.getConfigEntry("SourceType"));
         text += row
                 .arg(tr("Markup"))
                 .arg(!sourceType.isEmpty()
@@ -775,11 +775,11 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("Language"))
             .arg(m_cachedLanguage->translatedName().toHtmlEscaped());
 
-    if (char const * const e = m_module->getConfigEntry("Category"))
+    if (char const * const e = m_module.getConfigEntry("Category"))
         text += row.arg(tr("Category"))
                    .arg(QString{e}.toHtmlEscaped());
 
-    if (char const * const e = m_module->getConfigEntry("LCSH"))
+    if (char const * const e = m_module.getConfigEntry("LCSH"))
         text += row.arg(tr("LCSH"))
                    .arg(QString{e}.toHtmlEscaped());
 
@@ -969,8 +969,8 @@ QString CSwordModuleInfo::englishCategoryName(const CSwordModuleInfo::Category &
 
 QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
     QString ret = isUnicode()
-                  ? QString::fromUtf8(m_module->getConfigEntry(name.toUtf8().constData()))
-                  : QString::fromLatin1(m_module->getConfigEntry(name.toUtf8().constData()));
+                  ? QString::fromUtf8(m_module.getConfigEntry(name.toUtf8().constData()))
+                  : QString::fromLatin1(m_module.getConfigEntry(name.toUtf8().constData()));
 
     return ret.isEmpty() ? QString::null : ret;
 }
@@ -980,7 +980,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
     const QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
     for (int i = localeNames.size() - 1; i >= -1; --i) {
         sword::SWBuf RTF_Buffer =
-                m_module->getConfigEntry(
+                m_module.getConfigEntry(
                     QString(i >= 0 ? name + "_" + localeNames[i] : name)
                         .toUtf8().constData());
         if (RTF_Buffer.length() > 0) {

@@ -25,7 +25,7 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
 
     public: /* Methods: */
 
-        inline CSwordCommentaryModuleInfo(sword::SWModule * module,
+        inline CSwordCommentaryModuleInfo(sword::SWModule & module,
                                           CSwordBackend & backend)
             : CSwordBibleModuleInfo(module,
                                     backend,

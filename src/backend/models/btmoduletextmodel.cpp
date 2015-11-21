@@ -77,25 +77,20 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
 
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);
 
-    if (isBible() || isCommentary())
-    {
-        const CSwordBibleModuleInfo *bm = qobject_cast<const CSwordBibleModuleInfo*>(firstModule);
-        bm->module()->setPosition(sword::TOP);
-        m_firstEntry = bm->module()->getIndex();
-        bm->module()->setPosition(sword::BOTTOM);
-        m_maxEntries = bm->module()->getIndex() - m_firstEntry + 1;
-    }
-
-    else if(isLexicon())
-    {
-        const CSwordLexiconModuleInfo *lm = qobject_cast<const CSwordLexiconModuleInfo*>(firstModule);
-        m_maxEntries = lm->entries().size();
-    }
-
-    else if(isBook())
-    {
-        const CSwordBookModuleInfo *bookModule = qobject_cast<const CSwordBookModuleInfo*>(firstModule);
-        sword::TreeKeyIdx tk(*bookModule->tree());
+    if (isBible() || isCommentary()) {
+        auto & m = firstModule->module();
+        m.setPosition(sword::TOP);
+        m_firstEntry = m.getIndex();
+        m.setPosition(sword::BOTTOM);
+        m_maxEntries = m.getIndex() - m_firstEntry + 1;
+    } else if(isLexicon()) {
+        m_maxEntries =
+                static_cast<CSwordLexiconModuleInfo const *>(firstModule)
+                        ->entries().size();
+    } else if(isBook()) {
+        sword::TreeKeyIdx tk(
+                *static_cast<CSwordBookModuleInfo const *>(firstModule)
+                        ->tree());
         tk.root();
         tk.firstChild();
         Q_ASSERT(tk.getOffset() == 4);

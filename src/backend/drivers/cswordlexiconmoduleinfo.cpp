@@ -69,25 +69,26 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
      */
     qDebug() << "Read all entries of lexicon" << name();
 
-    module()->setSkipConsecutiveLinks(true);
-    module()->setPosition(sword::TOP);
+    auto & m = module();
+    m.setSkipConsecutiveLinks(true);
+    m.setPosition(sword::TOP);
     snap(); //snap to top entry
 
     do {
         if ( isUnicode() ) {
-            m_entries.append(QString::fromUtf8(module()->getKeyText()));
+            m_entries.append(QString::fromUtf8(m.getKeyText()));
         }
         else {
             //for latin1 modules use fromLatin1 because of speed
             QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
-            m_entries.append(codec->toUnicode(module()->getKeyText()));
+            m_entries.append(codec->toUnicode(m.getKeyText()));
         }
 
-        module()->increment();
-    } while (!module()->popError());
+        m.increment();
+    } while (!m.popError());
 
-    module()->setPosition(sword::TOP); // back to the first entry
-    module()->setSkipConsecutiveLinks(false);
+    m.setPosition(sword::TOP); // back to the first entry
+    m.setSkipConsecutiveLinks(false);
 
     /// \todo Document why the following code is here:
     if (!m_entries.empty() && m_entries.front().simplified().isEmpty())

@@ -102,21 +102,22 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
 
     for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
         sword::SWModule * const curMod = it->second;
+        Q_ASSERT(curMod);
         CSwordModuleInfo * newModule;
 
         const char * const modType = curMod->getType();
         if (!strcmp(modType, "Biblical Texts")) {
-            newModule = new CSwordBibleModuleInfo(curMod, *this);
-            newModule->module()->setDisplay(&m_chapterDisplay);
+            newModule = new CSwordBibleModuleInfo(*curMod, *this);
+            newModule->module().setDisplay(&m_chapterDisplay);
         } else if (!strcmp(modType, "Commentaries")) {
-            newModule = new CSwordCommentaryModuleInfo(curMod, *this);
-            newModule->module()->setDisplay(&m_entryDisplay);
+            newModule = new CSwordCommentaryModuleInfo(*curMod, *this);
+            newModule->module().setDisplay(&m_entryDisplay);
         } else if (!strcmp(modType, "Lexicons / Dictionaries")) {
-            newModule = new CSwordLexiconModuleInfo(curMod, *this);
-            newModule->module()->setDisplay(&m_entryDisplay);
+            newModule = new CSwordLexiconModuleInfo(*curMod, *this);
+            newModule->module().setDisplay(&m_entryDisplay);
         } else if (!strcmp(modType, "Generic Books")) {
-            newModule = new CSwordBookModuleInfo(curMod, *this);
-            newModule->module()->setDisplay(&m_bookDisplay);
+            newModule = new CSwordBookModuleInfo(*curMod, *this);
+            newModule->module().setDisplay(&m_bookDisplay);
         } else {
             continue;
         }
@@ -250,7 +251,7 @@ CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
     Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
-        if (mod->module() == swmodule)
+        if (&mod->module() == swmodule)
             return mod;
     return nullptr;
 }
@@ -360,7 +361,7 @@ const QString CSwordBackend::booknameLanguage(const QString & language) {
             {
                 // Create a new key, it will get the default bookname language:
                 using VK = sword::VerseKey;
-                VK & vk = *static_cast<VK *>(mod->module()->getKey());
+                VK & vk = *static_cast<VK *>(mod->module().getKey());
                 vk.setLocale(newLocaleName.constData());
             }
         }

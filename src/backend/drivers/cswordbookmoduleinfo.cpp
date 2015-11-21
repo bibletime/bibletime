@@ -16,7 +16,7 @@
 #include <treekeyidx.h>
 
 
-CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule * module,
+CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule & module,
                                            CSwordBackend & backend)
     : CSwordModuleInfo(module, backend, CSwordModuleInfo::GenericBook)
     , m_depth(-1)
@@ -48,7 +48,7 @@ void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx * const key,
 /** Returns a treekey filled with the structure of this module */
 sword::TreeKeyIdx* CSwordBookModuleInfo::tree() const {
     sword::TreeKeyIdx * const treeKey =
-            dynamic_cast<sword::TreeKeyIdx *>(module()->getKey());
+            dynamic_cast<sword::TreeKeyIdx *>(module().getKey());
     Q_ASSERT(treeKey);
     return treeKey;
 }

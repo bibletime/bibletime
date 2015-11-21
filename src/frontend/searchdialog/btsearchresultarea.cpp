@@ -152,7 +152,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.setKey(key);
 
             // HACK: enable headings for VerseKeys:
-            static_cast<sword::VerseKey *>(module->module()->getKey())
+            static_cast<sword::VerseKey *>(module->module().getKey())
                     ->setIntros(true);
 
             //first go back and then go forward the keys to be in context
@@ -185,7 +185,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.setKey(key);
 
             // HACK: enable headings for VerseKeys:
-            static_cast<sword::VerseKey *>(module->module()->getKey())
+            static_cast<sword::VerseKey *>(module->module().getKey())
                     ->setIntros(true);
 
             //include Headings in display, they are indexed and searched too

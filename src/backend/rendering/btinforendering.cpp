@@ -349,12 +349,13 @@ QString decodeFootnote(QString const & data) {
     key->setKey(keyname);
     key->renderedText(CSwordKey::ProcessEntryAttributesOnly); // force entryAttributes
 
+    auto & m = module->module();
     const char * const note =
-        module->module()->getEntryAttributes()
-        ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
+        m.getEntryAttributes()
+            ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
 
     QString text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
-    text = QString::fromUtf8(module->module()->renderText(
+    text = QString::fromUtf8(m.renderText(
                                  module->isUnicode()
                                  ? static_cast<const char *>(text.toUtf8())
                                  : static_cast<const char *>(text.toLatin1())));

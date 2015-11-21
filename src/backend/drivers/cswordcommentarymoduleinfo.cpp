@@ -15,5 +15,6 @@ bool CSwordCommentaryModuleInfo::isWritable() const {
       A module is only writable if it's a RawFiles module with writable
       returning true.
     */
-    return !qstrcmp(module()->getConfigEntry("ModDrv"), "RawFiles") && module()->isWritable();
+    return !qstrcmp(module().getConfigEntry("ModDrv"), "RawFiles")
+           && module().isWritable();
 }

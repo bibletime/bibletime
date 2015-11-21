@@ -188,7 +188,7 @@ public: /* Methods: */
     /**
     * Returns the module object so all objects can access the original Sword module.
     */
-    inline sword::SWModule * module() const {
+    inline sword::SWModule & module() const {
         return m_module;
     }
 
@@ -375,7 +375,7 @@ wrong, or if the config file was write protected return false.
     * Protected because it should not be used outside of the CSword*ModuleInfo classes.
     */
     inline bool isUnicode() const {
-        return m_module->isUnicode();
+        return m_module.isUnicode();
     }
 
     /**
@@ -417,7 +417,7 @@ public slots:
 
 protected: /* Methods: */
 
-    CSwordModuleInfo(sword::SWModule * module,
+    CSwordModuleInfo(sword::SWModule & module,
                      CSwordBackend & backend,
                      ModuleType type);
 
@@ -438,7 +438,7 @@ signals:
 
 private: /* Fields: */
 
-    sword::SWModule * const m_module;
+    sword::SWModule & m_module;
     CSwordBackend & m_backend;
     ModuleType const m_type;
     bool m_hidden;

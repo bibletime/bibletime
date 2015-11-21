@@ -172,7 +172,7 @@ void BtRemovePage::slotRemoveModules() {
                 mgr = mgrDict[ prefixPath ];
             }
             qDebug() << "Removing the module" << mInfo->name() << "...";
-            installMgr.removeModule(mgr, mInfo->module()->getName());
+            installMgr.removeModule(mgr, mInfo->module().getName());
         }
         //delete the removed moduleinfo pointers
         qDeleteAll(toBeDeleted);

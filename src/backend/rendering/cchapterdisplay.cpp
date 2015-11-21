@@ -27,7 +27,8 @@ const QString Rendering::CChapterDisplay::text(
 
     const CSwordModuleInfo *module = modules.first();
 
-    if (modules.count() == 1) module->module()->setSkipConsecutiveLinks( true ); //skip empty, linked verses
+    if (modules.count() == 1)
+        module->module().setSkipConsecutiveLinks( true ); //skip empty, linked verses
 
     CTextRendering::KeyTreeItem::Settings settings;
     settings.keyRenderingFace =
@@ -43,7 +44,7 @@ const QString Rendering::CChapterDisplay::text(
 
     if (module->type() == CSwordModuleInfo::Bible) {
         // HACK: enable headings for VerseKeys:
-        static_cast<sword::VerseKey *>(module->module()->getKey())
+        static_cast<sword::VerseKey *>(module->module().getKey())
                 ->setIntros(true);
 
         Q_ASSERT(dynamic_cast<const CSBMI*>(module) != nullptr);

@@ -32,13 +32,14 @@ QString CSwordKey::rawText() {
     if (!m_module)
         return QString::null;
 
-    if (dynamic_cast<sword::SWKey*>(this))
-        m_module->module()->getKey()->setText( rawKey() );
+    auto & m = m_module->module();
+    if (dynamic_cast<sword::SWKey *>(this))
+        m.getKey()->setText( rawKey() );
 
     if (key().isNull())
         return QString::null;
 
-    return QString::fromUtf8(m_module->module()->getRawEntry());
+    return QString::fromUtf8(m.getRawEntry());
 }
 
 QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
@@ -46,22 +47,23 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
 
     sword::SWKey * const k = dynamic_cast<sword::SWKey *>(this);
 
+    auto & m = m_module->module();
     if (k) {
-        sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m_module->module()->getKey());
+        sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey());
         if (vk_mod)
             vk_mod->setIntros(true);
 
-        m_module->module()->getKey()->setText(rawKey());
+        m.getKey()->setText(rawKey());
 
         if (m_module->type() == CSwordModuleInfo::Lexicon) {
             m_module->snap();
             /* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
             i.e. the module key contains this key (e.g. 0123 contains 123) */
 
-            if (sword::stricmp(m_module->module()->getKey()->getText(), rawKey())
-                && !strstr(m_module->module()->getKey()->getText(), rawKey()))
+            if (sword::stricmp(m.getKey()->getText(), rawKey())
+                && !strstr(m.getKey()->getText(), rawKey()))
             {
-                qDebug("return an empty key for %s", m_module->module()->getKey()->getText());
+                qDebug("return an empty key for %s", m.getKey()->getText());
                 return QString::null;
             }
         }
@@ -71,7 +73,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         return QString::null;
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
-    QString text = QString::fromUtf8(m_module->module()->renderText(nullptr, -1, DoRender));
+    QString text = QString::fromUtf8(m.renderText(nullptr, -1, DoRender));
     if (!DoRender)
         return QString::null;
 
@@ -126,14 +128,15 @@ QString CSwordKey::strippedText() {
     if (!m_module)
         return QString::null;
 
+    auto & m = m_module->module();
     if (dynamic_cast<sword::SWKey*>(this)) {
         char * buffer = new char[strlen(rawKey()) + 1];
         strcpy(buffer, rawKey());
-        m_module->module()->getKey()->setText(buffer);
+        m.getKey()->setText(buffer);
         delete [] buffer;
     }
 
-    return QString::fromUtf8(m_module->module()->stripText());
+    return QString::fromUtf8(m.stripText());
 }
 
 void CSwordKey::emitBeforeChanged() {
@@ -150,7 +153,7 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
     if (!module)
         return nullptr;
 
-    sword::SWKey * const key = module->module()->getKey();
+    sword::SWKey * const key = module->module().getKey();
 
     switch (module->type()) {
 

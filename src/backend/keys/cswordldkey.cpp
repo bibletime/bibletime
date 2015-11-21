@@ -88,7 +88,7 @@ bool CSwordLDKey::setKey(const char *newKey) {
 
     if (newKey) {
         SWKey::operator = (newKey); //set the key
-        m_module->module()->setKey(this);
+        m_module->module().setKey(this);
         m_module->snap();
     }
 
@@ -97,29 +97,31 @@ bool CSwordLDKey::setKey(const char *newKey) {
 
 /** Uses the parameter to returns the next entry afer this key. */
 CSwordLDKey* CSwordLDKey::NextEntry() {
-    m_module->module()->setKey(this); // use this key as base for the next one!
-    //   m_module->module()->getKey()->setText( (const char*)key().utf8() );
+    auto & m = m_module->module();
+    m.setKey(this); // use this key as base for the next one!
+    //   m.getKey()->setText( (const char*)key().utf8() );
 
-    m_module->module()->setSkipConsecutiveLinks(true);
-    ( *( m_module->module() ) )++;
-    m_module->module()->setSkipConsecutiveLinks(false);
+    m.setSkipConsecutiveLinks(true);
+    m++;
+    m.setSkipConsecutiveLinks(false);
 
-    setKey(m_module->module()->getKeyText());
-    setText(m_module->module()->getKeyText());
+    setKey(m.getKeyText());
+    setText(m.getKeyText());
 
     return this;
 }
 
 /** Uses the parameter to returns the next entry afer this key. */
 CSwordLDKey* CSwordLDKey::PreviousEntry() {
-    m_module->module()->setKey(this); // use this key as base for the next one!
-    //   m_module->module()->getKey()->setText( (const char*)key().utf8() );
+    auto & m = m_module->module();
+    m.setKey(this); // use this key as base for the next one!
+    //   m.getKey()->setText( (const char*)key().utf8() );
 
-    m_module->module()->setSkipConsecutiveLinks(true);
-    ( *( m_module->module() ) )--;
-    m_module->module()->setSkipConsecutiveLinks(false);
+    m.setSkipConsecutiveLinks(true);
+    m--;
+    m.setSkipConsecutiveLinks(false);
 
-    setText(m_module->module()->getKeyText());
+    setText(m.getKeyText());
 
     return this;
 }

@@ -17,7 +17,7 @@
 #include <versekey.h>
 
 
-CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
+CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule & module,
                                              CSwordBackend & backend,
                                              ModuleType type)
         : CSwordModuleInfo(module, backend, type)
@@ -34,19 +34,19 @@ void CSwordBibleModuleInfo::initBounds() const {
 
     Q_ASSERT(!m_boundsInitialized);
 
-    sword::SWModule *m = module();
-    const bool oldStatus = m->isSkipConsecutiveLinks();
-    m->setSkipConsecutiveLinks(true);
+    auto & m = module();
+    const bool oldStatus = m.isSkipConsecutiveLinks();
+    m.setSkipConsecutiveLinks(true);
 
-    m->setPosition(sword::TOP); // position to first entry
-    sword::VerseKey key(module()->getKeyText());
+    m.setPosition(sword::TOP); // position to first entry
+    sword::VerseKey key(m.getKeyText());
     m_hasOT = (key.getTestament() == 1);
 
-    m->setPosition(sword::BOTTOM);
-    key = module()->getKeyText();
+    m.setPosition(sword::BOTTOM);
+    key = m.getKeyText();
     m_hasNT = (key.getTestament() == 2);
 
-    m->setSkipConsecutiveLinks(oldStatus);
+    m.setSkipConsecutiveLinks(oldStatus);
 
     m_lowerBound.setKey(m_hasOT ? "Genesis 1:1" : "Matthew 1:1");
     m_upperBound.setKey(!m_hasNT ? "Malachi 4:6" : "Revelation of John 22:21");
@@ -84,10 +84,10 @@ QStringList *CSwordBibleModuleInfo::books() const {
             max--; // max == 1
 
         if (min > max) {
-            qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module()->getName());
+            qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module().getName());
         } else {
             QScopedPointer<sword::VerseKey> key(
-                    static_cast<sword::VerseKey *>(module()->createKey()));
+                    static_cast<sword::VerseKey *>(module().createKey()));
             key->setPosition(sword::TOP);
 
             for (key->setTestament(min); !key->popError() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
@@ -103,7 +103,7 @@ unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const 
     int result = 0;
 
     QScopedPointer<sword::VerseKey> key(
-            static_cast<sword::VerseKey *>(module()->createKey()));
+            static_cast<sword::VerseKey *>(module().createKey()));
     key->setPosition(sword::TOP);
 
     // works for old and new versions
@@ -126,7 +126,7 @@ unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
     unsigned int result = 0;
 
     QScopedPointer<sword::VerseKey> key(
-            static_cast<sword::VerseKey *>(module()->createKey()));
+            static_cast<sword::VerseKey *>(module().createKey()));
     key->setPosition(sword::TOP);
 
     // works for old and new versions
@@ -148,7 +148,7 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     unsigned int bookNumber = 0;
 
     QScopedPointer<sword::VerseKey> key(
-            static_cast<sword::VerseKey *>(module()->createKey()));
+            static_cast<sword::VerseKey *>(module().createKey()));
     key->setPosition(sword::TOP);
 
     key->setBookName(book.toUtf8().constData());

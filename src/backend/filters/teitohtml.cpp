@@ -129,7 +129,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
             ReferenceManager::ParseOptions const options(
                     mod->name(),
                     QString::fromUtf8(myUserData->key->getText()),
-                    mod->module()->getLanguage());
+                    mod->module().getLanguage());
 
             buf.append("<a href=\"")
                .append( // create the hyperlink with key and mod

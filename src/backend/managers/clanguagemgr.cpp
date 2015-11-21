@@ -58,9 +58,11 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
         //collect the languages abbrevs of all modules
         QStringList abbrevs;
 
-        Q_FOREACH(const CSwordModuleInfo * const mod,  mods)
-            if (!abbrevs.contains(mod->module()->getLanguage()))
-                abbrevs.append(mod->module()->getLanguage());
+        Q_FOREACH(const CSwordModuleInfo * const mod,  mods) {
+            auto & m = mod->module();
+            if (!abbrevs.contains(m.getLanguage()))
+                abbrevs.append(m.getLanguage());
+        }
 
         //now create a map of available langs
         Q_FOREACH(QString const & abbrev, abbrevs) {

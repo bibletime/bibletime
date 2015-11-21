@@ -100,6 +100,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString::null;
 
+        auto & swModule = (*mod_Itr)->module();
         if ((*mod_Itr)->language()->isValid()) {
             langAttr = QString("xml:lang=\"")
                        .append((*mod_Itr)->language()->abbrev())
@@ -108,9 +109,9 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                        .append("\"");
         } else {
             langAttr = QString("xml:lang=\"")
-                       .append((*mod_Itr)->module()->getLanguage())
+                       .append(swModule.getLanguage())
                        .append("\" lang=\"")
-                       .append((*mod_Itr)->module()->getLanguage())
+                       .append(swModule.getLanguage())
                        .append("\"");
         }
 
@@ -140,12 +141,12 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         if (m_filterOptions.headings) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
-            (*mod_Itr)->module()->renderText(nullptr, -1, 0);
+            swModule.renderText(nullptr, -1, 0);
 
             sword::AttributeValue::const_iterator it =
-                (*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].begin();
+                swModule.getEntryAttributes()["Heading"]["Preverse"].begin();
             sword::AttributeValue::const_iterator const end =
-                (*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].end();
+                swModule.getEntryAttributes()["Heading"]["Preverse"].end();
 
             for (; it != end; ++it) {
                 QString unfiltered(QString::fromUtf8(it->second.c_str()));
