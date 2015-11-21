@@ -7,15 +7,15 @@
 *
 **********/
 
-#include "frontend/cprinter.h"
+#include "btprinter.h"
 
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QWebFrame>
 #include <QWebPage>
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/config/btconfig.h"
+#include "config/btconfig.h"
+#include "keys/cswordversekey.h"
+#include "managers/cdisplaytemplatemgr.h"
 
 
 namespace Printing {
@@ -33,14 +33,14 @@ inline FilterOptions mangleFilterOptions(FilterOptions fo) {
 
 } // anonymous namespace
 
-CPrinter::CPrinter(DisplayOptions const & displayOptions,
-                   FilterOptions const & filterOptions,
-                   QObject * const parent)
+BtPrinter::BtPrinter(DisplayOptions const & displayOptions,
+                     FilterOptions const & filterOptions,
+                     QObject * const parent)
         : QObject{parent}
         , CDisplayRendering{displayOptions, mangleFilterOptions(filterOptions)}
 {}
 
-void CPrinter::printKeyTree(KeyTree const & tree) {
+void BtPrinter::printKeyTree(KeyTree const & tree) {
     QWebPage htmlPage;
     htmlPage.mainFrame()->setHtml(renderKeyTree(tree));
 
@@ -50,8 +50,8 @@ void CPrinter::printKeyTree(KeyTree const & tree) {
         htmlPage.mainFrame()->print(&printer);
 }
 
-QString CPrinter::entryLink(KeyTreeItem const & item,
-                            CSwordModuleInfo const * module)
+QString BtPrinter::entryLink(KeyTreeItem const & item,
+                             CSwordModuleInfo const * module)
 {
     Q_ASSERT(module);
     if (module->type() != CSwordModuleInfo::Bible)
@@ -75,11 +75,11 @@ QString CPrinter::entryLink(KeyTreeItem const & item,
     }
 }
 
-QString CPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
+QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
     Q_UNUSED(key);
-    Q_ASSERT(dynamic_cast<CPrinter::KeyTreeItem const *>(&i));
-    CPrinter::KeyTreeItem const * const printItem =
-            static_cast<CPrinter::KeyTreeItem const *>(&i);
+    Q_ASSERT(dynamic_cast<BtPrinter::KeyTreeItem const *>(&i));
+    BtPrinter::KeyTreeItem const * const printItem =
+            static_cast<BtPrinter::KeyTreeItem const *>(&i);
 
     if (printItem->hasAlternativeContent()) {
         QString ret =
@@ -95,7 +95,7 @@ QString CPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
     return CDisplayRendering::renderEntry(i);
 }
 
-QString CPrinter::finishText(QString const & text, KeyTree const & tree) {
+QString BtPrinter::finishText(QString const & text, KeyTree const & tree) {
     BtConstModuleList const modules = collectModules(tree);
     Q_ASSERT(!modules.empty());
 
@@ -117,4 +117,4 @@ QString CPrinter::finishText(QString const & text, KeyTree const & tree) {
                 settings);
 }
 
-} //end of namespace
+} // namespace Printing

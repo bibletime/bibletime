@@ -20,6 +20,7 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include "backend/btprinter.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
@@ -29,7 +30,6 @@
 #include "frontend/btopenworkaction.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/cprinter.h"
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"

@@ -9,27 +9,27 @@
 *
 **********/
 
-#ifndef CPRINTER_H
-#define CPRINTER_H
+#ifndef BTPRINTER_H
+#define BTPRINTER_H
 
 #include <QObject>
-#include "backend/rendering/cdisplayrendering.h"
+#include "rendering/cdisplayrendering.h"
 
-#include "backend/managers/cswordbackend.h"
+#include "managers/cswordbackend.h"
 
 
 namespace Printing {
 
 /** \brief Manages the print item queue and printing. */
-class CPrinter final: public QObject, public Rendering::CDisplayRendering {
+class BtPrinter final: public QObject, public Rendering::CDisplayRendering {
 
     Q_OBJECT
 
 public: /* Methods: */
 
-    CPrinter(DisplayOptions const & displayOptions,
-             FilterOptions const & filterOptions,
-             QObject * const parent = nullptr);
+    BtPrinter(DisplayOptions const & displayOptions,
+              FilterOptions const & filterOptions,
+              QObject * const parent = nullptr);
 
     void printKeyTree(KeyTree const &);
 
@@ -44,6 +44,6 @@ private: /* Methods: */
 
 };
 
-} //namespace Printing
+} // namespace Printing {
 
-#endif
+#endif /* BTPRINTER_H */

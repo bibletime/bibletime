@@ -23,6 +23,7 @@
 #include <QTimer>
 #include <QToolTip>
 
+#include "backend/btprinter.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/btbookmarksmodel.h"
@@ -31,7 +32,6 @@
 #include "bibletimeapp.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
-#include "frontend/cprinter.h"
 #include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/bookmarks/bteditbookmarkdialog.h"
@@ -594,16 +594,16 @@ void CBookmarkIndex::importBookmarks() {
 /** Prints the selected bookmarks. */
 void CBookmarkIndex::printBookmarks() {
     Q_ASSERT(!hasBookmarksRecursively(selectedIndexes()));
-    Printing::CPrinter::KeyTree tree;
+    Printing::BtPrinter::KeyTree tree;
     {
-        Printing::CPrinter::KeyTreeItem::Settings const settings(
+        Printing::BtPrinter::KeyTreeItem::Settings const settings(
                 false,
-                Printing::CPrinter::KeyTreeItem::Settings::CompleteShort);
+                Printing::BtPrinter::KeyTreeItem::Settings::CompleteShort);
         QModelIndexList items(selectedIndexes());
         while (!items.empty()) {
             QModelIndex const index(items.takeFirst());
             if (m_bookmarksModel->isBookmark(index)) {
-                typedef Printing::CPrinter::KeyTreeItem KTI;
+                using KTI = Printing::BtPrinter::KeyTreeItem;
                 tree.append(new KTI(m_bookmarksModel->key(index),
                                 m_bookmarksModel->module(index),
                                 settings));
@@ -616,9 +616,9 @@ void CBookmarkIndex::printBookmarks() {
     }
     Q_ASSERT(!tree.isEmpty());
 
-    Printing::CPrinter{btConfig().getDisplayOptions(),
-                       btConfig().getFilterOptions(),
-                       this}.printKeyTree(tree);
+    Printing::BtPrinter{btConfig().getDisplayOptions(),
+                        btConfig().getFilterOptions(),
+                        this}.printKeyTree(tree);
 }
 
 void CBookmarkIndex::confirmDeleteEntries() {

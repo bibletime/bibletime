@@ -15,6 +15,7 @@
 #include <QList>
 #include <QProgressDialog>
 #include <QTextStream>
+#include "backend/btprinter.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -23,7 +24,6 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/chtmlexportrendering.h"
 #include "backend/rendering/cplaintextexportrendering.h"
-#include "frontend/cprinter.h"
 #include "util/tool.h"
 
 // Sword includes:
@@ -256,10 +256,10 @@ bool CExportManager::copyKeyList(QList<CSwordKey *> const & list,
 
 namespace {
 
-struct PrintSettings: CPrinter::KeyTreeItem::Settings {
+struct PrintSettings: BtPrinter::KeyTreeItem::Settings {
 
     PrintSettings(DisplayOptions const & displayOptions)
-        : CPrinter::KeyTreeItem::Settings{
+        : BtPrinter::KeyTreeItem::Settings{
             false,
             displayOptions.verseNumbers ? Settings::SimpleKey : Settings::NoKey}
     {}
@@ -273,9 +273,9 @@ bool CExportManager::printKey(CSwordKey const * const key,
                               FilterOptions const & filterOptions)
 {
     PrintSettings settings{displayOptions};
-    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    tree.append(new CPrinter::KeyTreeItem(key->key(), key->module(), settings));
-    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
+    BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+    tree.append(new BtPrinter::KeyTreeItem(key->key(), key->module(), settings));
+    BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
@@ -286,13 +286,13 @@ bool CExportManager::printKey(CSwordModuleInfo const * const module,
                               FilterOptions const & filterOptions)
 {
     PrintSettings settings{displayOptions};
-    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+    BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     if (startKey != stopKey) {
-        tree.append(new CPrinter::KeyTreeItem(startKey, stopKey, module, settings));
+        tree.append(new BtPrinter::KeyTreeItem(startKey, stopKey, module, settings));
     } else {
-        tree.append(new CPrinter::KeyTreeItem(startKey, module, settings));
+        tree.append(new BtPrinter::KeyTreeItem(startKey, module, settings));
     }
-    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
+    BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
@@ -307,7 +307,7 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     if (moduleName.isEmpty())
         moduleName = ReferenceManager::preferredModule(type);
 
-    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+    BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     PrintSettings settings{displayOptions};
     CSwordModuleInfo const * module =
             CSwordBackend::instance()->findModuleByName(moduleName);
@@ -327,7 +327,7 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                     dynamic_cast<sword::VerseKey const *>(verses.getElement(i)))
             {
                 tree.append(
-                        new CPrinter::KeyTreeItem(
+                        new BtPrinter::KeyTreeItem(
                                 QString::fromUtf8(
                                         element->getLowerBound().getText()),
                                 QString::fromUtf8(
@@ -336,16 +336,16 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                                 settings) );
             } else if (verses.getElement(i)) {
                 tree.append(
-                        new CPrinter::KeyTreeItem(
+                        new BtPrinter::KeyTreeItem(
                             QString::fromUtf8(verses.getElement(i)->getText()),
                             module,
                             settings) );
             }
         }
     } else {
-        tree.append(new CPrinter::KeyTreeItem(keyName, module, settings));
+        tree.append(new BtPrinter::KeyTreeItem(keyName, module, settings));
     }
-    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
+    BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
 
@@ -357,7 +357,7 @@ bool CExportManager::printKeyList(sword::ListKey const & list,
     if (!list.getCount())
         return false;
     PrintSettings settings{displayOptions};
-    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+    BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.getCount());
     for (int i = 0; i < list.getCount(); i++) {
@@ -375,7 +375,7 @@ bool CExportManager::printKeyList(sword::ListKey const & list,
         }
         incProgress();
     }
-    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
+    BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     closeProgressDialog();
     return true;
 }
@@ -389,16 +389,16 @@ bool CExportManager::printKeyList(QStringList const & list,
         return false;
 
     PrintSettings settings{displayOptions};
-    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+    BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.count());
     for (QString const & key: list) {
         if (progressWasCancelled())
             return false;
-        tree.append(new CPrinter::KeyTreeItem(key, module, settings));
+        tree.append(new BtPrinter::KeyTreeItem(key, module, settings));
         incProgress();
     }
-    CPrinter{displayOptions, filterOptions}.printKeyTree(tree);
+    BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     closeProgressDialog();
     return true;
 }
