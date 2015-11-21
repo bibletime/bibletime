@@ -156,7 +156,7 @@ TARGET_LINK_LIBRARIES("bibletime"
 )
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  qt5_use_modules("bibletime" Widgets Qml Quick Xml Network PrintSupport Svg)
+  qt5_use_modules("bibletime" Widgets WebKitWidgets Qml Quick Xml Network PrintSupport Svg)
 ELSE()
   qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
 ENDIF()
