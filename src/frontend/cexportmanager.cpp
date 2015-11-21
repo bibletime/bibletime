@@ -32,7 +32,6 @@
 
 
 using namespace Rendering;
-using namespace Printing;
 
 using KTI = CTextRendering::KeyTreeItem;
 

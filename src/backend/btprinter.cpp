@@ -18,8 +18,6 @@
 #include "managers/cdisplaytemplatemgr.h"
 
 
-namespace Printing {
-
 namespace {
 
 inline FilterOptions mangleFilterOptions(FilterOptions fo) {
@@ -116,5 +114,3 @@ QString BtPrinter::finishText(QString const & text, KeyTree const & tree) {
                 text,
                 settings);
 }
-
-} // namespace Printing

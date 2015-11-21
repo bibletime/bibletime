@@ -594,16 +594,16 @@ void CBookmarkIndex::importBookmarks() {
 /** Prints the selected bookmarks. */
 void CBookmarkIndex::printBookmarks() {
     Q_ASSERT(!hasBookmarksRecursively(selectedIndexes()));
-    Printing::BtPrinter::KeyTree tree;
+    BtPrinter::KeyTree tree;
     {
-        Printing::BtPrinter::KeyTreeItem::Settings const settings(
+        BtPrinter::KeyTreeItem::Settings const settings{
                 false,
-                Printing::BtPrinter::KeyTreeItem::Settings::CompleteShort);
+                BtPrinter::KeyTreeItem::Settings::CompleteShort};
         QModelIndexList items(selectedIndexes());
         while (!items.empty()) {
             QModelIndex const index(items.takeFirst());
             if (m_bookmarksModel->isBookmark(index)) {
-                using KTI = Printing::BtPrinter::KeyTreeItem;
+                using KTI = BtPrinter::KeyTreeItem;
                 tree.append(new KTI(m_bookmarksModel->key(index),
                                 m_bookmarksModel->module(index),
                                 settings));
@@ -616,9 +616,8 @@ void CBookmarkIndex::printBookmarks() {
     }
     Q_ASSERT(!tree.isEmpty());
 
-    Printing::BtPrinter{btConfig().getDisplayOptions(),
-                        btConfig().getFilterOptions(),
-                        this}.printKeyTree(tree);
+    BtPrinter{btConfig().getDisplayOptions(), btConfig().getFilterOptions(), this}
+            .printKeyTree(tree);
 }
 
 void CBookmarkIndex::confirmDeleteEntries() {

@@ -18,8 +18,6 @@
 #include "managers/cswordbackend.h"
 
 
-namespace Printing {
-
 /** \brief Manages the print item queue and printing. */
 class BtPrinter final: public QObject, public Rendering::CDisplayRendering {
 
@@ -43,7 +41,5 @@ private: /* Methods: */
     QString finishText(QString const & text, KeyTree const & tree) override;
 
 };
-
-} // namespace Printing {
 
 #endif /* BTPRINTER_H */
