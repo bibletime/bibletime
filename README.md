@@ -1,7 +1,8 @@
 README for BibleTime [![Build Status](https://travis-ci.org/bibletime/bibletime.svg?branch=master)](https://travis-ci.org/bibletime/bibletime)
 ====================
 
-BibleTime is a Bible study application based on Qt.
+BibleTime is a Bible study application based on the Sword library and
+Qt toolkit.
 
 ## INSTALLATION
 
@@ -10,7 +11,8 @@ You can just download and install BibleTime from
 The following requirements are needed only if you want to develop BibleTime.
 
 ### BUILD REQUIREMENTS
- - QT 4.5+
+ - A C++11 compiler.
+ - QT 5+
  - Sword 1.7.0+ (http://crosswire.org/sword)
  - CLucene 0.9.16a+ (http://clucene.sf.net)
  - cmake 2.6.0+ (http://cmake.org)
