@@ -541,7 +541,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         //create a new window for the given module
         BibleTime *mainWindow = btMainWindow();
         BT_ASSERT(mainWindow);
-        mainWindow->createReadDisplayWindow(QList<CSwordModuleInfo*>() << m, keyName);
+        mainWindow->createReadDisplayWindow(m, keyName);
     }
 }
 
