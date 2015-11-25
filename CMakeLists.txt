@@ -201,6 +201,7 @@ SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
                       COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
 
 # Install files
 #
