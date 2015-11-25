@@ -131,6 +131,14 @@ ENDIF()
 #This must come before the target definition!
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
+ADD_LIBRARY(
+    bibletime_common 
+    STATIC
+    ${bibletime_COMMON_SOURCES}
+    ${bibletime_COMMON_MOCABLE_SOURCES}
+)
+QT5_USE_MODULES(bibletime_common Widgets WebKitWidgets PrintSupport Xml)
+
 IF(MSVC)
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
 ELSE()
@@ -151,6 +159,7 @@ IF (NOT ${bibletime_LINK_TRANSLATION_FILES})
 ENDIF()
 
 TARGET_LINK_LIBRARIES("bibletime"
+    bibletime_common
     ${CLucene_LIBRARY}
     ${Sword_LDFLAGS}
 )
@@ -187,6 +196,11 @@ ENDIF()
 SET_TARGET_PROPERTIES("bibletime" PROPERTIES
                       COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
+
+SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
+                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
+                      LINK_FLAGS "${BibleTime_LDFLAGS}")
+
 
 # Install files
 #
