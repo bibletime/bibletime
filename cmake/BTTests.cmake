@@ -3,7 +3,6 @@ ENABLE_TESTING(true)
 
 QT5_ADD_RESOURCES(test_RESOURCE_SOURCES
     ${bibletime_SOURCE_DIR}/src/mobile/btm.qrc
-    ${bibletime_SOURCE_DIR}/src/mobile/locales.qrc
     ${bibletime_SOURCE_DIR}/i18n/messages/test_translate.qrc
 )
 
