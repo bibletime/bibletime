@@ -1,0 +1,6 @@
+<RCC>
+    <!-- File to establish the location of the locale directory for Qt tests -->
+    <qresource prefix="/share/bibletime/locale">
+        <file alias="mobile_ui_C.qm">bibletime_ui_ar.ts</file>
+    </qresource>
+</RCC>
