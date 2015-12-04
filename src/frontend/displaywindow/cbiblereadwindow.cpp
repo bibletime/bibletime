@@ -129,109 +129,60 @@ void CBibleReadWindow::initActions() {
 
     CBibleReadWindow::insertKeyboardActions(ac);
 
-    QAction * qaction;
+    ac->action("nextEntry").setEnabled(false);
+    ac->action("previousEntry").setEnabled(false);
 
-    //cleanup, not a clean oo-solution
-    qaction = ac->action("nextEntry");
-    BT_ASSERT(qaction);
-    qaction->setEnabled(false);
-    qaction = ac->action("previousEntry");
-    BT_ASSERT(qaction);
-    qaction->setEnabled(false);
+    initAction("nextBook", this, &CBibleReadWindow::nextBook);
+    initAction("previousBook", this, &CBibleReadWindow::previousBook);
+    initAction("nextChapter", this, &CBibleReadWindow::nextChapter);
+    initAction("previousChapter", this, &CBibleReadWindow::previousChapter);
+    initAction("nextVerse", this, &CBibleReadWindow::nextVerse);
+    initAction("previousVerse", this, &CBibleReadWindow::previousVerse);
 
+    m_actions.selectAll = &ac->action("selectAll");
+    m_actions.findText = &ac->action("findText");
+    m_actions.findStrongs = &ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
+    m_actions.copy.referenceOnly = &ac->action("copyReferenceOnly");
 
-    qaction = m_actionCollection->action("nextBook");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextBook()));
-    addAction(qaction);
+    m_actions.copy.referenceTextOnly =
+            &initAction("copyTextOfReference",
+                        displayWidget()->connectionsProxy(),
+                        &CDisplayConnections::copyAnchorTextOnly);
 
-    qaction = m_actionCollection->action("previousBook");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousBook()));
-    addAction(qaction);
+    m_actions.copy.referenceAndText =
+            &initAction("copyReferenceWithText",
+                        displayWidget()->connectionsProxy(),
+                        &CDisplayConnections::copyAnchorWithText);
 
-    qaction = m_actionCollection->action("nextChapter");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()));
-    addAction(qaction);
+    m_actions.copy.chapter =
+            &initAction("copyChapter",
+                        this,
+                        &CBibleReadWindow::copyDisplayedText);
 
-    qaction = m_actionCollection->action("previousChapter");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
-    addAction(qaction);
+    m_actions.copy.selectedText = &ac->action("copySelectedText");
 
-    qaction = m_actionCollection->action("nextVerse");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
-    addAction(qaction);
+    m_actions.save.referenceAndText =
+            &initAction("saveReferenceWithText",
+                        displayWidget()->connectionsProxy(),
+                        &CDisplayConnections::saveAnchorWithText);
 
-    qaction = m_actionCollection->action("previousVerse");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
-    addAction(qaction);
+    m_actions.save.chapterAsPlain =
+            &initAction("saveChapterAsPlainText",
+                        this,
+                        &CBibleReadWindow::saveChapterPlain);
 
-    m_actions.selectAll = ac->action("selectAll");
-    BT_ASSERT(m_actions.selectAll);
+    m_actions.save.chapterAsHTML =
+            &initAction("saveChapterAsHTML",
+                        this,
+                        &CBibleReadWindow::saveChapterHTML);
 
-    m_actions.findText = ac->action("findText");
-    BT_ASSERT(m_actions.findText);
+    m_actions.print.reference =
+            &initAction("printReferenceWithText",
+                        this,
+                        &CBibleReadWindow::printAnchorWithText);
 
-    m_actions.findStrongs = m_actionCollection->action(CResMgr::displaywindows::general::findStrongs::actionName);
-    BT_ASSERT(m_actions.findStrongs);
-
-    m_actions.copy.referenceOnly = m_actionCollection->action("copyReferenceOnly");
-    BT_ASSERT(m_actions.copy.referenceOnly);
-
-    m_actions.copy.referenceTextOnly = m_actionCollection->action("copyTextOfReference");
-    BT_ASSERT(m_actions.copy.referenceTextOnly);
-    BT_CONNECT(m_actions.copy.referenceTextOnly,    SIGNAL(triggered()),
-               displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()));
-    addAction(m_actions.copy.referenceTextOnly);
-
-    m_actions.copy.referenceAndText = m_actionCollection->action("copyReferenceWithText");
-    BT_ASSERT(m_actions.copy.referenceAndText);
-    BT_CONNECT(m_actions.copy.referenceAndText,     SIGNAL(triggered()),
-               displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()));
-    addAction(m_actions.copy.referenceAndText);
-
-    m_actions.copy.chapter = m_actionCollection->action("copyChapter");
-    BT_ASSERT(m_actions.copy.chapter);
-    BT_CONNECT(m_actions.copy.chapter, SIGNAL(triggered()),
-               this,                   SLOT(copyDisplayedText()));
-    addAction(m_actions.copy.chapter);
-
-    m_actions.copy.selectedText = ac->action("copySelectedText");
-    BT_ASSERT(m_actions.copy.selectedText);
-
-    m_actions.save.referenceAndText = m_actionCollection->action("saveReferenceWithText");
-    BT_ASSERT(m_actions.save.referenceAndText);
-    BT_CONNECT(m_actions.save.referenceAndText,     SIGNAL(triggered()),
-               displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()));
-    addAction(m_actions.copy.chapter);
-
-    m_actions.save.chapterAsPlain = m_actionCollection->action("saveChapterAsPlainText");
-    BT_ASSERT(m_actions.save.chapterAsPlain);
-    BT_CONNECT(m_actions.save.chapterAsPlain, SIGNAL(triggered()),
-               this,                          SLOT(saveChapterPlain()));
-    addAction(m_actions.save.referenceAndText);
-
-    m_actions.save.chapterAsHTML = m_actionCollection->action("saveChapterAsHTML");
-    BT_ASSERT(m_actions.save.chapterAsHTML);
-    BT_CONNECT(m_actions.save.chapterAsHTML, SIGNAL(triggered()),
-               this,                         SLOT(saveChapterHTML()));
-    addAction(m_actions.save.chapterAsHTML);
-
-    m_actions.print.reference = m_actionCollection->action("printReferenceWithText");
-    BT_ASSERT(m_actions.print.reference);
-    BT_CONNECT(m_actions.print.reference, SIGNAL(triggered()),
-               this,                      SLOT(printAnchorWithText()));
-    addAction(m_actions.print.reference);
-
-    m_actions.print.chapter = m_actionCollection->action("printChapter");
-    BT_ASSERT(m_actions.print.chapter);
-    BT_CONNECT(m_actions.print.chapter, SIGNAL(triggered()),
-               this,                    SLOT(printAll()));
-    addAction(m_actions.print.chapter);
+    m_actions.print.chapter =
+            &initAction("printChapter", this, &CBibleReadWindow::printAll);
 
     ac->readShortcuts("Bible shortcuts");
 }

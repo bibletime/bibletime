@@ -65,48 +65,27 @@ void CCommentaryReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
     insertKeyboardActions(ac);
 
-    //cleanup, not a clean oo-solution
-    QAction *qaction = ac->action("nextEntry");
-    BT_ASSERT(qaction);
-    qaction->setEnabled(false);
-    qaction = ac->action("previousEntry");
-    BT_ASSERT(qaction);
-    qaction->setEnabled(false);
+    ac->action("nextEntry").setEnabled(false);
+    ac->action("previousEntry").setEnabled(false);
 
-    qaction = ac->action("nextBook");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextBook()));
-    addAction(qaction);
+    auto const initAction = [this, ac](QString actionName,
+                                       void (CCommentaryReadWindow::* slot)())
+    {
+        QAction & action = ac->action(std::move(actionName));
+        BT_CONNECT(&action, &QAction::triggered, this, slot);
+        addAction(&action);
+    };
 
-    qaction = ac->action("previousBook");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousBook()));
-    addAction(qaction);
+    initAction("nextBook", &CCommentaryReadWindow::nextBook);
+    initAction("previousBook", &CCommentaryReadWindow::previousBook);
+    initAction("nextChapter", &CCommentaryReadWindow::nextChapter);
+    initAction("previousChapter", &CCommentaryReadWindow::previousChapter);
+    initAction("nextVerse", &CCommentaryReadWindow::nextVerse);
+    initAction("previousVerse", &CCommentaryReadWindow::previousVerse);
 
-    qaction = ac->action("nextChapter");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()));
-    addAction(qaction);
-
-    qaction = ac->action("previousChapter");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()));
-    addAction(qaction);
-
-    qaction = ac->action("nextVerse");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()));
-    addAction(qaction);
-
-    qaction = ac->action("previousVerse");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()));
-    addAction(qaction);
-
-    qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    BT_ASSERT(qaction);
-    m_syncButton = qaction;
-    addAction(qaction);
+    QAction & qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    m_syncButton = &qaction;
+    addAction(&qaction);
 
     actionCollection()->readShortcuts("Commentary shortcuts");
 }

@@ -14,13 +14,15 @@
 
 #include <QMainWindow>
 
+#include <QAction>
 #include <QStringList>
 #include "backend/btglobal.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/displaywindow/btactioncollection.h"
 #include "util/btassert.h"
+#include "util/btconnect.h"
 
 
-class BtActionCollection;
 class CDisplay;
 class BtDisplaySettingsButton;
 class CKeyChooser;
@@ -312,6 +314,19 @@ class CDisplayWindow : public QMainWindow {
         void printAnchorWithText();
 
         void setFocusKeyChooser();
+
+    private: /* Methods: */
+
+        template <typename Name, typename ... Args>
+        inline QAction & initAction(Name && name, Args && ... args) {
+            QAction & a = m_actionCollection->action(std::forward<Name>(name));
+            BT_CONNECT(&a, &QAction::triggered, std::forward<Args>(args)...);
+            return a;
+        }
+
+        template <typename ... Args>
+        inline void initAddAction(Args && ... args)
+        { addAction(&initAction(std::forward<Args>(args)...)); }
 
     private:
         BtActionCollection* m_actionCollection;

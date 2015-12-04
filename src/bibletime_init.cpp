@@ -393,16 +393,14 @@ void BibleTime::initActions() {
     BT_CONNECT(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo *)),
                this, SLOT(createReadDisplayWindow(CSwordModuleInfo *)));
 
-    m_quitAction = m_actionCollection->action("quit");
+    m_quitAction = &m_actionCollection->action("quit");
     m_quitAction->setMenuRole(QAction::QuitRole);
-    BT_ASSERT(m_quitAction);
     BT_CONNECT(m_quitAction, SIGNAL(triggered()),
                this,         SLOT(quit()));
 
 
     // View menu actions:
-    m_windowFullscreenAction = m_actionCollection->action("toggleFullscreen");
-    BT_ASSERT(m_windowFullscreenAction);
+    m_windowFullscreenAction = &m_actionCollection->action("toggleFullscreen");
     m_windowFullscreenAction->setCheckable(true);
     BT_CONNECT(m_windowFullscreenAction, SIGNAL(triggered()),
                this,                     SLOT(toggleFullscreen()));
@@ -421,123 +419,110 @@ void BibleTime::initActions() {
     m_showMagAction->setToolTip(tr("Toggle visibility of the mag window"));
     m_actionCollection->addAction("showMag", m_showMagAction);
 
-    m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
-    BT_ASSERT(m_showTextAreaHeadersAction);
+    m_showTextAreaHeadersAction =
+            &m_actionCollection->action("showParallelTextHeaders");
     m_showTextAreaHeadersAction->setCheckable(true);
     m_showTextAreaHeadersAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowHeaders", true));
     BT_CONNECT(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
                this,                        SLOT(slotToggleTextWindowHeader()));
 
-    m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
-    BT_ASSERT(m_showMainWindowToolbarAction);
+    m_showMainWindowToolbarAction = &m_actionCollection->action("showToolbar");
     m_showMainWindowToolbarAction->setCheckable(true);
     m_showMainWindowToolbarAction->setChecked(btConfig().sessionValue<bool>("GUI/showMainToolbar", true));
     BT_CONNECT(m_showMainWindowToolbarAction, SIGNAL(triggered()),
                this, SLOT(slotToggleMainToolbar()));
 
-    m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
-    BT_ASSERT(m_showTextWindowNavigationAction);
+    m_showTextWindowNavigationAction =
+            &m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
     BT_CONNECT(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
                this, SLOT(slotToggleNavigatorToolbar()));
 
-    m_showTextWindowModuleChooserAction = m_actionCollection->action("showWorks");
-    BT_ASSERT(m_showTextWindowModuleChooserAction);
+    m_showTextWindowModuleChooserAction =
+            &m_actionCollection->action("showWorks");
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     BT_CONNECT(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
                this, SLOT(slotToggleWorksToolbar()));
 
-    m_showTextWindowToolButtonsAction = m_actionCollection->action("showTools");
-    BT_ASSERT(m_showTextWindowToolButtonsAction);
+    m_showTextWindowToolButtonsAction =
+            &m_actionCollection->action("showTools");
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
     BT_CONNECT(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
                this, SLOT(slotToggleToolsToolbar()));
 
-    m_showFormatToolbarAction = m_actionCollection->action("showFormat");
-    BT_ASSERT(m_showFormatToolbarAction);
+    m_showFormatToolbarAction = &m_actionCollection->action("showFormat");
     m_showFormatToolbarAction->setCheckable(true);
     m_showFormatToolbarAction->setChecked(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     BT_CONNECT(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                this,                      SLOT(slotToggleFormatToolbar()));
 
-    m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
-    BT_ASSERT(m_toolbarsInEachWindow);
+    m_toolbarsInEachWindow =
+            &m_actionCollection->action("showToolbarsInTextWindows");
     m_toolbarsInEachWindow->setCheckable(true);
     m_toolbarsInEachWindow->setChecked(btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
     BT_CONNECT(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
                this,                   SLOT(slotToggleToolBarsInEachWindow()));
 
     // Search menu actions:
-    m_searchOpenWorksAction = m_actionCollection->action("searchOpenWorks");
-    BT_ASSERT(m_searchOpenWorksAction);
+    m_searchOpenWorksAction = &m_actionCollection->action("searchOpenWorks");
     BT_CONNECT(m_searchOpenWorksAction, SIGNAL(triggered()),
                this,                    SLOT(slotSearchModules()));
 
-    m_searchStandardBibleAction = m_actionCollection->action("searchStdBible");
-    BT_ASSERT(m_searchStandardBibleAction);
+    m_searchStandardBibleAction = &m_actionCollection->action("searchStdBible");
     BT_CONNECT(m_searchStandardBibleAction, SIGNAL(triggered()),
                this,                        SLOT(slotSearchDefaultBible()));
 
     // Window menu actions:
-    m_windowCloseAction = m_actionCollection->action("closeWindow");
-    BT_ASSERT(m_windowCloseAction);
+    m_windowCloseAction = &m_actionCollection->action("closeWindow");
     BT_CONNECT(m_windowCloseAction, SIGNAL(triggered()),
                m_mdi,               SLOT(closeActiveSubWindow()));
 
-    m_windowCloseAllAction = m_actionCollection->action("closeAllWindows");
-    BT_ASSERT(m_windowCloseAllAction);
+    m_windowCloseAllAction = &m_actionCollection->action("closeAllWindows");
     BT_CONNECT(m_windowCloseAllAction, SIGNAL(triggered()),
                m_mdi,                 SLOT(closeAllSubWindows()));
 
-    m_windowCascadeAction = m_actionCollection->action("cascade");
-    BT_ASSERT(m_windowCascadeAction);
+    m_windowCascadeAction = &m_actionCollection->action("cascade");
     BT_CONNECT(m_windowCascadeAction, SIGNAL(triggered()),
                this,                  SLOT(slotCascade()));
 
-    m_windowTileAction = m_actionCollection->action("tile");
-    BT_ASSERT(m_windowTileAction);
+    m_windowTileAction = &m_actionCollection->action("tile");
     BT_CONNECT(m_windowTileAction, SIGNAL(triggered()),
                this,               SLOT(slotTile()));
 
-    m_windowTileVerticalAction = m_actionCollection->action("tileVertically");
-    BT_ASSERT(m_windowTileVerticalAction);
+    m_windowTileVerticalAction = &m_actionCollection->action("tileVertically");
     BT_CONNECT(m_windowTileVerticalAction, SIGNAL(triggered()),
                this,                       SLOT(slotTileVertical()));
 
-    m_windowTileHorizontalAction = m_actionCollection->action("tileHorizontally");
-    BT_ASSERT(m_windowTileHorizontalAction);
+    m_windowTileHorizontalAction =
+            &m_actionCollection->action("tileHorizontally");
     BT_CONNECT(m_windowTileHorizontalAction, SIGNAL(triggered()),
                this,                         SLOT(slotTileHorizontal()));
 
     alignmentMode alignment = btConfig().sessionValue<alignmentMode>("GUI/alignmentMode", autoTileVertical);
 
-    m_windowManualModeAction = m_actionCollection->action("manualArrangement");
-    BT_ASSERT(m_windowManualModeAction);
+    m_windowManualModeAction = &m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);
 
-    m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
-    BT_ASSERT(m_windowAutoTabbedAction);
+    m_windowAutoTabbedAction = &m_actionCollection->action("autoTabbed");
     m_windowAutoTabbedAction->setCheckable(true);
 
     //: Vertical tiling means that windows are vertical, placed side by side
-    m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
-    BT_ASSERT(m_windowAutoTileVerticalAction);
+    m_windowAutoTileVerticalAction =
+            &m_actionCollection->action("autoVertical");
     m_windowAutoTileVerticalAction->setCheckable(true);
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
-    m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
-    BT_ASSERT(m_windowAutoTileHorizontalAction);
+    m_windowAutoTileHorizontalAction =
+            &m_actionCollection->action("autoHorizontal");
     m_windowAutoTileHorizontalAction->setCheckable(true);
 
-    m_windowAutoTileAction = m_actionCollection->action("autoTile");
-    BT_ASSERT(m_windowAutoTileAction);
+    m_windowAutoTileAction = &m_actionCollection->action("autoTile");
     m_windowAutoTileAction->setCheckable(true);
 
-    m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
-    BT_ASSERT(m_windowAutoCascadeAction);
+    m_windowAutoCascadeAction = &m_actionCollection->action("autoCascade");
     m_windowAutoCascadeAction->setCheckable(true);
 
     /*
@@ -563,47 +548,40 @@ void BibleTime::initActions() {
     alignmentAction->setChecked(true);
     slotUpdateWindowArrangementActions(alignmentAction);
 
-    m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
-    BT_ASSERT(m_windowSaveToNewProfileAction);
+    m_windowSaveToNewProfileAction =
+            &m_actionCollection->action("saveNewSession");
     BT_CONNECT(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
                this,                           SLOT(saveToNewProfile()));
 
-    m_setPreferencesAction = m_actionCollection->action("setPreferences");
-    BT_ASSERT(m_setPreferencesAction);
+    m_setPreferencesAction = &m_actionCollection->action("setPreferences");
     m_setPreferencesAction->setMenuRole( QAction::PreferencesRole );
     BT_CONNECT(m_setPreferencesAction, SIGNAL(triggered()),
                this,                   SLOT(slotSettingsOptions()));
 
-    m_bookshelfManagerAction = m_actionCollection->action("bookshelfManager");
-    BT_ASSERT(m_bookshelfManagerAction);
+    m_bookshelfManagerAction = &m_actionCollection->action("bookshelfManager");
     m_bookshelfManagerAction->setMenuRole( QAction::ApplicationSpecificRole );
     BT_CONNECT(m_bookshelfManagerAction, SIGNAL(triggered()),
                this,                     SLOT(slotSwordSetupDialog()));
 
-    m_bookshelfWizardAction = m_actionCollection->action("bookshelfWizard");
-    BT_ASSERT(m_bookshelfWizardAction);
+    m_bookshelfWizardAction = &m_actionCollection->action("bookshelfWizard");
     m_bookshelfWizardAction->setMenuRole( QAction::ApplicationSpecificRole );
     BT_CONNECT(m_bookshelfWizardAction, SIGNAL(triggered()),
                this,                     SLOT(slotBookshelfWizard()));
 
-    m_openHandbookAction = m_actionCollection->action("openHandbook");
-    BT_ASSERT(m_openHandbookAction);
+    m_openHandbookAction = &m_actionCollection->action("openHandbook");
     BT_CONNECT(m_openHandbookAction, SIGNAL(triggered()),
                this,                 SLOT(openOnlineHelp_Handbook()));
 
-    m_bibleStudyHowtoAction = m_actionCollection->action("bibleStudyHowto");
-    BT_ASSERT(m_bibleStudyHowtoAction);
+    m_bibleStudyHowtoAction = &m_actionCollection->action("bibleStudyHowto");
     BT_CONNECT(m_bibleStudyHowtoAction, SIGNAL(triggered()),
                this,                    SLOT(openOnlineHelp_Howto()));
 
-    m_aboutBibleTimeAction = m_actionCollection->action("aboutBibleTime");
-    BT_ASSERT(m_aboutBibleTimeAction);
+    m_aboutBibleTimeAction = &m_actionCollection->action("aboutBibleTime");
     m_aboutBibleTimeAction->setMenuRole( QAction::AboutRole );
     BT_CONNECT(m_aboutBibleTimeAction, SIGNAL(triggered()),
                this,                   SLOT(slotOpenAboutDialog()) );
 
-    m_tipOfTheDayAction = m_actionCollection->action("tipOfTheDay");
-    BT_ASSERT(m_tipOfTheDayAction);
+    m_tipOfTheDayAction = &m_actionCollection->action("tipOfTheDay");
     BT_CONNECT(m_tipOfTheDayAction, SIGNAL(triggered()),
                this,                SLOT(slotOpenTipDialog()) );
 
@@ -733,15 +711,9 @@ void BibleTime::initToolbars() {
     m_mainToolBar->addWidget(openWorkButton);
 
     m_mainToolBar->addAction(m_windowFullscreenAction);
-    QAction *a = m_actionCollection->action("showBookshelf");
-    BT_ASSERT(a);
-    m_mainToolBar->addAction(a);
-    a = m_actionCollection->action("showBookmarks");
-    BT_ASSERT(a);
-    m_mainToolBar->addAction(a);
-    a = m_actionCollection->action("showMag");
-    BT_ASSERT(a);
-    m_mainToolBar->addAction(a);
+    m_mainToolBar->addAction(&m_actionCollection->action("showBookshelf"));
+    m_mainToolBar->addAction(&m_actionCollection->action("showBookmarks"));
+    m_mainToolBar->addAction(&m_actionCollection->action("showMag"));
     m_mainToolBar->addAction(m_searchOpenWorksAction);
     m_mainToolBar->addAction(m_openHandbookAction);
 }
@@ -786,36 +758,18 @@ void BibleTime::retranslateUi() {
 *   The second is used during the use of the configuration shortcut editor
 */
 void BibleTime::retranslateUiActions(BtActionCollection* ac) {
-    QAction *a = ac->action("showToolbarsInTextWindows");
-    BT_ASSERT(a);
-    a->setText(tr("Show toolbars in text windows"));
-    a = ac->action("showToolbar");
-    BT_ASSERT(a);
-    a->setText(tr("Show main toolbar"));
-    a = ac->action("showNavigation");
-    BT_ASSERT(a);
-    a->setText(tr("Show navigation bar"));
-    a = ac->action("showWorks");
-    BT_ASSERT(a);
-    a->setText(tr("Show works toolbar"));
-    a = ac->action("showTools");
-    BT_ASSERT(a);
-    a->setText(tr("Show tools toolbar"));
-    a = ac->action("showFormat");
-    BT_ASSERT(a);
-    a->setText(tr("Show formatting toolbar"));
-    a = ac->action("showBookshelf");
-    BT_ASSERT(a);
-    a->setText(tr("Show bookshelf"));
-    a = ac->action("showBookmarks");
-    BT_ASSERT(a);
-    a->setText(tr("Show bookmarks"));
-    a = ac->action("showMag");
-    BT_ASSERT(a);
-    a->setText(tr("Show mag"));
-    a = ac->action("showParallelTextHeaders");
-    BT_ASSERT(a);
-    a->setText(tr("Show parallel text headers"));
+    ac->action("showToolbarsInTextWindows")
+            .setText(tr("Show toolbars in text windows"));
+    ac->action("showToolbar").setText(tr("Show main toolbar"));
+    ac->action("showNavigation").setText(tr("Show navigation bar"));
+    ac->action("showWorks").setText(tr("Show works toolbar"));
+    ac->action("showTools").setText(tr("Show tools toolbar"));
+    ac->action("showFormat").setText(tr("Show formatting toolbar"));
+    ac->action("showBookshelf").setText(tr("Show bookshelf"));
+    ac->action("showBookmarks").setText(tr("Show bookmarks"));
+    ac->action("showMag").setText(tr("Show mag"));
+    ac->action("showParallelTextHeaders")
+            .setText(tr("Show parallel text headers"));
 }
 
 /** Initializes the SIGNAL / SLOT connections */

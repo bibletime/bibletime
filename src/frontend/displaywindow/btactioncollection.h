@@ -16,8 +16,9 @@
 
 #include <QList>
 #include <QMap>
-
 #include "backend/config/btconfig.h"
+#include "util/btassert.h"
+
 
 class BtActionItem;
 class QAction;
@@ -36,13 +37,22 @@ class BtActionCollection: public QObject {
 
         inline BtActionCollection(QObject *parent = nullptr) : QObject(parent) {}
 
-        QAction* addAction(const QString& name, QAction* action);
+        void addAction(QString const & name, QAction * const action);
 
-        QAction* addAction(const QString &name, const QObject *receiver, const char* member = nullptr);
+        void addAction(QString const & name,
+                       QObject const * const receiver,
+                       const char * const member = nullptr);
 
         QList<QAction*> actions();
 
-        QAction *action(const QString &name) const;
+        QAction & action(QString const & name) const;
+
+        template <typename T>
+        inline T & actionAs(QString const & name) const {
+            QAction & a = action(name);
+            BT_ASSERT(dynamic_cast<T *>(&a));
+            return static_cast<T &>(a);
+        }
 
         /*!
          * \brief Read shortcuts from config.
@@ -65,6 +75,10 @@ class BtActionCollection: public QObject {
          */
         void writeShortcuts(const QString& group);
         QKeySequence getDefaultShortcut(QAction* action);
+
+    private: /* Methods: */
+
+        BtActionItem * findActionItem(QString const & name) const;
 
     private: /* Fields: */
 

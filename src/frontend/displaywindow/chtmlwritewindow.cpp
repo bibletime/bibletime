@@ -67,29 +67,30 @@ void CHTMLWriteWindow::initToolbars() {
 void CHTMLWriteWindow::storeProfileSettings(QString const & windowGroup) const {
     CPlainWriteWindow::storeProfileSettings(windowGroup);
 
-    QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    BT_ASSERT(action);
     BT_ASSERT(windowGroup.endsWith('/'));
-    btConfig().setSessionValue(windowGroup + "syncWindowEnabled", action->isChecked());
+    namespace SW = CResMgr::displaywindows::commentaryWindow::syncWindow;
+    btConfig().setSessionValue(
+            windowGroup + "syncWindowEnabled",
+            actionCollection()->action(SW::actionName).isChecked());
 }
 
 void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
     CPlainWriteWindow::applyProfileSettings(windowGroup);
 
-    QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    BT_ASSERT(action);
+    namespace SW = CResMgr::displaywindows::commentaryWindow::syncWindow;
     BT_ASSERT(windowGroup.endsWith('/'));
-    action->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled", false));
+    actionCollection()->action(SW::actionName).setChecked(
+            btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled",
+                                          false));
 }
 
 /** Is called when the current text was changed. */
 void CHTMLWriteWindow::textChanged() {
-    QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
-    BT_ASSERT(action);
-    action->setEnabled(m_writeDisplay->isModified());
-    action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
-    BT_ASSERT(action);
-    action->setEnabled(m_writeDisplay->isModified());
+    namespace WW = CResMgr::displaywindows::writeWindow;
+    actionCollection()->action(WW::saveText::actionName)
+            .setEnabled(m_writeDisplay->isModified());
+    actionCollection()->action(WW::restoreText::actionName)
+            .setEnabled(m_writeDisplay->isModified());
 }
 
 /** Loads the original text from the module. */
@@ -100,9 +101,9 @@ void CHTMLWriteWindow::restoreText() {
 }
 
 bool CHTMLWriteWindow::syncAllowed() const {
-    QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    BT_ASSERT(action);
-    return action->isChecked();
+    return actionCollection()->action(
+            CResMgr::displaywindows::commentaryWindow::syncWindow::actionName)
+                .isChecked();
 }
 
 /** Saves the text for the current key. Directly writes the changed text into the module. */

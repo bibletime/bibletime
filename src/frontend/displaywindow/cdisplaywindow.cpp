@@ -22,13 +22,11 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
-#include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/btconnect.h"
 #include "util/cresmgr.h"
 
 
@@ -242,48 +240,27 @@ void CDisplayWindow::initActions() {
 
     CDisplayWindow::insertKeyboardActions(ac);
 
-    QAction* actn = ac->action(CResMgr::displaywindows::general::search::actionName);
-    BT_ASSERT(actn);
-    BT_CONNECT(actn, SIGNAL(triggered()),
-               this, SLOT(slotSearchInModules()));
-
-    CDisplayConnections* conn = displayWidget()->connectionsProxy();
-
-    actn = ac->action("openLocation");
-    BT_ASSERT(actn);
-    BT_CONNECT(actn, SIGNAL(triggered()),
-               this, SLOT(setFocusKeyChooser()));
-    addAction(actn);
-
-    actn = ac->action("selectAll");
-    BT_ASSERT(actn);
-    BT_CONNECT(actn, SIGNAL(triggered()),
-               conn, SLOT(selectAll()));
-    addAction(actn);
-
-    actn = ac->action("copySelectedText");
-    BT_ASSERT(actn);
-    BT_CONNECT(actn, SIGNAL(triggered()),
-               conn, SLOT(copySelection()));
-    addAction(actn);
-
-    actn = ac->action("findText");
-    BT_ASSERT(actn);
-    BT_CONNECT(actn, SIGNAL(triggered()),
-               conn, SLOT(openFindTextDialog()));
-    addAction(actn);
-
-    actn = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    BT_ASSERT(actn);
-    BT_CONNECT(actn,                    SIGNAL(triggered()),
-               keyChooser()->history(), SLOT(back()));
-    addAction(actn);
-
-    actn = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    BT_ASSERT(actn);
-    BT_CONNECT(actn,                    SIGNAL(triggered()),
-               keyChooser()->history(), SLOT(fw()));
-    addAction(actn);
+    namespace DWG = CResMgr::displaywindows::general;
+    initAction(DWG::search::actionName,
+               this,
+               &CDisplayWindow::slotSearchInModules);
+    initAddAction("openLocation", this, &CDisplayWindow::setFocusKeyChooser);
+    CDisplayConnections * const conn = displayWidget()->connectionsProxy();
+    initAddAction("selectAll",
+                  conn,
+                  &CDisplayConnections::selectAll);
+    initAddAction("copySelectedText",
+                  conn,
+                  &CDisplayConnections::copySelection);
+    initAddAction("findText",
+                  conn,
+                  &CDisplayConnections::openFindTextDialog);
+    initAddAction(DWG::backInHistory::actionName,
+                  keyChooser()->history(),
+                  &BTHistory::back);
+    initAddAction(DWG::forwardInHistory::actionName,
+                  keyChooser()->history(),
+                  &BTHistory::fw);
 
     ac->readShortcuts("Displaywindow shortcuts");
 }

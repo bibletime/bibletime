@@ -49,14 +49,10 @@ void CBookReadWindow::initActions() {
     insertKeyboardActions(ac);
 
     //cleanup, not a clean oo-solution
-    QAction *a = ac->action("nextEntry");
-    BT_ASSERT(a);
-    a->setEnabled(false);
-    a = ac->action("previousEntry");
-    BT_ASSERT(a);
-    a->setEnabled(false);
+    ac->action("nextEntry").setEnabled(false);
+    ac->action("previousEntry").setEnabled(false);
 
-    m_treeAction = ac->action("toggleTree");
+    m_treeAction = &ac->action("toggleTree");
     BT_ASSERT(m_treeAction);
     BT_CONNECT(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()));
     addAction(m_treeAction);
@@ -129,10 +125,10 @@ void CBookReadWindow::initToolbars() {
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     buttonsToolBar()->addWidget(button);  // Display settings
-    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    if (action != nullptr) {
-        buttonsToolBar()->addAction(action);  // Search
-    }
+    // Search:
+    buttonsToolBar()->addAction(
+            &actionCollection()->action(
+                    CResMgr::displaywindows::general::search::actionName));
 }
 
 void CBookReadWindow::setupMainWindowToolBars() {
@@ -154,10 +150,10 @@ void CBookReadWindow::setupMainWindowToolBars() {
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);  // Display settings
-    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    if (action != nullptr) {
-        btMainWindow()->toolsToolBar()->addAction(action);  // Search
-    }
+    // Search:
+    btMainWindow()->toolsToolBar()->addAction(
+            &actionCollection()->action(
+                    CResMgr::displaywindows::general::search::actionName));
 }
 
 /** Is called when the action was executed to toggle the tree view. */

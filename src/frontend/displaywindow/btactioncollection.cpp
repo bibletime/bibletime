@@ -14,7 +14,6 @@
 #include <QKeySequence>
 #include <QString>
 #include <QStringList>
-#include "util/btassert.h"
 #include "util/btconnect.h"
 #include "util/directory.h"
 
@@ -47,26 +46,27 @@ QList<QAction*> BtActionCollection::actions() {
     return actionList;
 }
 
-QAction *BtActionCollection::action(const QString &name) const {
-    ActionMap::const_iterator it = m_actions.find(name);
-    if (it != m_actions.constEnd())
-        return (*it)->action;
-
-    qWarning() << "A QAction for a shortcut named" << name << "was requested but it is not defined.";
-    return nullptr;
+QAction & BtActionCollection::action(QString const & name) const {
+    BtActionItem const * const foundItem = findActionItem(name);
+    BT_ASSERT(foundItem);
+    return *(foundItem->action);
 }
 
-QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
+void BtActionCollection::addAction(QString const & name,
+                                   QAction * const action)
+{
     BT_ASSERT(action);
     ActionMap::iterator it = m_actions.find(name);
     if (it != m_actions.constEnd())
         delete *it;
 
     m_actions.insert(name, new BtActionItem(action, this));
-    return action;
 }
 
-QAction* BtActionCollection::addAction(const QString &name, const QObject *receiver, const char* member) {
+void BtActionCollection::addAction(QString const & name,
+                                   QObject const * const receiver,
+                                   char const * const member)
+{
     QAction* action = new QAction(name, this);
     if (receiver && member)
         BT_CONNECT(action,   SIGNAL(triggered()),
@@ -91,12 +91,8 @@ void BtActionCollection::readShortcuts(const QString &group) {
     for(QHash<QString, QList <QKeySequence> >::const_iterator iter = shortcuts.begin();
                                                              iter != shortcuts.end();
                                                              ++iter)
-    {
-        QAction *a = action(iter.key());
-        if (a == nullptr)
-            continue;
-        action(iter.key())->setShortcuts(iter.value());
-    }
+        if (BtActionItem const * const foundItem = findActionItem(iter.key()))
+            foundItem->action->setShortcuts(iter.value());
 }
 
 void BtActionCollection::writeShortcuts(const QString &group) {
@@ -108,4 +104,9 @@ void BtActionCollection::writeShortcuts(const QString &group) {
         shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
     }
     btConfig().setShortcuts(group, shortcuts);
+}
+
+BtActionItem * BtActionCollection::findActionItem(QString const & name) const {
+    ActionMap::const_iterator const it = m_actions.find(name);
+    return (it != m_actions.constEnd()) ? *it : nullptr;
 }

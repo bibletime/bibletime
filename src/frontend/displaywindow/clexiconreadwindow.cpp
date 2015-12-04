@@ -82,77 +82,56 @@ void CLexiconReadWindow::initActions() {
     CReadWindow::initActions();
     CLexiconReadWindow::insertKeyboardActions(ac);
 
-    QAction *qaction = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    BT_ASSERT(qaction);
-    m_actions.backInHistory = dynamic_cast<BtToolBarPopupAction*>(qaction);
-    BT_ASSERT(m_actions.backInHistory);
+    m_actions.backInHistory =
+            &ac->actionAs<BtToolBarPopupAction>(
+                CResMgr::displaywindows::general::backInHistory::actionName);
     addAction(m_actions.backInHistory);
 
-    qaction = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    BT_ASSERT(qaction);
-    m_actions.forwardInHistory = dynamic_cast<BtToolBarPopupAction*>(qaction);
-    BT_ASSERT(m_actions.forwardInHistory);
+    m_actions.forwardInHistory =
+            &ac->actionAs<BtToolBarPopupAction>(
+                CResMgr::displaywindows::general::forwardInHistory::actionName);
     addAction(m_actions.forwardInHistory);
 
-    qaction = ac->action("nextEntry");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(nextEntry()));
-    addAction(qaction);
+    initAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
+    initAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
 
-    qaction = ac->action("previousEntry");
-    BT_ASSERT(qaction);
-    BT_CONNECT(qaction, SIGNAL(triggered()), this, SLOT(previousEntry()));
-    addAction(qaction);
+    m_actions.selectAll = &ac->action("selectAll");
+    m_actions.findText = &ac->action("findText");
 
-    m_actions.selectAll = ac->action("selectAll");
-    BT_ASSERT(m_actions.selectAll);
+    m_actions.findStrongs =
+            &initAction(
+                    CResMgr::displaywindows::general::findStrongs::actionName,
+                    this,
+                    &CLexiconReadWindow::openSearchStrongsDialog);
 
-    m_actions.findText = ac->action("findText");
-    BT_ASSERT(m_actions.findText);
+    m_actions.copy.reference =
+            &initAction("copyReferenceOnly",
+                        displayWidget()->connectionsProxy(),
+                        &CDisplayConnections::copyAnchorOnly);
 
-    m_actions.findStrongs = ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
-    BT_ASSERT(m_actions.findStrongs);
-    BT_CONNECT(m_actions.findStrongs, SIGNAL(triggered()),
-               this,                  SLOT(openSearchStrongsDialog()));
-    addAction(m_actions.findStrongs);
+    m_actions.copy.entry = &initAction("copyEntryWithText",
+                                       displayWidget()->connectionsProxy(),
+                                       &CDisplayConnections::copyAll);
 
-    m_actions.copy.reference = ac->action("copyReferenceOnly");
-    BT_ASSERT(m_actions.copy.reference);
-    BT_CONNECT(m_actions.copy.reference,            SIGNAL(triggered()),
-               displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()));
-    addAction(m_actions.copy.reference);
+    m_actions.copy.selectedText = &ac->action("copySelectedText");
 
-    m_actions.copy.entry = ac->action("copyEntryWithText");
-    BT_ASSERT(m_actions.copy.entry);
-    BT_CONNECT(m_actions.copy.entry,                SIGNAL(triggered()),
-               displayWidget()->connectionsProxy(), SLOT(copyAll()));
-    addAction(m_actions.copy.entry);
+    m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
+                                              this,
+                                              &CLexiconReadWindow::saveAsPlain);
 
-    m_actions.copy.selectedText = ac->action("copySelectedText");
-    BT_ASSERT(m_actions.copy.selectedText);
+    m_actions.save.entryAsHTML = &initAction("saveHtml",
+                                             this,
+                                             &CLexiconReadWindow::saveAsHTML);
 
-    m_actions.save.entryAsPlain = new QAction(tr("Entry as plain text"), ac );
-    BT_CONNECT(m_actions.save.entryAsPlain, SIGNAL(triggered()),
-               this,                        SLOT(saveAsPlain()));
-    addAction(m_actions.save.entryAsPlain);
-
-    m_actions.save.entryAsHTML = ac->action("saveHtml");
-    BT_ASSERT(m_actions.save.entryAsHTML);
-    BT_CONNECT(m_actions.save.entryAsHTML, SIGNAL(triggered()),
-               this,                       SLOT(saveAsHTML()));
-    addAction(m_actions.save.entryAsHTML);
-
-    m_actions.print.reference = ac->action("printReferenceOnly");
-    BT_ASSERT(m_actions.print.reference);
-    BT_CONNECT(m_actions.print.reference, SIGNAL(triggered()),
-               this,                      SLOT(printAnchorWithText()));
+    m_actions.print.reference =
+            &initAction("printReferenceOnly",
+                        this,
+                        &CLexiconReadWindow::printAnchorWithText);
     addAction(m_actions.print.reference);
 
-    m_actions.print.entry = ac->action("printEntryWithText");
-    BT_ASSERT(m_actions.print.entry);
-    BT_CONNECT(m_actions.print.entry, SIGNAL(triggered()),
-               this,                  SLOT(printAll()));
-    addAction(m_actions.print.entry);
+    m_actions.print.entry = &initAction("printEntryWithText",
+                                        this,
+                                        &CLexiconReadWindow::printAll);
 
     // init with the user defined settings
     ac->readShortcuts("Lexicon shortcuts");
@@ -217,9 +196,9 @@ void CLexiconReadWindow::initToolbars() {
     mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
     //Tools toolbar
-    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    BT_ASSERT(action);
-    buttonsToolBar()->addAction(action);
+    buttonsToolBar()->addAction(
+            &actionCollection()->action(
+                    CResMgr::displaywindows::general::search::actionName));
 
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
@@ -245,9 +224,9 @@ void CLexiconReadWindow::setupMainWindowToolBars() {
     btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
 
     // Tools toolbar
-    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
-    BT_ASSERT(action);
-    btMainWindow()->toolsToolBar()->addAction(action);
+    btMainWindow()->toolsToolBar()->addAction(
+            &actionCollection()->action(
+                    CResMgr::displaywindows::general::search::actionName));
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);

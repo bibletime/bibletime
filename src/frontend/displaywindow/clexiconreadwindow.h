@@ -48,6 +48,18 @@ class CLexiconReadWindow : public CReadWindow  {
         void reload(CSwordBackend::SetupChangedReason reason) override;
 
     protected:
+
+        template <typename ... Args>
+        QAction & initAction(QString actionName, Args && ... args) {
+            QAction & action =
+                    actionCollection()->action(std::move(actionName));
+            BT_CONNECT(&action,
+                       &QAction::triggered,
+                       std::forward<Args>(args)...);
+            addAction(&action);
+            return action;
+        }
+
         void initActions() override;
         void initToolbars() override;
         void initConnections() override;
