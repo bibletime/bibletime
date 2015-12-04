@@ -74,7 +74,7 @@ class BtActionCollection: public QObject {
          * \param[in] group Shortcut group to write actions to.
          */
         void writeShortcuts(const QString& group);
-        QKeySequence getDefaultShortcut(QAction* action);
+        QKeySequence getDefaultShortcut(QAction* action) const;
 
     private: /* Methods: */
 

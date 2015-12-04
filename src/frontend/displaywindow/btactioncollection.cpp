@@ -74,15 +74,10 @@ void BtActionCollection::addAction(QString const & name,
     return addAction(name, action);
 }
 
-QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
-    for (ActionMap::const_iterator iter = m_actions.constBegin();
-         iter != m_actions.constEnd();
-         ++iter)
-    {
-        if (iter.value()->action == action) {
-            return iter.value()->defaultKeys;
-        }
-    }
+QKeySequence BtActionCollection::getDefaultShortcut(QAction * action) const {
+    for (BtActionItem * const item : m_actions)
+        if (item->action == action)
+            return item->defaultKeys;
     return QKeySequence();
 }
 
