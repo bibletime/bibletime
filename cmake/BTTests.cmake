@@ -23,7 +23,7 @@ FUNCTION(test_a_class testDir testClass )
         ${test_RESOURCE_SOURCES}
     )
     SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS ${Sword_CFLAGS_OTHER} -std=c++11 )
-    QT5_USE_MODULES(test_${testClass} DBus Widgets Xml Network Test)
+    QT5_USE_MODULES(test_${testClass} Widgets Xml Network Test)
     TARGET_LINK_LIBRARIES(test_${testClass}
         bibletime_common
         ${Sword_LDFLAGS}
