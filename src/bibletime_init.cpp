@@ -389,7 +389,6 @@ void BibleTime::initActions() {
 
     // File menu actions:
     m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
-    BT_ASSERT(m_openWorkAction);
     BT_CONNECT(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo *)),
                this, SLOT(createReadDisplayWindow(CSwordModuleInfo *)));
 
