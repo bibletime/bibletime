@@ -106,21 +106,21 @@ QString BtConfig::getModuleEncryptionKey(const QString & name) {
     return value<QString>("Module keys/" + name, QString::null);
 }
 
-QHash<QString, QList<QKeySequence> > BtConfig::getShortcuts(const QString & shortcutGroup) {
+BtConfig::ShortcutsMap BtConfig::getShortcuts(QString const & shortcutGroup) {
     beginGroup(shortcutGroup);
-        QHash<QString, QList<QKeySequence> > allShortcuts;
-        Q_FOREACH (const QString & key, childKeys()) {
+        ShortcutsMap allShortcuts;
+        for (QString const & key : childKeys()) {
             QVariant variant = qVariantValue(key);
 
             QList<QKeySequence> shortcuts;
 
             if (variant.type() == QVariant::List) { // For BibleTime before 2.9
-                Q_FOREACH (const QVariant & shortcut, variant.toList())
+                for (QVariant const & shortcut : variant.toList())
                     shortcuts.append(shortcut.toString());
             } else if (variant.type() == QVariant::StringList
                        || variant.type() == QVariant::String)
             { // a StringList with one element is recognized as a QVariant::String
-                Q_FOREACH (const QString & shortcut, variant.toStringList())
+                for (QString const & shortcut : variant.toStringList())
                     shortcuts.append(shortcut);
             } else { // it's something we don't know, skip it
                 continue;
@@ -132,17 +132,15 @@ QHash<QString, QList<QKeySequence> > BtConfig::getShortcuts(const QString & shor
     return allShortcuts;
 }
 
-void BtConfig::setShortcuts(const QString & shortcutGroup,
-                            const QHash<QString, QList<QKeySequence> > & shortcuts)
+void BtConfig::setShortcuts(QString const & shortcutGroup,
+                            ShortcutsMap const  & shortcuts)
 {
-    using SHMCI = QHash<QString, QList<QKeySequence> >::const_iterator;
-
     beginGroup(shortcutGroup);
-        for (SHMCI it = shortcuts.begin(); it != shortcuts.end(); ++it) {
+        for (auto it = shortcuts.begin(); it != shortcuts.end(); ++it) {
             // Write beautiful string lists (since 2.9):
             /// \note saving QKeySequences directly doesn't appear to work!
             QStringList varList;
-            Q_FOREACH (const QKeySequence & shortcut, it.value())
+            for (QKeySequence const & shortcut : it.value())
                 varList.append(shortcut.toString());
 
             if (!varList.empty())

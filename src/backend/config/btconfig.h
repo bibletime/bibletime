@@ -42,6 +42,7 @@ public: /* Types: */
     */
     using FontSettingsPair = QPair<bool, QFont>;
     using StringMap = QMap<QString, QString>;
+    using ShortcutsMap = QHash<QString, QList<QKeySequence> >;
 
 private: /* Types: */
 
@@ -88,7 +89,7 @@ public: /* Methods: */
      * \param[in] shortcutGroup The group to retrieve shortcuts for.
      * \returns Hash of strings and lists of shortcuts.
      */
-    QHash<QString, QList<QKeySequence> > getShortcuts(const QString & shortcutGroup);
+    ShortcutsMap getShortcuts(QString const & shortcutGroup);
 
     /*!
      * \brief Sets the shortcuts for the given group.
@@ -98,8 +99,8 @@ public: /* Methods: */
      * \param[in] shortcutGroup The group to retrieve shortcuts for.
      * \param[in] Hash of strings and lists of shortcuts to write.
      */
-    void setShortcuts(const QString & shortcutGroup,
-                      const QHash<QString, QList<QKeySequence> > & shortcuts);
+    void setShortcuts(QString const & shortcutGroup,
+                      ShortcutsMap const & shortcuts);
 
     /*!
      * \brief Returns current filter options.
