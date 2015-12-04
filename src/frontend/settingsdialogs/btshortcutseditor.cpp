@@ -158,39 +158,57 @@ void BtShortcutsEditor::commitChanges() {
 void BtShortcutsEditor::addCollection(BtActionCollection* collection, const QString& title) {
     Q_UNUSED(title); /// \todo Is this correct?
 
-    Q_FOREACH(QAction * const action, collection->actions()) {
-        /// \todo Is the following check really necessary?
-        if (action) {
-            int count = m_table->rowCount();
+    collection->foreachQAction([this, &title](QAction & action,
+                                              QKeySequence const & defaultKeys)
+        {
+            int const count = m_table->rowCount();
             m_table->insertRow(count);
 
-            QString name = action->text().remove('&');
-            QList<QKeySequence> keys = action->shortcuts();
-            QIcon icon = action->icon();
-            QKeySequence defaultKeys = collection->getDefaultShortcut(action);
+            {
+                BtShortcutsEditorItem * const item =
+                        new BtShortcutsEditorItem{&action};
+                try {
+                    item->setText(action.text().remove('&'));
+                    item->setIcon(action.icon());
+                    item->setDefaultKeys(defaultKeys);
+                    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+                    m_table->setItem(count, 0, item);
+                } catch (...) {
+                    delete item;
+                    throw;
+                }
+            }
 
-            BtShortcutsEditorItem* item = new BtShortcutsEditorItem(action);
-            item->setText(name);
-            item->setIcon(icon);
-            item->setDefaultKeys(defaultKeys);
-            item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-            m_table->setItem(count, 0, item);
+            QList<QKeySequence> keys = action.shortcuts();
 
-            QTableWidgetItem* item1 = new QTableWidgetItem();
-            item1->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-            item1->setToolTip(tr("Select to change key"));
-            if (keys.count() > 0)
-                item1->setText(keys[0].toString());
-            m_table->setItem(count, 1, item1);
+            {
+                QTableWidgetItem * const item = new QTableWidgetItem;
+                try {
+                    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+                    item->setToolTip(tr("Select to change key"));
+                    if (keys.count() > 0)
+                        item->setText(keys[0].toString());
+                    m_table->setItem(count, 1, item);
+                } catch (...) {
+                    delete item;
+                    throw;
+                }
+            }
 
-            QTableWidgetItem* item2 = new QTableWidgetItem();
-            item2->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-            item2->setToolTip(tr("Select to change key"));
-            if (keys.count() > 1)
-                item2->setText(keys[1].toString());
-            m_table->setItem(count, 2, item2);
-        }
-    }
+            {
+                QTableWidgetItem * const item = new QTableWidgetItem;
+                try {
+                    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+                    item->setToolTip(tr("Select to change key"));
+                    if (keys.count() > 1)
+                        item->setText(keys[1].toString());
+                    m_table->setItem(count, 2, item);
+                } catch (...) {
+                    delete item;
+                    throw;
+                }
+            }
+        });
     m_table->sortItems(0);
     m_table->selectRow(0);
     changeRow(0, 0);

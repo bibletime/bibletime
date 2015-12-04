@@ -409,14 +409,17 @@ void BibleTime::initActions() {
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
     m_showBookshelfAction->setIcon(CResMgr::mainMenu::view::showBookshelf::icon());
     m_showBookshelfAction->setToolTip(tr("Toggle visibility of the bookshelf window"));
+    m_actionCollection->removeAction("showBookshelf");
     m_actionCollection->addAction("showBookshelf", m_showBookshelfAction);
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
     m_showBookmarksAction->setIcon(CResMgr::mainMenu::view::showBookmarks::icon());
     m_showBookmarksAction->setToolTip(tr("Toggle visibility of the bookmarks window"));
+    m_actionCollection->removeAction("showBookmarks");
     m_actionCollection->addAction("showBookmarks", m_showBookmarksAction);
     m_showMagAction = m_magDock->toggleViewAction();
     m_showMagAction->setIcon(CResMgr::mainMenu::view::showMag::icon());
     m_showMagAction->setToolTip(tr("Toggle visibility of the mag window"));
+    m_actionCollection->removeAction("showMag");
     m_actionCollection->addAction("showMag", m_showMagAction);
 
     m_showTextAreaHeadersAction =

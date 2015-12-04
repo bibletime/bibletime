@@ -9,99 +9,78 @@
 
 #include "frontend/displaywindow/btactioncollection.h"
 
-#include <QAction>
-#include <QDebug>
-#include <QKeySequence>
-#include <QString>
-#include <QStringList>
 #include "util/btconnect.h"
 #include "util/directory.h"
 
 
-class BtActionItem: public QObject {
-
-    public: /* Methods: */
-
-        BtActionItem(QAction *action, QObject *parent = nullptr)
-                : QObject(parent), defaultKeys(action->shortcut()), action(action)
-        {
-            // Intentionally empty
-        }
-
-    public: /* Fields: */
-
-        QKeySequence defaultKeys;
-        QAction* action;
-
-};
-
-QList<QAction*> BtActionCollection::actions() {
-    QList<QAction*> actionList;
-    for (ActionMap::const_iterator iter = m_actions.constBegin();
-         iter != m_actions.constEnd();
-         ++iter)
-    {
-        actionList.append(iter.value()->action);
-    }
-    return actionList;
-}
-
 QAction & BtActionCollection::action(QString const & name) const {
-    BtActionItem const * const foundItem = findActionItem(name);
+    Item const * const foundItem = findActionItem(name);
     BT_ASSERT(foundItem);
-    return *(foundItem->action);
+    return *(foundItem->m_action);
 }
 
 void BtActionCollection::addAction(QString const & name,
                                    QAction * const action)
 {
     BT_ASSERT(action);
-    ActionMap::iterator it = m_actions.find(name);
-    if (it != m_actions.constEnd())
-        delete *it;
-
-    m_actions.insert(name, new BtActionItem(action, this));
+    BT_ASSERT(m_actions.find(name) == m_actions.end());
+    Item * const item = new Item{action, this};
+    try {
+        m_actions.insert(name, item);
+    } catch (...) {
+        delete item;
+        throw;
+    }
 }
 
 void BtActionCollection::addAction(QString const & name,
                                    QObject const * const receiver,
                                    char const * const member)
 {
-    QAction* action = new QAction(name, this);
-    if (receiver && member)
-        BT_CONNECT(action,   SIGNAL(triggered()),
-                   receiver, SLOT(triggered()));
-    return addAction(name, action);
+    QAction * const action = new QAction{name, this};
+    try {
+        if (receiver && member)
+            BT_CONNECT(action,   SIGNAL(triggered()),
+                       receiver, SLOT(triggered()));
+        return addAction(name, action);
+    } catch (...) {
+        delete action;
+        throw;
+    }
+}
+
+void BtActionCollection::removeAction(QString const & name) {
+    #ifndef NDEBUG
+    int const r =
+    #endif
+            m_actions.remove(name);
+    BT_ASSERT(r > 0);
 }
 
 QKeySequence BtActionCollection::getDefaultShortcut(QAction * action) const {
-    for (BtActionItem * const item : m_actions)
-        if (item->action == action)
-            return item->defaultKeys;
-    return QKeySequence();
+    for (Item * const item : m_actions)
+        if (item->m_action == action)
+            return item->m_defaultKeys;
+    return QKeySequence{};
 }
 
-void BtActionCollection::readShortcuts(const QString &group) {
-    QHash<QString, QList <QKeySequence > > shortcuts = btConfig().getShortcuts(group);
-    for(QHash<QString, QList <QKeySequence> >::const_iterator iter = shortcuts.begin();
-                                                             iter != shortcuts.end();
-                                                             ++iter)
-        if (BtActionItem const * const foundItem = findActionItem(iter.key()))
-            foundItem->action->setShortcuts(iter.value());
+void BtActionCollection::readShortcuts(QString const & group) {
+    BtConfig::ShortcutsMap shortcuts = btConfig().getShortcuts(group);
+    for (auto it = shortcuts.begin(); it != shortcuts.end(); ++it)
+        if (Item const * const foundItem = findActionItem(it.key()))
+            foundItem->m_action->setShortcuts(it.value());
 }
 
-void BtActionCollection::writeShortcuts(const QString &group) {
-    QHash< QString, QList<QKeySequence> > shortcuts;
-    for (ActionMap::const_iterator iter = m_actions.constBegin();
-        iter != m_actions.constEnd();
-        ++iter)
-    {
-        shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
-    }
+void BtActionCollection::writeShortcuts(QString const & group) const {
+    BtConfig::ShortcutsMap shortcuts;
+    for (auto it = m_actions.begin(); it != m_actions.end(); ++it)
+        shortcuts.insert(it.key(), it.value()->m_action->shortcuts());
     btConfig().setShortcuts(group, shortcuts);
 }
 
-BtActionItem * BtActionCollection::findActionItem(QString const & name) const {
+BtActionCollection::Item * BtActionCollection::findActionItem(
+        QString const & name) const
+{
     ActionMap::const_iterator const it = m_actions.find(name);
     return (it != m_actions.constEnd()) ? *it : nullptr;
 }

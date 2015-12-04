@@ -14,75 +14,97 @@
 
 #include <QObject>
 
-#include <QList>
+#include <QAction>
+#include <QKeySequence>
 #include <QMap>
+#include <QString>
 #include "backend/config/btconfig.h"
 #include "util/btassert.h"
 
 
-class BtActionItem;
-class QAction;
-class QKeySequence;
-class QString;
-
 class BtActionCollection: public QObject {
 
-        Q_OBJECT
+    Q_OBJECT
 
-    private: /* Types: */
+private: /* Types: */
 
-        using ActionMap = QMap<QString, BtActionItem *>;
+    class Item: public QObject {
 
     public: /* Methods: */
 
-        inline BtActionCollection(QObject *parent = nullptr) : QObject(parent) {}
+        Item(QAction * const action, QObject * const parent)
+            : QObject{parent}
+            , m_defaultKeys{action->shortcut()}
+            , m_action{action}
+        {}
 
-        void addAction(QString const & name, QAction * const action);
+    public: /* Fields: */
 
-        void addAction(QString const & name,
-                       QObject const * const receiver,
-                       const char * const member = nullptr);
+        QKeySequence const m_defaultKeys;
+        QAction * const m_action;
 
-        QList<QAction*> actions();
+    };
+    using ActionMap = QMap<QString, Item *>;
 
-        QAction & action(QString const & name) const;
+public: /* Methods: */
 
-        template <typename T>
-        inline T & actionAs(QString const & name) const {
-            QAction & a = action(name);
-            BT_ASSERT(dynamic_cast<T *>(&a));
-            return static_cast<T &>(a);
-        }
+    inline BtActionCollection(QObject * const parent = nullptr)
+            : QObject{parent}
+    {}
 
-        /*!
-         * \brief Read shortcuts from config.
-         *
-         * Read the shortcuts for the given group
-         * from the configuration and add them to
-         * this action collection.
-         *
-         * \param[in] group Shortcut group to read actions from.
-         */
-        void readShortcuts(const QString &group);
+    void addAction(QString const & name, QAction * const action);
 
-        /*!
-         * \brief Write shortcuts to config.
-         *
-         * Write the shortcuts of this action collection
-         * to the given group in the configuration.
-         *
-         * \param[in] group Shortcut group to write actions to.
-         */
-        void writeShortcuts(const QString& group);
-        QKeySequence getDefaultShortcut(QAction* action) const;
+    void addAction(QString const & name,
+                   QObject const * const receiver,
+                   const char * const member = nullptr);
 
-    private: /* Methods: */
+    void removeAction(QString const & name);
 
-        BtActionItem * findActionItem(QString const & name) const;
+    QAction & action(QString const & name) const;
 
-    private: /* Fields: */
+    template <typename T>
+    inline T & actionAs(QString const & name) const {
+        QAction & a = action(name);
+        BT_ASSERT(dynamic_cast<T *>(&a));
+        return static_cast<T &>(a);
+    }
 
-        ActionMap m_actions;
+    template <typename F>
+    inline void foreachQAction(F && f) const {
+        for (Item const * const item : m_actions)
+            f(*(item->m_action), item->m_defaultKeys);
+    }
+
+    /*!
+     * \brief Read shortcuts from config.
+     *
+     * Read the shortcuts for the given group
+     * from the configuration and add them to
+     * this action collection.
+     *
+     * \param[in] group Shortcut group to read actions from.
+     */
+    void readShortcuts(QString const & group);
+
+    /*!
+     * \brief Write shortcuts to config.
+     *
+     * Write the shortcuts of this action collection
+     * to the given group in the configuration.
+     *
+     * \param[in] group Shortcut group to write actions to.
+     */
+    void writeShortcuts(QString const & group) const;
+
+    QKeySequence getDefaultShortcut(QAction * const action) const;
+
+private: /* Methods: */
+
+    Item * findActionItem(QString const & name) const;
+
+private: /* Fields: */
+
+    ActionMap m_actions;
 
 };
 
