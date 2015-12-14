@@ -1,3 +1,6 @@
+2015-12-14 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #23 Tiny fonts on Windows
+
 2015-02-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #26 Screen contents do not autoadjust when window size is adjusted
 

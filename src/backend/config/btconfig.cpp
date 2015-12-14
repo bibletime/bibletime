@@ -52,6 +52,13 @@ BtConfig::BtConfig(const QString & settingsFile)
         m_defaultSearchScopes.insert(tr("Letters/Epistles"),       QString("Rom - Jude"));
         m_defaultSearchScopes.insert(tr("Paul's Epistles"),        QString("Rom - Phile"));
     }
+
+#ifdef Q_OS_WIN
+    const double minPointSize = 14.0;
+    double pointSize = m_defaultFont.pointSizeF();
+    if (pointSize < minPointSize)
+        m_defaultFont.setPointSizeF(minPointSize);
+#endif
 }
 
 BtConfig::InitState BtConfig::initBtConfig() {
