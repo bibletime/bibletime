@@ -234,11 +234,18 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("setPreferences", action);
 
     action = new QAction(a);
-    action->setText(tr("Bookshelf &Manager..."));
+    action->setText(tr("Old Bookshelf &Manager..."));
+    action->setIcon(CResMgr::mainMenu::settings::swordSetupDialog::icon());
+    //action->setShortcut(QKeySequence(CResMgr::mainMenu::settings::swordSetupDialog::accel));
+    action->setToolTip(tr("Configure your bookshelf and install/update/remove/index works"));
+    a->addAction("bookshelfManager", action);
+
+    action = new QAction(a);
+    action->setText(tr("Bookshelf Manager..."));
     action->setIcon(CResMgr::mainMenu::settings::swordSetupDialog::icon());
     action->setShortcut(QKeySequence(CResMgr::mainMenu::settings::swordSetupDialog::accel));
     action->setToolTip(tr("Configure your bookshelf and install/update/remove/index works"));
-    a->addAction("bookshelfManager", action);
+    a->addAction("bookshelfWizard", action);
 
     action = new QAction(a);
     action->setText(tr("&Handbook"));
@@ -573,6 +580,12 @@ void BibleTime::initActions() {
     BT_CONNECT(m_bookshelfManagerAction, SIGNAL(triggered()),
                this,                     SLOT(slotSwordSetupDialog()));
 
+    m_bookshelfWizardAction = m_actionCollection->action("bookshelfWizard");
+    BT_ASSERT(m_bookshelfWizardAction);
+    m_bookshelfWizardAction->setMenuRole( QAction::ApplicationSpecificRole );
+    BT_CONNECT(m_bookshelfWizardAction, SIGNAL(triggered()),
+               this,                     SLOT(slotBookshelfWizard()));
+
     m_openHandbookAction = m_actionCollection->action("openHandbook");
     BT_ASSERT(m_openHandbookAction);
     BT_CONNECT(m_openHandbookAction, SIGNAL(triggered()),
@@ -689,12 +702,14 @@ void BibleTime::initMenubar() {
     m_settingsMenu->addAction(m_setPreferencesAction);
     m_settingsMenu->addSeparator();
     m_settingsMenu->addAction(m_bookshelfManagerAction);
+    m_settingsMenu->addAction(m_bookshelfWizardAction);
     menuBar()->addMenu(m_settingsMenu);
     #else
     // On MAC OS, the settings actions will be moved to a system menu item.
     // Therefore the settings menu would be empty, so we do not show it.
     m_fileMenu->addAction(m_setPreferencesAction);
     m_fileMenu->addAction(m_bookshelfManagerAction);
+    m_fileMenu->addAction(m_bookshelfWizardAction);
     #endif
 
     // Help menu:

@@ -35,3 +35,4 @@ ENDFUNCTION(test_a_class)
 
 test_a_class(tests/backend/managers/cswordbackend cswordbackend)
 test_a_class(tests/backend/keys/cswordversekey cswordversekey)
+test_a_class(tests/backend/models/btlistmodel btlistmodel)

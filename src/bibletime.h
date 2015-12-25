@@ -209,6 +209,10 @@ public slots:
         */
         void slotSwordSetupDialog();
         /**
+        * Opens the bookshelf wizard.
+        */
+        void slotBookshelfWizard();
+        /**
         * Opens the handbook.
         */
         void openOnlineHelp_Handbook();
@@ -482,6 +486,7 @@ public slots:
         QMenu *m_settingsMenu;
         QAction *m_setPreferencesAction;
         QAction *m_bookshelfManagerAction;
+        QAction *m_bookshelfWizardAction;
 
         // Help menu:
         QMenu *m_helpMenu;

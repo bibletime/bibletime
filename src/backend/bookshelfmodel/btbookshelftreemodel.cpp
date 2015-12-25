@@ -21,6 +21,7 @@
 #include "languageitem.h"
 #include "moduleitem.h"
 
+#include <QDebug>
 
 using namespace BookshelfModel;
 

@@ -28,6 +28,7 @@
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
@@ -87,6 +88,12 @@ void BibleTime::slotSwordSetupDialog() {
     dlg->show();
     dlg->raise();
     dlg->activateWindow();
+}
+
+/** Opens the bookshelf wizard. */
+void BibleTime::slotBookshelfWizard() {
+    BtBookshelfWizard dlg;
+    dlg.exec();
 }
 
 /** Is called just before the window menu is shown. */

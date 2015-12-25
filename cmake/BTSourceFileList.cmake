@@ -105,6 +105,7 @@ SOURCE_GROUP("src\\backend\\managers" FILES ${bibletime_SRC_BACKEND_MANAGERS})
 
 SET(bibletime_SRC_BACKEND_MODELS
     src/backend/models/btmoduletextmodel.cpp
+    src/backend/models/btlistmodel.cpp
 )
 
 SOURCE_GROUP("src\\backend\\models" FILES ${bibletime_SRC_BACKEND_MODELS})
@@ -140,6 +141,21 @@ SET(bibletime_SRC_FRONTEND
 )
 
 SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
+
+SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
+    src/frontend/bookshelfwizard/btbookshelfwizard.cpp
+    src/frontend/bookshelfwizard/btbookshelfwizard.h
+    src/frontend/bookshelfwizard/btbookshelftaskpage.cpp
+    src/frontend/bookshelfwizard/btbookshelftaskpage.h
+    src/frontend/bookshelfwizard/btbookshelfworkspage.cpp
+    src/frontend/bookshelfwizard/btbookshelfworkspage.h
+    src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp
+    src/frontend/bookshelfwizard/btbookshelflanguagespage.h
+    src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp
+    src/frontend/bookshelfwizard/btbookshelfsourcespage.h
+)
+
+SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD})
 
 SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER
     # Bookshelf manager frontend:
@@ -311,6 +327,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
     src/backend/models/btmoduletextmodel.h
+    src/backend/models/btlistmodel.h
     src/backend/btinstallmgr.h
     src/backend/btinstallthread.h
     src/backend/btbookmarksmodel.h
@@ -336,6 +353,11 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h
     src/frontend/bookshelfmanager/removepage/btremovepage.h
     src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
+    src/frontend/bookshelfwizard/btbookshelfwizard.h
+    src/frontend/bookshelfwizard/btbookshelftaskpage.h
+    src/frontend/bookshelfwizard/btbookshelfworkspage.h
+    src/frontend/bookshelfwizard/btbookshelflanguagespage.h
+    src/frontend/bookshelfwizard/btbookshelfsourcespage.h
     src/frontend/btaboutdialog.h
     src/frontend/btaboutmoduledialog.h
     src/frontend/btbookshelfdockwidget.h
@@ -425,6 +447,7 @@ SET(bibletime_FRONTEND_DESKTOP_SOURCES
     ${bibletime_SRC_FRONTEND}
     ${bibletime_SRC_FRONTEND_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
+    ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE}
