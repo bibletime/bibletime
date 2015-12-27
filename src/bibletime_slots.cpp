@@ -74,7 +74,7 @@ void BibleTime::slotSettingsChanged() {
 //         ++it;
 //     }
 
-    refreshBibleTimeAccel();
+    m_actionCollection->readShortcuts("Application shortcuts");
     refreshDisplayWindows();
     refreshProfileMenus();
     qDebug() << "BibleTime::slotSettingsChanged";

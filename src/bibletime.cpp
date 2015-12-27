@@ -260,11 +260,6 @@ void BibleTime::refreshDisplayWindows() const {
             window->reload(CSwordBackend::OtherChange);
 }
 
-/** Refresh main window accelerators */
-void BibleTime::refreshBibleTimeAccel() {
-    m_actionCollection->readShortcuts("Application shortcuts");
-}
-
 void BibleTime::closeEvent(QCloseEvent *event) {
     /*
       Sequentially queries all open subwindows whether its fine to close them. If some sub-

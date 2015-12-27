@@ -297,10 +297,6 @@ public slots:
         * Refreshes all presenter supporting at least in of the features given as parameter.
         */
         void refreshDisplayWindows() const;
-        /**
-        * Refresh main window accelerators
-        */
-        void refreshBibleTimeAccel();
 
         /**
         * Reimplemented from QWidget.
