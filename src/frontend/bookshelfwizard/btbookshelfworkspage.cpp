@@ -139,7 +139,11 @@ void BtBookshelfWorksPage::setupModels() {
     m_bookshelfFilterModel->setSourceModel(m_installPageModel);
 
     m_bookshelfModel = new BtBookshelfModel(this);
-    m_installPageModel->setSourceModel(m_bookshelfModel);
+    if (m_installType == remove) {
+        m_installPageModel->setSourceModel(CSwordBackend::instance()->model());
+    } else {
+        m_installPageModel->setSourceModel(m_bookshelfModel);
+    }
     connect(m_installPageModel, &BtBookshelfTreeModel::moduleChecked,
             this, &BtBookshelfWorksPage::slotDataChanged);
     if (m_installType == remove)
