@@ -112,12 +112,9 @@ void BtBookshelfWorksPage::setupUi() {
         pathLayout->setContentsMargins(0, 8, 0, 0);
         pathLayout->addWidget(m_pathLabel);
         pathLayout->addWidget(m_pathCombo);
-    } else {
-        pathLayout->addStretch();
     }
 
-    QSpacerItem *verticalSpacer = new QSpacerItem(40, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
-    pathLayout->addItem(verticalSpacer);
+    pathLayout->addStretch();
 
     m_groupingLabel = new QLabel(this);
     pathLayout->addWidget(m_groupingLabel);
@@ -442,10 +439,17 @@ static bool installPathIsUsable(const QString& path) {
 void BtBookshelfWorksPage::initPathCombo() {
     m_pathCombo->clear();
     QStringList targets = BtInstallBackend::targetList();
+    int usableTargets = 0;
     for ( auto target : targets) {
-        if (installPathIsUsable(target))
+        if (installPathIsUsable(target)) {
             m_pathCombo->addItem(util::directory::convertDirSeparators(target));
+            ++usableTargets;
+        }
     }
+
+    bool pathComboVisible = usableTargets > 1;
+    m_pathCombo->setVisible(pathComboVisible);
+    m_pathLabel->setVisible(pathComboVisible);
 
     // choose the current value from config but check whether we have so many items
     int configValue = btConfig().value<int>(installPathKey, 0);
