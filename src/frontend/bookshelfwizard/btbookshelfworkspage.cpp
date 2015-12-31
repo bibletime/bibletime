@@ -143,6 +143,8 @@ void BtBookshelfWorksPage::setupModels() {
     m_bookshelfView->setModel(m_bookshelfFilterModel);
 
     m_installPageModel = new BtInstallPageModel(m_groupingOrder, this);
+    if (m_installType == update)
+        m_installPageModel->setDefaultChecked(BtBookshelfTreeModel::CHECKED);
     m_bookshelfFilterModel->setSourceModel(m_installPageModel);
 
     m_bookshelfModel = new BtBookshelfModel(this);
@@ -227,7 +229,7 @@ void BtBookshelfWorksPage::updateModels() {
                 m_moduleSourceMap.insert(module, sourceName);
             }
     }
-    if (m_installType == remove)
+    if (m_installType == remove || m_installType == update)
         m_bookshelfView->expandAll();
 }
 
