@@ -58,7 +58,6 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(
       m_pathLabel(nullptr),
       m_groupingLabel(nullptr),
       m_pathCombo(nullptr),
-      m_configurePathButton(nullptr),
       m_verticalLayout(nullptr),
       m_installPageModel(nullptr),
       m_bookshelfModel(nullptr),
@@ -110,13 +109,9 @@ void BtBookshelfWorksPage::setupUi() {
         m_pathLabel->setBuddy(m_pathCombo);
         initPathCombo();
 
-        m_configurePathButton = new QToolButton(this);
-        m_configurePathButton->setIcon(CResMgr::bookshelfmgr::installpage::icon_path());
-
         pathLayout->setContentsMargins(0, 8, 0, 0);
         pathLayout->addWidget(m_pathLabel);
         pathLayout->addWidget(m_pathCombo);
-        pathLayout->addWidget(m_configurePathButton);
     } else {
         pathLayout->addStretch();
     }
@@ -163,8 +158,6 @@ void BtBookshelfWorksPage::initConnections() {
     if (m_installType != remove) {
         BT_CONNECT(m_pathCombo, SIGNAL(activated(QString const &)),
                    this , SLOT(slotPathChanged(QString const &)));
-        BT_CONNECT(m_configurePathButton, SIGNAL(clicked()),
-                   this, SLOT(slotEditPaths()));
         BT_CONNECT(CSwordBackend::instance(),
                    SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
                    this, SLOT(slotSwordSetupChanged()));
@@ -193,7 +186,6 @@ void BtBookshelfWorksPage::retranslateUi() {
     if (m_installType != remove) {
         m_pathLabel->setText(tr("Install &folder:"));
         m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
-        m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
     }
     m_groupingLabel->setText(tr("Grouping:"));
     m_groupingButton->setText(tr("Grouping"));
