@@ -56,6 +56,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(
       m_groupingButton(nullptr),
       m_bookshelfView(nullptr),
       m_pathLabel(nullptr),
+      m_groupingLabel(nullptr),
       m_pathCombo(nullptr),
       m_configurePathButton(nullptr),
       m_verticalLayout(nullptr),
@@ -119,6 +120,12 @@ void BtBookshelfWorksPage::setupUi() {
     } else {
         pathLayout->addStretch();
     }
+
+    QSpacerItem *verticalSpacer = new QSpacerItem(40, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+    pathLayout->addItem(verticalSpacer);
+
+    m_groupingLabel = new QLabel(this);
+    pathLayout->addWidget(m_groupingLabel);
 
     m_groupingButton = new QToolButton(this);
     m_groupingButton->setPopupMode(QToolButton::InstantPopup);
@@ -186,6 +193,7 @@ void BtBookshelfWorksPage::retranslateUi() {
         m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
         m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
     }
+    m_groupingLabel->setText(tr("Grouping:"));
     m_groupingButton->setText(tr("Grouping"));
     m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
 }
@@ -219,6 +227,8 @@ void BtBookshelfWorksPage::updateModels() {
                 m_moduleSourceMap.insert(module, sourceName);
             }
     }
+    if (m_installType == remove)
+        m_bookshelfView->expandAll();
 }
 
 void BtBookshelfWorksPage::slotGroupingActionTriggered(
@@ -381,9 +391,14 @@ bool BtBookshelfWorksPage::removeWorks() {
         //delete all mgrs which were created above
         qDeleteAll(mgrDict);
         mgrDict.clear();
+
+        QMessageBox::information(this, tr("Works Removed"),
+                             tr("The selected works have been removed."),QMessageBox::Close);
+
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 bool BtBookshelfWorksPage::destinationPathIsWritable() {

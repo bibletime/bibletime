@@ -40,6 +40,11 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget *parent,
     addPage(m_installPage);
     addPage(m_updatePage);
     addPage(m_removePage);
+
+    QRect rect = geometry();
+    rect.setWidth(780);
+    setGeometry(rect);
+
     retranslateUi();
     loadWizardGeometry();
 }

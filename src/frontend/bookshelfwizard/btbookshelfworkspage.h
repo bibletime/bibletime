@@ -86,6 +86,7 @@ private:
     QToolButton *m_groupingButton;
     BtBookshelfView *m_bookshelfView;
     QLabel *m_pathLabel;
+    QLabel *m_groupingLabel;
     QComboBox *m_pathCombo;
     QToolButton *m_configurePathButton;
     QVBoxLayout *m_verticalLayout;
