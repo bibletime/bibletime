@@ -52,7 +52,7 @@ void BtInstallThread::run() {
          ++m_currentModuleIndex)
     {
         installModule();
-        if (!m_stopRequested.load(std::memory_order_relaxed))
+        if (m_stopRequested.load(std::memory_order_relaxed))
             break;
     }
 }
