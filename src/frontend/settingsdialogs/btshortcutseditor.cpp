@@ -132,8 +132,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->horizontalHeader()->setStretchLastSection(true);
     m_table->verticalHeader()->setVisible(false);
     m_table->setShowGrid(false);
-    BT_CONNECT(m_table, SIGNAL(cellClicked(int, int)),
-               this,  SLOT(changeRow(int, int)));
+    BT_CONNECT(m_table, &QTableWidget::cellClicked,
+               this,    &BtShortcutsEditor::changeRow);
     vBox->addWidget(m_table);
 
     // Create the area below the table where the shortcuts are edited:
@@ -148,19 +148,20 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
 
             m_noneButton = new QRadioButton(tr("None"), m_shortcutChooser);
             hLayout->addWidget(m_noneButton);
-            BT_CONNECT(m_noneButton, SIGNAL(clicked(bool)),
-                       this,         SLOT(noneButtonClicked(bool)));
+            BT_CONNECT(m_noneButton, &QRadioButton::clicked,
+                       this,         &BtShortcutsEditor::noneButtonClicked);
 
             m_defaultButton =
                     new QRadioButton(tr("Default"), m_shortcutChooser);
             hLayout->addWidget(m_defaultButton);
-            BT_CONNECT(m_defaultButton, SIGNAL(clicked(bool)),
-                       this,            SLOT(defaultButtonClicked(bool)));
+            BT_CONNECT(
+                    m_defaultButton, &QRadioButton::clicked,
+                    this,            &BtShortcutsEditor::defaultButtonClicked);
 
             m_customButton = new QRadioButton(tr("Custom"), m_shortcutChooser);
             hLayout->addWidget(m_customButton);
-            BT_CONNECT(m_customButton, SIGNAL(clicked(bool)),
-                       this,           SLOT(customButtonClicked(bool)));
+            BT_CONNECT(m_customButton, &QRadioButton::clicked,
+                       this,           &BtShortcutsEditor::customButtonClicked);
 
             m_customPushButton = new QPushButton(m_shortcutChooser);
             m_customPushButton->setMinimumWidth(140);
@@ -241,8 +242,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->sortItems(0);
     m_table->selectRow(0);
     changeRow(0, 0);
-    BT_CONNECT(m_dlg, SIGNAL(keyChangeRequest(QString const &)),
-               this, SLOT(makeKeyChangeRequest(QString const &)));
+    BT_CONNECT(m_dlg, &BtShortcutsDialog::keyChangeRequest,
+               this,  &BtShortcutsEditor::makeKeyChangeRequest);
 }
 
 // get the shortcut editor item from the zeroth column of the table
