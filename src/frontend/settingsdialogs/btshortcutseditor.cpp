@@ -114,7 +114,79 @@ void BtShortcutsEditorItem::commitChanges() {
 BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* parent)
         : QWidget(parent), m_dlg(new BtShortcutsDialog(this)), m_table(nullptr), m_shortcutChooser(nullptr), m_noneButton(nullptr), m_defaultButton(nullptr),
         m_customButton(nullptr), m_defaultLabelValue(nullptr), m_currentRow(-1) {
-    init();
+
+    QVBoxLayout * const vBox = new QVBoxLayout(this);
+    setLayout(vBox);
+
+    // Create the action and shortcuts table:
+    m_table = new QTableWidget{this};
+    m_table->setColumnCount(3);
+    m_table->setAlternatingRowColors(true);
+    m_table->setSelectionBehavior(QAbstractItemView::SelectRows);
+    m_table->setHorizontalHeaderLabels({tr("Action\nname"),
+                                        tr("First\nshortcut"),
+                                        tr("Second\nshortcut")});
+    m_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
+    m_table->horizontalHeader()->resizeSection(0, 180);
+    m_table->horizontalHeader()->resizeSection(1, 100);
+    m_table->horizontalHeader()->setStretchLastSection(true);
+    m_table->verticalHeader()->setVisible(false);
+    m_table->setShowGrid(false);
+    BT_CONNECT(m_table, SIGNAL(cellClicked(int, int)),
+               this,  SLOT(changeRow(int, int)));
+    vBox->addWidget(m_table);
+
+    // Create the area below the table where the shortcuts are edited:
+    m_shortcutChooser =
+            new QGroupBox(tr("Shortcut for selected action name"), this);
+    m_shortcutChooser->setFlat(false);
+    {
+        QVBoxLayout * const vLayout = new QVBoxLayout(m_shortcutChooser);
+        {
+            QHBoxLayout * const hLayout = new QHBoxLayout();
+            vLayout->addLayout(hLayout);
+
+            m_noneButton = new QRadioButton(tr("None"), m_shortcutChooser);
+            hLayout->addWidget(m_noneButton);
+            BT_CONNECT(m_noneButton, SIGNAL(clicked(bool)),
+                       this,         SLOT(noneButtonClicked(bool)));
+
+            m_defaultButton =
+                    new QRadioButton(tr("Default"), m_shortcutChooser);
+            hLayout->addWidget(m_defaultButton);
+            BT_CONNECT(m_defaultButton, SIGNAL(clicked(bool)),
+                       this,            SLOT(defaultButtonClicked(bool)));
+
+            m_customButton = new QRadioButton(tr("Custom"), m_shortcutChooser);
+            hLayout->addWidget(m_customButton);
+            BT_CONNECT(m_customButton, SIGNAL(clicked(bool)),
+                       this,           SLOT(customButtonClicked(bool)));
+
+            m_customPushButton = new QPushButton(m_shortcutChooser);
+            m_customPushButton->setMinimumWidth(140);
+            hLayout->addWidget(m_customPushButton);
+
+            hLayout->addItem(new QSpacerItem(1,
+                                             1,
+                                             QSizePolicy::Expanding,
+                                             QSizePolicy::Minimum));
+        }
+
+        QHBoxLayout * const hLayout = new QHBoxLayout();
+        vLayout->addLayout(hLayout);
+
+        hLayout->addWidget(new QLabel(tr("Default key:"), m_shortcutChooser));
+
+        m_defaultLabelValue = new QLabel(m_shortcutChooser);
+        hLayout->addWidget(m_defaultLabelValue);
+
+        hLayout->addItem(new QSpacerItem(1,
+                                         1,
+                                         QSizePolicy::Expanding,
+                                         QSizePolicy::Minimum));
+    }
+    vBox->addWidget(m_shortcutChooser);
+
     collection->foreachQAction([this](QAction & action,
                                       QKeySequence const & defaultKeys)
         {
@@ -173,18 +245,6 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
                this, SLOT(makeKeyChangeRequest(QString const &)));
 }
 
-// initialize this widget
-void BtShortcutsEditor::init() {
-    QVBoxLayout* vBox = new QVBoxLayout(this);
-    setLayout(vBox);
-
-    m_table = createShortcutsTable();
-    vBox->addWidget(m_table);
-
-    m_shortcutChooser = createShortcutChooser();
-    vBox->addWidget(m_shortcutChooser);
-}
-
 // get the shortcut editor item from the zeroth column of the table
 BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int row) {
     QTableWidgetItem* item = m_table->item(row, 0);
@@ -200,26 +260,6 @@ void BtShortcutsEditor::commitChanges() {
         if (btItem != nullptr)
             btItem->commitChanges();
     }
-}
-
-// create the action and shortcuts table
-QTableWidget* BtShortcutsEditor::createShortcutsTable() {
-    QTableWidget* table = new QTableWidget(this);
-    table->setColumnCount(3);
-    table->setAlternatingRowColors(true);
-    table->setSelectionBehavior(QAbstractItemView::SelectRows);
-    QStringList headerList;
-    headerList << tr("Action\nname") << tr("First\nshortcut") << tr("Second\nshortcut");
-    table->setHorizontalHeaderLabels(headerList);
-    table->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-    table->horizontalHeader()->resizeSection(0, 180);
-    table->horizontalHeader()->resizeSection(1, 100);
-    table->horizontalHeader()->setStretchLastSection(true);
-    table->verticalHeader()->setVisible(false);
-    table->setShowGrid(false);
-    BT_CONNECT(table, SIGNAL(cellClicked(int, int)),
-               this,  SLOT(changeRow(int, int)));
-    return table;
 }
 
 // called when a different action name row is selected
@@ -250,52 +290,6 @@ void BtShortcutsEditor::changeRow(int row, int column) {
     else
         m_customButton->setChecked(true);
 }
-
-// create the area below the table where the shortcuts are edited
-QWidget* BtShortcutsEditor::createShortcutChooser() {
-    QGroupBox* box = new QGroupBox(tr("Shortcut for selected action name"), this);
-    box->setFlat(false);
-    QVBoxLayout* vLayout = new QVBoxLayout(box);
-    QHBoxLayout* hLayout = new QHBoxLayout();
-    vLayout->addLayout(hLayout);
-
-    m_noneButton = new QRadioButton(tr("None"), box);
-    hLayout->addWidget(m_noneButton);
-    BT_CONNECT(m_noneButton, SIGNAL(clicked(bool)),
-               this, SLOT(noneButtonClicked(bool)));
-
-    m_defaultButton = new QRadioButton(tr("Default"), box);
-    hLayout->addWidget(m_defaultButton);
-    BT_CONNECT(m_defaultButton, SIGNAL(clicked(bool)),
-               this,            SLOT(defaultButtonClicked(bool)));
-
-    m_customButton = new QRadioButton(tr("Custom"), box);
-    hLayout->addWidget(m_customButton);
-    BT_CONNECT(m_customButton, SIGNAL(clicked(bool)),
-               this,           SLOT(customButtonClicked(bool)));
-
-    m_customPushButton = new QPushButton(box);
-    m_customPushButton->setMinimumWidth(140);
-    hLayout->addWidget(m_customPushButton);
-
-    QSpacerItem* spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    hLayout->addItem(spacer);
-
-    QHBoxLayout* hLayout2 = new QHBoxLayout();
-    vLayout->addLayout(hLayout2);
-
-    QLabel* defaultLabel = new QLabel(tr("Default key:"), box);
-    hLayout2->addWidget(defaultLabel);
-
-    m_defaultLabelValue = new QLabel(box);
-    hLayout2->addWidget(m_defaultLabelValue);
-
-    QSpacerItem* spacer2 = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    hLayout2->addItem(spacer2);
-
-    return box;
-}
-
 
 // called when the none radio button is clicked
 void BtShortcutsEditor::noneButtonClicked(bool checked) {

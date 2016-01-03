@@ -19,6 +19,7 @@
 class BtActionCollection;
 class BtShortcutsEditorItem;
 class BtShortcutsDialog;
+class QGroupBox;
 class QLabel;
 class QPushButton;
 class QRadioButton;
@@ -66,21 +67,12 @@ class BtShortcutsEditor : public QWidget {
 
     private:
 
-        // create the action and shortcuts table
-        QTableWidget* createShortcutsTable();
-
-        // create the area below the table where the shortcuts are edited
-        QWidget* createShortcutChooser();
-
         // get the shortcut editor item from the zeroth column of the table
         BtShortcutsEditorItem* getShortcutsEditor(int row);
 
-        // initialize this widget
-        void init();
-
         BtShortcutsDialog* m_dlg;
         QTableWidget* m_table;
-        QWidget* m_shortcutChooser;
+        QGroupBox * m_shortcutChooser;
         QRadioButton* m_noneButton;
         QRadioButton* m_defaultButton;
         QRadioButton* m_customButton;
