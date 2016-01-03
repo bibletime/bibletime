@@ -173,11 +173,6 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
                this, SLOT(makeKeyChangeRequest(QString const &)));
 }
 
-BtShortcutsEditor::BtShortcutsEditor(QWidget* parent)
-        : QWidget(parent), m_table(nullptr) {
-    init();
-}
-
 // initialize this widget
 void BtShortcutsEditor::init() {
     QVBoxLayout* vBox = new QVBoxLayout(this);

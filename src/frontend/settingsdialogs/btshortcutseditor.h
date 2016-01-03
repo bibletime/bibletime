@@ -28,8 +28,7 @@ class QTableWidget;
 class BtShortcutsEditor : public QWidget {
         Q_OBJECT
     public:
-        BtShortcutsEditor(BtActionCollection* collection, QWidget* parent);
-        BtShortcutsEditor(QWidget* parent);
+        BtShortcutsEditor(BtActionCollection * collection, QWidget * parent);
 
         // saves shortcut keys into the QAction
         void commitChanges();
