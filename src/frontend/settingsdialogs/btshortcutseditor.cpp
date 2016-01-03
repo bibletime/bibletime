@@ -115,51 +115,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
         : QWidget(parent), m_dlg(new BtShortcutsDialog(this)), m_table(nullptr), m_shortcutChooser(nullptr), m_noneButton(nullptr), m_defaultButton(nullptr),
         m_customButton(nullptr), m_defaultLabelValue(nullptr), m_currentRow(-1) {
     init();
-    addCollection(collection);
-    BT_CONNECT(m_dlg, SIGNAL(keyChangeRequest(QString const &)),
-               this, SLOT(makeKeyChangeRequest(QString const &)));
-}
-
-BtShortcutsEditor::BtShortcutsEditor(QWidget* parent)
-        : QWidget(parent), m_table(nullptr) {
-    init();
-}
-
-// initialize this widget
-void BtShortcutsEditor::init() {
-    QVBoxLayout* vBox = new QVBoxLayout(this);
-    setLayout(vBox);
-
-    m_table = createShortcutsTable();
-    vBox->addWidget(m_table);
-
-    m_shortcutChooser = createShortcutChooser();
-    vBox->addWidget(m_shortcutChooser);
-}
-
-// get the shortcut editor item from the zeroth column of the table
-BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int row) {
-    QTableWidgetItem* item = m_table->item(row, 0);
-    BtShortcutsEditorItem* btItem = dynamic_cast<BtShortcutsEditorItem*>(item);
-    return btItem;
-}
-
-// saves shortcut keys into the QAction
-void BtShortcutsEditor::commitChanges() {
-    int rows = m_table->rowCount();
-    for (int row = 0; row < rows; row++) {
-        BtShortcutsEditorItem* btItem = getShortcutsEditor(row);
-        if (btItem != nullptr)
-            btItem->commitChanges();
-    }
-}
-
-// puts actions and shortcut keys into QTableWidget
-void BtShortcutsEditor::addCollection(BtActionCollection* collection, const QString& title) {
-    Q_UNUSED(title); /// \todo Is this correct?
-
-    collection->foreachQAction([this, &title](QAction & action,
-                                              QKeySequence const & defaultKeys)
+    collection->foreachQAction([this](QAction & action,
+                                      QKeySequence const & defaultKeys)
         {
             int const count = m_table->rowCount();
             m_table->insertRow(count);
@@ -212,6 +169,42 @@ void BtShortcutsEditor::addCollection(BtActionCollection* collection, const QStr
     m_table->sortItems(0);
     m_table->selectRow(0);
     changeRow(0, 0);
+    BT_CONNECT(m_dlg, SIGNAL(keyChangeRequest(QString const &)),
+               this, SLOT(makeKeyChangeRequest(QString const &)));
+}
+
+BtShortcutsEditor::BtShortcutsEditor(QWidget* parent)
+        : QWidget(parent), m_table(nullptr) {
+    init();
+}
+
+// initialize this widget
+void BtShortcutsEditor::init() {
+    QVBoxLayout* vBox = new QVBoxLayout(this);
+    setLayout(vBox);
+
+    m_table = createShortcutsTable();
+    vBox->addWidget(m_table);
+
+    m_shortcutChooser = createShortcutChooser();
+    vBox->addWidget(m_shortcutChooser);
+}
+
+// get the shortcut editor item from the zeroth column of the table
+BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int row) {
+    QTableWidgetItem* item = m_table->item(row, 0);
+    BtShortcutsEditorItem* btItem = dynamic_cast<BtShortcutsEditorItem*>(item);
+    return btItem;
+}
+
+// saves shortcut keys into the QAction
+void BtShortcutsEditor::commitChanges() {
+    int rows = m_table->rowCount();
+    for (int row = 0; row < rows; row++) {
+        BtShortcutsEditorItem* btItem = getShortcutsEditor(row);
+        if (btItem != nullptr)
+            btItem->commitChanges();
+    }
 }
 
 // create the action and shortcuts table
