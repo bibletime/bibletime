@@ -12,15 +12,19 @@
 #ifndef BTBOOKSHELFWIZARD_H
 #define BTBOOKSHELFWIZARD_H
 
+#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 #include <QWizard>
 #include <QStringList>
 
 class BtBookshelfWorksPage;
 class BtBookshelfLanguagesPage;
+class BtBookshelfRemoveFinalPage;
 class BtBookshelfSourcesPage;
-class BtBookshelfUpdatePage;
-class BtBookshelfRemovePage;
 class BtBookshelfTaskPage;
+class BtBookshelfUpdatePage;
+class BtBookshelfInstallFinalPage;
+class BtModuleSet;
 
 /**
 * The Bookshelf Manager wizard.
@@ -34,6 +38,9 @@ class BtBookshelfWizard: public QWizard {
 
         QStringList selectedSources() const;
         QStringList selectedLanguages() const;
+        BtModuleSet selectedWorks() const;
+        WizardTaskType taskType() const;
+        QString installPath() const;
 
 public slots:
         void accept();
@@ -49,9 +56,11 @@ public slots:
         BtBookshelfTaskPage *m_taskPage;
         BtBookshelfSourcesPage *m_sourcesPage;
         BtBookshelfLanguagesPage *m_languagesPage;
-        BtBookshelfWorksPage *m_installPage;
-        BtBookshelfWorksPage *m_updatePage;
-        BtBookshelfWorksPage *m_removePage;
+        BtBookshelfWorksPage *m_installWorksPage;
+        BtBookshelfWorksPage *m_updateWorksPage;
+        BtBookshelfWorksPage *m_removeWorksPage;
+        BtBookshelfRemoveFinalPage *m_removeFinalPage;
+        BtBookshelfInstallFinalPage *m_installFinalPage;
 };
 
 #endif

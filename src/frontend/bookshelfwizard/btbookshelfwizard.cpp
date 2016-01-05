@@ -9,7 +9,9 @@
 
 #include "backend/config/btconfig.h"
 #include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+#include "frontend/bookshelfwizard/btbookshelfinstallfinalpage.h"
 #include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
+#include "frontend/bookshelfwizard/btbookshelfremovefinalpage.h"
 #include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
 #include "frontend/bookshelfwizard/btbookshelftaskpage.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
@@ -30,20 +32,25 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget *parent,
       m_taskPage(new BtBookshelfTaskPage),
       m_sourcesPage(new BtBookshelfSourcesPage),
       m_languagesPage(new BtBookshelfLanguagesPage),
-      m_installPage(new BtBookshelfWorksPage(BtBookshelfWorksPage::install)),
-      m_updatePage(new BtBookshelfWorksPage(BtBookshelfWorksPage::update)),
-      m_removePage(new BtBookshelfWorksPage(BtBookshelfWorksPage::remove))
+      m_installWorksPage(new BtBookshelfWorksPage(WizardTaskType::installWorks)),
+      m_updateWorksPage(new BtBookshelfWorksPage(WizardTaskType::updateWorks)),
+      m_removeWorksPage(new BtBookshelfWorksPage(WizardTaskType::removeWorks)),
+      m_removeFinalPage(new BtBookshelfRemoveFinalPage),
+      m_installFinalPage(new BtBookshelfInstallFinalPage)  // For install and update
 {
     addPage(m_taskPage);
     addPage(m_sourcesPage);
     addPage(m_languagesPage);
-    addPage(m_installPage);
-    addPage(m_updatePage);
-    addPage(m_removePage);
+    addPage(m_installWorksPage);
+    addPage(m_updateWorksPage);
+    addPage(m_removeWorksPage);
+    addPage(m_removeFinalPage);
+    addPage(m_installFinalPage);
 
     QRect rect = geometry();
     rect.setWidth(780);
     setGeometry(rect);
+    setOption(QWizard::NoCancelButtonOnLastPage);
 
     retranslateUi();
     loadWizardGeometry();
@@ -62,21 +69,11 @@ QStringList BtBookshelfWizard::selectedLanguages() const {
 }
 
 void BtBookshelfWizard::accept() {
-    saveWizardGeometry();
-
-    if (currentPage() == m_installPage) {
+    if (currentPage() == m_installWorksPage)
         saveSettings();
-        if (m_installPage->manageWorks())
-            QDialog::accept();
-    }
 
-    if (currentPage() == m_updatePage)
-        if (m_updatePage->manageWorks())
-            QDialog::accept();
-
-    if (currentPage() == m_removePage)
-        if (m_removePage->manageWorks())
-            QDialog::accept();
+    saveWizardGeometry();
+    QDialog::accept();
 }
 
 void BtBookshelfWizard::loadWizardGeometry() {
@@ -90,4 +87,27 @@ void BtBookshelfWizard::saveWizardGeometry() const {
 void BtBookshelfWizard::saveSettings() const {
     btConfig().setValue(SourcesKey,selectedSources());
     btConfig().setValue(LanguagesKey,selectedLanguages());
+}
+
+BtModuleSet BtBookshelfWizard::selectedWorks() const {
+    WizardTaskType iType = m_taskPage->taskType();
+    if (iType == WizardTaskType::installWorks)
+        return m_installWorksPage->checkedModules();
+    if (iType == WizardTaskType::updateWorks)
+        return m_updateWorksPage->checkedModules();
+    return m_removeWorksPage->checkedModules();
+}
+
+WizardTaskType BtBookshelfWizard::taskType() const {
+    return m_taskPage->taskType();
+}
+
+QString BtBookshelfWizard::installPath() const {
+    WizardTaskType iType = m_taskPage->taskType();
+    if (iType == WizardTaskType::installWorks)
+        return m_installWorksPage->installPath();
+    if (iType == WizardTaskType::updateWorks)
+        return m_updateWorksPage->installPath();
+    BT_ASSERT(false);
+    return QString();
 }

@@ -12,6 +12,8 @@
 #ifndef BTBOOKSHELFTASKPAGE
 #define BTBOOKSHELFTASKPAGE
 
+#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+
 #include <QWizardPage>
 
 class QGroupBox;
@@ -27,6 +29,7 @@ public:
     BtBookshelfTaskPage(QWidget *parent = 0);
 
     int nextId() const;
+    WizardTaskType taskType() const;
 
 private:
     void retranslateUi();

@@ -12,13 +12,21 @@
 #ifndef BTBOOKSHELFWIZARDENUM_H
 #define BTBOOKSHELFWIZARDENUM_H
 
-enum pages {
+enum WizardPage {
     taskPage = 0,
     sourcesPage,
     languagesPage,
     installWorksPage,
     updateWorksPage,
-    removeWorksPage
+    removeWorksPage,
+    removeFinalPage,
+    installFinalPage
+};
+
+enum WizardTaskType {
+    installWorks,
+    updateWorks,
+    removeWorks
 };
 
 #endif

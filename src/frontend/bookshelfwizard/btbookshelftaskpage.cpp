@@ -92,11 +92,18 @@ void BtBookshelfTaskPage::retranslateUi()
 
 int BtBookshelfTaskPage::nextId() const {
     if (m_installRadioButton->isChecked())
-        return pages::sourcesPage;
+        return WizardPage::sourcesPage;
     if (m_updateRadioButton->isChecked())
-        return pages::updateWorksPage;
+        return WizardPage::updateWorksPage;
     if (m_removeRadioButton->isChecked())
-        return pages::removeWorksPage;
+        return WizardPage::removeWorksPage;
     return -1;
 }
 
+WizardTaskType BtBookshelfTaskPage::taskType() const {
+    if (m_installRadioButton->isChecked())
+        return WizardTaskType::installWorks;
+    if (m_updateRadioButton->isChecked())
+        return WizardTaskType::updateWorks;
+    return WizardTaskType::removeWorks;
+}

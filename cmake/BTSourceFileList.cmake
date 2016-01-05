@@ -147,6 +147,10 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
     src/frontend/bookshelfwizard/btbookshelfwizard.h
     src/frontend/bookshelfwizard/btbookshelftaskpage.cpp
     src/frontend/bookshelfwizard/btbookshelftaskpage.h
+    src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp
+    src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.h
+    src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp
+    src/frontend/bookshelfwizard/btbookshelfremovefinalpage.h
     src/frontend/bookshelfwizard/btbookshelfworkspage.cpp
     src/frontend/bookshelfwizard/btbookshelfworkspage.h
     src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp
@@ -355,6 +359,8 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
     src/frontend/bookshelfwizard/btbookshelfwizard.h
     src/frontend/bookshelfwizard/btbookshelftaskpage.h
+    src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.h
+    src/frontend/bookshelfwizard/btbookshelfremovefinalpage.h
     src/frontend/bookshelfwizard/btbookshelfworkspage.h
     src/frontend/bookshelfwizard/btbookshelflanguagespage.h
     src/frontend/bookshelfwizard/btbookshelfsourcespage.h

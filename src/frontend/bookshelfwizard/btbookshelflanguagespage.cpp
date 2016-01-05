@@ -57,7 +57,7 @@ void BtBookshelfLanguagesPage::retranslateUi() {
 }
 
 int BtBookshelfLanguagesPage::nextId() const {
-    return pages::installWorksPage;
+    return WizardPage::installWorksPage;
 }
 
 BtBookshelfWizard *BtBookshelfLanguagesPage::btWizard() {

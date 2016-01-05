@@ -15,17 +15,13 @@
 #include "backend/btmoduletreeitem.h"
 #include "backend/config/btconfig.h"
 #include "backend/btinstallmgr.h"
-#include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
-#include "frontend/bookshelfmanager/installpage/btinstallpathdialog.h"
-#include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/btbookshelfgroupingmenu.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/messagedialog.h"
 #include "util/btconnect.h"
-#include "util/cresmgr.h"
 #include "util/directory.h"
 
 #include <QAbstractItemModel>
@@ -37,6 +33,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QSet>
 #include <QSpacerItem>
 #include <QToolButton>
 #include <QTreeView>
@@ -48,10 +45,10 @@ const QString installPathKey   ("GUI/BookshelfWizard/InstallPage/installPathInde
 } // anonymous namespace
 
 BtBookshelfWorksPage::BtBookshelfWorksPage(
-        BtBookshelfWorksPage::InstallType iType,
+        WizardTaskType iType,
         QWidget *parent)
     : QWizardPage(parent),
-      m_installType(iType),
+      m_taskType(iType),
       m_groupingOrder(groupingOrderKey),
       m_groupingButton(nullptr),
       m_bookshelfView(nullptr),
@@ -99,7 +96,7 @@ void BtBookshelfWorksPage::setupUi() {
     m_verticalLayout->addWidget(m_bookshelfView);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();
-    if (m_installType != remove) {
+    if (m_taskType != WizardTaskType::removeWorks) {
         m_pathLabel = new QLabel(this);
         m_pathCombo = new QComboBox(this);
         m_pathCombo->setMinimumContentsLength(20);
@@ -135,24 +132,24 @@ void BtBookshelfWorksPage::setupModels() {
     m_bookshelfView->setModel(m_bookshelfFilterModel);
 
     m_installPageModel = new BtInstallPageModel(m_groupingOrder, this);
-    if (m_installType == update)
+    if (m_taskType == WizardTaskType::updateWorks)
         m_installPageModel->setDefaultChecked(BtBookshelfTreeModel::CHECKED);
     m_bookshelfFilterModel->setSourceModel(m_installPageModel);
 
     m_bookshelfModel = new BtBookshelfModel(this);
-    if (m_installType == remove) {
+    if (m_taskType == WizardTaskType::removeWorks) {
         m_installPageModel->setSourceModel(CSwordBackend::instance()->model());
     } else {
         m_installPageModel->setSourceModel(m_bookshelfModel);
     }
     connect(m_installPageModel, &BtBookshelfTreeModel::moduleChecked,
             this, &BtBookshelfWorksPage::slotDataChanged);
-    if (m_installType == remove)
+    if (m_taskType == WizardTaskType::removeWorks)
         m_bookshelfView->setColumnHidden(1,true);
 }
 
 void BtBookshelfWorksPage::initConnections() {
-    if (m_installType != remove) {
+    if (m_taskType != WizardTaskType::removeWorks) {
         BT_CONNECT(m_pathCombo, SIGNAL(activated(QString const &)),
                    this , SLOT(slotPathChanged(QString const &)));
         BT_CONNECT(CSwordBackend::instance(),
@@ -167,20 +164,23 @@ void BtBookshelfWorksPage::initConnections() {
 }
 
 void BtBookshelfWorksPage::retranslateUi() {
-    if (m_installType == install) {
+    if (m_taskType == installWorks) {
         setTitle(QApplication::translate("BookshelfWizard", "Install Works", 0));
         setSubTitle(QApplication::translate("BookshelfWizard", "Choose one or more works to install.", 0));
+        setButtonText(QWizard::NextButton,tr("Install Works >"));
     }
-    else if (m_installType == update) {
+    else if (m_taskType == WizardTaskType::updateWorks) {
         setTitle(QApplication::translate("BookshelfWizard", "Update Works", 0));
         setSubTitle(QApplication::translate("BookshelfWizard", "Choose one or more works to update.", 0));
+        setButtonText(QWizard::NextButton,tr("Update Works >"));
     }
     else {
         setTitle(QApplication::translate("BookshelfWizard", "Remove Works", 0));
         setSubTitle(QApplication::translate("BookshelfWizard", "Choose one or more works to remove.", 0));
+        setButtonText(QWizard::NextButton,tr("Remove Works >"));
     }
 
-    if (m_installType != remove) {
+    if (m_taskType != WizardTaskType::removeWorks) {
         m_pathLabel->setText(tr("Install &folder:"));
         m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
     }
@@ -190,7 +190,9 @@ void BtBookshelfWorksPage::retranslateUi() {
 }
 
 int BtBookshelfWorksPage::nextId() const {
-    return -1;
+    if (btWizard()->taskType() == WizardTaskType::removeWorks)
+        return WizardPage::removeFinalPage;
+    return installFinalPage;
 }
 
 void BtBookshelfWorksPage::initializePage() {
@@ -198,13 +200,14 @@ void BtBookshelfWorksPage::initializePage() {
 }
 
 void BtBookshelfWorksPage::updateModels() {
-    if (m_installType == install) {
+    if (m_taskType == installWorks) {
         m_sources = btWizard()->selectedSources();
         m_languages = btWizard()->selectedLanguages();
     } else {
         m_sources = BtInstallBackend::sourceNameList();
     }
 
+    QSet<QString> addedModuleNames;
     m_bookshelfModel->clear();
     m_moduleSourceMap.clear();
     for (auto sourceName : m_sources) {
@@ -213,12 +216,18 @@ void BtBookshelfWorksPage::updateModels() {
 
         for (auto module : backend->moduleList())
             if (filter(module)) {
+                QString moduleName = module->name();
+                if (addedModuleNames.contains(moduleName))
+                    continue;
+                addedModuleNames.insert(moduleName);
                 m_bookshelfModel->addModule(module);
                 QString sourceName = source.caption.c_str();
                 m_moduleSourceMap.insert(module, sourceName);
+                module->setProperty("installSourceName", sourceName);
             }
     }
-    if (m_installType == remove || m_installType == update)
+    if (m_taskType == WizardTaskType::removeWorks ||
+            m_taskType == WizardTaskType::updateWorks)
         m_bookshelfView->expandAll();
 }
 
@@ -242,9 +251,9 @@ BtModuleSet BtBookshelfWorksPage::selectedWorks() const {
 }
 
 bool BtBookshelfWorksPage::filter(const CSwordModuleInfo *mInfo) {
-    if (m_installType == install)
+    if (m_taskType == WizardTaskType::installWorks)
         return filterInstalls(mInfo);
-    else if (m_installType == update)
+    else if (m_taskType == WizardTaskType::updateWorks)
         return filterUpdates(mInfo);
     else
         return filterRemoves(mInfo);
@@ -287,114 +296,13 @@ void BtBookshelfWorksPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::
     m_groupingOrder.saveTo(groupingOrderKey);
 }
 
-bool BtBookshelfWorksPage::manageWorks() {
-    if (m_installType == remove)
-        return removeWorks();
-
-    if (!destinationPathIsWritable())
-        return false;
-
-    // create the confirmation dialog
-    BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(m_groupingOrder, this);
-
-    // Add all checked modules from all tabs:
-    BtModuleSet moduleSet = selectedWorks();
-    for (auto module : moduleSet) {
-        QString sourceName = m_moduleSourceMap[module];
-        dlg->addModuleItem(module, sourceName);
-    }
-    if (dlg->exec() == QDialog::Accepted) {
-        QList<CSwordModuleInfo *> modules(dlg->checkedModules().toList());
-        if (modules.empty())
-            return false;
-
-        // progressDialog is WA_DeleteOnClose
-        using BIPD = BtInstallProgressDialog;
-        auto progressDialog = new BIPD(modules, selectedInstallPath(), this);
-        progressDialog->exec();
-
-        delete dlg;
-        return true;
-    }
-    delete dlg;
-    return false;
-}
-
-bool BtBookshelfWorksPage::removeWorks() {
-
-    if (m_installPageModel->checkedModules().empty())
-        return false;
-
-    QStringList moduleNames;
-    QStringList prettyModuleNames;
-    const int textHeight = fontMetrics().height();
-    /// \bug <nobr> is not working, Qt bug
-    const QString moduleString("<nobr>%1&nbsp;%2</nobr>");
-    for (auto m : m_installPageModel->checkedModules()) {
-        prettyModuleNames.append(moduleString
-                                 .arg(iconToHtml(CSwordModuleInfo::moduleIcon(*m),
-                                                 textHeight))
-                                 .arg(m->name()));
-        moduleNames.append(m->name());
-    }
-
-    const QString message = tr("You selected the following work(s): ")
-            .append("<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;")
-            .append(prettyModuleNames.join(",&nbsp; "))
-            .append("<br/><br/>")
-            .append(tr("Do you really want to remove them from your system?"));
-
-    if ((message::showQuestion(this, tr("Remove Works?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
-
-        // Update the module list before really removing. Remember deleting the pointers later.
-        QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
-        BT_ASSERT(toBeDeleted.size() == moduleNames.size());
-
-        BtInstallMgr installMgr;
-        QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-        Q_FOREACH(CSwordModuleInfo const * const mInfo, toBeDeleted) {
-            BT_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
-            // Find the install path for the sword manager
-            QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
-            QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);
-            if (dataPath.left(2) == "./") {
-                dataPath = dataPath.mid(2);
-            }
-            if (prefixPath.contains(dataPath)) { //remove module part to get the prefix path
-                prefixPath = prefixPath.remove( prefixPath.indexOf(dataPath), dataPath.length() );
-            }
-            else { //This is an error, should not happen
-                qWarning() << "Removing" << mInfo->name() << "didn't succeed because the absolute path" << prefixPath << "didn't contain the data path" << dataPath;
-                continue; // don't remove this, go to next of the for loop
-            }
-
-            // Create the sword manager and remove the module
-            sword::SWMgr* mgr = mgrDict[ prefixPath ];
-            if (!mgr) { //create new mgr if it's not yet available
-                mgrDict.insert(prefixPath, new sword::SWMgr(prefixPath.toLocal8Bit()));
-                mgr = mgrDict[ prefixPath ];
-            }
-            qDebug() << "Removing the module" << mInfo->name() << "...";
-            installMgr.removeModule(mgr, mInfo->module().getName());
-        }
-        //delete the removed moduleinfo pointers
-        qDeleteAll(toBeDeleted);
-        //delete all mgrs which were created above
-        qDeleteAll(mgrDict);
-        mgrDict.clear();
-
-        QMessageBox::information(this, tr("Works Removed"),
-                             tr("The selected works have been removed."),QMessageBox::Close);
-
-        return true;
-    }
-
-    return false;
+BtModuleSet BtBookshelfWorksPage::checkedModules() {
+    return m_installPageModel->checkedModules();
 }
 
 bool BtBookshelfWorksPage::destinationPathIsWritable() {
     // check that the destination path is writable, do nothing if not
-    QDir dir = selectedInstallPath();
+    QDir dir = installPath();
     bool canWrite = true;
     if (dir.isReadable()) {
         const QFileInfo fi( dir.canonicalPath() );
@@ -414,7 +322,7 @@ bool BtBookshelfWorksPage::destinationPathIsWritable() {
     return true;
 }
 
-QString BtBookshelfWorksPage::selectedInstallPath() {
+QString BtBookshelfWorksPage::installPath() {
     return m_pathCombo->currentText();
 }
 
@@ -457,14 +365,6 @@ void BtBookshelfWorksPage::initPathCombo() {
     m_pathCombo->setCurrentIndex(index);
 }
 
-void BtBookshelfWorksPage::slotEditPaths() {
-    BtInstallPathDialog* dlg = new BtInstallPathDialog();
-    int result = dlg->exec();
-    if (result == QDialog::Accepted) {
-        CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
-    }
-}
-
 void BtBookshelfWorksPage::slotSwordSetupChanged() {
     initPathCombo();
 }
@@ -480,7 +380,7 @@ bool BtBookshelfWorksPage::moduleIsInstalled(const CSwordModuleInfo *mInfo) {
     return (installedModule);
 }
 
-BtBookshelfWizard *BtBookshelfWorksPage::btWizard() {
+BtBookshelfWizard *BtBookshelfWorksPage::btWizard() const {
     return qobject_cast<BtBookshelfWizard*>(wizard());
 }
 

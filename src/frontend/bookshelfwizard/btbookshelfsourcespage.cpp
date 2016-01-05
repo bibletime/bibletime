@@ -12,7 +12,6 @@
 #include "backend/btinstallmgr.h"
 #include "backend/models/btlistmodel.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 #include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 #include "util/bticons.h"
@@ -75,7 +74,7 @@ void BtBookshelfSourcesPage::retranslateUi() {
 }
 
 int BtBookshelfSourcesPage::nextId() const {
-    return pages::languagesPage;
+    return WizardPage::languagesPage;
 }
 
 void BtBookshelfSourcesPage::initializePage() {
