@@ -12,6 +12,7 @@
 #ifndef BTBOOKSHELFSOURCESPAGE
 #define BTBOOKSHELFSOURCESPAGE
 
+#include <QString>
 #include <QStringList>
 #include <QWizardPage>
 
@@ -19,6 +20,8 @@ class BtBookshelfWizard;
 class BtInstallMgr;
 class BtListModel;
 class QProgressDialog;
+class QPushButton;
+class QSignalMapper;
 class QTableView;
 class QVBoxLayout;
 
@@ -36,10 +39,12 @@ public:
 
 private slots:
     void slotDataChanged();
-    void slotItemClicked(const QModelIndex& index);
+    void slotButtonClicked(int row);
 
 private:
+    QPushButton * addButton(int row, int column, const QString& text);
     void addNewSource();
+    void calculateButtonColumnWidth();
     void createSourcesModel();
     void deleteRemoteSource(const QString& source);
     QStringList loadInitialSources();
@@ -59,6 +64,10 @@ private:
     BtListModel *m_model;
     QProgressDialog* m_progressDialog;
     BtInstallMgr* m_currentInstallMgr;
+    QSignalMapper *m_signalMapper;
+
+    QString m_addText;
+    QString m_removeText;
 };
 
 #endif

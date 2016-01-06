@@ -14,7 +14,6 @@
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "util/bticons.h"
 #include "util/btconnect.h"
 
 #include <QAbstractItemView>
@@ -23,9 +22,13 @@
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QMessageBox>
+#include <QModelIndex>
 #include <QProgressDialog>
+#include <QPushButton>
+#include <QSignalMapper>
 #include <QString>
 #include <QTableView>
+#include <QtGlobal>
 #include <QVBoxLayout>
 
 namespace {
@@ -33,6 +36,8 @@ const QString SourcesKey = "GUI/BookshelfWizard/sources";
 const QString lastUpdate = "GUI/BookshelfWizard/lastUpdate";
 } // anonymous namespace
 
+static const QStringList initialSelection{
+    "CrossWire", "Bible.org", "Xiphos"};
 
 BtBookshelfSourcesPage::BtBookshelfSourcesPage(QWidget *parent)
     : QWizardPage(parent),
@@ -51,13 +56,18 @@ void BtBookshelfSourcesPage::setupUi() {
     m_sourcesTableView->setObjectName(QStringLiteral("sourcesListView"));
     m_sourcesTableView->horizontalHeader()->setVisible(false);
     m_sourcesTableView->verticalHeader()->setVisible(false);
-    connect(m_sourcesTableView, &QAbstractItemView::clicked,
-            this, &BtBookshelfSourcesPage::slotItemClicked);
-
     m_verticalLayout->addWidget(m_sourcesTableView);
 
     QHBoxLayout *horizontalLayout = new QHBoxLayout();
     horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+}
+
+void BtBookshelfSourcesPage::calculateButtonColumnWidth() {
+    QFontMetrics fontMetrics = m_sourcesTableView->fontMetrics();
+    int removeWidth = fontMetrics.width(m_removeText);
+    int addWidth = fontMetrics.width(m_addText);
+    int columnWidth = qMax(removeWidth, addWidth) + 20;
+    m_sourcesTableView->setColumnWidth(1, columnWidth);
 }
 
 void BtBookshelfSourcesPage::createSourcesModel() {
@@ -68,6 +78,8 @@ void BtBookshelfSourcesPage::createSourcesModel() {
 }
 
 void BtBookshelfSourcesPage::retranslateUi() {
+    m_addText = tr("Add");
+    m_removeText = tr("Remove");
     setTitle(QApplication::translate("BookshelfWizard", "Choose Remote Libraries", 0));
     setSubTitle(QApplication::translate("BookshelfWizard",
                                         "Choose one or more remote libraries to install works from.", 0));
@@ -90,6 +102,8 @@ void BtBookshelfSourcesPage::initializePage() {
 
 QStringList BtBookshelfSourcesPage::loadInitialSources() {
     QStringList sources = btConfig().value<QStringList>(SourcesKey,QStringList());
+    if (sources.isEmpty())
+        sources = initialSelection;
     return sources;
 }
 
@@ -103,23 +117,46 @@ void BtBookshelfSourcesPage::selectSourcesInModel(const QStringList& sources) {
     }
 }
 
+QPushButton * BtBookshelfSourcesPage::addButton(
+        int row,
+        int column,
+        const QString& text) {
+    QModelIndex index = m_model->index(row, column);
+    QPushButton *button = new QPushButton(text, this);
+    m_sourcesTableView->setIndexWidget(index, button);
+    return button;
+}
+
 void BtBookshelfSourcesPage::updateSourcesModel() {
     QStringList sourceList = BtInstallBackend::sourceNameList();
     m_model->clear();
+    m_model->setColumnCount(2);
+
+    m_signalMapper = new QSignalMapper(this);
+
     for (QString source : sourceList) {
         m_model->appendItem(source);
-        int lastRow = m_model->rowCount() - 1;
-        QStandardItem *item = m_model->item(lastRow,1);
-        QIcon icon = BtIcons::instance().icon_delete;
-        item->setIcon(icon);
+        int row = m_model->rowCount() - 1;
+        QPushButton * button = addButton(row, 1, tr("Remove"));
+        BT_CONNECT(button, SIGNAL(clicked()), m_signalMapper, SLOT(map()));
+        m_signalMapper->setMapping(button, row);
     }
+
     QStandardItem* item = new QStandardItem(tr("< Add new remote library >"));
     m_model->appendRow(item);
+    int row = m_model->rowCount() - 1;
+    QPushButton *button = addButton(row, 1, tr("Add"));
+    BT_CONNECT(button, SIGNAL(clicked()), m_signalMapper, SLOT(map()));
+    m_signalMapper->setMapping(button, row);
+
+    BT_CONNECT(m_signalMapper, SIGNAL(mapped(int)),
+               this, SLOT(slotButtonClicked(int)));
 
     m_sourcesTableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
     m_sourcesTableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-    m_sourcesTableView->setColumnWidth(1, 30);
     m_sourcesTableView->setShowGrid(false);
+
+    calculateButtonColumnWidth();
 }
 
 void BtBookshelfSourcesPage::slotDataChanged() {
@@ -143,24 +180,20 @@ QStringList BtBookshelfSourcesPage::selectedSources() const {
     return sources;
 }
 
-void BtBookshelfSourcesPage::slotItemClicked(const QModelIndex& index) {
-    if (index.column() == 1) {
-
-        auto item1 = m_model->itemFromIndex(index);
-        if (item1->icon().isNull())
-            return;
+void BtBookshelfSourcesPage::slotButtonClicked(int row) {
+    QModelIndex index = m_model->index(row, 1);
+    QWidget *widget = m_sourcesTableView->indexWidget(index);
+    QPushButton *button = qobject_cast<QPushButton*>(widget);
+    QString buttonText = button->text();
+    if (buttonText == m_removeText) {
         auto item0 = m_model->item(index.row(), 0);
         QString source = item0->text();
         deleteRemoteSource(source);
         QStringList saveSources = selectedSources();
         updateSourcesModel();
         selectSourcesInModel(saveSources);
-    }
-    else if (index.column() == 0) {
-        auto item0 = m_model->itemFromIndex(index);
-        if (!item0->isCheckable()) {
-            addNewSource();
-        }
+    } else {
+        addNewSource();
     }
 }
 
