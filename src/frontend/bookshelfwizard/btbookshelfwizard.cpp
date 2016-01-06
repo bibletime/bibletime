@@ -111,3 +111,7 @@ QString BtBookshelfWizard::installPath() const {
     BT_ASSERT(false);
     return QString();
 }
+
+BtBookshelfLanguagesPage * BtBookshelfWizard::languagesPage() {
+    return m_languagesPage;
+}

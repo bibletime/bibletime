@@ -65,6 +65,10 @@ BtBookshelfWizard *BtBookshelfLanguagesPage::btWizard() {
 }
 
 void BtBookshelfLanguagesPage::initializePage() {
+    scrollToFirstSelected();
+    }
+
+void BtBookshelfLanguagesPage::initializeLanguages() {
     QStringList saveLanguages = selectedLanguages();
     if (m_firstTimeInit)
         saveLanguages = loadInitialLanguages();
@@ -74,8 +78,7 @@ void BtBookshelfLanguagesPage::initializePage() {
     QStringList languages = getLanguagesFromSources(sources);
     updateLanguagesModel(languages);
     selectLanguagesInModel(saveLanguages);
-    scrollToFirstSelected();
-    }
+}
 
 QStringList BtBookshelfLanguagesPage::getLanguagesFromSources(
         const QStringList& sources) {
@@ -101,6 +104,8 @@ void BtBookshelfLanguagesPage::updateLanguagesModel(const QStringList& languages
     for (auto lang : sortLanguages) {
         m_model->appendItem(lang);
     }
+    if (sortLanguages.count() == 1)
+        m_model->item(0, 0)->setCheckState(Qt::Checked);
 }
 
 QStringList BtBookshelfLanguagesPage::loadInitialLanguages() {
@@ -130,6 +135,9 @@ void BtBookshelfLanguagesPage::scrollToFirstSelected() {
     }
 }
 
+bool BtBookshelfLanguagesPage::skipPage() const {
+    return m_model->rowCount() == 1;
+}
 void BtBookshelfLanguagesPage::slotDataChanged() {
     emit completeChanged();
 }

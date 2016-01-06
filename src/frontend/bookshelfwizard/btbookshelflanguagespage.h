@@ -27,10 +27,12 @@ class BtBookshelfLanguagesPage: public QWizardPage {
 public:
     BtBookshelfLanguagesPage(QWidget *parent = 0);
 
+    void initializeLanguages();
     void initializePage();
     bool isComplete() const;
     int nextId() const;
     QStringList selectedLanguages() const;
+    bool skipPage() const;
 
 private slots:
     void slotDataChanged();

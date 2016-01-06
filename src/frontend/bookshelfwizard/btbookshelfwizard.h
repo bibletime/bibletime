@@ -41,6 +41,7 @@ class BtBookshelfWizard: public QWizard {
         BtModuleSet selectedWorks() const;
         WizardTaskType taskType() const;
         QString installPath() const;
+        BtBookshelfLanguagesPage * languagesPage();
 
 public slots:
         void accept();

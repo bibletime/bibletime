@@ -44,6 +44,7 @@ private slots:
 private:
     QPushButton * addButton(int row, int column, const QString& text);
     void addNewSource();
+    BtBookshelfWizard *btWizard() const;
     void calculateButtonColumnWidth();
     void createSourcesModel();
     void deleteRemoteSource(const QString& source);

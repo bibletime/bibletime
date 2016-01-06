@@ -13,6 +13,8 @@
 #include "backend/models/btlistmodel.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
+#include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
+#include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 #include "util/btconnect.h"
 
@@ -86,6 +88,9 @@ void BtBookshelfSourcesPage::retranslateUi() {
 }
 
 int BtBookshelfSourcesPage::nextId() const {
+    btWizard()->languagesPage()->initializeLanguages();
+    if (btWizard()->languagesPage()->skipPage())
+        return WizardPage::installWorksPage;
     return WizardPage::languagesPage;
 }
 
@@ -284,4 +289,9 @@ void BtBookshelfSourcesPage::updateRemoteLibraryWorks(QProgressDialog* dlg) {
         }
     }
 }
+
+BtBookshelfWizard *BtBookshelfSourcesPage::btWizard() const {
+    return qobject_cast<BtBookshelfWizard*>(wizard());
+}
+
 
