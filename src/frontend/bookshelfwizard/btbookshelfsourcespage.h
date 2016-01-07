@@ -19,7 +19,6 @@
 class BtBookshelfWizard;
 class BtInstallMgr;
 class BtListModel;
-class QProgressDialog;
 class QPushButton;
 class QSignalMapper;
 class QTableView;
@@ -53,9 +52,6 @@ private:
     void selectSourcesInModel(const QStringList& sources);
     void setupUi();
     void updateSourcesModel();
-    void updateRemoteLibraries();
-    void updateRemoteLibrariesList();
-    void updateRemoteLibraryWorks(QProgressDialog* dlg);
     void updateRemoteSources();
     void updateRemoteWorks();
 
@@ -63,7 +59,6 @@ private:
     QTableView *m_sourcesTableView;
     QVBoxLayout *m_verticalLayout;
     BtListModel *m_model;
-    QProgressDialog* m_progressDialog;
     BtInstallMgr* m_currentInstallMgr;
     QSignalMapper *m_signalMapper;
 

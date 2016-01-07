@@ -14,6 +14,7 @@
 
 enum WizardPage {
     taskPage = 0,
+    sourcesProgressPage,
     sourcesPage,
     languagesPage,
     installWorksPage,

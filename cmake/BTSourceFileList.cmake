@@ -17,6 +17,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/btinstallbackend.cpp
     src/backend/btinstallmgr.cpp
     src/backend/btinstallthread.cpp
+    src/backend/btsourcesthread.cpp
     src/backend/btbookmarksmodel.cpp
     src/backend/btglobal.cpp
     src/backend/btprinter.cpp
@@ -157,6 +158,8 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
     src/frontend/bookshelfwizard/btbookshelflanguagespage.h
     src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp
     src/frontend/bookshelfwizard/btbookshelfsourcespage.h
+    src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp
+    src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h
 )
 
 SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD})
@@ -334,6 +337,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/models/btlistmodel.h
     src/backend/btinstallmgr.h
     src/backend/btinstallthread.h
+    src/backend/btsourcesthread.h
     src/backend/btbookmarksmodel.h
     src/backend/btprinter.h
 )
@@ -364,6 +368,7 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookshelfwizard/btbookshelfworkspage.h
     src/frontend/bookshelfwizard/btbookshelflanguagespage.h
     src/frontend/bookshelfwizard/btbookshelfsourcespage.h
+    src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h
     src/frontend/btaboutdialog.h
     src/frontend/btaboutmoduledialog.h
     src/frontend/btbookshelfdockwidget.h

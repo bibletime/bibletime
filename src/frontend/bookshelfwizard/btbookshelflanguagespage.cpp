@@ -25,7 +25,7 @@
 
 namespace {
 const QString LanguagesKey = "GUI/BookshelfWizard/languages";
-} // anonymous namespace
+}
 
 BtBookshelfLanguagesPage::BtBookshelfLanguagesPage(QWidget *parent)
     : QWizardPage(parent),
@@ -33,7 +33,6 @@ BtBookshelfLanguagesPage::BtBookshelfLanguagesPage(QWidget *parent)
 
     setupUi();
     createLanguagesModel();
-    retranslateUi();
 }
 
 void BtBookshelfLanguagesPage::setupUi() {
@@ -65,19 +64,20 @@ BtBookshelfWizard *BtBookshelfLanguagesPage::btWizard() {
 }
 
 void BtBookshelfLanguagesPage::initializePage() {
-    scrollToFirstSelected();
-    }
-
-void BtBookshelfLanguagesPage::initializeLanguages() {
     QStringList saveLanguages = selectedLanguages();
     if (m_firstTimeInit)
         saveLanguages = loadInitialLanguages();
     m_firstTimeInit = false;
+    selectLanguagesInModel(saveLanguages);
+    scrollToFirstSelected();
+    retranslateUi();
+}
+
+void BtBookshelfLanguagesPage::initializeLanguages() {
 
     QStringList sources = btWizard()->selectedSources();
     QStringList languages = getLanguagesFromSources(sources);
     updateLanguagesModel(languages);
-    selectLanguagesInModel(saveLanguages);
 }
 
 QStringList BtBookshelfLanguagesPage::getLanguagesFromSources(

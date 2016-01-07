@@ -21,6 +21,7 @@ class BtBookshelfWorksPage;
 class BtBookshelfLanguagesPage;
 class BtBookshelfRemoveFinalPage;
 class BtBookshelfSourcesPage;
+class BtBookshelfSourcesProgressPage;
 class BtBookshelfTaskPage;
 class BtBookshelfUpdatePage;
 class BtBookshelfInstallFinalPage;
@@ -55,6 +56,7 @@ public slots:
         void saveSettings() const;
 
         BtBookshelfTaskPage *m_taskPage;
+        BtBookshelfSourcesProgressPage *m_sourcesProgressPage;
         BtBookshelfSourcesPage *m_sourcesPage;
         BtBookshelfLanguagesPage *m_languagesPage;
         BtBookshelfWorksPage *m_installWorksPage;

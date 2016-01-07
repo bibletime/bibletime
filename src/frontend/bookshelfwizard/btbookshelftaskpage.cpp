@@ -7,14 +7,21 @@
 *
 **********/
 
+#include "backend/config/btconfig.h"
 #include "frontend/bookshelfwizard/btbookshelftaskpage.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 
 #include <QApplication>
+#include <QDate>
 #include <QGroupBox>
 #include <QLabel>
 #include <QRadioButton>
 #include <QVBoxLayout>
+
+namespace {
+const QString lastUpdate = "GUI/BookshelfWizard/lastUpdate";
+}
+
 
 BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget *parent)
     : QWizardPage(parent) {
@@ -90,9 +97,22 @@ void BtBookshelfTaskPage::retranslateUi()
 
 }
 
+static bool timeToUpdate() {
+    QDate lastDate = btConfig().value<QDate>(lastUpdate);
+    if (!lastDate.isValid())
+        return true;
+    if (QDate::currentDate().toJulianDay() - lastDate.toJulianDay() > 7)
+        return true;
+    return false;
+}
+
 int BtBookshelfTaskPage::nextId() const {
-    if (m_installRadioButton->isChecked())
+    if (m_installRadioButton->isChecked()) {
+        if (timeToUpdate()) {
+            return WizardPage::sourcesProgressPage;
+        }
         return WizardPage::sourcesPage;
+    }
     if (m_updateRadioButton->isChecked())
         return WizardPage::updateWorksPage;
     if (m_removeRadioButton->isChecked())

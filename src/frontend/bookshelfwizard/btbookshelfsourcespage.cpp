@@ -47,7 +47,6 @@ BtBookshelfSourcesPage::BtBookshelfSourcesPage(QWidget *parent)
 
     setupUi();
     createSourcesModel();
-    retranslateUi();
 }
 
 void BtBookshelfSourcesPage::setupUi() {
@@ -95,7 +94,6 @@ int BtBookshelfSourcesPage::nextId() const {
 }
 
 void BtBookshelfSourcesPage::initializePage() {
-    updateRemoteLibraries();
     QStringList saveSources = selectedSources();
     if (m_firstTimeInit)
         saveSources = loadInitialSources();
@@ -103,6 +101,7 @@ void BtBookshelfSourcesPage::initializePage() {
 
     updateSourcesModel();
     selectSourcesInModel(saveSources);
+    retranslateUi();
 }
 
 QStringList BtBookshelfSourcesPage::loadInitialSources() {
@@ -211,15 +210,6 @@ void BtBookshelfSourcesPage::deleteRemoteSource(const QString& source) {
     BtInstallBackend::deleteSource(QString(source));
 }
 
-static bool timeToUpdate() {
-    QDate lastDate = btConfig().value<QDate>(lastUpdate);
-    if (!lastDate.isValid())
-        return true;
-    if (QDate::currentDate().toJulianDay() - lastDate.toJulianDay() > 7)
-        return true;
-    return false;
-}
-
 void BtBookshelfSourcesPage::addNewSource() {
 
     CSwordSetupInstallSourcesDialog dlg;
@@ -236,58 +226,6 @@ void BtBookshelfSourcesPage::addNewSource() {
         BtInstallBackend::addSource(newSource);
     updateSourcesModel();
     selectSourcesInModel(saveSources);
-}
-
-void BtBookshelfSourcesPage::updateRemoteLibraries() {
-    if (!timeToUpdate())
-        return;
-
-    QProgressDialog dlg("", tr("Cancel"), 0 , 100, this);
-    dlg.setWindowModality(Qt::WindowModal);
-    dlg.setWindowTitle(tr("Updating Remote Libraries"));
-    dlg.setMinimumWidth(450);
-
-    dlg.setValue(0);
-    dlg.setLabelText(tr("Getting Library List"));
-    updateRemoteLibrariesList();
-
-    if (dlg.wasCanceled())
-        return;
-
-    updateRemoteLibraryWorks(&dlg);
-    dlg.setValue(100);
-    btConfig().setValue<QDate>(lastUpdate,QDate::currentDate());
-}
-
-void BtBookshelfSourcesPage::updateRemoteLibrariesList() {
-    BtInstallMgr iMgr;
-    int ret = iMgr.refreshRemoteSourceConfiguration();
-    if (ret ) {
-        qWarning("InstallMgr: getting remote list returned an error.");
-    }
-}
-
-void BtBookshelfSourcesPage::updateRemoteLibraryWorks(QProgressDialog* dlg) {
-    QStringList sourceNames = BtInstallBackend::sourceNameList();
-    BtInstallMgr iMgr;
-    int sourceCount = sourceNames.count();
-    for (int i=0; i<sourceCount; ++i) {
-        if (dlg->wasCanceled())
-            return;
-        QString sourceName = sourceNames.at(i);
-        int percent = 10 + 90 *((double)i/sourceCount);
-        QString label = tr("Updating remote library") + " \"" + sourceName +"\"";
-        dlg->setValue(percent);
-        dlg->setLabelText(label);
-        sword::InstallSource source = BtInstallBackend::source(sourceName);
-        bool result = (iMgr.refreshRemoteSource(&source) == 0);
-        if (result) {
-            ;
-        } else {
-            QString error = QString(tr("Failed to refresh source %1")).arg(sourceName);
-            //            qWarning(error);
-        }
-    }
 }
 
 BtBookshelfWizard *BtBookshelfSourcesPage::btWizard() const {

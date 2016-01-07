@@ -13,6 +13,7 @@
 #include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
 #include "frontend/bookshelfwizard/btbookshelfremovefinalpage.h"
 #include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
+#include "frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h"
 #include "frontend/bookshelfwizard/btbookshelftaskpage.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
@@ -30,6 +31,7 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget *parent,
                                      Qt::WindowFlags flags)
     : QWizard(parent, flags),
       m_taskPage(new BtBookshelfTaskPage),
+      m_sourcesProgressPage(new BtBookshelfSourcesProgressPage),
       m_sourcesPage(new BtBookshelfSourcesPage),
       m_languagesPage(new BtBookshelfLanguagesPage),
       m_installWorksPage(new BtBookshelfWorksPage(WizardTaskType::installWorks)),
@@ -39,6 +41,7 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget *parent,
       m_installFinalPage(new BtBookshelfInstallFinalPage)  // For install and update
 {
     addPage(m_taskPage);
+    addPage(m_sourcesProgressPage);
     addPage(m_sourcesPage);
     addPage(m_languagesPage);
     addPage(m_installWorksPage);
@@ -51,6 +54,7 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget *parent,
     rect.setWidth(780);
     setGeometry(rect);
     setOption(QWizard::NoCancelButtonOnLastPage);
+    setOption(QWizard::NoBackButtonOnLastPage);
 
     retranslateUi();
     loadWizardGeometry();
@@ -69,7 +73,7 @@ QStringList BtBookshelfWizard::selectedLanguages() const {
 }
 
 void BtBookshelfWizard::accept() {
-    if (currentPage() == m_installWorksPage)
+    if (currentPage() == m_installFinalPage)
         saveSettings();
 
     saveWizardGeometry();

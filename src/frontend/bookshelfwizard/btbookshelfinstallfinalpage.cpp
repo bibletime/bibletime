@@ -15,6 +15,7 @@
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "util/btconnect.h"
 
+#include <QApplication>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QProgressBar>
@@ -37,7 +38,6 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(
 
     setupUi();
     initConnections();
-    retranslateUi();
 }
 
 void BtBookshelfInstallFinalPage::setupUi() {
@@ -83,6 +83,19 @@ void BtBookshelfInstallFinalPage::initConnections() {
 void BtBookshelfInstallFinalPage::retranslateUi() {
     m_stopButton->setText(tr("Stop"));
 
+    if (btWizard() && btWizard()->taskType() == WizardTaskType::updateWorks) {
+        setTitle(QApplication::translate(
+                     "BookshelfWizard", "Updating Works", 0));
+        setSubTitle(QApplication::translate(
+                        "BookshelfWizard",
+                        "The selected works are being updated.", 0));
+    } else {
+        setTitle(QApplication::translate(
+                     "BookshelfWizard", "Installing Works", 0));
+        setSubTitle(QApplication::translate(
+                        "BookshelfWizard",
+                        "The selected works are being installed.", 0));
+    }
 }
 
 int BtBookshelfInstallFinalPage::nextId() const {
@@ -91,6 +104,7 @@ int BtBookshelfInstallFinalPage::nextId() const {
 
 void BtBookshelfInstallFinalPage::initializePage() {
     installWorks();
+    retranslateUi();
     m_installCompleted = false;
 }
 

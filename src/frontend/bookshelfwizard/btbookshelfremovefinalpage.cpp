@@ -30,7 +30,6 @@ BtBookshelfRemoveFinalPage::BtBookshelfRemoveFinalPage(
       m_verticalLayout(nullptr) {
 
     setupUi();
-    retranslateUi();
 }
 
 void BtBookshelfRemoveFinalPage::setupUi() {
@@ -60,6 +59,7 @@ BtBookshelfWizard *BtBookshelfRemoveFinalPage::btWizard() {
 
 void BtBookshelfRemoveFinalPage::initializePage() {
     removeWorks();
+    retranslateUi();
 }
 
 bool BtBookshelfRemoveFinalPage::isComplete() const {
