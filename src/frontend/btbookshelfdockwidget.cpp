@@ -105,7 +105,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
                SIGNAL(rowsRemoved(QModelIndex const &, int, int)),
                this, SLOT(slotModulesChanged()));
     BT_CONNECT(m_installButton,       SIGNAL(clicked()),
-               BibleTime::instance(), SLOT(slotSwordSetupDialog()));
+               BibleTime::instance(), SLOT(slotBookshelfWizard()));
 
     retranslateUi();
 }
