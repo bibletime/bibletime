@@ -110,6 +110,9 @@ void BtBookshelfLanguagesPage::updateLanguagesModel(const QStringList& languages
 
 QStringList BtBookshelfLanguagesPage::loadInitialLanguages() {
     QStringList languages = btConfig().value<QStringList>(LanguagesKey,QStringList());
+    if (languages.isEmpty()) {
+        languages << tr("English");
+    }
     return languages;
 }
 

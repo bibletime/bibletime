@@ -92,7 +92,7 @@ void BibleTime::slotSwordSetupDialog() {
 
 /** Opens the bookshelf wizard. */
 void BibleTime::slotBookshelfWizard() {
-    BtBookshelfWizard dlg;
+    BtBookshelfWizard dlg(BibleTime::instance());
     dlg.exec();
 }
 

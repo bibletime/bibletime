@@ -99,9 +99,12 @@ void BtBookshelfSourcesPage::initializePage() {
         saveSources = loadInitialSources();
     m_firstTimeInit = false;
 
+    // Do before updating models to get correct
+    // column width for buttons
+    retranslateUi();
+
     updateSourcesModel();
     selectSourcesInModel(saveSources);
-    retranslateUi();
 }
 
 QStringList BtBookshelfSourcesPage::loadInitialSources() {
