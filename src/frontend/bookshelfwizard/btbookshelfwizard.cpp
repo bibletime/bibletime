@@ -54,7 +54,6 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget *parent,
     rect.setWidth(780);
     rect.setHeight(600);
     setGeometry(rect);
-    setOption(QWizard::NoCancelButtonOnLastPage);
     setOption(QWizard::NoBackButtonOnLastPage);
 
     retranslateUi();
