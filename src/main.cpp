@@ -15,11 +15,13 @@
 #include <QLocale>
 #include <QTextCodec>
 #include <QTranslator>
+#include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/btconfig.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "frontend/welcome/btwelcomedialog.h"
 #include "util/directory.h"
 
 
@@ -305,7 +307,10 @@ int main(int argc, char* argv[]) {
     // The following must be done after the bibletime window is visible:
     mainWindow->processCommandline(ignoreSession, openBibleKey);
 
-    if (btConfig().value<bool>("GUI/showTipAtStartup", true))
+    BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
+    if (bookshelfModel->moduleList().empty())
+        BtWelcomeDialog::openWelcome();
+    else if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
     return app.exec();
