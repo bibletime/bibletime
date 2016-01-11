@@ -12,58 +12,61 @@
 #ifndef BTBOOKSHELFWIZARD_H
 #define BTBOOKSHELFWIZARD_H
 
-#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 #include <QWizard>
+
 #include <QStringList>
+#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
+#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+
 
 class BtBookshelfWorksPage;
+class BtBookshelfInstallFinalPage;
 class BtBookshelfLanguagesPage;
 class BtBookshelfRemoveFinalPage;
 class BtBookshelfSourcesPage;
 class BtBookshelfSourcesProgressPage;
 class BtBookshelfTaskPage;
 class BtBookshelfUpdatePage;
-class BtBookshelfInstallFinalPage;
 class BtModuleSet;
 
-/**
-* The Bookshelf Manager wizard.
-*/
+/** \brief The Bookshelf Manager wizard. */
 class BtBookshelfWizard: public QWizard {
 
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        BtBookshelfWizard(QWidget *parent = nullptr, Qt::WindowFlags flags = 0);
+public: /* Methods: */
 
-        QStringList selectedSources() const;
-        QStringList selectedLanguages() const;
-        BtModuleSet selectedWorks() const;
-        WizardTaskType taskType() const;
-        QString installPath() const;
-        BtBookshelfLanguagesPage * languagesPage();
+    BtBookshelfWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = 0);
+
+    QStringList selectedSources() const;
+    QStringList selectedLanguages() const;
+    BtModuleSet selectedWorks() const;
+    WizardTaskType taskType() const;
+    QString installPath() const;
+
+    BtBookshelfLanguagesPage & languagesPage() const noexcept
+    { return *m_languagesPage; }
 
 public slots:
-        void accept();
 
-    private:
-        void retranslateUi();
+    void accept();
 
-        void loadWizardGeometry();
+private: /* Methods: */
 
-        void saveWizardGeometry() const;
-        void saveSettings() const;
+    void retranslateUi();
 
-        BtBookshelfTaskPage *m_taskPage;
-        BtBookshelfSourcesProgressPage *m_sourcesProgressPage;
-        BtBookshelfSourcesPage *m_sourcesPage;
-        BtBookshelfLanguagesPage *m_languagesPage;
-        BtBookshelfWorksPage *m_installWorksPage;
-        BtBookshelfWorksPage *m_updateWorksPage;
-        BtBookshelfWorksPage *m_removeWorksPage;
-        BtBookshelfRemoveFinalPage *m_removeFinalPage;
-        BtBookshelfInstallFinalPage *m_installFinalPage;
-};
+private: /* Fields: */
+
+    BtBookshelfTaskPage * m_taskPage;
+    BtBookshelfSourcesProgressPage * m_sourcesProgressPage;
+    BtBookshelfSourcesPage * m_sourcesPage;
+    BtBookshelfLanguagesPage * m_languagesPage;
+    BtBookshelfWorksPage * m_installWorksPage;
+    BtBookshelfWorksPage * m_updateWorksPage;
+    BtBookshelfWorksPage * m_removeWorksPage;
+    BtBookshelfRemoveFinalPage * m_removeFinalPage;
+    BtBookshelfInstallFinalPage * m_installFinalPage;
+
+}; /* class BtBookshelfWizard */
 
 #endif

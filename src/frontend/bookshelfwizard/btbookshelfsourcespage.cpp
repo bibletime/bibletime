@@ -87,10 +87,11 @@ void BtBookshelfSourcesPage::retranslateUi() {
 }
 
 int BtBookshelfSourcesPage::nextId() const {
-    btWizard()->languagesPage()->initializeLanguages();
-    if (btWizard()->languagesPage()->skipPage())
-        return WizardPage::installWorksPage;
-    return WizardPage::languagesPage;
+    auto & languagesPage = btWizard()->languagesPage();
+    languagesPage.initializeLanguages();
+    return languagesPage.skipPage()
+           ? WizardPage::installWorksPage
+           : WizardPage::languagesPage;
 }
 
 void BtBookshelfSourcesPage::initializePage() {
