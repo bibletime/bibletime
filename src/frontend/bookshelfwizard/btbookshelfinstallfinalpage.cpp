@@ -84,16 +84,16 @@ void BtBookshelfInstallFinalPage::retranslateUi() {
 
     if (W.taskType() == WizardTaskType::updateWorks) {
         setTitle(QApplication::translate(
-                     "BookshelfWizard", "Updating Works", 0));
+                     "BookshelfWizard", "Updating Works"));
         setSubTitle(QApplication::translate(
                         "BookshelfWizard",
-                        "The selected works are being updated.", 0));
+                        "The selected works are being updated."));
     } else {
         setTitle(QApplication::translate(
-                     "BookshelfWizard", "Installing Works", 0));
+                     "BookshelfWizard", "Installing Works"));
         setSubTitle(QApplication::translate(
                         "BookshelfWizard",
-                        "The selected works are being installed.", 0));
+                        "The selected works are being installed."));
     }
 }
 
