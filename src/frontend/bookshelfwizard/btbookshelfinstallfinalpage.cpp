@@ -161,6 +161,7 @@ void BtBookshelfInstallFinalPage::slotOneItemCompleted(int moduleIndex,
 
 void BtBookshelfInstallFinalPage::slotThreadFinished() {
     m_progressBar->setValue(100);
+    m_stopButton->setEnabled(false);
     if (m_installFailed.load(std::memory_order_acquire)) {
         m_msgLabel->setText(tr("Some of the selected works were not "
                                "installed."));
