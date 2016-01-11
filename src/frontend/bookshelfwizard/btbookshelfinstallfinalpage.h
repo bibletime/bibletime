@@ -50,10 +50,6 @@ private slots:
 
 private: /* Methods: */
 
-    BtBookshelfWizard * btWizard();
-    void installWorks();
-    bool moduleIsInstalled(CSwordModuleInfo const * mInfo);
-    void removeWorks();
     void retranslateUi();
 
 private: /* Fields: */
@@ -65,10 +61,10 @@ private: /* Fields: */
     QVBoxLayout * m_verticalLayout;
 
     std::atomic<bool> m_installFailed;
+    std::atomic<bool> m_installCompleted;
 
     QList<CSwordModuleInfo *> m_modules;
     int m_lastStatus;
-    bool m_installCompleted;
 
 }; /* class BtBookshelfInstallFinalPage */
 

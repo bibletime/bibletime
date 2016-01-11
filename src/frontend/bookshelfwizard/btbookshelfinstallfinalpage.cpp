@@ -71,10 +71,18 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
                this,         &BtBookshelfInstallFinalPage::slotStopInstall);
 }
 
+#define W \
+    [](BtBookshelfInstallFinalPage * const p) noexcept -> BtBookshelfWizard & {\
+        BtBookshelfWizard * const w =  \
+                qobject_cast<BtBookshelfWizard *>(p->wizard()); \
+        BT_ASSERT(w); \
+        return *w; \
+    }(this)
+
 void BtBookshelfInstallFinalPage::retranslateUi() {
     m_stopButton->setText(tr("Stop"));
 
-    if (btWizard() && btWizard()->taskType() == WizardTaskType::updateWorks) {
+    if (W.taskType() == WizardTaskType::updateWorks) {
         setTitle(QApplication::translate(
                      "BookshelfWizard", "Updating Works", 0));
         setSubTitle(QApplication::translate(
@@ -92,21 +100,12 @@ void BtBookshelfInstallFinalPage::retranslateUi() {
 int BtBookshelfInstallFinalPage::nextId() const { return -1; }
 
 void BtBookshelfInstallFinalPage::initializePage() {
-    installWorks();
     retranslateUi();
-    m_installCompleted = false;
-}
 
-bool BtBookshelfInstallFinalPage::isComplete() const
-{ return m_installCompleted; }
-
-BtBookshelfWizard *BtBookshelfInstallFinalPage::btWizard()
-{ return qobject_cast<BtBookshelfWizard *>(wizard()); }
-
-void BtBookshelfInstallFinalPage::installWorks() {
-    m_modules = btWizard()->selectedWorks().toList();
-    m_thread = new BtInstallThread(m_modules, btWizard()->installPath(), this);
-
+    // Install works:
+    auto const & btWizard = W;
+    m_modules = btWizard.selectedWorks().toList();
+    m_thread = new BtInstallThread(m_modules, btWizard.installPath(), this);
     BT_CONNECT(m_thread, &BtInstallThread::preparingInstall,
                this,     &BtBookshelfInstallFinalPage::slotInstallStarted,
                Qt::QueuedConnection);
@@ -119,12 +118,15 @@ void BtBookshelfInstallFinalPage::installWorks() {
     BT_CONNECT(m_thread, &BtInstallThread::finished,
                this,     &BtBookshelfInstallFinalPage::slotThreadFinished,
                Qt::QueuedConnection);
-
     m_progressBar->setValue(0);
     m_stopButton->setEnabled(true);
     m_installFailed.store(false, std::memory_order_release);
+    m_installCompleted.store(false, std::memory_order_relaxed);
     m_thread->start();
 }
+
+bool BtBookshelfInstallFinalPage::isComplete() const
+{ return m_installCompleted.load(std::memory_order_acquire); }
 
 void BtBookshelfInstallFinalPage::slotStopInstall() {
     m_stopButton->setDisabled(true);
@@ -172,6 +174,6 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
 
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
 
-    m_installCompleted = true;
+    m_installCompleted.store(true, std::memory_order_release);
     emit QWizardPage::completeChanged();
 }
