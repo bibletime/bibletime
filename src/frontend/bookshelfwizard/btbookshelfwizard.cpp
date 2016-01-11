@@ -64,8 +64,7 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget * parent, Qt::WindowFlags flags)
 
 void BtBookshelfWizard::retranslateUi() {
     setWindowTitle(QApplication::translate("BookshelfWizard",
-                                           "Bookshelf Manager",
-                                           0));
+                                           "Bookshelf Manager"));
 }
 
 QStringList BtBookshelfWizard::selectedSources() const
