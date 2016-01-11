@@ -60,11 +60,6 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
             WindowType() {
                 keyChooser = nullptr;
                 actionCollection = nullptr;
-            };
-            WindowType(const QString& newTitle) {
-                title = newTitle;
-                keyChooser = nullptr;
-                actionCollection = nullptr;
             }
         };
 
