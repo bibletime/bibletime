@@ -12,8 +12,10 @@
 #ifndef BTBOOKSHELFLANGUAGESPAGE
 #define BTBOOKSHELFLANGUAGESPAGE
 
-#include <QStringList>
 #include <QWizardPage>
+
+#include <QStringList>
+
 
 class BtBookshelfWizard;
 class BtListModel;
@@ -24,34 +26,32 @@ class BtBookshelfLanguagesPage: public QWizardPage {
 
     Q_OBJECT
 
-public:
-    BtBookshelfLanguagesPage(QWidget *parent = 0);
+public: /* Methods: */
+
+    BtBookshelfLanguagesPage(QWidget * parent = 0);
 
     void initializeLanguages();
     void initializePage();
     bool isComplete() const;
     int nextId() const;
     QStringList selectedLanguages() const;
-    bool skipPage() const;
+    bool skipPage() const noexcept;
 
 private slots:
+
     void slotDataChanged();
 
-private:
-    BtBookshelfWizard *btWizard();
-    void createLanguagesModel();
-    QStringList getLanguagesFromSources(const QStringList& sources);
-    QStringList loadInitialLanguages();
-    void retranslateUi();
-    void scrollToFirstSelected();
-    void selectLanguagesInModel(const QStringList& languages);
-    void setupUi();
-    void updateLanguagesModel(const QStringList& languages);
+private: /* Methods: */
 
-    bool m_firstTimeInit;
-    QListView *m_languagesListView;
-    QVBoxLayout *m_verticalLayout;
-    BtListModel *m_model;
-};
+    void retranslateUi();
+
+private: /* Fields: */
+
+    bool m_firstTimeInit = true;
+    QListView * m_languagesListView;
+    QVBoxLayout * m_verticalLayout;
+    BtListModel * m_model;
+
+}; /* class BtBookshelfLanguagesPage */
 
 #endif
