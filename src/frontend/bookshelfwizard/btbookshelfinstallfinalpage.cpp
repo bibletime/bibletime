@@ -9,45 +9,36 @@
 
 #include "frontend/bookshelfwizard/btbookshelfinstallfinalpage.h"
 
-#include "backend/btinstallbackend.h"
-#include "backend/btinstallthread.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "util/btconnect.h"
-
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "backend/btinstallbackend.h"
+#include "backend/btinstallthread.h"
+#include "frontend/bookshelfwizard/btbookshelfwizard.h"
+#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
+#include "util/btconnect.h"
+
 
 namespace {
-const QString groupingOrderKey ("GUI/BookshelfWizard/InstallPage/grouping");
-const QString installPathKey   ("GUI/BookshelfWizard/InstallPage/installPathIndex");
-}
+QString const groupingOrderKey = "GUI/BookshelfWizard/InstallPage/grouping";
+QString const installPathKey =
+        "GUI/BookshelfWizard/InstallPage/installPathIndex";
+} // anonymous namespace
 
-BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(
-        QWidget *parent)
-    : QWizardPage(parent),
-      m_msgLabel(nullptr),
-      m_progressBar(nullptr),
-      m_stopButton(nullptr),
-      m_verticalLayout(nullptr),
-      m_installFailed(false) {
-
-    setupUi();
-    initConnections();
-}
-
-void BtBookshelfInstallFinalPage::setupUi() {
-
+BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
+    : QWizardPage(parent)
+{
+    // Setup UI:
     m_verticalLayout = new QVBoxLayout(this);
     m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
-    QSpacerItem *verticalSpacer = new QSpacerItem(
-                20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_verticalLayout->addItem(verticalSpacer);
+    m_verticalLayout->addItem(new QSpacerItem(20,
+                                              40,
+                                              QSizePolicy::Minimum,
+                                              QSizePolicy::Expanding));
 
     m_msgLabel = new QLabel(this);
     m_msgLabel->setAlignment(Qt::AlignCenter);
@@ -61,7 +52,7 @@ void BtBookshelfInstallFinalPage::setupUi() {
     m_progressBar->setMaximum(100);
     m_verticalLayout->addWidget(m_progressBar,Qt::AlignCenter);
 
-    QHBoxLayout * horizontalLayout = new QHBoxLayout();
+    QHBoxLayout * const horizontalLayout = new QHBoxLayout();
     m_stopButton = new QPushButton(this);
     horizontalLayout->addSpacerItem(
                 new QSpacerItem(1, 1, QSizePolicy::Expanding));
@@ -70,14 +61,14 @@ void BtBookshelfInstallFinalPage::setupUi() {
                 new QSpacerItem(1, 1, QSizePolicy::Expanding));
     m_verticalLayout->addLayout(horizontalLayout);
 
-    QSpacerItem *verticalSpacer2 = new QSpacerItem(
-                20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_verticalLayout->addItem(verticalSpacer2);
-}
+    m_verticalLayout->addItem(new QSpacerItem(20,
+                                              40,
+                                              QSizePolicy::Minimum,
+                                              QSizePolicy::Expanding));
 
-void BtBookshelfInstallFinalPage::initConnections() {
-    BT_CONNECT(m_stopButton, SIGNAL(clicked()),
-               this,            SLOT(slotStopInstall()));
+    // Initialize connections:
+    BT_CONNECT(m_stopButton, &QPushButton::clicked,
+               this,         &BtBookshelfInstallFinalPage::slotStopInstall);
 }
 
 void BtBookshelfInstallFinalPage::retranslateUi() {
@@ -98,9 +89,7 @@ void BtBookshelfInstallFinalPage::retranslateUi() {
     }
 }
 
-int BtBookshelfInstallFinalPage::nextId() const {
-    return -1;
-}
+int BtBookshelfInstallFinalPage::nextId() const { return -1; }
 
 void BtBookshelfInstallFinalPage::initializePage() {
     installWorks();
@@ -108,85 +97,75 @@ void BtBookshelfInstallFinalPage::initializePage() {
     m_installCompleted = false;
 }
 
-bool BtBookshelfInstallFinalPage::isComplete() const {
-    return m_installCompleted;
-}
+bool BtBookshelfInstallFinalPage::isComplete() const
+{ return m_installCompleted; }
 
-BtBookshelfWizard *BtBookshelfInstallFinalPage::btWizard() {
-    return qobject_cast<BtBookshelfWizard*>(wizard());
-}
+BtBookshelfWizard *BtBookshelfInstallFinalPage::btWizard()
+{ return qobject_cast<BtBookshelfWizard *>(wizard()); }
 
 void BtBookshelfInstallFinalPage::installWorks() {
-
     m_modules = btWizard()->selectedWorks().toList();
-    QString destination = btWizard()->installPath();
-    m_thread = new BtInstallThread(m_modules, destination, this);
+    m_thread = new BtInstallThread(m_modules, btWizard()->installPath(), this);
 
-    BT_CONNECT(m_thread, SIGNAL(preparingInstall(int)),
-               this,     SLOT(slotInstallStarted(int)),
+    BT_CONNECT(m_thread, &BtInstallThread::preparingInstall,
+               this,     &BtBookshelfInstallFinalPage::slotInstallStarted,
                Qt::QueuedConnection);
-    BT_CONNECT(m_thread, SIGNAL(statusUpdated(int, int)),
-               this,     SLOT(slotStatusUpdated(int, int)),
+    BT_CONNECT(m_thread, &BtInstallThread::statusUpdated,
+               this,     &BtBookshelfInstallFinalPage::slotStatusUpdated,
                Qt::QueuedConnection);
-    BT_CONNECT(m_thread, SIGNAL(installCompleted(int, bool)),
-               this,     SLOT(slotOneItemCompleted(int, bool)),
+    BT_CONNECT(m_thread, &BtInstallThread::installCompleted,
+               this,     &BtBookshelfInstallFinalPage::slotOneItemCompleted,
                Qt::QueuedConnection);
-    BT_CONNECT(m_thread, SIGNAL(finished()),
-               this,     SLOT(slotThreadFinished()),
+    BT_CONNECT(m_thread, &BtInstallThread::finished,
+               this,     &BtBookshelfInstallFinalPage::slotThreadFinished,
                Qt::QueuedConnection);
 
     m_progressBar->setValue(0);
     m_stopButton->setEnabled(true);
-    m_installFailed = false;
+    m_installFailed.store(false, std::memory_order_release);
     m_thread->start();
 }
 
 void BtBookshelfInstallFinalPage::slotStopInstall() {
     m_stopButton->setDisabled(true);
     m_thread->stopInstall();
-    m_installFailed = true;
+    m_installFailed.store(true, std::memory_order_release);
 }
 
 void BtBookshelfInstallFinalPage::slotInstallStarted(int moduleIndex) {
-
-    QString name = m_modules.at(moduleIndex)->name();
-    QString msg = QString(tr("Installing")) + " \"" + name + "\"";
-    m_msgLabel->setText(msg);
+    m_msgLabel->setText(
+            tr("Installing \"%1\"").arg(m_modules.at(moduleIndex)->name()));
     m_lastStatus = -1;
 }
 
-void BtBookshelfInstallFinalPage::slotStatusUpdated(int moduleIndex, int status) {
+void BtBookshelfInstallFinalPage::slotStatusUpdated(int moduleIndex, int status)
+{
     // Skip initial high value sent by sword
-    if (m_lastStatus == -1 && status > 80) {
+    if ((m_lastStatus == -1 && status > 80) || (m_lastStatus == status))
         return;
-    }
 
-    if (m_lastStatus == status)
-        return;
     m_lastStatus = status;
 
-    int perModuleIncrement = 100 / m_modules.count();
-    int progress = (moduleIndex * perModuleIncrement) + (status * perModuleIncrement / 100);
-    m_progressBar->setValue(progress);
+    int const perModuleIncrement = 100 / m_modules.count();
+    m_progressBar->setValue((moduleIndex * perModuleIncrement)
+                            + (status * perModuleIncrement / 100));
 }
 
-void BtBookshelfInstallFinalPage::slotOneItemCompleted(int moduleIndex, bool successful) {
-    int progress = (moduleIndex+1)* (100 / m_modules.count());
-    m_progressBar->setValue(progress);
+void BtBookshelfInstallFinalPage::slotOneItemCompleted(int moduleIndex,
+                                                       bool successful)
+{
+    m_progressBar->setValue((moduleIndex + 1) * (100 / m_modules.count()));
     if (!successful)
-        m_installFailed = true;
+        m_installFailed.store(true, std::memory_order_relaxed);
 }
 
 void BtBookshelfInstallFinalPage::slotThreadFinished() {
     m_progressBar->setValue(100);
-    if (m_installFailed) {
-        QString msg = "<b>";
-        msg += QString(tr("Some of the selected works were not installed."));
-        msg += "</b>";
-        m_msgLabel->setText(tr("Some of the selected works were not installed."));
-        m_msgLabel->setStyleSheet("QLabel { color : red }");
-    }
-    else {
+    if (m_installFailed.load(std::memory_order_acquire)) {
+        m_msgLabel->setText(tr("Some of the selected works were not "
+                               "installed."));
+        m_msgLabel->setStyleSheet("QLabel{color:red}");
+    } else {
         m_msgLabel->setText(tr("The selected works have been installed."));
     }
 

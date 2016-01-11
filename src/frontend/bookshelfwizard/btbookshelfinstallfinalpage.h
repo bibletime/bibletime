@@ -12,26 +12,28 @@
 #ifndef BTBOOKSHELFINSTALLFINALPAGE
 #define BTBOOKSHELFINSTALLFINALPAGE
 
+#include <QWizardPage>
+
+#include <atomic>
+#include <QList>
 #include "backend/drivers/btmoduleset.h"
 
-#include <QList>
-#include <QWizardPage>
 
 class BtBookshelfWizard;
 class BtInstallThread;
-class QSwordModuleInfo;
 class QLabel;
 class QProgressBar;
 class QPushButton;
+class QSwordModuleInfo;
 class QVBoxLayout;
 
 class BtBookshelfInstallFinalPage: public QWizardPage {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
 
-    BtBookshelfInstallFinalPage(QWidget *parent = 0);
+    BtBookshelfInstallFinalPage(QWidget * parent = 0);
 
     void initializePage();
     bool isComplete() const;
@@ -39,31 +41,35 @@ public:
     BtModuleSet selectedWorks() const;
 
 private slots:
+
     void slotInstallStarted(int moduleIndex);
     void slotOneItemCompleted(int moduleIndex, bool status);
     void slotStatusUpdated(int moduleIndex, int status);
     void slotStopInstall();
     void slotThreadFinished();
 
-private:
-    BtBookshelfWizard *btWizard();
-    void initConnections();
+private: /* Methods: */
+
+    BtBookshelfWizard * btWizard();
     void installWorks();
-    bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
+    bool moduleIsInstalled(CSwordModuleInfo const * mInfo);
     void removeWorks();
     void retranslateUi();
-    void setupUi();
 
-    QLabel *m_msgLabel;
-    QProgressBar *m_progressBar;
-    QPushButton *m_stopButton;
-    BtInstallThread *m_thread;
-    QVBoxLayout *m_verticalLayout;
+private: /* Fields: */
 
-    bool m_installFailed;
+    QLabel * m_msgLabel;
+    QProgressBar * m_progressBar;
+    QPushButton * m_stopButton;
+    BtInstallThread * m_thread;
+    QVBoxLayout * m_verticalLayout;
 
-    QList<CSwordModuleInfo*> m_modules;
+    std::atomic<bool> m_installFailed;
+
+    QList<CSwordModuleInfo *> m_modules;
     int m_lastStatus;
     bool m_installCompleted;
-};
+
+}; /* class BtBookshelfInstallFinalPage */
+
 #endif
