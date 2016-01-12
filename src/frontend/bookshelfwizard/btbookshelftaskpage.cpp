@@ -9,7 +9,6 @@
 
 #include "backend/config/btconfig.h"
 #include "frontend/bookshelfwizard/btbookshelftaskpage.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 
 #include <QApplication>
 #include <QDate>
@@ -18,87 +17,94 @@
 #include <QRadioButton>
 #include <QVBoxLayout>
 
+
 namespace {
-const QString lastUpdate = "GUI/BookshelfWizard/lastUpdate";
-}
+QString const lastUpdate = "GUI/BookshelfWizard/lastUpdate";
+} // anonymous namespace
 
 
-BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget *parent)
-    : BtBookshelfWizardPage(parent) {
-
-    setupUi();
-    retranslateUi();
-}
-
-void BtBookshelfTaskPage::setupUi() {
-
+BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)
+    : BtBookshelfWizardPage(parent)
+{
     m_verticalLayout = new QVBoxLayout(this);
     m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     m_warningLabel = new QLabel(this);
     m_warningLabel->setObjectName(QStringLiteral("warningLabel"));
     m_warningLabel->setWordWrap(true);
+
     m_verticalLayout->addWidget(m_warningLabel);
+    m_verticalLayout->addItem(
+        new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
-    QSpacerItem *verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_verticalLayout->addItem(verticalSpacer);
+    m_groupBox = new QGroupBox(this);
+    { // Setup radio buttons:
+        QVBoxLayout * const vLayout = new QVBoxLayout(m_groupBox);
+        vLayout->setObjectName(QStringLiteral("verticalLayout2"));
 
-    setupRadioButtons();
+        m_installRadioButton = new QRadioButton(m_groupBox);
+        m_installRadioButton->setObjectName(
+                QStringLiteral("installRadioButton"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(
+                m_installRadioButton->sizePolicy().hasHeightForWidth());
+        m_installRadioButton->setSizePolicy(sizePolicy);
+        m_installRadioButton->setChecked(true);
+        vLayout->addWidget(m_installRadioButton);
 
-    QSpacerItem *verticalSpacer2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_verticalLayout->addItem(verticalSpacer2);
+        m_updateRadioButton = new QRadioButton(m_groupBox);
+        m_updateRadioButton->setObjectName(QStringLiteral("updateRadioButton"));
+        sizePolicy.setHeightForWidth(
+                m_updateRadioButton->sizePolicy().hasHeightForWidth());
+        m_updateRadioButton->setSizePolicy(sizePolicy);
+        vLayout->addWidget(m_updateRadioButton);
 
+        m_removeRadioButton = new QRadioButton(m_groupBox);
+        m_removeRadioButton->setObjectName(QStringLiteral("removeRadioButton"));
+        vLayout->addWidget(m_removeRadioButton);
+    }
+    m_verticalLayout->addWidget(m_groupBox);
+
+    m_verticalLayout->addItem(
+        new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
     m_verticalLayout->setStretch(0, 1);
     m_verticalLayout->setStretch(1, 1);
     m_verticalLayout->setStretch(2, 1);
     m_verticalLayout->setStretch(3, 3);
+
+    retranslateUi();
 }
 
-void BtBookshelfTaskPage::setupRadioButtons() {
-
-    m_groupBox = new QGroupBox(this);
-
-    QVBoxLayout *verticalLayout2 = new QVBoxLayout(m_groupBox);
-    verticalLayout2->setObjectName(QStringLiteral("verticalLayout2"));
-
-    m_installRadioButton = new QRadioButton(m_groupBox);
-    m_installRadioButton->setObjectName(QStringLiteral("installRadioButton"));
-    QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
-    sizePolicy.setHorizontalStretch(0);
-    sizePolicy.setVerticalStretch(0);
-    sizePolicy.setHeightForWidth(m_installRadioButton->sizePolicy().hasHeightForWidth());
-    m_installRadioButton->setSizePolicy(sizePolicy);
-    m_installRadioButton->setChecked(true);
-    verticalLayout2->addWidget(m_installRadioButton);
-
-    m_updateRadioButton = new QRadioButton(m_groupBox);
-    m_updateRadioButton->setObjectName(QStringLiteral("updateRadioButton"));
-    sizePolicy.setHeightForWidth(m_updateRadioButton->sizePolicy().hasHeightForWidth());
-    m_updateRadioButton->setSizePolicy(sizePolicy);
-    verticalLayout2->addWidget(m_updateRadioButton);
-
-    m_removeRadioButton = new QRadioButton(m_groupBox);
-    m_removeRadioButton->setObjectName(QStringLiteral("removeRadioButton"));
-    verticalLayout2->addWidget(m_removeRadioButton);
-
-    m_verticalLayout->addWidget(m_groupBox);
-}
-
-void BtBookshelfTaskPage::retranslateUi()
-{
-    setTitle(QApplication::translate("BookshelfWizard", "Bookshelf Management", 0));
-    setSubTitle(QApplication::translate("BookshelfWizard", "Manage works in your bookshelf.", 0));
-    m_warningLabel->setText(QApplication::translate("BookshelfWizard",
-                                                    "<html><head/><body><p><span style=\" font-weight:600;\">WARNING</span>: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.</p></body></html>", 0));
-    m_groupBox->setTitle(QApplication::translate("BookshelfWizard", "Bookshelf task", 0));
-    m_installRadioButton->setText(QApplication::translate("BookshelfWizard", "Install additional works (uses internet)", 0));
-    m_updateRadioButton->setText(QApplication::translate("BookshelfWizard", "Update installed works (uses internet)", 0));
-    m_removeRadioButton->setText(QApplication::translate("BookshelfWizard", "Remove installed works", 0));
-
+void BtBookshelfTaskPage::retranslateUi() {
+    setTitle(QApplication::translate("BookshelfWizard",
+                                     "Bookshelf Management"));
+    setSubTitle(QApplication::translate("BookshelfWizard",
+                                        "Manage works in your bookshelf."));
+    m_warningLabel->setText(
+            QApplication::translate(
+                    "BookshelfWizard",
+                    "<html><head/><body><p><span style=\" font-weight:600;\">"
+                    "WARNING</span>: Installing or updating works uses the "
+                    "internet. If you live in a persecuted country you may not "
+                    "want to do this.</p></body></html>"));
+    m_groupBox->setTitle(QApplication::translate("BookshelfWizard",
+                                                 "Bookshelf task"));
+    m_installRadioButton->setText(
+            QApplication::translate(
+                    "BookshelfWizard",
+                    "Install additional works (uses internet)"));
+    m_updateRadioButton->setText(
+            QApplication::translate("BookshelfWizard",
+                                    "Update installed works (uses internet)"));
+    m_removeRadioButton->setText(
+            QApplication::translate("BookshelfWizard",
+                                    "Remove installed works"));
 }
 
 static bool timeToUpdate() {
-    QDate lastDate = btConfig().value<QDate>(lastUpdate);
+    QDate const lastDate = btConfig().value<QDate>(lastUpdate);
     if (!lastDate.isValid())
         return true;
     if (QDate::currentDate().toJulianDay() - lastDate.toJulianDay() > 7)
@@ -108,9 +114,8 @@ static bool timeToUpdate() {
 
 int BtBookshelfTaskPage::nextId() const {
     if (m_installRadioButton->isChecked()) {
-        if (timeToUpdate()) {
+        if (timeToUpdate())
             return WizardPage::sourcesProgressPage;
-        }
         return WizardPage::sourcesPage;
     }
     if (m_updateRadioButton->isChecked())

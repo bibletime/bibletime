@@ -14,7 +14,7 @@
 
 #include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
-#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 
 
 class QGroupBox;
@@ -26,23 +26,26 @@ class BtBookshelfTaskPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public:
-    BtBookshelfTaskPage(QWidget *parent = 0);
+public: /* Methods: */
+
+    BtBookshelfTaskPage(QWidget * parent = 0);
 
     int nextId() const;
     WizardTaskType taskType() const;
 
-private:
-    void retranslateUi();
-    void setupRadioButtons();
-    void setupUi();
+private: /* Methods: */
 
-    QLabel *m_warningLabel;
-    QGroupBox *m_groupBox;
-    QVBoxLayout *m_verticalLayout;
-    QRadioButton *m_installRadioButton;
-    QRadioButton *m_updateRadioButton;
-    QRadioButton *m_removeRadioButton;
+    void retranslateUi();
+
+private: /* Fields: */
+
+    QLabel * m_warningLabel;
+    QGroupBox * m_groupBox;
+    QVBoxLayout * m_verticalLayout;
+    QRadioButton * m_installRadioButton;
+    QRadioButton * m_updateRadioButton;
+    QRadioButton * m_removeRadioButton;
+
 };
 
 #endif
