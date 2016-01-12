@@ -14,52 +14,43 @@
 
 #include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
-#include <QList>
-#include "backend/drivers/btmoduleset.h"
+#include <atomic>
 
 
-class BtBookshelfWizard;
 class BtSourcesThread;
 class QLabel;
 class QProgressBar;
 class QPushButton;
-class QVBoxLayout;
 
 class BtBookshelfSourcesProgressPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
 
-    BtBookshelfSourcesProgressPage(QWidget *parent = 0);
+    BtBookshelfSourcesProgressPage(QWidget * parent = 0);
 
     void initializePage();
     bool isComplete() const;
     int nextId() const;
-    BtModuleSet selectedWorks() const;
 
 private slots:
-    void slotPercentComplete(int percentComplete);
-    void slotShowMessage(const QString& msg);
+
     void slotStopInstall();
     void slotThreadFinished();
 
-private:
-    void initConnections();
-    bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
+private: /* Methods: */
+
     void retranslateUi();
-    void setupUi();
-    void updateRemoteLibrariesList();
-    void updateRemoteLibraryWorks();
 
-    bool m_installCompleted;
-    QLabel *m_msgLabel;
-    QProgressBar *m_progressBar;
-    QPushButton *m_stopButton;
-    bool m_stopped;
+private: /* Methods: */
+
+    std::atomic<bool> m_installCompleted;
+    QLabel * m_msgLabel;
+    QProgressBar * m_progressBar;
+    QPushButton * m_stopButton;
     BtSourcesThread * m_thread;
-    QVBoxLayout *m_verticalLayout;
 
-    QList<CSwordModuleInfo*> m_modules;
 };
+
 #endif
