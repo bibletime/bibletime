@@ -102,12 +102,12 @@ bool BtBookshelfSourcesProgressPage::isComplete() const
 { return m_installCompleted.load(std::memory_order_acquire); }
 
 void BtBookshelfSourcesProgressPage::slotThreadFinished() {
-    if (m_thread->finishedSuccessfully()) {
+    m_stopButton->setDisabled(true);
+    if (m_thread->finishedSuccessfully())
         btConfig().setValue<QDate>(lastUpdate, QDate::currentDate());
-        m_installCompleted.store(true, std::memory_order_release);
-        emit QWizardPage::completeChanged();
-    }
     delete m_thread;
+    m_installCompleted.store(true, std::memory_order_release);
+    emit QWizardPage::completeChanged();
 }
 
 void BtBookshelfSourcesProgressPage::slotStopInstall() {

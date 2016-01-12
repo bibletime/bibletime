@@ -10,6 +10,7 @@
 #include "btsourcesthread.h"
 
 #include <QString>
+#include <memory>
 #include "btinstallbackend.h"
 #include "backend/btinstallmgr.h"
 #include "util/btassert.h"
@@ -28,24 +29,39 @@ void BtSourcesThread::run() {
     }
 
     QStringList const sourceNames = BtInstallBackend::sourceNameList();
-    BtInstallMgr iMgr;
     int const sourceCount = sourceNames.count();
+    std::unique_ptr<int[]> failedSources{new int[sourceCount]};
+    int numFailedSources = 0;
+    BtInstallMgr iMgr;
     for (int i = 0; i < sourceCount; ++i) {
         if (shouldStop()) {
             emit showMessage(tr("Updating stopped"));
             return;
         }
-        QString const & sourceName = sourceNames.at(i);
+        QString const & sourceName = sourceNames[i];
         emit showMessage(tr("Updating remote library \"%1\"").arg(sourceName));
-
-        sword::InstallSource source = BtInstallBackend::source(sourceName);
-        if (iMgr.refreshRemoteSource(&source)) {
-            emit showMessage(tr("Error updating remote libraries."));
-            return;
+        {
+            sword::InstallSource source = BtInstallBackend::source(sourceName);
+            if (iMgr.refreshRemoteSource(&source)) {
+                failedSources[numFailedSources] = i;
+                ++numFailedSources;
+            }
         }
         emit percentComplete(10 + 90 * ((i + 1.0) / sourceCount));
     }
     emit percentComplete(100);
-    emit showMessage(tr("Remote libraries have been updated."));
-    m_finishedSuccessfully.store(true, std::memory_order_release);
+    if (numFailedSources <= 0) {
+        emit showMessage(tr("Remote libraries have been updated."));
+        m_finishedSuccessfully.store(true, std::memory_order_release);
+    } else {
+        QString msg = tr("The following remote libraries failed to update: ");
+        for (int i = 0;;) {
+            msg += sourceNames[failedSources[i]];
+            if (++i >= numFailedSources)
+                break;
+            msg += ", ";
+        };
+        emit showMessage(std::move(msg));
+        m_finishedSuccessfully.store(true, std::memory_order_release);
+    }
 }
