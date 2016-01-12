@@ -9,35 +9,31 @@
 
 #include "frontend/bookshelfwizard/btbookshelfremovefinalpage.h"
 
+#include <QDebug>
+#include <QLabel>
+#include <QSpacerItem>
+#include <QVBoxLayout>
 #include "backend/btinstallbackend.h"
 #include "backend/btinstallmgr.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "util/btconnect.h"
 
-#include <QDebug>
-#include <QLabel>
-#include <QSpacerItem>
-#include <QVBoxLayout>
 
 namespace {
 const QString groupingOrderKey ("GUI/BookshelfWizard/InstallPage/grouping");
 const QString installPathKey   ("GUI/BookshelfWizard/InstallPage/installPathIndex");
-}
+} // anonymous namespace
 
-BtBookshelfRemoveFinalPage::BtBookshelfRemoveFinalPage(
-        QWidget *parent)
-    : BtBookshelfWizardPage(parent),
-      m_verticalLayout(nullptr) {
-
-    setupUi();
-}
-
-void BtBookshelfRemoveFinalPage::setupUi() {
+BtBookshelfRemoveFinalPage::BtBookshelfRemoveFinalPage(QWidget * parent)
+    : BtBookshelfWizardPage(parent)
+{
     m_verticalLayout = new QVBoxLayout(this);
     m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
-    QSpacerItem *verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_verticalLayout->addItem(verticalSpacer);
+    m_verticalLayout->addItem(new QSpacerItem(20,
+                                              40,
+                                              QSizePolicy::Minimum,
+                                              QSizePolicy::Expanding));
 
     m_msgLabel = new QLabel(this);
     m_msgLabel->setAlignment(Qt::AlignCenter);
@@ -45,30 +41,20 @@ void BtBookshelfRemoveFinalPage::setupUi() {
     m_msgLabel->setWordWrap(true);
     m_verticalLayout->addWidget(m_msgLabel);
 
-    QSpacerItem *verticalSpacer2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    m_verticalLayout->addItem(verticalSpacer2);
+    m_verticalLayout->addItem(new QSpacerItem(20,
+                                              40,
+                                              QSizePolicy::Minimum,
+                                              QSizePolicy::Expanding));
 }
 
-void BtBookshelfRemoveFinalPage::retranslateUi() {
-    m_msgLabel->setText(tr("The selected works have been removed."));
-}
+void BtBookshelfRemoveFinalPage::retranslateUi()
+{ m_msgLabel->setText(tr("The selected works have been removed.")); }
 
 void BtBookshelfRemoveFinalPage::initializePage() {
-    removeWorks();
     retranslateUi();
-}
 
-bool BtBookshelfRemoveFinalPage::isComplete() const {
-    return true;
-}
-
-int BtBookshelfRemoveFinalPage::nextId() const {
-    return -1;
-}
-
-void BtBookshelfRemoveFinalPage::removeWorks() {
-
-    BtModuleSet selectedWorks = btWizard().selectedWorks();
+    // Remove works:
+    BtModuleSet const selectedWorks = btWizard().selectedWorks();
     if (selectedWorks.isEmpty())
         return;
 
@@ -113,3 +99,7 @@ void BtBookshelfRemoveFinalPage::removeWorks() {
     qDeleteAll(mgrDict);
     mgrDict.clear();
 }
+
+bool BtBookshelfRemoveFinalPage::isComplete() const { return true; }
+
+int BtBookshelfRemoveFinalPage::nextId() const { return -1; }

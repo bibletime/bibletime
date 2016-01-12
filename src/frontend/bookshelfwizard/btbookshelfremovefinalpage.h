@@ -26,23 +26,23 @@ class BtBookshelfRemoveFinalPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
 
-    BtBookshelfRemoveFinalPage(
-            QWidget *parent = 0);
+    BtBookshelfRemoveFinalPage(QWidget * parent = 0);
 
     bool isComplete() const;
     void initializePage();
     int nextId() const;
-    BtModuleSet selectedWorks() const;
 
-private:
-    bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
-    void removeWorks();
+private: /* Methods: */
+
     void retranslateUi();
-    void setupUi();
 
-    QLabel *m_msgLabel;
-    QVBoxLayout *m_verticalLayout;
-};
+private: /* Fields: */
+
+    QLabel * m_msgLabel;
+    QVBoxLayout * m_verticalLayout;
+
+}; /* class BtBookshelfRemoveFinalPage */
+
 #endif
