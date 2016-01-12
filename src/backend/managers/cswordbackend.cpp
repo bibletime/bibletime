@@ -17,6 +17,7 @@
 #include <QTextCodec>
 #include "../../util/directory.h"
 #include "../btglobal.h"
+#include "../btinstallmgr.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../drivers/cswordbookmoduleinfo.h"
@@ -62,17 +63,47 @@ BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
     return l;
 }
 
-QList<CSwordModuleInfo *> CSwordBackend::takeModulesFromList(const QStringList & names) {
-    QList<CSwordModuleInfo *> list;
-    Q_FOREACH (const QString & name, names) {
-        if (CSwordModuleInfo * const mInfo = findModuleByName(name)) {
-            m_dataModel.removeModule(mInfo);
-            list.append(mInfo);
+void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
+    if (toBeDeleted.empty())
+        return;
+    m_dataModel.removeModules(toBeDeleted);
+    emit sigSwordSetupChanged(RemovedModules);
+
+    BtInstallMgr installMgr;
+    QMap<QString, sword::SWMgr *> mgrDict; // Maps config paths to SWMgr objects
+    for (CSwordModuleInfo const * const mInfo : toBeDeleted) {
+        // Find the install path for the sword manager:
+        QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);
+        if (dataPath.left(2) == "./")
+            dataPath = dataPath.mid(2);
+
+        QString prefixPath =
+            mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
+        if (prefixPath.contains(dataPath)) {
+            // Remove module part to get the prefix path:
+            prefixPath = prefixPath.remove(prefixPath.indexOf(dataPath),
+                                           dataPath.length());
+        } else { // This is an error, should not happen
+            qWarning() << "Removing" << mInfo->name()
+                       << "didn't succeed because the absolute path"
+                       << prefixPath << "didn't contain the data path"
+                       << dataPath;
+            continue; // don't remove this, go to next of the for loop
         }
+
+        // Create the sword manager and remove the module
+        sword::SWMgr * mgr = mgrDict[prefixPath];
+        if (!mgr) { // Create new mgr if it's not yet available
+            mgrDict.insert(prefixPath,
+                           new sword::SWMgr(prefixPath.toLocal8Bit()));
+            mgr = mgrDict[prefixPath];
+        }
+        qDebug() << "Removing the module" << mInfo->name() << "...";
+        installMgr.removeModule(mgr, mInfo->module().getName());
     }
-    if (!list.isEmpty())
-        emit sigSwordSetupChanged(RemovedModules);
-    return list;
+    qDeleteAll(toBeDeleted);
+    qDeleteAll(mgrDict);
+    mgrDict.clear();
 }
 
 QList<CSwordModuleInfo *> CSwordBackend::getPointerList(const QStringList & names) const {

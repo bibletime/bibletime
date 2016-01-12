@@ -330,6 +330,7 @@ void test_CSwordBackend::translatedOptionName() {
     QCOMPARE(backend->translatedOptionName(type), name);
 }
 
+#if 0
 // test reloadModules - see takeModulesFromList
 
 void test_CSwordBackend::takeModulesFromList() {
@@ -356,6 +357,7 @@ void test_CSwordBackend::takeModulesFromList() {
     QVERIFY(backend->findModuleByName("KJV") != nullptr);
     QVERIFY(backend->findModuleByName("KJVA") != nullptr);
 }
+#endif
 
 void test_CSwordBackend::getPointerList() {
 

@@ -15,6 +15,7 @@
 
 #include <QAbstractListModel>
 
+#include "../drivers/btconstmoduleset.h"
 #include "../drivers/btmoduleset.h"
 #include "../drivers/cswordmoduleinfo.h"
 
@@ -110,7 +111,7 @@ public: /* Methods: */
       \param[in] modules The set of modules to remove from this model.
       \param[in] destroy If true, the given CSwordModuleInfo instances are destroyed.
     */
-    void removeModules(BtModuleSet const & modules,
+    void removeModules(BtConstModuleSet const & modules,
                        bool destroy = false);
 
     /**

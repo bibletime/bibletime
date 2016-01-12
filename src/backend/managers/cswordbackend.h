@@ -17,6 +17,7 @@
 #include <QStringList>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
+#include "../drivers/btconstmoduleset.h"
 #include "../bookshelfmodel/btbookshelfmodel.h"
 #include "../filters/gbftohtml.h"
 #include "../filters/osistohtml.h"
@@ -200,12 +201,10 @@ public: /* Methods: */
     void reloadModules(const SetupChangedReason reason);
 
     /**
-      \brief Takes off the given modules from the list and returns them.
-      \param[in] names The names of the modules to take.
-      \note User must take care of the deletion of the returned CSwordModuleInfo
-            pointers.
+      \brief Uninstalls the given modules.
+      \param[in] modules The modules to uninstall.
     */
-    QList<CSwordModuleInfo *> takeModulesFromList(const QStringList & names);
+    void uninstallModules(BtConstModuleSet const & modules);
 
     /**
       \param[in] names The names of the modules to return.

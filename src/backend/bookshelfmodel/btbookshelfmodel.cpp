@@ -187,10 +187,10 @@ void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
     removeModules(modules.toSet(), destroy);
 }
 
-void BtBookshelfModel::removeModules(BtModuleSet const & modules, bool destroy){
+void BtBookshelfModel::removeModules(BtConstModuleSet const & modules, bool destroy){
     // This is inefficient, since signals are emitted for each removed module:
-    Q_FOREACH(CSwordModuleInfo * const module, modules)
-        removeModule(module, destroy);
+    Q_FOREACH(CSwordModuleInfo const * const module, modules)
+        removeModule(const_cast<CSwordModuleInfo *>(module), destroy);
 }
 
 CSwordModuleInfo * BtBookshelfModel::getModule(const QString & name) const {

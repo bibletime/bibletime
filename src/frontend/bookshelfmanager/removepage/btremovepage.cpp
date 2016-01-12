@@ -128,19 +128,16 @@ void BtRemovePage::slotRemoveModules() {
     // Do nothing when this signal fires without anything selected to remove:
     if (m_bookshelfWidget->treeModel()->checkedModules().empty()) return;
 
-    QStringList moduleNames;
     QStringList prettyModuleNames;
     const int textHeight = fontMetrics().height();
     /// \bug <nobr> is not working, Qt bug
     const QString moduleString("<nobr>%1&nbsp;%2</nobr>");
-    Q_FOREACH(const CSwordModuleInfo * const m,
-              m_bookshelfWidget->treeModel()->checkedModules())
-    {
+    auto const & toBeDeleted = m_bookshelfWidget->treeModel()->checkedModules();
+    for (const CSwordModuleInfo * const m : toBeDeleted) {
         prettyModuleNames.append(moduleString
                                  .arg(iconToHtml(CSwordModuleInfo::moduleIcon(*m),
                                                  textHeight))
                                  .arg(m->name()));
-        moduleNames.append(m->name());
     }
     const QString message = tr("You selected the following work(s): ")
                             .append("<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;")
@@ -149,43 +146,7 @@ void BtRemovePage::slotRemoveModules() {
                             .append(tr("Do you really want to remove them from your system?"));
 
     if ((message::showQuestion(this, tr("Remove Works?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
-
-        // Update the module list before really removing. Remember deleting the pointers later.
-        QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
-        BT_ASSERT(toBeDeleted.size() == moduleNames.size());
-
-        BtInstallMgr installMgr;
-        QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-        Q_FOREACH(CSwordModuleInfo const * const mInfo, toBeDeleted) {
-            BT_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
-            // Find the install path for the sword manager
-            QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
-            QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);
-            if (dataPath.left(2) == "./") {
-                dataPath = dataPath.mid(2);
-            }
-            if (prefixPath.contains(dataPath)) { //remove module part to get the prefix path
-                prefixPath = prefixPath.remove( prefixPath.indexOf(dataPath), dataPath.length() );
-            }
-            else { //This is an error, should not happen
-                qWarning() << "Removing" << mInfo->name() << "didn't succeed because the absolute path" << prefixPath << "didn't contain the data path" << dataPath;
-                continue; // don't remove this, go to next of the for loop
-            }
-
-            // Create the sword manager and remove the module
-            sword::SWMgr* mgr = mgrDict[ prefixPath ];
-            if (!mgr) { //create new mgr if it's not yet available
-                mgrDict.insert(prefixPath, new sword::SWMgr(prefixPath.toLocal8Bit()));
-                mgr = mgrDict[ prefixPath ];
-            }
-            qDebug() << "Removing the module" << mInfo->name() << "...";
-            installMgr.removeModule(mgr, mInfo->module().getName());
-        }
-        //delete the removed moduleinfo pointers
-        qDeleteAll(toBeDeleted);
-        //delete all mgrs which were created above
-        qDeleteAll(mgrDict);
-        mgrDict.clear();
+        CSwordBackend::instance()->uninstallModules(toBeDeleted);
     }
 }
 

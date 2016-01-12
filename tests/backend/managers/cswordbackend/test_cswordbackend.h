@@ -28,7 +28,9 @@ private slots:
     void translatedOptionName_data();
     void translatedOptionName();
 
+#if 0
     void takeModulesFromList();
+#endif
 
     void getPointerList();
     void getConstPointerList();
