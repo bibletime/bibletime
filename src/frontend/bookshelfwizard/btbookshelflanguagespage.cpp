@@ -69,9 +69,8 @@ void BtBookshelfLanguagesPage::initializePage() {
             languages << selectedLanguages();
         }
 
-        int const rows = m_model->rowCount();
         bool scrolledToFirstSelected = false;
-        for (int row = 0; row < rows; ++row) {
+        for (int row = 0; row < m_model->rowCount(); ++row) {
             QStandardItem * const item = m_model->item(row, 0);
             if (languages.contains(item->text())) {
                 item->setCheckState(Qt::Checked);
@@ -114,8 +113,7 @@ bool BtBookshelfLanguagesPage::isComplete() const
 
 QStringList BtBookshelfLanguagesPage::selectedLanguages() const {
     QStringList languages;
-    int const rows = m_model->rowCount();
-    for (int row = 0; row < rows; ++row) {
+    for (int row = 0; row < m_model->rowCount(); ++row) {
         QStandardItem * const item = m_model->item(row,0);
         if (item->checkState() == Qt::Checked)
             languages << item->text();

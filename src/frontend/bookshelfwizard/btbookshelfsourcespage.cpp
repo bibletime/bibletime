@@ -98,8 +98,7 @@ void BtBookshelfSourcesPage::initializePage() {
 }
 
 void BtBookshelfSourcesPage::selectSourcesInModel(const QStringList& sources) {
-    int const rows = m_model->rowCount();
-    for (int row = 0; row < rows; ++row) {
+    for (int row = 0; row < m_model->rowCount(); ++row) {
         QStandardItem * const item = m_model->item(row,0);
         if (sources.contains(item->text()))
             item->setCheckState(Qt::Checked);
