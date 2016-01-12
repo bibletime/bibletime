@@ -14,11 +14,9 @@
 
 #include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
-#include <QString>
 #include <QStringList>
 
 
-class BtBookshelfWizard;
 class BtInstallMgr;
 class BtListModel;
 class QPushButton;
@@ -30,8 +28,9 @@ class BtBookshelfSourcesPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public:
-    BtBookshelfSourcesPage(QWidget *parent = 0);
+public: /* Methods: */
+
+    BtBookshelfSourcesPage(QWidget * parent = 0);
 
     bool isComplete() const;
     void initializePage();
@@ -39,32 +38,24 @@ public:
     QStringList selectedSources() const;
 
 private slots:
-    void slotDataChanged();
+
     void slotButtonClicked(int row);
 
-private:
-    QPushButton * addButton(int row, int column, const QString& text);
-    void addNewSource();
-    void calculateButtonColumnWidth();
-    void createSourcesModel();
-    void deleteRemoteSource(const QString& source);
-    QStringList loadInitialSources();
+private: /* Methods: */
+
     void retranslateUi();
-    void selectSourcesInModel(const QStringList& sources);
-    void setupUi();
+    void selectSourcesInModel(QStringList const & sources);
     void updateSourcesModel();
-    void updateRemoteSources();
-    void updateRemoteWorks();
 
-    bool m_firstTimeInit;
-    QTableView *m_sourcesTableView;
-    QVBoxLayout *m_verticalLayout;
-    BtListModel *m_model;
-    BtInstallMgr* m_currentInstallMgr;
-    QSignalMapper *m_signalMapper;
+private: /* Fields: */
 
-    QString m_addText;
-    QString m_removeText;
-};
+    bool m_firstTimeInit = true;
+    QTableView * m_sourcesTableView;
+    QVBoxLayout * m_verticalLayout;
+    BtListModel * m_model;
+    BtInstallMgr * m_currentInstallMgr;
+    QSignalMapper * m_signalMapper;
+
+}; /* class BtBookshelfSourcesPage */
 
 #endif
