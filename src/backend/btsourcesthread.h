@@ -14,27 +14,45 @@
 
 #include <QThread>
 
+#include <atomic>
+
+
 class BtSourcesThread: public QThread {
 
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        BtSourcesThread(QObject *parent = nullptr);
-        void stop();
+public: /* Methods: */
 
-    signals:
-        void percentComplete(int percent);
-        void showMessage(const QString& msg);
-        void finished();
+    inline BtSourcesThread(QObject * parent = nullptr)
+        : QThread(parent)
+        , m_stop(false)
+        , m_finishedSuccessfully(false)
+    {}
 
-    protected:
-        void run() override;
+    inline void stop() noexcept { m_stop.store(std::memory_order_release); }
 
-    private:
-        void updateRemoteLibraries();
-        void updateRemoteLibrariesList();
-        void updateRemoteLibraryWorks();
+    inline bool finishedSuccessfully() const noexcept
+    { return m_finishedSuccessfully.load(std::memory_order_acquire); }
 
-        bool m_stop;
-};
+signals:
+
+    void percentComplete(int percent);
+    void showMessage(QString const & msg);
+
+protected: /* Methods: */
+
+    void run() override;
+
+private: /* Methods: */
+
+    inline bool shouldStop() const noexcept
+    { return m_stop.load(std::memory_order_acquire); }
+
+private: /* Fields: */
+
+    std::atomic<bool> m_stop;
+    std::atomic<bool> m_finishedSuccessfully;
+
+}; /* class BtSourcesThread */
+
 #endif

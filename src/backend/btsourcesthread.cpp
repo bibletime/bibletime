@@ -12,66 +12,40 @@
 #include <QString>
 #include "btinstallbackend.h"
 #include "backend/btinstallmgr.h"
+#include "util/btassert.h"
 
-BtSourcesThread::BtSourcesThread(QObject *parent)
-    : QThread(parent),
-      m_stop(false) {
-}
 
 void BtSourcesThread::run() {
-    m_stop = false;
-    updateRemoteLibraries();
-}
-
-void BtSourcesThread::stop() {
-    m_stop = true;
-}
-
-void BtSourcesThread::updateRemoteLibraries() {
     emit percentComplete(0);
     emit showMessage(tr("Getting Library List"));
-    updateRemoteLibrariesList();
+    if (BtInstallMgr().refreshRemoteSourceConfiguration())
+        qWarning("InstallMgr: getting remote list returned an error.");
     emit percentComplete(10);
 
-    if (m_stop)
+    if (shouldStop()) {
+        emit showMessage(tr("Updating stopped"));
         return;
-
-    updateRemoteLibraryWorks();
-    emit finished();
-}
-
-void BtSourcesThread::updateRemoteLibrariesList() {
-    BtInstallMgr iMgr;
-    int ret = iMgr.refreshRemoteSourceConfiguration();
-    if (ret ) {
-        qWarning("InstallMgr: getting remote list returned an error.");
     }
-}
 
-void BtSourcesThread::updateRemoteLibraryWorks() {
-    QStringList sourceNames = BtInstallBackend::sourceNameList();
+    QStringList const sourceNames = BtInstallBackend::sourceNameList();
     BtInstallMgr iMgr;
-    int sourceCount = sourceNames.count();
-    for (int i=0; i<sourceCount; ++i) {
-        if (m_stop) {
+    int const sourceCount = sourceNames.count();
+    for (int i = 0; i < sourceCount; ++i) {
+        if (shouldStop()) {
             emit showMessage(tr("Updating stopped"));
             return;
         }
-        QString sourceName = sourceNames.at(i);
-
-        QString label = tr("Updating remote library") + " \"" + sourceName +"\"";
-        emit showMessage(label);
+        QString const & sourceName = sourceNames.at(i);
+        emit showMessage(tr("Updating remote library \"%1\"").arg(sourceName));
 
         sword::InstallSource source = BtInstallBackend::source(sourceName);
-        bool result = (iMgr.refreshRemoteSource(&source) == 0);
-        if (result) {
-            int percent = 10 + 90 * ( (i+1.0) / sourceCount );
-            emit percentComplete(percent);
-        } else {
+        if (iMgr.refreshRemoteSource(&source)) {
             emit showMessage(tr("Error updating remote libraries."));
             return;
         }
+        emit percentComplete(10 + 90 * ((i + 1.0) / sourceCount));
     }
     emit percentComplete(100);
     emit showMessage(tr("Remote libraries have been updated."));
+    m_finishedSuccessfully.store(true, std::memory_order_release);
 }
