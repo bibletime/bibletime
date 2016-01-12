@@ -29,7 +29,7 @@ QString const installPathKey =
 } // anonymous namespace
 
 BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
-    : QWizardPage(parent)
+    : BtBookshelfWizardPage(parent)
 {
     // Setup UI:
     m_verticalLayout = new QVBoxLayout(this);
@@ -71,18 +71,10 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
                this,         &BtBookshelfInstallFinalPage::slotStopInstall);
 }
 
-#define W \
-    [](BtBookshelfInstallFinalPage * const p) noexcept -> BtBookshelfWizard & {\
-        BtBookshelfWizard * const w =  \
-                qobject_cast<BtBookshelfWizard *>(p->wizard()); \
-        BT_ASSERT(w); \
-        return *w; \
-    }(this)
-
 void BtBookshelfInstallFinalPage::retranslateUi() {
     m_stopButton->setText(tr("Stop"));
 
-    if (W.taskType() == WizardTaskType::updateWorks) {
+    if (btWizard().taskType() == WizardTaskType::updateWorks) {
         setTitle(QApplication::translate(
                      "BookshelfWizard", "Updating Works"));
         setSubTitle(QApplication::translate(
@@ -103,9 +95,9 @@ void BtBookshelfInstallFinalPage::initializePage() {
     retranslateUi();
 
     // Install works:
-    auto const & btWizard = W;
-    m_modules = btWizard.selectedWorks().toList();
-    m_thread = new BtInstallThread(m_modules, btWizard.installPath(), this);
+    auto const & btWiz = btWizard();
+    m_modules = btWiz.selectedWorks().toList();
+    m_thread = new BtInstallThread(m_modules, btWiz.installPath(), this);
     BT_CONNECT(m_thread, &BtInstallThread::preparingInstall,
                this,     &BtBookshelfInstallFinalPage::slotInstallStarted,
                Qt::QueuedConnection);

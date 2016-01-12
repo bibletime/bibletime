@@ -42,7 +42,7 @@ static const QStringList initialSelection{
     "CrossWire", "Bible.org", "Xiphos"};
 
 BtBookshelfSourcesPage::BtBookshelfSourcesPage(QWidget *parent)
-    : QWizardPage(parent),
+    : BtBookshelfWizardPage(parent),
       m_firstTimeInit(true) {
 
     setupUi();
@@ -87,7 +87,7 @@ void BtBookshelfSourcesPage::retranslateUi() {
 }
 
 int BtBookshelfSourcesPage::nextId() const {
-    auto & languagesPage = btWizard()->languagesPage();
+    auto & languagesPage = btWizard().languagesPage();
     languagesPage.initializeLanguages();
     return languagesPage.skipPage()
            ? WizardPage::installWorksPage
@@ -231,9 +231,3 @@ void BtBookshelfSourcesPage::addNewSource() {
     updateSourcesModel();
     selectSourcesInModel(saveSources);
 }
-
-BtBookshelfWizard *BtBookshelfSourcesPage::btWizard() const {
-    return qobject_cast<BtBookshelfWizard*>(wizard());
-}
-
-

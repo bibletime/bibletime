@@ -29,7 +29,7 @@ QString const LanguagesKey = "GUI/BookshelfWizard/languages";
 } // anonymous namespace
 
 BtBookshelfLanguagesPage::BtBookshelfLanguagesPage(QWidget * parent)
-    : QWizardPage(parent)
+    : BtBookshelfWizardPage(parent)
 {
     // Setup UI:
     m_verticalLayout = new QVBoxLayout(this);
@@ -54,14 +54,6 @@ void BtBookshelfLanguagesPage::retranslateUi() {
 
 int BtBookshelfLanguagesPage::nextId() const
 { return WizardPage::installWorksPage; }
-
-#define W \
-    [](BtBookshelfLanguagesPage * const p) noexcept -> BtBookshelfWizard & {\
-        BtBookshelfWizard * const w =  \
-                qobject_cast<BtBookshelfWizard *>(p->wizard()); \
-        BT_ASSERT(w); \
-        return *w; \
-    }(this)
 
 void BtBookshelfLanguagesPage::initializePage() {
 
@@ -98,7 +90,7 @@ void BtBookshelfLanguagesPage::initializePage() {
 void BtBookshelfLanguagesPage::initializeLanguages() {
     // Get languages from sources:
     std::set<QString> languages;
-    for (auto const & sourceName : W.selectedSources())
+    for (auto const & sourceName : btWizard().selectedSources())
         for (auto const * module :
              BtInstallBackend::backend(
                  BtInstallBackend::source(sourceName))->moduleList())
@@ -112,7 +104,7 @@ void BtBookshelfLanguagesPage::initializeLanguages() {
         m_model->item(0, 0)->setCheckState(Qt::Checked);
 }
 
-bool BtBookshelfLanguagesPage::skipPage() const
+bool BtBookshelfLanguagesPage::skipPage() const noexcept
 { return m_model->rowCount() == 1; }
 
 void BtBookshelfLanguagesPage::slotDataChanged() { emit completeChanged(); }

@@ -12,16 +12,17 @@
 #ifndef BTBOOKSHELFTASKPAGE
 #define BTBOOKSHELFTASKPAGE
 
+#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+
 #include "frontend/bookshelfwizard/btbookshelfworkspage.h"
 
-#include <QWizardPage>
 
 class QGroupBox;
 class QLabel;
 class QRadioButton;
 class QVBoxLayout;
 
-class BtBookshelfTaskPage: public QWizardPage {
+class BtBookshelfTaskPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 

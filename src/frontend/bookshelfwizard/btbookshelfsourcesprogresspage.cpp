@@ -30,7 +30,7 @@ const QString lastUpdate = "GUI/BookshelfWizard/lastUpdate";
 
 BtBookshelfSourcesProgressPage::BtBookshelfSourcesProgressPage(
         QWidget *parent)
-    : QWizardPage(parent),
+    : BtBookshelfWizardPage(parent),
       m_installCompleted(false),
       m_msgLabel(nullptr),
       m_progressBar(nullptr),
@@ -113,10 +113,6 @@ void BtBookshelfSourcesProgressPage::initializePage() {
 
 bool BtBookshelfSourcesProgressPage::isComplete() const {
     return m_installCompleted;
-}
-
-BtBookshelfWizard *BtBookshelfSourcesProgressPage::btWizard() {
-    return qobject_cast<BtBookshelfWizard*>(wizard());
 }
 
 void BtBookshelfSourcesProgressPage::slotPercentComplete(int percentComplete) {

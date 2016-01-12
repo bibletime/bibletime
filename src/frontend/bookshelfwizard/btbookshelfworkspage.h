@@ -12,11 +12,12 @@
 #ifndef BTBOOKSHELFWORKSPAGE
 #define BTBOOKSHELFWORKSPAGE
 
-#include "backend/drivers/btmoduleset.h"
+#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "backend/drivers/btmoduleset.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 
-#include <QWizardPage>
 
 class BtBookshelfFilterModel;
 class BtBookshelfGroupingMenu;
@@ -31,7 +32,7 @@ class QMenu;
 class QToolButton;
 class QVBoxLayout;
 
-class BtBookshelfWorksPage: public QWizardPage {
+class BtBookshelfWorksPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -56,7 +57,6 @@ private slots:
     void slotSwordSetupChanged();
 
 private:
-    BtBookshelfWizard *btWizard() const;
     bool destinationPathIsWritable();
     bool filter(const CSwordModuleInfo *mInfo);
     bool filterInstalls(const CSwordModuleInfo *mInfo);

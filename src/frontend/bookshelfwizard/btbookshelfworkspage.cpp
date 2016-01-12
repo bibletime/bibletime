@@ -47,7 +47,7 @@ const QString installPathKey   ("GUI/BookshelfWizard/InstallPage/installPathInde
 BtBookshelfWorksPage::BtBookshelfWorksPage(
         WizardTaskType iType,
         QWidget *parent)
-    : QWizardPage(parent),
+    : BtBookshelfWizardPage(parent),
       m_taskType(iType),
       m_groupingOrder(groupingOrderKey),
       m_groupingButton(nullptr),
@@ -190,7 +190,7 @@ void BtBookshelfWorksPage::retranslateUi() {
 }
 
 int BtBookshelfWorksPage::nextId() const {
-    if (btWizard()->taskType() == WizardTaskType::removeWorks)
+    if (btWizard().taskType() == WizardTaskType::removeWorks)
         return WizardPage::removeFinalPage;
     return installFinalPage;
 }
@@ -201,8 +201,8 @@ void BtBookshelfWorksPage::initializePage() {
 
 void BtBookshelfWorksPage::updateModels() {
     if (m_taskType == installWorks) {
-        m_sources = btWizard()->selectedSources();
-        m_languages = btWizard()->selectedLanguages();
+        m_sources = btWizard().selectedSources();
+        m_languages = btWizard().selectedLanguages();
     } else {
         m_sources = BtInstallBackend::sourceNameList();
     }
@@ -379,8 +379,3 @@ bool BtBookshelfWorksPage::moduleIsInstalled(const CSwordModuleInfo *mInfo) {
     const CSwordModuleInfo *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
     return (installedModule);
 }
-
-BtBookshelfWizard *BtBookshelfWorksPage::btWizard() const {
-    return qobject_cast<BtBookshelfWizard*>(wizard());
-}
-

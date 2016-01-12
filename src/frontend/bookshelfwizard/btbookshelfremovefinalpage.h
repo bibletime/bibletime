@@ -12,16 +12,17 @@
 #ifndef BTBOOKSHELFREMOVEFINALPAGE
 #define BTBOOKSHELFREMOVEFINALPAGE
 
-#include "backend/drivers/btmoduleset.h"
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
-#include <QWizardPage>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "backend/drivers/btmoduleset.h"
+
 
 class BtBookshelfWizard;
 class QLabel;
 class QVBoxLayout;
 
-class BtBookshelfRemoveFinalPage: public QWizardPage {
+class BtBookshelfRemoveFinalPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -36,7 +37,6 @@ public:
     BtModuleSet selectedWorks() const;
 
 private:
-    BtBookshelfWizard *btWizard();
     bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
     void removeWorks();
     void retranslateUi();

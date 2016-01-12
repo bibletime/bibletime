@@ -26,7 +26,7 @@ const QString installPathKey   ("GUI/BookshelfWizard/InstallPage/installPathInde
 
 BtBookshelfRemoveFinalPage::BtBookshelfRemoveFinalPage(
         QWidget *parent)
-    : QWizardPage(parent),
+    : BtBookshelfWizardPage(parent),
       m_verticalLayout(nullptr) {
 
     setupUi();
@@ -53,10 +53,6 @@ void BtBookshelfRemoveFinalPage::retranslateUi() {
     m_msgLabel->setText(tr("The selected works have been removed."));
 }
 
-BtBookshelfWizard *BtBookshelfRemoveFinalPage::btWizard() {
-    return qobject_cast<BtBookshelfWizard*>(wizard());
-}
-
 void BtBookshelfRemoveFinalPage::initializePage() {
     removeWorks();
     retranslateUi();
@@ -72,7 +68,7 @@ int BtBookshelfRemoveFinalPage::nextId() const {
 
 void BtBookshelfRemoveFinalPage::removeWorks() {
 
-    BtModuleSet selectedWorks = btWizard()->selectedWorks();
+    BtModuleSet selectedWorks = btWizard().selectedWorks();
     if (selectedWorks.isEmpty())
         return;
 

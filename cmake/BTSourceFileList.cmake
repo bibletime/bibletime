@@ -369,6 +369,7 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/removepage/btremovepage.h
     src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
     src/frontend/bookshelfwizard/btbookshelfwizard.h
+    src/frontend/bookshelfwizard/btbookshelfwizardpage.h
     src/frontend/bookshelfwizard/btbookshelftaskpage.h
     src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.h
     src/frontend/bookshelfwizard/btbookshelfremovefinalpage.h

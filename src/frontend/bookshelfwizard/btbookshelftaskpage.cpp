@@ -24,7 +24,7 @@ const QString lastUpdate = "GUI/BookshelfWizard/lastUpdate";
 
 
 BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget *parent)
-    : QWizardPage(parent) {
+    : BtBookshelfWizardPage(parent) {
 
     setupUi();
     retranslateUi();

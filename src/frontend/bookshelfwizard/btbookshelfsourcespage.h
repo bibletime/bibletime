@@ -12,9 +12,11 @@
 #ifndef BTBOOKSHELFSOURCESPAGE
 #define BTBOOKSHELFSOURCESPAGE
 
+#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+
 #include <QString>
 #include <QStringList>
-#include <QWizardPage>
+
 
 class BtBookshelfWizard;
 class BtInstallMgr;
@@ -24,7 +26,7 @@ class QSignalMapper;
 class QTableView;
 class QVBoxLayout;
 
-class BtBookshelfSourcesPage: public QWizardPage {
+class BtBookshelfSourcesPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -43,7 +45,6 @@ private slots:
 private:
     QPushButton * addButton(int row, int column, const QString& text);
     void addNewSource();
-    BtBookshelfWizard *btWizard() const;
     void calculateButtonColumnWidth();
     void createSourcesModel();
     void deleteRemoteSource(const QString& source);

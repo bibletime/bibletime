@@ -12,7 +12,7 @@
 #ifndef BTBOOKSHELFLANGUAGESPAGE
 #define BTBOOKSHELFLANGUAGESPAGE
 
-#include <QWizardPage>
+#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
 #include <QStringList>
 
@@ -22,7 +22,7 @@ class BtListModel;
 class QListView;
 class QVBoxLayout;
 
-class BtBookshelfLanguagesPage: public QWizardPage {
+class BtBookshelfLanguagesPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 

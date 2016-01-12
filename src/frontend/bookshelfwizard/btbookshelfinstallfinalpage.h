@@ -12,7 +12,7 @@
 #ifndef BTBOOKSHELFINSTALLFINALPAGE
 #define BTBOOKSHELFINSTALLFINALPAGE
 
-#include <QWizardPage>
+#include "btbookshelfwizardpage.h"
 
 #include <atomic>
 #include <QList>
@@ -27,7 +27,7 @@ class QPushButton;
 class QSwordModuleInfo;
 class QVBoxLayout;
 
-class BtBookshelfInstallFinalPage: public QWizardPage {
+class BtBookshelfInstallFinalPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 

@@ -12,10 +12,11 @@
 #ifndef BTBOOKSHELFSOURCESPROGRESSPAGE
 #define BTBOOKSHELFSOURCESPROGRESSPAGE
 
-#include "backend/drivers/btmoduleset.h"
+#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
 #include <QList>
-#include <QWizardPage>
+#include "backend/drivers/btmoduleset.h"
+
 
 class BtBookshelfWizard;
 class BtSourcesThread;
@@ -24,7 +25,7 @@ class QProgressBar;
 class QPushButton;
 class QVBoxLayout;
 
-class BtBookshelfSourcesProgressPage: public QWizardPage {
+class BtBookshelfSourcesProgressPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -44,7 +45,6 @@ private slots:
     void slotThreadFinished();
 
 private:
-    BtBookshelfWizard *btWizard();
     void initConnections();
     bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
     void retranslateUi();

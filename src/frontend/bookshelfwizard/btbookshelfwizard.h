@@ -16,7 +16,7 @@
 
 #include <QStringList>
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+#include "util/btassert.h"
 
 
 class BtBookshelfWorksPage;
