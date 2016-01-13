@@ -22,13 +22,13 @@
 #include <QPaintEvent>
 #include <QTimer>
 #include <QToolTip>
-#include "backend/btprinter.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/btbookmarksmodel.h"
 #include "backend/managers/referencemanager.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
+#include "frontend/btprinter.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/messagedialog.h"

@@ -20,7 +20,6 @@ SET(bibletime_SRC_BACKEND
     src/backend/btsourcesthread.cpp
     src/backend/btbookmarksmodel.cpp
     src/backend/btglobal.cpp
-    src/backend/btprinter.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -134,6 +133,7 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/btmodulechooserdialog.cpp
     src/frontend/btmoduleindexdialog.cpp
     src/frontend/btopenworkaction.cpp
+    src/frontend/btprinter.cpp
     src/frontend/cexportmanager.cpp
     src/frontend/cinfodisplay.cpp
     src/frontend/cmdiarea.cpp
@@ -311,7 +311,6 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/btinstallthread.h
     src/backend/btsourcesthread.h
     src/backend/btbookmarksmodel.h
-    src/backend/btprinter.h
 )
 
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
@@ -341,6 +340,7 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/btmodulechooserdialog.h
     src/frontend/btmoduleindexdialog.h
     src/frontend/btopenworkaction.h
+    src/frontend/btprinter.h
     src/frontend/cdragdrop.h
     src/frontend/cinfodisplay.h
     src/frontend/cmdiarea.h

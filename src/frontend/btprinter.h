@@ -13,9 +13,9 @@
 #define BTPRINTER_H
 
 #include <QObject>
-#include "rendering/cdisplayrendering.h"
+#include "backend/rendering/cdisplayrendering.h"
 
-#include "managers/cswordbackend.h"
+#include "backend/managers/cswordbackend.h"
 
 
 /** \brief Manages the print item queue and printing. */

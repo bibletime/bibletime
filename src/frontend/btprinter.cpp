@@ -14,9 +14,9 @@
 #include <QWebFrame>
 #include <QWebPage>
 #include "../util/btassert.h"
-#include "config/btconfig.h"
-#include "keys/cswordversekey.h"
-#include "managers/cdisplaytemplatemgr.h"
+#include "backend/config/btconfig.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 
 
 namespace {

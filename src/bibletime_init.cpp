@@ -20,7 +20,6 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include "backend/btprinter.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
