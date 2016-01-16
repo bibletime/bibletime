@@ -55,6 +55,7 @@ private: /* Methods: */
 private: /* Fields: */
 
     QLabel * m_msgLabel;
+    QLabel * m_msgLabel2;
     QProgressBar * m_progressBar;
     QPushButton * m_stopButton;
     BtInstallThread * m_thread;

@@ -152,7 +152,7 @@ void BtBookshelfSourcesPage::updateSourcesModel() {
     QFontMetrics const fontMetrics = m_sourcesTableView->fontMetrics();
     m_sourcesTableView->setColumnWidth(1,
                                        qMax(fontMetrics.width(removeText),
-                                            fontMetrics.width(addText)) + 20);
+                                            fontMetrics.width(addText)) + 60);
 }
 
 bool BtBookshelfSourcesPage::isComplete() const {

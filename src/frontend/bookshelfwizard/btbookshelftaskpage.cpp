@@ -79,9 +79,9 @@ BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)
 
 void BtBookshelfTaskPage::retranslateUi() {
     setTitle(QApplication::translate("BookshelfWizard",
-                                     "Bookshelf Management"));
+                                     "Bookshelf Manager"));
     setSubTitle(QApplication::translate("BookshelfWizard",
-                                        "Manage works in your bookshelf."));
+                                        "Install, update, or remove works on your bookshelf."));
     m_warningLabel->setText(
             QApplication::translate(
                     "BookshelfWizard",

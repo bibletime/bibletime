@@ -42,9 +42,13 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
 
     m_msgLabel = new QLabel(this);
     m_msgLabel->setAlignment(Qt::AlignCenter);
-    m_msgLabel->setObjectName(QStringLiteral("msgLabel"));
     m_msgLabel->setWordWrap(true);
     m_verticalLayout->addWidget(m_msgLabel);
+
+    m_msgLabel2 = new QLabel(this);
+    m_msgLabel2->setAlignment(Qt::AlignCenter);
+    m_msgLabel2->setWordWrap(true);
+    m_verticalLayout->addWidget(m_msgLabel2);
 
     m_progressBar = new QProgressBar(this);
     m_progressBar->setObjectName("progressBar");
@@ -129,6 +133,7 @@ void BtBookshelfInstallFinalPage::slotStopInstall() {
 void BtBookshelfInstallFinalPage::slotInstallStarted(int moduleIndex) {
     m_msgLabel->setText(
             tr("Installing \"%1\"").arg(m_modules.at(moduleIndex)->name()));
+    m_msgLabel2->setText(m_modules.at(moduleIndex)->config(CSwordModuleInfo::Description));
     m_lastStatus = -1;
 }
 
@@ -163,6 +168,7 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
     } else {
         m_msgLabel->setText(tr("The selected works have been installed."));
     }
+    m_msgLabel2->setText("");
 
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
 

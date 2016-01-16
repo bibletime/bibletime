@@ -52,6 +52,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(
       m_groupingOrder(groupingOrderKey),
       m_groupingButton(nullptr),
       m_bookshelfView(nullptr),
+      m_msgLabel(nullptr),
       m_pathLabel(nullptr),
       m_groupingLabel(nullptr),
       m_pathCombo(nullptr),
@@ -94,6 +95,11 @@ void BtBookshelfWorksPage::setupUi() {
     m_bookshelfView->setHeaderHidden(false);
     m_bookshelfView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
     m_verticalLayout->addWidget(m_bookshelfView);
+
+    m_msgLabel = new QLabel(this);
+    m_msgLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_msgLabel->setWordWrap(true);
+    m_verticalLayout->addWidget(m_msgLabel);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();
     if (m_taskType != WizardTaskType::removeWorks) {
@@ -184,6 +190,17 @@ void BtBookshelfWorksPage::retranslateUi() {
         m_pathLabel->setText(tr("Install &folder:"));
         m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
     }
+
+
+    if (m_taskType == WizardTaskType::updateWorks) {
+        m_msgLabel->setText(tr("There are no works to update."));
+    } else if (m_taskType == WizardTaskType::removeWorks) {
+        m_msgLabel->setText(tr("No works are currently installed so they cannot be removed."));
+    } else {
+        m_msgLabel->setText(tr("No works can be installed with the current selection of remote libraries and languages. "
+                           "Please go back and make a different selection."));
+    }
+
     m_groupingLabel->setText(tr("Grouping:"));
     m_groupingButton->setText(tr("Grouping"));
     m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
@@ -197,6 +214,12 @@ int BtBookshelfWorksPage::nextId() const {
 
 void BtBookshelfWorksPage::initializePage() {
     updateModels();
+    setGrouping();
+}
+
+void BtBookshelfWorksPage::setGrouping() {
+    if (m_languages.count() == 1)
+        slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping(BtBookshelfTreeModel::GROUP_CATEGORY));
 }
 
 void BtBookshelfWorksPage::updateModels() {
@@ -229,6 +252,10 @@ void BtBookshelfWorksPage::updateModels() {
     if (m_taskType == WizardTaskType::removeWorks ||
             m_taskType == WizardTaskType::updateWorks)
         m_bookshelfView->expandAll();
+
+    bool noWorks = addedModuleNames.count() == 0;
+    m_msgLabel->setVisible(noWorks);
+    m_bookshelfView->setVisible(!noWorks);
 }
 
 void BtBookshelfWorksPage::slotGroupingActionTriggered(

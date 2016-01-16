@@ -68,6 +68,7 @@ private:
     bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
     bool moduleUsesSelectedLanguage(const CSwordModuleInfo *mInfo);
     void retranslateUi();
+    void setGrouping();
     void setupModels();
     void setupUi();
     void updateModels();
@@ -77,6 +78,7 @@ private:
 
     QToolButton *m_groupingButton;
     BtBookshelfView *m_bookshelfView;
+    QLabel *m_msgLabel;
     QLabel *m_pathLabel;
     QLabel *m_groupingLabel;
     QComboBox *m_pathCombo;
