@@ -30,7 +30,7 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(CResMgr::mainMenu::help::tipOfTheDay::icon());
-    resize(500, 250);
+    resize(560, 300);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
@@ -44,11 +44,14 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     mainLayout->addStretch();
 
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close,
-                                       Qt::Horizontal, this);
-    message::prepareDialogBox(m_buttonBox);
+    m_buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
+
     m_installButton = m_buttonBox->addButton(
                 "", QDialogButtonBox::AcceptRole);
+
+    m_laterButton = m_buttonBox->addButton(
+                "", QDialogButtonBox::RejectRole);
+
     mainLayout->addWidget(m_buttonBox);
 
     setLayout(mainLayout);
@@ -72,12 +75,19 @@ void BtWelcomeDialog::retranslateUi() {
     QString msg("<p>");
     msg += tr("BibleTime is an easy to use but powerful Bible study tool.");
     msg += "</p><p>";
-    msg += tr("Various works such as Bibles, books, commentaries, and lexicons are available. ");
+    msg += tr("Before you can use this application some works must be installed. ");
+    msg += tr("Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. ");
+    msg += "</p><p>";
     msg += tr("Choose the \"Install works\" button to download works. ");
-    msg += tr("The menu \"Settings > Bookshelf Manager\" also installs works.");
+    msg += tr("The menu \"Settings > Bookshelf Manager\" also installs works and can be used later.");
     m_label->setText(msg);
 
-    m_installButton->setText(tr("Install works..."));
+    m_laterButton->setText(tr("Install later"));
+
+    m_installButton->setText( QString("      ") + tr("Install works...") + QString("      "));
+    QFont font = m_installButton->font();
+    font.setBold(true);
+    m_installButton->setFont(font);
 }
 
 //void BtWelcomeDialog::linkClicked(const QUrl& url) {

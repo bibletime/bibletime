@@ -37,6 +37,7 @@ private:
 
     QLabel *m_iconLabel;
     QLabel *m_label;
+    QPushButton *m_laterButton;
     QPushButton *m_installButton;
     QDialogButtonBox* m_buttonBox;
 };
