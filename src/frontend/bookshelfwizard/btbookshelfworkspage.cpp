@@ -15,7 +15,7 @@
 #include "backend/btmoduletreeitem.h"
 #include "backend/config/btconfig.h"
 #include "backend/btinstallmgr.h"
-#include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
+#include "frontend/bookshelfwizard/btinstallpagemodel.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/btbookshelfgroupingmenu.h"

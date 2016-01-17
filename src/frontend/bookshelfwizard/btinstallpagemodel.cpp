@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
+#include "frontend/bookshelfwizard/btinstallpagemodel.h"
 
 
 #include "backend/drivers/cswordmoduleinfo.h"

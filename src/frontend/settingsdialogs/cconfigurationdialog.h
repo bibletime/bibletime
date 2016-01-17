@@ -12,7 +12,7 @@
 #ifndef CCONFIGURATIONDIALOG_H
 #define CCONFIGURATIONDIALOG_H
 
-#include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "frontend/bookshelfwizard/btconfigdialog.h"
 
 
 class BtActionCollection;

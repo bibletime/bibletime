@@ -12,7 +12,7 @@
 #ifndef CSWORDSETTINGS_H
 #define CSWORDSETTINGS_H
 
-#include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "frontend/bookshelfwizard/btconfigdialog.h"
 #include <QWidget>
 
 

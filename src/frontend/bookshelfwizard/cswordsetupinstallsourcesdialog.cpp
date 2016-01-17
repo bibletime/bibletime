@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
+#include "frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h"
 
 #include <QComboBox>
 #include <QDir>

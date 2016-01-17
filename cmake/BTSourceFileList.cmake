@@ -160,24 +160,12 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
     src/frontend/bookshelfwizard/btbookshelfsourcespage.h
     src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp
     src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h
+    src/frontend/bookshelfwizard/btconfigdialog.cpp
+    src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp
+    src/frontend/bookshelfwizard/btinstallpagemodel.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\bookshelfwizard" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD})
-
-SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER
-    # Bookshelf manager frontend:
-    src/frontend/bookshelfmanager/btconfigdialog.cpp
-    src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-)
-
-SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER})
-
-SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
-    # Bookshelf manager frontend install page:
-    src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp
-)
-
-SOURCE_GROUP("src\\frontend\\bookshelfmanager\\installpage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE})
 
 SET(bibletime_SRC_FRONTEND_BOOKMARKS
     # Bookshelf/Bookmarks widget in main window:
@@ -331,9 +319,9 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/bibletimeapp.h
     src/frontend/bookmarks/bteditbookmarkdialog.h
     src/frontend/bookmarks/cbookmarkindex.h
-    src/frontend/bookshelfmanager/btconfigdialog.h
-    src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h
-    src/frontend/bookshelfmanager/installpage/btinstallpagemodel.h
+    src/frontend/bookshelfwizard/btconfigdialog.h
+    src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h
+    src/frontend/bookshelfwizard/btinstallpagemodel.h
     src/frontend/bookshelfwizard/btbookshelfwizard.h
     src/frontend/bookshelfwizard/btbookshelfwizardpage.h
     src/frontend/bookshelfwizard/btbookshelftaskpage.h
@@ -432,9 +420,7 @@ SET(bibletime_FRONTEND_DESKTOP_SOURCES
     ${bibletime_SRC}
     ${bibletime_SRC_FRONTEND}
     ${bibletime_SRC_FRONTEND_BOOKMARKS}
-    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
     ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD}
-    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS}
     ${bibletime_SRC_FRONTEND_SETTINGSDIALOG}

@@ -26,7 +26,7 @@
 #include "backend/btinstallbackend.h"
 #include "backend/btinstallmgr.h"
 #include "backend/models/btlistmodel.h"
-#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
+#include "frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"

@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "frontend/bookshelfwizard/btconfigdialog.h"
 
 #include <QDialog>
 #include <QDialogButtonBox>
