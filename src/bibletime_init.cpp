@@ -669,14 +669,12 @@ void BibleTime::initMenubar() {
     m_settingsMenu = new QMenu(this);
     m_settingsMenu->addAction(m_setPreferencesAction);
     m_settingsMenu->addSeparator();
-    m_settingsMenu->addAction(m_bookshelfManagerAction);
     m_settingsMenu->addAction(m_bookshelfWizardAction);
     menuBar()->addMenu(m_settingsMenu);
     #else
     // On MAC OS, the settings actions will be moved to a system menu item.
     // Therefore the settings menu would be empty, so we do not show it.
     m_fileMenu->addAction(m_setPreferencesAction);
-    m_fileMenu->addAction(m_bookshelfManagerAction);
     m_fileMenu->addAction(m_bookshelfWizardAction);
     #endif
 
