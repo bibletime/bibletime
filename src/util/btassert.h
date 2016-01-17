@@ -12,18 +12,12 @@
 #ifndef BTASSERT_H
 #define BTASSERT_H
 
-#include <cassert>
+#if !defined(QT_NO_DEBUG) && !defined(NDEBUG)
 #include <QtGlobal>
-
-
-#ifndef NDEBUG
-#ifndef QT_NO_DEBUG
 #define BT_ASSERT(...) ([&]{ Q_ASSERT(__VA_ARGS__); }())
 #else
+#include <cassert>
 #define BT_ASSERT(...) assert(__VA_ARGS__)
-#endif
-#else
-#define BT_ASSERT(...) assert(true)
 #endif
 
 #endif /* BTASSERT_H */
