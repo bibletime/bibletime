@@ -1,5 +1,5 @@
 PROJECT(bibletime CXX C)
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
 
 IF("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
   MESSAGE(FATAL_ERROR "You probably didn't mean to run CMake from this directory. Now you have all messed up! You'd better delete CMakeFiles/ and CMakeCache.txt or things will break!")
@@ -68,15 +68,6 @@ ENDIF()
 SET(BT_VERSION_FULL "${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}.${BT_VERSION_PATCH}${BT_VERSION_BUILD}")
 MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_FULL}")
 
-ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_FULL}")
-
-# Define debug flags
-IF(NOT (CMAKE_BUILD_TYPE STREQUAL "Release"))
-  ADD_DEFINITIONS("-DBT_DEBUG")
-ELSE()
-  ADD_DEFINITIONS("-DBT_NO_DEBUG" "-DNDEBUG" "-DQT_NO_DEBUG")
-ENDIF()
-
 #Non-English locales to be processed and installed for handbook and howto
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
@@ -104,6 +95,19 @@ FIND_PACKAGE(Qt5Widgets REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
+
+ADD_COMPILE_OPTIONS(
+  "-std=c++11" "-O2" "-ggdb" "-Wall" "-Wextra"
+  "-DBT_VERSION=\"${BT_VERSION_FULL}\""
+  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
+  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-DBT_DEBUG>"
+  "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
+  "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
+  ${Sword_CFLAGS_OTHER}
+)
+IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
+    ADD_DEFINITIONS("-DBT_MOBILE")
+ENDIF()
 
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
@@ -169,25 +173,15 @@ ELSE()
   qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
 ENDIF()
 
-IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    ADD_DEFINITIONS("-DBT_MOBILE")
-ENDIF()
-
-IF(CMAKE_BUILD_TYPE STREQUAL "Release")
-SET(BibleTime_CFLAGS "-Wall -Wextra -std=c++11 -O2")
-ELSE()
-SET(BibleTime_CFLAGS "-Wall -Wextra -std=c++11")
-ENDIF()
-
 SET(BibleTime_LDFLAGS "")
 IF(MSVC)
   SET(CMAKE_CXX_FLAGS_RELEASE "-DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
   SET(CMAKE_CXX_FLAGS_DEBUG   "-DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
   SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} /SUBSYSTEM:WINDOWS")
 ELSE()
-  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -fPIE -fexceptions")
+  ADD_COMPILE_OPTIONS("-fPIE" "-fexceptions")
   SET(CMAKE_CXX_FLAGS_RELEASE "")
-  SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb")
+  SET(CMAKE_CXX_FLAGS_DEBUG "")
   IF(APPLE)
     # enable support MacOS 10.5+
     SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/")
