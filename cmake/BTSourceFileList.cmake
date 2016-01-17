@@ -162,45 +162,22 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
     src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h
 )
 
-SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD})
+SOURCE_GROUP("src\\frontend\\bookshelfwizard" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD})
 
 SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER
     # Bookshelf manager frontend:
     src/frontend/bookshelfmanager/btconfigdialog.cpp
-    src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp
     src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER})
 
-SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE
-    # Bookshelf manager frontend index page:
-    src/frontend/bookshelfmanager/indexpage/btindexpage.cpp
-)
-
-SOURCE_GROUP("src\\frontend\\bookshelfmanager\\indexpage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE})
-
 SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
     # Bookshelf manager frontend install page:
-    src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp
-    src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\bookshelfmanager\\installpage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE})
-
-SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE
-    # Bookshelf manager frontend remove page:
-    src/frontend/bookshelfmanager/removepage/btremovepage.cpp
-    src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp
-)
-
-SOURCE_GROUP("src\\frontend\\bookshelfmanager\\removepage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE})
 
 SET(bibletime_SRC_FRONTEND_BOOKMARKS
     # Bookshelf/Bookmarks widget in main window:
@@ -355,19 +332,8 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookmarks/bteditbookmarkdialog.h
     src/frontend/bookmarks/cbookmarkindex.h
     src/frontend/bookshelfmanager/btconfigdialog.h
-    src/frontend/bookshelfmanager/btmodulemanagerdialog.h
     src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h
-    src/frontend/bookshelfmanager/indexpage/btindexpage.h
-    src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h
-    src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h
-    src/frontend/bookshelfmanager/installpage/btinstallpage.h
-    src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.h
-    src/frontend/bookshelfmanager/installpage/btinstallpathdialog.h
-    src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallpagemodel.h
-    src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h
-    src/frontend/bookshelfmanager/removepage/btremovepage.h
-    src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
     src/frontend/bookshelfwizard/btbookshelfwizard.h
     src/frontend/bookshelfwizard/btbookshelfwizardpage.h
     src/frontend/bookshelfwizard/btbookshelftaskpage.h
@@ -468,9 +434,7 @@ SET(bibletime_FRONTEND_DESKTOP_SOURCES
     ${bibletime_SRC_FRONTEND_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
     ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD}
-    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE}
-    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS}
     ${bibletime_SRC_FRONTEND_SETTINGSDIALOG}

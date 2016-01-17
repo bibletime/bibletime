@@ -27,7 +27,6 @@
 #include "frontend/btaboutdialog.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
@@ -78,16 +77,6 @@ void BibleTime::slotSettingsChanged() {
     refreshDisplayWindows();
     refreshProfileMenus();
     qDebug() << "BibleTime::slotSettingsChanged";
-}
-
-/** Opens the sword setup dialog of BibleTime. */
-void BibleTime::slotSwordSetupDialog() {
-    BtModuleManagerDialog *dlg = BtModuleManagerDialog::getInstance(this);
-
-    dlg->showNormal();
-    dlg->show();
-    dlg->raise();
-    dlg->activateWindow();
 }
 
 /** Opens the bookshelf wizard. */

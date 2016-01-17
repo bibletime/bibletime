@@ -25,8 +25,6 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "bibletimeapp.h"
-#include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h"
-#include "frontend/bookshelfmanager/removepage/btremovepagetreemodel.h"
 #include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfgroupingmenu.h"
 #include "frontend/btbookshelfview.h"

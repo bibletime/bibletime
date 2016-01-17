@@ -234,13 +234,6 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("setPreferences", action);
 
     action = new QAction(a);
-    action->setText(tr("Old Bookshelf &Manager..."));
-    action->setIcon(CResMgr::mainMenu::settings::swordSetupDialog::icon());
-    //action->setShortcut(QKeySequence(CResMgr::mainMenu::settings::swordSetupDialog::accel));
-    action->setToolTip(tr("Configure your bookshelf and install/update/remove/index works"));
-    a->addAction("bookshelfManager", action);
-
-    action = new QAction(a);
     action->setText(tr("Bookshelf Manager..."));
     action->setIcon(CResMgr::mainMenu::settings::swordSetupDialog::icon());
     action->setShortcut(QKeySequence(CResMgr::mainMenu::settings::swordSetupDialog::accel));
@@ -875,43 +868,7 @@ void BibleTime::initBackends() {
     CSwordBackend *backend = CSwordBackend::createInstance();
     backend->booknameLanguage(btConfig().value<QString>("GUI/booknameLanguage", QLocale::system().name()));
 
-    const CSwordBackend::LoadError errorCode = CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
-
-    if (errorCode != CSwordBackend::NoError) {
-        //show error message that initBackend failed
-        /// \todo
-//         switch (errorCode) {
-//             case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
-//             {
-//                 KStartupLogo::hideSplash();
-//                 qDebug() << "case CSwordBackend::NoSwordConfig";
-//                 BookshelfManager::CSwordSetupDialog dlg;
-//                 dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-//                 dlg.exec();
-//                 break;
-//             }
-//
-//             case CSwordBackend::NoModules: //no modules installed, but config exists
-//             {
-//                 KStartupLogo::hideSplash();
-//                 qDebug() << "case CSwordBackend::NoModules";
-//                 BookshelfManager::CSwordSetupDialog dlg;
-//                 dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
-//                 dlg.exec();
-//                 break;
-//             }
-//
-//             default: //unknown error
-//             {
-//                 KStartupLogo::hideSplash();
-//                 qDebug() << "unknown error";
-//                 BookshelfManager::CSwordSetupDialog dlg;
-//                 dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-//                 dlg.exec();
-//                 break;
-//             }
-//         }
-    }
+    CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 
     // This function will
     // - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true

@@ -205,10 +205,6 @@ public slots:
         */
         void slotSettingsOptions();
         /**
-        * Opens the optionsdialog of BibleTime.
-        */
-        void slotSwordSetupDialog();
-        /**
         * Opens the bookshelf wizard.
         */
         void slotBookshelfWizard();
