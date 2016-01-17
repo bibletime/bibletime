@@ -7,8 +7,6 @@ VERSION = 2.10.0_dev
 CONFIG += clucene svg xml webkit
 QT += printsupport
 
-debug:DEFINES += BT_DEBUG
-
 INCLUDEPATH += . \
 
 SOURCES += \

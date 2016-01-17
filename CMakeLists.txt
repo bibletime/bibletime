@@ -100,7 +100,6 @@ ADD_COMPILE_OPTIONS(
   "-std=c++11" "-O2" "-ggdb" "-Wall" "-Wextra"
   "-DBT_VERSION=\"${BT_VERSION_FULL}\""
   "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
-  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-DBT_DEBUG>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
   ${Sword_CFLAGS_OTHER}

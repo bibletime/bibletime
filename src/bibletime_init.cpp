@@ -44,7 +44,7 @@
 #include <swlog.h>
 #include <swmgr.h>
 
-#ifdef BT_DEBUG
+#ifndef NDEBUG
 #include <QLabel>
 #include <QMetaObject>
 #include <QMutexLocker>
@@ -575,7 +575,7 @@ void BibleTime::initActions() {
     BT_CONNECT(m_tipOfTheDayAction, SIGNAL(triggered()),
                this,                SLOT(slotOpenTipDialog()) );
 
-    #ifdef BT_DEBUG
+    #ifndef NDEBUG
     m_debugWidgetAction = new QAction(this);
     m_debugWidgetAction->setCheckable(true);
     BT_CONNECT(m_debugWidgetAction, SIGNAL(triggered(bool)),
@@ -685,7 +685,7 @@ void BibleTime::initMenubar() {
     m_helpMenu->addAction(m_tipOfTheDayAction);
     m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_aboutBibleTimeAction);
-    #ifdef BT_DEBUG
+    #ifndef NDEBUG
     m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_debugWidgetAction);
     #endif
@@ -733,7 +733,7 @@ void BibleTime::retranslateUi() {
 
     m_helpMenu->setTitle(tr("&Help"));
 
-    #ifdef BT_DEBUG
+    #ifndef NDEBUG
     m_debugWidgetAction->setText(tr("Show \"Whats this widget\" dialog"));
     #endif
 
@@ -870,7 +870,7 @@ void BibleTime::initBackends() {
 
 }
 
-#if BT_DEBUG
+#ifndef NDEBUG
 
 QLabel *BibleTime::m_debugWindow = nullptr;
 QMutex BibleTime::m_debugWindowLock;

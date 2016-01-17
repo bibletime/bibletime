@@ -18,7 +18,7 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"
 #include <QSignalMapper>
-#ifdef BT_DEBUG
+#ifndef NDEBUG
 #include <QMutex>
 #endif
 
@@ -527,7 +527,7 @@ public slots:
          */
         void showOrHideToolBars();
 
-#ifdef BT_DEBUG
+#ifndef NDEBUG
         void deleteDebugWindow();
     private slots:
         void slotDebugWindowClosing();
