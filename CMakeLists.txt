@@ -185,18 +185,18 @@ ELSE()
   IF(APPLE)
     # enable support MacOS 10.5+
     SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/")
-    SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T}")
+    SET(BibleTime_CXXFLAGS "${BibleTime_CXXFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T}")
     SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T} -F /Library/Frameworks/")
     UNSET(T)
   ENDIF()
 ENDIF()
 
 SET_TARGET_PROPERTIES("bibletime" PROPERTIES
-                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
+                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
-                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
+                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 IF(Qt5Core_VERSION VERSION_LESS 5.3.0)
@@ -282,4 +282,3 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
                IMMEDIATE @ONLY)
 ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 ######################################################
-
