@@ -1,4 +1,4 @@
-
+#include <memory>
 #include <QtTest/QtTest>
 #include <QSignalSpy>
 #include <qdebug.h>
@@ -39,10 +39,8 @@ void test_CSwordVerseKey::initTestCase() {
 }
 
 void test_CSwordVerseKey::CSwordVerseKey_module_constructor() {
-
-    const CSwordVerseKey* key = nullptr;
     try {
-        key = new CSwordVerseKey(m_moduleKJVA);
+        std::unique_ptr<CSwordVerseKey>(new CSwordVerseKey(m_moduleKJVA));
     }
     catch (...) {
         QFAIL("constructor failed");
@@ -50,7 +48,7 @@ void test_CSwordVerseKey::CSwordVerseKey_module_constructor() {
 
     // QUESTION: Should a null module cause a throw?
     try {
-        key = new CSwordVerseKey(nullptr);
+        std::unique_ptr<CSwordVerseKey>(new CSwordVerseKey(nullptr));
     }
     catch (...) {
         QFAIL("constructor failed");
