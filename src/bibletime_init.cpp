@@ -553,11 +553,6 @@ void BibleTime::initActions() {
     BT_CONNECT(m_setPreferencesAction, SIGNAL(triggered()),
                this,                   SLOT(slotSettingsOptions()));
 
-    m_bookshelfManagerAction = &m_actionCollection->action("bookshelfManager");
-    m_bookshelfManagerAction->setMenuRole( QAction::ApplicationSpecificRole );
-    BT_CONNECT(m_bookshelfManagerAction, SIGNAL(triggered()),
-               this,                     SLOT(slotSwordSetupDialog()));
-
     m_bookshelfWizardAction = &m_actionCollection->action("bookshelfWizard");
     m_bookshelfWizardAction->setMenuRole( QAction::ApplicationSpecificRole );
     BT_CONNECT(m_bookshelfWizardAction, SIGNAL(triggered()),
