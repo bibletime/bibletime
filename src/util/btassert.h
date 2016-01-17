@@ -17,7 +17,11 @@
 
 
 #ifndef NDEBUG
+#ifndef QT_NO_DEBUG
 #define BT_ASSERT(...) ([&]{ Q_ASSERT(__VA_ARGS__); }())
+#else
+#define BT_ASSERT(...) assert(__VA_ARGS__)
+#endif
 #else
 #define BT_ASSERT(...) assert(true)
 #endif
