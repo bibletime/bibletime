@@ -572,7 +572,7 @@ void CBookmarkIndex::importBookmarks() {
 
 /** Prints the selected bookmarks. */
 void CBookmarkIndex::printBookmarks() {
-    BT_ASSERT(!hasBookmarksRecursively(selectedIndexes()));
+    BT_ASSERT(hasBookmarksRecursively(selectedIndexes()));
     BtPrinter::KeyTree tree;
     {
         BtPrinter::KeyTreeItem::Settings const settings{
