@@ -150,7 +150,7 @@ public slots:
 
 private:
 
-    inline bool slotSave() { return save(QString()); }
+    inline bool slotSave() { return save(); }
 
 private: /* Fields: */
     Q_DECLARE_PRIVATE(BtBookmarksModel)
