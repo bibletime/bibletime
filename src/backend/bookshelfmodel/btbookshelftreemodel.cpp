@@ -241,9 +241,12 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel * sourceModel) {
         return;
 
     if (m_sourceModel != nullptr) {
-        disconnect(this, SLOT(moduleInserted(QModelIndex, int, int)));
-        disconnect(this, SLOT(moduleRemoved(QModelIndex, int, int)));
-        disconnect(this, SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
+        disconnect(m_sourceModel, &QAbstractItemModel::rowsAboutToBeRemoved,
+                   this,          &BtBookshelfTreeModel::moduleRemoved);
+        disconnect(m_sourceModel, &QAbstractItemModel::rowsInserted,
+                   this,          &BtBookshelfTreeModel::moduleInserted);
+        disconnect(m_sourceModel, &QAbstractItemModel::dataChanged,
+                   this,          &BtBookshelfTreeModel::moduleDataChanged);
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
         delete m_rootItem;
         m_modules.clear();
@@ -256,13 +259,12 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel * sourceModel) {
     m_sourceModel = sourceModel;
 
     if (sourceModel != nullptr) {
-        BT_CONNECT(sourceModel,
-                   SIGNAL(rowsAboutToBeRemoved(QModelIndex, int, int)),
-                   this,        SLOT(moduleRemoved(QModelIndex, int, int)));
-        BT_CONNECT(sourceModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
-                   this,        SLOT(moduleInserted(QModelIndex, int, int)));
-        BT_CONNECT(sourceModel, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
-                   this, SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
+        BT_CONNECT(sourceModel, &QAbstractItemModel::rowsAboutToBeRemoved,
+                   this,        &BtBookshelfTreeModel::moduleRemoved);
+        BT_CONNECT(sourceModel, &QAbstractItemModel::rowsInserted,
+                   this,        &BtBookshelfTreeModel::moduleInserted);
+        BT_CONNECT(sourceModel, &QAbstractItemModel::dataChanged,
+                   this,        &BtBookshelfTreeModel::moduleDataChanged);
 
         for (int i = 0; i < sourceModel->rowCount(); i++) {
             const QModelIndex moduleIndex(sourceModel->index(i, 0));

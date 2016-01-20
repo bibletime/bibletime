@@ -125,12 +125,12 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     const int index(m_data.size());
     beginInsertRows(QModelIndex(), index, index);
     m_data.append(module);
-    BT_CONNECT(module, SIGNAL(hiddenChanged(bool)),
-               this, SLOT(moduleHidden(bool)));
-    BT_CONNECT(module, SIGNAL(hasIndexChanged(bool)),
-               this,   SLOT(moduleIndexed(bool)));
-    BT_CONNECT(module, SIGNAL(unlockedChanged(bool)),
-               this,   SLOT(moduleUnlocked(bool)));
+    BT_CONNECT(module, &CSwordModuleInfo::hiddenChanged,
+               this,   &BtBookshelfModel::moduleHidden);
+    BT_CONNECT(module, &CSwordModuleInfo::hasIndexChanged,
+               this,   &BtBookshelfModel::moduleIndexed);
+    BT_CONNECT(module, &CSwordModuleInfo::unlockedChanged,
+               this,   &BtBookshelfModel::moduleUnlocked);
     endInsertRows();
 }
 
@@ -152,12 +152,12 @@ void BtBookshelfModel::addModules(BtModuleSet const & modules) {
                     m_data.size() + newModules.size() - 1);
     Q_FOREACH(CSwordModuleInfo * const module, newModules) {
         m_data.append(module);
-        BT_CONNECT(module, SIGNAL(hiddenChanged(bool)),
-                   this, SLOT(moduleHidden(bool)));
-        BT_CONNECT(module, SIGNAL(hasIndexChanged(bool)),
-                   this,   SLOT(moduleIndexed(bool)));
-        BT_CONNECT(module, SIGNAL(unlockedChanged(bool)),
-                   this,   SLOT(moduleUnlocked(bool)));
+        BT_CONNECT(module, &CSwordModuleInfo::hiddenChanged,
+                   this,   &BtBookshelfModel::moduleHidden);
+        BT_CONNECT(module, &CSwordModuleInfo::hasIndexChanged,
+                   this,   &BtBookshelfModel::moduleIndexed);
+        BT_CONNECT(module, &CSwordModuleInfo::unlockedChanged,
+                   this,   &BtBookshelfModel::moduleUnlocked);
     }
     endInsertRows();
 }
@@ -169,12 +169,12 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
         return;
 
     beginRemoveRows(QModelIndex(), index, index);
-    disconnect(module, SIGNAL(hiddenChanged(bool)),
-               this, SLOT(moduleHidden(bool)));
-    disconnect(module, SIGNAL(hasIndexChanged(bool)),
-               this,   SLOT(moduleIndexed(bool)));
-    disconnect(module, SIGNAL(unlockedChanged(bool)),
-               this,   SLOT(moduleUnlocked(bool)));
+    disconnect(module, &CSwordModuleInfo::hiddenChanged,
+               this,   &BtBookshelfModel::moduleHidden);
+    disconnect(module, &CSwordModuleInfo::hasIndexChanged,
+               this,   &BtBookshelfModel::moduleIndexed);
+    disconnect(module, &CSwordModuleInfo::unlockedChanged,
+               this,   &BtBookshelfModel::moduleUnlocked);
     m_data.removeAt(index);
     endRemoveRows();
     if (destroy)
