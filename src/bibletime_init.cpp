@@ -886,10 +886,10 @@ void BibleTime::slotShowDebugWindow(bool show) {
             m_debugWindow->setWindowTitle(tr("Whats this widget?"));
         }
         m_debugWindow->show();
-        BT_CONNECT(m_debugWindow, SIGNAL(destroyed()),
-                   this,          SLOT(slotDebugWindowClosing()),
+        BT_CONNECT(m_debugWindow, &QObject::destroyed,
+                   this,          &BibleTime::slotDebugWindowClosing,
                    Qt::DirectConnection);
-        QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
+        QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
     } else {
         deleteDebugWindow();
     }
@@ -898,7 +898,8 @@ void BibleTime::slotShowDebugWindow(bool show) {
 void BibleTime::deleteDebugWindow() {
     QMutexLocker lock(&m_debugWindowLock);
     if (m_debugWindow != nullptr) {
-        m_debugWindow->disconnect(SIGNAL(destroyed()), this, SLOT(slotDebugWindowClosing()));
+        disconnect(m_debugWindow, &QObject::destroyed,
+                   this,          &BibleTime::slotDebugWindowClosing);
         delete m_debugWindow;
         m_debugWindow = nullptr;
     }
