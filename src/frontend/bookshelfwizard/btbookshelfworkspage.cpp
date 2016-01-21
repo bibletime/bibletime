@@ -260,6 +260,8 @@ void BtBookshelfWorksPage::updateModels() {
     bool noWorks = addedModuleNames.count() == 0;
     m_msgLabel->setVisible(noWorks);
     m_bookshelfView->setVisible(!noWorks);
+    m_groupingButton->setVisible(!noWorks);
+    m_groupingLabel->setVisible(!noWorks);
 }
 
 void BtBookshelfWorksPage::slotGroupingActionTriggered(
