@@ -81,8 +81,10 @@ void BtBookshelfSourcesProgressPage::retranslateUi() {
                     "Updating information from remote libraries."));
 }
 
-int BtBookshelfSourcesProgressPage::nextId() const
-{ return WizardPage::sourcesPage; }
+int BtBookshelfSourcesProgressPage::nextId() const {
+    if (btWizard().taskType() == WizardTaskType::updateWorks)
+        return WizardPage::updateWorksPage;
+    return WizardPage::sourcesPage; }
 
 void BtBookshelfSourcesProgressPage::initializePage() {
     m_thread = new BtSourcesThread(this);

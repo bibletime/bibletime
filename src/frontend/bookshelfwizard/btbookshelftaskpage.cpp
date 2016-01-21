@@ -119,6 +119,8 @@ int BtBookshelfTaskPage::nextId() const {
         return WizardPage::sourcesPage;
     }
     if (m_updateRadioButton->isChecked())
+        if (timeToUpdate())
+            return WizardPage::sourcesProgressPage;
         return WizardPage::updateWorksPage;
     if (m_removeRadioButton->isChecked())
         return WizardPage::removeWorksPage;
