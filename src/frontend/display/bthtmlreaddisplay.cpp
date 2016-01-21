@@ -11,6 +11,7 @@
 
 #include <memory>
 #include <QMenu>
+#include <QDebug>
 #include <QString>
 #include <QTimer>
 #include "backend/keys/cswordkey.h"
