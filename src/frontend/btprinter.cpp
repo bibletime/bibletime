@@ -8,11 +8,10 @@
 **********/
 
 #include "btprinter.h"
-
+#include "bibletime.h"
 #include <QPrintDialog>
 #include <QPrinter>
-#include <QWebFrame>
-#include <QWebPage>
+#include <QTextEdit>
 #include "../util/btassert.h"
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
@@ -40,13 +39,13 @@ BtPrinter::BtPrinter(DisplayOptions const & displayOptions,
 {}
 
 void BtPrinter::printKeyTree(KeyTree const & tree) {
-    QWebPage htmlPage;
-    htmlPage.mainFrame()->setHtml(renderKeyTree(tree));
+    QTextEdit htmlPage;
+    htmlPage.setHtml(renderKeyTree(tree));
 
     QPrinter printer;
     QPrintDialog printDialog(&printer);
     if (printDialog.exec() == QDialog::Accepted)
-        htmlPage.mainFrame()->print(&printer);
+        htmlPage.print(&printer);
 }
 
 QString BtPrinter::entryLink(KeyTreeItem const & item,

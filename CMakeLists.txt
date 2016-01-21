@@ -29,7 +29,6 @@ SET(BT_VERSION_MINOR "10")
 SET(BT_VERSION_PATCH "0_rc1")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
-
 # Determine build, if needed:
 IF(NOT (DEFINED BT_VERSION_BUILD))
   FIND_PACKAGE(Git)
@@ -108,6 +107,16 @@ IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
 ENDIF()
 
+IF(Qt5Core_VERSION VERSION_LESS 5.6.0)
+    SET(USEWEBENGINE OFF)
+ELSE()
+    SET(USEWEBENGINE ON)
+ENDIF()
+
+IF(USEWEBENGINE)
+    ADD_DEFINITIONS("-DUSEWEBENGINE")
+ENDIF()
+
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 
@@ -139,7 +148,7 @@ ADD_LIBRARY(
     ${bibletime_COMMON_SOURCES}
     ${bibletime_COMMON_MOCABLE_SOURCES}
 )
-QT5_USE_MODULES(bibletime_common Widgets WebKitWidgets PrintSupport Xml)
+QT5_USE_MODULES(bibletime_common Widgets Xml)
 
 IF(MSVC)
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
@@ -168,6 +177,8 @@ TARGET_LINK_LIBRARIES("bibletime"
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
   qt5_use_modules("bibletime" Widgets WebKitWidgets Qml Quick Xml Network PrintSupport Svg)
+ELSEIF(USEWEBENGINE)
+  qt5_use_modules("bibletime" Widgets WebEngine WebEngineWidgets WebChannel Xml Network PrintSupport Svg)
 ELSE()
   qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
 ENDIF()
@@ -222,8 +233,15 @@ FILE(GLOB INSTALL_TMPL_LIST
 INSTALL(FILES ${INSTALL_TMPL_LIST}
          DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
 
-INSTALL(FILES "src/frontend/display/bthtml.js"
+
+IF(USEWEBENGINE)
+    INSTALL(FILES "src/frontend/display/btwebengine.js"
+     DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
+ELSE()
+    INSTALL(FILES "src/frontend/display/bthtml.js"
         DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
+ENDIF()
+
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
 INSTALL(FILES ${bibletime_QML_FILES} DESTINATION "${BT_SHARE_PATH}/qml/")

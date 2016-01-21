@@ -16,7 +16,8 @@
 #include <QTabBar>
 #include <QTimer>
 #include <QToolBar>
-#include <QWebView>
+#include "frontend/btwebenginepage.h"
+#include "frontend/btwebengineview.h"
 #include <QWindowStateChangeEvent>
 #include "bibletime.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
@@ -30,13 +31,13 @@ inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) 
     return qobject_cast<CDisplayWindow *>(mdiWindow->widget());
 }
 
-inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
+inline BtWebEngineView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
     if (!displayWindow)
         return nullptr;
     CDisplay * const display = displayWindow->displayWidget();
     if (!display)
         return nullptr;
-    return qobject_cast<QWebView *>(display->view());
+    return qobject_cast<BtWebEngineView *>(display->view());
 }
 
 } // anonymous namespace
@@ -290,11 +291,11 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     return ret;
 }
 
-QWebView* CMDIArea::getActiveWebView()
+BtWebEngineView* CMDIArea::getActiveWebView()
 {
     QMdiSubWindow* activeMdiWindow = activeSubWindow();
     CDisplayWindow* const activeWindow = getDisplayWindow(activeMdiWindow);
-    QWebView* webView = getWebViewFromDisplayWindow(activeWindow);
+    BtWebEngineView* webView = getWebViewFromDisplayWindow(activeWindow);
     return webView;
 }
 
@@ -322,27 +323,18 @@ void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
 { findTextInActiveWindow(text, cs, true); }
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
-    QWebView* activeWebView = getActiveWebView();
+    BtWebEngineView* activeWebView = getActiveWebView();
     if (activeWebView == nullptr)
         return;
-    QWebPage::FindFlags options = QWebPage::HighlightAllOccurrences;
-    if (caseSensitive)
-        options |= QWebPage::FindCaseSensitively;
-    activeWebView->findText("", options); // clear old highlight
-    activeWebView->findText(text, options);
+    activeWebView->findTextHighlight(text, caseSensitive);
 }
 
 void CMDIArea::findTextInActiveWindow(QString const & text,
                                       bool caseSensitive,
                                       bool backward)
 {
-    if (QWebView * const activeWebView = getActiveWebView()) {
-        QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
-        if (backward)
-            options |= QWebPage::FindBackward;
-        if (caseSensitive)
-            options |= QWebPage::FindCaseSensitively;
-        activeWebView->findText(text, options);
+    if (BtWebEngineView * const activeWebView = getActiveWebView()) {
+        activeWebView->findText(text, caseSensitive, backward);
     }
 }
 

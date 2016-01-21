@@ -134,6 +134,8 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/btmoduleindexdialog.cpp
     src/frontend/btopenworkaction.cpp
     src/frontend/btprinter.cpp
+    src/frontend/btwebenginepage.cpp
+    src/frontend/btwebengineview.cpp
     src/frontend/cexportmanager.cpp
     src/frontend/cinfodisplay.cpp
     src/frontend/cmdiarea.cpp
@@ -341,6 +343,8 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/btmoduleindexdialog.h
     src/frontend/btopenworkaction.h
     src/frontend/btprinter.h
+    src/frontend/btwebenginepage.h
+    src/frontend/btwebengineview.h
     src/frontend/cdragdrop.h
     src/frontend/cinfodisplay.h
     src/frontend/cmdiarea.h

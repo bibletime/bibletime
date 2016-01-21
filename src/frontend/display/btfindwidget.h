@@ -52,7 +52,6 @@ private: /* Methods: */
 
     void emitChange(QString const & text, bool const caseSensitive) {
         emit highlightText(text, caseSensitive);
-        emit findNext(text, caseSensitive);
     }
 
 signals:

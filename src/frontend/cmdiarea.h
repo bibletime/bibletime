@@ -20,7 +20,7 @@
 class BibleTime;
 class CSwordModuleInfo;
 class CDisplayWindow;
-class QWebView;
+class BtWebEngineView;
 
 /**
   A custom MDI area widget.
@@ -164,7 +164,7 @@ class CMDIArea: public QMdiArea {
 
         void fixSystemMenu(QMdiSubWindow* subWindow);
 
-        QWebView* getActiveWebView();
+        BtWebEngineView *getActiveWebView();
 
     protected slots:
 

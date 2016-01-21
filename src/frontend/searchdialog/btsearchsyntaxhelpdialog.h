@@ -16,7 +16,7 @@
 
 class QDialogButtonBox;
 class QUrl;
-class QWebView;
+class BtWebEngineView;
 
 namespace Search {
 
@@ -32,7 +32,7 @@ class BtSearchSyntaxHelpDialog: public QDialog {
         void linkClicked(const QUrl &url);
 
     private:
-        QWebView         *m_webView;
+        BtWebEngineView  *m_webView;
         QDialogButtonBox *m_buttons;
 };
 

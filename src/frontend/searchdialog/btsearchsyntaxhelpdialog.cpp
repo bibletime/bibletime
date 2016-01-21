@@ -12,7 +12,7 @@
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWebView>
+#include <frontend/btwebengineview.h>
 #include "frontend/messagedialog.h"
 #include "util/btconnect.h"
 
@@ -26,9 +26,8 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
 
     QVBoxLayout *l = new QVBoxLayout;
 
-    m_webView = new QWebView(this);
-    m_webView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);
-    BT_CONNECT(m_webView, SIGNAL(linkClicked(QUrl)),
+    m_webView = new BtWebEngineView(this);
+    BT_CONNECT(m_webView->btPage(), SIGNAL(linkClicked(QUrl)),
                this,      SLOT(linkClicked(QUrl)));
     l->addWidget(m_webView);
 

@@ -14,11 +14,11 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QFormLayout>
-#include <QWebView>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "bibletimeapp.h"
+#include "frontend/btwebengineview.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
@@ -32,7 +32,7 @@
 using SBLCI = std::list<sword::SWBuf>::const_iterator;
 
 // ***********************
-// Container for QWebView to control its size
+// Container for BtWebEngineView to control its size
 class CWebViewerWidget : public QWidget {
     public:
         CWebViewerWidget(QWidget* parent = nullptr);
@@ -84,7 +84,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     QWidget* webViewWidget = new CWebViewerWidget(this);
     QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
-    m_stylePreviewViewer = new QWebView(webViewWidget);
+    m_stylePreviewViewer = new BtWebEngineView(webViewWidget);
     m_previewLabel = new QLabel(webViewWidget);
     m_previewLabel->setBuddy(m_stylePreviewViewer);
     webViewLayout->addWidget(m_previewLabel);
