@@ -218,8 +218,12 @@ void BtBookshelfWorksPage::initializePage() {
 }
 
 void BtBookshelfWorksPage::setGrouping() {
+    BtBookshelfTreeModel::Grouping cat(BtBookshelfTreeModel::GROUP_CATEGORY);
+    BtBookshelfTreeModel::Grouping catLang;
     if (m_languages.count() == 1)
-        slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping(BtBookshelfTreeModel::GROUP_CATEGORY));
+        slotGroupingActionTriggered(cat);
+    else if (m_languages.count() > 1 && m_groupingOrder == cat)
+            slotGroupingActionTriggered(catLang);
 }
 
 void BtBookshelfWorksPage::updateModels() {
