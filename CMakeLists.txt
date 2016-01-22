@@ -96,7 +96,7 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 ADD_COMPILE_OPTIONS(
-  "-O2" 
+  "-O2"
   "-DBT_VERSION=\"${BT_VERSION_FULL}\""
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
@@ -149,7 +149,7 @@ ENDIF()
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
 ADD_LIBRARY(
-    bibletime_common 
+    bibletime_common
     STATIC
     ${bibletime_COMMON_SOURCES}
     ${bibletime_COMMON_MOCABLE_SOURCES}
@@ -219,7 +219,6 @@ IF(Qt5Core_VERSION VERSION_LESS 5.3.0)
     MESSAGE(WARNING "Qt tests not build because they require Qt 5.3 or greater.")
 ELSE()
     INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
-    
 ENDIF()
 
 # Install files
