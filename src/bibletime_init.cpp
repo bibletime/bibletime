@@ -577,8 +577,8 @@ void BibleTime::initActions() {
     #ifndef NDEBUG
     m_debugWidgetAction = new QAction(this);
     m_debugWidgetAction->setCheckable(true);
-    BT_CONNECT(m_debugWidgetAction, SIGNAL(triggered(bool)),
-               this,                SLOT(slotShowDebugWindow(bool)));
+    BT_CONNECT(m_debugWidgetAction, &QAction::triggered,
+               this,                &BibleTime::slotShowDebugWindow);
     #endif
 
     retranslateUiActions(m_actionCollection);
