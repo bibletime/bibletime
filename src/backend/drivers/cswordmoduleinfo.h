@@ -412,7 +412,7 @@ wrong, or if the config file was write protected return false.
 public slots:
 
     inline void cancelIndexing(std::memory_order const memoryOrder =
-                                        std::memory_order_relaxed) 
+                                        std::memory_order_relaxed) noexcept
     { m_cancelIndexing.store(true, memoryOrder); }
 
 protected: /* Methods: */

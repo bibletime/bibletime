@@ -229,20 +229,20 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
 
 namespace {
 int hexDigitValue(char const hex) {
-    if (hex >= '0' && hex <= '9')
-        return hex - '0';
-    if (hex >= 'a' && hex <= 'f')
-        return hex - 'a' + 10;
-    if (hex >= 'A' && hex <= 'F')
-        return hex - 'A' + 10;
-    BT_ASSERT(false && "Invalid hex code in GBF");
-    abort();
+    switch (hex) {
+        case '0' ... '9': return hex - '0';      break;
+        case 'a' ... 'f': return hex - 'a' + 10; break;
+        case 'A' ... 'F': return hex - 'A' + 10; break;
+        default:
+            BT_ASSERT(false && "Invalid hex code in GBF");
+            abort();
     }
 }
 
 char hexToChar(char const * const hex) {
     int const first = hexDigitValue(hex[0u]);
     return (first * 16u) + hexDigitValue(hex[1u]);
+}
 }
 
 bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {

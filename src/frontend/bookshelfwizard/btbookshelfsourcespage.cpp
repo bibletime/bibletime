@@ -35,8 +35,8 @@
 
 namespace {
 char const buttonPropertyName[] = "BtBookshelfSourcesPageButtonProperty";
-bool const ButtonTagAdd = true;
-bool const ButtonTagRemove = false;
+constexpr bool const ButtonTagAdd = true;
+constexpr bool const ButtonTagRemove = false;
 QString const SourcesKey = "GUI/BookshelfWizard/sources";
 QString const lastUpdate = "GUI/BookshelfWizard/lastUpdate";
 QStringList const initialSelection{"CrossWire", "Bible.org", "Xiphos"};
@@ -120,7 +120,7 @@ void BtBookshelfSourcesPage::updateSourcesModel() {
         return button;
     };
 
-    auto const smMap =
+    constexpr auto const smMap =
             static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map);
     QString const removeText = tr("Remove");
     for (QString source : sourceList) {
