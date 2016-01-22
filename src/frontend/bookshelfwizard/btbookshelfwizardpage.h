@@ -30,7 +30,7 @@ public: /* Methods: */
         : QWizardPage(std::forward<Args>(args)...)
     {}
 
-    inline BtBookshelfWizard & btWizard() const noexcept {
+    inline BtBookshelfWizard & btWizard() const {
         BtBookshelfWizard * const w =
                 qobject_cast<BtBookshelfWizard *>(wizard());
         BT_ASSERT(w);

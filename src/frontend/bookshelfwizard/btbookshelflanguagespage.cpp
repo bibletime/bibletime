@@ -103,7 +103,7 @@ void BtBookshelfLanguagesPage::initializeLanguages() {
         m_model->item(0, 0)->setCheckState(Qt::Checked);
 }
 
-bool BtBookshelfLanguagesPage::skipPage() const noexcept
+bool BtBookshelfLanguagesPage::skipPage() const 
 { return m_model->rowCount() == 1; }
 
 void BtBookshelfLanguagesPage::slotDataChanged() { emit completeChanged(); }

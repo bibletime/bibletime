@@ -35,7 +35,7 @@ public: /* Methods: */
     bool isComplete() const;
     int nextId() const;
     QStringList selectedLanguages() const;
-    bool skipPage() const noexcept;
+    bool skipPage() const ;
 
 private slots:
 

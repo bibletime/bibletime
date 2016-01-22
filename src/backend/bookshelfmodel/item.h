@@ -143,7 +143,7 @@ public: /* Methods: */
 
 private: /* Methods: */
 
-    inline void setParent(Item * parent) noexcept
+    inline void setParent(Item * parent) 
     { m_parent = (BT_ASSERT(parent), parent); }
 
 private: /* Fields: */

@@ -44,7 +44,7 @@ public: /* Methods: */
     WizardTaskType taskType() const;
     QString installPath() const;
 
-    BtBookshelfLanguagesPage & languagesPage() const noexcept
+    BtBookshelfLanguagesPage & languagesPage() const 
     { return *m_languagesPage; }
 
 public slots:
