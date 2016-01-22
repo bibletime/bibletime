@@ -912,21 +912,24 @@ void BibleTime::slotDebugWindowClosing() {
 
 void BibleTime::slotDebugTimeout() {
     QMutexLocker lock(&m_debugWindowLock);
-    if (m_debugWindow == nullptr || m_debugWindow->isVisible() == false) return;
-
+    if (!m_debugWindow || m_debugWindow->isVisible() == false)
+        return;
+    #if QT_VERSION < 0x050400
     QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
-    QObject *w = QApplication::widgetAt(QCursor::pos());
-    if (w != nullptr) {
+    #else
+    QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
+    #endif
+    if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
         QString objectHierarchy;
         do {
-            const QMetaObject *m = w->metaObject();
+            QMetaObject const * m = w->metaObject();
             QString classHierarchy;
             do {
-                if (!classHierarchy.isEmpty()) classHierarchy += ": ";
+                if (!classHierarchy.isEmpty())
+                    classHierarchy += ": ";
                 classHierarchy += m->className();
-
                 m = m->superClass();
-            } while (m != nullptr);
+            } while (m);
             if (!objectHierarchy.isEmpty()) {
                 objectHierarchy += "<br/><b>child of:</b> ";
             } else {
@@ -934,7 +937,7 @@ void BibleTime::slotDebugTimeout() {
             }
             objectHierarchy += classHierarchy;
             w = w->parent();
-        } while (w != nullptr);
+        } while (w);
         m_debugWindow->setText(objectHierarchy);
     } else {
         m_debugWindow->setText("No widget");
