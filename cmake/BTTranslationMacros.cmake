@@ -90,17 +90,20 @@ function(BT_UPDATE_TS_FILES TS_DIR TS_PREFIX)
     # Update source catalog files (this is the basis for the translator's work)
     # Invoke this with "make messages"
     ADD_CUSTOM_TARGET("messages")
+    SET_TARGET_PROPERTIES("messages" PROPERTIES FOLDER "Messages")
     BT_GET_TS_LANGS(TS_LANGS)
     FOREACH(TS_LANG ${TS_LANGS})
         ADD_CUSTOM_TARGET("messages_${TS_LANG}"
             COMMAND ${QT_LUPDATE_EXECUTABLE} -extensions cpp,h "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${TS_DIR}/${TS_PREFIX}${TS_LANG}.ts")
         ADD_DEPENDENCIES("messages" "messages_${TS_LANG}")
+        SET_TARGET_PROPERTIES("messages_${TS_LANG}" PROPERTIES FOLDER "Messages")
     ENDFOREACH(TS_LANG)
 
     # Template file for translators
     ADD_CUSTOM_TARGET("messages_default"
         COMMAND ${QT_LUPDATE_EXECUTABLE} -extensions cpp,h "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${TS_DIR}/bibletime_ui.ts")
     ADD_DEPENDENCIES(messages "messages_default")
+    SET_TARGET_PROPERTIES("messages_default" PROPERTIES FOLDER "Messages")
 endfunction()
 
     # copy translation qrc file to build dir

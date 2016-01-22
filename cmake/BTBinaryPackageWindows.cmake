@@ -3,6 +3,7 @@ IF(WIN32 AND NOT UNIX)
     # Libs needed for packaging
     FIND_PACKAGE(ZLIB REQUIRED)
     FIND_PACKAGE(CURL REQUIRED)
+    FIND_PACKAGE(Sword REQUIRED)
 
     SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows svn")
     SET(CPACK_PACKAGE_VENDOR "http://www.bibletime.info")
@@ -11,7 +12,6 @@ IF(WIN32 AND NOT UNIX)
     SET(CPACK_PACKAGE_VERSION_PATCH ${BT_VERSION_PATCH})
     SET(CPACK_PACKAGE_INSTALL_DIRECTORY "BibleTime")
 
-    SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README")
     SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
     # There is a bug in NSI that does not handle full unix paths properly. Make
     # sure there is at least one set of four (4) backlasshes.
@@ -21,9 +21,9 @@ IF(WIN32 AND NOT UNIX)
 
     SET(QT_BINARY_DIR "${Qt5Core_DIR}/../../../bin")
     INSTALL(FILES
-        "${QT_BINARY_DIR}/icudt51d.dll"
-        "${QT_BINARY_DIR}/icuin51d.dll"
-        "${QT_BINARY_DIR}/icuuc51d.dll"
+        "${QT_BINARY_DIR}/icudt54.dll"
+        "${QT_BINARY_DIR}/icuin54.dll"
+        "${QT_BINARY_DIR}/icuuc54.dll"
         "${QT_BINARY_DIR}/libEGLd.dll"
         "${QT_BINARY_DIR}/libGLESv2d.dll"
         "${QT_BINARY_DIR}/Qt5Cored.dll"
@@ -39,6 +39,7 @@ IF(WIN32 AND NOT UNIX)
         "${QT_BINARY_DIR}/Qt5Sensorsd.dll"
         "${QT_BINARY_DIR}/Qt5Sqld.dll"
         "${QT_BINARY_DIR}/Qt5Svgd.dll"
+        "${QT_BINARY_DIR}/Qt5WebChanneld.dll"
         "${QT_BINARY_DIR}/Qt5WebKitd.dll"
         "${QT_BINARY_DIR}/Qt5WebKitWidgetsd.dll"
         "${QT_BINARY_DIR}/Qt5Widgetsd.dll"
@@ -66,6 +67,7 @@ IF(WIN32 AND NOT UNIX)
         "${QT_BINARY_DIR}/Qt5Sensors.dll"
         "${QT_BINARY_DIR}/Qt5Sql.dll"
         "${QT_BINARY_DIR}/Qt5Svg.dll"
+        "${QT_BINARY_DIR}/Qt5WebChannel.dll"
         "${QT_BINARY_DIR}/Qt5WebKit.dll"
         "${QT_BINARY_DIR}/Qt5WebKitWidgets.dll"
         "${QT_BINARY_DIR}/Qt5Widgets.dll"
@@ -111,6 +113,16 @@ IF(WIN32 AND NOT UNIX)
         Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
     ")
 
+    IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
+        SET(ZLIB_LIBRARY ${ZLIB_LIBRARY_DEBUG})
+    ELSE()
+        SET(ZLIB_LIBRARY ${ZLIB_LIBRARY_RELEASE})
+    ENDIF()
+
+    MESSAGE(STATUS  "INSTALL Zlib_LIBRARY ${ZLIB_LIBRARY}" )
+    STRING(REPLACE ".lib" ".dll" ZLIB_DLL "${ZLIB_LIBRARY}")
+    INSTALL(FILES ${ZLIB_DLL} DESTINATION ${BT_DESTINATION})
+
     MESSAGE(STATUS  "INSTALL CLucene_LIBRARY ${CLucene_LIBRARY}" )
     STRING(REPLACE ".lib" ".dll" CLUCENE_DLL "${CLucene_LIBRARY}")
     INSTALL(FILES ${CLUCENE_DLL} DESTINATION ${BT_DESTINATION})
@@ -122,6 +134,10 @@ IF(WIN32 AND NOT UNIX)
     MESSAGE(STATUS  "INSTALL CURL_LIBRARY ${CURL_LIBRARY}" )
     STRING(REPLACE "_imp.lib" ".dll" CURL_DLL "${CURL_LIBRARY}")
     INSTALL(FILES ${CURL_DLL} DESTINATION ${BT_DESTINATION})
+
+    SET(SWORD_DLL "${Sword_LIBRARY_DIRS}/sword.dll")
+    MESSAGE(STATUS  "INSTALL SWORD_LIBRARY ${SWORD_DLL}" )
+    INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION})
 
     # Some options for the CPack system.  These should be pretty self-evident
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\pics\\\\icons\\\\bibletime.png")

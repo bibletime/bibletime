@@ -96,13 +96,19 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 ADD_COMPILE_OPTIONS(
-  "-std=c++11" "-O2" "-ggdb" "-Wall" "-Wextra"
+  "-O2" 
   "-DBT_VERSION=\"${BT_VERSION_FULL}\""
-  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
   ${Sword_CFLAGS_OTHER}
 )
+IF(NOT WIN32)
+    ADD_COMPILE_OPTIONS(
+        "-std=c++11" "-ggdb" "-Wall" "-Wextra"
+        "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
+    )
+ENDIF()
+
 IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
 ENDIF()
@@ -264,7 +270,7 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 
 IF(MSVC)
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 
