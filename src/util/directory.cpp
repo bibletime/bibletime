@@ -212,7 +212,7 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WINRT
     cachedUserHomeDir.reset(new QDir(""));
-#elif defined Q_OS_WIN
+#elif defined (Q_OS_WIN) && !defined(Q_OS_WIN32)
     cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
 #elif defined(ANDROID)
     cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
@@ -242,7 +242,8 @@ bool initDirectoryCache() {
     }
 
     cachedUserHomeSwordDir.reset(new QDir(*cachedUserHomeDir));
-#ifndef Q_OS_WIN
+#if defined(Q_OS_WIN) && !defined(Q_OS_WIN32)
+#else
     if (!cachedUserHomeSwordDir->cd(SWORD_DIR)) {
         if (!cachedUserHomeSwordDir->mkpath(SWORD_DIR) || !cachedUserHomeSwordDir->cd(SWORD_DIR)) {
             qWarning() << "Could not create user home " << SWORD_DIR << " directory.";
