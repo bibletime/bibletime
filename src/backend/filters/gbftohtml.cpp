@@ -229,14 +229,14 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
 
 namespace {
 int hexDigitValue(char const hex) {
-    switch (hex) {
-        case '0' ... '9': return hex - '0';      break;
-        case 'a' ... 'f': return hex - 'a' + 10; break;
-        case 'A' ... 'F': return hex - 'A' + 10; break;
-        default:
-            BT_ASSERT(false && "Invalid hex code in GBF");
-            abort();
-    }
+    if (hex >= '0' && hex <= '9')
+        return hex - '0';
+    if (hex >= 'a' && hex <= 'f')
+        return hex - 'a' + 10;
+    if (hex >= 'A' && hex <= 'F')
+        return hex - 'A' + 10;
+    BT_ASSERT(false && "Invalid hex code in GBF");
+    abort();
 }
 
 char hexToChar(char const * const hex) {
