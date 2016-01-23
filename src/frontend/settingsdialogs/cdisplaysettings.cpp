@@ -102,6 +102,9 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
         }
     }
 
+    m_transifexLabel = new QLabel(this);
+    mainLayout->addWidget(m_transifexLabel);
+
     retranslateUi(); // also calls updateStylePreview();
 }
 
@@ -120,6 +123,12 @@ void CDisplaySettingsPage::retranslateUi() {
     m_previewLabel->setText(tr("Style preview"));
 
     updateStylePreview();
+
+    m_transifexLabel->setWordWrap(true);
+    m_transifexLabel->setOpenExternalLinks(true);
+    m_transifexLabel->setText(tr(
+        "Did you know? You can help translating the GUI of BibleTime to your language at %1."
+    ).arg("<a href=\"https://www.transifex.com/bibletime/bibletime/\">Transifex</a>"));
 }
 
 void CDisplaySettingsPage::resetLanguage() {

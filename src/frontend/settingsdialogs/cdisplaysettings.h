@@ -54,6 +54,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         QCheckBox* m_showLogoCheck;
         QLabel *m_languageNamesLabel;
         QComboBox* m_swordLocaleCombo;
+        QLabel *m_transifexLabel;
         QComboBox* m_styleChooserCombo;
         QLabel *m_availableLabel;
         BtWebEngineView* m_stylePreviewViewer;
