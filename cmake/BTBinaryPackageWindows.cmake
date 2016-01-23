@@ -28,23 +28,17 @@ IF(WIN32 AND NOT UNIX)
         "${QT_BINARY_DIR}/libGLESv2d.dll"
         "${QT_BINARY_DIR}/Qt5Cored.dll"
         "${QT_BINARY_DIR}/Qt5Guid.dll"
-        "${QT_BINARY_DIR}/Qt5Multimediad.dll"
-        "${QT_BINARY_DIR}/Qt5MultimediaWidgetsd.dll"
         "${QT_BINARY_DIR}/Qt5Networkd.dll"
-        "${QT_BINARY_DIR}/Qt5OpenGLd.dll"
+        "${QT_BINARY_DIR}/Qt5PrintSupportd.dll"
         "${QT_BINARY_DIR}/Qt5Qmld.dll"
         "${QT_BINARY_DIR}/Qt5Quickd.dll"
-        "${QT_BINARY_DIR}/Qt5Positioningd.dll"
-        "${QT_BINARY_DIR}/Qt5PrintSupportd.dll"
-        "${QT_BINARY_DIR}/Qt5Sensorsd.dll"
-        "${QT_BINARY_DIR}/Qt5Sqld.dll"
         "${QT_BINARY_DIR}/Qt5Svgd.dll"
         "${QT_BINARY_DIR}/Qt5WebChanneld.dll"
-        "${QT_BINARY_DIR}/Qt5WebEngineWidgetsd.dll"
         "${QT_BINARY_DIR}/Qt5WebEngineCored.dll"
+        "${QT_BINARY_DIR}/Qt5WebEngineWidgetsd.dll"
         "${QT_BINARY_DIR}/Qt5Widgetsd.dll"
         "${QT_BINARY_DIR}/Qt5Xmld.dll"
-        "${QT_BINARY_DIR}/Qt5XmlPatternsd.dll"
+        "${QT_BINARY_DIR}/QtWebEngineProcess.exe"
         DESTINATION "${BT_DESTINATION}"
         CONFIGURATIONS "Debug"
     )
@@ -56,28 +50,17 @@ IF(WIN32 AND NOT UNIX)
         "${QT_BINARY_DIR}/libGLESv2.dll"
         "${QT_BINARY_DIR}/Qt5Core.dll"
         "${QT_BINARY_DIR}/Qt5Gui.dll"
-        "${QT_BINARY_DIR}/Qt5Multimedia.dll"
-        "${QT_BINARY_DIR}/Qt5MultimediaWidgets.dll"
         "${QT_BINARY_DIR}/Qt5Network.dll"
-        "${QT_BINARY_DIR}/Qt5OpenGL.dll"
+        "${QT_BINARY_DIR}/Qt5PrintSupport.dll"
         "${QT_BINARY_DIR}/Qt5Qml.dll"
         "${QT_BINARY_DIR}/Qt5Quick.dll"
-        "${QT_BINARY_DIR}/Qt5Positioning.dll"
-        "${QT_BINARY_DIR}/Qt5PrintSupport.dll"
-        "${QT_BINARY_DIR}/Qt5Sensors.dll"
-        "${QT_BINARY_DIR}/Qt5Sql.dll"
         "${QT_BINARY_DIR}/Qt5Svg.dll"
         "${QT_BINARY_DIR}/Qt5WebChannel.dll"
-        "${QT_BINARY_DIR}/Qt5WebEngineWidgets.dll"
         "${QT_BINARY_DIR}/Qt5WebEngineCore.dll"
+        "${QT_BINARY_DIR}/Qt5WebEngineWidgets.dll"
         "${QT_BINARY_DIR}/Qt5Widgets.dll"
         "${QT_BINARY_DIR}/Qt5Xml.dll"
-        "${QT_BINARY_DIR}/Qt5XmlPatterns.dll"
-        DESTINATION "${BT_DESTINATION}"
-        CONFIGURATIONS "Release"
-    )
-	INSTALL(FILES
-	    "cmake/platforms/windows/qt.conf"
+        "${QT_BINARY_DIR}/QtWebEngineProcess.exe"
         DESTINATION "${BT_DESTINATION}"
         CONFIGURATIONS "Release"
     )
@@ -88,10 +71,21 @@ IF(WIN32 AND NOT UNIX)
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
-        "${QT_PLUGINS_DIR}/platforms/qminimal.dll"
-        "${QT_PLUGINS_DIR}/platforms/qoffscreen.dll"
         "${QT_PLUGINS_DIR}/platforms/qwindows.dll"
-        DESTINATION "${BT_DESTINATION}/plugins/platforms"
+        DESTINATION "${BT_DESTINATION}/platforms"
+        CONFIGURATIONS "Release"
+    )
+    INSTALL(FILES
+        "${QT_PLUGINS_DIR}/printsupport/windowsprintersupport.dll"
+        DESTINATION "${BT_DESTINATION}/printsupport"
+        CONFIGURATIONS "Release"
+    )
+    INSTALL(FILES
+        "${QT_PLUGINS_DIR}/../resources/icudtl.dat"
+        "${QT_PLUGINS_DIR}/../resources/qtwebengine_resources.pak"
+        "${QT_PLUGINS_DIR}/../resources/qtwebengine_resources_100p.pak"
+        "${QT_PLUGINS_DIR}/../resources/qtwebengine_resources_200p.pak"
+        DESTINATION "${BT_DESTINATION}/resources"
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
@@ -100,7 +94,7 @@ IF(WIN32 AND NOT UNIX)
         "${QT_PLUGINS_DIR}/imageformats/qjpeg.dll"
         "${QT_PLUGINS_DIR}/imageformats/qsvg.dll"
         "${QT_PLUGINS_DIR}/imageformats/qtiff.dll"
-        DESTINATION "${BT_DESTINATION}/plugins/imageformats"
+        DESTINATION "${BT_DESTINATION}/imageformats"
         CONFIGURATIONS "Release"
     )
 
