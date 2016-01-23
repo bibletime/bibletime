@@ -529,7 +529,7 @@ public slots:
 
 #ifndef NDEBUG
         void deleteDebugWindow();
-    private slots:
+    private:
         void slotDebugWindowClosing();
         void slotDebugTimeout();
         void slotShowDebugWindow(bool);

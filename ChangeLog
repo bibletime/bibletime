@@ -1,3 +1,6 @@
+2016-1-20 Gary Holmlund <gary.holmlund@gmail.com>
+    * Implement QWebEngine usage for Qt 5.6
+
 2015-12-14 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #23 Tiny fonts on Windows
 

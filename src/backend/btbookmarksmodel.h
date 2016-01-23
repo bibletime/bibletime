@@ -148,6 +148,9 @@ public slots:
     */
     bool load(QString fileName = QString(), const QModelIndex & rootItem = QModelIndex());
 
+private:
+
+    inline bool slotSave() { return save(); }
 
 private: /* Fields: */
     Q_DECLARE_PRIVATE(BtBookmarksModel)

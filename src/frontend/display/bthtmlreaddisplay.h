@@ -12,15 +12,14 @@
 #ifndef BTHTMLREADDISPLAY_H
 #define BTHTMLREADDISPLAY_H
 
+#include "frontend/btwebengineview.h"
+#include "frontend/btwebenginepage.h"
 #include "frontend/display/creaddisplay.h"
-#include <QWebPage>
 
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QPoint>
 #include <QTimerEvent>
-#include <QWebView>
-#include <QWebFrame>
 #include "frontend/display/bthtmljsobject.h"
 
 
@@ -29,7 +28,7 @@ class BtHtmlReadDisplayView;
 /** The implementation for the HTML read display.
   * @author The BibleTime team
   */
-class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
+class BtHtmlReadDisplay : public BtWebEnginePage, public CReadDisplay {
         Q_OBJECT
 
         friend class BtHtmlReadDisplayView;
@@ -93,8 +92,14 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
 #endif
 
+    private slots:
+        void slotDelayedMoveToAnchor();
+
     private:
         void initJavascript();
+        void loadScripts();
+        QString readJavascript(const QString& jsFileName);
+
         BtHtmlReadDisplayView* m_view;
         BtHtmlJsObject* m_jsObject;
         QString m_currentAnchorCache;
@@ -102,7 +107,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
 };
 
 
-class BtHtmlReadDisplayView : public QWebView {
+class BtHtmlReadDisplayView : public BtWebEngineView {
         Q_OBJECT
     protected:
         friend class BtHtmlReadDisplay;

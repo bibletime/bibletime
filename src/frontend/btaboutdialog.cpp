@@ -18,7 +18,7 @@
 #include <QTabWidget>
 #include <QTextStream>
 #include <QVBoxLayout>
-#include <QWebView>
+#include "frontend/btwebengineview.h"
 #include "util/btconnect.h"
 #include "util/bticons.h"
 #include "util/directory.h"
@@ -99,11 +99,12 @@ void BtAboutDialog::resizeEvent(QResizeEvent* event) {
 }
 
 
-void BtAboutDialog::initTab(QWebView *&tab) {
-    tab = new QWebView(this);
+void BtAboutDialog::initTab(BtWebEngineView *&tab) {
+    tab = new BtWebEngineView(this);
+    BtWebEnginePage * page = new BtWebEnginePage(this);
+    tab->setPage(page);
     m_tabWidget->addTab(tab, "");
-    tab->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
-    BT_CONNECT(tab, SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
+    BT_CONNECT(tab->btPage(), SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
 }
 
 void BtAboutDialog::retranslateUi() {

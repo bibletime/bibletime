@@ -15,20 +15,19 @@
 #include <QLabel>
 #include <QListWidget>
 #include <QListWidgetItem>
-#include <QWebSettings>
-#include <QWebView>
+#include "frontend/btwebengineview.h"
 #include "frontend/settingsdialogs/clistwidget.h"
 #include "util/btconnect.h"
 
 
 namespace {
 
-class BtFontPreviewWebView: public QWebView {
+class BtFontPreviewWebView: public BtWebEngineView {
 
     public: /* Methods: */
 
         inline BtFontPreviewWebView(QWidget *parent = nullptr)
-            : QWebView(parent)
+            : BtWebEngineView(parent)
         {
             setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         }

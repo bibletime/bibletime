@@ -21,8 +21,7 @@ class QCheckBox;
 class QDialogButtonBox;
 class QPushButton;
 class QUrl;
-class QWebView;
-
+class BtWebEngineView;
 /**
   The Tip Of The Day dialog.
 */
@@ -55,7 +54,7 @@ class BtTipDialog: public QDialog {
     private: /* Fields: */
 
         QDialogButtonBox* m_buttonBox;
-        QWebView* m_tipView;
+        BtWebEngineView* m_tipView;
         QCheckBox* m_showTipsCheckBox;
         int m_tipNumber;
         QStringList m_tips;

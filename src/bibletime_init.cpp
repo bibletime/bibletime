@@ -20,7 +20,6 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include "backend/btprinter.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
@@ -578,8 +577,8 @@ void BibleTime::initActions() {
     #ifndef NDEBUG
     m_debugWidgetAction = new QAction(this);
     m_debugWidgetAction->setCheckable(true);
-    BT_CONNECT(m_debugWidgetAction, SIGNAL(triggered(bool)),
-               this,                SLOT(slotShowDebugWindow(bool)));
+    BT_CONNECT(m_debugWidgetAction, &QAction::triggered,
+               this,                &BibleTime::slotShowDebugWindow);
     #endif
 
     retranslateUiActions(m_actionCollection);
@@ -886,8 +885,8 @@ void BibleTime::slotShowDebugWindow(bool show) {
             m_debugWindow->setWindowTitle(tr("Whats this widget?"));
         }
         m_debugWindow->show();
-        BT_CONNECT(m_debugWindow, SIGNAL(destroyed()),
-                   this,          SLOT(slotDebugWindowClosing()),
+        BT_CONNECT(m_debugWindow, &QObject::destroyed,
+                   this,          &BibleTime::slotDebugWindowClosing,
                    Qt::DirectConnection);
         QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
     } else {
@@ -898,7 +897,8 @@ void BibleTime::slotShowDebugWindow(bool show) {
 void BibleTime::deleteDebugWindow() {
     QMutexLocker lock(&m_debugWindowLock);
     if (m_debugWindow != nullptr) {
-        m_debugWindow->disconnect(SIGNAL(destroyed()), this, SLOT(slotDebugWindowClosing()));
+        disconnect(m_debugWindow, &QObject::destroyed,
+                   this,          &BibleTime::slotDebugWindowClosing);
         delete m_debugWindow;
         m_debugWindow = nullptr;
     }
@@ -912,21 +912,24 @@ void BibleTime::slotDebugWindowClosing() {
 
 void BibleTime::slotDebugTimeout() {
     QMutexLocker lock(&m_debugWindowLock);
-    if (m_debugWindow == nullptr || m_debugWindow->isVisible() == false) return;
-
+    if (!m_debugWindow || m_debugWindow->isVisible() == false)
+        return;
+    #if QT_VERSION < 0x050400
     QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
-    QObject *w = QApplication::widgetAt(QCursor::pos());
-    if (w != nullptr) {
+    #else
+    QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
+    #endif
+    if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
         QString objectHierarchy;
         do {
-            const QMetaObject *m = w->metaObject();
+            QMetaObject const * m = w->metaObject();
             QString classHierarchy;
             do {
-                if (!classHierarchy.isEmpty()) classHierarchy += ": ";
+                if (!classHierarchy.isEmpty())
+                    classHierarchy += ": ";
                 classHierarchy += m->className();
-
                 m = m->superClass();
-            } while (m != nullptr);
+            } while (m);
             if (!objectHierarchy.isEmpty()) {
                 objectHierarchy += "<br/><b>child of:</b> ";
             } else {
@@ -934,7 +937,7 @@ void BibleTime::slotDebugTimeout() {
             }
             objectHierarchy += classHierarchy;
             w = w->parent();
-        } while (w != nullptr);
+        } while (w);
         m_debugWindow->setText(objectHierarchy);
     } else {
         m_debugWindow->setText("No widget");

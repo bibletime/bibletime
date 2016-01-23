@@ -754,7 +754,8 @@ bool BtBookmarksModel::load(QString fileName, const QModelIndex & rootItem) {
 
     if(!rootItem.isValid() && fileName.isEmpty()) {
         BT_ASSERT(!d->m_defaultModel && "Only one default model allowed!");
-        BT_CONNECT(&d->m_saveTimer, SIGNAL(timeout()), this, SLOT(save()));
+        BT_CONNECT(&d->m_saveTimer, &QTimer::timeout,
+                   this,            &BtBookmarksModel::slotSave);
         d->m_defaultModel = this;
     }
 

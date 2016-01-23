@@ -15,7 +15,6 @@
 #include <QList>
 #include <QProgressDialog>
 #include <QTextStream>
-#include "backend/btprinter.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -24,6 +23,7 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/chtmlexportrendering.h"
 #include "backend/rendering/cplaintextexportrendering.h"
+#include "frontend/btprinter.h"
 #include "util/btassert.h"
 #include "util/tool.h"
 

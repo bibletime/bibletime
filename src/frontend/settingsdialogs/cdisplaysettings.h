@@ -21,7 +21,7 @@ class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
 class QLabel;
-class QWebView;
+class BtWebEngineView;
 
 class CDisplaySettingsPage: public BtConfigDialog::Page {
 
@@ -56,7 +56,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         QComboBox* m_swordLocaleCombo;
         QComboBox* m_styleChooserCombo;
         QLabel *m_availableLabel;
-        QWebView* m_stylePreviewViewer;
+        BtWebEngineView* m_stylePreviewViewer;
         QLabel *m_previewLabel;
 
 };

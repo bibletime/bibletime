@@ -11,7 +11,9 @@
 
 #include <memory>
 #include <QMenu>
+#include <QDebug>
 #include <QString>
+#include <QTimer>
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
 #include "bibletime.h"
@@ -25,23 +27,34 @@
 #include "util/btconnect.h"
 #include "util/directory.h"
 
+#ifdef USEWEBENGINE
+#include <QWebEngineScript>
+#include <QWebEngineScriptCollection>
+#endif
 
 using namespace InfoDisplay;
 
-static QString javascript; // Initialized from file bthtml.js
+#ifdef USEWEBENGINE
+static QString javascriptFile = "btwebengine.js";
+#else
+static QString javascriptFile = "bthtml.js";
+#endif
+
+static QString s_javascript; // Initialized from javascript file
 
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
-        : QWebPage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(nullptr), m_jsObject(nullptr)
+    : BtWebEnginePage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(nullptr), m_jsObject(nullptr)
 
 {
-    settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
     m_view = new BtHtmlReadDisplayView(this, parentWidget ? parentWidget : readWindow, readWindow);
     m_view->setAcceptDrops(true);
     m_view->setPage(this);
     setParent(m_view);
     m_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    loadJSObject();
+    loadScripts();
     m_view->setHtml("");
-    initJavascript();
+
     BT_CONNECT(this, SIGNAL(loadFinished(bool)),
                this, SLOT(slotLoadFinished(bool)));
 }
@@ -50,30 +63,48 @@ BtHtmlReadDisplay::~BtHtmlReadDisplay() {
     setView(nullptr);
 }
 
-// Read javascript into memory once and create the c++ javascript object
-void BtHtmlReadDisplay::initJavascript() {
+void BtHtmlReadDisplay::loadScripts() {
     namespace DU = util::directory;
 
-    // read bthtml.js javascript file once
-    if (javascript.isEmpty()) {
-        QString jsFile = DU::getJavascriptDir().canonicalPath() + "/bthtml.js";
-        QFile file(jsFile);
-        if (file.open(QFile::ReadOnly)) {
-            while (!file.atEnd()) {
-                QByteArray line = file.readLine();
-                javascript = javascript + line;
-            }
-            file.close();
-        }
-    }
+    QString jScript;
+#ifdef USEWEBENGINE
+     jScript = readJavascript(":/qtwebchannel/qwebchannel.js");
+#endif
+    QString jsFile = DU::getJavascriptDir().canonicalPath() + "/" + javascriptFile;
+    jScript += readJavascript(jsFile);
 
-    // Setup BtHtmlJsObject which will be called from javascript
-    m_jsObject = new BtHtmlJsObject(this);
-    m_jsObject->setObjectName("btHtmlJsObject");
+#ifdef USEWEBENGINE
+    // Directly load javascript into QWebEngine
+    QWebEngineScript script;
+    script.setInjectionPoint(QWebEngineScript::DocumentReady);
+    script.setWorldId(QWebEngineScript::MainWorld);
+    script.setSourceCode(jScript);
+    script.setName("script1");
+    scripts().insert(script);
+#else
+    // Save javascript and load each time the document is loaded (setHtml)
+    s_javascript = jScript;
+#endif
+}
+
+QString BtHtmlReadDisplay::readJavascript(const QString& jsFileName) {
+    QString javascript;
+    QFile file(jsFileName);
+    if (file.open(QFile::ReadOnly)) {
+        while (!file.atEnd()) {
+            QString line = file.readLine();
+            javascript = javascript + line;
+        }
+        file.close();
+    } else {
+        qWarning() << objectName() << ": Missing " +jsFileName;
+    }
+    return javascript;
 }
 
 // When the QWebFrame is cleared, this function is called to install the
-// javascript object (BtHtmlJsObject class) into the Javascript model
+// javascript object (BtHtmlJsObject class) into the Javascript model.
+// It is called only once with QWebEngine.
 void BtHtmlReadDisplay::loadJSObject() {
     // Starting with Qt 4.7.4 with QtWebKit 2.2 stronger security checking occurs.
     // The BtHtmlJsObject that is associated with a given load of a page is rejected
@@ -83,16 +114,14 @@ void BtHtmlReadDisplay::loadJSObject() {
     if (m_jsObject != nullptr)
         delete m_jsObject;
     m_jsObject = new BtHtmlJsObject(this);
-    m_jsObject->setObjectName("btHtmlJsObject");
-
-    mainFrame()->addToJavaScriptWindowObject(m_jsObject->objectName(), m_jsObject);
+    addJavaScriptObject("btHtmlJsObject", m_jsObject);
 }
 
 const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CDisplay::TextPart part) {
     switch (part) {
         case Document: {
             if (format == HTMLText) {
-                return mainFrame()->toHtml();
+                return getCurrentSource();
             }
             else {
                 CDisplayWindow* window = parentWindow();
@@ -187,14 +216,15 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
     return QString::null;
 }
 
-// Puts html text and javascript into QWebView
+// Puts html text and javascript into BtWebEngineView
 void BtHtmlReadDisplay::setText( const QString& newText ) {
-
     QString jsText = newText;
 
+#ifndef USEWEBENGINE
+    // Inject javascript into the document
     jsText.replace(
         QString("</body>"),
-        QString("<script  type=\"text/javascript\">").append(javascript).append("</script></body>")
+        QString("<script  type=\"text/javascript\">").append(s_javascript).append("</script></body>")
     );
 
     // Disconnect any previous connections and connect to slot that loads the javascript object
@@ -202,6 +232,7 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
     disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), nullptr, nullptr);
     BT_CONNECT(frame, SIGNAL(javaScriptWindowObjectCleared()),
                this, SLOT(loadJSObject()));
+#endif
 
     // Send text to the html viewer
     m_view->setHtml(jsText);
@@ -226,15 +257,26 @@ QWidget* BtHtmlReadDisplay::view() {
 
 // Select all text in the viewer
 void BtHtmlReadDisplay::selectAll() {
-    m_view->triggerPageAction( QWebPage::SelectAll, true );
+    BtWebEnginePage::selectAll();
 }
 
-// Scroll QWebView to the correct location as specified by the anchor
+// Scroll BtWebEngineView to the correct location as specified by the anchor
 void BtHtmlReadDisplay::moveToAnchor( const QString& anchor ) {
+#ifdef USEWEBENGINE
+    // Rendering in QWebEngine is asynchronous, must delay before scroll to anchor
+    // TODO - find a better solution
+    m_currentAnchorCache = anchor;
+    QTimer::singleShot(180, this, SLOT(slotDelayedMoveToAnchor()));
+#else
     mainFrame()->scrollToAnchor(anchor);
+#endif
 }
 
-// Scroll the QWebView to the correct location specified by anchor
+void BtHtmlReadDisplay::slotDelayedMoveToAnchor() {
+    m_jsObject->moveToAnchor(m_currentAnchorCache);
+}
+
+// Scroll the BtWebEngineView to the correct location specified by anchor
 void BtHtmlReadDisplay::slotGoToAnchor(const QString& anchor) {
     m_jsObject->moveToAnchor(anchor);
 }
@@ -267,7 +309,7 @@ void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int li
 // ----------------- BtHtmlReadDisplayView -------------------------------------
 
 BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, QWidget* parent, CReadWindow* readWindow)
-        : QWebView(parent), m_display(displayWidget), m_readWindow(readWindow) {
+    : BtWebEngineView(parent), m_display(displayWidget), m_readWindow(readWindow) {
 }
 
 BtHtmlReadDisplayView::~BtHtmlReadDisplayView() {
@@ -300,7 +342,7 @@ void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) {
 //    e->ignore();
 }
 
-// Reimplementation from QWebView
+// Reimplementation from BtWebEngineView
 void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
     if ( ! e->mimeData()->hasFormat("BibleTime/Bookmark"))
         return;
@@ -339,7 +381,7 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
     return;
 }
 
-// Reimplementation from QWebView
+// Reimplementation from BtWebEngineView
 void BtHtmlReadDisplayView::dragMoveEvent( QDragMoveEvent* e ) {
     if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
         e->acceptProposedAction();

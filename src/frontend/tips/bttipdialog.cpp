@@ -9,13 +9,15 @@
 
 #include "bttipdialog.h"
 
+#include "frontend/btwebengineview.h"
+#include "frontend/btwebenginepage.h"
+
 #include <QCheckBox>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWebView>
 #include "backend/config/btconfig.h"
 #include "bibletimeapp.h"
 #include "frontend/messagedialog.h"
@@ -65,9 +67,8 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
-    m_tipView = new QWebView;
+    m_tipView = new BtWebEngineView;
     m_tipView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_tipView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
     mainLayout->addWidget(m_tipView);
 
     QHBoxLayout* hLayout = new QHBoxLayout;
@@ -97,7 +98,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
                this,        SLOT(reject()));
     BT_CONNECT(nextButton, SIGNAL(clicked()),
                this,       SLOT(nextTip()));
-    BT_CONNECT(m_tipView->page(), SIGNAL(linkClicked(QUrl const &)),
+    BT_CONNECT(m_tipView->btPage(), SIGNAL(linkClicked(QUrl const &)),
                this,              SLOT(linkClicked(QUrl const &)));
 
     m_tipNumber = btConfig().value<int>(LastTipNumberKey, 0);

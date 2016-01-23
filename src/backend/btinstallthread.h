@@ -38,11 +38,11 @@ class BtInstallThread: public QThread {
             , m_destination(destination)
             , m_stopRequested(false)
         {
-            BT_CONNECT(&m_iMgr, SIGNAL(percentCompleted(int, int)),
-                       this,    SLOT(slotManagerStatusUpdated(int, int)),
+            BT_CONNECT(&m_iMgr, &BtInstallMgr::percentCompleted,
+                       this,    &BtInstallThread::slotManagerStatusUpdated,
                        Qt::QueuedConnection);
-            BT_CONNECT(&m_iMgr, SIGNAL(downloadStarted()),
-                       this,    SLOT(slotDownloadStarted()),
+            BT_CONNECT(&m_iMgr, &BtInstallMgr::downloadStarted,
+                       this,    &BtInstallThread::slotDownloadStarted,
                        Qt::QueuedConnection);
         }
 

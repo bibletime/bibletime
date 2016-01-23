@@ -29,7 +29,6 @@ SET(BT_VERSION_MINOR "10")
 SET(BT_VERSION_PATCH "0_rc1")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
-
 # Determine build, if needed:
 IF(NOT (DEFINED BT_VERSION_BUILD))
   FIND_PACKAGE(Git)
@@ -97,15 +96,34 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 ADD_COMPILE_OPTIONS(
-  "-std=c++11" "-O2" "-ggdb" "-Wall" "-Wextra"
+  "-O2"
   "-DBT_VERSION=\"${BT_VERSION_FULL}\""
-  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
   ${Sword_CFLAGS_OTHER}
 )
+IF("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+    SET(BIBLETIME_MOC_OPTIONS "-DNDEBUG")
+ENDIF()
+IF(NOT WIN32)
+    ADD_COMPILE_OPTIONS(
+        "-std=c++11" "-ggdb" "-Wall" "-Wextra"
+        "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
+    )
+ENDIF()
+
 IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
+ENDIF()
+
+IF(Qt5Core_VERSION VERSION_LESS 5.6.0)
+    SET(USEWEBENGINE OFF)
+ELSE()
+    SET(USEWEBENGINE ON)
+ENDIF()
+
+IF(USEWEBENGINE)
+    ADD_DEFINITIONS("-DUSEWEBENGINE")
 ENDIF()
 
 # Define $bibletime_SOURCES
@@ -134,12 +152,12 @@ ENDIF()
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
 ADD_LIBRARY(
-    bibletime_common 
+    bibletime_common
     STATIC
     ${bibletime_COMMON_SOURCES}
     ${bibletime_COMMON_MOCABLE_SOURCES}
 )
-QT5_USE_MODULES(bibletime_common Widgets WebKitWidgets PrintSupport Xml)
+QT5_USE_MODULES(bibletime_common Widgets Xml)
 
 IF(MSVC)
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
@@ -168,6 +186,8 @@ TARGET_LINK_LIBRARIES("bibletime"
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
   qt5_use_modules("bibletime" Widgets WebKitWidgets Qml Quick Xml Network PrintSupport Svg)
+ELSEIF(USEWEBENGINE)
+  qt5_use_modules("bibletime" Widgets WebEngine WebEngineWidgets WebChannel Xml Network PrintSupport Svg)
 ELSE()
   qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
 ENDIF()
@@ -202,7 +222,6 @@ IF(Qt5Core_VERSION VERSION_LESS 5.3.0)
     MESSAGE(WARNING "Qt tests not build because they require Qt 5.3 or greater.")
 ELSE()
     INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
-    
 ENDIF()
 
 # Install files
@@ -222,8 +241,15 @@ FILE(GLOB INSTALL_TMPL_LIST
 INSTALL(FILES ${INSTALL_TMPL_LIST}
          DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
 
-INSTALL(FILES "src/frontend/display/bthtml.js"
+
+IF(USEWEBENGINE)
+    INSTALL(FILES "src/frontend/display/btwebengine.js"
+     DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
+ELSE()
+    INSTALL(FILES "src/frontend/display/bthtml.js"
         DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
+ENDIF()
+
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
 INSTALL(FILES ${bibletime_QML_FILES} DESTINATION "${BT_SHARE_PATH}/qml/")
@@ -246,7 +272,7 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 
 IF(MSVC)
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 
