@@ -67,7 +67,9 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
-    m_tipView = new BtWebEngineView;
+    m_tipView = new BtWebEngineView(this);
+    BtWebEnginePage *page = new BtWebEnginePage(this);
+    m_tipView->setPage(page);
     m_tipView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     mainLayout->addWidget(m_tipView);
 
