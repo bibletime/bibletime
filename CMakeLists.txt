@@ -105,7 +105,11 @@ ADD_COMPILE_OPTIONS(
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     SET(BIBLETIME_MOC_OPTIONS "-DNDEBUG")
 ENDIF()
-IF(NOT WIN32)
+IF(WIN32)
+    ADD_COMPILE_OPTIONS(
+    "/Zi"
+    )
+ELSE()
     ADD_COMPILE_OPTIONS(
         "-std=c++11" "-ggdb" "-Wall" "-Wextra"
         "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"

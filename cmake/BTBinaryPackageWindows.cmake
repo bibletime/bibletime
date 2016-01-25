@@ -102,8 +102,8 @@ IF(WIN32 AND NOT UNIX)
     MESSAGE(STATUS  "INSTALL Microsoft Redist ${MSVC_REDIST}" )
     INSTALL(PROGRAMS ${MSVC_REDIST} DESTINATION bin)
     SET(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
-        ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe  /q\\\"
-        Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
+        ExecWait \\\"$INSTDIR\\\\bin\\\\vc_redist.x86.exe  /quiet\\\"
+        Delete   \\\"$INSTDIR\\\\bin\\\\vc_redist.x86.exe\\\"
     ")
 
     IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -135,7 +135,7 @@ IF(WIN32 AND NOT UNIX)
     # Some options for the CPack system.  These should be pretty self-evident
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\pics\\\\icons\\\\bibletime.png")
     SET(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\bibletime.exe")
-    SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY} for Windows")
+    SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY}")
     SET(CPACK_NSIS_HELP_LINK "http:\\\\\\\\www.bibletime.info")
     SET(CPACK_NSIS_URL_INFO_ABOUT "http:\\\\\\\\www.bibletime.info")
     SET(CPACK_NSIS_CONTACT "bt-devel@crosswire.org")
