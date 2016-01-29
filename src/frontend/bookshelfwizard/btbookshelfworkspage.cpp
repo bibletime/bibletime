@@ -9,114 +9,100 @@
 
 #include "frontend/bookshelfwizard/btbookshelfworkspage.h"
 
-#include "backend/btinstallbackend.h"
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/btmoduletreeitem.h"
-#include "backend/config/btconfig.h"
-#include "backend/btinstallmgr.h"
-#include "frontend/bookshelfwizard/btinstallpagemodel.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "frontend/btbookshelfgroupingmenu.h"
-#include "frontend/btbookshelfview.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
-#include "util/directory.h"
-
-#include <QAbstractItemModel>
 #include <QApplication>
 #include <QComboBox>
-#include <QDebug>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
-#include <QMessageBox>
-#include <QPushButton>
 #include <QSet>
-#include <QSpacerItem>
 #include <QToolButton>
-#include <QTreeView>
 #include <QVBoxLayout>
+#include "backend/btinstallbackend.h"
+#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfwizard/btinstallpagemodel.h"
+#include "frontend/btbookshelfgroupingmenu.h"
+#include "frontend/btbookshelfview.h"
+#include "util/btconnect.h"
+#include "util/directory.h"
+
 
 namespace {
-const QString groupingOrderKey ("GUI/BookshelfWizard/InstallPage/grouping");
-const QString installPathKey   ("GUI/BookshelfWizard/InstallPage/installPathIndex");
-} // anonymous namespace
+QString const groupingOrderKey("GUI/BookshelfWizard/InstallPage/grouping");
+QString const installPathKey(
+        "GUI/BookshelfWizard/InstallPage/installPathIndex");
 
-BtBookshelfWorksPage::BtBookshelfWorksPage(
-        WizardTaskType iType,
-        QWidget *parent)
-    : BtBookshelfWizardPage(parent),
-      m_taskType(iType),
-      m_groupingOrder(groupingOrderKey),
-      m_groupingButton(nullptr),
-      m_bookshelfView(nullptr),
-      m_msgLabel(nullptr),
-      m_pathLabel(nullptr),
-      m_groupingLabel(nullptr),
-      m_pathCombo(nullptr),
-      m_verticalLayout(nullptr),
-      m_installPageModel(nullptr),
-      m_bookshelfModel(nullptr),
-      m_bookshelfFilterModel(nullptr),
-      m_contextMenu(nullptr),
-      m_groupingMenu(nullptr),
-      m_itemContextMenu(nullptr) {
-
-    initMenus();
-    setupUi();
-    setupModels();
-    initConnections();
-    retranslateUi();
+inline bool filter(WizardTaskType const taskType,
+                   QStringList const & languages,
+                   CSwordModuleInfo const * const mInfo)
+{
+    switch (taskType) {
+    case WizardTaskType::installWorks:
+        return !CSwordBackend::instance()->findModuleByName(mInfo->name())
+               && languages.contains(mInfo->language()->translatedName());
+    case WizardTaskType::updateWorks: {
+        using CSMI = CSwordModuleInfo;
+        using CSV = sword::SWVersion const;
+        CSMI const * const installedModule =
+                CSwordBackend::instance()->findModuleByName(mInfo->name());
+        return installedModule
+               && (CSV(installedModule->config(CSMI::ModuleVersion).toLatin1())
+                   < CSV(mInfo->config(CSMI::ModuleVersion).toLatin1()));
+    }
+    case WizardTaskType::removeWorks:  default:
+        return CSwordBackend::instance()->findModuleByName(mInfo->name());
+    }
 }
 
-void BtBookshelfWorksPage::initMenus() {
-    m_groupingMenu = new BtBookshelfGroupingMenu(this);
-    BT_CONNECT(m_groupingMenu,
-               SIGNAL(signalGroupingOrderChanged(
-                          BtBookshelfTreeModel::Grouping)),
-               this,
-               SLOT(slotGroupingActionTriggered(
-                        BtBookshelfTreeModel::Grouping)));
+} // anonymous namespace
 
+BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
+                                           QWidget * parent)
+    : BtBookshelfWizardPage(parent)
+    , m_taskType(iType)
+    , m_groupingOrder(groupingOrderKey)
+{
+    // Initialize menus:
+    m_groupingMenu = new BtBookshelfGroupingMenu(this);
     m_contextMenu = new QMenu(this);
     m_contextMenu->addMenu(m_groupingMenu);
     m_itemContextMenu = m_contextMenu;
-}
 
-void BtBookshelfWorksPage::setupUi() {
-
-    m_verticalLayout = new QVBoxLayout(this);
-    m_verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+    // Setup UI:
+    QVBoxLayout * const verticalLayout = new QVBoxLayout(this);
+    verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
 
     m_bookshelfView = new BtBookshelfView(this);
     m_bookshelfView->setObjectName(QStringLiteral("worksTreeView"));
     m_bookshelfView->setHeaderHidden(false);
-    m_bookshelfView->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    m_verticalLayout->addWidget(m_bookshelfView);
+    m_bookshelfView->header()->setSectionResizeMode(
+            QHeaderView::ResizeToContents);
+    verticalLayout->addWidget(m_bookshelfView);
 
     m_msgLabel = new QLabel(this);
     m_msgLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_msgLabel->setWordWrap(true);
-    m_verticalLayout->addWidget(m_msgLabel);
+    verticalLayout->addWidget(m_msgLabel);
 
-    QHBoxLayout *pathLayout = new QHBoxLayout();
+    QHBoxLayout * const pathLayout = new QHBoxLayout();
     if (m_taskType != WizardTaskType::removeWorks) {
-        m_pathLabel = new QLabel(this);
         m_pathCombo = new QComboBox(this);
         m_pathCombo->setMinimumContentsLength(20);
-        m_pathCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
-        m_pathCombo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+        m_pathCombo->setSizeAdjustPolicy(
+                QComboBox::AdjustToMinimumContentsLengthWithIcon);
+        m_pathCombo->setSizePolicy(QSizePolicy::Expanding,
+                                   QSizePolicy::Minimum);
         m_pathCombo->view()->setTextElideMode(Qt::ElideMiddle);
+
+        m_pathLabel = new QLabel(this);
         m_pathLabel->setBuddy(m_pathCombo);
-        initPathCombo();
+        slotInitPathCombo();
 
         pathLayout->setContentsMargins(0, 8, 0, 0);
         pathLayout->addWidget(m_pathLabel);
         pathLayout->addWidget(m_pathCombo);
     }
-
     pathLayout->addStretch();
 
     m_groupingLabel = new QLabel(this);
@@ -127,20 +113,19 @@ void BtBookshelfWorksPage::setupUi() {
     m_groupingButton->setMenu(m_groupingMenu);
     m_groupingButton->setIcon(m_groupingMenu->icon());
     m_groupingButton->setAutoRaise(true);
-
     pathLayout->addWidget(m_groupingButton);
 
-    m_verticalLayout->addLayout(pathLayout);
-}
+    verticalLayout->addLayout(pathLayout);
 
-void BtBookshelfWorksPage::setupModels() {
-    m_bookshelfFilterModel = new BtBookshelfFilterModel(this);
-    m_bookshelfView->setModel(m_bookshelfFilterModel);
+    // Setup models:
+    BtBookshelfFilterModel * const filterModel =
+            new BtBookshelfFilterModel(this);
+    m_bookshelfView->setModel(filterModel);
 
     m_installPageModel = new BtInstallPageModel(m_groupingOrder, this);
     if (m_taskType == WizardTaskType::updateWorks)
         m_installPageModel->setDefaultChecked(BtBookshelfTreeModel::CHECKED);
-    m_bookshelfFilterModel->setSourceModel(m_installPageModel);
+    filterModel->setSourceModel(m_installPageModel);
 
     m_bookshelfModel = new BtBookshelfModel(this);
     if (m_taskType == WizardTaskType::removeWorks) {
@@ -148,62 +133,74 @@ void BtBookshelfWorksPage::setupModels() {
     } else {
         m_installPageModel->setSourceModel(m_bookshelfModel);
     }
-    connect(m_installPageModel, &BtBookshelfTreeModel::moduleChecked,
-            this, &BtBookshelfWorksPage::slotDataChanged);
     if (m_taskType == WizardTaskType::removeWorks)
-        m_bookshelfView->setColumnHidden(1,true);
-}
+        m_bookshelfView->setColumnHidden(1, true);
 
-void BtBookshelfWorksPage::initConnections() {
-    if (m_taskType != WizardTaskType::removeWorks) {
-        BT_CONNECT(m_pathCombo, SIGNAL(activated(QString const &)),
-                   this , SLOT(slotPathChanged(QString const &)));
-        BT_CONNECT(CSwordBackend::instance(),
-                   SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-                   this, SLOT(slotSwordSetupChanged()));
-    }
-    BT_CONNECT(m_installPageModel,
-               SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+    // Initialize connections:
+    BT_CONNECT(m_groupingMenu,
+               &BtBookshelfGroupingMenu::signalGroupingOrderChanged,
                this,
-               SLOT(slotGroupingOrderChanged(
-                        BtBookshelfTreeModel::Grouping const &)));
+               &BtBookshelfWorksPage::slotGroupingActionTriggered);
+    if (m_taskType != WizardTaskType::removeWorks) {
+        BT_CONNECT(m_pathCombo,
+                   static_cast<void (QComboBox::*)(int)>(
+                        &QComboBox::currentIndexChanged),
+                   this, &BtBookshelfWorksPage::slotPathChanged);
+        BT_CONNECT(
+                CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
+                this, &BtBookshelfWorksPage::slotInitPathCombo);
+    }
+    BT_CONNECT(m_installPageModel, &BtBookshelfTreeModel::moduleChecked,
+               this,               &BtBookshelfWorksPage::completeChanged);
+    BT_CONNECT(m_installPageModel, &BtInstallPageModel::groupingOrderChanged,
+               this, &BtBookshelfWorksPage::slotGroupingOrderChanged);
+
+    retranslateUi();
 }
 
 void BtBookshelfWorksPage::retranslateUi() {
     if (m_taskType == installWorks) {
-        setTitle(QApplication::translate("BookshelfWizard", "Install Works", 0));
-        setSubTitle(QApplication::translate("BookshelfWizard", "Choose one or more works to install.", 0));
+        setTitle(QApplication::translate("BookshelfWizard", "Install Works"));
+        setSubTitle(QApplication::translate("BookshelfWizard",
+                                            "Choose one or more works to "
+                                            "install."));
         setButtonText(QWizard::NextButton,tr("Install Works >"));
-    }
-    else if (m_taskType == WizardTaskType::updateWorks) {
-        setTitle(QApplication::translate("BookshelfWizard", "Update Works", 0));
-        setSubTitle(QApplication::translate("BookshelfWizard", "Choose one or more works to update.", 0));
+    } else if (m_taskType == WizardTaskType::updateWorks) {
+        setTitle(QApplication::translate("BookshelfWizard", "Update Works"));
+        setSubTitle(QApplication::translate("BookshelfWizard",
+                                            "Choose one or more works to "
+                                            "update."));
         setButtonText(QWizard::NextButton,tr("Update Works >"));
-    }
-    else {
-        setTitle(QApplication::translate("BookshelfWizard", "Remove Works", 0));
-        setSubTitle(QApplication::translate("BookshelfWizard", "Choose one or more works to remove.", 0));
+    } else {
+        setTitle(QApplication::translate("BookshelfWizard", "Remove Works"));
+        setSubTitle(QApplication::translate("BookshelfWizard",
+                                            "Choose one or more works to "
+                                            "remove."));
         setButtonText(QWizard::NextButton,tr("Remove Works >"));
     }
 
     if (m_taskType != WizardTaskType::removeWorks) {
         m_pathLabel->setText(tr("Install &folder:"));
-        m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
+        m_pathCombo->setToolTip(tr("The folder where the new works will be "
+                                   "installed"));
     }
-
 
     if (m_taskType == WizardTaskType::updateWorks) {
         m_msgLabel->setText(tr("There are no works to update."));
     } else if (m_taskType == WizardTaskType::removeWorks) {
-        m_msgLabel->setText(tr("No works are currently installed so they cannot be removed."));
+        m_msgLabel->setText(tr("No works are currently installed so they "
+                               "cannot be removed."));
     } else {
-        m_msgLabel->setText(tr("No works can be installed with the current selection of remote libraries and languages. "
-                           "Please go back and make a different selection."));
+        m_msgLabel->setText(
+                tr("No works can be installed with the current selection of "
+                   "remote libraries and languages. Please go back and make a "
+                   "different selection."));
     }
 
     m_groupingLabel->setText(tr("Grouping:"));
     m_groupingButton->setText(tr("Grouping"));
-    m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
+    m_groupingButton->setToolTip(
+            tr("Change the grouping of items in the bookshelf."));
 }
 
 int BtBookshelfWorksPage::nextId() const {
@@ -213,202 +210,109 @@ int BtBookshelfWorksPage::nextId() const {
 }
 
 void BtBookshelfWorksPage::initializePage() {
-    updateModels();
-    setGrouping();
-}
-
-void BtBookshelfWorksPage::setGrouping() {
-    BtBookshelfTreeModel::Grouping cat(BtBookshelfTreeModel::GROUP_CATEGORY);
-    BtBookshelfTreeModel::Grouping catLang;
-    if (m_languages.count() == 1)
-        slotGroupingActionTriggered(cat);
-    else if (m_languages.count() > 1 && m_groupingOrder == cat)
-            slotGroupingActionTriggered(catLang);
-}
-
-void BtBookshelfWorksPage::updateModels() {
+    // Update models:
+    QStringList sources;
+    QStringList languages;
     if (m_taskType == installWorks) {
-        m_sources = btWizard().selectedSources();
-        m_languages = btWizard().selectedLanguages();
+        sources = btWizard().selectedSources();
+        languages = btWizard().selectedLanguages();
     } else {
-        m_sources = BtInstallBackend::sourceNameList();
+        sources = BtInstallBackend::sourceNameList();
     }
 
-    QSet<QString> addedModuleNames;
-    m_bookshelfModel->clear();
-    m_moduleSourceMap.clear();
-    for (auto sourceName : m_sources) {
-        sword::InstallSource source = BtInstallBackend::source(sourceName);
-        CSwordBackend *backend = BtInstallBackend::backend(source);
-
-        for (auto module : backend->moduleList())
-            if (filter(module)) {
-                QString moduleName = module->name();
-                if (addedModuleNames.contains(moduleName))
-                    continue;
-                addedModuleNames.insert(moduleName);
-                m_bookshelfModel->addModule(module);
-                QString sourceName = source.caption.c_str();
-                m_moduleSourceMap.insert(module, sourceName);
-                module->setProperty("installSourceName", sourceName);
+    {
+        QSet<QString> addedModuleNames;
+        m_bookshelfModel->clear();
+        for (auto const & sourceName : sources) {
+            sword::InstallSource const source =
+                    BtInstallBackend::source(sourceName);
+            CSwordBackend * const backend = BtInstallBackend::backend(source);
+            for (auto * const module : backend->moduleList()) {
+                if (filter(m_taskType, languages, module)) {
+                    QString const & moduleName = module->name();
+                    if (addedModuleNames.contains(moduleName))
+                        continue;
+                    addedModuleNames.insert(moduleName);
+                    m_bookshelfModel->addModule(module);
+                    module->setProperty("installSourceName",
+                                        QString(source.caption.c_str()));
+                }
             }
-    }
-    if (m_taskType == WizardTaskType::removeWorks ||
-            m_taskType == WizardTaskType::updateWorks)
-        m_bookshelfView->expandAll();
+        }
+        if (m_taskType != WizardTaskType::installWorks)
+            m_bookshelfView->expandAll();
 
-    bool noWorks = addedModuleNames.count() == 0;
-    m_msgLabel->setVisible(noWorks);
-    m_bookshelfView->setVisible(!noWorks);
-    m_groupingButton->setVisible(!noWorks);
-    m_groupingLabel->setVisible(!noWorks);
+        bool const noWorks = (addedModuleNames.count() == 0);
+        m_msgLabel->setVisible(noWorks);
+        m_bookshelfView->setVisible(!noWorks);
+        m_groupingButton->setVisible(!noWorks);
+        m_groupingLabel->setVisible(!noWorks);
+    }
+
+    // Set grouping:
+    static BtBookshelfTreeModel::Grouping const cat(
+            BtBookshelfTreeModel::GROUP_CATEGORY);
+    static BtBookshelfTreeModel::Grouping const catLang; // No grouping
+    if (languages.count() == 1) {
+        slotGroupingActionTriggered(cat);
+    } else if (languages.count() > 1 && m_groupingOrder == cat) {
+        slotGroupingActionTriggered(catLang);
+    }
 }
 
 void BtBookshelfWorksPage::slotGroupingActionTriggered(
-        const BtBookshelfTreeModel::Grouping &grouping) {
+        BtBookshelfTreeModel::Grouping const & grouping)
+{
     m_installPageModel->setGroupingOrder(grouping);
     m_bookshelfView->setRootIsDecorated(!grouping.isEmpty());
 }
 
-void BtBookshelfWorksPage::slotDataChanged() {
-    emit completeChanged();
-}
+bool BtBookshelfWorksPage::isComplete() const
+{ return checkedModules().count() > 0; }
 
-bool BtBookshelfWorksPage::isComplete() const {
-    int count = selectedWorks().count();
-    return count > 0;
-}
-
-BtModuleSet BtBookshelfWorksPage::selectedWorks() const {
-    return m_installPageModel->checkedModules();
-}
-
-bool BtBookshelfWorksPage::filter(const CSwordModuleInfo *mInfo) {
-    if (m_taskType == WizardTaskType::installWorks)
-        return filterInstalls(mInfo);
-    else if (m_taskType == WizardTaskType::updateWorks)
-        return filterUpdates(mInfo);
-    else
-        return filterRemoves(mInfo);
-}
-
-bool BtBookshelfWorksPage::filterInstalls(const CSwordModuleInfo *mInfo) {
-    if (moduleIsInstalled(mInfo))
-        return false;
-    if (! moduleUsesSelectedLanguage(mInfo))
-        return false;
-    return true;
-}
-
-bool BtBookshelfWorksPage::filterUpdates(const CSwordModuleInfo *mInfo) {
-    using CSMI = CSwordModuleInfo;
-    using SV = sword::SWVersion;
-
-    const CSMI *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
-    if (installedModule) {
-        const SV curVersion(installedModule->config(CSMI::ModuleVersion).toLatin1());
-        const SV newVersion(mInfo->config(CSMI::ModuleVersion).toLatin1());
-        if (curVersion < newVersion) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool BtBookshelfWorksPage::filterRemoves(const CSwordModuleInfo *mInfo) {
-    using CSMI = CSwordModuleInfo;
-
-    const CSMI *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
-    if (installedModule)
-        return true;
-    return false;
-}
-
-void BtBookshelfWorksPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
+void BtBookshelfWorksPage::slotGroupingOrderChanged(
+        BtBookshelfTreeModel::Grouping const & g)
+{
     m_groupingOrder = g;
     m_groupingOrder.saveTo(groupingOrderKey);
 }
 
-BtModuleSet BtBookshelfWorksPage::checkedModules() {
-    return m_installPageModel->checkedModules();
-}
+BtModuleSet const & BtBookshelfWorksPage::checkedModules() const
+{ return m_installPageModel->checkedModules(); }
 
-bool BtBookshelfWorksPage::destinationPathIsWritable() {
-    // check that the destination path is writable, do nothing if not
-    QDir dir = installPath();
-    bool canWrite = true;
-    if (dir.isReadable()) {
-        const QFileInfo fi( dir.canonicalPath() );
-        if (!fi.exists() || !fi.isWritable()) {
-            canWrite = false;
-        }
-    }
-    else {
-        canWrite = false;
-    }
+QString BtBookshelfWorksPage::installPath() const
+{ return m_pathCombo->currentText(); }
 
-    if (!canWrite) {
-        QMessageBox::warning(this, tr("Warning"),
-                             tr("The destination directory is not writable or does not exist."));
-        return false;
-    }
-    return true;
-}
+void BtBookshelfWorksPage::slotPathChanged(int const index)
+{ btConfig().setValue(installPathKey, index); }
 
-QString BtBookshelfWorksPage::installPath() {
-    return m_pathCombo->currentText();
-}
-
-void BtBookshelfWorksPage::slotPathChanged(const QString& /*pathText*/) {
-    btConfig().setValue(installPathKey, m_pathCombo->currentIndex());
-}
-
-static bool installPathIsUsable(const QString& path) {
+static bool installPathIsUsable(QString const & path) {
     if (path.isEmpty())
         return false;
-    QDir dir(path);
-    if (!dir.exists())
+    QDir const dir(path);
+    if (!dir.exists() || !dir.isReadable())
         return false;
-    if (!dir.isReadable())
-        return false;
-    QFileInfo fi( dir.canonicalPath());
-    if (!fi.isWritable())
-        return false;
-    return true;
+    return QFileInfo(dir.canonicalPath()).isWritable();
 }
 
-void BtBookshelfWorksPage::initPathCombo() {
+void BtBookshelfWorksPage::slotInitPathCombo() {
     m_pathCombo->clear();
-    QStringList targets = BtInstallBackend::targetList();
-    int usableTargets = 0;
-    for ( auto target : targets) {
+    QStringList const targets(BtInstallBackend::targetList());
+    bool haveUsableTargets = false;
+    for (auto const & target : targets) {
         if (installPathIsUsable(target)) {
             m_pathCombo->addItem(util::directory::convertDirSeparators(target));
-            ++usableTargets;
+            haveUsableTargets = true;
         }
     }
 
-    bool pathComboVisible = usableTargets > 1;
-    m_pathCombo->setVisible(pathComboVisible);
-    m_pathLabel->setVisible(pathComboVisible);
-
-    // choose the current value from config but check whether we have so many items
-    int configValue = btConfig().value<int>(installPathKey, 0);
-    int index = configValue > (m_pathCombo->count() - 1) ? m_pathCombo->count() - 1 : configValue;
-    m_pathCombo->setCurrentIndex(index);
-}
-
-void BtBookshelfWorksPage::slotSwordSetupChanged() {
-    initPathCombo();
-}
-
-bool BtBookshelfWorksPage::moduleUsesSelectedLanguage(const CSwordModuleInfo *mInfo) {
-    const CLanguageMgr::Language *language = mInfo->language();
-    QString lang = language->translatedName();
-    return m_languages.contains(lang);
-}
-
-bool BtBookshelfWorksPage::moduleIsInstalled(const CSwordModuleInfo *mInfo) {
-    const CSwordModuleInfo *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
-    return (installedModule);
+    m_pathCombo->setVisible(haveUsableTargets);
+    m_pathLabel->setVisible(haveUsableTargets);
+    if (haveUsableTargets) {
+        /* Choose the current value from config but check whether we have so
+           many items: */
+        int const cfgValue = btConfig().value<int>(installPathKey, 0);
+        int const lastIdx = m_pathCombo->count() - 1;
+        m_pathCombo->setCurrentIndex(cfgValue > lastIdx ? lastIdx : cfgValue);
+    }
 }

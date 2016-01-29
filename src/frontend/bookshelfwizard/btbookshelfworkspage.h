@@ -19,82 +19,60 @@
 #include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
 
 
-class BtBookshelfFilterModel;
 class BtBookshelfGroupingMenu;
 class BtBookshelfModel;
 class BtBookshelfView;
-class BtBookshelfWizard;
 class BtInstallPageModel;
-class CSwordModuleInfo;
 class QComboBox;
 class QLabel;
 class QMenu;
 class QToolButton;
-class QVBoxLayout;
 
 class BtBookshelfWorksPage: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
 
-    BtBookshelfWorksPage(
-            WizardTaskType iType,
-            QWidget *parent = 0);
+    BtBookshelfWorksPage(WizardTaskType iType, QWidget * parent = nullptr);
 
-    BtModuleSet checkedModules();
+    BtModuleSet const & checkedModules() const;
     bool isComplete() const;
     void initializePage();
-    QString installPath();
+    QString installPath() const;
     int nextId() const;
-    BtModuleSet selectedWorks() const;
 
 private slots:
-    void slotDataChanged();
-    void slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping);
-    void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
-    void slotPathChanged(const QString & pathText);
-    void slotSwordSetupChanged();
 
-private:
-    bool destinationPathIsWritable();
-    bool filter(const CSwordModuleInfo *mInfo);
-    bool filterInstalls(const CSwordModuleInfo *mInfo);
-    bool filterUpdates(const CSwordModuleInfo *mInfo);
-    bool filterRemoves(const CSwordModuleInfo *mInfo);
-    void initConnections();
-    void initMenus();
-    void initPathCombo();
-    bool moduleIsInstalled(const CSwordModuleInfo *mInfo);
-    bool moduleUsesSelectedLanguage(const CSwordModuleInfo *mInfo);
+    void slotGroupingActionTriggered(
+            BtBookshelfTreeModel::Grouping const & grouping);
+    void slotGroupingOrderChanged(BtBookshelfTreeModel::Grouping const & g);
+    void slotPathChanged(int const index);
+    void slotInitPathCombo();
+
+private: /* Methods: */
+
     void retranslateUi();
-    void setGrouping();
-    void setupModels();
-    void setupUi();
-    void updateModels();
 
-    WizardTaskType m_taskType;
+private: /* Fields: */
+
+    WizardTaskType const m_taskType;
     BtBookshelfTreeModel::Grouping m_groupingOrder;
 
-    QToolButton *m_groupingButton;
-    BtBookshelfView *m_bookshelfView;
-    QLabel *m_msgLabel;
-    QLabel *m_pathLabel;
-    QLabel *m_groupingLabel;
-    QComboBox *m_pathCombo;
-    QVBoxLayout *m_verticalLayout;
+    QToolButton * m_groupingButton;
+    BtBookshelfView * m_bookshelfView;
+    QLabel * m_msgLabel;
+    QLabel * m_pathLabel;
+    QLabel * m_groupingLabel;
+    QComboBox * m_pathCombo;
 
-    BtInstallPageModel *m_installPageModel;
-    BtBookshelfModel *m_bookshelfModel;
-    BtBookshelfFilterModel *m_bookshelfFilterModel;
+    BtInstallPageModel * m_installPageModel;
+    BtBookshelfModel * m_bookshelfModel;
 
-    QMenu *m_contextMenu;
-    BtBookshelfGroupingMenu *m_groupingMenu;
-    QMenu *m_itemContextMenu;
+    QMenu * m_contextMenu;
+    BtBookshelfGroupingMenu * m_groupingMenu;
+    QMenu * m_itemContextMenu;
 
-    QStringList m_sources;
-    QStringList m_languages;
-    QMap<CSwordModuleInfo *, QString> m_moduleSourceMap;
-};
+}; /* class BtBookshelfWorksPage */
 
 #endif
