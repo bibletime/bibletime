@@ -5,7 +5,8 @@ IF(WIN32 AND NOT UNIX)
     FIND_PACKAGE(CURL REQUIRED)
     FIND_PACKAGE(Sword REQUIRED)
 
-    SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows svn")
+    SET(CPACK_PACKAGE_NAME "BibleTime")
+    SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows")
     SET(CPACK_PACKAGE_VENDOR "http://www.bibletime.info")
     SET(CPACK_PACKAGE_VERSION_MAJOR ${BT_VERSION_MAJOR})
     SET(CPACK_PACKAGE_VERSION_MINOR ${BT_VERSION_MINOR})
@@ -20,6 +21,7 @@ IF(WIN32 AND NOT UNIX)
     SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
 
     SET(QT_BINARY_DIR "${Qt5Core_DIR}/../../../bin")
+    SET(QT_PLUGINS_DIR "${Qt5Core_DIR}/../../../plugins")
     INSTALL(FILES
         "${QT_BINARY_DIR}/icudt54.dll"
         "${QT_BINARY_DIR}/icuin54.dll"
@@ -61,13 +63,21 @@ IF(WIN32 AND NOT UNIX)
         "${QT_BINARY_DIR}/Qt5Widgets.dll"
         "${QT_BINARY_DIR}/Qt5Xml.dll"
         "${QT_BINARY_DIR}/QtWebEngineProcess.exe"
+        "${QT_BINARY_DIR}/D3Dcompiler_47.dll"
+        "${QT_BINARY_DIR}/opengl32sw.dll"
+        "${QT_PLUGINS_DIR}/../resources/icudtl.dat"
         DESTINATION "${BT_DESTINATION}"
         CONFIGURATIONS "Release"
     )
-    SET(QT_PLUGINS_DIR "${Qt5Core_DIR}/../../../plugins")
+    INSTALL(FILES
+        "${QT_PLUGINS_DIR}/bearer/qgenericbearer.dll"
+        "${QT_PLUGINS_DIR}/bearer/qnativewifibearer.dll"
+        DESTINATION "${BT_DESTINATION}/bearer"
+        CONFIGURATIONS "Release"
+    )
     INSTALL(FILES
         "${QT_PLUGINS_DIR}/iconengines/qsvgicon.dll"
-        DESTINATION "${BT_DESTINATION}/plugins/iconengines"
+        DESTINATION "${BT_DESTINATION}/iconengines"
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
@@ -81,20 +91,29 @@ IF(WIN32 AND NOT UNIX)
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
-        "${QT_PLUGINS_DIR}/../resources/icudtl.dat"
         "${QT_PLUGINS_DIR}/../resources/qtwebengine_resources.pak"
         "${QT_PLUGINS_DIR}/../resources/qtwebengine_resources_100p.pak"
         "${QT_PLUGINS_DIR}/../resources/qtwebengine_resources_200p.pak"
-        DESTINATION "${BT_DESTINATION}/resources"
+        DESTINATION "${BT_DESTINATION}"
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
+        "${QT_PLUGINS_DIR}/imageformats/qdds.dll"
         "${QT_PLUGINS_DIR}/imageformats/qgif.dll"
         "${QT_PLUGINS_DIR}/imageformats/qico.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qicns.dll"
         "${QT_PLUGINS_DIR}/imageformats/qjpeg.dll"
         "${QT_PLUGINS_DIR}/imageformats/qsvg.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qtga.dll"
         "${QT_PLUGINS_DIR}/imageformats/qtiff.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qwbmp.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qwebp.dll"
         DESTINATION "${BT_DESTINATION}/imageformats"
+        CONFIGURATIONS "Release"
+    )
+    INSTALL(DIRECTORY
+        "${QT_BINARY_DIR}/../translations"
+        DESTINATION "${BT_DESTINATION}"
         CONFIGURATIONS "Release"
     )
 
@@ -102,8 +121,8 @@ IF(WIN32 AND NOT UNIX)
     MESSAGE(STATUS  "INSTALL Microsoft Redist ${MSVC_REDIST}" )
     INSTALL(PROGRAMS ${MSVC_REDIST} DESTINATION bin)
     SET(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
-        ExecWait \\\"$INSTDIR\\\\bin\\\\vc_redist.x86.exe  /quiet\\\"
-        Delete   \\\"$INSTDIR\\\\bin\\\\vc_redist.x86.exe\\\"
+        ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist.x86.exe  /quiet\\\"
+        Delete   \\\"$INSTDIR\\\\bin\\\\vcredist.x86.exe\\\"
     ")
 
     IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
