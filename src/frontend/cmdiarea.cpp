@@ -128,6 +128,8 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             break;
         case ArrangementModeTabbed:
             setViewMode(QMdiArea::TabbedView);
+            for (auto win : subWindowList())
+                win->showMaximized();
             break;
         default:
             setViewMode(QMdiArea::SubWindowView);
