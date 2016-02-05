@@ -32,6 +32,10 @@ FUNCTION(test_a_class testDir testClass )
     ADD_TEST(NAME ${testClass} COMMAND test_${testClass})
 ENDFUNCTION(test_a_class)
 
+# The first 2 tests install modules that the other tests need
+# They should be ran in this order
+test_a_class(tests/backend/btsourcesthread btsourcesthread)
+test_a_class(tests/backend/btinstallthread btinstallthread)
 
 test_a_class(tests/backend/managers/cswordbackend cswordbackend)
 test_a_class(tests/backend/keys/cswordversekey cswordversekey)
