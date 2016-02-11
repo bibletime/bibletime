@@ -24,6 +24,7 @@
 #include "frontend/bookshelfwizard/btinstallpagemodel.h"
 #include "frontend/btbookshelfgroupingmenu.h"
 #include "frontend/btbookshelfview.h"
+#include "util/btassert.h"
 #include "util/btconnect.h"
 #include "util/directory.h"
 
@@ -37,11 +38,10 @@ inline bool filter(WizardTaskType const taskType,
                    QStringList const & languages,
                    CSwordModuleInfo const * const mInfo)
 {
-    switch (taskType) {
-    case WizardTaskType::installWorks:
+    if (taskType == WizardTaskType::installWorks) {
         return !CSwordBackend::instance()->findModuleByName(mInfo->name())
                && languages.contains(mInfo->language()->translatedName());
-    case WizardTaskType::updateWorks: {
+    } else if (taskType == WizardTaskType::updateWorks) {
         using CSMI = CSwordModuleInfo;
         using CSV = sword::SWVersion const;
         CSMI const * const installedModule =
@@ -49,8 +49,8 @@ inline bool filter(WizardTaskType const taskType,
         return installedModule
                && (CSV(installedModule->config(CSMI::ModuleVersion).toLatin1())
                    < CSV(mInfo->config(CSMI::ModuleVersion).toLatin1()));
-    }
-    case WizardTaskType::removeWorks:  default:
+    } else {
+        BT_ASSERT(taskType == WizardTaskType::removeWorks);
         return CSwordBackend::instance()->findModuleByName(mInfo->name());
     }
 }
