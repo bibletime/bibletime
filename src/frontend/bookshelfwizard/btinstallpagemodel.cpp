@@ -10,65 +10,66 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btinstallpagemodel.h"
-
+#include "btinstallpagemodel.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 
 
-#define MODULEPOINTERFORINDEX(i) static_cast<CSwordModuleInfo *>(\
-    BtBookshelfTreeModel::data((i), BtBookshelfModel::ModulePointerRole).value<void*>())
-
-BtInstallPageModel::BtInstallPageModel(const Grouping &grouping, QObject *parent)
+BtInstallPageModel::BtInstallPageModel(Grouping const & grouping,
+                                       QObject * const parent)
     : BtBookshelfTreeModel(grouping, parent)
 {
     setDefaultChecked(BtBookshelfTreeModel::UNCHECKED);
     setCheckable(true);
 }
 
-QVariant BtInstallPageModel::data(const QModelIndex &i, int role) const {
+QVariant BtInstallPageModel::data(QModelIndex const & i, int role) const {
     switch (role) {
         case Qt::DisplayRole:
             switch (i.column()) {
                 case 0:
                     return BtBookshelfTreeModel::data(i, role);
                 case 1:
-                {
-                    CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
-                    if (module == nullptr) break;
-                    CSwordBackend *b = CSwordBackend::instance();
-                    CSwordModuleInfo *imodule = b->findModuleByName(module->name());
-                    if (imodule == nullptr) {
-                        return module->config(CSwordModuleInfo::ModuleVersion);
-                    } else {
-                        return imodule->config(CSwordModuleInfo::ModuleVersion)
-                               + " => "
-                               + module->config(CSwordModuleInfo::ModuleVersion);
+                    if (CSwordModuleInfo * const m =
+                            module(index(i.row(), 0, i.parent())))
+                    {
+                        if (CSwordModuleInfo * imodule =
+                                CSwordBackend::instance()->findModuleByName(
+                                        m->name()))
+                            return imodule->config(
+                                        CSwordModuleInfo::ModuleVersion)
+                                   + " => "
+                                   + m->config(CSwordModuleInfo::ModuleVersion);
+                        return m->config(CSwordModuleInfo::ModuleVersion);
                     }
-                }
+                    break;
                 case 2:
-                {
-                    CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
-                    if (module != nullptr) return module->config(CSwordModuleInfo::Description);
-                }
-                default: break;
+                    if (CSwordModuleInfo * const m =
+                            module(index(i.row(), 0, i.parent())))
+                        return m->config(CSwordModuleInfo::Description);
+                    break;
+                default:
+                    break;
             }
+            break;
         default:
-            if (i.column() == 0) return BtBookshelfTreeModel::data(i, role);
+            if (i.column() == 0)
+                return BtBookshelfTreeModel::data(i, role);
+            break;
     }
 
     return QVariant();
 }
 
-int BtInstallPageModel::columnCount(const QModelIndex &parent) const {
+int BtInstallPageModel::columnCount(QModelIndex const & parent) const {
     Q_UNUSED(parent);
-
     return 3;
 }
 
-QVariant BtInstallPageModel::headerData(int section, Qt::Orientation orientation,
-                                       int role) const
+QVariant BtInstallPageModel::headerData(int section,
+                                        Qt::Orientation orientation,
+                                        int role) const
 {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (section) {
@@ -78,6 +79,5 @@ QVariant BtInstallPageModel::headerData(int section, Qt::Orientation orientation
             default: break;
         }
     }
-
     return QVariant();
 }

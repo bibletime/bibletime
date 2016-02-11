@@ -15,18 +15,21 @@
 
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
-#include <QMap>
-
 
 class BtInstallPageModel: public BtBookshelfTreeModel {
-    Q_OBJECT
-    public:
-        BtInstallPageModel(const Grouping &grouping, QObject *parent = nullptr);
 
-        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-        int columnCount(const QModelIndex &parent = QModelIndex()) const override;
-        QVariant headerData(int section, Qt::Orientation orientation,
-                            int role = Qt::DisplayRole) const override;
-};
+public: /* Methods: */
 
-#endif // BTINSTALLPAGEMODEL_H
+    BtInstallPageModel(Grouping const & grouping,
+                       QObject * const parent = nullptr);
+
+    QVariant data(QModelIndex const & index,
+                  int role = Qt::DisplayRole) const override;
+    int columnCount(QModelIndex const & parent = QModelIndex()) const override;
+    QVariant headerData(int section,
+                        Qt::Orientation orientation,
+                        int role = Qt::DisplayRole) const override;
+
+}; /* class BtInstallPageModel */
+
+#endif /* BTINSTALLPAGEMODEL_H */
