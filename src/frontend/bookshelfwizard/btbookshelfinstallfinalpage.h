@@ -14,7 +14,6 @@
 
 #include "btbookshelfwizardpage.h"
 
-#include <atomic>
 #include <QList>
 #include "backend/drivers/btmoduleset.h"
 
@@ -61,8 +60,8 @@ private: /* Fields: */
     BtInstallThread * m_thread;
     QVBoxLayout * m_verticalLayout;
 
-    std::atomic<bool> m_installFailed;
-    std::atomic<bool> m_installCompleted;
+    bool m_installFailed;
+    bool m_installCompleted;
 
     QList<CSwordModuleInfo *> m_modules;
     int m_lastStatus;

@@ -116,18 +116,18 @@ void BtBookshelfInstallFinalPage::initializePage() {
                Qt::QueuedConnection);
     m_progressBar->setValue(0);
     m_stopButton->setEnabled(true);
-    m_installFailed.store(false, std::memory_order_release);
-    m_installCompleted.store(false, std::memory_order_relaxed);
+    m_installFailed = false;
+    m_installCompleted = false;
     m_thread->start();
 }
 
 bool BtBookshelfInstallFinalPage::isComplete() const
-{ return m_installCompleted.load(std::memory_order_acquire); }
+{ return m_installCompleted; }
 
 void BtBookshelfInstallFinalPage::slotStopInstall() {
     m_stopButton->setDisabled(true);
     m_thread->stopInstall();
-    m_installFailed.store(true, std::memory_order_release);
+    m_installFailed = true;
 }
 
 void BtBookshelfInstallFinalPage::slotInstallStarted(int moduleIndex) {
@@ -155,13 +155,13 @@ void BtBookshelfInstallFinalPage::slotOneItemCompleted(int moduleIndex,
 {
     m_progressBar->setValue((moduleIndex + 1) * (100 / m_modules.count()));
     if (!successful)
-        m_installFailed.store(true, std::memory_order_relaxed);
+        m_installFailed = true;
 }
 
 void BtBookshelfInstallFinalPage::slotThreadFinished() {
     m_progressBar->setValue(100);
     m_stopButton->setEnabled(false);
-    if (m_installFailed.load(std::memory_order_acquire)) {
+    if (m_installFailed) {
         m_msgLabel->setText(tr("Some of the selected works were not "
                                "installed."));
         m_msgLabel->setStyleSheet("QLabel{color:red}");
@@ -172,6 +172,6 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
 
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
 
-    m_installCompleted.store(true, std::memory_order_release);
+    m_installCompleted = true;
     emit QWizardPage::completeChanged();
 }
