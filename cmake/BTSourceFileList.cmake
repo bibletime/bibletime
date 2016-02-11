@@ -320,7 +320,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/bibletimeapp.h
     src/frontend/bookmarks/bteditbookmarkdialog.h
     src/frontend/bookmarks/cbookmarkindex.h
-    src/frontend/bookshelfwizard/btconfigdialog.h
     src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h
     src/frontend/bookshelfwizard/btinstallpagemodel.h
     src/frontend/bookshelfwizard/btbookshelfwizard.h

@@ -18,9 +18,7 @@
 #include <QListWidgetItem>
 
 
-class BtConfigPage;
 class QDialogButtonBox;
-class QFrame;
 class QStackedWidget;
 class QVBoxLayout;
 
@@ -34,76 +32,62 @@ class QVBoxLayout;
 */
 class BtConfigDialog : public QDialog {
 
-        Q_OBJECT
+public: /* Types: */
 
-    public: /* Types: */
+    /** Base class for configuration dialog pages. */
+    class Page : public QWidget {
 
-        /** Base class for configuration dialog pages. */
-        class Page : public QWidget {
-
-            friend class BtConfigDialog;
-
-            public: /* Methods: */
-
-                inline Page(BtConfigDialog *parent)
-                    : QWidget(parent), m_listWidgetItem(nullptr) {}
-                inline Page(const QIcon &icon, BtConfigDialog *parent)
-                    : QWidget(parent), m_icon(icon), m_listWidgetItem(nullptr) {}
-
-                inline const QIcon &icon() const { return m_icon; }
-                inline void setIcon(const QIcon &icon) {
-                    m_icon = icon;
-                    if (m_listWidgetItem != nullptr)
-                        m_listWidgetItem->setIcon(icon);
-                }
-
-                inline const QString &headerText() const { return m_headerText; }
-                inline void setHeaderText(const QString &headerText) {
-                    m_headerText = headerText;
-                    if (m_listWidgetItem != nullptr)
-                        m_listWidgetItem->setText(headerText);
-                }
-
-            private: /* Methods: */
-
-                void setListWidgetItem(QListWidgetItem *item) {
-                    m_listWidgetItem = item;
-                }
-
-            private: /* Fields: */
-
-                QIcon m_icon;
-                QString m_headerText;
-                QListWidgetItem *m_listWidgetItem;
-
-        };
+        friend class BtConfigDialog;
 
     public: /* Methods: */
 
-        BtConfigDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+        inline Page(QIcon const & icon, QWidget * const parent)
+            : QWidget(parent)
+            , m_icon(icon)
+        {}
 
-        /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
-        void addPage(Page *pageWidget);
+        inline void setHeaderText(QString const & headerText) {
+            m_headerText = headerText;
+            if (m_listWidgetItem)
+                m_listWidgetItem->setText(headerText);
+        }
 
-        /** Adds a button box to the lower edge of the dialog. */
-        void setButtonBox(QDialogButtonBox* buttonBox);
+    private: /* Methods: */
 
-        /** Changes the current page using the given index number. */
-        void setCurrentPage(int newIndex);
-
-    private slots:
-
-        void slotChangePage(int newIndex);
+        void setListWidgetItem(QListWidgetItem * const item) noexcept {
+            m_listWidgetItem = item;
+            item->setIcon(m_icon);
+            item->setText(m_headerText);
+        }
 
     private: /* Fields: */
 
-        QListWidget* m_contentsList;
-        QStackedWidget* m_pageWidget;
-        QVBoxLayout* m_pageLayout;
-        QFrame *m_buttonBoxRuler;
-        QDialogButtonBox *m_buttonBox;
-        int m_maxItemWidth;
-        int m_previousPageIndex;
+        QIcon const m_icon;
+        QString m_headerText;
+        QListWidgetItem * m_listWidgetItem = nullptr;
+
+    };
+
+public: /* Methods: */
+
+    BtConfigDialog(QWidget * const parent = nullptr,
+                   Qt::WindowFlags const flags = 0);
+
+    /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
+    void addPage(Page * const pageWidget);
+
+    /** Adds a button box to the lower edge of the dialog. */
+    void setButtonBox(QDialogButtonBox * const buttonBox);
+
+    /** Changes the current page using the given index number. */
+    void setCurrentPage(int const newIndex);
+
+private: /* Fields: */
+
+    QListWidget * const m_contentsList;
+    QStackedWidget * const m_pageWidget;
+    QVBoxLayout * m_pageLayout;
+    int m_maxItemWidth = 0;
 
 };
 
