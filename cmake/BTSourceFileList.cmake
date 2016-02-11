@@ -162,7 +162,6 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
     src/frontend/bookshelfwizard/btbookshelfsourcespage.h
     src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp
     src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h
-    src/frontend/bookshelfwizard/btconfigdialog.cpp
     src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp
     src/frontend/bookshelfwizard/btinstallpagemodel.cpp
 )
@@ -205,6 +204,7 @@ SOURCE_GROUP("src\\frontend\\searchdialog\\analysis" FILES ${bibletime_SRC_FRONT
 
 SET(bibletime_SRC_FRONTEND_SETTINGSDIALOG
     # Settings dialog (configuration):
+    src/frontend/settingsdialogs/btconfigdialog.cpp
     src/frontend/settingsdialogs/btshortcutsdialog.cpp
     src/frontend/settingsdialogs/btshortcutseditor.cpp
     src/frontend/settingsdialogs/bttextfilterstab.cpp

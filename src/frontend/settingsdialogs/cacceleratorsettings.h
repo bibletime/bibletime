@@ -12,7 +12,7 @@
 #ifndef CACCELERATORSETTINGS_H
 #define CACCELERATORSETTINGS_H
 
-#include "frontend/bookshelfwizard/btconfigdialog.h"
+#include "btconfigdialog.h"
 
 #include <QPointer>
 #include <QWidget>

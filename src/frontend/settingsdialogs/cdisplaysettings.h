@@ -12,7 +12,7 @@
 #ifndef CDISPLAYSETTINGS_H
 #define CDISPLAYSETTINGS_H
 
-#include "frontend/bookshelfwizard/btconfigdialog.h"
+#include "btconfigdialog.h"
 
 #include <QWidget>
 

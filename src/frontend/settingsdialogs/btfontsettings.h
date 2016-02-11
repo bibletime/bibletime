@@ -12,7 +12,7 @@
 #ifndef BTFONTSETTINGS_H
 #define BTFONTSETTINGS_H
 
-#include "frontend/bookshelfwizard/btconfigdialog.h"
+#include "btconfigdialog.h"
 
 #include <QMap>
 #include <QWidget>
