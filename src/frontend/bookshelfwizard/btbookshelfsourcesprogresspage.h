@@ -27,6 +27,10 @@ class BtBookshelfSourcesProgressPage: public BtBookshelfWizardPage {
 public: /* Methods: */
 
     BtBookshelfSourcesProgressPage(QWidget * parent = 0);
+    inline ~BtBookshelfSourcesProgressPage() noexcept override
+    { destroyThread(); }
+
+    void destroyThread() noexcept;
 
     void initializePage();
     bool isComplete() const;
@@ -47,7 +51,7 @@ private: /* Methods: */
     QLabel * m_msgLabel;
     QProgressBar * m_progressBar;
     QPushButton * m_stopButton;
-    BtSourcesThread * m_thread;
+    BtSourcesThread * m_thread = nullptr;
 
 };
 

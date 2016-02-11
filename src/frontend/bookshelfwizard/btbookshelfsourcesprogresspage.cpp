@@ -71,6 +71,15 @@ BtBookshelfSourcesProgressPage::BtBookshelfSourcesProgressPage(QWidget * parent)
                this,         &BtBookshelfSourcesProgressPage::slotStopInstall);
 }
 
+void BtBookshelfSourcesProgressPage::destroyThread() noexcept {
+    if (m_thread) {
+        m_thread->stop();
+        while (!m_thread->wait()) /* join */;
+        delete m_thread;
+        m_thread = nullptr;
+    }
+}
+
 void BtBookshelfSourcesProgressPage::retranslateUi() {
     m_stopButton->setText(tr("Stop"));
 
@@ -88,6 +97,8 @@ int BtBookshelfSourcesProgressPage::nextId() const {
 }
 
 void BtBookshelfSourcesProgressPage::initializePage() {
+    destroyThread();
+
     m_installCompleted = false;
     m_thread = new BtSourcesThread(this);
     BT_CONNECT(m_thread,      &BtSourcesThread::percentComplete,
@@ -111,7 +122,6 @@ void BtBookshelfSourcesProgressPage::slotThreadFinished() {
     m_stopButton->setDisabled(true);
     if (m_thread->finishedSuccessfully())
         btConfig().setValue<QDate>(lastUpdate, QDate::currentDate());
-    delete m_thread;
     m_installCompleted = true;
     emit QWizardPage::completeChanged();
 }
