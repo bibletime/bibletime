@@ -84,7 +84,8 @@ void BtBookshelfSourcesProgressPage::retranslateUi() {
 int BtBookshelfSourcesProgressPage::nextId() const {
     if (btWizard().taskType() == WizardTaskType::updateWorks)
         return WizardPage::updateWorksPage;
-    return WizardPage::sourcesPage; }
+    return WizardPage::sourcesPage;
+}
 
 void BtBookshelfSourcesProgressPage::initializePage() {
     m_thread = new BtSourcesThread(this);
