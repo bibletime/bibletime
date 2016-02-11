@@ -115,6 +115,11 @@ public: /* Methods: */
                  const QVariant & value,
                  int role) override;
 
+    inline CSwordModuleInfo * module(QModelIndex const & index) const {
+        return static_cast<CSwordModuleInfo *>(
+                data(index,
+                     BtBookshelfModel::ModulePointerRole).value<void *>());
+    }
     inline QAbstractItemModel * sourceModel() const { return m_sourceModel; }
     inline const Grouping & groupingOrder() const { return m_groupingOrder; }
     inline bool checkable() const { return m_checkable; }
