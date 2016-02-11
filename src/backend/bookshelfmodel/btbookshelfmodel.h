@@ -69,7 +69,8 @@ public: /* Methods: */
     */
     inline CSwordModuleInfo * module(const QModelIndex & index) const {
         return static_cast<CSwordModuleInfo *>(
-               data(index, BtBookshelfModel::ModulePointerRole).value<void *>());
+               data(index,
+                    BtBookshelfModel::ModulePointerRole).value<void *>());
     }
 
     /**
