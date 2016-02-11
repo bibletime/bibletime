@@ -88,28 +88,31 @@ int BtBookshelfSourcesProgressPage::nextId() const {
 }
 
 void BtBookshelfSourcesProgressPage::initializePage() {
+    m_installCompleted = false;
     m_thread = new BtSourcesThread(this);
     BT_CONNECT(m_thread,      &BtSourcesThread::percentComplete,
-               m_progressBar, &QProgressBar::setValue);
+               m_progressBar, &QProgressBar::setValue,
+               Qt::QueuedConnection);
     BT_CONNECT(m_thread,   &BtSourcesThread::showMessage,
-               m_msgLabel, &QLabel::setText);
+               m_msgLabel, &QLabel::setText,
+               Qt::QueuedConnection);
     BT_CONNECT(m_thread, &BtSourcesThread::finished,
-               this,     &BtBookshelfSourcesProgressPage::slotThreadFinished);
-    m_installCompleted.store(false, std::memory_order_release);
+               this,     &BtBookshelfSourcesProgressPage::slotThreadFinished,
+               Qt::QueuedConnection);
     m_thread->start();
     m_stopButton->setEnabled(true);
     retranslateUi();
 }
 
 bool BtBookshelfSourcesProgressPage::isComplete() const
-{ return m_installCompleted.load(std::memory_order_acquire); }
+{ return m_installCompleted; }
 
 void BtBookshelfSourcesProgressPage::slotThreadFinished() {
     m_stopButton->setDisabled(true);
     if (m_thread->finishedSuccessfully())
         btConfig().setValue<QDate>(lastUpdate, QDate::currentDate());
     delete m_thread;
-    m_installCompleted.store(true, std::memory_order_release);
+    m_installCompleted = true;
     emit QWizardPage::completeChanged();
 }
 

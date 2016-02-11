@@ -14,8 +14,6 @@
 
 #include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
 
-#include <atomic>
-
 
 class BtSourcesThread;
 class QLabel;
@@ -45,7 +43,7 @@ private: /* Methods: */
 
 private: /* Methods: */
 
-    std::atomic<bool> m_installCompleted;
+    bool m_installCompleted = false;
     QLabel * m_msgLabel;
     QProgressBar * m_progressBar;
     QPushButton * m_stopButton;
