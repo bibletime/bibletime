@@ -33,6 +33,9 @@ class BtBookshelfInstallFinalPage: public BtBookshelfWizardPage {
 public: /* Methods: */
 
     BtBookshelfInstallFinalPage(QWidget * parent = 0);
+    inline ~BtBookshelfInstallFinalPage() noexcept override { destroyThread(); }
+
+    void destroyThread() noexcept;
 
     void initializePage();
     bool isComplete() const;
@@ -57,7 +60,7 @@ private: /* Fields: */
     QLabel * m_msgLabel2;
     QProgressBar * m_progressBar;
     QPushButton * m_stopButton;
-    BtInstallThread * m_thread;
+    BtInstallThread * m_thread = nullptr;
     QVBoxLayout * m_verticalLayout;
 
     bool m_installFailed;

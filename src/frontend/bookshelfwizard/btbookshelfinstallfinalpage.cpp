@@ -75,6 +75,15 @@ BtBookshelfInstallFinalPage::BtBookshelfInstallFinalPage(QWidget * parent)
                this,         &BtBookshelfInstallFinalPage::slotStopInstall);
 }
 
+void BtBookshelfInstallFinalPage::destroyThread() noexcept {
+    if (m_thread) {
+        m_thread->stopInstall();
+        while (!m_thread->wait()) /* join */;
+        delete m_thread;
+        m_thread = nullptr;
+    }
+}
+
 void BtBookshelfInstallFinalPage::retranslateUi() {
     m_stopButton->setText(tr("Stop"));
 
@@ -96,6 +105,7 @@ void BtBookshelfInstallFinalPage::retranslateUi() {
 int BtBookshelfInstallFinalPage::nextId() const { return -1; }
 
 void BtBookshelfInstallFinalPage::initializePage() {
+    destroyThread();
     retranslateUi();
 
     // Install works:
