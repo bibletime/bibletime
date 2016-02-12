@@ -172,6 +172,7 @@ void BtBookshelfWorksPage::retranslateUi() {
                                             "update."));
         setButtonText(QWizard::NextButton,tr("Update Works >"));
     } else {
+        BT_ASSERT(m_taskType == WizardTaskType::removeWorks);
         setTitle(QApplication::translate("BookshelfWizard", "Remove Works"));
         setSubTitle(QApplication::translate("BookshelfWizard",
                                             "Choose one or more works to "
@@ -191,6 +192,7 @@ void BtBookshelfWorksPage::retranslateUi() {
         m_msgLabel->setText(tr("No works are currently installed so they "
                                "cannot be removed."));
     } else {
+        BT_ASSERT(m_taskType == WizardTaskType::installWorks);
         m_msgLabel->setText(
                 tr("No works can be installed with the current selection of "
                    "remote libraries and languages. Please go back and make a "
@@ -206,7 +208,7 @@ void BtBookshelfWorksPage::retranslateUi() {
 int BtBookshelfWorksPage::nextId() const {
     if (btWizard().taskType() == WizardTaskType::removeWorks)
         return WizardPage::removeFinalPage;
-    return installFinalPage;
+    return WizardPage::installFinalPage;
 }
 
 void BtBookshelfWorksPage::initializePage() {
