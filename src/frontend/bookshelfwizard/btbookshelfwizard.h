@@ -22,9 +22,7 @@
 class BtBookshelfWorksPage;
 class BtBookshelfInstallFinalPage;
 class BtBookshelfLanguagesPage;
-class BtBookshelfRemoveFinalPage;
 class BtBookshelfSourcesPage;
-class BtBookshelfSourcesProgressPage;
 class BtBookshelfTaskPage;
 class BtBookshelfUpdatePage;
 class BtModuleSet;
@@ -57,15 +55,13 @@ private: /* Methods: */
 
 private: /* Fields: */
 
-    BtBookshelfTaskPage * m_taskPage;
-    BtBookshelfSourcesProgressPage * m_sourcesProgressPage;
-    BtBookshelfSourcesPage * m_sourcesPage;
-    BtBookshelfLanguagesPage * m_languagesPage;
-    BtBookshelfWorksPage * m_installWorksPage;
-    BtBookshelfWorksPage * m_updateWorksPage;
-    BtBookshelfWorksPage * m_removeWorksPage;
-    BtBookshelfRemoveFinalPage * m_removeFinalPage;
-    BtBookshelfInstallFinalPage * m_installFinalPage;
+    BtBookshelfTaskPage * const m_taskPage;
+    BtBookshelfSourcesPage * const m_sourcesPage;
+    BtBookshelfLanguagesPage * const m_languagesPage;
+    BtBookshelfWorksPage * const m_installWorksPage;
+    BtBookshelfWorksPage * const m_updateWorksPage;
+    BtBookshelfWorksPage * const m_removeWorksPage;
+    BtBookshelfInstallFinalPage * const m_installFinalPage;
 
 }; /* class BtBookshelfWizard */
 

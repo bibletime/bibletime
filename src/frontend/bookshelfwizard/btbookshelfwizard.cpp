@@ -31,23 +31,22 @@ QString const LanguagesKey = "GUI/BookshelfWizard/languages";
 BtBookshelfWizard::BtBookshelfWizard(QWidget * parent, Qt::WindowFlags flags)
     : QWizard(parent, flags)
     , m_taskPage(new BtBookshelfTaskPage(this))
-    , m_sourcesProgressPage(new BtBookshelfSourcesProgressPage(this))
     , m_sourcesPage(new BtBookshelfSourcesPage(this))
     , m_languagesPage(new BtBookshelfLanguagesPage(this))
     , m_installWorksPage(new BtBookshelfWorksPage(WizardTaskType::installWorks, this))
     , m_updateWorksPage(new BtBookshelfWorksPage(WizardTaskType::updateWorks, this))
     , m_removeWorksPage(new BtBookshelfWorksPage(WizardTaskType::removeWorks, this))
-    , m_removeFinalPage(new BtBookshelfRemoveFinalPage(this))
     , m_installFinalPage(new BtBookshelfInstallFinalPage(this))  // For install and update
 {
     setPage(WizardPage::taskPage, m_taskPage);
-    setPage(WizardPage::sourcesProgressPage, m_sourcesProgressPage);
+    setPage(WizardPage::sourcesProgressPage,
+            new BtBookshelfSourcesProgressPage(this));
     setPage(WizardPage::sourcesPage, m_sourcesPage);
     setPage(WizardPage::languagesPage, m_languagesPage);
     setPage(WizardPage::installWorksPage, m_installWorksPage);
     setPage(WizardPage::updateWorksPage, m_updateWorksPage);
     setPage(WizardPage::removeWorksPage, m_removeWorksPage);
-    setPage(WizardPage::removeFinalPage, m_removeFinalPage);
+    setPage(WizardPage::removeFinalPage, new BtBookshelfRemoveFinalPage(this));
     setPage(WizardPage::installFinalPage, m_installFinalPage);
     setStartId(WizardPage::taskPage);
 
