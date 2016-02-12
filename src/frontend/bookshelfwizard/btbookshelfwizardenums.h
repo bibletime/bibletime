@@ -12,8 +12,8 @@
 #ifndef BTBOOKSHELFWIZARDENUM_H
 #define BTBOOKSHELFWIZARDENUM_H
 
-enum WizardPage {
-    taskPage = 0,
+enum WizardPage: int {
+    taskPage,
     sourcesProgressPage,
     sourcesPage,
     languagesPage,
