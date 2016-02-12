@@ -28,7 +28,7 @@ class QLabel;
 class QMenu;
 class QToolButton;
 
-class BtBookshelfWorksPage: public BtBookshelfWizardPage {
+class BtBookshelfWorksPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -37,10 +37,10 @@ public: /* Methods: */
     BtBookshelfWorksPage(WizardTaskType iType, QWidget * parent = nullptr);
 
     BtModuleSet const & checkedModules() const;
-    bool isComplete() const;
-    void initializePage();
+    bool isComplete() const final override;
+    void initializePage() final override;
     QString installPath() const;
-    int nextId() const;
+    int nextId() const final override;
 
 private slots:
 

@@ -20,7 +20,7 @@ class QLabel;
 class QProgressBar;
 class QPushButton;
 
-class BtBookshelfSourcesProgressPage: public BtBookshelfWizardPage {
+class BtBookshelfSourcesProgressPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -32,9 +32,9 @@ public: /* Methods: */
 
     void destroyThread() noexcept;
 
-    void initializePage();
-    bool isComplete() const;
-    int nextId() const;
+    void initializePage() final override;
+    bool isComplete() const final override;
+    int nextId() const final override;
 
 private slots:
 

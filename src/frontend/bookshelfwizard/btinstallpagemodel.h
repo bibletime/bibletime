@@ -24,11 +24,12 @@ public: /* Methods: */
                        QObject * const parent = nullptr);
 
     QVariant data(QModelIndex const & index,
-                  int role = Qt::DisplayRole) const override;
-    int columnCount(QModelIndex const & parent = QModelIndex()) const override;
+                  int role = Qt::DisplayRole) const final override;
+    int columnCount(QModelIndex const & parent = QModelIndex())
+            const final override;
     QVariant headerData(int section,
                         Qt::Orientation orientation,
-                        int role = Qt::DisplayRole) const override;
+                        int role = Qt::DisplayRole) const final override;
 
 }; /* class BtInstallPageModel */
 

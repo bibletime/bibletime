@@ -22,7 +22,7 @@ class BtListModel;
 class QListView;
 class QVBoxLayout;
 
-class BtBookshelfLanguagesPage: public BtBookshelfWizardPage {
+class BtBookshelfLanguagesPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -31,9 +31,9 @@ public: /* Methods: */
     BtBookshelfLanguagesPage(QWidget * parent = 0);
 
     void initializeLanguages();
-    void initializePage();
-    bool isComplete() const;
-    int nextId() const;
+    void initializePage() final override;
+    bool isComplete() const final override;
+    int nextId() const final override;
     QStringList selectedLanguages() const;
     bool skipPage() const noexcept;
 

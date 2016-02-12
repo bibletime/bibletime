@@ -26,20 +26,21 @@ class QPushButton;
 class QSwordModuleInfo;
 class QVBoxLayout;
 
-class BtBookshelfInstallFinalPage: public BtBookshelfWizardPage {
+class BtBookshelfInstallFinalPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
 public: /* Methods: */
 
     BtBookshelfInstallFinalPage(QWidget * parent = 0);
-    inline ~BtBookshelfInstallFinalPage() noexcept override { destroyThread(); }
+    inline ~BtBookshelfInstallFinalPage() noexcept final override
+    { destroyThread(); }
 
     void destroyThread() noexcept;
 
-    void initializePage();
-    bool isComplete() const;
-    int nextId() const;
+    void initializePage() final override;
+    bool isComplete() const final override;
+    int nextId() const final override;
     BtModuleSet selectedWorks() const;
 
 private slots:

@@ -25,7 +25,7 @@ class QLabel;
 class QLineEdit;
 class QProgressDialog;
 
-class CSwordSetupInstallSourcesDialog : public QDialog  {
+class CSwordSetupInstallSourcesDialog final: public QDialog  {
         Q_OBJECT
 
     public:

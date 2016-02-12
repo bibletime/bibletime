@@ -22,7 +22,7 @@ class QLabel;
 class QRadioButton;
 class QVBoxLayout;
 
-class BtBookshelfTaskPage: public BtBookshelfWizardPage {
+class BtBookshelfTaskPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -30,7 +30,7 @@ public: /* Methods: */
 
     BtBookshelfTaskPage(QWidget * parent = 0);
 
-    int nextId() const;
+    int nextId() const final override;
     WizardTaskType taskType() const;
 
 private: /* Methods: */

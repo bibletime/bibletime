@@ -28,7 +28,7 @@ class BtBookshelfUpdatePage;
 class BtModuleSet;
 
 /** \brief The Bookshelf Manager wizard. */
-class BtBookshelfWizard: public QWizard {
+class BtBookshelfWizard final: public QWizard {
 
     Q_OBJECT
 
@@ -47,7 +47,7 @@ public: /* Methods: */
 
 public slots:
 
-    void accept();
+    void accept() final override;
 
 private: /* Methods: */
 

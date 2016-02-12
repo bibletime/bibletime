@@ -22,7 +22,7 @@ class BtBookshelfWizard;
 class QLabel;
 class QVBoxLayout;
 
-class BtBookshelfRemoveFinalPage: public BtBookshelfWizardPage {
+class BtBookshelfRemoveFinalPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -30,9 +30,9 @@ public: /* Methods: */
 
     BtBookshelfRemoveFinalPage(QWidget * parent = 0);
 
-    bool isComplete() const;
-    void initializePage();
-    int nextId() const;
+    bool isComplete() const final override;
+    void initializePage() final override;
+    int nextId() const final override;
 
 private: /* Methods: */
 

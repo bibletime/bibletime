@@ -24,7 +24,7 @@ class QSignalMapper;
 class QTableView;
 class QVBoxLayout;
 
-class BtBookshelfSourcesPage: public BtBookshelfWizardPage {
+class BtBookshelfSourcesPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
@@ -32,9 +32,9 @@ public: /* Methods: */
 
     BtBookshelfSourcesPage(QWidget * parent = 0);
 
-    bool isComplete() const;
-    void initializePage();
-    int nextId() const;
+    bool isComplete() const final override;
+    void initializePage() final override;
+    int nextId() const final override;
     QStringList selectedSources() const;
 
 private slots:
