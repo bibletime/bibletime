@@ -117,14 +117,15 @@ int BtBookshelfTaskPage::nextId() const {
         if (timeToUpdate())
             return WizardPage::sourcesProgressPage;
         return WizardPage::sourcesPage;
-    }
-    if (m_updateRadioButton->isChecked())
+    } else if (m_updateRadioButton->isChecked()) {
         if (timeToUpdate())
             return WizardPage::sourcesProgressPage;
         return WizardPage::updateWorksPage;
-    if (m_removeRadioButton->isChecked())
+    } else if (m_removeRadioButton->isChecked()) {
         return WizardPage::removeWorksPage;
-    return -1;
+    } else {
+        return -1;
+    }
 }
 
 WizardTaskType BtBookshelfTaskPage::taskType() const {
