@@ -1,19 +1,18 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
 # Roy Alvear <racl@fedoraproject.org>, 2010
 # Roy Alvear <racl@gulix.cl>, 2010
-# Roy E. Alvear Aguirre <racl@gulix.cl>, 2014
+# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:25+0100\n"
-"PO-Revision-Date: 2014-11-27 11:55+0000\n"
-"Last-Translator: Roy E. Alvear Aguirre <racl@gulix.cl>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/bibletime/"
+"PO-Revision-Date: 2016-02-12 19:07+0000\n"
+"Last-Translator: Roy Eddekel Alvear Aguirre <racl@gulix.cl>\n"
+"Language-Team: Spanish (http://www.transifex.com/bibletime/bibletime/"
 "language/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -3325,14 +3324,14 @@ msgstr "Abthorpe"
 #: docs/handbook/en/docbook/index.docbook:44
 #, fuzzy
 #| msgid ""
-#| "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> "
+#| "<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> "
 #| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2015</year> <holder>El equipo de &bibletime; </"
-"holder> </copyright>"
+"<copyright> <year>1999-2014</year> <holder>El Equipo &bibletime; </holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
@@ -3344,25 +3343,16 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
-#| msgid "<date>December 2011</date>"
 msgid "<date>January 2014</date>"
-msgstr "<date>Diciembre 2011</date>"
+msgstr "<date>Enero 2014</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 msgid "2.10.1"
-msgstr ""
+msgstr "2.10.1"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
-#, fuzzy
-#| msgid ""
-#| "&bibletime; is a completely free Bible study program. The program's user "
-#| "interface is built with &qt; framework, which makes it run on several "
-#| "operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
-#| "software uses the &sword; programming library to work with over 200 free "
-#| "Bible texts, commentaries, dictionaries and books provided by the &cbs;."
 msgid ""
 "&bibletime; is a completely free Bible study program. The program's user "
 "interface is built with &qt; framework, which makes it run on several "
@@ -3371,12 +3361,13 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs;."
 msgstr ""
-"&bibletime; es un programa de estudio bíblico totalmente libre. La interfaz "
-"de usuario del programa esta construida en el framework &qt;, que hace que "
-"funciona en varios sistemas operativos, incluyendo Linux, Windows, FreeBSD y "
-"Mac OS X. El software utiliza la librería de programación $sword; para "
-"trabajar con más de 200 textos libres de la Biblia, comentarios, "
-"diccionarios y libros proporcionados por el &cbs;."
+"&bibletime; es un programa de estudio de la Biblia completamente libre. La "
+"programación de interfaz de usuario esta construida con el framework &qt;, "
+"lo que hace que se ejecute en varios sistemas operativos, incluyendo Linux, "
+"Windows, FreeBSD y Mac OS X. El software utiliza la biblioteca de "
+"programación &sword; para trabajar con más de 200 textos libres de la "
+"Biblia, comentarios, diccionarios y libros en más de 50 idiomas que ofrece "
+"el &cbs;."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:68
@@ -3402,6 +3393,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Dialogo de Ayuda"
-
-#~ msgid "2.9.1"
-#~ msgstr "2.9.1"

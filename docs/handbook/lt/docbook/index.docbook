@@ -4,7 +4,7 @@
 [
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY sword '<application>SWORD</application>'>
-  <!ENTITY cbs '<application>Crosswire Bible Society</application>'>
+  <!ENTITY cbs '<application>Crosswire Biblijos Draugija</application>'>
   <!ENTITY kde '<application>KDE</application>'>
   <!ENTITY qt '<application>Qt</application>'>
 
@@ -20,7 +20,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; Handbook</title>
+  <title>&bibletime; Žinynas</title>
 
   <authorgroup>
     <author>
@@ -46,20 +46,21 @@
 </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
+    <para>&bibletime; Žinynas yra platinamas kartu su &bibletime; studijavimo
+programa.</para>
   </legalnotice>
 
-  <date>January 2014</date>
+  <date>2014 Sausis</date>
 
   <releaseinfo>2.10.1</releaseinfo>
 
   <abstract>
-    <para>&bibletime; is a completely free Bible study program. The program's user
-interface is built with &qt; framework, which makes it run on several
-operating systems including Linux, Windows, FreeBSD and Mac OS X. The
-software uses the &sword; programming library to work with over 200 free
-Bible texts, commentaries, dictionaries and books in over 50 languages
-provided by the &cbs;.</para>
+    <para>&bibletime; yra visiškai nemokama Biblijos studijavimo programa. Programos
+vartotojo sąsaja yra sukurta &qt; karkaso pagalba, kas leidžia vykdyti šią
+programą keliose operacinėse sistemose, įskaitant Linux, Windows, FreeBSD ir
+Mac OS X. Darbui su daugiau kaip 200 Biblijos tekstų, komentarų, žodynų ir
+knygų, kuriuos &cbs; pateikia daugiau kaip 50 kalbų, programinė įranga
+naudoja &sword; programavimo biblioteką.</para>
   </abstract>
 
   <keywordset>
@@ -67,7 +68,7 @@ provided by the &cbs;.</para>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>
-    <keyword>Help dialog</keyword>
+    <keyword>Pagalbos dialogas</keyword>
   </keywordset>
 </bookinfo>
 &hdbkchap1; &hdbkchap2; &hdbkchap3; &hdbkchap4; &hdbkchap5;

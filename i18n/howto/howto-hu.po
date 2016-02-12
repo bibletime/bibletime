@@ -1,16 +1,15 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2014-11-05 19:45+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Hungarian (http://www.transifex.com/projects/p/bibletime/"
+"PO-Revision-Date: 2016-02-12 19:06+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Language-Team: Hungarian (http://www.transifex.com/bibletime/bibletime/"
 "language/hu/)\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -1029,19 +1028,11 @@ msgstr "Bátorítás"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:268
-#, fuzzy
-#| msgid ""
-#| "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved "
-#| "to God as a workman who does not need to be ashamed, handling accurately "
-#| "the word of truth.</quote>"
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
 "emphasis>\""
 msgstr ""
-"2 Tim.2:15 <quote>Igyekezzél, hogy Isten előtt becsületesen megállj, mint "
-"oly munkás, a ki szégyent nem vall, a ki helyesen hasogatja az igazságnak "
-"beszédét.</quote>"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:272
@@ -1079,16 +1070,10 @@ msgstr "Függelék: \"Egyszer s mindenkorra\""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
-#, fuzzy
-#| msgid ""
-#| "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-#| "InterVarsity Press 1978, pp.93-95"
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
-"John R.W. Stott, <emphasis>Krisztus a vitatkozó</emphasis>, InterVarsity "
-"Press 1978, 93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293

@@ -72,7 +72,7 @@ modificare la modalità fullscreen di &bibletime;.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Vedi</guimenu> <guimenuitem>Mostra Libreria</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -87,7 +87,7 @@ se hai bisogno di di più spazio per la Lente.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Vedi</guimenu> <guimenuitem>Mostra Segnalibri</guimenuitem>
 </menuchoice>
           </term>
           <listitem>

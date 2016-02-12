@@ -1,22 +1,23 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Ein Neuling <ein.neuling@gmail.com>, 2016
 # Joachim Ansorg, 2003-2004
 # Joachim Ansorg <info@bibetime.info>, 2005
 # Joachim Ansorg <info@bibletime.info>, 2005
+# Martin Gruner <martin.gruner@otrs.com>, 2016
 # Martin Gruner <mg.pub@gmx.net>, 2004-2005
 # Roland Teschner <rolte@gmx.net>, 2009-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:25+0100\n"
-"PO-Revision-Date: 2014-11-05 19:43+0000\n"
+"PO-Revision-Date: 2016-02-12 19:32+0000\n"
 "Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/bibletime/"
-"language/de/)\n"
+"Language-Team: German (http://www.transifex.com/bibletime/bibletime/language/"
+"de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3348,10 +3349,16 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> "
+#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2014</year> <holder>Das &Bibletime; Team</holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
@@ -3364,12 +3371,12 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
 msgid "<date>January 2014</date>"
-msgstr ""
+msgstr "<date>Januar 2014</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 msgid "2.10.1"
-msgstr ""
+msgstr "2.10.1"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
@@ -3381,6 +3388,13 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs;."
 msgstr ""
+"&bibletime; ist ein kostenloses Programm für das Bibelstudium. Die "
+"Benutzeroberfläche des Programms ist mit &qt; Development Frameworks "
+"entwickelt, das ermöglicht, auf mehreren Betriebssystemen zu laufen, "
+"einschließlich Linux, Windows, FreeBSD und Mac OS X. Die Software verwendet "
+"mit der The-&sword;-Programm-Bibliothek mehr als 200 kostenlose "
+"Bibelausgaben, Kommentare, Wörterbücher und Bücher in über 50 Sprachen, die "
+"durch &cbs; bereitgestellt werden."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:68

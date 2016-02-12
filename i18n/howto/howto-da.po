@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
@@ -7,12 +7,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2014-11-05 19:47+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/bibletime/"
-"language/da/)\n"
+"PO-Revision-Date: 2016-02-12 19:06+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Language-Team: Danish (http://www.transifex.com/bibletime/bibletime/language/"
+"da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1030,18 +1029,11 @@ msgstr "Formaninger"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:268
-#, fuzzy
-#| msgid ""
-#| "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved "
-#| "to God as a workman who does not need to be ashamed, handling accurately "
-#| "the word of truth.</quote>"
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
 "emphasis>\""
 msgstr ""
-"2. Tim.2:15 <quote>Stræb efter at stå din prøve for Gud som en arbejder, der "
-"ikke behøver at skamme sig, men som går lige på med sandhedens ord.</quote>"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:272
@@ -1079,16 +1071,10 @@ msgstr "Tillæg: \"En gang for alle\""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
-#, fuzzy
-#| msgid ""
-#| "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-#| "InterVarsity Press 1978, pp.93-95"
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-"InterVarsity Press 1978, pp.93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:25+0100\n"
-"PO-Revision-Date: 2014-11-05 19:43+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/"
+"PO-Revision-Date: 2016-02-12 19:07+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/bibletime/"
 "bibletime/language/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"

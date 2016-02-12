@@ -3,24 +3,25 @@
   <sect1 id="hdbk-intro-about">
     <title>Apie &bibletime;</title>
 
-    <para>&bibletime; is a Bible study tool with support for different types of texts
-and languages. Even large amounts of works modules are easy to install and
-manage. It is built on the <ulink
-url="http://www.crosswire.org/sword/">&sword;</ulink> library, which
-provides the back-end functionality for &bibletime;, such as viewing Bible
-text, searching etc. &sword; is the flagship product of the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.</para>
+    <para>&bibletime; yra Biblijos studijavimo įrankis, palaikantis įvairius teksto
+tipus ir kalbas. Netgi didelius veiklų modulių kiekius yra lengva įdiegti ir
+tvarkyti. Programa yra sukurta <ulink
+url="http://www.crosswire.org/sword/">&sword;</ulink> bibliotekos
+pagrindu. Ši biblioteka suteikia vidinės &bibletime; pusės funkcionalumą,
+tokį kaip Biblijos tekstų rodymą, paiešką ir t. t. &sword; yra <ulink
+url="http://www.crosswire.org">&cbs;</ulink> geriausias parodomasis
+produktas.</para>
 
-    <para>&bibletime; is designed to be used with works encoded in one of the formats
-supported by the &sword; project. Complete information on the supported
-document formats can be found in the <ulink
-url="http://www.crosswire.org/sword/develop/index.jsp"> developers
-section</ulink> of the &sword; Project, &cbs;.</para>
+    <para>&bibletime; yra sukurta naudoti su veiklomis, užkoduotomis vienu iš &sword;
+projekto palaikomų formatų. Visą informaciją apie palaikomus dokumentų
+formatus galite rasti &cbs; &sword; projekto <ulink
+url="http://www.crosswire.org/sword/develop/index.jsp"> kūrėjų
+sekcijoje</ulink>.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Prieinamos veiklos</title>
-      <para>Over 200 documents in 50 languages are available from the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+      <para>Virš 200 dokumentų, prieinamų 50 kalbomis yra prieinama iš <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  Į juos įeina: <variablelist>
         <varlistentry>
           <term>Biblijos</term>
           <listitem>
@@ -57,7 +58,7 @@ include Daily Light on the Daily Path, and the Losungen.</para>
         </varlistentry>
 
         <varlistentry>
-          <term>Lexicons/Dictionaries</term>
+          <term>Leksikonai/Žodynai</term>
           <listitem>
             <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the
 International Standard Bible Encyclopaedia. Dictionaries available include
@@ -71,17 +72,16 @@ Bible.</para>
 
     <sect2 id="hdbk-intro-motivation">
       <title>Motyvacija</title>
-      <para>Our desire is to serve God, and to do our part to help others grow in their
-relationship with Him. We have striven to make this a powerful, quality
-program, and still make it simple and intuitive to operate. It is our desire
-that God be praised, as He is the source of all good things.</para>
+      <para>Mūsų noras yra tarnauti Dievui ir padaryti savo dalį, padedant kitiems augti
+santykiuose su Juo. Mes siekėme padaryti ją galinga, kokybiška programa, tuo
+pačiu metu, lengvai ir intuityviai naudojama. Mes norėtume, kad būtų
+pašlovintas Dievas, kadangi Jis yra visų gerų dalykų šaltinis.</para>
       <blockquote>
-        <attribution>James 1:17, NASB</attribution>
-        <para>Every good thing given and every perfect gift is from above, coming down
-from the Father of lights, with whom there is no variation or shifting
-shadow.</para>
+        <attribution>Jokūbo 1,17, Biblija RK_K1998</attribution>
+        <para>Kiekvienas geras davinys ir tobula dovana ateina iš aukštybių, nužengia nuo
+šviesybių Tėvo, kuriame nėra jokių atmainų ir jokių sambrėškų.</para>
       </blockquote>
-      <para>God bless you as you use this program.</para>
+      <para>Telaimina jus Dievas, besinaudojant šia programa.</para>
     </sect2>
   </sect1>
 </chapter>

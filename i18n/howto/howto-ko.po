@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
@@ -8,12 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2014-11-05 19:45+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/bibletime/"
-"language/ko/)\n"
+"PO-Revision-Date: 2016-02-12 19:06+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/"
+"ko/)\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1042,16 +1041,10 @@ msgstr "부가(Appendix): \"Once for All\""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
-#, fuzzy
-#| msgid ""
-#| "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-#| "InterVarsity Press 1978, pp.93-95"
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</"
 "emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
-"존 R.W. 스토트, <emphasis>Christ the Controversialist</emphasis>, "
-"InterVarsity Press 1978, pp.93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293

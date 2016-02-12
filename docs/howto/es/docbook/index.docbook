@@ -19,7 +19,7 @@
     </author>
     <author>
       <firstname></firstname>
-      <surname>The BibleTime Team</surname>
+      <surname>El Equipo BibleTime</surname>
     </author>
   </authorgroup>
   
@@ -27,29 +27,30 @@
 <copyright> <year>1999-2014</year> <holder>The &bibletime; Team
 (bt-devel@crosswire.org)</holder> </copyright>
   <legalnotice>
-    <para>This document was originally created by Mr. Bob Harman and is licensed under
-the terms of the license <ulink
+    <para>Este documento fue creado originalmente por el Sr. Bob Harman y está
+disponible bajo los términos de la licencia <ulink
 url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons
-Attribution-Share Alike"</ulink>.</para>
+Reconocimiento-Compartir Igual" </ulink>.</para>
     <para>Citas bíblicas son de la New American Standard Bible menos que se indique lo
 contrario. [Nota del traductor: En la mayor parte de las citas usé
 SpaRVG2004]</para>
   </legalnotice>
   <abstract>
     <title>Resumen</title>
-    <para>The <application>Biblestudy HowTo</application> is a guide for studying the
-Bible.</para>
-    <para>It is the hope of the &bibletime; team that this HowTo will provoke the
-readers to study the scriptures to see what they say. This particular study
-guide has been chosen as it takes care not to advocate any particular
-denominational doctrine. We recommend you to read and study the scriptures
-to understand what they say. If you start with the attitude that you want to
-have the Lord sow his word in your heart He will not disappoint you.</para>
+    <para>El <application>Cómo estudiar la Biblia</application> es una guía para el
+estudio de la Biblia.</para>
+    <para>Es la esperanza del equipo &bibletime; es que este Cómo estudiar la Biblia
+provocará a los lectores a estudiar las Escrituras para ver lo que ellas
+dicen. Esta guía de estudio en particular ha sido elegida, ya que toma
+cuidado de no abogar por ninguna doctrina denominacional particular. Le
+recomendamos leer y estudiar las Escrituras para entender lo que dicen. Si
+comienza con la actitud que el Señor quiere sembrar su palabra en su corazón
+Él no le defraudará.</para>
   </abstract>
   <keywordset>
-    <keyword>Bible</keyword>
+    <keyword>Biblia</keyword>
     <keyword>Estudio</keyword>
-    <keyword>HowTo</keyword>
+    <keyword>Cómo</keyword>
   </keywordset>
 </bookinfo>
 &howto-chap1; &howto-chap2; &howto-chap3;

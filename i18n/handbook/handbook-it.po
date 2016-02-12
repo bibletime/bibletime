@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
 # Giovanni Tedaldi, 2009-2011
+# Simone Ramacci <simosito@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:25+0100\n"
-"PO-Revision-Date: 2014-11-05 19:43+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/bibletime/"
+"PO-Revision-Date: 2016-02-12 19:07+0000\n"
+"Last-Translator: Simone Ramacci <simosito@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/bibletime/bibletime/"
 "language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -1665,6 +1665,8 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Vedi</guimenu> <guimenuitem>Mostra Libreria</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:107
@@ -1690,6 +1692,8 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Vedi</guimenu> <guimenuitem>Mostra Segnalibri</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:128
@@ -3291,10 +3295,16 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> "
+#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2014</year> <holder>Il Team &bibletime;</holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
@@ -3307,12 +3317,12 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
 msgid "<date>January 2014</date>"
-msgstr ""
+msgstr "<date>Gennaio 2014</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 msgid "2.10.1"
-msgstr ""
+msgstr "2.10.1"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59

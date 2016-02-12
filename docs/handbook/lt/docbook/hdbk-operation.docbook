@@ -1,12 +1,12 @@
 <chapter id="hdbk-op">
-  <title>Program operation</title>
+  <title>Programos darbas</title>
   <sect1 id="hdbk-op-overview">
     <title>Programos apžvalga</title>
     <para>This is what a typical &bibletime; session looks like: <mediaobject>
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>&bibletime; programos langas</phrase>
       </textobject>
     </mediaobject> You can easily see the different parts of the
 application. The top left window is used to open installed works in the
@@ -21,7 +21,7 @@ Desk on the right side is where you do your real work.</para>
 individually.</para>
   </sect1>
   <sect1 id="hdbk-op-parts">
-    <title>Parts of the &bibletime; application window</title>
+    <title>&bibletime; programos lango dalys</title>
     <sect2 id="hdbk-op-parts-bookshelf">
       <title>Knygų Lentyna</title>
       <para>The Bookshelf lists all installed works, sorted by category and language. It
@@ -61,7 +61,7 @@ Modules</ulink> page on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
-        <title>Searching in works</title>
+        <title>Paieška veiklose</title>
 
         <para>You can search in a work by clicking with the
 <mousebutton>right</mousebutton> mouse button on its symbol and selecting
@@ -99,7 +99,7 @@ bookmarks to change their names and descriptions.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-mag">
-      <title>The Mag(nifying glass)</title>
+      <title>Peržiūros langelis</title>
 
       <para>This little window in the lower left corner of the &bibletime; window is
 purely passive. Whenever your mouse cursor is located over some text with
@@ -169,10 +169,10 @@ will be inserted.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-search">
-    <title>Searching in works</title>
+    <title>Paieška veiklose</title>
 
     <sect2 id="hdbk-op-search-intext">
-      <title>Searching text in an open read window</title>
+      <title>Paieška atidaryto skaitymo lango tekste</title>
       <para>You can look for a word or phrase in the open read window (e.g. the chapter
 of a bible that you're reading) just like you are used to from other
 programs. This function can be reached either by clicking with the
@@ -183,7 +183,7 @@ you can search in entire works.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
-      <title>Accessing the search dialog</title>
+      <title>Prieiga prie paieškos dialogo</title>
       <para>You can search in a work by clicking with the
 <mousebutton>right</mousebutton> mouse button on its symbol in the
 <guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in
@@ -201,13 +201,13 @@ open read window.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-config">
-      <title>Search configuration</title>
+      <title>Paieškos konfigūracija</title>
       <screenshot>
 <screeninfo>Search Text Dialog Options Tab</screeninfo> <mediaobject>
 <imageobject> <imagedata fileref="ss_searchopts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
       <sect3 id="hdbk-op-search-config-works">
-        <title>Selecting works</title>
+        <title>Veiklų pasirinkimas</title>
         <para>At the top of the options tab you will find
 <guibutton>Choose</guibutton>(works). If you would like to search in
 multiple works, click on this button and you will be offered a menu where
@@ -240,36 +240,36 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 ':', and then the search term.  Refer to the table below for examples.</para>
 
         <para>Available text types: <table id="hd-op-search-config-syntax-table">
-	  <title>Search Types</title>
+	  <title>Paieškos Tipai</title>
           <tgroup cols="3">
             <thead>
               <row>
 		<?dbhtml bgcolor="#EEEEEE" ?>
 		<?dbfo bgcolor="#EEEEEE" ?>
-                <entry>Prefix</entry>
-                <entry>Meaning</entry>
-		<entry>Example</entry>
+                <entry>Priešdėlis</entry>
+                <entry>Reikšmė</entry>
+		<entry>Pavyzdys</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>heading:</entry>
-                <entry>searches headings</entry>
-		<entry>heading:Jesus</entry>
+                <entry>ieško antraštėse</entry>
+		<entry>heading:Jėzus</entry>
               </row>
               <row>
                 <entry>footnote:</entry>
-                <entry>searches footnotes</entry>
+                <entry>ieško išnašose</entry>
 		<entry>footnote:Moses</entry>
               </row>
               <row>
                 <entry>strong:</entry>
-                <entry>searches Strong's Numbers</entry>
+                <entry>ieško Strongo numeriuose</entry>
 		<entry>strong:G535</entry>
               </row>
               <row>
                 <entry>morph:</entry>
-                <entry>searches morphology codes</entry>
+                <entry>ieško morfologiniuose koduose</entry>
 		<entry>morph:N-GSM</entry>
               </row>
             </tbody>
@@ -290,7 +290,7 @@ http://lucene.apache.org/java/docs/index.html</ulink>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-results">
-      <title>Search results</title>
+      <title>Paieškos rezultatai</title>
       <para>Here you can see how many instances of the search string were found, sorted
 by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse
 button allows you to copy, save, or print all verses that were found in a
@@ -309,7 +309,7 @@ that verse.</para>
         <para>Select references and drag them to the Bookshelf to create bookmarks.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
-        <title>Search result analysis</title>
+        <title>Paieškos rezultatų analizė</title>
         <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis
 display. This gives a simple graphic analysis of the number of instances the
 search string was found in each book of the Bible, and you can also save the
@@ -323,7 +323,7 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></s
   </sect1>
 
   <sect1 id="hdbk-op-bookshelfmanager">
-    <title>The <guimenuitem>Bookshelf Manager</guimenuitem></title>
+    <title><guimenuitem>Knygų Lentynos Tvarkytuvė</guimenuitem></title>
 
     <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your
 Bookshelf. You can install new works to your Bookshelf, and update or remove
@@ -383,7 +383,7 @@ Bookshelf too free up disk space. Simply mark the items and click on
 <guibutton>Remove works</guibutton>.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Search Indexes</title>
+      <title>Paieškos Indeksai</title>
       <para>This option allows you to create new search indexes and cleanup orphaned
 index files for removed works.</para>
       <tip>
@@ -393,7 +393,7 @@ index files for removed works.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
-    <title>Exporting and Printing</title>
+    <title>Eksportavimas ir Spausdinimas</title>
     <para>In many places, you can open a context menu by clicking with the
 <mousebutton>right</mousebutton> mouse button. Depending on context, it will
 allow you to <guimenuitem>Select</guimenuitem>,

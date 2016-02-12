@@ -1,55 +1,55 @@
 <chapter id="hdbk-config">
-  <title>Configuring &bibletime;</title>
-  <para>In this section you find an overview to configure &bibletime;, which can be
-found under <guimenu>Settings</guimenu> in the main menu.</para>
+  <title>&bibletime; Konfigūravimas</title>
+  <para>Šioje sekcijoje jūs rasite &bibletime; konfigūravimo apžvalgą, kurią galima
+rasti pagrindinio meniu punkte <guimenu>Nustatymai</guimenu></para>
   <sect1 id="hdbk-config-bt">
-    <title>Configure &bibletime; Dialog</title>
-    <para>The &bibletime; user interface can be customized in many ways depending on
-your needs. You can access the configuration dialog by selecting
-<menuchoice> <guimenu>Settings</guimenu> </menuchoice>
-<guimenuitem>Configure &bibletime;</guimenuitem>.</para>
+    <title>&bibletime; Konfigūravimo Dialogo Langas</title>
+    <para>&bibletime; naudotojo sąsaja, priklausomai nuo jūsų poreikių, gali būti
+tinkinama įvairiais būdais. Jūs galite pasiekti konfigūravimo dialogo langą,
+pasirinkdami <menuchoice> <guimenu>Nustatymai</guimenu> </menuchoice>
+<guimenuitem>Konfigūruoti &bibletime;</guimenuitem>.</para>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Rodymas</guimenu>
       </title>
-      <para>The startup behavior can be customized. Select from the following options: 
+      <para>Paleisties elgsena gali būti tinkinama. Pasirinkite iš sekančių parinkčių: 
       <itemizedlist>
         <listitem>
           <para>Rodyti prisistatymo logotipą</para>
         </listitem>
       </itemizedlist></para>
-      <para>Display templates define the rendering of text (colors, size etc.). Various
-built-in templates are available. If you select one, you will see a preview
-on the right pane.</para>
+      <para>Rodymo šablonai, apibrėžia teksto atvaizdavimą (spalvas, dydį ir t. t.). Yra
+prieinami įvairūs įtaisyti šablonai. Pasirinkę vieną iš šablonų, dešiniame
+polangyje matysite peržiūrą.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Stalas</guimenu>
       </title>
-      <para>Many features provided by the &sword; backend can now be customized in
-&bibletime;.  These features are documented right in the dialog.  You also
-have the possibility to specify standard works that should be used when no
-specific work is specified in a reference.  An example: The standard Bible
-is used to display the content of cross references in the Bible.  When you
-hover over them, the Mag will show the content of the verses referred to,
-according to the standard Bible you specified.  With the use of text
-filters, you can control the appearance of the text.</para>
+      <para>Daugelis, &sword; vidinės pusės pateikiamų, ypatybių, dabar, gali būti
+tinkinamos programoje &bibletime;. Šios ypatybės yra dokumentuotos tiesiai
+dialoge. Jūs taip pat turite galimybę apibrėžti standartines veiklas, kurios
+turėtų būti naudojamos, kai nuorodoje nėra apibrėžta jokia specifinė
+veikla. Pavyzdys: Standartinė Biblija yra naudojama Biblijos kryžminių
+nuorodų turinio rodymui. Kai ant jų užvedate pelę, Peržiūros langelis rodys
+nurodomų eilučių turinį, atitinkamai jūsų nurodytos standartinės
+Biblijos. Naudodami teksto filtrus, galite valdyti teksto išvaizdą.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
         <guimenu>Kalbos</guimenu>
       </title>
-      <para>Here you can specify which language should be used for the biblical
-booknames. Set this to your native language, if it is available, and you'll
-feel at home.</para>
+      <para>Čia galite nurodyti, kokia kalba turėtų būti rodomi Biblijos knygų
+pavadinimai. Nusistatykite šią parinktį į savo gimtąją kalbą, jei ji
+prieinama, ir jausitės kaip namie.</para>
 
-      <para>By default, &bibletime; uses the default system display font. You can
-override this font if necessary. Some languages require special fonts to be
-displayed correctly, and this dialog allows you to specify a custom font for
-each language.</para>
+      <para>Pagal numatymą, &bibletime; naudoja numatytąjį sistemos šriftą. Jei būtina,
+galite nustelbti šį šriftą. Kai kurios kalbos tam, kad būtų teisingai
+rodomos, reikalauja ypatingų šriftų ir šis dialogo langas kiekvienai kalbai
+leidžia jums nurodyti pasirinktiną šriftą.</para>
       <mediaobject>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
@@ -60,54 +60,53 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
           <para>Parinkčių langas - Šriftai.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; can now use all supported fonts.  As long as the works you are
-interested in display correctly nothing needs to be done here. If a work
-only displays as a series of question marks (??????) or empty boxes, then
-you know that the standard display font does not contain the characters used
-in this work.</para>
+      <para>Dabar &bibletime; gali naudoti visus palaikomus šriftus. Tol, kol jus
+dominančios veiklos yra rodomos teisingai, čia nieko nereikia daryti. Jei
+veikla rodo tik eilę klaustukų (??????) arba tuščias dėžutes, žinokite, kad
+standartiniame rodymo šrifte nėra šioje veikloje naudojamų simbolių.</para>
 
-      <para>To correct this, choose this work's language from the drop down menu. Select
-the use custom font checkbox. Now select a font. For example, a font that
-supports many languages is Code2000. If no installed font can display the
-work you are interested in, try installing the localization package for that
-language.</para>
+      <para>Norėdami tai ištaisyti, iš išskleidžiamojo meniu pasirinkite šios veiklos
+kalbą. Pažymėkite žymimą langelį "Naudoti tinkintą šriftą". Pavyzdžiui,
+daugelį kalbų palaikantis šriftas yra Code2000. Jei nė vienas įdiegtas
+šriftas nerodo jus dominančios veiklos, pabandykite įdiegti tos kalbos
+lokalizavimo paketą.</para>
       <sect3 id="hdbk-config-bt-addfont">
-        <title>Įdiegiami šriftai</title>
-        <para>Detailed font installation instructions are outside the scope of this
-handbook. For further information you might want to refer to the <ulink
+        <title>Šriftų diegimas</title>
+        <para>Išsamesni šriftų diegimo nurodymai yra už šio žinyno ribų. Tolimesnei
+informacijai, galbūt, norėtumėte kreiptis į <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
-HOWTO</ulink>.</para>
+INSTRUKCIJĄ</ulink>.</para>
         <tip>
-          <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run
-faster than with a large font like <trademark class="registered">Bitstream
-Cyberbit</trademark>(about 12Mb).</para>
+          <para>Jei naudosite mažą šriftą, tokį kaip Clearlyu (apie 22kb), &bibletime; veiks
+greičiau nei su dideliu šriftu, tokiu kaip <trademark
+class="registered">Bitstream Cyberbit</trademark>(apie 12Mb).</para>
         </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Obtaining Fonts</title>
-        <para>Fonts can be obtained from a number of sources:</para>
+        <title>Šriftų Gavimas</title>
+        <para>Šriftai gali būti gaunami iš daugelio šaltinių:</para>
         <itemizedlist>
           <listitem>
-            <para>Jūsų *nix distribucija.</para>
+            <para>Jūsų *nix distribucijos.</para>
           </listitem>
           <listitem>
-            <para>Jūsų distribucijos lokalizacijos paketai.</para>
+            <para>Jūsų distribucijos lokalizacijos paketų.</para>
           </listitem>
           <listitem>
-            <para>An existing <trademark class="registered">Microsoft Windows</trademark>
-installation on the same computer.</para>
+            <para>Tame pačiame kompiuteryje esančios <trademark class="registered">Microsoft
+Windows</trademark> sistemos diegimo.</para>
           </listitem>
           <listitem>
-            <para>A font collection, such as are available from Adobe or Bitstream.</para>
+            <para>Šriftų kolekcijų, tokių kaip yra prieinamos iš Adobe ar Bitstream.</para>
           </listitem>
           <listitem>
-            <para>Online font collections.</para>
+            <para>Žiniatinklio šriftų kolekcijų.</para>
           </listitem>
         </itemizedlist>
-        <para>Unicode fonts support more characters than other fonts, and some of these
-fonts are available at no charge. None of available fonts includes all
-characters defined in the Unicode standard, so you may want to use different
-fonts for different languages.</para>
+        <para>Unicode šriftai palaiko daugiau simbolių nei kiti šriftai, be to, kai kurie
+iš jų yra prieinami be jokio mokesčio. Nei viename iš prieinamų šriftų nėra
+visų, Unicode standartu, apibrėžtų simbolių, todėl, galbūt, pageidausite
+skirtingoms kalboms naudoti skirtingus šriftus.</para>
         <table id="hdbk-config-unicode-fonts-table">
           <title>Unicode Šriftai</title>
           <tgroup cols="2">
@@ -116,29 +115,30 @@ fonts for different languages.</para>
                 <entry>
                   <ulink url="http://code2000.net/CODE2000.ZIP"> Code2000</ulink>
                 </entry>
-                <entry>Perhaps the best free Unicode font, covering a wide range of characters.</entry>
+                <entry>Ko gero, geriausias nemokamas Unicode šriftas, apimantis didelį simbolių
+skaičių.</entry>
               </row>
               <row>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+SIL unicode šriftai</ulink>
                 </entry>
-                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
+                <entry>Puikūs Unicode šriftai iš Summer Institute of Linguistics</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/"> FreeFont</ulink>
                 </entry>
-                <entry>A new free Unicode font initiative.</entry>
+                <entry>Nauja nemokama Unicode šriftų iniciatyva.</entry>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/"> Crosswire
+šriftų katalogas</ulink>
                 </entry>
 
-                <entry>Several fonts available from the &cbs; FTP site.</entry>
+                <entry>Keli šriftai prieinami iš &cbs; FTP svetainės.</entry>
               </row>
               <row>
                 <entry>
@@ -146,19 +146,20 @@ Crosswire's font directory</ulink>
 url="http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/">
 Bitstream CyberBit</ulink>
                 </entry>
-                <entry>Covers almost the entire range of Unicode, but might slow &bibletime; down
-because of its size.</entry>
+                <entry>Apima beveik visą Unicode, tačiau, dėl savo dydžio, gali sulėtinti
+&bibletime; programos darbą.</entry>
               </row>
               <row>
                 <entry>Clearlyu</entry>
-                <entry>Included in some distributions. Contains European, Greek, Hebrew, Thai.</entry>
+                <entry>Įtrauktas į kai kurias distribucijas. Sudarytas iš Europos, Graikų, Hebrajų,
+Tajų.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://fontforge.sourceforge.net/sfds/"> Caslon, Monospace,
 Cupola, Caliban</ulink>
                 </entry>
-                <entry>Partial coverage, see information on linked site.</entry>
+                <entry>Dalinis simbolių palaikymas, žiūrėkite informaciją nurodytoje svetainėje.</entry>
               </row>
             </tbody>
           </tgroup>

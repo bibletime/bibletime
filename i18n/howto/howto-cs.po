@@ -1,16 +1,15 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2014-11-05 19:47+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/bibletime/language/"
+"PO-Revision-Date: 2016-02-12 19:06+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Language-Team: Czech (http://www.transifex.com/bibletime/bibletime/language/"
 "cs/)\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -1629,7 +1628,7 @@ msgstr ""
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
-msgstr ""
+msgstr "<application>BibleTime</application>"
 
 #. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:6
