@@ -30,25 +30,26 @@ QString const LanguagesKey = "GUI/BookshelfWizard/languages";
 
 BtBookshelfWizard::BtBookshelfWizard(QWidget * parent, Qt::WindowFlags flags)
     : QWizard(parent, flags)
-    , m_taskPage(new BtBookshelfTaskPage)
-    , m_sourcesProgressPage(new BtBookshelfSourcesProgressPage)
-    , m_sourcesPage(new BtBookshelfSourcesPage)
-    , m_languagesPage(new BtBookshelfLanguagesPage)
-    , m_installWorksPage(new BtBookshelfWorksPage(WizardTaskType::installWorks))
-    , m_updateWorksPage(new BtBookshelfWorksPage(WizardTaskType::updateWorks))
-    , m_removeWorksPage(new BtBookshelfWorksPage(WizardTaskType::removeWorks))
-    , m_removeFinalPage(new BtBookshelfRemoveFinalPage)
-    , m_installFinalPage(new BtBookshelfInstallFinalPage)  // For install and update
+    , m_taskPage(new BtBookshelfTaskPage(this))
+    , m_sourcesProgressPage(new BtBookshelfSourcesProgressPage(this))
+    , m_sourcesPage(new BtBookshelfSourcesPage(this))
+    , m_languagesPage(new BtBookshelfLanguagesPage(this))
+    , m_installWorksPage(new BtBookshelfWorksPage(WizardTaskType::installWorks, this))
+    , m_updateWorksPage(new BtBookshelfWorksPage(WizardTaskType::updateWorks, this))
+    , m_removeWorksPage(new BtBookshelfWorksPage(WizardTaskType::removeWorks, this))
+    , m_removeFinalPage(new BtBookshelfRemoveFinalPage(this))
+    , m_installFinalPage(new BtBookshelfInstallFinalPage(this))  // For install and update
 {
-    addPage(m_taskPage);
-    addPage(m_sourcesProgressPage);
-    addPage(m_sourcesPage);
-    addPage(m_languagesPage);
-    addPage(m_installWorksPage);
-    addPage(m_updateWorksPage);
-    addPage(m_removeWorksPage);
-    addPage(m_removeFinalPage);
-    addPage(m_installFinalPage);
+    setPage(WizardPage::taskPage, m_taskPage);
+    setPage(WizardPage::sourcesProgressPage, m_sourcesProgressPage);
+    setPage(WizardPage::sourcesPage, m_sourcesPage);
+    setPage(WizardPage::languagesPage, m_languagesPage);
+    setPage(WizardPage::installWorksPage, m_installWorksPage);
+    setPage(WizardPage::updateWorksPage, m_updateWorksPage);
+    setPage(WizardPage::removeWorksPage, m_removeWorksPage);
+    setPage(WizardPage::removeFinalPage, m_removeFinalPage);
+    setPage(WizardPage::installFinalPage, m_installFinalPage);
+    setStartId(WizardPage::taskPage);
 
     QRect rect = geometry();
     rect.setWidth(780);
