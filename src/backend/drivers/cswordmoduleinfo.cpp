@@ -95,7 +95,7 @@ inline CSwordModuleInfo::Category retrieveCategory(
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                                    CSwordBackend & backend,
                                    ModuleType type)
-    : m_module{module}
+    : m_module(module)
     , m_backend(backend)
     , m_type(type)
     , m_cancelIndexing(false)
