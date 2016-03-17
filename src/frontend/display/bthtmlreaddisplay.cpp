@@ -42,6 +42,14 @@ static QString javascriptFile = "bthtml.js";
 
 static QString s_javascript; // Initialized from javascript file
 
+// This is s work around for Qt bug 51565
+// It is also documented in BibleTime bug #53
+static void clearChildFocusWidget(QWidget * widget) {
+    QWidget * childFocusedWidget = widget->focusWidget();
+    if (childFocusedWidget)
+        childFocusedWidget->clearFocus();
+}
+
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
     : BtWebEnginePage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(nullptr), m_jsObject(nullptr)
 
@@ -53,7 +61,8 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
     m_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     loadJSObject();
     loadScripts();
-    m_view->setHtml("");
+    m_view->setHtml("");    // This sets focus on a child widget
+    clearChildFocusWidget(m_view);
 
     BT_CONNECT(this, SIGNAL(loadFinished(bool)),
                this, SLOT(slotLoadFinished(bool)));
