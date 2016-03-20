@@ -5,6 +5,36 @@ IF("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
   MESSAGE(FATAL_ERROR "You probably didn't mean to run CMake from this directory. Now you have all messed up! You'd better delete CMakeFiles/ and CMakeCache.txt or things will break!")
 ENDIF()
 
+# If BIBLETIME_BUILDCONFIG set, load the file and fail on error. Otherwise, try
+# to include either "config.cmake" under either the build directory or the
+# source directory, whichever file first exists, if at all.
+IF(DEFINED BIBLETIME_BUILDCONFIG)
+  IF(BIBLETIME_BUILDCONFIG_IS_RELATIVE)
+      SET(BIBLETIME_BUILDCONFIG
+          "${CMAKE_CURRENT_BINARY_DIR}/${BIBLETIME_BUILDCONFIG}")
+  ENDIF()
+  INCLUDE("${BIBLETIME_BUILDCONFIG}" OPTIONAL RESULT_VARIABLE r)
+  IF(r)
+    MESSAGE(STATUS "Included \"${BIBLETIME_BUILDCONFIG}\"")
+    UNSET(r)
+  ELSE()
+    MESSAGE(FATAL_ERROR
+     "Failed to include build configuration from \"${BIBLETIME_BUILDCONFIG}\"!")
+  ENDIF()
+ELSE()
+  INCLUDE("${CMAKE_CURRENT_BINARY_DIR}/config.cmake" OPTIONAL RESULT_VARIABLE r)
+  IF(r)
+    MESSAGE(STATUS "Included \"${r}\"")
+  ELSE()
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/config.cmake"
+            OPTIONAL RESULT_VARIABLE r)
+    IF(r)
+      MESSAGE(STATUS "Included \"${r}\"")
+    ENDIF()
+  ENDIF()
+  UNSET(r)
+ENDIF()
+
 LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 
