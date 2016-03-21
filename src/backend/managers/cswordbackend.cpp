@@ -28,7 +28,6 @@
 #include <encfiltmgr.h>
 #include <filemgr.h>
 #include <rtfhtml.h>
-#include <swdisp.h>
 #include <swfiltermgr.h>
 #include <swfilter.h>
 #include <utilstr.h>
@@ -139,16 +138,16 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
         const char * const modType = curMod->getType();
         if (!strcmp(modType, "Biblical Texts")) {
             newModule = new CSwordBibleModuleInfo(*curMod, *this);
-            newModule->module().setDisplay(&m_chapterDisplay);
+            newModule->setDisplay(&m_chapterDisplay);
         } else if (!strcmp(modType, "Commentaries")) {
             newModule = new CSwordCommentaryModuleInfo(*curMod, *this);
-            newModule->module().setDisplay(&m_entryDisplay);
+            newModule->setDisplay(&m_entryDisplay);
         } else if (!strcmp(modType, "Lexicons / Dictionaries")) {
             newModule = new CSwordLexiconModuleInfo(*curMod, *this);
-            newModule->module().setDisplay(&m_entryDisplay);
+            newModule->setDisplay(&m_entryDisplay);
         } else if (!strcmp(modType, "Generic Books")) {
             newModule = new CSwordBookModuleInfo(*curMod, *this);
-            newModule->module().setDisplay(&m_bookDisplay);
+            newModule->setDisplay(&m_bookDisplay);
         } else {
             continue;
         }

@@ -17,7 +17,6 @@
 #include "ctextrendering.h"
 
 // Sword includes:
-#include <swdisp.h>
 #include <swmodule.h>
 
 
@@ -26,7 +25,7 @@ struct FilterOptions;
 
 namespace Rendering {
 
-class CEntryDisplay: public sword::SWDisplay {
+class CEntryDisplay {
 
     public: /* Methods: */
 
@@ -45,7 +44,7 @@ class CEntryDisplay: public sword::SWDisplay {
                                const FilterOptions &filterOptions,
                                CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering);
 
-        char display(sword::SWModule& mod) override { (void)mod; return 'c';}
+        virtual char display(CSwordModuleInfo & mod) { (void)mod; return 'c';}
 
 }; /* class CEntryDisplay */
 

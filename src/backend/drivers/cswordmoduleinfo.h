@@ -12,6 +12,9 @@
 #ifndef CSWORDMODULEINFO_H
 #define CSWORDMODULEINFO_H
 
+#include <QObject>
+#include "btdisplayholder.h"
+
 #include "../managers/clanguagemgr.h"
 
 #include <atomic>
@@ -22,7 +25,6 @@
 
 // Sword includes:
 #include <listkey.h>
-#include <swdisp.h>
 #include <swmodule.h>
 #include <swsearchable.h>
 #include <swversion.h>
@@ -37,10 +39,6 @@ extern size_t lucene_wcstoutf8 (char *,  const wchar_t *, size_t maxslen);
 class CSwordBackend;
 class CSwordKey;
 
-namespace Rendering {
-
-class CEntryDisplay;
-}
 
 /**
  * Base class for Sword modules.
@@ -51,7 +49,10 @@ class CEntryDisplay;
  * @version $Id: cswordmoduleinfo.h,v 1.83 2007/02/04 23:12:32 joachim Exp $
  */
 
-class CSwordModuleInfo: public QObject {
+class CSwordModuleInfo
+    : public QObject
+    , public BtDisplayHolder<CSwordModuleInfo>
+{
 
     Q_OBJECT
 
@@ -198,15 +199,6 @@ public: /* Methods: */
 wrong, or if the config file was write protected return false.
     */
     bool unlock(const QString & unlockKey);
-
-    /**
-    * Returns the display object for this module. Normally every module should have a Display object.
-    * Please don't use module()->Display() because this function does return the Sword display and does
-    * render the text, too.
-    * This function performs some casts to return the correct display. If it returns 0 there's no valid
-    * display object.
-    */
-    Rendering::CEntryDisplay * getDisplay() const;
 
     /**
     * This function does return true if the data files of the module are encrypted by the module author

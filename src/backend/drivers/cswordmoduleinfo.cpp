@@ -742,10 +742,6 @@ void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
     m_module.deleteEntry();
 }
 
-Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
-    return dynamic_cast<Rendering::CEntryDisplay *>(m_module.getDisplay());
-}
-
 QString CSwordModuleInfo::aboutText() const {
     static const QString row("<tr><td><b>%1</b></td><td>%2</td></tr>");
 
