@@ -36,9 +36,11 @@ public: /* Methods: */
     bool isComplete() const final override;
     int nextId() const final override;
 
+public slots:
+    void slotStopInstall();
+
 private slots:
 
-    void slotStopInstall();
     void slotThreadFinished();
 
 private: /* Methods: */

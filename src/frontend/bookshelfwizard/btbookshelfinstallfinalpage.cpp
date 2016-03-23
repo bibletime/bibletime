@@ -109,7 +109,7 @@ void BtBookshelfInstallFinalPage::initializePage() {
     retranslateUi();
 
     // Install works:
-    auto const & btWiz = btWizard();
+    auto & btWiz = btWizard();
     m_modules = btWiz.selectedWorks().toList();
     m_thread = new BtInstallThread(m_modules, btWiz.installPath(), this);
     BT_CONNECT(m_thread, &BtInstallThread::preparingInstall,
@@ -129,6 +129,7 @@ void BtBookshelfInstallFinalPage::initializePage() {
     m_installFailed = false;
     m_installCompleted = false;
     m_thread->start();
+    btWiz.downloadStarted();
 }
 
 bool BtBookshelfInstallFinalPage::isComplete() const
@@ -184,4 +185,5 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
 
     m_installCompleted = true;
     emit QWizardPage::completeChanged();
+    btWizard().downloadFinished();
 }

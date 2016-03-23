@@ -112,6 +112,7 @@ void BtBookshelfSourcesProgressPage::initializePage() {
                Qt::QueuedConnection);
     m_thread->start();
     m_stopButton->setEnabled(true);
+    btWizard().downloadStarted();
     retranslateUi();
 }
 
@@ -124,6 +125,7 @@ void BtBookshelfSourcesProgressPage::slotThreadFinished() {
         btConfig().setValue<QDate>(lastUpdate, QDate::currentDate());
     m_installCompleted = true;
     emit QWizardPage::completeChanged();
+    btWizard().downloadFinished();
 }
 
 void BtBookshelfSourcesProgressPage::slotStopInstall() {

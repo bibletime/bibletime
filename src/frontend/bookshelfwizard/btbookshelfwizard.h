@@ -23,9 +23,12 @@ class BtBookshelfWorksPage;
 class BtBookshelfInstallFinalPage;
 class BtBookshelfLanguagesPage;
 class BtBookshelfSourcesPage;
+class BtBookshelfSourcesProgressPage;
 class BtBookshelfTaskPage;
 class BtBookshelfUpdatePage;
 class BtModuleSet;
+class QKeyEvent;
+class QMessageBox;
 
 /** \brief The Bookshelf Manager wizard. */
 class BtBookshelfWizard final: public QWizard {
@@ -42,21 +45,34 @@ public: /* Methods: */
     WizardTaskType taskType() const;
     QString installPath() const;
 
-    BtBookshelfLanguagesPage & languagesPage() const noexcept
-    { return *m_languagesPage; }
+    BtBookshelfLanguagesPage & languagesPage() const noexcept {
+        return *m_languagesPage;
+    }
+
+    void downloadStarted();
+    void downloadFinished();
 
 public slots:
 
     void accept() final override;
 
+protected:
+    virtual void keyPressEvent(QKeyEvent * event) override;
+
 private: /* Methods: */
 
     void retranslateUi();
+    void stopDownload();
 
 private: /* Fields: */
 
+    bool m_downloadInProgress;
+    bool m_closeRequested;
+    QMessageBox * m_closeMessageBox;
+
     BtBookshelfTaskPage * const m_taskPage;
     BtBookshelfSourcesPage * const m_sourcesPage;
+    BtBookshelfSourcesProgressPage * const m_sourcesProgressPage;
     BtBookshelfLanguagesPage * const m_languagesPage;
     BtBookshelfWorksPage * const m_installWorksPage;
     BtBookshelfWorksPage * const m_updateWorksPage;
