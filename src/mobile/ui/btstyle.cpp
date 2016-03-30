@@ -97,7 +97,7 @@ void BtStyle::setCurrentStyle(int style) {
         currentStyle = style;
 
         BtModuleTextModel::setLinkColor(QColor(0,191,255));
-        BtModuleTextModel::setHighlightColor(QColor(255,255,0));
+        BtModuleTextModel::setHighlightColor(QColor(0,0,0));
         BtModuleTextModel::setJesusWordsColor(QColor(255,0,0));
 
         setTextColor(QColor(255,255,255));
