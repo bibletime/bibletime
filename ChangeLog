@@ -1,8 +1,17 @@
 2016-01-20 Gary Holmlund <gary.holmlund@gmail.com>
     * Implement QWebEngine usage for Qt 5.6
 
+2015-12-24 Gary Holmlund <gary.holmlund@gmail.com>
+    * Implemented new bookshelf manager
+
 2015-12-14 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #23 Tiny fonts on Windows
+
+2015-11-15 Jaak Ristioja <jaak@ristioja.ee>
+    * Require Qt 5 or later
+
+2015-11-14 Jaak Ristioja <jaak@ristioja.ee>
+    * Require C++11 or later
 
 2015-02-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #26 Screen contents do not autoadjust when window size is adjusted
