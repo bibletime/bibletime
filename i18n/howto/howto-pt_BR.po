@@ -7,12 +7,13 @@
 # rafaelfrc <rafaelfrc@yahoo.com.br>, 2009
 # Samuel Lucas Vaz de Mello <samuelm@estadao.com.br>, 2004
 # Saulo Rodrigues e Silva <saulors@yahoo.com>, 2005,2009
+# Timothy Brennan Jr <timotheonb@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2016-02-12 19:06+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"PO-Revision-Date: 2016-02-12 19:46+0000\n"
+"Last-Translator: Timothy Brennan Jr <timotheonb@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/bibletime/"
 "bibletime/language/pt_BR/)\n"
 "Language: pt_BR\n"
@@ -534,7 +535,7 @@ msgstr "Um Livro que é Único"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:8
 msgid "The Bible stands alone in many ways. It is unique in:"
-msgstr ""
+msgstr "A Bíblia se destaca de muitas maneiras. É exclusiva em"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:11
@@ -542,6 +543,9 @@ msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
 msgstr ""
+"popularidade. Vendas de Bíblias na América do Norte: mais de US$ 500 milhões "
+"por ano. A Bíblia é o <it>best-seller</it> mais bem vendido de todos os "
+"tempos e de ano em ano!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:16
@@ -549,6 +553,9 @@ msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
+"autoria. Foi escrita num período de 1.600 anos por 40 autores diferentes, de "
+"diferentes histórias e origens, mas, mesmo assim lê-se como se fosse apenas "
+"um livro."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21

@@ -4,7 +4,7 @@
     <message>
         <source/>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation type="unfinished"/>
     </message>
@@ -14,12 +14,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="54"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished"/>
+        <translation>BibleTime Mobile</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="76"/>
         <source>Brought to you by the</source>
-        <translation type="unfinished"/>
+        <translation>Bereitgestellt durch das</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="77"/>
@@ -29,17 +29,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="81"/>
         <source>Qt version</source>
-        <translation type="unfinished"/>
+        <translation>Qt-Version</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="85"/>
         <source>Sword version</source>
-        <translation type="unfinished"/>
+        <translation>Sword-Version</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="89"/>
         <source>Licensed Under the</source>
-        <translation type="unfinished"/>
+        <translation>Lizensier unter der</translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="121"/>
         <source>Ok</source>
-        <translation type="unfinished"/>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/FontSizeSlider.qml" line="138"/>
@@ -73,7 +73,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="73"/>
         <source>Source</source>
-        <translation type="unfinished"/>
+        <translation>Quelle</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="81"/>
@@ -93,7 +93,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="134"/>
         <source>Refresh Sources</source>
-        <translation type="unfinished"/>
+        <translation>Quellen aktualisieren</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="151"/>
@@ -106,7 +106,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/MainToolbar.qml" line="55"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished"/>
+        <translation>BibleTime Mobile</translation>
     </message>
 </context>
 <context>
@@ -114,7 +114,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ModuleChooser.qml" line="121"/>
         <source>Unlock</source>
-        <translation type="unfinished"/>
+        <translation>Freischalten</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/ModuleChooser.qml" line="170"/>
@@ -143,12 +143,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Question</name>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="79"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="86"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="98"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="105"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
@@ -158,7 +158,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="495"/>
         <source>Are you sure you want to quit?</source>
-        <translation type="unfinished"/>
+        <translation>Sind Sie sicher, dass Sie das Programm verlassen möchtenß</translation>
     </message>
 </context>
 <context>
@@ -172,7 +172,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="147"/>
         <source>Find</source>
-        <translation type="unfinished"/>
+        <translation>Finden</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="165"/>
@@ -182,17 +182,30 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="181"/>
         <source>Any Word</source>
-        <translation type="unfinished"/>
+        <translation>Irgendein Wort</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="196"/>
         <source>Regular Expression</source>
-        <translation type="unfinished"/>
+        <translation>Regulärer Ausdruck</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="222"/>
         <source>Search in</source>
-        <translation type="unfinished"/>
+        <translation>Suche in</translation>
+    </message>
+</context>
+<context>
+    <name>SearchResults</name>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="127"/>
+        <source>Documents</source>
+        <translation>Dokumente</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="158"/>
+        <source>References</source>
+        <translation>Referenzen</translation>
     </message>
 </context>
 <context>
@@ -200,7 +213,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="110"/>
         <source>For Language</source>
-        <translation type="unfinished"/>
+        <translation>Für Sprach</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="145"/>
@@ -210,12 +223,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="180"/>
         <source>Font Size</source>
-        <translation type="unfinished"/>
+        <translation>Schriftgröße</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="230"/>
         <source>Ok</source>
-        <translation type="unfinished"/>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="247"/>
@@ -228,12 +241,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/StartupBookshelfManager.qml" line="26"/>
         <source>There are currently no documents installed. Please click on the Ok button below to install new documents.</source>
-        <translation type="unfinished"/>
+        <translation>Derzeit sind keine Dokumente installiert. Bitte verwenden Sie den Knopf &quot;Ok&quot;, um neue Dokumente zu installieren.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/StartupBookshelfManager.qml" line="51"/>
         <source>Ok</source>
-        <translation type="unfinished"/>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/StartupBookshelfManager.qml" line="72"/>
@@ -246,7 +259,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/WindowManager.qml" line="265"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
-        <translation type="unfinished"/>
+        <translation>Verwenden Sie das Menü &quot;Neues Fenster&quot;, um ein Dokument zu öffnen.</translation>
+    </message>
+</context>
+<context>
+    <name>btm::BtSearchInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
+        <source>Indexing</source>
+        <translation>Indexierung</translation>
     </message>
 </context>
 <context>
@@ -254,12 +275,33 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
         <source>Installing</source>
-        <translation type="unfinished"/>
+        <translation>Installation</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Herunterladen</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
+        <source>Refreshing</source>
+        <translation>Aktualisierung</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
+        <source>Failed to refresh source %1</source>
+        <translation>Konnte Quelle %1 nicht aktualisieren</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSourcesManager</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
+        <source>Refreshing Source List</source>
+        <translation>Aktualisiere Quellenliste</translation>
     </message>
 </context>
 <context>
@@ -272,12 +314,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="61"/>
         <source>Chapter</source>
-        <translation type="unfinished"/>
+        <translation>Kapitel</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="68"/>
         <source>Verse</source>
-        <translation type="unfinished"/>
+        <translation>Vers</translation>
     </message>
 </context>
 <context>
@@ -285,7 +327,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="233"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
-        <translation type="unfinished"/>
+        <translation>Einige Module müssen für die Suche indexiert werden. Wollen Sie diese jetzt indexieren?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="321"/>
@@ -295,7 +337,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="322"/>
         <source>View Window</source>
-        <translation type="unfinished"/>
+        <translation>Anzeigefenster</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="323"/>
@@ -306,17 +348,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="326"/>
         <location filename="../../src/mobile/qml/main.qml" line="476"/>
         <source>User Interface Font Size</source>
-        <translation type="unfinished"/>
+        <translation>Programm-Schriftgröße</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="327"/>
         <source>Window Arrangement</source>
-        <translation type="unfinished"/>
+        <translation>Fenster-Anordnung</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="324"/>
         <source>Manage Installed Documents</source>
-        <translation type="unfinished"/>
+        <translation>Installierte Dokumente verwalten</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="329"/>
@@ -326,57 +368,57 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="418"/>
         <source>Dark</source>
-        <translation type="unfinished"/>
+        <translation>Dunkel</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="419"/>
         <source>Light Blue</source>
-        <translation type="unfinished"/>
+        <translation>Hellblau</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="420"/>
         <source>Crimson</source>
-        <translation type="unfinished"/>
+        <translation>Purpur</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="381"/>
         <source>Single</source>
-        <translation type="unfinished"/>
+        <translation>Einzel</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="178"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
-        <translation type="unfinished"/>
+        <translation>BibleTime zeigt Dokumente wie Bibeln und Kommentare an. Diese Dokumente werden heruntergeladen und lokal gespeichert. Derzeit sind keine Dokumente vorhanden. Möchten Sie jetzt Dokumente installieren?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="325"/>
         <source>Text Font</source>
-        <translation type="unfinished"/>
+        <translation>Schriftart für Text</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="328"/>
         <source>Color Theme</source>
-        <translation type="unfinished"/>
+        <translation>Farbschema</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="382"/>
         <source>Tabbed</source>
-        <translation type="unfinished"/>
+        <translation>Tabs</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="383"/>
         <source>Auto-tile</source>
-        <translation type="unfinished"/>
+        <translation>Automatisch Kacheln</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="384"/>
         <source>Auto-tile horizontally</source>
-        <translation type="unfinished"/>
+        <translation>Automatisch horizontal kacheln</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="385"/>
         <source>Auto-tile vertically</source>
-        <translation type="unfinished"/>
+        <translation>Autmatisch vertikal kacheln</translation>
     </message>
 </context>
 </TS>

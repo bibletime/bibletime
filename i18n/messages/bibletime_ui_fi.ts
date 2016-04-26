@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -280,10 +280,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletime_init.cpp" line="232"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Aseta Bibletimen asetukset</translation>
-    </message>
-    <message>
-        <source>Bookshelf &amp;Manager...</source>
-        <translation type="vanished">Kirjahyllyn &amp;hallinta...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="239"/>
@@ -568,9 +564,9 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Kirjahyllyn hallinta</translation>
+        <translation>Kirjahyllyn hallinta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
@@ -632,6 +628,16 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Choose one or more works to remove.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <source>Canceling Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <source>The Bookshelf Manager will close when the current download finishes.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -664,6 +670,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
         <translation>Etsimme kehittäjiä ja kääntäjiä. Jos haluat liittyä tiimiimme, lähetä sähköpostia osoitteeseen %1.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
+        <source>(c)1999-2015, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -734,11 +745,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
         <source>designer</source>
         <translation>suunnittelija</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
-        <source>(c)1999-2015, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -951,17 +957,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="145"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="146"/>
         <source>Installing &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="176"/>
         <source>Some of the selected works were not installed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="180"/>
         <source>The selected works have been installed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -971,7 +977,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="66"/>
         <source>English</source>
-        <translation type="unfinished">Englanti</translation>
+        <translation>Englanti</translation>
     </message>
 </context>
 <context>
@@ -1005,7 +1011,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="137"/>
         <source>Add</source>
-        <translation type="unfinished">Lisää</translation>
+        <translation>Lisää</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
@@ -1075,7 +1081,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
         <source>The folder where the new works will be installed</source>
-        <translation type="unfinished">Kansio, johon uudet teokset asennetaan</translation>
+        <translation>Kansio, johon uudet teokset asennetaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="190"/>
@@ -1100,12 +1106,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
         <source>Grouping</source>
-        <translation type="unfinished">Ryhmitä</translation>
+        <translation>Ryhmitä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished">Muuta teosten ryhmittelyä.</translation>
+        <translation>Muuta teosten ryhmittelyä.</translation>
     </message>
 </context>
 <context>
@@ -1264,7 +1270,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="83"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation type="unfinished">Haluamasi hakuteksti</translation>
+        <translation>Haluamasi hakuteksti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="85"/>
@@ -1324,106 +1330,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
-    <name>BtIndexPage</name>
-    <message>
-        <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation type="vanished">Poista BibleTimen käynnistyksessä indeksit, joille ei ole vastaavaa teosta</translation>
-    </message>
-    <message>
-        <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation type="vanished">Poista automaattisesti orvot indeksit BibleTimen käynnistyksessä</translation>
-    </message>
-    <message>
-        <source>Delete the selected indexes</source>
-        <translation type="vanished">Poista valitut indeksit</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Poista</translation>
-    </message>
-    <message>
-        <source>Create new indexes for the selected works</source>
-        <translation type="vanished">Luo uudet indeksit valituille teoksille</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Teos</translation>
-    </message>
-    <message>
-        <source>Index size</source>
-        <translation type="vanished">Hakemiston koko</translation>
-    </message>
-    <message>
-        <source>Search Indexes</source>
-        <translation type="vanished">Hakuindeksit</translation>
-    </message>
-    <message>
-        <source>Indexed Works</source>
-        <translation type="vanished">Indeksoidut teokset</translation>
-    </message>
-    <message>
-        <source>Unindexed Works</source>
-        <translation type="vanished">Indeksoimattomat teokset</translation>
-    </message>
-    <message>
-        <source>Create...</source>
-        <translation type="vanished">Luo...</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallModuleChooserDialog</name>
-    <message>
-        <source>Install/Update works?</source>
-        <translation type="vanished">Asenna/päivitä teokset?</translation>
-    </message>
-    <message>
-        <source>Do you really want to install these works?</source>
-        <translation type="vanished">Haluatko todella asentaa nämä teokset?</translation>
-    </message>
-    <message>
-        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="vanished">Voit asentaa vain yhden version teoksesta samalla kerralla. Valitse vain yksi, jos teoksia on merkitty punaisella.</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallModuleChooserDialogModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Teos</translation>
-    </message>
-    <message>
-        <source>Installation source</source>
-        <translation type="vanished">Asennuslähde</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="vanished">Versio</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPage</name>
-    <message>
-        <source>Install/Update</source>
-        <translation type="vanished">Asenna/Päivitä</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="vanished">Lisää...</translation>
-    </message>
-    <message>
-        <source>The folder where the new works will be installed</source>
-        <translation type="vanished">Kansio, johon uudet teokset asennetaan</translation>
-    </message>
-    <message>
-        <source>Configure folders where works are installed and found</source>
-        <translation type="vanished">Määrittele kansiot, joihin teoksia on asennettu</translation>
-    </message>
-    <message>
-        <source>Install or update selected works</source>
-        <translation type="vanished">Asenna tai päivitä valitut teokset</translation>
-    </message>
-</context>
-<context>
     <name>BtInstallPageModel</name>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="76"/>
@@ -1439,131 +1345,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="78"/>
         <source>Description</source>
         <translation>Kuvaus</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPathDialog</name>
-    <message>
-        <source>Bookshelf Folders</source>
-        <translation type="vanished">Kirjahyllyn kansiot</translation>
-    </message>
-    <message>
-        <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation type="vanished">Teoksia voi asentaa yhteen tai useampaan kansioon. Kun olet luonut kansiot tähän, voit valita yhden niistä asennussivulla.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation type="vanished">BibleTime ja SWORD-kirjasto löytävät teokset kaikista näistä kansioista. Jos kansio poistetaan tästä, se ja kaikki siinä olevat teokset jäävät tiedostojärjestelmään.</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf folders</source>
-        <translation type="vanished">Aseta kirjahyllyn kansiot</translation>
-    </message>
-    <message>
-        <source>Configuration file for the folders is: </source>
-        <translation type="vanished">Kansioiden asetustiedosto on:</translation>
-    </message>
-    <message>
-        <source>Folders where new works can be installed</source>
-        <translation type="vanished">Kansiot, joihin uudet teokset voidaan asentaa</translation>
-    </message>
-    <message>
-        <source>Read-only folders</source>
-        <translation type="vanished">Kansiot, joista voidaan vain lukea</translation>
-    </message>
-    <message>
-        <source>Nonexistent folders</source>
-        <translation type="vanished">Ei olemassaolevat kansiot</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="vanished">Lisää...</translation>
-    </message>
-    <message>
-        <source>Add new folder</source>
-        <translation type="vanished">Lisää uusi kansio</translation>
-    </message>
-    <message>
-        <source>&amp;Edit...</source>
-        <translation type="vanished">Muokkaa...</translation>
-    </message>
-    <message>
-        <source>Edit the selected folder</source>
-        <translation type="vanished">Muokkaa valittua kansiota</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="vanished">Poista</translation>
-    </message>
-    <message>
-        <source>Remove the selected folder</source>
-        <translation type="vanished">Poista valittu kansio</translation>
-    </message>
-    <message>
-        <source>This default folder in your home directory can&apos;t be removed</source>
-        <translation type="vanished">Tätä kotihakemistossasi sijaitsevaa oletuskansiota ei voi poistaa</translation>
-    </message>
-    <message>
-        <source>Choose Folder</source>
-        <translation type="vanished">Valitse kansio</translation>
-    </message>
-    <message>
-        <source>Use Folder?</source>
-        <translation type="vanished">Käytä kansiota?</translation>
-    </message>
-    <message>
-        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation type="vanished">Sinulla ei ole oikeuksia kirjoittaa tähän kansioon. Teoksia ei siis voi asentaa tänne BibleTimella. Haluatko käyttää tätä kansiota alkuperäisen sijasta?</translation>
-    </message>
-    <message>
-        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation type="vanished">Sinulla ei ole oikeuksia kirjoittaa tähän kansioon. Teoksia ei siis voi asentaa tänne BibleTimella. Haluatko yhä lisätä sen kirjahyllyn kansioiden luetteloon?</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallProgressDialog</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Teos</translation>
-    </message>
-    <message>
-        <source>Progress</source>
-        <translation type="vanished">Edistyminen</translation>
-    </message>
-    <message>
-        <source>Stop All</source>
-        <translation type="vanished">Pysäytä kaikki</translation>
-    </message>
-    <message>
-        <source>Completed</source>
-        <translation type="vanished">Valmis</translation>
-    </message>
-    <message>
-        <source>Waiting for turn...</source>
-        <translation type="vanished">Odotetaan vuoroa...</translation>
-    </message>
-    <message>
-        <source>Preparing install...</source>
-        <translation type="vanished">Valmistellaan asennusta...</translation>
-    </message>
-    <message>
-        <source>Install Progress</source>
-        <translation type="vanished">Asennuksen edistyminen</translation>
-    </message>
-    <message>
-        <source>Failed</source>
-        <translation type="vanished">Epäonnistui</translation>
-    </message>
-</context>
-<context>
-    <name>BtLanguageSettingsPage</name>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="vanished">Raamatun kirjojen nimien kieli:</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="vanished">Kielet</translation>
     </message>
 </context>
 <context>
@@ -1610,19 +1391,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="68"/>
         <source>Indexing aborted</source>
-        <translation type="unfinished">Indeksointi keskeytynyt</translation>
+        <translation>Indeksointi keskeytynyt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="69"/>
         <source>An internal error occurred while building the index.</source>
-        <translation type="unfinished">Sisäinen virhe indeksiä luotaessa.</translation>
-    </message>
-</context>
-<context>
-    <name>BtModuleManagerDialog</name>
-    <message>
-        <source>Bookshelf Manager</source>
-        <translation type="vanished">Kirjahyllyn hallinta</translation>
+        <translation>Sisäinen virhe indeksiä luotaessa.</translation>
     </message>
 </context>
 <context>
@@ -1644,43 +1418,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btopenworkaction.cpp" line="49"/>
         <source>Sets the grouping order for the items in this menu.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BtRefreshProgressDialog</name>
-    <message>
-        <source>Connecting...</source>
-        <translation type="vanished">Yhdistetään...</translation>
-    </message>
-</context>
-<context>
-    <name>BtRemovePage</name>
-    <message>
-        <source>You selected the following work(s): </source>
-        <translation type="vanished">Valitsit seuraavat teokset: </translation>
-    </message>
-    <message>
-        <source>Do you really want to remove them from your system?</source>
-        <translation type="vanished">Haluatko todella poistaa ne järjestelmästäsi?</translation>
-    </message>
-    <message>
-        <source>Remove the selected works</source>
-        <translation type="vanished">Poista valitut teokset</translation>
-    </message>
-    <message>
-        <source>Remove Works?</source>
-        <translation type="vanished">Poista teokset?</translation>
-    </message>
-</context>
-<context>
-    <name>BtRemovePageTreeModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Teos</translation>
-    </message>
-    <message>
-        <source>Install path</source>
-        <translation type="vanished">Asennuspolku</translation>
     </message>
 </context>
 <context>
@@ -2073,7 +1810,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="76"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation type="unfinished">BibleTime on helppokäyttöinen ja tehokas Raamatun opiskelun työkalu.</translation>
+        <translation>BibleTime on helppokäyttöinen ja tehokas Raamatun opiskelun työkalu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="78"/>
@@ -2263,46 +2000,14 @@ pikanäppäin</translation>
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <source>Bookmarks</source>
-        <translation type="vanished">Kirjanmerkit</translation>
-    </message>
-    <message>
-        <source>New folder</source>
-        <translation type="vanished">Uusi kansio</translation>
-    </message>
-    <message>
-        <source>Rename folder</source>
-        <translation type="vanished">Nimeä kansio uudelleen</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="607"/>
         <source>Delete Items</source>
         <translation>Tuhoa tietueet</translation>
     </message>
     <message>
-        <source>Do you really want to delete the selected items and child-items?</source>
-        <translation type="vanished">Tuhotaanko valitut tietueet ja niiden alla olevat tietueet?</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="686"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>Kirjanmerkki osoittaa asentamattomaan teokseen.</translation>
-    </message>
-    <message>
-        <source>Print bookmarks...</source>
-        <translation type="vanished">Tulosta kirjanmerkit...</translation>
-    </message>
-    <message>
-        <source>Remove selected items...</source>
-        <translation type="vanished">Poista valitut kohteet...</translation>
-    </message>
-    <message>
-        <source>Import to folder...</source>
-        <translation type="vanished">Tuo kansioon...</translation>
-    </message>
-    <message>
-        <source>Export from folder...</source>
-        <translation type="vanished">Vie kansiosta...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="387"/>
@@ -2389,13 +2094,9 @@ pikanäppäin</translation>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <source>Display templates</source>
-        <translation type="vanished">Näyttömallit</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="114"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Raamatun kirjojen nimien kieli:</translation>
+        <translation>Raamatun kirjojen nimien kieli:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="115"/>
@@ -2451,18 +2152,6 @@ pikanäppäin</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Mutta joka totuuden tekee, se tulee valkeuteen, että hänen tekonsa tulisivat julki, sillä ne ovat Jumalassa tehdyt.</translation>
-    </message>
-    <message>
-        <source>Display templates define how text is displayed.</source>
-        <translation type="vanished">Tekstien näyttömallit määrittelevät miten teksti näytetään.</translation>
-    </message>
-    <message>
-        <source>Show the BibleTime logo on startup</source>
-        <translation type="vanished">Näytä BibleTimen logo käynnistettäessä</translation>
-    </message>
-    <message>
-        <source>Show startup logo</source>
-        <translation type="vanished">Näytä aloituslogo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
@@ -2827,168 +2516,168 @@ pikanäppäin</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="756"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="752"/>
         <source>Version</source>
         <translation>Versio</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>unknown</source>
         <translation>tuntematon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
         <source>Markup</source>
         <translation>Merkkaus</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
         <source>Location</source>
         <translation>Sijainti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
         <source>Language</source>
         <translation>Kieli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
         <source>Category</source>
         <translation>Kategoria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>Writable</source>
         <translation>Muokattavissa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
         <source>yes</source>
         <translation>kyllä</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
         <source>no</source>
         <translation>ei</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>Unlock key</source>
         <translation>Salauksen purkuavain</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
         <source>Features</source>
         <translation>Ominaisuudet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Huomio, tämä teos sisältää kultti- / kyseenalaista materiaalia!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>About</source>
         <translation>Tietoja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Distribution license</source>
         <translation>Levitysversion lisenssi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="826"/>
         <source>Distribution source</source>
         <translation>Levitysversion lähde</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="827"/>
         <source>Distribution notes</source>
         <translation>Levitysversion huomiot</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
         <source>Text source</source>
         <translation>Tekstin lähde</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
         <source>Copyright notes</source>
         <translation>Tekijänoikeushuomiot</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
         <source>Copyright holder</source>
         <translation>Tekijänoikeuksien haltija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
         <source>Copyright date</source>
         <translation>Tekijänoikeuksien päiväys</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
         <source>Copyright contact name</source>
         <translation>Tekijänoikeuksien kontaktin nimi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>Copyright contact address</source>
         <translation>Tekijänoikeuksien kontaktin osoite</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Copyright contact email</source>
         <translation>Tekijänoikeuksien kontaktin sähköpostiosoite</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="923"/>
         <source>Bibles</source>
         <translation>Raamatut</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
         <source>Commentaries</source>
         <translation>Kommentaarit</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
         <source>Books</source>
         <translation>Kirjat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultit/Väärät opit</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
         <source>Maps and Images</source>
         <translation>Kartat ja kuvat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
         <source>Daily Devotionals</source>
         <translation>Hartauskirjallisuus</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Sanakirjat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
         <source>Glossaries</source>
         <translation>Sanastot</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
         <source>Unknown</source>
         <translation>Tuntematon</translation>
     </message>
@@ -3119,42 +2808,11 @@ Haluatko jatkaa?</translation>
     </message>
 </context>
 <context>
-    <name>FontSizeSlider</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Peruuta</translation>
-    </message>
-</context>
-<context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="125"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Abbreviation</source>
-        <translation type="vanished">Lyhenne</translation>
-    </message>
-    <message>
-        <source>Cross references</source>
-        <translation type="vanished">Ristiviittaukset</translation>
-    </message>
-    <message>
-        <source>Footnote</source>
-        <translation type="vanished">Alaviite</translation>
-    </message>
-    <message>
-        <source>Strongs</source>
-        <translation type="vanished">Strongin numerot</translation>
-    </message>
-    <message>
-        <source>Morphology</source>
-        <translation type="vanished">Morfologia</translation>
-    </message>
-    <message>
-        <source>Word lookup</source>
-        <translation type="vanished">Sanahaku</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="57"/>
@@ -3170,58 +2828,6 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="77"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Tämä on suurennuslasin alue. Vie hiiren osoitin linkkien päälle tai muiden tietoja sisältävien kohteiden päälle ja sisältö ilmestyy suurennuslasiin pienen viiveen jälkeen. Siirrä hiiri suurennuslasiin nopeasti tai lukitse näyttö painamalla ja pitämällä alhaalla vaihtonäppäintä (shift) samalla aikaa kun siirrät hiirtä.&lt;/small&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>InstallManagerChooser</name>
-    <message>
-        <source>Category</source>
-        <translation type="vanished">Kategoria</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Kieli</translation>
-    </message>
-</context>
-<context>
-    <name>ModuleChooser</name>
-    <message>
-        <source>Category</source>
-        <translation type="vanished">Kategoria</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Kieli</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Työ</translation>
-    </message>
-</context>
-<context>
-    <name>Progress</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Peruuta</translation>
-    </message>
-</context>
-<context>
-    <name>QCoreApplication</name>
-    <message>
-        <source>Indexing aborted</source>
-        <translation type="vanished">Indeksointi keskeytynyt</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while building the index.</source>
-        <translation type="vanished">Sisäinen virhe indeksiä luotaessa.</translation>
-    </message>
-    <message>
-        <source>Search aborted</source>
-        <translation type="vanished">Haku keskeytynyt</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while executing your search.</source>
-        <translation type="vanished">Sisäinen virhe hakua suoritettaessa.</translation>
     </message>
 </context>
 <context>
@@ -4094,62 +3700,62 @@ Haluatko jatkaa?</translation>
         <translation>Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="323"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="322"/>
         <source>Footnotes</source>
         <translation>Alaviitteet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="325"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strongin numerot</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="327"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
         <source>Headings</source>
         <translation>Otsikot</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="329"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
         <source>Morphological tags</source>
         <translation>Morfologiset tunnisteet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="331"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
         <source>Lemmas</source>
         <translation>Lemmat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="333"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
         <source>Hebrew vowel points</source>
         <translation>Heprean vokaalipisteet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="335"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
         <source>Hebrew cantillation marks</source>
         <translation>Heprean kantillaatiomerkit</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
         <source>Greek accents</source>
         <translation>Kreikan korkomerkit</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="338"/>
         <source>Red letter words</source>
         <translation>Punaisilla kirjaimilla olevat sanat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="340"/>
         <source>Textual variants</source>
         <translation>Tekstivariantit</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
         <source>Scripture cross-references</source>
         <translation>Ristiviittaukset</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
         <source>Morph segmentation</source>
         <translation>Morfologinen segmentointi</translation>
     </message>
@@ -4384,14 +3990,6 @@ Haluatko jatkaa?</translation>
         <translation>Verbin aikamuoto vaihdettu</translation>
     </message>
     <message>
-        <source>Can&apos;t write file</source>
-        <translation type="vanished">Ei voi kirjoittaa tiedostoon</translation>
-    </message>
-    <message>
-        <source>The Sword config file can&apos;t be written!</source>
-        <translation type="vanished">Swordin asetustiedostoon ei voi kirjoittaa!</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="550"/>
         <source>Export Bookmarks</source>
         <translation>Vie kirjanmerkit</translation>
@@ -4489,33 +4087,33 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="227"/>
         <source>Abbreviation</source>
-        <translation type="unfinished">Lyhenne</translation>
+        <translation>Lyhenne</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="237"/>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="318"/>
         <source>Cross references</source>
-        <translation type="unfinished">Ristiviittaukset</translation>
+        <translation>Ristiviittaukset</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="365"/>
         <source>Footnote</source>
-        <translation type="unfinished">Alaviite</translation>
+        <translation>Alaviite</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="396"/>
         <source>Strongs</source>
-        <translation type="unfinished">Strongin numerot</translation>
+        <translation>Strongin numerot</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
         <source>Morphology</source>
-        <translation type="unfinished">Morfologia</translation>
+        <translation>Morfologia</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="494"/>
         <source>Word lookup</source>
-        <translation type="unfinished">Sanahaku</translation>
+        <translation>Sanahaku</translation>
     </message>
 </context>
 <context>
@@ -4609,24 +4207,6 @@ Haluatko jatkaa?</translation>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>Ei kaikkiin</translation>
-    </message>
-</context>
-<context>
-    <name>Question</name>
-    <message>
-        <source>Yes</source>
-        <translation type="vanished">Kyllä</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="vanished">Ei</translation>
-    </message>
-</context>
-<context>
-    <name>Search</name>
-    <message>
-        <source>Search</source>
-        <translation type="vanished">Etsi</translation>
     </message>
 </context>
 <context>
@@ -5154,12 +4734,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="172"/>
         <source>Search aborted</source>
-        <translation type="unfinished">Haku keskeytynyt</translation>
+        <translation>Haku keskeytynyt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="173"/>
         <source>An internal error occurred while executing your search.</source>
-        <translation type="unfinished">Sisäinen virhe hakua suoritettaessa.</translation>
+        <translation>Sisäinen virhe hakua suoritettaessa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="224"/>
@@ -5241,13 +4821,6 @@ Haluatko jatkaa?</translation>
     </message>
 </context>
 <context>
-    <name>StartupBookshelfManager</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Peruuta</translation>
-    </message>
-</context>
-<context>
     <name>btm::BtSearchInterface</name>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
@@ -5294,7 +4867,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="53"/>
         <source>Book</source>
-        <translation type="unfinished">Kirja</translation>
+        <translation>Kirja</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="62"/>
@@ -5305,20 +4878,6 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="69"/>
         <source>Verse</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>findWidget</name>
-    <message>
-        <source>The text you want to search for</source>
-        <translation type="vanished">Haluamasi hakuteksti</translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Tietoja</translation>
     </message>
 </context>
 </TS>

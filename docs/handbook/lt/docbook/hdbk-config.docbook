@@ -1,9 +1,9 @@
 <chapter id="hdbk-config">
-  <title>&bibletime; Konfigūravimas</title>
+  <title>&bibletime; konfigūravimas</title>
   <para>Šioje sekcijoje jūs rasite &bibletime; konfigūravimo apžvalgą, kurią galima
 rasti pagrindinio meniu punkte <guimenu>Nustatymai</guimenu></para>
   <sect1 id="hdbk-config-bt">
-    <title>&bibletime; Konfigūravimo Dialogo Langas</title>
+    <title>&bibletime; konfigūravimo dialogo langas</title>
     <para>&bibletime; naudotojo sąsaja, priklausomai nuo jūsų poreikių, gali būti
 tinkinama įvairiais būdais. Jūs galite pasiekti konfigūravimo dialogo langą,
 pasirinkdami <menuchoice> <guimenu>Nustatymai</guimenu> </menuchoice>
@@ -54,7 +54,7 @@ leidžia jums nurodyti pasirinktiną šriftą.</para>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
         <textobject>
-          <phrase>Parinkčių Langas - šriftai</phrase>
+          <phrase>Parinkčių langas - šriftai</phrase>
         </textobject>
         <caption>
           <para>Parinkčių langas - Šriftai.</para>
@@ -83,7 +83,7 @@ class="registered">Bitstream Cyberbit</trademark>(apie 12Mb).</para>
         </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Šriftų Gavimas</title>
+        <title>Šriftų gavimas</title>
         <para>Šriftai gali būti gaunami iš daugelio šaltinių:</para>
         <itemizedlist>
           <listitem>
@@ -108,7 +108,7 @@ iš jų yra prieinami be jokio mokesčio. Nei viename iš prieinamų šriftų n�
 visų, Unicode standartu, apibrėžtų simbolių, todėl, galbūt, pageidausite
 skirtingoms kalboms naudoti skirtingus šriftus.</para>
         <table id="hdbk-config-unicode-fonts-table">
-          <title>Unicode Šriftai</title>
+          <title>Unicode šriftai</title>
           <tgroup cols="2">
             <tbody>
               <row>

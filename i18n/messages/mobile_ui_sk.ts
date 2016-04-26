@@ -4,7 +4,7 @@
     <message>
         <source/>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation type="unfinished"/>
     </message>
@@ -143,12 +143,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Question</name>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="79"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="86"/>
         <source>Yes</source>
         <translation>Áno</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="98"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="105"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
@@ -192,6 +192,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="222"/>
         <source>Search in</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>SearchResults</name>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="127"/>
+        <source>Documents</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="158"/>
+        <source>References</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -250,6 +263,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>btm::BtSearchInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
+        <source>Indexing</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
@@ -259,6 +280,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
+        <source>Refreshing</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
+        <source>Failed to refresh source %1</source>
+        <translation>Nepodarilo sa zaktualizovať zdroj %1</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSourcesManager</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
+        <source>Refreshing Source List</source>
         <translation type="unfinished"/>
     </message>
 </context>

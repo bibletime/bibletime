@@ -25,11 +25,12 @@ url="http://www.crosswire.org">&cbs;</ulink>.  Į juos įeina: <variablelist>
         <varlistentry>
           <term>Biblijos</term>
           <listitem>
-            <para>The full Bible text, with optional things like Strong's Numbers, headings
-and/or footnotes in the text.  Bibles are available in many languages, and
-include not only modern versions, but also ancient texts like the Codex
-Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is
-the most advanced section in the library of the &sword; project.</para>
+            <para>Pilni Biblijos tekstai su pasirinktinais, tekste esančiais dalykais, tokiais
+kaip Strongo numeriai, antraštės ir/ar poraštės. Biblijos yra prieinamos
+daugeliu kalbų, jose yra ne tik šiuolaikinės versijos, bet taip pat ir
+senoviniai tekstai, tokie kaip Codex Leningradensis ("WLC", Hebrajų), ir
+Septuagint ("LXX", Graikų). Tai yra labiausiai išplėsta &sword; projekto
+bibliotekos sekcija.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -73,9 +74,9 @@ Bible.</para>
     <sect2 id="hdbk-intro-motivation">
       <title>Motyvacija</title>
       <para>Mūsų noras yra tarnauti Dievui ir padaryti savo dalį, padedant kitiems augti
-santykiuose su Juo. Mes siekėme padaryti ją galinga, kokybiška programa, tuo
-pačiu metu, lengvai ir intuityviai naudojama. Mes norėtume, kad būtų
-pašlovintas Dievas, kadangi Jis yra visų gerų dalykų šaltinis.</para>
+santykiuose su Juo. Mes siekėme šią programą padaryti galingą, kokybišką,
+bet tuo pačiu metu ir lengvai bei intuityviai naudojamą. Mes norėtume, kad
+būtų pašlovintas Dievas, kadangi Jis yra visų gerų dalykų šaltinis.</para>
       <blockquote>
         <attribution>Jokūbo 1,17, Biblija RK_K1998</attribution>
         <para>Kiekvienas geras davinys ir tobula dovana ateina iš aukštybių, nužengia nuo

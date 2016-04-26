@@ -4,13 +4,13 @@
 #
 # Translators:
 # Martin Gruner <martin.gruner@otrs.com>, 2016
-# Moo, 2014-2015
+# Moo, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:25+0100\n"
-"PO-Revision-Date: 2016-02-12 19:31+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
+"PO-Revision-Date: 2016-04-25 15:56+0000\n"
+"Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/bibletime/bibletime/"
 "language/lt/)\n"
 "Language: lt\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:2
 msgid "Configuring &bibletime;"
-msgstr "&bibletime; Konfigūravimas"
+msgstr "&bibletime; konfigūravimas"
 
 #. type: Content of: <chapter><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:3
@@ -37,7 +37,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
 msgid "Configure &bibletime; Dialog"
-msgstr "&bibletime; Konfigūravimo Dialogo Langas"
+msgstr "&bibletime; konfigūravimo dialogo langas"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:8
@@ -147,7 +147,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-config.docbook:66
 msgid "Options Dialog - fonts"
-msgstr "Parinkčių Langas - šriftai"
+msgstr "Parinkčių langas - šriftai"
 
 #. type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:69
@@ -214,7 +214,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:100
 msgid "Obtaining Fonts"
-msgstr "Šriftų Gavimas"
+msgstr "Šriftų gavimas"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:101
@@ -266,7 +266,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><table><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:129
 msgid "Unicode Fonts"
-msgstr "Unicode Šriftai"
+msgstr "Unicode šriftai"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:134
@@ -464,6 +464,12 @@ msgid ""
 "Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
 "is the most advanced section in the library of the &sword; project."
 msgstr ""
+"Pilni Biblijos tekstai su pasirinktinais, tekste esančiais dalykais, tokiais "
+"kaip Strongo numeriai, antraštės ir/ar poraštės. Biblijos yra prieinamos "
+"daugeliu kalbų, jose yra ne tik šiuolaikinės versijos, bet taip pat ir "
+"senoviniai tekstai, tokie kaip Codex Leningradensis (\"WLC\", Hebrajų), ir "
+"Septuagint (\"LXX\", Graikų). Tai yra labiausiai išplėsta &sword; projekto "
+"bibliotekos sekcija."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:39
@@ -544,9 +550,9 @@ msgid ""
 "that God be praised, as He is the source of all good things."
 msgstr ""
 "Mūsų noras yra tarnauti Dievui ir padaryti savo dalį, padedant kitiems augti "
-"santykiuose su Juo. Mes siekėme padaryti ją galinga, kokybiška programa, tuo "
-"pačiu metu, lengvai ir intuityviai naudojama. Mes norėtume, kad būtų "
-"pašlovintas Dievas, kadangi Jis yra visų gerų dalykų šaltinis."
+"santykiuose su Juo. Mes siekėme šią programą padaryti galingą, kokybišką, "
+"bet tuo pačiu metu ir lengvai bei intuityviai naudojamą. Mes norėtume, kad "
+"būtų pašlovintas Dievas, kadangi Jis yra visų gerų dalykų šaltinis."
 
 #. type: Content of: <chapter><sect1><sect2><blockquote><attribution>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:88
@@ -611,7 +617,7 @@ msgstr ""
 msgid ""
 "Let us now proceed by looking at the different parts of the application "
 "individually."
-msgstr ""
+msgstr "Dabar tęskime ir atskirai apžvelkime įvairias programos dalis."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:29
@@ -621,7 +627,7 @@ msgstr "&bibletime; programos lango dalys"
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:31
 msgid "The Bookshelf"
-msgstr "Knygų Lentyna"
+msgstr "Knygų lentyna"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:32
@@ -635,7 +641,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
 #: docs/handbook/en/docbook/hdbk-operation.docbook:140
 msgid "Reading works"
-msgstr ""
+msgstr "Veiklų skaitymas"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
@@ -662,7 +668,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:59
 msgid "Additional information about works"
-msgstr "Papildomas informacija apie veiklas"
+msgstr "Papildoma informacija apie veiklas"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:61
@@ -699,7 +705,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:91
 msgid "Working with bookmarks"
-msgstr ""
+msgstr "Darbas su adresynu"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:95
@@ -751,7 +757,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:132
 msgid "The Desk"
-msgstr ""
+msgstr "Stalas"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:133
@@ -777,7 +783,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
 msgid "Read window placement"
-msgstr ""
+msgstr "Skaitymo lango vieta"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
@@ -795,7 +801,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:168
 msgid "Editing your own commentary"
-msgstr ""
+msgstr "Jūsų asmeninių komentarų redagavimas"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:170
@@ -836,7 +842,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:206
 msgid "Searching text in an open read window"
-msgstr "Paieška atidaryto skaitymo lango tekste"
+msgstr "Paieška atverto skaitymo lango tekste"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:207
@@ -927,7 +933,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:259
 msgid "Using Search Scopes"
-msgstr ""
+msgstr "Paieškos rėžių naudojimas"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:260
@@ -941,7 +947,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:269
 msgid "Basic Search Syntax Introduction"
-msgstr ""
+msgstr "Pagrindinės paieškos sintaksės pristatymas"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:271
@@ -972,7 +978,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
 msgid "Search Types"
-msgstr "Paieškos Tipai"
+msgstr "Paieškos tipai"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:297
@@ -1137,7 +1143,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
-msgstr "<guimenuitem>Knygų Lentynos Tvarkytuvė</guimenuitem>"
+msgstr "<guimenuitem>Knygų lentynos tvarkytuvė</guimenuitem>"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:387
@@ -1159,7 +1165,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
 msgid "Bookshelf path(s) setup"
-msgstr ""
+msgstr "Knygų lentynos kelio(-ių) sąranka"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:405
@@ -1182,7 +1188,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:421
 msgid "Install/update work(s)"
-msgstr ""
+msgstr "Veiklos(-ų) įdiegimas/atnaujinimas"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:423
@@ -1214,7 +1220,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:448
 msgid "Remove work(s)"
-msgstr ""
+msgstr "Veiklos(-ų) šalinimas"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:449
@@ -1227,7 +1233,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Search Indexes"
-msgstr "Paieškos Indeksai"
+msgstr "Paieškos indeksai"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:456
@@ -1239,7 +1245,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:465
 msgid "Exporting and Printing"
-msgstr "Eksportavimas ir Spausdinimas"
+msgstr "Eksportavimas ir spausdinimas"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:466
@@ -1306,7 +1312,7 @@ msgid ""
 ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Failas</guimenu> <guimenuitem>Atidaryti veiklą</guimenuitem> </menuchoice>"
+">Failas</guimenu> <guimenuitem>Atverti veiklą</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:32
@@ -1314,8 +1320,8 @@ msgid ""
 "<action>Open work.</action> This will give you a menu that will allow you to "
 "open installed books."
 msgstr ""
-"<action>Atidaryti veiklą.</action> Tai jums parodys meniu, kuriame leidžiama "
-"atidaryti įdiegtas knygas."
+"<action>Atverti veiklą.</action> Tai jums parodys meniu, kuriame leidžiama "
+"atverti įdiegtas knygas."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:46
@@ -1345,7 +1351,7 @@ msgid ""
 "<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
 "write unsaved changes to disk."
 msgstr ""
-"<action>Uždaro &bibletime;.</action> &bibletime; jūsų paklaus ar norite į "
+"<action>Užveria &bibletime;.</action> &bibletime; jūsų paklaus ar norite į "
 "diską įrašyti neišsaugotus pakeitimus."
 
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -1517,7 +1523,7 @@ msgid ""
 msgstr ""
 "<action>Perjungia papildomų veiklų rodymą</action> Šio nustatymo "
 "perjungimas, leidžia jums matyti papildomas veiklas lygiagrečiai su jūsų "
-"esamomis atidarytomis veiklomis."
+"esamomis atvertomis veiklomis."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:177
@@ -1556,9 +1562,9 @@ msgid ""
 "remove the navigation combo box in works.  This can be handy to view the "
 "full toolbar in the open works"
 msgstr ""
-"<action>Perjungia veiklose Naršymą.</action> Perjunkite šį nustatymą, kad "
-"veiklose pridėtumėte ar pašalintumėte Naršymo jungtinį langelį.  Tai gali "
-"praversti, norint atidarytose veiklose matyti visą įrankių juostą."
+"<action>Perjungia veiklose naršymą.</action> Perjunkite šį nustatymą, kad "
+"veiklose pridėtumėte ar pašalintumėte Naršymo jungtinį langelį. Tai gali "
+"praversti, norint atvertose veiklose matyti visą įrankių juostą."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:212
@@ -1577,7 +1583,7 @@ msgid ""
 "remove the works icons in the open works."
 msgstr ""
 "<action>Perjungia veiklose Įrankių juostas.</action> Perjunkite šį "
-"nustatymą, kad atidarytose veiklose pridėtumėte ar pašalintumėte veiklų "
+"nustatymą, kad atvertose veiklose pridėtumėte ar pašalintumėte veiklų "
 "piktogramas."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
@@ -1597,7 +1603,7 @@ msgid ""
 "remove the tools icons in the open works."
 msgstr ""
 "<action>Perjungia veiklose įrankius.</action> Perjunkite šį nustatymą, kad "
-"atidarytose veiklose pridėtumėte ar pašalintumėte įrankių piktogramas."
+"atvertose veiklose pridėtumėte ar pašalintumėte įrankių piktogramas."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:242
@@ -1636,8 +1642,8 @@ msgid ""
 "remove the complete toolbar in open works."
 msgstr ""
 "<action>Perjungia veiklose įrankių juostas.</action> Perjunkite šį "
-"nustatymą, kad atidarytose veiklose pridėtumėte ar pašalintumėte pilną "
-"įrankių juostą."
+"nustatymą, kad atvertose veiklose pridėtumėte ar pašalintumėte pilną įrankių "
+"juostą."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:274
@@ -1665,7 +1671,7 @@ msgid ""
 msgstr ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Ieškoti "
+"\"inlinemediaobject\" id=\"0\"/>Paieška</guimenu> <guimenuitem>Ieškoti "
 "standartinėje Biblijoje</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1676,8 +1682,8 @@ msgid ""
 "search description can be found in the <link linkend=\"hdbk-op-search"
 "\">Searching in works</link> section."
 msgstr ""
-"<action>Atidaro Paieškos Dialogą, skirtą ieškoti tik standartinėje "
-"Biblijoje</action>. Paieškos Dialoge gali būti pridėta daugiau veiklų. "
+"<action>Atveria paieškos dialogą, skirtą ieškoti tik standartinėje "
+"Biblijoje</action>. Paieškos dialoge gali būti pridėta daugiau veiklų. "
 "Išsamesnį paieškos aprašą galite rasti skyriuje <link linkend=\"hdbk-op-"
 "search\">Paieška veiklose</link>."
 
@@ -1692,7 +1698,7 @@ msgstr ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
 "\"inlinemediaobject\" id=\"0\"/>Paieška</guimenu> <guimenuitem>Ieškoti "
-"atidarytose veiklose</guimenuitem> </menuchoice>"
+"atvertose veiklose</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:321
@@ -1702,8 +1708,8 @@ msgid ""
 "description can be found in the <link linkend=\"hdbk-op-search\">Searching "
 "in works</link> section."
 msgstr ""
-"<action>Atidaro Paieškos Dialogą, skirtą paieškai visose veiklose</action>. "
-"Paieškos Dialoge veiklos gali būti pridedamos arba šalinamos. Išsamesnį "
+"<action>Atveria paieškos dialogą, skirtą paieškai visose veiklose</action>. "
+"Paieškos dialoge veiklos gali būti pridedamos arba šalinamos. Išsamesnį "
 "paieškos aprašą galite rasti skyriuje <link linkend=\"hdbk-op-search"
 "\">Paieška veiklose</link>."
 
@@ -1732,13 +1738,13 @@ msgid ""
 msgstr ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Langas</guimenu> <guimenuitem>Uždaryti "
-"langą</guimenuitem> </menuchoice>"
+"\"inlinemediaobject\" id=\"0\"/>Langas</guimenu> <guimenuitem>Užverti langą</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:357
 msgid "<action>Closes active window</action>."
-msgstr "<action>Uždaro aktyvų langą</action>."
+msgstr "<action>Užveria aktyvų langą</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:363
@@ -1750,13 +1756,13 @@ msgid ""
 msgstr ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Langas</guimenu> <guimenuitem>Uždaryti visus "
+"\"inlinemediaobject\" id=\"0\"/>Langas</guimenu> <guimenuitem>Užverti visus "
 "langus</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:380
 msgid "<action>Closes all open windows</action>."
-msgstr "<action>Uždaro visus atidarytus langus</action>."
+msgstr "<action>Užveria visus atvertus langus</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:393
@@ -1783,7 +1789,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
-msgstr "<action>Išdėsto pakopomis visus atidarytus langus</action>."
+msgstr "<action>Išdėsto pakopomis visus atvertus langus</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:417
@@ -1810,7 +1816,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:427
 msgid "<action>Tiles all open windows</action>."
-msgstr "<action>Iškloja visus atidarytus langus</action>."
+msgstr "<action>Iškloja visus atvertus langus</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:441
@@ -1838,7 +1844,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:451
 msgid "<action>Automatically tiles all open windows vertically</action>."
 msgstr ""
-"<action>Automatiškai vertikaliai iškloja visus atidarytus langus</action>."
+"<action>Automatiškai vertikaliai iškloja visus atvertus langus</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:465
@@ -1866,7 +1872,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:475
 msgid "<action>Automatically tiles all open windows horizontally</action>."
 msgstr ""
-"<action>Automatiškai horizontaliai iškloja visus atidarytus langus</action>."
+"<action>Automatiškai horizontaliai iškloja visus atvertus langus</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:483
@@ -1928,6 +1934,8 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Langas</guimenu> <guimenuitem>Įkelti sesiją</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:547
@@ -1935,6 +1943,8 @@ msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
 msgstr ""
+"<action>Įkelia esamą sesiją</action>. Tai atveria kontekstinį meniu, kuriame "
+"galite pasirinkti norimą įkelti esamą sesiją."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:555
@@ -1951,7 +1961,7 @@ msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
 msgstr ""
-"<action>Ištrina esamą sesiją</action>. Tai atidaro kontekstinį meniu, "
+"<action>Ištrina esamą sesiją</action>. Tai atveria kontekstinį meniu, "
 "kuriame galite pasirinkti, kuri esama sesija turėtų būti ištrinta."
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1987,6 +1997,10 @@ msgid ""
 "needs.  Please see the <link linkend=\"hdbk-config-bt\">Configuring "
 "&bibletime; section</link> for details."
 msgstr ""
+"<action>Atveria &bibletime;'s pagrindinį konfigūracijos dialogą</action>. "
+"Jame galite konfigūruoti visokius įdomius nustatymus, kad pritaikytumėte "
+"&bibletime; savo poreikiams.  Išsamesnei informacijai, prašome žiūrėti <link "
+"linkend=\"hdbk-config-bt\">&bibletime; konfigūravimo sekciją</link>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:610
@@ -2017,6 +2031,10 @@ msgid ""
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
 "bookshelfmanager\">Bookshelf Manager section</link> for details."
 msgstr ""
+"<action>Atveria dialogą, kuriame galite keisti savo &sword; konfigūraciją ir "
+"tvarkyti savo knygų lentyną</action>. Išsamesnei informacijai, prašome "
+"žiūrėti <link linkend=\"hdbk-op-bookshelfmanager\">Knygų lentynos "
+"tvarkytuvės sekciją</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:630
@@ -2048,6 +2066,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:652
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr ""
+"<action>Atveria &bibletime;'s žinyną</action> Jūs šiuo metu jį skaitote."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:659
@@ -2059,7 +2078,7 @@ msgid ""
 msgstr ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>Pagalba</guimenu> <guimenuitem>Biblijos Studijavimo Instrukcija</"
+"\"0\"/>Pagalba</guimenu> <guimenuitem>Biblijos studijavimo instrukcija</"
 "guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2101,7 +2120,7 @@ msgid ""
 "<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
 "tip that will assist in the use of &bibletime;."
 msgstr ""
-"<action>Atidaro naudingą patarimą</action> Dienos patarimas suteikia "
+"<action>Atveria naudingą patarimą</action> Dienos patarimas suteikia "
 "naudingą patarimą, kuris pagelbės naudojantis &bibletime; programa."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
@@ -2121,7 +2140,7 @@ msgid ""
 "contributors, &sword; software version, &qt; software version and the "
 "license agreement."
 msgstr ""
-"<action>Atidaro langą, kuriame pateikiama informacija apie &bibletime; "
+"<action>Atveria langą, kuriame pateikiama informacija apie &bibletime; "
 "projektą</action> kartu su informacija apie &bibletime; programinės įrangos "
 "versiją, projekto talkininkus, &sword; programinės įrangos versiją, &qt; "
 "programinės įrangos versiją ir licencijos sutikimą."
@@ -2137,8 +2156,8 @@ msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
 msgstr ""
-"Šioje sekcijoje galite rasti, su atidarytomis veiklomis susijusių "
-"piktogramų, aprašus."
+"Šioje sekcijoje galite rasti, su atvertomis veiklomis susijusių piktogramų, "
+"aprašus."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:747
@@ -2380,7 +2399,7 @@ msgid ""
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Paieška</guimenu> <guimenuitem>Ieškoti standartinėje Biblijoje</"
-"guimenuitem> </menuchoice> </link> ekvivalentas; atidaro paieškos dialogą, "
+"guimenuitem> </menuchoice> </link> ekvivalentas; atveria paieškos dialogą, "
 "skirtą atlikti paiešką numatytoje Biblijoje."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2505,8 +2524,8 @@ msgid ""
 "</link> equivalent; closes all open windows."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
-"<guimenu>Langas</guimenu> <guimenuitem>Uždaryti visus langus</guimenuitem> </"
-"menuchoice> </link> ekvivalentas; uždaro visus atidarytus langus."
+"<guimenu>Langas</guimenu> <guimenuitem>Užverti visus langus</guimenuitem> </"
+"menuchoice> </link> ekvivalentas; užveria visus atvertus langus."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1187
@@ -2680,7 +2699,7 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1341
 msgid "Closes the current window."
-msgstr "Uždaro esamą langą."
+msgstr "Užveria esamą langą."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1345
@@ -2694,7 +2713,7 @@ msgid ""
 "menuchoice> equivalent; opens the handbook."
 msgstr ""
 "<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Žinynas</guimenuitem> </"
-"menuchoice> ekvivalentas; atidaro žinyną."
+"menuchoice> ekvivalentas; atveria žinyną."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1358
@@ -2707,9 +2726,9 @@ msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
-"<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Biblijos Studijavimo "
-"Instrukcija</guimenuitem> </menuchoice> ekvivalentas; atidaro Biblijos "
-"Studijavimo Instrukciją."
+"<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Biblijos studijavimo "
+"instrukcija</guimenuitem> </menuchoice> ekvivalentas; atveria Biblijos "
+"studijavimo instrukciją."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1372
@@ -2723,7 +2742,7 @@ msgid ""
 "guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
 msgstr ""
 "<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Dienos patarimas...</"
-"guimenuitem> </menuchoice> Atidaro naudingą, naudojimosi programa "
+"guimenuitem> </menuchoice> Atveria naudingą, naudojimosi programa "
 "&bibletime;, patarimą."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2740,8 +2759,8 @@ msgid ""
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Nustatymai</guimenu> <guimenuitem>Knygų lentynos "
-"Tvarkytuvė</guimenuitem> </menuchoice> </link> ekvivalentas; atidaro Knygų "
-"lentynos Tvarkytuvę."
+"tvarkytuvė</guimenuitem> </menuchoice> </link> ekvivalentas; atveria Knygų "
+"lentynos tvarkytuvę."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1400
@@ -2809,7 +2828,7 @@ msgid ""
 "\"mediaobject\" id=\"0\"/>"
 msgstr ""
 "&bibletime; yra vykdomasis failas, kuris yra integruotas su jūsų "
-"darbalaukiu. Galite paleisti &bibletime; iš Pradžios Meniu, naudodamiesi šia "
+"darbalaukiu. Galite paleisti &bibletime; iš Pradžios meniu, naudodamiesi šia "
 "piktograma: <placeholder type=\"mediaobject\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
@@ -2826,7 +2845,7 @@ msgid ""
 "id=\"0\"/>"
 msgstr ""
 "&bibletime; taip pat gali būti paleista iš terminalo komandų eilutės. Kad "
-"paleistumėte &bibletime;, atidarykite terminalo langą ir įrašykite: "
+"paleistumėte &bibletime;, atverkite terminalo langą ir įrašykite: "
 "<placeholder type=\"screen\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -2854,11 +2873,11 @@ msgid ""
 "passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
 "also use booknames in your current bookname language."
 msgstr ""
-"Terminale, galite naudoti &bibletime;, kad numatytoje Biblijoje "
-"atidarytumėte atsitiktinę eilutę: <placeholder type=\"screen\" id=\"0\"/> "
-"Kad atidarytumėte nurodytoje vietoje, tokioje kaip Jono 3:16, naudokite: "
-"<placeholder type=\"screen\" id=\"1\"/> Galite taip pat naudoti knygų "
-"pavadinimus savo esamos kalbos knygų pavadinimų kalba."
+"Terminale, galite naudoti &bibletime;, kad numatytoje Biblijoje atvertumėte "
+"atsitiktinę eilutę: <placeholder type=\"screen\" id=\"0\"/> Kad atvertumėte "
+"nurodytoje vietoje, tokioje kaip Jono 3:16, naudokite: <placeholder type="
+"\"screen\" id=\"1\"/> Galite taip pat naudoti knygų pavadinimus savo esamos "
+"kalbos knygų pavadinimų kalba."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
@@ -2888,14 +2907,14 @@ msgid ""
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
 "detailed description</link> of this dialog."
 msgstr ""
-"<action>Individualizuoja &bibletime;.</action>Šis dialogas leidžia jums "
+"<action>Individualizuoja &bibletime;.</action> Šis dialogas leidžia jums "
 "pritaikyti &bibletime; savo reikmėms. Prašome žiūrėti <link linkend=\"hdbk-"
 "config-bt\">išsamesnį šio dialogo aprašą</link>."
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:62
 msgid "<interface>Bookshelf Manager</interface>"
-msgstr "<interface>Knygų lentynos Tvarkytuvė</interface>"
+msgstr "<interface>Knygų lentynos tvarkytuvė</interface>"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:65
@@ -2963,7 +2982,7 @@ msgstr "Alt"
 #. type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:23
 msgid "The &bibletime; Handbook"
-msgstr "&bibletime; Žinynas"
+msgstr "&bibletime; žinynas"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:27
@@ -3008,15 +3027,11 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> "
-#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2014</year> <holder>&bibletime; Komanda</holder> </"
+"<copyright> <year>1999-2015</year> <holder>&bibletime; komanda</holder> </"
 "copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -3047,7 +3062,7 @@ msgid ""
 "provided by the &cbs;."
 msgstr ""
 "&bibletime; yra visiškai nemokama Biblijos studijavimo programa. Programos "
-"vartotojo sąsaja yra sukurta &qt; karkaso pagalba, kas leidžia vykdyti šią "
+"naudotojo sąsaja yra sukurta &qt; karkaso pagalba, kas leidžia vykdyti šią "
 "programą keliose operacinėse sistemose, įskaitant Linux, Windows, FreeBSD ir "
 "Mac OS X. Darbui su daugiau kaip 200 Biblijos tekstų, komentarų, žodynų ir "
 "knygų, kuriuos &cbs; pateikia daugiau kaip 50 kalbų, programinė įranga "

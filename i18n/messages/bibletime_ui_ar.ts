@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -280,10 +280,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletime_init.cpp" line="232"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>ضبط تفضيلات بيبل تايم</translation>
-    </message>
-    <message>
-        <source>Bookshelf &amp;Manager...</source>
-        <translation type="vanished">مدير &amp;رف الكتب...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="239"/>
@@ -568,9 +564,9 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">مدير رف الكتب</translation>
+        <translation>مدير رف الكتب</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
@@ -632,6 +628,16 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Choose one or more works to remove.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <source>Canceling Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <source>The Bookshelf Manager will close when the current download finishes.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -664,6 +670,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
         <translation>نحن نبحث عن مطورين ومترجمين. إذا كنت تود الإنضمام إلى فريقنا، يرجى إرسال رسالة إلكترونية إلى %1.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
+        <source>(c)1999-2015, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -734,11 +745,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
         <source>designer</source>
         <translation>مصمم</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
-        <source>(c)1999-2015, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -951,17 +957,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="145"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="146"/>
         <source>Installing &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="176"/>
         <source>Some of the selected works were not installed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="180"/>
         <source>The selected works have been installed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -971,7 +977,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="66"/>
         <source>English</source>
-        <translation type="unfinished">English الإنجليزية</translation>
+        <translation>English الإنجليزية</translation>
     </message>
 </context>
 <context>
@@ -1005,7 +1011,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="137"/>
         <source>Add</source>
-        <translation type="unfinished">إضافة</translation>
+        <translation>إضافة</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
@@ -1015,7 +1021,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="184"/>
         <source>Do you really want to delete this source?</source>
-        <translation type="unfinished">هل تريد حقاً حذف هذا المصدر؟</translation>
+        <translation>هل تريد حقاً حذف هذا المصدر؟</translation>
     </message>
 </context>
 <context>
@@ -1070,12 +1076,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="184"/>
         <source>Install &amp;folder:</source>
-        <translation type="unfinished">&amp;مجلد التثبيت:</translation>
+        <translation>&amp;مجلد التثبيت:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
         <source>The folder where the new works will be installed</source>
-        <translation type="unfinished">الذي المجلد الذي به يتم تثبيت الكتب الجديدة</translation>
+        <translation>الذي المجلد الذي به يتم تثبيت الكتب الجديدة</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="190"/>
@@ -1100,12 +1106,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
         <source>Grouping</source>
-        <translation type="unfinished">تصنيف</translation>
+        <translation>تصنيف</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished">تغيير تصنيف العناصر في رف الكتب.</translation>
+        <translation>تغيير تصنيف العناصر في رف الكتب.</translation>
     </message>
 </context>
 <context>
@@ -1264,7 +1270,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="83"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation type="unfinished">النص الذي تريد البحث عنه</translation>
+        <translation>النص الذي تريد البحث عنه</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="85"/>
@@ -1318,173 +1324,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>استخدام خط مخصص</translation>
     </message>
     <message>
-        <source>Optionally specify a custom font for each language:</source>
-        <translation type="vanished">تحديد خط مخصص لكل لغة (إختياري):</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="148"/>
         <source>Fonts</source>
         <translation>خطوط</translation>
-    </message>
-</context>
-<context>
-    <name>BtIndexPage</name>
-    <message>
-        <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation type="vanished">إذا تم الإختيار، فالفهارس التي لا تحتوي على كتب مقابلة سيتم حذفها مع بداية بيبل تايم</translation>
-    </message>
-    <message>
-        <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation type="vanished">حذف تلقائي للفهارس الفارغة مع بداية بيبل تايم</translation>
-    </message>
-    <message>
-        <source>Delete the selected indexes</source>
-        <translation type="vanished">حذف الفهارس المختارة</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">حذف</translation>
-    </message>
-    <message>
-        <source>Create new indexes for the selected works</source>
-        <translation type="vanished">إنشاء فهارس جديدة للكتب المختارة</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">كتب</translation>
-    </message>
-    <message>
-        <source>Index size</source>
-        <translation type="vanished">حجم الفهرس</translation>
-    </message>
-    <message>
-        <source>Search Indexes</source>
-        <translation type="vanished">بحث الفهارس</translation>
-    </message>
-    <message>
-        <source>Indexed Works</source>
-        <translation type="vanished">الكتب المفهرسة</translation>
-    </message>
-    <message>
-        <source>Unindexed Works</source>
-        <translation type="vanished">الكتب الغير مفهرسة</translation>
-    </message>
-    <message>
-        <source>Create...</source>
-        <translation type="vanished">إنشاء...</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallModuleChooserDialog</name>
-    <message>
-        <source>Install/Update works?</source>
-        <translation type="vanished">تثبيت/تحديث الكتب؟</translation>
-    </message>
-    <message>
-        <source>Do you really want to install these works?</source>
-        <translation type="vanished">هل تريد حقاً تثبيت هذه الكتب؟</translation>
-    </message>
-    <message>
-        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="vanished">يمكن تثبيت كتاب واحد فقط في المرة الواحدة. اختر واحداً فقط إذا كان لديك بنود مميزة باللون الأحمر.</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallModuleChooserDialogModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">الكتاب</translation>
-    </message>
-    <message>
-        <source>Installation source</source>
-        <translation type="vanished">مصدر التثبيت</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="vanished">النسخة</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPage</name>
-    <message>
-        <source>Install/Update</source>
-        <translation type="vanished">تثبيت/تحديث</translation>
-    </message>
-    <message>
-        <source>WARNING!!!</source>
-        <translation type="vanished">تحذير!!!</translation>
-    </message>
-    <message>
-        <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation type="vanished">إذا كان هناك إضطهاد في البلد الذي تعيش به وتريد تجنب خطر الإكتشاف لا تستخدم المصادر الخارجية.</translation>
-    </message>
-    <message>
-        <source>Select installation &amp;source:</source>
-        <translation type="vanished">اختر م&amp;صدر التثبيت:</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="vanished">إ&amp;ضافة...</translation>
-    </message>
-    <message>
-        <source>Add new source</source>
-        <translation type="vanished">إضافة مصدر جديد</translation>
-    </message>
-    <message>
-        <source>&amp;Delete...</source>
-        <translation type="vanished">&amp;حذف...</translation>
-    </message>
-    <message>
-        <source>Delete this source</source>
-        <translation type="vanished">حذف هذا المصدر</translation>
-    </message>
-    <message>
-        <source>Select &amp;works to install:</source>
-        <translation type="vanished">اختر ال&amp;كتب التي تريد تثبيتها:</translation>
-    </message>
-    <message>
-        <source>Install &amp;folder:</source>
-        <translation type="vanished">&amp;مجلد التثبيت:</translation>
-    </message>
-    <message>
-        <source>The folder where the new works will be installed</source>
-        <translation type="vanished">الذي المجلد الذي به يتم تثبيت الكتب الجديدة</translation>
-    </message>
-    <message>
-        <source>Configure folders where works are installed and found</source>
-        <translation type="vanished">تعيين المجلدات حيث يتم تثبيت الكتب وإيجادها</translation>
-    </message>
-    <message>
-        <source>&amp;Install...</source>
-        <translation type="vanished">&amp;تثبيت...</translation>
-    </message>
-    <message>
-        <source>Start installation of %1 works from %2 sources:</source>
-        <translation type="vanished">بدء تثبيت %1 كتاب من %2 مصدر:</translation>
-    </message>
-    <message>
-        <source>Start installation:</source>
-        <translation type="vanished">بدء التثبيت:</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="vanished">تحذير</translation>
-    </message>
-    <message>
-        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="vanished">المجلد الهدف إما لا يقبل الكتابة إليه أو إنه غير موجود. سيفشل التثبيت مالم يتم إصلاح هذا أولاً.</translation>
-    </message>
-    <message>
-        <source>Delete Source?</source>
-        <translation type="vanished">حذف المصدر؟</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete this source?</source>
-        <translation type="vanished">هل تريد حقاً حذف هذا المصدر؟</translation>
-    </message>
-    <message>
-        <source>Install or update selected works</source>
-        <translation type="vanished">تثبيت أو تحديث الكتب المختارة</translation>
     </message>
 </context>
 <context>
@@ -1503,138 +1345,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="78"/>
         <source>Description</source>
         <translation>الوصف</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPageWorksWidget</name>
-    <message>
-        <source>Refresh the list of works from this source</source>
-        <translation type="vanished">تحديث قائمة الكتب من هذا المصدر</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPathDialog</name>
-    <message>
-        <source>Bookshelf Folders</source>
-        <translation type="vanished">مجلدات رف الكتب</translation>
-    </message>
-    <message>
-        <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation type="vanished">يمكن تثبيت الكتب في مجلد واحد أو أكثر. بعد إعداد المجلدات هنا يمكنك إختيار أحدهم في صفحة التثبيت.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation type="vanished">يجد بيبل تايم ومكتبة سورد الكتب من كل هذه المجلدات.إذا تم إزالة مجلد من هنا يظل موجوداً في النظام بكل الكتب التي يحتويها.</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf folders</source>
-        <translation type="vanished">تعيين مجلدات رف الكتب</translation>
-    </message>
-    <message>
-        <source>Configuration file for the folders is: </source>
-        <translation type="vanished">ملف إعدادت المجلدات هو: </translation>
-    </message>
-    <message>
-        <source>Folders where new works can be installed</source>
-        <translation type="vanished">المجلدات حيث يمكن تثبيت الكتب الجديدة</translation>
-    </message>
-    <message>
-        <source>Read-only folders</source>
-        <translation type="vanished">مجلدات للقراءة فقط</translation>
-    </message>
-    <message>
-        <source>Nonexistent folders</source>
-        <translation type="vanished">مجلدات غير موجودة</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="vanished">إضافة...</translation>
-    </message>
-    <message>
-        <source>Add new folder</source>
-        <translation type="vanished">إضافة مجلد جديد</translation>
-    </message>
-    <message>
-        <source>&amp;Edit...</source>
-        <translation type="vanished">تحرير...</translation>
-    </message>
-    <message>
-        <source>Edit the selected folder</source>
-        <translation type="vanished">تحرير المجلد المختار</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="vanished">إزالة</translation>
-    </message>
-    <message>
-        <source>Remove the selected folder</source>
-        <translation type="vanished">إزالة المجلد المختار</translation>
-    </message>
-    <message>
-        <source>This default folder in your home directory can&apos;t be removed</source>
-        <translation type="vanished">المجلد الإفتراضي في الدليل الرئيسي لا يمكن إزالته</translation>
-    </message>
-    <message>
-        <source>Choose Folder</source>
-        <translation type="vanished">اختر مجلداً</translation>
-    </message>
-    <message>
-        <source>Use Folder?</source>
-        <translation type="vanished">استخدم المجلد؟</translation>
-    </message>
-    <message>
-        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation type="vanished">غير مسموح بالكتابة إلى هذا المجلد، ولذلك لا يمكن تثبيت الكتب هنا بواسطة بيبل تايم. هل تريد إستخدام هذا المجلد بدلاً من القيمة السابقة؟</translation>
-    </message>
-    <message>
-        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation type="vanished">غير مسموح بالكتابة إلى هذا المجلد، ولذلك لا يمكن تثبيت الكتب هنا بواسطة بيبل تايم. هل مازلت تريد إضافته إلى قائمة مجلدات رف الكتب؟</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallProgressDialog</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">الكتاب</translation>
-    </message>
-    <message>
-        <source>Progress</source>
-        <translation type="vanished">التقدم</translation>
-    </message>
-    <message>
-        <source>Stop All</source>
-        <translation type="vanished">إيقاف الكل</translation>
-    </message>
-    <message>
-        <source>Completed</source>
-        <translation type="vanished">إكتمل</translation>
-    </message>
-    <message>
-        <source>Waiting for turn...</source>
-        <translation type="vanished">في الإنتظار...</translation>
-    </message>
-    <message>
-        <source>Preparing install...</source>
-        <translation type="vanished">التحضير للتثبيت...</translation>
-    </message>
-    <message>
-        <source>Install Progress</source>
-        <translation type="vanished">تقدم التثبيت</translation>
-    </message>
-    <message>
-        <source>Failed</source>
-        <translation type="vanished">فشل</translation>
-    </message>
-</context>
-<context>
-    <name>BtLanguageSettingsPage</name>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="vanished">لغة اسماء أسفار الكتاب المقدس:</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="vanished">اللغات</translation>
     </message>
 </context>
 <context>
@@ -1681,19 +1391,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="68"/>
         <source>Indexing aborted</source>
-        <translation type="unfinished">لم تتم الفهرسة</translation>
+        <translation>لم تتم الفهرسة</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="69"/>
         <source>An internal error occurred while building the index.</source>
-        <translation type="unfinished">حدث خطأ داخلي أثناء عملية تكوين الفهرس.</translation>
-    </message>
-</context>
-<context>
-    <name>BtModuleManagerDialog</name>
-    <message>
-        <source>Bookshelf Manager</source>
-        <translation type="vanished">مدير رف الكتب</translation>
+        <translation>حدث خطأ داخلي أثناء عملية تكوين الفهرس.</translation>
     </message>
 </context>
 <context>
@@ -1715,75 +1418,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btopenworkaction.cpp" line="49"/>
         <source>Sets the grouping order for the items in this menu.</source>
         <translation>إعداد ترتيب المجموعات للبنود في هذه القائمة.</translation>
-    </message>
-</context>
-<context>
-    <name>BtRefreshProgressDialog</name>
-    <message>
-        <source>Refreshing source %1</source>
-        <translation type="vanished">تحديث مصدر %1</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">إل&amp;غاء</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation type="vanished">جار الإتصال...</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="vanished">تحذير</translation>
-    </message>
-    <message>
-        <source>Failed to refresh source %1</source>
-        <translation type="vanished">فشل تحديث مصدر %1</translation>
-    </message>
-</context>
-<context>
-    <name>BtRemovePage</name>
-    <message>
-        <source>Select &amp;works to uninstall:</source>
-        <translation type="vanished">اختر ال&amp;كتب التي تريد إزالتها:</translation>
-    </message>
-    <message>
-        <source>&amp;Remove...</source>
-        <translation type="vanished">إ&amp;زالة...</translation>
-    </message>
-    <message>
-        <source>Start removal of %1 works:</source>
-        <translation type="vanished">بدء إزالة %1 كتاب:</translation>
-    </message>
-    <message>
-        <source>Start removal:</source>
-        <translation type="vanished">بدء الإزالة:</translation>
-    </message>
-    <message>
-        <source>You selected the following work(s): </source>
-        <translation type="vanished">لقد قمت بإختيار الكتب التالية: </translation>
-    </message>
-    <message>
-        <source>Do you really want to remove them from your system?</source>
-        <translation type="vanished">هل تريد حقاً إزالتها من النظام؟</translation>
-    </message>
-    <message>
-        <source>Remove the selected works</source>
-        <translation type="vanished">إزالة الكتب المختارة</translation>
-    </message>
-    <message>
-        <source>Remove Works?</source>
-        <translation type="vanished">إزالة الكتب؟</translation>
-    </message>
-</context>
-<context>
-    <name>BtRemovePageTreeModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">الكتاب</translation>
-    </message>
-    <message>
-        <source>Install path</source>
-        <translation type="vanished">مسار التثبيت</translation>
     </message>
 </context>
 <context>
@@ -2173,7 +1807,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="76"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation type="unfinished">بيبل تايم هو برنامج قوي وسهل الإستخدام لدراسة الكتاب المقدس.</translation>
+        <translation>بيبل تايم هو برنامج قوي وسهل الإستخدام لدراسة الكتاب المقدس.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="78"/>
@@ -2362,58 +1996,14 @@ shortcut</source>
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <source>Bookmarks</source>
-        <translation type="vanished">علامات</translation>
-    </message>
-    <message>
-        <source>New folder</source>
-        <translation type="vanished">مجلد جديد</translation>
-    </message>
-    <message>
-        <source>Rename folder</source>
-        <translation type="vanished">إعادة تسمية المجلد</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="607"/>
         <source>Delete Items</source>
         <translation>حذف بنود</translation>
     </message>
     <message>
-        <source>Do you really want to delete the selected items and child-items?</source>
-        <translation type="vanished">هل أنت متأكد حقاً من أنك تريد حذف البنود والبنود الفرعية المختارة؟</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="686"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>الكتاب الذي تشير إليه العلامة غير مثبت.</translation>
-    </message>
-    <message>
-        <source>Print bookmarks...</source>
-        <translation type="vanished">طباعة العلامات...</translation>
-    </message>
-    <message>
-        <source>Remove selected items...</source>
-        <translation type="vanished">إزالة البنود المختارة...</translation>
-    </message>
-    <message>
-        <source>Import to folder...</source>
-        <translation type="vanished">إستيراد إلى مجلد...</translation>
-    </message>
-    <message>
-        <source>Edit bookmark...</source>
-        <translation type="vanished">تحرير علامة...</translation>
-    </message>
-    <message>
-        <source>Sort folder bookmarks...</source>
-        <translation type="vanished">فرز علامات المجلد...</translation>
-    </message>
-    <message>
-        <source>Sort all bookmarks...</source>
-        <translation type="vanished">فرز كل العلامات...</translation>
-    </message>
-    <message>
-        <source>Export from folder...</source>
-        <translation type="vanished">تصدير من مجلد...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="387"/>
@@ -2500,13 +2090,9 @@ shortcut</source>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <source>Display templates</source>
-        <translation type="vanished">عرض القوالب</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="114"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">لغة اسماء أسفار الكتاب المقدس:</translation>
+        <translation>لغة اسماء أسفار الكتاب المقدس:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="115"/>
@@ -2562,18 +2148,6 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>واما من يفعل الحق فيقبل الى النور لكي تظهر اعماله انها بالله معمولة.</translation>
-    </message>
-    <message>
-        <source>Display templates define how text is displayed.</source>
-        <translation type="vanished">من عرض قوالب تستطيع التحكم في كيفية عرض النص.</translation>
-    </message>
-    <message>
-        <source>Show the BibleTime logo on startup</source>
-        <translation type="vanished">إظهار شعار بيبل تايم مع بداية التشغيل</translation>
-    </message>
-    <message>
-        <source>Show startup logo</source>
-        <translation type="vanished">إظهار شعار بداية التشغيل</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
@@ -2938,168 +2512,168 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="756"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="752"/>
         <source>Version</source>
         <translation>نسخة</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>unknown</source>
         <translation>غير معروف</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
         <source>Markup</source>
         <translation>علامة</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
         <source>Location</source>
         <translation>مكان</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
         <source>Language</source>
         <translation>لغة</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
         <source>Category</source>
         <translation>فئة</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>Writable</source>
         <translation>قابل للكتابة</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
         <source>yes</source>
         <translation>نعم</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
         <source>no</source>
         <translation>لا</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>Unlock key</source>
         <translation>مفتاح فك القفل</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
         <source>Features</source>
         <translation>خصائص</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>احذر، هذا الكتاب يحتوي على مواد مشكوك فيها!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>About</source>
         <translation>عن</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Distribution license</source>
         <translation>رخصة التوزيع</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="826"/>
         <source>Distribution source</source>
         <translation>مصدر التوزيع</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="827"/>
         <source>Distribution notes</source>
         <translation>ملاحظات التوزيع</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
         <source>Text source</source>
         <translation>مصدر النص</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
         <source>Copyright notes</source>
         <translation>ملاحظات حقوق الطبع</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
         <source>Copyright holder</source>
         <translation>حامل حقوق الطبع</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
         <source>Copyright date</source>
         <translation>تاريخ حقوق الطبع</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
         <source>Copyright contact name</source>
         <translation>الإتصال بحقوق الطبع - الاسم</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>Copyright contact address</source>
         <translation>الإتصال بحقوق الطبع - العنوان</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Copyright contact email</source>
         <translation>الإتصال بحقوق الطبع - البريد الإلكتروني</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="923"/>
         <source>Bibles</source>
         <translation>ترجمات الكتاب المقدس</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
         <source>Commentaries</source>
         <translation>تفاسير</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
         <source>Books</source>
         <translation>كتب</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
         <source>Cults/Unorthodox</source>
         <translation>بدع/هرطقات</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
         <source>Maps and Images</source>
         <translation>خرائط وصور</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
         <source>Daily Devotionals</source>
         <translation>تأملات يومية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
         <source>Lexicons and Dictionaries</source>
         <translation>معاجم وقواميس</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
         <source>Glossaries</source>
         <translation>مصطلحات</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
         <source>Unknown</source>
         <translation>غير معلوم</translation>
     </message>
@@ -3230,42 +2804,11 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
-    <name>FontSizeSlider</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">إلغاء</translation>
-    </message>
-</context>
-<context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="125"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Abbreviation</source>
-        <translation type="vanished">إختصارات</translation>
-    </message>
-    <message>
-        <source>Cross references</source>
-        <translation type="vanished">مراجع ذات صلة</translation>
-    </message>
-    <message>
-        <source>Footnote</source>
-        <translation type="vanished">حواشي</translation>
-    </message>
-    <message>
-        <source>Strongs</source>
-        <translation type="vanished">سترونج</translation>
-    </message>
-    <message>
-        <source>Morphology</source>
-        <translation type="vanished">صرفيات</translation>
-    </message>
-    <message>
-        <source>Word lookup</source>
-        <translation type="vanished">بحث عن كلمة</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="57"/>
@@ -3281,58 +2824,6 @@ Do you want to continue?</source>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="77"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;هذه هي منطقة العدسة المكبرة. قم بتمرير المؤشر فوق الروابط أو البنود الأخرى التي تحتوي على معلومات وستظهر المعلومات في منطقة المكبر بعد لحظات. قم بتحريك مؤشر الفأرة إلى منطقة المكبر بسرعة أو ثبت النص بالإستمرار في الضغط على مفتاح Shift بينما تقوم بتحريك مؤشر الفأرة نحو النص.&lt;/small&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>InstallManagerChooser</name>
-    <message>
-        <source>Category</source>
-        <translation type="vanished">فئة</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">لغة</translation>
-    </message>
-</context>
-<context>
-    <name>ModuleChooser</name>
-    <message>
-        <source>Category</source>
-        <translation type="vanished">فئة</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">لغة</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">العمل الأدبي</translation>
-    </message>
-</context>
-<context>
-    <name>Progress</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">إلغاء</translation>
-    </message>
-</context>
-<context>
-    <name>QCoreApplication</name>
-    <message>
-        <source>Indexing aborted</source>
-        <translation type="vanished">لم تتم الفهرسة</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while building the index.</source>
-        <translation type="vanished">حدث خطأ داخلي أثناء عملية تكوين الفهرس.</translation>
-    </message>
-    <message>
-        <source>Search aborted</source>
-        <translation type="vanished">لم يتم البحث</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while executing your search.</source>
-        <translation type="vanished">حدث خطأ داخلي أثناء تنفيذ عملية البحث.</translation>
     </message>
 </context>
 <context>
@@ -4205,62 +3696,62 @@ Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="323"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="322"/>
         <source>Footnotes</source>
         <translation>حواشي</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="325"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
         <source>Strong&apos;s numbers</source>
         <translation>أرقام سترونج</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="327"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
         <source>Headings</source>
         <translation>عناوين</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="329"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
         <source>Morphological tags</source>
         <translation>وسوم صرفية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="331"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
         <source>Lemmas</source>
         <translation>مبرهنات</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="333"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
         <source>Hebrew vowel points</source>
         <translation>نقاط الحروف المتحركة في العبرية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="335"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
         <source>Hebrew cantillation marks</source>
         <translation>علامات cantillation العبرية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
         <source>Greek accents</source>
         <translation>accents في اليونانية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="338"/>
         <source>Red letter words</source>
         <translation>كلمات الحرف الأحمر</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="340"/>
         <source>Textual variants</source>
         <translation>تنويعات نصية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
         <source>Scripture cross-references</source>
         <translation>مراجع ذات صلة بالنص</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
         <source>Morph segmentation</source>
         <translation>تجزئة صرفية</translation>
     </message>
@@ -4495,14 +3986,6 @@ Do you want to continue?</source>
         <translation>زمن الفعل تغير</translation>
     </message>
     <message>
-        <source>Can&apos;t write file</source>
-        <translation type="vanished">لا يمكن كتابة الملف</translation>
-    </message>
-    <message>
-        <source>The Sword config file can&apos;t be written!</source>
-        <translation type="vanished">لا يمكن كتابة ملف إعدادات سورد!</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="550"/>
         <source>Export Bookmarks</source>
         <translation>تصدير علامات</translation>
@@ -4600,33 +4083,33 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="227"/>
         <source>Abbreviation</source>
-        <translation type="unfinished">إختصارات</translation>
+        <translation>إختصارات</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="237"/>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="318"/>
         <source>Cross references</source>
-        <translation type="unfinished">مراجع ذات صلة</translation>
+        <translation>مراجع ذات صلة</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="365"/>
         <source>Footnote</source>
-        <translation type="unfinished">حواشي</translation>
+        <translation>حواشي</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="396"/>
         <source>Strongs</source>
-        <translation type="unfinished">سترونج</translation>
+        <translation>سترونج</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
         <source>Morphology</source>
-        <translation type="unfinished">صرفيات</translation>
+        <translation>صرفيات</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="494"/>
         <source>Word lookup</source>
-        <translation type="unfinished">بحث عن كلمة</translation>
+        <translation>بحث عن كلمة</translation>
     </message>
 </context>
 <context>
@@ -4720,24 +4203,6 @@ Do you want to continue?</source>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>لا للكل</translation>
-    </message>
-</context>
-<context>
-    <name>Question</name>
-    <message>
-        <source>Yes</source>
-        <translation type="vanished">نعم</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="vanished">لا</translation>
-    </message>
-</context>
-<context>
-    <name>Search</name>
-    <message>
-        <source>Search</source>
-        <translation type="vanished">بحث</translation>
     </message>
 </context>
 <context>
@@ -5265,12 +4730,12 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="172"/>
         <source>Search aborted</source>
-        <translation type="unfinished">لم يتم البحث</translation>
+        <translation>لم يتم البحث</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="173"/>
         <source>An internal error occurred while executing your search.</source>
-        <translation type="unfinished">حدث خطأ داخلي أثناء تنفيذ عملية البحث.</translation>
+        <translation>حدث خطأ داخلي أثناء تنفيذ عملية البحث.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="224"/>
@@ -5352,13 +4817,6 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
-    <name>StartupBookshelfManager</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">إلغاء</translation>
-    </message>
-</context>
-<context>
     <name>btm::BtSearchInterface</name>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
@@ -5405,7 +4863,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="53"/>
         <source>Book</source>
-        <translation type="unfinished">كتاب</translation>
+        <translation>كتاب</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="62"/>
@@ -5416,20 +4874,6 @@ Do you want to continue?</source>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="69"/>
         <source>Verse</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>findWidget</name>
-    <message>
-        <source>The text you want to search for</source>
-        <translation type="vanished">النص الذي تريد البحث عنه</translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <source>About</source>
-        <translation type="vanished">عن</translation>
     </message>
 </context>
 </TS>

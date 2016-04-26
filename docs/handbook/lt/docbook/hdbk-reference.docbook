@@ -20,12 +20,12 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
             <term>
               <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Failas</guimenu> <guimenuitem>Atidaryti veiklą</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Failas</guimenu> <guimenuitem>Atverti veiklą</guimenuitem>
 </menuchoice>
             </term>
             <listitem>
-              <para><action>Atidaryti veiklą.</action> Tai jums parodys meniu, kuriame leidžiama
-atidaryti įdiegtas knygas.</para>
+              <para><action>Atverti veiklą.</action> Tai jums parodys meniu, kuriame leidžiama
+atverti įdiegtas knygas.</para>
             </listitem>
           </varlistentry>
 
@@ -39,7 +39,7 @@ format="PNG" /> </imageobject></inlinemediaobject>Failas</guimenu>
             </term>
             <listitem>
               <para>
-              <action>Uždaro &bibletime;.</action> &bibletime; jūsų paklaus ar norite į
+              <action>Užveria &bibletime;.</action> &bibletime; jūsų paklaus ar norite į
 diską įrašyti neišsaugotus pakeitimus.</para>
             </listitem>
           </varlistentry>
@@ -125,7 +125,7 @@ antraštes</guimenuitem> </menuchoice>
             <para>
             <action>Perjungia papildomų veiklų rodymą</action> Šio nustatymo
 perjungimas, leidžia jums matyti papildomas veiklas lygiagrečiai su jūsų
-esamomis atidarytomis veiklomis.</para>
+esamomis atvertomis veiklomis.</para>
           </listitem>
         </varlistentry>
 
@@ -149,9 +149,9 @@ juostos</guimenuitem> <guimenuitem>Rodyti naršymo juostą</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
-            <para><action>Perjungia veiklose Naršymą.</action> Perjunkite šį nustatymą, kad
-veiklose pridėtumėte ar pašalintumėte Naršymo jungtinį langelį.  Tai gali
-praversti, norint atidarytose veiklose matyti visą įrankių juostą.</para>
+            <para><action>Perjungia veiklose naršymą.</action> Perjunkite šį nustatymą, kad
+veiklose pridėtumėte ar pašalintumėte Naršymo jungtinį langelį. Tai gali
+praversti, norint atvertose veiklose matyti visą įrankių juostą.</para>
           </listitem>
         </varlistentry>
 
@@ -163,7 +163,7 @@ juostą</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para><action>Perjungia veiklose Įrankių juostas.</action> Perjunkite šį
-nustatymą, kad atidarytose veiklose pridėtumėte ar pašalintumėte veiklų
+nustatymą, kad atvertose veiklose pridėtumėte ar pašalintumėte veiklų
 piktogramas.</para>
           </listitem>
         </varlistentry>
@@ -176,7 +176,7 @@ juostą</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para><action>Perjungia veiklose įrankius.</action> Perjunkite šį nustatymą, kad
-atidarytose veiklose pridėtumėte ar pašalintumėte įrankių piktogramas.</para>
+atvertose veiklose pridėtumėte ar pašalintumėte įrankių piktogramas.</para>
           </listitem>
         </varlistentry>
 
@@ -202,8 +202,8 @@ languose</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para><action>Perjungia veiklose įrankių juostas.</action> Perjunkite šį
-nustatymą, kad atidarytose veiklose pridėtumėte ar pašalintumėte pilną
-įrankių juostą.</para>
+nustatymą, kad atvertose veiklose pridėtumėte ar pašalintumėte pilną įrankių
+juostą.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -219,13 +219,13 @@ nustatymą, kad atidarytose veiklose pridėtumėte ar pašalintumėte pilną
 <keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_find.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Search</guimenu>
+format="PNG" /> </imageobject></inlinemediaobject>Paieška</guimenu>
 <guimenuitem>Ieškoti standartinėje Biblijoje</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
-            <para><action>Atidaro Paieškos Dialogą, skirtą ieškoti tik standartinėje
-Biblijoje</action>. Paieškos Dialoge gali būti pridėta daugiau
+            <para><action>Atveria paieškos dialogą, skirtą ieškoti tik standartinėje
+Biblijoje</action>. Paieškos dialoge gali būti pridėta daugiau
 veiklų. Išsamesnį paieškos aprašą galite rasti skyriuje <link
 linkend="hdbk-op-search">Paieška veiklose</link>.</para>
           </listitem>
@@ -237,12 +237,12 @@ linkend="hdbk-op-search">Paieška veiklose</link>.</para>
 <keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_find.png" width="32" depth="32"
 format="PNG" /> </imageobject></inlinemediaobject>Paieška</guimenu> <guimenuitem>Ieškoti
-atidarytose veiklose</guimenuitem> </menuchoice>
+atvertose veiklose</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
-            <para><action>Atidaro Paieškos Dialogą, skirtą paieškai visose
-veiklose</action>. Paieškos Dialoge veiklos gali būti pridedamos arba
+            <para><action>Atveria paieškos dialogą, skirtą paieškai visose
+veiklose</action>. Paieškos dialoge veiklos gali būti pridedamos arba
 šalinamos. Išsamesnį paieškos aprašą galite rasti skyriuje <link
 linkend="hdbk-op-search">Paieška veiklose</link>.</para>
           </listitem>
@@ -262,13 +262,13 @@ linkend="hdbk-op-search">Paieška veiklose</link>.</para>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Langas</guimenu> <guimenuitem>Uždaryti
+format="PNG" /> </imageobject></inlinemediaobject>Langas</guimenu> <guimenuitem>Užverti
 langą</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Uždaro aktyvų langą</action>.</para>
+            <action>Užveria aktyvų langą</action>.</para>
           </listitem>
         </varlistentry>
 
@@ -279,12 +279,12 @@ langą</guimenuitem> </menuchoice>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
 format="PNG" /> </imageobject></inlinemediaobject>Langas</guimenu>
-<guimenuitem>Uždaryti visus langus</guimenuitem> </menuchoice>
+<guimenuitem>Užverti visus langus</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Uždaro visus atidarytus langus</action>.</para>
+            <action>Užveria visus atvertus langus</action>.</para>
           </listitem>
         </varlistentry>
 
@@ -299,7 +299,7 @@ pakopomis</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-	      <action>Išdėsto pakopomis visus atidarytus langus</action>.
+	      <action>Išdėsto pakopomis visus atvertus langus</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -315,7 +315,7 @@ format="PNG" /> </imageobject></inlinemediaobject>Langas</guimenu>
 
           <listitem>
             <para>
-	      <action>Iškloja visus atidarytus langus</action>.
+	      <action>Iškloja visus atvertus langus</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -331,7 +331,7 @@ vertikaliai</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-	      <action>Automatiškai vertikaliai iškloja visus atidarytus langus</action>.
+	      <action>Automatiškai vertikaliai iškloja visus atvertus langus</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -347,7 +347,7 @@ horizontaliai</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-	      <action>Automatiškai horizontaliai iškloja visus atidarytus langus</action>.
+	      <action>Automatiškai horizontaliai iškloja visus atvertus langus</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -398,14 +398,14 @@ išsaugomos sesijos pavadinimo.</para>
 
         <varlistentry id="hdbk-reference-menus-window-loadsession">
           <term>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load
-session</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Langas</guimenu> <guimenuitem>Įkelti
+sesiją</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Loads an existing session</action>. This will open a context menu
-where you can select an existing session to load.</para>
+            <action>Įkelia esamą sesiją</action>. Tai atveria kontekstinį meniu, kuriame
+galite pasirinkti norimą įkelti esamą sesiją.</para>
           </listitem>
         </varlistentry>
 
@@ -417,7 +417,7 @@ sesiją</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-            <action>Ištrina esamą sesiją</action>. Tai atidaro kontekstinį meniu,
+            <action>Ištrina esamą sesiją</action>. Tai atveria kontekstinį meniu,
 kuriame galite pasirinkti, kuri esama sesija turėtų būti ištrinta.</para>
           </listitem>
         </varlistentry>
@@ -438,10 +438,11 @@ format="PNG" /> </imageobject></inlinemediaobject>Nustatymai</guimenu> <guimenui
           </term>
 
           <listitem>
-            <para> <action>Opens &bibletime;'s main configuration dialog</action>. You can
-configure all kinds of nice settings there to adapt &bibletime; to your
-needs.  Please see the <link linkend="hdbk-config-bt">Configuring
-&bibletime; section</link> for details.</para>
+            <para> <action>Atveria &bibletime;'s pagrindinį konfigūracijos
+dialogą</action>. Jame galite konfigūruoti visokius įdomius nustatymus, kad
+pritaikytumėte &bibletime; savo poreikiams.  Išsamesnei informacijai,
+prašome žiūrėti <link linkend="hdbk-config-bt">&bibletime; konfigūravimo
+sekciją</link>.</para>
           </listitem>
         </varlistentry>
 
@@ -456,10 +457,10 @@ Tvarkytuvė</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
-            <para><action>Opens a dialog where you can change your &sword; configuration and
-manage your bookshelf</action>. Please see the <link
-linkend="hdbk-op-bookshelfmanager">Bookshelf Manager section</link> for
-details.</para>
+            <para><action>Atveria dialogą, kuriame galite keisti savo &sword; konfigūraciją ir
+tvarkyti savo knygų lentyną</action>. Išsamesnei informacijai, prašome
+žiūrėti <link linkend="hdbk-op-bookshelfmanager">Knygų lentynos tvarkytuvės
+sekciją</link>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -479,7 +480,7 @@ format="PNG" /> </imageobject></inlinemediaobject>Pagalba</guimenu> <guimenuitem
           </term>
           <listitem>
             <para>
-            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
+            <action>Atveria &bibletime;'s žinyną</action> Jūs šiuo metu jį skaitote.</para>
           </listitem>
         </varlistentry>
 
@@ -488,8 +489,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Pagalba</guimenu> <guimenuitem
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F2</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Pagalba</guimenu> <guimenuitem>Biblijos Studijavimo
-Instrukcija</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Pagalba</guimenu> <guimenuitem>Biblijos studijavimo
+instrukcija</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -512,7 +513,7 @@ format="PNG" /> </imageobject></inlinemediaobject>Pagalba</guimenu> <guimenuitem
 </menuchoice>
           </term>
           <listitem>
-            <para><action>Atidaro naudingą patarimą</action> Dienos patarimas suteikia
+            <para><action>Atveria naudingą patarimą</action> Dienos patarimas suteikia
 naudingą patarimą, kuris pagelbės naudojantis &bibletime; programa.</para>
           </listitem>
         </varlistentry>
@@ -524,7 +525,7 @@ BibleTime</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
-            <action>Atidaro langą, kuriame pateikiama informacija apie &bibletime;
+            <action>Atveria langą, kuriame pateikiama informacija apie &bibletime;
 projektą</action> kartu su informacija apie &bibletime; programinės įrangos
 versiją, projekto talkininkus, &sword; programinės įrangos versiją, &qt;
 programinės įrangos versiją ir licencijos sutikimą.</para>
@@ -537,8 +538,8 @@ programinės įrangos versiją ir licencijos sutikimą.</para>
   <sect1 id="hdbk-reference-works">
     <title>Veiklų rodyklė</title>
     <para>
-      Šioje sekcijoje galite rasti, su atidarytomis veiklomis susijusių
-piktogramų, aprašus.
+      Šioje sekcijoje galite rasti, su atvertomis veiklomis susijusių piktogramų,
+aprašus.
     </para> 
 
     <sect2 id="hdbk-reference-works-list">
@@ -802,7 +803,7 @@ reference</link>.</para>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice>
 <guimenu>Paieška</guimenu> <guimenuitem>Ieškoti standartinėje
-Biblijoje</guimenuitem> </menuchoice> </link> ekvivalentas; atidaro paieškos
+Biblijoje</guimenuitem> </menuchoice> </link> ekvivalentas; atveria paieškos
 dialogą, skirtą atlikti paiešką numatytoje Biblijoje.</entry>
           </row>
 
@@ -888,8 +889,8 @@ ekvivalentas; tvarko langus viršuje rodomų kortelių dėka.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice>
-<guimenu>Langas</guimenu> <guimenuitem>Uždaryti visus langus</guimenuitem>
-</menuchoice> </link> ekvivalentas; uždaro visus atidarytus langus.</entry>
+<guimenu>Langas</guimenu> <guimenuitem>Užverti visus langus</guimenuitem>
+</menuchoice> </link> ekvivalentas; užveria visus atvertus langus.</entry>
           </row>
           <row>
             <entry>
@@ -1010,7 +1011,7 @@ currently opened works.</entry>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
-            <entry>Uždaro esamą langą.</entry>
+            <entry>Užveria esamą langą.</entry>
           </row>
           <row>
             <entry>
@@ -1018,7 +1019,7 @@ currently opened works.</entry>
             </entry>
             <entry>
             <menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Žinynas</guimenuitem>
-</menuchoice> ekvivalentas; atidaro žinyną.</entry>
+</menuchoice> ekvivalentas; atveria žinyną.</entry>
           </row>
 
           <row>
@@ -1026,9 +1027,9 @@ currently opened works.</entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Biblijos Studijavimo
-Instrukcija</guimenuitem> </menuchoice> ekvivalentas; atidaro Biblijos
-Studijavimo Instrukciją.</entry>
+            <menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Biblijos studijavimo
+instrukcija</guimenuitem> </menuchoice> ekvivalentas; atveria Biblijos
+studijavimo instrukciją.</entry>
           </row>
 
           <row>
@@ -1037,7 +1038,7 @@ Studijavimo Instrukciją.</entry>
             </entry>
             <entry>
             <menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Dienos
-patarimas...</guimenuitem> </menuchoice> Atidaro naudingą, naudojimosi
+patarimas...</guimenuitem> </menuchoice> Atveria naudingą, naudojimosi
 programa &bibletime;, patarimą.</entry>
           </row>
 
@@ -1048,8 +1049,8 @@ programa &bibletime;, patarimą.</entry>
             <entry>
             <link linkend="hdbk-reference-menus-settings-bookshelf_manager">
 <menuchoice> <guimenu>Nustatymai</guimenu> <guimenuitem>Knygų lentynos
-Tvarkytuvė</guimenuitem> </menuchoice> </link> ekvivalentas; atidaro Knygų
-lentynos Tvarkytuvę.</entry>
+tvarkytuvė</guimenuitem> </menuchoice> </link> ekvivalentas; atveria Knygų
+lentynos tvarkytuvę.</entry>
           </row>
           <row>
             <entry>

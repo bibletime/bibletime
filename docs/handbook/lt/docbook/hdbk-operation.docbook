@@ -17,19 +17,18 @@ marker, for example, then the Mag will display the actual content of the
 footnote. The toolbar gives you quick access to important functions, and the
 Desk on the right side is where you do your real work.</para>
 
-    <para>Let us now proceed by looking at the different parts of the application
-individually.</para>
+    <para>Dabar tęskime ir atskirai apžvelkime įvairias programos dalis.</para>
   </sect1>
   <sect1 id="hdbk-op-parts">
     <title>&bibletime; programos lango dalys</title>
     <sect2 id="hdbk-op-parts-bookshelf">
-      <title>Knygų Lentyna</title>
+      <title>Knygų lentyna</title>
       <para>The Bookshelf lists all installed works, sorted by category and language. It
 also has a category called "Bookmarks". This is where you can store and
 access your own bookmarks.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
-        <title>Reading works</title>
+        <title>Veiklų skaitymas</title>
 
         <para>To open a work from the bookshelf for reading, simply click with the
 <mousebutton>left mouse button</mousebutton> on the desired category
@@ -47,7 +46,7 @@ then it will jump to the specified location.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
-        <title>Papildomas informacija apie veiklas</title>
+        <title>Papildoma informacija apie veiklas</title>
 
         <para>If you click with the <mousebutton>right</mousebutton> mouse button on the
 symbol of a work, you will see a menu with additional entries that are
@@ -74,7 +73,7 @@ section</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
-        <title>Working with bookmarks</title>
+        <title>Darbas su adresynu</title>
         <para>
 
         <tip>
@@ -109,7 +108,7 @@ try it out.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-desk">
-      <title>The Desk</title>
+      <title>Stalas</title>
       <para>The Desk is where the real work with &bibletime; takes place. Here you can
 open works from the Bookshelf, read them, <link
 linkend="hdbk-op-search">search</link> in them, and even save your
@@ -117,7 +116,7 @@ annotations in the personal commentary module (see <link
 linkend="hdbk-op-parts-desk-write">below</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
-        <title>Reading works</title>
+        <title>Veiklų skaitymas</title>
         <para>As we have <link linkend="hdbk-op-parts-bookshelf-open">already seen</link>,
 you can open works for reading simply by clicking on their symbol in the
 Bookshelf. A read window will open in the Desk's area. Every read window has
@@ -127,7 +126,7 @@ know from your browser.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-placement">
-        <title>Read window placement</title>
+        <title>Skaitymo lango vieta</title>
         <para>Of course, you can open multiple works at the same time.  There are several
 possibilities for arranging the read windows on the desk. Please have a look
 at the entry <guimenu>Window</guimenu> in the main menu. There you can see
@@ -139,7 +138,7 @@ mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-write">
-        <title>Editing your own commentary</title>
+        <title>Jūsų asmeninių komentarų redagavimas</title>
 
         <para>To be able to store your own comments about parts of the Bible, you have
 install a certain work from the library of the <ulink
@@ -172,7 +171,7 @@ will be inserted.</para>
     <title>Paieška veiklose</title>
 
     <sect2 id="hdbk-op-search-intext">
-      <title>Paieška atidaryto skaitymo lango tekste</title>
+      <title>Paieška atverto skaitymo lango tekste</title>
       <para>You can look for a word or phrase in the open read window (e.g. the chapter
 of a bible that you're reading) just like you are used to from other
 programs. This function can be reached either by clicking with the
@@ -214,7 +213,7 @@ multiple works, click on this button and you will be offered a menu where
 you can select the works you want to search in.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
-        <title>Using Search Scopes</title>
+        <title>Paieškos rėžių naudojimas</title>
         <para>You can narrow the scope of your search to certain parts of the Bible by
 selecting one of the predefined scopes from the list in <guimenu>Search
 scope</guimenu>. You can define your own search ranges by clicking the
@@ -222,7 +221,7 @@ scope</guimenu>. You can define your own search ranges by clicking the
       </sect3>
 
       <sect3 id="hd-op-search-config-syntax">
-        <title>Basic Search Syntax Introduction</title>
+        <title>Pagrindinės paieškos sintaksės pristatymas</title>
 
         <para>Enter the search phrase separated by spaces.  By default the search function
 will return results that match all the words.  If you want to find any of
@@ -240,7 +239,7 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 ':', and then the search term.  Refer to the table below for examples.</para>
 
         <para>Available text types: <table id="hd-op-search-config-syntax-table">
-	  <title>Paieškos Tipai</title>
+	  <title>Paieškos tipai</title>
           <tgroup cols="3">
             <thead>
               <row>
@@ -323,7 +322,7 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></s
   </sect1>
 
   <sect1 id="hdbk-op-bookshelfmanager">
-    <title><guimenuitem>Knygų Lentynos Tvarkytuvė</guimenuitem></title>
+    <title><guimenuitem>Knygų lentynos tvarkytuvė</guimenuitem></title>
 
     <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your
 Bookshelf. You can install new works to your Bookshelf, and update or remove
@@ -337,7 +336,7 @@ button to see a list of works provided by the &cbs;.</para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Bookshelf path(s) setup</title>
+      <title>Knygų lentynos kelio(-ių) sąranka</title>
 
       <para>Here you can specify where &bibletime; may store your Bookshelf on the hard
 drive.  You can even store it in multiple directories. The default is
@@ -353,7 +352,7 @@ works on the CD if it is present.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Install/update work(s)</title>
+      <title>Veiklos(-ų) įdiegimas/atnaujinimas</title>
 
       <para>With this facility, you can connect to a repository of works (called
 "library"), and transfer one or more works to your local Bookshelf. These
@@ -377,13 +376,13 @@ Bookshelf.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Remove work(s)</title>
+      <title>Veiklos(-ų) šalinimas</title>
       <para>This facility allows you to delete one or more of the works from your
 Bookshelf too free up disk space. Simply mark the items and click on
 <guibutton>Remove works</guibutton>.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Paieškos Indeksai</title>
+      <title>Paieškos indeksai</title>
       <para>This option allows you to create new search indexes and cleanup orphaned
 index files for removed works.</para>
       <tip>
@@ -393,7 +392,7 @@ index files for removed works.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
-    <title>Eksportavimas ir Spausdinimas</title>
+    <title>Eksportavimas ir spausdinimas</title>
     <para>In many places, you can open a context menu by clicking with the
 <mousebutton>right</mousebutton> mouse button. Depending on context, it will
 allow you to <guimenuitem>Select</guimenuitem>,

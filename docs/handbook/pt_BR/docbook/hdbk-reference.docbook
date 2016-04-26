@@ -130,9 +130,9 @@ trabalhos abertos. </para>
         <varlistentry id="hdbk-reference-menus-view-toolbars-showmain">
           <term>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F6</keycap>
-</keycombo> </shortcut> <guimenu>View</guimenu>
-<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem>
-</menuchoice>
+</keycombo> </shortcut> <guimenu>Visualizar</guimenu>
+<guimenuitem>Ferramentas</guimenuitem> <guimenuitem>Mostrar
+Principal</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para><action>Alterna exibição da barra principal de ferramentas.</action> Alterne

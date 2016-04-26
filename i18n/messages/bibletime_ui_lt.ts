@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -16,7 +16,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="45"/>
         <source>Information About %1</source>
-        <translation>Informacija Apie %1</translation>
+        <translation>Informacija apie %1</translation>
     </message>
 </context>
 <context>
@@ -74,7 +74,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="253"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Atidaryti Biblijos studijavimo instrukciją, pateikiamą kartu su BibleTime.&lt;br/&gt;Ši Instrukcija yra įvadas į tai, kaip efektyviai studijuoti Bibliją.</translation>
+        <translation>Atverti Biblijos studijavimo instrukciją, pateikiamą kartu su BibleTime.&lt;br/&gt;Ši instrukcija yra įvadas į tai, kaip efektyviai studijuoti Bibliją.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="259"/>
@@ -134,12 +134,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="226"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation>Uždaryti visus BibleTime viduje atidarytus langus</translation>
+        <translation>Užverti visus BibleTime viduje atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Bookshelf Manager...</source>
-        <translation type="unfinished"></translation>
+        <translation>Knygų lentynos tvarkytuvė...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="243"/>
@@ -149,7 +149,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>&amp;Bible Study Howto</source>
-        <translation>&amp;Biblijos Studijavimo Instrukcija</translation>
+        <translation>&amp;Biblijos studijavimo instrukcija</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="534"/>
@@ -169,7 +169,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="109"/>
         <source>Quit BibleTime</source>
-        <translation>Baigti BibleTime</translation>
+        <translation>Baigti BibleTime darbą</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="116"/>
@@ -179,7 +179,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Search in &amp;open works...</source>
-        <translation>Ieškoti &amp;atidarytose veiklose...</translation>
+        <translation>Ieškoti &amp;atvertose veiklose...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="132"/>
@@ -199,17 +199,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="149"/>
         <source>Manually arrange the open windows</source>
-        <translation>Išdėstyti atidarytus langus rankiniu būdu</translation>
+        <translation>Išdėstyti atvertus langus rankiniu būdu</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation>Automatiškai vertikaliai iškloti atidarytus langus (išdėstyti vienas šalia kito)</translation>
+        <translation>Automatiškai vertikaliai iškloti atvertus langus (išdėstyti vienas šalia kito)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="163"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation>Automatiškai horizontaliai iškloti atidarytus langus (išdėstyti vienas virš kito)</translation>
+        <translation>Automatiškai horizontaliai iškloti atvertus langus (išdėstyti vienas virš kito)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="167"/>
@@ -219,7 +219,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="170"/>
         <source>Automatically tile the open windows</source>
-        <translation>Automatiškai iškloti atidarytus langus</translation>
+        <translation>Automatiškai iškloti atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="174"/>
@@ -234,12 +234,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>Automatically cascade the open windows</source>
-        <translation>Automatiškai išdėstyti pakopomis atidarytus langus</translation>
+        <translation>Automatiškai išdėstyti pakopomis atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>Cascade the open windows</source>
-        <translation>Išdėstyti pakopomis atidarytus langus</translation>
+        <translation>Išdėstyti pakopomis atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="195"/>
@@ -249,27 +249,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="198"/>
         <source>Tile the open windows</source>
-        <translation>Iškloti atidarytus langus</translation>
+        <translation>Iškloti atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="205"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation>Iškloti vertikaliai (išdėstyti vienas šalia kito) atidarytus langus</translation>
+        <translation>Iškloti vertikaliai (išdėstyti vienas šalia kito) atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation>Iškloti horizontaliai (išdėstyti vienas virš kito) atidarytus langus</translation>
+        <translation>Iškloti horizontaliai (išdėstyti vienas virš kito) atvertus langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Close &amp;window</source>
-        <translation>Uždaryti &amp;langą</translation>
+        <translation>Užverti &amp;langą</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>Close the current open window</source>
-        <translation>Uždaryti esamą atidarytą langą</translation>
+        <translation>Užverti esamą atvertą langą</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="230"/>
@@ -282,10 +282,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Nustatyti programos BibleTime nuostatas</translation>
     </message>
     <message>
-        <source>Bookshelf &amp;Manager...</source>
-        <translation type="vanished">Knygų lentynos &amp;Tvarkytuvė...</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="239"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation type="unfinished"></translation>
@@ -293,7 +289,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="246"/>
         <source>Open BibleTime&apos;s handbook</source>
-        <translation>Atidaryti BibleTime žinyną</translation>
+        <translation>Atverti BibleTime žinyną</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="263"/>
@@ -403,7 +399,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="723"/>
         <source>O&amp;pen windows</source>
-        <translation>&amp;Atidaryti langus</translation>
+        <translation>&amp;Atverti langus</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="736"/>
@@ -418,7 +414,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="128"/>
         <source>Search in all works that are currently open</source>
-        <translation>Ieškoti visose, šiuo metu atidarytose, veiklose</translation>
+        <translation>Ieškoti visose, šiuo metu atvertose, veiklose</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="135"/>
@@ -428,17 +424,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>New Session</source>
-        <translation>Nauja Sesija</translation>
+        <translation>Nauja sesija</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="83"/>
         <source>Initializing the SWORD engine...</source>
-        <translation>Inicijuojamas SWORD variklis...</translation>
+        <translation>Inicijuojamas SWORD modulis...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="91"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>Kuriama BibleTime vartotojo sąsaja...</translation>
+        <translation>Kuriama BibleTime naudotojo sąsaja...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="98"/>
@@ -448,7 +444,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime.cpp" line="217"/>
         <source>Unlock Work</source>
-        <translation>Atrakinti Veiklą</translation>
+        <translation>Atrakinti veiklą</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="217"/>
@@ -487,7 +483,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletimeapp.cpp" line="66"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="63"/>
         <source>Warning!</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas!</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="67"/>
@@ -499,13 +495,13 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletimeapp.cpp" line="79"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="76"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished">Klaida, įkeliant konfigūraciją!</translation>
+        <translation>Klaida, įkeliant konfigūraciją!</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="80"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="77"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished">Nepavyko įkelti programos BibleTime konfigūracijos todėl, kad atrodo, jog konfigūracijos failas atitinka naujesnę BibleTime versiją. Tai, greičiausiai yra sąlygota tuo, kad buvo įdiegta senesnė BibleTime versija. Naujo konfigūracijos failo įkėlimas gali sąlygoti &lt;b&gt;duomenų praradimą&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Ar vis dar norite bandyti įkelti naują konfigūracijos failą? Spauskite &quot;Ne&quot;, norėdami tuoj pat baigti BibleTime darbą.</translation>
+        <translation>Nepavyko įkelti programos BibleTime konfigūracijos todėl, kad atrodo, jog konfigūracijos failas atitinka naujesnę BibleTime versiją. Tai, greičiausiai yra sąlygota tuo, kad buvo įdiegta senesnė BibleTime versija. Naujo konfigūracijos failo įkėlimas gali sąlygoti &lt;b&gt;duomenų praradimą&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Ar vis dar norite bandyti įkelti naują konfigūracijos failą? Spauskite &quot;Ne&quot;, norėdami tuoj pat baigti BibleTime darbą.</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="103"/>
@@ -519,117 +515,127 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="91"/>
         <source>Updating Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinamos veiklos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="93"/>
         <source>The selected works are being updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yra atnaujinamos pasirinktos veiklos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="97"/>
         <source>Installing Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegiamos veiklos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="99"/>
         <source>The selected works are being installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yra įdiegiamos pasirinktos veiklos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="49"/>
         <source>Choose Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkti kalbas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="50"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite vieną ar daugiau kalbų, iš kurių įdiegti veiklas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="66"/>
         <source>Choose Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkti nuotolines bibliotekas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="68"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite vieną ar daugiau nuotolinių bibliotekų, iš kurių įdiegti veiklas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
         <source>Updating Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinamos nuotolinės bibliotekos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="88"/>
         <source>Updating information from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinama informacija iš nuotolinių bibliotekų.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Knygų Lentynos Tvarkytuvė</translation>
+        <translation>Knygų lentynos tvarkytuvė</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
         <source>Install, update, or remove works on your bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiekite, atnaujinkite ar šalinkite veiklas savo knygų lentynoje.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ĮSPĖJIMAS&lt;/span&gt;: Veiklų įdiegimo ar atnaujinimo metu yra naudojamas interneto ryšys. Jeigu jūs gyvenate šalyje, kurioje yra persekiojimai, jūs galite nenorėti šito daryti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="92"/>
         <source>Bookshelf task</source>
-        <translation type="unfinished"></translation>
+        <translation>Knygų lentynos užduotis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="95"/>
         <source>Install additional works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegti papildomas veiklas (naudoja internetą)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
         <source>Update installed works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinti įdiegtas veiklas (naudoja internetą)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="102"/>
         <source>Remove installed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Šalinti įdiegtas veiklas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="163"/>
         <source>Install Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegti veiklas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="164"/>
         <source>Choose one or more works to install.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite vieną ar daugiau veiklų, kurias įdiegti.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="169"/>
         <source>Update Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinti veiklas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="170"/>
         <source>Choose one or more works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite vieną ar daugiau veiklų, kurias atnaujinti.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="176"/>
         <source>Remove Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Šalinti veiklas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="177"/>
         <source>Choose one or more works to remove.</source>
+        <translation>Pasirinkite vieną ar daugiau veiklų, kurias norite pašalinti.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <source>Canceling Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <source>The Bookshelf Manager will close when the current download finishes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -666,8 +672,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Mes ieškome kūrėjų ir vertėjų. Jeigu jūs norėtumėte prisijungti prie mūsų komandos, prašome išsiųsti el. laišką į %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2014, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2014, The BibleTime Komanda</translation>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
+        <source>(c)1999-2015, The BibleTime Team</source>
+        <translation>(c)1999-2015, BibleTime komanda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -712,7 +719,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="245"/>
         <source>The SWORD Project: </source>
-        <translation>SWORD Projektas: </translation>
+        <translation>SWORD projektas: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
@@ -738,11 +745,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
         <source>designer</source>
         <translation>dizaineris</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
-        <source>(c)1999-2015, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2014, The BibleTime Komanda {1999-2015,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -866,7 +868,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="160"/>
         <source>&amp;Open</source>
-        <translation>&amp;Atidaryti</translation>
+        <translation>&amp;Atverti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="161"/>
@@ -911,7 +913,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation>Jūs bandote atidaryti užšifruotą modulį. Norint atidaryti modulį, prašome kitame lange įvesti atrakinimo raktą.</translation>
+        <translation>Jūs bandote atverti užšifruotą modulį. Norint atverti modulį, prašome kitame lange įvesti atrakinimo raktą.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
@@ -952,22 +954,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="88"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stabdyti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="145"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="146"/>
         <source>Installing &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegiama &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="176"/>
         <source>Some of the selected works were not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kai kurios iš pasirinktų veiklų nebuvo įdiegtos.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="180"/>
         <source>The selected works have been installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinktos veiklos buvo įdiegtos.</translation>
     </message>
 </context>
 <context>
@@ -975,7 +977,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="66"/>
         <source>English</source>
-        <translation type="unfinished">Anglų</translation>
+        <translation>Anglų</translation>
     </message>
 </context>
 <context>
@@ -991,7 +993,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp" line="50"/>
         <source>The selected works have been removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinktos veiklos buvo pašalintos.</translation>
     </message>
 </context>
 <context>
@@ -999,27 +1001,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="125"/>
         <source>Remove</source>
-        <translation type="unfinished">Šalinti</translation>
+        <translation>Šalinti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="135"/>
         <source>&lt; Add new remote library &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; Pridėti naują nuotolinę biblioteką &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="137"/>
         <source>Add</source>
-        <translation type="unfinished">Pridėti</translation>
+        <translation>Pridėti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
         <source>Delete Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Ištrinti šaltinį</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="184"/>
         <source>Do you really want to delete this source?</source>
-        <translation type="unfinished">Ar tikrai norite ištrinti šį šaltinį?</translation>
+        <translation>Ar tikrai norite ištrinti šį šaltinį?</translation>
     </message>
 </context>
 <context>
@@ -1027,7 +1029,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stabdyti</translation>
     </message>
 </context>
 <context>
@@ -1059,37 +1061,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="167"/>
         <source>Install Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegti veiklas &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Update Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinti veiklas &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="180"/>
         <source>Remove Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Šalinti veiklas &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="184"/>
         <source>Install &amp;folder:</source>
-        <translation type="unfinished">Įdiegimo &amp;aplankas:</translation>
+        <translation>Įdiegimo &amp;aplankas:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
         <source>The folder where the new works will be installed</source>
-        <translation type="unfinished">Aplankas, kuriame bus įdiegtos naujos veiklos</translation>
+        <translation>Aplankas, kuriame bus įdiegtos naujos veiklos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="190"/>
         <source>There are no works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nėra veiklų, kurias atnaujinti.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="192"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šiuo metu nėra įdiegtų veiklų, taigi, jos negali būti pašalintos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="197"/>
@@ -1099,17 +1101,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
         <source>Grouping:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupavimas:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
         <source>Grouping</source>
-        <translation type="unfinished">Grupavimas</translation>
+        <translation>Grupavimas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished">Keisti elementų grupavimą knygų lentynoje.</translation>
+        <translation>Keisti elementų grupavimą knygų lentynoje.</translation>
     </message>
 </context>
 <context>
@@ -1160,15 +1162,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Pauliaus Laiškai</translation>
-    </message>
-    <message>
-        <source>Error loading configuration!</source>
-        <translation type="vanished">Klaida, įkeliant konfigūraciją!</translation>
-    </message>
-    <message>
-        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="vanished">Nepavyko įkelti programos BibleTime konfigūracijos todėl, kad atrodo, jog konfigūracijos failas atitinka naujesnę BibleTime versiją. Tai, greičiausiai yra sąlygota tuo, kad buvo įdiegta senesnė BibleTime versija. Naujo konfigūracijos failo įkėlimas gali sąlygoti &lt;b&gt;duomenų praradimą&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Ar vis dar norite bandyti įkelti naują konfigūracijos failą? Spauskite &quot;Ne&quot;, norėdami tuoj pat baigti BibleTime darbą.</translation>
+        <translation>Pauliaus laiškai</translation>
     </message>
 </context>
 <context>
@@ -1176,7 +1170,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="63"/>
         <source>Default Session</source>
-        <translation>Numatytoji Sesija</translation>
+        <translation>Numatytoji sesija</translation>
     </message>
 </context>
 <context>
@@ -1252,7 +1246,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="71"/>
         <source>Edit Bookmark</source>
-        <translation>Redaguoti Adresyno Įrašą</translation>
+        <translation>Redaguoti adresyno įrašą</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="72"/>
@@ -1276,7 +1270,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="83"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tekstas, kurio ieškote</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="85"/>
@@ -1330,181 +1324,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Naudoti tinkintą šriftą</translation>
     </message>
     <message>
-        <source>Optionally specify a custom font for each language:</source>
-        <translation type="vanished">Pasirinktinai nurodykite pasirinktiną šriftą kiekvienai kalbai:</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="148"/>
         <source>Fonts</source>
         <translation>Šriftai</translation>
-    </message>
-</context>
-<context>
-    <name>BtIndexPage</name>
-    <message>
-        <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation type="vanished">Jei pasirinkta, tie indeksai, kurie neturi atitinkamos veiklos, paleidžiant BibleTime, bus ištrinami</translation>
-    </message>
-    <message>
-        <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation type="vanished">Paleidžiant BibleTime, automatiškai ištrinti pamestus indeksus</translation>
-    </message>
-    <message>
-        <source>Delete the selected indexes</source>
-        <translation type="vanished">Ištrinti pasirinktus indeksus</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Ištrinti</translation>
-    </message>
-    <message>
-        <source>Create new indexes for the selected works</source>
-        <translation type="vanished">Sukurti naujus indeksus pasirinktoms veikloms</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Veikla</translation>
-    </message>
-    <message>
-        <source>Index size</source>
-        <translation type="vanished">Indekso dydis</translation>
-    </message>
-    <message>
-        <source>%1 KiB</source>
-        <translation type="vanished">%1 KiB</translation>
-    </message>
-    <message>
-        <source>0 KiB</source>
-        <translation type="vanished">0 KiB</translation>
-    </message>
-    <message>
-        <source>Search Indexes</source>
-        <translation type="vanished">Paieškos Indeksai</translation>
-    </message>
-    <message>
-        <source>Indexed Works</source>
-        <translation type="vanished">Indeksuotos Veiklos</translation>
-    </message>
-    <message>
-        <source>Unindexed Works</source>
-        <translation type="vanished">Neindeksuotos Veiklos</translation>
-    </message>
-    <message>
-        <source>Create...</source>
-        <translation type="vanished">Sukurti...</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallModuleChooserDialog</name>
-    <message>
-        <source>Install/Update works?</source>
-        <translation type="vanished">Įdiegti/Atnaujinti veiklas?</translation>
-    </message>
-    <message>
-        <source>Do you really want to install these works?</source>
-        <translation type="vanished">Ar tikrai norite įdiegti šias veiklas?</translation>
-    </message>
-    <message>
-        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="vanished">Tuo pačiu metu gali būti įdiegta tik viena veiklos versija. Jei yra elementų pažymėtų raudonai, pasirinkite tik vieną.</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallModuleChooserDialogModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Veikla</translation>
-    </message>
-    <message>
-        <source>Installation source</source>
-        <translation type="vanished">Įdiegimo šaltinis</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="vanished">Versija</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPage</name>
-    <message>
-        <source>Install/Update</source>
-        <translation type="vanished">Įdiegti/Atnaujinti</translation>
-    </message>
-    <message>
-        <source>WARNING!!!</source>
-        <translation type="vanished">ĮSPĖJIMAS!!!</translation>
-    </message>
-    <message>
-        <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation type="vanished">Jeigu jūs gyvenate šalyje, kurioje yra persekiojimai ir nenorite rizikuoti būti aptikti, nesinaudokite nuotoliniais šaltiniais.</translation>
-    </message>
-    <message>
-        <source>Select installation &amp;source:</source>
-        <translation type="vanished">Pasirinkite įdiegimo ša&amp;ltinį:</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="vanished">&amp;Pridėti...</translation>
-    </message>
-    <message>
-        <source>Add new source</source>
-        <translation type="vanished">Pridėti naują šaltinį</translation>
-    </message>
-    <message>
-        <source>&amp;Delete...</source>
-        <translation type="vanished">&amp;Ištrinti...</translation>
-    </message>
-    <message>
-        <source>Delete this source</source>
-        <translation type="vanished">Ištrinti šį šaltinį</translation>
-    </message>
-    <message>
-        <source>Select &amp;works to install:</source>
-        <translation type="vanished">Pasirinkite &amp;veiklas, kurias norite įdiegti:</translation>
-    </message>
-    <message>
-        <source>Install &amp;folder:</source>
-        <translation type="vanished">Įdiegimo &amp;aplankas:</translation>
-    </message>
-    <message>
-        <source>The folder where the new works will be installed</source>
-        <translation type="vanished">Aplankas, kuriame bus įdiegtos naujos veiklos</translation>
-    </message>
-    <message>
-        <source>Configure folders where works are installed and found</source>
-        <translation type="vanished">Konfigūruoti aplankus, kuriuose yra diegiamos ir laikomos veiklos</translation>
-    </message>
-    <message>
-        <source>&amp;Install...</source>
-        <translation type="vanished">Į&amp;diegti...</translation>
-    </message>
-    <message>
-        <source>Start installation of %1 works from %2 sources:</source>
-        <translation type="vanished">Pradėti %1 veiklų diegimą iš %2 šaltinių:</translation>
-    </message>
-    <message>
-        <source>Start installation:</source>
-        <translation type="vanished">Pradėti diegimą:</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="vanished">Įspėjimas</translation>
-    </message>
-    <message>
-        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="vanished">Paskirties katalogas yra neįrašomas arba jo nėra. Įdiegimas nepavyks, nebent tai, iš pradžių, bus ištaisyta.</translation>
-    </message>
-    <message>
-        <source>Delete Source?</source>
-        <translation type="vanished">Ištrinti Šaltinį?</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete this source?</source>
-        <translation type="vanished">Ar tikrai norite ištrinti šį šaltinį?</translation>
-    </message>
-    <message>
-        <source>Install or update selected works</source>
-        <translation type="vanished">Įdiegti ar atnaujinti pasirinktas veiklas</translation>
     </message>
 </context>
 <context>
@@ -1523,138 +1345,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="78"/>
         <source>Description</source>
         <translation>Aprašas</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPageWorksWidget</name>
-    <message>
-        <source>Refresh the list of works from this source</source>
-        <translation type="vanished">Iš naujo įkelti šio šaltinio veiklų sąrašą</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallPathDialog</name>
-    <message>
-        <source>Bookshelf Folders</source>
-        <translation type="vanished">Knygų Lentynos Aplankai</translation>
-    </message>
-    <message>
-        <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation type="vanished">Veiklos gali būti įdiegtos į vieną ar daugiau aplankų. Po aplankų nustatymo čia, vieną iš šių aplankų galėsite pasirinkti Įdiegimo puslapyje.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation type="vanished">BibleTime ir SWORD biblioteka visas veiklas randa šiuose aplankuose. Jei šioje vietoje aplankas yra pašalinamas, jis vis dar išlieka sistemoje su visomis, jame esančiomis, veiklomis.</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf folders</source>
-        <translation type="vanished">Konfigūruoti knygų lentynos aplankus</translation>
-    </message>
-    <message>
-        <source>Configuration file for the folders is: </source>
-        <translation type="vanished">Aplankų konfigūracijos failas yra:</translation>
-    </message>
-    <message>
-        <source>Folders where new works can be installed</source>
-        <translation type="vanished">Aplankai, kuriuose gali būti įdiegtos naujos veiklos</translation>
-    </message>
-    <message>
-        <source>Read-only folders</source>
-        <translation type="vanished">Aplankai tik skaitymui</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="vanished">&amp;Pridėti...</translation>
-    </message>
-    <message>
-        <source>Add new folder</source>
-        <translation type="vanished">Pridėti naują aplanką</translation>
-    </message>
-    <message>
-        <source>&amp;Edit...</source>
-        <translation type="vanished">&amp;Redaguoti</translation>
-    </message>
-    <message>
-        <source>Edit the selected folder</source>
-        <translation type="vanished">Redaguoti pasirinktą aplanką</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="vanished">Ša&amp;linti</translation>
-    </message>
-    <message>
-        <source>Remove the selected folder</source>
-        <translation type="vanished">Pašalinti pasirinktą aplanką</translation>
-    </message>
-    <message>
-        <source>This default folder in your home directory can&apos;t be removed</source>
-        <translation type="vanished">Šis numatytasis aplankas jūsų namų kataloge negali būti pašalintas</translation>
-    </message>
-    <message>
-        <source>Choose Folder</source>
-        <translation type="vanished">Pasirinkti Aplanką</translation>
-    </message>
-    <message>
-        <source>Use Folder?</source>
-        <translation type="vanished">Naudoti Aplanką?</translation>
-    </message>
-    <message>
-        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation type="vanished">Šis aplankas yra neįrašomas, taigi, naudojant BibleTime, čia negali būti įrašytos veiklos. Ar norite naudoti šį aplanką vietoj ankstesnės reikšmės?</translation>
-    </message>
-    <message>
-        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation type="vanished">Šis aplankas yra neįrašomas, taigi, naudojant BibleTime, čia negali būti įrašytos veiklos. Ar vis dar norite pridėti aplanką prie knygų lentynos aplankų sąrašo?</translation>
-    </message>
-</context>
-<context>
-    <name>BtInstallProgressDialog</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Veikla</translation>
-    </message>
-    <message>
-        <source>Progress</source>
-        <translation type="vanished">Eiga</translation>
-    </message>
-    <message>
-        <source>Stop All</source>
-        <translation type="vanished">Stabdyti Visus</translation>
-    </message>
-    <message>
-        <source>Completed</source>
-        <translation type="vanished">Atlikta</translation>
-    </message>
-    <message>
-        <source>Waiting for turn...</source>
-        <translation type="vanished">Laukiama eilės...</translation>
-    </message>
-    <message>
-        <source>Preparing install...</source>
-        <translation type="vanished">Ruošiamasi diegti...</translation>
-    </message>
-    <message>
-        <source>Install Progress</source>
-        <translation type="vanished">Diegimo Eiga</translation>
-    </message>
-    <message>
-        <source>Failed</source>
-        <translation type="vanished">Nepavyko</translation>
-    </message>
-</context>
-<context>
-    <name>BtLanguageSettingsPage</name>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="vanished">Biblijos knygų pavadinimų kalba:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="vanished">Kalbos, kurios gali būti naudojamos Biblijos knygų pavadinimams. Vertimus pateikia Sword biblioteka.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="vanished">Kalbos</translation>
     </message>
 </context>
 <context>
@@ -1701,19 +1391,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="68"/>
         <source>Indexing aborted</source>
-        <translation type="unfinished">Indeksavimas nutrauktas</translation>
+        <translation>Indeksavimas nutrauktas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="69"/>
         <source>An internal error occurred while building the index.</source>
-        <translation type="unfinished">Įvyko vidinė klaida, kuriant indeksą.</translation>
-    </message>
-</context>
-<context>
-    <name>BtModuleManagerDialog</name>
-    <message>
-        <source>Bookshelf Manager</source>
-        <translation type="vanished">Knygų Lentynos Tvarkytuvė</translation>
+        <translation>Įvyko vidinė klaida, kuriant indeksą.</translation>
     </message>
 </context>
 <context>
@@ -1721,7 +1404,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="113"/>
         <source>&amp;Open work</source>
-        <translation>&amp;Atidaryti veiklą</translation>
+        <translation>&amp;Atverti veiklą</translation>
     </message>
 </context>
 <context>
@@ -1735,79 +1418,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btopenworkaction.cpp" line="49"/>
         <source>Sets the grouping order for the items in this menu.</source>
         <translation>Nustatykite šio meniu elementų grupavimo tvarką.</translation>
-    </message>
-</context>
-<context>
-    <name>BtRefreshProgressDialog</name>
-    <message>
-        <source>Refreshing source %1</source>
-        <translation type="vanished">Įkeliamas iš naujo šaltinis %1</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Atšaukti</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation type="vanished">Jungiamasi...</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="vanished">Įspėjimas</translation>
-    </message>
-    <message>
-        <source>Failed to refresh source %1</source>
-        <translation type="vanished">Nepavyko iš naujo įkelti šaltinio %1</translation>
-    </message>
-</context>
-<context>
-    <name>BtRemovePage</name>
-    <message>
-        <source>Select &amp;works to uninstall:</source>
-        <translation type="vanished">Pasirinkite &amp;veiklas, kurias norite šalinti:</translation>
-    </message>
-    <message>
-        <source>&amp;Remove...</source>
-        <translation type="vanished">Ša&amp;linti</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="vanished">Šalinti</translation>
-    </message>
-    <message>
-        <source>Start removal of %1 works:</source>
-        <translation type="vanished">Pradėti %1 veiklų šalinimą:</translation>
-    </message>
-    <message>
-        <source>Start removal:</source>
-        <translation type="vanished">Pradėti šalinimą:</translation>
-    </message>
-    <message>
-        <source>You selected the following work(s): </source>
-        <translation type="vanished">Jūs pasirinkote sekančią veiklą(-as):</translation>
-    </message>
-    <message>
-        <source>Do you really want to remove them from your system?</source>
-        <translation type="vanished">Ar tikrai norite šalinti ją/jas iš savo sistemos?</translation>
-    </message>
-    <message>
-        <source>Remove the selected works</source>
-        <translation type="vanished">Šalinti pasirinktas veiklas</translation>
-    </message>
-    <message>
-        <source>Remove Works?</source>
-        <translation type="vanished">Šalinti Veiklas?</translation>
-    </message>
-</context>
-<context>
-    <name>BtRemovePageTreeModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Veikla</translation>
-    </message>
-    <message>
-        <source>Install path</source>
-        <translation type="vanished">Diegimo kelias</translation>
     </message>
 </context>
 <context>
@@ -1906,28 +1516,28 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="21"/>
         <source>Getting Library List</source>
-        <translation type="unfinished"></translation>
+        <translation>Gaunamas bibliotekos sąrašas</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="27"/>
         <location filename="../../src/backend/btsourcesthread.cpp" line="38"/>
         <source>Updating stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinimas sustabdytas</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="42"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Atnaujinama nuotolinė biblioteka &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="54"/>
         <source>Remote libraries have been updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinės bibliotekos buvo atnaujintos.</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="57"/>
         <source>The following remote libraries failed to update: </source>
-        <translation type="unfinished"></translation>
+        <translation>Šių nuotolinių bibliotekų atnaujinti nepavyko: </translation>
     </message>
 </context>
 <context>
@@ -2023,7 +1633,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="74"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation>Filtrai valdo teksto išvaizdą. Čia galite nurodyti numatytuosius nustatymus visiems filtrams. Šie nustatymai pritaikomi tik naujai atidarytiems rodymo langams. Jūs galite nustelbti šiuos nustatymus kiekviename rodymo lange.</translation>
+        <translation>Filtrai valdo teksto išvaizdą. Čia galite nurodyti numatytuosius nustatymus visiems filtrams. Šie nustatymai pritaikomi tik naujai atvertiems rodymo langams. Jūs galite nustelbti šiuos nustatymus kiekviename rodymo lange.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
@@ -2099,7 +1709,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="64"/>
         <source>Tip Of The Day</source>
-        <translation>Dienos Patarimas</translation>
+        <translation>Dienos patarimas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="79"/>
@@ -2109,7 +1719,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="90"/>
         <source>Next Tip</source>
-        <translation>Kitas Patarimas</translation>
+        <translation>Kitas patarimas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="114"/>
@@ -2149,7 +1759,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="139"/>
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
-        <translation>Norėdami veikloms įkelti kelis įdiegimo šaltinius, eikite į Knygų Lentynos Tvarkytuvę, pasirinkite mygtuką Pridėti, o tuomet mygtuką Gauti sąrašą.</translation>
+        <translation>Norėdami veikloms įkelti kelis įdiegimo šaltinius, eikite į Knygų lentynos tvarkytuvę, pasirinkite mygtuką Pridėti, o tuomet mygtuką Gauti sąrašą.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
@@ -2164,17 +1774,17 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="151"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation>Veikloje galite ieškoti Strongo numerių. Pradėkite su Strongo numerius turinčia veikla ir užveskite pelę ant dominančio žodžio. Spustelėkite ant žodžio dešiniu pelės mygtuku ir naudokite meniu punktą Strongo Paieška. Atsiras paieškos dialogo langas, leidžiantis matyti Strongo numerio naudojimą kitose veiklos vietose.</translation>
+        <translation>Veikloje galite ieškoti Strongo numerių. Pradėkite su Strongo numerius turinčia veikla ir užveskite pelę ant dominančio žodžio. Spustelėkite ant žodžio dešiniu pelės mygtuku ir naudokite meniu punktą Strongo paieška. Atsiras paieškos dialogo langas, leidžiantis matyti Strongo numerio naudojimą kitose veiklos vietose.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="166"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation>Jūs galite išsaugoti savo sesijoje atidarytus langus. Tokia sesija, vėliau gali būti lengvai atkurta. Jūs galite išsaugoti tiek sesijų, kiek panorėsite. Sesijų ypatybę galite pasiekti Lango meniu įraše.</translation>
+        <translation>Jūs galite išsaugoti savo sesijoje atvertus langus. Tokia sesija, vėliau gali būti lengvai atkurta. Jūs galite išsaugoti tiek sesijų, kiek panorėsite. Sesijų ypatybę galite pasiekti Lango meniu įraše.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="156"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation>Specifinėms eilučių nuorodoms, galite išsaugoti asmenines pastabas. Jūs privalote įdiegti Asmeninius (angl. Personal) komentarus. Atidarykite Knygų Lentynos Tvarkytuvę, kaip šaltinį pasirinkite Crosswire, ir žiūrėkite Komentarai ir Anglų. Įdiegę, naudokite Knygų lentynos langą ir dešiniu pelės mygtuku spustelėkite ant Asmeninių (angl. Personal) komentarų. Naudokite meniu Redaguoti, Grynas tekstas arba Redaguoti, HTML, kad atidarytumėte veiklą rašymo veiksenoje.</translation>
+        <translation>Specifinėms eilučių nuorodoms, galite išsaugoti asmenines pastabas. Jūs privalote įdiegti Asmeninius (angl. Personal) komentarus. Atverkite Knygų lentynos tvarkytuvę, kaip šaltinį pasirinkite Crosswire, ir žiūrėkite Komentarai ir Anglų. Įdiegę, naudokite Knygų lentynos langą ir dešiniu pelės mygtuku spustelėkite ant Asmeninių (angl. Personal) komentarų. Naudokite meniu Redaguoti, Grynas tekstas arba Redaguoti, HTML, kad atvertumėte veiklą rašymo veiksenoje.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="162"/>
@@ -2195,42 +1805,42 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="73"/>
         <source>Welcome to BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Sveiki atvykę į BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="76"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation type="unfinished">BibleTime yra paprastas, bet galingas Biblijos studijavimo įrankis.</translation>
+        <translation>BibleTime yra paprastas, bet galingas Biblijos studijavimo įrankis.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="78"/>
         <source>Before you can use this application some works must be installed. </source>
-        <translation type="unfinished"></translation>
+        <translation>Prieš tai, kai galėsite naudotis šia programa, privalo būti įdiegtos kai kurios veiklos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="79"/>
         <source>Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. </source>
-        <translation type="unfinished"></translation>
+        <translation>Įvairios veiklos, tokios kaip Biblijos, knygos, komentarai ir leksikonai, yra prieinamos iš nuotolinių bibliotekų.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Choose the &quot;Install works&quot; button to download works. </source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite mygtuką &quot;Įdiegti veiklas&quot;, kad atsisiųstumėte veiklas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="82"/>
         <source>The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Meniu elementas &quot;Nustatymai &gt; Knygų lentynos tvarkytuvė&quot; taip pat įdiegia veiklas ir gali būti naudojamas vėliau.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="85"/>
         <source>Install later</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegti vėliau</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="87"/>
         <source>Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegti veiklas...</translation>
     </message>
 </context>
 <context>
@@ -2243,7 +1853,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="141"/>
         <source>Main Window</source>
-        <translation>Pagrindinis Langas</translation>
+        <translation>Pagrindinis langas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="142"/>
@@ -2390,21 +2000,9 @@ spartusis klavišas</translation>
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <source>Bookmarks</source>
-        <translation type="vanished">Adresynas</translation>
-    </message>
-    <message>
-        <source>New folder</source>
-        <translation type="vanished">Naujas aplankas</translation>
-    </message>
-    <message>
-        <source>Rename folder</source>
-        <translation type="vanished">Pervadinti aplanką</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="607"/>
         <source>Delete Items</source>
-        <translation>Ištrinti Elementus</translation>
+        <translation>Ištrinti elementus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="686"/>
@@ -2412,42 +2010,14 @@ spartusis klavišas</translation>
         <translation>Veikla, į kurią nurodo adresyno įrašas, neįdiegta.</translation>
     </message>
     <message>
-        <source>Print bookmarks...</source>
-        <translation type="vanished">Spausdinti adresyno įrašus...</translation>
-    </message>
-    <message>
-        <source>Remove selected items...</source>
-        <translation type="vanished">Šalinti pasirinktus elementus...</translation>
-    </message>
-    <message>
-        <source>Import to folder...</source>
-        <translation type="vanished">Importuoti į aplanką...</translation>
-    </message>
-    <message>
-        <source>Edit bookmark...</source>
-        <translation type="vanished">Redaguoti adresyno įrašą...</translation>
-    </message>
-    <message>
-        <source>Sort folder bookmarks...</source>
-        <translation type="vanished">Rikiuoti aplanko adresyno įrašus...</translation>
-    </message>
-    <message>
-        <source>Sort all bookmarks...</source>
-        <translation type="vanished">Rikiuoti visus adresyno įrašus...</translation>
-    </message>
-    <message>
-        <source>Export from folder...</source>
-        <translation type="vanished">Eksportuoti iš aplanko...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="387"/>
         <source>Can drop only bookmarks or one folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Galima numesti tik adresyno įrašus ar vieną aplanką</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="391"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Negalima numesti aplanką į save patį ar į jo poaplankius</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="397"/>
@@ -2467,7 +2037,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="608"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite ištrinti pasirinktus elementus ir aplankus?</translation>
     </message>
 </context>
 <context>
@@ -2524,28 +2094,24 @@ spartusis klavišas</translation>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <source>Display templates</source>
-        <translation type="vanished">Rodyti šablonus</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="114"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Biblijos knygų pavadinimų kalba:</translation>
+        <translation>Biblijos knygų pavadinimų kalba:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="115"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="unfinished">Kalbos, kurios gali būti naudojamos Biblijos knygų pavadinimams. Vertimus pateikia Sword biblioteka.</translation>
+        <translation>Kalbos, kurios gali būti naudojamos Biblijos knygų pavadinimams. Vertimus pateikia Sword biblioteka.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="119"/>
         <source>Show startup logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti prisistatymo logotipą:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Show the BibleTime logo on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti BibleTime logotipą paleidus programą.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
@@ -2560,7 +2126,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar žinojote? Jūs galite padėti išversti BibleTime grafinę naudotojo sąsają į savo kalbą, puslapyje %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="228"/>
@@ -2586,18 +2152,6 @@ spartusis klavišas</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>O kas vykdo tiesą, tas eina į šviesą, kad išryškėtų, jog jo darbai atlikti Dieve.</translation>
-    </message>
-    <message>
-        <source>Display templates define how text is displayed.</source>
-        <translation type="vanished">Rodymo šablonai apibrėžia kaip yra rodomas tekstas.</translation>
-    </message>
-    <message>
-        <source>Show the BibleTime logo on startup</source>
-        <translation type="vanished">Rodyti BibleTime logotipą paleidus programą</translation>
-    </message>
-    <message>
-        <source>Show startup logo</source>
-        <translation type="vanished">Rodyti prisistatymo logotipą</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
@@ -2806,7 +2360,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
         <source>Strong&apos;s Search</source>
-        <translation>Strongo Paieška</translation>
+        <translation>Strongo paieška</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
@@ -2903,12 +2457,12 @@ spartusis klavišas</translation>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save Text?</source>
-        <translation>Išsaugoti Tekstą?</translation>
+        <translation>Išsaugoti tekstą?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <source>Save text before closing?</source>
-        <translation>Išsaugoti tekstą prieš uždarant?</translation>
+        <translation>Išsaugoti tekstą prieš užveriant?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
@@ -2921,12 +2475,12 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="231"/>
         <source>Save Search Analysis</source>
-        <translation>Išsaugokite Paieškos Analizę</translation>
+        <translation>Išsaugokite paieškos analizę</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="242"/>
         <source>BibleTime Search Analysis</source>
-        <translation>BibleTime Paieškos Analizė</translation>
+        <translation>BibleTime paieškos analizė</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="233"/>
@@ -2936,7 +2490,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
         <source>Search text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ieškomas tekstas:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
@@ -2962,168 +2516,168 @@ spartusis klavišas</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="756"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="752"/>
         <source>Version</source>
         <translation>Versija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>unknown</source>
         <translation>nežinoma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
         <source>Markup</source>
         <translation>Ženklinimas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
         <source>Location</source>
         <translation>Vieta</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
         <source>Language</source>
         <translation>Kalba</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
         <source>Category</source>
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>Writable</source>
         <translation>Įrašomas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
         <source>yes</source>
         <translation>taip</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
         <source>no</source>
         <translation>ne</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>Unlock key</source>
         <translation>Atrakinimo raktas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
         <source>Features</source>
         <translation>Ypatybės</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Saugokitės, šioje veikloje yra kultinė / abejotina medžiaga!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>About</source>
         <translation>Apie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Distribution license</source>
         <translation>Platinimo licencija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="826"/>
         <source>Distribution source</source>
         <translation>Platinimo šaltinis</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="827"/>
         <source>Distribution notes</source>
         <translation>Platinimo pastabos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
         <source>Text source</source>
         <translation>Teksto šaltinis</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
         <source>Copyright notes</source>
         <translation>Autorių teisių pastabos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
         <source>Copyright holder</source>
         <translation>Autorių teisių turėtojas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
         <source>Copyright date</source>
         <translation>Autorių teisių data</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
         <source>Copyright contact name</source>
         <translation>Autorių teisių kontaktinis vardas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>Copyright contact address</source>
         <translation>Autorių teisių kontaktinis adresas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Copyright contact email</source>
         <translation>Autorių teisių kontaktinis el. paštas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="923"/>
         <source>Bibles</source>
         <translation>Biblijos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
         <source>Commentaries</source>
         <translation>Komentarai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
         <source>Books</source>
         <translation>Knygos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultai/Netradiciniai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
         <source>Maps and Images</source>
-        <translation>Žemėlapiai ir Paveikslėliai</translation>
+        <translation>Žemėlapiai ir paveikslai</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <source>Daily Devotionals</source>
+        <translation>Kasdieniai pašventimai</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <source>Lexicons and Dictionaries</source>
+        <translation>Leksikonai ir žodynai</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
-        <source>Daily Devotionals</source>
-        <translation>Kasdieniai Pašventimai</translation>
+        <source>Glossaries</source>
+        <translation>Aiškinamieji žodynai</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
-        <source>Lexicons and Dictionaries</source>
-        <translation>Leksikonai ir Žodynai</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
-        <source>Glossaries</source>
-        <translation>Aiškinamieji Žodynai</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
         <source>Unknown</source>
         <translation>Nežinoma</translation>
     </message>
@@ -3234,7 +2788,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="171"/>
         <source>Downloading List</source>
-        <translation>Atsiunčiamas Sąrašas</translation>
+        <translation>Atsiunčiamas sąrašas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="183"/>
@@ -3250,18 +2804,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="41"/>
         <source>New  Installation Source</source>
-        <translation>Naujas Įdiegimo Šaltinis</translation>
-    </message>
-</context>
-<context>
-    <name>FontSizeSlider</name>
-    <message>
-        <source>Ok</source>
-        <translation type="vanished">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Atšaukti</translation>
+        <translation>Naujas įdiegimo šaltinis</translation>
     </message>
 </context>
 <context>
@@ -3270,26 +2813,6 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="125"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versija: %3&lt;/p&gt;&lt;/div&gt;</translation>
-    </message>
-    <message>
-        <source>Abbreviation</source>
-        <translation type="vanished">Santrumpos</translation>
-    </message>
-    <message>
-        <source>Cross references</source>
-        <translation type="vanished">Kryžminės nuorodos</translation>
-    </message>
-    <message>
-        <source>Footnote</source>
-        <translation type="vanished">Išnaša</translation>
-    </message>
-    <message>
-        <source>Strongs</source>
-        <translation type="vanished">Strongo</translation>
-    </message>
-    <message>
-        <source>Morphology</source>
-        <translation type="vanished">Morfologija</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="57"/>
@@ -3305,100 +2828,6 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="77"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Tai yra Peržiūros langelio sritis. Užveskite pelę virš nuorodų ar kitų, kažkokius duomenis talpinančių elementų, ir netrukus jų turinys pasirodys Peržiūros langelyje. Greitai nuveskite pelę į Peržiūros langelį arba, judindami pelę, užrakinkite rodinį nuspausdami ir laikydami Shift klavišą.&lt;/small&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>InstallManagerChooser</name>
-    <message>
-        <source>Source</source>
-        <translation type="vanished">Šaltinis</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="vanished">Kategorija</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Kalba</translation>
-    </message>
-    <message>
-        <source>Document</source>
-        <translation type="vanished">Dokumentas</translation>
-    </message>
-    <message>
-        <source>Refresh Lists</source>
-        <translation type="vanished">Iš naujo įkelti Sąrašus</translation>
-    </message>
-    <message>
-        <source>Install / Remove</source>
-        <translation type="vanished">Įdiegti / Šalinti</translation>
-    </message>
-</context>
-<context>
-    <name>ListWorksView</name>
-    <message>
-        <source>Remove</source>
-        <translation type="vanished">Šalinti</translation>
-    </message>
-    <message>
-        <source>Install</source>
-        <translation type="vanished">Įdiegti</translation>
-    </message>
-</context>
-<context>
-    <name>MainToolbar</name>
-    <message>
-        <source>BibleTime Mobile</source>
-        <translation type="vanished">BibleTime Mobilioji versija</translation>
-    </message>
-</context>
-<context>
-    <name>ModuleChooser</name>
-    <message>
-        <source>Unlock</source>
-        <translation type="vanished">Atrakinti</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="vanished">Kategorija</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Kalba</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="vanished">Veikla</translation>
-    </message>
-</context>
-<context>
-    <name>Progress</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Atšaukti</translation>
-    </message>
-</context>
-<context>
-    <name>QCoreApplication</name>
-    <message>
-        <source>Indexing aborted</source>
-        <translation type="vanished">Indeksavimas nutrauktas</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while building the index: %1</source>
-        <translation type="vanished">Įvyko vidinė klaida, kuriant indeksą: %1</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while building the index.</source>
-        <translation type="vanished">Įvyko vidinė klaida, kuriant indeksą.</translation>
-    </message>
-    <message>
-        <source>Search aborted</source>
-        <translation type="vanished">Paieška nutraukta</translation>
-    </message>
-    <message>
-        <source>An internal error occurred while executing your search.</source>
-        <translation type="vanished">Įvyko vidinė klaida, vykdant jūsų paiešką.</translation>
     </message>
 </context>
 <context>
@@ -3419,19 +2848,19 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="83"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="193"/>
         <source>Maps and Images</source>
-        <translation>Žemėlapiai ir Paveikslėliai</translation>
+        <translation>Žemėlapiai ir paveikslai</translation>
     </message>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="84"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="192"/>
         <source>Daily Devotionals</source>
-        <translation>Kadieniai Pašventimai</translation>
+        <translation>Kadieniai pašventimai</translation>
     </message>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="85"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="190"/>
         <source>Lexicons and Dictionaries</source>
-        <translation>Leksikonai ir Žodynai</translation>
+        <translation>Leksikonai ir žodynai</translation>
     </message>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="86"/>
@@ -3445,7 +2874,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="87"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="191"/>
         <source>Glossaries</source>
-        <translation>Aiškinamieji Žodynai</translation>
+        <translation>Aiškinamieji žodynai</translation>
     </message>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="88"/>
@@ -3619,7 +3048,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="210"/>
         <source>Church Slavic</source>
         <extracomment>Language name cu</extracomment>
-        <translation>Senoji Bažnytinė Slavų</translation>
+        <translation>Senoji bažnytinė slavų</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="213"/>
@@ -3661,7 +3090,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
         <source>American English</source>
         <extracomment>Language name en_US</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Jungtinių Valstijų anglų</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="228"/>
@@ -3763,7 +3192,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="265"/>
         <source>Hausa</source>
         <extracomment>Language name hau</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hausų</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="267"/>
@@ -3847,7 +3276,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
         <source>Javanese, Caribbean</source>
         <extracomment>Language name jvn</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Javiečių, Karibų</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="303"/>
@@ -4027,7 +3456,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
         <source>Brasilian Portuguese</source>
         <extracomment>Language name pt_BR</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Brazilijos portugalų</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="421"/>
@@ -4093,7 +3522,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="458"/>
         <source>Syriac</source>
         <extracomment>Language name syr</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sirų</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="460"/>
@@ -4271,62 +3700,62 @@ Ar norite tęsti?</translation>
         <translation>Zulų</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="323"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="322"/>
         <source>Footnotes</source>
         <translation>Išnašos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="325"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strongo numeriai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="327"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
         <source>Headings</source>
         <translation>Antraštės</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="329"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
         <source>Morphological tags</source>
         <translation>Morfologinės žymės</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="331"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
         <source>Lemmas</source>
         <translation>Lemos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="333"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
         <source>Hebrew vowel points</source>
         <translation>Hebrajų balsių taškai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="335"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
         <source>Hebrew cantillation marks</source>
         <translation>Hebrajų kantiliacijos žymės</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
         <source>Greek accents</source>
         <translation>Graikų kirčiai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="338"/>
         <source>Red letter words</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="340"/>
         <source>Textual variants</source>
         <translation>Teksto variantai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
         <source>Scripture cross-references</source>
         <translation>Šventojo Rašto kryžminės nuorodos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
         <source>Morph segmentation</source>
         <translation>Morfemų segmentavimas</translation>
     </message>
@@ -4453,7 +3882,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="77"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation>Nepavyko atidaryti failo išsaugojimui.</translation>
+        <translation>Nepavyko atverti failo išsaugojimui.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="215"/>
@@ -4561,17 +3990,9 @@ Ar norite tęsti?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Can&apos;t write file</source>
-        <translation type="vanished">Nepavyko įrašyti failo</translation>
-    </message>
-    <message>
-        <source>The Sword config file can&apos;t be written!</source>
-        <translation type="vanished">The Sword konfigūracijos failas negali būti įrašytas!</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="550"/>
         <source>Export Bookmarks</source>
-        <translation>Eksportuoti Adresyną</translation>
+        <translation>Eksportuoti adresyną</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="564"/>
@@ -4581,12 +4002,12 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="46"/>
         <source>Overwrite File?</source>
-        <translation>Pakeisti Failą?</translation>
+        <translation>Pakeisti failą?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="288"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation>Analizuojami Strongo Numeriai</translation>
+        <translation>Analizuojami Strongo numeriai</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="165"/>
@@ -4621,12 +4042,12 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/main.cpp" line="49"/>
         <source>Open a clean session</source>
-        <translation>Atidaryti švarią sesiją</translation>
+        <translation>Atverti švarią sesiją</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="52"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation>Atidaryti numatytąją Bibliją su nuoroda &lt;ref&gt;</translation>
+        <translation>Atverti numatytąją Bibliją su nuoroda &lt;ref&gt;</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="55"/>
@@ -4666,28 +4087,28 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="227"/>
         <source>Abbreviation</source>
-        <translation type="unfinished">Santrumpos</translation>
+        <translation>Santrumpos</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="237"/>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="318"/>
         <source>Cross references</source>
-        <translation type="unfinished">Kryžminės nuorodos</translation>
+        <translation>Kryžminės nuorodos</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="365"/>
         <source>Footnote</source>
-        <translation type="unfinished">Išnaša</translation>
+        <translation>Išnaša</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="396"/>
         <source>Strongs</source>
-        <translation type="unfinished">Strongo</translation>
+        <translation>Strongo</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
         <source>Morphology</source>
-        <translation type="unfinished">Morfologija</translation>
+        <translation>Morfologija</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="494"/>
@@ -4707,7 +4128,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="60"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
-        <translation>Atidaryti</translation>
+        <translation>Atverti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="61"/>
@@ -4725,7 +4146,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="63"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
-        <translation>Uždaryti</translation>
+        <translation>Užverti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="64"/>
@@ -4786,40 +4207,6 @@ Ar norite tęsti?</translation>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Question</name>
-    <message>
-        <source>Yes</source>
-        <translation type="vanished">Taip</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="vanished">Ne</translation>
-    </message>
-</context>
-<context>
-    <name>Search</name>
-    <message>
-        <source>Search</source>
-        <translation type="vanished">Ieškoti</translation>
-    </message>
-    <message>
-        <source>Find</source>
-        <translation type="vanished">Rasti</translation>
-    </message>
-    <message>
-        <source>All Words</source>
-        <translation type="vanished">Visi Žodžiai</translation>
-    </message>
-    <message>
-        <source>Any Word</source>
-        <translation type="vanished">Bet Kuris Žodis</translation>
-    </message>
-    <message>
-        <source>Regular Expression</source>
-        <translation type="vanished">Reguliari Išraiška</translation>
     </message>
 </context>
 <context>
@@ -4948,7 +4335,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="44"/>
         <source>Search Syntax Help</source>
-        <translation>Paieškos Sintaksės Pagalba</translation>
+        <translation>Paieškos sintaksės pagalba</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="91"/>
@@ -5054,12 +4441,12 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
         <source>&quot;says the lord&quot;</source>
-        <translation>&quot;sako Izraelio Viešpats&quot;</translation>
+        <translation>&quot;sako Viešpats Izraelio Dievas&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation>Randa visas eilutes su &apos;sako Galybių Viešpats&apos;</translation>
+        <translation>Randa visas eilutes su &apos;sako Viešpats Izraelio Dievas&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="153"/>
@@ -5084,7 +4471,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation>&apos;Asirija&apos;, &apos;abba&apos;, &apos;alkana&apos; ir t. t.</translation>
+        <translation>&apos;Asirija&apos;, &apos;ateina&apos;, &apos;arba&apos; ir t. t.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
@@ -5319,7 +4706,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="136"/>
         <source>Setup Search Scopes</source>
-        <translation>Paieškos Sričių Nustatymas</translation>
+        <translation>Paieškos sričių nustatymas</translation>
     </message>
 </context>
 <context>
@@ -5347,17 +4734,17 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="172"/>
         <source>Search aborted</source>
-        <translation type="unfinished">Paieška nutraukta</translation>
+        <translation>Paieška nutraukta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="173"/>
         <source>An internal error occurred while executing your search.</source>
-        <translation type="unfinished">Įvyko vidinė klaida, vykdant jūsų paiešką.</translation>
+        <translation>Įvyko vidinė klaida, vykdant jūsų paiešką.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="224"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation>Tempkite bet kurią eilutės nuorodą į atidarytą Biblijos langą</translation>
+        <translation>Tempkite bet kurią eilutės nuorodą į atvertą Biblijos langą</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="229"/>
@@ -5372,7 +4759,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="236"/>
         <source>&amp;Close</source>
-        <translation>&amp;Uždaryti</translation>
+        <translation>&amp;Užverti</translation>
     </message>
 </context>
 <context>
@@ -5434,40 +4821,11 @@ Ar norite tęsti?</translation>
     </message>
 </context>
 <context>
-    <name>Settings</name>
-    <message>
-        <source>Ui Font Size</source>
-        <translation type="vanished">Naudotojo Sąsajos Šrifto Dydis</translation>
-    </message>
-    <message>
-        <source>Window Arrangement</source>
-        <translation type="vanished">Langų Išdėstymas</translation>
-    </message>
-</context>
-<context>
-    <name>StartupBookshelfManager</name>
-    <message>
-        <source>Ok</source>
-        <translation type="vanished">Gerai</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Atšaukti</translation>
-    </message>
-</context>
-<context>
-    <name>Window</name>
-    <message>
-        <source>Text Font Size</source>
-        <translation type="vanished">Teksto Šrifto Dydis</translation>
-    </message>
-</context>
-<context>
     <name>btm::BtSearchInterface</name>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeksuojama</translation>
     </message>
 </context>
 <context>
@@ -5488,7 +4846,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
         <source>Refreshing</source>
-        <translation type="unfinished"></translation>
+        <translation>Įkeliama iš naujo</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
@@ -5501,7 +4859,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="48"/>
         <source>Refreshing Source List</source>
-        <translation type="unfinished"></translation>
+        <translation>Iš naujo įkeliamas šaltinių sąrašas</translation>
     </message>
 </context>
 <context>
@@ -5509,87 +4867,17 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="53"/>
         <source>Book</source>
-        <translation type="unfinished">Knyga</translation>
+        <translation>Knyga</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="62"/>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Skyrius</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="69"/>
         <source>Verse</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>findWidget</name>
-    <message>
-        <source>The text you want to search for</source>
-        <translation type="vanished">Tekstas, kurio ieškote</translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <source>New Window</source>
-        <translation type="vanished">Naujas Langas</translation>
-    </message>
-    <message>
-        <source>View Window</source>
-        <translation type="vanished">Rodyti Langą</translation>
-    </message>
-    <message>
-        <source>Text Font Size</source>
-        <translation type="vanished">Teksto Šrifto Dydis</translation>
-    </message>
-    <message>
-        <source>User Interface Font Size</source>
-        <translation type="vanished">Vartotojo Sąsajos Šrifto Dydis</translation>
-    </message>
-    <message>
-        <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
-        <translation type="vanished">Kai kurie iš modulių, kuriuose norite atlikti paiešką, turi būti indeksuoti. Ar norite juos indeksuoti dabar?</translation>
-    </message>
-    <message>
-        <source>Close Window</source>
-        <translation type="vanished">Užverti Langą</translation>
-    </message>
-    <message>
-        <source>Window Arrangement</source>
-        <translation type="vanished">Langų Išdėstymas</translation>
-    </message>
-    <message>
-        <source>Manage Installed Documents</source>
-        <translation type="vanished">Tvarkyti Įdiegtus Dokumentus</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Apie</translation>
-    </message>
-    <message>
-        <source>Single</source>
-        <translation type="vanished">Pavieniui</translation>
-    </message>
-    <message>
-        <source>Tabbed</source>
-        <translation type="vanished">Kortelėmis</translation>
-    </message>
-    <message>
-        <source>Auto-tile</source>
-        <translation type="vanished">Automatiškai iškloti</translation>
-    </message>
-    <message>
-        <source>Auto-tile horizontally</source>
-        <translation type="vanished">Automatiškai iškloti gulsčiai</translation>
-    </message>
-    <message>
-        <source>Auto-tile vertically</source>
-        <translation type="vanished">Automatiškai iškloti stačiai</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to quit?</source>
-        <translation type="vanished">Ar tikrai norite baigti?</translation>
+        <translation>Eilutė</translation>
     </message>
 </context>
 </TS>

@@ -200,12 +200,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/SearchResults.qml" line="127"/>
         <source>Documents</source>
-        <translation type="unfinished"/>
+        <translation>文書</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SearchResults.qml" line="158"/>
         <source>References</source>
-        <translation type="unfinished"/>
+        <translation>参考書</translation>
     </message>
 </context>
 <context>
@@ -267,7 +267,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
         <source>Indexing</source>
-        <translation type="unfinished"/>
+        <translation>インデックスを付与しています</translation>
     </message>
 </context>
 <context>
@@ -288,7 +288,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
         <source>Refreshing</source>
-        <translation type="unfinished"/>
+        <translation>更新中</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
@@ -301,7 +301,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
         <source>Refreshing Source List</source>
-        <translation type="unfinished"/>
+        <translation>ソース一覧の更新中</translation>
     </message>
 </context>
 <context>

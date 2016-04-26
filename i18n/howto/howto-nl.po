@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Bart Groeneveld, 2016
 # Harry Vennik <htvennik@zonnet.nl>, 2003
 # Willem G Jackson <willem.de.geweldige@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2016-02-12 19:06+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"PO-Revision-Date: 2016-03-03 18:09+0000\n"
+"Last-Translator: Bart Groeneveld\n"
 "Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
 "nl/)\n"
 "Language: nl\n"
@@ -41,6 +42,9 @@ msgid ""
 "life; and it is these that bear witness of Me; and you are unwilling to come "
 "to Me, that you may have life."
 msgstr ""
+"\"Gij onderzoekt de schriften, want gij meent daarin eeuwig leven te hebben, "
+"en deze zijn het die van Mij getuigen, en toch wilt gij niet tot Mij komen "
+"om leven te hebben.\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:14
@@ -72,6 +76,11 @@ msgid ""
 "\" Their study was an end in itself. In this they were grievously deceived. "
 "[...]"
 msgstr ""
+"De Joden tot wie Jezus sprak [..] dachten dat het kennen van de Schrift "
+"gelijkwaardig was aan het kennen van het leven. Hillel zei, \"Hij die "
+"zichzelf de woorden van de Torah heeft eigen gemaakt, heeft zichzelf het "
+"leven in de nakomende wereld eigen gemaakt.\" Hun studie was op zichzelf "
+"vruchteloos. Hierin werden ze vreselijk misleid. [..]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:28
@@ -98,6 +107,10 @@ msgid ""
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
 msgstr ""
+"Luisteren en lezen zorgen voor een brede kijk op de Schrift, terwijl "
+"Bijbelstudie en van buiten leren zorgen voor een gedetailleerde blijk op de "
+"Schrift. Mediteren op de Schrift brengt luisteren, lezen studeren en van "
+"buiten leren bij elkaar en legt de woorden vast in ons hoofd."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
@@ -110,6 +123,8 @@ msgid ""
 "Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
 "quote>"
 msgstr ""
+"Luk.11:28 <quote>\"Maar Hij zeide: Zeker, zalig, die het woord van God horen "
+"en het bewaren.\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:48
@@ -122,13 +137,15 @@ msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
 msgstr ""
+"Opb.1:3 <quote>\"Zalig is hij, die voorleest, en zij, die horen de woorden "
+"der profetie [...]\"</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:52
 msgid ""
 "1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
 "quote>"
-msgstr ""
+msgstr "1 Tim.4:13 <quote>Houd aan in het lezen [...]</quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:57
@@ -984,7 +1001,7 @@ msgstr "Hoeveel van de hier opgenoemde wapens zijn verdedigingswapens?"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:251
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:254
@@ -994,7 +1011,7 @@ msgstr "En hoeveel aanvalswapens?"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:255
 msgid "One"
-msgstr ""
+msgstr "Een"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:258
@@ -1193,7 +1210,7 @@ msgstr ""
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:30
 msgid "Definition"
-msgstr ""
+msgstr "Definitie"
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:31
@@ -1653,7 +1670,7 @@ msgstr ""
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
-msgstr ""
+msgstr "<application>BibleTime</application>"
 
 #. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:6
@@ -1678,7 +1695,7 @@ msgstr "Harman"
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:22
 msgid "The BibleTime Team"
-msgstr ""
+msgstr "Het BibleTime-team"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -1729,7 +1746,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:52
 msgid "Bible"
-msgstr ""
+msgstr "Bijbel"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:54

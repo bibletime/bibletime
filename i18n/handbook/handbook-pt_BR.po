@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Martin Gruner <martin.gruner@otrs.com>, 2016
 # Saulo, 2009
+# Timothy Brennan Jr <timotheonb@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:25+0100\n"
-"PO-Revision-Date: 2016-02-12 19:07+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"PO-Revision-Date: 2016-04-26 18:38+0000\n"
+"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/bibletime/"
 "bibletime/language/pt_BR/)\n"
 "Language: pt_BR\n"
@@ -21,7 +23,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:2
 msgid "Configuring &bibletime;"
-msgstr "Configurando &bibletime;"
+msgstr "Configurando  &bibletime;"
 
 #. type: Content of: <chapter><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:3
@@ -1773,6 +1775,10 @@ msgid ""
 "keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
 "guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
+"keycombo> </shortcut> <guimenu>Visualizar</guimenu> "
+"<guimenuitem>Ferramentas</guimenuitem> <guimenuitem>Mostrar Principal</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:189
@@ -3294,6 +3300,8 @@ msgid ""
 "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2015</year> <holder>A Equipe Bibletime </holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
@@ -3305,12 +3313,12 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
 msgid "<date>January 2014</date>"
-msgstr ""
+msgstr "<date>Janeiro de 2014</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 msgid "2.10.1"
-msgstr ""
+msgstr "<date>Janeiro de 2014</date>"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
@@ -3322,6 +3330,12 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs;."
 msgstr ""
+"A &bibletime; é um programa de estudo bíblico livre/grátis. A interface de "
+"usuário do programa foi criado com o framework do &qt;, o que o permite "
+"rodar em vários sistemas operacionais incluindo o Linux, Windows, FreeBSD e "
+"Mac OS X. O softare usa a bibliotace de programação &sword; para trabalhar "
+"com mais de 200 textos bíblicos, de comentários, dicionários e libros em "
+"mais de 50 idiomas providenciados pela &cbs;."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:68

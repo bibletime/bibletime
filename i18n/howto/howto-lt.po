@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Moo, 2014-2015
+# Moo, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2016-02-12 19:06+0000\n"
+"PO-Revision-Date: 2016-04-25 16:00+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/bibletime/bibletime/"
 "language/lt/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:2
 msgid "Bible Study Basics"
-msgstr "Biblijos Studijavimo Pagrindai"
+msgstr "Biblijos studijavimo pagrindai"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
@@ -199,12 +199,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Types of Bible Studies"
-msgstr "Biblijos Studijavimo Tipai"
+msgstr "Biblijos studijavimo tipai"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:93
 msgid "Topical Study"
-msgstr "Teminis Studijavimas"
+msgstr "Teminis studijavimas"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:94
@@ -216,7 +216,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:98
 msgid "Character Study"
-msgstr "Asmens Studijavimas"
+msgstr "Asmens studijavimas"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:99
@@ -239,7 +239,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:109
 msgid "Basics of Correct Interpretation"
-msgstr "Teisingo Išaiškinimo Pagrindai"
+msgstr "Teisingo išaiškinimo pagrindai"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:111
@@ -494,7 +494,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-importance.docbook:2
 msgid "Importance of God's Word"
-msgstr "Dievo Žodžio Svarba"
+msgstr "Dievo Žodžio svarba"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-importance.docbook:3
@@ -549,12 +549,12 @@ msgstr "Darbas"
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "When Written"
-msgstr "Kada Parašyta"
+msgstr "Kada parašyta"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "Earliest Copy"
-msgstr "Anksčiausias Egzempliorius"
+msgstr "Anksčiausias egzempliorius"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:36
@@ -564,7 +564,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
-msgstr "Egzempliorių Skaičius"
+msgstr "Egzempliorių skaičius"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
@@ -709,7 +709,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:99
 msgid "A Book that God Breathed"
-msgstr "Dievo Įkvėpta Knyga"
+msgstr "Dievo įkvėpta knyga"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:101
@@ -778,7 +778,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:148
 msgid "A Book that Works"
-msgstr "Knyga, kuri Veikia"
+msgstr "Knyga, kuri veikia"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:149
@@ -791,7 +791,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "What does Bible study do for Christians?"
-msgstr "Ką Biblijos studijavimas duoda Krikščionims?"
+msgstr "Ką Biblijos studijavimas duoda krikščionims?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:158
@@ -885,7 +885,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:202
 msgid "A Book that Liberates"
-msgstr "Knyga, kuri Išlaisvina"
+msgstr "Knyga, kuri išlaisvina"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:203
@@ -1078,7 +1078,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:320
 msgid "Supplement: Bible Reading Programs"
-msgstr "Priedas: Biblijos Skaitymo Programos"
+msgstr "Priedas: Biblijos skaitymo programos"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:321
@@ -1092,7 +1092,7 @@ msgstr ""
 #: docs/howto/en/docbook/howto-importance.docbook:327
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr ""
-"Naujasis Testamentas per Vienerius Metus: kiekvieną dieną skaitykite po "
+"Naujasis Testamentas per vienerius metus: kiekvieną dieną skaitykite po "
 "vieną skyrių, 5 dienas per savaitę."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
@@ -1127,7 +1127,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
 msgid "Rules of Bible Interpretation (Hermeneutics)"
-msgstr "Biblijos Aiškinimo Taisyklės (Hermeneutika)"
+msgstr "Biblijos aiškinimo taisyklės (Hermeneutika)"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:3
@@ -1638,7 +1638,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo><title>
 #: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
-msgstr ""
+msgstr "Biblijos studijavimo instrukcija"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/howto/en/docbook/index.docbook:17
@@ -1653,20 +1653,16 @@ msgstr "Harman'as"
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:22
 msgid "The BibleTime Team"
-msgstr "BibleTime Komanda"
+msgstr "BibleTime komanda"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2014</year> <holder>The &bibletime; Team (bt-"
-#| "devel@crosswire.org)</holder> </copyright>"
 msgid ""
 "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
-"<copyright> <year>1999-2014</year> <holder>&bibletime; Komanda (bt-"
+"<copyright> <year>1999-2015</year> <holder>&bibletime; komanda (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>

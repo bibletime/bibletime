@@ -4,7 +4,7 @@
     <message>
         <source/>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation type="unfinished"/>
     </message>
@@ -14,7 +14,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="54"/>
         <source>BibleTime Mobile</source>
-        <translation>BibleTime Mobilioji versija</translation>
+        <translation>BibleTime mobilioji versija</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/About.qml" line="76"/>
@@ -93,7 +93,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="134"/>
         <source>Refresh Sources</source>
-        <translation>Atnaujinti Šaltinius</translation>
+        <translation>Atnaujinti šaltinius</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="151"/>
@@ -106,7 +106,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/MainToolbar.qml" line="55"/>
         <source>BibleTime Mobile</source>
-        <translation>BibleTime Mobilioji versija</translation>
+        <translation>BibleTime mobilioji versija</translation>
     </message>
 </context>
 <context>
@@ -143,12 +143,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Question</name>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="79"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="86"/>
         <source>Yes</source>
         <translation>Taip</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Question.qml" line="98"/>
+        <location filename="../../src/mobile/qml/Question.qml" line="105"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
@@ -177,22 +177,35 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="165"/>
         <source>All Words</source>
-        <translation>Visi Žodžiai</translation>
+        <translation>Visi žodžiai</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="181"/>
         <source>Any Word</source>
-        <translation>Bet Kuris Žodis</translation>
+        <translation>Bet kuris žodis</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="196"/>
         <source>Regular Expression</source>
-        <translation>Reguliari Išraiška</translation>
+        <translation>Reguliarusis reiškinys</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="222"/>
         <source>Search in</source>
         <translation>Ieškoti ties</translation>
+    </message>
+</context>
+<context>
+    <name>SearchResults</name>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="127"/>
+        <source>Documents</source>
+        <translation>Dokumentai</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="158"/>
+        <source>References</source>
+        <translation>Nuorodos</translation>
     </message>
 </context>
 <context>
@@ -210,7 +223,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="180"/>
         <source>Font Size</source>
-        <translation>Šrifto Dydis</translation>
+        <translation>Šrifto dydis</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SetFont.qml" line="230"/>
@@ -246,7 +259,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/WindowManager.qml" line="265"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
-        <translation>Norėdami atverti dokumentą, naudokite &quot;Naujo Lango&quot; meniu.</translation>
+        <translation>Norėdami atverti dokumentą, naudokite &quot;Naujo lango&quot; meniu.</translation>
+    </message>
+</context>
+<context>
+    <name>btm::BtSearchInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
+        <source>Indexing</source>
+        <translation>Indeksuojama</translation>
     </message>
 </context>
 <context>
@@ -260,6 +281,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading</source>
         <translation>Atsiunčiama</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
+        <source>Refreshing</source>
+        <translation>Įkeliama iš naujo</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
+        <source>Failed to refresh source %1</source>
+        <translation>Nepavyko iš naujo įkelti šaltinio %1</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSourcesManager</name>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
+        <source>Refreshing Source List</source>
+        <translation>Iš naujo įkeliamas šaltinių sąrašas</translation>
     </message>
 </context>
 <context>
@@ -290,33 +332,33 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="321"/>
         <source>New Window</source>
-        <translation>Naujas Langas</translation>
+        <translation>Naujas langas</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="322"/>
         <source>View Window</source>
-        <translation>Rodyti Langą</translation>
+        <translation>Rodyti langą</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="323"/>
         <source>Close Window</source>
-        <translation>Užverti Langą</translation>
+        <translation>Užverti langą</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="326"/>
         <location filename="../../src/mobile/qml/main.qml" line="476"/>
         <source>User Interface Font Size</source>
-        <translation>Vartotojo Sąsajos Šrifto Dydis</translation>
+        <translation>Naudotojo sąsajos šrifto dydis</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="327"/>
         <source>Window Arrangement</source>
-        <translation>Langų Išdėstymas</translation>
+        <translation>Langų išdėstymas</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="324"/>
         <source>Manage Installed Documents</source>
-        <translation>Tvarkyti Įdiegtus Dokumentus</translation>
+        <translation>Tvarkyti įdiegtus dokumentus</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="329"/>
@@ -331,12 +373,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="419"/>
         <source>Light Blue</source>
-        <translation>Šviesiai Mėlyna</translation>
+        <translation>Šviesiai mėlyna</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="420"/>
         <source>Crimson</source>
-        <translation>Tamsiai Raudona</translation>
+        <translation>Tamsiai raudona</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="381"/>
@@ -351,12 +393,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="325"/>
         <source>Text Font</source>
-        <translation>Teksto Šriftas</translation>
+        <translation>Teksto šriftas</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="328"/>
         <source>Color Theme</source>
-        <translation>Spalvų Tema</translation>
+        <translation>Spalvų tema</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="382"/>
