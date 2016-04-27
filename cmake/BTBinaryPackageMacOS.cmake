@@ -1,34 +1,4 @@
 IF(APPLE)
-    # Qt Plugins
-    MACRO(InstallPlugin _QtTarget)
-        GET_TARGET_PROPERTY(_QtLocation ${_QtTarget} LOCATION)
-        # Get the Qt plugin directory for our SVG hack below...
-        STRING(REGEX MATCH ".*/plugins/"    _QtPluginBase ${_QtLocation})
-        STRING(REGEX MATCH "plugins/[^/]+/" _QtPluginPath ${_QtLocation})
-        #MESSAGE("INSTALL ${_QtLocation} DESTINATION ${BT_DESTINATION}/${_QtPluginPath}" )
-        INSTALL(FILES ${_QtLocation} DESTINATION "${BT_DESTINATION}/${_QtPluginPath}")
-    ENDMACRO(InstallPlugin)
-
-    FOREACH(Plugin ${Qt5Gui_PLUGINS})
-        InstallPlugin(${Plugin})
-    ENDFOREACH()
-    FOREACH(Plugin ${Qt5Widget_PLUGINS})
-        InstallPlugin(${Plugin})
-    ENDFOREACH()
-    # SVG plugin handling was buggy before QT 5.3.1, see
-    # https://bugreports.qt-project.org/browse/QTBUG-39171?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel
-    FOREACH(Plugin ${Qt5Svg_PLUGINS})
-        InstallPlugin(${Plugin})
-    ENDFOREACH()
-    # With this workaround it works with earlier QT versions
-    #INSTALL(FILES "${_QtPluginBase}/imageformats/libqsvg.dylib" DESTINATION "${BT_DESTINATION}/plugins/imageformats")
-    #INSTALL(FILES "${_QtPluginBase}/iconengines/libqsvgicon.dylib" DESTINATION "${BT_DESTINATION}/plugins/iconengines")
-
-    INSTALL(
-        FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/qt.conf"
-        DESTINATION "${BT_SHARE_PATH}/../Resources"
-    )
-
     # Install the Sword library
     INSTALL(
         FILES "${Sword_LIBRARY_DIRS}/lib${Sword_LIBRARIES}-${Sword_VERSION}.dylib"
@@ -36,21 +6,10 @@ IF(APPLE)
     )
 
     IF (CMAKE_BUILD_TYPE STREQUAL "Release")
-
+        SET(QT_MACDEPLOYQT_EXECUTABLE "${_qt5Core_install_prefix}/bin/macdeployqt")
         INSTALL(CODE "
-            FILE(GLOB_RECURSE QTPLUGINS
-              \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
-
-            SET(BU_CHMOD_BUNDLE_ITEMS ON)   # Add write permissions for libs that need it like libssl
-            INCLUDE(BundleUtilities)
-
-            FIXUP_BUNDLE(
-                \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/BibleTime\"
-                \"\${QTPLUGINS}\"
-                \"\"
-            )
+            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/../..\")
         ")
-
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
     SET(CPACK_BUNDLE_NAME "BibleTime")
@@ -64,4 +23,3 @@ IF(APPLE)
 
     INCLUDE(CPack)
 ENDIF(APPLE)
-
