@@ -18,6 +18,8 @@ before_install:
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
   - sudo add-apt-repository ppa:libreoffice/ppa --yes
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
+  - gpg --keyserver pgpkeys.mit.edu --recv-key 15CF4D18AF4F7421
+  - gpg -a --export 15CF4D18AF4F7421 | sudo apt-key add -
   - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise main' --yes
   - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa --yes
   - sudo apt-get update
