@@ -370,7 +370,9 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
     BT_ASSERT(m);
 
     CSwordModuleInfo::ModuleType bookmarkType = m->type();
-    CSwordModuleInfo::ModuleType windowType = m_readWindow->moduleType();
+    CSwordModuleInfo::ModuleType windowType = CSwordModuleInfo::Unknown;
+    if (m_readWindow)
+        windowType = m_readWindow->moduleType();
 
     // Is bible reference bookmark compatible with the window type?
     if ((bookmarkType == CSwordModuleInfo::Bible ||
