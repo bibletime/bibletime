@@ -30,6 +30,10 @@ class BtBookmarksModel: public QAbstractItemModel {
 
 public: /* Methods: */
 
+    enum BookmarksRoles {
+        TypeRole = Qt::UserRole + 1
+    };
+
     /**
       \brief Constructor/destructor for new bookmarks model, data is loaded on first
           constructor call and unloaded on last destructor call.
@@ -123,7 +127,11 @@ public: /* Methods: */
     */
     void sortItems(QModelIndex const & parent = QModelIndex(),
                    Qt::SortOrder const order = Qt::AscendingOrder);
-
+                   
+    /**
+     \returns roleNames needed for QML use
+    */
+    QHash<int, QByteArray> roleNames() const;
 
 public slots:
 

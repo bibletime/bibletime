@@ -649,6 +649,13 @@ QVariant BtBookmarksModel::data(const QModelIndex & index, int role) const {
             return i->toolTip();
         case Qt::DecorationRole:
             return i->icon();
+        case TypeRole:
+            {
+                if(isBookmark(index))
+                    return "bookmark";
+                else
+                    return "folder";
+            }
     }
     return QVariant();
 }
@@ -982,3 +989,14 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
         }
     }
 }
+
+QHash<int, QByteArray> BtBookmarksModel::roleNames() const {
+    QHash<int, QByteArray> roleNames;
+    roleNames[Qt::DisplayRole] = "display";
+    roleNames[Qt::DecorationRole] = "icon";
+    roleNames[Qt::EditRole] = "edit";
+    roleNames[TypeRole] = "itemtype";
+    return roleNames;
+}
+
+
