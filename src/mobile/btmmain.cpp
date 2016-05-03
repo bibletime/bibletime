@@ -23,11 +23,13 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "util/bticons.h"
 #include "mobile/bibletimeapp.h"
 #include "mobile/bookshelfmanager/installmanager.h"
 #include "mobile/models/searchmodel.h"
 #include "mobile/sessionmanager/sessionmanager.h"
 #include "mobile/ui/btstyle.h"
+#include "mobile/ui/btbookmarkinterface.h"
 #include "mobile/ui/btsearchinterface.h"
 #include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/moduleinterface.h"
@@ -45,6 +47,7 @@ static QFont defaultFont;
 void register_gml_classes() {
     QQmlDebuggingEnabler enabler;
 
+    qmlRegisterType<btm::BtBookmarkInterface>("BibleTime", 1, 0, "BtBookmarkInterface");
     qmlRegisterType<btm::BtWindowInterface>("BibleTime", 1, 0, "BtWindowInterface");
     qmlRegisterType<btm::BtStyle>("BibleTime", 1, 0, "BtStyle");
     qmlRegisterType<btm::InstallManager>("BibleTime", 1, 0, "InstallManager");
@@ -174,15 +177,18 @@ int main(int argc, char *argv[]) {
        return EXIT_FAILURE;
     }
 
-    register_gml_classes();
+    BtIcons btIcons;
 
-    mgr = new btm::ViewManager;
-    mgr->show();
+    register_gml_classes();
 
     btm::BibleTime btm;
 
-    sessionMgr = new btm::SessionManager();
     int installedModules = CSwordBackend::instance()->moduleList().count();
+
+    mgr = new btm::ViewManager;
+    mgr->show();
+    sessionMgr = new btm::SessionManager();
+
     if (installedModules == 0) {
         openBookshelfManager();
     }

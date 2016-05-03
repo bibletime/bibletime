@@ -22,6 +22,7 @@ SOURCES += \
     ../../../src/mobile/models/roleitemmodel.cpp \
     ../../../src/mobile/models/searchmodel.cpp \
     ../../../src/mobile/sessionmanager/sessionmanager.cpp \
+    ../../../src/mobile/ui/btbookmarkinterface.cpp \
     ../../../src/mobile/ui/btsearchinterface.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     ../../../src/mobile/models/roleitemmodel.h \
     ../../../src/mobile/models/searchmodel.h \
     ../../../src/mobile/sessionmanager/sessionmanager.h \
+    ../../../src/mobile/ui/btbookmarkinterface.h \
     ../../../src/mobile/ui/btsearchinterface.h \
     ../../../src/mobile/ui/btstyle.h \
     ../../../src/mobile/ui/btwindowinterface.h \
@@ -104,6 +106,7 @@ lupdate_only {
     SOURCES += ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp
     SOURCES += ../../../src/mobile/qml/StartupBookshelfManager.qml
     SOURCES += ../../../src/mobile/ui/btsearchinterface.cpp
+    SOURCES += ../../../src/mobile/ui/btbookmarkinterface.cpp
 }
 
 TRANSLATIONS += \

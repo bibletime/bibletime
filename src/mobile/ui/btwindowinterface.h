@@ -64,6 +64,7 @@ public:
     Q_INVOKABLE void setModuleToBeginning();
 
     BtWindowInterface(QObject *parent = nullptr);
+    ~BtWindowInterface();
 
     int getCurrentModelIndex() const;
     int getFontSize() const;

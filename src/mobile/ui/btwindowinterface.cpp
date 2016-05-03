@@ -75,6 +75,10 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
                SLOT(reloadModules(CSwordBackend::SetupChangedReason)));
 }
 
+BtWindowInterface::~BtWindowInterface() {
+
+}
+
 void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {
     //first make sure all used Sword modules are still present
 
