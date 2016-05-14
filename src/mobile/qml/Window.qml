@@ -20,8 +20,7 @@ Rectangle {
 
     border.color: btStyle.toolbarTextColor
 
-    signal swipeLeft
-    signal swipeRight
+    signal windowMenusDialog(variant window)
 
     function getModuleLanguage() {
         return btWindowInterface.moduleLanguage
@@ -164,6 +163,20 @@ Rectangle {
             }
         }
 
+        MenuButton {
+            id: menuButton
+
+            width: parent.height
+            height: parent.height
+            anchors.right: parent.right
+            anchors.top: parent.top
+            foreground: btStyle.toolbarTextColor
+            background: btStyle.toolbarColor
+
+            onButtonClicked: {
+                windowMenusDialog(windowView);
+            }
+        }
 
         Rectangle {
             id: referenceDisplay
@@ -173,6 +186,7 @@ Rectangle {
                 w2 = w2 - nextHistory.width -nextHistory.anchors.margins*2;
                 w2 = w2 - moduleDisplay.width - moduleDisplay.anchors.leftMargin - moduleDisplay.anchors.rightMargin;
                 w2 - w2 - parent.height * 0.2;
+                w2 = w2 - menuButton.width
                 return w2;
             }
             radius: btStyle.pixelsPerMillimeterX
@@ -248,53 +262,6 @@ Rectangle {
                 font.pointSize: btWindowInterface.fontSize
                 wrapMode: Text.WordWrap
                 onWidthChanged: doLayout()
-            }
-
-            MultiPointTouchArea {
-                id: globalTouchArea
-
-                property bool activeGesture: false
-                property int firstX
-                property int firstY
-
-                anchors.fill: parent
-                enabled: false
-                minimumTouchPoints: 1
-                maximumTouchPoints: 1
-                z:0
-                touchPoints: [
-                    TouchPoint { id: touch1 }
-                ]
-
-                onPressed: {
-                    firstX = touch1.x
-                    firstY = touch1.y
-                }
-
-                onGestureStarted: {
-                    if (!activeGesture) {
-                        var dx = touch1.x - firstX
-                        var dy = touch1.y - firstY
-                        if (Math.abs(dx) > dy * 3  &&  Math.abs(dx) > 0.05 * width) {
-                            activeGesture = true;
-                            gesture.grab()
-                        }
-                    }
-                }
-
-                onReleased: {
-                    if (activeGesture) {
-                        var dx = touch1.x - firstX;
-                        var dy = touch1.y - firstY;
-                        if (dx < 0) {
-                            windowView.swipeLeft()
-                        }
-                        else {
-                            windowView.swipeRight()
-                        }
-                    }
-                    activeGesture = false;
-                }
             }
         }
     }

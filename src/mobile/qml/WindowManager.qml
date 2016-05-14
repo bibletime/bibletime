@@ -31,6 +31,7 @@ Rectangle {
     property int windowArrangement: single
 
     signal setFontForLanguage(string language)
+    signal windowMenus(variant window)
 
     function getTopWindowIndex() {
         if (windowArrangement == single || windowArrangement == tabLayout)
@@ -101,6 +102,10 @@ Rectangle {
         setCurrentTabbedWindow(index);
     }
 
+    function windowMenusSlot(window) {
+        windowMenus(window);
+    }
+
     function closeWindow(index) {
         var window = windows[index];
         windows.splice(index,1);
@@ -158,6 +163,7 @@ Rectangle {
             window.setModuleToBeginning();
             window.swipeLeft.connect(windowManager,setPreviousWindow)
             window.swipeRight.connect(windowManager,setNextWindow)
+            window.windowMenusDialog.connect(windowManager, windowMenusSlot)
             windows.push(window)
             layoutWindows();
             var curWindow = windows.length -1;

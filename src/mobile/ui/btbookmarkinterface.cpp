@@ -25,7 +25,8 @@ namespace btm {
 class FolderModel : public QSortFilterProxyModel {
 
 public:
-    FolderModel(QObject * parent) {
+    FolderModel(QObject * parent)
+        : QSortFilterProxyModel(parent) {
     }
 
 protected:
@@ -40,48 +41,68 @@ protected:
     }
 };
 
+static BtBookmarksModel * s_bookmarksModel = nullptr;
+static FolderModel * s_folderModel = nullptr;
+
+static QModelIndex getSourceIndex(const QModelIndex& index) {
+    QModelIndex sourceIndex;
+
+    // First item in tree is considered the root index
+    if (index == QModelIndex()) {
+        sourceIndex = s_folderModel->index(0, 0, QModelIndex());
+    }
+
+    sourceIndex = s_folderModel->mapToSource(index);
+    return sourceIndex;
+}
 
 
 // API Interface between QML and c++ bookmark functionality
 
 BtBookmarkInterface::BtBookmarkInterface(QObject* parent)
     : QObject(parent),
-      m_bookmarkModel(0),
-      m_folderModel(0),
       m_currentFolder(QModelIndex()){
 }
 
 QVariant BtBookmarkInterface::getBookmarkModel() {
-    if (!m_bookmarkModel)
-        m_bookmarkModel = new BtBookmarksModel(this);
+    if (!s_bookmarksModel) {
+        s_bookmarksModel = new BtBookmarksModel(this);
+
+        // Make new "blank" folder as the root folder
+        if (s_bookmarksModel->rowCount() == 0) {
+            QModelIndex index = s_bookmarksModel->addFolder(0, QModelIndex(), QString());
+            s_bookmarksModel->setData(index, "");
+            m_currentFolder = s_folderModel->index(0,0);
+        }
+    }
 
     QVariant var;
-    var.setValue(m_bookmarkModel);
+    var.setValue(s_bookmarksModel);
     return var;
 }
 
 FolderModel* BtBookmarkInterface::getFolderModelPtr() {
-    if (!m_folderModel) {
-        m_folderModel = new FolderModel(this);
+    if (!s_folderModel) {
+        s_folderModel = new FolderModel(this);
         getBookmarkModel();
-        m_folderModel->setSourceModel(m_bookmarkModel);
+        s_folderModel->setSourceModel(s_bookmarksModel);
     }
-    return m_folderModel;
+    return s_folderModel;
 }
 
 QVariant BtBookmarkInterface::getFolderModel() {
     getFolderModelPtr();
     QVariant var;
-    var.setValue(m_folderModel);
+    var.setValue(s_folderModel);
     return var;
 }
 
 QVariantList BtBookmarkInterface::getFolderModelExpandableIndexesRecursive(const QModelIndex& parent) {
     QVariantList indexes;
-    int count = m_folderModel->rowCount(parent);
+    int count = s_folderModel->rowCount(parent);
     for(int row = 0; row != count; ++row) {
-        QModelIndex child = m_folderModel->index(row, 0, parent);
-        if (m_folderModel->hasChildren(child)) {
+        QModelIndex child = s_folderModel->index(row, 0, parent);
+        if (s_folderModel->hasChildren(child)) {
             indexes.push_back(child);
             indexes += getFolderModelExpandableIndexesRecursive(child);
         }
@@ -116,19 +137,21 @@ QString BtBookmarkInterface::folderName(const QModelIndex& index) {
 }
 
 void BtBookmarkInterface::addBookmark(const QString& reference, const QString& moduleName) {
-
-    int row = 0;
-      QModelIndex sourceIndex = m_folderModel->mapToSource(m_currentFolder);
-
+    QModelIndex sourceIndex = getSourceIndex(m_currentFolder);
     const CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
     QString description = reference;
+    int row = s_bookmarksModel->rowCount(sourceIndex);
+    s_bookmarksModel->addBookmark(row, sourceIndex, *module, reference, description);
+    s_bookmarksModel->save();
+}
 
-    m_bookmarkModel->addBookmark(row,
-                                 sourceIndex,
-                                 *module,
-                                 reference,
-                                 description);
-    m_bookmarkModel->save();
+void BtBookmarkInterface::addFolder(const QString& folderName) {
+    QModelIndex sourceIndex = getSourceIndex(m_currentFolder);
+    int row = s_bookmarksModel->rowCount(sourceIndex);
+    s_bookmarksModel->addFolder(row, sourceIndex, folderName);
+    s_bookmarksModel->save();
 }
 
 }
+
+

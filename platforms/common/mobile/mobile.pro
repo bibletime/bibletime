@@ -68,8 +68,12 @@ OTHER_FILES += \
     ../../../src/mobile/qml \
     ../../../src/mobile/qml/main.qml \
     ../../../src/mobile/qml/About.qml \
+    ../../../src/mobile/qml/AddBookmark.qml \
+    ../../../src/mobile/qml/AddFolder.qml \
+    ../../../src/mobile/qml/BookmarkFolders.qml \
     ../../../src/mobile/qml/BtButtonStyle.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
+    ../../../src/mobile/qml/Folder.qml \
     ../../../src/mobile/qml/FontSizeSlider.qml \
     ../../../src/mobile/qml/GridChooser.qml \
     ../../../src/mobile/qml/GridChooserButton.qml \

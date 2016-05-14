@@ -57,6 +57,7 @@ Rectangle {
         windowArrangementMenus,
         viewWindowsMenus,
         closeWindowsMenus,
+        windowMenus,
         searchResults,
         search,
         installManagerChooser,
@@ -64,7 +65,12 @@ Rectangle {
         treeChooser,
         aboutDialog,
         uiFontPointSize,
-        setFontDialog
+        setFontDialog,
+        parentBookmarkFolders,
+        bookmarkFolders,
+        addBookmark,
+        addFolder,
+        colorThemeMenus
     ]
 
     Keys.onReleased: {
@@ -79,7 +85,7 @@ Rectangle {
         mainMenus.visible = ! mainMenus.visible
     }
 
-    width:  1000
+    width:  500
     height: 750
 
     rotation: 0
@@ -122,6 +128,10 @@ Rectangle {
         anchors.bottom: parent.bottom
         color: btStyle.toolbarColor
 
+        onWindowMenus: {
+            windowMenus.theWindow = window
+            windowMenus.visible = true;
+        }
     }
 
     GridChooser {
@@ -502,6 +512,108 @@ Rectangle {
     About {
         id: aboutDialog
         visible: false
+    }
+
+    ListModel {
+        id: windowMenusModel
+
+        ListElement { title: QT_TR_NOOP("Add BookMark"); action: "addBookmark" }
+        ListElement { title: QT_TR_NOOP("Bookmarks");    action: "bookmarks" }
+    }
+
+    Menus {
+        id: windowMenus
+
+        property variant theWindow
+
+        model: windowMenusModel
+        z:10
+
+        Component.onCompleted: menuSelected.connect(windowMenus.doAction)
+
+        function doAction(action) {
+            windowMenus.visible = false;
+            if (action == "addBookmark") {
+                var moduleName = theWindow.getModule();
+                var reference = theWindow.getReference();
+                addBookmark.reference = reference
+                addBookmark.moduleName = moduleName
+                addBookmark.visible = true;
+            }
+            else if (action == "bookmarks") {
+                console.log("bookmarks");
+            }
+        }
+    }
+
+
+    AddBookmark {
+        id: addBookmark
+
+        visible: false
+        folderName: bookmarkFolders.currentFolderName
+
+        onBookmarkFolders: {
+            bookmarkFolders.visible = true;
+        }
+
+        onAddTheBookmark: {
+            bookmarkFolders.addTheReference(addBookmark.reference, addBookmark.moduleName);
+        }
+    }
+
+    BookmarkFolders {
+        id: bookmarkFolders
+        visible: false
+        allowNewFolders: true
+        z:100
+
+        onNewFolder: {
+            addFolder.visible = true;
+        }
+
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFolders.visible == true) {
+                bookmarkFolders.visible = false;
+                console.log("bookmark folders closing")
+                event.accepted = true;
+            }
+        }
+    }
+
+    AddFolder {
+        id: addFolder
+
+        z: 101
+        visible: false
+        parentFolderName: parentBookmarkFolders.currentFolderName
+
+        onShowFolders: {
+            parentBookmarkFolders.visible = true;
+        }
+
+        onAddFolder: {
+            parentBookmarkFolders.addFolder(folderName);
+        }
+
+        onFolderWasAdded: {
+            bookmarkFolders.expandAll();
+        }
+    }
+
+    BookmarkFolders {
+        id: parentBookmarkFolders
+        visible: false
+        allowNewFolders: false
+        z:102
+
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && parentBookmarkFolders.visible == true) {
+                parentBookmarkFolders.visible = false;
+                console.log("bookmark folders closing")
+                event.accepted = true;
+            }
+        }
     }
 
     SetFont {

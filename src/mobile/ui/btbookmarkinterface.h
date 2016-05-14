@@ -42,6 +42,7 @@ public:
     void setCurrentFolder(const QModelIndex& folder);
 
     Q_INVOKABLE void addBookmark(const QString& reference, const QString& moduleName);
+    Q_INVOKABLE void addFolder(const QString& folderName);
     Q_INVOKABLE QString folderName(const QModelIndex& index);
     Q_INVOKABLE QVariantList getFolderModelExpandableIndexes();
 
@@ -53,11 +54,8 @@ signals:
 
 private:
     QVariantList getFolderModelExpandableIndexesRecursive(const QModelIndex& index);
-
     FolderModel* getFolderModelPtr();
 
-    BtBookmarksModel* m_bookmarkModel;
-    FolderModel* m_folderModel;
     QModelIndex m_currentFolder;
 };
 
