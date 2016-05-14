@@ -1,8 +1,7 @@
 #!/bin/sh
 FULLNAME="bibletime-$1"
-TARNAME="${FULLNAME}.tar"
-git archive --format=tar "--prefix=${FULLNAME}/" -o "$TARNAME" HEAD && xz -9 "$TARNAME" || exit
-TARXZNAME="${TARNAME}.xz"
+TARXZNAME="${FULLNAME}.tar.xz"
+git archive --format=tar "--prefix=${FULLNAME}/" HEAD | xz -9e > "$TARXZNAME" || exit 1
 BYTES=`stat '--format=%s' "$TARXZNAME"`
 echo 'Details:'
 echo "  Filename:  ${TARXZNAME}"
