@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2015-02-11 20:25+0100\n"
+"POT-Creation-Date: 2016-02-11 20:25+0100\n"
 "PO-Revision-Date: 2016-03-03 18:08+0000\n"
 "Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
@@ -2698,7 +2698,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid ""
-"<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 
