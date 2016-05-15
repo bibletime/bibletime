@@ -9,10 +9,12 @@
 
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 
+#include <QAbstractButton>
 #include <QApplication>
 #include <QByteArray>
 #include <QKeyEvent>
 #include <QMessageBox>
+#include <QPushButton>
 #include "backend/config/btconfig.h"
 #include "frontend/bookshelfwizard/btbookshelfinstallfinalpage.h"
 #include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
@@ -67,7 +69,24 @@ BtBookshelfWizard::BtBookshelfWizard(QWidget * parent, Qt::WindowFlags flags)
     restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
+static void replaceButtonText(QWizard * wizard, QWizard::WizardButton which, const QString& text) {
+    QAbstractButton * button = wizard->button(which);
+    if (button != nullptr)
+        button->setText(text);
+}
+
+// This function can be used by other QWizard's in the future
+void translateQWizardStandardButtons(QWizard * wizard) {
+    replaceButtonText(wizard, QWizard::BackButton,   QPushButton::tr("Back"  ,"Dialog Button"));
+    replaceButtonText(wizard, QWizard::NextButton,   QPushButton::tr("Next"  ,"Dialog Button"));
+    replaceButtonText(wizard, QWizard::CommitButton, QPushButton::tr("Commit","Dialog Button"));
+    replaceButtonText(wizard, QWizard::FinishButton, QPushButton::tr("Finish","Dialog Button"));
+    replaceButtonText(wizard, QWizard::CancelButton, QPushButton::tr("Cancel","Dialog Button"));
+    replaceButtonText(wizard, QWizard::HelpButton,   QPushButton::tr("Help"  ,"Dialog Button"));
+}
+
 void BtBookshelfWizard::retranslateUi() {
+    translateQWizardStandardButtons(this);
     setWindowTitle(QApplication::translate("BookshelfWizard",
                                            "Bookshelf Manager"));
     m_closeMessageBox->setWindowTitle(QApplication::translate(
