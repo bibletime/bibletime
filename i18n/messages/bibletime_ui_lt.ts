@@ -489,7 +489,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletimeapp.cpp" line="67"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="64"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Perkėlimas į naująją konfigūracijos sistemą yra kol kas neįgyvendintas. Jei tęsite, galite &lt;b&gt;prarasti duomenis&lt;/b&gt;. Prašome, prieš tęsiant, pasidaryti atsarginę savo konfigūracijos failų kopiją!&lt;br/&gt;&lt;br/&gt;Ar norite tęsti? Spustelėkite &quot;Ne&quot;, kad nedelsiant išeitumėte iš BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="79"/>
@@ -564,7 +564,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Bookshelf Manager</source>
         <translation>Knygų lentynos tvarkytuvė</translation>
     </message>
@@ -629,14 +629,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Pasirinkite vieną ar daugiau veiklų, kurias norite pašalinti.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <source>Canceling Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Atšaukiami atsiuntimai</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kai esamas atsiuntimas užsibaigs, knygų lentynos tvarkytuvė užsivers.</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
         <source>(c)1999-2016, The BibleTime Team</source>
-        <translation>(c)1999-2016, BibleTime komanda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -1096,7 +1096,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="197"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation type="unfinished"></translation>
+        <translation>Su esamu nuotolinių bibliotekų ir kalbų pasirinkimu negali būti įdiegta jokia veikla. Prašome grįžti ir padaryti kitokį pasirinkimą.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
@@ -2224,7 +2224,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="445"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatavimas</translation>
     </message>
 </context>
 <context>
@@ -2304,7 +2304,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="130"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arba modulis negali būti redaguojamas, arba jūs neturite rašymo teisių.</translation>
     </message>
 </context>
 <context>
@@ -2436,7 +2436,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="167"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arba modulis negali būti redaguojamas, arba jūs neturite rašymo teisių.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="234"/>
@@ -3867,7 +3867,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="191"/>
         <source>Encrypted - needs unlock key</source>
-        <translation type="unfinished"></translation>
+        <translation>Užšifruota - reikalaujamas atrakinimo raktas</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="71"/>
@@ -4137,6 +4137,31 @@ Ar norite tęsti?</translation>
         <translation>Išsaugoti</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
+        <source>Back</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
+        <source>Next</source>
+        <comment>Dialog Button</comment>
+        <translation>Kitas</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
+        <source>Commit</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
+        <source>Finish</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
@@ -4173,6 +4198,7 @@ Ar norite tęsti?</translation>
         <translation>Atkurti numatytąsias reikšmes</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
@@ -4309,7 +4335,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite sritį (knygas/skyrius/eilutes, kuriuose bus ieškoma).&lt;br /&gt;Taikoma Biblijoms ir komentarams.</translation>
     </message>
 </context>
 <context>

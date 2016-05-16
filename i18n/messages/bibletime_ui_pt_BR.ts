@@ -564,7 +564,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Bookshelf Manager</source>
         <translation>Gerenciador de livros</translation>
     </message>
@@ -629,14 +629,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Escolha uma ou mais obras para remover.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <source>Canceling Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelando Downloads</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation type="unfinished"></translation>
+        <translation>O Gerenciador de Livros fechará quando o download atual encerrar.</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
         <source>(c)1999-2016, The BibleTime Team</source>
-        <translation>(c)1999-2016, A Equipe BibleTime</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -1633,12 +1633,12 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="74"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtros controlam a aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Estas configurações se aplicam somente a novas janelas de exibição abertas. Você pode sobrepor estas configurações em cada janela de exibição.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserir quebra de linha após cada verso</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
@@ -1678,7 +1678,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Use textual variants</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar varitantes textuais</translation>
     </message>
 </context>
 <context>
@@ -1805,7 +1805,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="73"/>
         <source>Welcome to BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Bem vindo ao BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="76"/>
@@ -1815,32 +1815,32 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="78"/>
         <source>Before you can use this application some works must be installed. </source>
-        <translation type="unfinished"></translation>
+        <translation>Antes de usar este aplicativo, algumas obras precisam ser instaladas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="79"/>
         <source>Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. </source>
-        <translation type="unfinished"></translation>
+        <translation>Várias obras como Bíblias, livros, comentários e léxicos estão disponíveis de bibliotecas remotas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Choose the &quot;Install works&quot; button to download works. </source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha o botão &quot;Instalar obras&quot; para baixar as obras.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="82"/>
         <source>The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation>O menu &quot;Configurações &gt; Gerenciador de Estantes&quot; também instala obras e pode ser usado mais tarde.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="85"/>
         <source>Install later</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar depois</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="87"/>
         <source>Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar obras...</translation>
     </message>
 </context>
 <context>
@@ -2037,7 +2037,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="608"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você realmente quer deletar os ítens e as pastas selecionadas?</translation>
     </message>
 </context>
 <context>
@@ -2106,12 +2106,12 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="119"/>
         <source>Show startup logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar logo de inicalização:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Show the BibleTime logo on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar a logo da BibleTime na incialização:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
@@ -2126,7 +2126,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você sabia? Você pode ajudar traduzir a GUI da BibleTime para o seu idioma em %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="228"/>
@@ -2457,17 +2457,17 @@ atalho</translation>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save Text?</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar Texto?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <source>Save text before closing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar texto antes de fechar?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save changed text?</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar texto alterado?</translation>
     </message>
 </context>
 <context>
@@ -2485,7 +2485,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="233"/>
         <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos XHTML (*.HTML *.HTM *.htm);;Todos os arquivos (*)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
@@ -4137,6 +4137,31 @@ Deseja continuar?</translation>
         <translation>Salvar</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
+        <source>Back</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
+        <source>Next</source>
+        <comment>Dialog Button</comment>
+        <translation>Próximo</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
+        <source>Commit</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
+        <source>Finish</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
@@ -4173,6 +4198,7 @@ Deseja continuar?</translation>
         <translation>Restaurar Definições</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
@@ -4825,7 +4851,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing</source>
-        <translation type="unfinished"></translation>
+        <translation>Classificando</translation>
     </message>
 </context>
 <context>
@@ -4833,12 +4859,12 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="93"/>
         <source>Installing</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalando</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="99"/>
         <source>Downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Baixando</translation>
     </message>
 </context>
 <context>
@@ -4846,7 +4872,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
         <source>Refreshing</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizando</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
@@ -4859,7 +4885,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="48"/>
         <source>Refreshing Source List</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizando Lista de Fontes</translation>
     </message>
 </context>
 <context>
@@ -4872,12 +4898,12 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="62"/>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Capítulo</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="69"/>
         <source>Verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Verso</translation>
     </message>
 </context>
 </TS>

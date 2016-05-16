@@ -564,7 +564,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Bookshelf Manager</source>
         <translation>Менеджер Книг</translation>
     </message>
@@ -629,12 +629,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <source>Canceling Downloads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4139,6 +4139,31 @@ Do you want to continue?</source>
         <translation>Сохранить</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
+        <source>Back</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
+        <source>Next</source>
+        <comment>Dialog Button</comment>
+        <translation>Следующее</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
+        <source>Commit</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
+        <source>Finish</source>
+        <comment>Dialog Button</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
@@ -4175,6 +4200,7 @@ Do you want to continue?</source>
         <translation>Восстановить стандартные настройки</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Help</source>
         <comment>Dialog Button</comment>

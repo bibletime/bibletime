@@ -564,7 +564,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="71"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
         <source>Bookshelf Manager</source>
         <translation>Bücherregal-Verwaltung</translation>
     </message>
@@ -629,12 +629,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Wählen Sie ein oder mehrere Werk(e) zur Entfernung aus.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="73"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <source>Canceling Downloads</source>
         <translation>Downloads abbreche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
         <translation>Die Bücherregal-Verwaltung wird nach dem Abschluss des aktuellen Downloads geschlossen.</translation>
     </message>
@@ -674,7 +674,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
         <source>(c)1999-2016, The BibleTime Team</source>
-        <translation>(c)1999-2016, das BibleTime-Team</translation>
+        <translation>(c)1999-2016, Das BibleTime-Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -4133,6 +4133,31 @@ Möchten Sie fortfahren?</translation>
         <translation>Speichern</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
+        <source>Back</source>
+        <comment>Dialog Button</comment>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
+        <source>Next</source>
+        <comment>Dialog Button</comment>
+        <translation>Nächster</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
+        <source>Commit</source>
+        <comment>Dialog Button</comment>
+        <translation>Anwenden</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
+        <source>Finish</source>
+        <comment>Dialog Button</comment>
+        <translation>Abschließen</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
@@ -4169,6 +4194,7 @@ Möchten Sie fortfahren?</translation>
         <translation>Standard wiederherstellen</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
