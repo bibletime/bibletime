@@ -219,10 +219,10 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Dmitry Yurevich</li>"
                    "<li>Esteban Zeller</li>"
                "</ul><p>";
-    content += tr("Some names may be missing, please email %1 if you notice errors or "
-                  "omissions.").arg(MAKE_LINK_STATIC(
-                          "mailto:bibletime-translations@lists.sourceforge.net",
-                          "bibletime-translations@lists.sourceforge.net"));
+    content += tr("Some names may be missing, please file an issue at %1 if "
+                  "you notice errors or omissions.").arg(MAKE_LINK_STATIC(
+                          "https://github.com/bibletime/bibletime/issues",
+                          "https://github.com/bibletime/bibletime/issues"));
     content += "</p>";
 
     m_contributorsTab->setHtml(MAKE_HTML(m_contributorsTab, content));
