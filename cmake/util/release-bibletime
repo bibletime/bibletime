@@ -1,8 +1,0 @@
-echo "Packaging fresh BibleTime checkout in /tmp/"
-cd /tmp
-rm -rf /tmp/bibletime
-rm -rf /tmp/bibletime-$2*
-svn co https://bibletime.svn.sourceforge.net/svnroot/bibletime/$1/bibletime bibletime
-mv bibletime bibletime-$2
-tar --exclude=".*" -vv -chzf bibletime-$2.tar.gz bibletime-$2/
-echo "Done."
