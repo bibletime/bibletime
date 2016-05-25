@@ -3296,11 +3296,15 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team</holder> "
+#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2016</year> <holder>A Equipe Bibletime </holder> </"
+"<copyright> <year>1999-2015</year> <holder>A Equipe Bibletime </holder> </"
 "copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>

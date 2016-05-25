@@ -4,7 +4,7 @@
     <message>
         <source/>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation type="unfinished"/>
     </message>
@@ -267,7 +267,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="58"/>
         <source>Indexing</source>
-        <translation type="unfinished"/>
+        <translation>Classificando</translation>
     </message>
 </context>
 <context>
@@ -275,12 +275,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
         <source>Installing</source>
-        <translation type="unfinished"/>
+        <translation>Instalando</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Baixando</translation>
     </message>
 </context>
 <context>
@@ -288,7 +288,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
         <source>Refreshing</source>
-        <translation type="unfinished"/>
+        <translation>Atualizando</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
@@ -301,7 +301,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="45"/>
         <source>Refreshing Source List</source>
-        <translation type="unfinished"/>
+        <translation>Atualizando Lista de Fontes</translation>
     </message>
 </context>
 <context>
@@ -314,12 +314,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="61"/>
         <source>Chapter</source>
-        <translation type="unfinished"/>
+        <translation>Capítulo</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="68"/>
         <source>Verse</source>
-        <translation type="unfinished"/>
+        <translation>Verso</translation>
     </message>
 </context>
 <context>

@@ -5,13 +5,13 @@
 # Translators:
 # Roy Alvear <racl@fedoraproject.org>, 2010
 # Roy Alvear <racl@gulix.cl>, 2010
-# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2016
+# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2016-02-11 20:25+0100\n"
-"PO-Revision-Date: 2016-02-12 19:07+0000\n"
-"Last-Translator: Roy Eddekel Alvear Aguirre <racl@gulix.cl>\n"
+"PO-Revision-Date: 2016-02-12 19:35+0000\n"
+"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/bibletime/bibletime/"
 "language/es/)\n"
 "Language: es\n"
@@ -3322,16 +3322,10 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> "
-#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2016</year> <holder>El Equipo &bibletime; </holder> </"
-"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
