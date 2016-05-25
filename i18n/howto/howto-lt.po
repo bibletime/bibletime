@@ -1658,11 +1658,15 @@ msgstr "BibleTime komanda"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>1999-2015</year> <holder>The &bibletime; Team (bt-"
+#| "devel@crosswire.org)</holder> </copyright>"
 msgid ""
 "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
-"<copyright> <year>1999-2016</year> <holder>&bibletime; komanda (bt-"
+"<copyright> <year>1999-2015</year> <holder>&bibletime; komanda (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
