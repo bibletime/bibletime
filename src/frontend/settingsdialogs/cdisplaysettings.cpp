@@ -127,8 +127,10 @@ void CDisplaySettingsPage::retranslateUi() {
     m_transifexLabel->setWordWrap(true);
     m_transifexLabel->setOpenExternalLinks(true);
     m_transifexLabel->setText(tr(
-        "Did you know? You can help translating the GUI of BibleTime to your language at %1."
-    ).arg("<a href=\"https://www.transifex.com/bibletime/bibletime/\">Transifex</a>"));
+        "Did you know? You can help translating the GUI of BibleTime to your "
+        "language at "
+        "<a href=\"https://www.transifex.com/bibletime/bibletime/\">Transifex"
+        "</a>."));
 }
 
 void CDisplaySettingsPage::resetLanguage() {
