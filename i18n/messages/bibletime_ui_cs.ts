@@ -707,9 +707,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>expert na použitelnost</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation>Některá jména mohou chybět, prosím napište nám na %1, pokud něco chybí nebo najdete chybu.</translation>
+        <translation type="vanished">Některá jména mohou chybět, prosím napište nám na %1, pokud něco chybí nebo najdete chybu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
@@ -790,6 +789,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="190"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Následující lidé překládají BibleTime do svého jazyka:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
@@ -2122,36 +2126,36 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
-        <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
+        <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="228"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="230"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Neboť Bůh tak miloval svět, že dal svého jednorozeného Syna, aby žádný, kdo věří v něho, nezahynul, ale měl věčný život.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="235"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Bůh totiž neposlal svého Syna na svět, aby svět odsoudil, ale aby svět byl skrze něho spasen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="244"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Kdo v něj věří, není souzen, ale kdo nevěří, je již odsouzen; neboť neuvěřil ve jméno jednorozeného Božího Syna.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="252"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="254"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Každý, kdo koná zlo, totiž nenávidí světlo a nepřichází ke světlu, aby jeho skutky nebyly odhaleny.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="259"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Ale kdo koná pravdu, přichází ke světlu, aby jeho skutky byly zjeveny, že jsou vykonány v Bohu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="249"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4845,20 +4849,20 @@ Do you want to continue?</source>
     <name>btm::BtSearchInterface</name>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
-        <source>Indexing</source>
+        <source>Indexing %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>btm::InstallProgress</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="93"/>
-        <source>Installing</source>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
+        <source>Installing %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="99"/>
-        <source>Downloading</source>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="103"/>
+        <source>Downloading %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

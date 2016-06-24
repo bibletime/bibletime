@@ -707,9 +707,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>especialista em usabilidade</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation>Alguns nomes podem ter sido esquecidos, por favor, envie um e-mail %1 se notar erros ou omissões.</translation>
+        <translation type="vanished">Alguns nomes podem ter sido esquecidos, por favor, envie um e-mail %1 se notar erros ou omissões.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
@@ -790,6 +789,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="190"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>As seguintes pessoas traduziram o BibleTime para as suas línguas:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
@@ -2125,36 +2129,40 @@ atalho</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
-        <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
-        <translation>Você sabia? Você pode ajudar a traduzir a GUI do BibleTime para o seu idioma em %1.</translation>
+        <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="228"/>
+        <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
+        <translation type="vanished">Você sabia? Você pode ajudar a traduzir a GUI do BibleTime para o seu idioma em %1.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="230"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Tanto amou Deus o mundo, que lhe entregou o seu Filho Unigénito, a fim de que todo o que nele crê não se perca, mas tenha a vida eterna.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="235"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>De facto, Deus não enviou o seu Filho ao mundo para condenar o mundo, mas para que o mundo seja salvo por Ele.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="244"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Quem nele crê não é condenado, mas quem não crê já está condenado, por não crer no Filho Unigénito de Deus.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="252"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="254"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>De facto, quem pratica o mal odeia a Luz e não se aproxima da Luz para que as suas acções não sejam desmascaradas.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="259"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Mas quem pratica a verdade aproxima-se da Luz, de modo a tornar-se claro que os seus actos são feitos segundo Deus.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="249"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation>E a condenação está nisto: a Luz veio ao mundo, e os homens preferiram as trevas à Luz, porque as suas obras eram más.</translation>
     </message>
@@ -4849,22 +4857,34 @@ Deseja continuar?</translation>
 <context>
     <name>btm::BtSearchInterface</name>
     <message>
-        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing</source>
-        <translation>A indexar</translation>
+        <translation type="vanished">A indexar</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
+        <source>Indexing %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>btm::InstallProgress</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="93"/>
         <source>Installing</source>
-        <translation>A instalar</translation>
+        <translation type="vanished">A instalar</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="99"/>
         <source>Downloading</source>
-        <translation>A transferir</translation>
+        <translation type="vanished">A transferir</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
+        <source>Installing %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="103"/>
+        <source>Downloading %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

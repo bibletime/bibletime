@@ -707,9 +707,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>kasutusekspert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation>Mõned nimed võivad puududa, palun saatke e-mail aadressile %1 kui märkate vigu või puuduvaid nimesid.</translation>
+        <translation type="vanished">Mõned nimed võivad puududa, palun saatke e-mail aadressile %1 kui märkate vigu või puuduvaid nimesid.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
@@ -790,6 +789,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="190"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Järgnevad inimesed tõlkisid BibleTime&apos; enda keelde:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
+        <translation>Mõned nimed võivad puududa, palun teavitage meid vigadest või puuduvatest nimedest aadressil %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
@@ -2125,36 +2129,40 @@ kiirklahv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
-        <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
-        <translation>Kas teadsid, et võid aidata Bibletime&apos;i kasutajaliidese tõlkimisega oma keelde %1.</translation>
+        <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
+        <translation>Kas teadsid, et võid aidata Bibletime&apos;i kasutajaliidese tõlkimisega oma keelde &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt; keskonnas.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="228"/>
+        <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
+        <translation type="vanished">Kas teadsid, et võid aidata Bibletime&apos;i kasutajaliidese tõlkimisega oma keelde %1.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="230"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Sest nõnda on Jumal maailma armastanud, et ta oma ainusündinud Poja on andnud, et ükski, kes temasse usub, ei hukkuks, vaid et tal oleks igavene elu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="235"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Jumal ei ole ju läkitanud oma Poega maailma, et ta kohut mõistaks maailma üle, vaid et maailm tema läbi päästetaks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="244"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Kes temasse usub, selle üle ei mõisteta kohut, ja kes ei usu, selle üle on kohus juba mõistetud, sest ta ei ole uskunud Jumala ainusündinud Poja nimesse.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="252"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="254"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Igaüks, kes teeb halba, vihkab valgust ega tule valguse juurde, et ta tegusid ei paljastataks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="259"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Aga kes teeb tõtt, see tuleb valguse juurde, et ta teod saaksid avalikuks, sest need on tehtud Jumalas.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="249"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation>Ent kohus on see, et valgus on tulnud maailma, aga inimesed on armastanud pimedust enam kui valgust, sest nende teod on kurjad.</translation>
     </message>
@@ -4849,22 +4857,34 @@ Kas soovite jätkata?</translation>
 <context>
     <name>btm::BtSearchInterface</name>
     <message>
-        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing</source>
-        <translation>Indekseeritakse</translation>
+        <translation type="vanished">Indekseeritakse</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
+        <source>Indexing %1</source>
+        <translation>Teose %1 indekseerimine</translation>
     </message>
 </context>
 <context>
     <name>btm::InstallProgress</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="93"/>
         <source>Installing</source>
-        <translation>Lisatakse</translation>
+        <translation type="vanished">Lisatakse</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="99"/>
         <source>Downloading</source>
-        <translation>Laetakse alla</translation>
+        <translation type="vanished">Laetakse alla</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
+        <source>Installing %1</source>
+        <translation>Teose %1 lisamine</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="103"/>
+        <source>Downloading %1</source>
+        <translation>Teose %1 allalaadimine</translation>
     </message>
 </context>
 <context>

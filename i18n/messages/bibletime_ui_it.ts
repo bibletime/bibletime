@@ -707,9 +707,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>esperto di usabilità</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation>Potrebbero mancare alcuni nomi, per favore manda una mail %1 se noti errori o omissioni.</translation>
+        <translation type="vanished">Potrebbero mancare alcuni nomi, per favore manda una mail %1 se noti errori o omissioni.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
@@ -790,6 +789,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="190"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Le seguenti persone hanno tradotto BibleTime nella loro lingua:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
@@ -2125,36 +2129,36 @@ scorciatoia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
-        <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
+        <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="228"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="230"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Dio infatti ha tanto amato il mondo da dare il suo Figlio unigenito, perché chiunque crede in lui non muoia, ma abbia la vita eterna.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="235"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Dio non ha mandato il Figlio nel mondo per giudicare il mondo, ma perché il mondo si salvi per mezzo di lui.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="244"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Chi crede in lui non è condannato; ma chi non crede è già stato condannato, perché non ha creduto nel nome dell&apos;unigenito Figlio di Dio.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="252"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="254"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Chiunque infatti fa il male, odia la luce e non viene alla luce perché non siano svelate le sue opere.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="257"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="259"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Ma chi opera la verità viene alla luce, perché appaia chiaramente che le sue opere sono state fatte in Dio.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="247"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="249"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation>E il giudizio è questo: la luce è venuta nel mondo, ma gli uomini hanno preferito le tenebre alla luce, perché le loro opere erano malvagie.</translation>
     </message>
@@ -4850,21 +4854,29 @@ Vuoi continuare?</translation>
     <name>btm::BtSearchInterface</name>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
-        <source>Indexing</source>
+        <source>Indexing %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>btm::InstallProgress</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="93"/>
         <source>Installing</source>
-        <translation>Installazione in corso</translation>
+        <translation type="vanished">Installazione in corso</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="99"/>
         <source>Downloading</source>
-        <translation>Scaricamento in corso</translation>
+        <translation type="vanished">Scaricamento in corso</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
+        <source>Installing %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="103"/>
+        <source>Downloading %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
