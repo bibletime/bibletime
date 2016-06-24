@@ -57,8 +57,7 @@ void BtSearchInterface::slotModuleProgress(int value) {
 }
 
 void BtSearchInterface::slotBeginModuleIndexing(const QString& moduleName) {
-    QString title = tr("Indexing") + " " + moduleName;
-    m_progressObject->setProperty("text", title);
+    m_progressObject->setProperty("text", tr("Indexing %1").arg(moduleName));
 }
 void BtSearchInterface::slotIndexingFinished() {
     emit indexingFinished();
