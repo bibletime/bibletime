@@ -136,9 +136,6 @@ void BtTipDialog::initTips() {
         " and select the Edit Bookmark menu. After finishing the edit the description can be"
         " seen by hovering over the bookmark.");
 
-    m_tips << tr("To load multiple installation sources for works, go to the Bookshelf Manager"
-        ", select the Add button, and then the Get List button.");
-
     m_tips << tr("To find more information about a work, go the the Bookshelf window, right"
         " click on the work, and select the About menu.");
 
