@@ -111,8 +111,8 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 void BtTipDialog::initTips() {
     m_tips.clear();
 
-    m_tips << tr("To add multiple Bible works in parallel in your active Bible window"
-        " select this icon and choose another Bible work.")
+    m_tips << tr("To add multiple Bible works in parallel in your active Bible or commentary window"
+        " select this icon and choose another Bible or commentary work.")
         + "<br><center>" + iconToHtml(CResMgr::modules::bible::icon_add()) + "</center>";
 
     m_tips << tr("To add multiple commentary works in parallel in your active commentary window"
@@ -136,9 +136,6 @@ void BtTipDialog::initTips() {
         " and select the Edit Bookmark menu. After finishing the edit the description can be"
         " seen by hovering over the bookmark.");
 
-    m_tips << tr("To load multiple installation sources for works, go to the Bookshelf Manager"
-        ", select the Add button, and then the Get List button.");
-
     m_tips << tr("To find more information about a work, go the the Bookshelf window, right"
         " click on the work, and select the About menu.");
 
@@ -155,7 +152,7 @@ void BtTipDialog::initTips() {
 
     m_tips << tr("You can save personal notes for specific verses references. You must install"
         " the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the"
-        " source and look under Commentary and English. Once installed, use the"
+        " source, English as the language,  and look under Commentary. Once installed, use the"
         " Bookshelf window and right click the Personal commentary. Use either the"
         " Edit Plain Text menu or the Edit HTML menu to open the work in write mode.");
 
