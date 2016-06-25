@@ -38,7 +38,7 @@ const QString PROTO_HTTPS( QObject::tr("Remote HTTPS") );
 CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
         : QDialog(),
         m_remoteListAdded(false) {
-    setWindowTitle(tr("New  Installation Source"));
+    setWindowTitle(tr("New Installation Source"));
 
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
     mainLayout->setMargin( 10 );
