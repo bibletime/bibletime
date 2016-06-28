@@ -29,9 +29,6 @@ before_install:
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; else export CXX="clang++-3.9" CC="clang-3.9"; fi
   - sudo apt-get install --yes --force-yes cmake libclucene-dev qt57base qt57declarative qt57svg qt57tools qt57webengine qt57xmlpatterns
   - source /opt/qt57/bin/qt57-env.sh
-  - sudo sed -e 's/class Q_CORE_EXPORT QUrl/class QUrl;\nQ_CORE_EXPORT uint qHash(const QUrl \&url, uint seed = 0) Q_DECL_NOTHROW;\n&/' -e 's/\(friend Q_CORE_EXPORT uint qHash(const .*, uint seed\) = 0/\1/' -i /usr/include/qt5/QtCore/qurl.h || true
-  - sudo sed -e 's/class Q_CORE_EXPORT QPersistentModelIndex/class QPersistentModelIndex;\nQ_CORE_EXPORT uint qHash(const QPersistentModelIndex \&, uint seed = 0);\n&/' -e 's/\(friend uint qHash(const .*, uint seed\) = 0/\1/' -i /usr/include/qt5/QtCore/qabstractitemmodel.h || true
-  - sudo sed -e 's/class Q_NETWORK_EXPORT QHostAddress/class QHostAddress;\nQ_NETWORK_EXPORT uint qHash(const QHostAddress \&, uint seed = 0);\n&/' -e 's/\(friend Q_NETWORK_EXPORT uint qHash(const .*, uint seed\) = 0/\1/' -i /usr/include/qt5/QtNetwork/qhostaddress.h || true
   - svn checkout --non-interactive http://crosswire.org/svn/sword/trunk sword-trunk
   - cd sword-trunk
   - mkdir b
