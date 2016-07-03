@@ -130,10 +130,7 @@ class BTModuleTreeItem {
         inline QString text() const {
             return m_text;
         }
-        /**
-        * Returns the path to the icon which is appropriate for this type of item, or QString::null.
-        */
-        QString iconName() const;
+
         /**
         * If the type is Module returns a pointer to the corresponding CSwordModuleInfo object,
         * otherwise returns 0.
