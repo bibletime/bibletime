@@ -127,7 +127,7 @@ class BTModuleTreeItem {
         /**
         * Returns the item text (category name, language name or module name).
         */
-        inline QString text() const {
+        inline QString const & text() const {
             return m_text;
         }
 
