@@ -78,8 +78,8 @@ class BTModuleTreeItem {
         * One example of a filter which can be used with any view. If the module has been
         * set "hidden" it will be filtered out.
         */
-        struct HiddenOff : public Filter {
-            inline bool filter(CSwordModuleInfo const & mi) const override
+        struct HiddenOff final: public Filter {
+            inline bool filter(CSwordModuleInfo const & mi) const final override
             { return !mi.isHidden(); }
         };
 
