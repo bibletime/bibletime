@@ -406,13 +406,23 @@ void CSwordModuleInfo::buildIndex() {
                  it != m_module.getEntryAttributes()["Word"].end();
                  ++it)
             {
-                if (it->second["LemmaClass"] == "strong") {
-                    lucene_utf8towcs(wcharBuffer, it->second["Lemma"], BT_MAX_LUCENE_FIELD_LENGTH);
-                    doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("strong")),
-                                                           static_cast<const TCHAR *>(wcharBuffer),
-                                                           lucene::document::Field::STORE_NO
-                                                           | lucene::document::Field::INDEX_TOKENIZED)));
+                int partCount = QString(it->second["PartCount"]).toInt();
+                for (int i=0; i<partCount; i++) {
+
+                    sword::SWBuf lemmaKey = "Lemma";
+                    if (partCount > 1)
+                        lemmaKey.appendFormatted(".%d", i+1);
+                    sword::AttributeValue::iterator lemmaIter = it->second.find(lemmaKey);
+                    if (lemmaIter != it->second.end()) {
+                        lucene_utf8towcs(wcharBuffer, it->second[lemmaKey], BT_MAX_LUCENE_FIELD_LENGTH);
+                        doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("strong")),
+                                                               static_cast<const TCHAR *>(wcharBuffer),
+                                                               lucene::document::Field::STORE_NO
+                                                               | lucene::document::Field::INDEX_TOKENIZED)));
+                    }
+
                 }
+
                 if (it->second.find("Morph") != it->second.end()) {
                     lucene_utf8towcs(wcharBuffer, it->second["Morph"], BT_MAX_LUCENE_FIELD_LENGTH);
                     doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("morph")),

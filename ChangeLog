@@ -1,3 +1,6 @@
+2016-07-04 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #64 Fix indexing which affects searching for strong's numbers in modules with multiple strong's numbers per word.
+
 2016-05-14 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.11 RC 1.
 
