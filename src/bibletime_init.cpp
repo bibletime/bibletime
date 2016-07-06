@@ -888,7 +888,11 @@ void BibleTime::slotShowDebugWindow(bool show) {
         BT_CONNECT(m_debugWindow, &QObject::destroyed,
                    this,          &BibleTime::slotDebugWindowClosing,
                    Qt::DirectConnection);
+        #if QT_VERSION < 0x050400
         QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
+        #else
+        QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
+        #endif
     } else {
         deleteDebugWindow();
     }
