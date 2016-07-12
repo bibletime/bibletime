@@ -180,8 +180,8 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
        and therefore contain no control (nonprintable) characters, which are all
        <127. */
     const QString test(isUnicode()
-                       ? QString::fromUtf8(m_module.getRawEntryBuf().c_str())
-                       : QString::fromLatin1(m_module.getRawEntryBuf().c_str()));
+                       ? QString::fromUtf8(m_module.getRawEntry())
+                       : QString::fromLatin1(m_module.getRawEntry()));
 
     if (test.isEmpty())
         return false;
