@@ -131,9 +131,9 @@ bool initDirectoryCache() {
 #elif defined (ANDROID)
 #else
     cachedSwordPathDir.reset(new QDir());
-    char* swordPath = qgetenv(SWORD_PATH).data();
-    if (swordPath != nullptr) {
-        cachedSwordPathDir.reset(new QDir(swordPath));
+    auto swordPath(qgetenv(SWORD_PATH));
+    if (swordPath.data()) {
+        cachedSwordPathDir.reset(new QDir(swordPath.data()));
         // We unset the SWORD_PATH so libsword finds paths correctly
         qputenv(SWORD_PATH, "");
     }
