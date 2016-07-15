@@ -90,7 +90,6 @@ QString InstallProgress::getModuleName(int moduleIndex) {
 void InstallProgress::slotInstallStarted(int moduleIndex) {
     BT_ASSERT(moduleIndex == m_nextInstallIndex);
     m_nextInstallIndex++;
-    QString message = ;
     m_progressObject->setProperty(
                 "text",
                 tr("Installing %1").arg(getModuleName(moduleIndex)));
