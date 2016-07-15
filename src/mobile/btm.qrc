@@ -4,6 +4,7 @@
         <file>qml/AddBookmark.qml</file>
         <file>qml/AddFolder.qml</file>
         <file>qml/BookmarkFolders.qml</file>
+        <file>qml/BookmarkManager.qml</file>
         <file>qml/BtButtonStyle.qml</file>
         <file>qml/Folder.qml</file>
         <file>qml/FontSizeSlider.qml</file>

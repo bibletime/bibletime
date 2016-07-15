@@ -161,8 +161,6 @@ Rectangle {
         else {
             window.setModule(module);
             window.setModuleToBeginning();
-            window.swipeLeft.connect(windowManager,setPreviousWindow)
-            window.swipeRight.connect(windowManager,setNextWindow)
             window.windowMenusDialog.connect(windowManager, windowMenusSlot)
             windows.push(window)
             layoutWindows();

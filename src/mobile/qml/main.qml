@@ -68,8 +68,10 @@ Rectangle {
         setFontDialog,
         parentBookmarkFolders,
         bookmarkFolders,
+        bookmarkManager,
         addBookmark,
         addFolder,
+        bookmarkManagerMenus,
         colorThemeMenus
     ]
 
@@ -186,7 +188,7 @@ Rectangle {
         objectName: "startupBookshelfManager"
         background: btStyle.toolbarColor
         text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
-                  "There are currently no documents. Do you want to install documents now?")
+                   "There are currently no documents. Do you want to install documents now?")
         onFinished: {
             startupBookshelfManager.visible = false;
             if (answer == true) {
@@ -541,7 +543,7 @@ Rectangle {
                 addBookmark.visible = true;
             }
             else if (action == "bookmarks") {
-                console.log("bookmarks");
+                bookmarkManager.visible = true;
             }
         }
     }
@@ -575,7 +577,6 @@ Rectangle {
         Keys.onReleased: {
             if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFolders.visible == true) {
                 bookmarkFolders.visible = false;
-                console.log("bookmark folders closing")
                 event.accepted = true;
             }
         }
@@ -610,11 +611,58 @@ Rectangle {
         Keys.onReleased: {
             if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && parentBookmarkFolders.visible == true) {
                 parentBookmarkFolders.visible = false;
-                console.log("bookmark folders closing")
                 event.accepted = true;
             }
         }
     }
+
+    BookmarkManager {
+        id: bookmarkManager
+
+        visible: false
+
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkManager.visible == true) {
+                bookmarkManager.visible = false;
+                event.accepted = true;
+            }
+        }
+
+        onBookmarkItemClicked: {
+            bookmarkManagerMenus.visible = true;
+        }
+
+        onOpenReference: {
+            windowMenus.theWindow.setModule(module);
+            windowMenus.theWindow.setKey(reference);
+            windowMenus.theWindow.setHistoryPoint();
+            bookmarkManager.visible = false;
+        }
+    }
+
+
+    Menus {
+        id: bookmarkManagerMenus
+
+        property variant theWindow
+
+        model: bookmarkManager.contextMenuModel
+        z:10
+
+        Component.onCompleted: menuSelected.connect(bookmarkManagerMenus.doAction)
+
+        function doAction(action) {
+            bookmarkManagerMenus.visible = false;
+            if (action == "open") {
+                windowMenus.theWindow.setModule(bookmarkManager.module);
+                windowMenus.theWindow.setKey(bookmarkManager.reference);
+                bookmarkManager.visible = false;
+                return;
+            }
+            bookmarkManager.doContextMenu(action);
+        }
+    }
+
 
     SetFont {
         id:setFontDialog

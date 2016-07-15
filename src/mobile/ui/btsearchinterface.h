@@ -17,7 +17,6 @@
 #include <QString>
 #include "backend/cswordmodulesearch.h"
 #include "mobile/models/roleitemmodel.h"
-#include "mobile/models/roleitemmodel.h"
 #include <listkey.h>
 
 class CSwordKey;

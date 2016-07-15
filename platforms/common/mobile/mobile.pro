@@ -71,6 +71,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/AddBookmark.qml \
     ../../../src/mobile/qml/AddFolder.qml \
     ../../../src/mobile/qml/BookmarkFolders.qml \
+    ../../../src/mobile/qml/BookmarkManager.qml \
     ../../../src/mobile/qml/BtButtonStyle.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
     ../../../src/mobile/qml/Folder.qml \
