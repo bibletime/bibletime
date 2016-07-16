@@ -2912,7 +2912,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="152"/>
         <source>Amuzgo, Guerrero</source>
         <extracomment>Language name amu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>põhja-amuzgo</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
@@ -2972,7 +2972,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
         <source>Chinantec, Comaltepec</source>
         <extracomment>Language name cco</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšinanteegi (Comaltepeci)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
@@ -2996,13 +2996,13 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="189"/>
         <source>Chinantec, Quiotepec</source>
         <extracomment>Language name chq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšinanteegi (Quiotepeci)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="191"/>
         <source>Chinantec, Ozumacu00edn</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšinanteegi (Ozumacíni)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
@@ -3014,13 +3014,13 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
         <source>Chinantec, Lalana</source>
         <extracomment>Language name cnl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšinanteegi (Lalana)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
         <source>Chinantec, Tepetotutla</source>
         <extracomment>Language name cnt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšinanteegi (Tepetotutla)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
@@ -3038,7 +3038,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
         <source>Chinantec, Sochiapan</source>
         <extracomment>Language name cso</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšinanteegi (Sochiapani)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="206"/>
@@ -3050,7 +3050,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="208"/>
         <source>Chatino, Western Highland</source>
         <extracomment>Language name ctp</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>tšatino (lääne-mägismaa)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="210"/>
@@ -3170,7 +3170,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Geez</source>
         <extracomment>Language name gez</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>etioopia</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
@@ -3230,7 +3230,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="278"/>
         <source>Huave, San Mateo Del Mar</source>
         <extracomment>Language name huv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>huave (San Mateo del Mar)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="280"/>
@@ -3284,7 +3284,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
         <source>Javanese, Caribbean</source>
         <extracomment>Language name jvn</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>jaava (kariibi)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="303"/>
@@ -3356,7 +3356,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Mixtec, Coatzospan</source>
         <extracomment>Language name miz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>misteegi (Coatzospani)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="344"/>
@@ -3368,7 +3368,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="346"/>
         <source>Mixtec, Silacayoapan</source>
         <extracomment>Language name mks</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>misteegi (Silacayoapani)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="351"/>
@@ -3404,13 +3404,13 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="380"/>
         <source>Nahuatl, Guerrero</source>
         <extracomment>Language name ngu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>nahua (Guerrero)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="382"/>
         <source>Nahuatl, Northern Oaxaca</source>
         <extracomment>Language name nhy</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>nahua (Põhja-Oaxaca)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="385"/>
@@ -3434,7 +3434,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="398"/>
         <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>otomi (Querétaro)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="401"/>
@@ -3452,7 +3452,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="412"/>
         <source>Persian (Dari)</source>
         <extracomment>Language name prs</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>pärsia (Dari)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="416"/>
@@ -3645,13 +3645,13 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="506"/>
         <source>Zapotec, San Juan Guelavu00eda</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (San Juan Guelavía)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="508"/>
         <source>Zapotec, Mitla</source>
         <extracomment>Language name zaw</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Mitla)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="510"/>
@@ -3663,43 +3663,43 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="512"/>
         <source>Zapotec, Amatlu00e1n</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Amatláni)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="514"/>
         <source>Zapotec, Zoogocho</source>
         <extracomment>Language name zpq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Zoogocho)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="516"/>
         <source>Zapotec, Yalu00e1lag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Yalálagi)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="518"/>
         <source>Zapotec, Chichicapan</source>
         <extracomment>Language name zpv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Chichicapani)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="520"/>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (lõuna Rinconi)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="522"/>
         <source>Zapotec, Quioquitani-Quieru00ed</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Quioquitani-Quierí)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="524"/>
         <source>Zapotec, Yatee</source>
         <extracomment>Language name zty</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>sapoteegi (Yatee)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="526"/>
@@ -3948,7 +3948,7 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="366"/>
         <source>Mixtec, Jamiltepec</source>
         <extracomment>Language name mxt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>misteegi (Jamiltepeci)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="368"/>
@@ -3960,31 +3960,31 @@ Kas soovite jätkata?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="371"/>
         <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>norra (bokmåli)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="373"/>
         <source>Nahuatl, Michoacu00e1n</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>nahua (Michoacán)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="408"/>
         <source>Potawatomi</source>
         <extracomment>Language name pot</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>potawatomi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="469"/>
         <source>Klingon</source>
         <extracomment>Language name tlh</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>klingoni</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="499"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <extracomment>Language name xtd</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>misteegi (Diuxi-Tilantongo)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="503"/>
