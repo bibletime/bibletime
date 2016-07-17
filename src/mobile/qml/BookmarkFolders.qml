@@ -20,7 +20,7 @@ import BibleTime 1.0
 Rectangle {
     id: bookmarkFolders
 
-    property string currentFolderName: ""
+    property string currentFolderName: "Bookmarks"
     property bool allowNewFolders: false
     property int rowHeight: {
         var pixel = btStyle.pixelsPerMillimeterY * 8;
