@@ -38,6 +38,7 @@ void SessionManager::loadDefaultSession() {
 
     int windowArrangementMode = getWindowArrangementMode();
     m_windowMgr->setProperty("windowArrangement", windowArrangementMode);
+    m_windowMgr->setProperty("visible", true);
 }
 
 void SessionManager::loadWindows() {

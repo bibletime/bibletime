@@ -200,7 +200,7 @@ Rectangle {
         }
 
         style: TreeViewStyle {
-            indentation: bookmarkManager.rowHeight * 0.9
+            indentation: bookmarkManager.rowHeight * 0.5
         }
 
         TableViewColumn {
@@ -213,12 +213,17 @@ Rectangle {
     Button {
         id: newFolderButton
 
-        height: titleText.height*1.2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 3
         action: newFolderAction
         style: BtButtonStyle {
+        }
+        onVisibleChanged: {
+            if (visible)
+                height = titleText.height * 1.2
+            else
+                height = 0;
+
         }
     }
 

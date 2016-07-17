@@ -18,7 +18,7 @@ import BibleTime 1.0
 Rectangle {
     id: root
 
-    color: "blue"
+    color: "#404040"
     property int opacitypopup: 0
     property QtObject component: null;
     property Item window: null;
@@ -128,7 +128,8 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        color: btStyle.toolbarColor
+        color: btStyle.textBackgroundColor
+        visible: false
 
         onWindowMenus: {
             windowMenus.theWindow = window

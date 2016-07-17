@@ -94,7 +94,7 @@ Rectangle {
         Button {
             id: yesButton
             width: btStyle.pixelsPerMillimeterY * 25
-            height: dummyTextForHeight.height*1.5
+            height: dummyTextForHeight.height*1.7
             action: yesAction
             style: BtButtonStyle {
             }
@@ -113,7 +113,7 @@ Rectangle {
         Button {
             id: noButton
             width: btStyle.pixelsPerMillimeterY * 25
-            height: dummyTextForHeight.height*1.5
+            height: dummyTextForHeight.height*1.7
             action: noAction
             style: BtButtonStyle {
             }

@@ -152,7 +152,7 @@ Rectangle {
         }
 
         style: TreeViewStyle {
-            indentation: bookmarkFolders.rowHeight * 0.7
+            indentation: bookmarkFolders.rowHeight * 0.5
         }
 
         TableViewColumn {
@@ -168,7 +168,6 @@ Rectangle {
         height: titleText.height*1.2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 3
         action: newFolderAction
         style: BtButtonStyle {
         }
