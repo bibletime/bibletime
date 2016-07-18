@@ -141,8 +141,8 @@ void BtModuleChooserButton::populateMenu() {
     if (m_module.isEmpty()) m_noneAction->setChecked(true);
 
     m_popup->addSeparator();
-    BT_CONNECT(m_popup, SIGNAL(triggered(QAction *)),
-               this, SLOT(moduleChosen(QAction *)));
+    BT_CONNECT(m_popup, &QMenu::triggered,
+               this,    &BtModuleChooserButton::moduleChosen);
     setMenu(m_popup);
 
 
