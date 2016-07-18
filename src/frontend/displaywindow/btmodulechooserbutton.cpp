@@ -107,7 +107,8 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
 
 /** Is called after a module was selected in the popup */
 void BtModuleChooserButton::moduleChosen( QAction* action ) {
-    if (action->text() == tr("NONE")) { // note: this is for m_popup, the toplevel!
+    auto modProperty(action->property("BibleTimeModule"));
+    if (!modProperty.isValid()) { // note: this is for m_popup, the toplevel!
         if (m_hasModule) {
             qDebug() << "remove module" << m_id;
             emit sigModuleRemove(m_id);
@@ -121,10 +122,10 @@ void BtModuleChooserButton::moduleChosen( QAction* action ) {
     }
     else {
         if (!m_hasModule) {
-            emit sigModuleAdd(m_id + 1, action->text());
+            emit sigModuleAdd(m_id + 1, modProperty.toString());
             return;
         }
-        emit sigModuleReplace(m_id, action->text());
+        emit sigModuleReplace(m_id, modProperty.toString());
     }
 }
 
@@ -189,6 +190,7 @@ void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
             // item must be module, create and add it to the lang menu
             QString name(i->text());
             QAction* modItem = new QAction(name, menu);
+            modItem->setProperty("BibleTimeModule", name);
             modItem->setCheckable(true);
             menu->addAction(modItem);
         }
