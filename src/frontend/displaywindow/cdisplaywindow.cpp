@@ -166,6 +166,9 @@ void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
     // Save list of modules:
     conf.setSessionValue("modules", m_modules);
 
+    // Default for "not a write window":
+    conf.setSessionValue("writeWindowType", int(0));
+
     conf.endGroup();
 }
 
