@@ -1,32 +1,42 @@
 ChangeLog for BibleTime Mobile
 
-2016-07-06
+2016-07-18
+    Version 1.10
+    Bookmark support added
+
+2015-10-31
+    Version 1.09
+
+2015-10-26
+    Version 1.08
+
+2015-07-06
     Version 1.07
     Fix more translation issues
 
-2016-06-22
+2015-06-22
     Version 1.06
     Fix some translation issues
     Fix update of module reference in toolbar
 
-2016-06-08
+2015-06-08
     Version 1.05
     Add Spanish translation
 
-2016-05-24
+2015-05-24
     Version 1.04
     Add Lithuanian translation
 
-2016-05-23
+2015-05-23
     Version 1.03
     Improve the Portuguese translation
 
-2016-05-14
+2015-05-14
     Version 1.02
     Improve the Portuguese translation
     Fix problem with upper bound of some modules.
 
-2016-04-25
+2015-04-25
     Add localization and Portuguese translation
     Improve font size sliders
     
