@@ -30,12 +30,6 @@ public: /* Methods: */
 
     CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent);
 
-    /**
-       Inserts the keyboard accelerators of this window into the given
-       collection.
-    */
-    static void insertKeyboardActions(BtActionCollection * const a);
-
     virtual CSwordModuleInfo::ModuleType moduleType() const = 0;
 
 protected: /* Methods: */

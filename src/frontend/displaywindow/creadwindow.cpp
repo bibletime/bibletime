@@ -93,9 +93,6 @@ void CReadWindow::slotMoveToAnchor() {
             Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
-void CReadWindow::insertKeyboardActions(BtActionCollection * const)
-{}
-
 void CReadWindow::copyDisplayedText()
 { CExportManager().copyKey(key(), CExportManager::Text, true); }
 
