@@ -127,7 +127,7 @@ void CBibleReadWindow::initActions() {
 
     CLexiconReadWindow::initActions(); //make sure the predefined actions are available
 
-    CBibleReadWindow::insertKeyboardActions(ac);
+    insertKeyboardActions(ac);
 
     ac->action("nextEntry").setEnabled(false);
     ac->action("previousEntry").setEnabled(false);

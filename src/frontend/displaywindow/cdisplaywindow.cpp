@@ -241,7 +241,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
 void CDisplayWindow::initActions() {
     BtActionCollection* ac = actionCollection();
 
-    CDisplayWindow::insertKeyboardActions(ac);
+    insertKeyboardActions(ac);
 
     namespace DWG = CResMgr::displaywindows::general;
     initAction(DWG::search::actionName,

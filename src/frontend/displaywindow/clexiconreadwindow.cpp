@@ -80,7 +80,7 @@ void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 void CLexiconReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
     CReadWindow::initActions();
-    CLexiconReadWindow::insertKeyboardActions(ac);
+    insertKeyboardActions(ac);
 
     m_actions.backInHistory =
             &ac->actionAs<BtToolBarPopupAction>(
