@@ -20,7 +20,6 @@
 
 
 #define CSSTEMPLATEBASE "Basic.tmpl"
-#define CSSTEMPLATEBASEMOBILE "Basic-mobile.tmpl"
 
 namespace {
 
