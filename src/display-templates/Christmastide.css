@@ -134,3 +134,7 @@ div.currententry {
 .italic {
     font-style: italic;
 }
+
+.highlightwords {
+    background-color: #ffff66;
+}

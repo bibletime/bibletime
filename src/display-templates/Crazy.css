@@ -303,3 +303,7 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 #printer .rangeheading {}
 
 *[dir=rtl] { text-align:right !important; }
+
+.highlightwords {
+    background-color: #ffff66;
+}

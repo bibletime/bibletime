@@ -317,3 +317,7 @@ td.entry + td.entry {
     border-bottom: 1px solid black;
     color: black;
 }
+
+.highlightwords {
+    background-color: #ffff66;
+}
