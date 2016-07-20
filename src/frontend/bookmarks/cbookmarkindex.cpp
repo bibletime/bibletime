@@ -394,6 +394,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
 
         // Ask whether to copy or move with a popup menu
         std::unique_ptr<QMenu> dropPopupMenu{new QMenu{this}};
+        dropPopupMenu->setEnabled(!newList.empty());
         QAction * const copy = dropPopupMenu->addAction(tr("Copy"));
         QAction * const move = dropPopupMenu->addAction(tr("Move"));
         QAction * const dropAction = dropPopupMenu->exec(QCursor::pos());
