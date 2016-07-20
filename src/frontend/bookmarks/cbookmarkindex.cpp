@@ -206,11 +206,12 @@ QMimeData * CBookmarkIndex::dragObject() {
 }
 
 void CBookmarkIndex::dragEnterEvent(QDragEnterEvent * event) {
-    setState(QAbstractItemView::DraggingState);
-    QTreeView::dragEnterEvent(event);
-    if (event->source() == this
-        || event->mimeData()->hasFormat("BibleTime/Bookmark"))
+    if (event->mimeData()->hasFormat("BibleTime/Bookmark")) {
         event->acceptProposedAction();
+        setState(DraggingState);
+    } else {
+        QAbstractItemView::dragEnterEvent(event);
+    }
 }
 
 void CBookmarkIndex::dragMoveEvent(QDragMoveEvent * event) {
