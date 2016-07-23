@@ -22,7 +22,8 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
   - gpg --keyserver pgpkeys.mit.edu --recv-key 15CF4D18AF4F7421
   - gpg -a --export 15CF4D18AF4F7421 | sudo apt-key add -
-  - sudo add-apt-repository 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty main' --yes
+  - sudo add-apt-repository 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty main' --yes
+  - sudo add-apt-repository 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-3.9 main' --yes
   - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa --yes
   - sudo apt-get update
   - if [ "$CXX" = "g++" ]; then sudo apt-get install --yes --force-yes g++-4.9; else sudo apt-get install --yes --force-yes clang-3.9; fi
