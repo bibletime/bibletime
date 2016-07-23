@@ -122,7 +122,7 @@ void BtConfigCore::deleteSession(const QString & key) {
 
 QStringList BtConfigCore::childKeys() {
     QMutexLocker lock(&m_mutex);
-    return childGroups__();
+    return childKeys__();
 }
 
 QStringList BtConfigCore::childKeys__() {
