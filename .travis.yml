@@ -41,7 +41,7 @@ before_install:
   - cd ../..
 
 script:
-  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && /usr/local/bin/cmake .. && make && sudo make install; ctest -VV; fi
+  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && /usr/local/bin/cmake .. && make && sudo make install; fi
 
 env:
   global:
