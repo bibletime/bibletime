@@ -37,6 +37,7 @@ before_install:
   - cmake ..
   - make
   - sudo make install
+  - ctest
   - cd ../..
 
 script:
