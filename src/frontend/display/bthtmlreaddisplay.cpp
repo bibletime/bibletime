@@ -380,12 +380,18 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
             if (windowType == CSwordModuleInfo::Bible ||
                 windowType == CSwordModuleInfo::Commentary)
                 e->acceptProposedAction();
+#ifdef USEWEBENGINE
+            BtWebEngineView::dragEnterEvent(e);  // Fix crash, QTBUG-54896, BT bug #70
+#endif
             return;
     }
 
     // Is reference type compatible with window type
     if (bookmarkType == windowType) {
             e->acceptProposedAction();
+#ifdef USEWEBENGINE
+            BtWebEngineView::dragEnterEvent(e);  // Fix crash, QTBUG-54896, BT bug #70
+#endif
             return;
     }
 

@@ -1,3 +1,6 @@
+2016-09-02 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #70 Fix crash using bookmarks with Qt 5.7
+
 2016-08-10 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.11 RC 2.
 
