@@ -1,3 +1,6 @@
+2016-09-02 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #70 Fix crash using bookmarks with Qt 5.7
+
 2016-07-04 Gary Holmlund <gary.holmlund@gmail.com>
     * bug #64 Fix indexing which affects searching for strong's numbers in modules with multiple strong's numbers per word.
 
