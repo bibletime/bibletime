@@ -23,4 +23,5 @@ GenericName=Bible Study Tool
 Terminal=false
 Type=Application
 Categories=X-Bible;X-Religion;Literature;Education;Dictionary;Qt;
+Keywords=bible;study;religion;literature;education;
 DocPath=bibletime/handbook/index.html
