@@ -10,7 +10,6 @@ Comment[fr]=Un outil d'étude biblique facile à utiliser
 Comment[it]=Un semplice strumento per studiare la Bibbia
 Exec=bibletime
 Icon=bibletime
-MimeType=
 Name=BibleTime @BT_VERSION@
 Name[C]=BibleTime @BT_VERSION@
 Name[cs]=BibleTime @BT_VERSION@
