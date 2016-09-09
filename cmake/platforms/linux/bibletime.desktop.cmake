@@ -1,12 +1,12 @@
 [Desktop Entry]
 Comment=An easy to use bible study tool
 Comment[C]=An easy to use bible study tool
-Comment[cs]=Snadno pouiteln n�troj pro studium Bible
+Comment[cs]=Snadno použitelný nástroj pro studium Bible
 Comment[da]=Et letanvendeligt bibelstudieprogram
 Comment[de]=Ein einfach zu benutzendes Bibelprogramm
 Comment[et]=Lihtne Piibliuurimise vahend
 Comment[fi]=Helppokäyttöinen raamatunlukuohjelmisto
-Comment[fr]=Un outil d'éde biblique facile àtiliser
+Comment[fr]=Un outil d'étude biblique facile à utiliser
 Comment[it]=Un semplice strumento per studiare la Bibbia
 Exec=bibletime
 Icon=bibletime
