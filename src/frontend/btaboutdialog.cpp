@@ -125,10 +125,6 @@ void BtAboutDialog::retranslateBtTab() {
     QString content("<p>");
     content += tr("BibleTime is an easy to use but powerful Bible study tool.");
     content += "</p><p>";
-    content += tr("We are looking for developers and translators. If you would like to join "
-                  "our team, please send an email to %1.")
-               .arg(MAKE_LINK_STATIC("mailto:info@bibletime.info", "info@bibletime.info"));
-    content += "</p><p>";
     content += tr("(c)1999-2016, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("http://www.bibletime.info", "www.bibletime.info")
                "</p>";
