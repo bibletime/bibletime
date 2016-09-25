@@ -169,6 +169,7 @@ void BtAboutDialog::retranslateContributorsTab() {
         MAKE_CONTR(content, "Andrus Raag", artist)
         MAKE_CONTR2(content, "Jaak Ristioja", tr("project manager"), developer)
         MAKE_CONTR(content, "Fred Saalbach", tr("documentation"))
+        MAKE_CONTR(content, "Erik Schanze", tr("documentation"))
         MAKE_CONTR(content, "Gary Sims", developer)
         MAKE_CONTR2(content, "Wolfgang Stradner", tr("tester"), tr("usability expert"))
         MAKE_CONTR(content, "Kang Sun", developer)
