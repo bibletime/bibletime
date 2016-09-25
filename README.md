@@ -59,4 +59,4 @@ and its usage in the following places:
 
 May God, our Lord, use BibleTime for his glory.
 
-The BibleTime developers, info@bibletime.info
+The BibleTime developers
