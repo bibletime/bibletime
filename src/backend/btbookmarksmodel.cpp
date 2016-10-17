@@ -290,10 +290,11 @@ public: /* Loader */
         QList<BookmarkItemBase*> itemList;
 
         QDomDocument doc;
-        doc.setContent(loadXmlFromFile(fileName));
+        QString bookmarksFile = loadXmlFromFile(fileName);
+        if (bookmarksFile.isNull())
+            return QList<BookmarkItemBase*>();
 
-        //bookmarkfolder::loadBookmarksFromXML()
-
+        doc.setContent(bookmarksFile);
         QDomElement document = doc.documentElement();
         if ( document.tagName() != "SwordBookmarks" ) {
             qWarning("Not a BibleTime Bookmark XML file");
