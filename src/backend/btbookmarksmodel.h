@@ -127,11 +127,11 @@ public: /* Methods: */
     */
     void sortItems(QModelIndex const & parent = QModelIndex(),
                    Qt::SortOrder const order = Qt::AscendingOrder);
-                   
+
     /**
      \returns roleNames needed for QML use
     */
-    QHash<int, QByteArray> roleNames() const;
+    QHash<int, QByteArray> roleNames() const override;
 
 public slots:
 
