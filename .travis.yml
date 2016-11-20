@@ -16,6 +16,7 @@ compiler:
   - clang
 
 before_install:
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - wget --no-check-certificate http://www.cmake.org/files/v3.1/cmake-3.1.2-Linux-x86_64.sh
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
   - sudo add-apt-repository ppa:beineri/opt-qt57-trusty --yes
@@ -47,7 +48,7 @@ env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
-   - secure: "VjsU8+6Sca7TXbR5zQstHw6eb4Dv0ZifqE29DRT+n64VKxAWFaWazJ4VJNlHvd8ChiJRfFcXVVXfNgNMAHE/JJHt1GgSPwIqSEE2mQh+7tqfSeBV/5yBkF7Fs4QIOrWjdEhEHTt0+wc6wtoVghEHvWlk3Lymb4x0UQDZtz/a4cI="
+   - secure: "FmufrIN8L4Ptfbn0Lw/1S7fKnPxpvv7t9KEN5XhQ3lwW5Qir7mGe2r87biaKyjo15VNc4bizA2wR63YUXz6JPMETwYPahKSlW2tAsHmJTOwyweNW7zkKf6Iwrf9vYaMZyOpR2jRkD9Ko8vd4BpIw4FF6X/vaJqfnvQyIOiDGFr8="
 
 addons:
   coverity_scan:
@@ -56,7 +57,7 @@ addons:
       description: "BibleTime build submitted via Travis CI"
     notification_email: bibletime-coverity@heh.ee
     build_command_prepend: "mkdir b && cd b && /usr/local/bin/cmake .."
-    build_command: "make"
+    build_command: "cmake --build ."
     branch_pattern: .*_coverity_scan
 
 notifications:
