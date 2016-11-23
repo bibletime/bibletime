@@ -1,3 +1,6 @@
+2016-11-23 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #80 BibleTime does not start on Windows when user name is non latin1 unicode chars
+
 2016-09-02 Gary Holmlund <gary.holmlund@gmail.com>
     * bug #70 Fix crash using bookmarks with Qt 5.7
 

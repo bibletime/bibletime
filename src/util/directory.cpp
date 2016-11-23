@@ -212,7 +212,7 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WINRT
     cachedUserHomeDir.reset(new QDir(""));
-#elif defined (Q_OS_WIN) && !defined(Q_OS_WIN32)
+#elif defined (Q_OS_WIN)
     cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
 #elif defined(ANDROID)
     cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
