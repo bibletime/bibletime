@@ -23,7 +23,9 @@
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/welcome/btwelcomedialog.h"
 #include "util/directory.h"
-
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
 
 /// \todo Reimplement signal handler which handles consecutive crashes.
 
@@ -241,9 +243,11 @@ int main(int argc, char* argv[]) {
     app.addLibraryPath(app.applicationDirPath() + "/plugins");
 
     // Must set HOME var on Windows
-    QString homeDir(getenv("APPDATA"));
-    _putenv_s("HOME", qPrintable(homeDir));
-
+    // getenv and qgetenv don't work right on Windows with unicode characters
+#define BUFSIZE 4096
+    wchar_t homeDir[BUFSIZE];
+    GetEnvironmentVariable(TEXT("APPDATA"), homeDir, BUFSIZE);
+    SetEnvironmentVariable(TEXT("HOME"), homeDir);
 #endif
 
     registerMetaTypes();
