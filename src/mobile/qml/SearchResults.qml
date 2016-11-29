@@ -29,6 +29,8 @@ SplitView {
     property real handleWidth: btStyle.pixelsPerMillimeterX * 3
     property bool indexingCancelled;
 
+    signal resultsFinished();
+
     function cancel() {
         btSearchInterface.cancel();
         indexingCancelled = true;
@@ -64,12 +66,9 @@ SplitView {
         }
     }
 
-    anchors.fill: parent
-    visible: false
-
     Keys.onReleased: {
-        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && searchResults.visible == true) {
-            searchResults.visible = false;
+        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && searchResults.focus == true) {
+            resultsFinished();
             event.accepted = true;
         }
     }

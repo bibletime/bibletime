@@ -26,9 +26,9 @@ FocusScope {
     property alias moduleChoices: searchComboBox.model
 
     signal searchRequest();
+    signal searchFinished();
 
     function setupSearch() {
-
         Qt.inputMethod.hide(); // hide keyboard
         searchText = textInput.displayText;
         if (radioAny.checked)
@@ -40,10 +40,9 @@ FocusScope {
         moduleList = searchComboBox.currentText;
         searchRequest();
     }
-    anchors.fill: parent
-    visible: false
-    onVisibleChanged: {
-        if (visible) {
+
+    onFocusChanged: {
+        if (focus) {
             textInput.text = searchText;
         }
     }
@@ -252,8 +251,8 @@ FocusScope {
     }
 
     Keys.onReleased: {
-        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && search.visible == true) {
-            search.visible = false;
+        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && search.focus == true) {
+            searchFinished();
             event.accepted = true;
         }
     }

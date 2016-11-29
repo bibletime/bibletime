@@ -12,6 +12,7 @@
 
 import QtQuick 2.2
 import QtQml 2.2
+import QtQml.Models 2.2
 import QtQuick.Window 2.1
 import BibleTime 1.0
 
@@ -47,7 +48,7 @@ Rectangle {
         var moduleNames = windowManager.getUniqueModuleNames();
         searchModel.appendModuleChoices(moduleNames);
         search.searchText = "";
-        search.visible = true;
+        screenView.changeScreen(screenModel.search);
     }
 
     Keys.forwardTo: [
@@ -92,48 +93,138 @@ Rectangle {
 
     rotation: 0
 
-    MainToolbar {
-        id: mainToolbar
+    ObjectModel {
+        id: screenModel
 
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.right: parent.right
-        height: {
-            var pixel = btStyle.pixelsPerMillimeterY * 7.5;
-            var uiFont = btStyle.uiFontPointSize * 4.4;
-            var mix = pixel * 0.7 + uiFont * 0.3;
-            return Math.max(pixel, mix);
+        property int main: 0
+        property int results: 1
+        property int search: 2
+
+        Rectangle {
+            id: mainScreen
+
+            width: screenView.width
+            height: screenView.height
+
+            MainToolbar {
+                id: mainToolbar
+
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.right: parent.right
+                height: {
+                    var pixel = btStyle.pixelsPerMillimeterY * 7.5;
+                    var uiFont = btStyle.uiFontPointSize * 4.4;
+                    var mix = pixel * 0.7 + uiFont * 0.3;
+                    return Math.max(pixel, mix);
+                }
+                onButtonClicked: {
+                    mainMenus.visible = ! mainMenus.visible;
+                }
+                onSearchClicked: {
+                    startSearch();
+                }
+            }
+
+            Rectangle {
+                id: spacer
+
+                anchors.top: mainToolbar.bottom
+                height:2
+                width: parent.width
+                color: "#646464"
+            }
+
+            WindowManager {
+                id: windowManager
+
+                anchors.top: spacer.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                color: btStyle.textBackgroundColor
+                visible: false
+
+                onWindowMenus: {
+                    windowMenus.theWindow = window
+                    windowMenus.visible = true;
+                }
+            }
         }
-        onButtonClicked: {
-            mainMenus.visible = ! mainMenus.visible;
+
+        SearchResults {
+            id: searchResults
+
+            z:2
+            width: screenView.width
+            height: screenView.height
+
+            onResultsFinished: {
+                screenView.changeScreen(screenModel.main);
+            }
+            onIndexingFinishedChanged: {
+                indexProgress.visible = false;
+                if ( ! searchResults.indexingWasCancelled()) {
+                    search.openSearchResults();
+                }
+            }
         }
-        onSearchClicked: {
-            startSearch();
+
+        Search {
+            id: search
+
+            width: screenView.width
+            height: screenView.height
+            moduleChoices: searchModel
+            onSearchRequest: {
+                searchResults.moduleList = search.moduleList;
+                if ( ! searchResults.modulesAreIndexed()) {
+                    indexQuestion.visible = true;
+                    return;
+                }
+                openSearchResults();
+            }
+            onSearchFinished: {
+                screenView.changeScreen(screenModel.main);
+            }
+
+            function openSearchResults() {
+                searchResults.searchText = search.searchText;
+                searchResults.findChoice = search.findChoice;
+                searchResults.moduleList = search.moduleList;
+                searchResults.performSearch();
+                screenView.changeScreen(screenModel.results);
+            }
         }
     }
 
-    Rectangle {
-        id: spacer
+    ListView {
+        id: screenView
 
-        anchors.top: mainToolbar.bottom
-        height:2
-        width: parent.width
-        color: "#646464"
-    }
+        property int nextIndex: 0
 
-    WindowManager {
-        id: windowManager
+        function changeScreen(screen) {
+            screenView.nextIndex = screen
+            screenAnimation.start();
+        }
 
-        anchors.top: spacer.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        color: btStyle.textBackgroundColor
-        visible: false
+        anchors.fill: parent
+        model: screenModel
+        preferredHighlightBegin: 0; preferredHighlightEnd: 0
+        highlightRangeMode: ListView.StrictlyEnforceRange
+        orientation: ListView.Horizontal
+        snapMode: ListView.SnapOneItem; flickDeceleration: 2000
+        highlightFollowsCurrentItem: true
+        currentIndex: screenModel.main
+        maximumFlickVelocity: 4000
+        highlightMoveDuration: 4000
 
-        onWindowMenus: {
-            windowMenus.theWindow = window
-            windowMenus.visible = true;
+        NumberAnimation on contentX {
+            id: screenAnimation
+
+            to: screenView.width * screenView.nextIndex
+            duration: 400
+            running: false
         }
     }
 
@@ -199,46 +290,6 @@ Rectangle {
         }
     }
 
-    Search {
-        id: search
-
-        moduleChoices: searchModel
-        onSearchRequest: {
-            searchResults.moduleList = search.moduleList;
-            if ( ! searchResults.modulesAreIndexed()) {
-                search.visible = false;
-                indexQuestion.visible = true;
-                return;
-            }
-            openSearchResults();
-        }
-
-        function openSearchResults() {
-            searchResults.searchText = search.searchText;
-            searchResults.findChoice = search.findChoice;
-            searchResults.moduleList = search.moduleList;
-            search.visible = false;
-            searchResults.performSearch();
-            searchResults.visible = true;
-        }
-    }
-
-    SearchResults {
-        id: searchResults
-        z:2
-
-        onVisibleChanged: {
-            if ( ! visible) {
-                search.visible = true;
-            }
-        }
-        onIndexingFinishedChanged: {
-            indexProgress.visible = false;
-            if ( ! searchResults.indexingWasCancelled()) {
-                search.openSearchResults();
-            }
-        }
-    }
 
     Question {
         id: indexQuestion
@@ -250,7 +301,7 @@ Rectangle {
             if (answer == true) {
                 indexProgress.visible = true;
             } else {
-                search.visible = false;
+                screenView.changeScreen(screenModel.main);
             }
         }
     }
