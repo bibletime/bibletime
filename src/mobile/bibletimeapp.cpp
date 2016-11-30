@@ -11,6 +11,7 @@
 **********/
 
 #include "bibletimeapp.h"
+#include "btmmain.h"
 
 #include <QDebug>
 #include <QFile>
@@ -30,6 +31,8 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
 {
     setApplicationName("bibletime");
     setApplicationVersion(BT_VERSION);
+    connect(this, SIGNAL(applicationStateChanged(Qt::ApplicationState)),
+            this, SLOT(applicationStateChanged(Qt::ApplicationState)));
 }
 
 BibleTimeApp::~BibleTimeApp() {
@@ -99,4 +102,9 @@ bool BibleTimeApp::initDisplayTemplateManager() {
         return true;
     message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
     return false;
+}
+
+void BibleTimeApp::applicationStateChanged(Qt::ApplicationState state) {
+    if (state == Qt::ApplicationSuspended)
+        saveSession();
 }

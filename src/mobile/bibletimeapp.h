@@ -39,6 +39,10 @@ class BibleTimeApp : public QGuiApplication {
 
         bool debugMode() const { return m_debugMode; }
 
+private slots:
+
+        void applicationStateChanged(Qt::ApplicationState state);
+
     private: /* Fields: */
 
         bool m_init;

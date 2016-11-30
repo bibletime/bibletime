@@ -23,5 +23,7 @@ void openBookshelfManager();
 
 QFont getDefaultFont();
 
+void saveSession();
+
 #endif
 

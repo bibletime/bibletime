@@ -13,6 +13,7 @@
 #include <QBrush>
 #include <QColor>
 #include <QDateTime>
+#include <QDebug>
 #include <QGuiApplication>
 #include <QPalette>
 #include <QQuickItem>
@@ -54,6 +55,11 @@ void register_gml_classes() {
     qmlRegisterType<btm::ModuleInterface>("BibleTime", 1, 0, "ModuleInterface");
     qmlRegisterType<btm::SearchModel>("BibleTime", 1, 0, "SearchModel");
     qmlRegisterType<btm::BtSearchInterface>("BibleTime", 1, 0, "BtSearchInterface");
+}
+
+void saveSession() {
+    if (sessionMgr)
+        sessionMgr->saveDefaultSession();
 }
 
 btm::ViewManager* getViewManager() {
@@ -197,6 +203,6 @@ int main(int argc, char *argv[]) {
     }
 
     int rtn = app.exec();
-    sessionMgr->saveDefaultSession();
+    saveSession();
     return rtn;
 }

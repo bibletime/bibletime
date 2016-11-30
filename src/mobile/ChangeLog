@@ -1,5 +1,11 @@
 ChangeLog for BibleTime Mobile
 
+2016-11-29 
+    Fix issue that the session is not saved if BTM is exited using the android overview screen.
+
+2016-11-28 
+    Change UI for Search Results so you can easily switch between it and the main screen without redoing the search
+
 2016-07-31
     Version 1.12
     Update Portuguese language
