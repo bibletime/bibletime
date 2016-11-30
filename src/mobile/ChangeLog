@@ -1,6 +1,7 @@
 ChangeLog for BibleTime Mobile
 
 2016-11-29 
+    Version 1.13
     Fix issue that the session is not saved if BTM is exited using the android overview screen.
 
 2016-11-28 
