@@ -66,7 +66,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
         populateMenu();
 
     m_module = thisModule;
-    m_hasModule = thisModule.isEmpty() ? false : true;
+    m_hasModule = !thisModule.isEmpty();
 
     //All items are iterated and the state is changed properly
     QListIterator<QMenu*> it(m_submenus);
@@ -78,7 +78,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
             a->setDisabled(newModulesToUse.contains(moduleName));
         }
     }
-    m_noneAction->setChecked(m_hasModule ? false : true);
+    m_noneAction->setChecked(!m_hasModule);
     setIcon(icon());
 
     if (m_hasModule) {
