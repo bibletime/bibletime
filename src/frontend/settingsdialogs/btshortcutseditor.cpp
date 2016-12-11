@@ -198,7 +198,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
                 BtShortcutsEditorItem * const item =
                         new BtShortcutsEditorItem{&action};
                 try {
-                    item->setText(action.text().remove('&'));
+                    /// \todo Remove this & hack and use Qt properties instead:
+                    item->setText(action.text().replace(QRegExp("&(.)"), "\\1"));
                     item->setIcon(action.icon());
                     item->setDefaultKeys(defaultKeys);
                     item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
