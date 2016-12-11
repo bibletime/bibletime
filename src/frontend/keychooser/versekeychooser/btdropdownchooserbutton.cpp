@@ -68,11 +68,11 @@ void BtBookDropdownChooserButton::newList() {
     QMenu* m = menu();
     QStringList* booklist = ref()->m_module->books();
     Q_FOREACH(QString const & bookname, *booklist)
-        m->addAction(bookname);
+        m->addAction(bookname)->setProperty("bookname", bookname);
 }
 
 void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    m_ref->slotChangeBook(action->text());
+    m_ref->slotChangeBook(action->property("bookname").toString());
 }
 
 
@@ -87,13 +87,12 @@ BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(BtBibleKeyWidget*
 void BtChapterDropdownChooserButton::newList() {
     QMenu* m = menu();
     int count = ref()->m_module->chapterCount(ref()->m_key->book());
-    for (int i = 1; i <= count; i++) {
-        m->addAction(QString::number(i));
-    }
+    for (int i = 1; i <= count; i++)
+        m->addAction(QString::number(i))->setProperty("chapter", i);
 }
 
 void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    m_ref->slotChangeChapter(action->text().toInt());
+    m_ref->slotChangeChapter(action->property("chapter").toInt());
 }
 
 
@@ -108,11 +107,10 @@ BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(BtBibleKeyWidget* ref
 void BtVerseDropdownChooserButton::newList() {
     QMenu* m = menu();
     int count = ref()->m_module->verseCount(ref()->m_key->book(), ref()->m_key->getChapter());
-    for (int i = 1; i <= count; i++) {
-        m->addAction(QString::number(i));
-    }
+    for (int i = 1; i <= count; i++)
+        m->addAction(QString::number(i))->setProperty("verse", i);
 }
 
 void BtVerseDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    m_ref->slotChangeVerse(action->text().toInt());
+    m_ref->slotChangeVerse(action->property("verse").toInt());
 }
