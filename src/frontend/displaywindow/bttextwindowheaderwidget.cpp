@@ -29,6 +29,7 @@ const QString BookshelfShowHiddenKey = "GUI/bookshelfShowHidden";
 } // anonymous namespace
 
 const char* ActionType = "ActionType";
+const char * ModuleName = "ModuleName";
 
 BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype)
         : QWidget(parent),
@@ -92,8 +93,10 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
     while (it.hasNext()) {
         QMenu* popup = it.next();
         Q_FOREACH(QAction * const a, popup->actions()) {
-            a->setChecked( (a->text() == thisModule) ? true : false );
-            a->setDisabled( newModulesToUse.contains(a->text()) ? true : false );
+            a->setChecked(a->property(ModuleName).toString() == thisModule);
+            a->setDisabled(
+                        newModulesToUse.contains(
+                            a->property(ModuleName).toString()));
         }
     }
 
@@ -133,11 +136,11 @@ void BtTextWindowHeaderWidget::moduleChosen( QAction* action ) {
         return;
     }
     if (action->property(ActionType).toInt() == AddAction) {
-        emit sigModuleAdd(m_id + 1, action->text());
+        emit sigModuleAdd(m_id + 1, action->property(ModuleName).toString());
         return;
     }
     if (action->property(ActionType).toInt() == ReplaceAction) {
-        emit sigModuleReplace(m_id, action->text());
+        emit sigModuleReplace(m_id, action->property(ModuleName).toString());
     }
 }
 
@@ -220,6 +223,7 @@ void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu
             QAction* modItem = new QAction(name, menu);
             modItem->setCheckable(true);
             modItem->setProperty(ActionType, actionType);
+            modItem->setProperty(ModuleName, name);
             menu->addAction(modItem);
         }
     }
