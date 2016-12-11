@@ -73,8 +73,9 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     while (it.hasNext()) {
         QMenu* popup = it.next();
         Q_FOREACH(QAction * const a, popup->actions()) {
-            a->setChecked( (a->text() == thisModule) ? true : false );
-            a->setDisabled( newModulesToUse.contains(a->text()) ? true : false );
+            auto const moduleName(a->property("BibleTimeModule").toString());
+            a->setChecked(moduleName == thisModule);
+            a->setDisabled(newModulesToUse.contains(moduleName));
         }
     }
     m_noneAction->setChecked(m_hasModule ? false : true);
