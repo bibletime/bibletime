@@ -15,6 +15,10 @@
 #include "util/btassert.h"
 
 
+namespace {
+char const ActionText[] = "BtHistory key";
+}
+
 BTHistory::BTHistory(QWidget* parent)
         : m_historyList(),
         m_index(-1),
@@ -27,9 +31,11 @@ void BTHistory::add(CSwordKey* newKey) {
     BT_ASSERT(newKey);
     // Add new key Action after current index if we were not using the history functions,
     // if it's not a duplicate and if it's not empty.
-    if (!m_inHistoryFunction &&    ((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) )) {
+    if (!m_inHistoryFunction &&    ((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->property(ActionText).toString()) )) {
         if (!newKey->key().isEmpty()) {
-            m_historyList.insert(++m_index, new QAction(newKey->key(), this));
+            auto * const a = new QAction(newKey->key(), this);
+            a->setProperty(ActionText, newKey->key());
+            m_historyList.insert(++m_index, a);
         }
         // \todo history limit?
         sendChangedSignal();
@@ -45,7 +51,7 @@ void BTHistory::move(QAction* historyItem) {
     //find the action in the list
     m_index = m_historyList.indexOf(historyItem);
     //move to the selected item in the list, it will be the current item
-    emit historyMoved(m_historyList.at(m_index)->text()); // signal to "outsiders"; key has been changed
+    emit historyMoved(m_historyList.at(m_index)->property(ActionText).toString()); // signal to "outsiders"; key has been changed
     sendChangedSignal();
 
     m_inHistoryFunction = false;
@@ -96,7 +102,7 @@ void BTHistory::sendChangedSignal() {
 
 bool BTHistory::class_invariant() {
     for (int i = 0; i < m_historyList.size(); ++i) {
-        if (!m_historyList.at(i) || m_historyList.at(i)->text().isEmpty()) return false;
+        if (!m_historyList.at(i) || m_historyList.at(i)->property(ActionText).toString().isEmpty()) return false;
     }
     if (!(m_index >= -1 && m_index < m_historyList.size())) return false;
     return true;
