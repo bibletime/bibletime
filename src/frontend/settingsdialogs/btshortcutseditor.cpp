@@ -96,7 +96,6 @@ void BtShortcutsEditorItem::deleteHotkeys() {
 
 // Moves the hotkey information into the QAction variable
 void BtShortcutsEditorItem::commitChanges() {
-    QString actionName = text();
     QList<QKeySequence> list;
     if ( (m_newFirstHotkey != nullptr) && (*m_newFirstHotkey != QKeySequence()) ) {
         list << *m_newFirstHotkey;
