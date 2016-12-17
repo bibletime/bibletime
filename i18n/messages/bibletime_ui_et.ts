@@ -793,7 +793,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mõned nimed võivad puududa, palun raporteerige viga aadressil %1 kui märkate vigu või puuduvaid nimesid.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
@@ -2019,52 +2019,52 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="83"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">Järjehoidjad</translation>
+        <translation>Järjehoidjad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>New folder</source>
-        <translation type="unfinished">Uus kaust</translation>
+        <translation>Uus kaust</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimeta kaust ümber</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda järjehoidjat...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteeri kausta järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteeri kõik järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
         <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impordi kausta...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
         <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspordi kaustast...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Trüki järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemalda valitud...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
