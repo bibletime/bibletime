@@ -230,8 +230,6 @@ QString decodeAbbreviation(QString const & data) {
 }
 
 QString decodeCrossReference(QString const & data, BtConstModuleList const & modules) {
-
-    BT_ASSERT(!data.isEmpty());
     if (data.isEmpty())
         return QString("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
                .arg(QObject::tr("Cross references"));
