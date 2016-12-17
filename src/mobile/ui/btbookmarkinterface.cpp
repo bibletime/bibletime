@@ -192,7 +192,7 @@ void BtBookmarkInterface::setupContextMenuModel(const QModelIndex& index) {
         appendContextMenuItem(tr("Open"), "open");
     }
     if (folder)
-        appendContextMenuItem(tr("Delete folder and  bookmarks"), "delete");
+        appendContextMenuItem(tr("Delete folder and bookmarks"), "delete");
     else
         appendContextMenuItem(tr("Delete bookmark"), "delete");
 }
