@@ -18,6 +18,8 @@
 
 class BtInstallPageModel: public BtBookshelfTreeModel {
 
+    Q_OBJECT
+
 public: /* Methods: */
 
     BtInstallPageModel(Grouping const & grouping,
