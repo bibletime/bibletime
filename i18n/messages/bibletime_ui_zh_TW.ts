@@ -481,31 +481,31 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BibleTimeApp</name>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="66"/>
-        <location filename="../../src/mobile/bibletimeapp.cpp" line="63"/>
+        <location filename="../../src/mobile/bibletimeapp.cpp" line="66"/>
         <source>Warning!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="67"/>
-        <location filename="../../src/mobile/bibletimeapp.cpp" line="64"/>
+        <location filename="../../src/mobile/bibletimeapp.cpp" line="67"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="79"/>
-        <location filename="../../src/mobile/bibletimeapp.cpp" line="76"/>
+        <location filename="../../src/mobile/bibletimeapp.cpp" line="79"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="80"/>
-        <location filename="../../src/mobile/bibletimeapp.cpp" line="77"/>
+        <location filename="../../src/mobile/bibletimeapp.cpp" line="80"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="103"/>
-        <location filename="../../src/mobile/bibletimeapp.cpp" line="100"/>
+        <location filename="../../src/mobile/bibletimeapp.cpp" line="103"/>
         <source>Fatal error!</source>
         <translation>嚴重錯誤!</translation>
     </message>
@@ -647,12 +647,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime 是個好上手又好用的聖經研讀工具.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime 採用GPL 授權釋出. 你可以無限制的下載並使用該程式供個人個人,私人,大眾,或商業用途使用.但只有當你願意公開發對應的原始碼方可發布或傳送該程式.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>The complete legally binding license is below.</source>
         <translation>完整合法榜定授權如下.</translation>
     </message>
@@ -667,42 +667,41 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation>我們正在招募開發者和翻譯者. 如果你想要參與我們的團隊, 請發個電子郵件到  %1.</translation>
+        <translation type="vanished">我們正在招募開發者和翻譯者. 如果你想要參與我們的團隊, 請發個電子郵件到  %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>(c)1999-2016, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="135"/>
         <source>&amp;Contributors</source>
         <translation>貢獻者&amp;C</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>感謝以下人員為BibleTime付出:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="152"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
         <source>documentation and translation manager</source>
         <translation>手冊與翻譯管理員</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="170"/>
         <source>project manager</source>
         <translation>專案管理</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
         <source>tester</source>
         <translation>測試者</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
         <source>usability expert</source>
         <translation>可用性專家</translation>
     </message>
@@ -711,107 +710,108 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="vanished">有些名字可能消失了, 請寄電子郵件給給 %1 如果你發現任何錯誤或闕漏.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime 使用SWORD 專案. SWORD 專案是CrossWire Bible Society的 免費聖經軟體專案. 它的目標是要建立跨平台的開放原始碼工具 &amp;mdash; 以GNU General Public License授權釋出 &amp;mdash; 允許程式設計師和聖經族群能更快也更輕易的撰寫新的聖經軟體.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="245"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>The SWORD Project: </source>
         <translation>The SWORD 專案:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt 工具組版本 %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>More info...</source>
         <translation>更多資訊...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>&amp;License</source>
         <translation>授權&amp;L</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="138"/>
         <source>designer</source>
         <translation>設計師</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
         <source>developer</source>
         <translation>開發者</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="153"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="149"/>
         <source>project founder</source>
         <translation>專案建立者</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="155"/>
         <source>packager</source>
         <translation>封裝</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="156"/>
         <source>creator of The Sword Project</source>
         <translation>The Sword Project建立者</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
         <source>domain sponsor</source>
         <translation>網域捐贈者</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="163"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="159"/>
         <source>howto</source>
         <translation>howto手冊</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
         <source>artist</source>
         <translation>美工</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
         <source>documentation</source>
         <translation>手冊</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="190"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="187"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>以下人員將BibleTime翻譯成他們的語言:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
         <source>SWORD library version %1</source>
         <translation>SWORD 程式庫版本 %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
         <source>This program uses Qt version %1.</source>
         <translation>這個程式使用Qt 版本 %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt 是一個跨平台程式與介面架構, 以C++ 建立. 採用LGPL 授權釋出.</translation>
     </message>
@@ -1354,18 +1354,17 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleChooserButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="84"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="85"/>
         <source>Select a work [%1]</source>
         <translation>選擇一本書目 [%1]</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="87"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="88"/>
         <source>Select an additional work</source>
         <translation>選擇一本而外的書目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="110"/>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="140"/>
         <source>NONE</source>
         <translation>無</translation>
     </message>
@@ -1469,48 +1468,48 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>選擇以變更鑰匙</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="126"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="125"/>
         <source>Action
 name</source>
         <translation>動作
 名稱</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="127"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="126"/>
         <source>First
 shortcut</source>
         <translation>第一
 捷徑</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="128"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="127"/>
         <source>Second
 shortcut</source>
         <translation>第二
 捷徑</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="141"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="140"/>
         <source>Shortcut for selected action name</source>
         <translation>選定動作名稱的捷徑</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="149"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="148"/>
         <source>None</source>
         <translation>無</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="154"/>
         <source>Default</source>
         <translation>預設</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="160"/>
         <source>Custom</source>
         <translation>自訂</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="179"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="178"/>
         <source>Default key:</source>
         <translation>預設按鍵::</translation>
     </message>
@@ -1688,22 +1687,22 @@ shortcut</source>
 <context>
     <name>BtTextWindowHeaderWidget</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="52"/>
         <source>Add/remove/replace</source>
         <translation>添加/移除/取代</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="153"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="156"/>
         <source>Remove</source>
         <translation>移除</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="159"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="162"/>
         <source>Replace</source>
         <translation>取代</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="164"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="167"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
@@ -1726,9 +1725,13 @@ shortcut</source>
         <translation>下一則秘訣</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="114"/>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
-        <translation>要在以開啟的聖經視窗中添加多本聖經書目,選擇該圖示並且選擇其他聖經書目.</translation>
+        <translation type="vanished">要在以開啟的聖經視窗中添加多本聖經書目,選擇該圖示並且選擇其他聖經書目.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="114"/>
+        <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
@@ -1761,37 +1764,40 @@ shortcut</source>
         <translation>要改變書籤標題或描述, 在書籤上點選右鍵並選擇 &quot;編輯書籤...&quot;. 在完成編輯後, 描述會在滑鼠移動經過書籤時看到.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="139"/>
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
-        <translation>要載入多重安裝來源的書目，在書架管理員內，選擇 添加 按鈕，然後點下 取得清單 按鈕.</translation>
+        <translation type="vanished">要載入多重安裝來源的書目，在書架管理員內，選擇 添加 按鈕，然後點下 取得清單 按鈕.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="139"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
         <translation>想找更多關於書目的資訊，去書架視窗，在書目上點選右鍵，並選擇關於選單.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="145"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
         <translation>從個別視窗上能用拖曳的方式將書架、書籤、及雜誌視窗能將他們移動到新的位置. 他們會被放置到書目視窗的左方、右方、上方、下方. 他們能夠放在彼此之上，也會出現分頁讓個別視窗能夠被選擇. 藉由在視窗間調整邊界也能調整這些書目的大小.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="151"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation>你可以搜尋書目中強調的行數. 用一本有強調行數的書目開始，並將滑鼠移過一個字. 在字上面點選右鍵並使用強調搜尋選單. 會有一個搜尋視窗出現，讓你能夠看到在該書目中有使用相同強調數目的位置.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="166"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
+        <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
         <translation>你能儲存您以開啟的視窗到一個工作階段內. 這個工作階段之後能夠被輕易還原.如果想要,你可以儲存許多工作階段.工作階段的功能能夠在視窗選單內存取.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="156"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation>你能夠儲存個人筆記作為特別的經文參考. 你必須安裝個人書評. &apos;開啟書架管理員,選擇Crosswire作為來源並在Commentary與English下查閱. 一旦安裝好,使用書架視窗並在個人書評上點選右鍵.使用 編輯純文字 選單 或 編輯 HTML選單以便將書目以寫入模式開啟.</translation>
+        <translation type="vanished">你能夠儲存個人筆記作為特別的經文參考. 你必須安裝個人書評. &apos;開啟書架管理員,選擇Crosswire作為來源並在Commentary與English下查閱. 一旦安裝好,使用書架視窗並在個人書評上點選右鍵.使用 編輯純文字 選單 或 編輯 HTML選單以便將書目以寫入模式開啟.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation>你可以在雜誌視窗中透過滑鼠移動到擁有強調行數的聖經書目上去觀看強調行數資訊. 你應該從Crosswire提供的來源中安裝好StrongGreek和StrongsHebrew 字彙.</translation>
     </message>
@@ -1799,7 +1805,7 @@ shortcut</source>
 <context>
     <name>BtVerseDropdownChooserButton</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="103"/>
         <source>Select verse</source>
         <translation>選擇節數</translation>
     </message>
@@ -2003,42 +2009,92 @@ shortcut</source>
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="607"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="609"/>
         <source>Delete Items</source>
         <translation>刪除項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="686"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="688"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>書籤指向的著作尚未安裝.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="387"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="388"/>
         <source>Can drop only bookmarks or one folder</source>
         <translation>無法拖曳唯一的書籤或資料夾</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="391"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="83"/>
+        <source>Bookmarks</source>
+        <translation type="unfinished">書籤</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
+        <source>New folder</source>
+        <translation type="unfinished">新資料夾</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
+        <source>Rename folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
+        <source>Edit bookmark...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
+        <source>Sort folder bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
+        <source>Sort all bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
+        <source>Import to folder...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
+        <source>Export from folder...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
+        <source>Print bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
+        <source>Remove selected items...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>無法拖曳資料夾到資料夾本身或子資料夾</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="397"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="399"/>
         <source>Copy</source>
         <translation>複製</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="398"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="400"/>
         <source>Move</source>
         <translation>移動</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="451"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="453"/>
         <source>Drag references from text views to this view</source>
         <translation>從文本區拖曳參考資料到這個區塊</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="608"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="610"/>
         <source>Do you really want to delete the selected items and folders?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2170,62 +2226,62 @@ shortcut</source>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="223"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="226"/>
         <source>Back in history</source>
         <translation>上一步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="231"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="234"/>
         <source>Forward in history</source>
         <translation>下一步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="200"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="203"/>
         <source>Select all</source>
         <translation>全選</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="204"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="207"/>
         <source>Copy</source>
         <translation>複製</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="208"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="211"/>
         <source>Find...</source>
         <translation>找尋...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="212"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="215"/>
         <source>Change location</source>
         <translation>改變位置</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="217"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="220"/>
         <source>Search with works of this window</source>
         <translation>搜尋這個視窗中的著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="374"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="377"/>
         <source>Work chooser buttons</source>
         <translation>書目挑選按鈕</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="384"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="387"/>
         <source>Text area header</source>
         <translation>書目標題</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="433"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="436"/>
         <source>Navigation</source>
         <translation>瀏覽</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="439"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="442"/>
         <source>Tool</source>
         <translation>工具</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="445"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="448"/>
         <source>Format</source>
         <translation>格式</translation>
     </message>
@@ -2519,168 +2575,168 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="752"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="762"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="765"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>unknown</source>
         <translation>未知的</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="770"/>
         <source>Markup</source>
         <translation>標記</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
         <source>Location</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
         <source>Language</source>
         <translation>語言</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="785"/>
         <source>Category</source>
         <translation>類別</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="789"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="793"/>
         <source>Writable</source>
         <translation>可寫入</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="794"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="794"/>
         <source>no</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="798"/>
         <source>Unlock key</source>
         <translation>解鎖鑰</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="819"/>
         <source>Features</source>
         <translation>特點</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="827"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>小心, 此著作包含未經驗證的內容!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
         <source>Distribution license</source>
         <translation>發行許可證</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="826"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
         <source>Distribution source</source>
         <translation>發行來源</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="827"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
         <source>Distribution notes</source>
         <translation>發行備註</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>Text source</source>
         <translation>文字來源</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
         <source>Copyright notes</source>
         <translation>版權備註</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
         <source>Copyright holder</source>
         <translation>版權持有人</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
         <source>Copyright date</source>
         <translation>版權日期</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="832"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Copyright contact name</source>
         <translation>版權連絡人姓名</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
         <source>Copyright contact address</source>
         <translation>版權連絡人地址</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
         <source>Copyright contact email</source>
         <translation>版權連絡人電子郵件</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="923"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
         <source>Bibles</source>
         <translation>聖經</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="925"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
         <source>Commentaries</source>
         <translation>評論</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="927"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
         <source>Books</source>
         <translation>書目</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="929"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
         <source>Cults/Unorthodox</source>
         <translation>其他教派</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="931"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
         <source>Maps and Images</source>
         <translation>地圖與圖片</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="933"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
         <source>Daily Devotionals</source>
         <translation>每日靈修</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="945"/>
         <source>Lexicons and Dictionaries</source>
         <translation>詞彙與字典</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Glossaries</source>
         <translation>字彙表</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
         <source>Unknown</source>
         <translation>未知</translation>
     </message>
@@ -2705,6 +2761,11 @@ shortcut</source>
 </context>
 <context>
     <name>CSwordSetupInstallSourcesDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="41"/>
+        <source>New Installation Source</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="49"/>
         <source>Caption</source>
@@ -2807,9 +2868,8 @@ Do you want to continue?</source>
         <translation>刷新資料中...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="41"/>
         <source>New  Installation Source</source>
-        <translation>新的 安裝來源</translation>
+        <translation type="vanished">新的 安裝來源</translation>
     </message>
 </context>
 <context>
@@ -2870,8 +2930,8 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="86"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="187"/>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="101"/>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="121"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="102"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="124"/>
         <source>Bibles</source>
         <translation>聖經</translation>
     </message>
@@ -3796,8 +3856,8 @@ Do you want to continue?</source>
         <translation>HTML 檔案</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="553"/>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="568"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="555"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="570"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="408"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="123"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="126"/>
@@ -3821,20 +3881,20 @@ Do you want to continue?</source>
         <translation>儲存文件...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="552"/>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="566"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="554"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="568"/>
         <source>BibleTime bookmark files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="519"/>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="529"/>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="518"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="520"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="530"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="520"/>
         <source>unknown</source>
         <translation>未知的</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="912"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="920"/>
         <source>New folder</source>
         <translation>新資料夾</translation>
     </message>
@@ -3995,12 +4055,12 @@ Do you want to continue?</source>
         <translation>動詞時態變更過</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="550"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="552"/>
         <source>Export Bookmarks</source>
         <translation>匯出書籤</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="564"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="566"/>
         <source>Import bookmarks</source>
         <translation>匯入書籤</translation>
     </message>
@@ -4035,57 +4095,57 @@ Do you want to continue?</source>
         <translation>未建立索引書目</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="43"/>
+        <location filename="../../src/main.cpp" line="45"/>
         <source>Show this help message and exit</source>
         <translation>顯示本幫助訊息然後離開</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="46"/>
+        <location filename="../../src/main.cpp" line="48"/>
         <source>Output BibleTime version and exit</source>
         <translation>輸出 BibleTime 版本 然後離開</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="49"/>
+        <location filename="../../src/main.cpp" line="51"/>
         <source>Open a clean session</source>
         <translation>開啟一個全新的工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="52"/>
+        <location filename="../../src/main.cpp" line="54"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>以參考資料 &lt;ref&gt; 開啟預設聖經</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="55"/>
+        <location filename="../../src/main.cpp" line="57"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>要知道 Qt 工具組解析的命令列參數, 請參照 %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="160"/>
+        <location filename="../../src/main.cpp" line="162"/>
         <source>Error: %1 expects an argument.</source>
         <translation>錯誤: %1 需要接受一個參數.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="163"/>
+        <location filename="../../src/main.cpp" line="165"/>
         <source>See --help for details.</source>
         <translation>參照&apos; --幫助以獲得細節.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="168"/>
+        <location filename="../../src/main.cpp" line="170"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>錯誤: 無效的命令列參數: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="58"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="57"/>
         <source>CSS base template not found!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="75"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="74"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation>預設模板 &quot;%1&quot; 沒有找到!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="112"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="115"/>
         <source>Replace</source>
         <translation>取代</translation>
     </message>
@@ -4095,28 +4155,28 @@ Do you want to continue?</source>
         <translation>縮寫</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="237"/>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="318"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="235"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="316"/>
         <source>Cross references</source>
         <translation>參照</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="365"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="363"/>
         <source>Footnote</source>
         <translation>注釋</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="396"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="394"/>
         <source>Strongs</source>
         <translation>Strongs</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="471"/>
         <source>Morphology</source>
         <translation>構詞學</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="494"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="492"/>
         <source>Word lookup</source>
         <translation>詞彙查詢</translation>
     </message>
@@ -4853,6 +4913,34 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>btm::BtBookmarkInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="87"/>
+        <source>Bookmarks</source>
+        <translation type="unfinished">書籤</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="189"/>
+        <source>Expand/Collapse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="192"/>
+        <source>Open</source>
+        <translation type="unfinished">開啟</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="195"/>
+        <source>Delete folder and bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="197"/>
+        <source>Delete bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>btm::BtSearchInterface</name>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
@@ -4863,12 +4951,12 @@ Do you want to continue?</source>
 <context>
     <name>btm::InstallProgress</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="96"/>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="95"/>
         <source>Installing %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="103"/>
+        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading %1</source>
         <translation type="unfinished"></translation>
     </message>
