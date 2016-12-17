@@ -1731,7 +1731,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="114"/>
         <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitme teose kõrvuti kuvamiseks aktiivses piibli- või kommentaariaknas valige see ikoon ja valige lisaks uus piiblitõlge või kommentaar.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
@@ -1785,7 +1785,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isiklikke märkmeid saate salvesta värsside viitade kohta. Selleks peate paigaldama kommentaaride teose &quot;Personal&quot; avades &quot;Raamaturiiuli haldamine&quot;, valige allikaks Crosswire, leidke teos Personal ingliskeelsete kommentaaride alt ning paigaldage see. Pärast paigaldamist avage see raamaturiiulist. Märkete lisamiseks või muutmiseks vajutage raamaturiiulikuvas teose Personal peal parema hiirenupuga ja valige hüpikmenüüst &quot;Redigeeri&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
@@ -2027,52 +2027,52 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="83"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">Järjehoidjad</translation>
+        <translation>Järjehoidjad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>New folder</source>
-        <translation type="unfinished">Uus kaust</translation>
+        <translation>Uus kaust</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimeta kaust ümber</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda järjehoidjat...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteeri kausta järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteeri kõik järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
         <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impordi kausta...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
         <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspordi kaustast...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Trüki järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemalda valitud...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
@@ -2769,7 +2769,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="41"/>
         <source>New Installation Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus paigalduse allikas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="49"/>
@@ -4919,27 +4919,31 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="87"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">Järjehoidjad</translation>
+        <translation>Järjehoidjad</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="189"/>
         <source>Expand/Collapse</source>
-        <translation type="unfinished"></translation>
+        <translation>Laienda/kollapseeri</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="192"/>
         <source>Open</source>
-        <translation type="unfinished">Ava</translation>
+        <translation>Ava</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="195"/>
         <source>Delete folder and bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta kaust ja järjehoidjad</translation>
+    </message>
+    <message>
+        <source>Delete folder and  bookmarks</source>
+        <translation type="obsolete">Kustuta kaust ja järjehoidjad</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="197"/>
         <source>Delete bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta järjehoidja</translation>
     </message>
 </context>
 <context>
