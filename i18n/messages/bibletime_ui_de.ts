@@ -584,7 +584,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="95"/>
         <source>Install additional works (uses internet)</source>
-        <translation>Zusätzliche Werke installieren (verendet das Internet)</translation>
+        <translation>Zusätzliche Werke installieren (verwendet das Internet)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
@@ -1517,12 +1517,12 @@ shortcut</source>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="42"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation>Entfernte Bibliotkek &quot;%1&quot; wird aktualisiert</translation>
+        <translation>Entfernte Bibliothek &quot;%1&quot; wird aktualisiert</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="54"/>
         <source>Remote libraries have been updated.</source>
-        <translation>Entfernte Bibliotkeken wurden aktualisiert.</translation>
+        <translation>Entfernte Bibliotheken wurden aktualisiert.</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="57"/>
@@ -2110,7 +2110,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
-        <translation>Wussten Sie schon? Sie können bei der Übersetzung der Oberfläche von BibleTime unter %1 mithelfen.</translation>
+        <translation>Wussten Sie schon? Sie können bei der Übersetzung der Oberfläche von BibleTime bei %1 mithelfen.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="132"/>
