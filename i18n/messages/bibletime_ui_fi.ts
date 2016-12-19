@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -44,7 +42,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="725"/>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Va&amp;ihda istuntoa</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="730"/>
@@ -139,7 +137,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Bookshelf Manager...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjahyllyn hallinta...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="243"/>
@@ -159,12 +157,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="542"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Istunto on jo olemassa</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="543"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Samanniminen istunto, %1, on jo olemassa. Anna uusi nimi.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="109"/>
@@ -294,112 +292,112 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>&amp;Tip of the day...</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivän &amp;vinkki...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="266"/>
         <source>Show tips about BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä vinkkejä Bibletimen käytöstä</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="402"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tai piilota kirjahylly</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="407"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tai piilota kirjanmerkit</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="412"/>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tai piilota suurennuslasi-ikkuna</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Työkalurivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="712"/>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Selausrivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="713"/>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Teosrivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="714"/>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Apuvälineetrivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="715"/>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Muotoilurivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="750"/>
         <source>Show main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä työkalurivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="751"/>
         <source>Show navigation bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä selausrivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="752"/>
         <source>Show works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä teosrivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="753"/>
         <source>Show tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä apuvälineiden työkalurivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="754"/>
         <source>Show formatting toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä muotoilurivi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="755"/>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä kirjahylly</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="756"/>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä kirjanmerkit</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="757"/>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä suurennuslasi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="719"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Työkalurivit</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="749"/>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä työkalurivit teksti-ikkunoissa</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="759"/>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä rinnakkaiset tekstiotsikot</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="723"/>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa &amp;ikkunat</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="736"/>
@@ -449,17 +447,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime.cpp" line="217"/>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anna purkuavain kohteelle: %1</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="237"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus: väärä purkuavain!</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="238"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Antamasi purkuavain ei avannut modulia. Yritä uudestaan.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="257"/>
@@ -483,31 +481,31 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletimeapp.cpp" line="66"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="63"/>
         <source>Warning!</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus!</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="67"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="64"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirtymä uuden asetusjärjestelmän käyttöön ei ole vielä valmis. &lt;b&gt;Jos jatkat, saatat menettää tietoja.&lt;/b&gt;. Ota varmuuskopio asetustiedostoista ennen kuin jatkat.&lt;br/&gt;&lt;br/&gt;Haluatko jatkaa? Jos valitset &quot;En&quot;, Bibletime suljetaan välittömästi.</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="79"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="76"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe ladattaessa asetuksia!</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="80"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="77"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibletimen asetusten lataus epäonnistui. Näyttää siltä, että asetustiedosto on Bibletimen uudempaa versiota varten. Tämä johtuu luultavasti Bibletimen vanhemman version asentamisesta. &lt;b&gt;Jos asetukset ladataan, saatat menettää tietoja.&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Haluatko jatkaa? Jos valitset &quot;En&quot;, Bibletime suljetaan välittömästi.</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="103"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="100"/>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe!</translation>
     </message>
 </context>
 <context>
@@ -515,52 +513,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="91"/>
         <source>Updating Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään teoksia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="93"/>
         <source>The selected works are being updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittuja teoksia päivitetään</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="97"/>
         <source>Installing Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennetaan teoksia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="99"/>
         <source>The selected works are being installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittuja teoksia asennetaan.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="49"/>
         <source>Choose Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kielet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="50"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse yksi tai useampi kieli, josta teoksia ladataan.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="66"/>
         <source>Choose Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kirjastolähteet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="68"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse yksi tai useampi kirjastolähde teosten asennusta varten.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
         <source>Updating Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivittää kirjastolähteitä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="88"/>
         <source>Updating information from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivittää tietoja kirjastolähteistä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
@@ -571,72 +569,72 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
         <source>Install, update, or remove works on your bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna, päivitä tai poista teoksia kirjahyllystä.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;VAROITUS&lt;/span&gt;: Teosten asentaminen ja päivittäminen käyttää internettiä. Jos elät sortavassa maassa, et luultavasti halua tehdä tätä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="92"/>
         <source>Bookshelf task</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjahylly-tehtävä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="95"/>
         <source>Install additional works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna lisää teoksia (käyttää internettiä)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
         <source>Update installed works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä asennetut teokset (käyttää internettiä)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="102"/>
         <source>Remove installed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista asennetut teokset</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="163"/>
         <source>Install Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna teoksia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="164"/>
         <source>Choose one or more works to install.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse yksi tai useampi asennettava teos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="169"/>
         <source>Update Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä teokset</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="170"/>
         <source>Choose one or more works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse yksi tai useampi päivitettävä teos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="176"/>
         <source>Remove Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista teoksia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="177"/>
         <source>Choose one or more works to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse yksi tai useampi poistettava teos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
         <source>Canceling Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Perutaan lataukset.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjahyllyn hallinta sulkeutuu, kun lataukset ovat valmiit.</translation>
     </message>
 </context>
 <context>
@@ -667,13 +665,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation type="vanished">Etsimme kehittäjiä ja kääntäjiä. Jos haluat liittyä tiimiimme, lähetä sähköpostia osoitteeseen %1.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c) 1999–2016, The Bibletime -tiimi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="135"/>
@@ -704,10 +698,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
         <source>usability expert</source>
         <translation>käytettävyysasiantuntija</translation>
-    </message>
-    <message>
-        <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation type="vanished">Joitain nimiä voi puuttua, lähetä sähköpostia osoitteeseen %1, jos huomaat puutteita.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
@@ -793,7 +783,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
@@ -902,22 +892,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="167"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhtään teosta ei ole asennettu. Käytä alla olevaa painiketta teosten asentamisen käynnistämiseksi.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="169"/>
         <source>&amp;Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna teoks&amp;ia...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus: Moduli on lukittu!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yrität avata lukittua modulia. Tarvitset avaamiseen lukitusavaimen, jonka voit antaa seuraavassa valintaikkunassa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
@@ -930,7 +920,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="104"/>
         <source>Category/Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Luokka/Kieli</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="105"/>
@@ -940,7 +930,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="106"/>
         <source>Language/Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kieli/Luokka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="107"/>
@@ -950,7 +940,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="110"/>
         <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei ryhmittelyä</translation>
     </message>
 </context>
 <context>
@@ -958,22 +948,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="88"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="146"/>
         <source>Installing &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennetaan &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="176"/>
         <source>Some of the selected works were not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Joitain valittuja teoksia ei asennettu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="180"/>
         <source>The selected works have been installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitut teokset asennettiin.</translation>
     </message>
 </context>
 <context>
@@ -997,7 +987,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp" line="50"/>
         <source>The selected works have been removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitut teokset poistettiin.</translation>
     </message>
 </context>
 <context>
@@ -1005,12 +995,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="125"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="135"/>
         <source>&lt; Add new remote library &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Lisää uusi kirjastolähde&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="137"/>
@@ -1020,12 +1010,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
         <source>Delete Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista lähde</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="184"/>
         <source>Do you really want to delete this source?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko poistaa lähteen?</translation>
     </message>
 </context>
 <context>
@@ -1033,7 +1023,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä</translation>
     </message>
 </context>
 <context>
@@ -1065,22 +1055,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="167"/>
         <source>Install Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna teoksia &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Update Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä teoksia &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="180"/>
         <source>Remove Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista teoksia &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="184"/>
         <source>Install &amp;folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna %kansio:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
@@ -1090,22 +1080,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="190"/>
         <source>There are no works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitettäviä teoksia ei ole.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="192"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhtään teosta ei ole asennettu. Poisto ei onnistu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="197"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teoksia ei voida asentaa nykyisellä kieli- ja kirjastolähdevalinnoilla. Vaihda valintoja.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
         <source>Grouping:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmittely:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
@@ -1131,42 +1121,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="46"/>
         <source>Old testament</source>
-        <translation type="unfinished"></translation>
+        <translation>Vanha testamentti</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished"></translation>
+        <translation>Mooses/Pentateukki/Toora</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historia</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>Prophets</source>
-        <translation type="unfinished"></translation>
+        <translation>Profeetat</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>New testament</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi testamentti</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>Gospels</source>
-        <translation type="unfinished"></translation>
+        <translation>Evankeliumit</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Letters/Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjeet/Epistolat</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation>Paavalin kirjeet</translation>
     </message>
 </context>
 <context>
@@ -1174,7 +1164,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="63"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletusistunto</translation>
     </message>
 </context>
 <context>
@@ -1227,7 +1217,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="113"/>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä alaviitteet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="114"/>
@@ -1250,22 +1240,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="71"/>
         <source>Edit Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa kirjanmerkkejä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="72"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sijainti:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="73"/>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsikko:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="74"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvaus:</translation>
     </message>
 </context>
 <context>
@@ -1279,17 +1269,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="85"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Edellinen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="86"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraava</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="87"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Sama kirjainkoko</translation>
     </message>
 </context>
 <context>
@@ -1297,17 +1287,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="97"/>
         <source>Font name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjasimen nimi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="98"/>
         <source>Font style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjasintyyli:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="99"/>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koko:</translation>
     </message>
 </context>
 <context>
@@ -1315,7 +1305,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="149"/>
         <source>&amp;Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kie&amp;li:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="150"/>
@@ -1374,7 +1364,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="34"/>
         <source>Preparing to index modules...</source>
-        <translation type="unfinished"></translation>
+        <translation>Valmistaudutaan luomaan modulien hakemistot...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="34"/>
@@ -1384,12 +1374,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="38"/>
         <source>Creating indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Luodaan hakemistoja</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="62"/>
         <source>Creating index for work: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Luodaan hakemisto teokselle: %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="68"/>
@@ -1415,12 +1405,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="48"/>
         <source>&amp;Grouping order</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ryhmittelyjärjestys</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="49"/>
         <source>Sets the grouping order for the items in this menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa ryhmittelyjärjestyksen tämän valikon kohteille</translation>
     </message>
 </context>
 <context>
@@ -1519,28 +1509,28 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="21"/>
         <source>Getting Library List</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakee kirjastoluetteloa</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="27"/>
         <location filename="../../src/backend/btsourcesthread.cpp" line="38"/>
         <source>Updating stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitys keskeytetty</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="42"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään kirjastolähdettä &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="54"/>
         <source>Remote libraries have been updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjastolähteet on päivitetty.</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="57"/>
         <source>The following remote libraries failed to update: </source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraavien kirjastolähteiden päivitys epäonnistui:</translation>
     </message>
 </context>
 <context>
@@ -1548,87 +1538,87 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="168"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletusteoksia käytetään, kun mitään teosta ei ole valittu. Esim. napsautettaessa linkkiä, joka johtaa Raamattuun tai sanakirjaan.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="171"/>
         <source>Bible:</source>
-        <translation type="unfinished"></translation>
+        <translation>Raamattu:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua Raamattua käytetään, kun napsautetaan Raamattu-linkkiä.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="175"/>
         <source>Commentary:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentaari:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="177"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua kommentaaria käytetään, kun kommentaarilinkkiä napsautetaan.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
         <source>Lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanakirja:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="181"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksna valittua sanakirjaa käytetään, kun sanakirjalinkkiä napsautetaan.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="183"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivittäinen hartaus:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua hartautta käytetään, kun käynnistettäessä näytetään lyhyt hartaus.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepreankielinen Strongin sanakirja:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="189"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua heprean sanakirjaa käytetään, kun linkkiä heprean sanakirjaan napsautetaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreikankielinen Strongin sanakirja:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="193"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua kreikan sanakirjaa käytetään, kun sanakirjalinkkiä napsautetaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="195"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heprean morfologinen sanakirja:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="197"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua heprean morfologista sanakirjaa käytetään, kun morfologista merkintää hepreankielisessä tekstissä napsautetaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="199"/>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreikan morfologinen sanakirja:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="201"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletuksena valittua kreikan morfologista sanakirjaa käytetään, kun morfologista merkintää kreikankielisessä tekstissä napsautetaan</translation>
     </message>
 </context>
 <context>
@@ -1636,12 +1626,12 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="74"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suodattimet vaikuttavat tekstin ulkoasuun. Voit valita suodattimien oletusasetukset. Asetusten muuttaminen vaikutta ainoastaan uusiin avattaviin ikkunoihin. Jokaisessa ikkunassa voi myös asettaa suodattimet erikseen.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää rivinvaihto jakeen jälkeen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
@@ -1651,7 +1641,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
         <source>Show section headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä väliotsikot</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
@@ -1681,7 +1671,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Use textual variants</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä tekstivariantteja</translation>
     </message>
 </context>
 <context>
@@ -1694,7 +1684,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="156"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="162"/>
@@ -1712,82 +1702,82 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="64"/>
         <source>Tip Of The Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivän vinkki</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="79"/>
         <source>Show tips at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä vinkit aloitettaessa</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="90"/>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraava vinkki</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="114"/>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voi lisätä Raamattuja aktiiviseen ikkunaan valitsemalla tämän kuvakkeen ja uuden Raamatun.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit lisätä useita kommetaareja rinnakkain aktiiviseen kommentaari-ikkunaan valitsemalla tämän kuvakkeen ja uuden kommentaarin.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="122"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisätietoja Bibletime-projektista saat verkkosivuiltamme.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="125"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Synkronoi kommentaari-ikkuna aktiivisen Raamattu-ikkunan kanssa valitsemalla tämä kuvake.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="128"/>
         <source>Select the icon again to stop the synchronization.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kuvake uudestaan purkaaksesi synkronoinnin.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="135"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="139"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1803,7 +1793,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="73"/>
         <source>Welcome to BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Tervetuloa</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="76"/>
@@ -1813,32 +1803,32 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="78"/>
         <source>Before you can use this application some works must be installed. </source>
-        <translation type="unfinished"></translation>
+        <translation>Ennen kuin voit aloittaa käytön sinun tulee asentaa teoksia.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="79"/>
         <source>Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. </source>
-        <translation type="unfinished"></translation>
+        <translation>Löydät teoksia, kuten Raamattuja, kirjoja, kommentaareja ja sanakirjoja kirjastolähteistä.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Choose the &quot;Install works&quot; button to download works. </source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse &quot;Asenna teoksia&quot; -painike ladataksesi teoksia.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="82"/>
         <source>The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valikon kohta &quot;Asetukset &gt; Kirjahyllyn hallinta&quot; on käytössäsi myöhemmin teosten asentamista varten.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="85"/>
         <source>Install later</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna myöhemmin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="87"/>
         <source>Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna teoksia...</translation>
     </message>
 </context>
 <context>
@@ -2013,56 +2003,6 @@ pikanäppäin</translation>
         <translation>Vain kirjanmerkkejä tai yksi kansio voidaan pudottaa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="83"/>
-        <source>Bookmarks</source>
-        <translation type="unfinished">Kirjanmerkit</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
-        <source>New folder</source>
-        <translation type="unfinished">Uusi kansio</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
-        <source>Rename folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
-        <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
-        <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
-        <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
-        <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
-        <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
-        <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
-        <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>Kansiota ei voi pudottaa itseensä tai sen alikansioon</translation>
@@ -2085,7 +2025,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="610"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko poistaa valitut kohteet ja kansiot?</translation>
     </message>
 </context>
 <context>
@@ -2149,17 +2089,17 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="115"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="unfinished"></translation>
+        <translation>Raamatun kirjojen kielivaihtoehdot. Käännökset tulevat Sword-ohjelmakirjastosta.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="119"/>
         <source>Show startup logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä aloituslogo:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
         <source>Show the BibleTime logo on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Bibletimen logo käynnistettäessä.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
@@ -2174,12 +2114,12 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiesitkö, että voit auttaa käyttöliittymän lokalisoinnissa omalle kielellesi osoitteessa %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="132"/>
         <source>Transifex</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="230"/>
@@ -2510,17 +2450,17 @@ pikanäppäin</translation>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save Text?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna teksti?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <source>Save text before closing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna teksti ennen sulkemista?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save changed text?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna muutettu teksti?</translation>
     </message>
 </context>
 <context>
@@ -2538,17 +2478,17 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="233"/>
         <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>XHTML-tiedostot (*.html *.HTML *.HTM *.htm);;Kaikki tiedostot (*)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
         <source>Search text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
         <source>Results by work and book</source>
-        <translation type="unfinished"></translation>
+        <translation>Tulokset teoksittain ja kirjoittain</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="264"/>
@@ -2821,7 +2761,7 @@ pikanäppäin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Lista lähteistä ladataan etäpalvelimelta. Lähteet lisätään nykyiseen listaan. Uusi lähde korvaa vanhan, jos niillä on sama nimi. Voit myöhemmin poistaa ne lähteet, joita et halua pitää listassa.
@@ -2865,7 +2805,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="125"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versio: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="57"/>
@@ -2943,8 +2883,8 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="144"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Kielten nimet</translation>
     </message>
     <message>
@@ -3820,22 +3760,22 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="33"/>
         <source>Remote FTP</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="34"/>
         <source>Remote SFTP</source>
-        <translation type="unfinished"></translation>
+        <translation>SFTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="35"/>
         <source>Remote HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="36"/>
         <source>Remote HTTPS</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTPS</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="411"/>
@@ -3925,17 +3865,17 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="71"/>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe kirjoitettaessa tiedostoon</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="72"/>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkista, että levytilaa on riittävästi</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="77"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostoa ei voitu avata tallentamista varten.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="215"/>
@@ -4085,52 +4025,52 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/main.cpp" line="45"/>
         <source>Show this help message and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tämä ohjeviesti ja poistu</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="48"/>
         <source>Output BibleTime version and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Bibletimen versio ja poistu</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="51"/>
         <source>Open a clean session</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa uusi sessio oletusarvoilla</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="54"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa oletus-Raamattu viitteellä &lt;ref&gt;</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="57"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="162"/>
         <source>Error: %1 expects an argument.</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe: %1 tarvitsee argumentin.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="165"/>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="170"/>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe: Epäkelpo komentorivin argumentti: %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="58"/>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>CSS perusmallia ei löytynyt!</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="75"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletusmallia &quot;%1&quot; ei löytynyt!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="115"/>
@@ -4193,25 +4133,25 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
         <source>Back</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Takaisin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
         <source>Next</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Seuraava</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
@@ -4419,237 +4359,237 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="91"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="96"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="107"/>
         <source>Which words to find</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitä sanoja etsitään</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="98"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="133"/>
         <source>Grouping and order</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmittely ja järjestys</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="100"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="151"/>
         <source>Wildcards (partial words)</source>
-        <translation type="unfinished"></translation>
+        <translation>Jokerimerkit (osittaiset sanat)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="102"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="174"/>
         <source>Text fields (different parts of text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstikentät (tekstin eri osat)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
         <source>Other syntax features</source>
-        <translation type="unfinished"></translation>
+        <translation>Muut syntaksiominaisuudet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="109"/>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="116"/>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jeesus AND jumala</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="118"/>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii jakeet, joissa on molemmat &apos;Jeesus&apos; ja &apos;Jumala&apos;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="120"/>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jeesus OR jumala</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="122"/>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii jakeet, joista löytyy jompikumpi &apos;Jeesus&apos; tai &apos;Jumala&apos; tai molemmat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus NOT god</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii jakeet, joissa on &apos;Jeesus&apos;, muttei &apos;Jumala&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
         <source>+jesus -god</source>
-        <translation type="unfinished"></translation>
+        <translation>+jeesus -jumala</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="135"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="138"/>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>(a AND b) OR c</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="140"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="142"/>
         <source>&quot;says lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;sanoo Herra&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
         <source>&quot;says the lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsi kaikki jakeet, joissa esiintyy &apos;sanoo HERRA&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="153"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="157"/>
         <source>a*</source>
-        <translation type="unfinished"></translation>
+        <translation>a*</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
         <source>All words beginning with &apos;a&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki sanat, jotka alkavat kirjaimella &apos;a&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
         <source>a*a</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
         <source>a?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>a??a</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="176"/>
         <source>Available text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Saatavillaolevat tekstikentät:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
         <source>Searches headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii otsikoita</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="180"/>
         <source>Searches footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii alaviitteitä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
         <source>Searches Strong&apos;s numbers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
         <source>Searches morphology codes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
         <source>Examples:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esimerkkejä:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>otsikko:Jeesus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii otsikoita sanalla &apos;Jeesus&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsii alaviitteitä sanoilla &apos;Jeesus&apos; ja &apos;sanoi&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="199"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="201"/>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4725,7 +4665,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="139"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="150"/>
@@ -4740,7 +4680,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="154"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="159"/>
@@ -4803,12 +4743,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="136"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraavat moduulit pitää indeksoida ennen kuin niistä voidaan etsiä:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="137"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="172"/>
@@ -4823,7 +4763,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="224"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedä mikä tahansa jaeviite avoimeen Raamattu-ikkunaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="229"/>
@@ -4904,7 +4844,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing</source>
-        <translation type="unfinished"></translation>
+        <translation>Luodaan hakemisto</translation>
     </message>
 </context>
 <context>
@@ -4912,12 +4852,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="93"/>
         <source>Installing</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennetaan</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="99"/>
         <source>Downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan</translation>
     </message>
 </context>
 <context>
@@ -4925,12 +4865,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
         <source>Refreshing</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähteen %1 päivitys epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -4938,7 +4878,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="48"/>
         <source>Refreshing Source List</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään lähdeluetteloa</translation>
     </message>
 </context>
 <context>
@@ -4951,12 +4891,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="62"/>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Luku</translation>
     </message>
     <message>
         <location filename="../../src/mobile/keychooser/versechooser.cpp" line="69"/>
         <source>Verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Jae</translation>
     </message>
 </context>
 </TS>
