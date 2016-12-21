@@ -1,3 +1,6 @@
+2016-12-22 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 2.11.0.
+
 2016-11-23 Gary Holmlund <gary.holmlund@gmail.com>
     * bug #80 BibleTime does not start on Windows when user name is non latin1 unicode chars
 
