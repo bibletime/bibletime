@@ -3518,7 +3518,7 @@ Do you want to continue?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
-        <source>Brasilian Portuguese</source>
+        <source>Brazilian Portuguese</source>
         <extracomment>Language name pt_BR</extracomment>
         <translation>Brasilian Portuguese</translation>
     </message>
