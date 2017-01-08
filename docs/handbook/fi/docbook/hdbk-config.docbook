@@ -4,7 +4,7 @@
 asetetaan. Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu>
 -kohdasta.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Configure &bibletime; Dialog</title>
+    <title>&bibletime; asetukset-ikkuna</title>
     <para>&bibletime; käyttöliittymä voidaan muokata monella tavalla tarpeittesi
 mukaan. Pääset asetusikkunaan valitsemalla
 <menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta
@@ -12,7 +12,7 @@ mukaan. Pääset asetusikkunaan valitsemalla
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Näyttö</guimenu>
       </title>
       <para>Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista: 
       <itemizedlist>
@@ -27,7 +27,7 @@ yhden sellaisen, näet esikatselukuvan oikealla paneelissa.</para>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Työpöytä</guimenu>
       </title>
       <para>Many features provided by the &sword; backend can now be customized in
 &bibletime;.  These features are documented right in the dialog.  You also
@@ -41,7 +41,7 @@ filters, you can control the appearance of the text.</para>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
-        <guimenu>Languages</guimenu>
+        <guimenu>Kielet</guimenu>
       </title>
       <para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä
 äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
@@ -54,7 +54,7 @@ each language.</para>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
         <textobject>
-          <phrase>Options Dialog - fonts</phrase>
+          <phrase>Valintaikkuna - kirjasimet</phrase>
         </textobject>
         <caption>
           <para>Valintaikkuna - Kirjasimet.</para>
@@ -88,14 +88,14 @@ Bitstream Cyberbit</trademark> (noin 12Mb).</para>
         <para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
         <itemizedlist>
           <listitem>
-            <para>Your *nix distribution.</para>
+            <para>Sinun *nix jakelusi.</para>
           </listitem>
           <listitem>
             <para>Distribuutiosi lokalisointipaketit.</para>
           </listitem>
           <listitem>
-            <para>An existing <trademark class="registered">Microsoft Windows</trademark>
-installation on the same computer.</para>
+            <para>Olemassaoleva <trademark class="registered">Microsoft Windows</trademark>
+-asennus samalla tietokoneella.</para>
           </listitem>
           <listitem>
             <para>Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla.</para>
@@ -122,9 +122,9 @@ tulee siis käyttää eri kirjasimia eri kielille.</para>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+SIL unicode fontit</ulink>
                 </entry>
-                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
+                <entry>Erinomaiset Unicode-fontit Linguisticsin kesä-instituutista.</entry>
               </row>
               <row>
                 <entry>
@@ -134,11 +134,11 @@ SIL unicode fonts</ulink>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/"> Crosswiren
+kirjasinhakemisto</ulink>
                 </entry>
 
-                <entry>Several fonts available from the &cbs; FTP site.</entry>
+                <entry>Useita fontteja saatavilla &cbs; FTP-palvelimella.</entry>
               </row>
               <row>
                 <entry>

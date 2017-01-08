@@ -6,7 +6,7 @@
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>&bibletime; sovellusikkuna</phrase>
       </textobject>
     </mediaobject> You can easily see the different parts of the
 application. The top left window is used to open installed works in the
@@ -92,8 +92,8 @@ folder as described above, and select <guimenuitem>"Export
 bookmarks"</guimenuitem>. This will bring up a dialog box for you to save
 the bookmark collection. You can import bookmarks in a similar way.</para>
 
-        <para>You can also click with the <mousebutton>right</mousebutton> on folders and
-bookmarks to change their names and descriptions.</para>
+        <para>Voit napsauttaa hiiren <mousebutton>oikeaa</mousebutton> nappia muuttaaksesi
+kansioiden tai kirjanmerkkien nimiä ja niiden kuvauksia.</para>
       </sect3>
     </sect2>
 
@@ -237,8 +237,8 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
         <para>To search text other than the main text, enter the text type followed by
 ':', and then the search term.  Refer to the table below for examples.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
-	  <title>Search Types</title>
+        <para>Saatavilla olevat tekstityypit: <table id="hd-op-search-config-syntax-table">
+	  <title>Etsimistyypit</title>
           <tgroup cols="3">
             <thead>
               <row>
@@ -246,19 +246,19 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 		<?dbfo bgcolor="#EEEEEE" ?>
                 <entry>Etuliite</entry>
                 <entry>Merkitys</entry>
-		<entry>Example</entry>
+		<entry>Esimerkki</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>otsikko:</entry>
                 <entry>etsii otsikoita</entry>
-		<entry>heading:Jesus</entry>
+		<entry>otsikko:Jeesus</entry>
               </row>
               <row>
                 <entry>alaviite:</entry>
                 <entry>etsii alaviitteitä</entry>
-		<entry>footnote:Moses</entry>
+		<entry>alaviite:Mooses</entry>
               </row>
               <row>
                 <entry>vahvennos:</entry>

@@ -11,7 +11,7 @@ can launch &bibletime; from the Start Menu with this icon: <mediaobject>
         <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
 format="PNG" /> </imageobject>
         <textobject>
-          <phrase>&bibletime; start icon</phrase>
+          <phrase>&bibletime; aloituskuvake</phrase>
         </textobject>
       </mediaobject></para>
 
@@ -29,7 +29,7 @@ also use booknames in your current bookname language.</para>
   </sect1>
 
   <sect1 id="hdbk-start-firstrun">
-    <title>Starting &bibletime; for the first time</title>
+    <title>&bibletime;n aloitus ensimmäistä kertaa</title>
 
     <para>If you are starting &bibletime; for the first time, you will want to
 configure the following options, available under the <link
@@ -51,7 +51,7 @@ ikkunasta.</para>
 
       <varlistentry>
         <term>
-          <interface>Bookshelf Manager</interface>
+          <interface>Kirjahyllyn hallinta</interface>
         </term>
         <listitem>
           <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your

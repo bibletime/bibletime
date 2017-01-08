@@ -1,7 +1,7 @@
 <chapter id="hdbk-config">
   <title>&bibletime; configureren</title>
-  <para>In this section you find an overview to configure &bibletime;, which can be
-found under <guimenu>Settings</guimenu> in the main menu.</para>
+  <para>In deze sectie vindt u een overzicht, hoe &Bilbetime te configureren. Dit
+kan gevonden worden onder <guimenu>instellingen</guimenu></para>
   <sect1 id="hdbk-config-bt">
     <title>Configure &bibletime; Dialog</title>
     <para>The &bibletime; user interface can be customized in many ways depending on
@@ -11,7 +11,7 @@ your needs. You can access the configuration dialog by selecting
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Tonen</guimenu>
       </title>
       <para>Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een
 keuze uit de volgende opties: 
