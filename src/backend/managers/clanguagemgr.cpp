@@ -1,3 +1,4 @@
+
 /*********
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
@@ -415,7 +416,7 @@ void CLanguageMgr::init() {
     //: Language name pt
     m_langList.append( new Language("pt", "Portuguese", QObject::tr("Portuguese")) );
     //: Language name pt_BR
-    m_langList.append( new Language("pt_BR", "Brasilian Portuguese", QObject::tr("Brasilian Portuguese")) );//added by ourself
+    m_langList.append( new Language("pt_BR", "Brazilian Portuguese", QObject::tr("Brazilian Portuguese")) );//added by ourself
     //  m_langList.append( new Language("qu", "Quechua", QObject::tr("Quechua")) );
     //: Language name qut
     m_langList.append( new Language("qut", "Quich\u00e9, West Central", QObject::tr("Quich\u00e9, West Central")) );

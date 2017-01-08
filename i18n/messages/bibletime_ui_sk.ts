@@ -3499,7 +3499,7 @@ Chcete pokračovať?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
-        <source>Brasilian Portuguese</source>
+        <source>Brazilian Portuguese</source>
         <extracomment>Language name pt_BR</extracomment>
         <translation>Brazílska portugalčina</translation>
     </message>
