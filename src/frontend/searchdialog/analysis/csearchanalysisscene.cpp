@@ -165,8 +165,12 @@ void CSearchAnalysisScene::reset() {
 
 /** No descriptions */
 void CSearchAnalysisScene::slotResized() {
-    m_scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
-                    / static_cast<double>(m_maxCount);
+    if (m_maxCount <= 0) {
+        m_scaleFactor = 0.0;
+    } else {
+        m_scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
+                        / static_cast<double>(m_maxCount);
+    }
     QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
     while ( it.hasNext() ) {
         it.next();
