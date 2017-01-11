@@ -115,7 +115,6 @@ QIcon const & getIconForModule(const CSwordModuleInfo * const module) {
                 return CResMgr::modules::book::icon_locked();
             return CResMgr::modules::book::icon_unlocked();
     }
-    return CResMgr::modules::book::icon_unlocked();
 }
 
 QLabel * explanationLabel(QWidget * const parent,

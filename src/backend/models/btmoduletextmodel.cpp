@@ -148,7 +148,6 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         text.replace("#CHAPTERTITLE#", "");
         return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
-        return text;
     }
     return QString();
 }

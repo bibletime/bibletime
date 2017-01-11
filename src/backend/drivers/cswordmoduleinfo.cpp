@@ -338,7 +338,7 @@ void CSwordModuleInfo::buildIndex() {
         wchar_t * const wcharBuffer = sPwcharBuffer.get();
         BT_ASSERT(wcharBuffer);
 
-        if(bm)
+        if(bm && vk) // Implied that vk could be null due to cast above
             vk->setIndex(bm->lowerBound().getIndex());
         else
             m_module.setPosition(sword::TOP);
