@@ -62,7 +62,6 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     m_filterOptions.redLetterWords = 1;
     m_filterOptions.scriptureReferences = 0;
     m_filterOptions.strongNumbers = 0;
-    m_filterOptions.textualVariants = 1;
     m_filterOptions.textualVariants = 0;
 }
 
