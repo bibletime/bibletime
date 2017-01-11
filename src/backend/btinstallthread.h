@@ -82,7 +82,7 @@ class BtInstallThread: public QThread {
         const QList<CSwordModuleInfo *> & m_modules;
         const QString m_destination;
         BtInstallMgr m_iMgr;
-        int m_currentModuleIndex;
+        int m_currentModuleIndex = 0;
         std::atomic<bool> m_stopRequested;
 
 };
