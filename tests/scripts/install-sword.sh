@@ -5,5 +5,5 @@ cd sword-trunk
 mkdir b
 cd b
 cmake ..
-make
+make -j4
 sudo make install
