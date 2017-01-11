@@ -24,8 +24,8 @@ private:
     void removeModulesIfInstalled();
     void findModulesToInstall();
 
-    BtInstallThread * m_thread;
-    QEventLoop * m_eventLoop;
+    BtInstallThread * m_thread = nullptr;
+    QEventLoop * m_eventLoop = nullptr;
     QList<CSwordModuleInfo *> m_modules;
     QString m_destination;
 };
