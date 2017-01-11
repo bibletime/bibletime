@@ -82,15 +82,15 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
     BtConstModuleList::const_iterator end_modItr = modules.end();
 
-    for (BtConstModuleList::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
+    for (auto const & modulePtr : modules) {
         if (myVK) {
             key->setModule(*modules.begin());
             key->setKey(i.key());
 
             // this would change key position due to v11n translation
-            key->setModule(*mod_Itr);
+            key->setModule(modulePtr);
         } else {
-            key->setModule(*mod_Itr);
+            key->setModule(modulePtr);
             key->setKey(i.key());
         }
 
@@ -98,15 +98,15 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         i.setMappedKey(key->key() != i.key() ? key : nullptr);
 
 
-        isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);
+        isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString::null;
 
-        auto & swModule = (*mod_Itr)->module();
-        if ((*mod_Itr)->language()->isValid()) {
+        auto & swModule = modulePtr->module();
+        if (modulePtr->language()->isValid()) {
             langAttr = QString("xml:lang=\"")
-                       .append((*mod_Itr)->language()->abbrev())
+                       .append(modulePtr->language()->abbrev())
                        .append("\" lang=\"")
-                       .append((*mod_Itr)->language()->abbrev())
+                       .append(modulePtr->language()->abbrev())
                        .append("\"");
         } else {
             langAttr = QString("xml:lang=\"")
@@ -144,13 +144,10 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
             swModule.renderText(nullptr, -1, 0);
 
-            sword::AttributeValue::const_iterator it =
-                swModule.getEntryAttributes()["Heading"]["Preverse"].begin();
-            sword::AttributeValue::const_iterator const end =
-                swModule.getEntryAttributes()["Heading"]["Preverse"].end();
-
-            for (; it != end; ++it) {
-                QString unfiltered(QString::fromUtf8(it->second.c_str()));
+            for (auto const & vp
+                 : swModule.getEntryAttributes()["Heading"]["Preverse"])
+            {
+                QString unfiltered(QString::fromUtf8(vp.second.c_str()));
 
                 /// \todo This is only a preliminary workaround to strip the tags:
                 {
@@ -191,7 +188,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
         if(key->isValid())
-            entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, *mod_Itr)).append("</span>");
+            entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, modulePtr)).append("</span>");
 
         if (m_addText)
             entry.append(key_renderedText);
