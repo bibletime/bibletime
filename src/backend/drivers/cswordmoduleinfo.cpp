@@ -402,19 +402,20 @@ void CSwordModuleInfo::buildIndex() {
             }
 
             // Strongs/Morphs
-            for (ALI it = m_module.getEntryAttributes()["Word"].begin();
-                 it != m_module.getEntryAttributes()["Word"].end();
-                 ++it)
-            {
-                int partCount = QString(it->second["PartCount"]).toInt();
+            for (auto const & vp : m_module.getEntryAttributes()["Word"]) {
+                auto const & attrs = vp.second;
+                auto const partCountIter(attrs.find("PartCount"));
+                int partCount = (partCountIter != attrs.end())
+                                ? QString(partCountIter->second).toInt()
+                                : 0;
                 for (int i=0; i<partCount; i++) {
 
                     sword::SWBuf lemmaKey = "Lemma";
                     if (partCount > 1)
                         lemmaKey.appendFormatted(".%d", i+1);
-                    sword::AttributeValue::iterator lemmaIter = it->second.find(lemmaKey);
-                    if (lemmaIter != it->second.end()) {
-                        lucene_utf8towcs(wcharBuffer, it->second[lemmaKey], BT_MAX_LUCENE_FIELD_LENGTH);
+                    auto const lemmaIter(attrs.find(lemmaKey));
+                    if (lemmaIter != attrs.end()) {
+                        lucene_utf8towcs(wcharBuffer, lemmaIter->second, BT_MAX_LUCENE_FIELD_LENGTH);
                         doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("strong")),
                                                                static_cast<const TCHAR *>(wcharBuffer),
                                                                lucene::document::Field::STORE_NO
@@ -423,8 +424,9 @@ void CSwordModuleInfo::buildIndex() {
 
                 }
 
-                if (it->second.find("Morph") != it->second.end()) {
-                    lucene_utf8towcs(wcharBuffer, it->second["Morph"], BT_MAX_LUCENE_FIELD_LENGTH);
+                auto const morphIter(attrs.find("Morph"));
+                if (morphIter != attrs.end()) {
+                    lucene_utf8towcs(wcharBuffer, morphIter->second, BT_MAX_LUCENE_FIELD_LENGTH);
                     doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("morph")),
                                                            static_cast<const TCHAR *>(wcharBuffer),
                                                            lucene::document::Field::STORE_NO
