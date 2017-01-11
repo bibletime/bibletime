@@ -150,8 +150,11 @@ void BtBookshelfInstallFinalPage::slotInstallStarted(int moduleIndex) {
 
 void BtBookshelfInstallFinalPage::slotStatusUpdated(int moduleIndex, int status)
 {
-    // Skip initial high value sent by sword
-    if ((m_lastStatus == -1 && status > 80) || (m_lastStatus == status))
+    // Skip initial high value sent by Sword:
+    if (m_lastStatus == -1 && status > 80)
+        return;
+
+    if (m_lastStatus == status)
         return;
 
     m_lastStatus = status;
