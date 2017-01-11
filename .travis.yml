@@ -3,11 +3,11 @@ dist: trusty
 language: cpp
 compiler: gcc
 
-#branches:
-#  only:
-#    - master
-#    - master_coverity_scan
-#    - /^stable-.*$/
+branches:
+  only:
+    - master
+    - master_coverity_scan
+    - /^stable-.*$/
 
 os:
   - linux
