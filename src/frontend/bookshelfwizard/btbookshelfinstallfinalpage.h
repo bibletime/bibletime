@@ -66,11 +66,11 @@ private: /* Fields: */
     BtInstallThread * m_thread = nullptr;
     QVBoxLayout * m_verticalLayout;
 
-    bool m_installFailed;
-    bool m_installCompleted;
+    bool m_installFailed = false;
+    bool m_installCompleted = false;
 
     QList<CSwordModuleInfo *> m_modules;
-    int m_lastStatus;
+    int m_lastStatus = -1;
 
 }; /* class BtBookshelfInstallFinalPage */
 
