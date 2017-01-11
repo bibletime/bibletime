@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 dist: trusty
 language: cpp
 compiler: gcc
@@ -13,15 +13,14 @@ os:
   - linux
 
 before_install:
-  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - export CC=${XCC}
   - export CXX=${XCXX}
   - source /opt/qt57/bin/qt57-env.sh
   - ./tests/scripts/install-sword.sh
-  - export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+  - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
 script:
-  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && cmake .. && make -j4 && sudo make install; fi
+  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && cmake .. -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j4 && make install; fi
 
 env:
   global:
@@ -41,7 +40,7 @@ addons:
       name: "bibletime/bibletime"
       description: "BibleTime build submitted via Travis CI"
     notification_email: bibletime-coverity@heh.ee
-    build_command_prepend: "mkdir b && cd b && /usr/local/bin/cmake .."
+    build_command_prepend: "mkdir b && cd b && cmake .."
     build_command: "cmake --build ."
     branch_pattern: .*_coverity_scan
   apt:
