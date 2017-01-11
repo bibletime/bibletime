@@ -82,21 +82,6 @@ bool CKCComboBox::eventFilter(QObject * o, QEvent * e) {
     return QComboBox::eventFilter(o, e);
 }
 
-/** Scrolls in the list if the wheel of the mouse was used. */
-void CKCComboBox::wheelEvent(QWheelEvent * e) {
-    return QComboBox::wheelEvent(e); /// \bug rest method won't get executed.
-
-    int const change = static_cast<int>(static_cast<float>(e->delta()) / 120);
-    int current = currentIndex();
-
-    if ((current + change >= 0) && (current + change < count()) ) {
-        setCurrentIndex(current + change);
-        e->accept();
-        emit activated(currentIndex());
-    } else {
-        e->ignore();
-    }
-}
 
 //**********************************************************************************/
 

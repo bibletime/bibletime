@@ -42,8 +42,6 @@ protected: /* Methods: */
 
     bool eventFilter(QObject * o, QEvent * e) override;
 
-    void wheelEvent(QWheelEvent * e) override;
-
 signals:
 
     /**
