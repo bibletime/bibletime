@@ -21,7 +21,7 @@ before_install:
   - export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 script:
-  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && cmake .. && make && sudo make install; fi
+  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then mkdir b && cd b && cmake .. && make -j4 && sudo make install; fi
 
 env:
   global:
