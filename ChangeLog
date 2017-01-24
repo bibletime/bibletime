@@ -1,3 +1,6 @@
+2017-01-23 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #90 BibleTime does not start on Windows 7
+
 2016-11-23 Gary Holmlund <gary.holmlund@gmail.com>
     * bug #80 BibleTime does not start on Windows when user name is non latin1 unicode chars
 

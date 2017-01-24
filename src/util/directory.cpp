@@ -18,6 +18,9 @@
 #include <QFileInfoList>
 #include <QLocale>
 #include "btassert.h"
+#ifdef Q_OS_WIN32
+#include <windows.h>
+#endif
 
 
 namespace util {
@@ -229,6 +232,12 @@ bool initDirectoryCache() {
             return false;
         }
     }
+#elif defined Q_OS_WIN32
+#define BUFSIZE 4096
+    wchar_t homeDir[BUFSIZE];
+    GetEnvironmentVariable(TEXT("APPDATA"), homeDir, BUFSIZE);
+    QString qHomeDir = QString::fromWCharArray(homeDir);
+    cachedUserHomeDir.reset(new QDir(qHomeDir));
 #else
     cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
 #endif
