@@ -1,3 +1,6 @@
+2017-01-23 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #90 BibleTime does not start on Windows 7
+
 2016-12-22 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.11.0.
 
