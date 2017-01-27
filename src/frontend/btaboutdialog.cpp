@@ -256,7 +256,7 @@ void BtAboutDialog::retranslateQtTab() {
     content += "</p><p>";
     content += tr("Qt is a cross-platform application and UI framework, created with C++ "
                   "language. It has been released under the LGPL license.");
-    content += " " MAKE_LINK(content, "about:qt", tr("More info...")) "</p>";
+    content += " " MAKE_LINK(content, "http://qt", tr("More info...")) "</p>";
     m_qtTab->setHtml(MAKE_HTML(m_qtTab, content));
 }
 
@@ -284,10 +284,8 @@ void BtAboutDialog::retranslateLicenceTab() {
 }
 
 void BtAboutDialog::linkClicked(const QUrl &url) {
-    if (url.scheme() == "about") {
-        if (url.path() == "qt") {
+    if (url.host() == "qt") {
             qApp->aboutQt();
-        }
     } else {
         QDesktopServices::openUrl(url);
     }
