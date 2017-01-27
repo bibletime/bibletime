@@ -69,6 +69,7 @@ void BtWebEnginePage::javaScriptConsoleMessage(
 BtWebEnginePage::BtWebEnginePage(QObject *parent)
     :QWebPage(parent) {
     settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
+    setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
 }
 
 void BtWebEnginePage::addJavaScriptObject(const QString &name, QObject *object) {

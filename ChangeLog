@@ -1,4 +1,7 @@
 2017-01-26 Gary Holmlund <gary.holmlund@gmail.com>
+    * bug #92 Qt "More Info..." tab is blank
+
+2017-01-26 Gary Holmlund <gary.holmlund@gmail.com>
     * bug #91 Cannot change to second tab in Tabbed view
 
 2017-01-23 Gary Holmlund <gary.holmlund@gmail.com>
