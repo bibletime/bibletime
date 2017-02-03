@@ -57,7 +57,12 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
         m_popupMenu(nullptr),
         m_displayWidget(nullptr),
         m_history(nullptr) {
-    setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
+
+    // Cannot delete on close. QMdiSubWindow and this window work
+    // as pairs. They must be deleted in a specific order.
+    // QMdiSubWindow handles this procedure.
+    //setAttribute(Qt::WA_DeleteOnClose);
+
     m_actionCollection = new BtActionCollection(this);
     setModules(modules);
 
