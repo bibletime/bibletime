@@ -19,7 +19,7 @@ before_install:
   - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - wget --no-check-certificate http://www.cmake.org/files/v3.1/cmake-3.1.2-Linux-x86_64.sh
   - sudo bash ./cmake-3.1.2-Linux-x86_64.sh --prefix=/usr/local/ --skip-license --exclude-subdir
-  - sudo add-apt-repository ppa:beineri/opt-qt57-trusty --yes
+  - sudo add-apt-repository ppa:beineri/opt-qt571-trusty --yes
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test --yes
   - wget -O - http://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
   - sudo add-apt-repository 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty main' --yes
