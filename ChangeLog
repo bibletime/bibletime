@@ -1,3 +1,6 @@
+2017-02-07 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #37 Bibletime does not display paragraphs correctly
+
 2017-02-02 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #94 Crash when closing module display window with Qt 5.8
 
