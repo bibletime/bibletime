@@ -78,6 +78,11 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                         buf.append("<div class=\"chapter\" ></div>"); //don't open a div here, that would lead to a broken XML structure
                 } else if (type == "x-p") {
                     buf.append("<br/>");
+                } else if (type == "paragraph") {
+                    if (tag.getAttribute("sID"))
+                        buf.append("<p>");
+                      else if (tag.getAttribute("eID"))
+                        buf.append("</p>");
                 } else {
                     buf.append("<div>");
                 }
