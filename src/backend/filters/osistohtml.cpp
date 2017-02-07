@@ -285,7 +285,6 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 myUserData->suspendTextPassThru = false;
             }
         }
-        // The <p> paragraph tag is handled by OSISHTMLHref
         else if (!strcmp(tag.getName(), "reference")) { // <reference> tag
             if (!tag.isEndTag() && !tag.isEmpty()) {
 
@@ -417,9 +416,11 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
             }
         }
         else if (!strcmp(tag.getName(), "p")) {
-            if (tag.isEmpty()) {
-                buf.append("<p/>");
-            }
+            if (tag.isEndTag())
+                buf.append("</p>");
+            else
+                buf.append("<p>");
+
         }
 
         // <q> quote
