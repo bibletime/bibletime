@@ -1,3 +1,6 @@
+2017-02-09 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #12 Cannot read apocryphal books
+
 2017-02-07 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #37 Bibletime does not display paragraphs correctly
 
