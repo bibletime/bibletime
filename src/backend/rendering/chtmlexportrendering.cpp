@@ -116,7 +116,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                        .append("\"");
         }
 
-        if (key->isValid()) {
+        if (key->isValid() && i.key() == key->key()) {
             key_renderedText = key->renderedText();
 
             // if key was expanded
@@ -139,7 +139,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             key_renderedText = "<span class=\"inactive\">&#8212;</span>";
         }
 
-        if (m_filterOptions.headings) {
+        if (m_filterOptions.headings && key->isValid() && i.key() == key->key()) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
             swModule.renderText(nullptr, -1, 0);
@@ -187,7 +187,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         entry.append(langAttr).append(isRTL ? " dir=\"rtl\">" : " dir=\"ltr\">");
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
-        if(key->isValid())
+        if(key->isValid() && i.key() == key->key())
             entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, modulePtr)).append("</span>");
 
         if (m_addText)
