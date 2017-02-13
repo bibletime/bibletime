@@ -14,3 +14,5 @@ SET(bibletime_UI_translations "${QM_FILES}")
 # Update source catalog files (this is the basis for the translator's work)
 # Invoke this with "make messages"
 BT_UPDATE_TS_FILES(${TS_DIR} ${bibletime_TRANSLATION_FILE_PREFIX})
+
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/qtbug-35164-patcher.cmake")
