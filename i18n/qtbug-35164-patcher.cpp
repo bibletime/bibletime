@@ -44,7 +44,7 @@ bool checkUnicodeEscape(QString & source,
         return false;
     }
     QTextStream in(&inFile);
-    for (std::size_t line = 0u; line < locationLine; ++line)
+    for (std::size_t line = 1u; line < locationLine; ++line)
         if (in.readLine().isNull())
             return false;
     auto line(in.readLine());
