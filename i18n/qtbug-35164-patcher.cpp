@@ -127,9 +127,6 @@ finish:
                       << std::endl;
             return false;
     }
-    if (rStrings.size() != 1)
-    return false;
-
 }
 
 void readError(QXmlStreamReader & reader) {
