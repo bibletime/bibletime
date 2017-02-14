@@ -123,12 +123,12 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             {
                 if (vk->isBoundSet()) {
                     CSwordVerseKey pk(*vk);
-                    for (int i = vk->getLowerBound().getIndex() + 1;
-                         i <= vk->getUpperBound().getIndex();
+                    for (auto i = vk->getLowerBound().getIndex();
+                         i < vk->getUpperBound().getIndex();
                          ++i)
                     {
                         key_renderedText += " ";
-                        pk.setIndex(i);
+                        pk.setIndex(i + 1);
                         key_renderedText += pk.renderedText();
                     }
                 }
