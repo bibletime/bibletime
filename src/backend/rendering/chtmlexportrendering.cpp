@@ -80,8 +80,6 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     QString langAttr;
     QString key_renderedText;
 
-    BtConstModuleList::const_iterator end_modItr = modules.end();
-
     for (auto const & modulePtr : modules) {
         if (myVK) {
             key->setModule(*modules.begin());
