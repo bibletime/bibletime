@@ -129,7 +129,7 @@ finish:
     }
 }
 
-void readError(QXmlStreamReader & reader) {
+[[noreturn]] void readError(QXmlStreamReader & reader) {
     std::cerr << inFilename << ':' << reader.lineNumber() << ':'
             << reader.columnNumber() << ": "
             << reader.errorString().toStdString() << std::endl;
