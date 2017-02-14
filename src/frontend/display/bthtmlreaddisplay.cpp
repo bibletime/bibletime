@@ -244,7 +244,7 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
 #endif
 
     // Send text to the html viewer
-    m_view->setHtml(jsText);
+    m_view->setHtml(jsText, QUrl("file://"));
 
     this->currentSource = jsText;
 }
