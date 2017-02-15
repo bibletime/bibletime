@@ -13,9 +13,28 @@ TARGET_LINK_LIBRARIES(qtbug-35164-patcher Qt5::Core)
 FUNCTION(qtbug_35164_patcher_func)
     MESSAGE(STATUS "Bug patcher")
     SET(TS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages")
+
+    # Fixup source file to be pushed to transifex.
+    ADD_CUSTOM_TARGET("qtbug_35164_patcher_default"
+        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/qtbug-35164-patcher${CMAKE_EXECUTABLE_SUFFIX}
+            ${TS_DIR}/bibletime_ui.ts
+            ${TS_DIR}/bibletime_ui.ts2
+
+        # Comment out the next 3 lines to be able to see both the unpatched and patched files.
+        COMMAND ${CMAKE_COMMAND} -E rename
+            ${TS_DIR}/bibletime_ui.ts2
+            ${TS_DIR}/bibletime_ui.ts
+
+        COMMENT "ran qtbug_35164_patcher on bibletime_ui.ts"
+    )
+    # Ensure tool is built first and that the ts file is created first
+    ADD_DEPENDENCIES("qtbug_35164_patcher_default" "messages_default" "qtbug-35164-patcher" )
+    ADD_DEPENDENCIES("messages" "qtbug_35164_patcher_default")
+
+    # Fixup translation files as well.
     BT_GET_TS_LANGS(TS_LANGS)
     FOREACH(TS_LANG ${TS_LANGS})
-        ADD_CUSTOM_TARGET("qtbug_35164_patcher_${TS_LANG}" 
+        ADD_CUSTOM_TARGET("qtbug_35164_patcher_${TS_LANG}"
             COMMAND ${CMAKE_CURRENT_BINARY_DIR}/qtbug-35164-patcher${CMAKE_EXECUTABLE_SUFFIX}
                 ${TS_DIR}/bibletime_ui_${TS_LANG}.ts
                 ${TS_DIR}/bibletime_ui_${TS_LANG}.ts2
@@ -34,4 +53,3 @@ FUNCTION(qtbug_35164_patcher_func)
 endfunction()
 
 qtbug_35164_patcher_func()
-
