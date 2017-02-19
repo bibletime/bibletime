@@ -166,7 +166,7 @@ Rectangle {
         MenuButton {
             id: menuButton
 
-            width: parent.height
+            width: parent.height * 1.1
             height: parent.height
             anchors.right: parent.right
             anchors.top: parent.top

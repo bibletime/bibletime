@@ -58,7 +58,7 @@ Rectangle {
     MenuButton {
         id: menuButton
 
-        width: parent.height
+        width: parent.height * 1.2
         height: parent.height
         anchors.right: parent.right
         anchors.top: parent.top
@@ -72,7 +72,7 @@ Rectangle {
     SearchIcon {
         id: searchIconQml
 
-        width: parent.height
+        width: parent.height * 1.2
         height: parent.height
         anchors.right: menuButton.left
         anchors.top: parent.top
