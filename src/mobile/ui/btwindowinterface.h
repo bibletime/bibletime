@@ -100,6 +100,9 @@ private slots:
     void reloadModules(CSwordBackend::SetupChangedReason reason);
 
 private:
+    VerseChooser* getVerseKeyChooser();
+    BookKeyChooser* getBookKeyChooser();
+    KeyNameChooser* getKeyNameChooser();
     const CSwordModuleInfo* module() const;
     void updateModel();
 

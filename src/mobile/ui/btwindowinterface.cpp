@@ -51,24 +51,6 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_keyNameChooser(nullptr),
       m_verseKeyChooser(nullptr),
       m_historyIndex(-1) {
-
-    ViewManager* viewManager = getViewManager();
-    if (viewManager == nullptr)
-        return;
-    QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
-    m_verseKeyChooser = new VerseChooser(viewer, this);
-
-    BT_CONNECT(m_verseKeyChooser, SIGNAL(referenceChanged()),
-               this,              SLOT(referenceChosen()));
-
-    m_bookKeyChooser = new BookKeyChooser(viewer, this);
-    BT_CONNECT(m_bookKeyChooser, SIGNAL(referenceChanged()),
-               this,             SLOT(referenceChosen()));
-
-    m_keyNameChooser = new KeyNameChooser(viewer, this);
-    BT_CONNECT(m_keyNameChooser, SIGNAL(referenceChanged(int)),
-               this,             SLOT(referenceChosen(int)));
-
     BT_CONNECT(CSwordBackend::instance(),
                SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
                this,
@@ -77,6 +59,42 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
 
 BtWindowInterface::~BtWindowInterface() {
 
+}
+
+VerseChooser* BtWindowInterface::getVerseKeyChooser() {
+    if (!m_verseKeyChooser) {
+        ViewManager* viewManager = getViewManager();
+        Q_ASSERT(viewManager);
+        QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
+        m_verseKeyChooser = new VerseChooser(viewer, this);
+        BT_CONNECT(m_verseKeyChooser, SIGNAL(referenceChanged()),
+                   this,              SLOT(referenceChosen()));
+    }
+    return m_verseKeyChooser;
+}
+
+BookKeyChooser* BtWindowInterface::getBookKeyChooser() {
+    if (!m_bookKeyChooser) {
+        ViewManager* viewManager = getViewManager();
+        Q_ASSERT(viewManager);
+        QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
+        m_bookKeyChooser = new BookKeyChooser(viewer, this);
+        BT_CONNECT(m_bookKeyChooser, SIGNAL(referenceChanged()),
+                   this,             SLOT(referenceChosen()));
+    }
+    return m_bookKeyChooser;
+}
+
+KeyNameChooser* BtWindowInterface::getKeyNameChooser() {
+    if (!m_keyNameChooser) {
+        ViewManager* viewManager = getViewManager();
+        Q_ASSERT(viewManager);
+        QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
+        m_keyNameChooser = new KeyNameChooser(viewer, this);
+        BT_CONNECT(m_keyNameChooser, SIGNAL(referenceChanged(int)),
+                   this,             SLOT(referenceChosen(int)));
+    }
+    return m_keyNameChooser;
 }
 
 void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {
@@ -335,7 +353,7 @@ void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
 void BtWindowInterface::changeReference() {
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
     if (verseKey != nullptr) {
-        m_verseKeyChooser->open(verseKey);
+        getVerseKeyChooser()->open(verseKey);
     }
 
     CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
@@ -343,11 +361,11 @@ void BtWindowInterface::changeReference() {
         QStringList keyPath;
         QStringList children;
         parseKey(treeKey, &keyPath, &children);
-        m_bookKeyChooser->open();
+        getBookKeyChooser()->open();
     }
     CSwordLDKey* lexiconKey = dynamic_cast<CSwordLDKey*>(m_key);
     if (lexiconKey != nullptr) {
-        m_keyNameChooser->open(m_moduleTextModel);
+        getKeyNameChooser()->open(m_moduleTextModel);
     }
 }
 
