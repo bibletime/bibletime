@@ -17,6 +17,7 @@
         <file>qml/ListTextView.qml</file>
         <file>qml/ListWorksView.qml</file>
         <file>qml/main.qml</file>
+        <file>qml/MagView.qml</file>
         <file>qml/MainToolbar.qml</file>
         <file>qml/MenuButton.qml</file>
         <file>qml/Menus.qml</file>

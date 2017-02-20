@@ -84,6 +84,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/ListSelectView.qml \
     ../../../src/mobile/qml/ListTextView.qml \
     ../../../src/mobile/qml/ListWorksView.qml \
+    ../../../src/mobile/qml/MagView.qml \
     ../../../src/mobile/qml/MainToolbar.qml \
     ../../../src/mobile/qml/Menus.qml \
     ../../../src/mobile/qml/MenuButton.qml \
