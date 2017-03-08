@@ -42,6 +42,12 @@ struct ModuleEntry {
  */
 
 
+class BtModuleTextFilter {
+
+public:
+    virtual ~BtModuleTextFilter() {}
+    virtual QString processText(const QString& text) = 0;
+};
 
 class BtModuleTextModel: public QAbstractListModel {
 
@@ -78,12 +84,18 @@ public:
     static void setHighlightColor(const QColor& color);
     static void setJesusWordsColor(const QColor& color);
 
+    FilterOptions getFilterOptions() const;
+    void setFilterOptions(FilterOptions filterOptions);
+
+    void clearTextFilter();
+    void setTextFilter(BtModuleTextFilter * textFilter);
+
 private:
 
     /** returns text string for each model index */
-    QVariant bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
-    QVariant verseData(const QModelIndex & index, int role = Qt::DisplayRole) const;
-    QVariant lexiconData(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    QString bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    QString verseData(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    QString lexiconData(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
     QString replaceColors(const QString& text) const;
 
@@ -94,6 +106,7 @@ private:
 
     int m_firstEntry;
     int m_maxEntries;
+    BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;
 };

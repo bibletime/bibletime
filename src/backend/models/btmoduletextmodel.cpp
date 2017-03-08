@@ -44,7 +44,10 @@ static QColor s_jesusWordsColor = QColor(255,0,0);
 
 
 BtModuleTextModel::BtModuleTextModel(QObject *parent)
-    : QAbstractListModel(parent), m_firstEntry(0), m_maxEntries(0) {
+    : QAbstractListModel(parent),
+      m_firstEntry(0),
+      m_maxEntries(0),
+      m_textFilter(0) {
     QHash<int, QByteArray> roleNames;
     roleNames[ModuleEntry::ReferenceRole] =  "keyName";
     roleNames[ModuleEntry::TextRole] = "line";
@@ -103,16 +106,21 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
 
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
 
+    QString text;
     if (isBible() || isCommentary())
-        return verseData(index, role);
+        text = verseData(index, role);
     else if (isBook())
-        return bookData(index, role);
+        text = bookData(index, role);
     else if (isLexicon())
-        return lexiconData(index, role);
-    return QVariant("invalid");
+        text = lexiconData(index, role);
+    else
+        text = "invalid";
+    if (m_textFilter)
+        text = m_textFilter->processText(text);
+    return QVariant(text);
 }
 
-QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) const {
+QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) const {
     int row = index.row();
 
     const CSwordLexiconModuleInfo *lexiconModule = qobject_cast<const CSwordLexiconModuleInfo*>(m_moduleInfoList.at(0));
@@ -134,7 +142,7 @@ QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) con
     return QString();
 }
 
-QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
+QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
     if (role == ModuleEntry::TextRole) {
         const CSwordBookModuleInfo *bookModule = qobject_cast<const CSwordBookModuleInfo*>(m_moduleInfoList.at(0));
         CSwordTreeKey key(bookModule->tree(), bookModule);
@@ -152,7 +160,7 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
     return QString();
 }
 
-QVariant BtModuleTextModel::verseData(const QModelIndex & index, int role) const {
+QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const {
     int row = index.row();
     CSwordVerseKey key = indexToVerseKey(row);
     int verse = key.getVerse();
@@ -273,5 +281,22 @@ void BtModuleTextModel::setHighlightWords(const QString& highlightWords) {
     beginResetModel();
     m_highlightWords = highlightWords;
     endResetModel();
+}
+
+FilterOptions BtModuleTextModel::getFilterOptions() const {
+    return m_filterOptions;
+}
+
+void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {
+    m_filterOptions = filterOptions;
+}
+
+void BtModuleTextModel::clearTextFilter() {
+    m_textFilter = nullptr;
+}
+
+void BtModuleTextModel::setTextFilter(BtModuleTextFilter * textFilter) {
+    BT_ASSERT(m_textFilter == nullptr);
+    m_textFilter = textFilter;
 }
 
