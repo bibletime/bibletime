@@ -25,6 +25,7 @@ SOURCES += \
     ../../../src/mobile/ui/btbookmarkinterface.cpp \
     ../../../src/mobile/ui/btsearchinterface.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
+    ../../../src/mobile/ui/btmmoduletextfilter.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
     ../../../src/mobile/ui/gridchooser.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
@@ -54,6 +55,7 @@ HEADERS += \
     ../../../src/mobile/ui/btbookmarkinterface.h \
     ../../../src/mobile/ui/btsearchinterface.h \
     ../../../src/mobile/ui/btstyle.h \
+    ../../../src/mobile/ui/btmmoduletextfilter.h \
     ../../../src/mobile/ui/btwindowinterface.h \
     ../../../src/mobile/ui/gridchooser.h \
     ../../../src/mobile/ui/modulechooser.h \
