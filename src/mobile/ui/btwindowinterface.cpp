@@ -13,6 +13,7 @@
 #include "btwindowinterface.h"
 
 #include <QDebug>
+#include <QDomDocument>
 #include <QFile>
 #include <QObject>
 #include <QQmlContext>
@@ -27,6 +28,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordtreekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/models/btmoduletextmodel.h"
 #include "backend/rendering/cdisplayrendering.h"
@@ -39,18 +41,23 @@
 #include "mobile/ui/viewmanager.h"
 #include "util/btconnect.h"
 
-
 namespace btm {
 
 BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
-      m_key(nullptr),
-      m_textModel(new RoleItemModel()),
-      m_moduleTextModel(new BtModuleTextModel(this)),
       m_bookKeyChooser(nullptr),
+      m_firstHref(false),
+      m_footnoteVisible(true),
+      m_historyIndex(-1),
+      m_key(nullptr),
       m_keyNameChooser(nullptr),
-      m_verseKeyChooser(nullptr),
-      m_historyIndex(-1) {
+      m_magView(false),
+      m_moduleTextModel(new BtModuleTextModel(this)),
+      m_textModel(new RoleItemModel()),
+      m_verseKeyChooser(nullptr) {
+
+    m_referencesViewTitle = tr("Select a reference above.");
+
     BT_CONNECT(CSwordBackend::instance(),
                SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
                this,
@@ -127,7 +134,7 @@ static bool moduleIsBook(const CSwordModuleInfo* module) {
 static bool moduleIsLexicon(const CSwordModuleInfo* module) {
     CSwordModuleInfo::Category category = module->category();
     if (category == CSwordModuleInfo::Lexicons ||
-        category == CSwordModuleInfo::DailyDevotional)
+            category == CSwordModuleInfo::DailyDevotional)
         return true;
     return false;
 }
@@ -139,6 +146,19 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
             category == CSwordModuleInfo::Commentaries)
         return true;
     return false;
+}
+
+QString BtWindowInterface::getModelTextByIndex(int index) const {
+    if (index == 0)
+        return "";
+    QModelIndex mIndex = m_moduleTextModel->index(index);
+    QVariant vText = m_moduleTextModel->data(mIndex, ModuleEntry::TextRole);
+    return vText.toString();
+}
+
+QString BtWindowInterface::getCurrentModelText() const {
+    int index = getCurrentModelIndex();
+    return getModelTextByIndex(index);
 }
 
 int BtWindowInterface::getCurrentModelIndex() const {
@@ -180,16 +200,117 @@ QString BtWindowInterface::getModuleName() const {
     return moduleName;
 }
 
+QString BtWindowInterface::getReferenceFromUrl(const QString& url) {
+    QString reference;
+    QStringList parts = url.split('/', QString::SkipEmptyParts);
+    if (parts.count() == 4 && parts.at(0) == "sword:" && parts.at(1) == "Bible") {
+        reference = parts.at(3);
+        if (reference.endsWith(';'))
+            reference.chop(1);
+    }
+    if (parts.count() == 5 && parts.at(0) == "sword:" && parts.at(1) == "Bible") {
+        reference = parts.at(3) + "/" + parts.at(4);
+    }
+    return reference;
+}
+
+int BtWindowInterface::getComboIndexFromUrl(const QString& url) {
+    QString reference = getReferenceFromUrl(url);
+    int index = m_comboBoxEntries.indexOf(reference);
+    return index;
+}
+
+void BtWindowInterface::setReferenceByUrl(const QString& url) {
+    QString reference = getReferenceFromUrl(url);
+    setReference(reference);
+}
+
 void BtWindowInterface::setReference(const QString& key) {
-    if (m_key && m_key->key() == key)
-        return;
-    if (m_key) {
+    QString newKey = key;
+    QStringList parts = newKey.split("/");
+    if (parts.count() == 2) {
+        m_footnoteNum = parts.at(1);
+        newKey = parts.at(0);
+        decodeFootnote(newKey, m_footnoteNum);
+        setFootnoteVisible(true);
+        QString title = tr("Footnote");
+        setReferencesViewTitle(title);
+    }
+    else if (m_key && m_key->key() != newKey) {
         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
         if (verseKey)
             verseKey->setIntros(true);
-        m_key->setKey(key);
+        m_key->setKey(newKey);
         referenceChanged();
+        setFootnoteVisible(false);
+        QString title = m_moduleName + "   " + getReference();
+        setReferencesViewTitle(title);
     }
+}
+
+void BtWindowInterface::decodeFootnote(const QString& keyName, const QString& footnote) {
+
+    QString text;
+    CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByName(m_moduleName);
+    if (!module)
+        return;
+
+    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+    key->setKey(keyName);
+    key->renderedText(CSwordKey::ProcessEntryAttributesOnly); // force entryAttributes
+
+    auto & m = module->module();
+    const char * const note =
+        m.getEntryAttributes()
+            ["Footnote"][footnote.toLatin1().data()]["body"].c_str();
+
+    text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
+    text = QString::fromUtf8(m.renderText(
+                                 module->isUnicode()
+                                 ? static_cast<const char *>(text.toUtf8())
+                                 : static_cast<const char *>(text.toLatin1())));
+
+    QString lang = module->language()->abbrev();
+    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
+    BT_ASSERT(mgr);
+
+    CDisplayTemplateMgr::Settings settings;
+    settings.pageCSS_ID = "infodisplay";
+
+    QString div = "<div class=\"infodisplay\"";
+    if (!lang.isEmpty())
+        div.append(" lang=\"").append(lang).append("\"");
+    div.append(">");
+
+    QString content(mgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
+                                      div + text + "</div>",
+                                      settings));
+    content.replace("#CHAPTERTITLE#", "");
+    content.replace("#LINK_COLOR#", "blue");
+    content.replace("#HIGHLIGHT_COLOR#", "blue");
+    content.replace("#JESUS_WORDS_COLOR#", "red");
+    m_footnoteText = content;
+    footnoteTextChanged();
+}
+
+QString BtWindowInterface::getFootnoteText() const {
+    return m_footnoteText;
+}
+
+bool BtWindowInterface::getFootnoteVisible() const {
+    return m_footnoteVisible;
+}
+
+void BtWindowInterface::setFootnoteVisible(bool visible) {
+    if (visible == m_footnoteVisible)
+        return;
+    m_footnoteVisible = visible;
+    emit footnoteVisibleChanged();
+}
+
+void BtWindowInterface::setReferencesViewTitle(const QString& title) {
+    m_referencesViewTitle = title;
+    emit referencesViewTitleChanged();
 }
 
 void BtWindowInterface::moduleNameChanged(const QString& moduleName)
@@ -200,9 +321,9 @@ void BtWindowInterface::moduleNameChanged(const QString& moduleName)
 
 void BtWindowInterface::setModuleToBeginning() {
     if (moduleIsBibleOrCommentary(m_key->module())) {
-         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-         verseKey->setPosition(sword::TOP);
-         emit referenceChange();
+        CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+        verseKey->setPosition(sword::TOP);
+        emit referenceChange();
     }
 }
 
@@ -243,6 +364,8 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
 
     emit moduleChanged();
     emit referenceChange();
+    emit textChanged();
+    emit referencesChanged();
     updateModel();
 }
 
@@ -265,6 +388,105 @@ void BtWindowInterface::updateCurrentModelIndex() {
 
 void BtWindowInterface::updateTextFonts() {
     emit textChanged();
+}
+
+void BtWindowInterface::parseVerseForReferences(const QString& verse) {
+    m_firstHref = true;
+    QDomDocument doc;
+    doc.setContent(verse);
+    QDomNodeList nodes = doc.elementsByTagName("html");
+    if (nodes.count() != 1)
+        return;
+    QDomNode htmlNode = nodes.at(0);
+    QDomElement bodyElement = htmlNode.firstChildElement("body");
+    if (bodyElement.isNull())
+        return;
+    QDomNodeList spanNodes = bodyElement.elementsByTagName("span");
+    processNodes(spanNodes);
+}
+
+void BtWindowInterface::updateReferences() {
+    m_references.clear();
+    m_comboBoxEntries.clear();
+    int index = getCurrentModelIndex();
+
+    QString text = getModelTextByIndex(index);
+    parseVerseForReferences(text);
+
+    text = getModelTextByIndex(index+1);
+    parseVerseForReferences(text);
+
+    text = getModelTextByIndex(index+2);
+    parseVerseForReferences(text);
+
+    emit referencesChanged();
+    emit comboBoxEntriesChanged();
+}
+
+void BtWindowInterface::processNodes(const QDomNodeList& nodes) {
+    int count = nodes.count();
+    for (int i=0; i<count; i++) {
+        QDomNode node = nodes.at(i);
+        QDomElement element = node.toElement();
+
+        QString nodeReferences;
+        QString comboBoxEntries;
+        QDomNamedNodeMap nodeMap = element.attributes();
+        for (int index=0; index<nodeMap.count(); ++index) {
+            QDomNode node = nodeMap.item(index);
+            if (!node.isNull()) {
+                QDomAttr attr = node.toAttr();
+                QString name = attr.name();
+                if (name == "href") {
+                    if (!m_firstHref) {
+                        QString text = element.text();
+                        QString value = attr.value();
+                        if (value.endsWith(';'))
+                            value.chop(1);
+                        nodeReferences += name + "=" + value + ";||";
+                        comboBoxEntries += value;
+                    }
+                    m_firstHref = false;
+                }
+            }
+        }
+        if (!nodeReferences.isEmpty()) {
+            QStringList parts = comboBoxEntries.split('/', QString::SkipEmptyParts);
+            if (parts.count() == 4 && parts.at(0) == "sword:" && parts.at(1) == "Bible") {
+                m_references += nodeReferences;
+                m_comboBoxEntries += parts.at(3);
+            }
+        }
+
+        QDomNodeList childrenNodes = node.childNodes();
+        processNodes(childrenNodes);
+    }
+}
+
+QStringList BtWindowInterface::getComboBoxEntries() const {
+    return m_comboBoxEntries;
+}
+
+QStringList BtWindowInterface::getReferences() const {
+    return m_references;
+}
+
+QString BtWindowInterface::getReferencesViewTitle() const {
+    return m_referencesViewTitle;
+}
+
+bool BtWindowInterface::isMagView() const {
+    return m_magView;
+}
+
+void BtWindowInterface::setMagView(bool magView) {
+    m_magView = magView;
+    FilterOptions filterOptions = m_moduleTextModel->getFilterOptions();
+    filterOptions.scriptureReferences = magView ? 1 : 0;
+    filterOptions.strongNumbers = magView ? 1 : 0;
+    filterOptions.footnotes = magView ? 1 : 0;
+    m_moduleTextModel->setFilterOptions(filterOptions);
+    m_moduleTextModel->setTextFilter(&m_textFilter);
 }
 
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
@@ -390,6 +612,8 @@ void BtWindowInterface::referenceChosen(int index) {
 }
 
 const CSwordModuleInfo* BtWindowInterface::module() const {
+    if (!m_key)
+        return nullptr;
     const CSwordModuleInfo* module = m_key->module();
     return module;
 }
@@ -417,6 +641,8 @@ QString BtWindowInterface::getFontName() const {
 }
 
 int BtWindowInterface::getFontSize() const {
+    if (!module())
+        return 22;
     const CLanguageMgr::Language* lang = module()->language();
     BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
     if (fontPair.first) {

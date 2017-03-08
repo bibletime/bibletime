@@ -51,11 +51,10 @@ Rectangle {
         screenView.changeScreen(screenModel.search);
     }
 
-    function startStrongs() {
-//        var moduleNames = windowManager.getUniqueModuleNames();
-//        searchModel.appendModuleChoices(moduleNames);
-//        search.searchText = "";
-        screenView.changeScreen(screenModel.strongs);
+    function viewReferencesScreen(moduleName, reference) {
+        magView.setModule(moduleName);
+        magView.setReference(reference);
+        screenView.changeScreen(screenModel.references);
     }
 
     Keys.forwardTo: [
@@ -104,7 +103,7 @@ Rectangle {
     ObjectModel {
         id: screenModel
 
-        property int strongs: 0
+        property int references: 0
         property int main: 1
         property int results: 2
         property int search: 3
@@ -593,7 +592,7 @@ Rectangle {
 
         ListElement { title: QT_TR_NOOP("Add BookMark"); action: "addBookmark" }
         ListElement { title: QT_TR_NOOP("Bookmarks");    action: "bookmarks" }
-        ListElement { title: QT_TR_NOOP("Strongs");    action: "strongs" }
+        ListElement { title: QT_TR_NOOP("View References");    action: "viewReferences" }
     }
 
     Menus {
@@ -618,11 +617,10 @@ Rectangle {
             else if (action == "bookmarks") {
                 bookmarkManager.visible = true;
             }
-            else if (action == "strongs") {
+            else if (action == "viewReferences") {
                 var moduleName = theWindow.getModule();
                 var reference = theWindow.getReference();
-                magView.setModule(moduleName);
-                startStrongs()
+                viewReferencesScreen(moduleName, reference)
             }
         }
     }
