@@ -31,6 +31,11 @@ FocusScope {
         btWindowInterface.reference = reference;
     }
 
+    function updateTextFont() {
+        btWindowInterface.updateTextFonts();
+        btWindowInterface2.updateTextFonts();
+    }
+
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && magView.focus == true) {
             magFinished();

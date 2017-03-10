@@ -26,6 +26,7 @@ Rectangle {
 
     Component.onCompleted: {
         setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
+        setFontDialog.textFontChanged.connect(magView.updateTextFont)
     }
 
     ListModel {
