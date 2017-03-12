@@ -23,8 +23,8 @@ Rectangle {
     property string currentFolderName: "Bookmarks"
     property bool allowNewFolders: false
     property int rowHeight: {
-        var pixel = btStyle.pixelsPerMillimeterY * 8;
-        var uiFont = btStyle.uiFontPointSize * 3.5;
+        var pixel = btStyle.pixelsPerMillimeterY * 7;
+        var uiFont = btStyle.uiFontPointSize * 2;
         return Math.max(pixel, uiFont);
     }
 
@@ -152,7 +152,7 @@ Rectangle {
         }
 
         style: TreeViewStyle {
-            indentation: bookmarkFolders.rowHeight * 0.5
+            indentation: bookmarkFolders.rowHeight
         }
 
         TableViewColumn {

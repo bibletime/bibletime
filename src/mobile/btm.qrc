@@ -6,6 +6,7 @@
         <file>qml/BookmarkFolders.qml</file>
         <file>qml/BookmarkManager.qml</file>
         <file>qml/BtButtonStyle.qml</file>
+        <file>qml/BookIcon.qml</file>
         <file>qml/Folder.qml</file>
         <file>qml/FontSizeSlider.qml</file>
         <file>qml/GridChooserButton.qml</file>

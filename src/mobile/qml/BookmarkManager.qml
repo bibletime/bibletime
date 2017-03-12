@@ -174,22 +174,34 @@ Rectangle {
         itemDelegate: Item {
 
             Folder {
-                id: icon
+                id: folderIcon
 
                 visible: {
                     return ! bookmarkInterface.isBookmark(styleData.index);
                 }
 
-                width: parent.height * 0.7
-                height: parent.height * 0.7
+                width: parent.height * 1
+                height: parent.height * 1
                 anchors.verticalCenter: parent.verticalCenter
                 color: btStyle.textColor
 
             }
 
+            BookIcon {
+                id: bookIcon
+
+                visible: {
+                    return bookmarkInterface.isBookmark(styleData.index);
+                }
+                width: parent.height * 1
+                height: parent.height * 1
+                anchors.verticalCenter: parent.verticalCenter
+                color: btStyle.textColor
+            }
+
             Text {
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.left: icon.right
+                anchors.left: folderIcon.right
                 color: btStyle.textColor
                 elide: styleData.elideMode
                 text: {
@@ -200,7 +212,7 @@ Rectangle {
         }
 
         style: TreeViewStyle {
-            indentation: bookmarkManager.rowHeight * 0.5
+            indentation: bookmarkManager.rowHeight
         }
 
         TableViewColumn {
