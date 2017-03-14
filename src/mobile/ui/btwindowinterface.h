@@ -56,6 +56,7 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(bool         isMagView               READ isMagView WRITE setMagView)
     Q_PROPERTY(QString      moduleLanguage          READ getModuleLanguage)
     Q_PROPERTY(QString      moduleName              READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
+    Q_PROPERTY(QString      prompt                  READ getPrompt NOTIFY promptChanged)
     Q_PROPERTY(QString      reference               READ getReference WRITE setReference NOTIFY referenceChange)
     Q_PROPERTY(QStringList  references              READ getReferences NOTIFY referencesChanged)
     Q_PROPERTY(QString      referencesViewTitle     READ getReferencesViewTitle NOTIFY referencesViewTitleChanged)
@@ -65,6 +66,7 @@ public:
     Q_INVOKABLE void changeModule();
     Q_INVOKABLE void changeReference();
     Q_INVOKABLE int  getComboIndexFromUrl(const QString& url);
+    Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
     Q_INVOKABLE void moveHistoryBackward();
     Q_INVOKABLE void moveHistoryForward();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
@@ -72,6 +74,7 @@ public:
     Q_INVOKABLE void setModuleToBeginning();
     Q_INVOKABLE void setReferenceByUrl(const QString& url);
     Q_INVOKABLE void updateCurrentModelIndex();
+    Q_INVOKABLE void updateDefaultModules();
     Q_INVOKABLE void updateTextFonts();
     Q_INVOKABLE void updateKeyText(int modelIndex);
     Q_INVOKABLE void updateReferences();
@@ -94,6 +97,7 @@ public:
     CSwordKey* getKey() const;
     QString getModuleLanguage() const;
     QString getModuleName() const;
+    QString getPrompt() const;
     QString getReference() const;
     QStringList getReferences() const;
     QString getReferencesViewTitle() const;
@@ -115,6 +119,7 @@ signals:
     void footnoteVisibleChanged();
     void historyChanged();
     void moduleChanged();
+    void promptChanged();
     void referenceChange();
     void referencesChanged();
     void referencesViewTitleChanged();
@@ -128,16 +133,23 @@ private slots:
     void reloadModules(CSwordBackend::SetupChangedReason reason);
 
 private:
+    void configModuleByType(const QString& type, const QStringList& availableModuleNames);
     void decodeFootnote(const QString& keyName, const QString& footnote);
+    void decodeLemmaMorph(const QString& keyName);
+    void displayText(const QString& text, const QString& lang);
+    QString decodeLemma(const QString& value);
+    QString decodeMorph(const QString& value);
     QString getReferenceFromUrl(const QString& url);
     VerseChooser* getVerseKeyChooser();
     BookKeyChooser* getBookKeyChooser();
     KeyNameChooser* getKeyNameChooser();
+    void lookupAvailableModules();
     const CSwordModuleInfo* module() const;
     void updateModel();
     void parseVerseForReferences(const QString& verse);
     void processNodes(const QDomNodeList& nodes);
     void setFootnoteVisible(bool visible);
+    void setPrompt(const QString& title);
     void setReferencesViewTitle(const QString& title);
 
     BookKeyChooser* m_bookKeyChooser;
@@ -151,12 +163,16 @@ private:
     RoleItemModel* m_textModel;
     VerseChooser* m_verseKeyChooser;
 
+    QStringList m_bibles;
     QStringList m_comboBoxEntries;
     QString m_footnoteNum;
     QString m_footnoteText;
+    QStringList m_greekStrongsLexicons;
+    QStringList m_hebrewStrongsLexicons;
     QString m_highlightWords;
     QList<History> m_history;
     QString m_moduleName;
+    QString m_prompt;
     QStringList m_references;
     QString m_referencesViewTitle;
     BtmModuleTextFilter m_textFilter;

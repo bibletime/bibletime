@@ -31,6 +31,7 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/models/btmoduletextmodel.h"
+#include "backend/rendering/btinforendering.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/rendering/centrydisplay.h"
 #include "mobile/btmmain.h"
@@ -56,7 +57,7 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_textModel(new RoleItemModel()),
       m_verseKeyChooser(nullptr) {
 
-    m_referencesViewTitle = tr("Select a reference above.");
+    m_prompt = tr("Select a reference.");
 
     BT_CONNECT(CSwordBackend::instance(),
                SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
@@ -208,8 +209,15 @@ QString BtWindowInterface::getReferenceFromUrl(const QString& url) {
         if (reference.endsWith(';'))
             reference.chop(1);
     }
-    if (parts.count() == 5 && parts.at(0) == "sword:" && parts.at(1) == "Bible") {
+    if (parts.count() == 6 && parts.at(0) == "sword:" && parts.at(1) == "footnote") {
         reference = parts.at(3) + "/" + parts.at(4);
+        QString title = tr("Footnote") + " " + parts.at(5);
+        setReferencesViewTitle(title);
+    }
+    if (parts.count() == 4 && parts.at(0) == "sword:" && parts.at(1) == "lemmamorph") {
+        reference = parts.at(2);
+        QString title = parts.at(3);
+        setReferencesViewTitle(title);
     }
     return reference;
 }
@@ -227,25 +235,40 @@ void BtWindowInterface::setReferenceByUrl(const QString& url) {
 
 void BtWindowInterface::setReference(const QString& key) {
     QString newKey = key;
-    QStringList parts = newKey.split("/");
-    if (parts.count() == 2) {
-        m_footnoteNum = parts.at(1);
-        newKey = parts.at(0);
-        decodeFootnote(newKey, m_footnoteNum);
+    if (key.startsWith("lemma") || key.startsWith("morph")) {
+        decodeLemmaMorph(key);
         setFootnoteVisible(true);
-        QString title = tr("Footnote");
-        setReferencesViewTitle(title);
+    } else {
+        QStringList parts = newKey.split("/");
+        if (parts.count() == 2) {
+            m_footnoteNum = parts.at(1);
+            newKey = parts.at(0);
+            decodeFootnote(newKey, m_footnoteNum);
+            setFootnoteVisible(true);
+        }
+        else if (m_key && m_key->key() != newKey) {
+            CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+            if (verseKey)
+                verseKey->setIntros(true);
+            m_key->setKey(newKey);
+            referenceChanged();
+            setFootnoteVisible(false);
+            QString title = m_moduleName + "   " + getReference();
+            setReferencesViewTitle(title);
+        }
     }
-    else if (m_key && m_key->key() != newKey) {
-        CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-        if (verseKey)
-            verseKey->setIntros(true);
-        m_key->setKey(newKey);
-        referenceChanged();
-        setFootnoteVisible(false);
-        QString title = m_moduleName + "   " + getReference();
-        setReferencesViewTitle(title);
-    }
+}
+
+void BtWindowInterface::decodeLemmaMorph(const QString& attributes) {
+
+    Rendering::ListInfoData infoList(Rendering::detectInfo(attributes));
+    BtConstModuleList l;
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(m_moduleName);
+    if(m != nullptr)
+        l.append(m);
+    QString text = Rendering::formatInfo(infoList, l);
+    QString lang;
+    displayText(text, lang);
 }
 
 void BtWindowInterface::decodeFootnote(const QString& keyName, const QString& footnote) {
@@ -269,8 +292,11 @@ void BtWindowInterface::decodeFootnote(const QString& keyName, const QString& fo
                                  module->isUnicode()
                                  ? static_cast<const char *>(text.toUtf8())
                                  : static_cast<const char *>(text.toLatin1())));
-
     QString lang = module->language()->abbrev();
+    displayText(text, lang);
+}
+
+void BtWindowInterface::displayText(const QString& text, const QString& lang) {
     CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
     BT_ASSERT(mgr);
 
@@ -306,6 +332,11 @@ void BtWindowInterface::setFootnoteVisible(bool visible) {
         return;
     m_footnoteVisible = visible;
     emit footnoteVisibleChanged();
+}
+
+void BtWindowInterface::setPrompt(const QString& prompt) {
+    m_prompt = prompt;
+    emit promptChanged();
 }
 
 void BtWindowInterface::setReferencesViewTitle(const QString& title) {
@@ -469,6 +500,10 @@ QStringList BtWindowInterface::getComboBoxEntries() const {
 
 QStringList BtWindowInterface::getReferences() const {
     return m_references;
+}
+
+QString BtWindowInterface::getPrompt() const {
+    return m_prompt;
 }
 
 QString BtWindowInterface::getReferencesViewTitle() const {
@@ -723,4 +758,48 @@ void BtWindowInterface::moveHistoryForward() {
     emit historyChanged();
 }
 
+// If no default module is configed, choose one an update config.
+void BtWindowInterface::updateDefaultModules() {
+    lookupAvailableModules();
+    configModuleByType("standardGreekStrongsLexicon", m_greekStrongsLexicons);
+    configModuleByType("standardHebrewStrongsLexicon", m_hebrewStrongsLexicons);
+    configModuleByType("standardBible", m_bibles);
+}
+
+void BtWindowInterface::lookupAvailableModules() {
+    m_greekStrongsLexicons.clear();
+    m_hebrewStrongsLexicons.clear();
+    m_bibles.clear();
+    Q_FOREACH(CSwordModuleInfo const * const m,
+              CSwordBackend::instance()->moduleList()) {
+        if (m->type() ==  CSwordModuleInfo::Bible) {
+            m_bibles += m->name();
+        }
+        if (m->type() ==  CSwordModuleInfo::Lexicon) {
+            if (m->has(CSwordModuleInfo::HebrewDef)) {
+                m_hebrewStrongsLexicons += m->name();
+            }
+            if (m->has(CSwordModuleInfo::GreekDef)) {
+                m_greekStrongsLexicons += m->name();
+            }
+        }
+    }
+}
+
+void BtWindowInterface::configModuleByType(const QString& type, const QStringList& availableModuleNames) {
+    CSwordModuleInfo* module = btConfig().getDefaultSwordModuleByType(type);
+    if (!module && availableModuleNames.count() > 0) {
+        QString moduleName = availableModuleNames.at(0);
+        module = CSwordBackend::instance()->findModuleByName(moduleName);
+        btConfig().setDefaultSwordModuleByType(type, module);
+    }
+}
+
+QString BtWindowInterface::getDefaultSwordModuleByType(const QString& type) {
+    CSwordModuleInfo* module = btConfig().getDefaultSwordModuleByType(type);
+    QString moduleName;
+    if (module)
+        moduleName = module->name();
+    return moduleName;
+}
 } // end namespace

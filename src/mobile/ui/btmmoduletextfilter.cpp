@@ -47,13 +47,12 @@ void BtmModuleTextFilter::traverse(const QDomNodeList& nodeList) {
     for (int i=0; i<count; i++) {
         QDomNode node = nodeList.at(i);
         QDomNode::NodeType nodeType = node.nodeType();
-        if (nodeType == QDomNode::TextNode){
-            QDomText text = node.toText();
-            QString textValue = text.data();
-        }
         QDomElement element = node.toElement();
         if (isFootnote(element)) {
-            editFootnoteText(element);
+            convertFootNoteToLink(element);
+        }
+        if (isLemmaOrMorph(element)) {
+            convertLemmaAndMorphToLink(element);
         }
         QDomNodeList childrenNodes = node.childNodes();
         traverse(childrenNodes);
@@ -63,21 +62,15 @@ void BtmModuleTextFilter::traverse(const QDomNodeList& nodeList) {
 bool BtmModuleTextFilter::isFootnote(const QDomElement& element) const {
     QDomNamedNodeMap nodeMap = element.attributes();
     if (nodeMap.contains("class")) {
-        QDomNode classNode = nodeMap.namedItem("class");
-        QDomAttr classAttr = classNode.toAttr();
-        QString classValue = classAttr.value();
+        QString classValue = getAttributeValue(element, "class");
         return classValue == "footnote";
     }
     return false;
 }
 
-void BtmModuleTextFilter::editFootnoteText(QDomElement& element) {
+void BtmModuleTextFilter::convertFootNoteToLink(QDomElement& element) {
 
-    QDomNamedNodeMap nodeMap = element.attributes();
-    QDomNode refNode = nodeMap.namedItem("note");
-    QDomAttr noteAttr = refNode.toAttr();
-    QString noteValue = noteAttr.value();
-
+    QString noteValue = getAttributeValue(element, "note");
     QDomNodeList childrenNodes = element.childNodes();
     int count = childrenNodes.count();
     for (int i=0; i<count; i++) {
@@ -92,13 +85,76 @@ void BtmModuleTextFilter::editFootnoteText(QDomElement& element) {
             QDomElement aNode = m_doc.createElement("a");
             element.appendChild(aNode);
 
-            QString url = "sword://Bible/" + noteValue;
+            QString url = "sword://footnote/" + noteValue + "/" + textValue;
             aNode.setAttribute("href", url);
 
             QDomText textNode = m_doc.createTextNode(newText);
             aNode.appendChild(textNode);
         }
     }
+}
+
+bool BtmModuleTextFilter::isLemmaOrMorph(const QDomElement& element) const {
+    QDomNamedNodeMap nodeMap = element.attributes();
+    if (nodeMap.contains("lemma") || nodeMap.contains("morph"))
+        return true;
+    return false;
+}
+
+void BtmModuleTextFilter::convertLemmaAndMorphToLink(QDomElement& element) {
+
+    QString value;
+    if (elementHasAttribute(element, "lemma"))
+        value += "lemma=" + getAttributeValue(element, "lemma") + "||";
+    if (elementHasAttribute(element, "morph"))
+        value += "morph=" + getAttributeValue(element, "morph") + "||";
+
+
+    QDomNodeList childrenNodes = element.childNodes();
+    int count = childrenNodes.count();
+    for (int i=0; i<count; i++) {
+        QDomNode node = childrenNodes.at(i);
+        QDomNode::NodeType nodeType = node.nodeType();
+        if (nodeType == QDomNode::TextNode){
+            QDomText text = node.toText();
+            QString textValue = text.data();
+            int i=0;
+            element.removeChild(node);
+
+            QDomElement aNode = m_doc.createElement("a");
+            element.appendChild(aNode);
+
+            QString url = "sword://lemmamorph/" +
+                    value + "/" + textValue;
+            aNode.setAttribute("href", url);
+
+            textValue += "  ";
+            QDomText textNode = m_doc.createTextNode(textValue);
+            aNode.appendChild(textNode);
+        }
+    }
+}
+
+bool BtmModuleTextFilter::elementHasAttribute(
+        const QDomElement& element,
+        const QString& attrName) const {
+    QDomNamedNodeMap nodeMap = element.attributes();
+    if (nodeMap.contains(attrName))
+        return true;
+    return false;
+}
+
+QString BtmModuleTextFilter::getAttributeValue(
+        const QDomElement& element,
+        const QString& attrName) const {
+    QString value;
+    QDomNamedNodeMap nodeMap = element.attributes();
+    if (nodeMap.contains(attrName)) {
+        QDomNode node = nodeMap.namedItem(attrName);
+        QDomAttr attr = node.toAttr();
+        value = attr.value();
+    }
+    return value;
 }
 
 } // end namespace

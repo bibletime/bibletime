@@ -25,8 +25,12 @@ public:
     QString processText(const QString& text);
 
 private:
-    void editFootnoteText(QDomElement& element);
+    void convertFootNoteToLink(QDomElement& element);
+    void convertLemmaAndMorphToLink(QDomElement& element);
+    QString getAttributeValue(const QDomElement& element, const QString& attrName) const;
+    bool elementHasAttribute(const QDomElement& element, const QString& attrName) const;
     bool isFootnote(const QDomElement& element) const;
+    bool isLemmaOrMorph(const QDomElement& element) const;
     void traverse(const QDomNodeList& nodeList);
 
     QDomDocument m_doc;

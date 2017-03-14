@@ -53,8 +53,10 @@ Rectangle {
     }
 
     function viewReferencesScreen(moduleName, reference) {
+        magView.initialize();
         magView.setModule(moduleName);
         magView.setReference(reference);
+        magView.scrollDocumentViewToCurrentReference();
         screenView.changeScreen(screenModel.references);
     }
 
@@ -238,6 +240,10 @@ Rectangle {
         currentIndex: screenModel.main
         maximumFlickVelocity: 4000
         highlightMoveDuration: 4000
+
+        onCurrentIndexChanged: {
+            magView.initialize();
+        }
 
         NumberAnimation on contentX {
             id: screenAnimation
