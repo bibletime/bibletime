@@ -16,6 +16,7 @@ SOURCES += \
     ../../../src/mobile/bookshelfmanager/installsources.cpp \
     ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp \
     ../../../src/mobile/btmmain.cpp \
+    ../../../src/mobile/config/btmconfig.cpp \
     ../../../src/mobile/keychooser/bookkeychooser.cpp \
     ../../../src/mobile/keychooser/keynamechooser.cpp \
     ../../../src/mobile/keychooser/versechooser.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     ../../../src/mobile/bookshelfmanager/installsources.h \
     ../../../src/mobile/bookshelfmanager/installsourcesmanager.h \
     ../../../src/mobile/btmmain.h \
+    ../../../src/mobile/config/btmconfig.h \
     ../../../src/mobile/keychooser/bookkeychooser.h \
     ../../../src/mobile/ui/indexthread.h \
     ../../../src/mobile/keychooser/keynamechooser.h \
