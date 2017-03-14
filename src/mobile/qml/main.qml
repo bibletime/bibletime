@@ -410,10 +410,7 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
         ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
-        ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
-        ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
-        ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
-        ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
+        ListElement { title: QT_TR_NOOP("Settings");                  action: "settings" }
         ListElement { title: QT_TR_NOOP("About");                     action: "about" }
     }
 
@@ -431,9 +428,6 @@ Rectangle {
                 windowManager.createWindowMenus(viewWindowsModel);
                 viewWindowsMenus.visible = true;
             }
-            else if (action == "colortheme") {
-                colorThemeMenus.visible = true;
-            }
             else if (action == "install") {
                 installModules();
             }
@@ -441,18 +435,8 @@ Rectangle {
                 aboutDialog.visible = true;
             }
             else if (action == "settings") {
-                settings.visible = true;
+                settingsMenus.visible = true;
             }
-            else if (action == "textFontSize") {
-                setFontDialog.open();
-            }
-            else if (action == "uiFontSize") {
-                uiFontPointSize.visible = true;
-            }
-            else if (action == "windowArrangement") {
-                windowArrangementMenus.visible = true;
-            }
-
         }
 
         model: mainMenusModel
@@ -523,6 +507,39 @@ Rectangle {
         }
 
         model: colorThemeModel
+    }
+
+    ListModel {
+        id: settingsModel
+
+        ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
+        ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
+        ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
+        ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
+    }
+
+    Menus {
+        id: settingsMenus
+
+        Component.onCompleted: menuSelected.connect(settingsMenus.doAction)
+
+        function doAction(action) {
+            settingsMenus.visible = false;
+            if (action == "colortheme") {
+                colorThemeMenus.visible = true;
+            }
+            else if (action == "textFontSize") {
+                setFontDialog.open();
+            }
+            else if (action == "uiFontSize") {
+                uiFontPointSize.visible = true;
+            }
+            else if (action == "windowArrangement") {
+                windowArrangementMenus.visible = true;
+            }
+        }
+
+        model: settingsModel
     }
 
     Menus {
