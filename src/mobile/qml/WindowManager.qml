@@ -119,6 +119,15 @@ Rectangle {
         windowArrangement = arrangement;
     }
 
+    function findIndexOfWindow(window) {
+        for (var i=0; i<windows.length; ++i) {
+            if (window == windows[i])
+                return i;
+        }
+        return -1;
+
+    }
+
     function createWindowMenus(model) {
         model.clear();
         for (var i=0; i<windows.length; ++i) {

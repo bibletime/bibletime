@@ -66,7 +66,6 @@ Rectangle {
         mainMenus,
         windowArrangementMenus,
         viewWindowsMenus,
-        closeWindowsMenus,
         windowMenus,
         magView,
         searchResults,
@@ -410,7 +409,6 @@ Rectangle {
 
         ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
-        ListElement { title: QT_TR_NOOP("Close Window");              action: "close window" }
         ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
         ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
@@ -432,10 +430,6 @@ Rectangle {
             else if (action == "view window") {
                 windowManager.createWindowMenus(viewWindowsModel);
                 viewWindowsMenus.visible = true;
-            }
-            else if (action == "close window") {
-                windowManager.createWindowMenus(closeWindowsModel);
-                closeWindowsMenus.visible = true;
             }
             else if (action == "colortheme") {
                 colorThemeMenus.visible = true;
@@ -545,20 +539,6 @@ Rectangle {
         }
     }
 
-    Menus {
-        id: closeWindowsMenus
-
-        model: closeWindowsModel
-        visible: false
-        Component.onCompleted: menuSelected.connect(closeWindowsMenus.doAction)
-
-        function doAction(action) {
-            closeWindowsMenus.visible = false;
-            var index = Number(action)
-            windowManager.closeWindow(index);
-        }
-    }
-
     FontSizeSlider {
         id: uiFontPointSize
 
@@ -600,6 +580,7 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("Add BookMark"); action: "addBookmark" }
         ListElement { title: QT_TR_NOOP("Bookmarks");    action: "bookmarks" }
         ListElement { title: QT_TR_NOOP("View References");    action: "viewReferences" }
+        ListElement { title: QT_TR_NOOP("Close Window");    action: "close window" }
     }
 
     Menus {
@@ -628,6 +609,10 @@ Rectangle {
                 var moduleName = theWindow.getModule();
                 var reference = theWindow.getReference();
                 viewReferencesScreen(moduleName, reference)
+            }
+            else if (action == "close window") {
+                var index = windowManager.findIndexOfWindow(theWindow);
+                windowManager.closeWindow(index);
             }
         }
     }

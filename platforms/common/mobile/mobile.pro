@@ -5,6 +5,8 @@ QML_ROOT_PATH = /home/gary/shared/sw/bibletime/src/mobile/qml
 
 DEFINES += BT_MOBILE
 QMAKE_CXXFLAGS += -DBT_GIT_VERSION=\\\"`git rev-parse HEAD`\\\"
+QMAKE_CXXFLAGS_DEBUG -= -O2
+QMAKE_CXXFLAGS_DEBUG += -O0
 
 include(../../common/core/core.pro)
 
