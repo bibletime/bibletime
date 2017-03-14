@@ -351,7 +351,7 @@ Rectangle {
                         calculateTabWidth()
                     }
                     height: {
-                        var pixel = btStyle.pixelsPerMillimeterY * 7.5;
+                        var pixel = btStyle.pixelsPerMillimeterY * 6;
                         var uiFont = btStyle.uiFontPointSize * 4.4;
                         var mix = pixel * 0.7 + uiFont * 0.3;
                         return Math.max(pixel, mix);

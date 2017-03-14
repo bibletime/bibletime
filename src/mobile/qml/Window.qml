@@ -256,7 +256,7 @@ Rectangle {
             delegate: Text {
                 text: line
                 textFormat: Text.RichText
-                width: parent.width
+                width: listView.width
                 color: btStyle.textColor
                 font.family: btWindowInterface.fontName
                 font.pointSize: btWindowInterface.fontSize

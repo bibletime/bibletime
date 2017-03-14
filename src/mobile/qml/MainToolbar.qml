@@ -46,7 +46,7 @@ Rectangle {
     Text {
         id: title
         color: btStyle.toolbarTextColor
-        font.pointSize: btStyle.uiFontPointSize
+        font.pointSize: btStyle.uiFontPointSize * 1.1
         anchors.left: logo.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
