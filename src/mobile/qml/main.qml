@@ -70,12 +70,14 @@ Rectangle {
         magView,
         searchResults,
         search,
+        defaultDoc,
         installManagerChooser,
         keyNameChooser,
         treeChooser,
         aboutDialog,
         uiFontPointSize,
         setFontDialog,
+        settingsMenus,
         parentBookmarkFolders,
         bookmarkFolders,
         bookmarkManager,
@@ -516,6 +518,7 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
         ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
+        ListElement { title: QT_TR_NOOP("Default Documents");         action: "defaultDoc" }
     }
 
     Menus {
@@ -536,6 +539,9 @@ Rectangle {
             }
             else if (action == "windowArrangement") {
                 windowArrangementMenus.visible = true;
+            }
+            else if (action == "defaultDoc") {
+                defaultDoc.visible = true;
             }
         }
 
@@ -588,6 +594,11 @@ Rectangle {
 
     About {
         id: aboutDialog
+        visible: false
+    }
+
+    DefaultDoc {
+        id: defaultDoc
         visible: false
     }
 

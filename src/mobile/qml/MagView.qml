@@ -20,17 +20,16 @@ FocusScope {
     id: magView
 
     property int magViewMargins: btStyle.pixelsPerMillimeterX * 0.75
+    property real cornerRadius: btStyle.pixelsPerMillimeterX * 1.4;
 
     signal magFinished();
 
     function initialize() {
         btWindowInterface.updateDefaultModules();
         if (btWindowInterface.moduleName == "") {
-            console.log("MagView needs initialize")
             var moduleName = btWindowInterface.getDefaultSwordModuleByType("standardBible");
             if (moduleName != "") {
                 btWindowInterface.moduleName = moduleName;
-                console.log("MagView set to", moduleName);
             }
         }
     }
@@ -62,7 +61,7 @@ FocusScope {
 
     Rectangle {
         anchors.fill: parent
-        color: btStyle.textBackgroundColor
+        color: btStyle.toolbarColor
     }
 
     Text {
@@ -98,7 +97,7 @@ FocusScope {
             id: moduleDisplay
 
             width: text.width + 30
-            radius:btStyle.pixelsPerMillimeterX
+            radius: magView.cornerRadius
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
@@ -145,7 +144,7 @@ FocusScope {
             border.color: btStyle.toolbarTextColor
             border.width: 2
             color: btStyle.textBackgroundColor
-            radius: btStyle.pixelsPerMillimeterX
+            radius: magView.cornerRadius
 
             Text {
                 id: referenceText
@@ -201,7 +200,7 @@ FocusScope {
 
             width: btStyle.pixelsPerMillimeterX * 1.6
             height: btStyle.pixelsPerMillimeterX * 1.6
-            color: btStyle.textBackgroundColor
+            color: btStyle.toolbarColor
         }
 
         Component.onCompleted: {
@@ -245,7 +244,7 @@ FocusScope {
             color: btStyle.textBackgroundColor
             border.width: 1
             border.color: btStyle.textColor
-            radius: btStyle.pixelsPerMillimeterX
+            radius: magView.cornerRadius
 
             onWidthChanged: {
                 if ( (splitView.orientation == Qt.Horizontal) && splitView.resizing )
@@ -263,7 +262,7 @@ FocusScope {
                 anchors.top: parent.top
                 anchors.left: parent.left
                 anchors.right: parent.right
-                anchors.bottom: promptText.top
+                anchors.bottom: promptRect.top
                 anchors.leftMargin: magView.magViewMargins
                 anchors.rightMargin: magView.magViewMargins
                 anchors.topMargin: magView.magViewMargins
@@ -295,19 +294,31 @@ FocusScope {
                 }
             }
 
-            Text {
-                id: promptText
+            Rectangle {
+                id: promptRect
 
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
-                width: parent.width * .95
-                anchors.leftMargin: btStyle.pixelsPerMillimeterX
-                anchors.bottomMargin: btStyle.pixelsPerMillimeterX
-                font.pointSize: btStyle.uiFontPointSize
-                color: btStyle.toolbarTextColor
-                elide: Text.ElideMiddle
-                text: btWindowInterface2.prompt
+                width: parent.width
+                height: btStyle.uiFontPointSize * 2.4 + btStyle.pixelsPerMillimeterX * 1.1;
+                color: btStyle.textBackgroundColor
+                border.width: 1
+                border.color: btStyle.toolbarColor
+                radius: magView.cornerRadius
 
+                Text {
+                    id: promptText
+
+                    anchors.fill: parent
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.leftMargin: btStyle.pixelsPerMillimeterX
+                    font.pointSize: btStyle.uiFontPointSize
+                    color: btStyle.textColor
+                    elide: Text.ElideMiddle
+                    text: btWindowInterface2.prompt
+
+                }
             }
         }
 
@@ -320,35 +331,46 @@ FocusScope {
             Layout.fillHeight: (splitView.orientation == Qt.Vertical) ? true : false
             border.width: 1
             border.color: btStyle.textColor
-            radius: btStyle.pixelsPerMillimeterX
+            radius: magView.cornerRadius
 
-            Text {
-                id: referenceTitle
+            Rectangle {
+                id: referenceRect
 
                 anchors.top: parent.top
                 anchors.left: parent.left
-                width: parent.width * .95
+                width: parent.width
+                height: btStyle.uiFontPointSize * 2.4 + btStyle.pixelsPerMillimeterX * 1.1;
+                color: btStyle.textBackgroundColor
+                border.width: 1
+                border.color: btStyle.toolbarColor
+                radius: magView.cornerRadius
 
-                height: {
-                    var pixel = btStyle.pixelsPerMillimeterY * 3.2;
-                    var uiFont = btStyle.uiFontPointSize * 4.5;
-                    var mix = pixel * 0.7 + uiFont * 0.3;
-                    return Math.max(pixel, mix);
+                Text {
+                    id: referenceTitle
+
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.topMargin: btStyle.pixelsPerMillimeterX * 2
+                    width: parent.width
+                    height: {
+                        var pixel = btStyle.pixelsPerMillimeterY * 3.2;
+                        var uiFont = btStyle.uiFontPointSize * 4.5;
+                        var mix = pixel * 0.7 + uiFont * 0.3;
+                        return Math.max(pixel, mix);
+                    }
+                    anchors.leftMargin: btStyle.pixelsPerMillimeterX
+                    anchors.rightMargin: btStyle.pixelsPerMillimeterX
+                    font.pointSize: btStyle.uiFontPointSize
+                    color: btStyle.textColor
+                    elide: Text.ElideMiddle
+                    text: btWindowInterface2.referencesViewTitle
                 }
-
-                anchors.topMargin: btStyle.pixelsPerMillimeterX
-                anchors.leftMargin: btStyle.pixelsPerMillimeterX
-                anchors.rightMargin: btStyle.pixelsPerMillimeterX
-                font.pointSize: btStyle.uiFontPointSize
-                color: btStyle.toolbarTextColor
-                elide: Text.ElideMiddle
-                text: btWindowInterface2.referencesViewTitle
             }
 
             ScrollView {
                 id: footnoteView
 
-                anchors.top: referenceTitle.bottom
+                anchors.top: referenceRect.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -376,7 +398,7 @@ FocusScope {
             ListView {
                 id: referencesListView
 
-                anchors.top: referenceTitle.bottom
+                anchors.top: referenceRect.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right

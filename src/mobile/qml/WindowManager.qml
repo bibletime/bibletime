@@ -125,7 +125,6 @@ Rectangle {
                 return i;
         }
         return -1;
-
     }
 
     function createWindowMenus(model) {
