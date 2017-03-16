@@ -32,7 +32,8 @@ inline QString readFileToString(const QString & filename) {
 
 CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = nullptr;
 
-CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
+CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
+    m_multiModuleHeaders(true) {
     BT_ASSERT(!m_instance);
     m_instance = this;
 
@@ -132,7 +133,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     QString newContent = content;
     const int moduleCount = settings.modules.count();
 
-    if (moduleCount >= 2) {
+    if (moduleCount >= 2 && m_multiModuleHeaders) {
         //create header for the modules
         // qDebug() << "There were more than 1 module, create headers";
         QString header;
@@ -224,4 +225,8 @@ void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
     BT_ASSERT(fi.isFile());
     if (fi.isReadable())
         m_cssMap.insert(fi.fileName(), filename);
+}
+
+void CDisplayTemplateMgr::setMultiModuleHeadersVisible(bool visible) {
+    m_multiModuleHeaders = visible;
 }
