@@ -104,6 +104,8 @@ Rectangle {
 
     BtWindowInterface {
         id: btWindowInterface
+
+        isMagView: false
     }
 
     BtStyle {

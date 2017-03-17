@@ -536,6 +536,7 @@ void BtWindowInterface::setMagView(bool magView) {
     filterOptions.strongNumbers = magView ? 1 : 0;
     filterOptions.footnotes = magView ? 1 : 0;
     m_moduleTextModel->setFilterOptions(filterOptions);
+    m_textFilter.setShowReferences(magView);
     m_moduleTextModel->setTextFilter(&m_textFilter);
 }
 

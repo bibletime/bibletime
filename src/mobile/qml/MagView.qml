@@ -404,7 +404,7 @@ FocusScope {
                 delegate: Text {
                     text: line
                     textFormat: Text.RichText
-                    width: parent.width
+                    width: referencesListView.width
                     color: btStyle.textColor
                     font.family: btWindowInterface2.fontName
                     font.pointSize: btWindowInterface2.fontSize

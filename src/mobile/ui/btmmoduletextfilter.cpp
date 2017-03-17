@@ -27,6 +27,10 @@
 
 namespace btm {
 
+BtmModuleTextFilter::BtmModuleTextFilter() :
+    m_showReferences(false) {
+}
+
 QString BtmModuleTextFilter::processText(const QString &text) {
     m_doc.setContent(text);
     QDomNodeList nodes = m_doc.elementsByTagName("html");
@@ -34,28 +38,41 @@ QString BtmModuleTextFilter::processText(const QString &text) {
         return QString();
     QDomNode htmlNode = nodes.at(0);
     QDomElement bodyElement = htmlNode.firstChildElement("body");
-    if (bodyElement.isNull())
-        return QString();
-    QDomNodeList spanNodes = bodyElement.elementsByTagName("span");
-    traverse(spanNodes);
+    QDomNodeList childNodes = bodyElement.childNodes();
+    traverse(childNodes);
     QString newText = m_doc.toString();
     return newText;
 }
 
 void BtmModuleTextFilter::traverse(const QDomNodeList& nodeList) {
     int count = nodeList.count();
+    bool breakFound = false;
+    QDomNode breakNode;
     for (int i=0; i<count; i++) {
         QDomNode node = nodeList.at(i);
         QDomNode::NodeType nodeType = node.nodeType();
         QDomElement element = node.toElement();
-        if (isFootnote(element)) {
-            convertFootNoteToLink(element);
+        if ( m_showReferences) {
+            if (isFootnote(element)) {
+                convertFootNoteToLink(element);
+            }
+            if (isLemmaOrMorph(element)) {
+                convertLemmaAndMorphToLink(element);
+            }
         }
-        if (isLemmaOrMorph(element)) {
-            convertLemmaAndMorphToLink(element);
+        if (element.tagName() == "br") {
+            if (breakFound) {
+                breakNode = node;
+                breakFound = false;
+            }
+            breakFound = true;
         }
         QDomNodeList childrenNodes = node.childNodes();
         traverse(childrenNodes);
+    }
+    if (!breakNode.isNull()) {
+        QDomNode parentNode = breakNode.parentNode();
+        parentNode.removeChild(breakNode);
     }
 }
 
@@ -155,6 +172,10 @@ QString BtmModuleTextFilter::getAttributeValue(
         value = attr.value();
     }
     return value;
+}
+
+void BtmModuleTextFilter::setShowReferences(bool on) {
+    m_showReferences = on;
 }
 
 } // end namespace

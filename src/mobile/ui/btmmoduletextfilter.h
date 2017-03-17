@@ -22,7 +22,9 @@ namespace btm {
 class BtmModuleTextFilter: public BtModuleTextFilter {
 
 public:
+    BtmModuleTextFilter();
     QString processText(const QString& text);
+    void setShowReferences(bool on);
 
 private:
     void convertFootNoteToLink(QDomElement& element);
@@ -33,6 +35,7 @@ private:
     bool isLemmaOrMorph(const QDomElement& element) const;
     void traverse(const QDomNodeList& nodeList);
 
+    bool m_showReferences;
     QDomDocument m_doc;
 };
 
