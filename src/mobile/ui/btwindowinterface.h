@@ -56,6 +56,7 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(bool         isMagView               READ isMagView WRITE setMagView)
     Q_PROPERTY(QString      moduleLanguage          READ getModuleLanguage)
     Q_PROPERTY(QString      moduleName              READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
+    Q_PROPERTY(QString      module2Name             READ getModule2Name WRITE setModule2Name NOTIFY module2Changed)
     Q_PROPERTY(QString      prompt                  READ getPrompt NOTIFY promptChanged)
     Q_PROPERTY(QString      reference               READ getReference WRITE setReference NOTIFY referenceChange)
     Q_PROPERTY(QStringList  references              READ getReferences NOTIFY referencesChanged)
@@ -63,7 +64,6 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
 
 public:
-    Q_INVOKABLE void changeModule();
     Q_INVOKABLE void changeReference();
     Q_INVOKABLE int  getComboIndexFromUrl(const QString& url);
     Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
@@ -97,6 +97,7 @@ public:
     CSwordKey* getKey() const;
     QString getModuleLanguage() const;
     QString getModuleName() const;
+    QString getModule2Name() const;
     QString getPrompt() const;
     QString getReference() const;
     QStringList getReferences() const;
@@ -109,6 +110,7 @@ public:
     void setHighlightWords(const QString& words);
     void setMagView(bool magView);
     void setModuleName(const QString& moduleName);
+    void setModule2Name(const QString& moduleName);
     void setReference(const QString& key);
 
 
@@ -119,6 +121,7 @@ signals:
     void footnoteVisibleChanged();
     void historyChanged();
     void moduleChanged();
+    void module2Changed();
     void promptChanged();
     void referenceChange();
     void referencesChanged();
@@ -172,6 +175,7 @@ private:
     QString m_highlightWords;
     QList<History> m_history;
     QString m_moduleName;
+    QString m_module2Name;
     QString m_prompt;
     QStringList m_references;
     QString m_referencesViewTitle;

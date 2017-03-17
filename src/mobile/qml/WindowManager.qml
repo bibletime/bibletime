@@ -106,6 +106,10 @@ Rectangle {
         windowMenus(window);
     }
 
+    function moduleChooserRequestedSlot(window, moduleNumber) {
+        moduleChooser.visible = true;
+    }
+
     function closeWindow(index) {
         var window = windows[index];
         windows.splice(index,1);
@@ -169,7 +173,8 @@ Rectangle {
         else {
             window.setModule(module);
             window.setModuleToBeginning();
-            window.windowMenusDialog.connect(windowManager, windowMenusSlot)
+            window.windowMenusDialog.connect(windowManager, windowMenusSlot);
+            window.moduleChooserRequest.connect(windowManager, moduleChooserRequestedSlot);
             windows.push(window)
             layoutWindows();
             var curWindow = windows.length -1;
@@ -369,7 +374,7 @@ Rectangle {
                     Rectangle {
                         id: tabImage
 
-                        anchors { fill: parent; leftMargin: 8; topMargin: 4; rightMargin: 8 }
+                        anchors { fill: parent; leftMargin: 4; topMargin: 4; rightMargin: 4 }
                         color: {
                             if (tabbedWindows.current == index)
                                 return btStyle.windowTabSelected

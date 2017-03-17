@@ -32,7 +32,6 @@ SOURCES += \
     ../../../src/mobile/ui/btwindowinterface.cpp \
     ../../../src/mobile/ui/gridchooser.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
-    ../../../src/mobile/ui/modulechooser.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
     ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
@@ -62,7 +61,6 @@ HEADERS += \
     ../../../src/mobile/ui/btmmoduletextfilter.h \
     ../../../src/mobile/ui/btwindowinterface.h \
     ../../../src/mobile/ui/gridchooser.h \
-    ../../../src/mobile/ui/modulechooser.h \
     ../../../src/mobile/ui/moduleinterface.h \
     ../../../src/mobile/ui/qtquick2applicationviewer.h \
     ../../../src/mobile/ui/treechoosermodel.h \
@@ -97,6 +95,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/Menus.qml \
     ../../../src/mobile/qml/MenuButton.qml \
     ../../../src/mobile/qml/ModuleChooser.qml \
+    ../../../src/mobile/qml/ModuleDisplay.qml \
     ../../../src/mobile/qml/PrevNextArrow.qml \
     ../../../src/mobile/qml/Progress.qml \
     ../../../src/mobile/qml/Question.qml \

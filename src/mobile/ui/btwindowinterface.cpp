@@ -38,7 +38,6 @@
 #include "mobile/keychooser/bookkeychooser.h"
 #include "mobile/keychooser/keynamechooser.h"
 #include "mobile/keychooser/versechooser.h"
-#include "mobile/ui/modulechooser.h"
 #include "mobile/ui/viewmanager.h"
 #include "util/btconnect.h"
 
@@ -201,6 +200,10 @@ QString BtWindowInterface::getModuleName() const {
     return moduleName;
 }
 
+QString BtWindowInterface::getModule2Name() const {
+    return m_module2Name;
+}
+
 QString BtWindowInterface::getReferenceFromUrl(const QString& url) {
     QString reference;
     QStringList parts = url.split('/', QString::SkipEmptyParts);
@@ -359,11 +362,11 @@ void BtWindowInterface::setModuleToBeginning() {
 }
 
 void BtWindowInterface::setModuleName(const QString& moduleName) {
-    if (m_key && m_moduleName == moduleName)
-        return;
-    if (moduleName.isEmpty())
+    if ((m_key && m_moduleName == moduleName) || moduleName.isEmpty())
         return;
     m_moduleName = moduleName;
+
+
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
     if (!m_key) {
         m_key = CSwordKey::createInstance(m);
@@ -391,9 +394,27 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
 
     QStringList moduleNames;
     moduleNames.append(moduleName);
+    if (!m_module2Name.isEmpty())
+        moduleNames.append(m_module2Name);
     m_moduleTextModel->setModules(moduleNames);
 
     emit moduleChanged();
+    emit referenceChange();
+    emit textChanged();
+    emit referencesChanged();
+    updateModel();
+}
+
+void BtWindowInterface::setModule2Name(const QString& moduleName) {
+    m_module2Name = moduleName;
+
+    QStringList moduleNames;
+    moduleNames.append(m_moduleName);
+    if (!m_module2Name.isEmpty())
+        moduleNames.append(m_module2Name);
+    m_moduleTextModel->setModules(moduleNames);
+
+    emit module2Changed();
     emit referenceChange();
     emit textChanged();
     emit referencesChanged();
@@ -405,12 +426,6 @@ QString BtWindowInterface::getReference() const {
     if (m_key)
         reference = m_key->key();
     return reference;
-}
-
-void BtWindowInterface::changeModule() {
-    QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    ModuleChooser* dlg = new ModuleChooser(viewer, this);
-    dlg->open();
 }
 
 void BtWindowInterface::updateCurrentModelIndex() {

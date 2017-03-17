@@ -17,10 +17,33 @@ Rectangle {
     id: windowView
 
     property string title: toolbar.title
+    property int currentModule: 1
 
     border.color: btStyle.toolbarTextColor
 
     signal windowMenusDialog(variant window)
+
+    signal moduleChooserRequest(variant window, int moduleNumber)
+
+    function addParallelModule() {
+        moduleDisplay2.visible = true;
+        chooseModule(2);
+    }
+
+    function chooseModule(moduleNumber) {
+        windowView.currentModule = moduleNumber;
+        moduleChooser.moduleSelected.connect(windowView.moduleChoosenSlot);
+        moduleChooser.visible = true;
+    }
+
+    function moduleChoosenSlot() {
+        moduleChooser.moduleSelected.disconnect(windowView.moduleChoosenSlot);
+        var moduleName = moduleChooser.selectedModule;
+        if (windowView.currentModule == 1)
+            btWindowInterface.moduleName = moduleName;
+        else
+            btWindowInterface.module2Name = moduleName;
+    }
 
     function getModuleLanguage() {
         return btWindowInterface.moduleLanguage
@@ -126,40 +149,33 @@ Rectangle {
             }
         }
 
-        Rectangle {
+        ModuleDisplay {
             id: moduleDisplay
-
-            width: text.width + 30
-            radius:btStyle.pixelsPerMillimeterX
             anchors.left: nextHistory.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.leftMargin: parent.height * 0.1
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
-            color: btStyle.textBackgroundColor
-            border.color: btStyle.toolbarTextColor
-            border.width: 2
-
-            Text {
-                id: text
-
-                anchors.centerIn: parent
-                anchors.leftMargin: 4
-                anchors.rightMargin: 4
-                font.pointSize: btStyle.uiFontPointSize
-                elide: Text.ElideMiddle
-                color: btStyle.textColor
-                text: btWindowInterface.moduleName
+            moduleText: btWindowInterface.moduleName
+            visible: true
+            onActivated: {
+                windowView.chooseModule(1);
             }
+        }
 
-            MouseArea {
-                id: moduleMouseArea
-
-                anchors.fill: parent
-                onClicked: {
-                    btWindowInterface.changeModule();
-                }
+        ModuleDisplay {
+            id: moduleDisplay2
+            anchors.left: moduleDisplay.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
+            anchors.leftMargin: parent.height * 0.1
+            anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
+            moduleText: btWindowInterface.module2Name
+            visible: false
+            onActivated: {
+                windowView.chooseModule(2);
             }
         }
 
@@ -181,16 +197,9 @@ Rectangle {
         Rectangle {
             id: referenceDisplay
 
-            width: {
-                var w2 = toolbar.width - prevHistory.width -prevHistory.anchors.margins*2;
-                w2 = w2 - nextHistory.width -nextHistory.anchors.margins*2;
-                w2 = w2 - moduleDisplay.width - moduleDisplay.anchors.leftMargin - moduleDisplay.anchors.rightMargin;
-                w2 - w2 - parent.height * 0.2;
-                w2 = w2 - menuButton.width
-                return w2;
-            }
             radius: btStyle.pixelsPerMillimeterX
-            anchors.left: moduleDisplay.right
+            anchors.left: moduleDisplay2.right
+            anchors.right: menuButton.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7

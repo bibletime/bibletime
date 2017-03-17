@@ -43,6 +43,16 @@ FocusScope {
         btWindowInterface.reference = reference;
     }
 
+    function chooseModule() {
+        moduleChooser.moduleSelected.connect(windowView.moduleChoosenSlot);
+        moduleChooser.visible = true;
+    }
+
+    function moduleChoosenSlot() {
+        moduleChooser.moduleSelected.disconnect(windowView.moduleChoosenSlot);
+        var moduleName = moduleChooser.selectedModule;
+        btWindowInterface.moduleName = moduleName;
+    }
     function scrollDocumentViewToCurrentReference() {
         btWindowInterface.updateCurrentModelIndex();
     }
@@ -125,7 +135,7 @@ FocusScope {
 
                 anchors.fill: parent
                 onClicked: {
-                    btWindowInterface.changeModule();
+                    magView.chooseModule();
                 }
             }
         }
