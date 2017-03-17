@@ -100,12 +100,23 @@ Rectangle {
         btWindowInterface.setModuleToBeginning();
     }
 
+    function formatTitle() {
+        toolbar.title = btWindowInterface.moduleName;
+        if (btWindowInterface.module2Name != "") {
+            toolbar.title += " / " + btWindowInterface.module2Name;
+        }
+        toolbar.title += " (" + btWindowInterface.reference + ")";
+    }
+
     color: "black"
 
     BtWindowInterface {
         id: btWindowInterface
 
         isMagView: false
+        onModuleChanged: formatTitle();
+        onModule2Changed: formatTitle();
+        onReferenceChanged: formatTitle();
     }
 
     BtStyle {
@@ -115,7 +126,7 @@ Rectangle {
     Rectangle {
         id: toolbar
 
-        property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
+        property string title: ""
 
         height: {
             var pixel = btStyle.pixelsPerMillimeterY * 8;
