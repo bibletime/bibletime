@@ -98,6 +98,7 @@ bool BibleTimeApp::initDisplayTemplateManager() {
 
     QString errorMessage;
     new CDisplayTemplateMgr(errorMessage);
+    CDisplayTemplateMgr::instance()->setMultiModuleHeadersVisible(false);
     if (errorMessage.isNull())
         return true;
     message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
