@@ -37,7 +37,6 @@ FocusScope {
     }
 
     function setPromptVisibility(value) {
-        console.log(value);
         promptText.height = value ? undefined : 0
         promptText.visible = value ? true: false;
     }
@@ -319,7 +318,7 @@ FocusScope {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 anchors.leftMargin: btStyle.pixelsPerMillimeterX
-                font.pointSize: btWindowInterface.fontSize
+                font.pointSize: btStyle.uiFontPointSize
                 color: btStyle.textColor
                 elide: Text.ElideMiddle
                 text: btWindowInterface2.prompt
@@ -345,7 +344,7 @@ FocusScope {
                 anchors.top: parent.top
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.topMargin: btStyle.pixelsPerMillimeterY
-                font.pointSize: btWindowInterface.fontSize
+                font.pointSize: btStyle.uiFontPointSize
                 font.bold: true
                 color: btStyle.textColor
                 elide: Text.ElideMiddle
