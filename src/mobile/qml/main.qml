@@ -170,6 +170,7 @@ Rectangle {
 
                 onWindowMenus: {
                     windowMenus.theWindow = window
+                    window.createMenus(windowMenusModel)
                     windowMenus.visible = true;
                 }
             }
@@ -605,11 +606,7 @@ Rectangle {
     ListModel {
         id: windowMenusModel
 
-        ListElement { title: QT_TR_NOOP("Add BookMark"); action: "addBookmark" }
-        ListElement { title: QT_TR_NOOP("Bookmarks"); action: "bookmarks" }
-        ListElement { title: QT_TR_NOOP("View References");    action: "viewReferences" }
-        ListElement { title: QT_TR_NOOP("Add Parallel Document"); action: "addParallel" }
-        ListElement { title: QT_TR_NOOP("Close Window"); action: "close window" }
+        ListElement { title: ""; action: "" }
     }
 
     Menus {
@@ -645,6 +642,9 @@ Rectangle {
             }
             else if (action == "addParallel") {
                 theWindow.addParallelModule();
+            }
+            else if (action == "removeParallel") {
+                theWindow.removeParallelModule();
             }
         }
     }

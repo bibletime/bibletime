@@ -31,6 +31,11 @@ Rectangle {
         chooseModule(2);
     }
 
+    function removeParallelModule() {
+        moduleDisplay2.visible = false;
+        btWindowInterface.module2Name = "";
+    }
+
     function chooseModule(moduleNumber) {
         windowView.currentModule = moduleNumber;
         moduleChooser.moduleSelected.connect(windowView.moduleChoosenSlot);
@@ -44,6 +49,18 @@ Rectangle {
             btWindowInterface.moduleName = moduleName;
         else
             btWindowInterface.module2Name = moduleName;
+    }
+
+    function createMenus(model) {
+        model.clear();
+        model.append ({ title: QT_TR_NOOP("Add BookMark"), action: "addBookmark" })
+        model.append ({ title: QT_TR_NOOP("Bookmarks"), action: "bookmarks" })
+        model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
+        if (btWindowInterface.module2Name === "")
+            model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })
+        else
+            model.append ({ title: QT_TR_NOOP("Remove Parallel Document"), action: "removeParallel" })
+        model.append ({ title: QT_TR_NOOP("Close Window"), action: "close window" })
     }
 
     function getModuleLanguage() {
