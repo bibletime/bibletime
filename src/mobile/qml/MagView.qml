@@ -20,7 +20,8 @@ FocusScope {
     id: magView
 
     property int magViewMargins: btStyle.pixelsPerMillimeterX * 0.75
-    property real cornerRadius: btStyle.pixelsPerMillimeterX * 1.4;
+    property real cornerRadius: btStyle.pixelsPerMillimeterX * 0.9;
+    property bool promptVisible: true
 
     signal magFinished();
 
@@ -32,6 +33,13 @@ FocusScope {
                 btWindowInterface.moduleName = moduleName;
             }
         }
+        setPromptVisibility(true);
+    }
+
+    function setPromptVisibility(value) {
+        console.log(value);
+        promptText.height = value ? undefined : 0
+        promptText.visible = value ? true: false;
     }
 
     function setModule(module) {
@@ -272,7 +280,7 @@ FocusScope {
                 anchors.top: parent.top
                 anchors.left: parent.left
                 anchors.right: parent.right
-                anchors.bottom: promptRect.top
+                anchors.bottom: promptText.top
                 anchors.leftMargin: magView.magViewMargins
                 anchors.rightMargin: magView.magViewMargins
                 anchors.topMargin: magView.magViewMargins
@@ -298,37 +306,24 @@ FocusScope {
                     wrapMode: Text.WordWrap
                     onWidthChanged: doLayout()
                     onLinkActivated: {
+                        setPromptVisibility(false);
                         btWindowInterface2.setReferenceByUrl(link);
                         btWindowInterface2.updateCurrentModelIndex();
                     }
                 }
             }
 
-            Rectangle {
-                id: promptRect
+            Text {
+                id: promptText
 
+                anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                width: parent.width
-                height: btStyle.uiFontPointSize * 2.4 + btStyle.pixelsPerMillimeterX * 1.1;
-                color: btStyle.textBackgroundColor
-                border.width: 1
-                border.color: btStyle.toolbarColor
-                radius: magView.cornerRadius
-
-                Text {
-                    id: promptText
-
-                    anchors.fill: parent
-                    anchors.left: parent.left
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.leftMargin: btStyle.pixelsPerMillimeterX
-                    font.pointSize: btStyle.uiFontPointSize
-                    color: btStyle.textColor
-                    elide: Text.ElideMiddle
-                    text: btWindowInterface2.prompt
-
-                }
+                anchors.leftMargin: btStyle.pixelsPerMillimeterX
+                font.pointSize: btWindowInterface.fontSize
+                color: btStyle.textColor
+                elide: Text.ElideMiddle
+                text: btWindowInterface2.prompt
+                visible: promptVisible
             }
         }
 
@@ -343,44 +338,24 @@ FocusScope {
             border.color: btStyle.textColor
             radius: magView.cornerRadius
 
-            Rectangle {
-                id: referenceRect
+
+            Text {
+                id: referenceTitle
 
                 anchors.top: parent.top
-                anchors.left: parent.left
-                width: parent.width
-                height: btStyle.uiFontPointSize * 2.4 + btStyle.pixelsPerMillimeterX * 1.1;
-                color: btStyle.textBackgroundColor
-                border.width: 1
-                border.color: btStyle.toolbarColor
-                radius: magView.cornerRadius
-
-                Text {
-                    id: referenceTitle
-
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.topMargin: btStyle.pixelsPerMillimeterX * 2
-                    width: parent.width
-                    height: {
-                        var pixel = btStyle.pixelsPerMillimeterY * 3.2;
-                        var uiFont = btStyle.uiFontPointSize * 4.5;
-                        var mix = pixel * 0.7 + uiFont * 0.3;
-                        return Math.max(pixel, mix);
-                    }
-                    anchors.leftMargin: btStyle.pixelsPerMillimeterX
-                    anchors.rightMargin: btStyle.pixelsPerMillimeterX
-                    font.pointSize: btStyle.uiFontPointSize
-                    color: btStyle.textColor
-                    elide: Text.ElideMiddle
-                    text: btWindowInterface2.referencesViewTitle
-                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.topMargin: btStyle.pixelsPerMillimeterY
+                font.pointSize: btWindowInterface.fontSize
+                font.bold: true
+                color: btStyle.textColor
+                elide: Text.ElideMiddle
+                text: btWindowInterface2.referencesViewTitle
             }
 
             ScrollView {
                 id: footnoteView
 
-                anchors.top: referenceRect.bottom
+                anchors.top: referenceTitle.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -408,7 +383,7 @@ FocusScope {
             ListView {
                 id: referencesListView
 
-                anchors.top: referenceRect.bottom
+                anchors.top: referenceTitle.bottom
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
