@@ -34,6 +34,7 @@ class ModuleInterface : public QObject {
 
 public:
     ModuleInterface();
+    Q_INVOKABLE void setBibleCommentaryOnly(bool value);
     Q_INVOKABLE void updateCategoryAndLanguageModels();
     Q_INVOKABLE void updateWorksModel();
     Q_INVOKABLE QString category(int index);
@@ -55,6 +56,7 @@ private:
     QString currentLanguage() const;
     QString currentCategory() const;
 
+    bool m_bibleCommentaryOnly;
     QSet<QString> m_categories;
     QSet<QString> m_languages;
     RoleItemModel m_categoryModel;

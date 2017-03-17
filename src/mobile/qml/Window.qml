@@ -18,7 +18,7 @@ Rectangle {
 
     property string title: toolbar.title
     property int currentModule: 1
-
+    property bool parallelView: btWindowInterface.module2Name != ""
     border.color: btStyle.toolbarTextColor
 
     signal windowMenusDialog(variant window)
@@ -26,6 +26,7 @@ Rectangle {
     signal moduleChooserRequest(variant window, int moduleNumber)
 
     function addParallelModule() {
+        moduleChooser.bibleCommentaryOnly = true;
         moduleDisplay2.visible = true;
         chooseModule(2);
     }
@@ -160,6 +161,7 @@ Rectangle {
             moduleText: btWindowInterface.moduleName
             visible: true
             onActivated: {
+                moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
                 windowView.chooseModule(1);
             }
         }
@@ -175,6 +177,7 @@ Rectangle {
             moduleText: btWindowInterface.module2Name
             visible: false
             onActivated: {
+                moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
                 windowView.chooseModule(2);
             }
         }

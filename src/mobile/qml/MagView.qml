@@ -44,12 +44,12 @@ FocusScope {
     }
 
     function chooseModule() {
-        moduleChooser.moduleSelected.connect(windowView.moduleChoosenSlot);
+        moduleChooser.moduleSelected.connect(magView.moduleChoosenSlot);
         moduleChooser.visible = true;
     }
 
     function moduleChoosenSlot() {
-        moduleChooser.moduleSelected.disconnect(windowView.moduleChoosenSlot);
+        moduleChooser.moduleSelected.disconnect(magView.moduleChoosenSlot);
         var moduleName = moduleChooser.selectedModule;
         btWindowInterface.moduleName = moduleName;
     }

@@ -29,6 +29,7 @@ Rectangle {
     property int spacing: 4
     property string selectedModule: ""
     property string selectedCategory: ""
+    property bool bibleCommentaryOnly: false
 
     objectName: "moduleChooser"
 
@@ -50,6 +51,7 @@ Rectangle {
 
     onVisibleChanged: {
         if (visible == true) {
+            moduleInterface.setBibleCommentaryOnly(bibleCommentaryOnly);
             moduleInterface.updateCategoryAndLanguageModels();
             categoryIndex = lastCategoryIndex;
             languageIndex = lastLanguageIndex;
@@ -126,6 +128,7 @@ Rectangle {
                     console.log("module did not unlock");
                     return;
                 }
+                bibleCommentaryOnly = false;
                 moduleSelected();
                 moduleChooser.visible = false;
             }
@@ -204,6 +207,7 @@ Rectangle {
                 requestModuleUnlockKey();
                 return;
             }
+            bibleCommentaryOnly = false;
             moduleSelected();
             moduleChooser.visible = false;
         }

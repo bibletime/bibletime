@@ -40,7 +40,8 @@ struct FontSettings {
 
 static QList<FontSettings> savedFontSettings;
 
-ModuleInterface::ModuleInterface() {
+ModuleInterface::ModuleInterface() :
+    m_bibleCommentaryOnly(false) {
 }
 
 enum TextRoles {
@@ -77,6 +78,10 @@ static CSwordModuleInfo* getModule(BtBookshelfModel* bookshelfModel, const QMode
     return module;
 }
 
+void ModuleInterface::setBibleCommentaryOnly(bool value) {
+    m_bibleCommentaryOnly = value;
+}
+
 void ModuleInterface::updateCategoryAndLanguageModels() {
     QQuickItem* object = findQmlObject("moduleChooser");
     if (object == nullptr)
@@ -108,6 +113,10 @@ void ModuleInterface::getCategoriesAndLanguages() {
         CSwordModuleInfo* module = getModule(bookshelfModel, index);
         CSwordModuleInfo::Category category = module->category();
         QString categoryName = module->categoryName(category);
+        if (m_bibleCommentaryOnly) {
+            if ((categoryName != "Bibles") && (categoryName != "Commentaries"))
+                continue;
+        }
         const CLanguageMgr::Language* language = module->language();
         QString languageName = language->translatedName();
         m_categories.insert(categoryName);
