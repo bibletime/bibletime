@@ -14,7 +14,6 @@
 #define BTM_MODULE_TEXT_FILTER_H
 
 #include <QString>
-#include <QDomNodeList>
 #include "backend/models/btmoduletextmodel.h"
 
 namespace btm {
@@ -27,16 +26,17 @@ public:
     void setShowReferences(bool on);
 
 private:
-    void convertFootNoteToLink(QDomElement& element);
-    void convertLemmaAndMorphToLink(QDomElement& element);
-    QString getAttributeValue(const QDomElement& element, const QString& attrName) const;
-    bool elementHasAttribute(const QDomElement& element, const QString& attrName) const;
-    bool isFootnote(const QDomElement& element) const;
-    bool isLemmaOrMorph(const QDomElement& element) const;
-    void traverse(const QDomNodeList& nodeList);
+    void fixDoubleBR();
+    QString fixNonRichText(const QString& text);
+    void fixUnmatchedDiv();
+    int partsContains(const QString& text, int start);
+    void rewriteFootnoteAsLink();
+    void rewriteLemmaMorphAsLink();
+    void splitText(const QString& text);
 
     bool m_showReferences;
-    QDomDocument m_doc;
+
+    QStringList m_parts;
 };
 
 } // end namespace

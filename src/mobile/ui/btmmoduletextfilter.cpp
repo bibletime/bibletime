@@ -12,9 +12,6 @@
 
 #include "btmmoduletextfilter.h"
 
-#include <QDomDocument>
-#include <QStringList>
-
 /*
  * This filter provides a method for modifying text generated
  * by BtModuleTextModel. Specifically is can modify footnotes
@@ -32,150 +29,161 @@ BtmModuleTextFilter::BtmModuleTextFilter() :
 }
 
 QString BtmModuleTextFilter::processText(const QString &text) {
-    m_doc.setContent(text);
-    QDomNodeList nodes = m_doc.elementsByTagName("html");
-    if (nodes.count() != 1)
-        return QString();
-    QDomNode htmlNode = nodes.at(0);
-    QDomElement bodyElement = htmlNode.firstChildElement("body");
-    QDomNodeList childNodes = bodyElement.childNodes();
-    traverse(childNodes);
-    QString newText = m_doc.toString();
-    return newText;
-}
-
-void BtmModuleTextFilter::traverse(const QDomNodeList& nodeList) {
-    int count = nodeList.count();
-    bool breakFound = false;
-    QDomNode breakNode;
-    for (int i=0; i<count; i++) {
-        QDomNode node = nodeList.at(i);
-        QDomNode::NodeType nodeType = node.nodeType();
-        QDomElement element = node.toElement();
-        if ( m_showReferences) {
-            if (isFootnote(element)) {
-                convertFootNoteToLink(element);
-            }
-            if (isLemmaOrMorph(element)) {
-                convertLemmaAndMorphToLink(element);
-            }
-        }
-        if (element.tagName() == "br") {
-            if (breakFound) {
-                breakNode = node;
-                breakFound = false;
-            }
-            breakFound = true;
-        }
-        QDomNodeList childrenNodes = node.childNodes();
-        traverse(childrenNodes);
+    QString localText = fixNonRichText(text);
+    splitText(localText);
+    fixDoubleBR();
+    fixUnmatchedDiv();
+    if (m_showReferences) {
+        rewriteFootnoteAsLink();
+        rewriteLemmaMorphAsLink();
     }
-    if (!breakNode.isNull()) {
-        QDomNode parentNode = breakNode.parentNode();
-        parentNode.removeChild(breakNode);
-    }
-}
-
-bool BtmModuleTextFilter::isFootnote(const QDomElement& element) const {
-    QDomNamedNodeMap nodeMap = element.attributes();
-    if (nodeMap.contains("class")) {
-        QString classValue = getAttributeValue(element, "class");
-        return classValue == "footnote";
-    }
-    return false;
-}
-
-void BtmModuleTextFilter::convertFootNoteToLink(QDomElement& element) {
-
-    QString noteValue = getAttributeValue(element, "note");
-    QDomNodeList childrenNodes = element.childNodes();
-    int count = childrenNodes.count();
-    for (int i=0; i<count; i++) {
-        QDomNode node = childrenNodes.at(i);
-        QDomNode::NodeType nodeType = node.nodeType();
-        if (nodeType == QDomNode::TextNode){
-            QDomText text = node.toText();
-            QString textValue = text.data();
-            QString newText = QString("(" + textValue + ")");
-            element.removeChild(node);
-
-            QDomElement aNode = m_doc.createElement("a");
-            element.appendChild(aNode);
-
-            QString url = "sword://footnote/" + noteValue + "/" + textValue;
-            aNode.setAttribute("href", url);
-
-            QDomText textNode = m_doc.createTextNode(newText);
-            aNode.appendChild(textNode);
-        }
-    }
-}
-
-bool BtmModuleTextFilter::isLemmaOrMorph(const QDomElement& element) const {
-    QDomNamedNodeMap nodeMap = element.attributes();
-    if (nodeMap.contains("lemma") || nodeMap.contains("morph"))
-        return true;
-    return false;
-}
-
-void BtmModuleTextFilter::convertLemmaAndMorphToLink(QDomElement& element) {
-
-    QString value;
-    if (elementHasAttribute(element, "lemma"))
-        value += "lemma=" + getAttributeValue(element, "lemma") + "||";
-    if (elementHasAttribute(element, "morph"))
-        value += "morph=" + getAttributeValue(element, "morph") + "||";
-
-
-    QDomNodeList childrenNodes = element.childNodes();
-    int count = childrenNodes.count();
-    for (int i=0; i<count; i++) {
-        QDomNode node = childrenNodes.at(i);
-        QDomNode::NodeType nodeType = node.nodeType();
-        if (nodeType == QDomNode::TextNode){
-            QDomText text = node.toText();
-            QString textValue = text.data();
-            int i=0;
-            element.removeChild(node);
-
-            QDomElement aNode = m_doc.createElement("a");
-            element.appendChild(aNode);
-
-            QString url = "sword://lemmamorph/" +
-                    value + "/" + textValue;
-            aNode.setAttribute("href", url);
-
-            textValue += "  ";
-            QDomText textNode = m_doc.createTextNode(textValue);
-            aNode.appendChild(textNode);
-        }
-    }
-}
-
-bool BtmModuleTextFilter::elementHasAttribute(
-        const QDomElement& element,
-        const QString& attrName) const {
-    QDomNamedNodeMap nodeMap = element.attributes();
-    if (nodeMap.contains(attrName))
-        return true;
-    return false;
-}
-
-QString BtmModuleTextFilter::getAttributeValue(
-        const QDomElement& element,
-        const QString& attrName) const {
-    QString value;
-    QDomNamedNodeMap nodeMap = element.attributes();
-    if (nodeMap.contains(attrName)) {
-        QDomNode node = nodeMap.namedItem(attrName);
-        QDomAttr attr = node.toAttr();
-        value = attr.value();
-    }
-    return value;
+    return m_parts.join("");
 }
 
 void BtmModuleTextFilter::setShowReferences(bool on) {
     m_showReferences = on;
+}
+
+QString BtmModuleTextFilter::fixNonRichText(const QString& text) {
+    // Fix !P tag which is not rich text
+    QString localText = text;
+    int index = 0;
+    while ((index = localText.indexOf("<!P>")) >= 0)
+        localText.remove(index,4);
+    return localText;
+}
+
+void BtmModuleTextFilter::rewriteFootnoteAsLink() {
+    int partCount = m_parts.count();
+    for (int i=0; i<partCount; ++i) {
+        QString part = m_parts.at(i);
+        if (part.startsWith("<") && part.contains("class=\"footnote\"")) {
+
+            QRegExp rxlen("note=\"([^\"]*)");
+            int pos = rxlen.indexIn(part);
+            if (pos > -1) {
+                QString noteValue = rxlen.cap(1);
+                QString footnoteText = m_parts.at(i+1);
+                QString url = "sword://footnote/" + noteValue + "/" + footnoteText;
+                QString newEntry = "<a href=\"" + url + "\">";
+                m_parts[i] = newEntry;
+                m_parts[i+1] = "(" + footnoteText + ")";
+                m_parts[i+2] = "</a>";
+            }
+        }
+    }
+}
+
+void BtmModuleTextFilter::rewriteLemmaMorphAsLink() {
+    int partCount = m_parts.count();
+    for (int i=0; i<partCount; ++i) {
+        QString part = m_parts.at(i);
+        QString value;
+        if (part.startsWith("<") && (
+                    part.contains("lemma=\"") ||
+                    part.contains("morph=\"") ) ) {
+
+            QRegExp rx1("lemma=\"([^\"]*)");
+            int pos1 = rx1.indexIn(part);
+            if (pos1 > -1)
+                value = "lemma=" + rx1.cap(1) +"||";
+
+            QRegExp rx2("morph=\"([^\"]*)");
+            int pos2 = rx2.indexIn(part);
+            if (pos2 > -1)
+                value += "morph" + rx2.cap(1);
+
+            QString refText = m_parts.at(i+1);
+            QString url = "sword://lemmamorph/" + value + "/" + refText;
+            QString newEntry = "<a href=\"" + url + "\">";
+            m_parts[i] = newEntry;
+            m_parts[i+2] = "</a>";
+
+        }
+    }
+}
+
+void BtmModuleTextFilter::splitText(const QString& text) {
+    m_parts.clear();
+    int from = 0;
+
+    while (from < text.length()) {
+
+        // Get text before tag
+        int end = text.indexOf("<", from);
+        if (end == -1)
+            end = text.length();
+        m_parts.append(text.mid(from, end-from));
+        from = end;
+
+        //Get tag text
+        end = text.indexOf(">", from);
+        if (end == -1)
+            end = text.length();
+        m_parts.append(text.mid(from, end-from+1));
+        from = end+1;
+    }
+}
+
+/*  BtModuleTextModel renders verses individually instead of
+ *  how BibleTime renders chapters. Because "<div section...>"
+ *  crosses several verses before the </div>, div tags can become
+ *  unbalanced. This is espectionally a problem for parallel
+ *  modules. This can easily be fixed by add/removing tag
+ *  just before the </td>.
+ *
+ */
+void BtmModuleTextFilter::fixUnmatchedDiv() {
+    int start = 0;
+
+    while (start < m_parts.count()-1) {
+        int end = 0;
+        if ((start = partsContains("<td", start)) < 0)
+            return;
+        if ((end = partsContains("</td", start)) < 0)
+            return;
+        int divCount = 0;
+        int sDivCount = 0;
+        for (int index = start+1; index < end; ++index) {
+            if (m_parts.at(index).startsWith("<div"))
+                divCount++;
+            else if (m_parts.at(index).startsWith("</div"))
+                sDivCount++;
+        }
+        while (divCount > sDivCount) {
+            m_parts.insert(end,"</div>");
+            ++sDivCount;
+            ++end;
+        }
+        while (divCount < sDivCount) {
+            for (int index2 = end-1; index2 > start; --index2){
+                if (m_parts.at(index2).startsWith("</div")) {
+                    m_parts[index2] = "";
+                    --sDivCount;
+                    if (divCount == sDivCount)
+                        break;
+                }
+            }
+        }
+        start = end +1;
+    }
+}
+
+void BtmModuleTextFilter::fixDoubleBR() {
+    for (int index = 2; index < m_parts.count(); ++index) {
+        if (m_parts.at(index) == "<br />" && m_parts.at(index-2) == "<br />")
+            m_parts[index] = "";
+    }
+}
+
+int BtmModuleTextFilter::partsContains(const QString& text, int start) {
+    if (start >= m_parts.count())
+        return -1;
+    for (int index=start; index < m_parts.count(); ++index) {
+        if (m_parts.at(index).startsWith(text))
+            return index;
+    }
+    return -1;
 }
 
 } // end namespace
