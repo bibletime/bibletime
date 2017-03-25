@@ -101,13 +101,13 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
         auto & swModule = modulePtr->module();
         if (modulePtr->language()->isValid()) {
-            langAttr = QString("xml:lang=\"")
+            langAttr = QString(" xml:lang=\"")
                        .append(modulePtr->language()->abbrev())
                        .append("\" lang=\"")
                        .append(modulePtr->language()->abbrev())
                        .append("\"");
         } else {
-            langAttr = QString("xml:lang=\"")
+            langAttr = QString(" xml:lang=\"")
                        .append(swModule.getLanguage())
                        .append("\" lang=\"")
                        .append(swModule.getLanguage())
