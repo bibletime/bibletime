@@ -57,6 +57,7 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_verseKeyChooser(nullptr) {
 
     m_prompt = tr("Select a reference.");
+    m_moduleTextModel->setTextFilter(&m_textFilter);
 
     BT_CONNECT(CSwordBackend::instance(),
                SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
@@ -537,7 +538,6 @@ void BtWindowInterface::setMagView(bool magView) {
     filterOptions.footnotes = magView ? 1 : 0;
     m_moduleTextModel->setFilterOptions(filterOptions);
     m_textFilter.setShowReferences(magView);
-    m_moduleTextModel->setTextFilter(&m_textFilter);
 }
 
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
