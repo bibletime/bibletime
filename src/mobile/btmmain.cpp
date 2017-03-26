@@ -19,6 +19,7 @@
 #include <QQuickItem>
 #include <QQmlDebuggingEnabler>
 #include <QMetaType>
+#include <QStyleHints>
 #include <QTranslator>
 #include "bibletime.h"
 #include "backend/config/btconfig.h"
@@ -137,7 +138,11 @@ void registerMetaTypes() {
 int main(int argc, char *argv[]) {
     namespace DU = util::directory;
 
-    BibleTimeApp app(argc, argv); //for QApplication
+    BibleTimeApp app(argc, argv);
+
+    // Adjust start scrolling drag distance
+    QStyleHints * sh = app.styleHints();
+    sh->setStartDragDistance(50);
 
     registerMetaTypes();
 
