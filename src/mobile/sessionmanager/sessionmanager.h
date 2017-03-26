@@ -34,7 +34,7 @@ private:
     int getWindowCount();
     void loadWindow(const QStringList& moduleNames, const QString& key);
     void loadWindows();
-    void newWindow(const QString& category, const QString& moduleName, const QString& key);
+    void newWindow(const QString& category, const QStringList& moduleNames, const QString& key);
     void saveWindowStateToConfig(int windowIndex);
 
     QQuickItem* m_windowMgr;

@@ -619,6 +619,8 @@ void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
     QStringList modules;
     QString moduleName = getModuleName();
     modules.append(moduleName);
+    if (!m_module2Name.isEmpty())
+        modules.append(m_module2Name);
     conf.setSessionValue("modules", modules);
     conf.endGroup();
 }

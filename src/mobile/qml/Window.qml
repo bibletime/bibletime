@@ -32,6 +32,7 @@ Rectangle {
     }
 
     function removeParallelModule() {
+        moduleChooser.bibleCommentaryOnly = false;
         moduleDisplay2.visible = false;
         btWindowInterface.module2Name = "";
     }
@@ -81,6 +82,15 @@ Rectangle {
 
     function setModule(module) {
         btWindowInterface.moduleName = module;
+    }
+
+    function setModules(modules) {
+        btWindowInterface.moduleName = modules[0];
+        if (modules.length > 1) {
+            btWindowInterface.module2Name = modules[1];
+            moduleChooser.bibleCommentaryOnly = true;
+            moduleDisplay2.visible = true;
+        }
     }
 
     function setKey(key) {

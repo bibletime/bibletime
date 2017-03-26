@@ -58,22 +58,22 @@ void SessionManager::loadWindows() {
 
 void SessionManager::loadWindow(const QStringList& moduleNames, const QString& key) {
 
-    const QString moduleName = moduleNames.at(0); // We don't support parallel yet!
+    const QString moduleName = moduleNames.at(0);
     CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
     if (m == nullptr)
         return;
     CSwordModuleInfo::Category category = m->category();
     const QString categoryName = m->englishCategoryName(category);
-    newWindow(categoryName, moduleName, key);
+    newWindow(categoryName, moduleNames, key);
 }
 
 void SessionManager::newWindow(const QString& category,
-                               const QString& moduleName,
+                               const QStringList& moduleNames,
                                const QString& key) {
 
     QMetaObject::invokeMethod(m_windowMgr, "openWindow",
                               Q_ARG(QVariant, category),
-                              Q_ARG(QVariant, moduleName),
+                              Q_ARG(QVariant, moduleNames),
                               Q_ARG(QVariant, key));
 }
 

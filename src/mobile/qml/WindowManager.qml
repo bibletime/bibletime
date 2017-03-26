@@ -148,10 +148,11 @@ Rectangle {
 
     function openWindowSlot() {
         moduleChooser.moduleSelected.disconnect(openWindowSlot);
-        openWindow(moduleChooser.selectedCategory, moduleChooser.selectedModule, "")
+        var modules = [moduleChooser.selectedModule];
+        openWindow(moduleChooser.selectedCategory, modules, "")
     }
 
-    function openWindow(category, module, key) {
+    function openWindow(category, modules, key) {
         if (category == "Bibles"||
             category == "Cults/Unorthodox" ||
             category == "Commentaries" ||
@@ -171,7 +172,7 @@ Rectangle {
             console.log("Error creating object");
         }
         else {
-            window.setModule(module);
+            window.setModules(modules);
             window.setModuleToBeginning();
             window.windowMenusDialog.connect(windowManager, windowMenusSlot);
             window.moduleChooserRequest.connect(windowManager, moduleChooserRequestedSlot);
