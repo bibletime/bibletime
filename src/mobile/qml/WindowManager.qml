@@ -309,7 +309,7 @@ Rectangle {
         }
     }
 
-    Item {
+    Rectangle {
         id: tabbedWindows
 
         default property alias content: tabbedWindowsStack.children
@@ -325,7 +325,7 @@ Rectangle {
                 tabbedWindowsStack.children[i].z = (i == current ? 1 : 0)
             }
         }
-
+        color: btStyle.toolbarColor
         objectName: "tabbedWindows"
         anchors.fill: parent
         onCurrentChanged: changeTabs()
