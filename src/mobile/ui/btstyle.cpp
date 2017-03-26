@@ -155,9 +155,9 @@ void BtStyle::setCurrentStyle(int style) {
         setButtonGradient2(QColor(255,255,255));
         setButtonGradient3(QColor(180,180,255));
 
-        setWindowTab(QColor(245,245,245));
-        setWindowTabSelected(QColor(65,105,225));
-        setWindowTabText(QColor(100,100,100));
+        setWindowTab(QColor(225,225,225));
+        setWindowTabSelected(QColor(55,55,160));
+        setWindowTabText(QColor(50,50,50));
         setWindowTabTextSelected(QColor(255,255,255));
 
         setMenu(QColor(255,255,255));
@@ -194,9 +194,9 @@ void BtStyle::setCurrentStyle(int style) {
         setButtonGradient2(QColor(255,255,255));
         setButtonGradient3(QColor(180,180,255));
 
-        setWindowTab(QColor(245,245,245));
-        setWindowTabSelected(QColor(218,165,3));
-        setWindowTabText(QColor(100,100,100));
+        setWindowTab(QColor(225,225,225));
+        setWindowTabSelected(QColor(255,215,0));
+        setWindowTabText(QColor(50,50,50));
         setWindowTabTextSelected(QColor(0,0,0));
 
         setMenu(QColor(255,255,255));
