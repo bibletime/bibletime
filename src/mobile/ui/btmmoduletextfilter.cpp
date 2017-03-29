@@ -144,6 +144,8 @@ void BtmModuleTextFilter::fixUnmatchedDiv() {
             return;
         int divCount = 0;
         int sDivCount = 0;
+        if (start > 0)
+            m_parts[start] = "<td width=50%>";
         for (int index = start+1; index < end; ++index) {
             if (m_parts.at(index).startsWith("<div"))
                 divCount++;
@@ -171,7 +173,8 @@ void BtmModuleTextFilter::fixUnmatchedDiv() {
 
 void BtmModuleTextFilter::fixDoubleBR() {
     for (int index = 2; index < m_parts.count(); ++index) {
-        if (m_parts.at(index) == "<br />" && m_parts.at(index-2) == "<br />")
+        QRegExp rx("<br\\s+/>");
+        if (m_parts.at(index).contains(rx) && m_parts.at(index-2).contains(rx))
             m_parts[index] = "";
     }
 }
