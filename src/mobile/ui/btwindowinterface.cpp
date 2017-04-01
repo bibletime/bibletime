@@ -108,14 +108,14 @@ KeyNameChooser* BtWindowInterface::getKeyNameChooser() {
 void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {
     //first make sure all used Sword modules are still present
 
-    if (CSwordBackend::instance()->findModuleByName(m_moduleName)) {
-        QString moduleName = m_moduleName;
-        m_moduleName = "";
-        setModuleName(moduleName);
-        ;
-    } else {
-        // close window ?
-    }
+//    if (CSwordBackend::instance()->findModuleByName(m_moduleName)) {
+//        QString moduleName = m_moduleName;
+//        m_moduleName = "";
+//        setModuleName(moduleName);
+//        ;
+//    } else {
+//        // close window ?
+//    }
 }
 
 void BtWindowInterface::updateModel() {
@@ -195,14 +195,35 @@ QString BtWindowInterface::getModuleLanguage() const {
 }
 
 QString BtWindowInterface::getModuleName() const {
-    QString moduleName;
-    if (m_key)
-        moduleName = m_key->module()->name();
-    return moduleName;
+    if (m_moduleNames.count() < 1)
+        return QString();
+    return m_moduleNames.at(0);
+//    QString moduleName;
+//    if (m_key)
+//        moduleName = m_key->module()->name();
+//    return moduleName;
 }
 
 QString BtWindowInterface::getModule2Name() const {
-    return m_module2Name;
+    if (m_moduleNames.count() < 2)
+        return QString();
+    return m_moduleNames.at(1);
+}
+
+QString BtWindowInterface::getModule3Name() const {
+    if (m_moduleNames.count() < 3)
+        return QString();
+    return m_moduleNames.at(2);
+}
+
+QString BtWindowInterface::getModule4Name() const {
+    if (m_moduleNames.count() < 4)
+        return QString();
+    return m_moduleNames.at(3);
+}
+
+int BtWindowInterface::getNumModules() const {
+    return m_moduleNames.count();
 }
 
 QString BtWindowInterface::getReferenceFromUrl(const QString& url) {
@@ -257,7 +278,7 @@ void BtWindowInterface::setReference(const QString& key) {
             m_key->setKey(newKey);
             referenceChanged();
             setFootnoteVisible(false);
-            QString title = m_moduleName + "   " + getReference();
+            QString title = getModuleName() + "   " + getReference();
             setReferencesViewTitle(title);
         }
     }
@@ -267,7 +288,7 @@ void BtWindowInterface::decodeLemmaMorph(const QString& attributes) {
 
     Rendering::ListInfoData infoList(Rendering::detectInfo(attributes));
     BtConstModuleList l;
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(m_moduleName);
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(getModuleName());
     if(m != nullptr)
         l.append(m);
     QString text = Rendering::formatInfo(infoList, l);
@@ -278,7 +299,7 @@ void BtWindowInterface::decodeLemmaMorph(const QString& attributes) {
 void BtWindowInterface::decodeFootnote(const QString& keyName, const QString& footnote) {
 
     QString text;
-    CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByName(m_moduleName);
+    CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByName(getModuleName());
     if (!module)
         return;
 
@@ -363,9 +384,21 @@ void BtWindowInterface::setModuleToBeginning() {
 }
 
 void BtWindowInterface::setModuleName(const QString& moduleName) {
-    if ((m_key && m_moduleName == moduleName) || moduleName.isEmpty())
+    if (moduleName.isEmpty())
         return;
-    m_moduleName = moduleName;
+    if (m_moduleNames.count() > 0 && m_moduleNames.at(0) == moduleName)
+        return;
+
+    if (m_moduleNames.count() == 0) {
+        m_moduleNames.append(moduleName);
+        emit numModulesChanged();
+    }
+    else
+        m_moduleNames[0] = moduleName;
+
+//    if ((m_key && m_moduleName == moduleName) || moduleName.isEmpty())
+//        return;
+//    m_moduleName = moduleName;
 
 
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
@@ -393,11 +426,7 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
     if (treeKey)
         treeKey->firstChild();
 
-    QStringList moduleNames;
-    moduleNames.append(moduleName);
-    if (!m_module2Name.isEmpty())
-        moduleNames.append(m_module2Name);
-    m_moduleTextModel->setModules(moduleNames);
+    m_moduleTextModel->setModules(m_moduleNames);
 
     emit moduleChanged();
     emit referenceChange();
@@ -407,15 +436,62 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
 }
 
 void BtWindowInterface::setModule2Name(const QString& moduleName) {
-    m_module2Name = moduleName;
+    if (m_moduleNames.count() == 0)
+        return;
 
-    QStringList moduleNames;
-    moduleNames.append(m_moduleName);
-    if (!m_module2Name.isEmpty())
-        moduleNames.append(m_module2Name);
-    m_moduleTextModel->setModules(moduleNames);
+    if (moduleName.isEmpty() && m_moduleNames.count() == 2) {
+        m_moduleNames.removeLast();
+        emit numModulesChanged();
+    } else if (m_moduleNames.count() == 1) {
+        m_moduleNames.append(moduleName);
+        emit numModulesChanged();
+    } else
+        m_moduleNames[1] = moduleName;
 
+    m_moduleTextModel->setModules(m_moduleNames);
     emit module2Changed();
+    emit referenceChange();
+    emit textChanged();
+    emit referencesChanged();
+    updateModel();
+}
+
+void BtWindowInterface::setModule3Name(const QString& moduleName) {
+    if (m_moduleNames.count() < 2)
+        return;
+
+    if (moduleName.isEmpty() && m_moduleNames.count() == 3) {
+        m_moduleNames.removeLast();
+        emit numModulesChanged();
+    } else if (m_moduleNames.count() == 2) {
+        m_moduleNames.append(moduleName);
+        emit numModulesChanged();
+    } else
+        m_moduleNames[2] = moduleName;
+
+    m_moduleTextModel->setModules(m_moduleNames);
+    emit module3Changed();
+    emit referenceChange();
+    emit textChanged();
+    emit referencesChanged();
+    updateModel();
+}
+
+void BtWindowInterface::setModule4Name(const QString& moduleName) {
+    if (m_moduleNames.count() < 3)
+        return;
+
+    if (moduleName.isEmpty() && m_moduleNames.count() == 4) {
+        m_moduleNames.removeLast();
+        emit numModulesChanged();
+    } else if (m_moduleNames.count() == 3) {
+        m_moduleNames.append(moduleName);
+        emit numModulesChanged();
+    } else
+        m_moduleNames[3] = moduleName;
+
+    m_moduleTextModel->setModules(m_moduleNames);
+    emit module4Changed();
     emit referenceChange();
     emit textChanged();
     emit referencesChanged();
@@ -616,12 +692,7 @@ void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
     BtConfig & conf = btConfig();
     conf.beginGroup(windowGroup);
     conf.setSessionValue("key", getEnglishKey(m_key));
-    QStringList modules;
-    QString moduleName = getModuleName();
-    modules.append(moduleName);
-    if (!m_module2Name.isEmpty())
-        modules.append(m_module2Name);
-    conf.setSessionValue("modules", modules);
+    conf.setSessionValue("modules", m_moduleNames);
     conf.endGroup();
 }
 

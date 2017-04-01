@@ -18,7 +18,7 @@ Rectangle {
 
     property string title: toolbar.title
     property int currentModule: 1
-    property bool parallelView: btWindowInterface.module2Name != ""
+//    property bool parallelView: btWindowInterface.module2Name != ""
     border.color: btStyle.toolbarTextColor
 
     signal windowMenusDialog(variant window)
@@ -27,14 +27,18 @@ Rectangle {
 
     function addParallelModule() {
         moduleChooser.bibleCommentaryOnly = true;
-        moduleDisplay2.visible = true;
-        chooseModule(2);
+        chooseModule(btWindowInterface.numModules+1);
     }
 
     function removeParallelModule() {
         moduleChooser.bibleCommentaryOnly = false;
-        moduleDisplay2.visible = false;
-        btWindowInterface.module2Name = "";
+        var n = btWindowInterface.numModules
+        if (n == 4)
+            btWindowInterface.module4Name = "";
+        if (n == 3)
+            btWindowInterface.module3Name = "";
+        if (n == 2)
+            btWindowInterface.module2Name = "";
     }
 
     function chooseModule(moduleNumber) {
@@ -48,8 +52,12 @@ Rectangle {
         var moduleName = moduleChooser.selectedModule;
         if (windowView.currentModule == 1)
             btWindowInterface.moduleName = moduleName;
-        else
+        else if (windowView.currentModule == 2)
             btWindowInterface.module2Name = moduleName;
+        else if (windowView.currentModule == 3)
+            btWindowInterface.module3Name = moduleName;
+        else if (windowView.currentModule == 4)
+            btWindowInterface.module4Name = moduleName;
     }
 
     function createMenus(model) {
@@ -57,11 +65,12 @@ Rectangle {
         model.append ({ title: QT_TR_NOOP("Add BookMark"), action: "addBookmark" })
         model.append ({ title: QT_TR_NOOP("Bookmarks"), action: "bookmarks" })
         model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
-        if (btWindowInterface.module2Name === "")
+        if (btWindowInterface.numModules < 4)
             model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })
-        else
+        if (btWindowInterface.numModules > 1)
             model.append ({ title: QT_TR_NOOP("Remove Parallel Document"), action: "removeParallel" })
         model.append ({ title: QT_TR_NOOP("Close Window"), action: "close window" })
+        model.append ({ title: "Debug Data", action: "debugData" })
     }
 
     function getModuleLanguage() {
@@ -89,7 +98,6 @@ Rectangle {
         if (modules.length > 1) {
             btWindowInterface.module2Name = modules[1];
             moduleChooser.bibleCommentaryOnly = true;
-            moduleDisplay2.visible = true;
         }
     }
 
@@ -116,6 +124,13 @@ Rectangle {
             toolbar.title += " / " + btWindowInterface.module2Name;
         }
         toolbar.title += " (" + btWindowInterface.reference + ")";
+    }
+
+    function debugData() {
+        console.log("")
+        var i = 31472;
+        var text = btWindowInterface.getModelTextByIndex(i);
+        console.log(text);
     }
 
     color: "black"
@@ -215,7 +230,45 @@ Rectangle {
             anchors.leftMargin: parent.height * 0.1
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             moduleText: btWindowInterface.module2Name
-            visible: false
+            visible: {
+                btWindowInterface.numModules > 1;
+            }
+            onActivated: {
+                moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
+                windowView.chooseModule(2);
+            }
+        }
+
+        ModuleDisplay {
+            id: moduleDisplay3
+            anchors.left: moduleDisplay2.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
+            anchors.leftMargin: parent.height * 0.1
+            anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
+            moduleText: btWindowInterface.module3Name
+            visible: {
+                btWindowInterface.numModules > 2;
+            }
+            onActivated: {
+                moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
+                windowView.chooseModule(2);
+            }
+        }
+
+        ModuleDisplay {
+            id: moduleDisplay4
+            anchors.left: moduleDisplay3.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
+            anchors.leftMargin: parent.height * 0.1
+            anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
+            moduleText: btWindowInterface.module4Name
+            visible: {
+                btWindowInterface.numModules > 3;
+            }
             onActivated: {
                 moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
                 windowView.chooseModule(2);
@@ -241,7 +294,7 @@ Rectangle {
             id: referenceDisplay
 
             radius: btStyle.pixelsPerMillimeterX
-            anchors.left: moduleDisplay2.right
+            anchors.left: moduleDisplay4.right
             anchors.right: menuButton.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom

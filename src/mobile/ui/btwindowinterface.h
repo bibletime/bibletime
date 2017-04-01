@@ -57,6 +57,9 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QString      moduleLanguage          READ getModuleLanguage)
     Q_PROPERTY(QString      moduleName              READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
     Q_PROPERTY(QString      module2Name             READ getModule2Name WRITE setModule2Name NOTIFY module2Changed)
+    Q_PROPERTY(QString      module3Name             READ getModule3Name WRITE setModule3Name NOTIFY module3Changed)
+    Q_PROPERTY(QString      module4Name             READ getModule4Name WRITE setModule4Name NOTIFY module3Changed)
+    Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(QString      prompt                  READ getPrompt NOTIFY promptChanged)
     Q_PROPERTY(QString      reference               READ getReference WRITE setReference NOTIFY referenceChange)
     Q_PROPERTY(QStringList  references              READ getReferences NOTIFY referencesChanged)
@@ -78,13 +81,13 @@ public:
     Q_INVOKABLE void updateTextFonts();
     Q_INVOKABLE void updateKeyText(int modelIndex);
     Q_INVOKABLE void updateReferences();
+    Q_INVOKABLE QString getModelTextByIndex(int index) const;
 
 
     BtWindowInterface(QObject *parent = nullptr);
     ~BtWindowInterface();
 
     QStringList getComboBoxEntries() const;
-    QString getModelTextByIndex(int index) const;
     QString getCurrentModelText() const;
     int getCurrentModelIndex() const;
     int getFontSize() const;
@@ -98,6 +101,9 @@ public:
     QString getModuleLanguage() const;
     QString getModuleName() const;
     QString getModule2Name() const;
+    QString getModule3Name() const;
+    QString getModule4Name() const;
+    int getNumModules() const;
     QString getPrompt() const;
     QString getReference() const;
     QStringList getReferences() const;
@@ -111,6 +117,8 @@ public:
     void setMagView(bool magView);
     void setModuleName(const QString& moduleName);
     void setModule2Name(const QString& moduleName);
+    void setModule3Name(const QString& moduleName);
+    void setModule4Name(const QString& moduleName);
     void setReference(const QString& key);
 
 
@@ -122,6 +130,9 @@ signals:
     void historyChanged();
     void moduleChanged();
     void module2Changed();
+    void module3Changed();
+    void module4Changed();
+    void numModulesChanged();
     void promptChanged();
     void referenceChange();
     void referencesChanged();
@@ -174,8 +185,7 @@ private:
     QStringList m_hebrewStrongsLexicons;
     QString m_highlightWords;
     QList<History> m_history;
-    QString m_moduleName;
-    QString m_module2Name;
+    QStringList m_moduleNames;
     QString m_prompt;
     QStringList m_references;
     QString m_referencesViewTitle;

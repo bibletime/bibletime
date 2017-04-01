@@ -646,6 +646,9 @@ Rectangle {
             else if (action == "removeParallel") {
                 theWindow.removeParallelModule();
             }
+            else if (action == "debugData") {
+                theWindow.debugData();
+            }
         }
     }
 
