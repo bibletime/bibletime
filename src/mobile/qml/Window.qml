@@ -338,6 +338,7 @@ Rectangle {
 
                 anchors.fill: parent
                 onClicked: {
+                    setHistoryPoint();
                     btWindowInterface.changeReference();
                 }
             }
