@@ -51,6 +51,10 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     QHash<int, QByteArray> roleNames;
     roleNames[ModuleEntry::ReferenceRole] =  "keyName";
     roleNames[ModuleEntry::TextRole] = "line";
+    roleNames[ModuleEntry::Text1Role] = "text1";
+    roleNames[ModuleEntry::Text2Role] = "text2";
+    roleNames[ModuleEntry::Text3Role] = "text3";
+    roleNames[ModuleEntry::Text4Role] = "text4";
     setRoleNames(roleNames);
     m_displayOptions.verseNumbers = 0;
     m_displayOptions.lineBreaks = 1;
@@ -128,7 +132,8 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
     moduleList << lexiconModule;
     QString keyName = lexiconModule->entries()[row];
 
-    if (role == ModuleEntry::TextRole) {
+    if (role == ModuleEntry::TextRole ||
+        role == ModuleEntry::Text1Role) {
         Rendering::CEntryDisplay entryDisplay;
         QString text = entryDisplay.text(moduleList, keyName,
             m_displayOptions, m_filterOptions);
@@ -143,7 +148,8 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
 }
 
 QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
-    if (role == ModuleEntry::TextRole) {
+    if (role == ModuleEntry::TextRole ||
+            role == ModuleEntry::Text1Role) {
         const CSwordBookModuleInfo *bookModule = qobject_cast<const CSwordBookModuleInfo*>(m_moduleInfoList.at(0));
         CSwordTreeKey key(bookModule->tree(), bookModule);
         int bookIndex = index.row() * 4;
@@ -164,7 +170,11 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
     int row = index.row();
     CSwordVerseKey key = indexToVerseKey(row);
     int verse = key.getVerse();
-    if (role == ModuleEntry::TextRole) {
+    if (role == ModuleEntry::TextRole ||
+            role == ModuleEntry::Text1Role ||
+            role == ModuleEntry::Text2Role ||
+            role == ModuleEntry::Text3Role ||
+            role == ModuleEntry::Text4Role) {
         if (verse == 0)
             return QString();
         QString text;
@@ -173,9 +183,25 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
         if (verse == 1)
             chapterTitle = key.book() + " " + QString::number(key.getChapter());
 
-        text += Rendering::CEntryDisplay().textKeyRendering(m_moduleInfoList,
+        BtConstModuleList modules;
+        if ( role == ModuleEntry::TextRole) {
+            modules = m_moduleInfoList;
+        } else {
+            int column = role - ModuleEntry::Text1Role;
+            CSwordModuleInfo const * module;
+            if ((column + 1) > m_moduleInfoList.count())
+                    module = m_moduleInfoList.at(0);
+            else
+                module = m_moduleInfoList.at(column);
+            modules.append(module);
+            CSwordVerseKey mKey(module);
+            mKey.setKey(key.key());
+        }
+
+        text += Rendering::CEntryDisplay().textKeyRendering(modules,
             key.key(), m_displayOptions, m_filterOptions,
             Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text = replaceColors(text);
         return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);

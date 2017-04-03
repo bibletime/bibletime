@@ -26,7 +26,11 @@
 struct ModuleEntry {
     enum TextRoles {
         ReferenceRole = Qt::UserRole + 1,
-        TextRole = Qt::UserRole + 2
+        TextRole = Qt::UserRole + 2,
+        Text1Role = Qt::UserRole + 3,
+        Text2Role = Qt::UserRole + 4,
+        Text3Role = Qt::UserRole + 5,
+        Text4Role = Qt::UserRole + 6
     };
 };
 
