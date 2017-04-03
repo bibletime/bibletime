@@ -32,7 +32,6 @@ QString BtmModuleTextFilter::processText(const QString &text) {
     QString localText = fixNonRichText(text);
     splitText(localText);
     fixDoubleBR();
-    fixUnmatchedDiv();
     if (m_showReferences) {
         rewriteFootnoteAsLink();
         rewriteLemmaMorphAsLink();
@@ -122,52 +121,6 @@ void BtmModuleTextFilter::splitText(const QString& text) {
             end = text.length();
         m_parts.append(text.mid(from, end-from+1));
         from = end+1;
-    }
-}
-
-/*  BtModuleTextModel renders verses individually instead of
- *  how BibleTime renders chapters. Because "<div section...>"
- *  crosses several verses before the </div>, div tags can become
- *  unbalanced. This is espectionally a problem for parallel
- *  modules. This can easily be fixed by add/removing tag
- *  just before the </td>.
- *
- */
-void BtmModuleTextFilter::fixUnmatchedDiv() {
-    int start = 0;
-
-    while (start < m_parts.count()-1) {
-        int end = 0;
-        if ((start = partsContains("<td", start)) < 0)
-            return;
-        if ((end = partsContains("</td", start)) < 0)
-            return;
-        int divCount = 0;
-        int sDivCount = 0;
-        if (start > 0)
-            m_parts[start] = "<td width=50%>";
-        for (int index = start+1; index < end; ++index) {
-            if (m_parts.at(index).startsWith("<div"))
-                divCount++;
-            else if (m_parts.at(index).startsWith("</div"))
-                sDivCount++;
-        }
-        while (divCount > sDivCount) {
-            m_parts.insert(end,"</div>");
-            ++sDivCount;
-            ++end;
-        }
-        while (divCount < sDivCount) {
-            for (int index2 = end-1; index2 > start; --index2){
-                if (m_parts.at(index2).startsWith("</div")) {
-                    m_parts[index2] = "";
-                    --sDivCount;
-                    if (divCount == sDivCount)
-                        break;
-                }
-            }
-        }
-        start = end +1;
     }
 }
 

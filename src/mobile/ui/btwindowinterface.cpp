@@ -149,6 +149,10 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
     return false;
 }
 
+bool BtWindowInterface::firstModuleIsBibleOrCommentary() {
+    return moduleIsBibleOrCommentary(module());
+}
+
 QString BtWindowInterface::getModelTextByIndex(int index) const {
     if (index == 0)
         return "";
@@ -220,6 +224,10 @@ QString BtWindowInterface::getModule4Name() const {
     if (m_moduleNames.count() < 4)
         return QString();
     return m_moduleNames.at(3);
+}
+
+QStringList BtWindowInterface::getModuleNames() const {
+    return m_moduleNames;
 }
 
 int BtWindowInterface::getNumModules() const {

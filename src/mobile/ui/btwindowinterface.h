@@ -58,7 +58,7 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QString      moduleName              READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
     Q_PROPERTY(QString      module2Name             READ getModule2Name WRITE setModule2Name NOTIFY module2Changed)
     Q_PROPERTY(QString      module3Name             READ getModule3Name WRITE setModule3Name NOTIFY module3Changed)
-    Q_PROPERTY(QString      module4Name             READ getModule4Name WRITE setModule4Name NOTIFY module3Changed)
+    Q_PROPERTY(QString      module4Name             READ getModule4Name WRITE setModule4Name NOTIFY module4Changed)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(QString      prompt                  READ getPrompt NOTIFY promptChanged)
     Q_PROPERTY(QString      reference               READ getReference WRITE setReference NOTIFY referenceChange)
@@ -70,6 +70,8 @@ public:
     Q_INVOKABLE void changeReference();
     Q_INVOKABLE int  getComboIndexFromUrl(const QString& url);
     Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
+    Q_INVOKABLE QStringList getModuleNames() const;
+    Q_INVOKABLE bool firstModuleIsBibleOrCommentary();
     Q_INVOKABLE void moveHistoryBackward();
     Q_INVOKABLE void moveHistoryForward();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);

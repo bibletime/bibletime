@@ -65,8 +65,8 @@ Rectangle {
         var names = [];
         for (var i=0; i<windows.length; ++i) {
             var window = windows[i];
-            var name = window.getModule();
-            names.push(name);
+            var winNames = window.getModuleNames();
+            names.push.apply(names, winNames);
         }
         return names;
     }
@@ -143,6 +143,7 @@ Rectangle {
 
     function newWindow() {
         moduleChooser.moduleSelected.connect(openWindowSlot);
+        moduleChooser.bibleCommentaryOnly = false;
         moduleChooser.visible = true;
     }
 

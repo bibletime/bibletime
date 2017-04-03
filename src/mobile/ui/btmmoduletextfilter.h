@@ -28,7 +28,6 @@ public:
 private:
     void fixDoubleBR();
     QString fixNonRichText(const QString& text);
-    void fixUnmatchedDiv();
     int partsContains(const QString& text, int start);
     void rewriteFootnoteAsLink();
     void rewriteLemmaMorphAsLink();

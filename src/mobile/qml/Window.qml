@@ -18,7 +18,6 @@ Rectangle {
 
     property string title: toolbar.title
     property int currentModule: 1
-//    property bool parallelView: btWindowInterface.module2Name != ""
     border.color: btStyle.toolbarTextColor
 
     signal windowMenusDialog(variant window)
@@ -64,17 +63,23 @@ Rectangle {
         model.clear();
         model.append ({ title: QT_TR_NOOP("Add BookMark"), action: "addBookmark" })
         model.append ({ title: QT_TR_NOOP("Bookmarks"), action: "bookmarks" })
-        model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
-        if (btWindowInterface.numModules < 4)
-            model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })
-        if (btWindowInterface.numModules > 1)
-            model.append ({ title: QT_TR_NOOP("Remove Parallel Document"), action: "removeParallel" })
+        if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
+            model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
+            if (btWindowInterface.numModules < 4)
+                model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })
+            if (btWindowInterface.numModules > 1)
+                model.append ({ title: QT_TR_NOOP("Remove Parallel Document"), action: "removeParallel" })
+        }
         model.append ({ title: QT_TR_NOOP("Close Window"), action: "close window" })
-        model.append ({ title: "Debug Data", action: "debugData" })
+//        model.append ({ title: "Debug Data", action: "debugData" })
     }
 
     function getModuleLanguage() {
         return btWindowInterface.moduleLanguage
+    }
+
+    function getModuleNames() {
+        return btWindowInterface.getModuleNames();
     }
 
     function updateTextFonts() {
@@ -99,6 +104,12 @@ Rectangle {
             btWindowInterface.module2Name = modules[1];
             moduleChooser.bibleCommentaryOnly = true;
         }
+        if (modules.length > 2) {
+            btWindowInterface.module3Name = modules[2];
+        }
+        if (modules.length > 3) {
+            btWindowInterface.module4Name = modules[3];
+        }
     }
 
     function setKey(key) {
@@ -120,9 +131,13 @@ Rectangle {
 
     function formatTitle() {
         toolbar.title = btWindowInterface.moduleName;
-        if (btWindowInterface.module2Name != "") {
+        if (btWindowInterface.numModules >1)
             toolbar.title += " / " + btWindowInterface.module2Name;
-        }
+        if (btWindowInterface.numModules >2)
+            toolbar.title += " / " + btWindowInterface.module3Name;
+        if (btWindowInterface.numModules >3)
+            toolbar.title += " / " + btWindowInterface.module4Name;
+
         toolbar.title += " (" + btWindowInterface.reference + ")";
     }
 
@@ -253,7 +268,7 @@ Rectangle {
             }
             onActivated: {
                 moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
-                windowView.chooseModule(2);
+                windowView.chooseModule(3);
             }
         }
 
@@ -271,7 +286,7 @@ Rectangle {
             }
             onActivated: {
                 moduleChooser.bibleCommentaryOnly = btWindowInterface.module2Name.length > 0;
-                windowView.chooseModule(2);
+                windowView.chooseModule(4);
             }
         }
 
@@ -343,6 +358,7 @@ Rectangle {
         ListView {
             id: listView
 
+            property int columns: btWindowInterface.numModules
             clip: true
             anchors.fill: parent
             anchors.leftMargin: 8
@@ -358,15 +374,84 @@ Rectangle {
                 btWindowInterface.updateKeyText(index);
             }
 
-            delegate: Text {
-                text: line
-                textFormat: Text.RichText
-                width: listView.width
-                color: btStyle.textColor
-                font.family: btWindowInterface.fontName
-                font.pointSize: btWindowInterface.fontSize
-                wrapMode: Text.WordWrap
-                onWidthChanged: doLayout()
+            delegate: Component {
+                Rectangle {
+                    color: btStyle.textBackgroundColor
+                    width: listView.width
+                    height: {
+                        if (listView.columns == 1)
+                            return column1Text.height
+                        if (listView.columns == 2)
+                            return Math.max(column1Text.height, column2Text.height)
+                        if (listView.columns == 3)
+                            return Math.max(column1Text.height, column2Text.height, column3Text.height)
+                        if (listView.columns == 4)
+                            return Math.max(column1Text.height, column2Text.height,
+                                            column3Text.height, column4Text.height)
+                        return 30;
+                    }
+
+                    Text {
+                        id: column1Text
+                        text: text1
+                        textFormat: Text.RichText
+                        anchors.top: parent.top
+                        anchors.left: parent.left
+                        width: listView.width / listView.columns
+                        color: btStyle.textColor
+                        font.family: btWindowInterface.fontName
+                        font.pointSize: btWindowInterface.fontSize
+                        wrapMode: Text.WordWrap
+                        visible: listView.columns > 0
+                        onWidthChanged: doLayout()
+                    }
+
+                    Text {
+                        id: column2Text
+                        text: text2
+                        textFormat: Text.RichText
+                        anchors.top: parent.top
+                        anchors.left: column1Text.right
+                        width: listView.width / listView.columns
+                        color: btStyle.textColor
+                        font.family: btWindowInterface.fontName
+                        font.pointSize: btWindowInterface.fontSize
+                        wrapMode: Text.WordWrap
+                        visible: listView.columns > 1
+                        onWidthChanged: doLayout()
+                    }
+
+                    Text {
+                        id: column3Text
+                        text: text3
+                        textFormat: Text.RichText
+                        anchors.top: parent.top
+                        anchors.left: column2Text.right
+                        width: listView.width / listView.columns
+                        color: btStyle.textColor
+                        font.family: btWindowInterface.fontName
+                        font.pointSize: btWindowInterface.fontSize
+                        wrapMode: Text.WordWrap
+                        visible: listView.columns > 2
+                        onWidthChanged: doLayout()
+                    }
+
+                    Text {
+                        id: column4Text
+                        text: text4
+                        textFormat: Text.RichText
+                        anchors.top: parent.top
+                        anchors.left: column3Text.right
+                        width: listView.width / listView.columns
+                        color: btStyle.textColor
+                        font.family: btWindowInterface.fontName
+                        font.pointSize: btWindowInterface.fontSize
+                        wrapMode: Text.WordWrap
+                        visible: listView.columns > 3
+                        onWidthChanged: doLayout()
+                    }
+
+                }
             }
         }
     }
