@@ -4,7 +4,7 @@
     <message>
         <source/>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2015 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation type="unfinished"/>
     </message>
@@ -172,7 +172,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="147"/>
         <source>Find</source>
-        <translation>検索</translation>
+        <translation>章篇内検索</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Search.qml" line="165"/>
@@ -327,7 +327,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="233"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
-        <translation>検索するモジュールのいくつかはインデックスが必要です。インデックスを付与しますか?</translation>
+        <translation>検索するモジュールのいくつかはインデックス化が必要です。インデックス化しますか?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="321"/>
