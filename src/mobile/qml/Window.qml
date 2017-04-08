@@ -18,6 +18,8 @@ Rectangle {
 
     property string title: toolbar.title
     property int currentModule: 1
+    property variant textModel: btWindowInterface.textModel
+
     border.color: btStyle.toolbarTextColor
 
     signal windowMenusDialog(variant window)
@@ -64,6 +66,7 @@ Rectangle {
         model.append ({ title: QT_TR_NOOP("Add BookMark"), action: "addBookmark" })
         model.append ({ title: QT_TR_NOOP("Bookmarks"), action: "bookmarks" })
         if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
+            model.append ({ title: QT_TR_NOOP("Copy"), action: "copy" })
             model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
             if (btWindowInterface.numModules < 4)
                 model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })

@@ -61,12 +61,15 @@ Rectangle {
     }
 
     Keys.forwardTo: [
-        gridChooser,
-        moduleChooser,
-        mainMenus,
         windowArrangementMenus,
         viewWindowsMenus,
         windowMenus,
+        mainMenus,
+        settingsMenus,
+        bookmarkManagerMenus,
+        colorThemeMenus,
+        gridChooser,
+        moduleChooser,
         magView,
         searchResults,
         search,
@@ -77,14 +80,12 @@ Rectangle {
         aboutDialog,
         uiFontPointSize,
         setFontDialog,
-        settingsMenus,
+        copyVerses,
         parentBookmarkFolders,
         bookmarkFolders,
         bookmarkManager,
         addBookmark,
-        addFolder,
-        bookmarkManagerMenus,
-        colorThemeMenus
+        addFolder
     ]
 
     Keys.onReleased: {
@@ -263,6 +264,7 @@ Rectangle {
         width: parent.width
         height: parent.height
         visible: false
+        z: 2
     }
 
     BtStyle {
@@ -277,6 +279,7 @@ Rectangle {
         width: Math.min(parent.height, parent.width);
         height: parent.height
         anchors.centerIn: parent
+        z: 2
     }
 
     TreeChooser {
@@ -640,6 +643,9 @@ Rectangle {
                 var index = windowManager.findIndexOfWindow(theWindow);
                 windowManager.closeWindow(index);
             }
+            else if (action == "copy") {
+                copyVerses.open();
+            }
             else if (action == "addParallel") {
                 theWindow.addParallelModule();
             }
@@ -782,4 +788,22 @@ Rectangle {
             setFontDialog.visible = true;
         }
     }
+
+    CopyVerses {
+        id:copyVerses
+
+
+        visible: false
+        onVisibleChanged: {
+            mainToolbar.enabled = ! copyVerses.visible
+        }
+
+        function open() {
+            var moduleNames = windowMenus.theWindow.getModuleNames();
+            moduleName = moduleNames[0];
+            theWindow = windowMenus.theWindow;
+            copyVerses.visible = true;
+        }
+    }
+
 }

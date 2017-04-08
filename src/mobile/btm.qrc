@@ -7,6 +7,7 @@
         <file>qml/BookmarkManager.qml</file>
         <file>qml/BtButtonStyle.qml</file>
         <file>qml/BookIcon.qml</file>
+        <file>qml/CopyVerses.qml</file>
         <file>qml/DefaultDoc.qml</file>
         <file>qml/Folder.qml</file>
         <file>qml/FontSizeSlider.qml</file>
@@ -28,6 +29,7 @@
         <file>qml/PrevNextArrow.qml</file>
         <file>qml/Progress.qml</file>
         <file>qml/Question.qml</file>
+        <file>qml/ReferenceDisplay.qml</file>
         <file>qml/RightArrow.qml</file>
         <file>qml/Search.qml</file>
         <file>qml/SearchIcon.qml</file>

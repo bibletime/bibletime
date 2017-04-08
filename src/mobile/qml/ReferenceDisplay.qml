@@ -11,41 +11,44 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 1.2
+import QtQuick.Controls.Styles 1.2
+import QtQuick.Layouts 1.1
 import BibleTime 1.0
 
 Rectangle {
-    id: moduleDisplay
+    id: referenceDisplay
 
-    property string moduleText: ""
+    property string reference: "John 3:16"
 
-    signal activated()
+    signal clicked();
 
     border.color: btStyle.toolbarTextColor
     border.width: 2
     color: btStyle.textBackgroundColor
-    radius:btStyle.pixelsPerMillimeterX
-    width: visible? text.width + 30: 0
+    radius: magView.cornerRadius
 
     Text {
-        id: text
-
-        anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
+        id: referenceText
+        anchors.fill: parent
         anchors.leftMargin: btStyle.pixelsPerMillimeterX * 3
         anchors.rightMargin: 4
-        color: btStyle.textColor
-        elide: Text.ElideMiddle
+        horizontalAlignment: Text.AlignLeft
+        verticalAlignment: Text.AlignVCenter
         font.pointSize: btStyle.uiFontPointSize
-        text: moduleText
+        elide: Text.ElideMiddle
+        color: btStyle.textColor
+        text: referenceDisplay.reference
     }
 
     MouseArea {
-        id: moduleMouseArea
+        id: mouseArea
 
         anchors.fill: parent
         onClicked: {
-            activated();
+            referenceDisplay.clicked();
+            btWinIfc.changeReference();
         }
     }
-}
 
+}

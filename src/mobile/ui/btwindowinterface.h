@@ -13,8 +13,10 @@
 #ifndef BT_WINDOW_INTERFACE_H
 #define BT_WINDOW_INTERFACE_H
 
+#include <memory>
 #include "backend/managers/cswordbackend.h"
 #include "backend/models/btmoduletextmodel.h"
+#include "backend/rendering/ctextrendering.h"
 #include "mobile/models/roleitemmodel.h"
 #include "mobile/ui/btmmoduletextfilter.h"
 #include <QDomNodeList>
@@ -43,6 +45,11 @@ class BtWindowInterface : public QObject {
 
     Q_OBJECT
 
+    enum Format {
+        HTML,
+        Text
+    };
+
     Q_PROPERTY(QStringList  comboBoxEntries         READ getComboBoxEntries NOTIFY comboBoxEntriesChanged)
     Q_PROPERTY(QString      currentModelText        READ getCurrentModelText NOTIFY currentModelIndexChanged)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
@@ -68,6 +75,7 @@ class BtWindowInterface : public QObject {
 
 public:
     Q_INVOKABLE void changeReference();
+    Q_INVOKABLE bool copy(const QString& moduleName, const QString& ref1, const QString& ref2);
     Q_INVOKABLE int  getComboIndexFromUrl(const QString& url);
     Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
     Q_INVOKABLE QStringList getModuleNames() const;
@@ -150,6 +158,9 @@ private slots:
 
 private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
+    void copyDisplayedText(const QString& ref1, const QString& ref2);
+    bool copyKey(CSwordKey const * const key, Format const format, bool const addText);
+    std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format, bool const addText);
     void decodeFootnote(const QString& keyName, const QString& footnote);
     void decodeLemmaMorph(const QString& keyName);
     void displayText(const QString& text, const QString& lang);

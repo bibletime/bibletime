@@ -12,9 +12,12 @@
 
 #include "btwindowinterface.h"
 
+#include <QClipboard>
 #include <QDebug>
 #include <QDomDocument>
 #include <QFile>
+#include <QGuiApplication>
+#include <QMimeData>
 #include <QObject>
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -34,6 +37,8 @@
 #include "backend/rendering/btinforendering.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/rendering/centrydisplay.h"
+#include "backend/rendering/chtmlexportrendering.h"
+#include "backend/rendering/cplaintextexportrendering.h"
 #include "mobile/btmmain.h"
 #include "mobile/keychooser/bookkeychooser.h"
 #include "mobile/keychooser/keynamechooser.h"
@@ -108,14 +113,14 @@ KeyNameChooser* BtWindowInterface::getKeyNameChooser() {
 void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {
     //first make sure all used Sword modules are still present
 
-//    if (CSwordBackend::instance()->findModuleByName(m_moduleName)) {
-//        QString moduleName = m_moduleName;
-//        m_moduleName = "";
-//        setModuleName(moduleName);
-//        ;
-//    } else {
-//        // close window ?
-//    }
+    //    if (CSwordBackend::instance()->findModuleByName(m_moduleName)) {
+    //        QString moduleName = m_moduleName;
+    //        m_moduleName = "";
+    //        setModuleName(moduleName);
+    //        ;
+    //    } else {
+    //        // close window ?
+    //    }
 }
 
 void BtWindowInterface::updateModel() {
@@ -202,10 +207,6 @@ QString BtWindowInterface::getModuleName() const {
     if (m_moduleNames.count() < 1)
         return QString();
     return m_moduleNames.at(0);
-//    QString moduleName;
-//    if (m_key)
-//        moduleName = m_key->module()->name();
-//    return moduleName;
 }
 
 QString BtWindowInterface::getModule2Name() const {
@@ -317,7 +318,7 @@ void BtWindowInterface::decodeFootnote(const QString& keyName, const QString& fo
 
     auto & m = module->module();
     const char * const note =
-        m.getEntryAttributes()
+            m.getEntryAttributes()
             ["Footnote"][footnote.toLatin1().data()]["body"].c_str();
 
     text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
@@ -403,11 +404,6 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
     }
     else
         m_moduleNames[0] = moduleName;
-
-//    if ((m_key && m_moduleName == moduleName) || moduleName.isEmpty())
-//        return;
-//    m_moduleName = moduleName;
-
 
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
     if (!m_key) {
@@ -899,4 +895,100 @@ QString BtWindowInterface::getDefaultSwordModuleByType(const QString& type) {
         moduleName = module->name();
     return moduleName;
 }
+
+bool BtWindowInterface::copy(const QString& moduleName, const QString& ref1, const QString& ref2) {
+
+    setReference(ref1);
+    CSwordVerseKey* verseKey1 = dynamic_cast<CSwordVerseKey*>(m_key);
+    int index1 = m_moduleTextModel->verseKeyToIndex(*verseKey1);
+
+    setReference(ref2);
+    CSwordVerseKey* verseKey2 = dynamic_cast<CSwordVerseKey*>(m_key);
+    int index2 = m_moduleTextModel->verseKeyToIndex(*verseKey2);
+
+    if ((abs(index2-index1)) > 2500)
+        return false;
+
+    if (index1 > index2) {
+        copyDisplayedText(ref2, ref1);
+    } else {
+        copyDisplayedText(ref1, ref2);
+    }
+    return true;
+}
+
+void BtWindowInterface::copyDisplayedText(const QString& ref1, const QString& ref2) {
+    CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+    CSwordVerseKey dummy(*verseKey);
+    CSwordVerseKey vk(*verseKey);
+
+    dummy.setKey(ref1);
+    vk.setLowerBound(dummy);
+    dummy.setKey(ref2);
+    vk.setUpperBound(dummy);
+
+    copyKey(&vk, BtWindowInterface::Text, true);
+}
+
+bool BtWindowInterface::copyKey(CSwordKey const * const key,
+                                Format const format,
+                                bool const addText)
+{
+    if (!key || !key->module())
+        return false;
+
+    QString text;
+    BtConstModuleList modules;
+    modules.append(key->module());
+
+    auto const render = newRenderer(format, addText);
+    CSwordVerseKey const * const vk =
+            dynamic_cast<CSwordVerseKey const *>(key);
+    if (vk && vk->isBoundSet()) {
+        text = render->renderKeyRange(
+                    QString::fromUtf8(vk->getLowerBound()),
+                    QString::fromUtf8(vk->getUpperBound()),
+                    modules
+                    );
+    } else {
+        text = render->renderSingleKey(key->key(), modules);
+    }
+
+    QClipboard *clipboard = QGuiApplication::clipboard();
+    clipboard->setText(text);
+    return true;
+}
+
+std::unique_ptr<Rendering::CTextRendering> BtWindowInterface::newRenderer(Format const format,
+                                                                          bool const addText)
+{
+    DisplayOptions displayOptions;
+    displayOptions.lineBreaks = true;
+    displayOptions.verseNumbers = true;
+
+    FilterOptions filterOptions;
+    filterOptions.footnotes = 0;
+    filterOptions.greekAccents = 1;
+    filterOptions.headings = 1;
+    filterOptions.hebrewCantillation = 1;
+    filterOptions.hebrewPoints = 1;
+    filterOptions.lemmas = 0;
+    filterOptions.morphSegmentation = 1;
+    filterOptions.morphTags = 0;
+    filterOptions.redLetterWords = 1;
+    filterOptions.scriptureReferences = 0;
+    filterOptions.strongNumbers = 0;
+    filterOptions.textualVariants = 0;
+
+    using R = std::unique_ptr<Rendering::CTextRendering>;
+    BT_ASSERT((format == Text) || (format == HTML));
+    if (format == HTML)
+        return R{new Rendering::CHTMLExportRendering(addText,
+                                                     displayOptions,
+                                                     filterOptions)};
+    return R{new Rendering::CPlainTextExportRendering(addText,
+                                                      displayOptions,
+                                                      filterOptions)};
+}
+
 } // end namespace
