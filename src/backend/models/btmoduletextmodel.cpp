@@ -261,6 +261,21 @@ bool BtModuleTextModel::isLexicon() const {
     return module->type() == CSwordModuleInfo::Lexicon;
 }
 
+// Function is valid for Bibles, Commentaries, and Books
+int BtModuleTextModel::keyToIndex(const CSwordKey* key) const {
+    int index = 0;
+    const CSwordTreeKey* treeKey = dynamic_cast<const CSwordTreeKey*>(key);
+    if (treeKey) {
+        index = treeKey->getIndex()/4;
+    } else {
+        const CSwordVerseKey* verseKey = dynamic_cast<const CSwordVerseKey*>(key);
+        if (verseKey) {
+            index = verseKey->getIndex();
+        }
+    }
+    return index;
+}
+
 int BtModuleTextModel::verseKeyToIndex(const CSwordVerseKey& key) const {
     int index = key.getIndex() - m_firstEntry;
     return index;

@@ -73,6 +73,7 @@ public:
     CSwordTreeKey indexToBookKey(int index) const;
     CSwordVerseKey indexToVerseKey(int index) const;
 
+    int keyToIndex(const CSwordKey* key) const;
     int verseKeyToIndex(const CSwordVerseKey& key) const;
     QString indexToKeyName(int index) const;
 
