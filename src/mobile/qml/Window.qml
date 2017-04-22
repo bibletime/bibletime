@@ -19,6 +19,11 @@ Rectangle {
     property string title: toolbar.title
     property int currentModule: 1
     property variant textModel: btWindowInterface.textModel
+    property bool toolbarEnabled: true
+
+    onToolbarEnabledChanged: {
+        menuButton.visible = windowView.toolbarEnabled;
+    }
 
     border.color: btStyle.toolbarTextColor
 
@@ -65,8 +70,11 @@ Rectangle {
         model.clear();
         model.append ({ title: QT_TR_NOOP("Add BookMark"), action: "addBookmark" })
         model.append ({ title: QT_TR_NOOP("Bookmarks"), action: "bookmarks" })
-        if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
+        if (btWindowInterface.firstModuleIsBibleOrCommentary() ||
+                btWindowInterface.firstModuleIsBook()) {
             model.append ({ title: QT_TR_NOOP("Copy"), action: "copy" })
+        }
+        if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
             model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
             if (btWindowInterface.numModules < 4)
                 model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })
@@ -172,8 +180,8 @@ Rectangle {
         property string title: ""
 
         height: {
-            var pixel = btStyle.pixelsPerMillimeterY * 8;
-            var uiFont = btStyle.uiFontPointSize * 4.4;
+            var pixel = btStyle.pixelsPerMillimeterY * 7;
+            var uiFont = btStyle.uiFontPointSize * 3;
             var mix = pixel * 0.7 + uiFont * 0.3;
             return Math.max(pixel, mix);
         }
@@ -326,7 +334,7 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.fill: parent
-                anchors.leftMargin: btStyle.pixelsPerMillimeterX *4.5
+                anchors.leftMargin: btStyle.pixelsPerMillimeterX * 1
                 anchors.rightMargin: 4
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter

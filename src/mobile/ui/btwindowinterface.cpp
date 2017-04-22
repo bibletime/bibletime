@@ -158,6 +158,10 @@ bool BtWindowInterface::firstModuleIsBibleOrCommentary() {
     return moduleIsBibleOrCommentary(module());
 }
 
+bool BtWindowInterface::firstModuleIsBook() {
+    return module()->category() == CSwordModuleInfo::Books;
+}
+
 QString BtWindowInterface::getModelTextByIndex(int index) const {
     if (index == 0)
         return "";
@@ -896,38 +900,81 @@ QString BtWindowInterface::getDefaultSwordModuleByType(const QString& type) {
     return moduleName;
 }
 
-bool BtWindowInterface::copy(const QString& moduleName, const QString& ref1, const QString& ref2) {
-
-    setReference(ref1);
-    CSwordVerseKey* verseKey1 = dynamic_cast<CSwordVerseKey*>(m_key);
-    int index1 = m_moduleTextModel->verseKeyToIndex(*verseKey1);
-
-    setReference(ref2);
-    CSwordVerseKey* verseKey2 = dynamic_cast<CSwordVerseKey*>(m_key);
-    int index2 = m_moduleTextModel->verseKeyToIndex(*verseKey2);
-
-    if ((abs(index2-index1)) > 2500)
-        return false;
-
-    if (index1 > index2) {
-        copyDisplayedText(ref2, ref1);
+bool BtWindowInterface::isCopyToLarge(const QString& ref1, const QString& ref2) {
+    RefIndexes ri = normalizeReferences(ref1, ref2);
+    CSwordModuleInfo::ModuleType type = m_key->module()->type();
+    if (type == CSwordModuleInfo::Bible ||
+            type == CSwordModuleInfo::Commentary) {
+        if ((ri.index2-ri.index1) > 2500)
+            return true;
     } else {
-        copyDisplayedText(ref1, ref2);
+        if ( ri.index2-ri.index1 > 25)
+            return true;
+    }
+    return false;
+}
+
+RefIndexes BtWindowInterface::normalizeReferences(const QString& ref1, const QString& ref2) {
+    RefIndexes ri;
+    CSwordKey * key = m_key->copy();
+    key->setKey(ref1);
+    QString x1 = key->key();
+    ri.index1 = m_moduleTextModel->keyToIndex(key);
+    key->setKey(ref2);
+    QString x2 = key->key();
+    ri.index2 = m_moduleTextModel->keyToIndex(key);
+    ri.r1 = ref1;
+    ri.r2 = ref2;
+    if (ri.index1 > ri.index2) {
+        ri.r1.swap(ri.r2);
+        std::swap(ri.index1, ri.index2);
+    }
+    return ri;
+}
+
+bool BtWindowInterface::copy(const QString& moduleName, const QString& ref1, const QString& ref2) {
+    RefIndexes ri = normalizeReferences(ref1, ref2);
+    CSwordModuleInfo::ModuleType type = m_key->module()->type();
+    if (type == CSwordModuleInfo::Bible ||
+            type == CSwordModuleInfo::Commentary) {
+        if ((abs(ri.index2-ri.index1)) > 2500)
+            return false;
+        copyDisplayedText(ri.r1, ri.r2);
+    } else {
+        if ( ri.index2-ri.index1 > 25)
+            return false;
+        copyRange(ri.index1, ri.index2);
     }
     return true;
 }
 
+void BtWindowInterface::copyRange(int index1, int index2) {
+    QString text;
+    for (int i=index1; i<=index2; ++i) {
+        QString keyName = m_moduleTextModel->indexToKeyName(i);
+        setReference(keyName);
+        text += m_key->strippedText() + "\n\n";
+    }
+    QClipboard *clipboard = QGuiApplication::clipboard();
+    clipboard->setText(text);
+}
+
 void BtWindowInterface::copyDisplayedText(const QString& ref1, const QString& ref2) {
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-    CSwordVerseKey dummy(*verseKey);
-    CSwordVerseKey vk(*verseKey);
 
-    dummy.setKey(ref1);
-    vk.setLowerBound(dummy);
-    dummy.setKey(ref2);
-    vk.setUpperBound(dummy);
+    if (verseKey) {
+        CSwordVerseKey dummy(*verseKey);
+        CSwordVerseKey vk(*verseKey);
 
-    copyKey(&vk, BtWindowInterface::Text, true);
+        dummy.setKey(ref1);
+        vk.setLowerBound(dummy);
+        dummy.setKey(ref2);
+        vk.setUpperBound(dummy);
+
+        copyKey(&vk, BtWindowInterface::Text, true);
+    } else {
+        copyKey(m_key,BtWindowInterface::Text, true);
+    }
 }
 
 bool BtWindowInterface::copyKey(CSwordKey const * const key,

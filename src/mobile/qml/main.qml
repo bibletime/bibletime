@@ -100,8 +100,8 @@ Rectangle {
         mainMenus.visible = ! mainMenus.visible
     }
 
-    width:  500
-    height: 750
+    width:  400
+    height: 450
 
     rotation: 0
 
@@ -780,6 +780,7 @@ Rectangle {
         visible: false
         onVisibleChanged: {
             mainToolbar.enabled = ! setFontDialog.visible
+            windowManager.toolbarsEnabled = ! setFontDialog.visible
         }
 
         function open() {
@@ -796,6 +797,7 @@ Rectangle {
         visible: false
         onVisibleChanged: {
             mainToolbar.enabled = ! copyVerses.visible
+            windowManager.toolbarsEnabled = ! copyVerses.visible
         }
 
         function open() {

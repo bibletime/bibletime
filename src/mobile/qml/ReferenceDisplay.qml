@@ -23,15 +23,15 @@ Rectangle {
 
     signal clicked();
 
-    border.color: btStyle.toolbarTextColor
-    border.width: 2
+    border.color: btStyle.inputBorderColor
+    border.width: 3
     color: btStyle.textBackgroundColor
     radius: magView.cornerRadius
 
     Text {
         id: referenceText
         anchors.fill: parent
-        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 3
+        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 1
         anchors.rightMargin: 4
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter

@@ -29,9 +29,18 @@ Rectangle {
     property int tabLayout:   6
 
     property int windowArrangement: single
+    property bool toolbarsEnabled: true
 
     signal setFontForLanguage(string language)
     signal windowMenus(variant window)
+
+    onWindowArrangementChanged: layoutWindows()
+    onToolbarsEnabledChanged: {
+        for (var i=0; i<windows.length; ++i) {
+            var window = windows[i];
+            window.toolbarEnabled = windowManager.toolbarsEnabled
+        }
+    }
 
     function getTopWindowIndex() {
         if (windowArrangement == single || windowArrangement == tabLayout)
@@ -275,8 +284,6 @@ Rectangle {
             tabbedWindows.current = n;
         }
     }
-
-    onWindowArrangementChanged: layoutWindows()
 
     Text {
         id: tipText

@@ -41,6 +41,7 @@ static QColor textColor               = QColor();
 static QColor linkColor               = QColor();
 static QColor textBackgroundColor     = QColor();
 static QColor textBackgroundHighlightColor= QColor();
+static QColor inputBorderColor        = QColor();
 
 static QColor buttonColor             = QColor();
 static QColor buttonBackground        = QColor();
@@ -104,6 +105,7 @@ void BtStyle::setCurrentStyle(int style) {
         setLinkColor(QColor(0,0,80));
         setTextBackgroundColor(QColor(0,0,0));
         setTextBackgroundHighlightColor(QColor(184,135,11));
+        setInputBorderColor(QColor(218,165,3));
 
         setButtonColor(QColor(0,0,0));
         setButtonBackground(QColor(35,35,100));
@@ -143,6 +145,7 @@ void BtStyle::setCurrentStyle(int style) {
         setLinkColor(QColor(0,0,220));
         setTextBackgroundColor(QColor(255,255,255));
         setTextBackgroundHighlightColor(QColor(255,240,170));
+        setInputBorderColor(QColor(0,0,0));
 
         setButtonColor(QColor(0,0,0));
         setButtonBackground(QColor(190,220,255));
@@ -182,6 +185,7 @@ void BtStyle::setCurrentStyle(int style) {
         setLinkColor(QColor(0,0,220));
         setTextBackgroundColor(QColor(255,255,255));
         setTextBackgroundHighlightColor(QColor(255,240,170));
+        setInputBorderColor(QColor(99,0,0));
 
         setButtonColor(QColor(0,0,0));
         setButtonBackground(QColor(190,220,255));
@@ -248,6 +252,15 @@ QColor BtStyle::getTextBackgroundHighlightColor() {
 }
 void BtStyle::setTextBackgroundHighlightColor(const QColor& color) {
     textBackgroundHighlightColor = color;
+    emitChanged();
+}
+
+
+QColor BtStyle::getInputBorderColor() {
+    return inputBorderColor;
+}
+void BtStyle::setInputBorderColor(const QColor& color) {
+    inputBorderColor = color;
     emitChanged();
 }
 

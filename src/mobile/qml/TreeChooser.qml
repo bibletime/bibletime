@@ -15,8 +15,13 @@ import QtQuick 2.2
 Rectangle {
     id: treeChooser
 
-    property ListModel model: ListModel {
+    ListModel {
+        id: dummyModel
+              ListElement { name: "abc"; childcount: 0 }
+              ListElement { name: "def"; childcount: 0 }
     }
+    property alias model: listView.model
+
     property string path: ""
     property int pathCount: 0
 
@@ -122,7 +127,6 @@ Rectangle {
         anchors.bottomMargin: 4
         boundsBehavior: Flickable.StopAtBounds
         width: pathArea.width
-        model: treeChooser.model
 
         delegate: Rectangle {
             id: entry

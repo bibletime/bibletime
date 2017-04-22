@@ -24,9 +24,10 @@ Rectangle {
     property string reference2: ""
     property int activeReference: 0
     property real internalMargins: btStyle.pixelsPerMillimeterX * 0.75
-    property real cornerRadius: btStyle.pixelsPerMillimeterX * 0.9;
+    property real cornerRadius: btStyle.pixelsPerMillimeterX * 0.9
+    property bool showError: false
     property real rowHeight: {
-        var pixel = btStyle.pixelsPerMillimeterY * 7;
+        var pixel = btStyle.pixelsPerMillimeterY * 5;
         var uiFont = btStyle.uiFontPointSize * 3;
         var mix = pixel * 0.7 + uiFont * 0.3;
         return Math.max(pixel, mix);
@@ -45,14 +46,9 @@ Rectangle {
     anchors.leftMargin: btStyle.pixelsPerMillimeterX * 2
     anchors.rightMargin: btStyle.pixelsPerMillimeterX * 2
     border.color: btStyle.textColor
-    border.width: 3
+    border.width: 6
     color: btStyle.textBackgroundColor
-    height: {
-        if ( message.visible)
-            copyVerses.rowHeight * 7.5;
-        else
-            copyVerses.rowHeight * 6;
-    }
+    height: copyVerses.rowHeight * 6;
     width: {
         var width = Math.min(parent.width, parent.height);
         width = width - 5 * anchors.rightMargin
@@ -61,7 +57,7 @@ Rectangle {
 
     onVisibleChanged: {
         if (visible) {
-            message.visible = false;
+            copyVerses.showError = false;
             reference1 = theWindow.getReference();
             reference2 = reference1;
             btWinIfc.moduleName = theWindow.getModule();
@@ -72,6 +68,7 @@ Rectangle {
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && copyVerses.visible == true) {
             copyVerses.visible = false;
+             event.accepted = true;
         }
     }
 
@@ -83,6 +80,8 @@ Rectangle {
                 copyVerses.reference1 = reference;
             else if (activeReference == 2)
                 copyVerses.reference2 = reference;
+            copyVerses.showError = btWinIfc.isCopyToLarge(
+                        copyVerses.reference1, copyVerses.reference2);
         }
     }
 
@@ -103,9 +102,9 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.topMargin: btStyle.pixelsPerMillimeterX * 4
-        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 4
-        anchors.rightMargin: btStyle.pixelsPerMillimeterX * 4
+        anchors.topMargin: btStyle.pixelsPerMillimeterX * 2.5
+        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 2
+        anchors.rightMargin: btStyle.pixelsPerMillimeterX * 2
         columns: 2
         spacing: btStyle.pixelsPerMillimeterX * 1.5
 
@@ -185,7 +184,6 @@ Rectangle {
 
         onTriggered: {
             var ok = btWinIfc.copy(moduleName, reference1, reference2);
-            message.visible = !ok;
             if (ok)
                 copyVerses.visible = false;
         }
@@ -196,7 +194,7 @@ Rectangle {
 
         action: copyAction
         anchors.top: grid.bottom
-        anchors.topMargin: btStyle.pixelsPerMillimeterX * 3
+        anchors.topMargin: btStyle.pixelsPerMillimeterX * 2
         anchors.horizontalCenter: parent.horizontalCenter
         height: copyVerses.rowHeight
         style: ButtonStyle {
@@ -211,19 +209,20 @@ Rectangle {
                 verticalAlignment: Text.AlignVCenter
             }
         }
+        visible: ! copyVerses.showError
         width: btStyle.pixelsPerMillimeterY * 25
     }
 
     Text {
         id: message
 
-        anchors.top: copyButton.bottom
+        anchors.top: grid.bottom
         anchors.topMargin: btStyle.pixelsPerMillimeterX * 3
         anchors.horizontalCenter: parent.horizontalCenter
         color: btStyle.textColor
         font.pointSize: btStyle.uiFontPointSize
         text: qsTranslate("Copy", "Copy size to large.")
-        visible: false
+        visible: copyVerses.showError
     }
 
 }

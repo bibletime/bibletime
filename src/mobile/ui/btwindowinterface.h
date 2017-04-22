@@ -40,6 +40,13 @@ struct History
     QString reference;
 };
 
+struct RefIndexes {
+    QString r1;
+    QString r2;
+    int index1;
+    int index2;
+};
+
 
 class BtWindowInterface : public QObject {
 
@@ -80,6 +87,8 @@ public:
     Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
     Q_INVOKABLE QStringList getModuleNames() const;
     Q_INVOKABLE bool firstModuleIsBibleOrCommentary();
+    Q_INVOKABLE bool firstModuleIsBook();
+    Q_INVOKABLE bool isCopyToLarge(const QString& ref1, const QString& ref2);
     Q_INVOKABLE void moveHistoryBackward();
     Q_INVOKABLE void moveHistoryForward();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
@@ -160,6 +169,7 @@ private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
     void copyDisplayedText(const QString& ref1, const QString& ref2);
     bool copyKey(CSwordKey const * const key, Format const format, bool const addText);
+    void copyRange(int index1, int index2);
     std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format, bool const addText);
     void decodeFootnote(const QString& keyName, const QString& footnote);
     void decodeLemmaMorph(const QString& keyName);
@@ -172,6 +182,8 @@ private:
     KeyNameChooser* getKeyNameChooser();
     void lookupAvailableModules();
     const CSwordModuleInfo* module() const;
+    RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
+
     void updateModel();
     void parseVerseForReferences(const QString& verse);
     void processNodes(const QDomNodeList& nodes);

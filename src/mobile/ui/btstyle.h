@@ -25,6 +25,7 @@ class BtStyle : public QObject {
     Q_PROPERTY(QColor linkColor             READ getLinkColor NOTIFY changed)
     Q_PROPERTY(QColor textBackgroundColor   READ getTextBackgroundColor NOTIFY changed)
     Q_PROPERTY(QColor textBackgroundHighlightColor   READ getTextBackgroundHighlightColor NOTIFY changed)
+    Q_PROPERTY(QColor inputBorderColor      READ getInputBorderColor WRITE setInputBorderColor NOTIFY changed)
 
     Q_PROPERTY(QColor buttonColor           READ getButtonColor NOTIFY changed)
     Q_PROPERTY(QColor buttonBackground      READ getButtonBackground NOTIFY changed)
@@ -90,6 +91,9 @@ public:
 
     static QColor getTextBackgroundHighlightColor();
     static void setTextBackgroundHighlightColor(const QColor& color);
+
+    static QColor getInputBorderColor();
+    static void setInputBorderColor(const QColor& color);
 
     static QColor getButtonColor();
     static void setButtonColor(const QColor& color);

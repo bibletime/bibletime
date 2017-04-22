@@ -20,18 +20,18 @@ Rectangle {
 
     signal activated()
 
-    border.color: btStyle.toolbarTextColor
-    border.width: 2
+    border.color: btStyle.inputBorderColor
+    border.width: 3
     color: btStyle.textBackgroundColor
     radius:btStyle.pixelsPerMillimeterX
-    width: visible? text.width + 30: 0
+    width: visible? text.width + btStyle.pixelsPerMillimeterX * 2: 0
 
     Text {
         id: text
 
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
-        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 3
+        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 1
         anchors.rightMargin: 4
         color: btStyle.textColor
         elide: Text.ElideMiddle
