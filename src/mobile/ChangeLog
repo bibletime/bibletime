@@ -1,4 +1,8 @@
 ChangeLog for BibleTime Mobile
+2017-05-01 
+    Version 2.01
+    Fix BibleTime bug #100. Copy / Paste truncating verses.
+
 2017-04-30 
     Version 2.00
     Add Copy/Paste of Bible, Commentary, and Book.
