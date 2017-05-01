@@ -117,7 +117,7 @@ done:
 } // anonymous namespace
 
 char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
-    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
+    size_t max = (maxlen > 0u) ? maxlen : strlen(text)+1;
 
     if (LIKELY(max > 1u)) {
         max--;
