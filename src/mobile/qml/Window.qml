@@ -68,20 +68,20 @@ Rectangle {
 
     function createMenus(model) {
         model.clear();
-        model.append ({ title: QT_TR_NOOP("Add BookMark"), action: "addBookmark" })
-        model.append ({ title: QT_TR_NOOP("Bookmarks"), action: "bookmarks" })
+        model.append ({ title: qsTr("Add BookMark"), action: "addBookmark" })
+        model.append ({ title: qsTr("Bookmarks"), action: "bookmarks" })
         if (btWindowInterface.firstModuleIsBibleOrCommentary() ||
                 btWindowInterface.firstModuleIsBook()) {
-            model.append ({ title: QT_TR_NOOP("Copy"), action: "copy" })
+            model.append ({ title: qsTr("Copy"), action: "copy" })
         }
         if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
-            model.append ({ title: QT_TR_NOOP("View References"),    action: "viewReferences" })
+            model.append ({ title: qsTr("View References"),    action: "viewReferences" })
             if (btWindowInterface.numModules < 4)
-                model.append ({ title: QT_TR_NOOP("Add Parallel Document"), action: "addParallel" })
+                model.append ({ title: qsTr("Add Parallel Document"), action: "addParallel" })
             if (btWindowInterface.numModules > 1)
-                model.append ({ title: QT_TR_NOOP("Remove Parallel Document"), action: "removeParallel" })
+                model.append ({ title: qsTr("Remove Parallel Document"), action: "removeParallel" })
         }
-        model.append ({ title: QT_TR_NOOP("Close Window"), action: "close window" })
+        model.append ({ title: qsTr("Close Window"), action: "close window" })
 //        model.append ({ title: "Debug Data", action: "debugData" })
     }
 
