@@ -30,6 +30,7 @@ SplitView {
     property bool indexingCancelled;
 
     signal resultsFinished();
+    signal resultsMenuRequested();
 
     function cancel() {
         btSearchInterface.cancel();
@@ -40,13 +41,22 @@ SplitView {
         return indexingCancelled;
     }
 
+    function getModule() {
+        return btWindowInterface.moduleName;
+    }
+
+    function getReference() {
+        return btWindowInterface.reference;
+    }
+
     orientation: Qt.Vertical
     handleDelegate: Rectangle {
         width: 1;
         height: {
-            var pixel = btStyle.pixelsPerMillimeterY * 6;
-            var uiFont = btStyle.uiFontPointSize * 2.0;
-            return Math.max(pixel, uiFont);
+            var pixel = btStyle.pixelsPerMillimeterY * 7;
+            var uiFont = btStyle.uiFontPointSize * 3;
+            var mix = pixel * 0.7 + uiFont * 0.3;
+            return Math.max(pixel, mix);
         }
 
         color: btStyle.toolbarColor
@@ -60,9 +70,29 @@ SplitView {
             }
             color: btStyle.toolbarTextColor
             font.pointSize: btStyle.uiFontPointSize
-            anchors.fill: parent
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.right: searchMenuButton.left
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
+        }
+
+        MenuButton {
+            id: searchMenuButton
+
+            width: parent.height * 1.1
+            height: parent.height
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.margins: 2
+            foreground: btStyle.toolbarTextColor
+            background: btStyle.toolbarColor
+
+            onButtonClicked: {
+                resultsMenuRequested();
+            }
         }
     }
 

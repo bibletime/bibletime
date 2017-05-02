@@ -150,6 +150,11 @@ Rectangle {
         }
     }
 
+    function newWindowWithReference(moduleName, reference) {
+        var modules = [moduleName];
+        openWindow("", modules, reference);
+    }
+
     function newWindow() {
         moduleChooser.moduleSelected.connect(openWindowSlot);
         moduleChooser.bibleCommentaryOnly = false;
@@ -163,7 +168,8 @@ Rectangle {
     }
 
     function openWindow(category, modules, key) {
-        if (category == "Bibles"||
+        if (category == "" ||
+            category == "Bibles" ||
             category == "Cults/Unorthodox" ||
             category == "Commentaries" ||
             category == "Books" ||

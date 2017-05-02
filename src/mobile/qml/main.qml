@@ -35,12 +35,6 @@ Rectangle {
         ListElement { title: ""; action: "" }
     }
 
-    ListModel {
-        id: closeWindowsModel
-
-        ListElement { title: ""; action: "" }
-    }
-
     function installModules() {
         installManager.openChooser();
     }
@@ -61,6 +55,7 @@ Rectangle {
     }
 
     Keys.forwardTo: [
+        searchResultsMenu,
         windowArrangementMenus,
         viewWindowsMenus,
         windowMenus,
@@ -183,6 +178,10 @@ Rectangle {
             z:2
             width: screenView.width
             height: screenView.height
+
+            onResultsMenuRequested: {
+                searchResultsMenu.visible = true;
+            }
 
             onResultsFinished: {
                 screenView.changeScreen(screenModel.main);
@@ -563,6 +562,29 @@ Rectangle {
             viewWindowsMenus.visible = false;
             var index = Number(action)
             windowManager.setCurrentTabbedWindow(index);
+        }
+    }
+
+    ListModel {
+        id: searchResultsMenuModel
+
+        ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
+    }
+
+    Menus {
+        id: searchResultsMenu
+        model: searchResultsMenuModel
+
+        Component.onCompleted: menuSelected.connect(searchResultsMenu.doAction)
+
+        function doAction(action) {
+            searchResultsMenu.visible = false;
+            if (action == "newWindow") {
+                var module = searchResults.getModule();
+                var reference = searchResults.getReference();
+                screenView.changeScreen(screenModel.main);
+                windowManager.newWindowWithReference(module, reference);
+            }
         }
     }
 
