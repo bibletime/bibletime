@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -49,17 +47,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/AddBookmark.qml" line="113"/>
         <source>Choose</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolher</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddBookmark.qml" line="165"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddBookmark.qml" line="186"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -67,12 +65,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/AddFolder.qml" line="176"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddFolder.qml" line="197"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -80,7 +78,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/BookmarkFolders.qml" line="179"/>
         <source>New Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova Pasta</translation>
     </message>
 </context>
 <context>
@@ -88,7 +86,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/BookmarkManager.qml" line="245"/>
         <source>New Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova Pasta</translation>
     </message>
 </context>
 <context>
@@ -96,42 +94,55 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/AddBookmark.qml" line="62"/>
         <source>Add Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar Marcador</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddBookmark.qml" line="78"/>
         <source>Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcador</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddBookmark.qml" line="106"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasta</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddFolder.qml" line="59"/>
         <source>New Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova Pasta</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddFolder.qml" line="69"/>
         <source>Folder Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome da Pasta</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/AddFolder.qml" line="126"/>
         <source>Parent folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasta Superior</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/BookmarkFolders.qml" line="82"/>
         <source>Choose Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolher pasta</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/BookmarkManager.qml" line="107"/>
         <source>Bookmark Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestor de Marcadores</translation>
+    </message>
+</context>
+<context>
+    <name>Copy</name>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="183"/>
+        <source>Copy</source>
+        <translation>Copiar</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="224"/>
+        <source>Copy size to large.</source>
+        <translation>Texto a copiar muito grande.</translation>
     </message>
 </context>
 <context>
@@ -139,32 +150,32 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="65"/>
         <source>Standard Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Documentos Padrão</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="83"/>
         <source>Bible:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bíblia:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="130"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Léxico Hebraico de Strong:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="176"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Léxico Grego de Strong:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="221"/>
         <source>Hebrew Morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Léxico morfológico Hebraico:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="267"/>
         <source>Greek Morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Léxico morfológico Grego</translation>
     </message>
 </context>
 <context>
@@ -231,7 +242,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/MagView.qml" line="94"/>
         <source>View References</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver Referências</translation>
     </message>
 </context>
 <context>
@@ -289,7 +300,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="589"/>
+        <location filename="../../src/mobile/qml/main.qml" line="614"/>
         <source>Are you sure you want to quit?</source>
         <translation>Tem a certeza de que deseja sair?</translation>
     </message>
@@ -331,12 +342,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="126"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="156"/>
         <source>Documents</source>
         <translation>Documentos</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="157"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="187"/>
         <source>References</source>
         <translation>Referências</translation>
     </message>
@@ -390,7 +401,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Welcome</name>
     <message>
-        <location filename="../../src/mobile/qml/WindowManager.qml" line="284"/>
+        <location filename="../../src/mobile/qml/WindowManager.qml" line="297"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
         <translation>Use o menu &quot;Nova Janela&quot; para abrir um documento.</translation>
     </message>
@@ -398,34 +409,39 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Window</name>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="64"/>
-        <source>Add BookMark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="65"/>
-        <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="67"/>
-        <source>View References</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="69"/>
-        <source>Add Parallel Document</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/mobile/qml/Window.qml" line="71"/>
-        <source>Remove Parallel Document</source>
-        <translation type="unfinished"></translation>
+        <source>Add BookMark</source>
+        <translation>Adicionar Marcador</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="73"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="72"/>
+        <source>Bookmarks</source>
+        <translation>Marcadores</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Window.qml" line="75"/>
+        <source>Copy</source>
+        <translation>Copiar</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Window.qml" line="78"/>
+        <source>View References</source>
+        <translation>Ver Referências</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Window.qml" line="80"/>
+        <source>Add Parallel Document</source>
+        <translation>Adicionar Documento Paralelo</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Window.qml" line="82"/>
+        <source>Remove Parallel Document</source>
+        <translation>Remover Documento Paralelo</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Window.qml" line="84"/>
         <source>Close Window</source>
-        <translation type="unfinished">Fechar Janela</translation>
+        <translation>Fechar Janela</translation>
     </message>
 </context>
 <context>
@@ -433,60 +449,48 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="87"/>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcadores</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="189"/>
         <source>Expand/Collapse</source>
-        <translation type="unfinished"></translation>
+        <translation>Expandir/Colapsar</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="192"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="195"/>
         <source>Delete folder and bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar pastas e marcadores</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="197"/>
         <source>Delete bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar marcador</translation>
     </message>
 </context>
 <context>
     <name>btm::BtSearchInterface</name>
     <message>
-        <source>Indexing</source>
-        <translation type="vanished">A indexar</translation>
-    </message>
-    <message>
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing %1</source>
-        <translation type="unfinished"></translation>
+        <translation>A indexar %1</translation>
     </message>
 </context>
 <context>
     <name>btm::InstallProgress</name>
     <message>
-        <source>Installing</source>
-        <translation type="vanished">A instalar</translation>
-    </message>
-    <message>
-        <source>Downloading</source>
-        <translation type="vanished">A transferir</translation>
-    </message>
-    <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="95"/>
         <source>Installing %1</source>
-        <translation type="unfinished"></translation>
+        <translation>A instalar &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
         <source>Downloading %1</source>
-        <translation type="unfinished"></translation>
+        <translation>A transferir %1</translation>
     </message>
 </context>
 <context>
@@ -529,109 +533,124 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>copy</name>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="117"/>
+        <source>Document</source>
+        <translation>Documento</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="138"/>
+        <source>First</source>
+        <translation>Primeiro</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="160"/>
+        <source>Last</source>
+        <translation>Ultimo</translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="325"/>
+        <location filename="../../src/mobile/qml/main.qml" line="327"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation>Alguns dos módulos em que deseja pesquisar precisam de ser indexados. Quer indexá-los agora?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="413"/>
+        <location filename="../../src/mobile/qml/main.qml" line="415"/>
+        <location filename="../../src/mobile/qml/main.qml" line="571"/>
         <source>New Window</source>
         <translation>Nova Janela</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="414"/>
+        <location filename="../../src/mobile/qml/main.qml" line="416"/>
         <source>View Window</source>
         <translation>Ver Janela</translation>
     </message>
     <message>
-        <source>Close Window</source>
-        <translation type="vanished">Fechar Janela</translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/main.qml" line="519"/>
-        <location filename="../../src/mobile/qml/main.qml" line="570"/>
+        <location filename="../../src/mobile/qml/main.qml" line="521"/>
+        <location filename="../../src/mobile/qml/main.qml" line="595"/>
         <source>User Interface Font Size</source>
         <translation>Tamanho do Texto da Interface</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="520"/>
+        <location filename="../../src/mobile/qml/main.qml" line="522"/>
         <source>Window Arrangement</source>
         <translation>Modo de arranjo</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="415"/>
+        <location filename="../../src/mobile/qml/main.qml" line="417"/>
         <source>Manage Installed Documents</source>
         <translation>Gerir Documentos Instalados</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="416"/>
+        <location filename="../../src/mobile/qml/main.qml" line="418"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurações</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="417"/>
+        <location filename="../../src/mobile/qml/main.qml" line="419"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="489"/>
+        <location filename="../../src/mobile/qml/main.qml" line="491"/>
         <source>Dark</source>
         <translation>Escuro</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="490"/>
+        <location filename="../../src/mobile/qml/main.qml" line="492"/>
         <source>Light Blue</source>
         <translation>Azul claro</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="491"/>
+        <location filename="../../src/mobile/qml/main.qml" line="493"/>
         <source>Crimson</source>
         <translation>Carmesim</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="522"/>
+        <location filename="../../src/mobile/qml/main.qml" line="524"/>
         <source>Default Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Documentos Padrão</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="452"/>
+        <location filename="../../src/mobile/qml/main.qml" line="454"/>
         <source>Single</source>
         <translation>Sem separadores</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="310"/>
+        <location filename="../../src/mobile/qml/main.qml" line="312"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
         <translation>O BibleTime visualiza documentos como Bíblias e comentários. Estes documentos são transferidos e guardados no disco. Actualmente não existem documentos. Quer instalar documentos agora?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="518"/>
+        <location filename="../../src/mobile/qml/main.qml" line="520"/>
         <source>Text Font</source>
         <translation>Tipo de letra do texto</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="521"/>
+        <location filename="../../src/mobile/qml/main.qml" line="523"/>
         <source>Color Theme</source>
         <translation>Tema de cor</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="453"/>
+        <location filename="../../src/mobile/qml/main.qml" line="455"/>
         <source>Tabbed</source>
         <translation>Com separadores</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="454"/>
+        <location filename="../../src/mobile/qml/main.qml" line="456"/>
         <source>Auto-tile</source>
         <translation>Auto-organizar</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="455"/>
+        <location filename="../../src/mobile/qml/main.qml" line="457"/>
         <source>Auto-tile horizontally</source>
         <translation>Organização horizontal automática</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="456"/>
+        <location filename="../../src/mobile/qml/main.qml" line="458"/>
         <source>Auto-tile vertically</source>
         <translation>Organização vertical automática</translation>
     </message>

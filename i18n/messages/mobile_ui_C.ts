@@ -125,6 +125,19 @@
     </message>
 </context>
 <context>
+    <name>Copy</name>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="183"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="224"/>
+        <source>Copy size to large.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Default Documents</name>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="65"/>
@@ -279,7 +292,7 @@
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="589"/>
+        <location filename="../../src/mobile/qml/main.qml" line="614"/>
         <source>Are you sure you want to quit?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -321,12 +334,12 @@
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="126"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="156"/>
         <source>Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="157"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="187"/>
         <source>References</source>
         <translation type="unfinished"></translation>
     </message>
@@ -380,7 +393,7 @@
 <context>
     <name>Welcome</name>
     <message>
-        <location filename="../../src/mobile/qml/WindowManager.qml" line="284"/>
+        <location filename="../../src/mobile/qml/WindowManager.qml" line="297"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -388,32 +401,37 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="64"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="71"/>
         <source>Add BookMark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="65"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="72"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="67"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="75"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/Window.qml" line="78"/>
         <source>View References</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="69"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="80"/>
         <source>Add Parallel Document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="71"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="82"/>
         <source>Remove Parallel Document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="73"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="84"/>
         <source>Close Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -507,105 +525,124 @@
     </message>
 </context>
 <context>
+    <name>copy</name>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="117"/>
+        <source>Document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="138"/>
+        <source>First</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="160"/>
+        <source>Last</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="310"/>
+        <location filename="../../src/mobile/qml/main.qml" line="312"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="325"/>
+        <location filename="../../src/mobile/qml/main.qml" line="327"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="413"/>
+        <location filename="../../src/mobile/qml/main.qml" line="415"/>
+        <location filename="../../src/mobile/qml/main.qml" line="571"/>
         <source>New Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="414"/>
+        <location filename="../../src/mobile/qml/main.qml" line="416"/>
         <source>View Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="415"/>
+        <location filename="../../src/mobile/qml/main.qml" line="417"/>
         <source>Manage Installed Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="518"/>
+        <location filename="../../src/mobile/qml/main.qml" line="520"/>
         <source>Text Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="519"/>
-        <location filename="../../src/mobile/qml/main.qml" line="570"/>
+        <location filename="../../src/mobile/qml/main.qml" line="521"/>
+        <location filename="../../src/mobile/qml/main.qml" line="595"/>
         <source>User Interface Font Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="520"/>
+        <location filename="../../src/mobile/qml/main.qml" line="522"/>
         <source>Window Arrangement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="521"/>
+        <location filename="../../src/mobile/qml/main.qml" line="523"/>
         <source>Color Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="417"/>
+        <location filename="../../src/mobile/qml/main.qml" line="419"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="416"/>
+        <location filename="../../src/mobile/qml/main.qml" line="418"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="452"/>
+        <location filename="../../src/mobile/qml/main.qml" line="454"/>
         <source>Single</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="453"/>
+        <location filename="../../src/mobile/qml/main.qml" line="455"/>
         <source>Tabbed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="454"/>
+        <location filename="../../src/mobile/qml/main.qml" line="456"/>
         <source>Auto-tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="455"/>
+        <location filename="../../src/mobile/qml/main.qml" line="457"/>
         <source>Auto-tile horizontally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="456"/>
+        <location filename="../../src/mobile/qml/main.qml" line="458"/>
         <source>Auto-tile vertically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="489"/>
+        <location filename="../../src/mobile/qml/main.qml" line="491"/>
         <source>Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="490"/>
+        <location filename="../../src/mobile/qml/main.qml" line="492"/>
         <source>Light Blue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="491"/>
+        <location filename="../../src/mobile/qml/main.qml" line="493"/>
         <source>Crimson</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="522"/>
+        <location filename="../../src/mobile/qml/main.qml" line="524"/>
         <source>Default Documents</source>
         <translation type="unfinished"></translation>
     </message>
