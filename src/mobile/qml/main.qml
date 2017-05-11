@@ -100,6 +100,10 @@ Rectangle {
 
     rotation: 0
 
+    VerseChooser {
+        id: verseChooser
+    }
+
     ObjectModel {
         id: screenModel
 

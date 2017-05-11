@@ -33,6 +33,7 @@ SOURCES += \
     ../../../src/mobile/ui/gridchooser.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
+    ../../../src/mobile/ui/chooserinterface.cpp \
     ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
     ../../../src/mobile/ui/viewmanager.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     ../../../src/mobile/ui/btwindowinterface.h \
     ../../../src/mobile/ui/gridchooser.h \
     ../../../src/mobile/ui/moduleinterface.h \
+    ../../../src/mobile/ui/chooserinterface.h \
     ../../../src/mobile/ui/qtquick2applicationviewer.h \
     ../../../src/mobile/ui/treechoosermodel.h \
     ../../../src/mobile/ui/viewmanager.h \
@@ -110,6 +112,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/StartupBookshelfManager.qml \
     ../../../src/mobile/qml/TitleColorBar.qml \
     ../../../src/mobile/qml/TreeChooser.qml \
+    ../../../src/mobile/qml/VerseChooser.qml \
     ../../../src/mobile/qml/Window.qml \
     ../../../src/mobile/qml/WindowManager.qml \
 

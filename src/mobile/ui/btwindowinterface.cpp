@@ -820,6 +820,12 @@ void BtWindowInterface::setHistoryPoint() {
         m_history.pop_back();
     history.moduleName = getModuleName();
     history.reference = getReference();
+    if (m_history.count() > 0) {
+        History prevHistory = m_history.last();
+        if (prevHistory.reference == history.reference &&
+                prevHistory.moduleName == history.moduleName)
+            return;
+    }
     m_history.append(history);
     m_historyIndex = m_history.count() - 1;
     emit historyChanged();

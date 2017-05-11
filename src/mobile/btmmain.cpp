@@ -35,6 +35,7 @@
 #include "mobile/ui/btbookmarkinterface.h"
 #include "mobile/ui/btsearchinterface.h"
 #include "mobile/ui/btwindowinterface.h"
+#include "mobile/ui/chooserinterface.h"
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
@@ -56,6 +57,7 @@ void register_gml_classes() {
     qmlRegisterType<btm::BtmConfig>("BibleTime", 1, 0, "BtmConfig");
     qmlRegisterType<btm::InstallManager>("BibleTime", 1, 0, "InstallManager");
     qmlRegisterType<btm::ModuleInterface>("BibleTime", 1, 0, "ModuleInterface");
+    qmlRegisterType<btm::ChooserInterface>("BibleTime", 1, 0, "ChooserInterface");
     qmlRegisterType<btm::SearchModel>("BibleTime", 1, 0, "SearchModel");
     qmlRegisterType<btm::BtSearchInterface>("BibleTime", 1, 0, "BtSearchInterface");
 }

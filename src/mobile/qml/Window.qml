@@ -20,6 +20,7 @@ Rectangle {
     property int currentModule: 1
     property variant textModel: btWindowInterface.textModel
     property bool toolbarEnabled: true
+    property alias reference: btWindowInterface.reference
 
     onToolbarEnabledChanged: {
         menuButton.visible = windowView.toolbarEnabled;
@@ -30,6 +31,12 @@ Rectangle {
     signal windowMenusDialog(variant window)
 
     signal moduleChooserRequest(variant window, int moduleNumber)
+
+    function referenceChoosen() {
+        console.log("Window.qml referenceChoosen")
+        btWindowInterface.reference = verseChooser.reference
+        btWindowInterface.referenceChosen();
+    }
 
     function addParallelModule() {
         moduleChooser.bibleCommentaryOnly = true;
@@ -350,11 +357,14 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     setHistoryPoint();
-                    btWindowInterface.changeReference();
+                    verseChooser.finished.disconnect(window.referenceChoosen)
+                    verseChooser.finished.connect(window.referenceChoosen)
+                    var module = btWindowInterface.moduleName
+                    var ref = btWindowInterface.reference;
+                    verseChooser.start(module, ref);
                 }
             }
         }
-
     }
 
     Rectangle {

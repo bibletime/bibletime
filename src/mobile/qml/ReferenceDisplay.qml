@@ -47,7 +47,6 @@ Rectangle {
         anchors.fill: parent
         onClicked: {
             referenceDisplay.clicked();
-            btWinIfc.changeReference();
         }
     }
 

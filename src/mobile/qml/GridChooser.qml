@@ -24,6 +24,7 @@ Rectangle {
     property string selected: ""
     property string titleText: ""
     property int maxLength: 0
+    property alias model: repeater.model
 
     signal accepted(string choosenText);
     signal backup();
@@ -43,7 +44,7 @@ Rectangle {
     onVisibleChanged: {
         if ( ! visible)
             return;
-        var count = gridChooserModel.length
+        var count = model.length
         if (count < 36)
             count = 36;
 

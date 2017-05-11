@@ -36,7 +36,6 @@ Rectangle {
     signal openReference(string module, string reference);
 
     function doContextMenu(action) {
-        console.log("Action: ", action, " Index: ", index);
         if (action == "toggleexpand") {
             toggleExpand(index);
             return;

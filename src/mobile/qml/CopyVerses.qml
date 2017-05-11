@@ -39,6 +39,24 @@ Rectangle {
         btWinIfc.moduleName = copyVerses.moduleName
     }
 
+    function chooseReference() {
+        verseChooser.finished.disconnect(copyVerses.referenceChoosen);
+        verseChooser.finished.connect(copyVerses.referenceChoosen);
+        var module = btWinIfc.moduleName;
+        var ref = btWinIfc.reference;
+        console.log(module, ref);
+        verseChooser.start(module, ref);
+    }
+
+    function referenceChoosen() {
+        if (activeReference == 1)
+            copyVerses.reference1 = verseChooser.reference;
+        else if (activeReference == 2)
+            copyVerses.reference2 = verseChooser.reference;
+        copyVerses.showError = btWinIfc.isCopyToLarge(
+                    copyVerses.reference1, copyVerses.reference2);
+    }
+
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     anchors.topMargin: 20
@@ -74,15 +92,6 @@ Rectangle {
 
     BtWindowInterface {
         id: btWinIfc
-
-        onReferenceChange: {
-            if (activeReference == 1)
-                copyVerses.reference1 = reference;
-            else if (activeReference == 2)
-                copyVerses.reference2 = reference;
-            copyVerses.showError = btWinIfc.isCopyToLarge(
-                        copyVerses.reference1, copyVerses.reference2);
-        }
     }
 
     Grid {
@@ -151,6 +160,7 @@ Rectangle {
             height: copyVerses.rowHeight
             onClicked: {
                 copyVerses.activeReference = 1;
+                chooseReference();
             }
         }
 
@@ -173,6 +183,7 @@ Rectangle {
             height: copyVerses.rowHeight
             onClicked: {
                 copyVerses.activeReference = 2;
+                chooseReference();
             }
         }
     }
