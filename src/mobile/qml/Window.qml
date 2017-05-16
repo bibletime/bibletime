@@ -33,8 +33,7 @@ Rectangle {
     signal moduleChooserRequest(variant window, int moduleNumber)
 
     function referenceChoosen() {
-        console.log("Window.qml referenceChoosen")
-        btWindowInterface.reference = verseChooser.reference
+        btWindowInterface.reference = chooseReference.reference
         btWindowInterface.referenceChosen();
     }
 
@@ -89,7 +88,7 @@ Rectangle {
                 model.append ({ title: qsTr("Remove Parallel Document"), action: "removeParallel" })
         }
         model.append ({ title: qsTr("Close Window"), action: "close window" })
-//        model.append ({ title: "Debug Data", action: "debugData" })
+        //model.append ({ title: "Debug Data", action: "debugData" })
     }
 
     function getModuleLanguage() {
@@ -357,11 +356,18 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     setHistoryPoint();
-                    verseChooser.finished.disconnect(window.referenceChoosen)
-                    verseChooser.finished.connect(window.referenceChoosen)
-                    var module = btWindowInterface.moduleName
-                    var ref = btWindowInterface.reference;
-                    verseChooser.start(module, ref);
+                    chooseReference.finished.disconnect(window.referenceChoosen);
+                    chooseReference.finished.connect(window.referenceChoosen);
+                    var moduleName = btWindowInterface.moduleName;
+                    var reference = btWindowInterface.reference;
+                    chooseReference.start(moduleName, reference);
+//                    if (btWindowInterface.firstModuleIsBook()) {
+//                        btWindowInterface.changeReference();
+//                        chooseReference.start(moduleName, reference);
+//                    }
+//                    else {
+//                        btWindowInterface.changeReference();
+//                    }
                 }
             }
         }

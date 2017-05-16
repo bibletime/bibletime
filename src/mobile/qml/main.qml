@@ -100,6 +100,10 @@ Rectangle {
 
     rotation: 0
 
+    ChooseReference {
+        id: chooseReference
+    }
+
     VerseChooser {
         id: verseChooser
     }
@@ -296,6 +300,12 @@ Rectangle {
         path: ""
         visible: false
         z: 100
+        onNext: {
+            chooseReference.next(childText);
+        }
+        onBack: {
+            chooseReference.back();
+        }
     }
 
     KeyNameChooser {

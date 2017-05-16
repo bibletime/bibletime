@@ -7,6 +7,7 @@
         <file>qml/BookmarkManager.qml</file>
         <file>qml/BtButtonStyle.qml</file>
         <file>qml/BookIcon.qml</file>
+        <file>qml/ChooseReference.qml</file>
         <file>qml/CopyVerses.qml</file>
         <file>qml/DefaultDoc.qml</file>
         <file>qml/Folder.qml</file>

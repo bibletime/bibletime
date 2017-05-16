@@ -70,6 +70,11 @@ FocusScope {
         btWindowInterface2.updateTextFonts();
     }
 
+    function referenceChoosen() {
+        btWindowInterface.reference = chooseReference.reference;
+        btWindowInterface.referenceChosen();
+    }
+
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && magView.focus == true) {
             magFinished();
@@ -182,11 +187,16 @@ FocusScope {
 
                 anchors.fill: parent
                 onClicked: {
-                    verseChooser.finished.disconnect(magView.referenceChoosen)
-                    verseChooser.finished.connect(magView.referenceChoosen)
-                    var module = btWindowInterface.moduleName
-                    var ref = btWindowInterface.reference;
-                    verseChooser.start(module, ref);
+                    if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
+                        chooseReference.finished.disconnect(magView.referenceChoosen)
+                        chooseReference.finished.connect(magView.referenceChoosen)
+                        var module = btWindowInterface.moduleName
+                        var ref = btWindowInterface.reference;
+                        chooseReference.start(module, ref);
+                    }
+                    else {
+                        btWindowInterface.changeReference();
+                    }
                 }
             }
         }

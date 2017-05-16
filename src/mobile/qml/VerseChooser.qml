@@ -37,7 +37,6 @@ Item {
     }
 
     function accepted(value) {
-        console.log("accepted", atState)
         if (atState == "BOOK") {
             book = value;
             atState = "CHAPTER";

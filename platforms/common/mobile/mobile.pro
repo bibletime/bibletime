@@ -81,6 +81,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/BtButtonStyle.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
     ../../../src/mobile/qml/BookIcon.qml \
+    ../../../src/mobile/qml/ChooseReference.qml \
     ../../../src/mobile/qml/CopyVerses.qml \
     ../../../src/mobile/qml/DefaultDoc.qml \
     ../../../src/mobile/qml/Folder.qml \

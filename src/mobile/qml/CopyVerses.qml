@@ -39,20 +39,19 @@ Rectangle {
         btWinIfc.moduleName = copyVerses.moduleName
     }
 
-    function chooseReference() {
-        verseChooser.finished.disconnect(copyVerses.referenceChoosen);
-        verseChooser.finished.connect(copyVerses.referenceChoosen);
+    function chooseRef() {
+        chooseReference.finished.disconnect(copyVerses.referenceChoosen);
+        chooseReference.finished.connect(copyVerses.referenceChoosen);
         var module = btWinIfc.moduleName;
         var ref = btWinIfc.reference;
-        console.log(module, ref);
-        verseChooser.start(module, ref);
+        chooseReference.start(module, ref);
     }
 
     function referenceChoosen() {
         if (activeReference == 1)
-            copyVerses.reference1 = verseChooser.reference;
+            copyVerses.reference1 = chooseReference.reference;
         else if (activeReference == 2)
-            copyVerses.reference2 = verseChooser.reference;
+            copyVerses.reference2 = chooseReference.reference;
         copyVerses.showError = btWinIfc.isCopyToLarge(
                     copyVerses.reference1, copyVerses.reference2);
     }
@@ -160,7 +159,7 @@ Rectangle {
             height: copyVerses.rowHeight
             onClicked: {
                 copyVerses.activeReference = 1;
-                chooseReference();
+                chooseRef();
             }
         }
 
@@ -183,7 +182,7 @@ Rectangle {
             height: copyVerses.rowHeight
             onClicked: {
                 copyVerses.activeReference = 2;
-                chooseReference();
+                chooseRef();
             }
         }
     }

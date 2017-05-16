@@ -114,7 +114,7 @@ Rectangle {
         }
 
         function select(index, name) {
-            treeChooser.select(name);
+            chooseReference.select(name);
         }
 
         anchors.top: pathArea.bottom
