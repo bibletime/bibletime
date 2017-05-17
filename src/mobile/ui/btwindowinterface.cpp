@@ -734,7 +734,7 @@ void BtWindowInterface::referenceChosen() {
     setHistoryPoint();
 }
 
-void BtWindowInterface::referenceChosen(int index) {
+void BtWindowInterface::lexiconReferenceChoosen(int index) {
     updateKeyText(index);
     QString keyName = m_moduleTextModel->indexToKeyName(index);
     m_key->setKey(keyName);

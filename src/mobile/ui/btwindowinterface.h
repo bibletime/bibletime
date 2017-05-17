@@ -101,6 +101,7 @@ public:
     Q_INVOKABLE void updateKeyText(int modelIndex);
     Q_INVOKABLE void updateReferences();
     Q_INVOKABLE QString getModelTextByIndex(int index) const;
+    Q_INVOKABLE void lexiconReferenceChoosen(int index);
     Q_INVOKABLE void referenceChosen();
 
     BtWindowInterface(QObject *parent = nullptr);
@@ -161,7 +162,6 @@ signals:
 
 private slots:
     void referenceChanged();
-    void referenceChosen(int index);
     void reloadModules(CSwordBackend::SetupChangedReason reason);
 
 private:

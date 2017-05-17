@@ -20,6 +20,7 @@ Item {
     property string reference: ""
 
     signal finished()
+    signal finishedLexicon(int index)
 
     function start(moduleName, reference) {
         chooseReference.moduleName = moduleName;
@@ -53,13 +54,24 @@ Item {
         chooserInterface.select(name);
         reference = chooserInterface.getTreeReference();
         treeChooser.visible = false;
-        console.log(reference);
         finished();
     }
 
     function verseReferenceChoosen() {
         reference = verseChooser.reference;
         finished();
+    }
+
+    function startLexicon(moduleName, reference, model, index) {
+        keyNameChooser.model = model;
+        keyNameChooser.itemSelected.disconnect(chooseReference.lexiconReferenceChoosen)
+        keyNameChooser.itemSelected.connect(chooseReference.lexiconReferenceChoosen)
+        keyNameChooser.currentIndex = index;
+        keyNameChooser.visible = true;
+    }
+
+    function lexiconReferenceChoosen(index) {
+        finishedLexicon(index);
     }
 
     ChooserInterface {

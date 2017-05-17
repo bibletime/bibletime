@@ -33,8 +33,14 @@ Rectangle {
     signal moduleChooserRequest(variant window, int moduleNumber)
 
     function referenceChoosen() {
+        chooseReference.finished.disconnect(windowView.referenceChoosen);
         btWindowInterface.reference = chooseReference.reference
         btWindowInterface.referenceChosen();
+    }
+
+    function lexiconReferenceChoosen(index) {
+        chooseReference.finishedLexicon.disconnect(windowView.lexiconReferenceChoosen);
+        btWindowInterface.lexiconReferenceChoosen(index);
     }
 
     function addParallelModule() {
@@ -356,18 +362,20 @@ Rectangle {
                 anchors.fill: parent
                 onClicked: {
                     setHistoryPoint();
-                    chooseReference.finished.disconnect(window.referenceChoosen);
-                    chooseReference.finished.connect(window.referenceChoosen);
                     var moduleName = btWindowInterface.moduleName;
                     var reference = btWindowInterface.reference;
-                    chooseReference.start(moduleName, reference);
-//                    if (btWindowInterface.firstModuleIsBook()) {
-//                        btWindowInterface.changeReference();
-//                        chooseReference.start(moduleName, reference);
-//                    }
-//                    else {
-//                        btWindowInterface.changeReference();
-//                    }
+
+                    if (btWindowInterface.firstModuleIsBibleOrCommentary() ||
+                            btWindowInterface.firstModuleIsBook()) {
+                        chooseReference.finished.connect(windowView.referenceChoosen);
+                        chooseReference.start(moduleName, reference);
+                    } else {
+                        chooseReference.finishedLexicon.connect(windowView.lexiconReferenceChoosen);
+                        chooseReference.startLexicon(moduleName,
+                                                     reference,
+                                                     btWindowInterface.textModel,
+                                                     btWindowInterface.currentModelIndex);
+                    }
                 }
             }
         }
