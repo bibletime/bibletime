@@ -1,12 +1,14 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pt">
 <context>
-    <name/>
+    <name></name>
     <message>
-        <source/>
+        <source></source>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation type="unfinished"/>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -478,6 +480,19 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing %1</source>
         <translation>A indexar %1</translation>
+    </message>
+</context>
+<context>
+    <name>btm::BtWindowInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="64"/>
+        <source>Select a reference.</source>
+        <translation>Seleccione uma referência.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="252"/>
+        <source>Footnote</source>
+        <translation>Notas de rodapé</translation>
     </message>
 </context>
 <context>

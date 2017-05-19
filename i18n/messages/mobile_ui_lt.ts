@@ -1,12 +1,14 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="lt">
 <context>
-    <name/>
+    <name></name>
     <message>
-        <source/>
+        <source></source>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation type="unfinished"/>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -142,7 +144,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="224"/>
         <source>Copy size to large.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -481,6 +483,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>btm::BtWindowInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="64"/>
+        <source>Select a reference.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="252"/>
+        <source>Footnote</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="95"/>
@@ -542,12 +557,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="138"/>
         <source>First</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="160"/>
         <source>Last</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

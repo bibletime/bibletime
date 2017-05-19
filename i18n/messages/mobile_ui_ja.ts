@@ -481,6 +481,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>btm::BtWindowInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="64"/>
+        <source>Select a reference.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="252"/>
+        <source>Footnote</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="95"/>

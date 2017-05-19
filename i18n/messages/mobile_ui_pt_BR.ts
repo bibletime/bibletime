@@ -1,12 +1,14 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pt_BR">
 <context>
-    <name/>
+    <name></name>
     <message>
-        <source/>
+        <source></source>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation type="unfinished"/>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -142,7 +144,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="224"/>
         <source>Copy size to large.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -150,7 +152,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="65"/>
         <source>Standard Documents</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="83"/>
@@ -170,12 +172,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="221"/>
         <source>Hebrew Morphological lexicon:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="267"/>
         <source>Greek Morphological lexicon:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -242,7 +244,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/MagView.qml" line="94"/>
         <source>View References</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -426,17 +428,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Window.qml" line="78"/>
         <source>View References</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Window.qml" line="80"/>
         <source>Add Parallel Document</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Window.qml" line="82"/>
         <source>Remove Parallel Document</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Window.qml" line="84"/>
@@ -464,7 +466,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="195"/>
         <source>Delete folder and bookmarks</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/btbookmarkinterface.cpp" line="197"/>
@@ -478,6 +480,19 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/ui/btsearchinterface.cpp" line="60"/>
         <source>Indexing %1</source>
         <translation>Indexando %1</translation>
+    </message>
+</context>
+<context>
+    <name>btm::BtWindowInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="64"/>
+        <source>Select a reference.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="252"/>
+        <source>Footnote</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -542,12 +557,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="138"/>
         <source>First</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="160"/>
         <source>Last</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -587,7 +602,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="418"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="419"/>
@@ -612,7 +627,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="524"/>
         <source>Default Documents</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="454"/>

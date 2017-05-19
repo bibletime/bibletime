@@ -473,6 +473,19 @@
     </message>
 </context>
 <context>
+    <name>btm::BtWindowInterface</name>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="64"/>
+        <source>Select a reference.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="252"/>
+        <source>Footnote</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="95"/>

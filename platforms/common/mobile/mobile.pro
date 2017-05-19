@@ -120,6 +120,7 @@ lupdate_only {
     SOURCES += ../../../src/mobile/bookshelfmanager/installsources.cpp
     SOURCES += ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp
     SOURCES += ../../../src/mobile/qml/StartupBookshelfManager.qml
+    SOURCES += ../../../src/mobile/ui/btwindowinterface.cpp
     SOURCES += ../../../src/mobile/ui/btsearchinterface.cpp
     SOURCES += ../../../src/mobile/ui/btbookmarkinterface.cpp
 }
