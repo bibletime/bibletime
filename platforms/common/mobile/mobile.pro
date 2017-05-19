@@ -13,15 +13,9 @@ include(../../common/core/core.pro)
 SOURCES += \
     ../../../src/mobile/bibletimeapp.cpp \
     ../../../src/mobile/bibletime.cpp \
-    ../../../src/mobile/bookshelfmanager/installmanager.cpp \
-    ../../../src/mobile/bookshelfmanager/installprogress.cpp \
     ../../../src/mobile/bookshelfmanager/installsources.cpp \
-    ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp \
     ../../../src/mobile/btmmain.cpp \
     ../../../src/mobile/config/btmconfig.cpp \
-    ../../../src/mobile/keychooser/bookkeychooser.cpp \
-    ../../../src/mobile/keychooser/keynamechooser.cpp \
-    ../../../src/mobile/keychooser/versechooser.cpp \
     ../../../src/mobile/models/roleitemmodel.cpp \
     ../../../src/mobile/models/searchmodel.cpp \
     ../../../src/mobile/sessionmanager/sessionmanager.cpp \
@@ -32,6 +26,7 @@ SOURCES += \
     ../../../src/mobile/ui/btwindowinterface.cpp \
     ../../../src/mobile/ui/gridchooser.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
+    ../../../src/mobile/ui/installinterface.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
     ../../../src/mobile/ui/chooserinterface.cpp \
     ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
@@ -43,16 +38,10 @@ SOURCES += \
 HEADERS += \
     ../../../src/mobile/bibletimeapp.h \
     ../../../src/mobile/bibletime.h \
-    ../../../src/mobile/bookshelfmanager/installmanager.h \
-    ../../../src/mobile/bookshelfmanager/installprogress.h \
     ../../../src/mobile/bookshelfmanager/installsources.h \
-    ../../../src/mobile/bookshelfmanager/installsourcesmanager.h \
     ../../../src/mobile/btmmain.h \
     ../../../src/mobile/config/btmconfig.h \
-    ../../../src/mobile/keychooser/bookkeychooser.h \
     ../../../src/mobile/ui/indexthread.h \
-    ../../../src/mobile/keychooser/keynamechooser.h \
-    ../../../src/mobile/keychooser/versechooser.h \
     ../../../src/mobile/models/roleitemmodel.h \
     ../../../src/mobile/models/searchmodel.h \
     ../../../src/mobile/sessionmanager/sessionmanager.h \
@@ -62,6 +51,7 @@ HEADERS += \
     ../../../src/mobile/ui/btmmoduletextfilter.h \
     ../../../src/mobile/ui/btwindowinterface.h \
     ../../../src/mobile/ui/gridchooser.h \
+    ../../../src/mobile/ui/installinterface.h \
     ../../../src/mobile/ui/moduleinterface.h \
     ../../../src/mobile/ui/chooserinterface.h \
     ../../../src/mobile/ui/qtquick2applicationviewer.h \
@@ -118,15 +108,14 @@ OTHER_FILES += \
     ../../../src/mobile/qml/WindowManager.qml \
 
 lupdate_only {
-    SOURCES = ../../../src/mobile/qml/*.qml
-    SOURCES += ../../../src/mobile/keychooser/versechooser.cpp
-    SOURCES += ../../../src/mobile/bookshelfmanager/installprogress.cpp
-    SOURCES += ../../../src/mobile/bookshelfmanager/installsources.cpp
-    SOURCES += ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp
-    SOURCES += ../../../src/mobile/qml/StartupBookshelfManager.qml
-    SOURCES += ../../../src/mobile/ui/btwindowinterface.cpp
-    SOURCES += ../../../src/mobile/ui/btsearchinterface.cpp
+    SOURCES  = ../../../src/mobile/qml/*.qml
     SOURCES += ../../../src/mobile/ui/btbookmarkinterface.cpp
+    SOURCES += ../../../src/mobile/ui/btsearchinterface.cpp
+    SOURCES += ../../../src/mobile/ui/btwindowinterface.cpp
+    SOURCES += ../../../src/mobile/ui/chooserinterface.cpp
+    SOURCES += ../../../src/mobile/ui/installinterface.cpp
+    SOURCES += ../../../src/mobile/ui/moduleinterface.cpp
+    SOURCES += ../../../src/mobile/bookshelfmanager/installsources.cpp
 }
 
 TRANSLATIONS += \

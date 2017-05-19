@@ -40,9 +40,6 @@
 #include "backend/rendering/chtmlexportrendering.h"
 #include "backend/rendering/cplaintextexportrendering.h"
 #include "mobile/btmmain.h"
-#include "mobile/keychooser/bookkeychooser.h"
-#include "mobile/keychooser/keynamechooser.h"
-#include "mobile/keychooser/versechooser.h"
 #include "mobile/ui/viewmanager.h"
 #include "util/btconnect.h"
 
@@ -50,16 +47,13 @@ namespace btm {
 
 BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
-      m_bookKeyChooser(nullptr),
       m_firstHref(false),
       m_footnoteVisible(true),
       m_historyIndex(-1),
       m_key(nullptr),
-      m_keyNameChooser(nullptr),
       m_magView(false),
       m_moduleTextModel(new BtModuleTextModel(this)),
-      m_textModel(new RoleItemModel()),
-      m_verseKeyChooser(nullptr) {
+      m_textModel(new RoleItemModel()) {
 
     m_prompt = tr("Select a reference.");
     m_moduleTextModel->setTextFilter(&m_textFilter);
@@ -74,53 +68,16 @@ BtWindowInterface::~BtWindowInterface() {
 
 }
 
-VerseChooser* BtWindowInterface::getVerseKeyChooser() {
-    if (!m_verseKeyChooser) {
-        ViewManager* viewManager = getViewManager();
-        Q_ASSERT(viewManager);
-        QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
-        m_verseKeyChooser = new VerseChooser(viewer, this);
-        BT_CONNECT(m_verseKeyChooser, SIGNAL(referenceChanged()),
-                   this,              SLOT(referenceChosen()));
-    }
-    return m_verseKeyChooser;
-}
-
-BookKeyChooser* BtWindowInterface::getBookKeyChooser() {
-    if (!m_bookKeyChooser) {
-        ViewManager* viewManager = getViewManager();
-        Q_ASSERT(viewManager);
-        QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
-        m_bookKeyChooser = new BookKeyChooser(viewer, this);
-        BT_CONNECT(m_bookKeyChooser, SIGNAL(referenceChanged()),
-                   this,             SLOT(referenceChosen()));
-    }
-    return m_bookKeyChooser;
-}
-
-KeyNameChooser* BtWindowInterface::getKeyNameChooser() {
-    if (!m_keyNameChooser) {
-        ViewManager* viewManager = getViewManager();
-        Q_ASSERT(viewManager);
-        QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
-        m_keyNameChooser = new KeyNameChooser(viewer, this);
-        BT_CONNECT(m_keyNameChooser, SIGNAL(referenceChanged(int)),
-                   this,             SLOT(referenceChosen(int)));
-    }
-    return m_keyNameChooser;
-}
-
 void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {
-    //first make sure all used Sword modules are still present
-
-    //    if (CSwordBackend::instance()->findModuleByName(m_moduleName)) {
-    //        QString moduleName = m_moduleName;
-    //        m_moduleName = "";
-    //        setModuleName(moduleName);
-    //        ;
-    //    } else {
-    //        // close window ?
-    //    }
+    QString moduleName = getModuleName();
+    QString reference = getReference();
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    if (module) {
+        m_key = CSwordKey::createInstance(module);
+        m_key->setKey(reference);
+    } else {
+        ; // close window ?
+    }
 }
 
 void BtWindowInterface::updateModel() {
@@ -624,60 +581,6 @@ void BtWindowInterface::setMagView(bool magView) {
     m_textFilter.setShowReferences(magView);
 }
 
-static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
-{
-    if (currentKey == nullptr)
-        return;
-
-    CSwordTreeKey localKey(*currentKey);
-
-    QString oldKey = localKey.key(); //string backup of key
-
-    if (oldKey.isEmpty()) { //don't set keys equal to "/", always use a key which may have content
-        localKey.firstChild();
-        oldKey = localKey.key();
-    }
-
-    QStringList siblings; //split up key
-    if (!oldKey.isEmpty()) {
-        siblings = oldKey.split('/', QString::SkipEmptyParts);
-    }
-
-    int depth = 0;
-    int index = 0;
-    localKey.root(); //start iteration at root node
-
-    while ( localKey.firstChild() && (depth < siblings.count()) ) {
-        QString key = localKey.key();
-        index = (depth == 0) ? -1 : 0;
-
-        bool found = false;
-        do { //look for matching sibling
-            ++index;
-            found = (localKey.getLocalNameUnicode() == siblings[depth]);
-        }
-        while (!found && localKey.nextSibling());
-
-        if (found)
-            key = localKey.key(); //found: change key to this level
-        else
-            localKey.setKey(key); //not found: restore old key
-
-        *keyPath << key;
-
-        //last iteration: get child entries
-        if (depth == siblings.count() - 1 && localKey.hasChildren()) {
-            localKey.firstChild();
-            ++depth;
-            do {
-                *children << localKey.getLocalNameUnicode();
-            }
-            while (localKey.nextSibling());
-        }
-        depth++;
-    }
-}
-
 static QString getEnglishKey(CSwordKey* m_key) {
     sword::VerseKey * vk = dynamic_cast<sword::VerseKey*>(m_key);
     QString oldLang;
@@ -702,25 +605,6 @@ void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
     conf.setSessionValue("key", getEnglishKey(m_key));
     conf.setSessionValue("modules", m_moduleNames);
     conf.endGroup();
-}
-
-void BtWindowInterface::changeReference() {
-    CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-    if (verseKey != nullptr) {
-        getVerseKeyChooser()->open(verseKey);
-    }
-
-    CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
-    if (treeKey != nullptr) {
-        QStringList keyPath;
-        QStringList children;
-        parseKey(treeKey, &keyPath, &children);
-        getBookKeyChooser()->open();
-    }
-    CSwordLDKey* lexiconKey = dynamic_cast<CSwordLDKey*>(m_key);
-    if (lexiconKey != nullptr) {
-        getKeyNameChooser()->open(m_moduleTextModel);
-    }
 }
 
 void BtWindowInterface::referenceChanged() {

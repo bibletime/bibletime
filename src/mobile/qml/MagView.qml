@@ -187,16 +187,11 @@ FocusScope {
 
                 anchors.fill: parent
                 onClicked: {
-                    if (btWindowInterface.firstModuleIsBibleOrCommentary()) {
-                        chooseReference.finished.disconnect(magView.referenceChoosen)
-                        chooseReference.finished.connect(magView.referenceChoosen)
-                        var module = btWindowInterface.moduleName
-                        var ref = btWindowInterface.reference;
-                        chooseReference.start(module, ref);
-                    }
-                    else {
-                        btWindowInterface.changeReference();
-                    }
+                    chooseReference.finished.disconnect(magView.referenceChoosen)
+                    chooseReference.finished.connect(magView.referenceChoosen)
+                    var module = btWindowInterface.moduleName
+                    var ref = btWindowInterface.reference;
+                    chooseReference.start(module, ref);
                 }
             }
         }

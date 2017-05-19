@@ -30,10 +30,6 @@ class CSwordModuleInfo;
 
 namespace btm {
 
-class BookKeyChooser;
-class KeyNameChooser;
-class VerseChooser;
-
 struct History
 {
     QString moduleName;
@@ -81,7 +77,6 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
 
 public:
-    Q_INVOKABLE void changeReference();
     Q_INVOKABLE bool copy(const QString& moduleName, const QString& ref1, const QString& ref2);
     Q_INVOKABLE int  getComboIndexFromUrl(const QString& url);
     Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
@@ -176,9 +171,6 @@ private:
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
     QString getReferenceFromUrl(const QString& url);
-    VerseChooser* getVerseKeyChooser();
-    BookKeyChooser* getBookKeyChooser();
-    KeyNameChooser* getKeyNameChooser();
     void lookupAvailableModules();
     const CSwordModuleInfo* module() const;
     RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
@@ -190,16 +182,13 @@ private:
     void setPrompt(const QString& title);
     void setReferencesViewTitle(const QString& title);
 
-    BookKeyChooser* m_bookKeyChooser;
     bool m_firstHref;
     bool m_footnoteVisible;
     int m_historyIndex;
     CSwordKey* m_key;
-    KeyNameChooser* m_keyNameChooser;
     bool m_magView;
     BtModuleTextModel* m_moduleTextModel;
     RoleItemModel* m_textModel;
-    VerseChooser* m_verseKeyChooser;
 
     QStringList m_bibles;
     QStringList m_comboBoxEntries;

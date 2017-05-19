@@ -12,6 +12,7 @@
 
 import QtQuick 2.2
 import QtQuick.Controls 1.2
+import BibleTime 1.0
 
 Rectangle {
     id: installManager
@@ -26,6 +27,36 @@ Rectangle {
     property int spacing: btStyle.pixelsPerMillimeterX
     property bool refreshOnOpen: false
 
+    function open() {
+        var currentSource = installInterface.getSource(sourceView.currentIndex);
+        if (currentSource === "")
+            currentSource = "CrossWire";
+
+        var currentCategory = installInterface.getCategory(categoryView.currentIndex);
+        if (currentCategory === "")
+            currentCategory = "Bibles";
+
+        var currentLanguage = installInterface.getLanguage(languageView.currentIndex);
+        if (currentLanguage === "")
+            currentLanguage = "English";
+
+        installInterface.setup();
+        var sIndex = installInterface.searchSource(currentSource);
+        installManager.sourceIndex = sIndex;
+
+        var cIndex = installInterface.searchCategory(currentCategory);
+        installManager.categoryIndex = cIndex;
+
+        var lIndex = installInterface.searchLanguage(currentLanguage);
+        installManager.languageIndex = lIndex;
+
+        visible = true;
+    }
+
+    function cancel() {
+        installInterface.cancel();
+    }
+
     objectName: "installManager"
     color: btStyle.toolbarColor
     border.color: "black"
@@ -34,10 +65,6 @@ Rectangle {
     signal sourceChanged(int index);
     signal categoryChanged(int index);
     signal languageChanged(int index);
-    signal workSelected(int index);
-    signal cancel();
-    signal installRemove();
-    signal refreshLists();
 
     onVisibleChanged: {
         if (refreshOnOpen) {
@@ -66,34 +93,67 @@ Rectangle {
 
         ListTextView {
             id: sourceView
+
+            objectName: "sourceView"
             onItemSelected: {
-                sourceChanged(currentIndex)
+                sourceChanged(currentIndex);
             }
 
+            model: installInterface.sourceModel
             title: qsTranslate("InstallManagerChooser","Source")
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
+            onCurrentIndexChanged: {
+                var newSource = installInterface.getSource(sourceView.currentIndex);
+                var currentCategory = installInterface.getCategory(categoryView.currentIndex);
+                var currentLanguage = installInterface.getLanguage(languageView.currentIndex);
+                installInterface.updateSwordBackend(newSource);
+                installInterface.updateCategoryModel();
+                var cIndex = installInterface.searchCategory(currentCategory);
+                installManager.categoryIndex = cIndex;
+                installInterface.updateLanguageModel(currentCategory);
+                var lIndex = installInterface.searchLanguage(currentLanguage);
+                installManager.languageIndex = lIndex;
+            }
         }
 
         ListTextView {
             id: categoryView
 
+            objectName: "categoryView"
+            model: installInterface.categoryModel
             title: qsTranslate("InstallManagerChooser","Category")
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
             onItemSelected: {
                 categoryChanged(currentIndex)
             }
+            onCurrentIndexChanged: {
+                var currentCategory = installInterface.getCategory(categoryView.currentIndex);
+                var currentLanguage = installInterface.getLanguage(languageView.currentIndex);
+                installInterface.updateLanguageModel(currentCategory);
+                var lIndex = installInterface.searchLanguage(currentLanguage);
+                installManager.languageIndex = lIndex;
+
+            }
         }
 
         ListTextView {
             id: languageView
 
+            objectName: "languageView"
+            model: installInterface.languageModel
             title: qsTranslate("InstallManagerChooser","Language")
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
             onItemSelected: {
                 languageChanged(currentIndex)
+            }
+            onCurrentIndexChanged: {
+                var source = installInterface.getSource(sourceView.currentIndex);
+                var category = installInterface.getCategory(categoryView.currentIndex);
+                var language = installInterface.getLanguage(languageView.currentIndex);
+                installInterface.updateWorksModel(source, category, language);
             }
         }
     }
@@ -101,6 +161,7 @@ Rectangle {
     ListWorksView {
         id: worksView
 
+        model: installInterface.worksModel
         title: qsTranslate("InstallManagerChooser","Document")
         width: parent.width - 2 * installManager.spacing
         anchors.top: grid.bottom
@@ -108,7 +169,7 @@ Rectangle {
         anchors.bottom: buttonRow.top
         anchors.margins: installManager.spacing
         onItemSelected: {
-            workSelected(index)
+            installInterface.workSelected(index)
         }
     }
 
@@ -133,7 +194,10 @@ Rectangle {
             id: refreshAction
             text: qsTranslate("InstallManagerChooser", "Refresh Sources")
             onTriggered: {
-                installManager.refreshLists();
+                var source = installInterface.getSource(sourceView.currentIndex);
+                var category = installInterface.getCategory(categoryView.currentIndex);
+                var language = installInterface.getLanguage(languageView.currentIndex);
+                installInterface.refreshLists(source, category, language);
             }
         }
 
@@ -150,7 +214,8 @@ Rectangle {
             id: installRemoveAction
             text: qsTranslate("InstallManagerChooser", "Install / Remove")
             onTriggered: {
-                installManager.installRemove();
+                installManagerChooser.visible = false;
+                installInterface.installRemove();
             }
         }
 

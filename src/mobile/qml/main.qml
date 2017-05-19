@@ -36,7 +36,7 @@ Rectangle {
     }
 
     function installModules() {
-        installManager.openChooser();
+        installManagerChooser.open();
     }
 
     function startSearch() {
@@ -394,8 +394,17 @@ Rectangle {
         ListElement { text: "ESV"; value: "ESV" }
     }
 
-    InstallManager {
-        id: installManager
+    InstallInterface {
+        id: installInterface
+
+        onUpdateCurrentViews: {
+            var sIndex = installInterface.searchSource(source);
+            installManagerChooser.sourceIndex = sIndex;
+            var cIndex = installInterface.searchCategory(category);
+            installManagerChooser.categoryIndex = cIndex;
+            var lIndex = installInterface.searchLanguage(language);
+            installManagerChooser.languageIndex = lIndex;
+        }
     }
 
     InstallManagerChooser {
@@ -410,17 +419,19 @@ Rectangle {
     }
 
     Progress {
-        id: progress
+        id: installProgress
 
         objectName: "progress"
-        value: 0.25
-        minimumValue: 0
-        maximumValue: 1
+        value: installInterface.progressValue
+        minimumValue: installInterface.progressMin
+        maximumValue: installInterface.progressMax
         width:parent.width * 0.85
         height: btStyle.pixelsPerMillimeterY * 30
         anchors.centerIn: parent
         anchors.top: parent.top
-        visible: false
+        text: installInterface.progressText
+        visible: installInterface.progressVisible
+        onCancel: installManagerChooser.cancel();
     }
 
     ListModel {
