@@ -75,16 +75,6 @@ QFont getDefaultFont() {
     return defaultFont;
 }
 
-void openBookshelfManager() {
-    QQuickItem* item = btm::findQmlObject("startupBookshelfManager");
-    BT_ASSERT(item);
-    if (item == nullptr)
-        return;
-
-    item->setProperty("visible", true);
-
-}
-
 #if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
 // Copies locale.qrc files into home sword directory under locales.d directory
 static void installSwordLocales(QDir& homeSword)
@@ -189,7 +179,7 @@ int main(int argc, char *argv[]) {
     // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {
         qFatal("Error initializing display template manager!");
-       return EXIT_FAILURE;
+        return EXIT_FAILURE;
     }
 
     BtIcons btIcons;
@@ -198,18 +188,11 @@ int main(int argc, char *argv[]) {
 
     btm::BibleTime btm;
 
-    int installedModules = CSwordBackend::instance()->moduleList().count();
-
     mgr = new btm::ViewManager;
     mgr->show();
     sessionMgr = new btm::SessionManager();
 
-    if (installedModules == 0) {
-        openBookshelfManager();
-    }
-    else {
-        sessionMgr->loadDefaultSession();
-    }
+    sessionMgr->loadDefaultSession();
 
     int rtn = app.exec();
     saveSession();

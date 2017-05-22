@@ -32,6 +32,10 @@ class BtWindowInterface;
 class ModuleInterface : public QObject {
     Q_OBJECT
 
+    Q_PROPERTY(QVariant categoryModel READ categoryModel NOTIFY categoryModelChanged)
+    Q_PROPERTY(QVariant languageModel READ languageModel NOTIFY languageModelChanged)
+    Q_PROPERTY(QVariant worksModel    READ worksModel    NOTIFY worksModelChanged)
+
 public:
     ModuleInterface();
     Q_INVOKABLE void setBibleCommentaryOnly(bool value);
@@ -49,12 +53,23 @@ public:
     Q_INVOKABLE void setFontForLanguage(const QString& language, const QString& fontName, qreal fontSize);
     Q_INVOKABLE void saveCurrentFonts();
     Q_INVOKABLE void restoreSavedFonts();
+    Q_INVOKABLE void setCurrentLanguage(int index);
+    Q_INVOKABLE void setCurrentCategory(int index);
+
+    QVariant categoryModel();
+    QVariant languageModel();
+    QVariant worksModel();
+
+signals:
+    void categoryModelChanged();
+    void languageModelChanged();
+    void worksModelChanged();
+    void requestCurrentLanguage();
+    void requestCurrentCategory();
 
 private:
     void getCategoriesAndLanguages();
     void setProperties(const QStringList& list);
-    QString currentLanguage() const;
-    QString currentCategory() const;
 
     bool m_bibleCommentaryOnly;
     QSet<QString> m_categories;
@@ -63,6 +78,8 @@ private:
     RoleItemModel m_languageModel;
     RoleItemModel m_worksModel;
     QList<CSwordModuleInfo*> m_modules;
+    QString m_currentLanguage;
+    QString m_currentCategory;
 
 };
 

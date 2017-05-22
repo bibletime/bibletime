@@ -115,6 +115,10 @@ void InstallInterface::updateSwordBackend(const QString& sourceName) {
     m_backend = BtInstallBackend::backend(source);
 }
 
+int InstallInterface::installedModulesCount() {
+    return CSwordBackend::instance()->moduleList().count();
+}
+
 static CSwordModuleInfo* moduleInstalled(const CSwordModuleInfo& moduleInfo) {
     CSwordModuleInfo *installedModule = CSwordBackend::instance()->findModuleByName(moduleInfo.name());
     return installedModule;
@@ -483,6 +487,5 @@ void InstallInterface::setProgressText(const QString& value) {
 }
 
 }
-
 
 

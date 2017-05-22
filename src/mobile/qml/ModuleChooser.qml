@@ -150,6 +150,13 @@ Rectangle {
 
     ModuleInterface {
         id: moduleInterface
+
+        onRequestCurrentCategory: {
+            moduleInterface.setCurrentCategory(categoryView.currentIndex)
+        }
+        onRequestCurrentLanguage: {
+            moduleInterface.setCurrentLanguage(languageView.currentIndex)
+        }
     }
 
     BtStyle {
@@ -173,6 +180,7 @@ Rectangle {
             title: qsTranslate("ModuleChooser", "Category")
             width: grid.width/2 - grid.spacing
             height: grid.height
+            model: moduleInterface.categoryModel
             onItemSelected: {
                 categoryChanged(currentIndex)
             }
@@ -184,6 +192,7 @@ Rectangle {
             title: qsTranslate("ModuleChooser", "Language")
             width: grid.width/2 - grid.spacing
             height: grid.height
+            model: moduleInterface.languageModel
             onItemSelected: {
                 languageChanged(currentIndex);
             }
@@ -200,6 +209,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.margins: moduleChooser.spacing
         highlight: false
+        model: moduleInterface.worksModel
         onItemSelected: {
             selectedModule = moduleInterface.module(index);
             selectedCategory = moduleInterface.englishCategory(index);

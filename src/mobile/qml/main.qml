@@ -27,6 +27,8 @@ Rectangle {
     Component.onCompleted: {
         setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
         setFontDialog.textFontChanged.connect(magView.updateTextFont)
+        if (installInterface.installedModulesCount() == 0)
+            startupBookshelfManager.visible = true;
     }
 
     ListModel {

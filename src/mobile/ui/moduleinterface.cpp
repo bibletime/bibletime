@@ -12,13 +12,10 @@
 
 #include "moduleinterface.h"
 
-#include "qtquick2applicationviewer.h"
-
 #include "backend/config/btconfig.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordversekey.h"
-#include "mobile/util/findqmlobject.h"
 #include "mobile/btmmain.h"
 #include <cmath>
 #include <QQuickItem>
@@ -83,26 +80,16 @@ void ModuleInterface::setBibleCommentaryOnly(bool value) {
 }
 
 void ModuleInterface::updateCategoryAndLanguageModels() {
-    QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == nullptr)
-        return;
-
     getCategoriesAndLanguages();
     setupTextModel(m_categories, &m_categoryModel);
     setupTextModel(m_languages, &m_languageModel);
     updateWorksModel();
-    object->setProperty("categoryModel", QVariant::fromValue(&m_categoryModel));
-    object->setProperty("languageModel", QVariant::fromValue(&m_languageModel));
 }
 
 void ModuleInterface::getCategoriesAndLanguages() {
 
     m_categories.clear();
     m_languages.clear();
-
-    QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == nullptr)
-        return;
 
     BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
     if (bookshelfModel == nullptr)
@@ -137,14 +124,11 @@ QStringList ModuleInterface::installedModuleLanguages() {
 void ModuleInterface::updateWorksModel() {
     m_worksModel.clear();
     m_modules.clear();
-
-    QString currentLang = currentLanguage();
-    QString currentCat = currentCategory();
-
+    requestCurrentCategory();
+    requestCurrentLanguage();
     QHash<int, QByteArray> roleNames;
     roleNames[TextRole] =  "modelText";
     m_worksModel.setRoleNames(roleNames);
-
     BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
     if (bookshelfModel == nullptr)
         return;
@@ -156,8 +140,8 @@ void ModuleInterface::updateWorksModel() {
         QString categoryName = module->categoryName(category);
         const CLanguageMgr::Language* language = module->language();
         QString languageName = language->translatedName();
-        if (languageName == currentLang &&
-                categoryName == currentCat) {
+        if (languageName == m_currentLanguage &&
+                categoryName == m_currentCategory) {
             m_modules << module;
             QString moduleName = module->name();
             QStandardItem* item = new QStandardItem();
@@ -165,32 +149,6 @@ void ModuleInterface::updateWorksModel() {
             m_worksModel.appendRow(item);
         }
     }
-
-    QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == nullptr)
-        return;
-    object->setProperty("worksModel", QVariant::fromValue(&m_worksModel));
-}
-
-QString ModuleInterface::currentLanguage() const {
-    QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == nullptr)
-        return "";
-    int row = object->property("languageIndex").toInt();
-    QModelIndex modelIndex = m_languageModel.index(row,0);
-    QString language = modelIndex.data(TextRole).toString();
-    return language;
-
-}
-
-QString ModuleInterface::currentCategory() const {
-    QQuickItem* object = findQmlObject("moduleChooser");
-    if (object == nullptr)
-        return "";
-    int row = object->property("categoryIndex").toInt();
-    QModelIndex modelIndex = m_categoryModel.index(row,0);
-    QString category = modelIndex.data(TextRole).toString();
-    return category;
 }
 
 QString ModuleInterface::category(int index) {
@@ -342,6 +300,36 @@ void ModuleInterface::restoreSavedFonts() {
     for (auto fontSettings : savedFontSettings) {
         setFontForLanguage(fontSettings.language, fontSettings.fontName, fontSettings.fontSize);
     }
+}
+
+QVariant ModuleInterface::categoryModel() {
+    QVariant var;
+    var.setValue(&m_categoryModel);
+    return var;
+}
+
+QVariant ModuleInterface::languageModel() {
+    QVariant var;
+    var.setValue(&m_languageModel);
+    return var;
+}
+
+QVariant ModuleInterface::worksModel() {
+    QVariant var;
+    var.setValue(&m_worksModel);
+    return var;
+}
+
+void ModuleInterface::setCurrentLanguage(int row) {
+    QModelIndex index = m_languageModel.index(row,0);
+    QVariant v = index.data(TextRole);
+    m_currentLanguage = v.toString();
+}
+
+void ModuleInterface::setCurrentCategory(int row) {
+    QModelIndex index = m_categoryModel.index(row, 0);
+    QVariant v = index.data(TextRole);
+    m_currentCategory = v.toString();
 }
 
 } // end namespace

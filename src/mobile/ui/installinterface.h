@@ -55,6 +55,7 @@ public:
             const QString& languageName);
 
     Q_INVOKABLE void updateSwordBackend(const QString& sourceName);
+    Q_INVOKABLE int installedModulesCount();
 
     Q_INVOKABLE QString getSource(int index);
     Q_INVOKABLE QString getCategory(int index);
