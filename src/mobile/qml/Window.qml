@@ -117,6 +117,10 @@ Rectangle {
         return btWindowInterface.reference;
     }
 
+    function getEnglishReference() {
+        return btWindowInterface.englishReference;
+    }
+
     function setModule(module) {
         btWindowInterface.moduleName = module;
     }

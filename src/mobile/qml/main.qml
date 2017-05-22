@@ -27,6 +27,7 @@ Rectangle {
     Component.onCompleted: {
         setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
         setFontDialog.textFontChanged.connect(magView.updateTextFont)
+        sessionInterface.loadDefaultSession();
         if (installInterface.installedModulesCount() == 0)
             startupBookshelfManager.visible = true;
     }
@@ -54,6 +55,10 @@ Rectangle {
         magView.setReference(reference);
         magView.scrollDocumentViewToCurrentReference();
         screenView.changeScreen(screenModel.references);
+    }
+
+    function saveSession() {
+        sessionInterface.saveDefaultSession();
     }
 
     Keys.forwardTo: [
@@ -164,6 +169,45 @@ Rectangle {
                 color: "#646464"
             }
 
+            SessionInterface {
+                id: sessionInterface
+
+                function loadDefaultSession() {
+                    var windowList = getWindowList();
+                    var count = windowList.length
+                    for (var i=0; i < count; ++i) {
+                        var window = windowList[i];
+                        var modules = getWindowModuleList(window);
+                        var key = getWindowKey(window);
+                        windowManager.openWindow("", modules, key);
+                    }
+                    var color = getColorTheme();
+                    btStyle.setStyle(color);
+                    var winMode = getWindowArrangementMode();
+                    windowManager.windowArrangement = winMode;
+                }
+
+                function saveDefaultSession() {
+                    console.log("save default session");
+                    var color = btStyle.getStyle();
+                    setColorTheme(color);
+                    var winMode = windowManager.windowArrangement;
+                    setWindowArrangementMode(winMode);
+                    var windowList = [];
+                    var count = windowManager.getWindowCount();
+                    for (var i=0; i<count; ++i) {
+                        var win = i.toString();
+                        windowList[i] = win;
+                        var window = windowManager.getWindow(i);
+                        var moduleList = window.getModuleNames();
+                        sessionInterface.setWindowModuleList(i, moduleList);
+                        var key = window.getReference();
+                        sessionInterface.setWindowKey(i, key);
+                    }
+                    sessionInterface.setWindowList(windowList);
+                }
+            }
+
             WindowManager {
                 id: windowManager
 
@@ -172,7 +216,7 @@ Rectangle {
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
                 color: btStyle.textBackgroundColor
-                visible: false
+                visible: true
 
                 onWindowMenus: {
                     windowMenus.theWindow = window
@@ -327,6 +371,7 @@ Rectangle {
         background: btStyle.toolbarColor
         text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
                    "There are currently no documents. Do you want to install documents now?")
+        visible: false
         onFinished: {
             startupBookshelfManager.visible = false;
             if (answer == true) {
@@ -856,5 +901,4 @@ Rectangle {
             copyVerses.visible = true;
         }
     }
-
 }

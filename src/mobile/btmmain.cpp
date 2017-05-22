@@ -29,7 +29,6 @@
 #include "mobile/bibletimeapp.h"
 #include "mobile/config/btmconfig.h"
 #include "mobile/models/searchmodel.h"
-#include "mobile/sessionmanager/sessionmanager.h"
 #include "mobile/ui/btstyle.h"
 #include "mobile/ui/btbookmarkinterface.h"
 #include "mobile/ui/btsearchinterface.h"
@@ -37,6 +36,7 @@
 #include "mobile/ui/chooserinterface.h"
 #include "mobile/ui/installinterface.h"
 #include "mobile/ui/moduleinterface.h"
+#include "mobile/ui/sessioninterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
 #include "util/btassert.h"
@@ -44,8 +44,8 @@
 #include "util/findqmlobject.h"
 
 
-btm::ViewManager* mgr = nullptr;
-btm::SessionManager* sessionMgr = nullptr;
+static btm::ViewManager* mgr = nullptr;
+static QQuickItem * s_rootObject = nullptr;
 static QFont defaultFont;
 
 void register_gml_classes() {
@@ -58,13 +58,13 @@ void register_gml_classes() {
     qmlRegisterType<btm::InstallInterface>("BibleTime", 1, 0, "InstallInterface");
     qmlRegisterType<btm::ModuleInterface>("BibleTime", 1, 0, "ModuleInterface");
     qmlRegisterType<btm::ChooserInterface>("BibleTime", 1, 0, "ChooserInterface");
+    qmlRegisterType<btm::SessionInterface>("BibleTime", 1, 0, "SessionInterface");
     qmlRegisterType<btm::SearchModel>("BibleTime", 1, 0, "SearchModel");
     qmlRegisterType<btm::BtSearchInterface>("BibleTime", 1, 0, "BtSearchInterface");
 }
 
 void saveSession() {
-    if (sessionMgr)
-        sessionMgr->saveDefaultSession();
+    QMetaObject::invokeMethod(s_rootObject, "saveSession");
 }
 
 btm::ViewManager* getViewManager() {
@@ -189,11 +189,8 @@ int main(int argc, char *argv[]) {
     btm::BibleTime btm;
 
     mgr = new btm::ViewManager;
+    s_rootObject = mgr->getViewer()->rootObject();
     mgr->show();
-    sessionMgr = new btm::SessionManager();
-
-    sessionMgr->loadDefaultSession();
-
     int rtn = app.exec();
     saveSession();
     return rtn;

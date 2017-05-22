@@ -596,6 +596,10 @@ static QString getEnglishKey(CSwordKey* m_key) {
     }
 }
 
+QString BtWindowInterface::getEnglishReference() const {
+    return getEnglishKey(m_key);
+}
+
 void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
     const QString windowKey = QString::number(windowIndex);
     const QString windowGroup = "window/" + windowKey + '/';

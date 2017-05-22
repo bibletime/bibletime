@@ -65,6 +65,10 @@ Rectangle {
         return windows.length;
     }
 
+    function getWindow(index) {
+        return windows[index];
+    }
+
     function saveWindowStateToConfig(windowIndex) {
         var window = windows[windowIndex];
         window.saveWindowStateToConfig(windowIndex);

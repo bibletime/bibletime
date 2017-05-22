@@ -68,6 +68,7 @@ class BtStyle : public QObject {
 
 public:
     Q_INVOKABLE void setStyle(int style);
+    Q_INVOKABLE int getStyle();
 
     enum Style {
         darkTheme = 1,

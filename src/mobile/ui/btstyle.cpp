@@ -83,13 +83,17 @@ static void emitChanged() {
     }
 }
 
-int BtStyle::getCurrentStyle() {
+int BtStyle::getStyle() {
     return currentStyle;
 }
 
 void BtStyle::setStyle(int style) {
     setCurrentStyle(style);
     emitChanged();
+}
+
+int BtStyle::getCurrentStyle() {
+    return currentStyle;
 }
 
 void BtStyle::setCurrentStyle(int style) {

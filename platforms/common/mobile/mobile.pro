@@ -18,7 +18,6 @@ SOURCES += \
     ../../../src/mobile/config/btmconfig.cpp \
     ../../../src/mobile/models/roleitemmodel.cpp \
     ../../../src/mobile/models/searchmodel.cpp \
-    ../../../src/mobile/sessionmanager/sessionmanager.cpp \
     ../../../src/mobile/ui/btbookmarkinterface.cpp \
     ../../../src/mobile/ui/btsearchinterface.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
@@ -28,6 +27,7 @@ SOURCES += \
     ../../../src/mobile/ui/indexthread.cpp \
     ../../../src/mobile/ui/installinterface.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
+    ../../../src/mobile/ui/sessioninterface.cpp \
     ../../../src/mobile/ui/chooserinterface.cpp \
     ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
@@ -44,7 +44,6 @@ HEADERS += \
     ../../../src/mobile/ui/indexthread.h \
     ../../../src/mobile/models/roleitemmodel.h \
     ../../../src/mobile/models/searchmodel.h \
-    ../../../src/mobile/sessionmanager/sessionmanager.h \
     ../../../src/mobile/ui/btbookmarkinterface.h \
     ../../../src/mobile/ui/btsearchinterface.h \
     ../../../src/mobile/ui/btstyle.h \
@@ -53,6 +52,7 @@ HEADERS += \
     ../../../src/mobile/ui/gridchooser.h \
     ../../../src/mobile/ui/installinterface.h \
     ../../../src/mobile/ui/moduleinterface.h \
+    ../../../src/mobile/ui/sessioninterface.h \
     ../../../src/mobile/ui/chooserinterface.h \
     ../../../src/mobile/ui/qtquick2applicationviewer.h \
     ../../../src/mobile/ui/treechoosermodel.h \
@@ -114,6 +114,7 @@ lupdate_only {
     SOURCES += ../../../src/mobile/ui/btwindowinterface.cpp
     SOURCES += ../../../src/mobile/ui/chooserinterface.cpp
     SOURCES += ../../../src/mobile/ui/installinterface.cpp
+    SOURCES += ../../../src/mobile/ui/sessionlinterface.cpp
     SOURCES += ../../../src/mobile/ui/moduleinterface.cpp
     SOURCES += ../../../src/mobile/bookshelfmanager/installsources.cpp
 }

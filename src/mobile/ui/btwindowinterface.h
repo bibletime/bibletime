@@ -72,6 +72,7 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(QString      prompt                  READ getPrompt NOTIFY promptChanged)
     Q_PROPERTY(QString      reference               READ getReference WRITE setReference NOTIFY referenceChange)
+    Q_PROPERTY(QString      englishReference        READ getEnglishReference NOTIFY referenceChange)
     Q_PROPERTY(QStringList  references              READ getReferences NOTIFY referencesChanged)
     Q_PROPERTY(QString      referencesViewTitle     READ getReferencesViewTitle NOTIFY referencesViewTitleChanged)
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
@@ -121,6 +122,7 @@ public:
     int getNumModules() const;
     QString getPrompt() const;
     QString getReference() const;
+    QString getEnglishReference() const;
     QStringList getReferences() const;
     QString getReferencesViewTitle() const;
     QVariant getTextModel();
