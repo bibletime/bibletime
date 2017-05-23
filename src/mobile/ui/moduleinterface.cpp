@@ -25,7 +25,6 @@
 #include <QQmlProperty>
 #include <QCoreApplication>
 #include "btwindowinterface.h"
-#include "gridchooser.h"
 
 namespace btm {
 

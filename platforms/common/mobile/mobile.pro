@@ -23,15 +23,12 @@ SOURCES += \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btmmoduletextfilter.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
-    ../../../src/mobile/ui/gridchooser.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
     ../../../src/mobile/ui/installinterface.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
     ../../../src/mobile/ui/sessioninterface.cpp \
     ../../../src/mobile/ui/chooserinterface.cpp \
-    ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
-    ../../../src/mobile/ui/viewmanager.cpp \
     ../../../src/mobile/util/messagedialog.cpp
 
 HEADERS += \
@@ -48,14 +45,11 @@ HEADERS += \
     ../../../src/mobile/ui/btstyle.h \
     ../../../src/mobile/ui/btmmoduletextfilter.h \
     ../../../src/mobile/ui/btwindowinterface.h \
-    ../../../src/mobile/ui/gridchooser.h \
     ../../../src/mobile/ui/installinterface.h \
     ../../../src/mobile/ui/moduleinterface.h \
     ../../../src/mobile/ui/sessioninterface.h \
     ../../../src/mobile/ui/chooserinterface.h \
-    ../../../src/mobile/ui/qtquick2applicationviewer.h \
     ../../../src/mobile/ui/treechoosermodel.h \
-    ../../../src/mobile/ui/viewmanager.h \
     ../../../src/mobile/util/messagedialog.h 
 
 OTHER_FILES += \

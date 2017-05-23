@@ -102,8 +102,6 @@ Rectangle {
             Repeater {
                 id: repeater
 
-                model: gridChooserModel
-
                 GridChooserButton {
                     id: button
 

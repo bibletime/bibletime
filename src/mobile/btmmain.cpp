@@ -12,6 +12,7 @@
 
 #include <QGuiApplication>
 #include <QQuickItem>
+#include <QQmlApplicationEngine>
 #include <QQmlDebuggingEnabler>
 #include <QMetaType>
 #include <QStyleHints>
@@ -32,13 +33,10 @@
 #include "mobile/ui/installinterface.h"
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/sessioninterface.h"
-#include "mobile/ui/qtquick2applicationviewer.h"
-#include "mobile/ui/viewmanager.h"
 #include "util/btassert.h"
 #include "util/directory.h"
 
-static btm::ViewManager* mgr = nullptr;
-static QQuickItem * s_rootObject = nullptr;
+static QObject* s_rootObject = nullptr;
 static QFont defaultFont;
 
 void register_gml_classes() {
@@ -125,6 +123,8 @@ int main(int argc, char *argv[]) {
     QStyleHints * sh = app.styleHints();
     sh->setStartDragDistance(50);
 
+    btm::BtStyle::setCurrentStyle(btm::BtStyle::darkTheme);
+
     registerMetaTypes();
 
     defaultFont = app.font();
@@ -177,9 +177,10 @@ int main(int argc, char *argv[]) {
 
     btm::BibleTime btm;
 
-    mgr = new btm::ViewManager;
-    s_rootObject = mgr->getViewer()->rootObject();
-    mgr->show();
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/share/bibletime/qml/main.qml")));
+    s_rootObject = engine.rootObjects().at(0);
+
     int rtn = app.exec();
     saveSession();
     return rtn;

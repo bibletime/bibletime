@@ -16,13 +16,14 @@ import QtQml.Models 2.2
 import QtQuick.Window 2.1
 import BibleTime 1.0
 
-Rectangle {
+Window {
     id: root
 
     color: "#404040"
     property int opacitypopup: 0
     property QtObject component: null;
     property Item window: null;
+    visible: true
 
     Component.onCompleted: {
         setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
@@ -61,51 +62,53 @@ Rectangle {
         sessionInterface.saveDefaultSession();
     }
 
-    Keys.forwardTo: [
-        searchResultsMenu,
-        windowArrangementMenus,
-        viewWindowsMenus,
-        windowMenus,
-        mainMenus,
-        settingsMenus,
-        bookmarkManagerMenus,
-        colorThemeMenus,
-        gridChooser,
-        moduleChooser,
-        magView,
-        searchResults,
-        search,
-        defaultDoc,
-        installManagerChooser,
-        keyNameChooser,
-        treeChooser,
-        aboutDialog,
-        uiFontPointSize,
-        setFontDialog,
-        copyVerses,
-        parentBookmarkFolders,
-        bookmarkFolders,
-        bookmarkManager,
-        addBookmark,
-        addFolder
-    ]
+    Item {
+        id: keyReceiver
 
-    Keys.onReleased: {
-        if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
+        focus: true
+        Keys.forwardTo: [
+            searchResultsMenu,
+            windowArrangementMenus,
+            viewWindowsMenus,
+            windowMenus,
+            mainMenus,
+            settingsMenus,
+            bookmarkManagerMenus,
+            colorThemeMenus,
+            gridChooser,
+            moduleChooser,
+            magView,
+            searchResults,
+            search,
+            defaultDoc,
+            installManagerChooser,
+            keyNameChooser,
+            treeChooser,
+            aboutDialog,
+            uiFontPointSize,
+            setFontDialog,
+            copyVerses,
+            parentBookmarkFolders,
+            bookmarkFolders,
+            bookmarkManager,
+            addBookmark,
+            addFolder
+        ]
+
+        Keys.onReleased: {
+            if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
+                event.accepted = true;
+                quitQuestion.visible = true;
+            }
+        }
+
+        Keys.onMenuPressed: {
             event.accepted = true;
-            quitQuestion.visible = true;
+            mainMenus.visible = ! mainMenus.visible
         }
     }
-
-    Keys.onMenuPressed: {
-        event.accepted = true;
-        mainMenus.visible = ! mainMenus.visible
-    }
-
     width:  400
     height: 450
-
-    rotation: 0
 
     ChooseReference {
         id: chooseReference
@@ -139,6 +142,7 @@ Rectangle {
 
             width: screenView.width
             height: screenView.height
+            Keys.onReleased: console.log("mainScreen key")
 
             MainToolbar {
                 id: mainToolbar
@@ -698,7 +702,16 @@ Rectangle {
 
     About {
         id: aboutDialog
+
+        focus: true
         visible: false
+        Keys.onReleased: {
+            console.log("keys")
+            if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
+                aboutDialog.visible = false;
+                event.accepted = true;
+            }
+        }
     }
 
     DefaultDoc {

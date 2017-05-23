@@ -40,7 +40,6 @@
 #include "backend/rendering/chtmlexportrendering.h"
 #include "backend/rendering/cplaintextexportrendering.h"
 #include "mobile/btmmain.h"
-#include "mobile/ui/viewmanager.h"
 #include "util/btconnect.h"
 
 namespace btm {
