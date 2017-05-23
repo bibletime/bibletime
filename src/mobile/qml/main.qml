@@ -19,37 +19,19 @@ import BibleTime 1.0
 Window {
     id: root
 
-    color: "#404040"
     property int opacitypopup: 0
     property QtObject component: null;
     property Item window: null;
-    visible: true
-
-    Component.onCompleted: {
-        setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
-        setFontDialog.textFontChanged.connect(magView.updateTextFont)
-        sessionInterface.loadDefaultSession();
-        if (installInterface.installedModulesCount() == 0)
-            startupBookshelfManager.visible = true;
-    }
-
-    ListModel {
-        id: viewWindowsModel
-
-        ListElement { title: ""; action: "" }
-    }
 
     function installModules() {
         installManagerChooser.open();
     }
-
     function startSearch() {
         var moduleNames = windowManager.getUniqueModuleNames();
         searchModel.appendModuleChoices(moduleNames);
         search.searchText = "";
         screenView.changeScreen(screenModel.search);
     }
-
     function viewReferencesScreen(moduleName, reference) {
         magView.initialize();
         magView.setModule(moduleName);
@@ -57,9 +39,307 @@ Window {
         magView.scrollDocumentViewToCurrentReference();
         screenView.changeScreen(screenModel.references);
     }
-
     function saveSession() {
         sessionInterface.saveDefaultSession();
+    }
+
+    color: "#404040"
+    height: 450
+    visible: true
+    width:  400
+
+    Component.onCompleted: {
+        setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
+        setFontDialog.textFontChanged.connect(magView.updateTextFont)
+        sessionInterface.loadDefaultSession();
+        if (installInterface.installedModulesCount() == 0)
+            installManagerStartup.visible = true;
+    }
+
+    About {
+        id: aboutDialog
+
+        focus: true
+        visible: false
+        Keys.onReleased: {
+            if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
+                aboutDialog.visible = false;
+                event.accepted = true;
+            }
+        }
+    }
+
+    AddBookmark {
+        id: addBookmark
+
+        visible: false
+        folderName: bookmarkFolders.currentFolderName
+        onBookmarkFolders: {
+            bookmarkFolders.visible = true;
+        }
+        onAddTheBookmark: {
+            bookmarkFolders.addTheReference(addBookmark.reference, addBookmark.moduleName);
+        }
+    }
+
+    AddFolder {
+        id: addFolder
+
+        z: 101
+        visible: false
+        parentFolderName: bookmarkFoldersParent.currentFolderName
+        onShowFolders: {
+            bookmarkFoldersParent.visible = true;
+        }
+        onAddFolder: {
+            bookmarkFoldersParent.addFolder(folderName);
+        }
+        onFolderWasAdded: {
+            bookmarkFolders.expandAll();
+        }
+    }
+
+    BookmarkFolders {
+        id: bookmarkFolders
+        visible: false
+        allowNewFolders: true
+        z:100
+        onNewFolder: {
+            addFolder.visible = true;
+        }
+
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFolders.visible == true) {
+                bookmarkFolders.visible = false;
+                event.accepted = true;
+            }
+        }
+    }
+
+    BookmarkFolders {
+        id: bookmarkFoldersParent
+
+        visible: false
+        allowNewFolders: false
+        z:2
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFoldersParent.visible == true) {
+                bookmarkFoldersParent.visible = false;
+                event.accepted = true;
+            }
+        }
+    }
+
+    BookmarkManager {
+        id: bookmarkManager
+
+        visible: false
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkManager.visible == true) {
+                bookmarkManager.visible = false;
+                event.accepted = true;
+            }
+        }
+        onBookmarkItemClicked: {
+            bookmarkManagerMenus.visible = true;
+        }
+        onOpenReference: {
+            windowMenus.theWindow.setModule(module);
+            windowMenus.theWindow.setKey(reference);
+            windowMenus.theWindow.setHistoryPoint();
+            bookmarkManager.visible = false;
+        }
+    }
+
+    Menus {
+        id: bookmarkManagerMenus
+
+        property variant theWindow
+
+        function doAction(action) {
+            bookmarkManagerMenus.visible = false;
+            if (action == "open") {
+                windowMenus.theWindow.setModule(bookmarkManager.module);
+                windowMenus.theWindow.setKey(bookmarkManager.reference);
+                bookmarkManager.visible = false;
+                return;
+            }
+            bookmarkManager.doContextMenu(action);
+        }
+
+        model: bookmarkManager.contextMenuModel
+        z:2
+
+        Component.onCompleted: menuSelected.connect(bookmarkManagerMenus.doAction)
+    }
+
+    BtStyle {
+        id: btStyle
+    }
+
+    ChooseReference {
+        id: chooseReference
+    }
+
+    Menus {
+        id: colorThemeMenus
+
+        function doAction(action) {
+            colorThemeMenus.visible = false;
+            if (action == "dark") {
+                btStyle.setStyle(1)
+            }
+            else if (action == "lightblue") {
+                btStyle.setStyle(2)
+            }
+            else if (action == "crimson") {
+                btStyle.setStyle(3)
+            }
+        }
+
+        model: colorThemeModel
+
+        Component.onCompleted: menuSelected.connect(colorThemeMenus.doAction)
+    }
+
+    ListModel {
+        id: colorThemeModel
+
+        ListElement { title: QT_TR_NOOP("Dark");                  action: "dark" }
+        ListElement { title: QT_TR_NOOP("Light Blue");            action: "lightblue" }
+        ListElement { title: QT_TR_NOOP("Crimson");               action: "crimson" }
+    }
+
+    CopyVerses {
+        id: copyVerses
+
+        function open() {
+            var moduleNames = windowMenus.theWindow.getModuleNames();
+            moduleName = moduleNames[0];
+            theWindow = windowMenus.theWindow;
+            copyVerses.visible = true;
+        }
+
+        visible: false
+        onVisibleChanged: {
+            mainToolbar.enabled = ! copyVerses.visible
+            windowManager.toolbarsEnabled = ! copyVerses.visible
+        }
+
+    }
+
+    DefaultDoc {
+        id: defaultDoc
+        visible: false
+    }
+
+    GridChooser {
+        id: gridChooser
+
+        width: parent.width
+        height: parent.height
+        visible: false
+        z: 2
+    }
+
+    Question {
+        id: indexQuestion
+        background: btStyle.toolbarColor
+        text: qsTr("Some of the modules you want to search need to be indexed. Do you want to index them now?")
+        onFinished: {
+            indexQuestion.visible = false;
+
+            if (answer == true) {
+                indexProgress.visible = true;
+            } else {
+                screenView.changeScreen(screenModel.main);
+            }
+        }
+    }
+
+    Progress {
+        id: indexProgress
+
+        value: 0
+        text: ""
+        minimumValue: 0
+        maximumValue: 100
+        width:parent.width * 0.85
+        height: btStyle.pixelsPerMillimeterY * 30
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+        onVisibleChanged: {
+            if (visible == true) {
+                searchResults.indexModules();
+            }
+        }
+        onCancel: {
+            searchResults.cancel();
+        }
+    }
+
+    InstallInterface {
+        id: installInterface
+
+        onUpdateCurrentViews: {
+            var sIndex = installInterface.searchSource(source);
+            installManagerChooser.sourceIndex = sIndex;
+            var cIndex = installInterface.searchCategory(category);
+            installManagerChooser.categoryIndex = cIndex;
+            var lIndex = installInterface.searchLanguage(language);
+            installManagerChooser.languageIndex = lIndex;
+        }
+    }
+
+    InstallManagerChooser {
+        id: installManagerChooser
+
+        width: parent.width;
+        height: parent.height
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+    }
+
+    Question {
+        id: installManagerStartup
+
+        background: btStyle.toolbarColor
+        text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
+                   "There are currently no documents. Do you want to install documents now?")
+        visible: false
+        onFinished: {
+            installManagerStartup.visible = false;
+            if (answer == true) {
+                installManagerChooser.refreshOnOpen = true;
+                installModules();
+            }
+        }
+    }
+
+    Progress {
+        id: installProgress
+
+        value: installInterface.progressValue
+        minimumValue: installInterface.progressMin
+        maximumValue: installInterface.progressMax
+        width:parent.width * 0.85
+        height: btStyle.pixelsPerMillimeterY * 30
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        text: installInterface.progressText
+        visible: installInterface.progressVisible
+        onCancel: installManagerChooser.cancel();
+    }
+
+    KeyNameChooser {
+        id: keyNameChooser
+
+        width: parent.width
+        height: parent.height
+        anchors.top: parent.top
+        visible: false
     }
 
     Item {
@@ -88,7 +368,7 @@ Window {
             uiFontPointSize,
             setFontDialog,
             copyVerses,
-            parentBookmarkFolders,
+            bookmarkFoldersParent,
             bookmarkFolders,
             bookmarkManager,
             addBookmark,
@@ -107,15 +387,64 @@ Window {
             mainMenus.visible = ! mainMenus.visible
         }
     }
-    width:  400
-    height: 450
 
-    ChooseReference {
-        id: chooseReference
+    ListModel {
+        id: mainMenusModel
+
+        ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
+        ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
+        ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
+        ListElement { title: QT_TR_NOOP("Settings");                  action: "settings" }
+        ListElement { title: QT_TR_NOOP("About");                     action: "about" }
     }
 
-    VerseChooser {
-        id: verseChooser
+    Menus {
+        id: mainMenus
+
+        Component.onCompleted: menuSelected.connect(mainMenus.doAction)
+
+        function doAction(action) {
+            mainMenus.visible = false;
+            if (action == "newWindow") {
+                windowManager.newWindow();
+            }
+            else if (action == "view window") {
+                windowManager.createWindowMenus(viewWindowsModel);
+                viewWindowsMenus.visible = true;
+            }
+            else if (action == "install") {
+                installModules();
+            }
+            else if (action == "about") {
+                aboutDialog.visible = true;
+            }
+            else if (action == "settings") {
+                settingsMenus.visible = true;
+            }
+        }
+
+        model: mainMenusModel
+        topMenuMargin: 100
+    }
+
+    ModuleChooser {
+        id: moduleChooser
+
+        visible: false
+        width: Math.min(parent.height, parent.width);
+        height: parent.height
+        anchors.centerIn: parent
+        z: 2
+    }
+
+    Question {
+        id: quitQuestion
+        background: btStyle.toolbarColor
+        text: qsTranslate("Quit", "Are you sure you want to quit?")
+        onFinished: {
+            if (answer == true)
+                Qt.quit();
+        }
     }
 
     ObjectModel {
@@ -131,7 +460,6 @@ Window {
 
             width: screenView.width
             height: screenView.height
-
             onMagFinished: {
                 screenView.changeScreen(screenModel.main);
             }
@@ -142,7 +470,6 @@ Window {
 
             width: screenView.width
             height: screenView.height
-            Keys.onReleased: console.log("mainScreen key")
 
             MainToolbar {
                 id: mainToolbar
@@ -220,7 +547,6 @@ Window {
                 anchors.bottom: parent.bottom
                 color: btStyle.textBackgroundColor
                 visible: true
-
                 onWindowMenus: {
                     windowMenus.theWindow = window
                     window.createMenus(windowMenusModel)
@@ -235,11 +561,9 @@ Window {
             z:2
             width: screenView.width
             height: screenView.height
-
             onResultsMenuRequested: {
                 searchResultsMenu.visible = true;
             }
-
             onResultsFinished: {
                 screenView.changeScreen(screenModel.main);
             }
@@ -260,6 +584,14 @@ Window {
         Search {
             id: search
 
+            function openSearchResults() {
+                searchResults.searchText = search.searchText;
+                searchResults.findChoice = search.findChoice;
+                searchResults.moduleList = search.moduleList;
+                searchResults.performSearch();
+                screenView.changeScreen(screenModel.results);
+            }
+
             width: screenView.width
             height: screenView.height
             moduleChoices: searchModel
@@ -273,14 +605,6 @@ Window {
             }
             onSearchFinished: {
                 screenView.changeScreen(screenModel.main);
-            }
-
-            function openSearchResults() {
-                searchResults.searchText = search.searchText;
-                searchResults.findChoice = search.findChoice;
-                searchResults.moduleList = search.moduleList;
-                searchResults.performSearch();
-                screenView.changeScreen(screenModel.results);
             }
         }
     }
@@ -305,7 +629,6 @@ Window {
         currentIndex: screenModel.main
         maximumFlickVelocity: 4000
         highlightMoveDuration: 4000
-
         onCurrentIndexChanged: {
             magView.initialize();
         }
@@ -319,118 +642,9 @@ Window {
         }
     }
 
-    GridChooser {
-        id: gridChooser
-
-        objectName: "gridChooser"
-        width: parent.width
-        height: parent.height
-        visible: false
-        z: 2
-    }
-
-    BtStyle {
-        id: btStyle
-    }
-
-    ModuleChooser {
-        id: moduleChooser
-
-        objectName: "moduleChooser"
-        visible: false
-        width: Math.min(parent.height, parent.width);
-        height: parent.height
-        anchors.centerIn: parent
-        z: 2
-    }
-
-    TreeChooser {
-        id: treeChooser
-
-        objectName: "treeChooser"
-        width:parent.width
-        height: parent.height
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-        path: ""
-        visible: false
-        z: 100
-        onNext: {
-            chooseReference.next(childText);
-        }
-        onBack: {
-            chooseReference.back();
-        }
-    }
-
-    KeyNameChooser {
-        id: keyNameChooser
-
-        objectName: "keyNameChooser"
-        width: parent.width
-        height: parent.height
-        anchors.top: parent.top
-        visible: false
-    }
-
-    Question {
-        id: startupBookshelfManager
-
-        objectName: "startupBookshelfManager"
-        background: btStyle.toolbarColor
-        text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
-                   "There are currently no documents. Do you want to install documents now?")
-        visible: false
-        onFinished: {
-            startupBookshelfManager.visible = false;
-            if (answer == true) {
-                installManagerChooser.refreshOnOpen = true;
-                installModules();
-            }
-        }
-    }
-
-
-    Question {
-        id: indexQuestion
-        background: btStyle.toolbarColor
-        text: qsTr("Some of the modules you want to search need to be indexed. Do you want to index them now?")
-        onFinished: {
-            indexQuestion.visible = false;
-
-            if (answer == true) {
-                indexProgress.visible = true;
-            } else {
-                screenView.changeScreen(screenModel.main);
-            }
-        }
-    }
-
-    Progress {
-        id: indexProgress
-
-        objectName: "indexProgress"
-        value: 0
-        text: ""
-        minimumValue: 0
-        maximumValue: 100
-        width:parent.width * 0.85
-        height: btStyle.pixelsPerMillimeterY * 30
-        anchors.centerIn: parent
-        anchors.top: parent.top
-        visible: false
-        onVisibleChanged: {
-            if (visible == true) {
-                searchResults.indexModules();
-            }
-        }
-        onCancel: {
-            searchResults.cancel();
-        }
-    }
 
     ListModel {
-        id:searchModel
+        id: searchModel
 
         function appendModuleChoices(choices) {
             searchModel.clear();
@@ -448,168 +662,51 @@ Window {
                 searchModel.append({"text": choice , "value": choice})
             }
         }
+
         ListElement { text: "ESV"; value: "ESV" }
     }
 
-    InstallInterface {
-        id: installInterface
+    Menus {
+        id: searchResultsMenu
+        model: searchResultsMenuModel
 
-        onUpdateCurrentViews: {
-            var sIndex = installInterface.searchSource(source);
-            installManagerChooser.sourceIndex = sIndex;
-            var cIndex = installInterface.searchCategory(category);
-            installManagerChooser.categoryIndex = cIndex;
-            var lIndex = installInterface.searchLanguage(language);
-            installManagerChooser.languageIndex = lIndex;
+        function doAction(action) {
+            searchResultsMenu.visible = false;
+            if (action == "newWindow") {
+                var module = searchResults.getModule();
+                var reference = searchResults.getReference();
+                screenView.changeScreen(screenModel.main);
+                windowManager.newWindowWithReference(module, reference);
+            }
         }
-    }
 
-    InstallManagerChooser {
-        id: installManagerChooser
-
-        objectName: "installManagerChooser"
-        width: parent.width;
-        height: parent.height
-        anchors.centerIn: parent
-        anchors.top: parent.top
-        visible: false
-    }
-
-    Progress {
-        id: installProgress
-
-        objectName: "progress"
-        value: installInterface.progressValue
-        minimumValue: installInterface.progressMin
-        maximumValue: installInterface.progressMax
-        width:parent.width * 0.85
-        height: btStyle.pixelsPerMillimeterY * 30
-        anchors.centerIn: parent
-        anchors.top: parent.top
-        text: installInterface.progressText
-        visible: installInterface.progressVisible
-        onCancel: installManagerChooser.cancel();
+        Component.onCompleted: menuSelected.connect(searchResultsMenu.doAction)
     }
 
     ListModel {
-        id: mainMenusModel
+        id: searchResultsMenuModel
 
         ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
-        ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
-        ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
-        ListElement { title: QT_TR_NOOP("Settings");                  action: "settings" }
-        ListElement { title: QT_TR_NOOP("About");                     action: "about" }
     }
 
-    Menus {
-        id: mainMenus
+    SetFont {
+        id: setFontDialog
 
-        Component.onCompleted: menuSelected.connect(mainMenus.doAction)
-
-        function doAction(action) {
-            mainMenus.visible = false;
-            if (action == "newWindow") {
-                windowManager.newWindow();
-            }
-            else if (action == "view window") {
-                windowManager.createWindowMenus(viewWindowsModel);
-                viewWindowsMenus.visible = true;
-            }
-            else if (action == "install") {
-                installModules();
-            }
-            else if (action == "about") {
-                aboutDialog.visible = true;
-            }
-            else if (action == "settings") {
-                settingsMenus.visible = true;
-            }
+        function open() {
+            var index = windowManager.getTopWindowIndex();
+            language = windowManager.getLanguageForWindow(index);
+            setFontDialog.visible = true;
         }
 
-        model: mainMenusModel
-        topMenuMargin: 100
-    }
-
-    ListModel {
-        id: windowArrangementModel
-
-        ListElement { title: QT_TR_NOOP("Single");                  action: "single" }
-        ListElement { title: QT_TR_NOOP("Tabbed");                  action: "tabbed" }
-        ListElement { title: QT_TR_NOOP("Auto-tile");               action: "autoTile" }
-        ListElement { title: QT_TR_NOOP("Auto-tile horizontally");  action: "autoTileHor" }
-        ListElement { title: QT_TR_NOOP("Auto-tile vertically");    action: "autoTileVer" }
-    }
-
-    Menus {
-        id: windowArrangementMenus
-
-        Component.onCompleted: menuSelected.connect(windowArrangementMenus.doAction)
-
-        function doAction(action) {
-            windowArrangementMenus.visible = false;
-            if (action == "single") {
-                windowManager.setWindowArrangement(windowManager.single);
-            }
-            else if (action == "tabbed") {
-                windowManager.setWindowArrangement(windowManager.tabLayout);
-            }
-            else if (action == "autoTile") {
-                windowManager.setWindowArrangement(windowManager.autoTile);
-            }
-            else if (action == "autoTileHor") {
-                windowManager.setWindowArrangement(windowManager.autoTileHor);
-            }
-            else if (action == "autoTileVer") {
-                windowManager.setWindowArrangement(windowManager.autoTileVer);
-            }
+        visible: false
+        onVisibleChanged: {
+            mainToolbar.enabled = ! setFontDialog.visible
+            windowManager.toolbarsEnabled = ! setFontDialog.visible
         }
-
-        model: windowArrangementModel
-    }
-
-    ListModel {
-        id: colorThemeModel
-
-        ListElement { title: QT_TR_NOOP("Dark");                  action: "dark" }
-        ListElement { title: QT_TR_NOOP("Light Blue");            action: "lightblue" }
-        ListElement { title: QT_TR_NOOP("Crimson");               action: "crimson" }
-    }
-
-    Menus {
-        id: colorThemeMenus
-
-        Component.onCompleted: menuSelected.connect(colorThemeMenus.doAction)
-
-        function doAction(action) {
-            colorThemeMenus.visible = false;
-            if (action == "dark") {
-                btStyle.setStyle(1)
-            }
-            else if (action == "lightblue") {
-                btStyle.setStyle(2)
-            }
-            else if (action == "crimson") {
-                btStyle.setStyle(3)
-            }
-        }
-
-        model: colorThemeModel
-    }
-
-    ListModel {
-        id: settingsModel
-
-        ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
-        ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
-        ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
-        ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
-        ListElement { title: QT_TR_NOOP("Default Documents");         action: "defaultDoc" }
     }
 
     Menus {
         id: settingsMenus
-
-        Component.onCompleted: menuSelected.connect(settingsMenus.doAction)
 
         function doAction(action) {
             settingsMenus.visible = false;
@@ -631,42 +728,35 @@ Window {
         }
 
         model: settingsModel
-    }
 
-    Menus {
-        id: viewWindowsMenus
-
-        model: viewWindowsModel
-        visible: false
-        Component.onCompleted: menuSelected.connect(viewWindowsMenus.doAction)
-
-        function doAction(action) {
-            viewWindowsMenus.visible = false;
-            var index = Number(action)
-            windowManager.setCurrentTabbedWindow(index);
-        }
+        Component.onCompleted: menuSelected.connect(settingsMenus.doAction)
     }
 
     ListModel {
-        id: searchResultsMenuModel
+        id: settingsModel
 
-        ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
+        ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
+        ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
+        ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
+        ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
+        ListElement { title: QT_TR_NOOP("Default Documents");         action: "defaultDoc" }
     }
 
-    Menus {
-        id: searchResultsMenu
-        model: searchResultsMenuModel
+    TreeChooser {
+        id: treeChooser
 
-        Component.onCompleted: menuSelected.connect(searchResultsMenu.doAction)
-
-        function doAction(action) {
-            searchResultsMenu.visible = false;
-            if (action == "newWindow") {
-                var module = searchResults.getModule();
-                var reference = searchResults.getReference();
-                screenView.changeScreen(screenModel.main);
-                windowManager.newWindowWithReference(module, reference);
-            }
+        width:parent.width
+        height: parent.height
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        path: ""
+        visible: false
+        z: 100
+        onNext: {
+            chooseReference.next(childText);
+        }
+        onBack: {
+            chooseReference.back();
         }
     }
 
@@ -675,7 +765,6 @@ Window {
 
         visible: false
         title: QT_TR_NOOP("User Interface Font Size")
-
         onVisibleChanged: {
             mainToolbar.enabled = ! uiFontPointSize.visible
             if (visible)
@@ -684,56 +773,77 @@ Window {
                 uiFontPointSize.previous = btStyle.uiFontPointSize;
             }
         }
-
         onAccepted: {
             btStyle.uiFontPointSize = pointSize
         }
     }
 
-    Question {
-        id: quitQuestion
-        background: btStyle.toolbarColor
-        text: qsTranslate("Quit", "Are you sure you want to quit?")
-        onFinished: {
-            if (answer == true)
-                Qt.quit();
-        }
+    VerseChooser {
+        id: verseChooser
     }
 
-    About {
-        id: aboutDialog
+    Menus {
+        id: viewWindowsMenus
 
-        focus: true
-        visible: false
-        Keys.onReleased: {
-            console.log("keys")
-            if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
-                aboutDialog.visible = false;
-                event.accepted = true;
-            }
+        function doAction(action) {
+            viewWindowsMenus.visible = false;
+            var index = Number(action)
+            windowManager.setCurrentTabbedWindow(index);
         }
-    }
 
-    DefaultDoc {
-        id: defaultDoc
+        model: viewWindowsModel
         visible: false
+
+        Component.onCompleted: menuSelected.connect(viewWindowsMenus.doAction)
     }
 
     ListModel {
-        id: windowMenusModel
+        id: viewWindowsModel
 
         ListElement { title: ""; action: "" }
+    }
+
+    Menus {
+        id: windowArrangementMenus
+
+        function doAction(action) {
+            windowArrangementMenus.visible = false;
+            if (action == "single") {
+                windowManager.setWindowArrangement(windowManager.single);
+            }
+            else if (action == "tabbed") {
+                windowManager.setWindowArrangement(windowManager.tabLayout);
+            }
+            else if (action == "autoTile") {
+                windowManager.setWindowArrangement(windowManager.autoTile);
+            }
+            else if (action == "autoTileHor") {
+                windowManager.setWindowArrangement(windowManager.autoTileHor);
+            }
+            else if (action == "autoTileVer") {
+                windowManager.setWindowArrangement(windowManager.autoTileVer);
+            }
+        }
+
+        model: windowArrangementModel
+
+        Component.onCompleted: menuSelected.connect(windowArrangementMenus.doAction)
+    }
+
+    ListModel {
+        id: windowArrangementModel
+
+        ListElement { title: QT_TR_NOOP("Single");                  action: "single" }
+        ListElement { title: QT_TR_NOOP("Tabbed");                  action: "tabbed" }
+        ListElement { title: QT_TR_NOOP("Auto-tile");               action: "autoTile" }
+        ListElement { title: QT_TR_NOOP("Auto-tile horizontally");  action: "autoTileHor" }
+        ListElement { title: QT_TR_NOOP("Auto-tile vertically");    action: "autoTileVer" }
     }
 
     Menus {
         id: windowMenus
 
         property variant theWindow
-
-        model: windowMenusModel
-        z:10
-
-        Component.onCompleted: menuSelected.connect(windowMenus.doAction)
 
         function doAction(action) {
             windowMenus.visible = false;
@@ -769,155 +879,17 @@ Window {
                 theWindow.debugData();
             }
         }
+
+        model: windowMenusModel
+        z:2
+
+        Component.onCompleted: menuSelected.connect(windowMenus.doAction)
+
     }
 
+    ListModel {
+        id: windowMenusModel
 
-    AddBookmark {
-        id: addBookmark
-
-        visible: false
-        folderName: bookmarkFolders.currentFolderName
-
-        onBookmarkFolders: {
-            bookmarkFolders.visible = true;
-        }
-
-        onAddTheBookmark: {
-            bookmarkFolders.addTheReference(addBookmark.reference, addBookmark.moduleName);
-        }
-    }
-
-    BookmarkFolders {
-        id: bookmarkFolders
-        visible: false
-        allowNewFolders: true
-        z:100
-
-        onNewFolder: {
-            addFolder.visible = true;
-        }
-
-        Keys.onReleased: {
-            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFolders.visible == true) {
-                bookmarkFolders.visible = false;
-                event.accepted = true;
-            }
-        }
-    }
-
-    AddFolder {
-        id: addFolder
-
-        z: 101
-        visible: false
-        parentFolderName: parentBookmarkFolders.currentFolderName
-
-        onShowFolders: {
-            parentBookmarkFolders.visible = true;
-        }
-
-        onAddFolder: {
-            parentBookmarkFolders.addFolder(folderName);
-        }
-
-        onFolderWasAdded: {
-            bookmarkFolders.expandAll();
-        }
-    }
-
-    BookmarkFolders {
-        id: parentBookmarkFolders
-        visible: false
-        allowNewFolders: false
-        z:102
-
-        Keys.onReleased: {
-            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && parentBookmarkFolders.visible == true) {
-                parentBookmarkFolders.visible = false;
-                event.accepted = true;
-            }
-        }
-    }
-
-    BookmarkManager {
-        id: bookmarkManager
-
-        visible: false
-
-        Keys.onReleased: {
-            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkManager.visible == true) {
-                bookmarkManager.visible = false;
-                event.accepted = true;
-            }
-        }
-
-        onBookmarkItemClicked: {
-            bookmarkManagerMenus.visible = true;
-        }
-
-        onOpenReference: {
-            windowMenus.theWindow.setModule(module);
-            windowMenus.theWindow.setKey(reference);
-            windowMenus.theWindow.setHistoryPoint();
-            bookmarkManager.visible = false;
-        }
-    }
-
-
-    Menus {
-        id: bookmarkManagerMenus
-
-        property variant theWindow
-
-        model: bookmarkManager.contextMenuModel
-        z:10
-
-        Component.onCompleted: menuSelected.connect(bookmarkManagerMenus.doAction)
-
-        function doAction(action) {
-            bookmarkManagerMenus.visible = false;
-            if (action == "open") {
-                windowMenus.theWindow.setModule(bookmarkManager.module);
-                windowMenus.theWindow.setKey(bookmarkManager.reference);
-                bookmarkManager.visible = false;
-                return;
-            }
-            bookmarkManager.doContextMenu(action);
-        }
-    }
-
-
-    SetFont {
-        id:setFontDialog
-
-        visible: false
-        onVisibleChanged: {
-            mainToolbar.enabled = ! setFontDialog.visible
-            windowManager.toolbarsEnabled = ! setFontDialog.visible
-        }
-
-        function open() {
-            var index = windowManager.getTopWindowIndex();
-            language = windowManager.getLanguageForWindow(index);
-            setFontDialog.visible = true;
-        }
-    }
-
-    CopyVerses {
-        id:copyVerses
-
-
-        visible: false
-        onVisibleChanged: {
-            mainToolbar.enabled = ! copyVerses.visible
-            windowManager.toolbarsEnabled = ! copyVerses.visible
-        }
-
-        function open() {
-            var moduleNames = windowMenus.theWindow.getModuleNames();
-            moduleName = moduleNames[0];
-            theWindow = windowMenus.theWindow;
-            copyVerses.visible = true;
-        }
+        ListElement { title: ""; action: "" }
     }
 }
