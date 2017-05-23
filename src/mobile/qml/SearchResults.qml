@@ -31,6 +31,8 @@ SplitView {
 
     signal resultsFinished();
     signal resultsMenuRequested();
+    signal progressTextChanged(string text);
+    signal progressValueChanged(int value);
 
     function cancel() {
         btSearchInterface.cancel();
@@ -263,5 +265,12 @@ SplitView {
 
     BtSearchInterface {
         id: btSearchInterface
+
+        onProgressTextChanged: {
+            searchResults.progressTextChanged(btSearchInterface.progressText);
+        }
+        onProgressValueChanged: {
+            searchResults.progressValueChanged(btSearchInterface.progressValue)
+        }
     }
 }

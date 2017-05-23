@@ -13,8 +13,6 @@
 #include "btsearchinterface.h"
 
 #include <QDebug>
-#include <QQuickItem>
-#include "../util/findqmlobject.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "mobile/ui/indexthread.h"
@@ -24,8 +22,10 @@
 namespace btm {
 using CSMI = QList<CSwordModuleInfo const *>;
 
-BtSearchInterface::BtSearchInterface(QObject* parent)
-    : QObject(parent), m_searchType(AndType), m_progressObject(nullptr), m_wasCancelled(false) {
+BtSearchInterface::BtSearchInterface(QObject* parent) :
+    QObject(parent),
+    m_searchType(AndType),
+    m_wasCancelled(false) {
 }
 
 BtSearchInterface::~BtSearchInterface() {
@@ -52,12 +52,13 @@ bool BtSearchInterface::modulesAreIndexed() {
 }
 
 void BtSearchInterface::slotModuleProgress(int value) {
-    if (m_progressObject != nullptr)
-        m_progressObject->setProperty("value", value);
+    m_progressValue = value;
+    emit progressValueChanged();
 }
 
 void BtSearchInterface::slotBeginModuleIndexing(const QString& moduleName) {
-    m_progressObject->setProperty("text", tr("Indexing %1").arg(moduleName));
+    m_progressText = tr("Indexing %1").arg(moduleName);
+    emit progressTextChanged();
 }
 void BtSearchInterface::slotIndexingFinished() {
     emit indexingFinished();
@@ -82,9 +83,6 @@ bool BtSearchInterface::indexModules() {
     CSMI modules = CSwordBackend::instance()->getConstPointerList(moduleList);
     bool success = true;
     m_wasCancelled = false;
-
-    if (m_progressObject == nullptr)
-        m_progressObject = findQmlObject("indexProgress");
 
     QList<CSwordModuleInfo *> nonIndexedModules;
     Q_FOREACH(CSwordModuleInfo const * const cm, modules) {
@@ -271,5 +269,14 @@ QString BtSearchInterface::getModuleName(int index) {
 void BtSearchInterface::setSearchType(int searchType) {
     m_searchType = searchType;
 }
+
+qreal BtSearchInterface::progressValue() const {
+    return m_progressValue;
+}
+
+QString BtSearchInterface::progressText() const {
+    return m_progressText;
+}
+
 
 } // end namespace

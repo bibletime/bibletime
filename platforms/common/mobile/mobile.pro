@@ -32,7 +32,6 @@ SOURCES += \
     ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
     ../../../src/mobile/ui/viewmanager.cpp \
-    ../../../src/mobile/util/findqmlobject.cpp \
     ../../../src/mobile/util/messagedialog.cpp
 
 HEADERS += \
@@ -57,7 +56,6 @@ HEADERS += \
     ../../../src/mobile/ui/qtquick2applicationviewer.h \
     ../../../src/mobile/ui/treechoosermodel.h \
     ../../../src/mobile/ui/viewmanager.h \
-    ../../../src/mobile/util/findqmlobject.h \
     ../../../src/mobile/util/messagedialog.h 
 
 OTHER_FILES += \

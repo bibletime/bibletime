@@ -188,7 +188,6 @@ Rectangle {
                 }
 
                 function saveDefaultSession() {
-                    console.log("save default session");
                     var color = btStyle.getStyle();
                     setColorTheme(color);
                     var winMode = windowManager.windowArrangement;
@@ -245,6 +244,12 @@ Rectangle {
                 if ( ! searchResults.indexingWasCancelled()) {
                     search.openSearchResults();
                 }
+            }
+            onProgressTextChanged: {
+                indexProgress.text = text;
+            }
+            onProgressValueChanged: {
+                indexProgress.value = value;
             }
         }
 
@@ -402,6 +407,7 @@ Rectangle {
 
         objectName: "indexProgress"
         value: 0
+        text: ""
         minimumValue: 0
         maximumValue: 100
         width:parent.width * 0.85

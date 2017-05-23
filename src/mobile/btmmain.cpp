@@ -10,12 +10,7 @@
 *
 **********/
 
-#include <QBrush>
-#include <QColor>
-#include <QDateTime>
-#include <QDebug>
 #include <QGuiApplication>
-#include <QPalette>
 #include <QQuickItem>
 #include <QQmlDebuggingEnabler>
 #include <QMetaType>
@@ -41,8 +36,6 @@
 #include "mobile/ui/viewmanager.h"
 #include "util/btassert.h"
 #include "util/directory.h"
-#include "util/findqmlobject.h"
-
 
 static btm::ViewManager* mgr = nullptr;
 static QQuickItem * s_rootObject = nullptr;
@@ -65,10 +58,6 @@ void register_gml_classes() {
 
 void saveSession() {
     QMetaObject::invokeMethod(s_rootObject, "saveSession");
-}
-
-btm::ViewManager* getViewManager() {
-    return mgr;
 }
 
 QFont getDefaultFont() {

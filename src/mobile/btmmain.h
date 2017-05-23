@@ -17,10 +17,6 @@ namespace btm {
     class ViewManager;
 }
 
-btm::ViewManager* getViewManager();
-
-void openBookshelfManager();
-
 QFont getDefaultFont();
 
 void saveSession();

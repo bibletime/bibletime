@@ -48,6 +48,8 @@ class BtSearchInterface : public QObject {
     Q_PROPERTY(int FullType READ getAndType)
     Q_PROPERTY(int searchType READ getSearchType WRITE setSearchType)
     Q_PROPERTY(bool indexingFinished READ getIndexingFinished NOTIFY indexingFinished)
+    Q_PROPERTY(qreal progressValue  READ progressValue   NOTIFY progressValueChanged)
+    Q_PROPERTY(QString progressText READ progressText    NOTIFY progressTextChanged)
 
 public:
     Q_INVOKABLE bool performSearch();
@@ -72,6 +74,9 @@ public:
     QVariant getModulesModel();
     QVariant getReferencesModel();
 
+    qreal progressValue() const;
+    QString progressText() const;
+
     int getAndType() { return AndType; }
     int getOrType() { return OrType; }
     int getFullType() { return FullType; }
@@ -85,6 +90,9 @@ signals:
     void modulesModelChanged();
     void referencesModelChanged();
     void indexingFinished();
+
+    void progressValueChanged();
+    void progressTextChanged();
 
 private slots:
     void slotModuleProgress(int value);
@@ -100,7 +108,9 @@ private:
     bool wasCanceled();
 
     int m_searchType;
-    QQuickItem* m_progressObject;
+    qreal m_progressValue;
+    QString m_progressText;
+
     IndexThread* m_thread;
     bool m_wasCancelled;
     QString m_searchText;
