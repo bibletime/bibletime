@@ -60,7 +60,8 @@ class CSwordModuleSearch: public QObject {
           \param[in] modules the modules to search in.
         */
         inline void setModules(const BtConstModuleList &modules) {
-            BT_ASSERT(!modules.empty());
+            if (modules.empty())
+                return;
             BT_ASSERT(unindexedModules(modules).empty());
             m_searchModules = modules;
         }
