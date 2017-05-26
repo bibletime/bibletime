@@ -105,10 +105,10 @@ Rectangle {
         }
     }
 
-    Keys.onReleased: {
-        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && aboutDialog.visible == true) {
-            aboutDialog.visible = false;
-            event.accepted = true;
-        }
-    }
+//    Keys.onReleased: {
+//        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && aboutDialog.visible == true) {
+//            aboutDialog.visible = false;
+//            event.accepted = true;
+//        }
+//    }
 }

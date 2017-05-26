@@ -28,13 +28,6 @@ Rectangle {
 
     signal menuSelected(string action)
 
-    Keys.onReleased: {
-        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && menu.visible == true) {
-            event.accepted = true;
-            menu.visible = false;
-        }
-    }
-
     visible: false
     anchors.fill: parent
     color: btStyle.textBackgroundColor

@@ -56,295 +56,10 @@ Window {
             installManagerStartup.visible = true;
     }
 
-    About {
-        id: aboutDialog
-
-        focus: true
-        visible: false
-        Keys.onReleased: {
-            if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
-                aboutDialog.visible = false;
-                event.accepted = true;
-            }
-        }
-    }
-
-    AddBookmark {
-        id: addBookmark
-
-        visible: false
-        folderName: bookmarkFolders.currentFolderName
-        onBookmarkFolders: {
-            bookmarkFolders.visible = true;
-        }
-        onAddTheBookmark: {
-            bookmarkFolders.addTheReference(addBookmark.reference, addBookmark.moduleName);
-        }
-    }
-
-    AddFolder {
-        id: addFolder
-
-        z: 101
-        visible: false
-        parentFolderName: bookmarkFoldersParent.currentFolderName
-        onShowFolders: {
-            bookmarkFoldersParent.visible = true;
-        }
-        onAddFolder: {
-            bookmarkFoldersParent.addFolder(folderName);
-        }
-        onFolderWasAdded: {
-            bookmarkFolders.expandAll();
-        }
-    }
-
-    BookmarkFolders {
-        id: bookmarkFolders
-        visible: false
-        allowNewFolders: true
-        z:100
-        onNewFolder: {
-            addFolder.visible = true;
-        }
-
-        Keys.onReleased: {
-            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFolders.visible == true) {
-                bookmarkFolders.visible = false;
-                event.accepted = true;
-            }
-        }
-    }
-
-    BookmarkFolders {
-        id: bookmarkFoldersParent
-
-        visible: false
-        allowNewFolders: false
-        z:2
-        Keys.onReleased: {
-            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFoldersParent.visible == true) {
-                bookmarkFoldersParent.visible = false;
-                event.accepted = true;
-            }
-        }
-    }
-
-    BookmarkManager {
-        id: bookmarkManager
-
-        visible: false
-        Keys.onReleased: {
-            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkManager.visible == true) {
-                bookmarkManager.visible = false;
-                event.accepted = true;
-            }
-        }
-        onBookmarkItemClicked: {
-            bookmarkManagerMenus.visible = true;
-        }
-        onOpenReference: {
-            windowMenus.theWindow.setModule(module);
-            windowMenus.theWindow.setKey(reference);
-            windowMenus.theWindow.setHistoryPoint();
-            bookmarkManager.visible = false;
-        }
-    }
-
-    Menus {
-        id: bookmarkManagerMenus
-
-        property variant theWindow
-
-        function doAction(action) {
-            bookmarkManagerMenus.visible = false;
-            if (action == "open") {
-                windowMenus.theWindow.setModule(bookmarkManager.module);
-                windowMenus.theWindow.setKey(bookmarkManager.reference);
-                bookmarkManager.visible = false;
-                return;
-            }
-            bookmarkManager.doContextMenu(action);
-        }
-
-        model: bookmarkManager.contextMenuModel
-        z:2
-
-        Component.onCompleted: menuSelected.connect(bookmarkManagerMenus.doAction)
-    }
-
-    BtStyle {
-        id: btStyle
-    }
-
-    ChooseReference {
-        id: chooseReference
-    }
-
-    Menus {
-        id: colorThemeMenus
-
-        function doAction(action) {
-            colorThemeMenus.visible = false;
-            if (action == "dark") {
-                btStyle.setStyle(1)
-            }
-            else if (action == "lightblue") {
-                btStyle.setStyle(2)
-            }
-            else if (action == "crimson") {
-                btStyle.setStyle(3)
-            }
-        }
-
-        model: colorThemeModel
-
-        Component.onCompleted: menuSelected.connect(colorThemeMenus.doAction)
-    }
-
-    ListModel {
-        id: colorThemeModel
-
-        ListElement { title: QT_TR_NOOP("Dark");                  action: "dark" }
-        ListElement { title: QT_TR_NOOP("Light Blue");            action: "lightblue" }
-        ListElement { title: QT_TR_NOOP("Crimson");               action: "crimson" }
-    }
-
-    CopyVerses {
-        id: copyVerses
-
-        function open() {
-            var moduleNames = windowMenus.theWindow.getModuleNames();
-            moduleName = moduleNames[0];
-            theWindow = windowMenus.theWindow;
-            copyVerses.visible = true;
-        }
-
-        visible: false
-        onVisibleChanged: {
-            mainToolbar.enabled = ! copyVerses.visible
-            windowManager.toolbarsEnabled = ! copyVerses.visible
-        }
-
-    }
-
-    DefaultDoc {
-        id: defaultDoc
-        visible: false
-    }
-
-    GridChooser {
-        id: gridChooser
-
-        width: parent.width
-        height: parent.height
-        visible: false
-        z: 2
-    }
-
-    Question {
-        id: indexQuestion
-        background: btStyle.toolbarColor
-        text: qsTr("Some of the modules you want to search need to be indexed. Do you want to index them now?")
-        onFinished: {
-            indexQuestion.visible = false;
-
-            if (answer == true) {
-                indexProgress.visible = true;
-            } else {
-                screenView.changeScreen(screenModel.main);
-            }
-        }
-    }
-
-    Progress {
-        id: indexProgress
-
-        value: 0
-        text: ""
-        minimumValue: 0
-        maximumValue: 100
-        width:parent.width * 0.85
-        height: btStyle.pixelsPerMillimeterY * 30
-        anchors.centerIn: parent
-        anchors.top: parent.top
-        visible: false
-        onVisibleChanged: {
-            if (visible == true) {
-                searchResults.indexModules();
-            }
-        }
-        onCancel: {
-            searchResults.cancel();
-        }
-    }
-
-    InstallInterface {
-        id: installInterface
-
-        onUpdateCurrentViews: {
-            var sIndex = installInterface.searchSource(source);
-            installManagerChooser.sourceIndex = sIndex;
-            var cIndex = installInterface.searchCategory(category);
-            installManagerChooser.categoryIndex = cIndex;
-            var lIndex = installInterface.searchLanguage(language);
-            installManagerChooser.languageIndex = lIndex;
-        }
-    }
-
-    InstallManagerChooser {
-        id: installManagerChooser
-
-        width: parent.width;
-        height: parent.height
-        anchors.centerIn: parent
-        anchors.top: parent.top
-        visible: false
-    }
-
-    Question {
-        id: installManagerStartup
-
-        background: btStyle.toolbarColor
-        text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
-                   "There are currently no documents. Do you want to install documents now?")
-        visible: false
-        onFinished: {
-            installManagerStartup.visible = false;
-            if (answer == true) {
-                installManagerChooser.refreshOnOpen = true;
-                installModules();
-            }
-        }
-    }
-
-    Progress {
-        id: installProgress
-
-        value: installInterface.progressValue
-        minimumValue: installInterface.progressMin
-        maximumValue: installInterface.progressMax
-        width:parent.width * 0.85
-        height: btStyle.pixelsPerMillimeterY * 30
-        anchors.centerIn: parent
-        anchors.top: parent.top
-        text: installInterface.progressText
-        visible: installInterface.progressVisible
-        onCancel: installManagerChooser.cancel();
-    }
-
-    KeyNameChooser {
-        id: keyNameChooser
-
-        width: parent.width
-        height: parent.height
-        anchors.top: parent.top
-        visible: false
-    }
-
     Item {
         id: keyReceiver
 
+        objectName: "keyReceiver"
         focus: true
         Keys.forwardTo: [
             searchResultsMenu,
@@ -388,6 +103,308 @@ Window {
         }
     }
 
+    About {
+        id: aboutDialog
+
+        visible: false
+        z: 1
+    }
+
+    AddBookmark {
+        id: addBookmark
+
+        visible: false
+        folderName: bookmarkFolders.currentFolderName
+        z: 4
+        onBookmarkFolders: {
+            bookmarkFolders.visible = true;
+        }
+        onAddTheBookmark: {
+            bookmarkFolders.addTheReference(addBookmark.reference, addBookmark.moduleName);
+        }
+    }
+
+    AddFolder {
+        id: addFolder
+
+        z: 4
+        visible: false
+        parentFolderName: bookmarkFoldersParent.currentFolderName
+        onShowFolders: {
+            bookmarkFoldersParent.visible = true;
+        }
+        onAddFolder: {
+            bookmarkFoldersParent.addFolder(folderName);
+        }
+        onFolderWasAdded: {
+            bookmarkFolders.expandAll();
+        }
+    }
+
+    BookmarkFolders {
+        id: bookmarkFolders
+        visible: false
+        allowNewFolders: true
+        z:5
+        onNewFolder: {
+            addFolder.visible = true;
+        }
+
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFolders.visible == true) {
+                bookmarkFolders.visible = false;
+                event.accepted = true;
+            }
+        }
+    }
+
+    BookmarkFolders {
+        id: bookmarkFoldersParent
+
+        visible: false
+        allowNewFolders: false
+        z:2
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkFoldersParent.visible == true) {
+                bookmarkFoldersParent.visible = false;
+                event.accepted = true;
+            }
+        }
+    }
+
+    BookmarkManager {
+        id: bookmarkManager
+
+        visible: false
+        z: 3
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && bookmarkManager.visible == true) {
+                bookmarkManager.visible = false;
+                event.accepted = true;
+            }
+        }
+        onBookmarkItemClicked: {
+            bookmarkManagerMenus.visible = true;
+        }
+        onOpenReference: {
+            windowMenus.theWindow.setModule(module);
+            windowMenus.theWindow.setKey(reference);
+            windowMenus.theWindow.setHistoryPoint();
+            bookmarkManager.visible = false;
+        }
+    }
+
+    Menus {
+        id: bookmarkManagerMenus
+
+        property variant theWindow
+
+        function doAction(action) {
+            bookmarkManagerMenus.visible = false;
+            if (action == "open") {
+                windowMenus.theWindow.setModule(bookmarkManager.module);
+                windowMenus.theWindow.setKey(bookmarkManager.reference);
+                bookmarkManager.visible = false;
+                return;
+            }
+            bookmarkManager.doContextMenu(action);
+        }
+
+        model: bookmarkManager.contextMenuModel
+        z:4
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && bookmarkManagerMenus.visible == true) {
+                event.accepted = true;
+                bookmarkManagerMenus.visible = false;
+            }
+        }
+
+        Component.onCompleted: menuSelected.connect(bookmarkManagerMenus.doAction)
+    }
+
+    BtStyle {
+        id: btStyle
+    }
+
+    ChooseReference {
+        id: chooseReference
+    }
+
+    Menus {
+        id: colorThemeMenus
+
+        function doAction(action) {
+            colorThemeMenus.visible = false;
+            if (action == "dark") {
+                btStyle.setStyle(1)
+            }
+            else if (action == "lightblue") {
+                btStyle.setStyle(2)
+            }
+            else if (action == "crimson") {
+                btStyle.setStyle(3)
+            }
+        }
+
+        model: colorThemeModel
+        z: 1
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && colorThemeMenus.visible == true) {
+                event.accepted = true;
+                colorThemeMenus.visible = false;
+            }
+        }
+
+
+        Component.onCompleted: menuSelected.connect(colorThemeMenus.doAction)
+    }
+
+    ListModel {
+        id: colorThemeModel
+
+        ListElement { title: QT_TR_NOOP("Dark");                  action: "dark" }
+        ListElement { title: QT_TR_NOOP("Light Blue");            action: "lightblue" }
+        ListElement { title: QT_TR_NOOP("Crimson");               action: "crimson" }
+    }
+
+    CopyVerses {
+        id: copyVerses
+
+        function open() {
+            var moduleNames = windowMenus.theWindow.getModuleNames();
+            moduleName = moduleNames[0];
+            theWindow = windowMenus.theWindow;
+            copyVerses.visible = true;
+        }
+
+        visible: false
+        z: 2
+        onVisibleChanged: {
+            mainToolbar.enabled = ! copyVerses.visible
+            windowManager.toolbarsEnabled = ! copyVerses.visible
+        }
+
+    }
+
+    DefaultDoc {
+        id: defaultDoc
+        visible: false
+        z: 1
+    }
+
+    GridChooser {
+        id: gridChooser
+
+        width: parent.width
+        height: parent.height
+        visible: false
+        z: 2
+    }
+
+    Question {
+        id: indexQuestion
+        background: btStyle.toolbarColor
+        text: qsTr("Some of the modules you want to search need to be indexed. Do you want to index them now?")
+        z: 4
+        onFinished: {
+            indexQuestion.visible = false;
+
+            if (answer == true) {
+                indexProgress.visible = true;
+            } else {
+                screenView.changeScreen(screenModel.main);
+            }
+        }
+    }
+
+    Progress {
+        id: indexProgress
+
+        value: 0
+        text: ""
+        minimumValue: 0
+        maximumValue: 100
+        width:parent.width * 0.85
+        height: btStyle.pixelsPerMillimeterY * 30
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+        z: 4
+        onVisibleChanged: {
+            if (visible == true) {
+                searchResults.indexModules();
+            }
+        }
+        onCancel: {
+            searchResults.cancel();
+        }
+    }
+
+    InstallInterface {
+        id: installInterface
+
+        onUpdateCurrentViews: {
+            var sIndex = installInterface.searchSource(source);
+            installManagerChooser.sourceIndex = sIndex;
+            var cIndex = installInterface.searchCategory(category);
+            installManagerChooser.categoryIndex = cIndex;
+            var lIndex = installInterface.searchLanguage(language);
+            installManagerChooser.languageIndex = lIndex;
+        }
+    }
+
+    InstallManagerChooser {
+        id: installManagerChooser
+
+        width: parent.width;
+        height: parent.height
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+        z: 1
+    }
+
+    Question {
+        id: installManagerStartup
+
+        background: btStyle.toolbarColor
+        text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
+                   "There are currently no documents. Do you want to install documents now?")
+        visible: false
+        onFinished: {
+            installManagerStartup.visible = false;
+            if (answer == true) {
+                installManagerChooser.refreshOnOpen = true;
+                installModules();
+            }
+        }
+    }
+
+    Progress {
+        id: installProgress
+
+        value: installInterface.progressValue
+        minimumValue: installInterface.progressMin
+        maximumValue: installInterface.progressMax
+        width:parent.width * 0.85
+        height: btStyle.pixelsPerMillimeterY * 30
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        text: installInterface.progressText
+        visible: installInterface.progressVisible
+        onCancel: installManagerChooser.cancel();
+        z: 1
+    }
+
+    KeyNameChooser {
+        id: keyNameChooser
+
+        width: parent.width
+        height: parent.height
+        anchors.top: parent.top
+        visible: false
+    }
+
     ListModel {
         id: mainMenusModel
 
@@ -425,6 +442,15 @@ Window {
 
         model: mainMenusModel
         topMenuMargin: 100
+        z: 5
+
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && mainMenus.visible == true) {
+                event.accepted = true;
+                mainMenus.visible = false;
+            }
+        }
+
     }
 
     ModuleChooser {
@@ -435,12 +461,19 @@ Window {
         height: parent.height
         anchors.centerIn: parent
         z: 2
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && moduleChooser.visible == true) {
+                event.accepted = true;
+                moduleChooser.visible = false;
+            }
+        }
     }
 
     Question {
         id: quitQuestion
         background: btStyle.toolbarColor
         text: qsTranslate("Quit", "Are you sure you want to quit?")
+        z: 2
         onFinished: {
             if (answer == true)
                 Qt.quit();
@@ -468,9 +501,10 @@ Window {
         Rectangle {
             id: mainScreen
 
+            objectName: "mainScreen"
             width: screenView.width
             height: screenView.height
-
+            Keys.forwardTo: [keyReceiver]
             MainToolbar {
                 id: mainToolbar
 
@@ -566,6 +600,7 @@ Window {
             }
             onResultsFinished: {
                 screenView.changeScreen(screenModel.main);
+                searchResultsMenu.visible = false;
             }
             onIndexingFinishedChanged: {
                 indexProgress.visible = false;
@@ -668,7 +703,6 @@ Window {
 
     Menus {
         id: searchResultsMenu
-        model: searchResultsMenuModel
 
         function doAction(action) {
             searchResultsMenu.visible = false;
@@ -677,6 +711,15 @@ Window {
                 var reference = searchResults.getReference();
                 screenView.changeScreen(screenModel.main);
                 windowManager.newWindowWithReference(module, reference);
+            }
+        }
+
+        model: searchResultsMenuModel
+        z: 2
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && searchResultsMenu.visible == true) {
+                event.accepted = true;
+                searchResultsMenu.visible = false;
             }
         }
 
@@ -728,6 +771,13 @@ Window {
         }
 
         model: settingsModel
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && settingsMenus.visible == true) {
+                event.accepted = true;
+                settingsMenus.visible = false;
+            }
+        }
+
 
         Component.onCompleted: menuSelected.connect(settingsMenus.doAction)
     }
@@ -793,6 +843,12 @@ Window {
 
         model: viewWindowsModel
         visible: false
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && viewWindowsMenus.visible == true) {
+                event.accepted = true;
+                viewWindowsMenus.visible = false;
+            }
+        }
 
         Component.onCompleted: menuSelected.connect(viewWindowsMenus.doAction)
     }
@@ -826,6 +882,13 @@ Window {
         }
 
         model: windowArrangementModel
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && windowArrangementMenus.visible == true) {
+                event.accepted = true;
+                windowArrangementMenus.visible = false;
+            }
+        }
+
 
         Component.onCompleted: menuSelected.connect(windowArrangementMenus.doAction)
     }
@@ -882,6 +945,12 @@ Window {
 
         model: windowMenusModel
         z:2
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && windowMenus.visible == true) {
+                event.accepted = true;
+                windowMenus.visible = false;
+            }
+        }
 
         Component.onCompleted: menuSelected.connect(windowMenus.doAction)
 

@@ -99,7 +99,8 @@ SplitView {
     }
 
     Keys.onReleased: {
-        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && searchResults.focus == true) {
+        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) &&
+                screenView.currentIndex == screenModel.results) {
             resultsFinished();
             event.accepted = true;
         }

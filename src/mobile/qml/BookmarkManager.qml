@@ -230,7 +230,7 @@ Rectangle {
         style: BtButtonStyle {
         }
         onVisibleChanged: {
-            if (visible)
+            if (newFolderButton.visible)
                 height = titleText.height * 1.2
             else
                 height = 0;
