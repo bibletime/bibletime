@@ -19,6 +19,7 @@
 #include "../drivers/cswordlexiconmoduleinfo.h"
 #include "../cswordmodulesearch.h"
 #include "../keys/cswordtreekey.h"
+#include "../keys/cswordversekey.h"
 #include "../keys/cswordldkey.h"
 #include "../managers/cswordbackend.h"
 #include "../rendering/ctextrendering.h"
@@ -341,3 +342,27 @@ void BtModuleTextModel::setTextFilter(BtModuleTextFilter * textFilter) {
     m_textFilter = textFilter;
 }
 
+static int convertRoleToColumn(int role) {
+    int column = 0;
+    if (role == ModuleEntry::Text2Role)
+        column = 1;
+    if (role == ModuleEntry::Text3Role)
+        column = 2;
+    if (role == ModuleEntry::Text4Role)
+        column = 3;
+    return column;
+}
+
+bool BtModuleTextModel::setData(
+        const QModelIndex &index,
+        const QVariant &value,
+        int role) {
+    CSwordVerseKey key = indexToVerseKey(index.row());
+    int column = convertRoleToColumn(role);
+    const CSwordModuleInfo* module = m_moduleInfoList.at(column);
+    CSwordVerseKey mKey(module);
+    mKey.setKey(key);
+    const_cast<CSwordModuleInfo*>(module)->write(&mKey, value.toString());
+    emit dataChanged(index, index);
+    return true;
+}
