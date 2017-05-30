@@ -16,14 +16,19 @@ import QtQuick.Controls.Styles 1.2
 import BibleTime 1.0
 
 ButtonStyle {
+    id: btButtonStyle
+
+    property bool bold: false
+    property bool italic: false
+    property bool underline: false
 
     background: Rectangle {
         border.width: 2
         border.color: "black"
         radius: btStyle.pixelsPerMillimeterX
         gradient: Gradient {
-            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#fff" }
-            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+            GradientStop { position: 0 ; color: !control.checked ? "#bbb" : "#fff" }
+            GradientStop { position: 1 ; color: !control.checked ? "#555" : "#999" }
         }
     }
 
@@ -34,5 +39,8 @@ ButtonStyle {
         font.pointSize: btStyle.uiFontPointSize
         color: "black"
         text: control.text
+        font.bold: btButtonStyle.bold
+        font.italic: btButtonStyle.italic
+        font.underline: btButtonStyle.underline
     }
 }
