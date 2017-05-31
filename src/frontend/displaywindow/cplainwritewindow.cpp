@@ -263,8 +263,10 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
 }
 
 void CPlainWriteWindow::saveCurrentText() {
-    if (key())
+    if (key()) {
+        m_writeDisplay->setModified(false);
         saveCurrentText(key()->key());
+    }
 }
 
 
@@ -303,6 +305,7 @@ void CPlainWriteWindow::beforeKeyChange() {
 
         switch (message::showQuestion( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) ) {
             case QMessageBox::Yes: { //save the changes
+                m_writeDisplay->setModified(false); // Do before saveCurrentText to prevent recursion
                 saveCurrentText( thisWindowsKey );
                 break;
             }
