@@ -32,6 +32,7 @@
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
+#include "frontend/keychooser/ckeychooser.h"
 #include "frontend/bookmarks/cbookmarkindex.h"
 #include "frontend/settingsdialogs/cdisplaysettings.h"
 #include "util/btassert.h"
@@ -311,6 +312,13 @@ void BibleTime::clearMdiToolBars() {
     m_worksToolBar->clear();
     m_toolsToolBar->clear();
     m_formatToolBar->clear();
+}
+
+CKeyChooser* BibleTime::keyChooser() const {
+    BT_ASSERT(m_navToolBar);
+
+    CKeyChooser* keyChooser = m_navToolBar->findChild<CKeyChooser*>();
+    return keyChooser;
 }
 
 void BibleTime::createMenuAndToolBar()
