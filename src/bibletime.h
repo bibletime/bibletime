@@ -180,6 +180,11 @@ class BibleTime : public QMainWindow {
         void clearMdiToolBars();
 
         /**
+        * Returns the main window CKeyChooser
+        */
+        CKeyChooser* keyChooser() const;
+
+        /**
           Displays a dialog which asks the user an unlock key for the given module and tries
           to unlock the module. If an invalid unlock key is given, a warning message is
           issued and the user is again asked for the key.

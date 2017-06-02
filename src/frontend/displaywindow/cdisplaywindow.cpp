@@ -588,6 +588,12 @@ void CDisplayWindow::printAnchorWithText() {
 }
 
 void CDisplayWindow::setFocusKeyChooser() {
-    keyChooser()->setFocus();
+    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true)) {
+        keyChooser()->setFocus();
+    } else {
+        CKeyChooser* mainWinKeyChooser = btMainWindow()->keyChooser();
+        if (mainWinKeyChooser)
+            mainWinKeyChooser->setFocus();
+    }
 }
 
