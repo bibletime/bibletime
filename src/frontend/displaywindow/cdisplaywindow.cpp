@@ -293,7 +293,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     lookup();
 
-    m_actionCollection->readShortcuts("DisplayWindow shortcuts");
+    m_actionCollection->readShortcuts("Displaywindow shortcuts");
     m_actionCollection->readShortcuts("Readwindow shortcuts");
     emit sigModuleListSet(m_modules);
 }

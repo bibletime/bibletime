@@ -1,3 +1,6 @@
+2017-06-02 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #102, Problem with ctrl-L shortcut
+
 2017-05-31 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #105, Problem with Save - Yes/No dialog and editing a Personal commentary
 
