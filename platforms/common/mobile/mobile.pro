@@ -93,6 +93,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/SetFont.qml \
     ../../../src/mobile/qml/SimpleComboBox.qml \
     ../../../src/mobile/qml/StartupBookshelfManager.qml \
+    ../../../src/mobile/qml/TextEditor.qml \
     ../../../src/mobile/qml/TitleColorBar.qml \
     ../../../src/mobile/qml/TreeChooser.qml \
     ../../../src/mobile/qml/VerseChooser.qml \

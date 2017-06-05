@@ -39,6 +39,7 @@
         <file>qml/SetFont.qml</file>
         <file>qml/TitleColorBar.qml</file>
         <file>qml/SimpleComboBox.qml</file>
+        <file>qml/TextEditor.qml</file>
         <file>qml/TreeChooser.qml</file>
         <file>qml/VerseChooser.qml</file>
         <file>qml/WindowManager.qml</file>

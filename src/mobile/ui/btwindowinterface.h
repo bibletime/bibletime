@@ -81,16 +81,19 @@ public:
     Q_INVOKABLE bool copy(const QString& moduleName, const QString& ref1, const QString& ref2);
     Q_INVOKABLE int  getComboIndexFromUrl(const QString& url);
     Q_INVOKABLE QString getDefaultSwordModuleByType(const QString& type);
+    Q_INVOKABLE QString getRawText(int row, int column);
     Q_INVOKABLE QStringList getModuleNames() const;
     Q_INVOKABLE bool firstModuleIsBibleOrCommentary();
     Q_INVOKABLE bool firstModuleIsBook();
     Q_INVOKABLE bool isCopyToLarge(const QString& ref1, const QString& ref2);
+    Q_INVOKABLE bool moduleIsWritable(int column);
     Q_INVOKABLE void moveHistoryBackward();
     Q_INVOKABLE void moveHistoryForward();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
     Q_INVOKABLE void setHistoryPoint();
     Q_INVOKABLE void setModuleToBeginning();
     Q_INVOKABLE void setReferenceByUrl(const QString& url);
+    Q_INVOKABLE void setRawText(int row, int column, const QString& text);
     Q_INVOKABLE void updateCurrentModelIndex();
     Q_INVOKABLE void updateDefaultModules();
     Q_INVOKABLE void updateTextFonts();
@@ -176,6 +179,7 @@ private:
     void lookupAvailableModules();
     const CSwordModuleInfo* module() const;
     RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
+    QString stripHtml(const QString& html);
 
     void updateModel();
     void parseVerseForReferences(const QString& verse);

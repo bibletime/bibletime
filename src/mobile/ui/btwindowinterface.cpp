@@ -195,6 +195,27 @@ int BtWindowInterface::getNumModules() const {
     return m_moduleNames.count();
 }
 
+QString BtWindowInterface::stripHtml(const QString& html) {
+    QString t = html;
+    //since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
+    QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
+    re.setMinimal(true);
+    t.replace(re, "");
+    t.replace(QRegExp("</body></html>", Qt::CaseInsensitive), "");//remove footer
+    return t;
+}
+
+QString BtWindowInterface::getRawText(int row, int column) {
+    BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
+    CSwordVerseKey key = m_moduleTextModel->indexToVerseKey(row);
+    QString moduleName = m_moduleNames.at(column);
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    CSwordVerseKey mKey(module);
+    mKey.setKey(key.key());
+    QString rawText = mKey.rawText();
+    return stripHtml(rawText);
+}
+
 QString BtWindowInterface::getReferenceFromUrl(const QString& url) {
     QString reference;
     QStringList parts = url.split('/', QString::SkipEmptyParts);
@@ -220,6 +241,18 @@ int BtWindowInterface::getComboIndexFromUrl(const QString& url) {
     QString reference = getReferenceFromUrl(url);
     int index = m_comboBoxEntries.indexOf(reference);
     return index;
+}
+
+void BtWindowInterface::setRawText(int row, int column, const QString& text) {
+    QModelIndex index = m_moduleTextModel->index(row, 0);
+    int role = ModuleEntry::Text1Role;
+    if (column == 1)
+        role = ModuleEntry::Text2Role;
+    else if (column == 2)
+        role = ModuleEntry::Text3Role;
+    else if (column == 3)
+        role = ModuleEntry::Text4Role;
+    m_moduleTextModel->setData(index, text, role);
 }
 
 void BtWindowInterface::setReferenceByUrl(const QString& url) {
@@ -724,6 +757,13 @@ bool BtWindowInterface::getHistoryForwardVisible() const {
 
 bool BtWindowInterface::getHistoryBackwardVisible() const {
     return (m_historyIndex > 0) && (m_history.count() > 1);
+}
+
+bool BtWindowInterface::moduleIsWritable(int column) {
+    BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
+    QString moduleName = m_moduleNames.at(column);
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    return module->isWritable();
 }
 
 void BtWindowInterface::moveHistoryBackward() {

@@ -75,6 +75,7 @@ Window {
             magView,
             searchResults,
             search,
+            textEditor,
             defaultDoc,
             installManagerChooser,
             keyNameChooser,
@@ -790,6 +791,26 @@ Window {
         ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
         ListElement { title: QT_TR_NOOP("Color Theme");               action: "colortheme" }
         ListElement { title: QT_TR_NOOP("Default Documents");         action: "defaultDoc" }
+    }
+
+    TextEditor {
+        id: textEditor
+
+        anchors.left: root.left
+        anchors.top: root.top
+        height: root.height
+        width: root.width
+        visible: false
+        Keys.onReleased: {
+            if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape)  && textEditor.visible == true) {
+                event.accepted = true;
+                textEditor.visible = false;
+            }
+        }
+        onVisibleChanged: {
+            if (!visible)
+                keyReceiver.forceActiveFocus();
+        }
     }
 
     TreeChooser {

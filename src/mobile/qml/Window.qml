@@ -399,6 +399,24 @@ Rectangle {
             id: listView
 
             property int columns: btWindowInterface.numModules
+            property int savedRow: 0
+            property int savedColumn: 0
+
+            function startEdit(row, column) {
+                if (!btWindowInterface.moduleIsWritable(column))
+                    return
+                savedRow = row;
+                savedColumn = column;
+                var rawText = btWindowInterface.getRawText(row, column);
+                textEditor.editFinished.connect( listView.finishEdit);
+                textEditor.open(rawText);
+            }
+
+            function finishEdit(newText) {
+                btWindowInterface.setRawText(savedRow, savedColumn, newText)
+            }
+
+
             clip: true
             anchors.fill: parent
             anchors.leftMargin: 8
@@ -420,19 +438,19 @@ Rectangle {
                     width: listView.width
                     height: {
                         if (listView.columns == 1)
-                            return column1Text.height
+                            return column0Text.height
                         if (listView.columns == 2)
-                            return Math.max(column1Text.height, column2Text.height)
+                            return Math.max(column0Text.height, column1Text.height)
                         if (listView.columns == 3)
-                            return Math.max(column1Text.height, column2Text.height, column3Text.height)
+                            return Math.max(column0Text.height, column1Text.height, column2Text.height)
                         if (listView.columns == 4)
-                            return Math.max(column1Text.height, column2Text.height,
-                                            column3Text.height, column4Text.height)
+                            return Math.max(column0Text.height, column1Text.height,
+                                            column2Text.height, column3Text.height)
                         return 30;
                     }
 
                     Text {
-                        id: column1Text
+                        id: column0Text
                         text: text1
                         textFormat: Text.RichText
                         anchors.top: parent.top
@@ -444,11 +462,40 @@ Rectangle {
                         wrapMode: Text.WordWrap
                         visible: listView.columns > 0
                         onWidthChanged: doLayout()
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                listView.startEdit(index, 0);
+                            }
+                        }
+                    }
+
+                    Text {
+                        id: column1Text
+                        text: text2
+                        textFormat: Text.RichText
+                        anchors.top: parent.top
+                        anchors.left: column0Text.right
+                        width: listView.width / listView.columns
+                        color: btStyle.textColor
+                        font.family: btWindowInterface.fontName
+                        font.pointSize: btWindowInterface.fontSize
+                        wrapMode: Text.WordWrap
+                        visible: listView.columns > 1
+                        onWidthChanged: doLayout()
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                listView.startEdit(index, 1);
+                            }
+                        }
                     }
 
                     Text {
                         id: column2Text
-                        text: text2
+                        text: text3
                         textFormat: Text.RichText
                         anchors.top: parent.top
                         anchors.left: column1Text.right
@@ -457,13 +504,20 @@ Rectangle {
                         font.family: btWindowInterface.fontName
                         font.pointSize: btWindowInterface.fontSize
                         wrapMode: Text.WordWrap
-                        visible: listView.columns > 1
+                        visible: listView.columns > 2
                         onWidthChanged: doLayout()
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                listView.startEdit(index, 2);
+                            }
+                        }
                     }
 
                     Text {
                         id: column3Text
-                        text: text3
+                        text: text4
                         textFormat: Text.RichText
                         anchors.top: parent.top
                         anchors.left: column2Text.right
@@ -472,23 +526,15 @@ Rectangle {
                         font.family: btWindowInterface.fontName
                         font.pointSize: btWindowInterface.fontSize
                         wrapMode: Text.WordWrap
-                        visible: listView.columns > 2
-                        onWidthChanged: doLayout()
-                    }
-
-                    Text {
-                        id: column4Text
-                        text: text4
-                        textFormat: Text.RichText
-                        anchors.top: parent.top
-                        anchors.left: column3Text.right
-                        width: listView.width / listView.columns
-                        color: btStyle.textColor
-                        font.family: btWindowInterface.fontName
-                        font.pointSize: btWindowInterface.fontSize
-                        wrapMode: Text.WordWrap
                         visible: listView.columns > 3
                         onWidthChanged: doLayout()
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                listView.startEdit(index, 3);
+                            }
+                        }
                     }
 
                 }
