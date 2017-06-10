@@ -477,6 +477,7 @@ Rectangle {
                         textFormat: Text.RichText
                         anchors.top: parent.top
                         anchors.left: column0Text.right
+                        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 0.8
                         width: listView.width / listView.columns
                         color: btStyle.textColor
                         font.family: btWindowInterface.fontName
@@ -499,6 +500,7 @@ Rectangle {
                         textFormat: Text.RichText
                         anchors.top: parent.top
                         anchors.left: column1Text.right
+                        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 0.8
                         width: listView.width / listView.columns
                         color: btStyle.textColor
                         font.family: btWindowInterface.fontName
@@ -521,6 +523,7 @@ Rectangle {
                         textFormat: Text.RichText
                         anchors.top: parent.top
                         anchors.left: column2Text.right
+                        anchors.leftMargin: btStyle.pixelsPerMillimeterX * 0.8
                         width: listView.width / listView.columns
                         color: btStyle.textColor
                         font.family: btWindowInterface.fontName
