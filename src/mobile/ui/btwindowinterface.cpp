@@ -13,7 +13,7 @@
 #include "btwindowinterface.h"
 
 #include <QClipboard>
-#include <QDebug>
+#include <QDate>
 #include <QDomDocument>
 #include <QFile>
 #include <QGuiApplication>
@@ -417,6 +417,13 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
             m_key = CSwordKey::createInstance(m);
         }
 
+    }
+
+    if (m->category() == CSwordModuleInfo::DailyDevotional) {
+        QDate date = QDate::currentDate();
+        QString today = date.toString("MM.dd");
+        setReference(today);
+        referenceChosen();
     }
 
     CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
