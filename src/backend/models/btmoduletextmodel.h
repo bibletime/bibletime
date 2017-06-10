@@ -42,7 +42,7 @@ struct ModuleEntry {
     It can be continuously scrolled to any location within the module.
 
     \note Currently Bible, Commentary, and Book modules are supported.
-    \note Parallel Bible text not yet supported.
+    \note Personal commentary and up to 4 parallel modules are supported.
  */
 
 

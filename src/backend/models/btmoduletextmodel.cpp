@@ -197,6 +197,12 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             modules.append(module);
             CSwordVerseKey mKey(module);
             mKey.setKey(key.key());
+
+            // Personal commentary
+            if (module->isWritable()) {
+                QString text = mKey.key() + "  " + mKey.rawText();
+                return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+            }
         }
 
         text += Rendering::CEntryDisplay().textKeyRendering(modules,
