@@ -403,6 +403,7 @@ Window {
         width: parent.width
         height: parent.height
         anchors.top: parent.top
+        z: 3
         visible: false
     }
 
