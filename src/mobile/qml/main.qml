@@ -54,6 +54,8 @@ Window {
         sessionInterface.loadDefaultSession();
         if (installInterface.installedModulesCount() == 0)
             installManagerStartup.visible = true;
+        else
+            informationDialog.openAtStartup();
     }
 
     Item {
@@ -70,6 +72,7 @@ Window {
             settingsMenus,
             bookmarkManagerMenus,
             colorThemeMenus,
+            informationDialog,
             gridChooser,
             moduleChooser,
             magView,
@@ -268,6 +271,10 @@ Window {
         ListElement { title: QT_TR_NOOP("Crimson");               action: "crimson" }
     }
 
+    ConfigInterface {
+        id: configInterface
+    }
+
     CopyVerses {
         id: copyVerses
 
@@ -341,6 +348,47 @@ Window {
         }
     }
 
+    InformationDialog {
+        id: informationDialog
+
+        property string configKey: "GUI/showNewFeatureAtStartup"
+
+        function openAtStartup() {
+            var value = configInterface.boolValue(configKey, true);
+            console.log(value);
+            if (value)
+                open();
+        }
+
+        function open() {
+            informationDialog.visible = true;
+        }
+
+        visible: false
+        anchors.centerIn: parent
+        height: parent.height/1.4
+        width: parent.width * 0.9
+        text: {
+            var t = "<center><b>";
+            t += qsTr("New Feature");
+            t += "</b></center><br>"
+            t += qsTr("You can write your own comments about Bible verses.");
+            t += " " + qsTr("Install the Personal commentary from Crosswire.");
+            t += " " + qsTr("Then open the Personal commentary and select a verse.");
+            t += " " + qsTr("You can then enter your text.");
+            t += "<br><br>";
+            t += qsTr("The Personal Commentary can be one of your Parallel Documents.");
+            return t;
+        }
+        onVisibleChanged: {
+            mainToolbar.enabled = ! informationDialog.visible
+            windowManager.toolbarsEnabled = ! informationDialog.visible
+            if (!informationDialog.visible)
+                configInterface.setBoolValue(configKey, false);
+        }
+        z: 3
+    }
+
     InstallInterface {
         id: installInterface
 
@@ -372,6 +420,7 @@ Window {
         text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
                    "There are currently no documents. Do you want to install documents now?")
         visible: false
+        z: 3
         onFinished: {
             installManagerStartup.visible = false;
             if (answer == true) {
@@ -414,6 +463,7 @@ Window {
         ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
         ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
         ListElement { title: QT_TR_NOOP("Settings");                  action: "settings" }
+        ListElement { title: QT_TR_NOOP("New Features");              action: "new features" }
         ListElement { title: QT_TR_NOOP("About");                     action: "about" }
     }
 
@@ -436,6 +486,9 @@ Window {
             }
             else if (action == "about") {
                 aboutDialog.visible = true;
+            }
+            else if (action == "new features") {
+                informationDialog.open();
             }
             else if (action == "settings") {
                 settingsMenus.visible = true;

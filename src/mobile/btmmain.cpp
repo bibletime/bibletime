@@ -30,6 +30,7 @@
 #include "mobile/ui/btsearchinterface.h"
 #include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/chooserinterface.h"
+#include "mobile/ui/configinterface.h"
 #include "mobile/ui/installinterface.h"
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/sessioninterface.h"
@@ -52,6 +53,7 @@ void register_gml_classes() {
     qmlRegisterType<btm::SessionInterface>("BibleTime", 1, 0, "SessionInterface");
     qmlRegisterType<btm::SearchModel>("BibleTime", 1, 0, "SearchModel");
     qmlRegisterType<btm::BtSearchInterface>("BibleTime", 1, 0, "BtSearchInterface");
+    qmlRegisterType<btm::ConfigInterface>("BibleTime", 1, 0, "ConfigInterface");
 }
 
 void saveSession() {

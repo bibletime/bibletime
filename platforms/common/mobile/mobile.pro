@@ -27,6 +27,7 @@ SOURCES += \
     ../../../src/mobile/ui/installinterface.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
     ../../../src/mobile/ui/sessioninterface.cpp \
+    ../../../src/mobile/ui/configinterface.cpp \
     ../../../src/mobile/ui/chooserinterface.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
     ../../../src/mobile/util/messagedialog.cpp
@@ -48,6 +49,7 @@ HEADERS += \
     ../../../src/mobile/ui/installinterface.h \
     ../../../src/mobile/ui/moduleinterface.h \
     ../../../src/mobile/ui/sessioninterface.h \
+    ../../../src/mobile/ui/configinterface.h \
     ../../../src/mobile/ui/chooserinterface.h \
     ../../../src/mobile/ui/treechoosermodel.h \
     ../../../src/mobile/util/messagedialog.h 
@@ -70,6 +72,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/FontSizeSlider.qml \
     ../../../src/mobile/qml/GridChooser.qml \
     ../../../src/mobile/qml/GridChooserButton.qml \
+    ../../../src/mobile/qml/InformationDialog.qml \
     ../../../src/mobile/qml/InstallManagerChooser.qml \
     ../../../src/mobile/qml/KeyNameChooser.qml \
     ../../../src/mobile/qml/LeftArrow.qml \
@@ -105,6 +108,7 @@ lupdate_only {
     SOURCES += ../../../src/mobile/ui/btbookmarkinterface.cpp
     SOURCES += ../../../src/mobile/ui/btsearchinterface.cpp
     SOURCES += ../../../src/mobile/ui/btwindowinterface.cpp
+    SOURCES += ../../../src/mobile/ui/configinterface.cpp
     SOURCES += ../../../src/mobile/ui/chooserinterface.cpp
     SOURCES += ../../../src/mobile/ui/installinterface.cpp
     SOURCES += ../../../src/mobile/ui/sessionlinterface.cpp
