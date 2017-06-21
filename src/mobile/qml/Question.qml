@@ -44,7 +44,7 @@ Rectangle {
         id: questionTitle
 
         color: btStyle.textColor
-        font.pointSize: btStyle.uiFontPointSize+2
+        font.pointSize: btStyle.uiFontPointSize
         text: "BibleTime"
         anchors.left: logo.right
         anchors.verticalCenter: logo.verticalCenter
