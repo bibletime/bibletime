@@ -458,7 +458,7 @@ void BtStyle::setToolbarTextPointSize(double pointSize) {
 }
 
 double BtStyle::getUiFontPointSize() {
-    return btConfig().value<int>("ui/uiFontSize",18);
+    return btConfig().value<int>("ui/uiFontSize",16);
 }
 
 void BtStyle::setUiFontPointSize(double pointSize) {
