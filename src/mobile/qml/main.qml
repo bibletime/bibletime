@@ -761,11 +761,13 @@ Window {
 
         function doAction(action) {
             searchResultsMenu.visible = false;
+            var module = searchResults.getModule();
+            var reference = searchResults.getReference();
             if (action == "newWindow") {
-                var module = searchResults.getModule();
-                var reference = searchResults.getReference();
                 screenView.changeScreen(screenModel.main);
                 windowManager.newWindowWithReference(module, reference);
+            } else if (action == "viewReferences") {
+                viewReferencesScreen(module, reference);
             }
         }
 
@@ -785,6 +787,7 @@ Window {
         id: searchResultsMenuModel
 
         ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
+        ListElement { title: QT_TR_NOOP("View References");           action: "viewReferences" }
     }
 
     SetFont {
