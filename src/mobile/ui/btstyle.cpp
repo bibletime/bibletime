@@ -75,6 +75,9 @@ static QList<QPointer<BtStyle> > styles;
 
 static double millimeterPerInch = 25.4;
 
+static int s_width = 0;
+static int s_height = 0;
+
 static void emitChanged() {
     for (int i=0; i<styles.count(); ++i) {
         QPointer<BtStyle> style = styles.at(i);
@@ -475,6 +478,27 @@ int BtStyle::pixelsPerMillimeterY() {
     QScreen* screen = QGuiApplication::screens().at(0);
     int dpm = screen->physicalDotsPerInchY() / millimeterPerInch;
     return dpm;
+}
+
+int BtStyle::width() const {
+    if (s_width == 0)
+        s_width = btConfig().value<int>("ui/width",600);
+    return s_width;
+}
+int BtStyle::height() const {
+    if (s_height == 0)
+        s_height = btConfig().value<int>("ui/height",500);
+    return s_height;
+}
+
+void BtStyle::setWidth(int value) {
+    btConfig().setValue<int>("ui/width", value);
+    s_width = value;
+}
+
+void BtStyle::setHeight(int value) {
+    btConfig().setValue<int>("ui/height", value);
+    s_height = value;
 }
 
 QString BtStyle::getAppVersion() {

@@ -57,6 +57,9 @@ class BtStyle : public QObject {
 
     Q_PROPERTY(double uiFontPointSize       READ getUiFontPointSize   WRITE setUiFontPointSize   NOTIFY changed);
 
+    Q_PROPERTY(int width READ width WRITE setWidth NOTIFY widthChanged);
+    Q_PROPERTY(int height READ height WRITE setHeight NOTIFY heightChanged);
+
     Q_PROPERTY(double pixelsPerMillimeterX   READ pixelsPerMillimeterX NOTIFY changed);
     Q_PROPERTY(double pixelsPerMillimeterY   READ pixelsPerMillimeterY NOTIFY changed);
 
@@ -165,6 +168,12 @@ public:
     static double getUiFontPointSize();
     static void setUiFontPointSize(double pointSize);
 
+    int width() const;
+    int height() const;
+
+    void setWidth(int value);
+    void setHeight(int value);
+
     static int pixelsPerMillimeterX();
     static int pixelsPerMillimeterY();
 
@@ -176,6 +185,8 @@ public:
 signals:
     void changed();
     void versionChanged();
+    void widthChanged();
+    void heightChanged();
 };
 
 } // end namespace

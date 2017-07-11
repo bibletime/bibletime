@@ -44,9 +44,12 @@ Window {
     }
 
     color: "#404040"
-    height: 450
+    height: btStyle.height
     visible: true
-    width:  400
+    width:  btStyle.width
+
+    onWidthChanged: btStyle.width = width;
+    onHeightChanged: btStyle.height = height;
 
     Component.onCompleted: {
         setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
