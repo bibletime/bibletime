@@ -378,6 +378,8 @@ void BtWindowInterface::moduleNameChanged(const QString& moduleName)
 }
 
 void BtWindowInterface::setModuleToBeginning() {
+    if (m_key == nullptr)
+        return;
     if (moduleIsBibleOrCommentary(m_key->module())) {
         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
         verseKey->setPosition(sword::TOP);
