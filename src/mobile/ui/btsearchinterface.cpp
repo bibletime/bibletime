@@ -127,6 +127,10 @@ bool BtSearchInterface::performSearch() {
     return true;
 }
 
+bool BtSearchInterface::haveReferences() {
+    return m_referencesModel.rowCount() != 0;
+}
+
 void BtSearchInterface::setupSearchType() {
     if (m_findChoice == "and")
         m_searchType = AndType;
@@ -190,8 +194,10 @@ void BtSearchInterface::setupReferenceModel(const CSwordModuleInfo *m,
     m_referencesModel.setRoleNames(roleNames);
 
     m_referencesModel.clear();
-    if (!m)
+    if (!m) {
+        haveReferencesChanged();
         return;
+    }
     const int count = results.getCount();
     if (!count)
         return;
@@ -204,6 +210,7 @@ void BtSearchInterface::setupReferenceModel(const CSwordModuleInfo *m,
         m_referencesModel.appendRow(item);
     }
     referencesModelChanged();
+    haveReferencesChanged();
 }
 
 QString BtSearchInterface::getSearchText() const {
@@ -244,8 +251,11 @@ QVariant BtSearchInterface::getReferencesModel() {
 
 void BtSearchInterface::selectReferences(int moduleIndex) {
     const int count = m_results.count();
-    if ( moduleIndex < 0 || moduleIndex >= count)
+    if ( moduleIndex < 0 || moduleIndex >= count) {
+        m_referencesModel.clear();
+        haveReferencesChanged();
         return;
+    }
     const CSwordModuleInfo* module = getModuleFromResults(m_results, moduleIndex);
     setupReferenceModel(module, m_results.value(module));
 }

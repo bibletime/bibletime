@@ -50,6 +50,7 @@ class BtSearchInterface : public QObject {
     Q_PROPERTY(bool indexingFinished READ getIndexingFinished NOTIFY indexingFinished)
     Q_PROPERTY(qreal progressValue  READ progressValue   NOTIFY progressValueChanged)
     Q_PROPERTY(QString progressText READ progressText    NOTIFY progressTextChanged)
+    Q_PROPERTY(bool haveReferences READ haveReferences NOTIFY haveReferencesChanged)
 
 public:
     Q_INVOKABLE bool performSearch();
@@ -84,9 +85,11 @@ public:
     bool getIndexingFinished() {
         return true;
     };
+    bool haveReferences();
     void setSearchType(int searchType);
 
 signals:
+    void haveReferencesChanged();
     void modulesModelChanged();
     void referencesModelChanged();
     void indexingFinished();

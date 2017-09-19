@@ -91,6 +91,7 @@ SplitView {
             anchors.margins: 2
             foreground: btStyle.toolbarTextColor
             background: btStyle.toolbarColor
+            visible: btSearchInterface.haveReferences
 
             onButtonClicked: {
                 resultsMenuRequested();
