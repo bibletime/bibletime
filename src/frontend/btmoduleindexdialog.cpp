@@ -64,10 +64,19 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
         try {
             m->buildIndex();
         } catch (...) {
+            QString msg;
+            try {
+                throw;
+            } catch (std::exception const & e) {
+                msg = e.what();
+            } catch (...) {
+                msg = tr("<UNKNOWN EXCEPTION>");
+            }
+
             message::showWarning(this,
                                  tr("Indexing aborted"),
                                  tr("An internal error occurred while building "
-                                    "the index."));
+                                    "the index:<br/><br/>%1").arg(msg));
             success = false;
         }
 
