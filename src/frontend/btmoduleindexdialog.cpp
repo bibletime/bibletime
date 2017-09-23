@@ -76,7 +76,7 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
             message::showWarning(this,
                                  tr("Indexing aborted"),
                                  tr("An internal error occurred while building "
-                                    "the index:<br/><br/>%1").arg(msg));
+                                    "the index.") + "<br/><br/>" + msg);
             success = false;
         }
 

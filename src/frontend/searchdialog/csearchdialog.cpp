@@ -180,7 +180,7 @@ void CSearchDialog::startSearch() {
         message::showWarning(this,
                              tr("Search aborted"),
                              tr("An internal error occurred while executing "
-                                "your search:<br/><br/>%1").arg(msg));
+                                "your search.") + "<br/><br/>" + msg);
         // Re-enable the dialog:
         setEnabled(true);
         setCursor(Qt::ArrowCursor);
