@@ -168,10 +168,19 @@ void CSearchDialog::startSearch() {
     try {
         m_searcher.startSearch();
     } catch (...) {
+        QString msg;
+        try {
+            throw;
+        } catch (std::exception const & e) {
+            msg = e.what();
+        } catch (...) {
+            msg = tr("<UNKNOWN EXCEPTION>");
+        }
+
         message::showWarning(this,
                              tr("Search aborted"),
                              tr("An internal error occurred while executing "
-                                "your search."));
+                                "your search:<br/><br/>%1").arg(msg));
         // Re-enable the dialog:
         setEnabled(true);
         setCursor(Qt::ArrowCursor);
