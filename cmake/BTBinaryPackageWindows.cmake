@@ -67,6 +67,13 @@ IF(WIN32 AND NOT UNIX)
 
     SET(CPACK_PACKAGE_EXECUTABLES "bibletime" "BibleTime")
 
+    # This adds in the required Windows system libraries
+    MESSAGE(STATUS  "INSTALL Microsoft Redist ${MSVC_REDIST}" )
+    SET(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
+        ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe  /q\\\"
+        Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
+    ")
+
     INCLUDE(CPack)
 
 ENDIF(WIN32 AND NOT UNIX)
