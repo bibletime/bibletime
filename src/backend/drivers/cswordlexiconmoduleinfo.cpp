@@ -11,6 +11,7 @@
 
 #include <QFile>
 #include <QDataStream>
+#include <QRegExp>
 #include <QTextCodec>
 #include <QDebug>
 
@@ -113,3 +114,44 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
 
     return m_entries;
 }
+
+void CSwordLexiconModuleInfo::testForStrongsKeys() {
+    auto & m = module();
+    m.setPosition(sword::TOP);
+    m.increment();
+    QString key = QString::fromUtf8(m.getKeyText());
+    QRegExp rx1("[GH][0-9]+");
+    if (rx1.exactMatch(key)) {
+        m_hasStrongsKeys = true;
+        m_hasLeadingStrongsLetter = true;
+        m_strongsDigitsLength = key.length() - 1;
+    } else {
+        QRegExp rx2("[0-9]+");
+        if (rx2.exactMatch(key)) {
+            m_hasStrongsKeys = true;
+            m_strongsDigitsLength = key.length();
+        }
+    }
+    return;
+}
+
+bool CSwordLexiconModuleInfo:: hasStrongsKeys() const {
+    return m_hasStrongsKeys;
+}
+
+QString CSwordLexiconModuleInfo::normalizeStrongsKey(const QString &key) const {
+
+    QRegExp rx("([GH]*)([0-9]+)");
+    if (! rx.exactMatch(key))
+        return key;
+    QString StrongsChar = rx.cap(1);
+    QString digits = rx.cap(2);
+
+    while (digits.length() < m_strongsDigitsLength)
+        digits = "0" +digits;
+    QString newKey = digits;
+    if (m_hasLeadingStrongsLetter)
+        newKey = StrongsChar + digits;
+    return newKey;
+}
+

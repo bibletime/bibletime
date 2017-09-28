@@ -18,6 +18,7 @@
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/referencemanager.h"
 #include "chtmlexportrendering.h"
+#include "../drivers/cswordlexiconmoduleinfo.h"
 
 
 using namespace Rendering;
@@ -380,7 +381,8 @@ QString decodeStrongs(QString const & data) {
         QString text;
         if (module) {
             QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
-            key->setKey((*it).mid(1)); // skip H or G (language sign), will have to change later if we have better modules
+            auto lexModule = qobject_cast<CSwordLexiconModuleInfo*>(module);
+            key->setKey(lexModule->normalizeStrongsKey(*it));
             text = key->renderedText();
         }
         //if the module could not be found just display an empty lemma info

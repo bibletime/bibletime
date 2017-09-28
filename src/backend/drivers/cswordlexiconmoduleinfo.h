@@ -26,7 +26,23 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
     public: /* Methods: */
         inline CSwordLexiconModuleInfo(sword::SWModule & module,
                                        CSwordBackend & backend)
-                : CSwordModuleInfo(module, backend, Lexicon) {}
+                : CSwordModuleInfo(module, backend, Lexicon),
+                m_hasStrongsKeys(false),
+                m_hasLeadingStrongsLetter(false),
+                m_strongsDigitsLength(0) {
+            testForStrongsKeys();
+        }
+
+        /**
+          Return true if this lexicon has Strong's keys
+        */
+        bool hasStrongsKeys() const;
+
+        /**
+          Takes a Strong's key string and formats it consistent
+          with the key strings of this module.
+        */
+        QString normalizeStrongsKey(const QString& key) const;
 
         /**
           This method returns the entries of the modules represented by this
@@ -46,6 +62,18 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         }
 
     private: /* Fields: */
+
+        /**
+          See if module keys are consistent with Strong's references
+          and determine if keys start with "G" or "H" and the number
+          of digits in the keys.
+         */
+        void testForStrongsKeys();
+
+        bool m_hasStrongsKeys;
+        bool m_hasLeadingStrongsLetter;
+        int m_strongsDigitsLength;
+
         /**
           This is the list which caches the entres of the module.
         */
