@@ -15,6 +15,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include "backend/config/btconfig.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/settingsdialogs/cswordsettings.h"
 #include "util/tool.h"
@@ -72,11 +73,12 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
                 break;
             case CSwordModuleInfo::Lexicon: {
                 bool inserted = false;
-                if (m->has(CSwordModuleInfo::HebrewDef)) {
+                auto lexModule = qobject_cast<CSwordLexiconModuleInfo const *>(m);
+                if (m->has(CSwordModuleInfo::HebrewDef) && lexModule->hasStrongsKeys()) {
                     m_standardHebrewStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
-                if (m->has(CSwordModuleInfo::GreekDef)) {
+                if (m->has(CSwordModuleInfo::GreekDef) && lexModule->hasStrongsKeys()) {
                     m_standardGreekStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }

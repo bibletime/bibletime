@@ -1,3 +1,6 @@
+2017-09-28 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #52, Some greek dictionary modules don't work in magnifier
+
 2017-06-02 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #102, Problem with ctrl-L shortcut
 
