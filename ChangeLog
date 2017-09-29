@@ -1,3 +1,6 @@
+2017-09-29 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 2.11.1.
+
 2017-09-28 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #52, Some greek dictionary modules don't work in magnifier
 
