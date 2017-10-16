@@ -240,7 +240,7 @@ ELSE()
   SET(CMAKE_CXX_FLAGS_DEBUG "")
   IF(APPLE)
     # enable support MacOS 10.5+
-    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/")
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/")
     SET(BibleTime_CXXFLAGS "${BibleTime_CXXFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T}")
     SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T} -F /Library/Frameworks/")
     UNSET(T)
