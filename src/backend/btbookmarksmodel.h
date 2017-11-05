@@ -34,6 +34,8 @@ public: /* Methods: */
         TypeRole = Qt::UserRole + 1
     };
 
+    BtBookmarksModel(QObject * parent = nullptr);
+
     /**
       \brief Constructor/destructor for new bookmarks model, data is loaded on first
           constructor call and unloaded on last destructor call.
@@ -43,7 +45,6 @@ public: /* Methods: */
       \param[in] rootFolder would be used if you need only to display particular
           bookmarks folder.
     */
-    BtBookmarksModel(QObject * parent = nullptr);
     BtBookmarksModel(const QString & fileName = QString(),
                      const QString & rootFolder = QString(), QObject * parent = nullptr);
     ~BtBookmarksModel();
