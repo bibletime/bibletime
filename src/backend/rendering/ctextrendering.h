@@ -148,7 +148,7 @@ class CTextRendering {
 
     public: /* Methods: */
 
-        virtual ~CTextRendering() {};
+        virtual ~CTextRendering() {}
 
         const QString renderKeyTree(const KeyTree &tree);
 
