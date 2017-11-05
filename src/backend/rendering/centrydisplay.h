@@ -29,6 +29,8 @@ class CEntryDisplay {
 
     public: /* Methods: */
 
+        virtual ~CEntryDisplay() {}
+
         /**
           \returns the rendered text using the modules in the list and using the
                    key parameter.
