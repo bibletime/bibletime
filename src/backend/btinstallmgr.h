@@ -33,7 +33,7 @@ class BtInstallMgr
 public: /* Methods: */
 
     BtInstallMgr(QObject * parent = nullptr);
-    ~BtInstallMgr();
+    ~BtInstallMgr() override;
 
     bool isUserDisclaimerConfirmed() const override;
 
