@@ -8,6 +8,7 @@
 **********/
 
 #include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfwizard/btbookshelftaskpage.h"
 
 #include <QApplication>
@@ -104,6 +105,9 @@ void BtBookshelfTaskPage::retranslateUi() {
 }
 
 static bool timeToUpdate() {
+    BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
+    if (bookshelfModel->moduleList().empty())
+        return true;
     QDate const lastDate = btConfig().value<QDate>(lastUpdate);
     if (!lastDate.isValid())
         return true;
