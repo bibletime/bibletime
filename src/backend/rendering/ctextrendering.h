@@ -63,12 +63,6 @@ class CTextRendering {
                         ExpandedLong   /// means "Genesis 1:1 (KJV)"
                     };
 
-                    Settings(const bool highlight = false,
-                             KeyRenderingFace keyRendering = SimpleKey)
-                        : highlight(highlight)
-                        , keyRenderingFace(keyRendering)
-                    {}
-
                     bool highlight;
                     KeyRenderingFace keyRenderingFace;
 

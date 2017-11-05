@@ -45,7 +45,7 @@ const QString CEntryDisplay::textKeyRendering(
     CDisplayRendering render(displayOptions, filterOptions);
 
     //no highlighted key and no extra key link in the text
-    CTextRendering::KeyTreeItem::Settings normal_settings(false, keyRendering);
+    CTextRendering::KeyTreeItem::Settings normal_settings{false, keyRendering};
     const CSwordModuleInfo *module = modules.first();
 
     Rendering::CTextRendering::KeyTree tree;
@@ -61,7 +61,9 @@ const QString CEntryDisplay::textKeyRendering(
         k1.setKey(keyName);
 
         // don't print the key
-        CTextRendering::KeyTreeItem::Settings preverse_settings(false, CTextRendering::KeyTreeItem::Settings::NoKey);
+        CTextRendering::KeyTreeItem::Settings preverse_settings{
+            false,
+            CTextRendering::KeyTreeItem::Settings::NoKey};
 
         if (k1.getVerse() == 1) { // X:1, prepend X:0
             if (k1.getChapter() == 1) { // 1:1, also prepend 0:0 before that

@@ -268,10 +268,10 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
         module = modules.at(0);
 
     // BT_ASSERT(module); // why? the existense of the module is tested later
-    CTextRendering::KeyTreeItem::Settings settings(
+    CTextRendering::KeyTreeItem::Settings settings{
         false,
         CTextRendering::KeyTreeItem::Settings::CompleteShort
-    );
+    };
 
     if (module && (module->type() == CSwordModuleInfo::Bible)) {
         sword::VerseKey vk;

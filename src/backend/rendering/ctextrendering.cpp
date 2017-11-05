@@ -109,22 +109,38 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
 
             while (ok && ((start < stop) || (start == stop)) ) { //range
                 m_childList.append(
-                    new KeyTreeItem(start.key(), module, KeyTreeItem::Settings(false, settings.keyRenderingFace))
-                );
-
-
+                            new KeyTreeItem(start.key(),
+                                            module,
+                                            KeyTreeItem::Settings{
+                                                false,
+                                                settings.keyRenderingFace}));
                 ok = start.next(CSwordVerseKey::UseVerse);
             }
         }
         else if (m_key.isEmpty()) {
-            m_childList.append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, settings.keyRenderingFace)) );
+            m_childList.append(
+                        new KeyTreeItem(startKey,
+                                        module,
+                                        KeyTreeItem::Settings{
+                                            false,
+                                            settings.keyRenderingFace}));
         }
     }
     else if ((module->type() == CSwordModuleInfo::Lexicon) || (module->type() == CSwordModuleInfo::Commentary) ) {
-        m_childList.append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, KeyTreeItem::Settings::NoKey)) );
+        m_childList.append(
+                    new KeyTreeItem(startKey,
+                                    module,
+                                    KeyTreeItem::Settings{
+                                        false,
+                                        KeyTreeItem::Settings::NoKey}));
     }
     else if (module->type() == CSwordModuleInfo::GenericBook) {
-        m_childList.append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, KeyTreeItem::Settings::NoKey)) );
+        m_childList.append(
+                    new KeyTreeItem(startKey,
+                                    module,
+                                    KeyTreeItem::Settings{
+                                        false,
+                                        KeyTreeItem::Settings::NoKey}));
     }
 
     //make it into "<simple|range> (modulename)"
