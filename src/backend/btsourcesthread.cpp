@@ -11,6 +11,7 @@
 
 #include <QString>
 #include <memory>
+#include <type_traits>
 #include "btinstallbackend.h"
 #include "backend/btinstallmgr.h"
 #include "util/btassert.h"
@@ -29,9 +30,10 @@ void BtSourcesThread::run() {
     }
 
     QStringList const sourceNames = BtInstallBackend::sourceNameList();
-    int const sourceCount = sourceNames.count();
+    auto const sourceCount = sourceNames.count();
+    BT_ASSERT(sourceCount >= 0);
     std::unique_ptr<int[]> failedSources{new int[sourceCount]};
-    int numFailedSources = 0;
+    std::size_t numFailedSources = 0u;
     BtInstallMgr iMgr;
     for (int i = 0; i < sourceCount; ++i) {
         if (shouldStop()) {
@@ -47,7 +49,8 @@ void BtSourcesThread::run() {
                 ++numFailedSources;
             }
         }
-        emit percentComplete(10 + 90 * ((i + 1.0) / sourceCount));
+        emit percentComplete(
+                    static_cast<int>(10 + 90 * ((i + 1.0) / sourceCount)));
     }
     emit percentComplete(100);
     if (numFailedSources <= 0) {
@@ -55,7 +58,7 @@ void BtSourcesThread::run() {
         m_finishedSuccessfully.store(true, std::memory_order_release);
     } else {
         QString msg = tr("The following remote libraries failed to update: ");
-        for (int i = 0;;) {
+        for (std::size_t i = 0;;) {
             msg += sourceNames[failedSources[i]];
             if (++i >= numFailedSources)
                 break;
