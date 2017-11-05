@@ -87,7 +87,7 @@ public: /* Methods: */
     */
     CSwordBackend(const QString & path, const bool augmentHome = true);
 
-    ~CSwordBackend();
+    ~CSwordBackend() override;
 
     /** \returns the CSwordBackend singleton instance (created if needed). */
     static inline CSwordBackend * createInstance() {
