@@ -47,7 +47,7 @@ public: /* Methods: */
     */
     BtBookmarksModel(const QString & fileName = QString(),
                      const QString & rootFolder = QString(), QObject * parent = nullptr);
-    ~BtBookmarksModel();
+    ~BtBookmarksModel() override;
 
     /** Reimplemented from QAbstractItemModel */
     int rowCount(const QModelIndex & parent = QModelIndex()) const override;
