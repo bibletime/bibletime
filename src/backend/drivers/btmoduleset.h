@@ -21,7 +21,7 @@ class BtModuleSet: public QSet<CSwordModuleInfo *> {
 
 public: /* Methods: */
 
-    inline BtModuleSet() {};
+    inline BtModuleSet() {}
 
     inline BtModuleSet(QSet<CSwordModuleInfo *> const & copy)
         : QSet<CSwordModuleInfo *>(copy)
