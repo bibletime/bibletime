@@ -14,10 +14,8 @@
 
 #include <QWizardPage>
 
-#include <utility>
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "util/btassert.h"
 
+class BtBookshelfWizard;
 
 class BtBookshelfWizardPage: public QWizardPage {
 
@@ -25,17 +23,9 @@ class BtBookshelfWizardPage: public QWizardPage {
 
 public: /* Methods: */
 
-    template <typename ... Args>
-    BtBookshelfWizardPage(Args && ... args)
-        : QWizardPage(std::forward<Args>(args)...)
-    {}
+    BtBookshelfWizardPage(QWidget * parent = nullptr);
 
-    inline BtBookshelfWizard & btWizard() const noexcept {
-        BtBookshelfWizard * const w =
-                qobject_cast<BtBookshelfWizard *>(wizard());
-        BT_ASSERT(w);
-        return *w;
-    }
+    BtBookshelfWizard & btWizard() const noexcept;
 
 }; /* class BtBookshelfWizardPage */
 

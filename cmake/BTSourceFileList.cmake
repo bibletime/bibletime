@@ -151,6 +151,8 @@ SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
 SET(bibletime_SRC_FRONTEND_BOOKSHELFWIZARD
     src/frontend/bookshelfwizard/btbookshelfwizard.cpp
     src/frontend/bookshelfwizard/btbookshelfwizard.h
+    src/frontend/bookshelfwizard/btbookshelfwizardpage.cpp
+    src/frontend/bookshelfwizard/btbookshelfwizardpage.h
     src/frontend/bookshelfwizard/btbookshelftaskpage.cpp
     src/frontend/bookshelfwizard/btbookshelftaskpage.h
     src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp
