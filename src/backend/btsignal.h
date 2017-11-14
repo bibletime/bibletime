@@ -31,8 +31,7 @@ class BtSignal: public QObject {
 
 public:
 
-    inline BtSignal(QObject *parent = nullptr)
-        : QObject(parent) {}
+    BtSignal(QObject * parent = nullptr);
 
     /**
       Immediately emits the beforeChanged() signal.

@@ -20,6 +20,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/btsourcesthread.cpp
     src/backend/btbookmarksmodel.cpp
     src/backend/btglobal.cpp
+    src/backend/btsignal.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
