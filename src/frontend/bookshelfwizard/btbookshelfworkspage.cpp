@@ -21,6 +21,7 @@
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/bookshelfwizard/btinstallpagemodel.h"
 #include "frontend/btbookshelfgroupingmenu.h"
 #include "frontend/btbookshelfview.h"
