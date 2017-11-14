@@ -73,7 +73,4 @@ SET(common_bibletime_SOURCES
 # For the Windows Application Icon
 IF(MSVC)
   LIST(APPEND common_bibletime_SOURCES "cmake/BTWinIcon.rc")
-  SOURCE_GROUP("Icon Files" FILES "cmake/BTWinIcon.rc")
 ENDIF()
-
-SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
