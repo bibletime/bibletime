@@ -18,7 +18,6 @@
 #include <QWidget>
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/managers/cswordbackend.h"
-#include "../bibletimeapp.h"
 #include "../frontend/messagedialog.h"
 #include "btassert.h"
 #include "cresmgr.h"
