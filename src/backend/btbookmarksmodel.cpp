@@ -34,7 +34,6 @@
 #include <QTextStream>
 #include <QTime>
 #include <QTimer>
-#include "../bibletimeapp.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
