@@ -12,10 +12,6 @@ SET(test_OTHER_SOURCES
 
 FUNCTION(test_a_class testDir testClass )
     PROJECT(test_${testClass})
-    SET(test_${testClass}_MOCABLE_HEADERS
-        ${testDir}/test_${testClass}.h
-    )
-    QT5_WRAP_CPP(test_${testClass}_MOC_SRC ${test_${testClass}_MOCABLE_HEADERS})
     ADD_EXECUTABLE(test_${testClass}
         ${testDir}/test_${testClass}.cpp
         ${test_OTHER_SOURCES}
