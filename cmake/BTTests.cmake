@@ -15,7 +15,6 @@ FUNCTION(test_a_class testDir testClass )
     ADD_EXECUTABLE(test_${testClass}
         ${testDir}/test_${testClass}.cpp
         ${test_OTHER_SOURCES}
-        ${test_${testClass}_MOC_SRC}
         ${test_RESOURCE_SOURCES}
     )
     SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS ${Sword_CFLAGS_OTHER} -std=c++11 )

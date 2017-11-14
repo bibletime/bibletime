@@ -193,7 +193,6 @@ ADD_LIBRARY(
     bibletime_common
     STATIC
     ${bibletime_COMMON_SOURCES}
-    ${bibletime_COMMON_MOCABLE_SOURCES}
 )
 QT5_USE_MODULES(bibletime_common Widgets Xml)
 
