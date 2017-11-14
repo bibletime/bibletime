@@ -18,7 +18,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "bibletimeapp.h"
-#include "frontend/cdragdrop.h"
+#include "frontend/BtMimeData.h"
 #include "frontend/cexportmanager.h"
 #include "util/btconnect.h"
 #include "util/cresmgr.h"

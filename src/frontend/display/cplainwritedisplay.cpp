@@ -15,7 +15,7 @@
 #include <QDropEvent>
 #include <QMenu>
 #include "backend/keys/cswordkey.h"
-#include "frontend/cdragdrop.h"
+#include "frontend/BtMimeData.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"

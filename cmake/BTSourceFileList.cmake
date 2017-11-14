@@ -142,6 +142,8 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/cmdiarea.cpp
     src/frontend/crossrefrendering.cpp
     src/frontend/messagedialog.cpp
+    src/frontend/BtMimeData.cpp
+    src/frontend/BookmarkItem.cpp
 )
 
 SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
@@ -345,7 +347,8 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/btprinter.h
     src/frontend/btwebenginepage.h
     src/frontend/btwebengineview.h
-    src/frontend/cdragdrop.h
+    src/frontend/BtMimeData.h
+    src/frontend/BookmarkItem.h
     src/frontend/cinfodisplay.h
     src/frontend/cmdiarea.h
     src/frontend/display/btcolorwidget.h

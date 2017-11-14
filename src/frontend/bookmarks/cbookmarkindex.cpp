@@ -29,7 +29,7 @@
 #include "bibletime.h"
 #include "bibletimeapp.h"
 #include "frontend/btprinter.h"
-#include "frontend/cdragdrop.h"
+#include "frontend/BtMimeData.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
