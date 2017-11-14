@@ -67,7 +67,6 @@ SET(common_bibletime_SOURCES
     ${bibletime_SOURCES}
     ${bibletime_RESOURCE_SOURCES}
     ${bibletime_QML_FILES}
-    ${bibletime_RC}
     ${bibletime_UI_translations}
 )
 
