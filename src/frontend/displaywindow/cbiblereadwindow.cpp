@@ -17,7 +17,7 @@
 #include <QWidget>
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/creaddisplay.h"

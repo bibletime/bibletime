@@ -19,7 +19,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include "backend/config/btconfig.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/messagedialog.h"
 #include "util/btconnect.h"
 #include "util/bticons.h"

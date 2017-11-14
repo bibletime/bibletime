@@ -14,7 +14,7 @@
 #include <QString>
 #include <QToolTip>
 #include <QToolButton>
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
 #include "util/cresmgr.h"

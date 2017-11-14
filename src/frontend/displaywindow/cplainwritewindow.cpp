@@ -13,9 +13,9 @@
 #include <QDebug>
 #include <QRegExp>
 #include <QToolBar>
-#include "bibletime.h"
 #include "backend/keys/cswordkey.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletime.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/display/cplainwritedisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"

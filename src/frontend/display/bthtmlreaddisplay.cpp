@@ -16,7 +16,7 @@
 #include <QTimer>
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
-#include "bibletime.h"
+#include "frontend/bibletime.h"
 #include "frontend/BtMimeData.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"

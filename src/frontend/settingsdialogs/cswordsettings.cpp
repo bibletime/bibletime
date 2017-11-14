@@ -10,7 +10,7 @@
 #include "frontend/settingsdialogs/cswordsettings.h"
 
 #include <QVBoxLayout>
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/settingsdialogs/btstandardworkstab.h"
 #include "frontend/settingsdialogs/bttextfilterstab.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"

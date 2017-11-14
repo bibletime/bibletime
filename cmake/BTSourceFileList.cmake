@@ -1,15 +1,3 @@
-
-SET(bibletime_SRC
-    # Toplevel files:
-    src/bibletime.cpp
-    src/bibletime_init.cpp
-    src/bibletime_slots.cpp
-    src/bibletimeapp.cpp
-    src/main.cpp
-)
-
-SOURCE_GROUP("src" FILES ${bibletime_SRC})
-
 SET(bibletime_SRC_BACKEND
     # Backend top level:
     src/backend/btmoduletreeitem.cpp
@@ -124,6 +112,12 @@ SOURCE_GROUP("src\\util" FILES ${bibletime_SRC_UTIL})
 
 SET(bibletime_SRC_FRONTEND
     # Frontend top level:
+    src/frontend/bibletime.cpp
+    src/frontend/bibletime_init.cpp
+    src/frontend/bibletime_slots.cpp
+    src/frontend/bibletimeapp.cpp
+    src/frontend/main.cpp
+
     src/frontend/btaboutdialog.cpp
     src/frontend/btaboutmoduledialog.cpp
     src/frontend/btbookshelfdockwidget.cpp
@@ -299,120 +293,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
 
 SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPLAYWINDOW})
 
-# Mocable headers:
-SET(bibletime_COMMON_MOCABLE_HEADERS
-    src/backend/btsignal.h
-    src/backend/bookshelfmodel/btbookshelffiltermodel.h
-    src/backend/bookshelfmodel/btbookshelfmodel.h
-    src/backend/bookshelfmodel/btbookshelftreemodel.h
-    src/backend/cswordmodulesearch.h
-    src/backend/drivers/cswordbiblemoduleinfo.h
-    src/backend/drivers/cswordbookmoduleinfo.h
-    src/backend/drivers/cswordcommentarymoduleinfo.h
-    src/backend/drivers/cswordlexiconmoduleinfo.h
-    src/backend/drivers/cswordmoduleinfo.h
-    src/backend/managers/cswordbackend.h
-    src/backend/models/btmoduletextmodel.h
-    src/backend/models/btlistmodel.h
-    src/backend/btinstallmgr.h
-    src/backend/btinstallthread.h
-    src/backend/btsourcesthread.h
-    src/backend/btbookmarksmodel.h
-)
-
-SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
-    src/bibletime.h
-    src/bibletimeapp.h
-    src/frontend/bookmarks/bteditbookmarkdialog.h
-    src/frontend/bookmarks/cbookmarkindex.h
-    src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h
-    src/frontend/bookshelfwizard/btinstallpagemodel.h
-    src/frontend/bookshelfwizard/btbookshelfwizard.h
-    src/frontend/bookshelfwizard/btbookshelfwizardpage.h
-    src/frontend/bookshelfwizard/btbookshelftaskpage.h
-    src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.h
-    src/frontend/bookshelfwizard/btbookshelfremovefinalpage.h
-    src/frontend/bookshelfwizard/btbookshelfworkspage.h
-    src/frontend/bookshelfwizard/btbookshelflanguagespage.h
-    src/frontend/bookshelfwizard/btbookshelfsourcespage.h
-    src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h
-    src/frontend/btaboutdialog.h
-    src/frontend/btaboutmoduledialog.h
-    src/frontend/btbookshelfdockwidget.h
-    src/frontend/btbookshelfgroupingmenu.h
-    src/frontend/btbookshelfview.h
-    src/frontend/btbookshelfwidget.h
-    src/frontend/btmenuview.h
-    src/frontend/btmodulechooserdialog.h
-    src/frontend/btmoduleindexdialog.h
-    src/frontend/btopenworkaction.h
-    src/frontend/btprinter.h
-    src/frontend/btwebenginepage.h
-    src/frontend/btwebengineview.h
-    src/frontend/BtMimeData.h
-    src/frontend/BookmarkItem.h
-    src/frontend/cinfodisplay.h
-    src/frontend/cmdiarea.h
-    src/frontend/display/btcolorwidget.h
-    src/frontend/display/btfindwidget.h
-    src/frontend/display/btfontsizewidget.h
-    src/frontend/display/bthtmljsobject.h
-    src/frontend/display/bthtmlreaddisplay.h
-    src/frontend/display/cdisplay.h
-    src/frontend/display/chtmlwritedisplay.h
-    src/frontend/displaywindow/btactioncollection.h
-    src/frontend/displaywindow/btdisplaysettingsbutton.h
-    src/frontend/displaywindow/btmodulechooserbar.h
-    src/frontend/displaywindow/btmodulechooserbutton.h
-    src/frontend/displaywindow/bttextwindowheader.h
-    src/frontend/displaywindow/bttextwindowheaderwidget.h
-    src/frontend/displaywindow/bttoolbarpopupaction.h
-    src/frontend/displaywindow/cbiblereadwindow.h
-    src/frontend/displaywindow/cbookreadwindow.h
-    src/frontend/displaywindow/ccommentaryreadwindow.h
-    src/frontend/displaywindow/cdisplaywindow.h
-    src/frontend/displaywindow/chtmlwritewindow.h
-    src/frontend/displaywindow/clexiconreadwindow.h
-    src/frontend/displaywindow/cplainwritewindow.h
-    src/frontend/displaywindow/creadwindow.h
-    src/frontend/keychooser/bthistory.h
-    src/frontend/keychooser/cbookkeychooser.h
-    src/frontend/keychooser/cbooktreechooser.h
-    src/frontend/keychooser/ckeychooser.h
-    src/frontend/keychooser/ckeychooserwidget.h
-    src/frontend/keychooser/clexiconkeychooser.h
-    src/frontend/keychooser/cscrollbutton.h
-    src/frontend/keychooser/cscrollerwidgetset.h
-    src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.h
-    src/frontend/keychooser/versekeychooser/btversekeymenu.h
-    src/frontend/keychooser/versekeychooser/cbiblekeychooser.h
-    src/frontend/keychooser/versekeychooser/btbiblekeywidget.h
-    src/frontend/searchdialog/analysis/csearchanalysisdialog.h
-    src/frontend/searchdialog/analysis/csearchanalysisscene.h
-    src/frontend/searchdialog/btsearchmodulechooserdialog.h
-    src/frontend/searchdialog/btsearchoptionsarea.h
-    src/frontend/searchdialog/btsearchresultarea.h
-    src/frontend/searchdialog/btsearchsyntaxhelpdialog.h
-    src/frontend/searchdialog/chistorycombobox.h
-    src/frontend/searchdialog/cmoduleresultview.h
-    src/frontend/searchdialog/crangechooserdialog.h
-    src/frontend/searchdialog/csearchdialog.h
-    src/frontend/searchdialog/csearchresultview.h
-    src/frontend/settingsdialogs/btshortcutsdialog.h
-    src/frontend/settingsdialogs/btshortcutseditor.h
-    src/frontend/settingsdialogs/bttextfilterstab.h
-    src/frontend/settingsdialogs/btstandardworkstab.h
-    src/frontend/settingsdialogs/cacceleratorsettings.h
-    src/frontend/settingsdialogs/cconfigurationdialog.h
-    src/frontend/settingsdialogs/cdisplaysettings.h
-    src/frontend/settingsdialogs/btfontchooserwidget.h
-    src/frontend/settingsdialogs/btfontsettings.h
-    src/frontend/settingsdialogs/clistwidget.h
-    src/frontend/settingsdialogs/cswordsettings.h
-    src/frontend/tips/bttipdialog.h
-    src/frontend/welcome/btwelcomedialog.h
-)
-
 SET(bibletime_COMMON_SOURCES
     ${bibletime_SRC_BACKEND}
     ${bibletime_SRC_BACKEND_BOOKSHELFMODEL}
@@ -426,7 +306,6 @@ SET(bibletime_COMMON_SOURCES
     ${bibletime_SRC_UTIL})
 
 SET(bibletime_FRONTEND_DESKTOP_SOURCES
-    ${bibletime_SRC}
     ${bibletime_SRC_FRONTEND}
     ${bibletime_SRC_FRONTEND_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_BOOKSHELFWIZARD}
@@ -504,29 +383,6 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/ui/viewmanager.h
 )
 
-SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
-    src/mobile/bibletime.h
-    src/mobile/bibletimeapp.h
-    src/mobile/bookshelfmanager/installmanager.h
-    src/mobile/bookshelfmanager/installprogress.h
-    src/mobile/bookshelfmanager/installsourcesmanager.h
-    src/mobile/bookshelfmanager/installsources.h
-    src/mobile/keychooser/bookkeychooser.h
-    src/mobile/keychooser/keynamechooser.h
-    src/mobile/keychooser/versechooser.h
-    src/mobile/models/searchmodel.h
-    src/mobile/sessionmanager/sessionmanager.h
-    src/mobile/ui/btstyle.h
-    src/mobile/ui/btsearchinterface.h
-    src/mobile/ui/btwindowinterface.h
-    src/mobile/ui/indexthread.h
-    src/mobile/ui/modulechooser.h
-    src/mobile/ui/moduleinterface.h
-    src/mobile/ui/qtquick2applicationviewer.h
-    src/mobile/ui/gridchooser.h
-    src/mobile/ui/viewmanager.h
-)
-
 SET(bibletime_MOBILE_RESOURCE_FILES
     src/mobile/btm.qrc
 )
@@ -566,15 +422,10 @@ SET(bibletime_MOBILE_QML_FILES
 
 SET(bibletime_FRONTEND_MOBILE_SOURCES
     ${bibletime_SRC_MOBILE_SOURCES}
-    ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
     ${bibletime_SRC_MOBILE_MODEL_SOURCES}
     ${bibletime_SRC_MOBILE_SESSIONMANAGER_SOURCES}
     ${bibletime_SRC_MOBILE_UI_SOURCES}
     ${bibletime_SRC_MOBILE_UTIL_SOURCES}
-)
-
-SET(bibletime_FRONTEND_MOBILE_MOCABLE_HEADERS
-    ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
 )
 
 SET(bibletime_DESKTOP_TRANSLATION_FILE_PREFIX "bibletime_ui_")
@@ -606,8 +457,6 @@ MESSAGE(STATUS "Selected frontend: ${BIBLETIME_FRONTEND}")
 
 SET(bibletime_SOURCES
     ${bibletime_FRONTEND_${BIBLETIME_FRONTEND}_SOURCES})
-SET(bibletime_MOCABLE_HEADERS
-    ${bibletime_FRONTEND_${BIBLETIME_FRONTEND}_MOCABLE_HEADERS})
 SET(bibletime_RESOURCE_FILES
     ${bibletime_${BIBLETIME_FRONTEND}_RESOURCE_FILES})
 SET(bibletime_QML_FILES
@@ -622,7 +471,6 @@ QT5_ADD_RESOURCES(bibletime_RESOURCE_SOURCES ${bibletime_RESOURCE_FILES})
 SET(common_bibletime_SOURCES
     ${bibletime_SOURCES}
     ${bibletime_RESOURCE_SOURCES}
-    ${bibletime_MOC_SOURCES}
     ${bibletime_QML_FILES}
     ${bibletime_RC}
     ${bibletime_UI_translations}

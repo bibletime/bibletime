@@ -9,7 +9,7 @@
 
 #include "btwelcomedialog.h"
 
-#include "bibletime.h"
+#include "frontend/bibletime.h"
 #include "frontend/messagedialog.h"
 
 #include <QDialogButtonBox>

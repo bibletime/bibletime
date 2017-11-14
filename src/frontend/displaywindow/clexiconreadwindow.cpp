@@ -17,8 +17,8 @@
 
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
-#include "bibletime.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletime.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"

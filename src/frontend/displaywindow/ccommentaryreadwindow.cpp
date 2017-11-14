@@ -14,8 +14,8 @@
 #include <QMenu>
 #include <QToolBar>
 #include "backend/keys/cswordversekey.h"
-#include "bibletime.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletime.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"

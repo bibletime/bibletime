@@ -17,7 +17,7 @@
 #include <QToolTip>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "util/btconnect.h"
 #include "util/cresmgr.h"

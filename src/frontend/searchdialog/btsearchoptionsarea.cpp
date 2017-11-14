@@ -23,7 +23,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/drivers/btconstmoduleset.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"

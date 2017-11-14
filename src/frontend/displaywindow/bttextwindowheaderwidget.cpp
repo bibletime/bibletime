@@ -18,7 +18,7 @@
 #include <QString>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/displaywindow/bttextwindowheader.h"
 #include "util/btconnect.h"
 #include "util/cresmgr.h"

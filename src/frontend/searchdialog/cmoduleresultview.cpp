@@ -18,7 +18,7 @@
 #include <QtAlgorithms>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"

@@ -15,7 +15,7 @@
 #include <QToolBar>
 #include <QToolTip>
 #include "backend/config/btconfig.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/display/btcolorwidget.h"
 #include "frontend/display/btfontsizewidget.h"
 #include "frontend/displaywindow/btactioncollection.h"

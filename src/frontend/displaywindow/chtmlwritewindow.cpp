@@ -11,8 +11,8 @@
 
 #include <QAction>
 #include <QToolBar>
-#include "bibletime.h"
 #include "backend/keys/cswordkey.h"
+#include "frontend/bibletime.h"
 #include "frontend/display/chtmlwritedisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"

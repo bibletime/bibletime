@@ -16,7 +16,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/messagedialog.h"
 #include "util/btconnect.h"
 #include "util/cresmgr.h"

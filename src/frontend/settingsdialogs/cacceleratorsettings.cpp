@@ -16,8 +16,8 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "bibletime.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletime.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/cbookreadwindow.h"

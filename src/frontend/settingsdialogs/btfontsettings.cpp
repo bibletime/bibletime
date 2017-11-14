@@ -17,7 +17,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "backend/config/btconfig.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/settingsdialogs/btfontchooserwidget.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/btconnect.h"

@@ -13,8 +13,8 @@
 #include <QMenu>
 #include <QSplitter>
 #include <QToolBar>
-#include "bibletime.h"
 #include "backend/keys/cswordtreekey.h"
+#include "frontend/bibletime.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"

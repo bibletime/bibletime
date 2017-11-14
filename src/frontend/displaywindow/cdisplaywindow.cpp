@@ -17,8 +17,8 @@
 #include <QWidget>
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
-#include "bibletime.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletime.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"

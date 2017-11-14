@@ -23,7 +23,7 @@
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/btmoduleindexdialog.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"

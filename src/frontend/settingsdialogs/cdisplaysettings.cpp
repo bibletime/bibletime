@@ -17,7 +17,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/btwebengineview.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/btassert.h"

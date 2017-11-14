@@ -15,10 +15,10 @@
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/bibletime.h"
 #include "frontend/BtMimeData.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/display/bthtmlreaddisplay.h"
-#include "bibletime.h"
 
 
 using namespace InfoDisplay;

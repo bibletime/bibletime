@@ -21,7 +21,7 @@
 #include <QStringList>
 #include <QToolButton>
 #include "backend/keys/cswordversekey.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
 #include "util/btconnect.h"

@@ -17,7 +17,7 @@
 #include <QWidget>
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
-#include "bibletimeapp.h"
+#include "frontend/bibletimeapp.h"
 #include "frontend/BtMimeData.h"
 #include "frontend/cexportmanager.h"
 #include "util/btconnect.h"
