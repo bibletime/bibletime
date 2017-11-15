@@ -20,20 +20,6 @@
 
 
 /**
-  \def DEPRECATED(func)
-  \brief Macro for declaring functions and methods as deprecated.
-*/
-
-#ifdef __GNUC__
-    #define DEPRECATED(func) func __attribute__ ((deprecated))
-#elif defined(_MSC_VER)
-    #define DEPRECATED(func) __declspec(deprecated) func
-#else
-    #define DEPRECATED(func) func
-#endif
-
-
-/**
   \def LIKELY(c)
   \brief Gives the compiler a hint that the given conditional is likely to
          evaluate to true.
