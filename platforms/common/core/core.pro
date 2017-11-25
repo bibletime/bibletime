@@ -53,6 +53,7 @@ SOURCES += \
     ../../../src/backend/rendering/chtmlexportrendering.cpp \
     ../../../src/backend/rendering/cplaintextexportrendering.cpp \
     ../../../src/backend/rendering/ctextrendering.cpp \
+    ../../../src/backend/btsignal.cpp \
     ../../../src/util/cresmgr.cpp \
     ../../../src/util/directory.cpp \
     ../../../src/util/bticons.cpp \
