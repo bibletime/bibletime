@@ -1,3 +1,6 @@
+2017-01-01 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix application icon directory location to match the standard (freedesktop.org)
+
 2017-11-05 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #124, Cannot install works
 
