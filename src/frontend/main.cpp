@@ -12,6 +12,7 @@
 #include <memory>
 #include <QDateTime>
 #include <QFile>
+#include <QLibraryInfo>
 #include <QLocale>
 #include <QTextCodec>
 #include <QTranslator>
@@ -280,8 +281,9 @@ int main(int argc, char* argv[]) {
 
     //first install QT's own translations
     QTranslator qtTranslator;
-    qtTranslator.load("qt_" + QLocale::system().name());
-    app.installTranslator(&qtTranslator);
+    if (qtTranslator.load("qt_" + QLocale::system().name(),
+                          QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtTranslator);
     //then our own
     QTranslator BibleTimeTranslator;
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());

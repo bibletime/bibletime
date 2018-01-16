@@ -1,4 +1,7 @@
-2017-01-01 Gary Holmlund <gary.holmlund@gmail.com>
+2018-01-15 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #131, Add Qt translation file path so the Bookshelf Wizard buttons are translated.
+
+2018-01-01 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix application icon directory location to match the standard (freedesktop.org)
 
 2017-11-05 Gary Holmlund <gary.holmlund@gmail.com>
