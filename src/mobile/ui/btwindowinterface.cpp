@@ -401,6 +401,9 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
         m_moduleNames[0] = moduleName;
 
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
+    if (!m)
+        return;
+
     if (!m_key) {
         m_key = CSwordKey::createInstance(m);
     }
