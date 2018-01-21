@@ -1,7 +1,7 @@
 CONFIG += clucene  mobile c++11
 QT += svg xml qml quick
 
-QML_ROOT_PATH = /home/gary/shared/sw/bibletime/src/mobile/qml
+QML_ROOT_PATH = ../../../src/mobile/qml
 
 DEFINES += BT_MOBILE
 QMAKE_CXXFLAGS += -DBT_GIT_VERSION=\\\"`git rev-parse HEAD`\\\"
