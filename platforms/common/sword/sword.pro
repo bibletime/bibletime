@@ -1,5 +1,6 @@
-# Sword 1.7.0 or higher required (http://crosswire.org/ftpmirror/pub/sword/source/v1.7/sword-1.7.0.tar.gz)
-# make sure variable below points to correct location
+# Sword 1.8.1 or higher required 
+
+DEFINES += EXCLUDEXZ EXCLUDEBZIP2 EXCLUDEZLIB
 
 isEmpty(SWORD_PATH):SWORD_PATH = ../../../../sword
 isEmpty(SWORD_VERSION_NUM):SWORD_VERSION_NUM = 107005000
@@ -135,40 +136,47 @@ SOURCES += \
     $${SWORD_PATH}/src/utilfuns/ftpparse.c \
     $${SWORD_PATH}/src/utilfuns/url.cpp \
     $${SWORD_PATH}/src/utilfuns/roman.cpp \
-    $${SWORD_PATH}/src/utilfuns/zlib/untgz.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/zutil.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/uncompr.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/trees.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/adler32.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/compress.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/crc32.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/deflate.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzclose.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzwrite.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/infback.c \
     $${SWORD_PATH}/src/utilfuns/zlib/inftrees.c \
     $${SWORD_PATH}/src/utilfuns/zlib/inflate.c \
     $${SWORD_PATH}/src/utilfuns/zlib/inffast.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/deflate.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/crc32.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/compress.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/adler32.c \
-
-
-lessThan(SWORD_VERSION_NUM, 107000000) { # 1.6 series
-SOURCES += \
-    $${SWORD_PATH}/src/mgr/ftptrans.cpp \
-    $${SWORD_PATH}/src/modules/filters/plainhtml.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisruby.cpp \
-    $${SWORD_PATH}/src/utilfuns/swunicod.cpp \
-    $${SWORD_PATH}/src/utilfuns/zlib/infutil.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/infcodes.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/infblock.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzio.c \
-}
-else { # 1.7 series
-SOURCES += \
-    $${SWORD_PATH}/src/mgr/remotetrans.cpp \
+    $${SWORD_PATH}/src/utilfuns/zlib/trees.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/uncompr.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/zutil.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/untgz.c \
+    $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
     $${SWORD_PATH}/src/modules/filters/osisglosses.cpp \
+    $${SWORD_PATH}/src/modules/filters/osisxlit.cpp \
     $${SWORD_PATH}/src/modules/filters/osisenum.cpp \
     $${SWORD_PATH}/src/modules/filters/osisreferencelinks.cpp \
-    $${SWORD_PATH}/src/modules/filters/osisxlit.cpp \
     $${SWORD_PATH}/src/modules/filters/scsuutf8.cpp \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzlib.c \
-    $${SWORD_PATH}/src/utilfuns/zlib/gzread.c \
+    $${SWORD_PATH}/src/mgr/remotetrans.cpp \
+
+message( $${SWORD_VERSION_NUM} )
+lessThan(SWORD_VERSION_NUM, 107005000) { # 1.7 series
+message( "Sword 1.7.x" )
+SOURCES += \
+
+}
+else { # 1.8 series
+message( "Sword 1.8.x" )
+SOURCES += \
+    $${SWORD_PATH}/src/modules/comments/zcom4/zcom4.cpp \
+    $${SWORD_PATH}/src/modules/common/zverse4.cpp \
+    $${SWORD_PATH}/src/modules/filters/gbflatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/teilatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/thmllatex.cpp \
+    $${SWORD_PATH}/src/modules/filters/osislatex.cpp \
+    $${SWORD_PATH}/src/modules/texts/ztext4/ztext4.cpp \
+
+}
 
 # Compressors
 windows:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
@@ -180,18 +188,6 @@ windows:DEFINES += EXCLUDEXZ EXCLUDEBZIP2
     SOURCES += $${SWORD_PATH}/src/modules/common/bz2comprs.cpp
 }
 
-
-!lessThan(SWORD_VERSION_NUM, 107005000) {
-SOURCES += \
-    $${SWORD_PATH}/src/modules/filters/gbflatex.cpp \
-    $${SWORD_PATH}/src/modules/filters/osislatex.cpp \
-    $${SWORD_PATH}/src/modules/filters/thmllatex.cpp \
-    $${SWORD_PATH}/src/modules/texts/ztext4/ztext4.cpp \
-    $${SWORD_PATH}/src/modules/comments/zcom4/zcom4.cpp \
-    $${SWORD_PATH}/src/modules/common/zverse4.cpp \
-    $${SWORD_PATH}/src/modules/filters/teilatex.cpp \
-}
-}
 
 # CURL
 curl {
