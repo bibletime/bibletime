@@ -1,5 +1,9 @@
 ChangeLog for BibleTime Mobile
-2017-09-16 
+2018-02-01 
+    Version 2.20
+    Release with Sword 1.8.1
+    Fix Portuguese pt-utf8.conf problem
+
 2017-06-27 
     Version 2.11
     Update translation files
