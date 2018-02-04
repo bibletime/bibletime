@@ -1,3 +1,6 @@
+2018-02-03 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #119, Use recommended env var to get windows shared program data path.
+
 2018-01-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #131, Add Qt translation file path so the Bookshelf Wizard buttons are translated.
 
