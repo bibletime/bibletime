@@ -61,7 +61,7 @@ void BibleTime::initBackends() {
 void BibleTime::initSwordConfigFile() {
 // On Windows the sword.conf must be created before the initialization of sword
 // It will contain the LocalePath which is used for sword locales
-// It also contains a DataPath to the %ALLUSERSPROFILE%\Sword directory
+// It also contains a DataPath to the %ProgramData%\Sword directory
 // If this is not done here, the sword locales.d won't be found
 #ifdef Q_OS_WIN
     QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");

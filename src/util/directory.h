@@ -64,7 +64,7 @@ const QDir &getApplicationSwordDir();
 #endif
 
 #if defined Q_OS_WIN || defined Q_OS_ANDROID
-/** Return the path to the %ALLUSERSPROFILE%\Sword directory */
+/** Return the path to the shared Sword directory */
 const QDir &getSharedSwordDir();
 #endif
 

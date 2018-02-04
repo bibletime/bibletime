@@ -422,7 +422,7 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
 // Get one or more shared sword config (sword.conf) files
 QStringList CSwordBackend::getSharedSwordConfigFiles() const {
 #ifdef Q_OS_WIN
-    //  %ALLUSERSPROFILE%\Sword\sword.conf
+    //  %ProgramData%\Sword\sword.conf
     return QStringList(util::directory::convertDirSeparators(qgetenv("SWORD_PATH")) += "/Sword/sword.conf");
 #else
     // /etc/sword.conf, /usr/local/etc/sword.conf
