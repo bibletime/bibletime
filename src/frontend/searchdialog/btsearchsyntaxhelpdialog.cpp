@@ -27,6 +27,8 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     QVBoxLayout *l = new QVBoxLayout;
 
     m_webView = new BtWebEngineView(this);
+    BtWebEnginePage * page = new BtWebEnginePage(this);
+    m_webView->setPage(page);
     BT_CONNECT(m_webView->btPage(), SIGNAL(linkClicked(QUrl)),
                this,      SLOT(linkClicked(QUrl)));
     l->addWidget(m_webView);
