@@ -1,4 +1,7 @@
 2018-03-03 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #134, Bibletime crashes when clicking on "full syntax" 
+
+2018-03-03 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #132, Mag not always working with Hebrew / Strong 
 
 2018-02-03 Gary Holmlund <gary.holmlund@gmail.com>
