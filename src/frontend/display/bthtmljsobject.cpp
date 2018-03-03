@@ -114,9 +114,6 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
 
 // called from javascript timerEvent() in bthtml.js
 void BtHtmlJsObject::timeOutEvent(const QString & attributes) {
-    if (m_prev_attributes != attributes)
-        return;
-
     m_prev_attributes = "";
 
     Rendering::ListInfoData infoList(Rendering::detectInfo(attributes));
