@@ -82,6 +82,8 @@ function mouseMoveHandler (mEvent)
         if (node.attributes.length > 0)
         {
             attribList = getNodeAttributes(node);
+            if (attribList == "")
+                attribList = getNodeAttributes(node.parentNode);
             btHtmlJsObject.mouseMoveEvent(attribList, x, y, shiftKey);
         }
     }
@@ -116,6 +118,8 @@ function timerEvent()
     if (currentNode != 0  && currentNode == prevNode)
     {
         var attributes = getNodeAttributes(currentNode);
+        if (attributes == "")
+            attributes = getNodeAttributes(currentNode.parentNode);
         btHtmlJsObject.timeOutEvent(attributes);
     }
 }
