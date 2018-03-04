@@ -352,12 +352,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="159"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="160"/>
         <source>Documents</source>
         <translation>Documentos</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="190"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="191"/>
         <source>References</source>
         <translation>Referências</translation>
     </message>
@@ -655,42 +655,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="376"/>
         <source>New Feature</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo recurso</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="378"/>
         <source>You can write your own comments about Bible verses.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você pode escrever seus próprios comentários sobre versos da Bíblia.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="379"/>
         <source>Install the Personal commentary from Crosswire.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instale o comentário pessoal da Crosswire.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="380"/>
         <source>Then open the Personal commentary and select a verse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Em seguida, abra o comentário pessoal e selecione um verso.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="381"/>
         <source>You can then enter your text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você pode então inserir seu texto.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="383"/>
         <source>The Personal Commentary can be one of your Parallel Documents.</source>
-        <translation type="unfinished"></translation>
+        <translation>O comentário pessoal pode ser um dos seus documentos paralelos.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="469"/>
         <source>New Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Novas características</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="793"/>
         <source>View References</source>
-        <translation type="unfinished"></translation>
+        <translation>Referências </translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="849"/>

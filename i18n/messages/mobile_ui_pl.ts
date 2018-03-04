@@ -352,12 +352,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="159"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="160"/>
         <source>Documents</source>
         <translation>Dokumenty</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="190"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="191"/>
         <source>References</source>
         <translation>Odnośniki</translation>
     </message>
@@ -690,7 +690,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="793"/>
         <source>View References</source>
-        <translation type="unfinished">Pokaż odnośniki</translation>
+        <translation>Pokaż odnośniki</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="849"/>
