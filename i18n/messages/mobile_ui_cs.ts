@@ -157,17 +157,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="83"/>
         <source>Bible:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bible:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="130"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hebrew Strong&apos;s lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="176"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Greek Strong&apos;s lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/DefaultDoc.qml" line="221"/>
@@ -352,12 +352,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="159"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="160"/>
         <source>Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="190"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="191"/>
         <source>References</source>
         <translation type="unfinished"></translation>
     </message>
@@ -421,17 +421,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/VerseChooser.qml" line="35"/>
         <source>Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Kniha</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/VerseChooser.qml" line="45"/>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapitola</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/VerseChooser.qml" line="53"/>
         <source>Verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Verš</translation>
     </message>
 </context>
 <context>
@@ -534,7 +534,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/ui/installinterface.cpp" line="282"/>
         <source>Refreshing Source List</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovunačtení zdrojového listu</translation>
     </message>
     <message>
         <location filename="../../src/mobile/ui/installinterface.cpp" line="373"/>
@@ -552,7 +552,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
         <source>Refreshing</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovunačtení</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
@@ -620,7 +620,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="470"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="272"/>

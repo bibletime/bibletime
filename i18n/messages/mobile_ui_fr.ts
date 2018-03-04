@@ -350,12 +350,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="159"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="160"/>
         <source>Documents</source>
         <translation>Documents</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="190"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="191"/>
         <source>References</source>
         <translation>Références</translation>
     </message>

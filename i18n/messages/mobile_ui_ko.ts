@@ -308,7 +308,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="530"/>
+        <location filename="../../src/mobile/qml/main.qml" line="533"/>
         <source>Are you sure you want to quit?</source>
         <translation>정말로 나가시겠습니까?</translation>
     </message>
@@ -579,139 +579,144 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>main</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="315"/>
+        <location filename="../../src/mobile/qml/main.qml" line="318"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation>찾으려는 몇몇 자료가 색인되어 있지 않습니다. 지금 색인 작업을 하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="462"/>
-        <location filename="../../src/mobile/qml/main.qml" line="787"/>
+        <location filename="../../src/mobile/qml/main.qml" line="465"/>
+        <location filename="../../src/mobile/qml/main.qml" line="792"/>
         <source>New Window</source>
         <translation>새 창</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="463"/>
+        <location filename="../../src/mobile/qml/main.qml" line="466"/>
         <source>View Window</source>
         <translation>창 보기</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="844"/>
-        <location filename="../../src/mobile/qml/main.qml" line="892"/>
+        <location filename="../../src/mobile/qml/main.qml" line="850"/>
+        <location filename="../../src/mobile/qml/main.qml" line="898"/>
         <source>User Interface Font Size</source>
         <translation>화면 글꼴 크기</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="845"/>
+        <location filename="../../src/mobile/qml/main.qml" line="851"/>
         <source>Window Arrangement</source>
         <translation>창 배열</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="464"/>
+        <location filename="../../src/mobile/qml/main.qml" line="467"/>
         <source>Manage Installed Documents</source>
         <translation>설치된 책 관리</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="465"/>
+        <location filename="../../src/mobile/qml/main.qml" line="468"/>
         <source>Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="467"/>
+        <location filename="../../src/mobile/qml/main.qml" line="470"/>
         <source>About</source>
         <translation>소개</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="269"/>
+        <location filename="../../src/mobile/qml/main.qml" line="272"/>
         <source>Dark</source>
         <translation>어둡게</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="270"/>
+        <location filename="../../src/mobile/qml/main.qml" line="273"/>
         <source>Light Blue</source>
         <translation>연한 청색</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="271"/>
+        <location filename="../../src/mobile/qml/main.qml" line="274"/>
         <source>Crimson</source>
         <translation>자주색</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="847"/>
+        <location filename="../../src/mobile/qml/main.qml" line="853"/>
         <source>Default Documents</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="974"/>
+        <location filename="../../src/mobile/qml/main.qml" line="980"/>
         <source>Single</source>
         <translation>단일창</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="420"/>
+        <location filename="../../src/mobile/qml/main.qml" line="423"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
         <translation>바이블타임은 성경이나 주석과 같은 책을 봅니다. 이 책들은 내려받아서 기기 내부에 저장됩니다. 그러나 현재는 어떠한 책도 존재하지 않습니다. 지금 바로 책들을 설치하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="373"/>
+        <location filename="../../src/mobile/qml/main.qml" line="376"/>
         <source>New Feature</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="375"/>
+        <location filename="../../src/mobile/qml/main.qml" line="378"/>
         <source>You can write your own comments about Bible verses.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="376"/>
+        <location filename="../../src/mobile/qml/main.qml" line="379"/>
         <source>Install the Personal commentary from Crosswire.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="377"/>
+        <location filename="../../src/mobile/qml/main.qml" line="380"/>
         <source>Then open the Personal commentary and select a verse.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="378"/>
+        <location filename="../../src/mobile/qml/main.qml" line="381"/>
         <source>You can then enter your text.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="380"/>
+        <location filename="../../src/mobile/qml/main.qml" line="383"/>
         <source>The Personal Commentary can be one of your Parallel Documents.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="466"/>
+        <location filename="../../src/mobile/qml/main.qml" line="469"/>
         <source>New Features</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="843"/>
+        <location filename="../../src/mobile/qml/main.qml" line="793"/>
+        <source>View References</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="849"/>
         <source>Text Font</source>
         <translation>글자 글꼴</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="846"/>
+        <location filename="../../src/mobile/qml/main.qml" line="852"/>
         <source>Color Theme</source>
         <translation>색상 테마</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="975"/>
+        <location filename="../../src/mobile/qml/main.qml" line="981"/>
         <source>Tabbed</source>
         <translation>탭 형식</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="976"/>
+        <location filename="../../src/mobile/qml/main.qml" line="982"/>
         <source>Auto-tile</source>
         <translation>자동 타일 배열</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="977"/>
+        <location filename="../../src/mobile/qml/main.qml" line="983"/>
         <source>Auto-tile horizontally</source>
         <translation>자동 수평 배열</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="978"/>
+        <location filename="../../src/mobile/qml/main.qml" line="984"/>
         <source>Auto-tile vertically</source>
         <translation>자동 수직 배열</translation>
     </message>

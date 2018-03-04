@@ -308,7 +308,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="530"/>
+        <location filename="../../src/mobile/qml/main.qml" line="533"/>
         <source>Are you sure you want to quit?</source>
         <translation>本当に終了しますか?</translation>
     </message>
@@ -579,139 +579,144 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>main</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="315"/>
+        <location filename="../../src/mobile/qml/main.qml" line="318"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation>検索するモジュールのいくつかはインデックス化が必要です。インデックス化しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="462"/>
-        <location filename="../../src/mobile/qml/main.qml" line="787"/>
+        <location filename="../../src/mobile/qml/main.qml" line="465"/>
+        <location filename="../../src/mobile/qml/main.qml" line="792"/>
         <source>New Window</source>
         <translation>新規ウィンドウ</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="463"/>
+        <location filename="../../src/mobile/qml/main.qml" line="466"/>
         <source>View Window</source>
         <translation>ウインドウ表示</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="844"/>
-        <location filename="../../src/mobile/qml/main.qml" line="892"/>
+        <location filename="../../src/mobile/qml/main.qml" line="850"/>
+        <location filename="../../src/mobile/qml/main.qml" line="898"/>
         <source>User Interface Font Size</source>
         <translation>ユーザー インターフェイスのフォントサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="845"/>
+        <location filename="../../src/mobile/qml/main.qml" line="851"/>
         <source>Window Arrangement</source>
         <translation>ウィンドウを整列します</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="464"/>
+        <location filename="../../src/mobile/qml/main.qml" line="467"/>
         <source>Manage Installed Documents</source>
         <translation>インストールした文書を管理します</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="465"/>
+        <location filename="../../src/mobile/qml/main.qml" line="468"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="467"/>
+        <location filename="../../src/mobile/qml/main.qml" line="470"/>
         <source>About</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="269"/>
+        <location filename="../../src/mobile/qml/main.qml" line="272"/>
         <source>Dark</source>
         <translation>濃色</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="270"/>
+        <location filename="../../src/mobile/qml/main.qml" line="273"/>
         <source>Light Blue</source>
         <translation>水色</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="271"/>
+        <location filename="../../src/mobile/qml/main.qml" line="274"/>
         <source>Crimson</source>
         <translation>深紅色</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="847"/>
+        <location filename="../../src/mobile/qml/main.qml" line="853"/>
         <source>Default Documents</source>
         <translation>既定文書</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="974"/>
+        <location filename="../../src/mobile/qml/main.qml" line="980"/>
         <source>Single</source>
         <translation>単一</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="420"/>
+        <location filename="../../src/mobile/qml/main.qml" line="423"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
         <translation>BibleTimeは聖書や注解書などの文書を表示します。これらの文書はダウンロードされ、ローカルに保存されます。現在、文書はありません。文書をダウンロードしますか?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="373"/>
+        <location filename="../../src/mobile/qml/main.qml" line="376"/>
         <source>New Feature</source>
         <translation>新機能</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="375"/>
+        <location filename="../../src/mobile/qml/main.qml" line="378"/>
         <source>You can write your own comments about Bible verses.</source>
         <translation>聖書の各節に註解ができます。</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="376"/>
+        <location filename="../../src/mobile/qml/main.qml" line="379"/>
         <source>Install the Personal commentary from Crosswire.</source>
         <translation>Crosswireより私的註解をインストールしてください。</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="377"/>
+        <location filename="../../src/mobile/qml/main.qml" line="380"/>
         <source>Then open the Personal commentary and select a verse.</source>
         <translation>私的註解を開き、節を選択してください。</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="378"/>
+        <location filename="../../src/mobile/qml/main.qml" line="381"/>
         <source>You can then enter your text.</source>
         <translation>その後、テキストが入力できます。</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="380"/>
+        <location filename="../../src/mobile/qml/main.qml" line="383"/>
         <source>The Personal Commentary can be one of your Parallel Documents.</source>
         <translation>私的註解は、たとえば自作の平行記述表などでもかまいません。</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="466"/>
+        <location filename="../../src/mobile/qml/main.qml" line="469"/>
         <source>New Features</source>
         <translation>新機能</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="843"/>
+        <location filename="../../src/mobile/qml/main.qml" line="793"/>
+        <source>View References</source>
+        <translation>参考書を表示</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="849"/>
         <source>Text Font</source>
         <translation>本文フォント</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="846"/>
+        <location filename="../../src/mobile/qml/main.qml" line="852"/>
         <source>Color Theme</source>
         <translation>配色テーマ</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="975"/>
+        <location filename="../../src/mobile/qml/main.qml" line="981"/>
         <source>Tabbed</source>
         <translation>タブを付与します</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="976"/>
+        <location filename="../../src/mobile/qml/main.qml" line="982"/>
         <source>Auto-tile</source>
         <translation>自動で並べます</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="977"/>
+        <location filename="../../src/mobile/qml/main.qml" line="983"/>
         <source>Auto-tile horizontally</source>
         <translation>自動で水平方向に並べます</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="978"/>
+        <location filename="../../src/mobile/qml/main.qml" line="984"/>
         <source>Auto-tile vertically</source>
         <translation>自動で垂直方向に並べます</translation>
     </message>
