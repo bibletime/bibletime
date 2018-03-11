@@ -503,7 +503,7 @@ void CLanguageMgr::init() {
     //: Language name yi
     m_langList.append( new Language("yi", "Yiddish", QObject::tr("Yiddish")) );
     //: Language name yo
-    m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoryba")) );
+    m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoruba")) );
     //  m_langList.append( new Language("za", "Zhuang", QObject::tr("Zhuang")) );
     //: Language name zab
     m_langList.append( new Language("zab", "Zapotec, San Juan Guelav\u00eda", QObject::tr("Zapotec, San Juan Guelav\u00eda")) );
