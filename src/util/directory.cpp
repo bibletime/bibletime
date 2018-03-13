@@ -57,7 +57,7 @@ std::unique_ptr<QDir> cachedSwordLocalesDir;
 
 #ifdef Q_OS_ANDROID
 std::unique_ptr<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
-static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity/files";
+static const char AND_BIBLE[] = "Android/data/net.bible.android.activity/files";
 #endif
 
 #if defined Q_OS_WIN || defined Q_OS_SYMBIAN
@@ -89,7 +89,7 @@ bool initDirectoryCache() {
     }
 
 #ifdef Q_OS_ANDROID
-    cachedSharedSwordDir.reset(new QDir());
+    cachedSharedSwordDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
     if (!cachedSharedSwordDir->cd(AND_BIBLE)) {
         cachedSharedSwordDir->mkpath(AND_BIBLE);
         cachedSharedSwordDir->cd(AND_BIBLE);
