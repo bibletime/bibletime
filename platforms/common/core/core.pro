@@ -113,6 +113,30 @@ HEADERS += \
     ../../../src/util/btmodules.h \
     ../../../src/util/tool.h \
 
+TRANSLATIONS += \
+    ../../../i18n/messages/bibletime_ui_ar.ts \
+    ../../../i18n/messages/bibletime_ui_cs.ts \
+    ../../../i18n/messages/bibletime_ui_da.ts \
+    ../../../i18n/messages/bibletime_ui_de.ts \
+    ../../../i18n/messages/bibletime_ui_en_GB.ts \
+    ../../../i18n/messages/bibletime_ui_es.ts \
+    ../../../i18n/messages/bibletime_ui_et.ts \
+    ../../../i18n/messages/bibletime_ui_fi.ts \
+    ../../../i18n/messages/bibletime_ui_hu.ts \
+    ../../../i18n/messages/bibletime_ui_it.ts \
+    ../../../i18n/messages/bibletime_ui_ko.ts \
+    ../../../i18n/messages/bibletime_ui_lt.ts \
+    ../../../i18n/messages/bibletime_ui_pl.ts \
+    ../../../i18n/messages/bibletime_ui_pt_BR.ts \
+    ../../../i18n/messages/bibletime_ui_pt.ts \
+    ../../../i18n/messages/bibletime_ui_ru.ts \
+    ../../../i18n/messages/bibletime_ui_sk.ts \
+    ../../../i18n/messages/bibletime_ui.ts \
+    ../../../i18n/messages/bibletime_ui_zh_TW.ts 
+
+lupdate_only {
+    SOURCES = ../../../src/backend/drivers/cswordmoduleinfo.cpp \
+}
 
 # Core Platform Section
 
