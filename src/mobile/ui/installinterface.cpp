@@ -99,7 +99,7 @@ void InstallInterface::updateLanguageModel(const QString& currentCategory) {
         if (!currentCategory.isEmpty() && currentCategory != categoryName)
             continue;
         const CLanguageMgr::Language* language = module->language();
-        QString languageName = language->englishName();
+        QString languageName = language->translatedName();
         languages.insert(languageName);
     }
     m_languageList = languages.toList();
@@ -172,7 +172,7 @@ void InstallInterface::updateWorksModel(
         CSwordModuleInfo::Category category = module->category();
         QString moduleCategoryName = module->categoryName(category);
         const CLanguageMgr::Language* language = module->language();
-        QString moduleLanguageName = language->englishName();
+        QString moduleLanguageName = language->translatedName();
         if (moduleCategoryName == categoryName &&
                 moduleLanguageName == languageName ) {
             QString name = module->name();
