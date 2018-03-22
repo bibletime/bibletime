@@ -25,6 +25,7 @@
 .DS_Store
 /platforms/android/build*
 *.pro.user*
+bibletime*.qm
 mobile*.qm
 *.o
 moc_*.cpp
