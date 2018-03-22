@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/share/bibletime/locale">
+        <file alias="bibletime_ui_ar.qm">bibletime_ui_ar.qm</file>
+        <file alias="bibletime_ui_cs.qm">bibletime_ui_cs.qm</file>
+        <file alias="bibletime_ui_da.qm">bibletime_ui_da.qm</file>
+        <file alias="bibletime_ui_de.qm">bibletime_ui_de.qm</file>
+        <file alias="bibletime_ui_en_GB.qm">bibletime_ui_en_GB.qm</file>
+        <file alias="bibletime_ui_es.qm">bibletime_ui_es.qm</file>
+        <file alias="bibletime_ui_et.qm">bibletime_ui_et.qm</file>
+        <file alias="bibletime_ui_fi.qm">bibletime_ui_fi.qm</file>
+        <file alias="bibletime_ui_hu.qm">bibletime_ui_hu.qm</file>
+        <file alias="bibletime_ui_it.qm">bibletime_ui_it.qm</file>
+        <file alias="bibletime_ui_ko.qm">bibletime_ui_ko.qm</file>
+        <file alias="bibletime_ui_lt.qm">bibletime_ui_lt.qm</file>
+        <file alias="bibletime_ui_pl.qm">bibletime_ui_pl.qm</file>
+        <file alias="bibletime_ui_pt.qm">bibletime_ui_pt.qm</file>
+        <file alias="bibletime_ui_pt_BR.qm">bibletime_ui_pt_BR.qm</file>
+        <file alias="bibletime_ui_ru.qm">bibletime_ui_ru.qm</file>
+        <file alias="bibletime_ui_sk.qm">bibletime_ui_sk.qm</file>
+        <file alias="bibletime_ui_zh_TW.qm">bibletime_ui_zh_TW.qm</file>
+    </qresource>
+</RCC>

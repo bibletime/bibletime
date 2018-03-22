@@ -164,8 +164,11 @@ int main(int argc, char *argv[]) {
     app.installTranslator(&qtTranslator);
     //then our own
     QTranslator bibleTimeTranslator;
-    bibleTimeTranslator.load( QString("mobile_ui_").append(locale), DU::getLocaleDir().canonicalPath());
+    bibleTimeTranslator.load( QString("bibletime_ui_").append(locale), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&bibleTimeTranslator);
+    QTranslator mobileTranslator;
+    mobileTranslator.load( QString("mobile_ui_").append(locale), DU::getLocaleDir().canonicalPath());
+    app.installTranslator(&mobileTranslator);
 
     // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {
