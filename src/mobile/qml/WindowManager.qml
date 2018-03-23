@@ -273,7 +273,6 @@ Rectangle {
     }
 
     function layoutWindows() {
-        tipText.visible = (windows.length == 0);
 
         tabbedWindows.z = -2;
         gridWindows.z = -3;
@@ -287,11 +286,22 @@ Rectangle {
         else {
             arrangeTiledWindows();
         }
+        tipText.visible = false;
+        tipVisibleTimer.start();
     }
 
     function selectWindow(n) {
         if (windowArrangement == tabLayout || windowArrangement == single) {
             tabbedWindows.current = n;
+        }
+    }
+
+    Timer {
+        id: tipVisibleTimer
+
+        interval: 2000
+        onTriggered: {
+            tipText.visible = (windows.length == 0);
         }
     }
 
