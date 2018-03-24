@@ -724,6 +724,10 @@ Window {
         highlightMoveDuration: 4000
         onCurrentIndexChanged: {
             magView.initialize();
+            if (currentIndex == screenModel.search) {
+                var moduleNames = windowManager.getUniqueModuleNames();
+                searchModel.appendModuleChoices(moduleNames);
+            }
         }
 
         NumberAnimation on contentX {
