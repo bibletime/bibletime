@@ -132,11 +132,33 @@ SplitView {
         height: parent.height * searchResults.topBottomSplit
         color: btStyle.textBackgroundColor
 
+        Rectangle {
+            id: searchResultsTitleBar
+            color: btStyle.toolbarColor
+            width: parent.width
+            height: btStyle.pixelsPerMillimeterY * 8
+
+            Text {
+                id: title
+                color: btStyle.toolbarTextColor
+                font.pointSize: btStyle.uiFontPointSize
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                anchors.leftMargin: search.spacing
+                verticalAlignment: Text.AlignVCenter
+                text: qsTranslate("SearchResults", "Search Results")
+            }
+        }
+
         SplitView {
             id: topSplitter
 
             orientation: Qt.Horizontal
-            anchors.fill: parent
+            anchors.top: searchResultsTitleBar.bottom
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
             handleDelegate: Rectangle {
                 width: handleWidth;
                 height: 2;
