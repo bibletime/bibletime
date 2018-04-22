@@ -477,8 +477,10 @@ void InstallInterface::setProgressMax(qreal value) {
 }
 
 void InstallInterface::setProgressValue(qreal value) {
-    m_progressValue = value;
-    progressValueChanged();
+    if (m_progressValue != value) {
+        m_progressValue = value;
+        progressValueChanged();
+    }
 }
 
 void InstallInterface::setProgressText(const QString& value) {
