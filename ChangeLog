@@ -1,3 +1,6 @@
+2018-06-05 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix cmake build errors with Qt 5.11, fix some cmake warnings
+
 2018-03-03 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #134, Bibletime crashes when clicking on "full syntax" 
 

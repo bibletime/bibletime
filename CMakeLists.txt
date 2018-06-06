@@ -1,5 +1,6 @@
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
+CMAKE_POLICY(SET CMP0028 NEW)
 
 IF("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
   MESSAGE(FATAL_ERROR "You probably didn't mean to run CMake from this directory. Now you have all messed up! You'd better delete CMakeFiles/ and CMakeCache.txt or things will break!")
@@ -121,6 +122,10 @@ FIND_PACKAGE(Qt5Core REQUIRED)
 FIND_PACKAGE(Qt5LinguistTools REQUIRED)
 FIND_PACKAGE(Qt5Gui REQUIRED)
 FIND_PACKAGE(Qt5Widgets REQUIRED)
+FIND_PACKAGE(Qt5Xml REQUIRED)
+FIND_PACKAGE(Qt5Test REQUIRED)
+FIND_PACKAGE(Qt5Svg REQUIRED)
+FIND_PACKAGE(Qt5PrintSupport REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
@@ -154,9 +159,12 @@ ENDIF()
 FIND_PACKAGE(Qt5WebEngine QUIET)
 IF(NOT Qt5WebEngine_FOUND)
     MESSAGE(STATUS "Using Qt WebKit")
+    FIND_PACKAGE(Qt5WebKit REQUIRED)
+    FIND_PACKAGE(Qt5WebKitWidgets REQUIRED)
     SET(USEWEBENGINE OFF)
 ELSE()
     MESSAGE(STATUS "Using Qt WebEngine")
+    FIND_PACKAGE(Qt5WebEngineWidgets REQUIRED)
     SET(USEWEBENGINE ON)
 ENDIF()
 
@@ -194,7 +202,7 @@ ADD_LIBRARY(
     STATIC
     ${bibletime_COMMON_SOURCES}
 )
-QT5_USE_MODULES(bibletime_common Widgets Xml)
+TARGET_LINK_LIBRARIES(bibletime_common Qt5::Widgets Qt5::Xml)
 
 IF(MSVC)
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
@@ -222,11 +230,11 @@ TARGET_LINK_LIBRARIES("bibletime"
 )
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  qt5_use_modules("bibletime" Widgets WebKitWidgets Qml Quick Xml Network PrintSupport Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKitWidgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ELSEIF(USEWEBENGINE)
-  qt5_use_modules("bibletime" Widgets WebEngine WebEngineWidgets WebChannel Xml Network PrintSupport Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebEngine Qt5::WebEngineWidgets Qt5::WebChannel Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ELSE()
-  qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network PrintSupport Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ENDIF()
 
 SET(BibleTime_LDFLAGS "")
