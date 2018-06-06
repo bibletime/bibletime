@@ -35,9 +35,12 @@ BtWebEnginePage::BtWebEnginePage(QObject *parent)
 }
 
 bool BtWebEnginePage::acceptNavigationRequest(
-        const QUrl& url, NavigationType /*type*/, bool /*isMainFrame*/) {
-    emit linkClicked(url);
-    return false;
+        const QUrl& url, NavigationType type, bool isMainFrame) {
+    if (type == QWebEnginePage::NavigationTypeLinkClicked) {
+        emit linkClicked(url);
+        return false;
+    }
+    return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
 void BtWebEnginePage::addJavaScriptObject(const QString &name, QObject *object) {
