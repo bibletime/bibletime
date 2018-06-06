@@ -3,7 +3,7 @@ function(BT_GET_TS_LANGS TS_LANGS)
     SET(TS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages")
     FILE(GLOB TS_FILES "${TS_DIR}/bibletime_ui_*.ts")
     FOREACH(TSFILE_FULLPATH ${TS_FILES})
-        STRING(REGEX REPLACE "${TS_DIR}/bibletime_ui_(..(_..)?).ts" "\\1"
+        STRING(REGEX REPLACE "${TS_DIR}/bibletime_ui_(...?(_..)?).ts" "\\1"
                TS_LANG "${TSFILE_FULLPATH}")
         SET(_TS_LANGS ${_TS_LANGS} ${TS_LANG})
     ENDFOREACH()
