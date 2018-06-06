@@ -34,7 +34,6 @@ env:
     - XCC=gcc-6 XCXX=g++-6
     - XCC=gcc-7 XCXX=g++-7
     - XCC=gcc-8 XCXX=g++-8
-    - XCC=clang-3.9 XCXX=clang++-3.9
     - XCC=clang-4.0 XCXX=clang++-4.0
     - XCC=clang-5.0 XCXX=clang++-5.0
     - XCC=clang-6.0 XCXX=clang++-6.0
@@ -53,7 +52,6 @@ addons:
       - ubuntu-toolchain-r-test
       - sourceline: ppa:beineri/opt-qt595-trusty
       - sourceline: ppa:ubuntu-sdk-team/ppa
-      - sourceline: deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-3.9 main
       - sourceline: deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-4.0 main
       - sourceline: deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main
       - sourceline: deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-6.0 main
@@ -72,7 +70,6 @@ addons:
       - gcc-6 g++-6
       - gcc-7 g++-7
       - gcc-8 g++-8
-      - clang-3.9 clang++-3.9
       - clang-4.0 clang++-4.0
       - clang-5.0 clang++-5.0
       - clang-6.0 clang++-6.0
