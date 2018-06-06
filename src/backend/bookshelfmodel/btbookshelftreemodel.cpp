@@ -12,6 +12,7 @@
 
 #include "btbookshelftreemodel.h"
 
+#include <type_traits>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/macros.h"
@@ -597,7 +598,7 @@ QDataStream & operator <<(QDataStream & os,
 {
     os << o.size();
     Q_FOREACH(BtBookshelfTreeModel::Group const g, o)
-        os << static_cast<int const>(g);
+        os << static_cast<std::underlying_type<decltype(g)>::type>(g);
     return os;
 }
 
