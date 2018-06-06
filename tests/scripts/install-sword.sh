@@ -5,5 +5,5 @@ cd sword-trunk
 mkdir b
 cd b
 cmake .. -DCMAKE_INSTALL_PREFIX="${HOME}/local"
-make -j4
+make "$@"
 make install
