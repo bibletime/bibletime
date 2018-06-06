@@ -15,7 +15,7 @@ os:
 before_install:
   - export CC=${XCC}
   - export CXX=${XCXX}
-  - source /opt/qt57/bin/qt57-env.sh
+  - source /opt/qt59/bin/qt59-env.sh
   - ./tests/scripts/install-sword.sh
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
@@ -46,19 +46,19 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - sourceline: ppa:beineri/opt-qt571-trusty
+      - sourceline: ppa:beineri/opt-qt595-trusty
       - sourceline: ppa:ubuntu-sdk-team/ppa
       - sourceline: deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-3.9 main
         key_url: http://apt.llvm.org/llvm-snapshot.gpg.key
     packages:
       - cmake
       - libclucene-dev
-      - qt57base
-      - qt57declarative
-      - qt57svg
-      - qt57webengine
-      - qt57xmlpatterns
-      - qt57tools
+      - qt59base
+      - qt59declarative
+      - qt59svg
+      - qt59webengine
+      - qt59xmlpatterns
+      - qt59tools
       - gcc-4.9 g++-4.9
       - gcc-5 g++-5
       - gcc-6 g++-6
