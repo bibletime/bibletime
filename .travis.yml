@@ -30,52 +30,109 @@ env:
 
 matrix:
   include:
-    - env:
-        - XCC=gcc
-        - XCXX=g++
+    - addons:
+        apt:
+          sources:
+            - sourceline: ppa:beineri/opt-qt595-trusty
+          packages:
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
+      env:
+        - MATRIX_EVAL="CC=gcc CXX=g++"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - gcc-4.9
             - g++-4.9
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=gcc-4.9 CXX=g++-4.9"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - gcc-5
             - g++-5
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=gcc-5 CXX=g++-5"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - gcc-6
             - g++-6
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=gcc-6 CXX=g++-6"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - gcc-7
             - g++-7
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=gcc-7 CXX=g++-7"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - gcc-8
             - g++-8
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=gcc-8 CXX=g++-8"
     - addons:
@@ -83,9 +140,18 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-4.0
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - clang-4.0
             - llvm-4.0-dev
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=clang-4.0 CXX=g++-clang++-4.0"
     - addons:
@@ -93,9 +159,18 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-5.0
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - clang-5.0
             - llvm-5.0-dev
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=clang-5.0 CXX=g++-clang++-5.0"
     - addons:
@@ -103,9 +178,18 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-6.0
+            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
             - clang-6.0
             - llvm-6.0-dev
+            - cmake
+            - libclucene-dev
+            - qt59base
+            - qt59declarative
+            - qt59svg
+            - qt59webengine
+            - qt59xmlpatterns
+            - qt59tools
       env:
         - MATRIX_EVAL="CC=clang-6.0 CXX=g++-clang++-6.0"
 
@@ -118,18 +202,6 @@ addons:
     build_command_prepend: "mkdir b && cd b && cmake .. -DCMAKE_INSTALL_PREFIX=${HOME}/local/"
     build_command: "cmake --build ."
     branch_pattern: .*_coverity_scan
-  apt:
-    sources:
-      - sourceline: ppa:beineri/opt-qt595-trusty
-    packages:
-      - cmake
-      - libclucene-dev
-      - qt59base
-      - qt59declarative
-      - qt59svg
-      - qt59webengine
-      - qt59xmlpatterns
-      - qt59tools
 
 notifications:
   irc: "chat.freenode.net#bibletime"
