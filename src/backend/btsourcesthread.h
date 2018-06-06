@@ -29,7 +29,7 @@ public: /* Methods: */
         , m_finishedSuccessfully(false)
     {}
 
-    inline void stop() noexcept { m_stop.store(std::memory_order_release); }
+    void stop() noexcept { m_stop.store(true, std::memory_order_release); }
 
     inline bool finishedSuccessfully() const noexcept
     { return m_finishedSuccessfully.load(std::memory_order_acquire); }
