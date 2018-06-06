@@ -84,7 +84,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BookmarkManager</name>
     <message>
-        <location filename="../../src/mobile/qml/BookmarkManager.qml" line="245"/>
+        <location filename="../../src/mobile/qml/BookmarkManager.qml" line="244"/>
         <source>New Folder</source>
         <translation>Naujas aplankas</translation>
     </message>
@@ -127,7 +127,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Pasirinkite aplanką</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/BookmarkManager.qml" line="107"/>
+        <location filename="../../src/mobile/qml/BookmarkManager.qml" line="106"/>
         <source>Bookmark Manager</source>
         <translation>Žymelių tvarkytuvė</translation>
     </message>
@@ -135,14 +135,14 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Copy</name>
     <message>
-        <location filename="../../src/mobile/qml/CopyVerses.qml" line="183"/>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="193"/>
         <source>Copy</source>
         <translation>Kopijuoti</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/CopyVerses.qml" line="224"/>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="234"/>
         <source>Copy size to large.</source>
-        <translation type="unfinished"/>
+        <translation>Per didelis kopijavimo dydis.</translation>
     </message>
 </context>
 <context>
@@ -192,6 +192,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>InformationDialog</name>
+    <message>
+        <location filename="../../src/mobile/qml/InformationDialog.qml" line="53"/>
+        <source>Close</source>
+        <translation>Užverti</translation>
+    </message>
+</context>
+<context>
     <name>Install Documents</name>
     <message>
         <location filename="../../src/mobile/qml/ListWorksView.qml" line="111"/>
@@ -207,32 +215,32 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>InstallManagerChooser</name>
     <message>
-        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="73"/>
+        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="103"/>
         <source>Source</source>
         <translation>Šaltinis</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="81"/>
+        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="125"/>
         <source>Category</source>
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="92"/>
+        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="146"/>
         <source>Language</source>
         <translation>Kalba</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="104"/>
+        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="165"/>
         <source>Document</source>
         <translation>Dokumentas</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="134"/>
+        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="195"/>
         <source>Refresh Sources</source>
         <translation>Atnaujinti šaltinius</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="151"/>
+        <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="215"/>
         <source>Install / Remove</source>
         <translation>Įdiegti / Šalinti</translation>
     </message>
@@ -240,7 +248,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>MagView</name>
     <message>
-        <location filename="../../src/mobile/qml/MagView.qml" line="94"/>
+        <location filename="../../src/mobile/qml/MagView.qml" line="100"/>
         <source>View References</source>
         <translation>Rodyti nuorodas</translation>
     </message>
@@ -261,17 +269,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Atrakinti</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/ModuleChooser.qml" line="173"/>
+        <location filename="../../src/mobile/qml/ModuleChooser.qml" line="180"/>
         <source>Category</source>
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/ModuleChooser.qml" line="184"/>
+        <location filename="../../src/mobile/qml/ModuleChooser.qml" line="192"/>
         <source>Language</source>
         <translation>Kalba</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/ModuleChooser.qml" line="196"/>
+        <location filename="../../src/mobile/qml/ModuleChooser.qml" line="205"/>
         <source>Work</source>
         <translation>Veikla</translation>
     </message>
@@ -300,7 +308,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="614"/>
+        <location filename="../../src/mobile/qml/main.qml" line="533"/>
         <source>Are you sure you want to quit?</source>
         <translation>Ar tikrai norite baigti?</translation>
     </message>
@@ -342,12 +350,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>SearchResults</name>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="156"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="160"/>
         <source>Documents</source>
         <translation>Dokumentai</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/SearchResults.qml" line="187"/>
+        <location filename="../../src/mobile/qml/SearchResults.qml" line="191"/>
         <source>References</source>
         <translation>Nuorodos</translation>
     </message>
@@ -399,9 +407,35 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>TextEditor</name>
+    <message>
+        <location filename="../../src/mobile/qml/TextEditor.qml" line="50"/>
+        <source>Ok</source>
+        <translation>Gerai</translation>
+    </message>
+</context>
+<context>
+    <name>VerseChooser</name>
+    <message>
+        <location filename="../../src/mobile/qml/VerseChooser.qml" line="35"/>
+        <source>Book</source>
+        <translation>Knyga</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/VerseChooser.qml" line="45"/>
+        <source>Chapter</source>
+        <translation>Skyrius</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/VerseChooser.qml" line="53"/>
+        <source>Verse</source>
+        <translation>Eilutė</translation>
+    </message>
+</context>
+<context>
     <name>Welcome</name>
     <message>
-        <location filename="../../src/mobile/qml/WindowManager.qml" line="297"/>
+        <location filename="../../src/mobile/qml/WindowManager.qml" line="301"/>
         <source>Use the &quot;New Window&quot; menu to open a document.</source>
         <translation>Norėdami atverti dokumentą, naudokite &quot;Naujo lango&quot; meniu.</translation>
     </message>
@@ -409,37 +443,37 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Window</name>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="71"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="83"/>
         <source>Add BookMark</source>
         <translation>Pridėti žymelę</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="72"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="84"/>
         <source>Bookmarks</source>
         <translation>Žymelės</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="75"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="87"/>
         <source>Copy</source>
         <translation>Kopijuoti</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="78"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="90"/>
         <source>View References</source>
         <translation>Rodyti nuorodas</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="80"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="92"/>
         <source>Add Parallel Document</source>
         <translation>Pridėti lygiagretųjį dokumentą</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="82"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="94"/>
         <source>Remove Parallel Document</source>
         <translation>Šalinti lygiagretųjį dokumentą</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/Window.qml" line="84"/>
+        <location filename="../../src/mobile/qml/Window.qml" line="96"/>
         <source>Close Window</source>
         <translation>Užverti langą</translation>
     </message>
@@ -483,25 +517,30 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>btm::BtWindowInterface</name>
     <message>
-        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="64"/>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="57"/>
         <source>Select a reference.</source>
         <translation>Pasirinkti nuorodą.</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="252"/>
+        <location filename="../../src/mobile/ui/btwindowinterface.cpp" line="229"/>
         <source>Footnote</source>
         <translation>Išnaša</translation>
     </message>
 </context>
 <context>
-    <name>btm::InstallProgress</name>
+    <name>btm::InstallInterface</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="95"/>
+        <location filename="../../src/mobile/ui/installinterface.cpp" line="282"/>
+        <source>Refreshing Source List</source>
+        <translation>Iš naujo įkeliamas šaltinių sąrašas</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/ui/installinterface.cpp" line="373"/>
         <source>Installing %1</source>
         <translation>Įdiegiama %1</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="102"/>
+        <location filename="../../src/mobile/ui/installinterface.cpp" line="378"/>
         <source>Downloading %1</source>
         <translation>Atsiunčiama %1</translation>
     </message>
@@ -520,45 +559,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
-    <name>btm::InstallSourcesManager</name>
-    <message>
-        <location filename="../../src/mobile/bookshelfmanager/installsourcesmanager.cpp" line="48"/>
-        <source>Refreshing Source List</source>
-        <translation>Iš naujo įkeliamas šaltinių sąrašas</translation>
-    </message>
-</context>
-<context>
-    <name>btm::VerseChooser</name>
-    <message>
-        <location filename="../../src/mobile/keychooser/versechooser.cpp" line="53"/>
-        <source>Book</source>
-        <translation>Knyga</translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/keychooser/versechooser.cpp" line="62"/>
-        <source>Chapter</source>
-        <translation>Skyrius</translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/keychooser/versechooser.cpp" line="69"/>
-        <source>Verse</source>
-        <translation>Eilutė</translation>
-    </message>
-</context>
-<context>
     <name>copy</name>
     <message>
-        <location filename="../../src/mobile/qml/CopyVerses.qml" line="117"/>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="125"/>
         <source>Document</source>
         <translation>Dokumentas</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/CopyVerses.qml" line="138"/>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="146"/>
         <source>First</source>
         <translation>Pirma</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/CopyVerses.qml" line="160"/>
+        <location filename="../../src/mobile/qml/CopyVerses.qml" line="169"/>
         <source>Last</source>
         <translation>Paskutinė</translation>
     </message>
@@ -566,104 +579,144 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>main</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="327"/>
+        <location filename="../../src/mobile/qml/main.qml" line="318"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation>Kai kurie iš modulių, kuriuose norite atlikti paiešką, turi būti indeksuoti. Ar norite juos indeksuoti dabar?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="415"/>
-        <location filename="../../src/mobile/qml/main.qml" line="571"/>
+        <location filename="../../src/mobile/qml/main.qml" line="465"/>
+        <location filename="../../src/mobile/qml/main.qml" line="792"/>
         <source>New Window</source>
         <translation>Naujas langas</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="416"/>
+        <location filename="../../src/mobile/qml/main.qml" line="466"/>
         <source>View Window</source>
         <translation>Rodyti langą</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="521"/>
-        <location filename="../../src/mobile/qml/main.qml" line="595"/>
+        <location filename="../../src/mobile/qml/main.qml" line="850"/>
+        <location filename="../../src/mobile/qml/main.qml" line="898"/>
         <source>User Interface Font Size</source>
         <translation>Naudotojo sąsajos šrifto dydis</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="522"/>
+        <location filename="../../src/mobile/qml/main.qml" line="851"/>
         <source>Window Arrangement</source>
         <translation>Langų išdėstymas</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="417"/>
+        <location filename="../../src/mobile/qml/main.qml" line="467"/>
         <source>Manage Installed Documents</source>
         <translation>Tvarkyti įdiegtus dokumentus</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="418"/>
+        <location filename="../../src/mobile/qml/main.qml" line="468"/>
         <source>Settings</source>
         <translation>Nustatymai</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="419"/>
+        <location filename="../../src/mobile/qml/main.qml" line="470"/>
         <source>About</source>
         <translation>Apie</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="491"/>
+        <location filename="../../src/mobile/qml/main.qml" line="272"/>
         <source>Dark</source>
         <translation>Tamsi</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="492"/>
+        <location filename="../../src/mobile/qml/main.qml" line="273"/>
         <source>Light Blue</source>
         <translation>Šviesiai mėlyna</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="493"/>
+        <location filename="../../src/mobile/qml/main.qml" line="274"/>
         <source>Crimson</source>
         <translation>Tamsiai raudona</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="524"/>
+        <location filename="../../src/mobile/qml/main.qml" line="853"/>
         <source>Default Documents</source>
         <translation>Numatytieji dokumentai</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="454"/>
+        <location filename="../../src/mobile/qml/main.qml" line="980"/>
         <source>Single</source>
         <translation>Pavieniui</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="312"/>
+        <location filename="../../src/mobile/qml/main.qml" line="423"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
         <translation>BibleTime rodo dokumentus, tokius kaip Biblija ir komentarai. Šie dokumentai yra atsiunčiami ir saugomi vietoje. Šiuo metu nėra jokių dokumentų. Ar norite įdiegti dokumentus dabar?</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="520"/>
+        <location filename="../../src/mobile/qml/main.qml" line="376"/>
+        <source>New Feature</source>
+        <translation>Nauja ypatybė</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="378"/>
+        <source>You can write your own comments about Bible verses.</source>
+        <translation>Jūs galite rašyti savo asmeninius komentarus apie Biblijos eilutes.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="379"/>
+        <source>Install the Personal commentary from Crosswire.</source>
+        <translation>Įdiekite Asmeninius (angl. Personal) komentarus iš Crosswire.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="380"/>
+        <source>Then open the Personal commentary and select a verse.</source>
+        <translation>Tuomet atverkite Asmeninius (angl. Personal) komentarus ir pasirinkite eilutę.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="381"/>
+        <source>You can then enter your text.</source>
+        <translation>Tada galite įvesti savo tekstą.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="383"/>
+        <source>The Personal Commentary can be one of your Parallel Documents.</source>
+        <translation>Asmeniniai komentarai gali būti vienu iš jūsų lygagrečiųjų dokumentų.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="469"/>
+        <source>New Features</source>
+        <translation>Naujos ypatybės</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="793"/>
+        <source>View References</source>
+        <translation>Rodyti nuorodas</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="849"/>
         <source>Text Font</source>
         <translation>Teksto šriftas</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="523"/>
+        <location filename="../../src/mobile/qml/main.qml" line="852"/>
         <source>Color Theme</source>
         <translation>Spalvų tema</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="455"/>
+        <location filename="../../src/mobile/qml/main.qml" line="981"/>
         <source>Tabbed</source>
         <translation>Kortelėmis</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="456"/>
+        <location filename="../../src/mobile/qml/main.qml" line="982"/>
         <source>Auto-tile</source>
         <translation>Automatiškai iškloti</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="457"/>
+        <location filename="../../src/mobile/qml/main.qml" line="983"/>
         <source>Auto-tile horizontally</source>
         <translation>Automatiškai iškloti gulsčiai</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="458"/>
+        <location filename="../../src/mobile/qml/main.qml" line="984"/>
         <source>Auto-tile vertically</source>
         <translation>Automatiškai iškloti stačiai</translation>
     </message>

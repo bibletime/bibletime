@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE TS>
-<TS version="2.1" language="da">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="da" version="2.1">
 <context>
     <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation/>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -23,132 +20,132 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="725"/>
+        <location filename="../../src/bibletime_init.cpp" line="717"/>
         <source>&amp;File</source>
         <translation>&amp;Fil</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="726"/>
+        <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>&amp;View</source>
         <translation>&amp;Vis</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="729"/>
+        <location filename="../../src/bibletime_init.cpp" line="721"/>
         <source>&amp;Search</source>
         <translation>&amp;Søg</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/bibletime_init.cpp" line="722"/>
         <source>&amp;Window</source>
         <translation>&amp;Vindue</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/bibletime_init.cpp" line="725"/>
         <source>Sw&amp;itch session</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="738"/>
+        <location filename="../../src/bibletime_init.cpp" line="730"/>
         <source>Se&amp;ttings</source>
         <translation>Inds&amp;tillinger</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="741"/>
+        <location filename="../../src/bibletime_init.cpp" line="733"/>
         <source>&amp;Help</source>
         <translation>&amp;Hjælp</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="121"/>
+        <location filename="../../src/bibletime_init.cpp" line="120"/>
         <source>&amp;Show toolbar</source>
         <translation>Vis værktøjs&amp;linje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="114"/>
+        <location filename="../../src/bibletime_init.cpp" line="113"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Fuldskærm</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>&amp;Quit</source>
         <translation>&amp;Afslut</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/bibletime_init.cpp" line="253"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Åben den inkluderede Bibel-studievejledning.&lt;br/&gt;Denne vejledning er en introduktion til at studere Bibelen på en effektiv måde.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>Information about the BibleTime program</source>
         <translation>Information om programmet BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/bibletime_init.cpp" line="726"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Slet session</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/bibletime_init.cpp" line="724"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Placerings tilstand</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="147"/>
+        <location filename="../../src/bibletime_init.cpp" line="146"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Manuel tilstand</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="154"/>
+        <location filename="../../src/bibletime_init.cpp" line="153"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Sortér automatisk &amp;vertikalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="161"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Sortér automatisk &amp;horisontalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="182"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Auto-&amp;cascade</source>
         <translation>Læg automatisk &amp;ovenpå hinanden</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="189"/>
+        <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>&amp;Cascade</source>
         <translation>&amp;Læg ovenpå hinanden</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="203"/>
+        <location filename="../../src/bibletime_init.cpp" line="202"/>
         <source>Tile &amp;vertically</source>
         <translation>Sortér &amp;vertikalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="210"/>
+        <location filename="../../src/bibletime_init.cpp" line="209"/>
         <source>Tile &amp;horizontally</source>
         <translation>Sortér &amp;horisontalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="224"/>
+        <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>Cl&amp;ose all windows</source>
         <translation>L&amp;uk alle vinduer</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="227"/>
+        <location filename="../../src/bibletime_init.cpp" line="226"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Luk alle åbne vinduer i BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="237"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Bookshelf Manager...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="244"/>
+        <location filename="../../src/bibletime_init.cpp" line="243"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Håndbog</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="251"/>
+        <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Bibel-studievejledning</translation>
     </message>
@@ -168,257 +165,257 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="110"/>
+        <location filename="../../src/bibletime_init.cpp" line="109"/>
         <source>Quit BibleTime</source>
         <translation>Afslut BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="117"/>
+        <location filename="../../src/bibletime_init.cpp" line="116"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Skift fuldskærms-tilstand for hovedvinduet</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="126"/>
+        <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Search in &amp;open works...</source>
         <translation>Søg i &amp;åbne værker...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="133"/>
+        <location filename="../../src/bibletime_init.cpp" line="132"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Søg i standard &amp;Bibel...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="140"/>
+        <location filename="../../src/bibletime_init.cpp" line="139"/>
         <source>Save as &amp;new session...</source>
         <translation>Gem som &amp;ny session...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="143"/>
+        <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>Create and save a new session</source>
         <translation>Opret og gem en ny session</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="150"/>
+        <location filename="../../src/bibletime_init.cpp" line="149"/>
         <source>Manually arrange the open windows</source>
         <translation>Arrangér de åbne vinduer manuelt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="157"/>
+        <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Sortér automatisk de åbne vinduer vertikalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="164"/>
+        <location filename="../../src/bibletime_init.cpp" line="163"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Sortér automatisk de åbne vinduer horisontalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="168"/>
+        <location filename="../../src/bibletime_init.cpp" line="167"/>
         <source>Auto-&amp;tile</source>
         <translation>Auto-&amp;sortér</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="171"/>
+        <location filename="../../src/bibletime_init.cpp" line="170"/>
         <source>Automatically tile the open windows</source>
         <translation>Sortér automatisk de åbne vinduer</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Ta&amp;bbed</source>
         <translation>Fa&amp;ner</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Automatically tab the open windows</source>
         <translation>Vis automatisk de åbne vinduer i faner</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="185"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>Automatically cascade the open windows</source>
         <translation>Læg automatisk alle åbne vinduer oven på hinanden</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="192"/>
+        <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>Cascade the open windows</source>
         <translation>Læg alle åbne vinduer oven på hinanden</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="195"/>
         <source>&amp;Tile</source>
         <translation>&amp;Sortér</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="199"/>
+        <location filename="../../src/bibletime_init.cpp" line="198"/>
         <source>Tile the open windows</source>
         <translation>Sortér de åbne vinduer</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="206"/>
+        <location filename="../../src/bibletime_init.cpp" line="205"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Sortér de åbne vinduer vertikalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="213"/>
+        <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Sortér de åbne vinduer horisontalt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="217"/>
+        <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Close &amp;window</source>
         <translation>Luk &amp;vindue</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="220"/>
+        <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>Close the current open window</source>
         <translation>Luk det nuværende vindue</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="231"/>
+        <location filename="../../src/bibletime_init.cpp" line="230"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;Konfigurér BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="233"/>
-        <source>Set BibleTime's preferences</source>
+        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <source>Set BibleTime&apos;s preferences</source>
         <translation>Ændr på BibleTimes indstillinger</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="240"/>
+        <location filename="../../src/bibletime_init.cpp" line="239"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Konfigurér din boghylde og installér/opdatér/fjern/indeksér værker</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="247"/>
-        <source>Open BibleTime's handbook</source>
+        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <source>Open BibleTime&apos;s handbook</source>
         <translation>Åben BibleTimes håndbog</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="264"/>
+        <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>&amp;Tip of the day...</source>
         <translation>&amp;Dagens gode tip...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
         <source>Show tips about BibleTime</source>
         <translation>Vis tip om BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="410"/>
+        <location filename="../../src/bibletime_init.cpp" line="402"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>Ændr på synligheden af boghylde-vinduet</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="415"/>
+        <location filename="../../src/bibletime_init.cpp" line="407"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>Ændr på synligheden af bogmærke-vinduet</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="420"/>
+        <location filename="../../src/bibletime_init.cpp" line="412"/>
         <source>Toggle visibility of the mag window</source>
         <translation>Ændr på synligheden af forstørrelsesglas-vinduet</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="719"/>
+        <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Main toolbar</source>
         <translation>Hovedværktøjslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="720"/>
+        <location filename="../../src/bibletime_init.cpp" line="712"/>
         <source>Navigation toolbar</source>
         <translation>Navigationslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="721"/>
+        <location filename="../../src/bibletime_init.cpp" line="713"/>
         <source>Works toolbar</source>
         <translation>Værklinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="722"/>
+        <location filename="../../src/bibletime_init.cpp" line="714"/>
         <source>Tools toolbar</source>
         <translation>Værktøjslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="723"/>
+        <location filename="../../src/bibletime_init.cpp" line="715"/>
         <source>Format toolbar</source>
         <translation>Formateringslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="758"/>
+        <location filename="../../src/bibletime_init.cpp" line="750"/>
         <source>Show main toolbar</source>
         <translation>Vis hovedværktøjslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="759"/>
+        <location filename="../../src/bibletime_init.cpp" line="751"/>
         <source>Show navigation bar</source>
         <translation>Vis navigationslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="760"/>
+        <location filename="../../src/bibletime_init.cpp" line="752"/>
         <source>Show works toolbar</source>
         <translation>Vis værklinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="761"/>
+        <location filename="../../src/bibletime_init.cpp" line="753"/>
         <source>Show tools toolbar</source>
         <translation>Vis værktøjslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="762"/>
+        <location filename="../../src/bibletime_init.cpp" line="754"/>
         <source>Show formatting toolbar</source>
         <translation>Vis formateringslinje</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="763"/>
+        <location filename="../../src/bibletime_init.cpp" line="755"/>
         <source>Show bookshelf</source>
         <translation>Vis boghylde</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="764"/>
+        <location filename="../../src/bibletime_init.cpp" line="756"/>
         <source>Show bookmarks</source>
         <translation>Vis bogmærker</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="765"/>
+        <location filename="../../src/bibletime_init.cpp" line="757"/>
         <source>Show mag</source>
         <translation>Vis forstørrelsesglas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="727"/>
+        <location filename="../../src/bibletime_init.cpp" line="719"/>
         <source>Toolbars</source>
         <translation>Værktøjslinjer</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/bibletime_init.cpp" line="749"/>
         <source>Show toolbars in text windows</source>
         <translation>Vis værktøjslinjer i tekst-vinduer</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="767"/>
+        <location filename="../../src/bibletime_init.cpp" line="759"/>
         <source>Show parallel text headers</source>
         <translation>Vis parallelle overskrifter</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/bibletime_init.cpp" line="723"/>
         <source>O&amp;pen windows</source>
         <translation>Å&amp;bne vinduer</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="744"/>
+        <location filename="../../src/bibletime_init.cpp" line="736"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>Vis &quot;Hvad er det for en widget&quot; dialogen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="893"/>
+        <location filename="../../src/bibletime_init.cpp" line="885"/>
         <source>Whats this widget?</source>
         <translation>Hvad er det for en widget?</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="129"/>
+        <location filename="../../src/bibletime_init.cpp" line="128"/>
         <source>Search in all works that are currently open</source>
         <translation>Søg i alle de åbne værker</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="136"/>
+        <location filename="../../src/bibletime_init.cpp" line="135"/>
         <source>Search in the standard Bible</source>
         <translation>Søg i standardbibelen</translation>
     </message>
@@ -434,7 +431,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="91"/>
-        <source>Creating BibleTime's user interface...</source>
+        <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Opretter BibleTimes brugerflade...</translation>
     </message>
     <message>
@@ -463,17 +460,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Nøglen du indtastede kunne ikke låse modulet op. Prøv igen.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Om BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="717"/>
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
         <source>Bookmarks</source>
         <translation>Bogmærker</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="718"/>
+        <location filename="../../src/bibletime_init.cpp" line="710"/>
         <source>Mag</source>
         <translation>Forstørrelsesglas</translation>
     </message>
@@ -501,7 +498,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="80"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="77"/>
-        <source>Failed to load BibleTime's configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -704,8 +701,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
-        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society's free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime gør brug af SWORD-projektet. SWORD-projektet er CrossWire Bible Society's gratis Bibel-software-projekt. Dets formål er at lave kryds-platform open source værktøjer &amp;mdash; under GNU General Public Licensen &amp;mdash; der tillader programmørere og Bibelselskaber at lave ny Bibel-software hurtigere og nemmere.</translation>
+        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
+        <translation>BibleTime gør brug af SWORD-projektet. SWORD-projektet er CrossWire Bible Society&apos;s gratis Bibel-software-projekt. Dets formål er at lave kryds-platform open source værktøjer &amp;mdash; under GNU General Public Licensen &amp;mdash; der tillader programmørere og Bibelselskaber at lave ny Bibel-software hurtigere og nemmere.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
@@ -812,37 +809,37 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBibleKeyWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="112"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="109"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Rul igennem listens punkter. Tryk knappen og bevæg musen for at bevæge dig op eller ned blandt punkterne.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="111"/>
         <source>Next book</source>
         <translation>Næste bog</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="113"/>
         <source>Previous book</source>
         <translation>Forrige bog</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="119"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
         <source>Next chapter</source>
         <translation>Næste kapitel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="118"/>
         <source>Previous chapter</source>
         <translation>Forrige kapitel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="124"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
         <source>Next verse</source>
         <translation>Næste vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="126"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="123"/>
         <source>Previous verse</source>
         <translation>Forrige vers</translation>
     </message>
@@ -1158,7 +1155,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
-        <source>Paul's Epistles</source>
+        <source>Paul&apos;s Epistles</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1584,7 +1581,7 @@ genvej</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
-        <source>Hebrew Strong's lexicon:</source>
+        <source>Hebrew Strong&apos;s lexicon:</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1594,7 +1591,7 @@ genvej</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
-        <source>Greek Strong's lexicon:</source>
+        <source>Greek Strong&apos;s lexicon:</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1763,7 +1760,7 @@ genvej</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
-        <source>You can search for Strong's numbers in a work. Start with a work that has Strong's numbers and hover over a word. Right click the word and use the Strong's Search menu. A search dialog will appear that allows you to see the use of the same Strong's number in other locations of the work.</source>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1774,12 +1771,12 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation>Du kan gemme personlige noter til specifikke vers-henvisninger. Du er nødt til først at installere den personlige kommentar. Åben Boghylden, vælg Crosswire som kilde og kig under Kommentar og engelsk. Når den er installeret, så brug Boghylde-vinduet og højreklik på Personal commentary. Brug enten 'Redigér ren tekst'-menuen eller 'Redigér HTML'-menuen for at åbne værket i skrivetilstand.</translation>
+        <translation>Du kan gemme personlige noter til specifikke vers-henvisninger. Du er nødt til først at installere den personlige kommentar. Åben Boghylden, vælg Crosswire som kilde og kig under Kommentar og engelsk. Når den er installeret, så brug Boghylde-vinduet og højreklik på Personal commentary. Brug enten &apos;Redigér ren tekst&apos;-menuen eller &apos;Redigér HTML&apos;-menuen for at åbne værket i skrivetilstand.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
-        <source>You can view Strong's number information in the MAG window by hovering over a word in a Bible work that has Strong's numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Du kan vise Strong's-nummer information i Forstørrelsesglas-vinduet ved at holde musen over et ord i en Bibel som har Strong's-numre. Du skal have StrongsGreek og StrongsHebrew leksikaerne installeret før at det virker.</translation>
+        <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
+        <translation>Du kan vise Strong&apos;s-nummer information i Forstørrelsesglas-vinduet ved at holde musen over et ord i en Bibel som har Strong&apos;s-numre. Du skal have StrongsGreek og StrongsHebrew leksikaerne installeret før at det virker.</translation>
     </message>
 </context>
 <context>
@@ -2005,16 +2002,8 @@ genvej</translation>
         <translation>Kan kun flytte bogmærker eller én mappe</translation>
     </message>
     <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Bogmærker</translation>
-    </message>
-    <message>
-        <source>New folder</source>
-        <translation type="obsolete">Ny mappe</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
-        <source>Can't drop folder into the folder itself or into its subfolder</source>
+        <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>Kan ikke flytte mappe ind i sig selv, eller ind i en af dens undermapper</translation>
     </message>
     <message>
@@ -2138,17 +2127,17 @@ genvej</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
-        <source>For God didn't send his Son into the world to judge the world, but that the world should be saved through him.</source>
+        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>For Gud sendte ikke sin søn til verden for at dømme verden, men for at verden skal frelses ved ham.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="244"/>
-        <source>He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
+        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Den, der tror på ham, dømmes ikke; den, der ikke tror, er allerede dømt, fordi han ikke har troet på Guds enbårne søns navn.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="254"/>
-        <source>For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.</source>
+        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>For enhver, som øver ondt, hader lyset og kommer ikke til lyset, for at hans gerninger ikke skal afsløres.</translation>
     </message>
     <message>
@@ -2362,8 +2351,8 @@ genvej</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
-        <source>Strong's Search</source>
-        <translation>Strong's søgning</translation>
+        <source>Strong&apos;s Search</source>
+        <translation>Strong&apos;s søgning</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
@@ -2457,18 +2446,18 @@ genvej</translation>
         <translation>Genopret original tekst, ny tekst vil gå tabt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="276"/>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="306"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save Text?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="276"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <source>Save text before closing?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="306"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save changed text?</source>
         <translation type="unfinished"/>
     </message>
@@ -2995,7 +2984,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
-        <source>Chinantec, Ozumacín</source>
+        <source>Chinantec, Ozumacu00edn</source>
         <extracomment>Language name chz</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3253,7 +3242,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
-        <source>Itzá</source>
+        <source>Itzu00e1</source>
         <extracomment>Language name itz</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3427,7 +3416,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
-        <source>Otomi, Querétaro</source>
+        <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3463,7 +3452,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
-        <source>Quiché, West Central</source>
+        <source>Quichu00e9, West Central</source>
         <extracomment>Language name qut</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3571,7 +3560,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
-        <source>Tzotzil, Zinacantán</source>
+        <source>Tzotzil, Zinacantu00e1n</source>
         <extracomment>Language name tzz</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3638,7 +3627,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
-        <source>Zapotec, San Juan Guelavía</source>
+        <source>Zapotec, San Juan Guelavu00eda</source>
         <extracomment>Language name zab</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3656,7 +3645,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
-        <source>Zapotec, Amatlán</source>
+        <source>Zapotec, Amatlu00e1n</source>
         <extracomment>Language name zpo</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3668,7 +3657,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
-        <source>Zapotec, Yalálag</source>
+        <source>Zapotec, Yalu00e1lag</source>
         <extracomment>Language name zpu</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3686,7 +3675,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
-        <source>Zapotec, Quioquitani-Quierí</source>
+        <source>Zapotec, Quioquitani-Quieru00ed</source>
         <extracomment>Language name ztq</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3709,8 +3698,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
-        <source>Strong's numbers</source>
-        <translation>Strong's numre</translation>
+        <source>Strong&apos;s numbers</source>
+        <translation>Strong&apos;s numre</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
@@ -3884,7 +3873,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="77"/>
-        <source>The file couldn't be opened for saving.</source>
+        <source>The file couldn&apos;t be opened for saving.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3910,7 +3899,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
-        <source>Kekchí</source>
+        <source>Kekchu00ed</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
         <translation type="unfinished"/>
@@ -3929,7 +3918,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
-        <source>Mam, Todos Santos Cuchumatán</source>
+        <source>Mam, Todos Santos Cuchumatu00e1n</source>
         <extracomment>Language name mvj</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -3953,13 +3942,13 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
-        <source>Norwegian Bokmål</source>
+        <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
         <translation>Norsk Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
-        <source>Nahuatl, Michoacán</source>
+        <source>Nahuatl, Michoacu00e1n</source>
         <extracomment>Language name ncl</extracomment>
         <translation type="unfinished"/>
     </message>
@@ -4009,8 +3998,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="288"/>
-        <source>Parsing Strong's Numbers</source>
-        <translation>Analyserer Strong's-numre</translation>
+        <source>Parsing Strong&apos;s Numbers</source>
+        <translation>Analyserer Strong&apos;s-numre</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="165"/>
@@ -4040,7 +4029,7 @@ Er du sikker på at du vil fortsætte?</translation>
     <message>
         <location filename="../../src/main.cpp" line="48"/>
         <source>Output BibleTime version and exit</source>
-        <translation>Vis BibleTime's version og luk</translation>
+        <translation>Vis BibleTime&apos;s version og luk</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="51"/>
@@ -4277,8 +4266,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
-        <source> (&lt;a href='syntax_help'&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href='syntax_help'&gt;fuld syntaks&lt;/a&gt;)</translation>
+        <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;fuld syntaks&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
@@ -4368,8 +4357,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="91"/>
-        <source>This help is mainly for 'Full syntax' option. 'All words' and 'Some words' options have more limited syntax; &lt;a href='#wildcards'&gt;wildcards&lt;/a&gt; and &lt;a href='#fields'&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation>Denne hjælp er hovedsageligt for 'Fuld-syntaks'-valgmuligheden. 'Alle ord' og'Nogle ord'-valgmulighederne har mere begrænsede syntakser;&lt;a href='#wildcards'&gt;wildcards&lt;/a&gt; og &lt;a href='#fields'&gt;tekst felter&lt;/a&gt; er understøttede for dem. Nogle andre syntaksmuligheder kan give mærkelige eller forkerte resultater med Alle ord/Nogle ord.</translation>
+        <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
+        <translation>Denne hjælp er hovedsageligt for &apos;Fuld-syntaks&apos;-valgmuligheden. &apos;Alle ord&apos; og&apos;Nogle ord&apos;-valgmulighederne har mere begrænsede syntakser;&lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; og &lt;a href=&apos;#fields&apos;&gt;tekst felter&lt;/a&gt; er understøttede for dem. Nogle andre syntaksmuligheder kan give mærkelige eller forkerte resultater med Alle ord/Nogle ord.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="96"/>
@@ -4403,9 +4392,9 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="109"/>
-        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. '&lt;strong&gt;+&lt;/strong&gt;word' means the word must be in the results, '&lt;strong&gt;-&lt;/strong&gt;word' means it must not be in the results.</source>
+        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation>Søgetermerne er adskilt med mellemrum. &lt;strong&gt;AND&lt;/strong&gt; (alle ord), &lt;strong&gt;OR&lt;/strong&gt; (nogle ord) og &lt;strong&gt;NOT&lt;/strong&gt; (ikke det følgende ord) kan tilføjes mellem ordene. Hvis ingen bliver tilføjet eksplicit bruges OR automatisk. '&lt;strong&gt;+&lt;/strong&gt;ord' betyder at ordet skal være i resultaterne, '&lt;strong&gt;-&lt;/strong&gt;ord' betyder at det ikke skal være blandt resultaterne.</translation>
+        <translation>Søgetermerne er adskilt med mellemrum. &lt;strong&gt;AND&lt;/strong&gt; (alle ord), &lt;strong&gt;OR&lt;/strong&gt; (nogle ord) og &lt;strong&gt;NOT&lt;/strong&gt; (ikke det følgende ord) kan tilføjes mellem ordene. Hvis ingen bliver tilføjet eksplicit bruges OR automatisk. &apos;&lt;strong&gt;+&lt;/strong&gt;ord&apos; betyder at ordet skal være i resultaterne, &apos;&lt;strong&gt;-&lt;/strong&gt;ord&apos; betyder at det ikke skal være blandt resultaterne.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="116"/>
@@ -4415,8 +4404,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="118"/>
-        <source>Finds verses with both 'Jesus' and 'God'</source>
-        <translation>Finder vers med både 'Jesus' og 'Gud'</translation>
+        <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
+        <translation>Finder vers med både &apos;Jesus&apos; og &apos;Gud&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="120"/>
@@ -4426,8 +4415,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="122"/>
-        <source>Finds verses with 'Jesus' or 'God' or both</source>
-        <translation>Finder vers med 'Jesus' eller 'Gud' eller begge</translation>
+        <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
+        <translation>Finder vers med &apos;Jesus&apos; eller &apos;Gud&apos; eller begge</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
@@ -4438,8 +4427,8 @@ Er du sikker på at du vil fortsætte?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
-        <source>Finds verses with 'Jesus' but with no 'God'</source>
-        <translation>Finder vers med 'Jesus' men uden 'Gud'</translation>
+        <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
+        <translation>Finder vers med &apos;Jesus&apos; men uden &apos;Gud&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
@@ -4459,8 +4448,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="140"/>
-        <source>Finds verses with both 'a' AND 'b', and verses with 'c'</source>
-        <translation>Finder vers med 'a' og 'b', og vers med 'c'</translation>
+        <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
+        <translation>Finder vers med &apos;a&apos; og &apos;b&apos;, og vers med &apos;c&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="142"/>
@@ -4474,13 +4463,13 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
-        <source>Finds all verses with 'says the LORD'</source>
-        <translation>Finder alle vers med 'siger Herren'</translation>
+        <source>Finds all verses with &apos;says the LORD&apos;</source>
+        <translation>Finder alle vers med &apos;siger Herren&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="153"/>
-        <source>'&lt;strong&gt;*&lt;/strong&gt;' matches any sequence of 0 or more characters, while '&lt;strong&gt;?&lt;/strong&gt;' matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation>'&lt;strong&gt;*&lt;/strong&gt;' matcher alle sammenhænge af 0 eller flere tegn, mens '&lt;strong&gt;?&lt;/strong&gt;' matcher ethvert enkelt tegn. Et wildcard kan ikke bruges i begyndelsen af et ord.</translation>
+        <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
+        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matcher alle sammenhænge af 0 eller flere tegn, mens &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matcher ethvert enkelt tegn. Et wildcard kan ikke bruges i begyndelsen af et ord.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="157"/>
@@ -4489,8 +4478,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
-        <source>All words beginning with 'a'</source>
-        <translation>Alle ord som begynder med 'a'</translation>
+        <source>All words beginning with &apos;a&apos;</source>
+        <translation>Alle ord som begynder med &apos;a&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
@@ -4499,8 +4488,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>
-        <source>'Assyria', 'aroma', 'abba' etc.</source>
-        <translation>'Asa', 'aroma', 'abba' osv.</translation>
+        <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
+        <translation>&apos;Asa&apos;, &apos;aroma&apos;, &apos;abba&apos; osv.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
@@ -4509,8 +4498,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
-        <source>'at' and 'an'</source>
-        <translation>'at', 'af' og 'al'</translation>
+        <source>&apos;at&apos; and &apos;an&apos;</source>
+        <translation>&apos;at&apos;, &apos;af&apos; og &apos;al&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
@@ -4519,8 +4508,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
-        <source>'abba', 'area', 'Asia' etc.</source>
-        <translation>'abba', 'alfa', 'Anna' osv.</translation>
+        <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
+        <translation>&apos;abba&apos;, &apos;alfa&apos;, &apos;Anna&apos; osv.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="176"/>
@@ -4539,7 +4528,7 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
-        <source>Searches Strong's numbers</source>
+        <source>Searches Strong&apos;s numbers</source>
         <translation>Søger i Strong numre</translation>
     </message>
     <message>
@@ -4560,8 +4549,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
-        <source>Finds headings with 'Jesus'</source>
-        <translation>Finder overskrifter med 'Jesus'</translation>
+        <source>Finds headings with &apos;Jesus&apos;</source>
+        <translation>Finder overskrifter med &apos;Jesus&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
@@ -4571,8 +4560,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
-        <source>Finds footnotes with 'Jesus' and 'said'</source>
-        <translation>Finder fodnoter med 'Jesus' og 'sagde'</translation>
+        <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
+        <translation>Finder fodnoter med &apos;Jesus&apos; og &apos;sagde&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
@@ -4582,8 +4571,8 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="199"/>
-        <source>Finds verses with Strong's Greek number 846</source>
-        <translation>Finder vers med Strong's Greek nummer 846</translation>
+        <source>Finds verses with Strong&apos;s Greek number 846</source>
+        <translation>Finder vers med Strong&apos;s Greek nummer 846</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="201"/>
@@ -4593,13 +4582,13 @@ Er du sikker på at du vil fortsætte?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
-        <source>Finds verses with morphology code 'N-NSF'</source>
-        <translation>Finder vers med den morfologiske kode 'N-NSF'</translation>
+        <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
+        <translation>Finder vers med den morfologiske kode &apos;N-NSF&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
-        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href='%1'&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation>BibleTime bruger CLucene søgemaskinen. Du kan læse mere på &lt;a href='%1'&gt;lucene syntaks hjemmesiden&lt;/a&gt; (i ekstern browser).</translation>
+        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
+        <translation>BibleTime bruger CLucene søgemaskinen. Du kan læse mere på &lt;a href=&apos;%1&apos;&gt;lucene syntaks hjemmesiden&lt;/a&gt; (i ekstern browser).</translation>
     </message>
 </context>
 <context>

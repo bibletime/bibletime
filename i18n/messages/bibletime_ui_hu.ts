@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE TS>
-<TS version="2.1" language="hu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hu" version="2.1">
 <context>
     <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation/>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -23,132 +20,132 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="725"/>
+        <location filename="../../src/bibletime_init.cpp" line="717"/>
         <source>&amp;File</source>
         <translation>&amp;Fájl</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="726"/>
+        <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>&amp;View</source>
         <translation>&amp;Nézet</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="729"/>
+        <location filename="../../src/bibletime_init.cpp" line="721"/>
         <source>&amp;Search</source>
         <translation>&amp;Keresés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/bibletime_init.cpp" line="722"/>
         <source>&amp;Window</source>
         <translation>&amp;Ablak</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/bibletime_init.cpp" line="725"/>
         <source>Sw&amp;itch session</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="738"/>
+        <location filename="../../src/bibletime_init.cpp" line="730"/>
         <source>Se&amp;ttings</source>
         <translation>Beállí&amp;tások</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="741"/>
+        <location filename="../../src/bibletime_init.cpp" line="733"/>
         <source>&amp;Help</source>
         <translation>&amp;Segítség</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="121"/>
+        <location filename="../../src/bibletime_init.cpp" line="120"/>
         <source>&amp;Show toolbar</source>
         <translation>E&amp;szköztár mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="114"/>
+        <location filename="../../src/bibletime_init.cpp" line="113"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Teljes képernyő</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>&amp;Quit</source>
         <translation>&amp;Kilépés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/bibletime_init.cpp" line="253"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Nyissa meg a BibleTime Bibliatanulmányozó segédletét. &lt;br/&gt; Ez a segédlet bevezeti a Biblia tanulmánsozásának alapelveibe.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>Information about the BibleTime program</source>
         <translation>A BibleTime program</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/bibletime_init.cpp" line="726"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Munkafolyamat törlése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/bibletime_init.cpp" line="724"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Ablakok automatikus igazítása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="147"/>
+        <location filename="../../src/bibletime_init.cpp" line="146"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Kézi elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="154"/>
+        <location filename="../../src/bibletime_init.cpp" line="153"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>&amp;Függőleges mozaik elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="161"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>&amp;Vízszintes mozaik elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="182"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Auto-&amp;cascade</source>
         <translation>Átla&amp;poló elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="189"/>
+        <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>&amp;Cascade</source>
         <translation>Átla&amp;polás</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="203"/>
+        <location filename="../../src/bibletime_init.cpp" line="202"/>
         <source>Tile &amp;vertically</source>
         <translation>&amp;Függőleges mozaik</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="210"/>
+        <location filename="../../src/bibletime_init.cpp" line="209"/>
         <source>Tile &amp;horizontally</source>
         <translation>&amp;Vízszintes mozaik</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="224"/>
+        <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Öss&amp;zes ablak bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="227"/>
+        <location filename="../../src/bibletime_init.cpp" line="226"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Az összes BibleTime ablak bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="237"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Bookshelf Manager...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="244"/>
+        <location filename="../../src/bibletime_init.cpp" line="243"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Kézikönyv</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="251"/>
+        <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>&amp;Bible Study Howto</source>
         <translation>Hogyan tanulmányozza a &amp;Bibliát</translation>
     </message>
@@ -168,257 +165,257 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="110"/>
+        <location filename="../../src/bibletime_init.cpp" line="109"/>
         <source>Quit BibleTime</source>
         <translation>BibleTime bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="117"/>
+        <location filename="../../src/bibletime_init.cpp" line="116"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>A fő ablak teljes képernyősre váltása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="126"/>
+        <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Search in &amp;open works...</source>
         <translation>Keresés a megnyit&amp;ott munkákban...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="133"/>
+        <location filename="../../src/bibletime_init.cpp" line="132"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Keresés az alapértelmezett &amp;Bibliában...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="140"/>
+        <location filename="../../src/bibletime_init.cpp" line="139"/>
         <source>Save as &amp;new session...</source>
         <translation>Me&amp;ntés új folyamatként...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="143"/>
+        <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>Create and save a new session</source>
         <translation>Új folyamat létrehozása és mentése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="150"/>
+        <location filename="../../src/bibletime_init.cpp" line="149"/>
         <source>Manually arrange the open windows</source>
         <translation>Megnyitott ablakok kézi igazítása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="157"/>
+        <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>A megnyitott ablakok automatikus függőleges elrendezése (egymás alá rendezése)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="164"/>
+        <location filename="../../src/bibletime_init.cpp" line="163"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>A megnyitott ablakok automatikus vízszintes elrendezése (egymás mellé rendezése)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="168"/>
+        <location filename="../../src/bibletime_init.cpp" line="167"/>
         <source>Auto-&amp;tile</source>
         <translation>Automatikus &amp;mozaik elrendezés</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="171"/>
+        <location filename="../../src/bibletime_init.cpp" line="170"/>
         <source>Automatically tile the open windows</source>
         <translation>Automatikusan mozaik elrendezésre váltja a megnyitott ablakokat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Ta&amp;bbed</source>
         <translation>La&amp;ponként</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Automatically tab the open windows</source>
         <translation>Automatikusan laponkénti nézetbe helyezi a megnyitott ablakokat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="185"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>Automatically cascade the open windows</source>
         <translation>A megnyitott ablakok automatikus átfedő elrendezése (egymásra lapolva)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="192"/>
+        <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>Cascade the open windows</source>
         <translation>Megnyitott ablakok egymásra lapolása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="195"/>
         <source>&amp;Tile</source>
         <translation>&amp;Mozaik</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="199"/>
+        <location filename="../../src/bibletime_init.cpp" line="198"/>
         <source>Tile the open windows</source>
         <translation>Mozaik elrendezésre váltja a megnyitott ablakokat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="206"/>
+        <location filename="../../src/bibletime_init.cpp" line="205"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>A megnyitott ablakok automatikus (egymás alá rendezése) függőleges elrendezése </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="213"/>
+        <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>A megnyitott ablakok automatikus (egymás mellé rendezése) vízszintes elrendezése </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="217"/>
+        <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Close &amp;window</source>
         <translation>Ablakok be&amp;zárása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="220"/>
+        <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>Close the current open window</source>
         <translation>Jelenlegi nyitott ablak bezárása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="231"/>
+        <location filename="../../src/bibletime_init.cpp" line="230"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>Bibletime beá&amp;llítása...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="233"/>
-        <source>Set BibleTime's preferences</source>
+        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <source>Set BibleTime&apos;s preferences</source>
         <translation>BibleTime alapértelmezéseinek beállítása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="240"/>
+        <location filename="../../src/bibletime_init.cpp" line="239"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>A &quot;könyvespolc&quot; beállítása, dokumentumok telepítése/frissítése/törlése/indexelése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="247"/>
-        <source>Open BibleTime's handbook</source>
+        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <source>Open BibleTime&apos;s handbook</source>
         <translation>BibleTime kézikönyv megnyitása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="264"/>
+        <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>&amp;Tip of the day...</source>
         <translation>A nap &amp;tippje...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
         <source>Show tips about BibleTime</source>
         <translation>Ötletek mutatása a Bibletime használatához</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="410"/>
+        <location filename="../../src/bibletime_init.cpp" line="402"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>A könyvespolc ablak láthatóságának kapcsolója</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="415"/>
+        <location filename="../../src/bibletime_init.cpp" line="407"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>A könyvjelző ablak láthatóságának kapcsolója</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="420"/>
+        <location filename="../../src/bibletime_init.cpp" line="412"/>
         <source>Toggle visibility of the mag window</source>
         <translation>A nagyító ablak láthatóságának kapcsolója</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="719"/>
+        <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Main toolbar</source>
         <translation>Fő eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="720"/>
+        <location filename="../../src/bibletime_init.cpp" line="712"/>
         <source>Navigation toolbar</source>
         <translation>Navigációs eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="721"/>
+        <location filename="../../src/bibletime_init.cpp" line="713"/>
         <source>Works toolbar</source>
         <translation>Munkák eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="722"/>
+        <location filename="../../src/bibletime_init.cpp" line="714"/>
         <source>Tools toolbar</source>
         <translation>Eszközök eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="723"/>
+        <location filename="../../src/bibletime_init.cpp" line="715"/>
         <source>Format toolbar</source>
         <translation>Formátum eszköztár</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="758"/>
+        <location filename="../../src/bibletime_init.cpp" line="750"/>
         <source>Show main toolbar</source>
         <translation>Fő eszköztár mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="759"/>
+        <location filename="../../src/bibletime_init.cpp" line="751"/>
         <source>Show navigation bar</source>
         <translation>Navigációs sáv mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="760"/>
+        <location filename="../../src/bibletime_init.cpp" line="752"/>
         <source>Show works toolbar</source>
         <translation>Munkák eszköztár mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="761"/>
+        <location filename="../../src/bibletime_init.cpp" line="753"/>
         <source>Show tools toolbar</source>
         <translation>Eszközök eszköztár mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="762"/>
+        <location filename="../../src/bibletime_init.cpp" line="754"/>
         <source>Show formatting toolbar</source>
         <translation>Formázás eszköztár mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="763"/>
+        <location filename="../../src/bibletime_init.cpp" line="755"/>
         <source>Show bookshelf</source>
         <translation>Könyvespolc megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="764"/>
+        <location filename="../../src/bibletime_init.cpp" line="756"/>
         <source>Show bookmarks</source>
         <translation>Könyvjelzők megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="765"/>
+        <location filename="../../src/bibletime_init.cpp" line="757"/>
         <source>Show mag</source>
         <translation>Nagyító ablak megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="727"/>
+        <location filename="../../src/bibletime_init.cpp" line="719"/>
         <source>Toolbars</source>
         <translation>Eszköztárak</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/bibletime_init.cpp" line="749"/>
         <source>Show toolbars in text windows</source>
         <translation>Eszköztárak megjelenítése a szöveg ablakban</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="767"/>
+        <location filename="../../src/bibletime_init.cpp" line="759"/>
         <source>Show parallel text headers</source>
         <translation>Párhuzamos szöveg fejlécek megjelenítése</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/bibletime_init.cpp" line="723"/>
         <source>O&amp;pen windows</source>
         <translation>A&amp;blak megnyitása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="744"/>
+        <location filename="../../src/bibletime_init.cpp" line="736"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>&quot;Mi ez a minialkalmazás?&quot; ablak mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="893"/>
+        <location filename="../../src/bibletime_init.cpp" line="885"/>
         <source>Whats this widget?</source>
         <translation>Mi ez a minialkalmazás?</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="129"/>
+        <location filename="../../src/bibletime_init.cpp" line="128"/>
         <source>Search in all works that are currently open</source>
         <translation>Keresés minden megnyitott dokumentumban</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="136"/>
+        <location filename="../../src/bibletime_init.cpp" line="135"/>
         <source>Search in the standard Bible</source>
         <translation>Keresés az alapértelmezett Bibliában</translation>
     </message>
@@ -434,7 +431,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="91"/>
-        <source>Creating BibleTime's user interface...</source>
+        <source>Creating BibleTime&apos;s user interface...</source>
         <translation>BibleTime felhasználói felület létrehozása...</translation>
     </message>
     <message>
@@ -463,17 +460,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>A feloldókulcs amit használt nem oldotta fel ezt a modult. Kérjük próbálja újra.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Névjegy</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="717"/>
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
         <source>Bookmarks</source>
         <translation>Könyvjelzők</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="718"/>
+        <location filename="../../src/bibletime_init.cpp" line="710"/>
         <source>Mag</source>
         <translation>Nagyító</translation>
     </message>
@@ -501,7 +498,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="80"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="77"/>
-        <source>Failed to load BibleTime's configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -704,7 +701,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
-        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society's free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
+        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>A BibleTime a SWORD Projekt használatára készült. A SWORD Projekt a Crosswire Bible Society ingyenes Biblia szoftver projektje. Célja, hogy olyan keresztplatformos, nyílt forrású &amp;mdash; GNU General Public License által kiadott &amp;mdash; szoftvereket hozzon létre, amelyek lehetővé teszik a programozóknak és a Bibliatársaságoknak, hogy sokkal könnyebben és gyorsabban írhassanak Bibliaszoftvereket.</translation>
     </message>
     <message>
@@ -812,37 +809,37 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBibleKeyWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="112"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="109"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Keresztülgörgetés a lista elemein. Nyomja le a gombot, és mozgassa az egeret a tétel növeléséhez vagy csökkentéséhez.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="111"/>
         <source>Next book</source>
         <translation>Következő könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="113"/>
         <source>Previous book</source>
         <translation>Előző könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="119"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
         <source>Next chapter</source>
         <translation>Következő fejezet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="118"/>
         <source>Previous chapter</source>
         <translation>Előző fejezet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="124"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
         <source>Next verse</source>
         <translation>Következő vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="126"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="123"/>
         <source>Previous verse</source>
         <translation>Előző vers</translation>
     </message>
@@ -1158,7 +1155,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
-        <source>Paul's Epistles</source>
+        <source>Paul&apos;s Epistles</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1582,7 +1579,7 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
-        <source>Hebrew Strong's lexicon:</source>
+        <source>Hebrew Strong&apos;s lexicon:</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1592,7 +1589,7 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
-        <source>Greek Strong's lexicon:</source>
+        <source>Greek Strong&apos;s lexicon:</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1761,7 +1758,7 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
-        <source>You can search for Strong's numbers in a work. Start with a work that has Strong's numbers and hover over a word. Right click the word and use the Strong's Search menu. A search dialog will appear that allows you to see the use of the same Strong's number in other locations of the work.</source>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation>Lehetséges Strong számokra is keresni. Válasszon egy olyan dokumentumot, ami rendelkezik Strong számokkal, vigye az egérmutatót a kívánt szó fölé, majd jobb egérgombbal kattintva válassza a Strong keresés menüt. A párbeszédablak ekkor előhozza az azonos Strong számokkal jelzett előfordulásokat a dokumentumból.</translation>
     </message>
     <message>
@@ -1776,8 +1773,8 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
-        <source>You can view Strong's number information in the MAG window by hovering over a word in a Bible work that has Strong's numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Megtekintheti A Strong szótári információját egy szónak a Nagyító ablakban az egérmutató szó fölé vitelével egy Strong's képes dokumentumban. A funkcióhoz telepíteni kell a Strong's héber és görög szótárat a Crosswire forrásból.</translation>
+        <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
+        <translation>Megtekintheti A Strong szótári információját egy szónak a Nagyító ablakban az egérmutató szó fölé vitelével egy Strong&apos;s képes dokumentumban. A funkcióhoz telepíteni kell a Strong&apos;s héber és görög szótárat a Crosswire forrásból.</translation>
     </message>
 </context>
 <context>
@@ -2002,16 +1999,8 @@ shortcut</source>
         <translation>Csak a könyvjelzők, vagy egy könyvtár mozgatása lehetséges</translation>
     </message>
     <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Könyvjelzők</translation>
-    </message>
-    <message>
-        <source>New folder</source>
-        <translation type="obsolete">Új mappa</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
-        <source>Can't drop folder into the folder itself or into its subfolder</source>
+        <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>A mappa önmagába, vagy almappájába mozgatása nem lehetséges</translation>
     </message>
     <message>
@@ -2135,17 +2124,17 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
-        <source>For God didn't send his Son into the world to judge the world, but that the world should be saved through him.</source>
+        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Mert nem azért küldte az Isten az ő Fiát a világra, hogy kárhoztassa a világot, hanem hogy megtartassék a világ általa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="244"/>
-        <source>He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
+        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>A ki hiszen ő benne, el nem kárhozik; a ki pedig nem hisz, immár elkárhozott, mivelhogy nem hitt az Isten egyszülött Fiának nevében.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="254"/>
-        <source>For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.</source>
+        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Mert minden, a ki hamisan cselekszik, gyűlöli a világosságot és nem megy a világosságra, hogy az ő cselekedetei fel ne fedessenek.</translation>
     </message>
     <message>
@@ -2359,8 +2348,8 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
-        <source>Strong's Search</source>
-        <translation>Strong's keresés</translation>
+        <source>Strong&apos;s Search</source>
+        <translation>Strong&apos;s keresés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
@@ -2454,18 +2443,18 @@ shortcut</source>
         <translation>Eredeti szöveg helyreállítása, az új szöveg elveszik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="276"/>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="306"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save Text?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="276"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="274"/>
         <source>Save text before closing?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="306"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="304"/>
         <source>Save changed text?</source>
         <translation type="unfinished"/>
     </message>
@@ -2992,7 +2981,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
-        <source>Chinantec, Ozumacín</source>
+        <source>Chinantec, Ozumacu00edn</source>
         <extracomment>Language name chz</extracomment>
         <translation>Chinantec, Ozumacín</translation>
     </message>
@@ -3250,9 +3239,9 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
-        <source>Itzá</source>
+        <source>Itzu00e1</source>
         <extracomment>Language name itz</extracomment>
-        <translation>Itza'</translation>
+        <translation>Itza&apos;</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -3424,7 +3413,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
-        <source>Otomi, Querétaro</source>
+        <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
         <translation>Otomi, Querétaro</translation>
     </message>
@@ -3460,9 +3449,9 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
-        <source>Quiché, West Central</source>
+        <source>Quichu00e9, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation>K'iche'</translation>
+        <translation>K&apos;iche&apos;</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="426"/>
@@ -3568,7 +3557,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
-        <source>Tzotzil, Zinacantán</source>
+        <source>Tzotzil, Zinacantu00e1n</source>
         <extracomment>Language name tzz</extracomment>
         <translation>Tzotzil, Zinacantán</translation>
     </message>
@@ -3635,7 +3624,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
-        <source>Zapotec, San Juan Guelavía</source>
+        <source>Zapotec, San Juan Guelavu00eda</source>
         <extracomment>Language name zab</extracomment>
         <translation>Zapotec, San Juan Guelavía</translation>
     </message>
@@ -3653,7 +3642,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
-        <source>Zapotec, Amatlán</source>
+        <source>Zapotec, Amatlu00e1n</source>
         <extracomment>Language name zpo</extracomment>
         <translation>Zapotec, Amatlán</translation>
     </message>
@@ -3665,7 +3654,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
-        <source>Zapotec, Yalálag</source>
+        <source>Zapotec, Yalu00e1lag</source>
         <extracomment>Language name zpu</extracomment>
         <translation>Zapotec, Yalálag</translation>
     </message>
@@ -3683,7 +3672,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
-        <source>Zapotec, Quioquitani-Quierí</source>
+        <source>Zapotec, Quioquitani-Quieru00ed</source>
         <extracomment>Language name ztq</extracomment>
         <translation>Zapotec, Quioquitani-Quierí</translation>
     </message>
@@ -3706,7 +3695,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
-        <source>Strong's numbers</source>
+        <source>Strong&apos;s numbers</source>
         <translation>Strong számok</translation>
     </message>
     <message>
@@ -3881,7 +3870,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="77"/>
-        <source>The file couldn't be opened for saving.</source>
+        <source>The file couldn&apos;t be opened for saving.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3907,7 +3896,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
-        <source>Kekchí</source>
+        <source>Kekchu00ed</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
         <translation>Kekchi</translation>
@@ -3926,7 +3915,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
-        <source>Mam, Todos Santos Cuchumatán</source>
+        <source>Mam, Todos Santos Cuchumatu00e1n</source>
         <extracomment>Language name mvj</extracomment>
         <translation>Mam, Todos Santos Cuchumatán</translation>
     </message>
@@ -3950,13 +3939,13 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
-        <source>Norwegian Bokmål</source>
+        <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
         <translation>Norvég Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
-        <source>Nahuatl, Michoacán</source>
+        <source>Nahuatl, Michoacu00e1n</source>
         <extracomment>Language name ncl</extracomment>
         <translation>Nahuatl, Michoacán</translation>
     </message>
@@ -4006,8 +3995,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="288"/>
-        <source>Parsing Strong's Numbers</source>
-        <translation>Strong's számok követése</translation>
+        <source>Parsing Strong&apos;s Numbers</source>
+        <translation>Strong&apos;s számok követése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="165"/>
@@ -4274,8 +4263,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
-        <source> (&lt;a href='syntax_help'&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href='syntax_help'&gt;egyéni meghatározás&lt;/a&gt;)</translation>
+        <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;egyéni meghatározás&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
@@ -4365,8 +4354,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="91"/>
-        <source>This help is mainly for 'Full syntax' option. 'All words' and 'Some words' options have more limited syntax; &lt;a href='#wildcards'&gt;wildcards&lt;/a&gt; and &lt;a href='#fields'&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation>Ez a segédlet főként a 'egyéni meghatározás' opcióhoz van. az 'Összes szó' és a 'Bármely szó' opciónak sokkal korlátozottabb lehetőségei vannak; &lt;a href='#wildcards'&gt;helyettesítő karakterek&lt;/a&gt; és &lt;a href='#fields'&gt; szövegmezők&lt;/a&gt; támogatottak ott. Néhány egyéb szintaxis furcsa, vagy hibás eredményt okozhat az Összes szó/Bármely szó opciónál.</translation>
+        <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
+        <translation>Ez a segédlet főként a &apos;egyéni meghatározás&apos; opcióhoz van. az &apos;Összes szó&apos; és a &apos;Bármely szó&apos; opciónak sokkal korlátozottabb lehetőségei vannak; &lt;a href=&apos;#wildcards&apos;&gt;helyettesítő karakterek&lt;/a&gt; és &lt;a href=&apos;#fields&apos;&gt; szövegmezők&lt;/a&gt; támogatottak ott. Néhány egyéb szintaxis furcsa, vagy hibás eredményt okozhat az Összes szó/Bármely szó opciónál.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="96"/>
@@ -4400,9 +4389,9 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="109"/>
-        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. '&lt;strong&gt;+&lt;/strong&gt;word' means the word must be in the results, '&lt;strong&gt;-&lt;/strong&gt;word' means it must not be in the results.</source>
+        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation>A keresési kifejezések szóközzel vannak elválasztva. &lt;strong&gt;AND&lt;/strong&gt; (minden szó), &lt;strong&gt;VAGY&lt;/strong&gt; (néhány szó) és a  &lt;strong&gt;NOT&lt;/strong&gt; (nem a következő szó) lehet a szavak között. Ha egyik sincs, az OR használódik automatikusan. '&lt;strong&gt; + &lt;/strong&gt; szó'  a szónak benne kell lennie az eredményekben, '&lt;strong&gt; - &lt;/strong&gt; szó' azt jelenti, hogy a szó nem szerepelhet a találatokban.</translation>
+        <translation>A keresési kifejezések szóközzel vannak elválasztva. &lt;strong&gt;AND&lt;/strong&gt; (minden szó), &lt;strong&gt;VAGY&lt;/strong&gt; (néhány szó) és a  &lt;strong&gt;NOT&lt;/strong&gt; (nem a következő szó) lehet a szavak között. Ha egyik sincs, az OR használódik automatikusan. &apos;&lt;strong&gt; + &lt;/strong&gt; szó&apos;  a szónak benne kell lennie az eredményekben, &apos;&lt;strong&gt; - &lt;/strong&gt; szó&apos; azt jelenti, hogy a szó nem szerepelhet a találatokban.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="116"/>
@@ -4412,8 +4401,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="118"/>
-        <source>Finds verses with both 'Jesus' and 'God'</source>
-        <translation>Kiadja az összes verset amiben szerepel 'Jézus' és 'Isten' együtt</translation>
+        <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
+        <translation>Kiadja az összes verset amiben szerepel &apos;Jézus&apos; és &apos;Isten&apos; együtt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="120"/>
@@ -4423,8 +4412,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="122"/>
-        <source>Finds verses with 'Jesus' or 'God' or both</source>
-        <translation>Kiadja az összes verset amiben szerepel vagy 'Jézus', vagy 'Isten', vagy mindkettő együtt</translation>
+        <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
+        <translation>Kiadja az összes verset amiben szerepel vagy &apos;Jézus&apos;, vagy &apos;Isten&apos;, vagy mindkettő együtt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
@@ -4435,8 +4424,8 @@ Folytatja?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
-        <source>Finds verses with 'Jesus' but with no 'God'</source>
-        <translation>Eredménye a 'Jézus' tartalmú versek, 'Isten' szó nélkül</translation>
+        <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
+        <translation>Eredménye a &apos;Jézus&apos; tartalmú versek, &apos;Isten&apos; szó nélkül</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
@@ -4456,8 +4445,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="140"/>
-        <source>Finds verses with both 'a' AND 'b', and verses with 'c'</source>
-        <translation>Olyan verseket eredményez, amiben az 'a' és 'b' is megtalálható, vagy csak a 'c', esetleg ezek mind együtt</translation>
+        <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
+        <translation>Olyan verseket eredményez, amiben az &apos;a&apos; és &apos;b&apos; is megtalálható, vagy csak a &apos;c&apos;, esetleg ezek mind együtt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="142"/>
@@ -4471,13 +4460,13 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
-        <source>Finds all verses with 'says the LORD'</source>
-        <translation>Megtalálja az összes verset a 'mondta az Úr' kifejezzéssel</translation>
+        <source>Finds all verses with &apos;says the LORD&apos;</source>
+        <translation>Megtalálja az összes verset a &apos;mondta az Úr&apos; kifejezzéssel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="153"/>
-        <source>'&lt;strong&gt;*&lt;/strong&gt;' matches any sequence of 0 or more characters, while '&lt;strong&gt;?&lt;/strong&gt;' matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation>'&lt;strong&gt; * &lt;/strong&gt; ' behelyettesíthető bármely 0 vagy több karakter sorozatára, míg a' &lt;strong&gt;? &lt;/strong&gt;' csak egy karaktert helyettesít. A helyettesítőket nem lehet használni egy szó elején sem.</translation>
+        <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
+        <translation>&apos;&lt;strong&gt; * &lt;/strong&gt; &apos; behelyettesíthető bármely 0 vagy több karakter sorozatára, míg a&apos; &lt;strong&gt;? &lt;/strong&gt;&apos; csak egy karaktert helyettesít. A helyettesítőket nem lehet használni egy szó elején sem.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="157"/>
@@ -4486,7 +4475,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
-        <source>All words beginning with 'a'</source>
+        <source>All words beginning with &apos;a&apos;</source>
         <translation>Minden a-val kezdődő szó</translation>
     </message>
     <message>
@@ -4496,8 +4485,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>
-        <source>'Assyria', 'aroma', 'abba' etc.</source>
-        <translation>'Asszíria', 'abba', 'atya' stb.</translation>
+        <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
+        <translation>&apos;Asszíria&apos;, &apos;abba&apos;, &apos;atya&apos; stb.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
@@ -4506,18 +4495,18 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
-        <source>'at' and 'an'</source>
-        <translation>'és' és 'én'</translation>
+        <source>&apos;at&apos; and &apos;an&apos;</source>
+        <translation>&apos;és&apos; és &apos;én&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>a??a</source>
-        <translation>'a??a'</translation>
+        <translation>&apos;a??a&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
-        <source>'abba', 'area', 'Asia' etc.</source>
-        <translation>'abba', 'atya' stb.</translation>
+        <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
+        <translation>&apos;abba&apos;, &apos;atya&apos; stb.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="176"/>
@@ -4536,7 +4525,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
-        <source>Searches Strong's numbers</source>
+        <source>Searches Strong&apos;s numbers</source>
         <translation>Strong számokat keres</translation>
     </message>
     <message>
@@ -4557,8 +4546,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
-        <source>Finds headings with 'Jesus'</source>
-        <translation>Megkeresi az összes fejlécet 'Jézus' tartalommal</translation>
+        <source>Finds headings with &apos;Jesus&apos;</source>
+        <translation>Megkeresi az összes fejlécet &apos;Jézus&apos; tartalommal</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
@@ -4568,8 +4557,8 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
-        <source>Finds footnotes with 'Jesus' and 'said'</source>
-        <translation>Megtalálja a 'Jesus' és 'said' tartalmú lábjegyzeteket</translation>
+        <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
+        <translation>Megtalálja a &apos;Jesus&apos; és &apos;said&apos; tartalmú lábjegyzeteket</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
@@ -4579,7 +4568,7 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="199"/>
-        <source>Finds verses with Strong's Greek number 846</source>
+        <source>Finds verses with Strong&apos;s Greek number 846</source>
         <translation>Megtalálja a Strong görög szótár 846 -os szavát tartalmazó verseket</translation>
     </message>
     <message>
@@ -4590,13 +4579,13 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
-        <source>Finds verses with morphology code 'N-NSF'</source>
-        <translation>Olyan verseket eredményez ahol 'N-NSF' morfológiai kódú szó áll</translation>
+        <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
+        <translation>Olyan verseket eredményez ahol &apos;N-NSF&apos; morfológiai kódú szó áll</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
-        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href='%1'&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation>A BibleTime a CLucene keresőmotorját használja. Többet olvashat erről a &lt;a href='%1'&gt;lucene kifejezések weboldalán&lt;/a&gt; (egy küső böngészőben).</translation>
+        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
+        <translation>A BibleTime a CLucene keresőmotorját használja. Többet olvashat erről a &lt;a href=&apos;%1&apos;&gt;lucene kifejezések weboldalán&lt;/a&gt; (egy küső böngészőben).</translation>
     </message>
 </context>
 <context>
