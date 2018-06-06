@@ -1,4 +1,7 @@
 2018-06-05 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #140, No window text with Qt 5.11
+
+2018-06-05 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix cmake build errors with Qt 5.11, fix some cmake warnings
 
 2018-03-03 Gary Holmlund <gary.holmlund@gmail.com>
