@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Joachim Ansorg, 2003
 # rokmcssu <yaraba@daum.net>, 2016
@@ -13,11 +13,12 @@ msgstr ""
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
 "PO-Revision-Date: 2017-09-21 13:11+0000\n"
 "Last-Translator: rokmcssu <yaraba@daum.net>\n"
-"Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/ko/)\n"
+"Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/"
+"ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Content of: <chapter><title>
@@ -39,44 +40,60 @@ msgstr "요 5:39-40"
 #: docs/howto/en/docbook/howto-basics.docbook:8
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
-"life; and it is these that bear witness of Me; and you are unwilling to come"
-" to Me, that you may have life."
-msgstr "너희가 성경에서 영생을 얻는 줄 생각하고 성경을 상고하거니와 이 성경이 곧 내게 대하여 증거하는 것이로다. 그러나 너희가 영생을 얻기 위하여 내게 오기를 원하지 아니하는도다."
+"life; and it is these that bear witness of Me; and you are unwilling to come "
+"to Me, that you may have life."
+msgstr ""
+"너희가 성경에서 영생을 얻는 줄 생각하고 성경을 상고하거니와 이 성경이 곧 내"
+"게 대하여 증거하는 것이로다. 그러나 너희가 영생을 얻기 위하여 내게 오기를 원"
+"하지 아니하는도다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:14
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
-"so in Bible study, we do it not for its own sake but for fellowship with "
-"God."
-msgstr "성경의 핵심 목적은 우리를 그 분께로 데려가는 것입니다. 마틴 루터는 <quote>우리가 요람으로 가는 이유는 단지 아기를 보기 위해서다</quote>라고 했습니다. 성경 공부도 마찬가지로, 우리는 성경 공부 자체를 위해서가 아니라 하나님과의 교제를 위한 것입니다."
+"so in Bible study, we do it not for its own sake but for fellowship with God."
+msgstr ""
+"성경의 핵심 목적은 우리를 그 분께로 데려가는 것입니다. 마틴 루터는 <quote>우"
+"리가 요람으로 가는 이유는 단지 아기를 보기 위해서다</quote>라고 했습니다. 성"
+"경 공부도 마찬가지로, 우리는 성경 공부 자체를 위해서가 아니라 하나님과의 교제"
+"를 위한 것입니다."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:20
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
-msgstr "존 스토트, <emphasis>변론자 그리스도</emphasis>, InterVarsity Press 1978, pp.97, 104."
+msgstr ""
+"존 스토트, <emphasis>변론자 그리스도</emphasis>, InterVarsity Press 1978, "
+"pp.97, 104."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:23
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
 "tantamount to possessing life. Hillel used to say, \"He who has gotten to "
-"himself words of Torah has gotten to himself the life of the world to "
-"come.\" Their study was an end in itself. In this they were grievously "
-"deceived. [...]"
-msgstr "예수님이 말씀하셨던 유대인들은 [...] 말씀을 갖는 것이 생명을 갖는 것과 동일하다고 생각했습니다. 힐렐은 \"토라의 말씀을 가진 사람은 다음 세상의 생명을 가진 것이다\"라고 말하곤 했습니다. 그들의 공부는 그 자체로 끝 이었습니다. 슬프지만 이런식으로 그들은 기만당한 것입니다. [...]"
+"himself words of Torah has gotten to himself the life of the world to come."
+"\" Their study was an end in itself. In this they were grievously deceived. "
+"[...]"
+msgstr ""
+"예수님이 말씀하셨던 유대인들은 [...] 말씀을 갖는 것이 생명을 갖는 것과 동일하"
+"다고 생각했습니다. 힐렐은 \"토라의 말씀을 가진 사람은 다음 세상의 생명을 가"
+"진 것이다\"라고 말하곤 했습니다. 그들의 공부는 그 자체로 끝 이었습니다. 슬프"
+"지만 이런식으로 그들은 기만당한 것입니다. [...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:28
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
-"sake, but only if it effectively introduces us to Jesus Christ. Whenever the"
-" Bible is read, what is needed is an eager expectation that through it we "
-"may meet Christ."
-msgstr "성경을 단지 독서를 목적으로 읽는 것이라면 아무런 유익도 소득도 없습니다, 오직 예수 그리스도를 우리에게 효과적으로 소개할 경우에만 의미가 있습니다. 성경을 읽을 때마다 꼭 필요한 것은 말씀을 통해서 그리스도를 만나고자 하는 간절한 소망입니다."
+"sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
+"Bible is read, what is needed is an eager expectation that through it we may "
+"meet Christ."
+msgstr ""
+"성경을 단지 독서를 목적으로 읽는 것이라면 아무런 유익도 소득도 없습니다, 오"
+"직 예수 그리스도를 우리에게 효과적으로 소개할 경우에만 의미가 있습니다. 성경"
+"을 읽을 때마다 꼭 필요한 것은 말씀을 통해서 그리스도를 만나고자 하는 간절한 "
+"소망입니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:35
@@ -90,7 +107,10 @@ msgid ""
 "and memorization provide a microscopic view of scripture. Meditating on the "
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
-msgstr "성경을 공부하고 암송하는 것은 말씀에 대한 미시적인 시야를 제공한다면 말씀을 듣고 읽는 것은 말씀에 대한 거시적인 시야를 제공합니다. 말씀 묵상은 듣기, 읽기, 성격 공부 및 암송을 결합시켜 주고 말씀을 우리 마음판에 새기는 것입니다."
+msgstr ""
+"성경을 공부하고 암송하는 것은 말씀에 대한 미시적인 시야를 제공한다면 말씀을 "
+"듣고 읽는 것은 말씀에 대한 거시적인 시야를 제공합니다. 말씀 묵상은 듣기, 읽"
+"기, 성격 공부 및 암송을 결합시켜 주고 말씀을 우리 마음판에 새기는 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
@@ -100,9 +120,10 @@ msgstr "듣기(Hear)"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
-"Lk.11:28 <quote>blessed are those who hear the word of God, and observe "
-"it.</quote>"
-msgstr "눅 11:28 <quote>하나님의 말씀을 듣고 지키는 자가 복이 있느니라 </quote>"
+"Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
+"quote>"
+msgstr ""
+"눅 11:28 <quote>하나님의 말씀을 듣고 지키는 자가 복이 있느니라 </quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:48
@@ -114,14 +135,17 @@ msgstr "읽기(Read)"
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
-msgstr "계 1:3 <quote>이 예언의 말씀을 읽는 자와 듣는 자들이 복이 있나니 [...]</quote>"
+msgstr ""
+"계 1:3 <quote>이 예언의 말씀을 읽는 자와 듣는 자들이 복이 있나니 [...]</"
+"quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:52
 msgid ""
-"1 Tim.4:13 <quote>give attention to the public reading of Scripture "
-"[...]</quote>"
-msgstr "딤전 4:13 <quote>[...]읽는 것과 권하는 것과 가르치는 것에 착념하라 </quote>"
+"1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
+"quote>"
+msgstr ""
+"딤전 4:13 <quote>[...]읽는 것과 권하는 것과 가르치는 것에 착념하라 </quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:57
@@ -133,9 +157,12 @@ msgstr "공부(Study)"
 #: docs/howto/en/docbook/howto-basics.docbook:58
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
-"Thessalonica, for they received the word with great eagerness, examining the"
-" Scriptures daily, to see whether these things were so.</quote>"
-msgstr "행 17:11 <quote>베뢰아 사람은 데살로니가에 있는 사람보다 더 신사적이어서 간절한 마음으로 말씀을 받고 이것이 그러한가 하여 날마다 성경을 상고하므로 </quote>"
+"Thessalonica, for they received the word with great eagerness, examining the "
+"Scriptures daily, to see whether these things were so.</quote>"
+msgstr ""
+"행 17:11 <quote>베뢰아 사람은 데살로니가에 있는 사람보다 더 신사적이어서 간절"
+"한 마음으로 말씀을 받고 이것이 그러한가 하여 날마다 성경을 상고하므로 </"
+"quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:63
@@ -143,7 +170,9 @@ msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
-msgstr "딤후 2:15 <quote>네가 진리의 말씀을 옳게 분변하여 부끄러울 것이 없는 일군으로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라. </quote>"
+msgstr ""
+"딤후 2:15 <quote>네가 진리의 말씀을 옳게 분변하여 부끄러울 것이 없는 일군으"
+"로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라. </quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:69
@@ -153,9 +182,11 @@ msgstr "암송(Memorize)"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:70
 msgid ""
-"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against"
-" Thee.</quote>"
-msgstr "시 119:11 <quote>주께서 나를 가르치셨으므로 내가 주의 규례에서 떠나지 아니하였나이다.</quote>"
+"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
+"Thee.</quote>"
+msgstr ""
+"시 119:11 <quote>주께서 나를 가르치셨으므로 내가 주의 규례에서 떠나지 아니하"
+"였나이다.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:75
@@ -165,21 +196,29 @@ msgstr "묵상(Meditate)"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:76
 msgid ""
-"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he"
-" meditates day and night. And he will be like a tree firmly planted by "
+"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
+"meditates day and night. And he will be like a tree firmly planted by "
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
-msgstr "시 1:2-3 <quote>오직 여호와의 율법을 즐거워하여 그 율법을 주야로 묵상하는 자로다. 저는 시냇가에 심은 나무가 시절을 좇아 과실을 맺으며 그 잎사귀가 마르지 아니함 같으니 그 행사가 다 형통하리로다</quote>"
+msgstr ""
+"시 1:2-3 <quote>오직 여호와의 율법을 즐거워하여 그 율법을 주야로 묵상하는 자"
+"로다. 저는 시냇가에 심은 나무가 시절을 좇아 과실을 맺으며 그 잎사귀가 마르지 "
+"아니함 같으니 그 행사가 다 형통하리로다</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:82
 msgid ""
-"The Navigators illustrate this by saying that as the thumb can touch all the"
-" fingers, we can meditate on the Word as we do any of the first four. "
+"The Navigators illustrate this by saying that as the thumb can touch all the "
+"fingers, we can meditate on the Word as we do any of the first four. "
 "Meditation is a key to revelation. A new Christian needs to hear and read "
-"the Bible more than they need to study and memorize it. This is so that they"
-" become familiar with the overall message of the Bible."
-msgstr "네비게이토에서는 이것을 말씀의 손 예화로 설명하는데 엄지 손가락이 다른 모든 손가락에 닿을 수 있는 것처럼, 듣기, 읽기, 공부, 암송과 더불어서 말씀을 묵상 할 수 있습니다. 묵상은 계시의 열쇠입니다. 새신자는 말씀을 공부하고 암송하는 것보다 듣고, 읽는 것에 더 비중을 둘 필요가 있습니다. 이 방법은 새신자가 성경의 전체적인 메시지에 익숙해지게 하기 위함입니다."
+"the Bible more than they need to study and memorize it. This is so that they "
+"become familiar with the overall message of the Bible."
+msgstr ""
+"네비게이토에서는 이것을 말씀의 손 예화로 설명하는데 엄지 손가락이 다른 모든 "
+"손가락에 닿을 수 있는 것처럼, 듣기, 읽기, 공부, 암송과 더불어서 말씀을 묵상 "
+"할 수 있습니다. 묵상은 계시의 열쇠입니다. 새신자는 말씀을 공부하고 암송하는 "
+"것보다 듣고, 읽는 것에 더 비중을 둘 필요가 있습니다. 이 방법은 새신자가 성경"
+"의 전체적인 메시지에 익숙해지게 하기 위함입니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:91
@@ -196,7 +235,9 @@ msgstr "주제별(Topical) 성경공부"
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
-msgstr "특정한 주제를 고른 다음 관주 성경이나 사전등을 사용하여 주제 중심으로 공부합니다."
+msgstr ""
+"특정한 주제를 고른 다음 관주 성경이나 사전등을 사용하여 주제 중심으로 공부합"
+"니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:98
@@ -232,9 +273,11 @@ msgstr "내용(Content)"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:112
 msgid ""
-"What does it say? What does it say in the original language? Be careful with"
-" definitions. Don't read into it what it doesn't say."
-msgstr "무엇을 말하고 있는가? 원어에서는 무엇을 말하고 있는가? 정의에 주의 합니다. 그것이 말하고 있지 않은 것을 읽지 않습니다."
+"What does it say? What does it say in the original language? Be careful with "
+"definitions. Don't read into it what it doesn't say."
+msgstr ""
+"무엇을 말하고 있는가? 원어에서는 무엇을 말하고 있는가? 정의에 주의 합니다. 그"
+"것이 말하고 있지 않은 것을 읽지 않습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:117
@@ -246,10 +289,11 @@ msgstr "문맥(Context)"
 msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
-msgstr "주위의 구절들이 무엇을 말하고 있는가? \"문맥이 왕이다\"가 법칙입니다 -- 구절은 전체 구절과 책의 구조 안에서 이해되어야 합니다."
+msgstr ""
+"주위의 구절들이 무엇을 말하고 있는가? \"문맥이 왕이다\"가 법칙입니다 -- 구절"
+"은 전체 구절과 책의 구조 안에서 이해되어야 합니다."
 
-#. type: Content of:
-#. <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:123
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Cross-reference"
@@ -261,7 +305,10 @@ msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
 "test of other scriptures."
-msgstr "이 주제에 대하여 성경의 다른 부분에서는 무엇을 말하고 있는가? 하나님은 스스로 모순되지 않으십니다. 그래서 우리의 해석은 다른 말씀에도 비춰 볼 필요가 있습니다."
+msgstr ""
+"이 주제에 대하여 성경의 다른 부분에서는 무엇을 말하고 있는가? 하나님은 스스"
+"로 모순되지 않으십니다. 그래서 우리의 해석은 다른 말씀에도 비춰 볼 필요가 있"
+"습니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:131
@@ -272,11 +319,16 @@ msgstr "마태복음 6:1-18을 본문으로 한 주해적(Expository) 성경 공
 #: docs/howto/en/docbook/howto-basics.docbook:132
 msgid ""
 "Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
-"key verse, the verse that sums up the whole passage. Think you have it? Test"
-" it by picking different places in the passage and asking yourself if they "
+"key verse, the verse that sums up the whole passage. Think you have it? Test "
+"it by picking different places in the passage and asking yourself if they "
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
-msgstr "마태복음 6:1-18을 함께 공부해 보겠습니다. 본문을 읽고, 먼저 핵심 절을 찾으세요. 핵심 절은 전체 구절을 한 절로 요약하는 것이라 할 수 있습니다. 찾았다고 여겨진다면, 구절의 다른 부분을 골라서 그것이 핵심 절이 뜻하는 바와 연관성이 있는지 상호 검증합니다. 찾았다면, 해당 절을 개요 중의 첫번째를 의미하는 기호를 붙여 적습니다:"
+msgstr ""
+"마태복음 6:1-18을 함께 공부해 보겠습니다. 본문을 읽고, 먼저 핵심 절을 찾으세"
+"요. 핵심 절은 전체 구절을 한 절로 요약하는 것이라 할 수 있습니다. 찾았다고 여"
+"겨진다면, 구절의 다른 부분을 골라서 그것이 핵심 절이 뜻하는 바와 연관성이 있"
+"는지 상호 검증합니다. 찾았다면, 해당 절을 개요 중의 첫번째를 의미하는 기호를 "
+"붙여 적습니다:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:140
@@ -286,10 +338,13 @@ msgstr "사람에게 보이려고 그들 앞에서 너희 의를 행치 않도�
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:144
 msgid ""
-"What does <quote>practicing your righteousness</quote>mean? Does the passage"
-" give any examples? What area of our lives is being addressed? <emphasis>Our"
-" motives!</emphasis> What sub-headings develop this thought?"
-msgstr "<quote>의를 행하다</quote>는 무슨 의미 입니까? 구절에서 예를 찾을 수 있습니까? 우리 삶의 어떤 영역들이 언급되고 있습니까? <emphasis>우리의 동기들!</emphasis>어떤 부제목들이 이런 생각들을 도와줄까요?"
+"What does <quote>practicing your righteousness</quote>mean? Does the passage "
+"give any examples? What area of our lives is being addressed? <emphasis>Our "
+"motives!</emphasis> What sub-headings develop this thought?"
+msgstr ""
+"<quote>의를 행하다</quote>는 무슨 의미 입니까? 구절에서 예를 찾을 수 있습니"
+"까? 우리 삶의 어떤 영역들이 언급되고 있습니까? <emphasis>우리의 동기들!</"
+"emphasis>어떤 부제목들이 이런 생각들을 도와줄까요?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
@@ -311,24 +366,25 @@ msgstr "기도 할 때"
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
-msgstr "우리가 의를 행하는 잘못된 사례들을 피할 수 있는 방법들로 개요를 채워 나갑니다:"
+msgstr ""
+"우리가 의를 행하는 잘못된 사례들을 피할 수 있는 방법들로 개요를 채워 나갑니"
+"다:"
 
-#. type: Content of:
-#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:167
 msgid ""
-"don't sound a trumpet. (how might someone <quote>sound a "
-"trumpet</quote>today?)"
-msgstr "나팔을 불지 않는다. (오늘날에는 어떻게 사람이 <quote>나팔을 불 수</quote> 있을까?)"
+"don't sound a trumpet. (how might someone <quote>sound a trumpet</"
+"quote>today?)"
+msgstr ""
+"나팔을 불지 않는다. (오늘날에는 어떻게 사람이 <quote>나팔을 불 수</quote> 있"
+"을까?)"
 
-#. type: Content of:
-#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
 msgstr "모르게 한다."
 
-#. type: Content of:
-#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:174
 msgid "etc."
 msgstr "기타 등등."
@@ -363,20 +419,17 @@ msgstr "고른 단어들을 가나다(알파벳)순으로 정렬합니다."
 msgid "Go down the column of listings until you find your verse."
 msgstr "원하는 구절을 찾을때까지 목록을 따라갑니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:201
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr "<quote>친구의 통책은 충성에서 말미암은 것이나</quote>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:206
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr "<quote>우리가 그리스도를 대신하여 사신이 되어</quote>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:210
 msgid "The story of the rich man and Lazarus."
 msgstr "부자와 나사로의 이야기"
@@ -395,10 +448,15 @@ msgstr "주제별 성경공부 하기"
 #: docs/howto/en/docbook/howto-basics.docbook:216
 msgid ""
 "Let's say you wanted to do a study of the word \"redemption.\" First you "
-"would look up that word in the concordance and look up references listed for"
-" it. Then you could look up related words and references listed for them, "
-"e.g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
-msgstr "당신이 \"구속(redemption)\"이란 단어를 공부하고 싶다고 가정합니다. 당신은 먼저 성서 색인에서 구속을 찾고 구속을 언급하고 있는 구절들을 찾아볼 수 있을 것입니다. 그 다음에는 구속과 연관성이 있는 단어들을 찾아보고, 해당 단어들에 대해서도 마찬가지 방식으로 연관 구절을 찾아 볼 수 있을 것입니다. 예를 들자면 \"구속하다, 구속된, 몸값, \" 더 나아가 \"구입하다\"나 \"희생\"."
+"would look up that word in the concordance and look up references listed for "
+"it. Then you could look up related words and references listed for them, e."
+"g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
+msgstr ""
+"당신이 \"구속(redemption)\"이란 단어를 공부하고 싶다고 가정합니다. 당신은 먼"
+"저 성서 색인에서 구속을 찾고 구속을 언급하고 있는 구절들을 찾아볼 수 있을 것"
+"입니다. 그 다음에는 구속과 연관성이 있는 단어들을 찾아보고, 해당 단어들에 대"
+"해서도 마찬가지 방식으로 연관 구절을 찾아 볼 수 있을 것입니다. 예를 들자면 "
+"\"구속하다, 구속된, 몸값, \" 더 나아가 \"구입하다\"나 \"희생\"."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:223
@@ -413,7 +471,12 @@ msgid ""
 "judgeth all things.</quote>Maybe there are two different Greek words here, "
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
-msgstr "만약 당신이 마 7:1 <quote>비판을 받지 아니하려거든 비판하지 말라</quote>와 고전 2:15 <quote>신령한 자는 모든 것을 판단하나</quote> 두 구절간에 모순을 발견했다고 가정하면 번역본에서는 동일하거나 비슷한 단어라 할지라도(비판, 판단이 KJV에서는 모두 judge) 헬라어에서는 다른 단어일 수 있습니다. (여기에서 스트롱 번호를 사용합니다)"
+msgstr ""
+"만약 당신이 마 7:1 <quote>비판을 받지 아니하려거든 비판하지 말라</quote>와 고"
+"전 2:15 <quote>신령한 자는 모든 것을 판단하나</quote> 두 구절간에 모순을 발견"
+"했다고 가정하면 번역본에서는 동일하거나 비슷한 단어라 할지라도(비판, 판단이 "
+"KJV에서는 모두 judge) 헬라어에서는 다른 단어일 수 있습니다. (여기에서 스트롱 "
+"번호를 사용합니다)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:232
@@ -425,7 +488,9 @@ msgstr "\"비판\"을 찾습니다."
 msgid ""
 "Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
 "This refers to the Greek word used. Write it down."
-msgstr "마 7:1 항목에 있는 스트롱번호 2919를 확인합니다. 이 번호는 사용된 특정 헬라어 단어를 지칭합니다. 번호를 적어둡니다."
+msgstr ""
+"마 7:1 항목에 있는 스트롱번호 2919를 확인합니다. 이 번호는 사용된 특정 헬라"
+"어 단어를 지칭합니다. 번호를 적어둡니다."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:240
@@ -440,10 +505,13 @@ msgstr "고전 2:15의 스트롱 번호를 확인하면 350 입니다."
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:246
 msgid ""
-"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the"
-" language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 "
-"with the meaning of 350 and you have your answer!"
-msgstr "이제 헬라어 사전을 확인합니다. (기억할 점은 신약은 헬라어, 구약은 히브리어라는 점 입니다.) 스트롱 번호 2919와 350에 해당하는 단어의 의미를 비교해보면 나름의 답을 얻을 수 있을 것입니다."
+"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
+"language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
+"the meaning of 350 and you have your answer!"
+msgstr ""
+"이제 헬라어 사전을 확인합니다. (기억할 점은 신약은 헬라어, 구약은 히브리어라"
+"는 점 입니다.) 스트롱 번호 2919와 350에 해당하는 단어의 의미를 비교해보면 나"
+"름의 답을 얻을 수 있을 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:254
@@ -453,9 +521,10 @@ msgstr "이름에 있는 의미 찾기"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:255
 msgid ""
-"By the same process we can find the meaning of a name in the Greek or "
-"Hebrew."
-msgstr "앞서 특정 단어에 대한 언어의 의미를 찾았던 과정과 동일한 방법으로 헬라어나 히브리어 언어를 통해 이름에 있는 의미를 찾을 수 있습니다. "
+"By the same process we can find the meaning of a name in the Greek or Hebrew."
+msgstr ""
+"앞서 특정 단어에 대한 언어의 의미를 찾았던 과정과 동일한 방법으로 헬라어나 히"
+"브리어 언어를 통해 이름에 있는 의미를 찾을 수 있습니다. "
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:257
@@ -493,7 +562,10 @@ msgid ""
 "Understanding God's word is of great importance to all who call on God's "
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
-msgstr "하나님의 말씀을 이해하는 것은 하나님의 이름을 부르는 모든 사람에게 매우 중요한 것이다. 성경을 공부하는 것은 하나님과 소통하는 법을 배우는 주요한 방법 중의 하나이다."
+msgstr ""
+"하나님의 말씀을 이해하는 것은 하나님의 이름을 부르는 모든 사람에게 매우 중요"
+"한 것이다. 성경을 공부하는 것은 하나님과 소통하는 법을 배우는 주요한 방법 중"
+"의 하나이다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:7
@@ -510,22 +582,27 @@ msgstr "성경은 다음과 같은 면에서 독보적입니다:"
 msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
-msgstr "인기. 성경은 북아메리카 지역에서만 매년 5억불 이상이 팔리고 있습니다. 성경은 지금까지도 그리고 매년 베스트셀러입니다!"
+msgstr ""
+"인기. 성경은 북아메리카 지역에서만 매년 5억불 이상이 팔리고 있습니다. 성경은 "
+"지금까지도 그리고 매년 베스트셀러입니다!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:16
 msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
-msgstr "저자. 성경은 1,600여년의 기간동안 각기 다른 배경을 가진 40명의 저자들에 의해서 씌여졌지만, 마치 한사람에 의해 씌여진 것 처럼 읽힙니다."
+msgstr ""
+"저자. 성경은 1,600여년의 기간동안 각기 다른 배경을 가진 40명의 저자들에 의해"
+"서 씌여졌지만, 마치 한사람에 의해 씌여진 것 처럼 읽힙니다."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21
 msgid ""
-"preservation. F. F. Bruce in <emphasis>Are New Testament Documents "
-"Reliable?</emphasis> compares New Testament manuscripts with other ancient "
-"texts:"
-msgstr "보존성. 브루스는 <emphasis>신약성경은 신뢰할 만한가?</emphasis>라는 책에서 신약성경 필사본과 다른 고대 문서들을 비교 했습니다:"
+"preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
+"</emphasis> compares New Testament manuscripts with other ancient texts:"
+msgstr ""
+"보존성. 브루스는 <emphasis>신약성경은 신뢰할 만한가?</emphasis>라는 책에서 신"
+"약성경 필사본과 다른 고대 문서들을 비교 했습니다:"
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:28
@@ -676,18 +753,26 @@ msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
 "of which was copied 900 years after Caesar wrote the original, etc. For the "
 "New Testament we have full manuscripts dating to 350 A. D., papyri "
-"containing most of the New Testament from the 200s, and a fragment of John's"
-" gospel from 130 A. D. How many manuscripts do we have to compare to each "
+"containing most of the New Testament from the 200s, and a fragment of John's "
+"gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
-msgstr "카이사르의 <emphasis>갈리아 전기</emphasis>는 10개의 사본이 존재하며, 가장 오래된 사본은 카이사르가 원본을 작성한 이후 900년이 흐른 다음의 것이라는 의미입니다. 신약 성경의 경우 A.D. 350년경의 전체 사본이 존재하며, 신약 성경의 대부분을 포함하는 파피루스 고문서는 A.D. 200년경의 필사본이 존재하며 요한복음의 일부는 A.D. 130년경의 필사본이 존재합니다. 다른 고대 문서와 비교해 볼 때 얼마나 많은 필사본들이 존재합니까? 헬라어 사본 5,000개, 라틴어 사본 10,000개!"
+msgstr ""
+"카이사르의 <emphasis>갈리아 전기</emphasis>는 10개의 사본이 존재하며, 가장 오"
+"래된 사본은 카이사르가 원본을 작성한 이후 900년이 흐른 다음의 것이라는 의미입"
+"니다. 신약 성경의 경우 A.D. 350년경의 전체 사본이 존재하며, 신약 성경의 대부"
+"분을 포함하는 파피루스 고문서는 A.D. 200년경의 필사본이 존재하며 요한복음의 "
+"일부는 A.D. 130년경의 필사본이 존재합니다. 다른 고대 문서와 비교해 볼 때 얼마"
+"나 많은 필사본들이 존재합니까? 헬라어 사본 5,000개, 라틴어 사본 10,000개!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
-"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of "
-"Life</emphasis>p. 25-26"
-msgstr "본문 비평가 호트, \"그리스어 신약 사본\", 1권 p561, Macmillan Co., <emphasis>삶의 질문들</emphasis>p. 25-26 에서 인용"
+"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
+"emphasis>p. 25-26"
+msgstr ""
+"본문 비평가 호트, \"그리스어 신약 사본\", 1권 p561, Macmillan Co., <emphasis>"
+"삶의 질문들</emphasis>p. 25-26 에서 인용"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:93
@@ -695,7 +780,9 @@ msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
 "ancient prose writings.\""
-msgstr "\"다양하고 완전한 증거들로 인해서 신약의 텍스트는 다른 어떤 고대 산문들 중에서도 절대적이고도 범접할 수 없는 위치에 서 있습니다.\""
+msgstr ""
+"\"다양하고 완전한 증거들로 인해서 신약의 텍스트는 다른 어떤 고대 산문들 중에"
+"서도 절대적이고도 범접할 수 없는 위치에 서 있습니다.\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:99
@@ -708,44 +795,67 @@ msgid ""
 "<emphasis>Heb.4:12</emphasis> \"<emphasis>For the word of God is living and "
 "active...</emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis>\" "
 "<emphasis>It is written, Man shall not live on bread alone, but on every "
-"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\""
-" As we read the Bible, God's Spirit is there to speak it to our hearts in a "
+"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
+"As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
-msgstr "<emphasis>히 4:12</emphasis> \"<emphasis>하나님의 말씀은 살았고 운동력이 있어 ...</emphasis>\" 예수님은 <emphasis>(마 4:4),</emphasis>\" <emphasis>기록되었으되 사람이 떡으로만 살것이 아니요 하나님의 입으로 나오는 모든 말씀으로 살 것이라 하였느니라 하시니라.</emphasis>\" 우리가 성경을 읽은대로, 하나님의 영은 지속적이면서도 새로운 방법으로 우리의 마음에 말씀하십니다."
+msgstr ""
+"<emphasis>히 4:12</emphasis> \"<emphasis>하나님의 말씀은 살았고 운동력이 있"
+"어 ...</emphasis>\" 예수님은 <emphasis>(마 4:4),</emphasis>\" <emphasis>기록"
+"되었으되 사람이 떡으로만 살것이 아니요 하나님의 입으로 나오는 모든 말씀으로 "
+"살 것이라 하였느니라 하시니라.</emphasis>\" 우리가 성경을 읽은대로, 하나님의 "
+"영은 지속적이면서도 새로운 방법으로 우리의 마음에 말씀하십니다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:109
 msgid ""
 "2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
-"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider"
-" Jesus' attitude toward the Scriptures."
-msgstr "딤후 3:16은 다음과 같이 선언합니다, \" <emphasis>모든 성경은 하나님의 감동으로 된 것으로.</emphasis>\" 당신은 이것을 믿습니까? 답하기 전에, 말씀에 대한 예수님의 태도를 깊이 생각해보세요."
+"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
+"Jesus' attitude toward the Scriptures."
+msgstr ""
+"딤후 3:16은 다음과 같이 선언합니다, \" <emphasis>모든 성경은 하나님의 감동으"
+"로 된 것으로.</emphasis>\" 당신은 이것을 믿습니까? 답하기 전에, 말씀에 대한 "
+"예수님의 태도를 깊이 생각해보세요."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:114
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
-msgstr "존 스토트, <emphasis>변론자 그리스도</emphasis>, InterVarsity Press 1978, pp.93-95"
+msgstr ""
+"존 스토트, <emphasis>변론자 그리스도</emphasis>, InterVarsity Press 1978, "
+"pp.93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
 "all was a single divine Author. He could equally say 'Moses said' or 'God "
-"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as"
-" an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
+"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as "
+"an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
 "did Isaiah prophesy of you hypocrites, as it is written', when what He went "
-"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It"
-" is from Jesus Himself that the New Testament authors have gained their "
-"conviction of the dual authorship of Scripture. For them it was just as true"
-" to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
+"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It "
+"is from Jesus Himself that the New Testament authors have gained their "
+"conviction of the dual authorship of Scripture. For them it was just as true "
+"to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
 "it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
 "Pe.1:21).  God did not speak in such a way as to obliterate the personality "
-"of the human authors, nor did men speak in such a way as to corrupt the Word"
-" of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
+"of the human authors, nor did men speak in such a way as to corrupt the Word "
+"of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
-msgstr "그는 인간 저자이기는 하지만 그들 모두의 뒤에는 단 한분의 신적 저자가 있음을 당연한 것으로 여겼습니다. 그는 '모세가 말하길' 혹은 '하나님께서 말씀하시길' (막 7:10)을 동일하게 말할 수 있었습니다. 그는 창조자 자신의 발언처럼 창세기 2:24에 있는 말하는 이의 말씀을 인용할 수 있었습니다(마 19:4-5). 비슷하게 그는 인용하려는 것이 하나님께서 직접 말씀하신 것이다며 '이사야가 너희 외식하는 자에 대하여 잘 예언하였도다 기록하였으되'라고 말했습니다(막 7:6 &amp; 사 29:13). 신약 성경의 저자들이 이중 저작에 대한 확신을 가졌던 것은 예수님 자신에 기인합니다. '옛적에 선지자들로 여러 부분과 여러 모양으로 우리 조상들에게 말씀하신 하나님이' (히 1:1) '성령의 감동하심을 입은 사람들이 하나님께 받아 말한 것임이니라' (벧후 1:21)라 할 만큼 그것은 사실입니다. 하나님이 인간 저자의 개성을 지우는 방식으로 말씀하지도 않으셨고, 사람들이 신적 저자의 말씀을 홰손시키는 방식으로  말하지도 않았습니다. 하나님께서 말씀하셨습니다. 사람들이 말했습니다. 두 진실 모두 서로에게서 떼어놓을 수 없습니다. ..."
+msgstr ""
+"그는 인간 저자이기는 하지만 그들 모두의 뒤에는 단 한분의 신적 저자가 있음을 "
+"당연한 것으로 여겼습니다. 그는 '모세가 말하길' 혹은 '하나님께서 말씀하시"
+"길' (막 7:10)을 동일하게 말할 수 있었습니다. 그는 창조자 자신의 발언처럼 창세"
+"기 2:24에 있는 말하는 이의 말씀을 인용할 수 있었습니다(마 19:4-5). 비슷하게 "
+"그는 인용하려는 것이 하나님께서 직접 말씀하신 것이다며 '이사야가 너희 외식하"
+"는 자에 대하여 잘 예언하였도다 기록하였으되'라고 말했습니다(막 7:6 &amp; 사 "
+"29:13). 신약 성경의 저자들이 이중 저작에 대한 확신을 가졌던 것은 예수님 자신"
+"에 기인합니다. '옛적에 선지자들로 여러 부분과 여러 모양으로 우리 조상들에게 "
+"말씀하신 하나님이' (히 1:1) '성령의 감동하심을 입은 사람들이 하나님께 받아 말"
+"한 것임이니라' (벧후 1:21)라 할 만큼 그것은 사실입니다. 하나님이 인간 저자의 "
+"개성을 지우는 방식으로 말씀하지도 않으셨고, 사람들이 신적 저자의 말씀을 홰손"
+"시키는 방식으로  말하지도 않았습니다. 하나님께서 말씀하셨습니다. 사람들이 말"
+"했습니다. 두 진실 모두 서로에게서 떼어놓을 수 없습니다. ..."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:134
@@ -754,7 +864,11 @@ msgid ""
 "witness. The testimony of the Bible is the testimony of God. And the chief "
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
-msgstr "그리고, 이것은 말씀을 대한 그리스도의 관점이었습니다. 그들의 증인은 하나님의 증인이었습니다. 성경의 증거는 하나님의 증거입니다. 그리고 크리스천이 성경의 신적 기원을 믿는 주된 이유는 예수 그리스도께서 직접 그렇게 가르치셨기 때문입니다."
+msgstr ""
+"그리고, 이것은 말씀을 대한 그리스도의 관점이었습니다. 그들의 증인은 하나님의 "
+"증인이었습니다. 성경의 증거는 하나님의 증거입니다. 그리고 크리스천이 성경의 "
+"신적 기원을 믿는 주된 이유는 예수 그리스도께서 직접 그렇게 가르치셨기 때문입"
+"니다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:140
@@ -762,9 +876,13 @@ msgid ""
 "2 Tim.3:16 goes on, \" <emphasis>and profitable for teaching, for "
 "correction, for training in righteousness, that the man of God may be "
 "adequate, equipped for every good work.</emphasis>\" If we accept that the "
-"Bible really is God speaking to us, it follows that it will be our authority"
-" in all matters of faith and conduct."
-msgstr "딤후 3:16은 계속해서 \"<emphasis>교훈과 책망과 바르게 함과 의로 교육하기에 유익하니</emphasis>\"라고 말씀하십니다. 만일 우리가 성경이 정말로 하나님께서 우리에게 말씀하시는 것이라고 받아 들인다면, 믿음과 행위에 관한 모든 문제에 대하여 성경이 우리의 권위가 될 것입니다."
+"Bible really is God speaking to us, it follows that it will be our authority "
+"in all matters of faith and conduct."
+msgstr ""
+"딤후 3:16은 계속해서 \"<emphasis>교훈과 책망과 바르게 함과 의로 교육하기에 유"
+"익하니</emphasis>\"라고 말씀하십니다. 만일 우리가 성경이 정말로 하나님께서 우"
+"리에게 말씀하시는 것이라고 받아 들인다면, 믿음과 행위에 관한 모든 문제에 대하"
+"여 성경이 우리의 권위가 될 것입니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:148
@@ -774,10 +892,13 @@ msgstr "일하는 책"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:149
 msgid ""
-"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \""
-" <emphasis>performs its work in you who believe.</emphasis>\" Beside each "
+"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
+"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
-msgstr "성경을 공부하는 것이 여러분에게 어떤 영향을 미칠까요? 살전 2:13은 말씀이 \"<emphasis>너희 믿는 자 속에서 역사하느니라</emphasis>\"고 말합니다. 각 성구 옆에 말씀이 수행하는 일을 적어 보세요."
+msgstr ""
+"성경을 공부하는 것이 여러분에게 어떤 영향을 미칠까요? 살전 2:13은 말씀이 "
+"\"<emphasis>너희 믿는 자 속에서 역사하느니라</emphasis>\"고 말합니다. 각 성"
+"구 옆에 말씀이 수행하는 일을 적어 보세요."
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:154
@@ -802,8 +923,7 @@ msgstr "엡 5:26"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:165
 msgid ""
-"cleanses -- \"...having cleansed her by the washing of water with the "
-"word.\""
+"cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr "깨끗하게 한다 -- \"...물로 씻어 말씀으로 깨끗하게 하사...\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
@@ -816,7 +936,9 @@ msgstr "행 20:32"
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
-msgstr "세워준다 -- \" ...은혜의 말씀께 부탁하노니 그 말씀이 너희를 능히 든든히 세우사 거룩케 하심을 입은 모든 자 가운데 기업이 있게 하시리라. \""
+msgstr ""
+"세워준다 -- \" ...은혜의 말씀께 부탁하노니 그 말씀이 너희를 능히 든든히 세우"
+"사 거룩케 하심을 입은 모든 자 가운데 기업이 있게 하시리라. \""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
@@ -828,7 +950,9 @@ msgstr "롬 15:4"
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
-msgstr "격려한다 -- \"우리로 하여금 인내로 또는 성경의 안위로 소망을 가지게 함 이니라.\""
+msgstr ""
+"격려한다 -- \"우리로 하여금 인내로 또는 성경의 안위로 소망을 가지게 함 이니"
+"라.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:181
@@ -840,7 +964,9 @@ msgstr "롬 10:17"
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
-msgstr "믿음을 준다 -- \"그러므로 믿음은 들음에서 나며 들음은 그리스도의 말씀으로 말미암았느니라.\""
+msgstr ""
+"믿음을 준다 -- \"그러므로 믿음은 들음에서 나며 들음은 그리스도의 말씀으로 말"
+"미암았느니라.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
@@ -852,7 +978,9 @@ msgstr "고전 10:11"
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
-msgstr "가르친다 -- \"저희에게 당한 이런 일이 거울이 되고 또한 말세를 만난 우리의 경계로 기록하였느니라.\""
+msgstr ""
+"가르친다 -- \"저희에게 당한 이런 일이 거울이 되고 또한 말세를 만난 우리의 경"
+"계로 기록하였느니라.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:192
@@ -865,7 +993,10 @@ msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
 "God.'\""
-msgstr "양식을 공급한다 -- \"예수께서 대답하여 가라사대 기록되었으되 '사람이 떡으로만 살것이 아니요 하나님의 입으로 나오는 모든 말씀으로 살 것이라 하였느니라' 하시니.\""
+msgstr ""
+"양식을 공급한다 -- \"예수께서 대답하여 가라사대 기록되었으되 '사람이 떡으로"
+"만 살것이 아니요 하나님의 입으로 나오는 모든 말씀으로 살 것이라 하였느니라' "
+"하시니.\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:202
@@ -881,33 +1012,47 @@ msgid ""
 "knowledge? Find the answers by examining the first half of the sentence, in "
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
-msgstr "요 8:32 \"<emphasis>진리를 알지니 진리가 너희를 자유케 하리라.</emphasis>\" 이것은 보통 이 문장만으로 인용됩니다. 이것은 조건적인 약속입니까 아니면 무조건적인 약속입니까? 모든 종류의 지식에 적용할 수 있습니까? 31절 앞부분 말씀 \"<emphasis>...너희가 내 말에 거하면 참 내 제자가 되고... </emphasis>\"를 확인해서 답을 찾아 보세요."
+msgstr ""
+"요 8:32 \"<emphasis>진리를 알지니 진리가 너희를 자유케 하리라.</emphasis>\" "
+"이것은 보통 이 문장만으로 인용됩니다. 이것은 조건적인 약속입니까 아니면 무조"
+"건적인 약속입니까? 모든 종류의 지식에 적용할 수 있습니까? 31절 앞부분 말씀 "
+"\"<emphasis>...너희가 내 말에 거하면 참 내 제자가 되고... </emphasis>\"를 확"
+"인해서 답을 찾아 보세요."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:211
 msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
-msgstr "우리는 이것은 조건적인 약속임을 알수 있습니다, 하나님 말씀의 진리를 말함에 있어서는 특히 더 그렇습니다."
+msgstr ""
+"우리는 이것은 조건적인 약속임을 알수 있습니다, 하나님 말씀의 진리를 말함에 있"
+"어서는 특히 더 그렇습니다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:213
 msgid ""
-"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
-"wind.</emphasis>\" <emphasis>As a result, we are no longer to be children, "
-"tossed here and there by waves, and carried about by every wind of "
-"doctrine...</emphasis>\"One thing studying the Bible does for us is to "
-"ground us in the truth, with the result that we won't be easily \"blown "
-"away.\""
-msgstr "엡 4:14에서 쓰인\"풍조\"의 헬라어 원문은 <emphasis>강렬한 바람</emphasis>의 의미입니다. \"<emphasis>이는 우리가 이제부터 어린 아이가 되지 아니하여 사람의 궤술과 간사한 유혹에 빠져 모든 교훈의 풍조에 밀려 요동치 않게 하려 함이라...</emphasis>\"성경을 공부하면서 우리가 얻는 유익중 한가지는, 우리가 쉽게 \"바람에 흔들리지\" 않고 진리에 기틀을 튼튼히 다질 수 있다는 것입니다."
+"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
+"</emphasis>\" <emphasis>As a result, we are no longer to be children, tossed "
+"here and there by waves, and carried about by every wind of doctrine...</"
+"emphasis>\"One thing studying the Bible does for us is to ground us in the "
+"truth, with the result that we won't be easily \"blown away.\""
+msgstr ""
+"엡 4:14에서 쓰인\"풍조\"의 헬라어 원문은 <emphasis>강렬한 바람</emphasis>의 "
+"의미입니다. \"<emphasis>이는 우리가 이제부터 어린 아이가 되지 아니하여 사람"
+"의 궤술과 간사한 유혹에 빠져 모든 교훈의 풍조에 밀려 요동치 않게 하려 함이"
+"라...</emphasis>\"성경을 공부하면서 우리가 얻는 유익중 한가지는, 우리가 쉽게 "
+"\"바람에 흔들리지\" 않고 진리에 기틀을 튼튼히 다질 수 있다는 것입니다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid ""
 "<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
-"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power"
-" of God.</emphasis>\" Mt.22:29"
-msgstr "<emphasis>예수께서 대답하여 가라사대,</emphasis>\" <emphasis>너희가 성경도 하나님의 능력도 알지 못하는고로[KJV Ye do err] 오해하였도다.</emphasis>\" 마 22:29"
+"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
+"of God.</emphasis>\" Mt.22:29"
+msgstr ""
+"<emphasis>예수께서 대답하여 가라사대,</emphasis>\" <emphasis>너희가 성경도 하"
+"나님의 능력도 알지 못하는고로[KJV Ye do err] 오해하였도다.</emphasis>\" 마 "
+"22:29"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:224
@@ -988,23 +1133,29 @@ msgstr "권면의 말씀"
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
-"workman that needeth not to be ashamed, rightly dividing the word of "
-"truth.</emphasis>\""
-msgstr "딤후 2:15 \"<emphasis>네가 진리의 말씀을 옳게 분변하여 부끄러울 것이 없는 일군으로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라.</emphasis>\""
+"workman that needeth not to be ashamed, rightly dividing the word of truth.</"
+"emphasis>\""
+msgstr ""
+"딤후 2:15 \"<emphasis>네가 진리의 말씀을 옳게 분변하여 부끄러울 것이 없는 일"
+"군으로 인정된 자로 자신을 하나님 앞에 드리기를 힘쓰라.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:272
 msgid ""
 "Col.3:16 \" <emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
-"spiritual songs, singing with thankfulness in your hearts to "
-"God.</emphasis>\""
-msgstr "골 3:16 \"<emphasis>그리스도의 말씀이 너희 속에 풍성히 거하여 모든 지혜로 피차 가르치며 권면하고 시와 찬미와 신령한 노래를 부르며 마음에 감사함으로 하나님을 찬양하고.</emphasis>\""
+"spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
+"\""
+msgstr ""
+"골 3:16 \"<emphasis>그리스도의 말씀이 너희 속에 풍성히 거하여 모든 지혜로 피"
+"차 가르치며 권면하고 시와 찬미와 신령한 노래를 부르며 마음에 감사함으로 하나"
+"님을 찬양하고.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:277
 msgid "If you're rich in something, how much of it do you have?"
-msgstr "당신이 어떠한 것에 풍성하다면, 당신이 가지고 있는 그것의 양은 얼마나 될까요?"
+msgstr ""
+"당신이 어떠한 것에 풍성하다면, 당신이 가지고 있는 그것의 양은 얼마나 될까요?"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
@@ -1014,12 +1165,15 @@ msgstr "적지 않습니다!"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:280
 msgid ""
-"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters"
-" of these collections are like well-driven nails; they are given by one "
+"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters "
+"of these collections are like well-driven nails; they are given by one "
 "Shepherd. But beyond this, my son, be warned: the writing of many books is "
-"endless, and excessive devotion to books is wearying to the "
-"body.</emphasis>\""
-msgstr "전 12:11-12 \"<emphasis>지혜자의 말씀은 찌르는 채찍같고 회중의 스승의 말씀은 잘 박힌못 같으니 다 한 목자의 주신 바니라. 내 아들아 또 경계를 받으라 여러 책을 짓는 것은 끝이 없고 많이 공부하는 것은 몸을 피곤케 하느니라.</emphasis>\""
+"endless, and excessive devotion to books is wearying to the body.</emphasis>"
+"\""
+msgstr ""
+"전 12:11-12 \"<emphasis>지혜자의 말씀은 찌르는 채찍같고 회중의 스승의 말씀은 "
+"잘 박힌못 같으니 다 한 목자의 주신 바니라. 내 아들아 또 경계를 받으라 여러 책"
+"을 짓는 것은 끝이 없고 많이 공부하는 것은 몸을 피곤케 하느니라.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:288
@@ -1029,38 +1183,55 @@ msgstr "부록: \"단번에(Once for All)\""
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid ""
-"John R. W. Stott, <emphasis>Christ the "
-"Controversialist,</emphasis>InterVarsity Press 1978, pp.106-107"
-msgstr "존 스토트, <emphasis>변론자 그리스도,</emphasis>InterVarsity Press 1978, pp.106-107"
+"John R. W. Stott, <emphasis>Christ the Controversialist,</"
+"emphasis>InterVarsity Press 1978, pp.106-107"
+msgstr ""
+"존 스토트, <emphasis>변론자 그리스도,</emphasis>InterVarsity Press 1978, "
+"pp.106-107"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
-"by one word of the Greek Testament, namely the adverb "
-"<foreignphrase>hapax</foreignphrase>and "
-"<foreignphrase>ephapax</foreignphrase>. It is usually translated in the "
-"Authorized Version once, meaning once for all. It is used of what is so done"
-" as to be of perpetual validity and never need repetition, and is applied in"
-" the NT to both revelation and redemption. Thus, Jude refers to the faith "
-"which was once for all delivered to the saints (Jude 3), and Romans says, \""
-" <emphasis>Christ also died for sins once for all</emphasis>\" (Rom.6:10, "
-"see also 1 Pe.3:18; Heb.9:26-28)."
-msgstr "그리스도 안에 있는 하나님의 뜻에 관한 진실은 헬라어 성경의 한 단어, 부사인 <foreignphrase>하팍스</foreignphrase>와 <foreignphrase>에파팍스</foreignphrase>를 통해서 알 수 있습니다. 이 헬라어 단어는 보통 단번에(once for all)의 의미로 번역됩니다. 영원히 유효하며 다시 반복할 필요가 없는 것에 사용되는데 신약 성경에서는 계시와 구속 모두에 대해서 적용됩니다. 사실 유다서는 성도에게 단번에 주신 믿음의 도를 언급하고 있으며(유 1:3) 로마서에서는 \"<emphasis>그의 죽으심은 죄에 대하여 단번에 죽으심이요</emphasis>\"(롬 6:10, 추가 참조 벧전 3:18; 히 9:26-28)라고 말씀합니다."
+"by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
+"foreignphrase>and <foreignphrase>ephapax</foreignphrase>. It is usually "
+"translated in the Authorized Version once, meaning once for all. It is used "
+"of what is so done as to be of perpetual validity and never need repetition, "
+"and is applied in the NT to both revelation and redemption. Thus, Jude "
+"refers to the faith which was once for all delivered to the saints (Jude 3), "
+"and Romans says, \" <emphasis>Christ also died for sins once for all</"
+"emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
+msgstr ""
+"그리스도 안에 있는 하나님의 뜻에 관한 진실은 헬라어 성경의 한 단어, 부사인 "
+"<foreignphrase>하팍스</foreignphrase>와 <foreignphrase>에파팍스</"
+"foreignphrase>를 통해서 알 수 있습니다. 이 헬라어 단어는 보통 단번에(once "
+"for all)의 의미로 번역됩니다. 영원히 유효하며 다시 반복할 필요가 없는 것에 사"
+"용되는데 신약 성경에서는 계시와 구속 모두에 대해서 적용됩니다. 사실 유다서는 "
+"성도에게 단번에 주신 믿음의 도를 언급하고 있으며(유 1:3) 로마서에서는 "
+"\"<emphasis>그의 죽으심은 죄에 대하여 단번에 죽으심이요</emphasis>\"(롬 "
+"6:10, 추가 참조 벧전 3:18; 히 9:26-28)라고 말씀합니다."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:305
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
 "once for all. This means that the Christian revelation and the Christian "
-"redemption are both alike in Christ complete. Nothing can be added to either"
-" without being derogatory to Christ... These are the two rocks on which the "
+"redemption are both alike in Christ complete. Nothing can be added to either "
+"without being derogatory to Christ... These are the two rocks on which the "
 "Protestant Reformation was built -- Gods revealed word without the addition "
-"of human traditions and Christ's finished work without the addition of human"
-" merits. The Reformers great watchwords were <foreignphrase>sola "
-"scriptura</foreignphrase>for our authority and <foreignphrase>sola "
-"gratia</foreignphrase>for our salvation."
-msgstr "따라서 우리는 하나님께서 단번에 말씀하셨고 그리스도께서 단번에 고통 받으셨다고 말할 수 있습니다. 이것은 기독교의 계시와 구속이 그리스도 안에서 모두 완료되었음을 의미합니다. 이 두가지에 무언가를 추가한다면 그것은 그리스도께 손상을 가하는 것이 될 것입니다...이 두가지는 종교 개혁이 세운 두개의 바위입니다 -- 하나님은 인간의 전통과 무관한 말씀과 인간의 공로와 무관한 그리스도의 완성된 사역을 나타내셨습니다. 종교개혁가들의 위대한 모토는 우리의 권위를 위한 <foreignphrase>솔라 스크립투라-오직 성경</foreignphrase>, 우리의 구속을 위한 <foreignphrase>솔라 그라티아-오직 은혜</foreignphrase> 였습니다."
+"of human traditions and Christ's finished work without the addition of human "
+"merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
+"foreignphrase>for our authority and <foreignphrase>sola gratia</"
+"foreignphrase>for our salvation."
+msgstr ""
+"따라서 우리는 하나님께서 단번에 말씀하셨고 그리스도께서 단번에 고통 받으셨다"
+"고 말할 수 있습니다. 이것은 기독교의 계시와 구속이 그리스도 안에서 모두 완료"
+"되었음을 의미합니다. 이 두가지에 무언가를 추가한다면 그것은 그리스도께 손상"
+"을 가하는 것이 될 것입니다...이 두가지는 종교 개혁이 세운 두개의 바위입니다 "
+"-- 하나님은 인간의 전통과 무관한 말씀과 인간의 공로와 무관한 그리스도의 완성"
+"된 사역을 나타내셨습니다. 종교개혁가들의 위대한 모토는 우리의 권위를 위한 "
+"<foreignphrase>솔라 스크립투라-오직 성경</foreignphrase>, 우리의 구속을 위한 "
+"<foreignphrase>솔라 그라티아-오직 은혜</foreignphrase> 였습니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:320
@@ -1071,9 +1242,13 @@ msgstr "보충자료: 체계적인 성경 읽기"
 #: docs/howto/en/docbook/howto-importance.docbook:321
 msgid ""
 "Here are some easy programs to systematically read your Bible. You can do "
-"more than one at a time if you like, for instance #1 with #4, or #2 with #5."
-" Vary the program from year to year to keep it fresh!"
-msgstr "체계적으로 성경을 읽을 수 있는 몇가지 방법들 입니다. 원한다면 한가지 이상의 방법을 동시에 진행할 수 있을 것입니다. 예를 들면 1번과 4번이나 2번과 5번을 동시에 진행할 수 있습니다. 항상 신선함을 유지하기 위해서 매년 방법을 바꿔 보세요!"
+"more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
+"Vary the program from year to year to keep it fresh!"
+msgstr ""
+"체계적으로 성경을 읽을 수 있는 몇가지 방법들 입니다. 원한다면 한가지 이상의 "
+"방법을 동시에 진행할 수 있을 것입니다. 예를 들면 1번과 4번이나 2번과 5번을 동"
+"시에 진행할 수 있습니다. 항상 신선함을 유지하기 위해서 매년 방법을 바꿔 보세"
+"요!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:327
@@ -1083,16 +1258,20 @@ msgstr "일년에 신약 일독: 일주에 5일간 하루에 한장씩 읽기."
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:331
 msgid ""
-"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to"
-" the day of the month."
-msgstr "한달에 잠언 일독: 한달간 매일 그날의 날짜에 해당하는 잠언을 한장씩을 읽기(잠언은 총 31장)."
+"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
+"the day of the month."
+msgstr ""
+"한달에 잠언 일독: 한달간 매일 그날의 날짜에 해당하는 잠언을 한장씩을 읽기(잠"
+"언은 총 31장)."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:335
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
-msgstr "한달에 시편 일독: 매일 30장 간격의 5장의 시편 읽기. 예를 들면 1일은 1, 31, 61, 91, 121편을 읽고 20일에는 20, 50, 80, 110, 140편을 읽는 방식입니다."
+msgstr ""
+"한달에 시편 일독: 매일 30장 간격의 5장의 시편 읽기. 예를 들면 1일은 1, 31, "
+"61, 91, 121편을 읽고 20일에는 20, 50, 80, 110, 140편을 읽는 방식입니다."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:340
@@ -1105,9 +1284,11 @@ msgstr "6개월에 시편과 잠언 일독: 시편과 잠언을 이어서 하루
 #: docs/howto/en/docbook/howto-importance.docbook:344
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
-"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you"
-" will read the Old Testament in 2 years and 2 weeks."
-msgstr "2년에 시편과 잠언을 제외한 구약 일독: 2년 2주동안 시편과 잠언을 건너뛰고 나머지 구약을 하루에 한장 읽기."
+"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
+"will read the Old Testament in 2 years and 2 weeks."
+msgstr ""
+"2년에 시편과 잠언을 제외한 구약 일독: 2년 2주동안 시편과 잠언을 건너뛰고 나머"
+"지 구약을 하루에 한장 읽기."
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
@@ -1117,19 +1298,30 @@ msgstr "성경 해석의 규칙"
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:3
 msgid ""
-"We already learned about the \"3 Cs\": content, context, cross-reference. We"
-" want to expand that now by delving briefly into biblical hermeneutics, "
-"whose goal is to discover the meaning intended by the original author (and "
+"We already learned about the \"3 Cs\": content, context, cross-reference. We "
+"want to expand that now by delving briefly into biblical hermeneutics, whose "
+"goal is to discover the meaning intended by the original author (and "
 "Author!). While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
-"this first, that no prophesy of scripture is of any private "
-"interpretation.</quote>). Certain rules are helps toward discovering the "
-"correct meaning; by ignoring these rules people have brought much trouble on"
-" themselves and their followers. 2 Pe.3:16 <quote>...in which are some "
-"things hard to understand, which the untaught and unstable distort, as they "
-"do also the rest of the Scriptures, to their own destruction.</quote>"
-msgstr "우리는 바른 해석의 기본으로 \"3C\"다루었습니다: 내용(Content), 문맥(Context), 상호참조(Cross-reference). 우리는 이제 이것을 성서 해석학을 간단히 다루는 것으로 확장하고자 합니다. 성서 해석학의 목적은 원저자(와 하나님)가 의도하는 의미를 발견하는 것입니다. 한 구절에 대하여 유효한 많은 적용이 가능하지만, 해석은 단 하나만이 유효합니다. 성경 자체에서 개인적 해석이 가능한 말씀은 없다고 이야기하고 있습니다. (벧후 1:20 <emphasis>\"먼저 알 것은 경의 모든 예언은 사사로이 풀 것이 아니니\"</emphasis>) 특정 규칙들은 정확한 의미를 찾는 쪽으로 도움을 줍니다. 반면에 이러한 규칙을 무시한 사람들은 스스로 뿐만아니라 그들을 따르는 사람들에게까지 문제를 가져왔습니다. 벧후 3:16 <emphasis>\"...그 중에 알기 어려운 것이 더러 있으니 무식한 자들과 굳세지 못한 자들이 다른 성경과 같이 그것도 억지로 풀다가 스스로 멸망에 이르느니라.\"</emphasis>"
+"this first, that no prophesy of scripture is of any private interpretation.</"
+"quote>). Certain rules are helps toward discovering the correct meaning; by "
+"ignoring these rules people have brought much trouble on themselves and "
+"their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
+"understand, which the untaught and unstable distort, as they do also the "
+"rest of the Scriptures, to their own destruction.</quote>"
+msgstr ""
+"우리는 바른 해석의 기본으로 \"3C\"다루었습니다: 내용(Content), 문맥"
+"(Context), 상호참조(Cross-reference). 우리는 이제 이것을 성서 해석학을 간단"
+"히 다루는 것으로 확장하고자 합니다. 성서 해석학의 목적은 원저자(와 하나님)가 "
+"의도하는 의미를 발견하는 것입니다. 한 구절에 대하여 유효한 많은 적용이 가능하"
+"지만, 해석은 단 하나만이 유효합니다. 성경 자체에서 개인적 해석이 가능한 말씀"
+"은 없다고 이야기하고 있습니다. (벧후 1:20 <emphasis>\"먼저 알 것은 경의 모든 "
+"예언은 사사로이 풀 것이 아니니\"</emphasis>) 특정 규칙들은 정확한 의미를 찾"
+"는 쪽으로 도움을 줍니다. 반면에 이러한 규칙을 무시한 사람들은 스스로 뿐만아니"
+"라 그들을 따르는 사람들에게까지 문제를 가져왔습니다. 벧후 3:16 <emphasis>"
+"\"...그 중에 알기 어려운 것이 더러 있으니 무식한 자들과 굳세지 못한 자들이 다"
+"른 성경과 같이 그것도 억지로 풀다가 스스로 멸망에 이르느니라.\"</emphasis>"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:17
@@ -1137,7 +1329,10 @@ msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
-msgstr "어떻게하면 원저자가 의도한 의미를 발견할 수 있을까요? 여러분이 의미가 명쾌하지 않은 구절을 만났다고 가정해 보세요. 여러분은 그것을 어떻게 푸시겠습니까? 다음의 규칙들을 기억하세요:"
+msgstr ""
+"어떻게하면 원저자가 의도한 의미를 발견할 수 있을까요? 여러분이 의미가 명쾌하"
+"지 않은 구절을 만났다고 가정해 보세요. 여러분은 그것을 어떻게 푸시겠습니까? "
+"다음의 규칙들을 기억하세요:"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:22
@@ -1147,27 +1342,28 @@ msgstr "규칙 1 - 단어의 정확한 의미를 따라서 해석."
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:24
 msgid ""
-"The more precise we can be with the exact, original meaning of the words the"
-" better our interpretation will be. Try to find the exact meaning of the key"
-" words by following these steps:"
-msgstr "우리가 단어의 정확성과 원래의 의미에 정밀하게 다가설수록 우리느 좀더 나은 해석을 얻을 수 있을 것입니다다음의 단계를 따라서 핵심 단어들의 정확한 의미를 찾아보세요:"
+"The more precise we can be with the exact, original meaning of the words the "
+"better our interpretation will be. Try to find the exact meaning of the key "
+"words by following these steps:"
+msgstr ""
+"우리가 단어의 정확성과 원래의 의미에 정밀하게 다가설수록 우리느 좀더 나은 해"
+"석을 얻을 수 있을 것입니다다음의 단계를 따라서 핵심 단어들의 정확한 의미를 찾"
+"아보세요:"
 
-#. type: Content of:
-#. <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:30
 msgid "Definition"
 msgstr "정의"
 
-#. type: Content of:
-#. <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:31
 msgid ""
-"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb"
-" tense is also crucial."
-msgstr "헬라어나 히브리어 사전의 정의를 찾아보세요. 동사의 경우, 시제도 중요합니다."
+"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
+"tense is also crucial."
+msgstr ""
+"헬라어나 히브리어 사전의 정의를 찾아보세요. 동사의 경우, 시제도 중요합니다."
 
-#. type: Content of:
-#. <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
@@ -1178,7 +1374,15 @@ msgid ""
 "isn't the English word good enough? <emphasis>Because more than one Greek "
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
-msgstr "말씀과 말씀을 비교해 보세요. 동일한 헬라어 단어나 히브리어 단어가 성경에서 어떻게 쓰였는지 보는 것은 정의를 명쾌하게 하거나 새로운 시각을 얻을 수 있습니다. 같은 저자가 이 단어를 다른곳에는 어떻게 사용했는지? 다른 저자는 이 단어를 어떻게 사용했는지? 물론 여러분이 참고하는 도구들은 단어의 비성경적 문서에서의 사용 사례를 줄 수도 있습니다. 왜 우리는 헬라어나 히브리어를 찾아야만 할까요? 한글이나 영어 단어만으로는 충분하지 않은 걸까요? <emphasis>그 이유는 하나 이상의 헬라어 단어들이 하나의 한글 단어로 번역 될 수 있고 헬라어 단어들은 의미의 미묘한 차이를 가질 수 있기 때문입니다.</emphasis>"
+msgstr ""
+"말씀과 말씀을 비교해 보세요. 동일한 헬라어 단어나 히브리어 단어가 성경에서 어"
+"떻게 쓰였는지 보는 것은 정의를 명쾌하게 하거나 새로운 시각을 얻을 수 있습니"
+"다. 같은 저자가 이 단어를 다른곳에는 어떻게 사용했는지? 다른 저자는 이 단어"
+"를 어떻게 사용했는지? 물론 여러분이 참고하는 도구들은 단어의 비성경적 문서에"
+"서의 사용 사례를 줄 수도 있습니다. 왜 우리는 헬라어나 히브리어를 찾아야만 할"
+"까요? 한글이나 영어 단어만으로는 충분하지 않은 걸까요? <emphasis>그 이유는 하"
+"나 이상의 헬라어 단어들이 하나의 한글 단어로 번역 될 수 있고 헬라어 단어들은 "
+"의미의 미묘한 차이를 가질 수 있기 때문입니다.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1191,34 +1395,52 @@ msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
 "He is too holy or something. But that doesn't seem right, so let's look it "
-"up in Spiros Zodhiates' <emphasis>The Complete Word Study New "
-"Testament</emphasis> (AMG Publishers, 1991)."
-msgstr "요 20:17 <emphasis>\"나를 만지지 말라\"</emphasis> 냉엄하게 들립니다. 그렇지 않나요? 예수께서 부활 하신것, 너무 거룩한것, 또는 뭔가를 지금은 손대지 말았으면 하시는 것으로 들립니다. 그러나, 그런 생각은 맞지 않는것 같습니다. 그래서, 스피로스 조디에이츠의 <emphasis>The Complete Word Study New Testament</emphasis> (AMG Publishers, 1991)에서 찾아보겠습니다."
+"up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
+"emphasis> (AMG Publishers, 1991)."
+msgstr ""
+"요 20:17 <emphasis>\"나를 만지지 말라\"</emphasis> 냉엄하게 들립니다. 그렇지 "
+"않나요? 예수께서 부활 하신것, 너무 거룩한것, 또는 뭔가를 지금은 손대지 말았으"
+"면 하시는 것으로 들립니다. 그러나, 그런 생각은 맞지 않는것 같습니다. 그래서, "
+"스피로스 조디에이츠의 <emphasis>The Complete Word Study New Testament</"
+"emphasis> (AMG Publishers, 1991)에서 찾아보겠습니다."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:61
 msgid ""
-"Definition: Turning to John 20:17, above the word \"Touch\" we see "
-"\"pim680.\" The letters give us a code for the part of speech, and the "
-"number refers to Strong's dictionary reference.  Let's look up the "
-"definition (p. 879). \"680. Haptomai; from hapto (681), touch. Refers to "
-"such handling of an object as to exert a modifying influence upon it... "
-"Distinguished from pselaphao (5584), which actually only means to touch the "
-"surface of something. \" Now look up \"pim.\" The grammar codes in Zodhiates"
-" come right after Revelation; on p. 849 we see that pim stands for \"present"
-" imperative active (80)\". On p.857, \"Present Imperative.  In the active "
-"voice, it may indicate a command to do something in the future which "
-"involves continuous or repeated action or, when it is negated, a command to "
-"stop doing something. \" This is a negative command, so it is to stop doing "
-"something that is already occurring. So, what have we found?"
-msgstr "정의: 요 20:17로 가서, \"만지지\" 단어 위를 보면 \"pim680\"를 볼 수 있습니다.스토롱 사전을 참조할 수 있는 숫자입니다. 정의를 살펴보죠.\"680. 합토마이; 합토에서 유래(681), 만지다. 어떤 대상에 영향력을 가하려는 의도의 만짐을 의미... 뭔가의 표면을 만지는 것만을 의미하는 프셉랍하오(5584)와 구별됩니다.\" 이제 \"pim.\"을 살펴보죠. 요한계시록 바로 다음에 있는 조디에이츠의 문법 코드입니다; 849페이지에서 pim이 \"present imperative active 현재 명령형 능동태(80)\"임을 알수 있습니다. 857페이지에서는 \"현재 명령법. 능동태에서는 지속적이거나 반복적인 행동을 수반하는 뭔가를 미래에 수행하라는 명령을 나타낼 수 있습니다. 부정문은 뭔가를 수행하기를 멈추라는 명령을 나타낼 수 있습니다.\" 이 구절은 부정 명령문이므로 이미 일어나고 있는 뭔가를 멈추라는 것입니다. 무엇을 발견할 수 있으십니까?"
+"Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
+"\" The letters give us a code for the part of speech, and the number refers "
+"to Strong's dictionary reference.  Let's look up the definition (p. 879). "
+"\"680. Haptomai; from hapto (681), touch. Refers to such handling of an "
+"object as to exert a modifying influence upon it... Distinguished from "
+"pselaphao (5584), which actually only means to touch the surface of "
+"something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
+"after Revelation; on p. 849 we see that pim stands for \"present imperative "
+"active (80)\". On p.857, \"Present Imperative.  In the active voice, it may "
+"indicate a command to do something in the future which involves continuous "
+"or repeated action or, when it is negated, a command to stop doing "
+"something. \" This is a negative command, so it is to stop doing something "
+"that is already occurring. So, what have we found?"
+msgstr ""
+"정의: 요 20:17로 가서, \"만지지\" 단어 위를 보면 \"pim680\"를 볼 수 있습니다."
+"스토롱 사전을 참조할 수 있는 숫자입니다. 정의를 살펴보죠.\"680. 합토마이; 합"
+"토에서 유래(681), 만지다. 어떤 대상에 영향력을 가하려는 의도의 만짐을 의"
+"미... 뭔가의 표면을 만지는 것만을 의미하는 프셉랍하오(5584)와 구별됩니다.\" "
+"이제 \"pim.\"을 살펴보죠. 요한계시록 바로 다음에 있는 조디에이츠의 문법 코드"
+"입니다; 849페이지에서 pim이 \"present imperative active 현재 명령형 능동태"
+"(80)\"임을 알수 있습니다. 857페이지에서는 \"현재 명령법. 능동태에서는 지속적"
+"이거나 반복적인 행동을 수반하는 뭔가를 미래에 수행하라는 명령을 나타낼 수 있"
+"습니다. 부정문은 뭔가를 수행하기를 멈추라는 명령을 나타낼 수 있습니다.\" 이 "
+"구절은 부정 명령문이므로 이미 일어나고 있는 뭔가를 멈추라는 것입니다. 무엇을 "
+"발견할 수 있으십니까?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
-msgstr "<emphasis>마리아는 이미 예수님께 매달려 있었고 예수님은 잡는 것을 멈추라고 말씀하고 계십니다!</emphasis>"
+msgstr ""
+"<emphasis>마리아는 이미 예수님께 매달려 있었고 예수님은 잡는 것을 멈추라고 말"
+"씀하고 계십니다!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
@@ -1230,49 +1452,52 @@ msgstr "예 1B"
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
-msgstr "야고보서 5:14 <emphasis>병든자가 있느냐?..교회의 장로들을 청할 것이요. 그들은 주의 이름으로 기름을 바르며 위하여 기도할지니라</emphasis>에서 기름바름은 무엇일까?"
+msgstr ""
+"야고보서 5:14 <emphasis>병든자가 있느냐?..교회의 장로들을 청할 것이요. 그들"
+"은 주의 이름으로 기름을 바르며 위하여 기도할지니라</emphasis>에서 기름바름은 "
+"무엇일까?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:86
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" (Strong's)."
-" Since it's a verb, consider the tense also, \"apta\" aorist participle "
+"with oil, i.e. to consecrate to an office or religious service\" (Strong's). "
+"Since it's a verb, consider the tense also, \"apta\" aorist participle "
 "active. \"The aorist participle expresses simple action, as opposed to "
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
-msgstr "알레이포의 정의 (218) - \"기름을 바르는것\" (스트롱 사전); 그러나 \"기름바름\"으로 번역되는 또다른 헬라어 단어가 있는데, 크리오(5548)입니다 - \"기름을 바르거나 문지르는 것, 즉 사무실이나 종교 행사에 봉헌하는 것\" (스트롱 사전). 이 단어는 동사이기 때문에 시제도 살펴야 합니다, \"apta\" aorist participle active 부정과거 능동 분사. \"부정과거 분사는 연속적인 행위가 아닌 단순 행위를 표현합니다...핵심 동사와의 관계가 일시적인 경우에는 통상 핵심 동사의 이전 행위를 의미합니다.\" (조디에이츠 p.851)"
+msgstr ""
+"알레이포의 정의 (218) - \"기름을 바르는것\" (스트롱 사전); 그러나 \"기름바름"
+"\"으로 번역되는 또다른 헬라어 단어가 있는데, 크리오(5548)입니다 - \"기름을 바"
+"르거나 문지르는 것, 즉 사무실이나 종교 행사에 봉헌하는 것\" (스트롱 사전). "
+"이 단어는 동사이기 때문에 시제도 살펴야 합니다, \"apta\" aorist participle "
+"active 부정과거 능동 분사. \"부정과거 분사는 연속적인 행위가 아닌 단순 행위"
+"를 표현합니다...핵심 동사와의 관계가 일시적인 경우에는 통상 핵심 동사의 이전 "
+"행위를 의미합니다.\" (조디에이츠 p.851)"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:100
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr "마 6:17 너는 금식할 때에 머리에 기름을 바르고 얼굴을 씻으라"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:104
-msgid ""
-"Mk.16:1 [the women] brought spices that they might come and anoint Him."
+msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr "막 16:1 [여자들이] 가서 예수께 바르기 위하여 향품을 사다 두었다가"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:108
 msgid ""
-"Mk.6:13 And they were...anointing with oil many sick people and healing "
-"them."
+"Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr "막 6:13 많은 귀신을 쫓아내며 많은 병인에게 기름을 발라 고치더라"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:112
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr "눅 7:38 [...] 그 발에 입맞추고 향유를 부으니"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:116
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
@@ -1280,31 +1505,30 @@ msgstr "요 12:3 [...] 예수의 발에 붓고 자기 머리털로 그의 발을
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:97
-msgid "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgid ""
+"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr "알레이포에 대한 관주들: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:125
 msgid ""
-"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me"
-" to preach [...]</quote>"
-msgstr "눅 4:18 <quote>주의 성령이 내게 임하셨으니 이는 가난한 자에게 복음을 전하게 하시려고 내게 기름을 부으시고 [...]</quote>"
+"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
+"to preach [...]</quote>"
+msgstr ""
+"눅 4:18 <quote>주의 성령이 내게 임하셨으니 이는 가난한 자에게 복음을 전하게 "
+"하시려고 내게 기름을 부으시고 [...]</quote>"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:130
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr "행 4:27 하나님의 기름부으신 거룩한 종 예수를 거스려"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:133
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr "행 10:38 하나님이 나사렛 예수에게 성령과 능력을 기름붓듯 하셨으매"
 
-#. type: Content of:
-#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:137
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "고후 1:21 ... 우리에게 기름을 부으신 이는 하나님이시니"
@@ -1317,11 +1541,13 @@ msgstr "크리오에 대한 관주들: <placeholder type=\"orderedlist\" id=\"0\
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:142
 msgid ""
-"So what's the difference between aleipho and chrio? Look back over the "
-"cross-references and the definitions, and sum up the difference: "
-"<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
-"spiritual</emphasis>"
-msgstr "그렇다면 알레이포와 크리오의 차이점은 무엇일까요? 관주와 정의를 다시 보고 차이점을 정리해 보면: <emphasis>\"알레이포\"는 기름의 실제적인 사용이고 \"크리오\"는 영적인 것입니다.</emphasis>"
+"So what's the difference between aleipho and chrio? Look back over the cross-"
+"references and the definitions, and sum up the difference: <emphasis>"
+"\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
+msgstr ""
+"그렇다면 알레이포와 크리오의 차이점은 무엇일까요? 관주와 정의를 다시 보고 차"
+"이점을 정리해 보면: <emphasis>\"알레이포\"는 기름의 실제적인 사용이고 \"크리"
+"오\"는 영적인 것입니다.</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:147
@@ -1330,7 +1556,10 @@ msgid ""
 "oil at that time, when the good Samaritan cared for the man beat up by "
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
-msgstr "그 당시의 기름의 실제적인 사용의 예화로(단어가 사용되지 않음에도 불구하고), 선한 사마리아인은 강도를 당한 사람을 돌보아 줄때 그의 상처에 기름과 포도주를 부었습니다. 예수님 당시에는 기름을 치료 용도로 사용했던 것입니다."
+msgstr ""
+"그 당시의 기름의 실제적인 사용의 예화로(단어가 사용되지 않음에도 불구하고), "
+"선한 사마리아인은 강도를 당한 사람을 돌보아 줄때 그의 상처에 기름과 포도주를 "
+"부었습니다. 예수님 당시에는 기름을 치료 용도로 사용했던 것입니다."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
@@ -1339,7 +1568,11 @@ msgid ""
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
-msgstr "이제 단어 공부를 통해서 배운것을 야고보서 5:14에 적용해 보겠습니다. <emphasis>\"너희 중에 병든 자가 있느냐 저는 교회의 장로들을 청할 것이요 그들은 주의 이름으로 기름을 바르며 위하여 기도할지니라\"</emphasis> \"기름을 바르며\"는 영적인 것일까요 아니면 실제적인 것일까요? 실제적인 것입니다!"
+msgstr ""
+"이제 단어 공부를 통해서 배운것을 야고보서 5:14에 적용해 보겠습니다. "
+"<emphasis>\"너희 중에 병든 자가 있느냐 저는 교회의 장로들을 청할 것이요 그들"
+"은 주의 이름으로 기름을 바르며 위하여 기도할지니라\"</emphasis> \"기름을 바르"
+"며\"는 영적인 것일까요 아니면 실제적인 것일까요? 실제적인 것입니다!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:157
@@ -1348,9 +1581,15 @@ msgid ""
 "\"having anointed,\" so the order is the anointing first, then the prayer "
 "(\"in the name of the Lord\"refers to the prayer, not the anointing). James "
 "5 is saying that the elders should give the sick person medicine and pray "
-"for him in the name of the Lord. Doesn't that express a beautiful balance of"
-" practical and spiritual in our God!"
-msgstr "그리고 헬라어 시제인 부정 과거 분사는 \"기름부음 받은 것\"이 더 나은 번역일 수 있습니다, 그래서 순서는 기름부음이 먼저고 그 다음이 기도입니다 (\"주의 이름으로\"는 기름 부음이 아니라 기도를 가리킵니다). 야고보서 5장은 장로들이 아픈 이들에게 약을 먼저 주고 주의 이름으로 그들을 위해서 기도할 것을 말씀하고 있습니다. 우리 하나님 안에서 실제적인 것과 영적인 것의 아름다운 균형을 표현하는 것이 아닙니다!"
+"for him in the name of the Lord. Doesn't that express a beautiful balance of "
+"practical and spiritual in our God!"
+msgstr ""
+"그리고 헬라어 시제인 부정 과거 분사는 \"기름부음 받은 것\"이 더 나은 번역일 "
+"수 있습니다, 그래서 순서는 기름부음이 먼저고 그 다음이 기도입니다 (\"주의 이"
+"름으로\"는 기름 부음이 아니라 기도를 가리킵니다). 야고보서 5장은 장로들이 아"
+"픈 이들에게 약을 먼저 주고 주의 이름으로 그들을 위해서 기도할 것을 말씀하고 "
+"있습니다. 우리 하나님 안에서 실제적인 것과 영적인 것의 아름다운 균형을 표현하"
+"는 것이 아닙니다!"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:167
@@ -1363,10 +1602,16 @@ msgid ""
 "Interpret scripture in harmony with other scripture. What do the verses on "
 "each side say? What is the theme of the chapter? The book? Does your "
 "interpretation fit with these? If not, it is flawed. Usually, the context "
-"supplies what we need to correctly interpret the passage. Context is key. If"
-" confusion remains as to the meaning after we have interpreted the text "
+"supplies what we need to correctly interpret the passage. Context is key. If "
+"confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
-msgstr "다른 구절과 어울리는 해석이 되어야 합니다. 여러 구절에서 각각 말하고 있는 것은 무엇입니까? 장의 주제는 무엇이고 권의 주제는 무엇입니까? 여러분의 해석이 이런것들에 부합합니까? 그렇지 않다면 문제가 있는 것입니다. 일반적으로 문맥은 우리가 구절을 올바르게 해석하는데 필요한 것들을 제공해 줍니다. 문맥이 바로 열쇠입니다. 우리가 문맥 안에서 구절을 해석 했음에도 불구하고 애매한 부분이 남아 있다면, 좀더 보아야 합니다"
+msgstr ""
+"다른 구절과 어울리는 해석이 되어야 합니다. 여러 구절에서 각각 말하고 있는 것"
+"은 무엇입니까? 장의 주제는 무엇이고 권의 주제는 무엇입니까? 여러분의 해석이 "
+"이런것들에 부합합니까? 그렇지 않다면 문제가 있는 것입니다. 일반적으로 문맥은 "
+"우리가 구절을 올바르게 해석하는데 필요한 것들을 제공해 줍니다. 문맥이 바로 열"
+"쇠입니다. 우리가 문맥 안에서 구절을 해석 했음에도 불구하고 애매한 부분이 남"
+"아 있다면, 좀더 보아야 합니다"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
@@ -1378,17 +1623,23 @@ msgstr "예 2A"
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
-msgstr "우리는 앞에서 요 3:5 <emphasis>\"물과 성령으로 나지 아니하면\"</emphasis>을 살펴보았습니다. 문맥상으로 여기에서의 물은 무엇을 의미합니까?"
+msgstr ""
+"우리는 앞에서 요 3:5 <emphasis>\"물과 성령으로 나지 아니하면\"</emphasis>을 "
+"살펴보았습니다. 문맥상으로 여기에서의 물은 무엇을 의미합니까?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:180
 msgid ""
-"Water baptism is not under discussion here, which would be a big switch from"
-" the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
+"Water baptism is not under discussion here, which would be a big switch from "
+"the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
-"derailed! The water is the amniotic fluid, \"born of water\" = natural "
-"birth."
-msgstr "여기에서는 물 세례를 이야기하고 있는 것이 아닙니다, 물 세례로 이해하면 예수님과 니고데모 간의 대화 주제를 확 뒤 바꾸는 것이 되고 맙니다. 화제의 감작스런 변화를 주의하세요, 그것은 여러분의 해석이 엉뚱한 방향으로 흐르고 있다는 단서 일 수 있습니다! 물은 양수를 지칭합니다, \"물로 태어남\"은 자연 출생을 의미합니다."
+"derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
+msgstr ""
+"여기에서는 물 세례를 이야기하고 있는 것이 아닙니다, 물 세례로 이해하면 예수님"
+"과 니고데모 간의 대화 주제를 확 뒤 바꾸는 것이 되고 맙니다. 화제의 감작스런 "
+"변화를 주의하세요, 그것은 여러분의 해석이 엉뚱한 방향으로 흐르고 있다는 단서 "
+"일 수 있습니다! 물은 양수를 지칭합니다, \"물로 태어남\"은 자연 출생을 의미합"
+"니다."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:187
@@ -1401,7 +1652,10 @@ msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote>has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
-msgstr "고전 14:34 <quote>여자는 교회에서 잠잠하라</quote>는 고전 11:5 <quote>무릇 여자로서 [...] 기도나 예언을 하는 자는 [...]</quote>의 문맥안에서 받아 들여야 합니다."
+msgstr ""
+"고전 14:34 <quote>여자는 교회에서 잠잠하라</quote>는 고전 11:5 <quote>무릇 여"
+"자로서 [...] 기도나 예언을 하는 자는 [...]</quote>의 문맥안에서 받아 들여야 "
+"합니다."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:195
@@ -1418,9 +1672,19 @@ msgid ""
 "light of the clear teaching elsewhere that regeneration happens by faith in "
 "Christ, we have to interpret it otherwise. Peter is urging baptism as a way "
 "for his hearers to respond to the gospel. If baptism were the pathway to "
-"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did"
-" not send me to baptize, but to preach the gospel\"</emphasis>?"
-msgstr "사도행전 2:38 <quote>베드로가 가로되, \"너희가 회개하여 각각 예수 그리스도의 이름으로 세례를 받고 죄 사함을 얻으라 그리하면 성령을 선물로 받으리니 [...]\"</quote>. 이것은 세례에 의한 거듭남을 가르치고 있는 것일까요? 만일 이것이 우리가 접할 수 있는 유일한 구절이라면 그런 결론에 이를 수 밖에 없을 것입니다. 그러나 다른 구절에 있는 그리스도를 믿음에 의한 거듭남에 대한 분명한 가르침에 비추어 본다면, 우리는 다르게 해석 해야만 합니다. 베드로는 청중들이 복음에 반응하는 한가지 방법으로 세례를 촉구하고 있습니다. 만약 세례가 거듭남을 위한 길이었다면 베드로는 어떻게 고전 1:17 <emphasis>\"그리스도께서 나를 보내심은 세례를 주게 하려 하심이 아니요 오직 복음을 전케 하려 하심이니\"</emphasis> 라고 쓸 수 있었을 까요?"
+"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
+"not send me to baptize, but to preach the gospel\"</emphasis>?"
+msgstr ""
+"사도행전 2:38 <quote>베드로가 가로되, \"너희가 회개하여 각각 예수 그리스도의 "
+"이름으로 세례를 받고 죄 사함을 얻으라 그리하면 성령을 선물로 받으리니 "
+"[...]\"</quote>. 이것은 세례에 의한 거듭남을 가르치고 있는 것일까요? 만일 이"
+"것이 우리가 접할 수 있는 유일한 구절이라면 그런 결론에 이를 수 밖에 없을 것입"
+"니다. 그러나 다른 구절에 있는 그리스도를 믿음에 의한 거듭남에 대한 분명한 가"
+"르침에 비추어 본다면, 우리는 다르게 해석 해야만 합니다. 베드로는 청중들이 복"
+"음에 반응하는 한가지 방법으로 세례를 촉구하고 있습니다. 만약 세례가 거듭남을 "
+"위한 길이었다면 베드로는 어떻게 고전 1:17 <emphasis>\"그리스도께서 나를 보내"
+"심은 세례를 주게 하려 하심이 아니요 오직 복음을 전케 하려 하심이니\"</"
+"emphasis> 라고 쓸 수 있었을 까요?"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:211
@@ -1434,7 +1698,11 @@ msgid ""
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
-msgstr "먼저 우리는 <quote>그것은 나에게 어떤 의미인가?</quote>라고 묻고 있지 않습니다. 대신 <quote>그것은 원래의 읽는이들에게 어떤 의미였는가?</quote>라고 묻습니다; 나중에는 <quote>그것은 나에게 어떤 의미인가?</quote>라고 물을 수 있습니다. 우리는 저자와 읽는이들의 역사적, 문화적 배경을 고려해야만 합니다."
+msgstr ""
+"먼저 우리는 <quote>그것은 나에게 어떤 의미인가?</quote>라고 묻고 있지 않습니"
+"다. 대신 <quote>그것은 원래의 읽는이들에게 어떤 의미였는가?</quote>라고 묻습"
+"니다; 나중에는 <quote>그것은 나에게 어떤 의미인가?</quote>라고 물을 수 있습니"
+"다. 우리는 저자와 읽는이들의 역사적, 문화적 배경을 고려해야만 합니다."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:221
@@ -1444,12 +1712,17 @@ msgstr "예 3A"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:223
 msgid ""
-"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with"
-" a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How "
-"could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised "
-"on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't"
-" help explain the apparent contradiction."
-msgstr "<quote>밤낮 사흘을</quote>(마 12:40)은 특히 암스트롱주의자들이 이야기하는 \"수요일 십자가 사건\"을 떠올리게 합니다. 어떻게 예수님은 금요일 오후에 죽으셨다가 \"제 삼일에 살아나야\"(마 16:21)대로 일요일 아침에 부활할수 있었을까요? \"셋\" 또는 \"날들\"의 정확한 의미는 명백한 모순을 설명하는데 아무런 도움을 주지 못합니다."
+"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with "
+"a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How could "
+"Jesus die on Friday afternoon and rise Sunday morning yet \"be raised on the "
+"third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
+"explain the apparent contradiction."
+msgstr ""
+"<quote>밤낮 사흘을</quote>(마 12:40)은 특히 암스트롱주의자들이 이야기하는 "
+"\"수요일 십자가 사건\"을 떠올리게 합니다. 어떻게 예수님은 금요일 오후에 죽으"
+"셨다가 \"제 삼일에 살아나야\"(마 16:21)대로 일요일 아침에 부활할수 있었을까"
+"요? \"셋\" 또는 \"날들\"의 정확한 의미는 명백한 모순을 설명하는데 아무런 도움"
+"을 주지 못합니다."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:229
@@ -1462,7 +1735,14 @@ msgid ""
 "p.m. = day 1. Friday 6 p.m. to Saturday 6 p.m. = day 2. Saturday 6 p.m. to "
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
-msgstr "역사 이야기를 하나 나누겠습니다: 유대인들은 우리가 물양동이의 개수를 세는 것처럼(여섯개의 가득찬 물양동이와 반만 채운 양동이 한개를 일곱개라 세는 것처럼) 하루의 일부라도 하루 전체인양 날 수를 세었습니다. 유대인 방식으로는 하루의 일부라도 온전한 하루로 계산하고 각 날은 오후 6시에서 시작해서 오후 6시에 끝나므로, 금요일 오후 3시부터 오후 6시까지 해서 1일, 금요일 오후 6시부터 토요일 오후 6시까지 해서 2일, 토요일 오후 6시부터 일요일 오전 5시정도까지 해서 3일입니다. 문화적 문맥 안에서의 해석은 우리가 곤란에 빠지지 않도록 해줍니다."
+msgstr ""
+"역사 이야기를 하나 나누겠습니다: 유대인들은 우리가 물양동이의 개수를 세는 것"
+"처럼(여섯개의 가득찬 물양동이와 반만 채운 양동이 한개를 일곱개라 세는 것처"
+"럼) 하루의 일부라도 하루 전체인양 날 수를 세었습니다. 유대인 방식으로는 하루"
+"의 일부라도 온전한 하루로 계산하고 각 날은 오후 6시에서 시작해서 오후 6시에 "
+"끝나므로, 금요일 오후 3시부터 오후 6시까지 해서 1일, 금요일 오후 6시부터 토요"
+"일 오후 6시까지 해서 2일, 토요일 오후 6시부터 일요일 오전 5시정도까지 해서 3"
+"일입니다. 문화적 문맥 안에서의 해석은 우리가 곤란에 빠지지 않도록 해줍니다."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:240
@@ -1478,7 +1758,12 @@ msgid ""
 "dismemberment would happen to them if they didn't live up to their part of "
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
-msgstr "창 15:7-21. 역사적 문맥에서 보면 두 조각의 쪼갠 고기 사이로 지나는 것은 아브라함 당시에는 계약을 진행하는 일반적인 방법 이었습니다.양쪽 당사자들은 그들의 계약을 이행하지 않으면 파멸이 그들에게 일어 날 것이라는 맹세와 함께 쪼갠 고기 사이를 걸었습니다. 그러나 이 경우에는 하나님 만이 지나셔서 일방적인 언약을 만드셨습니다."
+msgstr ""
+"창 15:7-21. 역사적 문맥에서 보면 두 조각의 쪼갠 고기 사이로 지나는 것은 아브"
+"라함 당시에는 계약을 진행하는 일반적인 방법 이었습니다.양쪽 당사자들은 그들"
+"의 계약을 이행하지 않으면 파멸이 그들에게 일어 날 것이라는 맹세와 함께 쪼갠 "
+"고기 사이를 걸었습니다. 그러나 이 경우에는 하나님 만이 지나셔서 일방적인 언약"
+"을 만드셨습니다."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:251
@@ -1490,7 +1775,9 @@ msgstr "규칙 4 - 단어의 일반적인 언어 사용법을 따라 해석"
 msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
-msgstr "문자적인 언어는 문자적으로 비유적인 언어는 비유적으로 두세요. 그리고 특별한 의미를 갖는 관용구나 방언에 주의하세요."
+msgstr ""
+"문자적인 언어는 문자적으로 비유적인 언어는 비유적으로 두세요. 그리고 특별한 "
+"의미를 갖는 관용구나 방언에 주의하세요."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:257
@@ -1508,7 +1795,10 @@ msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here. Rule 2, context: "
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
-msgstr "규칙 1, \"악한\"과 \"눈\"의 정의 - 여기서는 별 도움이 안됩니다. 규칙 2, 문맥: 우리를 더욱 혼란스럽게 하는 것처럼 보입니다. 전후 문맥과 맞지 않는 것 같습니다! 이것은 우리가 제대로 이해하지 못하고 있는 것을 알려줄 것입니다!!"
+msgstr ""
+"규칙 1, \"악한\"과 \"눈\"의 정의 - 여기서는 별 도움이 안됩니다. 규칙 2, 문"
+"맥: 우리를 더욱 혼란스럽게 하는 것처럼 보입니다. 전후 문맥과 맞지 않는 것 같"
+"습니다! 이것은 우리가 제대로 이해하지 못하고 있는 것을 알려줄 것입니다!!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:264
@@ -1519,7 +1809,13 @@ msgid ""
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
-msgstr "여기서 우리가 대하고 있는 것은 히브리어 관용구, <quote>악한 눈</quote> 입니다. 이 관용구를 다른 곳에서는 어떻게 사용했는지 살펴보겠습니다: 마 20:15 \" <emphasis>내 것을 가지고 내 뜻대로 할 것이 아니냐 내가 선하므로 네가 악하게 보느냐? </emphasis>\" \"악한 눈\"을 갖는 것은 인색하거나 부러워하는 것에 대한 히브리어 관용구임을 알수 있습니다. 마태복음 6장으로 돌아가서 이런 이해가 어떻게 문맥과 완전히 들어 맞는지 확인해 보세요."
+msgstr ""
+"여기서 우리가 대하고 있는 것은 히브리어 관용구, <quote>악한 눈</quote> 입니"
+"다. 이 관용구를 다른 곳에서는 어떻게 사용했는지 살펴보겠습니다: 마 20:15 \" "
+"<emphasis>내 것을 가지고 내 뜻대로 할 것이 아니냐 내가 선하므로 네가 악하게 "
+"보느냐? </emphasis>\" \"악한 눈\"을 갖는 것은 인색하거나 부러워하는 것에 대"
+"한 히브리어 관용구임을 알수 있습니다. 마태복음 6장으로 돌아가서 이런 이해가 "
+"어떻게 문맥과 완전히 들어 맞는지 확인해 보세요."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:275
@@ -1547,10 +1843,20 @@ msgid ""
 "like these. Dr. Martin then asked the Mormons to read one more scripture: "
 "Ps.91:4 <quote>He will cover you with His feathers; And under His wings "
 "shalt thou trust</quote>. W.M. said, <quote>By the same rules of "
-"interpretation that you just proved God to be a man, you just proved that He"
-" is a bird</quote>. The Mormons had to laugh as they realised the "
+"interpretation that you just proved God to be a man, you just proved that He "
+"is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
-msgstr "말일성도들은 하나님도 예전에는 우리와 같은 사람이었음을 증명하기 위해 하나님의 신체 부위에 대한 언급을 사용합니다. 그들은 사람들에게 이것을 확신시킨 다음에는 계속해서 우리도 하나님 처럼 될수 있다고 가르칩니다! 한 강연에서 몰몬교의 지도자들은 이런 구절들을 나열하는 것으로 월터 마틴(<emphasis>이단들의 왕국</emphasis>의 저자)을 도전했습니다. 그에 대하여 마틴 박사는 몰몬교도들에게 구절을 하나 더 읽을 것을 권했습니다: 시 91:4 <quote>저가 너를 그 깃으로 덮으시리니 네가 그 날개 아래 피하리로다 그의 진실함은 방패와 손 방패가 되나니</quote>. 월터 마틴은 <quote>하나님이 사람이었음을 증명하는 여러분의 방법을 따른다면 하나님은 새라는 것을 증명하는 것입니다</quote>라고 했습니다. 몰몬교도들은 자신들이 우스꽝스러운 처지에 놓인 것에 웃어야만 했습니다."
+msgstr ""
+"말일성도들은 하나님도 예전에는 우리와 같은 사람이었음을 증명하기 위해 하나님"
+"의 신체 부위에 대한 언급을 사용합니다. 그들은 사람들에게 이것을 확신시킨 다음"
+"에는 계속해서 우리도 하나님 처럼 될수 있다고 가르칩니다! 한 강연에서 몰몬교"
+"의 지도자들은 이런 구절들을 나열하는 것으로 월터 마틴(<emphasis>이단들의 왕국"
+"</emphasis>의 저자)을 도전했습니다. 그에 대하여 마틴 박사는 몰몬교도들에게 구"
+"절을 하나 더 읽을 것을 권했습니다: 시 91:4 <quote>저가 너를 그 깃으로 덮으시"
+"리니 네가 그 날개 아래 피하리로다 그의 진실함은 방패와 손 방패가 되나니</"
+"quote>. 월터 마틴은 <quote>하나님이 사람이었음을 증명하는 여러분의 방법을 따"
+"른다면 하나님은 새라는 것을 증명하는 것입니다</quote>라고 했습니다. 몰몬교도"
+"들은 자신들이 우스꽝스러운 처지에 놓인 것에 웃어야만 했습니다."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:297
@@ -1562,8 +1868,8 @@ msgstr "규칙 5 - 비유의 목적과 비유와 풍유의 차이에 대한 이�
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:299
 msgid ""
-"An allegory is: <emphasis>A story where each element has a "
-"meaning.</emphasis>"
+"An allegory is: <emphasis>A story where each element has a meaning.</"
+"emphasis>"
 msgstr "풍유는: <emphasis>각 요소가 의미를 가지고 있는 이야기.</emphasis>"
 
 #. type: Content of: <chapter><section><para>
@@ -1580,7 +1886,13 @@ msgid ""
 "one point. It's dangerous to get our doctrine from parables; they can be "
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
-msgstr "몇몇 비유들은 풍유입니다, 예를 들어, 씨 뿌리는 비유는 풍유입니다: 씨앗은 하나님의 말씀이고, 가시덤불은 걱정과 욕심을 의미하는 등과 같습니다. 그러나 대부분의 비유는 풍유가 아니라 한 주제를 설명하기 위한 단순한 이야기입니다. 우리의 깨달음을 비유에서 취하는 것은 위험합니다; 비유를 기반으로 모든 것을 말하려 한다면 왜곡에 빠질 수 있습니다. 우리의 깨달음은 분명한 구절에서 취할 필요가 있습니다; 비유가 그 구절을 설명한다면 좋겠지요."
+msgstr ""
+"몇몇 비유들은 풍유입니다, 예를 들어, 씨 뿌리는 비유는 풍유입니다: 씨앗은 하나"
+"님의 말씀이고, 가시덤불은 걱정과 욕심을 의미하는 등과 같습니다. 그러나 대부분"
+"의 비유는 풍유가 아니라 한 주제를 설명하기 위한 단순한 이야기입니다. 우리의 "
+"깨달음을 비유에서 취하는 것은 위험합니다; 비유를 기반으로 모든 것을 말하려 한"
+"다면 왜곡에 빠질 수 있습니다. 우리의 깨달음은 분명한 구절에서 취할 필요가 있"
+"습니다; 비유가 그 구절을 설명한다면 좋겠지요."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:311
@@ -1590,17 +1902,21 @@ msgstr "예 5A"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:312
 msgid ""
-"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story"
-" illustrates one lesson: boldness in prayer.  If we draw it into an "
-"allegory, what do we have?"
-msgstr "눅 18:1-8 한 과부와 불의한 재판관의 비유. 이 이야기는 기도의 담대함을 설명합니다. 이것을 풍유로 풀어낸다면 과연 우리는 무엇을 얻게 될까요?"
+"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
+"illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
+"what do we have?"
+msgstr ""
+"눅 18:1-8 한 과부와 불의한 재판관의 비유. 이 이야기는 기도의 담대함을 설명합"
+"니다. 이것을 풍유로 풀어낸다면 과연 우리는 무엇을 얻게 될까요?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:315
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
-msgstr "모든 종류의 갈등에 의미를 부여합니다: 하나님은 과부의 권리 보호에 주저하십니다, 기도는 하나님을 \"귀챦게\" 합니다, 기타 등등."
+msgstr ""
+"모든 종류의 갈등에 의미를 부여합니다: 하나님은 과부의 권리 보호에 주저하십니"
+"다, 기도는 하나님을 \"귀챦게\" 합니다, 기타 등등."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:320
@@ -1612,15 +1928,20 @@ msgstr "예 5B"
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
-msgstr "눅 16:1-9 옳지 않은 청지기 비유. 비유의 핵심 의도는 무엇입니까? 이것은 풍유입니까?"
+msgstr ""
+"눅 16:1-9 옳지 않은 청지기 비유. 비유의 핵심 의도는 무엇입니까? 이것은 풍유입"
+"니까?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:323
 msgid ""
-"The steward is commended for only one thing, his shrewdness in using what he"
-" had to prepare for a time when he wouldn't have it. But he is not commended"
-" for his unethical behavior in cheating his master."
-msgstr "청지기는 직분이 없을 때를 대비하여 자신의 직분을 사용한 단 한가지에 대해서만 칭찬을 받았습니다. 그러나 그의 주인을 속인 비 윤리적인 행위에 대해서는 칭찬받지 않았습니다."
+"The steward is commended for only one thing, his shrewdness in using what he "
+"had to prepare for a time when he wouldn't have it. But he is not commended "
+"for his unethical behavior in cheating his master."
+msgstr ""
+"청지기는 직분이 없을 때를 대비하여 자신의 직분을 사용한 단 한가지에 대해서만 "
+"칭찬을 받았습니다. 그러나 그의 주인을 속인 비 윤리적인 행위에 대해서는 칭찬받"
+"지 않았습니다."
 
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5
@@ -1652,21 +1973,26 @@ msgstr "하만"
 msgid "The BibleTime Team"
 msgstr "The BibleTime Team"
 
-#.  TRANS:ROLES_OF_TRANSLATORS
+#.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
 "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
-msgstr "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-devel@crosswire.org)</holder> </copyright>"
+msgstr ""
+"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
+"devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:31
 msgid ""
-"This document was originally created by Mr. Bob Harman and is licensed under"
-" the terms of the license <ulink url=\"http://creativecommons.org/licenses"
-"/by-sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
-msgstr "이 문서의 원작자는 밥 하만이고 라이선스는 <ulink url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink> 입니다."
+"This document was originally created by Mr. Bob Harman and is licensed under "
+"the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
+"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
+msgstr ""
+"이 문서의 원작자는 밥 하만이고 라이선스는 <ulink url=\"http://"
+"creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons Attribution-"
+"Share Alike\"</ulink> 입니다."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:35
@@ -1685,7 +2011,9 @@ msgstr "개요"
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
-msgstr "<application>성경 공부 요령</application>은 성경을 공부하기 위한 안내서입니다."
+msgstr ""
+"<application>성경 공부 요령</application>은 성경을 공부하기 위한 안내서입니"
+"다."
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:43
@@ -1694,9 +2022,14 @@ msgid ""
 "readers to study the scriptures to see what they say. This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
 "denominational doctrine. We recommend you to read and study the scriptures "
-"to understand what they say. If you start with the attitude that you want to"
-" have the Lord sow his word in your heart He will not disappoint you."
-msgstr "저희 제작자들의 소망은 이 문서가 독자로 하여금 성경이 무엇을 말하는지 공부하도록 이끄는 것입니다. 이 특별한 안내서가 특정 교단의 교리에 치우지지 않도록 했습니다. 여러분이 성경을 읽고 성경이 말하는 바가 무엇인지 이해하기 위해서 공부하기를 권합니다. 여러분의 마음 밭에 주께서 말씀의 씨앗을 뿌리시기를 원하는 태도로 시작한다면 주께서는 여러분을 실망시키지 않으실 것입니다."
+"to understand what they say. If you start with the attitude that you want to "
+"have the Lord sow his word in your heart He will not disappoint you."
+msgstr ""
+"저희 제작자들의 소망은 이 문서가 독자로 하여금 성경이 무엇을 말하는지 공부하"
+"도록 이끄는 것입니다. 이 특별한 안내서가 특정 교단의 교리에 치우지지 않도록 "
+"했습니다. 여러분이 성경을 읽고 성경이 말하는 바가 무엇인지 이해하기 위해서 공"
+"부하기를 권합니다. 여러분의 마음 밭에 주께서 말씀의 씨앗을 뿌리시기를 원하는 "
+"태도로 시작한다면 주께서는 여러분을 실망시키지 않으실 것입니다."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:52

@@ -1,7 +1,8 @@
 <chapter id="hdbk-config">
   <title>Configurer &bibletime;</title>
-  <para>In this section you find an overview to configure &bibletime;, which can be
-found under <guimenu>Settings</guimenu> in the main menu.</para>
+  <para>Dans cette section, vous trouverez une vue d'ensemble pour configurer
+&bibletime;, qui peut être trouvé sous <guimenu>Paramètres</guimenu> dans le
+menu principal.</para>
   <sect1 id="hdbk-config-bt">
     <title>Configure &bibletime; Dialog</title>
     <para>The &bibletime; user interface can be customized in many ways depending on
@@ -11,7 +12,7 @@ your needs. You can access the configuration dialog by selecting
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Affichage</guimenu>
       </title>
       <para>Choisissez pour le comportement au démarrage parmi les options suivantes : 
       <itemizedlist>
@@ -26,21 +27,23 @@ on the right pane.</para>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Bureau</guimenu>
       </title>
-      <para>Many features provided by the &sword; backend can now be customized in
-&bibletime;.  These features are documented right in the dialog.  You also
-have the possibility to specify standard works that should be used when no
-specific work is specified in a reference.  An example: The standard Bible
-is used to display the content of cross references in the Bible.  When you
-hover over them, the Mag will show the content of the verses referred to,
-according to the standard Bible you specified.  With the use of text
-filters, you can control the appearance of the text.</para>
+      <para>Beaucoup de fonctionnalités fournies par le backend &sword;  peuvent
+maintenant être personnalisé dans &bibletime;. Ces fonctionnalités sont
+documentées directement dans la boîte de dialogue. Vous avez également la
+possibilité de spécifier les ouvrages standards qui doivent être utilisés
+lorsqu'aucun ouvrage spécifique n'est spécifié dans une référence. Un
+exemple : La Bible standard est utilisée pour afficher le contenu des
+références croisées dans la Bible. Lorsque vous survolez ces derniers,
+l'Aperçu montrera le contenu des versets mentionnés, selon la Bible standard
+que vous avez spécifiée. Avec l'utilisation de filtres de texte, vous pouvez
+contrôler l'apparence du texte.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
-        <guimenu>Languages</guimenu>
+        <guimenu>Langues</guimenu>
       </title>
       <para>Vous pouvez choisir ici la langue utilisée pour afficher les noms de
 livres. Choisissez votre langue maternelle. Si elle est disponible vous vous
@@ -54,23 +57,25 @@ each language.</para>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
         <textobject>
-          <phrase>Options Dialog - fonts</phrase>
+          <phrase>Boîte de dialogue Options - polices</phrase>
         </textobject>
         <caption>
           <para>Le dialogue Options - polices</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; can now use all supported fonts.  As long as the works you are
-interested in display correctly nothing needs to be done here. If a work
-only displays as a series of question marks (??????) or empty boxes, then
-you know that the standard display font does not contain the characters used
-in this work.</para>
+      <para>&bibletime; peut maintenant utiliser toutes les polices supportées. Tant que
+les ouvrages qui vous intéressent s'affichent correctement, vous n'avez rien
+besoin de faire. Si un ouvrage ne s'affiche que sous la forme d'une série de
+points d'interrogation (??????) ou de cases vides, vous savez que la police
+d'affichage standard ne contient pas les caractères utilisés dans cet
+ouvrage.</para>
 
-      <para>To correct this, choose this work's language from the drop down menu. Select
-the use custom font checkbox. Now select a font. For example, a font that
-supports many languages is Code2000. If no installed font can display the
-work you are interested in, try installing the localization package for that
-language.</para>
+      <para>Pour corriger cela, choisissez la langue de cet ouvrage dans le menu
+déroulant. Sélectionnez la case à cocher « Utiliser une police
+personnalisée ». Maintenant, sélectionnez une police. Par exemple, une
+police qui prend en charge de nombreuses langues est Code2000. Si aucune
+police installée ne peut afficher l'ouvrage qui vous intéresse, essayez
+d'installer le paquet de localisation pour cette langue.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Installer des polices</title>
         <para>Detailed font installation instructions are outside the scope of this
@@ -78,9 +83,9 @@ handbook. For further information you might want to refer to the <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
         <tip>
-          <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run
-faster than with a large font like <trademark class="registered">Bitstream
-Cyberbit</trademark>(about 12Mb).</para>
+          <para>Si vous utilisez une petite police comme Clearlyu (environ 22kb),
+&bibletime; fonctionnera plus rapidement qu'avec une grande police comme
+<trademark class="registered">Bitstream Cyberbit</trademark> (environ 12Mb).</para>
         </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
@@ -88,14 +93,14 @@ Cyberbit</trademark>(about 12Mb).</para>
         <para>Des polices peuvent être obtenues de plusieurs sources</para>
         <itemizedlist>
           <listitem>
-            <para>Your *nix distribution.</para>
+            <para>Votre distribution *nix.</para>
           </listitem>
           <listitem>
             <para>Les paquetages de localisation de votre distribution</para>
           </listitem>
           <listitem>
-            <para>An existing <trademark class="registered">Microsoft Windows</trademark>
-installation on the same computer.</para>
+            <para>Une installation <trademark class="registered">Microsoft Windows</trademark>
+existante sur le même ordinateur.</para>
           </listitem>
           <listitem>
             <para>Une collection de polices, comme celles disponibles chez Adobe ou Bitstream.</para>
@@ -123,9 +128,9 @@ spectre de caractères.</entry>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+Polices unicode du SIL</ulink>
                 </entry>
-                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
+                <entry>D'excellentes polices unicode de l'Institut d'été de linguistique.</entry>
               </row>
               <row>
                 <entry>
@@ -135,8 +140,8 @@ SIL unicode fonts</ulink>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/"> Dossier de
+polices Crosswire</ulink>
                 </entry>
 
                 <entry>Several fonts available from the &cbs; FTP site.</entry>
@@ -175,7 +180,7 @@ ranges and the Unicode fonts that support them</ulink>).</para>
 
     <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Shortcuts</guimenu>
+        <guimenu>Raccourcis</guimenu>
       </title>
 
       <para>Shortcuts (previously known as HotKeys) are special key commands that can be

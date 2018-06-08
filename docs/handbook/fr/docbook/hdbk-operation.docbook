@@ -6,7 +6,7 @@
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>La fenêtre application de &bibletime;</phrase>
       </textobject>
     </mediaobject> You can easily see the different parts of the
 application. The top left window is used to open installed works in the
@@ -238,37 +238,37 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
         <para>To search text other than the main text, enter the text type followed by
 ':', and then the search term.  Refer to the table below for examples.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+        <para>Types de textes disponibles : <table id="hd-op-search-config-syntax-table">
 	  <title>Search Types</title>
           <tgroup cols="3">
             <thead>
               <row>
 		<?dbhtml bgcolor="#EEEEEE" ?>
 		<?dbfo bgcolor="#EEEEEE" ?>
-                <entry>Prefix</entry>
+                <entry>Prefixe</entry>
                 <entry>Meaning</entry>
-		<entry>Example</entry>
+		<entry>Exemple</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>heading:</entry>
-                <entry>searches headings</entry>
+                <entry>recherche des titres</entry>
 		<entry>heading:Jesus</entry>
               </row>
               <row>
                 <entry>footnote:</entry>
-                <entry>searches footnotes</entry>
+                <entry>Recherche des notes de bas de page</entry>
 		<entry>footnote:Moses</entry>
               </row>
               <row>
                 <entry>strong:</entry>
-                <entry>searches Strong's Numbers</entry>
+                <entry>Recherche des nombres de Strong</entry>
 		<entry>strong:G535</entry>
               </row>
               <row>
                 <entry>morph:</entry>
-                <entry>searches morphology codes</entry>
+                <entry>Recherche des codes morphologiques</entry>
 		<entry>morph:N-GSM</entry>
               </row>
             </tbody>
@@ -384,9 +384,9 @@ libérer de l'espace disque. Marquer les modules à effacer et cliquez
 sur<guibutton>Enlever modules</guibutton>.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Search Indexes</title>
-      <para>This option allows you to create new search indexes and cleanup orphaned
-index files for removed works.</para>
+      <title>Rechercher des index</title>
+      <para>Cette option vous permet de créer de nouveaux index de recherche et de
+nettoyer les fichiers d'index orphelins pour les ouvrages supprimés.</para>
       <tip>
 	If you are having problems with your search function, visit
 	this feature.

@@ -281,8 +281,8 @@ to find which of the above search criteria may work for you.  Not all works
 have the built in features for performing this type of search.</para>
 	</tip>
 
-        <para>&bibletime; uses the Lucene search engine to perform your searches. It has
-many advanced features, and you can read more about it here: <ulink
+        <para>&bibletime; jūsų paieškoms atlikti naudoja Lucene paieškos modulį. Jame yra
+daug išplėstinių ypatybių, o daugiau apie jį galite perskaityti čia: <ulink
 url="http://lucene.apache.org/java/docs/index.html">
 http://lucene.apache.org/java/docs/index.html</ulink>.</para>
       </sect3>
@@ -314,7 +314,7 @@ display. This gives a simple graphic analysis of the number of instances the
 search string was found in each book of the Bible, and you can also save the
 analysis.</para>
         <screenshot>
-<screeninfo>Search Analysis Dialog Box</screeninfo> <mediaobject>
+<screeninfo>Paieškos analizės dialogo langelis</screeninfo> <mediaobject>
 <imageobject> <imagedata fileref="ss_searchanal.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
       </sect3>

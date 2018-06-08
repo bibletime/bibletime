@@ -11,7 +11,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>Estudo Bíblico HowTo</title>
+  <title>Manual de Estudo Bíblico</title>
   <authorgroup>
     <author>
       <firstname>Bob</firstname>
@@ -19,7 +19,7 @@
     </author>
     <author>
       <firstname></firstname>
-      <surname>The BibleTime Team</surname>
+      <surname>A Equipe BibleTime</surname>
     </author>
   </authorgroup>
   
@@ -39,12 +39,12 @@ Bible.Na tradução em português foi usada a edição Almeida e Corrigida Fiel
     <title>Resumo</title>
     <para>O <application>Estudo Bíblico HowTo</application> é um guia para estudo da
 Bíblia.</para>
-    <para>It is the hope of the &bibletime; team that this HowTo will provoke the
-readers to study the scriptures to see what they say. This particular study
-guide has been chosen as it takes care not to advocate any particular
-denominational doctrine. We recommend you to read and study the scriptures
-to understand what they say. If you start with the attitude that you want to
-have the Lord sow his word in your heart He will not disappoint you.</para>
+    <para>A Equipe &bibletime; espera que esse manual incentivará os leitores a
+estudar as Escrituras para ver o que elas dizem. Esse guia de estudo foi
+escolhido em especial por não advogar nenhuma doutrina denominacional em
+particular. Nós esperamos que você leia e estude as Escrituras para entender
+o que elas dizem. Se você começar com a intenção de que deseja que o Senhor
+semeie sua palavra em seu coração, Ele não irá desapontá-lo.</para>
   </abstract>
   <keywordset>
     <keyword>Bíblia</keyword>

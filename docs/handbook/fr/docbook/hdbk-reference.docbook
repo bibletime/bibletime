@@ -12,7 +12,7 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
-        <guimenu>File</guimenu>
+        <guimenu>Fichier</guimenu>
       </title>
       <para>
         <variablelist>
@@ -33,8 +33,8 @@ open installed books.</para>
               <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_exit.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>File</guimenu>
-<guimenuitem>Quit</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Fichier</guimenu>
+<guimenuitem>Quitter</guimenuitem> </menuchoice>
             </term>
             <listitem>
               <para>
@@ -71,8 +71,8 @@ maximize the &bibletime; window.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Affichage</guimenu> <guimenuitem>Montrer la
+bibliothèque</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -87,7 +87,7 @@ zoom.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Affichage</guimenu> <guimenuitem>Montrer les signets</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -102,7 +102,8 @@ more space for the Mag.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Affichage</guimenu> <guimenuitem>Montrer l'aperçu</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -198,7 +199,7 @@ remove the complete toolbar in open works.</para>
     </sect2>
     <sect2 id="hdbk-reference-menus-search">
       <title>
-        <guimenu>Search</guimenu>
+        <guimenu>Rechercher</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-search-defaultbible">
@@ -256,7 +257,7 @@ window</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-            <action>Closes active window</action>.</para>
+            <action>Ferme le fenêtre active</action>.</para>
           </listitem>
         </varlistentry>
 
@@ -266,8 +267,8 @@ window</guimenuitem> </menuchoice>
 <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Close all</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Fenêtre</guimenu>
+<guimenuitem>Ferme tout</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -414,7 +415,7 @@ where you can select an existing session that should be deleted.</para>
 
     <sect2 id="hdbk-reference-menus-settings">
       <title>
-        <guimenu>Settings</guimenu>
+        <guimenu>Paramètres</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-settings-bibletime">
@@ -455,7 +456,7 @@ details.</para>
 
     <sect2 id="hdbk-reference-menus-help">
     <title>
-      <guimenu>Help</guimenu>
+      <guimenu>Aide</guimenu>
     </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-help-bibletime">
@@ -463,7 +464,7 @@ details.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F1</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Aide</guimenu> <guimenuitem>Manuel</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -507,7 +508,7 @@ tip that will assist in the use of &bibletime;.</para>
 
         <varlistentry id="hdbk-reference-menus-help-about">
           <term>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem>
+            <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>À propos</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -631,7 +632,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Display configuration.
+		Configuration de l'affichage.
               </para>
             </listitem>
           </varlistentry>
@@ -667,7 +668,7 @@ depth="32" format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuch
 
             <listitem>
               <para>
-		Select additional commentary.
+		Sélectionner un commentaire additionnel.
               </para>
             </listitem>
           </varlistentry>
@@ -703,7 +704,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select a book.
+		Sélectionner un livre.
               </para>
             </listitem>
           </varlistentry>
@@ -749,7 +750,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
   </sect1>
 
   <sect1 id="hdbk-reference-shortcuts">
-    <title>Shortcuts index</title>
+    <title>Index des raccourcis clavier</title>
 
     <para>This is an index of all shortcuts and their corresponding description in the
 handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to
@@ -766,20 +767,20 @@ reference</link>.</para>
           <row>
 	    <?dbhtml bgcolor="#EEEEEE" ?>
 	    <?dbfo bgcolor="#EEEEEE" ?>
-            <entry>Shortcut</entry>
+            <entry>Raccourci</entry>
             <entry>Description</entry>
           </row>
         </thead>
         <tbody>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Left</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Alt;+Gauche</keycap></keycombo>
             </entry>
             <entry>Retourne en arrière dans l'historique de la fenêtre de lecture.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Right</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Alt;+Droit</keycap></keycombo>
             </entry>
             <entry>Avance dans l'historique de la fenêtre de lecture</entry>
           </row>
@@ -988,8 +989,8 @@ currently opened works.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice>
-<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice>
-</link> equivalent; closes &bibletime;.</entry>
+<guimenu>Fichier</guimenu> <guimenuitem>Quitter</guimenuitem> </menuchoice>
+</link> équivalent ; ferme &bibletime;.</entry>
           </row>
           <row>
             <entry>
@@ -1020,8 +1021,9 @@ HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry
               <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
-Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+            <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>Astuce du
+jour</guimenuitem> </menuchoice> Ouvre une astuce aidant à utiliser
+&bibletime;.</entry>
           </row>
 
           <row>

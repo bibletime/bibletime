@@ -1,7 +1,7 @@
 <chapter id="hdbk-intro">
   <title>Introduction</title>
   <sect1 id="hdbk-intro-about">
-    <title>About &bibletime;</title>
+    <title>Au sujet de &bibletime;</title>
 
     <para>&bibletime; is a Bible study tool with support for different types of texts
 and languages. Even large amounts of works modules are easy to install and
@@ -19,55 +19,8 @@ section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Œuvres disponibles</title>
-      <para>Over 200 documents in 50 languages are available from the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
-        <varlistentry>
-          <term>Bibles</term>
-          <listitem>
-            <para>The full Bible text, with optional things like Strong's Numbers, headings
-and/or footnotes in the text.  Bibles are available in many languages, and
-include not only modern versions, but also ancient texts like the Codex
-Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is
-the most advanced section in the library of the &sword; project.</para>
-          </listitem>
-        </varlistentry>
-        <varlistentry>
-          <term>Livres</term>
-          <listitem>
-            <para>Books available include "Imitation of Christ", "Enuma Elish", and "Josephus:
-The Complete Works"</para>
-          </listitem>
-        </varlistentry>
-        <varlistentry>
-          <term>Commentaires</term>
-          <listitem>
-            <para>Commentaries available include classics like John Wesley's "Notes on the
-Bible", Matthew Henry's commentary and Luther's "Commentary on Galatians."
-With the <emphasis>Personal</emphasis> commentary you can <link
-linkend="hdbk-op-parts-desk-write"> record your own personal notes</link> to
-sections of the Bible.</para>
-          </listitem>
-        </varlistentry>
-        <varlistentry>
-          <term>Lectures quotidiennes</term>
-          <listitem>
-            <para>De nombreuses personnes apprécient ces rations quotidiennes de la parole de
-Dieu. Parmi les modules disponibles, Daily Light on the Daily Path, et les
-Losungen.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry>
-          <term>Lexiques et dictionnaires</term>
-          <listitem>
-            <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the
-International Standard Bible Encyclopaedia. Dictionaries available include
-Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's
-Revised Unabridged Dictionary of the English Language 1913, Nave's Topical
-Bible.</para>
-          </listitem>
-        </varlistentry>
-      </variablelist></para>
+      <para>Plus de 200 documents en 50 langues sont disponibles à partir du <ulink
+url="http://www.crosswire.org">&cbs;</ulink>. Ceux-ci inclus :</para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

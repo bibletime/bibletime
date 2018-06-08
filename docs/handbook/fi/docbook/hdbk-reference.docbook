@@ -39,7 +39,7 @@ format="PNG" /> </imageobject></inlinemediaobject>Tiedosto</guimenu>
             </term>
             <listitem>
               <para>
-              <action>Sulkee &bibletimen;.</action> &bibletime; kysyy sinulta, haluatko
+              <action>Sulkee &bibletime;.</action> &bibletime; kysyy sinulta, haluatko
 tallettaa tehdyt muutokset.</para>
             </listitem>
           </varlistentry>

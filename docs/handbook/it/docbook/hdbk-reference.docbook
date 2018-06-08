@@ -102,7 +102,8 @@ utile se hai bisogno di di più spazio per la Lente.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Mostra</guimenu> <guimenuitem>Mostra Info</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -115,13 +116,13 @@ mostrare o nascodere la Lente nel pannello di sinistra.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Mostra</guimenu> <guimenuitem>Mostra intestazioni testi
+paralleli</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
-            <action>Toggles viewing of additional works</action> Toggle this setting to
-allow you to view additional works in parallel to your current open books.</para>
+            <action>Mostr opere aggiuntive</action> Attiva questa impostazione per
+mostrare altre opere in parallelo con i libri attualmente aperti.</para>
           </listitem>
         </varlistentry>
 

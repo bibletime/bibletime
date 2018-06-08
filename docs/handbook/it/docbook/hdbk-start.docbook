@@ -11,7 +11,7 @@
         <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
 format="PNG" /> </imageobject>
         <textobject>
-          <phrase>&bibletime; start icon</phrase>
+          <phrase>icona di avvio &bibletime;</phrase>
         </textobject>
       </mediaobject></para>
 
