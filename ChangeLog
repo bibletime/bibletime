@@ -1,3 +1,6 @@
+2018-06-18 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 2.11.2.
+
 2018-06-05 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #140, No window text with Qt 5.11
 
