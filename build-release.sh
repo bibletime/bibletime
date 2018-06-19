@@ -3,11 +3,6 @@
 #
 # BibleTime will be installed to /usr/local by default (see CMAKE_INSTALL_PREFIX below).
 
-if [ "$(uname)" == "Darwin" ]; then
-    # OSX/homebrew
-    export CMAKE_PREFIX_PATH=/usr/local/opt/qt5/lib/cmake/
-fi
-
 if [ ! -d build ]; then mkdir build; fi
 cd build
 cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..  || exit 1

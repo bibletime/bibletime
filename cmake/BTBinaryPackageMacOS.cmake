@@ -6,7 +6,15 @@ IF(APPLE)
     )
 
     IF (CMAKE_BUILD_TYPE STREQUAL "Release")
+        # Note: building based on the Qt shipped by homebrew does not work currently (2018-06),
+        #   as it seems to ship a b0rken macdeployqt tool. So use the official Qt packages to build.
+
+        # Workaround: macdeployqt does not seem to set a proper rpath for the package,
+        #   so we do this manually.
+        SET_TARGET_PROPERTIES("bibletime" PROPERTIES INSTALL_RPATH "@loader_path/../Frameworks")
+
         SET(QT_MACDEPLOYQT_EXECUTABLE "${_qt5Core_install_prefix}/bin/macdeployqt")
+
         INSTALL(CODE "
             EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/../..\")
         ")
