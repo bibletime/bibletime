@@ -107,14 +107,11 @@ bool initDirectoryCache() {
 #endif
 
 #if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
-    cachedSharedSwordDir.reset(new QDir(qgetenv("ProgramData"))); // sword dir for Windows only
-    if (!cachedSharedSwordDir->cd("Application Data")) {
-        qWarning() << "Cannot find %ProgramData%";
-        return false;
-    }
+    QByteArray programDataDir = qgetenv("ProgramData");
+    cachedSharedSwordDir.reset(new QDir(programDataDir)); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
         if (!cachedSharedSwordDir->mkdir(SWORD_DIR) || !cachedSharedSwordDir->cd(SWORD_DIR)) {
-            qWarning() << "Cannot find %ProgramData%\\Sword";
+            qWarning() << "Cannot find " << programDataDir << " \\Sword";
             return false;
         }
     }
