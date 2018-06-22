@@ -1,3 +1,6 @@
+2018-06-21 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix #149, BT for Windows does not start if "C:\ProgramData\Application Data" is missing.
+
 2018-06-05 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #140, No window text with Qt 5.11
 

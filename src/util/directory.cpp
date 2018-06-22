@@ -57,7 +57,7 @@ std::unique_ptr<QDir> cachedSwordLocalesDir;
 
 #ifdef Q_OS_ANDROID
 std::unique_ptr<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
-static const char AND_BIBLE[] = "Android/data/net.bible.android.activity/files";
+static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity/files";
 #endif
 
 #if defined Q_OS_WIN || defined Q_OS_SYMBIAN
@@ -89,7 +89,7 @@ bool initDirectoryCache() {
     }
 
 #ifdef Q_OS_ANDROID
-    cachedSharedSwordDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
+    cachedSharedSwordDir.reset(new QDir());
     if (!cachedSharedSwordDir->cd(AND_BIBLE)) {
         cachedSharedSwordDir->mkpath(AND_BIBLE);
         cachedSharedSwordDir->cd(AND_BIBLE);
@@ -107,14 +107,11 @@ bool initDirectoryCache() {
 #endif
 
 #if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
-    cachedSharedSwordDir.reset(new QDir(qgetenv("ProgramData"))); // sword dir for Windows only
-    if (!cachedSharedSwordDir->cd("Application Data")) {
-        qWarning() << "Cannot find %ProgramData%";
-        return false;
-    }
+    QByteArray programDataDir = qgetenv("ProgramData");
+    cachedSharedSwordDir.reset(new QDir(programDataDir)); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
         if (!cachedSharedSwordDir->mkdir(SWORD_DIR) || !cachedSharedSwordDir->cd(SWORD_DIR)) {
-            qWarning() << "Cannot find %ProgramData%\\Sword";
+            qWarning() << "Cannot find " << programDataDir << " \\Sword";
             return false;
         }
     }
