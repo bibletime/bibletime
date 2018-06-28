@@ -24,6 +24,7 @@
 /qtcreator-build
 .DS_Store
 /platforms/android/build*
+/platforms/ios/build*
 *.pro.user*
 bibletime*.qm
 mobile*.qm
