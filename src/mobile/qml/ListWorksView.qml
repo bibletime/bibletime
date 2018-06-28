@@ -99,7 +99,7 @@ Rectangle {
 
             Text {
                 id: dummyTextForHeight
-                text: "x"
+                text: qsTranslate("Install Documents", "Install")
                 font.pointSize: btStyle.uiFontPointSize
                 visible: false
             }
@@ -158,7 +158,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: 10
-                width: btStyle.uiFontPointSize * 12
+                width: dummyTextForHeight.width*1.1
                 height: dummyTextForHeight.height*1.5
 
                 checkable: true;
