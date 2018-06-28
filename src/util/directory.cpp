@@ -51,7 +51,7 @@ std::unique_ptr<QDir> cachedApplicationSwordDir; // Only Windows installs the sw
 std::unique_ptr<QDir> cachedSharedSwordDir;
 #endif
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 std::unique_ptr<QDir> cachedSwordLocalesDir;
 #endif
 
@@ -64,7 +64,7 @@ static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
 #else
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 static const char BIBLETIME[] = "Library/Application Support/BibleTime";
 static const char SWORD_DIR[] = "Library/Application Support/Sword";
 #else
@@ -118,7 +118,7 @@ bool initDirectoryCache() {
 #endif
 #endif
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
     cachedSwordLocalesDir.reset(new QDir(wDir)); // application sword dir for Windows only
     if (!cachedSwordLocalesDir->cd("share/sword/locales.d") || !cachedSwordLocalesDir->isReadable()) {
         qWarning() << "Cannot find sword locales directory relative to" << QCoreApplication::applicationDirPath();
@@ -145,7 +145,7 @@ bool initDirectoryCache() {
         return false;
     }
 
-#ifndef BT_MINI
+#if !defined BT_MINI && ! defined BT_MOBILE
     cachedJavascriptDir.reset(new QDir(wDir));
     if (!cachedJavascriptDir->cd("share/bibletime/javascript") || !cachedJavascriptDir->isReadable()) {
         qWarning() << "Cannot find javascript directory relative to" << wDir.absolutePath();
@@ -174,7 +174,7 @@ bool initDirectoryCache() {
     QString localeName(QLocale::system().name());
     QString langCode(localeName.section('_', 0, 0));
 
-#ifndef BT_MINI
+#if !defined BT_MINI && !defined BT_MOBILE
     cachedHandbookDir.reset(new QDir(wDir));
     if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + localeName)) {
         if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + langCode)) {
@@ -384,7 +384,7 @@ const QDir &getSharedSwordDir() {
 
 #endif
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 const QDir &getSwordLocalesDir() {
     return *cachedSwordLocalesDir;
 }
