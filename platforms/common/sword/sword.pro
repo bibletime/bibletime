@@ -1,6 +1,7 @@
 # Sword 1.8.1 or higher required 
 
 DEFINES += EXCLUDEXZ EXCLUDEBZIP2
+DEFINES += STDC_HEADERS
 
 isEmpty(SWORD_PATH):SWORD_PATH = ../../../../sword
 isEmpty(SWORD_VERSION_NUM):SWORD_VERSION_NUM = 107005000
@@ -159,14 +160,11 @@ SOURCES += \
     $${SWORD_PATH}/src/modules/filters/scsuutf8.cpp \
     $${SWORD_PATH}/src/mgr/remotetrans.cpp \
 
-message( $${SWORD_VERSION_NUM} )
 lessThan(SWORD_VERSION_NUM, 107005000) { # 1.7 series
-message( "Sword 1.7.x" )
 SOURCES += \
 
 }
 else { # 1.8 series
-message( "Sword 1.8.x" )
 SOURCES += \
     $${SWORD_PATH}/src/modules/comments/zcom4/zcom4.cpp \
     $${SWORD_PATH}/src/modules/common/zverse4.cpp \
