@@ -142,10 +142,11 @@ lupdate_only {
 
 # iOS Platform
 mac:CONFIG -= webkit
+mac:DEFINES += unix
+mac:DEFINES += __unix__
 
 # Android platform
 android {
-!lessThan(QT_MAJOR_VERSION, 5):CONFIG -= webkit
 DEFINES += STDC_HEADERS
 }
 
@@ -169,31 +170,10 @@ DEFINES += unix
 LIBS += -lsocket
 }
 
-# Qt
-greaterThan(QT_MAJOR_VERSION, 4):QT += widgets
-svg:QT += svg xml
-
-
 # Core Configuration Section
 
-# WebKit
-# should be after platforms section, optional
-webkit {
-greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += webkitwidgets
-}
-else {
-    QT += webkit
-}
-DEFINES += BT_MINI_WEBKIT
-}
-else:!mini:!mobile {
-warning("Non Mini build: WebKit required")
-}
-
 # Clucene
-clucene:include(../../common/clucene/clucene.pro)
-!clucene:DEFINES += BT_NO_CLUCENE
+include(../../common/clucene/clucene.pro)
 
 # CURL
 # optional

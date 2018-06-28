@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/share/bibletime">
+        <file>qtbug55259.qml</file>
+    </qresource>
+</RCC>

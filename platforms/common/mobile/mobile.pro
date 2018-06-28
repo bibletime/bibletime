@@ -4,7 +4,10 @@ QT += svg xml qml quick
 QML_ROOT_PATH = ../../../src/mobile/qml
 
 DEFINES += BT_MOBILE
-QMAKE_CXXFLAGS += -DBT_GIT_VERSION=\\\"`git rev-parse HEAD`\\\"
+
+GIT_VERSION = $$system(/usr/local/bin/git rev-parse HEAD)
+DEFINES += BT_GIT_VERSION=\\\"$$GIT_VERSION\\\"
+
 QMAKE_CXXFLAGS_DEBUG -= -O2
 QMAKE_CXXFLAGS_DEBUG += -O0
 
