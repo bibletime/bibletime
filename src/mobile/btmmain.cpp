@@ -36,9 +36,11 @@
 #include "mobile/ui/sessioninterface.h"
 #include "util/btassert.h"
 #include "util/directory.h"
+#include <swlog.h>
 
 static QObject* s_rootObject = nullptr;
-static QFont defaultFont;
+static QFont* defaultFont;
+
 
 void register_gml_classes() {
     QQmlDebuggingEnabler enabler;
@@ -61,10 +63,10 @@ void saveSession() {
 }
 
 QFont getDefaultFont() {
-    return defaultFont;
+    return *defaultFont;
 }
 
-#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
 // Copies locale.qrc files into home sword directory under locales.d directory
 static void installSwordLocales(QDir& homeSword)
 {
@@ -129,14 +131,15 @@ int main(int argc, char *argv[]) {
 
     registerMetaTypes();
 
-    defaultFont = app.font();
+    defaultFont = new QFont();
+    *defaultFont = app.font();
 
     if (!DU::initDirectoryCache()) {
         qFatal("Error initializing directory cache!");
         return EXIT_FAILURE;
     }
 
-#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)  || defined(Q_OS_IOS)
     // change directory to the Sword or .sword directory in the $HOME dir so that
     // the sword.conf is found. It points to the sword/locales.d directory
     // This is also needed for the AugmentPath or DataPath to work
@@ -150,7 +153,7 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
-#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     if (btm::BtStyle::getAppVersion() > btConfig().value<QString>("btm/version")) {
         installSwordLocales(dir);
         btConfig().setValue<QString>("btm/version", btm::BtStyle::getAppVersion());
