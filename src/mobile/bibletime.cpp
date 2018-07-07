@@ -22,6 +22,7 @@
 #include <QTextStream>
 #include <stringmgr.h>
 #include <swlog.h>
+#include <QDebug>
 
 namespace btm {
 
@@ -40,7 +41,7 @@ void BibleTime::initBackends() {
                                               ? sword::SWLog::LOG_DEBUG
                                               : sword::SWLog::LOG_ERROR);
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
     // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
     // note: this must be done after setting the BTStringMgr, because this will reset the LocaleMgr
     qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
