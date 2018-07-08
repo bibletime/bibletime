@@ -358,7 +358,6 @@ Window {
 
         function openAtStartup() {
             var value = configInterface.boolValue(configKey, true);
-            console.log(value);
             if (value)
                 open();
         }
