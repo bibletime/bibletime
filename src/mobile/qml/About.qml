@@ -24,10 +24,29 @@ Rectangle {
         id: btStyle
     }
 
+    Rectangle {
+        id: aboutTitleBar
+        color: btStyle.toolbarColor
+        width: parent.width
+        height: btStyle.pixelsPerMillimeterY * 7
+
+        Back {
+            id: backTool
+
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            text: qsTranslate("Navigation", "Main")
+            onClicked: {
+                aboutDialog.visible = false;
+            }
+        }
+    }
+
     Flickable {
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: parent.top
+        anchors.top: aboutTitleBar.bottom
         anchors.bottom: parent.bottom
         anchors.topMargin: btStyle.pixelsPerMillimeterY * 2
         contentWidth: width

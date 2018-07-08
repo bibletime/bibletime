@@ -33,6 +33,8 @@ Rectangle {
 
     objectName: "moduleChooser"
 
+    signal canceled
+
     function requestModuleUnlockKey() {
         unlockDlg.visible = true;
     }
@@ -163,6 +165,37 @@ Rectangle {
         id: beStyle
     }
 
+    Rectangle {
+        id: newWindowTitleBar
+        color: btStyle.toolbarColor
+        width: parent.width
+        height: btStyle.pixelsPerMillimeterY * 7
+
+        Back {
+            id: backTool
+
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            text: qsTranslate("Navigation", "Main")
+            onClicked: {
+                moduleChooser.canceled();
+            }
+        }
+
+        Text {
+            id: title
+            color: btStyle.toolbarTextColor
+            font.pointSize: btStyle.uiFontPointSize
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: search.spacing
+            verticalAlignment: Text.AlignVCenter
+            text: qsTranslate("Search", "New Window")
+        }
+    }
+
     Grid {
         id:  grid
         columns: 2
@@ -171,7 +204,7 @@ Rectangle {
         width: parent.width - moduleChooser.spacing
         height: parent.height/2.5
         anchors.left: parent.left
-        anchors.top: parent.top
+        anchors.top: newWindowTitleBar.bottom
         anchors.margins: parent.spacing
 
         ListTextView {

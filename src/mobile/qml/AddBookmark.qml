@@ -53,16 +53,33 @@ Rectangle {
         border.color: btStyle.toolbarTextColor
         border.width: 2
 
-        Text {
-            id: titleText
+        Rectangle {
+            id: addBookmarkTitleBar
+            color: btStyle.toolbarColor
+            width: parent.width
+            height: btStyle.pixelsPerMillimeterY * 7
 
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin:btStyle.pixelsPerMillimeterX * 3
-            text: qsTranslate("Bookmarks", "Add Bookmark")
-            horizontalAlignment: Text.AlignHCenter
-            font.pointSize: btStyle.uiFontPointSize + 4
-            color: btStyle.toolbarTextColor
+            Back {
+                id: backTool
+
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                text: qsTranslate("Navigation", "Main")
+                onClicked: addBookmark.visible = false;
+            }
+
+            Text {
+                id: titleText
+                color: btStyle.toolbarTextColor
+                font.pointSize: btStyle.uiFontPointSize
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                anchors.leftMargin: search.spacing
+                verticalAlignment: Text.AlignVCenter
+                text: qsTranslate("Bookmarks", "Add Bookmark")
+            }
         }
     }
 
@@ -77,7 +94,7 @@ Rectangle {
         anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
         text: qsTranslate("Bookmarks", "Bookmark") + ":"
         elide: Text.ElideMiddle
-        font.pointSize: btStyle.uiFontPointSize + 4
+        font.pointSize: btStyle.uiFontPointSize + 1
         color: btStyle.textColor
     }
 
@@ -92,7 +109,7 @@ Rectangle {
         anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 10
         text: reference + " (" + moduleName + ")"
         elide: Text.ElideMiddle
-        font.pointSize: btStyle.uiFontPointSize + 4
+        font.pointSize: btStyle.uiFontPointSize + 1
         color: btStyle.textColor
     }
 
@@ -105,7 +122,7 @@ Rectangle {
         anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
         text: qsTranslate("Bookmarks", "Folder") + ":"
         horizontalAlignment: Text.AlignHCenter
-        font.pointSize: btStyle.uiFontPointSize + 4
+        font.pointSize: btStyle.uiFontPointSize + 1
         color: btStyle.textColor
 
         Action {
@@ -138,7 +155,7 @@ Rectangle {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             anchors.leftMargin: 10
-            font.pointSize: btStyle.uiFontPointSize + 4
+            font.pointSize: btStyle.uiFontPointSize + 1
             color: btStyle.textColor
         }
 

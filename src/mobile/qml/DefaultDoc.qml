@@ -28,10 +28,29 @@ Rectangle {
         id: btmConfig
     }
 
+    Rectangle {
+        id: standardDocTitleBar
+        color: btStyle.toolbarColor
+        width: parent.width
+        height: btStyle.pixelsPerMillimeterY * 7
+
+        Back {
+            id: backTool
+
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            text: qsTranslate("Navigation", "Main")
+            onClicked: {
+                defaultDoc.visible = false;
+            }
+        }
+    }
+
     Flickable {
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: parent.top
+        anchors.top: standardDocTitleBar.bottom
         anchors.bottom: parent.bottom
         anchors.topMargin: btStyle.pixelsPerMillimeterY * 2
         contentWidth: width

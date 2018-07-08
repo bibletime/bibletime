@@ -79,6 +79,19 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+    Back {
+        id: backTool
+
+        anchors.left: parent.left
+        anchors.top: title.top
+        anchors.bottom: title.bottom
+        text: qsTranslate("Navigation", "Main")
+        onClicked: {
+            gridChooser.visible = false;
+            backup();
+        }
+    }
+
     Flickable {
         id: flick
 

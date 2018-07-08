@@ -94,7 +94,7 @@ FocusScope {
         anchors.top: pageTitle.top
         anchors.bottom: pageTitle.bottom
         anchors.bottomMargin: btStyle.pixelsPerMillimeterX *0.5
-        text: qsTranslate("References", "Main")
+        text: qsTranslate("Navigation", "Main")
         z:1
         onClicked: {
             magView.magFinished();
