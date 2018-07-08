@@ -58,11 +58,23 @@ FocusScope {
             width: parent.width
             height: btStyle.pixelsPerMillimeterY * 7
 
+            Back {
+                id: backTool
+
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                text: qsTranslate("Search", "Main")
+                onClicked: {
+                    search.searchFinished();
+                }
+            }
+
             Text {
                 id: title
                 color: btStyle.toolbarTextColor
                 font.pointSize: btStyle.uiFontPointSize
-                anchors.left: parent.left
+                anchors.horizontalCenter: parent.horizontalCenter
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 anchors.leftMargin: search.spacing

@@ -138,11 +138,23 @@ SplitView {
             width: parent.width
             height: btStyle.pixelsPerMillimeterY * 8
 
+            Back {
+                id: backTool
+
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                text: qsTranslate("Search", "Main")
+                onClicked: {
+                    searchResults.resultsFinished();
+                }
+            }
+
             Text {
-                id: title
+                id: title2
                 color: btStyle.toolbarTextColor
                 font.pointSize: btStyle.uiFontPointSize
-                anchors.left: parent.left
+                anchors.horizontalCenter: parent.horizontalCenter
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 anchors.leftMargin: search.spacing
