@@ -413,6 +413,7 @@ Window {
         anchors.top: parent.top
         visible: false
         z: 1
+        onCanceled: installManagerChooser.visible = false;
     }
 
     Question {
@@ -524,6 +525,7 @@ Window {
                 moduleChooser.visible = false;
             }
         }
+        onCanceled: moduleChooser.visible = false;
     }
 
     Question {

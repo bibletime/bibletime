@@ -27,6 +27,8 @@ Rectangle {
     property int spacing: btStyle.pixelsPerMillimeterX
     property bool refreshOnOpen: false
 
+    signal canceled
+
     function open() {
         var currentSource = installInterface.getSource(sourceView.currentIndex);
         if (currentSource === "")
@@ -80,6 +82,37 @@ Rectangle {
         }
     }
 
+    Rectangle {
+        id: installTitleBar
+        color: btStyle.toolbarColor
+        width: parent.width
+        height: btStyle.pixelsPerMillimeterY * 7
+
+        Back {
+            id: backTool
+
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            text: qsTranslate("Navigation", "Main")
+            onClicked: {
+                installManager.canceled();
+            }
+        }
+
+        Text {
+            id: title
+            color: btStyle.toolbarTextColor
+            font.pointSize: btStyle.uiFontPointSize
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: search.spacing
+            verticalAlignment: Text.AlignVCenter
+            text: qsTranslate("Title", "Install Manager")
+        }
+    }
+
     Grid {
         id:  grid
         columns: 3
@@ -88,7 +121,7 @@ Rectangle {
         width: parent.width - installManager.spacing
         height: installManager.height/3
         anchors.left: parent.left
-        anchors.top: parent.top
+        anchors.top: installTitleBar.bottom
         anchors.margins: installManager.spacing
 
         ListTextView {

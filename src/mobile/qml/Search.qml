@@ -64,7 +64,7 @@ FocusScope {
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                text: qsTranslate("Search", "Main")
+                text: qsTranslate("Navigation", "Main")
                 onClicked: {
                     search.searchFinished();
                 }

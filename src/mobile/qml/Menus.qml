@@ -64,6 +64,25 @@ Rectangle {
         }
     }
 
+    Rectangle {
+        id: menuTitleBar
+        color: btStyle.toolbarColor
+        width: parent.width
+        height: btStyle.pixelsPerMillimeterY * 7
+
+        Back {
+            id: backTool
+
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            text: qsTranslate("Navigation", "Main")
+            onClicked: {
+                menu.visible = false;
+            }
+        }
+    }
+
     ListView {
         id: menusRepeater
 

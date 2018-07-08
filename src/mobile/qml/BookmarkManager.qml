@@ -87,26 +87,33 @@ Rectangle {
     }
 
     Rectangle {
-        id: titleRect
-
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        height: titleText.contentHeight * 1.4
+        id: bookmarkManagerTitleBar
         color: btStyle.toolbarColor
-        border.color: btStyle.toolbarTextColor
-        border.width: 2
+        width: parent.width
+        height: btStyle.pixelsPerMillimeterY * 7
 
-        Text {
-            id: titleText
+        Back {
+            id: backTool
 
             anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin:btStyle.pixelsPerMillimeterX * 3
-            text: qsTranslate("Bookmarks", "Bookmark Manager")
-            horizontalAlignment: Text.AlignHCenter
-            font.pointSize: btStyle.uiFontPointSize + 4
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            text: qsTranslate("Navigation", "Main")
+            onClicked: {
+                bookmarkManager.visible = false;
+            }
+        }
+
+        Text {
+            id: title
             color: btStyle.toolbarTextColor
+            font.pointSize: btStyle.uiFontPointSize
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: search.spacing
+            verticalAlignment: Text.AlignVCenter
+            text: qsTranslate("Bookmarks", "Bookmark Manager")
         }
     }
 
@@ -118,7 +125,7 @@ Rectangle {
         anchors.right: parent.right
         anchors.bottom: newFolderButton.top
         anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 3
-        anchors.top: titleRect.bottom
+        anchors.top: bookmarkManagerTitleBar.bottom
         alternatingRowColors: false
         backgroundVisible: false
         selectionMode: SelectionMode.SingleSelection
