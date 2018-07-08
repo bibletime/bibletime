@@ -5,7 +5,7 @@ QML_ROOT_PATH = ../../../src/mobile/qml
 
 DEFINES += BT_MOBILE
 
-GIT_VERSION = $$system(/usr/local/bin/git rev-parse HEAD)
+GIT_VERSION = $$system(git rev-parse HEAD)
 DEFINES += BT_GIT_VERSION=\\\"$$GIT_VERSION\\\"
 
 QMAKE_CXXFLAGS_DEBUG -= -O2
@@ -63,6 +63,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/About.qml \
     ../../../src/mobile/qml/AddBookmark.qml \
     ../../../src/mobile/qml/AddFolder.qml \
+    ../../../src/mobile/qml/Back.qml \
     ../../../src/mobile/qml/BookmarkFolders.qml \
     ../../../src/mobile/qml/BookmarkManager.qml \
     ../../../src/mobile/qml/BtButtonStyle.qml \
@@ -78,6 +79,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/InformationDialog.qml \
     ../../../src/mobile/qml/InstallManagerChooser.qml \
     ../../../src/mobile/qml/KeyNameChooser.qml \
+    ../../../src/mobile/qml/Left.qml \
     ../../../src/mobile/qml/LeftArrow.qml \
     ../../../src/mobile/qml/ListSelectView.qml \
     ../../../src/mobile/qml/ListTextView.qml \

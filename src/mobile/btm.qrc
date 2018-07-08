@@ -3,6 +3,7 @@
         <file>qml/About.qml</file>
         <file>qml/AddBookmark.qml</file>
         <file>qml/AddFolder.qml</file>
+        <file>qml/Back.qml</file>
         <file>qml/BookmarkFolders.qml</file>
         <file>qml/BookmarkManager.qml</file>
         <file>qml/BtButtonStyle.qml</file>
@@ -17,6 +18,7 @@
         <file>qml/InformationDialog.qml</file>
         <file>qml/InstallManagerChooser.qml</file>
         <file>qml/KeyNameChooser.qml</file>
+        <file>qml/Left.qml</file>
         <file>qml/LeftArrow.qml</file>
         <file>qml/ListSelectView.qml</file>
         <file>qml/ListTextView.qml</file>
