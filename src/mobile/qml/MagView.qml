@@ -87,6 +87,20 @@ FocusScope {
         color: btStyle.toolbarColor
     }
 
+    Back {
+        id: backTool
+
+        anchors.left: pageTitle.left
+        anchors.top: pageTitle.top
+        anchors.bottom: pageTitle.bottom
+        anchors.bottomMargin: btStyle.pixelsPerMillimeterX *0.5
+        text: qsTranslate("References", "Main")
+        z:1
+        onClicked: {
+            magView.magFinished();
+        }
+    }
+
     Text {
         id: pageTitle
         color: btStyle.toolbarTextColor
@@ -107,7 +121,7 @@ FocusScope {
         height: {
             var pixel = btStyle.pixelsPerMillimeterY * 7;
             var uiFont = btStyle.uiFontPointSize * 3;
-            var mix = pixel * 0.7 + uiFont * 0.3;
+            var mix = pixel * 0.9 + uiFont * 0.3;
             return Math.max(pixel, mix);
         }
         anchors.left: parent.left
