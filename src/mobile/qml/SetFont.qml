@@ -24,7 +24,7 @@ Rectangle {
 
     signal textFontChanged
 
-    height: languageRow.height + slider.height + buttons.height + buttons.anchors.bottomMargin + languageRow.anchors.bottomMargin +btStyle.pixelsPerMillimeterX*3
+    height: languageRow.height + slider.height + buttons.height + buttons.anchors.bottomMargin + languageRow.anchors.bottomMargin +btStyle.pixelsPerMillimeterX*7
     width: {
         var width = Math.min(parent.width, parent.height);
         width = width - 2 * anchors.rightMargin
@@ -99,9 +99,9 @@ Rectangle {
         columns: 2
 
         anchors.top: parent.top
-        anchors.topMargin: btStyle.pixelsPerMillimeterX * 2
+        anchors.topMargin: btStyle.pixelsPerMillimeterX * 4
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: btStyle.pixelsPerMillimeterX * 2
+        spacing: btStyle.pixelsPerMillimeterX * 4
 
         Text {
             id: title
@@ -186,7 +186,7 @@ Rectangle {
             id: slider
 
             width: languageCombo.width
-            height: fontSize.height
+            height: fontSize.height * 1.2
             minimumValue: 10
             maximumValue: 30
             style: SliderStyle {
@@ -201,9 +201,9 @@ Rectangle {
                         color: btStyle.textBackgroundColor
                         border.color: btStyle.textColor
                         border.width: 3
-                        implicitWidth: btStyle.pixelsPerMillimeterY * 4
-                        implicitHeight: btStyle.pixelsPerMillimeterY * 4
-                        radius: btStyle.pixelsPerMillimeterY * 2
+                        implicitWidth: btStyle.pixelsPerMillimeterY * 7
+                        implicitHeight: btStyle.pixelsPerMillimeterY * 7
+                        radius: btStyle.pixelsPerMillimeterY * 3.5
                     }
                 }
             onValueChanged: {
@@ -223,7 +223,7 @@ Rectangle {
         columns: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
+        anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 4
 
         Action {
             id: okAction
@@ -235,8 +235,8 @@ Rectangle {
 
         Button {
             id: okButton
-            height: fontCombo.height
-            width: setFont.width/3
+            height: fontCombo.height * 1.2
+            width: setFont.width/3.5
             action: okAction
             style: BtButtonStyle {
             }
@@ -254,8 +254,8 @@ Rectangle {
 
         Button {
             id: cancelButton
-            height: fontCombo.height
-            width: setFont.width/3
+            height: fontCombo.height * 1.2
+            width: setFont.width/3.5
             action: cancelAction
             style: BtButtonStyle {
             }
