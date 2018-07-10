@@ -95,9 +95,9 @@ Rectangle {
                     color: btStyle.textBackgroundColor
                     border.color: btStyle.textColor
                     border.width: 3
-                    implicitWidth: btStyle.pixelsPerMillimeterY * 4
-                    implicitHeight: btStyle.pixelsPerMillimeterY * 4
-                    radius: btStyle.pixelsPerMillimeterY * 2
+                    implicitWidth: btStyle.pixelsPerMillimeterY * 7
+                    implicitHeight: btStyle.pixelsPerMillimeterY * 7
+                    radius: btStyle.pixelsPerMillimeterY * 3.5
                 }
             }
         onValueChanged: {
@@ -127,7 +127,7 @@ Rectangle {
         Button {
             id: okButton
             height: titleText.height*1.5
-            width: fontPointSize.width/3
+            width: fontPointSize.width/3.5
             action: okAction
             style: BtButtonStyle {
             }
@@ -145,7 +145,7 @@ Rectangle {
         Button {
             id: cancelButton
             height: titleText.height*1.5
-            width: fontPointSize.width/3
+            width: fontPointSize.width/3.5
             action: cancelAction
             style: BtButtonStyle {
             }
