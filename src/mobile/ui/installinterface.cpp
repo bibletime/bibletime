@@ -14,6 +14,7 @@
 
 #include "backend/btinstallbackend.h"
 #include "backend/btinstallthread.h"
+#include "backend/config/btconfig.h"
 #include "mobile/bookshelfmanager/installsources.h"
 #include <QThread>
 
@@ -29,6 +30,10 @@ enum WorksRoles {
     SelectedRole = Qt::UserRole + 3,
     InstalledRole = Qt::UserRole + 4
 };
+
+QString const SourceKey = "GUI/InstallManager/source";
+QString const CategoryKey = "GUI/InstallManager/category";
+QString const LanguageKey = "GUI/InstallManager/language";
 
 InstallInterface::InstallInterface() :
     QObject(),
@@ -208,6 +213,30 @@ QString InstallInterface::getLanguage(int index) {
         return QString();
     QModelIndex mIndex = m_languageModel.index(index, 0);
     return mIndex.data(TextRole).toString();
+}
+
+QString InstallInterface::getSourceSetting() {
+    return btConfig().value<QString>(SourceKey, QString());
+}
+
+QString InstallInterface::getCategorySetting() {
+    return btConfig().value<QString>(CategoryKey, QString());
+}
+
+QString InstallInterface::getLanguageSetting() {
+    return btConfig().value<QString>(LanguageKey, QString());
+}
+
+void InstallInterface::setSourceSetting(const QString& source) {
+    btConfig().setValue(SourceKey, source);
+}
+
+void InstallInterface::setCategorySetting(const QString& category) {
+    btConfig().setValue(CategoryKey, category);
+}
+
+void InstallInterface::setLanguageSetting(const QString& language) {
+    btConfig().setValue(LanguageKey, language);
 }
 
 static int findModelIndex(RoleItemModel* model, const QString& value) {

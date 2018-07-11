@@ -61,6 +61,14 @@ public:
     Q_INVOKABLE QString getCategory(int index);
     Q_INVOKABLE QString getLanguage(int index);
 
+    Q_INVOKABLE QString getSourceSetting();
+    Q_INVOKABLE QString getCategorySetting();
+    Q_INVOKABLE QString getLanguageSetting();
+
+    Q_INVOKABLE void setSourceSetting(const QString& source);
+    Q_INVOKABLE void setCategorySetting(const QString& category);
+    Q_INVOKABLE void setLanguageSetting(const QString& language);
+
     Q_INVOKABLE int searchSource(const QString& value);
     Q_INVOKABLE int searchCategory(const QString& value);
     Q_INVOKABLE int searchLanguage(const QString& value);
