@@ -30,15 +30,15 @@ Rectangle {
     signal canceled
 
     function open() {
-        var currentSource = installInterface.getSource(sourceView.currentIndex);
+        var currentSource = installInterface.getSourceSetting();
         if (currentSource === "")
             currentSource = "CrossWire";
 
-        var currentCategory = installInterface.getCategory(categoryView.currentIndex);
+        var currentCategory = installInterface.getCategorySetting();
         if (currentCategory === "")
             currentCategory = "Bibles";
 
-        var currentLanguage = installInterface.getLanguage(languageView.currentIndex);
+        var currentLanguage = installInterface.getLanguageSetting();
         if (currentLanguage === "")
             currentLanguage = "English";
 
@@ -247,6 +247,12 @@ Rectangle {
             id: installRemoveAction
             text: qsTranslate("InstallManagerChooser", "Install / Remove")
             onTriggered: {
+                var source = installInterface.getSource(sourceView.currentIndex);
+                var category = installInterface.getCategory(categoryView.currentIndex);
+                var language = installInterface.getLanguage(languageView.currentIndex);
+                installInterface.setSourceSetting(source);
+                installInterface.setCategorySetting(category);
+                installInterface.setLanguageSetting(language);
                 installManagerChooser.visible = false;
                 installInterface.installRemove();
             }
