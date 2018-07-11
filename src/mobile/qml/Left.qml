@@ -12,21 +12,6 @@ Item {
 
     signal clicked
 
-//    Rectangle {
-//        anchors.fill: parent
-//        color: background
-//        opacity: show ? 0 : 0.7
-//        z: 2
-//    }
-
-//    Rectangle {
-//        anchors.fill: parent
-//        color: Qt.rgba(0,0,0,0)
-//        border.width: 1
-//        border.color: borderColor
-//        z: 1
-//    }
-
     Column {
         spacing: 1
         anchors.fill: parent
@@ -52,9 +37,9 @@ Item {
                 ctx.lineWidth = width * 0.16;
 
                 ctx.beginPath();
-                ctx.moveTo(width*0.9,height*0.8);
-                ctx.lineTo(width*0.2,height*0.5);
-                ctx.lineTo(width*0.9,height*0.2);
+                ctx.moveTo(width*0.9,height*0.7);
+                ctx.lineTo(width*0.4,height*0.5);
+                ctx.lineTo(width*0.9,height*0.3);
                 ctx.stroke();
 
                 ctx.restore();
