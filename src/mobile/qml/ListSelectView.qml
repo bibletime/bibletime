@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 2.2
 
 Rectangle {
     id: top
@@ -34,21 +35,14 @@ Rectangle {
         clip: true
         highlightFollowsCurrentItem: true
         currentIndex: 2
+        ScrollBar.vertical: ScrollBar {
+            width: btStyle.pixelsPerMillimeterX * 6
+        }
 
         function selectItem(x, y) {
             var index = listView.indexAt(x+contentX,y+contentY);
             currentIndex = index;
             top.itemSelected(index);
-        }
-
-        Rectangle {
-            id: scrollbar
-            anchors.right: listView.right
-            y: listView.visibleArea.yPosition * listView.height
-            width: btStyle.pixelsPerMillimeterX
-            height: listView.visibleArea.heightRatio * listView.height
-            color: btStyle.textColor
-            visible: listView.visibleArea.heightRatio < 0.99
         }
 
         delegate: Rectangle {

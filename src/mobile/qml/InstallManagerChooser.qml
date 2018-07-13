@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 2.2
 import QtQuick.Controls 1.2
 import BibleTime 1.0
 
@@ -201,6 +202,10 @@ Rectangle {
         anchors.left: parent.left
         anchors.bottom: buttonRow.top
         anchors.margins: installManager.spacing
+        ScrollBar.vertical: ScrollBar {
+            width: btStyle.pixelsPerMillimeterX * 6
+        }
+
         onItemSelected: {
             installInterface.workSelected(index)
         }
@@ -219,7 +224,7 @@ Rectangle {
 
         anchors.bottom: parent.bottom
         anchors.left: parent.left
-        anchors.bottomMargin: 20
+        anchors.bottomMargin: 30
         spacing: (parent.width - refreshButton.width - installRemoveButton.width) / 3
         anchors.leftMargin: (parent.width - refreshButton.width - installRemoveButton.width) / 3
 
@@ -237,7 +242,7 @@ Rectangle {
         Button {
             id: refreshButton
             width: installManager.width * 4.5 / 10;
-            height: dummyTextForHeight.height*1.5
+            height: dummyTextForHeight.height*1.8
             action: refreshAction
             style: BtButtonStyle {
             }
@@ -261,7 +266,7 @@ Rectangle {
         Button {
             id: installRemoveButton
             width: installManager.width * 4.5 / 10;
-            height: dummyTextForHeight.height*1.5
+            height: dummyTextForHeight.height*1.8
             action: installRemoveAction
             style: BtButtonStyle {
             }

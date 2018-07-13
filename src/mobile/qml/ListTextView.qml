@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 2.2
 
 Rectangle {
     id: top
@@ -64,6 +65,9 @@ Rectangle {
         clip: true
         highlightFollowsCurrentItem: true
         currentIndex: 2
+        ScrollBar.vertical: ScrollBar {
+            width: btStyle.pixelsPerMillimeterX * 6
+        }
 
 
         function selectItem(x, y) {
