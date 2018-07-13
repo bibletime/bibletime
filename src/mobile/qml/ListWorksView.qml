@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 2.2
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
 import BibleTime 1.0
@@ -60,6 +61,9 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins: 3
+        ScrollBar.vertical: ScrollBar {
+            width: btStyle.pixelsPerMillimeterX * 6
+        }
 
         function itemSelected(index) {
             top.itemSelected(index);
@@ -71,16 +75,6 @@ Rectangle {
             color: btStyle.textBackgroundColor
             anchors.fill: parent
             z: -1
-        }
-
-        Rectangle {
-            id: scrollbar
-            anchors.right: listView.right
-            y: listView.visibleArea.yPosition * listView.height
-            width: 7
-            height: listView.visibleArea.heightRatio * listView.height
-            color: btStyle.textColor
-            visible: listView.visibleArea.heightRatio < 0.99
         }
 
         delegate: Rectangle {
