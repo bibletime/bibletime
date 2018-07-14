@@ -20,7 +20,7 @@ Rectangle {
 
     property string title: ""
     property int min: 10
-    property int max: 30
+    property int max: 40
     property int current: 20
     property int previous: 20
     property bool ready: false
