@@ -52,6 +52,7 @@ FocusScope {
 
     function chooseModule() {
         moduleChooser.moduleSelected.connect(magView.moduleChoosenSlot);
+        moduleChooser.backText = qsTr("View References");
         moduleChooser.visible = true;
     }
 
@@ -205,7 +206,7 @@ FocusScope {
                     chooseReference.finished.connect(magView.referenceChoosen)
                     var module = btWindowInterface.moduleName
                     var ref = btWindowInterface.reference;
-                    chooseReference.start(module, ref);
+                    chooseReference.start(module, ref, qsTranslate("MagView", "View References"));
                 }
             }
         }

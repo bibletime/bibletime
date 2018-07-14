@@ -22,12 +22,13 @@ Item {
     signal finished()
     signal finishedLexicon(int index)
 
-    function start(moduleName, reference) {
+    function start(moduleName, reference, backText) {
         chooseReference.moduleName = moduleName;
         chooseReference.reference = reference;
         if (chooserInterface.isBibleOrCommentary(moduleName)) {
             verseChooser.finished.disconnect(chooseReference.verseReferenceChoosen)
             verseChooser.finished.connect(chooseReference.verseReferenceChoosen)
+            verseChooser.backText = backText;
             verseChooser.start(moduleName, reference);
         }
         else if (chooserInterface.isBook(moduleName)) {

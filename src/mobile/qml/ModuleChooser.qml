@@ -29,6 +29,7 @@ Rectangle {
     property int spacing: 4
     property string selectedModule: ""
     property string selectedCategory: ""
+    property string backText: ""
     property bool bibleCommentaryOnly: false
 
     objectName: "moduleChooser"
@@ -177,7 +178,7 @@ Rectangle {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            text: qsTranslate("Navigation", "Main")
+            text: moduleChooser.backText
             onClicked: {
                 moduleChooser.canceled();
             }
@@ -192,7 +193,7 @@ Rectangle {
             anchors.bottom: parent.bottom
             anchors.leftMargin: search.spacing
             verticalAlignment: Text.AlignVCenter
-            text: qsTranslate("Search", "New Window")
+            text: qsTranslate("Search", "Choose Work")
         }
     }
 

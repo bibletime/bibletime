@@ -120,6 +120,7 @@ Rectangle {
     }
 
     function moduleChooserRequestedSlot(window, moduleNumber) {
+        moduleChooser.backText = qsTranslate("Navigation", "Main");
         moduleChooser.visible = true;
     }
 
@@ -162,6 +163,7 @@ Rectangle {
     function newWindow() {
         moduleChooser.moduleSelected.connect(openWindowSlot);
         moduleChooser.bibleCommentaryOnly = false;
+        moduleChooser.backText = qsTranslate("Navigation", "Main");
         moduleChooser.visible = true;
     }
 

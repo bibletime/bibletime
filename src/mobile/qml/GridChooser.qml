@@ -23,6 +23,7 @@ Rectangle {
     property int space: 10
     property string selected: ""
     property string titleText: ""
+    property string backText: ""
     property int maxLength: 0
     property alias model: repeater.model
 
@@ -36,7 +37,6 @@ Rectangle {
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && gridChooser.visible == true) {
             event.accepted = true;
-            gridChooser.visible = false;
             backup();
         }
     }
@@ -85,9 +85,8 @@ Rectangle {
         anchors.left: parent.left
         anchors.top: title.top
         anchors.bottom: title.bottom
-        text: qsTranslate("Navigation", "Main")
+        text: gridChooser.backText
         onClicked: {
-            gridChooser.visible = false;
             backup();
         }
     }
