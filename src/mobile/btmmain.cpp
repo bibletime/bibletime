@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
 
     // Adjust start scrolling drag distance
     QStyleHints * sh = app.styleHints();
-    sh->setStartDragDistance(50);
+    sh->setStartDragDistance(80);
 
     btm::BtStyle::setCurrentStyle(btm::BtStyle::darkTheme);
 
