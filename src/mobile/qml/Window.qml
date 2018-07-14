@@ -62,6 +62,7 @@ Rectangle {
     function chooseModule(moduleNumber) {
         windowView.currentModule = moduleNumber;
         moduleChooser.moduleSelected.connect(windowView.moduleChoosenSlot);
+        moduleChooser.backText = qsTranslate("Navigation", "Main");
         moduleChooser.visible = true;
     }
 
@@ -372,7 +373,7 @@ Rectangle {
                     if (btWindowInterface.firstModuleIsBibleOrCommentary() ||
                             btWindowInterface.firstModuleIsBook()) {
                         chooseReference.finished.connect(windowView.referenceChoosen);
-                        chooseReference.start(moduleName, reference);
+                        chooseReference.start(moduleName, reference,qsTranslate("Navigation", "Main"));
                     } else {
                         chooseReference.finishedLexicon.connect(windowView.lexiconReferenceChoosen);
                         chooseReference.startLexicon(moduleName,

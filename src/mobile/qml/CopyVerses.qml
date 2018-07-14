@@ -44,7 +44,7 @@ Rectangle {
         chooseReference.finished.connect(copyVerses.referenceChoosen);
         var module = btWinIfc.moduleName;
         var ref = btWinIfc.reference;
-        chooseReference.start(module, ref);
+        chooseReference.start(module, ref, qsTranslate("Navigation", "Main"));
     }
 
     function referenceChoosen() {
@@ -135,6 +135,7 @@ Rectangle {
             onActivated: {
                 moduleChooser.bibleCommentaryOnly = true;
                 moduleChooser.moduleSelected.connect(copyVerses.moduleChoosen);
+                moduleChooser.backText = qsTranslate("Navigation", "Main");
                 moduleChooser.visible = true;
             }
             width: grid.referenceWidth
