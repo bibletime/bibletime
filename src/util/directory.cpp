@@ -17,6 +17,7 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QLocale>
+#include <QStandardPaths>
 #include "btassert.h"
 #ifdef Q_OS_WIN32
 #include <windows.h>
@@ -235,6 +236,9 @@ bool initDirectoryCache() {
     GetEnvironmentVariable(TEXT("APPDATA"), homeDir, BUFSIZE);
     QString qHomeDir = QString::fromWCharArray(homeDir);
     cachedUserHomeDir.reset(new QDir(qHomeDir));
+#elif defined Q_OS_IOS
+    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    cachedUserHomeDir.reset(new QDir(dataDir));
 #else
     cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
 #endif
