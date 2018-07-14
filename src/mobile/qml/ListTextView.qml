@@ -84,16 +84,6 @@ Rectangle {
             z: -1
         }
 
-        Rectangle {
-            id: scrollbar
-            anchors.right: listView.right
-            y: listView.visibleArea.yPosition * listView.height
-            width: 10
-            height: listView.visibleArea.heightRatio * listView.height
-            color: btStyle.textColor
-            visible: listView.visibleArea.heightRatio < 0.99
-        }
-
         delegate: Rectangle {
             id: entry
 

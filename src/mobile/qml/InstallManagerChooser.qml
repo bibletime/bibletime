@@ -202,9 +202,6 @@ Rectangle {
         anchors.left: parent.left
         anchors.bottom: buttonRow.top
         anchors.margins: installManager.spacing
-        ScrollBar.vertical: ScrollBar {
-            width: btStyle.pixelsPerMillimeterX * 6
-        }
 
         onItemSelected: {
             installInterface.workSelected(index)
