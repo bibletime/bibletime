@@ -34,7 +34,7 @@
             <!-- Splash screen -->
         </activity>
     </application>
-    <uses-sdk android:targetSdkVersion="21" android:minSdkVersion="16"/>
+    <uses-sdk android:targetSdkVersion="26" android:minSdkVersion="16"/>
     <supports-screens android:anyDensity="true" android:xlargeScreens="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
     <!-- %%INSERT_PERMISSIONS -->
     <!-- %%INSERT_FEATURES -->
