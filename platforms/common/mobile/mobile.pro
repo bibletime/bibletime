@@ -1,5 +1,5 @@
 CONFIG += clucene  mobile c++11
-QT += svg xml qml quick androidextras
+QT += svg xml qml quick 
 
 QML_ROOT_PATH = ../../../src/mobile/qml
 
