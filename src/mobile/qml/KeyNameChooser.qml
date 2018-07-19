@@ -12,6 +12,7 @@
 
 import QtQuick 2.2
 import QtQuick.Controls 1.2
+import QtQuick.Controls 2.2
 import BibleTime 1.0
 
 Rectangle {
@@ -110,20 +111,14 @@ Rectangle {
         highlightFollowsCurrentItem: true
         currentIndex: 2
 
+        ScrollBar.vertical: ScrollBar {
+            width: btStyle.pixelsPerMillimeterX * 6
+        }
+
         function selectItem(x, y) {
             var index = listView.indexAt(x+contentX,y+contentY);
             currentIndex = index;
             top.itemSelected(index);
-        }
-
-        Rectangle {
-            id: scrollbar
-            anchors.right: listView.right
-            y: listView.visibleArea.yPosition * listView.height
-            width: 7
-            height: listView.visibleArea.heightRatio * listView.height
-            color: "black"
-            visible: listView.visibleArea.heightRatio < 0.99
         }
 
         delegate: Rectangle {
