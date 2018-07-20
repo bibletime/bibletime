@@ -65,7 +65,7 @@ static const char AND_BIBLE[] = "/sdcard/Android/data/net.bible.android.activity
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
 #else
-#ifdef Q_OS_MACOS
+#ifdef Q_OS_MAC
 static const char BIBLETIME[] = "Library/Application Support/BibleTime";
 static const char SWORD_DIR[] = "Library/Application Support/Sword";
 #else
@@ -236,9 +236,6 @@ bool initDirectoryCache() {
     GetEnvironmentVariable(TEXT("APPDATA"), homeDir, BUFSIZE);
     QString qHomeDir = QString::fromWCharArray(homeDir);
     cachedUserHomeDir.reset(new QDir(qHomeDir));
-#elif defined Q_OS_IOS
-    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    cachedUserHomeDir.reset(new QDir(dataDir));
 #else
     cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
 #endif
