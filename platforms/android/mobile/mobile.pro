@@ -1,7 +1,7 @@
 
 include(../../common/mobile/mobile.pro)
 
-QT += androidextras
+android:QT += androidextras
 
 OTHER_FILES += \
     android/AndroidManifest.xml
