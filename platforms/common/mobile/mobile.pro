@@ -26,7 +26,6 @@ SOURCES += \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btmmoduletextfilter.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
-    ../../../src/mobile/ui/debuginterface.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
     ../../../src/mobile/ui/installinterface.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
@@ -50,7 +49,6 @@ HEADERS += \
     ../../../src/mobile/ui/btstyle.h \
     ../../../src/mobile/ui/btmmoduletextfilter.h \
     ../../../src/mobile/ui/btwindowinterface.h \
-    ../../../src/mobile/ui/debuginterface.h \
     ../../../src/mobile/ui/installinterface.h \
     ../../../src/mobile/ui/moduleinterface.h \
     ../../../src/mobile/ui/sessioninterface.h \
