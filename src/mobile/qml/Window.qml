@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 2.2
 import BibleTime 1.0
 
 Rectangle {
@@ -417,6 +418,10 @@ Rectangle {
                 btWindowInterface.setRawText(savedRow, savedColumn, newText)
             }
 
+            function updateReferenceText() {
+                var index = indexAt(contentX,contentY+30);
+                btWindowInterface.updateKeyText(index);
+            }
 
             clip: true
             anchors.fill: parent
@@ -429,8 +434,7 @@ Rectangle {
                 positionViewAtIndex(currentIndex,ListView.Beginning)
             }
             onMovementEnded: {
-                var index = indexAt(contentX,contentY+30);
-                btWindowInterface.updateKeyText(index);
+                updateReferenceText();
             }
 
             delegate: Component {
@@ -541,6 +545,43 @@ Rectangle {
                         }
                     }
 
+                }
+            }
+        }
+
+        ScrollBar {
+            property int savedY: 0
+            property int factor: 20
+            property real savedPosition: 0
+            property bool firstPositionChanged: false
+            width: btStyle.pixelsPerMillimeterX * 7
+            anchors.top: listView.top
+            anchors.bottom: listView.bottom
+            anchors.right: listView.right
+            position: 0.5
+            size: 0.1
+            onPositionChanged: {
+                if (firstPositionChanged) {
+                    savedPosition = position;
+                    firstPositionChanged = false;
+                }
+                var pixel = (position - savedPosition) * height;
+                var Y = savedY + (pixel * factor)
+                if (Y < 0)
+                    Y = 0;
+                listView.contentY = Y;
+                listView.updateReferenceText();
+            }
+            onPressedChanged: {
+                if (pressed) {
+                    savedPosition = position;
+                    savedY = listView.contentY
+                    firstPositionChanged = true;
+                } else {
+
+                    savedY = listView.contentY;
+                    savedPosition = 0.5;
+                    position = 0.5;
                 }
             }
         }
