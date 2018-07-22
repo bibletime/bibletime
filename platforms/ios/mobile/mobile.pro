@@ -5,8 +5,11 @@ include(../../common/mobile/mobile.pro)
 
 RESOURCES += qtbug55259.qrc
 
-QMAKE_INFO_PLIST = Info.plist
-
-ios_icon.files = $$files($$PWD/icons/*.png)
-QMAKE_BUNDLE_DATA += ios_icon
+ios {
+    QMAKE_INFO_PLIST = Info.plist
+    ios_icon.files = $$files($$PWD/icons/*.png)
+    QMAKE_BUNDLE_DATA += ios_icon
+    launch_xib.files = $$files($$PWD/ios/BibleTimeLaunchScreen.xib)
+    QMAKE_BUNDLE_DATA += launch_xib
+}
 
