@@ -28,7 +28,7 @@ Rectangle {
     property int autoTile:    5
     property int tabLayout:   6
 
-    property int windowArrangement: single
+    property int windowArrangement: tabLayout
     property bool toolbarsEnabled: true
 
     signal setFontForLanguage(string language)
