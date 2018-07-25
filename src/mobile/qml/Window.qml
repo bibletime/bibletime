@@ -171,7 +171,6 @@ Rectangle {
     }
 
     function debugData() {
-        console.log("")
         var i = 31472;
         var text = btWindowInterface.getModelTextByIndex(i);
         console.log(text);

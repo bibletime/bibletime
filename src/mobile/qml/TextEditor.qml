@@ -71,6 +71,5 @@ Rectangle {
         action: okAction
         style: BtButtonStyle {
         }
-        onFocusChanged: console.log(focus);
     }
 }
