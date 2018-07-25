@@ -287,6 +287,28 @@ void InstallInterface::installRemove() {
     removeModules();
 }
 
+void InstallInterface::clearModules() {
+    m_modulesToInstall.clear();
+    m_modulesToInstallRemove.clear();
+}
+
+void InstallInterface::addModule(const QString& sourceName, const QString& moduleName) {
+    updateSwordBackend(sourceName);
+    const QList<CSwordModuleInfo*> modules = m_backend->moduleList();
+    for (int moduleIndex=0; moduleIndex<modules.count(); ++moduleIndex) {
+        CSwordModuleInfo* module = modules.at(moduleIndex);
+        module->setProperty("installSourceName", sourceName);
+        QString name = module->name();
+        if (name == moduleName) {
+            m_modulesToInstall.append(module);
+        }
+    }
+}
+
+void InstallInterface::installModulesAuto() {
+    installModules();
+}
+
 void InstallInterface::workSelected(int index) {
     QStandardItem* item = m_worksModel.item(index,0);
     QVariant vSelected = item->data(SelectedRole);
@@ -323,6 +345,7 @@ void InstallInterface::runThread() {
     BT_CONNECT(m_worker, SIGNAL(finished()), thread, SLOT(quit()));
     BT_CONNECT(m_worker, SIGNAL(finished()), m_worker, SLOT(deleteLater()));
     BT_CONNECT(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+    BT_CONNECT(thread, SIGNAL(finished()), this, SIGNAL(progressFinished()));
     BT_CONNECT(m_worker, SIGNAL(percentComplete(int, QString const &)),
                this,     SLOT(slotPercentComplete(int, QString const &)));
     thread->start();
@@ -418,6 +441,7 @@ void InstallInterface::slotOneItemCompleted(int /* moduleIndex */, bool /* succe
 void InstallInterface::slotThreadFinished() {
     setProgressVisible(false);
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
+    emit modulesDownloadFinished();
 }
 
 void InstallInterface::slotPercentComplete(int percent, const QString& title) {

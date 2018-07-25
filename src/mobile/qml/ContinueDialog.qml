@@ -15,9 +15,9 @@ import QtQuick.Controls 1.2
 import BibleTime 1.0
 
 Rectangle {
-    id: question
+    id: continueDialog
 
-    property alias text: questionText.text
+    property alias text: continueText.text
     property bool answer
     property color background
 
@@ -29,10 +29,9 @@ Rectangle {
     width: parent.width
 
     Rectangle {
-        id: questionTitleBar
+        id: continueTitleBar
         color: btStyle.toolbarColor
         width: parent.width
-        anchors.margins: btStyle.pixelsPerMillimeterX * 2
         height: {
             var pixel = btStyle.pixelsPerMillimeterY * 7.5;
             var uiFont = btStyle.uiFontPointSize * 4.4;
@@ -52,8 +51,9 @@ Rectangle {
             source: "qrc:/share/bibletime/icons/bibletime.svg"
         }
 
+
         Text {
-            id: questionTitle
+            id: continueTitle
 
             color: btStyle.textColor
             font.pointSize: btStyle.uiFontPointSize * 1.1
@@ -76,7 +76,7 @@ Rectangle {
 
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: questionText.top
+        anchors.top: continueText.top
         anchors.bottom: buttons.bottom
         height: parent.height * 0.25
         anchors.topMargin: btStyle.pixelsPerMillimeterX * -5
@@ -90,7 +90,7 @@ Rectangle {
     }
 
     Text {
-        id: questionText
+        id: continueText
         width: parent.width
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -108,15 +108,15 @@ Rectangle {
 
         spacing: btStyle.pixelsPerMillimeterY * 4
         columns: 2
-        anchors.top: questionText.bottom
+        anchors.top: continueText.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: btStyle.pixelsPerMillimeterX * 5
 
         Action {
             id: yesAction
-            text: qsTranslate("Question","Yes")
+            text: qsTr("Continue")
             onTriggered: {
-                question.visible = false;
+                continueDialog.visible = false;
                 answer = true;
                 finished();
             }
@@ -127,25 +127,6 @@ Rectangle {
             width: btStyle.pixelsPerMillimeterY * 25
             height: dummyTextForHeight.height*1.7
             action: yesAction
-            style: BtButtonStyle {
-            }
-        }
-
-        Action {
-            id: noAction
-            text: qsTranslate("Question","No")
-            onTriggered: {
-                question.visible = false;
-                answer = false;
-                finished();
-            }
-        }
-
-        Button {
-            id: noButton
-            width: btStyle.pixelsPerMillimeterY * 25
-            height: dummyTextForHeight.height*1.7
-            action: noAction
             style: BtButtonStyle {
             }
         }
