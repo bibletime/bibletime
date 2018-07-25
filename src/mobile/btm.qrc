@@ -9,6 +9,7 @@
         <file>qml/BtButtonStyle.qml</file>
         <file>qml/BookIcon.qml</file>
         <file>qml/ChooseReference.qml</file>
+        <file>qml/ContinueDialog.qml</file>
         <file>qml/CopyVerses.qml</file>
         <file>qml/DefaultDoc.qml</file>
         <file>qml/Folder.qml</file>
@@ -16,6 +17,7 @@
         <file>qml/GridChooserButton.qml</file>
         <file>qml/GridChooser.qml</file>
         <file>qml/InformationDialog.qml</file>
+        <file>qml/InstallAutomatic.qml</file>
         <file>qml/InstallManagerChooser.qml</file>
         <file>qml/KeyNameChooser.qml</file>
         <file>qml/Left.qml</file>

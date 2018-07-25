@@ -79,6 +79,10 @@ public:
             const QString& category,
             const QString& language);
 
+    Q_INVOKABLE void clearModules();
+    Q_INVOKABLE void addModule(const QString& sourceName, const QString& moduleName);
+    Q_INVOKABLE void installModulesAuto();
+
     Q_INVOKABLE void workSelected(int index);
     Q_INVOKABLE void cancel();
 
@@ -114,6 +118,8 @@ signals:
             const QString& source,
             const QString& category,
             const QString& language);
+    void progressFinished();
+    void modulesDownloadFinished();
 
 private slots:
     void slotStopInstall();

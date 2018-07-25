@@ -68,6 +68,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/BookmarkManager.qml \
     ../../../src/mobile/qml/BtButtonStyle.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
+    ../../../src/mobile/qml/ContinueDialog.qml \
     ../../../src/mobile/qml/BookIcon.qml \
     ../../../src/mobile/qml/ChooseReference.qml \
     ../../../src/mobile/qml/CopyVerses.qml \
@@ -78,6 +79,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/GridChooser.qml \
     ../../../src/mobile/qml/GridChooserButton.qml \
     ../../../src/mobile/qml/InformationDialog.qml \
+    ../../../src/mobile/qml/InstallAutomatic.qml \
     ../../../src/mobile/qml/InstallManagerChooser.qml \
     ../../../src/mobile/qml/KeyNameChooser.qml \
     ../../../src/mobile/qml/Left.qml \

@@ -10,6 +10,7 @@
 *
 **********/
 
+import QtQuick.Controls 1.4
 import QtQuick 2.2
 import QtQml 2.2
 import QtQml.Models 2.2
@@ -421,15 +422,56 @@ Window {
 
         background: btStyle.toolbarColor
         text: qsTr("BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally." +
-                   "There are currently no documents. Do you want to install documents now?")
+                   "There are currently no documents. Do you want to download documents now?")
         visible: false
-        z: 3
+        z: 4
         onFinished: {
             installManagerStartup.visible = false;
             if (answer == true) {
-                installManagerChooser.refreshOnOpen = true;
-                installModules();
+                basicWorks.visible = true;
             }
+        }
+    }
+
+    Question {
+        id: basicWorks
+
+        background: btStyle.toolbarColor
+        text: qsTr("Suggested documents are the ESV Bible, the KJV Bible, the StrongsGreek lexicon, and the StrongsHebrew lexicon." +
+              "Would you like to automatically download these documents?")
+        visible: false
+        z: 4
+        onFinished: {
+            basicWorks.visible = false;
+            if (answer == true) {
+                installAutomatic.visible = true;
+            } else {
+                continueDialog.visible = true;
+            }
+        }
+    }
+
+    ContinueDialog {
+        id: continueDialog
+
+        background: btStyle.toolbarColor
+        text: qsTr("The \"Manage Installed Documents\" window will now be opened. You can open it later from the menus at the upper right of the Main view.")
+        visible: false
+        z: 3
+        onFinished: {
+            continueDialog.visible = false;
+            installManagerChooser.refreshOnOpen = true;
+            installModules();
+        }
+    }
+
+    InstallAutomatic {
+        id: installAutomatic
+
+        visible: false
+        z: 1
+        onFinished: {
+            windowManager.newWindowWithReference("ESV2011", "John 1:1");
         }
     }
 
@@ -599,11 +641,13 @@ Window {
                 function loadDefaultSession() {
                     var windowList = getWindowList();
                     var count = windowList.length
-                    for (var i=0; i < count; ++i) {
-                        var window = windowList[i];
-                        var modules = getWindowModuleList(window);
-                        var key = getWindowKey(window);
-                        windowManager.openWindow("", modules, key);
+                    if (installInterface.installedModulesCount() > 0) {
+                        for (var i=0; i < count; ++i) {
+                            var window = windowList[i];
+                            var modules = getWindowModuleList(window);
+                            var key = getWindowKey(window);
+                            windowManager.openWindow("", modules, key);
+                        }
                     }
                     var color = getColorTheme();
                     btStyle.setStyle(color);
