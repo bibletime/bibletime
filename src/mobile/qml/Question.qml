@@ -55,7 +55,7 @@ Rectangle {
         Text {
             id: questionTitle
 
-            color: btStyle.textColor
+            color: btStyle.toolbarTextColor
             font.pointSize: btStyle.uiFontPointSize * 1.1
             text: qsTr("BibleTime Mobile")
             anchors.left: logo.right

@@ -44,7 +44,8 @@ InstallInterface::InstallInterface() :
     m_progressVisible(false),
     m_progressMin(0),
     m_progressMax(0),
-    m_progressValue(0) {
+    m_progressValue(0),
+    m_wasCanceled(false) {
 }
 
 void InstallInterface::setup() {
@@ -324,6 +325,8 @@ void InstallInterface::refreshLists(
         const QString& source,
         const QString& category,
         const QString& language) {
+    m_wasCanceled = false;
+    emit wasCanceledChanged();
     m_tempSource = source;
     m_tempCategory = category;
     m_tempLanguage = language;
@@ -352,8 +355,12 @@ void InstallInterface::runThread() {
 }
 
 void InstallInterface::cancel() {
-    if (m_thread)
+    m_wasCanceled = true;
+    emit wasCanceledChanged();
+    if (m_thread) {
         m_thread->stopInstall();
+        while (!m_thread->wait()) /* join */;
+    }
     if (m_worker)
         m_worker->cancel();
     setProgressVisible(false);
@@ -366,6 +373,8 @@ void InstallInterface::installModules() {
     QString destination = getSourcePath();
     if (destination.isEmpty())
         return;
+    m_wasCanceled = false;
+    emit wasCanceledChanged();
     setProgressVisible(true);
     setProgressMin(0.0);
     setProgressMax(100.0);
@@ -441,6 +450,9 @@ void InstallInterface::slotOneItemCompleted(int /* moduleIndex */, bool /* succe
 void InstallInterface::slotThreadFinished() {
     setProgressVisible(false);
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
+    if (m_wasCanceled) {
+        return;
+    }
     emit modulesDownloadFinished();
 }
 
@@ -541,6 +553,9 @@ void InstallInterface::setProgressText(const QString& value) {
     progressTextChanged();
 }
 
+bool InstallInterface::getWasCanceled() {
+    return m_wasCanceled;
 }
 
+}
 
