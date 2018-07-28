@@ -26,6 +26,7 @@ Rectangle {
     color: btStyle.textBackgroundColor
     border.color: btStyle.textColor
     border.width: 5
+    radius: btStyle.pixelsPerMillimeterX * 3
 
     signal cancel()
 

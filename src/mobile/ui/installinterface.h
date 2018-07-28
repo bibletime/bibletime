@@ -42,6 +42,8 @@ class InstallInterface : public QObject {
     Q_PROPERTY(qreal progressValue  READ progressValue   NOTIFY progressValueChanged)
     Q_PROPERTY(QString progressText READ progressText    NOTIFY progressTextChanged)
 
+    Q_PROPERTY(bool wasCanceled READ getWasCanceled NOTIFY wasCanceledChanged)
+
 public:
     InstallInterface();
 
@@ -103,6 +105,8 @@ public:
     void setProgressValue(qreal value);
     void setProgressText(const QString& value);
 
+    bool getWasCanceled();
+
 signals:
     void sourceModelChanged();
     void categoryModelChanged();
@@ -120,6 +124,7 @@ signals:
             const QString& language);
     void progressFinished();
     void modulesDownloadFinished();
+    void wasCanceledChanged();
 
 private slots:
     void slotStopInstall();
@@ -142,6 +147,7 @@ private:
     CSwordBackend* m_backend;
     BtInstallThread* m_thread;
     InstallSources* m_worker;
+    bool m_wasCanceled;
     int m_nextInstallIndex;
     bool m_progressVisible;
     qreal m_progressMin;
