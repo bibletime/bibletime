@@ -24,11 +24,12 @@ ButtonStyle {
 
     background: Rectangle {
         border.width: 2
-        border.color: "black"
+        border.color: "gray"
         radius: btStyle.pixelsPerMillimeterX
+        color: btStyle.textBackgroundColor
         gradient: Gradient {
-            GradientStop { position: 0 ; color: !control.checked ? "#bbb" : "#fff" }
-            GradientStop { position: 1 ; color: !control.checked ? "#555" : "#999" }
+            GradientStop { position: 0 ; color: !control.checked ? btStyle.buttonGradient0 : btStyle.buttonGradient1 }
+            GradientStop { position: 1 ; color: !control.checked ? btStyle.buttonGradient2 : btStyle.buttonGradient3 }
         }
     }
 
@@ -37,7 +38,7 @@ ButtonStyle {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: btStyle.uiFontPointSize
-        color: "black"
+        color: !control.checked ? btStyle.textColor : btStyle.textBackgroundColor
         text: control.text
         font.bold: btButtonStyle.bold
         font.italic: btButtonStyle.italic
