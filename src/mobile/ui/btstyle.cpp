@@ -120,10 +120,11 @@ void BtStyle::setCurrentStyle(int style) {
         setButtonHighlightedText(QColor(255,255,0));
         setButtonBorder(QColor(110,110,110));
         setButtonRadius(3);
-        setButtonGradient0(QColor(125,125,125));
-        setButtonGradient1(QColor(60,60,60));
-        setButtonGradient2(QColor(50,50,50));
-        setButtonGradient3(QColor(20,20,20));
+
+        setButtonGradient0(QColor(90,90,90));
+        setButtonGradient1(QColor(255,255,255));
+        setButtonGradient2(QColor(0,0,0));
+        setButtonGradient3(QColor(100,100,100));
 
         setWindowTab(QColor(100,100,100));
         setWindowTabSelected(QColor(218,165,3));
@@ -160,10 +161,11 @@ void BtStyle::setCurrentStyle(int style) {
         setButtonHighlightedText(QColor(0,0,255));
         setButtonBorder(QColor(80,80,0));
         setButtonRadius(3);
-        setButtonGradient0(QColor(180,180,255));
-        setButtonGradient1(QColor(255,255,255));
-        setButtonGradient2(QColor(255,255,255));
-        setButtonGradient3(QColor(180,180,255));
+
+        setButtonGradient0(QColor(255,255,255));
+        setButtonGradient1(QColor(140,140,140));
+        setButtonGradient2(QColor(190,190,190));
+        setButtonGradient3(QColor(0,0,0));
 
         setWindowTab(QColor(225,225,225));
         setWindowTabSelected(QColor(55,55,160));
@@ -200,10 +202,11 @@ void BtStyle::setCurrentStyle(int style) {
         setButtonHighlightedText(QColor(0,0,255));
         setButtonBorder(QColor(80,80,0));
         setButtonRadius(3);
-        setButtonGradient0(QColor(180,180,255));
-        setButtonGradient1(QColor(255,255,255));
-        setButtonGradient2(QColor(255,255,255));
-        setButtonGradient3(QColor(180,180,255));
+
+        setButtonGradient0(QColor(255,255,255));
+        setButtonGradient1(QColor(140,140,140));
+        setButtonGradient2(QColor(190,190,190));
+        setButtonGradient3(QColor(0,0,0));
 
         setWindowTab(QColor(225,225,225));
         setWindowTabSelected(QColor(255,215,0));

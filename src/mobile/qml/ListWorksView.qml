@@ -152,30 +152,11 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: 10
-                width: dummyTextForHeight.width*1.1
+                width: dummyTextForHeight.width*1.5
                 height: dummyTextForHeight.height*1.5
 
                 checkable: true;
-                style: ButtonStyle {
-                    id: buttonStyle
-
-                    background: Rectangle {
-                        implicitWidth: 100
-                        implicitHeight: 25
-                        border.width: manageButton.checked ? 4 : 1
-                        border.color: manageButton.checked ? "black" : "#777"
-                        radius: 4
-
-                        gradient: manageButton.buttonGradient
-                    }
-                    label: Text {
-                        anchors.centerIn: parent
-                        verticalAlignment: Text.AlignVCenter
-                        horizontalAlignment: Text.AlignHCenter
-                        font.pointSize: btStyle.uiFontPointSize -1
-                        color: "black"
-                        text: control.text
-                    }
+                style: BtButtonStyle {
                 }
             }
 

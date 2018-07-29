@@ -208,17 +208,7 @@ Rectangle {
         anchors.topMargin: btStyle.pixelsPerMillimeterX * 2
         anchors.horizontalCenter: parent.horizontalCenter
         height: copyVerses.rowHeight
-        style: ButtonStyle {
-            label: Text {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.right: background.right
-                color: "black"
-                font.pointSize: btStyle.uiFontPointSize
-                horizontalAlignment: Text.AlignHCenter
-                text: control.text
-                verticalAlignment: Text.AlignVCenter
-            }
+        style: BtButtonStyle {
         }
         visible: ! copyVerses.showError
         width: btStyle.pixelsPerMillimeterY * 25
