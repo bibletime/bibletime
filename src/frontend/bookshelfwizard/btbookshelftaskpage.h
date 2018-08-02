@@ -35,6 +35,7 @@ public: /* Methods: */
 
 private: /* Methods: */
 
+    bool timeToUpdate() const;
     void retranslateUi();
 
 private: /* Fields: */
