@@ -30,8 +30,8 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
 {
     setWindowIcon(CResMgr::searchdialog::icon());
 
-    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    QHBoxLayout *hboxLayout = new QHBoxLayout();
+    auto vboxLayout = new QVBoxLayout(this);
+    auto hboxLayout = new QHBoxLayout();
 
     m_autoDeleteOrphanedIndicesBox = new QCheckBox(this);
     vboxLayout->addWidget(m_autoDeleteOrphanedIndicesBox);
@@ -39,7 +39,8 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
     m_moduleList = new QTreeWidget(this);
     vboxLayout->addWidget(m_moduleList);
 
-    QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    auto spacerItem =
+            new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
     hboxLayout->addItem(spacerItem);
 
     m_deleteButton = new QPushButton(this);
@@ -58,10 +59,13 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
 
     // configure the list view
     m_moduleList->setRootIsDecorated(true);
-    m_moduleList->setColumnWidth(0, util::tool::mWidth(m_moduleList, 20) );
+    m_moduleList->setColumnWidth(0, util::tool::mWidth(m_moduleList, 20));
     m_moduleList->setSortingEnabled(false);
 
-    m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
+    m_autoDeleteOrphanedIndicesBox->setChecked(
+                btConfig().value<bool>("settings/behaviour/"
+                                            "autoDeleteOrphanedIndices",
+                                       true));
 
     // connect our signals/slots
     BT_CONNECT(m_createButton, &QPushButton::clicked,
@@ -78,42 +82,36 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
     retranslateUi(); // also calls populateModuleList();
 }
 
-void BtIndexDialog::autoDeleteOrphanedIndicesChanged(int newState) {
-    btConfig().setValue("settings/behaviour/autoDeleteOrphanedIndices",
-                        newState == Qt::Checked);
-}
-
 /** Populates the module list with installed modules and orphaned indices */
 void BtIndexDialog::populateModuleList() {
-    typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
-
     m_moduleList->clear();
 
     // populate installed modules
     m_modsWithIndices = new QTreeWidgetItem(m_moduleList);
     m_modsWithIndices->setText(0, tr("Indexed Works"));
-    m_modsWithIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+    m_modsWithIndices->setFlags(Qt::ItemIsUserCheckable
+                                | Qt::ItemIsEnabled
+                                | Qt::ItemIsTristate);
     m_modsWithIndices->setExpanded(true);
 
     m_modsWithoutIndices = new QTreeWidgetItem(m_moduleList);
     m_modsWithoutIndices->setText(0, tr("Unindexed Works"));
-    m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+    m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable
+                                   | Qt::ItemIsEnabled
+                                   | Qt::ItemIsTristate);
     m_modsWithoutIndices->setExpanded(true);
 
-    const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
-    for (MLCI it(modules.begin()); it != modules.end(); ++it) {
-        QTreeWidgetItem* item = nullptr;
-
-        if ((*it)->hasIndex()) {
-            item = new QTreeWidgetItem(m_modsWithIndices);
-            item->setText(0, (*it)->name());
-            item->setText(1, tr("%1 KiB").arg((*it)->indexSize() / 1024));
+    auto const & modules = CSwordBackend::instance()->moduleList();
+    for (auto const & modulePtr : modules) {
+        if (modulePtr->hasIndex()) {
+            auto item = new QTreeWidgetItem(m_modsWithIndices);
+            item->setText(0, modulePtr->name());
+            item->setText(1, tr("%1 KiB").arg(modulePtr->indexSize() / 1024));
             item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
             item->setCheckState(0, Qt::Unchecked);
-        }
-        else {
-            item = new QTreeWidgetItem(m_modsWithoutIndices);
-            item->setText(0, (*it)->name());
+        } else {
+            auto item = new QTreeWidgetItem(m_modsWithoutIndices);
+            item->setText(0, modulePtr->name());
             item->setText(1, tr("0 KiB"));
             item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
             item->setCheckState(0, Qt::Checked);
@@ -122,11 +120,14 @@ void BtIndexDialog::populateModuleList() {
 }
 
 void BtIndexDialog::retranslateUi() {
-
     setWindowTitle(tr("Manage Search Indexes"));
 
-    m_autoDeleteOrphanedIndicesBox->setToolTip(tr("If selected, those indexes which have no corresponding work will be deleted when BibleTime starts"));
-    m_autoDeleteOrphanedIndicesBox->setText(tr("Automatically delete orphaned indexes when BibleTime starts"));
+    m_autoDeleteOrphanedIndicesBox->setToolTip(
+                tr("If selected, those indexes which have no corresponding "
+                   "work will be deleted when BibleTime starts"));
+    m_autoDeleteOrphanedIndicesBox->setText(
+                tr("Automatically delete orphaned indexes when BibleTime "
+                   "starts"));
 
     m_deleteButton->setToolTip(tr("Delete the selected indexes"));
     m_deleteButton->setText(tr("Delete"));
@@ -136,14 +137,19 @@ void BtIndexDialog::retranslateUi() {
     m_createButton->setToolTip(tr("Create new indexes for the selected works"));
     m_createButton->setText(tr("Create..."));
 
-    m_moduleList->setHeaderLabels( (QStringList(tr("Work")) << tr("Index size")) );
+    m_moduleList->setHeaderLabels(QStringList(tr("Work")) << tr("Index size"));
 
     populateModuleList();
 }
 
+void BtIndexDialog::autoDeleteOrphanedIndicesChanged(int newState) {
+    btConfig().setValue("settings/behaviour/autoDeleteOrphanedIndices",
+                        newState == Qt::Checked);
+}
+
 /** Creates indices for selected modules if no index currently exists */
 void BtIndexDialog::createIndices() {
-    QList<CSwordModuleInfo*> moduleList;
+    QList<CSwordModuleInfo *> moduleList;
 
     auto & backend = *CSwordBackend::instance();
     for (int i = 0; i < m_modsWithoutIndices->childCount(); ++i) {
@@ -154,8 +160,7 @@ void BtIndexDialog::createIndices() {
         }
     }
 
-    //Shows the progress dialog
-    if (!moduleList.isEmpty()) {
+    if (!moduleList.isEmpty()) { // This also shows the progress dialog
         BtModuleIndexDialog::indexAllModules(moduleList);
         populateModuleList();
     }
@@ -182,7 +187,4 @@ void BtIndexDialog::deleteIndices() {
         populateModuleList();
 }
 
-void BtIndexDialog::slotSwordSetupChanged() {
-    populateModuleList();
-}
-
+void BtIndexDialog::slotSwordSetupChanged() { populateModuleList(); }
