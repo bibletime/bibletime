@@ -13,8 +13,6 @@
 #define BTINDEXDIALOG_H
 
 #include <QDialog>
-#include <QObject>
-#include <QString>
 
 
 class QCheckBox;
