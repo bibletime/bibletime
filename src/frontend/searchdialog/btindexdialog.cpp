@@ -139,21 +139,19 @@ void BtIndexDialog::retranslateUi() {
 
 /** Creates indices for selected modules if no index currently exists */
 void BtIndexDialog::createIndices() {
-    bool indicesCreated = false;
     QList<CSwordModuleInfo*> moduleList;
 
-    for (int i = 0; i < m_modsWithoutIndices->childCount(); i++) {
+    auto & backend = *CSwordBackend::instance();
+    for (int i = 0; i < m_modsWithoutIndices->childCount(); ++i) {
         if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {
-            CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(m_modsWithoutIndices->child(i)->text(0).toUtf8());
-            if (module) {
-                moduleList.append( module );
-                indicesCreated = true;
-            }
+            if (auto * module = backend.findModuleByName(
+                    m_modsWithoutIndices->child(i)->text(0).toUtf8()))
+                moduleList.append(module);
         }
     }
 
     //Shows the progress dialog
-    if (indicesCreated) {
+    if (!moduleList.isEmpty()) {
         BtModuleIndexDialog::indexAllModules(moduleList);
         populateModuleList();
     }
