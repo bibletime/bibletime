@@ -35,7 +35,6 @@ class BtIndexDialog: public QDialog {
 public:
 
     BtIndexDialog(QDialog *parent = nullptr);
-    ~BtIndexDialog();
 
 public slots:
     void slotSwordSetupChanged();
@@ -58,6 +57,10 @@ public slots:
         * Deletes indices for selected modules
         */
     void deleteIndices();
+
+private slots:
+
+    void autoDeleteOrphanedIndicesChanged(int newState);
 
 private:
 

@@ -72,12 +72,15 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
                this,           SLOT(close()));
     BT_CONNECT(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
                this,                      SLOT(slotSwordSetupChanged()));
+    BT_CONNECT(m_autoDeleteOrphanedIndicesBox, SIGNAL(stateChanged(int)),
+               this,                           SLOT(autoDeleteOrphanedIndicesChanged(int)));
 
     retranslateUi(); // also calls populateModuleList();
 }
 
-BtIndexDialog::~BtIndexDialog() {
-    btConfig().setValue("settings/behaviour/autoDeleteOrphanedIndices", m_autoDeleteOrphanedIndicesBox->isChecked() );
+void BtIndexDialog::autoDeleteOrphanedIndicesChanged(int newState) {
+    btConfig().setValue("settings/behaviour/autoDeleteOrphanedIndices",
+                        newState == Qt::Checked);
 }
 
 /** Populates the module list with installed modules and orphaned indices */
