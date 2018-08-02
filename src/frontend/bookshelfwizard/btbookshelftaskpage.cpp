@@ -10,6 +10,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfwizard/btbookshelftaskpage.h"
+#include "frontend/bookshelfwizard/btbookshelfwizard.h"
 
 #include <QApplication>
 #include <QDate>
@@ -17,11 +18,6 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QVBoxLayout>
-
-
-namespace {
-QString const lastUpdate = "GUI/BookshelfWizard/lastUpdate";
-} // anonymous namespace
 
 
 BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)
@@ -104,16 +100,12 @@ void BtBookshelfTaskPage::retranslateUi() {
                                     "Remove installed works"));
 }
 
-static bool timeToUpdate() {
+bool BtBookshelfTaskPage::timeToUpdate() const {
     BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
     if (bookshelfModel->moduleList().empty())
         return true;
-    QDate const lastDate = btConfig().value<QDate>(lastUpdate);
-    if (!lastDate.isValid())
-        return true;
-    if (QDate::currentDate().toJulianDay() - lastDate.toJulianDay() > 7)
-        return true;
-    return false;
+
+    return btWizard().autoUpdateSources();
 }
 
 int BtBookshelfTaskPage::nextId() const {

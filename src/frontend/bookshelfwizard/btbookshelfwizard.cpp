@@ -30,6 +30,7 @@ namespace {
 QString const GeometryKey = "GUI/BookshelfWizard/geometry";
 QString const SourcesKey = "GUI/BookshelfWizard/sources";
 QString const LanguagesKey = "GUI/BookshelfWizard/languages";
+bool autoSourcesUpdate = true;
 } // anonymous namespace
 
 BtBookshelfWizard::BtBookshelfWizard(QWidget * parent, Qt::WindowFlags flags)
@@ -133,6 +134,14 @@ QString BtBookshelfWizard::installPath() const {
         return m_installWorksPage->installPath();
     BT_ASSERT(iType == WizardTaskType::updateWorks);
     return m_updateWorksPage->installPath();
+}
+
+void BtBookshelfWizard::setAutoUpdateSources(bool value) {
+    autoSourcesUpdate = value;
+}
+
+bool BtBookshelfWizard::autoUpdateSources() {
+    return autoSourcesUpdate;
 }
 
 void BtBookshelfWizard::stopDownload() {

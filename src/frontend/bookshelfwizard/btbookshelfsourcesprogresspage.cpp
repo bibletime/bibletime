@@ -24,10 +24,6 @@
 #include "util/btconnect.h"
 
 
-namespace {
-QString const lastUpdate = "GUI/BookshelfWizard/lastUpdate";
-}
-
 BtBookshelfSourcesProgressPage::BtBookshelfSourcesProgressPage(QWidget * parent)
     : BtBookshelfWizardPage(parent)
 {
@@ -122,7 +118,7 @@ bool BtBookshelfSourcesProgressPage::isComplete() const
 void BtBookshelfSourcesProgressPage::slotThreadFinished() {
     m_stopButton->setDisabled(true);
     if (m_thread->finishedSuccessfully())
-        btConfig().setValue<QDate>(lastUpdate, QDate::currentDate());
+        btWizard().setAutoUpdateSources(false);
     m_installCompleted = true;
     emit QWizardPage::completeChanged();
     btWizard().downloadFinished();
