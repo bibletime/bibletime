@@ -25,6 +25,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "frontend/bibletimeapp.h"
 #include "frontend/btmoduleindexdialog.h"
+#include "frontend/searchdialog/btindexdialog.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "frontend/messagedialog.h"
@@ -73,6 +74,12 @@ void CSearchDialog::openDialog(const BtConstModuleList modules,
 void CSearchDialog::closeDialog() {
     if (m_staticDialog != nullptr)
         m_staticDialog->closeButtonClicked();
+}
+
+void CSearchDialog::manageIndexesButtonClicked() {
+
+    BtIndexDialog dlg(this);
+    dlg.exec();
 }
 
 CSearchDialog* CSearchDialog::getSearchDialog() {
@@ -235,11 +242,16 @@ void CSearchDialog::initView() {
 
     QHBoxLayout* horizontalLayout = new QHBoxLayout();
 
+    QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    horizontalLayout->addItem(spacerItem);
+
     m_analyseButton = new QPushButton(tr("&Analyze results..."), nullptr);
     m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
-    QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
     horizontalLayout->addWidget(m_analyseButton);
-    horizontalLayout->addItem(spacerItem);
+
+    m_manageIndexes = new QPushButton(tr("&Manage Indexes..."), nullptr);
+    m_manageIndexes->setToolTip(tr("Recreate search indexes"));
+    horizontalLayout->addWidget(m_manageIndexes);
 
     m_closeButton = new QPushButton(this);
     m_closeButton->setText(tr("&Close"));
@@ -269,6 +281,8 @@ void CSearchDialog::initConnections() {
     BT_CONNECT(m_analyseButton, SIGNAL(clicked()),
                m_searchResultArea, SLOT(showAnalysis()));
 
+    BT_CONNECT(m_manageIndexes, SIGNAL(clicked()),
+               this, SLOT(manageIndexesButtonClicked()));
 }
 
 /** Resets the parts to the default. */
