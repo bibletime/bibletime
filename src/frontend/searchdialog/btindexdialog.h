@@ -31,48 +31,33 @@ class BtIndexDialog final: public QDialog {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
 
     BtIndexDialog(QDialog *parent = nullptr);
 
-public slots:
-    void slotSwordSetupChanged();
+private: /* Methods: */
 
-protected:
-
-    /**
-        * Populates the module list with installed modules and orphaned indices
-        */
     void populateModuleList();
-
     void retranslateUi();
-
-public slots:
-    /**
-        * Creates indices for selected modules if no index currently exists
-        */
-    void createIndices();
-    /**
-        * Deletes indices for selected modules
-        */
-    void deleteIndices();
 
 private slots:
 
     void autoDeleteOrphanedIndicesChanged(int newState);
+    void slotSwordSetupChanged();
+    void createIndices();
+    void deleteIndices();
 
-private:
+private: /* Fields: */
 
-    QCheckBox *m_autoDeleteOrphanedIndicesBox;
-    QTreeWidget *m_moduleList;
-    QPushButton *m_deleteButton;
-    QPushButton *m_createButton;
-    QPushButton *m_closeButton;
+    QCheckBox * m_autoDeleteOrphanedIndicesBox;
+    QTreeWidget * m_moduleList;
+    QPushButton * m_deleteButton;
+    QPushButton * m_createButton;
+    QPushButton * m_closeButton;
 
-    QTreeWidgetItem* m_modsWithIndices;
-    QTreeWidgetItem* m_modsWithoutIndices;
+    QTreeWidgetItem * m_modsWithIndices;
+    QTreeWidgetItem * m_modsWithoutIndices;
 
 };
 
-
-#endif
+#endif /* BTINDEXDIALOG_H */
