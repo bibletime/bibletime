@@ -27,8 +27,8 @@
 #include "util/tool.h"
 
 
-BtIndexDialog::BtIndexDialog(QDialog *parent)
-    : QDialog(parent)
+BtIndexDialog::BtIndexDialog(QWidget * parent, Qt::WindowFlags f)
+    : QDialog(parent, f)
 {
     setWindowIcon(CResMgr::searchdialog::icon());
 

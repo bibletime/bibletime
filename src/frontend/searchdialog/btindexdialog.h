@@ -31,7 +31,8 @@ class BtIndexDialog final: public QDialog {
 
 public: /* Methods: */
 
-    BtIndexDialog(QDialog *parent = nullptr);
+    BtIndexDialog(QWidget * parent = nullptr,
+                  Qt::WindowFlags f = Qt::WindowFlags());
 
 private: /* Methods: */
 
