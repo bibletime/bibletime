@@ -64,16 +64,16 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
     m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // connect our signals/slots
-    BT_CONNECT(m_createButton, SIGNAL(clicked()),
-               this,           SLOT(createIndices()));
-    BT_CONNECT(m_deleteButton, SIGNAL(clicked()),
-               this,           SLOT(deleteIndices()));
-    BT_CONNECT(m_closeButton, SIGNAL(clicked()),
-               this,           SLOT(close()));
-    BT_CONNECT(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-               this,                      SLOT(slotSwordSetupChanged()));
-    BT_CONNECT(m_autoDeleteOrphanedIndicesBox, SIGNAL(stateChanged(int)),
-               this,                           SLOT(autoDeleteOrphanedIndicesChanged(int)));
+    BT_CONNECT(m_createButton, &QPushButton::clicked,
+               this,           &BtIndexDialog::createIndices);
+    BT_CONNECT(m_deleteButton, &QPushButton::clicked,
+               this,           &BtIndexDialog::deleteIndices);
+    BT_CONNECT(m_closeButton, &QPushButton::clicked,
+               this,          &BtIndexDialog::close);
+    BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
+               this,  &BtIndexDialog::slotSwordSetupChanged);
+    BT_CONNECT(m_autoDeleteOrphanedIndicesBox, &QCheckBox::stateChanged,
+               this, &BtIndexDialog::autoDeleteOrphanedIndicesChanged);
 
     retranslateUi(); // also calls populateModuleList();
 }
