@@ -118,7 +118,7 @@ bool BtBookshelfSourcesProgressPage::isComplete() const
 void BtBookshelfSourcesProgressPage::slotThreadFinished() {
     m_stopButton->setDisabled(true);
     if (m_thread->finishedSuccessfully())
-        btWizard().setAutoUpdateSources(false);
+        BtBookshelfWizard::setAutoUpdateSources(false);
     m_installCompleted = true;
     emit QWizardPage::completeChanged();
     btWizard().downloadFinished();

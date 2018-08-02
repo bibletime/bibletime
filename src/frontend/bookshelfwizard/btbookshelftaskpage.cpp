@@ -105,7 +105,7 @@ bool BtBookshelfTaskPage::timeToUpdate() const {
     if (bookshelfModel->moduleList().empty())
         return true;
 
-    return btWizard().autoUpdateSources();
+    return BtBookshelfWizard::autoUpdateSources();
 }
 
 int BtBookshelfTaskPage::nextId() const {
