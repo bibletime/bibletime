@@ -10,9 +10,11 @@
 #include "frontend/searchdialog/btindexdialog.h"
 
 #include <QCheckBox>
-#include <QDir>
 #include <QHBoxLayout>
+#include <QList>
 #include <QPushButton>
+#include <QSpacerItem>
+#include <QStringList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
