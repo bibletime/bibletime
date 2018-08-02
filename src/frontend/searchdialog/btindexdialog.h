@@ -22,8 +22,6 @@ class QPushButton;
 class QTreeWidget;
 class QTreeWidgetItem;
 
-/** \todo add void retranslateUi(); */
-
 /**
 * This class encapsulates the "Manage search indices" page of the Bookshelf
 * Manager.  It allows for creation and deletion of search indicies for each
