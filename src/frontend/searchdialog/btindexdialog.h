@@ -16,8 +16,9 @@
 #include <QObject>
 #include <QString>
 
-class BtModuleManagerDialog;
+
 class QCheckBox;
+class QPushButton;
 class QTreeWidget;
 class QTreeWidgetItem;
 
