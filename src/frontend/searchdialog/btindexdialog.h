@@ -27,7 +27,7 @@ class QTreeWidgetItem;
 * Manager.  It allows for creation and deletion of search indicies for each
 * installed module.  It also allows for deletion of orphaned indices.
 */
-class BtIndexDialog: public QDialog {
+class BtIndexDialog final: public QDialog {
 
     Q_OBJECT
 
