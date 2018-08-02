@@ -20,6 +20,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btmoduleindexdialog.h"
+#include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -63,14 +64,14 @@ BtIndexDialog::BtIndexDialog(QDialog *parent)
     m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // connect our signals/slots
-    connect(m_createButton, SIGNAL(clicked()),
-            this,           SLOT(createIndices()));
-    connect(m_deleteButton, SIGNAL(clicked()),
-            this,           SLOT(deleteIndices()));
-    connect(m_closeButton, SIGNAL(clicked()),
-            this,           SLOT(close()));
-    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-            this,                      SLOT(slotSwordSetupChanged()));
+    BT_CONNECT(m_createButton, SIGNAL(clicked()),
+               this,           SLOT(createIndices()));
+    BT_CONNECT(m_deleteButton, SIGNAL(clicked()),
+               this,           SLOT(deleteIndices()));
+    BT_CONNECT(m_closeButton, SIGNAL(clicked()),
+               this,           SLOT(close()));
+    BT_CONNECT(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+               this,                      SLOT(slotSwordSetupChanged()));
 
     retranslateUi(); // also calls populateModuleList();
 }
