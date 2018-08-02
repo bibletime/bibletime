@@ -1,5 +1,5 @@
 2018-08-02 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix #137 
+    * Fix #137
     * Update sources first time bookshelf wizard is used per session.
     * add UI for deleting and creating search indexes.
 
@@ -13,10 +13,10 @@
     * Fix cmake build errors with Qt 5.11, fix some cmake warnings
 
 2018-03-03 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix bug #134, Bibletime crashes when clicking on "full syntax" 
+    * Fix bug #134, Bibletime crashes when clicking on "full syntax"
 
 2018-03-03 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix bug #132, Mag not always working with Hebrew / Strong 
+    * Fix bug #132, Mag not always working with Hebrew / Strong
 
 2018-02-03 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #119, Use recommended env var to get windows shared program data path.
