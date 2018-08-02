@@ -121,10 +121,13 @@ class CSearchDialog : public QDialog {
         */
         void initConnections();
 
+        void manageIndexesButtonClicked();
+
         void closeButtonClicked();
 
     private:
         QPushButton* m_analyseButton;
+        QPushButton* m_manageIndexes;
         QPushButton* m_closeButton;
         BtSearchResultArea* m_searchResultArea;
         BtSearchOptionsArea* m_searchOptionsArea;
