@@ -161,10 +161,12 @@ void BtIndexDialog::createIndices() {
 void BtIndexDialog::deleteIndices() {
     bool indicesDeleted = false;
 
-    for (int i = 0; i < m_modsWithIndices->childCount(); i++) {
+    auto & backend = *CSwordBackend::instance();
+    for (int i = 0; i < m_modsWithIndices->childCount(); ++i) {
         if (m_modsWithIndices->child(i)->checkState(0) == Qt::Checked) {
-            CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(m_modsWithIndices->child(i)->text(0).toUtf8());
-            if (module) {
+            if (auto * module = backend.findModuleByName(
+                                m_modsWithIndices->child(i)->text(0).toUtf8()))
+            {
                 module->deleteIndex();
                 indicesDeleted = true;
             }
@@ -172,9 +174,8 @@ void BtIndexDialog::deleteIndices() {
     }
 
     // repopulate the list if an action was taken
-    if (indicesDeleted) {
+    if (indicesDeleted)
         populateModuleList();
-    }
 }
 
 void BtIndexDialog::slotSwordSetupChanged() {
