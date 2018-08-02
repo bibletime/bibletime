@@ -38,7 +38,6 @@ char const buttonPropertyName[] = "BtBookshelfSourcesPageButtonProperty";
 constexpr bool const ButtonTagAdd = true;
 constexpr bool const ButtonTagRemove = false;
 QString const SourcesKey = "GUI/BookshelfWizard/sources";
-QString const lastUpdate = "GUI/BookshelfWizard/lastUpdate";
 QStringList const initialSelection{"CrossWire", "Bible.org", "Xiphos"};
 } // anonymous namespace
 

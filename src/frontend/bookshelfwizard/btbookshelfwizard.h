@@ -45,6 +45,9 @@ public: /* Methods: */
     WizardTaskType taskType() const;
     QString installPath() const;
 
+    void setAutoUpdateSources(bool value);
+    bool autoUpdateSources();
+
     BtBookshelfLanguagesPage & languagesPage() const noexcept {
         return *m_languagesPage;
     }
