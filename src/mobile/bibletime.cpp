@@ -37,9 +37,6 @@ void BibleTime::initBackends() {
     initSwordConfigFile();
 
     sword::StringMgr::setSystemStringMgr( new BtStringMgr() );
-    sword::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
-                                              ? sword::SWLog::LOG_DEBUG
-                                              : sword::SWLog::LOG_ERROR);
 
 #ifdef Q_OS_MACOS
     // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS

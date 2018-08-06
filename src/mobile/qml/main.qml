@@ -87,7 +87,9 @@ Window {
             installManagerChooser,
             keyNameChooser,
             treeChooser,
+            viewFile,
             aboutDialog,
+            debugDialog,
             uiFontPointSize,
             setFontDialog,
             copyVerses,
@@ -238,6 +240,12 @@ Window {
         id: chooseReference
     }
 
+    DebugDialog {
+        id: debugDialog
+
+        visible: false
+        z: 1
+    }
     Menus {
         id: colorThemeMenus
 
@@ -960,6 +968,13 @@ Window {
 
     VerseChooser {
         id: verseChooser
+    }
+
+    ViewFile{
+        id: viewFile
+
+        visible: false
+        z: 1
     }
 
     Menus {
