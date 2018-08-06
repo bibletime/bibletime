@@ -29,6 +29,10 @@ class ConfigInterface : public QObject {
 public:
     ConfigInterface();
 
+    Q_INVOKABLE QString getUserBaseDir();
+    Q_INVOKABLE QString getUserHomeSwordDir();
+    Q_INVOKABLE QString getWritableTmpDir();
+
     Q_INVOKABLE bool boolValue(const QString& configKey, bool defaultValue);
     Q_INVOKABLE void setBoolValue(const QString& configKey, bool value);
 

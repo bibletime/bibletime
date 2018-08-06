@@ -11,7 +11,8 @@
 **********/
 
 #include "configinterface.h"
-
+#include <QStandardPaths>
+#include "util/directory.h"
 
 namespace btm {
 
@@ -26,6 +27,18 @@ bool ConfigInterface::boolValue(const QString& configKey, bool defaultValue) {
 
 void ConfigInterface::setBoolValue(const QString& configKey, bool value) {
     btConfig().setValue(configKey, value);
+}
+
+QString ConfigInterface::getUserBaseDir() {
+    return util::directory::getUserBaseDir().absolutePath();
+}
+
+QString ConfigInterface::getUserHomeSwordDir() {
+    return util::directory::getUserHomeSwordDir().absolutePath();
+}
+
+QString ConfigInterface::getWritableTmpDir() {
+    return QStandardPaths::writableLocation(QStandardPaths::TempLocation);
 }
 
 }

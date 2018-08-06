@@ -65,6 +65,14 @@ Rectangle {
                 height: width
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "qrc:/share/bibletime/icons/bibletime.svg"
+
+                MouseArea {
+                    anchors.fill: parent
+                    onDoubleClicked: {
+                        aboutDialog.visible = false;
+                        debugDialog.visible = true;
+                    }
+                }
             }
 
             Text {

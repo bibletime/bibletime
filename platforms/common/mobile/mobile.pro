@@ -26,6 +26,7 @@ SOURCES += \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btmmoduletextfilter.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
+    ../../../src/mobile/ui/fileinterface.cpp \
     ../../../src/mobile/ui/indexthread.cpp \
     ../../../src/mobile/ui/installinterface.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     ../../../src/mobile/ui/configinterface.cpp \
     ../../../src/mobile/ui/chooserinterface.cpp \
     ../../../src/mobile/ui/treechoosermodel.cpp \
+    ../../../src/mobile/util/btmlog.cpp \
     ../../../src/mobile/util/messagedialog.cpp
 
 HEADERS += \
@@ -41,6 +43,7 @@ HEADERS += \
     ../../../src/mobile/bookshelfmanager/installsources.h \
     ../../../src/mobile/btmmain.h \
     ../../../src/mobile/config/btmconfig.h \
+    ../../../src/mobile/ui/fileinterface.h \
     ../../../src/mobile/ui/indexthread.h \
     ../../../src/mobile/models/roleitemmodel.h \
     ../../../src/mobile/models/searchmodel.h \
@@ -55,6 +58,7 @@ HEADERS += \
     ../../../src/mobile/ui/configinterface.h \
     ../../../src/mobile/ui/chooserinterface.h \
     ../../../src/mobile/ui/treechoosermodel.h \
+    ../../../src/mobile/util/btmlog.h \
     ../../../src/mobile/util/messagedialog.h 
 
 OTHER_FILES += \
@@ -108,6 +112,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/TitleColorBar.qml \
     ../../../src/mobile/qml/TreeChooser.qml \
     ../../../src/mobile/qml/VerseChooser.qml \
+    ../../../src/mobile/qml/ViewFile.qml \
     ../../../src/mobile/qml/Window.qml \
     ../../../src/mobile/qml/WindowManager.qml \
 
