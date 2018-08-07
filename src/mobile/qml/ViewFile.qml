@@ -42,7 +42,7 @@ Rectangle {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            text: qsTranslate("Navigation", "Debug")
+            text: "Debug"
             onClicked: {
                 viewFile.visible = false;
                 debugDialog.visible = true;
