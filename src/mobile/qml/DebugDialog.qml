@@ -83,7 +83,7 @@ Rectangle {
                     anchors.leftMargin: btStyle.pixelsPerMillimeterX * 2
                     anchors.verticalCenter: bibletimeDebugMode.verticalCenter
                     color: btStyle.textColor
-                    text: qsTr("BibleTime Debug Mode")
+                    text: "BibleTime Debug Mode"
                     font.pointSize: btStyle.uiFontPointSize
                 }
 
@@ -113,7 +113,7 @@ Rectangle {
                     anchors.leftMargin: btStyle.pixelsPerMillimeterX * 2
                     anchors.verticalCenter: swordDebugMode.verticalCenter
                     color: btStyle.textColor
-                    text: qsTr("Sword Debug Mode")
+                    text: "Sword Debug Mode"
                     font.pointSize: btStyle.uiFontPointSize
                 }
 
@@ -189,7 +189,7 @@ Rectangle {
                     anchors.left: parent.left
                     anchors.leftMargin: btStyle.pixelsPerMillimeterX * 2
                     anchors.verticalCenter: parent.verticalCenter
-                    text: qsTr("File Browser")
+                    text: "File Browser"
                     onClicked: {
                         debugDialog.visible = false;
                         viewFile.open();
