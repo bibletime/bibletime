@@ -1,8 +1,4 @@
 
-
-QMAKE_FULL_VERSION = 300
-QMAKE_SHORT_VERSION = 3.00
-
 CONFIG += qtquickcompiler
 
 include(../../common/mobile/mobile.pro)

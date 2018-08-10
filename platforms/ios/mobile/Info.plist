@@ -9,11 +9,11 @@
 	<key>CFBundleDisplayName</key>
 	<string>BibleTime Mobile</string>
 	<key>CFBundleVersion</key>
-	<string>${QMAKE_FULL_VERSION}</string>
+        <string>300</string>
 	<key>CFBundleShortVersionString</key>
-	<string>${QMAKE_SHORT_VERSION}</string>
+        <string>3.00</string>
 	<key>MinimumOSVersion</key>
-	<string>${IPHONEOS_DEPLOYMENT_TARGET}</string>
+        <string>${IPHONEOS_DEPLOYMENT_TARGET}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
