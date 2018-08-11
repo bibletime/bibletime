@@ -27,6 +27,30 @@ Rectangle {
 
     signal finished
 
+    function getAutoInstallDocumentNames(lang) {
+        if (lang === "pt_PT") {
+            return ["PorCap"];
+        } else {
+            return ["ESV2011", "StrongsGreek", "StrongsHebrew"]
+        }
+    }
+
+    function getAutoInstallDocumentSources(lang) {
+        if (lang === "pt_PT") {
+            return ["CrossWire"];
+        } else {
+            return ["CrossWire", "CrossWire", "CrossWire"]
+        }
+    }
+
+    function getAutoInstallReference(lang) {
+        if (lang === "pt_PT") {
+            return ["PorCap", "John 1:1"];
+        } else {
+            return ["ESV2011", "John 1:1"]
+        }
+    }
+
     function install() {
         installInterface.progressFinished.connect(autoModuleInstall);
         installInterface.refreshLists("","","");
@@ -39,10 +63,14 @@ Rectangle {
             return;
         }
         installInterface.clearModules();
-        installInterface.addModule("CrossWire","ESV2011");
-        installInterface.addModule("CrossWire","KJV");
-        installInterface.addModule("CrossWire","StrongsGreek");
-        installInterface.addModule("CrossWire","StrongsHebrew");
+
+        var lang = btStyle.systemLocale;
+        var names = getAutoInstallDocumentNames(lang);
+        var sources = getAutoInstallDocumentSources(lang);
+
+        for (var i = 0; i < names.length; i++)
+            installInterface.addModule(sources[i], names[i]);
+
         installInterface.installModulesAuto();
         installInterface.modulesDownloadFinished.disconnect(openFirstWindow);
         installInterface.modulesDownloadFinished.connect(openFirstWindow);

@@ -445,8 +445,24 @@ Window {
         id: basicWorks
 
         background: btStyle.toolbarColor
-        text: qsTr("Suggested documents are the ESV Bible, the KJV Bible, the StrongsGreek lexicon, and the StrongsHebrew lexicon." +
-              "Would you like to automatically download these documents?")
+        text: {
+            var lang = btStyle.systemLocale;
+            var names = installAutomatic.getAutoInstallDocumentNames(lang);
+
+            var message;
+            if (names.length === 1) {
+                message = qsTr("A suggested document to download is") + " " + names[0] + ".";
+                message += "<br><br>" + qsTr("Would you like to automatically download this document?");
+            } else {
+                message = qsTr("Suggested documents to download are:");
+                for (var i = 0; i < names.length; i++ ) {
+                    message += "<br>" + names[i];
+                }
+                message += "<br><br>" + qsTr("Would you like to automatically download these documents?");
+            }
+            console.log(lang);
+            return message;
+        }
         visible: false
         z: 4
         onFinished: {
@@ -479,7 +495,9 @@ Window {
         visible: false
         z: 1
         onFinished: {
-            windowManager.newWindowWithReference("ESV2011", "John 1:1");
+            var lang = btStyle.systemLocale;
+            var reference = installAutomatic.getAutoInstallReference(lang);
+            windowManager.newWindowWithReference(reference[0], reference[1]);
         }
     }
 

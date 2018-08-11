@@ -68,6 +68,7 @@ class BtStyle : public QObject {
     Q_PROPERTY(QString qtVersion             READ getQtVersion         NOTIFY versionChanged);
     Q_PROPERTY(QString swordVersion          READ getSwordVersion      NOTIFY versionChanged);
 
+    Q_PROPERTY(QString systemLocale READ getSystemLocale NOTIFY systemLocaleChanged);
 
 public:
     Q_INVOKABLE void setStyle(int style);
@@ -182,11 +183,14 @@ public:
     QString getQtVersion() const;
     QString getSwordVersion() const;
 
+    QString getSystemLocale() const;
+
 signals:
     void changed();
     void versionChanged();
     void widthChanged();
     void heightChanged();
+    void systemLocaleChanged();
 };
 
 } // end namespace

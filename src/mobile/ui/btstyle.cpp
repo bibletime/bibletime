@@ -526,5 +526,9 @@ QString BtStyle::getSwordVersion() const {
     return  version;
 }
 
+QString BtStyle::getSystemLocale() const{
+    return QLocale::system().name();
+}
+
 } // end namespace
 
