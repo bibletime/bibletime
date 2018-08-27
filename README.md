@@ -1,4 +1,4 @@
-README for BibleTime [![Build Status](https://travis-ci.org/bibletime/bibletime.svg?branch=master)](https://travis-ci.org/bibletime/bibletime)
+README for BibleTime [![Build Status](https://travis-ci.org/bibletime/bibletime.svg?branch=master)](https://travis-ci.org/bibletime/bibletime)[![Packaging status](https://repology.org/badge/tiny-repos/bibletime.svg)](https://repology.org/metapackage/bibletime)
 ====================
 
 BibleTime is a Bible study application based on the Sword library and
