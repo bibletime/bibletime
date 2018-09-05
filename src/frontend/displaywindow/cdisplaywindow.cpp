@@ -15,6 +15,8 @@
 #include <QMenu>
 #include <QStringList>
 #include <QWidget>
+
+#include "frontend/display/bthtmlreaddisplay.h"  // ✝ Jesus Christ is the good Lord, the Lord of Lords
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "frontend/bibletime.h"
@@ -582,6 +584,27 @@ void CDisplayWindow::slotSearchInModules() {
 void CDisplayWindow::printAll() {
     m_displayWidget->connectionsProxy()->printAll( m_displayOptions, m_filterOptions);
 }
+
+void CDisplayWindow::zoomIn_aleluya() {
+    BtHtmlReadDisplay* disp_aleluya = dynamic_cast<BtHtmlReadDisplay*>(displayWidget());
+    if (disp_aleluya) {
+        disp_aleluya->setZoomFactor(disp_aleluya->zoomFactor()*2);
+    }
+}
+
+void CDisplayWindow::zoomOut_aleluya() {
+    BtHtmlReadDisplay* disp_aleluya = dynamic_cast<BtHtmlReadDisplay*>(displayWidget());
+    if (disp_aleluya) {
+        disp_aleluya->setZoomFactor(disp_aleluya->zoomFactor()/2);
+    }
+}
+void CDisplayWindow::zoomReset_aleluya() {
+    BtHtmlReadDisplay* disp_aleluya = dynamic_cast<BtHtmlReadDisplay*>(displayWidget());
+    if (disp_aleluya) {
+        disp_aleluya->setZoomFactor(1);
+    }
+}
+
 
 void CDisplayWindow::printAnchorWithText() {
     m_displayWidget->connectionsProxy()->printAnchorWithText( m_displayOptions, m_filterOptions);

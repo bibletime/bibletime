@@ -311,6 +311,10 @@ class CDisplayWindow : public QMainWindow {
 
         void printAll();
 
+        void zoomOut_aleluya();
+        void zoomIn_aleluya();
+        void zoomReset_aleluya(); //✝ Aleluya!
+
         void printAnchorWithText();
 
         void setFocusKeyChooser();

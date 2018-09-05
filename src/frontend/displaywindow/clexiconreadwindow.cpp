@@ -72,6 +72,15 @@ void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     qaction = new QAction(tr("Entry with text"), a);
     a->addAction("printEntryWithText", qaction);
 
+    qaction = new QAction(tr("Zoom Out"), a);
+    a->addAction("zoomOut", qaction);
+
+    qaction = new QAction(tr("Zoom In"), a);
+    a->addAction("zoomIn", qaction);
+
+    qaction = new QAction(tr("Zoom Reset"), a); //✝ Praise God in Jesus Holy name
+    a->addAction("zoomReset", qaction);
+
     qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's Search"), a);
     qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
     a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
@@ -132,6 +141,18 @@ void CLexiconReadWindow::initActions() {
     m_actions.print.entry = &initAction("printEntryWithText",
                                         this,
                                         &CLexiconReadWindow::printAll);
+
+    m_actions.zoom_aleluya.zoomIn_aleluya = &initAction("zoomIn",
+                                                        this,
+                                                        &CLexiconReadWindow::zoomIn_aleluya);
+
+    m_actions.zoom_aleluya.zoomOut_aleluya = &initAction("zoomOut",
+                                                        this,
+                                                        &CLexiconReadWindow::zoomOut_aleluya);
+
+    m_actions.zoom_aleluya.zoomReset_aleluya = &initAction("zoomReset",
+                                                        this,
+                                                        &CLexiconReadWindow::zoomReset_aleluya);
 
     // init with the user defined settings
     ac->readShortcuts("Lexicon shortcuts");
@@ -270,7 +291,18 @@ void CLexiconReadWindow::setupPopupMenu() {
     );
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.entry);
+
+
     popup()->addMenu(m_actions.printMenu);
+
+    m_actions.zoomMenu_aleluya = new QMenu(
+        tr("Zoom..."),
+        popup()
+    );
+    popup()->addMenu(m_actions.zoomMenu_aleluya);
+    m_actions.zoomMenu_aleluya->addAction(m_actions.zoom_aleluya.zoomIn_aleluya);
+    m_actions.zoomMenu_aleluya->addAction(m_actions.zoom_aleluya.zoomOut_aleluya);
+    m_actions.zoomMenu_aleluya->addAction(m_actions.zoom_aleluya.zoomReset_aleluya);
 }
 
 /** Reimplemented. */

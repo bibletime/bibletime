@@ -99,6 +99,14 @@ class CLexiconReadWindow : public CReadWindow  {
                 QAction* entry;
             }
             print;
+
+            QMenu* zoomMenu_aleluya;
+            struct {
+                QAction *zoomIn_aleluya;
+                QAction *zoomOut_aleluya;
+                QAction *zoomReset_aleluya;
+            }
+            zoom_aleluya;
         }
         m_actions;
 

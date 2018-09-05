@@ -93,6 +93,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
                 QAction* chapter;
             }
             print;
+
         }
         m_actions;
 
