@@ -120,6 +120,16 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 
     qaction = new QAction(tr("Reference with text"), a);
     a->addAction("saveReferenceWithText", qaction);
+
+
+    qaction = new QAction(tr("Zoom Out"), a);
+    a->addAction("zoomOut", qaction);
+
+    qaction = new QAction(tr("Zoom In"), a);
+    a->addAction("zoomIn", qaction);
+
+    qaction = new QAction(tr("Zoom Reset"), a); //✝ Praise God in Jesus Holy name
+    a->addAction("zoomReset", qaction);
 }
 
 void CBibleReadWindow::initActions() {
@@ -184,6 +194,19 @@ void CBibleReadWindow::initActions() {
     m_actions.print.chapter =
             &initAction("printChapter", this, &CBibleReadWindow::printAll);
 
+
+    m_actions.zoom_aleluya.zoomIn_aleluya = &initAction("zoomIn",
+                                                        this,
+                                                        &CLexiconReadWindow::zoomIn_aleluya);
+
+    m_actions.zoom_aleluya.zoomOut_aleluya = &initAction("zoomOut",
+                                                        this,
+                                                        &CLexiconReadWindow::zoomOut_aleluya);
+
+    m_actions.zoom_aleluya.zoomReset_aleluya = &initAction("zoomReset",
+                                                        this,
+                                                        &CLexiconReadWindow::zoomReset_aleluya);
+
     ac->readShortcuts("Bible shortcuts");
 }
 
@@ -241,6 +264,15 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.chapter);
     popup()->addMenu(m_actions.printMenu);
+
+    m_actions.zoomMenu_aleluya = new QMenu(
+        tr("Zoom..."),
+        popup()
+    );
+    popup()->addMenu(m_actions.zoomMenu_aleluya);
+    m_actions.zoomMenu_aleluya->addAction(m_actions.zoom_aleluya.zoomIn_aleluya);
+    m_actions.zoomMenu_aleluya->addAction(m_actions.zoom_aleluya.zoomOut_aleluya);
+    m_actions.zoomMenu_aleluya->addAction(m_actions.zoom_aleluya.zoomReset_aleluya);
 }
 
 /** Reimplemented. */
