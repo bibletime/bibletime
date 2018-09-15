@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh_TW">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_TW" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -543,58 +541,58 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>選擇從一種或多種語言來安裝</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="65"/>
         <source>Choose Remote Libraries</source>
         <translation>選擇遠程資源庫</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="68"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="67"/>
         <source>Choose one or more remote libraries to install works from.</source>
         <translation>選擇從一個或多個遠程資源庫安裝</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="82"/>
         <source>Updating Remote Libraries</source>
         <translation>正在更新遠程資源庫</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="88"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Updating information from remote libraries.</source>
         <translation>正在從遠程資源庫更新資訊</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="82"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="91"/>
         <source>Bookshelf Manager</source>
         <translation>書架管理員</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="80"/>
         <source>Install, update, or remove works on your bookshelf.</source>
         <translation>在書架安裝，更新或移除著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="87"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;警告&lt;/span&gt;: 安裝或更新著作需用網路。若您生活在一個信仰被逼迫的國家，您可能不想如此做。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="89"/>
         <source>Bookshelf task</source>
         <translation>書架任務</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="92"/>
         <source>Install additional works (uses internet)</source>
         <translation>安裝額外著作(需用網路)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="100"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
         <source>Update installed works (uses internet)</source>
         <translation>更新已安裝著作(需用網路)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="103"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
         <source>Remove installed works</source>
         <translation>移除已安裝著作</translation>
     </message>
@@ -629,12 +627,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>選擇移除一個或多個著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="93"/>
         <source>Canceling Downloads</source>
         <translation>取消下載</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="96"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
         <translation>當前下載完畢將關閉書架管理員</translation>
     </message>
@@ -995,27 +993,27 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfSourcesPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="125"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="124"/>
         <source>Remove</source>
         <translation>移除</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="135"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="134"/>
         <source>&lt; Add new remote library &gt;</source>
         <translation>&lt;新增遠程資源庫&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="136"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="182"/>
         <source>Delete Source</source>
         <translation>刪除資料</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="184"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
         <source>Do you really want to delete this source?</source>
         <translation>你真的想要刪除這個來源?</translation>
     </message>
@@ -1023,7 +1021,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfSourcesProgressPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="80"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
@@ -1386,7 +1384,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="73"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="77"/>
@@ -2011,52 +2009,52 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="83"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">書籤</translation>
+        <translation>書籤</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>New folder</source>
-        <translation type="unfinished">新資料夾</translation>
+        <translation>新資料夾</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯書籤...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>排序資料夾書籤...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>排序所有書籤...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
         <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出到資料夾...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
         <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>從資料夾匯出...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>列印書籤...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
+        <translation>移除選取的項目...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
@@ -2817,7 +2815,7 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>來源清單將從遠端伺服器下載. 來源將被加入到現有清單內.
@@ -2941,8 +2939,8 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="145"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>語音名稱</translation>
     </message>
     <message>
@@ -3040,11 +3038,6 @@ Do you want to continue?</source>
         <source>Chinantec, Quiotepec</source>
         <extracomment>Language name chq</extracomment>
         <translation>Chinantec, Quiotepec</translation>
-    </message>
-    <message>
-        <source>Chinantec, Ozumacu00edn</source>
-        <extracomment>Language name chz</extracomment>
-        <translation type="vanished">Chinantec, Ozumacu00edn</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
@@ -3302,30 +3295,25 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Itzu00e1</source>
-        <extracomment>Language name itz</extracomment>
-        <translation type="vanished">Itzu00e1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -3362,7 +3350,7 @@ Do you want to continue?</source>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3464,19 +3452,19 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3521,11 +3509,6 @@ Do you want to continue?</source>
         <translation>挪威文</translation>
     </message>
     <message>
-        <source>Otomi, Queru00e9taro</source>
-        <extracomment>Language name otq</extracomment>
-        <translation type="vanished">Otomi, Queru00e9taro</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="402"/>
         <source>Papiamento</source>
         <extracomment>Language name pap</extracomment>
@@ -3554,11 +3537,6 @@ Do you want to continue?</source>
         <source>Brazilian Portuguese</source>
         <extracomment>Language name pt_BR</extracomment>
         <translation>巴西葡萄牙文</translation>
-    </message>
-    <message>
-        <source>Quichu00e9, West Central</source>
-        <extracomment>Language name qut</extracomment>
-        <translation type="vanished">Quichu00e9, West Central</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="426"/>
@@ -3663,11 +3641,6 @@ Do you want to continue?</source>
         <translation>大溪地文</translation>
     </message>
     <message>
-        <source>Tzotzil, Zinacantu00e1n</source>
-        <extracomment>Language name tzz</extracomment>
-        <translation type="vanished">Tzotzil, Zinacantu00e1n</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="486"/>
         <source>Ukrainian</source>
         <extracomment>Language name uk</extracomment>
@@ -3707,13 +3680,13 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3725,7 +3698,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
@@ -3738,7 +3711,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3750,18 +3723,13 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
         <source>Yiddish</source>
         <extracomment>Language name yi</extracomment>
         <translation>Yiddish</translation>
-    </message>
-    <message>
-        <source>Zapotec, San Juan Guelavu00eda</source>
-        <extracomment>Language name zab</extracomment>
-        <translation type="vanished">Zapotec, San Juan Guelavu00eda</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="509"/>
@@ -3776,20 +3744,10 @@ Do you want to continue?</source>
         <translation>中文</translation>
     </message>
     <message>
-        <source>Zapotec, Amatlu00e1n</source>
-        <extracomment>Language name zpo</extracomment>
-        <translation type="vanished">Zapotec, Amatlu00e1n</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="515"/>
         <source>Zapotec, Zoogocho</source>
         <extracomment>Language name zpq</extracomment>
         <translation>Zapotec, Zoogocho</translation>
-    </message>
-    <message>
-        <source>Zapotec, Yalu00e1lag</source>
-        <extracomment>Language name zpu</extracomment>
-        <translation type="vanished">Zapotec, Yalu00e1lag</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="519"/>
@@ -3802,11 +3760,6 @@ Do you want to continue?</source>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
         <translation>Zapotec, Southern Rincon</translation>
-    </message>
-    <message>
-        <source>Zapotec, Quioquitani-Quieru00ed</source>
-        <extracomment>Language name ztq</extracomment>
-        <translation type="vanished">Zapotec, Quioquitani-Quieru00ed</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="525"/>
@@ -4027,12 +3980,6 @@ Do you want to continue?</source>
         <translation>Haitian Creole</translation>
     </message>
     <message>
-        <source>Kekchu00ed</source>
-        <comment>kek</comment>
-        <extracomment>Language name kek</extracomment>
-        <translation type="vanished">Kekchu00ed</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="359"/>
         <source>(Multiple languages)</source>
         <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
@@ -4043,11 +3990,6 @@ Do you want to continue?</source>
         <source>Mam, Central</source>
         <extracomment>Language name mvc</extracomment>
         <translation>Mam, Central</translation>
-    </message>
-    <message>
-        <source>Mam, Todos Santos Cuchumatu00e1n</source>
-        <extracomment>Language name mvj</extracomment>
-        <translation type="vanished">Mam, Todos Santos Cuchumatu00e1n</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="365"/>
@@ -4066,16 +4008,6 @@ Do you want to continue?</source>
         <source>Burmese</source>
         <extracomment>Language name my</extracomment>
         <translation>Burmese</translation>
-    </message>
-    <message>
-        <source>Norwegian Bokmu00e5l</source>
-        <extracomment>Language name nb</extracomment>
-        <translation type="vanished">Norwegian Bokmu00e5l</translation>
-    </message>
-    <message>
-        <source>Nahuatl, Michoacu00e1n</source>
-        <extracomment>Language name ncl</extracomment>
-        <translation type="vanished">Nahuatl, Michoacu00e1n</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="409"/>
@@ -4254,31 +4186,31 @@ Do you want to continue?</source>
         <translation>儲存</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
         <source>Back</source>
         <comment>Dialog Button</comment>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
         <source>Next</source>
         <comment>Dialog Button</comment>
         <translation>下</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
         <translation>承諾</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
@@ -4315,7 +4247,7 @@ Do you want to continue?</source>
         <translation>回復預設值</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="86"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
@@ -4878,7 +4810,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="181"/>

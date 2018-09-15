@@ -543,58 +543,58 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Scegli uno o più linguaggi per i quali vuoi installare dei libri.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="65"/>
         <source>Choose Remote Libraries</source>
         <translation>Scelta Librerie Remote</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="68"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="67"/>
         <source>Choose one or more remote libraries to install works from.</source>
         <translation>Scegli una o più librerie remote dalle quali vuoi installare dei libri.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="82"/>
         <source>Updating Remote Libraries</source>
         <translation>Aggiornamento Librerie Remote</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="88"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
         <source>Updating information from remote libraries.</source>
         <translation>Aggiornamento delle informazioni dalle librerie remote in corso.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="82"/>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="91"/>
         <source>Bookshelf Manager</source>
         <translation>Gestore Libreria</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="80"/>
         <source>Install, update, or remove works on your bookshelf.</source>
         <translation>Installa, aggiorna, o rimuovi libri dalla tua libreria.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="87"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ATTENZIONE&lt;/span&gt;: L&apos;installazione o l&apos;aggiornamento dei libri utilizza la connessione a internet. Se vivi in un paese dove vige la persecuzione contro i cristiani evita di farlo.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="89"/>
         <source>Bookshelf task</source>
         <translation>Lavoro libreria</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="92"/>
         <source>Install additional works (uses internet)</source>
         <translation>Installa altri libri (usa internet)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="100"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="96"/>
         <source>Update installed works (uses internet)</source>
         <translation>Aggiorna i libri installati (usa internet)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="103"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
         <source>Remove installed works</source>
         <translation>Rimuovi i libri installati</translation>
     </message>
@@ -629,12 +629,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Scegli uno o più libri da rimuovere.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="93"/>
         <source>Canceling Downloads</source>
         <translation>Annullamento Download.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="96"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
         <translation>La Gestione Libreria si chiuderà al termine dello scaricamento.</translation>
     </message>
@@ -995,27 +995,27 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfSourcesPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="125"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="124"/>
         <source>Remove</source>
         <translation>Rimuovi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="135"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="134"/>
         <source>&lt; Add new remote library &gt;</source>
         <translation>&lt; Aggiungi nuova libreria remota &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="136"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="182"/>
         <source>Delete Source</source>
         <translation>Elimina Fonte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="184"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="183"/>
         <source>Do you really want to delete this source?</source>
         <translation>Vuoi davvero eliminare questa fonte?</translation>
     </message>
@@ -1023,7 +1023,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfSourcesProgressPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="80"/>
         <source>Stop</source>
         <translation>Ferma</translation>
     </message>
@@ -4253,31 +4253,31 @@ Vuoi continuare?</translation>
         <translation>Salva</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="80"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
         <source>Back</source>
         <comment>Dialog Button</comment>
         <translation>Indietro</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="81"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
         <source>Next</source>
         <comment>Dialog Button</comment>
         <translation>Avanti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
         <translation>Esegui</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
         <translation>Fine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
@@ -4314,7 +4314,7 @@ Vuoi continuare?</translation>
         <translation>Ripristina predefiniti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="86"/>
         <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
