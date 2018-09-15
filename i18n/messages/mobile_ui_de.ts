@@ -139,7 +139,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="60"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime Mobile</translation>
+        <translation>BibleTime Mobile</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="117"/>
@@ -233,7 +233,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="98"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime Mobile</translation>
+        <translation>BibleTime Mobile</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="60"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime Mobile</translation>
+        <translation>BibleTime Mobile</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="117"/>
@@ -718,10 +718,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="1044"/>
         <source>Single</source>
         <translation>Einzel</translation>
-    </message>
-    <message>
-        <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
-        <translation type="vanished">BibleTime zeigt Dokumente wie Bibeln und Kommentare an. Diese Dokumente werden heruntergeladen und lokal gespeichert. Derzeit sind keine Dokumente vorhanden. Möchten Sie jetzt Dokumente installieren?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="384"/>

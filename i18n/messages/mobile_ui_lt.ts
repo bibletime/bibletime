@@ -139,12 +139,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="60"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime mobilioji versija</translation>
+        <translation>BibleTime mobilioji versija</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="117"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Tęsti</translation>
     </message>
 </context>
 <context>
@@ -157,7 +157,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/CopyVerses.qml" line="225"/>
         <source>Copy size to large.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per didelis kopijavimo dydis.</translation>
     </message>
 </context>
 <context>
@@ -233,7 +233,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="98"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime mobilioji versija</translation>
+        <translation>BibleTime mobilioji versija</translation>
     </message>
 </context>
 <context>
@@ -330,7 +330,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/WindowManager.qml" line="123"/>
         <location filename="../../src/mobile/qml/WindowManager.qml" line="166"/>
         <source>Main</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinis</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="60"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime mobilioji versija</translation>
+        <translation>BibleTime mobilioji versija</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="117"/>
@@ -403,7 +403,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ModuleChooser.qml" line="196"/>
         <source>Choose Work</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkti veiklą</translation>
     </message>
 </context>
 <context>
@@ -411,7 +411,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/SearchResults.qml" line="162"/>
         <source>Search Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Paieškos rezultatai</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SearchResults.qml" line="194"/>
@@ -483,7 +483,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="113"/>
         <source>Install Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Įdiegimų tvarkytuvė</translation>
     </message>
 </context>
 <context>
@@ -658,6 +658,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Kai kurie iš modulių, kuriuose norite atlikti paiešką, turi būti indeksuoti. Ar norite juos indeksuoti dabar?</translation>
     </message>
     <message>
+        <source>A suggested document to download is</source>
+        <translation type="vanished">Siūlomas atsisiųsti dokumentas yra</translation>
+    </message>
+    <message>
+        <source>Would you like to automatically download this document?</source>
+        <translation type="vanished">Ar norėtumėte automatiškai atsisiųsti šį dokumentą?</translation>
+    </message>
+    <message>
+        <source>Suggested documents to download are:</source>
+        <translation type="vanished">Siūlomi atsisiųsti dokumentai yra:</translation>
+    </message>
+    <message>
+        <source>Would you like to automatically download these documents?</source>
+        <translation type="vanished">Ar norėtumėte automatiškai atsisiųsti šiuos dokumentus?</translation>
+    </message>
+    <message>
         <location filename="../../src/mobile/qml/main.qml" line="515"/>
         <location filename="../../src/mobile/qml/main.qml" line="849"/>
         <source>New Window</source>
@@ -720,10 +736,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Pavieniui</translation>
     </message>
     <message>
-        <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
-        <translation type="vanished">BibleTime rodo dokumentus, tokius kaip Biblija ir komentarai. Šie dokumentai yra atsiunčiami ir saugomi vietoje. Šiuo metu nėra jokių dokumentų. Ar norite įdiegti dokumentus dabar?</translation>
-    </message>
-    <message>
         <location filename="../../src/mobile/qml/main.qml" line="384"/>
         <source>New Feature</source>
         <translation>Nauja ypatybė</translation>
@@ -756,7 +768,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="432"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to download documents now?</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime rodo dokumentus, tokius kaip Biblija ir komentarai. Šie dokumentai yra atsiunčiami ir saugomi vietoje. Šiuo metu nėra jokių dokumentų. Ar norite atsisiųsti dokumentus dabar?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="448"/>
@@ -766,7 +778,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="466"/>
         <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabar bus atvertas langas &quot;Tvarkyti įdiegtus dokumentus&quot;. Galite atverti jį vėliau pasinaudoję Pagrindinio rodinio viršutinėje dešinėje pusėje esančiu meniu.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="519"/>

@@ -139,12 +139,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="60"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime Mobile</translation>
+        <translation>BibleTime Mobile</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="117"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuar</translation>
     </message>
 </context>
 <context>
@@ -233,7 +233,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="98"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime Mobile</translation>
+        <translation>BibleTime Mobile</translation>
     </message>
 </context>
 <context>
@@ -330,7 +330,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/WindowManager.qml" line="123"/>
         <location filename="../../src/mobile/qml/WindowManager.qml" line="166"/>
         <source>Main</source>
-        <translation type="unfinished"></translation>
+        <translation>Início</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="60"/>
         <source>BibleTime Mobile</source>
-        <translation type="unfinished">BibleTime Mobile</translation>
+        <translation>BibleTime Mobile</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="117"/>
@@ -403,7 +403,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ModuleChooser.qml" line="196"/>
         <source>Choose Work</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolher Obra</translation>
     </message>
 </context>
 <context>
@@ -411,7 +411,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/SearchResults.qml" line="162"/>
         <source>Search Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados da pesquisa</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/SearchResults.qml" line="194"/>
@@ -483,7 +483,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="113"/>
         <source>Install Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestor de Instalação</translation>
     </message>
 </context>
 <context>
@@ -658,6 +658,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Alguns dos módulos em que deseja pesquisar precisam de ser indexados. Quer indexá-los agora?</translation>
     </message>
     <message>
+        <source>A suggested document to download is</source>
+        <translation type="vanished">Um documento sugerido para transferir é</translation>
+    </message>
+    <message>
+        <source>Would you like to automatically download this document?</source>
+        <translation type="vanished">Gostaria de transferir automaticamente este documento?</translation>
+    </message>
+    <message>
+        <source>Suggested documents to download are:</source>
+        <translation type="vanished">Documentos sugeridos para transferir são:</translation>
+    </message>
+    <message>
+        <source>Would you like to automatically download these documents?</source>
+        <translation type="vanished">Gostaria de transferir automaticamente estes documentos?</translation>
+    </message>
+    <message>
         <location filename="../../src/mobile/qml/main.qml" line="515"/>
         <location filename="../../src/mobile/qml/main.qml" line="849"/>
         <source>New Window</source>
@@ -720,10 +736,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Sem separadores</translation>
     </message>
     <message>
-        <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
-        <translation type="vanished">O BibleTime visualiza documentos como Bíblias e comentários. Estes documentos são transferidos e guardados no disco. Actualmente não existem documentos. Quer instalar documentos agora?</translation>
-    </message>
-    <message>
         <location filename="../../src/mobile/qml/main.qml" line="384"/>
         <source>New Feature</source>
         <translation>Nova Funcionalidade</translation>
@@ -756,7 +768,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="432"/>
         <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to download documents now?</source>
-        <translation type="unfinished"></translation>
+        <translation>O BibleTime vê documentos como Bíblias e comentários. Estes documentos são transferidos e guardados localmente. Actualmente não tem documentos. Quer transferir documentos agora?</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="448"/>
@@ -766,7 +778,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="466"/>
         <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
-        <translation type="unfinished"></translation>
+        <translation>A janela &quot;Gerir Documentos Instalados&quot; irá ser agora aberta. Pode abri-la mais tarde a partir dos menus no canto superior direito da vista Inicial.</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="519"/>
