@@ -27,16 +27,26 @@ Rectangle {
 
     signal finished
 
-    function getAutoInstallDocumentNames(lang) {
-        if (lang === "pt_PT") {
+    function localeMatches(language, country) {
+        var systemLanguage = btStyle.systemLocaleLanguage;
+        var systemCountry = btStyle.systemLocaleCountry;
+        if (systemLanguage === language && systemCountry === country)
+            return true;
+        if (systemLanguage === language && country === "")
+            return true;
+        return false;
+    }
+
+    function getAutoInstallDocumentNames() {
+        if (localeMatches("Portuguese","Portugal")) {
             return ["PorCap"];
         } else {
             return ["ESV2011", "StrongsGreek", "StrongsHebrew"]
         }
     }
 
-    function getAutoInstallDocumentSources(lang) {
-        if (lang === "pt_PT") {
+    function getAutoInstallDocumentSources() {
+        if (localeMatches("Portuguese","Portugal")) {
             return ["CrossWire"];
         } else {
             return ["CrossWire", "CrossWire", "CrossWire"]
@@ -44,7 +54,7 @@ Rectangle {
     }
 
     function getAutoInstallReference(lang) {
-        if (lang === "pt_PT") {
+        if (localeMatches("Portuguese","Portugal")) {
             return ["PorCap", "John 1:1"];
         } else {
             return ["ESV2011", "John 1:1"]
@@ -64,9 +74,8 @@ Rectangle {
         }
         installInterface.clearModules();
 
-        var lang = btStyle.systemLocale;
-        var names = getAutoInstallDocumentNames(lang);
-        var sources = getAutoInstallDocumentSources(lang);
+        var names = getAutoInstallDocumentNames();
+        var sources = getAutoInstallDocumentSources();
 
         for (var i = 0; i < names.length; i++)
             installInterface.addModule(sources[i], names[i]);

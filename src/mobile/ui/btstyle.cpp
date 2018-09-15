@@ -530,5 +530,15 @@ QString BtStyle::getSystemLocale() const{
     return QLocale::system().name();
 }
 
+QString BtStyle::getSystemLocaleCountry() const {
+    auto country = QLocale::system().country();
+    return QLocale::countryToString(country);
+}
+
+QString BtStyle::getSystemLocaleLanguage() const {
+    auto language = QLocale::system().language();
+    return QLocale::languageToString(language);
+}
+
 } // end namespace
 

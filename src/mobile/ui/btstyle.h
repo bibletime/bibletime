@@ -69,6 +69,8 @@ class BtStyle : public QObject {
     Q_PROPERTY(QString swordVersion          READ getSwordVersion      NOTIFY versionChanged);
 
     Q_PROPERTY(QString systemLocale READ getSystemLocale NOTIFY systemLocaleChanged);
+    Q_PROPERTY(QString systemLocaleCountry READ getSystemLocaleCountry NOTIFY systemLocaleCountryChanged);
+    Q_PROPERTY(QString systemLocaleLanguage READ getSystemLocaleLanguage NOTIFY systemLocaleLanguageChanged);
 
 public:
     Q_INVOKABLE void setStyle(int style);
@@ -184,6 +186,8 @@ public:
     QString getSwordVersion() const;
 
     QString getSystemLocale() const;
+    QString getSystemLocaleCountry() const;
+    QString getSystemLocaleLanguage() const;
 
 signals:
     void changed();
@@ -191,6 +195,8 @@ signals:
     void widthChanged();
     void heightChanged();
     void systemLocaleChanged();
+    void systemLocaleCountryChanged();
+    void systemLocaleLanguageChanged();
 };
 
 } // end namespace
