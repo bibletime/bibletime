@@ -127,6 +127,9 @@ FIND_PACKAGE(Qt5Xml ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Test ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Svg ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5PrintSupport ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5Qml ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5Quick ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5QuickWidgets ${REQUIRED_QT_VERSION} REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
@@ -233,7 +236,7 @@ TARGET_LINK_LIBRARIES("bibletime"
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
   TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKitWidgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ELSEIF(USEWEBENGINE)
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebEngine Qt5::WebEngineWidgets Qt5::WebChannel Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebEngine Qt5::WebEngineWidgets Qt5::WebChannel Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
 ELSE()
   TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ENDIF()
@@ -279,6 +282,8 @@ INSTALL(FILES ${INSTALL_ICONS_LIST}
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
+INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
+        DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
 
 FILE(GLOB INSTALL_TMPL_LIST
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css
