@@ -34,98 +34,98 @@ class QMenu;
   * @author The BibleTime team
   */
 class CLexiconReadWindow : public CReadWindow  {
-        Q_OBJECT
-    public:
-        CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-        ~CLexiconReadWindow() override;
+    Q_OBJECT
+public:
+    CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
+    ~CLexiconReadWindow() override;
 
-        CSwordModuleInfo::ModuleType moduleType() const override
-        { return CSwordModuleInfo::Lexicon; }
+    CSwordModuleInfo::ModuleType moduleType() const override
+    { return CSwordModuleInfo::Lexicon; }
 
-        /** Insert the keyboard accelerators of this window into the given actioncollection.*/
-        static void insertKeyboardActions( BtActionCollection* const a );
+    /** Insert the keyboard accelerators of this window into the given actioncollection.*/
+    static void insertKeyboardActions( BtActionCollection* const a );
 
-    public slots:
-        void reload(CSwordBackend::SetupChangedReason reason) override;
+public slots:
+    void reload(CSwordBackend::SetupChangedReason reason) override;
 
-    protected:
+protected:
 
-        template <typename ... Args>
-        QAction & initAction(QString actionName, Args && ... args) {
-            QAction & action =
-                    actionCollection()->action(std::move(actionName));
-            BT_CONNECT(&action,
-                       &QAction::triggered,
-                       std::forward<Args>(args)...);
-            addAction(&action);
-            return action;
+    template <typename ... Args>
+    QAction & initAction(QString actionName, Args && ... args) {
+        QAction & action =
+                actionCollection()->action(std::move(actionName));
+        BT_CONNECT(&action,
+                   &QAction::triggered,
+                   std::forward<Args>(args)...);
+        addAction(&action);
+        return action;
+    }
+
+    void initActions() override;
+    void initToolbars() override;
+    void initConnections() override;
+    void initView() override;
+    void updatePopupMenu() override;
+    void setupPopupMenu() override;
+
+    void setupMainWindowToolBars() override;
+
+    struct ActionsStruct {
+        BtToolBarPopupAction* backInHistory;
+        BtToolBarPopupAction* forwardInHistory;
+
+        QAction* selectAll;
+        QAction* findText;
+        QAction* findStrongs;
+
+        QMenu* copyMenu;
+        struct {
+            QAction* reference;
+            QAction* entry;
+            QAction* selectedText;
         }
+        copy;
 
-        void initActions() override;
-        void initToolbars() override;
-        void initConnections() override;
-        void initView() override;
-        void updatePopupMenu() override;
-        void setupPopupMenu() override;
-
-        void setupMainWindowToolBars() override;
-
-        struct ActionsStruct {
-            BtToolBarPopupAction* backInHistory;
-            BtToolBarPopupAction* forwardInHistory;
-
-            QAction* selectAll;
-            QAction* findText;
-            QAction* findStrongs;
-
-            QMenu* copyMenu;
-            struct {
-                QAction* reference;
-                QAction* entry;
-                QAction* selectedText;
-            }
-            copy;
-
-            QMenu* saveMenu;
-            struct {
-                QAction* reference;
-                QAction* entryAsPlain;
-                QAction* entryAsHTML;
-            }
-            save;
-
-            QMenu* printMenu;
-            struct {
-                QAction* reference;
-                QAction* entry;
-            }
-            print;
+        QMenu* saveMenu;
+        struct {
+            QAction* reference;
+            QAction* entryAsPlain;
+            QAction* entryAsHTML;
         }
-        m_actions;
+        save;
 
-    private:
-        /**
+        QMenu* printMenu;
+        struct {
+            QAction* reference;
+            QAction* entry;
+        }
+        print;
+    }
+    m_actions;
+
+private:
+    /**
         * Reimplementation to return the right key.
         */
-        CSwordLDKey* ldKey();
+    CSwordLDKey* ldKey();
 
-    protected slots: // Protected slots
-        void previousEntry();
-        void nextEntry();
-        /**
+protected slots: // Protected slots
+    void previousEntry();
+    void nextEntry();
+    /**
         * This function saves the entry as html using the CExportMgr class.
         */
-        void saveAsHTML();
-        /**
+    void saveAsHTML();
+    /**
         * This function saves the entry as plain text using the CExportMgr class.
         */
-        void saveAsPlain();
-        void saveRawHTML();
+    void saveAsPlain();
+    void saveRawHTML();
 
-        void slotFillBackHistory();
-        void slotFillForwardHistory();
+    void slotFillBackHistory();
+    void slotFillForwardHistory();
 
-        void slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled);
+    void slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled);
 };
 
 #endif

@@ -22,51 +22,51 @@ class QAction;
 
 class CBookReadWindow: public CLexiconReadWindow {
 
-        Q_OBJECT
+    Q_OBJECT
 
-    public: /* Methods: */
+public: /* Methods: */
 
-        inline CBookReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
-            : CLexiconReadWindow(modules, parent)
-            , m_treeAction(nullptr)
-            , m_treeChooser(nullptr) {}
+    inline CBookReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
+        : CLexiconReadWindow(modules, parent)
+        , m_treeAction(nullptr)
+        , m_treeChooser(nullptr) {}
 
-        CSwordModuleInfo::ModuleType moduleType() const override
-        { return CSwordModuleInfo::GenericBook; }
+    CSwordModuleInfo::ModuleType moduleType() const override
+    { return CSwordModuleInfo::GenericBook; }
 
-        void storeProfileSettings(QString const & windowGroup) const override;
-        void applyProfileSettings(const QString & windowGroup) override;
-        static void insertKeyboardActions(BtActionCollection * const a);
+    void storeProfileSettings(QString const & windowGroup) const override;
+    void applyProfileSettings(const QString & windowGroup) override;
+    static void insertKeyboardActions(BtActionCollection * const a);
 
-    public slots:
+public slots:
 
-        void reload(CSwordBackend::SetupChangedReason reason) override;
+    void reload(CSwordBackend::SetupChangedReason reason) override;
 
-    protected: /* Methods: */
+protected: /* Methods: */
 
-        void initActions() override;
-        void initToolbars() override;
-        void initConnections() override;
-        void initView() override;
-        void setupMainWindowToolBars() override;
+    void initActions() override;
+    void initToolbars() override;
+    void initConnections() override;
+    void initView() override;
+    void setupMainWindowToolBars() override;
 
-        void setupPopupMenu() override;
+    void setupPopupMenu() override;
 
-    protected slots:
+protected slots:
 
-        void modulesChanged() override;
+    void modulesChanged() override;
 
-    private slots:
+private slots:
 
-        /**
+    /**
         * Is called when the action was executed to toggle the tree view.
         */
-        void treeToggled();
+    void treeToggled();
 
-    private: /* Fields: */
+private: /* Fields: */
 
-        QAction * m_treeAction;
-        CBookTreeChooser * m_treeChooser;
+    QAction * m_treeAction;
+    CBookTreeChooser * m_treeChooser;
 };
 
 #endif

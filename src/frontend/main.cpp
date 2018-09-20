@@ -17,6 +17,7 @@
 #include <QFile>
 #include <QLibraryInfo>
 #include <QLocale>
+#include <QQmlEngine>
 #include <QTextCodec>
 #include <QTranslator>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
@@ -25,6 +26,7 @@
 #include "bibletime.h"
 #include "bibletimeapp.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "frontend/display/modelview/btqmlinterface.h"
 #include "frontend/welcome/btwelcomedialog.h"
 #include "util/directory.h"
 #ifdef Q_OS_WIN
@@ -45,23 +47,23 @@ namespace {
 */
 void printHelp(const QString &executable) {
     std::cout << qPrintable(executable) << std::endl << std::endl
-        << "    --help, -h" << std::endl << "        "
-        << qPrintable(QObject::tr("Show this help message and exit"))
-        << std::endl << std::endl
-        << "    --version, -V" << std::endl << "        "
-        << qPrintable(QObject::tr("Output BibleTime version and exit"))
-        << std::endl << std::endl
-        << "    --ignore-session" << std::endl << "        "
-        << qPrintable(QObject::tr("Open a clean session"))
-        << std::endl << std::endl
-        << "    --open-default-bible <ref>" << std::endl << "        "
-        << qPrintable(QObject::tr("Open the default Bible with the "
-                                  "reference <ref>"))
-        << std::endl << std::endl
-        << qPrintable(QObject::tr("For command-line arguments parsed by the"
-                                  " Qt toolkit, see %1.")
-               .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
-        << std::endl;
+              << "    --help, -h" << std::endl << "        "
+              << qPrintable(QObject::tr("Show this help message and exit"))
+              << std::endl << std::endl
+              << "    --version, -V" << std::endl << "        "
+              << qPrintable(QObject::tr("Output BibleTime version and exit"))
+              << std::endl << std::endl
+              << "    --ignore-session" << std::endl << "        "
+              << qPrintable(QObject::tr("Open a clean session"))
+              << std::endl << std::endl
+              << "    --open-default-bible <ref>" << std::endl << "        "
+              << qPrintable(QObject::tr("Open the default Bible with the "
+                                        "reference <ref>"))
+              << std::endl << std::endl
+              << qPrintable(QObject::tr("For command-line arguments parsed by the"
+                                        " Qt toolkit, see %1.")
+                            .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
+              << std::endl;
 }
 
 /*******************************************************************************
@@ -77,46 +79,46 @@ void myMessageOutput(
         const QString& message ) {
     QByteArray msg = message.toLatin1();
     switch (type) {
-        case QtDebugMsg:
-            if (showDebugMessages) { // Only show messages if they are enabled!
-                debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
-                debugStream->write(msg);
-                debugStream->write("\n");
-                debugStream->flush();
-            }
-            break;
+    case QtDebugMsg:
+        if (showDebugMessages) { // Only show messages if they are enabled!
+            debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
+            debugStream->write(msg);
+            debugStream->write("\n");
+            debugStream->flush();
+        }
+        break;
 #if QT_VERSION >= 0x050500
-        case QtInfoMsg:
-            debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
-            debugStream->write(msg);
-            debugStream->write("\n");
-            debugStream->flush();
-            break;
+    case QtInfoMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
+        debugStream->write(msg);
+        debugStream->write("\n");
+        debugStream->flush();
+        break;
 #endif
-        case QtWarningMsg:
-            debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
-            debugStream->write(msg);
-            debugStream->write("\n");
-            debugStream->flush();
-            break;
-        case QtCriticalMsg:
-            debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
-            debugStream->write(msg);
-            debugStream->write("\nPlease report this bug at "
-                               "https://github.com/bibletime/bibletime/issues"
-                               "\n");
-            debugStream->flush();
-            break;
-        case QtFatalMsg:
-            debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
-            debugStream->write(msg);
-            debugStream->write("\nPlease report this bug at "
-                               "https://github.com/bibletime/bibletime/issues"
-                               "\n");
+    case QtWarningMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
+        debugStream->write(msg);
+        debugStream->write("\n");
+        debugStream->flush();
+        break;
+    case QtCriticalMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
+        debugStream->write(msg);
+        debugStream->write("\nPlease report this bug at "
+                           "https://github.com/bibletime/bibletime/issues"
+                           "\n");
+        debugStream->flush();
+        break;
+    case QtFatalMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
+        debugStream->write(msg);
+        debugStream->write("\nPlease report this bug at "
+                           "https://github.com/bibletime/bibletime/issues"
+                           "\n");
 
-            // Dump core on purpose (see qInstallMsgHandler documentation):
-            debugStream->close();
-            abort();
+        // Dump core on purpose (see qInstallMsgHandler documentation):
+        debugStream->close();
+        abort();
     }
 }
 
@@ -142,9 +144,9 @@ int parseCommandLine(bool & ignoreSession, QString & openBibleKey) {
     for (int i = 1; i < args.size(); i++) {
         const QString &arg = args.at(i);
         if (arg == "--help"
-            || arg == "-h"
-            || arg == "/?"
-            || arg == "/h")
+                || arg == "-h"
+                || arg == "/?"
+                || arg == "/h")
         {
             printHelp(args.at(0));
             return -1;
@@ -164,16 +166,16 @@ int parseCommandLine(bool & ignoreSession, QString & openBibleKey) {
                 openBibleKey = args.at(i);
             } else {
                 std::cerr << qPrintable(QObject::tr(
-                        "Error: %1 expects an argument.")
-                    .arg("--open-default-bible")) << ' '
-                        << qPrintable(QObject::tr("See --help for details."))
-                        << std::endl;
+                                            "Error: %1 expects an argument.")
+                                        .arg("--open-default-bible")) << ' '
+                          << qPrintable(QObject::tr("See --help for details."))
+                          << std::endl;
                 return 1;
             }
         } else {
             std::cerr << qPrintable(QObject::tr(
-                "Error: Invalid command-line argument: %1")
-                .arg(arg)) << std::endl;
+                                        "Error: Invalid command-line argument: %1")
+                                    .arg(arg)) << std::endl;
             return 1;
         }
     }
@@ -203,6 +205,9 @@ void registerMetaTypes() {
 
     qRegisterMetaType<QList<int> >("QList<int>");
     qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
+
+    // for Qml interface
+    qmlRegisterType<BtQmlInterface>("BibleTime", 1, 0, "BtQmlInterface");
 }
 
 } // anonymous namespace
@@ -290,8 +295,8 @@ int main(int argc, char* argv[]) {
     //then our own
     QTranslator BibleTimeTranslator;
     if (BibleTimeTranslator.load(
-            QString("bibletime_ui_").append(QLocale::system().name()),
-            DU::getLocaleDir().canonicalPath()))
+                QString("bibletime_ui_").append(QLocale::system().name()),
+                DU::getLocaleDir().canonicalPath()))
         app.installTranslator(&BibleTimeTranslator);
 
     // Initialize display template manager:

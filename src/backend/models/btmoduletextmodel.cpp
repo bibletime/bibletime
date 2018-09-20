@@ -24,23 +24,32 @@
 #include "../managers/cswordbackend.h"
 #include "../rendering/ctextrendering.h"
 
-
 // Static so all models use the same colors
 static QColor s_linkColor = QColor(0,191,255);
 static QColor s_highlightColor = QColor(255,255,0);
 static QColor s_jesusWordsColor = QColor(255,0,0);
+static bool s_replaceColors = false;
+
+/*static*/ QColor BtModuleTextModel::getJesusWordsColor() {
+    return s_jesusWordsColor;
+}
 
 /*static*/ void BtModuleTextModel::setLinkColor(const QColor& color) {
+    s_replaceColors = true;
     s_linkColor = color;
 }
 
 /*static*/ void BtModuleTextModel::setHighlightColor(const QColor& color) {
+    s_replaceColors = true;
     s_highlightColor = color;
 }
 
 /*static*/ void BtModuleTextModel::setJesusWordsColor(const QColor& color) {
+    s_replaceColors = true;
     s_jesusWordsColor = color;
 }
+
+BtModuleTextFilter::~BtModuleTextFilter() {}
 
 
 
@@ -73,15 +82,10 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     m_filterOptions.textualVariants = 0;
 }
 
-void BtModuleTextModel::setModules(const QStringList& modules) {
-    beginResetModel();
+void BtModuleTextModel::setModules(const BtConstModuleList &modules) {
 
-    m_moduleInfoList.clear();
-    for (int i = 0; i < modules.count(); ++i) {
-        QString moduleName = modules.at(i);
-        CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
-        m_moduleInfoList.append(module);
-    }
+    m_moduleInfoList = modules;
+    beginResetModel();
 
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);
 
@@ -94,11 +98,11 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     } else if(isLexicon()) {
         m_maxEntries =
                 static_cast<CSwordLexiconModuleInfo const *>(firstModule)
-                        ->entries().size();
+                ->entries().size();
     } else if(isBook()) {
         sword::TreeKeyIdx tk(
-                *static_cast<CSwordBookModuleInfo const *>(firstModule)
-                        ->tree());
+                    *static_cast<CSwordBookModuleInfo const *>(firstModule)
+                    ->tree());
         tk.root();
         tk.firstChild();
         BT_ASSERT(tk.getOffset() == 4);
@@ -107,6 +111,16 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     }
 
     endResetModel();
+}
+
+void BtModuleTextModel::setModules(const QStringList& modules) {
+    BtConstModuleList moduleList;
+    for (int i = 0; i < modules.count(); ++i) {
+        QString moduleName = modules.at(i);
+        CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+        moduleList.append(module);
+    }
+    setModules(moduleList);
 }
 
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
@@ -134,10 +148,10 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
     QString keyName = lexiconModule->entries()[row];
 
     if (role == ModuleEntry::TextRole ||
-        role == ModuleEntry::Text1Role) {
+            role == ModuleEntry::Text1Role) {
         Rendering::CEntryDisplay entryDisplay;
         QString text = entryDisplay.text(moduleList, keyName,
-            m_displayOptions, m_filterOptions);
+                                         m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
         text = replaceColors(text);
         return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
@@ -191,7 +205,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             int column = role - ModuleEntry::Text1Role;
             CSwordModuleInfo const * module;
             if ((column + 1) > m_moduleInfoList.count())
-                    module = m_moduleInfoList.at(0);
+                module = m_moduleInfoList.at(0);
             else
                 module = m_moduleInfoList.at(column);
             modules.append(module);
@@ -206,8 +220,8 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
         }
 
         text += Rendering::CEntryDisplay().textKeyRendering(modules,
-            key.key(), m_displayOptions, m_filterOptions,
-            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+                                                            key.key(), m_displayOptions, m_filterOptions,
+                                                            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text = replaceColors(text);
@@ -217,6 +231,8 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 }
 
 QString BtModuleTextModel::replaceColors(const QString& text) const {
+    //    if (! s_replaceColors)
+    //        return text;
     QString newText = text;
     newText.replace("#JESUS_WORDS_COLOR#", s_jesusWordsColor.name());
     newText.replace("#LINK_COLOR#", s_linkColor.name());
@@ -325,22 +341,17 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
     return keyName;
 }
 
-void BtModuleTextModel::setHighlightWords(const QString& highlightWords) {
+void BtModuleTextModel::setHighlightWords(
+        const QString& highlightWords, bool caseSensitive) {
     beginResetModel();
     m_highlightWords = highlightWords;
     endResetModel();
 }
 
-FilterOptions BtModuleTextModel::getFilterOptions() const {
-    return m_filterOptions;
-}
-
 void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {
+    beginResetModel();
     m_filterOptions = filterOptions;
-}
-
-void BtModuleTextModel::clearTextFilter() {
-    m_textFilter = nullptr;
+    endResetModel();
 }
 
 void BtModuleTextModel::setTextFilter(BtModuleTextFilter * textFilter) {

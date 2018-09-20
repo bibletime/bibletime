@@ -38,6 +38,7 @@
 void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
     CLexiconReadWindow::applyProfileSettings(windowGroup);
 
+    setObjectName("CBibleReadWindow");
     BtConfig & conf = btConfig();
     conf.beginGroup(windowGroup);
     filterOptions() = conf.getFilterOptions();
@@ -104,13 +105,13 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     qaction->setShortcut(QKeySequence::Print);
     a->addAction("printChapter", qaction);
 
-//    qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's search"), a);
-//    qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-//    qaction->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
-//    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
+    //    qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's search"), a);
+    //    qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
+    //    qaction->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
+    //    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
 
-//    qaction = new QAction(tr("Reference only"), a );
-//    a->addAction("copyReferenceOnly", qaction);
+    //    qaction = new QAction(tr("Reference only"), a );
+    //    a->addAction("copyReferenceOnly", qaction);
 
     qaction = new QAction(tr("Text of reference"), a);
     a->addAction("copyTextOfReference", qaction);
@@ -248,7 +249,6 @@ void CBibleReadWindow::setupPopupMenu() {
 
 /** Reimplemented. */
 void CBibleReadWindow::updatePopupMenu() {
-    qWarning("CBibleReadWindow::updatePopupMenu()");
 
     CReadDisplay const & display =
             *static_cast<CReadDisplay *>(displayWidget());

@@ -67,7 +67,7 @@ class QSignalMapper;
   * (for Sword the class is called CSwordBackend).
   * Then create all the different module classes for the correct Sword modules.
   * Have a look at
-  * BibleTime::initBackens() to see how it's done in BibleTime.@br
+  * BibleTime::initBackend() to see how it's done in BibleTime.@br
   * Later you can work with them for example by using the CSwordKey and
   * CSwordModuleInfo derived class.
   * </p>
@@ -110,10 +110,11 @@ class QSignalMapper;
  * The text display windows belong to the @ref frontend.
  * The backend is mainly a wrapper around Sword's classes to use Qt functionality
  * to allow easy access to it's functionality and to have it in a (more or less :)
- * object oriented structure.</p><br/>
+ * object oriented structure.</p>
  * <p>
- *       -Introduction to the frontend: @ref frontend.<br/>
- *       -Introduction to the backend: @ref backend<br/>
+ *       - Introduction to the frontend: @ref frontend<br/>
+ *       - Introduction to the backend: @ref backend<br/>
+ *       - Introduction to the model/view display: @ref modelviewmain<br/>
  * </p>
  */
 

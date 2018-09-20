@@ -39,6 +39,10 @@ protected: /* Methods: */
 
     void resizeEvent(QResizeEvent * e) override;
 
+    void pageDown() override;
+
+    void pageUp() override;
+
 protected slots:
 
     void lookupSwordKey(CSwordKey *) override;

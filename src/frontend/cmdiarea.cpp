@@ -328,10 +328,8 @@ void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
 { findTextInActiveWindow(text, cs, true); }
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
-    BtWebEngineView* activeWebView = getActiveWebView();
-    if (activeWebView == nullptr)
-        return;
-    activeWebView->findTextHighlight(text, caseSensitive);
+    CDisplayWindow* const displayWindow = getDisplayWindow(activeSubWindow());
+    displayWindow->displayWidget()->highlightText(text, caseSensitive);
 }
 
 void CMDIArea::findTextInActiveWindow(QString const & text,

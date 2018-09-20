@@ -34,24 +34,40 @@ struct ModuleEntry {
     };
 };
 
-/**
-    \brief Model that represents the entire text of a given module
-
-    This model will display the entire text of a module. It is made to be
-    used by a QML ListView and to view a small portion of the available text.
-    It can be continuously scrolled to any location within the module.
-
-    \note Currently Bible, Commentary, and Book modules are supported.
-    \note Personal commentary and up to 4 parallel modules are supported.
- */
-
-
 class BtModuleTextFilter {
 
 public:
-    virtual ~BtModuleTextFilter() {}
+    virtual ~BtModuleTextFilter() = 0;
     virtual QString processText(const QString& text) = 0;
 };
+
+
+/**
+  * @page modelviewmodel Details about the module text model
+  * <p>
+  * The BtModuleTextModel represents the text of a sword module. It uses
+  * an integer index to address each entry (verse, paragraph, etc).
+  * The html text is obtained using backend rendering functions.
+  * It is then post processed to fix a few things so that the QML
+  * ListView works correctly. The ListView supports a "rich text"
+  * that is a subset of html. The post processing is done in
+  * the class BtTextFilter which is installed into BtModuleTextModel
+  * by the frontend.
+  * </p>
+  */
+
+
+/**
+    \brief Model that represents the entire text of a given module
+
+    It is used by a QML ListView to view a small portion of the
+    available module text. Only the portions of the module that are
+    currently displayed and some just above or below this, are
+    instantiated.
+
+    \note Four parallel modules are supported.
+ */
+
 
 class BtModuleTextModel: public QAbstractListModel {
 
@@ -61,45 +77,75 @@ public:
 
     BtModuleTextModel(QObject *parent = nullptr);
 
+    /** Get color of Jesus's words */
+    static QColor getJesusWordsColor();
+
+    /** Convert index(row) into CSwordVerseKey. */
+    CSwordVerseKey indexToVerseKey(int index) const;
+
+    /** Convert CSwordKey into index(row). */
+    int keyToIndex(const CSwordKey* key) const;
+
+    /** Convert CSwordVerseKey into index(row). */
+    int verseKeyToIndex(const CSwordVerseKey& key) const;
+
+    /** Get reference name from index(row). */
+    QString indexToKeyName(int index) const;
+
+    /** Reimplemented from QAbstractItemModel. */
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+
+    /** Reimplemented from QAbstractItemModel. */
+    QVariant data(const QModelIndex & index,
+                  int role = Qt::DisplayRole) const override;
+
+    /** Reimplemented from QAbstractItemModel. */
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+
+    /** Reimplemented from QAbstractItemModel. */
+    virtual bool setData(const QModelIndex &index,
+                         const QVariant &value, int role = Qt::EditRole) override;
+
+    /** Set the color of word that are highlighted */
+    void setHighlightWords(const QString& highlightWords, bool caseSensitive);
+
+    /** Used by model to get the roleNames and corresponding role numbers. */
+    QHash<int, QByteArray> roleNames() const override;
+
+    /** Sets names that correspond to role numbers. Qml
+     * ListView uses names instead of roles to get data. */
+    void setRoleNames(const QHash<int, QByteArray> &roleNames);
+
+
+    /** Set the color used for Jesus words. (Used by BT Mobile) */
+    static void setJesusWordsColor(const QColor& color);
+
+    /** Set the color used for highlighting words found by searching. (Used by BT Mobile) */
+    static void setHighlightColor(const QColor& color);
+
+    /** Set the color used for Bible references. (Used by BT Mobile) */
+    static void setLinkColor(const QColor& color);
+
+    /** Set the filter options used for rendering module text. */
+    void setFilterOptions(FilterOptions filterOptions);
+
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);
 
-    virtual bool setData(QModelIndex const & index,
-                         QVariant const & value,
-                         int role = Qt::EditRole) override;
+    /** Specifies one or more modules for use by the model */
+    void setModules(const BtConstModuleList &modules);
+
+    /** Set the text options used for rendering module text. */
+    void setTextFilter(BtModuleTextFilter * textFilter);
+
+private:
+
+    CSwordTreeKey indexToBookKey(int index) const;
 
     bool isBible() const;
     bool isBook() const;
     bool isCommentary() const;
     bool isLexicon() const;
-
-    /** functions to convert from book or verse key to row index and back */
-    CSwordTreeKey indexToBookKey(int index) const;
-    CSwordVerseKey indexToVerseKey(int index) const;
-
-    int keyToIndex(const CSwordKey* key) const;
-    int verseKeyToIndex(const CSwordVerseKey& key) const;
-    QString indexToKeyName(int index) const;
-
-    /** Reimplemented from QAbstractItemModel. */
-    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
-    QHash<int, QByteArray> roleNames() const override;
-    void setRoleNames(const QHash<int, QByteArray> &roleNames);
-    void setHighlightWords(const QString& highlightWords);
-
-    static void setLinkColor(const QColor& color);
-    static void setHighlightColor(const QColor& color);
-    static void setJesusWordsColor(const QColor& color);
-
-    FilterOptions getFilterOptions() const;
-    void setFilterOptions(FilterOptions filterOptions);
-
-    void clearTextFilter();
-    void setTextFilter(BtModuleTextFilter * textFilter);
-
-private:
 
     /** returns text string for each model index */
     QString bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;

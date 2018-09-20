@@ -14,6 +14,7 @@
 #define CDISPLAY_H
 
 #include <QMap>
+#include "backend/btglobal.h"
 #include "backend/managers/cswordbackend.h"
 
 
@@ -25,138 +26,146 @@ class QMenu;
   * @author The BibleTime team
   */
 class CDisplay {
-    public:
+public:
 
-        enum TextType {
-            HTMLText, /* Used for HTML markup */
-            PlainText /* Plain text without links etc. */
-        };
-        enum TextPart {
-            Document, /* All text */
-            SelectedText, /* Only the selected text */
-            AnchorOnly,
-            AnchorTextOnly,
-            AnchorWithText
-        };
+    enum TextType {
+        HTMLText, /* Used for HTML markup */
+        PlainText /* Plain text without links etc. */
+    };
+    enum TextPart {
+        Document, /* All text */
+        SelectedText, /* Only the selected text */
+        AnchorOnly,
+        AnchorTextOnly,
+        AnchorWithText
+    };
 
-        /**
+    virtual void scrollToKey(CSwordKey* key);
+
+    virtual void setModules(const QStringList& modules);
+
+    /**
         * Copies the given text with the specified format into the applications clipboard.
         */
-        virtual bool copy( const CDisplay::TextType format, const CDisplay::TextPart part );
-        /**
+    virtual bool copy( const CDisplay::TextType format, const CDisplay::TextPart part );
+    /**
         * Saves the given text with the specified format into the applications clipboard.
         */
-        virtual bool save( const CDisplay::TextType format, const CDisplay::TextPart part );
+    virtual bool save( const CDisplay::TextType format, const CDisplay::TextPart part );
 
-        //the pure virtual methods of this base class
+    virtual void highlightText(const QString& /*text*/, bool /*caseSensitive*/) {}
 
-        /** Returns the text in the given format.
+    //the pure virtual methods of this base class
+
+    /** Returns the text in the given format.
         *
         */
-        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText,
-                                    const CDisplay::TextPart part = CDisplay::Document ) = 0;
-        /**
+    virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText,
+                                const CDisplay::TextPart part = CDisplay::Document ) = 0;
+    /**
         * Sets the new text for this display widget.
         */
-        virtual void setText( const QString& newText ) = 0;
-        /**
+    virtual void setText( const QString& newText ) = 0;
+    /**
         * Returns true if the display widget has a selection. Otherwise false.
         */
-        virtual bool hasSelection() const = 0;
-        /**
+    virtual bool hasSelection() const = 0;
+    /**
         * Returns the view of this display widget.
         */
-        virtual QWidget* view() = 0;
-        /**
+    virtual QWidget* view() = 0;
+    /**
         *  Selects the document text.
         */
-        virtual void selectAll() = 0;
-        /**
+    virtual void selectAll() = 0;
+    /**
         * Returns the connections object used for signals and slots.
         */
-        virtual CDisplayConnections* connectionsProxy() const;
-        /**
+    virtual CDisplayConnections* connectionsProxy() const;
+    /**
         * Returns the parent window used for this display widget.
         */
-        CDisplayWindow* parentWindow() const;
+    CDisplayWindow* parentWindow() const;
 
-        virtual void print(const CDisplay::TextPart,
-                           const DisplayOptions &displayOptions,
-                           const FilterOptions &filterOptions) = 0;
-        /**
+    virtual void print(const CDisplay::TextPart,
+                       const DisplayOptions &displayOptions,
+                       const FilterOptions &filterOptions) = 0;
+    /**
         * Installs the popup which should be opened when the right mouse button was pressed.
         */
-        void installPopup( QMenu* popup );
-        /**
+    void installPopup( QMenu* popup );
+    /**
         * Returns the popup menu which was set by installPopupMenu()
         */
-        QMenu* installedPopup();
+    QMenu* installedPopup();
 
-        virtual void openFindTextDialog() {}
+    virtual void openFindTextDialog() {}
 
-        inline virtual QString getCurrentNodeInfo() const {
-            return QString::null;
-        }
+    virtual void setFilterOptions(FilterOptions filterOptions) {}
 
-    protected:
-        /**
+    inline virtual QString getCurrentNodeInfo() const {
+        return QString::null;
+    }
+
+protected:
+    /**
         * Used when a reference was dropped onto the widget.
         */
-        void emitReferenceDropped( const QString& reference );
-        /**
+    void emitReferenceDropped( const QString& reference );
+    /**
         * Emits the signal which used when a reference was clicked.
         */
-        void emitReferenceClicked( const QString& reference );
+    void emitReferenceClicked( const QString& reference );
 
-    protected:
-        CDisplay(CDisplayWindow* parent);
-        virtual ~CDisplay();
+protected:
+    CDisplay(CDisplayWindow* parent);
+    virtual ~CDisplay();
 
-    private:
-        CDisplayWindow* m_parentWindow;
-        CDisplayConnections* m_connections;
-        QMenu* m_popup;
+private:
+    CDisplayWindow* m_parentWindow;
+    CDisplayConnections* m_connections;
+    QMenu* m_popup;
 };
 
 class CDisplayConnections : public QObject {
-        Q_OBJECT
-    public:
-        CDisplayConnections( CDisplay* parent );
+    Q_OBJECT
+public:
+    CDisplayConnections( CDisplay* parent );
 
-    public slots:
-        virtual void selectAll();
-        void emitReferenceClicked( const QString& module, const QString& key);
-        void emitReferenceDropped( const QString& key );
-        void emitTextChanged();
+public slots:
+    virtual void selectAll();
+    void emitReferenceClicked( const QString& module, const QString& key);
+    void emitReferenceDropped( const QString& key );
+    void emitTextChanged();
 
-        //stuff which works in every CDisplay
-        void saveAsPlain();
-        void saveAsHTML();
-        void saveAnchorWithText();
+    //stuff which works in every CDisplay
+    void saveAsPlain();
+    void saveAsHTML();
+    void saveAnchorWithText();
 
-        void printAll(const DisplayOptions &displayOptions,
-                      const FilterOptions &filterOptions);
+    void printAll(const DisplayOptions &displayOptions,
+                  const FilterOptions &filterOptions);
 
-        void printAnchorWithText(const DisplayOptions &displayOptions,
-                                 const FilterOptions &filterOptions);
+    void printAnchorWithText(const DisplayOptions &displayOptions,
+                             const FilterOptions &filterOptions);
 
-        void copySelection();
-        void copyAll();
-        void copyAnchorWithText();
-        void copyAnchorTextOnly();
-        void copyAnchorOnly();
+    void copySelection();
+    void copyAll();
+    void copyAnchorWithText();
+    void copyAnchorTextOnly();
+    void copyAnchorOnly();
 
-        void clear();
+    void clear();
 
-        void openFindTextDialog();
+    void openFindTextDialog();
 
-    signals:
-        void referenceClicked(const QString& module, const QString& key);
-        void referenceDropped(const QString& key);
-        void textChanged();
+signals:
+    void referenceClicked(const QString& module, const QString& key);
+    void referenceDropped(const QString& key);
+    void textChanged();
 
-    private:
-        CDisplay* m_display;
+private:
+    CDisplay* m_display;
 
 };
 

@@ -30,108 +30,108 @@ class QObject;
 
 class CBibleReadWindow: public CLexiconReadWindow  {
 
-        Q_OBJECT
+    Q_OBJECT
 
-    public: /* Methods: */
+public: /* Methods: */
 
-        inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
-            : CLexiconReadWindow(modules, parent) {}
+    inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
+        : CLexiconReadWindow(modules, parent) {}
 
-        CSwordModuleInfo::ModuleType moduleType() const override
-        { return CSwordModuleInfo::Bible; }
+    CSwordModuleInfo::ModuleType moduleType() const override
+    { return CSwordModuleInfo::Bible; }
 
-        void storeProfileSettings(QString const & windowGroup) const override;
-        void applyProfileSettings(const QString & windowGroup) override;
-        static void insertKeyboardActions( BtActionCollection* const a );
+    void storeProfileSettings(QString const & windowGroup) const override;
+    void applyProfileSettings(const QString & windowGroup) override;
+    static void insertKeyboardActions( BtActionCollection* const a );
 
-    protected: /* Methods: */
+protected: /* Methods: */
 
-        template <typename ... Args>
-        QAction & initAction(QString actionName, Args && ... args) {
-            QAction & action = m_actionCollection->action(std::move(actionName));
-            BT_CONNECT(&action,
-                       &QAction::triggered,
-                       std::forward<Args>(args)...);
-            addAction(&action);
-            return action;
-        }
+    template <typename ... Args>
+    QAction & initAction(QString actionName, Args && ... args) {
+        QAction & action = m_actionCollection->action(std::move(actionName));
+        BT_CONNECT(&action,
+                   &QAction::triggered,
+                   std::forward<Args>(args)...);
+        addAction(&action);
+        return action;
+    }
 
-        void initActions() override;
-        void initToolbars() override;
-        void initConnections() override;
-        void initView() override;
-        void setupMainWindowToolBars() override;
-        void setupPopupMenu() override;
-        void updatePopupMenu() override;
-        bool eventFilter( QObject* o, QEvent* e) override;
+    void initActions() override;
+    void initToolbars() override;
+    void initConnections() override;
+    void initView() override;
+    void setupMainWindowToolBars() override;
+    void setupPopupMenu() override;
+    void updatePopupMenu() override;
+    bool eventFilter( QObject* o, QEvent* e) override;
 
+    struct {
+        QAction* selectAll;
+        QAction* findText;
+        QAction* findStrongs;
+
+        QMenu* copyMenu;
         struct {
-            QAction* selectAll;
-            QAction* findText;
-            QAction* findStrongs;
-
-            QMenu* copyMenu;
-            struct {
-                QAction* referenceOnly;
-                QAction* referenceTextOnly;
-                QAction* referenceAndText;
-                QAction* chapter;
-                QAction* selectedText;
-            }
-            copy;
-
-            QMenu* saveMenu;
-            struct {
-                QAction* referenceAndText;
-                QAction* chapterAsPlain;
-                QAction* chapterAsHTML;
-            }
-            save;
-
-            QMenu* printMenu;
-            struct {
-                QAction* reference;
-                QAction* chapter;
-            }
-            print;
+            QAction* referenceOnly;
+            QAction* referenceTextOnly;
+            QAction* referenceAndText;
+            QAction* chapter;
+            QAction* selectedText;
         }
-        m_actions;
+        copy;
+
+        QMenu* saveMenu;
+        struct {
+            QAction* referenceAndText;
+            QAction* chapterAsPlain;
+            QAction* chapterAsHTML;
+        }
+        save;
+
+        QMenu* printMenu;
+        struct {
+            QAction* reference;
+            QAction* chapter;
+        }
+        print;
+    }
+    m_actions;
 
 
-    public slots:
+public slots:
 
-        void nextBook();
-        void previousBook();
-        void nextChapter();
-        void previousChapter();
-        void nextVerse();
-        void previousVerse();
+    void nextBook();
+    void previousBook();
+    void nextChapter();
+    void previousChapter();
+    void nextVerse();
+    void previousVerse();
 
-        void reload(CSwordBackend::SetupChangedReason reason) override;
+    void reload(CSwordBackend::SetupChangedReason reason) override;
 
-    protected slots:
+protected slots:
 
-        /**
+    /**
         * Copies the current chapter into the clipboard.
         */
-        void copyDisplayedText() override;
-        /**
+    void copyDisplayedText() override;
+    /**
         * Saves the chapter as valid HTML page.
         */
-        void saveChapterHTML();
-        /**
+    void saveChapterHTML();
+    /**
         * Saves the chapter as valid HTML page.
         */
-        void saveChapterPlain();
-        void lookupSwordKey(CSwordKey * newKey) override;
-        void syncWindows();
+    void saveChapterPlain();
+    void lookupSwordKey(CSwordKey * newKey) override;
+    void syncWindows();
 
-    private: /* Methods: */
+private: /* Methods: */
 
-        /**
+    /**
         * Wrapper around key() to return the right type of key.
         */
-        CSwordVerseKey* verseKey();
+    CSwordVerseKey* verseKey();
 
 };
 

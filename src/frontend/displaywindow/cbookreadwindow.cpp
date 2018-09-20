@@ -18,7 +18,7 @@
 #include <QToolBar>
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/bibletime.h"
-#include "frontend/display/bthtmlreaddisplay.h"
+#include "frontend/display/btmodelviewreaddisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
@@ -67,7 +67,7 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     QAction* qaction;
 
     qaction = new QAction( /* QIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon), */
-        tr("Toggle tree view"), a);
+                           tr("Toggle tree view"), a);
     qaction->setCheckable(true);
     // qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
     a->addAction("toggleTree", qaction);
@@ -89,8 +89,12 @@ void CBookReadWindow::initConnections() {
 void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
     m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
-    setDisplayWidget(new BtHtmlReadDisplay(this, splitter));
+    setDisplayWidget(new BtModelViewReadDisplay(this, splitter));
     m_treeChooser->hide();
+
+    BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
+    if (disp)
+        disp->setModules(getModuleList());
 
     // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );
@@ -130,7 +134,7 @@ void CBookReadWindow::initToolbars() {
     buttonsToolBar()->addWidget(button);  // Display settings
     // Search:
     buttonsToolBar()->addAction(
-            &actionCollection()->action(
+                &actionCollection()->action(
                     CResMgr::displaywindows::general::search::actionName));
 }
 
@@ -155,7 +159,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
     btMainWindow()->toolsToolBar()->addWidget(button);  // Display settings
     // Search:
     btMainWindow()->toolsToolBar()->addAction(
-            &actionCollection()->action(
+                &actionCollection()->action(
                     CResMgr::displaywindows::general::search::actionName));
 }
 

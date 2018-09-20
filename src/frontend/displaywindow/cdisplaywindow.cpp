@@ -46,26 +46,27 @@ inline QWidget * getProfileWindow(QWidget * w) {
 
 
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
-        : QMainWindow(parent),
-        m_actionCollection(nullptr),
-        m_mdi(parent),
-        m_keyChooser(nullptr),
-        m_swordKey(nullptr),
-        m_isReady(false),
-        m_moduleChooserBar(nullptr),
-        m_mainToolBar(nullptr),
-        m_buttonsToolBar(nullptr),
-        m_formatToolBar(nullptr),
-        m_headerBar(nullptr),
-        m_popupMenu(nullptr),
-        m_displayWidget(nullptr),
-        m_history(nullptr) {
+    : QMainWindow(parent),
+      m_actionCollection(nullptr),
+      m_mdi(parent),
+      m_keyChooser(nullptr),
+      m_swordKey(nullptr),
+      m_isReady(false),
+      m_moduleChooserBar(nullptr),
+      m_mainToolBar(nullptr),
+      m_buttonsToolBar(nullptr),
+      m_formatToolBar(nullptr),
+      m_headerBar(nullptr),
+      m_popupMenu(nullptr),
+      m_displayWidget(nullptr),
+      m_history(nullptr) {
 
     // Cannot delete on close. QMdiSubWindow and this window work
     // as pairs. They must be deleted in a specific order.
     // QMdiSubWindow handles this procedure.
     //setAttribute(Qt::WA_DeleteOnClose);
 
+    setObjectName("CDisplayWindow");
     m_actionCollection = new BtActionCollection(this);
     setModules(modules);
 
@@ -224,24 +225,32 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
 
+    actn = new QAction(QIcon(), tr("Page down"), a);
+    actn->setShortcut(QKeySequence(Qt::Key_PageDown));
+    a->addAction("pageDown", actn);
+
+    actn = new QAction(QIcon(), tr("Page up"), a);
+    actn->setShortcut(QKeySequence(Qt::Key_PageUp));
+    a->addAction("pageUp", actn);
+
     actn = new QAction(CResMgr::displaywindows::general::search::icon(),
                        tr("Search with works of this window"), a);
     actn->setShortcut(CResMgr::displaywindows::general::search::accel);
     a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
 
     BtToolBarPopupAction* action = new BtToolBarPopupAction(
-        CResMgr::displaywindows::general::backInHistory::icon(),
-        tr("Back in history"),
-        a
-    );
+                CResMgr::displaywindows::general::backInHistory::icon(),
+                tr("Back in history"),
+                a
+                );
     action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
     a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
     action = new BtToolBarPopupAction(
-        CResMgr::displaywindows::general::forwardInHistory::icon(),
-        tr("Forward in history"),
-        a
-    );
+                CResMgr::displaywindows::general::forwardInHistory::icon(),
+                tr("Forward in history"),
+                a
+                );
     action->setShortcut(CResMgr::displaywindows::general::forwardInHistory::accel);
     a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
 }
@@ -256,6 +265,9 @@ void CDisplayWindow::initActions() {
                this,
                &CDisplayWindow::slotSearchInModules);
     initAddAction("openLocation", this, &CDisplayWindow::setFocusKeyChooser);
+    initAddAction("pageDown", this, &CDisplayWindow::pageDown);
+    initAddAction("pageUp", this, &CDisplayWindow::pageUp);
+
     CDisplayConnections * const conn = displayWidget()->connectionsProxy();
     initAddAction("selectAll",
                   conn,
@@ -303,15 +315,15 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
     m_modules.insert(index, module);
+    displayWidget()->setModules(m_modules);
     lookup();
     modulesChanged();
     emit sigModuleListChanged();
 }
 
 void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
-    qDebug() << "CDisplayWindow::slotReplaceModule" << m_modules.at(index) << "with" << newModule;
     m_modules.replace(index, newModule);
-    qDebug() << "window's new module list:" << m_modules;
+    displayWidget()->setModules(m_modules);
     lookup();
     modulesChanged();
     emit sigModuleListChanged();
@@ -319,6 +331,7 @@ void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
 
 void CDisplayWindow::slotRemoveModule(int index) {
     m_modules.removeAt(index);
+    displayWidget()->setModules(m_modules);
     lookup();
     modulesChanged();
     emit sigModuleListChanged();
@@ -600,3 +613,10 @@ void CDisplayWindow::setFocusKeyChooser() {
     }
 }
 
+void CDisplayWindow::pageDown() {
+
+}
+
+void CDisplayWindow::pageUp() {
+
+}

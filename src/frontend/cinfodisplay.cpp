@@ -85,7 +85,9 @@ void CInfoDisplay::unsetInfo() {
 }
 
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
-    m_htmlPart->setText(Rendering::formatInfo(renderedData, lang));
+    QString text = Rendering::formatInfo(renderedData, lang);
+    text.replace("#CHAPTERTITLE#", "");
+    m_htmlPart->setText(text);
 }
 
 void CInfoDisplay::lookupInfo(const QString & mod_name,
