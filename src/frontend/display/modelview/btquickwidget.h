@@ -28,6 +28,7 @@ public:
     BtQuickWidget(QWidget* widget = nullptr);
 
     void moveContentLocation(double value);
+    void updateReferenceText();
 
 private:
     void dropEvent( QDropEvent* e ) override;

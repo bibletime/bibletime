@@ -20,6 +20,10 @@ Rectangle {
         displayListView.scroll(value);
     }
 
+    function updateReferenceText() {
+        displayListView.updateReferenceText();
+    }
+
     width: 10
     height: 10
     color: "white"
@@ -29,9 +33,11 @@ Rectangle {
 
         onPageDownChanged: {
             displayListView.scroll(displayListView.height * 0.8);
+            updateReferenceText();
         }
         onPageUpChanged: {
             displayListView.scroll(displayListView.height * -0.8);
+            updateReferenceText();
         }
     }
 

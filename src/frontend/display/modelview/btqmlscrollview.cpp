@@ -95,6 +95,7 @@ void BtQmlScrollView::slotSliderPressed()  {
 
 void BtQmlScrollView::slotSliderReleased() {
     m_scrollBar->setValue(0);
+    m_quickWidget->updateReferenceText();
 }
 
 

@@ -48,3 +48,9 @@ void BtQuickWidget::moveContentLocation(double value) {
     QVariant vValue(value);
     QMetaObject::invokeMethod(root,"moveContentLocation", Q_ARG(QVariant, vValue));
 }
+
+void BtQuickWidget::updateReferenceText() {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QMetaObject::invokeMethod(root,"updateReferenceText");
+}
