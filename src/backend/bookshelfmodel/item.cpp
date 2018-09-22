@@ -70,4 +70,6 @@ bool Item::operator<(const Item & other) const {
     return first.localeAwareCompare(second) < 0;
 }
 
+bool RootItem::fitFor(const CSwordModuleInfo &) const { return true; }
+
 } // namespace BookshelfModel

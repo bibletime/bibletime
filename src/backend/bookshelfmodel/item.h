@@ -162,7 +162,7 @@ public: /* Methods: */
     inline RootItem()
         : Item(Item::ITEM_ROOT) {}
 
-    inline bool fitFor(const CSwordModuleInfo &) const override { return true; }
+    bool fitFor(const CSwordModuleInfo &) const override;
 
 };
 
