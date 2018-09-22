@@ -1,3 +1,12 @@
+STRING(TIMESTAMP CURRENT_YEAR "%Y")
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/FILE_HEADER.cpp.in"
+               "${CMAKE_CURRENT_BINARY_DIR}/FILE_HEADER.cpp" @ONLY)
+ADD_CUSTOM_TARGET(fix_cpp_headers
+    find "${CMAKE_CURRENT_SOURCE_DIR}/src/"
+        -type f "\\(" -name "'*.h'" -o -name "'*.cpp'" "\\)"
+        -exec "${CMAKE_CURRENT_SOURCE_DIR}/cmake/fix_cpp_header.sh" "{}"
+              "${CMAKE_CURRENT_BINARY_DIR}/FILE_HEADER.cpp" "\\;")
+
 FILE(GLOB_RECURSE bibletime_COMMON_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.h"
