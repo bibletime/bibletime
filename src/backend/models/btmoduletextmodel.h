@@ -64,7 +64,9 @@ public:
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);
 
-    virtual bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
+    virtual bool setData(QModelIndex const & index,
+                         QVariant const & value,
+                         int role = Qt::EditRole) override;
 
     bool isBible() const;
     bool isBook() const;
