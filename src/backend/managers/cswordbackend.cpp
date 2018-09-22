@@ -131,7 +131,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     m_dataModel.clear();
 
     sword::ModMap::iterator end = Modules.end();
-    const LoadError ret = static_cast<LoadError>(Load());
+    const LoadError ret = static_cast<LoadError>(load());
 
     for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
         sword::SWModule * const curMod = it->second;
@@ -212,7 +212,7 @@ void CSwordBackend::AddRenderFilters(sword::SWModule * module,
 void CSwordBackend::shutdownModules() {
     m_dataModel.clear(true);
     //BT  mods are deleted now, delete Sword mods, too.
-    DeleteMods();
+    deleteAllModules();
 
     /* Cipher filters must be handled specially, because SWMgr creates them,
      * stores them in cipherFilters and cleanupFilters and attaches them to locked
@@ -416,7 +416,7 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
         // now re-read module configuration files
         loadConfigDir(configPath);
     } else if (config) {
-        config->Load();
+        config->load();
     }
 
     initModules(reason);
