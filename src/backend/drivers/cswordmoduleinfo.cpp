@@ -165,9 +165,9 @@ bool CSwordModuleInfo::isEncrypted() const {
 
     /* This code is still right, though we do no longer write to the module
        config files any more. */
-    using SMCI = sword::SectionMap::const_iterator;
-    SMCI it = m_backend.getConfig()->Sections.find(m_cachedName.toUtf8().constData());
-    if (it == m_backend.getConfig()->Sections.end())
+    auto const & sections = m_backend.getConfig()->getSections();
+    auto const it(sections.find(m_cachedName.toUtf8().constData()));
+    if (it == sections.end())
         return false;
 
     const sword::ConfigEntMap & config = it->second;
