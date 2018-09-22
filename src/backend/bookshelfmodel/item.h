@@ -144,7 +144,7 @@ public: /* Methods: */
 private: /* Methods: */
 
     inline void setParent(Item * parent) noexcept
-    { m_parent = (BT_ASSERT(parent), parent); }
+    { m_parent = (static_cast<void>(BT_ASSERT(parent)), parent); }
 
 private: /* Fields: */
 
