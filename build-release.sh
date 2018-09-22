@@ -1,3 +1,4 @@
+#!/bin/sh
 # This little script creates a build/ directory, enters it
 # and builds BibleTime there.
 #
