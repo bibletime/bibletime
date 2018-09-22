@@ -57,14 +57,122 @@ BtModelViewReadDisplay::~BtModelViewReadDisplay() {
 }
 
 
-const QString BtModelViewReadDisplay::text( const CDisplay::TextType /*format*/,
-                                            const CDisplay::TextPart /*part*/) {
+const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
+                                            const CDisplay::TextPart part) {
+    switch (part) {
+        case Document: {
+            if (format == HTMLText) {
+                return getCurrentSource();
+            }
+            else {
+                CDisplayWindow* window = parentWindow();
+                CSwordKey* const key = window->key();
+                const CSwordModuleInfo *module = key->module();
+                //This is never used for Bibles, so it is not implemented for
+                //them.  If it should be, see CReadDisplay::print() for example
+                //code.
+                BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
+                         module->type() == CSwordModuleInfo::Commentary ||
+                         module->type() == CSwordModuleInfo::GenericBook);
+                if (module->type() == CSwordModuleInfo::Lexicon ||
+                        module->type() == CSwordModuleInfo::Commentary ||
+                        module->type() == CSwordModuleInfo::GenericBook) {
+
+                    FilterOptions filterOptions;
+                    CSwordBackend::instance()->setFilterOptions(filterOptions);
+
+                    return QString(key->strippedText()).append("\n(")
+                           .append(key->key())
+                           .append(", ")
+                           .append(key->module()->name())
+                           .append(")");
+                }
+            }
+        }
+
+        case SelectedText: {
+//            if (!hasSelection()) {
+//                return QString::null;
+//            }
+//            else if (format == HTMLText) {
+//                //    \todo It does not appear this is ever called
+//            }
+//            else { //plain text requested
+//                return selectedText();
+//            }
+        }
+
+        case AnchorOnly: {
+            QString moduleName;
+            QString keyName;
+            ReferenceManager::Type type;
+            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+
+            return keyName;
+        }
+
+        case AnchorTextOnly: {
+            QString moduleName;
+            QString keyName;
+            ReferenceManager::Type type;
+            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+
+            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
+                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+                key->setKey(keyName);
+
+                return key->strippedText();
+            }
+            return QString::null;
+        }
+
+        case AnchorWithText: {
+            QString moduleName;
+            QString keyName;
+            ReferenceManager::Type type;
+            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+
+            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
+                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+                key->setKey(keyName);
+
+                FilterOptions filterOptions;
+                CSwordBackend::instance()->setFilterOptions(filterOptions);
+
+                return QString(key->strippedText()).append("\n(")
+                       .append(key->key())
+                       .append(", ")
+                       .append(key->module()->name())
+                       .append(")");
+                /*    ("%1\n(%2, %3)")
+                    .arg()
+                    .arg(key->key())
+                    .arg(key->module()->name());*/
+            }
+            return QString::null;
+        }
+        default:
+            return QString::null;
+    }
     return QString::null;
+
 }
 
 // Puts html text and javascript into BtWebEngineView
 void BtModelViewReadDisplay::setText( const QString& /*newText*/ ) {
 
+}
+
+void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
+    QString activeLink = m_widget->qmlInterface()->getActiveLink();
+    QString reference = m_widget->qmlInterface()->getBibleUrlFromLink(activeLink);
+    setActiveAnchor(reference);
+    QString lemma = m_widget->qmlInterface()->getLemmaFromLink(activeLink);
+    setLemma(lemma);
+
+    if (QMenu* popup = installedPopup()) {
+        popup->exec(event->globalPos());
+    }
 }
 
 QString BtModelViewReadDisplay::getCurrentSource( ) {

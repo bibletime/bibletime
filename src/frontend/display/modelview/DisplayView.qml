@@ -16,6 +16,12 @@ import QtQuick 2.2
 Rectangle {
     id: display
 
+    property int contextMenuIndex: btQmlInterface.contextMenuIndex
+
+    function saveContextMenuIndex(x, y) {
+        contextMenuIndex = displayListView.indexAt(x,y+displayListView.contentY);
+    }
+
     function moveContentLocation(value) {
         displayListView.scroll(value);
     }
@@ -50,7 +56,6 @@ Rectangle {
         property int columns: btQmlInterface.numModules
         property int savedRow: 0
         property int savedColumn: 0
-        property string dragLink: ""
 
         function scroll(value) {
             var y = contentY;
@@ -102,12 +107,12 @@ Rectangle {
 
                 function hovered(link) {
                     btQmlInterface.setMagReferenceByUrl(link);
-                    displayListView.dragLink = link;
+                    btQmlInterface.activeLink = link;
                 }
 
                 function dragStart(index, active) {
                     if (active) {
-                        btQmlInterface.dragHandler(index, displayListView.dragLink);
+                        btQmlInterface.dragHandler(index, btQmlInterface.activeLink);
                     }
 
                 }

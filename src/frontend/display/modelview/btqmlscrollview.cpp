@@ -69,9 +69,13 @@ BtQmlScrollView::~BtQmlScrollView() {
 // Create the right mouse context menus
 void BtQmlScrollView::contextMenuEvent(QContextMenuEvent* event) {
 
-    if (QMenu* popup = m_readDisplay->installedPopup()) {
-        popup->exec(event->globalPos());
-    }
+    // Save ListView index for later use
+    int x = event->x();
+    int y = event->y();
+    m_quickWidget->saveContextMenuIndex(x, y);
+
+    auto readDisplay = dynamic_cast<BtModelViewReadDisplay*>(m_readDisplay);
+    readDisplay->contextMenu(event);
 }
 
 void BtQmlScrollView::initScrollBar() {

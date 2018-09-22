@@ -73,6 +73,24 @@ void BtQmlInterface::setFilterOptions(FilterOptions filterOptions) {
     m_moduleTextModel->setFilterOptions(filterOptions);
 }
 
+int BtQmlInterface::getContextMenuIndex() const {
+    return m_contextMenuIndex;
+}
+
+void BtQmlInterface::setContextMenuIndex(int index) {
+    m_contextMenuIndex = index;
+    emit contextMenuIndexChanged();
+}
+
+QString BtQmlInterface::getActiveLink() const {
+    return m_activeLink;
+}
+
+void BtQmlInterface::setActiveLink(const QString& link) {
+    m_activeLink = link;
+    emit activeLinkChanged();
+}
+
 int BtQmlInterface::getCurrentModelIndex() const {
     if (m_swordKey == nullptr)
         return 0;
@@ -149,6 +167,30 @@ void BtQmlInterface::openContextMenu(int x, int y, int width) {
     if (column < 0 || column >= m_moduleNames.count())
         return;
     emit contextMenu(x, y, column);
+}
+
+QString BtQmlInterface::getLemmaFromLink(const QString& url) {
+    QString reference;
+
+    QRegExp rx("sword://lemmamorph/([a-s]+)=([GH][0-9]+)");
+    rx.setMinimal(false);
+    int pos1 = rx.indexIn(url);
+    if (pos1 > -1) {
+        reference = rx.cap(2);
+    }
+    return reference;
+}
+
+QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
+    QString reference;
+
+    QRegExp rx("(sword://Bible/.*)\\|\\|(.*)=(.*)");
+    rx.setMinimal(false);
+    int pos1 = rx.indexIn(url);
+    if (pos1 > -1) {
+        reference = rx.cap(1);
+    }
+    return reference;
 }
 
 QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
@@ -293,13 +335,13 @@ void BtQmlInterface::changeReference(int i) {
     emit updateReference(reference);
 }
 
-void BtQmlInterface::dragHandler(int index, const QString& dragLink) {
+void BtQmlInterface::dragHandler(int index, const QString& activeLink) {
     QString moduleName;
     QString keyName;
 
     QRegExp rx("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)");
     rx.setMinimal(false);
-    int pos1 = rx.indexIn(dragLink);
+    int pos1 = rx.indexIn(activeLink);
 
     if (pos1 > -1) {
         moduleName = rx.cap(1);

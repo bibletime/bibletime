@@ -83,6 +83,7 @@ public:
 
     // --------------------
 
+    void contextMenu(QContextMenuEvent* event);
 
     QString getCurrentSource();
 

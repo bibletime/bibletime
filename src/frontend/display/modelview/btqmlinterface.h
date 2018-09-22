@@ -47,6 +47,8 @@ class BtQmlInterface : public QObject {
         HTML,
         Text
     };
+    Q_PROPERTY(QString      activeLink              READ getActiveLink  NOTIFY activeLinkChanged    WRITE setActiveLink)
+    Q_PROPERTY(int          contextMenuIndex        READ getContextMenuIndex NOTIFY contextMenuIndexChanged WRITE setContextMenuIndex)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
     Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          fontSize0               READ getFontSize0   NOTIFY fontChanged)
@@ -78,7 +80,9 @@ public:
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();
 
-    void setFilterOptions(FilterOptions filterOptions);
+    QString getActiveLink() const;
+    QString getBibleUrlFromLink(const QString& url);
+    int getContextMenuIndex() const;
     int getCurrentModelIndex() const;
     QString getFontName0() const;
     QString getFontName1() const;
@@ -90,6 +94,7 @@ public:
     int getFontSize3() const;
     QString getHighlightWords() const;
     CSwordKey* getKey() const;
+    QString getLemmaFromLink(const QString& url);
     int getNumModules() const;
     bool getPageDown() const;
     bool getPageUp() const;
@@ -99,12 +104,17 @@ public:
     void pageUp();
     void referenceChoosen();
     void scrollToSwordKey(CSwordKey * key);
+    void setActiveLink(const QString& link);
+    void setContextMenuIndex(int index);
+    void setFilterOptions(FilterOptions filterOptions);
     void setHighlightWords(const QString& words, bool caseSensitivy);
     void setKey(CSwordKey* key);
     void setModules(const QStringList &modules);
     void settingsChanged();
 
 signals:
+    void activeLinkChanged();
+    void contextMenuIndexChanged();
     void contextMenu(int x, int y, int moduleNum);
     void currentModelIndexChanged();
     void fontChanged();
@@ -145,6 +155,8 @@ private:
     QStringList m_moduleNames;
     BtTextFilter m_textFilter;
     QString m_timeoutUrl;
+    int m_contextMenuIndex;
+    QString m_activeLink;
 };
 
 #endif

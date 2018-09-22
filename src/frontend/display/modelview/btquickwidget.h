@@ -28,6 +28,7 @@ public:
     BtQuickWidget(QWidget* widget = nullptr);
 
     void moveContentLocation(double value);
+    void saveContextMenuIndex(int x, int y);
     void updateReferenceText();
 
 private:
