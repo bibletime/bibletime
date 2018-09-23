@@ -91,6 +91,7 @@ void CBookReadWindow::initView() {
     m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
     setDisplayWidget(new BtModelViewReadDisplay(this, splitter));
     m_treeChooser->hide();
+    splitter->setStretchFactor(1,3);
 
     BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
     if (disp)
