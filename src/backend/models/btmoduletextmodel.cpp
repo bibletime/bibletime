@@ -136,7 +136,7 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
         text = "invalid";
     if (m_textFilter)
         text = m_textFilter->processText(text);
-    return QVariant(text);
+    return QVariant(CSwordModuleSearch::highlightSearchedText(text, m_highlightWords));
 }
 
 QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) const {
@@ -154,7 +154,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
                                          m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
         text = replaceColors(text);
-        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        return text;
     }
     else if (role == ModuleEntry::ReferenceRole){
         return keyName;
@@ -176,7 +176,7 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
                                                      m_displayOptions, m_filterOptions,
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         text.replace("#CHAPTERTITLE#", "");
-        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        return text;
     }
     return QString();
 }
@@ -225,14 +225,14 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text = replaceColors(text);
-        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        return text;
     }
     return QString();
 }
 
 QString BtModuleTextModel::replaceColors(const QString& text) const {
-    //    if (! s_replaceColors)
-    //        return text;
+    if (! s_replaceColors)
+        return text;
     QString newText = text;
     newText.replace("#JESUS_WORDS_COLOR#", s_jesusWordsColor.name());
     newText.replace("#LINK_COLOR#", s_linkColor.name());
