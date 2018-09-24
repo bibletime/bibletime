@@ -17,11 +17,9 @@
 #include <QDir>
 #include <QString>
 #include <QThread>
+#include <swordxx/filemgr.h>
 #include "btinstallbackend.h"
 #include "managers/cswordbackend.h"
-
-// Sword includes:
-#include <filemgr.h>
 
 
 namespace {
@@ -67,7 +65,7 @@ void BtInstallThread::installModule() {
 
     QVariant vModuleName = module->property("installSourceName");
     QString moduleName = vModuleName.toString();
-    sword::InstallSource installSource = BtInstallBackend::source(moduleName);
+    swordxx::InstallSource installSource = BtInstallBackend::source(moduleName);
     std::unique_ptr<CSwordBackend> backendForSource(BtInstallBackend::backend(installSource));
 
     // Check whether it's an update. If yes, remove existing module first:
@@ -76,11 +74,11 @@ void BtInstallThread::installModule() {
         return;
 
     // manager for the destination path
-    sword::SWMgr lMgr(m_destination.toLatin1());
+    swordxx::SWMgr lMgr(m_destination.toLatin1());
     if (BtInstallBackend::isRemote(installSource)) {
-        int status = m_iMgr.installModule(&lMgr,
+        int status = m_iMgr.installModule(lMgr,
                                           nullptr,
-                                          module->name().toLatin1(),
+                                          module->name().toStdString().c_str(),
                                           &installSource);
         if (status == 0) {
             emit statusUpdated(m_currentModuleIndex, 100);
@@ -90,9 +88,9 @@ void BtInstallThread::installModule() {
         }
         emit installCompleted(m_currentModuleIndex, status == 0);
     } else { // Local source
-        int status = m_iMgr.installModule(&lMgr,
-                                          installSource.directory.c_str(),
-                                          module->name().toLatin1());
+        int status = m_iMgr.installModule(lMgr,
+                                          installSource.m_directory.c_str(),
+                                          module->name().toStdString().c_str());
         if (status == 0) {
             emit statusUpdated(m_currentModuleIndex, 100);
         } else if (status != -1) {
@@ -129,10 +127,11 @@ bool BtInstallThread::removeModule() {
     if (prefixPath.contains(dataPath)) {
         prefixPath.remove(prefixPath.indexOf(dataPath), dataPath.length());
     } else {
-        prefixPath = QString::fromLatin1(CSwordBackend::instance()->prefixPath);
+        prefixPath =
+                QString::fromStdString(CSwordBackend::instance()->prefixPath());
     }
 
-    sword::SWMgr mgr(prefixPath.toLatin1());
-    BtInstallMgr().removeModule(&mgr, m->name().toLatin1());
+    swordxx::SWMgr mgr(prefixPath.toLatin1());
+    BtInstallMgr().removeModule(mgr, m->name().toStdString());
     return true;
 }

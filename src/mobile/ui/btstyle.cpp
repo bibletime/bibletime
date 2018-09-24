@@ -522,7 +522,7 @@ QString BtStyle::getQtVersion() const {
 }
 
 QString BtStyle::getSwordVersion() const {
-    QString version(sword::SWVersion::currentVersion.getText());
+    QString version(swordxx::SWVersion::currentVersion.getText());
     return  version;
 }
 

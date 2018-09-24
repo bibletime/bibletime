@@ -172,7 +172,7 @@ void BtSearchInterface::setupModuleModel(const CSwordModuleSearch::Results & res
 
     m_modulesModel.clear();
     Q_FOREACH(CSwordModuleInfo const * const m, results.keys()) {
-        const int count = sword::ListKey(results.value(m)).getCount();
+        const int count = swordxx::ListKey(results.value(m)).getCount();
         QString moduleName = m->name();
         QString moduleEntry = moduleName + "(" +QString::number(count) + ")";
 
@@ -186,7 +186,7 @@ void BtSearchInterface::setupModuleModel(const CSwordModuleSearch::Results & res
 
 /** Setups the list with the given module. */
 void BtSearchInterface::setupReferenceModel(const CSwordModuleInfo *m,
-                                            const sword::ListKey & results)
+                                            const swordxx::ListKey & results)
 {
     QHash<int, QByteArray> roleNames;
     roleNames[TextRole] =  "text";

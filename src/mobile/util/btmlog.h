@@ -17,7 +17,7 @@
 
 namespace btm {
 
-class BtmLog : public sword::SWLog
+class BtmLog : public swordxx::SWLog
 {
 
 public:

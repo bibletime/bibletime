@@ -70,7 +70,7 @@ class BtSearchOptionsArea : public QWidget {
         /**
         * Returns the selected search scope if a search scope was selected.
         */
-        sword::ListKey searchScope();
+        swordxx::ListKey searchScope();
 
         bool hasSearchScope();
 

@@ -18,6 +18,8 @@
 #include <QList>
 #include <QProgressDialog>
 #include <QTextStream>
+#include <swordxx/keys/listkey.h>
+#include <swordxx/swkey.h>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -29,10 +31,6 @@
 #include "frontend/btprinter.h"
 #include "util/btassert.h"
 #include "util/tool.h"
-
-// Sword includes:
-#include <swkey.h>
-#include <listkey.h>
 
 
 using namespace Rendering;
@@ -90,8 +88,8 @@ bool CExportManager::saveKey(CSwordKey const * const key,
         auto const render = newRenderer(format, addText);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange(
-                        QString::fromUtf8(vk->getLowerBound()),
-                        QString::fromUtf8(vk->getUpperBound()),
+                        QString::fromStdString(vk->getLowerBound().getText()),
+                        QString::fromStdString(vk->getUpperBound().getText()),
                         modules);
         } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
@@ -101,7 +99,7 @@ bool CExportManager::saveKey(CSwordKey const * const key,
     return true;
 }
 
-bool CExportManager::saveKeyList(sword::ListKey const & l,
+bool CExportManager::saveKeyList(swordxx::ListKey const & l,
                                  CSwordModuleInfo const * module,
                                  Format const format,
                                  bool const addText)
@@ -119,12 +117,12 @@ bool CExportManager::saveKeyList(sword::ListKey const & l,
     KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
-    sword::ListKey list(l);
-    list.setPosition(sword::TOP);
+    swordxx::ListKey list(l);
+    list.positionToTop();
     while (!list.popError()) {
         if (progressWasCancelled())
             return false;
-        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
+        tree.append(new KTI(QString::fromStdString(list.getText()),
                             module,
                             itemSettings));
         incProgress();
@@ -191,8 +189,8 @@ bool CExportManager::copyKey(CSwordKey const * const key,
                 dynamic_cast<CSwordVerseKey const *>(key);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange(
-                       QString::fromUtf8(vk->getLowerBound()),
-                       QString::fromUtf8(vk->getUpperBound()),
+                       QString::fromStdString(vk->getLowerBound().getText()),
+                       QString::fromStdString(vk->getUpperBound().getText()),
                        modules
                    );
         } else { // no range supported
@@ -204,12 +202,12 @@ bool CExportManager::copyKey(CSwordKey const * const key,
     return true;
 }
 
-bool CExportManager::copyKeyList(sword::ListKey const & l,
+bool CExportManager::copyKeyList(swordxx::ListKey const & l,
                                  CSwordModuleInfo const * const module,
                                  Format const format,
                                  bool const addText)
 {
-    sword::ListKey list = l;
+    swordxx::ListKey list = l;
     if (!list.getCount())
         return false;
 
@@ -217,11 +215,11 @@ bool CExportManager::copyKeyList(sword::ListKey const & l,
     KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
-    list.setPosition(sword::TOP);
+    list.positionToTop();
     while (!list.popError()) {
         if (progressWasCancelled())
             return false;
-        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
+        tree.append(new KTI(QString::fromStdString(list.getText()),
                             module,
                             itemSettings));
         list.increment();
@@ -319,28 +317,28 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     if ((module->type() == CSwordModuleInfo::Bible)
         || (module->type() == CSwordModuleInfo::Commentary))
     {
-        sword::ListKey const verses =
-                sword::VerseKey().parseVerseList(
+        swordxx::ListKey const verses =
+                swordxx::VerseKey().parseVerseList(
                         keyName.toUtf8().constData(),
                         "Genesis 1:1",
                         true);
 
         for (int i = 0; i < verses.getCount(); i++) {
-            if (sword::VerseKey const * const element =
-                    dynamic_cast<sword::VerseKey const *>(verses.getElement(i)))
+            if (swordxx::VerseKey const * const element =
+                    dynamic_cast<swordxx::VerseKey const *>(verses.getElement(i)))
             {
                 tree.append(
                         new BtPrinter::KeyTreeItem(
-                                QString::fromUtf8(
+                                QString::fromStdString(
                                         element->getLowerBound().getText()),
-                                QString::fromUtf8(
+                                QString::fromStdString(
                                         element->getUpperBound().getText()),
                                 module,
                                 settings) );
             } else if (verses.getElement(i)) {
                 tree.append(
                         new BtPrinter::KeyTreeItem(
-                            QString::fromUtf8(verses.getElement(i)->getText()),
+                            QString::fromStdString(verses.getElement(i)->getText()),
                             module,
                             settings) );
             }
@@ -352,7 +350,7 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     return true;
 }
 
-bool CExportManager::printKeyList(sword::ListKey const & list,
+bool CExportManager::printKeyList(swordxx::ListKey const & list,
                                   CSwordModuleInfo const * const module,
                                   DisplayOptions const & displayOptions,
                                   FilterOptions const & filterOptions)
@@ -366,14 +364,14 @@ bool CExportManager::printKeyList(sword::ListKey const & list,
     for (int i = 0; i < list.getCount(); i++) {
         if (progressWasCancelled())
             return false;
-        sword::SWKey const * const swKey = list.getElement(i);
-        if (sword::VerseKey const * const vKey =
-                    dynamic_cast<const sword::VerseKey*>(swKey))
+        swordxx::SWKey const * const swKey = list.getElement(i);
+        if (swordxx::VerseKey const * const vKey =
+                    dynamic_cast<const swordxx::VerseKey*>(swKey))
         {
-            QString const startKey = vKey->getText();
+            auto const startKey(QString::fromStdString(vKey->getText()));
             tree.append(new KTI(startKey, startKey, module, settings));
         } else {
-            QString const key = swKey->getText();
+            auto const key(QString::fromStdString(swKey->getText()));
             tree.append(new KTI(key, key, module, settings));
         }
         incProgress();

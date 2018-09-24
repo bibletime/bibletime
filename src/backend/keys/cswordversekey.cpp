@@ -14,13 +14,11 @@
 
 #include <QDebug>
 #include <QStringList>
+#include <swordxx/localemgr.h>
+#include <swordxx/swmodule.h>
 #include "../../util/btassert.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../drivers/cswordcommentarymoduleinfo.h"
-
-// Sword includes:
-#include <swmodule.h>
-#include <localemgr.h>
 
 
 CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
@@ -30,7 +28,7 @@ CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
             dynamic_cast<CSwordBibleModuleInfo const *>(module))
     {
         // Copy important settings like versification system
-        copyFrom(bible->module().getKey());
+        copyFrom(*bible->module().getKey());
         setKey(bible->lowerBound().key());
     }
     this->VerseKey::setAutoNormalize(true);
@@ -60,17 +58,17 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
              newModule->type() == CSwordModuleInfo::Commentary);
 
     CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);
-    const char * newVersification =
+    auto const & newVersification =
             static_cast<VerseKey *>(bible->module().getKey())->getVersificationSystem();
     bool inVersification = true;
 
     emitBeforeChanged();
 
-    if(strcmp(getVersificationSystem(), newVersification)) {
+    if(getVersificationSystem() != newVersification) {
         /// Remap key position to new versification
-        sword::VerseKey oldKey(*this);
+        swordxx::VerseKey oldKey(*this);
 
-        setVersificationSystem(newVersification);
+        setVersificationSystem(newVersification.c_str());
 
         positionFrom(oldKey);
         inVersification = !popError();
@@ -82,11 +80,11 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
 
     if(inVersification) {
         /// Limit to Bible bounds
-        if (_compare(bible->lowerBound()) < 0) {
-            setKey(bible->lowerBound());
+        if (compare_(bible->lowerBound()) < 0) {
+            setKey(bible->lowerBound().getText().c_str());
         }
-        if (_compare(bible->upperBound()) > 0) {
-            setKey(bible->upperBound());
+        if (compare_(bible->upperBound()) > 0) {
+            setKey(bible->upperBound().getText().c_str());
         }
     }
 
@@ -126,8 +124,8 @@ QString CSwordVerseKey::book( const QString& newBook ) {
         setBookName(newBook.toUtf8().constData());
     }
 
-    if ((getTestament() >= min + 1) && (getTestament() <= max + 1) && (getBook() <= BMAX[min])) {
-        return QString::fromUtf8( getBookName() );
+    if ((getTestament() >= min + 1) && (getTestament() <= max + 1) && (getBook() <= m_BMAX[min])) {
+        return QString::fromStdString(getBookName());
     }
 
     //return QString::fromUtf8( books[min][0].name ); //return the first book, i.e. Genesis
@@ -136,12 +134,10 @@ QString CSwordVerseKey::book( const QString& newBook ) {
 
 /** Sets the key we use to the parameter. */
 QString CSwordVerseKey::key() const {
-    return QString::fromUtf8(isBoundSet() ? getRangeText() : getText());
+    return QString::fromStdString(isBoundSet() ? getRangeText() : getText());
 }
 
-const char * CSwordVerseKey::rawKey() const {
-    return getText();
-}
+std::string CSwordVerseKey::rawKey() const { return getText(); }
 
 bool CSwordVerseKey::setKey(const QString &newKey) {
     return setKey(newKey.toUtf8().constData());
@@ -151,10 +147,10 @@ bool CSwordVerseKey::setKey(const char *newKey) {
     emitBeforeChanged();
 
     if(QByteArray(newKey).contains('-')) {
-        VerseKey vk(newKey, newKey, getVersificationSystem());
+        VerseKey vk(newKey, newKey, getVersificationSystem().c_str());
         setLowerBound(vk.getLowerBound());
         setUpperBound(vk.getUpperBound());
-        setPosition(sword::TOP);
+        positionToTop();
     } else {
         clearBounds();
         positionFrom(newKey);
@@ -179,10 +175,10 @@ bool CSwordVerseKey::next( const JumpType type ) {
             const int currentTestament = getTestament();
             const int currentBook = getBook();
 
-            if ((currentTestament == 2) && (currentBook >= BMAX[currentTestament-1])) { //Revelation, i.e. end of navigation
+            if ((currentTestament == 2) && (currentBook >= m_BMAX[currentTestament-1])) { //Revelation, i.e. end of navigation
                 return false;
             }
-            else if ((currentTestament == 1) && (currentBook >= BMAX[currentTestament-1])) { //Malachi, switch to the NT
+            else if ((currentTestament == 1) && (currentBook >= m_BMAX[currentTestament-1])) { //Malachi, switch to the NT
                 setTestament(currentTestament + 1);
                 setBook(1);
             }
@@ -213,14 +209,14 @@ bool CSwordVerseKey::next( const JumpType type ) {
                 //don't use setKey(), that would create a new key without Headings set
                 vKey->setText(key().toUtf8().constData());
 
-                m++;
+                m.increment();
 
                 vKey = static_cast<VerseKey *>(m.getKey());
                 vKey->setIntros(oldHeadingsStatus);
                 m.setSkipConsecutiveLinks(oldStatus);
 
                 if (!m.popError()) {
-                    setKey(QString::fromUtf8(vKey->getText()));
+                    setKey(QString::fromStdString(vKey->getText()));
                 } else {
                     //         Verse(Verse()+1);
                     //don't change the key, restore the module's position
@@ -239,15 +235,15 @@ bool CSwordVerseKey::next( const JumpType type ) {
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != nullptr) {
-        if (_compare(bible->lowerBound()) < 0 ) {
+        if (compare_(bible->lowerBound()) < 0 ) {
             emitBeforeChanged();
-            setKey(bible->lowerBound());
+            setKey(bible->lowerBound().getText().c_str());
             ret = false;
         }
 
-        if (_compare(bible->upperBound()) > 0 ) {
+        if (compare_(bible->upperBound()) > 0 ) {
             emitBeforeChanged();
-            setKey(bible->upperBound());
+            setKey(bible->upperBound().getText().c_str());
             ret = false;
         }
 
@@ -275,7 +271,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
             }
             else if ((getBook() == 1) && (getTestament() == 2)) { //Matthew
                 setTestament(1);
-                setBook(BMAX[0]);
+                setBook(m_BMAX[0]);
             }
             else {
                 setBook(getBook() - 1);
@@ -301,7 +297,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
 
                 bool const oldStatus = m.isSkipConsecutiveLinks();
                 m.setSkipConsecutiveLinks(true);
-                m--;
+                m.decrement();
 
                 vKey = static_cast<VerseKey *>(m.getKey());
                 vKey->setIntros(oldHeadingsStatus);
@@ -310,7 +306,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
                 if (!m.popError()) {
                     /// \warning Weird comment:
                     // don't use fromUtf8:
-                    setKey(QString::fromUtf8(vKey->getText()));
+                    setKey(QString::fromStdString(vKey->getText()));
                 } else {
                     ret = false;
                     //         Verse(Verse()-1);
@@ -328,15 +324,15 @@ bool CSwordVerseKey::previous( const JumpType type ) {
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != nullptr) {
-        if (_compare(bible->lowerBound()) < 0 ) {
+        if (compare_(bible->lowerBound()) < 0 ) {
             emitBeforeChanged();
-            setKey(bible->lowerBound());
+            setKey(bible->lowerBound().getText().c_str());
             ret = false;
         }
 
-        if (_compare(bible->upperBound()) > 0 ) {
+        if (compare_(bible->upperBound()) > 0 ) {
             emitBeforeChanged();
-            setKey(bible->upperBound());
+            setKey(bible->upperBound().getText().c_str());
             ret = false;
         }
 

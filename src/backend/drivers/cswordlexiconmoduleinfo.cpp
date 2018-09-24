@@ -17,11 +17,8 @@
 #include <QRegExp>
 #include <QTextCodec>
 #include <QDebug>
-
+#include <swordxx/swmodule.h>
 #include "../../util/directory.h"
-
-// Sword includes:
-#include <swmodule.h>
 
 
 //Change it once the format changed to make all systems rebuild their caches
@@ -75,23 +72,23 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
 
     auto & m = module();
     m.setSkipConsecutiveLinks(true);
-    m.setPosition(sword::TOP);
+    m.positionToTop();
     snap(); //snap to top entry
 
     do {
         if ( isUnicode() ) {
-            m_entries.append(QString::fromUtf8(m.getKeyText()));
+            m_entries.append(QString::fromStdString(m.getKeyText()));
         }
         else {
             //for latin1 modules use fromLatin1 because of speed
             QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
-            m_entries.append(codec->toUnicode(m.getKeyText()));
+            m_entries.append(codec->toUnicode(m.getKeyText().c_str()));
         }
 
         m.increment();
     } while (!m.popError());
 
-    m.setPosition(sword::TOP); // back to the first entry
+    m.positionToTop(); // back to the first entry
     m.setSkipConsecutiveLinks(false);
 
     /// \todo Document why the following code is here:
@@ -120,9 +117,9 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
 
 void CSwordLexiconModuleInfo::testForStrongsKeys() {
     auto & m = module();
-    m.setPosition(sword::TOP);
+    m.positionToTop();
     m.increment();
-    QString key = QString::fromUtf8(m.getKeyText());
+    auto const key(QString::fromStdString(m.getKeyText()));
     QRegExp rx1("[GH][0-9]+");
     if (rx1.exactMatch(key)) {
         m_hasStrongsKeys = true;

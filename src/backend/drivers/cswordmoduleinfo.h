@@ -23,12 +23,9 @@
 #include <QList>
 #include <QMetaType>
 #include <QString>
-
-// Sword includes:
-#include <listkey.h>
-#include <swmodule.h>
-#include <swsearchable.h>
-#include <swversion.h>
+#include <swordxx/keys/listkey.h>
+#include <swordxx/swmodule.h>
+#include <swordxx/version.h>
 
 
 #ifdef CLUCENE2
@@ -190,7 +187,7 @@ public: /* Methods: */
     /**
     * Returns the module object so all objects can access the original Sword module.
     */
-    inline sword::SWModule & module() const {
+    inline swordxx::SWModule & module() const {
         return m_module;
     }
 
@@ -266,8 +263,8 @@ wrong, or if the config file was write protected return false.
       \throws on error
     */
     size_t searchIndexed(const QString & searchedText,
-                         const sword::ListKey & scope,
-                         sword::ListKey & results) const;
+                         const swordxx::ListKey & scope,
+                         swordxx::ListKey & results) const;
 
     /**
       \returns the type of the module.
@@ -280,7 +277,7 @@ wrong, or if the config file was write protected return false.
     * Returns the required Sword version for this module.
     * Returns -1 if no special Sword version is required.
     */
-    sword::SWVersion minimumSwordVersion() const;
+    QString minimumSwordVersion() const;
 
     /**
       \note The Sword library takes care of the duplicate names: _n is added
@@ -410,7 +407,7 @@ public slots:
 
 protected: /* Methods: */
 
-    CSwordModuleInfo(sword::SWModule & module,
+    CSwordModuleInfo(swordxx::SWModule & module,
                      CSwordBackend & backend,
                      ModuleType type);
 
@@ -431,7 +428,7 @@ signals:
 
 private: /* Fields: */
 
-    sword::SWModule & m_module;
+    swordxx::SWModule & m_module;
     CSwordBackend & m_backend;
     ModuleType const m_type;
     bool m_hidden;

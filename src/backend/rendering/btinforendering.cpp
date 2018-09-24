@@ -23,7 +23,6 @@
 
 
 using namespace Rendering;
-using namespace sword;
 
 namespace Rendering {
 
@@ -52,7 +51,7 @@ public:
             }
             case KeyTreeItem::Settings::CompleteShort: {
                 if (isBible) {
-                    linkText = QString::fromUtf8(vk.getShortText());
+                    linkText = QString::fromStdString(vk.getShortText());
                     break;
                 }
                 //fall through for non-Bible modules
@@ -275,25 +274,25 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
     };
 
     if (module && (module->type() == CSwordModuleInfo::Bible)) {
-        sword::VerseKey vk;
-        sword::ListKey refs = vk.parseVerseList((const char*) data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
+        swordxx::VerseKey vk;
+        swordxx::ListKey refs = vk.parseVerseList((const char*) data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
 
         for (int i = 0; i < refs.getCount(); i++) {
-            sword::SWKey * const key = refs.getElement(i);
+            swordxx::SWKey * const key = refs.getElement(i);
             BT_ASSERT(key);
-            sword::VerseKey * const vk = dynamic_cast<sword::VerseKey*>(key);
+            swordxx::VerseKey * const vk = dynamic_cast<swordxx::VerseKey*>(key);
 
             if (vk && vk->isBoundSet()) { // render a range of keys
                 tree.append(new CTextRendering::KeyTreeItem(
-                    QString::fromUtf8(vk->getLowerBound().getText()),
-                    QString::fromUtf8(vk->getUpperBound().getText()),
+                    QString::fromStdString(vk->getLowerBound().getText()),
+                    QString::fromStdString(vk->getUpperBound().getText()),
                     module,
                     settings
                 ));
             } else {
                 tree.append(new CTextRendering::KeyTreeItem(
-                    QString::fromUtf8(key->getText()),
-                    QString::fromUtf8(key->getText()),
+                    QString::fromStdString(key->getText()),
+                    QString::fromStdString(key->getText()),
                     module,
                     settings
                 ));
@@ -355,10 +354,10 @@ QString decodeFootnote(QString const & data) {
             ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
 
     QString text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
-    text = QString::fromUtf8(m.renderText(
-                                 module->isUnicode()
-                                 ? static_cast<const char *>(text.toUtf8())
-                                 : static_cast<const char *>(text.toLatin1())));
+    text = QString::fromStdString(
+               m.renderText(module->isUnicode()
+                            ? static_cast<const char *>(text.toUtf8())
+                            : static_cast<const char *>(text.toLatin1())));
 
     return QString("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
            .arg(module->language()->abbrev())

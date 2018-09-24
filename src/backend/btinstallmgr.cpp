@@ -38,18 +38,20 @@ inline int calculateIntPercentage(T done, T total) {
     if (total == 0)
         return 100;
 
-    return normalizeCompletionPercentage<int>((done / total) * 100);
+    return normalizeCompletionPercentage(
+                static_cast<int>(
+                    (static_cast<double>(done) / static_cast<double>(total))
+                    * 100.0));
 }
 
 } // anonymous namespace
 
-using namespace sword;
-
 BtInstallMgr::BtInstallMgr(QObject * parent)
         : QObject(parent)
-        , InstallMgr(BtInstallBackend::configPath().toLatin1(), this)
-        , m_totalBytes(1)
-        , m_completedBytes(0)
+        , swordxx::InstallMgr(BtInstallBackend::configPath().toStdString(),
+                              this)
+        , m_totalBytes(1u)
+        , m_completedBytes(0u)
         , m_firstCallOfPreStatus(true)
 { // Use this class also as status reporter:
     this->setFTPPassive(true);
@@ -66,31 +68,19 @@ bool BtInstallMgr::isUserDisclaimerConfirmed() const {
     return true;
 }
 
-void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
-    /**
-      \warning Note that these *might be* rough measures due to the double data
-               type being used by Sword to store the number of bytes. Special
-               care must be taken to work around this, since the arguments may
-               contain weird values which would otherwise break this logic.
-    */
-
-    if (dltotal < 0.0) // Special care (see warning above)
-        dltotal = 0.0;
-    if (dlnow < 0.0) // Special care (see warning above)
-        dlnow = 0.0;
-
-    const int totalPercent = calculateIntPercentage<double>(dlnow + m_completedBytes,
-                                                            m_totalBytes);
-    const int filePercent  = calculateIntPercentage(dlnow, dltotal);
+void BtInstallMgr::update(std::size_t dltotal, std::size_t dlnow) noexcept {
+    auto const totalPercent(calculateIntPercentage(dlnow + m_completedBytes,
+                                                   m_totalBytes));
+    auto const filePercent(calculateIntPercentage(dlnow, dltotal));
 
     //qApp->processEvents();
     emit percentCompleted(totalPercent, filePercent);
 }
 
 
-void BtInstallMgr::preStatus(long totalBytes,
-                             long completedBytes,
-                             const char * message)
+void BtInstallMgr::preStatus(std::size_t totalBytes,
+                             std::size_t completedBytes,
+                             const char * message) noexcept
 {
     Q_UNUSED(message);
     BT_ASSERT(completedBytes <= totalBytes);

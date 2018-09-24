@@ -157,7 +157,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.setKey(key);
 
             // HACK: enable headings for VerseKeys:
-            static_cast<sword::VerseKey *>(module->module().getKey())
+            static_cast<swordxx::VerseKey *>(module->module().getKey())
                     ->setIntros(true);
 
             //first go back and then go forward the keys to be in context
@@ -190,7 +190,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.setKey(key);
 
             // HACK: enable headings for VerseKeys:
-            static_cast<sword::VerseKey *>(module->module().getKey())
+            static_cast<swordxx::VerseKey *>(module->module().getKey())
                     ->setIntros(true);
 
             //include Headings in display, they are indexed and searched too
@@ -224,10 +224,10 @@ void BtSearchResultArea::initConnections() {
     BT_CONNECT(m_resultListBox, SIGNAL(keyDeselected()), this, SLOT(clearPreview()));
     BT_CONNECT(m_moduleListBox,
                SIGNAL(moduleSelected(CSwordModuleInfo const *,
-                                     sword::ListKey const &)),
+                                     swordxx::ListKey const &)),
                m_resultListBox,
                SLOT(setupTree(CSwordModuleInfo const *,
-                              sword::ListKey const &)));
+                              swordxx::ListKey const &)));
     BT_CONNECT(m_moduleListBox,                      SIGNAL(moduleChanged()),
                m_previewDisplay->connectionsProxy(), SLOT(clear()));
 
@@ -271,7 +271,7 @@ void BtSearchResultArea::saveDialogSettings() const {
 ******************************************************************************/
 
 StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
-                                     const sword::ListKey & result,
+                                     const swordxx::ListKey & result,
                                      const QString &strongsNumber)
 {
     using namespace Rendering;
@@ -301,7 +301,7 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
         progress.setValue(index);
         qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
 
-        QString key = QString::fromUtf8(result.getElement(index)->getText());
+        QString key(QString::fromStdString(result.getElement(index)->getText()));
         QString text = CDisplayRendering().renderSingleKey(key, modules, settings);
         for (int sIndex = 0;;) {
             continueloop:

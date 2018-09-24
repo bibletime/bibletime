@@ -8,7 +8,6 @@
 #include <QEventLoop>
 
 #include <stdio.h>
-#include <swbuf.h>
 
 #include "backend/managers/cswordbackend.h"
 #include "backend/config/btconfig.h"

@@ -13,7 +13,6 @@
 #include "bibletime.h"
 
 #include "backend/config/btconfig.h"
-#include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
@@ -36,13 +35,11 @@ BibleTime::BibleTime(QObject* parent)
 void BibleTime::initBackends() {
     initSwordConfigFile();
 
-    sword::StringMgr::setSystemStringMgr( new BtStringMgr() );
-
 #ifdef Q_OS_MACOS
     // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
     // note: this must be done after setting the BTStringMgr, because this will reset the LocaleMgr
     qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
-    sword::LocaleMgr::setSystemLocaleMgr(new sword::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
+    swordxx::LocaleMgr::setSystemLocaleMgr(new swordxx::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
 #endif
 
     CSwordBackend *backend = CSwordBackend::createInstance();

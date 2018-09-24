@@ -57,7 +57,7 @@ void InstallSources::refreshWorks(const QStringList& sourceNames) {
         int percent = 10 + 90 *((double)i/sourceCount);
         QString title = tr("Refreshing") + " " + sourceName;
         emit percentComplete(percent, title);
-        sword::InstallSource source = BtInstallBackend::source(sourceName);
+        swordxx::InstallSource source = BtInstallBackend::source(sourceName);
         bool result = (m_iMgr->refreshRemoteSource(&source) == 0);
         if (result) {
             ;

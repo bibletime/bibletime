@@ -16,6 +16,11 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include <swordxx/swmgr.h>
+#include <swordxx/swmodule.h>
+#include <swordxx/version.h>
+#include <swordxx/localemgr.h>
+#include <swordxx/utilstr.h>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../drivers/btconstmoduleset.h"
@@ -29,13 +34,6 @@
 #include "../rendering/cchapterdisplay.h"
 #include "../rendering/centrydisplay.h"
 
-// Sword includes:
-#include <swmgr.h>
-#include <swbuf.h>
-#include <swmodule.h>
-#include <swversion.h>
-#include <localemgr.h>
-#include <utilstr.h>
 
 /**
   \brief The backend layer main class, a backend implementation of Sword.
@@ -48,7 +46,7 @@
         BibleTimeApp::~BibleTimeApp(). Only when \ref BackendNotSingleton
         "managing modules" separate backends are created.
 */
-class CSwordBackend: public QObject, public sword::SWMgr {
+class CSwordBackend: public QObject, public swordxx::SWMgr {
 
     Q_OBJECT
 
@@ -167,13 +165,13 @@ public: /* Methods: */
       \param[in] swmodule The SWModule of the desired module.
       \returns a pointer to the desired module or NULL if not found.
     */
-    CSwordModuleInfo * findSwordModuleByPointer(const sword::SWModule * const swmodule) const;
+    CSwordModuleInfo * findSwordModuleByPointer(const swordxx::SWModule * const swmodule) const;
 
     /**
       \returns The global config object containing the configs of all modules
                merged together.
     */
-    inline sword::SWConfig * getConfig() const {
+    inline swordxx::SWConfig * getConfig() const {
         return config;
     }
 
@@ -246,9 +244,8 @@ protected: /* Methods: */
     */
     CSwordBackend();
 
-    /** Reimplemented from sword::SWMgr. */
-    void AddRenderFilters(sword::SWModule * module,
-                          sword::ConfigEntMap & section) override;
+    void addRenderFilters(swordxx::SWModule & module,
+                          swordxx::ConfigEntMap const & section) override;
 
     QStringList getSharedSwordConfigFiles() const;
     QString getPrivateSwordConfigPath() const;
@@ -257,11 +254,16 @@ protected: /* Methods: */
 private: /* Fields: */
 
     // Filters:
-    Filters::GbfToHtml   m_gbfFilter;
-    Filters::OsisToHtml  m_osisFilter;
-    Filters::PlainToHtml m_plainFilter;
-    Filters::TeiToHtml   m_teiFilter;
-    Filters::ThmlToHtml  m_thmlFilter;
+    std::shared_ptr<Filters::GbfToHtml>   m_gbfFilter{
+            std::make_shared<Filters::GbfToHtml>()};
+    std::shared_ptr<Filters::OsisToHtml>  m_osisFilter{
+            std::make_shared<Filters::OsisToHtml>()};
+    std::shared_ptr<Filters::PlainToHtml> m_plainFilter{
+            std::make_shared<Filters::PlainToHtml>()};
+    std::shared_ptr<Filters::TeiToHtml>   m_teiFilter{
+            std::make_shared<Filters::TeiToHtml>()};
+    std::shared_ptr<Filters::ThmlToHtml>  m_thmlFilter{
+            std::make_shared<Filters::ThmlToHtml>()};
 
     // Displays:
     Rendering::CChapterDisplay m_chapterDisplay;

@@ -112,9 +112,9 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
     }
 
     //BTInstallMgr iMgr;
-    //sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
-    sword::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
-    if (is.caption.c_str() == m_captionEdit->text()) { // source already exists
+    //swordxx::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
+    swordxx::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
+    if (is.m_caption.c_str() == m_captionEdit->text()) { // source already exists
         message::showInformation( this, tr( "Error" ),
                                tr("A source with this caption already exists. Please provide a different caption."));
         return;
@@ -218,34 +218,34 @@ void CSwordSetupInstallSourcesDialog::slotRefreshCanceled() {
     qApp->processEvents();
 }
 
-sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
-    sword::InstallSource newSource(""); //empty, invalid Source
+swordxx::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
+    swordxx::InstallSource newSource(""); //empty, invalid Source
     if (this->isRemote(m_protocolCombo->currentText())) {
         if (m_protocolCombo->currentText() == PROTO_FTP) {
-            newSource.type = "FTP";
+            newSource.m_type = "FTP";
             }
             else if (m_protocolCombo->currentText() == PROTO_SFTP) {
-                newSource.type = "SFTP";
+                newSource.m_type = "SFTP";
             }
             else if (m_protocolCombo->currentText() == PROTO_HTTP) {
-                newSource.type = "HTTP";
+                newSource.m_type = "HTTP";
             }
             else if (m_protocolCombo->currentText() == PROTO_HTTPS) {
-                newSource.type = "HTTPS";
+                newSource.m_type = "HTTPS";
             }
-            newSource.source = m_serverEdit->text().toUtf8();
+            newSource.m_source = m_serverEdit->text().toStdString();
         //a message to the user would be nice, but we're in message freeze right now (1.5.1)
         if (m_serverEdit->text().right(1) == "/") { //remove a trailing slash
-            newSource.source  = m_serverEdit->text().mid(0, m_serverEdit->text().length() - 1).toUtf8();
+            newSource.m_source  = m_serverEdit->text().mid(0, m_serverEdit->text().length() - 1).toStdString();
         }
     }
     else {
-        newSource.type = "DIR";
-        newSource.source = "local";
+        newSource.m_type = "DIR";
+        newSource.m_source = "local";
     }
-    newSource.caption = m_captionEdit->text().toUtf8();
-    newSource.directory = m_pathEdit->text().toUtf8();
-    newSource.uid = newSource.source;
+    newSource.m_caption = m_captionEdit->text().toStdString();
+    newSource.m_directory = m_pathEdit->text().toStdString();
+    newSource.m_uid = newSource.m_source;
 
     return newSource;
 }

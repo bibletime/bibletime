@@ -28,7 +28,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
     public: /* Methods: */
-        CSwordBibleModuleInfo(sword::SWModule & module,
+        CSwordBibleModuleInfo(swordxx::SWModule & module,
                               CSwordBackend & backend,
                               ModuleType type = Bible);
 

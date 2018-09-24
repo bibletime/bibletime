@@ -16,92 +16,71 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <swordxx/filemgr.h>
+#include <swordxx/swconfig.h>
 #include "../util/btassert.h"
 #include "../util/directory.h"
 #include "managers/cswordbackend.h"
 #include "btinstallmgr.h"
 
-// Sword includes:
-#include <filemgr.h>
-#include <swconfig.h>
-#include <swbuf.h>
-
-
-using namespace sword;
 
 namespace BtInstallBackend {
 
 /** Adds the source described by Source to the backend. */
-bool addSource(sword::InstallSource& source) {
-    SWConfig config(configFilename().toLatin1());
+bool addSource(swordxx::InstallSource& source) {
+    swordxx::SWConfig config(configFilename().toStdString());
     if (isRemote(source)) {
-        if (source.directory[ source.directory.length()-1 ] == '/') {
-            source.directory--;
+        if (!source.m_directory.empty() && source.m_directory.back() == '/') {
+            source.m_directory.pop_back();
         }
-    if (!strcmp(source.type, "FTP")) {
-            config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
-        }
-        else if (!strcmp(source.type, "SFTP")) {
-            config["Sources"].insert( std::make_pair(SWBuf("SFTPSource"), source.getConfEnt()) );
-        }
-        else if (!strcmp(source.type, "HTTP")) {
-            config["Sources"].insert( std::make_pair(SWBuf("HTTPSource"), source.getConfEnt()) );
-        }
-        else if (!strcmp(source.type, "HTTPS")) {
-            config["Sources"].insert( std::make_pair(SWBuf("HTTPSSource"), source.getConfEnt()) );
-        }
+        config["Sources"].emplace(source.m_type + "Source", source.getConfEnt());
+    } else if (source.m_type == "DIR") {
+        config["Sources"].emplace("DIRSource", source.getConfEnt());
     }
-    else if (!strcmp(source.type, "DIR")) {
-        config["Sources"].insert( std::make_pair(SWBuf("DIRSource"), source.getConfEnt()) );
-    }
-    config.Save();
+    config.save();
     return true;
 }
 
 /** Returns the Source struct. */
-sword::InstallSource source(const QString &name) {
+swordxx::InstallSource source(const QString &name) {
     BtInstallMgr mgr;
-    InstallSourceMap::iterator source = mgr.sources.find(name.toLatin1().data());
-    if (source != mgr.sources.end()) {
-        return *(source->second);
-    }
-    else { //not found in Sword, may be a local DIR source
-        SWConfig config(configFilename().toLatin1());
-        SectionMap::iterator sourcesSection = config.Sections.find("Sources");
-        if (sourcesSection != config.Sections.end()) {
-            ConfigEntMap::iterator sourceBegin =
-                sourcesSection->second.lower_bound("DIRSource");
-            ConfigEntMap::iterator sourceEnd =
-                sourcesSection->second.upper_bound("DIRSource");
+    auto const sourceIt(mgr.sources.find(name.toStdString()));
+    if (sourceIt != mgr.sources.end()) {
+        return *(sourceIt->second);
+    } else { //not found in Sword, may be a local DIR source
+        swordxx::SWConfig config(configFilename().toStdString());
+        auto const sourcesSection(config.sections().find("Sources"));
+        if (sourcesSection != config.sections().end()) {
+            auto sourceBegin(sourcesSection->second.lower_bound("DIRSource"));
+            auto const sourceEnd(sourcesSection->second.upper_bound("DIRSource"));
 
             while (sourceBegin != sourceEnd) {
-                InstallSource is("DIR", sourceBegin->second.c_str());
-                if (!strcmp(is.caption, name.toLatin1()) ) { //found local dir source
+                swordxx::InstallSource is("DIR", sourceBegin->second.c_str());
+                if (is.m_caption == name.toStdString()) //found local dir source
                     return is;
-                }
 
                 ++sourceBegin; //next source
             }
         }
     }
 
-    InstallSource is("EMPTY");   //default return value
-    is.caption = "unknown caption";
-    is.source = "unknown source";
-    is.directory = "unknown dir";
+    swordxx::InstallSource is("EMPTY");   //default return value
+    is.m_caption = "unknown caption";
+    is.m_source = "unknown source";
+    is.m_directory = "unknown dir";
     return is;
 }
 
 /** Deletes the source. */
 bool deleteSource(const QString &name) {
-    sword::InstallSource is = source(name );
+    swordxx::InstallSource is = source(name );
 
-    SWConfig config(configFilename().toLatin1());
+    swordxx::SWConfig config(configFilename().toStdString());
 
     //this code can probably be shortened by using the stl remove_if functionality
-    SWBuf sourceConfigEntry = is.getConfEnt();
+    auto const sourceConfigEntry(is.getConfEnt());
     bool notFound = true;
-    ConfigEntMap::iterator it = config["Sources"].begin();
+    auto it(config["Sources"].begin());
     while (it != config["Sources"].end()) {
         //SWORD lib gave us a "nice" surprise: getConfEnt() adds uid, so old sources added by BT are not recognized here
         if (it->second == sourceConfigEntry) {
@@ -114,13 +93,13 @@ bool deleteSource(const QString &name) {
     if (notFound) {
         qDebug() << "source was not found, trying without uid";
         //try again without uid
-        QString sce(sourceConfigEntry.c_str());
+        QString sce(QString::fromStdString(sourceConfigEntry));
         QStringList l = sce.split('|');
         l.removeLast();
         sce = l.join("|").append("|");
         it = config["Sources"].begin();
         while (it != config["Sources"].end()) {
-            if (it->second == sce) {
+            if (it->second == sce.toStdString()) {
                 config["Sources"].erase(it);
                 break;
             }
@@ -128,7 +107,7 @@ bool deleteSource(const QString &name) {
         }
     }
 
-    config.Save();
+    config.save();
     return true; /// \todo dummy
 }
 
@@ -140,11 +119,11 @@ QList<CSwordModuleInfo*> moduleList(QString name) {
     return QList<CSwordModuleInfo*>();
 }
 
-bool isRemote(const sword::InstallSource& source) {
-    return !strcmp(source.type, "FTP") ||
-            !strcmp(source.type, "SFTP") ||
-            !strcmp(source.type, "HTTP") ||
-            !strcmp(source.type, "HTTPS");
+bool isRemote(const swordxx::InstallSource& source) {
+    return (source.m_type == "FTP")
+            || (source.m_type == "FTPS")
+            || (source.m_type == "HTTP")
+            || (source.m_type == "HTTPS");
 }
 
 QString configPath() {
@@ -182,8 +161,8 @@ bool setTargetList( const QStringList& targets ) {
     }
 
     filename = util::directory::convertDirSeparators(filename);
-    SWConfig conf(filename.toLocal8Bit());
-    conf.Sections.clear();
+    swordxx::SWConfig conf(filename.toStdString());
+    conf.sections().clear();
 
 #ifdef Q_OS_WIN
     // On Windows, add the sword directory to the config file.
@@ -206,12 +185,13 @@ bool setTargetList( const QStringList& targets ) {
         }
         else {
             qDebug() << "Add path to the conf file" << filename << ":" << t;
-            conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.toLocal8Bit().data()) );
+            conf["Install"].emplace(!setDataPath ? "DataPath": "AugmentPath",
+                                    t.toStdString());
             setDataPath = true;
         }
     }
     qDebug() << "Saving Sword configuration ...";
-    conf.Save();
+    conf.save();
     CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
     return true;
 }
@@ -223,20 +203,19 @@ QStringList sourceNameList() {
     QStringList names;
 
     //add Sword remote sources
-    for (InstallSourceMap::iterator it = mgr.sources.begin(); it != mgr.sources.end(); ++it) {
-        names << QString::fromLocal8Bit(it->second->caption);
-    }
+    for (auto const & sp : mgr.sources)
+        names << QString::fromStdString(sp.second->m_caption);
 
     // Add local directory sources
-    SWConfig config(configFilename().toLatin1());
-    sword::SectionMap::iterator sourcesSection = config.Sections.find("Sources");
-    if (sourcesSection != config.Sections.end()) {
-        sword::ConfigEntMap::iterator sourceBegin = sourcesSection->second.lower_bound("DIRSource");
-        sword::ConfigEntMap::iterator sourceEnd = sourcesSection->second.upper_bound("DIRSource");
+    swordxx::SWConfig config(configFilename().toStdString());
+    auto const sourcesSection(config.sections().find("Sources"));
+    if (sourcesSection != config.sections().end()) {
+        auto sourceBegin(sourcesSection->second.lower_bound("DIRSource"));
+        auto const sourceEnd(sourcesSection->second.upper_bound("DIRSource"));
 
         while (sourceBegin != sourceEnd) {
-            InstallSource is("DIR", sourceBegin->second.c_str());
-            names << QString::fromLatin1(is.caption.c_str());
+            swordxx::InstallSource is("DIR", sourceBegin->second.c_str());
+            names << QString::fromStdString(is.m_caption);
 
             ++sourceBegin;
         }
@@ -247,9 +226,9 @@ QStringList sourceNameList() {
 
 
 void initPassiveFtpMode() {
-    SWConfig config(configFilename().toLatin1());
+    swordxx::SWConfig config(configFilename().toStdString());
     config["General"]["PassiveFTP"] = "true";
-    config.Save();
+    config.save();
 }
 QString swordConfigFilename() {
     namespace DU = util::directory;
@@ -275,11 +254,11 @@ QDir swordDir() {
 #endif
 }
 
-CSwordBackend * backend(const sword::InstallSource & is) {
+CSwordBackend * backend(const swordxx::InstallSource & is) {
     /// \anchor BackendNotSingleton
-    CSwordBackend * const ret = new CSwordBackend(isRemote(is)
-                                                  ? is.localShadow.c_str()
-                                                  : is.directory.c_str(),
+    CSwordBackend * const ret = new CSwordBackend((isRemote(is)
+                                                   ? is.m_localShadow
+                                                   : is.m_directory).c_str(),
                                                   false);
     ret->initModules(CSwordBackend::OtherChange);
     return ret;

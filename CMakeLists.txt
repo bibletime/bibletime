@@ -129,7 +129,7 @@ FIND_PACKAGE(Qt5Svg ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5PrintSupport ${REQUIRED_QT_VERSION} REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
-FIND_PACKAGE(Sword 1.7.0 REQUIRED)
+FIND_PACKAGE(Swordxx 2.0.0 REQUIRED)
 
 SET(CMAKE_AUTOMOC ON)
 SET(CMAKE_CXX_STANDARD 14)
@@ -138,7 +138,6 @@ ADD_COMPILE_OPTIONS(
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-O2>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
-  ${Sword_CFLAGS_OTHER}
 )
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     SET(CMAKE_AUTOMOC_MOC_OPTIONS "-DNDEBUG")
@@ -185,7 +184,7 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
     ${CLucene_INCLUDE_DIR}            #CLucene headers
     ${CLucene_LIBRARY_DIR}            #CLucene/clucene-config.h
-    ${Sword_INCLUDE_DIRS}
+    ${Swordxx_INCLUDE_DIRS}
 )
 # Macros used by BTUITranslationLink.cmake amd BTUITranslation.cmake
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTranslationMacros.cmake")
@@ -204,7 +203,7 @@ ADD_LIBRARY(
     STATIC
     ${bibletime_COMMON_SOURCES}
 )
-TARGET_LINK_LIBRARIES(bibletime_common Qt5::Widgets Qt5::Xml)
+TARGET_LINK_LIBRARIES(bibletime_common Qt5::Widgets Qt5::Xml ${Swordxx_LIBRARIES})
 
 IF(MSVC)
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
@@ -228,7 +227,7 @@ ENDIF()
 TARGET_LINK_LIBRARIES("bibletime"
     bibletime_common
     ${CLucene_LIBRARY}
-    ${Sword_LDFLAGS}
+    ${Swordxx_LIBRARIES}
 )
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
@@ -258,11 +257,11 @@ ELSE()
 ENDIF()
 
 SET_TARGET_PROPERTIES("bibletime" PROPERTIES
-                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
+                      COMPILE_FLAGS "${BibleTime_CXXFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
-                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
+                      COMPILE_FLAGS "${BibleTime_CXXFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 IF(Qt5Core_VERSION VERSION_LESS 5.3.0)
@@ -319,7 +318,7 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 
 IF(MSVC)
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Swordxx_INCLUDE_DIRS}/../../locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 
@@ -332,7 +331,7 @@ ENDIF()
 
 IF(APPLE)
   # sword locale information, needed for DMG image
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Swordxx_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 ENDIF()

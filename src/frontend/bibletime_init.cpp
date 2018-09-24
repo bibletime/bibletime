@@ -23,8 +23,9 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include <swordxx/swlog.h>
+#include <swordxx/swmgr.h>
 #include "backend/config/btconfig.h"
-#include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
@@ -42,10 +43,6 @@
 #include "util/btconnect.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-
-// Sword includes:
-#include <swlog.h>
-#include <swmgr.h>
 
 #ifndef NDEBUG
 #include <QLabel>
@@ -845,18 +842,15 @@ void BibleTime::initSwordConfigFile() {
 void BibleTime::initBackends() {
     initSwordConfigFile();
 
-    if (!sword::SWMgr::isICU)
-        sword::StringMgr::setSystemStringMgr(new BtStringMgr());
-
-    sword::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
-                                              ? sword::SWLog::LOG_DEBUG
-                                              : sword::SWLog::LOG_ERROR);
+    swordxx::SWLog::getSystemLog()->setLogLevel(btApp->debugMode()
+                                              ? swordxx::SWLog::LOG_DEBUG
+                                              : swordxx::SWLog::LOG_ERROR);
 
 #ifdef Q_OS_MAC
     // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
     // note: this must be done after setting the BTStringMgr, because this will reset the LocaleMgr
     qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
-    sword::LocaleMgr::setSystemLocaleMgr(new sword::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
+    swordxx::LocaleMgr::setSystemLocaleMgr(new swordxx::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
 #endif
 
     /*

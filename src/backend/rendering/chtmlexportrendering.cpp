@@ -111,9 +111,9 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                        .append("\"");
         } else {
             langAttr = QString(" xml:lang=\"")
-                       .append(swModule.getLanguage())
+                       .append(swModule.getLanguage().c_str())
                        .append("\" lang=\"")
-                       .append(swModule.getLanguage())
+                       .append(swModule.getLanguage().c_str())
                        .append("\"");
         }
 

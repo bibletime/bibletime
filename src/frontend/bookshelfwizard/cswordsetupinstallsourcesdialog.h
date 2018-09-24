@@ -14,11 +14,8 @@
 #define CSWORDSETUPINSTALLSOURCESDIALOG_H
 
 #include <QDialog>
-
+#include <swordxx/installmgr.h>
 #include "backend/btinstallmgr.h"
-
-// Sword includes:
-#include <installmgr.h>
 
 
 class QComboBox;
@@ -30,7 +27,7 @@ class CSwordSetupInstallSourcesDialog final: public QDialog  {
         Q_OBJECT
 
     public:
-        sword::InstallSource getSource();
+        swordxx::InstallSource getSource();
         bool wasRemoteListAdded() {
             return m_remoteListAdded;
         }

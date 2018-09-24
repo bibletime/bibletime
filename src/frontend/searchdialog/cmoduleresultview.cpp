@@ -158,7 +158,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
 }
 
 void CModuleResultView::setupStrongsResults(const CSwordModuleInfo *module,
-                                            const sword::ListKey &results,
+                                            const swordxx::ListKey &results,
                                             QTreeWidgetItem *parent,
                                             const QString &sNumber)
 {

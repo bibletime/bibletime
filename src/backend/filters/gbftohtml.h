@@ -13,8 +13,7 @@
 #ifndef FILTERS_GBFTOHTML_H
 #define FILTERS_GBFTOHTML_H
 
-// Sword includes:
-#include <gbfhtml.h>
+#include <swordxx/filters/gbfhtml.h>
 
 
 namespace Filters {
@@ -22,13 +21,13 @@ namespace Filters {
 /**
   \brief GBF to HTML conversion filter.
 */
-class GbfToHtml: public sword::GBFHTML {
+class GbfToHtml: public swordxx::GBFHTML {
     protected: /* Types: */
-        class UserData: public sword::GBFHTML::MyUserData {
+        class UserData: public swordxx::GBFHTML::MyUserData {
             public:
-                inline UserData(const sword::SWModule *module,
-                                 const sword::SWKey *key)
-                    : sword::GBFHTML::MyUserData(module, key),
+                inline UserData(const swordxx::SWModule *module,
+                                 const swordxx::SWKey *key)
+                    : swordxx::GBFHTML::MyUserData(module, key),
                       swordFootnote(1)
                 {
                     hasFootnotePreTag = false;
@@ -40,23 +39,21 @@ class GbfToHtml: public sword::GBFHTML {
     public: /* Methods: */
         GbfToHtml();
 
-        /** Reimplemented from sword::OSISHTMLHREF. */
-        bool handleToken(sword::SWBuf &buf,
+        /** Reimplemented from swordxx::OSISHTMLHREF. */
+        bool handleToken(std::string &buf,
                          const char *token,
-                         sword::BasicFilterUserData *userData) override;
+                         swordxx::BasicFilterUserData *userData) override;
 
-        /** Reimplemented from sword::SWFilter. */
-        char processText(sword::SWBuf &buf,
-                         const sword::SWKey *key,
-                         const sword::SWModule *module = nullptr) override;
+        /** Reimplemented from swordxx::SWFilter. */
+        char processText(std::string &buf,
+                         const swordxx::SWKey *key,
+                         const swordxx::SWModule *module = nullptr) override;
 
     protected: /* Methods: */
-        /** Reimplemented from sword::OSISHTMLHREF. */
-        inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module, const sword::SWKey *key) override
-        {
-            return new UserData(module, key);
-        }
+        /** Reimplemented from swordxx::OSISHTMLHREF. */
+        inline std::unique_ptr<swordxx::BasicFilterUserData> createUserData(
+                const swordxx::SWModule *module, const swordxx::SWKey *key) override
+        { return std::make_unique<UserData>(module, key); }
 };
 
 } // namespace Filters

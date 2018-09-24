@@ -50,7 +50,7 @@ public: /* Methods: */
                  Format const format,
                  bool const addText);
 
-    bool saveKeyList(sword::ListKey const & list,
+    bool saveKeyList(swordxx::ListKey const & list,
                      CSwordModuleInfo const * const module,
                      Format const format,
                      bool const addText);
@@ -63,7 +63,7 @@ public: /* Methods: */
                  Format const format,
                  bool const addText);
 
-    bool copyKeyList(sword::ListKey const & list,
+    bool copyKeyList(swordxx::ListKey const & list,
                      CSwordModuleInfo const * const module,
                      Format const format,
                      bool const addText);
@@ -89,7 +89,7 @@ public: /* Methods: */
                           DisplayOptions const & displayOptions,
                           FilterOptions const & filterOptions);
 
-    bool printKeyList(sword::ListKey const & list,
+    bool printKeyList(swordxx::ListKey const & list,
                       CSwordModuleInfo const * const module,
                       DisplayOptions const & displayOptions,
                       FilterOptions const & filterOptions);

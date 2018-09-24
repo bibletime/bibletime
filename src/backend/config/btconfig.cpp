@@ -14,14 +14,12 @@
 
 #include <QDebug>
 #include <QLocale>
+#include <swordxx/keys/versekey.h>
 #include "../../util/btassert.h"
 #include "../../util/directory.h" // DU::getUserBaseDir()
 #include "../btmoduletreeitem.h"
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/cswordbackend.h"
-
-// Sword includes:
-#include <versekey.h> // For search scope configuration
 
 
 #define BTCONFIG_API_VERSION 1
@@ -256,13 +254,14 @@ BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale() {
     StringMap map = value<BtConfig::StringMap>("properties/searchScopes", m_defaultSearchScopes);
 
     // Convert map to current locale:
-    sword::VerseKey vk;
+    swordxx::VerseKey vk;
     for (StringMap::Iterator it = map.begin(); it != map.end(); it++) {
         QString &s = it.value();
-        sword::ListKey list(vk.parseVerseList(QByteArray(s.toUtf8()), "Genesis 1:1", true));
+        swordxx::ListKey list(vk.parseVerseList(QByteArray(s.toUtf8()), "Genesis 1:1", true));
         s.clear();
-        for (int i = 0; i < list.getCount(); i++) {
-            s.append(QString::fromUtf8(list.getElement(i)->getRangeText()));
+        for (std::size_t i = 0u; i < list.getCount(); ++i) {
+            s.append(QString::fromStdString(
+                         list.getElement(i)->getRangeText()));
             s.append("; ");
         }
     }
@@ -274,20 +273,20 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
      * We want to make sure that the search scopes are saved with english
      * key names so loading them will always work with each locale set.
      */
-    sword::VerseKey vk;
+    swordxx::VerseKey vk;
     BtConfig::StringMap::Iterator iter = searchScopes.begin();
     while (iter != searchScopes.end()) {
         QString &data = iter.value();
         bool parsingWorked = true;
-        sword::ListKey list(vk.parseVerseList(data.toUtf8(), "Genesis 1:1", true));
+        swordxx::ListKey list(vk.parseVerseList(data.toUtf8(), "Genesis 1:1", true));
         data.clear();
-        for (int i = 0; i < list.getCount(); i++) {
-            sword::VerseKey * verse(dynamic_cast<sword::VerseKey *>(list.getElement(i)));
+        for (std::size_t i = 0u; i < list.getCount(); ++i) {
+            swordxx::VerseKey * verse(dynamic_cast<swordxx::VerseKey *>(list.getElement(i)));
 
             if (verse != nullptr) {
                 verse->setLocale("en");
-                data.append(QString::fromUtf8(verse->getRangeText()));
-                data.append(";");
+                data.append(QString::fromStdString(verse->getRangeText()));
+                data.append(';');
             } else {
                 parsingWorked = false;
                 break;

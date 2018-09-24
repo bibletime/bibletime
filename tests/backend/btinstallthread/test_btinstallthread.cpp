@@ -7,7 +7,6 @@
 
 #include <QEventLoop>
 
-#include <swbuf.h>
 #include <stdio.h>
 
 #include "backend/btinstallbackend.h"
@@ -70,7 +69,7 @@ void test_BtInstallThread::getInstallPath() {
 }
 
 void test_BtInstallThread::findModulesToInstall() {
-    sword::InstallSource const source = BtInstallBackend::source(s_sourceName);
+    swordxx::InstallSource const source = BtInstallBackend::source(s_sourceName);
     CSwordBackend * const installBackend = BtInstallBackend::backend(source);
 
     for (auto moduleName : s_moduleList) {

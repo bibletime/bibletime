@@ -56,7 +56,7 @@ const QString CEntryDisplay::textKeyRendering(
     //in Bibles and Commentaries we need to check if 0:0 and X:0 contain something
     if (module->type() == CSwordModuleInfo::Bible || module->type() == CSwordModuleInfo::Commentary) {
         // HACK: enable headings for VerseKeys
-        static_cast<sword::VerseKey *>(module->module().getKey())
+        static_cast<swordxx::VerseKey *>(module->module().getKey())
                 ->setIntros(true);
 
         CSwordVerseKey k1(module);

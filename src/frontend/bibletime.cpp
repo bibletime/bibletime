@@ -299,7 +299,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
             CSwordVerseKey vk(nullptr);
             const int maxIndex = 31100;
             int newIndex = rand() % maxIndex;
-            vk.setPosition(sword::TOP);
+            vk.positionToTop();
             vk.setIndex(newIndex);
             createReadDisplayWindow(bible, vk.key());
         } else {

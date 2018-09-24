@@ -1,7 +1,6 @@
 
 #include "test_cswordbackend.h"
 #include <QtTest/QtTest>
-#include <swbuf.h>
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/config/btconfig.h"
@@ -30,7 +29,7 @@ void test_CSwordBackend::initTestCase() {
 }
 
 void test_CSwordBackend::instance() {
-     QVERIFY(CSwordBackend::instance() != 0);    
+     QVERIFY(CSwordBackend::instance() != 0);
 }
 
 void test_CSwordBackend::moduleList() {
@@ -233,7 +232,7 @@ void test_CSwordBackend::booknameLanguage() {
 
     backend->booknameLanguage(language);
     vKey->setKey(reference);
-    QCOMPARE(QString(vKey->getBookName()), bookName);
+    QCOMPARE(QString::fromStdString(vKey->getBookName()), bookName);
 }
 
 void test_CSwordBackend::findModuleByDescription() {
@@ -254,7 +253,7 @@ void test_CSwordBackend::findModuleByName() {
 void test_CSwordBackend::findModuleByPointer() {
     CSwordBackend* backend = CSwordBackend::instance();
     CSwordModuleInfo* module1 = backend->findModuleByName("KJV");
-    sword::SWModule& swModule = module1->module();
+    swordxx::SWModule& swModule = module1->module();
 
     CSwordModuleInfo* module2 = backend->findSwordModuleByPointer(&swModule);
     QCOMPARE(module1,module2);
@@ -262,7 +261,7 @@ void test_CSwordBackend::findModuleByPointer() {
 
 void test_CSwordBackend::getConfig() {
     CSwordBackend* backend = CSwordBackend::instance();
-    sword::SWConfig* config = backend->getConfig();
+    swordxx::SWConfig* config = backend->getConfig();
     QVERIFY(config != 0);
 }
 
@@ -397,7 +396,7 @@ void test_CSwordBackend::getConstPointerList() {
 
 void test_CSwordBackend::cleanupTestCase() {
      CSwordBackend::destroyInstance();
-     QVERIFY(CSwordBackend::instance() == 0);    
+     QVERIFY(CSwordBackend::instance() == 0);
 }
 
 QTEST_MAIN(test_CSwordBackend)

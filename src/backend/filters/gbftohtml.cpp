@@ -15,15 +15,13 @@
 #include <cstdlib>
 #include <QRegExp>
 #include <QString>
+#include <swordxx/utilxml.h>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../managers/cswordbackend.h"
 
-// Sword includes:
-#include <utilxml.h>
 
-
-Filters::GbfToHtml::GbfToHtml() : sword::GBFHTML() {
+Filters::GbfToHtml::GbfToHtml() : swordxx::GBFHTML() {
 
     setEscapeStringCaseSensitive(true);
     setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
@@ -76,14 +74,16 @@ Filters::GbfToHtml::GbfToHtml() : sword::GBFHTML() {
 }
 
 /** No descriptions */
-char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key, const sword::SWModule * module) {
+char Filters::GbfToHtml::processText(std::string& buf, const swordxx::SWKey * key, const swordxx::SWModule * module) {
     GBFHTML::processText(buf, key, module);
 
     if (!module->isProcessEntryAttributes()) {
         return 1; //no processing should be done, may happen in a search
     }
 
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->getName() );
+    CSwordModuleInfo * m =
+            CSwordBackend::instance()->findModuleByName(
+                QString::fromStdString(module->getName()));
 
     if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::morphTags) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
         return 1; //WARNING: Return alread here
@@ -252,15 +252,15 @@ char hexToChar(char const * const hex) {
 }
 }
 
-bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::GbfToHtml::handleToken(std::string &buf, const char *token, swordxx::BasicFilterUserData *userData) {
     if (!substituteToken(buf, token)) { // More than a simple replace
         size_t const tokenLength = strlen(token);
 
         BT_ASSERT(dynamic_cast<UserData *>(userData));
         UserData * const myUserData = static_cast<UserData *>(userData);
         // Hack to be able to call stuff like Lang():
-        sword::SWModule const * const myModule =
-                const_cast<sword::SWModule *>(myUserData->module);
+        swordxx::SWModule const * const myModule =
+                const_cast<swordxx::SWModule *>(myUserData->module);
 
         /* We use several append calls because appendFormatted slows down
            filtering, which should be fast. */
@@ -269,7 +269,7 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
             || !strncmp(token, "WH", 2u)
             || !strncmp(token, "WT", 2u))
         {
-            buf.append('<').append(token).append('>');
+            buf.append(1u, '<').append(token).append(1u, '>');
         } else if (!strncmp(token, "RB", 2u)) {
             myUserData->hasFootnotePreTag = true;
             buf.append("<span class=\"footnotepre\">");
@@ -282,9 +282,9 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
 
             buf.append(" <span class=\"footnote\" note=\"")
                .append(myModule->getName())
-               .append('/')
+               .append(1u, '/')
                .append(myUserData->key->getShortText())
-               .append('/')
+               .append(1u, '/')
                .append(QString::number(myUserData->swordFootnote).toUtf8().constData())
                .append("\">*</span> ");
             myUserData->swordFootnote++;
@@ -296,11 +296,11 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
             buf.append("<font face=\"");
             for (size_t i = 2u; i < tokenLength; i++)
                 if (token[i] != '\"')
-                    buf.append(token[i]);
+                    buf.push_back(token[i]);
             buf.append("\">");
         } else if (!strncmp(token, "CA", 2u)) { // ASCII value <CA##> in hex
             BT_ASSERT(tokenLength == 4u);
-            buf.append(static_cast<char>(hexToChar(token + 2u)));
+            buf.push_back(static_cast<char>(hexToChar(token + 2u)));
         } else {
             return GBFHTML::handleToken(buf, token, userData);
         }

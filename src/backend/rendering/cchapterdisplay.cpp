@@ -48,7 +48,7 @@ const QString Rendering::CChapterDisplay::text(
 
     if (module->type() == CSwordModuleInfo::Bible) {
         // HACK: enable headings for VerseKeys:
-        static_cast<sword::VerseKey *>(module->module().getKey())
+        static_cast<swordxx::VerseKey *>(module->module().getKey())
                 ->setIntros(true);
 
         BT_ASSERT(dynamic_cast<CSBMI const *>(module));

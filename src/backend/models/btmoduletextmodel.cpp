@@ -87,22 +87,22 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
 
     if (isBible() || isCommentary()) {
         auto & m = firstModule->module();
-        m.setPosition(sword::TOP);
-        m_firstEntry = m.getIndex();
-        m.setPosition(sword::BOTTOM);
-        m_maxEntries = m.getIndex() - m_firstEntry + 1;
+        m.positionToTop();
+        m_firstEntry = m.getKey()->getIndex();
+        m.positionToBottom();
+        m_maxEntries = m.getKey()->getIndex() - m_firstEntry + 1;
     } else if(isLexicon()) {
         m_maxEntries =
                 static_cast<CSwordLexiconModuleInfo const *>(firstModule)
                         ->entries().size();
     } else if(isBook()) {
-        sword::TreeKeyIdx tk(
+        swordxx::TreeKeyIdx tk(
                 *static_cast<CSwordBookModuleInfo const *>(firstModule)
                         ->tree());
         tk.root();
         tk.firstChild();
         BT_ASSERT(tk.getOffset() == 4);
-        tk.setPosition(sword::BOTTOM);
+        tk.positionToBottom();
         m_maxEntries = tk.getOffset() / 4;
     }
 
@@ -367,7 +367,7 @@ bool BtModuleTextModel::setData(
     int column = convertRoleToColumn(role);
     const CSwordModuleInfo* module = m_moduleInfoList.at(column);
     CSwordVerseKey mKey(module);
-    mKey.setKey(key);
+    mKey.setKey(key.getText().c_str());
     const_cast<CSwordModuleInfo*>(module)->write(&mKey, value.toString());
     emit dataChanged(index, index);
     return true;

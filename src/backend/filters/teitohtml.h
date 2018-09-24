@@ -13,26 +13,26 @@
 #ifndef FILTERS_TEITOHTML_H
 #define FILTERS_TEITOHTML_H
 
-// Sword includes:
-#include <teihtmlhref.h>
-#include <swbuf.h>
+#include <swordxx/filters/teihtmlhref.h>
+
 
 namespace Filters {
 
 /**
   \brief TEI to HTML conversion filter.
 */
-class TeiToHtml: public sword::TEIHTMLHREF {
+class TeiToHtml: public swordxx::TEIHTMLHREF {
     public: /* Methods: */
         TeiToHtml();
 
-        bool handleToken(sword::SWBuf &buf,
+        bool handleToken(std::string &buf,
                          const char *token,
-                         sword::BasicFilterUserData *userData) override;
+                         swordxx::BasicFilterUserData *userData) override;
 
     private: /* Methods: */
-        void renderReference(const char *osisRef, sword::SWBuf &buf,
-                             sword::BasicFilterUserData *myUserData);
+        void renderReference(std::string const & osisRef,
+                             std::string & buf,
+                             swordxx::BasicFilterUserData * myUserData);
 };
 
 } // namespace Filters

@@ -46,8 +46,8 @@ void BtSourcesThread::run() {
         QString const & sourceName = sourceNames[i];
         emit showMessage(tr("Updating remote library \"%1\"").arg(sourceName));
         {
-            sword::InstallSource source = BtInstallBackend::source(sourceName);
-            if (iMgr.refreshRemoteSource(&source)) {
+            swordxx::InstallSource source = BtInstallBackend::source(sourceName);
+            if (iMgr.refreshRemoteSource(source)) {
                 failedSources[numFailedSources] = i;
                 ++numFailedSources;
             }

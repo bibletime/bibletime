@@ -202,7 +202,7 @@ bool ModuleInterface::isLocked(const QString& moduleName) {
         // Verse intros must be false for checking lock
         if (module->type() == CSwordModuleInfo::Bible ||
                 module->type() == CSwordModuleInfo::Commentary) {
-                ((sword::VerseKey*)(module->module().getKey()))->setIntros(false);
+                ((swordxx::VerseKey*)(module->module().getKey()))->setIntros(false);
         }
 
         bool locked = module->isLocked();

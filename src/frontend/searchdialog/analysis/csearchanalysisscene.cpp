@@ -17,14 +17,12 @@
 #include <QHashIterator>
 #include <QTextCodec>
 #include <QTextDocument>
+#include <swordxx/keys/listkey.h>
 #include "backend/keys/cswordversekey.h"
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 #include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/tool.h"
-
-// Sword includes
-#include <listkey.h>
 
 
 namespace Search {
@@ -215,14 +213,14 @@ QColor CSearchAnalysisScene::getColor(int index) {
 unsigned int CSearchAnalysisScene::getCount(const QString &book,
                                             const CSwordModuleInfo* module)
 {
-    const sword::ListKey & result = m_results[module];
+    const swordxx::ListKey & result = m_results[module];
 
     const int length = book.length();
     unsigned int i = m_lastPosList[module];
     unsigned int count = 0;
     const unsigned int resultCount = result.getCount();
     while (i < resultCount) {
-        if (strncmp(book.toUtf8(), result.getElement(i)->getText(), length))
+        if (std::strncmp(book.toUtf8(), result.getElement(i)->getText().c_str(), length))
             break;
         i++;
         ++count;

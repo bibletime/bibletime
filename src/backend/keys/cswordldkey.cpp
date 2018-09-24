@@ -13,13 +13,11 @@
 #include "cswordldkey.h"
 
 #include <QTextCodec>
+#include <swordxx/swmodule.h>
+#include <swordxx/swld.h>
+#include <swordxx/utilstr.h>
 #include "../../util/btassert.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
-
-// Sword includes:
-#include <swmodule.h>
-#include <swld.h>
-#include <utilstr.h>
 
 
 CSwordLDKey::CSwordLDKey(const CSwordModuleInfo *module) {
@@ -27,7 +25,7 @@ CSwordLDKey::CSwordLDKey(const CSwordModuleInfo *module) {
         //    *(m_module->module()) = TOP;
     }
 
-    SWKey::operator= (" ");
+    setText(" ");
 }
 
 /** No descriptions */
@@ -64,15 +62,13 @@ QString CSwordLDKey::key() const {
     BT_ASSERT(m_module);
 
     if (m_module->isUnicode()) {
-        return QString::fromUtf8(getText());
+        return QString::fromStdString(getText());
     } else {
-        return cp1252Codec()->toUnicode(getText());
+        return cp1252Codec()->toUnicode(getText().c_str());
     }
 }
 
-const char * CSwordLDKey::rawKey() const {
-    return getText();
-}
+std::string CSwordLDKey::rawKey() const { return getText(); }
 
 bool CSwordLDKey::setKey(const QString &newKey) {
     BT_ASSERT(m_module);
@@ -91,7 +87,7 @@ bool CSwordLDKey::setKey(const char *newKey) {
     BT_ASSERT(newKey);
 
     if (newKey) {
-        SWKey::operator = (newKey); //set the key
+        setText(newKey); //set the key
         m_module->module().setKey(this);
         m_module->snap();
     }
@@ -106,10 +102,10 @@ CSwordLDKey* CSwordLDKey::NextEntry() {
     //   m.getKey()->setText( (const char*)key().utf8() );
 
     m.setSkipConsecutiveLinks(true);
-    m++;
+    m.increment();
     m.setSkipConsecutiveLinks(false);
 
-    setKey(m.getKeyText());
+    setKey(m.getKeyText().c_str());
     setText(m.getKeyText());
 
     return this;
@@ -122,7 +118,7 @@ CSwordLDKey* CSwordLDKey::PreviousEntry() {
     //   m.getKey()->setText( (const char*)key().utf8() );
 
     m.setSkipConsecutiveLinks(true);
-    m--;
+    m.decrement();
     m.setSkipConsecutiveLinks(false);
 
     setText(m.getKeyText());

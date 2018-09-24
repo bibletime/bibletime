@@ -47,12 +47,12 @@ inline bool filter(WizardTaskType const taskType,
                && languages.contains(mInfo->language()->translatedName());
     } else if (taskType == WizardTaskType::updateWorks) {
         using CSMI = CSwordModuleInfo;
-        using CSV = sword::SWVersion const;
         CSMI const * const installedModule =
                 CSwordBackend::instance()->findModuleByName(mInfo->name());
         return installedModule
-               && (CSV(installedModule->config(CSMI::ModuleVersion).toLatin1())
-                   < CSV(mInfo->config(CSMI::ModuleVersion).toLatin1()));
+               && swordxx::versionLess(
+                    installedModule->config(CSMI::ModuleVersion).toLatin1(),
+                    mInfo->config(CSMI::ModuleVersion).toLatin1());
     } else {
         BT_ASSERT(taskType == WizardTaskType::removeWorks);
         return CSwordBackend::instance()->findModuleByName(mInfo->name());
@@ -230,7 +230,7 @@ void BtBookshelfWorksPage::initializePage() {
         QSet<QString> addedModuleNames;
         m_bookshelfModel->clear();
         for (auto const & sourceName : sources) {
-            sword::InstallSource const source =
+            swordxx::InstallSource const source =
                     BtInstallBackend::source(sourceName);
             CSwordBackend * const backend = BtInstallBackend::backend(source);
             for (auto * const module : backend->moduleList()) {
@@ -241,7 +241,8 @@ void BtBookshelfWorksPage::initializePage() {
                     addedModuleNames.insert(moduleName);
                     m_bookshelfModel->addModule(module);
                     module->setProperty("installSourceName",
-                                        QString(source.caption.c_str()));
+                                        QString::fromStdString(
+                                            source.m_caption));
                 }
             }
         }

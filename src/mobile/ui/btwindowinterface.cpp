@@ -382,7 +382,7 @@ void BtWindowInterface::setModuleToBeginning() {
         return;
     if (moduleIsBibleOrCommentary(m_key->module())) {
         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
-        verseKey->setPosition(sword::TOP);
+        verseKey->setPosition(swordxx::TOP);
         emit referenceChange();
     }
 }
@@ -626,7 +626,7 @@ void BtWindowInterface::setMagView(bool magView) {
 }
 
 static QString getEnglishKey(CSwordKey* m_key) {
-    sword::VerseKey * vk = dynamic_cast<sword::VerseKey*>(m_key);
+    swordxx::VerseKey * vk = dynamic_cast<swordxx::VerseKey*>(m_key);
     QString oldLang;
     if (vk) {
         // Save keys in english only:

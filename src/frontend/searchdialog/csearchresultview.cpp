@@ -99,7 +99,7 @@ void CSearchResultView::initConnections() {
 
 /** Setups the list with the given module. */
 void CSearchResultView::setupTree(const CSwordModuleInfo *m,
-                                  const sword::ListKey & result)
+                                  const swordxx::ListKey & result)
 {
     clear();
 
@@ -115,7 +115,7 @@ void CSearchResultView::setupTree(const CSwordModuleInfo *m,
     QTreeWidgetItem* item = nullptr;
     for (int index = 0; index < count; index++) {
         item = new QTreeWidgetItem(this, oldItem);
-        item->setText(0, QString::fromUtf8(result.getElement(index)->getText()));
+        item->setText(0, QString::fromStdString(result.getElement(index)->getText()));
         oldItem = item;
     }
 

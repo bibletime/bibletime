@@ -16,9 +16,7 @@
 #include "cswordkey.h"
 
 #include <QString>
-
-// Sword includes:
-#include <swkey.h>
+#include <swordxx/swkey.h>
 
 
 class CSwordModuleInfo;
@@ -51,7 +49,7 @@ class CSwordModuleInfo;
   * @version $Id: cswordldkey.h,v 1.24 2006/02/25 11:38:15 joachim Exp $
   */
 
-class CSwordLDKey : public CSwordKey, public sword::SWKey {
+class CSwordLDKey : public CSwordKey, public swordxx::SWKey {
 
     public:
 
@@ -67,7 +65,7 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         /**
           \todo Document params
         */
-        CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module);
+        CSwordLDKey(const swordxx::SWKey *k, const CSwordModuleInfo *module);
 
         CSwordLDKey* copy() const override;
         /**
@@ -89,7 +87,7 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
 
     protected:
 
-        const char* rawKey() const override;
+        std::string rawKey() const override;
 
 };
 

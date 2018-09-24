@@ -13,30 +13,29 @@
 #ifndef FILTERS_OSISTOHTML_H
 #define FILTERS_OSISTOHTML_H
 
-// Sword includes:
-#include <osishtmlhref.h>
-#include <swbuf.h>
-#include <swmodule.h>
+#include <swordxx/filters/osishtmlhref.h>
+#include <swordxx/swmodule.h>
+
 
 namespace Filters {
 
 /**
   \brief OSIS to HTMl conversion filter.
 */
-class OsisToHtml: public sword::OSISHTMLHREF {
+class OsisToHtml: public swordxx::OSISHTMLHREF {
     protected: /* Types: */
-        class UserData: public sword::OSISHTMLHREF::MyUserData {
+        class UserData: public swordxx::OSISHTMLHREF::MyUserData {
             public:
-                inline UserData(const sword::SWModule *module,
-                                const sword::SWKey *key)
-                     : sword::OSISHTMLHREF::MyUserData(module, key),
+                inline UserData(const swordxx::SWModule *module,
+                                const swordxx::SWKey *key)
+                     : swordxx::OSISHTMLHREF::MyUserData(module, key),
                        swordFootnote(1), inCrossrefNote(false),
                        entryAttributes(module->getEntryAttributes()),
                        noteType(Unknown) {}
 
                 unsigned short int swordFootnote;
                 bool inCrossrefNote;
-                sword::AttributeTypeList entryAttributes;
+                swordxx::SWModule::AttributeTypeList entryAttributes;
 
                 enum NoteType {
                     Unknown,
@@ -47,30 +46,28 @@ class OsisToHtml: public sword::OSISHTMLHREF {
                 } noteType;
 
                 struct {
-                    sword::SWBuf who;
+                    std::string who;
                 } quote;
         };
 
     public: /* Methods: */
         OsisToHtml();
 
-        /** Reimplemented from sword::OSISHTMLHREF. */
-        bool handleToken(sword::SWBuf &buf,
+        /** Reimplemented from swordxx::OSISHTMLHREF. */
+        bool handleToken(std::string &buf,
                          const char *token,
-                         sword::BasicFilterUserData *userData) override;
+                         swordxx::BasicFilterUserData *userData) override;
 
     protected: /* Methods: */
-        /** Reimplemented from sword::OSISHTMLHREF. */
-        inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module,
-                const sword::SWKey *key) override
-        {
-            return new UserData(module, key);
-        }
+        /** Reimplemented from swordxx::OSISHTMLHREF. */
+        inline std::unique_ptr<swordxx::BasicFilterUserData> createUserData(
+                const swordxx::SWModule *module,
+                const swordxx::SWKey *key) override
+        { return std::make_unique<UserData>(module, key); }
 
     private: /* Methods: */
-        void renderReference(const char *osisRef, sword::SWBuf &buf,
-                             sword::SWModule *myModule, UserData *myUserData);
+        void renderReference(const char *osisRef, std::string &buf,
+                             swordxx::SWModule *myModule, UserData *myUserData);
 };
 
 } // namespace Filters

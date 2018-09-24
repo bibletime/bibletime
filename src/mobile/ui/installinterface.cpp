@@ -117,7 +117,7 @@ void InstallInterface::updateLanguageModel(const QString& currentCategory) {
 void InstallInterface::updateSwordBackend(const QString& sourceName) {
     if (sourceName.isEmpty())
         return;
-    sword::InstallSource source = BtInstallBackend::source(sourceName);
+    swordxx::InstallSource source = BtInstallBackend::source(sourceName);
     m_backend = BtInstallBackend::backend(source);
 }
 

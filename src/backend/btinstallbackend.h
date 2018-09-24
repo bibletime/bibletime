@@ -15,10 +15,8 @@
 
 #include <QDir>
 #include <QString>
+#include <swordxx/installmgr.h>
 #include "managers/cswordbackend.h"
-
-// Sword includes:
-#include <installmgr.h>
 
 
 class CSwordModuleInfo;
@@ -26,10 +24,10 @@ class CSwordModuleInfo;
 namespace BtInstallBackend {
 
 /** Adds the source to the backend. */
-bool addSource(sword::InstallSource& source);
+bool addSource(swordxx::InstallSource& source);
 
 /** Returns the source struct. */
-sword::InstallSource source(const QString &name);
+swordxx::InstallSource source(const QString &name);
 
 /** Deletes the source. */
 bool deleteSource(const QString &name);
@@ -38,7 +36,7 @@ bool deleteSource(const QString &name);
 QList<CSwordModuleInfo*> moduleList(const QString &name);
 
 /** Tells if the source is remote or local. */
-bool isRemote(const sword::InstallSource& source);
+bool isRemote(const swordxx::InstallSource& source);
 
 /** Returns the list of available install target paths. */
 QStringList targetList();
@@ -67,7 +65,7 @@ QString swordConfigFilename();
 QDir swordDir();
 
 /** Returns backend Sword manager for the source. */
-CSwordBackend * backend(const sword::InstallSource & is);
+CSwordBackend * backend(const swordxx::InstallSource & is);
 
 } // namespace BtInstallBackend
 

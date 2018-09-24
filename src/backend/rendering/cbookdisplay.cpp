@@ -66,7 +66,7 @@ const QString Rendering::CBookDisplay::text(
 
     int possibleLevels = 1; //we start with the default value of displayLevel, which means no entries together
 
-    while ( key->sword::TreeKeyIdx::parent() && (key->key() != "/") && !key->key().isEmpty() ) {//add parents
+    while ( key->swordxx::TreeKeyIdx::parent() && (key->key() != "/") && !key->key().isEmpty() ) {//add parents
         ++possibleLevels;
     };
 
@@ -95,7 +95,7 @@ const QString Rendering::CBookDisplay::text(
     // at the moment we're at the lowest level, so we only have to go up!
     for (int currentLevel = 1; currentLevel < displayLevel; ++currentLevel) { //we start again with 1 == standard of displayLevel
 
-        if ( !key->sword::TreeKeyIdx::parent() ) { //something went wrong although we checked before! Be safe and return entry's text
+        if ( !key->swordxx::TreeKeyIdx::parent() ) { //something went wrong although we checked before! Be safe and return entry's text
             tree.append( new CDisplayRendering::KeyTreeItem( key->key(), modules, itemSettings ) );
 
             const QString renderedText = render.renderKeyTree(tree);

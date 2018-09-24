@@ -17,11 +17,9 @@
 
 #include <QHash>
 #include <QMetaType>
+#include <swordxx/keys/listkey.h>
 #include "../util/btassert.h"
 #include "drivers/btmodulelist.h"
-
-// Sword includes:
-#include <listkey.h>
 
 
 /**
@@ -36,7 +34,7 @@ class CSwordModuleSearch: public QObject {
         Q_OBJECT
 
     public: /* Types: */
-        using Results = QHash<const CSwordModuleInfo*, sword::ListKey>;
+        using Results = QHash<const CSwordModuleInfo*, swordxx::ListKey>;
 
         enum SearchType { /* Values provided for serialization */
             AndType = 0,
@@ -71,7 +69,7 @@ class CSwordModuleSearch: public QObject {
           Sets the search scope.
           \param[in] scope the scope used for the search.
         */
-        void setSearchScope(const sword::ListKey &scope);
+        void setSearchScope(const swordxx::ListKey &scope);
 
         /**
           Resets the search scope.
@@ -83,7 +81,7 @@ class CSwordModuleSearch: public QObject {
         /**
           \returns the search scope.
         */
-        const sword::ListKey &searchScope() const {
+        const swordxx::ListKey &searchScope() const {
             return m_searchScope;
         }
 
@@ -131,7 +129,7 @@ class CSwordModuleSearch: public QObject {
 
     private: /* Fields: */
         QString                        m_searchText;
-        sword::ListKey                 m_searchScope;
+        swordxx::ListKey                 m_searchScope;
         BtConstModuleList              m_searchModules;
 
         Results                        m_results;

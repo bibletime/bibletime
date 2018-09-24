@@ -12,6 +12,8 @@
 
 #include "clanguagemgr.h"
 
+#include <set>
+#include <string>
 #include "../drivers/cswordmoduleinfo.h"
 #include "cswordbackend.h"
 
@@ -59,16 +61,14 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
         m_availableModulesCache.moduleCount = mods.count();
 
         //collect the languages abbrevs of all modules
-        QStringList abbrevs;
+        std::set<std::string> abbrevs;
 
-        Q_FOREACH(const CSwordModuleInfo * const mod,  mods) {
-            auto & m = mod->module();
-            if (!abbrevs.contains(m.getLanguage()))
-                abbrevs.append(m.getLanguage());
-        }
+        Q_FOREACH(const CSwordModuleInfo * const mod,  mods)
+            abbrevs.emplace(mod->module().getLanguage());
 
         //now create a map of available langs
-        Q_FOREACH(QString const & abbrev, abbrevs) {
+        for (auto const & abbrevStdString : abbrevs) {
+            QString abbrev(QString::fromStdString(abbrevStdString));
             const Language* const lang = languageForAbbrev(abbrev);
 
             if (lang->isValid()) {

@@ -22,14 +22,13 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
+#include <swordxx/keys/listkey.h>
+#include <swordxx/keys/versekey.h>
 #include "backend/config/btconfig.h"
 #include "frontend/messagedialog.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
 
-// Sword includes:
-#include "versekey.h"
-#include "listkey.h"
 
 namespace Search {
 
@@ -209,17 +208,18 @@ void CRangeChooserDialog::resetEditControls() {
 }
 
 void CRangeChooserDialog::updateResultList() {
-    using VK = sword::VerseKey;
+    using VK = swordxx::VerseKey;
 
     m_resultList->clear();
 
     QString const range =
             m_rangeEdit->toPlainText().replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
 
-    sword::ListKey verses = VK().parseVerseList(range.toUtf8().constData(),
+    swordxx::ListKey verses = VK().parseVerseList(range.toUtf8().constData(),
                                                 "Genesis 1:1", true);
     for (int i = 0; i < verses.getCount(); i++) {
-        new QListWidgetItem(QString::fromUtf8(verses.getElement(i)->getRangeText()),
+        new QListWidgetItem(QString::fromStdString(
+                                verses.getElement(i)->getRangeText()),
                             m_resultList);
     }
 }

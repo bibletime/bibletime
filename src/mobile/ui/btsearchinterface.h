@@ -106,7 +106,7 @@ private:
     QString prepareSearchText(const QString& orig);
     void setupModuleModel(const CSwordModuleSearch::Results& results);
     void setupReferenceModel(const CSwordModuleInfo *m,
-                             const sword::ListKey & results);
+                             const swordxx::ListKey & results);
     void setupSearchType();
     bool wasCanceled();
 

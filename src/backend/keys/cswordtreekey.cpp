@@ -36,16 +36,14 @@ QString CSwordTreeKey::key() const {
     //return getTextUnicode();
     BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
-        return QString::fromUtf8(getText());
+        return QString::fromStdString(getText());
     }
     else {
-        return cp1252Codec()->toUnicode(getText());
+        return cp1252Codec()->toUnicode(getText().c_str());
     }
 }
 
-const char * CSwordTreeKey::rawKey() const {
-    return getText();
-}
+std::string CSwordTreeKey::rawKey() const { return getText(); }
 
 bool CSwordTreeKey::setKey(const QString &newKey) {
     //return key( newKey.toLocal8Bit().constData() );
@@ -63,7 +61,7 @@ bool CSwordTreeKey::setKey(const char *newKey) {
     BT_ASSERT(newKey);
 
     if (newKey) {
-        TreeKeyIdx::operator = (newKey);
+        setText(newKey);
     }
     else {
         root();
@@ -77,10 +75,10 @@ QString CSwordTreeKey::getLocalNameUnicode() {
     //Only UTF-8 and latin1 are legal Sword module encodings
     BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
-        return QString::fromUtf8(getLocalName());
+        return QString::fromStdString(getLocalName());
     }
     else {
-        return cp1252Codec()->toUnicode(getLocalName());
+        return cp1252Codec()->toUnicode(getLocalName().c_str());
     }
 }
 

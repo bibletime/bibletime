@@ -56,14 +56,14 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
     case KeyTreeItem::Settings::ExpandedShort: {
         if (isBible) {
-            linkText = module->name() + ':' + QString::fromUtf8(vk.getShortText());
+            linkText = module->name() + ':' + QString::fromStdString(vk.getShortText());
             break;
         }
     }
 
     case KeyTreeItem::Settings::CompleteShort: {
         if (isBible) {
-            linkText = QString::fromUtf8(vk.getShortText());
+            linkText = QString::fromStdString(vk.getShortText());
             break;
         }
 
@@ -93,7 +93,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
                     baseKey.setKey(item.key());
 
                     if (vk.book() != baseKey.book()) {
-                        linkText = QString::fromUtf8(vk.getShortText());
+                        linkText = QString::fromStdString(vk.getShortText());
                     } else if (vk.getChapter() != baseKey.getChapter()) {
                         linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
                     } else {
@@ -102,10 +102,10 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
                     if(vk.isBoundSet()) {
                         linkText += "-";
-                        sword::VerseKey const upper = vk.getUpperBound();
-                        sword::VerseKey const lower = vk.getLowerBound();
+                        swordxx::VerseKey const upper = vk.getUpperBound();
+                        swordxx::VerseKey const lower = vk.getLowerBound();
                         if (upper.getBook() != lower.getBook()) {
-                            linkText += QString::fromUtf8(upper.getShortText());
+                            linkText += QString::fromStdString(upper.getShortText());
                         } else if(upper.getChapter() != lower.getChapter()) {
                             linkText += QString("%1:%2").arg(upper.getChapter())
                                                         .arg(lower.getVerse());

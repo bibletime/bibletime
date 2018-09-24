@@ -51,7 +51,7 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
         }
         case KeyTreeItem::Settings::CompleteShort: {
             if (isBible) {
-                linkText = QString::fromUtf8(vk.getShortText());
+                linkText = QString::fromStdString(vk.getShortText());
                 break;
             }
             //fall through for non-Bible modules

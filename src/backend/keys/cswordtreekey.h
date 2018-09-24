@@ -15,8 +15,7 @@
 
 #include "cswordkey.h"
 
-// Sword includes:
-#include <treekeyidx.h>
+#include <swordxx/keys/treekeyidx.h>
 
 
 class CSwordModuleInfo;
@@ -26,7 +25,7 @@ class CSwordModuleInfo;
  * @author The BibleTime team
  */
 
-class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
+class CSwordTreeKey : public CSwordKey, public swordxx::TreeKeyIdx {
 
     public:
 
@@ -36,7 +35,7 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
           \param k The Sword tree key which belongs to this key
           \param module The module which belongs to this key
          */
-        CSwordTreeKey(const sword::TreeKeyIdx *k,
+        CSwordTreeKey(const swordxx::TreeKeyIdx *k,
                       const CSwordModuleInfo *module);
 
         CSwordTreeKey( const CSwordTreeKey& k );
@@ -60,7 +59,7 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
     protected:
 
-        const char * rawKey() const override;
+        std::string rawKey() const override;
 };
 
 #endif

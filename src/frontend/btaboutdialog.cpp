@@ -21,13 +21,11 @@
 #include <QTabWidget>
 #include <QTextStream>
 #include <QVBoxLayout>
+#include <swordxx/version.h>
 #include "frontend/btwebengineview.h"
 #include "util/btconnect.h"
 #include "util/bticons.h"
 #include "util/directory.h"
-
-// Sword includes:
-#include <swversion.h>
 
 
 #define MAKE_STYLE(t) "<style type=\"text/css\">"\
@@ -230,21 +228,17 @@ void BtAboutDialog::retranslateContributorsTab() {
 
 
 void BtAboutDialog::retranslateSwordTab() {
-    m_tabWidget->setTabText(2, tr("&SWORD"));
+    m_tabWidget->setTabText(2, tr("&Sword++"));
 
-    QString version(sword::SWVersion::currentVersion.getText());
+    QString version(QString::fromStdString(swordxx::runtimeVersionStr()));
     QString content("<h3>");
-    content += tr("SWORD library version %1").arg(version);
+    content += tr("Sword++ library version %1").arg(version);
     content += "</h3><p>";
-    content += tr("BibleTime makes use of the SWORD Project. The SWORD Project is the "
-                  "CrossWire Bible Society's free Bible software project. Its purpose is to "
-                  "create cross-platform open-source tools &mdash; covered by the GNU "
-                  "General Public License &mdash; that allow programmers and Bible "
-                  "societies to write new Bible software more quickly and easily.");
+    content += tr("BibleTime makes use of the Sword++ library.");
     content += "</p><p>";
-    content += tr("The SWORD Project: ");
-    content += MAKE_LINK_STATIC("http://www.crosswire.org/sword/",
-                                "www.crosswire.org/sword") "</p>";
+    content += tr("The Sword++ library: ");
+    content += MAKE_LINK_STATIC("https://github.com/swordxx/swordxx",
+                                "github.com/swordxx/swordxx") "</p>";
 
     m_swordTab->setHtml(MAKE_HTML(m_swordTab, content));
 }

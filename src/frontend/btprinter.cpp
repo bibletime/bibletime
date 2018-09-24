@@ -62,7 +62,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
     vk.setKey(item.key());
     switch (item.settings().keyRenderingFace) {
         case KeyTreeItem::Settings::CompleteShort:
-            return QString::fromUtf8(vk.getShortText());
+            return QString::fromStdString(vk.getShortText());
 
         case KeyTreeItem::Settings::CompleteLong:
             return vk.key();

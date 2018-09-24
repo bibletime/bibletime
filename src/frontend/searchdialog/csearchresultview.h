@@ -14,9 +14,7 @@
 #define CSEARCHRESULTSVIEW_H
 
 #include <QTreeWidget>
-
-// Sword includes
-#include <listkey.h>
+#include <swordxx/keys/listkey.h>
 
 
 class CSwordModuleInfo;
@@ -55,7 +53,7 @@ class CSearchResultView  : public QTreeWidget {
         /**
           Setups the list with the given module.
         */
-        void setupTree(const CSwordModuleInfo *m, const sword::ListKey &results);
+        void setupTree(const CSwordModuleInfo *m, const swordxx::ListKey &results);
 
         void setupStrongsTree(CSwordModuleInfo*, const QStringList&);
         void copyItemsWithText();

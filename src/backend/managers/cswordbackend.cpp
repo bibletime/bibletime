@@ -12,12 +12,19 @@
 
 #include "cswordbackend.h"
 
+#include <memory>
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
+#include <swordxx/encfiltmgr.h>
+#include <swordxx/filemgr.h>
+#include <swordxx/filters/rtfhtml.h>
+#include <swordxx/swfiltermgr.h>
+#include <swordxx/swfilter.h>
+#include <swordxx/utilstr.h>
 #include "../../util/directory.h"
 #include "../btglobal.h"
 #include "../btinstallmgr.h"
@@ -27,29 +34,28 @@
 #include "../drivers/cswordcommentarymoduleinfo.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
 
-// Sword includes:
-#include <encfiltmgr.h>
-#include <filemgr.h>
-#include <rtfhtml.h>
-#include <swfiltermgr.h>
-#include <swfilter.h>
-#include <utilstr.h>
-
 
 using namespace Rendering;
 
 CSwordBackend * CSwordBackend::m_instance = nullptr;
 
 CSwordBackend::CSwordBackend()
-        : sword::SWMgr(nullptr, nullptr, false,
-                       new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
+        : swordxx::SWMgr(
+              nullptr,
+              nullptr,
+              false,
+              std::make_shared<swordxx::EncodingFilterMgr>(swordxx::ENC_UTF8),
+              true)
         , m_dataModel(this)
 {}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
-        : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
-                       false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
-                       false, augmentHome)
+        : swordxx::SWMgr(
+              !path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
+              false,
+              std::make_shared<swordxx::EncodingFilterMgr>(swordxx::ENC_UTF8),
+              false,
+              augmentHome)
 {}
 
 CSwordBackend::~CSwordBackend() {
@@ -72,7 +78,7 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
     emit sigSwordSetupChanged(RemovedModules);
 
     BtInstallMgr installMgr;
-    QMap<QString, sword::SWMgr *> mgrDict; // Maps config paths to SWMgr objects
+    QMap<QString, swordxx::SWMgr *> mgrDict; // Maps config paths to SWMgr objects
     for (CSwordModuleInfo const * const mInfo : toBeDeleted) {
         // Find the install path for the sword manager:
         QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);
@@ -94,14 +100,14 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
         }
 
         // Create the sword manager and remove the module
-        sword::SWMgr * mgr = mgrDict[prefixPath];
+        swordxx::SWMgr * mgr = mgrDict[prefixPath];
         if (!mgr) { // Create new mgr if it's not yet available
             mgrDict.insert(prefixPath,
-                           new sword::SWMgr(prefixPath.toLocal8Bit()));
+                           new swordxx::SWMgr(prefixPath.toLocal8Bit()));
             mgr = mgrDict[prefixPath];
         }
         qDebug() << "Removing the module" << mInfo->name() << "...";
-        installMgr.removeModule(mgr, mInfo->module().getName());
+        installMgr.removeModule(*mgr, mInfo->module().getName());
     }
     qDeleteAll(toBeDeleted);
     qDeleteAll(mgrDict);
@@ -130,39 +136,43 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     shutdownModules(); // Remove previous modules
     m_dataModel.clear();
 
-    sword::ModMap::iterator end = Modules.end();
     const LoadError ret = static_cast<LoadError>(load());
 
-    for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
-        sword::SWModule * const curMod = it->second;
-        BT_ASSERT(curMod);
-        CSwordModuleInfo * newModule;
+    for (auto const & mp : modules()) {
+        BT_ASSERT(mp.second);
+        auto & curMod = *mp.second;
+        std::unique_ptr<CSwordModuleInfo> newModule;
 
-        const char * const modType = curMod->getType();
-        if (!strcmp(modType, "Biblical Texts")) {
-            newModule = new CSwordBibleModuleInfo(*curMod, *this);
+        auto const & modType = curMod.getType();
+        if (modType == "Biblical Texts") {
+            newModule = std::make_unique<CSwordBibleModuleInfo>(curMod, *this);
             newModule->setDisplay(&m_chapterDisplay);
-        } else if (!strcmp(modType, "Commentaries")) {
-            newModule = new CSwordCommentaryModuleInfo(*curMod, *this);
+        } else if (modType == "Commentaries") {
+            newModule = std::make_unique<CSwordCommentaryModuleInfo>(curMod, *this);
             newModule->setDisplay(&m_entryDisplay);
-        } else if (!strcmp(modType, "Lexicons / Dictionaries")) {
-            newModule = new CSwordLexiconModuleInfo(*curMod, *this);
+        } else if (modType == "Lexicons / Dictionaries") {
+            newModule = std::make_unique<CSwordLexiconModuleInfo>(curMod, *this);
             newModule->setDisplay(&m_entryDisplay);
-        } else if (!strcmp(modType, "Generic Books")) {
-            newModule = new CSwordBookModuleInfo(*curMod, *this);
+        } else if (modType == "Generic Books") {
+            newModule = std::make_unique<CSwordBookModuleInfo>(curMod, *this);
             newModule->setDisplay(&m_bookDisplay);
         } else {
             continue;
         }
 
+        BT_ASSERT(swordxx::isValidSwordVersion("0"));
+        BT_ASSERT(swordxx::isValidSwordVersion("1.5.4"));
+        BT_ASSERT(swordxx::isValidSwordVersion("1.7.4"));
+        BT_ASSERT(swordxx::versionLessEqual("0", "1"));
+        BT_ASSERT(swordxx::versionLessEqual("1.5.4", "1.7.4"));
+
         // Append the new modules to our list, but only if it's supported
         // The constructor of CSwordModuleInfo prints a warning on stdout
         if (!newModule->hasVersion()
-            || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion))
+            || swordxx::isCompatibleWithSwordVersion(
+                    newModule->minimumSwordVersion().toStdString().c_str()))
         {
-            m_dataModel.addModule(newModule);
-        } else {
-            delete newModule;
+            m_dataModel.addModule(newModule.release());
         }
     }
 
@@ -180,25 +190,25 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     return ret;
 }
 
-void CSwordBackend::AddRenderFilters(sword::SWModule * module,
-                                     sword::ConfigEntMap & section)
+void CSwordBackend::addRenderFilters(swordxx::SWModule & module,
+                                     swordxx::ConfigEntMap const & section)
 {
-    sword::ConfigEntMap::const_iterator entry = section.find("SourceType");
+    swordxx::ConfigEntMap::const_iterator entry = section.find("SourceType");
     if (entry != section.end()) {
         if (entry->second == "OSIS") {
-            module->addRenderFilter(&m_osisFilter);
+            module.addRenderFilter(m_osisFilter);
             return;
         } else if (entry->second == "ThML") {
-            module->addRenderFilter(&m_thmlFilter);
+            module.addRenderFilter(m_thmlFilter);
             return;
         } else if (entry->second == "TEI") {
-            module->addRenderFilter(&m_teiFilter);
+            module.addRenderFilter(m_teiFilter);
             return;
         } else if (entry->second == "GBF") {
-            module->addRenderFilter(&m_gbfFilter);
+            module.addRenderFilter(m_gbfFilter);
             return;
         } else if (entry->second == "PLAIN") {
-            module->addRenderFilter(&m_plainFilter);
+            module.addRenderFilter(m_plainFilter);
             return;
         }
     }
@@ -206,7 +216,7 @@ void CSwordBackend::AddRenderFilters(sword::SWModule * module,
     // No driver found
     entry = section.find("ModDrv");
     if (entry != section.end() && (entry->second == "RawCom" || entry->second == "RawLD"))
-        module->addRenderFilter(&m_plainFilter);
+        module.addRenderFilter(m_plainFilter);
 }
 
 void CSwordBackend::shutdownModules() {
@@ -215,17 +225,11 @@ void CSwordBackend::shutdownModules() {
     deleteAllModules();
 
     /* Cipher filters must be handled specially, because SWMgr creates them,
-     * stores them in cipherFilters and cleanupFilters and attaches them to locked
+     * stores them in cipherFilters and attaches them to locked
      * modules. If these modules are removed, the filters need to be removed as well,
      * so that they are re-created for the new module objects.
      */
-    using FMCI = sword::FilterMap::const_iterator;
-    for (FMCI it = cipherFilters.begin(); it != cipherFilters.end(); ++it) {
-        //Delete the Filter and remove it from the cleanup list
-        cleanupFilters.remove(it->second);
-        delete it->second;
-    }
-    cipherFilters.clear();
+    m_cipherFilters.clear();
 }
 
 void CSwordBackend::setOption(const CSwordModuleInfo::FilterTypes type,
@@ -282,7 +286,7 @@ CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
     return nullptr;
 }
 
-CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
+CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const swordxx::SWModule * const swmodule) const {
     Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
         if (&mod->module() == swmodule)
             return mod;
@@ -381,26 +385,29 @@ QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes opti
 }
 
 const QString CSwordBackend::booknameLanguage(const QString & language) {
+    auto const lm(swordxx::LocaleMgr::getSystemLocaleMgr());
     if (!language.isEmpty()) {
-        sword::LocaleMgr::getSystemLocaleMgr()->setDefaultLocaleName(language.toUtf8().constData());
+        lm->setDefaultLocaleName(language.toUtf8().constData());
 
         // Refresh the locale of all Bible and commentary modules!
         // Use what sword returns, language may be different.
-        const QByteArray newLocaleName(QString(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()).toUtf8());
+        auto const newLocaleName(
+                    QString::fromStdString(
+                        lm->getDefaultLocaleName()).toUtf8());
 
         Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
             if (mod->type() == CSwordModuleInfo::Bible
                 || mod->type() == CSwordModuleInfo::Commentary)
             {
                 // Create a new key, it will get the default bookname language:
-                using VK = sword::VerseKey;
+                using VK = swordxx::VerseKey;
                 VK & vk = *static_cast<VK *>(mod->module().getKey());
                 vk.setLocale(newLocaleName.constData());
             }
         }
 
     }
-    return sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName();
+    return QString::fromStdString(lm->getDefaultLocaleName());
 }
 
 void CSwordBackend::reloadModules(const SetupChangedReason reason) {
@@ -412,11 +419,12 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
         delete myconfig;
         config = myconfig = nullptr;
         // we need to call findConfig to make sure that augPaths are reloaded
-        findConfig(&configType, &prefixPath, &configPath, &augPaths, &sysConfig);
+        std::string prefixPath_;
+        findConfig(prefixPath_, m_configPath, &augPaths, &sysConfig);
         // now re-read module configuration files
-        loadConfigDir(configPath);
+        loadConfigDir(m_configPath.c_str());
     } else if (config) {
-        config->load();
+        config->reload();
     }
 
     initModules(reason);
@@ -481,11 +489,11 @@ QStringList CSwordBackend::swordDirList() const {
           Get all DataPath and AugmentPath entries from the config file and add
           them to the list:
         */
-        sword::SWConfig conf(it->toUtf8().constData());
+        swordxx::SWConfig conf(it->toUtf8().constData());
         swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
-        const sword::ConfigEntMap group(conf["Install"]);
-        using CEMCI = sword::ConfigEntMap::const_iterator ;
+        const swordxx::ConfigEntMap group(conf["Install"]);
+        using CEMCI = swordxx::ConfigEntMap::const_iterator ;
         for (std::pair<CEMCI, CEMCI> its = group.equal_range("AugmentPath");
              its.first != its.second;
              ++(its.first))

@@ -127,7 +127,7 @@ protected: /* Methods: */
     /**
       \returns the encoded key appropriate for use directly with Sword.
     */
-    virtual const char * rawKey() const = 0;
+    virtual std::string rawKey() const = 0;
 
     static inline const QTextCodec * cp1252Codec() { return m_cp1252Codec; }
 

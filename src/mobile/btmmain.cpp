@@ -172,13 +172,13 @@ void setupMessageLog() {
 
 void setupSwordLog() {
     if (! btConfig().value<bool>("DEBUG/Sword", false)) {
-        sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
+        swordxx::SWLog::getSystemLog()->setLogLevel(swordxx::SWLog::LOG_ERROR);
         return;
     }
 
     btm::BtmLog * btmLog = new btm::BtmLog();
-    sword::SWLog::setSystemLog(btmLog);
-    sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_DEBUG);
+    swordxx::SWLog::setSystemLog(btmLog);
+    swordxx::SWLog::getSystemLog()->setLogLevel(swordxx::SWLog::LOG_DEBUG);
 
 
 }

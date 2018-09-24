@@ -353,16 +353,16 @@ void BtSearchOptionsArea::refreshRanges() {
     m_rangeChooserCombo->insertItems(1, btConfig().getSearchScopesForCurrentLocale().keys());
 }
 
-sword::ListKey BtSearchOptionsArea::searchScope() {
+swordxx::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
         QString const scope = btConfig().getSearchScopesForCurrentLocale()[
                                     m_rangeChooserCombo->currentText()];
         if (!scope.isEmpty())
-            return sword::VerseKey().parseVerseList(scope.toUtf8().constData(),
+            return swordxx::VerseKey().parseVerseList(scope.toUtf8().constData(),
                                                     "Genesis 1:1",
                                                     true);
     }
-    return sword::ListKey();
+    return swordxx::ListKey();
 }
 
 bool BtSearchOptionsArea::hasSearchScope() {

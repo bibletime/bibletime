@@ -2,7 +2,6 @@
 #include <QtTest/QtTest>
 #include <QSignalSpy>
 #include <qdebug.h>
-#include <swbuf.h>
 #include "test_cswordversekey.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordkey.h"
@@ -67,7 +66,8 @@ void test_CSwordVerseKey::CSwordVerseKey_copy_constructor() {
     }
 
     const CSwordVerseKey* copyKey = new CSwordVerseKey(*key);
-    QCOMPARE(QString(copyKey->getBookName()), QString(key->getBookName()));
+    QCOMPARE(QString::fromStdString(copyKey->getBookName()),
+             QString::fromStdString(key->getBookName()));
     QCOMPARE(QString(copyKey->getChapter()), QString(key->getChapter()));
     QCOMPARE(QString(copyKey->getVerse()), QString(key->getVerse()));
 }
@@ -91,7 +91,8 @@ void test_CSwordVerseKey::CSwordVerseKey_versekey_module_constructor() {
     catch (...) {
         QFAIL("constructor failed");
     }
-    QCOMPARE(QString(key2->getBookName()), QString(key->getBookName()));
+    QCOMPARE(QString::fromStdString(key2->getBookName()),
+             QString::fromStdString(key->getBookName()));
     QCOMPARE(QString(key2->getChapter()), QString(key->getChapter()));
     QCOMPARE(QString(key2->getVerse()), QString(key->getVerse()));
 

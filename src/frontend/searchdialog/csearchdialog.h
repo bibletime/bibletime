@@ -93,7 +93,7 @@ class CSearchDialog : public QDialog {
         /**
           \returns the used search scope as a list key
         */
-        inline sword::ListKey searchScope() const {
+        inline swordxx::ListKey searchScope() const {
             return m_searchOptionsArea->searchScope();
         }
 
