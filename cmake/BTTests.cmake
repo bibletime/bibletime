@@ -12,7 +12,7 @@ FUNCTION(test_a_class testDir testClass )
         ${test_OTHER_SOURCES}
         ${test_${testClass}_MOC_SRC}
     )
-    SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS ${Sword_CFLAGS_OTHER} -std=c++11 )
+    SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS ${Sword_CFLAGS_OTHER} -std=c++14 )
     TARGET_LINK_LIBRARIES(test_${testClass} Qt5::Widgets Qt5::Xml Qt5::Network Qt5::Test)
     TARGET_LINK_LIBRARIES(test_${testClass}
         bibletime_common

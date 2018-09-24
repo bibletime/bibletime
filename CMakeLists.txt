@@ -132,6 +132,7 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 SET(CMAKE_AUTOMOC ON)
+SET(CMAKE_CXX_STANDARD 14)
 ADD_COMPILE_OPTIONS(
   "-DBT_VERSION=\"${BT_VERSION_FULL}\""
   "$<$<STREQUAL:$<CONFIGURATION>,Release>:-O2>"
@@ -148,7 +149,7 @@ IF(WIN32)
     )
 ELSE()
     ADD_COMPILE_OPTIONS(
-        "-std=c++11" "-ggdb" "-Wall" "-Wextra"
+        "-std=c++14" "-ggdb" "-Wall" "-Wextra"
         "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
     )
 ENDIF()
