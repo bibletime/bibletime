@@ -13,6 +13,7 @@
 #include "btqmlinterface.h"
 
 #include <QApplication>
+#include <QDebug>
 #include <QScreen>
 #include <QTimer>
 
@@ -36,11 +37,13 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
       m_firstHref(false),
       m_linkTimer(new QTimer(this)),
       m_moduleTextModel(new BtModuleTextModel(this)),
-      m_swordKey(nullptr) {
+      m_swordKey(nullptr),
+      m_caseSensitive(false) {
 
     m_moduleTextModel->setTextFilter(&m_textFilter);
     m_textFilter.setShowReferences(true);
     m_linkTimer->setSingleShot(true);
+    m_findState.enabled = false;
     BT_CONNECT(m_linkTimer, SIGNAL(timeout()), this, SLOT(timeoutEvent()));
 }
 
@@ -418,16 +421,6 @@ QVariant BtQmlInterface::getTextModel() {
     return var;
 }
 
-QString BtQmlInterface::getHighlightWords() const {
-    return m_highlightWords;
-}
-
-void BtQmlInterface::setHighlightWords(const QString& words, bool caseSensitive) {
-    m_highlightWords = words;
-    m_moduleTextModel->setHighlightWords(words, caseSensitive);
-    emit highlightWordsChanged();
-}
-
 bool BtQmlInterface::moduleIsWritable(int column) {
     BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
     QString moduleName = m_moduleNames.at(column);
@@ -585,3 +578,107 @@ std::unique_ptr<Rendering::CTextRendering> BtQmlInterface::newRenderer(Format co
                                                       filterOptions)};
 }
 #endif
+
+QString BtQmlInterface::getHighlightWords() const {
+    return m_highlightWords;
+}
+
+void BtQmlInterface::setHighlightWords(const QString& words, bool caseSensitive) {
+    m_highlightWords = words;
+    m_caseSensitive = caseSensitive;
+    QTimer::singleShot(900, this, &BtQmlInterface::slotSetHighlightWords);
+}
+
+void BtQmlInterface::slotSetHighlightWords() {
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    m_moduleTextModel->setHighlightWords(m_highlightWords, m_caseSensitive);
+    m_findState.enabled = false;
+    m_moduleTextModel->setFindState(m_findState);
+    emit highlightWordsChanged();
+    QApplication::restoreOverrideCursor();
+}
+
+void BtQmlInterface::findText(const QString& /*text*/,
+                              bool /*caseSensitive*/, bool backward) {
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    if (! m_findState.enabled) {  // initialize it
+        m_findState.enabled = true;
+        m_findState.index = getCurrentModelIndex();
+        m_findState.subIndex = 0;
+    }
+
+    if (backward)
+        getPreviousMatchingItem(m_findState.index);
+    else
+        getNextMatchingItem(m_findState.index);
+
+    m_moduleTextModel->setFindState(m_findState);
+    emit highlightWordsChanged();
+    emit positionItemOnScreen(m_findState.index);
+    QApplication::restoreOverrideCursor();
+}
+
+int BtQmlInterface::countHighlightsInItem(int index) {
+    QModelIndex mIndex = m_moduleTextModel->index(index);
+    QString text = m_moduleTextModel->data(mIndex, ModuleEntry::Text1Role).toString();
+    int num = text.count("\"highlightwords");
+    return num;
+}
+
+void BtQmlInterface::getNextMatchingItem(int startIndex) {
+    int num = countHighlightsInItem(startIndex);
+    if (num > m_findState.subIndex) { // Found within startIndex item
+        m_findState.index = startIndex;
+        ++m_findState.subIndex;
+        return;
+    }
+
+    if (startIndex >= m_moduleTextModel->rowCount())
+        return;
+
+    int index = startIndex+1;
+    for (int i = 0; i < 1000; ++i) {
+        int num = countHighlightsInItem(index);
+        if (num > 0 ) {
+            m_findState.index = index;
+            m_findState.subIndex = 1;
+            return;
+        }
+        ++index;
+    }
+    return;
+}
+
+void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
+    int num = countHighlightsInItem(startIndex);
+    if (num > 0 && m_findState.subIndex == 0) {
+        // Found within startIndex item
+        m_findState.index = startIndex;
+        m_findState.subIndex = 1;
+        return;
+    }
+
+    if (startIndex <= 0)
+        return;
+
+    int index = startIndex;
+    if (m_findState.subIndex == 0)
+        --index;
+    for (int i = 0; i < 1000; ++i) {
+        int num = countHighlightsInItem(index);
+        if (num > 0 ) {
+            m_findState.index = index;
+            if (m_findState.subIndex == 0)
+                m_findState.subIndex = num;
+            else
+                --m_findState.subIndex;
+            if (m_findState.subIndex != 0)
+                return;
+        }
+        --index;
+    }
+    return;
+}
+
+
+

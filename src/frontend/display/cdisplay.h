@@ -55,6 +55,8 @@ public:
 
     virtual void highlightText(const QString& /*text*/, bool /*caseSensitive*/) {}
 
+    virtual void findText(const QString& /*text*/, bool /*caseSensitive*/, bool /*backward*/) {}
+
     //the pure virtual methods of this base class
 
     /** Returns the text in the given format.

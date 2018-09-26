@@ -169,7 +169,7 @@ void CMDIArea::myTileVertical() {
     QMdiSubWindow * const active = activeSubWindow();
 
     const int widthForEach = width() / windows.count();
-    unsigned int x = 0;
+    int x = 0;
     Q_FOREACH (QMdiSubWindow * const window, windows) {
         window->showNormal();
 
@@ -202,7 +202,7 @@ void CMDIArea::myTileHorizontal() {
     QMdiSubWindow * const active = activeSubWindow();
 
     const int heightForEach = height() / windows.count();
-    unsigned int y = 0;
+    int y = 0;
     Q_FOREACH (QMdiSubWindow * const window, windows) {
         window->showNormal();
 
@@ -336,9 +336,8 @@ void CMDIArea::findTextInActiveWindow(QString const & text,
                                       bool caseSensitive,
                                       bool backward)
 {
-    if (BtWebEngineView * const activeWebView = getActiveWebView()) {
-        activeWebView->findText(text, caseSensitive, backward);
-    }
+    CDisplayWindow* const displayWindow = getDisplayWindow(activeSubWindow());
+    displayWindow->displayWidget()->findText(text, caseSensitive, backward);
 }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {

@@ -23,6 +23,19 @@
 #include "../keys/cswordldkey.h"
 
 
+/** For the BtFindWidget buttons (previous, next) */
+struct FindState {
+
+    // Prev/Next word highlighting enabled
+    bool enabled;
+
+    // Model row for item with highlight
+    int index;
+
+    // 1st, 2nd, etc. word highlighted within the item
+    int subIndex;
+};
+
 struct ModuleEntry {
     enum TextRoles {
         ReferenceRole = Qt::UserRole + 1,
@@ -106,6 +119,9 @@ public:
     virtual bool setData(const QModelIndex &index,
                          const QVariant &value, int role = Qt::EditRole) override;
 
+    /** Set the state of the currently found word functionality */
+    void setFindState(const FindState& findState);
+
     /** Set the color of word that are highlighted */
     void setHighlightWords(const QString& highlightWords, bool caseSensitive);
 
@@ -142,6 +158,7 @@ private:
 
     CSwordTreeKey indexToBookKey(int index) const;
 
+    QString highlightFindPreviousNextField(const QString& text) const;
     bool isBible() const;
     bool isBook() const;
     bool isCommentary() const;
@@ -164,6 +181,7 @@ private:
     BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;
+    FindState m_findState;
 };
 
 

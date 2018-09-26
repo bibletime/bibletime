@@ -89,6 +89,8 @@ public:
 
     void highlightText(const QString& text, bool caseSensitive) override;
 
+    void findText(const QString& text, bool caseSensitive, bool backward) override;
+
     void moveToAnchor( const QString& anchor ) override;
 
     void openFindTextDialog() override;

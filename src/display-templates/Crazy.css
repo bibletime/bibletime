@@ -307,3 +307,6 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 .highlightwords {
     background-color: #ffff66;
 }
+.highlightwords2 {
+    background-color: #ffaa00;
+}

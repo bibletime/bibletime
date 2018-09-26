@@ -45,6 +45,10 @@ Rectangle {
             displayListView.scroll(displayListView.height * -0.8);
             updateReferenceText();
         }
+        onPositionItemOnScreen: {
+            displayListView.positionViewAtIndex(index, ListView.Contain);
+            updateReferenceText();
+        }
     }
 
     ListView {

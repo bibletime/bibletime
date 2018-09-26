@@ -19,9 +19,11 @@
 #include <QList>
 #include <QObject>
 #include <QString>
+#include <QTimer>
 
 class CSwordKey;
 class CSwordModuleInfo;
+
 class QTimer;
 class RoleItemModel;
 
@@ -80,6 +82,12 @@ public:
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();
 
+    int countHighlightsInItem(int index);
+    void findText(const QString& text, bool caseSensitive, bool backward);
+    void getNextMatchingItem(int index);
+    void getPreviousMatchingItem(int index);
+
+
     QString getActiveLink() const;
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
@@ -123,6 +131,7 @@ signals:
     void pageDownChanged();
     void pageUpChanged();
     void pixelsPerMMChanged();
+    void positionItemOnScreen(int index);
     void referenceChange();
     void textChanged();
     void textModelChanged();
@@ -131,6 +140,7 @@ signals:
 
 private slots:
     void timeoutEvent();
+    void slotSetHighlightWords();
 
 private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
@@ -151,12 +161,15 @@ private:
     CSwordKey* m_swordKey;
 
     QList<QFont> m_fonts;
+    bool m_caseSensitive;
     QString m_highlightWords;
     QStringList m_moduleNames;
     BtTextFilter m_textFilter;
     QString m_timeoutUrl;
     int m_contextMenuIndex;
     QString m_activeLink;
+    FindState m_findState;
+    QTimer m_timer;
 };
 
 #endif

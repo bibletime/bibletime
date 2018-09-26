@@ -57,7 +57,9 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     : QAbstractListModel(parent),
       m_firstEntry(0),
       m_maxEntries(0),
-      m_textFilter(0) {
+      m_textFilter(nullptr) {
+
+    m_findState.enabled = false;
     QHash<int, QByteArray> roleNames;
     roleNames[ModuleEntry::ReferenceRole] =  "keyName";
     roleNames[ModuleEntry::TextRole] = "line";
@@ -136,7 +138,10 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
         text = "invalid";
     if (m_textFilter)
         text = m_textFilter->processText(text);
-    return QVariant(CSwordModuleSearch::highlightSearchedText(text, m_highlightWords));
+    QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+    if (m_findState.enabled && index.row() == m_findState.index)
+        t = highlightFindPreviousNextField(t);
+    return QVariant(t);
 }
 
 QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) const {
@@ -228,6 +233,22 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
         return text;
     }
     return QString();
+}
+
+QString BtModuleTextModel::highlightFindPreviousNextField(const QString& text) const {
+    QString t = text;
+    int from = 0;
+    for (int i = 0; i < m_findState.subIndex; ++i) {
+        int pos = t.indexOf("\"highlightwords\"", from);
+        if (pos == -1)
+            return t;
+        else {
+            from = pos + 1;
+        }
+    }
+    int position = from + 14; // highlightwords = 14, quote was already added
+    t.insert(position, "2");
+    return t;
 }
 
 QString BtModuleTextModel::replaceColors(const QString& text) const {
@@ -341,6 +362,19 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
     return keyName;
 }
 
+void BtModuleTextModel::setFindState(const FindState& findState) {
+    if (m_findState.enabled && m_findState.index != findState.index) {
+        QModelIndex oldIndexToClear = index(m_findState.index, 0);
+        m_findState  = findState;
+        emit dataChanged(oldIndexToClear, oldIndexToClear);
+    } else {
+        m_findState  = findState;
+    }
+    if (findState.enabled) {
+        QModelIndex index = this->index(findState.index, 0);
+        emit dataChanged(index, index);
+    }
+}
 void BtModuleTextModel::setHighlightWords(
         const QString& highlightWords, bool caseSensitive) {
     beginResetModel();

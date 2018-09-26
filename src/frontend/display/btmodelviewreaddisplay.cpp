@@ -90,18 +90,6 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
             }
         }
 
-        case SelectedText: {
-//            if (!hasSelection()) {
-//                return QString::null;
-//            }
-//            else if (format == HTMLText) {
-//                //    \todo It does not appear this is ever called
-//            }
-//            else { //plain text requested
-//                return selectedText();
-//            }
-        }
-
         case AnchorOnly: {
             QString moduleName;
             QString keyName;
@@ -210,6 +198,11 @@ bool BtModelViewReadDisplay::hasSelection() const {
 
 void BtModelViewReadDisplay::highlightText(const QString& text, bool caseSensitive) {
     m_widget->qmlInterface()->setHighlightWords(text, caseSensitive);
+}
+
+void BtModelViewReadDisplay::findText(const QString& text,
+                                      bool caseSensitive, bool backward) {
+    m_widget->qmlInterface()->findText(text, caseSensitive, backward);
 }
 
 // Reimplementation
