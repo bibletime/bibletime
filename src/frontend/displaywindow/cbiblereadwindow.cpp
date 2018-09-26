@@ -418,12 +418,6 @@ void CBibleReadWindow::syncWindows() {
             w->lookupKey( key()->key() );
         }
     }
-
-    // Fix problem with QWebEngineView::setHtml
-    // It set the focus of any updated window causing
-    // it to be the active window.
-    if (mdi()->activeSubWindow() != activeWindow)
-        mdi()->setActiveSubWindow(activeWindow);
 }
 
 void CBibleReadWindow::setupMainWindowToolBars() {
