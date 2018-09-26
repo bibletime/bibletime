@@ -58,7 +58,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         QLabel *m_transifexLabel;
         QComboBox* m_styleChooserCombo;
         QLabel *m_availableLabel;
-        BtWebEngineView* m_stylePreviewViewer;
+        QLabel* m_stylePreviewViewer;
         QLabel *m_previewLabel;
 
 };

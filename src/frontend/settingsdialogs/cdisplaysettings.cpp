@@ -87,9 +87,10 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     QWidget* webViewWidget = new CWebViewerWidget(this);
     QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
-    m_stylePreviewViewer = new BtWebEngineView(webViewWidget);
+    m_stylePreviewViewer = new QLabel(this);
     m_previewLabel = new QLabel(webViewWidget);
-    m_previewLabel->setBuddy(m_stylePreviewViewer);
+    m_stylePreviewViewer->setWordWrap(true);
+    m_stylePreviewViewer->setTextFormat(Qt::RichText);
     webViewLayout->addWidget(m_previewLabel);
     webViewLayout->addWidget(m_stylePreviewViewer);
     webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
@@ -233,14 +234,10 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.")),
                      settings));
 
-    settings.highlight = true;
-
     tree.append( new CTextRendering::KeyTreeItem(
                      QString("\n<span class=\"entryname\"><a name=\"John317\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
                      .arg(tr("For God didn't send his Son into the world to judge the world, but that the world should be saved through him.")),
                      settings));
-
-    settings.highlight = false;
 
     tree.append( new CTextRendering::KeyTreeItem(
                      QString("\n<span class=\"entryname\"><a name=\"John318\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
@@ -266,7 +263,9 @@ void CDisplaySettingsPage::updateStylePreview() {
     const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
     btConfig().setValue("GUI/activeTemplateName", styleName);
     CDisplayRendering render;
-    m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
+    QString text = render.renderKeyTree(tree);
+    text.replace("#CHAPTERTITLE#", "");
+    m_stylePreviewViewer->setText(text);
 
     btConfig().setValue("GUI/activeTemplateName", oldStyleName);
 }
