@@ -18,7 +18,6 @@
 #include <QMenu>
 #include <QTimer>
 #include "backend/managers/referencemanager.h"
-#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/display/chtmlwritedisplay.h"
 #include "frontend/display/cplainwritedisplay.h"
 #include "util/tool.h"

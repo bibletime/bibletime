@@ -20,7 +20,6 @@
 #include "backend/rendering/centrydisplay.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
-//#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/display/btmodelviewreaddisplay.h"
