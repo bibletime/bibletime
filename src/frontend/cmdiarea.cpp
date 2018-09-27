@@ -19,8 +19,6 @@
 #include <QTabBar>
 #include <QTimer>
 #include <QToolBar>
-#include "frontend/btwebenginepage.h"
-#include "frontend/btwebengineview.h"
 #include <QWindowStateChangeEvent>
 #include "bibletime.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
@@ -32,15 +30,6 @@ namespace {
 
 inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) {
     return qobject_cast<CDisplayWindow *>(mdiWindow->widget());
-}
-
-inline BtWebEngineView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
-    if (!displayWindow)
-        return nullptr;
-    CDisplay * const display = displayWindow->displayWidget();
-    if (!display)
-        return nullptr;
-    return qobject_cast<BtWebEngineView *>(display->view());
 }
 
 } // anonymous namespace
@@ -294,14 +283,6 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
         if (!w->isHidden())
             ret.append(w);
     return ret;
-}
-
-BtWebEngineView* CMDIArea::getActiveWebView()
-{
-    QMdiSubWindow* activeMdiWindow = activeSubWindow();
-    CDisplayWindow* const activeWindow = getDisplayWindow(activeMdiWindow);
-    BtWebEngineView* webView = getWebViewFromDisplayWindow(activeWindow);
-    return webView;
 }
 
 void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
