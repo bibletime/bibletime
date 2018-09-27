@@ -12,14 +12,12 @@
 
 #include "bttipdialog.h"
 
-#include "frontend/btwebengineview.h"
-#include "frontend/btwebenginepage.h"
-
 #include <QCheckBox>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QTextBrowser>
 #include <QVBoxLayout>
 #include "backend/config/btconfig.h"
 #include "frontend/bibletimeapp.h"
@@ -70,10 +68,13 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
-    m_tipView = new BtWebEngineView(this);
-    BtWebEnginePage *page = new BtWebEnginePage(this);
-    m_tipView->setPage(page);
+    m_tipView = new QTextBrowser(this);
     m_tipView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_tipView->setOpenExternalLinks(true);
+    m_tipView->setStyleSheet("QTextEdit { background-color: rgb(255, 255, 255) }");
+    QFont font = m_tipView->font();
+    font.setPointSize(font.pointSize()+2);
+    m_tipView->setFont(font);
     mainLayout->addWidget(m_tipView);
 
     QHBoxLayout* hLayout = new QHBoxLayout;
@@ -103,7 +104,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
                this,        SLOT(reject()));
     BT_CONNECT(nextButton, SIGNAL(clicked()),
                this,       SLOT(nextTip()));
-    BT_CONNECT(m_tipView->btPage(), SIGNAL(linkClicked(QUrl const &)),
+    BT_CONNECT(m_tipView, SIGNAL(anchorClicked(QUrl const &)),
                this,              SLOT(linkClicked(QUrl const &)));
 
     m_tipNumber = btConfig().value<int>(LastTipNumberKey, 0);
