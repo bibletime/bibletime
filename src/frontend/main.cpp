@@ -14,6 +14,7 @@
 #include <iostream>
 #include <memory>
 #include <QDateTime>
+#include <QDesktopServices>
 #include <QFile>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -25,6 +26,7 @@
 #include "backend/config/btconfig.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
+#include "frontend/bturlhandler.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/display/modelview/btqmlinterface.h"
 #include "frontend/welcome/btwelcomedialog.h"
@@ -328,6 +330,9 @@ int main(int argc, char* argv[]) {
         BtWelcomeDialog::openWelcome();
     else if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
+
+    BtUrlHandler btUrlHandler;
+    QDesktopServices::setUrlHandler("qt", &btUrlHandler, "showQt");
 
     return app.exec();
 }
