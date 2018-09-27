@@ -24,7 +24,7 @@ class CReadDisplay;
 class QAction;
 class QSize;
 class BibleTime;
-
+class QTextBrowser;
 
 namespace InfoDisplay {
 
@@ -49,12 +49,17 @@ public slots:
 
 private slots:
 
-    void lookupInfo(const QString &, const QString &);
+    void lookupInfo(const QUrl &);
     void selectAll();
+    void slotContextMenu(const QPoint& point);
+
+private:
+    void setBrowserFont(const CSwordModuleInfo* const module);
 
 private: /* Fields: */
 
     CReadDisplay * m_htmlPart;
+    QTextBrowser * m_textBrowser;
     BibleTime * m_mainWindow;
 
 };

@@ -19,6 +19,7 @@
 #include <QLayout>
 #include <QRegExp>
 #include <QSize>
+#include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QtAlgorithms>
 #include <QMenu>
@@ -30,7 +31,6 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "bibletime.h"
 #include "frontend/crossrefrendering.h"
-#include "frontend/display/bthtmlreaddisplay.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
 
@@ -47,33 +47,32 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
     QVBoxLayout * const layout = new QVBoxLayout(this);
     layout->setContentsMargins(2, 2, 2, 2); // Leave small border
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    m_textBrowser = new QTextBrowser(this);
+    m_textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
+    BT_CONNECT(m_textBrowser, SIGNAL(customContextMenuRequested(const QPoint&)),
+        this, SLOT(slotContextMenu(const QPoint&)));
+    BT_CONNECT(m_textBrowser, SIGNAL(anchorClicked(const QUrl&)),
+               this, SLOT(lookupInfo(const QUrl&)));
+    layout->addWidget(m_textBrowser);
+    unsetInfo();
+}
 
-    m_htmlPart = new BtHtmlReadDisplay(nullptr, this);
-    m_htmlPart->setMouseTracking(false); // We don't want strong/lemma/note mouse infos
-    m_htmlPart->view()->setAcceptDrops(false);
+void CInfoDisplay::slotContextMenu(const QPoint& /* point */ ) {
 
-    QAction * const selectAllAction = new QAction(QIcon(), tr("Select all"), this);
-    selectAllAction->setShortcut(QKeySequence::SelectAll);
-    BT_CONNECT(selectAllAction, SIGNAL(triggered()),
+    QAction selectAllAction(tr("Select all"));
+    selectAllAction.setShortcut(QKeySequence::SelectAll);
+    BT_CONNECT(&selectAllAction, SIGNAL(triggered()),
                this,            SLOT(selectAll()));
 
-    QAction * const copyAction = new QAction(tr("Copy"), this);
-    copyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
-    BT_CONNECT(copyAction,                     SIGNAL(triggered()),
-               m_htmlPart->connectionsProxy(), SLOT(copySelection()));
+    QAction copyAction(tr("Copy"));
+    copyAction.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
+    BT_CONNECT(&copyAction,                     SIGNAL(triggered()),
+               m_textBrowser, SLOT(copy()));
 
-    QMenu * const menu = new QMenu(this);
-    menu->addAction(selectAllAction);
-    menu->addAction(copyAction);
-    m_htmlPart->installPopup(menu);
-
-    BT_CONNECT(m_htmlPart->connectionsProxy(),
-               SIGNAL(referenceClicked(QString const &, QString const &)),
-               SLOT(lookupInfo(QString const &, QString const &)));
-
-    layout->addWidget(m_htmlPart->view());
-
-    unsetInfo();
+    QMenu menu;
+    menu.addAction(&selectAllAction);
+    menu.addAction(&copyAction);
+    menu.exec(QCursor::pos());
 }
 
 void CInfoDisplay::unsetInfo() {
@@ -87,26 +86,36 @@ void CInfoDisplay::unsetInfo() {
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     QString text = Rendering::formatInfo(renderedData, lang);
     text.replace("#CHAPTERTITLE#", "");
-    m_htmlPart->setText(text);
+    m_textBrowser->setText(text);
 }
 
-void CInfoDisplay::lookupInfo(const QString & mod_name,
-                              const QString & key_text)
-{
-    qDebug() << "CInfoDisplay::lookup";
-    qDebug() <<  mod_name <<  key_text;
-    CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(mod_name);
-    BT_ASSERT(m);
-    std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));
-    key->setKey(key_text);
+void CInfoDisplay::lookupInfo(const QUrl & url) {
 
-    setInfo(key->renderedText(), m->language()->abbrev());
+
+    if (!url.isEmpty() && ReferenceManager::isHyperlink(url.toString())) {
+        QString module;
+        QString keyName;
+        ReferenceManager::Type type;
+
+        ReferenceManager::decodeHyperlink(url.toString(), module, keyName, type);
+        if (module.isEmpty()) {
+            module = ReferenceManager::preferredModule( type );
+        }
+
+        qDebug() << "CInfoDisplay::lookup";
+        qDebug() <<  module <<  keyName << type;
+        CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(module);
+        BT_ASSERT(m);
+        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));
+        key->setKey(keyName);
+
+        setInfo(key->renderedText(), m->language()->abbrev());
+    }
 }
 
 void CInfoDisplay::setInfo(const Rendering::InfoType type, const QString & data) {
     setInfo(Rendering::ListInfoData() << qMakePair(type, data));
 }
-
 
 void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
     // If the widget is hidden it would be inefficient to render and display the data
@@ -114,7 +123,7 @@ void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
         return;
 
     if (list.isEmpty()) {
-        m_htmlPart->setText("<html></html>");
+        m_textBrowser->setText("");
         return;
     }
 
@@ -122,6 +131,7 @@ void CInfoDisplay::setInfo(const Rendering::ListInfoData & list) {
     const CSwordModuleInfo * m(m_mainWindow->getCurrentModule());
     if(m != nullptr)
         l.append(m);
+    setBrowserFont(m);
     setInfo(Rendering::formatInfo(list, l));
 }
 
@@ -136,8 +146,17 @@ void CInfoDisplay::setInfo(CSwordModuleInfo * const module) {
     }
 }
 
+void CInfoDisplay::setBrowserFont(const CSwordModuleInfo* const module) {
+    if (module) {
+            const CLanguageMgr::Language* lang = module->language();
+            m_textBrowser->setFont(btConfig().getFontForLanguage(*lang).second);
+    } else {
+        m_textBrowser->setFont(btConfig().getDefaultFont());
+    }
+}
+
 void CInfoDisplay::selectAll() {
-    m_htmlPart->selectAll();
+    m_textBrowser->selectAll();
 }
 
 QSize CInfoDisplay::sizeHint() const {
