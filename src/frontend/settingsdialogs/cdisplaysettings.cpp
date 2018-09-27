@@ -21,7 +21,6 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "frontend/bibletimeapp.h"
-#include "frontend/btwebengineview.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
@@ -33,27 +32,6 @@
 #include <swlocale.h>
 
 using SBLCI = std::list<sword::SWBuf>::const_iterator;
-
-// ***********************
-// Container for BtWebEngineView to control its size
-class CWebViewerWidget : public QWidget {
-    public:
-        CWebViewerWidget(QWidget* parent = nullptr);
-        ~CWebViewerWidget();
-        QSize sizeHint() const override;
-};
-
-CWebViewerWidget::CWebViewerWidget(QWidget* parent)
-        : QWidget(parent) {
-}
-
-CWebViewerWidget::~CWebViewerWidget() {
-}
-
-QSize CWebViewerWidget::sizeHint () const {
-    return QSize(100, 100);
-}
-// ************************
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
@@ -85,16 +63,19 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     formLayout->addRow(m_availableLabel, m_styleChooserCombo );
     mainLayout->addLayout(formLayout);
 
-    QWidget* webViewWidget = new CWebViewerWidget(this);
-    QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
+    m_previewLabel = new QLabel(this);
+    m_previewLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
     m_stylePreviewViewer = new QLabel(this);
-    m_previewLabel = new QLabel(webViewWidget);
     m_stylePreviewViewer->setWordWrap(true);
     m_stylePreviewViewer->setTextFormat(Qt::RichText);
-    webViewLayout->addWidget(m_previewLabel);
-    webViewLayout->addWidget(m_stylePreviewViewer);
-    webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-    mainLayout->addWidget(webViewWidget);
+    m_stylePreviewViewer->setStyleSheet("QLabel { background-color: rgb(255, 255, 255) }");
+    m_stylePreviewViewer->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    m_stylePreviewViewer->setAlignment(Qt::AlignTop);
+    m_stylePreviewViewer->setMargin(15);
+
+    mainLayout->addWidget(m_previewLabel);
+    mainLayout->addWidget(m_stylePreviewViewer);
 
     CDisplayTemplateMgr * tMgr = CDisplayTemplateMgr::instance();
     m_styleChooserCombo->addItems(tMgr->availableTemplates());

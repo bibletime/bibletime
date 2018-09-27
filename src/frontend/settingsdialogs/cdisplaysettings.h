@@ -22,7 +22,6 @@ class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
 class QLabel;
-class BtWebEngineView;
 
 class CDisplaySettingsPage: public BtConfigDialog::Page {
 
