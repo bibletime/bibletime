@@ -199,21 +199,21 @@ QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
 QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
     QString reference;
 
-    QRegExp rx("sword://Bible/.*\\|\\|(.*)=(.*)");
+    QRegExp rx("sword://bible/.*\\|\\|(.*)=(.*)", Qt::CaseInsensitive);
     rx.setMinimal(false);
     int pos1 = rx.indexIn(url);
     if (pos1 > -1) {
         reference = rx.cap(1) + "=" + rx.cap(2);
 
     } else {
-        QRegExp rx1("sword://footnote/(.*)=(.*)");
+        QRegExp rx1("sword://footnote/(.*)=(.*)", Qt::CaseInsensitive);
         rx1.setMinimal(false);
         int pos1 = rx1.indexIn(url);
         if (pos1 > -1) {
             reference = "note=" + rx1.cap(1);
 
         } else {
-            QRegExp rx2("sword://lemmamorph/([a-s]+)=([GH][0-9]+)");
+            QRegExp rx2("sword://lemmamorph/([a-s]+)=([GH][0-9]+)", Qt::CaseInsensitive);
             rx2.setMinimal(false);
             int pos1 = rx2.indexIn(url);
             if (pos1 > -1) {
