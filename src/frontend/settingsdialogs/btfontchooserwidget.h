@@ -23,7 +23,7 @@ class CListWidget;
 class QListWidget;
 class QListWidgetItem;
 class QString;
-class BtWebEngineView;
+class QTextBrowser;
 
 class BtFontChooserWidget : public QFrame {
 
@@ -72,7 +72,7 @@ class BtFontChooserWidget : public QFrame {
         QLabel *m_fontSizeLabel;
             CListWidget *m_sizeListWidget;
 
-        BtWebEngineView *m_fontPreview;
+        QTextBrowser *m_fontPreview;
 
         QString m_htmlText;
         QFont m_font;
