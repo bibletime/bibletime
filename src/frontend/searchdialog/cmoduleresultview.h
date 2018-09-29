@@ -33,7 +33,7 @@ class CModuleResultView : public QTreeWidget {
         Q_OBJECT
     public:
         CModuleResultView(QWidget* parent);
-        ~CModuleResultView();
+        ~CModuleResultView() override;
 
         /**
           Setups the tree using the given list of modules.

@@ -59,88 +59,90 @@ BtModelViewReadDisplay::~BtModelViewReadDisplay() {
 
 const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
                                             const CDisplay::TextPart part) {
+    QString text;
     switch (part) {
-        case Document: {
-            if (format == HTMLText) {
-                return getCurrentSource();
-            }
-            else {
-                CDisplayWindow* window = parentWindow();
-                CSwordKey* const key = window->key();
-                const CSwordModuleInfo *module = key->module();
-                //This is never used for Bibles, so it is not implemented for
-                //them.  If it should be, see CReadDisplay::print() for example
-                //code.
-                BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
-                         module->type() == CSwordModuleInfo::Commentary ||
-                         module->type() == CSwordModuleInfo::GenericBook);
-                if (module->type() == CSwordModuleInfo::Lexicon ||
-                        module->type() == CSwordModuleInfo::Commentary ||
-                        module->type() == CSwordModuleInfo::GenericBook) {
-
-                    FilterOptions filterOptions;
-                    CSwordBackend::instance()->setFilterOptions(filterOptions);
-
-                    return QString(key->strippedText()).append("\n(")
-                           .append(key->key())
-                           .append(", ")
-                           .append(key->module()->name())
-                           .append(")");
-                }
-            }
+    case Document: {
+        if (format == HTMLText) {
+            text = getCurrentSource();
         }
-
-        case AnchorOnly: {
-            QString moduleName;
-            QString keyName;
-            ReferenceManager::Type type;
-            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
-
-            return keyName;
-        }
-
-        case AnchorTextOnly: {
-            QString moduleName;
-            QString keyName;
-            ReferenceManager::Type type;
-            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
-
-            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-                key->setKey(keyName);
-
-                return key->strippedText();
-            }
-            return QString::null;
-        }
-
-        case AnchorWithText: {
-            QString moduleName;
-            QString keyName;
-            ReferenceManager::Type type;
-            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
-
-            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-                key->setKey(keyName);
+        else {
+            CDisplayWindow* window = parentWindow();
+            CSwordKey* const key = window->key();
+            const CSwordModuleInfo *module = key->module();
+            //This is never used for Bibles, so it is not implemented for
+            //them.  If it should be, see CReadDisplay::print() for example
+            //code.
+            BT_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
+                      module->type() == CSwordModuleInfo::Commentary ||
+                      module->type() == CSwordModuleInfo::GenericBook);
+            if (module->type() == CSwordModuleInfo::Lexicon ||
+                    module->type() == CSwordModuleInfo::Commentary ||
+                    module->type() == CSwordModuleInfo::GenericBook) {
 
                 FilterOptions filterOptions;
                 CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-                return QString(key->strippedText()).append("\n(")
-                       .append(key->key())
-                       .append(", ")
-                       .append(key->module()->name())
-                       .append(")");
-                /*    ("%1\n(%2, %3)")
+                text = QString(key->strippedText()).append("\n(")
+                        .append(key->key())
+                        .append(", ")
+                        .append(key->module()->name())
+                        .append(")");
+            }
+        }
+        break;
+    }
+
+    case AnchorOnly: {
+        QString moduleName;
+        QString keyName;
+        ReferenceManager::Type type;
+        ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+
+        return keyName;
+    }
+
+    case AnchorTextOnly: {
+        QString moduleName;
+        QString keyName;
+        ReferenceManager::Type type;
+        ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+
+        if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
+            std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+            key->setKey(keyName);
+
+            return key->strippedText();
+        }
+        return QString::null;
+    }
+
+    case AnchorWithText: {
+        QString moduleName;
+        QString keyName;
+        ReferenceManager::Type type;
+        ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+
+        if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
+            std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+            key->setKey(keyName);
+
+            FilterOptions filterOptions;
+            CSwordBackend::instance()->setFilterOptions(filterOptions);
+
+            return QString(key->strippedText()).append("\n(")
+                    .append(key->key())
+                    .append(", ")
+                    .append(key->module()->name())
+                    .append(")");
+            /*    ("%1\n(%2, %3)")
                     .arg()
                     .arg(key->key())
                     .arg(key->module()->name());*/
-            }
-            return QString::null;
         }
-        default:
-            return QString::null;
+        return QString::null;
+    }
+    default:
+        break;
     }
     return QString::null;
 
