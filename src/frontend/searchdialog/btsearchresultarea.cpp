@@ -20,12 +20,12 @@
 #include <QSize>
 #include <QSplitter>
 #include <QStringList>
+#include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QWidget>
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/config/btconfig.h"
-#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
@@ -86,24 +86,33 @@ void BtSearchResultArea::initView() {
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
-    m_previewDisplay = new BtHtmlReadDisplay(nullptr, m_displayFrame);
-    m_previewDisplay->view()->setToolTip(tr("Text of the selected search result item"));
-    frameLayout->addWidget(m_previewDisplay->view());
+    m_previewDisplay = new QTextBrowser(this);
+    m_previewDisplay->setToolTip(tr("Text of the selected search result item"));
+    frameLayout->addWidget(m_previewDisplay);
 
-    QAction* selectAllAction = new QAction(QIcon(), tr("Select all"), this);
-    selectAllAction->setShortcut(QKeySequence::SelectAll);
-    BT_CONNECT(selectAllAction, SIGNAL(triggered()), this, SLOT(selectAll()));
-
-    QAction* copyAction = new QAction(tr("Copy"), this);
-    copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
-    BT_CONNECT(copyAction, SIGNAL(triggered()), this, SLOT(copySelection()));
-
-    QMenu* menu = new QMenu();
-    menu->addAction(selectAllAction);
-    menu->addAction(copyAction);
-    m_previewDisplay->installPopup(menu);
+    m_previewDisplay->setContextMenuPolicy(Qt::CustomContextMenu);
+    BT_CONNECT(m_previewDisplay, SIGNAL(customContextMenuRequested(const QPoint&)),
+        this, SLOT(slotContextMenu(const QPoint&)));
 
     loadDialogSettings();
+}
+
+void BtSearchResultArea::slotContextMenu(const QPoint& /* point */ ) {
+
+    QAction selectAllAction(tr("Select all"));
+    selectAllAction.setShortcut(QKeySequence::SelectAll);
+    BT_CONNECT(&selectAllAction, SIGNAL(triggered()),
+               this,            SLOT(selectAll()));
+
+    QAction copyAction(tr("Copy"));
+    copyAction.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
+    BT_CONNECT(&copyAction,                     SIGNAL(triggered()),
+               m_previewDisplay, SLOT(copy()));
+
+    QMenu menu;
+    menu.addAction(&selectAllAction);
+    menu.addAction(&copyAction);
+    menu.exec(QCursor::pos());
 }
 
 void BtSearchResultArea::setSearchResult(
@@ -212,8 +221,22 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             text = render.renderSingleKey(key, modules, settings);
         }
 
-        m_previewDisplay->setText( CSwordModuleSearch::highlightSearchedText(text, searchedText) );
-        m_previewDisplay->moveToAnchor( CDisplayRendering::keyToHTMLAnchor(key) );
+        if (modules.count() > 0)
+            setBrowserFont(modules.at(0));
+
+        QString text2 = CSwordModuleSearch::highlightSearchedText(text, searchedText);
+        text2.replace("#CHAPTERTITLE#", "");
+        m_previewDisplay->setText(text2);
+        m_previewDisplay->scrollToAnchor( CDisplayRendering::keyToHTMLAnchor(key) );
+    }
+}
+
+void BtSearchResultArea::setBrowserFont(const CSwordModuleInfo* const module) {
+    if (module) {
+            const CLanguageMgr::Language* lang = module->language();
+            m_previewDisplay->setFont(btConfig().getFontForLanguage(*lang).second);
+    } else {
+        m_previewDisplay->setFont(btConfig().getDefaultFont());
     }
 }
 
@@ -229,7 +252,7 @@ void BtSearchResultArea::initConnections() {
                SLOT(setupTree(CSwordModuleInfo const *,
                               sword::ListKey const &)));
     BT_CONNECT(m_moduleListBox,                      SIGNAL(moduleChanged()),
-               m_previewDisplay->connectionsProxy(), SLOT(clear()));
+               m_previewDisplay, SLOT(clear()));
 
     // connect the strongs list
     BT_CONNECT(m_moduleListBox,
