@@ -39,7 +39,7 @@ class CPlainWriteWindow : public CDisplayWindow {
         CPlainWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
 
         /**
-        * Set the displayWidget which is a subclass of BtWebEnginePage.
+        * Set the displayWidget.
         */
         void setDisplayWidget( CDisplay* display ) override;
 

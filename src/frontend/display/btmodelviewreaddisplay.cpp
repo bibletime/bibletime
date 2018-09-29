@@ -146,7 +146,7 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
 
 }
 
-// Puts html text and javascript into BtWebEngineView
+// Puts html text the view
 void BtModelViewReadDisplay::setText( const QString& /*newText*/ ) {
 
 }
@@ -222,7 +222,7 @@ void BtModelViewReadDisplay::moveToAnchor( const QString& /*anchor*/ ) {
 void BtModelViewReadDisplay::slotDelayedMoveToAnchor() {
 }
 
-// Scroll the BtWebEngineView to the correct location specified by anchor
+// Scroll the view to the correct location specified by anchor
 void BtModelViewReadDisplay::slotGoToAnchor(const QString& /*anchor*/) {
 }
 
