@@ -160,22 +160,6 @@ IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
 ENDIF()
 
-FIND_PACKAGE(Qt5WebEngine QUIET)
-IF(NOT Qt5WebEngine_FOUND)
-    MESSAGE(STATUS "Using Qt WebKit")
-    FIND_PACKAGE(Qt5WebKit REQUIRED)
-    FIND_PACKAGE(Qt5WebKitWidgets REQUIRED)
-    SET(USEWEBENGINE OFF)
-ELSE()
-    MESSAGE(STATUS "Using Qt WebEngine")
-    FIND_PACKAGE(Qt5WebEngineWidgets REQUIRED)
-    SET(USEWEBENGINE ON)
-ENDIF()
-
-IF(USEWEBENGINE)
-    ADD_DEFINITIONS("-DUSEWEBENGINE")
-ENDIF()
-
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 
@@ -234,11 +218,9 @@ TARGET_LINK_LIBRARIES("bibletime"
 )
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKitWidgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
-ELSEIF(USEWEBENGINE)
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebEngine Qt5::WebEngineWidgets Qt5::WebChannel Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ELSE()
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
 ENDIF()
 
 SET(BibleTime_LDFLAGS "")
@@ -291,15 +273,6 @@ FILE(GLOB INSTALL_TMPL_LIST
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt)
 INSTALL(FILES ${INSTALL_TMPL_LIST}
          DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
-
-
-IF(USEWEBENGINE)
-    INSTALL(FILES "src/frontend/display/btwebengine.js"
-     DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
-ELSE()
-    INSTALL(FILES "src/frontend/display/bthtml.js"
-        DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
-ENDIF()
 
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
