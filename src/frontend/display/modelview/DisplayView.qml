@@ -51,6 +51,7 @@ Rectangle {
         }
     }
 
+
     ListView {
         id: displayListView
 
@@ -91,6 +92,7 @@ Rectangle {
         anchors.rightMargin: 0
         anchors.topMargin: 0
         anchors.bottomMargin: 0
+        focus: true
         maximumFlickVelocity: 750
         model: btQmlInterface.textModel
         highlightFollowsCurrentItem: true
@@ -100,6 +102,85 @@ Rectangle {
         }
         onMovementEnded: {
             updateReferenceText();
+        }
+
+        Timer {
+            id: scrollTimer
+
+            property bool autoScrollEnabled:false
+            property bool autoScrollPaused: false
+            property int autoScrollSpeed: 0
+            property int autoScrollInterval: 160
+
+            function keyReceived(event) {
+                if (event.key === Qt.Key_Up && event.modifiers === Qt.ShiftModifier) {
+                    if ( ! autoScrollEnabled) {
+                        autoScrollEnabled = true;
+                        autoScrollSpeed = 1;
+                        setInterval();
+                        start();
+                    } else {
+                        if (autoScrollSpeed < 10)
+                            ++autoScrollSpeed;
+                        autoScrollPaused = false;
+                        setInterval();
+                    }
+                    event.accepted = true;
+                } else if (event.key === Qt.Key_Down && event.modifiers === Qt.ShiftModifier) {
+                    if ( ! autoScrollEnabled) {
+                        autoScrollEnabled = true;
+                        autoScrollSpeed = -1;
+                        setInterval();
+                        start();
+                    } else {
+                        if (autoScrollSpeed > -10)
+                            --autoScrollSpeed;
+                        autoScrollPaused = false;
+                        setInterval();
+                    }
+                    event.accepted = true;
+                } else if (event.key === Qt.Key_Shift) {
+                    if (autoScrollEnabled) {
+                        autoScrollPaused = ! autoScrollPaused;
+                        event.accepted = true;
+                    }
+                } else {
+                    if (autoScrollEnabled) {
+                        autoScrollEnabled = false;
+                        autoScrollPaused = false;
+                        autoScrollSpeed = 0;
+                        event.accepted = true;
+                    }
+                }
+            }
+
+            function setInterval() {
+                if (autoScrollSpeed === 0) {
+                    interval = autoScrollInterval;
+                    stop();
+                    autoScrollEnabled = false;
+                }
+                else
+                    interval = Math.abs(autoScrollInterval/autoScrollSpeed);
+            }
+
+            repeat: true;
+            onTriggered: {
+                if (autoScrollEnabled && ! autoScrollPaused) {
+                    if (autoScrollSpeed > 0)
+                        displayListView.scroll(1);
+                    else if (autoScrollSpeed < 0)
+                        displayListView.scroll(-1);
+                } else if (autoScrollEnabled && autoScrollPaused) {
+                    return;
+                } else {
+                    stop();
+                }
+            }
+        }
+
+        Keys.onPressed: {
+            scrollTimer.keyReceived(event);
         }
 
         delegate: Component {
