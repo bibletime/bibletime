@@ -173,6 +173,8 @@ public:
         return m_actionCollection;
     }
 
+    virtual void copyByReferences() {}
+
 signals:
     /** The module list was set because backend was reloaded.*/
     void sigModuleListSet(QStringList modules);

@@ -213,9 +213,9 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence::SelectAll);
     a->addAction("selectAll", actn);
 
-    actn = new QAction(QIcon(), tr("Copy"), a);
+    actn = new QAction(QIcon(), tr("Copy..."), a);
     actn->setShortcut(QKeySequence::Copy);
-    a->addAction("copySelectedText", actn);
+    a->addAction("copyReferencedText", actn);
 
     actn = new QAction(QIcon(), tr("Find..."), a);
     actn->setShortcut(QKeySequence::Find);
@@ -272,9 +272,9 @@ void CDisplayWindow::initActions() {
     initAddAction("selectAll",
                   conn,
                   &CDisplayConnections::selectAll);
-    initAddAction("copySelectedText",
+    initAddAction("copyReferencedText",
                   conn,
-                  &CDisplayConnections::copySelection);
+                  &CDisplayConnections::copyByReferences);
     initAddAction("findText",
                   conn,
                   &CDisplayConnections::openFindTextDialog);

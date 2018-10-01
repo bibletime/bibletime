@@ -66,7 +66,6 @@ protected: /* Methods: */
     bool eventFilter( QObject* o, QEvent* e) override;
 
     struct {
-        QAction* selectAll;
         QAction* findText;
         QAction* findStrongs;
 
@@ -76,7 +75,7 @@ protected: /* Methods: */
             QAction* referenceTextOnly;
             QAction* referenceAndText;
             QAction* chapter;
-            QAction* selectedText;
+            QAction* referencedText;
         }
         copy;
 

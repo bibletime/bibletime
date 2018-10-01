@@ -143,7 +143,6 @@ void CBibleReadWindow::initActions() {
     initAction("nextVerse", this, &CBibleReadWindow::nextVerse);
     initAction("previousVerse", this, &CBibleReadWindow::previousVerse);
 
-    m_actions.selectAll = &ac->action("selectAll");
     m_actions.findText = &ac->action("findText");
     m_actions.findStrongs = &ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
     m_actions.copy.referenceOnly = &ac->action("copyReferenceOnly");
@@ -163,7 +162,7 @@ void CBibleReadWindow::initActions() {
                         this,
                         &CBibleReadWindow::copyDisplayedText);
 
-    m_actions.copy.selectedText = &ac->action("copySelectedText");
+    m_actions.copy.referencedText = &ac->action("copyReferencedText");
 
     m_actions.save.referenceAndText =
             &initAction("saveReferenceWithText",
@@ -213,19 +212,22 @@ void CBibleReadWindow::setupPopupMenu() {
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();
     popup()->addAction(m_actions.findStrongs);
-    popup()->addAction(m_actions.selectAll);
 
     popup()->addSeparator();
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
+
+    m_actions.copyMenu->addSeparator();
+
+    m_actions.copyMenu->addAction(m_actions.copy.referencedText);
     m_actions.copyMenu->addAction(m_actions.copy.referenceOnly);
     m_actions.copyMenu->addAction(m_actions.copy.referenceTextOnly);
     m_actions.copyMenu->addAction(m_actions.copy.referenceAndText);
     m_actions.copyMenu->addAction(m_actions.copy.chapter);
 
-    m_actions.copyMenu->addSeparator();
 
-    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
+//    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
+
     popup()->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), popup());
@@ -258,7 +260,6 @@ void CBibleReadWindow::updatePopupMenu() {
     m_actions.copy.referenceOnly->setEnabled(hasActiveAnchor);
     m_actions.copy.referenceTextOnly->setEnabled(hasActiveAnchor);
     m_actions.copy.referenceAndText->setEnabled(hasActiveAnchor);
-    m_actions.copy.selectedText->setEnabled(display.hasSelection());
 
     m_actions.save.referenceAndText->setEnabled(hasActiveAnchor);
 

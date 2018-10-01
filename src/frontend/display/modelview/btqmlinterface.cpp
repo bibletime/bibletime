@@ -13,6 +13,7 @@
 #include "btqmlinterface.h"
 
 #include <QApplication>
+#include <QClipboard>
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
@@ -26,6 +27,8 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/models/btmoduletextmodel.h"
 #include "backend/rendering/btinforendering.h"
+#include "backend/rendering/chtmlexportrendering.h"
+#include "backend/rendering/cplaintextexportrendering.h"
 #include "frontend/bibletime.h"
 #include "frontend/cinfodisplay.h"
 #include <swkey.h>
@@ -421,6 +424,10 @@ QVariant BtQmlInterface::getTextModel() {
     return var;
 }
 
+BtModuleTextModel * BtQmlInterface::textModel() {
+    return m_moduleTextModel;
+}
+
 bool BtQmlInterface::moduleIsWritable(int column) {
     BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
     QString moduleName = m_moduleNames.at(column);
@@ -471,35 +478,21 @@ RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QStrin
     return ri;
 }
 
-#if 0
-bool BtQmlInterface::copy(const QString& moduleName, const QString& ref1, const QString& ref2) {
-    RefIndexes ri = normalizeReferences(ref1, ref2);
-    CSwordModuleInfo::ModuleType type = m_swordKey->module()->type();
-    if (type == CSwordModuleInfo::Bible ||
-            type == CSwordModuleInfo::Commentary) {
-        if ((abs(ri.index2-ri.index1)) > 2500)
-            return false;
-        copyDisplayedText(ri.r1, ri.r2);
-    } else {
-        if ( ri.index2-ri.index1 > 25)
-            return false;
-        copyRange(ri.index1, ri.index2);
-    }
-    return true;
-}
-
 void BtQmlInterface::copyRange(int index1, int index2) {
     QString text;
+    CSwordKey * key = m_swordKey->copy();
+
     for (int i=index1; i<=index2; ++i) {
         QString keyName = m_moduleTextModel->indexToKeyName(i);
-        setReference(keyName);
-        text += m_swordKey->strippedText() + "\n\n";
+        key->setKey(keyName);
+        text += keyName + "\n" + key->strippedText() + "\n\n";
     }
     QClipboard *clipboard = QGuiApplication::clipboard();
     clipboard->setText(text);
+    delete key;
 }
 
-void BtQmlInterface::copyDisplayedText(const QString& ref1, const QString& ref2) {
+void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2) {
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_swordKey);
 
     if (verseKey) {
@@ -512,14 +505,13 @@ void BtQmlInterface::copyDisplayedText(const QString& ref1, const QString& ref2)
         vk.setUpperBound(dummy);
 
         copyKey(&vk, BtQmlInterface::Text, true);
-    } else {
-        copyKey(m_swordKey,BtQmlInterface::Text, true);
     }
 }
 
+
 bool BtQmlInterface::copyKey(CSwordKey const * const key,
-                             Format const format,
-                             bool const addText)
+                                Format const format,
+                                bool const addText)
 {
     if (!key || !key->module())
         return false;
@@ -547,7 +539,7 @@ bool BtQmlInterface::copyKey(CSwordKey const * const key,
 }
 
 std::unique_ptr<Rendering::CTextRendering> BtQmlInterface::newRenderer(Format const format,
-                                                                       bool const addText)
+                                                                          bool const addText)
 {
     DisplayOptions displayOptions;
     displayOptions.lineBreaks = true;
@@ -577,7 +569,6 @@ std::unique_ptr<Rendering::CTextRendering> BtQmlInterface::newRenderer(Format co
                                                       displayOptions,
                                                       filterOptions)};
 }
-#endif
 
 QString BtQmlInterface::getHighlightWords() const {
     return m_highlightWords;

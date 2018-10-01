@@ -18,11 +18,13 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/rendering/centrydisplay.h"
+#include "frontend/btcopybyreferencesdialog.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/display/btmodelviewreaddisplay.h"
+#include "frontend/display/modelview/btqmlinterface.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
 
@@ -124,5 +126,27 @@ void CReadWindow::pageUp() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
         v->pageUp();
-
 }
+
+void CReadWindow::copyByReferences() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        auto model = v->qmlInterface()->textModel();
+        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);
+        int rtn = dlg.exec();
+        if (rtn == QDialog::Rejected)
+            return;
+
+        if (moduleType() == CSwordModuleInfo::Bible ||
+                moduleType() == CSwordModuleInfo::Commentary) {
+            v->qmlInterface()->copyVerseRange(dlg.getReference1(), dlg.getReference2());
+        } else {
+            v->qmlInterface()->copyRange(dlg.getIndex1(), dlg.getIndex2());
+
+        }
+
+
+    }
+}
+
+

@@ -169,6 +169,10 @@ QString BtModelViewReadDisplay::getCurrentSource( ) {
     return this->currentSource;
 }
 
+BtQmlInterface * BtModelViewReadDisplay::qmlInterface() const {
+    return m_widget->qmlInterface();
+}
+
 void BtModelViewReadDisplay::setModules(const QStringList &modules) {
     m_widget->qmlInterface()->setModules(modules);
 }

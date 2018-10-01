@@ -49,6 +49,10 @@ public:
         */
     virtual bool copy( const CDisplay::TextType format, const CDisplay::TextPart part );
     /**
+      * Copies the given text specified by asking user for first and last references
+      */
+    virtual void copyByReferences();
+    /**
         * Saves the given text with the specified format into the applications clipboard.
         */
     virtual bool save( const CDisplay::TextType format, const CDisplay::TextPart part );
@@ -152,6 +156,7 @@ public slots:
                              const FilterOptions &filterOptions);
 
     void copySelection();
+    void copyByReferences();
     void copyAll();
     void copyAnchorWithText();
     void copyAnchorTextOnly();

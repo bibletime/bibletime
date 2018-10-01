@@ -18,8 +18,10 @@
 #include <QMenu>
 #include <QTimer>
 #include "backend/managers/referencemanager.h"
+#include "frontend/btcopybyreferencesdialog.h"
 #include "frontend/display/chtmlwritedisplay.h"
 #include "frontend/display/cplainwritedisplay.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 #include "util/tool.h"
 
 
@@ -59,6 +61,10 @@ void CDisplayConnections::copyAll() {
 /** No descriptions */
 void CDisplayConnections::copySelection() {
     m_display->copy(CDisplay::PlainText, CDisplay::SelectedText);
+}
+
+void CDisplayConnections::copyByReferences() {
+   m_display->copyByReferences();
 }
 
 void CDisplayConnections::printAll(const DisplayOptions &displayOptions,
@@ -114,13 +120,17 @@ void CDisplay::scrollToKey(CSwordKey* /* key */ ) {
     // Implemented for some subclases
 }
 
-void CDisplay::setModules(const QStringList& modules) {
+void CDisplay::setModules(const QStringList& /* modules */) {
     // Implemented for some subclases
 }
 
 bool CDisplay::copy( const CDisplay::TextType format, const CDisplay::TextPart part  ) {
     QApplication::clipboard()->setText( this->text(format, part) );
     return true;
+}
+
+void CDisplay::copyByReferences() {
+    parentWindow()->copyByReferences();
 }
 
 bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part ) {

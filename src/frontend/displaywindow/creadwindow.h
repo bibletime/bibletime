@@ -43,6 +43,9 @@ protected: /* Methods: */
 
     void pageUp() override;
 
+    void copyByReferences() override;
+
+
 protected slots:
 
     void lookupSwordKey(CSwordKey *) override;

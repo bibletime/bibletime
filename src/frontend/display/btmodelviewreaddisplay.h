@@ -21,6 +21,7 @@
 #include <QWidget>
 
 class BtQmlScrollView;
+class BtQmlInterface;
 
 /**
   * @page modelviewmain Details about the model/view read display
@@ -111,6 +112,8 @@ public:
     void setModules(const QStringList& modules) override;
 
     void settingsChanged();
+
+    BtQmlInterface * qmlInterface() const;
 
 
 signals:

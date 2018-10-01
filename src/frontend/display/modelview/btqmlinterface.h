@@ -21,6 +21,8 @@
 #include <QString>
 #include <QTimer>
 
+#include "backend/rendering/ctextrendering.h"
+
 class CSwordKey;
 class CSwordModuleInfo;
 
@@ -89,6 +91,8 @@ public:
 
 
     QString getActiveLink() const;
+    void copyRange(int index1, int index2);
+    void copyVerseRange(const QString& ref1, const QString& ref2);
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
     int getCurrentModelIndex() const;
@@ -108,6 +112,7 @@ public:
     bool getPageUp() const;
     double getPixelsPerMM() const;
     QVariant getTextModel();
+    BtModuleTextModel * textModel();
     void pageDown();
     void pageUp();
     void referenceChoosen();
@@ -144,6 +149,7 @@ private slots:
 
 private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
+    bool copyKey(CSwordKey const * const key, Format const format, bool const addText);
     void displayText(const QString& text, const QString& lang);
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
@@ -152,6 +158,7 @@ private:
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
     const CSwordModuleInfo* module() const;
+    std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format, bool const addText);
     RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
     QString stripHtml(const QString& html);
 

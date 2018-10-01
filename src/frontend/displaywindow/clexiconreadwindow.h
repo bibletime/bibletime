@@ -74,7 +74,6 @@ protected:
         BtToolBarPopupAction* backInHistory;
         BtToolBarPopupAction* forwardInHistory;
 
-        QAction* selectAll;
         QAction* findText;
         QAction* findStrongs;
 
@@ -83,6 +82,7 @@ protected:
             QAction* reference;
             QAction* entry;
             QAction* selectedText;
+            QAction* referencedText;
         }
         copy;
 

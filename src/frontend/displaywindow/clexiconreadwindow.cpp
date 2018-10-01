@@ -99,7 +99,6 @@ void CLexiconReadWindow::initActions() {
     initAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
     initAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
 
-    m_actions.selectAll = &ac->action("selectAll");
     m_actions.findText = &ac->action("findText");
 
     m_actions.findStrongs =
@@ -117,7 +116,7 @@ void CLexiconReadWindow::initActions() {
                                        displayWidget()->connectionsProxy(),
                                        &CDisplayConnections::copyAll);
 
-    m_actions.copy.selectedText = &ac->action("copySelectedText");
+    m_actions.copy.referencedText = &ac->action("copyReferencedText");
 
     m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
                                               this,
@@ -243,15 +242,13 @@ void CLexiconReadWindow::setupPopupMenu() {
     popup()->setIcon(util::tool::getIconForModule(modules().first()));
     popup()->addAction(m_actions.findText);
     popup()->addAction(m_actions.findStrongs);
-    popup()->addAction(m_actions.selectAll);
     popup()->addSeparator();
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
-
+    m_actions.copyMenu->addAction(m_actions.copy.referencedText);
+    m_actions.copyMenu->addSeparator();
     m_actions.copyMenu->addAction(m_actions.copy.reference);
     m_actions.copyMenu->addAction(m_actions.copy.entry);
-    m_actions.copyMenu->addSeparator();
-    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
     popup()->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(
