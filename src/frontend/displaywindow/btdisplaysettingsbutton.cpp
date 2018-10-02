@@ -69,9 +69,6 @@ void BtDisplaySettingsButton::initMenu() {
     m_popup = new QMenu(this);
     setMenu(m_popup);
 
-    m_lineBreakAction = new QAction(this);
-    m_lineBreakAction->setCheckable(true);
-
     m_verseNumbersAction = new QAction(this);
     m_verseNumbersAction->setCheckable(true);
 
@@ -104,7 +101,6 @@ void BtDisplaySettingsButton::initMenu() {
 }
 
 void BtDisplaySettingsButton::retranslateUi() {
-    m_lineBreakAction->setText(tr("Use linebreaks after each verse"));
     m_verseNumbersAction->setText(tr("Show verse numbers"));
     m_headingsAction->setText(tr("Show headings"));
     m_redWordsAction->setText(tr("Highlight words of Jesus"));
@@ -131,10 +127,8 @@ void BtDisplaySettingsButton::retranslateToolTip() {
 void BtDisplaySettingsButton::slotOptionToggled(QAction *action) {
     bool checked = action->isChecked();
 
-    if (action == m_lineBreakAction) {
-        m_displayOptions.lineBreaks = checked;
-        emit sigDisplayOptionsChanged(m_displayOptions);
-    } else if (action == m_verseNumbersAction) {
+
+    if (action == m_verseNumbersAction) {
         m_displayOptions.verseNumbers = checked;
         emit sigDisplayOptionsChanged(m_displayOptions);
     } else if (action == m_variantAction) {
@@ -179,7 +173,6 @@ void BtDisplaySettingsButton::repopulateMenu() {
     m_popup->clear();
     if (!m_modules.isEmpty()) {
         if (m_modules.first()->type() == CSwordModuleInfo::Bible) {
-            addMenuEntry(m_lineBreakAction, m_displayOptions.lineBreaks);
             addMenuEntry(m_verseNumbersAction, m_displayOptions.verseNumbers);
             enable = true;
         }

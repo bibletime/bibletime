@@ -63,7 +63,6 @@ class BtDisplaySettingsButton: public QToolButton {
         BtConstModuleList m_modules;
 
         QMenu *m_popup;
-        QAction *m_lineBreakAction;
         QAction *m_verseNumbersAction;
         QAction *m_headingsAction;
         QAction *m_redWordsAction;
