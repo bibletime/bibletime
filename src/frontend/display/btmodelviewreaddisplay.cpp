@@ -157,6 +157,10 @@ void BtModelViewReadDisplay::setDisplayFocus() {
     m_widget->quickWidget()->setFocus();
 }
 
+void BtModelViewReadDisplay::setDisplayOptions(const DisplayOptions &displayOptions) {
+    m_widget->qmlInterface()->textModel()->setDisplayOptions(displayOptions);
+}
+
 void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
     QString activeLink = m_widget->qmlInterface()->getActiveLink();
     QString reference = m_widget->qmlInterface()->getBibleUrlFromLink(activeLink);

@@ -86,6 +86,7 @@ void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
     BT_ASSERT(display);
 
     displayWidget()->scrollToKey(newKey);
+    displayWidget()->setDisplayOptions(displayOptions());
     displayWidget()->setFilterOptions(filterOptions());
 
     setWindowTitle(windowCaption());

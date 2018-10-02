@@ -340,6 +340,7 @@ void CDisplayWindow::slotRemoveModule(int index) {
 /** Sets the new display options for this window. */
 void CDisplayWindow::setDisplayOptions(const DisplayOptions &displayOptions) {
     m_displayOptions = displayOptions;
+    displayWidget()->setDisplayOptions(displayOptions);
     emit sigDisplayOptionsChanged(m_displayOptions);
 }
 

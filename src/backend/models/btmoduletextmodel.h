@@ -119,6 +119,9 @@ public:
     virtual bool setData(const QModelIndex &index,
                          const QVariant &value, int role = Qt::EditRole) override;
 
+    void setDisplayOptions(const DisplayOptions & displayOptions);
+
+
     /** Set the state of the currently found word functionality */
     void setFindState(const FindState& findState);
 

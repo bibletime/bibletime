@@ -76,6 +76,8 @@ public:
 
     void setDisplayFocus() override;
 
+    void setDisplayOptions(const DisplayOptions &displayOptions) override;
+
     void setText( const QString& newText ) override;
 
     bool hasSelection() const override;

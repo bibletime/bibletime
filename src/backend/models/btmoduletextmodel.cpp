@@ -68,7 +68,7 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     roleNames[ModuleEntry::Text3Role] = "text3";
     roleNames[ModuleEntry::Text4Role] = "text4";
     setRoleNames(roleNames);
-    m_displayOptions.verseNumbers = 0;
+    m_displayOptions.verseNumbers = 1;
     m_displayOptions.lineBreaks = 1;
     m_filterOptions.footnotes = 0;
     m_filterOptions.greekAccents = 1;
@@ -179,7 +179,9 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
         moduleList << bookModule;
         QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
                                                      m_displayOptions, m_filterOptions,
-                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+                                                     m_displayOptions.verseNumbers ?
+                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
+                                                     Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace("#CHAPTERTITLE#", "");
         return text;
     }
@@ -226,7 +228,9 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
         text += Rendering::CEntryDisplay().textKeyRendering(modules,
                                                             key.key(), m_displayOptions, m_filterOptions,
-                                                            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+                                                            m_displayOptions.verseNumbers ?
+                                                            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
+                                                            Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text = replaceColors(text);
@@ -376,10 +380,14 @@ void BtModuleTextModel::setFindState(const FindState& findState) {
     }
 }
 void BtModuleTextModel::setHighlightWords(
-        const QString& highlightWords, bool caseSensitive) {
+        const QString& highlightWords, bool /* caseSensitive */) {
     beginResetModel();
     m_highlightWords = highlightWords;
     endResetModel();
+}
+
+void BtModuleTextModel::setDisplayOptions(const DisplayOptions & displayOptions) {
+    m_displayOptions = displayOptions;
 }
 
 void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {

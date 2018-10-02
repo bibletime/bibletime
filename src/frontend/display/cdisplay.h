@@ -46,6 +46,8 @@ public:
 
     virtual void setDisplayFocus() {}
 
+    virtual void setDisplayOptions(const DisplayOptions & /* displayOptions */) {}
+
     virtual void setModules(const QStringList& modules);
 
     virtual void updateReferenceText() {}
