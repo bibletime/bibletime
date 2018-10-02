@@ -12,6 +12,7 @@
 #include <memory>
 #include <QDebug>
 #include <QDrag>
+#include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QString>
@@ -150,7 +151,10 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
 
 // Puts html text the view
 void BtModelViewReadDisplay::setText( const QString& /*newText*/ ) {
+}
 
+void BtModelViewReadDisplay::setDisplayFocus() {
+    m_widget->quickWidget()->setFocus();
 }
 
 void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
@@ -181,12 +185,20 @@ void BtModelViewReadDisplay::scrollToKey(CSwordKey * key) {
     m_widget->scrollToSwordKey(key);
 }
 
+void BtModelViewReadDisplay::scroll(int value) {
+    m_widget->quickWidget()->scroll(value);
+}
+
 void BtModelViewReadDisplay::setFilterOptions(FilterOptions filterOptions) {
     m_widget->setFilterOptions(filterOptions);
 }
 
 void BtModelViewReadDisplay::settingsChanged() {
     m_widget->settingsChanged();
+}
+
+void BtModelViewReadDisplay::updateReferenceText() {
+    m_widget->quickWidget()->updateReferenceText();
 }
 
 void BtModelViewReadDisplay::pageDown() {

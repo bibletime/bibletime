@@ -16,6 +16,7 @@
 #include <QMainWindow>
 
 #include <QList>
+#include <QTimer>
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"
 #include <QSignalMapper>
@@ -43,6 +44,12 @@ class QActionGroup;
 class QToolBar;
 class QSplitter;
 class QSignalMapper;
+
+struct AutoScroll {
+    bool enabled;
+    bool paused;
+    int speed;
+};
 
 /**
   * @page backend The structure of the backend
@@ -200,11 +207,18 @@ class BibleTime : public QMainWindow {
           Get a pointer to the module associated with the current window
         */
         const CSwordModuleInfo* getCurrentModule();
-
+        /**
+          Get a pointer to the display associated with the current window
+        */
+        CDisplay* getCurrentDisplay();
         /**
           Open the BtFindWidget below the mdi area
         */
         void openFindWidget();
+        /**
+          Set the focus on the display widget
+          */
+        void setDisplayFocus();
 
 public slots:
         /**
@@ -321,6 +335,10 @@ public slots:
         void quit();
 
         /**
+          Automatically scroll the display
+          */
+        void slotAutoScroll();
+        /**
          * Is called when the window menu is about to show ;-)
          */
         void slotWindowMenuAboutToShow();
@@ -384,6 +402,13 @@ public slots:
         * Toggles between normal and fullscreen mode.
         */
         void toggleFullscreen();
+
+        void autoScrollUp();
+        void autoScrollDown();
+        void autoScrollPause();
+        bool autoScrollAnyKey(int key);
+        void autoScrollStop();
+
         /**
         * Is called when settings in the optionsdialog have been
         * changed (ok or apply)
@@ -446,6 +471,7 @@ public slots:
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
         QMenu *m_toolBarsMenu;
+        QMenu *m_scrollMenu;
         QAction* m_showMainWindowToolbarAction;
         QAction *m_showTextAreaHeadersAction;
         QAction *m_showTextWindowNavigationAction;
@@ -496,6 +522,9 @@ public slots:
 
         BtActionCollection* m_actionCollection;
 
+        QAction* m_autoScrollUpAction;
+        QAction* m_autoScrollDownAction;
+        QAction* m_autoScrollPauseAction;
 
         QAction* m_windowFullscreenAction;
 
@@ -508,6 +537,9 @@ public slots:
 
         CMDIArea* m_mdi;
         BtFindWidget* m_findWidget;
+
+        AutoScroll m_autoScroll;
+        QTimer m_autoScrollTimer;
 
 
     protected:
@@ -533,6 +565,8 @@ public slots:
          * taking the toolbarsInEachWindow setting into account.
          */
         void showOrHideToolBars();
+
+        void setAutoScrollTimerInterval();
 
 #ifndef NDEBUG
         void deleteDebugWindow();

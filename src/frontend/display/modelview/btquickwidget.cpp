@@ -42,13 +42,6 @@ void BtQuickWidget::dropEvent( QDropEvent* e ) {
     };
 }
 
-void BtQuickWidget::moveContentLocation(double value) {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant vValue(value);
-    QMetaObject::invokeMethod(root,"moveContentLocation", Q_ARG(QVariant, vValue));
-}
-
 void BtQuickWidget::saveContextMenuIndex(int x, int y) {
     int x1 = x - geometry().x();  // Translate to BtQuickWidget
     int y1 = y - geometry().y();
@@ -64,4 +57,12 @@ void BtQuickWidget::updateReferenceText() {
     QQuickItem* root = rootObject();
     BT_ASSERT(root);
     QMetaObject::invokeMethod(root,"updateReferenceText");
+}
+
+void BtQuickWidget::scroll(int pixels) {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant vPixels(pixels);
+    QMetaObject::invokeMethod(root,"scroll",
+                              Q_ARG(QVariant, vPixels));
 }

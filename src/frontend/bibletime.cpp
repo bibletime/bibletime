@@ -50,6 +50,13 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
+/**
+ * Auto scroll time interval in milliseconds
+ * This value is divided by an integer (2, 3, 4, etc.) to get the
+ * time interval that is used.
+ */
+static const int autoScrollTimeInterval = 250;
+
 
 BibleTime *BibleTime::m_instance = nullptr;
 
@@ -60,6 +67,8 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
     BT_ASSERT(!m_instance);
     m_instance = this;
+
+    m_autoScroll.enabled = false;
 
     QSplashScreen *splash = nullptr;
     QString splashHtml;
@@ -325,6 +334,14 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
 bool BibleTime::event(QEvent* event) {
     if (event->type() == QEvent::Close)
         Search::CSearchDialog::closeDialog();
+    else if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+        int value = keyEvent->key() | keyEvent->modifiers();
+        bool accepted = autoScrollAnyKey(value);
+        if (accepted) {
+            return true;
+        }
+    }
     return QMainWindow::event(event);
 }
 
@@ -338,8 +355,35 @@ const CSwordModuleInfo* BibleTime::getCurrentModule() {
     return w->modules().first();
 }
 
+CDisplay* BibleTime::getCurrentDisplay() {
+    QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
+    if (!activeSubWindow)
+        return nullptr;
+    CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
+    if (!w)
+        return nullptr;
+    return w->displayWidget();
+}
+
+void BibleTime::setDisplayFocus() {
+    CDisplay* display = getCurrentDisplay();
+    if (display)
+        display->setDisplayFocus();
+}
+
 void BibleTime::openFindWidget()
 {
     m_findWidget->setVisible(true);
     m_findWidget->showAndSelect();
+}
+
+void BibleTime::setAutoScrollTimerInterval() {
+    if (m_autoScroll.speed == 0) {
+        m_autoScrollTimer.stop();
+        m_autoScrollTimer.setInterval(autoScrollTimeInterval/2);
+        m_autoScroll.enabled = false;
+    } else {
+        int interval = autoScrollTimeInterval/(abs(m_autoScroll.speed)+1);
+        m_autoScrollTimer.setInterval(interval);
+    }
 }

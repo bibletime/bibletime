@@ -27,8 +27,8 @@ class BtQuickWidget : public QQuickWidget {
 public:
     BtQuickWidget(QWidget* widget = nullptr);
 
-    void moveContentLocation(double value);
     void saveContextMenuIndex(int x, int y);
+    void scroll(int pixels);
     void updateReferenceText();
 
 private:

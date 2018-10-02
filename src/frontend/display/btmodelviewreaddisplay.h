@@ -74,6 +74,8 @@ public:
                        const CDisplay::TextPart part = CDisplay::Document)
     override;
 
+    void setDisplayFocus() override;
+
     void setText( const QString& newText ) override;
 
     bool hasSelection() const override;
@@ -105,6 +107,8 @@ public:
 
     void scrollToKey(CSwordKey * key) override;
 
+    void scroll(int pixels) override;
+
     void setFilterOptions(FilterOptions filterOptions) override;
 
     void setLemma(const QString& lemma);
@@ -112,6 +116,8 @@ public:
     void setModules(const QStringList& modules) override;
 
     void settingsChanged();
+
+    void updateReferenceText() override;
 
     BtQmlInterface * qmlInterface() const;
 

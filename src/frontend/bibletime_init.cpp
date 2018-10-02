@@ -87,6 +87,9 @@ void BibleTime::initView() {
 
     m_mdi->setMinimumSize(100, 100);
     m_mdi->setFocusPolicy(Qt::ClickFocus);
+
+    BT_CONNECT(&m_autoScrollTimer, SIGNAL(timeout()),
+               this, SLOT(slotAutoScroll()));
 }
 
 QAction* BibleTime::initAction(QAction* action, QString text, QIcon const & icon,
@@ -112,6 +115,21 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     action->setToolTip(tr("Quit BibleTime"));
     a->addAction("quit", action);
+
+    action = new QAction(a);
+    action->setText(tr("Auto scroll up"));
+    action->setShortcut(QKeySequence(Qt::ShiftModifier + Qt::Key_Up));
+    a->addAction("autoScrollUp", action);
+
+    action = new QAction(a);
+    action->setText(tr("Auto scroll down"));
+    action->setShortcut(QKeySequence(Qt::ShiftModifier + Qt::Key_Down));
+    a->addAction("autoScrollDown", action);
+
+    action = new QAction(a);
+    action->setText(tr("Auto scroll pause"));
+    action->setShortcut(QKeySequence(Qt::Key_Space));
+    a->addAction("autoScrollPause", action);
 
     action = new QAction(a);
     action->setText(tr("&Fullscreen mode"));
@@ -400,6 +418,16 @@ void BibleTime::initActions() {
     BT_CONNECT(m_quitAction, SIGNAL(triggered()),
                this,         SLOT(quit()));
 
+    // AutoScroll actions:
+    m_autoScrollUpAction = &m_actionCollection->action("autoScrollUp");
+    BT_CONNECT(m_autoScrollUpAction, SIGNAL(triggered()),
+               this,                SLOT(autoScrollUp()));
+    m_autoScrollDownAction = &m_actionCollection->action("autoScrollDown");
+    BT_CONNECT(m_autoScrollDownAction, SIGNAL(triggered()),
+               this,                SLOT(autoScrollDown()));
+    m_autoScrollPauseAction = &m_actionCollection->action("autoScrollPause");
+    BT_CONNECT(m_autoScrollPauseAction, SIGNAL(triggered()),
+               this,                SLOT(autoScrollPause()));
 
     // View menu actions:
     m_windowFullscreenAction = &m_actionCollection->action("toggleFullscreen");
@@ -611,6 +639,7 @@ void BibleTime::initMenubar() {
     m_viewMenu->addAction(m_showMagAction);
     m_viewMenu->addAction(m_showTextAreaHeadersAction);
     m_viewMenu->addSeparator();
+
     m_toolBarsMenu = new QMenu(this);
     m_toolBarsMenu->addAction( m_showMainWindowToolbarAction);
     m_toolBarsMenu->addAction(m_showTextWindowNavigationAction);
@@ -620,6 +649,14 @@ void BibleTime::initMenubar() {
     m_toolBarsMenu->addSeparator();
     m_toolBarsMenu->addAction(m_toolbarsInEachWindow);
     m_viewMenu->addMenu(m_toolBarsMenu);
+    m_viewMenu->addSeparator();
+
+    m_scrollMenu= new QMenu(this);
+    m_scrollMenu->addAction(m_autoScrollUpAction);
+    m_scrollMenu->addAction(m_autoScrollDownAction);
+    m_scrollMenu->addAction(m_autoScrollPauseAction);
+    m_viewMenu->addMenu(m_scrollMenu);
+
     menuBar()->addMenu(m_viewMenu);
 
     // Search menu:
@@ -728,6 +765,7 @@ void BibleTime::retranslateUi() {
     m_fileMenu->setTitle(tr("&File"));
     m_viewMenu->setTitle(tr("&View"));
     m_toolBarsMenu->setTitle(tr("Toolbars"));
+    m_scrollMenu->setTitle(tr("Scroll"));
 
     m_searchMenu->setTitle(tr("&Search"));
     m_windowMenu->setTitle(tr("&Window"));

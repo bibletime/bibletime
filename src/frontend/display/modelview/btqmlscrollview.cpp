@@ -89,7 +89,7 @@ void BtQmlScrollView::initScrollBar() {
 void BtQmlScrollView::slotSliderMoved(int value) {
     int speed = 30;
     int relative = value - m_scrollBarPosition;
-    m_quickWidget->moveContentLocation(relative * speed);
+    m_quickWidget->scroll(relative * speed);
     m_scrollBarPosition = value;
 }
 

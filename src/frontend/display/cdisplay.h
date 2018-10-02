@@ -42,7 +42,13 @@ public:
 
     virtual void scrollToKey(CSwordKey* key);
 
+    virtual void scroll(int /* pixels */ ) {}
+
+    virtual void setDisplayFocus() {}
+
     virtual void setModules(const QStringList& modules);
+
+    virtual void updateReferenceText() {}
 
     /**
         * Copies the given text with the specified format into the applications clipboard.
