@@ -560,6 +560,8 @@ void BibleTime::autoScrollDown() {
 }
 
 void BibleTime::autoScrollPause() {
+    if (! m_autoScroll.enabled)
+        return;
     setDisplayFocus();
     m_autoScroll.paused = ! m_autoScroll.paused;
     if ( ! m_autoScroll.paused)
