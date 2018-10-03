@@ -587,7 +587,7 @@ void BibleTime::slotAutoScroll() {
     }
     CDisplay * display = getCurrentDisplay();
     if (display) {
-        display->scroll(m_autoScroll.speed >0 ? 1 : -1 );
+        display->scroll(m_autoScroll.speed >0 ? -1 : 1 );
         display->updateReferenceText();
     }
 }
