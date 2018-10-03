@@ -72,9 +72,7 @@ Rectangle {
                 return
             savedRow = row;
             savedColumn = column;
-            var rawText = btQmlInterface.getRawText(row, column);
-            textEditor.editFinished.connect( displayListView.finishEdit);
-            textEditor.open(rawText);
+            btQmlInterface.openEditor(row, column);
         }
 
         function finishEdit(newText) {
@@ -167,6 +165,9 @@ Rectangle {
                         acceptedButtons: Qt.LeftButton
                         drag.target: space1
                         drag.onActiveChanged: delegate.dragStart(index, mouseArea0.drag.active)
+                        onClicked: {
+                            displayListView.startEdit(index, 0);
+                        }
                     }
                 }
 
@@ -200,6 +201,9 @@ Rectangle {
                         acceptedButtons: Qt.LeftButton
                         drag.target: space1
                         drag.onActiveChanged: delegate.dragStart(index, mouseArea1.drag.active)
+                        onClicked: {
+                            displayListView.startEdit(index, 1);
+                        }
                     }
                 }
 
@@ -233,6 +237,9 @@ Rectangle {
                         acceptedButtons: Qt.LeftButton
                         drag.target: space1
                         drag.onActiveChanged: delegate.dragStart(index, mouseArea2.drag.active)
+                        onClicked: {
+                            displayListView.startEdit(index, 2);
+                        }
                     }
                 }
 
@@ -267,6 +274,9 @@ Rectangle {
                         acceptedButtons: Qt.LeftButton
                         drag.target: space1
                         drag.onActiveChanged: delegate.dragStart(index, mouseArea3.drag.active)
+                        onClicked: {
+                            displayListView.startEdit(index, 3);
+                        }
                     }
                 }
             }

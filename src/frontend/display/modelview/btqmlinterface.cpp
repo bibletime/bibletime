@@ -31,6 +31,7 @@
 #include "backend/rendering/cplaintextexportrendering.h"
 #include "frontend/bibletime.h"
 #include "frontend/cinfodisplay.h"
+#include "frontend/bttexteditdialog.h"
 #include <swkey.h>
 #include "util/btconnect.h"
 
@@ -165,6 +166,20 @@ QString BtQmlInterface::getRawText(int row, int column) {
     mKey.setKey(key.key());
     QString rawText = mKey.rawText();
     return stripHtml(rawText);
+}
+
+void BtQmlInterface::openEditor(int row, int column) {
+
+    BtTextEditDialog dlg;
+    QString verse = m_moduleTextModel->indexToKeyName(row);
+    dlg.setTitle(tr("Edit") + " " + verse);
+
+    dlg.setText(getRawText(row, column));
+    int rtn = dlg.exec();
+    if (rtn == 0)
+        return;
+    setRawText(row, column, dlg.text());
+    return;
 }
 
 void BtQmlInterface::openContextMenu(int x, int y, int width) {

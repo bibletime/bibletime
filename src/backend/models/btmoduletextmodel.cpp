@@ -221,7 +221,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
             // Personal commentary
             if (module->isWritable()) {
-                QString text = mKey.key() + "  " + mKey.rawText();
+                QString text = QString::number(verse) + "  " + mKey.rawText();
                 return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
             }
         }
