@@ -287,7 +287,6 @@ void CLexiconReadWindow::updatePopupMenu() {
 
     bool const hasActiveAnchor = display.hasActiveAnchor();
     m_actions.copy.reference->setEnabled(hasActiveAnchor);
-    m_actions.copy.selectedText->setEnabled(display.hasSelection());
 
     m_actions.print.reference->setEnabled(hasActiveAnchor);
 }

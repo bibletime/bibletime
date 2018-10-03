@@ -81,7 +81,6 @@ protected:
         struct {
             QAction* reference;
             QAction* entry;
-            QAction* selectedText;
             QAction* referencedText;
         }
         copy;

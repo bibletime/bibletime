@@ -226,8 +226,6 @@ void CBibleReadWindow::setupPopupMenu() {
     m_actions.copyMenu->addAction(m_actions.copy.chapter);
 
 
-//    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
-
     popup()->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), popup());
