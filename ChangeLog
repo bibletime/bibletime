@@ -1,3 +1,10 @@
+2018-10-02 Gary Holmlund <gary.holmlund@gmail.com>
+    * Implement continuous scrolling of works windows.
+    * Implement auto scrolling of the active works window.
+    * New context menu "Copy/Copy..." that lets user choose first and last
+      reference to copy. 
+    * Implement edit of Personal commentary from the "read" window. 
+
 2018-08-02 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix #137
     * Update sources first time bookshelf wizard is used per session.
