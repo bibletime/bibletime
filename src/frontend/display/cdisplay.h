@@ -21,6 +21,7 @@
 class CDisplayConnections;
 class CDisplayWindow;
 class QMenu;
+class QContextMenuEvent;
 
 /** The base class for all display widgets.
   * @author The BibleTime team
@@ -39,6 +40,8 @@ public:
         AnchorTextOnly,
         AnchorWithText
     };
+
+    virtual void contextMenu(QContextMenuEvent* /* event */) {}
 
     virtual void scrollToKey(CSwordKey* key);
 

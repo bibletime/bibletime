@@ -74,8 +74,7 @@ void BtQmlScrollView::contextMenuEvent(QContextMenuEvent* event) {
     int y = event->y();
     m_quickWidget->saveContextMenuIndex(x, y);
 
-    auto readDisplay = dynamic_cast<BtModelViewReadDisplay*>(m_readDisplay);
-    readDisplay->contextMenu(event);
+    m_readDisplay->contextMenu(event);
 }
 
 void BtQmlScrollView::initScrollBar() {

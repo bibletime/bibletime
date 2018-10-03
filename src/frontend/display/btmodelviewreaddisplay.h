@@ -88,7 +88,7 @@ public:
 
     // --------------------
 
-    void contextMenu(QContextMenuEvent* event);
+    void contextMenu(QContextMenuEvent* event) override;
 
     QString getCurrentSource();
 
