@@ -12,6 +12,7 @@
 
 #include "bibletime.h"
 
+#include <cmath>
 #include <cstdlib>
 #include <exception>
 #include <QAction>
@@ -55,7 +56,7 @@
  * This value is divided by an integer (2, 3, 4, etc.) to get the
  * time interval that is used.
  */
-static const int autoScrollTimeInterval = 250;
+static const int autoScrollTimeInterval = 200;
 
 
 BibleTime *BibleTime::m_instance = nullptr;
@@ -336,7 +337,7 @@ bool BibleTime::event(QEvent* event) {
         Search::CSearchDialog::closeDialog();
     else if (event->type() == QEvent::KeyPress) {
         QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-        int value = keyEvent->key() | keyEvent->modifiers();
+        int value = keyEvent->key() | static_cast<int>(keyEvent->modifiers());
         bool accepted = autoScrollAnyKey(value);
         if (accepted) {
             return true;
@@ -383,7 +384,8 @@ void BibleTime::setAutoScrollTimerInterval() {
         m_autoScrollTimer.setInterval(autoScrollTimeInterval/2);
         m_autoScroll.enabled = false;
     } else {
-        int interval = autoScrollTimeInterval/(abs(m_autoScroll.speed)+1);
+        double timeDivisor = std::lround(std::pow(0.6,m_autoScroll.speed));
+        int interval = static_cast<int>(autoScrollTimeInterval/timeDivisor);
         m_autoScrollTimer.setInterval(interval);
     }
 }
