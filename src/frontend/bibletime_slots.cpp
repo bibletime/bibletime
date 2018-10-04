@@ -402,7 +402,6 @@ struct WindowLoadStatus {
 
 void BibleTime::reloadProfile() {
     using MAM = CMDIArea::MDIArrangementMode;
-    using WWT = CPlainWriteWindow::WriteWindowType;
     using message::setQActionCheckedNoTrigger;
 
     // Cache pointer to config:
@@ -470,16 +469,7 @@ void BibleTime::reloadProfile() {
         // Try to respawn the window:
         BT_ASSERT(!wls.window);
         const QString key = conf.sessionValue<QString>(windowGroup + "key");
-        WWT wwt = static_cast<WWT>(conf.sessionValue<int>(windowGroup + "writeWindowType", 0));
-        if (wwt > 0) {
-            // Note, that we *might* lose the rest of wls.okModules here:
-            if (wls.okModules.size() > 1)
-                qWarning() << "Got more modules for a \"write window\" than expected from the profile!";
-
-            wls.window = createWriteDisplayWindow(wls.okModules.first(), key, wwt);
-        } else {
-            wls.window = createReadDisplayWindow(wls.okModules, key);
-        }
+        wls.window = createReadDisplayWindow(wls.okModules, key);
 
         if (wls.window) {
             wls.window->applyProfileSettings(windowGroup);

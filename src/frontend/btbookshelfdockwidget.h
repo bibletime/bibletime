@@ -41,8 +41,6 @@ class BtBookshelfDockWidget: public QDockWidget {
         void moduleHovered(CSwordModuleInfo *module);
         void moduleOpenTriggered(CSwordModuleInfo *module);
         void moduleSearchTriggered(CSwordModuleInfo *module);
-        void moduleEditPlainTriggered(CSwordModuleInfo *module);
-        void moduleEditHtmlTriggered(CSwordModuleInfo *module);
         void moduleUnlockTriggered(CSwordModuleInfo *module);
         void moduleAboutTriggered(CSwordModuleInfo *module);
         void groupingOrderChanged(BtBookshelfTreeModel::Grouping newGrouping);
@@ -73,9 +71,6 @@ class BtBookshelfDockWidget: public QDockWidget {
         QActionGroup *m_itemActionGroup;
         QAction *m_itemOpenAction;
         QAction *m_itemSearchAction;
-        QMenu   *m_itemEditMenu;
-        QAction *m_itemEditPlainAction;
-        QAction *m_itemEditHtmlAction;
         QAction *m_itemUnlockAction;
         QAction *m_itemAboutAction;
 

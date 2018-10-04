@@ -18,7 +18,6 @@
 #include <QList>
 #include <QTimer>
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cplainwritewindow.h"
 #include <QSignalMapper>
 #ifndef NDEBUG
 #include <QMutex>
@@ -326,9 +325,6 @@ public slots:
          */
         CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
         CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
-        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type);
-        CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
-        CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
         void searchInModule(CSwordModuleInfo *module);
         void slotModuleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);

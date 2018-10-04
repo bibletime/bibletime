@@ -19,8 +19,6 @@
 #include <QTimer>
 #include "backend/managers/referencemanager.h"
 #include "frontend/btcopybyreferencesdialog.h"
-#include "frontend/display/chtmlwritedisplay.h"
-#include "frontend/display/cplainwritedisplay.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "util/tool.h"
 

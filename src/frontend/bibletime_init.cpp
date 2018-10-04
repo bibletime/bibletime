@@ -825,12 +825,6 @@ void BibleTime::initConnections() {
                SIGNAL(moduleSearchTriggered(CSwordModuleInfo *)),
                this, SLOT(searchInModule(CSwordModuleInfo *)));
     BT_CONNECT(m_bookshelfDock,
-               SIGNAL(moduleEditPlainTriggered(CSwordModuleInfo *)),
-               this, SLOT(moduleEditPlain(CSwordModuleInfo *)));
-    BT_CONNECT(m_bookshelfDock,
-               SIGNAL(moduleEditHtmlTriggered(CSwordModuleInfo *)),
-               this, SLOT(moduleEditHtml(CSwordModuleInfo *)));
-    BT_CONNECT(m_bookshelfDock,
                SIGNAL(moduleUnlockTriggered(CSwordModuleInfo *)),
                this, SLOT(slotModuleUnlock(CSwordModuleInfo *)));
     BT_CONNECT(m_bookshelfDock,

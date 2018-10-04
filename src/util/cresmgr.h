@@ -418,10 +418,6 @@ namespace exportBookmarks { BT_GETICON(export) }
 namespace printBookmarks { BT_GETICON(print) }
 namespace deleteItems { BT_GETICON(delete) }
 
-namespace editModuleMenu { BT_GETICON(pencil) }
-namespace editModulePlain { BT_GETICON(pencil) }
-namespace editModuleHTML { BT_GETICON(pencil) }
-
 namespace unlockModule { BT_GETICON(unlock) }
 namespace aboutModule { BT_GETICON(info) }
 namespace grouping { BT_GETICON(view_tree) }
