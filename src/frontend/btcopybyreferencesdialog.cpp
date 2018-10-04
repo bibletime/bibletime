@@ -53,7 +53,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     m_keyChooser1 = CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
     gridLayout->addWidget(m_keyChooser1,0,1);
 
-    QHBoxLayout* hLayout = new QHBoxLayout(this);
+    QHBoxLayout* hLayout = new QHBoxLayout;
     vLayout->addLayout(hLayout);
 
     QLabel* label2 = new QLabel(tr("Last"));
