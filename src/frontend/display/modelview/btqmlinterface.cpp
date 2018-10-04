@@ -444,7 +444,8 @@ BtModuleTextModel * BtQmlInterface::textModel() {
 }
 
 bool BtQmlInterface::moduleIsWritable(int column) {
-    BT_ASSERT(column >= 0 && column <= m_moduleNames.count());
+    if (column >= m_moduleNames.count())
+        return false;
     QString moduleName = m_moduleNames.at(column);
     CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
     return module->isWritable();

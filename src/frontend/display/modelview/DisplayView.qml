@@ -136,12 +136,27 @@ Rectangle {
                     return 30;
                 }
 
-                Rectangle {
+                Item {
                     id: space1
                     height: 10
                     width: parent.spacing
                     anchors.left: parent.left
                     anchors.top: parent.top
+                }
+
+                Rectangle {
+                    id: r0
+
+                    anchors.top: delegate.top
+                    anchors.bottom: delegate.bottom
+                    anchors.left: column0Text.left
+                    anchors.right: column0Text.right
+                    color: "white"
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(0);
+                    }
                 }
 
                 Text {
@@ -158,25 +173,40 @@ Rectangle {
                     visible: displayListView.columns > 0
                     onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
+                }
 
-                    MouseArea {
-                        id: mouseArea0
-                        anchors.fill: parent
-                        acceptedButtons: Qt.LeftButton
-                        drag.target: space1
-                        drag.onActiveChanged: delegate.dragStart(index, mouseArea0.drag.active)
-                        onClicked: {
-                            displayListView.startEdit(index, 0);
-                        }
+                MouseArea {
+                    id: mouseArea0
+                    anchors.fill: r0
+                    acceptedButtons: Qt.LeftButton
+                    drag.target: space1
+                    drag.onActiveChanged: delegate.dragStart(index, mouseArea0.drag.active)
+                    onClicked: {console.log(width, height, column0Text.width, column0Text.height, r0.width, r0.height)
+                        displayListView.startEdit(index, 0);
                     }
                 }
 
-                Rectangle {
+                Item {
                     id: space2
                     height: 10
                     width: parent.spacing
                     anchors.left: column0Text.right
                     anchors.top: parent.top
+                }
+
+                Rectangle {
+                    id: r1
+
+                    anchors.top: delegate.top
+                    anchors.bottom: delegate.bottom
+                    anchors.left: column1Text.left
+                    anchors.right: column1Text.right
+                    color: "white"
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(1);
+                    }
                 }
 
                 Text {
@@ -194,25 +224,39 @@ Rectangle {
                     visible: displayListView.columns > 1
                     onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
+                }
 
-                    MouseArea {
-                        id: mouseArea1
-                        anchors.fill: parent
-                        acceptedButtons: Qt.LeftButton
-                        drag.target: space1
-                        drag.onActiveChanged: delegate.dragStart(index, mouseArea1.drag.active)
-                        onClicked: {
-                            displayListView.startEdit(index, 1);
-                        }
+                MouseArea {
+                    id: mouseArea1
+                    anchors.fill: r1
+                    acceptedButtons: Qt.LeftButton
+                    drag.target: space1
+                    drag.onActiveChanged: delegate.dragStart(index, mouseArea1.drag.active)
+                    onClicked: {
+                        displayListView.startEdit(index, 1);
                     }
                 }
 
-                Rectangle {
+                Item {
                     id: space3
                     height: 10
                     width: parent.spacing
                     anchors.left: column1Text.right
                     anchors.top: parent.top
+                }
+
+                Rectangle {
+                    id: r2
+                    anchors.top: delegate.top
+                    anchors.bottom: delegate.bottom
+                    anchors.left: column2Text.left
+                    anchors.right: column2Text.right
+                    color: "white"
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(2);
+                    }
                 }
 
                 Text {
@@ -230,25 +274,39 @@ Rectangle {
                     visible: displayListView.columns > 2
                     onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
+                }
 
-                    MouseArea {
-                        id: mouseArea2
-                        anchors.fill: parent
-                        acceptedButtons: Qt.LeftButton
-                        drag.target: space1
-                        drag.onActiveChanged: delegate.dragStart(index, mouseArea2.drag.active)
-                        onClicked: {
-                            displayListView.startEdit(index, 2);
-                        }
+                MouseArea {
+                    id: mouseArea2
+                    anchors.fill: r2
+                    acceptedButtons: Qt.LeftButton
+                    drag.target: space1
+                    drag.onActiveChanged: delegate.dragStart(index, mouseArea2.drag.active)
+                    onClicked: {
+                        displayListView.startEdit(index, 2);
                     }
                 }
 
-                Rectangle {
+                Item {
                     id: space4
                     height: 10
                     width: parent.spacing
                     anchors.left: column2Text.right
                     anchors.top: parent.top
+                }
+
+                Rectangle {
+                    id: r3
+                    anchors.top: delegate.top
+                    anchors.bottom: delegate.bottom
+                    anchors.left: column3Text.left
+                    anchors.right: column3Text.right
+                    color: "white"
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(3);
+                    }
                 }
 
                 Text {
@@ -265,18 +323,17 @@ Rectangle {
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 3
                     onWidthChanged: doLayout()
-
                     onLinkHovered: delegate.hovered(link)
+                }
 
-                    MouseArea {
-                        id: mouseArea3
-                        anchors.fill: parent
-                        acceptedButtons: Qt.LeftButton
-                        drag.target: space1
-                        drag.onActiveChanged: delegate.dragStart(index, mouseArea3.drag.active)
-                        onClicked: {
-                            displayListView.startEdit(index, 3);
-                        }
+                MouseArea {
+                    id: mouseArea3
+                    anchors.fill: r3
+                    acceptedButtons: Qt.LeftButton
+                    drag.target: space1
+                    drag.onActiveChanged: delegate.dragStart(index, mouseArea3.drag.active)
+                    onClicked: {
+                        displayListView.startEdit(index, 3);
                     }
                 }
             }
