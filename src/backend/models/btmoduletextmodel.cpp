@@ -221,7 +221,14 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
             // Personal commentary
             if (module->isWritable()) {
-                QString text = QString::number(verse) + "  " + mKey.rawText();
+                QString text;
+                if (verse == 1)
+                    text = "<center><h3>" + chapterTitle + "</h3></center>";
+                QString rawText = mKey.rawText();
+                if (rawText.isEmpty())
+                    rawText = "<span style=\"color:gray\"><small>" + tr("Click to edit") + "</small></span>";
+                text += QString::number(verse) + "  " + rawText;
+
                 return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
             }
         }
