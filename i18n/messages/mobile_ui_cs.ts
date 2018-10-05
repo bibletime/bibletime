@@ -231,7 +231,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>InstallAutomatic</name>
     <message>
-        <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="98"/>
+        <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="135"/>
         <source>BibleTime Mobile</source>
         <translation type="unfinished"></translation>
     </message>
@@ -362,7 +362,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="584"/>
+        <location filename="../../src/mobile/qml/main.qml" line="602"/>
         <source>Are you sure you want to quit?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -622,12 +622,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>btm::InstallSources</name>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="55"/>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="58"/>
         <source>Refreshing</source>
         <translation>Znovunačtení</translation>
     </message>
     <message>
-        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="62"/>
+        <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="65"/>
         <source>Failed to refresh source %1</source>
         <translation>Chyba při aktualizaci zdroje %1</translation>
     </message>
@@ -658,39 +658,59 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="515"/>
-        <location filename="../../src/mobile/qml/main.qml" line="849"/>
+        <location filename="../../src/mobile/qml/main.qml" line="454"/>
+        <source>A suggested document to download is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="455"/>
+        <source>Would you like to automatically download this document?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="457"/>
+        <source>Suggested documents to download are:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="461"/>
+        <source>Would you like to automatically download these documents?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="533"/>
+        <location filename="../../src/mobile/qml/main.qml" line="867"/>
         <source>New Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="516"/>
+        <location filename="../../src/mobile/qml/main.qml" line="534"/>
         <source>View Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="907"/>
-        <location filename="../../src/mobile/qml/main.qml" line="955"/>
+        <location filename="../../src/mobile/qml/main.qml" line="925"/>
+        <location filename="../../src/mobile/qml/main.qml" line="973"/>
         <source>User Interface Font Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="908"/>
+        <location filename="../../src/mobile/qml/main.qml" line="926"/>
         <source>Window Arrangement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="517"/>
+        <location filename="../../src/mobile/qml/main.qml" line="535"/>
         <source>Manage Installed Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="518"/>
+        <location filename="../../src/mobile/qml/main.qml" line="536"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="520"/>
+        <location filename="../../src/mobile/qml/main.qml" line="538"/>
         <source>About</source>
         <translation>O BibleTime</translation>
     </message>
@@ -710,12 +730,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="910"/>
+        <location filename="../../src/mobile/qml/main.qml" line="928"/>
         <source>Default Documents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="1044"/>
+        <location filename="../../src/mobile/qml/main.qml" line="1062"/>
         <source>Single</source>
         <translation type="unfinished"></translation>
     </message>
@@ -755,52 +775,47 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="448"/>
-        <source>Suggested documents are the ESV Bible, the KJV Bible, the StrongsGreek lexicon, and the StrongsHebrew lexicon.Would you like to automatically download these documents?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mobile/qml/main.qml" line="466"/>
+        <location filename="../../src/mobile/qml/main.qml" line="482"/>
         <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="519"/>
+        <location filename="../../src/mobile/qml/main.qml" line="537"/>
         <source>New Features</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="850"/>
+        <location filename="../../src/mobile/qml/main.qml" line="868"/>
         <source>View References</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="906"/>
+        <location filename="../../src/mobile/qml/main.qml" line="924"/>
         <source>Text Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="909"/>
+        <location filename="../../src/mobile/qml/main.qml" line="927"/>
         <source>Color Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="1045"/>
+        <location filename="../../src/mobile/qml/main.qml" line="1063"/>
         <source>Tabbed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="1046"/>
+        <location filename="../../src/mobile/qml/main.qml" line="1064"/>
         <source>Auto-tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="1047"/>
+        <location filename="../../src/mobile/qml/main.qml" line="1065"/>
         <source>Auto-tile horizontally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mobile/qml/main.qml" line="1048"/>
+        <location filename="../../src/mobile/qml/main.qml" line="1066"/>
         <source>Auto-tile vertically</source>
         <translation type="unfinished"></translation>
     </message>
