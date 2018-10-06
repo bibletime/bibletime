@@ -93,6 +93,7 @@ Rectangle {
         focus: true
         maximumFlickVelocity: 900
         model: btQmlInterface.textModel
+        spacing: 2
         highlightFollowsCurrentItem: true
         currentIndex: btQmlInterface.currentModelIndex
         onCurrentIndexChanged: {
