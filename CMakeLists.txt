@@ -264,8 +264,10 @@ INSTALL(FILES ${INSTALL_ICONS_LIST}
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
+
+# See QTBUG-55259, Affects windeployqt and macdeployqt
 INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
-        DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
+        DESTINATION "${BT_DESTINATION}/")
 
 FILE(GLOB INSTALL_TMPL_LIST
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css

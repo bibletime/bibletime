@@ -21,7 +21,7 @@ BtQuickWidget::BtQuickWidget(QWidget* parent)
     setAcceptDrops(true);
 
     namespace DU = util::directory;
-    QString qmlFile = DU::getJavascriptDir().canonicalPath() + "/" + "DisplayView.qml";
+    QString qmlFile = QCoreApplication::applicationDirPath() + "/" + "DisplayView.qml";
     setSource(QUrl::fromLocalFile(qmlFile));
 }
 
