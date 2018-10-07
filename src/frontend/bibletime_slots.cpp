@@ -519,7 +519,7 @@ void BibleTime::toggleFullscreen() {
 void BibleTime::autoScrollUp() {
     setDisplayFocus();
     if (m_autoScroll.enabled){
-        if (m_autoScroll.speed < 15) {
+        if (m_autoScroll.speed < 10) {
             ++m_autoScroll.speed;
         }
         m_autoScroll.paused = false;
@@ -536,7 +536,7 @@ void BibleTime::autoScrollUp() {
 void BibleTime::autoScrollDown() {
     setDisplayFocus();
     if (m_autoScroll.enabled){
-        if (m_autoScroll.speed > -15) {
+        if (m_autoScroll.speed > -10) {
             --m_autoScroll.speed;
         }
         m_autoScroll.paused = false;

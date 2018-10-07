@@ -348,8 +348,8 @@ void BibleTime::setAutoScrollTimerInterval() {
         m_autoScrollTimer.setInterval(autoScrollTimeInterval/2);
         m_autoScroll.enabled = false;
     } else {
-        double timeDivisor = std::lround(std::pow(0.6,m_autoScroll.speed));
-        int interval = static_cast<int>(autoScrollTimeInterval/timeDivisor);
+        double timeDivisor = std::pow(0.6,std::abs(m_autoScroll.speed));
+        int interval = static_cast<int>(autoScrollTimeInterval*timeDivisor);
         m_autoScrollTimer.setInterval(interval);
     }
 }
