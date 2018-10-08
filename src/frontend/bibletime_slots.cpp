@@ -544,6 +544,7 @@ void BibleTime::autoScrollDown() {
     } else {
         m_autoScroll.enabled = true;
         m_autoScroll.speed = -1;
+        m_autoScroll.paused = false;
         setAutoScrollTimerInterval();
         m_autoScrollTimer.start();
     }

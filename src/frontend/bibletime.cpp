@@ -301,7 +301,9 @@ bool BibleTime::event(QEvent* event) {
         Search::CSearchDialog::closeDialog();
     else if (event->type() == QEvent::KeyPress) {
         QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-        int value = keyEvent->key() | static_cast<int>(keyEvent->modifiers());
+        if (keyEvent->modifiers() > 0)
+            return false;
+        int value = keyEvent->key();
         bool accepted = autoScrollAnyKey(value);
         if (accepted) {
             return true;
