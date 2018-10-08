@@ -31,6 +31,7 @@ a {
     text-decoration:none;
     font-weight:normal;
     /*color: #F98100;*/
+    color: black;
     padding:1px;
 }
 a:hover {
@@ -190,6 +191,13 @@ td.entry + td.entry {
     font-style:italic;
     /*font-weight: bold;*/
     font-size:0.9em;
+}
+.jesuswords a {
+    /* color: red; */
+    font-size: 0.9em;
+}
+a[name="crossref"] {
+    color: blue
 }
 
 .quotation {

@@ -25,7 +25,7 @@ body {
 a {
     text-decoration:none;
     font-weight:normal;
-    color: blue;
+    color: black;
     padding:2px;
 }
 
@@ -91,7 +91,13 @@ div.currententry {
     color: red;
     font-size: 0.9em;
 }
-
+.jesuswords a {
+    color: red;
+    font-size: 0.9em;
+}
+a[name="crossref"] {
+    color: blue
+}
 .name > .divine {
    font-variant: small-caps;
 }

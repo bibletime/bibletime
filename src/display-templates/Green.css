@@ -27,7 +27,7 @@ body {
 a {
     text-decoration:none;
     font-weight:normal;
-    color: #3B11AE;
+    color: black;
     padding:0 2px;
 }
 a:hover {
@@ -133,13 +133,13 @@ td.entry + td.entry {
 .crossreference {
     font-size: 80%;
     /*vertical-align:middle;*/
-    color: blue;
+    color: #9c2323;
 }
 
 .crossreference a {
     font-size: 80%;
     /*vertical-align:middle;*/
-    color: blue;
+    color: #9c2323;
 }
 
 .crossreference a:hover {
@@ -176,6 +176,13 @@ td.entry + td.entry {
 }
 .jesuswords {
     color:#9C2323;
+}
+.jesuswords a {
+    color: #9c2323;
+    font-size: 0.9em;
+}
+a[name="crossref"] {
+    color: #9c2323;
 }
 
 .quotation {

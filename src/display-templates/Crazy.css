@@ -38,7 +38,8 @@ body {
 #content tr:nth-child(even)  { background-color: #EDEDED; }
 
 /* The a links are the normal HTML hyperlinks. Links without a class attribute are hyperlinks into the web */
-a { color:#FF0004; padding:0; }
+a { text-decoration:none; color: black; padding:0; }
+
 a:hover { }
 
 .inline {
@@ -86,11 +87,6 @@ td.entry, td.currententry {
 }
 .currententry.inline {
     line-height:1.6em;
-}
-table .currententry:nth-child(1) {
-    margin-left:0;
-    border-left:10px solid #99B4FF;
-    /*border-left:10px solid #F5FF6A;*/
 }
 /* .currententry[dir=rtl] { */
 /* } */
@@ -195,7 +191,16 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 
 /* Words spoken by Jesus Christ */
 /*.jesuswords { color: red; }*/
+
 .jesuswords { color: #B60000; }
+
+.jesuswords a {
+    color: #B60000;
+}
+
+a[name="crossref"] {
+    color: #B60000
+}
 
 /* An introduction to a module, book or chapter */
 .introduction { }

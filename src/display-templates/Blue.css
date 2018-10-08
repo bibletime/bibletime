@@ -24,7 +24,7 @@ body {
 a {
     text-decoration:none;
     font-weight:normal;
-    color: #7B7B7B;
+    color: black;
     padding:0 2px;
 }
 a:hover {
@@ -148,6 +148,13 @@ td.entry + td.entry {
 .crossreference a {
     color: blue;
 }
+.jesuswords a {
+    color:#9C2323;
+}
+a[name="crossref"] {
+    color: blue
+}
+
 .crossreference a:hover {
     color: blue;
 }
