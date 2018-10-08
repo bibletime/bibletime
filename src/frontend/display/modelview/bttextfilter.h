@@ -43,11 +43,9 @@ private:
     int rewriteHref(int i, const QString& part);
     int rewriteLemmaOrMorphAsLink(int i, const QString& part);
     void splitText(const QString& text);
-    void findJesusWordsSpans(const QString& part);
 
     bool m_showReferences;
     int m_spanDepth;
-    int m_jesusWordsSpans;
 
     QStringList m_parts;
 };

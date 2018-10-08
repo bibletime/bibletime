@@ -11,7 +11,7 @@
 **********/
 
 #include "bttextfilter.h"
-
+#include <QDebug>
 
 BtTextFilter::BtTextFilter() :
     m_showReferences(false) {
@@ -26,14 +26,12 @@ QString BtTextFilter::processText(const QString &text) {
     QString localText = fixNonRichText(text);
     splitText(localText);
     fixDoubleBR();
-    m_jesusWordsSpans = 0;
     if (m_showReferences) {
 
         int i = 0;
         int count = m_parts.count();
         do {
             QString part = m_parts.at(i);
-            findJesusWordsSpans(part);
 
             if (part.startsWith("<") && part.contains("class=\"footnote\"")) {
                 i= i + rewriteFootnoteAsLink(i, part);
@@ -125,9 +123,9 @@ int BtTextFilter::rewriteHref(int i, const QString& part) {
     if (pos1 >= 0 && rx1.captureCount() == 4) {
         QString newEntry;
         if (rx1.cap(1) == "href")
-            newEntry = "<a " + rx1.cap(1) + "=\"" + rx1.cap(2) + "||" + rx1.cap(3) + "=" + rx1.cap(4) + "\">";
+            newEntry = "<a " + rx1.cap(1) + "=\"" + rx1.cap(2) + "||" + rx1.cap(3) + "=" + rx1.cap(4) + "\" name=\"crossref\">";
         else
-            newEntry = "<a " + rx1.cap(3) + "=\"" + rx1.cap(4) + "||" + rx1.cap(1) + "=" + rx1.cap(2) + "\">";
+            newEntry = "<a " + rx1.cap(3) + "=\"" + rx1.cap(4) + "||" + rx1.cap(1) + "=" + rx1.cap(2) + "\" name=\"crossref\">";
 
         m_parts[i] = newEntry;
     }
@@ -152,26 +150,10 @@ int BtTextFilter::rewriteLemmaOrMorphAsLink(int i, const QString& part) {
     QString refText = m_parts.at(i+1);
     QString url = "sword://lemmamorph/" + value + "/" + refText;
     QString newEntry;
-    if (m_jesusWordsSpans > 0)
-        newEntry = "<a href=\"" + url + "\" style=\"color: " +
-                "red" + "\">"; // TODO get color from template ??
-    else
-        newEntry = "<a href=\"" + url + "\" style=\"color: black\">";
+    newEntry = "<a href=\"" + url + "\">";
     m_parts[i] = newEntry;
     m_parts[i+2] = "</a>";
-    m_jesusWordsSpans--;
     return 3;
-}
-
-
-void BtTextFilter::findJesusWordsSpans(const QString& part) {
-    if (part.contains("<span") && part.contains("jesuswords"))
-        m_jesusWordsSpans = 1;
-    else if (part.contains("<span") && m_jesusWordsSpans > 0)
-        m_jesusWordsSpans++;
-    else if (part.contains("</span") && m_jesusWordsSpans > 0)
-        m_jesusWordsSpans--;
-
 }
 
 void BtTextFilter::setShowReferences(bool on) {
