@@ -33,7 +33,6 @@ namespace directory {
 namespace {
 
 std::unique_ptr<QDir> cachedIconDir;
-std::unique_ptr<QDir> cachedJavascriptDir;
 std::unique_ptr<QDir> cachedLicenseDir;
 std::unique_ptr<QDir> cachedPicsDir;
 std::unique_ptr<QDir> cachedLocaleDir;
@@ -150,12 +149,6 @@ bool initDirectoryCache() {
     }
 
 #if !defined BT_MINI && ! defined BT_MOBILE
-    cachedJavascriptDir.reset(new QDir(wDir));
-    if (!cachedJavascriptDir->cd("share/bibletime/javascript") || !cachedJavascriptDir->isReadable()) {
-        qWarning() << "Cannot find javascript directory relative to" << wDir.absolutePath();
-        return false;
-    }
-
     cachedLicenseDir.reset(new QDir(wDir));
     if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
         qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
@@ -400,10 +393,6 @@ const QDir &getSwordPathDir() {
 
 const QDir &getIconDir() {
     return *cachedIconDir;
-}
-
-const QDir &getJavascriptDir() {
-    return *cachedJavascriptDir;
 }
 
 const QDir &getLicenseDir() {

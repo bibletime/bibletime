@@ -84,9 +84,6 @@ const QDir &getSwordPathDir();
 /** Return the path to the icons. */
 const QDir &getIconDir();
 
-/** Return the path to the javascript. */
-const QDir &getJavascriptDir();
-
 /** Return the path to the license. */
 const QDir &getLicenseDir();
 
