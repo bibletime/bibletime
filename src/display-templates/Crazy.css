@@ -199,6 +199,7 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 }
 
 a[name="crossref"] {
+    font-size: small;
     color: #B60000
 }
 

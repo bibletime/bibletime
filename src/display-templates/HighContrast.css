@@ -197,6 +197,7 @@ td.entry + td.entry {
     font-size: 0.9em;
 }
 a[name="crossref"] {
+    font-size: small;
     color: blue
 }
 

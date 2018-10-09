@@ -104,6 +104,7 @@ div.currententry {
     color: red;
 }
 a[name="crossref"] {
+    font-size: small;
     color: #4A766E /* # DarkGreenCopper */
 }
 
