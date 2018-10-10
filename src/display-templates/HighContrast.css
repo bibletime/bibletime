@@ -34,11 +34,6 @@ a {
     color: black;
     padding:1px;
 }
-a:hover {
-    color: #FF0000;
-    padding:1px;
-    text-decoration:underline;
-}
 
 .inline {
     display: inline;
@@ -162,7 +157,7 @@ td.entry + td.entry {
 
 .sectiontitle {
     font-weight: bold;
-    font-size: 110%;
+    font-size: large;
 }
 #printer .sectiontitle {
     font-weight: bold;
@@ -174,12 +169,12 @@ td.entry + td.entry {
 
 .booktitle {
     font-weight: bold;
-    font-size: 120%;
+    font-size: large;
     font-variant: small-caps;
 }
 #printer .booktitle {
     font-weight: bold;
-    font-size: 120%;
+    font-size: large;
     font-variant: small-caps;
 }
 .foreign {

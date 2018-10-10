@@ -74,7 +74,7 @@ div.currententry {
 
 .sectiontitle {
     font-weight: bold;
-    font-size: 120%;
+    font-size: large;
 }
 .entry + .sectiontitle {
     margin-top:35px;
@@ -83,7 +83,7 @@ div.currententry {
 
 .booktitle {
     font-weight: bold;
-    font-size: 140%;
+    font-size: x-large;
 }
 .foreign {
 }

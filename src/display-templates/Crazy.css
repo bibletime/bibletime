@@ -40,8 +40,6 @@ body {
 /* The a links are the normal HTML hyperlinks. Links without a class attribute are hyperlinks into the web */
 a { text-decoration:none; color: black; padding:0; }
 
-a:hover { }
-
 .inline {
     display: inline;
 }
@@ -152,10 +150,9 @@ td.entry + td.entry {
 *for linked and non linked text in the cross reference*/
 .crossreference a {
    color:#8f2627;
-   /*Get rid of underlines on the notes when not hovered*/
+   /*Get rid of underlines on the notes*/
    text-decoration: none;
 }
-.crossreference a:hover {}
 
 /* Alternative reading as defined in the OSIS specs. The information about the alternative text is displayed in the info display. It's
 often a good idea to format this the same as footnotes
@@ -173,7 +170,7 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 .sectiontitle {
      padding:0.3em;
      /*text-shadow:gray 0px 0px 3px;*/
-     font-size:1.3em;
+     font-size:large;
      font-weight:bold;
      text-transform:uppercase;
      padding-bottom:2px;

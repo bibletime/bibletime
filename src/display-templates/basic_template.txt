@@ -7,7 +7,6 @@
 
 /* The a links are the normal HTML hyperlinks. Links without a class attribute are hyperlinks into the web */
 a { }
-a:hover { }
 
 .inline {
     display: inline;
@@ -80,7 +79,6 @@ td.entry + td.entry { }
 *as desired. Additionally, you can have seperate formatting
 *for linked and non linked text in the cross reference*/
 .crossreference a { }
-.crossreference a:hover { }
 
 /* Alternative reading as defined in the OSIS specs. The information about the alternative text is displayed in the info display. It's
 often a good idea to format this the same as footnotes
