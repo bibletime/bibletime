@@ -138,10 +138,15 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
         text = "invalid";
     if (m_textFilter)
         text = m_textFilter->processText(text);
-    QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
-    if (m_findState.enabled && index.row() == m_findState.index)
-        t = highlightFindPreviousNextField(t);
-    return QVariant(t);
+
+    if ( ! m_highlightWords.isEmpty()) {
+        QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        if (m_findState.enabled && index.row() == m_findState.index)
+            t = highlightFindPreviousNextField(t);
+        return QVariant(t);
+    }
+
+    return QVariant(text);
 }
 
 QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) const {
