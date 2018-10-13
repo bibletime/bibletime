@@ -16,7 +16,11 @@ The following requirements are needed only if you want to develop BibleTime.
  - Sword 1.7.0+ (http://crosswire.org/sword)
  - CLucene 0.9.16a+ (http://clucene.sf.net)
  - cmake 2.6.0+ (http://cmake.org)
-
+For Ubuntu install the packages at least: 
+qttools5-dev
+libclucene-dev
+libqt5svg5-dev
+libqt5webkit5-dev 
 ### DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
  - po4a
  - xsltproc, docbook-xml, docbook-xsl
