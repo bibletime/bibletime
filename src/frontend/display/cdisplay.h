@@ -43,6 +43,8 @@ public:
 
     virtual void contextMenu(QContextMenuEvent* /* event */) {}
 
+    virtual void reloadModules() = 0;
+
     virtual void scrollToKey(CSwordKey* key);
 
     virtual void scroll(int /* pixels */ ) {}

@@ -84,13 +84,17 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     m_filterOptions.textualVariants = 0;
 }
 
-void BtModuleTextModel::setModules(const BtConstModuleList &modules) {
+void BtModuleTextModel::reloadModules() {
 
-    m_moduleInfoList = modules;
+    m_moduleInfoList.clear();
+    for (int i = 0; i < m_modules.count(); ++i) {
+        QString moduleName = m_modules.at(i);
+        CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+        m_moduleInfoList.append(module);
+    }
+
     beginResetModel();
-
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);
-
     if (isBible() || isCommentary()) {
         auto & m = firstModule->module();
         m.setPosition(sword::TOP);
@@ -116,13 +120,8 @@ void BtModuleTextModel::setModules(const BtConstModuleList &modules) {
 }
 
 void BtModuleTextModel::setModules(const QStringList& modules) {
-    BtConstModuleList moduleList;
-    for (int i = 0; i < modules.count(); ++i) {
-        QString moduleName = modules.at(i);
-        CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
-        moduleList.append(module);
-    }
-    setModules(moduleList);
+    m_modules = modules;
+    reloadModules();
 }
 
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {

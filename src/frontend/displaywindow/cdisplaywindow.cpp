@@ -303,6 +303,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         return;
     }
 
+    displayWidget()->reloadModules();
+
     if (CKeyChooser * const kc = keyChooser())
         kc->setModules(modules(), false);
 

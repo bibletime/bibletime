@@ -74,6 +74,8 @@ public:
                        const CDisplay::TextPart part = CDisplay::Document)
     override;
 
+    void reloadModules() override;
+
     void setDisplayFocus() override;
 
     void setDisplayOptions(const DisplayOptions &displayOptions) override;

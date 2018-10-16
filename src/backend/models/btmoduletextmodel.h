@@ -151,8 +151,8 @@ public:
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);
 
-    /** Specifies one or more modules for use by the model */
-    void setModules(const BtConstModuleList &modules);
+    /** Load module pointers from module names */
+    void reloadModules();
 
     /** Set the text options used for rendering module text. */
     void setTextFilter(BtModuleTextFilter * textFilter);

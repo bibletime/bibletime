@@ -57,6 +57,9 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CReadWindow* readWindow, QWidget*
 BtModelViewReadDisplay::~BtModelViewReadDisplay() {
 }
 
+void BtModelViewReadDisplay::reloadModules() {
+    qmlInterface()->textModel()->reloadModules();
+}
 
 const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
                                             const CDisplay::TextPart part) {
