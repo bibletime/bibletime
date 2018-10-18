@@ -309,11 +309,11 @@ INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
 
 # Linux: application icon and desktop file:
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
-        DESTINATION "${BT_SHARE_PATH}/icons/hicolor/scalable/apps")
+        DESTINATION "${BT_SHARE_PATH}/icons/hicolor/scalable/apps" RENAME "info.bibletime.BibleTime.svg")
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake"
                "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" @ONLY)
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
-        DESTINATION "${BT_SHARE_PATH}/applications/")
+        DESTINATION "${BT_SHARE_PATH}/applications/" RENAME "info.bibletime.BibleTime.desktop")
 
 
 IF(MSVC)
