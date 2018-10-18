@@ -26,6 +26,7 @@ class BtBookshelfView;
 class BtInstallPageModel;
 class QComboBox;
 class QLabel;
+class QLineEdit;
 class QMenu;
 class QToolButton;
 
@@ -66,6 +67,9 @@ private: /* Fields: */
     QLabel * m_pathLabel;
     QLabel * m_groupingLabel;
     QComboBox * m_pathCombo;
+
+    QLabel * m_nameFilterLabel;
+    QLineEdit * m_nameFilterEdit;
 
     BtInstallPageModel * m_installPageModel;
     BtBookshelfModel * m_bookshelfModel;
