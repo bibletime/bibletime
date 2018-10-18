@@ -14,6 +14,7 @@
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
+#include <QLineEdit>
 #include <QSet>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -72,6 +73,14 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
     // Setup UI:
     QVBoxLayout * const verticalLayout = new QVBoxLayout(this);
     verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+
+    QHBoxLayout * horizontalLayout = new QHBoxLayout;
+    m_nameFilterLabel = new QLabel(this);
+    horizontalLayout->addWidget(m_nameFilterLabel);
+    m_nameFilterEdit = new QLineEdit(this);
+    m_nameFilterLabel->setBuddy(m_nameFilterEdit);
+    horizontalLayout->addWidget(m_nameFilterEdit);
+    verticalLayout->addLayout(horizontalLayout);
 
     m_bookshelfView = new BtBookshelfView(this);
     m_bookshelfView->setObjectName(QStringLiteral("worksTreeView"));
@@ -154,11 +163,14 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
                this,               &BtBookshelfWorksPage::completeChanged);
     BT_CONNECT(m_installPageModel, &BtInstallPageModel::groupingOrderChanged,
                this, &BtBookshelfWorksPage::slotGroupingOrderChanged);
+    BT_CONNECT(m_nameFilterEdit, SIGNAL(textEdited(QString)),
+               filterModel, SLOT(setNameFilterFixedString(QString)));
 
     retranslateUi();
 }
 
 void BtBookshelfWorksPage::retranslateUi() {
+    m_nameFilterLabel->setText(tr("Fi&lter:"));
     if (m_taskType == installWorks) {
         setTitle(QApplication::translate("BookshelfWizard", "Install Works"));
         setSubTitle(QApplication::translate("BookshelfWizard",
