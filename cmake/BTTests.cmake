@@ -10,7 +10,6 @@ SET(test_OTHER_SOURCES
 )
 
 FUNCTION(test_a_class testDir testClass )
-    PROJECT(test_${testClass})
     ADD_EXECUTABLE(test_${testClass}
         ${testDir}/test_${testClass}.cpp
         ${test_OTHER_SOURCES}
