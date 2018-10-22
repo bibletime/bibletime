@@ -89,14 +89,12 @@ void myMessageOutput(
             debugStream->flush();
         }
         break;
-#if QT_VERSION >= 0x050500
     case QtInfoMsg:
         debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
         debugStream->write(msg);
         debugStream->write("\n");
         debugStream->flush();
         break;
-#endif
     case QtWarningMsg:
         debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
         debugStream->write(msg);

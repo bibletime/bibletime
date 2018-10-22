@@ -931,11 +931,7 @@ void BibleTime::slotShowDebugWindow(bool show) {
         BT_CONNECT(m_debugWindow, &QObject::destroyed,
                    this,          &BibleTime::slotDebugWindowClosing,
                    Qt::DirectConnection);
-        #if QT_VERSION < 0x050400
-        QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
-        #else
         QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
-        #endif
     } else {
         deleteDebugWindow();
     }
@@ -961,11 +957,7 @@ void BibleTime::slotDebugTimeout() {
     QMutexLocker lock(&m_debugWindowLock);
     if (!m_debugWindow || m_debugWindow->isVisible() == false)
         return;
-    #if QT_VERSION < 0x050400
-    QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
-    #else
     QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
-    #endif
     if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
         QString objectHierarchy;
         do {

@@ -33,9 +33,7 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     setApplicationVersion(BT_VERSION);
 
     // Support for retina displays
-    #if QT_VERSION >= 0x050200
     this->setAttribute(Qt::AA_UseHighDpiPixmaps);
-    #endif
 }
 
 BibleTimeApp::~BibleTimeApp() {
