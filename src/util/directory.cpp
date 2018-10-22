@@ -39,7 +39,6 @@ std::unique_ptr<QDir> cachedLocaleDir;
 std::unique_ptr<QDir> cachedHandbookDir;
 std::unique_ptr<QDir> cachedHowtoDir;
 std::unique_ptr<QDir> cachedDisplayTemplatesDir;
-std::unique_ptr<QDir> cachedQmlDir;
 std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
 std::unique_ptr<QDir> cachedUserBaseDir;
 std::unique_ptr<QDir> cachedUserHomeDir;
@@ -198,14 +197,6 @@ bool initDirectoryCache() {
         qWarning() << "Cannot find display template directory relative to" << wDir.absolutePath();
         return false;
     }
-
-#ifdef BT_MOBILE
-    cachedQmlDir.reset(new QDir(wDir)); //qml files dir
-    if (!cachedQmlDir->cd("share/bibletime/qml/")) {
-        qWarning() << "Cannot find qml relative to" << wDir.absolutePath();
-        return false;
-    }
-#endif
 
 #ifdef Q_OS_WINRT
     cachedUserHomeDir.reset(new QDir(""));
@@ -417,13 +408,6 @@ const QDir &getHowtoDir() {
 
 const QDir &getDisplayTemplatesDir() {
     return *cachedDisplayTemplatesDir;
-}
-
-const QDir &getQmlDir() {
-#ifndef BT_MOBILE
-    BT_ASSERT(false && "Qml files currently required for BibleTime Mobile frontend only.");
-#endif
-    return *cachedQmlDir;
 }
 
 const QDir &getUserBaseDir() {

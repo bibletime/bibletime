@@ -102,9 +102,6 @@ const QDir &getHowtoDir();
 /** Return the path to the default display template files. */
 const QDir &getDisplayTemplatesDir();
 
-/** Return the path to qml files. */
-const QDir &getQmlDir();
-
 /** Return the path to the user's home directory.
     %APPDATA% on Windows
     $HOME on linux */
