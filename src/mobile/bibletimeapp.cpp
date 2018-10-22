@@ -21,7 +21,6 @@
 #include "frontend/messagedialog.h"
 #include "util/btassert.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
