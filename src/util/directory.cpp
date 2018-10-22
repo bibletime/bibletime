@@ -101,14 +101,10 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
-#if !defined BT_MINI && !defined BT_MOBILE
     if (!cachedApplicationSwordDir->cd("share/sword") || !cachedApplicationSwordDir->isReadable()) {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
-#endif
-
-#if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
     QByteArray programDataDir = qgetenv("ProgramData");
     cachedSharedSwordDir.reset(new QDir(programDataDir)); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
@@ -117,7 +113,6 @@ bool initDirectoryCache() {
             return false;
         }
     }
-#endif
 #endif
 
 #ifdef Q_OS_MACOS
@@ -147,7 +142,6 @@ bool initDirectoryCache() {
         return false;
     }
 
-#if !defined BT_MINI && ! defined BT_MOBILE
     cachedLicenseDir.reset(new QDir(wDir));
     if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
         qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
@@ -159,7 +153,6 @@ bool initDirectoryCache() {
         qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
         return false;
     }
-#endif
 
     cachedLocaleDir.reset(new QDir(wDir));
     if (!cachedLocaleDir->cd("share/bibletime/locale")) {
@@ -170,7 +163,6 @@ bool initDirectoryCache() {
     QString localeName(QLocale::system().name());
     QString langCode(localeName.section('_', 0, 0));
 
-#if !defined BT_MINI && !defined BT_MOBILE
     cachedHandbookDir.reset(new QDir(wDir));
     if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + localeName)) {
         if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + langCode)) {
@@ -190,7 +182,6 @@ bool initDirectoryCache() {
             }
         }
     }
-#endif
 
     cachedDisplayTemplatesDir.reset(new QDir(wDir)); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
