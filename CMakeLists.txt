@@ -249,11 +249,7 @@ SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
                       COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
-IF(Qt5Core_VERSION VERSION_LESS 5.3.0)
-    MESSAGE(WARNING "Qt tests not build because they require Qt 5.3 or greater.")
-ELSE()
-    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
-ENDIF()
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
 
 # Install files
 #
