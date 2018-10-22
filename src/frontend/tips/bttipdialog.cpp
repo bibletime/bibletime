@@ -154,11 +154,10 @@ void BtTipDialog::initTips() {
         " menu. A search dialog will appear that allows you to see the use of the same"
         " Strong's number in other locations of the work.");
 
-    m_tips << tr("You can save personal notes for specific verses references. You must install"
+    m_tips << tr("You can save personal notes for specific verse references. You must install"
         " the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the"
-        " source, English as the language,  and look under Commentary. Once installed, use the"
-        " Bookshelf window and right click the Personal commentary. Use either the"
-        " Edit Plain Text menu or the Edit HTML menu to open the work in write mode.");
+        " source, English as the language,  and look under Commentary. Once installed, open it"
+        " like any other window, or in  parallel with a bible. Click a verse to edit it.");
 
     m_tips << tr("You can view Strong's number information in the MAG window by hovering over"
         " a word in a Bible work that has Strong's numbers. You should have the StrongsGreek"
