@@ -139,7 +139,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="60"/>
         <source>BibleTime Mobile</source>
+<<<<<<< HEAD
         <translation>BibleTime Móvel</translation>
+=======
+        <translation type="unfinished">BibleTime Móvel</translation>
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="117"/>
@@ -231,9 +235,15 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>InstallAutomatic</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="135"/>
         <source>BibleTime Mobile</source>
         <translation>BibleTime Móvel</translation>
+=======
+        <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="98"/>
+        <source>BibleTime Mobile</source>
+        <translation type="unfinished">BibleTime Móvel</translation>
+>>>>>>> traduction
     </message>
 </context>
 <context>
@@ -346,7 +356,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="60"/>
         <source>BibleTime Mobile</source>
+<<<<<<< HEAD
         <translation>BibleTime Móvel</translation>
+=======
+        <translation type="unfinished">BibleTime Móvel</translation>
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="117"/>
@@ -362,7 +376,11 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="602"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="584"/>
+>>>>>>> traduction
         <source>Are you sure you want to quit?</source>
         <translation>Tem certeza de que deseja sair?</translation>
     </message>
@@ -658,6 +676,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Alguns módulos que você quer procurar precisam ser indexados. Você quer fazer isso agora?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="454"/>
         <source>A suggested document to download is</source>
         <translation type="unfinished"></translation>
@@ -680,37 +699,66 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="533"/>
         <location filename="../../src/mobile/qml/main.qml" line="867"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="515"/>
+        <location filename="../../src/mobile/qml/main.qml" line="849"/>
+>>>>>>> traduction
         <source>New Window</source>
         <translation>Nova Janela</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="534"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="516"/>
+>>>>>>> traduction
         <source>View Window</source>
         <translation>Ver Janela</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="925"/>
         <location filename="../../src/mobile/qml/main.qml" line="973"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="907"/>
+        <location filename="../../src/mobile/qml/main.qml" line="955"/>
+>>>>>>> traduction
         <source>User Interface Font Size</source>
         <translation>Tamanho da fonte da interface de usuário</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="926"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="908"/>
+>>>>>>> traduction
         <source>Window Arrangement</source>
         <translation>Posicionamento das Janelas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="535"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="517"/>
+>>>>>>> traduction
         <source>Manage Installed Documents</source>
         <translation>Gerenciar documentos instalados</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="536"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="518"/>
+>>>>>>> traduction
         <source>Settings</source>
         <translation>Configurações</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="538"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="520"/>
+>>>>>>> traduction
         <source>About</source>
         <translation>Sobre</translation>
     </message>
@@ -730,16 +778,31 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Vermelho</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="928"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="910"/>
+>>>>>>> traduction
         <source>Default Documents</source>
         <translation>Documentos Padrão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1062"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1044"/>
+>>>>>>> traduction
         <source>Single</source>
         <translation>Único</translation>
     </message>
     <message>
+<<<<<<< HEAD
+=======
+        <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
+        <translation type="vanished">O BibleTime visualiza documentos, como Bíblias e comentários. Esses documentos são baixados e armazenados localmente. Atualmente, não há documentos. você quer instalá-los agora?</translation>
+    </message>
+    <message>
+>>>>>>> traduction
         <location filename="../../src/mobile/qml/main.qml" line="384"/>
         <source>New Feature</source>
         <translation>Novo recurso</translation>
@@ -775,6 +838,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="482"/>
         <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
         <translation type="unfinished"></translation>
@@ -791,31 +855,74 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="924"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="448"/>
+        <source>Suggested documents are the ESV Bible, the KJV Bible, the StrongsGreek lexicon, and the StrongsHebrew lexicon.Would you like to automatically download these documents?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="466"/>
+        <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="519"/>
+        <source>New Features</source>
+        <translation>Novas características</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="850"/>
+        <source>View References</source>
+        <translation>Referências </translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="906"/>
+>>>>>>> traduction
         <source>Text Font</source>
         <translation>Fonte do texto</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="927"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="909"/>
+>>>>>>> traduction
         <source>Color Theme</source>
         <translation>Tema de cores</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1063"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1045"/>
+>>>>>>> traduction
         <source>Tabbed</source>
         <translation>Tabulado</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1064"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1046"/>
+>>>>>>> traduction
         <source>Auto-tile</source>
         <translation>Auto-organizar</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1065"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1047"/>
+>>>>>>> traduction
         <source>Auto-tile horizontally</source>
         <translation>Auto-organizar horizontalmente</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1066"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1048"/>
+>>>>>>> traduction
         <source>Auto-tile vertically</source>
         <translation>Auto-organizar verticalmente</translation>
     </message>

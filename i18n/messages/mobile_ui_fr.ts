@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -228,6 +226,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/ListWorksView.qml" line="113"/>
         <source>Install</source>
         <translation>Installer</translation>
+<<<<<<< HEAD
     </message>
 </context>
 <context>
@@ -237,6 +236,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="135"/>
         <source>BibleTime Mobile</source>
         <translation>BibleTime Mobile</translation>
+=======
+>>>>>>> traduction
     </message>
 </context>
 <context>
@@ -413,12 +414,15 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/Search.qml" line="221"/>
         <source>Search in</source>
         <translation>Rechercher dans</translation>
+<<<<<<< HEAD
     </message>
 <<<<<<< HEAD
     <message>
         <location filename="../../src/mobile/qml/ModuleChooser.qml" line="196"/>
         <source>Choose Work</source>
         <translation>Choisir l&apos;ouvrage</translation>
+=======
+>>>>>>> traduction
     </message>
 =======
 >>>>>>> New French translation
@@ -497,6 +501,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/TextEditor.qml" line="50"/>
         <source>Ok</source>
         <translation>Ok</translation>
+<<<<<<< HEAD
     </message>
 </context>
 <context>
@@ -506,6 +511,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/InstallManagerChooser.qml" line="113"/>
         <source>Install Manager</source>
         <translation>Gestionnaire d&apos;installation</translation>
+=======
+>>>>>>> traduction
     </message>
 </context>
 <context>
@@ -678,6 +685,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="318"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation>Certains des modules dans lesquelles vous souhaitez rechercher doivent être indexés. Voulez-vous les indexer maintenant ?</translation>
+<<<<<<< HEAD
     </message>
     <message>
 <<<<<<< HEAD
@@ -699,6 +707,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="461"/>
         <source>Would you like to automatically download these documents?</source>
         <translation>Voulez-vous télécharger automatiquement ces documents&#x202f;?</translation>
+=======
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="533"/>
@@ -837,6 +847,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="383"/>
         <source>The Personal Commentary can be one of your Parallel Documents.</source>
         <translation>Le Commentaire Personnel peut être un de vos documents parallèle.</translation>
+<<<<<<< HEAD
     </message>
     <message>
 <<<<<<< HEAD
@@ -848,6 +859,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="482"/>
         <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
         <translation>La fenêtre «&#x202f;Gérer les documents installés&#x202f;» va maintenant être ouverte. Vous pouvez l&apos;ouvrir plus tard dans les menus en haut à droite de la vue principale.</translation>
+=======
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="537"/>

@@ -105,6 +105,12 @@ bool initDirectoryCache() {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
+<<<<<<< HEAD
+=======
+#endif
+
+#if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
+>>>>>>> traduction
     QByteArray programDataDir = qgetenv("ProgramData");
     cachedSharedSwordDir.reset(new QDir(programDataDir)); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
@@ -142,6 +148,16 @@ bool initDirectoryCache() {
         return false;
     }
 
+<<<<<<< HEAD
+=======
+#if !defined BT_MINI && ! defined BT_MOBILE
+    cachedJavascriptDir.reset(new QDir(wDir));
+    if (!cachedJavascriptDir->cd("share/bibletime/javascript") || !cachedJavascriptDir->isReadable()) {
+        qWarning() << "Cannot find javascript directory relative to" << wDir.absolutePath();
+        return false;
+    }
+
+>>>>>>> traduction
     cachedLicenseDir.reset(new QDir(wDir));
     if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
         qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
@@ -163,6 +179,10 @@ bool initDirectoryCache() {
     QString localeName(QLocale::system().name());
     QString langCode(localeName.section('_', 0, 0));
 
+<<<<<<< HEAD
+=======
+#if !defined BT_MINI && !defined BT_MOBILE
+>>>>>>> traduction
     cachedHandbookDir.reset(new QDir(wDir));
     if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + localeName)) {
         if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + langCode)) {

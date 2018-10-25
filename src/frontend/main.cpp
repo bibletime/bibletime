@@ -295,8 +295,13 @@ int main(int argc, char* argv[]) {
     //then our own
     QTranslator BibleTimeTranslator;
     if (BibleTimeTranslator.load(
+<<<<<<< HEAD
                 QString("bibletime_ui_").append(QLocale::system().name()),
                 DU::getLocaleDir().canonicalPath()))
+=======
+            QString("bibletime_ui_").append(QLocale::system().name()),
+            DU::getLocaleDir().canonicalPath()))
+>>>>>>> traduction
         app.installTranslator(&BibleTimeTranslator);
 
     // Initialize display template manager:

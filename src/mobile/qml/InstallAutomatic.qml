@@ -27,6 +27,7 @@ Rectangle {
 
     signal finished
 
+<<<<<<< HEAD
     function localeMatches(language, country) {
         var systemLanguage = btStyle.systemLocaleLanguage;
         var systemCountry = btStyle.systemLocaleCountry;
@@ -61,6 +62,8 @@ Rectangle {
         }
     }
 
+=======
+>>>>>>> traduction
     function install() {
         installInterface.progressFinished.connect(autoModuleInstall);
         installInterface.refreshLists("","","");
@@ -73,6 +76,7 @@ Rectangle {
             return;
         }
         installInterface.clearModules();
+<<<<<<< HEAD
 
         var names = getAutoInstallDocumentNames();
         var sources = getAutoInstallDocumentSources();
@@ -80,6 +84,12 @@ Rectangle {
         for (var i = 0; i < names.length; i++)
             installInterface.addModule(sources[i], names[i]);
 
+=======
+        installInterface.addModule("CrossWire","ESV2011");
+        installInterface.addModule("CrossWire","KJV");
+        installInterface.addModule("CrossWire","StrongsGreek");
+        installInterface.addModule("CrossWire","StrongsHebrew");
+>>>>>>> traduction
         installInterface.installModulesAuto();
         installInterface.modulesDownloadFinished.disconnect(openFirstWindow);
         installInterface.modulesDownloadFinished.connect(openFirstWindow);

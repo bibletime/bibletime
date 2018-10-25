@@ -139,7 +139,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="60"/>
         <source>BibleTime Mobile</source>
+<<<<<<< HEAD
         <translation>بايبل تايم نسخة المحمول</translation>
+=======
+        <translation type="unfinished">بايبل تايم نسخة المحمول</translation>
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/ContinueDialog.qml" line="117"/>
@@ -231,9 +235,15 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>InstallAutomatic</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="135"/>
         <source>BibleTime Mobile</source>
         <translation>بايبل تايم نسخة المحمول</translation>
+=======
+        <location filename="../../src/mobile/qml/InstallAutomatic.qml" line="98"/>
+        <source>BibleTime Mobile</source>
+        <translation type="unfinished">بايبل تايم نسخة المحمول</translation>
+>>>>>>> traduction
     </message>
 </context>
 <context>
@@ -346,7 +356,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="60"/>
         <source>BibleTime Mobile</source>
+<<<<<<< HEAD
         <translation>بايبل تايم نسخة المحمول</translation>
+=======
+        <translation type="unfinished">بايبل تايم نسخة المحمول</translation>
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/Question.qml" line="117"/>
@@ -362,7 +376,11 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>Quit</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="602"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="584"/>
+>>>>>>> traduction
         <source>Are you sure you want to quit?</source>
         <translation>هل أنت متأكد أنك تريد الخروج؟</translation>
     </message>
@@ -656,6 +674,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/mobile/qml/main.qml" line="327"/>
         <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
         <translation>بعض الوحدات بحاجة إلى فهرسة لتتمكن من البحث. هل تريد فهرستهم الآن؟</translation>
+<<<<<<< HEAD
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="454"/>
@@ -696,21 +715,55 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="926"/>
+=======
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="515"/>
+        <location filename="../../src/mobile/qml/main.qml" line="849"/>
+        <source>New Window</source>
+        <translation>نافذة جديدة</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="516"/>
+        <source>View Window</source>
+        <translation>عرض نافذة</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="907"/>
+        <location filename="../../src/mobile/qml/main.qml" line="955"/>
+        <source>User Interface Font Size</source>
+        <translation>حجم خط واجهة المستخدم</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="908"/>
+>>>>>>> traduction
         <source>Window Arrangement</source>
         <translation>ترتيب النوافذ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="535"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="517"/>
+>>>>>>> traduction
         <source>Manage Installed Documents</source>
         <translation>إدارة المستندات المثبتة</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="536"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="518"/>
+>>>>>>> traduction
         <source>Settings</source>
         <translation>إعدادات</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="538"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="520"/>
+>>>>>>> traduction
         <source>About</source>
         <translation>عن</translation>
     </message>
@@ -730,14 +783,28 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>قرمزي</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="928"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="910"/>
+>>>>>>> traduction
         <source>Default Documents</source>
         <translation>المستندات الافتراضية</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1062"/>
         <source>Single</source>
         <translation>مفرد</translation>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1044"/>
+        <source>Single</source>
+        <translation>مفرد</translation>
+    </message>
+    <message>
+        <source>BibleTime views documents such as Bibles and commentaries. These documents are downloaded and stored locally.There are currently no documents. Do you want to install documents now?</source>
+        <translation type="vanished">بايبل تايم يعرض مستندات مثل ترجمات وتفاسير الكتاب المقدس. هذه المستندات يتم تحميلها وحفظها على الجهاز. حالياً لا توجد مستندات. هل تريد تثبيت مستندات الآن؟</translation>
+>>>>>>> traduction
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="384"/>
@@ -775,6 +842,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="482"/>
         <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
         <translation type="unfinished"></translation>
@@ -791,31 +859,74 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="924"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="448"/>
+        <source>Suggested documents are the ESV Bible, the KJV Bible, the StrongsGreek lexicon, and the StrongsHebrew lexicon.Would you like to automatically download these documents?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="466"/>
+        <source>The &quot;Manage Installed Documents&quot; window will now be opened. You can open it later from the menus at the upper right of the Main view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="519"/>
+        <source>New Features</source>
+        <translation>خاصية جديدة</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="850"/>
+        <source>View References</source>
+        <translation>عرض المراجع</translation>
+    </message>
+    <message>
+        <location filename="../../src/mobile/qml/main.qml" line="906"/>
+>>>>>>> traduction
         <source>Text Font</source>
         <translation>خط النص</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="927"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="909"/>
+>>>>>>> traduction
         <source>Color Theme</source>
         <translation>نمط الألوان</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1063"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1045"/>
+>>>>>>> traduction
         <source>Tabbed</source>
         <translation>مبوب</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1064"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1046"/>
+>>>>>>> traduction
         <source>Auto-tile</source>
         <translation>تصفيف تلقائي</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1065"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1047"/>
+>>>>>>> traduction
         <source>Auto-tile horizontally</source>
         <translation>تصفيف تلقائي أفقي</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/mobile/qml/main.qml" line="1066"/>
+=======
+        <location filename="../../src/mobile/qml/main.qml" line="1048"/>
+>>>>>>> traduction
         <source>Auto-tile vertically</source>
         <translation>تصفيف تلقائي عمودي</translation>
     </message>

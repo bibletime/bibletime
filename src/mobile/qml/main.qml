@@ -445,6 +445,7 @@ Window {
         id: basicWorks
 
         background: btStyle.toolbarColor
+<<<<<<< HEAD
         text: {
             var lang = btStyle.systemLocale;
             var names = installAutomatic.getAutoInstallDocumentNames(lang);
@@ -463,6 +464,10 @@ Window {
             console.log(lang);
             return message;
         }
+=======
+        text: qsTr("Suggested documents are the ESV Bible, the KJV Bible, the StrongsGreek lexicon, and the StrongsHebrew lexicon." +
+              "Would you like to automatically download these documents?")
+>>>>>>> traduction
         visible: false
         z: 4
         onFinished: {
@@ -495,9 +500,13 @@ Window {
         visible: false
         z: 1
         onFinished: {
+<<<<<<< HEAD
             var lang = btStyle.systemLocale;
             var reference = installAutomatic.getAutoInstallReference(lang);
             windowManager.newWindowWithReference(reference[0], reference[1]);
+=======
+            windowManager.newWindowWithReference("ESV2011", "John 1:1");
+>>>>>>> traduction
         }
     }
 

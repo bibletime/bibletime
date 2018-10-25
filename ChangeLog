@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2018-10-17 Gary Holmlund <gary.holmlund@gmail.com>
     * Add name filter to the Install/Update/Remove works page.
 
@@ -8,6 +9,8 @@
       reference to copy. 
     * Implement edit of Personal commentary from the "read" window. 
 
+=======
+>>>>>>> traduction
 2018-08-02 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix #137
     * Update sources first time bookshelf wizard is used per session.

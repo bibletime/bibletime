@@ -127,9 +127,12 @@ FIND_PACKAGE(Qt5Xml ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Test ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Svg ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5PrintSupport ${REQUIRED_QT_VERSION} REQUIRED)
+<<<<<<< HEAD
 FIND_PACKAGE(Qt5Qml ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Quick ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5QuickWidgets ${REQUIRED_QT_VERSION} REQUIRED)
+=======
+>>>>>>> traduction
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
@@ -160,6 +163,25 @@ IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
 ENDIF()
 
+<<<<<<< HEAD
+=======
+FIND_PACKAGE(Qt5WebEngine QUIET)
+IF(NOT Qt5WebEngine_FOUND)
+    MESSAGE(STATUS "Using Qt WebKit")
+    FIND_PACKAGE(Qt5WebKit REQUIRED)
+    FIND_PACKAGE(Qt5WebKitWidgets REQUIRED)
+    SET(USEWEBENGINE OFF)
+ELSE()
+    MESSAGE(STATUS "Using Qt WebEngine")
+    FIND_PACKAGE(Qt5WebEngineWidgets REQUIRED)
+    SET(USEWEBENGINE ON)
+ENDIF()
+
+IF(USEWEBENGINE)
+    ADD_DEFINITIONS("-DUSEWEBENGINE")
+ENDIF()
+
+>>>>>>> traduction
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 
@@ -218,9 +240,17 @@ TARGET_LINK_LIBRARIES("bibletime"
 )
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+<<<<<<< HEAD
   TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ELSE()
   TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
+=======
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKitWidgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+ELSEIF(USEWEBENGINE)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebEngine Qt5::WebEngineWidgets Qt5::WebChannel Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+ELSE()
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+>>>>>>> traduction
 ENDIF()
 
 SET(BibleTime_LDFLAGS "")
