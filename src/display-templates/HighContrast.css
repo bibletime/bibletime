@@ -31,12 +31,8 @@ a {
     text-decoration:none;
     font-weight:normal;
     /*color: #F98100;*/
+    color: black;
     padding:1px;
-}
-a:hover {
-    color: #FF0000;
-    padding:1px;
-    text-decoration:underline;
 }
 
 .inline {
@@ -161,7 +157,7 @@ td.entry + td.entry {
 
 .sectiontitle {
     font-weight: bold;
-    font-size: 110%;
+    font-size: large;
 }
 #printer .sectiontitle {
     font-weight: bold;
@@ -173,12 +169,12 @@ td.entry + td.entry {
 
 .booktitle {
     font-weight: bold;
-    font-size: 120%;
+    font-size: large;
     font-variant: small-caps;
 }
 #printer .booktitle {
     font-weight: bold;
-    font-size: 120%;
+    font-size: large;
     font-variant: small-caps;
 }
 .foreign {
@@ -190,6 +186,14 @@ td.entry + td.entry {
     font-style:italic;
     /*font-weight: bold;*/
     font-size:0.9em;
+}
+.jesuswords a {
+    /* color: red; */
+    font-size: 0.9em;
+}
+a[name="crossref"] {
+    font-size: small;
+    color: blue
 }
 
 .quotation {
@@ -320,4 +324,7 @@ td.entry + td.entry {
 
 .highlightwords {
     background-color: #ffff66;
+}
+.highlightwords2 {
+    background-color: #ffaa00;
 }

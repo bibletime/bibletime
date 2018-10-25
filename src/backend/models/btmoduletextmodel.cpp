@@ -24,23 +24,32 @@
 #include "../managers/cswordbackend.h"
 #include "../rendering/ctextrendering.h"
 
-
 // Static so all models use the same colors
 static QColor s_linkColor = QColor(0,191,255);
 static QColor s_highlightColor = QColor(255,255,0);
 static QColor s_jesusWordsColor = QColor(255,0,0);
+static bool s_replaceColors = false;
+
+/*static*/ QColor BtModuleTextModel::getJesusWordsColor() {
+    return s_jesusWordsColor;
+}
 
 /*static*/ void BtModuleTextModel::setLinkColor(const QColor& color) {
+    s_replaceColors = true;
     s_linkColor = color;
 }
 
 /*static*/ void BtModuleTextModel::setHighlightColor(const QColor& color) {
+    s_replaceColors = true;
     s_highlightColor = color;
 }
 
 /*static*/ void BtModuleTextModel::setJesusWordsColor(const QColor& color) {
+    s_replaceColors = true;
     s_jesusWordsColor = color;
 }
+
+BtModuleTextFilter::~BtModuleTextFilter() {}
 
 
 
@@ -48,7 +57,9 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     : QAbstractListModel(parent),
       m_firstEntry(0),
       m_maxEntries(0),
-      m_textFilter(0) {
+      m_textFilter(nullptr) {
+
+    m_findState.enabled = false;
     QHash<int, QByteArray> roleNames;
     roleNames[ModuleEntry::ReferenceRole] =  "keyName";
     roleNames[ModuleEntry::TextRole] = "line";
@@ -57,7 +68,7 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     roleNames[ModuleEntry::Text3Role] = "text3";
     roleNames[ModuleEntry::Text4Role] = "text4";
     setRoleNames(roleNames);
-    m_displayOptions.verseNumbers = 0;
+    m_displayOptions.verseNumbers = 1;
     m_displayOptions.lineBreaks = 1;
     m_filterOptions.footnotes = 0;
     m_filterOptions.greekAccents = 1;
@@ -73,18 +84,17 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     m_filterOptions.textualVariants = 0;
 }
 
-void BtModuleTextModel::setModules(const QStringList& modules) {
-    beginResetModel();
+void BtModuleTextModel::reloadModules() {
 
     m_moduleInfoList.clear();
-    for (int i = 0; i < modules.count(); ++i) {
-        QString moduleName = modules.at(i);
+    for (int i = 0; i < m_modules.count(); ++i) {
+        QString moduleName = m_modules.at(i);
         CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
         m_moduleInfoList.append(module);
     }
 
+    beginResetModel();
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);
-
     if (isBible() || isCommentary()) {
         auto & m = firstModule->module();
         m.positionToTop();
@@ -94,7 +104,7 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     } else if(isLexicon()) {
         m_maxEntries =
                 static_cast<CSwordLexiconModuleInfo const *>(firstModule)
-                        ->entries().size();
+                ->entries().size();
     } else if(isBook()) {
         swordxx::TreeKeyIdx tk(
                 *static_cast<CSwordBookModuleInfo const *>(firstModule)
@@ -107,6 +117,11 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     }
 
     endResetModel();
+}
+
+void BtModuleTextModel::setModules(const QStringList& modules) {
+    m_modules = modules;
+    reloadModules();
 }
 
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
@@ -122,6 +137,14 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
         text = "invalid";
     if (m_textFilter)
         text = m_textFilter->processText(text);
+
+    if ( ! m_highlightWords.isEmpty()) {
+        QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        if (m_findState.enabled && index.row() == m_findState.index)
+            t = highlightFindPreviousNextField(t);
+        return QVariant(t);
+    }
+
     return QVariant(text);
 }
 
@@ -134,13 +157,13 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
     QString keyName = lexiconModule->entries()[row];
 
     if (role == ModuleEntry::TextRole ||
-        role == ModuleEntry::Text1Role) {
+            role == ModuleEntry::Text1Role) {
         Rendering::CEntryDisplay entryDisplay;
         QString text = entryDisplay.text(moduleList, keyName,
-            m_displayOptions, m_filterOptions);
+                                         m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
         text = replaceColors(text);
-        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        return text;
     }
     else if (role == ModuleEntry::ReferenceRole){
         return keyName;
@@ -160,9 +183,11 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
         moduleList << bookModule;
         QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
                                                      m_displayOptions, m_filterOptions,
-                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+                                                     m_displayOptions.verseNumbers ?
+                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
+                                                     Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace("#CHAPTERTITLE#", "");
-        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        return text;
     }
     return QString();
 }
@@ -191,7 +216,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             int column = role - ModuleEntry::Text1Role;
             CSwordModuleInfo const * module;
             if ((column + 1) > m_moduleInfoList.count())
-                    module = m_moduleInfoList.at(0);
+                module = m_moduleInfoList.at(0);
             else
                 module = m_moduleInfoList.at(column);
             modules.append(module);
@@ -200,23 +225,50 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
             // Personal commentary
             if (module->isWritable()) {
-                QString text = mKey.key() + "  " + mKey.rawText();
+                QString text;
+                if (verse == 1)
+                    text = "<center><h3>" + chapterTitle + "</h3></center>";
+                QString rawText = mKey.rawText();
+                if (rawText.isEmpty())
+                    rawText = "<span style=\"color:gray\"><small>" + tr("Click to edit") + "</small></span>";
+                text += QString::number(verse) + "  " + rawText;
+
                 return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
             }
         }
 
         text += Rendering::CEntryDisplay().textKeyRendering(modules,
-            key.key(), m_displayOptions, m_filterOptions,
-            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+                                                            key.key(), m_displayOptions, m_filterOptions,
+                                                            m_displayOptions.verseNumbers ?
+                                                            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
+                                                            Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text = replaceColors(text);
-        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
+        return text;
     }
     return QString();
 }
 
+QString BtModuleTextModel::highlightFindPreviousNextField(const QString& text) const {
+    QString t = text;
+    int from = 0;
+    for (int i = 0; i < m_findState.subIndex; ++i) {
+        int pos = t.indexOf("\"highlightwords\"", from);
+        if (pos == -1)
+            return t;
+        else {
+            from = pos + 1;
+        }
+    }
+    int position = from + 14; // highlightwords = 14, quote was already added
+    t.insert(position, "2");
+    return t;
+}
+
 QString BtModuleTextModel::replaceColors(const QString& text) const {
+    if (! s_replaceColors)
+        return text;
     QString newText = text;
     newText.replace("#JESUS_WORDS_COLOR#", s_jesusWordsColor.name());
     newText.replace("#LINK_COLOR#", s_linkColor.name());
@@ -325,22 +377,34 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
     return keyName;
 }
 
-void BtModuleTextModel::setHighlightWords(const QString& highlightWords) {
+void BtModuleTextModel::setFindState(const FindState& findState) {
+    if (m_findState.enabled && m_findState.index != findState.index) {
+        QModelIndex oldIndexToClear = index(m_findState.index, 0);
+        m_findState  = findState;
+        emit dataChanged(oldIndexToClear, oldIndexToClear);
+    } else {
+        m_findState  = findState;
+    }
+    if (findState.enabled) {
+        QModelIndex index = this->index(findState.index, 0);
+        emit dataChanged(index, index);
+    }
+}
+void BtModuleTextModel::setHighlightWords(
+        const QString& highlightWords, bool /* caseSensitive */) {
     beginResetModel();
     m_highlightWords = highlightWords;
     endResetModel();
 }
 
-FilterOptions BtModuleTextModel::getFilterOptions() const {
-    return m_filterOptions;
+void BtModuleTextModel::setDisplayOptions(const DisplayOptions & displayOptions) {
+    m_displayOptions = displayOptions;
 }
 
 void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {
+    beginResetModel();
     m_filterOptions = filterOptions;
-}
-
-void BtModuleTextModel::clearTextFilter() {
-    m_textFilter = nullptr;
+    endResetModel();
 }
 
 void BtModuleTextModel::setTextFilter(BtModuleTextFilter * textFilter) {

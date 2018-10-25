@@ -1,18 +1,23 @@
 
 ENABLE_TESTING(true)
 
+QT5_ADD_RESOURCES(test_RESOURCE_SOURCES
+    ${bibletime_SOURCE_DIR}/tests/tests.qrc
+)
+
 SET(test_OTHER_SOURCES
     ${bibletime_SOURCE_DIR}/src/frontend/messagedialog.cpp
 )
 
 FUNCTION(test_a_class testDir testClass )
-    PROJECT(test_${testClass})
     ADD_EXECUTABLE(test_${testClass}
         ${testDir}/test_${testClass}.cpp
         ${test_OTHER_SOURCES}
+        ${test_RESOURCE_SOURCES}
         ${test_${testClass}_MOC_SRC}
     )
-    SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS -std=c++14 )
+    SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS ${Sword_CFLAGS_OTHER} -std=c++14 )
+    QT5_USE_MODULES(test_${testClass} Widgets Xml Network Test)
     TARGET_LINK_LIBRARIES(test_${testClass} Qt5::Widgets Qt5::Xml Qt5::Network Qt5::Test)
     TARGET_LINK_LIBRARIES(test_${testClass}
         bibletime_common

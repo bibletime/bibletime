@@ -19,7 +19,7 @@ class QDialogButtonBox;
 class QLabel;
 class QTabWidget;
 class QUrl;
-class BtWebEngineView;
+class QTextBrowser;
 
 class BtAboutDialog: public QDialog {
         Q_OBJECT
@@ -30,7 +30,7 @@ class BtAboutDialog: public QDialog {
         void resizeEvent(QResizeEvent* event) override;
 
     private:
-        void initTab(BtWebEngineView *&tab);
+        void initTab(QTextBrowser *&tab);
 
         void retranslateUi();
         void retranslateBtTab();
@@ -44,11 +44,11 @@ class BtAboutDialog: public QDialog {
 
     private:
         QTabWidget *m_tabWidget;
-        BtWebEngineView *m_bibletimeTab;
-        BtWebEngineView *m_contributorsTab;
-        BtWebEngineView *m_swordTab;
-        BtWebEngineView *m_qtTab;
-        BtWebEngineView *m_licenceTab;
+        QTextBrowser *m_bibletimeTab;
+        QTextBrowser *m_contributorsTab;
+        QTextBrowser *m_swordTab;
+        QTextBrowser *m_qtTab;
+        QTextBrowser *m_licenceTab;
         QDialogButtonBox *m_buttonBox;
         QLabel *m_iconLabel;
         QLabel *m_versionLabel;

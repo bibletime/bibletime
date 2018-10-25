@@ -12,6 +12,7 @@
 
 #include "bibletime.h"
 
+#include <cmath>
 #include <cstdlib>
 #include <exception>
 #include <QAction>
@@ -39,9 +40,7 @@
 #include "frontend/displaywindow/cbookreadwindow.h"
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/chtmlwritewindow.h"
 #include "frontend/displaywindow/clexiconreadwindow.h"
-#include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/messagedialog.h"
@@ -49,6 +48,13 @@
 #include "util/btassert.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+
+/**
+ * Auto scroll time interval in milliseconds
+ * This value is divided by an integer (2, 3, 4, etc.) to get the
+ * time interval that is used.
+ */
+static const int autoScrollTimeInterval = 200;
 
 
 BibleTime *BibleTime::m_instance = nullptr;
@@ -60,6 +66,8 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
     BT_ASSERT(!m_instance);
     m_instance = this;
+
+    m_autoScroll.enabled = false;
 
     QSplashScreen *splash = nullptr;
     QString splashHtml;
@@ -169,40 +177,6 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modu
 CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, const QString& key) {
     return createReadDisplayWindow(QList<CSwordModuleInfo*>() << module, key);
 }
-
-CDisplayWindow * BibleTime::createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type) {
-    qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-
-    CDisplayWindow * const displayWindow =
-        (type == CPlainWriteWindow::HTMLWindow)
-        ? new CHTMLWriteWindow(QList<CSwordModuleInfo *>() << module, m_mdi)
-        : new CPlainWriteWindow(QList<CSwordModuleInfo *>() << module, m_mdi);
-    displayWindow->init();
-    m_mdi->addSubWindow(displayWindow);
-    if (m_mdi->subWindowList().isEmpty())
-        displayWindow->showMaximized();
-    else
-        displayWindow->show();
-    displayWindow->lookupKey(key);
-
-    qApp->restoreOverrideCursor();
-    return displayWindow;
-}
-
-CDisplayWindow* BibleTime::moduleEditPlain(CSwordModuleInfo *module) {
-    /// \todo Refactor this.
-    return createWriteDisplayWindow(module,
-                                    QString::null,
-                                    CPlainWriteWindow::PlainTextWindow);
-}
-
-CDisplayWindow* BibleTime::moduleEditHtml(CSwordModuleInfo *module) {
-    /// \todo Refactor this.
-    return createWriteDisplayWindow(module,
-                                    QString::null,
-                                    CPlainWriteWindow::HTMLWindow);
-}
-
 
 void BibleTime::searchInModule(CSwordModuleInfo *module) {
     /// \todo Refactor this.
@@ -325,6 +299,16 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
 bool BibleTime::event(QEvent* event) {
     if (event->type() == QEvent::Close)
         Search::CSearchDialog::closeDialog();
+    else if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+        if (keyEvent->modifiers() > 0)
+            return false;
+        int value = keyEvent->key();
+        bool accepted = autoScrollAnyKey(value);
+        if (accepted) {
+            return true;
+        }
+    }
     return QMainWindow::event(event);
 }
 
@@ -338,8 +322,36 @@ const CSwordModuleInfo* BibleTime::getCurrentModule() {
     return w->modules().first();
 }
 
+CDisplay* BibleTime::getCurrentDisplay() {
+    QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
+    if (!activeSubWindow)
+        return nullptr;
+    CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
+    if (!w)
+        return nullptr;
+    return w->displayWidget();
+}
+
+void BibleTime::setDisplayFocus() {
+    CDisplay* display = getCurrentDisplay();
+    if (display)
+        display->setDisplayFocus();
+}
+
 void BibleTime::openFindWidget()
 {
     m_findWidget->setVisible(true);
     m_findWidget->showAndSelect();
+}
+
+void BibleTime::setAutoScrollTimerInterval() {
+    if (m_autoScroll.speed == 0) {
+        m_autoScrollTimer.stop();
+        m_autoScrollTimer.setInterval(autoScrollTimeInterval/2);
+        m_autoScroll.enabled = false;
+    } else {
+        double timeDivisor = std::pow(0.6,std::abs(m_autoScroll.speed));
+        int interval = static_cast<int>(autoScrollTimeInterval*timeDivisor);
+        m_autoScrollTimer.setInterval(interval);
+    }
 }

@@ -57,6 +57,16 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
     m_prompt = tr("Select a reference.");
     m_moduleTextModel->setTextFilter(&m_textFilter);
 
+    FilterOptions filterOptions;
+    filterOptions.greekAccents = 1;
+    filterOptions.headings = 1;
+    filterOptions.hebrewCantillation = 1;
+    filterOptions.hebrewPoints = 1;
+    filterOptions.morphSegmentation = 1;
+    filterOptions.morphTags = 1;
+    filterOptions.redLetterWords = 1;
+    m_moduleTextModel->setFilterOptions(filterOptions);
+
     BT_CONNECT(CSwordBackend::instance(),
                SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
                this,
@@ -617,7 +627,14 @@ bool BtWindowInterface::isMagView() const {
 
 void BtWindowInterface::setMagView(bool magView) {
     m_magView = magView;
-    FilterOptions filterOptions = m_moduleTextModel->getFilterOptions();
+    FilterOptions filterOptions;
+    filterOptions.greekAccents = 1;
+    filterOptions.headings = 1;
+    filterOptions.hebrewCantillation = 1;
+    filterOptions.hebrewPoints = 1;
+    filterOptions.morphSegmentation = 1;
+    filterOptions.morphTags = 1;
+    filterOptions.redLetterWords = 1;
     filterOptions.scriptureReferences = magView ? 1 : 0;
     filterOptions.strongNumbers = magView ? 1 : 0;
     filterOptions.footnotes = magView ? 1 : 0;
@@ -743,7 +760,7 @@ QString BtWindowInterface::getHighlightWords() const {
 
 void BtWindowInterface::setHighlightWords(const QString& words) {
     m_highlightWords = words;
-    m_moduleTextModel->setHighlightWords(words);
+    m_moduleTextModel->setHighlightWords(words, false);
 }
 
 void BtWindowInterface::setHistoryPoint() {

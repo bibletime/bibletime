@@ -1,50 +1,75 @@
 /*********
 *
-* In the name of the Father, and of the Son, and of the Holy Spirit.
-*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2018 by the BibleTime developers.
-* The BibleTime source code is licensed under the GNU General Public License
-* version 2.0.
+* Copyright 1999-2016 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "frontend/display/chtmlwritedisplay.h"
+#include "frontend/bttexteditdialog.h"
 
+#include <QAction>
+#include <QDialogButtonBox>
 #include <QFontComboBox>
-#include <QMenu>
+#include <QLabel>
+#include <QPushButton>
 #include <QTextEdit>
 #include <QToolBar>
-#include <QToolTip>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include "backend/config/btconfig.h"
-#include "frontend/bibletimeapp.h"
 #include "frontend/display/btcolorwidget.h"
 #include "frontend/display/btfontsizewidget.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/chtmlwritewindow.h"
-#include "util/btassert.h"
 #include "util/btconnect.h"
 #include "util/cresmgr.h"
-
-
-class BtActionCollection;
 
 namespace {
 const QString CHTMLWriteDisplayFontKey = "HtmlWriteDisplay/font";
 const QString CHTMLWriteDisplayFontColorKey = "HtmlWriteDisplay/fontColor";
 }
 
-CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* parent)
-    : CPlainWriteDisplay(parentWindow, parent)
-    , m_handingFormatChangeFromEditor(false)
-{
+BtTextEditDialog::BtTextEditDialog(QWidget* parent)
+        : QDialog(parent),
+        m_buttons(new QDialogButtonBox(this)),
+        m_textEdit(new QTextEdit(this)),
+        m_toolBar(new QToolBar(this)),
+        m_handingFormatChangeFromEditor(false) {
+
+    m_buttons->addButton(QDialogButtonBox::Save);
+    m_buttons->addButton(QDialogButtonBox::Cancel);
+    BT_CONNECT(m_buttons, SIGNAL(accepted()), this, SLOT(accept()));
+    BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+
+    QVBoxLayout * vLayout = new QVBoxLayout(this);
+    vLayout->addWidget(m_toolBar);
+    vLayout->addWidget(m_textEdit);
+    vLayout->addWidget(m_buttons);
+
+    setMinimumWidth(400);
+
+    initActions();
+    setupToolBar();
+
+    m_textEdit->setAcceptRichText(true);
+    m_textEdit->setAcceptDrops(true);
+
+    BT_CONNECT(m_textEdit, SIGNAL(currentCharFormatChanged(QTextCharFormat)),
+               this, SLOT(slotCurrentCharFormatChanged(QTextCharFormat)),
+               Qt::DirectConnection);
+
+}
+
+void BtTextEditDialog::setTitle(const QString& text) {
+    setWindowTitle(text);
+}
+
+void BtTextEditDialog::initActions() {
 
     BtConfig & conf = btConfig();
-    setTextColor(conf.sessionValue(CHTMLWriteDisplayFontColorKey, textColor()));
-    QFont f = conf.sessionValue(CHTMLWriteDisplayFontKey, currentFont());
-    setCurrentFont(f);
-
+    m_textEdit->setTextColor(conf.sessionValue(CHTMLWriteDisplayFontColorKey, m_textEdit->textColor()));
+    QFont f = conf.sessionValue(CHTMLWriteDisplayFontKey, m_textEdit->currentFont());
+    m_textEdit->setCurrentFont(f);
 
     //--------------------bold toggle-------------------------
     m_actions.bold = new QAction(
@@ -118,61 +143,46 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
                Qt::DirectConnection);
     m_actions.alignRight->setToolTip( tr("Align right") );
 
-    setAcceptRichText(true);
-    setAcceptDrops(true);
-    viewport()->setAcceptDrops(true);
-
-    BT_CONNECT(this, SIGNAL(currentCharFormatChanged(QTextCharFormat)),
-               this, SLOT(slotCurrentCharFormatChanged(QTextCharFormat)),
-               Qt::DirectConnection);
 }
 
-void CHTMLWriteDisplay::setText(const QString & newText) {
-    QTextEdit::setHtml(newText);
-}
-
-const QString CHTMLWriteDisplay::plainText() {
-    return QTextEdit::toPlainText();
-}
-
-void CHTMLWriteDisplay::toggleBold(bool checked) {
+void BtTextEditDialog::toggleBold(bool checked) {
     if (!m_handingFormatChangeFromEditor)
-        setFontWeight(checked ? QFont::Bold : QFont::Normal);
+        m_textEdit->setFontWeight(checked ? QFont::Bold : QFont::Normal);
 }
 
-void CHTMLWriteDisplay::toggleItalic(bool checked) {
+void BtTextEditDialog::toggleItalic(bool checked) {
     if (!m_handingFormatChangeFromEditor)
-        setFontItalic(checked);
+        m_textEdit->setFontItalic(checked);
 }
 
-void CHTMLWriteDisplay::toggleUnderline(bool checked) {
+void BtTextEditDialog::toggleUnderline(bool checked) {
     if (!m_handingFormatChangeFromEditor)
-        setFontUnderline(checked);
+        m_textEdit->setFontUnderline(checked);
 }
 
-void CHTMLWriteDisplay::alignLeft(bool set) {
-    if (!m_handingFormatChangeFromEditor && set && (alignment() != Qt::AlignLeft)) {
-        setAlignment(Qt::AlignLeft);
+void BtTextEditDialog::alignLeft(bool set) {
+    if (!m_handingFormatChangeFromEditor && set && (m_textEdit->alignment() != Qt::AlignLeft)) {
+        m_textEdit->setAlignment(Qt::AlignLeft);
         alignmentChanged(Qt::AlignLeft);
     }
 }
 
-void CHTMLWriteDisplay::alignCenter(bool set) {
-    if (!m_handingFormatChangeFromEditor && set && (alignment() != Qt::AlignHCenter)) {
-        setAlignment(Qt::AlignHCenter);
+void BtTextEditDialog::alignCenter(bool set) {
+    if (!m_handingFormatChangeFromEditor && set && (m_textEdit->alignment() != Qt::AlignHCenter)) {
+        m_textEdit->setAlignment(Qt::AlignHCenter);
         alignmentChanged(Qt::AlignHCenter);
     }
 }
 
-void CHTMLWriteDisplay::alignRight(bool set) {
-    if (!m_handingFormatChangeFromEditor && set && (alignment() != Qt::AlignRight)) {
-        setAlignment(Qt::AlignRight);
+void BtTextEditDialog::alignRight(bool set) {
+    if (!m_handingFormatChangeFromEditor && set && (m_textEdit->alignment() != Qt::AlignRight)) {
+        m_textEdit->setAlignment(Qt::AlignRight);
         alignmentChanged(Qt::AlignRight);
     }
 }
 
 /** The text's alignment changed. Enable the right buttons. */
-void CHTMLWriteDisplay::alignmentChanged( int a ) {
+void BtTextEditDialog::alignmentChanged( int a ) {
     BT_ASSERT(!m_handingFormatChangeFromEditor);
     bool alignLeft = false;
     bool alignCenter = false;
@@ -197,44 +207,16 @@ void CHTMLWriteDisplay::alignmentChanged( int a ) {
     m_actions.alignRight->setChecked( alignRight );
 }
 
-void CHTMLWriteDisplay::slotCurrentCharFormatChanged(const QTextCharFormat &) {
-    BT_ASSERT(!m_handingFormatChangeFromEditor);
-    m_handingFormatChangeFromEditor = true;
-    QFont f = currentFont();
-    emit signalFontChanged(f);
-    emit signalFontSizeChanged(f.pointSize());
-    emit signalFontColorChanged(textColor());
 
-    m_actions.bold->setChecked(f.bold());
-    m_actions.italic->setChecked(f.italic());
-    m_actions.underline->setChecked(f.underline());
-    m_handingFormatChangeFromEditor = false;
+void BtTextEditDialog::setupToolBar() {
 
-    BtConfig & conf = btConfig();
-    conf.setSessionValue(CHTMLWriteDisplayFontKey, currentFont());
-    conf.setSessionValue(CHTMLWriteDisplayFontColorKey, textColor());
-}
-
-void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
-    if (!m_handingFormatChangeFromEditor)
-        setFontPointSize(static_cast<qreal>(newSize));
-}
-
-void CHTMLWriteDisplay::slotFontFamilyChosen(const QFont& font) {
-    if (!m_handingFormatChangeFromEditor)
-        setFontFamily(font.family());
-}
-
-void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) {
-    Q_UNUSED(actions);
-
-    QFont f = currentFont();
+    QFont f = m_textEdit->currentFont();
 
     //--------------------font chooser-------------------------
     QFontComboBox* fontFamilyCombo = new QFontComboBox(this);
     fontFamilyCombo->setCurrentFont(f);
     fontFamilyCombo->setToolTip( tr("Font") );
-    bar->addWidget(fontFamilyCombo);
+    m_toolBar->addWidget(fontFamilyCombo);
     BT_CONNECT(fontFamilyCombo, SIGNAL(currentFontChanged(QFont const &)),
                this,            SLOT(slotFontFamilyChosen(QFont const &)),
                Qt::DirectConnection);
@@ -246,7 +228,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * action
     BtFontSizeWidget* fontSizeChooser = new BtFontSizeWidget(this);
     fontSizeChooser->setFontSize(f.pointSize());
     fontSizeChooser->setToolTip( tr("Font size") );
-    bar->addWidget(fontSizeChooser);
+    m_toolBar->addWidget(fontSizeChooser);
     BT_CONNECT(fontSizeChooser, SIGNAL(fontSizeChanged(int)),
                this,            SLOT(slotFontSizeChosen(int)),
                Qt::DirectConnection);
@@ -255,25 +237,64 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * action
 
     //--------------------color button-------------------------
     BtColorWidget* fontColorChooser = new BtColorWidget();
-    fontColorChooser->setColor(textColor());
+    fontColorChooser->setColor(m_textEdit->textColor());
     fontColorChooser->setToolTip(tr("Font color"));
-    bar->addWidget(fontColorChooser);
+    m_toolBar->addWidget(fontColorChooser);
     BT_CONNECT(fontColorChooser, SIGNAL(changed(QColor const &)),
-               this,             SLOT(setTextColor(QColor const &)),
+               m_textEdit,       SLOT(setTextColor(QColor const &)),
                Qt::DirectConnection);
     BT_CONNECT(this,             SIGNAL(signalFontColorChanged(QColor const &)),
                fontColorChooser, SLOT(setColor(QColor)), Qt::DirectConnection);
 
-    bar->addSeparator();
+    m_toolBar->addSeparator();
 
-    bar->addAction(m_actions.bold);
-    bar->addAction(m_actions.italic);
-    bar->addAction(m_actions.underline);
+    m_toolBar->addAction(m_actions.bold);
+    m_toolBar->addAction(m_actions.italic);
+    m_toolBar->addAction(m_actions.underline);
 
     //seperate formatting from alignment buttons
-    bar->addSeparator();
+    m_toolBar->addSeparator();
 
-    bar->addAction(m_actions.alignLeft);
-    bar->addAction(m_actions.alignCenter);
-    bar->addAction(m_actions.alignRight);
+    m_toolBar->addAction(m_actions.alignLeft);
+    m_toolBar->addAction(m_actions.alignCenter);
+    m_toolBar->addAction(m_actions.alignRight);
 }
+
+void BtTextEditDialog::slotCurrentCharFormatChanged(const QTextCharFormat &) {
+    BT_ASSERT(!m_handingFormatChangeFromEditor);
+    m_handingFormatChangeFromEditor = true;
+    QFont f = m_textEdit->currentFont();
+    emit signalFontChanged(f);
+    emit signalFontSizeChanged(f.pointSize());
+    emit signalFontColorChanged(m_textEdit->textColor());
+
+    m_actions.bold->setChecked(f.bold());
+    m_actions.italic->setChecked(f.italic());
+    m_actions.underline->setChecked(f.underline());
+    m_handingFormatChangeFromEditor = false;
+
+    BtConfig & conf = btConfig();
+    conf.setSessionValue(CHTMLWriteDisplayFontKey, m_textEdit->currentFont());
+    conf.setSessionValue(CHTMLWriteDisplayFontColorKey, m_textEdit->textColor());
+}
+
+void BtTextEditDialog::slotFontSizeChosen(int newSize) {
+    if (!m_handingFormatChangeFromEditor)
+        m_textEdit->setFontPointSize(static_cast<qreal>(newSize));
+}
+
+void BtTextEditDialog::slotFontFamilyChosen(const QFont& font) {
+    if (!m_handingFormatChangeFromEditor)
+        m_textEdit->setFontFamily(font.family());
+}
+
+QString BtTextEditDialog::text() const {
+    return m_textEdit->toHtml();
+}
+
+void BtTextEditDialog::setText(const QString& text) {
+    m_textEdit->setHtml(text);
+}
+
+
+

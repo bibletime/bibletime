@@ -38,8 +38,7 @@ body {
 #content tr:nth-child(even)  { background-color: #EDEDED; }
 
 /* The a links are the normal HTML hyperlinks. Links without a class attribute are hyperlinks into the web */
-a { color:#FF0004; padding:0; }
-a:hover { }
+a { text-decoration:none; color: black; padding:0; }
 
 .inline {
     display: inline;
@@ -86,11 +85,6 @@ td.entry, td.currententry {
 }
 .currententry.inline {
     line-height:1.6em;
-}
-table .currententry:nth-child(1) {
-    margin-left:0;
-    border-left:10px solid #99B4FF;
-    /*border-left:10px solid #F5FF6A;*/
 }
 /* .currententry[dir=rtl] { */
 /* } */
@@ -156,10 +150,9 @@ td.entry + td.entry {
 *for linked and non linked text in the cross reference*/
 .crossreference a {
    color:#8f2627;
-   /*Get rid of underlines on the notes when not hovered*/
+   /*Get rid of underlines on the notes*/
    text-decoration: none;
 }
-.crossreference a:hover {}
 
 /* Alternative reading as defined in the OSIS specs. The information about the alternative text is displayed in the info display. It's
 often a good idea to format this the same as footnotes
@@ -177,7 +170,7 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 .sectiontitle {
      padding:0.3em;
      /*text-shadow:gray 0px 0px 3px;*/
-     font-size:1.3em;
+     font-size:large;
      font-weight:bold;
      text-transform:uppercase;
      padding-bottom:2px;
@@ -195,7 +188,17 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 
 /* Words spoken by Jesus Christ */
 /*.jesuswords { color: red; }*/
+
 .jesuswords { color: #B60000; }
+
+.jesuswords a {
+    color: #B60000;
+}
+
+a[name="crossref"] {
+    font-size: small;
+    color: #B60000
+}
 
 /* An introduction to a module, book or chapter */
 .introduction { }
@@ -306,4 +309,7 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 
 .highlightwords {
     background-color: #ffff66;
+}
+.highlightwords2 {
+    background-color: #ffaa00;
 }

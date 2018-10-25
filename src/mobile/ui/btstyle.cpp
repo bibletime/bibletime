@@ -505,7 +505,7 @@ void BtStyle::setHeight(int value) {
 }
 
 QString BtStyle::getAppVersion() {
-    return  "3.00";
+    return  "3.02";
 }
 
 QString BtStyle::getGitVersion() const {

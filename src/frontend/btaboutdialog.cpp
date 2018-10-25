@@ -19,10 +19,11 @@
 #include <QFontMetrics>
 #include <QLabel>
 #include <QTabWidget>
+#include <QTextBrowser>
 #include <QTextStream>
+#include <QUrl>
 #include <QVBoxLayout>
 #include <swordxx/version.h>
-#include "frontend/btwebengineview.h"
 #include "util/btconnect.h"
 #include "util/bticons.h"
 #include "util/directory.h"
@@ -100,12 +101,15 @@ void BtAboutDialog::resizeEvent(QResizeEvent* event) {
 }
 
 
-void BtAboutDialog::initTab(BtWebEngineView *&tab) {
-    tab = new BtWebEngineView(this);
-    BtWebEnginePage * page = new BtWebEnginePage(this);
-    tab->setPage(page);
+void BtAboutDialog::initTab(QTextBrowser *&tab) {
+    tab = new QTextBrowser(this);
+    tab->setOpenExternalLinks(true);
+    tab->setStyleSheet("QTextEdit { background-color: rgb(255, 255, 255) }");
+    QFont font = tab->font();
+    font.setPointSize(font.pointSize()+2);
+    tab->setFont(font);
     m_tabWidget->addTab(tab, "");
-    BT_CONNECT(tab->btPage(), SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
+    BT_CONNECT(tab, SIGNAL(anchorClicked(const QUrl&)), this, SLOT(linkClicked(const QUrl&)));
 }
 
 void BtAboutDialog::retranslateUi() {
@@ -129,7 +133,7 @@ void BtAboutDialog::retranslateBtTab() {
     content += tr("(c)1999-2016, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("http://www.bibletime.info", "www.bibletime.info")
                "</p>";
-    m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
+    m_bibletimeTab->setText(MAKE_HTML(m_bibletimeTab, content));
 }
 
 void BtAboutDialog::retranslateContributorsTab() {
@@ -223,7 +227,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                           "https://github.com/bibletime/bibletime/issues"));
     content += "</p>";
 
-    m_contributorsTab->setHtml(MAKE_HTML(m_contributorsTab, content));
+    m_contributorsTab->setText(MAKE_HTML(m_contributorsTab, content));
 }
 
 
@@ -240,7 +244,7 @@ void BtAboutDialog::retranslateSwordTab() {
     content += MAKE_LINK_STATIC("https://github.com/swordxx/swordxx",
                                 "github.com/swordxx/swordxx") "</p>";
 
-    m_swordTab->setHtml(MAKE_HTML(m_swordTab, content));
+    m_swordTab->setText(MAKE_HTML(m_swordTab, content));
 }
 
 void BtAboutDialog::retranslateQtTab() {
@@ -253,8 +257,11 @@ void BtAboutDialog::retranslateQtTab() {
     content += "</p><p>";
     content += tr("Qt is a cross-platform application and UI framework, created with C++ "
                   "language. It has been released under the LGPL license.");
-    content += " " MAKE_LINK(content, "http://qt", tr("More info...")) "</p>";
-    m_qtTab->setHtml(MAKE_HTML(m_qtTab, content));
+
+    // See BtUrlHandler
+    content += " " MAKE_LINK(content, "qt://about", tr("More info...")) "</p>";
+
+    m_qtTab->setText(MAKE_HTML(m_qtTab, content));
 }
 
 void BtAboutDialog::retranslateLicenceTab() {
@@ -275,7 +282,7 @@ void BtAboutDialog::retranslateLicenceTab() {
 
         QString content(QTextStream(&licFile).readAll().replace("<!-- TR TEXT -->", text));
         content.replace("<!-- HEADER -->", MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
-        m_licenceTab->setHtml(content);
+        m_licenceTab->setText(content);
         licFile.close();
     }
 }

@@ -1,4 +1,16 @@
 <RCC>
+    <qresource prefix="/share/bibletime/license">
+        <file>qml/Back.qml</file>
+    </qresource>
+    <qresource prefix="/share/bibletime/pics">
+        <file>qml/Back.qml</file>
+    </qresource>
+    <qresource prefix="/share/bibletime/docs/handbook/en">
+        <file>qml/Back.qml</file>
+    </qresource>
+    <qresource prefix="/share/bibletime/docs/howto/en">
+        <file>qml/Back.qml</file>
+    </qresource>
     <qresource prefix="/share/bibletime">
         <file>qml/About.qml</file>
         <file>qml/AddBookmark.qml</file>

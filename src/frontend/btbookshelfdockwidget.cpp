@@ -127,19 +127,6 @@ void BtBookshelfDockWidget::initMenus() {
     m_itemActionGroup->addAction(m_itemSearchAction);
     m_itemContextMenu->addAction(m_itemSearchAction);
 
-    m_itemEditMenu = new QMenu(this);
-    m_itemEditMenu->setIcon(RM::editModuleMenu::icon());
-    m_itemContextMenu->addMenu(m_itemEditMenu);
-    m_itemEditPlainAction = new QAction(this);
-    m_itemEditPlainAction->setIcon(RM::editModulePlain::icon());
-    m_itemActionGroup->addAction(m_itemEditPlainAction);
-    m_itemEditMenu->addAction(m_itemEditPlainAction);
-
-    m_itemEditHtmlAction = new QAction(this);
-    m_itemEditHtmlAction->setIcon(RM::editModuleHTML::icon());
-    m_itemActionGroup->addAction(m_itemEditHtmlAction);
-    m_itemEditMenu->addAction(m_itemEditHtmlAction);
-
     m_itemUnlockAction = new QAction(this);
     m_itemUnlockAction->setIcon(RM::unlockModule::icon());
     m_itemActionGroup->addAction(m_itemUnlockAction);
@@ -158,9 +145,6 @@ void BtBookshelfDockWidget::retranslateUi() {
     setWindowTitle(tr("Bookshelf"));
 
     m_itemOpenAction->setText(tr("&Open"));
-    m_itemEditMenu->setTitle(tr("&Edit"));
-    m_itemEditPlainAction->setText(tr("&Plain text"));
-    m_itemEditHtmlAction->setText(tr("&HTML"));
     m_itemUnlockAction->setText(tr("&Unlock..."));
     m_itemAboutAction->setText(tr("&About..."));
 
@@ -212,12 +196,6 @@ void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
     else if (action == m_itemSearchAction) {
         emit moduleSearchTriggered(module);
     }
-    else if (action == m_itemEditPlainAction) {
-        emit moduleEditPlainTriggered(module);
-    }
-    else if (action == m_itemEditHtmlAction) {
-        emit moduleEditHtmlTriggered(module);
-    }
     else if (action == m_itemUnlockAction) {
         emit moduleUnlockTriggered(module);
     }
@@ -232,7 +210,6 @@ void BtBookshelfDockWidget::slotPrepareItemContextMenu() {
     m_itemOpenAction->setEnabled(!module->isLocked());
     m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
     m_itemSearchAction->setEnabled(!module->isLocked());
-    m_itemEditMenu->setEnabled(module->isWritable());
     m_itemUnlockAction->setEnabled(module->isLocked());
 }
 

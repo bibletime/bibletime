@@ -14,8 +14,8 @@
 
 #include <QDesktopServices>
 #include <QDialogButtonBox>
+#include <QTextBrowser>
 #include <QVBoxLayout>
-#include <frontend/btwebengineview.h>
 #include "frontend/messagedialog.h"
 #include "util/btconnect.h"
 
@@ -29,12 +29,13 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
 
     QVBoxLayout *l = new QVBoxLayout;
 
-    m_webView = new BtWebEngineView(this);
-    BtWebEnginePage * page = new BtWebEnginePage(this);
-    m_webView->setPage(page);
-    BT_CONNECT(m_webView->btPage(), SIGNAL(linkClicked(QUrl)),
+    m_textBrowser = new QTextBrowser(this);
+    QFont font = m_textBrowser->font();
+    font.setPointSize(font.pointSize()+2);
+    m_textBrowser->setFont(font);
+    BT_CONNECT(m_textBrowser, SIGNAL(anchorClicked(QUrl)),
                this,      SLOT(linkClicked(QUrl)));
-    l->addWidget(m_webView);
+    l->addWidget(m_textBrowser);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
     BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
@@ -214,7 +215,7 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
                 .arg("http://lucene.apache.org/java/1_4_3/queryparsersyntax.html");
     html += "</p></body></html>";
 
-    m_webView->setHtml(html);
+    m_textBrowser->setHtml(html);
 
     message::prepareDialogBox(m_buttons);
 }

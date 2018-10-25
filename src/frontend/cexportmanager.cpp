@@ -91,6 +91,9 @@ bool CExportManager::saveKey(CSwordKey const * const key,
                         QString::fromStdString(vk->getLowerBound().getText()),
                         QString::fromStdString(vk->getUpperBound().getText()),
                         modules);
+            text.replace("#CHAPTERTITLE#",
+                         QString::fromStdString(vk->getBookName())
+                         + " " + QString::number(vk->getChapter()));
         } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
         }

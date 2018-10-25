@@ -23,7 +23,7 @@
 #include "frontend/bibletime.h"
 #include "frontend/bibletimeapp.h"
 #include "frontend/cexportmanager.h"
-#include "frontend/display/bthtmlreaddisplay.h"
+#include "frontend/display/btmodelviewreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
@@ -39,7 +39,8 @@
 
 
 CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)
-        : CReadWindow(moduleList, parent) {
+    : CReadWindow(moduleList, parent) {
+    setObjectName("CLexiconReadWindow");
     moduleList.first();
     setKey( CSwordKey::createInstance(moduleList.first()) );
 }
@@ -98,14 +99,13 @@ void CLexiconReadWindow::initActions() {
     initAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
     initAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
 
-    m_actions.selectAll = &ac->action("selectAll");
     m_actions.findText = &ac->action("findText");
 
     m_actions.findStrongs =
             &initAction(
-                    CResMgr::displaywindows::general::findStrongs::actionName,
-                    this,
-                    &CLexiconReadWindow::openSearchStrongsDialog);
+                CResMgr::displaywindows::general::findStrongs::actionName,
+                this,
+                &CLexiconReadWindow::openSearchStrongsDialog);
 
     m_actions.copy.reference =
             &initAction("copyReferenceOnly",
@@ -116,7 +116,7 @@ void CLexiconReadWindow::initActions() {
                                        displayWidget()->connectionsProxy(),
                                        &CDisplayConnections::copyAll);
 
-    m_actions.copy.selectedText = &ac->action("copySelectedText");
+    m_actions.copy.referencedText = &ac->action("copyReferencedText");
 
     m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
                                               this,
@@ -165,8 +165,10 @@ void CLexiconReadWindow::initConnections() {
 
 void CLexiconReadWindow::initView() {
     // Create display widget for this window
-    setDisplayWidget(new BtHtmlReadDisplay(this, this));
+    auto readDisplay = new BtModelViewReadDisplay(this, this);
+    setDisplayWidget(readDisplay);
     setCentralWidget( displayWidget()->view() );
+    readDisplay->setModules(getModuleList());
     setWindowIcon(util::tool::getIconForModule(modules().first()));
 
     // Create the Navigation toolbar
@@ -200,7 +202,7 @@ void CLexiconReadWindow::initToolbars() {
 
     //Tools toolbar
     buttonsToolBar()->addAction(
-            &actionCollection()->action(
+                &actionCollection()->action(
                     CResMgr::displaywindows::general::search::actionName));
 
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
@@ -228,7 +230,7 @@ void CLexiconReadWindow::setupMainWindowToolBars() {
 
     // Tools toolbar
     btMainWindow()->toolsToolBar()->addAction(
-            &actionCollection()->action(
+                &actionCollection()->action(
                     CResMgr::displaywindows::general::search::actionName));
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
@@ -240,21 +242,19 @@ void CLexiconReadWindow::setupPopupMenu() {
     popup()->setIcon(util::tool::getIconForModule(modules().first()));
     popup()->addAction(m_actions.findText);
     popup()->addAction(m_actions.findStrongs);
-    popup()->addAction(m_actions.selectAll);
     popup()->addSeparator();
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
-
+    m_actions.copyMenu->addAction(m_actions.copy.referencedText);
+    m_actions.copyMenu->addSeparator();
     m_actions.copyMenu->addAction(m_actions.copy.reference);
     m_actions.copyMenu->addAction(m_actions.copy.entry);
-    m_actions.copyMenu->addSeparator();
-    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
     popup()->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(
-        tr("Save..."),
-        popup()
-    );
+                tr("Save..."),
+                popup()
+                );
     m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
     m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
@@ -268,9 +268,9 @@ void CLexiconReadWindow::setupPopupMenu() {
     popup()->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(
-        tr("Print..."),
-        popup()
-    );
+                tr("Print..."),
+                popup()
+                );
     m_actions.printMenu->addAction(m_actions.print.reference);
     m_actions.printMenu->addAction(m_actions.print.entry);
     popup()->addMenu(m_actions.printMenu);
@@ -287,13 +287,16 @@ void CLexiconReadWindow::updatePopupMenu() {
 
     bool const hasActiveAnchor = display.hasActiveAnchor();
     m_actions.copy.reference->setEnabled(hasActiveAnchor);
-    m_actions.copy.selectedText->setEnabled(display.hasSelection());
 
     m_actions.print.reference->setEnabled(hasActiveAnchor);
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CReadWindow::reload(reason);
+
+    if (BtModelViewReadDisplay * const dw =
+            dynamic_cast<BtModelViewReadDisplay *>(displayWidget()))
+        dw->settingsChanged();
 
     actionCollection()->readShortcuts("Lexicon shortcuts");
 }
@@ -323,7 +326,7 @@ void CLexiconReadWindow::saveAsHTML() {
 void CLexiconReadWindow::saveRawHTML() {
     QString savefilename = QFileDialog::getSaveFileName();
     if (savefilename.isEmpty()) return;
-    BtHtmlReadDisplay* disp = dynamic_cast<BtHtmlReadDisplay*>(displayWidget());
+    BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
     if (disp) {
         QFile file(savefilename);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {

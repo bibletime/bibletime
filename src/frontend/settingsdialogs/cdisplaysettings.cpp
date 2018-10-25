@@ -23,7 +23,6 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "frontend/bibletimeapp.h"
-#include "frontend/btwebengineview.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
@@ -32,27 +31,6 @@
 
 
 using SBLCI = std::list<std::string>::const_iterator;
-
-// ***********************
-// Container for BtWebEngineView to control its size
-class CWebViewerWidget : public QWidget {
-    public:
-        CWebViewerWidget(QWidget* parent = nullptr);
-        ~CWebViewerWidget();
-        QSize sizeHint() const override;
-};
-
-CWebViewerWidget::CWebViewerWidget(QWidget* parent)
-        : QWidget(parent) {
-}
-
-CWebViewerWidget::~CWebViewerWidget() {
-}
-
-QSize CWebViewerWidget::sizeHint () const {
-    return QSize(100, 100);
-}
-// ************************
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
@@ -84,15 +62,19 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     formLayout->addRow(m_availableLabel, m_styleChooserCombo );
     mainLayout->addLayout(formLayout);
 
-    QWidget* webViewWidget = new CWebViewerWidget(this);
-    QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
-    m_stylePreviewViewer = new BtWebEngineView(webViewWidget);
-    m_previewLabel = new QLabel(webViewWidget);
-    m_previewLabel->setBuddy(m_stylePreviewViewer);
-    webViewLayout->addWidget(m_previewLabel);
-    webViewLayout->addWidget(m_stylePreviewViewer);
-    webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-    mainLayout->addWidget(webViewWidget);
+    m_previewLabel = new QLabel(this);
+    m_previewLabel->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
+    m_stylePreviewViewer = new QLabel(this);
+    m_stylePreviewViewer->setWordWrap(true);
+    m_stylePreviewViewer->setTextFormat(Qt::RichText);
+    m_stylePreviewViewer->setStyleSheet("QLabel { background-color: rgb(255, 255, 255) }");
+    m_stylePreviewViewer->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+    m_stylePreviewViewer->setAlignment(Qt::AlignTop);
+    m_stylePreviewViewer->setMargin(15);
+
+    mainLayout->addWidget(m_previewLabel);
+    mainLayout->addWidget(m_stylePreviewViewer);
 
     CDisplayTemplateMgr * tMgr = CDisplayTemplateMgr::instance();
     m_styleChooserCombo->addItems(tMgr->availableTemplates());
@@ -238,14 +220,10 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.")),
                      settings));
 
-    settings.highlight = true;
-
     tree.append( new CTextRendering::KeyTreeItem(
                      QString("\n<span class=\"entryname\"><a name=\"John317\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
                      .arg(tr("For God didn't send his Son into the world to judge the world, but that the world should be saved through him.")),
                      settings));
-
-    settings.highlight = false;
 
     tree.append( new CTextRendering::KeyTreeItem(
                      QString("\n<span class=\"entryname\"><a name=\"John318\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
@@ -271,7 +249,9 @@ void CDisplaySettingsPage::updateStylePreview() {
     const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
     btConfig().setValue("GUI/activeTemplateName", styleName);
     CDisplayRendering render;
-    m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
+    QString text = render.renderKeyTree(tree);
+    text.replace("#CHAPTERTITLE#", "");
+    m_stylePreviewViewer->setText(text);
 
     btConfig().setValue("GUI/activeTemplateName", oldStyleName);
 }

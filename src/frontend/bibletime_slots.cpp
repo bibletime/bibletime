@@ -32,6 +32,7 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/bookshelfwizard/btbookshelfwizard.h"
 #include "frontend/display/btfindwidget.h"
+#include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/messagedialog.h"
@@ -300,6 +301,7 @@ void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
 {
     if (window == nullptr)
         m_findWidget->setVisible(false);
+    autoScrollStop();
 }
 
 /* Search default Bible slot
@@ -400,7 +402,6 @@ struct WindowLoadStatus {
 
 void BibleTime::reloadProfile() {
     using MAM = CMDIArea::MDIArrangementMode;
-    using WWT = CPlainWriteWindow::WriteWindowType;
     using message::setQActionCheckedNoTrigger;
 
     // Cache pointer to config:
@@ -468,16 +469,7 @@ void BibleTime::reloadProfile() {
         // Try to respawn the window:
         BT_ASSERT(!wls.window);
         const QString key = conf.sessionValue<QString>(windowGroup + "key");
-        WWT wwt = static_cast<WWT>(conf.sessionValue<int>(windowGroup + "writeWindowType", 0));
-        if (wwt > 0) {
-            // Note, that we *might* lose the rest of wls.okModules here:
-            if (wls.okModules.size() > 1)
-                qWarning() << "Got more modules for a \"write window\" than expected from the profile!";
-
-            wls.window = createWriteDisplayWindow(wls.okModules.first(), key, wwt);
-        } else {
-            wls.window = createReadDisplayWindow(wls.okModules, key);
-        }
+        wls.window = createReadDisplayWindow(wls.okModules, key);
 
         if (wls.window) {
             wls.window->applyProfileSettings(windowGroup);
@@ -522,6 +514,73 @@ void BibleTime::deleteProfile(QAction* action) {
 void BibleTime::toggleFullscreen() {
     setWindowState(windowState() ^ Qt::WindowFullScreen);
     m_mdi->triggerWindowUpdate();
+}
+
+void BibleTime::autoScrollUp() {
+    setDisplayFocus();
+    if (m_autoScroll.enabled){
+        if (m_autoScroll.speed < 10) {
+            ++m_autoScroll.speed;
+        }
+        m_autoScroll.paused = false;
+        setAutoScrollTimerInterval();
+    } else {
+        m_autoScroll.enabled = true;
+        m_autoScroll.speed = 1;
+        m_autoScroll.paused = false;
+        setAutoScrollTimerInterval();
+        m_autoScrollTimer.start();
+    }
+}
+
+void BibleTime::autoScrollDown() {
+    setDisplayFocus();
+    if (m_autoScroll.enabled){
+        if (m_autoScroll.speed > -10) {
+            --m_autoScroll.speed;
+        }
+        m_autoScroll.paused = false;
+        setAutoScrollTimerInterval();
+    } else {
+        m_autoScroll.enabled = true;
+        m_autoScroll.speed = -1;
+        m_autoScroll.paused = false;
+        setAutoScrollTimerInterval();
+        m_autoScrollTimer.start();
+    }
+}
+
+void BibleTime::autoScrollPause() {
+    if (! m_autoScroll.enabled)
+        return;
+    setDisplayFocus();
+    m_autoScroll.paused = ! m_autoScroll.paused;
+    if ( ! m_autoScroll.paused)
+        m_autoScrollTimer.start();
+}
+
+bool BibleTime::autoScrollAnyKey(int /* key */) {
+    if ( ! m_autoScroll.enabled)
+        return false;
+    autoScrollStop();
+    return true;
+}
+
+void BibleTime::autoScrollStop() {
+    m_autoScrollTimer.stop();
+    m_autoScroll.enabled = false;
+}
+
+void BibleTime::slotAutoScroll() {
+    if (m_autoScroll.paused) {
+        m_autoScrollTimer.stop();
+        return;
+    }
+    CDisplay * display = getCurrentDisplay();
+    if (display) {
+        display->scroll(m_autoScroll.speed >0 ? -1 : 1 );
+        display->updateReferenceText();
+    }
 }
 
 /** Saves current settings into a new profile. */

@@ -38,6 +38,7 @@
 void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
     CLexiconReadWindow::applyProfileSettings(windowGroup);
 
+    setObjectName("CBibleReadWindow");
     BtConfig & conf = btConfig();
     conf.beginGroup(windowGroup);
     filterOptions() = conf.getFilterOptions();
@@ -104,13 +105,13 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     qaction->setShortcut(QKeySequence::Print);
     a->addAction("printChapter", qaction);
 
-//    qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's search"), a);
-//    qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-//    qaction->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
-//    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
+    //    qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's search"), a);
+    //    qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
+    //    qaction->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
+    //    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
 
-//    qaction = new QAction(tr("Reference only"), a );
-//    a->addAction("copyReferenceOnly", qaction);
+    //    qaction = new QAction(tr("Reference only"), a );
+    //    a->addAction("copyReferenceOnly", qaction);
 
     qaction = new QAction(tr("Text of reference"), a);
     a->addAction("copyTextOfReference", qaction);
@@ -142,7 +143,6 @@ void CBibleReadWindow::initActions() {
     initAction("nextVerse", this, &CBibleReadWindow::nextVerse);
     initAction("previousVerse", this, &CBibleReadWindow::previousVerse);
 
-    m_actions.selectAll = &ac->action("selectAll");
     m_actions.findText = &ac->action("findText");
     m_actions.findStrongs = &ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
     m_actions.copy.referenceOnly = &ac->action("copyReferenceOnly");
@@ -162,7 +162,7 @@ void CBibleReadWindow::initActions() {
                         this,
                         &CBibleReadWindow::copyDisplayedText);
 
-    m_actions.copy.selectedText = &ac->action("copySelectedText");
+    m_actions.copy.referencedText = &ac->action("copyReferencedText");
 
     m_actions.save.referenceAndText =
             &initAction("saveReferenceWithText",
@@ -212,19 +212,20 @@ void CBibleReadWindow::setupPopupMenu() {
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();
     popup()->addAction(m_actions.findStrongs);
-    popup()->addAction(m_actions.selectAll);
 
     popup()->addSeparator();
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
+
+    m_actions.copyMenu->addSeparator();
+
+    m_actions.copyMenu->addAction(m_actions.copy.referencedText);
     m_actions.copyMenu->addAction(m_actions.copy.referenceOnly);
     m_actions.copyMenu->addAction(m_actions.copy.referenceTextOnly);
     m_actions.copyMenu->addAction(m_actions.copy.referenceAndText);
     m_actions.copyMenu->addAction(m_actions.copy.chapter);
 
-    m_actions.copyMenu->addSeparator();
 
-    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
     popup()->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), popup());
@@ -248,7 +249,6 @@ void CBibleReadWindow::setupPopupMenu() {
 
 /** Reimplemented. */
 void CBibleReadWindow::updatePopupMenu() {
-    qWarning("CBibleReadWindow::updatePopupMenu()");
 
     CReadDisplay const & display =
             *static_cast<CReadDisplay *>(displayWidget());
@@ -258,7 +258,6 @@ void CBibleReadWindow::updatePopupMenu() {
     m_actions.copy.referenceOnly->setEnabled(hasActiveAnchor);
     m_actions.copy.referenceTextOnly->setEnabled(hasActiveAnchor);
     m_actions.copy.referenceAndText->setEnabled(hasActiveAnchor);
-    m_actions.copy.selectedText->setEnabled(display.hasSelection());
 
     m_actions.save.referenceAndText->setEnabled(hasActiveAnchor);
 
@@ -419,12 +418,6 @@ void CBibleReadWindow::syncWindows() {
             w->lookupKey( key()->key() );
         }
     }
-
-    // Fix problem with QWebEngineView::setHtml
-    // It set the focus of any updated window causing
-    // it to be the active window.
-    if (mdi()->activeSubWindow() != activeWindow)
-        mdi()->setActiveSubWindow(activeWindow);
 }
 
 void CBibleReadWindow::setupMainWindowToolBars() {

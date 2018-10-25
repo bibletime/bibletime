@@ -18,11 +18,13 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/rendering/centrydisplay.h"
+#include "frontend/btcopybyreferencesdialog.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/csearchdialog.h"
+#include "frontend/display/btmodelviewreaddisplay.h"
+#include "frontend/display/modelview/btqmlinterface.h"
 #include "util/btassert.h"
 #include "util/btconnect.h"
 
@@ -36,6 +38,7 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     // Lets be orwellianly paranoid here:
     BT_ASSERT(dynamic_cast<CReadDisplay *>(newDisplay));
 
+    setObjectName("CReadWindow");
     CDisplayWindow::setDisplayWidget(newDisplay);
     if (m_readDisplayWidget) {
         disconnect(m_readDisplayWidget->connectionsProxy(),
@@ -47,8 +50,8 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
                    this,
                    SLOT(lookupKey(QString const &)));
 
-        if (BtHtmlReadDisplay * const v =
-                dynamic_cast<BtHtmlReadDisplay *>(m_readDisplayWidget))
+        if (BtModelViewReadDisplay * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
             QObject::disconnect(v,    SIGNAL(completed()),
                                 this, SLOT(slotMoveToAnchor()));
     }
@@ -64,8 +67,8 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
                this,
                SLOT(lookupKey(QString const &)));
 
-    if (BtHtmlReadDisplay * const v =
-            dynamic_cast<BtHtmlReadDisplay *>(m_readDisplayWidget))
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
         BT_CONNECT(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()));
 }
 
@@ -81,19 +84,17 @@ void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
     /// \todo next-TODO how about options?
     Rendering::CEntryDisplay * const display = modules().first()->getDisplay();
     BT_ASSERT(display);
-    displayWidget()->setText(display->text(modules(),
-                                           newKey->key(),
-                                           displayOptions(),
-                                           filterOptions()));
+
+    displayWidget()->scrollToKey(newKey);
+    displayWidget()->setDisplayOptions(displayOptions());
+    displayWidget()->setFilterOptions(filterOptions());
 
     setWindowTitle(windowCaption());
-    /* Moving to anchor happens in slotMoveToAnchor which catches the
-       completed() signal from KHTMLPart. */
 }
 
 void CReadWindow::slotMoveToAnchor() {
     static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
-            Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
+                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
 void CReadWindow::copyDisplayedText()
@@ -110,8 +111,43 @@ void CReadWindow::openSearchStrongsDialog() {
     QString searchText;
     Q_FOREACH(QString const & strongNumber,
               displayWidget()->getCurrentNodeInfo().split(
-                    '|',
-                    QString::SkipEmptyParts))
+                  '|',
+                  QString::SkipEmptyParts))
         searchText.append("strong:").append(strongNumber).append(' ');
     Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
 }
+
+void CReadWindow::pageDown() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        v->pageDown();
+}
+
+void CReadWindow::pageUp() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        v->pageUp();
+}
+
+void CReadWindow::copyByReferences() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        auto model = v->qmlInterface()->textModel();
+        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);
+        int rtn = dlg.exec();
+        if (rtn == QDialog::Rejected)
+            return;
+
+        if (moduleType() == CSwordModuleInfo::Bible ||
+                moduleType() == CSwordModuleInfo::Commentary) {
+            v->qmlInterface()->copyVerseRange(dlg.getReference1(), dlg.getReference2());
+        } else {
+            v->qmlInterface()->copyRange(dlg.getIndex1(), dlg.getIndex2());
+
+        }
+
+
+    }
+}
+
+

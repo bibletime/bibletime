@@ -25,50 +25,50 @@ class CReadWindow;
   *@author The BibleTime team
   */
 class CReadDisplay :  public CDisplay {
-    public:
-        /**
+public:
+    /**
         * Returns true if the display has an active anchor.
         */
-        bool hasActiveAnchor() const;
-        /**
+    bool hasActiveAnchor() const;
+    /**
         * Returns the current active anchor.
         */
-        QString const & activeAnchor() const;
-        /**
+    QString const & activeAnchor() const;
+    /**
         * Moves the widget to the given anchor.
         */
-        virtual void moveToAnchor( const QString& ) = 0;
+    virtual void moveToAnchor( const QString& ) = 0;
 
-        void print(const CDisplay::TextPart,
-                   const DisplayOptions &displayOptions,
-                   const FilterOptions &filterOptions) override;
+    void print(const CDisplay::TextPart,
+               const DisplayOptions &displayOptions,
+               const FilterOptions &filterOptions) override;
 
-        void setMouseTracking(const bool trackingEnabled) {
-            m_useMouseTracking = trackingEnabled;
-        };
-        bool getMouseTracking() const {
-            return m_useMouseTracking;
-        };
+    void setMouseTracking(const bool trackingEnabled) {
+        m_useMouseTracking = trackingEnabled;
+    };
+    bool getMouseTracking() const {
+        return m_useMouseTracking;
+    };
 
-    protected: // Protected methods
+protected: // Protected methods
 
-        friend class BtHtmlJsObject;
+    friend class BtHtmlJsObject;
 
-        CReadDisplay( CReadWindow* readWindow );
+    CReadDisplay( CReadWindow* readWindow );
 
-        /**
+    /**
         * Sets the current anchor to the parameter.
         */
-        void setActiveAnchor( const QString& );
+    void setActiveAnchor( const QString& );
 
-    private: // Public attributes
-        /**
+private: // Public attributes
+    /**
         * The member which hols the current anchor.
         */
 
-        QString m_activeAnchor;
+    QString m_activeAnchor;
 
-        bool m_useMouseTracking;
+    bool m_useMouseTracking;
 };
 
 #endif

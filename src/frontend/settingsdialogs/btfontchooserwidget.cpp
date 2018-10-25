@@ -18,28 +18,12 @@
 #include <QLabel>
 #include <QListWidget>
 #include <QListWidgetItem>
-#include "frontend/btwebengineview.h"
+#include <QTextBrowser>
 #include "frontend/settingsdialogs/clistwidget.h"
 #include "util/btconnect.h"
 
 
 namespace {
-
-class BtFontPreviewWebView: public BtWebEngineView {
-
-    public: /* Methods: */
-
-        inline BtFontPreviewWebView(QWidget *parent = nullptr)
-            : BtWebEngineView(parent)
-        {
-            setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        }
-
-        inline QSize sizeHint() const override {
-            return QSize(100, 100);
-        }
-
-};
 
 const QString DEFAULT_FONT_PREVIEW_TEXT =
     "1 In the beginning God created the heaven and the earth. "
@@ -83,7 +67,7 @@ void BtFontChooserWidget::createLayout() {
     m_sizeListWidget->setMinimumHeight(50);
     m_sizeListWidget->setCharWidth(5);
 
-    m_fontPreview = new BtFontPreviewWebView(this);
+    m_fontPreview = new QTextBrowser(this);
 
     QGridLayout *l = new QGridLayout;
     l->addWidget(m_fontNameLabel, 0, 0);

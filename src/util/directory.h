@@ -84,9 +84,6 @@ const QDir &getSwordPathDir();
 /** Return the path to the icons. */
 const QDir &getIconDir();
 
-/** Return the path to the javascript. */
-const QDir &getJavascriptDir();
-
 /** Return the path to the license. */
 const QDir &getLicenseDir();
 
@@ -104,9 +101,6 @@ const QDir &getHowtoDir();
 
 /** Return the path to the default display template files. */
 const QDir &getDisplayTemplatesDir();
-
-/** Return the path to qml files. */
-const QDir &getQmlDir();
 
 /** Return the path to the user's home directory.
     %APPDATA% on Windows

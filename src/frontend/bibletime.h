@@ -16,8 +16,8 @@
 #include <QMainWindow>
 
 #include <QList>
+#include <QTimer>
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cplainwritewindow.h"
 #include <QSignalMapper>
 #ifndef NDEBUG
 #include <QMutex>
@@ -44,6 +44,12 @@ class QToolBar;
 class QSplitter;
 class QSignalMapper;
 
+struct AutoScroll {
+    bool enabled;
+    bool paused;
+    int speed;
+};
+
 /**
   * @page backend The structure of the backend
   * <p>
@@ -67,7 +73,7 @@ class QSignalMapper;
   * (for Sword the class is called CSwordBackend).
   * Then create all the different module classes for the correct Sword modules.
   * Have a look at
-  * BibleTime::initBackens() to see how it's done in BibleTime.@br
+  * BibleTime::initBackend() to see how it's done in BibleTime.@br
   * Later you can work with them for example by using the CSwordKey and
   * CSwordModuleInfo derived class.
   * </p>
@@ -110,10 +116,11 @@ class QSignalMapper;
  * The text display windows belong to the @ref frontend.
  * The backend is mainly a wrapper around Sword's classes to use Qt functionality
  * to allow easy access to it's functionality and to have it in a (more or less :)
- * object oriented structure.</p><br/>
+ * object oriented structure.</p>
  * <p>
- *       -Introduction to the frontend: @ref frontend.<br/>
- *       -Introduction to the backend: @ref backend<br/>
+ *       - Introduction to the frontend: @ref frontend<br/>
+ *       - Introduction to the backend: @ref backend<br/>
+ *       - Introduction to the model/view display: @ref modelviewmain<br/>
  * </p>
  */
 
@@ -199,11 +206,18 @@ class BibleTime : public QMainWindow {
           Get a pointer to the module associated with the current window
         */
         const CSwordModuleInfo* getCurrentModule();
-
+        /**
+          Get a pointer to the display associated with the current window
+        */
+        CDisplay* getCurrentDisplay();
         /**
           Open the BtFindWidget below the mdi area
         */
         void openFindWidget();
+        /**
+          Set the focus on the display widget
+          */
+        void setDisplayFocus();
 
 public slots:
         /**
@@ -311,14 +325,15 @@ public slots:
          */
         CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
         CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
-        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type);
-        CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
-        CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
         void searchInModule(CSwordModuleInfo *module);
         void slotModuleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);
         void quit();
 
+        /**
+          Automatically scroll the display
+          */
+        void slotAutoScroll();
         /**
          * Is called when the window menu is about to show ;-)
          */
@@ -383,6 +398,13 @@ public slots:
         * Toggles between normal and fullscreen mode.
         */
         void toggleFullscreen();
+
+        void autoScrollUp();
+        void autoScrollDown();
+        void autoScrollPause();
+        bool autoScrollAnyKey(int key);
+        void autoScrollStop();
+
         /**
         * Is called when settings in the optionsdialog have been
         * changed (ok or apply)
@@ -445,6 +467,7 @@ public slots:
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
         QMenu *m_toolBarsMenu;
+        QMenu *m_scrollMenu;
         QAction* m_showMainWindowToolbarAction;
         QAction *m_showTextAreaHeadersAction;
         QAction *m_showTextWindowNavigationAction;
@@ -495,6 +518,9 @@ public slots:
 
         BtActionCollection* m_actionCollection;
 
+        QAction* m_autoScrollUpAction;
+        QAction* m_autoScrollDownAction;
+        QAction* m_autoScrollPauseAction;
 
         QAction* m_windowFullscreenAction;
 
@@ -507,6 +533,9 @@ public slots:
 
         CMDIArea* m_mdi;
         BtFindWidget* m_findWidget;
+
+        AutoScroll m_autoScroll;
+        QTimer m_autoScrollTimer;
 
 
     protected:
@@ -532,6 +561,8 @@ public slots:
          * taking the toolbarsInEachWindow setting into account.
          */
         void showOrHideToolBars();
+
+        void setAutoScrollTimerInterval();
 
 #ifndef NDEBUG
         void deleteDebugWindow();

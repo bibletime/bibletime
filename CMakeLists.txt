@@ -127,6 +127,9 @@ FIND_PACKAGE(Qt5Xml ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Test ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Svg ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5PrintSupport ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5Qml ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5Quick ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5QuickWidgets ${REQUIRED_QT_VERSION} REQUIRED)
 
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Swordxx 2.0.0 REQUIRED)
@@ -155,22 +158,6 @@ ENDIF()
 
 IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
     ADD_DEFINITIONS("-DBT_MOBILE")
-ENDIF()
-
-FIND_PACKAGE(Qt5WebEngine QUIET)
-IF(NOT Qt5WebEngine_FOUND)
-    MESSAGE(STATUS "Using Qt WebKit")
-    FIND_PACKAGE(Qt5WebKit REQUIRED)
-    FIND_PACKAGE(Qt5WebKitWidgets REQUIRED)
-    SET(USEWEBENGINE OFF)
-ELSE()
-    MESSAGE(STATUS "Using Qt WebEngine")
-    FIND_PACKAGE(Qt5WebEngineWidgets REQUIRED)
-    SET(USEWEBENGINE ON)
-ENDIF()
-
-IF(USEWEBENGINE)
-    ADD_DEFINITIONS("-DUSEWEBENGINE")
 ENDIF()
 
 # Define $bibletime_SOURCES
@@ -231,11 +218,9 @@ TARGET_LINK_LIBRARIES("bibletime"
 )
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKitWidgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
-ELSEIF(USEWEBENGINE)
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebEngine Qt5::WebEngineWidgets Qt5::WebChannel Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
 ELSE()
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::WebKit Qt5::WebKitWidgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
+  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
 ENDIF()
 
 SET(BibleTime_LDFLAGS "")
@@ -264,11 +249,7 @@ SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
                       COMPILE_FLAGS "${BibleTime_CXXFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
-IF(Qt5Core_VERSION VERSION_LESS 5.3.0)
-    MESSAGE(WARNING "Qt tests not build because they require Qt 5.3 or greater.")
-ELSE()
-    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
-ENDIF()
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
 
 # Install files
 #
@@ -280,21 +261,16 @@ FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibleti
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
 
+# See QTBUG-55259, Affects windeployqt and macdeployqt
+INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
+        DESTINATION "${BT_DESTINATION}/")
+
 FILE(GLOB INSTALL_TMPL_LIST
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl
         ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt)
 INSTALL(FILES ${INSTALL_TMPL_LIST}
          DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
-
-
-IF(USEWEBENGINE)
-    INSTALL(FILES "src/frontend/display/btwebengine.js"
-     DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
-ELSE()
-    INSTALL(FILES "src/frontend/display/bthtml.js"
-        DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
-ENDIF()
 
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
@@ -309,11 +285,14 @@ INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
 
 # Linux: application icon and desktop file:
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
-        DESTINATION "${BT_SHARE_PATH}/icons/hicolor/scalable/apps")
+        DESTINATION "${BT_SHARE_PATH}/icons/hicolor/scalable/apps" RENAME "info.bibletime.BibleTime.svg")
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake"
                "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" @ONLY)
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
-        DESTINATION "${BT_SHARE_PATH}/applications/")
+        DESTINATION "${BT_SHARE_PATH}/applications/" RENAME "info.bibletime.BibleTime.desktop")
+
+INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.BibleTime.appdata.xml"
+        DESTINATION "${BT_SHARE_PATH}/metainfo/")
 
 
 IF(MSVC)

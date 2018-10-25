@@ -33,14 +33,12 @@ namespace directory {
 namespace {
 
 std::unique_ptr<QDir> cachedIconDir;
-std::unique_ptr<QDir> cachedJavascriptDir;
 std::unique_ptr<QDir> cachedLicenseDir;
 std::unique_ptr<QDir> cachedPicsDir;
 std::unique_ptr<QDir> cachedLocaleDir;
 std::unique_ptr<QDir> cachedHandbookDir;
 std::unique_ptr<QDir> cachedHowtoDir;
 std::unique_ptr<QDir> cachedDisplayTemplatesDir;
-std::unique_ptr<QDir> cachedQmlDir;
 std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
 std::unique_ptr<QDir> cachedUserBaseDir;
 std::unique_ptr<QDir> cachedUserHomeDir;
@@ -103,14 +101,10 @@ bool initDirectoryCache() {
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
-#if !defined BT_MINI && !defined BT_MOBILE
     if (!cachedApplicationSwordDir->cd("share/sword") || !cachedApplicationSwordDir->isReadable()) {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
-#endif
-
-#if !defined Q_OS_WINCE && !defined BT_MOBILE && !defined Q_OS_WINRT
     QByteArray programDataDir = qgetenv("ProgramData");
     cachedSharedSwordDir.reset(new QDir(programDataDir)); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd(SWORD_DIR)) {
@@ -119,7 +113,6 @@ bool initDirectoryCache() {
             return false;
         }
     }
-#endif
 #endif
 
 #ifdef Q_OS_MACOS
@@ -149,13 +142,6 @@ bool initDirectoryCache() {
         return false;
     }
 
-#if !defined BT_MINI && ! defined BT_MOBILE
-    cachedJavascriptDir.reset(new QDir(wDir));
-    if (!cachedJavascriptDir->cd("share/bibletime/javascript") || !cachedJavascriptDir->isReadable()) {
-        qWarning() << "Cannot find javascript directory relative to" << wDir.absolutePath();
-        return false;
-    }
-
     cachedLicenseDir.reset(new QDir(wDir));
     if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
         qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
@@ -167,7 +153,6 @@ bool initDirectoryCache() {
         qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
         return false;
     }
-#endif
 
     cachedLocaleDir.reset(new QDir(wDir));
     if (!cachedLocaleDir->cd("share/bibletime/locale")) {
@@ -178,7 +163,6 @@ bool initDirectoryCache() {
     QString localeName(QLocale::system().name());
     QString langCode(localeName.section('_', 0, 0));
 
-#if !defined BT_MINI && !defined BT_MOBILE
     cachedHandbookDir.reset(new QDir(wDir));
     if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + localeName)) {
         if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + langCode)) {
@@ -198,21 +182,12 @@ bool initDirectoryCache() {
             }
         }
     }
-#endif
 
     cachedDisplayTemplatesDir.reset(new QDir(wDir)); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
         qWarning() << "Cannot find display template directory relative to" << wDir.absolutePath();
         return false;
     }
-
-#ifdef BT_MOBILE
-    cachedQmlDir.reset(new QDir(wDir)); //qml files dir
-    if (!cachedQmlDir->cd("share/bibletime/qml/")) {
-        qWarning() << "Cannot find qml relative to" << wDir.absolutePath();
-        return false;
-    }
-#endif
 
 #ifdef Q_OS_WINRT
     cachedUserHomeDir.reset(new QDir(""));
@@ -402,10 +377,6 @@ const QDir &getIconDir() {
     return *cachedIconDir;
 }
 
-const QDir &getJavascriptDir() {
-    return *cachedJavascriptDir;
-}
-
 const QDir &getLicenseDir() {
     return *cachedLicenseDir;
 }
@@ -428,13 +399,6 @@ const QDir &getHowtoDir() {
 
 const QDir &getDisplayTemplatesDir() {
     return *cachedDisplayTemplatesDir;
-}
-
-const QDir &getQmlDir() {
-#ifndef BT_MOBILE
-    BT_ASSERT(false && "Qml files currently required for BibleTime Mobile frontend only.");
-#endif
-    return *cachedQmlDir;
 }
 
 const QDir &getUserBaseDir() {

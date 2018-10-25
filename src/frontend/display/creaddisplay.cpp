@@ -26,9 +26,9 @@
 
 
 CReadDisplay::CReadDisplay(CReadWindow* readWindow) :
-        CDisplay(readWindow),
-        m_activeAnchor(QString::null),
-        m_useMouseTracking(true) {}
+    CDisplay(readWindow),
+    m_activeAnchor(QString::null),
+    m_useMouseTracking(true) {}
 
 /** Returns the current active anchor. */
 const QString& CReadDisplay::activeAnchor() const {
@@ -60,49 +60,49 @@ void CReadDisplay::print(const CDisplay::TextPart type,
     CExportManager mgr(false, QString::null, displayWindow->filterOptions(), displayWindow->displayOptions());
 
     switch (type) {
-        case Document: {
-            if (module->type() == CSwordModuleInfo::Bible) {
-                CSwordVerseKey* vk = dynamic_cast<CSwordVerseKey*>(key);
+    case Document: {
+        if (module->type() == CSwordModuleInfo::Bible) {
+            CSwordVerseKey* vk = dynamic_cast<CSwordVerseKey*>(key);
 
-                CSwordVerseKey startKey(*vk);
-                startKey.setVerse(1);
+            CSwordVerseKey startKey(*vk);
+            startKey.setVerse(1);
 
-                CSwordVerseKey stopKey(*vk);
+            CSwordVerseKey stopKey(*vk);
 
-                const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
-                if (bible) {
-                    stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.book()), startKey.getChapter()));
-                }
-
-                mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
+            const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
+            if (bible) {
+                stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.book()), startKey.getChapter()));
             }
-            else if (module->type() == CSwordModuleInfo::Lexicon || module->type() == CSwordModuleInfo::Commentary ) {
-                mgr.printKey(module, key->key(), key->key(), displayOptions, filterOptions);
-            }
-            else if (module->type() == CSwordModuleInfo::GenericBook) {
-                CSwordTreeKey* tree = dynamic_cast<CSwordTreeKey*>(key);
 
-                CSwordTreeKey startKey(*tree);
-                //        while (startKey.previousSibling()) { // go to first sibling on this level!
-                //        }
-
-                CSwordTreeKey stopKey(*tree);
-                //    if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(module)) {
-                //          while ( stopKey.nextSibling() ) { //go to last displayed sibling!
-                //          }
-                //        }
-                mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
-            }
+            mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
         }
-
-        case AnchorWithText: {
-            if (hasActiveAnchor()) {
-                mgr.printByHyperlink( activeAnchor(), displayOptions, filterOptions );
-            }
+        else if (module->type() == CSwordModuleInfo::Lexicon || module->type() == CSwordModuleInfo::Commentary ) {
+            mgr.printKey(module, key->key(), key->key(), displayOptions, filterOptions);
         }
+        else if (module->type() == CSwordModuleInfo::GenericBook) {
+            CSwordTreeKey* tree = dynamic_cast<CSwordTreeKey*>(key);
 
-        default:
-            break;
+            CSwordTreeKey startKey(*tree);
+            //        while (startKey.previousSibling()) { // go to first sibling on this level!
+            //        }
+
+            CSwordTreeKey stopKey(*tree);
+            //    if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(module)) {
+            //          while ( stopKey.nextSibling() ) { //go to last displayed sibling!
+            //          }
+            //        }
+            mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
+        }
+    }
+
+    case AnchorWithText: {
+        if (hasActiveAnchor()) {
+            mgr.printByHyperlink( activeAnchor(), displayOptions, filterOptions );
+        }
+    }
+
+    default:
+        break;
     }
 }
 

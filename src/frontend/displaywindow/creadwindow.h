@@ -39,6 +39,13 @@ protected: /* Methods: */
 
     void resizeEvent(QResizeEvent * e) override;
 
+    void pageDown() override;
+
+    void pageUp() override;
+
+    void copyByReferences() override;
+
+
 protected slots:
 
     void lookupSwordKey(CSwordKey *) override;

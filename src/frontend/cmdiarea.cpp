@@ -19,8 +19,6 @@
 #include <QTabBar>
 #include <QTimer>
 #include <QToolBar>
-#include "frontend/btwebenginepage.h"
-#include "frontend/btwebengineview.h"
 #include <QWindowStateChangeEvent>
 #include "bibletime.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
@@ -32,15 +30,6 @@ namespace {
 
 inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) {
     return qobject_cast<CDisplayWindow *>(mdiWindow->widget());
-}
-
-inline BtWebEngineView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
-    if (!displayWindow)
-        return nullptr;
-    CDisplay * const display = displayWindow->displayWidget();
-    if (!display)
-        return nullptr;
-    return qobject_cast<BtWebEngineView *>(display->view());
 }
 
 } // anonymous namespace
@@ -169,7 +158,7 @@ void CMDIArea::myTileVertical() {
     QMdiSubWindow * const active = activeSubWindow();
 
     const int widthForEach = width() / windows.count();
-    unsigned int x = 0;
+    int x = 0;
     Q_FOREACH (QMdiSubWindow * const window, windows) {
         window->showNormal();
 
@@ -202,7 +191,7 @@ void CMDIArea::myTileHorizontal() {
     QMdiSubWindow * const active = activeSubWindow();
 
     const int heightForEach = height() / windows.count();
-    unsigned int y = 0;
+    int y = 0;
     Q_FOREACH (QMdiSubWindow * const window, windows) {
         window->showNormal();
 
@@ -296,14 +285,6 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     return ret;
 }
 
-BtWebEngineView* CMDIArea::getActiveWebView()
-{
-    QMdiSubWindow* activeMdiWindow = activeSubWindow();
-    CDisplayWindow* const activeWindow = getDisplayWindow(activeMdiWindow);
-    BtWebEngineView* webView = getWebViewFromDisplayWindow(activeWindow);
-    return webView;
-}
-
 void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     if (subWindowList().isEmpty())
         m_bibleTime->clearMdiToolBars();
@@ -328,19 +309,16 @@ void CMDIArea::findPreviousTextInActiveWindow(QString const & text, bool cs)
 { findTextInActiveWindow(text, cs, true); }
 
 void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
-    BtWebEngineView* activeWebView = getActiveWebView();
-    if (activeWebView == nullptr)
-        return;
-    activeWebView->findTextHighlight(text, caseSensitive);
+    CDisplayWindow* const displayWindow = getDisplayWindow(activeSubWindow());
+    displayWindow->displayWidget()->highlightText(text, caseSensitive);
 }
 
 void CMDIArea::findTextInActiveWindow(QString const & text,
                                       bool caseSensitive,
                                       bool backward)
 {
-    if (BtWebEngineView * const activeWebView = getActiveWebView()) {
-        activeWebView->findText(text, caseSensitive, backward);
-    }
+    CDisplayWindow* const displayWindow = getDisplayWindow(activeSubWindow());
+    displayWindow->displayWidget()->findText(text, caseSensitive, backward);
 }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {

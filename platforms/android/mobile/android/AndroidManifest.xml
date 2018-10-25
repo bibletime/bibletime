@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<manifest android:versionCode="300" xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionName="3.00" package="org.qtproject.bibletime.mobile">
+<manifest android:versionCode="302" xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionName="3.02" package="org.qtproject.bibletime.mobile">
     <application android:label="BibleTime Mobile" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:icon="@drawable/icon">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|locale|fontScale|keyboard|keyboardHidden|navigation" 
 		android:screenOrientation="unspecified" 

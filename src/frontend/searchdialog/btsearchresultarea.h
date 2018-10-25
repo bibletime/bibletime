@@ -16,6 +16,7 @@
 #include <QList>
 #include <QSplitter>
 #include <QStringList>
+#include <QTextBrowser>
 #include <QWidget>
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
@@ -97,7 +98,7 @@ class BtSearchResultArea : public QWidget {
         Q_OBJECT
     public: /* Methods: */
         BtSearchResultArea(QWidget *parent = nullptr);
-        inline ~BtSearchResultArea() { saveDialogSettings(); }
+        inline ~BtSearchResultArea() override { saveDialogSettings(); }
 
         /**
         * Sets the modules which contain the result of each.
@@ -140,6 +141,8 @@ class BtSearchResultArea : public QWidget {
         */
         void saveDialogSettings() const;
 
+        void setBrowserFont(const CSwordModuleInfo* const module);
+
     protected slots:
         /**
         * Update the preview of the selected key.
@@ -167,8 +170,10 @@ class BtSearchResultArea : public QWidget {
         * Copy selected text
         */
         inline void copySelection() {
-            m_previewDisplay->connectionsProxy()->copySelection();
+            m_previewDisplay->copy();
         }
+
+        void slotContextMenu(const QPoint& point);
 
     private: /* Fields: */
         CSwordModuleSearch::Results m_results;
@@ -177,7 +182,7 @@ class BtSearchResultArea : public QWidget {
         CSearchResultView* m_resultListBox;
 
         QFrame *m_displayFrame;
-        CReadDisplay* m_previewDisplay;
+        QTextBrowser* m_previewDisplay;
 
         QSplitter *m_mainSplitter;
         QSplitter *m_resultListSplitter;
