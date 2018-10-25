@@ -12,6 +12,8 @@
 
 #include "btinstallmgr.h"
 
+#include <QMutex>
+#include <QMutexLocker>
 #include "../util/btassert.h"
 #include "btinstallbackend.h"
 
@@ -46,10 +48,55 @@ inline int calculateIntPercentage(T done, T total) {
 
 } // anonymous namespace
 
+class BtInstallMgr::StatusReporter: public swordxx::StatusReporter {
+
+public: /* Methods: */
+
+    StatusReporter(BtInstallMgr & installMgr) : m_installMgr(&installMgr) {}
+    ~StatusReporter() noexcept override;
+
+    void detach() noexcept;
+    void update(std::size_t dltotal, std::size_t dlnow) noexcept override;
+    void preStatus(std::size_t totalBytes,
+                   std::size_t completedBytes,
+                   const char * message) noexcept override;
+
+private: /* Fields: */
+
+    QMutex m_mutex;
+    BtInstallMgr * m_installMgr;
+
+};
+
+BtInstallMgr::StatusReporter::~StatusReporter() noexcept = default;
+
+void BtInstallMgr::StatusReporter::detach() noexcept {
+    QMutexLocker const guard(&m_mutex);
+    m_installMgr = nullptr;
+}
+
+void BtInstallMgr::StatusReporter::update(std::size_t dltotal,
+                                          std::size_t dlnow) noexcept
+{
+    QMutexLocker const guard(&m_mutex);
+    if (m_installMgr)
+        m_installMgr->update(dltotal, dlnow);
+}
+
+void BtInstallMgr::StatusReporter::preStatus(std::size_t totalBytes,
+                                             std::size_t completedBytes,
+                                             const char * message) noexcept
+{
+    QMutexLocker const guard(&m_mutex);
+    if (m_installMgr)
+        m_installMgr->preStatus(totalBytes, completedBytes, message);
+
+}
+
 BtInstallMgr::BtInstallMgr(QObject * parent)
         : QObject(parent)
         , swordxx::InstallMgr(BtInstallBackend::configPath().toStdString(),
-                              this)
+                              std::make_shared<StatusReporter>(*this))
         , m_totalBytes(1u)
         , m_completedBytes(0u)
         , m_firstCallOfPreStatus(true)
@@ -60,12 +107,10 @@ BtInstallMgr::BtInstallMgr(QObject * parent)
 BtInstallMgr::~BtInstallMgr() {
     //doesn't really help because it only sets a flag
     this->terminate(); // make sure to close the connection
-}
 
-bool BtInstallMgr::isUserDisclaimerConfirmed() const {
-    //// \todo Check from config if it's been confirmed with "don't show this anymore" checked.
-    // Create a dialog with the message, checkbox and Continue/Cancel, Cancel as default.
-    return true;
+    BT_ASSERT(this->statusReporter());
+    BT_ASSERT(dynamic_cast<StatusReporter *>(this->statusReporter().get()));
+    static_cast<StatusReporter *>(this->statusReporter().get())->detach();
 }
 
 void BtInstallMgr::update(std::size_t dltotal, std::size_t dlnow) noexcept {

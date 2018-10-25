@@ -24,17 +24,16 @@
 class BtInstallMgr
         : public QObject
         , public swordxx::InstallMgr
-        , public swordxx::StatusReporter
 {
 
     Q_OBJECT
+    class StatusReporter;
+    friend class StatusReporter;
 
 public: /* Methods: */
 
     BtInstallMgr(QObject * parent = nullptr);
     ~BtInstallMgr() override;
-
-    bool isUserDisclaimerConfirmed() const override;
 
 signals:
 
@@ -46,13 +45,11 @@ signals:
 
     void downloadStarted();
 
-protected: /* Methods: */
+private: /* Methods: */
 
-    /** \note Reimplementation of swordxx::StatusReporter::statusUpdate(). */
-    void update(std::size_t dltotal, std::size_t dlnow) noexcept override;
+    void update(std::size_t dltotal, std::size_t dlnow) noexcept;
 
     /**
-    * \note Reimplementation of swordxx::StatusReporter::preStatus().
     * \warning This method is not always called before statusUpdate().
     * Called before starting to download each file of the module package.
     * The sword message is not i18n'ed, it's in the form "Downloading (1 of 6): nt.bzs".
@@ -60,10 +57,11 @@ protected: /* Methods: */
     */
     void preStatus(std::size_t totalBytes,
                    std::size_t completedBytes,
-                   const char * message) noexcept override;
+                   const char * message) noexcept;
 
 private: /* Fields: */
 
+    std::shared_ptr<swordxx::StatusReporter> m_statusReporter;
     std::size_t m_totalBytes;
     std::size_t m_completedBytes;
     bool m_firstCallOfPreStatus;
