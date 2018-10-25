@@ -363,7 +363,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
             continue;
         }
 
-        for (int i = 0; i < lk.getCount(); ++i) {
+        for (std::size_t i = 0u; i < lk.getCount(); ++i) {
             if (dynamic_cast<swordxx::VerseKey*>(lk.getElement(i))) { // a range
                 swordxx::VerseKey* k = dynamic_cast<swordxx::VerseKey*>(lk.getElement(i));
                 BT_ASSERT(k);

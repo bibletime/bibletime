@@ -326,7 +326,7 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                         "Genesis 1:1",
                         true);
 
-        for (int i = 0; i < verses.getCount(); i++) {
+        for (std::size_t i = 0u; i < verses.getCount(); i++) {
             if (swordxx::VerseKey const * const element =
                     dynamic_cast<swordxx::VerseKey const *>(verses.getElement(i)))
             {
@@ -364,7 +364,7 @@ bool CExportManager::printKeyList(swordxx::ListKey const & list,
     BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.getCount());
-    for (int i = 0; i < list.getCount(); i++) {
+    for (std::size_t i = 0u; i < list.getCount(); i++) {
         if (progressWasCancelled())
             return false;
         swordxx::SWKey const * const swKey = list.getElement(i);

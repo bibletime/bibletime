@@ -217,7 +217,7 @@ void CRangeChooserDialog::updateResultList() {
 
     swordxx::ListKey verses = VK().parseVerseList(range.toUtf8().constData(),
                                                 "Genesis 1:1", true);
-    for (int i = 0; i < verses.getCount(); i++) {
+    for (std::size_t i = 0u; i < verses.getCount(); i++) {
         new QListWidgetItem(QString::fromStdString(
                                 verses.getElement(i)->getRangeText()),
                             m_resultList);
