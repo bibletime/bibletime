@@ -8,6 +8,7 @@
 # Roy Alvear <racl@fedoraproject.org>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2015
+# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"

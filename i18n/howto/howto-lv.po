@@ -5,11 +5,12 @@
 # Translators:
 # Maris Susts, 2018
 # Maris Susts, 2018
+# Maris Susts, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2018-06-02 21:40+0000\n"
+"PO-Revision-Date: 2018-07-21 23:02+0000\n"
 "Last-Translator: Maris Susts\n"
 "Language-Team: Latvian (http://www.transifex.com/bibletime/bibletime/language/lv/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +40,7 @@ msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
 "life; and it is these that bear witness of Me; and you are unwilling to come"
 " to Me, that you may have life."
-msgstr ""
+msgstr "Jūs pētījat rakstus, jo jums šķiet, ka tajos jums ir mūžīgā dzīvība, un tie ir, kas dod liecību par Mani! Bet jūs negribat nākt pie Manis, lai iegūtu dzīvību."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:14

@@ -8,7 +8,7 @@
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2015
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2009
-# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2015
+# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2009-2010,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"

@@ -4,12 +4,13 @@
 # 
 # Translators:
 # ねむりのユテコ, 2017
+# "Sleepy" Eutychus, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2016-02-11 20:25+0100\n"
 "PO-Revision-Date: 2017-09-22 20:01+0000\n"
-"Last-Translator: ねむりのユテコ\n"
+"Last-Translator: \"Sleepy\" Eutychus\n"
 "Language-Team: Japanese (http://www.transifex.com/bibletime/bibletime/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

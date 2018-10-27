@@ -1,14 +1,15 @@
 <chapter id="hdbk-config">
-  <title>Configurer &bibletime;</title>
+  <title>Configuration de &bibletime;</title>
   <para>Dans cette section, vous trouverez une vue d'ensemble pour configurer
 &bibletime;, qui peut être trouvé sous <guimenu>Paramètres</guimenu> dans le
 menu principal.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Configure &bibletime; Dialog</title>
-    <para>The &bibletime; user interface can be customized in many ways depending on
-your needs. You can access the configuration dialog by selecting
-<menuchoice> <guimenu>Settings</guimenu> </menuchoice>
-<guimenuitem>Configure &bibletime;</guimenuitem>.</para>
+    <title>Fenêtre de configuration de &bibletime;</title>
+    <para>L'interface utilisateur de &bibletime; peut être personnalisée de
+différentes manières en fonction de vos besoins. Vous pouvez accéder à la
+boîte de dialogue de configuration en sélectionnant
+<menuchoice><guimenu>Paramètres</guimenu></menuchoice><guimenuitem>
+Configurer bibletime;</guimenuitem>.</para>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
@@ -20,9 +21,9 @@ your needs. You can access the configuration dialog by selecting
           <para>Afficher le logo de démarrage</para>
         </listitem>
       </itemizedlist></para>
-      <para>Display templates define the rendering of text (colors, size etc.). Various
-built-in templates are available. If you select one, you will see a preview
-on the right pane.</para>
+      <para>Les modèles d'affichage définissent le rendu du texte (couleurs, taille,
+etc.). Divers modèles intégrés sont disponibles. Si vous en sélectionnez un,
+vous verrez un aperçu dans le volet de droite.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-desk">
@@ -49,10 +50,10 @@ contrôler l'apparence du texte.</para>
 livres. Choisissez votre langue maternelle. Si elle est disponible vous vous
 sentirez chez vous.</para>
 
-      <para>By default, &bibletime; uses the default system display font. You can
-override this font if necessary. Some languages require special fonts to be
-displayed correctly, and this dialog allows you to specify a custom font for
-each language.</para>
+      <para>Par défaut, &bibletime; utilise la police d'affichage du système. Vous
+pouvez remplacer cette police si nécessaire. Certaines langues nécessitent
+l'affichage de polices spéciales et cette boîte de dialogue vous permet de
+spécifier une police personnalisée pour chaque langue.</para>
       <mediaobject>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
@@ -78,10 +79,10 @@ police installée ne peut afficher l'ouvrage qui vous intéresse, essayez
 d'installer le paquet de localisation pour cette langue.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Installer des polices</title>
-        <para>Detailed font installation instructions are outside the scope of this
-handbook. For further information you might want to refer to the <ulink
-url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
-HOWTO</ulink>.</para>
+        <para>Les instructions détaillées d'installation des polices ne relèvent pas de ce
+manuel. Pour plus d'informations, vous pouvez vous référer au <ulink
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> tutoriel sur
+l'unicode</ulink>.</para>
         <tip>
           <para>Si vous utilisez une petite police comme Clearlyu (environ 22kb),
 &bibletime; fonctionnera plus rapidement qu'avec une grande police comme
@@ -109,10 +110,11 @@ existante sur le même ordinateur.</para>
             <para>Des collections de polices disponibles en ligne.</para>
           </listitem>
         </itemizedlist>
-        <para>Unicode fonts support more characters than other fonts, and some of these
-fonts are available at no charge. None of available fonts includes all
-characters defined in the Unicode standard, so you may want to use different
-fonts for different languages.</para>
+        <para>Les polices unicode prennent en charge plus de caractères que les autres
+polices, et certaines de ces polices sont disponibles gratuitement. Aucune
+des polices disponibles ne contient tous les caractères définis dans la
+norme unicode. Vous pouvez donc utiliser différentes polices pour
+différentes langues.</para>
         <table id="hdbk-config-unicode-fonts-table">
           <title>Polices Unicode </title>
           <tgroup cols="2">
@@ -136,7 +138,7 @@ Polices unicode du SIL</ulink>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/"> FreeFont</ulink>
                 </entry>
-                <entry>A new free Unicode font initiative.</entry>
+                <entry>Une nouvelle initiative de polices Unicode libre.</entry>
               </row>
               <row>
                 <entry>
@@ -144,7 +146,7 @@ Polices unicode du SIL</ulink>
 polices Crosswire</ulink>
                 </entry>
 
-                <entry>Several fonts available from the &cbs; FTP site.</entry>
+                <entry>Plusieurs polices disponibles à partir du site FTP &cbs;.</entry>
               </row>
               <row>
                 <entry>
@@ -170,11 +172,11 @@ Cupola, Caliban</ulink>
             </tbody>
           </tgroup>
         </table>
-        <para>There are good Unicode font lists on the net, as the one by Christoph Singer
-( <ulink url="http://www.slovo.info/unifonts.htm">Multilingual Unicode
-TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink
-url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character
-ranges and the Unicode fonts that support them</ulink>).</para>
+        <para>Il y a de bonnes listes de polices unicode sur le net, comme celle de
+Christoph Singer (<ulink url="http://www.slovo.info/unifonts.htm">polices
+multilingues Unicode TrueType sur Internet</ulink>) ou celle d'Alan Wood
+(<ulink url="http://www.alanwood.net/unicode/fontsbyrange.html">plages de
+caractères Unicode et polices Unicode qui les prennent en charge</ulink>).</para>
       </sect3>
     </sect2>
 
@@ -183,19 +185,20 @@ ranges and the Unicode fonts that support them</ulink>).</para>
         <guimenu>Raccourcis</guimenu>
       </title>
 
-      <para>Shortcuts (previously known as HotKeys) are special key commands that can be
-used in the place of the menu items and icons. A number of &bibletime;'s
-commands have predefined Shortcuts (see the <link
-linkend="hdbk-reference-shortcuts">Shortcuts section</link> for a complete
-listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is
-very helpful to quickly access the functions that you need the most.</para>
+      <para>Les raccourcis clavier sont des combinaison de touche spéciales pouvant être
+utilisés à la place des éléments de menu et des icônes. Un certain nombre de
+commandes &bibletime; ont des raccourcis prédéfinis (voir la <link
+linkend="hdbk-reference-shortcuts">Section des raccourcis</link> pour une
+liste complète). La plupart des commandes de &bibletime; peuvent être
+associées à des raccourcis. Ceci est très utile pour accéder rapidement aux
+fonctions dont vous avez le plus besoin.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study HowTo has a secondary shortcut
-defined, CTRL+2.</para>
+      <para>Dans l'exemple précédent, F2, Le tutoriel sur l'étude de la Bible a un
+raccourci secondaire défini, CTRL+2.</para>
     </sect2>
   </sect1>
 </chapter>

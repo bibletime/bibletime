@@ -20,7 +20,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; Handbook</title>
+  <title>Le manuel de &bibletime;</title>
 
   <authorgroup>
     <author>
@@ -46,7 +46,8 @@
 </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
+    <para>Le manuel de &bibletime; est distribué avec le programme d'étude de
+&bibletime;.</para>
   </legalnotice>
 
   <date>Janvier 2014</date>
@@ -54,12 +55,13 @@
   <releaseinfo>2.10.1</releaseinfo>
 
   <abstract>
-    <para>&bibletime; is a completely free Bible study program. The program's user
-interface is built with &qt; framework, which makes it run on several
-operating systems including Linux, Windows, FreeBSD and Mac OS X. The
-software uses the &sword; programming library to work with over 200 free
-Bible texts, commentaries, dictionaries and books in over 50 languages
-provided by the &cbs;.</para>
+    <para>&bibletime; est un programme d'étude biblique totalement libre. L'interface
+utilisateur du programme est construite avec &qt; framework, qui le fait
+fonctionner sur plusieurs systèmes d'exploitation, y compris Linux, Windows,
+FreeBSD et Mac OS X. Le logiciel utilise la bibliothèque de programmation
+&sword;  pour travailler avec plus de 200 textes bibliques gratuits, des
+commentaires, des dictionnaires et des livres dans plus de 50 langues
+fournies par &cbs;.</para>
   </abstract>
 
   <keywordset>

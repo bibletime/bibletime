@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Mário Castanheira, 2014
+# Mário Castanheira, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"

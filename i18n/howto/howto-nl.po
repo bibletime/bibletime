@@ -6,14 +6,16 @@
 # Bart Groeneveld, 2016
 # Bart Groeneveld, 2016
 # Harry Vennik <htvennik@zonnet.nl>, 2003
+# Samuel <shtjonathan@xs4all.nl>, 2018
+# Sanne Smeets, 2017
 # Sanne Smeets, 2017
 # Willem G Jackson <willem.de.geweldige@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2017-09-21 13:11+0000\n"
-"Last-Translator: Sanne Smeets\n"
+"PO-Revision-Date: 2018-06-12 00:49+0000\n"
+"Last-Translator: Samuel <shtjonathan@xs4all.nl>\n"
 "Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
 "nl/)\n"
 "Language: nl\n"
@@ -185,6 +187,8 @@ msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
 "Thee.</quote>"
 msgstr ""
+"Ps.119:11 <quote>Ik heb Uw rede in mijn hart verborgen, opdat ik tegen U "
+"niet zondigen zou.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:75
@@ -199,6 +203,10 @@ msgid ""
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
 msgstr ""
+"Ps.1:2-3 <quote>Maar zijn lust is in des HEEREN wet, en hij overdenkt Zijn "
+"wet dag en nacht. Want hij zal zijn als een boom, geplant aan waterbeken, "
+"die zijn vrucht geeft op zijn tijd, en welks blad niet afvalt; en al wat hij "
+"doet, zal wel gelukken.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:82
@@ -761,6 +769,9 @@ msgid ""
 "God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
 "Jesus' attitude toward the Scriptures."
 msgstr ""
+"2 Tim.3:16 declares, \" <emphasis>Al de Schrift is van God ingegeven [lett., "
+"God-geademd].</emphasis>\" Gelooft u dit? Voordat u antwoordt, overdenk dan "
+"eerst Jezus' houding naar de Schriften."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:114

@@ -139,7 +139,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="237"/>
         <source>Bookshelf Manager...</source>
-        <translation>Gestionnaire de bibliothèque</translation>
+        <translation>Gestionnaire de bibliothèque…</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="244"/>
@@ -154,7 +154,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="534"/>
         <source>Please enter a name for the new session.</source>
-        <translation>Veuillez entrer un nom pour la nouvelle session</translation>
+        <translation>Veuillez entrer un nom pour la nouvelle session.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="542"/>
@@ -179,12 +179,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="126"/>
         <source>Search in &amp;open works...</source>
-        <translation>Rechercher et &amp;ouvrir les ouvrages</translation>
+        <translation>Rechercher et &amp;ouvrir les ouvrages…</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="133"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation>Rechercher dans la Bible actuelle</translation>
+        <translation>Rechercher dans la &amp;Bible actuelle…</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="140"/>
@@ -294,7 +294,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>&amp;Tip of the day...</source>
-        <translation>&amp;Astuce du jour</translation>
+        <translation>&amp;Astuce du jour…</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="267"/>
@@ -314,7 +314,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="420"/>
         <source>Toggle visibility of the mag window</source>
-        <translation>Activer la visibilité de la fenêtre d&apos;aperçu</translation>
+        <translation>Activer la visibilité de la fenêtre Loupe</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="719"/>
@@ -329,7 +329,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="721"/>
         <source>Works toolbar</source>
-        <translation>Barre de travail</translation>
+        <translation>Barre d&apos;outils des ouvrages</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="722"/>
@@ -354,17 +354,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="760"/>
         <source>Show works toolbar</source>
-        <translation>Afficher la barre de travail</translation>
+        <translation>Afficher la barre d&apos;outil des ouvrages</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="761"/>
         <source>Show tools toolbar</source>
-        <translation>Afficher la barre d&apos;utilitaires</translation>
+        <translation>Afficher la barre d&apos;outils</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="762"/>
         <source>Show formatting toolbar</source>
-        <translation>Afficher la barre de formatage</translation>
+        <translation>Afficher la barre de format</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="763"/>
@@ -379,7 +379,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="765"/>
         <source>Show mag</source>
-        <translation>Montrer l&apos;aperçu</translation>
+        <translation>Montrer la Loupe</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="727"/>
@@ -389,7 +389,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="757"/>
         <source>Show toolbars in text windows</source>
-        <translation>Montrer les barres d&apos;outils dans la fenêtre de texte</translation>
+        <translation>Montrer les barres d&apos;outils dans les fenêtres de texte</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="767"/>
@@ -474,7 +474,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>Mag</source>
-        <translation>Aperçu</translation>
+        <translation>Loupe</translation>
     </message>
 </context>
 <context>
@@ -495,7 +495,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletimeapp.cpp" line="79"/>
         <location filename="../../src/mobile/bibletimeapp.cpp" line="76"/>
         <source>Error loading configuration!</source>
-        <translation>Erreur lors du chargement de la configuration</translation>
+        <translation>Erreur lors du chargement de la configuration⋅!</translation>
     </message>
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="80"/>
@@ -540,7 +540,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="50"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation>Choisissez une ou plusieurs langues pour installer les ouvrages</translation>
+        <translation>Choisissez une ou plusieurs langues pour installer les ouvrages.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="65"/>
@@ -599,32 +599,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Supprimer des ouvrages installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="163"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="175"/>
         <source>Install Works</source>
         <translation>Installer des ouvrages</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="164"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="176"/>
         <source>Choose one or more works to install.</source>
         <translation>Choisir un ou plusieurs ouvrages à installer.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="169"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="181"/>
         <source>Update Works</source>
         <translation>Mettre à jour des ouvrages</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="170"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="182"/>
         <source>Choose one or more works to update.</source>
         <translation>Choisir un ou plusieurs ouvrages à mettre à jour.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="176"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="188"/>
         <source>Remove Works</source>
         <translation>Supprimer des ouvrages</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="177"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="189"/>
         <source>Choose one or more works to remove.</source>
         <translation>Choisir un ou plusieurs ouvrages à supprimer.</translation>
     </message>
@@ -785,7 +785,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation>Il se peut que certains noms soient manquants. Veuillez signaler le problème à % 1 si vous constatez des erreurs ou des omissions.</translation>
+        <translation>Il se peut que certains noms soient manquants, veuillez signaler le problème à %1 si vous constatez des erreurs ou des omissions.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
@@ -889,7 +889,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="165"/>
         <source>&amp;About...</source>
-        <translation>&amp;À propos</translation>
+        <translation>&amp;À propos…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="167"/>
@@ -1055,57 +1055,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfWorksPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="167"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished">Fi&amp;ltre&#x202f;:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
         <source>Install Works &gt;</source>
         <translation>Installer les ouvrages &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
         <source>Update Works &gt;</source>
         <translation>Mettre à jour les ouvrages &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="180"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="192"/>
         <source>Remove Works &gt;</source>
         <translation>Supprimer les ouvrages &gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="184"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="196"/>
         <source>Install &amp;folder:</source>
         <translation>Installer le &amp;dossier&#x202f;:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="197"/>
         <source>The folder where the new works will be installed</source>
         <translation>Le dossier où les nouveaux ouvrages seront installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="190"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
         <source>There are no works to update.</source>
         <translation>Il n&apos;y a pas d&apos;ouvrages à mettre à jour.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="192"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="204"/>
         <source>No works are currently installed so they cannot be removed.</source>
         <translation>Aucun ouvrage n&apos;est actuellement installé, il ne peut donc pas être supprimé.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="197"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="209"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
         <translation>Aucun ouvrage ne peut être installé avec la sélection actuelle de bibliothèques et de langues distantes. Veuillez revenir en arrière et faire une sélection différente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="202"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="214"/>
         <source>Grouping:</source>
         <translation>Rassembler&#x202f;:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="203"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="215"/>
         <source>Grouping</source>
         <translation>Grouper</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="217"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Modifier le groupement des éléments dans la bibliothèque.</translation>
     </message>
@@ -1322,7 +1327,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="148"/>
         <source>Fonts</source>
-        <translation>Police&#x202f;:</translation>
+        <translation>Police</translation>
     </message>
 </context>
 <context>
@@ -1386,7 +1391,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="73"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="77"/>
@@ -1555,7 +1560,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="175"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>La Bible standard est utilisée lorsqu&apos;un hyperlien dans une Bible est cliqué.</translation>
+        <translation>La Bible standard est utilisée lorsqu&apos;un hyperlien dans une Bible est sélectionné</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="177"/>
@@ -1764,7 +1769,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation>Les fenêtres Bibliothèque, Signet et Aperçu peuvent être déplacées vers de nouveaux emplacements en les faisant glisser depuis le titre situé en haut de chaque fenêtre. Elles peuvent être placées à gauche, à droite, au-dessus ou en dessous des fenêtres des ouvrages. Elles peuvent être placées les unes sur les autres et des onglets apparaîtront pour que chaque fenêtre puisse être sélectionnée. Elles peuvent être redimensionnées en faisant glisser la bordure entre la fenêtre et une autre fenêtre.</translation>
+        <translation>Les fenêtres Bibliothèque, Signet et Loupe peuvent être déplacées vers de nouveaux emplacements en les faisant glisser depuis le titre situé en haut de chaque fenêtre. Elles peuvent être placées à gauche, à droite, au-dessus ou en dessous des fenêtres des ouvrages. Elles peuvent être placées les unes sur les autres et des onglets apparaîtront pour que chaque fenêtre puisse être sélectionnée. Elles peuvent être redimensionnées en faisant glisser la bordure entre la fenêtre et une autre fenêtre.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
@@ -1784,7 +1789,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Vous pouvez voir les informations sur les nombres de Strong dans la fenêtre Aperçu, en survolant un mot dans un ouvrage biblique contenant les nombres de Strong. Vous devriez avoir installé les lexiques StrongsGreek et StrongsHebrew depuis Crosswire.</translation>
+        <translation>Vous pouvez voir les informations sur les nombres de Strong dans la fenêtre Loupe, en survolant un mot dans un ouvrage biblique contenant les nombres de Strong. Vous devriez avoir installé les lexiques StrongsGreek et StrongsHebrew depuis Crosswire.</translation>
     </message>
 </context>
 <context>
@@ -1843,7 +1848,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="139"/>
         <source>Choose action group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir une action groupée&#x202f;:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="141"/>
@@ -2012,52 +2017,52 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="83"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">Signets</translation>
+        <translation>Signets</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>New folder</source>
-        <translation type="unfinished">Nouveau dossier</translation>
+        <translation>Nouveau dossier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer le dossier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier le  signet…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Trier le dossier de signets…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Trier tous les signets…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
         <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer dans le dossier…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
         <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter depuis le dossier…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimer les signets…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer les éléments sélectionnés…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
@@ -2201,7 +2206,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="259"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation>Mais celui qui fait la vérité vient à la lumière, afin qu&apos;il soit manifesté que ses œuvres sont faites en Dieu</translation>
+        <translation>Mais celui qui fait la vérité vient à la lumière, afin qu&apos;il soit manifesté que ses œuvres sont faites en Dieu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="249"/>
@@ -2259,7 +2264,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="392"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>En-tête de zone de texte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="441"/>
@@ -2344,7 +2349,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="127"/>
         <source>Module not writable</source>
-        <translation>Le module non inscriptible.</translation>
+        <translation>Module non inscriptible</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="129"/>
@@ -2476,7 +2481,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="164"/>
         <source>Module not writable</source>
-        <translation>Module non inscriptible.</translation>
+        <translation>Module non inscriptible</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="166"/>
@@ -2737,7 +2742,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="42"/>
         <source>Standard works</source>
-        <translation>Ouvrage actuel</translation>
+        <translation>Ouvrages standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
@@ -2877,7 +2882,7 @@ Voulez-vous continuer&#x202f;?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="77"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;C&apos;est la zone de visionnage Aperçu. Passez la souris sur des liens ou d&apos;autres éléments qui contiennent des données et le contenu apparaît dans l&apos;Aperçu après un court délai. Déplacez rapidement la souris dans l&apos;Aperçu ou verrouillez la vue en maintenant la touche Maj enfoncée tout en déplaçant la souris.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;C&apos;est la zone de visionnage Loupe. Passez la souris sur des liens ou d&apos;autres éléments qui contiennent des données et le contenu apparaît dans la Loupe après un court délai. Déplacez rapidement la souris dans la Loupe ou verrouillez la vue en maintenant la touche Maj enfoncée tout en déplaçant la souris.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -3039,11 +3044,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <source>Chinantec, Quiotepec</source>
         <extracomment>Language name chq</extracomment>
         <translation>Chinantèque de Quiotepec</translation>
-    </message>
-    <message>
-        <source>Chinantec, Ozumacu00edn</source>
-        <extracomment>Language name chz</extracomment>
-        <translation type="vanished">Chinantèque de Ozumacu00edn</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
@@ -3301,30 +3301,25 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotèque de San Juan Guelavía</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotèque d&apos;Amatlán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotèque de Yalálag</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Itzu00e1</source>
-        <extracomment>Language name itz</extracomment>
-        <translation type="vanished">Itzu00e1</translation>
+        <translation>Zapotèque de Quioquitani-Quierí</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -3361,7 +3356,7 @@ Voulez-vous continuer&#x202f;?</translation>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Q&apos;eqchi&apos;</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3463,19 +3458,19 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam de Todos Santos Cuchumatán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Norvégien de Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl de Michoacán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3520,11 +3515,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <translation>Norvégien</translation>
     </message>
     <message>
-        <source>Otomi, Queru00e9taro</source>
-        <extracomment>Language name otq</extracomment>
-        <translation type="vanished">Otomi de Queru00e9taro</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="402"/>
         <source>Papiamento</source>
         <extracomment>Language name pap</extracomment>
@@ -3553,11 +3543,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <source>Brazilian Portuguese</source>
         <extracomment>Language name pt_BR</extracomment>
         <translation>Portugais du Brésil</translation>
-    </message>
-    <message>
-        <source>Quichu00e9, West Central</source>
-        <extracomment>Language name qut</extracomment>
-        <translation type="vanished">Quichu00e9 de centre-est</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="426"/>
@@ -3662,11 +3647,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <translation>Tahitien</translation>
     </message>
     <message>
-        <source>Tzotzil, Zinacantu00e1n</source>
-        <extracomment>Language name tzz</extracomment>
-        <translation type="vanished">Tzotzil, Zinacantu00e1n</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="486"/>
         <source>Ukrainian</source>
         <extracomment>Language name uk</extracomment>
@@ -3706,13 +3686,13 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantèque de Ozumacín</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Itzá</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3724,7 +3704,7 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Otomi de Querétaro</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
@@ -3737,7 +3717,7 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Quiché de centre-est</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3749,18 +3729,13 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tzotzil, Zinacantán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
         <source>Yiddish</source>
         <extracomment>Language name yi</extracomment>
         <translation>Yiddish</translation>
-    </message>
-    <message>
-        <source>Zapotec, San Juan Guelavu00eda</source>
-        <extracomment>Language name zab</extracomment>
-        <translation type="vanished">Zapotèque de San Juan Guelavu00eda</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="509"/>
@@ -3775,20 +3750,10 @@ Voulez-vous continuer&#x202f;?</translation>
         <translation>Chinois</translation>
     </message>
     <message>
-        <source>Zapotec, Amatlu00e1n</source>
-        <extracomment>Language name zpo</extracomment>
-        <translation type="vanished">Zapotèque d&apos;Amatlu00e1n</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="515"/>
         <source>Zapotec, Zoogocho</source>
         <extracomment>Language name zpq</extracomment>
         <translation>Zapotèque de Zoogocho</translation>
-    </message>
-    <message>
-        <source>Zapotec, Yalu00e1lag</source>
-        <extracomment>Language name zpu</extracomment>
-        <translation type="vanished">Zapotèque de Yalu00e1lag</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="519"/>
@@ -3801,11 +3766,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
         <translation>Zapotèque de Rincon du Sud</translation>
-    </message>
-    <message>
-        <source>Zapotec, Quioquitani-Quieru00ed</source>
-        <extracomment>Language name ztq</extracomment>
-        <translation type="vanished"> Zapotèque de Quioquitani-Quieru00ed</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="525"/>
@@ -4026,12 +3986,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <translation>Créole haitien</translation>
     </message>
     <message>
-        <source>Kekchu00ed</source>
-        <comment>kek</comment>
-        <extracomment>Language name kek</extracomment>
-        <translation type="vanished">kekchi</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="359"/>
         <source>(Multiple languages)</source>
         <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
@@ -4042,11 +3996,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <source>Mam, Central</source>
         <extracomment>Language name mvc</extracomment>
         <translation>Mam central</translation>
-    </message>
-    <message>
-        <source>Mam, Todos Santos Cuchumatu00e1n</source>
-        <extracomment>Language name mvj</extracomment>
-        <translation type="vanished">Mam de Todos Santos Cuchumatu00e1n</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="365"/>
@@ -4065,16 +4014,6 @@ Voulez-vous continuer&#x202f;?</translation>
         <source>Burmese</source>
         <extracomment>Language name my</extracomment>
         <translation>Birman</translation>
-    </message>
-    <message>
-        <source>Norwegian Bokmu00e5l</source>
-        <extracomment>Language name nb</extracomment>
-        <translation type="vanished">Norvégien de Bokmu00e5l</translation>
-    </message>
-    <message>
-        <source>Nahuatl, Michoacu00e1n</source>
-        <extracomment>Language name ncl</extracomment>
-        <translation type="vanished">Nahuatl de Michoacu00e1n</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="409"/>
@@ -4098,7 +4037,7 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="504"/>
         <source>Yoryba</source>
         <extracomment>Language name yo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Yoruba</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="412"/>
@@ -4153,7 +4092,7 @@ Voulez-vous continuer&#x202f;?</translation>
     <message>
         <location filename="../../src/main.cpp" line="49"/>
         <source>Output BibleTime version and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Montrer la version de Bibletime et quitter</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="52"/>
@@ -4229,7 +4168,7 @@ Voulez-vous continuer&#x202f;?</translation>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="494"/>
         <source>Word lookup</source>
-        <translation type="unfinished"></translation>
+        <translation>Recherche de mots</translation>
     </message>
 </context>
 <context>
@@ -4268,7 +4207,7 @@ Voulez-vous continuer&#x202f;?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Commit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
@@ -4876,7 +4815,7 @@ Voulez-vous continuer&#x202f;?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="181"/>

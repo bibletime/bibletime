@@ -7,6 +7,7 @@
 # Joachim Ansorg, 2004
 # Rafael Campos <rafaelfrc@yahoo.com.br>, 2009
 # Rafael Campos <rafaelfrc@yahoo.com.br>, 2009
+# Rafael Campos <rafaelfrc@yahoo.com.br>, 2009
 # Samuel Lucas Vaz de Mello <samuelm@estadao.com.br>, 2004
 # Saulo Rodrigues e Silva <saulors@yahoo.com>, 2005,2009
 # Timothy Brennan Jr <timotheonb@gmail.com>, 2016

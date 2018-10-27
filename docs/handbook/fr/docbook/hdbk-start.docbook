@@ -6,8 +6,8 @@
 
     <sect2 id="hdbk-start-starting">
       <title>Lancer &bibletime;</title>
-      <para>&bibletime; is an executable file that is integrated with the desktop. You
-can launch &bibletime; from the Start Menu with this icon: <mediaobject>
+      <para>&bibletime; est un fichier exécutable intégré au bureau. Vous pouvez lancer
+&bibletime; à partir du menu Démarrer avec cette icône : <mediaobject>
         <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
 format="PNG" /> </imageobject>
         <textobject>
@@ -15,36 +15,38 @@ format="PNG" /> </imageobject>
         </textobject>
       </mediaobject></para>
 
-      <para>&bibletime; can also be launched from a terminal command prompt. To launch
-&bibletime;, open a terminal window and type: <screen>bibletime</screen></para>
+      <para>&bibletime; peut également être lancé à partir d'une invite de commande du
+terminal. Pour lancer &bibletime; ouvrez une fenêtre de terminal et tapez :
+<screen>bibletime</screen></para>
     </sect2>
 
     <sect2 id="hdbk-start-custom">
       <title>Configuration du démarrage</title>
-      <para>From a terminal you can use &bibletime; to open a random verse in the
-default bible: <screen>bibletime --open-default-bible "&lt;random&gt;"</screen> To open at a given
-passage like John 3:16, use: <screen>bibletime --open-default-bible "John 3:16"</screen> You can
-also use booknames in your current bookname language.</para>
+      <para>Depuis un terminal, vous pouvez utiliser &bibletime; pour ouvrir un verset
+aléatoire dans la bible par défaut : <screen>bibletime --open-default-bible "&lt;votre_module&gt;"</screen>Pour
+ouvrir à un passage donné tel que Jean 3,16, utilisez : <screen>bibletime --open-default-bible "Jean 3,16"</screen>Vous pouvez également utiliser des noms de livre dans
+votre langue de nom actuel.</para>
     </sect2>
   </sect1>
 
   <sect1 id="hdbk-start-firstrun">
     <title>Démarrage de &bibletime; pour la première fois</title>
 
-    <para>If you are starting &bibletime; for the first time, you will want to
-configure the following options, available under the <link
-linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
+    <para>Si vous ouvrez &bibletime; pour la première fois, vous souhaiterez
+configurer les options suivantes, disponibles dans la <link
+linkend="hdbk-reference-menus-settings">barre de menu Paramètres</link>.</para>
 
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Configure &bibletime; dialog</interface>
+          <interface>Fenêtre de configuration de &bibletime;</interface>
         </term>
         <listitem>
           <para>
-          <action>Customizes &bibletime;.</action>This dialog lets you adapt
-&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the
-detailed description</link> of this dialog.</para>
+          <action>Personnalise &bibletime;.</action> Cette boîte de dialogue vous
+permet d'adapter &bibletime; à vos besoins. Veuillez vous référer à la <link
+linkend="hdbk-config-bt">description détaillée</link> de cette boîte de
+dialogue.</para>
         </listitem>
       </varlistentry>
 
@@ -53,15 +55,16 @@ detailed description</link> of this dialog.</para>
           <interface>Gestionnaire de bibliothèque</interface>
         </term>
         <listitem>
-          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
-Bookshelf, add or delete works from your system.  It will only be shown if
-no default Bookshelf can be found.  Please see <link
-linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
-further details. If you start off with an empty Bookshelf, it will be
-helpful to install at least one Bible, Commentary, Lexicon and one Book to
-get to know &bibletime;'s basic features quickly.  You can do this by
-clicking on the Refresh button.  You will be presented with a list of works
-that are available from the &cbs;</para>
+          <para><action>Modifie votre bibliothèque.</action> Cette boîte de dialogue vous
+permet de modifier votre bibliothèque en ajoutant ou retirant des ouvrages
+de votre système. Il s'affichera uniquement si aucune bibliothèque par
+défaut n'a été trouvée. Voyez <link linkend="hdbk-op-bookshelfmanager">la
+section Gestionnaire de bibliothèque</link> pour plus de détails. Si vous
+démarrez avec une bibliothèque vide, il est utile d'installer au moins une
+bible, un commentaire, un lexique et un livre pour découvrir les
+caractéristiques de &bibletime;. Vous pouvez le faire en cliquant sur le
+bouton Actualiser. Une liste des travaux disponibles à partir de &cbs; vous
+sera présentée.</para>
         </listitem>
       </varlistentry>
     </variablelist>

@@ -1,45 +1,56 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Rechercher dans des modules</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="keywords" content="Qt4, BibleTime, SWORD, Crosswire, Boîte de dialogue d'aide"><link rel="home" href="index.html" title="The BibleTime Handbook"><link rel="up" href="hdbk-op.html" title="Chapitre 3. Utilisation du programme"><link rel="prev" href="hdbk-op-parts.html" title="Regardons les différentes parties de l'application une par une."><link rel="next" href="hdbk-op-bookshelfmanager.html" title="Le Gestionnaire de Bibliothèque"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Rechercher dans des modules</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="hdbk-op-parts.html">Précédent</a> </td><th width="60%" align="center">Chapitre 3. Utilisation du programme</th><td width="20%" align="right"> <a accesskey="n" href="hdbk-op-bookshelfmanager.html">Suivant</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="hdbk-op-search"></a>Rechercher dans des modules</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-intext"></a>Searching text in an open read window</h3></div></div></div><p>You can look for a word or phrase in the open read window (e.g. the chapter
-of a bible that you're reading) just like you are used to from other
-programs. This function can be reached either by clicking with the
-<span class="mousebutton">right</span> mouse button and selecting
-<span class="guimenuitem">Find...</span>, or by using the shortcut <span class="keycap"><strong>CtrlF</strong></span>. Read on to learn how
-you can search in entire works.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-access"></a>Accéder au dialogue de recherche</h3></div></div></div><p>You can search in a work by clicking with the
-<span class="mousebutton">right</span> mouse button on its symbol in the
-<span class="guimenu">Bookshelf</span> and selecting <span class="guimenuitem">Search in
-work(s)</span>. By holding Shift or Ctrl and clicking on other
-work's names you can select more than one. Then follow the same procedure to
-open the search dialog. You will be searching in all of these works at the
-same time.</p><p>You can also access the search dialog by clicking on <span class="guimenu">Search</span> from the main menu, and selecting
-the appropriate entry.</p><p>Une troisième manière de lancer une recherche consiste à cliquer sur l'icône
-de recherche dans une fenêtre de lecture ouverte.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-config"></a>Configuration de la recherche</h3></div></div></div><div class="screenshot"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="ss_searchopts.png" height="360"></td></tr></table></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hdbk-op-search-config-works"></a>Sélectionner les modules</h4></div></div></div><p>At the top of the options tab you will find
-<span class="guibutton">Choose</span>(works). If you would like to search in
-multiple works, click on this button and you will be offered a menu where
-you can select the works you want to search in.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hd-op-search-config-scope"></a>Limiter l'étendue de la recherche</h4></div></div></div><p>You can narrow the scope of your search to certain parts of the Bible by
-selecting one of the predefined scopes from the list in <span class="guimenu">Search
-scope</span>. You can define your own search ranges by clicking the
-<span class="guibutton">Setup ranges</span> button.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hd-op-search-config-syntax"></a>Introduction élémentaire syntaxe de recherche</h4></div></div></div><p>Enter the search phrase separated by spaces.  By default the search function
-will return results that match all the words.  If you want to find any of
-the words entered, select the <span class="guimenu">Some words</span> button.  If you
-want to perform a more complex search, select the <span class="guimenu">Free</span>
-button.  You can see examples of searches by clicking on <span class="guimenu">full
-syntax</span>.
-	  </p><p>You can use wildcards: '*' matches any number of characters, while '?' will
-match any single character. The use of brackets allows you to group your
-search terms, e.g. '(Jesus OR spirit) AND God'.</p><p>To search text other than the main text, enter the text type followed by
-':', and then the search term.  Refer to the table below for examples.</p><p>Types de textes disponibles : </p><div class="table"><a name="hd-op-search-config-syntax-table"></a><p class="title"><b>Tableau 3.1. Search Types</b></p><div class="table-contents"><table class="table" summary="Search Types" border="1"><colgroup><col><col><col></colgroup><thead><tr bgcolor="#EEEEEE"><th>Prefixe</th><th>Meaning</th><th>Exemple</th></tr></thead><tbody><tr><td>heading:</td><td>recherche des titres</td><td>heading:Jesus</td></tr><tr><td>footnote:</td><td>Recherche des notes de bas de page</td><td>footnote:Moses</td></tr><tr><td>strong:</td><td>Recherche des nombres de Strong</td><td>strong:G535</td></tr><tr><td>morph:</td><td>Recherche des codes morphologiques</td><td>morph:N-GSM</td></tr></tbody></table></div></div><p><br class="table-break"></p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Astuce</h3><p>You can right click on an installed work and select <span class="guimenu">About</span>
-to find which of the above search criteria may work for you.  Not all works
-have the built in features for performing this type of search.</p></div><p><span class="application">BibleTime</span> uses the Lucene search engine to perform your searches. It has
-many advanced features, and you can read more about it here: <a class="ulink" href="http://lucene.apache.org/java/docs/index.html" target="_top">
-http://lucene.apache.org/java/docs/index.html</a>.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-results"></a>Résultats de recherche</h3></div></div></div><p>Here you can see how many instances of the search string were found, sorted
-by works. Clicking on a work with the <span class="mousebutton">right</span> mouse
-button allows you to copy, save, or print all verses that were found in a
-certain work at once. This also works when you click on one or more of the
-references to copy, save or print them. Clicking on a particular reference
-opens that verse up in context in the preview window below.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Astuce</h3><p>Faites glisser une référence et déposez-la sur l'icône d'une module dans la
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Rechercher dans des modules</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="keywords" content="Qt4, BibleTime, SWORD, Crosswire, Boîte de dialogue d'aide"><link rel="home" href="index.html" title="Le manuel de BibleTime"><link rel="up" href="hdbk-op.html" title="Chapitre 3. Utilisation du programme"><link rel="prev" href="hdbk-op-parts.html" title="Regardons les différentes parties de l'application une par une."><link rel="next" href="hdbk-op-bookshelfmanager.html" title="Le Gestionnaire de Bibliothèque"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Rechercher dans des modules</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="hdbk-op-parts.html">Précédent</a> </td><th width="60%" align="center">Chapitre 3. Utilisation du programme</th><td width="20%" align="right"> <a accesskey="n" href="hdbk-op-bookshelfmanager.html">Suivant</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="hdbk-op-search"></a>Rechercher dans des modules</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-intext"></a>Recherche du texte dans une une fenêtre de lecture ouverte</h3></div></div></div><p>Vous pouvez rechercher un mot ou une phrase dans la fenêtre de lecture
+ouverte (par exemple, le chapitre d'une bible que vous lisez), comme vous en
+avez l'habitude avec d'autres programmes. Cette fonction peut être atteinte
+en cliquant avec le bouton <span class="mousebutton">droit</span> de la souris et
+en sélectionnant <span class="guimenuitem">Rechercher…</span>,ou en utilisant le
+raccourci clavier<span class="keycap"><strong>
+CtrlF</strong></span>. Lisez la suite pour savoir comment rechercher
+des ouvrages entiers.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-access"></a>Accéder au dialogue de recherche</h3></div></div></div><p>Vous pouvez rechercher dans un ouvrage en cliquant avec le bouton
+<span class="mousebutton">droit</span> de la souris sur son symbole dans la
+<span class="guimenu">bibliothèque</span> et sélectionnez <span class="guimenuitem">Recherche dans
+un ou plusieurs ouvrage(s)</span>. En maintenant Shift ou Ctrl et
+en cliquant sur les noms des autres ouvrages, vous pouvez en sélectionner
+plusieurs. Suivez ensuite la même procédure pour ouvrir la boîte de dialogue
+de recherche. Vous chercherez dans tous ces ouvrages en même temps.</p><p>Vous pouvez aussi accéder à la boîte de dialogue de recherche en cliquant
+<span class="guimenu">Rechercher</span> dans le menu
+principal et sélectionner l'entrée appropriée.</p><p>Une troisième manière de lancer une recherche consiste à cliquer sur l'icône
+de recherche dans une fenêtre de lecture ouverte.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-config"></a>Configuration de la recherche</h3></div></div></div><div class="screenshot"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="ss_searchopts.png" height="360"></td></tr></table></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hdbk-op-search-config-works"></a>Sélectionner les modules</h4></div></div></div><p>En haut de l'onglet options vous trouverez <span class="guibutton">Choisir</span>
+(les ouvrages). Si vous souhaitez effectuer une recherche dans plusieurs
+ouvrages, cliquez sur ce bouton et vous verrez un menu dans lequel vous
+pourrez sélectionner les ouvrages dans lesquels vous souhaitez rechercher.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hd-op-search-config-scope"></a>Limiter l'étendue de la recherche</h4></div></div></div><p>Vous pouvez limiter le champ de votre recherche à certaines parties de la
+Bible en sélectionnant l’un des champs prédéfinis de la liste dans
+<span class="guimenu">Plage de recherche</span>. Vous pouvez définir vos propres
+plages de recherche en cliquant sur le bouton <span class="guibutton">Configurer les
+plages</span>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hd-op-search-config-syntax"></a>Introduction élémentaire syntaxe de recherche</h4></div></div></div><p>Entrez la phrase de recherche séparée par des espaces. Par défaut, la
+fonction de recherche renvoie des résultats correspondant à tous les
+mots. Si vous voulez trouver l’un des mots entrés, sélectionnez le bouton
+<span class="guimenu">Quelques mots</span>. Si vous souhaitez effectuer une recherche
+plus complexe, sélectionnez le bouton <span class="guimenu">Libre</span>. Vous pouvez
+voir des exemples de recherches en cliquant sur <span class="guimenu">syntaxe
+complète</span>.
+	  </p><p>Vous pouvez utiliser des caractères génériques : "*" correspond à un nombre
+quelconque de caractères, tandis que "?" correspondra à n'importe quel
+caractère unique. L'utilisation de crochets vous permet de regrouper vos
+termes de recherche, par exemple '(Jésus OU esprit) ET Dieu'.</p><p>Pour rechercher un texte autre que le texte principal, entrez le type de
+texte suivi de ':', puis du terme de recherche. Reportez-vous au tableau
+ci-dessous pour des exemples.</p><p>Types de textes disponibles : </p><div class="table"><a name="hd-op-search-config-syntax-table"></a><p class="title"><b>Tableau 3.1. Types de recheche</b></p><div class="table-contents"><table class="table" summary="Types de recheche" border="1"><colgroup><col><col><col></colgroup><thead><tr bgcolor="#EEEEEE"><th>Prefixe</th><th>Signification</th><th>Exemple</th></tr></thead><tbody><tr><td>heading:</td><td>recherche des titres</td><td>heading:Jésus</td></tr><tr><td>note_de_bas_de_page:</td><td>Recherche des notes de bas de page</td><td>note_de_bas_de_page:Moses</td></tr><tr><td>strong:</td><td>Recherche des nombres de Strong</td><td>strong:G535</td></tr><tr><td>morph:</td><td>Recherche des codes morphologiques</td><td>morph:N-GSM</td></tr></tbody></table></div></div><p><br class="table-break"></p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Astuce</h3><p>Vous pouvez cliquer avec le bouton droit sur un ouvrage installée et
+sélectionner <span class="guimenu">À propos</span> pour trouver lequel des critères de
+recherche ci-dessus peut fonctionner pour vous. Tous les ouvrages n'ont pas
+les fonctionnalités intégrées pour effectuer ce type de recherche.</p></div><p><span class="application">BibleTime</span> utilise le moteur de recherche Lucene pour effectuer vos
+recherches. Il a de nombreuses fonctionnalités avancées, et vous pouvez en
+savoir plus à ce sujet ici: <a class="ulink" href="http://lucene.apache.org/java/docs/index.html" target="_top">
+http://lucene.apache.org/java/docs/index.html</a>.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-op-search-results"></a>Résultats de recherche</h3></div></div></div><p>Ici vous pouvez voir combien d'occurrences de la chaîne de recherche ont été
+trouvées et triées par ouvrages. Un clic sur un ouvrage avec le bouton
+<span class="mousebutton">droit</span> de la souris vous permet de copier,
+sauvegarder ou imprimer tous les versets trouvés dans un ouvrage en même
+temps. Cela fonctionne également lorsque vous cliquez sur une ou plusieurs
+références pour les copier, les enregistrer ou les imprimer. Un clic sur une
+référence particulière ouvre ce verset en contexte dans la fenêtre d'aperçu
+ci-dessous.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Astuce</h3><p>Faites glisser une référence et déposez-la sur l'icône d'une module dans la
 bibliothèque pour ouvrir cette module à ce verset dans une nouvelle fenêtre
 de lecture.</p></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Astuce</h3><p>Faites glisser une référence et déposez-la sur une fenêtre de lecture
 ouverte, et elle ira automatiquement à ce verset.</p></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Astuce</h3><p>Faites glisser une référence et déposez-la dans un dossier de signets de la
-bibliothèque et le verset s'ajoutera aux signets.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hdbk-op-search-analysis"></a>Analyse de la recherche</h4></div></div></div><p>Click on <span class="guibutton">Search analysis</span> to open the search analysis
-display. This gives a simple graphic analysis of the number of instances the
-search string was found in each book of the Bible, and you can also save the
-analysis.</p><div class="screenshot"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="ss_searchanal.png" height="360"></td></tr></table></div></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="hdbk-op-parts.html">Précédent</a> </td><td width="20%" align="center"><a accesskey="u" href="hdbk-op.html">Niveau supérieur</a></td><td width="40%" align="right"> <a accesskey="n" href="hdbk-op-bookshelfmanager.html">Suivant</a></td></tr><tr><td width="40%" align="left" valign="top">Regardons les différentes parties de l'application une par une. </td><td width="20%" align="center"><a accesskey="h" href="index.html">Sommaire</a></td><td width="40%" align="right" valign="top"> Le <span class="guimenuitem">Gestionnaire de Bibliothèque</span></td></tr></table></div></body></html>
+bibliothèque et le verset s'ajoutera aux signets.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="hdbk-op-search-analysis"></a>Analyse de la recherche</h4></div></div></div><p>Cliquez sur <span class="guibutton">Analyse de recherche</span> pour ouvrir l'écran
+d'analyse de recherche. Cela donne une analyse graphique simple du nombre
+d'occurrences où la chaîne de recherche a été trouvée dans chaque livre de
+la Bible, vous pouvez également enregistrer l'analyse.</p><div class="screenshot"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="ss_searchanal.png" height="360"></td></tr></table></div></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="hdbk-op-parts.html">Précédent</a> </td><td width="20%" align="center"><a accesskey="u" href="hdbk-op.html">Niveau supérieur</a></td><td width="40%" align="right"> <a accesskey="n" href="hdbk-op-bookshelfmanager.html">Suivant</a></td></tr><tr><td width="40%" align="left" valign="top">Regardons les différentes parties de l'application une par une. </td><td width="20%" align="center"><a accesskey="h" href="index.html">Sommaire</a></td><td width="40%" align="right" valign="top"> Le <span class="guimenuitem">Gestionnaire de Bibliothèque</span></td></tr></table></div></body></html>

@@ -5,6 +5,7 @@
 # Translators:
 # Maris Susts, 2018
 # Maris Susts, 2018
+# Maris Susts, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"

@@ -4,6 +4,7 @@
 #
 # Translators:
 # Emet <byfaithtogod@gmail.com>, 2015
+# Emet <byfaithtogod@gmail.com>, 2015
 # Vlad Savitsky <vlad_savitsky@mail.ru>, 2003-2004
 msgid ""
 msgstr ""
