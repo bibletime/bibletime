@@ -46,19 +46,6 @@
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Customizes &bibletime;.</action>This dialog lets
-          you adapt &bibletime; to your needs. Please see 
-          <link linkend="hdbk-config-bt">the detailed
-          description</link> of this dialog.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
@@ -73,6 +60,18 @@
 	    this by clicking on the Refresh button.  You will be
 	    presented with a list of works that are available from the
 	    &cbs;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Customizes &bibletime;.</action>This dialog lets
+          you adapt &bibletime; to your needs. Please see 
+          <link linkend="hdbk-config-bt">the detailed
+          description</link> of this dialog.</para>
         </listitem>
       </varlistentry>
     </variablelist>

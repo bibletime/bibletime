@@ -1185,22 +1185,6 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Zoom out. This decreases the font size of read
-            windows.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">
-              <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Zoom in. This increases the font size of read
-            windows.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">
               <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Select all. This selects all text in read
