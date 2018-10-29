@@ -68,7 +68,11 @@ SET_TARGET_PROPERTIES("handbook_pdf" PROPERTIES FOLDER "Documentation")
 FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
     ADD_CUSTOM_TARGET("handbook_pdf_${HANDBOOK_LOCALE_LANG}"
        COMMENT "Generating PDF handbook for ${HANDBOOK_LOCALE_LANG}"
-       COMMAND fop -xml ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook -xsl ${BT_DOCBOOK_PDF_XSL} -pdf ../../${HANDBOOK_LOCALE_LANG}/pdf/handbook.pdf
+
+       COMMAND xsltproc -o tmp.fo  ${BT_DOCBOOK_PDF_XSL}   ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook
+       COMMAND fop -pdf ../../${HANDBOOK_LOCALE_LANG}/pdf/handbook.pdf -fo tmp.fo 
+       COMMAND rm tmp.fo
+
        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/")
     ADD_DEPENDENCIES("handbook_pdf" "handbook_pdf_${HANDBOOK_LOCALE_LANG}")
     SET_TARGET_PROPERTIES("handbook_pdf_${HANDBOOK_LOCALE_LANG}" PROPERTIES FOLDER "Documentation")
