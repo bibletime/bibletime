@@ -872,18 +872,6 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>تصغير. يقوم بتصغير حجم الخط في نافذة القراءة.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>تكبير. يقوم بتكبير حجم الخط في نافذة القراءة.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>إختيار الكل. يقوم بإختيار كل النص الموجود في نافذة القراءة.</entry>

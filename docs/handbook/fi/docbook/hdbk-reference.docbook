@@ -880,18 +880,6 @@ equivalent; organizes windows with tabs across the top.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Loitonna. Tämä pienentää kirjasimen kokoa lukuikkunoissa.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Lähennä. Tämä suurentaa kirjasimen kokoa lukuikkunoissa.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Valitse kaikki. Tämä valitsee kaikki tekstit lukuikkunassa.</entry>

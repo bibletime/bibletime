@@ -78,15 +78,9 @@ language.</para>
 handbook. For further information you might want to refer to the <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run
-faster than with a large font like <trademark class="registered">Bitstream
-Cyberbit</trademark>(about 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Lettertypen verkrijgen</title>
-        <para>Lettertypen kunnen worden verkregen uit een aantal bronnen:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Your *nix distribution.</para>

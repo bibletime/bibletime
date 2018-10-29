@@ -39,10 +39,14 @@
       <firstname>Thomas</firstname>
       <surname>Abthorpe</surname>
     </author>
+    <author>
+      <firstname>Gary</firstname>
+      <surname>Holmlund</surname>
+    </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2016</year> <holder>El Equipo &bibletime;</holder>
+<copyright> <year>1999-2018</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
@@ -50,22 +54,21 @@
 &bibletime;.</para>
   </legalnotice>
 
-  <date>Enero 2014</date>
+  <date>October 2018</date>
 
-  <releaseinfo>2.10.1</releaseinfo>
+  <releaseinfo>2.11.2</releaseinfo>
 
   <abstract>
-    <para>&bibletime; es un programa de estudio de la Biblia completamente libre. La
-programación de interfaz de usuario esta construida con el framework &qt;,
-lo que hace que se ejecute en varios sistemas operativos, incluyendo Linux,
-Windows, FreeBSD y Mac OS X. El software utiliza la biblioteca de
-programación &sword; para trabajar con más de 200 textos libres de la
-Biblia, comentarios, diccionarios y libros en más de 50 idiomas que ofrece
-el &cbs;.</para>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with the &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 900 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs; and several other repositories.</para>
   </abstract>
 
   <keywordset>
-    <keyword>Qt4</keyword>
+    <keyword>Qt5</keyword>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>

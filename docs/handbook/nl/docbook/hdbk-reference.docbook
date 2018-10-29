@@ -880,18 +880,6 @@ equivalent; organizes windows with tabs across the top.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Uitzoomen. Dit vermindert de lettergrootte van de leesvensters.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Inzoomen. Dit vergroot de lettergrootte van de leesvensters.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Selecteer alles. Dit selecteert alle tekst in de leesvensters.</entry>

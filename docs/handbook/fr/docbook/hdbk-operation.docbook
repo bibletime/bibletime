@@ -32,11 +32,11 @@ signets et d'y accéder.</para>
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Lire des modules</title>
 
-        <para>Pour ouvrir une module, cliquez avec le <mousebutton>bouton gauche de la
-souris</mousebutton> sur la catégorie souhaitée. (Bibles, Commentaires,
-Lexiques, Livres, Devotionals ou Glossaires) pour en afficher le
-contenu. Cliquez ensuite sur une module pour l'ouvrir. Une fenêtre de
-lecture apparaîtra dans l'espace de bureau.</para>
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>Si, lors de la lecture d'une module, vous désirez ouvrir une autre module au
 passage que vous lisez, vous pouvez utiliser le raccourci suivant. Cliquez
@@ -154,14 +154,10 @@ vous devez installer un certain ouvrage de la bibliothèque du <ulink
 url="http://www.crosswire.org">&cbs;</ulink>. Cet ouvrage s'appelle « Le
 commentaire personnel ».</para>
 
-        <para>Si vous ouvrez le commentaire personnel en cliquant sur son icône dans la
-bibliothèque avec le bouton <mousebutton>gauche</mousebutton> de la souris
-il s'ouvre en mode de lecture. Vous ne pouvez pas l'éditer dans ce
-mode. Pour ajouter des notes dans le commentaire personnel, ouvrez-le avec
-le bouton <mousebutton>droit</mousebutton> de la souris et choisissez
-<guimenu>Éditer cet ouvrage</guimenu> et choisissez ensuite
-<guimenuitem>Texte brut</guimenuitem>(éditeur de code source) ou
-<guimenuitem>HTML</guimenuitem> (éditeur de base en mode graphique).</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>Si <menuchoice><guimenu>Modifier cet ovurage</guimenu></menuchoice> est
@@ -243,10 +239,9 @@ voir des exemples de recherches en cliquant sur <guimenu>syntaxe
 complète</guimenu>.
 	  </para>
 
-        <para>Vous pouvez utiliser des caractères génériques : "*" correspond à un nombre
-quelconque de caractères, tandis que "?" correspondra à n'importe quel
-caractère unique. L'utilisation de crochets vous permet de regrouper vos
-termes de recherche, par exemple '(Jésus OU esprit) ET Dieu'.</para>
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>Pour rechercher un texte autre que le texte principal, entrez le type de
 texte suivi de ':', puis du terme de recherche. Reportez-vous au tableau
@@ -351,67 +346,40 @@ présent.
 Choisissez<menuchoice><guimenu>Paramètres</guimenu><guimenuitem>Gestionnaire
 de bibliothèque</guimenuitem></menuchoice> dans le menu principal.</para>
 
-      <tip>
-	<para>Si c'est la première fois que vous ouvrez &bibletime;, cliquez sur le bouton
-Actualiser pour afficher la liste des ouvrages fournis par &cbs;.</para>
-      </tip>
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Configurer les chemins vers les bibliothèques</title>
 
-      <para>Vous pouvez désigner ici l'endroit où &bibletime; garde votre bibliothèque
-sur le disque dur. Vous pouvez même la placer dnas plusieurs répertoires. Le
-répertoire par défaut est "~/.sword/" sur les système *nix et "C:\Documents
-and Settings\All Users\Application Data\Sword" pour Windows.</para>
-
-      <tip>
-        <para>Si vous avez un CD Sword, mais que vous ne voulez pas installer les ouvrages
-sur le disque mais plutôt les consulter directement sur le CD, vous pouvez
-ajouter le chemin du CD dans vos chemins vers les bibliothèques. Quand vous
-lancez &bibletime;, si le CD est présent, les modules qu'il contient
-s'afficheront dans la bibliothèque.</para>
-      </tip>
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Installer/mettre à jour module</title>
-
-      <para>Avec cet utilitaire vous pouvez vous connecter à un dépôt d'ouvrages (appelé
-"bibliothèque"), et transférer un ou plusieurs ouvrages dans votre
-bibliothèque locale. Ces dépôts peuvent être locaux (un CD Sword), ou
-distants (le dépôt en ligne de Crosswire ou un autre site proposant des
-modules Sword). Vous pouvez installer d'autres sources en cliquant sur
-<guibutton>Obtenir la liste…</guibutton> lorsque vous avez la boîte de
-dialogue <guibutton>Nouvelle installation de sources</guibutton> qui
-s'ouvre. Vous pouvez gérer les bibliothèques avec <guibutton>Ajouter une
-bibliothèque</guibutton> et<guibutton> Effacer une bibliothèque</guibutton>.</para>
-
-      <para>Pour commencer une installation ou une mise à jour, choisissez la
-bibliothèque à laquelle vous désirez vous connecter et une bibliothèque
-locale où installer l'module. Cliquez ensuite sur <guibutton>Connecter à la
-bibliothèque</guibutton>. &bibletime; parcourra le contenu de la
-bibliothèque et vous proposera une liste d'modules que vous pouvez ajouter à
-votre bibliothèque; ou que vous avez déjà installés mais dont une nouvelle
-version est disponible. Marquez ensuite toutes les modules à installer ou à
-mettre à jour et cliquez sur <guibutton>Installer modules</guibutton>. Elles
-seront alors transférées dans votre bibliothèque.</para>
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Enlever des modules</title>
-      <para>Vous pouvez enlever une ou plusieurs modules de votre bibliothèque pour
-libérer de l'espace disque. Marquer les modules à effacer et cliquez
-sur<guibutton>Enlever modules</guibutton>.</para>
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Rechercher des index</title>
-      <para>Cette option vous permet de créer de nouveaux index de recherche et de
-nettoyer les fichiers d'index orphelins pour les ouvrages supprimés.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Exporter et imprimer</title>

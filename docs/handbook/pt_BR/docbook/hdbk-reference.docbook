@@ -891,18 +891,6 @@ posicionamento</guimenuitem> <guimenuitem>Com abas</guimenuitem>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Diminuir zoom. Diminui o tamanho da fonte das janelas de leitura.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Aumentar zoom. Aumenta o tamanho da fonte das janelas de leitura.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Selecionar tudo. Seleciona todo o texto na janela de leitura.</entry>

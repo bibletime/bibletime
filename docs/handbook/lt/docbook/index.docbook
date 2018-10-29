@@ -39,10 +39,14 @@
       <firstname>Thomas</firstname>
       <surname>Abthorpe</surname>
     </author>
+    <author>
+      <firstname>Gary</firstname>
+      <surname>Holmlund</surname>
+    </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2016</year> <holder>&bibletime; komanda</holder>
+<copyright> <year>1999-2018</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
@@ -50,21 +54,21 @@
 programa.</para>
   </legalnotice>
 
-  <date>2014 Sausis</date>
+  <date>October 2018</date>
 
-  <releaseinfo>2.10.1</releaseinfo>
+  <releaseinfo>2.11.2</releaseinfo>
 
   <abstract>
-    <para>&bibletime; yra visiškai nemokama Biblijos studijavimo programa. Programos
-naudotojo sąsaja yra sukurta &qt; karkaso pagalba, kas leidžia vykdyti šią
-programą keliose operacinėse sistemose, įskaitant Linux, Windows, FreeBSD ir
-Mac OS X. Darbui su daugiau kaip 200 Biblijos tekstų, komentarų, žodynų ir
-knygų, kuriuos &cbs; pateikia daugiau kaip 50 kalbų, programinė įranga
-naudoja &sword; programavimo biblioteką.</para>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with the &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 900 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs; and several other repositories.</para>
   </abstract>
 
   <keywordset>
-    <keyword>Qt4</keyword>
+    <keyword>Qt5</keyword>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>

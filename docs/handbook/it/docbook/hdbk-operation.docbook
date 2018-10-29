@@ -31,11 +31,11 @@ salvare e accedere ai tuoi segnalibri.</para>
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Lettura documenti</title>
 
-        <para>Per aprire un documento dalla libreria per leggerla, clicca con il
-<mousebutton>pulsante sinistro del mouse</mousebutton> sulla categoria
-desiderata (Bibbie, Commenti, Lessici, Libri, Letture Devozionali o
-Glossari) per mostrarne il contenuto. Poi clicca su uno dei documenti per
-aprirlo per la lettura. Una finestra di lettura apparirà nella Scrivania.</para>
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>Se stai leggendo un certo documento, e vuoi aprire un altro documento al
 passaggio che stai leggendo, puoi usare una scorciatoia. Clicca con il
@@ -152,14 +152,10 @@ particolare documento dalla libreria di <ulink
 url="http://www.crosswire.org">&cbs;</ulink>. Questo documento si chiama
 "Commenti personali".</para>
 
-        <para>Se apri i commenti personali cliccando sul suo simbolo nella Libreria con il
-pulsante <mousebutton>sinistro</mousebutton> del mouse, si apre in
-lettura. Non potrai modificarli in questa modalità. Se desideri scrivere
-annotazioni nei commenti personali, devi aprirli con il pulsante
-<mousebutton>destro</mousebutton> del mouse e poi selezionare <guimenu>
-Modifica documento</guimenu> e poi anche <guimenuitem>Testo semplice
-</guimenuitem> (editor di codice sorgente) o <guimenuitem>HTML
-</guimenuitem> (editor GUI WYSIWYG di base).</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>Se <menuchoice> <guimenu>Modifica documento</guimenu> </menuchoice> è
@@ -237,10 +233,9 @@ complessa, seleziona il pulsante <guimenu> Libero</guimenu> . Puoi vedere
 esempi di ricerche cliccando su <guimenu> sintassi completa</guimenu>.
 	  </para>
 
-        <para>Puoi usare il carattere speciale: '*' corrisponde a un qualsiasi numero di
-caratteri, mentre '?' corrisponde ad un singolo carattere. L'uso delle
-parentesi consente di raggruppare i termini di ricerca, es. '(Gesù OR
-spirito) AND Dio'.</para>
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>Per cercare un altro testo rispetto al testo principale, inserisci il tipo
 di testo seguito da ':' e dal termine di ricerca. Fare riferimento alla
@@ -341,65 +336,40 @@ aggiornare o rimuovere documenti esistenti dalla Libreria. Puoi accedervi
 cliccando <menuchoice><guimenu>Impostazioni</guimenu><guimenuitem>Gestore
 Libreria</guimenuitem></menuchoice> nel menu principale.</para>
 
-      <tip>
-	<para>Se è la prima volta che avvii &bibletime;, clicca sul pulsante Aggiorna per
-vedere una lista di documenti forniti da &cbs;.</para>
-      </tip>
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Setup percorsi Libreria</title>
 
-      <para>Qui puoi specificare dove &bibletime; può salvare la Libreria sul hard
-disk. Puoi anche salvarla in più cartelle. Di default è "~/.sword/" su *nix
-e "C:\Documents and Settings\All Users\Application Data\Sword" per Windows.</para>
-
-      <tip>
-        <para>Se hai un CD di sword, ma non vuoi installare tutti i documenti sul hard
-disk, e usarli direttamente dal CD, allora puoi aggiungere il percorso del
-CD come uno dei percorsi di libreria. Quando avvii &bibletime;, mostrerà i
-documenti presenti sul CD se è presente.</para>
-      </tip>
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Installa/aggiorna documenti</title>
-
-      <para>Con questo strumento, è possibile connettersi a un archivio di documenti
-(chiamato "biblioteca"), e trasferire uno o più documenti nella tua Libreria
-locale. Queste biblioteche possono essere locali (es. un CD &sword;), o
-remote (es. repository Crosswire online di documenti &sword;, o altri siti
-che offrono documenti &sword;). Puoi installare altre fonti cliccando su
-<guibutton>Prendi lista...</guibutton> quando hai la finestra di dialogo
-<guibutton>Installazione Nuova Fonte</guibutton> aperta. Puoi gestire le
-biblioteche con <guibutton>Aggiungi biblioteca</guibutton> e <guibutton>
-Rimuovi biblioteca</guibutton>.</para>
-
-      <para>Per iniziare il processo d'installazione o d'aggiornamento, seleziona una
-biblioteca a cui ti vuoi connettere e il percorso di una Libreria locale per
-installarci i documenti. Poi clicca su <guibutton>Connetti alla biblioteca
-</guibutton>. &bibletime; scansionerà il contenuto della biblioteca e ti
-darà una lista dei documenti che puoi aggiungere alla tua Libreria, o che
-hai già installato ma è disponibile una nuova versione nella biblioteca, e
-quindi possono essere aggiornati. Poi puoi spuntare tutti i documenti che
-vuoi installare o aggiornare, e cliccare su <guibutton> Installa
-documenti</guibutton>. Saranno trasferiti nella tua Libreria.</para>
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Rimuovi documenti</title>
-      <para>Questo strumento ti permette di cancellare uno o più documenti dalla tua
-Libreria per liberare spazio sul disco. Spunta gli elementi e clicca su
-<guibutton>Rimuovi documenti</guibutton>.</para>
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Indici di Ricerca</title>
-      <para>Questa opzione consente di creare nuovi indici di ricerca e pulire gli
-indici orfani per i documenti rimossi.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Esportazione e Stampa</title>

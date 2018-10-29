@@ -83,15 +83,9 @@ d'installer le paquet de localisation pour cette langue.</para>
 manuel. Pour plus d'informations, vous pouvez vous référer au <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> tutoriel sur
 l'unicode</ulink>.</para>
-        <tip>
-          <para>Si vous utilisez une petite police comme Clearlyu (environ 22kb),
-&bibletime; fonctionnera plus rapidement qu'avec une grande police comme
-<trademark class="registered">Bitstream Cyberbit</trademark> (environ 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Obtenir des polices</title>
-        <para>Des polices peuvent être obtenues de plusieurs sources</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Votre distribution *nix.</para>

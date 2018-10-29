@@ -38,19 +38,6 @@ linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä
-&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link
-linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä
-ikkunasta.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Kirjahyllyn hallinta</interface>
         </term>
         <listitem>
@@ -63,6 +50,18 @@ helpful to install at least one Bible, Commentary, Lexicon and one Book to
 get to know &bibletime;'s basic features quickly.  You can do this by
 clicking on the Refresh button.  You will be presented with a list of works
 that are available from the &cbs;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä
+&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link
+linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä
+ikkunasta.</para>
         </listitem>
       </varlistentry>
     </variablelist>

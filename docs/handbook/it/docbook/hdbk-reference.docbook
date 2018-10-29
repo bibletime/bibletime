@@ -899,18 +899,6 @@ corrente come nuova sessione.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Zoom out. Diminuisce la dimensione del carattere della finestra di lettura.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Zoom out. Aumenta la dimensione del carattere della finestra di lettura.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Seleziona tutto. Seleziona tutto il testo nella finestra di lettura.</entry>

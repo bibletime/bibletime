@@ -30,11 +30,11 @@ záložky a poté k nim přistupovat.</para>
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Čtení děl</title>
 
-        <para>Pro otevření díla z knihovny jednoduše klikněte
-<mousebutton>levým</mousebutton> tlačítkem myši na požadovanou kategorii
-(Bible, Komentáře, Lexikony, Knihy, Zamyšlení nebo Glosáře) pro zobrazení
-jejího obsahu. Poté klikněte na jedno z děl k jeho otevření pro čtení. Okno
-pro čtení díla se objeví na ploše.</para>
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>Pokud čtete nějaké dílo a chcete otevřít stejnou pasáž v jiném díle, můžete
 použít zkratku. jednoduše klikněte <mousebutton>levým</mousebutton>
@@ -140,13 +140,10 @@ funguje to.</para>
 dílo z knihovny  <ulink url="http://www.crosswire.org">&cbs;</ulink>, které
 se jmenuje "Personal commentary" ("Osobní komentář").</para>
 
-        <para>Pokud otevřete osobní komentář kliknutím <mousebutton>levým</mousebutton>
-tlačítkem myši na jeho symbol v knihovně, otevře se v módu pro čtení. V
-tomto módu není možné komentář editovat. Pokud si přejete do něj zapsat
-poznámku, musíte ho otevřít pomocí <mousebutton>pravého</mousebutton>
-tlačítka myši a zvolit <guimenu>Editovat toto dílo</guimenu> a potom také
-<guimenuitem>Prostý text</guimenuitem> (editor zdrojového kódu) nebo
-<guimenuitem>HTML</guimenuitem>(jednoduchý GUI WYSIWYG editor).</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>Pokud je položka <menuchoice> <guimenu>Upravit toto dílo</guimenu>
@@ -224,9 +221,9 @@ slova</guimenu>. Pokud si přejete provést komplexnější vyhledávání, zvol
 <guimenu>plná sklatba</guimenu>.
 	  </para>
 
-        <para>Můžete využít znaky: '*' odpovídající libovolné posloupnosti znaků, '?'
-zastupující libovolný jeden znak. Použití závorek vám dovoluje seskupovat
-hledané výrazy, např. '(Ježíš OR duch) AND Bůh'</para>
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>Pro vyhledávání jiného než hlavního textu vložte určitou předponu
 následovanou'dvojtečkou ':' a hledaným výrazem. Podívejte se na následující
@@ -323,66 +320,40 @@ knihovny. Můžete do vaší knihovny nainstalovat nová díla, nebo aktualizova
 <guimenu>Nastavení</guimenu> <guimenuitem>Správa knih</guimenuitem>
 </menuchoice> v hlavním menu.</para>
 
-      <tip>
-	<para>Pokud je toto poprvé co spouštíte &bibletime;, klikněte na tlačítko Obnovit
-pro zobrazení seznamu děl nabízených &cbs;.</para>
-      </tip>
-
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Nastavení cesty ke knihám</title>
-
-      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard
-drive.  You can even store it in multiple directories. The default is
-"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application
-Data\Sword" for Windows.</para>
-
-      <tip>
-        <para>Pokud máte CD sword, ale nechcete všechna díla instalovat na disk, ale
-používat je přímo z CD, pak vložte cestu k CD jako jedno z umístění
-knihovny. Když zapnete &bibletime;, zobrazí se všechna díla, pokud je CD
-vloženo v mechanice.</para>
-      </tip>
-    </sect2>
-
-    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Instalace/aktualizace děl</title>
-
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
       <para>With this facility, you can connect to a repository of works (called
 "library"), and transfer one or more works to your local Bookshelf. These
 libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
 online repository of &sword; modules, or another site offering &sword;
-modules).  You can install other sources by clicking on <guibutton>Get
-list...</guibutton> when you have <guibutton>New Installation
-Source</guibutton> dialog open.  You can manage your libraries with
-<guibutton>Add library</guibutton> and <guibutton>Delete
-library</guibutton>.</para>
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-      <para>Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které se
-chcete připojit a umístění lokální knihovny pro instalaci děl. Potom
-klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. &bibletime;
-prověří obsah knihovny a předloží vám seznam děl, které můžete do své
-knihovny přidat, nebo děl, které jsou již nainstalované, ale jsou dostupné v
-novější verzi, a tak mohou být aktualizovány. Poté můžete označit všechna
-díla, která chcete nainstalovat nebo aktualizovat a kliknout na
-<guibutton>Instalovat díla</guibutton>. Ty budou poté nahrány do vaší
-knihovny.</para>
+
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
+    </sect2>
+
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Odebrání děl</title>
-      <para>Tato možnost dovoluje smazat jedno nebo více děl z vaší knihovny, což uvolní
-místo na disku. Jednoduše označte položky a klikněte na <guibutton>Odstranit
-díla</guibutton>.</para>
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Vyhledávací indexy</title>
-      <para>Tyto možnosti vám umožní vytvářet nové vyhledávací indexy a vymazat opuštěné
-indexy smazaných děl.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Export a tisk</title>

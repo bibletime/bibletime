@@ -18,8 +18,54 @@ szekciójában</ulink> találhat.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Elérhető dokumentumok</title>
-      <para>Több, mint 200 dokumentum 50 nyelven érhető el a <ulink
-url="http://www.crosswire.org">&cbs;</ulink> honlapján. Itt találhat:</para>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+        <varlistentry>
+          <term>Bibliákat</term>
+          <listitem>
+            <para>A teljes Biblia szövegét, lehetséges kiegészítésekkel, mint Strong's számok,
+fejlécek, lábjegyzetek a szövegekben. A Bibliák különféle nyelveken
+elérhetők, és nemcsak a modern verziókat találhatja meg, hanem fellelhetőek
+a régies szövegváltozatok, mint a Westminster Leningrád Kódex ("WLC", héber)
+és a Septuaginta ("LXX", görög). Ez a legfejlettebb része a &sword;
+projektnek.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Könyvek</term>
+          <listitem>
+            <para>Többek közt, ilyen ismert könyveket találhatjuk meg: "Imitation of Christ",
+"Enuma Elish", and "Josephus: The Complete Works"</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Kommentárok</term>
+          <listitem>
+            <para>Az elérhető kommentárok között található a klasszikus John Wesley "Notes on
+the Bible", Matthew Henry'kommentárja és Luther "Commentary on Galatians." A
+<emphasis>Saját</emphasis> kommentár modullal lehetősége van <link
+linkend="hdbk-op-parts-desk-write"> rögzíteni saját megjegyzéseit</link> a
+Biblia fejezeteihez.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Napi áhítatok</term>
+          <listitem>
+            <para>Sok ember hálás ezekért a napi adagokért Isten igéjéből.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Lexikonok/szótárak</term>
+          <listitem>
+            <para>Elérhető lexikonok: Robinson Morfológiai Elemzési Kódok, Brown-Driver-Briggs
+Héber Lexikonés a Nemzetközi Standard Biblia Enciklopédia. Szótárak:
+Strong's Héber Bibliai Szótár, Strong's Görög Bibliai Szótár elérhető...</para>
+          </listitem>
+        </varlistentry>
+      </variablelist> There are several other repositories that
+&bibletime; can use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

@@ -77,15 +77,9 @@ language.</para>
 handbook. For further information you might want to refer to the <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on
-nopeampi kuin suurilla kirjasimilla kuten <trademark class="registered">
-Bitstream Cyberbit</trademark> (noin 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Kirjasimien hankinta</title>
-        <para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Sinun *nix jakelusi.</para>

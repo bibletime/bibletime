@@ -873,18 +873,6 @@ equivalent; organizes windows with tabs across the top.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Oddálit. Zmenší velikost písma v aktivním okně.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Přiblížit. Zvětší velikost písma v aktivním okně.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Vybrat vše. Vybere všechen text v aktivním okně.</entry>

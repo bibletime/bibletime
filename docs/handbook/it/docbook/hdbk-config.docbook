@@ -80,15 +80,9 @@ lingua.</para>
 manuale. Per maggiori informazioni puoi riferirti all' <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>Se usi un carattere piccolo come Clearlyu (circa 22kb), &bibletime; sarà più
-veloce che con un carattere grande come <trademark
-class="registered">Bitstream Cyberbit</trademark>(circa 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Ottenere Caratteri</title>
-        <para>I caratteri possono essere ottenuti da diverse fonti:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>La tua distribuzione *nix.</para>

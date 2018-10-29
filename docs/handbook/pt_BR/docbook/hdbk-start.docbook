@@ -38,18 +38,6 @@ linkend="hdbk-reference-menus-settings">barra de menu Configurações</link>.</p
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Diálogo de configuração do &bibletime; </interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Customiza &bibletime;.</action> Esse diálogo permite adaptar o
-&bibletime; s suas necessidades. Veja <link linkend="hdbk-config-bt">a
-descrição detalhada</link> desse diálogo.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Gerenciador de Livros</interface>
         </term>
         <listitem>
@@ -60,6 +48,17 @@ linkend="hdbk-op-bookshelfmanager"> essa seção</link> para mais detalhes. Se
 você iniciar com uma Estante vazia, ser til para instalar pelo menos uma
 Bíblia, Comentário, Léxico e um Livro para conhecer os recursos básicos do
 &bibletime; rapidamente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Diálogo de configuração do &bibletime; </interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Customiza &bibletime;.</action> Esse diálogo permite adaptar o
+&bibletime; s suas necessidades. Veja <link linkend="hdbk-config-bt">a
+descrição detalhada</link> desse diálogo.</para>
         </listitem>
       </varlistentry>
     </variablelist>

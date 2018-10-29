@@ -79,16 +79,9 @@ telepíteni a kívánt nyelv nyelvi fájljait.</para>
 hatáskörén. További információkért keresse fel a <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> UNICODE
 HOWTO</ulink> weboldalt.</para>
-        <tip>
-          <para>Ha egy egyszerűbb, kisebb betűkészletet használ, mint a Clearlyu (kb. 22kb),
-a &bibletime; gyorsabban fut, mint egy nagyobb, összetettebb betűkészletnél,
-mint a <trademark class="registered">Bitstream
-Cyberbit</trademark>(kb. 12MB).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Elérhető betűkészletek</title>
-        <para>A betűkészletek különféle forrásokból érhetőek el:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Az ön *nix disztribúciója.</para>

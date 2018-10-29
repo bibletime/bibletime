@@ -19,8 +19,8 @@ section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Saatavana olevat tehtävät</title>
-      <para>Yli 200 dokumenttia 50:llä kielellä on saatavilla lähteestä <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.  Nämä sisältävät: <variablelist>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
           <term>Raamattuja</term>
           <listitem>
@@ -66,7 +66,9 @@ Revised Unabridged Dictionary of the English Language 1913, Nave's Topical
 Bible.</para>
           </listitem>
         </varlistentry>
-      </variablelist></para>
+      </variablelist> There are several other repositories that
+&bibletime; can use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

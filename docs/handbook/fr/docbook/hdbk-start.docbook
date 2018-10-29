@@ -39,19 +39,6 @@ linkend="hdbk-reference-menus-settings">barre de menu Paramètres</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Fenêtre de configuration de &bibletime;</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Personnalise &bibletime;.</action> Cette boîte de dialogue vous
-permet d'adapter &bibletime; à vos besoins. Veuillez vous référer à la <link
-linkend="hdbk-config-bt">description détaillée</link> de cette boîte de
-dialogue.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Gestionnaire de bibliothèque</interface>
         </term>
         <listitem>
@@ -65,6 +52,18 @@ bible, un commentaire, un lexique et un livre pour découvrir les
 caractéristiques de &bibletime;. Vous pouvez le faire en cliquant sur le
 bouton Actualiser. Une liste des travaux disponibles à partir de &cbs; vous
 sera présentée.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Fenêtre de configuration de &bibletime;</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Personnalise &bibletime;.</action> Cette boîte de dialogue vous
+permet d'adapter &bibletime; à vos besoins. Veuillez vous référer à la <link
+linkend="hdbk-config-bt">description détaillée</link> de cette boîte de
+dialogue.</para>
         </listitem>
       </varlistentry>
     </variablelist>

@@ -894,18 +894,6 @@ ekvivalentas; tvarko langus viršuje rodomų kortelių dėka.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Mažinti. Tai sumažina skaitymo langų šrifto dydį.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Didinti. Tai padidina skaitymo langų šrifto dydį.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Pažymėti viską. Tai pažymi visą tekstą skaitymo languose.</entry>

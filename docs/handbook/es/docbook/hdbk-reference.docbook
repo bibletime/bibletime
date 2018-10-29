@@ -896,18 +896,6 @@ disposición como nueva sesión.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Reducir. Esto disminuye el tamaño de la fuente de las ventanas.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Aumentar. Esto aumenta el tamaño de la fuente de las ventanas.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Seleccionar todo. Selecciona todo el texto en las ventanas.</entry>

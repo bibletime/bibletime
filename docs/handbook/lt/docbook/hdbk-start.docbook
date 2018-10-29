@@ -40,18 +40,6 @@ juostoje</link> prieinamas sekančias parinktis.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>&bibletime; konfigūravimo dialogas</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Individualizuoja &bibletime;.</action> Šis dialogas leidžia jums
-pritaikyti &bibletime; savo reikmėms. Prašome žiūrėti <link
-linkend="hdbk-config-bt">išsamesnį šio dialogo aprašą</link>.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Knygų lentynos tvarkytuvė</interface>
         </term>
         <listitem>
@@ -65,6 +53,17 @@ sekciją</link>. Jei pradedate su tuščia Knygų lentyna, bus naudinga
 susipažintumėte su pagrindinėmis &bibletime;'s ypatybėmis. Tai galite
 atlikti, nuspausdami ant mygtuko Įkelti iš naujo. Jums bus pateiktas visų,
 iš &cbs; prieinamų veiklų, sąrašas;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>&bibletime; konfigūravimo dialogas</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Individualizuoja &bibletime;.</action> Šis dialogas leidžia jums
+pritaikyti &bibletime; savo reikmėms. Prašome žiūrėti <link
+linkend="hdbk-config-bt">išsamesnį šio dialogo aprašą</link>.</para>
         </listitem>
       </varlistentry>
     </variablelist>

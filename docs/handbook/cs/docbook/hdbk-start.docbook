@@ -38,18 +38,6 @@ linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Přizpůsobí &bibletime;.</action>Tento dialog vám dovolí přizpůsobit
-&bibletime; vašim potřebám. Prosím podívejte se na <link
-linkend="hdbk-config-bt">detailní popis</link> tohoto dialogu.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
@@ -62,6 +50,17 @@ užitečné  nainstalovat alespoň jednu Bibli, Komentář, Lexikon a knihu,
 abyste se rychle seznámili se základními vlastnostmi &bibletime;. To můžete
 udělat kliknutím na tlačítko obnovit. Bude vám předložen seznam děl, které
 jsou dostupné z &cbs;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Přizpůsobí &bibletime;.</action>Tento dialog vám dovolí přizpůsobit
+&bibletime; vašim potřebám. Prosím podívejte se na <link
+linkend="hdbk-config-bt">detailní popis</link> tohoto dialogu.</para>
         </listitem>
       </varlistentry>
     </variablelist>

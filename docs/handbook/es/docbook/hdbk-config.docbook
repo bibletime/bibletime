@@ -83,15 +83,9 @@ del alcance de este manual. Para más información es posible que desee hacer
 referencia a la <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>Si utiliza una fuente pequeña, como Clearlyu (unos 22kb), se ejecutará
-&bibletime;más rápido que con una fuente grande como <trademark
-class="registered">Bitstream Cyberbit</trademark>(unos 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Obteniendo Fuentes</title>
-        <para>Las Fuentes pueden ser obtenidas desde un número de fuentes:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Su distribución *nix</para>

@@ -898,18 +898,6 @@ als neue Sitzung ab.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Verkleinern. Dies verkleinert die Schriftgröße von Lesefenstern.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Vergrößern. Dies vergrößert die Schriftgröße von Lesefenstern.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Alles auswählen. Dies wählt den gesamten Text in Lesefenstern aus.</entry>

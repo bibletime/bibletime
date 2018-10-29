@@ -39,18 +39,6 @@ Preferencias</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Diálogo de Configuración &bibletime;</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Personaliza &bibletime;.</action>En este dialogo usted puede
-adaptar&bibletime; a sus necesidades. Por Favor vea <link
-linkend="hdbk-config-bt">la descripción detallada</link> de este dialogo.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Administrador de biblioteca</interface>
         </term>
         <listitem>
@@ -63,6 +51,17 @@ vacía, será útil para instalar al menos una Biblia, Comentario, léxico y
 reservar una para conocer las características &bibletime;  básicas
 rápidamente. Usted puede hacer esto haciendo clic en el botón Actualizar. Se
 le presentará con una lista de obras que están disponibles en la &cbs;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Diálogo de Configuración &bibletime;</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Personaliza &bibletime;.</action>En este dialogo usted puede
+adaptar&bibletime; a sus necesidades. Por Favor vea <link
+linkend="hdbk-config-bt">la descripción detallada</link> de este dialogo.</para>
         </listitem>
       </varlistentry>
     </variablelist>

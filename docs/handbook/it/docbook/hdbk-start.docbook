@@ -38,19 +38,6 @@ menus-settings">Impostazioni barra dei menu</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Configura &bibletime;</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Personalizza &bibletime;.</action> Questa finestra ti permette di
-adattare &bibletime; alle tue esigenze. Guarda <link
-linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa
-finestra.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Gestore Libreria</interface>
         </term>
         <listitem>
@@ -63,6 +50,18 @@ vuota, sarà utile per installare almeno una Bibbia, Commenti, Lessico e un
 Libro per conoscere le funzioni di base di &bibletime; velocemente. Puoi
 fare questo cliccando sul pulsante Aggiorna. Si presenterà con una lista di
 documenti disponibili da &cbs;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configura &bibletime;</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Personalizza &bibletime;.</action> Questa finestra ti permette di
+adattare &bibletime; alle tue esigenze. Guarda <link
+linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa
+finestra.</para>
         </listitem>
       </varlistentry>
     </variablelist>

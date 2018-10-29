@@ -913,18 +913,6 @@ ouvertes.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Diminuer la taille des polices des fenêtres de lecture.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Augmenter la taille des polices des fenêtres de lecture.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Tout sélectionner. Sélectionner tout le texte dans les fenêtres de lecture.</entry>

@@ -76,15 +76,9 @@ lokalizavimo paketą.</para>
 informacijai, galbūt, norėtumėte kreiptis į <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 INSTRUKCIJĄ</ulink>.</para>
-        <tip>
-          <para>Jei naudosite mažą šriftą, tokį kaip Clearlyu (apie 22kb), &bibletime; veiks
-greičiau nei su dideliu šriftu, tokiu kaip <trademark
-class="registered">Bitstream Cyberbit</trademark>(apie 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Šriftų gavimas</title>
-        <para>Šriftai gali būti gaunami iš daugelio šaltinių:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Jūsų *nix distribucijos.</para>

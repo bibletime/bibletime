@@ -41,19 +41,6 @@ linkend="hdbk-reference-menus-settings">Einstellungen</link> verfügbar sind.</p
     <variablelist>
       <varlistentry>
         <term>
-          <interface>Dialog &bibletime; konfigurieren</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen
-&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link
-linkend="hdbk-config-bt">die detaillierte Beschreibung</link> dieses Dialogs
-nach.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Bücherregal-Verwaltung</interface>
         </term>
         <listitem>
@@ -68,6 +55,18 @@ Buch zu installieren, um rasch die grundlegenden Funktionseigenschaften von
 &bibletime; kennen zu lernen. Sie erreichen dies, indem Sie auf die
 Schaltfläche Auffrischen... klicken. Ihnen wird eine Liste der von der &cbs;
 verfügbaren Werke angezeigt.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Dialog &bibletime; konfigurieren</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen
+&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link
+linkend="hdbk-config-bt">die detaillierte Beschreibung</link> dieses Dialogs
+nach.</para>
         </listitem>
       </varlistentry>
     </variablelist>

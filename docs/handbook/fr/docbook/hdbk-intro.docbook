@@ -19,8 +19,60 @@ développeurs</ulink> du projet &sword;, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Œuvres disponibles</title>
-      <para>Plus de 200 documents en 50 langues sont disponibles à partir du <ulink
-url="http://www.crosswire.org">&cbs;</ulink>. Ceux-ci inclus :</para>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+        <varlistentry>
+          <term>Bibles</term>
+          <listitem>
+            <para>Le texte intégral de la Bible, avec des éléments facultatifs comme les
+Nombres de Strong, les titres et/ou les notes de bas de page dans le
+texte. Les bibles sont disponibles dans de nombreuses langues et comprennent
+non seulement des versions modernes, mais aussi des textes anciens tels que
+le Codex Leningradensis ("WLC" en hébreu) et la Septante ("LXX" en
+grec). C'est la section la plus avancée de la bibliothèque du projet
+&sword;.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Livres</term>
+          <listitem>
+            <para>Les livres disponibles comprennent « L'Imitation de Jésus-Christ », « Enuma
+Elish » et « Joseph : Œuvres complètes »</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Commentaires</term>
+          <listitem>
+            <para>Les commentaires disponibles incluent des classiques comme « Notes sur la
+Bible » de John Wesley, le commentaire de Matthew Henry et le « Commentaire
+sur les Galates » de Luther. Avec le Commentaire
+<emphasis>personnel</emphasis>, vous pouvez <link
+linkend="hdbk-op-parts-desk-write">enregistrer vos propres notes
+personnelles</link> sur des sections de la Bible.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lectures quotidiennes</term>
+          <listitem>
+            <para>De nombreuses personnes apprécient ces rations quotidiennes de la parole de
+Dieu. Parmi les modules disponibles, Daily Light on the Daily Path, et les
+Losungen.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Lexiques et dictionnaires</term>
+          <listitem>
+            <para>Les lexiques disponibles incluent : les codes d’analyse morphologique de
+Robinson et l’encyclopédie biblique standard internationale. Les
+dictionnaires disponibles comprennent le dictionnaire biblique hébreu de
+Strong, le dictionnaire biblique grec de Strong, le dictionnaire de la
+langue anglaise révisé de Webster de 1913, la Bible thématique de Nave.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist> There are several other repositories that
+&bibletime; can use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

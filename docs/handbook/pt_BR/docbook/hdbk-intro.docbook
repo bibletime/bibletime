@@ -19,8 +19,8 @@ desenvolvimento</ulink> do Projeto Sword, Crosswire Bible Society.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Obras disponíveis</title>
-      <para>Mais de 200 documentos em 50 idiomas esto disponíveis da <ulink
-url="http://www.crosswire.org">&cbs;</ulink>. Estão inclusos: <variablelist>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
           <term>Bíblias</term>
           <listitem>
@@ -66,7 +66,9 @@ de Strong, Dicionário Integral Revisado da língua Inglesa de Webster 1913,
 Bíblia em Tópicos de Nave.</para>
           </listitem>
         </varlistentry>
-      </variablelist></para>
+      </variablelist> There are several other repositories that
+&bibletime; can use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

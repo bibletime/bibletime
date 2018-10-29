@@ -38,18 +38,6 @@ opciókat.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <interface>A &bibletime; Beállítása párbeszédablak</interface>
-        </term>
-        <listitem>
-          <para>
-          <action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy
-a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link
-linkend="hdbk-config-bt">lehetőségek</link> részletes leírását.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
           <interface>Könyvespolc menedzser</interface>
         </term>
         <listitem>
@@ -62,6 +50,17 @@ információkért. Ha üres könyvespolccal indulnak, hasznos lehet legalább eg
 Biblia, kommentár, lexikon vagy egy könyv telepítése, hogy gyorsan
 megismerje a &bibletime; alap lehetőségeit. A frissítés gombra kattintva
 megtekintheti a &cbs; által biztosított dokumentumok listáját.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>A &bibletime; Beállítása párbeszédablak</interface>
+        </term>
+        <listitem>
+          <para>
+          <action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy
+a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link
+linkend="hdbk-config-bt">lehetőségek</link> részletes leírását.</para>
         </listitem>
       </varlistentry>
     </variablelist>
