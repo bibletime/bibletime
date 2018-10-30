@@ -1185,22 +1185,6 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Zoom out. This decreases the font size of read
-            windows.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">
-              <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Zoom in. This increases the font size of read
-            windows.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">
               <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Select all. This selects all text in read
@@ -1340,6 +1324,7 @@
             </entry>
             <entry>Closes the current window.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -1425,6 +1410,47 @@
             </link> equivalent; toggles display of the mag(nifying
             glass).</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Auto scroll down</guimenuitem>
+            </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Auto scroll up</guimenuitem>
+            </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+                <keycap>&Space;</keycap>
+              </keycombo>
+            </entry>
+            <entry>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Auto scroll pause</guimenuitem>
+            </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>
