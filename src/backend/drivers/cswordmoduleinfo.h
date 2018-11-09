@@ -421,6 +421,9 @@ protected: /* Methods: */
     QString getSimpleConfigEntry(const QString & name) const;
     QString getFormattedConfigEntry(const QString & name) const;
 
+    bool hasImportantFilterOption() const;
+    void setImportantFilterOptions(bool enable);
+
 signals:
 
     void hasIndexChanged(bool hasIndex);

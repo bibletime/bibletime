@@ -243,6 +243,24 @@ bool CSwordModuleInfo::hasIndex() const {
 #endif
 }
 
+bool CSwordModuleInfo::hasImportantFilterOption() const {
+    if (m_type == CSwordModuleInfo::Bible) {
+        if (has(CSwordModuleInfo::strongNumbers) ||
+            has(CSwordModuleInfo::morphTags) ||
+            has(CSwordModuleInfo::footnotes) ||
+                has(CSwordModuleInfo::headings))
+            return true;
+    }
+    return false;
+}
+
+inline void CSwordModuleInfo::setImportantFilterOptions(bool enable) {
+    m_backend.setOption(CSwordModuleInfo::strongNumbers, enable);
+    m_backend.setOption(CSwordModuleInfo::morphTags, enable);
+    m_backend.setOption(CSwordModuleInfo::footnotes, enable);
+    m_backend.setOption(CSwordModuleInfo::headings, enable);
+}
+
 void CSwordModuleInfo::buildIndex() {
     BT_SCOPE_EXIT(m_cancelIndexing.store(false, std::memory_order_relaxed););
 #define CANCEL_INDEXING (m_cancelIndexing.load(std::memory_order_relaxed))
@@ -254,10 +272,8 @@ void CSwordModuleInfo::buildIndex() {
         /* Make sure we reset all important filter options which influcence the
            plain filters. Turn on these options, they are needed for the
            EntryAttributes population */
-        m_backend.setOption(CSwordModuleInfo::strongNumbers, true);
-        m_backend.setOption(CSwordModuleInfo::morphTags, true);
-        m_backend.setOption(CSwordModuleInfo::footnotes, true);
-        m_backend.setOption(CSwordModuleInfo::headings, true);
+        setImportantFilterOptions(true);
+
         /* We don't want the following in the text, the do not carry searchable
            information. */
         m_backend.setOption(CSwordModuleInfo::morphSegmentation, false);
@@ -346,6 +362,8 @@ void CSwordModuleInfo::buildIndex() {
         else
             m_module.setPosition(sword::TOP);
 
+        bool importantFilterOption = hasImportantFilterOption();
+
         while (!(m_module.popError()) && !CANCEL_INDEXING) {
 
             /* Also index Chapter 0 and Verse 0, because they might have
@@ -365,9 +383,22 @@ void CSwordModuleInfo::buildIndex() {
                                                    lucene::document::Field::STORE_YES
                                                    | lucene::document::Field::INDEX_NO)));
 
-            /* At this point we have to make sure we disabled the strongs and
-               the other options, so the plain filters won't include the numbers
-               somehow. */
+            if (importantFilterOption) {
+                // Index text including strongs, morph, footnotes, and headings.
+                setImportantFilterOptions(true);
+                textBuffer.append(m_module.stripText());
+                lucene_utf8towcs(wcharBuffer,
+                                 static_cast<const char *>(textBuffer),
+                                 BT_MAX_LUCENE_FIELD_LENGTH);
+                doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("content")),
+                                                       static_cast<const TCHAR *>(wcharBuffer),
+                                                       lucene::document::Field::STORE_NO
+                                                       | lucene::document::Field::INDEX_TOKENIZED)));
+                textBuffer.clear();
+            }
+
+            // Index text without strongs, morph, footnotes, and headings.
+            setImportantFilterOptions(false);
             textBuffer.append(m_module.stripText());
             lucene_utf8towcs(wcharBuffer,
                              static_cast<const char *>(textBuffer),

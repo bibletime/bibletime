@@ -1,4 +1,7 @@
 2018-10-17 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #138 - Search with quotes
+
+2018-10-17 Gary Holmlund <gary.holmlund@gmail.com>
     * Add name filter to the Install/Update/Remove works page.
 
 2018-10-02 Gary Holmlund <gary.holmlund@gmail.com>
