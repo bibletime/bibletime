@@ -79,6 +79,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     BT_CONNECT(m_buttons, SIGNAL(accepted()), this, SLOT(accept()));
     BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
 
+    slotKeyChanged(nullptr);
 }
 
 void BtCopyByReferencesDialog::slotKeyChanged(CSwordKey * /* newKey */) {
