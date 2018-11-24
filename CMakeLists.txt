@@ -156,10 +156,6 @@ ELSE()
     )
 ENDIF()
 
-IF("${BIBLETIME_FRONTEND}" STREQUAL "MOBILE")
-    ADD_DEFINITIONS("-DBT_MOBILE")
-ENDIF()
-
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 
@@ -198,9 +194,7 @@ ELSE()
   ADD_EXECUTABLE("bibletime" ${common_bibletime_SOURCES})
 ENDIF()
 
-IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "btm")
-ELSEIF(APPLE)
+IF(APPLE)
   SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
 ELSE()
   SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "bibletime")
@@ -217,11 +211,7 @@ TARGET_LINK_LIBRARIES("bibletime"
     ${Swordxx_LIBRARIES}
 )
 
-IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Qml Qt5::Quick Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg)
-ELSE()
-  TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
-ENDIF()
+TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
 
 SET(BibleTime_LDFLAGS "")
 IF(MSVC)

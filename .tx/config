@@ -8,12 +8,6 @@ source_file = i18n/messages/bibletime_ui.ts
 source_lang = en
 type = TS
 
-[bibletime.mobile_ui]
-file_filter = i18n/messages/mobile_ui_<lang>.ts
-source_file = i18n/messages/mobile_ui.ts
-source_lang = en
-type = TS
-
 [bibletime.handbook]
 file_filter = i18n/handbook/handbook-<lang>.po
 source_file = i18n/handbook/handbook.pot

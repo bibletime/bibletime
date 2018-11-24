@@ -365,23 +365,39 @@ QString decodeFootnote(QString const & data) {
            .arg(text);
 }
 
+CSwordModuleInfo * getFirstAvalibleStrongsModule (bool wantHebrew) {
+    Q_FOREACH(CSwordModuleInfo * m, CSwordBackend::instance()->moduleList()) {
+        if (m->type() == CSwordLexiconModuleInfo::Lexicon) {
+            auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(m);
+            if (wantHebrew && m->has(CSwordModuleInfo::HebrewDef) && lexModule->hasStrongsKeys())
+                return m;
+            if (! wantHebrew && m->has(CSwordModuleInfo::GreekDef) && lexModule->hasStrongsKeys())
+                return m;
+        }
+    }
+    return nullptr;
+}
+
+CSwordModuleInfo *  getStrongsModule (bool wantHebrew) {
+    CSwordModuleInfo * module = btConfig().getDefaultSwordModuleByType(
+                wantHebrew ? "standardHebrewStrongsLexicon" : "standardGreekStrongsLexicon");
+    if (!module)
+        module = getFirstAvalibleStrongsModule(wantHebrew);
+    return module;
+}
+
 QString decodeStrongs(QString const & data) {
     QStringList strongs = data.split("|");
     QString ret;
 
     QStringList::const_iterator end = strongs.end();
     for (QStringList::const_iterator it = strongs.begin(); it != end; ++it) {
-        CSwordModuleInfo * const module = btConfig().getDefaultSwordModuleByType
-                                         (
-                                             ((*it).left(1) == QString("H")) ?
-                                             "standardHebrewStrongsLexicon" :
-                                             "standardGreekStrongsLexicon"
-                                         );
-
+        bool wantHebrew = (*it).left(1) == QString("H");
+        CSwordModuleInfo * module = getStrongsModule(wantHebrew);
         QString text;
         if (module) {
             QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
-            auto lexModule = qobject_cast<CSwordLexiconModuleInfo*>(module);
+            auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(module);
             key->setKey(lexModule->normalizeStrongsKey(*it));
             text = key->renderedText();
         }
@@ -398,7 +414,6 @@ QString decodeStrongs(QString const & data) {
             .arg(text)
         );
     }
-
     return ret;
 }
 
