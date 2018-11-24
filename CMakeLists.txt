@@ -181,17 +181,62 @@ ENDIF()
 #This must come before the target definition!
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
-ADD_LIBRARY(
-    bibletime_common
-    STATIC
-    ${bibletime_COMMON_SOURCES}
+UNSET(BibleTime_CXXFLAGS)
+UNSET(BibleTime_LDFLAGS)
+IF(MSVC)
+  SET(CMAKE_CXX_FLAGS_RELEASE "-DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
+  SET(CMAKE_CXX_FLAGS_DEBUG   "-DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
+  LIST(APPEND BibleTime_LDFLAGS "/SUBSYSTEM:WINDOWS")
+ELSE()
+  ADD_COMPILE_OPTIONS("-fPIE" "-fexceptions")
+  SET(CMAKE_CXX_FLAGS_RELEASE "")
+  SET(CMAKE_CXX_FLAGS_DEBUG "")
+  IF(APPLE)
+    # enable support MacOS 10.5+
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/")
+    LIST(APPEND BibleTime_CXXFLAGS
+        "-mmacosx-version-min=10.7"
+        "-stdlib=libc++"
+        "-isysroot" "${T}")
+    LIST(APPEND BibleTime_LDFLAGS
+        "-mmacosx-version-min=10.7"
+        "-stdlib=libc++"
+        "-isysroot" "${T}"
+        "-F" "/Library/Frameworks/")
+    UNSET(T)
+  ENDIF()
+ENDIF()
+
+ADD_LIBRARY(bibletime_backend STATIC ${bibletime_BACKEND_SOURCES})
+TARGET_COMPILE_DEFINITIONS(bibletime_backend PRIVATE ${CLucene_DEFINITIONS})
+TARGET_COMPILE_OPTIONS(bibletime_backend
+    PUBLIC
+        ${BibleTime_CXXFLAGS}
+        ${Sword_CFLAGS_OTHER}
+
 )
-TARGET_LINK_LIBRARIES(bibletime_common Qt5::Widgets Qt5::Xml)
+TARGET_INCLUDE_DIRECTORIES(bibletime_backend
+    PRIVATE
+        ${CLucene_INCLUDE_DIR}            #CLucene headers
+        ${CLucene_LIBRARY_DIR}            #CLucene/clucene-config.h
+    PUBLIC
+        ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
+        ${Sword_INCLUDE_DIRS}
+)
+TARGET_LINK_LIBRARIES(bibletime_backend
+    PRIVATE
+        -L${CLucene_LIBRARY_DIR} ${CLucene_LIBRARY}
+    PUBLIC
+        Qt5::Widgets
+        Qt5::Xml
+        ${Sword_LDFLAGS}
+        ${BibleTime_LDFLAGS}
+)
 
 IF(MSVC)
-  ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
+  ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES})
 ELSE()
-  ADD_EXECUTABLE("bibletime" ${common_bibletime_SOURCES})
+  ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
 ENDIF()
 
 IF(APPLE)
@@ -206,38 +251,17 @@ IF (NOT ${bibletime_LINK_TRANSLATION_FILES})
 ENDIF()
 
 TARGET_LINK_LIBRARIES("bibletime"
-    bibletime_common
-    ${CLucene_LIBRARY}
-    ${Sword_LDFLAGS}
+    PRIVATE
+        bibletime_backend
+        Qt5::Network
+        Qt5::PrintSupport
+        Qt5::Quick
+        Qt5::QuickWidgets
+        Qt5::Svg
+        Qt5::Widgets
+        Qt5::Xml
 )
 
-TARGET_LINK_LIBRARIES("bibletime" Qt5::Widgets Qt5::Xml Qt5::Network Qt5::PrintSupport Qt5::Svg Qt5::Quick Qt5::QuickWidgets)
-
-SET(BibleTime_LDFLAGS "")
-IF(MSVC)
-  SET(CMAKE_CXX_FLAGS_RELEASE "-DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
-  SET(CMAKE_CXX_FLAGS_DEBUG   "-DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
-  SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} /SUBSYSTEM:WINDOWS")
-ELSE()
-  ADD_COMPILE_OPTIONS("-fPIE" "-fexceptions")
-  SET(CMAKE_CXX_FLAGS_RELEASE "")
-  SET(CMAKE_CXX_FLAGS_DEBUG "")
-  IF(APPLE)
-    # enable support MacOS 10.5+
-    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/")
-    SET(BibleTime_CXXFLAGS "${BibleTime_CXXFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T}")
-    SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.7 -stdlib=libc++ -isysroot ${T} -F /Library/Frameworks/")
-    UNSET(T)
-  ENDIF()
-ENDIF()
-
-SET_TARGET_PROPERTIES("bibletime" PROPERTIES
-                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
-                      LINK_FLAGS "${BibleTime_LDFLAGS}")
-
-SET_TARGET_PROPERTIES("bibletime_common" PROPERTIES
-                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CXXFLAGS}"
-                      LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
 

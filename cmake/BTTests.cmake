@@ -16,13 +16,13 @@ FUNCTION(test_a_class testDir testClass )
         ${test_RESOURCE_SOURCES}
         ${test_${testClass}_MOC_SRC}
     )
-    SET_TARGET_PROPERTIES("test_${testClass}" PROPERTIES COMPILE_FLAGS ${Sword_CFLAGS_OTHER} -std=c++11 )
-    QT5_USE_MODULES(test_${testClass} Widgets Xml Network Test)
-    TARGET_LINK_LIBRARIES(test_${testClass} Qt5::Widgets Qt5::Xml Qt5::Network Qt5::Test)
-    TARGET_LINK_LIBRARIES(test_${testClass}
-        bibletime_common
-        ${Sword_LDFLAGS}
-        ${CLucene_LIBRARY}
+    TARGET_LINK_LIBRARIES("test_${testClass}"
+        PRIVATE
+            bibletime_backend
+            Qt5::Network
+            Qt5::Test
+            Qt5::Widgets
+            Qt5::Xml
     )
     ADD_TEST(NAME ${testClass} COMMAND test_${testClass})
 ENDFUNCTION(test_a_class)

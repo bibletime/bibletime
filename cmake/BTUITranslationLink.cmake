@@ -16,7 +16,4 @@ BT_RUN_RESOURCE_COMPILER("${QM_FILES}" ${QRC_COPIED_FILE} ${QRC_CPP_FILE})
 
 
 # compile and link translations into the bibletime executable
-SET(common_bibletime_SOURCES
-    ${common_bibletime_SOURCES}
-    ${QRC_CPP_FILE}
-)
+LIST(APPEND bibletime_SOURCES ${QRC_CPP_FILE})

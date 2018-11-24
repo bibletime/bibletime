@@ -51,7 +51,7 @@ IF(CLucene_LIBRARY_DIR)
       SET(CLucene_GOOD_VERSION FALSE)
     ENDIF()
     IF(CLucene_VERSION VERSION_GREATER "2.0.0")
-      ADD_DEFINITIONS(-DCLUCENE2)
+      SET(CLucene_DEFINITIONS "-DCLUCENE2")
       FIND_LIBRARY_WITH_DEBUG(CLucene_SHARED_LIB
                               NAMES clucene-shared clucene-sharedd)
       IF(CLucene_SHARED_LIB)
@@ -81,4 +81,9 @@ ELSE()
   ENDIF()
 ENDIF()
 
-MARK_AS_ADVANCED(CLucene_INCLUDE_DIR CLucene_LIBRARY_DIR CLucene_LIBRARY)
+MARK_AS_ADVANCED(
+    CLucene_DEFINITIONS
+    CLucene_INCLUDE_DIR
+    CLucene_LIBRARY_DIR
+    CLucene_LIBRARY
+)
