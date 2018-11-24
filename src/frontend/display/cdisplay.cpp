@@ -10,17 +10,17 @@
 *
 **********/
 
-#include "frontend/display/cdisplay.h"
+#include "cdisplay.h"
 
 #include <QApplication>
 #include <QClipboard>
 #include <QFileDialog>
 #include <QMenu>
 #include <QTimer>
-#include "backend/managers/referencemanager.h"
-#include "frontend/btcopybyreferencesdialog.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "util/tool.h"
+#include "../../backend/managers/referencemanager.h"
+#include "../../util/tool.h"
+#include "../btcopybyreferencesdialog.h"
+#include "../displaywindow/cdisplaywindow.h"
 
 
 CDisplayConnections::CDisplayConnections( CDisplay* display ) : m_display(display) {}

@@ -13,10 +13,10 @@
 #ifndef CBIBLEKEYCHOOSER_H
 #define CBIBLEKEYCHOOSER_H
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "../ckeychooser.h"
 
 #include <QList>
-#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "../../../backend/drivers/cswordbiblemoduleinfo.h"
 
 
 class QWidget;

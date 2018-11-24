@@ -12,8 +12,8 @@
 
 #include "btinstallpagemodel.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/managers/cswordbackend.h"
 
 
 BtInstallPageModel::BtInstallPageModel(Grouping const & grouping,

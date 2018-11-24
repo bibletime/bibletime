@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/btsearchresultarea.h"
+#include "btsearchresultarea.h"
 
 #include <QApplication>
 #include <QFrame>
@@ -23,15 +23,15 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/keys/cswordversekey.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "backend/config/btconfig.h"
-#include "frontend/searchdialog/cmoduleresultview.h"
-#include "frontend/searchdialog/csearchdialog.h"
-#include "frontend/searchdialog/csearchresultview.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "../../backend/rendering/cdisplayrendering.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/tool.h"
+#include "cmoduleresultview.h"
+#include "csearchdialog.h"
+#include "csearchresultview.h"
 
 
 namespace {

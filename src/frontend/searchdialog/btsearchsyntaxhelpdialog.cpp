@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
+#include "btsearchsyntaxhelpdialog.h"
 
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QTextBrowser>
 #include <QVBoxLayout>
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
+#include "../messagedialog.h"
 
 
 namespace Search {

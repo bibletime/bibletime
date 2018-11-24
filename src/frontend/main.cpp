@@ -21,16 +21,16 @@
 #include <QQmlEngine>
 #include <QTextCodec>
 #include <QTranslator>
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/btconfig.h"
+#include "../backend/bookshelfmodel/btbookshelfmodel.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../backend/config/btconfig.h"
+#include "../util/directory.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
-#include "frontend/bturlhandler.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h"
-#include "frontend/display/modelview/btqmlinterface.h"
-#include "frontend/welcome/btwelcomedialog.h"
-#include "util/directory.h"
+#include "bturlhandler.h"
+#include "display/modelview/btqmlinterface.h"
+#include "searchdialog/btsearchoptionsarea.h"
+#include "welcome/btwelcomedialog.h"
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif

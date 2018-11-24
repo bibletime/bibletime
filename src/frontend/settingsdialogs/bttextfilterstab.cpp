@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/bttextfilterstab.h"
+#include "bttextfilterstab.h"
 
 #include <QCheckBox>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "frontend/settingsdialogs/cswordsettings.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/tool.h"
+#include "cswordsettings.h"
 
 
 #define TEXT_FILTERS_TAB_ADD_ROW(name,def) \

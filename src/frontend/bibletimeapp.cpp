@@ -15,12 +15,12 @@
 #include <QDebug>
 #include <QPainter>
 #include <QtGlobal>
-#include "frontend/messagedialog.h"
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "util/btassert.h"
-#include "util/bticons.h"
+#include "../backend/config/btconfig.h"
+#include "../backend/managers/cswordbackend.h"
+#include "../backend/managers/cdisplaytemplatemgr.h"
+#include "../util/btassert.h"
+#include "../util/bticons.h"
+#include "messagedialog.h"
 
 
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)

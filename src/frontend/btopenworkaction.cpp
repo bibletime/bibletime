@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/btopenworkaction.h"
+#include "btopenworkaction.h"
 
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/managers/cswordbackend.h"
+#include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../backend/managers/cswordbackend.h"
+#include "../util/btconnect.h"
+#include "../util/cresmgr.h"
 #include "bibletimeapp.h"
-#include "frontend/btbookshelfgroupingmenu.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "btbookshelfgroupingmenu.h"
 
 
 BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,

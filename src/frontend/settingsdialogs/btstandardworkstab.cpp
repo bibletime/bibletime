@@ -10,18 +10,18 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/btstandardworkstab.h"
+#include "btstandardworkstab.h"
 
 #include <QCheckBox>
 #include <QComboBox>
 #include <QFormLayout>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/settingsdialogs/cswordsettings.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/tool.h"
+#include "cswordsettings.h"
 
 
 BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)

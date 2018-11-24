@@ -16,7 +16,7 @@
 #include "btbookshelfwizardpage.h"
 
 #include <QList>
-#include "backend/drivers/btmoduleset.h"
+#include "../../backend/drivers/btmoduleset.h"
 
 
 class BtBookshelfWizard;

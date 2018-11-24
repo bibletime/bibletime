@@ -13,10 +13,10 @@
 #ifndef CREADDISPLAY_H
 #define CREADDISPLAY_H
 
-#include "frontend/display/cdisplay.h"
+#include "cdisplay.h"
 
 #include <QString>
-#include "backend/managers/cswordbackend.h"
+#include "../../backend/managers/cswordbackend.h"
 
 
 class CReadWindow;

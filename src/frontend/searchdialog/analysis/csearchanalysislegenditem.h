@@ -15,7 +15,8 @@
 
 #include <QGraphicsRectItem>
 
-#include "backend/drivers/btmodulelist.h"
+#include "../../../backend/drivers/btmodulelist.h"
+
 
 namespace Search {
 

@@ -17,7 +17,7 @@
 
 #include <QMap>
 #include <QWidget>
-#include "backend/config/btconfig.h"
+#include "../../backend/config/btconfig.h"
 
 
 class BtFontChooserWidget;

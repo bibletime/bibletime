@@ -17,7 +17,7 @@
 
 #include <QList>
 #include <QTimer>
-#include "frontend/displaywindow/cdisplaywindow.h"
+#include "displaywindow/cdisplaywindow.h"
 #include <QSignalMapper>
 #ifndef NDEBUG
 #include <QMutex>

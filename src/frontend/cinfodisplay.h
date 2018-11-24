@@ -17,7 +17,7 @@
 
 #include <QList>
 #include <QPair>
-#include "backend/rendering/btinforendering.h"
+#include "../backend/rendering/btinforendering.h"
 
 
 class CReadDisplay;

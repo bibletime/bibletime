@@ -16,7 +16,7 @@
 #include <QTreeWidget>
 
 #include <QLabel>
-#include "frontend/searchdialog/btsearchresultarea.h"
+#include "btsearchresultarea.h"
 
 
 class CSwordModuleInfo;

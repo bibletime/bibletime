@@ -7,14 +7,8 @@
 *
 **********/
 
-#include "frontend/btcopybyreferencesdialog.h"
+#include "btcopybyreferencesdialog.h"
 
-#include "backend/keys/cswordkey.h"
-#include "backend/models/btmoduletextmodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/messagedialog.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "frontend/display/modelview/btqmlinterface.h"
 #include <QDialogButtonBox>
 #include <QGridLayout>
 #include <QKeyEvent>
@@ -23,7 +17,13 @@
 #include <QRadioButton>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include "util/btconnect.h"
+#include "../backend/keys/cswordkey.h"
+#include "../backend/models/btmoduletextmodel.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../util/btconnect.h"
+#include "display/modelview/btqmlinterface.h"
+#include "keychooser/ckeychooser.h"
+#include "messagedialog.h"
 
 
 BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & modules,

@@ -17,11 +17,11 @@
 
 #include <QAction>
 #include <QStringList>
-#include "backend/btglobal.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/btglobal.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "btactioncollection.h"
 
 
 class CDisplay;

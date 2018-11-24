@@ -10,22 +10,22 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/cdisplaysettings.h"
+#include "cdisplaysettings.h"
 
 #include <QCheckBox>
 #include <QComboBox>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QFormLayout>
-#include "backend/config/btconfig.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cdisplaytemplatemgr.h"
+#include "../../backend/rendering/cdisplayrendering.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletimeapp.h"
+#include "cconfigurationdialog.h"
 
 // Sword includes:
 #include <localemgr.h>

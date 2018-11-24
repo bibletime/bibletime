@@ -14,8 +14,8 @@
 #define CDISPLAY_H
 
 #include <QMap>
-#include "backend/btglobal.h"
-#include "backend/managers/cswordbackend.h"
+#include "../../backend/btglobal.h"
+#include "../../backend/managers/cswordbackend.h"
 
 
 class CDisplayConnections;

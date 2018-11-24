@@ -7,9 +7,10 @@
 *
 **********/
 
-#include "frontend/bturlhandler.h"
+#include "bturlhandler.h"
 
 #include <QApplication>
+
 
 void BtUrlHandler::showQt(const QUrl &url) {
     if (url.host() == "about") {

@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/bttexteditdialog.h"
+#include "bttexteditdialog.h"
 
 #include <QAction>
 #include <QDialogButtonBox>
@@ -18,11 +18,11 @@
 #include <QToolBar>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "frontend/display/btcolorwidget.h"
-#include "frontend/display/btfontsizewidget.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../backend/config/btconfig.h"
+#include "../util/btconnect.h"
+#include "../util/cresmgr.h"
+#include "display/btcolorwidget.h"
+#include "display/btfontsizewidget.h"
 
 namespace {
 const QString CHTMLWriteDisplayFontKey = "HtmlWriteDisplay/font";

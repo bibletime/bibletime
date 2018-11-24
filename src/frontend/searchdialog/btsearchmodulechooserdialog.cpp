@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/searchdialog/btsearchmodulechooserdialog.h"
+#include "btsearchmodulechooserdialog.h"
 
 #include <QAction>
 #include <QToolButton>
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/managers/cswordbackend.h"
-#include "util/btconnect.h"
-#include "util/tool.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btconnect.h"
+#include "../../util/tool.h"
 
 
 namespace {

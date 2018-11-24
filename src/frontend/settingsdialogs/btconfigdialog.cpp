@@ -18,8 +18,8 @@
 #include <QListWidget>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
 
 
 BtConfigDialog::BtConfigDialog(QWidget * const parent,

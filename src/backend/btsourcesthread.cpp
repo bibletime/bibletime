@@ -15,9 +15,9 @@
 #include <QString>
 #include <memory>
 #include <type_traits>
+#include "../util/btassert.h"
 #include "btinstallbackend.h"
-#include "backend/btinstallmgr.h"
-#include "util/btassert.h"
+#include "btinstallmgr.h"
 
 
 void BtSourcesThread::run() {

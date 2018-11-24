@@ -15,7 +15,7 @@
 
 #include <QWidget>
 
-#include <backend/bookshelfmodel/btbookshelftreemodel.h>
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class BtBookshelfFilterModel;

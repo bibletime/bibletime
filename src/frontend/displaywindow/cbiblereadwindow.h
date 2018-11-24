@@ -13,11 +13,11 @@
 #ifndef CBIBLEREADWINDOW_H
 #define CBIBLEREADWINDOW_H
 
-#include "frontend/displaywindow/clexiconreadwindow.h"
+#include "clexiconreadwindow.h"
 
 #include <QAction>
-#include "frontend/displaywindow/btactioncollection.h"
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
+#include "btactioncollection.h"
 
 
 class CSwordKey;

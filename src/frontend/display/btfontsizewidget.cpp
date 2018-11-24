@@ -10,12 +10,12 @@
 *
 **********/
 
-#include "frontend/display/btfontsizewidget.h"
+#include "btfontsizewidget.h"
 
 #include <QCompleter>
 #include <QFontDatabase>
 #include <QValidator>
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
 
 
 BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)

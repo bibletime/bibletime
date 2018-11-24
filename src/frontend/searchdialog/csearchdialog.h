@@ -16,9 +16,9 @@
 #include <QDialog>
 
 #include <QString>
-#include "backend/cswordmodulesearch.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "../../backend/cswordmodulesearch.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "btsearchoptionsarea.h"
 
 namespace Search {
 class BtSearchResultArea;

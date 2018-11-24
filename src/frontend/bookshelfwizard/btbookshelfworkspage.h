@@ -13,11 +13,11 @@
 #ifndef BTBOOKSHELFWORKSPAGE
 #define BTBOOKSHELFWORKSPAGE
 
-#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+#include "btbookshelfwizardpage.h"
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/drivers/btmoduleset.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/drivers/btmoduleset.h"
+#include "btbookshelfwizardenums.h"
 
 
 class BtBookshelfGroupingMenu;

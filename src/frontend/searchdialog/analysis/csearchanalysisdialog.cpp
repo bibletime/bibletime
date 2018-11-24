@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
+#include "csearchanalysisdialog.h"
 
 #include <QAbstractButton>
 #include <QApplication>
@@ -19,11 +19,11 @@
 #include <QDialogButtonBox>
 #include <QtGlobal>
 #include <QVBoxLayout>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
-#include "frontend/searchdialog/analysis/csearchanalysisview.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../util/btconnect.h"
+#include "../../messagedialog.h"
+#include "csearchanalysisscene.h"
+#include "csearchanalysisview.h"
 
 
 namespace Search {

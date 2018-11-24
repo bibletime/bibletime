@@ -15,7 +15,7 @@
 
 #include <QMenu>
 
-#include <backend/bookshelfmodel/btbookshelftreemodel.h>
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class QAction;

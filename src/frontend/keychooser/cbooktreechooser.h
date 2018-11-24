@@ -13,10 +13,10 @@
 #ifndef CBOOKTREECHOOSER_H
 #define CBOOKTREECHOOSER_H
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "ckeychooser.h"
 
-#include "backend/keys/cswordtreekey.h"
-#include "frontend/keychooser/ckeychooserwidget.h"
+#include "../../backend/keys/cswordtreekey.h"
+#include "ckeychooserwidget.h"
 
 
 namespace sword {

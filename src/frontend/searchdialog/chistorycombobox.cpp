@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/chistorycombobox.h"
+#include "chistorycombobox.h"
 
 #include <QCompleter>
 #include <QString>

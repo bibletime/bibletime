@@ -13,8 +13,8 @@
 #ifndef BT_MODULECHOOSERBAR
 #define BT_MODULECHOOSERBAR
 
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "btwindowmodulechooser.h"
-#include "backend/drivers/cswordmoduleinfo.h"
 #include <QToolBar>
 #include <QStringList>
 

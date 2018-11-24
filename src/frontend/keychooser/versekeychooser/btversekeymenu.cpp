@@ -10,12 +10,12 @@
 *
 **********/
 
-#include "frontend/keychooser/versekeychooser/btversekeymenu.h"
+#include "btversekeymenu.h"
 
 #include <QMenu>
 #include <QMouseEvent>
 #include <QTimerEvent>
-#include "util/btconnect.h"
+#include "../../../util/btconnect.h"
 
 
 BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)

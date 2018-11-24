@@ -18,10 +18,10 @@
 #include <QStringList>
 #include <QTextBrowser>
 #include <QWidget>
-#include "backend/managers/cswordbackend.h"
-#include "backend/cswordmodulesearch.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../backend/cswordmodulesearch.h"
+#include "../display/creaddisplay.h"
+#include "analysis/csearchanalysisdialog.h"
 
 
 namespace Search {

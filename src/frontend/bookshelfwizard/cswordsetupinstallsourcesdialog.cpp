@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h"
+#include "cswordsetupinstallsourcesdialog.h"
 
 #include <QComboBox>
 #include <QDir>
@@ -26,10 +26,10 @@
 #include <QDialogButtonBox>
 #include <QProgressDialog>
 #include <QApplication>
-#include "backend/btinstallbackend.h"
-#include "frontend/messagedialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/btinstallbackend.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../messagedialog.h"
 
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path

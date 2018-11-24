@@ -14,14 +14,14 @@
 #define BT_DISPLAY_VIEW_INTERFACE_H
 
 #include <memory>
-#include "bttextfilter.h"
 #include <QFont>
 #include <QList>
 #include <QObject>
 #include <QString>
 #include <QTimer>
+#include "../../../backend/rendering/ctextrendering.h"
+#include "bttextfilter.h"
 
-#include "backend/rendering/ctextrendering.h"
 
 class CSwordKey;
 class CSwordModuleInfo;

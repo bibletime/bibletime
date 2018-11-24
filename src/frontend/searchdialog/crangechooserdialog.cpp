@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/crangechooserdialog.h"
+#include "crangechooserdialog.h"
 
 #include <QDialogButtonBox>
 #include <QFrame>
@@ -22,14 +22,14 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "frontend/messagedialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../messagedialog.h"
 
 // Sword includes:
-#include "versekey.h"
-#include "listkey.h"
+#include <versekey.h>
+#include <listkey.h>
 
 namespace Search {
 

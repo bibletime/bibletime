@@ -10,19 +10,19 @@
 *
 **********/
 
-#include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
+#include "cbiblekeychooser.h"
 
 #include <QDebug>
 #include <QHBoxLayout>
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "frontend/keychooser/bthistory.h"
-#include "frontend/keychooser/cscrollbutton.h"
-#include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../../backend/drivers/cswordbiblemoduleinfo.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../backend/keys/cswordversekey.h"
+#include "../../../util/btassert.h"
+#include "../../../util/btconnect.h"
+#include "../../../util/cresmgr.h"
+#include "../bthistory.h"
+#include "../cscrollbutton.h"
+#include "btbiblekeywidget.h"
 
 
 CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,

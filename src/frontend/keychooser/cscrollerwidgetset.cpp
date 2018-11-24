@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/keychooser/cscrollerwidgetset.h"
+#include "cscrollerwidgetset.h"
 
 #include <QString>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWheelEvent>
-#include "frontend/keychooser/cscrollbutton.h"
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
+#include "cscrollbutton.h"
 
 
 #define WIDTH (static_cast<unsigned int>(16))

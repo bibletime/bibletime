@@ -10,12 +10,12 @@
 *
 **********/
 
-#include "frontend/keychooser/bthistory.h"
+#include "bthistory.h"
 
 #include <QAction>
 #include <QList>
-#include "backend/keys/cswordkey.h"
-#include "util/btassert.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../util/btassert.h"
 
 
 namespace {

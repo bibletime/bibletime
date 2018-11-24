@@ -10,18 +10,18 @@
 *
 **********/
 
-#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+#include "csearchanalysisscene.h"
 
 #include <QApplication>
 #include <QFileDialog>
 #include <QHashIterator>
 #include <QTextCodec>
 #include <QTextDocument>
-#include "backend/keys/cswordversekey.h"
-#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
-#include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
-#include "frontend/searchdialog/csearchdialog.h"
-#include "util/tool.h"
+#include "../../../backend/keys/cswordversekey.h"
+#include "../../../util/tool.h"
+#include "../csearchdialog.h"
+#include "csearchanalysisitem.h"
+#include "csearchanalysislegenditem.h"
 
 // Sword includes
 #include <listkey.h>

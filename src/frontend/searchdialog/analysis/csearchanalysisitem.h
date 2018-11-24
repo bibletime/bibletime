@@ -16,7 +16,7 @@
 #include <QGraphicsRectItem>
 
 #include <QGraphicsScene>
-#include "backend/cswordmodulesearch.h"
+#include "../../../backend/cswordmodulesearch.h"
 
 
 class CSwordModuleInfo;

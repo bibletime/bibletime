@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelfinstallfinalpage.h"
+#include "btbookshelfinstallfinalpage.h"
 
 #include <QApplication>
 #include <QHBoxLayout>
@@ -18,11 +18,11 @@
 #include <QProgressBar>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include "backend/btinstallbackend.h"
-#include "backend/btinstallthread.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "util/btconnect.h"
+#include "../../backend/btinstallbackend.h"
+#include "../../backend/btinstallthread.h"
+#include "../../util/btconnect.h"
+#include "btbookshelfwizard.h"
+#include "btbookshelfwizardenums.h"
 
 
 namespace {

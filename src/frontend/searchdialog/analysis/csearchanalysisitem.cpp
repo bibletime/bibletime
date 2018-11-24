@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
+#include "csearchanalysisitem.h"
 
 #include <QFont>
 #include <QGraphicsRectItem>
@@ -18,8 +18,8 @@
 #include <QPen>
 #include <QPoint>
 #include <QRect>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "csearchanalysisscene.h"
 
 
 namespace Search {

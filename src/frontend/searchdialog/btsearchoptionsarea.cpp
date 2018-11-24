@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "btsearchoptionsarea.h"
 
 #include <QDebug>
 #include <QEvent>
@@ -21,18 +21,18 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QRadioButton>
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/drivers/btconstmoduleset.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/searchdialog/btsearchmodulechooserdialog.h"
-#include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
-#include "frontend/searchdialog/crangechooserdialog.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/btconstmoduleset.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletimeapp.h"
+#include "btsearchmodulechooserdialog.h"
+#include "btsearchsyntaxhelpdialog.h"
+#include "crangechooserdialog.h"
 
 
 namespace {

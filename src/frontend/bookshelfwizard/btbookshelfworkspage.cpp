@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+#include "btbookshelfworkspage.h"
 
 #include <QApplication>
 #include <QComboBox>
@@ -21,17 +21,17 @@
 #include <QSet>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include "backend/btinstallbackend.h"
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "frontend/bookshelfwizard/btinstallpagemodel.h"
-#include "frontend/btbookshelfgroupingmenu.h"
-#include "frontend/btbookshelfview.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/directory.h"
+#include "../../backend/btinstallbackend.h"
+#include "../../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/directory.h"
+#include "../btbookshelfgroupingmenu.h"
+#include "../btbookshelfview.h"
+#include "btbookshelfwizard.h"
+#include "btinstallpagemodel.h"
 
 
 namespace {

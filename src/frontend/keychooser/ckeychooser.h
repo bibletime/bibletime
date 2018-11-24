@@ -15,7 +15,7 @@
 
 #include <QWidget>
 
-#include "backend/drivers/btmodulelist.h"
+#include "../../backend/drivers/btmodulelist.h"
 
 
 class BTHistory;

@@ -21,10 +21,10 @@
 #include <QStringList>
 #include <QToolButton>
 #include <QWidget>
+#include "../../util/btconnect.h"
+#include "../../util/btmodules.h"
 #include "bttextwindowheaderwidget.h"
 #include "clexiconreadwindow.h"
-#include "util/btconnect.h"
-#include "util/btmodules.h"
 
 
 BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,

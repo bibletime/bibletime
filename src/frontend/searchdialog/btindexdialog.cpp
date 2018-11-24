@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/btindexdialog.h"
+#include "btindexdialog.h"
 
 #include <QCheckBox>
 #include <QHBoxLayout>
@@ -21,13 +21,13 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/btmoduleindexdialog.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../btmoduleindexdialog.h"
 
 
 BtIndexDialog::BtIndexDialog(QWidget * parent, Qt::WindowFlags f)

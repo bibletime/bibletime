@@ -10,8 +10,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/btshortcutsdialog.h"
-#include "frontend/messagedialog.h"
+#include "btshortcutsdialog.h"
 
 #include <QDialogButtonBox>
 #include <QGridLayout>
@@ -19,7 +18,8 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QVBoxLayout>
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
+#include "../messagedialog.h"
 
 
 // *************** BtShortcutsDialog ***************************************************************************

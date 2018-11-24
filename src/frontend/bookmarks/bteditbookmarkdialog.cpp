@@ -19,10 +19,10 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "frontend/bibletimeapp.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletimeapp.h"
+#include "../messagedialog.h"
 
 
 BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,

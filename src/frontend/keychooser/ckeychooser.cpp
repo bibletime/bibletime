@@ -10,20 +10,20 @@
 *
 **********/
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "ckeychooser.h"
 
 #include <QAction>
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "frontend/keychooser/bthistory.h"
-#include "frontend/keychooser/cbookkeychooser.h"
-#include "frontend/keychooser/clexiconkeychooser.h"
-#include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/drivers/cswordbiblemoduleinfo.h"
+#include "../../backend/drivers/cswordcommentarymoduleinfo.h"
+#include "../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "bthistory.h"
+#include "cbookkeychooser.h"
+#include "clexiconkeychooser.h"
+#include "versekeychooser/cbiblekeychooser.h"
 
 
 CKeyChooser::CKeyChooser(const BtConstModuleList &,

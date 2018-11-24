@@ -10,15 +10,15 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelfremovefinalpage.h"
+#include "btbookshelfremovefinalpage.h"
 
 #include <QDebug>
 #include <QLabel>
 #include <QSpacerItem>
 #include <QVBoxLayout>
-#include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "util/btconnect.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btconnect.h"
+#include "btbookshelfwizard.h"
 
 
 namespace {

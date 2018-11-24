@@ -10,9 +10,8 @@
 *
 **********/
 
-#include "frontend/btaboutdialog.h"
+#include "btaboutdialog.h"
 
-#include "frontend/messagedialog.h"
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
@@ -23,9 +22,10 @@
 #include <QTextStream>
 #include <QUrl>
 #include <QVBoxLayout>
-#include "util/btconnect.h"
-#include "util/bticons.h"
-#include "util/directory.h"
+#include "../util/btconnect.h"
+#include "../util/bticons.h"
+#include "../util/directory.h"
+#include "messagedialog.h"
 
 // Sword includes:
 #include <swversion.h>

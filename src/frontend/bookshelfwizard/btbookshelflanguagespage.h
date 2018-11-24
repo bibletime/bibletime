@@ -13,7 +13,7 @@
 #ifndef BTBOOKSHELFLANGUAGESPAGE
 #define BTBOOKSHELFLANGUAGESPAGE
 
-#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+#include "btbookshelfwizardpage.h"
 
 #include <QStringList>
 

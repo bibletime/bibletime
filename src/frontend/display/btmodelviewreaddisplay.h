@@ -12,13 +12,14 @@
 #ifndef BTMODELVIEWREADDISPLAY_H
 #define BTMODELVIEWREADDISPLAY_H
 
-#include "frontend/display/creaddisplay.h"
+#include <QWidget>
+#include "creaddisplay.h"
 
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QPoint>
 #include <QTimerEvent>
-#include <QWidget>
+
 
 class BtQmlScrollView;
 class BtQmlInterface;

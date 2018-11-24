@@ -15,7 +15,7 @@
 
 #include <QDialog>
 
-#include "frontend/btbookshelfwidget.h"
+#include "btbookshelfwidget.h"
 
 
 class CSwordModuleInfo;

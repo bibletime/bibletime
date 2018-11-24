@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/displaywindow/bttextwindowheaderwidget.h"
+#include "bttextwindowheaderwidget.h"
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -19,12 +19,12 @@
 #include <QToolTip>
 #include <QSizePolicy>
 #include <QString>
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/displaywindow/bttextwindowheader.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletimeapp.h"
+#include "bttextwindowheader.h"
 
 
 namespace {

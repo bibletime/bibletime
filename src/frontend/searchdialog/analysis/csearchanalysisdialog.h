@@ -15,7 +15,7 @@
 
 #include <QDialog>
 
-#include "backend/cswordmodulesearch.h"
+#include "../../../backend/cswordmodulesearch.h"
 
 
 class CSwordModuleInfo;

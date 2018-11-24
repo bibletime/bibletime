@@ -15,7 +15,7 @@
 
 #include <QDialog>
 
-#include "backend/btinstallmgr.h"
+#include "../../backend/btinstallmgr.h"
 
 // Sword includes:
 #include <installmgr.h>

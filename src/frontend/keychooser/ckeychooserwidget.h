@@ -16,7 +16,7 @@
 #include <QComboBox>
 
 #include <QStringList>
-#include "util/btassert.h"
+#include "../../util/btassert.h"
 
 
 class CLexiconKeyChooser;

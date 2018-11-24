@@ -10,17 +10,17 @@
 *
 **********/
 
-#include "frontend/keychooser/cbooktreechooser.h"
+#include "cbooktreechooser.h"
 
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordtreekey.h"
-#include "frontend/keychooser/bthistory.h"
-#include "util/btconnect.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordbookmoduleinfo.h"
+#include "../../backend/keys/cswordtreekey.h"
+#include "../../util/btconnect.h"
+#include "bthistory.h"
 
 
 CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,

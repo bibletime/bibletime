@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/display/btmodelviewreaddisplay.h"
+#include "btmodelviewreaddisplay.h"
 
 #include <memory>
 #include <QDebug>
@@ -17,21 +17,22 @@
 #include <QMenu>
 #include <QString>
 #include <QTimer>
-#include "backend/keys/cswordkey.h"
-#include "backend/managers/referencemanager.h"
-#include "frontend/bibletime.h"
-#include "frontend/BtMimeData.h"
-#include "frontend/cinfodisplay.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/display/modelview/btqmlscrollview.h"
-#include "frontend/display/modelview/btqmlinterface.h"
-#include "frontend/display/modelview/btquickwidget.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/creadwindow.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/directory.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../backend/managers/referencemanager.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/directory.h"
+#include "../bibletime.h"
+#include "../BtMimeData.h"
+#include "../cinfodisplay.h"
+#include "../cmdiarea.h"
+#include "../displaywindow/cdisplaywindow.h"
+#include "../displaywindow/creadwindow.h"
+#include "../keychooser/ckeychooser.h"
+#include "modelview/btqmlscrollview.h"
+#include "modelview/btqmlinterface.h"
+#include "modelview/btquickwidget.h"
+
 
 using namespace InfoDisplay;
 

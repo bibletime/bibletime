@@ -13,7 +13,7 @@
 #ifndef BTBOOKSHELFSOURCESPROGRESSPAGE
 #define BTBOOKSHELFSOURCESPROGRESSPAGE
 
-#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+#include "btbookshelfwizardpage.h"
 
 
 class BtSourcesThread;

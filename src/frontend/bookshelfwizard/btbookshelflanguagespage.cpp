@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
+#include "btbookshelflanguagespage.h"
 
 #include <QApplication>
 #include <QHBoxLayout>
@@ -18,13 +18,13 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <set>
-#include "backend/btinstallbackend.h"
-#include "backend/config/btconfig.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/models/btlistmodel.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "util/btconnect.h"
+#include "../../backend/btinstallbackend.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/managers/clanguagemgr.h"
+#include "../../backend/models/btlistmodel.h"
+#include "../../util/btconnect.h"
+#include "btbookshelfwizard.h"
+#include "btbookshelfwizardenums.h"
 
 
 namespace {

@@ -14,8 +14,10 @@
 #define BT_MODULECHOOSERBUTTON
 
 #include <QToolButton>
-#include "backend/btmoduletreeitem.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+
+#include "../../backend/btmoduletreeitem.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+
 
 class BtModuleChooserBar;
 class QMenu;

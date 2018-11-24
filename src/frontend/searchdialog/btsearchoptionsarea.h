@@ -15,10 +15,10 @@
 
 #include <QWidget>
 
-#include "backend/cswordmodulesearch.h"
-#include "backend/drivers/btmodulelist.h"
-#include "backend/keys/cswordversekey.h"
-#include "frontend/searchdialog/chistorycombobox.h"
+#include "../../backend/cswordmodulesearch.h"
+#include "../../backend/drivers/btmodulelist.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "chistorycombobox.h"
 
 
 class QComboBox;
