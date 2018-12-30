@@ -10,12 +10,13 @@ SET(test_OTHER_SOURCES
 )
 
 FUNCTION(test_a_class testDir testClass )
-    ADD_EXECUTABLE(test_${testClass}
-        ${testDir}/test_${testClass}.cpp
+    ADD_EXECUTABLE("test_${testClass}"
+        "${testDir}/test_${testClass}.cpp"
         ${test_OTHER_SOURCES}
         ${test_RESOURCE_SOURCES}
-        ${test_${testClass}_MOC_SRC}
     )
+    TARGET_INCLUDE_DIRECTORIES("test_${testClass}"
+        PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
     TARGET_LINK_LIBRARIES("test_${testClass}"
         PRIVATE
             bibletime_backend

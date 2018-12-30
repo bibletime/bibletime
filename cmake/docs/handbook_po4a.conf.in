@@ -4,7 +4,7 @@
 # If you modify the language list here, make sure you also modify CMakeLists.txt
 #
 
-[po4a_langs] ar cs de es fi fr hu it lt nl pt_BR
+[po4a_langs] @HANDBOOK_PO4A_LANGS@
 [po4a_paths] i18n/handbook/handbook.pot $lang:i18n/handbook/handbook-$lang.po
 [type: docbook] docs/handbook/en/docbook/hdbk-config.docbook	$lang:docs/handbook/$lang/docbook/hdbk-config.docbook
 [type: docbook] docs/handbook/en/docbook/hdbk-intro.docbook		$lang:docs/handbook/$lang/docbook/hdbk-intro.docbook
