@@ -4,7 +4,7 @@
 # If you modify the language list here, make sure you also modify CMakeLists.txt
 #
 
-[po4a_langs] ar bg cs de da es fi fr it lt hu ko nl pt_BR ru
+[po4a_langs] @HOWTO_PO4A_LANGS@
 [po4a_paths] i18n/howto/howto.pot $lang:i18n/howto/howto-$lang.po
 [type: docbook] docs/howto/en/docbook/howto-basics.docbook			$lang:docs/howto/$lang/docbook/howto-basics.docbook
 [type: docbook] docs/howto/en/docbook/howto-importance.docbook		$lang:docs/howto/$lang/docbook/howto-importance.docbook

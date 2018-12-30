@@ -2,7 +2,7 @@ IF(APPLE)
     # Install the Sword library
     INSTALL(
         FILES "${Sword_LIBRARY_DIRS}/lib${Sword_LIBRARIES}-${Sword_VERSION}.dylib"
-        DESTINATION "${BT_DESTINATION}/"
+        DESTINATION "${BT_BINDIR}/"
     )
 
     IF (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -16,7 +16,7 @@ IF(APPLE)
         SET(QT_MACDEPLOYQT_EXECUTABLE "${_qt5Core_install_prefix}/bin/macdeployqt")
 
         INSTALL(CODE "
-            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/../..\"   -qmldir=${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION} )
+            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} \"\${CMAKE_INSTALL_PREFIX}/${BT_BINDIR}/../..\"   -qmldir=${CMAKE_INSTALL_PREFIX}/${BT_BINDIR} )
         ")
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
