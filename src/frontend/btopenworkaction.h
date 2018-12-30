@@ -14,9 +14,9 @@
 #define BTOPENWORKACTION_H
 
 #include <QAction>
-#include "frontend/btmenuview.h"
+#include "btmenuview.h"
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class BtBookshelfGroupingMenu;

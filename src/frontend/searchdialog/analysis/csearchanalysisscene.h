@@ -18,8 +18,8 @@
 #include <QColor>
 #include <QHash>
 #include <QMap>
-#include "backend/cswordmodulesearch.h"
-#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
+#include "../../../backend/cswordmodulesearch.h"
+#include "csearchanalysisitem.h"
 
 
 class CSwordModuleInfo;

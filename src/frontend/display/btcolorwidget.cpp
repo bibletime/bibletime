@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/display/btcolorwidget.h"
+#include "btcolorwidget.h"
 
 #include <QColorDialog>
 #include <QMouseEvent>

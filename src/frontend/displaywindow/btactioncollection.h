@@ -19,8 +19,8 @@
 #include <QKeySequence>
 #include <QMap>
 #include <QString>
-#include "backend/config/btconfig.h"
-#include "util/btassert.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btassert.h"
 
 
 class BtActionCollection: public QObject {

@@ -10,19 +10,19 @@
 *
 **********/
 
-#include "frontend/display/creaddisplay.h"
+#include "creaddisplay.h"
 
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordversekey.h"
-#include "frontend/cexportmanager.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/creadwindow.h"
+#include "../../backend/drivers/cswordbiblemoduleinfo.h"
+#include "../../backend/drivers/cswordbookmoduleinfo.h"
+#include "../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../backend/keys/cswordldkey.h"
+#include "../../backend/keys/cswordtreekey.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "../cexportmanager.h"
+#include "../displaywindow/cdisplaywindow.h"
+#include "../displaywindow/creadwindow.h"
 
 
 CReadDisplay::CReadDisplay(CReadWindow* readWindow) :

@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/displaywindow/cdisplaywindow.h"
+#include "cdisplaywindow.h"
 
 #include <QCloseEvent>
 #include <QDebug>
@@ -18,19 +18,19 @@
 #include <QMenu>
 #include <QStringList>
 #include <QWidget>
-#include "backend/config/btconfig.h"
-#include "backend/keys/cswordkey.h"
-#include "frontend/bibletime.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/displaywindow/bttoolbarpopupaction.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/displaywindow/btdisplaysettingsbutton.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "frontend/keychooser/bthistory.h"
-#include "frontend/searchdialog/csearchdialog.h"
-#include "util/cresmgr.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../util/cresmgr.h"
+#include "../bibletime.h"
+#include "../bibletimeapp.h"
+#include "../cmdiarea.h"
+#include "../display/cdisplay.h"
+#include "../keychooser/ckeychooser.h"
+#include "../keychooser/bthistory.h"
+#include "../searchdialog/csearchdialog.h"
+#include "bttoolbarpopupaction.h"
+#include "btmodulechooserbar.h"
+#include "btdisplaysettingsbutton.h"
 
 
 namespace {

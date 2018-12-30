@@ -13,10 +13,10 @@
 #ifndef CBOOKKEYCHOOSER_H
 #define CBOOKKEYCHOOSER_H
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "ckeychooser.h"
 
 #include <QList>
-#include "frontend/keychooser/ckeychooserwidget.h"
+#include "ckeychooserwidget.h"
 
 
 class CSwordBookModuleInfo;

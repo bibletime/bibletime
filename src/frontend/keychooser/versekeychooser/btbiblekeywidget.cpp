@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
+#include "btbiblekeywidget.h"
 
 #include <QApplication>
 #include <QDebug>
@@ -23,12 +23,12 @@
 #include <QString>
 #include <QStringList>
 #include <QToolButton>
-#include "backend/keys/cswordversekey.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/keychooser/cscrollerwidgetset.h"
-#include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../../backend/keys/cswordversekey.h"
+#include "../../../util/btconnect.h"
+#include "../../../util/cresmgr.h"
+#include "../../bibletimeapp.h"
+#include "../cscrollerwidgetset.h"
+#include "btdropdownchooserbutton.h"
 
 
 class BtLineEdit : public QLineEdit {

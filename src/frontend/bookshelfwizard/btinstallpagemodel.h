@@ -13,7 +13,7 @@
 #ifndef BTINSTALLPAGEMODEL_H
 #define BTINSTALLPAGEMODEL_H
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class BtInstallPageModel: public BtBookshelfTreeModel {

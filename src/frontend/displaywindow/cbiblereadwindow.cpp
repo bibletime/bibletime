@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "cbiblereadwindow.h"
 
 #include <QAction>
 #include <QEvent>
@@ -18,21 +18,21 @@
 #include <QMenu>
 #include <QTimer>
 #include <QWidget>
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/cexportmanager.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/ccommentaryreadwindow.h"
-#include "frontend/displaywindow/btdisplaysettingsbutton.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/directory.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/drivers/cswordbiblemoduleinfo.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/directory.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletimeapp.h"
+#include "../cexportmanager.h"
+#include "../cmdiarea.h"
+#include "../display/creaddisplay.h"
+#include "../keychooser/ckeychooser.h"
+#include "btactioncollection.h"
+#include "btdisplaysettingsbutton.h"
+#include "ccommentaryreadwindow.h"
 
 
 void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {

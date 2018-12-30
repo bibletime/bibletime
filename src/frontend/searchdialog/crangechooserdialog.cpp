@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/crangechooserdialog.h"
+#include "crangechooserdialog.h"
 
 #include <QDialogButtonBox>
 #include <QFrame>
@@ -24,10 +24,10 @@
 #include <QVBoxLayout>
 #include <swordxx/keys/listkey.h>
 #include <swordxx/keys/versekey.h>
-#include "backend/config/btconfig.h"
-#include "frontend/messagedialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../messagedialog.h"
 
 
 namespace Search {

@@ -7,19 +7,8 @@
 *
 **********/
 
-#include "frontend/display/modelview/btqmlscrollview.h"
+#include "btqmlscrollview.h"
 
-#include "frontend/display/modelview/btquickwidget.h"
-#include "frontend/display/modelview/bttextfilter.h"
-#include "frontend/display/btmodelviewreaddisplay.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/BtMimeData.h"
-#include "backend/drivers/btmodulelist.h"
-#include "backend/models/btmoduletextmodel.h"
-#include "frontend/display/modelview/btqmlinterface.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "util/btconnect.h"
-#include "util/directory.h"
 #include <QHBoxLayout>
 #include <QList>
 #include <QMenu>
@@ -33,6 +22,17 @@
 #include <QStringList>
 #include <QStandardItemModel>
 #include <QStandardItem>
+#include "../../../backend/drivers/btmodulelist.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../backend/models/btmoduletextmodel.h"
+#include "../../../util/btconnect.h"
+#include "../../../util/directory.h"
+#include "../../BtMimeData.h"
+#include "../../display/btmodelviewreaddisplay.h"
+#include "../../display/creaddisplay.h"
+#include "../../display/modelview/btqmlinterface.h"
+#include "btquickwidget.h"
+#include "bttextfilter.h"
 
 
 BtQmlScrollView::BtQmlScrollView(QWidget * parent, CReadDisplay* readDisplay)

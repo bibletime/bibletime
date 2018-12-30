@@ -10,15 +10,15 @@
 *
 **********/
 
-#include "frontend/display/btfindwidget.h"
+#include "btfindwidget.h"
 
-#include "QCheckBox"
-#include "QHBoxLayout"
-#include "QLineEdit"
-#include "QSpacerItem"
-#include "QToolButton"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include <QCheckBox>
+#include <QHBoxLayout>
+#include <QLineEdit>
+#include <QSpacerItem>
+#include <QToolButton>
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
 
 
 namespace {

@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/btfontchooserwidget.h"
+#include "btfontchooserwidget.h"
 
 #include <QFontDatabase>
 #include <QFrame>
@@ -19,8 +19,8 @@
 #include <QListWidget>
 #include <QListWidgetItem>
 #include <QTextBrowser>
-#include "frontend/settingsdialogs/clistwidget.h"
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
+#include "clistwidget.h"
 
 
 namespace {

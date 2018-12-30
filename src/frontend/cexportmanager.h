@@ -16,8 +16,8 @@
 #include <memory>
 #include <QList>
 #include <QString>
-#include "backend/btglobal.h"
-#include "backend/config/btconfig.h"
+#include "../backend/btglobal.h"
+#include "../backend/config/btconfig.h"
 
 
 class CSwordKey;

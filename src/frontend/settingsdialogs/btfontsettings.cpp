@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/btfontsettings.h"
+#include "btfontsettings.h"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -19,13 +19,13 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/config/btconfig.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/settingsdialogs/btfontchooserwidget.h"
-#include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletimeapp.h"
+#include "btfontchooserwidget.h"
+#include "cconfigurationdialog.h"
 
 
 BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)

@@ -10,13 +10,13 @@
 *
 **********/
 
-#include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
+#include "csearchanalysislegenditem.h"
 
 #include <QFont>
 #include <QPainter>
 #include <QPen>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "csearchanalysisscene.h"
 
 
 namespace Search {

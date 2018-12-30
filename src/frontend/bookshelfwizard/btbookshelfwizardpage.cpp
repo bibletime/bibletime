@@ -12,8 +12,8 @@
 
 #include "btbookshelfwizardpage.h"
 
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "util/btassert.h"
+#include "btbookshelfwizard.h"
+#include "../../util/btassert.h"
 
 
 BtBookshelfWizardPage::BtBookshelfWizardPage(QWidget * parent)

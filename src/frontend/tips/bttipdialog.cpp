@@ -19,13 +19,13 @@
 #include <QPushButton>
 #include <QTextBrowser>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
-#include "util/bticons.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btconnect.h"
+#include "../../util/bticons.h"
+#include "../../util/cresmgr.h"
+#include "../../util/directory.h"
+#include "../bibletimeapp.h"
+#include "../messagedialog.h"
 
 
 namespace {

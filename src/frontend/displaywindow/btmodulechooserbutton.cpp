@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/displaywindow/btmodulechooserbutton.h"
+#include "btmodulechooserbutton.h"
 
 #include <QDebug>
 #include <QHash>
@@ -18,12 +18,12 @@
 #include <QString>
 #include <QToolButton>
 #include <QToolTip>
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletimeapp.h"
+#include "btmodulechooserbar.h"
 
 
 BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)

@@ -13,7 +13,7 @@
 #ifndef CBOOKREADWINDOW_H
 #define CBOOKREADWINDOW_H
 
-#include "frontend/displaywindow/clexiconreadwindow.h"
+#include "clexiconreadwindow.h"
 
 
 class BtActionCollection;

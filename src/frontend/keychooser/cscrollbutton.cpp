@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/keychooser/cscrollbutton.h"
+#include "cscrollbutton.h"
 
 #include <cmath>
 #include <QApplication>

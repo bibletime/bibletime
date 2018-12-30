@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/btshortcutseditor.h"
+#include "btshortcutseditor.h"
 
 #include <QAction>
 #include <QGroupBox>
@@ -23,9 +23,9 @@
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QVBoxLayout>
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/settingsdialogs/btshortcutsdialog.h"
-#include "util/btconnect.h"
+#include "../displaywindow/btactioncollection.h"
+#include "../../util/btconnect.h"
+#include "btshortcutsdialog.h"
 
 
 // *************** BtShortcutsEditorItem *******************************************************************

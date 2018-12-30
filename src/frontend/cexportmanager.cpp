@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/cexportmanager.h"
+#include "cexportmanager.h"
 
 #include <QApplication>
 #include <QClipboard>
@@ -20,17 +20,17 @@
 #include <QTextStream>
 #include <swordxx/keys/listkey.h>
 #include <swordxx/swkey.h>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/rendering/centrydisplay.h"
-#include "backend/rendering/chtmlexportrendering.h"
-#include "backend/rendering/cplaintextexportrendering.h"
-#include "frontend/btprinter.h"
-#include "util/btassert.h"
-#include "util/tool.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../backend/keys/cswordkey.h"
+#include "../backend/keys/cswordversekey.h"
+#include "../backend/managers/referencemanager.h"
+#include "../backend/managers/cdisplaytemplatemgr.h"
+#include "../backend/rendering/centrydisplay.h"
+#include "../backend/rendering/chtmlexportrendering.h"
+#include "../backend/rendering/cplaintextexportrendering.h"
+#include "../util/btassert.h"
+#include "../util/tool.h"
+#include "btprinter.h"
 
 
 using namespace Rendering;

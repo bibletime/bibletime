@@ -18,21 +18,21 @@
 #include <QScreen>
 #include <QTimer>
 #include <swordxx/swkey.h>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/models/btmoduletextmodel.h"
-#include "backend/rendering/btinforendering.h"
-#include "backend/rendering/chtmlexportrendering.h"
-#include "backend/rendering/cplaintextexportrendering.h"
-#include "frontend/bibletime.h"
-#include "frontend/cinfodisplay.h"
-#include "frontend/bttexteditdialog.h"
-#include "util/btconnect.h"
+#include "../../../backend/config/btconfig.h"
+#include "../../../backend/drivers/cswordbookmoduleinfo.h"
+#include "../../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../backend/keys/cswordkey.h"
+#include "../../../backend/managers/cdisplaytemplatemgr.h"
+#include "../../../backend/managers/cswordbackend.h"
+#include "../../../backend/models/btmoduletextmodel.h"
+#include "../../../backend/rendering/btinforendering.h"
+#include "../../../backend/rendering/chtmlexportrendering.h"
+#include "../../../backend/rendering/cplaintextexportrendering.h"
+#include "../../../util/btconnect.h"
+#include "../../bibletime.h"
+#include "../../cinfodisplay.h"
+#include "../../bttexteditdialog.h"
 
 
 BtQmlInterface::BtQmlInterface(QObject* parent)

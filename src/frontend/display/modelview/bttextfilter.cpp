@@ -11,7 +11,9 @@
 **********/
 
 #include "bttextfilter.h"
+
 #include <QDebug>
+
 
 BtTextFilter::BtTextFilter() :
     m_showReferences(false) {

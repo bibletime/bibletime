@@ -10,13 +10,13 @@
 *
 **********/
 
-#include "frontend/btbookshelfview.h"
+#include "btbookshelfview.h"
 
 #include <QApplication>
 #include <QMouseEvent>
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "util/btconnect.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../util/btconnect.h"
 
 
 BtBookshelfView::BtBookshelfView(QWidget *parent)

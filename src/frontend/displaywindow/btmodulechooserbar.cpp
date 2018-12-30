@@ -10,16 +10,16 @@
 *
 **********/
 
-#include "frontend/displaywindow/btmodulechooserbar.h"
+#include "btmodulechooserbar.h"
 
 #include <QAction>
 #include <QDebug>
 #include <QList>
 #include <QToolBar>
-#include "frontend/displaywindow/btmodulechooserbutton.h"
+#include "../../util/btconnect.h"
+#include "../../util/btmodules.h"
+#include "btmodulechooserbutton.h"
 #include "creadwindow.h"
-#include "util/btconnect.h"
-#include "util/btmodules.h"
 
 
 BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)

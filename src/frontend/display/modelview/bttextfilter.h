@@ -13,8 +13,10 @@
 #ifndef BTM_MODULE_TEXT_FILTER_H
 #define BTM_MODULE_TEXT_FILTER_H
 
+#include "../../../backend/models/btmoduletextmodel.h"
+
 #include <QString>
-#include "backend/models/btmoduletextmodel.h"
+
 
 /**
  * \brief This filter provides a method for modifying text generated

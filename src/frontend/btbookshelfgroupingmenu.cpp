@@ -10,13 +10,13 @@
 *
 **********/
 
-#include "frontend/btbookshelfgroupingmenu.h"
+#include "btbookshelfgroupingmenu.h"
 
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
+#include "../util/cresmgr.h"
+#include "../util/directory.h"
 #include "bibletimeapp.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 namespace {

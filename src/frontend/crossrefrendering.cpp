@@ -10,12 +10,12 @@
 *
 **********/
 
-#include "frontend/crossrefrendering.h"
+#include "crossrefrendering.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/referencemanager.h"
-#include "util/btassert.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../backend/keys/cswordversekey.h"
+#include "../backend/managers/referencemanager.h"
+#include "../util/btassert.h"
 
 
 namespace InfoDisplay {

@@ -11,14 +11,15 @@
 **********/
 
 #include "btprinter.h"
-#include "bibletime.h"
+
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QTextEdit>
+#include "../backend/config/btconfig.h"
+#include "../backend/keys/cswordversekey.h"
+#include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
-#include "backend/config/btconfig.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
+#include "bibletime.h"
 
 
 namespace {

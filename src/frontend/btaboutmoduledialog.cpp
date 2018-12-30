@@ -15,10 +15,10 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/btaboutmoduledialog.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../util/btconnect.h"
+#include "btaboutmoduledialog.h"
+#include "messagedialog.h"
 
 
 BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,

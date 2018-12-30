@@ -10,17 +10,17 @@
 *
 **********/
 
-#include "frontend/keychooser/clexiconkeychooser.h"
+#include "clexiconkeychooser.h"
 
 #include <algorithm>
 #include <QHBoxLayout>
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/keys/cswordldkey.h"
-#include "frontend/keychooser/bthistory.h"
-#include "frontend/keychooser/ckeychooserwidget.h"
-#include "frontend/keychooser/cscrollbutton.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../backend/keys/cswordldkey.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "bthistory.h"
+#include "ckeychooserwidget.h"
+#include "cscrollbutton.h"
 
 
 CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,

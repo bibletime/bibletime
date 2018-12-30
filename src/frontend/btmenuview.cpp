@@ -10,11 +10,11 @@
 *
 **********/
 
-#include "frontend/btmenuview.h"
+#include "btmenuview.h"
 
 #include <QActionGroup>
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
 
 
 BtMenuView::BtMenuView(QWidget *parent)

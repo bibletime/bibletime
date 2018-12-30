@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/btbookshelfwidget.h"
+#include "btbookshelfwidget.h"
 
 #include <QActionGroup>
 #include <QApplication>
@@ -23,15 +23,15 @@
 #include <QMenu>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
+#include "../util/cresmgr.h"
+#include "../util/directory.h"
 #include "bibletimeapp.h"
-#include "frontend/btbookshelfdockwidget.h"
-#include "frontend/btbookshelfgroupingmenu.h"
-#include "frontend/btbookshelfview.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
+#include "btbookshelfdockwidget.h"
+#include "btbookshelfgroupingmenu.h"
+#include "btbookshelfview.h"
 
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)

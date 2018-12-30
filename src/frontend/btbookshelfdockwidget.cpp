@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/btbookshelfdockwidget.h"
+#include "btbookshelfdockwidget.h"
 
 #include <QAction>
 #include <QActionGroup>
@@ -19,15 +19,15 @@
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include "backend/managers/cswordbackend.h"
+#include "../backend/managers/cswordbackend.h"
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
+#include "../util/cresmgr.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
-#include "frontend/btbookshelfview.h"
-#include "frontend/btbookshelfwidget.h"
-#include "frontend/messagedialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "btbookshelfview.h"
+#include "btbookshelfwidget.h"
+#include "messagedialog.h"
 
 
 namespace {

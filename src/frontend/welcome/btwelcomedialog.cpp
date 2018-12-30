@@ -12,16 +12,16 @@
 
 #include "btwelcomedialog.h"
 
-#include "frontend/bibletime.h"
-#include "frontend/messagedialog.h"
-
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include "util/btconnect.h"
-#include "util/bticons.h"
-#include "util/cresmgr.h"
+#include "../../util/btconnect.h"
+#include "../../util/bticons.h"
+#include "../../util/cresmgr.h"
+#include "../bibletime.h"
+#include "../messagedialog.h"
+
 
 void BtWelcomeDialog::openWelcome() {
     BtWelcomeDialog dlg(BibleTime::instance());

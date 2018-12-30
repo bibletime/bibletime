@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/csearchdialog.h"
+#include "csearchdialog.h"
 
 #include <QDebug>
 #include <QDialogButtonBox>
@@ -22,19 +22,19 @@
 #include <QRegExp>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/config/btconfig.h"
-#include "backend/cswordmodulesearch.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/btmoduleindexdialog.h"
-#include "frontend/searchdialog/btindexdialog.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h"
-#include "frontend/searchdialog/btsearchresultarea.h"
-#include "frontend/messagedialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/cswordmodulesearch.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletimeapp.h"
+#include "../btmoduleindexdialog.h"
+#include "../messagedialog.h"
+#include "btindexdialog.h"
+#include "btsearchoptionsarea.h"
+#include "btsearchresultarea.h"
 
 
 namespace {

@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+#include "csearchanalysisscene.h"
 
 #include <QApplication>
 #include <QFileDialog>
@@ -18,11 +18,11 @@
 #include <QTextCodec>
 #include <QTextDocument>
 #include <swordxx/keys/listkey.h>
-#include "backend/keys/cswordversekey.h"
-#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
-#include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
-#include "frontend/searchdialog/csearchdialog.h"
-#include "util/tool.h"
+#include "../../../backend/keys/cswordversekey.h"
+#include "../../../util/tool.h"
+#include "../csearchdialog.h"
+#include "csearchanalysisitem.h"
+#include "csearchanalysislegenditem.h"
 
 
 namespace Search {

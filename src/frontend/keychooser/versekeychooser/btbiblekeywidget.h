@@ -16,8 +16,8 @@
 #include <QWidget>
 
 #include <QTimer>
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "frontend/keychooser/cscrollerwidgetset.h"
+#include "../../../backend/drivers/cswordbiblemoduleinfo.h"
+#include "../cscrollerwidgetset.h"
 
 
 class BtDropdownChooserButton;

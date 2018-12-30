@@ -15,8 +15,8 @@
 
 #include <QDockWidget>
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "frontend/btbookshelfwidget.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "btbookshelfwidget.h"
 
 
 class QAction;

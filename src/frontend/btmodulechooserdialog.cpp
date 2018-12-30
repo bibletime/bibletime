@@ -10,18 +10,18 @@
 *
 **********/
 
-#include "frontend/btmodulechooserdialog.h"
+#include "btmodulechooserdialog.h"
 
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "frontend/btaboutmoduledialog.h"
-#include "frontend/btbookshelfview.h"
-#include "frontend/btbookshelfwidget.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
-#include "util/tool.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../util/btconnect.h"
+#include "../util/tool.h"
+#include "btaboutmoduledialog.h"
+#include "btbookshelfview.h"
+#include "btbookshelfwidget.h"
+#include "messagedialog.h"
 
 
 BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags flags)

@@ -10,17 +10,17 @@
 *
 **********/
 
-#include "frontend/displaywindow/btdisplaysettingsbutton.h"
+#include "btdisplaysettingsbutton.h"
 
 #include <QHash>
 #include <QMenu>
 #include <QString>
 #include <QToolTip>
 #include <QToolButton>
-#include "frontend/bibletimeapp.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletimeapp.h"
 
 
 BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)

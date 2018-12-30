@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/keychooser/ckeychooserwidget.h"
+#include "ckeychooserwidget.h"
 
 #include <QComboBox>
 #include <QFocusEvent>
@@ -18,8 +18,8 @@
 #include <QLineEdit>
 #include <QString>
 #include <QWheelEvent>
-#include "frontend/keychooser/cscrollerwidgetset.h"
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
+#include "cscrollerwidgetset.h"
 
 
 class BtKeyLineEdit : public QLineEdit {

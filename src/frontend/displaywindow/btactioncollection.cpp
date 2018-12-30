@@ -10,10 +10,10 @@
 *
 **********/
 
-#include "frontend/displaywindow/btactioncollection.h"
+#include "btactioncollection.h"
 
-#include "util/btconnect.h"
-#include "util/directory.h"
+#include "../../util/btconnect.h"
+#include "../../util/directory.h"
 
 
 QAction & BtActionCollection::action(QString const & name) const {

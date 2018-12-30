@@ -10,12 +10,12 @@
 *
 **********/
 
-#include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
+#include "btdropdownchooserbutton.h"
 
 #include <QWheelEvent>
-#include "frontend/keychooser/versekeychooser/btversekeymenu.h"
-#include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
-#include "util/btconnect.h"
+#include "../../../util/btconnect.h"
+#include "btversekeymenu.h"
+#include "btbiblekeywidget.h"
 
 
 const unsigned int ARROW_HEIGHT = 15;

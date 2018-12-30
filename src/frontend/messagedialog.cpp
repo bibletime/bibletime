@@ -16,7 +16,7 @@
 #include <QDialogButtonBox>
 #include <QMessageBox>
 #include <QPushButton>
-#include "util/btassert.h"
+#include "../util/btassert.h"
 
 
 namespace message {

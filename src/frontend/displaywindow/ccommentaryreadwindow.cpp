@@ -10,22 +10,22 @@
 *
 **********/
 
-#include "frontend/displaywindow/ccommentaryreadwindow.h"
+#include "ccommentaryreadwindow.h"
 
 #include <QAction>
 #include <QIcon>
 #include <QMenu>
 #include <QToolBar>
-#include "backend/keys/cswordversekey.h"
-#include "frontend/bibletime.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletime.h"
+#include "../bibletimeapp.h"
+#include "../display/cdisplay.h"
+#include "../display/creaddisplay.h"
+#include "../keychooser/ckeychooser.h"
+#include "btactioncollection.h"
+#include "btmodulechooserbar.h"
 
 
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {

@@ -12,7 +12,7 @@
 
 #include "btmodules.h"
 
-#include "backend/managers/cswordbackend.h"
+#include "../backend/managers/cswordbackend.h"
 
 
 namespace {

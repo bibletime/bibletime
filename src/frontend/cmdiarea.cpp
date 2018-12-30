@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/cmdiarea.h"
+#include "cmdiarea.h"
 
 #include <QEvent>
 #include <QMdiSubWindow>
@@ -20,10 +20,10 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QWindowStateChangeEvent>
+#include "../util/btconnect.h"
 #include "bibletime.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/display/cdisplay.h"
-#include "util/btconnect.h"
+#include "displaywindow/btmodulechooserbar.h"
+#include "display/cdisplay.h"
 
 
 namespace {

@@ -10,9 +10,8 @@
 *
 **********/
 
-#include "frontend/btaboutdialog.h"
+#include "btaboutdialog.h"
 
-#include "frontend/messagedialog.h"
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
@@ -24,9 +23,10 @@
 #include <QUrl>
 #include <QVBoxLayout>
 #include <swordxx/version.h>
-#include "util/btconnect.h"
-#include "util/bticons.h"
-#include "util/directory.h"
+#include "../util/btconnect.h"
+#include "../util/bticons.h"
+#include "../util/directory.h"
+#include "messagedialog.h"
 
 
 #define MAKE_STYLE(t) "<style type=\"text/css\">"\

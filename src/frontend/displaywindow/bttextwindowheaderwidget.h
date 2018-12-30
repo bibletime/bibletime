@@ -13,12 +13,13 @@
 #ifndef BT_MODULECHOOSERHEADERWIDGET
 #define BT_MODULECHOOSERHEADERWIDGET
 
-#include <QString>
 #include <QWidget>
-#include <QList>
 
-#include "backend/btmoduletreeitem.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+#include <QString>
+#include <QList>
+#include "../../backend/btmoduletreeitem.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+
 
 class BtTextWindowHeader;
 class QMenu;

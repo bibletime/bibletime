@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/cswordsettings.h"
+#include "cswordsettings.h"
 
 #include <QVBoxLayout>
-#include "frontend/bibletimeapp.h"
-#include "frontend/settingsdialogs/btstandardworkstab.h"
-#include "frontend/settingsdialogs/bttextfilterstab.h"
-#include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "util/cresmgr.h"
+#include "../../util/cresmgr.h"
+#include "../bibletimeapp.h"
+#include "btstandardworkstab.h"
+#include "bttextfilterstab.h"
+#include "cconfigurationdialog.h"
 
 
 CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog * parent)

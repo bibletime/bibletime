@@ -13,8 +13,8 @@
 #ifndef INFODISPLAYCROSSREFRENDERING_H
 #define INFODISPLAYCROSSREFRENDERING_H
 
-#include "backend/rendering/chtmlexportrendering.h"
-#include "backend/config/btconfig.h"
+#include "../backend/rendering/chtmlexportrendering.h"
+#include "../backend/config/btconfig.h"
 
 
 namespace InfoDisplay {

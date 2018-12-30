@@ -13,8 +13,11 @@
 #define BT_COPY_BY_REFERENCES_DIALOG_H
 
 #include <QDialog>
-#include "backend/drivers/btmodulelist.h"
-#include "frontend/display/modelview/btqmlinterface.h"
+
+#include "../backend/drivers/btmodulelist.h"
+#include "display/modelview/btqmlinterface.h"
+
+
 class QDialogButtonBox;
 class QLabel;
 class CKeyChooser;

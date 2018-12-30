@@ -13,10 +13,10 @@
 #ifndef BTSEARCHMODULECHOOSERDIALOG_H
 #define BTSEARCHMODULECHOOSERDIALOG_H
 
-#include "frontend/btmodulechooserdialog.h"
+#include "../btmodulechooserdialog.h"
 
-#include "backend/drivers/btconstmoduleset.h"
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/drivers/btconstmoduleset.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class BtBookshelfTreeModel;

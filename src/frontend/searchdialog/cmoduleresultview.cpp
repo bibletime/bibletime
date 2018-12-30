@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/searchdialog/cmoduleresultview.h"
+#include "cmoduleresultview.h"
 
 #include <QAction>
 #include <QContextMenuEvent>
@@ -19,14 +19,14 @@
 #include <QStringList>
 #include <QTreeWidget>
 #include <QtAlgorithms>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/cexportmanager.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletimeapp.h"
+#include "../cexportmanager.h"
 
 
 namespace Search {

@@ -7,13 +7,14 @@
 *
 **********/
 
+#include "btquickwidget.h"
 
-#include "util/btassert.h"
-#include "frontend/display/modelview/btquickwidget.h"
-#include "frontend/BtMimeData.h"
-#include "util/directory.h"
 #include <QMimeData>
 #include <QQuickItem>
+#include "../../../util/btassert.h"
+#include "../../../util/directory.h"
+#include "../../BtMimeData.h"
+
 
 BtQuickWidget::BtQuickWidget(QWidget* parent)
     : QQuickWidget(parent) {

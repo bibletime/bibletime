@@ -10,10 +10,7 @@
 *
 **********/
 
-#include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfwizard/btbookshelftaskpage.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
+#include "btbookshelftaskpage.h"
 
 #include <QApplication>
 #include <QDate>
@@ -21,6 +18,9 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QVBoxLayout>
+#include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cswordbackend.h"
+#include "btbookshelfwizard.h"
 
 
 BtBookshelfTaskPage::BtBookshelfTaskPage(QWidget * parent)

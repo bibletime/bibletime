@@ -13,9 +13,9 @@
 #ifndef BTBOOKSHELFTASKPAGE
 #define BTBOOKSHELFTASKPAGE
 
-#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+#include "btbookshelfwizardpage.h"
 
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
+#include "btbookshelfwizardenums.h"
 
 
 class QGroupBox;

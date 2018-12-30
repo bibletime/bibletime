@@ -15,7 +15,7 @@
 
 #include <QDialog>
 #include <swordxx/installmgr.h>
-#include "backend/btinstallmgr.h"
+#include "../../backend/btinstallmgr.h"
 
 
 class QComboBox;

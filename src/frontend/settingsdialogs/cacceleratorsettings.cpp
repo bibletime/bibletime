@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/cacceleratorsettings.h"
+#include "cacceleratorsettings.h"
 
 #include <QComboBox>
 #include <QHBoxLayout>
@@ -19,18 +19,18 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "frontend/bibletime.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/cbiblereadwindow.h"
-#include "frontend/displaywindow/cbookreadwindow.h"
-#include "frontend/displaywindow/ccommentaryreadwindow.h"
-#include "frontend/displaywindow/clexiconreadwindow.h"
-#include "frontend/displaywindow/creadwindow.h"
-#include "frontend/messagedialog.h"
-#include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../bibletime.h"
+#include "../bibletimeapp.h"
+#include "../displaywindow/btactioncollection.h"
+#include "../displaywindow/cbiblereadwindow.h"
+#include "../displaywindow/cbookreadwindow.h"
+#include "../displaywindow/ccommentaryreadwindow.h"
+#include "../displaywindow/clexiconreadwindow.h"
+#include "../displaywindow/creadwindow.h"
+#include "../messagedialog.h"
+#include "cconfigurationdialog.h"
 
 
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)

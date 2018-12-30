@@ -10,14 +10,14 @@
 *
 **********/
 
-#include "frontend/btmoduleindexdialog.h"
+#include "btmoduleindexdialog.h"
 
 #include <QApplication>
 #include <QMutexLocker>
-#include "backend/managers/cswordbackend.h"
-#include "frontend/messagedialog.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../backend/managers/cswordbackend.h"
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
+#include "messagedialog.h"
 
 
 bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)

@@ -10,22 +10,22 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/cconfigurationdialog.h"
+#include "cconfigurationdialog.h"
 
 #include <QAbstractButton>
 #include <QDialogButtonBox>
 #include <QLayout>
 #include <QPushButton>
 #include <QWidget>
-#include "backend/config/btconfig.h"
-#include "frontend/settingsdialogs/cacceleratorsettings.h"
-#include "frontend/settingsdialogs/cdisplaysettings.h"
-#include "frontend/settingsdialogs/btfontsettings.h"
-#include "frontend/settingsdialogs/cswordsettings.h"
-#include "frontend/messagedialog.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/directory.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/directory.h"
+#include "../messagedialog.h"
+#include "btfontsettings.h"
+#include "cacceleratorsettings.h"
+#include "cdisplaysettings.h"
+#include "cswordsettings.h"
 
 
 namespace {

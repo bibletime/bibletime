@@ -13,7 +13,7 @@
 #ifndef CLEXICONKEYCHOOSER_H
 #define CLEXICONKEYCHOOSER_H
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "ckeychooser.h"
 
 
 class CKeyChooserWidget;

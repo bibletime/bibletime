@@ -13,7 +13,7 @@
 #ifndef CCOMMENTARYREADWINDOW_H
 #define CCOMMENTARYREADWINDOW_H
 
-#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "clexiconreadwindow.h"
 
 
 class BtActionCollection;

@@ -10,24 +10,24 @@
 *
 **********/
 
-#include "frontend/displaywindow/cbookreadwindow.h"
+#include "cbookreadwindow.h"
 
 #include <QAction>
 #include <QMenu>
 #include <QSplitter>
 #include <QToolBar>
-#include "backend/keys/cswordtreekey.h"
-#include "frontend/bibletime.h"
-#include "frontend/display/btmodelviewreaddisplay.h"
-#include "frontend/displaywindow/bttoolbarpopupaction.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/displaywindow/btdisplaysettingsbutton.h"
-#include "frontend/keychooser/cbooktreechooser.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/keys/cswordtreekey.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletime.h"
+#include "../display/btmodelviewreaddisplay.h"
+#include "../keychooser/cbooktreechooser.h"
+#include "btactioncollection.h"
+#include "btdisplaysettingsbutton.h"
+#include "btmodulechooserbar.h"
+#include "bttoolbarpopupaction.h"
 
 
 void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {

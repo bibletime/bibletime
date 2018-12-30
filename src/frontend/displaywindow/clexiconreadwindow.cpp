@@ -10,32 +10,31 @@
 *
 **********/
 
-#include "frontend/displaywindow/clexiconreadwindow.h"
+#include "clexiconreadwindow.h"
 
 #include <QAction>
+#include <QDebug>
 #include <QFile>
 #include <QFileDialog>
 #include <QMenu>
-#include <QDebug>
-
-#include "backend/keys/cswordldkey.h"
-#include "backend/keys/cswordkey.h"
-#include "frontend/bibletime.h"
-#include "frontend/bibletimeapp.h"
-#include "frontend/cexportmanager.h"
-#include "frontend/display/btmodelviewreaddisplay.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/bttoolbarpopupaction.h"
-#include "frontend/displaywindow/btdisplaysettingsbutton.h"
-#include "frontend/displaywindow/bttextwindowheader.h"
-#include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/keychooser/bthistory.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
-#include "util/directory.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
+#include "../../backend/keys/cswordldkey.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../../util/directory.h"
+#include "../../util/cresmgr.h"
+#include "../../util/tool.h"
+#include "../bibletime.h"
+#include "../bibletimeapp.h"
+#include "../cexportmanager.h"
+#include "../display/btmodelviewreaddisplay.h"
+#include "../keychooser/bthistory.h"
+#include "../keychooser/ckeychooser.h"
+#include "btactioncollection.h"
+#include "bttoolbarpopupaction.h"
+#include "btdisplaysettingsbutton.h"
+#include "bttextwindowheader.h"
+#include "btmodulechooserbar.h"
 
 
 CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)

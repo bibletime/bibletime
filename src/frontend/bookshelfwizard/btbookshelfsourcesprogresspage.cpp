@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h"
+#include "btbookshelfsourcesprogresspage.h"
 
 #include <QApplication>
 #include <QDate>
@@ -19,12 +19,12 @@
 #include <QProgressBar>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include "backend/btinstallbackend.h"
-#include "backend/btsourcesthread.h"
-#include "backend/config/btconfig.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "util/btconnect.h"
+#include "../../backend/btinstallbackend.h"
+#include "../../backend/btsourcesthread.h"
+#include "../../backend/config/btconfig.h"
+#include "../../util/btconnect.h"
+#include "btbookshelfwizardenums.h"
+#include "btbookshelfwizard.h"
 
 
 BtBookshelfSourcesProgressPage::BtBookshelfSourcesProgressPage(QWidget * parent)

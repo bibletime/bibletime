@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/cinfodisplay.h"
+#include "cinfodisplay.h"
 
 #include <memory>
 #include <QAction>
@@ -23,16 +23,16 @@
 #include <QVBoxLayout>
 #include <QtAlgorithms>
 #include <QMenu>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/managers/referencemanager.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
+#include "../backend/config/btconfig.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../backend/keys/cswordkey.h"
+#include "../backend/keys/cswordversekey.h"
+#include "../backend/managers/referencemanager.h"
+#include "../backend/managers/cdisplaytemplatemgr.h"
+#include "../util/btassert.h"
+#include "../util/btconnect.h"
 #include "bibletime.h"
-#include "frontend/crossrefrendering.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "crossrefrendering.h"
 
 
 using namespace Rendering;

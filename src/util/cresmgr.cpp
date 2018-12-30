@@ -10,7 +10,8 @@
 *
 **********/
 
-#include "util/cresmgr.h"
+#include "cresmgr.h"
+
 
 namespace CResMgr {
 

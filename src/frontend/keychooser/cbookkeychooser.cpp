@@ -10,18 +10,18 @@
 *
 **********/
 
-#include "frontend/keychooser/cbookkeychooser.h"
+#include "cbookkeychooser.h"
 
 #include <QDebug>
 #include <QHBoxLayout>
 #include <QList>
 #include <QWidget>
-#include "backend/config/btconfig.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordtreekey.h"
-#include "frontend/keychooser/bthistory.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordbookmoduleinfo.h"
+#include "../../backend/keys/cswordtreekey.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "bthistory.h"
 
 
 #define ID_PROPERTY_NAME "CBookKeyChooser_ID"

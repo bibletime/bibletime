@@ -13,7 +13,7 @@
 #ifndef BT_WINDOWMODULECHOOSER
 #define BT_WINDOWMODULECHOOSER
 
-#include "backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include <QStringList>
 
 class CDisplayWindow;

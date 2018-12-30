@@ -13,10 +13,10 @@
 #ifndef BTBOOKSHELFREMOVEFINALPAGE
 #define BTBOOKSHELFREMOVEFINALPAGE
 
-#include "frontend/bookshelfwizard/btbookshelfwizardpage.h"
+#include "btbookshelfwizardpage.h"
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/drivers/btmoduleset.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/drivers/btmoduleset.h"
 
 
 class BtBookshelfWizard;

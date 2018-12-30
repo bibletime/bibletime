@@ -10,9 +10,9 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/clistwidget.h"
+#include "clistwidget.h"
 
-#include "util/tool.h"
+#include "../../util/tool.h"
 
 
 CListWidget::CListWidget(QWidget* parent)

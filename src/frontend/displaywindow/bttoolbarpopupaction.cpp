@@ -10,13 +10,13 @@
 *
 **********/
 
-#include "frontend/displaywindow/bttoolbarpopupaction.h"
+#include "bttoolbarpopupaction.h"
 
 #include <QAction>
 #include <QEvent>
 #include <QMenu>
 #include <QToolButton>
-#include "util/btconnect.h"
+#include "../../util/btconnect.h"
 
 
 namespace {

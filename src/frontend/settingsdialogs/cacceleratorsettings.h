@@ -17,7 +17,7 @@
 
 #include <QPointer>
 #include <QWidget>
-#include "frontend/settingsdialogs/btshortcutseditor.h"
+#include "btshortcutseditor.h"
 
 
 class BtActionCollection;

@@ -10,23 +10,23 @@
 *
 **********/
 
-#include "frontend/displaywindow/creadwindow.h"
+#include "creadwindow.h"
 
 #include <QMdiSubWindow>
 #include <QResizeEvent>
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "backend/rendering/centrydisplay.h"
-#include "frontend/btcopybyreferencesdialog.h"
-#include "frontend/cexportmanager.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/searchdialog/csearchdialog.h"
-#include "frontend/display/btmodelviewreaddisplay.h"
-#include "frontend/display/modelview/btqmlinterface.h"
-#include "util/btassert.h"
-#include "util/btconnect.h"
+#include "../../backend/keys/cswordkey.h"
+#include "../../backend/keys/cswordversekey.h"
+#include "../../backend/rendering/cdisplayrendering.h"
+#include "../../backend/rendering/centrydisplay.h"
+#include "../../util/btassert.h"
+#include "../../util/btconnect.h"
+#include "../btcopybyreferencesdialog.h"
+#include "../cexportmanager.h"
+#include "../cmdiarea.h"
+#include "../display/btmodelviewreaddisplay.h"
+#include "../display/modelview/btqmlinterface.h"
+#include "../searchdialog/csearchdialog.h"
+#include "btactioncollection.h"
 
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)

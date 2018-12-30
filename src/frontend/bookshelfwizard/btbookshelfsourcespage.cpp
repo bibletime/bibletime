@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
+#include "btbookshelfsourcespage.h"
 
 #include <QAbstractItemView>
 #include <QApplication>
@@ -25,15 +25,15 @@
 #include <QTableView>
 #include <QtGlobal>
 #include <QVBoxLayout>
-#include "backend/config/btconfig.h"
-#include "backend/btinstallbackend.h"
-#include "backend/btinstallmgr.h"
-#include "backend/models/btlistmodel.h"
-#include "frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "util/btconnect.h"
+#include "../../backend/config/btconfig.h"
+#include "../../backend/btinstallbackend.h"
+#include "../../backend/btinstallmgr.h"
+#include "../../backend/models/btlistmodel.h"
+#include "../../util/btconnect.h"
+#include "cswordsetupinstallsourcesdialog.h"
+#include "btbookshelflanguagespage.h"
+#include "btbookshelfwizard.h"
+#include "btbookshelfwizardenums.h"
 
 
 namespace {

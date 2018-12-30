@@ -13,9 +13,9 @@
 #ifndef CLEXICONREADWINDOW_H
 #define CLEXICONREADWINDOW_H
 
-#include "frontend/displaywindow/creadwindow.h"
+#include "creadwindow.h"
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "../keychooser/ckeychooser.h"
 
 
 class BtActionCollection;

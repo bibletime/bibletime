@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfwizard/btbookshelfwizard.h"
+#include "btbookshelfwizard.h"
 
 #include <QAbstractButton>
 #include <QApplication>
@@ -18,15 +18,15 @@
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QPushButton>
-#include "backend/config/btconfig.h"
-#include "frontend/bookshelfwizard/btbookshelfinstallfinalpage.h"
-#include "frontend/bookshelfwizard/btbookshelflanguagespage.h"
-#include "frontend/bookshelfwizard/btbookshelfremovefinalpage.h"
-#include "frontend/bookshelfwizard/btbookshelfsourcespage.h"
-#include "frontend/bookshelfwizard/btbookshelfsourcesprogresspage.h"
-#include "frontend/bookshelfwizard/btbookshelftaskpage.h"
-#include "frontend/bookshelfwizard/btbookshelfwizardenums.h"
-#include "frontend/bookshelfwizard/btbookshelfworkspage.h"
+#include "../../backend/config/btconfig.h"
+#include "btbookshelfinstallfinalpage.h"
+#include "btbookshelflanguagespage.h"
+#include "btbookshelfremovefinalpage.h"
+#include "btbookshelfsourcespage.h"
+#include "btbookshelfsourcesprogresspage.h"
+#include "btbookshelftaskpage.h"
+#include "btbookshelfwizardenums.h"
+#include "btbookshelfworkspage.h"
 
 
 namespace {
