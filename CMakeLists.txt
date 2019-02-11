@@ -208,7 +208,9 @@ IF(NOT DEFINED BT_DOCDIR)
     SET(BT_DOCDIR "${BT_DATAROOTDIR}/doc/bibletime")
 ENDIF()
 IF(NOT DEFINED BT_LOCALEDIR)
-    SET(BT_LOCALEDIR "${BT_DATAROOTDIR}/locale")
+    # The default for the BT_LOCALEDIR variable differs from the default of
+    # localedir in the GNU Coding Standards.
+    SET(BT_LOCALEDIR "${BT_DATADIR}/bibletime/locale")
 ENDIF()
 
 
