@@ -312,6 +312,9 @@ FILE(GLOB INSTALL_ICONS_LIST_PNG
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_DATADIR}/bibletime/icons/")
 
+INSTALL(FILES "docs/license.html"
+        DESTINATION "${BT_DATADIR}/bibletime/license/")
+
 # See QTBUG-55259, Affects windeployqt and macdeployqt
 INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
         DESTINATION "${BT_BINDIR}/")
