@@ -209,7 +209,9 @@ IF(NOT DEFINED BT_DOCDIR)
     SET(BT_DOCDIR "${BT_DATAROOTDIR}/doc/bibletime")
 ENDIF()
 IF(NOT DEFINED BT_LOCALEDIR)
-    SET(BT_LOCALEDIR "${BT_DATAROOTDIR}/locale")
+    # The default for the BT_LOCALEDIR variable differs from the default of
+    # localedir in the GNU Coding Standards.
+    SET(BT_LOCALEDIR "${BT_DATADIR}/bibletime/locale")
 ENDIF()
 
 
@@ -309,6 +311,9 @@ FILE(GLOB INSTALL_ICONS_LIST_PNG
     "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_DATADIR}/bibletime/icons/")
+
+INSTALL(FILES "docs/license.html"
+        DESTINATION "${BT_DATADIR}/bibletime/license/")
 
 # See QTBUG-55259, Affects windeployqt and macdeployqt
 INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"

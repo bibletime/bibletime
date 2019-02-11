@@ -27,7 +27,7 @@ FOREACH(TS_FILE IN LISTS TS_FILES)
         COMMENT "Updating translation for ${TS_LANG}"
         VERBATIM
     )
-    INSTALL(FILES "${TS_QM_FILE}" DESTINATION "${BT_LOCALEDIR}/bibletime")
+    INSTALL(FILES "${TS_QM_FILE}" DESTINATION "${BT_LOCALEDIR}/")
 
     ADD_CUSTOM_TARGET("messages_${TS_LANG}" COMMAND
         "${QT_LUPDATE_EXECUTABLE}" "-extensions" "cpp,h"
