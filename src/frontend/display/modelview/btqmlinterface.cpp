@@ -77,6 +77,10 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
     return false;
 }
 
+bool BtQmlInterface::isBibleOrCommentary() {
+    return moduleIsBibleOrCommentary(module());
+}
+
 void BtQmlInterface::setFilterOptions(FilterOptions filterOptions) {
     m_moduleTextModel->setFilterOptions(filterOptions);
 }

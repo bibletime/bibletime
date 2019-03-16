@@ -39,7 +39,7 @@ BtQmlScrollView::BtQmlScrollView(QWidget * parent, CReadDisplay* readDisplay)
     : QWidget(parent),
       m_readDisplay(readDisplay),
       m_qmlInterface(nullptr),
-      m_quickWidget(new BtQuickWidget),
+      m_quickWidget(new BtQuickWidget(this)),
       m_scrollBar(new QScrollBar),
       m_scrollBarPosition(0) {
 
