@@ -236,11 +236,14 @@ QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
             reference = "note=" + rx1.cap(1);
 
         } else {
-            QRegExp rx2("sword://lemmamorph/([a-s]+)=([GH][0-9]+)", Qt::CaseInsensitive);
+            QRegExp rx2("sword://lemmamorph/(.*)=(.*)\\|\\|(?:(?:/.*$)|(?:(.*)=(.*)/(?:.*)))", Qt::CaseInsensitive);
             rx2.setMinimal(false);
             int pos1 = rx2.indexIn(url);
             if (pos1 > -1) {
                 reference = rx2.cap(1) + "=" + rx2.cap(2);
+                if (! rx2.cap(3).isEmpty()) {
+                    reference += "||" + rx2.cap(3) + "=" + rx2.cap(4);
+                }
             }
         }
     }

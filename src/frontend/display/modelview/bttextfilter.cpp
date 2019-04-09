@@ -144,10 +144,10 @@ int BtTextFilter::rewriteLemmaOrMorphAsLink(int i, const QString& part) {
     if (pos1 > -1)
         value = "lemma=" + rx1.cap(1) +"||";
 
-    QRegExp rx2("morph=\"([^\"]*)");
+    QRegExp rx2("morph=\"([^\"]*)(\){0,1}");
     int pos2 = rx2.indexIn(part);
     if (pos2 > -1)
-        value += "morph" + rx2.cap(1);
+        value += "morph=" + rx2.cap(1);
 
     QString refText = m_parts.at(i+1);
     QString url = "sword://lemmamorph/" + value + "/" + refText;
