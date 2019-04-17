@@ -192,7 +192,7 @@ DisplayOptions BtConfig::getDisplayOptions() {
     DisplayOptions os;
     beginGroup("presentation");
     os.lineBreaks   = sessionValue<bool>("lineBreaks", false);
-    os.verseNumbers = sessionValue<bool>("verseNumbers", false);
+    os.verseNumbers = sessionValue<bool>("verseNumbers", true);
     endGroup();
     return os;
 }
