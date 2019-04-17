@@ -38,8 +38,7 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     layout->addWidget(m_explanationLabel);
 
     btConfig().beginGroup("presentation");
-        TEXT_FILTERS_TAB_ADD_ROW(lineBreaks, false);
-        TEXT_FILTERS_TAB_ADD_ROW(verseNumbers, false);
+        TEXT_FILTERS_TAB_ADD_ROW(verseNumbers, true);
         TEXT_FILTERS_TAB_ADD_ROW(headings, true);
         TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints, true);
         TEXT_FILTERS_TAB_ADD_ROW(hebrewCantillation, true);
@@ -59,7 +58,6 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
 
 void BtTextFiltersTab::save() {
     btConfig().beginGroup("presentation");
-        TEXT_FILTERS_TAB_SAVE(lineBreaks);
         TEXT_FILTERS_TAB_SAVE(verseNumbers);
         TEXT_FILTERS_TAB_SAVE(headings);
         TEXT_FILTERS_TAB_SAVE(hebrewPoints);
@@ -79,7 +77,6 @@ void BtTextFiltersTab::retranslateUi() {
              "opened display windows only. You can override these settings in "
              "each display window."));
 
-    m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
     m_verseNumbersCheck->setText(tr("Show verse numbers"));
     m_headingsCheck->setText(tr("Show section headings"));
     m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));

@@ -40,7 +40,6 @@ class BtTextFiltersTab: public QWidget {
 
 #define TEXT_FILTERS_TAB_FIELD(name) QCheckBox * m_ ## name ## Check
 
-        TEXT_FILTERS_TAB_FIELD(lineBreaks);
         TEXT_FILTERS_TAB_FIELD(verseNumbers);
         TEXT_FILTERS_TAB_FIELD(headings);
         TEXT_FILTERS_TAB_FIELD(hebrewPoints);
