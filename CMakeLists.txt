@@ -164,17 +164,15 @@ ELSE()
   SET(CMAKE_CXX_FLAGS_RELEASE "")
   SET(CMAKE_CXX_FLAGS_DEBUG "")
   IF(APPLE)
-    # enable support MacOS 10.5+
-    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/")
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/")
     LIST(APPEND BibleTime_CXXFLAGS
-        "-mmacosx-version-min=10.7"
+        "-mmacosx-version-min=10.12"
         "-stdlib=libc++"
         "-isysroot" "${T}")
     LIST(APPEND BibleTime_LDFLAGS
-        "-mmacosx-version-min=10.7"
+        "-mmacosx-version-min=10.12"
         "-stdlib=libc++"
-        "-isysroot" "${T}"
-        "-F" "/Library/Frameworks/")
+    )
     UNSET(T)
   ENDIF()
 ENDIF()
@@ -185,14 +183,14 @@ ENDIF()
 #
 IF(NOT DEFINED BT_BINDIR)
     IF(APPLE)
-        SET(BT_BINDIR "../MacOS")
+        SET(BT_BINDIR ".")
     ELSE()
         SET(BT_BINDIR "./bin")
     ENDIF()
 ENDIF()
 IF(NOT DEFINED BT_DATAROOTDIR)
     IF(APPLE)
-        SET(BT_DATAROOTDIR "../share")
+        SET(BT_DATAROOTDIR "./BibleTime.app/Contents/share")
     ELSE()
         SET(BT_DATAROOTDIR "./share")
     ENDIF()
@@ -258,7 +256,9 @@ FILE(GLOB_RECURSE bibletime_SOURCES
 IF(MSVC) # For the Windows Application Icon
     LIST(APPEND bibletime_SOURCES "cmake/BTWinIcon.rc")
 ENDIF()
-IF(MSVC)
+IF(APPLE)
+    ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
+ELSEIF(MSVC)
     ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES})
 ELSE()
     ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
@@ -315,8 +315,13 @@ INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_DATADIR}/bibletime/license/")
 
 # See QTBUG-55259, Affects windeployqt and macdeployqt
-INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
+IF(APPLE)
+    INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
+        DESTINATION "${BT_BINDIR}/BibleTime.app/Contents/MacOS")
+ELSE()
+    INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
         DESTINATION "${BT_BINDIR}/")
+ENDIF()
 
 FILE(GLOB INSTALL_TMPL_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
