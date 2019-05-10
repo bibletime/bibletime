@@ -49,7 +49,13 @@ bool TeiToHtml::handleToken(sword::SWBuf &buf, const char *token,
 
             if (!tag.isEndTag() && !tag.isEmpty()) {
 
-                renderReference(tag.getAttribute("osisRef"), buf, userData);
+                const char * attribute = tag.getAttribute("osisRef");
+                if (attribute != nullptr)
+                    renderReference(attribute, buf, userData);
+                else {
+                    attribute = tag.getAttribute("target");
+                    renderTargetReference(attribute, buf, userData);
+                }
 
             }
             else if (tag.isEndTag()) {
@@ -148,6 +154,51 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
                .append("\">");
         }
         // should we add something if there were no referenced module available?
+    }
+}
+
+void TeiToHtml::renderTargetReference(const char *osisRef, sword::SWBuf &buf,
+                                sword::BasicFilterUserData *myUserData)
+{
+    QString ref( osisRef );
+    QString hrefRef( ref );
+
+    if (!ref.isEmpty()) {
+        //find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
+        //If the target is something like "ModuleID:key comes here" then the
+        // modulename is given, so we'll use that one
+
+        const char * currentModuleName = myUserData->module->getName();
+        CSwordModuleInfo* mod = CSwordBackend::instance()->findModuleByName(currentModuleName);
+
+        //if the target like "GerLut:key" contains a module, use that
+        int pos = ref.indexOf(":");
+
+        if ((pos >= 0) && ref.at(pos - 1).isLetter() && ref.at(pos + 1).isLetter()) {
+            QString newModuleName = ref.left(pos);
+            hrefRef = ref.mid(pos + 1);
+
+            if (CSwordBackend::instance()->findModuleByName(newModuleName)) {
+                mod = CSwordBackend::instance()->findModuleByName(newModuleName);
+            }
+        }
+
+        if (mod) {
+            ReferenceManager::ParseOptions const options(
+                    mod->name(),
+                    QString::fromUtf8(myUserData->key->getText()),
+                    mod->module().getLanguage());
+
+            buf.append("<a class=\"crossreference\" href=\"")
+               .append( // create the hyperlink with key and mod
+                    ReferenceManager::encodeHyperlink(
+                        mod->name(),
+                        hrefRef.toUtf8().constData(),
+                        ReferenceManager::typeFromModule(mod->type())
+                    ).toUtf8().constData()
+                )
+               .append("\">");
+        }
     }
 }
 

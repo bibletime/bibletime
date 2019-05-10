@@ -33,6 +33,8 @@ class TeiToHtml: public sword::TEIHTMLHREF {
     private: /* Methods: */
         void renderReference(const char *osisRef, sword::SWBuf &buf,
                              sword::BasicFilterUserData *myUserData);
+        void renderTargetReference(const char *osisRef, sword::SWBuf &buf,
+                             sword::BasicFilterUserData *myUserData);
 };
 
 } // namespace Filters

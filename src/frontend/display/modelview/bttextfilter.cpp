@@ -105,7 +105,7 @@ int BtTextFilter::rewriteFootnoteAsLink(int i, const QString& part) {
         QString noteValue = rxlen.cap(1);
         QString footnoteText = m_parts.at(i+1);
         QString url = "sword://footnote/" + noteValue + "=" + footnoteText;
-        QString newEntry = "<a href=\"" + url + "\">";
+        QString newEntry = "<a class=\"footnote\" href=\"" + url + "\">";
         m_parts[i] = newEntry;
         m_parts[i+1] = "(" + footnoteText + ")";
         m_parts[i+2] = "</a>";
@@ -142,12 +142,15 @@ int BtTextFilter::rewriteLemmaOrMorphAsLink(int i, const QString& part) {
     QRegExp rx1("lemma=\"([^\"]*)*");
     int pos1 = rx1.indexIn(part);
     if (pos1 > -1)
-        value = "lemma=" + rx1.cap(1) +"||";
+        value = "lemma=" + rx1.cap(1);
 
     QRegExp rx2("morph=\"([^\"]*)(\){0,1}");
     int pos2 = rx2.indexIn(part);
-    if (pos2 > -1)
+    if (pos2 > -1) {
+        if (!value.isEmpty())
+            value += "||";
         value += "morph=" + rx2.cap(1);
+    }
 
     QString refText = m_parts.at(i+1);
     QString url = "sword://lemmamorph/" + value + "/" + refText;

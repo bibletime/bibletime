@@ -192,7 +192,8 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                 }
                 else if ((*it).second.contains("sword:"))
                 {
-                    //text.append("Not implemented yet.");
+                    text.append( decodeSwordReference( (*it).second ) );
+                    continue;
                 }
                 else
                     BT_ASSERT(false); /// \todo Why is this here?
@@ -493,6 +494,34 @@ QString decodeMorph(QString const & data) {
     }
 
     return ret;
+}
+
+QString decodeSwordReference(QString const & data) {
+    QString moduleName;
+    QString reference;
+    QString text;
+    CSwordModuleInfo * module = nullptr;
+
+    QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
+    rx.setMinimal(false);
+    int pos1 = rx.indexIn(data);
+    if (pos1 > -1) {
+        moduleName = rx.cap(2);
+        reference = rx.cap(3);
+        module = CSwordBackend::instance()->findModuleByName(moduleName);
+        if (module) {
+            QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+            key->setKey(reference);
+            text = key->renderedText();
+        } else {
+            return "";
+        }
+    }
+
+    return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
+           .arg(module->language()->abbrev())
+           .arg(reference)
+           .arg(text);
 }
 
 QString getWordTranslation(QString const & data) {
