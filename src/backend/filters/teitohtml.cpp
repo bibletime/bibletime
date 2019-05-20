@@ -174,7 +174,7 @@ void TeiToHtml::renderTargetReference(const char *osisRef, sword::SWBuf &buf,
         //if the target like "GerLut:key" contains a module, use that
         int pos = ref.indexOf(":");
 
-        if ((pos >= 0) && ref.at(pos - 1).isLetter() && ref.at(pos + 1).isLetter()) {
+        if (pos >= 0) {
             QString newModuleName = ref.left(pos);
             hrefRef = ref.mid(pos + 1);
 
