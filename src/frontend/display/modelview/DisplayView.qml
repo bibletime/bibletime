@@ -172,7 +172,6 @@ Rectangle {
                     font.pointSize: btQmlInterface.fontSize0
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 0
-                    onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
                 }
 
@@ -223,7 +222,6 @@ Rectangle {
                     font.pointSize: btQmlInterface.fontSize1
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 1
-                    onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
                 }
 
@@ -273,7 +271,6 @@ Rectangle {
                     font.pointSize: btQmlInterface.fontSize2
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 2
-                    onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
                 }
 
@@ -323,7 +320,6 @@ Rectangle {
                     font.pointSize: btQmlInterface.fontSize3
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 3
-                    onWidthChanged: doLayout()
                     onLinkHovered: delegate.hovered(link)
                 }
 
