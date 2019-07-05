@@ -23,6 +23,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
@@ -33,8 +34,9 @@
 
 namespace Search {
 
-CRangeChooserDialog::CRangeChooserDialog(QWidget *parentDialog)
-    : QDialog(parentDialog)
+CRangeChooserDialog::CRangeChooserDialog(const QStringList& scopeModules, QWidget *parentDialog)
+    : QDialog(parentDialog),
+      m_scopeModules(scopeModules)
 {
     initView();
     initConnections();
@@ -42,7 +44,7 @@ CRangeChooserDialog::CRangeChooserDialog(QWidget *parentDialog)
     retranslateUi();
 
     // Add the existing scopes
-    BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
+    BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale(scopeModules);
     BtConfig::StringMap::Iterator it;
     for (it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
@@ -216,11 +218,18 @@ void CRangeChooserDialog::updateResultList() {
     QString const range =
             m_rangeEdit->toPlainText().replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
 
-    sword::ListKey verses = VK().parseVerseList(range.toUtf8().constData(),
-                                                "Genesis 1:1", true);
-    for (int i = 0; i < verses.getCount(); i++) {
-        new QListWidgetItem(QString::fromUtf8(verses.getElement(i)->getRangeText()),
-                            m_resultList);
+    Q_FOREACH(const QString & moduleName, m_scopeModules) {
+        auto module = CSwordBackend::instance()->findModuleByName(moduleName);
+        VK vk = module->module().getKey();
+        sword::ListKey verses = vk.parseVerseList(range.toUtf8().constData(),
+                                                  "Genesis 1:1", true);
+        if (verses.getCount() > 0) {
+            for (int i = 0; i < verses.getCount(); i++) {
+                new QListWidgetItem(QString::fromUtf8(verses.getElement(i)->getRangeText()),
+                                    m_resultList);
+            }
+            break;
+        }
     }
 }
 
@@ -249,7 +258,7 @@ void CRangeChooserDialog::accept() {
         const RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
         map[item->caption()] = item->range();
     }
-    btConfig().setSearchScopesWithCurrentLocale(map);
+    btConfig().setSearchScopesWithCurrentLocale(m_scopeModules, map);
 
     QDialog::accept();
 }
@@ -259,7 +268,7 @@ void CRangeChooserDialog::restoreDefaults() {
 
     m_rangeList->clear();
     btConfig().deleteSearchScopesWithCurrentLocale();
-    const BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
+    const BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale(m_scopeModules);
     for (SMCI it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
     };

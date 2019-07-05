@@ -1,3 +1,6 @@
+2019-07-05 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #186 - Problems creating scope with deuterocanonical books
+
 2018-11-16 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #77 - MAG Strongs does not work unless config settings have been saved.
 
