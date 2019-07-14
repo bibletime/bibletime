@@ -148,8 +148,8 @@ bool CSwordVerseKey::setKey(const char *newKey) {
 
     if(QByteArray(newKey).contains('-')) {
         VerseKey vk(newKey, newKey, getVersificationSystem().c_str());
-        setLowerBound(vk.getLowerBound());
-        setUpperBound(vk.getUpperBound());
+        setLowerBoundKey(vk.lowerBoundKey());
+        setUpperBoundKey(vk.upperBoundKey());
         positionToTop();
     } else {
         clearBounds();

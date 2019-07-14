@@ -284,8 +284,8 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
 
             if (vk && vk->isBoundSet()) { // render a range of keys
                 tree.append(new CTextRendering::KeyTreeItem(
-                    QString::fromStdString(vk->getLowerBound().getText()),
-                    QString::fromStdString(vk->getUpperBound().getText()),
+                    QString::fromStdString(vk->lowerBoundKey().getText()),
+                    QString::fromStdString(vk->upperBoundKey().getText()),
                     module,
                     settings
                 ));

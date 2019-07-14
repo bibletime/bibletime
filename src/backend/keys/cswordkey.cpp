@@ -83,7 +83,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         return QString::null;
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
-    QString text = QString::fromStdString(m.renderText(nullptr, -1, DoRender));
+    QString text = QString::fromStdString(DoRender ? m.renderText() : m.stripText());
     if (!DoRender)
         return QString::null;
 

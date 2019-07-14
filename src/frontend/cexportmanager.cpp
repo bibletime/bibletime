@@ -88,8 +88,8 @@ bool CExportManager::saveKey(CSwordKey const * const key,
         auto const render = newRenderer(format, addText);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange(
-                        QString::fromStdString(vk->getLowerBound().getText()),
-                        QString::fromStdString(vk->getUpperBound().getText()),
+                        QString::fromStdString(vk->lowerBoundKey().getText()),
+                        QString::fromStdString(vk->upperBoundKey().getText()),
                         modules);
             text.replace("#CHAPTERTITLE#",
                          QString::fromStdString(vk->getBookName())
@@ -192,8 +192,8 @@ bool CExportManager::copyKey(CSwordKey const * const key,
                 dynamic_cast<CSwordVerseKey const *>(key);
         if (vk && vk->isBoundSet()) {
             text = render->renderKeyRange(
-                       QString::fromStdString(vk->getLowerBound().getText()),
-                       QString::fromStdString(vk->getUpperBound().getText()),
+                       QString::fromStdString(vk->lowerBoundKey().getText()),
+                       QString::fromStdString(vk->upperBoundKey().getText()),
                        modules
                    );
         } else { // no range supported
@@ -333,9 +333,9 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                 tree.append(
                         new BtPrinter::KeyTreeItem(
                                 QString::fromStdString(
-                                        element->getLowerBound().getText()),
+                                        element->lowerBoundKey().getText()),
                                 QString::fromStdString(
-                                        element->getUpperBound().getText()),
+                                        element->upperBoundKey().getText()),
                                 module,
                                 settings) );
             } else if (verses.getElement(i)) {

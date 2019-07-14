@@ -515,9 +515,9 @@ void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2) {
         CSwordVerseKey vk(*verseKey);
 
         dummy.setKey(ref1);
-        vk.setLowerBound(dummy);
+        vk.setLowerBoundKey(dummy);
         dummy.setKey(ref2);
-        vk.setUpperBound(dummy);
+        vk.setUpperBoundKey(dummy);
 
         copyKey(&vk, BtQmlInterface::Text, true);
     }
@@ -540,8 +540,8 @@ bool BtQmlInterface::copyKey(CSwordKey const * const key,
             dynamic_cast<CSwordVerseKey const *>(key);
     if (vk && vk->isBoundSet()) {
         text = render->renderKeyRange(
-                    QString::fromStdString(vk->getLowerBound().getText()),
-                    QString::fromStdString(vk->getUpperBound().getText()),
+                    QString::fromStdString(vk->lowerBoundKey().getText()),
+                    QString::fromStdString(vk->upperBoundKey().getText()),
                     modules
                     );
     } else {

@@ -126,8 +126,8 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             {
                 if (vk->isBoundSet()) {
                     CSwordVerseKey pk(*vk);
-                    for (auto i = vk->getLowerBound().getIndex();
-                         i < vk->getUpperBound().getIndex();
+                    for (auto i = vk->lowerBoundKey().getIndex();
+                         i < vk->upperBoundKey().getIndex();
                          ++i)
                     {
                         key_renderedText += " ";
@@ -143,7 +143,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         if (m_filterOptions.headings && key->isValid() && i.key() == key->key()) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
-            swModule.renderText(nullptr, -1, 0);
+            swModule.stripText();
 
             for (auto const & vp
                  : swModule.getEntryAttributes()["Heading"]["Preverse"])

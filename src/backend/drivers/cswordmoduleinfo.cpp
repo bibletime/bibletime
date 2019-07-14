@@ -595,8 +595,8 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
             for (std::size_t j = 0; j < scope.getCount(); j++) {
                 BT_ASSERT(dynamic_cast<const swordxx::VerseKey *>(scope.getElement(j)));
                 const swordxx::VerseKey * const vkey = static_cast<const swordxx::VerseKey *>(scope.getElement(j));
-                if (vkey->getLowerBound().compare(*swKey) <= 0
-                    && vkey->getUpperBound().compare(*swKey) >= 0)
+                if (vkey->lowerBoundKey().compare(*swKey) <= 0
+                    && vkey->upperBoundKey().compare(*swKey) >= 0)
                 {
                     results.add(*swKey);
                 }

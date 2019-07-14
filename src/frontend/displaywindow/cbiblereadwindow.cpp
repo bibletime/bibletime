@@ -320,11 +320,11 @@ void CBibleReadWindow::copyDisplayedText() {
     dummy.setVerse(1);
 
     CSwordVerseKey vk(*verseKey());
-    vk.setLowerBound(dummy);
+    vk.setLowerBoundKey(dummy);
 
     const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
-    vk.setUpperBound(dummy);
+    vk.setUpperBoundKey(dummy);
 
     CExportManager mgr(false, tr("Copying"), filterOptions(), displayOptions());
     mgr.copyKey(&vk, CExportManager::Text, true);
@@ -340,10 +340,10 @@ void CBibleReadWindow::saveChapterHTML() {
     dummy.setVerse(1);
 
     CSwordVerseKey vk(*verseKey());
-    vk.setLowerBound(dummy);
+    vk.setLowerBoundKey(dummy);
 
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
-    vk.setUpperBound(dummy);
+    vk.setUpperBoundKey(dummy);
 
     CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(&vk, CExportManager::HTML, true);
@@ -357,11 +357,11 @@ void CBibleReadWindow::saveChapterPlain() {
     CSwordVerseKey dummy(*verseKey());
 
     dummy.setVerse(1);
-    vk.setLowerBound(dummy);
+    vk.setLowerBoundKey(dummy);
 
     const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
-    vk.setUpperBound(dummy);
+    vk.setUpperBoundKey(dummy);
 
     CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(&vk, CExportManager::Text, true);

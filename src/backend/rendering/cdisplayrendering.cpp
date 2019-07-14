@@ -102,8 +102,8 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
                     if(vk.isBoundSet()) {
                         linkText += "-";
-                        swordxx::VerseKey const upper = vk.getUpperBound();
-                        swordxx::VerseKey const lower = vk.getLowerBound();
+                        swordxx::VerseKey const upper = vk.upperBoundKey();
+                        swordxx::VerseKey const lower = vk.lowerBoundKey();
                         if (upper.getBook() != lower.getBook()) {
                             linkText += QString::fromStdString(upper.getShortText());
                         } else if(upper.getChapter() != lower.getChapter()) {

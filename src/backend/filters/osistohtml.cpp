@@ -244,7 +244,7 @@ bool Filters::OsisToHtml::handleToken(std::string &buf, const char *token, sword
                     buf.append("<span class=\"crossreference\">");
                     auto const footnoteNumber(tag.attribute("swordFootnote"));
                     auto const footnoteBody(myUserData->entryAttributes["Footnote"][footnoteNumber]["body"]);
-                    buf += myModule->renderText(footnoteBody.c_str());
+                    buf += myModule->renderText(footnoteBody);
                 }
 
                 /* else if (type == "explanation") {

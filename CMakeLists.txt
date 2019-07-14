@@ -139,7 +139,7 @@ FIND_PACKAGE(Swordxx 2.0.0 REQUIRED)
 # Build options, definitions, linker flags etc for all targets:
 #
 SET(CMAKE_AUTOMOC ON)
-SET(CMAKE_CXX_STANDARD 14)
+SET(CMAKE_CXX_STANDARD 17)
 ADD_DEFINITIONS("-DBT_VERSION=\"${BT_VERSION_FULL}\"")
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     SET(CMAKE_AUTOMOC_MOC_OPTIONS "-DNDEBUG")
@@ -148,7 +148,7 @@ IF(WIN32)
     ADD_COMPILE_OPTIONS("/Zi")
 ELSE()
     ADD_COMPILE_OPTIONS(
-        "-std=c++14" "-ggdb" "-Wall" "-Wextra"
+        "-std=c++17" "-ggdb" "-Wall" "-Wextra"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-O2>"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
