@@ -190,7 +190,7 @@ DisplayOptions BtConfig::getDisplayOptions() {
     DisplayOptions os;
     beginGroup("presentation");
     os.lineBreaks   = sessionValue<bool>("lineBreaks", false);
-    os.verseNumbers = sessionValue<bool>("verseNumbers", false);
+    os.verseNumbers = sessionValue<bool>("verseNumbers", true);
     endGroup();
     return os;
 }
@@ -250,35 +250,33 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
     return fontSettings;
 }
 
-BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale() {
+BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale(const QStringList& scopeModules) {
     StringMap map = value<BtConfig::StringMap>("properties/searchScopes", m_defaultSearchScopes);
 
+
     // Convert map to current locale:
-    swordxx::VerseKey vk;
     for (StringMap::Iterator it = map.begin(); it != map.end(); it++) {
-        QString &s = it.value();
-        swordxx::ListKey list(vk.parseVerseList(QByteArray(s.toUtf8()), "Genesis 1:1", true));
-        s.clear();
-        for (std::size_t i = 0u; i < list.getCount(); ++i) {
-            s.append(QString::fromStdString(
-                         list.getElement(i)->getRangeText()));
-            s.append("; ");
+        QString &data = it.value();
+        swordxx::ListKey list = parseVerseListWithModules(data, scopeModules);
+        data.clear();
+        for (int i = 0; i < list.getCount(); i++) {
+            data.append(QString::fromStdString(list.getElement(i)->getRangeText()));
+            data.append("; ");
         }
     }
     return map;
 }
 
-void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
+void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules, StringMap searchScopes) {
     /**
      * We want to make sure that the search scopes are saved with english
      * key names so loading them will always work with each locale set.
      */
-    swordxx::VerseKey vk;
     BtConfig::StringMap::Iterator iter = searchScopes.begin();
     while (iter != searchScopes.end()) {
         QString &data = iter.value();
         bool parsingWorked = true;
-        swordxx::ListKey list(vk.parseVerseList(data.toUtf8(), "Genesis 1:1", true));
+        auto list(parseVerseListWithModules(data, scopeModules));
         data.clear();
         for (std::size_t i = 0u; i < list.getCount(); ++i) {
             swordxx::VerseKey * verse(dynamic_cast<swordxx::VerseKey *>(list.getElement(i)));
@@ -299,6 +297,20 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
             iter = searchScopes.erase(iter);
     }
     setValue("properties/searchScopes", searchScopes);
+}
+
+swordxx::ListKey BtConfig::parseVerseListWithModules(const QString& data, const QStringList& scopeModules) {
+
+    Q_FOREACH(QString moduleName, scopeModules) {
+        auto module = CSwordBackend::instance()->findModuleByName(moduleName);
+        if (module == nullptr)
+            continue;
+        swordxx::VerseKey vk = *module->module().getKey();
+        swordxx::ListKey list(vk.parseVerseList(data.toUtf8(), "Genesis 1:1", true));
+        if (list.getCount() > 0)
+            return list;
+    }
+    return swordxx::ListKey();
 }
 
 void BtConfig::deleteSearchScopesWithCurrentLocale() {

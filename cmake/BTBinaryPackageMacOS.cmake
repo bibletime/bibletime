@@ -1,22 +1,18 @@
 IF(APPLE)
-    # Install the Sword library
-    INSTALL(
-        FILES "${Sword_LIBRARY_DIRS}/lib${Sword_LIBRARIES}-${Sword_VERSION}.dylib"
-        DESTINATION "${BT_BINDIR}/"
-    )
+    # Workaround: macdeployqt does not seem to set a proper rpath for the package,
+    #   so we do this manually.
+    SET_TARGET_PROPERTIES("bibletime" PROPERTIES INSTALL_RPATH "@loader_path/../Frameworks")
 
     IF (CMAKE_BUILD_TYPE STREQUAL "Release")
         # Note: building based on the Qt shipped by homebrew does not work currently (2018-06),
-        #   as it seems to ship a b0rken macdeployqt tool. So use the official Qt packages to build.
-
-        # Workaround: macdeployqt does not seem to set a proper rpath for the package,
-        #   so we do this manually.
-        SET_TARGET_PROPERTIES("bibletime" PROPERTIES INSTALL_RPATH "@loader_path/../Frameworks")
+        #   as it seems to ship a broken macdeployqt tool. So use the official Qt packages to build.
 
         SET(QT_MACDEPLOYQT_EXECUTABLE "${_qt5Core_install_prefix}/bin/macdeployqt")
+        SET(MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/Info.plist")
+        SET(BT_MAC_APP  "${CMAKE_INSTALL_PREFIX}/BibleTime.app")
 
         INSTALL(CODE "
-            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} \"\${CMAKE_INSTALL_PREFIX}/${BT_BINDIR}/../..\"   -qmldir=${CMAKE_INSTALL_PREFIX}/${BT_BINDIR} )
+            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} ${BT_MAC_APP}   -qmldir=${BT_MAC_APP}/Contents/MacOS)
         ")
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 

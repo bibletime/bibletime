@@ -20,19 +20,29 @@
 
 #include <QWidget>
 #include <QQuickWidget>
+#include "btqmlscrollview.h"
+
+class BtQmlInterface;
 
 class BtQuickWidget : public QQuickWidget {
     Q_OBJECT
 
 public:
-    BtQuickWidget(QWidget* widget = nullptr);
+    BtQuickWidget(BtQmlScrollView* widget);
 
     void saveContextMenuIndex(int x, int y);
     void scroll(int pixels);
     void updateReferenceText();
 
+protected:
+       void dragMoveEvent(QDragMoveEvent * event) override;
+       void dragEnterEvent( QDragEnterEvent* e ) override;
+       void dropEvent( QDropEvent* e ) override;
+
 private:
-    void dropEvent( QDropEvent* e ) override;
+    BtQmlInterface* getQmlInterface() const;
+
+    BtQmlScrollView* m_scrollView;
 
 signals:
     void referenceDropped(const QString& reference);

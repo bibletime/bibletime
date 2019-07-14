@@ -29,6 +29,7 @@
 #include "../../../backend/rendering/btinforendering.h"
 #include "../../../backend/rendering/chtmlexportrendering.h"
 #include "../../../backend/rendering/cplaintextexportrendering.h"
+#include "../../../backend/rendering/btinforendering.h"
 #include "../../../util/btconnect.h"
 #include "../../bibletime.h"
 #include "../../cinfodisplay.h"
@@ -73,6 +74,10 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
             moduleType == CSwordModuleInfo::Commentary)
         return true;
     return false;
+}
+
+bool BtQmlInterface::isBibleOrCommentary() {
+    return moduleIsBibleOrCommentary(module());
 }
 
 void BtQmlInterface::setFilterOptions(FilterOptions filterOptions) {
@@ -216,25 +221,33 @@ QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
 QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
     QString reference;
 
-    QRegExp rx("sword://bible/.*\\|\\|(.*)=(.*)", Qt::CaseInsensitive);
+
+    QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)(\\|\\|)", Qt::CaseInsensitive);
     rx.setMinimal(false);
     int pos1 = rx.indexIn(url);
     if (pos1 > -1) {
-        reference = rx.cap(1) + "=" + rx.cap(2);
-
+        reference = "href=sword://" + rx.cap(1) + "/" + rx.cap(2) + "/" + rx.cap(3);
     } else {
-        QRegExp rx1("sword://footnote/(.*)=(.*)", Qt::CaseInsensitive);
-        rx1.setMinimal(false);
-        int pos1 = rx1.indexIn(url);
+        QRegExp rx0("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
+        rx0.setMinimal(false);
+        int pos1 = rx0.indexIn(url);
         if (pos1 > -1) {
-            reference = "note=" + rx1.cap(1);
+            reference = "href=sword://" + rx0.cap(1) + "/" + rx0.cap(2) + "/" + rx0.cap(3);
 
         } else {
-            QRegExp rx2("sword://lemmamorph/([a-s]+)=([GH][0-9]+)", Qt::CaseInsensitive);
-            rx2.setMinimal(false);
-            int pos1 = rx2.indexIn(url);
+            QRegExp rx1("sword://footnote/(.*)=(.*)", Qt::CaseInsensitive);
+            rx1.setMinimal(false);
+            int pos1 = rx1.indexIn(url);
             if (pos1 > -1) {
-                reference = rx2.cap(1) + "=" + rx2.cap(2);
+                reference = "note=" + rx1.cap(1);
+
+            } else {
+                QRegExp rx2("sword://lemmamorph/(.*)=(.*)/(.*)", Qt::CaseInsensitive);
+                rx2.setMinimal(false);
+                int pos1 = rx2.indexIn(url);
+                if (pos1 > -1) {
+                    reference = rx2.cap(1) + "=" + rx2.cap(2);
+                }
             }
         }
     }

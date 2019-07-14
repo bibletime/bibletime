@@ -14,10 +14,16 @@
 #include "../../../util/btassert.h"
 #include "../../../util/directory.h"
 #include "../../BtMimeData.h"
+#include "btqmlinterface.h"
+#include "../../display/btmodelviewreaddisplay.h"
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../backend/managers/cswordbackend.h"
+#include "../../displaywindow/cdisplaywindow.h"
 
 
-BtQuickWidget::BtQuickWidget(QWidget* parent)
-    : QQuickWidget(parent) {
+BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
+    : QQuickWidget(parent),
+      m_scrollView(parent) {
 
     setAcceptDrops(true);
 
@@ -26,7 +32,43 @@ BtQuickWidget::BtQuickWidget(QWidget* parent)
     setSource(QUrl::fromLocalFile(qmlFile));
 }
 
-// Reimplementation from QWidget
+BtQmlInterface* BtQuickWidget::getQmlInterface() const {
+    return m_scrollView->getQmlInterface();
+}
+
+// Reimplementation from QQuickWidget
+void BtQuickWidget::dragEnterEvent( QDragEnterEvent* e ) {
+    if ( ! e->mimeData()->hasFormat("BibleTime/Bookmark"))
+        return;
+
+    const QMimeData* mimedata = e->mimeData();
+    if (mimedata == nullptr)
+        return;
+
+    const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
+    if (btmimedata == nullptr)
+        return;
+
+    BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
+    QString moduleName = item.module();
+    CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
+    BT_ASSERT(m);
+
+    // Is bible reference bookmark compatible with the module type?
+    CSwordModuleInfo::ModuleType bookmarkType = m->type();
+    if ((bookmarkType == CSwordModuleInfo::Bible ||
+        bookmarkType == CSwordModuleInfo::Commentary)) {
+        if (getQmlInterface()->isBibleOrCommentary()) {
+            e->acceptProposedAction();
+            return;
+        }
+    }
+
+    QQuickWidget::dragEnterEvent(e);
+    return;
+}
+
+// Reimplementation from QQuickWidget
 void BtQuickWidget::dropEvent( QDropEvent* e ) {
     if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
         //see docs for BTMimeData and QMimeData
@@ -41,6 +83,16 @@ void BtQuickWidget::dropEvent( QDropEvent* e ) {
             }
         }
     };
+}
+
+// Reimplementation from QQuickWidget
+void BtQuickWidget::dragMoveEvent( QDragMoveEvent* e ) {
+    if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
+        e->acceptProposedAction();
+        return;
+    }
+    //don't accept the action!
+    e->ignore();
 }
 
 void BtQuickWidget::saveContextMenuIndex(int x, int y) {

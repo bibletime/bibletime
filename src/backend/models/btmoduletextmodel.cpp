@@ -361,6 +361,8 @@ CSwordTreeKey BtModuleTextModel::indexToBookKey(int index) const
 }
 
 QString BtModuleTextModel::indexToKeyName(int index) const {
+    if (index < 0)
+        return "";
     QString keyName = "???";
     if (isBible() || isCommentary()) {
         CSwordVerseKey key = indexToVerseKey(index);

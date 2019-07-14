@@ -15,6 +15,8 @@
 
 #include <swordxx/filters/teihtmlhref.h>
 
+#include <string_view>
+
 
 namespace Filters {
 
@@ -33,6 +35,9 @@ class TeiToHtml: public swordxx::TEIHTMLHREF {
         void renderReference(std::string const & osisRef,
                              std::string & buf,
                              swordxx::BasicFilterUserData * myUserData);
+        void renderTargetReference(std::string_view osisRef,
+                                   std::string & buf,
+                                   swordxx::BasicFilterUserData * myUserData);
 };
 
 } // namespace Filters

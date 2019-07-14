@@ -57,7 +57,7 @@ private: /* Types: */
 
 public: /* Methods: */
 
-    CRangeChooserDialog(QWidget *parentDialog = nullptr);
+    CRangeChooserDialog(const QStringList& rangeScopeModule, QWidget *parentDialog = nullptr);
 
     void accept() override;
 
@@ -139,6 +139,8 @@ private:
     QPushButton *m_deleteRangeButton;
 
     QDialogButtonBox *m_buttonBox;
+
+    QStringList m_scopeModules;
 
 }; /* class CRangeChooserDialog */
 

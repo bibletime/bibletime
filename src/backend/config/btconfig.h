@@ -177,7 +177,7 @@ public: /* Methods: */
      *
      * \returns Search scopes in current locale.
      */
-    StringMap getSearchScopesForCurrentLocale();
+    StringMap getSearchScopesForCurrentLocale(const QStringList& scopeModules);
 
     /*!
      * Sets the searchScopes given in the current locale.
@@ -188,7 +188,11 @@ public: /* Methods: */
      *
      * \param[in] searchScopes Search scopes in any locale.
      */
-    void setSearchScopesWithCurrentLocale(StringMap searchScopes);
+    void setSearchScopesWithCurrentLocale(const QStringList& scopeModules, StringMap searchScopes);
+    /*
+     * Ensure that the verse range is valid for at least one of the scopeModules
+     */
+    static swordxx::ListKey parseVerseListWithModules(const QString& data, const QStringList& scopeModules);
 
     /*!
       * Deletes the searchScopes given in the current locale.

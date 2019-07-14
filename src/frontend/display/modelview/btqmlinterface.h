@@ -113,6 +113,7 @@ public:
     bool getPageUp() const;
     double getPixelsPerMM() const;
     QVariant getTextModel();
+    bool isBibleOrCommentary();
     BtModuleTextModel * textModel();
     void pageDown();
     void pageUp();

@@ -96,7 +96,10 @@ class BtSearchOptionsArea : public QWidget {
           Sets the modules used by the search.
         */
         void setModules(const BtConstModuleList &modules);
-
+        /**
+          Get unique works list from the Works combobox
+        */
+        QStringList getUniqueWorksList();
         /** Sets the modules when user selects them from the combobox.*/
         void moduleListTextSelected(int index);
 

@@ -22,7 +22,6 @@
 
 class CSwordKey;
 class CSwordVerseKey;
-class CTransliterationButton;
 class QAction;
 class QEvent;
 class QMenu;

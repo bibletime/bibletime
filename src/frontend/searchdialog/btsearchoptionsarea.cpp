@@ -266,6 +266,19 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
     setModules(moduleList);
 }
 
+QStringList BtSearchOptionsArea::getUniqueWorksList() {
+    QSet<QString> moduleSet;
+    QStringList historyList = btConfig().value<QStringList>("history/searchModuleHistory", QStringList());
+    Q_FOREACH(const QString& value, historyList) {
+        QStringList moduleNamesList = value.split(", ");
+        Q_FOREACH(const QString& name, moduleNamesList) {
+            moduleSet.insert(name);
+        }
+    }
+    QStringList modules = moduleSet.toList();
+    return modules;
+}
+
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
     dlg->setCheckedModules(BtConstModuleSet::fromList(modules()));
@@ -329,7 +342,8 @@ void BtSearchOptionsArea::aboutToShow() {
 }
 
 void BtSearchOptionsArea::setupRanges() {
-    CRangeChooserDialog * chooser = new CRangeChooserDialog(this);
+    QStringList modules = getUniqueWorksList();
+    CRangeChooserDialog * chooser = new CRangeChooserDialog(modules, this);
     chooser->exec();
     delete chooser;
 
@@ -350,17 +364,17 @@ void BtSearchOptionsArea::refreshRanges() {
     //m_rangeChooserCombo->insertItem(tr("Last search result"));
 
     //insert the user-defined ranges
-    m_rangeChooserCombo->insertItems(1, btConfig().getSearchScopesForCurrentLocale().keys());
+    QStringList scopeModules = getUniqueWorksList();
+    m_rangeChooserCombo->insertItems(1, btConfig().getSearchScopesForCurrentLocale(scopeModules).keys());
 }
 
 swordxx::ListKey BtSearchOptionsArea::searchScope() {
+    QStringList scopeModules = getUniqueWorksList();
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
-        QString const scope = btConfig().getSearchScopesForCurrentLocale()[
+        QString const scope = btConfig().getSearchScopesForCurrentLocale(scopeModules)[
                                     m_rangeChooserCombo->currentText()];
         if (!scope.isEmpty())
-            return swordxx::VerseKey().parseVerseList(scope.toUtf8().constData(),
-                                                    "Genesis 1:1",
-                                                    true);
+            return BtConfig::parseVerseListWithModules(scope, scopeModules);
     }
     return swordxx::ListKey();
 }
