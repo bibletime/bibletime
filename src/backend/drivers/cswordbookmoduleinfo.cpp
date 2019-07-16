@@ -23,10 +23,9 @@ CSwordBookModuleInfo::CSwordBookModuleInfo(swordxx::SWModule & module,
     : CSwordModuleInfo(module, backend, CSwordModuleInfo::GenericBook)
     , m_depth(-1)
 {
-    swordxx::TreeKeyIdx *key = tree();
-    if (key) {
+    if (auto const key = tree()) {
         key->root();
-        computeDepth(key, 0);
+        computeDepth(key.get(), 0);
     }
 }
 
@@ -48,9 +47,8 @@ void CSwordBookModuleInfo::computeDepth(swordxx::TreeKeyIdx * const key,
 }
 
 /** Returns a treekey filled with the structure of this module */
-swordxx::TreeKeyIdx* CSwordBookModuleInfo::tree() const {
-    swordxx::TreeKeyIdx * const treeKey =
-            dynamic_cast<swordxx::TreeKeyIdx *>(module().getKey());
-    BT_ASSERT(treeKey);
-    return treeKey;
+std::shared_ptr<swordxx::TreeKeyIdx> CSwordBookModuleInfo::tree() const {
+    auto r(std::dynamic_pointer_cast<swordxx::TreeKeyIdx>(module().getKey()));
+    BT_ASSERT(r);
+    return r;
 }

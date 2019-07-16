@@ -327,8 +327,9 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                         true);
 
         for (std::size_t i = 0u; i < verses.getCount(); i++) {
-            if (swordxx::VerseKey const * const element =
-                    dynamic_cast<swordxx::VerseKey const *>(verses.getElement(i)))
+            auto const e(verses.getElement(i));
+            if (auto const element =
+                        dynamic_cast<swordxx::VerseKey const *>(e.get()))
             {
                 tree.append(
                         new BtPrinter::KeyTreeItem(
@@ -338,10 +339,10 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                                         element->upperBoundKey().getText()),
                                 module,
                                 settings) );
-            } else if (verses.getElement(i)) {
+            } else if (e) {
                 tree.append(
                         new BtPrinter::KeyTreeItem(
-                            QString::fromStdString(verses.getElement(i)->getText()),
+                            QString::fromStdString(e->getText()),
                             module,
                             settings) );
             }
@@ -367,9 +368,9 @@ bool CExportManager::printKeyList(swordxx::ListKey const & list,
     for (std::size_t i = 0u; i < list.getCount(); i++) {
         if (progressWasCancelled())
             return false;
-        swordxx::SWKey const * const swKey = list.getElement(i);
-        if (swordxx::VerseKey const * const vKey =
-                    dynamic_cast<const swordxx::VerseKey*>(swKey))
+        auto const swKey(list.getElement(i));
+        if (auto const vKey =
+                    dynamic_cast<swordxx::VerseKey const *>(swKey.get()))
         {
             auto const startKey(QString::fromStdString(vKey->getText()));
             tree.append(new KTI(startKey, startKey, module, settings));

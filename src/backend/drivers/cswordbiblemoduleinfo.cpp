@@ -90,9 +90,9 @@ QStringList *CSwordBibleModuleInfo::books() const {
                      "config!",
                      module().getName().c_str());
         } else {
-            std::unique_ptr<swordxx::VerseKey> key(
-                    static_cast<swordxx::VerseKey *>(
-                            module().createKey().release()));
+            auto const key(
+                    std::static_pointer_cast<swordxx::VerseKey>(
+                            module().createKey()));
             key->positionToTop();
 
             for (key->setTestament(min); !key->popError() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
@@ -107,8 +107,8 @@ QStringList *CSwordBibleModuleInfo::books() const {
 unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const {
     int result = 0;
 
-    std::unique_ptr<swordxx::VerseKey> key(
-            static_cast<swordxx::VerseKey *>(module().createKey().release()));
+    auto const key(
+            std::static_pointer_cast<swordxx::VerseKey>(module().createKey()));
     key->positionToTop();
 
     // works for old and new versions
@@ -130,8 +130,8 @@ unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
 {
     unsigned int result = 0;
 
-    std::unique_ptr<swordxx::VerseKey> key(
-            static_cast<swordxx::VerseKey *>(module().createKey().release()));
+    auto const key(
+            std::static_pointer_cast<swordxx::VerseKey>(module().createKey()));
     key->positionToTop();
 
     // works for old and new versions
@@ -152,8 +152,8 @@ unsigned int CSwordBibleModuleInfo::verseCount(const QString &book,
 unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     unsigned int bookNumber = 0;
 
-    std::unique_ptr<swordxx::VerseKey> key(
-            static_cast<swordxx::VerseKey *>(module().createKey().release()));
+    using swordxx::VerseKey;
+    auto const key(std::static_pointer_cast<VerseKey>(module().createKey()));
     key->positionToTop();
 
     key->setBookName(book.toUtf8().constData());

@@ -175,7 +175,7 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
     if (role == ModuleEntry::TextRole ||
             role == ModuleEntry::Text1Role) {
         const CSwordBookModuleInfo *bookModule = qobject_cast<const CSwordBookModuleInfo*>(m_moduleInfoList.at(0));
-        CSwordTreeKey key(bookModule->tree(), bookModule);
+        CSwordTreeKey key(bookModule->tree().get(), bookModule);
         int bookIndex = index.row() * 4;
         key.setIndex(bookIndex);
         Rendering::CEntryDisplay entryDisplay;
@@ -354,7 +354,7 @@ CSwordTreeKey BtModuleTextModel::indexToBookKey(int index) const
 {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
     const CSwordBookModuleInfo *bookModule = qobject_cast<const CSwordBookModuleInfo*>(module);
-    CSwordTreeKey key(bookModule->tree(), bookModule);
+    CSwordTreeKey key(bookModule->tree().get(), bookModule);
     int bookIndex = index * 4;
     key.setIndex(bookIndex);
     return key;

@@ -279,9 +279,10 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
         swordxx::ListKey refs = vk.parseVerseList((const char*) data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
 
         for (std::size_t i = 0u; i < refs.getCount(); i++) {
-            swordxx::SWKey * const key = refs.getElement(i);
+            auto const key = refs.getElement(i);
             BT_ASSERT(key);
-            swordxx::VerseKey * const vk = dynamic_cast<swordxx::VerseKey*>(key);
+            swordxx::VerseKey * const vk =
+                    dynamic_cast<swordxx::VerseKey *>(key.get());
 
             if (vk && vk->isBoundSet()) { // render a range of keys
                 tree.append(new CTextRendering::KeyTreeItem(

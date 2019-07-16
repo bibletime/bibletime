@@ -335,8 +335,8 @@ void CSwordModuleInfo::buildIndex() {
 
         emit indexingProgress(0);
 
-        swordxx::SWKey * const key = m_module.getKey();
-        swordxx::VerseKey * const vk = dynamic_cast<swordxx::VerseKey *>(key);
+        auto const key = m_module.getKey();
+        auto const vk = dynamic_cast<swordxx::VerseKey *>(key.get());
 
         if (vk) {
             /* We have to be sure to insert the english key into the index,
@@ -542,10 +542,9 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
 
     // work around Swords thread insafety for Bibles and Commentaries
     {
-        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(this));
-        const swordxx::SWKey * const s = dynamic_cast<swordxx::SWKey *>(key.get());
-        if (s)
-            m_module.setKey(*s);
+        std::shared_ptr<CSwordKey> key(CSwordKey::createInstance(this));
+        if (auto s = std::dynamic_pointer_cast<swordxx::SWKey>(key))
+            m_module.setKey(s);
     }
     QList<swordxx::VerseKey *> list;
 
@@ -571,7 +570,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     const bool useScope = (scope.getCount() > 0);
 
     lucene::document::Document * doc = nullptr;
-    std::unique_ptr<swordxx::SWKey> swKey(m_module.createKey());
+    auto const swKey(m_module.createKey());
 
     swordxx::VerseKey * const vk = dynamic_cast<swordxx::VerseKey *>(swKey.get());
     if (vk)
@@ -593,8 +592,10 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
         // Limit results based on scope:
         if (useScope) {
             for (std::size_t j = 0; j < scope.getCount(); j++) {
-                BT_ASSERT(dynamic_cast<const swordxx::VerseKey *>(scope.getElement(j)));
-                const swordxx::VerseKey * const vkey = static_cast<const swordxx::VerseKey *>(scope.getElement(j));
+                BT_ASSERT(dynamic_cast<const swordxx::VerseKey *>(scope.getElement(j).get()));
+                auto const vkey(
+                            std::static_pointer_cast<swordxx::VerseKey const>(
+                                scope.getElement(j)));
                 if (vkey->lowerBoundKey().compare(*swKey) <= 0
                     && vkey->upperBoundKey().compare(*swKey) >= 0)
                 {

@@ -42,7 +42,7 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
                    delete the returned key because it's casted from the module
                    object.
         */
-        swordxx::TreeKeyIdx *tree() const;
+        std::shared_ptr<swordxx::TreeKeyIdx> tree() const;
 
     private: /* Methods: */
 

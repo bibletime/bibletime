@@ -59,7 +59,7 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
 
     CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);
     auto const & newVersification =
-            static_cast<VerseKey *>(bible->module().getKey())->getVersificationSystem();
+            bible->module().getKeyAs<VerseKey>()->getVersificationSystem();
     bool inVersification = true;
 
     emitBeforeChanged();
@@ -201,7 +201,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
                 const bool oldStatus = m.isSkipConsecutiveLinks();
                 m.setSkipConsecutiveLinks(true);
 
-                VerseKey * vKey = static_cast<VerseKey *>(m.getKey());
+                auto vKey(m.getKeyAs<VerseKey>());
 
                 // disable headings for next verse
                 bool const oldHeadingsStatus = vKey->isIntros();
@@ -211,7 +211,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
 
                 m.increment();
 
-                vKey = static_cast<VerseKey *>(m.getKey());
+                vKey = m.getKeyAs<VerseKey>();
                 vKey->setIntros(oldHeadingsStatus);
                 m.setSkipConsecutiveLinks(oldStatus);
 
@@ -290,7 +290,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
                 setVerse(getVerse() - 1);
             } else {
                 auto & m = m_module->module();
-                VerseKey * vKey = static_cast<VerseKey *>(m.getKey());
+                auto vKey(m.getKeyAs<VerseKey>());
                 bool const oldHeadingsStatus = vKey->isIntros();
                 vKey->setIntros(true);
                 vKey->setText(key().toUtf8().constData());
@@ -299,7 +299,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
                 m.setSkipConsecutiveLinks(true);
                 m.decrement();
 
-                vKey = static_cast<VerseKey *>(m.getKey());
+                vKey = m.getKeyAs<VerseKey>();
                 vKey->setIntros(oldHeadingsStatus);
                 m.setSkipConsecutiveLinks(oldStatus);
 

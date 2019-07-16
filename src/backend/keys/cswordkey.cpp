@@ -51,8 +51,8 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
 
     auto & m = m_module->module();
     if (k) {
-        swordxx::VerseKey * vk_mod = dynamic_cast<swordxx::VerseKey *>(m.getKey());
-        if (vk_mod)
+        if (auto const vk_mod =
+                    std::dynamic_pointer_cast<swordxx::VerseKey>(m.getKey()))
             vk_mod->setIntros(true);
 
         m.getKey()->setText(rawKey());
@@ -159,25 +159,27 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
     if (!module)
         return nullptr;
 
-    swordxx::SWKey * const key = module->module().getKey();
+    auto const key(module->module().getKey());
 
     switch (module->type()) {
 
         case CSwordModuleInfo::Bible: // Fall through
         case CSwordModuleInfo::Commentary:
 
-            BT_ASSERT(dynamic_cast<swordxx::VerseKey *>(key));
-            return new CSwordVerseKey(static_cast<swordxx::VerseKey *>(key),
+            BT_ASSERT(dynamic_cast<swordxx::VerseKey *>(key.get()));
+            return new CSwordVerseKey(static_cast<swordxx::VerseKey *>(
+                                          key.get()),
                                       module);
 
         case CSwordModuleInfo::Lexicon:
 
-            return new CSwordLDKey(key, module);
+            return new CSwordLDKey(key.get(), module);
 
         case CSwordModuleInfo::GenericBook:
 
-            BT_ASSERT(dynamic_cast<swordxx::TreeKeyIdx *>(key));
-            return new CSwordTreeKey(dynamic_cast<swordxx::TreeKeyIdx *>(key),
+            BT_ASSERT(dynamic_cast<swordxx::TreeKeyIdx *>(key.get()));
+            return new CSwordTreeKey(dynamic_cast<swordxx::TreeKeyIdx *>(
+                                         key.get()),
                                      module );
 
         default:
