@@ -12,6 +12,7 @@
 
 #include "osistohtml.h"
 
+#include <cstring>
 #include <QString>
 #include <swordxx/swmodule.h>
 #include <swordxx/utilxml.h>
