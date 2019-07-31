@@ -376,8 +376,10 @@ void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     }
 
     //refresh the book lists
+    using L = swordxx::LocaleMgr;
     verseKey()->setLocale(
-                CSwordBackend::instance()->booknameLanguage().toStdString());
+            L::getSystemLocaleMgr()->getLocale(
+                CSwordBackend::instance()->booknameLanguage().toStdString()));
     keyChooser()->refreshContent();
 
     actionCollection()->readShortcuts("Bible shortcuts");

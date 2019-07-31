@@ -341,7 +341,8 @@ void CSwordModuleInfo::buildIndex() {
         if (vk) {
             /* We have to be sure to insert the english key into the index,
                otherwise we'd be in trouble if the language changes. */
-            vk->setLocale("en_US");
+            using L = swordxx::LocaleMgr;
+            vk->setLocale(L::getSystemLocaleMgr()->getLocale("en_US"));
             /* If we have a verse based module, we want to include the pre-
                chapter etc. headings in the search. */
             vk->setIntros(true);

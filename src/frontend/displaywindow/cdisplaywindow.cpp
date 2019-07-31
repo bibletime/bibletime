@@ -163,10 +163,11 @@ void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
     if (CSwordKey * const k = key()) {
         if (swordxx::VerseKey * const vk = dynamic_cast<swordxx::VerseKey *>(k)) {
             // Save keys in english only:
-            const QString oldLang = QString::fromStdString(vk->getLocale());
-            vk->setLocale("en");
+            auto oldLocale(vk->locale());
+            vk->setLocale(
+                    swordxx::LocaleMgr::getSystemLocaleMgr()->getLocale("en"));
             conf.setSessionValue("key", k->key());
-            vk->setLocale(oldLang.toStdString());
+            vk->setLocale(oldLocale);
         } else {
             conf.setSessionValue("key", k->key());
         }

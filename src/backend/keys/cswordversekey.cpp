@@ -58,17 +58,17 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
              newModule->type() == CSwordModuleInfo::Commentary);
 
     CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);
-    auto const & newVersification =
-            bible->module().getKeyAs<VerseKey>()->getVersificationSystem();
+    auto const newVersification(
+            bible->module().getKeyAs<VerseKey>()->versificationSystem());
     bool inVersification = true;
 
     emitBeforeChanged();
 
-    if(getVersificationSystem() != newVersification) {
+    if(versificationSystem() != newVersification) {
         /// Remap key position to new versification
         swordxx::VerseKey oldKey(*this);
 
-        setVersificationSystem(newVersification.c_str());
+        setVersificationSystem(std::move(newVersification));
 
         positionFrom(oldKey);
         inVersification = !popError();
@@ -124,7 +124,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
         setBookName(newBook.toUtf8().constData());
     }
 
-    if ((getTestament() >= min + 1) && (getTestament() <= max + 1) && (getBook() <= m_BMAX[min])) {
+    if ((getTestament() >= min + 1) && (getTestament() <= max + 1) && (getBook() <= versificationSystem()->getBMAX()[min])) {
         return QString::fromStdString(getBookName());
     }
 
@@ -147,7 +147,7 @@ bool CSwordVerseKey::setKey(const char *newKey) {
     emitBeforeChanged();
 
     if(QByteArray(newKey).contains('-')) {
-        VerseKey vk(newKey, newKey, getVersificationSystem().c_str());
+        VerseKey vk(newKey, newKey, versificationSystem());
         setLowerBoundKey(vk.lowerBoundKey());
         setUpperBoundKey(vk.upperBoundKey());
         positionToTop();
@@ -175,10 +175,10 @@ bool CSwordVerseKey::next( const JumpType type ) {
             const int currentTestament = getTestament();
             const int currentBook = getBook();
 
-            if ((currentTestament == 2) && (currentBook >= m_BMAX[currentTestament-1])) { //Revelation, i.e. end of navigation
+            if ((currentTestament == 2) && (currentBook >= versificationSystem()->getBMAX()[currentTestament-1])) { //Revelation, i.e. end of navigation
                 return false;
             }
-            else if ((currentTestament == 1) && (currentBook >= m_BMAX[currentTestament-1])) { //Malachi, switch to the NT
+            else if ((currentTestament == 1) && (currentBook >= versificationSystem()->getBMAX()[currentTestament-1])) { //Malachi, switch to the NT
                 setTestament(currentTestament + 1);
                 setBook(1);
             }
@@ -271,7 +271,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
             }
             else if ((getBook() == 1) && (getTestament() == 2)) { //Matthew
                 setTestament(1);
-                setBook(m_BMAX[0]);
+                setBook(versificationSystem()->getBMAX()[0]);
             }
             else {
                 setBook(getBook() - 1);

@@ -158,7 +158,7 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
 
     key->setBookName(book.toUtf8().constData());
 
-    bookNumber = ((key->getTestament() > 1) ? key->m_BMAX[0] : 0) + key->getBook();
+    bookNumber = ((key->getTestament() > 1) ? key->versificationSystem()->getBMAX()[0] : 0) + key->getBook();
 
     return bookNumber;
 }

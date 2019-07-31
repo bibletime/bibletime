@@ -501,9 +501,10 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
                     key.toUtf8().constData(),
                     key.toUtf8().constData(),
                     module.module().getKeyAs<swordxx::VerseKey>()
-                            ->getVersificationSystem().c_str());
+                            ->versificationSystem());
         CSwordVerseKey k(&vk, &module);
-        k.setLocale("en");
+        using L = swordxx::LocaleMgr;
+        k.setLocale(L::getSystemLocaleMgr()->getLocale("en"));
         m_key = k.key();
     }
     else {
@@ -549,10 +550,12 @@ QString BookmarkItem::key() const {
                     englishKeyName.toUtf8().constData(),
                     englishKeyName.toUtf8().constData(),
                     module()->module().getKeyAs<swordxx::VerseKey>()
-                            ->getVersificationSystem().c_str());
+                            ->versificationSystem());
         CSwordVerseKey k(&vk, module());
+        using L = swordxx::LocaleMgr;
         k.setLocale(
-                CSwordBackend::instance()->booknameLanguage().toStdString());
+            L::getSystemLocaleMgr()->getLocale(
+                CSwordBackend::instance()->booknameLanguage().toStdString()));
         returnKeyName = k.key();
     }
 

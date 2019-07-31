@@ -401,7 +401,9 @@ const QString CSwordBackend::booknameLanguage(const QString & language) {
             {
                 // Create a new key, it will get the default bookname language:
                 auto const vk(mod->module().getKeyAs<swordxx::VerseKey>());
-                vk->setLocale(newLocaleName.constData());
+                using L = swordxx::LocaleMgr;
+                vk->setLocale(L::getSystemLocaleMgr()->getLocale(
+                                  newLocaleName.constData()));
             }
         }
 

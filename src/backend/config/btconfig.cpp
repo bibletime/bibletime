@@ -283,7 +283,8 @@ void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules,
                     std::dynamic_pointer_cast<swordxx::VerseKey>(
                         list.getElement(i)))
             {
-                verse->setLocale("en");
+                using L = swordxx::LocaleMgr;
+                verse->setLocale(L::getSystemLocaleMgr()->getLocale("en"));
                 data.append(QString::fromStdString(verse->getRangeText()));
                 data.append(';');
             } else {

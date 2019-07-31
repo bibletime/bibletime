@@ -126,8 +126,10 @@ void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CLexiconReadWindow::reload(reason);
 
     //refresh the book lists
+    using L = swordxx::LocaleMgr;
     verseKey()->setLocale(
-                CSwordBackend::instance()->booknameLanguage().toStdString());
+            L::getSystemLocaleMgr()->getLocale(
+                CSwordBackend::instance()->booknameLanguage().toStdString()));
     keyChooser()->refreshContent();
 
     actionCollection()->readShortcuts("Commentary shortcuts");

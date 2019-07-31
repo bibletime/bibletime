@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <QRegExp>
 #include <QDebug>
+#include <swordxx/swlocale.h>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordversekey.h"
@@ -337,9 +338,10 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
     QStringList refList = ref.split(";");
 
     CSwordVerseKey baseKey(nullptr);
-    baseKey.setLocale( sourceLanguage.toUtf8().constData() );
+    auto const localeMgr(swordxx::LocaleMgr::getSystemLocaleMgr());
+    baseKey.setLocale(localeMgr->getLocale(sourceLanguage.toUtf8().constData()));
     baseKey.setKey(options.refBase); //probably in the sourceLanguage
-    baseKey.setLocale( "en_US" ); //english works in all environments as base
+    baseKey.setLocale(localeMgr->getLocale("en_US")); //english works in all environments as base
 
 //     CSwordVerseKey dummy(0);
     //HACK: We have to workaround a Sword bug, we have to set the default locale to the same as the sourceLanguage !
@@ -347,8 +349,8 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
     CSwordBackend::instance()->booknameLanguage(sourceLanguage);
 
     swordxx::VerseKey dummy;
-    dummy.setLocale( sourceLanguage.toUtf8().constData() );
-    BT_ASSERT(dummy.getLocale().c_str() == sourceLanguage);
+    dummy.setLocale(localeMgr->getLocale(sourceLanguage.toUtf8().constData()));
+    BT_ASSERT(dummy.locale()->getName().c_str() == sourceLanguage);
 
 //     qDebug("Parsing '%s' in '%s' using '%s' as base, source lang '%s', dest lang '%s'", ref.latin1(), options.refDestinationModule.latin1(), baseKey.key().latin1(), sourceLanguage.latin1(), destinationLanguage.latin1());
 
@@ -363,20 +365,24 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
             continue;
         }
 
+        auto localeMgr(swordxx::LocaleMgr::getSystemLocaleMgr());
         for (std::size_t i = 0u; i < lk.getCount(); ++i) {
             if (auto const k =
                         std::dynamic_pointer_cast<swordxx::VerseKey>(
                     lk.getElement(i)))
             { // a range
-                k->setLocale( destinationLanguage.toUtf8().constData() );
+                k->setLocale(localeMgr->getLocale(
+                                 destinationLanguage.toUtf8().constData()));
 
                 ret.append(QString::fromStdString(k->getRangeText())).append("; ");
             }
             else { // a single ref
                 swordxx::VerseKey vk;
-                vk.setLocale( sourceLanguage.toUtf8().constData() );
+                vk.setLocale(localeMgr->getLocale(
+                                 sourceLanguage.toUtf8().constData()));
                 vk.setText(lk.getElement(i)->getText());
-                vk.setLocale( destinationLanguage.toUtf8().constData() );
+                vk.setLocale(localeMgr->getLocale(
+                                 destinationLanguage.toUtf8().constData()));
 
                 ret.append(QString::fromStdString(vk.getText())).append("; ");
             }
