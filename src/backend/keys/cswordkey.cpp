@@ -12,6 +12,7 @@
 
 #include "cswordkey.h"
 
+#include <cstring>
 #include <QRegExp>
 #include <QString>
 #include <QTextCodec>
