@@ -12,6 +12,7 @@
 
 #include "csearchanalysisscene.h"
 
+#include <cstring>
 #include <QApplication>
 #include <QFileDialog>
 #include <QHashIterator>
