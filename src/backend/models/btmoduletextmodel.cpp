@@ -57,6 +57,8 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     : QAbstractListModel(parent),
       m_firstEntry(0),
       m_maxEntries(0),
+      m_firstSelected(-1),
+      m_lastSelected(-1),
       m_textFilter(nullptr) {
 
     m_findState.enabled = false;
@@ -67,6 +69,7 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     roleNames[ModuleEntry::Text2Role] = "text2";
     roleNames[ModuleEntry::Text3Role] = "text3";
     roleNames[ModuleEntry::Text4Role] = "text4";
+    roleNames[ModuleEntry::Selected] = "selected";
     setRoleNames(roleNames);
     m_displayOptions.verseNumbers = 1;
     m_displayOptions.lineBreaks = 1;
@@ -124,7 +127,41 @@ void BtModuleTextModel::setModules(const QStringList& modules) {
     reloadModules();
 }
 
+bool BtModuleTextModel::isSelected(int index) const {
+    if (index <= m_lastSelected && index >= m_firstSelected)
+        return true;
+    return false;
+}
+
+void BtModuleTextModel::deSelect() {
+    if (m_firstSelected < 0)
+        return;
+    int first = m_firstSelected;
+    int last = m_lastSelected;
+    m_firstSelected = -1;
+    m_lastSelected = -1;
+    dataChanged(index(first,0), index(last,0));
+}
+
+void BtModuleTextModel::selectByIndex(int first, int last) {
+    int tmpFirst = first;
+    int tmpLast = last;
+    if (tmpFirst > tmpLast)
+        std::swap(tmpFirst, tmpLast);
+    if (tmpFirst == m_firstSelected && tmpLast == m_lastSelected)
+        return;
+
+    deSelect();
+    m_firstSelected = tmpFirst;
+    m_lastSelected = tmpLast;
+    dataChanged(index(m_firstSelected,0), index(m_lastSelected,0));
+}
+
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
+
+    if (role == ModuleEntry::Selected) {
+        return isSelected(index.row());
+    }
 
     QString text;
     if (isBible() || isCommentary())
@@ -347,6 +384,15 @@ CSwordVerseKey BtModuleTextModel::indexToVerseKey(int index) const
 
     key.setIntros(true);
     key.setIndex(index + m_firstEntry);
+    return key;
+}
+
+CSwordKey* BtModuleTextModel::indexToKey(int index, int moduleNum) const
+{
+    const CSwordModuleInfo* module = m_moduleInfoList.at(moduleNum);
+    CSwordKey* key = CSwordKey::createInstance(module);
+    QString keyName = indexToKeyName(index);
+    key->setKey(keyName);
     return key;
 }
 

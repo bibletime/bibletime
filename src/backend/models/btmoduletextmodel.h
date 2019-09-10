@@ -43,7 +43,8 @@ struct ModuleEntry {
         Text1Role = Qt::UserRole + 3,
         Text2Role = Qt::UserRole + 4,
         Text3Role = Qt::UserRole + 5,
-        Text4Role = Qt::UserRole + 6
+        Text4Role = Qt::UserRole + 6,
+        Selected = Qt::UserRole + 7
     };
 };
 
@@ -96,6 +97,9 @@ public:
     /** Convert index(row) into CSwordVerseKey. */
     CSwordVerseKey indexToVerseKey(int index) const;
 
+    /** Convert index(row) into CSwordVerseKey. */
+    CSwordKey* indexToKey(int index, int moduleNum) const;
+
     /** Convert CSwordKey into index(row). */
     int keyToIndex(const CSwordKey* key) const;
 
@@ -118,6 +122,15 @@ public:
     /** Reimplemented from QAbstractItemModel. */
     virtual bool setData(const QModelIndex &index,
                          const QVariant &value, int role = Qt::EditRole) override;
+
+    void deSelect();
+    void selectByIndex(int first, int last);
+    int getFirstSelectionIndex() {
+        return m_firstSelected;
+    }
+    int getLastSelectionIndex() {
+        return m_lastSelected;
+    }
 
     void setDisplayOptions(const DisplayOptions & displayOptions);
 
@@ -166,6 +179,7 @@ private:
     bool isBook() const;
     bool isCommentary() const;
     bool isLexicon() const;
+    bool isSelected(int index) const;
 
     /** returns text string for each model index */
     QString bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
@@ -181,6 +195,8 @@ private:
 
     int m_firstEntry;
     int m_maxEntries;
+    int m_firstSelected;
+    int m_lastSelected;
     BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;
