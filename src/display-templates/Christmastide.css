@@ -1,10 +1,6 @@
 /**
  * Theme by tabthorpe@FreeBSD.org *
  */
-body {
-    background-color: #FDF5E6; /* OldeLaceWhite */
-    color: #006400; /* # DarkGreen */
-}
 
 #content {
     margin: 5px;
