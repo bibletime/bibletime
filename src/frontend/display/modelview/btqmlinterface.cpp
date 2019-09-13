@@ -701,5 +701,11 @@ void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
     return;
 }
 
+void BtQmlInterface::deSelect() {
+    m_moduleTextModel->deSelect();
+}
 
+void BtQmlInterface::selectByIndex(int first, int last) {
+    m_moduleTextModel->selectByIndex(first, last);
+}
 

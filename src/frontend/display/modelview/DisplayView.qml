@@ -17,9 +17,41 @@ Rectangle {
     id: display
 
     property int contextMenuIndex: btQmlInterface.contextMenuIndex
+    property int leftMousePressIndex: -1
+    property int leftMousePressX: 0
+    property int leftMousePressY: 0
+    property int leftMouseReleaseIndex: -1
+    property int dragDistance: 8
 
     function saveContextMenuIndex(x, y) {
         contextMenuIndex = displayListView.indexAt(x,y+displayListView.contentY);
+    }
+
+    function leftMouseMove(x, y) {
+        if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
+            return;
+        }
+        var moveIndex = displayListView.indexAt(x,y+displayListView.contentY);
+        if (moveIndex < 0)
+            return;
+        btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex);
+        }
+
+    function leftMousePress(x, y) {
+        leftMousePressX = x;
+        leftMousePressY = y;
+        leftMousePressIndex = displayListView.indexAt(x,y+displayListView.contentY);
+        leftMouseReleaseIndex = leftMousePressIndex;
+    }
+
+    function leftMouseRelease(x, y) {
+        if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
+            leftMousePressIndex = -1;
+            btQmlInterface.deSelect();
+            return;
+        }
+        leftMouseReleaseIndex = displayListView.indexAt(x,y+displayListView.contentY);
+        btQmlInterface.selectByIndex(leftMousePressIndex, leftMouseReleaseIndex);
     }
 
     function updateReferenceText() {
@@ -115,6 +147,7 @@ Rectangle {
                     btQmlInterface.activeLink = link;
                 }
 
+                // TODO
                 function dragStart(index, active) {
                     if (active) {
                         btQmlInterface.dragHandler(index, btQmlInterface.activeLink);
@@ -122,7 +155,8 @@ Rectangle {
 
                 }
 
-                color: displayListView.textBackgroundColor
+                //color: displayListView.textBackgroundColor
+                color: selected ? "lightsteelblue" : displayListView.textBackgroundColor
                 width: displayListView.width
                 height: {
                     if (displayListView.columns == 1)
@@ -167,23 +201,12 @@ Rectangle {
                     anchors.top: parent.top
                     anchors.left: space1.right
                     width: parent.textWidth
-                    color: displayListView.textColor
+                    color: selected ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName0
                     font.pointSize: btQmlInterface.fontSize0
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 0
                     onLinkHovered: delegate.hovered(link)
-                }
-
-                MouseArea {
-                    id: mouseArea0
-                    anchors.fill: r0
-                    acceptedButtons: Qt.LeftButton
-                    drag.target: space1
-                    drag.onActiveChanged: delegate.dragStart(index, mouseArea0.drag.active)
-                    onClicked: {console.log(width, height, column0Text.width, column0Text.height, r0.width, r0.height)
-                        displayListView.startEdit(index, 0);
-                    }
                 }
 
                 Item {

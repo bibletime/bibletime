@@ -9,7 +9,10 @@
 
 #include "btquickwidget.h"
 
+#include <QCursor>
+#include <QGuiApplication>
 #include <QMimeData>
+#include <QMouseEvent>
 #include <QQuickItem>
 #include "../../../util/btassert.h"
 #include "../../../util/directory.h"
@@ -30,6 +33,7 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
     namespace DU = util::directory;
     QString qmlFile = QCoreApplication::applicationDirPath() + "/" + "DisplayView.qml";
     setSource(QUrl::fromLocalFile(qmlFile));
+    setupScrollTimer();
 }
 
 BtQmlInterface* BtQuickWidget::getQmlInterface() const {
@@ -119,3 +123,104 @@ void BtQuickWidget::scroll(int pixels) {
     QMetaObject::invokeMethod(root,"scroll",
                               Q_ARG(QVariant, vPixels));
 }
+
+void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
+    if (event->button() == Qt::LeftButton) {
+        mousePressed(event->x(), event->y());
+        event->accept();
+        return;
+    }
+    return QQuickWidget::mousePressEvent(event);
+}
+
+void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
+    if ((event->buttons() & Qt::LeftButton) == Qt::LeftButton) {
+        int y = event->y();
+        if ( y < 0) {
+            startScrollTimer();
+        } else if (y > height()) {
+            startScrollTimer();
+        } else {
+            stopScrollTimer();
+        }
+
+        mouseMove(event->x(), event->y());
+        event->accept();
+        return;
+    }
+    return QQuickWidget::mouseMoveEvent(event);
+}
+
+void BtQuickWidget::mouseReleaseEvent(QMouseEvent *event) {
+    if (event->button() == Qt::LeftButton) {
+        mouseReleased(event->x(), event->y());
+        event->accept();
+        return;
+    }
+    return QQuickWidget::mouseReleaseEvent(event);
+}
+
+void BtQuickWidget::mousePressed(int x, int y) {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant vX(x);
+    QVariant vY(y);
+    QMetaObject::invokeMethod(root,"leftMousePress",
+                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
+
+}
+
+void BtQuickWidget::mouseMove(int x, int y) {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant vX(x);
+    QVariant vY(y);
+    QMetaObject::invokeMethod(root,"leftMouseMove",
+                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
+}
+
+void BtQuickWidget::mouseReleased(int x, int y) {
+    stopScrollTimer();
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant vX(x);
+    QVariant vY(y);
+    QMetaObject::invokeMethod(root,"leftMouseRelease",
+                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
+}
+
+void BtQuickWidget::setupScrollTimer() {
+    m_timer.setInterval(100);
+    connect(&m_timer, &QTimer::timeout, this, &BtQuickWidget::scrollTimerSlot);
+    m_timer.setSingleShot(false);
+}
+
+void BtQuickWidget::startScrollTimer() {
+    if (m_timer.isActive())
+        return;
+    m_timer.start();
+}
+
+void BtQuickWidget::stopScrollTimer() {
+    if (m_timer.isActive())
+        m_timer.stop();
+}
+
+void BtQuickWidget::scrollTimerSlot() {
+    QPoint globalPoint = QCursor::pos();
+    QPoint point = mapFromGlobal(globalPoint);
+    int y = point.y();
+    if ((y >= 0) & (y-height() < 0))
+        return;
+    if (y < 0) {
+        scroll(-8);
+    } else {
+        scroll(8);
+    }
+    int y2 = y * y;
+    if (y2 > 100)
+        y2 = 100;
+    int interval = 500 / y2;
+    m_timer.setInterval(interval);
+}
+

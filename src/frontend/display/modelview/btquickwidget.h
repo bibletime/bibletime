@@ -18,6 +18,7 @@
 #ifndef BTQUICKWIDGET_H
 #define BTQUICKWIDGET_H
 
+#include <QTimer>
 #include <QWidget>
 #include <QQuickWidget>
 #include "btqmlscrollview.h"
@@ -30,6 +31,10 @@ class BtQuickWidget : public QQuickWidget {
 public:
     BtQuickWidget(BtQmlScrollView* widget);
 
+    void mousePressed(int x, int y);
+    void mouseMove(int x, int y);
+    void mouseReleased(int x, int y);
+
     void saveContextMenuIndex(int x, int y);
     void scroll(int pixels);
     void updateReferenceText();
@@ -39,10 +44,23 @@ protected:
        void dragEnterEvent( QDragEnterEvent* e ) override;
        void dropEvent( QDropEvent* e ) override;
 
+       virtual void mousePressEvent(QMouseEvent *event) override;
+       virtual void mouseMoveEvent(QMouseEvent *event) override;
+       virtual void mouseReleaseEvent(QMouseEvent *event) override;
+
+private slots:
+    void scrollTimerSlot();
+
 private:
     BtQmlInterface* getQmlInterface() const;
+    void setupScrollTimer();
+    void startScrollTimer();
+    void stopScrollTimer();
+
 
     BtQmlScrollView* m_scrollView;
+
+    QTimer m_timer;
 
 signals:
     void referenceDropped(const QString& reference);
