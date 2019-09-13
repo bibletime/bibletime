@@ -153,7 +153,6 @@ protected:
 private slots:
     void slotDelayedMoveToAnchor();
     void slotUpdateReference(const QString& reference);
-    void slotDragOccuring(const QString& moduleName, const QString& keyName);
     void slotReferenceDropped(const QString& reference);
 
 private:

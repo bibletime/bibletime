@@ -49,8 +49,6 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CReadWindow* readWindow, QWidget*
 
     BT_CONNECT(m_widget->qmlInterface(), SIGNAL(updateReference(const QString&)),
                this, SLOT(slotUpdateReference(const QString&)));
-    BT_CONNECT(m_widget->qmlInterface(), SIGNAL(dragOccuring(const QString&,const QString&)),
-               this, SLOT(slotDragOccuring(const QString&, const QString&)));
     BT_CONNECT(m_widget, SIGNAL(referenceDropped(const QString&)),
                this, SLOT(slotReferenceDropped(const QString&)));
 }
@@ -259,19 +257,6 @@ void BtModelViewReadDisplay::slotUpdateReference(const QString& reference) {
     window->keyChooser()->updateKey(key);
     QString caption = window->windowCaption();
     window->setWindowTitle(window->windowCaption());
-}
-
-void BtModelViewReadDisplay::slotDragOccuring(const QString& moduleName, const QString& keyName) {
-    QDrag* drag = new QDrag(this);
-    BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);
-    drag->setMimeData(mimedata);
-    //add real Bible text from module/key
-    if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-        key->setKey(keyName);
-        mimedata->setText(key->strippedText()); // This works across applications!
-    }
-    drag->exec(Qt::CopyAction, Qt::CopyAction);
 }
 
 void BtModelViewReadDisplay::slotReferenceDropped(const QString& reference) {  // TODO - Fix me
