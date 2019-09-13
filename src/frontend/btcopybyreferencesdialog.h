@@ -50,6 +50,7 @@ class BtCopyByReferencesDialog : public QDialog {
 
         bool isCopyToLarge(const QString& ref1, const QString& ref2);
         RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
+        void loadSelectionKeys();
 
         const BtConstModuleList m_modules;
         CSwordKey * m_key;

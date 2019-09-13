@@ -70,6 +70,8 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     message::prepareDialogBox(m_buttons);
     hLayout->addWidget(m_buttons);
 
+    loadSelectionKeys();
+
     BT_CONNECT(m_keyChooser1, SIGNAL(keyChanged(CSwordKey *)),
                this, SLOT(slotKeyChanged(CSwordKey *)));
 
@@ -139,3 +141,18 @@ RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, co
     }
     return ri;
 }
+
+void BtCopyByReferencesDialog::loadSelectionKeys() {
+
+    int first = m_moduleTextModel->getFirstSelectionIndex();
+    int last  = m_moduleTextModel->getLastSelectionIndex();
+    if (first < 0 || last < 0)
+        return; // defaults to top of view.
+
+    CSwordKey* firstKey = m_moduleTextModel->indexToKey(first, 0);
+    CSwordKey* lastKey = m_moduleTextModel->indexToKey(last, 0);
+    m_keyChooser1->setKey(firstKey);
+    m_keyChooser2->setKey(lastKey);
+}
+
+
