@@ -234,14 +234,13 @@ TARGET_INCLUDE_DIRECTORIES(bibletime_backend
         ${CLucene_LIBRARY_DIR}            #CLucene/clucene-config.h
     PUBLIC
         ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
-        ${Swordxx_INCLUDE_DIRS}
 )
 TARGET_LINK_LIBRARIES(bibletime_backend
     PUBLIC
         Qt5::Widgets
         Qt5::Xml
         -L${CLucene_LIBRARY_DIR} ${CLucene_LIBRARY}
-        ${Swordxx_LIBRARIES}
+        Swordxx::swordxx
         ${BibleTime_LDFLAGS}
 )
 
@@ -349,7 +348,7 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.
 # Windows:
 IF(MSVC)
   # sword locale information
-  FILE(GLOB INSTALL_SWORDXX_LOCALE_LIST "${Swordxx_INCLUDE_DIRS}/../../locales.d/*")
+  FILE(GLOB INSTALL_SWORDXX_LOCALE_LIST "${SWORDXX_LOCALES_INSTALL_DIR}/*")
   INSTALL(FILES ${INSTALL_SWORDXX_LOCALE_LIST}
           DESTINATION "${SWORDXX_DATADIR}/sword/locales.d/")
 

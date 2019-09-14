@@ -14,8 +14,12 @@
 
 #include <cstring>
 #include <QString>
+#include <swordxx/SimpleTokenizer.h>
 #include <swordxx/swmodule.h>
+#include <swordxx/utilstr.h>
 #include <swordxx/utilxml.h>
+#include <swordxx/XmlBuilder.h>
+#include <string_view>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -53,11 +57,13 @@ Filters::OsisToHtml::OsisToHtml() : swordxx::OSISHTMLHREF() {
 bool Filters::OsisToHtml::handleToken(std::string &buf, const char *token, swordxx::BasicFilterUserData *userData) {
     // manually process if it wasn't a simple substitution
 
+    using namespace std::string_view_literals;
+
     if (!substituteToken(buf, token)) {
         UserData* myUserData = dynamic_cast<UserData*>(userData);
         swordxx::SWModule* myModule = const_cast<swordxx::SWModule*>(myUserData->module); //hack
 
-        swordxx::XMLTag tag(token);
+        swordxx::XMLTag const tag(token);
         //     qWarning("found %s", token);
         const bool osisQToTick = ((!userData->module->getConfigEntry("OSISqToTick")) || (strcmp(userData->module->getConfigEntry("OSISqToTick"), "false")));
 
@@ -92,132 +98,105 @@ bool Filters::OsisToHtml::handleToken(std::string &buf, const char *token, sword
         else if (tag.name() == "w") {
             if ((!tag.isEmpty()) && (!tag.isEndTag())) { //start tag
 
-                swordxx::XMLTag outTag("span");
+                swordxx::XmlBuilder xmlBuilder("span");
 
                 static auto const withoutFirstComponent =
-                        [](std::string const & s) {
-                            auto const val = std::strchr(s.c_str(), ':');
-                            return val ? std::string(val + 1) : s;
+                        [](std::string_view sv) {
+                            auto const pos = sv.find_first_of(':');
+                            return (pos != std::string_view::npos)
+                                   ? sv.substr(pos + 1u)
+                                   : sv;
                         };
 
                 {
                     auto const attrib(tag.attribute("xlit"));
                     if (!attrib.empty())
-                        outTag.setAttribute(
-                                    "xlit",
-                                    withoutFirstComponent(attrib).c_str());
+                        xmlBuilder.a("xlit"sv, withoutFirstComponent(attrib));
                 }
 
                 {
                     auto const attrib(tag.attribute("gloss"));
                     if (!attrib.empty())
-                        outTag.setAttribute(
-                                    "gloss",
-                                    withoutFirstComponent(attrib).c_str());
+                        xmlBuilder.a("gloss"sv, withoutFirstComponent(attrib));
                 }
 
-                if (!tag.attribute("lemma").empty()) {
-                    char splitChar = '|';
-                    const int countSplit1 = tag.attributePartCount("lemma", '|');
-                    const int countSplit2 = tag.attributePartCount("lemma", ' '); /// \todo not allowed, remove soon
-                    int count = 0;
+                static auto const countChars =
+                        [](std::string_view sv, char charToCount) noexcept {
+                            std::size_t r = 0u;
+                            for (auto const c : sv)
+                                if (c == charToCount)
+                                    ++r;
+                            return r;
+                        };
 
-                    if (countSplit1 > countSplit2) { //| split char
-                        splitChar = '|'; /// \todo not allowed, remove soon
-                        count = countSplit1;
-                    }
-                    else {
-                        splitChar = ' ';
-                        count = countSplit2;
-                    }
+                if (auto const lemma = tag.attribute("lemma"); !lemma.empty()) {
+                    /// \todo ' ' not allowed, remove soon:
+                    auto const splitChar =
+                            (countChars(lemma, '|') > countChars(lemma, ' '))
+                            ? '|' : ' ';
 
-                    int i = (count > 1) ? 0 : -1;  // -1 for whole value cuz it's faster, but does the same thing as 0
                     std::string attrValue;
-
-                    do {
+                    using T = swordxx::SimpleTokenizer<>;
+                    for (auto const & attrib: T::tokenize(lemma, splitChar)) {
                         if (!attrValue.empty())
                             attrValue.push_back('|');
-
-                        auto const attrib(tag.attribute("lemma", i, splitChar));
-
-                        if (i < 0) { // to handle our -1 condition
-                            i = 0;
-                        }
-
                         attrValue.append(withoutFirstComponent(attrib));
                     }
-                    while (++i < count);
-
                     if (!attrValue.empty())
-                        outTag.setAttribute("lemma", attrValue.c_str());
+                        xmlBuilder.a("lemma"sv, std::move(attrValue));
                 }
 
-                if (!tag.attribute("morph").empty()) {
-                    char splitChar = '|';
-                    const int countSplit1 = tag.attributePartCount("morph", '|');
-                    const int countSplit2 = tag.attributePartCount("morph", ' '); /// \todo not allowed, remove soon
-                    int count = 0;
-
-                    if (countSplit1 > countSplit2) { //| split char
-                        splitChar = '|';
-                        count = countSplit1;
-                    }
-                    else {
-                        splitChar = ' ';
-                        count = countSplit2;
-                    }
-
-                    int i = (count > 1) ? 0 : -1;  // -1 for whole value cuz it's faster, but does the same thing as 0
+                if (auto const morph = tag.attribute("morph"); !morph.empty()) {
+                    auto const splitChar =
+                            (countChars(morph, '|') > countChars(morph, ' '))
+                            ? '|' : ' ';
 
                     std::string attrValue;
-
-                    do {
+                    using T = swordxx::SimpleTokenizer<>;
+                    for (auto const & attrib: T::tokenize(morph, splitChar)) {
                         if (!attrValue.empty())
                             attrValue.push_back('|');
 
-                        auto const attrib(tag.attribute("morph", i, splitChar));
-
-                        if (i < 0) {
-                            i = 0; // to handle our -1 condition
-                        }
-
-                        auto val = std::strchr(attrib.c_str(), ':');
-
-                        if (val) { //the prefix gives the modulename
-                            //check the prefix
-                            if (!std::strncmp("robinson:", attrib.c_str(), 9)) { //robinson
-                                attrValue.append( "Robinson:" ); //work is not the same as Sword's module name
-                                attrValue.append( val + 1 );
+                        if (auto const pos = attrib.find(':');
+                            pos != std::string_view::npos)
+                        {
+                            // The prefix gives the modulename, check it:
+                            if (swordxx::startsWith(attrib, "robinson:"sv)) {
+                                attrValue += 'R';
+                                attrValue += attrib.substr(1u);
                             }
                             //strongs is handled by BibleTime
                             /*else if (!strncmp("strongs", attrib, val-atrrib)) {
                                 attrValue.append( !strncmp(attrib, "x-", 2) ? attrib+2 : attrib );
                             }*/
-                            else {
-                                attrValue.append( !std::strncmp(attrib.c_str(), "x-", 2) ? attrib.c_str() + 2 : attrib.c_str());
+                            else if (swordxx::startsWith(attrib, "x-"sv)) {
+                                attrValue += attrib.substr(2u);
+                            } else {
+                                attrValue += attrib;
                             }
                         }
                         else { //no prefix given
-                            val = attrib.c_str();
-                            const bool skipFirst = ((val[0] == 'T') && ((val[1] == 'H') || (val[1] == 'G')));
-                            attrValue.append( skipFirst ? val + 1 : val );
+                            if ((attrib.size() >= 2u)
+                                && (attrib.front() == 'T')
+                                && (attrib[1u] == 'H' || attrib[1u] == 'G'))
+                            {
+                                attrValue += attrib.substr(1u);
+                            } else {
+                                attrValue += attrib;
+                            }
                         }
                     }
-                    while (++i < count);
-
                     if (!attrValue.empty())
-                        outTag.setAttribute("morph", attrValue.c_str());
+                        xmlBuilder.a("morph"sv, std::move(attrValue));
                 }
 
                 {
                     auto const attrib(tag.attribute("POS"));
                     if (!attrib.empty())
-                        outTag.setAttribute(
-                                    "pos",
-                                    withoutFirstComponent(attrib).c_str());
+                        xmlBuilder.a("pos"sv, withoutFirstComponent(attrib));
                 }
 
-                buf.append( outTag.toString() );
+                buf.append(xmlBuilder.asString());
             }
             else if (tag.isEndTag()) { // end or empty <w> tag
                 buf.append("</span>");
@@ -498,27 +477,28 @@ bool Filters::OsisToHtml::handleToken(std::string &buf, const char *token, sword
             if (!tag.isEndTag() && !tag.isEmpty()) {
                 if (tag.attribute("type") == "morph") {//line break
                     //This code is for WLC and MORPH (WHI)
-                    swordxx::XMLTag outTag("span");
-                    outTag.setAttribute("class", "morphSegmentation");
+                    swordxx::XmlBuilder xmlBuilder("span"sv);
+                    xmlBuilder.a("class"sv, "morphSegmentation"sv);
                     //Transfer the values to the span
                     //Problem: the data is in hebrew/aramaic, how to encode in HTML/BibleTime?
                     {
-                        auto const attr(tag.attribute("lemma"));
+                        auto attr(tag.attribute("lemma"));
                         if (!attr.empty())
-                            outTag.setAttribute("lemma", attr.c_str());
+                            xmlBuilder.a("lemma"sv, std::move(attr));
                     }
                     {
-                        auto const attr(tag.attribute("morph"));
+                        auto attr(tag.attribute("morph"));
                         if (!attr.empty())
-                            outTag.setAttribute("morph", attr.c_str());
+                            xmlBuilder.a("morph"sv, std::move(attr));
                     }
                     {
-                        auto const attr(tag.attribute("homonym"));
+                        auto attr(tag.attribute("homonym"));
                         if (!attr.empty())
-                            outTag.setAttribute("homonym", attr.c_str());
+                            xmlBuilder.a("homonym"sv, std::move(attr));
                     }
 
-                    buf.append(outTag.toString());
+                    xmlBuilder.c(""sv);
+                    buf.append(xmlBuilder.asString());
                     //buf.append("<span class=\"morphSegmentation\">");
                 }
                 else {
