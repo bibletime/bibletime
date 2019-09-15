@@ -89,6 +89,7 @@ Rectangle {
 
         property color textColor: "black"
         property color textBackgroundColor: "white"
+        property color selectedBackgroundColor: "#404040"
 
         property int columns: btQmlInterface.numModules
         property int savedRow: 0
@@ -156,7 +157,7 @@ Rectangle {
                 }
 
                 //color: displayListView.textBackgroundColor
-                color: selected ? "lightsteelblue" : displayListView.textBackgroundColor
+                color: selected ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 width: displayListView.width
                 height: {
                     if (displayListView.columns == 1)

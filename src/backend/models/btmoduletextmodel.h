@@ -52,7 +52,7 @@ class BtModuleTextFilter {
 
 public:
     virtual ~BtModuleTextFilter() = 0;
-    virtual QString processText(const QString& text) = 0;
+    virtual QString processText(const QString& text, bool selected=false) = 0;
 };
 
 

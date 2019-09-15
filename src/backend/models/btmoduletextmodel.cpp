@@ -159,8 +159,9 @@ void BtModuleTextModel::selectByIndex(int first, int last) {
 
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
 
+    bool selected = isSelected(index.row());
     if (role == ModuleEntry::Selected) {
-        return isSelected(index.row());
+        return selected;
     }
 
     QString text;
@@ -173,7 +174,7 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
     else
         text = "invalid";
     if (m_textFilter)
-        text = m_textFilter->processText(text);
+        text = m_textFilter->processText(text,selected);
 
     if ( ! m_highlightWords.isEmpty()) {
         QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);

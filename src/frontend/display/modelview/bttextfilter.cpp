@@ -22,7 +22,8 @@ BtTextFilter::BtTextFilter() :
 BtTextFilter::~BtTextFilter() {
 }
 
-QString BtTextFilter::processText(const QString &text) {
+QString BtTextFilter::processText(const QString &text, bool selected) {
+    m_selected = selected;
     if (text.isEmpty())
         return text;
     QString localText = fixNonRichText(text);
@@ -155,7 +156,7 @@ int BtTextFilter::rewriteLemmaOrMorphAsLink(int i, const QString& part) {
     QString refText = m_parts.at(i+1);
     QString url = "sword://lemmamorph/" + value + "/" + refText;
     QString newEntry;
-    newEntry = "<a href=\"" + url + "\">";
+    newEntry = "<a href=\"" + url + "\" style=\"color: " + (m_selected? "white": "black") + "\">";
     m_parts[i] = newEntry;
     m_parts[i+2] = "</a>";
     return 3;

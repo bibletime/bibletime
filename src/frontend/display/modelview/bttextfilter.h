@@ -35,7 +35,7 @@ public:
     BtTextFilter();
     ~BtTextFilter();
 
-    QString processText(const QString& text);
+    QString processText(const QString& text, bool selected);
     void setShowReferences(bool on);
 
 private:
@@ -47,6 +47,7 @@ private:
     void splitText(const QString& text);
 
     bool m_showReferences;
+    bool m_selected;
     int m_spanDepth;
 
     QStringList m_parts;
