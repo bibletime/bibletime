@@ -140,7 +140,7 @@ td.entry + td.entry {
     color: blue;
 }
 .jesuswords a {
-    color:#9C2323;
+    color: red;
 }
 a[name="crossref"] {
     font-size: small;
@@ -180,7 +180,7 @@ a[name="crossref"] {
 .foreign {
 }
 .jesuswords {
-    color:#9C2323;
+    color: red;
 }
 
 .introduction {
