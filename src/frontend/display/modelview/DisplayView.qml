@@ -28,6 +28,8 @@ Rectangle {
     }
 
     function leftMouseMove(x, y) {
+        if (leftMousePressIndex < 0)
+            return;
         if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
             return;
         }
@@ -35,16 +37,32 @@ Rectangle {
         if (moveIndex < 0)
             return;
         btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex);
-        }
+    }
 
     function leftMousePress(x, y) {
-        leftMousePressX = x;
-        leftMousePressY = y;
-        leftMousePressIndex = displayListView.indexAt(x,y+displayListView.contentY);
-        leftMouseReleaseIndex = leftMousePressIndex;
+        var item1 = displayListView.itemAt( x,y + displayListView.contentY);
+        var xItem = x - item1.x + displayListView.contentX;
+        var yItem = y - item1.y + displayListView.contentY;
+        var  url = item1.linkAt(xItem, yItem);
+
+        if (url === "" || url.includes("lemmamorph") || url.includes("footnote")) {
+            // Start selection of items
+            leftMousePressX = x;
+            leftMousePressY = y;
+            leftMousePressIndex = displayListView.indexAt(x,y+displayListView.contentY);
+            leftMouseReleaseIndex = leftMousePressIndex;
+            return;
+        }
+
+        // Start drag operation for link
+        var index = displayListView.indexAt( x,y + displayListView.contentY);
+        btQmlInterface.dragHandler(index, url);
+        return;
     }
 
     function leftMouseRelease(x, y) {
+        if (leftMousePressIndex < 0)
+            return;
         if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
             leftMousePressIndex = -1;
             btQmlInterface.deSelect();
@@ -89,7 +107,7 @@ Rectangle {
 
         property color textColor: "black"
         property color textBackgroundColor: "white"
-        property color selectedBackgroundColor: "#404040"
+        property color selectedBackgroundColor: "#000070"
 
         property int columns: btQmlInterface.numModules
         property int savedRow: 0
@@ -142,6 +160,12 @@ Rectangle {
                 property int spacing: 2.5 * btQmlInterface.pixelsPerMM
                 property int textWidth: (displayListView.width / displayListView.columns) - (spacing *  ((displayListView.columns+1)/displayListView.columns)  )
                 property int vertSpace: 2 * btQmlInterface.pixelsPerMM
+
+                function linkAt(x, y) {
+                    var xlocal = x - column0Text.x;
+                    var ylocal = y - column0Text.y;
+                    return column0Text.linkAt(xlocal, ylocal);
+                }
 
                 function hovered(link) {
                     btQmlInterface.setMagReferenceByUrl(link);
