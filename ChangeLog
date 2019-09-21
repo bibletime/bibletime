@@ -1,3 +1,6 @@
+2019-09-21 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #189 - Allow selecting text for copying
+
 2019-07-05 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #186 - Problems creating scope with deuterocanonical books
 
