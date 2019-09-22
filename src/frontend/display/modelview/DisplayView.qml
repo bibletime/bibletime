@@ -162,9 +162,19 @@ Rectangle {
                 property int vertSpace: 2 * btQmlInterface.pixelsPerMM
 
                 function linkAt(x, y) {
-                    var xlocal = x - column0Text.x;
-                    var ylocal = y - column0Text.y;
-                    return column0Text.linkAt(xlocal, ylocal);
+                    var textItem;
+                    if (column3Text.visible && x >= column3Text.x)
+                        textItem = column3Text;
+                    else if (column2Text.visible && x >= column2Text.x)
+                        textItem = column2Text;
+                    else if (column1Text.visible && x >= column1Text.x)
+                        textItem = column1Text;
+                    else
+                        textItem = column0Text;
+
+                    var xTextItem = x - textItem.x;
+                    var yTextItem = y - textItem.y;
+                    return textItem.linkAt(xTextItem, yTextItem);
                 }
 
                 function hovered(link) {
