@@ -705,7 +705,11 @@ void BtQmlInterface::deSelect() {
     m_moduleTextModel->deSelect();
 }
 
-void BtQmlInterface::selectByIndex(int first, int last) {
-    m_moduleTextModel->selectByIndex(first, last);
+bool BtQmlInterface::isSelected() {
+    return m_moduleTextModel->isSelected();
+}
+
+void BtQmlInterface::selectByIndex(int first, int last, int column) {
+    m_moduleTextModel->selectByIndex(first, last, column);
 }
 

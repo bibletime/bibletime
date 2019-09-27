@@ -70,6 +70,7 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     roleNames[ModuleEntry::Text3Role] = "text3";
     roleNames[ModuleEntry::Text4Role] = "text4";
     roleNames[ModuleEntry::Selected] = "selected";
+    roleNames[ModuleEntry::ColumnSelected] = "columnSelected";
     setRoleNames(roleNames);
     m_displayOptions.verseNumbers = 1;
     m_displayOptions.lineBreaks = 1;
@@ -140,21 +141,41 @@ void BtModuleTextModel::deSelect() {
     int last = m_lastSelected;
     m_firstSelected = -1;
     m_lastSelected = -1;
+    m_columnSelected = -1;
     dataChanged(index(first,0), index(last,0));
 }
 
-void BtModuleTextModel::selectByIndex(int first, int last) {
+bool BtModuleTextModel::isSelected() {
+    if (m_firstSelected < 0)
+        return false;
+    return true;
+}
+
+void BtModuleTextModel::selectByIndex(int first, int last, int column) {
     int tmpFirst = first;
     int tmpLast = last;
     if (tmpFirst > tmpLast)
         std::swap(tmpFirst, tmpLast);
-    if (tmpFirst == m_firstSelected && tmpLast == m_lastSelected)
+    if (tmpFirst == m_firstSelected && tmpLast == m_lastSelected && m_columnSelected == column)
         return;
 
     deSelect();
     m_firstSelected = tmpFirst;
     m_lastSelected = tmpLast;
+    m_columnSelected = column;
     dataChanged(index(m_firstSelected,0), index(m_lastSelected,0));
+}
+
+static bool getColumnSelected(int role, int column) {
+    if (role == ModuleEntry::Text1Role && column == 0)
+        return true;
+    if (role == ModuleEntry::Text2Role && column == 1)
+        return true;
+    if (role == ModuleEntry::Text3Role && column == 2)
+        return true;
+    if (role == ModuleEntry::Text4Role && column == 3)
+        return true;
+    return false;
 }
 
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
@@ -162,6 +183,9 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
     bool selected = isSelected(index.row());
     if (role == ModuleEntry::Selected) {
         return selected;
+    }
+    if (role == ModuleEntry::ColumnSelected) {
+        return m_columnSelected;
     }
 
     QString text;
@@ -173,8 +197,11 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
         text = lexiconData(index, role);
     else
         text = "invalid";
-    if (m_textFilter)
-        text = m_textFilter->processText(text,selected);
+
+    if (m_textFilter) {
+        bool selectColumn = getColumnSelected(role, m_columnSelected);
+        text = m_textFilter->processText(text,selectColumn);
+    }
 
     if ( ! m_highlightWords.isEmpty()) {
         QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);

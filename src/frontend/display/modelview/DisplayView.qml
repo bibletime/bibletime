@@ -36,7 +36,8 @@ Rectangle {
         var moveIndex = displayListView.indexAt(x,y+displayListView.contentY);
         if (moveIndex < 0)
             return;
-        btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex);
+        var column = Math.floor(x / (displayListView.width / displayListView.columns));
+        btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex, column);
     }
 
     function leftMousePress(x, y) {
@@ -65,11 +66,25 @@ Rectangle {
             return;
         if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
             leftMousePressIndex = -1;
-            btQmlInterface.deSelect();
+            if (btQmlInterface.isSelected())
+                btQmlInterface.deSelect();
+            else {
+                openPersonalCommentary(leftMousePressX, leftMousePressY);
+            }
             return;
         }
         leftMouseReleaseIndex = displayListView.indexAt(x,y+displayListView.contentY);
-        btQmlInterface.selectByIndex(leftMousePressIndex, leftMouseReleaseIndex);
+        var moveIndex = displayListView.indexAt(x,y+displayListView.contentY);
+        if (moveIndex < 0)
+            return;
+        var column = Math.floor(x / (displayListView.width / displayListView.columns));
+        btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex, column);
+    }
+
+    function openPersonalCommentary(x, y) {
+        var index = displayListView.indexAt( x,y + displayListView.contentY);
+        var column = Math.floor(x / (displayListView.width / displayListView.columns));
+        displayListView.startEdit(index, column);
     }
 
     function updateReferenceText() {
@@ -182,16 +197,13 @@ Rectangle {
                     btQmlInterface.activeLink = link;
                 }
 
-                // TODO
                 function dragStart(index, active) {
                     if (active) {
                         btQmlInterface.dragHandler(index, btQmlInterface.activeLink);
                     }
-
                 }
 
-                //color: displayListView.textBackgroundColor
-                color: selected ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
+                color: displayListView.textBackgroundColor
                 width: displayListView.width
                 height: {
                     if (displayListView.columns == 1)
@@ -221,12 +233,7 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column0Text.left
                     anchors.right: column0Text.right
-                    color: "white"
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(0);
-                    }
+                    color: (selected && columnSelected === 0) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
                 Text {
@@ -236,11 +243,12 @@ Rectangle {
                     anchors.top: parent.top
                     anchors.left: space1.right
                     width: parent.textWidth
-                    color: selected ? "white" : displayListView.textColor
+                    color: (selected && columnSelected === 0) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName0
                     font.pointSize: btQmlInterface.fontSize0
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 0
+                    z:1
                     onLinkHovered: delegate.hovered(link)
                 }
 
@@ -259,12 +267,7 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column1Text.left
                     anchors.right: column1Text.right
-                    color: "white"
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(1);
-                    }
+                    color: (selected && columnSelected === 1) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
                 Text {
@@ -275,7 +278,7 @@ Rectangle {
                     anchors.left: space2.right
                     anchors.leftMargin: 0
                     width: parent.textWidth
-                    color: displayListView.textColor
+                    color: (selected && columnSelected === 1) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName1
                     font.pointSize: btQmlInterface.fontSize1
                     wrapMode: Text.WordWrap
@@ -308,12 +311,7 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column2Text.left
                     anchors.right: column2Text.right
-                    color: "white"
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(2);
-                    }
+                    color: (selected && columnSelected === 2) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
                 Text {
@@ -324,7 +322,7 @@ Rectangle {
                     anchors.left: space3.right
                     anchors.leftMargin: 0
                     width: parent.textWidth
-                    color: displayListView.textColor
+                    color: (selected && columnSelected === 2) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName2
                     font.pointSize: btQmlInterface.fontSize2
                     wrapMode: Text.WordWrap
@@ -357,12 +355,7 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column3Text.left
                     anchors.right: column3Text.right
-                    color: "white"
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(3);
-                    }
+                    color: (selected && columnSelected === 3) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
                 Text {
@@ -373,7 +366,7 @@ Rectangle {
                     anchors.left: space4.right
                     anchors.leftMargin: 0
                     width: parent.textWidth
-                    color: displayListView.textColor
+                    color: (selected && columnSelected === 3) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName3
                     font.pointSize: btQmlInterface.fontSize3
                     wrapMode: Text.WordWrap

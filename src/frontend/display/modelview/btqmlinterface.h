@@ -82,7 +82,8 @@ public:
     Q_INVOKABLE void setMagReferenceByUrl(const QString& url);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
     Q_INVOKABLE void deSelect();
-    Q_INVOKABLE void selectByIndex(int first, int last);
+    Q_INVOKABLE bool isSelected();
+    Q_INVOKABLE void selectByIndex(int first, int last, int column);
 
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();

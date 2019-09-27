@@ -44,7 +44,8 @@ struct ModuleEntry {
         Text2Role = Qt::UserRole + 4,
         Text3Role = Qt::UserRole + 5,
         Text4Role = Qt::UserRole + 6,
-        Selected = Qt::UserRole + 7
+        Selected = Qt::UserRole + 7,
+        ColumnSelected = Qt::UserRole + 8
     };
 };
 
@@ -124,7 +125,8 @@ public:
                          const QVariant &value, int role = Qt::EditRole) override;
 
     void deSelect();
-    void selectByIndex(int first, int last);
+    bool isSelected();
+    void selectByIndex(int first, int last, int column);
     int getFirstSelectionIndex() {
         return m_firstSelected;
     }
@@ -197,6 +199,7 @@ private:
     int m_maxEntries;
     int m_firstSelected;
     int m_lastSelected;
+    int m_columnSelected;
     BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;
