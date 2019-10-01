@@ -522,20 +522,14 @@ void BtQmlInterface::copyRange(int index1, int index2) {
     delete key;
 }
 
-void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2) {
-    CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_swordKey);
-
-    if (verseKey) {
-        CSwordVerseKey dummy(*verseKey);
-        CSwordVerseKey vk(*verseKey);
-
-        dummy.setKey(ref1);
-        vk.setLowerBound(dummy);
-        dummy.setKey(ref2);
-        vk.setUpperBound(dummy);
-
-        copyKey(&vk, BtQmlInterface::Text, true);
-    }
+void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) {
+    CSwordVerseKey dummy(module);
+    CSwordVerseKey vk(module);
+    dummy.setKey(ref1);
+    vk.setLowerBound(dummy);
+    dummy.setKey(ref2);
+    vk.setUpperBound(dummy);
+    copyKey(&vk, BtQmlInterface::Text, true);
 }
 
 

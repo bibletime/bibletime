@@ -9,6 +9,7 @@
 
 #include "btcopybyreferencesdialog.h"
 
+#include <QComboBox>
 #include <QDialogButtonBox>
 #include <QGridLayout>
 #include <QKeyEvent>
@@ -61,6 +62,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
 
     m_keyChooser2 = CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
     gridLayout->addWidget(m_keyChooser2,1,1);
+
+    m_moduleNameCombo = new QComboBox();
+    gridLayout->addWidget(m_moduleNameCombo, 2,1);
 
     m_sizeToLarge = new QLabel(tr("Copy size is to large."));
     m_sizeToLarge->setVisible(false);
@@ -116,6 +120,10 @@ int BtCopyByReferencesDialog::getIndex2() {
     return m_ri.index2;
 }
 
+int BtCopyByReferencesDialog::getColumn() {
+    return m_moduleNameCombo->currentIndex();
+}
+
 QString BtCopyByReferencesDialog::getReference1() {
     return m_ri.r1;
 }
@@ -144,6 +152,15 @@ RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, co
 
 void BtCopyByReferencesDialog::loadSelectionKeys() {
 
+    Q_FOREACH( auto m, m_modules ) {
+        QString name = m->name();
+        m_moduleNameCombo->addItem(name);
+    }
+
+    int column = m_moduleTextModel->getSelectionColumn();
+    if (column < 0)
+        column = 0;
+
     int first = m_moduleTextModel->getFirstSelectionIndex();
     int last  = m_moduleTextModel->getLastSelectionIndex();
     if (first < 0 || last < 0)
@@ -153,6 +170,13 @@ void BtCopyByReferencesDialog::loadSelectionKeys() {
     CSwordKey* lastKey = m_moduleTextModel->indexToKey(last, 0);
     m_keyChooser1->setKey(firstKey);
     m_keyChooser2->setKey(lastKey);
+
+    const CSwordModuleInfo* m = m_modules.at(column);
+
+    QString moduleName = m->name();
+    int index = m_moduleNameCombo->findText(moduleName);
+    if (index >= 0)
+        m_moduleNameCombo->setCurrentIndex(index);
 }
 
 

@@ -199,8 +199,8 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
         text = "invalid";
 
     if (m_textFilter) {
-        bool selectColumn = getColumnSelected(role, m_columnSelected);
-        text = m_textFilter->processText(text,selectColumn);
+        bool selected = isSelected(index.row()) && getColumnSelected(role, m_columnSelected);
+        text = m_textFilter->processText(text,selected);
     }
 
     if ( ! m_highlightWords.isEmpty()) {

@@ -133,14 +133,17 @@ void CReadWindow::copyByReferences() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
         auto model = v->qmlInterface()->textModel();
-        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);
+        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);        
         int rtn = dlg.exec();
         if (rtn == QDialog::Rejected)
             return;
 
-        if (moduleType() == CSwordModuleInfo::Bible ||
-                moduleType() == CSwordModuleInfo::Commentary) {
-            v->qmlInterface()->copyVerseRange(dlg.getReference1(), dlg.getReference2());
+        int column = dlg.getColumn();
+        auto m = modules().at(column);
+
+        if (m->type() == CSwordModuleInfo::Bible ||
+                m->type() == CSwordModuleInfo::Commentary) {
+            v->qmlInterface()->copyVerseRange(dlg.getReference1(), dlg.getReference2(), m);
         } else {
             v->qmlInterface()->copyRange(dlg.getIndex1(), dlg.getIndex2());
 

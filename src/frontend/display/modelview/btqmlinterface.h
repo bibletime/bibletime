@@ -96,7 +96,7 @@ public:
 
     QString getActiveLink() const;
     void copyRange(int index1, int index2);
-    void copyVerseRange(const QString& ref1, const QString& ref2);
+    void copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module);
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
     int getCurrentModelIndex() const;

@@ -134,6 +134,10 @@ public:
         return m_lastSelected;
     }
 
+    int getSelectionColumn() {
+        return m_columnSelected;
+    }
+
     void setDisplayOptions(const DisplayOptions & displayOptions);
 
 

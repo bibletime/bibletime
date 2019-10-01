@@ -18,6 +18,7 @@
 #include "display/modelview/btqmlinterface.h"
 
 
+class QComboBox;
 class QDialogButtonBox;
 class QLabel;
 class CKeyChooser;
@@ -39,6 +40,7 @@ class BtCopyByReferencesDialog : public QDialog {
 
     int getIndex1();
     int getIndex2();
+    int getColumn();
     QString getReference1();
     QString getReference2();
 
@@ -56,6 +58,7 @@ class BtCopyByReferencesDialog : public QDialog {
         CSwordKey * m_key;
         CKeyChooser * m_keyChooser1;
         CKeyChooser * m_keyChooser2;
+        QComboBox * m_moduleNameCombo;
         BtModuleTextModel * m_moduleTextModel;
         QLabel * m_sizeToLarge;
         QDialogButtonBox * m_buttons;
