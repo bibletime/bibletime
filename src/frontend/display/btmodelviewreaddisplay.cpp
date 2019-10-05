@@ -17,6 +17,7 @@
 #include <QMenu>
 #include <QString>
 #include <QTimer>
+#include <QToolBar>
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/managers/referencemanager.h"
 #include "../../util/btassert.h"
@@ -267,6 +268,11 @@ void BtModelViewReadDisplay::slotDragOccuring(const QString& moduleName, const Q
     drag->setMimeData(mimedata);
     //add real Bible text from module/key
     if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
+        CDisplayWindow* window = parentWindow();
+        QToolBar * tb = window->mainToolBar();
+        QSize size = tb->iconSize();
+        QIcon icon = module->moduleIcon();
+        drag->setPixmap(icon.pixmap(size));
         std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
         key->setKey(keyName);
         mimedata->setText(key->strippedText()); // This works across applications!
