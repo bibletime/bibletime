@@ -255,6 +255,8 @@ public slots:
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
+        void autoScrollStop();
+
     protected: // Protected methods
         /**
         * Catch QMainWindow events
@@ -403,7 +405,6 @@ public slots:
         void autoScrollDown();
         void autoScrollPause();
         bool autoScrollAnyKey(int key);
-        void autoScrollStop();
 
         /**
         * Is called when settings in the optionsdialog have been
