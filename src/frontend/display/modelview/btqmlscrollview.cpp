@@ -8,6 +8,7 @@
 **********/
 
 #include "btqmlscrollview.h"
+#include "../../bibletime.h"
 
 #include <QHBoxLayout>
 #include <QList>
@@ -90,6 +91,7 @@ void BtQmlScrollView::slotSliderMoved(int value) {
     int relative = value - m_scrollBarPosition;
     m_quickWidget->scroll(relative * speed);
     m_scrollBarPosition = value;
+    BibleTime::instance()->autoScrollStop();
 }
 
 void BtQmlScrollView::slotSliderPressed()  {

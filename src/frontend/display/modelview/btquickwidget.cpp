@@ -8,12 +8,14 @@
 **********/
 
 #include "btquickwidget.h"
+#include "../../bibletime.h"
 
 #include <QCursor>
 #include <QGuiApplication>
 #include <QMimeData>
 #include <QMouseEvent>
 #include <QQuickItem>
+#include <QWheelEvent>
 #include "../../../util/btassert.h"
 #include "../../../util/directory.h"
 #include "../../BtMimeData.h"
@@ -224,3 +226,7 @@ void BtQuickWidget::scrollTimerSlot() {
     m_timer.setInterval(interval);
 }
 
+void BtQuickWidget::wheelEvent(QWheelEvent * event) {
+    BibleTime::instance()->autoScrollStop();
+    QQuickWidget::wheelEvent(event);
+}
