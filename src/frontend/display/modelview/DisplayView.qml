@@ -236,9 +236,10 @@ Rectangle {
                     color: (selected && columnSelected === 0) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
-                Text {
+                TextEdit {
                     id: column0Text
                     textFormat: Text.RichText
+                    readOnly: true
                     text: text1
                     anchors.top: parent.top
                     anchors.left: space1.right
@@ -270,13 +271,14 @@ Rectangle {
                     color: (selected && columnSelected === 1) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
-                Text {
+                TextEdit {
                     id: column1Text
                     text: text2
                     textFormat: Text.RichText
                     anchors.top: parent.top
                     anchors.left: space2.right
                     anchors.leftMargin: 0
+                    readOnly: true
                     width: parent.textWidth
                     color: (selected && columnSelected === 1) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName1
@@ -284,17 +286,6 @@ Rectangle {
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 1
                     onLinkHovered: delegate.hovered(link)
-                }
-
-                MouseArea {
-                    id: mouseArea1
-                    anchors.fill: r1
-                    acceptedButtons: Qt.LeftButton
-                    drag.target: space1
-                    drag.onActiveChanged: delegate.dragStart(index, mouseArea1.drag.active)
-                    onClicked: {
-                        displayListView.startEdit(index, 1);
-                    }
                 }
 
                 Item {
@@ -314,13 +305,14 @@ Rectangle {
                     color: (selected && columnSelected === 2) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
-                Text {
+                TextEdit {
                     id: column2Text
                     text: text3
                     textFormat: Text.RichText
                     anchors.top: parent.top
                     anchors.left: space3.right
                     anchors.leftMargin: 0
+                    readOnly: true
                     width: parent.textWidth
                     color: (selected && columnSelected === 2) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName2
@@ -328,17 +320,6 @@ Rectangle {
                     wrapMode: Text.WordWrap
                     visible: displayListView.columns > 2
                     onLinkHovered: delegate.hovered(link)
-                }
-
-                MouseArea {
-                    id: mouseArea2
-                    anchors.fill: r2
-                    acceptedButtons: Qt.LeftButton
-                    drag.target: space1
-                    drag.onActiveChanged: delegate.dragStart(index, mouseArea2.drag.active)
-                    onClicked: {
-                        displayListView.startEdit(index, 2);
-                    }
                 }
 
                 Item {
@@ -358,13 +339,14 @@ Rectangle {
                     color: (selected && columnSelected === 3) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
                 }
 
-                Text {
+                TextEdit {
                     id: column3Text
                     text: text4
                     textFormat: Text.RichText
                     anchors.top: parent.top
                     anchors.left: space4.right
                     anchors.leftMargin: 0
+                    readOnly: true
                     width: parent.textWidth
                     color: (selected && columnSelected === 3) ? "white" : displayListView.textColor
                     font.family: btQmlInterface.fontName3
@@ -373,19 +355,9 @@ Rectangle {
                     visible: displayListView.columns > 3
                     onLinkHovered: delegate.hovered(link)
                 }
-
-                MouseArea {
-                    id: mouseArea3
-                    anchors.fill: r3
-                    acceptedButtons: Qt.LeftButton
-                    drag.target: space1
-                    drag.onActiveChanged: delegate.dragStart(index, mouseArea3.drag.active)
-                    onClicked: {
-                        displayListView.startEdit(index, 3);
-                    }
-                }
             }
         }
     }
 }
+
 
