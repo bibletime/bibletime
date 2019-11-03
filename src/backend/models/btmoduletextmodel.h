@@ -45,7 +45,11 @@ struct ModuleEntry {
         Text3Role = Qt::UserRole + 5,
         Text4Role = Qt::UserRole + 6,
         Selected = Qt::UserRole + 7,
-        ColumnSelected = Qt::UserRole + 8
+        ColumnSelected = Qt::UserRole + 8,
+        PosFirst = Qt::UserRole + 9,
+        PosLast = Qt::UserRole + 10,
+        SelectFirstIndex = Qt::UserRole + 11,
+        SelectLastIndex = Qt::UserRole + 12
     };
 };
 
@@ -126,7 +130,7 @@ public:
 
     void deSelect();
     bool isSelected();
-    void selectByIndex(int first, int last, int column);
+    void selectByIndex(int first, int last, int column, int posFirst, int posLast);
     int getFirstSelectionIndex() {
         return m_firstSelected;
     }
@@ -204,6 +208,8 @@ private:
     int m_firstSelected;
     int m_lastSelected;
     int m_columnSelected;
+    int m_posFirst;
+    int m_posLast;
     BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;

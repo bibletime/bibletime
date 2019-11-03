@@ -16,83 +16,120 @@ import QtQuick 2.2
 Rectangle {
     id: display
 
+    property int column: 0
     property int contextMenuIndex: btQmlInterface.contextMenuIndex
-    property int leftMousePressIndex: -1
-    property int leftMousePressX: 0
-    property int leftMousePressY: 0
-    property int leftMouseReleaseIndex: -1
     property int dragDistance: 8
+    property int indexFirst: -1
+    property int indexLast: -1
+    property int mouseMovedX: 0
+    property int mouseMovedY: 0
+    property int mousePressedX: 0
+    property int mousePressedY: 0
+    property point mouseLR
+    property point mouseUL
+    property int textPosFirst: -1
+    property int textPosLast: -1
 
     function saveContextMenuIndex(x, y) {
-        contextMenuIndex = displayListView.indexAt(x,y+displayListView.contentY);
+        contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
     function leftMouseMove(x, y) {
-        if (leftMousePressIndex < 0)
+        if (mousePressedX < 0)
             return;
-        if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
+        if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
             return;
         }
-        var moveIndex = displayListView.indexAt(x,y+displayListView.contentY);
-        if (moveIndex < 0)
-            return;
-        var column = Math.floor(x / (displayListView.width / displayListView.columns));
-        btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex, column);
+        mouseMovedX = x;
+        mouseMovedY = y;
+        column = Math.floor(mousePressedX / (listView.width / listView.columns));
+        sortPoints();
+        selectItems();
+        btQmlInterface.selectByIndex(indexFirst, indexLast, column, textPosFirst, textPosLast);
     }
 
     function leftMousePress(x, y) {
-        var item1 = displayListView.itemAt( x,y + displayListView.contentY);
-        var xItem = x - item1.x + displayListView.contentX;
-        var yItem = y - item1.y + displayListView.contentY;
-        var  url = item1.linkAt(xItem, yItem);
+        var item1 = listView.itemAt( x,y + listView.contentY);
 
+        // Transform to item relative point
+        var xItem = x - item1.x + listView.contentX;
+        var yItem = y - item1.y + listView.contentY;
+
+        // If not a cross reference link, save cursor position for later use
+        var  url = item1.linkAt(xItem, yItem);
         if (url === "" || url.includes("lemmamorph") || url.includes("footnote")) {
             // Start selection of items
-            leftMousePressX = x;
-            leftMousePressY = y;
-            leftMousePressIndex = displayListView.indexAt(x,y+displayListView.contentY);
-            leftMouseReleaseIndex = leftMousePressIndex;
+            mousePressedX = x;
+            mousePressedY = y;
+            btQmlInterface.deSelect();
             return;
         }
 
-        // Start drag operation for link
-        var index = displayListView.indexAt( x,y + displayListView.contentY);
+        // Start drag operation for cross reference link
+        var index = listView.indexAt( x,y + listView.contentY);
         btQmlInterface.dragHandler(index, url);
         return;
     }
 
     function leftMouseRelease(x, y) {
-        if (leftMousePressIndex < 0)
+        if (mousePressedX < 0)
             return;
-        if ((Math.abs(leftMousePressX - x) < dragDistance) && (Math.abs(leftMousePressY - y) < dragDistance)) {
-            leftMousePressIndex = -1;
-            if (btQmlInterface.isSelected())
-                btQmlInterface.deSelect();
-            else {
-                openPersonalCommentary(leftMousePressX, leftMousePressY);
-            }
+        if ((Math.abs(mousePressedX - x) > dragDistance) && (Math.abs(mousePressedY - y) > dragDistance)) {
             return;
         }
-        leftMouseReleaseIndex = displayListView.indexAt(x,y+displayListView.contentY);
-        var moveIndex = displayListView.indexAt(x,y+displayListView.contentY);
-        if (moveIndex < 0)
+        openPersonalCommentary(mousePressedX, mousePressedY);
+    }
+
+    function sortPoints() {
+        if (mousePressedX < mouseMovedX) {
+            if (mousePressedY < mouseMovedY) {
+                mouseUL = Qt.point(mousePressedX, mousePressedY);
+                mouseLR = Qt.point(mouseMovedX, mouseMovedY);
+            } else {
+                mouseUL = Qt.point(mousePressedX, mouseMovedY);
+                mouseLR = Qt.point(mouseMovedX, mousePressedY);
+            }
+        } else {
+            if (mousePressedY < mouseMovedY) {
+                mouseUL = Qt.point(mouseMovedX, mousePressedY);
+                mouseLR = Qt.point(mousePressedX, mouseMovedY);
+            } else {
+                mouseUL = Qt.point(mouseMovedX, mouseMovedY);
+                mouseLR = Qt.point(mousePressedX, mousePressedY);
+            }
+        }
+    }
+
+    function selectItems() {
+        var itemFirst = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
+        var itemLast = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
+        if (itemFirst === null || itemLast === null)
             return;
-        var column = Math.floor(x / (displayListView.width / displayListView.columns));
-        btQmlInterface.selectByIndex(leftMousePressIndex, moveIndex, column);
+
+        indexFirst = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
+        indexLast = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
+
+        var textXFirst = listView.contentX + mouseUL.x - itemFirst.x;
+        var textYFirst = listView.contentY + mouseUL.y - itemFirst.y;
+        textPosFirst = itemFirst.positionAt(textXFirst, textYFirst, column);
+
+        var textXLast = listView.contentX + mouseLR.x - itemLast.x;
+        var textYLast = listView.contentY + mouseLR.y - itemLast.y;
+        textPosLast = itemLast.positionAt(textXLast, textYLast, column);
     }
 
     function openPersonalCommentary(x, y) {
-        var index = displayListView.indexAt( x,y + displayListView.contentY);
-        var column = Math.floor(x / (displayListView.width / displayListView.columns));
-        displayListView.startEdit(index, column);
+        var index = listView.indexAt( x,y + listView.contentY);
+        var column = Math.floor(x / (listView.width / listView.columns));
+        listView.startEdit(index, column);
     }
 
     function updateReferenceText() {
-        displayListView.updateReferenceText();
+        listView.updateReferenceText();
     }
 
     function scroll(value) {
-        displayListView.scroll(value);
+        listView.scroll(value);
     }
 
     width: 10
@@ -103,22 +140,22 @@ Rectangle {
         id: btQmlInterface
 
         onPageDownChanged: {
-            displayListView.scroll(displayListView.height * 0.8);
+            listView.scroll(listView.height * 0.8);
             updateReferenceText();
         }
         onPageUpChanged: {
-            displayListView.scroll(displayListView.height * -0.8);
+            listView.scroll(listView.height * -0.8);
             updateReferenceText();
         }
         onPositionItemOnScreen: {
-            displayListView.positionViewAtIndex(index, ListView.Contain);
+            listView.positionViewAtIndex(index, ListView.Contain);
             updateReferenceText();
         }
     }
 
 
     ListView {
-        id: displayListView
+        id: listView
 
         property color textColor: "black"
         property color textBackgroundColor: "white"
@@ -173,8 +210,25 @@ Rectangle {
             Rectangle {
                 id: delegate
                 property int spacing: 2.5 * btQmlInterface.pixelsPerMM
-                property int textWidth: (displayListView.width / displayListView.columns) - (spacing *  ((displayListView.columns+1)/displayListView.columns)  )
+                property int textWidth: (listView.width / listView.columns) - (spacing *  ((listView.columns+1)/listView.columns)  )
                 property int vertSpace: 2 * btQmlInterface.pixelsPerMM
+                property bool updating: false
+
+                function positionAt(x, y, column) {
+                    var textItem
+                    if (column === 0)
+                        textItem = column0Text;
+                    else if (column === 1)
+                        textItem = column1Text;
+                    else if (column === 2)
+                        textItem = column2Text;
+                    else
+                        textItem = column3Text;
+
+                    var xItem = textItem.x;
+                    var position = textItem.positionAt(x - xItem, y);
+                    return position;
+                }
 
                 function linkAt(x, y) {
                     var textItem;
@@ -203,16 +257,64 @@ Rectangle {
                     }
                 }
 
-                color: displayListView.textBackgroundColor
-                width: displayListView.width
+                function getColumnItem(column) {
+                    if (column === 0)
+                        return column0Text;
+                    if (column === 1)
+                        return column1Text;
+                    if (column === 2)
+                        return column2Text;
+                    return column3Text;
+                }
+
+                function selectSingle(posFirst, posLast, columnSelected) {
+                   var item = getColumnItem(columnSelected);
+                    item.select(posFirst, posLast);
+                }
+
+                function selectFirst(posFirst, columnSelected) {
+                    var item = getColumnItem(columnSelected);
+                    item.select(posFirst, item.length);
+                }                    color: listView.textBackgroundColor
+
+
+                function selectLast(posLast, columnSelected) {
+                    var item = getColumnItem(columnSelected);
+                    item.select(0, posLast);
+                }
+
+                function selectAll(columnSelected) {
+                    var item = getColumnItem(columnSelected);
+                    item.selectAll();
+                }
+
+                function setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast) {
+                    if (updating)
+                        return;
+                    updating = true;
+
+                    if (selected) {
+                        if (selectFirstIndex && selectLastIndex)
+                            selectSingle(posFirst, posLast, columnSelected);
+                        else if (selectFirstIndex)
+                            selectFirst(posFirst, columnSelected)
+                        else if (selectLastIndex)
+                            selectLast(posLast, columnSelected)
+                        else
+                            selectAll(columnSelected);
+                    }
+                    updating = false;
+                }
+
+                width: listView.width
                 height: {
-                    if (displayListView.columns == 1)
+                    if (listView.columns == 1)
                         return Math.max(column0Text.height,20) + vertSpace
-                    if (displayListView.columns == 2)
+                    if (listView.columns == 2)
                         return Math.max(column0Text.height, column1Text.height) + vertSpace
-                    if (displayListView.columns == 3)
+                    if (listView.columns == 3)
                         return Math.max(column0Text.height, column1Text.height, column2Text.height) + vertSpace
-                    if (displayListView.columns == 4)
+                    if (listView.columns == 4)
                         return Math.max(column0Text.height, column1Text.height,
                                         column2Text.height, column3Text.height) + vertSpace
                     return 30;
@@ -233,24 +335,28 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column0Text.left
                     anchors.right: column0Text.right
-                    color: (selected && columnSelected === 0) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
+                    color: listView.textBackgroundColor
                 }
 
                 TextEdit {
                     id: column0Text
-                    textFormat: Text.RichText
-                    readOnly: true
-                    text: text1
+
                     anchors.top: parent.top
                     anchors.left: space1.right
                     width: parent.textWidth
-                    color: (selected && columnSelected === 0) ? "white" : displayListView.textColor
+                    text: text1
+                    textFormat: Text.RichText
+                    readOnly: true
+                    color: listView.textColor
                     font.family: btQmlInterface.fontName0
                     font.pointSize: btQmlInterface.fontSize0
                     wrapMode: Text.WordWrap
-                    visible: displayListView.columns > 0
+                    visible: listView.columns > 0
                     z:1
                     onLinkHovered: delegate.hovered(link)
+                    onTextChanged: {
+                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
+                    }
                 }
 
                 Item {
@@ -268,24 +374,28 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column1Text.left
                     anchors.right: column1Text.right
-                    color: (selected && columnSelected === 1) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
+                    color: listView.textBackgroundColor
                 }
 
                 TextEdit {
                     id: column1Text
-                    text: text2
-                    textFormat: Text.RichText
+
                     anchors.top: parent.top
                     anchors.left: space2.right
                     anchors.leftMargin: 0
-                    readOnly: true
                     width: parent.textWidth
-                    color: (selected && columnSelected === 1) ? "white" : displayListView.textColor
+                    text: text2
+                    textFormat: Text.RichText
+                    readOnly: true
+                    color: listView.textColor
                     font.family: btQmlInterface.fontName1
                     font.pointSize: btQmlInterface.fontSize1
                     wrapMode: Text.WordWrap
-                    visible: displayListView.columns > 1
+                    visible: listView.columns > 1
                     onLinkHovered: delegate.hovered(link)
+                    onTextChanged: {
+                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
+                    }
                 }
 
                 Item {
@@ -302,24 +412,29 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column2Text.left
                     anchors.right: column2Text.right
-                    color: (selected && columnSelected === 2) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
+                    color: listView.textBackgroundColor
                 }
 
                 TextEdit {
                     id: column2Text
-                    text: text3
-                    textFormat: Text.RichText
+
                     anchors.top: parent.top
                     anchors.left: space3.right
                     anchors.leftMargin: 0
-                    readOnly: true
                     width: parent.textWidth
-                    color: (selected && columnSelected === 2) ? "white" : displayListView.textColor
+                    text: text3
+                    textFormat: Text.RichText
+                    readOnly: true
+                    color: listView.textColor
                     font.family: btQmlInterface.fontName2
                     font.pointSize: btQmlInterface.fontSize2
                     wrapMode: Text.WordWrap
-                    visible: displayListView.columns > 2
+                    visible: listView.columns > 2
+                    z: 1
                     onLinkHovered: delegate.hovered(link)
+                    onTextChanged: {
+                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
+                    }
                 }
 
                 Item {
@@ -336,24 +451,29 @@ Rectangle {
                     anchors.bottom: delegate.bottom
                     anchors.left: column3Text.left
                     anchors.right: column3Text.right
-                    color: (selected && columnSelected === 3) ? displayListView.selectedBackgroundColor : displayListView.textBackgroundColor
+                    color: listView.textBackgroundColor
                 }
 
                 TextEdit {
                     id: column3Text
-                    text: text4
-                    textFormat: Text.RichText
+
                     anchors.top: parent.top
                     anchors.left: space4.right
                     anchors.leftMargin: 0
-                    readOnly: true
                     width: parent.textWidth
-                    color: (selected && columnSelected === 3) ? "white" : displayListView.textColor
+                    text: text4
+                    textFormat: Text.RichText
+                    readOnly: true
+                    color: listView.textColor
                     font.family: btQmlInterface.fontName3
                     font.pointSize: btQmlInterface.fontSize3
                     wrapMode: Text.WordWrap
-                    visible: displayListView.columns > 3
+                    visible: listView.columns > 3
+                    z: 1
                     onLinkHovered: delegate.hovered(link)
+                    onTextChanged: {
+                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
+                    }
                 }
             }
         }

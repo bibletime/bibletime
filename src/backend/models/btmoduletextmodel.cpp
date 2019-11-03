@@ -59,18 +59,24 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
       m_maxEntries(0),
       m_firstSelected(-1),
       m_lastSelected(-1),
+      m_posFirst(-1),
+      m_posLast(-1),
       m_textFilter(nullptr) {
 
     m_findState.enabled = false;
     QHash<int, QByteArray> roleNames;
-    roleNames[ModuleEntry::ReferenceRole] =  "keyName";
-    roleNames[ModuleEntry::TextRole] = "line";
-    roleNames[ModuleEntry::Text1Role] = "text1";
-    roleNames[ModuleEntry::Text2Role] = "text2";
-    roleNames[ModuleEntry::Text3Role] = "text3";
-    roleNames[ModuleEntry::Text4Role] = "text4";
-    roleNames[ModuleEntry::Selected] = "selected";
-    roleNames[ModuleEntry::ColumnSelected] = "columnSelected";
+    roleNames[ModuleEntry::ReferenceRole] =  "keyName";             // reference
+    roleNames[ModuleEntry::TextRole] = "line";                      // not used
+    roleNames[ModuleEntry::Text1Role] = "text1";                    // text in column 1
+    roleNames[ModuleEntry::Text2Role] = "text2";                    // text in column 2
+    roleNames[ModuleEntry::Text3Role] = "text3";                    // text in column 3
+    roleNames[ModuleEntry::Text4Role] = "text4";                    // text in column 4
+    roleNames[ModuleEntry::Selected] = "selected";                  // bool - This index row is partially or fully selected
+    roleNames[ModuleEntry::ColumnSelected] = "columnSelected";      // which column contains the selected text
+    roleNames[ModuleEntry::PosFirst] = "posFirst";                  // on the first item selected, selection starts here
+    roleNames[ModuleEntry::PosLast] = "posLast";                    // on the last item selected, selection ends here
+    roleNames[ModuleEntry::SelectFirstIndex] = "selectFirstIndex";  // bool - item is first selected item
+    roleNames[ModuleEntry::SelectLastIndex] = "selectLastIndex";    // bool - item is last selected item
     setRoleNames(roleNames);
     m_displayOptions.verseNumbers = 1;
     m_displayOptions.lineBreaks = 1;
@@ -151,18 +157,20 @@ bool BtModuleTextModel::isSelected() {
     return true;
 }
 
-void BtModuleTextModel::selectByIndex(int first, int last, int column) {
-    int tmpFirst = first;
-    int tmpLast = last;
-    if (tmpFirst > tmpLast)
-        std::swap(tmpFirst, tmpLast);
-    if (tmpFirst == m_firstSelected && tmpLast == m_lastSelected && m_columnSelected == column)
+void BtModuleTextModel::selectByIndex(int first, int last, int column, int posFirst, int posLast) {
+    if (m_firstSelected == first &&
+            m_lastSelected == last &&
+            m_columnSelected == column &&
+            m_posFirst == posFirst &&
+            m_posLast == posLast)
         return;
 
     deSelect();
-    m_firstSelected = tmpFirst;
-    m_lastSelected = tmpLast;
+    m_firstSelected = first;
+    m_lastSelected = last;
     m_columnSelected = column;
+    m_posFirst = posFirst;
+    m_posLast = posLast;
     dataChanged(index(m_firstSelected,0), index(m_lastSelected,0));
 }
 
@@ -186,6 +194,24 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
     }
     if (role == ModuleEntry::ColumnSelected) {
         return m_columnSelected;
+    }
+    if (role == ModuleEntry::PosFirst) {
+        if (index.row() == m_firstSelected)
+            return m_posFirst;
+        return -1;
+    }
+    if (role == ModuleEntry::PosLast) {
+        if (index.row() == m_lastSelected)
+            return m_posLast;
+        return -1;
+    }
+
+    if (role == ModuleEntry::SelectFirstIndex) {
+        return index.row() == m_firstSelected;
+    }
+
+    if (role == ModuleEntry::SelectLastIndex) {
+        return index.row() == m_lastSelected;
     }
 
     QString text;

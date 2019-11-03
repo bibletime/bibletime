@@ -703,7 +703,11 @@ bool BtQmlInterface::isSelected() {
     return m_moduleTextModel->isSelected();
 }
 
-void BtQmlInterface::selectByIndex(int first, int last, int column) {
-    m_moduleTextModel->selectByIndex(first, last, column);
+void BtQmlInterface::selectByIndex(int first, int last,
+                                   int column,
+                                   int posFirst, int posLast) {
+    m_moduleTextModel->selectByIndex(first, last,
+                                     column,
+                                     posFirst, posLast);
 }
 

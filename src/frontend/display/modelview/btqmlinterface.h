@@ -83,7 +83,7 @@ public:
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
     Q_INVOKABLE void deSelect();
     Q_INVOKABLE bool isSelected();
-    Q_INVOKABLE void selectByIndex(int first, int last, int column);
+    Q_INVOKABLE void selectByIndex(int first, int last, int column, int textFirst, int textLast);
 
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();
