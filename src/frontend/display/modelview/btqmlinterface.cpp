@@ -447,6 +447,18 @@ int BtQmlInterface::fontSize(int column) const {
     return QApplication::font().pointSize();
 }
 
+QString BtQmlInterface::getSelectedText() {
+
+    QString text;
+    QMap<int, QString>::const_iterator i = m_selectedText.constBegin();
+    while (i != m_selectedText.constEnd()) {
+        text.append(i.value());
+        text.append('\n');
+        ++i;
+    }
+    return text;
+}
+
 QVariant BtQmlInterface::getTextModel() {
     QVariant var;
     var.setValue(m_moduleTextModel);
@@ -697,6 +709,7 @@ void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
 
 void BtQmlInterface::deSelect() {
     m_moduleTextModel->deSelect();
+    clearSelectedText();
 }
 
 bool BtQmlInterface::isSelected() {
@@ -709,5 +722,13 @@ void BtQmlInterface::selectByIndex(int first, int last,
     m_moduleTextModel->selectByIndex(first, last,
                                      column,
                                      posFirst, posLast);
+}
+
+void BtQmlInterface::clearSelectedText() {
+    m_selectedText.clear();
+}
+
+void BtQmlInterface::saveSelectedText(int index, const QString& text) {
+    m_selectedText.insert(index, text);
 }
 

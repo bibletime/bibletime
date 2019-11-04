@@ -115,7 +115,9 @@ void CLexiconReadWindow::initActions() {
                                        displayWidget()->connectionsProxy(),
                                        &CDisplayConnections::copyAll);
 
-    m_actions.copy.referencedText = &ac->action("copyReferencedText");
+    m_actions.copy.selectedText = &ac->action("copySelectedText");
+
+    m_actions.copy.byReferences = &ac->action("copyByReferences");
 
     m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
                                               this,
@@ -244,7 +246,8 @@ void CLexiconReadWindow::setupPopupMenu() {
     popup()->addSeparator();
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
-    m_actions.copyMenu->addAction(m_actions.copy.referencedText);
+    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
+    m_actions.copyMenu->addAction(m_actions.copy.byReferences);
     m_actions.copyMenu->addSeparator();
     m_actions.copyMenu->addAction(m_actions.copy.reference);
     m_actions.copyMenu->addAction(m_actions.copy.entry);
@@ -288,6 +291,8 @@ void CLexiconReadWindow::updatePopupMenu() {
     m_actions.copy.reference->setEnabled(hasActiveAnchor);
 
     m_actions.print.reference->setEnabled(hasActiveAnchor);
+
+    m_actions.copy.selectedText->setEnabled(hasSelectedText());
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {

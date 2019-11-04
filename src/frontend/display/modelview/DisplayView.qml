@@ -213,6 +213,7 @@ Rectangle {
                 property int textWidth: (listView.width / listView.columns) - (spacing *  ((listView.columns+1)/listView.columns)  )
                 property int vertSpace: 2 * btQmlInterface.pixelsPerMM
                 property bool updating: false
+                property string selectedText
 
                 function positionAt(x, y, column) {
                     var textItem
@@ -267,24 +268,20 @@ Rectangle {
                     return column3Text;
                 }
 
-                function selectSingle(posFirst, posLast, columnSelected) {
-                   var item = getColumnItem(columnSelected);
+                function selectSingle(item,posFirst, posLast, columnSelected) {
                     item.select(posFirst, posLast);
                 }
 
-                function selectFirst(posFirst, columnSelected) {
-                    var item = getColumnItem(columnSelected);
+                function selectFirst(item, posFirst, columnSelected) {
                     item.select(posFirst, item.length);
                 }                    color: listView.textBackgroundColor
 
 
-                function selectLast(posLast, columnSelected) {
-                    var item = getColumnItem(columnSelected);
+                function selectLast(item, posLast, columnSelected) {
                     item.select(0, posLast);
                 }
 
-                function selectAll(columnSelected) {
-                    var item = getColumnItem(columnSelected);
+                function selectAll(item, columnSelected) {
                     item.selectAll();
                 }
 
@@ -294,14 +291,16 @@ Rectangle {
                     updating = true;
 
                     if (selected) {
+                        var item = getColumnItem(columnSelected);
                         if (selectFirstIndex && selectLastIndex)
-                            selectSingle(posFirst, posLast, columnSelected);
+                            selectSingle(item, posFirst, posLast, columnSelected);
                         else if (selectFirstIndex)
-                            selectFirst(posFirst, columnSelected)
+                            selectFirst(item, posFirst, columnSelected)
                         else if (selectLastIndex)
-                            selectLast(posLast, columnSelected)
+                            selectLast(item, posLast, columnSelected)
                         else
-                            selectAll(columnSelected);
+                            selectAll(item, columnSelected);
+                        btQmlInterface.saveSelectedText(index, item.selectedText)
                     }
                     updating = false;
                 }

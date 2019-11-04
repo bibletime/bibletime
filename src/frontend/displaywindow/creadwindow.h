@@ -43,7 +43,11 @@ protected: /* Methods: */
 
     void pageUp() override;
 
+    void copySelectedText() override;
+
     void copyByReferences() override;
+
+    bool hasSelectedText() override;
 
 
 protected slots:

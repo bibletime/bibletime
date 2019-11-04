@@ -173,7 +173,11 @@ public:
         return m_actionCollection;
     }
 
+    virtual void copySelectedText() {}
+
     virtual void copyByReferences() {}
+
+    virtual bool hasSelectedText() {}
 
 signals:
     /** The module list was set because backend was reloaded.*/

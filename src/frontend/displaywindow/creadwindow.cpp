@@ -13,6 +13,8 @@
 #include "creadwindow.h"
 #include "../bibletime.h"
 
+#include <QClipboard>
+#include <QGuiApplication>
 #include <QMdiSubWindow>
 #include <QResizeEvent>
 #include "../../backend/keys/cswordkey.h"
@@ -131,6 +133,15 @@ void CReadWindow::pageUp() {
         v->pageUp();
 }
 
+void CReadWindow::copySelectedText() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        QString text = v->qmlInterface()->getSelectedText();
+        QClipboard *clipboard = QGuiApplication::clipboard();
+        clipboard->setText(text);
+    }
+}
+
 void CReadWindow::copyByReferences() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
@@ -148,11 +159,14 @@ void CReadWindow::copyByReferences() {
             v->qmlInterface()->copyVerseRange(dlg.getReference1(), dlg.getReference2(), m);
         } else {
             v->qmlInterface()->copyRange(dlg.getIndex1(), dlg.getIndex2());
-
         }
-
-
     }
 }
 
-
+bool CReadWindow::hasSelectedText() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        auto model = v->qmlInterface()->textModel();
+        return model->hasSelectedText();
+    }
+}

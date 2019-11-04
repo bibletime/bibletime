@@ -36,7 +36,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
           m_keyChooser1(nullptr), m_keyChooser2(nullptr),
           m_moduleTextModel(model), m_buttons(nullptr) {
 
-    setWindowTitle(tr("Copy"));
+    setWindowTitle(tr("Copy by References"));
     setMinimumWidth(400);
 
     QVBoxLayout* vLayout = new QVBoxLayout(this);

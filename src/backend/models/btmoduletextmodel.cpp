@@ -186,6 +186,10 @@ static bool getColumnSelected(int role, int column) {
     return false;
 }
 
+bool BtModuleTextModel::hasSelectedText() {
+    return m_firstSelected >= 0;
+}
+
 QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
 
     bool selected = isSelected(index.row());

@@ -162,7 +162,9 @@ void CBibleReadWindow::initActions() {
                         this,
                         &CBibleReadWindow::copyDisplayedText);
 
-    m_actions.copy.referencedText = &ac->action("copyReferencedText");
+    m_actions.copy.selectedText = &ac->action("copySelectedText");
+
+    m_actions.copy.byReferences = &ac->action("copyByReferences");
 
     m_actions.save.referenceAndText =
             &initAction("saveReferenceWithText",
@@ -215,11 +217,12 @@ void CBibleReadWindow::setupPopupMenu() {
 
     popup()->addSeparator();
 
-    m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
+    m_actions.copyMenu = new QMenu(tr("Copy"), popup());
 
     m_actions.copyMenu->addSeparator();
 
-    m_actions.copyMenu->addAction(m_actions.copy.referencedText);
+    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
+    m_actions.copyMenu->addAction(m_actions.copy.byReferences);
     m_actions.copyMenu->addAction(m_actions.copy.referenceOnly);
     m_actions.copyMenu->addAction(m_actions.copy.referenceTextOnly);
     m_actions.copyMenu->addAction(m_actions.copy.referenceAndText);
@@ -262,6 +265,8 @@ void CBibleReadWindow::updatePopupMenu() {
     m_actions.save.referenceAndText->setEnabled(hasActiveAnchor);
 
     m_actions.print.reference->setEnabled(hasActiveAnchor);
+
+    m_actions.copy.selectedText->setEnabled(hasSelectedText());
 }
 
 /** Moves to the next book. */

@@ -79,9 +79,10 @@ protected:
 
         QMenu* copyMenu;
         struct {
+            QAction* byReferences;
             QAction* reference;
             QAction* entry;
-            QAction* referencedText;
+            QAction* selectedText;
         }
         copy;
 

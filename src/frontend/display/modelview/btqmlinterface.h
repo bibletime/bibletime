@@ -17,6 +17,7 @@
 #include <QFont>
 #include <QList>
 #include <QObject>
+#include <QMap>
 #include <QString>
 #include <QTimer>
 #include "../../../backend/rendering/ctextrendering.h"
@@ -84,6 +85,8 @@ public:
     Q_INVOKABLE void deSelect();
     Q_INVOKABLE bool isSelected();
     Q_INVOKABLE void selectByIndex(int first, int last, int column, int textFirst, int textLast);
+    Q_INVOKABLE void clearSelectedText();
+    Q_INVOKABLE void saveSelectedText(int index, const QString& text);
 
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();
@@ -115,6 +118,7 @@ public:
     bool getPageDown() const;
     bool getPageUp() const;
     double getPixelsPerMM() const;
+    QString getSelectedText();
     QVariant getTextModel();
     bool isBibleOrCommentary();
     BtModuleTextModel * textModel();
@@ -182,6 +186,7 @@ private:
     QString m_activeLink;
     FindState m_findState;
     QTimer m_timer;
+    QMap<int, QString> m_selectedText;
 };
 
 #endif

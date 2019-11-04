@@ -61,6 +61,10 @@ void CDisplayConnections::copySelection() {
     m_display->copy(CDisplay::PlainText, CDisplay::SelectedText);
 }
 
+void CDisplayConnections::copySelectedText() {
+   m_display->copySelectedText();
+}
+
 void CDisplayConnections::copyByReferences() {
    m_display->copyByReferences();
 }
@@ -125,6 +129,10 @@ void CDisplay::setModules(const QStringList& /* modules */) {
 bool CDisplay::copy( const CDisplay::TextType format, const CDisplay::TextPart part  ) {
     QApplication::clipboard()->setText( this->text(format, part) );
     return true;
+}
+
+void CDisplay::copySelectedText() {
+    parentWindow()->copySelectedText();
 }
 
 void CDisplay::copyByReferences() {

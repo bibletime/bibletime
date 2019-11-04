@@ -62,6 +62,10 @@ public:
         */
     virtual bool copy( const CDisplay::TextType format, const CDisplay::TextPart part );
     /**
+      * Copies the selected text
+      */
+    virtual void copySelectedText();
+    /**
       * Copies the given text specified by asking user for first and last references
       */
     virtual void copyByReferences();
@@ -169,6 +173,7 @@ public slots:
                              const FilterOptions &filterOptions);
 
     void copySelection();
+    void copySelectedText();
     void copyByReferences();
     void copyAll();
     void copyAnchorWithText();

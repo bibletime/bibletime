@@ -74,7 +74,8 @@ protected: /* Methods: */
             QAction* referenceTextOnly;
             QAction* referenceAndText;
             QAction* chapter;
-            QAction* referencedText;
+            QAction* selectedText;
+            QAction* byReferences;
         }
         copy;
 

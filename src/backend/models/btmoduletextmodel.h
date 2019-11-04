@@ -142,6 +142,8 @@ public:
         return m_columnSelected;
     }
 
+    bool hasSelectedText();
+
     void setDisplayOptions(const DisplayOptions & displayOptions);
 
 
