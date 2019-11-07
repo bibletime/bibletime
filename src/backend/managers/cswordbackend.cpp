@@ -157,19 +157,25 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
         if (!newModule->hasVersion()
             || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion))
         {
-            m_dataModel.addModule(newModule);
+
+            /* There is currently a deficiency in sword 1.8.1 in that backend->setCipherKey() does
+             * not work correctly for modules from which data was already fetched. Therefore we have to
+             * reload the modules. The cipher key must be set before any read occurs on the module.
+             * Reading from the module can happen in subtle ways. The addModule below causes a read
+             * to determine if the locked or unlocked icon is used by the model.
+             */
+            {
+                if (newModule->isEncrypted()) {
+                    const QString unlockKey = btConfig().getModuleEncryptionKey(newModule->name());
+                    if (!unlockKey.isNull())
+                        setCipherKey(newModule->name().toUtf8().constData(),
+                                     unlockKey.toUtf8().constData());
+                }
+            }
+
+                m_dataModel.addModule(newModule);
         } else {
             delete newModule;
-        }
-    }
-
-    // Unlock modules if keys are present:
-    Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
-        if (mod->isEncrypted()) {
-            const QString unlockKey = btConfig().getModuleEncryptionKey(mod->name());
-            if (!unlockKey.isNull())
-                setCipherKey(mod->name().toUtf8().constData(),
-                             unlockKey.toUtf8().constData());
         }
     }
 

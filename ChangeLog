@@ -1,3 +1,18 @@
+2019-11-06 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #201 - Locked Bible not unlocking properly
+
+2019-09-21 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #189 - Allow selecting text for copying
+
+2019-07-05 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #186 - Problems creating scope with deuterocanonical books
+
+2018-11-16 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #77 - MAG Strongs does not work unless config settings have been saved.
+
+2018-10-17 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #138 - Search with quotes
+
 2018-10-17 Gary Holmlund <gary.holmlund@gmail.com>
     * Add name filter to the Install/Update/Remove works page.
 
