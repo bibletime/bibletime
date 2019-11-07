@@ -137,7 +137,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
     btConfig().setModuleEncryptionKey(m_cachedName, unlockKey);
 
     /// \todo remove this comment once it is no longer needed
-    /* There is currently a deficiency in sword 1.6.1 in that
+    /* There is currently a deficiency in sword 1.8.1 in that
        backend->setCipherKey() does not work correctly for modules from which
        data was already fetched. Therefore we have to reload the modules in
        bibletime.cpp */
@@ -175,6 +175,10 @@ bool CSwordModuleInfo::isEncrypted() const {
 }
 
 bool CSwordModuleInfo::unlockKeyIsValid() const {
+    sword::SWKey * const key = m_module.getKey();
+    sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(key);
+    if (vk)
+        vk->setIntros(false);
     m_module.setPosition(sword::TOP);
 
     /* This needs to use ::fromLatin1 because if the text is still locked, a lot

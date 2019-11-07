@@ -198,7 +198,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
         module->unlock(unlockKey);
 
         /// \todo refactor this module reload
-        /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
+        /* There is currently a deficiency in sword 1.8.1 in that backend->setCipherKey() does
          * not work correctly for modules from which data was already fetched. Therefore we have to
          * reload the modules.
          */
