@@ -283,7 +283,7 @@ CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & descri
 
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
     Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
-        if (mod->name() == name)
+        if (mod->name().compare(name, Qt::CaseInsensitive) == 0)
             return mod;
     return nullptr;
 }
