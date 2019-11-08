@@ -149,6 +149,10 @@ QString CSwordLexiconModuleInfo::normalizeStrongsKey(const QString &key) const {
 
     while (digits.length() < m_strongsDigitsLength)
         digits = "0" +digits;
+
+    while (digits.length() > m_strongsDigitsLength && digits.at(0) == "0")
+        digits = digits.right(digits.length()-1);
+
     QString newKey = digits;
     if (m_hasLeadingStrongsLetter)
         newKey = StrongsChar + digits;
