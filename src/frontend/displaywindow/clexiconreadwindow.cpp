@@ -211,7 +211,9 @@ void CLexiconReadWindow::initToolbars() {
 
 void CLexiconReadWindow::setupMainWindowToolBars() {
     // Navigation toolbar
+    QString keyReference = key()->key();
     CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
+    keyChooser->key()->setKey(keyReference);
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     BT_CONNECT(keyChooser, SIGNAL(keyChanged(CSwordKey *)),
                this,       SLOT(lookupSwordKey(CSwordKey *)));
