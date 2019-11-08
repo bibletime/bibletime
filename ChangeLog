@@ -1,4 +1,7 @@
 2019-11-08 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #194 - Problems with hebrew modules OSHB and OSMHB
+
+2019-11-08 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #200 - Place not being saved in Daily Devotional.
 
 2019-11-06 Gary Holmlund <gary.holmlund@gmail.com>
