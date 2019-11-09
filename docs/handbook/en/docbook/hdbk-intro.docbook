@@ -75,8 +75,8 @@
           </listitem>
         </varlistentry>
       </variablelist>
-      There are several other repositories that &bibletime; can 
-      use.
+      There are several other repositories that &bibletime; will 
+      load and use.
       </para>
     </sect2>
 
