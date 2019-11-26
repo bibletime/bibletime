@@ -1,6 +1,7 @@
 dist: bionic
 language: cpp
 compiler: gcc
+cache: ccache
 
 branches:
   only:
