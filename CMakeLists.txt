@@ -138,6 +138,17 @@ FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
+IF(DEFINED USE_CCACHE)
+    FIND_PROGRAM(CCACHE_EXECUTABLE ccache)
+    IF("${USE_CCACHE}" STREQUAL "REQUIRE" AND NOT CCACHE_EXECUTABLE)
+        MESSAGE(FATAL_ERROR "USE_CCACHE=REQUIRE specified, but ccache not found!")
+    ENDIF()
+    IF(CCACHE_EXECUTABLE)
+        MESSAGE(STATUS "Using ccache: ${CCACHE_EXECUTABLE}")
+        SET_PROPERTY(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_EXECUTABLE}")
+        SET_PROPERTY(GLOBAL PROPERTY RULE_LAUNCH_LINK    "${CCACHE_EXECUTABLE}")
+    ENDIF()
+ENDIF()
 INCLUDE(CheckIPOSupported)
 CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
 MESSAGE(STATUS "Interprocedural optimization support: ${HAVE_IPO}")
