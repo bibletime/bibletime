@@ -1,5 +1,5 @@
 PROJECT(bibletime CXX C)
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 
 
 ######################################################
@@ -138,6 +138,10 @@ FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
+FUNCTION(PREPARE_CXX_TARGET target)
+    TARGET_COMPILE_FEATURES("${target}" PUBLIC cxx_std_11)
+    SET_TARGET_PROPERTIES("${target}" PROPERTIES CXX_EXTENSIONS NO)
+ENDFUNCTION()
 SET(CMAKE_AUTOMOC ON)
 ADD_DEFINITIONS("-DBT_VERSION=\"${BT_VERSION_FULL}\"")
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
@@ -147,7 +151,7 @@ IF(WIN32)
     ADD_COMPILE_OPTIONS("/Zi")
 ELSE()
     ADD_COMPILE_OPTIONS(
-        "-std=c++11" "-ggdb" "-Wall" "-Wextra"
+        "-ggdb" "-Wall" "-Wextra"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-O2>"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
@@ -222,6 +226,7 @@ FILE(GLOB_RECURSE bibletime_BACKEND_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/util/*.h"
 )
 ADD_LIBRARY(bibletime_backend STATIC ${bibletime_BACKEND_SOURCES})
+PREPARE_CXX_TARGET(bibletime_backend)
 TARGET_COMPILE_DEFINITIONS(bibletime_backend PRIVATE ${CLucene_DEFINITIONS})
 TARGET_COMPILE_OPTIONS(bibletime_backend
     PUBLIC
@@ -263,6 +268,7 @@ ELSEIF(MSVC)
 ELSE()
     ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
 ENDIF()
+PREPARE_CXX_TARGET(bibletime)
 IF(APPLE)
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
 ELSE()
