@@ -2,8 +2,23 @@ SET(TS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages")
 SET(TS_PREFIX "bibletime_ui_")
 FILE(GLOB TS_FILES "${TS_DIR}/${TS_PREFIX}*.ts")
 
-GET_TARGET_PROPERTY(QT_LUPDATE_EXECUTABLE Qt5::lupdate IMPORTED_LOCATION)
-GET_TARGET_PROPERTY(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
+IF(Qt5LinguistTools_FOUND)
+    GET_TARGET_PROPERTY(QT_LUPDATE_EXECUTABLE Qt5::lupdate IMPORTED_LOCATION)
+    GET_TARGET_PROPERTY(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
+ELSE()
+    FIND_PROGRAM(QT_LUPDATE_EXECUTABLE lupdate
+        PATHS
+            /usr/bin/
+            /usr/lib/qt5/bin/
+            /usr/lib/x86_64-linux-gnu/qt5/bin/
+    )
+    FIND_PROGRAM(QT_LRELEASE_EXECUTABLE lrelease
+        PATHS
+            /usr/bin/
+            /usr/lib/qt5/bin/
+            /usr/lib/x86_64-linux-gnu/qt5/bin/
+    )
+ENDIF()
 
 # Update source catalog files (this is the basis for the translator's work)
 # Invoke this with "make messages"
