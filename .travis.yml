@@ -137,7 +137,7 @@ matrix:
         apt:
           sources:
             - sourceline: ppa:ubuntu-toolchain-r/test
-            - llvm-toolchain-bionic-8.0
+            - llvm-toolchain-bionic-8
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - clang-8.0
