@@ -96,7 +96,7 @@ matrix:
     - addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - sourceline: ppa:ubuntu-toolchain-r/test
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - gcc-8
@@ -115,7 +115,7 @@ matrix:
     - addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - sourceline: ppa:ubuntu-toolchain-r/test
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - gcc-9
@@ -134,7 +134,7 @@ matrix:
     - addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - sourceline: ppa:ubuntu-toolchain-r/test
             - llvm-toolchain-bionic-8.0
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
