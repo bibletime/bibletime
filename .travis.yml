@@ -67,7 +67,7 @@ matrix:
             - g++
             - cmake
             - libclucene-dev
-            - libdrm-dev
+            - mesa-common-dev-dev
             - qt512base
             - qt512declarative
             - qt512svg
@@ -84,7 +84,7 @@ matrix:
             - clang
             - cmake
             - libclucene-dev
-            - libdrm-dev
+            - mesa-common-dev-dev
             - qt512base
             - qt512declarative
             - qt512svg
@@ -103,7 +103,7 @@ matrix:
             - g++-8
             - cmake
             - libclucene-dev
-            - libdrm-dev
+            - mesa-common-dev-dev
             - qt512base
             - qt512declarative
             - qt512svg
@@ -122,7 +122,7 @@ matrix:
             - g++-9
             - cmake
             - libclucene-dev
-            - libdrm-dev
+            - mesa-common-dev-dev
             - qt512base
             - qt512declarative
             - qt512svg
@@ -142,7 +142,7 @@ matrix:
             - llvm-8.0-dev
             - cmake
             - libclucene-dev
-            - libdrm-dev
+            - mesa-common-dev-dev
             - qt512base
             - qt512declarative
             - qt512svg
