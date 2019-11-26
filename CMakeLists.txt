@@ -138,9 +138,16 @@ FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
+INCLUDE(CheckIPOSupported)
+CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
+MESSAGE(STATUS "Interprocedural optimization support: ${HAVE_IPO}")
 FUNCTION(PREPARE_CXX_TARGET target)
     TARGET_COMPILE_FEATURES("${target}" PUBLIC cxx_std_11)
     SET_TARGET_PROPERTIES("${target}" PROPERTIES CXX_EXTENSIONS NO)
+    IF(HAVE_IPO)
+        SET_TARGET_PROPERTIES("${target}" PROPERTIES
+            INTERPROCEDURAL_OPTIMIZATION TRUE)
+    ENDIF()
 ENDFUNCTION()
 SET(CMAKE_AUTOMOC ON)
 ADD_DEFINITIONS("-DBT_VERSION=\"${BT_VERSION_FULL}\"")
