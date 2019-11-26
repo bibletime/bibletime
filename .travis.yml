@@ -142,6 +142,7 @@ matrix:
         apt:
           sources:
             - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-7 main'
+              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - clang-7.0
@@ -161,6 +162,7 @@ matrix:
         apt:
           sources:
             - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main'
+              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - clang-8.0
@@ -180,6 +182,7 @@ matrix:
         apt:
           sources:
             - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-9 main'
+              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - clang-9.0
