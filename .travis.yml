@@ -1,5 +1,5 @@
 sudo: false
-dist: trusty
+dist: bionic
 language: cpp
 compiler: gcc
 
@@ -14,7 +14,7 @@ os:
 
 before_install:
   - eval "${MATRIX_EVAL}"
-  - source /opt/qt59/bin/qt59-env.sh
+  - [ -f /opt/qt512/bin/qt512-env.sh ] && source /opt/qt512/bin/qt512-env.sh
   - ./tests/scripts/install-sword.sh -j2
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
@@ -32,166 +32,121 @@ matrix:
   include:
     - addons:
         apt:
-          sources:
-            - sourceline: ppa:beineri/opt-qt595-trusty
           packages:
+            - gcc
+            - g++
             - cmake
             - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
+            - libqt5svg5-dev
+            - libqt5xmlpatterns5-dev
+            - qtbase5-dev
+            - qtbase5-dev-tools
+            - qtdeclarative5-dev
+            - qtwebengine5-dev
+      env:
+        - MATRIX_EVAL="CC=gcc CXX=g++"
+    - addons:
+        apt:
+          packages:
+            - clang
+            - cmake
+            - libclucene-dev
+            - libqt5svg5-dev
+            - libqt5xmlpatterns5-dev
+            - qtbase5-dev
+            - qtbase5-dev-tools
+            - qtdeclarative5-dev
+            - qtwebengine5-dev
+      env:
+        - MATRIX_EVAL="CC=clang CXX=clang++"
+    - addons:
+        apt:
+          sources:
+            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
+          packages:
+            - gcc
+            - g++
+            - cmake
+            - libclucene-dev
+            - qt512base
+            - qt512declarative
+            - qt512svg
+            - qt512webengine
+            - qt512xmlpatterns
+            - qt512tools
       env:
         - MATRIX_EVAL="CC=gcc CXX=g++"
     - addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
-            - sourceline: ppa:beineri/opt-qt595-trusty
+            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
-            - gcc-4.9
-            - g++-4.9
+            - clang
             - cmake
             - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
+            - qt512base
+            - qt512declarative
+            - qt512svg
+            - qt512webengine
+            - qt512xmlpatterns
+            - qt512tools
       env:
-        - MATRIX_EVAL="CC=gcc-4.9 CXX=g++-4.9"
+        - MATRIX_EVAL="CC=clang CXX=clang++"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - sourceline: ppa:beineri/opt-qt595-trusty
-          packages:
-            - gcc-5
-            - g++-5
-            - cmake
-            - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
-      env:
-        - MATRIX_EVAL="CC=gcc-5 CXX=g++-5"
-    - addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - sourceline: ppa:beineri/opt-qt595-trusty
-          packages:
-            - gcc-6
-            - g++-6
-            - cmake
-            - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
-      env:
-        - MATRIX_EVAL="CC=gcc-6 CXX=g++-6"
-    - addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - sourceline: ppa:beineri/opt-qt595-trusty
-          packages:
-            - gcc-7
-            - g++-7
-            - cmake
-            - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
-      env:
-        - MATRIX_EVAL="CC=gcc-7 CXX=g++-7"
-    - addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - sourceline: ppa:beineri/opt-qt595-trusty
+            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
             - gcc-8
             - g++-8
             - cmake
             - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
+            - qt512base
+            - qt512declarative
+            - qt512svg
+            - qt512webengine
+            - qt512xmlpatterns
+            - qt512tools
       env:
         - MATRIX_EVAL="CC=gcc-8 CXX=g++-8"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-4.0
-            - sourceline: ppa:beineri/opt-qt595-trusty
+            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
-            - clang-4.0
-            - llvm-4.0-dev
+            - gcc-9
+            - g++-9
             - cmake
             - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
+            - qt512base
+            - qt512declarative
+            - qt512svg
+            - qt512webengine
+            - qt512xmlpatterns
+            - qt512tools
       env:
-        - MATRIX_EVAL="CC=clang-4.0 CXX=clang++-4.0"
+        - MATRIX_EVAL="CC=gcc-9 CXX=g++-9"
     - addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-5.0
-            - sourceline: ppa:beineri/opt-qt595-trusty
+            - llvm-toolchain-bionic-8.0
+            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
-            - clang-5.0
-            - llvm-5.0-dev
+            - clang-8.0
+            - llvm-8.0-dev
             - cmake
             - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
+            - qt512base
+            - qt512declarative
+            - qt512svg
+            - qt512webengine
+            - qt512xmlpatterns
+            - qt512tools
       env:
-        - MATRIX_EVAL="CC=clang-5.0 CXX=clang++-5.0"
-    - addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-6.0
-            - sourceline: ppa:beineri/opt-qt595-trusty
-          packages:
-            - clang-6.0
-            - llvm-6.0-dev
-            - cmake
-            - libclucene-dev
-            - qt59base
-            - qt59declarative
-            - qt59svg
-            - qt59webengine
-            - qt59xmlpatterns
-            - qt59tools
-      env:
-        - MATRIX_EVAL="CC=clang-6.0 CXX=clang++-6.0"
+        - MATRIX_EVAL="CC=clang-8.0 CXX=clang++-8.0"
 
 addons:
   coverity_scan:
