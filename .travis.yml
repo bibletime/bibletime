@@ -15,11 +15,11 @@ os:
 before_install:
   - eval "${MATRIX_EVAL}"
   - test ! -f /opt/qt512/bin/qt512-env.sh || source /opt/qt512/bin/qt512-env.sh
-  - ./tests/scripts/install-sword.sh -j2
+  - ./tests/scripts/install-sword.sh -j2 VERBOSE=1
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
 script:
-  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=REQUIRE -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 && make install; fi
+  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=REQUIRE -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
 
 env:
   global:
