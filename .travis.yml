@@ -157,7 +157,7 @@ matrix:
             - qt512xmlpatterns
             - qt512tools
       env:
-        - MATRIX_EVAL="CC=clang-7.0 CXX=clang++-7.0"
+        - MATRIX_EVAL="CC=clang-7 CXX=clang++-7"
     - addons:
         apt:
           sources:
@@ -177,7 +177,7 @@ matrix:
             - qt512xmlpatterns
             - qt512tools
       env:
-        - MATRIX_EVAL="CC=clang-8.0 CXX=clang++-8.0"
+        - MATRIX_EVAL="CC=clang-8 CXX=clang++-8"
     - addons:
         apt:
           sources:
@@ -197,7 +197,7 @@ matrix:
             - qt512xmlpatterns
             - qt512tools
       env:
-        - MATRIX_EVAL="CC=clang-9.0 CXX=clang++-9.0"
+        - MATRIX_EVAL="CC=clang-9 CXX=clang++-9"
 
 addons:
   coverity_scan:
