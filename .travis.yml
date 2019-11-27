@@ -145,7 +145,7 @@ matrix:
               key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
-            - clang-7.0
+            - clang-7
             - cmake
             - libclucene-dev
             - libglvnd-dev
@@ -165,7 +165,7 @@ matrix:
               key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
-            - clang-8.0
+            - clang-8
             - cmake
             - libclucene-dev
             - libglvnd-dev
@@ -185,7 +185,7 @@ matrix:
               key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
           packages:
-            - clang-9.0
+            - clang-9
             - cmake
             - libclucene-dev
             - libglvnd-dev
