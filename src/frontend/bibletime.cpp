@@ -71,6 +71,8 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
     QSplashScreen *splash = nullptr;
     QString splashHtml;
+    static constexpr auto const splashTextAlignment =
+            Qt::AlignHCenter | Qt::AlignTop;
 
     if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
@@ -92,7 +94,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
         splash->setAttribute(Qt::WA_DeleteOnClose);
         splash->finish(this);
         splash->showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
-                            Qt::AlignCenter);
+                            splashTextAlignment);
         splash->show();
         qApp->processEvents();
     }
@@ -100,14 +102,14 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
     if (splash != nullptr) {
         splash->showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
-                            Qt::AlignCenter);
+                            splashTextAlignment);
         qApp->processEvents();
     }
     initView();
 
     if (splash != nullptr) {
         splash->showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
-                            Qt::AlignCenter);
+                            splashTextAlignment);
         qApp->processEvents();
     }
     initActions();
