@@ -1,6 +1,10 @@
 /**
  * Theme by BibleTime - www.bibletime.info *
  */
+
+/* Fix color common color conflicts with desktop themes: */
+* { background-color: #fff; color: #000; }
+
 #content {
     margin:10px;
 }

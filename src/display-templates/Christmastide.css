@@ -2,6 +2,9 @@
  * Theme by tabthorpe@FreeBSD.org *
  */
 
+/* Fix color common color conflicts with desktop themes: */
+* { background-color: #fff; color: #000; }
+
 #content {
     margin: 5px;
 }
