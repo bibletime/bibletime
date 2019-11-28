@@ -54,6 +54,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
     BT_CONNECT(m_textBrowser, SIGNAL(anchorClicked(const QUrl&)),
                this, SLOT(lookupInfo(const QUrl&)));
     layout->addWidget(m_textBrowser);
+    m_textBrowser->setStyleSheet("background-color: white;");
     unsetInfo();
 }
 
