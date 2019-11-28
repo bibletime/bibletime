@@ -27,7 +27,7 @@
 
 CReadDisplay::CReadDisplay(CReadWindow* readWindow) :
     CDisplay(readWindow),
-    m_activeAnchor(QString::null),
+    m_activeAnchor(QString()),
     m_useMouseTracking(true) {}
 
 /** Returns the current active anchor. */
@@ -57,7 +57,7 @@ void CReadDisplay::print(const CDisplay::TextPart type,
     const CSwordModuleInfo *module = key->module();
 
     const CDisplayWindow *displayWindow = parentWindow();
-    CExportManager mgr(false, QString::null, displayWindow->filterOptions(), displayWindow->displayOptions());
+    CExportManager mgr(false, QString(), displayWindow->filterOptions(), displayWindow->displayOptions());
 
     switch (type) {
     case Document: {

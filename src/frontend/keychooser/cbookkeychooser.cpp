@@ -227,7 +227,7 @@ void CBookKeyChooser::setupCombo(const QString & key,
 
     QStringList items;
     if (depth > 0)
-        items.append(QString::null); // Insert an empty item at the top
+        items.append(QString()); // Insert an empty item at the top
 
     do {
         items.append(tmpKey.getLocalNameUnicode());

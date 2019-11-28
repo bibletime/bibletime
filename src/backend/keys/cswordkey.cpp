@@ -34,14 +34,14 @@ const QTextCodec * CSwordKey::m_cp1252Codec = QTextCodec::codecForName("Windows-
 
 QString CSwordKey::rawText() {
     if (!m_module)
-        return QString::null;
+        return QString();
 
     auto & m = m_module->module();
     if (dynamic_cast<sword::SWKey *>(this))
         m.getKey()->setText( rawKey() );
 
     if (key().isNull())
-        return QString::null;
+        return QString();
 
     return QString::fromUtf8(m.getRawEntry());
 }
@@ -68,18 +68,18 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
                 && !strstr(m.getKey()->getText(), rawKey()))
             {
                 qDebug("return an empty key for %s", m.getKey()->getText());
-                return QString::null;
+                return QString();
             }
         }
     }
 
     if (key().isNull())
-        return QString::null;
+        return QString();
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
     QString text = QString::fromUtf8(m.renderText(nullptr, -1, DoRender));
     if (!DoRender)
-        return QString::null;
+        return QString();
 
     // This is yucky, but if we want strong lexicon refs we have to do it here.
     if (m_module->type() == CSwordModuleInfo::Lexicon) {
@@ -130,7 +130,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
 
 QString CSwordKey::strippedText() {
     if (!m_module)
-        return QString::null;
+        return QString();
 
     auto & m = m_module->module();
     if (dynamic_cast<sword::SWKey*>(this)) {

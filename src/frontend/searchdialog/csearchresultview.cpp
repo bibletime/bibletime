@@ -260,7 +260,7 @@ void CSearchResultView::copyItemsWithText() {
 //
 //     Q3PtrList<Q3ListViewItem> items = selectedItems();
 //     for (items.first(); items.current(); items.next()) {
-//         dndItems.append( CDragDropMgr::Item(m_module->name(), items.current()->text(0), QString::null) ); //no description
+//         dndItems.append( CDragDropMgr::Item(m_module->name(), items.current()->text(0), QString()) ); //no description
 //     };
 //
 //     return CDragDropMgr::dragObject(dndItems, viewport());
@@ -268,9 +268,9 @@ void CSearchResultView::copyItemsWithText() {
 
 
 QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items ) const {
-    BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString::null);
+    BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString());
     Q_FOREACH(QTreeWidgetItem const * const i, items)
-        mdata->appendBookmark(m_module->name(), i->text(0), QString::null);
+        mdata->appendBookmark(m_module->name(), i->text(0), QString());
     return mdata;
 }
 

@@ -35,8 +35,8 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
         m_moduleList(),
         m_key( key ),
         m_childList(),
-        m_stopKey( QString::null ),
-        m_alternativeContent( QString::null ) {
+        m_stopKey( QString() ),
+        m_alternativeContent( QString() ) {
     m_moduleList.append( const_cast<CSwordModuleInfo*>(module) ); //BAD CODE
 }
 
@@ -44,9 +44,9 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &content,
                                          const Settings &settings)
         : m_settings( settings ),
         m_moduleList(),
-        m_key( QString::null ),
+        m_key( QString() ),
         m_childList(),
-        m_stopKey( QString::null ),
+        m_stopKey( QString() ),
         m_alternativeContent( content ) {
 }
 
@@ -57,17 +57,17 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
         m_moduleList( mods ),
         m_key( key ),
         m_childList(),
-        m_stopKey( QString::null ),
-        m_alternativeContent( QString::null ) {
+        m_stopKey( QString() ),
+        m_alternativeContent( QString() ) {
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem()
         : m_settings(),
         m_moduleList(),
-        m_key(QString::null),
+        m_key(QString()),
         m_childList(),
-        m_stopKey(QString::null),
-        m_alternativeContent(QString::null) {
+        m_stopKey(QString()),
+        m_alternativeContent(QString()) {
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
@@ -94,7 +94,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
         m_key( startKey ),
         m_childList(),
         m_stopKey( stopKey ),
-        m_alternativeContent( QString::null ) {
+        m_alternativeContent( QString() ) {
     BT_ASSERT(module);
     m_moduleList.append(module);
 
@@ -274,7 +274,7 @@ const QString CTextRendering::renderKeyRange(
         return renderKeyTree(tree);
     }
 
-    return QString::null;
+    return QString();
 }
 
 const QString CTextRendering::renderSingleKey(

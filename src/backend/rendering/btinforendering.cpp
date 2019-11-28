@@ -47,7 +47,7 @@ public:
 
         switch (item.settings().keyRenderingFace) {
             case KeyTreeItem::Settings::NoKey: {
-                linkText = QString::null;
+                linkText = QString();
                 break; //no key is valid for all modules
             }
             case KeyTreeItem::Settings::CompleteShort: {
@@ -90,7 +90,7 @@ public:
                    .arg(linkText);
         }
 
-        return QString::null;
+        return QString();
     }
 
     QString finishText(const QString &text, const KeyTree &tree) override {
@@ -328,7 +328,7 @@ QString decodeFootnote(QString const & data) {
     QStringList list = data.split("/");
     BT_ASSERT(list.count() >= 3);
     if (!list.count())
-        return QString::null;
+        return QString();
 
     FilterOptions filterOpts;
     filterOpts.footnotes   = true;
@@ -344,7 +344,7 @@ QString decodeFootnote(QString const & data) {
 
     CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByName(modulename);
     if (!module)
-        return QString::null;
+        return QString();
 
     QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
     key->setKey(keyname);
@@ -527,12 +527,12 @@ QString decodeSwordReference(QString const & data) {
 QString getWordTranslation(QString const & data) {
     CSwordModuleInfo * const module = btConfig().getDefaultSwordModuleByType("standardLexicon");
     if (!module)
-        return QString::null;
+        return QString();
 
     QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
     key->setKey(data);
     if (key->key().toUpper() != data.toUpper()) //key not present in the lexicon
-        return QString::null;
+        return QString();
 
     return QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                   .arg(module->language()->abbrev())

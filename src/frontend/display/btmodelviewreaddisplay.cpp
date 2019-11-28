@@ -122,7 +122,7 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
 
             return key->strippedText();
         }
-        return QString::null;
+        return QString();
     }
 
     case AnchorWithText: {
@@ -148,12 +148,12 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
                     .arg(key->key())
                     .arg(key->module()->name());*/
         }
-        return QString::null;
+        return QString();
     }
     default:
         break;
     }
-    return QString::null;
+    return QString();
 
 }
 
@@ -267,7 +267,7 @@ void BtModelViewReadDisplay::slotUpdateReference(const QString& reference) {
 
 void BtModelViewReadDisplay::slotDragOccuring(const QString& moduleName, const QString& keyName) {
     QDrag* drag = new QDrag(this);
-    BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);
+    BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString());
     drag->setMimeData(mimedata);
     //add real Bible text from module/key
     if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {

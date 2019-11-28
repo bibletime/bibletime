@@ -118,7 +118,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
 #define STANDARD_WORKS_COMBO_ADD(name) \
     comboList.append(m_ ## name ## Combo); \
     m = btConfig().getDefaultSwordModuleByType(#name); \
-    moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+    moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString());
 
         STANDARD_WORKS_COMBO_ADD(standardBible);
         STANDARD_WORKS_COMBO_ADD(standardCommentary);
@@ -129,7 +129,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
         STANDARD_WORKS_COMBO_ADD(standardHebrewMorphLexicon);
         STANDARD_WORKS_COMBO_ADD(standardGreekMorphLexicon);
 
-    QString module = QString::null;
+    QString module = QString();
     int item = 0;
     int count = 0;
     QListIterator<QComboBox*> it(comboList);

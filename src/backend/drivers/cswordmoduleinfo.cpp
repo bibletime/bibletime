@@ -688,19 +688,19 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
 
         case GlossaryFrom: {
             if (m_cachedCategory != Glossary)
-                return QString::null;
+                return QString();
 
             const QString lang(getSimpleConfigEntry("GlossaryFrom"));
-            return lang.isEmpty() ? QString::null : lang;
+            return lang.isEmpty() ? QString() : lang;
         }
 
         case GlossaryTo: {
             if (m_cachedCategory != Glossary) {
-                return QString::null;
+                return QString();
             };
 
             const QString lang(getSimpleConfigEntry("GlossaryTo"));
-            return lang.isEmpty() ? QString::null : lang;
+            return lang.isEmpty() ? QString() : lang;
         }
 
         case Markup: {
@@ -739,7 +739,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
             return getFormattedConfigEntry("CopyrightContactEmail");
 
         default:
-            return QString::null;
+            return QString();
     }
 }
 
@@ -1018,7 +1018,7 @@ QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
                   ? QString::fromUtf8(m_module.getConfigEntry(name.toUtf8().constData()))
                   : QString::fromLatin1(m_module.getConfigEntry(name.toUtf8().constData()));
 
-    return ret.isEmpty() ? QString::null : ret;
+    return ret.isEmpty() ? QString() : ret;
 }
 
 /// \note See http://www.crosswire.org/wiki/DevTools:conf_Files#Localization
@@ -1037,7 +1037,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
                    : QString::fromLatin1(RTF_Buffer.c_str());
         }
     }
-    return QString::null;
+    return QString();
 }
 
 bool CSwordModuleInfo::setHidden(bool hide) {

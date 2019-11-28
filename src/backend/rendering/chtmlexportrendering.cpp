@@ -100,7 +100,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
 
         isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
-        entry = QString::null;
+        entry = QString();
 
         auto & swModule = modulePtr->module();
         if (modulePtr->language()->isValid()) {

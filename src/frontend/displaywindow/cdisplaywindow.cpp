@@ -122,7 +122,7 @@ void CDisplayWindow::windowActivated() {
 /** Returns the right window caption. */
 const QString CDisplayWindow::windowCaption() {
     if (!m_modules.count()) {
-        return QString::null;
+        return QString();
     }
 
     return QString(key()->key()).append(" (").append(m_modules.join(" | ")).append(")");

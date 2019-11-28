@@ -151,7 +151,7 @@ class CTextRendering {
                 const QString &start,
                 const QString &stop,
                 const BtConstModuleList &modules,
-                const QString &hightlightKey = QString::null,
+                const QString &hightlightKey = QString(),
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
         const QString renderSingleKey(

@@ -24,7 +24,7 @@
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
 const QString ReferenceManager::encodeHyperlink( const QString moduleName, const QString key, const ReferenceManager::Type type) {
-    QString ret = QString::null;
+    QString ret = QString();
 
     switch (type) {
 
@@ -64,8 +64,8 @@ const QString ReferenceManager::encodeHyperlink( const QString moduleName, const
     }
 
     if (type == GenericBook) {
-        const QString s = (!key.isEmpty() ? key : QString::null);
-        QString newKey = QString::null;
+        const QString s = (!key.isEmpty() ? key : QString());
+        QString newKey = QString();
         //replace all / of the key (e.g. of a CSwordTreeKey) with
         // the escape sequence \/ so we know it's a link internal divider (e.g. of CSwordTreeKey)!
 
@@ -118,8 +118,8 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
     /**
     * We have to decide between three types of URLS: sword://Type/Module/Key, morph://Testament/key and strongs://Testament/Key
     */
-    module = QString::null;
-    key = QString::null;
+    module = QString();
+    key = QString();
 
     type = Unknown; //not yet known
     QString ref = hyperlink;
@@ -250,7 +250,7 @@ bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
 
 /** Returns the preferred module name for the given type. */
 const QString ReferenceManager::preferredModule( const ReferenceManager::Type type ) {
-    QString moduleName = QString::null;
+    QString moduleName = QString();
     CSwordModuleInfo* module = nullptr;
 
     switch (type) {
@@ -281,7 +281,7 @@ const QString ReferenceManager::preferredModule( const ReferenceManager::Type ty
             break;
     }
 
-    return module ? module->name() : QString::null;
+    return module ? module->name() : QString();
 }
 
 /** No descriptions */
@@ -318,7 +318,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
 
     if ((mod->type() != CSwordModuleInfo::Bible) && (mod->type() != CSwordModuleInfo::Commentary)) {
         qDebug() << "CReferenceManager: Only verse based modules are supported as ref destination module";
-        return QString::null;
+        return QString();
     }
 
     QString sourceLanguage = options.sourceLanguage;

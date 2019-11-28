@@ -62,7 +62,7 @@ class CDisplayTemplateMgr {
 
         /**
           \param[out] errorMessage Set to error string on error, otherwise set
-                                   to QString::null.
+                                   to QString().
         */
         explicit CDisplayTemplateMgr(QString & errorMessage);
 

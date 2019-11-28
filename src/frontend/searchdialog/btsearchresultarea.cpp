@@ -382,7 +382,7 @@ QString StrongsResultList::getStrongsNumberText(const QString &verseContent,
             index += 6; // 6 is the length of "lemma="
         }
     }
-    return QString::null;
+    return QString();
 }
 
 

@@ -131,7 +131,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
     }
 
     //return QString::fromUtf8( books[min][0].name ); //return the first book, i.e. Genesis
-    return QString::null;
+    return QString();
 }
 
 /** Sets the key we use to the parameter. */

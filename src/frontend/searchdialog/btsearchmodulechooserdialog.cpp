@@ -49,7 +49,7 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
 
 void BtSearchModuleChooserDialog::retranslateUi() {
     setWindowTitle(tr("Works to Search in"));
-    util::tool::initExplanationLabel(label(), QString::null,
+    util::tool::initExplanationLabel(label(), QString(),
                                      tr("Select the works which should be searched."));
 }
 

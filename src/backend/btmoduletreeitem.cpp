@@ -140,7 +140,7 @@ void BTModuleTreeItem::add_items(QList<BTModuleTreeItem::Filter*>& filters) {
             }
 
             // the parent group for module has been set above, now just add the module to it
-            new BTModuleTreeItem(parentGroupForModule, QString::null, BTModuleTreeItem::Module, info);
+            new BTModuleTreeItem(parentGroupForModule, QString(), BTModuleTreeItem::Module, info);
 
         } // end: if (included)
     }

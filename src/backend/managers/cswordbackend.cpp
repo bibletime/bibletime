@@ -322,7 +322,7 @@ QString CSwordBackend::optionName(const CSwordModuleInfo::FilterTypes option) {
         case CSwordModuleInfo::morphSegmentation:
             return "Morph Segmentation";
     }
-    return QString::null;
+    return QString();
 }
 
 QString CSwordBackend::translatedOptionName(const CSwordModuleInfo::FilterTypes option) {
@@ -352,7 +352,7 @@ QString CSwordBackend::translatedOptionName(const CSwordModuleInfo::FilterTypes 
         case CSwordModuleInfo::morphSegmentation:
             return QObject::tr("Morph segmentation");
     }
-    return QString::null;
+    return QString();
 }
 
 
@@ -383,7 +383,7 @@ QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes opti
         case CSwordModuleInfo::morphSegmentation:
             return "MorphSegmentation";
     }
-    return QString::null;
+    return QString();
 }
 
 const QString CSwordBackend::booknameLanguage(const QString & language) {

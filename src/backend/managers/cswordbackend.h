@@ -146,7 +146,7 @@ public: /* Methods: */
       \param[in] langName The abbreviation string which should be used for the
                           Sword backend.
     */
-    const QString booknameLanguage(const QString & langName = QString::null);
+    const QString booknameLanguage(const QString & langName = QString());
 
     /**
       \brief Searches for a module with the given description.

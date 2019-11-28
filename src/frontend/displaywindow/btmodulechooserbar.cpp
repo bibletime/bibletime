@@ -40,7 +40,7 @@ void BtModuleChooserBar::slotBackendModulesChanged() {
     for (int i = 0; i < m_buttonList.count(); i++)
         m_buttonList.at(i)->recreateMenu(m_modules,
                                          (i >= m_modules.count())
-                                         ? QString::null
+                                         ? QString()
                                          : m_modules.at(i),
                                          i,
                                          leftLikeModules);
@@ -126,7 +126,7 @@ void BtModuleChooserBar::updateButtonMenus() {
     for (int i = 0; i < m_buttonList.count(); i++)
         m_buttonList.at(i)->updateMenu(m_modules,
                                        (i >= m_modules.count())
-                                       ? QString::null
+                                       ? QString()
                                        : m_modules.at(i),
                                        i,
                                        leftLikeModules);

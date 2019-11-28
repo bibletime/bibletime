@@ -39,7 +39,7 @@ private: /* Types: */
     public:
 
         inline RangeItem(const QString &caption,
-                         const QString &range = QString::null,
+                         const QString &range = QString(),
                          QListWidget * parent = nullptr)
             : QListWidgetItem(caption, parent)
             , m_range(range) {}

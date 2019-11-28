@@ -41,7 +41,7 @@ public: /* Types: */
 public: /* Methods: */
 
     CExportManager(const bool showProgress = true,
-                   const QString &progressLabel = QString::null,
+                   const QString &progressLabel = QString(),
                    const FilterOptions &filterOptions = btConfig().getFilterOptions(),
                    const DisplayOptions &displayOptions = btConfig().getDisplayOptions());
     ~CExportManager();

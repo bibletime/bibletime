@@ -324,7 +324,7 @@ private: /* Fields: */
     /** List of active group prefixes */
     QStringList m_groups;
 
-    /** Cached group() string or QString::null if not cached */
+    /** Cached group() string or QString() if not cached */
     mutable QString m_cachedGroup;
 
     /** Index of currently active session */

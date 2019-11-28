@@ -44,13 +44,13 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
     }
 
     if (isBible && (vk.getVerse() == 0)) {
-        return QString::null; //Warning: return already here
+        return QString(); //Warning: return already here
     }
 
     switch (item.settings().keyRenderingFace) {
 
         case KeyTreeItem::Settings::NoKey: {
-            linkText = QString::null;
+            linkText = QString();
             break; //no key is valid for all modules
         }
 
@@ -138,7 +138,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
                .append("\">").append(linkText).append("</a>\n");
     }
 
-    return QString::null;
+    return QString();
 }
 
 QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {

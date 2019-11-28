@@ -213,7 +213,7 @@ QString CAcceleratorSettingsPage::getTitleForEditor(BtShortcutsEditor* editor) {
         return m_lexicon.title;
     if (editor == m_book.keyChooser)
         return m_book.title;
-    return QString::null;
+    return QString();
 }
 
 // Gets list of shortcuts editors that can conflict with a key change in the current shortcut editor

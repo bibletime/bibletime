@@ -98,7 +98,7 @@ void CDisplayConnections::saveAnchorWithText() {
 }
 
 void CDisplayConnections::clear() {
-    m_display->setText(QString::null);
+    m_display->setText(QString());
 }
 
 void CDisplayConnections::openFindTextDialog() {
@@ -142,7 +142,7 @@ void CDisplay::copyByReferences() {
 bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part ) {
     //  qWarning("CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part  )");
     const QString content = text(format, part);
-    QString filter = QString::null;
+    QString filter = QString();
 
     switch (format) {
     case HTMLText:

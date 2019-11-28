@@ -200,7 +200,7 @@ QMimeData * CBookmarkIndex::dragObject() {
                if these were uninstalled: */
             CSwordModuleInfo * const module =
                     m_bookmarksModel->module(widgetItem);
-            const QString moduleName = module ? module->name() : QString::null;
+            const QString moduleName = module ? module->name() : QString();
             mimeData->appendBookmark(moduleName, m_bookmarksModel->key(widgetItem),
                                      m_bookmarksModel->description(widgetItem));
         }

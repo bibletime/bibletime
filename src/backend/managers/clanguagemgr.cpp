@@ -36,7 +36,7 @@ CLanguageMgr *CLanguageMgr::instance() {
 }
 
 CLanguageMgr::CLanguageMgr()
-    : m_defaultLanguage("", "", QString::null)
+    : m_defaultLanguage("", "", QString())
     , m_langMap()
 {
     m_availableModulesCache.moduleCount = 0;

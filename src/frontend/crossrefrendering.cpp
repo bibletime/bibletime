@@ -46,7 +46,7 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
 
     switch (item.settings().keyRenderingFace) {
         case KeyTreeItem::Settings::NoKey: {
-            linkText = QString::null;
+            linkText = QString();
             break; //no key is valid for all modules
         }
         case KeyTreeItem::Settings::CompleteShort: {
@@ -89,7 +89,7 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
                .arg(linkText);
     }
 
-    return QString::null;
+    return QString();
 }
 
 }

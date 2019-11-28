@@ -294,7 +294,7 @@ void BibleTime::slotSearchModules() {
             modules << w->modules();
         }
     }
-    Search::CSearchDialog::openDialog(modules, QString::null);
+    Search::CSearchDialog::openDialog(modules, QString());
 }
 
 void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
@@ -313,7 +313,7 @@ void BibleTime::slotSearchDefaultBible() {
     if (bible) {
         module.append(bible);
     }
-    Search::CSearchDialog::openDialog(module, QString::null);
+    Search::CSearchDialog::openDialog(module, QString());
 }
 
 void BibleTime::openOnlineHelp_Handbook() {

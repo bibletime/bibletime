@@ -326,7 +326,7 @@ public slots:
          * Creates a new presenter in the MDI area according to the type of the module.
          */
         CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
-        CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
+        CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString());
         void searchInModule(CSwordModuleInfo *module);
         void slotModuleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);

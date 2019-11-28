@@ -98,7 +98,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QIcon const & icon
     action->setText(text);
     action->setIcon(icon);
     action->setShortcut(accel);
-    if (tooltip != QString::null)
+    if (tooltip != QString())
         action->setToolTip(tooltip);
     m_actionCollection->addAction(actionName, action);
     if (slot)

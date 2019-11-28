@@ -284,7 +284,7 @@ public: /* Loader */
 
     /** Loads a list of items (with subitem trees) from a named file
     * or from the default bookmarks file. */
-    QList<BookmarkItemBase *> loadTree(QString fileName = QString::null) {
+    QList<BookmarkItemBase *> loadTree(QString fileName = QString()) {
         QList<BookmarkItemBase*> itemList;
 
         QDomDocument doc;
@@ -320,7 +320,7 @@ public: /* Loader */
     BookmarkItemBase * handleXmlElement(QDomElement & element, BookmarkItemBase * parent) {
         BookmarkItemBase* newItem = nullptr;
         if (element.tagName() == "Folder") {
-            BookmarkFolder* newFolder = new BookmarkFolder(QString::null, parent);
+            BookmarkFolder* newFolder = new BookmarkFolder(QString(), parent);
             if (element.hasAttribute("caption")) {
                 newFolder->setText(element.attribute("caption"));
             }
@@ -352,14 +352,14 @@ public: /* Loader */
     }
 
     /** Loads a bookmark XML document from a named file or from the default bookmarks file. */
-    QString loadXmlFromFile(QString fileName = QString::null) {
+    QString loadXmlFromFile(QString fileName = QString()) {
 
         if (fileName.isEmpty())
             fileName = defaultBookmarksFile();
 
         QFile file(fileName);
         if (!file.exists())
-            return QString::null;
+            return QString();
 
         QString xml;
         if (file.open(QIODevice::ReadOnly)) {
@@ -414,7 +414,7 @@ public: /* Loader */
             elem.setAttribute("key", bookmarkItem->englishKey());
             elem.setAttribute("description", bookmarkItem->description());
             elem.setAttribute("modulename", bookmarkItem->moduleName());
-            elem.setAttribute("moduledescription", bookmarkItem->module() ? bookmarkItem->module()->config(CSwordModuleInfo::Description) : QString::null);
+            elem.setAttribute("moduledescription", bookmarkItem->module() ? bookmarkItem->module()->config(CSwordModuleInfo::Description) : QString());
         if (!bookmarkItem->text().isEmpty()) {
             elem.setAttribute("title", bookmarkItem->text());
         }
@@ -553,7 +553,7 @@ QString BookmarkItem::key() const {
 
 QString BookmarkItem::toolTip() const {
     if (!module())
-        return QString::null;
+        return QString();
 
     FilterOptions filterOptions = btConfig().getFilterOptions();
     filterOptions.footnotes = false;

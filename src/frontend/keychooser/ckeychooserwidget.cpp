@@ -140,7 +140,7 @@ void CKeyChooserWidget::reset(const QStringList * list, int index, bool do_emit)
     //  qWarning("starting insert");
     m_isResetting = true;
 
-    m_oldKey = QString::null;
+    m_oldKey = QString();
 
     //  m_comboBox->setUpdatesEnabled(false);
     //DON'T REMOVE THE HIDE: Otherwise QComboBox's sizeHint() function won't work properly
@@ -170,7 +170,7 @@ void CKeyChooserWidget::reset(const QStringList * list, int index, bool do_emit)
 
 /** Initializes this widget. We need this function because we have more than one constructor. */
 void CKeyChooserWidget::init() {
-    m_oldKey = QString::null;
+    m_oldKey = QString();
 
     setFocusPolicy(Qt::WheelFocus);
 

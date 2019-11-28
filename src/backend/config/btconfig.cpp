@@ -106,7 +106,7 @@ void BtConfig::setModuleEncryptionKey(const QString & name,
 
 QString BtConfig::getModuleEncryptionKey(const QString & name) {
     BT_ASSERT(!name.isEmpty());
-    return value<QString>("Module keys/" + name, QString::null);
+    return value<QString>("Module keys/" + name, QString());
 }
 
 BtConfig::ShortcutsMap BtConfig::getShortcuts(QString const & shortcutGroup) {
@@ -331,7 +331,7 @@ void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,
                                            const CSwordModuleInfo * const module)
 {
     setValue("settings/defaults/" + moduleType,
-             module != nullptr ? module->name() : QString::null);
+             module != nullptr ? module->name() : QString());
 }
 
 /**

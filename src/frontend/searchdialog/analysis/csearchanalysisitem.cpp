@@ -145,7 +145,7 @@ const QString CSearchAnalysisItem::getToolTip() {
                              : 0.0;
         toolTipString.append("<tr bgcolor=\"white\"><td><b><font color=\"")
                      .append(CSearchAnalysisScene::getColor(i).name()).append("\">")
-                     .append(info ? info->name() : QString::null)
+                     .append(info ? info->name() : QString())
                      .append("</font></b></td><td>")
                      .append(m_resultCountArray.at(i))
                      .append(" (")

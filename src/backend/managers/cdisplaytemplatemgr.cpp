@@ -87,7 +87,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
     m_availableTemplateNamesCache.append(m_cssMap.keys());
     qSort(m_availableTemplateNamesCache);
 
-    errorMessage = QString::null;
+    errorMessage = QString();
 }
 
 QString CDisplayTemplateMgr::fillTemplate(const QString & name,

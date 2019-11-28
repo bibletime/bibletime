@@ -104,8 +104,8 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
         while (pos != -1) {
             bool isMorph = false;
             bool isStrongs = false;
-            value = QString::null;
-            valueClass = QString::null;
+            value = QString();
+            valueClass = QString();
 
             // check 3 attribute/value pairs
 

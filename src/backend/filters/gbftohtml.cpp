@@ -147,7 +147,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         bool hasLemmaAttr = false;
         bool hasMorphAttr = false;
 
-        QString value = QString::null;
+        QString value = QString();
         int tagAttributeStart = -1;
 
         while (pos != -1) { //work on all strong/lemma tags in this section, should be between 1-3 loops

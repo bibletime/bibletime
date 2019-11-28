@@ -69,7 +69,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
             return vk.key();
 
         case KeyTreeItem::Settings::NoKey:
-            return QString::null;
+            return QString();
 
         case KeyTreeItem::Settings::SimpleKey: // fall through:
         default:

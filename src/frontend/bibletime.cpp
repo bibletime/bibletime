@@ -182,7 +182,7 @@ void BibleTime::searchInModule(CSwordModuleInfo *module) {
     /// \todo Refactor this.
     BtConstModuleList modules;
     modules.append(module);
-    Search::CSearchDialog::openDialog(modules, QString::null);
+    Search::CSearchDialog::openDialog(modules, QString());
 }
 
 bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {

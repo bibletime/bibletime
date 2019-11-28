@@ -99,7 +99,7 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         * Use "char Book()" to retrieve the book number of the current book.
         * @return The name of the current book
         */
-        QString book(const QString& newBook = QString::null);
+        QString book(const QString& newBook = QString());
 
         void setModule(const CSwordModuleInfo *newModule) override;
 

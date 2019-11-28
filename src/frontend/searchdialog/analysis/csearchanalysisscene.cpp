@@ -236,7 +236,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     const QString fileName = QFileDialog::getSaveFileName(nullptr,
                                                           tr("Save Search Analysis"),
-                                                          QString::null,
+                                                          QString(),
                                                           tr("XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)"));
     if (fileName.isEmpty())
         return;
