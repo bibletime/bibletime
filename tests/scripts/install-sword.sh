@@ -72,5 +72,5 @@ pushd "$BIN_DIR"
 cmake "-DCMAKE_INSTALL_PREFIX=${SWORD_INSTALL_PREFIX}" "$SRC_DIR"
 popd
 
-cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS" --verbose
-cmake --install "$BIN_DIR" --verbose
+cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS"
+cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS" -- install
