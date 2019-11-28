@@ -1,10 +1,6 @@
 /**
  * Theme by BibleTime - www.bibletime.info
  */
-* {
-    /* To work around a KDE 3.2 bug / problem */
-    /* background-color:white; #this seems to break*/
-}
 
 #content {
     margin: 10px;
