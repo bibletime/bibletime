@@ -12,7 +12,10 @@ if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
     exit 1
 fi
 
-SWORD_INSTALL_PREFIX="$1"
+case "$1" in
+    /*) SWORD_INSTALL_PREFIX="$1" ;;
+    *) SWORD_INSTALL_PREFIX="${PWD}/$1" ;;
+esac
 
 NUM_PARALLEL_JOBS="${2:-1}"
 case "$NUM_PARALLEL_JOBS" in
@@ -47,7 +50,7 @@ TMP_DIR=$(mktemp -d)
 add_on_exit "rm -rf '${TMP_DIR}'"
 log_info "Created temporary directory \"${TMP_DIR}\" for fetching and building Sword sources."
 
-SRC_DIR="${TMP_DIR}/sword-trunk"
+SRC_DIR="${TMP_DIR}/source"
 
 log_info "Attempting to fetch Sword from ${SWORD_SVN_GIT_MIRROR} ..."
 if ! git clone --depth 1 "$SWORD_SVN_GIT_MIRROR" "$SRC_DIR"; then
@@ -61,6 +64,13 @@ if ! git clone --depth 1 "$SWORD_SVN_GIT_MIRROR" "$SRC_DIR"; then
 fi
 
 BIN_DIR="${TMP_DIR}/build"
-cmake "-DCMAKE_INSTALL_PREFIX=${SWORD_INSTALL_PREFIX}" -S "$SRC_DIR" -B "$BIN_DIR"
+
+# This only works for CMake 3.13 and later, so we have to work around:
+#cmake "-DCMAKE_INSTALL_PREFIX=${SWORD_INSTALL_PREFIX}" -S "$SRC_DIR" -B "$BIN_DIR"
+mkdir "$BIN_DIR"
+pushd "$BIN_DIR"
+cmake "-DCMAKE_INSTALL_PREFIX=${SWORD_INSTALL_PREFIX}" "$SRC_DIR"
+popd
+
 cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS" --verbose
 cmake --install "$BIN_DIR" --verbose
