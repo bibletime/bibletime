@@ -137,8 +137,6 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
                       )
                .append("\">").append(linkText).append("</a>\n");
     }
-
-    return QString();
 }
 
 QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
