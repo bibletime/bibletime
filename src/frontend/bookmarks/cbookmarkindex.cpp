@@ -445,7 +445,7 @@ bool CBookmarkIndex::hasBookmarksRecursively(QModelIndexList items) const {
         if (m_bookmarksModel->isFolder(index)) {
             int const numChildren = m_bookmarksModel->rowCount(index);
             for (int i = 0; i < numChildren; i++)
-                items.append(index.child(i, 0));
+                items.append(index.model()->index(i, 0, index));
         }
     }
     return false;
@@ -595,7 +595,7 @@ void CBookmarkIndex::printBookmarks() {
             } else if (m_bookmarksModel->isFolder(index)) {
                 int const numChildren = m_bookmarksModel->rowCount(index);
                 for (int i = 0; i < numChildren; i++)
-                    items.append(index.child(i, 0));
+                    items.append(index.model()->index(i, 0, index));
             }
         }
     }
