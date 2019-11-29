@@ -74,8 +74,8 @@ popd
 
 # The --verbose flag was added in CMake 3.14, so we have to do without:
 #cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS" --verbose
-cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS"
+cmake --build "$BIN_DIR" -- -j "$NUM_PARALLEL_JOBS"
 
 # The --install flag was added in CMake 3.15, so we have to use --build instead:
 #cmake --install "$BIN_DIR" --verbose
-cmake --build "$BIN_DIR" -j "$NUM_PARALLEL_JOBS" -- install
+cmake --build "$BIN_DIR" -- -j "$NUM_PARALLEL_JOBS" install
