@@ -2,10 +2,7 @@ dist: bionic
 language: cpp
 compiler: gcc
 cache: ccache
-
-arch:
-  - amd64
-  - arm64
+arch: amd64
 
 branches:
   only:
@@ -23,7 +20,7 @@ before_install:
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
 script:
-  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=1 -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
+  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=${USE_CCACHE:-1} -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
 
 addons:
   apt:
@@ -57,6 +54,9 @@ env:
 
 jobs:
   include:
+    - arch: arm64
+      env:
+        - MATRIX_EVAL="CC=gcc CXX=g++ USE_CCACHE=0"
     - env:
         - MATRIX_EVAL="CC=clang CXX=clang++"
     - addons:
