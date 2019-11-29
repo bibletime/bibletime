@@ -29,7 +29,7 @@ class BtConstModuleList;
 class CReadDisplay;
 class CSwordModuleInfo;
 class CSwordKey;
-class FilterOptions;
+struct FilterOptions;
 class QResizeEvent;
 class QScrollBar;
 
