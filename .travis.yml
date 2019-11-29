@@ -8,8 +8,6 @@ branches:
     - master_coverity_scan
     - /^stable-.*$/
 
-arch: amd64
-
 os:
   - linux
 
@@ -84,23 +82,6 @@ env:
      - CC=clang-7 CXX=clang++-7 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
      - CC=clang-8 CXX=clang++-8 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
      - CC=clang-9 CXX=clang++-9 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-
-jobs:
-  include:
-    - arch: arm64
-      env: CC=gcc CXX=g++
-    - arch: arm64
-      env: CC=gcc-8 CXX=g++-8
-    - arch: arm64
-      env: CC=gcc-9 CXX=g++-9
-    - arch: arm64
-      env: CC=clang CXX=clang++
-    - arch: arm64
-      env: CC=clang-7 CXX=clang++-7
-    - arch: arm64
-      env: CC=clang-8 CXX=clang++-8
-    - arch: arm64
-      env: CC=clang-9 CXX=clang++-9
 
 before_install:
   - uname -a
