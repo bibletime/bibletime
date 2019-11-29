@@ -32,7 +32,8 @@ public:
     CrossRefRendering(
             const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
             const FilterOptions &filterOptions = btConfig().getFilterOptions())
-     : CHTMLExportRendering(true, displayOptions, filterOptions) {;}
+        : CHTMLExportRendering(true, displayOptions, filterOptions)
+    {}
 
     QString entryLink(const KeyTreeItem &item, const CSwordModuleInfo *module) override {
         BT_ASSERT(module);
@@ -94,7 +95,7 @@ public:
     }
 
     QString finishText(const QString &text, const KeyTree &tree) override {
-        Q_UNUSED(tree);
+        Q_UNUSED(tree)
         return text;
     }
 };
@@ -199,7 +200,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                     BT_ASSERT(false); /// \todo Why is this here?
             default:
                 continue;
-        };
+        }
     }
 
     return formatInfo(text);

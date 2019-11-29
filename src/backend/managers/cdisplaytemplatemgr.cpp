@@ -124,13 +124,13 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                 default:
                     displayTypeString = "singleentry";
                     break;
-            };
+            }
             moduleName = settings.modules.first()->name();
         }
         else { //use bible as default type if no modules are set
             displayTypeString = "bible";
             moduleName = "";
-        };
+        }
     }
 
     QString newContent = content;

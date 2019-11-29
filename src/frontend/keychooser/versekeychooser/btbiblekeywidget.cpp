@@ -54,7 +54,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                                    const char *name)
    : QWidget(parent), m_key(key), m_dropDownHoverTimer(this)
 {
-    Q_UNUSED(name);
+    Q_UNUSED(name)
 
     updatelock = false;
     m_module = mod;
