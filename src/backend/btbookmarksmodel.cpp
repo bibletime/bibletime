@@ -22,6 +22,7 @@
 
 #include "btbookmarksmodel.h"
 
+#include <algorithm>
 #include <memory>
 #include <QDomElement>
 #include <QDomNode>
@@ -973,8 +974,11 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
             for(int i = 0; i < f->children().size(); ++i)
                 indexes.append(createIndex(i, 0, f->children()[i]));
 
-            qSort(f->children().begin(), f->children().end(), order == Qt::AscendingOrder ?
-                      BtBookmarksModelSortAscending : BtBookmarksModelSortDescending);
+            std::sort(f->children().begin(),
+                      f->children().end(),
+                      order == Qt::AscendingOrder
+                      ? BtBookmarksModelSortAscending
+                      : BtBookmarksModelSortDescending);
 
             for(int i = 0; i < f->children().size(); ++i) {
                 BookmarkItemBase * iii = f->children()[i];

@@ -12,6 +12,7 @@
 
 #include "cdisplaytemplatemgr.h"
 
+#include <algorithm>
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>
@@ -85,7 +86,8 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
     const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
     BT_ASSERT(b);
     m_availableTemplateNamesCache.append(m_cssMap.keys());
-    qSort(m_availableTemplateNamesCache);
+    std::sort(m_availableTemplateNamesCache.begin(),
+              m_availableTemplateNamesCache.end());
 
     errorMessage = QString();
 }

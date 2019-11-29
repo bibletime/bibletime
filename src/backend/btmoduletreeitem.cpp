@@ -12,6 +12,7 @@
 
 #include "btmoduletreeitem.h"
 
+#include <algorithm>
 #include <QList>
 #include <QString>
 #include "drivers/cswordmoduleinfo.h"
@@ -169,7 +170,9 @@ void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
     QList<BTModuleTreeItem*> items = parent->children();
     if (items.size() > 0) {
         // Sort the list of the children according to each item's text
-        qSort(items.begin(), items.end(), BTModuleTreeItem::localeAwareLessThan);
+        std::sort(items.begin(),
+                  items.end(),
+                  BTModuleTreeItem::localeAwareLessThan);
         //put the children back to tree in sorted order
         BTModuleTreeItem* first = items.at(0);
         BTModuleTreeItem* prev = first;
