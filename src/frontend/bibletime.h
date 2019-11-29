@@ -18,7 +18,6 @@
 #include <QList>
 #include <QTimer>
 #include "displaywindow/cdisplaywindow.h"
-#include <QSignalMapper>
 #ifndef NDEBUG
 #include <QMutex>
 #endif
@@ -42,7 +41,6 @@ class QMenu;
 class QActionGroup;
 class QToolBar;
 class QSplitter;
-class QSignalMapper;
 
 struct AutoScroll {
     bool enabled;
@@ -524,13 +522,6 @@ public slots:
         QAction* m_autoScrollPauseAction;
 
         QAction* m_windowFullscreenAction;
-
-        /**
-         * Signal mapper to map windows to menu items.
-         */
-        QSignalMapper* m_windowMapper;
-        /// \todo remove?
-        // QList<QAction*> m_windowOpenWindowsList;
 
         CMDIArea* m_mdi;
         BtFindWidget* m_findWidget;

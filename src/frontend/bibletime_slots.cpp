@@ -114,9 +114,8 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
         openWindowAction->setCheckable(true);
         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
-        BT_CONNECT(openWindowAction, SIGNAL(triggered()),
-                   m_windowMapper,   SLOT(map()));
-        m_windowMapper->setMapping(openWindowAction, window);
+        BT_CONNECT(openWindowAction, &QAction::triggered,
+                   [this, window]{ slotSetActiveSubWindow(window); });
     }
 }
 

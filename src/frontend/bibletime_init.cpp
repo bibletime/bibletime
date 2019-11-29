@@ -403,11 +403,6 @@ void BibleTime::initActions() {
     m_actionCollection = new BtActionCollection(this);
     insertKeyboardActions(m_actionCollection);
 
-    // Create the window to signal mapper and connect it up:
-    m_windowMapper = new QSignalMapper(this);
-    BT_CONNECT(m_windowMapper, SIGNAL(mapped(QWidget *)),
-               this,           SLOT(slotSetActiveSubWindow(QWidget *)));
-
     // File menu actions:
     m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
     BT_CONNECT(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo *)),
