@@ -176,8 +176,8 @@ void CKeyChooserWidget::init() {
 
     m_comboBox = new CKCComboBox(this);
     setFocusProxy(m_comboBox);
-    m_comboBox->setAutoCompletion(true);
-    m_comboBox->setEditable(true);
+    m_comboBox->setEditable(true); // Also sets completer
+    BT_ASSERT(m_comboBox->completer());
     m_comboBox->setInsertPolicy(QComboBox::NoInsert);
     m_comboBox->setFocusPolicy(Qt::WheelFocus);
 
