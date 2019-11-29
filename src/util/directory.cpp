@@ -80,9 +80,9 @@ static const char SWORD_PATH[] = "SWORD_PATH";
 bool initDirectoryCache() {
     QDir wDir(":/share/bibletime"); // check if resources would be read from qrc
     if(wDir.exists())
-        wDir = ":/";
+        wDir.setPath(":/");
     else {
-        wDir = QCoreApplication::applicationDirPath();
+        wDir.setPath(QCoreApplication::applicationDirPath());
         wDir.makeAbsolute();
         if (!wDir.cdUp()) { // Installation prefix
             qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
