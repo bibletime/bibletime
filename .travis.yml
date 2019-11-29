@@ -1,8 +1,6 @@
 dist: bionic
 language: cpp
-compiler: gcc
 cache: ccache
-arch: amd64
 
 branches:
   only:
@@ -10,31 +8,52 @@ branches:
     - master_coverity_scan
     - /^stable-.*$/
 
+arch: amd64
+
 os:
   - linux
 
-before_install:
-  - eval "${MATRIX_EVAL}"
-  - test ! -f /opt/qt512/bin/qt512-env.sh || source /opt/qt512/bin/qt512-env.sh
-  - ./tests/scripts/install-sword.sh "${HOME}/local" 2
-  - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
-
-script:
-  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=${USE_CCACHE:-1} -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
-
 addons:
   apt:
+    sources:
+      - sourceline: ppa:ubuntu-toolchain-r/test
+      - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
+      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-7 main'
+        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main'
+        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-9 main'
+        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
     packages:
+      # Compilers:
       - gcc
       - g++
+      - gcc-8
+      - g++-8
+      - gcc-9
+      - g++-9
+      - clang-7
+      - clang-8
+      - clang-9
+      # Tools:
       - cmake
       - libclucene-dev
+      # System Qt:
       - libqt5svg5-dev
       - libqt5xmlpatterns5-dev
       - qtbase5-dev
       - qtdeclarative5-dev
       - qttools5-dev
       - qtwebengine5-dev
+      # Qt 5.12:
+      - libglvnd-dev
+      - mesa-common-dev
+      - qt512base
+      - qt512declarative
+      - qt512svg
+      - qt512webengine
+      - qt512xmlpatterns
+      - qt512tools
   coverity_scan:
     project:
       name: "bibletime/bibletime"
@@ -49,153 +68,50 @@ env:
      # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
      #   via the "travis encrypt" command using the project repo's public key
      - secure: "FmufrIN8L4Ptfbn0Lw/1S7fKnPxpvv7t9KEN5XhQ3lwW5Qir7mGe2r87biaKyjo15VNc4bizA2wR63YUXz6JPMETwYPahKSlW2tAsHmJTOwyweNW7zkKf6Iwrf9vYaMZyOpR2jRkD9Ko8vd4BpIw4FF6X/vaJqfnvQyIOiDGFr8="
+     - NUM_THREADS=2
   jobs:
-     - MATRIX_EVAL="CC=gcc CXX=g++"
+     - CC=gcc CXX=g++
+     - CC=gcc-8 CXX=g++-8
+     - CC=gcc-9 CXX=g++-9
+     - CC=clang CXX=clang++
+     - CC=clang-7 CXX=clang++-7
+     - CC=clang-8 CXX=clang++-8
+     - CC=clang-9 CXX=clang++-9
+     - CC=gcc CXX=g++ SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
+     - CC=gcc-8 CXX=g++-8 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
+     - CC=gcc-9 CXX=g++-9 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
+     - CC=clang CXX=clang++ SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
+     - CC=clang-7 CXX=clang++-7 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
+     - CC=clang-8 CXX=clang++-8 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
+     - CC=clang-9 CXX=clang++-9 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
 
 jobs:
   include:
     - arch: arm64
-      env:
-        - MATRIX_EVAL="CC=gcc CXX=g++ USE_CCACHE=0"
-    - env:
-        - MATRIX_EVAL="CC=clang CXX=clang++"
-    - addons:
-        apt:
-          sources:
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - gcc
-            - g++
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=gcc CXX=g++"
-    - addons:
-        apt:
-          sources:
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - clang
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=clang CXX=clang++"
-    - addons:
-        apt:
-          sources:
-            - sourceline: ppa:ubuntu-toolchain-r/test
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - gcc-8
-            - g++-8
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=gcc-8 CXX=g++-8"
-    - addons:
-        apt:
-          sources:
-            - sourceline: ppa:ubuntu-toolchain-r/test
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - gcc-9
-            - g++-9
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=gcc-9 CXX=g++-9"
-    - addons:
-        apt:
-          sources:
-            - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-7 main'
-              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - clang-7
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=clang-7 CXX=clang++-7"
-    - addons:
-        apt:
-          sources:
-            - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main'
-              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - clang-8
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=clang-8 CXX=clang++-8"
-    - addons:
-        apt:
-          sources:
-            - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-9 main'
-              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-            - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-          packages:
-            - clang-9
-            - cmake
-            - libclucene-dev
-            - libglvnd-dev
-            - mesa-common-dev
-            - qt512base
-            - qt512declarative
-            - qt512svg
-            - qt512webengine
-            - qt512xmlpatterns
-            - qt512tools
-      env:
-        - MATRIX_EVAL="CC=clang-9 CXX=clang++-9"
+      env: CC=gcc CXX=g++
+    - arch: arm64
+      env: CC=gcc-8 CXX=g++-8
+    - arch: arm64
+      env: CC=gcc-9 CXX=g++-9
+    - arch: arm64
+      env: CC=clang CXX=clang++
+    - arch: arm64
+      env: CC=clang-7 CXX=clang++-7
+    - arch: arm64
+      env: CC=clang-8 CXX=clang++-8
+    - arch: arm64
+      env: CC=clang-9 CXX=clang++-9
+
+before_install:
+  - uname -a
+  - test "${uname -m)" != "aarch64" || USE_CCACHE=0
+  - test -z "$SOURCE_QT" || source "$SOURCE_QT"
+  - ./tests/scripts/install-sword.sh "${HOME}/local" "$NUM_THREADS"
+  - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
+
+script:
+  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=${USE_CCACHE:-1} -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
+
 
 notifications:
   irc: "chat.freenode.net#bibletime"
