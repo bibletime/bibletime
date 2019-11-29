@@ -21,7 +21,6 @@
 #include <QModelIndex>
 #include <QProgressDialog>
 #include <QPushButton>
-#include <QSignalMapper>
 #include <QTableView>
 #include <QtGlobal>
 #include <QVBoxLayout>
@@ -112,8 +111,6 @@ void BtBookshelfSourcesPage::updateSourcesModel() {
     m_model->clear();
     m_model->setColumnCount(2);
 
-    m_signalMapper = new QSignalMapper(this);
-
     auto const addButton = [this](int row, int column,
                                   QString const & text, bool const tag) {
         QPushButton * const button = new QPushButton(text, this);
@@ -122,29 +119,21 @@ void BtBookshelfSourcesPage::updateSourcesModel() {
         return button;
     };
 
-    constexpr auto const smMap =
-            static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map);
     QString const removeText = tr("Remove");
     for (QString source : sourceList) {
         m_model->appendItem(source);
         int const row = m_model->rowCount() - 1;
         QPushButton * button = addButton(row, 1, removeText, ButtonTagRemove);
-        BT_CONNECT(button,         &QPushButton::clicked,
-                   m_signalMapper, smMap);
-        m_signalMapper->setMapping(button, row);
+        BT_CONNECT(button, &QPushButton::clicked,
+                   [this, row]{ slotButtonClicked(row); });
     }
 
     m_model->appendRow(new QStandardItem(tr("< Add new remote library >")));
     int const row = m_model->rowCount() - 1;
     QString const addText = tr("Add");
     QPushButton * const button = addButton(row, 1, addText, ButtonTagAdd);
-    BT_CONNECT(button, &QPushButton::clicked, m_signalMapper,smMap);
-    m_signalMapper->setMapping(button, row);
-
-    BT_CONNECT(m_signalMapper,
-               static_cast<void (QSignalMapper::*)(int)>(
-                   &QSignalMapper::mapped),
-               this, &BtBookshelfSourcesPage::slotButtonClicked);
+    BT_CONNECT(button, &QPushButton::clicked,
+               [this, row]{ slotButtonClicked(row); });
 
     m_sourcesTableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
     m_sourcesTableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);

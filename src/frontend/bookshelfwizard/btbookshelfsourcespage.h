@@ -21,7 +21,6 @@
 class BtInstallMgr;
 class BtListModel;
 class QPushButton;
-class QSignalMapper;
 class QTableView;
 class QVBoxLayout;
 
@@ -55,7 +54,6 @@ private: /* Fields: */
     QVBoxLayout * m_verticalLayout;
     BtListModel * m_model;
     BtInstallMgr * m_currentInstallMgr;
-    QSignalMapper * m_signalMapper;
 
 }; /* class BtBookshelfSourcesPage */
 
