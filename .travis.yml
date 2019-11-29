@@ -27,45 +27,40 @@ before_install:
 script:
   - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=REQUIRE -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
 
+addons:
+  apt:
+    packages:
+      - gcc
+      - g++
+      - cmake
+      - libclucene-dev
+      - libqt5svg5-dev
+      - libqt5xmlpatterns5-dev
+      - qtbase5-dev
+      - qtbase5-dev-tools
+      - qtdeclarative5-dev
+      - qttools5-dev-tools
+      - qtwebengine5-dev
+  coverity_scan:
+    project:
+      name: "bibletime/bibletime"
+      description: "BibleTime build submitted via Travis CI"
+    notification_email: bibletime-coverity@heh.ee
+    build_command_prepend: "mkdir b && cd b && cmake .. -DCMAKE_INSTALL_PREFIX=${HOME}/local/"
+    build_command: "cmake --build ."
+    branch_pattern: .*_coverity_scan
+
 env:
   global:
      # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
      #   via the "travis encrypt" command using the project repo's public key
      - secure: "FmufrIN8L4Ptfbn0Lw/1S7fKnPxpvv7t9KEN5XhQ3lwW5Qir7mGe2r87biaKyjo15VNc4bizA2wR63YUXz6JPMETwYPahKSlW2tAsHmJTOwyweNW7zkKf6Iwrf9vYaMZyOpR2jRkD9Ko8vd4BpIw4FF6X/vaJqfnvQyIOiDGFr8="
+  jobs:
+     - MATRIX_EVAL="CC=gcc CXX=g++"
 
-
-matrix:
+jobs:
   include:
-    - addons:
-        apt:
-          packages:
-            - gcc
-            - g++
-            - cmake
-            - libclucene-dev
-            - libqt5svg5-dev
-            - libqt5xmlpatterns5-dev
-            - qtbase5-dev
-            - qtbase5-dev-tools
-            - qtdeclarative5-dev
-            - qttools5-dev-tools
-            - qtwebengine5-dev
-      env:
-        - MATRIX_EVAL="CC=gcc CXX=g++"
-    - addons:
-        apt:
-          packages:
-            - clang
-            - cmake
-            - libclucene-dev
-            - libqt5svg5-dev
-            - libqt5xmlpatterns5-dev
-            - qtbase5-dev
-            - qtbase5-dev-tools
-            - qtdeclarative5-dev
-            - qttools5-dev-tools
-            - qtwebengine5-dev
-      env:
+    - env:
         - MATRIX_EVAL="CC=clang CXX=clang++"
     - addons:
         apt:
@@ -204,16 +199,6 @@ matrix:
             - qt512tools
       env:
         - MATRIX_EVAL="CC=clang-9 CXX=clang++-9"
-
-addons:
-  coverity_scan:
-    project:
-      name: "bibletime/bibletime"
-      description: "BibleTime build submitted via Travis CI"
-    notification_email: bibletime-coverity@heh.ee
-    build_command_prepend: "mkdir b && cd b && cmake .. -DCMAKE_INSTALL_PREFIX=${HOME}/local/"
-    build_command: "cmake --build ."
-    branch_pattern: .*_coverity_scan
 
 notifications:
   irc: "chat.freenode.net#bibletime"
