@@ -104,13 +104,13 @@ jobs:
 
 before_install:
   - uname -a
-  - test "${uname -m)" != "aarch64" || USE_CCACHE=0
+  - test "$(uname -m)" == "aarch64" && USE_CCACHE=0 || USE_CCACHE=1
   - test -z "$SOURCE_QT" || source "$SOURCE_QT"
   - ./tests/scripts/install-sword.sh "${HOME}/local" "$NUM_THREADS"
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
 script:
-  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=${USE_CCACHE:-1} -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
+  - if [ "0${COVERITY_SCAN_BRANCH}" != "01" ]; then mkdir b && cd b && cmake .. -DUSE_CCACHE=${USE_CCACHE} -DCMAKE_INSTALL_PREFIX=${HOME}/local && make -j2 VERBOSE=1 && make install; fi
 
 
 notifications:
