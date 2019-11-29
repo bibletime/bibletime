@@ -30,12 +30,15 @@
 #include "../rendering/centrydisplay.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 #include <swmgr.h>
 #include <swbuf.h>
 #include <swmodule.h>
 #include <swversion.h>
 #include <localemgr.h>
 #include <utilstr.h>
+#pragma GCC diagnostic pop
 
 /**
   \brief The backend layer main class, a backend implementation of Sword.
