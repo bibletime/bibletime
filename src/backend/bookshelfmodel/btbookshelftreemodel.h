@@ -81,8 +81,8 @@ public: /* Types: */
                 push_back(GROUP_LANGUAGE);
             }
 
-            inline Grouping(const Grouping & copy)
-                : QList<Group>(copy) {}
+            inline Grouping(Grouping const & copy) = default;
+            inline Grouping & operator=(Grouping const & copy) = default;
 
             bool loadFrom(const QString & configKey);
             void saveTo(const QString & configKey) const;
