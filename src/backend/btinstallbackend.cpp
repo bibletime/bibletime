@@ -54,7 +54,7 @@ bool addSource(sword::InstallSource& source) {
     else if (!strcmp(source.type, "DIR")) {
         config["Sources"].insert( std::make_pair(SWBuf("DIRSource"), source.getConfEnt()) );
     }
-    config.Save();
+    config.save();
     return true;
 }
 
@@ -67,11 +67,12 @@ sword::InstallSource source(const QString &name) {
     }
     else { //not found in Sword, may be a local DIR source
         SWConfig config(configFilename().toLatin1());
-        SectionMap::iterator sourcesSection = config.Sections.find("Sources");
-        if (sourcesSection != config.Sections.end()) {
-            ConfigEntMap::iterator sourceBegin =
+        auto const sections = config.getSections();
+        auto const sourcesSection = sections.find("Sources");
+        if (sourcesSection != sections.end()) {
+            auto sourceBegin =
                 sourcesSection->second.lower_bound("DIRSource");
-            ConfigEntMap::iterator sourceEnd =
+            auto const sourceEnd =
                 sourcesSection->second.upper_bound("DIRSource");
 
             while (sourceBegin != sourceEnd) {
@@ -128,7 +129,7 @@ bool deleteSource(const QString &name) {
         }
     }
 
-    config.Save();
+    config.save();
     return true; /// \todo dummy
 }
 
@@ -211,7 +212,7 @@ bool setTargetList( const QStringList& targets ) {
         }
     }
     qDebug() << "Saving Sword configuration ...";
-    conf.Save();
+    conf.save();
     CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
     return true;
 }
@@ -229,10 +230,10 @@ QStringList sourceNameList() {
 
     // Add local directory sources
     SWConfig config(configFilename().toLatin1());
-    sword::SectionMap::iterator sourcesSection = config.Sections.find("Sources");
-    if (sourcesSection != config.Sections.end()) {
-        sword::ConfigEntMap::iterator sourceBegin = sourcesSection->second.lower_bound("DIRSource");
-        sword::ConfigEntMap::iterator sourceEnd = sourcesSection->second.upper_bound("DIRSource");
+    auto const sourcesSection = config.getSections().find("Sources");
+    if (sourcesSection != config.getSections().end()) {
+        auto sourceBegin = sourcesSection->second.lower_bound("DIRSource");
+        auto const sourceEnd = sourcesSection->second.upper_bound("DIRSource");
 
         while (sourceBegin != sourceEnd) {
             InstallSource is("DIR", sourceBegin->second.c_str());
@@ -249,7 +250,7 @@ QStringList sourceNameList() {
 void initPassiveFtpMode() {
     SWConfig config(configFilename().toLatin1());
     config["General"]["PassiveFTP"] = "true";
-    config.Save();
+    config.save();
 }
 QString swordConfigFilename() {
     namespace DU = util::directory;
