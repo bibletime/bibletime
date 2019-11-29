@@ -13,6 +13,7 @@
 #include "plaintohtml.h"
 
 #include <QDebug>
+#include <QtGlobal>
 
 // Sword includes:
 #include <swbuf.h>
@@ -81,7 +82,7 @@ char Filters::PlainToHtml::processText(sword::SWBuf &text,
                 text += "</span>";
                 inFootNote = false;
             }
-            // fall through:
+            Q_FALLTHROUGH();
 
         default:
             text += *from;

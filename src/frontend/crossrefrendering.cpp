@@ -12,6 +12,7 @@
 
 #include "crossrefrendering.h"
 
+#include <QtGlobal>
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/keys/cswordversekey.h"
 #include "../backend/managers/referencemanager.h"
@@ -45,31 +46,30 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
     }
 
     switch (item.settings().keyRenderingFace) {
-        case KeyTreeItem::Settings::NoKey: {
+        case KeyTreeItem::Settings::NoKey:
             linkText = QString();
             break; //no key is valid for all modules
-        }
-        case KeyTreeItem::Settings::CompleteShort: {
+        case KeyTreeItem::Settings::CompleteShort:
             if (isBible) {
                 linkText = QString::fromUtf8(vk.getShortText());
                 break;
             }
             //fall through for non-Bible modules
-        }
-        case KeyTreeItem::Settings::CompleteLong: {
+            Q_FALLTHROUGH();
+        case KeyTreeItem::Settings::CompleteLong:
             if (isBible) {
                 linkText = vk.key();
                 break;
             }
             //fall through for non-Bible modules
-        }
-        case KeyTreeItem::Settings::SimpleKey: {
+            Q_FALLTHROUGH();
+        case KeyTreeItem::Settings::SimpleKey:
             if (isBible) {
                 linkText = QString::number(vk.getVerse());
                 break;
             }
             //fall through for non-Bible modules
-        }
+            Q_FALLTHROUGH();
         default: { //default behaviour to return the passed key
             linkText = item.key();
             break;

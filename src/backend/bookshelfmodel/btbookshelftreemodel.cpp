@@ -12,6 +12,7 @@
 
 #include "btbookshelftreemodel.h"
 
+#include <QtGlobal>
 #include <type_traits>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
@@ -123,6 +124,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
         case Qt::CheckStateRole:
             if (!m_checkable)
                 break;
+            Q_FALLTHROUGH();
 
         case BtBookshelfTreeModel::CheckStateRole:
             return i->checkState();

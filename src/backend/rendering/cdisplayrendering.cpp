@@ -14,6 +14,7 @@
 
 #include <QRegExp>
 #include <QString>
+#include <QtGlobal>
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
 #include "../keys/cswordversekey.h"
@@ -49,80 +50,76 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
     switch (item.settings().keyRenderingFace) {
 
-        case KeyTreeItem::Settings::NoKey: {
-            linkText = QString();
-            break; //no key is valid for all modules
-        }
+    case KeyTreeItem::Settings::NoKey:
+        linkText = QString();
+        break; //no key is valid for all modules
 
-    case KeyTreeItem::Settings::ExpandedShort: {
+    case KeyTreeItem::Settings::ExpandedShort:
         if (isBible) {
             linkText = module->name() + ':' + QString::fromUtf8(vk.getShortText());
             break;
         }
-    }
+        Q_FALLTHROUGH();
 
-    case KeyTreeItem::Settings::CompleteShort: {
+    case KeyTreeItem::Settings::CompleteShort:
         if (isBible) {
             linkText = QString::fromUtf8(vk.getShortText());
             break;
         }
+        Q_FALLTHROUGH();
 
-        //fall through for non-Bible modules
-    }
-
-    case KeyTreeItem::Settings::ExpandedLong: {
+    case KeyTreeItem::Settings::ExpandedLong:
         if (isBible) {
             linkText = QString("%1 (%2)").arg(vk.key()).arg(module->name());
             break;
         }
-    }
+        Q_FALLTHROUGH();
 
-    case KeyTreeItem::Settings::CompleteLong: {
-            if (isBible) {
-                linkText = vk.key();
-                break;
-            }
-
-            //fall through for non-Bible modules
+    case KeyTreeItem::Settings::CompleteLong:
+        if (isBible) {
+            linkText = vk.key();
+            break;
         }
+        Q_FALLTHROUGH();
 
-        case KeyTreeItem::Settings::SimpleKey:
-            if (isBible) {
-                if(item.mappedKey() != nullptr) {
-                    CSwordVerseKey baseKey(*item.modules().begin());
-                    baseKey.setKey(item.key());
+    case KeyTreeItem::Settings::SimpleKey:
+        if (isBible) {
+            if(item.mappedKey() != nullptr) {
+                CSwordVerseKey baseKey(*item.modules().begin());
+                baseKey.setKey(item.key());
 
-                    if (vk.book() != baseKey.book()) {
-                        linkText = QString::fromUtf8(vk.getShortText());
-                    } else if (vk.getChapter() != baseKey.getChapter()) {
-                        linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
-                    } else {
-                        linkText = QString::number(vk.getVerse());
-                    }
-
-                    if(vk.isBoundSet()) {
-                        linkText += "-";
-                        sword::VerseKey const upper = vk.getUpperBound();
-                        sword::VerseKey const lower = vk.getLowerBound();
-                        if (upper.getBook() != lower.getBook()) {
-                            linkText += QString::fromUtf8(upper.getShortText());
-                        } else if(upper.getChapter() != lower.getChapter()) {
-                            linkText += QString("%1:%2").arg(upper.getChapter())
-                                                        .arg(lower.getVerse());
-                        } else {
-                            linkText += QString::number(upper.getVerse());
-                        }
-                    }
+                if (vk.book() != baseKey.book()) {
+                    linkText = QString::fromUtf8(vk.getShortText());
+                } else if (vk.getChapter() != baseKey.getChapter()) {
+                    linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
                 } else {
                     linkText = QString::number(vk.getVerse());
                 }
-                break;
-            } // else fall through for non-Bible modules
 
-        default: { //default behaviour to return the passed key
-            linkText = item.key();
+                if(vk.isBoundSet()) {
+                    linkText += "-";
+                    sword::VerseKey const upper = vk.getUpperBound();
+                    sword::VerseKey const lower = vk.getLowerBound();
+                    if (upper.getBook() != lower.getBook()) {
+                        linkText += QString::fromUtf8(upper.getShortText());
+                    } else if(upper.getChapter() != lower.getChapter()) {
+                        linkText += QString("%1:%2").arg(upper.getChapter())
+                                                    .arg(lower.getVerse());
+                    } else {
+                        linkText += QString::number(upper.getVerse());
+                    }
+                }
+            } else {
+                linkText = QString::number(vk.getVerse());
+            }
             break;
-        }
+        } // else fall through for non-Bible modules
+        Q_FALLTHROUGH();
+
+    default: //default behaviour to return the passed key
+        linkText = item.key();
+        break;
+
     }
 
 

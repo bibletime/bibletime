@@ -13,6 +13,7 @@
 #include "btinforendering.h"
 
 #include <QStringList>
+#include <QtGlobal>
 #include "../../util/btassert.h"
 #include "../btglobal.h"
 #include "../keys/cswordversekey.h"
@@ -47,35 +48,30 @@ public:
         }
 
         switch (item.settings().keyRenderingFace) {
-            case KeyTreeItem::Settings::NoKey: {
+            case KeyTreeItem::Settings::NoKey:
                 linkText = QString();
                 break; //no key is valid for all modules
-            }
-            case KeyTreeItem::Settings::CompleteShort: {
+            case KeyTreeItem::Settings::CompleteShort:
                 if (isBible) {
                     linkText = QString::fromUtf8(vk.getShortText());
                     break;
                 }
-                //fall through for non-Bible modules
-            }
-            case KeyTreeItem::Settings::CompleteLong: {
+                Q_FALLTHROUGH();
+            case KeyTreeItem::Settings::CompleteLong:
                 if (isBible) {
                     linkText = vk.key();
                     break;
                 }
-                //fall through for non-Bible modules
-            }
-            case KeyTreeItem::Settings::SimpleKey: {
+                Q_FALLTHROUGH();
+            case KeyTreeItem::Settings::SimpleKey:
                 if (isBible) {
                     linkText = QString::number(vk.getVerse());
                     break;
                 }
-                //fall through for non-Bible modules
-            }
-            default: { //default behaviour to return the passed key
+                Q_FALLTHROUGH();
+            default: //default behaviour to return the passed key
                 linkText = item.key();
                 break;
-            }
         }
 
         if (!linkText.isEmpty()) { //if we have a valid link text
@@ -198,6 +194,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                 }
                 else
                     BT_ASSERT(false); /// \todo Why is this here?
+                Q_FALLTHROUGH();
             default:
                 continue;
         }
