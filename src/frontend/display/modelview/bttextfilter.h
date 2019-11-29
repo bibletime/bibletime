@@ -48,7 +48,6 @@ private:
 
     bool m_showReferences;
     bool m_selected;
-    int m_spanDepth;
 
     QStringList m_parts;
 };
