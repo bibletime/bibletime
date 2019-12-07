@@ -292,11 +292,18 @@ void BtSearchOptionsArea::chooseModules() {
 }
 
 void BtSearchOptionsArea::reset() {
-    m_rangeChooserCombo->setCurrentIndex(0);
+
+    QString currentSearchScope = btConfig().value<QString>("searchScopeCurrent");
+    int index = m_rangeChooserCombo->findText(currentSearchScope);
+    if (index >= 0)
+        m_rangeChooserCombo->setCurrentIndex(index);
+    else
+        m_rangeChooserCombo->setCurrentIndex(0);
     m_searchTextCombo->clearEditText();
 }
 
 void BtSearchOptionsArea::saveSettings() {
+    btConfig().setValue("searchScopeCurrent", m_rangeChooserCombo->currentText());
     btConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
     CSwordModuleSearch::SearchType t = CSwordModuleSearch::FullType;
     if (m_typeAndButton->isChecked()) {
