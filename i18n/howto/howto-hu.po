@@ -1,20 +1,19 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2016-02-12 19:35+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Hungarian (http://www.transifex.com/bibletime/bibletime/"
-"language/hu/)\n"
-"Language: hu\n"
+"PO-Revision-Date: 2017-09-21 13:11+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Language-Team: Hungarian (http://www.transifex.com/bibletime/bibletime/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: Content of: <chapter><title>
@@ -36,56 +35,44 @@ msgstr "Jn.5:39-40"
 #: docs/howto/en/docbook/howto-basics.docbook:8
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
-"life; and it is these that bear witness of Me; and you are unwilling to come "
-"to Me, that you may have life."
-msgstr ""
-"Tudakozzátok az írásokat, mert azt hiszitek, hogy azokban van a ti örök "
-"életetek; és ezek azok, a melyek bizonyságot tesznek rólam; És nem akartok "
-"hozzám jőni, hogy életetek legyen!"
+"life; and it is these that bear witness of Me; and you are unwilling to come"
+" to Me, that you may have life."
+msgstr "Tudakozzátok az írásokat, mert azt hiszitek, hogy azokban van a ti örök életetek; és ezek azok, a melyek bizonyságot tesznek rólam; És nem akartok hozzám jőni, hogy életetek legyen!"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:14
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
-"so in Bible study, we do it not for its own sake but for fellowship with God."
-msgstr ""
-"A fő indítéka ennek a könyvnek, hogy elvezessen Hozzá. Luther mondta: "
-"<quote> Csak azért megyünk a bölcsőhöz, hogy ringassuk a babát</quote>; de a "
-"Biblia tanulmányozását mi nem a magunk ringatásáért végezzük, hanem az "
-"Istennel való szövetségért."
+"so in Bible study, we do it not for its own sake but for fellowship with "
+"God."
+msgstr "A fő indítéka ennek a könyvnek, hogy elvezessen Hozzá. Luther mondta: <quote> Csak azért megyünk a bölcsőhöz, hogy ringassuk a babát</quote>; de a Biblia tanulmányozását mi nem a magunk ringatásáért végezzük, hanem az Istennel való szövetségért."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:20
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
-msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-"InterVarsity Press 1978, pp.97, 104."
+msgstr "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, InterVarsity Press 1978, pp.97, 104."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:23
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
 "tantamount to possessing life. Hillel used to say, \"He who has gotten to "
-"himself words of Torah has gotten to himself the life of the world to come."
-"\" Their study was an end in itself. In this they were grievously deceived. "
-"[...]"
+"himself words of Torah has gotten to himself the life of the world to "
+"come.\" Their study was an end in itself. In this they were grievously "
+"deceived. [...]"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:28
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
-"sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
-"Bible is read, what is needed is an eager expectation that through it we may "
-"meet Christ."
-msgstr ""
-"Sem nem érdem, sem nem nyereség az Írást önmagáért olvasni, csak ha "
-"ténylegesen bemutatja Jézus Krisztust. Ahogy az a Bibliában is olvasható, "
-"szükség van olyan buzgó reménységre, hogy egyszer mi is találkozhatunk "
-"Krisztussal."
+"sake, but only if it effectively introduces us to Jesus Christ. Whenever the"
+" Bible is read, what is needed is an eager expectation that through it we "
+"may meet Christ."
+msgstr "Sem nem érdem, sem nem nyereség az Írást önmagáért olvasni, csak ha ténylegesen bemutatja Jézus Krisztust. Ahogy az a Bibliában is olvasható, szükség van olyan buzgó reménységre, hogy egyszer mi is találkozhatunk Krisztussal."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:35
@@ -109,11 +96,9 @@ msgstr "Hallgatni"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
-"Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
-"quote>"
-msgstr ""
-"Lk.11:28 <quote>Sőt inkább boldogok a kik hallgatják az Istennek beszédét, "
-"és megtartják azt.</quote>"
+"Lk.11:28 <quote>blessed are those who hear the word of God, and observe "
+"it.</quote>"
+msgstr "Lk.11:28 <quote>Sőt inkább boldogok a kik hallgatják az Istennek beszédét, és megtartják azt.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:48
@@ -125,15 +110,13 @@ msgstr "Olvasni"
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
-msgstr ""
-"Jel.1:3 <quote>Boldog, a ki olvassa, és a kik hallgatják e prófétálásnak "
-"beszédeit [...]</quote>"
+msgstr "Jel.1:3 <quote>Boldog, a ki olvassa, és a kik hallgatják e prófétálásnak beszédeit [...]</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:52
 msgid ""
-"1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
-"quote>"
+"1 Tim.4:13 <quote>give attention to the public reading of Scripture "
+"[...]</quote>"
 msgstr "1 Tim.4:13 <quote>legyen gondod a felolvasásra[...]</quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
@@ -146,12 +129,9 @@ msgstr "Tanulmányozni"
 #: docs/howto/en/docbook/howto-basics.docbook:58
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
-"Thessalonica, for they received the word with great eagerness, examining the "
-"Scriptures daily, to see whether these things were so.</quote>"
-msgstr ""
-"ApCsel 17:11 <quote>Ezek pedig nemesb lelkűek valának a "
-"Thessalonikabelieknél, úgymint kik bevevék az ígét teljes készséggel, "
-"naponként tudakozva az írásokat, ha úgy vannak-é ezek.</quote>"
+"Thessalonica, for they received the word with great eagerness, examining the"
+" Scriptures daily, to see whether these things were so.</quote>"
+msgstr "ApCsel 17:11 <quote>Ezek pedig nemesb lelkűek valának a Thessalonikabelieknél, úgymint kik bevevék az ígét teljes készséggel, naponként tudakozva az írásokat, ha úgy vannak-é ezek.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:63
@@ -159,10 +139,7 @@ msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
-msgstr ""
-"2 Tim.2:15 <quote>Igyekezzél, hogy Isten előtt becsületesen megállj, mint "
-"oly munkás, a ki szégyent nem vall, a ki helyesen hasogatja az igazságnak "
-"beszédét.</quote>"
+msgstr "2 Tim.2:15 <quote>Igyekezzél, hogy Isten előtt becsületesen megállj, mint oly munkás, a ki szégyent nem vall, a ki helyesen hasogatja az igazságnak beszédét.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:69
@@ -172,11 +149,9 @@ msgstr "Memorizálni"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:70
 msgid ""
-"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
-"Thee.</quote>"
-msgstr ""
-"Zsolt.119:11 <quote>Szívembe rejtettem a te beszédedet, hogy ne vétkezzem "
-"ellened.</quote>"
+"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against"
+" Thee.</quote>"
+msgstr "Zsolt.119:11 <quote>Szívembe rejtettem a te beszédedet, hogy ne vétkezzem ellened.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:75
@@ -186,24 +161,20 @@ msgstr "Elmélkedni"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:76
 msgid ""
-"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
-"meditates day and night. And he will be like a tree firmly planted by "
+"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he"
+" meditates day and night. And he will be like a tree firmly planted by "
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
-msgstr ""
-"Zsolt. 1:2-3 <quote>Hanem az Úr törvényében van gyönyörűsége, és az ő "
-"törvényéről gondolkodik éjjel és nappal. És olyan lesz, mint a folyóvizek "
-"mellé ültetett fa, a mely idejekorán megadja gyümölcsét, és levele nem "
-"hervad el; és minden munkájában jó szerencsés lészen.</quote>"
+msgstr "Zsolt. 1:2-3 <quote>Hanem az Úr törvényében van gyönyörűsége, és az ő törvényéről gondolkodik éjjel és nappal. És olyan lesz, mint a folyóvizek mellé ültetett fa, a mely idejekorán megadja gyümölcsét, és levele nem hervad el; és minden munkájában jó szerencsés lészen.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:82
 msgid ""
-"The Navigators illustrate this by saying that as the thumb can touch all the "
-"fingers, we can meditate on the Word as we do any of the first four. "
+"The Navigators illustrate this by saying that as the thumb can touch all the"
+" fingers, we can meditate on the Word as we do any of the first four. "
 "Meditation is a key to revelation. A new Christian needs to hear and read "
-"the Bible more than they need to study and memorize it. This is so that they "
-"become familiar with the overall message of the Bible."
+"the Bible more than they need to study and memorize it. This is so that they"
+" become familiar with the overall message of the Bible."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
@@ -221,9 +192,7 @@ msgstr "Témák tanulmányozása"
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
-msgstr ""
-"Válasszon ki egy témát, és kövesse végig a kereszthivatkozások vagy "
-"szószedetek alapján."
+msgstr "Válasszon ki egy témát, és kövesse végig a kereszthivatkozások vagy szószedetek alapján."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:98
@@ -234,9 +203,7 @@ msgstr "Karakterek tanulmányozása"
 #: docs/howto/en/docbook/howto-basics.docbook:99
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
-msgstr ""
-"Egy bibliai személy életének tanulmányozása, például József élete az 1Móz. "
-"37-50 szerint."
+msgstr "Egy bibliai személy életének tanulmányozása, például József élete az 1Móz. 37-50 szerint."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:103
@@ -246,8 +213,7 @@ msgstr "Megismerő tanulmányozás"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:104
 msgid "Studying a certain passage: paragraph, chapter, or book."
-msgstr ""
-"Egy szakasz tanulmányozása: lehet bekezdés, fejezet, vagy egész könyv is."
+msgstr "Egy szakasz tanulmányozása: lehet bekezdés, fejezet, vagy egész könyv is."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:109
@@ -262,11 +228,9 @@ msgstr "Tartalom"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:112
 msgid ""
-"What does it say? What does it say in the original language? Be careful with "
-"definitions. Don't read into it what it doesn't say."
-msgstr ""
-"Mit is mond? Mit jelent ez az eredeti nyelven? Legyen óvatos a "
-"meghatározásokkal. Ne olvasson bele olyasmit, amit nem tartalmaz."
+"What does it say? What does it say in the original language? Be careful with"
+" definitions. Don't read into it what it doesn't say."
+msgstr "Mit is mond? Mit jelent ez az eredeti nyelven? Legyen óvatos a meghatározásokkal. Ne olvasson bele olyasmit, amit nem tartalmaz."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:117
@@ -280,7 +244,8 @@ msgid ""
 "passage must make sense within the structure of the entire passage and book."
 msgstr ""
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:123
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Cross-reference"
@@ -292,10 +257,7 @@ msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
 "test of other scriptures."
-msgstr ""
-"Mit jelent ki ugyanarról a témáról máshol a Biblia? Isten nem mond ellent "
-"önmagának, ezért a mi értelmezésünket kell alávetnünk más igeszakaszok "
-"tesztjének."
+msgstr "Mit jelent ki ugyanarról a témáról máshol a Biblia? Isten nem mond ellent önmagának, ezért a mi értelmezésünket kell alávetnünk más igeszakaszok tesztjének."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:131
@@ -306,8 +268,8 @@ msgstr "Máté 6:1-18 megismerő tanulmányozása"
 #: docs/howto/en/docbook/howto-basics.docbook:132
 msgid ""
 "Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
-"key verse, the verse that sums up the whole passage. Think you have it? Test "
-"it by picking different places in the passage and asking yourself if they "
+"key verse, the verse that sums up the whole passage. Think you have it? Test"
+" it by picking different places in the passage and asking yourself if they "
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
 msgstr ""
@@ -320,9 +282,9 @@ msgstr "Vigyázzatok a kegyességeteket ne az emberek előtt gyakoroljátok"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:144
 msgid ""
-"What does <quote>practicing your righteousness</quote>mean? Does the passage "
-"give any examples? What area of our lives is being addressed? <emphasis>Our "
-"motives!</emphasis> What sub-headings develop this thought?"
+"What does <quote>practicing your righteousness</quote>mean? Does the passage"
+" give any examples? What area of our lives is being addressed? <emphasis>Our"
+" motives!</emphasis> What sub-headings develop this thought?"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
@@ -345,23 +307,24 @@ msgstr "Amikor imádkozol"
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
-msgstr ""
-"Most töltse ki a a vázlatpontokat a javaslatokkal, hogyan kerülje el a rossz "
-"módját a kegyesség gyakorlásának:"
+msgstr "Most töltse ki a a vázlatpontokat a javaslatokkal, hogyan kerülje el a rossz módját a kegyesség gyakorlásának:"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:167
 msgid ""
-"don't sound a trumpet. (how might someone <quote>sound a trumpet</"
-"quote>today?)"
+"don't sound a trumpet. (how might someone <quote>sound a "
+"trumpet</quote>today?)"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
 msgstr "titokban csináld."
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:174
 msgid "etc."
 msgstr "stb."
@@ -396,17 +359,20 @@ msgstr "Lapozzon ABC szerint a helyére"
 msgid "Go down the column of listings until you find your verse."
 msgstr "Menjen végig az oszlopon, míg meg nem találja a verset."
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:201
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr "<quote>Jó szándékúak a baráttól kapott sebek</quote>"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:206
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr "<quote>Tehát Krisztusért járva követségben. </quote>"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:210
 msgid "The story of the rich man and Lazarus."
 msgstr "A gazdag ember és Lázár története."
@@ -425,9 +391,9 @@ msgstr "Téma szerinti tanulmányozás"
 #: docs/howto/en/docbook/howto-basics.docbook:216
 msgid ""
 "Let's say you wanted to do a study of the word \"redemption.\" First you "
-"would look up that word in the concordance and look up references listed for "
-"it. Then you could look up related words and references listed for them, e."
-"g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
+"would look up that word in the concordance and look up references listed for"
+" it. Then you could look up related words and references listed for them, "
+"e.g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -470,9 +436,9 @@ msgstr "Keresse meg az oszlopában az 1 Kor. 2:15-t. . . . . . 350."
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:246
 msgid ""
-"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
-"language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
-"the meaning of 350 and you have your answer!"
+"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the"
+" language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 "
+"with the meaning of 350 and you have your answer!"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -483,10 +449,9 @@ msgstr "Nevek jelentésének megkeresése"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:255
 msgid ""
-"By the same process we can find the meaning of a name in the Greek or Hebrew."
-msgstr ""
-"Ugyanez az eljárás, amikor egy név jelentését keressük görögben, vagy "
-"héberben."
+"By the same process we can find the meaning of a name in the Greek or "
+"Hebrew."
+msgstr "Ugyanez az eljárás, amikor egy név jelentését keressük görögben, vagy héberben."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:257
@@ -553,8 +518,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21
 msgid ""
-"preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
-"</emphasis> compares New Testament manuscripts with other ancient texts:"
+"preservation. F. F. Bruce in <emphasis>Are New Testament Documents "
+"Reliable?</emphasis> compares New Testament manuscripts with other ancient "
+"texts:"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><table><title>
@@ -706,8 +672,8 @@ msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
 "of which was copied 900 years after Caesar wrote the original, etc. For the "
 "New Testament we have full manuscripts dating to 350 A. D., papyri "
-"containing most of the New Testament from the 200s, and a fragment of John's "
-"gospel from 130 A. D. How many manuscripts do we have to compare to each "
+"containing most of the New Testament from the 200s, and a fragment of John's"
+" gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
 
@@ -715,8 +681,8 @@ msgstr ""
 #: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
-"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
-"emphasis>p. 25-26"
+"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of "
+"Life</emphasis>p. 25-26"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
@@ -725,10 +691,7 @@ msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
 "ancient prose writings.\""
-msgstr ""
-"\"Az eredetiség és a teljesség a bizonyíték arra, hogy a szöveg, amin az "
-"Újszövetség alapszik, abszolút és megközelíthetetlenül egyedülálló a többi "
-"ősi prózai irat között.\""
+msgstr "\"Az eredetiség és a teljesség a bizonyíték arra, hogy a szöveg, amin az Újszövetség alapszik, abszolút és megközelíthetetlenül egyedülálló a többi ősi prózai irat között.\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:99
@@ -741,8 +704,8 @@ msgid ""
 "<emphasis>Heb.4:12</emphasis> \"<emphasis>For the word of God is living and "
 "active...</emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis>\" "
 "<emphasis>It is written, Man shall not live on bread alone, but on every "
-"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
-"As we read the Bible, God's Spirit is there to speak it to our hearts in a "
+"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\""
+" As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
 msgstr ""
 
@@ -750,8 +713,8 @@ msgstr ""
 #: docs/howto/en/docbook/howto-importance.docbook:109
 msgid ""
 "2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
-"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
-"Jesus' attitude toward the Scriptures."
+"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider"
+" Jesus' attitude toward the Scriptures."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
@@ -759,26 +722,24 @@ msgstr ""
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
-msgstr ""
-"John R.W. Stott, <emphasis>Krisztus a vitatkozó</emphasis>, InterVarsity "
-"Press 1978, 93-95"
+msgstr "John R.W. Stott, <emphasis>Krisztus a vitatkozó</emphasis>, InterVarsity Press 1978, 93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
 "all was a single divine Author. He could equally say 'Moses said' or 'God "
-"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as "
-"an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
+"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as"
+" an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
 "did Isaiah prophesy of you hypocrites, as it is written', when what He went "
-"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It "
-"is from Jesus Himself that the New Testament authors have gained their "
-"conviction of the dual authorship of Scripture. For them it was just as true "
-"to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
+"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It"
+" is from Jesus Himself that the New Testament authors have gained their "
+"conviction of the dual authorship of Scripture. For them it was just as true"
+" to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
 "it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
 "Pe.1:21).  God did not speak in such a way as to obliterate the personality "
-"of the human authors, nor did men speak in such a way as to corrupt the Word "
-"of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
+"of the human authors, nor did men speak in such a way as to corrupt the Word"
+" of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
 msgstr ""
 
@@ -797,8 +758,8 @@ msgid ""
 "2 Tim.3:16 goes on, \" <emphasis>and profitable for teaching, for "
 "correction, for training in righteousness, that the man of God may be "
 "adequate, equipped for every good work.</emphasis>\" If we accept that the "
-"Bible really is God speaking to us, it follows that it will be our authority "
-"in all matters of faith and conduct."
+"Bible really is God speaking to us, it follows that it will be our authority"
+" in all matters of faith and conduct."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
@@ -809,8 +770,8 @@ msgstr "A könyv, amely cselekszik"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:149
 msgid ""
-"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
-"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
+"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \""
+" <emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
 msgstr ""
 
@@ -837,10 +798,9 @@ msgstr "Ef. 5:26"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:165
 msgid ""
-"cleanses -- \"...having cleansed her by the washing of water with the word.\""
-msgstr ""
-"megtisztít -- \"...hogy a víz fürdőjével az ige által megtisztítva "
-"megszentelje.\""
+"cleanses -- \"...having cleansed her by the washing of water with the "
+"word.\""
+msgstr "megtisztít -- \"...hogy a víz fürdőjével az ige által megtisztítva megszentelje.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:169
@@ -864,8 +824,7 @@ msgstr "Róm. 15:4"
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
-msgstr ""
-"vigasztal -- \"Írásokból türelmet és vigasztalást merítve reménykedjünk.\""
+msgstr "vigasztal -- \"Írásokból türelmet és vigasztalást merítve reménykedjünk.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:181
@@ -877,9 +836,7 @@ msgstr "Róm. 10:17"
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
-msgstr ""
-"hitet ad --\" A hit tehát hallásból van, a hallás pedig a Krisztus beszéde "
-"által.\""
+msgstr "hitet ad --\" A hit tehát hallásból van, a hallás pedig a Krisztus beszéde által.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
@@ -891,9 +848,7 @@ msgstr "1 Kor. 10:11"
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
-msgstr ""
-"figyelmeztet -- \"Mindez pedig példaképpen történt velük, figyelmeztetésül "
-"íratott meg nekünk, akik az utolsó időkben élünk.\""
+msgstr "figyelmeztet -- \"Mindez pedig példaképpen történt velük, figyelmeztetésül íratott meg nekünk, akik az utolsó időkben élünk.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:192
@@ -906,9 +861,7 @@ msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
 "God.'\""
-msgstr ""
-"táplál -- \"Ő így válaszolt: 'Meg van írva: Nem csak kenyérrel él az ember, "
-"hanem minden igével, amely Isten szájából származik.'\""
+msgstr "táplál -- \"Ő így válaszolt: 'Meg van írva: Nem csak kenyérrel él az ember, hanem minden igével, amely Isten szájából származik.'\""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:202
@@ -936,19 +889,20 @@ msgstr ""
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:213
 msgid ""
-"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
-"</emphasis>\" <emphasis>As a result, we are no longer to be children, tossed "
-"here and there by waves, and carried about by every wind of doctrine...</"
-"emphasis>\"One thing studying the Bible does for us is to ground us in the "
-"truth, with the result that we won't be easily \"blown away.\""
+"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
+"wind.</emphasis>\" <emphasis>As a result, we are no longer to be children, "
+"tossed here and there by waves, and carried about by every wind of "
+"doctrine...</emphasis>\"One thing studying the Bible does for us is to "
+"ground us in the truth, with the result that we won't be easily \"blown "
+"away.\""
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid ""
 "<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
-"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
-"of God.</emphasis>\" Mt.22:29"
+"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power"
+" of God.</emphasis>\" Mt.22:29"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
@@ -1030,8 +984,8 @@ msgstr "Bátorítás"
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
-"workman that needeth not to be ashamed, rightly dividing the word of truth.</"
-"emphasis>\""
+"workman that needeth not to be ashamed, rightly dividing the word of "
+"truth.</emphasis>\""
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
@@ -1039,8 +993,8 @@ msgstr ""
 msgid ""
 "Col.3:16 \" <emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
-"spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
-"\""
+"spiritual songs, singing with thankfulness in your hearts to "
+"God.</emphasis>\""
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
@@ -1056,11 +1010,11 @@ msgstr "Nem kevés!"
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:280
 msgid ""
-"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters "
-"of these collections are like well-driven nails; they are given by one "
+"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters"
+" of these collections are like well-driven nails; they are given by one "
 "Shepherd. But beyond this, my son, be warned: the writing of many books is "
-"endless, and excessive devotion to books is wearying to the body.</emphasis>"
-"\""
+"endless, and excessive devotion to books is wearying to the "
+"body.</emphasis>\""
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
@@ -1071,22 +1025,23 @@ msgstr "Függelék: \"Egyszer s mindenkorra\""
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid ""
-"John R. W. Stott, <emphasis>Christ the Controversialist,</"
-"emphasis>InterVarsity Press 1978, pp.106-107"
+"John R. W. Stott, <emphasis>Christ the "
+"Controversialist,</emphasis>InterVarsity Press 1978, pp.106-107"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:293
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
-"by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
-"foreignphrase>and <foreignphrase>ephapax</foreignphrase>. It is usually "
-"translated in the Authorized Version once, meaning once for all. It is used "
-"of what is so done as to be of perpetual validity and never need repetition, "
-"and is applied in the NT to both revelation and redemption. Thus, Jude "
-"refers to the faith which was once for all delivered to the saints (Jude 3), "
-"and Romans says, \" <emphasis>Christ also died for sins once for all</"
-"emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
+"by one word of the Greek Testament, namely the adverb "
+"<foreignphrase>hapax</foreignphrase>and "
+"<foreignphrase>ephapax</foreignphrase>. It is usually translated in the "
+"Authorized Version once, meaning once for all. It is used of what is so done"
+" as to be of perpetual validity and never need repetition, and is applied in"
+" the NT to both revelation and redemption. Thus, Jude refers to the faith "
+"which was once for all delivered to the saints (Jude 3), and Romans says, \""
+" <emphasis>Christ also died for sins once for all</emphasis>\" (Rom.6:10, "
+"see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
@@ -1094,13 +1049,13 @@ msgstr ""
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
 "once for all. This means that the Christian revelation and the Christian "
-"redemption are both alike in Christ complete. Nothing can be added to either "
-"without being derogatory to Christ... These are the two rocks on which the "
+"redemption are both alike in Christ complete. Nothing can be added to either"
+" without being derogatory to Christ... These are the two rocks on which the "
 "Protestant Reformation was built -- Gods revealed word without the addition "
-"of human traditions and Christ's finished work without the addition of human "
-"merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
-"foreignphrase>for our authority and <foreignphrase>sola gratia</"
-"foreignphrase>for our salvation."
+"of human traditions and Christ's finished work without the addition of human"
+" merits. The Reformers great watchwords were <foreignphrase>sola "
+"scriptura</foreignphrase>for our authority and <foreignphrase>sola "
+"gratia</foreignphrase>for our salvation."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
@@ -1112,54 +1067,43 @@ msgstr "Kiegészítés: Biblia olvasási programok"
 #: docs/howto/en/docbook/howto-importance.docbook:321
 msgid ""
 "Here are some easy programs to systematically read your Bible. You can do "
-"more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
-"Vary the program from year to year to keep it fresh!"
+"more than one at a time if you like, for instance #1 with #4, or #2 with #5."
+" Vary the program from year to year to keep it fresh!"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:327
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
-msgstr ""
-"Újszövetség egy év alatt: olvasson el egy fejezetet egy nap, 5 napon át egy "
-"héten."
+msgstr "Újszövetség egy év alatt: olvasson el egy fejezetet egy nap, 5 napon át egy héten."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:331
 msgid ""
-"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
-"the day of the month."
-msgstr ""
-"Példabeszédek egy hónap alatt: olvasson egy fejezetet egy nap, dátumnak "
-"megfelelően."
+"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to"
+" the day of the month."
+msgstr "Példabeszédek egy hónap alatt: olvasson egy fejezetet egy nap, dátumnak megfelelően."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:335
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
-msgstr ""
-"Zsoltárok egy hónap alatt: olvasson 5 zsoltárt naponta, 30 naponként, "
-"például 20 -án olvassa a 20. 50. 80. 110. 140. zsoltárt."
+msgstr "Zsoltárok egy hónap alatt: olvasson 5 zsoltárt naponta, 30 naponként, például 20 -án olvassa a 20. 50. 80. 110. 140. zsoltárt."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:340
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
-msgstr ""
-"Zsoltárok és Példabeszédek 6 hónap alatt: olvassa át a Zsoltárokat és a "
-"Példabeszédeket egy fejezetenként, naponta."
+msgstr "Zsoltárok és Példabeszédek 6 hónap alatt: olvassa át a Zsoltárokat és a Példabeszédeket egy fejezetenként, naponta."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:344
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
-"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
-"will read the Old Testament in 2 years and 2 weeks."
-msgstr ""
-"Ószövetség Zsoltárok és Példabeszédek nélkül 2 év alatt: ha egy fejezetet "
-"olvas naponta sz Ószövetségből, kihagyva a Zsoltárokat és a Példabeszédeket, "
-"sikerül teljesen elolvasni 2 év és 2 hét alatt."
+"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you"
+" will read the Old Testament in 2 years and 2 weeks."
+msgstr "Ószövetség Zsoltárok és Példabeszédek nélkül 2 év alatt: ha egy fejezetet olvas naponta sz Ószövetségből, kihagyva a Zsoltárokat és a Példabeszédeket, sikerül teljesen elolvasni 2 év és 2 hét alatt."
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
@@ -1169,18 +1113,18 @@ msgstr "A Biblia értelmezésének szabályai (Hermeneutikai)"
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:3
 msgid ""
-"We already learned about the \"3 Cs\": content, context, cross-reference. We "
-"want to expand that now by delving briefly into biblical hermeneutics, whose "
-"goal is to discover the meaning intended by the original author (and "
+"We already learned about the \"3 Cs\": content, context, cross-reference. We"
+" want to expand that now by delving briefly into biblical hermeneutics, "
+"whose goal is to discover the meaning intended by the original author (and "
 "Author!). While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
-"this first, that no prophesy of scripture is of any private interpretation.</"
-"quote>). Certain rules are helps toward discovering the correct meaning; by "
-"ignoring these rules people have brought much trouble on themselves and "
-"their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
-"understand, which the untaught and unstable distort, as they do also the "
-"rest of the Scriptures, to their own destruction.</quote>"
+"this first, that no prophesy of scripture is of any private "
+"interpretation.</quote>). Certain rules are helps toward discovering the "
+"correct meaning; by ignoring these rules people have brought much trouble on"
+" themselves and their followers. 2 Pe.3:16 <quote>...in which are some "
+"things hard to understand, which the untaught and unstable distort, as they "
+"do also the rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
 
 #. type: Content of: <chapter><para>
@@ -1199,26 +1143,27 @@ msgstr "1. szabály - értelmezés a szavak egzakt jelentése alapján"
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:24
 msgid ""
-"The more precise we can be with the exact, original meaning of the words the "
-"better our interpretation will be. Try to find the exact meaning of the key "
-"words by following these steps:"
+"The more precise we can be with the exact, original meaning of the words the"
+" better our interpretation will be. Try to find the exact meaning of the key"
+" words by following these steps:"
 msgstr ""
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:30
 msgid "Definition"
 msgstr "Definíció"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:31
 msgid ""
-"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
-"tense is also crucial."
-msgstr ""
-"Keresse meg a meghatározást a görög vagy héber szótárban. Az igéknél az "
-"igeidő is döntő fontosságú."
+"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb"
+" tense is also crucial."
+msgstr "Keresse meg a meghatározást a görög vagy héber szótárban. Az igéknél az igeidő is döntő fontosságú."
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
@@ -1242,26 +1187,26 @@ msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
 "He is too holy or something. But that doesn't seem right, so let's look it "
-"up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
-"emphasis> (AMG Publishers, 1991)."
+"up in Spiros Zodhiates' <emphasis>The Complete Word Study New "
+"Testament</emphasis> (AMG Publishers, 1991)."
 msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:61
 msgid ""
-"Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
-"\" The letters give us a code for the part of speech, and the number refers "
-"to Strong's dictionary reference.  Let's look up the definition (p. 879). "
-"\"680. Haptomai; from hapto (681), touch. Refers to such handling of an "
-"object as to exert a modifying influence upon it... Distinguished from "
-"pselaphao (5584), which actually only means to touch the surface of "
-"something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
-"after Revelation; on p. 849 we see that pim stands for \"present imperative "
-"active (80)\". On p.857, \"Present Imperative.  In the active voice, it may "
-"indicate a command to do something in the future which involves continuous "
-"or repeated action or, when it is negated, a command to stop doing "
-"something. \" This is a negative command, so it is to stop doing something "
-"that is already occurring. So, what have we found?"
+"Definition: Turning to John 20:17, above the word \"Touch\" we see "
+"\"pim680.\" The letters give us a code for the part of speech, and the "
+"number refers to Strong's dictionary reference.  Let's look up the "
+"definition (p. 879). \"680. Haptomai; from hapto (681), touch. Refers to "
+"such handling of an object as to exert a modifying influence upon it... "
+"Distinguished from pselaphao (5584), which actually only means to touch the "
+"surface of something. \" Now look up \"pim.\" The grammar codes in Zodhiates"
+" come right after Revelation; on p. 849 we see that pim stands for \"present"
+" imperative active (80)\". On p.857, \"Present Imperative.  In the active "
+"voice, it may indicate a command to do something in the future which "
+"involves continuous or repeated action or, when it is negated, a command to "
+"stop doing something. \" This is a negative command, so it is to stop doing "
+"something that is already occurring. So, what have we found?"
 msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
@@ -1288,74 +1233,74 @@ msgstr ""
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" (Strong's). "
-"Since it's a verb, consider the tense also, \"apta\" aorist participle "
+"with oil, i.e. to consecrate to an office or religious service\" (Strong's)."
+" Since it's a verb, consider the tense also, \"apta\" aorist participle "
 "active. \"The aorist participle expresses simple action, as opposed to "
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
 msgstr ""
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:100
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr "Mt. 6:17 Te pedig mikor bőjtölsz, kend meg a te fejedet"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:104
-msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
-msgstr ""
-"Mk. 16:1 [az asszonyok] drága keneteket vásárlának, hogy elmenvén, megkenjék "
-"őt."
+msgid ""
+"Mk.16:1 [the women] brought spices that they might come and anoint Him."
+msgstr "Mk. 16:1 [az asszonyok] drága keneteket vásárlának, hogy elmenvén, megkenjék őt."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:108
 msgid ""
-"Mk.6:13 And they were...anointing with oil many sick people and healing them."
+"Mk.6:13 And they were...anointing with oil many sick people and healing "
+"them."
 msgstr "Mk 6:13  és olajjal sok beteget megkennek és meggyógyítnak vala."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:112
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr "Lk. 7:38 [...] csókolgatá az ő lábait, és megkené drága kenettel."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:116
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
-msgstr ""
-"Jn. 12:3 Mária [...] megkené a Jézus lábait, és megtörlé annak lábait a "
-"saját hajával; a ház pedig megtelék a kenet illatával."
+msgstr "Jn. 12:3 Mária [...] megkené a Jézus lábait, és megtörlé annak lábait a saját hajával; a ház pedig megtelék a kenet illatával."
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:97
-msgid ""
-"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgid "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:125
 msgid ""
-"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
-"to preach [...]</quote>"
-msgstr ""
-"Lk. 4:28 <quote>Az Úrnak lelke van én rajtam, mivelhogy felkent engem, hogy "
-"a szegényeknek az evangyéliomot hirdessem [...]</quote>"
+"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me"
+" to preach [...]</quote>"
+msgstr "Lk. 4:28 <quote>Az Úrnak lelke van én rajtam, mivelhogy felkent engem, hogy a szegényeknek az evangyéliomot hirdessem [...]</quote>"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:130
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
-msgstr ""
-"ApCsel 4:27 [...] egybegyűltek a te szent Fiad, a Jézus ellen, a kit "
-"felkentél, [...]"
+msgstr "ApCsel 4:27 [...] egybegyűltek a te szent Fiad, a Jézus ellen, a kit felkentél, [...]"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:133
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
-msgstr ""
-"ApCsel 10:38 A názáreti Jézust, mint kené fel őt az Isten Szent Lélekkel és "
-"hatalommal, "
+msgstr "ApCsel 10:38 A názáreti Jézust, mint kené fel őt az Isten Szent Lélekkel és hatalommal, "
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:137
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "2 Kor. 1:21 A ki ... megken minket, az Isten az;"
@@ -1368,9 +1313,10 @@ msgstr ""
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:142
 msgid ""
-"So what's the difference between aleipho and chrio? Look back over the cross-"
-"references and the definitions, and sum up the difference: <emphasis>"
-"\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
+"So what's the difference between aleipho and chrio? Look back over the "
+"cross-references and the definitions, and sum up the difference: "
+"<emphasis>\"aleipho\" is a practical use of oil and \"chrio\" is a "
+"spiritual</emphasis>"
 msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
@@ -1398,8 +1344,8 @@ msgid ""
 "\"having anointed,\" so the order is the anointing first, then the prayer "
 "(\"in the name of the Lord\"refers to the prayer, not the anointing). James "
 "5 is saying that the elders should give the sick person medicine and pray "
-"for him in the name of the Lord. Doesn't that express a beautiful balance of "
-"practical and spiritual in our God!"
+"for him in the name of the Lord. Doesn't that express a beautiful balance of"
+" practical and spiritual in our God!"
 msgstr ""
 
 #. type: Content of: <chapter><section><title>
@@ -1413,8 +1359,8 @@ msgid ""
 "Interpret scripture in harmony with other scripture. What do the verses on "
 "each side say? What is the theme of the chapter? The book? Does your "
 "interpretation fit with these? If not, it is flawed. Usually, the context "
-"supplies what we need to correctly interpret the passage. Context is key. If "
-"confusion remains as to the meaning after we have interpreted the text "
+"supplies what we need to correctly interpret the passage. Context is key. If"
+" confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
 
@@ -1433,10 +1379,11 @@ msgstr ""
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:180
 msgid ""
-"Water baptism is not under discussion here, which would be a big switch from "
-"the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
+"Water baptism is not under discussion here, which would be a big switch from"
+" the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
-"derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
+"derailed! The water is the amniotic fluid, \"born of water\" = natural "
+"birth."
 msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
@@ -1467,8 +1414,8 @@ msgid ""
 "light of the clear teaching elsewhere that regeneration happens by faith in "
 "Christ, we have to interpret it otherwise. Peter is urging baptism as a way "
 "for his hearers to respond to the gospel. If baptism were the pathway to "
-"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
-"not send me to baptize, but to preach the gospel\"</emphasis>?"
+"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did"
+" not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
 
 #. type: Content of: <chapter><section><title>
@@ -1493,11 +1440,11 @@ msgstr "3A példa"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:223
 msgid ""
-"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with "
-"a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How could "
-"Jesus die on Friday afternoon and rise Sunday morning yet \"be raised on the "
-"third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
-"explain the apparent contradiction."
+"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with"
+" a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How "
+"could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised "
+"on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't"
+" help explain the apparent contradiction."
 msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
@@ -1596,8 +1543,8 @@ msgid ""
 "like these. Dr. Martin then asked the Mormons to read one more scripture: "
 "Ps.91:4 <quote>He will cover you with His feathers; And under His wings "
 "shalt thou trust</quote>. W.M. said, <quote>By the same rules of "
-"interpretation that you just proved God to be a man, you just proved that He "
-"is a bird</quote>. The Mormons had to laugh as they realised the "
+"interpretation that you just proved God to be a man, you just proved that He"
+" is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
 
@@ -1606,18 +1553,14 @@ msgstr ""
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
-msgstr ""
-"5. szabály - a példázatok értelmének megértése, különbség a példázat és az "
-"allegória közt"
+msgstr "5. szabály - a példázatok értelmének megértése, különbség a példázat és az allegória közt"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:299
 msgid ""
-"An allegory is: <emphasis>A story where each element has a meaning.</"
-"emphasis>"
-msgstr ""
-"Az allegória: <emphasis> történet, melyben minden elemnek külön jelentése "
-"van.</emphasis>"
+"An allegory is: <emphasis>A story where each element has a "
+"meaning.</emphasis>"
+msgstr "Az allegória: <emphasis> történet, melyben minden elemnek külön jelentése van.</emphasis>"
 
 #. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:302
@@ -1643,22 +1586,17 @@ msgstr "5A példa"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:312
 msgid ""
-"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
-"illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
-"what do we have?"
-msgstr ""
-"Az özvegyasszony és a hamis bíró példázata a Lk.18:1-8 szerint. Ez a "
-"történet egy dolgot tanít: merészségre az imában. Ha ezt allegóriaként "
-"tekintjük, mit kapunk?"
+"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story"
+" illustrates one lesson: boldness in prayer.  If we draw it into an "
+"allegory, what do we have?"
+msgstr "Az özvegyasszony és a hamis bíró példázata a Lk.18:1-8 szerint. Ez a történet egy dolgot tanít: merészségre az imában. Ha ezt allegóriaként tekintjük, mit kapunk?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:315
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
-msgstr ""
-"Egy sor durva dolog jön az értelmezésbe: Isten vonakodva védi az özvegyek "
-"jogait, az ima \"bosszantja\" Őt, stb."
+msgstr "Egy sor durva dolog jön az értelmezésbe: Isten vonakodva védi az özvegyek jogait, az ima \"bosszantja\" Őt, stb."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:320
@@ -1675,9 +1613,9 @@ msgstr ""
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:323
 msgid ""
-"The steward is commended for only one thing, his shrewdness in using what he "
-"had to prepare for a time when he wouldn't have it. But he is not commended "
-"for his unethical behavior in cheating his master."
+"The steward is commended for only one thing, his shrewdness in using what he"
+" had to prepare for a time when he wouldn't have it. But he is not commended"
+" for his unethical behavior in cheating his master."
 msgstr ""
 
 #. type: Content of the bibletime entity
@@ -1710,7 +1648,7 @@ msgstr ""
 msgid "The BibleTime Team"
 msgstr ""
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
@@ -1721,9 +1659,9 @@ msgstr ""
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:31
 msgid ""
-"This document was originally created by Mr. Bob Harman and is licensed under "
-"the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
-"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
+"This document was originally created by Mr. Bob Harman and is licensed under"
+" the terms of the license <ulink url=\"http://creativecommons.org/licenses"
+"/by-sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
 msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -1731,9 +1669,7 @@ msgstr ""
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
-msgstr ""
-"Az idézetek a Károli Gáspár -féle Bibliából származnak, kivéve a külön "
-"jelzettek."
+msgstr "Az idézetek a Károli Gáspár -féle Bibliából származnak, kivéve a külön jelzettek."
 
 #. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:39
@@ -1754,8 +1690,8 @@ msgid ""
 "readers to study the scriptures to see what they say. This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
 "denominational doctrine. We recommend you to read and study the scriptures "
-"to understand what they say. If you start with the attitude that you want to "
-"have the Lord sow his word in your heart He will not disappoint you."
+"to understand what they say. If you start with the attitude that you want to"
+" have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>

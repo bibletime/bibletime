@@ -1,8 +1,11 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
+# Gary Holmlund <garywholmlund@gmail.com>, 2018
+# Harald <dutchbrussels@gmail.com>, 2016
+# Harald <dutchbrussels@gmail.com>, 2016
 # Johan van der Lingen <johanlingen@gmail.com>, 2006
 # Johan van der Lingen <johanlingen@hotmail.com>, 2006
 # Martin Gruner <mg.pub@gmx.net>, 2006
@@ -10,14 +13,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2016-02-11 20:25+0100\n"
-"PO-Revision-Date: 2016-03-03 18:08+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
-"nl/)\n"
-"Language: nl\n"
+"PO-Revision-Date: 2018-06-08 00:11+0000\n"
+"Last-Translator: Gary Holmlund <garywholmlund@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: Content of: <chapter><title>
@@ -30,7 +32,7 @@ msgstr "&bibletime; configureren"
 msgid ""
 "In this section you find an overview to configure &bibletime;, which can be "
 "found under <guimenu>Settings</guimenu> in the main menu."
-msgstr ""
+msgstr "In deze sectie vindt u een overzicht, hoe &bibletime; te configureren. Dit kan gevonden worden onder <guimenu>instellingen</guimenu>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
@@ -49,17 +51,16 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:18
 msgid "<guimenu>Display</guimenu>"
-msgstr ""
+msgstr "<guimenu>Tonen</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:20
 msgid ""
 "The startup behavior can be customized. Select from the following options:"
-msgstr ""
-"Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een "
-"keuze uit de volgende opties:"
+msgstr "Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een keuze uit de volgende opties:"
 
-#. type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:24
 msgid "Show startup logo"
 msgstr "Toon opstartlogo"
@@ -101,18 +102,15 @@ msgid ""
 "Here you can specify which language should be used for the biblical "
 "booknames. Set this to your native language, if it is available, and you'll "
 "feel at home."
-msgstr ""
-"Hier kunt u specificeren welke talen gebruikt moeten worden voor de "
-"bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u "
-"voelt zich helemaal thuis."
+msgstr "Hier kunt u specificeren welke talen gebruikt moeten worden voor de bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u voelt zich helemaal thuis."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:56
 msgid ""
 "By default, &bibletime; uses the default system display font. You can "
 "override this font if necessary. Some languages require special fonts to be "
-"displayed correctly, and this dialog allows you to specify a custom font for "
-"each language."
+"displayed correctly, and this dialog allows you to specify a custom font for"
+" each language."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><mediaobject>
@@ -138,18 +136,18 @@ msgid ""
 "&bibletime; can now use all supported fonts.  As long as the works you are "
 "interested in display correctly nothing needs to be done here. If a work "
 "only displays as a series of question marks (??????) or empty boxes, then "
-"you know that the standard display font does not contain the characters used "
-"in this work."
+"you know that the standard display font does not contain the characters used"
+" in this work."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:79
 msgid ""
-"To correct this, choose this work's language from the drop down menu. Select "
-"the use custom font checkbox. Now select a font. For example, a font that "
+"To correct this, choose this work's language from the drop down menu. Select"
+" the use custom font checkbox. Now select a font. For example, a font that "
 "supports many languages is Code2000. If no installed font can display the "
-"work you are interested in, try installing the localization package for that "
-"language."
+"work you are interested in, try installing the localization package for that"
+" language."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -161,17 +159,17 @@ msgstr "Lettertypen installeren"
 #: docs/handbook/en/docbook/hdbk-config.docbook:87
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
-"handbook. For further information you might want to refer to the <ulink url="
-"\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</"
-"ulink>."
+"handbook. For further information you might want to refer to the <ulink "
+"url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode "
+"HOWTO</ulink>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:93
 msgid ""
 "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-"faster than with a large font like <trademark class=\"registered\">Bitstream "
-"Cyberbit</trademark>(about 12Mb)."
+"faster than with a large font like <trademark class=\"registered\">Bitstream"
+" Cyberbit</trademark>(about 12Mb)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -184,30 +182,34 @@ msgstr "Lettertypen verkrijgen"
 msgid "Fonts can be obtained from a number of sources:"
 msgstr "Lettertypen kunnen worden verkregen uit een aantal bronnen:"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:104
 msgid "Your *nix distribution."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:107
 msgid "Your distribution's localization packages."
 msgstr "De lokalisatiepakketten (localization packages) in uw distributie."
 
-#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:110
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
 "installation on the same computer."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:116
 msgid "A font collection, such as are available from Adobe or Bitstream."
-msgstr ""
-"Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream."
+msgstr "Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream."
 
-#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:120
 msgid "Online font collections."
 msgstr "Online verzamelingen van lettertypen."
@@ -217,8 +219,8 @@ msgstr "Online verzamelingen van lettertypen."
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
 "fonts are available at no charge. None of available fonts includes all "
-"characters defined in the Unicode standard, so you may want to use different "
-"fonts for different languages."
+"characters defined in the Unicode standard, so you may want to use different"
+" fonts for different languages."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><title>
@@ -226,103 +228,112 @@ msgstr ""
 msgid "Unicode Fonts"
 msgstr "Unicode lettertypen"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:134
 msgid "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:137
 msgid ""
 "Perhaps the best free Unicode font, covering a wide range of characters."
-msgstr ""
-"Misschien het beste gratis Unicode lettertype, welke een groot aantal "
-"karakters ondersteunt."
+msgstr "Misschien het beste gratis Unicode lettertype, welke een groot aantal karakters ondersteunt."
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:142
 msgid ""
-"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
-"cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
+"<ulink "
+"url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads\">"
+" SIL unicode fonts</ulink>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:145
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:150
 msgid "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:153
 msgid "A new free Unicode font initiative."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:157
 msgid ""
 "<ulink url=\"ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/\"> "
 "Crosswire's font directory</ulink>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:161
 msgid "Several fonts available from the &cbs; FTP site."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:166
 msgid ""
-"<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/"
-"\"> Bitstream CyberBit</ulink>"
+"<ulink "
+"url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/\"> "
+"Bitstream CyberBit</ulink>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:169
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
-msgstr ""
-"Dekt bijna het gehele bereik van Unicode, maar kan &bibletime; vertragen "
-"door zijn omvang."
+msgstr "Dekt bijna het gehele bereik van Unicode, maar kan &bibletime; vertragen door zijn omvang."
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:174
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:175
-msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
-msgstr ""
-"Is inbegrepen in sommige distributies. Bevat Europese, Griekse, Hebreeuwse "
-"en Thaise karakters."
+msgid ""
+"Included in some distributions. Contains European, Greek, Hebrew, Thai."
+msgstr "Is inbegrepen in sommige distributies. Bevat Europese, Griekse, Hebreeuwse en Thaise karakters."
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:180
 msgid ""
 "<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, "
 "Cupola, Caliban</ulink>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:183
 msgid "Partial coverage, see information on linked site."
-msgstr ""
-"Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de "
-"bijbehorende website."
+msgstr "Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de bijbehorende website."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:189
 msgid ""
-"There are good Unicode font lists on the net, as the one by Christoph Singer "
-"( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"There are good Unicode font lists on the net, as the one by Christoph Singer"
+" ( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
 "TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink "
-"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
-"ranges and the Unicode fonts that support them</ulink>)."
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character"
+" ranges and the Unicode fonts that support them</ulink>)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -333,15 +344,16 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:205
 msgid ""
-"Shortcuts (previously known as HotKeys) are special key commands that can be "
-"used in the place of the menu items and icons. A number of &bibletime;'s "
+"Shortcuts (previously known as HotKeys) are special key commands that can be"
+" used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see the <link linkend=\"hdbk-reference-"
 "shortcuts\">Shortcuts section</link> for a complete listing). Most of "
 "&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
 "quickly access the functions that you need the most."
 msgstr ""
 
-#. type: Attribute 'fileref' of: <chapter><sect1><sect2><imageobject><imagedata>
+#. type: Attribute 'fileref' of:
+#. <chapter><sect1><sect2><imageobject><imagedata>
 #: docs/handbook/en/docbook/hdbk-config.docbook:215
 msgid "ss_shortcuts.png"
 msgstr ""
@@ -368,11 +380,11 @@ msgstr ""
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
-"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword/"
-"\">&sword;</ulink> library, which provides the back-end functionality for "
-"&bibletime;, such as viewing Bible text, searching etc. &sword; is the "
-"flagship product of the <ulink url=\"http://www.crosswire.org\">&cbs;</"
-"ulink>."
+"manage. It is built on the <ulink "
+"url=\"http://www.crosswire.org/sword/\">&sword;</ulink> library, which "
+"provides the back-end functionality for &bibletime;, such as viewing Bible "
+"text, searching etc. &sword; is the flagship product of the <ulink "
+"url=\"http://www.crosswire.org\">&cbs;</ulink>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
@@ -380,9 +392,9 @@ msgstr ""
 msgid ""
 "&bibletime; is designed to be used with works encoded in one of the formats "
 "supported by the &sword; project. Complete information on the supported "
-"document formats can be found in the <ulink url=\"http://www.crosswire.org/"
-"sword/develop/index.jsp\"> developers section</ulink> of the &sword; "
-"Project, &cbs;."
+"document formats can be found in the <ulink "
+"url=\"http://www.crosswire.org/sword/develop/index.jsp\"> developers "
+"section</ulink> of the &sword; Project, &cbs;."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -390,12 +402,14 @@ msgstr ""
 msgid "Available works"
 msgstr "Beschikbare modules"
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:27
 msgid "Bibles"
 msgstr "Bijbels"
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:29
 msgid ""
 "The full Bible text, with optional things like Strong's Numbers, headings "
@@ -405,69 +419,74 @@ msgid ""
 "is the most advanced section in the library of the &sword; project."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:39
 msgid "Books"
 msgstr "Boeken"
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:41
 msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
 "\"Josephus: The Complete Works\""
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:46
 msgid "Commentaries"
 msgstr "Bijbelcommentaren"
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:48
 msgid ""
 "Commentaries available include classics like John Wesley's \"Notes on the "
-"Bible\", Matthew Henry's commentary and Luther's \"Commentary on Galatians."
-"\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
-"\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
-"sections of the Bible."
+"Bible\", Matthew Henry's commentary and Luther's \"Commentary on "
+"Galatians.\" With the <emphasis>Personal</emphasis> commentary you can <link"
+" linkend=\"hdbk-op-parts-desk-write\"> record your own personal notes</link>"
+" to sections of the Bible."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:57
 msgid "Daily devotionals"
 msgstr "Dagelijkse overdenkingen"
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:59
 msgid ""
-"Many people appreciate these daily portions from God's word. Available works "
-"include Daily Light on the Daily Path, and the Losungen."
-msgstr ""
-"Veel mensen waarderen deze dagelijkse porties van Gods Woord. Onder de "
-"beschikbare modules bevinden zich Daily Light on the Daily Path (Dagelijks "
-"Licht op het Dagelijkse Pad) en de Losungen."
+"Many people appreciate these daily portions from God's word. Available works"
+" include Daily Light on the Daily Path, and the Losungen."
+msgstr "Veel mensen waarderen deze dagelijkse porties van Gods Woord. Onder de beschikbare modules bevinden zich Daily Light on the Daily Path (Dagelijks Licht op het Dagelijkse Pad) en de Losungen."
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:66
 msgid "Lexicons/Dictionaries"
 msgstr "Lexicons/Woordenboeken"
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
 msgid ""
-"Lexicons available include: Robinson's Morphological Analysis Codes, and the "
-"International Standard Bible Encyclopaedia. Dictionaries available include "
-"Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's "
-"Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
+"Lexicons available include: Robinson's Morphological Analysis Codes, and the"
+" International Standard Bible Encyclopaedia. Dictionaries available include "
+"Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's"
+" Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
 "Bible."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
 msgid ""
-"Over 200 documents in 50 languages are available from the <ulink url="
-"\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
-"type=\"variablelist\" id=\"0\"/>"
+"Over 200 documents in 50 languages are available from the <ulink "
+"url=\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder"
+" type=\"variablelist\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -480,8 +499,8 @@ msgstr "Motivatie"
 msgid ""
 "Our desire is to serve God, and to do our part to help others grow in their "
 "relationship with Him. We have striven to make this a powerful, quality "
-"program, and still make it simple and intuitive to operate. It is our desire "
-"that God be praised, as He is the source of all good things."
+"program, and still make it simple and intuitive to operate. It is our desire"
+" that God be praised, as He is the source of all good things."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><blockquote><attribution>
@@ -495,10 +514,7 @@ msgid ""
 "Every good thing given and every perfect gift is from above, coming down "
 "from the Father of lights, with whom there is no variation or shifting "
 "shadow."
-msgstr ""
-"Iedere gave, die goed, en elk geschenk, dat volmaakt is, daalt van boven "
-"neder, van de Vader der lichten, bij wie geen verandering is of zweem van "
-"ommekeer."
+msgstr "Iedere gave, die goed, en elk geschenk, dat volmaakt is, daalt van boven neder, van de Vader der lichten, bij wie geen verandering is of zweem van ommekeer."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:93
@@ -530,11 +546,11 @@ msgstr ""
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:5
 msgid ""
-"This is what a typical &bibletime; session looks like: <placeholder type="
-"\"mediaobject\" id=\"0\"/> You can easily see the different parts of the "
-"application. The top left window is used to open installed works in the "
-"Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The "
-"little \"Mag\" window below the Bookshelf is used to display extra "
+"This is what a typical &bibletime; session looks like: <placeholder "
+"type=\"mediaobject\" id=\"0\"/> You can easily see the different parts of "
+"the application. The top left window is used to open installed works in the "
+"Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The"
+" little \"Mag\" window below the Bookshelf is used to display extra "
 "information that is embedded in documents. When you move your mouse over a "
 "footnote marker, for example, then the Mag will display the actual content "
 "of the footnote. The toolbar gives you quick access to important functions, "
@@ -546,9 +562,7 @@ msgstr ""
 msgid ""
 "Let us now proceed by looking at the different parts of the application "
 "individually."
-msgstr ""
-"Laten we nu doorgaan en &eacute;&eacute;n voor &eacute;&eacute;n de "
-"verschillende onderdelen van de toepassing bekijken."
+msgstr "Laten we nu doorgaan en &eacute;&eacute;n voor &eacute;&eacute;n de verschillende onderdelen van de toepassing bekijken."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:29
@@ -563,13 +577,10 @@ msgstr "De Boekenplank"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:32
 msgid ""
-"The Bookshelf lists all installed works, sorted by category and language. It "
-"also has a category called \"Bookmarks\". This is where you can store and "
+"The Bookshelf lists all installed works, sorted by category and language. It"
+" also has a category called \"Bookmarks\". This is where you can store and "
 "access your own bookmarks."
-msgstr ""
-"De Boekenplank laat alle ge&iuml;nstalleerde modules zien, gesorteerd per "
-"categorie en taal. Het heeft ook een categorie genaamd \"Bladwijzers\". Dit "
-"is de plaats waar u uw eigen bladwijzers kunt opslaan en openen."
+msgstr "De Boekenplank laat alle ge&iuml;nstalleerde modules zien, gesorteerd per categorie en taal. Het heeft ook een categorie genaamd \"Bladwijzers\". Dit is de plaats waar u uw eigen bladwijzers kunt opslaan en openen."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
@@ -585,13 +596,7 @@ msgid ""
 "(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
 "display its contents. Then just click on one of the works to open it for "
 "reading. A read window will appear in the Desk area."
-msgstr ""
-"Om een module uit de boekenplank te openen om te lezen, kunt u simpelweg met "
-"de <mousebutton>linker muisknop</mousebutton> klikken op de gewenste "
-"categorie (Bijbels, Bijbelcommentaren, Lexicons, Boeken, Overdenkingen of "
-"Woordenlijsten) om de inhoud te laten zien. Klik dan op &eacute;&eacute;n "
-"van de modules om die te openen. Er verschijnt dan een leesvenster in het "
-"Bureaugebied."
+msgstr "Om een module uit de boekenplank te openen om te lezen, kunt u simpelweg met de <mousebutton>linker muisknop</mousebutton> klikken op de gewenste categorie (Bijbels, Bijbelcommentaren, Lexicons, Boeken, Overdenkingen of Woordenlijsten) om de inhoud te laten zien. Klik dan op &eacute;&eacute;n van de modules om die te openen. Er verschijnt dan een leesvenster in het Bureaugebied."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -616,12 +621,12 @@ msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
 "relevant for this work.  <guimenuitem>\"About this work\"</guimenuitem> "
-"opens a window with lots of interesting information about the selected "
-"work.  <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog "
-"for encrypted documents, where you can enter the unlock key to access the "
-"work. For additional information on locked works, please see the <ulink url="
-"\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> Locked Modules</"
-"ulink> page on the &cbs; web site."
+"opens a window with lots of interesting information about the selected work."
+"  <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog for "
+"encrypted documents, where you can enter the unlock key to access the work. "
+"For additional information on locked works, please see the <ulink "
+"url=\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> Locked "
+"Modules</ulink> page on the &cbs; web site."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
@@ -633,13 +638,14 @@ msgstr "Zoeken in modules"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:78
 msgid ""
-"You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
-"in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
-"you can select more than one. Then follow the same procedure to open the "
-"search dialog. You will be searching in all of these documents. A complete "
-"description of the operation of the search features can be found on the "
-"<link linkend=\"hdbk-op-search\">Searching in Works section</link>."
+"You can search in a work by clicking with the "
+"<mousebutton>right</mousebutton> mouse button on its symbol and selecting "
+"<guimenuitem>\"Search in work(s)\"</guimenuitem>. By pressing &Shift; and "
+"clicking on other works you can select more than one. Then follow the same "
+"procedure to open the search dialog. You will be searching in all of these "
+"documents. A complete description of the operation of the search features "
+"can be found on the <link linkend=\"hdbk-op-search\">Searching in Works "
+"section</link>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -655,21 +661,22 @@ msgstr "Drag &amp; Drop Werkt Hier"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:98
 msgid ""
-"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
-"category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
-"guimenuitem> to create a new bookmark subfolder. You can use normal drag "
-"&amp; drop functions to drag verse references from read windows or search "
-"results to the bookmark folder, and to rearrange bookmarks between folders."
+"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark"
+" category of the bookshelf and select <guimenuitem>\"Create new "
+"folder\"</guimenuitem> to create a new bookmark subfolder. You can use "
+"normal drag &amp; drop functions to drag verse references from read windows "
+"or search results to the bookmark folder, and to rearrange bookmarks between"
+" folders."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:106
 msgid ""
-"You can also import bookmarks from other people or export bookmarks to share "
-"them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
-"folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
-"guimenuitem>. This will bring up a dialog box for you to save the bookmark "
-"collection. You can import bookmarks in a similar way."
+"You can also import bookmarks from other people or export bookmarks to share"
+" them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
+"folder as described above, and select <guimenuitem>\"Export "
+"bookmarks\"</guimenuitem>. This will bring up a dialog box for you to save "
+"the bookmark collection. You can import bookmarks in a similar way."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
@@ -692,12 +699,7 @@ msgid ""
 "additional information (e.g., Strong's numbers), then this additional "
 "information will be displayed in the Mag, and not in the text itself. Just "
 "try it out."
-msgstr ""
-"Dit kleine venster in de linkeronderhoek van het &bibletime; venster is "
-"volledig passief. Telkens wanneer uw muisaanwijzer over een stukje tekst met "
-"extra informatie gaat (bijv. Strong-nummers), dan wordt deze extra "
-"informatie weergegeven in het Vergrootglas en niet in de tekst zelf. Probeer "
-"het maar eens uit."
+msgstr "Dit kleine venster in de linkeronderhoek van het &bibletime; venster is volledig passief. Telkens wanneer uw muisaanwijzer over een stukje tekst met extra informatie gaat (bijv. Strong-nummers), dan wordt deze extra informatie weergegeven in het Vergrootglas en niet in de tekst zelf. Probeer het maar eens uit."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:132
@@ -708,28 +710,22 @@ msgstr "Het Bureau"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:133
 msgid ""
 "The Desk is where the real work with &bibletime; takes place. Here you can "
-"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
-"\">search</link> in them, and even save your annotations in the personal "
-"commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
-"link>)."
+"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-"
+"search\">search</link> in them, and even save your annotations in the "
+"personal commentary module (see <link linkend=\"hdbk-op-parts-desk-"
+"write\">below</link>)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:141
 msgid ""
-"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
-"link>, you can open works for reading simply by clicking on their symbol in "
-"the Bookshelf. A read window will open in the Desk's area. Every read window "
-"has a toolbar. There you can find tools to navigate in the work that this "
-"read window is connected to, as well as history buttons like the ones that "
-"you know from your browser."
-msgstr ""
-"Zoals we al <link linkend=\"hdbk-op-parts-bookshelf-open\">gezien</link> "
-"hebben, kunt u de te lezen modules simpelweg openen door te klikken op hun "
-"symbool in de Boekenplank. Een leesvenster zal worden geopend in het Bureau "
-"gebied. Ieder leesvenster heeft een werkbalk. Hier kunt u gereedschappen "
-"vinden om te navigeren in de module waarin dit leesvenster is verbonden, "
-"alsmede history knoppen zoals u die kent vanuit uw internet browser."
+"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already "
+"seen</link>, you can open works for reading simply by clicking on their "
+"symbol in the Bookshelf. A read window will open in the Desk's area. Every "
+"read window has a toolbar. There you can find tools to navigate in the work "
+"that this read window is connected to, as well as history buttons like the "
+"ones that you know from your browser."
+msgstr "Zoals we al <link linkend=\"hdbk-op-parts-bookshelf-open\">gezien</link> hebben, kunt u de te lezen modules simpelweg openen door te klikken op hun symbool in de Boekenplank. Een leesvenster zal worden geopend in het Bureau gebied. Ieder leesvenster heeft een werkbalk. Hier kunt u gereedschappen vinden om te navigeren in de module waarin dit leesvenster is verbonden, alsmede history knoppen zoals u die kent vanuit uw internet browser."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
@@ -740,13 +736,13 @@ msgstr "Plaatsing van leesvensters"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "Of course, you can open multiple works at the same time.  There are several "
-"possibilities for arranging the read windows on the desk. Please have a look "
-"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
+"possibilities for arranging the read windows on the desk. Please have a look"
+" at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
 "that you can either control the placement of the read windows completely "
-"yourself, or have &bibletime; handle the placement automatically. To achieve "
-"this, you have to select one of the automatic placement modes available at "
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> </menuchoice>. Just try it out, it's simple and works."
+"yourself, or have &bibletime; handle the placement automatically. To achieve"
+" this, you have to select one of the automatic placement modes available at "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -758,8 +754,9 @@ msgstr "Uw eigen bijbelcommentaar bewerken"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:170
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink url=\"http://www."
-"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+"install a certain work from the library of the <ulink "
+"url=\"http://www.crosswire.org\">&cbs;</ulink>.  This work is called "
+"\"Personal commentary\"."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
@@ -768,11 +765,11 @@ msgid ""
 "If you open the personal commentary by clicking on its symbol in the "
 "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
 "read mode. You will not be able to edit it in this mode. Should you wish to "
-"write annotations into the personal commentary, you have to open it with the "
-"<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
-"this work</guimenu> and then either <guimenuitem>Plain text</"
-"guimenuitem>(source code editor) or <guimenuitem>HTML</guimenuitem>(basic "
-"gui wysiwyg editor)."
+"write annotations into the personal commentary, you have to open it with the"
+" <mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit"
+" this work</guimenu> and then either <guimenuitem>Plain "
+"text</guimenuitem>(source code editor) or "
+"<guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
@@ -786,8 +783,8 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:196
 msgid ""
-"Drag &amp; drop works here. Drop a verse reference and the text of the verse "
-"will be inserted."
+"Drag &amp; drop works here. Drop a verse reference and the text of the verse"
+" will be inserted."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -815,12 +812,13 @@ msgstr "De zoekdialoog benaderen"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:220
 msgid ""
-"You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
-"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
-"&Shift; or &Ctrl; and clicking on other work's names you can select more "
-"than one. Then follow the same procedure to open the search dialog. You will "
-"be searching in all of these works at the same time."
+"You can search in a work by clicking with the "
+"<mousebutton>right</mousebutton> mouse button on its symbol in the "
+"<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in "
+"work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other "
+"work's names you can select more than one. Then follow the same procedure to"
+" open the search dialog. You will be searching in all of these works at the "
+"same time."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -834,11 +832,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:236
 msgid ""
-"A third possibility to start searches is to click on the search symbol in an "
-"open read window."
-msgstr ""
-"Een derde mogelijkheid om zoekopdrachten te starten is door op het "
-"zoeksymbool in een geopend leesvenster te klikken."
+"A third possibility to start searches is to click on the search symbol in an"
+" open read window."
+msgstr "Een derde mogelijkheid om zoekopdrachten te starten is door op het zoeksymbool in een geopend leesvenster te klikken."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:241
@@ -861,8 +857,8 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:243
 #: docs/handbook/en/docbook/hdbk-operation.docbook:373
 msgid ""
-"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject"
-"\" id=\"1\"/>"
+"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder "
+"type=\"mediaobject\" id=\"1\"/>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -873,10 +869,10 @@ msgstr "Modules selecteren"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:252
 msgid ""
-"At the top of the options tab you will find <guibutton>Choose</"
-"guibutton>(works). If you would like to search in multiple works, click on "
-"this button and you will be offered a menu where you can select the works "
-"you want to search in."
+"At the top of the options tab you will find "
+"<guibutton>Choose</guibutton>(works). If you would like to search in "
+"multiple works, click on this button and you will be offered a menu where "
+"you can select the works you want to search in."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -901,8 +897,8 @@ msgstr "Introductie op de syntaxis van een eenvoudige zoekopdracht"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:271
 msgid ""
-"Enter the search phrase separated by spaces.  By default the search function "
-"will return results that match all the words.  If you want to find any of "
+"Enter the search phrase separated by spaces.  By default the search function"
+" will return results that match all the words.  If you want to find any of "
 "the words entered, select the <guimenu>Some words</guimenu> button.  If you "
 "want to perform a more complex search, select the <guimenu>Free</guimenu> "
 "button.  You can see examples of searches by clicking on <guimenu>full "
@@ -929,77 +925,92 @@ msgstr ""
 msgid "Search Types"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:297
 msgid "Prefix"
 msgstr "Voorvoegsel"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:298
 msgid "Meaning"
 msgstr "Betekenis"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:299
 msgid "Example"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:304
 msgid "heading:"
 msgstr "Koptekst:"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:305
 msgid "searches headings"
 msgstr "doorzoekt kopteksten"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:306
 msgid "heading:Jesus"
-msgstr ""
+msgstr "heading:Jesus"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:309
 msgid "footnote:"
 msgstr "voetnoot:"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:310
 msgid "searches footnotes"
 msgstr "doorzoekt voetnoten"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:311
 msgid "footnote:Moses"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:314
 msgid "strong:"
 msgstr "strong:"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:315
 msgid "searches Strong's Numbers"
 msgstr "doorzoekt Strong-nummering"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:316
 msgid "strong:G535"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:319
 msgid "morph:"
 msgstr "morph:"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:320
 msgid "searches morphology codes"
 msgstr "doorzoekt morfologische codes"
 
-#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:321
 msgid "morph:N-GSM"
 msgstr ""
@@ -1012,18 +1023,18 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:328
 msgid ""
-"You can right click on an installed work and select <guimenu>About</guimenu> "
-"to find which of the above search criteria may work for you.  Not all works "
-"have the built in features for performing this type of search."
+"You can right click on an installed work and select <guimenu>About</guimenu>"
+" to find which of the above search criteria may work for you.  Not all works"
+" have the built in features for performing this type of search."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:334
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
-"many advanced features, and you can read more about it here: <ulink url="
-"\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
-"java/docs/index.html</ulink>."
+"many advanced features, and you can read more about it here: <ulink "
+"url=\"http://lucene.apache.org/java/docs/index.html\"> "
+"http://lucene.apache.org/java/docs/index.html</ulink>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1035,8 +1046,8 @@ msgstr "Zoekresultaten"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:344
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
-"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
-"button allows you to copy, save, or print all verses that were found in a "
+"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse"
+" button allows you to copy, save, or print all verses that were found in a "
 "certain work at once. This also works when you click on one or more of the "
 "references to copy, save or print them. Clicking on a particular reference "
 "opens that verse up in context in the preview window below."
@@ -1047,25 +1058,19 @@ msgstr ""
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
-msgstr ""
-"Sleep een bijbelverwijzing en laat die los op een symbool van een module op "
-"de Boekenplank om de module op dat vers in een nieuw leesvenster te openen."
+msgstr "Sleep een bijbelverwijzing en laat die los op een symbool van een module op de Boekenplank om de module op dat vers in een nieuw leesvenster te openen."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:358
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
-msgstr ""
-"Sleep een bijbelverwijzing en laat die vallen op een geopend leesvenster en "
-"die zal verspringen naar dat vers."
+msgstr "Sleep een bijbelverwijzing en laat die vallen op een geopend leesvenster en die zal verspringen naar dat vers."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:362
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
-msgstr ""
-"Selecteer bijbelverwijzingen en sleep ze naar de Boekenplank om bladwijzers "
-"te maken."
+msgstr "Selecteer bijbelverwijzingen en sleep ze naar de Boekenplank om bladwijzers te maken."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:366
@@ -1076,9 +1081,9 @@ msgstr "Analyse van zoekresultaten"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:367
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
-"display. This gives a simple graphic analysis of the number of instances the "
-"search string was found in each book of the Bible, and you can also save the "
-"analysis."
+"display. This gives a simple graphic analysis of the number of instances the"
+" search string was found in each book of the Bible, and you can also save "
+"the analysis."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
@@ -1102,17 +1107,17 @@ msgstr "De <guimenuitem>Boekenplank Manager</guimenuitem>"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:387
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
-"Bookshelf. You can install new works to your Bookshelf, and update or remove "
-"existing works from your Bookshelf. Access it by clicking <menuchoice> "
-"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
-"menuchoice> in the main menu."
+"Bookshelf. You can install new works to your Bookshelf, and update or remove"
+" existing works from your Bookshelf. Access it by clicking <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> "
+"</menuchoice> in the main menu."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:397
 msgid ""
-"If this is the first time you are starting &bibletime;, click on the Refresh "
-"button to see a list of works provided by the &cbs;."
+"If this is the first time you are starting &bibletime;, click on the Refresh"
+" button to see a list of works provided by the &cbs;."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1124,18 +1129,18 @@ msgstr "Het instellen van Boekenplank bestandspad(en)"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:405
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
-"drive.  You can even store it in multiple directories. The default is \"~/."
-"sword/\" on *nix and \"C:\\Documents and Settings\\All Users\\Application "
-"Data\\Sword\" for Windows."
+"drive.  You can even store it in multiple directories. The default is "
+"\"~/.sword/\" on *nix and \"C:\\Documents and Settings\\All "
+"Users\\Application Data\\Sword\" for Windows."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:412
 msgid ""
-"If you have a sword CD, but do not want to install all the works on the hard "
-"disk, but use them directly from the CD, then you can add the path to the CD "
-"as one of your bookshelf paths. When you start &bibletime;, it will show all "
-"works on the CD if it is present."
+"If you have a sword CD, but do not want to install all the works on the hard"
+" disk, but use them directly from the CD, then you can add the path to the "
+"CD as one of your bookshelf paths. When you start &bibletime;, it will show "
+"all works on the CD if it is present."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1151,9 +1156,10 @@ msgid ""
 "libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
 "online repository of &sword; modules, or another site offering &sword; "
 "modules).  You can install other sources by clicking on <guibutton>Get "
-"list...</guibutton> when you have <guibutton>New Installation Source</"
-"guibutton> dialog open.  You can manage your libraries with <guibutton>Add "
-"library</guibutton> and <guibutton>Delete library</guibutton>."
+"list...</guibutton> when you have <guibutton>New Installation "
+"Source</guibutton> dialog open.  You can manage your libraries with "
+"<guibutton>Add library</guibutton> and <guibutton>Delete "
+"library</guibutton>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -1168,17 +1174,7 @@ msgid ""
 "all works that you want to install or update, and click on "
 "<guibutton>Install works</guibutton>. They will then be transferred to your "
 "Bookshelf."
-msgstr ""
-"Om het proces van installeren of bijwerken te starten kiest u een "
-"bibliotheek waarmee u verbinding wilt zoeken en een lokaal bestandspad naar "
-"een Boekenplank om de module(s) naar toe te installeren. Klik dan op "
-"<guibutton>Verbinden met bibliotheek</guibutton>. &bibletime; zal de inhoud "
-"van de bibliotheek scannen en een lijst presenteren van modules die u aan uw "
-"Boekenplank kunt toevoegen of die reeds ge&iuml;nstalleerd zijn, maar "
-"bijgewerkt kunnen worden omdat er een nieuwe versie beschikbaar is in de "
-"bibliotheek. U kunt dan alle modules aanvinken die u wilt installeren of "
-"bijwerken en dan klikken op <guibutton>Installeer modules</guibutton>. Ze "
-"zullen dan overgeheveld worden naar uw Boekenplank."
+msgstr "Om het proces van installeren of bijwerken te starten kiest u een bibliotheek waarmee u verbinding wilt zoeken en een lokaal bestandspad naar een Boekenplank om de module(s) naar toe te installeren. Klik dan op <guibutton>Verbinden met bibliotheek</guibutton>. &bibletime; zal de inhoud van de bibliotheek scannen en een lijst presenteren van modules die u aan uw Boekenplank kunt toevoegen of die reeds ge&iuml;nstalleerd zijn, maar bijgewerkt kunnen worden omdat er een nieuwe versie beschikbaar is in de bibliotheek. U kunt dan alle modules aanvinken die u wilt installeren of bijwerken en dan klikken op <guibutton>Installeer modules</guibutton>. Ze zullen dan overgeheveld worden naar uw Boekenplank."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:448
@@ -1191,11 +1187,7 @@ msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
 "<guibutton>Remove works</guibutton>."
-msgstr ""
-"Deze voorziening stelt u in staat om &eacute;&eacute;n of meerdere modules "
-"van uw Boekenplank te verwijderen om schijfruimte vrij te maken. Vink "
-"simpelweg de items aan die u wilt verwijderen en klik op "
-"<guibutton>Verwijder modules</guibutton>."
+msgstr "Deze voorziening stelt u in staat om &eacute;&eacute;n of meerdere modules van uw Boekenplank te verwijderen om schijfruimte vrij te maken. Vink simpelweg de items aan die u wilt verwijderen en klik op <guibutton>Verwijder modules</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:455
@@ -1218,13 +1210,14 @@ msgstr "Exporteren en Printen"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:466
 msgid ""
 "In many places, you can open a context menu by clicking with the "
-"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
-"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
-"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
-"windows, when you click on the normal text or the verse reference, or in the "
-"search result page when you click on a work or one or more verse references. "
-"It is pretty straightforward, so just try it out."
+"<mousebutton>right</mousebutton> mouse button. Depending on context, it will"
+" allow you to <guimenuitem>Select</guimenuitem>, "
+"<guimenuitem>Copy</guimenuitem> (to clipboard), "
+"<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> text. "
+"This works for example in the read windows, when you click on the normal "
+"text or the verse reference, or in the search result page when you click on "
+"a work or one or more verse references. It is pretty straightforward, so "
+"just try it out."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
@@ -1235,12 +1228,7 @@ msgid ""
 "&bibletime; works, we suggest that you use one of the presentation or "
 "editing tools on your system to format your document, rather than printing "
 "from &bibletime; directly."
-msgstr ""
-"Afdrukken vanuit &bibletime; is redelijk elementair en is bedoelt als een "
-"hulpfunctie. Als u een document of presentatie samenstelt die tekst bevat "
-"uit &bibletime; modules, dan raden we u aan om een programma voor "
-"presentaties of tekstbewerkingen te gebruiken om uw document op te maken en "
-"niet om direct vanuit &bibletime; af te drukken."
+msgstr "Afdrukken vanuit &bibletime; is redelijk elementair en is bedoelt als een hulpfunctie. Als u een document of presentatie samenstelt die tekst bevat uit &bibletime; modules, dan raden we u aan om een programma voor presentaties of tekstbewerkingen te gebruiken om uw document op te maken en niet om direct vanuit &bibletime; af te drukken."
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:2
@@ -1259,8 +1247,8 @@ msgid ""
 "main menu of &bibletime;. They are ordered in just the way they appear in "
 "&bibletime;, with all the sub-items listed under the major menu item they "
 "belong to. You can also see the shortcut of each item;a complete listing of "
-"all shortcuts can be found in the <link linkend=\"hdbk-reference-shortcuts"
-"\">shortcuts section</link>."
+"all shortcuts can be found in the <link linkend=\"hdbk-reference-"
+"shortcuts\">shortcuts section</link>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1268,48 +1256,54 @@ msgstr ""
 msgid "<guimenu>File</guimenu>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:24
 msgid ""
-"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:21
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:32
 msgid ""
-"<action>Open work.</action> This will give you a menu that will allow you to "
-"open installed books."
+"<action>Open work.</action> This will give you a menu that will allow you to"
+" open installed books."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:46
 msgid ""
 "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:39
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Quit</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>File</guimenu> "
+"<guimenuitem>Quit</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:55
 msgid ""
-"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
-"write unsaved changes to disk."
+"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to"
+" write unsaved changes to disk."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -1334,7 +1328,8 @@ msgstr ""
 msgid "<guimenu>View</guimenu>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:79
 msgid ""
 "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
@@ -1344,20 +1339,22 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:71
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> "
+"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:88
 msgid ""
 "<action>Toggles full screen display.</action> Toggle this setting to "
 "maximize the &bibletime; window."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:98
 msgid ""
 "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
@@ -1367,45 +1364,47 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:95
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:107
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
-"turn the Bookshelf on the left pane on or off. This can be handy if you need "
-"more space for the Mag."
-msgstr ""
-"<action>Schakelt de weergave van de Boekenplank in/uit.</action> Schakel "
-"deze instelling in/uit om de Boekenplank in het linkerpaneel wel/niet weer "
-"te geven. Dit kan handig zijn als u meer ruimte nodig heeft voor het "
-"vergrootglas."
+"turn the Bookshelf on the left pane on or off. This can be handy if you need"
+" more space for the Mag."
+msgstr "<action>Schakelt de weergave van de Boekenplank in/uit.</action> Schakel deze instelling in/uit om de Boekenplank in het linkerpaneel wel/niet weer te geven. Dit kan handig zijn als u meer ruimte nodig heeft voor het vergrootglas."
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:119
 msgid ""
-"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:116
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:128
 msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
-"turn the Bookmarks on the left pane on or off. This can be handy if you need "
-"more space for the Mag."
+"turn the Bookmarks on the left pane on or off. This can be handy if you need"
+" more space for the Mag."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:140
 msgid ""
 "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
@@ -1415,36 +1414,36 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:137
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:149
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
-msgstr ""
-"<action>Schakelt de weergave van het Vergrootglas in/uit.</action> Schakel "
-"deze instelling in/uit om het Vergrootglas in het linkerpaneel aan/uit te "
-"zetten."
+msgstr "<action>Schakelt de weergave van het Vergrootglas in/uit.</action> Schakel deze instelling in/uit om het Vergrootglas in het linkerpaneel aan/uit te zetten."
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:160
 msgid ""
-"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:157
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>View</guimenu> <guimenuitem>Show parallel text "
+"headers</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:169
 msgid ""
 "<action>Toggles viewing of additional works</action> Toggle this setting to "
@@ -1454,12 +1453,14 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:177
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
-"keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
-"guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> "
+"</keycombo> </shortcut> <guimenu>View</guimenu> "
+"<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:189
 msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
@@ -1473,7 +1474,8 @@ msgid ""
 "<guimenuitem>Show navigation</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:203
 msgid ""
 "<action>Toggles Navigation in works.</action> Toggle this setting to add or "
@@ -1488,7 +1490,8 @@ msgid ""
 "<guimenuitem>Show works</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:219
 msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
@@ -1502,7 +1505,8 @@ msgid ""
 "<guimenuitem>Show tools</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:234
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
@@ -1516,7 +1520,8 @@ msgid ""
 "<guimenuitem>Show format</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:249
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
@@ -1530,7 +1535,8 @@ msgid ""
 "<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:265
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
@@ -1542,7 +1548,8 @@ msgstr ""
 msgid "<guimenu>Search</guimenu>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:286
 #: docs/handbook/en/docbook/hdbk-reference.docbook:312
 #: docs/handbook/en/docbook/hdbk-reference.docbook:839
@@ -1554,31 +1561,33 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:279
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in "
-"standard bible</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> "
+"<placeholder type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> "
+"<guimenuitem>Search in standard bible</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:295
 msgid ""
-"<action>Opens the Search Dialog to search in the standard Bible only</"
-"action>. More works can be added in the Search Dialog. A more detailed "
-"search description can be found in the <link linkend=\"hdbk-op-search"
-"\">Searching in works</link> section."
+"<action>Opens the Search Dialog to search in the standard Bible "
+"only</action>. More works can be added in the Search Dialog. A more detailed"
+" search description can be found in the <link linkend=\"hdbk-op-"
+"search\">Searching in works</link> section."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:305
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in open "
-"work(s)</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in"
+" open work(s)</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:321
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. Works "
@@ -1592,24 +1601,26 @@ msgstr ""
 msgid "<guimenu>Window</guimenu>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:347
 #: docs/handbook/en/docbook/hdbk-reference.docbook:370
 msgid ""
-"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:340
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close window</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close "
+"window</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:357
 msgid "<action>Closes active window</action>."
 msgstr ""
@@ -1617,41 +1628,43 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:363
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close all</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> "
+"<placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
+"<guimenuitem>Close all</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:380
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>Sluit alle geopende vensters</action>"
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:393
 msgid ""
-"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\""
+" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:386
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Cascade</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
+"<guimenuitem>Cascade</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
-msgstr ""
-"<action>Rangschikt alle geopende vensters trapsgewijs (achter elkaar)</"
-"action>"
+msgstr "<action>Rangschikt alle geopende vensters trapsgewijs (achter elkaar)</action>"
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:417
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
@@ -1661,55 +1674,60 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:410
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
+"<guimenuitem>Tile</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:427
 msgid "<action>Tiles all open windows</action>."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:441
 msgid ""
-"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:434
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "vertically</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:451
 msgid "<action>Automatically tiles all open windows vertically</action>."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:465
 msgid ""
-"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:458
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
-"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
-"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder "
+"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "horizontally</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:475
 msgid "<action>Automatically tiles all open windows horizontally</action>."
 msgstr ""
@@ -1717,44 +1735,48 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:483
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:490
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
-"the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, "
-"Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
+"the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically,"
+" Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:501
 msgid ""
-"<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save "
+"session</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:509
 msgid ""
 "<action>Directly saves the current session</action>. This will open a "
-"context menu where you can select an existing session to save to. It will be "
-"overwritten with your current session. See the next item on how to save to a "
-"new session."
+"context menu where you can select an existing session to save to. It will be"
+" overwritten with your current session. See the next item on how to save to "
+"a new session."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:519
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
-"keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
-"as new session</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
+"<keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> "
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:531
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
@@ -1764,11 +1786,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:539
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load "
+"session</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:547
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
@@ -1778,11 +1801,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:555
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete "
+"session</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:563
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
@@ -1794,22 +1818,24 @@ msgstr ""
 msgid "<guimenu>Settings</guimenu>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:581
 msgid ""
-"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:578
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>Settings</guimenu> <guimenuitem>Configure "
+"&bibletime;</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:590
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
@@ -1818,23 +1844,25 @@ msgid ""
 "&bibletime; section</link> for details."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:610
 msgid ""
-"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:602
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> "
+"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:619
 msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
@@ -1847,64 +1875,71 @@ msgstr ""
 msgid "<guimenu>Help</guimenu>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:643
 #: docs/handbook/en/docbook/hdbk-reference.docbook:667
 msgid ""
-"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:635
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> "
+"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:652
-msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
+msgid ""
+"<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:659
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> "
+"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:676
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
-"scriptures to see what they say. This particular study guide has been chosen "
-"as it takes care not to advocate any particular denominational doctrine. We "
-"expect you to read and study the scriptures to understand what they say. If "
-"you start with the attitude that you want to have the Lord sow his word in "
+"scriptures to see what they say. This particular study guide has been chosen"
+" as it takes care not to advocate any particular denominational doctrine. We"
+" expect you to read and study the scriptures to understand what they say. If"
+" you start with the attitude that you want to have the Lord sow his word in "
 "your heart He will not disappoint you."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:698
 msgid ""
-"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:690
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
-"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> "
+"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:706
 msgid ""
 "<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
@@ -1914,11 +1949,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:714
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> "
+"</menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:721
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
@@ -1939,14 +1975,16 @@ msgid ""
 "works."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:747
 msgid ""
-"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\""
+" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:744
 #: docs/handbook/en/docbook/hdbk-reference.docbook:767
 #: docs/handbook/en/docbook/hdbk-reference.docbook:790
@@ -1960,136 +1998,158 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:974
 #: docs/handbook/en/docbook/hdbk-reference.docbook:997
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
-"guimenu> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
+"id=\"0\"/></guimenu> </menuchoice>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:756
 msgid "Scrolls forward through history."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:770
 msgid ""
 "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:779
 msgid "Scrolls back through history."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:793
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:802
 msgid "Select an installed bible."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:816
 msgid ""
-"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:825
 msgid "Select an additional bible."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:848
 msgid "Search in selected works."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:862
 msgid ""
-"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:871
 msgid "Display configuration."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:885
 msgid ""
-"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:894
 msgid "Select an installed commentary."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:908
 msgid ""
-"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:917
 msgid "Select additional commentary."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:931
 msgid ""
 "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:940
 msgid "Synchronize displayed entry with active Bible window."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:954
 msgid ""
 "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:963
 msgid "Select a book."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:977
 msgid ""
-"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\""
+" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:986
 msgid "Select an installed glossary or devotional."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1000
 msgid ""
-"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1009
 msgid "Select an additional glossary or devotional."
 msgstr ""
@@ -2102,291 +2162,339 @@ msgstr ""
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1021
 msgid ""
-"This is an index of all shortcuts and their corresponding description in the "
-"handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
+"This is an index of all shortcuts and their corresponding description in the"
+" handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
 "directly find out which shortcuts a certain menu item has, you can either "
 "look at the entry itself in &bibletime; (as it always shows the shortcut), "
 "or you can look it in the <link linkend=\"hdbk-reference-menus\">Main Menu "
 "reference</link>."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1036
 msgid "Shortcut"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1037
 msgid "Description"
 msgstr "Beschrijving"
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1043
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1046
 msgid "Moves back in the history of read windows."
 msgstr "Gaat terug in de history van leesvensters"
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1050
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1053
 msgid "Moves forward in the history of read windows."
 msgstr "Gaat vooruit in de history van leesvensters"
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1058
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1062
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
-"</menuchoice> </link> equivalent; opens the search dialog to search in the "
+"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem>"
+" </menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1073
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1078
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
-"equivalent; toggle automatic window tiling."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> "
+"</menuchoice> equivalent; toggle automatic window tiling."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1088
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1092
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
-"equivalent; toggle automatic window tiling."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> "
+"</menuchoice> equivalent; toggle automatic window tiling."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1102
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1107
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
-"toggle automatic window tiling."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1117
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1121
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window cascading."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1131
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1136
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
 "equivalent; toggle manual window placement."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1146
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1150
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
-"organizes windows with tabs across the top."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> "
+"equivalent; organizes windows with tabs across the top."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1160
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1164
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
-"menuchoice> </link> equivalent; saves current layout as new session."
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> "
+"</menuchoice> </link> equivalent; saves current layout as new session."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1174
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1178
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
-"</link> equivalent; closes all open windows."
+"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice>"
+" </link> equivalent; closes all open windows."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1187
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1190
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Uitzoomen. Dit vermindert de lettergrootte van de leesvensters."
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1195
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1198
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Inzoomen. Dit vergroot de lettergrootte van de leesvensters."
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1203
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1206
 msgid "Select all. This selects all text in read windows."
 msgstr "Selecteer alles. Dit selecteert alle tekst in de leesvensters."
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1211
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1214
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopie&euml;ren. Dit kopieert de geselecteerde tekst naar het klembord."
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1220
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1223
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Zoeken. Dit laat u zoeken binnen de tekst van een leesvenster."
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1229
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1234
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
-"menuchoice> </link> equivalent."
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> "
+"</menuchoice> </link> equivalent."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1245
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1250
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
-"menuchoice> </link> equivalent."
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice>"
+" <guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> "
+"</menuchoice> </link> equivalent."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1261
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1266
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
-"link> windows equivalent."
+"<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> "
+"</link> windows equivalent."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1277
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1282
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
-"link> windows equivalent."
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> "
+"</link> windows equivalent."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1293
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1296
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1302
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1305
 msgid "Search with works of this window."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1310
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1314
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
@@ -2395,102 +2503,119 @@ msgid ""
 "currently opened works."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1325
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1329
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
-"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
-"link> equivalent; closes &bibletime;."
+"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> "
+"</link> equivalent; closes &bibletime;."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1338
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1341
 msgid "Closes the current window."
 msgstr "Sluit het huidige venster."
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1345
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1350
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
-"menuchoice> equivalent; opens the handbook."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
+"</menuchoice> equivalent; opens the handbook."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1358
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1363
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
-"guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy "
+"HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1372
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1377
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
-"guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the "
+"Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1385
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1390
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
-"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
-"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
+"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf "
+"Manager</guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf "
+"Manager."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1400
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1405
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
-"menuchoice> </link> equivalent; toggles display of the Bookshelf."
+"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> "
+"</menuchoice> </link> equivalent; toggles display of the Bookshelf."
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1415
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of:
+#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
-"link> equivalent; toggles display of the mag(nifying glass)."
+"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> "
+"</link> equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -2507,11 +2632,12 @@ msgstr "Hoe u &bibletime; opstart"
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject>
 #: docs/handbook/en/docbook/hdbk-start.docbook:13
 msgid ""
-"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
+#. type: Content of:
+#. <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-start.docbook:17
 msgid "&bibletime; start icon"
 msgstr ""
@@ -2520,8 +2646,8 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-start.docbook:9
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
-"can launch &bibletime; from the Start Menu with this icon: <placeholder type="
-"\"mediaobject\" id=\"0\"/>"
+"can launch &bibletime; from the Start Menu with this icon: <placeholder "
+"type=\"mediaobject\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
@@ -2560,8 +2686,8 @@ msgstr ""
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible: <placeholder type=\"screen\" id=\"0\"/> To open at a given "
-"passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
-"also use booknames in your current bookname language."
+"passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can"
+" also use booknames in your current bookname language."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
@@ -2582,7 +2708,8 @@ msgstr ""
 msgid "<interface>Configure &bibletime; dialog</interface>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:53
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
@@ -2595,14 +2722,15 @@ msgstr ""
 msgid "<interface>Bookshelf Manager</interface>"
 msgstr ""
 
-#. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#. type: Content of:
+#. <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:65
 msgid ""
 "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
 "no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">The Bookshelf Manager section</link> for further details. "
-"If you start off with an empty Bookshelf, it will be helpful to install at "
+"bookshelfmanager\">The Bookshelf Manager section</link> for further details."
+" If you start off with an empty Bookshelf, it will be helpful to install at "
 "least one Bible, Commentary, Lexicon and one Book to get to know "
 "&bibletime;'s basic features quickly.  You can do this by clicking on the "
 "Refresh button.  You will be presented with a list of works that are "
@@ -2694,12 +2822,12 @@ msgstr ""
 msgid "Abthorpe"
 msgstr ""
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid ""
-"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> </"
-"copyright>"
+"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> "
+"</copyright>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
