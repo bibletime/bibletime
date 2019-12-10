@@ -19,30 +19,30 @@
     </author>
     <author>
       <firstname></firstname>
-      <surname>The BibleTime Team</surname>
+      <surname>Il team di BibleTime</surname>
     </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2016</year> <holder>The &bibletime; Team
+<copyright> <year>1999-2016</year> <holder>Il team di &bibletime;
 (bt-devel@crosswire.org)</holder> </copyright>
   <legalnotice>
-    <para>This document was originally created by Mr. Bob Harman and is licensed under
-the terms of the license <ulink
+    <para>Questo documento è stato originariamente creato da Mr. Bob Harman e
+licenziato sotto i termini della licenza <ulink
 url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons
 Attribution-Share Alike"</ulink>.</para>
     <para>I testi citati dalla Bibbia sono presi dal testo ufficiale della CEI</para>
   </legalnotice>
   <abstract>
     <title>Sommario</title>
-    <para>The <application>Biblestudy HowTo</application> is a guide for studying the
-Bible.</para>
-    <para>It is the hope of the &bibletime; team that this HowTo will provoke the
-readers to study the scriptures to see what they say. This particular study
-guide has been chosen as it takes care not to advocate any particular
-denominational doctrine. We recommend you to read and study the scriptures
-to understand what they say. If you start with the attitude that you want to
-have the Lord sow his word in your heart He will not disappoint you.</para>
+    <para>La <application>Guida allo Studio Biblico</application> è una guida per
+studiare la Bibbia.</para>
+    <para>Il team di &bibletime; spera che questa Guida invogli i lettori a studiare
+le scritture per vedere cosa dicono. Questa specifica guida è stata scelta
+perché non appoggia una dottrina denominazionale in particolare. Ti
+raccomandiamo di leggere e studiare le scritture per capire il loro
+messaggio. Se inizi con l'attitudine di desiderare che il Signore semini la
+sua parola nel tuo cuore Egli non ti deluderà.</para>
   </abstract>
   <keywordset>
     <keyword>Bibbia</keyword>

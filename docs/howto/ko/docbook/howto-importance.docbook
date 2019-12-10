@@ -1,171 +1,149 @@
 <chapter id="h2-importance">
   <title>하나님의 말씀의 중요성</title>
-  <para>Understanding God's word is of great importance to all who call on God's
-name. Study of the Bible is one of the primary ways that we learn to
-communicate with God.</para>
+  <para>하나님의 말씀을 이해하는 것은 하나님의 이름을 부르는 모든 사람에게 매우 중요한 것이다. 성경을 공부하는 것은 하나님과 소통하는 법을
+배우는 주요한 방법 중의 하나이다.</para>
   <sect1 id="h2-importance-unique">
-    <title>특별한(Unique) 책</title>
-    <para>The Bible stands alone in many ways. It is unique in:</para>
+    <title>독특한 책</title>
+    <para>성경은 다음과 같은 면에서 독보적입니다:</para>
     <itemizedlist>
       <listitem>
-        <para>popularity. Bible sales in North America: more than $500 million per
-year. The Bible is both the all-time and year-to-year best seller!</para>
+        <para>인기. 성경은 북아메리카 지역에서만 매년 5억불 이상이 팔리고 있습니다. 성경은 지금까지도 그리고 매년 베스트셀러입니다!</para>
       </listitem>
       <listitem>
-        <para>authorship. It was written over a period of 1600 years by 40 different
-authors from different backgrounds, yet reads as if written by one.</para>
+        <para>저자. 성경은 1,600여년의 기간동안 각기 다른 배경을 가진 40명의 저자들에 의해서 씌여졌지만, 마치 한사람에 의해 씌여진 것 처럼
+읽힙니다.</para>
       </listitem>
       <listitem>
-        <para>preservation. F. F. Bruce in <emphasis>Are New Testament Documents
-Reliable?</emphasis> compares New Testament manuscripts with other ancient
-texts:</para>
+        <para>보존성. 브루스는 <emphasis>신약성경은 신뢰할 만한가?</emphasis>라는 책에서 신약성경 필사본과 다른 고대 문서들을 비교
+했습니다:</para>
       </listitem>
     </itemizedlist>
     <table id="h2-importance-manuscripts-table">
-      <title>신약성경 사본과 다른 고대 사본 텍스트들과의 비교</title>
+      <title>신약성경 필사본과 다른 고대 문서과의 비교</title>
       <tgroup cols="5">
         <thead>
           <row>
             <entry>작품</entry>
             <entry>씌여진 시기</entry>
-            <entry>최고(古) 사본</entry>
-            <entry>최고(古)사본과의 시간차</entry>
-            <entry>사본의 수</entry>
+            <entry>가장 오래된 사본</entry>
+            <entry>사본이 경과된 시간</entry>
+            <entry>사본의 개수</entry>
           </row>
         </thead>
         <tbody>
           <row>
-            <entry>헤로도투스(Herodotus)</entry>
+            <entry>헤로도투스의 <emphasis>역사</emphasis></entry>
             <entry>448-428 B.C.</entry>
             <entry>900 A.D.</entry>
             <entry>1300년</entry>
             <entry>8</entry>
           </row>
           <row>
-            <entry>Tacitus</entry>
+            <entry>타키투스의 <emphasis>로마편년사</emphasis></entry>
             <entry>100 A.D.</entry>
             <entry>1100 A.D.</entry>
             <entry>1000년</entry>
             <entry>20</entry>
           </row>
           <row>
-            <entry>시저(Caesar)의 <emphasis>Gallic War</emphasis></entry>
+            <entry>카이사르의 <emphasis>갈리아 전기</emphasis></entry>
             <entry>50-58 B.C.</entry>
             <entry>900 A.D.</entry>
             <entry>950년</entry>
             <entry>10</entry>
           </row>
           <row>
-            <entry>리비우스(Livy)의 <emphasis>Roman History</emphasis></entry>
+            <entry>리비우스의 <emphasis>로마사</emphasis></entry>
             <entry>59 B.C. - 17 A.D.</entry>
             <entry>900 A.D.</entry>
             <entry>900년</entry>
             <entry>20</entry>
           </row>
           <row>
-            <entry>신약</entry>
+            <entry>신약 성경</entry>
             <entry>40 A.D. - 100 A.D.</entry>
-            <entry>130 A.D. 부분 사본 350 A.D. 전체 사본</entry>
+            <entry>130 A.D. 부분 필사본 350 A.D. 전체 필사본</entry>
             <entry>30 - 310년</entry>
-            <entry>5000(헬라어) &amp; 10,000(라틴어)</entry>
+            <entry>5,000 헬라어 &amp; 10,000 라틴어</entry>
           </row>
         </tbody>
       </tgroup>
     </table>
-    <para>Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest
-of which was copied 900 years after Caesar wrote the original, etc. For the
-New Testament we have full manuscripts dating to 350 A. D., papyri
-containing most of the New Testament from the 200s, and a fragment of John's
-gospel from 130 A. D. How many manuscripts do we have to compare to each
-other? 5,000 in Greek and 10,000 in Latin!</para>
+    <para>카이사르의 <emphasis>갈리아 전기</emphasis>는 10개의 사본이 존재하며, 가장 오래된 사본은 카이사르가 원본을 작성한
+이후 900년이 흐른 다음의 것이라는 의미입니다. 신약 성경의 경우 A.D. 350년경의 전체 사본이 존재하며, 신약 성경의 대부분을
+포함하는 파피루스 고문서는 A.D. 200년경의 필사본이 존재하며 요한복음의 일부는 A.D. 130년경의 필사본이 존재합니다. 다른 고대
+문서와 비교해 볼 때 얼마나 많은 필사본들이 존재합니까? 헬라어 사본 5,000개, 라틴어 사본 10,000개!</para>
     <blockquote>
-      <attribution>Textual critic F. J. A. Hort, "The New Testament in the Original Greek",
-vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of
-Life</emphasis>p. 25-26</attribution>
-      <para>"그밖의 많은 증거들이 신약의 텍스트가 다른 고대 산문들중에서도 절대적이고 어떤 사본도 범접할 수 없는 특별한 경우라는 것을 증명한다."</para>
+      <attribution>본문 비평가 호트, "그리스어 신약 사본", 1권 p561, Macmillan Co., <emphasis>삶의
+질문들</emphasis>p. 25-26 에서 인용</attribution>
+      <para>"다양하고 완전한 증거들로 인해서 신약의 텍스트는 다른 어떤 고대 산문들 중에서도 절대적이고도 범접할 수 없는 위치에 서 있습니다."</para>
     </blockquote>
   </sect1>
   <sect1 id="h2-importance-breathed">
-    <title>하나님께서 살아 숨쉬시는 책</title>
+    <title>하나님의 영이 숨쉬는 책</title>
     <para>
-    <emphasis>Heb.4:12</emphasis> "<emphasis>For the word of God is living and
-active...</emphasis>" Jesus said <emphasis>(Mt.4:4),</emphasis>"
-<emphasis>It is written, Man shall not live on bread alone, but on every
-word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>"
-As we read the Bible, God's Spirit is there to speak it to our hearts in a
-continually-fresh way.</para>
-    <para>2 Tim.3:16 declares, " <emphasis>All scripture is inspired by God [lit.,
-God-breathed].</emphasis>" Do you believe this? Before you answer, consider
-Jesus' attitude toward the Scriptures.</para>
+    <emphasis>히 4:12</emphasis> "<emphasis>하나님의 말씀은 살았고 운동력이 있어 ...</emphasis>"
+예수님은 <emphasis>(마 4:4),</emphasis>" <emphasis>기록되었으되 사람이 떡으로만 살것이 아니요 하나님의
+입으로 나오는 모든 말씀으로 살 것이라 하였느니라 하시니라.</emphasis>" 우리가 성경을 읽은대로, 하나님의 영은 지속적이면서도
+새로운 방법으로 우리의 마음에 말씀하십니다.</para>
+    <para>딤후 3:16은 다음과 같이 선언합니다, " <emphasis>모든 성경은 하나님의 감동으로 된 것으로.</emphasis>" 당신은
+이것을 믿습니까? 답하기 전에, 말씀에 대한 예수님의 태도를 깊이 생각해보세요.</para>
     <blockquote>
-      <attribution>존 R.W. 스토트, <emphasis>Christ the Controversialist</emphasis>, InterVarsity
-Press 1978, pp.93-95</attribution>
-      <para>He referred to the human authors, but took it for granted that behind them
-all was a single divine Author. He could equally say 'Moses said' or 'God
-said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as
-an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well
-did Isaiah prophesy of you hypocrites, as it is written', when what He went
-on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It
-is from Jesus Himself that the New Testament authors have gained their
-conviction of the dual authorship of Scripture. For them it was just as true
-to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as
-it was to say that 'men moved by the Holy Spirit spoke from God' (2
-Pe.1:21).  God did not speak in such a way as to obliterate the personality
-of the human authors, nor did men speak in such a way as to corrupt the Word
-of the divine Author. God spoke. Men spoke.  Neither truth must be allowed
-to detract from the other.  ...</para>
-      <para>This, then, was Christ's view of the Scriptures. Their witness was God's
-witness. The testimony of the Bible is the testimony of God. And the chief
-reason why the Christian believes in the divine origin of the Bible is that
-Jesus Christ Himself taught it.</para>
+      <attribution>존 스토트, <emphasis>변론자 그리스도</emphasis>, InterVarsity Press 1978, pp.93-95</attribution>
+      <para>그는 인간 저자이기는 하지만 그들 모두의 뒤에는 단 한분의 신적 저자가 있음을 당연한 것으로 여겼습니다. 그는 '모세가 말하길' 혹은
+'하나님께서 말씀하시길' (막 7:10)을 동일하게 말할 수 있었습니다. 그는 창조자 자신의 발언처럼 창세기 2:24에 있는 말하는 이의
+말씀을 인용할 수 있었습니다(마 19:4-5). 비슷하게 그는 인용하려는 것이 하나님께서 직접 말씀하신 것이다며 '이사야가 너희 외식하는
+자에 대하여 잘 예언하였도다 기록하였으되'라고 말했습니다(막 7:6 &amp; 사 29:13). 신약 성경의 저자들이 이중 저작에 대한
+확신을 가졌던 것은 예수님 자신에 기인합니다. '옛적에 선지자들로 여러 부분과 여러 모양으로 우리 조상들에게 말씀하신 하나님이' (히
+1:1) '성령의 감동하심을 입은 사람들이 하나님께 받아 말한 것임이니라' (벧후 1:21)라 할 만큼 그것은 사실입니다. 하나님이 인간
+저자의 개성을 지우는 방식으로 말씀하지도 않으셨고, 사람들이 신적 저자의 말씀을 홰손시키는 방식으로  말하지도 않았습니다. 하나님께서
+말씀하셨습니다. 사람들이 말했습니다. 두 진실 모두 서로에게서 떼어놓을 수 없습니다. ...</para>
+      <para>그리고, 이것은 말씀을 대한 그리스도의 관점이었습니다. 그들의 증인은 하나님의 증인이었습니다. 성경의 증거는 하나님의 증거입니다. 그리고
+크리스천이 성경의 신적 기원을 믿는 주된 이유는 예수 그리스도께서 직접 그렇게 가르치셨기 때문입니다.</para>
     </blockquote>
-    <para>2 Tim.3:16 goes on, " <emphasis>and profitable for teaching, for correction,
-for training in righteousness, that the man of God may be adequate, equipped
-for every good work.</emphasis>" If we accept that the Bible really is God
-speaking to us, it follows that it will be our authority in all matters of
-faith and conduct.</para>
+    <para>딤후 3:16은 계속해서 "<emphasis>교훈과 책망과 바르게 함과 의로 교육하기에 유익하니</emphasis>"라고
+말씀하십니다. 만일 우리가 성경이 정말로 하나님께서 우리에게 말씀하시는 것이라고 받아 들인다면, 믿음과 행위에 관한 모든 문제에 대하여
+성경이 우리의 권위가 될 것입니다.</para>
   </sect1>
   <sect1 id="h2-importance-works">
-    <title>역사하는 책</title>
-    <para>What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
-<emphasis>performs its work in you who believe.</emphasis>" Beside each
-scripture, write down the work the Word performs.</para>
+    <title>일하는 책</title>
+    <para>성경을 공부하는 것이 여러분에게 어떤 영향을 미칠까요? 살전 2:13은 말씀이 "<emphasis>너희 믿는 자 속에서
+역사하느니라</emphasis>"고 말합니다. 각 성구 옆에 말씀이 수행하는 일을 적어 보세요.</para>
     <table id="h2-importance-results-table">
-      <title>성경을 공부하는 것이 그리스도인들에게 어떤 도움을 주는가?</title>
+      <title>성경을 공부하는 것이 그리스도인들에게 어떤 영향을 미칠까?</title>
       <tgroup cols="2">
         <thead>
           <row>
-            <entry>참조(Reference)</entry>
-            <entry>역사하는 것(Action)</entry>
+            <entry>참조 구절</entry>
+            <entry>수행하는 일</entry>
           </row>
         </thead>
         <tbody>
           <row>
             <entry>엡 5:26</entry>
-            <entry>정결케한다(cleanses) -- "...물로 씻어 말씀으로 깨끗하게 하사..."</entry>
+            <entry>깨끗하게 한다 -- "...물로 씻어 말씀으로 깨끗하게 하사..."</entry>
           </row>
           <row>
             <entry>행 20:32</entry>
-            <entry>builds up -- " ...the word of His grace, which is able to build you up and
-to give you the inheritance among all those who are sanctified. "</entry>
+            <entry>세워준다 -- " ...은혜의 말씀께 부탁하노니 그 말씀이 너희를 능히 든든히 세우사 거룩케 하심을 입은 모든 자 가운데 기업이 있게
+하시리라. "</entry>
           </row>
           <row>
             <entry>롬 15:4</entry>
-            <entry>격려한다 -- "무엇이든지 전에 기록한 바는 우리의 교훈을 위하여 기록된 것이니 우리로 하여금 인내로 또는 성경의 안위로 소망을 가지게
-함 이니라."</entry>
+            <entry>격려한다 -- "우리로 하여금 인내로 또는 성경의 안위로 소망을 가지게 함 이니라."</entry>
           </row>
           <row>
             <entry>롬 10:17</entry>
-            <entry>믿음을 얻는다 -- "그러므로 믿음은 들음에서 나며 들음은 그리스도의 말씀으로 말미암았느니라."</entry>
+            <entry>믿음을 준다 -- "그러므로 믿음은 들음에서 나며 들음은 그리스도의 말씀으로 말미암았느니라."</entry>
           </row>
           <row>
             <entry>고전 10:11</entry>
-            <entry>가르친다(instructs) -- "저희에게 당한 이런 일이 거울이 되고 또한 말세를 만난 우리의 경계로 기록하였느니라."</entry>
+            <entry>가르친다 -- "저희에게 당한 이런 일이 거울이 되고 또한 말세를 만난 우리의 경계로 기록하였느니라."</entry>
           </row>
           <row>
             <entry>마 4:4</entry>
-            <entry>양식(nourishment) -- "예수께서 대답하여 가라사대 기록되었으되 '사람이 떡으로만 살것이 아니요 하나님의 입으로 나오는 모든
-말씀으로 살 것이라 하였느니라' 하시니."</entry>
+            <entry>양식을 공급한다 -- "예수께서 대답하여 가라사대 기록되었으되 '사람이 떡으로만 살것이 아니요 하나님의 입으로 나오는 모든 말씀으로 살
+것이라 하였느니라' 하시니."</entry>
           </row>
         </tbody>
       </tgroup>
@@ -173,23 +151,18 @@ to give you the inheritance among all those who are sanctified. "</entry>
   </sect1>
   <sect1 id="h2-importance-liberates">
     <title>자유케하는 책</title>
-    <para>Jn.8:32 " <emphasis>and you shall know the truth, and the truth shall make
-you free.</emphasis>"This is usually quoted by itself. Is this a conditional
-or unconditional promise? Would it apply to all kinds of knowledge? Find the
-answers by examining the first half of the sentence, in v.31. " <emphasis>If
-you abide in My word, then you are truly disciples of Mine...</emphasis>"</para>
-    <para>We see that this is a conditional promise, specifically speaking of the
-truth of God's word.</para>
-    <para>The Greek word for "wind" used in Eph.4:14 means a <emphasis>violent
-wind.</emphasis>" <emphasis>As a result, we are no longer to be children,
-tossed here and there by waves, and carried about by every wind of
-doctrine...</emphasis>"One thing studying the Bible does for us is to ground
-us in the truth, with the result that we won't be easily "blown away."</para>
+    <para>요 8:32 "<emphasis>진리를 알지니 진리가 너희를 자유케 하리라.</emphasis>" 이것은 보통 이 문장만으로
+인용됩니다. 이것은 조건적인 약속입니까 아니면 무조건적인 약속입니까? 모든 종류의 지식에 적용할 수 있습니까? 31절 앞부분 말씀
+"<emphasis>...너희가 내 말에 거하면 참 내 제자가 되고... </emphasis>"를 확인해서 답을 찾아 보세요.</para>
+    <para>우리는 이것은 조건적인 약속임을 알수 있습니다, 하나님 말씀의 진리를 말함에 있어서는 특히 더 그렇습니다.</para>
+    <para>엡 4:14에서 쓰인"풍조"의 헬라어 원문은 <emphasis>강렬한 바람</emphasis>의 의미입니다. "<emphasis>이는
+우리가 이제부터 어린 아이가 되지 아니하여 사람의 궤술과 간사한 유혹에 빠져 모든 교훈의 풍조에 밀려 요동치 않게 하려
+함이라...</emphasis>"성경을 공부하면서 우리가 얻는 유익중 한가지는, 우리가 쉽게 "바람에 흔들리지" 않고 진리에 기틀을
+튼튼히 다질 수 있다는 것입니다.</para>
     <para>
-    <emphasis>But Jesus answered and said to them,</emphasis>" <emphasis>You are
-mistaken [KJV Ye do err], not understanding the Scriptures, or the power of
-God.</emphasis>" Mt.22:29</para>
-    <para>오류로부터 벗어나기위해 필요한 2가지는 무엇인가?</para>
+    <emphasis>예수께서 대답하여 가라사대,</emphasis>" <emphasis>너희가 성경도 하나님의 능력도 알지
+못하는고로[KJV Ye do err] 오해하였도다.</emphasis>" 마 22:29</para>
+    <para>오해에 빠지지 않기 위해 알아야 할 두가지는 무엇인가요?</para>
     <itemizedlist>
       <listitem>
         <para>하나님의 말씀</para>
@@ -200,8 +173,8 @@ God.</emphasis>" Mt.22:29</para>
     </itemizedlist>
   </sect1>
   <sect1 id="h2-importance-wars">
-    <title>영적전쟁을 하는 책</title>
-    <para>엡 6:10-18은 우리의 영적 무장에 관해 보여준다.</para>
+    <title>전쟁을 하는 책</title>
+    <para>엡 6:10-18은 우리의 영적 무장 사례입니다.</para>
     <table id="h2-importance-armor-table">
       <title>영적인 무기</title>
       <tgroup cols="2">
@@ -213,15 +186,15 @@ God.</emphasis>" Mt.22:29</para>
         </thead>
         <tbody>
           <row>
-            <entry>리스트의 무기 중 몇 가지가 방어용인가?</entry>
-            <entry>5</entry>
+            <entry>무기 목록 중에 몇 가지가 방어 무기 입니까?</entry>
+            <entry>5개</entry>
           </row>
           <row>
-            <entry>몇 가지가 공격용인가?</entry>
-            <entry>One</entry>
+            <entry>몇 가지가 공격용 무기입니까?</entry>
+            <entry>1개</entry>
           </row>
           <row>
-            <entry>어떤 것인가?</entry>
+            <entry>어떤 것이 공격용 무기입니까?</entry>
             <entry>말씀 - <foreignphrase>레마(rhema)</foreignphrase></entry>
           </row>
         </tbody>
@@ -229,69 +202,54 @@ God.</emphasis>" Mt.22:29</para>
     </table>
   </sect1>
   <sect1 id="h2-importance-exhortations">
-    <title>권면(Exhortations)</title>
-    <para>2 Tim.2:15 (KJV) " <emphasis>Study to show thyself approved unto God, a
-workman that needeth not to be ashamed, rightly dividing the word of
-truth.</emphasis>"</para>
-    <para>Col.3:16 " <emphasis>Let the word of Christ richly dwell within you; with
-all wisdom teaching and admonishing one another with psalms and hymns and
-spiritual songs, singing with thankfulness in your hearts to
-God.</emphasis>"</para>
-    <para>네가 어떠한 것에 풍성하다면(골 3:16의 풍성한), 그것의 양은 얼마인가?</para>
-    <para>적지 않다!</para>
-    <para>Eccl.12:11-12 " <emphasis>The words of wise men are like goads, and masters
-of these collections are like well-driven nails; they are given by one
-Shepherd. But beyond this, my son, be warned: the writing of many books is
-endless, and excessive devotion to books is wearying to the
-body.</emphasis>"</para>
+    <title>권면의 말씀</title>
+    <para>딤후 2:15 "<emphasis>네가 진리의 말씀을 옳게 분변하여 부끄러울 것이 없는 일군으로 인정된 자로 자신을 하나님 앞에 드리기를
+힘쓰라.</emphasis>"</para>
+    <para>골 3:16 "<emphasis>그리스도의 말씀이 너희 속에 풍성히 거하여 모든 지혜로 피차 가르치며 권면하고 시와 찬미와 신령한 노래를
+부르며 마음에 감사함으로 하나님을 찬양하고.</emphasis>"</para>
+    <para>당신이 어떠한 것에 풍성하다면, 당신이 가지고 있는 그것의 양은 얼마나 될까요?</para>
+    <para>적지 않습니다!</para>
+    <para>전 12:11-12 "<emphasis>지혜자의 말씀은 찌르는 채찍같고 회중의 스승의 말씀은 잘 박힌못 같으니 다 한 목자의 주신
+바니라. 내 아들아 또 경계를 받으라 여러 책을 짓는 것은 끝이 없고 많이 공부하는 것은 몸을 피곤케 하느니라.</emphasis>"</para>
   </sect1>
   <sect1 id="h2-importance-once">
-    <title>부가(Appendix): "Once for All"</title>
+    <title>부록: "단번에(Once for All)"</title>
     <blockquote>
-      <attribution>John R. W. Stott, <emphasis>Christ the
-Controversialist,</emphasis>InterVarsity Press 1978, pp.106-107</attribution>
-      <para>The truth regarding the finality of God's initiative in Christ is conveyed
-by one word of the Greek Testament, namely the adverb
-<foreignphrase>hapax</foreignphrase>and
-<foreignphrase>ephapax</foreignphrase>. It is usually translated in the
-Authorized Version once, meaning once for all. It is used of what is so done
-as to be of perpetual validity and never need repetition, and is applied in
-the NT to both revelation and redemption. Thus, Jude refers to the faith
-which was once for all delivered to the saints (Jude 3), and Romans says, "
-<emphasis>Christ also died for sins once for all</emphasis>" (Rom.6:10, see
-also 1 Pe.3:18; Heb.9:26-28).</para>
-      <para>Thus we may say that God has spoken once for all and Christ has suffered
-once for all. This means that the Christian revelation and the Christian
-redemption are both alike in Christ complete. Nothing can be added to either
-without being derogatory to Christ... These are the two rocks on which the
-Protestant Reformation was built -- Gods revealed word without the addition
-of human traditions and Christ's finished work without the addition of human
-merits. The Reformers great watchwords were <foreignphrase>sola
-scriptura</foreignphrase>for our authority and <foreignphrase>sola
-gratia</foreignphrase>for our salvation.</para>
+      <attribution>존 스토트, <emphasis>변론자 그리스도,</emphasis>InterVarsity Press 1978, pp.106-107</attribution>
+      <para>그리스도 안에 있는 하나님의 뜻에 관한 진실은 헬라어 성경의 한 단어, 부사인
+<foreignphrase>하팍스</foreignphrase>와 <foreignphrase>에파팍스</foreignphrase>를 통해서
+알 수 있습니다. 이 헬라어 단어는 보통 단번에(once for all)의 의미로 번역됩니다. 영원히 유효하며 다시 반복할 필요가 없는
+것에 사용되는데 신약 성경에서는 계시와 구속 모두에 대해서 적용됩니다. 사실 유다서는 성도에게 단번에 주신 믿음의 도를 언급하고
+있으며(유 1:3) 로마서에서는 "<emphasis>그의 죽으심은 죄에 대하여 단번에 죽으심이요</emphasis>"(롬 6:10, 추가
+참조 벧전 3:18; 히 9:26-28)라고 말씀합니다.</para>
+      <para>따라서 우리는 하나님께서 단번에 말씀하셨고 그리스도께서 단번에 고통 받으셨다고 말할 수 있습니다. 이것은 기독교의 계시와 구속이 그리스도
+안에서 모두 완료되었음을 의미합니다. 이 두가지에 무언가를 추가한다면 그것은 그리스도께 손상을 가하는 것이 될 것입니다...이 두가지는
+종교 개혁이 세운 두개의 바위입니다 -- 하나님은 인간의 전통과 무관한 말씀과 인간의 공로와 무관한 그리스도의 완성된 사역을
+나타내셨습니다. 종교개혁가들의 위대한 모토는 우리의 권위를 위한 <foreignphrase>솔라 스크립투라-오직
+성경</foreignphrase>, 우리의 구속을 위한 <foreignphrase>솔라 그라티아-오직 은혜</foreignphrase>
+였습니다.</para>
     </blockquote>
   </sect1>
   <sect1 id="h2-importance-supplement">
-    <title>부록(Supplement): 성경 읽기 프로그램</title>
-    <para>Here are some easy programs to systematically read your Bible. You can do
-more than one at a time if you like, for instance #1 with #4, or #2 with
-#5. Vary the program from year to year to keep it fresh!</para>
+    <title>보충자료: 체계적인 성경 읽기</title>
+    <para>체계적으로 성경을 읽을 수 있는 몇가지 방법들 입니다. 원한다면 한가지 이상의 방법을 동시에 진행할 수 있을 것입니다. 예를 들면 1번과
+4번이나 2번과 5번을 동시에 진행할 수 있습니다. 항상 신선함을 유지하기 위해서 매년 방법을 바꿔 보세요!</para>
     <orderedlist numeration="arabic">
       <listitem>
-        <para>일년에 신약 일독하기: 주 5일간 하루에 한장씩 읽는다.</para>
+        <para>일년에 신약 일독: 일주에 5일간 하루에 한장씩 읽기.</para>
       </listitem>
       <listitem>
-        <para>한달에 잠언 일독하기: 한달간 매일 그날의 날짜에 해당하는 잠언 한장씩을 읽는다.</para>
+        <para>한달에 잠언 일독: 한달간 매일 그날의 날짜에 해당하는 잠언을 한장씩을 읽기(잠언은 총 31장).</para>
       </listitem>
       <listitem>
-        <para>한달에 시편 일독하기: 20일에는 20, 50, 80, 110, 140편을 읽는 식으로, 매일 (30단위로) 5장의 시편을 읽는다.</para>
+        <para>한달에 시편 일독: 매일 30장 간격의 5장의 시편 읽기. 예를 들면 1일은 1, 31, 61, 91, 121편을 읽고 20일에는 20,
+50, 80, 110, 140편을 읽는 방식입니다.</para>
       </listitem>
       <listitem>
-        <para>6개월에 시편 &amp; 잠언 일독하기: 매일 시편과 잠언을 한장씩 읽는다.</para>
+        <para>6개월에 시편과 잠언 일독: 시편과 잠언을 이어서 하루에 한장씩 읽기.</para>
       </listitem>
       <listitem>
-        <para>2년에 시편과 잠언을 제외한 구약 일독하기: 구약을 하루에 한장씩 읽는다면, 2년하고 2주동안에 (시편과 잠언을 제외한) 구약을 통독할
-수 있다.</para>
+        <para>2년에 시편과 잠언을 제외한 구약 일독: 2년 2주동안 시편과 잠언을 건너뛰고 나머지 구약을 하루에 한장 읽기.</para>
       </listitem>
     </orderedlist>
   </sect1>
