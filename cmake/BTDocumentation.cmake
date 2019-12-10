@@ -131,6 +131,7 @@ FOREACH(HANDBOOK_LOCALE_LANG IN LISTS HANDBOOK_LOCALE_LANGS)
     ADD_CUSTOM_TARGET("handbook_pdf_${HANDBOOK_LOCALE_LANG}"
        COMMENT "Generating PDF handbook for ${HANDBOOK_LOCALE_LANG}"
 
+       COMMAND "${CMAKE_COMMAND}" -E make_directory "../../${HANDBOOK_LOCALE_LANG}/pdf"
        COMMAND xsltproc -o tmp.fo  ${BT_DOCBOOK_PDF_XSL}   ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook
        COMMAND fop -pdf ../../${HANDBOOK_LOCALE_LANG}/pdf/handbook.pdf -fo tmp.fo
        COMMAND rm tmp.fo
