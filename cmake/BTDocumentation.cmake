@@ -22,15 +22,25 @@ FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
     )
 ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 
-IF(CMAKE_SYSTEM MATCHES "BSD")
-    SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs_freebsd.xsl")
-ELSE(CMAKE_SYSTEM MATCHES "BSD")
-    IF (APPLE)
-        SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs_mac.xsl")
-    ELSE (APPLE)
-        SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl")
-    ENDIF (APPLE)
-ENDIF(CMAKE_SYSTEM MATCHES "BSD")
+
+IF(NOT DEFINED BT_DOCBOOK_XSL_HTML_CHUNK_XSL)
+    FIND_FILE(BT_DOCBOOK_XSL_HTML_CHUNK_XSL
+        NAMES "chunk.xsl"
+        HINTS
+            "/usr/share/xml/docbook/stylesheet/docbook-xsl/html/"
+            "/usr/share/sgml/docbook/xsl-stylesheets/html/"
+            "/usr/share/xsl/docbook/html/"
+            "/usr/share/xml/docbook/stylesheet/nwalsh/html/"
+        NO_DEFAULT_PATH)
+    IF(NOT BT_DOCBOOK_XSL_HTML_CHUNK_XSL)
+        MESSAGE(WARNING "The required file html/chunk.xsl from docbook-xsl was \
+not found on the system! Please specify its full path with \
+-DBT_DOCBOOK_XSL_HTML_CHUNK_XSL=path/to/html/chunk.xsl")
+    ENDIF()
+ENDIF()
+SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_BINARY_DIR}/docs.xsl")
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl.in"
+               "${BT_DOCBOOK_XSL}" @ONLY)
 
 # Update handbook
 ADD_CUSTOM_TARGET("handbook")
@@ -51,15 +61,23 @@ FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 
 ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS})
 
-IF(CMAKE_SYSTEM MATCHES "BSD")
-    SET(BT_DOCBOOK_PDF_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/pdf_freebsd.xsl")
-ELSE(CMAKE_SYSTEM MATCHES "BSD")
-    IF (APPLE)
-        SET(BT_DOCBOOK_PDF_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/pdf_mac.xsl")
-    ELSE (APPLE)
-        SET(BT_DOCBOOK_PDF_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/pdf.xsl")
-    ENDIF (APPLE)
-ENDIF(CMAKE_SYSTEM MATCHES "BSD")
+IF(NOT DEFINED BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL)
+    FIND_FILE(BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL
+        NAMES "docbook.xsl"
+        HINTS
+            "/usr/share/xml/docbook/stylesheet/docbook-xsl/fo/"
+            "/usr/share/sgml/docbook/xsl-stylesheets/fo/"
+            "/usr/local/share/xsl/docbook/fo/"
+        NO_DEFAULT_PATH)
+    IF(NOT BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL)
+        MESSAGE(WARNING "The required file fo/docbook.xsl from docbook-xsl was \
+not found on the system! Please specify its full path with \
+-DBT_DOCBOOK_XSL_PDF_DOCBOOK_XSL=path/to/html/chunk.xsl")
+    ENDIF()
+ENDIF()
+SET(BT_DOCBOOK_PDF_XSL "${CMAKE_CURRENT_BINARY_DIR}/pdf.xsl")
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/pdf.xsl.in"
+               "${BT_DOCBOOK_PDF_XSL}" @ONLY)
 
 # Update handbook pdf
 ADD_CUSTOM_TARGET("handbook_pdf")
