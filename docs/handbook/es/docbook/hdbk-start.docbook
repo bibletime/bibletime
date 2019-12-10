@@ -39,6 +39,22 @@ Preferencias</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
+          <interface>Administrador de biblioteca</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>Diálogo de Configuración &bibletime;</interface>
         </term>
         <listitem>
@@ -46,23 +62,6 @@ Preferencias</link>.</para>
           <action>Personaliza &bibletime;.</action>En este dialogo usted puede
 adaptar&bibletime; a sus necesidades. Por Favor vea <link
 linkend="hdbk-config-bt">la descripción detallada</link> de este dialogo.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Administrador de biblioteca</interface>
-        </term>
-        <listitem>
-          <para><action>Modifica su biblioteca</action>. Este cuadro de diálogo le permite
-modificar su biblioteca, añadir o eliminar obras a su sistema. Sólo se
-muestra si no tiene valor predeterminado la biblioteca. Por favor vea <link
-linkend="hdbk-op-bookshelfmanager">la sección de Administración de
-Biblioteca</link> para más detalles. Si usted comienza con una biblioteca
-vacía, será útil para instalar al menos una Biblia, Comentario, léxico y
-reservar una para conocer las características &bibletime;  básicas
-rápidamente. Usted puede hacer esto haciendo clic en el botón Actualizar. Se
-le presentará con una lista de obras que están disponibles en la &cbs;</para>
         </listitem>
       </varlistentry>
     </variablelist>

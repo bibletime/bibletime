@@ -12,7 +12,7 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
-        <guimenu>File</guimenu>
+        <guimenu>Tiedosto</guimenu>
       </title>
       <para>
         <variablelist>
@@ -20,11 +20,12 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
             <term>
               <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Tiedosto</guimenu> <guimenuitem>Avaa teos</guimenuitem>
+</menuchoice>
             </term>
             <listitem>
-              <para><action>Open work.</action> This will give you a menu that will allow you to
-open installed books.</para>
+              <para><action>Avaa teos.</action> Tämä avaa sinulle valikon, jolla voit avata
+asennetut teokset.</para>
             </listitem>
           </varlistentry>
 
@@ -33,13 +34,13 @@ open installed books.</para>
               <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_exit.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>File</guimenu>
-<guimenuitem>Quit</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Tiedosto</guimenu>
+<guimenuitem>Poistu</guimenuitem> </menuchoice>
             </term>
             <listitem>
               <para>
-              <action>Closes &bibletime;.</action> &bibletime; will ask you if you want to
-write unsaved changes to disk.</para>
+              <action>Sulkee &bibletime;.</action> &bibletime; kysyy sinulta, haluatko
+tallettaa tehdyt muutokset.</para>
             </listitem>
           </varlistentry>
         </variablelist>
@@ -48,7 +49,7 @@ write unsaved changes to disk.</para>
 
     <sect2 id="hdbk-reference-menus-view">
       <title>
-        <guimenu>View</guimenu>
+        <guimenu>Näytä</guimenu>
       </title>
 
       <variablelist>
@@ -57,7 +58,7 @@ write unsaved changes to disk.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F5</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_window_fullscreen.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Näytä</guimenu> <guimenuitem>Kokoruutu-tila</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -71,7 +72,7 @@ maximize the &bibletime; window.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Näytä</guimenu> <guimenuitem>Näytä kirjahylly</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -86,7 +87,7 @@ haluat lisää tilaa suurennuslasille.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Näytä</guimenu> <guimenuitem>Näytä kirjanmerkit</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -101,7 +102,8 @@ more space for the Mag.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Näytä</guimenu> <guimenuitem>Näytä suurennuslasi</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -198,7 +200,7 @@ remove the complete toolbar in open works.</para>
     </sect2>
     <sect2 id="hdbk-reference-menus-search">
       <title>
-        <guimenu>Search</guimenu>
+        <guimenu>Etsi</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-search-defaultbible">
@@ -241,7 +243,7 @@ works</link> section.</para>
 
     <sect2 id="hdbk-reference-menus-window">
       <title>
-        <guimenu>Window</guimenu>
+        <guimenu>Ikkuna</guimenu>
       </title>
 
       <variablelist>
@@ -256,7 +258,7 @@ window</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-            <action>Closes active window</action>.</para>
+            <action>Sulkee nykyisen ikkunan</action>.</para>
           </listitem>
         </varlistentry>
 
@@ -266,8 +268,8 @@ window</guimenuitem> </menuchoice>
 <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Close all</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ikkuna</guimenu>
+<guimenuitem>Sulje kaikki</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -328,8 +330,8 @@ vertically</guimenuitem> </menuchoice>
           <term>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
-<imageobject> <imagedata fileref="i_tile_horiz.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
+<imageobject><imagedata fileref="i_tile_horiz.png" width="32" depth="32"
+format="PNG" /></imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
 horizontally</guimenuitem> </menuchoice>
           </term>
 
@@ -414,14 +416,14 @@ kontekstivalikon, jossa voit valita olemassaolevan istunnon poistettavaksi.</par
 
     <sect2 id="hdbk-reference-menus-settings">
       <title>
-        <guimenu>Settings</guimenu>
+        <guimenu>Asetukset</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-settings-bibletime">
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
-<imageobject> <imagedata fileref="i_configure.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem>
+<imageobject><imagedata fileref="i_configure.png" width="32" depth="32"
+format="PNG" /></imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem>
 </menuchoice>
           </term>
 
@@ -438,8 +440,8 @@ needs.  Please see the <link linkend="hdbk-config-bt">Configuring
           <term>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F4</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
-<imageobject> <imagedata fileref="i_configuresword.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
+<imageobject><imagedata fileref="i_configuresword.png" width="32" depth="32"
+format="PNG" /></imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
 </menuchoice>
           </term>
 
@@ -455,7 +457,7 @@ details.</para>
 
     <sect2 id="hdbk-reference-menus-help">
     <title>
-      <guimenu>Help</guimenu>
+      <guimenu>Apua</guimenu>
     </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-help-bibletime">
@@ -463,11 +465,11 @@ details.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F1</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Apua</guimenu> <guimenuitem>Käsikirja</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
-            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
+            <action>Avaa &bibletime;n käyttöoppaan</action> Luet sitä juuri nyt.</para>
           </listitem>
         </varlistentry>
 
@@ -500,15 +502,15 @@ format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Ti
 </menuchoice>
           </term>
           <listitem>
-            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
-tip that will assist in the use of &bibletime;.</para>
+            <para><action>Avaa auttavan vihjeen</action> Päivän vihje antaa käyttökelpoisen
+ohjeen, joka avustaa &bibletime;n käytössä.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry id="hdbk-reference-menus-help-about">
           <term>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem>
-</menuchoice>
+            <menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Tietoja
+ohjelmasta</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -523,7 +525,7 @@ license agreement.</para>
   </sect1>
 
   <sect1 id="hdbk-reference-works">
-    <title>Works reference</title>
+    <title>Teosten viitteet</title>
     <para>
       In this section you can find descriptions of the icons associated with open
 works.
@@ -541,7 +543,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Scrolls forward through history.
+		Selaa eteenpäin läpi historian.
               </para>
             </listitem>
           </varlistentry>
@@ -559,7 +561,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Scrolls back through history.
+		Selaa taaksepäin läpi historian.
               </para>
             </listitem>
           </varlistentry>
@@ -577,7 +579,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an installed bible.
+		Valitse asennettu Raamattu.
               </para>
             </listitem>
           </varlistentry>
@@ -595,7 +597,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an additional bible.
+		Valitse lisä-Raamattu.
               </para>
             </listitem>
           </varlistentry>
@@ -613,7 +615,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Search in selected works.
+		Etsi valituista teoksista.
               </para>
             </listitem>
           </varlistentry>
@@ -631,7 +633,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Display configuration.
+		Näytön asetukset.
               </para>
             </listitem>
           </varlistentry>
@@ -649,7 +651,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an installed commentary.
+		Valitse asennettu kommentaari.
               </para>
             </listitem>
           </varlistentry>
@@ -667,7 +669,7 @@ depth="32" format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuch
 
             <listitem>
               <para>
-		Select additional commentary.
+		Valitse lisä-kommentaari.
               </para>
             </listitem>
           </varlistentry>
@@ -703,7 +705,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select a book.
+		Valitse kirja.
               </para>
             </listitem>
           </varlistentry>
@@ -721,7 +723,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an installed glossary or devotional.
+		Valitse asennettu hartaussanasto.
               </para>
             </listitem>
           </varlistentry>
@@ -739,7 +741,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an additional glossary or devotional.
+		Valitse ylimääräinen sanasto tai hartaus.
               </para>
             </listitem>
           </varlistentry>
@@ -773,19 +775,19 @@ reference</link>.</para>
         <tbody>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Left</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Alt;+ &lt;-</keycap></keycombo>
             </entry>
             <entry>Siirtyy lukuikkunan historiassa taaksepäin.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Right</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Alt;+ -&gt;</keycap></keycombo>
             </entry>
             <entry>Siirtyy lukuikkunan historiassa eteenpäin</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice>
@@ -808,7 +810,7 @@ mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
@@ -818,7 +820,7 @@ mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -829,7 +831,7 @@ equivalent; toggle automatic window tiling.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
@@ -850,7 +852,7 @@ equivalent; toggle manual window placement.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
@@ -860,7 +862,7 @@ equivalent; organizes windows with tabs across the top.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice>
@@ -875,18 +877,6 @@ equivalent; organizes windows with tabs across the top.</entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice>
 <guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice>
 </link> equivalent; closes all open windows.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Loitonna. Tämä pienentää kirjasimen kokoa lukuikkunoissa.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Lähennä. Tämä suurentaa kirjasimen kokoa lukuikkunoissa.</entry>
           </row>
           <row>
             <entry>
@@ -967,7 +957,7 @@ equivalent; organizes windows with tabs across the top.</entry>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
-            <entry>Search with works of this window.</entry>
+            <entry>Etsi tämän ikkunan teoksia.</entry>
           </row>
 
           <row>
@@ -996,6 +986,7 @@ currently opened works.</entry>
             </entry>
             <entry>Sulkee nykyisen ikkunan.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F1</keycap> </keycombo>
@@ -1051,6 +1042,37 @@ Manager.</entry>
 <guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice>
 </link> equivalent; toggles display of the mag(nifying glass).</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+down</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+up</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+pause</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>

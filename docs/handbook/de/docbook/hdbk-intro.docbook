@@ -20,9 +20,8 @@ des &sword;-Projektes der &cbs; zu finden.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Vorhandene Werke</title>
-      <para>Über 200 Dokumente in 50 Sprachen sind von der <ulink
-url="http://www.crosswire.org">&cbs;</ulink> erhältlich. Dazu gehören:
-<variablelist>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
           <term>Bibeln</term>
           <listitem>
@@ -69,7 +68,9 @@ Webster's Revised Unabridged Dictionary of the English Language 1913 und
 Nave's Topical Bible.</para>
           </listitem>
         </varlistentry>
-      </variablelist></para>
+      </variablelist> There are several other repositories that
+&bibletime; will load and use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

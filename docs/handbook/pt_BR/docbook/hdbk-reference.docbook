@@ -891,18 +891,6 @@ posicionamento</guimenuitem> <guimenuitem>Com abas</guimenuitem>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Diminuir zoom. Diminui o tamanho da fonte das janelas de leitura.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Aumentar zoom. Aumenta o tamanho da fonte das janelas de leitura.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Selecionar tudo. Seleciona todo o texto na janela de leitura.</entry>
@@ -1010,6 +998,7 @@ busca para procurar em todas as obras abertas.</entry>
             </entry>
             <entry>Fecha a janela atual.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F1</keycap> </keycombo>
@@ -1065,6 +1054,37 @@ da Estante.</entry>
 <guimenu>Exibir</guimenu> <guimenuitem>Mostrar lupa</guimenuitem>
 </menuchoice> </link> equivalente; alterna exibição da lupa.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+down</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+up</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+pause</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>

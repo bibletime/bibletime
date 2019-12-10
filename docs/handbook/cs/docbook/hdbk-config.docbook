@@ -73,15 +73,9 @@ se zajímáte, zkuste nainstalovat lokalizační balíček pro tento jazyk.</par
 informací můžete použít <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>Pokud používáte malé písmo jako například Clearlyu (asi 22kb), &bibletime;
-poběží rychleji nž s velkým písmem jako napriklad <trademark
-class="registered">Bitstream Cyberbit</trademark>(asi 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Získání písem</title>
-        <para>Písma můžete získat z mnoha zdrojů:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Vaše *nixová distribuce.</para>

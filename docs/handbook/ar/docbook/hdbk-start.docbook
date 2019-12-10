@@ -38,6 +38,22 @@ format="PNG" /> </imageobject>
     <variablelist>
       <varlistentry>
         <term>
+          <interface>مدير رف الكتب </interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>نافذة ضبط إعدادات بيبل تايم</interface>
         </term>
         <listitem>
@@ -45,22 +61,6 @@ format="PNG" /> </imageobject>
           <action>لتخصيص بيبل تايم. </action> تتيح لك هذه النافذة ضبط البرنامج ليلاءم
 إحتياجاتك. يرجى قراءة <link linkend="hdbk-config-bt">الوصف التفصيلي </link>
 لهذه النافذة.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>مدير رف الكتب </interface>
-        </term>
-        <listitem>
-          <para><action>لتعديل رف الكتب. </action>. تتيح لك هذه النافذة تعديل رف كتبك،
-بإضافة أو حذف الكتب من النظام الخاص بك. هذه النافذة ستظهر فقط إن لم ينجح
-العثور على رف كتب إفتراضي. يرجى الرجوع إلى <link
-linkend="hdbk-op-bookshelfmanager">قسم مدير رف الكتب </link> لمزيد من
-التفاصيل. إذا كنت ترغب في البدء برف كتب فارغ، سيكون من المفيد تثبيت على
-الأقل ترجمة واحدة للكتاب المقدس، تفسير، قاموس وكتاب واحد ليتيح لك التعرف على
-الخصائص الأساسية في بيبل تايم بسرعة. تستطيع فعل ذلك بالنقر على زر التحديث
-لتحصل على قائمة بالكتب المتاحة من جمعية الكتاب المقدس كروس وير.</para>
         </listitem>
       </varlistentry>
     </variablelist>

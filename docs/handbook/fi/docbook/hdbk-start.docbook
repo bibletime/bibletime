@@ -8,10 +8,10 @@
       <title>&bibletime;n käynnistys</title>
       <para>&bibletime; is an executable file that is integrated with the desktop. You
 can launch &bibletime; from the Start Menu with this icon: <mediaobject>
-        <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
-format="PNG" /> </imageobject>
+        <imageobject><imagedata fileref="i_bibletime.png" width="32" depth="32"
+format="PNG" /></imageobject>
         <textobject>
-          <phrase>&bibletime; start icon</phrase>
+          <phrase>&bibletime; aloituskuvake</phrase>
         </textobject>
       </mediaobject></para>
 
@@ -29,13 +29,29 @@ also use booknames in your current bookname language.</para>
   </sect1>
 
   <sect1 id="hdbk-start-firstrun">
-    <title>Starting &bibletime; for the first time</title>
+    <title>&bibletime;n aloitus ensimmäistä kertaa</title>
 
     <para>If you are starting &bibletime; for the first time, you will want to
 configure the following options, available under the <link
 linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Kirjahyllyn hallinta</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
       <varlistentry>
         <term>
           <interface>Configure &bibletime; dialog</interface>
@@ -46,23 +62,6 @@ linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 &bibletime;:stä sellaisen kuin haluat. Katso linkistä <link
 linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä
 ikkunasta.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Bookshelf Manager</interface>
-        </term>
-        <listitem>
-          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
-Bookshelf, add or delete works from your system.  It will only be shown if
-no default Bookshelf can be found.  Please see <link
-linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
-further details. If you start off with an empty Bookshelf, it will be
-helpful to install at least one Bible, Commentary, Lexicon and one Book to
-get to know &bibletime;'s basic features quickly.  You can do this by
-clicking on the Refresh button.  You will be presented with a list of works
-that are available from the &cbs;</para>
         </listitem>
       </varlistentry>
     </variablelist>

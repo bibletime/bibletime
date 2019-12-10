@@ -27,13 +27,13 @@ nyelvenként. Itt található a "Könyvjelzők" kategória is, ahol tárolhatja 
 elérheti a saját könyvjelzőit.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
-        <title>Dokumentumok olvasása</title>
+        <title>Opening works</title>
 
-        <para>Dokumentum olvasásra megnyitásához egyszerűen kattintson a <mousebutton>bal
-egérgombbal</mousebutton> a kívánt kategóriára (Bibliák, Kommentárok,
-Lexikonok...) a tartalmuk kijelzéséhez, majd kattintson a kiválasztott
-munkára a megnyitásához. A kívánt dokumentum a Munkaasztal részen lesz
-látható.</para>
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>Amikor olvas egy dokumentumot, és meg szeretne nyitni egy másik munkát
 ugyanannál a résznél, ahol éppen tart, egyszerűen megteheti. Csak kattintson
@@ -123,6 +123,18 @@ eszköztárral, amelyen segédeszközöket találhat a navigáláshoz a megnyito
 munkában.</para>
       </sect3>
 
+      <sect3 id="hdbk-op-parts-desk-scroll">
+        <title>Auto Scrolling</title>
+        <para>The currently active window can be auto scrolled up or down.  Start
+scrolling by press Shift+Down. You can increasing the scrolling speed by
+pressing Shift+Down multiple times. To pause scrolling press Space. To start
+scrolling again at the previous speed press Space again. To slow down
+scrolling or scroll the other direction press Shift+Up one or more
+times. Pressing any other key or changing the active window will stop the
+scrolling.
+        </para>
+      </sect3>
+
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>Megnyitott ablakok elhelyezése</title>
         <para>Természetesen egyszerre több dokumentum lehet megnyitva a  munkaasztalon,
@@ -142,13 +154,10 @@ telepíteni a <ulink url="http://www.crosswire.org">&cbs;</ulink> egyik
 modulját, a "Személyes kommentárt" ezt az angol nyelvű dokumentumoknál
 találja Personal Commentary néven.</para>
 
-        <para>Amikor megnyitja a saját kommentárját az ikonjára
-<mousebutton>kattintva</mousebutton> a könyvespolcon, olvasási üzemmódban
-nyílik meg, ekkor nem tudja szerkeszteni. Szerkeszteni akkor tudja, ha
-<mousebutton>jobb</mousebutton> egérgombbal kattint, és kiválasztja a
-<guimenu>Dokumentum szerkesztése </guimenu>pontot és az
-<guimenuitem>Egyszerű szöveg </guimenuitem>(forráskód szerkesztő) vagy
-<guimenuitem>HTML</guimenuitem>(alap wysiwyg szerkesztő) lehetőséget.</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>Ha a <menuchoice> <guimenu>Dokumentum szerkesztése</guimenu> </menuchoice>
@@ -234,10 +243,9 @@ gombot. Példákat találhat a <guimenu>teljes kifejezés</guimenu> lehetőségr
 kattintva.
 	  </para>
 
-        <para>Használhat helyettesítő karaktereket is: a '*' bármennyi betűt helyettesít,
-míg a '?' csak egyet. Zárójelek használatával csoportosíthatja (mint
-matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS
-Isten'.</para>
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>Ha a fő szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása
 után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's
@@ -342,80 +350,40 @@ telepíteni a könyvespolcra, frissíteni vagy akár törölni azokat. Megtalál
 a főmenü <menuchoice> <guimenu>Beállítások</guimenu>
 <guimenuitem>Könyvespolc menedzser</guimenuitem> </menuchoice> almenüjében.</para>
 
-      <tip>
-	<para>Ha ez az első alkalom, hogy elindította a &bibletime; -t, kattintson a
-Frissítés gombra, hogy lássa a &cbs; által biztosított munkák listáját. </para>
-      </tip>
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Telepítési útvonal(ak) beállítása</title>
 
-      <para>Itt adható meg, hogy a &bibletime; hol tárolhatja a "Könyvespolcát" a
-merevlemezen. Megadhat egyszerre több könyvtárat is, de az alapértelmezett a
-"~/.sword/" *nixokon, és "C:\Documents and Settings\All Users\Application
-Data\Sword"  Windowson. </para>
-
-      <tip>
-        <para>Ha rendelkezésére áll egy Sword CD, és nem akarja azt feltelepíteni,
-lehetősége van a CD elérési útját megadni, mintha "könyvespolc" lenne, ebben
-az esetben a &bibletime; indításakor az összes dokumentum látható lesz, ha a
-CD a gépben van.Ha rendelkezésére áll egy Sword CD, és nem akarja azt
-feltelepíteni, lehetősége van a CD elérési útját megadni, mintha
-"könyvespolc" lenne, ebben az esetben a &bibletime; indításakor az összes
-dokumentum látható lesz, ha a CD a gépben van.</para>
-      </tip>
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Dokumentum(ok) telepítése/frissítése</title>
-
-      <para>Evvel a lehetőséggel élve csatlakozhat egy dokumentum tárolóhelyhez
-("könyvtárhoz"), és letölthet egy, vagy akár több munkát a saját helyi
-könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. &sword; CD), vagy
-távoliak is (pl. a Crosswire online &sword; tárolóhelye, vagy más oldalak,
-ahol &sword; modulok találhatók). További forrásokat adhat hozzá a
-<guibutton>Lista letöltése...</guibutton> gombra kattintva, ha az
-<guibutton>Új telepítési forrás</guibutton> ablak látható. Egyszerűen
-kezelheti ezeket a lelőhelyeket a <guibutton>Hozzáadás</guibutton> és a
-<guibutton>Törlés</guibutton> gomb segítségével.</para>
-
-      <para>A telepítési vagy frissítési folyamat elkezdéséhez válassza ki a forrást,
-melyhez csatlakozni kíván, és a helyi könyvespolcot, ahova telepíteni
-szeretne. Ezek után kattintson a <guibutton> Frissítés...</guibutton>
-gombra. A &bibletime; leellenőrzi a tároló tartalmát, és elkészít egy listát
-a telepíthető, vagy a meglévő de frissíthető dokumentumokról. Már csak ki
-kell jelölnie a telepítendőeket, majd <guibutton>Telepítés...</guibutton> és
-a kívánt munkák a könyvespolcára kerülnek.A telepítési vagy frissítési
-folyamat elkezdéséhez válassza ki a forrást, melyhez csatlakozni kíván, és a
-helyi könyvespolcot, ahova telepíteni szeretne. Ezek után kattintson a
-<guibutton> Frissítés...</guibutton> gombra. A &bibletime; leellenőrzi a
-tároló tartalmát, és elkészít egy listát a telepíthető, vagy a meglévő de
-frissíthető dokumentumokról. Már csak ki kell jelölnie a telepítendőeket,
-majd <guibutton>Telepítés...</guibutton> és a kívánt munkák a könyvespolcára
-kerülnek.</para>
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Dokumentum(ok) törlése</title>
-      <para>Ez a lehetőség biztosítja önnek, hogy a nem kívánt munkákat eltávolítsa,
-lemezterületet szabadítson fel. Egyszerűen jelölje meg a törölni kívánt
-eleme(ke)t a könyvespolcon, majd kattintson a
-<guibutton>Törlés...</guibutton> gombra.Ez a lehetőség biztosítja önnek,
-hogy a nem kívánt munkákat eltávolítsa, lemezterületet szabadítson
-fel. Egyszerűen jelölje meg a törölni kívánt eleme(ke)t a könyvespolcon,
-majd kattintson a <guibutton>Törlés...</guibutton> gombra.</para>
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Keresési indexek</title>
-      <para>Ez az opció teszi lehetővé, hogy új indexeket készítsen, vagy kitakarítsa a
-törölt dokumentumok elárvult indexeit.Ez az opció teszi lehetővé, hogy új
-indexeket készítsen, vagy kitakarítsa a törölt dokumentumok elárvult
-indexeit.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Exportálás és Nyomtatás</title>

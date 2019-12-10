@@ -11,6 +11,7 @@
   <!ENTITY Shift 'Shift'>
   <!ENTITY Ctrl 'Ctrl'>
   <!ENTITY Alt 'Alt'>
+  <!ENTITY Space 'Space'>
 
   <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
   <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
@@ -39,31 +40,35 @@
       <firstname>Thomas</firstname>
       <surname>Abthorpe</surname>
     </author>
+    <author>
+      <firstname>Gary</firstname>
+      <surname>Holmlund</surname>
+    </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
     <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
   </legalnotice>
 
-  <date>January 2014</date>
+  <date>November 2019</date>
 
-  <releaseinfo>2.10.1</releaseinfo>
+  <releaseinfo>2.11.2+</releaseinfo>
 
   <abstract>
     <para>&bibletime; is a completely free Bible study program. The program's user
-interface is built with &qt; framework, which makes it run on several
+interface is built with the &qt; framework, which makes it run on several
 operating systems including Linux, Windows, FreeBSD and Mac OS X. The
-software uses the &sword; programming library to work with over 200 free
+software uses the &sword; programming library to work with over 900 free
 Bible texts, commentaries, dictionaries and books in over 50 languages
-provided by the &cbs;.</para>
+provided by the &cbs; and several other repositories.</para>
   </abstract>
 
   <keywordset>
-    <keyword>Qt4</keyword>
+    <keyword>Qt5</keyword>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>

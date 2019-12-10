@@ -102,7 +102,8 @@ utile se hai bisogno di di più spazio per la Lente.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Mostra</guimenu> <guimenuitem>Mostra Info</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -115,13 +116,13 @@ mostrare o nascodere la Lente nel pannello di sinistra.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Mostra</guimenu> <guimenuitem>Mostra intestazioni testi
+paralleli</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
-            <action>Toggles viewing of additional works</action> Toggle this setting to
-allow you to view additional works in parallel to your current open books.</para>
+            <action>Mostr opere aggiuntive</action> Attiva questa impostazione per
+mostrare altre opere in parallelo con i libri attualmente aperti.</para>
           </listitem>
         </varlistentry>
 
@@ -898,18 +899,6 @@ corrente come nuova sessione.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Zoom out. Diminuisce la dimensione del carattere della finestra di lettura.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Zoom out. Aumenta la dimensione del carattere della finestra di lettura.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Seleziona tutto. Seleziona tutto il testo nella finestra di lettura.</entry>
@@ -1017,6 +1006,7 @@ ricerca per cercare in tutti i documenti aperti.</entry>
             </entry>
             <entry>Chiude la finestra corrente.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F1</keycap> </keycombo>
@@ -1076,6 +1066,37 @@ Libreria.</entry>
 </menuchoice> </link> equivalent; attiva/disattiva visualizzazione della
 lente.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+down</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+up</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+pause</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>

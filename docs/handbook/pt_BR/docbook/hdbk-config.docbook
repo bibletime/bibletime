@@ -79,15 +79,9 @@ localização para esse idioma.</para>
 livro de mão. Para mais informações, por favor verifique em <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>Se você usar uma fonte pequena como Clearlyu (em torno de 22kb), &bibletime;
-ir rodar mais rápido do que com uma fonte como <trademark
-class="registered">Bitstream Cyberbit</trademark> (em torno de 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Obtendo fontes</title>
-        <para>Fontes podem ser obtidas de vários lugares:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Sua distribuição *nix.</para>

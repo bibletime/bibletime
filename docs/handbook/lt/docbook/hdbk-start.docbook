@@ -40,6 +40,22 @@ juostoje</link> prieinamas sekančias parinktis.</para>
     <variablelist>
       <varlistentry>
         <term>
+          <interface>Knygų lentynos tvarkytuvė</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>&bibletime; konfigūravimo dialogas</interface>
         </term>
         <listitem>
@@ -47,24 +63,6 @@ juostoje</link> prieinamas sekančias parinktis.</para>
           <action>Individualizuoja &bibletime;.</action> Šis dialogas leidžia jums
 pritaikyti &bibletime; savo reikmėms. Prašome žiūrėti <link
 linkend="hdbk-config-bt">išsamesnį šio dialogo aprašą</link>.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Knygų lentynos tvarkytuvė</interface>
-        </term>
-        <listitem>
-          <para><action>Modifikuoja jūsų knygų lentyną</action>.  Šis dialogas leidžia jums
-modifikuoti savo knygų lentyną, pridėti ar ištrinti veiklas iš savo
-sistemos. Jis bus rodomas tik tuo atveju, jei nebus rasta numatytosios Knygų
-lentynos.  Išsamesnei informacijai, prašome žiūrėti <link
-linkend="hdbk-op-bookshelfmanager">Knygų lentynos Tvarkytuvės
-sekciją</link>. Jei pradedate su tuščia Knygų lentyna, bus naudinga
-įsidiegti bent vieną Bibliją, Komentarus, Leksikoną ir Knygą, kad greitai
-susipažintumėte su pagrindinėmis &bibletime;'s ypatybėmis. Tai galite
-atlikti, nuspausdami ant mygtuko Įkelti iš naujo. Jums bus pateiktas visų,
-iš &cbs; prieinamų veiklų, sąrašas;</para>
         </listitem>
       </varlistentry>
     </variablelist>

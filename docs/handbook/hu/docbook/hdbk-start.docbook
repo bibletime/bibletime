@@ -38,6 +38,22 @@ opciókat.</para>
     <variablelist>
       <varlistentry>
         <term>
+          <interface>Könyvespolc menedzser</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>A &bibletime; Beállítása párbeszédablak</interface>
         </term>
         <listitem>
@@ -45,23 +61,6 @@ opciókat.</para>
           <action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy
 a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link
 linkend="hdbk-config-bt">lehetőségek</link> részletes leírását.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Könyvespolc menedzser</interface>
-        </term>
-        <listitem>
-          <para><action>Könyvespolc beállítása.</action> Ez az ablak teszi lehetővé a
-könyvespolcának beállítását, hozzáadhat, törölhet munkákat a
-rendszerében. Csak akkor jelenik meg ez az ablak, ha nincs alapértelmezett
-könyvespolc beállítva. Tekintse meg <link
-linkend="hdbk-op-bookshelfmanager"> ezt a részt</link> további
-információkért. Ha üres könyvespolccal indulnak, hasznos lehet legalább egy
-Biblia, kommentár, lexikon vagy egy könyv telepítése, hogy gyorsan
-megismerje a &bibletime; alap lehetőségeit. A frissítés gombra kattintva
-megtekintheti a &cbs; által biztosított dokumentumok listáját.</para>
         </listitem>
       </varlistentry>
     </variablelist>

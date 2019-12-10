@@ -902,18 +902,6 @@ linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guime
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Kicsinyít. Csökkenti az ablakban alkalmazott betű méretét.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Nagyít. Növeli az ablakban alkalmazott betű méretét.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Összes kiválasztása. Az összes szöveget kiválasztja az aktuális
@@ -1026,6 +1014,7 @@ linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu>
             </entry>
             <entry>Bezárja az aktuális ablakot.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F1</keycap> </keycombo>
@@ -1084,6 +1073,37 @@ linkend="hdbk-reference-menus-view-showmag"><menuchoice><guimenu>Nézet</guimenu
 mutatása</guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a
 nagyító (információs) ablakot.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+down</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+up</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+pause</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>

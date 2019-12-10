@@ -880,18 +880,6 @@ equivalent; organizes windows with tabs across the top.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Uitzoomen. Dit vermindert de lettergrootte van de leesvensters.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Inzoomen. Dit vergroot de lettergrootte van de leesvensters.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Selecteer alles. Dit selecteert alle tekst in de leesvensters.</entry>
@@ -998,6 +986,7 @@ currently opened works.</entry>
             </entry>
             <entry>Sluit het huidige venster.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F1</keycap> </keycombo>
@@ -1053,6 +1042,37 @@ Manager.</entry>
 <guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice>
 </link> equivalent; toggles display of the mag(nifying glass).</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+down</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+up</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+pause</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>

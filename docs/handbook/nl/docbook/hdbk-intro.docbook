@@ -19,7 +19,7 @@ section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Beschikbare modules</title>
-      <para>Over 200 documents in 50 languages are available from the <ulink
+      <para>Over 280 documents in 50 languages are available from the <ulink
 url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
           <term>Bijbels</term>
@@ -67,7 +67,9 @@ Revised Unabridged Dictionary of the English Language 1913, Nave's Topical
 Bible.</para>
           </listitem>
         </varlistentry>
-      </variablelist></para>
+      </variablelist> There are several other repositories that
+&bibletime; will load and use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

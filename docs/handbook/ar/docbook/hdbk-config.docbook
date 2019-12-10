@@ -71,15 +71,9 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
 تود مراجعة الرابط التالي <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>يعمل بيبل تايم بسرعة أكبر إذا كنت تسخدم خط صغير الحجم مثل Clearlyu (حوالي 22
-ك.ب.)؛ بالمقارنة بخط كبير الحجم مثل <trademark class="registered">Bitstream
-Cyberbit</trademark> (حوالي 12 م.ب.).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>الحصول على خطوط</title>
-        <para>يمكن الحصول على الخطوط من عديد من المصادر:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>توزيعة يونكس/لينكس التي تستخدمها.</para>

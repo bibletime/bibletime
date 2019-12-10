@@ -30,14 +30,13 @@ idioma. También tiene una categoría denominada "Marcadores". Aquí es donde
 usted puede almacenar y acceder a sus propios marcadores.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
-        <title>Lectura de obras</title>
+        <title>Opening works</title>
 
-        <para>Para abrir una obra de la biblioteca para lectura, simplemente haga clic con
-el <mousebutton>botón izquierdo del ratón</mousebutton> sobre la categoría
-deseada (Biblias, Comentarios, Léxicos, Libros, Devocionales o Glosarios)
-para visualizar su contenido. A continuación, simplemente haga clic en una
-de las obras para abrir esa lectura. Una ventana de lectura aparecerá en el
-área de Escritorio.</para>
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>Si usted está leyendo una determinada obra, y quieren abrir otra obra en el
 pasaje que está leyendo, puede utilizar un atajo. Simplemente haga clic con
@@ -133,6 +132,18 @@ ventana está conectado a leer, así como botones de historial como los que
 usted conoce de su navegador.</para>
       </sect3>
 
+      <sect3 id="hdbk-op-parts-desk-scroll">
+        <title>Auto Scrolling</title>
+        <para>The currently active window can be auto scrolled up or down.  Start
+scrolling by press Shift+Down. You can increasing the scrolling speed by
+pressing Shift+Down multiple times. To pause scrolling press Space. To start
+scrolling again at the previous speed press Space again. To slow down
+scrolling or scroll the other direction press Shift+Up one or more
+times. Pressing any other key or changing the active window will stop the
+scrolling.
+        </para>
+      </sect3>
+
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>Organizando las ventanas de lectura</title>
         <para>Por supuesto, usted puede abrir múltiples obras al mismo tiempo. Hay varias
@@ -154,13 +165,10 @@ la Biblia, tiene que instalar una obra de la biblioteca de la <ulink
 url="http://www.crosswire.org">&cbs;</ulink> . Esta obra se llama "Personal
 commentary".</para>
 
-        <para>Si abre el comentario personal haciendo clic en su símbolo en la biblioteca
-con el <mousebutton>botón izquierdo</mousebutton> del ratón, se abre en modo
-de lectura. Usted no será capaz de editar en este modo. Si desea escribir
-anotaciones en el comentario personal, tienes que abrirlo con el
-<mousebutton>botón derecho</mousebutton> del ratón y seleccione
-<guimenu>Editar</guimenu> y luego texto sin formato (editor de código
-fuente) o HTML (gui básicos editor WYSIWYG).</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>Si <menuchoice> <guimenu>Editar</guimenu> </menuchoice> está desactivado,
@@ -240,10 +248,9 @@ desea realizar una búsqueda más compleja, seleccione el botón
 clic en <guimenu>sintaxis completa</guimenu>.
 	  </para>
 
-        <para>Puede utilizar caracteres comodín: '*' coincide con cualquier número de
-caracteres, mientras que '?' coincidirá con cualquier carácter
-individual. El uso de paréntesis le permite agrupar los términos de
-búsqueda, por ejemplo, '(Jesús OR Espíritu) AND Dios'.</para>
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>Para buscar otro texto en el texto principal, introduzca el tipo de texto
 seguida de ':' y, a continuación el término de búsqueda. Consulte la tabla
@@ -346,66 +353,40 @@ acceder haga clic en <menuchoice> <guimenu>Preferencias</guimenu>
 <guimenuitem>Administrador de biblioteca</guimenuitem> </menuchoice> en el
 menú principal.</para>
 
-      <tip>
-	<para>Si esta es la primera vez que está iniciando &bibletime;, haga clic en el
-botón Actualizar para ver una lista de las obras provistas por la &cbs;.</para>
-      </tip>
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Ruta de instalación de la Biblioteca</title>
 
-      <para>Aquí puede especificar dónde &bibletime; puede almacenar su biblioteca en el
-disco duro. Incluso puede guardarlo en varios directorios. El valor
-predeterminado es "~ /.sword/" en *nix y "C:\Documents and Settings\All
-Users\Application Data\Sword" en Windows.</para>
-
-      <tip>
-        <para>Si tiene un CD de sword, pero no desea instalar todas las obras en el disco
-duro, sino que se utilicen directamente desde el CD, entonces usted puede
-agregar la ruta de acceso al CD como uno de los caminos de su biblioteca. Al
-iniciar &bibletime;, mostrará todas las obras en el CD, si está presente.</para>
-      </tip>
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Instalar/actualizar obra(s)</title>
-
-      <para>Con este servicio, puede conectarse a un repositorio de obras (llamado
-"biblioteca"), y la transferencia de una o más obras a su biblioteca
-local. Estas bibliotecas pueden ser locales (por ejemplo, un CD de &sword;),
-o remoto (por ejemplo, depósito en línea Crosswire de módulos &sword;, u
-otro sitio que ofrece módulos de &sword;). Puede instalar otras fuentes
-haciendo clic en <guibutton>Obtener lista...</guibutton> cuando haya de
-diálogo abiertos de <guibutton>Agregar nueva fuente</guibutton>. Puede
-administrar su biblioteca con la opción <guibutton>Agregar</guibutton> y
-<guibutton>Eliminar</guibutton>.</para>
-
-      <para>Para empezar el proceso de instalación o actualización, seleccione una
-biblioteca a la que desee conectarse y una ruta local para instalar la(s)
-obra(s). Luego haga clic en <guibutton>Refrescar</guibutton>. &bibletime;
-escaneará el contenido de la biblioteca y le presentará una lista de obras
-que se pueden agregar a su biblioteca, o que ya han instalado, pero están
-disponibles en una nueva versión en la biblioteca, y por lo tanto se pueden
-actualizar. Entonces usted puede marcar todas las obras que desea instalar o
-actualizar, y haga clic en <guibutton>Instalar</guibutton>. Luego será
-trasladado a su biblioteca.</para>
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Eliminar obra(s)</title>
-      <para>Este servicio le permite borrar una o varias de las obras de su biblioteca
-también liberar espacio en disco. Simplemente marca los puntos y haga clic
-en <guibutton>Eliminar</guibutton>.</para>
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Índices de Búsqueda</title>
-      <para>Esta opción le permite crear nuevos índices de búsqueda y limpieza de
-archivos índice huérfanos de obras eliminadas.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Exportando e Imprimiendo</title>

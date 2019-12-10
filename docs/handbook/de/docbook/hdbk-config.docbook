@@ -84,15 +84,9 @@ installieren.</para>
 dieses Handbuches hinaus. Für weitergehende Informationen können Sie auch
 das <ulink url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html">
 Unicode-HOWTO</ulink> lesen.</para>
-        <tip>
-          <para>Wenn Sie eine kleine Schriftart wie Clearlyu (etwa 22kb) verwenden, wird
-&bibletime; schneller laufen als mit einer großen Schriftart wie <trademark
-class="registered">Bitstream Cyberbit</trademark> (etwa 12MB).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Schriftarten beziehen</title>
-        <para>Schriftarten können von unterschiedlichen Quellen bezogen werden:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Ihre *nix-Distribution.</para>

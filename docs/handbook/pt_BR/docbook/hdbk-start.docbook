@@ -38,6 +38,22 @@ linkend="hdbk-reference-menus-settings">barra de menu Configurações</link>.</p
     <variablelist>
       <varlistentry>
         <term>
+          <interface>Gerenciador de Livros</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>Diálogo de configuração do &bibletime; </interface>
         </term>
         <listitem>
@@ -45,21 +61,6 @@ linkend="hdbk-reference-menus-settings">barra de menu Configurações</link>.</p
           <action>Customiza &bibletime;.</action> Esse diálogo permite adaptar o
 &bibletime; s suas necessidades. Veja <link linkend="hdbk-config-bt">a
 descrição detalhada</link> desse diálogo.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Gerenciador de Livros</interface>
-        </term>
-        <listitem>
-          <para><action>Modifica sua Estante.</action> Esse diálogo permite a você modificar
-sua Estante, adicionar ou excluir obras do seu sistema. S ser exibido se
-nenhuma Estante padro for encontrada. Por favor veja <link
-linkend="hdbk-op-bookshelfmanager"> essa seção</link> para mais detalhes. Se
-você iniciar com uma Estante vazia, ser til para instalar pelo menos uma
-Bíblia, Comentário, Léxico e um Livro para conhecer os recursos básicos do
-&bibletime; rapidamente.</para>
         </listitem>
       </varlistentry>
     </variablelist>

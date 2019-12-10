@@ -1,7 +1,7 @@
 <chapter id="hdbk-config">
   <title>&bibletime; configureren</title>
-  <para>In this section you find an overview to configure &bibletime;, which can be
-found under <guimenu>Settings</guimenu> in the main menu.</para>
+  <para>In deze sectie vindt u een overzicht, hoe &bibletime; te configureren. Dit
+kan gevonden worden onder <guimenu>instellingen</guimenu></para>
   <sect1 id="hdbk-config-bt">
     <title>Configure &bibletime; Dialog</title>
     <para>The &bibletime; user interface can be customized in many ways depending on
@@ -11,7 +11,7 @@ your needs. You can access the configuration dialog by selecting
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Tonen</guimenu>
       </title>
       <para>Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een
 keuze uit de volgende opties: 
@@ -78,15 +78,9 @@ language.</para>
 handbook. For further information you might want to refer to the <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
-        <tip>
-          <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run
-faster than with a large font like <trademark class="registered">Bitstream
-Cyberbit</trademark>(about 12Mb).</para>
-        </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <title>Lettertypen verkrijgen</title>
-        <para>Lettertypen kunnen worden verkregen uit een aantal bronnen:</para>
+        <para>Fonts can be installed from a number of sources:</para>
         <itemizedlist>
           <listitem>
             <para>Your *nix distribution.</para>

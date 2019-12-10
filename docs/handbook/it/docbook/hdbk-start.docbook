@@ -11,7 +11,7 @@
         <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
 format="PNG" /> </imageobject>
         <textobject>
-          <phrase>&bibletime; start icon</phrase>
+          <phrase>icona di avvio &bibletime;</phrase>
         </textobject>
       </mediaobject></para>
 
@@ -38,6 +38,22 @@ menus-settings">Impostazioni barra dei menu</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
+          <interface>Gestore Libreria</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>Configura &bibletime;</interface>
         </term>
         <listitem>
@@ -46,23 +62,6 @@ menus-settings">Impostazioni barra dei menu</link>.</para>
 adattare &bibletime; alle tue esigenze. Guarda <link
 linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa
 finestra.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Gestore Libreria</interface>
-        </term>
-        <listitem>
-          <para><action>Modifica Libreria</action>. Questa finestra ti permette di
-modificare la tua Libreria, aggiungere o cancellare documenti dal tuo
-sistema. Sarà visualizzato solo se non è trovata una Libreria di
-default. Guarda la sezione <link linkend="hdbk-op-bookshelfmanager">Il
-Gestore Libreria</link> per maggiori dettagli. Se inizi con una Libreria
-vuota, sarà utile per installare almeno una Bibbia, Commenti, Lessico e un
-Libro per conoscere le funzioni di base di &bibletime; velocemente. Puoi
-fare questo cliccando sul pulsante Aggiorna. Si presenterà con una lista di
-documenti disponibili da &cbs;</para>
         </listitem>
       </varlistentry>
     </variablelist>

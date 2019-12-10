@@ -19,8 +19,8 @@ sviluppatori</ulink> del Progetto &sword;, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Documenti disponibili</title>
-      <para>Oltre 200 documenti in 50 lingue sono disponibili dal <ulink
-url="http://www.crosswire.org">&cbs;</ulink>. Questi includono: <variablelist>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
           <term>Bibbie</term>
           <listitem>
@@ -67,7 +67,9 @@ della Bibbia Greca, il Dizionario Rivisto e Non Abbreviato di Webster della
 lingua inglese 1913, Bibbia Attuale di Nave.</para>
           </listitem>
         </varlistentry>
-      </variablelist></para>
+      </variablelist> There are several other repositories that
+&bibletime; will load and use.
+      </para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">

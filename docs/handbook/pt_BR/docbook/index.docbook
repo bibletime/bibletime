@@ -11,6 +11,7 @@
   <!ENTITY Shift 'Shift'>
   <!ENTITY Ctrl 'Ctrl'>
   <!ENTITY Alt 'Alt'>
+  <!ENTITY Space 'Space'>
 
   <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
   <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
@@ -39,31 +40,35 @@
       <firstname>Thomas</firstname>
       <surname>Abthorpe</surname>
     </author>
+    <author>
+      <firstname>Gary</firstname>
+      <surname>Holmlund</surname>
+    </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
     <para>O Manual do &bibletime; é distribuído como parte do programa &bibletime;.</para>
   </legalnotice>
 
-  <date>Janeiro de 2014</date>
+  <date>November 2019</date>
 
-  <releaseinfo><date>Janeiro de 2014</date></releaseinfo>
+  <releaseinfo>2.11.2+</releaseinfo>
 
   <abstract>
-    <para>A &bibletime; é um programa de estudo bíblico livre/grátis. A interface de
-usuário do programa foi criado com o framework do &qt;, o que o permite
-rodar em vários sistemas operacionais incluindo o Linux, Windows, FreeBSD e
-Mac OS X. O softare usa a bibliotace de programação &sword; para trabalhar
-com mais de 200 textos bíblicos, de comentários, dicionários e libros em
-mais de 50 idiomas providenciados pela &cbs;.</para>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with the &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 900 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs; and several other repositories.</para>
   </abstract>
 
   <keywordset>
-    <keyword>Qt4</keyword>
+    <keyword>Qt5</keyword>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>

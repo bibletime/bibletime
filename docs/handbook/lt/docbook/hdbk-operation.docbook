@@ -28,13 +28,13 @@ also has a category called "Bookmarks". This is where you can store and
 access your own bookmarks.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
-        <title>Veiklų skaitymas</title>
+        <title>Opening works</title>
 
-        <para>To open a work from the bookshelf for reading, simply click with the
+        <para>To open a work from the bookshelf for reading, simply double-click with the
 <mousebutton>left mouse button</mousebutton> on the desired category
 (Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
-display its contents. Then just click on one of the works to open it for
-reading. A read window will appear in the Desk area.</para>
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>If you are reading a certain work, and want to open another work at the
 passage you are reading, you can use a shortcut. Simply click with the
@@ -125,6 +125,18 @@ window is connected to, as well as history buttons like the ones that you
 know from your browser.</para>
       </sect3>
 
+      <sect3 id="hdbk-op-parts-desk-scroll">
+        <title>Auto Scrolling</title>
+        <para>The currently active window can be auto scrolled up or down.  Start
+scrolling by press Shift+Down. You can increasing the scrolling speed by
+pressing Shift+Down multiple times. To pause scrolling press Space. To start
+scrolling again at the previous speed press Space again. To slow down
+scrolling or scroll the other direction press Shift+Up one or more
+times. Pressing any other key or changing the active window will stop the
+scrolling.
+        </para>
+      </sect3>
+
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>Skaitymo lango vieta</title>
         <para>Of course, you can open multiple works at the same time.  There are several
@@ -145,14 +157,10 @@ install a certain work from the library of the <ulink
 url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal
 commentary".</para>
 
-        <para>If you open the personal commentary by clicking on its symbol in the
-Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in
-read mode. You will not be able to edit it in this mode. Should you wish to
-write annotations into the personal commentary, you have to open it with the
-<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit
-this work</guimenu> and then either <guimenuitem>Plain
-text</guimenuitem>(source code editor) or
-<guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor).</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is
@@ -232,7 +240,7 @@ syntax</guimenu>.
 	  </para>
 
         <para>You can use wildcards: '*' matches any number of characters, while '?' will
-match any single character. The use of brackets allows you to group your
+match any single character. The use of parenthesis allows you to group your
 search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>To search text other than the main text, enter the text type followed by
@@ -281,8 +289,8 @@ to find which of the above search criteria may work for you.  Not all works
 have the built in features for performing this type of search.</para>
 	</tip>
 
-        <para>&bibletime; uses the Lucene search engine to perform your searches. It has
-many advanced features, and you can read more about it here: <ulink
+        <para>&bibletime; jūsų paieškoms atlikti naudoja Lucene paieškos modulį. Jame yra
+daug išplėstinių ypatybių, o daugiau apie jį galite perskaityti čia: <ulink
 url="http://lucene.apache.org/java/docs/index.html">
 http://lucene.apache.org/java/docs/index.html</ulink>.</para>
       </sect3>
@@ -314,7 +322,7 @@ display. This gives a simple graphic analysis of the number of instances the
 search string was found in each book of the Bible, and you can also save the
 analysis.</para>
         <screenshot>
-<screeninfo>Search Analysis Dialog Box</screeninfo> <mediaobject>
+<screeninfo>Paieškos analizės dialogo langelis</screeninfo> <mediaobject>
 <imageobject> <imagedata fileref="ss_searchanal.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
       </sect3>
@@ -330,66 +338,40 @@ existing works from your Bookshelf. Access it by clicking <menuchoice>
 <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
 </menuchoice> in the main menu.</para>
 
-      <tip>
-	<para>If this is the first time you are starting &bibletime;, click on the Refresh
-button to see a list of works provided by the &cbs;.</para>
-      </tip>
-
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Knygų lentynos kelio(-ių) sąranka</title>
-
-      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard
-drive.  You can even store it in multiple directories. The default is
-"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application
-Data\Sword" for Windows.</para>
-
-      <tip>
-        <para>If you have a sword CD, but do not want to install all the works on the hard
-disk, but use them directly from the CD, then you can add the path to the CD
-as one of your bookshelf paths. When you start &bibletime;, it will show all
-works on the CD if it is present.</para>
-      </tip>
-    </sect2>
-
-    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Veiklos(-ų) įdiegimas/atnaujinimas</title>
-
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
       <para>With this facility, you can connect to a repository of works (called
 "library"), and transfer one or more works to your local Bookshelf. These
 libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
 online repository of &sword; modules, or another site offering &sword;
-modules).  You can install other sources by clicking on <guibutton>Get
-list...</guibutton> when you have <guibutton>New Installation
-Source</guibutton> dialog open.  You can manage your libraries with
-<guibutton>Add library</guibutton> and <guibutton>Delete
-library</guibutton>.</para>
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-      <para>To begin the installation or update process, select a library you want to
-connect to and a local Bookshelf path to install the work(s) to. Then click
-on <guibutton>Connect to library</guibutton>. &bibletime; will scan the
-contents of the library and present you with a list of works that you can
-add to your Bookshelf, or that you already have installed but are available
-in a new version in the library, and thus can be updated. Then you can mark
-all works that you want to install or update, and click on
-<guibutton>Install works</guibutton>. They will then be transferred to your
-Bookshelf.</para>
+
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
+    </sect2>
+
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Veiklos(-ų) šalinimas</title>
+      <title>Remove works</title>
       <para>This facility allows you to delete one or more of the works from your
-Bookshelf too free up disk space. Simply mark the items and click on
-<guibutton>Remove works</guibutton>.</para>
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Paieškos indeksai</title>
-      <para>This option allows you to create new search indexes and cleanup orphaned
-index files for removed works.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Eksportavimas ir spausdinimas</title>

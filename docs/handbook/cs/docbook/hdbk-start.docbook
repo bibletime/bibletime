@@ -38,6 +38,22 @@ linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
     <variablelist>
       <varlistentry>
         <term>
+          <interface>Bookshelf Manager</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your
+Bookshelf, add or delete works from your system.  It will only be shown if
+no default Bookshelf can be found.  Please see <link
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for
+further details. If you start off with an empty Bookshelf, it will be
+helpful to install at least one Bible, Commentary, Lexicon and one Book to
+get to know &bibletime;'s basic features quickly.  You will be presented
+with a list of works that are available from the &cbs; and other
+repositories;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
           <interface>Configure &bibletime; dialog</interface>
         </term>
         <listitem>
@@ -45,23 +61,6 @@ linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
           <action>Přizpůsobí &bibletime;.</action>Tento dialog vám dovolí přizpůsobit
 &bibletime; vašim potřebám. Prosím podívejte se na <link
 linkend="hdbk-config-bt">detailní popis</link> tohoto dialogu.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Bookshelf Manager</interface>
-        </term>
-        <listitem>
-          <para><action>Upravit vaši knihovnu.</action> Tento dialog vám umožní upravovat
-vaši knihovnu, přidávat nebo mazat díla ve vašem systému. Bude zobrazen
-pouze v případě, že nebude nalezena výchozí knihovna. Prosím podívejte se do
-sekce <link linkend="hdbk-op-bookshelfmanager">Správce knihovny</link>,
-pokud se chcete dozvědět více. Pokud začínáte s prázdnou knihovnou, bude
-užitečné  nainstalovat alespoň jednu Bibli, Komentář, Lexikon a knihu,
-abyste se rychle seznámili se základními vlastnostmi &bibletime;. To můžete
-udělat kliknutím na tlačítko obnovit. Bude vám předložen seznam děl, které
-jsou dostupné z &cbs;</para>
         </listitem>
       </varlistentry>
     </variablelist>

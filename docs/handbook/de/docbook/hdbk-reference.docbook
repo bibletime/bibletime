@@ -898,18 +898,6 @@ als neue Sitzung ab.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+-</keycap></keycombo>
-            </entry>
-            <entry>Verkleinern. Dies verkleinert die Schriftgröße von Lesefenstern.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;++</keycap></keycombo>
-            </entry>
-            <entry>Vergrößern. Dies vergrößert die Schriftgröße von Lesefenstern.</entry>
-          </row>
-          <row>
-            <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Alles auswählen. Dies wählt den gesamten Text in Lesefenstern aus.</entry>
@@ -1019,6 +1007,7 @@ allen gegenwärtig geöffneten Werken zu suchen.</entry>
             </entry>
             <entry>Schließt das aktuelle Fenster.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F1</keycap> </keycombo>
@@ -1076,6 +1065,37 @@ Benutzung von &bibletime;.</entry>
 <guimenu>Ansicht</guimenu> <guimenuitem>Lupenfenster anzeigen</guimenuitem>
 </menuchoice> </link> aktiviert die Anzeige des Lupenfensters.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+down</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+up</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
+pause</guimenuitem> </menuchoice>
+            </entry>
+          </row>
+
         </tbody>
       </tgroup>
     </informaltable>

@@ -26,13 +26,13 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
 فئة تسمى "العلامات". حيث يمكنك حفظ العلامات الخاصة بك والوصول إليها.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
-        <title>قراءة الكتب</title>
+        <title>Opening works</title>
 
-        <para>تستطيع فتح كتاب للقراءة من رف الكتب بسهولة. قم بالنقر على الفئة المطلوبة
-(ترجمات الكتاب المقدس، التفاسير، المعاجم، الكتب، التأملات أو المصلحات)
-بإستخدام  <mousebutton> زر الفأرة الأيسر </mousebutton> لعرض محتويات
-الفئة. ثم انقر على واحد من الكتب لفتحه للقراءة. نافذة القراءة ستظهر في منطقة
-المكتب.</para>
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
 
         <para>إذا كنت تقرأ كتاباً معيناً، وتريد أن تفتح كتاباً أخر على نفس الفقرة التي
 تقرأها، تستطيع إستخدام هذه الطريقة المختصرة. انقر <mousebutton>بزر الفأرة
@@ -116,6 +116,18 @@ linkend="hdbk-op-parts-desk-write">أدناه</link>). </para>
 بالإضافة لأزرار التاريخ التي تشبه تلك التي تراها في متصفح الإنترنت. </para>
       </sect3>
 
+      <sect3 id="hdbk-op-parts-desk-scroll">
+        <title>Auto Scrolling</title>
+        <para>The currently active window can be auto scrolled up or down.  Start
+scrolling by press Shift+Down. You can increasing the scrolling speed by
+pressing Shift+Down multiple times. To pause scrolling press Space. To start
+scrolling again at the previous speed press Space again. To slow down
+scrolling or scroll the other direction press Shift+Up one or more
+times. Pressing any other key or changing the active window will stop the
+scrolling.
+        </para>
+      </sect3>
+
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>ترتيب نوافذ القراءة</title>
         <para>بطبيعة الحال، تستطيع فتح عدة كتب للقراءة في نفس الوقت. هناك عدة طرق لترتيب
@@ -134,14 +146,10 @@ linkend="hdbk-op-parts-desk-write">أدناه</link>). </para>
 كتاب من مكتبة <ulink url="http://www.crosswire.org">جمعية الكتاب المقدس كروس
 وير</ulink>. الكتاب اسمه "Personal commentary"أو "التعليقات الشخصية". </para>
 
-        <para>إذا قمت بفتح كتاب التعليقات الشخصية بالنقر على أيقونته من رف الكتب بزر
-الفأرة <mousebutton>الأيسر</mousebutton>، سيفتح العنصر في وضع القراءة ولن
-تتمكن من التحرير في هذا الوضع. إذا كنت تريد تدوين تأملاتك في التعليقات
-الشخصية، سيتعين عليك النقر على الأيقونة بزر الفأرة
-<mousebutton>الأيمن</mousebutton> وإختيار <guimenu>تحرير هذا
-الكتاب</guimenu> ثم الإختيار بين <guimenuitem>نص بسيط </guimenuitem>(محرر
-شفرة المصدر) أو <guimenuitem>HTML</guimenuitem>(محرر واجهة مستخدم رسومية
-بسيط من نوع wysiwyg ).</para>
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
 
         <tip>
           <para>إذا كان خيار <menuchoice> <guimenu>تحرير هذا الكتاب </guimenu> </menuchoice>
@@ -214,9 +222,9 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></s
 <guimenu>جميع الصيغ</guimenu>.
 	  </para>
 
-        <para>تستطيع إستخدام حروف البدل: * تحل محل أي عدد من الحروف، بينما ؟ تحل محل حرف
-واحد. إستخدام الأقواس يتيح لك تقسيم كلمات البحث إلى مجموعات، مثل'(يسوع OR
-الروح) AND الله'.</para>
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
 
         <para>لتبحث نص غير النص الرئيسي، ادخل نوع النص مصحوباً بـ ':' ثم كلمات البحث. ارجع
 إلى الأمثلة في الجدول أدناه.</para>
@@ -310,62 +318,40 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></s
 <guimenu>إعدادات</guimenu> <guimenuitem> من القائمة الرئيسية ومنها اختر
 </guimenuitem></menuchoice>مدير رف الكتب.</para>
 
-      <tip>
-	<para>إذا كانت هذه هي المرة الأولى التي تقوم فيها بتشغيل بيبل تايم، انقر على زر
-التحديث ليعرض البرنامج لك قائمة بالكتب المقدمة من كروس وير.</para>
-      </tip>
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
 
-    <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>إعداد مسارات رف الكتب</title>
 
-      <para>هنا تستطيع تحديد المسار الذي سيستخدمه بيبل تايم لحفظ رف كتبك على القرص
-الصلب. بل وحتى يمكنك الحفظ في أكثر من مجلد. المجلد الإفتراضي بالنسبة لأنظمة
-تشغيل لينكس/يونكس هو "~/.sword/" بينما المسار الإفتراضي لنظام تشغيا الويندوز
-هو "C:\Documents and Settings\All Users\Application Data\Sword".</para>
-
-      <tip>
-        <para>إذا كان لديك قرص سورد المدمج ولكنك لا تريد تثبيت الكتب على قرصك الصلب وتريد
-إستخدامهم مباشرة من على القرص المدمج، يمكنك عندئذ إضافة المسار إلى القرص
-المدمج كواحد من مسارات رف الكتب. عند بدء بيبل تايم، سيعرض البرنامج كل الكتب
-على القرص المدمج إذا كان موجوداً.</para>
-      </tip>
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>تثبيت/تحديث الكتب</title>
-
-      <para>من خلال هذه الخاصية، يمكنك الإتصال بمستودع خاص بالكتب يسمى "المكتبة" لتقوم
-بنقل كتاب أو أكثر إلى رف الكتب على جهازك. يمكن لهذه المكتبات أن تكون على
-جهازك (مثال : قرص سورد المدمج ) أو على موقع خارجي ( مثال : مستودع كروس وير
-أونلاين لعناصر سورد ، أو أي موقع آخر يقدم عناصر سورد ). تستطيع تثبيت مصادر
-أخرى بفتح مربع مصدر تثبيت جديد ثم النقر على  <guibutton>إحضار
-القائمة...</guibutton>. تستطيع إدارة مكتباتك من خلال <guibutton>إضافة مكتبة
-</guibutton> و <guibutton>حذف مكتبة</guibutton>.</para>
-
-      <para>لتبدأ عملية التثبيت أو التحديث، اختر المكتبة التي تود لإتصال بها ومسار رف
-الكتب لتثبيت الكتب على جهازك. ثم انقر على <guibutton>الإتصال
-بالمكتبة</guibutton>. سيقوم بيبل تايم بعمل مسح لمحتويات المكتبة ويحضر إليك
-قائمة بالكتب التي تستطيع إضافتها إلى رف كتبك أو تحديثات بنسخ جديدة للكتب
-المثبتة لديك لتتمكن من تحديثها. ومن ثم يمكنك وضع علامة على الكتب التي تريد
-تثبيتها أو تحديثها، وانقر على <guibutton>تثبيت كتب </guibutton>. وسيتم نقل
-الكتب إلى رف الكتب الخاص بك.</para>
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>حذف الكتب</title>
-      <para>من خلال هذه الخاصية يمكنك حذف كتاب أو أكثر من رف الكتب الخاص بك لتحرير مساحة
-في القرص الصلب. ببساطة قم بتحديد الكتب ثم انقر على <guibutton>حذف
-الكتب</guibutton>.</para>
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
     </sect2>
-    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>فهارس البحث</title>
-      <para>هذه الخاصية تسمح لك بإنشاء فهارس بحث جديدة وتنظيف ملفات الفهرس التالفة للكتب
-المحذوفة.</para>
-      <tip>
-	If you are having problems with your search function, visit
-	this feature.
-      </tip>
-    </sect2>
+
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>التصدير و الطباعة</title>
