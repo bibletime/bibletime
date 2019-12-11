@@ -115,6 +115,14 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 void BtTipDialog::initTips() {
     m_tips.clear();
 
+    m_tips << tr("The currently active window can be auto scrolled up or down."
+                 " Start scrolling by press Shift+Down. You can increasing the"
+                 " scrolling speed by pressing Shift+Down multiple times. To"
+                 " pause scrolling press Space. To start scrolling again at the"
+                 " previous speed press Space again. To slow down scrolling or scroll"
+                 " the other direction press Shift+Up one or more times. Pressing"
+                 " any other key or changing the active window will stop the scrolling.");
+
     m_tips << tr("To add multiple Bible works in parallel in your active Bible or commentary window"
         " select this icon and choose another Bible or commentary work.")
         + "<br><center>" + iconToHtml(CResMgr::modules::bible::icon_add()) + "</center>";
