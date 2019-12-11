@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Pypsik Pypsik <pypsichok@yahoo.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2016-02-11 20:25+0100\n"
-"PO-Revision-Date: 2011-12-11 21:42+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2019-03-12 16:52+0000\n"
+"Last-Translator: Pypsik Pypsik <pypsichok@yahoo.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/bibletime/bibletime/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +46,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:18
 msgid "<guimenu>Display</guimenu>"
-msgstr ""
+msgstr "<guimenu>Відображення</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:20
@@ -70,7 +71,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:34
 msgid "<guimenu>Desk</guimenu>"
-msgstr ""
+msgstr "<guimenu>Стіл</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:36
@@ -88,7 +89,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:50
 msgid "<guimenu>Languages</guimenu>"
-msgstr ""
+msgstr "<guimenu>Мови</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:52
@@ -117,12 +118,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-config.docbook:66
 msgid "Options Dialog - fonts"
-msgstr ""
+msgstr "Вікно парметрів - шрифти"
 
 #. type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:69
 msgid "The Options dialog - Fonts."
-msgstr ""
+msgstr "Вікно парметрів - Шрифти"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:72
@@ -147,7 +148,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:86
 msgid "Installing fonts"
-msgstr ""
+msgstr "Інсталяція шрифтів"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:87
@@ -169,7 +170,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:100
 msgid "Obtaining Fonts"
-msgstr ""
+msgstr "Отримання шрифтів"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:101
@@ -206,7 +207,7 @@ msgstr ""
 #. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:120
 msgid "Online font collections."
-msgstr ""
+msgstr "Онлайн колекції шрифтів."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:123
@@ -220,13 +221,13 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><table><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:129
 msgid "Unicode Fonts"
-msgstr ""
+msgstr "Юнікодні шрифти"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:134
 msgid "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -242,7 +243,7 @@ msgid ""
 "<ulink "
 "url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads\">"
 " SIL unicode fonts</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads\"> SIL юнікодні шрифти</ulink>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -254,7 +255,7 @@ msgstr ""
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:150
 msgid "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -283,7 +284,7 @@ msgid ""
 "<ulink "
 "url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/\"> "
 "Bitstream CyberBit</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/\"> Bitstream CyberBit</ulink>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -312,7 +313,7 @@ msgstr ""
 msgid ""
 "<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, "
 "Cupola, Caliban</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, Cupola, Caliban</ulink>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -333,7 +334,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:202
 msgid "<guimenu>Shortcuts</guimenu>"
-msgstr ""
+msgstr "<guimenu>Ярлики</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:205
@@ -350,7 +351,7 @@ msgstr ""
 #. <chapter><sect1><sect2><imageobject><imagedata>
 #: docs/handbook/en/docbook/hdbk-config.docbook:215
 msgid "ss_shortcuts.png"
-msgstr ""
+msgstr "ss_shortcuts.png"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:218
@@ -362,12 +363,12 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
 msgid "Introduction"
-msgstr ""
+msgstr "Вступ"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:4
 msgid "About &bibletime;"
-msgstr ""
+msgstr "Про &bibletime;"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:6
@@ -394,13 +395,13 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:21
 msgid "Available works"
-msgstr ""
+msgstr "Доступні твори"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:27
 msgid "Bibles"
-msgstr ""
+msgstr "Біблії"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -417,7 +418,7 @@ msgstr ""
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:39
 msgid "Books"
-msgstr ""
+msgstr "Книги"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -431,7 +432,7 @@ msgstr ""
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:46
 msgid "Commentaries"
-msgstr ""
+msgstr "Коментарі"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -448,7 +449,7 @@ msgstr ""
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:57
 msgid "Daily devotionals"
-msgstr ""
+msgstr "Щоденні молитви"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -462,7 +463,7 @@ msgstr ""
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:66
 msgid "Lexicons/Dictionaries"
-msgstr ""
+msgstr "Лексикони/Словники"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -486,7 +487,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:81
 msgid "Motivation"
-msgstr ""
+msgstr "Мотивація"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:82
@@ -513,24 +514,24 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:93
 msgid "God bless you as you use this program."
-msgstr ""
+msgstr "Благослови вас Бог, використовуючи цю програму."
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:2
 msgid "Program operation"
-msgstr ""
+msgstr "Робота програми"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:4
 msgid "Program overview"
-msgstr ""
+msgstr "Огляд програми"
 
 #. type: Content of: <chapter><sect1><para><mediaobject>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:7
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><para><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:11
@@ -566,7 +567,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:31
 msgid "The Bookshelf"
-msgstr ""
+msgstr "Книжкова Полиця"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:32
@@ -580,7 +581,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
 #: docs/handbook/en/docbook/hdbk-operation.docbook:140
 msgid "Reading works"
-msgstr ""
+msgstr "Читання творів"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
@@ -607,7 +608,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:59
 msgid "Additional information about works"
-msgstr ""
+msgstr "Додаткова інформація про твори"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:61
@@ -627,7 +628,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:76
 #: docs/handbook/en/docbook/hdbk-operation.docbook:203
 msgid "Searching in works"
-msgstr ""
+msgstr "Пошук у творах"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:78
@@ -645,7 +646,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:91
 msgid "Working with bookmarks"
-msgstr ""
+msgstr "Робота з закладками"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:95
@@ -683,7 +684,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:121
 msgid "The Mag(nifying glass)"
-msgstr ""
+msgstr "(Збільшувальне) Скло"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:123
@@ -698,7 +699,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:132
 msgid "The Desk"
-msgstr ""
+msgstr "Стіл"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:133
@@ -742,7 +743,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:168
 msgid "Editing your own commentary"
-msgstr ""
+msgstr "Редагування власного коментаря"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:170
@@ -801,7 +802,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:219
 msgid "Accessing the search dialog"
-msgstr ""
+msgstr "Доступ до діалогового вікна пошуку"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:220
@@ -833,7 +834,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:241
 msgid "Search configuration"
-msgstr ""
+msgstr "Конфігурація пошуку"
 
 #. type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:243
@@ -845,7 +846,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:243
@@ -853,12 +854,12 @@ msgstr ""
 msgid ""
 "<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder "
 "type=\"mediaobject\" id=\"1\"/>"
-msgstr ""
+msgstr "<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject\" id=\"1\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:251
 msgid "Selecting works"
-msgstr ""
+msgstr "Вибір творів"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:252
@@ -917,102 +918,102 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
 msgid "Search Types"
-msgstr ""
+msgstr "Типи пошуку"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:297
 msgid "Prefix"
-msgstr ""
+msgstr "Префікс"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:298
 msgid "Meaning"
-msgstr ""
+msgstr "Значення"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:299
 msgid "Example"
-msgstr ""
+msgstr "Приклад"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:304
 msgid "heading:"
-msgstr ""
+msgstr "заголовок:"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:305
 msgid "searches headings"
-msgstr ""
+msgstr "пошук в заголовоках"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:306
 msgid "heading:Jesus"
-msgstr ""
+msgstr "заголовок:Ісус"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:309
 msgid "footnote:"
-msgstr ""
+msgstr "виноска:"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:310
 msgid "searches footnotes"
-msgstr ""
+msgstr "пошук у виносках"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:311
 msgid "footnote:Moses"
-msgstr ""
+msgstr "виноска:Мойсей"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:314
 msgid "strong:"
-msgstr ""
+msgstr "стронга:"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:315
 msgid "searches Strong's Numbers"
-msgstr ""
+msgstr "Пошук номерів Стронга"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:316
 msgid "strong:G535"
-msgstr ""
+msgstr "стронга:G535"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:319
 msgid "morph:"
-msgstr ""
+msgstr "морф:"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:320
 msgid "searches morphology codes"
-msgstr ""
+msgstr "Пошук кодів морфології"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:321
 msgid "morph:N-GSM"
-msgstr ""
+msgstr "морф:N-GSM"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:289
 msgid "Available text types: <placeholder type=\"table\" id=\"0\"/>"
-msgstr ""
+msgstr "Доступні типи тексту: <placeholder type=\"table\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:328
@@ -1034,7 +1035,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:343
 msgid "Search results"
-msgstr ""
+msgstr "Результати пошуку"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:344
@@ -1069,7 +1070,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:366
 msgid "Search result analysis"
-msgstr ""
+msgstr "Аналіз результатів пошуку"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:367
@@ -1090,7 +1091,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:385
@@ -1140,7 +1141,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:421
 msgid "Install/update work(s)"
-msgstr ""
+msgstr "Установка/оновлення твора(ів)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:423
@@ -1173,7 +1174,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:448
 msgid "Remove work(s)"
-msgstr ""
+msgstr "Видалити твори(ір)"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:449
@@ -1186,7 +1187,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Search Indexes"
-msgstr ""
+msgstr "Індекси пошуку"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:456
@@ -1198,7 +1199,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:465
 msgid "Exporting and Printing"
-msgstr ""
+msgstr "Експорт та друк"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:466
@@ -1227,7 +1228,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:2
 msgid "Reference"
-msgstr ""
+msgstr "Посилання"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:4
@@ -1248,7 +1249,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:15
 msgid "<guimenu>File</guimenu>"
-msgstr ""
+msgstr "<guimenu>Файл</guimenu>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1256,7 +1257,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
@@ -1264,7 +1265,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Файл</guimenu> <guimenuitem>Відкрити твір</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -1280,7 +1281,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
@@ -1290,7 +1291,7 @@ msgid ""
 "<keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder "
 "type=\"inlinemediaobject\" id=\"0\"/>File</guimenu> "
 "<guimenuitem>Quit</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Файл</guimenu> <guimenuitem>Вихід</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -1315,12 +1316,12 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:971
 #: docs/handbook/en/docbook/hdbk-reference.docbook:994
 msgid "<placeholder type=\"variablelist\" id=\"0\"/>"
-msgstr ""
+msgstr "<placeholder type=\"variablelist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:65
 msgid "<guimenu>View</guimenu>"
-msgstr ""
+msgstr "<guimenu>Вигляд</guimenu>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1328,7 +1329,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:71
@@ -1337,7 +1338,7 @@ msgid ""
 "</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вигляд</guimenu> <guimenuitem>Повноекранний режим</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1353,7 +1354,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:95
@@ -1361,7 +1362,7 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вигляд</guimenu> <guimenuitem>Показати полицю</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1378,7 +1379,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:116
@@ -1386,7 +1387,7 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вигляд</guimenu> <guimenuitem>Показати закладки</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1403,14 +1404,14 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:137
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вигляд</guimenu> <guimenuitem>Показати Скло</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1426,7 +1427,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:157
@@ -1434,7 +1435,7 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>View</guimenu> <guimenuitem>Show parallel text "
 "headers</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вигляд</guimenu> <guimenuitem>Показати паралельні текстові заголовки</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1451,7 +1452,7 @@ msgid ""
 "</keycombo> </shortcut> <guimenu>View</guimenu> "
 "<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </keycombo> </shortcut> <guimenu>Вигляд</guimenu> <guimenuitem>Панелі інструментів</guimenuitem> <guimenuitem>Показати головне</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1466,7 +1467,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show navigation</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Панелі інструментів</guimenuitem> <guimenuitem>Показати переходи</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1482,7 +1483,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show works</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Панелі інструментів</guimenuitem> <guimenuitem>Показати твори</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1497,7 +1498,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show tools</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Панелі інтсрументів</guimenuitem> <guimenuitem>Показати інструменти</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1512,7 +1513,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show format</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Панелі інструментів</guimenuitem> Показати формат</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1527,7 +1528,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вигляд</guimenu> <guimenuitem>Панелі інструментів</guimenuitem> <guimenuitem>Показати панелі інструментів у вікнах тексту</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1540,7 +1541,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:274
 msgid "<guimenu>Search</guimenu>"
-msgstr ""
+msgstr "<guimenu>Пошук</guimenu>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1550,7 +1551,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:279
@@ -1559,7 +1560,7 @@ msgid ""
 "<keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> "
 "<placeholder type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> "
 "<guimenuitem>Search in standard bible</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Пошук</guimenu> <guimenuitem>Пошук у стандартній Біблії</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1593,7 +1594,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:334
 msgid "<guimenu>Window</guimenu>"
-msgstr ""
+msgstr "<guimenu>Вікно</guimenu>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1602,7 +1603,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:340
@@ -1611,13 +1612,13 @@ msgid ""
 "<keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder "
 "type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close "
 "window</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вікно</guimenu> <guimenuitem>Закрити вікно</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:357
 msgid "<action>Closes active window</action>."
-msgstr ""
+msgstr "<action>Закриває активне вікно</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:363
@@ -1626,13 +1627,13 @@ msgid ""
 "<keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> "
 "<placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
 "<guimenuitem>Close all</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вікно</guimenu> <guimenuitem>Закрити всі</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:380
 msgid "<action>Closes all open windows</action>."
-msgstr ""
+msgstr "<action>Закриває всі відкриті вікна</action>."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1640,7 +1641,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\""
 " format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:386
@@ -1649,13 +1650,13 @@ msgid ""
 "<keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder "
 "type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
 "<guimenuitem>Cascade</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вікно</guimenu> <guimenuitem>Каскад</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
-msgstr ""
+msgstr "<action>Каскадує всі відкриті вікна</action>."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1663,7 +1664,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:410
@@ -1672,13 +1673,13 @@ msgid ""
 "<keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder "
 "type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
 "<guimenuitem>Tile</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вікно</guimenu> <guimenuitem>Розташувати</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:427
 msgid "<action>Tiles all open windows</action>."
-msgstr ""
+msgstr "<action>Росташовує всі відкриті вікна</action>."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1686,7 +1687,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:434
@@ -1695,7 +1696,7 @@ msgid ""
 "<keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder "
 "type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "vertically</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вікно</guimenu> <guimenuitem>Розташувати зліва направо</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1709,7 +1710,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:458
@@ -1718,7 +1719,7 @@ msgid ""
 "<keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder "
 "type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "horizontally</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Вікно</guimenu> <guimenuitem>Розташувати зверху вниз</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1731,7 +1732,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
 "mode</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Режим розташування</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1748,7 +1749,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save "
 "session</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> Вікно</guimenu> <guimenuitem>Зберегти сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1767,7 +1768,7 @@ msgid ""
 "<keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> <guimenu>Вікно</guimenu> <guimenuitem>Зберегти як новий сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1782,7 +1783,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load "
 "session</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Завантажити сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1797,7 +1798,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete "
 "session</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Вікно</guimenu> <guimenuitem>Видалити сеанс</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1810,7 +1811,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:573
 msgid "<guimenu>Settings</guimenu>"
-msgstr ""
+msgstr "<guimenu>Настройки</guimenu>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1818,7 +1819,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:578
@@ -1826,7 +1827,7 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>Settings</guimenu> <guimenuitem>Configure "
 "&bibletime;</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Настройки</guimenu> <guimenuitem>Налаштувати &bibletime;</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1844,7 +1845,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:602
@@ -1853,7 +1854,7 @@ msgid ""
 "</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Настройки</guimenu> <guimenuitem>Керівник Полички</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1867,7 +1868,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:630
 msgid "<guimenu>Help</guimenu>"
-msgstr ""
+msgstr "<guimenu>Довідка</guimenu>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1876,7 +1877,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:635
@@ -1884,14 +1885,14 @@ msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> "
 "</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Довідка</guimenu> <guimenuitem>Довідник</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:652
 msgid ""
 "<action>Opens &bibletime;'s user guide</action> You are reading it now."
-msgstr ""
+msgstr "<action>Відкриває &bibletime керівництво користувача</action> Ви читаєте його зараз."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:659
@@ -1900,7 +1901,7 @@ msgid ""
 "</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Довідка</guimenu> <guimenuitem>Вивчення Біблії - Як</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1921,7 +1922,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:690
@@ -1930,7 +1931,7 @@ msgid ""
 "</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>Довідка</guimenu> <guimenuitem>Порада дня</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1945,7 +1946,7 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> "
 "</menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu>Довідка</guimenu> <guimenuitem>Про</guimenuitem> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1960,14 +1961,14 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:733
 msgid "Works reference"
-msgstr ""
+msgstr "Довідник робіт"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:735
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
-msgstr ""
+msgstr "У цьому розділі ви знайдете опис піктограм, пов'язаних з відкритими роботами."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -1975,7 +1976,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\""
 " format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
@@ -1994,13 +1995,13 @@ msgstr ""
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
 "id=\"0\"/></guimenu> </menuchoice>"
-msgstr ""
+msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></guimenu> </menuchoice>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:756
 msgid "Scrolls forward through history."
-msgstr ""
+msgstr "Прокручувати вперед через історію."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2008,13 +2009,13 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:779
 msgid "Scrolls back through history."
-msgstr ""
+msgstr "Прокручувати назад через історію."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2022,13 +2023,13 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:802
 msgid "Select an installed bible."
-msgstr ""
+msgstr "Виберіть встановлену біблію."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2036,19 +2037,19 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:825
 msgid "Select an additional bible."
-msgstr ""
+msgstr "Виберіть додаткову біблію."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:848
 msgid "Search in selected works."
-msgstr ""
+msgstr "Пошук у вибраних творах."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2056,13 +2057,13 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:871
 msgid "Display configuration."
-msgstr ""
+msgstr "Показати конфігурацію."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2070,13 +2071,13 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:894
 msgid "Select an installed commentary."
-msgstr ""
+msgstr "Виберіть встановлений коментар."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2084,13 +2085,13 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:917
 msgid "Select additional commentary."
-msgstr ""
+msgstr "Виберіть додатковий коментар."
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2098,7 +2099,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2112,13 +2113,13 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:963
 msgid "Select a book."
-msgstr ""
+msgstr "Вибрати книгу"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
@@ -2126,7 +2127,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\""
 " format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2140,7 +2141,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2473,7 +2474,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1302
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2485,7 +2486,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1310
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2501,7 +2502,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1325
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2516,7 +2517,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1338
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2528,7 +2529,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1345
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2542,7 +2543,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1358
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2556,7 +2557,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1372
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2570,7 +2571,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1385
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2586,7 +2587,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1400
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2601,7 +2602,7 @@ msgstr ""
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1415
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 
 #. type: Content of:
 #. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2628,7 +2629,7 @@ msgstr ""
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr ""
+msgstr "<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of:
 #. <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
@@ -2648,7 +2649,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
 #, no-wrap
 msgid "bibletime"
-msgstr ""
+msgstr "bibletime"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
@@ -2739,7 +2740,7 @@ msgstr ""
 #. type: Content of the sword entity
 #: docs/handbook/en/docbook/index.docbook:6
 msgid "<application>SWORD</application>"
-msgstr ""
+msgstr "<application>SWORD</application>"
 
 #. type: Content of the cbs entity
 #: docs/handbook/en/docbook/index.docbook:7
@@ -2749,27 +2750,27 @@ msgstr ""
 #. type: Content of the kde entity
 #: docs/handbook/en/docbook/index.docbook:8
 msgid "<application>KDE</application>"
-msgstr ""
+msgstr "<application>KDE</application>"
 
 #. type: Content of the qt entity
 #: docs/handbook/en/docbook/index.docbook:9
 msgid "<application>Qt</application>"
-msgstr ""
+msgstr "<application>Qt</application>"
 
 #. type: Content of the Shift entity
 #: docs/handbook/en/docbook/index.docbook:11
 msgid "Shift"
-msgstr ""
+msgstr "Shift"
 
 #. type: Content of the Ctrl entity
 #: docs/handbook/en/docbook/index.docbook:12
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #. type: Content of the Alt entity
 #: docs/handbook/en/docbook/index.docbook:13
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #. type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:23
@@ -2779,42 +2780,42 @@ msgstr ""
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:27
 msgid "Fred"
-msgstr ""
+msgstr "Fred"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:28
 msgid "Saalbach"
-msgstr ""
+msgstr "Saalbach"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:31
 msgid "Jeffrey"
-msgstr ""
+msgstr "Jeffrey"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:32
 msgid "Hoyt"
-msgstr ""
+msgstr "Hoyt"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:35
 msgid "Martin"
-msgstr ""
+msgstr "Martin"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:36
 msgid "Gruner"
-msgstr ""
+msgstr "Gruner"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:39
 msgid "Thomas"
-msgstr ""
+msgstr "Thomas"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:40
 msgid "Abthorpe"
-msgstr ""
+msgstr "Abthorpe"
 
 #.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
@@ -2833,12 +2834,12 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
 msgid "<date>January 2014</date>"
-msgstr ""
+msgstr "<date>Січень 2014</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 msgid "2.10.1"
-msgstr ""
+msgstr "2.10.1"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
@@ -2854,22 +2855,22 @@ msgstr ""
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:68
 msgid "Qt4"
-msgstr ""
+msgstr "Qt4"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:69
 msgid "BibleTime"
-msgstr ""
+msgstr "BibleTime"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:70
 msgid "SWORD"
-msgstr ""
+msgstr "SWORD"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:71
 msgid "Crosswire"
-msgstr ""
+msgstr "Crosswire"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:72

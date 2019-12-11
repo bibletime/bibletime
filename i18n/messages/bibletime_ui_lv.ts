@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="lv">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="lv" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1057,7 +1055,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">Fi&amp;ltrs:</translation>
+        <translation>Fi&amp;ltrs:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
@@ -1391,7 +1389,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="73"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="77"/>
@@ -1580,7 +1578,7 @@ saīsne</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="183"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Kad noklikšķina uz leksikona hipersaites, tad tiek izmantots standarta leksikons&#xa0;</translation>
+        <translation>Kad noklikšķina uz leksikona hipersaites, tad tiek izmantots standarta leksikons </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
@@ -1600,7 +1598,7 @@ saīsne</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Kad tiek noklikšķināta hipersaite ebreju leksikā, tad tiek izmantots standarta ebreju leksikons&#xa0;</translation>
+        <translation>Kad tiek noklikšķināta hipersaite ebreju leksikā, tad tiek izmantots standarta ebreju leksikons </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="193"/>
@@ -2027,42 +2025,42 @@ saīsne</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
         <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="114"/>
         <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="392"/>
@@ -2823,7 +2821,7 @@ saīsne</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Avotu saraksts tiks lejupielādēts no attālā servera. Avoti tiks pievienoti pašreizējam sarakstam. Jaunais avots aizstās veco, ja tam ir tāds pats nosaukums. Vēlāk varat noņemt avotus, kurus nevēlaties saglabāt. Vai vēlaties turpināt?</translation>
@@ -2943,8 +2941,8 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="145"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Valodu nosaukumi</translation>
     </message>
     <message>
@@ -3299,25 +3297,25 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -3354,7 +3352,7 @@ Do you want to continue?</source>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3456,19 +3454,19 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3684,13 +3682,13 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3702,7 +3700,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
@@ -3715,7 +3713,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3727,7 +3725,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
@@ -4813,7 +4811,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="181"/>

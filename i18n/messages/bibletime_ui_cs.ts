@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -74,7 +72,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="254"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Otevřít příručku jak studovat Bibli obsaženou v BibleTime. &lt;br/&gt;Tato příručka je úvod do efektivního studia Bible.</translation>
+        <translation>Otevřít příručku Jak studovat Bibli obsaženou v BibleTime. &lt;br/&gt;Tato příručka je úvod do efektivního studia Bible.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="260"/>
@@ -314,7 +312,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="420"/>
         <source>Toggle visibility of the mag window</source>
-        <translation>Zobrazit/skrýt okno časopisu</translation>
+        <translation>Zobrazit/skrýt okno lupy</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="719"/>
@@ -379,7 +377,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="765"/>
         <source>Show mag</source>
-        <translation>Zobrazit časopis</translation>
+        <translation>Zobrazit lupu</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="727"/>
@@ -474,7 +472,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>Mag</source>
-        <translation>Časopis</translation>
+        <translation>Lupa</translation>
     </message>
 </context>
 <context>
@@ -1057,7 +1055,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">Fi&amp;ltr:</translation>
+        <translation>Fi&amp;ltr:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
@@ -1286,7 +1284,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="87"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Shodný případ</translation>
     </message>
 </context>
 <context>
@@ -1391,7 +1389,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="73"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="77"/>
@@ -1467,30 +1465,33 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="219"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="233"/>
         <source>Select to change key</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte pro změnu klíče</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="126"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation>Akce
+jméno</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="127"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>První
+zkratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="128"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Druhý
+zkratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="141"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished"></translation>
+        <translation>Zástupce pro vybraný název akce</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="149"/>
@@ -1510,7 +1511,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="179"/>
         <source>Default key:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí klíč:</translation>
     </message>
 </context>
 <context>
@@ -1766,7 +1767,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation>Knihovna, Záložky a Časopis okna mohou být přesunuty do nového umístění uchopením za záhlaví okna. Mohou být umístěna nalevo, napravo, nahoru či dolů. Může být změněna jejich velikost chytnutím za hranu jejich okna a posunutím.</translation>
+        <translation>Okna Knihovna, Záložky a Lupa mohou být přesunuta do nového umístění uchopením za záhlaví okna. Mohou být umístěna nalevo, napravo, nahoru či dolů. Může být změněna jejich velikost uchopením za hranu jejich okna a posunutím.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
@@ -1786,7 +1787,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation>Můžete vidět Strongova čísla v okně Časopis při najetí myší nad slovo v bibli, kde jsou Strongova čísla. Měli byste mít instalovány lexikony Strongových řeckých a hebrejských ze zdrojů Crosswire.</translation>
+        <translation>Můžete vidět Strongova čísla v okně Lupa při najetí myší nad slovo v bibli, kde jsou Strongova čísla. Měli byste mít instalovány lexikony Strongových řeckých a hebrejských ze zdrojů Crosswire.</translation>
     </message>
 </context>
 <context>
@@ -2820,7 +2821,7 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Seznam zdrojů bude stažen ze vzdáleného serveru. Zdroje budou přidány k současnému seznamu. Nové zdroje nahradí staré zdroje pokud se zde vyskytují zdroje se stejným názvem. Můžete později odstranit zdroje které nechcete.
@@ -2879,7 +2880,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="77"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Toto je oblast Časopis. Najeďte myší na odkaz nebo jinou položku která obsahuje informace a tato data budou zobrazena na krátkou dobu. Pohněte myší rychle nebo uzamkněte pohled na data stisknutím a držením klávesy Shift když pohybujete myší.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Toto je oblast Lupa. Najeďte myší na odkaz nebo jinou položku, která obsahuje informace, a tato data budou zobrazena na krátkou dobu. Pohněte myší rychle nebo uzamkněte pohled na data stisknutím a držením klávesy Shift, když pohybujete myší.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -2942,8 +2943,8 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="145"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Jména jazyků</translation>
     </message>
     <message>
@@ -3298,25 +3299,25 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, San Juan Guelav໚</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Amatlán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Yalálag</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Quioquitani-Quierí</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -3353,7 +3354,7 @@ Chcete pokračovat?</translation>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kekchí</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3455,19 +3456,19 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam, Todos Santos Cuchumatán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Norwegian Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Michoacán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3683,13 +3684,13 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Ozumacín</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Itzá</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3701,7 +3702,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Otomi, Querétaro</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
@@ -3714,7 +3715,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Quiché, West Central</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3726,7 +3727,7 @@ Chcete pokračovat?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tzotzil, Zinacantán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
@@ -3799,7 +3800,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
         <source>Lemmas</source>
-        <translation>Lemmas</translation>
+        <translation>Lemmy</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
@@ -3829,7 +3830,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
         <source>Scripture cross-references</source>
-        <translation>Odkaz v Bibli</translation>
+        <translation>Odkazy v Bibli</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
@@ -4812,7 +4813,7 @@ Chcete pokračovat?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="181"/>

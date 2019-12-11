@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -785,7 +783,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Joitain nimiä voi puuttua, lähetä sähköpostia osoitteeseen %1, jos huomaat puutteita.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
@@ -1057,7 +1055,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">&amp;Suodata:</translation>
+        <translation>&amp;Suodata:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
@@ -1391,7 +1389,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="73"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="77"/>
@@ -1754,42 +1752,42 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation>Luodaksesi kirjanmerkin vedä viittaus mihin tahansa Raamatun jakeesta ta kommentaarista kirjanmerkki-ikkunaan. Nuoli näyttää paikan, mihin kirjanmerkki menee kun vapautat kursorin. Muiden teosten vasemmassa yläkulmassa on viittaus, jota voi käyttää kirjanmerkin luomiseen.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="135"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation>Muutaaksesi kirjanmerkin otsikkoa tai kuvausta, napsauta hiiren oikeaa painiketta ja valitse valikosta Muokkaa kirjanmerkkiä. Kun olet tehnyt muokkauksen, voit nähdä kuvauksen viemällä hiiren kirjanmerkin päälle.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="139"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saadaksesi lisää tietoa teoksesta, mene kirjahyllyikkunaan, napsauta hiiren oikealla painikkeella teosta ja valitse tietoja-valikko.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjahylly, kirjanmerkki ja suurennuslasi voidaan siirtää uuteen paikkaan raahaamalla ne kunkin ikkunan otsikosta. Ne voidaan sijoittaa vasemmalle, oikealle, ylle tai alle teoksen ikkunasta. Ne voidaan sijoittaa toistensa yläpuolelle ja välilehdet ilmestyvät siten, että mikä tahansa ikkuna voidaan valita. Niiden kokoa voi muuttaa vetämällä ikkunan reunaa toisten ikkunoiden välissä. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="148"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit etsiä Strongin numeroita teoksessa. Aloita teoksesta, jossa on Strongin numeroita ja vie hiiri sanan ylle. Napsauta hiiren oikeaa painiketta ja käytä Strongin hakuvalikkoa. Ilmestyvä hakudialogi mahdollistaa nähdä saman Strongin numeron teoksen toisessa paikassa. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit tallettaa avoimen ikkunan. Sen voi palauttaa myöhemmin. Voit tallettaa niin monta käyttökertaa kuin haluat. Käyttökertojen ominaisuus löytyy ikkuna-valikosta.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit tallettaa henkilökohtaisia muistiinpanoja jakeiden viitteisiin. Sinun tulee asentaa henkilökohtainen kommentaari. Avaa kirjahyllyn hallinta, valitse Crosswire lähteeksi ja katso kommentaaria ja englannin kieltä. Kun kommentaari on asennettu, käytä kirjahyllyikkunaa ja napsauta hiiren oikealla painikkeella henkilökohtaista kommentaaria. Käytä joko tekstimuokkainta tai HTML-muokkainta avaaksesi teos kirjoitusmoodissa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="159"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit näyttää Strongin numeron tiedot suurennuslasi-ikkunassa viemällä hiiren Strongin numeroita omaavan Raamatun sanan ylle. StrongsGreek ja StrongsHebrx sanakirjat Crosswirestä tulee olla asennettuina.</translation>
     </message>
 </context>
 <context>
@@ -2032,17 +2030,17 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa kirjanmerkkiä...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lajittele kirjanmerkkien kansio...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lajittele kaikki kirjanmerkit...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="111"/>
@@ -2823,7 +2821,7 @@ pikanäppäin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Lista lähteistä ladataan etäpalvelimelta. Lähteet lisätään nykyiseen listaan. Uusi lähde korvaa vanhan, jos niillä on sama nimi. Voit myöhemmin poistaa ne lähteet, joita et halua pitää listassa.
@@ -2945,8 +2943,8 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="145"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Kielten nimet</translation>
     </message>
     <message>
@@ -3301,25 +3299,25 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, San Juan Guelav໚</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, San Juan Guelav໚</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Yalálag</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Quioquitani-Quierí</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -3356,7 +3354,7 @@ Haluatko jatkaa?</translation>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kekchí</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3458,19 +3456,19 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam, Todos Santos Cuchumatán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Norjalainen kirjakieli</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Michoacán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3686,13 +3684,13 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Ozumacín</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Itzá</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3704,7 +3702,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Otomi, Querétaro</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
@@ -3717,7 +3715,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Quiché, Keski-Länsi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3729,7 +3727,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tzotzil, Zinacantán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
@@ -4107,7 +4105,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/main.cpp" line="58"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katso %1 nähdäksesi Qt toolkitin jäsentämät komentorivin argumentit.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="163"/>
@@ -4207,7 +4205,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Kommitointi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
@@ -4421,7 +4419,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="93"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä apu on pääasiassa &apos;koko syntaksi&apos; -optio. &apos;Kaikki sanat&apos; ja &apos;Muutama sana&apos; -optioilla on rajoitettu syntaksi. &lt;a href=&apos;#wildcards&apos;&gt;Jokerimerkejä&lt;/a&gt; ja &lt;a href=&apos;#fields&apos;&gt;tekstikenttiä&lt;/a&gt;tuetaan niillä. Muutamat muut syntaksin ominaisuudet antavat outoja tai vääriä tuloksia Kaikki sanat / Muutama sana -valinnoilla. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="98"/>
@@ -4457,7 +4455,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="111"/>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Hakusanat on eroteltu välilyönneillä. &lt;strong&gt;JA&lt;/strong&gt; (kaikki sanat), &lt;strong&gt;TAI&lt;/strong&gt; (joitakin sanoja) ja &lt;strong&gt;EI&lt;/strong&gt; (ei näitä sanoja) voidaan lisätä sanojen sekaan. Jos mitään ei ole lisätty näkyvästi TAI-operaatiota käytetään automaattisesti. &apos;&lt;strong&gt;+&lt;/strong&gt;sana&apos; merkitsee, että sanan pitää olla tuloksissa. &apos;&lt;strong&gt;-&lt;/strong&gt;sana&apos; merkitsee, että sanaa ei saa olla tuloksissa. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="118"/>
@@ -4501,7 +4499,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="137"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanat voi ryhmitellä &lt;strong&gt;sulkumerkeillä&lt;/strong&gt;. Sanojen järjestyksen voi määritellä &lt;strong&gt;lainausmerkeillä&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="140"/>
@@ -4532,7 +4530,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="155"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos;  vastaa mitä tahansa merkkijonoa tyhjästä merkkijonosta lähtien, kun &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; vastaa yhtä merkkiä. Jokerimerkkiä ei voi käyttää sanan alussa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
@@ -4547,32 +4545,32 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>
         <source>a*a</source>
-        <translation type="unfinished"></translation>
+        <translation>a*a</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
         <source>a?</source>
-        <translation type="unfinished"></translation>
+        <translation>a?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;at&apos; and &apos;an&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
         <source>a??a</source>
-        <translation type="unfinished"></translation>
+        <translation>a??a</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>abba&apos;, &apos;area&apos;, &apos;Asia&apos;, jne.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
@@ -4630,7 +4628,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="199"/>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>strong:G846</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="201"/>
@@ -4641,7 +4639,7 @@ Haluatko jatkaa?</translation>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>morph:&quot;N-NSF&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
@@ -4651,7 +4649,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime käyttää CLucene-hakukonetta. Voit lukea lisää tietoa &lt;a href=&apos;%1&apos;&gt;lucene-syntaksista www-sivulla&lt;/a&gt;(ulkoisessa selaimen ikkunassa).</translation>
     </message>
 </context>
 <context>
@@ -4742,7 +4740,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="154"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta valitun etsintäalueen aluetta. Silmäile ennalta-asetettuja etsintäaluieta nähdäksesi, kuinka etsintäalueet toimivat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="159"/>
@@ -4810,12 +4808,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="137"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeksointi kestää kauan. Napsauta &quot;Kyllä&quot; aloittaaksesi moduulien indeksoinnin ja etsinnän. Napsauta &quot;Ei&quot; keskeyttääksesi etsintä. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="181"/>

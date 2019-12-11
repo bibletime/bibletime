@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1057,7 +1055,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">&amp;Filter:</translation>
+        <translation>&amp;Filter:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
@@ -2823,7 +2821,7 @@ alias</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Een lijst met bronnen zal worden gedownload van een online server. Deze bronnen zullen aan de huidige lijst worden toegevoegd. Een nieuwe bron zal een oude vervangen indien deze hetzelfde label heeft. U kunt later bronnen verwijderen die u niet wilt behouden.
@@ -2945,8 +2943,8 @@ Wilt u doorgaan?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="145"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Namen van talen</translation>
     </message>
     <message>
@@ -3356,7 +3354,7 @@ Wilt u doorgaan?</translation>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3458,7 +3456,7 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
@@ -3470,7 +3468,7 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3686,13 +3684,13 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3704,7 +3702,7 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
@@ -3717,7 +3715,7 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3729,7 +3727,7 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>

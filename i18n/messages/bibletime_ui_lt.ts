@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="lt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -229,7 +227,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -284,7 +282,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="240"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="247"/>
@@ -785,7 +783,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
@@ -1057,7 +1055,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="173"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">Fi&amp;ltras:</translation>
+        <translation>Fi&amp;ltras:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
@@ -1391,7 +1389,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="73"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="77"/>
@@ -2305,7 +2303,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="88"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Kairėje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="99"/>
@@ -2316,7 +2314,7 @@ spartusis klavišas</translation>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="110"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Dešinėje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="233"/>
@@ -2823,7 +2821,7 @@ spartusis klavišas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="163"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Iš nuotolinio serverio bus atsiųstas šaltinių sąrašas. Šaltiniai bus pridėti prie esamo sąrašo. Jei du šaltiniai turi tą pačią etiketę, tuomet naujas šaltinis pakeis seną šaltinį. Vėliau galėsite ištrinti šaltinius, kurių nenorite palikti.
@@ -2945,8 +2943,8 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="145"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Names of languages</translation>
     </message>
     <message>
@@ -2983,7 +2981,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="162"/>
         <source>Azerbaijani, South</source>
         <extracomment>Language name azb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
@@ -3019,7 +3017,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
         <source>Chinantec, Comaltepec</source>
         <extracomment>Language name cco</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="184"/>
@@ -3037,31 +3035,31 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
         <source>Chontal, Highland Oaxaca</source>
         <extracomment>Language name chd</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
         <source>Chinantec, Quiotepec</source>
         <extracomment>Language name chq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
         <source>Cakchiquel, Western</source>
         <extracomment>Language name ckw</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
         <source>Chinantec, Lalana</source>
         <extracomment>Language name cnl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
         <source>Chinantec, Tepetotutla</source>
         <extracomment>Language name cnt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="201"/>
@@ -3079,19 +3077,19 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
         <source>Chinantec, Sochiapan</source>
         <extracomment>Language name cso</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="207"/>
         <source>Chol, Tila</source>
         <extracomment>Language name cti</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
         <source>Chatino, Western Highland</source>
         <extracomment>Language name ctp</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
@@ -3121,7 +3119,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="220"/>
         <source>Duruma</source>
         <extracomment>Language name dug</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="223"/>
@@ -3301,31 +3299,31 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="507"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
         <source>Ixil, San Juan Cotzal</source>
         <extracomment>Language name ixl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="298"/>
@@ -3337,7 +3335,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
         <source>Jacalteco, Eastern</source>
         <extracomment>Language name jac</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="302"/>
@@ -3356,7 +3354,7 @@ Ar norite tęsti?</translation>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
@@ -3386,7 +3384,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
         <source>Lacandon</source>
         <extracomment>Language name lac</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
@@ -3416,13 +3414,13 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="341"/>
         <source>Mixe, Isthmus</source>
         <extracomment>Language name mir</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="343"/>
         <source>Mixtec, Coatzospan</source>
         <extracomment>Language name miz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="345"/>
@@ -3434,7 +3432,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="347"/>
         <source>Mixtec, Silacayoapan</source>
         <extracomment>Language name mks</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="352"/>
@@ -3458,19 +3456,19 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
@@ -3488,13 +3486,13 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="381"/>
         <source>Nahuatl, Guerrero</source>
         <extracomment>Language name ngu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="383"/>
         <source>Nahuatl, Northern Oaxaca</source>
         <extracomment>Language name nhy</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="386"/>
@@ -3530,7 +3528,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
         <source>Persian (Dari)</source>
         <extracomment>Language name prs</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="417"/>
@@ -3638,7 +3636,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="478"/>
         <source>Tektiteko</source>
         <extracomment>Language name ttc</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="481"/>
@@ -3656,7 +3654,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="489"/>
         <source>Orya</source>
         <extracomment>Language name ury</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="491"/>
@@ -3686,13 +3684,13 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -3704,20 +3702,20 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="411"/>
         <source>Uma</source>
         <extracomment>Language name ppk</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3729,7 +3727,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="483"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
@@ -3759,19 +3757,19 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="519"/>
         <source>Zapotec, Chichicapan</source>
         <extracomment>Language name zpv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="521"/>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="525"/>
         <source>Zapotec, Yatee</source>
         <extracomment>Language name zty</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="527"/>
@@ -3822,7 +3820,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="338"/>
         <source>Red letter words</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="340"/>
@@ -3921,7 +3919,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="49"/>
         <source>Do you want to overwrite it?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="69"/>
@@ -3995,19 +3993,19 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="361"/>
         <source>Mam, Central</source>
         <extracomment>Language name mvc</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="365"/>
         <source>Mixe, Juquila</source>
         <extracomment>Language name mxq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="367"/>
         <source>Mixtec, Jamiltepec</source>
         <extracomment>Language name mxt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="369"/>
@@ -4025,13 +4023,13 @@ Ar norite tęsti?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="470"/>
         <source>Klingon</source>
         <extracomment>Language name tlh</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="500"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <extracomment>Language name xtd</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="504"/>
@@ -4042,7 +4040,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="412"/>
         <source>Verb tense changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="552"/>
@@ -4168,7 +4166,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="494"/>
         <source>Word lookup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4207,7 +4205,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="83"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
@@ -4263,7 +4261,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
@@ -4275,7 +4273,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
@@ -4287,7 +4285,7 @@ Ar norite tęsti?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="73"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4815,7 +4813,7 @@ Ar norite tęsti?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="181"/>
