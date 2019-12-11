@@ -246,8 +246,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Rechercher</guimenu>
           </term>
 
           <listitem>
-            <para><action>Ouvre le dialogue de recherche pour rechercher dans tous les
-ouvrages ouverts</action>. D'autres ouvrages peuvent être ajoutés ou
+            <para><action>Ouvre la boîte de dialogue de recherche pour rechercher dans tous
+les ouvrages ouverts</action>. D'autres ouvrages peuvent être ajoutés ou
 supprimés dans la boîte de dialogue. Vous trouverez une description plus
 détaillée de la recherche dans la section <link
 linkend="hdbk-op-search">Recherche dans les ouvrages</link>.</para>
@@ -619,7 +619,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		électionnez une bible supplémentaires.
+		Sélectionnez une bible supplémentaires.
               </para>
             </listitem>
           </varlistentry>

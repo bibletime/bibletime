@@ -29,14 +29,14 @@ yhden sellaisen, näet esikatselukuvan oikealla paneelissa.</para>
       <title>
         <guimenu>Työpöytä</guimenu>
       </title>
-      <para>Many features provided by the &sword; backend can now be customized in
-&bibletime;.  These features are documented right in the dialog.  You also
-have the possibility to specify standard works that should be used when no
-specific work is specified in a reference.  An example: The standard Bible
-is used to display the content of cross references in the Bible.  When you
-hover over them, the Mag will show the content of the verses referred to,
-according to the standard Bible you specified.  With the use of text
-filters, you can control the appearance of the text.</para>
+      <para>Monet &sword; ominaisuudet voidaan räätälöidä ohjelmaan &bibletime;. Nämä
+ominaisuudet on dokumentoitu oikealla dialogissa. Sinulla on mahdollisuus
+eritellä standardiasiakirjat, joita käytetään kun mitään erityistä teosta ei
+ole määritelty viitteeksi. Esimerkki: Standardi Raamattua käytetään
+näyttämään ristiviitteen sisältö Raamatussa. Kun viet hiiren niiden sanojen
+ylle, suurennuslasi näyttää viitattujen jakeiden sisällön määrittelemäsi
+standardi-Raamatun mukaan. Tekstisuotimilla voit kontrolloida tekstien
+ulkomuotoa.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
@@ -46,10 +46,10 @@ filters, you can control the appearance of the text.</para>
       <para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä
 äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
 
-      <para>By default, &bibletime; uses the default system display font. You can
-override this font if necessary. Some languages require special fonts to be
-displayed correctly, and this dialog allows you to specify a custom font for
-each language.</para>
+      <para>Oletuksena &bibletime; käyttää tietokoneen käyttöjärjestelmän
+oletuskirjasinta. Voit peittää tuon kirjasimen, jos tarpeen. Jotkut kielet
+vaativat erityistä fonttia näkyäkseen oikein. Tällä dialogilla voit
+määritellä oman kirjasimen jokaiselle kielelle.</para>
       <mediaobject>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
@@ -60,22 +60,22 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
           <para>Valintaikkuna - Kirjasimet.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; can now use all supported fonts.  As long as the works you are
-interested in display correctly nothing needs to be done here. If a work
-only displays as a series of question marks (??????) or empty boxes, then
-you know that the standard display font does not contain the characters used
-in this work.</para>
+      <para>&bibletime; voi nyt käyttää kaikkia tuettuja kirjasimia. Niin kauan kun
+haluamasi teokset näkyvät oikein, mitään ei tarvitse tehdä tässä. Jos
+teoksessa näkyy sarjoja kysymysmerkkejä (??????) tai tyhjiä laatikoita,
+sitten tiedät, ettei standardi näyttö-kirjasin osaa näyttää teoksen
+merkkejä.</para>
 
-      <para>To correct this, choose this work's language from the drop down menu. Select
-the use custom font checkbox. Now select a font. For example, a font that
-supports many languages is Code2000. If no installed font can display the
-work you are interested in, try installing the localization package for that
-language.</para>
+      <para>Korjataksesi tämän, valitse tämän teoksen kieli alasvetovalikosta. Valitse
+käyttöön oma kirjasin valintaruuduista. Nyt valitse kirjasin. Esimerkiksi
+kirjasin Code2000 tukee monia kieliä. Jos mikään asennettu kirjasin ei osaa
+näyttää tekstiä oikein, voit yrittää asentaa sen kielen lokalisointipaketin
+koneelle.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Kirjasimien asennus</title>
-        <para>Detailed font installation instructions are outside the scope of this
-handbook. For further information you might want to refer to the <ulink
-url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
+        <para>Yksityiskohtaista ohjetta kirjasimien asennukseen ei ole tässä
+käsikirjassa. Lisätietoja saat täältä <ulink
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html">Unicode
 HOWTO</ulink>.</para>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
@@ -124,7 +124,7 @@ SIL unicode fontit</ulink>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/"> FreeFont</ulink>
                 </entry>
-                <entry>A new free Unicode font initiative.</entry>
+                <entry>Uusi vapaa ja ilmainen Unicode-kirjasinaloite.</entry>
               </row>
               <row>
                 <entry>
@@ -168,22 +168,23 @@ ranges and the Unicode fonts that support them</ulink>).</para>
 
     <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Shortcuts</guimenu>
+        <guimenu>Oikotiet</guimenu>
       </title>
 
-      <para>Shortcuts (previously known as HotKeys) are special key commands that can be
-used in the place of the menu items and icons. A number of &bibletime;'s
-commands have predefined Shortcuts (see the <link
-linkend="hdbk-reference-shortcuts">Shortcuts section</link> for a complete
-listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is
-very helpful to quickly access the functions that you need the most.</para>
+      <para>Pikakuvakkeet (aiemmin tunnettu pikanäppäiminä) ovat erityisiä
+näppäinkomentoja, joita voi käyttää valikoissa ja kuvakkeissa. Suurella
+osalla &bibletime;:n komennoilla on ennalta määritelty pikatoiminto (katso
+<link linkend="hdbk-reference-shortcuts">Pikakuvake osio</link>kokonaisesta
+listastaI. Suurimpaan osaan &bibletime;:n komennoista voidaan liittää
+pikatoiminto. Tämä on erittäin kätevää suorittaa toimintoja, joita tarvitset
+useimmin.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study HowTo has a secondary shortcut
-defined, CTRL+2.</para>
+      <para>Edellisessä esimerkissä F2, Raamatunluku HowTo:ssa, on määritelty
+toissijainen oikotie, CTRL + 2.</para>
     </sect2>
   </sect1>
 </chapter>

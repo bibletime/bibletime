@@ -23,9 +23,9 @@ terminal. Pour lancer &bibletime; ouvrez une fenêtre de terminal et tapez :
     <sect2 id="hdbk-start-custom">
       <title>Configuration du démarrage</title>
       <para>Depuis un terminal, vous pouvez utiliser &bibletime; pour ouvrir un verset
-aléatoire dans la bible par défaut : <screen>bibletime --open-default-bible "&lt;votre_module&gt;"</screen>Pour
-ouvrir à un passage donné tel que Jean 3,16, utilisez : <screen>bibletime --open-default-bible "Jean 3,16"</screen>Vous pouvez également utiliser des noms de livre dans
-votre langue de nom actuel.</para>
+aléatoire dans la bible par défaut : <screen>bibletime --open-default-bible "&lt;votre_ouvrage&gt;"</screen>Pour
+ouvrir à un passage donné tel que Jean 3,16, utilisez : <screen>bibletime --open-default-bible "Jean 3:16"</screen> Vous pouvez également utiliser des noms de livre dans
+votre langue actuelle.</para>
     </sect2>
   </sect1>
 
@@ -50,8 +50,8 @@ section Gestionnaire de bibliothèque</link> pour plus de détails. Si vous
 démarrez avec une bibliothèque vide, il est utile d'installer au moins une
 bible, un commentaire, un lexique et un livre pour découvrir les
 caractéristiques de &bibletime;. Vous pouvez le faire en cliquant sur le
-bouton Actualiser. Une liste des travaux disponibles à partir de &cbs; vous
-sera présentée.</para>
+bouton Actualiser. Une liste des ouvrages disponibles à partir de la &cbs;
+vous sera présentée.</para>
         </listitem>
       </varlistentry>
       <varlistentry>

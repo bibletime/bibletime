@@ -271,15 +271,15 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
         </table></para>
 
 	<tip>
-	  <para>You can right click on an installed work and select <guimenu>About</guimenu>
-to find which of the above search criteria may work for you.  Not all works
-have the built in features for performing this type of search.</para>
+	  <para>Voit napsauttaa hiiren oikealla painikkeella teosta ja valita
+<guimenu>Tietoja</guimenu> löytääksesi edelläolevista kriteereistä sen, joka
+sopii sinulle. Kaikissa teoksissa ei ole sisäänrakennettua ominaisuutta
+tällaiselle etsinnälle.</para>
 	</tip>
 
-        <para>&bibletime; uses the Lucene search engine to perform your searches. It has
-many advanced features, and you can read more about it here: <ulink
-url="http://lucene.apache.org/java/docs/index.html">
-http://lucene.apache.org/java/docs/index.html</ulink>.</para>
+        <para>&bibletime; käyttää Lucene-etsintäkonetta toteuttaaksesi hakusi. Siinä on
+monta edistyksellistä ominaisuutta. Voit lukea lisää siitä täällä: <ulink
+url="http://lucene.apache.org/java/docs/index.html">http://lucene.apache.org/java/docs/index.html</ulink>.</para>
       </sect3>
     </sect2>
 

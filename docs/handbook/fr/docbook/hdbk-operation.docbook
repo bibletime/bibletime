@@ -13,8 +13,8 @@ parties de l'application. La fenêtre en haut à gauche permet d'ouvrir les
 ouvrages installés dans l'onglet Bibliothèque, et avec l'onglet Signets,
 vous pouvez gérer vos favoris. La petite fenêtre « Loupe » située sous la
 bibliothèque permet d'afficher des informations supplémentaires incorporées
-dans des documents. Lorsque vous déplacez votre souris sur un marqueur de
-note de bas de page, par exemple, l'Loupe affichera le contenu réel de la
+dans les documents. Lorsque vous déplacez votre souris sur un marqueur de
+note de bas de page, par exemple, la Loupe affichera le contenu réel de la
 note de bas de page. La barre d’outils vous permet d’accéder rapidement aux
 fonctions importantes et le bureau situé à droite est l’endroit où vous
 travaillez réellement.</para>
@@ -22,15 +22,15 @@ travaillez réellement.</para>
     <para>Examinons chacune des parties de l'application.</para>
   </sect1>
   <sect1 id="hdbk-op-parts">
-    <title>Regardons les différentes parties de l'application une par une.</title>
+    <title>Regardons les différentes parties de l'application une par une</title>
     <sect2 id="hdbk-op-parts-bookshelf">
       <title>La bibliothèque</title>
-      <para>La bibliothèque donne la liste les modules installées, classées par
+      <para>La bibliothèque donne la liste des ouvrages installés, classés par
 catégories et par langues. La catégorie "Signets" permet de conserver vos
 signets et d'y accéder.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
-        <title>Lire des modules</title>
+        <title>Lire des ouvrages</title>
 
         <para>To open a work from the bookshelf for reading, simply double-click with the
 <mousebutton>left mouse button</mousebutton> on the desired category
@@ -38,7 +38,7 @@ signets et d'y accéder.</para>
 display its contents. Then just double-click on one of the works to open it
 for reading. A read window will appear in the Desk area.</para>
 
-        <para>Si, lors de la lecture d'une module, vous désirez ouvrir une autre module au
+        <para>Si, lors de la lecture d'un ouvrage, vous désirez ouvrir un autre ouvrage au
 passage que vous lisez, vous pouvez utiliser le raccourci suivant. Cliquez
 simplement avec le <mousebutton>bouton gauche de la souris</mousebutton> sur
 la référence verset/passage (le pointeur se transforme en main) et faites-le
@@ -49,22 +49,22 @@ lecture existante, puis passer à l'emplacement spécifié.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
-        <title>Informations supplémentaires à propos des modules</title>
+        <title>Informations supplémentaires à propos des ouvrages</title>
 
         <para>Si vous cliquez avec le bouton <mousebutton>droit</mousebutton> de la souris
-sur l'icône d'un module, un menu proposant des actions pertinentes en
-rapport avec ce module s'ouvrira. <guimenuitem>« À propos de ce
-module »</guimenuitem> ouvre une fenêtre avec des information à propos du
-module sélectionnée.<guimenuitem>« Déverrouiller ce module »</guimenuitem>
-ouvre une petite boîte de dialogue permettant d'introduire la clef de
-décryptage pour accéder au module. Pour plus d'informations à propos des
-<ulink url="http://www.crosswire.org/sword/modules/aboutlocked.jsp">modules
-verrouillés</ulink>, voir sa page sur le site web de Crosswire Bible
-Society.</para>
+sur l'icône d'un ouvrage, un menu proposant des actions pertinentes en
+rapport avec cet ouvrage s'ouvrira. <guimenuitem>« À propos de cet
+ouvrage »</guimenuitem> ouvre une fenêtre avec des information à propos de
+l'ouvrage sélectionné. <guimenuitem>« Déverrouiller cet
+ouvrage »</guimenuitem> ouvre une petite boîte de dialogue permettant
+d'introduire la clef de décryptage pour accéderà l'ouvrage. Pour plus
+d'informations à propos des <ulink
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp">Ouvrages
+verrouillés</ulink>, voir sa page sur le site web de la &cbs;.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
-        <title>Rechercher dans des modules</title>
+        <title>Rechercher dans des ouvrages</title>
 
         <para>Vous pouvez rechercher dans un ouvrage en cliquant avec le bouton
 <mousebutton>droit</mousebutton> de la souris sur son symbole et en
@@ -72,7 +72,7 @@ sélectionnant <guimenuitem>« Rechercher dans un ou plusieurs
 ouvrages »</guimenuitem>. En appuyant sur &Shift; et en cliquant sur
 d'autres ouvrages, vous pouvez en sélectionner plusieurs. Suivez ensuite la
 même procédure pour ouvrir la boîte de dialogue de recherche. Vous allez
-chercher dans tous ces documents. Une description complète du fonctionnement
+chercher dans tous ces ouvrages. Une description complète du fonctionnement
 des fonctionnalités de recherche peut être trouvée dans <link
 linkend="hdbk-op-search">Rechercher dans la section Ouvrages</link>.</para>
       </sect3>
@@ -95,8 +95,8 @@ entre les dossiers.</para>
         <para>Vous pouvez aussi importer les signets d'autres personnes ou exporter des
 signets à partager avec elles. Pour cela, ouvrez le <guimenu>menu
 contextuel</guimenu> du dossier de signets comme expliqué plus haut, et
-choisissez <guimenuitem>« Exporter les signets »</guimenuitem>. Cela ouvrira
-une boîte de dialogue permettant d'enregistrer la collection de
+choisissez <guimenuitem>« Exporter depuis le dossier… »</guimenuitem>. Cela
+ouvrira une boîte de dialogue permettant d'enregistrer la collection de
 signets. Vous pouvez importer des signets d'une manière semblable.</para>
 
         <para>Vous pouvez également cliquer avec le bouton
@@ -110,26 +110,26 @@ modifier leurs noms et leurs descriptions.</para>
 
       <para>Cette petite fenêtre dans le coin inférieur gauche de la fenêtre de
 &bibletime; est complètement passive. Quand le pointeur de la souris est
-au-dessus d'un passage avec une information complémentaire (les numéros
+au-dessus d'un passage avec une information complémentaire (les numéros de
 Strong par exemple), cette information est affichée dans la loupe, et pas
-dans le texte-même. Essayez.</para>
+dans le texte même. Essayez.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-desk">
       <title>Le bureau</title>
       <para>Le vrai travail dans &bibletime; s'effectue sur le bureau. Vous pouvez y
-ouvrir des modules de la bibliothèque, les lire, y effectuer des <link
+ouvrir des ouvrages de la bibliothèque, les lire, y effectuer des <link
 linkend="hdbk-op-search">recherches</link> ainsi qu'enregistrer vos notes
-dans le module de commentaires personnels(voir <link
+dans l'ouvrage de commentaires personnels (voir <link
 linkend="hdbk-op-parts-desk-write">plus haut</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
-        <title>Lire des modules</title>
+        <title>Lire des ouvrages</title>
         <para><link linkend="hdbk-op-parts-bookshelf-open">Comme nous l'avons déjà
-vu</link>, vous pouvez ouvrir des modules pour les lire en cliquant
+vu</link>, vous pouvez ouvrir des ouvrages pour les lire en cliquant
 simplement sur leur icône dans la bibliothèque. Une fenêtre de lecture
 s'ouvre alors dans le bureau. Chaque fenêtre de lecture a sa propre barre
-d'outils, avec des outils pour naviguer au sein de l'module affichée ainsi
+d'outils, avec des outils pour naviguer au sein de l'ouvrage affiché ainsi
 que des boutons d'historique semblables à ceux de votre navigateur web.</para>
       </sect3>
 
@@ -142,7 +142,7 @@ contrôler vous-même  la disposition des fenêtres de lecture ou laisser
 &bibletime; la gérer automatiquement en choisissant un des modes de
 disposition automatique dans
 <menuchoice><guimenu>Fenêtre</guimenu><guimenuitem>Mode
-d'arrangement</guimenuitem></menuchoice>. Essayez-le, c'est simple et
+d'affichage</guimenuitem></menuchoice>. Essayez-le, c'est simple et
 fonctionnel. </para>
       </sect3>
 
@@ -150,7 +150,7 @@ fonctionnel. </para>
         <title>Éditer votre propre commentaire</title>
 
         <para>Pour pouvoir stocker vos propres commentaires sur des parties de la Bible,
-vous devez installer un certain ouvrage de la bibliothèque du <ulink
+vous devez installer un ouvrage de la bibliothèque de la <ulink
 url="http://www.crosswire.org">&cbs;</ulink>. Cet ouvrage s'appelle « Le
 commentaire personnel ».</para>
 
@@ -160,9 +160,9 @@ commentary by just clicking on any verse.  A dialog opens which allows you
 to add or edit text for that verse.</para>
 
         <tip>
-          <para>Si <menuchoice><guimenu>Modifier cet ovurage</guimenu></menuchoice> est
-désactivé, veuillez vérifier si vous avez l'autorisation d'écriture pour les
-fichiers du commentaire personnel.</para>
+          <para>Si <menuchoice><guimenu>Modifier cet ouvrage</guimenu></menuchoice> est
+désactivé, veuillez vérifier que vous ayez l'autorisation d'écriture pour
+les fichiers du commentaire personnel.</para>
         </tip>
 
         <tip>
@@ -173,29 +173,29 @@ le texte du verset sera inséré.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-search">
-    <title>Rechercher dans des modules</title>
+    <title>Rechercher dans des ouvrages</title>
 
     <sect2 id="hdbk-op-search-intext">
-      <title>Recherche du texte dans une une fenêtre de lecture ouverte</title>
+      <title>Rechercher du texte dans une fenêtre de lecture ouverte</title>
       <para>Vous pouvez rechercher un mot ou une phrase dans la fenêtre de lecture
 ouverte (par exemple, le chapitre d'une bible que vous lisez), comme vous en
 avez l'habitude avec d'autres programmes. Cette fonction peut être atteinte
 en cliquant avec le bouton <mousebutton>droit</mousebutton> de la souris et
-en sélectionnant <guimenuitem>Rechercher…</guimenuitem>,ou en utilisant le
-raccourci clavier<keycombo action="simul"><keycap>
-&Ctrl;F</keycap></keycombo>. Lisez la suite pour savoir comment rechercher
-des ouvrages entiers.</para>
+en sélectionnant <guimenuitem>Rechercher…</guimenuitem>, ou en utilisant le
+raccourci clavier<keycombo
+action="simul"><keycap>&Ctrl;F</keycap></keycombo>. Lisez la suite pour
+savoir comment rechercher des ouvrages entiers.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
-      <title>Accéder au dialogue de recherche</title>
+      <title>Accéder à la boîte de dialogue de recherche</title>
       <para>Vous pouvez rechercher dans un ouvrage en cliquant avec le bouton
 <mousebutton>droit</mousebutton> de la souris sur son symbole dans la
-<guimenu>bibliothèque</guimenu> et sélectionnez <guimenuitem>Recherche dans
-un ou plusieurs ouvrage(s)</guimenuitem>. En maintenant &Shift; ou &Ctrl; et
-en cliquant sur les noms des autres ouvrages, vous pouvez en sélectionner
-plusieurs. Suivez ensuite la même procédure pour ouvrir la boîte de dialogue
-de recherche. Vous chercherez dans tous ces ouvrages en même temps.</para>
+<guimenu>bibliothèque</guimenu> et sélectionnez <guimenuitem>Recherche
+dans…</guimenuitem>. En maintenant &Shift; ou &Ctrl; et en cliquant sur les
+noms des autres ouvrages, vous pouvez en sélectionner plusieurs. Suivez
+ensuite la même procédure pour ouvrir la boîte de dialogue de
+recherche. Vous chercherez dans tous ces ouvrages en même temps.</para>
 
       <para>Vous pouvez aussi accéder à la boîte de dialogue de recherche en cliquant
 <menuchoice><guimenu>Rechercher</guimenu></menuchoice> dans le menu
@@ -212,7 +212,7 @@ de recherche dans une fenêtre de lecture ouverte.</para>
 <imageobject> <imagedata fileref="ss_searchopts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
       <sect3 id="hdbk-op-search-config-works">
-        <title>Sélectionner les modules</title>
+        <title>Sélectionner des ouvrages</title>
         <para>En haut de l'onglet options vous trouverez <guibutton>Choisir</guibutton>
 (les ouvrages). Si vous souhaitez effectuer une recherche dans plusieurs
 ouvrages, cliquez sur ce bouton et vous verrez un menu dans lequel vous
@@ -222,13 +222,12 @@ pourrez sélectionner les ouvrages dans lesquels vous souhaitez rechercher.</par
         <title>Limiter l'étendue de la recherche</title>
         <para>Vous pouvez limiter le champ de votre recherche à certaines parties de la
 Bible en sélectionnant l’un des champs prédéfinis de la liste dans
-<guimenu>Plage de recherche</guimenu>. Vous pouvez définir vos propres
-plages de recherche en cliquant sur le bouton <guibutton>Configurer les
-plages</guibutton>.</para>
+<guimenu>Zone</guimenu>. Vous pouvez définir vos propres plages de recherche
+en cliquant sur le bouton <guibutton>Paramètres…</guibutton>.</para>
       </sect3>
 
       <sect3 id="hd-op-search-config-syntax">
-        <title>Introduction élémentaire syntaxe de recherche</title>
+        <title>Introduction élémentaire à la syntaxe de recherche</title>
 
         <para>Entrez la phrase de recherche séparée par des espaces. Par défaut, la
 fonction de recherche renvoie des résultats correspondant à tous les
@@ -266,9 +265,9 @@ ci-dessous pour des exemples.</para>
 		<entry>heading:Jésus</entry>
               </row>
               <row>
-                <entry>note_de_bas_de_page:</entry>
+                <entry>footnote:</entry>
                 <entry>Recherche des notes de bas de page</entry>
-		<entry>note_de_bas_de_page:Moses</entry>
+		<entry>footnote:Moses</entry>
               </row>
               <row>
                 <entry>strong:</entry>
@@ -310,8 +309,8 @@ références pour les copier, les enregistrer ou les imprimer. Un clic sur une
 référence particulière ouvre ce verset en contexte dans la fenêtre d'aperçu
 ci-dessous.</para>
       <tip>
-        <para>Faites glisser une référence et déposez-la sur l'icône d'une module dans la
-bibliothèque pour ouvrir cette module à ce verset dans une nouvelle fenêtre
+        <para>Faites glisser une référence et déposez-la sur l'icône d'un ouvrage dans la
+bibliothèque pour ouvrir cet ouvrage à ce verset dans une nouvelle fenêtre
 de lecture.</para>
       </tip>
       <tip>
@@ -396,7 +395,7 @@ verset. C'est assez simple, alors essayez-le.</para>
 
     <para>L'imprimer à partir de &bibletime; est plutôt rudimentaire et est destinée à
 rendre des services simples. Si vous rédigez un document ou une présentation
-contenant du texte d'modules de &bibletime;, nous vous invitons à utiliser
+contenant du texte d'ouvrages de &bibletime;, nous vous invitons à utiliser
 un outil d'édition ou de présentation sur votre système pour mettre en forme
 votre document plutôt que d'imprimer directement à partir de &bibletime;.</para>
   </sect1>

@@ -4,21 +4,21 @@
     <title>Au sujet de &bibletime;</title>
 
     <para>&bibletime; est un outil d'étude biblique prenant en charge différents types
-de textes et de langues. De grandes quantités de modules d'ouvrages sont
-faciles à installer et à gérer. Il est construit sur la bibliothèque <ulink
+de textes et de langues. De grandes quantités d'ouvrages sont faciles à
+installer et à gérer. Il est construit sur la bibliothèque <ulink
 url="http://www.crosswire.org/sword/">&sword;</ulink>, qui fournit les
-fonctionnalités d'arrière-plan pour &bibletime;;, telles que la
-visualisation de textes bibliques, la recherche, etc. &sword; est le produit
-phare des <ulink url="http://www.crosswire.org">&cbs;</ulink>.</para>
+fonctionnalités d'arrière-plan pour &bibletime;, telles que la visualisation
+de textes bibliques, la recherche, etc. &sword; est le produit phare de la
+<ulink url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
     <para>&bibletime; est conçu pour être utilisé avec des ouvrages encodés dans l'un
 des formats pris en charge par le projet &sword;. Des informations complètes
 sur les formats de document pris en charge peuvent être trouvées dans la
 <ulink url="http://www.crosswire.org/sword/develop/index.jsp"> section
-développeurs</ulink> du projet &sword;, &cbs;.</para>
+développeurs</ulink> du projet &sword; de la &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
-      <title>Œuvres disponibles</title>
+      <title>Ouvrages disponibles</title>
       <para>Over 280 documents in 50 languages are available from the <ulink
 url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
@@ -55,7 +55,7 @@ personnelles</link> sur des sections de la Bible.</para>
           <term>Lectures quotidiennes</term>
           <listitem>
             <para>De nombreuses personnes apprécient ces rations quotidiennes de la parole de
-Dieu. Parmi les modules disponibles, Daily Light on the Daily Path, et les
+Dieu. Parmi les ouvrages disponibles, Daily Light on the Daily Path, et les
 Losungen.</para>
           </listitem>
         </varlistentry>
@@ -78,16 +78,16 @@ langue anglaise révisé de Webster de 1913, la Bible thématique de Nave.</para
     <sect2 id="hdbk-intro-motivation">
       <title>Motivation</title>
       <para>Notre désir est de servir Dieu et de faire notre part pour aider les autres
-à grandir dans leur relation avec lui. Nous nous sommes efforcés d’en faire
+à grandir dans leur relation avec Lui. Nous nous sommes efforcés d’en faire
 un programme puissant et de qualité, tout en le rendant simple et
 intuitif. Nous désirons que Dieu soit loué, car il est la source de toutes
 choses bonnes.</para>
       <blockquote>
-        <attribution>Jacques 1:17, TOB</attribution>
+        <attribution>Jacques 1,17, TOB</attribution>
         <para>Tout don de valeur et tout cadeau parfait descendent d'en haut, du Père des
 lumières chez lequel il n'y a ni balancement ni ombre due au mouvement.</para>
       </blockquote>
-      <para>Dieu vous bénisse dans l'utilisation de ce programma</para>
+      <para>Dieu vous bénisse dans l'utilisation de ce programme.</para>
     </sect2>
   </sect1>
 </chapter>

@@ -330,8 +330,8 @@ vertically</guimenuitem> </menuchoice>
           <term>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
-<imageobject> <imagedata fileref="i_tile_horiz.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
+<imageobject><imagedata fileref="i_tile_horiz.png" width="32" depth="32"
+format="PNG" /></imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
 horizontally</guimenuitem> </menuchoice>
           </term>
 
@@ -416,14 +416,14 @@ kontekstivalikon, jossa voit valita olemassaolevan istunnon poistettavaksi.</par
 
     <sect2 id="hdbk-reference-menus-settings">
       <title>
-        <guimenu>Settings</guimenu>
+        <guimenu>Asetukset</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-settings-bibletime">
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
-<imageobject> <imagedata fileref="i_configure.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem>
+<imageobject><imagedata fileref="i_configure.png" width="32" depth="32"
+format="PNG" /></imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem>
 </menuchoice>
           </term>
 
@@ -440,8 +440,8 @@ needs.  Please see the <link linkend="hdbk-config-bt">Configuring
           <term>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F4</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
-<imageobject> <imagedata fileref="i_configuresword.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
+<imageobject><imagedata fileref="i_configuresword.png" width="32" depth="32"
+format="PNG" /></imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
 </menuchoice>
           </term>
 
@@ -525,7 +525,7 @@ license agreement.</para>
   </sect1>
 
   <sect1 id="hdbk-reference-works">
-    <title>Works reference</title>
+    <title>Teosten viitteet</title>
     <para>
       In this section you can find descriptions of the icons associated with open
 works.
@@ -723,7 +723,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an installed glossary or devotional.
+		Valitse asennettu hartaussanasto.
               </para>
             </listitem>
           </varlistentry>
@@ -741,7 +741,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
 
             <listitem>
               <para>
-		Select an additional glossary or devotional.
+		Valitse ylimääräinen sanasto tai hartaus.
               </para>
             </listitem>
           </varlistentry>
@@ -775,19 +775,19 @@ reference</link>.</para>
         <tbody>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Left</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Alt;+ &lt;-</keycap></keycombo>
             </entry>
             <entry>Siirtyy lukuikkunan historiassa taaksepäin.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Right</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Alt;+ -&gt;</keycap></keycombo>
             </entry>
             <entry>Siirtyy lukuikkunan historiassa eteenpäin</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice>
@@ -810,7 +810,7 @@ mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
@@ -820,7 +820,7 @@ mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -831,7 +831,7 @@ equivalent; toggle automatic window tiling.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
@@ -852,7 +852,7 @@ equivalent; toggle manual window placement.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
@@ -862,7 +862,7 @@ equivalent; organizes windows with tabs across the top.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+              <keycombo action="simul"><keycap>&Ctrl;+&Alt;+</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice>
@@ -957,7 +957,7 @@ equivalent; organizes windows with tabs across the top.</entry>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
-            <entry>Search with works of this window.</entry>
+            <entry>Etsi tämän ikkunan teoksia.</entry>
           </row>
 
           <row>

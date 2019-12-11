@@ -3,19 +3,19 @@
   <sect1 id="hdbk-intro-about">
     <title>Tietoja &bibletime;:stä</title>
 
-    <para>&bibletime; is a Bible study tool with support for different types of texts
-and languages. Even large amounts of works modules are easy to install and
-manage. It is built on the <ulink
-url="http://www.crosswire.org/sword/">&sword;</ulink> library, which
-provides the back-end functionality for &bibletime;, such as viewing Bible
-text, searching etc. &sword; is the flagship product of the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.</para>
+    <para>&bibletime; on Ramatun lukutyökalu, joka tukee erilaisia tekstityyppejä ja
+kieliä. Jopa laaja valikoima teosmoduuleja on helppo asentaa ja hallita. Se
+on rakennettu <ulink
+url="http://www.crosswire.org/sword/">&sword;</ulink>-kirjastolle, joka
+tarjoaa back-end toiminnallisuuden &bibletime;-ohjelmalle. Raamatun tekstin
+näyttäminen, haku, jne. &sword; on <ulink
+url="http://www.crosswire.org">&cbs;</ulink>:n lippulaivatuote.</para>
 
-    <para>&bibletime; is designed to be used with works encoded in one of the formats
-supported by the &sword; project. Complete information on the supported
-document formats can be found in the <ulink
-url="http://www.crosswire.org/sword/develop/index.jsp"> developers
-section</ulink> of the &sword; Project, &cbs;.</para>
+    <para>&bibletime; on suunniteltu käytettäväksi &sword; -projektin tukeman
+formaatin mukaisen teoksen kanssa. Täydellinen informaatio tuetuista
+dokumenttien muodoista löytyy <ulink
+url="http://www.crosswire.org/sword/develop/index.jsp">kehittäjien
+osiosta</ulink> &sword; projektista, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Saatavana olevat tehtävät</title>

@@ -8,8 +8,8 @@
       <title>&bibletime;n käynnistys</title>
       <para>&bibletime; is an executable file that is integrated with the desktop. You
 can launch &bibletime; from the Start Menu with this icon: <mediaobject>
-        <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
-format="PNG" /> </imageobject>
+        <imageobject><imagedata fileref="i_bibletime.png" width="32" depth="32"
+format="PNG" /></imageobject>
         <textobject>
           <phrase>&bibletime; aloituskuvake</phrase>
         </textobject>
