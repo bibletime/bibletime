@@ -226,3 +226,11 @@ void BtBookshelfDockWidget::slotGroupingOrderChanged(
     g.saveTo(groupingOrderKey);
     emit groupingOrderChanged(g);
 }
+
+void BtBookshelfDockWidget::loadBookshelfState() {
+    m_bookshelfWidget->loadBookshelfState();
+}
+
+void BtBookshelfDockWidget::saveBookshelfState() {
+    m_bookshelfWidget->saveBookshelfState();
+}

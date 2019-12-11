@@ -24,6 +24,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../backend/config/btconfig.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
@@ -35,11 +36,11 @@
 
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
-        : QWidget(parent, flags)
-        , m_sourceModel(nullptr)
-        , m_treeModel(nullptr)
-        , m_leftCornerWidget(nullptr)
-        , m_rightCornerWidget(nullptr)
+    : QWidget(parent, flags)
+    , m_sourceModel(nullptr)
+    , m_treeModel(nullptr)
+    , m_leftCornerWidget(nullptr)
+    , m_rightCornerWidget(nullptr)
 {
     // Setup post-filter:
     m_postFilterModel = new BtBookshelfFilterModel(this);
@@ -106,10 +107,10 @@ void BtBookshelfWidget::initMenus() {
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
     BT_CONNECT(m_groupingMenu,
                SIGNAL(signalGroupingOrderChanged(
-                              BtBookshelfTreeModel::Grouping)),
+                          BtBookshelfTreeModel::Grouping)),
                this,
                SLOT(slotGroupingActionTriggered(
-                            BtBookshelfTreeModel::Grouping)));
+                        BtBookshelfTreeModel::Grouping)));
 
     // Context menu
     m_contextMenu = new QMenu(this);
@@ -165,14 +166,14 @@ bool BtBookshelfWidget::eventFilter(QObject *object, QEvent *event) {
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *e = static_cast<QKeyEvent*>(event);
         switch (e->key()) {
-            case Qt::Key_Up:
-            case Qt::Key_Down:
-            case Qt::Key_Enter:
-            case Qt::Key_Return:
-                QApplication::sendEvent(m_treeView, event);
-                return true;
-            default:
-                break;
+        case Qt::Key_Up:
+        case Qt::Key_Down:
+        case Qt::Key_Enter:
+        case Qt::Key_Return:
+            QApplication::sendEvent(m_treeView, event);
+            return true;
+        default:
+            break;
         }
     }
     return false;
@@ -199,3 +200,56 @@ void BtBookshelfWidget::slotShowItemContextMenu(CSwordModuleInfo *module, const 
         slotShowItemContextMenu(module, pos);
     }
 }
+
+void BtBookshelfWidget::findExpanded(
+        const QModelIndex& index,
+        QString prefix,
+        QStringList * expandedPaths) {
+    QString path = index.data(Qt::DisplayRole).toString();
+    if (m_treeView->isExpanded(index)) {
+        if (! prefix.isEmpty())
+            path = prefix + QString("/") + path;
+        expandedPaths->append(path);
+    }
+    int rows = m_postFilterModel->rowCount(index);
+    for (int row = 0; row < rows; ++row) {
+        auto childIndex = m_postFilterModel->index(row, 0, index);
+        findExpanded(childIndex, path, expandedPaths);
+    }
+}
+
+void BtBookshelfWidget::restoreExpanded(const QModelIndex& index, const QStringList& nodeList) {
+    if (nodeList.isEmpty())
+        return;
+    QString firstNode = nodeList.first();
+    QStringList remainingNodes = nodeList;
+    remainingNodes.removeFirst();
+    int rows = m_postFilterModel->rowCount(index);
+    for (int row = 0; row < rows; ++row) {
+        auto childIndex = m_postFilterModel->index(row, 0, index);
+        QString text = childIndex.data(Qt::DisplayRole).toString();
+        if (firstNode == text) {
+            m_treeView->expand(childIndex);
+            restoreExpanded(childIndex, remainingNodes);
+            break;
+        }
+    }
+}
+
+void BtBookshelfWidget::loadBookshelfState() {
+    QStringList paths = btConfig().value<QStringList>("GUI/MainWindow/Docks/Bookshelf/expandPaths");
+    auto rootIndex = m_treeView->rootIndex();
+    for (QString path: paths) {
+        QStringList nodeList = path.split("/");
+        restoreExpanded(rootIndex, nodeList);
+    }
+}
+
+void BtBookshelfWidget::saveBookshelfState() {
+    QStringList paths;
+    QString prefix;
+    auto rootIndex = m_treeView->rootIndex();
+    findExpanded(rootIndex, prefix, &paths);
+    btConfig().setValue("GUI/MainWindow/Docks/Bookshelf/expandPaths", paths);
+}
+

@@ -36,6 +36,7 @@
 #include "../util/directory.h"
 #include "btaboutmoduledialog.h"
 #include "bibletimeapp.h"
+#include "btbookshelfdockwidget.h"
 #include "cmdiarea.h"
 #include "display/btfindwidget.h"
 #include "displaywindow/btactioncollection.h"
@@ -128,6 +129,7 @@ BibleTime::~BibleTime() {
 #ifndef NDEBUG
     deleteDebugWindow();
 #endif
+    m_bookshelfDock->saveBookshelfState();
     saveProfile();
 }
 

@@ -70,10 +70,15 @@ class BtBookshelfWidget: public QWidget {
 
         bool eventFilter(QObject *object, QEvent *event) override;
 
+        void loadBookshelfState();
+        void saveBookshelfState();
+
     protected:
+        void findExpanded(const QModelIndex& index, QString prefix, QStringList * expandedPaths);
         void initActions();
         void initMenus();
         void initWidgets();
+        void restoreExpanded(const QModelIndex& index, const QStringList& nodeList);
         void retranslateUi();
 
     protected slots:

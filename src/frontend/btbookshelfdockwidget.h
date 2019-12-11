@@ -37,6 +37,9 @@ class BtBookshelfDockWidget: public QDockWidget {
             return m_treeModel->groupingOrder();
         }
 
+        void loadBookshelfState();
+        void saveBookshelfState();
+
     signals:
         void moduleHovered(CSwordModuleInfo *module);
         void moduleOpenTriggered(CSwordModuleInfo *module);
