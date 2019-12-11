@@ -73,9 +73,9 @@ LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 #   _rc2    if post-rc2
 # For post-full-release versions, no suffix is used.
 
-SET(BT_VERSION_MAJOR "2")
-SET(BT_VERSION_MINOR "11")
-SET(BT_VERSION_PATCH "0_rc1")
+SET(BT_VERSION_MAJOR "3")
+SET(BT_VERSION_MINOR "0")
+SET(BT_VERSION_PATCH "0_beta1")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
 # Determine build, if needed:
