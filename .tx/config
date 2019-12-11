@@ -1,4 +1,4 @@
-[mainOFF]
+[main]
 ; disabled, stable-2.11 ist the currently active branch
 host = https://www.transifex.com
 
