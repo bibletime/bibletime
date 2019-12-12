@@ -1,3 +1,6 @@
+2019-12-12 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #208 Unreadable text in about dialog with dark-colored system themes
+
 2019-12-11 Jaak Ristioja <jaak@ristioja.ee>
     * Released 3.0 beta 1.
 

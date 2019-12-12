@@ -106,7 +106,6 @@ void BtAboutDialog::resizeEvent(QResizeEvent* event) {
 void BtAboutDialog::initTab(QTextBrowser *&tab) {
     tab = new QTextBrowser(this);
     tab->setOpenExternalLinks(true);
-    tab->setStyleSheet("QTextEdit { background-color: rgb(255, 255, 255) }");
     QFont font = tab->font();
     font.setPointSize(font.pointSize()+2);
     tab->setFont(font);
