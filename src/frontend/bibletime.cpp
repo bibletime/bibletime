@@ -72,7 +72,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
     QSplashScreen *splash = nullptr;
     QString splashHtml;
-    static constexpr auto const splashTextAlignment =
+    static auto const splashTextAlignment =
             Qt::AlignHCenter | Qt::AlignTop;
 
     if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
