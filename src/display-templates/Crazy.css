@@ -3,7 +3,7 @@
  */
 
 /* Fix color common color conflicts with desktop themes: */
-* { background-color: #fff; color: #000; }
+body { background-color: #fff; color: #000; }
 
 body {
     margin:0px;

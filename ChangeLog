@@ -1,3 +1,6 @@
+2019-12-13 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #209  Verse number drawn incorrectly with some display templates.
+
 2019-12-12 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #208 Unreadable text in about dialog with dark-colored system themes
 
