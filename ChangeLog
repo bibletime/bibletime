@@ -1,3 +1,6 @@
+2019-12-14 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #204 - Crossreference not working unless Settings/Configure has been done
+
 2019-12-13 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #209  Verse number drawn incorrectly with some display templates.
 

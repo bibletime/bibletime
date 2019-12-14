@@ -563,6 +563,8 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
                      && mod->type() != CSwordModuleInfo::Commentary)) {
 
             mod = btConfig().getDefaultSwordModuleByType("standardBible");
+            if (! mod)
+                mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
         }
 
         // BT_ASSERT(mod); There's no necessarily a module or standard Bible

@@ -65,6 +65,15 @@ BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
     return l;
 }
 
+CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::ModuleType type) {
+
+    Q_FOREACH(CSwordModuleInfo * m, moduleList())
+        if(m->type() == type)
+            return m;
+    return nullptr;
+
+}
+
 void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
     if (toBeDeleted.empty())
         return;

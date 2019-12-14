@@ -123,6 +123,8 @@ public: /* Methods: */
         return &m_dataModel;
     }
 
+    CSwordModuleInfo * findFirstAvailableModule(CSwordModuleInfo::ModuleType type);
+
     /**
       \brief Initializes the Sword modules.
       \returns whether the initializiation was successful.

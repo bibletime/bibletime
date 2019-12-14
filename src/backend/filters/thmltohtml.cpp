@@ -317,9 +317,11 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     myUserData->inscriptRef = true;
                     myUserData->suspendTextPassThru = false;
 
-                    if (CSwordModuleInfo const * const mod =
-                            btConfig().getDefaultSwordModuleByType(
-                                    "standardBible"))
+                    CSwordModuleInfo * mod = btConfig().getDefaultSwordModuleByType("standardBible");
+                    if (! mod)
+                        mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
+
+                    if (mod)
                     {
                         ;
                         BT_ASSERT(tag.getAttribute("passage"));
