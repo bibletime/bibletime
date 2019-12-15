@@ -87,6 +87,7 @@ public:
     Q_INVOKABLE void selectByIndex(int first, int last, int column, int textFirst, int textLast);
     Q_INVOKABLE void clearSelectedText();
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
+    Q_INVOKABLE bool shiftKeyDown();
 
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();

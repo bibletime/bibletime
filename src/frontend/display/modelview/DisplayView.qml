@@ -248,6 +248,8 @@ Rectangle {
                 }
 
                 function hovered(link) {
+                    if (btQmlInterface.shiftKeyDown())
+                        return;
                     btQmlInterface.setMagReferenceByUrl(link);
                     btQmlInterface.activeLink = link;
                 }

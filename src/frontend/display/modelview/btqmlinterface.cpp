@@ -732,3 +732,7 @@ void BtQmlInterface::saveSelectedText(int index, const QString& text) {
     m_selectedText.insert(index, text);
 }
 
+bool BtQmlInterface::shiftKeyDown() {
+    return QGuiApplication::keyboardModifiers() & Qt::ShiftModifier;
+}
+
