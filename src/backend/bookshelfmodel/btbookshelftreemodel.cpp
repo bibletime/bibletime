@@ -135,7 +135,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
                 const ModuleItem & mi = *static_cast<const ModuleItem *>(i);
                 return qVariantFromValue(static_cast<void *>(&mi.moduleInfo()));
             }
-            return 0;
+            return QVariant::fromValue(nullptr);
 
         case Qt::DisplayRole:
         case Qt::DecorationRole:
