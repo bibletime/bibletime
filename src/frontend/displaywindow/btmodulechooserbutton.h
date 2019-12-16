@@ -15,11 +15,11 @@
 
 #include <QToolButton>
 
-#include "../../backend/btmoduletreeitem.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
 class BtModuleChooserBar;
+class BTModuleTreeItem;
 class QMenu;
 class QAction;
 
@@ -32,17 +32,6 @@ class QAction;
 class BtModuleChooserButton : public QToolButton  {
         Q_OBJECT
     public:
-
-        /** Filter out modules of wrong type from buttons module list.
-        * See populateMenu() and BTModuleTreeItem. */
-        struct TypeFilter : public BTModuleTreeItem::Filter {
-            TypeFilter(CSwordModuleInfo::ModuleType t) {
-                m_mType = t;
-            }
-            bool filter(CSwordModuleInfo const & mi) const override
-            { return ((mi.type() == m_mType) && !mi.isLocked()); }
-            CSwordModuleInfo::ModuleType m_mType;
-        };
 
         /**
         * A new empty button. updateMenu() is needed to update the icon, menu items etc.
