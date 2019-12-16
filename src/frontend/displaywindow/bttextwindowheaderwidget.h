@@ -17,10 +17,10 @@
 
 #include <QString>
 #include <QList>
-#include "../../backend/btmoduletreeitem.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
+class BTModuleTreeItem;
 class BtTextWindowHeader;
 class QMenu;
 class QAction;
@@ -41,17 +41,6 @@ class BtTextWindowHeaderWidget : public QWidget {
     public:
         /** For internal use to mark the menu items */
         enum TypeOfAction {RemoveAction, AddAction, ReplaceAction};
-
-        /** Filter out modules of wrong type from buttons module list.
-        * See populateMenu() and BTModuleTreeItem. */
-        struct TypeFilter : public BTModuleTreeItem::Filter {
-            TypeFilter(CSwordModuleInfo::ModuleType t) {
-                m_mType = t;
-            }
-            bool filter(CSwordModuleInfo const & mi) const override
-            { return ((mi.type() == m_mType) && !mi.isLocked()); }
-            CSwordModuleInfo::ModuleType m_mType;
-        };
 
         /**
         * A new empty widget. updateMenu() is needed to update the label, menu items etc.

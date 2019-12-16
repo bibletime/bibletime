@@ -19,6 +19,7 @@
 #include <QToolTip>
 #include <QSizePolicy>
 #include <QString>
+#include "../../backend/btmoduletreeitem.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
@@ -184,6 +185,20 @@ void BtTextWindowHeaderWidget::populateMenu() {
         if (!btConfig().value<bool>(BookshelfShowHiddenKey, false)) {
             filters.append(&hiddenFilter);
         }
+
+        /* Filter out modules of wrong type from buttons module list. See
+           populateMenu() and BTModuleTreeItem. */
+        struct TypeFilter: public BTModuleTreeItem::Filter {
+            TypeFilter(CSwordModuleInfo::ModuleType t)
+                : m_mType(t)
+            {}
+
+            bool filter(CSwordModuleInfo const & mi) const override
+            { return ((mi.type() == m_mType) && !mi.isLocked()); }
+
+            CSwordModuleInfo::ModuleType const m_mType;
+        };
+
         TypeFilter typeFilter(m_moduleType);
         filters.append(&typeFilter);
 
