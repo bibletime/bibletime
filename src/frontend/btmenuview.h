@@ -136,11 +136,13 @@ class BtMenuView: public QMenu {
         void slotAboutToShow();
         void slotActionTriggered(QAction *action);
 
-    protected:
+    private: /* Fields: */
+
         QAbstractItemModel *m_model;
         QPersistentModelIndex m_parentIndex;
         QActionGroup *m_actions;
         QMap<QAction *, QPersistentModelIndex> m_indexMap;
+
 };
 
 #endif // BTMENUVIEW_H
