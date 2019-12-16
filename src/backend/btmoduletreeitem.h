@@ -112,7 +112,7 @@ class BTModuleTreeItem {
         * (by default CSwordBackend::instance()()->moduleList() is used).
         */
         BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
-                         BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = nullptr);
+                         BTModuleTreeItem::Grouping grouping);
 
         /** When the root item is deleted the whole tree is deleted. */
         ~BTModuleTreeItem();

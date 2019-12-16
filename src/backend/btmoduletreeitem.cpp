@@ -23,19 +23,14 @@
 BTModuleTreeItem::Filter::~Filter() noexcept = default;
 
 //This ctor creates the root item and the tree.
-BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules)
+BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping)
         : m_moduleInfo(nullptr),
         m_firstChild(nullptr),
         m_next(nullptr),
         m_type(BTModuleTreeItem::Root),
         m_category(CSwordModuleInfo::UnknownCategory),
         m_grouping (grouping) {
-    if (modules) {
-        m_originalModuleList = *modules;
-    }
-    else {
-        m_originalModuleList = CSwordBackend::instance()->moduleList();
-    }
+    m_originalModuleList = CSwordBackend::instance()->moduleList();
     //populate the tree with groups/modules
     create_tree(filters);
 }
