@@ -50,7 +50,8 @@ void BtOpenWorkActionMenu::retranslateUi() {
                                     "this menu."));
 }
 
-void BtOpenWorkActionMenu::postBuildMenu() {
+void BtOpenWorkActionMenu::postBuildMenu(QActionGroup * actions) {
+    Q_UNUSED(actions);
     addSeparator();
     m_groupingMenu = new BtBookshelfGroupingMenu(false, this);
 

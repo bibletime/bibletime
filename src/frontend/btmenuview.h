@@ -98,7 +98,7 @@ class BtMenuView: public QMenu {
           is unset after this method returns, the menu is not populated with data from the
           item model.
         */
-        virtual void preBuildMenu();
+        virtual void preBuildMenu(QActionGroup * actions);
 
         /**
           This method is called by BtMenuView after populating itself with data from the
@@ -106,7 +106,7 @@ class BtMenuView: public QMenu {
           Reimplement this method to add any menus/actions to this menu after the items of
           the menu. The default implementation does nothing.
         */
-        virtual void postBuildMenu();
+        virtual void postBuildMenu(QActionGroup * actions);
 
         /**
           This method is called by BtMenuView to initialize an action to add to this menu. If

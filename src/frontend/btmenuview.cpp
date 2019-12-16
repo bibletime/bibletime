@@ -43,11 +43,11 @@ void BtMenuView::setParentIndex(const QModelIndex &parentIndex) {
     m_parentIndex = parentIndex;
 }
 
-void BtMenuView::preBuildMenu() {
+void BtMenuView::preBuildMenu(QActionGroup *) {
     // Intentionally empty. Reimplement in subclass if needed.
 }
 
-void BtMenuView::postBuildMenu() {
+void BtMenuView::postBuildMenu(QActionGroup *) {
     // Intentionally empty. Reimplement in subclass if needed.
 }
 
@@ -176,18 +176,15 @@ void BtMenuView::slotAboutToShow() {
     // leads to executing a deleted action and a crash. It is much safer
     // to remove the menus here.
     removeMenus();
-    delete m_actions;
-    m_actions = nullptr;
     m_indexMap.clear();
 
-    preBuildMenu();
+    delete m_actions;
+    m_actions = m_model ? new QActionGroup(this) : nullptr;
 
-    if (m_model != nullptr) {
-        m_actions = new QActionGroup(this);
-
+    preBuildMenu(m_actions);
+    if (m_model)
         buildMenu(this, m_parentIndex);
-    }
-    postBuildMenu();
+    postBuildMenu(m_actions);
 }
 
 void BtMenuView::removeMenus() {
