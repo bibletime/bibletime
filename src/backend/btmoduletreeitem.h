@@ -72,6 +72,7 @@ class BTModuleTreeItem {
         *    BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
         */
         struct Filter {
+            virtual ~Filter() noexcept;
             virtual bool filter(CSwordModuleInfo const &) const = 0;
         };
 

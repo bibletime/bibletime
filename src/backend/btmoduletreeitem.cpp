@@ -20,6 +20,8 @@
 #include "../util/tool.h"
 
 
+BTModuleTreeItem::Filter::~Filter() noexcept = default;
+
 //This ctor creates the root item and the tree.
 BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules)
         : m_moduleInfo(nullptr),
