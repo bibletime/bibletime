@@ -323,6 +323,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 }
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
+    BT_ASSERT(index <= m_modules.size());
     m_modules.insert(index, module);
     displayWidget()->setModules(m_modules);
     lookup();
@@ -331,6 +332,7 @@ void CDisplayWindow::slotAddModule(int index, QString module) {
 }
 
 void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
+    BT_ASSERT(index < m_modules.size());
     m_modules.replace(index, newModule);
     displayWidget()->setModules(m_modules);
     lookup();
@@ -339,6 +341,7 @@ void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
 }
 
 void CDisplayWindow::slotRemoveModule(int index) {
+    BT_ASSERT(index < m_modules.size());
     m_modules.removeAt(index);
     displayWidget()->setModules(m_modules);
     lookup();
