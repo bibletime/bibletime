@@ -15,82 +15,57 @@
 
 #include <QToolButton>
 
+#include <QString>
+#include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
-class BtModuleChooserBar;
-class BTModuleTreeItem;
-class QMenu;
-class QAction;
-
-/**
-* A toolbar button for choosing a module in a window. When user selects a module,
-* button sends a signal. This button needs to get a signal back after a window
-* module list has been changed. Only then the button will be updated.
-* See BtModuleChooserBar.
+/* A toolbar button for choosing a module in a window. When user selects a
+   module, button sends a signal. This button needs to get a signal back after
+   a window module list has been changed. Only then the button will be updated.
+   \see BtModuleChooserBar.
 */
-class BtModuleChooserButton : public QToolButton  {
+class BtModuleChooserButton: public QToolButton {
+
         Q_OBJECT
-    public:
 
-        /**
-        * A new empty button. updateMenu() is needed to update the icon, menu items etc.
+    public: /* Methods: */
+
+        /** \brief Constructs an new empty button.
+            \note updateMenu() is needed to update the icon, menu items etc.
         */
-        BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype);
+        BtModuleChooserButton(CSwordModuleInfo::ModuleType mtype,
+                              QWidget * parent = nullptr);
 
-        // /** Returns the module name this button represents. Not needed?*/
-        //QString module();
-        // /** Returns the index used for this button.*/
-        //int getIndex() const;
-        // /** Updates existing menu items, setting their states.*/
-        //void updateMenuItems();
-
-    public:
-        /**
-        * Called after the window module list has changed. Updates the existing menu items
-        * but doesn't add or remove them if the menu exists.
-        * If the menu doesn't exist, creates it first and then updates it.
-        * Updates also the icon.
-        */
-        void updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
-
-        /** Creates the menu from scratch and updates the items using updateMenu().*/
-        void recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
+        void updateMenu(QStringList newModulesToUse,
+                        QString thisModule,
+                        int newIndex,
+                        int leftLikeModules);
 
     signals:
-        /** User selected a module from menu to replace another module*/
+
+        /** User selected a module from menu to replace another module. */
         void sigModuleReplace ( int index, QString newModule );
-        /** User selected a module from menu to add */
+
+        /** User selected a module from menu to add. */
         void sigModuleAdd ( int index, QString module );
-        /** User selected a module from menu to be removed */
+
+        /** User selected a module from menu to be removed. */
         void sigModuleRemove ( int index );
 
     private slots:
-        /** Handle the action signal from the menu.*/
-        void moduleChosen(QAction* action );
+
+        /** Handle the action signal from the menu. */
+        void moduleChosen(CSwordModuleInfo const * const module);
 
     private:
 
-        /** Returns the icon used for the current status.*/
+        /** Returns the icon used for the current status. */
         QIcon const & icon();
 
-        /**
-        * Populates the menu with language submenus and module items without setting
-        * their states.
-        */
-        void populateMenu();
-        /** Adds items to the menu recursively. */
-        void addItemToMenu(BTModuleTreeItem* item, QMenu* menu);
-
     private:
-        bool m_hasModule;
-        int m_id;
-        QAction* m_noneAction;
-        CSwordModuleInfo::ModuleType m_moduleType;
-        QString m_module;
 
-        QMenu* m_popup;
-        QList<QMenu*> m_submenus;
+        void * m_popup;
 };
 
 #endif

@@ -38,12 +38,12 @@ void BtModuleChooserBar::slotBackendModulesChanged() {
     // Recreate all menus from scratch:
     int const leftLikeModules = leftLikeParallelModules(m_modules);
     for (int i = 0; i < m_buttonList.count(); i++)
-        m_buttonList.at(i)->recreateMenu(m_modules,
-                                         (i >= m_modules.count())
-                                         ? QString()
-                                         : m_modules.at(i),
-                                         i,
-                                         leftLikeModules);
+        m_buttonList.at(i)->updateMenu(m_modules,
+                                       (i >= m_modules.count())
+                                       ? QString()
+                                       : m_modules.at(i),
+                                       i,
+                                       leftLikeModules);
 }
 
 void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
@@ -78,18 +78,25 @@ void BtModuleChooserBar::slotWindowModulesChanged() {
 }
 
 BtModuleChooserButton* BtModuleChooserBar::addButton() {
-    BtModuleChooserButton* b = new BtModuleChooserButton(this, m_moduleType);
+    BtModuleChooserButton* b = new BtModuleChooserButton(m_moduleType, this);
     QAction* a = addWidget(b);
     m_buttonList.append(b);
 
-    // the button sends signals directly to the window which then signals back when the module
-    // list has changed
+    /* The button sends signals directly to the window which then signals back
+       when the module list has changed. Changes to the module list may mean
+       deletion of the buttons, hence we must queue these signals. Otherwise,
+       when triggered via QAction::triggered(), a mouse release event on the
+       widget with that QAction may follow, but the widget might already have
+       been deleted. */
     BT_CONNECT(b,        &BtModuleChooserButton::sigModuleAdd,
-               m_window, &CReadWindow::slotAddModule);
+               m_window, &CReadWindow::slotAddModule,
+               Qt::QueuedConnection);
     BT_CONNECT(b,        &BtModuleChooserButton::sigModuleReplace,
-               m_window, &CReadWindow::slotReplaceModule);
+               m_window, &CReadWindow::slotReplaceModule,
+               Qt::QueuedConnection);
     BT_CONNECT(b,        &BtModuleChooserButton::sigModuleRemove,
-               m_window, &CReadWindow::slotRemoveModule);
+               m_window, &CReadWindow::slotRemoveModule,
+               Qt::QueuedConnection);
 
     a->setVisible(true);
     return b;

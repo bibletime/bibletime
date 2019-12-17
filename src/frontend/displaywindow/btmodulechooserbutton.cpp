@@ -12,206 +12,249 @@
 
 #include "btmodulechooserbutton.h"
 
-#include <QDebug>
-#include <QHash>
-#include <QMenu>
-#include <QString>
-#include <QToolButton>
-#include <QToolTip>
-#include "../../backend/btmoduletreeitem.h"
+#include <QAction>
+#include <QActionGroup>
+#include <QSortFilterProxyModel>
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/managers/cswordbackend.h"
+#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
-#include "btmodulechooserbar.h"
+#include "../btmenuview.h"
 
 
-BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)
-        : QToolButton(parent),
-        m_moduleType(mtype),
-        m_popup(nullptr) {
+namespace {
+
+struct SortModel final: public QSortFilterProxyModel {
+
+/* Methods: */
+
+    SortModel(CSwordModuleInfo::ModuleType moduleType,
+              QObject * parent = nullptr)
+        : QSortFilterProxyModel(parent)
+        , m_moduleType(moduleType)
+        , m_showHidden(btConfig().value<bool>("GUI/bookshelfShowHidden", false))
+        , m_sourceModel(new BtBookshelfTreeModel(this))
+    {
+        m_sourceModel->setSourceModel(CSwordBackend::instance()->model());
+        setSourceModel(m_sourceModel);
+    }
+
+    bool filterAcceptsRow(int sourceRow,
+                          QModelIndex const & sourceParentIndex)
+            const final override
+    {
+        auto const & model = *sourceModel();
+        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
+
+        // Do recursive hidden check, if configured:
+        if (!m_showHidden
+            && model.data(itemIndex,
+                          BtBookshelfModel::ModuleHiddenRole).toBool())
+            return false;
+
+        // Do other recursive checks:
+        return filterAcceptsRowNoHiddenCheck(sourceRow, sourceParentIndex);
+    }
+
+    bool filterAcceptsRowNoHiddenCheck(int sourceRow,
+                                       QModelIndex const & sourceParentIndex)
+            const
+    {
+        auto const & model =
+                *static_cast<BtBookshelfTreeModel *>(sourceModel());
+        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
+
+        // Accept subtrees if it has any accepted children:
+        if (auto const numRows = model.rowCount(itemIndex)) {
+            for (int i = 0; i < numRows; ++i)
+                if (filterAcceptsRowNoHiddenCheck(i, itemIndex))
+                    return true;
+            return false;
+        }
+
+        auto const * const module = model.module(itemIndex);
+        BT_ASSERT(module);
+        return (module->type() == m_moduleType)
+               || ((m_moduleType == CSwordModuleInfo::Bible)
+                   && (module->type() == CSwordModuleInfo::Commentary));
+    }
+
+/* Fields: */
+
+    CSwordModuleInfo::ModuleType const m_moduleType;
+    bool const m_showHidden;
+    BtBookshelfTreeModel * const m_sourceModel;
+
+};
+
+class MenuView final: public BtMenuView {
+
+public: /* Methods: */
+
+    MenuView(CSwordModuleInfo::ModuleType moduleType,
+             QWidget * parent = nullptr)
+        : BtMenuView(parent)
+        , m_sortedModel(new SortModel(moduleType, this))
+    {
+        setModel(m_sortedModel);
+    }
+
+    void preBuildMenu(QActionGroup * actionGroup) final override {
+        BT_ASSERT(actionGroup);
+        actionGroup->setExclusive(true);
+
+        m_noneAction = new QAction(this);
+        m_noneAction->setCheckable(true);
+        m_noneAction->setText(BtModuleChooserButton::tr("NONE"));
+        m_noneAction->setChecked(m_selectedModule.isEmpty());
+        m_noneAction->setDisabled(
+                    m_newModulesToUse.size() <= 1
+                    || (m_buttonIndex <= 0 && m_leftLikeModules <= 1));
+        m_noneAction->setActionGroup(actionGroup);
+        BT_CONNECT(m_noneAction, &QAction::triggered,
+                   [this]{ emit triggered(QModelIndex()); });
+        addAction(m_noneAction);
+
+        addSeparator();
+    }
+
+    QAction * newAction(QMenu * parentMenu,
+                        QModelIndex const & itemIndex) final override
+    {
+        auto * const action = BtMenuView::newAction(parentMenu, itemIndex);
+        auto const sourceItemIndex = m_sortedModel->mapToSource(itemIndex);
+        auto const * const module =
+                m_sortedModel->m_sourceModel->module(sourceItemIndex);
+        BT_ASSERT(module);
+        action->setCheckable(true);
+        auto const & moduleName = module->name();
+        action->setChecked(moduleName == m_selectedModule);
+        action->setDisabled((moduleName != m_selectedModule
+                             && m_newModulesToUse.contains(moduleName))
+                            || module->isLocked());
+
+        // Disable non-Bible modules on first button:
+        if (m_buttonIndex <= 0
+            && m_sortedModel->m_moduleType == CSwordModuleInfo::Bible
+            && module->category() != CSwordModuleInfo::Bibles)
+            action->setDisabled(true);
+
+        return action;
+    }
+
+    void update(QStringList newModulesToUse,
+                QString newSelectedModule,
+                int newButtonIndexIndex,
+                int newLeftLikeModules)
+    {
+        m_newModulesToUse = newModulesToUse;
+        m_selectedModule = newSelectedModule;
+        m_buttonIndex = newButtonIndexIndex;
+        m_leftLikeModules = newLeftLikeModules;
+    }
+
+public: /* Fields: */
+
+    SortModel * const m_sortedModel;
+    QAction * m_noneAction;
+    QStringList m_newModulesToUse;
+    QString m_selectedModule;
+    int m_buttonIndex;
+    int m_leftLikeModules;
+
+};
+
+} // anonymous namespace
+
+BtModuleChooserButton::BtModuleChooserButton(CSwordModuleInfo::ModuleType mtype,
+                                             QWidget * parent)
+    : QToolButton(parent)
+    , m_popup(new MenuView(mtype, this))
+{
+    setIcon(icon());
+    setMenu(static_cast<MenuView *>(m_popup));
     setPopupMode(QToolButton::InstantPopup);
-}
-
-void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
-    populateMenu();
-    updateMenu(newModulesToUse, thisModule, newIndex, leftLikeModules);
+    BT_CONNECT(static_cast<MenuView *>(m_popup),
+               &BtMenuView::triggered,
+               [this](QModelIndex const itemIndex) {
+                   auto const & sortedModel =
+                           *static_cast<MenuView const *>(
+                               m_popup)->m_sortedModel;
+                   moduleChosen(sortedModel.m_sourceModel->module(
+                                    sortedModel.mapToSource(itemIndex)));
+               });
 }
 
 QIcon const & BtModuleChooserButton::icon() {
-    switch (m_moduleType) {
+    auto const & popup = *static_cast<MenuView const *>(m_popup);
+    switch (popup.m_sortedModel->m_moduleType) {
         case CSwordModuleInfo::Bible:
-            return m_hasModule
-                    ? CResMgr::modules::bible::icon_unlocked()
-                    : CResMgr::modules::bible::icon_add();
+            return popup.m_selectedModule.isEmpty()
+                    ? CResMgr::modules::bible::icon_add()
+                    : CResMgr::modules::bible::icon_unlocked();
         case CSwordModuleInfo::Commentary:
-            return m_hasModule
-                   ? CResMgr::modules::commentary::icon_unlocked()
-                   : CResMgr::modules::commentary::icon_add();
+            return popup.m_selectedModule.isEmpty()
+                   ? CResMgr::modules::commentary::icon_add()
+                   : CResMgr::modules::commentary::icon_unlocked();
         case CSwordModuleInfo::Lexicon:
-            return m_hasModule
-                   ? CResMgr::modules::lexicon::icon_unlocked()
-                   : CResMgr::modules::lexicon::icon_add();
+            return popup.m_selectedModule.isEmpty()
+                   ? CResMgr::modules::lexicon::icon_add()
+                   : CResMgr::modules::lexicon::icon_unlocked();
         case CSwordModuleInfo::GenericBook:
-            return m_hasModule
-                   ? CResMgr::modules::book::icon_unlocked()
-                   : CResMgr::modules::book::icon_add();
+            return popup.m_selectedModule.isEmpty()
+                   ? CResMgr::modules::book::icon_add()
+                   : CResMgr::modules::book::icon_unlocked();
         default: //return as default the bible icon
             return CResMgr::modules::bible::icon_unlocked();
     }
 }
 
-void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
-    m_id = newIndex;
-
-    // create the menu if it doesn't exist
-    if (!m_popup)
-        populateMenu();
-
-    m_module = thisModule;
-    m_hasModule = !thisModule.isEmpty();
-
-    //All items are iterated and the state is changed properly
-    QListIterator<QMenu*> it(m_submenus);
-    while (it.hasNext()) {
-        QMenu* popup = it.next();
-        Q_FOREACH(QAction * const a, popup->actions()) {
-            auto const moduleName(a->property("BibleTimeModule").toString());
-            a->setChecked(moduleName == thisModule);
-            a->setDisabled(newModulesToUse.contains(moduleName));
-        }
+void BtModuleChooserButton::updateMenu(QStringList newModulesToUse,
+                                       QString newSelectedModule,
+                                       int newButtonIndex,
+                                       int newLeftLikeModules)
+{
+    if (newSelectedModule.isEmpty()) {
+        setToolTip(tr("Select an additional work"));
+    } else {
+        setToolTip(QString(tr("Select a work [%1]")).arg(newSelectedModule));
     }
-    m_noneAction->setChecked(!m_hasModule);
-    setIcon(icon());
-
-    if (m_hasModule) {
-        setToolTip( QString(tr("Select a work [%1]")).arg(m_module) );
-    }
-    else {
-        setToolTip( tr("Select an additional work") );
-    }
-    bool disableNone = false;
-    if (newModulesToUse.count() == 1 ||
-        (newIndex == 0 && leftLikeModules == 1))
-        disableNone = true;
-    m_noneAction->setDisabled(disableNone);
-
-    // Disable non-Bible categories on first button
-    if (m_moduleType == CSwordModuleInfo::Bible && m_id == 0) {
-        QList<QAction*> actions = m_popup->actions();
-        for (int i=0; i<actions.count(); i++) {
-            QAction* action = actions.at(i);
-            QString text = action->text();
-            if (text != QObject::tr("Bibles")) {
-                action->setDisabled(true);
-            }
-        }
+    static_cast<MenuView *>(m_popup)->update(newModulesToUse,
+                                             newSelectedModule,
+                                             newButtonIndex,
+                                             newLeftLikeModules);
+    if (auto const * const module =
+        CSwordBackend::instance()->findModuleByName(newSelectedModule))
+    {
+        setIcon(module->moduleIcon());
+    } else {
+        setIcon(icon());
     }
 }
 
 /** Is called after a module was selected in the popup */
-void BtModuleChooserButton::moduleChosen( QAction* action ) {
-    auto modProperty(action->property("BibleTimeModule"));
-    if (!modProperty.isValid()) { // note: this is for m_popup, the toplevel!
-        if (m_hasModule) {
-            qDebug() << "remove module" << m_id;
-            emit sigModuleRemove(m_id);
-            return;
+void BtModuleChooserButton::moduleChosen(
+        CSwordModuleInfo const * const newModule)
+{
+    auto & popup = *static_cast<MenuView *>(m_popup);
+    // If no module was previously selected:
+    if (popup.m_selectedModule.isEmpty()) {
+        if (newModule) {
+            popup.m_selectedModule = newModule->name();
+            setIcon(newModule->moduleIcon());
+            emit sigModuleAdd(popup.m_buttonIndex, newModule->name());
         }
-        else {
-            // nothing else is done but the item must be set to checked
-            // lest it change to unchecked
-            action->setChecked(true);
-        }
-    }
-    else {
-        if (!m_hasModule) {
-            emit sigModuleAdd(m_id + 1, modProperty.toString());
-            return;
-        }
-        emit sigModuleReplace(m_id, modProperty.toString());
-    }
-}
-
-
-void BtModuleChooserButton::populateMenu() {
-    qDeleteAll(m_submenus);
-    m_submenus.clear();
-    delete m_popup;
-    m_popup = new QMenu(this);
-
-    m_noneAction = m_popup->addAction(tr("NONE"));
-    m_noneAction->setCheckable(true);
-    if (m_module.isEmpty()) m_noneAction->setChecked(true);
-
-    m_popup->addSeparator();
-    BT_CONNECT(m_popup, &QMenu::triggered,
-               this,    &BtModuleChooserButton::moduleChosen);
-    setMenu(m_popup);
-
-
-    // ******* Add languages and modules ********
-
-    // Filters: add only non-hidden and right type
-    BTModuleTreeItem::HiddenOff hiddenFilter;
-    QList<BTModuleTreeItem::Filter*> filters;
-    if (!btConfig().value<bool>("GUI/bookshelfShowHidden", false)) {
-        filters.append(&hiddenFilter);
-    }
-
-    /* Filter out modules of wrong type from buttons module list. See
-       populateMenu() and BTModuleTreeItem. */
-    struct TypeFilter: public BTModuleTreeItem::Filter {
-        TypeFilter(CSwordModuleInfo::ModuleType t)
-            : m_mType(t)
-        {}
-
-        bool filter(CSwordModuleInfo const & mi) const override
-        { return ((mi.type() == m_mType) && !mi.isLocked()); }
-
-        CSwordModuleInfo::ModuleType const m_mType;
-    };
-
-    TypeFilter typeFilter(m_moduleType);
-    filters.append(&typeFilter);
-
-    if (m_moduleType == CSwordModuleInfo::Bible) {
-      BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
-        QList<BTModuleTreeItem::Filter*> filters2;
-        if (!btConfig().value<bool>("GUI/bookshelfShowHidden", false)) {
-            filters2.append(&hiddenFilter);
-        }
-        TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
-        filters2.append(&typeFilter2);
-        root.add_items(filters2);
-        // add all items recursively
-        addItemToMenu(&root, m_popup);
-    }
-    else {
-        BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-        addItemToMenu(&root, m_popup);
-    }
-}
-
-void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
-    Q_FOREACH(BTModuleTreeItem * const i, item->children()) {
-        if (i->type() == BTModuleTreeItem::Language ||
-            i->type() == BTModuleTreeItem::Category ) {
-            // argument menu was m_popup, create and add a new lang menu to it
-            QMenu* langMenu = new QMenu(i->text(), this);
-            menu->addMenu(langMenu);
-            m_submenus.append(langMenu);
-            // add the module items to the lang menu
-            addItemToMenu(i, langMenu);
-        }
-        else {
-            // item must be module, create and add it to the lang menu
-            QString name(i->text());
-            QAction* modItem = new QAction(name, menu);
-            modItem->setProperty("BibleTimeModule", name);
-            modItem->setCheckable(true);
-            menu->addAction(modItem);
+    } else {
+        if (newModule) {
+            popup.m_selectedModule = newModule->name();
+            setIcon(newModule->moduleIcon());
+            emit sigModuleReplace(popup.m_buttonIndex, newModule->name());
+        } else {
+            popup.m_selectedModule.clear();
+            setIcon(icon());
+            emit sigModuleRemove(popup.m_buttonIndex);
         }
     }
 }
