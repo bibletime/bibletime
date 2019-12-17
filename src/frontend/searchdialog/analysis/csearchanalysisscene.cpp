@@ -234,10 +234,13 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 void CSearchAnalysisScene::saveAsHTML() {
     using RCI = CSwordModuleSearch::Results::const_iterator;
 
-    const QString fileName = QFileDialog::getSaveFileName(nullptr,
-                                                          tr("Save Search Analysis"),
-                                                          QString(),
-                                                          tr("XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)"));
+    auto const fileName =
+            QFileDialog::getSaveFileName(
+                nullptr,
+                tr("Save Search Analysis"),
+                QString(),
+                QObject::tr("HTML files") +" (*.html *.htm);;"
+                + QObject::tr("All files") + " (*)");
     if (fileName.isEmpty())
         return;
 
