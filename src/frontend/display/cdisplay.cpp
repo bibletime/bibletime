@@ -142,16 +142,16 @@ void CDisplay::copyByReferences() {
 bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part ) {
     //  qWarning("CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part  )");
     const QString content = text(format, part);
-    QString filter = QString();
-
+    QString filter;
     switch (format) {
     case HTMLText:
-        filter = QObject::tr("HTML files") + QString(" (*.html *.htm);;") + QObject::tr("All files") + QString(" (*.*)");
+        filter = QObject::tr("HTML files") + " (*.html *.htm);;";
         break;
     case PlainText:
-        filter = QObject::tr("Text files") + QString(" (*.txt);;") + QObject::tr("All files") + QString(" (*.*)");
+        filter = QObject::tr("Text files") + " (*.txt);;";
         break;
     }
+    filter += QObject::tr("All files") + " (*)";
 
     const QString filename = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save document ..."), "", filter);
 
