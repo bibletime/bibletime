@@ -99,7 +99,7 @@ bool CExportManager::saveKey(CSwordKey const * const key,
             text = render->renderSingleKey(key->key(), modules);
         }
     }
-    util::tool::savePlainFile(filename, text, true, getCodec(format));
+    util::tool::savePlainFile(filename, text, getCodec(format));
     return true;
 }
 
@@ -134,7 +134,7 @@ bool CExportManager::saveKeyList(sword::ListKey const & l,
     }
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
-    util::tool::savePlainFile(filename, text, true, getCodec(format));
+    util::tool::savePlainFile(filename, text, getCodec(format));
     closeProgressDialog();
     return true;
 }
@@ -164,7 +164,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey *> const & list,
     };
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
-    util::tool::savePlainFile(filename, text, true, getCodec(format));
+    util::tool::savePlainFile(filename, text, getCodec(format));
     closeProgressDialog();
     return true;
 }

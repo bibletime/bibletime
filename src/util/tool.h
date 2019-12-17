@@ -38,7 +38,6 @@ namespace tool {
 */
 bool savePlainFile(const QString & filename,
                    const QString & text,
-                   bool forceOverwrite = false,
                    QTextCodec * fileCodec = QTextCodec::codecForLocale());
 
 /**

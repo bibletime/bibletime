@@ -36,7 +36,6 @@ namespace tool {
  */
 bool savePlainFile(const QString & filename,
                    const QString & text,
-                   const bool forceOverwrite,
                    QTextCodec * const fileCodec)
 {
     BT_ASSERT(fileCodec);
@@ -44,21 +43,8 @@ bool savePlainFile(const QString & filename,
 
     QFile saveFile(filename);
 
-    if (saveFile.exists()) {
-        if (!forceOverwrite
-            && message::showQuestion(nullptr, QObject::tr("Overwrite File?"),
-                QString::fromLatin1("<qt><b>%1</b><br/>%2</qt>")
-                .arg( QObject::tr("The file already exists.") )
-                .arg( QObject::tr("Do you want to overwrite it?")),
-                QMessageBox::Yes | QMessageBox::No,
-                QMessageBox::No) == QMessageBox::No)
-        {
-            return false;
-        }
-        else { //either the user chose yes or forceOverwrite is set
-            saveFile.remove();
-        }
-    }
+    if (saveFile.exists())
+        saveFile.remove();
 
     if (saveFile.open(QIODevice::ReadWrite)) {
         QTextStream textstream(&saveFile);

@@ -744,7 +744,6 @@ bool BtBookmarksModel::save(QString fileName, const QModelIndex & rootItem) {
 
     util::tool::savePlainFile(fileName,
                               serializedTree,
-                              true,
                               QTextCodec::codecForName("UTF-8"));
 
     if(d->m_saveTimer.isActive())
