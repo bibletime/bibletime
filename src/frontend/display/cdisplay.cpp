@@ -156,7 +156,7 @@ bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart p
     const QString filename = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save document ..."), "", filter);
 
     if (!filename.isEmpty()) {
-        util::tool::savePlainFile(filename, content);
+        util::tool::savePlainFile(filename, content, true);
     }
     return true;
 }
