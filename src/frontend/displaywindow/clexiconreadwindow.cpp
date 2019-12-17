@@ -330,7 +330,13 @@ void CLexiconReadWindow::saveAsHTML() {
 
 /** Saving the raw HTML for debugging purposes */
 void CLexiconReadWindow::saveRawHTML() {
-    QString savefilename = QFileDialog::getSaveFileName();
+    auto const savefilename =
+            QFileDialog::getSaveFileName(
+                nullptr,
+                QObject::tr("Save file"),
+                "",
+                QObject::tr("HTML files") + " (*.html *.htm);;"
+                + QObject::tr("All files") + " (*)");
     if (savefilename.isEmpty()) return;
     BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
     if (disp) {
