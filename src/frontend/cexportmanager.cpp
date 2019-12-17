@@ -408,26 +408,23 @@ bool CExportManager::printKeyList(QStringList const & list,
     return true;
 }
 
-/** Returns the string for the filedialogs to show the correct files. */
-const QString CExportManager::filterString( const Format format ) {
-    QString const allFiles = QObject::tr("All files") + QString(" (*.*)");
-    switch (format) {
-        case HTML:
-            return allFiles + QObject::tr("HTML files")
-                            + QString(" (*.html *.htm);;");
-        case Text:
-            return allFiles + QObject::tr("Text files") + QString(" (*.txt);;");
-        default:
-            return allFiles;
-    }
-}
-
 /** Returns a filename to save a file. */
 const QString CExportManager::getSaveFileName(const Format format) {
+    QString filter;
+    switch (format) {
+        case HTML:
+            filter = QObject::tr("HTML files") + " (*.html *.htm);;";
+            break;
+        case Text:
+            filter = QObject::tr("Text files") + " (*.txt);;";
+            break;
+    }
+    filter += QObject::tr("All files") + " (*)";
+
     return QFileDialog::getSaveFileName(nullptr,
                                         QObject::tr("Save file"),
                                         "",
-                                        filterString(format),
+                                        filter,
                                         nullptr);
 }
 

@@ -101,9 +101,6 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    /** \returns the string for the filedialogs to show the correct files.*/
-    const QString filterString(Format const format);
-
     /** \returns a filename to save a file. */
     const QString getSaveFileName(Format const format);
 
