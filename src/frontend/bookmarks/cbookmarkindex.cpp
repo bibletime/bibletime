@@ -47,6 +47,15 @@
 #include "../searchdialog/csearchdialog.h"
 
 
+namespace {
+
+QString fileDialogFilter() {
+    return QObject::tr("BibleTime bookmark files") + " (*.btb);;"
+           + QObject::tr("All files") + " (*)";
+}
+
+} // anonymous namespace
+
 CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
         : QTreeView{parent}
         , m_magTimer{this}
@@ -554,8 +563,7 @@ void CBookmarkIndex::exportBookmarks() {
                 nullptr,
                 QObject::tr("Export Bookmarks"),
                 "",
-                QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;")
-                + QObject::tr("All files") + QString(" (*.*)"));
+                fileDialogFilter());
     if (!fileName.isEmpty())
         m_bookmarksModel->save(fileName, currentIndex());
 }
@@ -568,9 +576,7 @@ void CBookmarkIndex::importBookmarks() {
                     nullptr,
                     QObject::tr("Import bookmarks"),
                     "",
-                    QObject::tr("BibleTime bookmark files")
-                    + QString(" (*.btb);;")
-                    + QObject::tr("All files") + QString(" (*.*)"));
+                    fileDialogFilter());
     if (!fileName.isEmpty())
         m_bookmarksModel->load(fileName, currentIndex());
 }
