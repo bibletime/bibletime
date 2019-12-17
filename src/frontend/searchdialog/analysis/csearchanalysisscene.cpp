@@ -312,7 +312,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>");
     text += "</p></body></html>";
 
-    util::tool::savePlainFile(fileName, text, QTextCodec::codecForName("UTF8"));
+    util::tool::savePlainFile(fileName, text, QTextCodec::codecForName("UTF-8"));
 }
 
 void CSearchAnalysisScene::resizeHeight(int height) {
