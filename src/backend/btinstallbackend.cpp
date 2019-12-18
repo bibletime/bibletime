@@ -184,7 +184,7 @@ bool setTargetList( const QStringList& targets ) {
 
     filename = util::directory::convertDirSeparators(filename);
     SWConfig conf(filename.toLocal8Bit());
-    conf.Sections.clear();
+    conf.getSections().clear();
 
 #ifdef Q_OS_WIN
     // On Windows, add the sword directory to the config file.
