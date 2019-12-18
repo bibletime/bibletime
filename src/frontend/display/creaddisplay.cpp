@@ -93,12 +93,14 @@ void CReadDisplay::print(const CDisplay::TextPart type,
             //        }
             mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
         }
+        break;
     }
 
     case AnchorWithText: {
         if (hasActiveAnchor()) {
             mgr.printByHyperlink( activeAnchor(), displayOptions, filterOptions );
         }
+        break;
     }
 
     default:
