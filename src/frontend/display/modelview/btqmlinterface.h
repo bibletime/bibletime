@@ -64,7 +64,6 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QString      fontName1               READ getFontName1   NOTIFY fontChanged)
     Q_PROPERTY(QString      fontName2               READ getFontName2   NOTIFY fontChanged)
     Q_PROPERTY(QString      fontName3               READ getFontName3   NOTIFY fontChanged)
-    Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(bool         pageDown                READ getPageDown   NOTIFY pageDownChanged)
     Q_PROPERTY(bool         pageUp                  READ getPageUp     NOTIFY pageUpChanged)
