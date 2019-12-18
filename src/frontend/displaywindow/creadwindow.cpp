@@ -169,4 +169,5 @@ bool CReadWindow::hasSelectedText() {
         auto model = v->qmlInterface()->textModel();
         return model->hasSelectedText();
     }
+    return false;
 }
