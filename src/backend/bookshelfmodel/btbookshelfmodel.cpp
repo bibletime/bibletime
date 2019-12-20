@@ -35,7 +35,7 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo * module, int role) const {
         case ModuleIconRole:
             return CSwordModuleInfo::moduleIcon(*module);
         case ModulePointerRole:
-            return qVariantFromValue(static_cast<void *>(module));
+            return QVariant::fromValue(static_cast<void *>(module));
         case ModuleCategoryRole:
             return QVariant::fromValue(module->category());
         case ModuleLanguageRole:
@@ -134,10 +134,6 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     endInsertRows();
 }
 
-void BtBookshelfModel::addModules(const QList<CSwordModuleInfo *> & modules) {
-    addModules(modules.toSet());
-}
-
 void BtBookshelfModel::addModules(BtModuleSet const & modules) {
     QList<CSwordModuleInfo *> newModules;
     Q_FOREACH(CSwordModuleInfo * const module, modules)
@@ -184,7 +180,7 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
 void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
                                      bool destroy)
 {
-    removeModules(modules.toSet(), destroy);
+    removeModules(QSet<CSwordModuleInfo *>(modules.begin(), modules.end()), destroy);
 }
 
 void BtBookshelfModel::removeModules(BtConstModuleSet const & modules, bool destroy){

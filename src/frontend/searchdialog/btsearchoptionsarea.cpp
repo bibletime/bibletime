@@ -275,13 +275,13 @@ QStringList BtSearchOptionsArea::getUniqueWorksList() {
             moduleSet.insert(name);
         }
     }
-    QStringList modules = moduleSet.toList();
+    QStringList modules = moduleSet.values();
     return modules;
 }
 
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
-    dlg->setCheckedModules(BtConstModuleSet::fromList(modules()));
+    dlg->setCheckedModules(QSet<CSwordModuleInfo const *>(modules().begin(), modules().end()));
     if (dlg->exec() == QDialog::Accepted) {
         BtConstModuleList ms;
         Q_FOREACH(CSwordModuleInfo const * const m, dlg->checkedModules())

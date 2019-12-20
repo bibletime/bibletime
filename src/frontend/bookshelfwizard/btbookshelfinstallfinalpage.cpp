@@ -113,7 +113,7 @@ void BtBookshelfInstallFinalPage::initializePage() {
 
     // Install works:
     auto & btWiz = btWizard();
-    m_modules = btWiz.selectedWorks().toList();
+    m_modules = btWiz.selectedWorks().values();
     m_thread = new BtInstallThread(m_modules, btWiz.installPath(), this);
     BT_CONNECT(m_thread, &BtInstallThread::preparingInstall,
                this,     &BtBookshelfInstallFinalPage::slotInstallStarted,

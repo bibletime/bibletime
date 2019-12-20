@@ -133,7 +133,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
             /* This case is just an optimization. */
             if (i->type() == Item::ITEM_MODULE) {
                 const ModuleItem & mi = *static_cast<const ModuleItem *>(i);
-                return qVariantFromValue(static_cast<void *>(&mi.moduleInfo()));
+                return QVariant::fromValue(static_cast<void *>(&mi.moduleInfo()));
             }
             return QVariant::fromValue(nullptr);
 

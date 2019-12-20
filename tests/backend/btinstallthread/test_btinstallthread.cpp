@@ -100,7 +100,7 @@ void test_BtInstallThread::removeModulesIfInstalled() {
             modules.append(module);
         }
     }
-    BtConstModuleSet moduleSet = modules.toSet();
+    BtConstModuleSet moduleSet = QSet<CSwordModuleInfo *>(modules.begin(), modules.end());
     CSwordBackend::instance()->uninstallModules(moduleSet);
 }
 
