@@ -16,13 +16,11 @@
 #include <QWidget>
 
 #include <QString>
-#include <QList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
 class BTModuleTreeItem;
 class BtTextWindowHeader;
-class QMenu;
 class QAction;
 class QLabel;
 class QToolButton;
@@ -38,8 +36,6 @@ class BtTextWindowHeaderWidget : public QWidget {
         Q_OBJECT
 
     public:
-        /** For internal use to mark the menu items */
-        enum TypeOfAction {RemoveAction, AddAction, ReplaceAction};
 
         /**
         * A new empty widget. updateMenu() is needed to update the label, menu items etc.
@@ -54,9 +50,6 @@ class BtTextWindowHeaderWidget : public QWidget {
         */
         void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
-        /** Creates the menu from scratch and updates the items using updateMenu().*/
-        void recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
-
     signals:
         /** User selected a module from menu to replace an existing module.*/
         void sigModuleReplace ( int index, QString newModule );
@@ -65,30 +58,15 @@ class BtTextWindowHeaderWidget : public QWidget {
         /** User selected a module from menu to be removed. */
         void sigModuleRemove ( int index );
 
-    private slots:
-        /** Handle the action signal from the menu.*/
-        void moduleChosen(QAction* action );
-
-    private:
-
-        /**
-        * Populates the menu with language submenus and module items without setting
-        * their states.
-        */
-        void populateMenu();
-        /** Adds items to the menu recursively. */
-        void addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType);
-
     private:
 
         int m_id;
         QAction* m_removeAction;
+        void * m_replaceMenu;
+        void * m_addMenu;
         CSwordModuleInfo::ModuleType m_moduleType;
-        QString m_module;
         QLabel* m_label;
         QToolButton* m_button;
-        QMenu* m_popup;
-        QList<QMenu*> m_submenus;
 };
 
 #endif

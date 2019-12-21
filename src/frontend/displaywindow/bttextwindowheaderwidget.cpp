@@ -18,27 +18,156 @@
 #include <QToolButton>
 #include <QToolTip>
 #include <QSizePolicy>
-#include <QString>
-#include "../../backend/btmoduletreeitem.h"
+#include <QSortFilterProxyModel>
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
+#include "../btmenuview.h"
 #include "bttextwindowheader.h"
 
 
+
 namespace {
-const QString BookshelfShowHiddenKey = "GUI/bookshelfShowHidden";
+
+struct SortModel final: public QSortFilterProxyModel {
+
+/* Methods: */
+
+    SortModel(CSwordModuleInfo::ModuleType moduleType,
+              QObject * parent = nullptr)
+        : QSortFilterProxyModel(parent)
+        , m_moduleType(moduleType)
+        , m_showHidden(btConfig().value<bool>("GUI/bookshelfShowHidden", false))
+        , m_sourceModel(new BtBookshelfTreeModel(this))
+    {
+        m_sourceModel->setSourceModel(CSwordBackend::instance()->model());
+        setSourceModel(m_sourceModel);
+    }
+
+    bool filterAcceptsRow(int sourceRow,
+                          QModelIndex const & sourceParentIndex)
+            const final override
+    {
+        auto const & model = *sourceModel();
+        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
+
+        // Do recursive hidden check, if configured:
+        if (!m_showHidden
+            && model.data(itemIndex,
+                          BtBookshelfModel::ModuleHiddenRole).toBool())
+            return false;
+
+        // Do other recursive checks:
+        return filterAcceptsRowNoHiddenCheck(sourceRow, sourceParentIndex);
+    }
+
+    bool filterAcceptsRowNoHiddenCheck(int sourceRow,
+                                       QModelIndex const & sourceParentIndex)
+            const
+    {
+        auto const & model =
+                *static_cast<BtBookshelfTreeModel *>(sourceModel());
+        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
+
+        // Accept subtrees if it has any accepted children:
+        if (auto const numRows = model.rowCount(itemIndex)) {
+            for (int i = 0; i < numRows; ++i)
+                if (filterAcceptsRowNoHiddenCheck(i, itemIndex))
+                    return true;
+            return false;
+        }
+
+        auto const * const module = model.module(itemIndex);
+        BT_ASSERT(module);
+        return (module->type() == m_moduleType)
+               || ((m_moduleType == CSwordModuleInfo::Bible)
+                   && (module->type() == CSwordModuleInfo::Commentary));
+    }
+
+/* Fields: */
+
+    CSwordModuleInfo::ModuleType const m_moduleType;
+    bool const m_showHidden;
+    BtBookshelfTreeModel * const m_sourceModel;
+
+};
+
+class MenuView final: public BtMenuView {
+
+public: /* Methods: */
+
+    MenuView(QString const & title,
+             CSwordModuleInfo::ModuleType moduleType,
+             bool disableNonBiblesOnFirstButton,
+             QWidget * parent = nullptr)
+        : BtMenuView(title, parent)
+        , m_sortedModel(new SortModel(moduleType, this))
+        , m_disableNonBiblesOnFirstButton(disableNonBiblesOnFirstButton)
+    {
+        setModel(m_sortedModel);
+    }
+
+    void preBuildMenu(QActionGroup * actionGroup) final override {
+        BT_ASSERT(actionGroup);
+        actionGroup->setExclusive(true);
+    }
+
+    QAction * newAction(QMenu * parentMenu,
+                        QModelIndex const & itemIndex) final override
+    {
+        auto * const action = BtMenuView::newAction(parentMenu, itemIndex);
+        auto const sourceItemIndex = m_sortedModel->mapToSource(itemIndex);
+        auto const * const module =
+                m_sortedModel->m_sourceModel->module(sourceItemIndex);
+        BT_ASSERT(module);
+        action->setCheckable(true);
+        auto const & moduleName = module->name();
+        action->setChecked(moduleName == m_selectedModule);
+        action->setDisabled((moduleName != m_selectedModule
+                             && m_newModulesToUse.contains(moduleName))
+                            || module->isLocked());
+
+        // Disable non-Bible modules on first button:
+        if (m_disableNonBiblesOnFirstButton
+            && m_buttonIndex <= 0
+            && m_sortedModel->m_moduleType == CSwordModuleInfo::Bible
+            && module->category() != CSwordModuleInfo::Bibles)
+            action->setDisabled(true);
+
+        return action;
+    }
+
+    void update(QStringList newModulesToUse,
+                QString newSelectedModule,
+                int newButtonIndexIndex,
+                int newLeftLikeModules)
+    {
+        m_newModulesToUse = newModulesToUse;
+        m_selectedModule = newSelectedModule;
+        m_buttonIndex = newButtonIndexIndex;
+        m_leftLikeModules = newLeftLikeModules;
+    }
+
+public: /* Fields: */
+
+    SortModel * const m_sortedModel;
+    bool const m_disableNonBiblesOnFirstButton;
+    QAction * m_noneAction;
+    QStringList m_newModulesToUse;
+    QString m_selectedModule;
+    int m_buttonIndex;
+    int m_leftLikeModules;
+
+};
+
 } // anonymous namespace
 
-const char* ActionType = "ActionType";
-const char * ModuleName = "ModuleName";
-
-BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype)
-        : QWidget(parent),
-        m_moduleType(mtype),
-        m_popup(nullptr) {
+BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent,
+                                                   CSwordModuleInfo::ModuleType mtype)
+        : QWidget(parent)
+{
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
@@ -55,6 +184,42 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
     m_button->setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
     m_button->setToolTip( tr("Add/remove/replace") );
 
+    auto * const popup  = new QMenu(m_button);
+    m_button->setMenu(popup);
+
+    m_removeAction = new QAction(tr("Remove"), popup);
+    m_removeAction->setIcon(CResMgr::displaywindows::general::icon_removeModule());
+    BT_CONNECT(m_removeAction, &QAction::triggered,
+               [this] { emit sigModuleRemove(m_id); });
+    popup->addAction(m_removeAction);
+
+    // Add Replace and Add menus, both have all modules in them
+    auto * const replaceMenu = new MenuView(tr("Replace"), mtype, true, popup);
+    replaceMenu->setIcon(CResMgr::displaywindows::general::icon_replaceModule());
+    BT_CONNECT(replaceMenu, qOverload<QModelIndex>(&BtMenuView::triggered),
+               [this](QModelIndex index) {
+                    auto const * menuView =
+                            static_cast<MenuView *>(m_replaceMenu);
+                    emit sigModuleReplace(
+                            m_id,
+                            menuView->m_sortedModel->data(index).toString());
+                });
+    popup->addMenu(replaceMenu);
+    m_replaceMenu = replaceMenu;
+
+    auto * const addMenu = new MenuView(tr("Add"), mtype, false, popup);
+    addMenu->setIcon(CResMgr::displaywindows::general::icon_addModule());
+    BT_CONNECT(addMenu, qOverload<QModelIndex>(&BtMenuView::triggered),
+               [this](QModelIndex index) {
+                    auto const * menuView =
+                            static_cast<MenuView *>(m_addMenu);
+                    emit sigModuleAdd(
+                            m_id + 1,
+                            menuView->m_sortedModel->data(index).toString());
+                });
+    popup->addMenu(addMenu);
+    m_addMenu = addMenu;
+
     layout->addWidget(m_button, 0, Qt::AlignLeft);
 
     auto * const separator = new QFrame(this);
@@ -62,47 +227,13 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
     layout->addWidget(separator);
 }
 
-void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int lefLikeModules) {
-    populateMenu();
-    updateWidget(newModulesToUse, thisModule, newIndex, lefLikeModules);
-}
-
-// don't remove yet, maybe we'll add icons to buttons...
-// const QString BtTextWindowHeaderWidget::iconName() {
-//     switch (m_moduleType) {
-//         case CSwordModuleInfo::Bible:
-//             return (m_hasModule) ? CResMgr::modules::bible::icon_unlocked : CResMgr::modules::bible::icon_add;
-//         case CSwordModuleInfo::Commentary:
-//             return (m_hasModule) ? CResMgr::modules::commentary::icon_unlocked : CResMgr::modules::commentary::icon_add;
-//         case CSwordModuleInfo::Lexicon:
-//             return m_hasModule ? CResMgr::modules::lexicon::icon_unlocked : CResMgr::modules::lexicon::icon_add;
-//         case CSwordModuleInfo::GenericBook:
-//             return m_hasModule ? CResMgr::modules::book::icon_unlocked : CResMgr::modules::book::icon_add;
-//         default: //return as default the bible icon
-//             return CResMgr::modules::bible::icon_unlocked;
-//     }
-// }
-
-void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
+void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse,
+                                            QString thisModule,
+                                            int newIndex,
+                                            int leftLikeModules)
+{
     m_label->setText(thisModule);
     m_id = newIndex;
-    // create the menu if it doesn't exist
-    if (!m_popup)
-        populateMenu();
-
-    m_module = thisModule;
-
-    //All items are iterated and the state is changed properly
-    QListIterator<QMenu*> it(m_submenus);
-    while (it.hasNext()) {
-        QMenu* popup = it.next();
-        Q_FOREACH(QAction * const a, popup->actions()) {
-            a->setChecked(a->property(ModuleName).toString() == thisModule);
-            a->setDisabled(
-                        newModulesToUse.contains(
-                            a->property(ModuleName).toString()));
-        }
-    }
 
     bool disableRemove = false;
     if (newModulesToUse.count() == 1 ||
@@ -110,139 +241,12 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
         disableRemove = true;
     m_removeAction->setDisabled(disableRemove);
 
-    // Disable non-Bible categories on left replace menu
-    if (m_moduleType == CSwordModuleInfo::Bible && m_id == 0) {
-        QList<QAction*> actionsType = m_popup->actions();
-        for (int t=0; t<actionsType.count(); t++) {
-            QAction* actionType = actionsType.at(t);
-            QString typeText = actionType->text();
-            if (typeText != QObject::tr("Replace"))
-                continue;
-            QMenu* menuType = actionType->menu();
-            if (menuType == nullptr)
-                continue;
-            QList<QAction*> actions = menuType->actions();
-            for (int i=0; i<actions.count(); i++) {
-                QAction* action = actions.at(i);
-                QString text = action->text();
-                if (text != QObject::tr("Bibles")) {
-                    action->setDisabled(true);
-                }
-            }
-        }
-    }
-}
-
-/** Is called after a module was selected in the popup */
-void BtTextWindowHeaderWidget::moduleChosen( QAction* action ) {
-    if (action->property(ActionType).toInt() == RemoveAction) { // note: this is for m_popup, the toplevel!
-        emit sigModuleRemove(m_id);
-        return;
-    }
-    if (action->property(ActionType).toInt() == AddAction) {
-        emit sigModuleAdd(m_id + 1, action->property(ModuleName).toString());
-        return;
-    }
-    if (action->property(ActionType).toInt() == ReplaceAction) {
-        emit sigModuleReplace(m_id, action->property(ModuleName).toString());
-    }
-}
-
-
-void BtTextWindowHeaderWidget::populateMenu() {
-    delete m_popup;
-    m_popup = new QMenu(m_button);
-
-    BT_CONNECT(m_popup, SIGNAL(triggered(QAction *)),
-               this,    SLOT(moduleChosen(QAction *)));
-    m_button->setMenu(m_popup);
-
-    m_removeAction = new QAction(tr("Remove"), m_popup);
-    m_removeAction->setProperty(ActionType, RemoveAction);
-    m_removeAction->setIcon(CResMgr::displaywindows::general::icon_removeModule());
-    m_popup->addAction(m_removeAction);
-
-    // Add Replace and Add menus, both have all modules in them
-    QMenu* replaceItem = new QMenu(tr("Replace"), m_popup);
-    replaceItem->setIcon(CResMgr::displaywindows::general::icon_replaceModule());
-    replaceItem->setProperty(ActionType, ReplaceAction);
-    m_popup->addMenu(replaceItem);
-
-    QMenu* addItem = new QMenu(tr("Add"), m_popup);
-    addItem->setProperty(ActionType, AddAction);
-    addItem->setIcon(CResMgr::displaywindows::general::icon_addModule());
-    m_popup->addMenu(addItem);
-
-    QList<QMenu*> toplevelMenus;
-    toplevelMenus.append(replaceItem);
-    toplevelMenus.append(addItem);
-
-    Q_FOREACH(QMenu * const menu, toplevelMenus) {
-        // ******* Add categories, languages and modules ********
-        // Filters: add only non-hidden, non-locked and correct type
-        BTModuleTreeItem::HiddenOff hiddenFilter;
-        QList<BTModuleTreeItem::Filter*> filters;
-        if (!btConfig().value<bool>(BookshelfShowHiddenKey, false)) {
-            filters.append(&hiddenFilter);
-        }
-
-        /* Filter out modules of wrong type from buttons module list. See
-           populateMenu() and BTModuleTreeItem. */
-        struct TypeFilter: public BTModuleTreeItem::Filter {
-            TypeFilter(CSwordModuleInfo::ModuleType t)
-                : m_mType(t)
-            {}
-
-            bool filter(CSwordModuleInfo const & mi) const override
-            { return ((mi.type() == m_mType) && !mi.isLocked()); }
-
-            CSwordModuleInfo::ModuleType const m_mType;
-        };
-
-        TypeFilter typeFilter(m_moduleType);
-        filters.append(&typeFilter);
-
-        TypeOfAction const typeOfAction =
-                static_cast<TypeOfAction>(menu->property(ActionType).toInt());
-        if (m_moduleType == CSwordModuleInfo::Bible) {
-            BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
-            QList<BTModuleTreeItem::Filter*> filters2;
-            if (!btConfig().value<bool>(BookshelfShowHiddenKey, false)) {
-                filters2.append(&hiddenFilter);
-            }
-            if (menu == addItem || menu == replaceItem) {
-                TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
-                filters2.append(&typeFilter2);
-                root.add_items(filters2);
-            }
-            addItemToMenu(&root, menu, typeOfAction);
-        }
-        else {
-            BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-            addItemToMenu(&root, menu, typeOfAction);
-        }
-    }
-}
-
-void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType) {
-    Q_FOREACH(BTModuleTreeItem * const i, item->children()) {
-        if (i->type() == BTModuleTreeItem::Language ||
-            i->type() == BTModuleTreeItem::Category) {
-            // argument menu was m_popup, create and add a new lang menu to it
-            QMenu* langMenu = new QMenu(i->text(), this);
-            menu->addMenu(langMenu);
-            m_submenus.append(langMenu);
-            // add the module items to the lang menu
-            addItemToMenu(i, langMenu, actionType);
-        }
-        else {
-            // item must be module, create and add it to the lang menu
-            QString name(i->text());
-            QAction* modItem = new QAction(name, menu);
-            modItem->setCheckable(true);
-            modItem->setProperty(ActionType, actionType);
-            modItem->setProperty(ModuleName, name);
-            menu->addAction(modItem);
-        }
-    }
+    static_cast<MenuView *>(m_replaceMenu)->update(newModulesToUse,
+                                                   thisModule,
+                                                   newIndex,
+                                                   leftLikeModules);
+    static_cast<MenuView *>(m_addMenu)->update(newModulesToUse,
+                                               thisModule,
+                                               newIndex,
+                                               leftLikeModules);
 }

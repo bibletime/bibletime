@@ -49,13 +49,12 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
 
     adjustWidgetCount();
 
-    //recreate all widgets from scratch
     int const leftLikeModules = leftLikeParallelModules(m_modules);
     for (int i = 0; i < m_widgetList.count(); i++)
-        m_widgetList.at(i)->recreateWidget(m_modules,
-                                           m_modules.at(i),
-                                           i,
-                                           leftLikeModules);
+        m_widgetList.at(i)->updateWidget(m_modules,
+                                         m_modules.at(i),
+                                         i,
+                                         leftLikeModules);
 }
 
 void BtTextWindowHeader::slotWindowModulesChanged() {
