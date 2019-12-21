@@ -66,6 +66,7 @@ class BtTextWindowHeaderWidget : public QWidget {
         BtModuleChooserMenu * m_replaceMenu;
         BtModuleChooserMenu * m_addMenu;
         CSwordModuleInfo::ModuleType m_moduleType;
+        QLabel* m_iconLabel;
         QLabel* m_label;
         QToolButton* m_button;
 };

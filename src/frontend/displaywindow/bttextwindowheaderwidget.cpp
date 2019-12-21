@@ -36,60 +36,63 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
 {
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
+    layout->addStretch(1);
+
+    m_iconLabel = new QLabel(this);
+    m_iconLabel->setAlignment(Qt::AlignCenter);
+    layout->addWidget(m_iconLabel);
 
     m_label = new QLabel("", this);
-    QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
-    m_label->setSizePolicy(sizePolicy);
     m_label->setStyleSheet("QLabel{font-weight:bold}");
-    layout->addWidget(m_label, 0, Qt::AlignRight);
+    layout->addWidget(m_label);
 
     m_button = new QToolButton( this );
-    m_button->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_button->setPopupMode( QToolButton::InstantPopup );
     m_button->setArrowType(Qt::NoArrow);
     m_button->setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
     m_button->setToolTip( tr("Add/remove/replace") );
 
     auto * const popup  = new QMenu(m_button);
+        m_removeAction = new QAction(tr("Remove"), popup);
+        m_removeAction->setIcon(
+                    CResMgr::displaywindows::general::icon_removeModule());
+        BT_CONNECT(m_removeAction, &QAction::triggered,
+                   [this] { emit sigModuleRemove(m_id); });
+        popup->addAction(m_removeAction);
+
+        // Add Replace and Add menus, both have all modules in them
+        m_replaceMenu =
+                new BtModuleChooserMenu(
+                    tr("Replace"),
+                    mtype,
+                    BtModuleChooserMenu::DisableNonBiblesOnFirstButton,
+                    popup);
+        m_replaceMenu->setIcon(
+                    CResMgr::displaywindows::general::icon_replaceModule());
+        BT_CONNECT(m_replaceMenu, &BtModuleChooserMenu::sigModuleChosen,
+                   [this](CSwordModuleInfo * const module) {
+                        BT_ASSERT(module);
+                        emit sigModuleReplace(m_id, module->name());
+                    });
+        popup->addMenu(m_replaceMenu);
+
+        m_addMenu =
+                new BtModuleChooserMenu(
+                    tr("Add"),
+                    mtype,
+                    BtModuleChooserMenu::DisableSelectedModule,
+                    popup);
+        m_addMenu->setIcon(CResMgr::displaywindows::general::icon_addModule());
+        BT_CONNECT(m_addMenu, &BtModuleChooserMenu::sigModuleChosen,
+                   [this](CSwordModuleInfo * const module) {
+                        BT_ASSERT(module);
+                        emit sigModuleAdd(m_id + 1, module->name());
+                    });
+        popup->addMenu(m_addMenu);
     m_button->setMenu(popup);
 
-    m_removeAction = new QAction(tr("Remove"), popup);
-    m_removeAction->setIcon(CResMgr::displaywindows::general::icon_removeModule());
-    BT_CONNECT(m_removeAction, &QAction::triggered,
-               [this] { emit sigModuleRemove(m_id); });
-    popup->addAction(m_removeAction);
-
-    // Add Replace and Add menus, both have all modules in them
-    m_replaceMenu =
-            new BtModuleChooserMenu(
-                tr("Replace"),
-                mtype,
-                BtModuleChooserMenu::DisableNonBiblesOnFirstButton,
-                popup);
-    m_replaceMenu->setIcon(
-                CResMgr::displaywindows::general::icon_replaceModule());
-    BT_CONNECT(m_replaceMenu, &BtModuleChooserMenu::sigModuleChosen,
-               [this](CSwordModuleInfo * const module) {
-                    BT_ASSERT(module);
-                    emit sigModuleReplace(m_id, module->name());
-                });
-    popup->addMenu(m_replaceMenu);
-
-    m_addMenu =
-            new BtModuleChooserMenu(
-                tr("Add"),
-                mtype,
-                BtModuleChooserMenu::DisableSelectedModule,
-                popup);
-    m_addMenu->setIcon(CResMgr::displaywindows::general::icon_addModule());
-    BT_CONNECT(m_addMenu, &BtModuleChooserMenu::sigModuleChosen,
-               [this](CSwordModuleInfo * const module) {
-                    BT_ASSERT(module);
-                    emit sigModuleAdd(m_id + 1, module->name());
-                });
-    popup->addMenu(m_addMenu);
-
-    layout->addWidget(m_button, 0, Qt::AlignLeft);
+    layout->addWidget(m_button);
+    layout->addStretch(1);
 
     auto * const separator = new QFrame(this);
     separator->setFrameShape(QFrame::VLine);
@@ -102,6 +105,10 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse,
                                             int leftLikeModules)
 {
     m_label->setText(thisModule);
+    if (auto const * const module =
+                CSwordBackend::instance()->findModuleByName(thisModule))
+        m_iconLabel->setPixmap(module->moduleIcon().pixmap(
+                                   m_label->fontMetrics().height()));
     m_id = newIndex;
 
     bool disableRemove = false;
