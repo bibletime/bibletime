@@ -513,7 +513,10 @@ QStringList CSwordBackend::swordDirList() const {
     // Add the private sword path to the set if not there already:
     swordDirSet << getPrivateSwordConfigPath();
 
-    return QStringList(swordDirSet.begin(), swordDirSet.end());
+    QStringList swordDirs;
+    for (auto dir: swordDirSet)
+        swordDirs.append(dir);
+    return swordDirs;
 }
 
 void CSwordBackend::deleteOrphanedIndices() {

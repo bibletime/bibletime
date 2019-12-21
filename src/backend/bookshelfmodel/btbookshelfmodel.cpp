@@ -180,7 +180,10 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
 void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
                                      bool destroy)
 {
-    removeModules(QSet<CSwordModuleInfo *>(modules.begin(), modules.end()), destroy);
+    QSet<CSwordModuleInfo *> moduleSet;
+    for (auto module: modules)
+        moduleSet.insert(module);
+    removeModules(moduleSet, destroy);
 }
 
 void BtBookshelfModel::removeModules(BtConstModuleSet const & modules, bool destroy){

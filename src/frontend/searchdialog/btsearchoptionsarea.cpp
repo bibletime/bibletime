@@ -281,7 +281,10 @@ QStringList BtSearchOptionsArea::getUniqueWorksList() {
 
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
-    dlg->setCheckedModules(QSet<CSwordModuleInfo const *>(modules().begin(), modules().end()));
+    QSet<const CSwordModuleInfo *> moduleSet;
+    for (const CSwordModuleInfo * module:modules())
+        moduleSet.insert(module);
+    dlg->setCheckedModules(moduleSet);
     if (dlg->exec() == QDialog::Accepted) {
         BtConstModuleList ms;
         Q_FOREACH(CSwordModuleInfo const * const m, dlg->checkedModules())
