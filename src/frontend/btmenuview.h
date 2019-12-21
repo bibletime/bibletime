@@ -44,7 +44,8 @@ class QActionGroup;
 class BtMenuView: public QMenu {
     Q_OBJECT
     public:
-        BtMenuView(QWidget *parent = nullptr);
+        BtMenuView(QWidget * parent = nullptr);
+        BtMenuView(QString const & title, QWidget * parent = nullptr);
         virtual ~BtMenuView();
 
         /**

@@ -17,8 +17,15 @@
 #include "../util/btconnect.h"
 
 
-BtMenuView::BtMenuView(QWidget *parent)
-    : QMenu(parent), m_model(nullptr), m_parentIndex(QModelIndex()), m_actions(nullptr)
+BtMenuView::BtMenuView(QWidget * parent)
+    : BtMenuView(QString(), parent)
+{}
+
+BtMenuView::BtMenuView(QString const & title, QWidget * parent)
+    : QMenu(title, parent)
+    , m_model(nullptr)
+    , m_parentIndex(QModelIndex())
+    , m_actions(nullptr)
 {
     BT_CONNECT(this, SIGNAL(aboutToShow()),
                this, SLOT(slotAboutToShow()));
