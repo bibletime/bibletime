@@ -20,6 +20,8 @@
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
+class BtModuleChooserMenu;
+
 /* A toolbar button for choosing a module in a window. When user selects a
    module, button sends a signal. This button needs to get a signal back after
    a window module list has been changed. Only then the button will be updated.
@@ -65,7 +67,7 @@ class BtModuleChooserButton: public QToolButton {
 
     private:
 
-        void * m_popup;
+        BtModuleChooserMenu * m_popup;
 };
 
 #endif

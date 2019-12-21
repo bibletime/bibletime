@@ -25,144 +25,9 @@
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../btmenuview.h"
+#include "btmodulechoosermenu.h"
 #include "bttextwindowheader.h"
 
-
-
-namespace {
-
-struct SortModel final: public QSortFilterProxyModel {
-
-/* Methods: */
-
-    SortModel(CSwordModuleInfo::ModuleType moduleType,
-              QObject * parent = nullptr)
-        : QSortFilterProxyModel(parent)
-        , m_moduleType(moduleType)
-        , m_showHidden(btConfig().value<bool>("GUI/bookshelfShowHidden", false))
-        , m_sourceModel(new BtBookshelfTreeModel(this))
-    {
-        m_sourceModel->setSourceModel(CSwordBackend::instance()->model());
-        setSourceModel(m_sourceModel);
-    }
-
-    bool filterAcceptsRow(int sourceRow,
-                          QModelIndex const & sourceParentIndex)
-            const final override
-    {
-        auto const & model = *sourceModel();
-        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
-
-        // Do recursive hidden check, if configured:
-        if (!m_showHidden
-            && model.data(itemIndex,
-                          BtBookshelfModel::ModuleHiddenRole).toBool())
-            return false;
-
-        // Do other recursive checks:
-        return filterAcceptsRowNoHiddenCheck(sourceRow, sourceParentIndex);
-    }
-
-    bool filterAcceptsRowNoHiddenCheck(int sourceRow,
-                                       QModelIndex const & sourceParentIndex)
-            const
-    {
-        auto const & model =
-                *static_cast<BtBookshelfTreeModel *>(sourceModel());
-        auto const itemIndex = model.index(sourceRow, 0, sourceParentIndex);
-
-        // Accept subtrees if it has any accepted children:
-        if (auto const numRows = model.rowCount(itemIndex)) {
-            for (int i = 0; i < numRows; ++i)
-                if (filterAcceptsRowNoHiddenCheck(i, itemIndex))
-                    return true;
-            return false;
-        }
-
-        auto const * const module = model.module(itemIndex);
-        BT_ASSERT(module);
-        return (module->type() == m_moduleType)
-               || ((m_moduleType == CSwordModuleInfo::Bible)
-                   && (module->type() == CSwordModuleInfo::Commentary));
-    }
-
-/* Fields: */
-
-    CSwordModuleInfo::ModuleType const m_moduleType;
-    bool const m_showHidden;
-    BtBookshelfTreeModel * const m_sourceModel;
-
-};
-
-class MenuView final: public BtMenuView {
-
-public: /* Methods: */
-
-    MenuView(QString const & title,
-             CSwordModuleInfo::ModuleType moduleType,
-             bool disableNonBiblesOnFirstButton,
-             QWidget * parent = nullptr)
-        : BtMenuView(title, parent)
-        , m_sortedModel(new SortModel(moduleType, this))
-        , m_disableNonBiblesOnFirstButton(disableNonBiblesOnFirstButton)
-    {
-        setModel(m_sortedModel);
-    }
-
-    void preBuildMenu(QActionGroup * actionGroup) final override {
-        BT_ASSERT(actionGroup);
-        actionGroup->setExclusive(true);
-    }
-
-    QAction * newAction(QMenu * parentMenu,
-                        QModelIndex const & itemIndex) final override
-    {
-        auto * const action = BtMenuView::newAction(parentMenu, itemIndex);
-        auto const sourceItemIndex = m_sortedModel->mapToSource(itemIndex);
-        auto const * const module =
-                m_sortedModel->m_sourceModel->module(sourceItemIndex);
-        BT_ASSERT(module);
-        action->setCheckable(true);
-        auto const & moduleName = module->name();
-        action->setChecked(moduleName == m_selectedModule);
-        action->setDisabled((moduleName != m_selectedModule
-                             && m_newModulesToUse.contains(moduleName))
-                            || module->isLocked());
-
-        // Disable non-Bible modules on first button:
-        if (m_disableNonBiblesOnFirstButton
-            && m_buttonIndex <= 0
-            && m_sortedModel->m_moduleType == CSwordModuleInfo::Bible
-            && module->category() != CSwordModuleInfo::Bibles)
-            action->setDisabled(true);
-
-        return action;
-    }
-
-    void update(QStringList newModulesToUse,
-                QString newSelectedModule,
-                int newButtonIndexIndex,
-                int newLeftLikeModules)
-    {
-        m_newModulesToUse = newModulesToUse;
-        m_selectedModule = newSelectedModule;
-        m_buttonIndex = newButtonIndexIndex;
-        m_leftLikeModules = newLeftLikeModules;
-    }
-
-public: /* Fields: */
-
-    SortModel * const m_sortedModel;
-    bool const m_disableNonBiblesOnFirstButton;
-    QAction * m_noneAction;
-    QStringList m_newModulesToUse;
-    QString m_selectedModule;
-    int m_buttonIndex;
-    int m_leftLikeModules;
-
-};
-
-} // anonymous namespace
 
 BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
         CSwordModuleInfo::ModuleType mtype,
@@ -195,31 +60,34 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
     popup->addAction(m_removeAction);
 
     // Add Replace and Add menus, both have all modules in them
-    auto * const replaceMenu = new MenuView(tr("Replace"), mtype, true, popup);
-    replaceMenu->setIcon(CResMgr::displaywindows::general::icon_replaceModule());
-    BT_CONNECT(replaceMenu, qOverload<QModelIndex>(&BtMenuView::triggered),
-               [this](QModelIndex index) {
-                    auto const * menuView =
-                            static_cast<MenuView *>(m_replaceMenu);
-                    emit sigModuleReplace(
-                            m_id,
-                            menuView->m_sortedModel->data(index).toString());
+    m_replaceMenu =
+            new BtModuleChooserMenu(
+                tr("Replace"),
+                mtype,
+                BtModuleChooserMenu::DisableNonBiblesOnFirstButton,
+                popup);
+    m_replaceMenu->setIcon(
+                CResMgr::displaywindows::general::icon_replaceModule());
+    BT_CONNECT(m_replaceMenu, &BtModuleChooserMenu::sigModuleChosen,
+               [this](CSwordModuleInfo * const module) {
+                    BT_ASSERT(module);
+                    emit sigModuleReplace(m_id, module->name());
                 });
-    popup->addMenu(replaceMenu);
-    m_replaceMenu = replaceMenu;
+    popup->addMenu(m_replaceMenu);
 
-    auto * const addMenu = new MenuView(tr("Add"), mtype, false, popup);
-    addMenu->setIcon(CResMgr::displaywindows::general::icon_addModule());
-    BT_CONNECT(addMenu, qOverload<QModelIndex>(&BtMenuView::triggered),
-               [this](QModelIndex index) {
-                    auto const * menuView =
-                            static_cast<MenuView *>(m_addMenu);
-                    emit sigModuleAdd(
-                            m_id + 1,
-                            menuView->m_sortedModel->data(index).toString());
+    m_addMenu =
+            new BtModuleChooserMenu(
+                tr("Add"),
+                mtype,
+                BtModuleChooserMenu::DisableSelectedModule,
+                popup);
+    m_addMenu->setIcon(CResMgr::displaywindows::general::icon_addModule());
+    BT_CONNECT(m_addMenu, &BtModuleChooserMenu::sigModuleChosen,
+               [this](CSwordModuleInfo * const module) {
+                    BT_ASSERT(module);
+                    emit sigModuleAdd(m_id + 1, module->name());
                 });
-    popup->addMenu(addMenu);
-    m_addMenu = addMenu;
+    popup->addMenu(m_addMenu);
 
     layout->addWidget(m_button, 0, Qt::AlignLeft);
 
@@ -242,12 +110,9 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse,
         disableRemove = true;
     m_removeAction->setDisabled(disableRemove);
 
-    static_cast<MenuView *>(m_replaceMenu)->update(newModulesToUse,
-                                                   thisModule,
-                                                   newIndex,
-                                                   leftLikeModules);
-    static_cast<MenuView *>(m_addMenu)->update(newModulesToUse,
-                                               thisModule,
-                                               newIndex,
-                                               leftLikeModules);
+    m_replaceMenu->update(newModulesToUse,
+                          thisModule,
+                          newIndex,
+                          leftLikeModules);
+    m_addMenu->update(newModulesToUse, thisModule, newIndex, leftLikeModules);
 }

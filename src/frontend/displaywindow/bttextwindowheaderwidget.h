@@ -19,10 +19,11 @@
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
-class BTModuleTreeItem;
+class BtModuleChooserMenu;
 class QAction;
 class QLabel;
 class QToolButton;
+
 
 /**
 * A widget for choosing a module in a window. Consists of a label and a button.
@@ -62,8 +63,8 @@ class BtTextWindowHeaderWidget : public QWidget {
 
         int m_id;
         QAction* m_removeAction;
-        void * m_replaceMenu;
-        void * m_addMenu;
+        BtModuleChooserMenu * m_replaceMenu;
+        BtModuleChooserMenu * m_addMenu;
         CSwordModuleInfo::ModuleType m_moduleType;
         QLabel* m_label;
         QToolButton* m_button;
