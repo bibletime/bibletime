@@ -98,7 +98,7 @@ BtModuleChooserMenu::BtModuleChooserMenu(
     , m_flags(flags)
 {
     setModel(static_cast<SortModel *>(m_sortedModel));
-    BT_CONNECT(this, qOverload<QModelIndex>(&BtMenuView::triggered),
+    BT_CONNECT(this, &BtMenuView::triggered,
                [this](QModelIndex const itemIndex) {
                     if (itemIndex.isValid()) {
                         auto const & sortedModel =
