@@ -164,9 +164,10 @@ public: /* Fields: */
 
 } // anonymous namespace
 
-BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent,
-                                                   CSwordModuleInfo::ModuleType mtype)
-        : QWidget(parent)
+BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
+        CSwordModuleInfo::ModuleType mtype,
+        QWidget * parent)
+    : QWidget(parent)
 {
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);

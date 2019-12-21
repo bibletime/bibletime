@@ -20,7 +20,6 @@
 
 
 class BTModuleTreeItem;
-class BtTextWindowHeader;
 class QAction;
 class QLabel;
 class QToolButton;
@@ -40,7 +39,8 @@ class BtTextWindowHeaderWidget : public QWidget {
         /**
         * A new empty widget. updateMenu() is needed to update the label, menu items etc.
         */
-        BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype);
+        BtTextWindowHeaderWidget(CSwordModuleInfo::ModuleType mtype,
+                                 QWidget * parent = nullptr);
 
     public:
         /**

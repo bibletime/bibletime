@@ -94,7 +94,8 @@ void BtTextWindowHeader::adjustWidgetCount(bool adjustToZero) {
 }
 
 BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
-    BtTextWindowHeaderWidget* w = new BtTextWindowHeaderWidget(this, m_moduleType);
+    BtTextWindowHeaderWidget * const w =
+            new BtTextWindowHeaderWidget(m_moduleType, this);
     layout()->addWidget(w);
     m_widgetList.append(w);
 
