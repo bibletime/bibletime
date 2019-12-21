@@ -26,7 +26,6 @@ class QMenu;
 class QAction;
 class QLabel;
 class QToolButton;
-class QFrame;
 
 /**
 * A widget for choosing a module in a window. Consists of a label and a button.
@@ -88,7 +87,6 @@ class BtTextWindowHeaderWidget : public QWidget {
         QString m_module;
         QLabel* m_label;
         QToolButton* m_button;
-        QFrame* m_separator;
         QMenu* m_popup;
         QList<QMenu*> m_submenus;
 };

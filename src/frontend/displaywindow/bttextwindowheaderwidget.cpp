@@ -57,9 +57,9 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
 
     layout->addWidget(m_button, 0, Qt::AlignLeft);
 
-    m_separator = new QFrame(this);
-    m_separator->setFrameShape(QFrame::VLine);
-    layout->addWidget(m_separator);
+    auto * const separator = new QFrame(this);
+    separator->setFrameShape(QFrame::VLine);
+    layout->addWidget(separator);
 }
 
 void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int lefLikeModules) {
