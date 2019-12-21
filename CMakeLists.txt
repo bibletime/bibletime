@@ -203,6 +203,7 @@ ENDIF()
 IF(NOT DEFINED BT_DATAROOTDIR)
     IF(APPLE)
         SET(BT_DATAROOTDIR "./BibleTime.app/Contents/share")
+        SET(BT_RESOURCEDIR "./BibleTime.app/Contents/Resources")
     ELSE()
         SET(BT_DATAROOTDIR "./share")
     ENDIF()
@@ -380,6 +381,8 @@ IF(APPLE)
   FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${SWORD_DATADIR}/sword/locales.d/")
+  INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns"
+        DESTINATION "${BT_RESOURCEDIR}/")
 ENDIF()
 
 

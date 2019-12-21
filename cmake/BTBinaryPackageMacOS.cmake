@@ -2,6 +2,7 @@ IF(APPLE)
     # Workaround: macdeployqt does not seem to set a proper rpath for the package,
     #   so we do this manually.
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES INSTALL_RPATH "@loader_path/../Frameworks")
+    SET_TARGET_PROPERTIES("bibletime" PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/Info.plist )
 
     IF (CMAKE_BUILD_TYPE STREQUAL "Release")
         # Note: building based on the Qt shipped by homebrew does not work currently (2018-06),
