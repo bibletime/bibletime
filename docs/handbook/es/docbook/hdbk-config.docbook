@@ -85,7 +85,7 @@ url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <para>Fonts can be installed from a number of sources:</para>
+        <para>Los tipos de letra se pueden instalar desde varias fuentes:</para>
         <itemizedlist>
           <listitem>
             <para>Su distribución *nix</para>

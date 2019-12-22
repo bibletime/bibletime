@@ -78,7 +78,7 @@ url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 INSTRUKCIJĄ</ulink>.</para>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <para>Fonts can be installed from a number of sources:</para>
+        <para>Šriftai gali būti įdiegti iš daugelio šaltinių:</para>
         <itemizedlist>
           <listitem>
             <para>Jūsų *nix distribucijos.</para>

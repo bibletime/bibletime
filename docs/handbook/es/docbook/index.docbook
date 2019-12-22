@@ -11,7 +11,7 @@
   <!ENTITY Shift 'Mayús'>
   <!ENTITY Ctrl 'Ctrl'>
   <!ENTITY Alt 'Alt'>
-  <!ENTITY Space 'Space'>
+  <!ENTITY Space 'Espacio'>
 
   <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
   <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
@@ -47,7 +47,7 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2019</year>  <holder>El Equipo &bibletime; </holder>
 </copyright>
 
   <legalnotice>
@@ -55,17 +55,18 @@
 &bibletime;.</para>
   </legalnotice>
 
-  <date>November 2019</date>
+  <date>December 2019</date>
 
-  <releaseinfo>2.11.2+</releaseinfo>
+  <releaseinfo>3.0.0+</releaseinfo>
 
   <abstract>
-    <para>&bibletime; is a completely free Bible study program. The program's user
-interface is built with the &qt; framework, which makes it run on several
-operating systems including Linux, Windows, FreeBSD and Mac OS X. The
-software uses the &sword; programming library to work with over 900 free
-Bible texts, commentaries, dictionaries and books in over 50 languages
-provided by the &cbs; and several other repositories.</para>
+    <para>&bibletime; es un programa de estudio bíblico completamente libre. La
+interfaz de usuario del programa está construida con el framework &qt;, lo
+que hace que se ejecute en varios sistemas operativos, incluidos Linux,
+Windows, FreeBSD y Mac OS X. El software utiliza la librería de programación
+&sword; para trabajar con más de 900 textos bíblicos gratuitos, comentarios,
+diccionarios y libros en más de 50 idiomas proporcionados por &cbs; y varios
+otros repositorios.</para>
   </abstract>
 
   <keywordset>

@@ -1,7 +1,7 @@
 <chapter id="hdbk-config">
-  <title>&bibletime; configureren</title>
-  <para>In deze sectie vindt u een overzicht, hoe &bibletime; te configureren. Dit
-kan gevonden worden onder <guimenu>instellingen</guimenu></para>
+  <title>Configuring &bibletime;</title>
+  <para>In this section you find an overview to configure &bibletime;, which can be
+found under <guimenu>Settings</guimenu> in the main menu.</para>
   <sect1 id="hdbk-config-bt">
     <title>Configure &bibletime; Dialog</title>
     <para>The &bibletime; user interface can be customized in many ways depending on
@@ -11,13 +11,12 @@ your needs. You can access the configuration dialog by selecting
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Tonen</guimenu>
+        <guimenu>Display</guimenu>
       </title>
-      <para>Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een
-keuze uit de volgende opties: 
+      <para>The startup behavior can be customized. Select from the following options: 
       <itemizedlist>
         <listitem>
-          <para>Toon opstartlogo</para>
+          <para>Show startup logo</para>
         </listitem>
       </itemizedlist></para>
       <para>Display templates define the rendering of text (colors, size etc.). Various
@@ -43,9 +42,9 @@ filters, you can control the appearance of the text.</para>
       <title>
         <guimenu>Languages</guimenu>
       </title>
-      <para>Hier kunt u specificeren welke talen gebruikt moeten worden voor de
-bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u
-voelt zich helemaal thuis.</para>
+      <para>Here you can specify which language should be used for the biblical
+booknames. Set this to your native language, if it is available, and you'll
+feel at home.</para>
 
       <para>By default, &bibletime; uses the default system display font. You can
 override this font if necessary. Some languages require special fonts to be
@@ -58,7 +57,7 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
           <phrase>Options Dialog - fonts</phrase>
         </textobject>
         <caption>
-          <para>De Opties dialoog - Lettertypen</para>
+          <para>The Options dialog - Fonts.</para>
         </caption>
       </mediaobject>
       <para>&bibletime; can now use all supported fonts.  As long as the works you are
@@ -73,7 +72,7 @@ supports many languages is Code2000. If no installed font can display the
 work you are interested in, try installing the localization package for that
 language.</para>
       <sect3 id="hdbk-config-bt-addfont">
-        <title>Lettertypen installeren</title>
+        <title>Installing fonts</title>
         <para>Detailed font installation instructions are outside the scope of this
 handbook. For further information you might want to refer to the <ulink
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
@@ -86,17 +85,17 @@ HOWTO</ulink>.</para>
             <para>Your *nix distribution.</para>
           </listitem>
           <listitem>
-            <para>De lokalisatiepakketten (localization packages) in uw distributie.</para>
+            <para>Your distribution's localization packages.</para>
           </listitem>
           <listitem>
             <para>An existing <trademark class="registered">Microsoft Windows</trademark>
 installation on the same computer.</para>
           </listitem>
           <listitem>
-            <para>Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream.</para>
+            <para>A font collection, such as are available from Adobe or Bitstream.</para>
           </listitem>
           <listitem>
-            <para>Online verzamelingen van lettertypen.</para>
+            <para>Online font collections.</para>
           </listitem>
         </itemizedlist>
         <para>Unicode fonts support more characters than other fonts, and some of these
@@ -104,15 +103,14 @@ fonts are available at no charge. None of available fonts includes all
 characters defined in the Unicode standard, so you may want to use different
 fonts for different languages.</para>
         <table id="hdbk-config-unicode-fonts-table">
-          <title>Unicode lettertypen</title>
+          <title>Unicode Fonts</title>
           <tgroup cols="2">
             <tbody>
               <row>
                 <entry>
                   <ulink url="http://code2000.net/CODE2000.ZIP"> Code2000</ulink>
                 </entry>
-                <entry>Misschien het beste gratis Unicode lettertype, welke een groot aantal
-karakters ondersteunt.</entry>
+                <entry>Perhaps the best free Unicode font, covering a wide range of characters.</entry>
               </row>
               <row>
                 <entry>
@@ -142,21 +140,19 @@ Crosswire's font directory</ulink>
 url="http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/">
 Bitstream CyberBit</ulink>
                 </entry>
-                <entry>Dekt bijna het gehele bereik van Unicode, maar kan &bibletime; vertragen
-door zijn omvang.</entry>
+                <entry>Covers almost the entire range of Unicode, but might slow &bibletime; down
+because of its size.</entry>
               </row>
               <row>
                 <entry>Clearlyu</entry>
-                <entry>Is inbegrepen in sommige distributies. Bevat Europese, Griekse, Hebreeuwse
-en Thaise karakters.</entry>
+                <entry>Included in some distributions. Contains European, Greek, Hebrew, Thai.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://fontforge.sourceforge.net/sfds/"> Caslon, Monospace,
 Cupola, Caliban</ulink>
                 </entry>
-                <entry>Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de
-bijbehorende website.</entry>
+                <entry>Partial coverage, see information on linked site.</entry>
               </row>
             </tbody>
           </tgroup>

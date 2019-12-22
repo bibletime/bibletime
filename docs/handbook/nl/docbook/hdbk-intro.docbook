@@ -1,5 +1,5 @@
 <chapter id="hdbk-intro">
-  <title>Introductie</title>
+  <title>Introduction</title>
   <sect1 id="hdbk-intro-about">
     <title>About &bibletime;</title>
 
@@ -18,11 +18,11 @@ url="http://www.crosswire.org/sword/develop/index.jsp"> developers
 section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
-      <title>Beschikbare modules</title>
+      <title>Available works</title>
       <para>Over 280 documents in 50 languages are available from the <ulink
 url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
         <varlistentry>
-          <term>Bijbels</term>
+          <term>Bibles</term>
           <listitem>
             <para>The full Bible text, with optional things like Strong's Numbers, headings
 and/or footnotes in the text.  Bibles are available in many languages, and
@@ -32,14 +32,14 @@ the most advanced section in the library of the &sword; project.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Boeken</term>
+          <term>Books</term>
           <listitem>
             <para>Books available include "Imitation of Christ", "Enuma Elish", and "Josephus:
 The Complete Works"</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Bijbelcommentaren</term>
+          <term>Commentaries</term>
           <listitem>
             <para>Commentaries available include classics like John Wesley's "Notes on the
 Bible", Matthew Henry's commentary and Luther's "Commentary on Galatians."
@@ -49,16 +49,15 @@ sections of the Bible.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Dagelijkse overdenkingen</term>
+          <term>Daily devotionals</term>
           <listitem>
-            <para>Veel mensen waarderen deze dagelijkse porties van Gods Woord. Onder de
-beschikbare modules bevinden zich Daily Light on the Daily Path (Dagelijks
-Licht op het Dagelijkse Pad) en de Losungen.</para>
+            <para>Many people appreciate these daily portions from God's word. Available works
+include Daily Light on the Daily Path, and the Losungen.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry>
-          <term>Lexicons/Woordenboeken</term>
+          <term>Lexicons/Dictionaries</term>
           <listitem>
             <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the
 International Standard Bible Encyclopaedia. Dictionaries available include
@@ -73,18 +72,18 @@ Bible.</para>
     </sect2>
 
     <sect2 id="hdbk-intro-motivation">
-      <title>Motivatie</title>
+      <title>Motivation</title>
       <para>Our desire is to serve God, and to do our part to help others grow in their
 relationship with Him. We have striven to make this a powerful, quality
 program, and still make it simple and intuitive to operate. It is our desire
 that God be praised, as He is the source of all good things.</para>
       <blockquote>
-        <attribution>Jakobus 1:17, NBG51</attribution>
-        <para>Iedere gave, die goed, en elk geschenk, dat volmaakt is, daalt van boven
-neder, van de Vader der lichten, bij wie geen verandering is of zweem van
-ommekeer.</para>
+        <attribution>James 1:17, NASB</attribution>
+        <para>Every good thing given and every perfect gift is from above, coming down
+from the Father of lights, with whom there is no variation or shifting
+shadow.</para>
       </blockquote>
-      <para>God zegene u wanneer u dit programma gebruikt.</para>
+      <para>God bless you as you use this program.</para>
     </sect2>
   </sect1>
 </chapter>

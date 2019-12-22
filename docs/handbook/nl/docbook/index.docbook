@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ASCII"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
 [
@@ -54,9 +54,9 @@
     <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
   </legalnotice>
 
-  <date>November 2019</date>
+  <date>December 2019</date>
 
-  <releaseinfo>2.11.2+</releaseinfo>
+  <releaseinfo>3.0.0+</releaseinfo>
 
   <abstract>
     <para>&bibletime; is a completely free Bible study program. The program's user

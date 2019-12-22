@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -687,7 +687,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
 "pressing Shift+Down multiple times. To pause scrolling press Space. To start "
 "scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more "
@@ -2612,12 +2612,12 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-msgid "<date>November 2019</date>"
+msgid "<date>December 2019</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>

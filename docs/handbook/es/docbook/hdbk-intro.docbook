@@ -19,8 +19,8 @@ desarolladores</ulink>  del proyecto  &sword; , &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Obras disponibles</title>
-      <para>Over 280 documents in 50 languages are available from the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+      <para>Sobre 280 documentos en 50 lenguajes están disponibles en <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  Estos incluyen: <variablelist>
         <varlistentry>
           <term>Biblias</term>
           <listitem>
@@ -68,8 +68,8 @@ Dictionary de Strong, Revised Unabridged Dictionary of the English Language
 1913 de Webster, Topical Bible de Nave.</para>
           </listitem>
         </varlistentry>
-      </variablelist> There are several other repositories that
-&bibletime; will load and use.
+      </variablelist> Existen varios otros repositorios que
+&bibletime; puede cargar y usar.
       </para>
     </sect2>
 

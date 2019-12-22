@@ -4,17 +4,18 @@
 #
 # Translators:
 # Gary Holmlund <garywholmlund@gmail.com>, 2018
+# Jaak Ristioja <jaak@ristioja.ee>, 2019
 # Pier Jose Gotta Perez <piegope@protonmail.com>, 2017
 # Roy Alvear <racl@fedoraproject.org>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2015
-# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010
+# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
-"PO-Revision-Date: 2018-06-08 00:18+0000\n"
-"Last-Translator: Gary Holmlund <garywholmlund@gmail.com>\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
+"PO-Revision-Date: 2019-12-22 00:12+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
 "Language-Team: Spanish (http://www.transifex.com/bibletime/bibletime/"
 "language/es/)\n"
 "Language: es\n"
@@ -211,10 +212,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
-#, fuzzy
-#| msgid "Fonts can be obtained from a number of sources:"
 msgid "Fonts can be installed from a number of sources:"
-msgstr "Las Fuentes pueden ser obtenidas desde un número de fuentes:"
+msgstr "Los tipos de letra se pueden instalar desde varias fuentes:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
@@ -551,20 +550,16 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
-#, fuzzy
-#| msgid ""
-#| "Over 200 documents in 50 languages are available from the <ulink url="
-#| "\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
-#| "type=\"variablelist\" id=\"0\"/>"
 msgid ""
 "Over 280 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
 "type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
-"Sobre 200 documentos en 50 idiomas están disponibles en <ulink url=\"http://"
-"www.crosswire.org\">&cbs;</ulink>.  Ellos incluyen: <placeholder type="
-"\"variablelist\" id=\"0\"/>"
+"Sobre 280 documentos en 50 lenguajes están disponibles en <ulink url="
+"\"http://www.crosswire.org\">&cbs;</ulink>.  Estos incluyen: <placeholder "
+"type=\"variablelist\" id=\"0\"/> Existen varios otros repositorios que "
+"&bibletime; puede cargar y usar."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:84
@@ -686,20 +681,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
-#, fuzzy
-#| msgid "Reading works"
 msgid "Opening works"
-msgstr "Lectura de obras"
+msgstr "Abriendo obras"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
-#, fuzzy
-#| msgid ""
-#| "To open a work from the bookshelf for reading, simply click with the "
-#| "<mousebutton>left mouse button</mousebutton> on the desired category "
-#| "(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
-#| "display its contents. Then just click on one of the works to open it for "
-#| "reading. A read window will appear in the Desk area."
 msgid ""
 "To open a work from the bookshelf for reading, simply double-click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -707,12 +693,12 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
-"Para abrir una obra de la biblioteca para lectura, simplemente haga clic con "
-"el <mousebutton>botón izquierdo del ratón</mousebutton> sobre la categoría "
-"deseada (Biblias, Comentarios, Léxicos, Libros, Devocionales o Glosarios) "
-"para visualizar su contenido. A continuación, simplemente haga clic en una "
-"de las obras para abrir esa lectura. Una ventana de lectura aparecerá en el "
-"área de Escritorio."
+"Para abrir una obra de la biblioteca para leer, simplemente haga doble-click "
+"con el <mousebutton>botón izquierdo del ratón</mousebutton> en la categoría "
+"deseada (Biblias, Comentarios, Diccionario Léxico, Libros, Devocionales o "
+"Glosarios) para mostrar su contenido. Luego, haga doble click en uno de las "
+"obras para abrirla y leerla. Aparecerá una ventana de lectura en el área de "
+"escritorio."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -907,18 +893,35 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
 msgid "Auto Scrolling"
-msgstr ""
+msgstr "Desplazamiento automático"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
+#, fuzzy
+#| msgid ""
+#| "The currently active window can be auto scrolled up or down.  Start "
+#| "scrolling by press Shift+Down. You can increasing the scrolling speed by "
+#| "pressing Shift+Down multiple times. To pause scrolling press Space. To "
+#| "start scrolling again at the previous speed press Space again. To slow "
+#| "down scrolling or scroll the other direction press Shift+Up one or more "
+#| "times. Pressing any other key or changing the active window will stop the "
+#| "scrolling."
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
 "pressing Shift+Down multiple times. To pause scrolling press Space. To start "
 "scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more times. "
 "Pressing any other key or changing the active window will stop the scrolling."
 msgstr ""
+"La ventana actualmente activa puede desplazarse automáticamente hacia arriba "
+"o hacia abajo. Comience a desplazarse presionando Shift+Abajo. Puede "
+"aumentar la velocidad de desplazamiento presionando Shift+Down varias veces. "
+"Para pausar el desplazamiento, presione la barra de Espacio. Para comenzar a "
+"desplazarse nuevamente a la velocidad anterior, presione la barra de Espacio "
+"nuevamente. Para ralentizar el desplazamiento o desplazarse en la otra "
+"dirección, presione Shift+Arriba una o más veces. Al presionar cualquier "
+"otra tecla o cambiar la ventana activa, se detendrá el desplazamiento."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:164
@@ -1150,20 +1153,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:286
-#, fuzzy
-#| msgid ""
-#| "You can use wildcards: '*' matches any number of characters, while '?' "
-#| "will match any single character. The use of brackets allows you to group "
-#| "your search terms, e.g. '(Jesus OR spirit) AND God'."
 msgid ""
 "You can use wildcards: '*' matches any number of characters, while '?' will "
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
-"Puede utilizar caracteres comodín: '*' coincide con cualquier número de "
-"caracteres, mientras que '?' coincidirá con cualquier carácter individual. "
-"El uso de paréntesis le permite agrupar los términos de búsqueda, por "
-"ejemplo, '(Jesús OR Espíritu) AND Dios'."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
@@ -1389,24 +1383,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Install works"
-msgstr "Instalar/actualizar obra(s)"
+msgstr "Instalar obras"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:404
-#, fuzzy
-#| msgid ""
-#| "With this facility, you can connect to a repository of works (called "
-#| "\"library\"), and transfer one or more works to your local Bookshelf. "
-#| "These libraries may be local (e.g. a &sword; CD), or remote (e.g. "
-#| "Crosswire's online repository of &sword; modules, or another site "
-#| "offering &sword; modules).  You can install other sources by clicking on "
-#| "<guibutton>Get list...</guibutton> when you have <guibutton>New "
-#| "Installation Source</guibutton> dialog open.  You can manage your "
-#| "libraries with <guibutton>Add library</guibutton> and <guibutton>Delete "
-#| "library</guibutton>."
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1415,15 +1396,6 @@ msgid ""
 "modules). &bibletime; will automatically maintain a list of remote libraries "
 "and the works available from them."
 msgstr ""
-"Con este servicio, puede conectarse a un repositorio de obras (llamado "
-"\"biblioteca\"), y la transferencia de una o más obras a su biblioteca "
-"local. Estas bibliotecas pueden ser locales (por ejemplo, un CD de &sword;), "
-"o remoto (por ejemplo, depósito en línea Crosswire de módulos &sword;, u "
-"otro sitio que ofrece módulos de &sword;). Puede instalar otras fuentes "
-"haciendo clic en <guibutton>Obtener lista...</guibutton> cuando haya de "
-"diálogo abiertos de <guibutton>Agregar nueva fuente</guibutton>. Puede "
-"administrar su biblioteca con la opción <guibutton>Agregar</guibutton> y "
-"<guibutton>Eliminar</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:413
@@ -1439,10 +1411,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Update works"
-msgstr "Instalar/actualizar obra(s)"
+msgstr "Actualizar obras"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:425
@@ -1454,26 +1424,16 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
-#, fuzzy
-#| msgid "Remove work(s)"
 msgid "Remove works"
-msgstr "Eliminar obra(s)"
+msgstr "Eliminar obras"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:433
-#, fuzzy
-#| msgid ""
-#| "This facility allows you to delete one or more of the works from your "
-#| "Bookshelf too free up disk space. Simply mark the items and click on "
-#| "<guibutton>Remove works</guibutton>."
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
-"Este servicio le permite borrar una o varias de las obras de su biblioteca "
-"también liberar espacio en disco. Simplemente marca los puntos y haga clic "
-"en <guibutton>Eliminar</guibutton>."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -3058,63 +3018,45 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1416
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Abajo</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Acerca de</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Desplazamiento automático "
+"hacia abajo</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Arriba</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Acerca de</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Desplazamiento automático "
+"hacia arriba</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Acerca de</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Pausar desplazamiento "
+"automático</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
@@ -3223,17 +3165,6 @@ msgstr "<interface>Administrador de biblioteca</interface>"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:52
-#, fuzzy
-#| msgid ""
-#| "<action>Modifies your Bookshelf</action>.  This dialog lets you modify "
-#| "your Bookshelf, add or delete works from your system.  It will only be "
-#| "shown if no default Bookshelf can be found.  Please see <link linkend="
-#| "\"hdbk-op-bookshelfmanager\">The Bookshelf Manager section</link> for "
-#| "further details. If you start off with an empty Bookshelf, it will be "
-#| "helpful to install at least one Bible, Commentary, Lexicon and one Book "
-#| "to get to know &bibletime;'s basic features quickly.  You can do this by "
-#| "clicking on the Refresh button.  You will be presented with a list of "
-#| "works that are available from the &cbs;"
 msgid ""
 "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -3244,15 +3175,15 @@ msgid ""
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
 msgstr ""
-"<action>Modifica su biblioteca</action>. Este cuadro de diálogo le permite "
-"modificar su biblioteca, añadir o eliminar obras a su sistema. Sólo se "
-"muestra si no tiene valor predeterminado la biblioteca. Por favor vea <link "
-"linkend=\"hdbk-op-bookshelfmanager\">la sección de Administración de "
-"Biblioteca</link> para más detalles. Si usted comienza con una biblioteca "
-"vacía, será útil para instalar al menos una Biblia, Comentario, léxico y "
-"reservar una para conocer las características &bibletime;  básicas "
-"rápidamente. Usted puede hacer esto haciendo clic en el botón Actualizar. Se "
-"le presentará con una lista de obras que están disponibles en la &cbs;"
+"<action>Modifica tu biblioteca</action>.  Este cuadro de diálogo le permite "
+"modificar su Biblioteca, agregar o eliminar obras de su sistema. Solo se "
+"mostrará si no se puede encontrar la biblioteca predeterminada. Por favor "
+"vea la sección <link linkend=\"hdbk-op-bookshelfmanager\">Administrador de "
+"biblioteca</link> para detalles futuros. Si comienza con una biblioteca "
+"vacía, será útil instalar al menos una Biblia, un comentario, léxico y un "
+"libro para conocer rápidamente las características básicas de &bibletime;.  "
+"Se le presentará una lista de obras disponibles en &cbs; y otros "
+"repositorios;"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:66
@@ -3313,7 +3244,7 @@ msgstr "Alt"
 #. type: Content of the Space entity
 #: docs/handbook/en/docbook/index.docbook:14
 msgid "Space"
-msgstr ""
+msgstr "Espacio"
 
 #. type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:24
@@ -3363,26 +3294,22 @@ msgstr "Abthorpe"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid "Gary"
-msgstr ""
+msgstr "Gary"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:45
 msgid "Holmlund"
-msgstr ""
+msgstr "Holmlund"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:49
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> "
-#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2016</year> <holder>El Equipo &bibletime;</holder> </"
-"copyright>"
+"<copyright> <year>1999-2019</year>  <holder>El Equipo &bibletime; </holder> "
+"</copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:55
@@ -3395,25 +3322,17 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
 #, fuzzy
-#| msgid "<date>January 2014</date>"
-msgid "<date>November 2019</date>"
-msgstr "<date>Enero 2014</date>"
+#| msgid "<date>November 2019</date>"
+msgid "<date>December 2019</date>"
+msgstr "<date>Noviembre de 2019</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:64
-#, fuzzy
-#| msgid ""
-#| "&bibletime; is a completely free Bible study program. The program's user "
-#| "interface is built with &qt; framework, which makes it run on several "
-#| "operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
-#| "software uses the &sword; programming library to work with over 200 free "
-#| "Bible texts, commentaries, dictionaries and books in over 50 languages "
-#| "provided by the &cbs;."
 msgid ""
 "&bibletime; is a completely free Bible study program. The program's user "
 "interface is built with the &qt; framework, which makes it run on several "
@@ -3422,20 +3341,18 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs; and several other repositories."
 msgstr ""
-"&bibletime; es un programa de estudio de la Biblia completamente libre. La "
-"programación de interfaz de usuario esta construida con el framework &qt;, "
-"lo que hace que se ejecute en varios sistemas operativos, incluyendo Linux, "
-"Windows, FreeBSD y Mac OS X. El software utiliza la biblioteca de "
-"programación &sword; para trabajar con más de 200 textos libres de la "
-"Biblia, comentarios, diccionarios y libros en más de 50 idiomas que ofrece "
-"el &cbs;."
+"&bibletime; es un programa de estudio bíblico completamente libre. La "
+"interfaz de usuario del programa está construida con el framework &qt;, lo "
+"que hace que se ejecute en varios sistemas operativos, incluidos Linux, "
+"Windows, FreeBSD y Mac OS X. El software utiliza la librería de programación "
+"&sword; para trabajar con más de 900 textos bíblicos gratuitos, comentarios, "
+"diccionarios y libros en más de 50 idiomas proporcionados por &cbs; y varios "
+"otros repositorios."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:74
-#, fuzzy
-#| msgid "Qt4"
 msgid "Qt5"
-msgstr "Qt4"
+msgstr "Qt5"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:75
@@ -3457,108 +3374,5 @@ msgstr "Crosswire"
 msgid "Help dialog"
 msgstr "Dialogo de Ayuda"
 
-#~ msgid ""
-#~ "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-#~ "faster than with a large font like <trademark class=\"registered"
-#~ "\">Bitstream Cyberbit</trademark>(about 12Mb)."
-#~ msgstr ""
-#~ "Si utiliza una fuente pequeña, como Clearlyu (unos 22kb), se ejecutará "
-#~ "&bibletime;más rápido que con una fuente grande como <trademark class="
-#~ "\"registered\">Bitstream Cyberbit</trademark>(unos 12Mb)."
-
-#~ msgid "Obtaining Fonts"
-#~ msgstr "Obteniendo Fuentes"
-
-#~ msgid ""
-#~ "If you open the personal commentary by clicking on its symbol in the "
-#~ "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens "
-#~ "in read mode. You will not be able to edit it in this mode. Should you "
-#~ "wish to write annotations into the personal commentary, you have to open "
-#~ "it with the <mousebutton>right</mousebutton> mouse button and then select "
-#~ "<guimenu>Edit this work</guimenu> and then either <guimenuitem>Plain "
-#~ "text</guimenuitem>(source code editor) or <guimenuitem>HTML</"
-#~ "guimenuitem>(basic gui wysiwyg editor)."
-#~ msgstr ""
-#~ "Si abre el comentario personal haciendo clic en su símbolo en la "
-#~ "biblioteca con el <mousebutton>botón izquierdo</mousebutton> del ratón, "
-#~ "se abre en modo de lectura. Usted no será capaz de editar en este modo. "
-#~ "Si desea escribir anotaciones en el comentario personal, tienes que "
-#~ "abrirlo con el <mousebutton>botón derecho</mousebutton> del ratón y "
-#~ "seleccione <guimenu>Editar</guimenu> y luego texto sin formato (editor de "
-#~ "código fuente) o HTML (gui básicos editor WYSIWYG)."
-
-#~ msgid ""
-#~ "If this is the first time you are starting &bibletime;, click on the "
-#~ "Refresh button to see a list of works provided by the &cbs;."
-#~ msgstr ""
-#~ "Si esta es la primera vez que está iniciando &bibletime;, haga clic en el "
-#~ "botón Actualizar para ver una lista de las obras provistas por la &cbs;."
-
-#~ msgid "Bookshelf path(s) setup"
-#~ msgstr "Ruta de instalación de la Biblioteca"
-
-#~ msgid ""
-#~ "Here you can specify where &bibletime; may store your Bookshelf on the "
-#~ "hard drive.  You can even store it in multiple directories. The default "
-#~ "is \"~/.sword/\" on *nix and \"C:\\Documents and Settings\\All Users"
-#~ "\\Application Data\\Sword\" for Windows."
-#~ msgstr ""
-#~ "Aquí puede especificar dónde &bibletime; puede almacenar su biblioteca en "
-#~ "el disco duro. Incluso puede guardarlo en varios directorios. El valor "
-#~ "predeterminado es \"~ /.sword/\" en *nix y \"C:\\Documents and Settings"
-#~ "\\All Users\\Application Data\\Sword\" en Windows."
-
-#~ msgid ""
-#~ "If you have a sword CD, but do not want to install all the works on the "
-#~ "hard disk, but use them directly from the CD, then you can add the path "
-#~ "to the CD as one of your bookshelf paths. When you start &bibletime;, it "
-#~ "will show all works on the CD if it is present."
-#~ msgstr ""
-#~ "Si tiene un CD de sword, pero no desea instalar todas las obras en el "
-#~ "disco duro, sino que se utilicen directamente desde el CD, entonces usted "
-#~ "puede agregar la ruta de acceso al CD como uno de los caminos de su "
-#~ "biblioteca. Al iniciar &bibletime;, mostrará todas las obras en el CD, si "
-#~ "está presente."
-
-#~ msgid ""
-#~ "To begin the installation or update process, select a library you want to "
-#~ "connect to and a local Bookshelf path to install the work(s) to. Then "
-#~ "click on <guibutton>Connect to library</guibutton>. &bibletime; will scan "
-#~ "the contents of the library and present you with a list of works that you "
-#~ "can add to your Bookshelf, or that you already have installed but are "
-#~ "available in a new version in the library, and thus can be updated. Then "
-#~ "you can mark all works that you want to install or update, and click on "
-#~ "<guibutton>Install works</guibutton>. They will then be transferred to "
-#~ "your Bookshelf."
-#~ msgstr ""
-#~ "Para empezar el proceso de instalación o actualización, seleccione una "
-#~ "biblioteca a la que desee conectarse y una ruta local para instalar la(s) "
-#~ "obra(s). Luego haga clic en <guibutton>Refrescar</guibutton>. &bibletime; "
-#~ "escaneará el contenido de la biblioteca y le presentará una lista de "
-#~ "obras que se pueden agregar a su biblioteca, o que ya han instalado, pero "
-#~ "están disponibles en una nueva versión en la biblioteca, y por lo tanto "
-#~ "se pueden actualizar. Entonces usted puede marcar todas las obras que "
-#~ "desea instalar o actualizar, y haga clic en <guibutton>Instalar</"
-#~ "guibutton>. Luego será trasladado a su biblioteca."
-
-#~ msgid "Search Indexes"
-#~ msgstr "Índices de Búsqueda"
-
-#~ msgid ""
-#~ "This option allows you to create new search indexes and cleanup orphaned "
-#~ "index files for removed works."
-#~ msgstr ""
-#~ "Esta opción le permite crear nuevos índices de búsqueda y limpieza de "
-#~ "archivos índice huérfanos de obras eliminadas."
-
-#~ msgid "Zoom out. This decreases the font size of read windows."
-#~ msgstr "Reducir. Esto disminuye el tamaño de la fuente de las ventanas."
-
-#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-
-#~ msgid "Zoom in. This increases the font size of read windows."
-#~ msgstr "Aumentar. Esto aumenta el tamaño de la fuente de las ventanas."
-
-#~ msgid "2.10.1"
-#~ msgstr "2.10.1"
+#~ msgid "2.11.2+"
+#~ msgstr "2.11.2+"

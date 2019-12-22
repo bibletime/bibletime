@@ -1063,21 +1063,21 @@ Administrar Biblioteca.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Shift;+Abajo</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
-down</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Desplazamiento automático
+hacia abajo</guimenuitem> </menuchoice>
             </entry>
           </row>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Shift;+Arriba</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
-up</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Desplazamiento automático
+hacia arriba</guimenuitem> </menuchoice>
             </entry>
           </row>
 
@@ -1086,8 +1086,8 @@ up</guimenuitem> </menuchoice>
               <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
-pause</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Pausar desplazamiento
+automático</guimenuitem> </menuchoice>
             </entry>
           </row>
 

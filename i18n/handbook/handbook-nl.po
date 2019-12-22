@@ -1,32 +1,25 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Dutch translations for PACKAGE package
+# Copyright (C) 2019 Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2019.
 #
-# Translators:
-# Gary Holmlund <garywholmlund@gmail.com>, 2018
-# Harald <dutchbrussels@gmail.com>, 2016
-# Harald <dutchbrussels@gmail.com>, 2016
-# Johan van der Lingen <johanlingen@gmail.com>, 2006
-# Johan van der Lingen <johanlingen@hotmail.com>, 2006
-# Martin Gruner <mg.pub@gmx.net>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
-"PO-Revision-Date: 2018-06-08 00:11+0000\n"
-"Last-Translator: Gary Holmlund <garywholmlund@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
-"nl/)\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
+"PO-Revision-Date: 2019-12-22 02:05+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:2
 msgid "Configuring &bibletime;"
-msgstr "&bibletime; configureren"
+msgstr ""
 
 #. type: Content of: <chapter><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:3
@@ -34,8 +27,6 @@ msgid ""
 "In this section you find an overview to configure &bibletime;, which can be "
 "found under <guimenu>Settings</guimenu> in the main menu."
 msgstr ""
-"In deze sectie vindt u een overzicht, hoe &bibletime; te configureren. Dit "
-"kan gevonden worden onder <guimenu>instellingen</guimenu>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
@@ -54,20 +45,18 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:18
 msgid "<guimenu>Display</guimenu>"
-msgstr "<guimenu>Tonen</guimenu>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:20
 msgid ""
 "The startup behavior can be customized. Select from the following options:"
 msgstr ""
-"Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een "
-"keuze uit de volgende opties:"
 
 #. type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:24
 msgid "Show startup logo"
-msgstr "Toon opstartlogo"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:27
@@ -107,9 +96,6 @@ msgid ""
 "booknames. Set this to your native language, if it is available, and you'll "
 "feel at home."
 msgstr ""
-"Hier kunt u specificeren welke talen gebruikt moeten worden voor de "
-"bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u "
-"voelt zich helemaal thuis."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:56
@@ -135,7 +121,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:69
 msgid "The Options dialog - Fonts."
-msgstr "De Opties dialoog - Lettertypen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:72
@@ -160,7 +146,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:86
 msgid "Installing fonts"
-msgstr "Lettertypen installeren"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:87
@@ -173,10 +159,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
-#, fuzzy
-#| msgid "Fonts can be obtained from a number of sources:"
 msgid "Fonts can be installed from a number of sources:"
-msgstr "Lettertypen kunnen worden verkregen uit een aantal bronnen:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
@@ -186,7 +170,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:100
 msgid "Your distribution's localization packages."
-msgstr "De lokalisatiepakketten (localization packages) in uw distributie."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:103
@@ -199,12 +183,11 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-config.docbook:109
 msgid "A font collection, such as are available from Adobe or Bitstream."
 msgstr ""
-"Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:113
 msgid "Online font collections."
-msgstr "Online verzamelingen van lettertypen."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:116
@@ -218,7 +201,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><table><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:122
 msgid "Unicode Fonts"
-msgstr "Unicode lettertypen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:127
@@ -230,8 +213,6 @@ msgstr ""
 msgid ""
 "Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr ""
-"Misschien het beste gratis Unicode lettertype, welke een groot aantal "
-"karakters ondersteunt."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:135
@@ -280,20 +261,16 @@ msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
 msgstr ""
-"Dekt bijna het gehele bereik van Unicode, maar kan &bibletime; vertragen "
-"door zijn omvang."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:167
 msgid "Clearlyu"
-msgstr "Clearlyu"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:168
 msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
 msgstr ""
-"Is inbegrepen in sommige distributies. Bevat Europese, Griekse, Hebreeuwse "
-"en Thaise karakters."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:173
@@ -306,8 +283,6 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-config.docbook:176
 msgid "Partial coverage, see information on linked site."
 msgstr ""
-"Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de "
-"bijbehorende website."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:182
@@ -350,7 +325,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
 msgid "Introduction"
-msgstr "Introductie"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:4
@@ -382,12 +357,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:21
 msgid "Available works"
-msgstr "Beschikbare modules"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:27
 msgid "Bibles"
-msgstr "Bijbels"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:29
@@ -402,7 +377,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:39
 msgid "Books"
-msgstr "Boeken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:41
@@ -414,7 +389,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:46
 msgid "Commentaries"
-msgstr "Bijbelcommentaren"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:48
@@ -429,7 +404,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:57
 msgid "Daily devotionals"
-msgstr "Dagelijkse overdenkingen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:59
@@ -437,14 +412,11 @@ msgid ""
 "Many people appreciate these daily portions from God's word. Available works "
 "include Daily Light on the Daily Path, and the Losungen."
 msgstr ""
-"Veel mensen waarderen deze dagelijkse porties van Gods Woord. Onder de "
-"beschikbare modules bevinden zich Daily Light on the Daily Path (Dagelijks "
-"Licht op het Dagelijkse Pad) en de Losungen."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:66
 msgid "Lexicons/Dictionaries"
-msgstr "Lexicons/Woordenboeken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
@@ -468,7 +440,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:84
 msgid "Motivation"
-msgstr "Motivatie"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:85
@@ -482,7 +454,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><blockquote><attribution>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:91
 msgid "James 1:17, NASB"
-msgstr "Jakobus 1:17, NBG51"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><blockquote><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:92
@@ -491,24 +463,21 @@ msgid ""
 "from the Father of lights, with whom there is no variation or shifting "
 "shadow."
 msgstr ""
-"Iedere gave, die goed, en elk geschenk, dat volmaakt is, daalt van boven "
-"neder, van de Vader der lichten, bij wie geen verandering is of zweem van "
-"ommekeer."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:96
 msgid "God bless you as you use this program."
-msgstr "God zegene u wanneer u dit programma gebruikt."
+msgstr ""
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:2
 msgid "Program operation"
-msgstr "Werking van het programma"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:4
 msgid "Program overview"
-msgstr "Programma overzicht"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para><mediaobject>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:7
@@ -542,18 +511,16 @@ msgid ""
 "Let us now proceed by looking at the different parts of the application "
 "individually."
 msgstr ""
-"Laten we nu doorgaan en &eacute;&eacute;n voor &eacute;&eacute;n de "
-"verschillende onderdelen van de toepassing bekijken."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:29
 msgid "Parts of the &bibletime; application window"
-msgstr "Onderdelen van het &bibletime; toepassingsvenster"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:31
 msgid "The Bookshelf"
-msgstr "De Boekenplank"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:32
@@ -562,26 +529,14 @@ msgid ""
 "also has a category called \"Bookmarks\". This is where you can store and "
 "access your own bookmarks."
 msgstr ""
-"De Boekenplank laat alle ge&iuml;nstalleerde modules zien, gesorteerd per "
-"categorie en taal. Het heeft ook een categorie genaamd \"Bladwijzers\". Dit "
-"is de plaats waar u uw eigen bladwijzers kunt opslaan en openen."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
-#, fuzzy
-#| msgid "Reading works"
 msgid "Opening works"
-msgstr "Modules lezen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
-#, fuzzy
-#| msgid ""
-#| "To open a work from the bookshelf for reading, simply click with the "
-#| "<mousebutton>left mouse button</mousebutton> on the desired category "
-#| "(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
-#| "display its contents. Then just click on one of the works to open it for "
-#| "reading. A read window will appear in the Desk area."
 msgid ""
 "To open a work from the bookshelf for reading, simply double-click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -589,12 +544,6 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
-"Om een module uit de boekenplank te openen om te lezen, kunt u simpelweg met "
-"de <mousebutton>linker muisknop</mousebutton> klikken op de gewenste "
-"categorie (Bijbels, Bijbelcommentaren, Lexicons, Boeken, Overdenkingen of "
-"Woordenlijsten) om de inhoud te laten zien. Klik dan op &eacute;&eacute;n "
-"van de modules om die te openen. Er verschijnt dan een leesvenster in het "
-"Bureaugebied."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -611,7 +560,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:59
 msgid "Additional information about works"
-msgstr "Additionele informatie over modules"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:61
@@ -631,7 +580,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:76
 #: docs/handbook/en/docbook/hdbk-operation.docbook:209
 msgid "Searching in works"
-msgstr "Zoeken in modules"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:78
@@ -648,12 +597,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:91
 msgid "Working with bookmarks"
-msgstr "Werken met bladwijzers"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:95
 msgid "Drag &amp; Drop Works Here"
-msgstr "Drag &amp; Drop Werkt Hier"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:98
@@ -685,7 +634,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:121
 msgid "The Mag(nifying glass)"
-msgstr "Het Vergrootglas"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:123
@@ -696,16 +645,11 @@ msgid ""
 "information will be displayed in the Mag, and not in the text itself. Just "
 "try it out."
 msgstr ""
-"Dit kleine venster in de linkeronderhoek van het &bibletime; venster is "
-"volledig passief. Telkens wanneer uw muisaanwijzer over een stukje tekst met "
-"extra informatie gaat (bijv. Strong-nummers), dan wordt deze extra "
-"informatie weergegeven in het Vergrootglas en niet in de tekst zelf. Probeer "
-"het maar eens uit."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:132
 msgid "The Desk"
-msgstr "Het Bureau"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:133
@@ -720,7 +664,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:140
 msgid "Reading works"
-msgstr "Modules lezen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:141
@@ -732,12 +676,6 @@ msgid ""
 "read window is connected to, as well as history buttons like the ones that "
 "you know from your browser."
 msgstr ""
-"Zoals we al <link linkend=\"hdbk-op-parts-bookshelf-open\">gezien</link> "
-"hebben, kunt u de te lezen modules simpelweg openen door te klikken op hun "
-"symbool in de Boekenplank. Een leesvenster zal worden geopend in het Bureau "
-"gebied. Ieder leesvenster heeft een werkbalk. Hier kunt u gereedschappen "
-"vinden om te navigeren in de module waarin dit leesvenster is verbonden, "
-"alsmede history knoppen zoals u die kent vanuit uw internet browser."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
@@ -748,7 +686,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
 "pressing Shift+Down multiple times. To pause scrolling press Space. To start "
 "scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more times. "
@@ -758,7 +696,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:164
 msgid "Read window placement"
-msgstr "Plaatsing van leesvensters"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:165
@@ -776,7 +714,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:180
 msgid "Editing your own commentary"
-msgstr "Uw eigen bijbelcommentaar bewerken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:182
@@ -813,7 +751,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:212
 msgid "Searching text in an open read window"
-msgstr "Tekst zoeken in een geopend leesvenster"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:213
@@ -830,7 +768,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:225
 msgid "Accessing the search dialog"
-msgstr "De zoekdialoog benaderen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:226
@@ -857,18 +795,16 @@ msgid ""
 "A third possibility to start searches is to click on the search symbol in an "
 "open read window."
 msgstr ""
-"Een derde mogelijkheid om zoekopdrachten te starten is door op het "
-"zoeksymbool in een geopend leesvenster te klikken."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:247
 msgid "Search configuration"
-msgstr "Configuratie van de zoekopdracht"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:249
 msgid "Search Text Dialog Options Tab"
-msgstr "Het tabblad Opties in de dialoog Tekst Zoeken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><screenshot><mediaobject>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:251
@@ -888,7 +824,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:257
 msgid "Selecting works"
-msgstr "Modules selecteren"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:258
@@ -902,7 +838,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:265
 msgid "Using Search Scopes"
-msgstr "Zoekbereiken gebruiken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:266
@@ -916,7 +852,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:275
 msgid "Basic Search Syntax Introduction"
-msgstr "Introductie op de syntaxis van een eenvoudige zoekopdracht"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:277
@@ -952,12 +888,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:303
 msgid "Prefix"
-msgstr "Voorvoegsel"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:304
 msgid "Meaning"
-msgstr "Betekenis"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:305
@@ -967,27 +903,27 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:310
 msgid "heading:"
-msgstr "Koptekst:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:311
 msgid "searches headings"
-msgstr "doorzoekt kopteksten"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:312
 msgid "heading:Jesus"
-msgstr "heading:Jesus"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:315
 msgid "footnote:"
-msgstr "voetnoot:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:316
 msgid "searches footnotes"
-msgstr "doorzoekt voetnoten"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:317
@@ -997,12 +933,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:320
 msgid "strong:"
-msgstr "strong:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:321
 msgid "searches Strong's Numbers"
-msgstr "doorzoekt Strong-nummering"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:322
@@ -1012,12 +948,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:325
 msgid "morph:"
-msgstr "morph:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:326
 msgid "searches morphology codes"
-msgstr "doorzoekt morfologische codes"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:327
@@ -1049,7 +985,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:349
 msgid "Search results"
-msgstr "Zoekresultaten"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:350
@@ -1068,8 +1004,6 @@ msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
 msgstr ""
-"Sleep een bijbelverwijzing en laat die los op een symbool van een module op "
-"de Boekenplank om de module op dat vers in een nieuw leesvenster te openen."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:364
@@ -1077,20 +1011,16 @@ msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
 msgstr ""
-"Sleep een bijbelverwijzing en laat die vallen op een geopend leesvenster en "
-"die zal verspringen naar dat vers."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:368
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
 msgstr ""
-"Selecteer bijbelverwijzingen en sleep ze naar de Boekenplank om bladwijzers "
-"te maken."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:372
 msgid "Search result analysis"
-msgstr "Analyse van zoekresultaten"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:373
@@ -1104,7 +1034,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:379
 msgid "Search Analysis Dialog Box"
-msgstr "Zoekanalyse Dialoog"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><mediaobject>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:381
@@ -1116,7 +1046,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:391
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
-msgstr "De <guimenuitem>Boekenplank Manager</guimenuitem>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:393
@@ -1130,10 +1060,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Install works"
-msgstr "Modules installeren/bijwerken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:404
@@ -1160,10 +1088,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Update works"
-msgstr "Modules installeren/bijwerken"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:425
@@ -1175,32 +1101,21 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
-#, fuzzy
-#| msgid "Remove work(s)"
 msgid "Remove works"
-msgstr "Module(s) verwijderen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:433
-#, fuzzy
-#| msgid ""
-#| "This facility allows you to delete one or more of the works from your "
-#| "Bookshelf too free up disk space. Simply mark the items and click on "
-#| "<guibutton>Remove works</guibutton>."
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
-"Deze voorziening stelt u in staat om &eacute;&eacute;n of meerdere modules "
-"van uw Boekenplank te verwijderen om schijfruimte vrij te maken. Vink "
-"simpelweg de items aan die u wilt verwijderen en klik op "
-"<guibutton>Verwijder modules</guibutton>."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
 msgid "Exporting and Printing"
-msgstr "Exporteren en Printen"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:441
@@ -1224,21 +1139,16 @@ msgid ""
 "editing tools on your system to format your document, rather than printing "
 "from &bibletime; directly."
 msgstr ""
-"Afdrukken vanuit &bibletime; is redelijk elementair en is bedoelt als een "
-"hulpfunctie. Als u een document of presentatie samenstelt die tekst bevat "
-"uit &bibletime; modules, dan raden we u aan om een programma voor "
-"presentaties of tekstbewerkingen te gebruiken om uw document op te maken en "
-"niet om direct vanuit &bibletime; af te drukken."
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:2
 msgid "Reference"
-msgstr "Verwijzing"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:4
 msgid "Main menu reference"
-msgstr "Hoofdmenu verwijzing"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:6
@@ -1366,10 +1276,6 @@ msgid ""
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
 msgstr ""
-"<action>Schakelt de weergave van de Boekenplank in/uit.</action> Schakel "
-"deze instelling in/uit om de Boekenplank in het linkerpaneel wel/niet weer "
-"te geven. Dit kan handig zijn als u meer ruimte nodig heeft voor het "
-"vergrootglas."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:119
@@ -1413,9 +1319,6 @@ msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
 msgstr ""
-"<action>Schakelt de weergave van het Vergrootglas in/uit.</action> Schakel "
-"deze instelling in/uit om het Vergrootglas in het linkerpaneel aan/uit te "
-"zetten."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:160
@@ -1614,7 +1517,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:380
 msgid "<action>Closes all open windows</action>."
-msgstr "<action>Sluit alle geopende vensters</action>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:393
@@ -1636,8 +1539,6 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
 msgstr ""
-"<action>Rangschikt alle geopende vensters trapsgewijs (achter elkaar)</"
-"action>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:417
@@ -2106,7 +2007,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1037
 msgid "Description"
-msgstr "Beschrijving"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1043
@@ -2116,7 +2017,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1046
 msgid "Moves back in the history of read windows."
-msgstr "Gaat terug in de history van leesvensters"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1050
@@ -2126,7 +2027,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1053
 msgid "Moves forward in the history of read windows."
-msgstr "Gaat vooruit in de history van leesvensters"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1058
@@ -2254,7 +2155,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1190
 msgid "Select all. This selects all text in read windows."
-msgstr "Selecteer alles. Dit selecteert alle tekst in de leesvensters."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1195
@@ -2264,7 +2165,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1198
 msgid "Copy. This copies the selected text to the clipboard."
-msgstr "Kopie&euml;ren. Dit kopieert de geselecteerde tekst naar het klembord."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1204
@@ -2274,7 +2175,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1207
 msgid "Search. This lets you search within the text of a read window."
-msgstr "Zoeken. Dit laat u zoeken binnen de tekst van een leesvenster."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1213
@@ -2384,7 +2285,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1325
 msgid "Closes the current window."
-msgstr "Sluit het huidige venster."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1330
@@ -2501,12 +2402,12 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
 #: docs/handbook/en/docbook/hdbk-start.docbook:8
 msgid "Starting &bibletime;"
-msgstr "&bibletime; opstarten"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:5
 msgid "How to start &bibletime;"
-msgstr "Hoe u &bibletime; opstart"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject>
 #: docs/handbook/en/docbook/hdbk-start.docbook:13
@@ -2545,7 +2446,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:28
 msgid "Startup customization"
-msgstr "Aanpassing van het opstarten"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:31
@@ -2615,7 +2516,7 @@ msgstr ""
 #. type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
-msgstr "<application>BibleTime</application>"
+msgstr ""
 
 #. type: Content of the sword entity
 #: docs/handbook/en/docbook/index.docbook:6
@@ -2728,12 +2629,12 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-msgid "<date>November 2019</date>"
+msgid "<date>December 2019</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
@@ -2771,38 +2672,3 @@ msgstr ""
 #: docs/handbook/en/docbook/index.docbook:78
 msgid "Help dialog"
 msgstr ""
-
-#~ msgid "Obtaining Fonts"
-#~ msgstr "Lettertypen verkrijgen"
-
-#~ msgid "Bookshelf path(s) setup"
-#~ msgstr "Het instellen van Boekenplank bestandspad(en)"
-
-#~ msgid ""
-#~ "To begin the installation or update process, select a library you want to "
-#~ "connect to and a local Bookshelf path to install the work(s) to. Then "
-#~ "click on <guibutton>Connect to library</guibutton>. &bibletime; will scan "
-#~ "the contents of the library and present you with a list of works that you "
-#~ "can add to your Bookshelf, or that you already have installed but are "
-#~ "available in a new version in the library, and thus can be updated. Then "
-#~ "you can mark all works that you want to install or update, and click on "
-#~ "<guibutton>Install works</guibutton>. They will then be transferred to "
-#~ "your Bookshelf."
-#~ msgstr ""
-#~ "Om het proces van installeren of bijwerken te starten kiest u een "
-#~ "bibliotheek waarmee u verbinding wilt zoeken en een lokaal bestandspad "
-#~ "naar een Boekenplank om de module(s) naar toe te installeren. Klik dan op "
-#~ "<guibutton>Verbinden met bibliotheek</guibutton>. &bibletime; zal de "
-#~ "inhoud van de bibliotheek scannen en een lijst presenteren van modules "
-#~ "die u aan uw Boekenplank kunt toevoegen of die reeds ge&iuml;nstalleerd "
-#~ "zijn, maar bijgewerkt kunnen worden omdat er een nieuwe versie "
-#~ "beschikbaar is in de bibliotheek. U kunt dan alle modules aanvinken die u "
-#~ "wilt installeren of bijwerken en dan klikken op <guibutton>Installeer "
-#~ "modules</guibutton>. Ze zullen dan overgeheveld worden naar uw "
-#~ "Boekenplank."
-
-#~ msgid "Zoom out. This decreases the font size of read windows."
-#~ msgstr "Uitzoomen. Dit vermindert de lettergrootte van de leesvensters."
-
-#~ msgid "Zoom in. This increases the font size of read windows."
-#~ msgstr "Inzoomen. Dit vergroot de lettergrootte van de leesvensters."

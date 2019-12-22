@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
-"PO-Revision-Date: 2017-09-21 13:11+0000\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
+"PO-Revision-Date: 2019-12-11 01:50+0000\n"
 "Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
 "Language-Team: Czech (http://www.transifex.com/bibletime/bibletime/language/"
 "cs/)\n"
@@ -197,10 +197,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
-#, fuzzy
-#| msgid "Fonts can be obtained from a number of sources:"
 msgid "Fonts can be installed from a number of sources:"
-msgstr "Písma můžete získat z mnoha zdrojů:"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
@@ -618,20 +616,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
-#, fuzzy
-#| msgid "Reading works"
 msgid "Opening works"
-msgstr "Čtení děl"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
-#, fuzzy
-#| msgid ""
-#| "To open a work from the bookshelf for reading, simply click with the "
-#| "<mousebutton>left mouse button</mousebutton> on the desired category "
-#| "(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
-#| "display its contents. Then just click on one of the works to open it for "
-#| "reading. A read window will appear in the Desk area."
 msgid ""
 "To open a work from the bookshelf for reading, simply double-click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -639,11 +628,6 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
-"Pro otevření díla z knihovny jednoduše klikněte <mousebutton>levým</"
-"mousebutton> tlačítkem myši na požadovanou kategorii (Bible, Komentáře, "
-"Lexikony, Knihy, Zamyšlení nebo Glosáře) pro zobrazení jejího obsahu. Poté "
-"klikněte na jedno z děl k jeho otevření pro čtení. Okno pro čtení díla se "
-"objeví na ploše."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -833,7 +817,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
 "pressing Shift+Down multiple times. To pause scrolling press Space. To start "
 "scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more times. "
@@ -1059,19 +1043,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:286
-#, fuzzy
-#| msgid ""
-#| "You can use wildcards: '*' matches any number of characters, while '?' "
-#| "will match any single character. The use of brackets allows you to group "
-#| "your search terms, e.g. '(Jesus OR spirit) AND God'."
 msgid ""
 "You can use wildcards: '*' matches any number of characters, while '?' will "
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
-"Můžete využít znaky: '*' odpovídající libovolné posloupnosti znaků, '?' "
-"zastupující libovolný jeden znak. Použití závorek vám dovoluje seskupovat "
-"hledané výrazy, např. '(Ježíš OR duch) AND Bůh'"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
@@ -1287,10 +1263,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Install works"
-msgstr "Instalace/aktualizace děl"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:404
@@ -1317,10 +1291,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Update works"
-msgstr "Instalace/aktualizace děl"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:425
@@ -1332,26 +1304,16 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
-#, fuzzy
-#| msgid "Remove work(s)"
 msgid "Remove works"
-msgstr "Odebrání děl"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:433
-#, fuzzy
-#| msgid ""
-#| "This facility allows you to delete one or more of the works from your "
-#| "Bookshelf too free up disk space. Simply mark the items and click on "
-#| "<guibutton>Remove works</guibutton>."
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
-"Tato možnost dovoluje smazat jedno nebo více děl z vaší knihovny, což uvolní "
-"místo na disku. Jednoduše označte položky a klikněte na <guibutton>Odstranit "
-"díla</guibutton>."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -2735,16 +2697,10 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
-"</menuchoice> otevře příručku."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
@@ -2753,16 +2709,10 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
-"</menuchoice> otevře příručku."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
@@ -2771,16 +2721,10 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
-"</menuchoice> otevře příručku."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
@@ -2873,17 +2817,6 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:52
-#, fuzzy
-#| msgid ""
-#| "<action>Modifies your Bookshelf</action>.  This dialog lets you modify "
-#| "your Bookshelf, add or delete works from your system.  It will only be "
-#| "shown if no default Bookshelf can be found.  Please see <link linkend="
-#| "\"hdbk-op-bookshelfmanager\">The Bookshelf Manager section</link> for "
-#| "further details. If you start off with an empty Bookshelf, it will be "
-#| "helpful to install at least one Bible, Commentary, Lexicon and one Book "
-#| "to get to know &bibletime;'s basic features quickly.  You can do this by "
-#| "clicking on the Refresh button.  You will be presented with a list of "
-#| "works that are available from the &cbs;"
 msgid ""
 "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -2894,15 +2827,6 @@ msgid ""
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
 msgstr ""
-"<action>Upravit vaši knihovnu.</action> Tento dialog vám umožní upravovat "
-"vaši knihovnu, přidávat nebo mazat díla ve vašem systému. Bude zobrazen "
-"pouze v případě, že nebude nalezena výchozí knihovna. Prosím podívejte se do "
-"sekce <link linkend=\"hdbk-op-bookshelfmanager\">Správce knihovny</link>, "
-"pokud se chcete dozvědět více. Pokud začínáte s prázdnou knihovnou, bude "
-"užitečné  nainstalovat alespoň jednu Bibli, Komentář, Lexikon a knihu, "
-"abyste se rychle seznámili se základními vlastnostmi &bibletime;. To můžete "
-"udělat kliknutím na tlačítko obnovit. Bude vám předložen seznam děl, které "
-"jsou dostupné z &cbs;"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:66
@@ -3036,12 +2960,12 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-msgid "<date>November 2019</date>"
+msgid "<date>December 2019</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
@@ -3079,91 +3003,3 @@ msgstr ""
 #: docs/handbook/en/docbook/index.docbook:78
 msgid "Help dialog"
 msgstr ""
-
-#~ msgid ""
-#~ "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-#~ "faster than with a large font like <trademark class=\"registered"
-#~ "\">Bitstream Cyberbit</trademark>(about 12Mb)."
-#~ msgstr ""
-#~ "Pokud používáte malé písmo jako například Clearlyu (asi 22kb), "
-#~ "&bibletime; poběží rychleji nž s velkým písmem jako napriklad <trademark "
-#~ "class=\"registered\">Bitstream Cyberbit</trademark>(asi 12Mb)."
-
-#~ msgid "Obtaining Fonts"
-#~ msgstr "Získání písem"
-
-#~ msgid ""
-#~ "If you open the personal commentary by clicking on its symbol in the "
-#~ "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens "
-#~ "in read mode. You will not be able to edit it in this mode. Should you "
-#~ "wish to write annotations into the personal commentary, you have to open "
-#~ "it with the <mousebutton>right</mousebutton> mouse button and then select "
-#~ "<guimenu>Edit this work</guimenu> and then either <guimenuitem>Plain "
-#~ "text</guimenuitem>(source code editor) or <guimenuitem>HTML</"
-#~ "guimenuitem>(basic gui wysiwyg editor)."
-#~ msgstr ""
-#~ "Pokud otevřete osobní komentář kliknutím <mousebutton>levým</"
-#~ "mousebutton>  tlačítkem myši na jeho symbol v knihovně, otevře se v módu "
-#~ "pro čtení. V tomto módu není možné komentář editovat. Pokud si přejete do "
-#~ "něj zapsat poznámku, musíte ho otevřít pomocí <mousebutton>pravého</"
-#~ "mousebutton> tlačítka myši a zvolit <guimenu>Editovat toto dílo</guimenu> "
-#~ "a potom také <guimenuitem>Prostý text</guimenuitem> (editor zdrojového "
-#~ "kódu) nebo <guimenuitem>HTML</guimenuitem>(jednoduchý GUI WYSIWYG editor)."
-
-#~ msgid ""
-#~ "If this is the first time you are starting &bibletime;, click on the "
-#~ "Refresh button to see a list of works provided by the &cbs;."
-#~ msgstr ""
-#~ "Pokud je toto poprvé co spouštíte &bibletime;, klikněte na tlačítko "
-#~ "Obnovit pro zobrazení seznamu děl nabízených &cbs;."
-
-#~ msgid "Bookshelf path(s) setup"
-#~ msgstr "Nastavení cesty ke knihám"
-
-#~ msgid ""
-#~ "If you have a sword CD, but do not want to install all the works on the "
-#~ "hard disk, but use them directly from the CD, then you can add the path "
-#~ "to the CD as one of your bookshelf paths. When you start &bibletime;, it "
-#~ "will show all works on the CD if it is present."
-#~ msgstr ""
-#~ "Pokud máte CD sword, ale nechcete všechna díla instalovat na disk, ale "
-#~ "používat je přímo z CD, pak vložte cestu k CD jako jedno z umístění "
-#~ "knihovny. Když zapnete &bibletime;, zobrazí se všechna díla, pokud je CD "
-#~ "vloženo v mechanice."
-
-#~ msgid ""
-#~ "To begin the installation or update process, select a library you want to "
-#~ "connect to and a local Bookshelf path to install the work(s) to. Then "
-#~ "click on <guibutton>Connect to library</guibutton>. &bibletime; will scan "
-#~ "the contents of the library and present you with a list of works that you "
-#~ "can add to your Bookshelf, or that you already have installed but are "
-#~ "available in a new version in the library, and thus can be updated. Then "
-#~ "you can mark all works that you want to install or update, and click on "
-#~ "<guibutton>Install works</guibutton>. They will then be transferred to "
-#~ "your Bookshelf."
-#~ msgstr ""
-#~ "Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které "
-#~ "se chcete připojit a umístění lokální knihovny pro instalaci děl. Potom "
-#~ "klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. "
-#~ "&bibletime; prověří obsah knihovny a předloží vám seznam děl, které "
-#~ "můžete do své knihovny přidat, nebo děl, které jsou již nainstalované, "
-#~ "ale jsou dostupné v novější verzi, a tak mohou být aktualizovány. Poté "
-#~ "můžete označit všechna díla, která chcete nainstalovat nebo aktualizovat "
-#~ "a kliknout na <guibutton>Instalovat díla</guibutton>. Ty budou poté "
-#~ "nahrány do vaší knihovny."
-
-#~ msgid "Search Indexes"
-#~ msgstr "Vyhledávací indexy"
-
-#~ msgid ""
-#~ "This option allows you to create new search indexes and cleanup orphaned "
-#~ "index files for removed works."
-#~ msgstr ""
-#~ "Tyto možnosti vám umožní vytvářet nové vyhledávací indexy a vymazat "
-#~ "opuštěné indexy smazaných děl."
-
-#~ msgid "Zoom out. This decreases the font size of read windows."
-#~ msgstr "Oddálit. Zmenší velikost písma v aktivním okně."
-
-#~ msgid "Zoom in. This increases the font size of read windows."
-#~ msgstr "Přiblížit. Zvětší velikost písma v aktivním okně."

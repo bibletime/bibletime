@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
-"PO-Revision-Date: 2019-12-10 22:15+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
+"PO-Revision-Date: 2019-12-12 00:01+0000\n"
+"Last-Translator: Ilpo Kantonen\n"
 "Language-Team: Finnish (http://www.transifex.com/bibletime/bibletime/"
 "language/fi/)\n"
 "Language: fi\n"
@@ -200,10 +200,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
-#, fuzzy
-#| msgid "Fonts can be obtained from a number of sources:"
 msgid "Fonts can be installed from a number of sources:"
-msgstr "Kirjasimia voi hankkia lukuisasta joukosta lähteitä:"
+msgstr "Kirjasimia voi asentaa monesta lähteestä:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
@@ -520,20 +518,12 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
-#, fuzzy
-#| msgid ""
-#| "Over 200 documents in 50 languages are available from the <ulink url="
-#| "\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
-#| "type=\"variablelist\" id=\"0\"/>"
 msgid ""
 "Over 280 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
 "type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
-"Yli 200 dokumenttia 50:llä kielellä on saatavilla lähteestä <ulink url="
-"\"http://www.crosswire.org\">&cbs;</ulink>.  Nämä sisältävät: <placeholder "
-"type=\"variablelist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:84
@@ -642,20 +632,11 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
-#, fuzzy
-#| msgid "Reading works"
 msgid "Opening works"
-msgstr "Lukutehtäviä"
+msgstr "Teoksen avaaminen"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
-#, fuzzy
-#| msgid ""
-#| "To open a work from the bookshelf for reading, simply click with the "
-#| "<mousebutton>left mouse button</mousebutton> on the desired category "
-#| "(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
-#| "display its contents. Then just click on one of the works to open it for "
-#| "reading. A read window will appear in the Desk area."
 msgid ""
 "To open a work from the bookshelf for reading, simply double-click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -663,11 +644,6 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
-"Avataksesi teoksen kirjahyllystä lukemista varten, napsauta "
-"yksinkertaisesti<mousebutton>vasenta hiiren nappia</mousebutton> halutussa "
-"kategoriassa (Raamatut, kommentaarit, sanakirjat, kirjat, hartauskirjat tai "
-"sanastot) näyttääksesi sen sisällön. Sitten napsauta yksinkertaisesti yhtä "
-"teosta avataksesi sen lukemista varten. Lukuikkuna ilmestyy työpöydälle."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -806,13 +782,13 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
 msgid "Auto Scrolling"
-msgstr ""
+msgstr "Automaattinen vieritys"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
 "pressing Shift+Down multiple times. To pause scrolling press Space. To start "
 "scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more times. "
@@ -1207,10 +1183,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Install works"
-msgstr "Asenna/päivitä teos/teoksia"
+msgstr "Asenna teoksia"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:404
@@ -1237,10 +1211,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Update works"
-msgstr "Asenna/päivitä teos/teoksia"
+msgstr "Päivitä teoksia"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:425
@@ -1252,26 +1224,16 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
-#, fuzzy
-#| msgid "Remove work(s)"
 msgid "Remove works"
-msgstr "Poista teos/teoksia"
+msgstr "Poista teoksia"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:433
-#, fuzzy
-#| msgid ""
-#| "This facility allows you to delete one or more of the works from your "
-#| "Bookshelf too free up disk space. Simply mark the items and click on "
-#| "<guibutton>Remove works</guibutton>."
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
-"Tämä valmius mahdollistaa yhden tai useamman teoksen poiston kirjahyllystä "
-"lisätäksesi vapaata levytilan määrää. Yksinkertaisesti merkitse teokset ja "
-"napsauta <guibutton>Poista teokset</guibutton>."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -2629,63 +2591,39 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1416
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Tietoja ohjelmasta</"
-"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Tietoja ohjelmasta</"
-"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Tietoja ohjelmasta</"
-"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
@@ -2900,12 +2838,12 @@ msgstr "Abthorpe"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid "Gary"
-msgstr ""
+msgstr "Gary"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:45
 msgid "Holmlund"
-msgstr ""
+msgstr "Holmlund"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -2914,6 +2852,8 @@ msgid ""
 "<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2019</year> <holder>&bibletime; Tiimi</holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:55
@@ -2924,25 +2864,17 @@ msgstr "&bibletime;n käsikirja jaetaan &bibletime;-ohjelman yhteydessä."
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
 #, fuzzy
-#| msgid "<date>January 2014</date>"
-msgid "<date>November 2019</date>"
-msgstr "<date>Tammikuu 2014</date>"
+#| msgid "<date>November 2019</date>"
+msgid "<date>December 2019</date>"
+msgstr "<date>Marraskuu 2019</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:64
-#, fuzzy
-#| msgid ""
-#| "&bibletime; is a completely free Bible study program. The program's user "
-#| "interface is built with &qt; framework, which makes it run on several "
-#| "operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
-#| "software uses the &sword; programming library to work with over 200 free "
-#| "Bible texts, commentaries, dictionaries and books in over 50 languages "
-#| "provided by the &cbs;."
 msgid ""
 "&bibletime; is a completely free Bible study program. The program's user "
 "interface is built with the &qt; framework, which makes it run on several "
@@ -2951,20 +2883,11 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs; and several other repositories."
 msgstr ""
-"&bibletime; on täysin vapaa Raamatun opiskeluohjelma. Ohjelman "
-"käyttöliittymä on tehty käyttäen &qt; frameworkia, jonka ansiosta sitä "
-"voidaan käyttää useassa käyttöjärjestelmässä sisältäen Linuxin, Windowsin, "
-"FreeBSD:n ja Mac OS X:n. Ohjelma käyttää &sword;-ohjelmakirjastoa yli 200 "
-"vapaastijaettavineen Raamatun teksteineen, kommentaarineen, "
-"sisällysluetteloineen ja kirjoineen yli 50 kielellä, jotka on tarjonnut "
-"&cbs;."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:74
-#, fuzzy
-#| msgid "Qt4"
 msgid "Qt5"
-msgstr "Qt4"
+msgstr "Qt5"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:75
@@ -2986,39 +2909,5 @@ msgstr "Crosswire"
 msgid "Help dialog"
 msgstr "Apua-ikkuna"
 
-#~ msgid ""
-#~ "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-#~ "faster than with a large font like <trademark class=\"registered"
-#~ "\">Bitstream Cyberbit</trademark>(about 12Mb)."
-#~ msgstr ""
-#~ "Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on "
-#~ "nopeampi kuin suurilla kirjasimilla kuten <trademark class=\"registered"
-#~ "\"> Bitstream Cyberbit</trademark> (noin 12Mb)."
-
-#~ msgid "Obtaining Fonts"
-#~ msgstr "Kirjasimien hankinta"
-
-#~ msgid "Bookshelf path(s) setup"
-#~ msgstr "Kirjahyllyn polun/polkujen asetus"
-
-#~ msgid "Search Indexes"
-#~ msgstr "Etsii indeksejä"
-
-#~ msgid ""
-#~ "This option allows you to create new search indexes and cleanup orphaned "
-#~ "index files for removed works."
-#~ msgstr ""
-#~ "Tämä mahdollistaa uusien hakuindeksien luonnin ja poistettujen teosten "
-#~ "orvoiksi tulleet indeksitiedostostojen siivoamisen."
-
-#~ msgid "Zoom out. This decreases the font size of read windows."
-#~ msgstr "Loitonna. Tämä pienentää kirjasimen kokoa lukuikkunoissa."
-
-#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-
-#~ msgid "Zoom in. This increases the font size of read windows."
-#~ msgstr "Lähennä. Tämä suurentaa kirjasimen kokoa lukuikkunoissa."
-
-#~ msgid "2.10.1"
-#~ msgstr "2.10.1"
+#~ msgid "2.11.2+"
+#~ msgstr "2.11.2+"

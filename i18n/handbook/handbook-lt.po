@@ -4,12 +4,12 @@
 #
 # Translators:
 # Martin Gruner <martin.gruner@otrs.com>, 2016
-# Moo, 2014-2016,2018
+# Moo, 2014-2016,2018-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
-"PO-Revision-Date: 2018-06-02 18:07+0000\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
+"PO-Revision-Date: 2019-12-11 11:04+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/bibletime/bibletime/"
 "language/lt/)\n"
@@ -203,10 +203,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
-#, fuzzy
-#| msgid "Fonts can be obtained from a number of sources:"
 msgid "Fonts can be installed from a number of sources:"
-msgstr "Šriftai gali būti gaunami iš daugelio šaltinių:"
+msgstr "Šriftai gali būti įdiegti iš daugelio šaltinių:"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
@@ -514,20 +512,12 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
-#, fuzzy
-#| msgid ""
-#| "Over 200 documents in 50 languages are available from the <ulink url="
-#| "\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
-#| "type=\"variablelist\" id=\"0\"/>"
 msgid ""
 "Over 280 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
 "type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
-"Virš 200 dokumentų, prieinamų 50 kalbomis yra prieinama iš <ulink url="
-"\"http://www.crosswire.org\">&cbs;</ulink>.  Į juos įeina: <placeholder type="
-"\"variablelist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:84
@@ -632,10 +622,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
-#, fuzzy
-#| msgid "Reading works"
 msgid "Opening works"
-msgstr "Veiklų skaitymas"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
@@ -788,7 +776,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
 "pressing Shift+Down multiple times. To pause scrolling press Space. To start "
 "scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more times. "
@@ -1172,10 +1160,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Install works"
-msgstr "Veiklos(-ų) įdiegimas/atnaujinimas"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:404
@@ -1202,10 +1188,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
-#, fuzzy
-#| msgid "Install/update work(s)"
 msgid "Update works"
-msgstr "Veiklos(-ų) įdiegimas/atnaujinimas"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:425
@@ -1217,10 +1201,8 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
-#, fuzzy
-#| msgid "Remove work(s)"
 msgid "Remove works"
-msgstr "Veiklos(-ų) šalinimas"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:433
@@ -2765,63 +2747,39 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1416
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Apie BibleTime</"
-"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Apie BibleTime</"
-"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Pagalba</guimenu> <guimenuitem>Apie BibleTime</"
-"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
@@ -2930,17 +2888,6 @@ msgstr "<interface>Knygų lentynos tvarkytuvė</interface>"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:52
-#, fuzzy
-#| msgid ""
-#| "<action>Modifies your Bookshelf</action>.  This dialog lets you modify "
-#| "your Bookshelf, add or delete works from your system.  It will only be "
-#| "shown if no default Bookshelf can be found.  Please see <link linkend="
-#| "\"hdbk-op-bookshelfmanager\">The Bookshelf Manager section</link> for "
-#| "further details. If you start off with an empty Bookshelf, it will be "
-#| "helpful to install at least one Bible, Commentary, Lexicon and one Book "
-#| "to get to know &bibletime;'s basic features quickly.  You can do this by "
-#| "clicking on the Refresh button.  You will be presented with a list of "
-#| "works that are available from the &cbs;"
 msgid ""
 "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -2951,15 +2898,6 @@ msgid ""
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
 msgstr ""
-"<action>Modifikuoja jūsų knygų lentyną</action>.  Šis dialogas leidžia jums "
-"modifikuoti savo knygų lentyną, pridėti ar ištrinti veiklas iš savo "
-"sistemos. Jis bus rodomas tik tuo atveju, jei nebus rasta numatytosios Knygų "
-"lentynos.  Išsamesnei informacijai, prašome žiūrėti <link linkend=\"hdbk-op-"
-"bookshelfmanager\">Knygų lentynos Tvarkytuvės sekciją</link>. Jei pradedate "
-"su tuščia Knygų lentyna, bus naudinga įsidiegti bent vieną Bibliją, "
-"Komentarus, Leksikoną ir Knygą, kad greitai susipažintumėte su pagrindinėmis "
-"&bibletime;'s ypatybėmis. Tai galite atlikti, nuspausdami ant mygtuko Įkelti "
-"iš naujo. Jums bus pateiktas visų, iš &cbs; prieinamų veiklų, sąrašas;"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:66
@@ -3080,16 +3018,10 @@ msgstr ""
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:49
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team</holder> "
-#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2016</year> <holder>&bibletime; komanda</holder> </"
-"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:55
@@ -3100,26 +3032,16 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-#, fuzzy
-#| msgid "<date>January 2014</date>"
-msgid "<date>November 2019</date>"
-msgstr "<date>2014 Sausis</date>"
+msgid "<date>December 2019</date>"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:64
-#, fuzzy
-#| msgid ""
-#| "&bibletime; is a completely free Bible study program. The program's user "
-#| "interface is built with &qt; framework, which makes it run on several "
-#| "operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
-#| "software uses the &sword; programming library to work with over 200 free "
-#| "Bible texts, commentaries, dictionaries and books in over 50 languages "
-#| "provided by the &cbs;."
 msgid ""
 "&bibletime; is a completely free Bible study program. The program's user "
 "interface is built with the &qt; framework, which makes it run on several "
@@ -3128,19 +3050,11 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs; and several other repositories."
 msgstr ""
-"&bibletime; yra visiškai nemokama Biblijos studijavimo programa. Programos "
-"naudotojo sąsaja yra sukurta &qt; karkaso pagalba, kas leidžia vykdyti šią "
-"programą keliose operacinėse sistemose, įskaitant Linux, Windows, FreeBSD ir "
-"Mac OS X. Darbui su daugiau kaip 200 Biblijos tekstų, komentarų, žodynų ir "
-"knygų, kuriuos &cbs; pateikia daugiau kaip 50 kalbų, programinė įranga "
-"naudoja &sword; programavimo biblioteką."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:74
-#, fuzzy
-#| msgid "Qt4"
 msgid "Qt5"
-msgstr "Qt4"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:75
@@ -3161,33 +3075,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:78
 msgid "Help dialog"
 msgstr "Pagalbos dialogas"
-
-#~ msgid ""
-#~ "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-#~ "faster than with a large font like <trademark class=\"registered"
-#~ "\">Bitstream Cyberbit</trademark>(about 12Mb)."
-#~ msgstr ""
-#~ "Jei naudosite mažą šriftą, tokį kaip Clearlyu (apie 22kb), &bibletime; "
-#~ "veiks greičiau nei su dideliu šriftu, tokiu kaip <trademark class="
-#~ "\"registered\">Bitstream Cyberbit</trademark>(apie 12Mb)."
-
-#~ msgid "Obtaining Fonts"
-#~ msgstr "Šriftų gavimas"
-
-#~ msgid "Bookshelf path(s) setup"
-#~ msgstr "Knygų lentynos kelio(-ių) sąranka"
-
-#~ msgid "Search Indexes"
-#~ msgstr "Paieškos indeksai"
-
-#~ msgid "Zoom out. This decreases the font size of read windows."
-#~ msgstr "Mažinti. Tai sumažina skaitymo langų šrifto dydį."
-
-#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-
-#~ msgid "Zoom in. This increases the font size of read windows."
-#~ msgstr "Didinti. Tai padidina skaitymo langų šrifto dydį."
-
-#~ msgid "2.10.1"
-#~ msgstr "2.10.1"

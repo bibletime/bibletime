@@ -1,11 +1,11 @@
 <chapter id="hdbk-term">
-  <title>&bibletime; opstarten</title>
+  <title>Starting &bibletime;</title>
 
   <sect1 id="hdbk-start">
-    <title>Hoe u &bibletime; opstart</title>
+    <title>How to start &bibletime;</title>
 
     <sect2 id="hdbk-start-starting">
-      <title>&bibletime; opstarten</title>
+      <title>Starting &bibletime;</title>
       <para>&bibletime; is an executable file that is integrated with the desktop. You
 can launch &bibletime; from the Start Menu with this icon: <mediaobject>
         <imageobject> <imagedata fileref="i_bibletime.png" width="32" depth="32"
@@ -20,7 +20,7 @@ format="PNG" /> </imageobject>
     </sect2>
 
     <sect2 id="hdbk-start-custom">
-      <title>Aanpassing van het opstarten</title>
+      <title>Startup customization</title>
       <para>From a terminal you can use &bibletime; to open a random verse in the
 default bible: <screen>bibletime --open-default-bible "&lt;random&gt;"</screen> To open at a given
 passage like John 3:16, use: <screen>bibletime --open-default-bible "John 3:16"</screen> You can
