@@ -191,9 +191,6 @@ void registerMetaTypes() {
     qRegisterMetaType<DisplayOptions>("DisplayOptions");
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
 
-    qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
-    qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
-
     qRegisterMetaType<alignmentMode>("alignmentMode");
     qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
 

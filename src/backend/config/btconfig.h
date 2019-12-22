@@ -24,7 +24,6 @@
 #include <QStringList>
 #include <QVariant>
 #include "../btglobal.h"
-#include "../btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
 #include "../drivers/cswordmoduleinfo.h"
 #include "btconfigcore.h"
 

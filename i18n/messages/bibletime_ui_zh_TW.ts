@@ -1126,42 +1126,42 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Old testament</source>
         <translation>舊約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>摩西/五經/妥拉</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>History</source>
         <translation>歷史書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>Prophets</source>
         <translation>先知書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>New testament</source>
         <translation>新約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Gospels</source>
         <translation>福音書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Letters/Epistles</source>
         <translation>書信</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="56"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
         <source>Paul&apos;s Epistles</source>
         <translation>保羅書信</translation>
     </message>
@@ -2882,52 +2882,36 @@ Do you want to continue?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="82"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="191"/>
         <source>Commentaries</source>
-        <translation>評論</translation>
+        <translation type="vanished">評論</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="83"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="197"/>
         <source>Cults/Unorthodox</source>
-        <translation>其他教派</translation>
+        <translation type="vanished">其他教派</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="84"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="196"/>
         <source>Maps and Images</source>
-        <translation>地圖與圖片</translation>
+        <translation type="vanished">地圖與圖片</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="85"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="195"/>
         <source>Daily Devotionals</source>
-        <translation>每日靈修</translation>
+        <translation type="vanished">每日靈修</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="86"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="193"/>
         <source>Lexicons and Dictionaries</source>
-        <translation>詞彙與字典</translation>
+        <translation type="vanished">詞彙與字典</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="87"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="190"/>
         <source>Bibles</source>
-        <translation>聖經</translation>
+        <translation type="vanished">聖經</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="88"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="194"/>
         <source>Glossaries</source>
-        <translation>字彙表</translation>
+        <translation type="vanished">字彙表</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="89"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="192"/>
         <source>Books</source>
-        <translation>書籍</translation>
+        <translation type="vanished">書籍</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="398"/>

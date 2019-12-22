@@ -1126,42 +1126,42 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Old testament</source>
         <translation>Old testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Moses/Pentateuch/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>History</source>
         <translation>History</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>Prophets</source>
         <translation>Prophets</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>New testament</source>
         <translation>New testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Gospels</source>
         <translation>Gospels</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Letters/Epistles</source>
         <translation>Letters/Epistles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="56"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Paul&apos;s Epistles</translation>
     </message>
@@ -2881,52 +2881,36 @@ Do you want to continue?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="82"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="191"/>
         <source>Commentaries</source>
-        <translation>Commentaries</translation>
+        <translation type="vanished">Commentaries</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="83"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="197"/>
         <source>Cults/Unorthodox</source>
-        <translation>Cults/Unorthodox</translation>
+        <translation type="vanished">Cults/Unorthodox</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="84"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="196"/>
         <source>Maps and Images</source>
-        <translation>Maps and Images</translation>
+        <translation type="vanished">Maps and Images</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="85"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="195"/>
         <source>Daily Devotionals</source>
-        <translation>Daily Devotionals</translation>
+        <translation type="vanished">Daily Devotionals</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="86"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="193"/>
         <source>Lexicons and Dictionaries</source>
-        <translation>Lexicons and Dictionaries</translation>
+        <translation type="vanished">Lexicons and Dictionaries</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="87"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="190"/>
         <source>Bibles</source>
-        <translation>Bibles</translation>
+        <translation type="vanished">Bibles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="88"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="194"/>
         <source>Glossaries</source>
-        <translation>Glossaries</translation>
+        <translation type="vanished">Glossaries</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="89"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="192"/>
         <source>Books</source>
-        <translation>Books</translation>
+        <translation type="vanished">Books</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="398"/>

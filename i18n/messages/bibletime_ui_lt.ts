@@ -1126,42 +1126,42 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Old testament</source>
         <translation>Senasis Testamentas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mozė/Penkiaknygė/Tora</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>History</source>
         <translation>Istorija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>Prophets</source>
         <translation>Pranašai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>New testament</source>
         <translation>Naujasis Testamentas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Gospels</source>
         <translation>Evangelijos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Letters/Epistles</source>
         <translation>Laiškai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="56"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pauliaus laiškai</translation>
     </message>
@@ -2881,52 +2881,36 @@ Ar norite tęsti?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="82"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="191"/>
         <source>Commentaries</source>
-        <translation>Komentarai</translation>
+        <translation type="vanished">Komentarai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="83"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="197"/>
         <source>Cults/Unorthodox</source>
-        <translation>Kultai/Netradiciniai</translation>
+        <translation type="vanished">Kultai/Netradiciniai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="84"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="196"/>
         <source>Maps and Images</source>
-        <translation>Žemėlapiai ir paveikslai</translation>
+        <translation type="vanished">Žemėlapiai ir paveikslai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="85"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="195"/>
         <source>Daily Devotionals</source>
-        <translation>Kadieniai pašventimai</translation>
+        <translation type="vanished">Kadieniai pašventimai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="86"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="193"/>
         <source>Lexicons and Dictionaries</source>
-        <translation>Leksikonai ir žodynai</translation>
+        <translation type="vanished">Leksikonai ir žodynai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="87"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="190"/>
         <source>Bibles</source>
-        <translation>Biblijos</translation>
+        <translation type="vanished">Biblijos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="88"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="194"/>
         <source>Glossaries</source>
-        <translation>Aiškinamieji žodynai</translation>
+        <translation type="vanished">Aiškinamieji žodynai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="89"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="192"/>
         <source>Books</source>
-        <translation>Knygos</translation>
+        <translation type="vanished">Knygos</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="398"/>

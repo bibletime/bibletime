@@ -21,7 +21,6 @@ SOURCES += \
     ../../../src/backend/btinstallbackend.cpp \
     ../../../src/backend/btinstallmgr.cpp \
     ../../../src/backend/btinstallthread.cpp \
-    ../../../src/backend/btmoduletreeitem.cpp \
     ../../../src/backend/config/btconfig.cpp \
     ../../../src/backend/config/btconfigcore.cpp \
     ../../../src/backend/cswordmodulesearch.cpp \
@@ -75,7 +74,6 @@ HEADERS += \
     ../../../src/backend/btinstallbackend.h \
     ../../../src/backend/btinstallmgr.h \
     ../../../src/backend/btinstallthread.h \
-    ../../../src/backend/btmoduletreeitem.h \
     ../../../src/backend/btsignal.h \
     ../../../src/backend/config/btconfig.h \
     ../../../src/backend/config/btconfigcore.h \

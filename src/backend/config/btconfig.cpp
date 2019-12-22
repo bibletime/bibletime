@@ -16,7 +16,6 @@
 #include <QLocale>
 #include "../../util/btassert.h"
 #include "../../util/directory.h" // DU::getUserBaseDir()
-#include "../btmoduletreeitem.h"
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/cswordbackend.h"
 
