@@ -73,7 +73,8 @@ CExportManager::~CExportManager() {
 
 bool CExportManager::saveKey(CSwordKey const * const key,
                              Format const format,
-                             bool const addText)
+                             bool const addText,
+                             const BtConstModuleList& modules)
 {
     if (!key || !key->module())
         return false;
@@ -83,8 +84,6 @@ bool CExportManager::saveKey(CSwordKey const * const key,
 
     QString text;
     {
-        BtConstModuleList modules;
-        modules.append(key->module());
         CSwordVerseKey const * const vk =
                 dynamic_cast<CSwordVerseKey const *>(key);
         auto const render = newRenderer(format, addText);

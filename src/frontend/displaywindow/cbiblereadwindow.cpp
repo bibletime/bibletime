@@ -351,7 +351,7 @@ void CBibleReadWindow::saveChapterHTML() {
     vk.setUpperBound(dummy);
 
     CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(&vk, CExportManager::HTML, true);
+    mgr.saveKey(&vk, CExportManager::HTML, true, modules());
 }
 
 /** Saves the chapter as valid HTML page. */
@@ -369,7 +369,7 @@ void CBibleReadWindow::saveChapterPlain() {
     vk.setUpperBound(dummy);
 
     CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(&vk, CExportManager::Text, true);
+    mgr.saveKey(&vk, CExportManager::Text, true, modules());
 }
 
 void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {

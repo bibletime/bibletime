@@ -36,15 +36,19 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
 
     const BtConstModuleList modules = i.modules();
     CSwordKey * key = CSwordKey::createInstance(modules.first());
-    QString renderedText = QString(i.key()).append(":\n");
+    QString renderedText = QString(i.key());
+    if (modules.count() > 1) {
+        Q_FOREACH(CSwordModuleInfo const * const module, modules)
+            renderedText += "   " + module->name();
+    }
+    renderedText += ":\n";
 
-    QString entry;
     Q_FOREACH(CSwordModuleInfo const * const module, modules) {
         key->setModule(module);
         key->setKey(i.key());
-
-        /// \todo Check this code
-        entry.append(key->strippedText()).append("\n");
+        QString entry = key->strippedText().append("\n");
+        if (modules.count() > 1)
+            entry.append("\n");
         renderedText.append( entry );
     }
 

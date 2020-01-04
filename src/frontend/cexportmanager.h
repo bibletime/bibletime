@@ -48,7 +48,8 @@ public: /* Methods: */
 
     bool saveKey(CSwordKey const * const key,
                  Format const format,
-                 bool const addText);
+                 bool const addText,
+                 const BtConstModuleList& modules);
 
     bool saveKeyList(sword::ListKey const & list,
                      CSwordModuleInfo const * const module,
