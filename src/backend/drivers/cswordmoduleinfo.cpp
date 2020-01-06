@@ -833,10 +833,13 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("Writable"))
             .arg(isWritable() ? tr("yes") : tr("no"));
 
-    if (isEncrypted())
+    if (isEncrypted()) {
         text += row
                 .arg(tr("Unlock key"))
                 .arg(config(CSwordModuleInfo::CipherKey).toHtmlEscaped());
+        if (char const * const e = m_module.getConfigEntry("UnlockInfo"))
+            text += row.arg(tr("Unlock info")).arg(QString(e).toHtmlEscaped());
+    }
 
     QString options;
 
