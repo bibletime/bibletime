@@ -209,6 +209,12 @@ wrong, or if the config file was write protected return false.
     bool isEncrypted() const;
 
     /**
+    *  Gets the "UnlockInfo" tag value from the module's config file
+    *  @return Unlock information string (may be empty if not specified for module)
+    **/
+    QString getUnlockInfo();
+
+    /**
     * This function returns true if this module is locked (encrypted + correct cipher key),
     * otherwise return false.
     * @return True if this module is locked, i.e. encrypted but without a key set

@@ -199,6 +199,10 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
     return true;
 }
 
+QString CSwordModuleInfo::getUnlockInfo() {
+    return m_module.getConfigEntry("UnlockInfo");
+}
+
 QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
     return util::directory::getUserIndexDir().absolutePath();
 }

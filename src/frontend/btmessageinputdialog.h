@@ -1,0 +1,58 @@
+/*********
+*
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/
+*
+* Copyright 1999-2020 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License
+* version 2.0.
+*
+**********/
+
+#ifndef BTMESSAGEINPUTDIALOG_H
+#define BTMESSAGEINPUTDIALOG_H
+
+#include <QDialog>
+class QLineEdit;
+class QTextBrowser;
+
+/**
+ * @brief The BtMessageInputDialog class provides a editable
+ * field for user input. Optionally it displays a larger
+ * message.
+ */
+
+class BtMessageInputDialog : public QDialog
+{
+    Q_OBJECT
+public:
+    /**
+     * @brief The BtMessageInputDialog class provides a editable
+     * field for user input. Optionally it displays a larger message.
+     * @param parent parent window for dialog
+     * @param title  dialog title
+     * @param inputLabel  short text displayed above input field
+     * @param inputText  user input field which may be preloaded with text
+     * @param infoMessage optional larger message displayed above the inputLabel
+     * @param f  optional window flags
+     */
+    BtMessageInputDialog(QWidget *parent,
+                    const QString &title,
+                    const QString &inputLabel,
+                    const QString &inputText,
+                    const QString &infoMessage = QString(),
+                    Qt::WindowFlags f = Qt::Dialog);
+
+    /**
+     * @brief getUserInput
+     * @returns edited text from user
+     */
+    QString getUserInput() const;
+
+private:
+    QLineEdit * m_inputTextEdit;
+    QTextBrowser * m_infoTextEdit;
+};
+
+#endif // BTMESSAGEINPUTDIALOG_H

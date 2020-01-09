@@ -37,6 +37,7 @@
 #include "btaboutmoduledialog.h"
 #include "bibletimeapp.h"
 #include "btbookshelfdockwidget.h"
+#include "btmessageinputdialog.h"
 #include "cmdiarea.h"
 #include "display/btfindwidget.h"
 #include "displaywindow/btactioncollection.h"
@@ -192,13 +193,20 @@ void BibleTime::searchInModule(CSwordModuleInfo *module) {
 bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
     /// \todo Write a proper unlocking dialog with integrated error messages.
     QString unlockKey;
-    bool ok;
+
     for (;;) {
-        unlockKey = QInputDialog::getText(
-            parent, tr("Unlock Work"), tr("Enter the unlock key for %1.").arg(module->name()),
-            QLineEdit::Normal, module->config(CSwordModuleInfo::CipherKey), &ok
-        );
-        if (!ok) return false;
+
+        QString unlockInfo = module->getUnlockInfo();
+        BtMessageInputDialog btMessageInputDialog(
+                    parent,
+                    tr("Unlock Work"),
+                    tr("Enter the unlock key for %1.").arg(module->name()),
+                    module->config(CSwordModuleInfo::CipherKey),
+                    unlockInfo);
+        if (btMessageInputDialog.exec() == QDialog::Rejected)
+            return false;
+
+        unlockKey = btMessageInputDialog.getUserInput();
         module->unlock(unlockKey);
 
         /// \todo refactor this module reload
