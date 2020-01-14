@@ -90,7 +90,6 @@ void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
 
     displayWidget()->scrollToKey(newKey);
     displayWidget()->setDisplayOptions(displayOptions());
-    displayWidget()->setFilterOptions(filterOptions());
     BibleTime::instance()->autoScrollStop();
 
     setWindowTitle(windowCaption());
