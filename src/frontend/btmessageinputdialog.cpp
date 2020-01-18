@@ -80,8 +80,10 @@ BtMessageInputDialog::BtMessageInputDialog(QString const & title,
     buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
     verticalLayout->addWidget(buttonBox);
 
-    QObject::connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    QObject::connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(buttonBox, &QDialogButtonBox::accepted,
+               this, &BtMessageInputDialog::accept);
+    BT_CONNECT(buttonBox, &QDialogButtonBox::rejected,
+               this, &BtMessageInputDialog::reject);
 }
 
 QString BtMessageInputDialog::getUserInput() const {
