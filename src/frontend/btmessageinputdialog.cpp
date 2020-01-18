@@ -11,12 +11,16 @@
 **********/
 #include "btmessageinputdialog.h"
 
+#include <QAction>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QSpacerItem>
 #include <QTextBrowser>
 #include <QVBoxLayout>
+#include "../util/btconnect.h"
+#include "../util/cresmgr.h"
+
 
 BtMessageInputDialog::BtMessageInputDialog(QString const & title,
                                            QString const & inputLabel,
@@ -47,8 +51,28 @@ BtMessageInputDialog::BtMessageInputDialog(QString const & title,
     verticalLayout->addWidget(unlockTextLabel);
 
     m_inputTextEdit = new QLineEdit(inputText, parent);
-    if (inputType == Password)
+    if (inputType == Password) {
         m_inputTextEdit->setEchoMode(QLineEdit::Password);
+
+        // Add action to show/hide password:
+        auto * const passwordVisibilityAction =
+                m_inputTextEdit->addAction(CResMgr::mainIndex::showHide::icon(),
+                                           QLineEdit::TrailingPosition);
+        passwordVisibilityAction->setText(tr("Show password"));
+        passwordVisibilityAction->setCheckable(true);
+        BT_CONNECT(passwordVisibilityAction, &QAction::toggled,
+                   [this,passwordVisibilityAction](bool enable) {
+                       if (enable) {
+                           m_inputTextEdit->setEchoMode(QLineEdit::Normal);
+                           passwordVisibilityAction->setText(
+                                       tr("Hide password"));
+                       } else {
+                           m_inputTextEdit->setEchoMode(QLineEdit::Password);
+                           passwordVisibilityAction->setText(
+                                       tr("Show password"));
+                       }
+                   });
+    }
     verticalLayout->addWidget(m_inputTextEdit);
 
     QDialogButtonBox * buttonBox = new QDialogButtonBox(this);
