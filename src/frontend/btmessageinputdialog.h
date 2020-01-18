@@ -30,19 +30,19 @@ public:
     /**
      * @brief The BtMessageInputDialog class provides a editable
      * field for user input. Optionally it displays a larger message.
-     * @param parent parent window for dialog
      * @param title  dialog title
      * @param inputLabel  short text displayed above input field
      * @param inputText  user input field which may be preloaded with text
      * @param infoMessage optional larger message displayed above the inputLabel
+     * @param parent parent window for dialog
      * @param f  optional window flags
      */
-    BtMessageInputDialog(QWidget *parent,
-                    const QString &title,
-                    const QString &inputLabel,
-                    const QString &inputText,
-                    const QString &infoMessage = QString(),
-                    Qt::WindowFlags f = Qt::Dialog);
+    BtMessageInputDialog(QString const & title,
+                         QString const & inputLabel,
+                         QString const & inputText,
+                         QString const & infoMessage = QString(),
+                         QWidget * parent = nullptr,
+                         Qt::WindowFlags f = Qt::Dialog);
 
     /**
      * @brief getUserInput

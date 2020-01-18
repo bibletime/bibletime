@@ -195,11 +195,11 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * parent) {
 
     /// \todo Write a proper unlocking dialog with integrated error messages.
     BtMessageInputDialog unlockKeyInputDialog(
-                parent,
                 tr("Unlock Work"),
                 tr("Enter the unlock key for %1.").arg(module->name()),
                 module->config(CSwordModuleInfo::CipherKey),
-                module->getUnlockInfo());
+                module->getUnlockInfo(),
+                parent);
 
     while (unlockKeyInputDialog.exec() == QDialog::Accepted) {
         module->unlock(unlockKeyInputDialog.getUserInput());

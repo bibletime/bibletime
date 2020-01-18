@@ -18,20 +18,21 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 
-BtMessageInputDialog::BtMessageInputDialog(QWidget *parent,
-                                 const QString &title,
-                                 const QString &inputLabel,
-                                 const QString &inputText,
-                                 const QString &message,
-                                 Qt::WindowFlags f) :
-    QDialog(parent, f) {
+BtMessageInputDialog::BtMessageInputDialog(QString const & title,
+                                           QString const & inputLabel,
+                                           QString const & inputText,
+                                           QString const & infoMessage,
+                                           QWidget * parent,
+                                           Qt::WindowFlags f)
+    : QDialog(parent, f)
+{
     resize(280, 90);
     setWindowTitle(title);
     QVBoxLayout * verticalLayout = new QVBoxLayout(this);
 
-    if (! message.isEmpty()) {
+    if (!infoMessage.isEmpty()) {
         m_infoTextEdit = new QTextBrowser(this);
-        m_infoTextEdit->setPlainText(message);
+        m_infoTextEdit->setPlainText(infoMessage);
         m_infoTextEdit->setReadOnly(true);
         m_infoTextEdit->setOpenLinks(false);
         verticalLayout->addWidget(m_infoTextEdit);
