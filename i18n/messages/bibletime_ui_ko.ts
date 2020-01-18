@@ -447,17 +447,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>새로운 세션</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="97"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="98"/>
         <source>Initializing the SWORD engine...</source>
         <translation>SWORD 엔진을 초기화합니다...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="105"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="106"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>바이블타임 화면을 생성합니다...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="112"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>메뉴와 도구 모음을 초기화합니다...</translation>
     </message>
@@ -467,17 +467,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>책 잠금 해제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="198"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="199"/>
         <source>Enter the unlock key for %1.</source>
         <translation>%1 잠금 해제 키를 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="218"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="227"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>경고: 잘못된 잠금 해제 키!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="219"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="228"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>입력하신 잠금 해제 키로는 이 모듈을 잠금 해제 할 수 없습니다. 다시 시도하세요.</translation>
     </message>
@@ -1437,6 +1437,20 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="78"/>
         <source>Description</source>
         <translation>설명</translation>
+    </message>
+</context>
+<context>
+    <name>BtMessageInputDialog</name>
+    <message>
+        <location filename="../../src/frontend/btmessageinputdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/btmessageinputdialog.cpp" line="72"/>
+        <source>Show password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btmessageinputdialog.cpp" line="68"/>
+        <source>Hide password</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2564,168 +2578,173 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="802"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="806"/>
         <source>Version</source>
         <translation>버전</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="805"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
         <source>unknown</source>
         <translation>알수 없음</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="810"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="814"/>
         <source>Markup</source>
         <translation>마크업</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Location</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Language</source>
         <translation>언어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
         <source>Category</source>
         <translation>분류</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
         <source>Writable</source>
         <translation>쓰기가능여부</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>yes</source>
         <translation>예</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>no</source>
         <translation>아니오</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Unlock key</source>
         <translation>잠금 해제 키</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="845"/>
+        <source>Unlock info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Features</source>
         <translation>포함 기능</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="874"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>조심하세요, 이 책은 광신도/이단 자료를 포함하고 있습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="871"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="878"/>
         <source>About</source>
         <translation>소개</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="875"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="882"/>
         <source>Distribution license</source>
         <translation>배포 라이선스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="876"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="883"/>
         <source>Distribution source</source>
         <translation>배포처</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="877"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="884"/>
         <source>Distribution notes</source>
         <translation>배포 주의사항</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="878"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="885"/>
         <source>Text source</source>
         <translation>자료 제공처</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="879"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="886"/>
         <source>Copyright notes</source>
         <translation>저작권 주의사항</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="880"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="887"/>
         <source>Copyright holder</source>
         <translation>저작권 소유자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="881"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="888"/>
         <source>Copyright date</source>
         <translation>저작권 일자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="882"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="889"/>
         <source>Copyright contact name</source>
         <translation>저작권 담당자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="883"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="890"/>
         <source>Copyright contact address</source>
         <translation>저작권 연락 주소</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="884"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="891"/>
         <source>Copyright contact email</source>
         <translation>저작권 연락 이메일</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="973"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Bibles</source>
         <translation>성경</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Commentaries</source>
         <translation>주석</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Books</source>
         <translation>도서</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="979"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Cults/Unorthodox</source>
         <translation>광신도/이단</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Maps and Images</source>
         <translation>지도와 그림</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Daily Devotionals</source>
         <translation>매일 성경 읽기</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="992"/>
         <source>Lexicons and Dictionaries</source>
         <translation>사전</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Glossaries</source>
         <translation>용어집</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
         <source>Unknown</source>
         <translation>기타</translation>
     </message>
@@ -3840,7 +3859,7 @@ Do you want to continue?</source>
         <translation>원격 HTTPS</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="416"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="415"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="148"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="338"/>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="242"/>
@@ -3849,7 +3868,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="54"/>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="422"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="421"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="154"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="339"/>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
@@ -3857,13 +3876,13 @@ Do you want to continue?</source>
         <translation>모든 파일</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="419"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="418"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="151"/>
         <source>Text files</source>
         <translation>텍스트 파일</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="425"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="424"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="336"/>
         <source>Save file</source>
         <translation>파일 저장</translation>

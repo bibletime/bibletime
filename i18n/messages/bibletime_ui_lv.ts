@@ -447,17 +447,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Jauna sesija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="97"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="98"/>
         <source>Initializing the SWORD engine...</source>
         <translation>SWORD programmas inicializēšana...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="105"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="106"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>BibleTime lietotāja interfeisa izveide ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="112"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Izvēlnes un rīkjoslu inicializēšana ...</translation>
     </message>
@@ -467,17 +467,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Atbloķēt darbu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="198"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="199"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Ievadiet atbloķēšanas atslēgu %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="218"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="227"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Brīdinājums: nederīga atbloķēšanas atslēga!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime.cpp" line="219"/>
+        <location filename="../../src/frontend/bibletime.cpp" line="228"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>Iesniegtā atbloķēšanas atslēga nav pareizi atbloķējusi šo moduli. Lūdzu mēģiniet vēlreiz.</translation>
     </message>
@@ -1437,6 +1437,20 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfwizard/btinstallpagemodel.cpp" line="78"/>
         <source>Description</source>
         <translation>Apraksts</translation>
+    </message>
+</context>
+<context>
+    <name>BtMessageInputDialog</name>
+    <message>
+        <location filename="../../src/frontend/btmessageinputdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/btmessageinputdialog.cpp" line="72"/>
+        <source>Show password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btmessageinputdialog.cpp" line="68"/>
+        <source>Hide password</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2564,168 +2578,173 @@ saīsne</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="802"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="806"/>
         <source>Version</source>
         <translation>Versija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="805"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
         <source>unknown</source>
         <translation>nezināms</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="810"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="814"/>
         <source>Markup</source>
         <translation>Marķējums</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Location</source>
         <translation>Atrašanās vieta</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Language</source>
         <translation>Valoda</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
         <source>Category</source>
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
         <source>Writable</source>
         <translation>Rediģējams</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>yes</source>
         <translation>jā</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>no</source>
         <translation>nē</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Unlock key</source>
         <translation>Piekļuves atslēga</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="845"/>
+        <source>Unlock info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Features</source>
         <translation>Iespējas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="874"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Uzmanieties, šis darbs satur nestandarta / apšaubāmu materiālu!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="871"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="878"/>
         <source>About</source>
         <translation>Par</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="875"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="882"/>
         <source>Distribution license</source>
         <translation>Izplatīšanas licence</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="876"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="883"/>
         <source>Distribution source</source>
         <translation>Izplatīšanas avots</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="877"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="884"/>
         <source>Distribution notes</source>
         <translation>Izplatīšanas piezīmes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="878"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="885"/>
         <source>Text source</source>
         <translation>Teksta avots</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="879"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="886"/>
         <source>Copyright notes</source>
         <translation>Autortiesību piezīmes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="880"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="887"/>
         <source>Copyright holder</source>
         <translation>Autortiesību īpašnieks</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="881"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="888"/>
         <source>Copyright date</source>
         <translation>Autortiesību datums</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="882"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="889"/>
         <source>Copyright contact name</source>
         <translation>Autortiesību kontaktpersonas vārds</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="883"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="890"/>
         <source>Copyright contact address</source>
         <translation>Autortiesību kontaktinformācijas adrese</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="884"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="891"/>
         <source>Copyright contact email</source>
         <translation>Autortiesību kontaktu e-pasts</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="973"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Bibles</source>
         <translation>Bībeles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Commentaries</source>
         <translation>Komentāri</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Books</source>
         <translation>Grāmatas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="979"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Cults/Unorthodox</source>
         <translation>Nestandarta</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Maps and Images</source>
         <translation>Kartes un attēli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Daily Devotionals</source>
         <translation>Ikdienas rakstvietas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="992"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Leksikoni un vārdnīcas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Glossaries</source>
         <translation>Glosāriji</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
         <source>Unknown</source>
         <translation>Nezināms</translation>
     </message>
@@ -3838,7 +3857,7 @@ Do you want to continue?</source>
         <translation>Attālināts HTTPS</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="416"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="415"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="148"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="338"/>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="242"/>
@@ -3847,7 +3866,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="54"/>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="422"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="421"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="154"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="339"/>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
@@ -3855,13 +3874,13 @@ Do you want to continue?</source>
         <translation>Visi faili</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="419"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="418"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="151"/>
         <source>Text files</source>
         <translation>Teksta faili</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="425"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="424"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="336"/>
         <source>Save file</source>
         <translation>Saglabāt failu</translation>
