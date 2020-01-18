@@ -190,44 +190,44 @@ void BibleTime::searchInModule(CSwordModuleInfo *module) {
     Search::CSearchDialog::openDialog(modules, QString());
 }
 
-bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
+bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * parent) {
+    BT_ASSERT(module);
+
     /// \todo Write a proper unlocking dialog with integrated error messages.
-    QString unlockKey;
+    BtMessageInputDialog unlockKeyInputDialog(
+                parent,
+                tr("Unlock Work"),
+                tr("Enter the unlock key for %1.").arg(module->name()),
+                module->config(CSwordModuleInfo::CipherKey),
+                module->getUnlockInfo());
 
-    for (;;) {
-
-        QString unlockInfo = module->getUnlockInfo();
-        BtMessageInputDialog btMessageInputDialog(
-                    parent,
-                    tr("Unlock Work"),
-                    tr("Enter the unlock key for %1.").arg(module->name()),
-                    module->config(CSwordModuleInfo::CipherKey),
-                    unlockInfo);
-        if (btMessageInputDialog.exec() == QDialog::Rejected)
-            return false;
-
-        unlockKey = btMessageInputDialog.getUserInput();
-        module->unlock(unlockKey);
+    while (unlockKeyInputDialog.exec() == QDialog::Accepted) {
+        module->unlock(unlockKeyInputDialog.getUserInput());
 
         /// \todo refactor this module reload
-        /* There is currently a deficiency in sword 1.8.1 in that backend->setCipherKey() does
-         * not work correctly for modules from which data was already fetched. Therefore we have to
-         * reload the modules.
-         */
+        /* There is currently a deficiency in SWORD 1.8.1 in that
+           backend->setCipherKey() does not work correctly for modules from
+           which data was already fetched. Therefore we have to reload the
+           modules. */
         {
-            const QString moduleName(module->name());
-            CSwordBackend *backend = CSwordBackend::instance();
-            backend->reloadModules(CSwordBackend::OtherChange);
-            module = backend->findModuleByName(moduleName);
+            auto const moduleName(module->name());
+            auto & backend = *CSwordBackend::instance();
+            backend.reloadModules(CSwordBackend::OtherChange);
+            module = backend.findModuleByName(moduleName);
             BT_ASSERT(module);
         }
 
-        if (!module->isLocked()) break;
-        message::showWarning(parent, tr("Warning: Invalid unlock key!"),
-                             tr("The unlock key you provided did not properly unlock this "
-                                "module. Please try again."));
+        // Return true if the module was succesfully unlocked:
+        if (!module->isLocked())
+            return true;
+
+        message::showWarning(
+                    parent,
+                    tr("Warning: Invalid unlock key!"),
+                    tr("The unlock key you provided did not properly unlock "
+                       "this module. Please try again."));
     }
-    return true;
+    return false;
 }
 
 void BibleTime::slotModuleUnlock(CSwordModuleInfo *module) {
