@@ -20,6 +20,7 @@
 
 BtMessageInputDialog::BtMessageInputDialog(QString const & title,
                                            QString const & inputLabel,
+                                           InputType inputType,
                                            QString const & inputText,
                                            QString const & infoMessage,
                                            QWidget * parent,
@@ -46,6 +47,8 @@ BtMessageInputDialog::BtMessageInputDialog(QString const & title,
     verticalLayout->addWidget(unlockTextLabel);
 
     m_inputTextEdit = new QLineEdit(inputText, parent);
+    if (inputType == Password)
+        m_inputTextEdit->setEchoMode(QLineEdit::Password);
     verticalLayout->addWidget(m_inputTextEdit);
 
     QDialogButtonBox * buttonBox = new QDialogButtonBox(this);

@@ -197,6 +197,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * parent) {
     BtMessageInputDialog unlockKeyInputDialog(
                 tr("Unlock Work"),
                 tr("Enter the unlock key for %1.").arg(module->name()),
+                BtMessageInputDialog::Password,
                 module->config(CSwordModuleInfo::CipherKey),
                 module->getUnlockInfo(),
                 parent);

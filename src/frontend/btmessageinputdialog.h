@@ -26,12 +26,19 @@ class QTextBrowser;
 class BtMessageInputDialog : public QDialog
 {
     Q_OBJECT
-public:
+
+public: /* Types: */
+
+    enum InputType { Normal, Password };
+
+public: /* Methods: */
+
     /**
      * @brief The BtMessageInputDialog class provides a editable
      * field for user input. Optionally it displays a larger message.
      * @param title  dialog title
      * @param inputLabel  short text displayed above input field
+     * @param inputType The type of user input field to display
      * @param inputText  user input field which may be preloaded with text
      * @param infoMessage optional larger message displayed above the inputLabel
      * @param parent parent window for dialog
@@ -39,6 +46,7 @@ public:
      */
     BtMessageInputDialog(QString const & title,
                          QString const & inputLabel,
+                         InputType inputType,
                          QString const & inputText,
                          QString const & infoMessage = QString(),
                          QWidget * parent = nullptr,
