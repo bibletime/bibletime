@@ -42,11 +42,9 @@ public: /* Methods: */
 
       \param[in] fileName loads a list of items (with subitem trees) from a named file
           or from the default bookmarks file if empty.
-      \param[in] rootFolder would be used if you need only to display particular
-          bookmarks folder.
     */
-    BtBookmarksModel(const QString & fileName = QString(),
-                     const QString & rootFolder = QString(), QObject * parent = nullptr);
+    BtBookmarksModel(QString const & fileName = QString(),
+                     QObject * parent = nullptr);
     ~BtBookmarksModel() override;
 
     /** Reimplemented from QAbstractItemModel */

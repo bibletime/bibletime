@@ -585,15 +585,10 @@ BtBookmarksModel::BtBookmarksModel(QObject * parent)
     load();
 }
 
-BtBookmarksModel::BtBookmarksModel(const QString & fileName, const QString & rootFolder, QObject * parent)
+BtBookmarksModel::BtBookmarksModel(QString const & fileName, QObject * parent)
     : QAbstractItemModel(parent)
     , d_ptr(new BtBookmarksModelPrivate(this))
-{
-    /// \todo take into account rootFolder
-    BT_ASSERT(rootFolder.isEmpty() && "specifying root folder for bookmarks is not supported at moment");
-
-    load(fileName);
-}
+{ load(fileName); }
 
 BtBookmarksModel::~BtBookmarksModel() {
     Q_D(BtBookmarksModel);
