@@ -13,7 +13,6 @@
 #include "btconfig.h"
 
 #include <QDebug>
-#include <QLocale>
 #include "../../util/btassert.h"
 #include "../../util/directory.h" // DU::getUserBaseDir()
 #include "../managers/cdisplaytemplatemgr.h"
