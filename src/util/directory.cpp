@@ -160,7 +160,7 @@ bool initDirectoryCache() {
         return false;
     }
 
-    QString localeName(QLocale::system().name());
+    QString localeName(QLocale().name());
     QString langCode(localeName.section('_', 0, 0));
 
     cachedHandbookDir.reset(new QDir(wDir));

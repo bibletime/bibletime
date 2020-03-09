@@ -898,7 +898,9 @@ void BibleTime::initBackends() {
 
 
     CSwordBackend *backend = CSwordBackend::createInstance();
-    backend->booknameLanguage(btConfig().value<QString>("GUI/booknameLanguage", QLocale::system().name()));
+
+    backend->booknameLanguage(btConfig().value<QString>("GUI/booknameLanguage",
+                                                        QLocale().name()));
 
     CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 

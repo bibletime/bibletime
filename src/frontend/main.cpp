@@ -286,13 +286,13 @@ int main(int argc, char* argv[]) {
 
     //first install QT's own translations
     QTranslator qtTranslator;
-    if (qtTranslator.load("qt_" + QLocale::system().name(),
+    if (qtTranslator.load("qt_" + QLocale().name(),
                           QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
     //then our own
     QTranslator BibleTimeTranslator;
     if (BibleTimeTranslator.load(
-                QString("bibletime_ui_").append(QLocale::system().name()),
+                QString("bibletime_ui_").append(QLocale().name()),
                 DU::getLocaleDir().canonicalPath()))
         app.installTranslator(&BibleTimeTranslator);
 

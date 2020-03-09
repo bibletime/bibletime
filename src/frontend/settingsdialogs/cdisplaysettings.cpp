@@ -151,7 +151,7 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
             atv.append(settingsLanguage);
     }
     {
-        const QString localeLanguageAndCountry = QLocale::system().name();
+        const QString localeLanguageAndCountry = QLocale().name();
         if (!localeLanguageAndCountry.isEmpty()) {
             atv.append(localeLanguageAndCountry);
             int i = localeLanguageAndCountry.indexOf('_');
