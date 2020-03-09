@@ -29,11 +29,8 @@ enum InfoType {
     Footnote,
     Lemma,
     Morph,
-    WordTranslation,
-    WordGloss,
     Text,
     Reference, // for rendering references
-    Key        // sword key reference for commentary display
 };
 
 using InfoData = QPair<InfoType, QString>;

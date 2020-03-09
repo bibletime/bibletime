@@ -118,8 +118,6 @@ ListInfoData detectInfo(QString const & data) {
                 list.append(qMakePair(CrossReference, attrValue));
             } else if (attrName == "href") {
                 list.append(qMakePair(Reference, attrValue));
-            } else if (attrName == "key") {
-                list.append(qMakePair(Key, attrValue));
             }
         }
     }
@@ -150,12 +148,6 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                 continue;
             case Footnote:
                 text.append( decodeFootnote( (*it).second ) );
-                continue;
-            case WordTranslation:
-                text.append( getWordTranslation( (*it).second ) );
-                continue;
-            case WordGloss:
-                //text.append( getWordTranslation( (*it).second ) );
                 continue;
             case Abbreviation:
                 text.append( decodeAbbreviation( (*it).second ) );
