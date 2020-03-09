@@ -27,6 +27,7 @@ using namespace Rendering;
 using namespace sword;
 
 namespace Rendering {
+namespace {
 
 class CrossRefRendering : public CHTMLExportRendering {
 public:
@@ -94,8 +95,9 @@ public:
         Q_UNUSED(tree)
         return text;
     }
-};
+}; // class CrossRefRendering
 
+} // anonymous namespace
 
 ListInfoData detectInfo(QString const & data) {
     ListInfoData list;
