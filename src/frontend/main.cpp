@@ -285,16 +285,22 @@ int main(int argc, char* argv[]) {
 #endif
 
     //first install QT's own translations
+    QLocale const defaultLocale;
     QTranslator qtTranslator;
-    if (qtTranslator.load("qt_" + QLocale().name(),
-                          QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtTranslator.load(defaultLocale,
+                          "qt_",
+                          QString(),
+                          QLibraryInfo::location(
+                              QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
     //then our own
-    QTranslator BibleTimeTranslator;
-    if (BibleTimeTranslator.load(
-                QString("bibletime_ui_").append(QLocale().name()),
+    QTranslator bibleTimeTranslator;
+    if (bibleTimeTranslator.load(
+                defaultLocale,
+                "bibletime_ui_",
+                QString(),
                 DU::getLocaleDir().canonicalPath()))
-        app.installTranslator(&BibleTimeTranslator);
+        app.installTranslator(&bibleTimeTranslator);
 
     // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {
