@@ -15,6 +15,7 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QLabel>
+#include <QLocale>
 #include <QVBoxLayout>
 #include <QFormLayout>
 #include "../../backend/config/btconfig.h"

@@ -22,6 +22,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
+#include <QLocale>
 #include <QSettings>
 #include <QTextDocument>
 #include "../../util/btassert.h"

@@ -16,6 +16,7 @@
 #include <QDebug>
 #include <QDockWidget>
 #include <QLabel>
+#include <QLocale>
 #include <QMenu>
 #include <QMenuBar>
 #include <QPointer>

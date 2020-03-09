@@ -19,6 +19,7 @@
 #include <QDesktopServices>
 #include <QInputDialog>
 #include <QList>
+#include <QLocale>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QProcess>
