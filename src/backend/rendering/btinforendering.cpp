@@ -97,41 +97,32 @@ public:
 };
 
 
-ListInfoData detectInfo(QString const &data)
-{
+ListInfoData detectInfo(QString const & data) {
     ListInfoData list;
-    QStringList attrList = data.split("||");
+    auto const attrList(data.split("||"));
 
-    for (int i = 0; i < attrList.count(); i++) {
-        QString attrPair = attrList[i];
-        QStringList attr = attrPair.split("=");
-        if (attr.count() == 2) {
-            QString attrName = attr[0];
-            QString attrValue = attr[1];
+    for (auto const & attrPair : attrList) {
+        auto const attr(attrPair.split("="));
+        if (attr.size() == 2) {
+            auto const & attrName = attr[0];
+            auto const & attrValue = attr[1];
             if (attrName == "note") {
-                list.append( qMakePair(Footnote, attrValue));
-            }
-            if (attrName == "lemma") {
-                list.append( qMakePair(Lemma, attrValue));
-            }
-            if (attrName == "morph") {
-                list.append( qMakePair(Morph, attrValue));
-            }
-            if (attrName == "expansion") {
-                list.append( qMakePair(Abbreviation, attrValue));
-            }
-            if (attrName == "crossrefs") {
-                list.append( qMakePair(CrossReference, attrValue));
-            }
-            if (attrName == "href") {
-                list.append( qMakePair(Reference, attrValue));
-            }
-            if (attrName == "key") {
-                list.append( qMakePair(Key, attrValue));
+                list.append(qMakePair(Footnote, attrValue));
+            } else if (attrName == "lemma") {
+                list.append(qMakePair(Lemma, attrValue));
+            } else if (attrName == "morph") {
+                list.append(qMakePair(Morph, attrValue));
+            } else if (attrName == "expansion") {
+                list.append(qMakePair(Abbreviation, attrValue));
+            } else if (attrName == "crossrefs") {
+                list.append(qMakePair(CrossReference, attrValue));
+            } else if (attrName == "href") {
+                list.append(qMakePair(Reference, attrValue));
+            } else if (attrName == "key") {
+                list.append(qMakePair(Key, attrValue));
             }
         }
     }
-
     return list;
 }
 
