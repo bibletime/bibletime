@@ -14,7 +14,6 @@
 
 #include <QApplication>
 #include <QClipboard>
-#include <QDebug>
 #include <QScreen>
 #include <QTimer>
 #include "../../../backend/config/btconfig.h"
@@ -32,7 +31,7 @@
 #include "../../../util/btconnect.h"
 #include "../../bibletime.h"
 #include "../../cinfodisplay.h"
-#include "../../bttexteditdialog.h"
+#include "../../edittextwizard/btedittextwizard.h"
 
 // Sword includes:
 #include <swkey.h>
@@ -175,16 +174,16 @@ QString BtQmlInterface::getRawText(int row, int column) {
 }
 
 void BtQmlInterface::openEditor(int row, int column) {
-
-    BtTextEditDialog dlg;
+    BtEditTextWizard wiz;
     QString verse = m_moduleTextModel->indexToKeyName(row);
-    dlg.setTitle(tr("Edit") + " " + verse);
-
-    dlg.setText(getRawText(row, column));
-    int rtn = dlg.exec();
+    wiz.setTitle(tr("Edit") + " " + verse);
+    wiz.setText(getRawText(row,column));
+    QFont font = m_fonts.at(column);
+    wiz.setFont(font);
+    int rtn = wiz.exec();
     if (rtn == 0)
         return;
-    setRawText(row, column, dlg.text());
+    setRawText(row, column, wiz.text());
     return;
 }
 
@@ -546,8 +545,8 @@ void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, co
 
 
 bool BtQmlInterface::copyKey(CSwordKey const * const key,
-                                Format const format,
-                                bool const addText)
+                             Format const format,
+                             bool const addText)
 {
     if (!key || !key->module())
         return false;
@@ -575,7 +574,7 @@ bool BtQmlInterface::copyKey(CSwordKey const * const key,
 }
 
 std::unique_ptr<Rendering::CTextRendering> BtQmlInterface::newRenderer(Format const format,
-                                                                          bool const addText)
+                                                                       bool const addText)
 {
     DisplayOptions displayOptions;
     displayOptions.lineBreaks = true;
