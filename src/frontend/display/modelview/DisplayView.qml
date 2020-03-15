@@ -346,7 +346,12 @@ Rectangle {
                     anchors.left: space1.right
                     width: parent.textWidth
                     text: text1
-                    textFormat: Text.RichText
+                    textFormat: {
+                        if (text1.includes("<!DOC"))
+                            return Text.RichText;
+                        else
+                            return Text.PlainText;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName0
@@ -386,7 +391,12 @@ Rectangle {
                     anchors.leftMargin: 0
                     width: parent.textWidth
                     text: text2
-                    textFormat: Text.RichText
+                    textFormat: {
+                        if (text2.includes("<!DOC"))
+                            return Text.RichText;
+                        else
+                            return Text.PlainText;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName1
@@ -424,7 +434,12 @@ Rectangle {
                     anchors.leftMargin: 0
                     width: parent.textWidth
                     text: text3
-                    textFormat: Text.RichText
+                    textFormat: {
+                        if (text3.includes("<!DOC"))
+                            return Text.RichText;
+                        else
+                            return Text.PlainText;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName2
@@ -463,7 +478,12 @@ Rectangle {
                     anchors.leftMargin: 0
                     width: parent.textWidth
                     text: text4
-                    textFormat: Text.RichText
+                    textFormat: {
+                        if (text4.includes("<!DOC"))
+                            return Text.RichText;
+                        else
+                            return Text.PlainText;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName3
