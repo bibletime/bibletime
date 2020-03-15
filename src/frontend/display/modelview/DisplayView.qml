@@ -307,6 +307,12 @@ Rectangle {
                     updating = false;
                 }
 
+                function textIsHtml(dtext) {
+                    if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
+                        return Text.RichText;
+                    return Text.PlainText;
+                }
+
                 width: listView.width
                 height: {
                     if (listView.columns == 1)
@@ -346,12 +352,7 @@ Rectangle {
                     anchors.left: space1.right
                     width: parent.textWidth
                     text: text1
-                    textFormat: {
-                        if (text1.includes("<!DOC"))
-                            return Text.RichText;
-                        else
-                            return Text.PlainText;
-                    }
+                    textFormat: { delegate.textIsHtml(text1) }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName0
@@ -391,12 +392,7 @@ Rectangle {
                     anchors.leftMargin: 0
                     width: parent.textWidth
                     text: text2
-                    textFormat: {
-                        if (text2.includes("<!DOC"))
-                            return Text.RichText;
-                        else
-                            return Text.PlainText;
-                    }
+                    textFormat: { delegate.textIsHtml(text2) }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName1
@@ -434,12 +430,7 @@ Rectangle {
                     anchors.leftMargin: 0
                     width: parent.textWidth
                     text: text3
-                    textFormat: {
-                        if (text3.includes("<!DOC"))
-                            return Text.RichText;
-                        else
-                            return Text.PlainText;
-                    }
+                    textFormat: { delegate.textIsHtml(text3) }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName2
@@ -478,12 +469,7 @@ Rectangle {
                     anchors.leftMargin: 0
                     width: parent.textWidth
                     text: text4
-                    textFormat: {
-                        if (text4.includes("<!DOC"))
-                            return Text.RichText;
-                        else
-                            return Text.PlainText;
-                    }
+                    textFormat: { delegate.textIsHtml(text4) }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName3
