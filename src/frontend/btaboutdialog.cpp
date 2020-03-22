@@ -131,7 +131,7 @@ void BtAboutDialog::retranslateBtTab() {
     QString content("<p>");
     content += tr("BibleTime is an easy to use but powerful Bible study tool.");
     content += "</p><p>";
-    content += tr("(c)1999-2016, The BibleTime Team");
+    content += tr("(c)1999-2020, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("http://www.bibletime.info", "www.bibletime.info")
                "</p>";
     m_bibletimeTab->setText(MAKE_HTML(m_bibletimeTab, content));
