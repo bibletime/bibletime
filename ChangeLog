@@ -1,3 +1,6 @@
+2019-03-21 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #183 - Support for dark mode.
+
 2019-01-14 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #218 - Entering Bible reference in navigation toolbar returns text low in page 
 

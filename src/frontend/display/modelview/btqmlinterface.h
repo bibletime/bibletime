@@ -53,9 +53,9 @@ class BtQmlInterface : public QObject {
         Text
     };
     Q_PROPERTY(QString      activeLink              READ getActiveLink  NOTIFY activeLinkChanged    WRITE setActiveLink)
+    Q_PROPERTY(QColor       backgroundColor         READ getBackgroundColor NOTIFY backgroundColorChanged)
     Q_PROPERTY(int          contextMenuIndex        READ getContextMenuIndex NOTIFY contextMenuIndexChanged WRITE setContextMenuIndex)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
-    Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          fontSize0               READ getFontSize0   NOTIFY fontChanged)
     Q_PROPERTY(int          fontSize1               READ getFontSize1   NOTIFY fontChanged)
     Q_PROPERTY(int          fontSize2               READ getFontSize2   NOTIFY fontChanged)
@@ -64,6 +64,8 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QString      fontName1               READ getFontName1   NOTIFY fontChanged)
     Q_PROPERTY(QString      fontName2               READ getFontName2   NOTIFY fontChanged)
     Q_PROPERTY(QString      fontName3               READ getFontName3   NOTIFY fontChanged)
+    Q_PROPERTY(QColor       foregroundColor         READ getForegroundColor NOTIFY foregroundColorChanged)
+    Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(bool         pageDown                READ getPageDown   NOTIFY pageDownChanged)
     Q_PROPERTY(bool         pageUp                  READ getPageUp     NOTIFY pageUpChanged)
@@ -98,6 +100,9 @@ public:
 
 
     QString getActiveLink() const;
+    QColor getBackgroundColor() const;
+    QColor getForegroundColor() const;
+    void changeColorTheme();
     void copyRange(int index1, int index2);
     void copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module);
     QString getBibleUrlFromLink(const QString& url);
@@ -136,10 +141,12 @@ public:
 
 signals:
     void activeLinkChanged();
+    void backgroundColorChanged();
     void contextMenuIndexChanged();
     void contextMenu(int x, int y, int moduleNum);
     void currentModelIndexChanged();
     void fontChanged();
+    void foregroundColorChanged();
     void highlightWordsChanged();
     void numModulesChanged();
     void pageDownChanged();
@@ -159,7 +166,6 @@ private slots:
 private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
     bool copyKey(CSwordKey const * const key, Format const format, bool const addText);
-    void displayText(const QString& text, const QString& lang);
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
     QString fontName(int column) const;

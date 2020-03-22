@@ -2,9 +2,6 @@
  * Theme by tabthorpe@FreeBSD.org *
  */
 
-/* Fix color common color conflicts with desktop themes: */
-body { background-color: #fff; color: #000; }
-
 #content {
     margin: 5px;
 }
@@ -27,7 +24,7 @@ body { background-color: #fff; color: #000; }
 a {
     text-decoration:none;
     font-weight:normal;
-    color: #006400; /* # DarkGreen */
+    color: #FOREGROUND_COLOR#;
     padding:2px;
 }
 
@@ -59,19 +56,19 @@ div.currententry {
 }
 
 .footnote {
-    color: #2E8B57; /* #SeaGreen */
+    color: #CROSSREF_COLOR#;
 }
 
 .strongnumber {
     vertical-align: top;
     font-size: 60%;
-    color: #20B2AA; /* #LightSeaGreen */
+    color: #CROSSREF_COLOR#;
 }
 
 .morphcode {
     vertical-align: top;
     font-size: 60%;
-    color: #20B2AA; /* #LightSeaGreen */
+    color: #CROSSREF_COLOR#;
 }
 
 .lemma {
@@ -96,15 +93,21 @@ div.currententry {
 }
 
 .jesuswords {
-    color: red;
+    color: #JESUS_WORDS_COLOR#;
     font-size: 0.9em;
 }
 .jesuswords a {
-    color: red;
+    color: #JESUS_WORDS_COLOR#;
 }
+
+.crossreference {
+    color: #CROSSREF_COLOR#;
+}
+
 a[name="crossref"] {
     font-size: small;
-    color: #4A766E /* # DarkGreenCopper */
+    color: #CROSSREF_COLOR#
+    /* color: #4A766E /* # DarkGreenCopper */
 }
 
 .name > .divine {

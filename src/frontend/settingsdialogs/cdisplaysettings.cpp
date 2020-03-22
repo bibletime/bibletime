@@ -19,6 +19,7 @@
 #include <QVBoxLayout>
 #include <QFormLayout>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/managers/colormanager.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 #include "../../backend/rendering/cdisplayrendering.h"
 #include "../../util/btassert.h"
@@ -70,10 +71,10 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     m_stylePreviewViewer = new QLabel(this);
     m_stylePreviewViewer->setWordWrap(true);
     m_stylePreviewViewer->setTextFormat(Qt::RichText);
-    m_stylePreviewViewer->setStyleSheet("QLabel { background-color: rgb(255, 255, 255) }");
     m_stylePreviewViewer->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     m_stylePreviewViewer->setAlignment(Qt::AlignTop);
     m_stylePreviewViewer->setMargin(15);
+    m_stylePreviewViewer->setAutoFillBackground(true);
 
     mainLayout->addWidget(m_previewLabel);
     mainLayout->addWidget(m_stylePreviewViewer);
@@ -212,33 +213,33 @@ void CDisplaySettingsPage::updateStylePreview() {
     settings.highlight = false;
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"John316\" href=\"sword://Bible/WEB/John 3:16\">16</a></span>%1")
-                     .arg(tr("For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.")),
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:16\">16</a></span>%1")
+                     .arg(tr("<span class=\"jesuswords\"> For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</span>")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"John317\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
-                     .arg(tr("For God didn't send his Son into the world to judge the world, but that the world should be saved through him.")),
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
+                     .arg(tr("<span class=\"jesuswords\">For God didn't send his Son into the world to judge the world, but that the world should be saved through him.</span>")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"John318\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
-                     .arg(tr("He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.")),
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
+                     .arg(tr("<span class=\"jesuswords\">He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.</span>")),
                      settings) );
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"John319\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")
-                     .arg(tr("This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.")),
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")
+                     .arg(tr("<span class=\"jesuswords\">This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</span>")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"John320\" href=\"sword://Bible/WEB/John 3:20\">20</a></span>%1<br/>")
-                     .arg(tr("For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.")),
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:20\">20</a></span>%1<br/>")
+                     .arg(tr("<span class=\"jesuswords\">For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.</span>")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"John321\" href=\"sword://Bible/WEB/John 3:21\">21</a></span>%1")
-                     .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:21\">21</a></span>%1")
+                     .arg(tr("<span class=\"jesuswords\">But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</span>")),
                      settings));
 
     /// \todo Remove the following hack:
@@ -247,6 +248,8 @@ void CDisplaySettingsPage::updateStylePreview() {
     CDisplayRendering render;
     QString text = render.renderKeyTree(tree);
     text.replace("#CHAPTERTITLE#", "");
+    updateColors();
+    text = ColorManager::instance()->replaceColors(text);
     m_stylePreviewViewer->setText(text);
 
     btConfig().setValue("GUI/activeTemplateName", oldStyleName);
@@ -256,4 +259,11 @@ void CDisplaySettingsPage::save() {
     btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
     btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
     btConfig().setValue("GUI/booknameLanguage", m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()));
+}
+
+void CDisplaySettingsPage::updateColors(const QString& style) {
+    QPalette p = m_stylePreviewViewer->palette();
+    p.setColor(QPalette::Window, ColorManager::instance()->getBackgroundColor(style));
+    p.setColor(QPalette::WindowText, ColorManager::instance()->getForegroundColor(style));
+    m_stylePreviewViewer->setPalette(p);
 }

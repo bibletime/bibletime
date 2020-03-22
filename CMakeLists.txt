@@ -340,6 +340,7 @@ ENDIF()
 
 FILE(GLOB INSTALL_TMPL_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.cmap"
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl"
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/basic_template.txt")
 INSTALL(FILES ${INSTALL_TMPL_LIST}

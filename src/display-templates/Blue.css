@@ -2,9 +2,6 @@
  * Theme by BibleTime - www.bibletime.info *
  */
 
-/* Fix color common color conflicts with desktop themes: */
-body { background-color: #fff; color: #000; }
-
 #content {
     margin:10px;
 }
@@ -24,8 +21,8 @@ body { background-color: #fff; color: #000; }
 a {
     text-decoration:none;
     font-weight:normal;
-    color: black;
     padding:0 2px;
+    color: #FOREGROUND_COLOR#;
 }
 
 .inline {
@@ -120,7 +117,7 @@ td.entry + td.entry {
 .footnote {
     vertical-align:super;
     font-weight: normal;
-    color: blue;
+    color: #CROSSREF_COLOR#;
     font-size: 80%;
     cursor: help;
 }
@@ -135,20 +132,22 @@ td.entry + td.entry {
 
 .crossreference {
     font-size: 80%;
-    color: blue;
+    color: #CROSSREF_COLOR#;
 }
+
+.crossreference a {
+    color: #CROSSREF_COLOR#;
+}
+
+a[name="crossref"] {
+    color: #CROSSREF_COLOR#;
+}
+
 #bible .crossreference:before  { content:" ["; }
 #bible .crossreference:after  { content:"]"; }
 
-.crossreference a {
-    color: blue;
-}
-.jesuswords a {
-    color: red;
-}
 a[name="crossref"] {
     font-size: small;
-    color: blue
 }
 
 .alternative {}
@@ -183,8 +182,13 @@ a[name="crossref"] {
 }
 .foreign {
 }
+
 .jesuswords {
-    color: red;
+    color: #JESUS_WORDS_COLOR#;
+}
+
+.jesuswords #lemmamorph {
+    color: #JESUS_WORDS_COLOR#;
 }
 
 .introduction {
@@ -284,7 +288,6 @@ a[name="crossref"] {
 #infodisplay > .para, #infodisplay * > .para
 { /* We only format the first p child in a special way */
     text-align:justify !important;
-    color:black;
     margin:0px;
     padding:0px;
 }

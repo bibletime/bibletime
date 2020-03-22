@@ -9,7 +9,6 @@
 * version 2.0.
 *
 **********/
-
 #include "btqmlinterface.h"
 
 #include <QApplication>
@@ -21,6 +20,7 @@
 #include "../../../backend/drivers/cswordlexiconmoduleinfo.h"
 #include "../../../backend/drivers/cswordmoduleinfo.h"
 #include "../../../backend/keys/cswordkey.h"
+#include "../../../backend/managers/colormanager.h"
 #include "../../../backend/managers/cdisplaytemplatemgr.h"
 #include "../../../backend/managers/cswordbackend.h"
 #include "../../../backend/models/btmoduletextmodel.h"
@@ -37,6 +37,7 @@
 #include <swkey.h>
 
 
+
 BtQmlInterface::BtQmlInterface(QObject* parent)
     : QObject(parent),
       m_firstHref(false),
@@ -49,6 +50,7 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
     m_textFilter.setShowReferences(true);
     m_linkTimer->setSingleShot(true);
     m_findState.enabled = false;
+
     BT_CONNECT(m_linkTimer, SIGNAL(timeout()), this, SLOT(timeoutEvent()));
 }
 
@@ -101,6 +103,14 @@ QString BtQmlInterface::getActiveLink() const {
 void BtQmlInterface::setActiveLink(const QString& link) {
     m_activeLink = link;
     emit activeLinkChanged();
+}
+
+QColor BtQmlInterface::getBackgroundColor() const {
+    return ColorManager::instance()->getBackgroundColor();
+}
+
+QColor BtQmlInterface::getForegroundColor() const {
+    return ColorManager::instance()->getForegroundColor();
 }
 
 int BtQmlInterface::getCurrentModelIndex() const {
@@ -283,6 +293,7 @@ void BtQmlInterface::timeoutEvent() {
 
 void BtQmlInterface::settingsChanged() {
     getFontsFromSettings();
+    changeColorTheme();
     emit textChanged();
 }
 
@@ -317,28 +328,6 @@ void BtQmlInterface::getFontsFromSettings() {
         emit fontChanged();
     }
 }
-
-void BtQmlInterface::displayText(const QString& text, const QString& lang) {
-    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
-    BT_ASSERT(mgr);
-
-    CDisplayTemplateMgr::Settings settings;
-    settings.pageCSS_ID = "infodisplay";
-
-    QString div = "<div class=\"infodisplay\"";
-    if (!lang.isEmpty())
-        div.append(" lang=\"").append(lang).append("\"");
-    div.append(">");
-
-    QString content(mgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
-                                      div + text + "</div>",
-                                      settings));
-    content.replace("#CHAPTERTITLE#", "");
-    content.replace("#LINK_COLOR#", "blue");
-    content.replace("#HIGHLIGHT_COLOR#", "blue");
-    content.replace("#JESUS_WORDS_COLOR#", "red");
-}
-
 
 /** Sets the new sword key. */
 void BtQmlInterface::setKey( CSwordKey* key ) {
@@ -517,6 +506,11 @@ RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QStrin
         std::swap(ri.index1, ri.index2);
     }
     return ri;
+}
+
+void BtQmlInterface::changeColorTheme() {
+    emit backgroundColorChanged();
+    emit foregroundColorChanged();
 }
 
 void BtQmlInterface::copyRange(int index1, int index2) {

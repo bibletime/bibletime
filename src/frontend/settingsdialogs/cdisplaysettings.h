@@ -47,6 +47,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         static QVector<QString> bookNameAbbreviationsTryVector();
         void initSwordLocaleCombo();
+        void updateColors(const QString& style = QString());
 
     private: /* Fields: */
 

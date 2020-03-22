@@ -23,6 +23,7 @@
 #include "../../backend/rendering/centrydisplay.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
+#include "../bibletime.h"
 #include "../btcopybyreferencesdialog.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
@@ -30,7 +31,6 @@
 #include "../display/modelview/btqmlinterface.h"
 #include "../searchdialog/csearchdialog.h"
 #include "btactioncollection.h"
-
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
     : CDisplayWindow(modules, parent)
@@ -73,6 +73,10 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
         BT_CONNECT(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()));
+
+    BibleTime* bt = btMainWindow();
+    BT_CONNECT(bt, SIGNAL(colorThemeChanged()),
+               this, SLOT(colorThemeChangedSlot()));
 }
 
 void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
@@ -142,6 +146,13 @@ void CReadWindow::copySelectedText() {
     }
 }
 
+void CReadWindow::colorThemeChangedSlot() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        v->qmlInterface()->changeColorTheme();
+    }
+}
+
 void CReadWindow::copyByReferences() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
@@ -171,3 +182,4 @@ bool CReadWindow::hasSelectedText() {
     }
     return false;
 }
+

@@ -66,6 +66,8 @@ protected slots:
     /** Opens the search dialog with the strong info of the last clicked word.*/
     void openSearchStrongsDialog();
 
+    void colorThemeChangedSlot();
+
 private: /* Fields: */
 
     CReadDisplay * m_readDisplayWidget;

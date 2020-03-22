@@ -14,7 +14,6 @@
 
 #include <memory>
 #include <QAction>
-#include <QDebug>
 #include <QLabel>
 #include <QLayout>
 #include <QRegExp>
@@ -27,6 +26,7 @@
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/keys/cswordkey.h"
 #include "../backend/keys/cswordversekey.h"
+#include "../backend/managers/colormanager.h"
 #include "../backend/managers/referencemanager.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
@@ -54,7 +54,6 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
     BT_CONNECT(m_textBrowser, SIGNAL(anchorClicked(const QUrl&)),
                this, SLOT(lookupInfo(const QUrl&)));
     layout->addWidget(m_textBrowser);
-    m_textBrowser->setStyleSheet("background-color: white;");
     unsetInfo();
 }
 
@@ -84,9 +83,17 @@ void CInfoDisplay::unsetInfo() {
                "moving the mouse.</small>"));
 }
 
+void CInfoDisplay::updateColors() {
+    QPalette p = m_textBrowser->palette();
+    p.setColor(QPalette::Base, ColorManager::instance()->getBackgroundColor());
+    p.setColor(QPalette::Text, ColorManager::instance()->getForegroundColor());
+    m_textBrowser->setPalette(p);
+}
+
 void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     QString text = Rendering::formatInfo(renderedData, lang);
     text.replace("#CHAPTERTITLE#", "");
+    text = ColorManager::instance()->replaceColors(text);
     m_textBrowser->setText(text);
 }
 
@@ -103,8 +110,6 @@ void CInfoDisplay::lookupInfo(const QUrl & url) {
             module = ReferenceManager::preferredModule( type );
         }
 
-        qDebug() << "CInfoDisplay::lookup";
-        qDebug() <<  module <<  keyName << type;
         CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(module);
         BT_ASSERT(m);
         std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));

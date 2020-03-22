@@ -307,9 +307,16 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         btConfig().setValue("state/crashedLastTime", true);
     }
     btConfig().sync();
+
+    // temporary for testing
+    emit colorThemeChanged();
 }
 
 bool BibleTime::event(QEvent* event) {
+    if (event->type() == QEvent::PaletteChange) {
+        emit colorThemeChanged();
+        // allow to continue to update other parts of Qt widgets
+    }
     if (event->type() == QEvent::Close)
         Search::CSearchDialog::closeDialog();
     else if (event->type() == QEvent::KeyPress) {
@@ -368,3 +375,4 @@ void BibleTime::setAutoScrollTimerInterval() {
         m_autoScrollTimer.setInterval(interval);
     }
 }
+

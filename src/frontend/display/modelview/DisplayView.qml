@@ -134,7 +134,7 @@ Rectangle {
 
     width: 10
     height: 10
-    color: "white"
+    color: btQmlInterface.backgroundColor
 
     BtQmlInterface {
         id: btQmlInterface
@@ -157,10 +157,8 @@ Rectangle {
     ListView {
         id: listView
 
-        property color textColor: "black"
-        property color textBackgroundColor: "white"
-        property color selectedBackgroundColor: "#000070"
-
+        property color textColor: btQmlInterface.foregroundColor
+        property color textBackgroundColor: btQmlInterface.backgroundColor
         property int columns: btQmlInterface.numModules
         property int savedRow: 0
         property int savedColumn: 0
@@ -209,7 +207,7 @@ Rectangle {
         delegate: Component {
             Rectangle {
                 id: delegate
-                property int spacing: 2.5 * btQmlInterface.pixelsPerMM
+                property int spacing: 1.5 * btQmlInterface.pixelsPerMM
                 property int textWidth: (listView.width / listView.columns) - (spacing *  ((listView.columns+1)/listView.columns)  )
                 property int vertSpace: 2 * btQmlInterface.pixelsPerMM
                 property bool updating: false
@@ -343,6 +341,11 @@ Rectangle {
                     anchors.left: column0Text.left
                     anchors.right: column0Text.right
                     color: listView.textBackgroundColor
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(0);
+                    }
                 }
 
                 TextEdit {
@@ -382,6 +385,11 @@ Rectangle {
                     anchors.left: column1Text.left
                     anchors.right: column1Text.right
                     color: listView.textBackgroundColor
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(1);
+                    }
                 }
 
                 TextEdit {
@@ -420,6 +428,11 @@ Rectangle {
                     anchors.left: column2Text.left
                     anchors.right: column2Text.right
                     color: listView.textBackgroundColor
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(2);
+                    }
                 }
 
                 TextEdit {
@@ -459,6 +472,11 @@ Rectangle {
                     anchors.left: column3Text.left
                     anchors.right: column3Text.right
                     color: listView.textBackgroundColor
+                    border.width: 1
+                    border.color: "lavender"
+                    visible: {
+                        return btQmlInterface.moduleIsWritable(3);
+                    }
                 }
 
                 TextEdit {

@@ -18,6 +18,7 @@
 #include "../backend/config/btconfig.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
+#include "../backend/managers/colormanager.h"
 #include "../util/btassert.h"
 #include "../util/bticons.h"
 #include "messagedialog.h"
@@ -99,6 +100,16 @@ bool BibleTimeApp::initDisplayTemplateManager() {
 
     QString errorMessage;
     new CDisplayTemplateMgr(errorMessage);
+    if (errorMessage.isNull())
+        return true;
+    message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
+    return false;
+}
+
+bool BibleTimeApp::initColorManager() {
+
+    QString errorMessage;
+    errorMessage = ColorManager::instance()->loadColorMaps();
     if (errorMessage.isNull())
         return true;
     message::showCritical(nullptr, tr("Fatal error!"), errorMessage);

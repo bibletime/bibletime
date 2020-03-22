@@ -96,9 +96,6 @@ public:
 
     BtModuleTextModel(QObject *parent = nullptr);
 
-    /** Get color of Jesus's words */
-    static QColor getJesusWordsColor();
-
     /** Convert index(row) into CSwordVerseKey. */
     CSwordVerseKey indexToVerseKey(int index) const;
 
@@ -160,16 +157,6 @@ public:
      * ListView uses names instead of roles to get data. */
     void setRoleNames(const QHash<int, QByteArray> &roleNames);
 
-
-    /** Set the color used for Jesus words. (Used by BT Mobile) */
-    static void setJesusWordsColor(const QColor& color);
-
-    /** Set the color used for highlighting words found by searching. (Used by BT Mobile) */
-    static void setHighlightColor(const QColor& color);
-
-    /** Set the color used for Bible references. (Used by BT Mobile) */
-    static void setLinkColor(const QColor& color);
-
     /** Set the filter options used for rendering module text. */
     void setFilterOptions(FilterOptions filterOptions);
 
@@ -197,8 +184,6 @@ private:
     QString bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QString verseData(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QString lexiconData(const QModelIndex & index, int role = Qt::DisplayRole) const;
-
-    QString replaceColors(const QString& text) const;
 
     BtConstModuleList m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;

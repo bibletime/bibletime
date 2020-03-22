@@ -42,6 +42,7 @@ public: /* Methods: */
     void setInfo(Rendering::InfoType const, QString const & data);
     void setInfo(Rendering::ListInfoData const &);
     QSize sizeHint() const override;
+    void updateColors();
 
 public slots:
 

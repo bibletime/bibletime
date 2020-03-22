@@ -21,36 +21,11 @@
 #include "../keys/cswordtreekey.h"
 #include "../keys/cswordversekey.h"
 #include "../keys/cswordldkey.h"
+#include "../managers/colormanager.h"
 #include "../managers/cswordbackend.h"
 #include "../rendering/ctextrendering.h"
 
-// Static so all models use the same colors
-static QColor s_linkColor = QColor(0,191,255);
-static QColor s_highlightColor = QColor(255,255,0);
-static QColor s_jesusWordsColor = QColor(255,0,0);
-static bool s_replaceColors = false;
-
-/*static*/ QColor BtModuleTextModel::getJesusWordsColor() {
-    return s_jesusWordsColor;
-}
-
-/*static*/ void BtModuleTextModel::setLinkColor(const QColor& color) {
-    s_replaceColors = true;
-    s_linkColor = color;
-}
-
-/*static*/ void BtModuleTextModel::setHighlightColor(const QColor& color) {
-    s_replaceColors = true;
-    s_highlightColor = color;
-}
-
-/*static*/ void BtModuleTextModel::setJesusWordsColor(const QColor& color) {
-    s_replaceColors = true;
-    s_jesusWordsColor = color;
-}
-
 BtModuleTextFilter::~BtModuleTextFilter() {}
-
 
 
 BtModuleTextModel::BtModuleTextModel(QObject *parent)
@@ -257,7 +232,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
         QString text = entryDisplay.text(moduleList, keyName,
                                          m_displayOptions, m_filterOptions);
         text.replace("#CHAPTERTITLE#", "");
-        text = replaceColors(text);
+        text = ColorManager::instance()->replaceColors(text);
         return text;
     }
     else if (role == ModuleEntry::ReferenceRole){
@@ -328,6 +303,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                     rawText = "<span style=\"color:gray\"><small>" + tr("Click to edit") + "</small></span>";
                 text += QString::number(verse) + "  " + rawText;
 
+                text = ColorManager::instance()->replaceColors(text);
                 return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
             }
         }
@@ -339,7 +315,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                                                             Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
-        text = replaceColors(text);
+        text = ColorManager::instance()->replaceColors(text);
         return text;
     }
     return QString();
@@ -359,16 +335,6 @@ QString BtModuleTextModel::highlightFindPreviousNextField(const QString& text) c
     int position = from + 14; // highlightwords = 14, quote was already added
     t.insert(position, "2");
     return t;
-}
-
-QString BtModuleTextModel::replaceColors(const QString& text) const {
-    if (! s_replaceColors)
-        return text;
-    QString newText = text;
-    newText.replace("#JESUS_WORDS_COLOR#", s_jesusWordsColor.name());
-    newText.replace("#LINK_COLOR#", s_linkColor.name());
-    newText.replace("#HIGHLIGHT_COLOR#", s_highlightColor.name());
-    return newText;
 }
 
 int BtModuleTextModel::columnCount(const QModelIndex & /*parent*/) const {

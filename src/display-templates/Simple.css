@@ -2,9 +2,6 @@
  * Theme by BibleTime
  */
 
-/* Fix color common color conflicts with desktop themes: */
-body { background-color: #fff; color: #000; }
-
 #content {
     margin: 5px;
 }
@@ -25,7 +22,7 @@ body { background-color: #fff; color: #000; }
 a {
     text-decoration:none;
     font-weight:normal;
-    color: black;
+    color: #FOREGROUND_COLOR#;
     padding:2px;
 }
 
@@ -56,13 +53,13 @@ div.currententry {
 }
 
 .footnote {
-    color: gray;
+    color: #CROSSREF_COLOR#;
 }
 
 .strongnumber {
     vertical-align: top;
     font-size: 60%;
-    color: blue;
+    color: #CROSSREF_COLOR#;
 }
 .morphcode {
     vertical-align: top;
@@ -88,16 +85,16 @@ div.currententry {
 .foreign {
 }
 .jesuswords {
-    color: red;
+    color: #JESUS_WORDS_COLOR#;
     font-size: 0.9em;
 }
 .jesuswords a {
-    color: red;
+    color: #JESUS_WORDS_COLOR#;
     font-size: 0.9em;
 }
 a[name="crossref"] {
     font-size: small;
-    color: blue
+    color: #CROSSREF_COLOR#; 
 }
 .name > .divine {
    font-variant: small-caps;

@@ -2,9 +2,6 @@
  * Theme by BibleTime - www.bibletime.info *
  */
 
-/* Fix color common color conflicts with desktop themes: */
-body { background-color: #fff; color: #000; }
-
 #content {
     margin:10px;
 }
@@ -27,7 +24,7 @@ body { background-color: #fff; color: #000; }
 a {
     text-decoration:none;
     font-weight:normal;
-    color: black;
+    color: #FOREGROUND_COLOR#;
     padding:0 2px;
 }
 
@@ -120,7 +117,7 @@ td.entry + td.entry {
 
 .footnote {
     vertical-align:super;
-    color: blue;
+    color: #CROSSREF_COLOR#;
     font-size: 70%;
 }
 .footnote:before { content:"("; }
@@ -129,13 +126,13 @@ td.entry + td.entry {
 .crossreference {
     font-size: small;
     /*vertical-align:middle;*/
-    color: #9c2323;
+    color: #CROSSREF_COLOR#;
 }
 
 .crossreference a {
     font-size: small;
     /*vertical-align:middle;*/
-    color: #9c2323;
+    color: #CROSSREF_COLOR#;
 }
 
 .sectiontitle {
@@ -163,13 +160,13 @@ td.entry + td.entry {
 .foreign {
 }
 .jesuswords {
-    color:#9C2323;
+    color:#JESUS_WORDS_COLOR#;
 }
 .jesuswords a {
-    color: #9c2323;
+    color: #JESUS_WORDS_COLOR#;
 }
 a[name="crossref"] {
-    color: #9c2323;
+    color: #CROSSREF_COLOR#;
 }
 
 .quotation {
@@ -266,7 +263,6 @@ a[name="crossref"] {
 
 #infodisplay > p, #infodisplay  * > p { /* We only format the first p child in a special way */
     text-align:justify;
-    color:black;
     margin:0px;
     padding:0px;
 }

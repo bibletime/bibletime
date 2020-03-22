@@ -2,9 +2,6 @@
  * Theme by BibleTime - www.bibletime.info *
  */
 
-/* Fix color common color conflicts with desktop themes: */
-body { background-color: #fff; color: #000; }
-
 body {
     margin:0px;
     padding:0;
@@ -40,7 +37,11 @@ body {
 #content tr:nth-child(even)  { background-color: #EDEDED; }
 
 /* The a links are the normal HTML hyperlinks. Links without a class attribute are hyperlinks into the web */
-a { text-decoration:none; color: black; padding:0; }
+a { 
+    text-decoration:none; 
+    color: #FOREGROUND_COLOR#;
+    padding:0; 
+}
 
 .inline {
     display: inline;
@@ -134,13 +135,13 @@ td.entry + td.entry {
 
 /* Footnote formatting options */
 /* A footnote is displayed as an asterisk or another small character. You can set the colors, font-size, etc. for the footnote. */
-.footnote { color:#8F2627; vertical-align:super; font-size:70%;}
+.footnote { color:#CROSSREF_COLOR#; vertical-align:super; font-size:70%;}
 /* You may use this to add sourrounding brackets in Bible modules. To do this the content command of CSS */
-#bible .footnote:before { content:" ["; color:#8F2627; }
-#bible .footnote:after { content:"]"; color:#8F2627; }
+#bible .footnote:before { content:" ["; color:#CROSSREF_COLOR#; }
+#bible .footnote:after { content:"]"; color:#CROSSREF_COLOR#; }
 
 /* Crossreferences. The same as footnotes */
-.crossreference { color:#8f2627;}
+.crossreference { color:#CROSSREF_COLOR#;}
 #bible .crossreference:before { content:" {" }
 #bible .crossreference:after { content:"}" }
 
@@ -151,7 +152,7 @@ td.entry + td.entry {
 *as desired. Additionally, you can have seperate formatting
 *for linked and non linked text in the cross reference*/
 .crossreference a {
-   color:#8f2627;
+   color:#CROSSREF_COLOR#;
    /*Get rid of underlines on the notes*/
    text-decoration: none;
 }
@@ -191,15 +192,15 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 /* Words spoken by Jesus Christ */
 /*.jesuswords { color: red; }*/
 
-.jesuswords { color: #B60000; }
+.jesuswords { color: #JESUS_WORDS_COLOR#; }
 
 .jesuswords a {
-    color: #B60000;
+    color: #JESUS_WORDS_COLOR#;
 }
 
 a[name="crossref"] {
     font-size: small;
-    color: #B60000
+    color: #CROSSREF_COLOR#
 }
 
 /* An introduction to a module, book or chapter */

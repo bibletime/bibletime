@@ -438,6 +438,7 @@ public slots:
         void toggledTextWindowToolButtons(bool newState);
         void toggledTextWindowModuleChooser(bool newState);
         void toggledTextWindowFormatToolbar(bool newState);
+        void colorThemeChanged();
 
     private:
         static BibleTime *m_instance;

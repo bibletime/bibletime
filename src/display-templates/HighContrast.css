@@ -2,9 +2,6 @@
  * Theme by BibleTime - www.bibletime.info
  */
 
-/* Fix color common color conflicts with desktop themes: */
-body { background-color: #fff; color: #000; }
-
 #content {
     margin: 10px;
 }
@@ -26,7 +23,7 @@ a {
     text-decoration:none;
     font-weight:normal;
     /*color: #F98100;*/
-    color: black;
+    color: #FOREGROUND_COLOR#;
     padding:1px;
 }
 
@@ -137,9 +134,7 @@ td.entry + td.entry {
 
 .crossreference {
     font-size: 80%;
-    /*vertical-align:middle;*/
-    /*color: blue;*/
-    /*color: #F98100;*/
+    color: #CROSSREF_COLOR#
 }
 
 .crossreference:before {
@@ -188,7 +183,7 @@ td.entry + td.entry {
 }
 a[name="crossref"] {
     font-size: small;
-    color: blue
+    color: #CROSSREF_COLOR#
 }
 
 .quotation {

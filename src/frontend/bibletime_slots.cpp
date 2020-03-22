@@ -82,6 +82,7 @@ void BibleTime::slotSettingsChanged() {
     m_actionCollection->readShortcuts("Application shortcuts");
     refreshDisplayWindows();
     refreshProfileMenus();
+    m_infoDisplay->updateColors();
     qDebug() << "BibleTime::slotSettingsChanged";
 }
 
