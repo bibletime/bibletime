@@ -1,3 +1,6 @@
+2019-03-22 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #223 - Double-clicking a verse number makes the bible scroll with mouse pointer movements 
+	
 2019-03-21 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #183 - Support for dark mode.
 

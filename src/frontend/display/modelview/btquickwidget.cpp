@@ -129,6 +129,11 @@ void BtQuickWidget::scroll(int pixels) {
                               Q_ARG(QVariant, vPixels));
 }
 
+void BtQuickWidget::mouseDoubleClickEvent(QMouseEvent *event) {
+    event->accept();
+    return;
+}
+
 void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         mousePressed(event->x(), event->y());
