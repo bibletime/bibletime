@@ -100,9 +100,15 @@ ADD_CUSTOM_TARGET("handbook_translations"
 SET_TARGET_PROPERTIES("handbook_translations" PROPERTIES FOLDER "Documentation")
 
 FOREACH(HANDBOOK_LOCALE_LANG IN LISTS HANDBOOK_LOCALE_LANGS)
+    SET(d "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/")
+    ADD_CUSTOM_COMMAND(
+        OUTPUT "${d}"
+        COMMAND "${CMAKE_COMMAND}" -E make_directory "${d}"
+        COMMENT "Creating directory \"${d}\"")
     ADD_CUSTOM_TARGET("handbook_${HANDBOOK_LOCALE_LANG}"
         COMMAND xsltproc --nonet --stringparam l10n.gentext.default.language ${HANDBOOK_LOCALE_LANG} ${BT_DOCBOOK_XSL} ../docbook/index.docbook
-        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/")
+        WORKING_DIRECTORY "${d}"
+        DEPENDS "${d}")
     ADD_DEPENDENCIES("handbook_${HANDBOOK_LOCALE_LANG}" "handbook_translations")
     ADD_DEPENDENCIES("handbook" "handbook_${HANDBOOK_LOCALE_LANG}")
     SET_TARGET_PROPERTIES("handbook_${HANDBOOK_LOCALE_LANG}" PROPERTIES FOLDER "Documentation")
@@ -132,15 +138,17 @@ ADD_CUSTOM_TARGET("handbook_pdf")
 SET_TARGET_PROPERTIES("handbook_pdf" PROPERTIES FOLDER "Documentation")
 
 FOREACH(HANDBOOK_LOCALE_LANG IN LISTS HANDBOOK_LOCALE_LANGS)
+    SET(d "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/pdf/")
+    ADD_CUSTOM_COMMAND(OUTPUT "${d}"
+                       COMMAND "${CMAKE_COMMAND}" -E make_directory "${d}"
+                       COMMENT "Creating directory \"${d}\"")
     ADD_CUSTOM_TARGET("handbook_pdf_${HANDBOOK_LOCALE_LANG}"
-       COMMENT "Generating PDF handbook for ${HANDBOOK_LOCALE_LANG}"
-
-       COMMAND "${CMAKE_COMMAND}" -E make_directory "../../${HANDBOOK_LOCALE_LANG}/pdf"
-       COMMAND xsltproc --nonet -o tmp.fo  ${BT_DOCBOOK_PDF_XSL}   ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook
-       COMMAND fop -pdf ../../${HANDBOOK_LOCALE_LANG}/pdf/handbook.pdf -fo tmp.fo
-       COMMAND "${CMAKE_COMMAND}" -E remove tmp.fo
-
-       WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/")
+        COMMENT "Generating PDF handbook for ${HANDBOOK_LOCALE_LANG}"
+        COMMAND xsltproc --nonet -o tmp.fo  ${BT_DOCBOOK_PDF_XSL}   ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook
+        COMMAND fop -pdf ../../${HANDBOOK_LOCALE_LANG}/pdf/handbook.pdf -fo tmp.fo
+        COMMAND "${CMAKE_COMMAND}" -E remove tmp.fo
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/"
+        DEPENDS "${d}")
     ADD_DEPENDENCIES("handbook_pdf" "handbook_pdf_${HANDBOOK_LOCALE_LANG}")
     SET_TARGET_PROPERTIES("handbook_pdf_${HANDBOOK_LOCALE_LANG}" PROPERTIES FOLDER "Documentation")
 ENDFOREACH()
@@ -156,9 +164,14 @@ ADD_DEPENDENCIES("howto" "howto_translations")
 
 
 FOREACH(HOWTO_LOCALE_LANG IN LISTS HOWTO_LOCALE_LANGS)
+    SET(d "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/")
+    ADD_CUSTOM_COMMAND(OUTPUT "${d}"
+                       COMMAND "${CMAKE_COMMAND}" -E make_directory "${d}"
+                       COMMENT "Creating directory \"${d}\"")
     ADD_CUSTOM_TARGET("howto_${HOWTO_LOCALE_LANG}"
         COMMAND xsltproc --nonet --stringparam l10n.gentext.default.language ${HOWTO_LOCALE_LANG} ${BT_DOCBOOK_XSL} "../docbook/index.docbook"
-        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/")
+        WORKING_DIRECTORY "${d}"
+        DEPENDS "${d}")
     ADD_DEPENDENCIES("howto_${HOWTO_LOCALE_LANG}" "howto_translations")
     ADD_DEPENDENCIES("howto" "howto_${HOWTO_LOCALE_LANG}")
     SET_TARGET_PROPERTIES("howto_${HOWTO_LOCALE_LANG}" PROPERTIES FOLDER "Documentation")
