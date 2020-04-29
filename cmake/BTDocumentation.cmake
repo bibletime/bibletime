@@ -97,7 +97,7 @@ SET_TARGET_PROPERTIES("handbook_translations" PROPERTIES FOLDER "Documentation")
 
 FOREACH(HANDBOOK_LOCALE_LANG IN LISTS HANDBOOK_LOCALE_LANGS)
     ADD_CUSTOM_TARGET("handbook_${HANDBOOK_LOCALE_LANG}"
-        COMMAND xsltproc --stringparam l10n.gentext.default.language ${HANDBOOK_LOCALE_LANG} ${BT_DOCBOOK_XSL} ../docbook/index.docbook
+        COMMAND xsltproc --nonet --stringparam l10n.gentext.default.language ${HANDBOOK_LOCALE_LANG} ${BT_DOCBOOK_XSL} ../docbook/index.docbook
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/")
     ADD_DEPENDENCIES("handbook_${HANDBOOK_LOCALE_LANG}" "handbook_translations")
     ADD_DEPENDENCIES("handbook" "handbook_${HANDBOOK_LOCALE_LANG}")
@@ -132,7 +132,7 @@ FOREACH(HANDBOOK_LOCALE_LANG IN LISTS HANDBOOK_LOCALE_LANGS)
        COMMENT "Generating PDF handbook for ${HANDBOOK_LOCALE_LANG}"
 
        COMMAND "${CMAKE_COMMAND}" -E make_directory "../../${HANDBOOK_LOCALE_LANG}/pdf"
-       COMMAND xsltproc -o tmp.fo  ${BT_DOCBOOK_PDF_XSL}   ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook
+       COMMAND xsltproc --nonet -o tmp.fo  ${BT_DOCBOOK_PDF_XSL}   ../../${HANDBOOK_LOCALE_LANG}/docbook/index.docbook
        COMMAND fop -pdf ../../${HANDBOOK_LOCALE_LANG}/pdf/handbook.pdf -fo tmp.fo
        COMMAND "${CMAKE_COMMAND}" -E remove tmp.fo
 
@@ -153,7 +153,7 @@ ADD_DEPENDENCIES("howto" "howto_translations")
 
 FOREACH(HOWTO_LOCALE_LANG IN LISTS HOWTO_LOCALE_LANGS)
     ADD_CUSTOM_TARGET("howto_${HOWTO_LOCALE_LANG}"
-        COMMAND xsltproc --stringparam l10n.gentext.default.language ${HOWTO_LOCALE_LANG} ${BT_DOCBOOK_XSL} "../docbook/index.docbook"
+        COMMAND xsltproc --nonet --stringparam l10n.gentext.default.language ${HOWTO_LOCALE_LANG} ${BT_DOCBOOK_XSL} "../docbook/index.docbook"
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/")
     ADD_DEPENDENCIES("howto_${HOWTO_LOCALE_LANG}" "howto_translations")
     ADD_DEPENDENCIES("howto" "howto_${HOWTO_LOCALE_LANG}")
