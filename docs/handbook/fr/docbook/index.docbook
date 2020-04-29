@@ -8,10 +8,10 @@
   <!ENTITY kde '<application>KDE</application>'>
   <!ENTITY qt '<application>Qt</application>'>
 
-  <!ENTITY Shift 'Shift'>
+  <!ENTITY Shift 'Maj'>
   <!ENTITY Ctrl 'Ctrl'>
   <!ENTITY Alt 'Alt'>
-  <!ENTITY Space 'Space'>
+  <!ENTITY Space 'Espace'>
 
   <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
   <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
@@ -47,7 +47,7 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2019</year> <holder>L'équipe de &bibletime;</holder>
 </copyright>
 
   <legalnotice>
@@ -55,7 +55,7 @@
 &bibletime;.</para>
   </legalnotice>
 
-  <date>December 2019</date>
+  <date>Décembre 2019</date>
 
   <releaseinfo>3.0.0+</releaseinfo>
 

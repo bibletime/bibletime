@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2019-12-22 00:12+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"PO-Revision-Date: 2019-12-26 15:56+0000\n"
+"Last-Translator: Roy Eddekel Alvear Aguirre <racl@gulix.cl>\n"
 "Language-Team: Spanish (http://www.transifex.com/bibletime/bibletime/"
 "language/es/)\n"
 "Language: es\n"
@@ -897,15 +897,6 @@ msgstr "Desplazamiento automático"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
-#, fuzzy
-#| msgid ""
-#| "The currently active window can be auto scrolled up or down.  Start "
-#| "scrolling by press Shift+Down. You can increasing the scrolling speed by "
-#| "pressing Shift+Down multiple times. To pause scrolling press Space. To "
-#| "start scrolling again at the previous speed press Space again. To slow "
-#| "down scrolling or scroll the other direction press Shift+Up one or more "
-#| "times. Pressing any other key or changing the active window will stop the "
-#| "scrolling."
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
 "scrolling by press Shift+Down. You can increase the scrolling speed by "
@@ -916,12 +907,13 @@ msgid ""
 msgstr ""
 "La ventana actualmente activa puede desplazarse automáticamente hacia arriba "
 "o hacia abajo. Comience a desplazarse presionando Shift+Abajo. Puede "
-"aumentar la velocidad de desplazamiento presionando Shift+Down varias veces. "
-"Para pausar el desplazamiento, presione la barra de Espacio. Para comenzar a "
-"desplazarse nuevamente a la velocidad anterior, presione la barra de Espacio "
-"nuevamente. Para ralentizar el desplazamiento o desplazarse en la otra "
-"dirección, presione Shift+Arriba una o más veces. Al presionar cualquier "
-"otra tecla o cambiar la ventana activa, se detendrá el desplazamiento."
+"aumentar la velocidad de desplazamiento presionando Shift+Abajo varias "
+"veces. Para pausar el desplazamiento, presione la barra espaciadora. Para "
+"comenzar a desplazarse nuevamente a la velocidad anterior, presione la barra "
+"espaciadora nuevamente. Para ralentizar el desplazamiento o desplazarse en "
+"la otra dirección, presione Shift+Arriba una o más veces. Al presionar "
+"cualquier otra tecla o cambiar la ventana activa, se detendrá el "
+"desplazamiento."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:164
@@ -975,6 +967,10 @@ msgid ""
 "commentary by just clicking on any verse.  A dialog opens which allows you "
 "to add or edit text for that verse."
 msgstr ""
+"Abra el comentario personal haciendo clic en su símbolo en la estantería con "
+"el botón <mousebutton>izquierdo</mousebutton> del ratón. Puede editar este "
+"comentario simplemente haciendo clic en cualquier verso. Se abre un cuadro "
+"de diálogo que le permite agregar o editar texto para ese versículo."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:194
@@ -1158,6 +1154,10 @@ msgid ""
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
+"Puede usar comodines: '*' coincide con cualquier número de caracteres, "
+"mientras que '?' coincidirá con cualquier caracter individual. El uso de "
+"paréntesis le permite agrupar los términos de búsqueda, por ejemplo '(Jesús "
+"OR Espíritu) AND Dios'."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
@@ -1396,6 +1396,12 @@ msgid ""
 "modules). &bibletime; will automatically maintain a list of remote libraries "
 "and the works available from them."
 msgstr ""
+"Con este servicio, puede conectarse a un repositorio de obras (llamado "
+"\"biblioteca\") y transferir una o más obras a su Biblioteca local. Estas "
+"bibliotecas pueden ser locales (por ejemplo, un CD de  &sword;) o remotas "
+"(por ejemplo, el repositorio en línea de Crosswire de módulos &sword; u otro "
+"sitio que ofrece módulos &sword;). &bibletime; mantendrá automáticamente una "
+"lista de bibliotecas remotas y las obras disponibles de ellas."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:413
@@ -1408,6 +1414,14 @@ msgid ""
 "click on the <guibutton>Install Works</guibutton>. After the works are "
 "installed, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"Para comenzar el proceso de instalación, seleccione una o más bibliotecas "
+"desde las que desea instalar obras. Luego haga clic en el botón "
+"<guibutton>Siguiente</guibutton>. Luego seleccione uno o más idiomas y haga "
+"clic en el botón  <guibutton>Siguiente</guibutton>. Verá una lista de "
+"categorías. Haga doble clic en una categoría para ver trabajos para esa "
+"categoría. Seleccione una o más obras y luego haga clic en "
+"<guibutton>Instalar Obras</guibutton>. Después de instalar los trabajos, "
+"haga clic en <guibutton>Terminar</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
@@ -1421,6 +1435,9 @@ msgid ""
 "or more work and click the <guibutton>Update Works</guibutton>. After the "
 "works are updated, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"Si hay obras que se puedan actualizar, éstas se mostrarán. Seleccione una o "
+"más obras y haga clic en <guibutton>Actualizar Obras</guibutton>. Después de "
+"actualizar las obras, haga clic en <guibutton>Terminar</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
@@ -1434,6 +1451,9 @@ msgid ""
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
+"Esta función le permite eliminar una o más de las obras de su Biblioteca "
+"para liberar espacio en el disco. Simplemente elija las obras y haga clic en "
+"el botón<guibutton>Eliminar Obras</guibutton>."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -3321,15 +3341,13 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-#, fuzzy
-#| msgid "<date>November 2019</date>"
 msgid "<date>December 2019</date>"
-msgstr "<date>Noviembre de 2019</date>"
+msgstr "<date>Diciembre 2019</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
 msgid "3.0.0+"
-msgstr ""
+msgstr "3.0.0+"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:64
@@ -3373,6 +3391,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:78
 msgid "Help dialog"
 msgstr "Dialogo de Ayuda"
-
-#~ msgid "2.11.2+"
-#~ msgstr "2.11.2+"

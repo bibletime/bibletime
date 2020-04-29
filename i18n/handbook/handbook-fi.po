@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2019-12-12 00:01+0000\n"
-"Last-Translator: Ilpo Kantonen\n"
+"PO-Revision-Date: 2019-12-22 00:22+0000\n"
+"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
 "Language-Team: Finnish (http://www.transifex.com/bibletime/bibletime/"
 "language/fi/)\n"
 "Language: fi\n"
@@ -2863,10 +2863,8 @@ msgstr "&bibletime;n käsikirja jaetaan &bibletime;-ohjelman yhteydessä."
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-#, fuzzy
-#| msgid "<date>November 2019</date>"
 msgid "<date>December 2019</date>"
-msgstr "<date>Marraskuu 2019</date>"
+msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
@@ -2908,6 +2906,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:78
 msgid "Help dialog"
 msgstr "Apua-ikkuna"
-
-#~ msgid "2.11.2+"
-#~ msgstr "2.11.2+"

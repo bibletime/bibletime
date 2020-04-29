@@ -1,0 +1,395 @@
+<chapter id="hdbk-op">
+  <title>Program operation</title>
+  <sect1 id="hdbk-op-overview">
+    <title>Program overview</title>
+    <para>This is what a typical &bibletime; session looks like: <mediaobject>
+      <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
+contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
+      <textobject>
+        <phrase>The &bibletime; application window</phrase>
+      </textobject>
+    </mediaobject> You can easily see the different parts of the
+application. The top left window is used to open installed works in the
+Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The
+little "Mag" window below the Bookshelf is used to display extra information
+that is embedded in documents. When you move your mouse over a footnote
+marker, for example, then the Mag will display the actual content of the
+footnote. The toolbar gives you quick access to important functions, and the
+Desk on the right side is where you do your real work.</para>
+
+    <para>Let us now proceed by looking at the different parts of the application
+individually.</para>
+  </sect1>
+  <sect1 id="hdbk-op-parts">
+    <title>Parts of the &bibletime; application window</title>
+    <sect2 id="hdbk-op-parts-bookshelf">
+      <title>ชั้นหนังสือ</title>
+      <para>The Bookshelf lists all installed works, sorted by category and language. It
+also has a category called "Bookmarks". This is where you can store and
+access your own bookmarks.</para>
+
+      <sect3 id="hdbk-op-parts-bookshelf-open">
+        <title>Opening works</title>
+
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
+
+        <para>If you are reading a certain work, and want to open another work at the
+passage you are reading, you can use a shortcut. Simply click with the
+<mousebutton>left mouse button</mousebutton> on the verse/passage reference
+(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work
+you want to open, and it will be opened for reading at the specified
+location. You can also drag a verse reference into an existing read window,
+then it will jump to the specified location.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-metainfo">
+        <title>Additional information about works</title>
+
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the
+symbol of a work, you will see a menu with additional entries that are
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens
+a window with lots of interesting information about the selected work.
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for
+encrypted documents, where you can enter the unlock key to access the
+work. For additional information on locked works, please see the <ulink
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked
+Modules</ulink> page on the &cbs; web site.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-search">
+        <title>การค้นหาในหนังสือ</title>
+
+        <para>You can search in a work by clicking with the
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and
+clicking on other works you can select more than one. Then follow the same
+procedure to open the search dialog. You will be searching in all of these
+documents. A complete description of the operation of the search features
+can be found on the <link linkend="hdbk-op-search">Searching in Works
+section</link>.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
+        <title>Working with bookmarks</title>
+        <para>
+
+        <tip>
+          <para>Drag &amp; Drop Works Here</para>
+        </tip>
+
+	Click with the <mousebutton>right</mousebutton> mouse button on the bookmark
+category of the bookshelf and select <guimenuitem>"Create new
+folder"</guimenuitem> to create a new bookmark subfolder. You can use normal
+drag &amp; drop functions to drag verse references from read windows or
+search results to the bookmark folder, and to rearrange bookmarks between
+folders.</para>
+        <para>You can also import bookmarks from other people or export bookmarks to share
+them. To do this, open the <guimenu>context menu</guimenu> of the bookmark
+folder as described above, and select <guimenuitem>"Export
+bookmarks"</guimenuitem>. This will bring up a dialog box for you to save
+the bookmark collection. You can import bookmarks in a similar way.</para>
+
+        <para>You can also click with the <mousebutton>right</mousebutton> on folders and
+bookmarks to change their names and descriptions.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-mag">
+      <title>The Mag(nifying glass)</title>
+
+      <para>This little window in the lower left corner of the &bibletime; window is
+purely passive. Whenever your mouse cursor is located over some text with
+additional information (e.g., Strong's numbers), then this additional
+information will be displayed in the Mag, and not in the text itself. Just
+try it out.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-desk">
+      <title>โต้ะ</title>
+      <para>The Desk is where the real work with &bibletime; takes place. Here you can
+open works from the Bookshelf, read them, <link
+linkend="hdbk-op-search">search</link> in them, and even save your
+annotations in the personal commentary module (see <link
+linkend="hdbk-op-parts-desk-write">below</link>).</para>
+
+      <sect3 id="hdbk-op-parts-desk-read">
+        <title>Reading works</title>
+        <para>As we have <link linkend="hdbk-op-parts-bookshelf-open">already seen</link>,
+you can open works for reading simply by clicking on their symbol in the
+Bookshelf. A read window will open in the Desk's area. Every read window has
+a toolbar. There you can find tools to navigate in the work that this read
+window is connected to, as well as history buttons like the ones that you
+know from your browser.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-scroll">
+        <title>Auto Scrolling</title>
+        <para>The currently active window can be auto scrolled up or down.  Start
+scrolling by press Shift+Down. You can increase the scrolling speed by
+pressing Shift+Down multiple times. To pause scrolling press Space. To start
+scrolling again at the previous speed press Space again. To slow down
+scrolling or scroll the other direction press Shift+Up one or more
+times. Pressing any other key or changing the active window will stop the
+scrolling.
+        </para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-placement">
+        <title>Read window placement</title>
+        <para>Of course, you can open multiple works at the same time.  There are several
+possibilities for arranging the read windows on the desk. Please have a look
+at the entry <guimenu>Window</guimenu> in the main menu. There you can see
+that you can either control the placement of the read windows completely
+yourself, or have &bibletime; handle the placement automatically. To achieve
+this, you have to select one of the automatic placement modes available at
+<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
+mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-write">
+        <title>Editing your own commentary</title>
+
+        <para>To be able to store your own comments about parts of the Bible, you have
+install a certain work from the library of the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal
+commentary".</para>
+
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
+
+        <tip>
+          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is
+deactivated, please check if you have write permission for the files of the
+personal commentary.</para>
+        </tip>
+
+        <tip>
+          <para>Drag &amp; drop works here. Drop a verse reference and the text of the verse
+will be inserted.</para>
+        </tip>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-search">
+    <title>การค้นหาในหนังสือ</title>
+
+    <sect2 id="hdbk-op-search-intext">
+      <title>Searching text in an open read window</title>
+      <para>You can look for a word or phrase in the open read window (e.g. the chapter
+of a bible that you're reading) just like you are used to from other
+programs. This function can be reached either by clicking with the
+<mousebutton>right</mousebutton> mouse button and selecting
+<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how
+you can search in entire works.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-access">
+      <title>Accessing the search dialog</title>
+      <para>You can search in a work by clicking with the
+<mousebutton>right</mousebutton> mouse button on its symbol in the
+<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in
+work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other
+work's names you can select more than one. Then follow the same procedure to
+open the search dialog. You will be searching in all of these works at the
+same time.</para>
+
+      <para>You can also access the search dialog by clicking on <menuchoice>
+<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting
+the appropriate entry.</para>
+
+      <para>A third possibility to start searches is to click on the search symbol in an
+open read window.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-config">
+      <title>การตั้งค่าระบบการค้นหา</title>
+      <screenshot>
+<screeninfo>Search Text Dialog Options Tab</screeninfo> <mediaobject>
+<imageobject> <imagedata fileref="ss_searchopts.png" width="100%"
+contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
+      <sect3 id="hdbk-op-search-config-works">
+        <title>การเลือกหนังสือ</title>
+        <para>At the top of the options tab you will find
+<guibutton>Choose</guibutton>(works). If you would like to search in
+multiple works, click on this button and you will be offered a menu where
+you can select the works you want to search in.</para>
+      </sect3>
+      <sect3 id="hd-op-search-config-scope">
+        <title>Using Search Scopes</title>
+        <para>You can narrow the scope of your search to certain parts of the Bible by
+selecting one of the predefined scopes from the list in <guimenu>Search
+scope</guimenu>. You can define your own search ranges by clicking the
+<guibutton>Setup ranges</guibutton> button.</para>
+      </sect3>
+
+      <sect3 id="hd-op-search-config-syntax">
+        <title>Basic Search Syntax Introduction</title>
+
+        <para>Enter the search phrase separated by spaces.  By default the search function
+will return results that match all the words.  If you want to find any of
+the words entered, select the <guimenu>Some words</guimenu> button.  If you
+want to perform a more complex search, select the <guimenu>Free</guimenu>
+button.  You can see examples of searches by clicking on <guimenu>full
+syntax</guimenu>.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
+        <para>To search text other than the main text, enter the text type followed by
+':', and then the search term.  Refer to the table below for examples.</para>
+
+        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+	  <title>ประเภทการค้นหา</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+		<?dbhtml bgcolor="#EEEEEE" ?>
+		<?dbfo bgcolor="#EEEEEE" ?>
+                <entry>คำนำหน้า</entry>
+                <entry>ความหมาย</entry>
+		<entry>ตัวอย่าง</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>หัวข้อ:</entry>
+                <entry>ค้นหาหัวข้อ</entry>
+		<entry>หัวข้อ:พระเยซู</entry>
+              </row>
+              <row>
+                <entry>เชิงอรรถ:</entry>
+                <entry>ค้นหาเชิงอรรถ</entry>
+		<entry>เชิงอรรถ:โมเสส</entry>
+              </row>
+              <row>
+                <entry>strong:</entry>
+                <entry>searches Strong's Numbers</entry>
+		<entry>strong:G535</entry>
+              </row>
+              <row>
+                <entry>morph:</entry>
+                <entry>searches morphology codes</entry>
+		<entry>morph:N-GSM</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+	<tip>
+	  <para>You can right click on an installed work and select <guimenu>About</guimenu>
+to find which of the above search criteria may work for you.  Not all works
+have the built in features for performing this type of search.</para>
+	</tip>
+
+        <para>&bibletime; uses the Lucene search engine to perform your searches. It has
+many advanced features, and you can read more about it here: <ulink
+url="http://lucene.apache.org/java/docs/index.html">
+http://lucene.apache.org/java/docs/index.html</ulink>.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-results">
+      <title>ผลการค้นหา</title>
+      <para>Here you can see how many instances of the search string were found, sorted
+by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse
+button allows you to copy, save, or print all verses that were found in a
+certain work at once. This also works when you click on one or more of the
+references to copy, save or print them. Clicking on a particular reference
+opens that verse up in context in the preview window below.</para>
+      <tip>
+        <para>Drag a reference and drop it on a work symbol on the Bookshelf to open the
+work at that verse in a new read window.</para>
+      </tip>
+      <tip>
+        <para>Drag a reference and drop it on an open read window, and it will jump to
+that verse.</para>
+      </tip>
+      <tip>
+        <para>Select references and drag them to the Bookshelf to create bookmarks.</para>
+      </tip>
+      <sect3 id="hdbk-op-search-analysis">
+        <title>Search result analysis</title>
+        <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis
+display. This gives a simple graphic analysis of the number of instances the
+search string was found in each book of the Bible, and you can also save the
+analysis.</para>
+        <screenshot>
+<screeninfo>Search Analysis Dialog Box</screeninfo> <mediaobject>
+<imageobject> <imagedata fileref="ss_searchanal.png" width="100%"
+contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-op-bookshelfmanager">
+    <title>The <guimenuitem>Bookshelf Manager</guimenuitem></title>
+
+    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your
+Bookshelf. You can install new works to your Bookshelf, and update or remove
+existing works from your Bookshelf. Access it by clicking <menuchoice>
+<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
+</menuchoice> in the main menu.</para>
+
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
+
+
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
+    </sect2>
+
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-bookshelfmanager-remove">
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
+    </sect2>
+
+  </sect1>
+  <sect1 id="hdbk-op-output">
+    <title>Exporting and Printing</title>
+    <para>In many places, you can open a context menu by clicking with the
+<mousebutton>right</mousebutton> mouse button. Depending on context, it will
+allow you to <guimenuitem>Select</guimenuitem>,
+<guimenuitem>Copy</guimenuitem> (to clipboard),
+<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem>
+text. This works for example in the read windows, when you click on the
+normal text or the verse reference, or in the search result page when you
+click on a work or one or more verse references. It is pretty
+straightforward, so just try it out.</para>
+
+    <para>Printing from &bibletime; is rather basic and is intended as a utility. If
+you are composing a document or presentation containing text from
+&bibletime; works, we suggest that you use one of the presentation or
+editing tools on your system to format your document, rather than printing
+from &bibletime; directly.</para>
+  </sect1>
+</chapter>

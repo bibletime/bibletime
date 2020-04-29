@@ -8,14 +8,14 @@
 # Harry Vennik <htvennik@zonnet.nl>, 2003
 # Samuel <shtjonathan@xs4all.nl>, 2018
 # Sanne Smeets, 2017
-# Sanne Smeets, 2017
+# Sanne Smeets, 2017,2020
 # Willem Jackson <willem.de.geweldige@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2018-06-12 00:49+0000\n"
-"Last-Translator: Samuel <shtjonathan@xs4all.nl>\n"
+"PO-Revision-Date: 2020-04-02 12:48+0000\n"
+"Last-Translator: Sanne Smeets\n"
 "Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
 "nl/)\n"
 "Language: nl\n"
@@ -175,6 +175,9 @@ msgid ""
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
 msgstr ""
+"2 Tim. 2:15 \"Beijver u om uzelf welbeproefd voor God te stellen, als een "
+"arbeider die zich niet hoeft te schamen en die het Woord van de waarheid "
+"recht snijdt.\" (HSV)."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:69
@@ -217,6 +220,12 @@ msgid ""
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
 msgstr ""
+"De Navigators laten dit zien door te zeggen dat zoals de duim alle vingers "
+"kan aanraken, zo kunnen wij mediteren met het Woord zoals wij ook doen met "
+"elk van de eerste vier. Meditatie heeft een sleutelrol bij openbaring. Een "
+"nieuwe christen moet meer luisteren en lezen in de Bijbel dan dat zij het "
+"moeten bestuderen en uit het hoofd leren. Dit is zodat zij bekend raken met "
+"de algemene boodschap van de Bijbel."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:91
@@ -291,6 +300,8 @@ msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
 msgstr ""
+"Wat zeggen de verzen er rondom heen? \"Context is koning\" is de regel - the "
+"passage moet logisch zijn binnen de structuur van de gehele passage en boek."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:123
@@ -323,11 +334,19 @@ msgid ""
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
 msgstr ""
+"Laten wij samen Math. 6:1-18 bestuderen. Lees het voor jezelf, zoek eerst "
+"het sleutelvers, het vers dat de gehele passage samenvat. Denk je dat je "
+"deze hebt? Toets het door verschillende plaatsen in de passage uit te zoeken "
+"en jezelf af te vragen of deze verband hebben met het door jou uitgekozen "
+"sleutelvers. Wanneer je het vind, schrijf het op in Romeinse cijfers. Een "
+"van jouw schets:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:140
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr ""
+"Wees op uw hoede dat u uw liefdegave niet geeft in tegenwoordigheid van de "
+"mensen om door hen gezien te worden (HSV)"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:144
@@ -336,6 +355,9 @@ msgid ""
 "give any examples? What area of our lives is being addressed? <emphasis>Our "
 "motives!</emphasis> What sub-headings develop this thought?"
 msgstr ""
+"Wat betekend \"liefdegave geven\"? Geeft deze passage voorbeelden? Welk "
+"onderdeel van ons leven wordt hier aangesproken? <emphasis> Onze motivaties! "
+"</emphasis> Welke subkoppen ontwikkelen deze gedachte?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
@@ -367,11 +389,13 @@ msgid ""
 "don't sound a trumpet. (how might someone <quote>sound a trumpet</"
 "quote>today?)"
 msgstr ""
+"Laat geen bazuin klinken. (Hoe zou iemand vandaag een \"bazuin laten klinken"
+"\"?)"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
-msgstr ""
+msgstr "doe het in het geheim."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:174
@@ -412,12 +436,12 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:201
 msgid "<quote>Faithful are the wounds of a friend</quote>"
-msgstr ""
+msgstr "\"Wonden door iemand die liefheeft, zijn tekenen van trouw\""
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:206
 msgid "<quote>We are ambassadors of Christ.</quote>"
-msgstr ""
+msgstr "\"Wij zijn dan gezanten namens Christus.\""
 
 #. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:210
@@ -442,6 +466,11 @@ msgid ""
 "it. Then you could look up related words and references listed for them, e."
 "g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
 msgstr ""
+"Laten wij zeggen dat je een study wilde maken van het woord \"verlossing\". "
+"Eerst zou je het woord opzoeken in de concordantie en de referentielijst "
+"ervoor opzoeken. Dan zou je gerelateerde woorden opzoeken en van deze de "
+"referentielijsten, bijvoorbeeld \"verlos, verlost, losgeld,\" zelfs \"kopen"
+"\" of \"gekocht\"."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:223

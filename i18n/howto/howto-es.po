@@ -3,18 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Martin Gruner <martin.gruner@otrs.com>, 2016
+# 866a45e7e8ba2bb0117088114bace64d, 2016
 # Pier Jose Gotta Perez <piegope@protonmail.com>, 2017
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2014-2015
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2009
-# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2009-2010,2015
+# Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2009-2010,2015,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2017-10-30 18:09+0000\n"
-"Last-Translator: Pier Jose Gotta Perez <piegope@protonmail.com>\n"
+"PO-Revision-Date: 2019-12-26 16:04+0000\n"
+"Last-Translator: Roy Eddekel Alvear Aguirre <racl@gulix.cl>\n"
 "Language-Team: Spanish (http://www.transifex.com/bibletime/bibletime/"
 "language/es/)\n"
 "Language: es\n"
@@ -1646,7 +1646,7 @@ msgstr ""
 "como \"haber ungido\", por lo que el fin es la unción primero, entonces la "
 "oración (\"en el nombre del Señor\" se refiere a la oración, no la unción). "
 "Santiago 5 está diciendo que los ancianos deben dar medicina a la persona "
-"enferma y orar por él en el nombre del Señor. ¿Eso no expresan un hermoso "
+"enferma y orar por él en el nombre del Señor. ¡Eso no expresan un hermoso "
 "equilibrio de ser práctico y espiritual en nuestro Dios!"
 
 #. type: Content of: <chapter><section><title>
@@ -1734,16 +1734,16 @@ msgid ""
 "being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
 "not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
-"Hechos 2:38 <quote>Entonces Pedro les dijo: Arrepentíos, y bautícese cada "
+"Hechos 2:38 <quote>Entonces Pedro les dijo: \"Arrepentíos, y bautícese cada "
 "uno de vosotros en el nombre de Jesucristo para perdón de los pecados "
-"[...]\" </quote>. ¿Es esta la enseñanza de la regeneración bautismal? Si "
-"este fue el único versículo de las Escrituras que teníamos, tendríamos que "
+"[...]\"</quote>. ¿Es esta la enseñanza de la regeneración bautismal? Si este "
+"fue el único versículo de las Escrituras que teníamos, tendríamos que "
 "concluir que sí. Pero a la luz de la enseñanza clara en otro lugar que la "
 "regeneración ocurre por la fe en Cristo, tenemos que interpretarlo de otro "
 "modo. Pedro está instando bautismo como una manera para que sus oyentes "
 "respondan al evangelio. Si el bautismo fuera de la vía para nacer de nuevo, "
-"¿cómo pudo Pablo escribió 1 Corintios 1:17 <emphasis> \"Porque no me envió "
-"Cristo a bautizar, sino a predicar el evangelio\" </emphasis>?"
+"¿Cómo pudo Pablo escribió 1 Corintios 1:17 <emphasis>\"Porque no me envió "
+"Cristo a bautizar, sino a predicar el evangelio\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:211

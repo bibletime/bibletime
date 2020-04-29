@@ -1,7 +1,7 @@
 <chapter id="hdbk-op">
-  <title>Program operation</title>
+  <title>Werking van het programma</title>
   <sect1 id="hdbk-op-overview">
-    <title>Program overview</title>
+    <title>Programma overzicht</title>
     <para>This is what a typical &bibletime; session looks like: <mediaobject>
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
@@ -17,16 +17,16 @@ marker, for example, then the Mag will display the actual content of the
 footnote. The toolbar gives you quick access to important functions, and the
 Desk on the right side is where you do your real work.</para>
 
-    <para>Let us now proceed by looking at the different parts of the application
-individually.</para>
+    <para>Laten we nu doorgaan en &eacute;&eacute;n voor &eacute;&eacute;n de
+verschillende onderdelen van de toepassing bekijken.</para>
   </sect1>
   <sect1 id="hdbk-op-parts">
-    <title>Parts of the &bibletime; application window</title>
+    <title>Onderdelen van het &bibletime; toepassingsvenster</title>
     <sect2 id="hdbk-op-parts-bookshelf">
-      <title>The Bookshelf</title>
-      <para>The Bookshelf lists all installed works, sorted by category and language. It
-also has a category called "Bookmarks". This is where you can store and
-access your own bookmarks.</para>
+      <title>De Boekenplank</title>
+      <para>De Boekenplank laat alle ge&iuml;nstalleerde modules zien, gesorteerd per
+categorie en taal. Het heeft ook een categorie genaamd "Bladwijzers". Dit is
+de plaats waar u uw eigen bladwijzers kunt opslaan en openen.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Opening works</title>
@@ -47,7 +47,7 @@ then it will jump to the specified location.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
-        <title>Additional information about works</title>
+        <title>Additionele informatie over modules</title>
 
         <para>If you click with the <mousebutton>right</mousebutton> mouse button on the
 symbol of a work, you will see a menu with additional entries that are
@@ -61,7 +61,7 @@ Modules</ulink> page on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
-        <title>Searching in works</title>
+        <title>Zoeken in modules</title>
 
         <para>You can search in a work by clicking with the
 <mousebutton>right</mousebutton> mouse button on its symbol and selecting
@@ -74,11 +74,11 @@ section</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
-        <title>Working with bookmarks</title>
+        <title>Werken met bladwijzers</title>
         <para>
 
         <tip>
-          <para>Drag &amp; Drop Works Here</para>
+          <para>Drag &amp; Drop Werkt Hier</para>
         </tip>
 
 	Click with the <mousebutton>right</mousebutton> mouse button on the bookmark
@@ -99,17 +99,17 @@ bookmarks to change their names and descriptions.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-mag">
-      <title>The Mag(nifying glass)</title>
+      <title>Het Vergrootglas</title>
 
-      <para>This little window in the lower left corner of the &bibletime; window is
-purely passive. Whenever your mouse cursor is located over some text with
-additional information (e.g., Strong's numbers), then this additional
-information will be displayed in the Mag, and not in the text itself. Just
-try it out.</para>
+      <para>Dit kleine venster in de linkeronderhoek van het &bibletime; venster is
+volledig passief. Telkens wanneer uw muisaanwijzer over een stukje tekst met
+extra informatie gaat (bijv. Strong-nummers), dan wordt deze extra
+informatie weergegeven in het Vergrootglas en niet in de tekst zelf. Probeer
+het maar eens uit.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-desk">
-      <title>The Desk</title>
+      <title>Het Bureau</title>
       <para>The Desk is where the real work with &bibletime; takes place. Here you can
 open works from the Bookshelf, read them, <link
 linkend="hdbk-op-search">search</link> in them, and even save your
@@ -117,13 +117,13 @@ annotations in the personal commentary module (see <link
 linkend="hdbk-op-parts-desk-write">below</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
-        <title>Reading works</title>
-        <para>As we have <link linkend="hdbk-op-parts-bookshelf-open">already seen</link>,
-you can open works for reading simply by clicking on their symbol in the
-Bookshelf. A read window will open in the Desk's area. Every read window has
-a toolbar. There you can find tools to navigate in the work that this read
-window is connected to, as well as history buttons like the ones that you
-know from your browser.</para>
+        <title>Modules lezen</title>
+        <para>Zoals we al <link linkend="hdbk-op-parts-bookshelf-open">gezien</link>
+hebben, kunt u de te lezen modules simpelweg openen door te klikken op hun
+symbool in de Boekenplank. Een leesvenster zal worden geopend in het Bureau
+gebied. Ieder leesvenster heeft een werkbalk. Hier kunt u gereedschappen
+vinden om te navigeren in de module waarin dit leesvenster is verbonden,
+alsmede history knoppen zoals u die kent vanuit uw internet browser.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-scroll">
@@ -139,7 +139,7 @@ scrolling.
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-placement">
-        <title>Read window placement</title>
+        <title>Plaatsing van leesvensters</title>
         <para>Of course, you can open multiple works at the same time.  There are several
 possibilities for arranging the read windows on the desk. Please have a look
 at the entry <guimenu>Window</guimenu> in the main menu. There you can see
@@ -151,7 +151,7 @@ mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-write">
-        <title>Editing your own commentary</title>
+        <title>Uw eigen bijbelcommentaar bewerken</title>
 
         <para>To be able to store your own comments about parts of the Bible, you have
 install a certain work from the library of the <ulink
@@ -177,10 +177,10 @@ will be inserted.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-search">
-    <title>Searching in works</title>
+    <title>Zoeken in modules</title>
 
     <sect2 id="hdbk-op-search-intext">
-      <title>Searching text in an open read window</title>
+      <title>Tekst zoeken in een geopend leesvenster</title>
       <para>You can look for a word or phrase in the open read window (e.g. the chapter
 of a bible that you're reading) just like you are used to from other
 programs. This function can be reached either by clicking with the
@@ -191,7 +191,7 @@ you can search in entire works.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
-      <title>Accessing the search dialog</title>
+      <title>De zoekdialoog benaderen</title>
       <para>You can search in a work by clicking with the
 <mousebutton>right</mousebutton> mouse button on its symbol in the
 <guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in
@@ -204,25 +204,25 @@ same time.</para>
 <guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting
 the appropriate entry.</para>
 
-      <para>A third possibility to start searches is to click on the search symbol in an
-open read window.</para>
+      <para>Een derde mogelijkheid om zoekopdrachten te starten is door op het
+zoeksymbool in een geopend leesvenster te klikken.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-config">
-      <title>Search configuration</title>
+      <title>Configuratie van de zoekopdracht</title>
       <screenshot>
-<screeninfo>Search Text Dialog Options Tab</screeninfo> <mediaobject>
+<screeninfo>Het tabblad Opties in de dialoog Tekst Zoeken</screeninfo> <mediaobject>
 <imageobject> <imagedata fileref="ss_searchopts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
       <sect3 id="hdbk-op-search-config-works">
-        <title>Selecting works</title>
+        <title>Modules selecteren</title>
         <para>At the top of the options tab you will find
 <guibutton>Choose</guibutton>(works). If you would like to search in
 multiple works, click on this button and you will be offered a menu where
 you can select the works you want to search in.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
-        <title>Using Search Scopes</title>
+        <title>Zoekbereiken gebruiken</title>
         <para>You can narrow the scope of your search to certain parts of the Bible by
 selecting one of the predefined scopes from the list in <guimenu>Search
 scope</guimenu>. You can define your own search ranges by clicking the
@@ -230,7 +230,7 @@ scope</guimenu>. You can define your own search ranges by clicking the
       </sect3>
 
       <sect3 id="hd-op-search-config-syntax">
-        <title>Basic Search Syntax Introduction</title>
+        <title>Introductie op de syntaxis van een eenvoudige zoekopdracht</title>
 
         <para>Enter the search phrase separated by spaces.  By default the search function
 will return results that match all the words.  If you want to find any of
@@ -254,30 +254,30 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
               <row>
 		<?dbhtml bgcolor="#EEEEEE" ?>
 		<?dbfo bgcolor="#EEEEEE" ?>
-                <entry>Prefix</entry>
-                <entry>Meaning</entry>
+                <entry>Voorvoegsel</entry>
+                <entry>Betekenis</entry>
 		<entry>Example</entry>
               </row>
             </thead>
             <tbody>
               <row>
-                <entry>heading:</entry>
-                <entry>searches headings</entry>
+                <entry>Koptekst:</entry>
+                <entry>doorzoekt kopteksten</entry>
 		<entry>heading:Jesus</entry>
               </row>
               <row>
-                <entry>footnote:</entry>
-                <entry>searches footnotes</entry>
+                <entry>voetnoot:</entry>
+                <entry>doorzoekt voetnoten</entry>
 		<entry>footnote:Moses</entry>
               </row>
               <row>
                 <entry>strong:</entry>
-                <entry>searches Strong's Numbers</entry>
+                <entry>doorzoekt Strong-nummering</entry>
 		<entry>strong:G535</entry>
               </row>
               <row>
                 <entry>morph:</entry>
-                <entry>searches morphology codes</entry>
+                <entry>doorzoekt morfologische codes</entry>
 		<entry>morph:N-GSM</entry>
               </row>
             </tbody>
@@ -298,7 +298,7 @@ http://lucene.apache.org/java/docs/index.html</ulink>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-results">
-      <title>Search results</title>
+      <title>Zoekresultaten</title>
       <para>Here you can see how many instances of the search string were found, sorted
 by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse
 button allows you to copy, save, or print all verses that were found in a
@@ -306,24 +306,25 @@ certain work at once. This also works when you click on one or more of the
 references to copy, save or print them. Clicking on a particular reference
 opens that verse up in context in the preview window below.</para>
       <tip>
-        <para>Drag a reference and drop it on a work symbol on the Bookshelf to open the
-work at that verse in a new read window.</para>
+        <para>Sleep een bijbelverwijzing en laat die los op een symbool van een module op
+de Boekenplank om de module op dat vers in een nieuw leesvenster te openen.</para>
       </tip>
       <tip>
-        <para>Drag a reference and drop it on an open read window, and it will jump to
-that verse.</para>
+        <para>Sleep een bijbelverwijzing en laat die vallen op een geopend leesvenster en
+die zal verspringen naar dat vers.</para>
       </tip>
       <tip>
-        <para>Select references and drag them to the Bookshelf to create bookmarks.</para>
+        <para>Selecteer bijbelverwijzingen en sleep ze naar de Boekenplank om bladwijzers
+te maken.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
-        <title>Search result analysis</title>
+        <title>Analyse van zoekresultaten</title>
         <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis
 display. This gives a simple graphic analysis of the number of instances the
 search string was found in each book of the Bible, and you can also save the
 analysis.</para>
         <screenshot>
-<screeninfo>Search Analysis Dialog Box</screeninfo> <mediaobject>
+<screeninfo>Zoekanalyse Dialoog</screeninfo> <mediaobject>
 <imageobject> <imagedata fileref="ss_searchanal.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
       </sect3>
@@ -331,7 +332,7 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></s
   </sect1>
 
   <sect1 id="hdbk-op-bookshelfmanager">
-    <title>The <guimenuitem>Bookshelf Manager</guimenuitem></title>
+    <title>De <guimenuitem>Boekenplank Manager</guimenuitem></title>
 
     <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your
 Bookshelf. You can install new works to your Bookshelf, and update or remove
@@ -375,7 +376,7 @@ Bookshelf too free up disk space. Simply choose the works` and click on the
 
   </sect1>
   <sect1 id="hdbk-op-output">
-    <title>Exporting and Printing</title>
+    <title>Exporteren en Printen</title>
     <para>In many places, you can open a context menu by clicking with the
 <mousebutton>right</mousebutton> mouse button. Depending on context, it will
 allow you to <guimenuitem>Select</guimenuitem>,
@@ -386,10 +387,10 @@ normal text or the verse reference, or in the search result page when you
 click on a work or one or more verse references. It is pretty
 straightforward, so just try it out.</para>
 
-    <para>Printing from &bibletime; is rather basic and is intended as a utility. If
-you are composing a document or presentation containing text from
-&bibletime; works, we suggest that you use one of the presentation or
-editing tools on your system to format your document, rather than printing
-from &bibletime; directly.</para>
+    <para>Afdrukken vanuit &bibletime; is redelijk elementair en is bedoelt als een
+hulpfunctie. Als u een document of presentatie samenstelt die tekst bevat
+uit &bibletime; modules, dan raden we u aan om een programma voor
+presentaties of tekstbewerkingen te gebruiken om uw document op te maken en
+niet om direct vanuit &bibletime; af te drukken.</para>
   </sect1>
 </chapter>

@@ -1094,7 +1094,7 @@ Loupe</guimenuitem></menuchoice></link>, affiche/masque la Loupe.</entry>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Shift;+Down</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Shift;+Bas</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
@@ -1104,7 +1104,7 @@ down</guimenuitem> </menuchoice>
 
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Shift;+Up</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Shift;+Haut</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
@@ -1117,8 +1117,8 @@ up</guimenuitem> </menuchoice>
               <keycombo action="simul"> <keycap>&Space;</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll
-pause</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Affichage</guimenu> <guimenuitem>Défilement
+automatique en pause</guimenuitem> </menuchoice>
             </entry>
           </row>
 

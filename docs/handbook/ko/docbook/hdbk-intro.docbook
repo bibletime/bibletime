@@ -1,0 +1,75 @@
+<chapter id="hdbk-intro">
+  <title>소개</title>
+  <sect1 id="hdbk-intro-about">
+    <title>바이블타임에 대하여</title>
+
+    <para>바이블타임은 다양한 성경과 언어를 지원하는 성경 공부 도구입니다. 방대한 량의 책들을 쉽게 설치하고 관리할 수 있습니다. 성경을 보거나
+검색하는 등의 내부 기능을 제공하는 <ulink
+url="http://www.crosswire.org/sword/">&sword;</ulink> 라이브러리 기반으로
+제작되었습니다. &sword; 는 <ulink url="http://www.crosswire.org">&cbs;</ulink>의 핵심
+산출물입니다.</para>
+
+    <para>바이블타임은 &sword; 프로젝트에서 지원하는 파일 형식으로 만들어진 책들을 읽도록 설계되었습니다. 지원하는 파일 형식에 대해서는
+&cbs; &sword; 프로젝트의 <ulink
+url="http://www.crosswire.org/sword/develop/index.jsp">개발자 섹션</ulink>을
+참조하세요.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>사용 가능한 책들</title>
+      <para>Over 280 documents in 50 languages are available from the <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+        <varlistentry>
+          <term>성경</term>
+          <listitem>
+            <para>스트롱 번호, 제목, 각주와 같은 옵션 항목을 포함할 수 있는 성경 전체 본문. 다양한 언어로 된 성경을 구할 수 있으며 최근 버전
+뿐만아니라 코덱스 레닌그라드("WLC", 히브리어), 셉투젠트("LXX", 헬라어)와 같은 고대본도 있습니다. 이것은 &sword;
+프로젝트의 라이브러리 중에서 가장 개선된 부분입니다.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>도서</term>
+          <listitem>
+            <para>"그리스도를 본 받아", "에누마 엘리쉬", "요세푸스: The Complete Works"등을 포함한 다양한 도서들</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>주석</term>
+          <listitem>
+            <para>요한 웨슬리의 "Notes on the Bible", 매튜 헨리의 주석과 루터의 "Commentary on Galatians."과 같은
+고전, 성경의 특정 부분에 <link linkend="hdbk-op-parts-desk-write">사용자 나름의 메모를 남길 수
+있는</link> <emphasis>개인</emphasis> 주석을 포함하는 주석들.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>매일 성경 읽기</term>
+          <listitem>
+            <para>많은 사람들이 하나님의 말씀을 매일 접하는 것에 대하여 유용하게 여깁니다. 말씀읽는 아침/저녁(Daily Light on the
+Daily Path), 로순겐(Losungen)등을 포함하여 여러 방법이 있습니다.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>어휘사전/성경사전</term>
+          <listitem>
+            <para>어휘 사전으로는 로빈슨의 형태 분석 코드와 국제표준 성경 백과사전을 들 수 있습니다. 사전으로는 스트롱의 히브리어 성경 사전과 헬라어
+성경 사전, 웹스터의 1913년 개정판 완본 사전, 네이브의 주제별 성경 등을 들 수 있습니다.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist> There are several other repositories that
+&bibletime; will load and use.
+      </para>
+    </sect2>
+
+    <sect2 id="hdbk-intro-motivation">
+      <title>동기</title>
+      <para>우리의 소망은 하나님을 섬기고 다른 사람들이 하나님과의 관계에 있어 성장하도록 돕는 것에 우리의 역할을 감당하는 것입니다. 지금까지
+우리는 이 고성능, 고품질의 프로그램을 만들기 위해서 노력해 왔으나 지속적으로 단순하고 직관적으로 동작 할 수 있도록 제작하고
+있습니다. 주께서 모든 좋은 것의 원천이신 것처럼 하나님께서 찬양 받으시는 것이 저희의 소망입니다.</para>
+      <blockquote>
+        <attribution>야고보서 1:17</attribution>
+        <para>각양 좋은 은사와 온전한 선물이 다 위로부터 빛들의 아버지께로서 내려오나니 그는 변함도 없으시고 회전하는 그림자도 없으시니라.</para>
+      </blockquote>
+      <para>이 프로그램을 사용하시는 여러분께 하나님의 축복이 있기를 바랍니다.</para>
+    </sect2>
+  </sect1>
+</chapter>

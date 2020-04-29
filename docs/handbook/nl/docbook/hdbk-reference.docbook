@@ -1,7 +1,7 @@
 <chapter id="hdbk-reference">
-  <title>Reference</title>
+  <title>Verwijzing</title>
   <sect1 id="hdbk-reference-menus">
-    <title>Main menu reference</title>
+    <title>Hoofdmenu verwijzing</title>
 
     <para>In this section you can find detailed descriptions of all entries in the
 main menu of &bibletime;. They are ordered in just the way they appear in
@@ -76,9 +76,10 @@ format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Sh
           </term>
           <listitem>
             <para>
-            <action>Toggles display of the Bookshelf.</action> Toggle this setting to
-turn the Bookshelf on the left pane on or off. This can be handy if you need
-more space for the Mag.</para>
+            <action>Schakelt de weergave van de Boekenplank in/uit.</action> Schakel
+deze instelling in/uit om de Boekenplank in het linkerpaneel wel/niet weer
+te geven. Dit kan handig zijn als u meer ruimte nodig heeft voor het
+vergrootglas.</para>
           </listitem>
         </varlistentry>
 
@@ -105,8 +106,9 @@ depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <gui
           </term>
           <listitem>
             <para>
-            <action>Toggles display of the Mag(nifying glass).</action> Toggle this
-setting to turn the Mag on the left pane on or off.</para>
+            <action>Schakelt de weergave van het Vergrootglas in/uit.</action> Schakel
+deze instelling in/uit om het Vergrootglas in het linkerpaneel aan/uit te
+zetten.</para>
           </listitem>
         </varlistentry>
 
@@ -271,7 +273,7 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
 
           <listitem>
             <para>
-            <action>Closes all open windows</action>.</para>
+            <action>Sluit alle geopende vensters</action></para>
           </listitem>
         </varlistentry>
 
@@ -286,7 +288,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
 
           <listitem>
             <para>
-	      <action>Cascades all open windows</action>.
+	      <action>Rangschikt alle geopende vensters trapsgewijs (achter
+elkaar)</action>
 	    </para>
           </listitem>
         </varlistentry>
@@ -766,7 +769,7 @@ reference</link>.</para>
 	    <?dbhtml bgcolor="#EEEEEE" ?>
 	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Shortcut</entry>
-            <entry>Description</entry>
+            <entry>Beschrijving</entry>
           </row>
         </thead>
         <tbody>
@@ -774,13 +777,13 @@ reference</link>.</para>
             <entry>
               <keycombo action="simul"> <keycap>&Alt;+Left</keycap></keycombo>
             </entry>
-            <entry>Moves back in the history of read windows.</entry>
+            <entry>Gaat terug in de history van leesvensters</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul"> <keycap>&Alt;+Right</keycap></keycombo>
             </entry>
-            <entry>Moves forward in the history of read windows.</entry>
+            <entry>Gaat vooruit in de history van leesvensters</entry>
           </row>
           <row>
             <entry>
@@ -879,20 +882,20 @@ equivalent; organizes windows with tabs across the top.</entry>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
-            <entry>Select all. This selects all text in read windows.</entry>
+            <entry>Selecteer alles. Dit selecteert alle tekst in de leesvensters.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+C</keycap></keycombo>
             </entry>
-            <entry>Copy. This copies the selected text to the clipboard.</entry>
+            <entry>Kopie&euml;ren. Dit kopieert de geselecteerde tekst naar het klembord.</entry>
           </row>
 
           <row>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+F</keycap></keycombo>
             </entry>
-            <entry>Search. This lets you search within the text of a read window.</entry>
+            <entry>Zoeken. Dit laat u zoeken binnen de tekst van een leesvenster.</entry>
           </row>
 
           <row>
@@ -981,7 +984,7 @@ currently opened works.</entry>
             <entry>
               <keycombo action="simul"> <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
-            <entry>Closes the current window.</entry>
+            <entry>Sluit het huidige venster.</entry>
           </row>
 
           <row>

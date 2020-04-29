@@ -3,18 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Ein Neuling <ein.neuling@gmail.com>, 2016
+# Ein Neuling, 2016
 # Joachim Ansorg, 2003-2004
 # Joachim Ansorg <info@bibetime.info>, 2005
 # Joachim Ansorg <info@bibletime.info>, 2005
-# Martin Gruner <martin.gruner@otrs.com>, 2016
+# 866a45e7e8ba2bb0117088114bace64d, 2016
 # Martin Gruner <mg.pub@gmx.net>, 2004-2005
 # Roland Teschner <rolte@gmx.net>, 2009-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2019-12-11 01:50+0000\n"
+"PO-Revision-Date: 2019-12-22 00:22+0000\n"
 "Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
 "Language-Team: German (http://www.transifex.com/bibletime/bibletime/language/"
 "de/)\n"

@@ -1,0 +1,330 @@
+<chapter id="hdbk-op">
+  <title>프로그램 동작</title>
+  <sect1 id="hdbk-op-overview">
+    <title>프로그램 개요</title>
+    <para>이것은 전형적인 바이블타임 세션의 모습입니다: <mediaobject>
+      <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
+contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
+      <textobject>
+        <phrase>바이블타임 응용 창</phrase>
+      </textobject>
+    </mediaobject> 여러분은 응용의
+여러 요소들을 쉽게 확인할 수 있습니다. 좌상단 창은 책꽂이 탭을 통해서 설치된 책들을 열 수 있고, 북마크 탭을 통해서 나름의 북마크를
+관리할 수 있습니다. 책꽂이 아래에 있는 작은 돋보기 창은 책에 포함되어 있는 부가 정보를 출력하는데 사용합니다. 예를 들어 마우스를
+각주 표시에 올려두면 돋보기 창은 각주의 실제 내용을 출력합니다. 툴바를 사용하면 중요 기능들에 빠르게 접근할 수 있으며, 우측에 있는
+책상이 실제 작업이 이루어지는 곳입니다.</para>
+
+    <para>이제 응용의 다른 요소들을 개별적으로 살펴보겠습니다.</para>
+  </sect1>
+  <sect1 id="hdbk-op-parts">
+    <title>바이블타임 응용 창의 요소들</title>
+    <sect2 id="hdbk-op-parts-bookshelf">
+      <title>책꽂이</title>
+      <para>책꽂이는 설치된 책들을 분류 및 언어로 정렬하여 나열해 줍니다. "북마크" 탭을 통해서 여러분은 나름의 북마크를 저장하고 조회할 수
+있습니다.</para>
+
+      <sect3 id="hdbk-op-parts-bookshelf-open">
+        <title>Opening works</title>
+
+        <para>To open a work from the bookshelf for reading, simply double-click with the
+<mousebutton>left mouse button</mousebutton> on the desired category
+(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to
+display its contents. Then just double-click on one of the works to open it
+for reading. A read window will appear in the Desk area.</para>
+
+        <para>어떤 성경을 읽고 있다가 읽고 있는 구절을 간편하게 다른 성경으로 열 수 있습니다. 절 참조를 <mousebutton>좌측 마우스
+버튼</mousebutton> 클릭해서 (커서가 손모양으로 바뀜) 책꽂이로 끌어다가 열고자 하는 책에 놓으면 해당하는 책을 원하는 위치로
+바로 열 수 있습니다. 또한 절 참조를 끌어다가 읽기 창에 놓으면 해당 구절로 바로 이동할 수 있습니다.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-metainfo">
+        <title>책의 추가 정보</title>
+
+        <para>책 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하면 이 책과 관련한 추가 항목이 있는 메뉴를 볼
+수 있습니다.  <guimenuitem>"추가 정보"</guimenuitem> 는 선택한 책에 대한 다양한 정보를 가지고 있는 창을
+엽니다.  <guimenuitem>"잠금 해제"</guimenuitem>는 잠금이 된 책으로 읽을 수 있도록 키를 입력하는 작은 창을
+엽니다. 잠금이 된 책에 대한 추가적인 정보는 &cbs; 사이트에서 <ulink
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp">잠궈진 모듈들</ulink>
+페이지를 확인해 보세요.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-search">
+        <title>책에서 찾기</title>
+
+        <para>책 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하고 <guimenuitem>"책에서
+찾기"</guimenuitem>를 선택하면 해당 책에 대한 검색을 할 수 있습니다. 시프트 키를 누르고 책을 클릭하면 하나 이상을 선택할
+수 있습니다. 그 다음에 검색 창을 여는 과정은 동일합니다. 선택한 모든 문서들을 검색하게 됩니다. 검색 기능에 대한 자세한 설명은
+<link linkend="hdbk-op-search">책에서 검색하기 섹션</link>에서 찾을 수 있습니다.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
+        <title>북마크 다루기</title>
+        <para>
+
+        <tip>
+          <para>책을 여기에 끌어다 놓으세요</para>
+        </tip>
+
+	책꽂이의 북마크 탭에서 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하고 <guimenuitem>"새
+폴더"</guimenuitem> 메뉴를 선택하면 새 하위 폴더를 만들 수 있습니다. 읽기 창이나 검색 결과에서 북마크 폴더로 절 참조를
+끌어다 놓기 할수 있으며 폴더간에 북마크를 끌어다 놓기로 재정렬 할 수 있습니다.</para>
+        <para>다른 사람이 만든 북마크를 가져오기 할 수 뿐만아니라 북마크 내보배기로 다른 사람과 공유할 수도 있습니다. 이 기능을 수행하려면 북마크
+폴더의 <guimenu>컨텍스트 메뉴</guimenu>를 위에서 언급한 것처럼 열고 <guimenuitem>"폴더
+내보내기"</guimenuitem>를 선택합니다. 그러면 북마크 폴더를 저장하기 위한 대화창이 나옵니다. 북마크 가져오기도 비슷한
+방식으로 수행할 수 있습니다.</para>
+
+        <para>또한 폴더나 북마크를 <mousebutton>우측</mousebutton> 마우스로 클릭하여 제목이나 설명을 수정할 수도 있습니다.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-mag">
+      <title>돋보기</title>
+
+      <para>바이블타임의 좌측 하단에 있는 이 작은 창은 오로지 수동적으로만 동작합니다. 마우스 커서가 스트롱 번호와 같은 부가 정보가 있는 곳에
+위치하면 그 부가 정보가 읽기 창이 아니라 돋보기 창에 표시됩니다. 바로 시도해 보세요.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-desk">
+      <title>책상</title>
+      <para>책상은 바이블타임의 실제 작업이 일어나는 곳 입니다. 책꽂이를 통해서 이곳에 책을 열 수 있고, 읽으며, 그 안에서 특정 내용을
+<link linkend="hdbk-op-search">검색</link>할 수 있고, 개인 주석 모듈에 나름의 메모를 저장할 수도
+있습니다.(<link linkend="hdbk-op-parts-desk-write">아래</link>를 참조하세요).</para>
+
+      <sect3 id="hdbk-op-parts-desk-read">
+        <title>책 읽기</title>
+        <para><link linkend="hdbk-op-parts-bookshelf-open">이미 앞에서 다룬</link> 것처럼 책꽂이에서 책의
+아이콘을 클릭하는 것만으로 간단하게 책을 열 수 있습니다. 읽기 창은 책상 영역에 열릴 것입니다. 각 읽기 창에는 툴바가
+배치됩니다. 툴바에는 웹 브라우저와 같은 기록에서의 이동 버튼 뿐만아니라 읽기 창과 연결되어 권, 장, 절별로 이동할 수 있는 도구들도
+있습니다.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-scroll">
+        <title>Auto Scrolling</title>
+        <para>The currently active window can be auto scrolled up or down.  Start
+scrolling by press Shift+Down. You can increase the scrolling speed by
+pressing Shift+Down multiple times. To pause scrolling press Space. To start
+scrolling again at the previous speed press Space again. To slow down
+scrolling or scroll the other direction press Shift+Up one or more
+times. Pressing any other key or changing the active window will stop the
+scrolling.
+        </para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-placement">
+        <title>읽기 창의 배치</title>
+        <para>물론 동시에 여러권의 창을 열 수도 있습니다. 책상 위에 읽기 창들을 배치하는 다양한 방법이 있습니다. 메인 메뉴의
+<guimenu>창관리</guimenu> 메뉴에 항목들을 살펴보면 사용자가 직접 읽기창의 배치를 다룰 수도 있고 바이블타임이 배치를
+자동으로 다루도록 지정할 수도 있음을 알 수 있습니다. 이 작업은 <menuchoice> <guimenu>창관리</guimenu>
+<guimenuitem>배열 모드</guimenuitem> </menuchoice>에 있는 배치 모드중의 하나를 선택해야 합니다. 그냥
+시도해 보세요. 단순하며 원하는 대로 동작할 것입니다.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-write">
+        <title>개인 주석 편집하기</title>
+
+        <para>성경의 특정 부분에 대한 나름의 주석을 달고 싶다면 <ulink
+url="http://www.crosswire.org">&cbs;</ulink>라이브러리에서 특정한 책을 설치해야 하는데 바로 "개인
+주석"이라는 불리는 책입니다.</para>
+
+        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
+a <mousebutton>left</mousebutton> mouse button.  You can edit this
+commentary by just clicking on any verse.  A dialog opens which allows you
+to add or edit text for that verse.</para>
+
+        <tip>
+          <para>만약 <menuchoice> <guimenu>편집</guimenu> </menuchoice> 메뉴가 선택 불가 상태라면 개인 주석 파일에
+대한 쓰기 권한이 있는지 확인해야 합니다.</para>
+        </tip>
+
+        <tip>
+          <para>책을 여기에 끌어다 놓으세요. 절참조를 가져다 놓으면 해당 구절이 추가될 것입니다.</para>
+        </tip>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-search">
+    <title>책에서 찾기</title>
+
+    <sect2 id="hdbk-op-search-intext">
+      <title>읽기 창에서 검색하기</title>
+      <para>다른 프로그램에서 사용하던 것과 같이 현재의 읽기 창에서(예를 들어 성경의 한 장) 특정 단어나 문장을 열 수 있습니다. 이 기능은 읽기
+창을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭한 다음
+<guimenuitem>찾기...</guimenuitem> 메뉴를 선택하거나 <keycombo action="simul">
+<keycap>&Ctrl;F</keycap></keycombo> 단축키를 통해서 사용할 수 있습니다. 책 전체에서 검색하는 방법을
+배우려면 핸드북을 계속해서 읽으세요.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-access">
+      <title>검색 창 열기</title>
+      <para><guimenu>책꽂이</guimenu>에서 특정 책의 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로
+클릭한 다음 <guimenuitem>...에서 찾기</guimenuitem>를 선택하여 책 검색을 할 수 있습니다. &Shift; 또는
+&Ctrl; 를 누른 상태에서 다른 책의 이름을 클릭하면 한 권 이상의 책을 선택할 수 있습니다. 그 다음에 검색 창을 여는 과정은
+동일합니다. 이 책들을 한번에 검색할 것입니다.</para>
+
+      <para>메인 메뉴의 <menuchoice> <guimenu>찾기</guimenu> </menuchoice>를 클릭한 다음 적절한 항목을 선택하여
+검색창을 열수도 있습니다.</para>
+
+      <para>검색을 시작할 수 있는 세번째 방법은 읽기창의 검색 아이콘을 클릭하는 것입니다.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-config">
+      <title>검색 환경 설정</title>
+      <screenshot>
+<screeninfo>검색어 대화창 옵션 탭</screeninfo> <mediaobject>
+<imageobject> <imagedata fileref="ss_searchopts.png" width="100%"
+contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
+      <sect3 id="hdbk-op-search-config-works">
+        <title>책 선택하기</title>
+        <para>검색창 상단에서 <guibutton>선택...</guibutton> 버튼을 찾을 수 있는데. 이 버튼은 여러 책을 동시에 검색하고 싶을
+때 사용합니다. 이 버튼을 누르면 검색 대상이 될 책들을 선택할 수 있습니다.</para>
+      </sect3>
+      <sect3 id="hd-op-search-config-scope">
+        <title>검색 범위 사용하기</title>
+        <para><guimenu>범위</guimenu> 목록에서 미리 정의된 범위를 선택하면 성경의 특정한 부분들로 검색 범위를 좁힐 수
+있습니다. <guibutton>설정...</guibutton>버튼을 통해서 나름의 검색 범위를 정의할 수 있습니다.</para>
+      </sect3>
+
+      <sect3 id="hd-op-search-config-syntax">
+        <title>기본적인 검색 문법 소개</title>
+
+        <para>검색어는 공백으로 구분해서 입력합니다. 기본적으로는 모든 단어가 일치하는 결과를 리턴할 것입니다. 한 단어라도 일치하는 결과를 얻으려면
+<guimenu>일부 단어</guimenu> 버튼을 클릭합니다. 좀더 복잡한 검색을 하고 싶다면 <guimenu>고급
+검색</guimenu> 버튼을 클릭합니다. <guimenu>전체 문법</guimenu>을 클릭하면 다양한 검색 예제를 확인할 수
+있습니다.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will
+match any single character. The use of parenthesis allows you to group your
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
+        <para>성경 본문이 아닌 내용에서 검색할 때는 ':'로 끝나는 구분자를 입력한 다음에 검색어를 입력합니다. 아래에 있는 표를 참조하세요.</para>
+
+        <para>사용 가능한 검색 타입들: <table id="hd-op-search-config-syntax-table">
+	  <title>검색 타입들</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+		<?dbhtml bgcolor="#EEEEEE" ?>
+		<?dbfo bgcolor="#EEEEEE" ?>
+                <entry>접두어</entry>
+                <entry>의미</entry>
+		<entry>예제</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>heading:</entry>
+                <entry>제목 검색</entry>
+		<entry>heading:예수</entry>
+              </row>
+              <row>
+                <entry>footnote:</entry>
+                <entry>각주 검색</entry>
+		<entry>footnote:모세</entry>
+              </row>
+              <row>
+                <entry>strong:</entry>
+                <entry>스트롱 번호 검색</entry>
+		<entry>strong:G535</entry>
+              </row>
+              <row>
+                <entry>morph:</entry>
+                <entry>형태소 코드 검색</entry>
+		<entry>morph:N-GSM</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+	<tip>
+	  <para>설치된 책을 우측 마우스로 클릭하고 <guimenu>추가 정보</guimenu>를 선택하면 위의 검색 타입 중에 어떤 것을 사용할 수
+있을 지 확인할 수 있습니다. 모든 책이 이러한 검색 기능들을 지원하는 것은 아닙니다.</para>
+	</tip>
+
+        <para>바이블타임은 검색에 Lucene 검색 엔진을 사용합니다. Lucene 검색 엔진은 다양한 고급 검색 기능들을 가지고 있는데 자세한 내용은
+<ulink url="http://lucene.apache.org/java/docs/index.html">
+http://lucene.apache.org/java/docs/index.html</ulink>를 참조할 수 있습니다.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-results">
+      <title>검색 결과</title>
+      <para>여기에서 얼마나 많은 검색어가 찾아졌는지 책 별로 정렬해서 확인할 수 있습니다. <mousebutton>우측</mousebutton>
+마우스 버튼을 클릭하면 특정 책에서 찾아진 모든 구절에 한번에 복사, 저장, 인쇄할 수 있습니다. 이 작업은 하나 또는 하나 이상의
+구절에 대하여도 복사, 저장, 인쇄할 수 있습니다. 특정 절 참조를 클릭하면 그 구절의 내용을 우측의 미리보기 창을 통해서 확인할 수
+있습니다.</para>
+      <tip>
+        <para>특정 절 참조를 끌어다가 책꽂이의 특정 책 아이콘에 놓으면 해당 구절을 새 읽기창에 엽니다.</para>
+      </tip>
+      <tip>
+        <para>특정 절 참조를 끌어다가 현재 읽기 창에 놓으면 해당 구절로 바로 이동합니다.</para>
+      </tip>
+      <tip>
+        <para>절 참조를 끌어다가 책꽂이 북마크 탭에 놓으면 북마크가 생성됩니다.</para>
+      </tip>
+      <sect3 id="hdbk-op-search-analysis">
+        <title>검색 결과 분석</title>
+        <para>검색 분석 창을 보려면 <guibutton>결과 분석</guibutton>을 클릭합니다. 검색 결과 분석 창에는 성경의 각 책별로
+검색어가 존재하는 개수를 단순한 그래프로 보여주고 분석 내용을 저장할 수 있도록 해줍니다.</para>
+        <screenshot>
+<screeninfo>검색 분석 대화창 박스</screeninfo> <mediaobject>
+<imageobject> <imagedata fileref="ss_searchanal.png" width="100%"
+contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></screenshot>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-op-bookshelfmanager">
+    <title><guimenuitem>책꽂이 관리자</guimenuitem></title>
+
+    <para><guimenuitem>책꽂이 관리자</guimenuitem>는 여러분의 책장을 관리하기 위한 도구입니다. 새로운 책들을 책꽂이에 설치할
+수 있으며 책꽂이에서 기존 책을 갱신하거나 제거할 수 있습니다. 메인 메뉴의 <menuchoice>
+<guimenu>설정</guimenu> <guimenuitem>책꽂이 관리</guimenuitem> </menuchoice>로 만날 수
+있습니다.</para>
+
+    <sect2 id="hdbk-op-bookshelfmanager-installworks">
+      <title>Install works</title>
+      <para>With this facility, you can connect to a repository of works (called
+"library"), and transfer one or more works to your local Bookshelf. These
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
+online repository of &sword; modules, or another site offering &sword;
+modules). &bibletime; will automatically maintain a list of remote libraries
+and the works available from them.</para>
+
+
+      <para>To begin the installation process, select one or more libraries that you
+want to install works from.  Then click on the <guibutton>Next</guibutton>
+button. Then select one or more languages and click the
+<guibutton>Next</guibutton> button. You will see a list of
+categories. Double-click on a category to see works for that
+category. Select one or more works and then click on the <guibutton>Install
+Works</guibutton>. After the works are installed, click on the
+<guibutton>Finish</guibutton>. </para> 
+    </sect2>
+
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Update works</title>
+      <para>If there are any works that can be updated, they will be shown. Select one
+or more work and click the <guibutton>Update Works</guibutton>. After the
+works are updated, click on the <guibutton>Finish</guibutton>.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-bookshelfmanager-remove">
+      <title>Remove works</title>
+      <para>This facility allows you to delete one or more of the works from your
+Bookshelf too free up disk space. Simply choose the works` and click on the
+<guibutton>Remove works</guibutton> button.</para>
+    </sect2>
+
+  </sect1>
+  <sect1 id="hdbk-op-output">
+    <title>내보내기와 인쇄하기</title>
+    <para>다양한 곳에서 <mousebutton>우측</mousebutton> 마우스 버튼을 클릭해서 컨텍스트 메뉴를 열 수 있습니다. 장소에
+따라서 <guimenuitem>복사</guimenuitem> (클립보드로), <guimenuitem>저장</guimenuitem> 또는
+<guimenuitem>인쇄</guimenuitem> 메뉴를 만날 수 있습니다. 예를 들면 읽기창에서는 일반 텍스트나 절참조를 클릭할 때
+동작하고 검색 결과 창에서는 특정 책이나 하나 이상의 절참조를 클릭할 때 동작합니다. 아주 간단하므로 그냥 시도해 보세요.</para>
+
+    <para>바이블타임의 인쇄 기능은 도구로서 가장 기본적인 부분만 다룹니다. 바이블타임의 책 내용을 포함하는 문서나 프레젠테이션을 작성하고 있다면
+바이블타임에서 직접 인쇄하기 보다는 여러분의 시스템에 있는 적절한 도구를 사용하기를 권합니다.</para>
+  </sect1>
+</chapter>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+ "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+[
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY sword '<application>SWORD</application>'>
+  <!ENTITY cbs '<application>Crosswire Bible Society</application>'>
+  <!ENTITY kde '<application>KDE</application>'>
+  <!ENTITY qt '<application>Qt</application>'>
+
+  <!ENTITY Shift 'Shift'>
+  <!ENTITY Ctrl 'Ctrl'>
+  <!ENTITY Alt 'Alt'>
+  <!ENTITY Space 'Space'>
+
+  <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
+  <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
+  <!ENTITY hdbkchap3 SYSTEM "hdbk-operation.docbook">
+  <!ENTITY hdbkchap4 SYSTEM "hdbk-config.docbook">
+  <!ENTITY hdbkchap5 SYSTEM "hdbk-reference.docbook">
+]>
+<book>
+<bookinfo>
+  <title>바이블타임 핸드북</title>
+
+  <authorgroup>
+    <author>
+      <firstname>Fred</firstname>
+      <surname>Saalbach</surname>
+    </author>
+    <author>
+      <firstname>Jeffrey</firstname>
+      <surname>Hoyt</surname>
+    </author>
+    <author>
+      <firstname>Martin</firstname>
+      <surname>Gruner</surname>
+    </author>
+    <author>
+      <firstname>Thomas</firstname>
+      <surname>Abthorpe</surname>
+    </author>
+    <author>
+      <firstname>Gary</firstname>
+      <surname>Holmlund</surname>
+    </author>
+  </authorgroup>
+  
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder>
+</copyright>
+
+  <legalnotice>
+    <para>바이블타임 핸드북은 바이블타임 성경 공부 프로그램과 함께 배포됩니다.</para>
+  </legalnotice>
+
+  <date>December 2019</date>
+
+  <releaseinfo>3.0.0+</releaseinfo>
+
+  <abstract>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with the &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 900 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs; and several other repositories.</para>
+  </abstract>
+
+  <keywordset>
+    <keyword>Qt5</keyword>
+    <keyword>바이블타임</keyword>
+    <keyword>SWORD</keyword>
+    <keyword>Crosswire</keyword>
+    <keyword>도움말 대화창</keyword>
+  </keywordset>
+</bookinfo>
+&hdbkchap1; &hdbkchap2; &hdbkchap3; &hdbkchap4; &hdbkchap5;
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

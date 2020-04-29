@@ -135,13 +135,15 @@ usted conoce de su navegador.</para>
 
       <sect3 id="hdbk-op-parts-desk-scroll">
         <title>Desplazamiento automático</title>
-        <para>The currently active window can be auto scrolled up or down.  Start
-scrolling by press Shift+Down. You can increase the scrolling speed by
-pressing Shift+Down multiple times. To pause scrolling press Space. To start
-scrolling again at the previous speed press Space again. To slow down
-scrolling or scroll the other direction press Shift+Up one or more
-times. Pressing any other key or changing the active window will stop the
-scrolling.
+        <para>La ventana actualmente activa puede desplazarse automáticamente hacia arriba
+o hacia abajo. Comience a desplazarse presionando Shift+Abajo. Puede
+aumentar la velocidad de desplazamiento presionando Shift+Abajo varias
+veces. Para pausar el desplazamiento, presione la barra espaciadora. Para
+comenzar a desplazarse nuevamente a la velocidad anterior, presione la barra
+espaciadora nuevamente. Para ralentizar el desplazamiento o desplazarse en
+la otra dirección, presione Shift+Arriba una o más veces. Al presionar
+cualquier otra tecla o cambiar la ventana activa, se detendrá el
+desplazamiento.
         </para>
       </sect3>
 
@@ -166,10 +168,10 @@ la Biblia, tiene que instalar una obra de la biblioteca de la <ulink
 url="http://www.crosswire.org">&cbs;</ulink> . Esta obra se llama "Personal
 commentary".</para>
 
-        <para>Open the personal commentary by clicking on its symbol in the Bookshelf with
-a <mousebutton>left</mousebutton> mouse button.  You can edit this
-commentary by just clicking on any verse.  A dialog opens which allows you
-to add or edit text for that verse.</para>
+        <para>Abra el comentario personal haciendo clic en su símbolo en la estantería con
+el botón <mousebutton>izquierdo</mousebutton> del ratón. Puede editar este
+comentario simplemente haciendo clic en cualquier verso. Se abre un cuadro
+de diálogo que le permite agregar o editar texto para ese versículo.</para>
 
         <tip>
           <para>Si <menuchoice> <guimenu>Editar</guimenu> </menuchoice> está desactivado,
@@ -249,9 +251,10 @@ desea realizar una búsqueda más compleja, seleccione el botón
 clic en <guimenu>sintaxis completa</guimenu>.
 	  </para>
 
-        <para>You can use wildcards: '*' matches any number of characters, while '?' will
-match any single character. The use of parenthesis allows you to group your
-search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+        <para>Puede usar comodines: '*' coincide con cualquier número de caracteres,
+mientras que '?' coincidirá con cualquier caracter individual. El uso de
+paréntesis le permite agrupar los términos de búsqueda, por ejemplo '(Jesús
+OR Espíritu) AND Dios'.</para>
 
         <para>Para buscar otro texto en el texto principal, introduzca el tipo de texto
 seguida de ':' y, a continuación el término de búsqueda. Consulte la tabla
@@ -356,36 +359,36 @@ menú principal.</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-installworks">
       <title>Instalar obras</title>
-      <para>With this facility, you can connect to a repository of works (called
-"library"), and transfer one or more works to your local Bookshelf. These
-libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's
-online repository of &sword; modules, or another site offering &sword;
-modules). &bibletime; will automatically maintain a list of remote libraries
-and the works available from them.</para>
+      <para>Con este servicio, puede conectarse a un repositorio de obras (llamado
+"biblioteca") y transferir una o más obras a su Biblioteca local. Estas
+bibliotecas pueden ser locales (por ejemplo, un CD de  &sword;) o remotas
+(por ejemplo, el repositorio en línea de Crosswire de módulos &sword; u otro
+sitio que ofrece módulos &sword;). &bibletime; mantendrá automáticamente una
+lista de bibliotecas remotas y las obras disponibles de ellas.</para>
 
 
-      <para>To begin the installation process, select one or more libraries that you
-want to install works from.  Then click on the <guibutton>Next</guibutton>
-button. Then select one or more languages and click the
-<guibutton>Next</guibutton> button. You will see a list of
-categories. Double-click on a category to see works for that
-category. Select one or more works and then click on the <guibutton>Install
-Works</guibutton>. After the works are installed, click on the
-<guibutton>Finish</guibutton>. </para> 
+      <para>Para comenzar el proceso de instalación, seleccione una o más bibliotecas
+desde las que desea instalar obras. Luego haga clic en el botón
+<guibutton>Siguiente</guibutton>. Luego seleccione uno o más idiomas y haga
+clic en el botón  <guibutton>Siguiente</guibutton>. Verá una lista de
+categorías. Haga doble clic en una categoría para ver trabajos para esa
+categoría. Seleccione una o más obras y luego haga clic en
+<guibutton>Instalar Obras</guibutton>. Después de instalar los trabajos,
+haga clic en <guibutton>Terminar</guibutton>. </para> 
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Actualizar obras</title>
-      <para>If there are any works that can be updated, they will be shown. Select one
-or more work and click the <guibutton>Update Works</guibutton>. After the
-works are updated, click on the <guibutton>Finish</guibutton>.</para>
+      <para>Si hay obras que se puedan actualizar, éstas se mostrarán. Seleccione una o
+más obras y haga clic en <guibutton>Actualizar Obras</guibutton>. Después de
+actualizar las obras, haga clic en <guibutton>Terminar</guibutton>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Eliminar obras</title>
-      <para>This facility allows you to delete one or more of the works from your
-Bookshelf too free up disk space. Simply choose the works` and click on the
-<guibutton>Remove works</guibutton> button.</para>
+      <para>Esta función le permite eliminar una o más de las obras de su Biblioteca
+para liberar espacio en el disco. Simplemente elija las obras y haga clic en
+el botón<guibutton>Eliminar Obras</guibutton>.</para>
     </sect2>
 
   </sect1>

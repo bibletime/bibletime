@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+ "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+[
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY kapp "&bibletimehandbook;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
+  <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
+  <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
+]>
+<book>
+<bookinfo>
+  <title>聖書研究法</title>
+  <authorgroup>
+    <author>
+      <firstname>ボブ</firstname>
+      <surname>ハーマン</surname>
+    </author>
+    <author>
+      <firstname></firstname>
+      <surname>BibleTime チーム</surname>
+    </author>
+  </authorgroup>
+  
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright> <year>1999-2016</year> <holder>The &bibletime; Team
+(bt-devel@crosswire.org)</holder> </copyright>
+  <legalnotice>
+    <para>本書はボブ・ハーマン(Mr. Bob Harman)の原作によるものであって、<ulink
+url="http://creativecommons.org/licenses/by-sa/3.0/deed.ja"> "Creative
+Commons 表示 - 継承 3.0 非移植" (CC BY-SA 3.0)</ulink>ライセンスのもとにあります。</para>
+    <para>本書での聖句引用は、特に断りのない場合、いのちのことば社発行の『聖書 新改訳2017』によります。©2017 新日本聖書刊行会</para>
+  </legalnotice>
+  <abstract>
+    <title>抄録</title>
+    <para><application>聖書研究法</application>は聖書を研究するためのガイドです。</para>
+    <para>&bibletime;
+チーム一同は、本書がみなさんにとって、聖書を学び、その語ることを知るきっかけとなることを願っています。この特別(particular)の研究ガイドは、いかなる特定(particular)の教派の教義をも主張しないよう、注意深く選ばれました。聖書の語ることを理解するために、聖書を読み、研究なさることをおすすめします。主がみことばという種をあなたの心にまいて下さることを望む姿勢で始めれば、決して裏切られることはありません。</para>
+  </abstract>
+  <keywordset>
+    <keyword>聖書</keyword>
+    <keyword>研究</keyword>
+    <keyword>方法</keyword>
+  </keywordset>
+</bookinfo>
+&howto-chap1; &howto-chap2; &howto-chap3;
+</book>

@@ -1,21 +1,22 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # rokmcssu <yaraba@daum.net>, 2017
 # rokmcssu <yaraba@daum.net>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
-"POT-Creation-Date: 2019-12-10 23:41+0200\n"
-"PO-Revision-Date: 2019-12-11 01:50+0000\n"
+"POT-Creation-Date: 2019-12-22 02:05+0200\n"
+"PO-Revision-Date: 2019-12-22 00:22+0000\n"
 "Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
-"Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/ko/)\n"
+"Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/"
+"ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Content of: <chapter><title>
@@ -28,7 +29,9 @@ msgstr "바이블타임 설정"
 msgid ""
 "In this section you find an overview to configure &bibletime;, which can be "
 "found under <guimenu>Settings</guimenu> in the main menu."
-msgstr "이 섹션에서는 메인 메뉴의 <guimenu>설정</guimenu>에서 찾을 수 있는 바이블타임 설정의 개요를 확인할 수 있습니다."
+msgstr ""
+"이 섹션에서는 메인 메뉴의 <guimenu>설정</guimenu>에서 찾을 수 있는 바이블타"
+"임 설정의 개요를 확인할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
@@ -42,7 +45,10 @@ msgid ""
 "your needs. You can access the configuration dialog by selecting "
 "<menuchoice> <guimenu>Settings</guimenu> </menuchoice> "
 "<guimenuitem>Configure &bibletime;</guimenuitem>."
-msgstr "바이블타임 사용자 인터페이스는 필요에 따라 다양한 방법으로 조정할 수 있습니다. <menuchoice> <guimenu>설정</guimenu> </menuchoice> <guimenuitem>바이블타임 설정</guimenuitem>을 선택하여 설정 대화창을 열 수 있습니다."
+msgstr ""
+"바이블타임 사용자 인터페이스는 필요에 따라 다양한 방법으로 조정할 수 있습니"
+"다. <menuchoice> <guimenu>설정</guimenu> </menuchoice> <guimenuitem>바이블타"
+"임 설정</guimenuitem>을 선택하여 설정 대화창을 열 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:18
@@ -55,8 +61,7 @@ msgid ""
 "The startup behavior can be customized. Select from the following options:"
 msgstr "시작 방식을 조정하려면 다음의 옵션을 선택합니다:"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:24
 msgid "Show startup logo"
 msgstr "시작 로고 보기"
@@ -67,7 +72,9 @@ msgid ""
 "Display templates define the rendering of text (colors, size etc.). Various "
 "built-in templates are available. If you select one, you will see a preview "
 "on the right pane."
-msgstr "화면 템플릿은 성경이 표시되는 방식(색, 크기등)을 다룹니다. 다양한 템플릿을 내장하고 있는데 특정 스타일을 선택하면 하단에서 미리보기를 확인할 수 있습니다."
+msgstr ""
+"화면 템플릿은 성경이 표시되는 방식(색, 크기등)을 다룹니다. 다양한 템플릿을 내"
+"장하고 있는데 특정 스타일을 선택하면 하단에서 미리보기를 확인할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:34
@@ -85,7 +92,13 @@ msgid ""
 "hover over them, the Mag will show the content of the verses referred to, "
 "according to the standard Bible you specified.  With the use of text "
 "filters, you can control the appearance of the text."
-msgstr "&sword; 엔진에서 제공하는 많은 기능을 바이블타임에서 설정할 수 있습니다. 이 기능들은 대화창에 잘 설명되어 있습니다. 참조할 특정한 책이 지정되지 않았을 때 필요한 표준 책 또한 지정할 수 있습니다. 예를들어 표준 성경은 성경에 있는 상호참조의 내용을 표시할 때 사용합니다. 마우스를 상호 참조에 올려두면 돋보기창에 설정해 놓은 표준 성경의 해당 구절을 표시합니다. 본문 필터를 사용하면 글자의 모양을 제어할 수 있습니다."
+msgstr ""
+"&sword; 엔진에서 제공하는 많은 기능을 바이블타임에서 설정할 수 있습니다. 이 "
+"기능들은 대화창에 잘 설명되어 있습니다. 참조할 특정한 책이 지정되지 않았을 "
+"때 필요한 표준 책 또한 지정할 수 있습니다. 예를들어 표준 성경은 성경에 있는 "
+"상호참조의 내용을 표시할 때 사용합니다. 마우스를 상호 참조에 올려두면 돋보기"
+"창에 설정해 놓은 표준 성경의 해당 구절을 표시합니다. 본문 필터를 사용하면 글"
+"자의 모양을 제어할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:50
@@ -98,23 +111,30 @@ msgid ""
 "Here you can specify which language should be used for the biblical "
 "booknames. Set this to your native language, if it is available, and you'll "
 "feel at home."
-msgstr "여기에서 성경 이름에 적용할 언어를 지정할 수 있습니다. 여러분의 모국어가 있다면 선택해서 편리하게 사용하세요."
+msgstr ""
+"여기에서 성경 이름에 적용할 언어를 지정할 수 있습니다. 여러분의 모국어가 있다"
+"면 선택해서 편리하게 사용하세요."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:56
 msgid ""
 "By default, &bibletime; uses the default system display font. You can "
 "override this font if necessary. Some languages require special fonts to be "
-"displayed correctly, and this dialog allows you to specify a custom font for"
-" each language."
-msgstr "기본적으로 바이블타임은 시스템 글꼴을 사용합니다. 필요하다면 이 글꼴을 바꿀 수 있습니다. 몇몇 언어는 정상적인 표시를 위해서 특별한 글꼴을 필요로 하는데, 이 대화창에서 각 언어에 필요한 별도의 글꼴을 지정할 수 있습니다."
+"displayed correctly, and this dialog allows you to specify a custom font for "
+"each language."
+msgstr ""
+"기본적으로 바이블타임은 시스템 글꼴을 사용합니다. 필요하다면 이 글꼴을 바꿀 "
+"수 있습니다. 몇몇 언어는 정상적인 표시를 위해서 특별한 글꼴을 필요로 하는데, "
+"이 대화창에서 각 언어에 필요한 별도의 글꼴을 지정할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><mediaobject>
 #: docs/handbook/en/docbook/hdbk-config.docbook:62
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_configfonts.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"ss_configfonts.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"ss_configfonts.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-config.docbook:66
@@ -132,19 +152,27 @@ msgid ""
 "&bibletime; can now use all supported fonts.  As long as the works you are "
 "interested in display correctly nothing needs to be done here. If a work "
 "only displays as a series of question marks (??????) or empty boxes, then "
-"you know that the standard display font does not contain the characters used"
-" in this work."
-msgstr "바이블타임은 지원하는 모든 글꼴을 사용할 수 있습니다. 보려는 책이 정상적으로 표시되고 있다면 여기에서 더이상 설정할 것은 없습니다. 그러나 특정 책이 물음표(??????)나 빈박스로 표시된다면 기본 글꼴로는 표시할 수 없는 문자들이 존재한다는 의미입니다."
+"you know that the standard display font does not contain the characters used "
+"in this work."
+msgstr ""
+"바이블타임은 지원하는 모든 글꼴을 사용할 수 있습니다. 보려는 책이 정상적으로 "
+"표시되고 있다면 여기에서 더이상 설정할 것은 없습니다. 그러나 특정 책이 물음표"
+"(??????)나 빈박스로 표시된다면 기본 글꼴로는 표시할 수 없는 문자들이 존재한다"
+"는 의미입니다."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:79
 msgid ""
-"To correct this, choose this work's language from the drop down menu. Select"
-" the use custom font checkbox. Now select a font. For example, a font that "
+"To correct this, choose this work's language from the drop down menu. Select "
+"the use custom font checkbox. Now select a font. For example, a font that "
 "supports many languages is Code2000. If no installed font can display the "
-"work you are interested in, try installing the localization package for that"
-" language."
-msgstr "이 문제를 해결하려면 해당 책의 언어를 드롭다운 박스로 선택하고, 사용자 정의 글꼴 사용 체크박스를 선택합니다. 그리고 글꼴을 선택하면 됩니다. 예를 들어 Code2000은 여러 언어 지원하는 글꼴입니다. 어떠한 글꼴도 해당 책을 표시하지 못한다면 해당 언어와 관련된 언어 패키지를 설치해보는 것도 방법입니다."
+"work you are interested in, try installing the localization package for that "
+"language."
+msgstr ""
+"이 문제를 해결하려면 해당 책의 언어를 드롭다운 박스로 선택하고, 사용자 정의 "
+"글꼴 사용 체크박스를 선택합니다. 그리고 글꼴을 선택하면 됩니다. 예를 들어 "
+"Code2000은 여러 언어 지원하는 글꼴입니다. 어떠한 글꼴도 해당 책을 표시하지 못"
+"한다면 해당 언어와 관련된 언어 패키지를 설치해보는 것도 방법입니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:86
@@ -155,44 +183,44 @@ msgstr "글꼴 설치하기"
 #: docs/handbook/en/docbook/hdbk-config.docbook:87
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
-"handbook. For further information you might want to refer to the <ulink "
-"url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode "
-"HOWTO</ulink>."
-msgstr "자세한 글꼴 설치 방법은 이 핸드북의 범위를 넘어섭니다. 추가 정보는 <ulink url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\">유니코드 사용법</ulink>을 참조하세요."
+"handbook. For further information you might want to refer to the <ulink url="
+"\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</"
+"ulink>."
+msgstr ""
+"자세한 글꼴 설치 방법은 이 핸드북의 범위를 넘어섭니다. 추가 정보는 <ulink "
+"url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\">유니코드 사"
+"용법</ulink>을 참조하세요."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
 msgid "Fonts can be installed from a number of sources:"
 msgstr ""
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
 msgid "Your *nix distribution."
 msgstr "리눅스 배포판."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:100
 msgid "Your distribution's localization packages."
 msgstr "배포판의 현지화 패키지"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:103
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
 "installation on the same computer."
-msgstr "동일 컴퓨터에 설치한 <trademark class=\"registered\">마이크로소프트 윈도우즈</trademark>."
+msgstr ""
+"동일 컴퓨터에 설치한 <trademark class=\"registered\">마이크로소프트 윈도우즈"
+"</trademark>."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:109
 msgid "A font collection, such as are available from Adobe or Bitstream."
 msgstr "어도비나 비트스트림에서 제공하는 글꼴 꾸러미."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:113
 msgid "Online font collections."
 msgstr "온라인 글꼴 꾸러미."
@@ -202,109 +230,107 @@ msgstr "온라인 글꼴 꾸러미."
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
 "fonts are available at no charge. None of available fonts includes all "
-"characters defined in the Unicode standard, so you may want to use different"
-" fonts for different languages."
-msgstr "유니코드 글꼴은 다른 글꼴보다 더 많은 문자를 지원하며 몇몇 글꼴은 무료로 사용할 수 있습니다. 유니코드 표준에서 정의하는 모든 문자를 포함하는 글꼴은 존재하지 않습니다. 그래서 언어별로 다른 글꼴을 사용하게 되는 것입니다."
+"characters defined in the Unicode standard, so you may want to use different "
+"fonts for different languages."
+msgstr ""
+"유니코드 글꼴은 다른 글꼴보다 더 많은 문자를 지원하며 몇몇 글꼴은 무료로 사용"
+"할 수 있습니다. 유니코드 표준에서 정의하는 모든 문자를 포함하는 글꼴은 존재하"
+"지 않습니다. 그래서 언어별로 다른 글꼴을 사용하게 되는 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><table><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:122
 msgid "Unicode Fonts"
 msgstr "유니코드 글꼴"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:127
 msgid "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
 msgstr "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:130
 msgid ""
 "Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr "넓은 범위의 문자를 지원하는 최고의 유니코드 무료 글꼴일 것입니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:135
 msgid ""
-"<ulink "
-"url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads\">"
-" SIL unicode fonts</ulink>"
-msgstr "<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads\"> SIL 유니코드 글꼴</ulink>"
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
+"cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
+msgstr ""
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
+"cat_id=FontDownloads\"> SIL 유니코드 글꼴</ulink>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:138
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
 msgstr "SIL에서 제공하는 훌륭한 유니코드 글꼴."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:143
 msgid "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
 msgstr "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:146
 msgid "A new free Unicode font initiative."
 msgstr "새로운 유니코드 무료 글꼴."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:150
 msgid ""
 "<ulink url=\"ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/\"> "
 "Crosswire's font directory</ulink>"
-msgstr "<ulink url=\"ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/\"> 크로스와이어의 글꼴 디렉토리</ulink>"
+msgstr ""
+"<ulink url=\"ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/\"> 크로스와"
+"이어의 글꼴 디렉토리</ulink>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:154
 msgid "Several fonts available from the &cbs; FTP site."
 msgstr "&cbs; FTP를 통해 받을 수 있는 글꼴 몇가지"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:159
 msgid ""
-"<ulink "
-"url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/\"> "
-"Bitstream CyberBit</ulink>"
-msgstr "<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/\"> 비트스트림 CyberBit</ulink>"
+"<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/"
+"\"> Bitstream CyberBit</ulink>"
+msgstr ""
+"<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/"
+"\"> 비트스트림 CyberBit</ulink>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:162
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
-msgstr "유니코드의 더의 모든 범위를 지원하지만 크기 때문에 바이블타임은 느려질 수 있습니다."
+msgstr ""
+"유니코드의 더의 모든 범위를 지원하지만 크기 때문에 바이블타임은 느려질 수 있"
+"습니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:167
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:168
-msgid ""
-"Included in some distributions. Contains European, Greek, Hebrew, Thai."
-msgstr "몇몇 배포판에 포함되어 있습니다. 유럽어, 그리이스어, 히브리어, 타이어를 포함합니다."
+msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
+msgstr ""
+"몇몇 배포판에 포함되어 있습니다. 유럽어, 그리이스어, 히브리어, 타이어를 포함"
+"합니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:173
 msgid ""
 "<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, "
 "Cupola, Caliban</ulink>"
-msgstr "<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, Cupola, Caliban</ulink>"
+msgstr ""
+"<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, "
+"Cupola, Caliban</ulink>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:176
 msgid "Partial coverage, see information on linked site."
 msgstr "부분적인 지원, 자세한 정보는 링크를 참조하세요."
@@ -312,12 +338,17 @@ msgstr "부분적인 지원, 자세한 정보는 링크를 참조하세요."
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:182
 msgid ""
-"There are good Unicode font lists on the net, as the one by Christoph Singer"
-" ( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"There are good Unicode font lists on the net, as the one by Christoph Singer "
+"( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
 "TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink "
-"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character"
-" ranges and the Unicode fonts that support them</ulink>)."
-msgstr "Christoph Singer의 ( <ulink url=\"http://www.slovo.info/unifonts.htm\">인터넷의 다국어 유니코드 트루타입 글꼴</ulink>)이나 Alan Wood의 ( <ulink url=\"http://www.alanwood.net/unicode/fontsbyrange.html\">유니코드 문자 범위와 그들을 지원하는 유니코드 글꼴</ulink>)처럼 인터넷에는 좋은 유니코드 글꼴이 많습니다."
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
+msgstr ""
+"Christoph Singer의 ( <ulink url=\"http://www.slovo.info/unifonts.htm\">인터넷"
+"의 다국어 유니코드 트루타입 글꼴</ulink>)이나 Alan Wood의 ( <ulink url="
+"\"http://www.alanwood.net/unicode/fontsbyrange.html\">유니코드 문자 범위와 그"
+"들을 지원하는 유니코드 글꼴</ulink>)처럼 인터넷에는 좋은 유니코드 글꼴이 많습"
+"니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:195
@@ -327,16 +358,20 @@ msgstr "<guimenu>단축키</guimenu>"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:198
 msgid ""
-"Shortcuts (previously known as HotKeys) are special key commands that can be"
-" used in the place of the menu items and icons. A number of &bibletime;'s "
+"Shortcuts (previously known as HotKeys) are special key commands that can be "
+"used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see the <link linkend=\"hdbk-reference-"
 "shortcuts\">Shortcuts section</link> for a complete listing). Most of "
 "&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
 "quickly access the functions that you need the most."
-msgstr "단축키(또는 핫키)는 메뉴나 아이콘 대신에 사용될 수 있는 특별한 키보드 명령들입니다. 다양한 바이블타임 명령들이 단축키로 정의되어 있습니다.(전체 목록은 <link linkend=\"hdbk-reference-shortcuts\">단축키 섹션</link>를 참조하세요). 대부분의 바이블타임 명령들은 단축키가 할당 될 수 있습니다. 이것은 여러분이 필요한 기능에 대하여 빠르게 접근하는데 도움이 됩니다."
+msgstr ""
+"단축키(또는 핫키)는 메뉴나 아이콘 대신에 사용될 수 있는 특별한 키보드 명령들"
+"입니다. 다양한 바이블타임 명령들이 단축키로 정의되어 있습니다.(전체 목록은 "
+"<link linkend=\"hdbk-reference-shortcuts\">단축키 섹션</link>를 참조하세요). "
+"대부분의 바이블타임 명령들은 단축키가 할당 될 수 있습니다. 이것은 여러분이 필"
+"요한 기능에 대하여 빠르게 접근하는데 도움이 됩니다."
 
-#. type: Attribute 'fileref' of:
-#. <chapter><sect1><sect2><imageobject><imagedata>
+#. type: Attribute 'fileref' of: <chapter><sect1><sect2><imageobject><imagedata>
 #: docs/handbook/en/docbook/hdbk-config.docbook:208
 msgid "ss_shortcuts.png"
 msgstr "ss_shortcuts.png"
@@ -346,7 +381,8 @@ msgstr "ss_shortcuts.png"
 msgid ""
 "In the preceding example, F2, Bible Study HowTo has a secondary shortcut "
 "defined, CTRL+2."
-msgstr "위의 예제에서, F2, 성경공부요령은 2차 단축키로 CTRL+2를 정의하고 있습니다."
+msgstr ""
+"위의 예제에서, F2, 성경공부요령은 2차 단축키로 CTRL+2를 정의하고 있습니다."
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
@@ -363,36 +399,43 @@ msgstr "바이블타임에 대하여"
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
-"manage. It is built on the <ulink "
-"url=\"http://www.crosswire.org/sword/\">&sword;</ulink> library, which "
-"provides the back-end functionality for &bibletime;, such as viewing Bible "
-"text, searching etc. &sword; is the flagship product of the <ulink "
-"url=\"http://www.crosswire.org\">&cbs;</ulink>."
-msgstr "바이블타임은 다양한 성경과 언어를 지원하는 성경 공부 도구입니다. 방대한 량의 책들을 쉽게 설치하고 관리할 수 있습니다. 성경을 보거나 검색하는 등의 내부 기능을 제공하는 <ulink url=\"http://www.crosswire.org/sword/\">&sword;</ulink> 라이브러리 기반으로 제작되었습니다. &sword; 는 <ulink url=\"http://www.crosswire.org\">&cbs;</ulink>의 핵심 산출물입니다."
+"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword/"
+"\">&sword;</ulink> library, which provides the back-end functionality for "
+"&bibletime;, such as viewing Bible text, searching etc. &sword; is the "
+"flagship product of the <ulink url=\"http://www.crosswire.org\">&cbs;</"
+"ulink>."
+msgstr ""
+"바이블타임은 다양한 성경과 언어를 지원하는 성경 공부 도구입니다. 방대한 량의 "
+"책들을 쉽게 설치하고 관리할 수 있습니다. 성경을 보거나 검색하는 등의 내부 기"
+"능을 제공하는 <ulink url=\"http://www.crosswire.org/sword/\">&sword;</ulink> "
+"라이브러리 기반으로 제작되었습니다. &sword; 는 <ulink url=\"http://www."
+"crosswire.org\">&cbs;</ulink>의 핵심 산출물입니다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:14
 msgid ""
 "&bibletime; is designed to be used with works encoded in one of the formats "
 "supported by the &sword; project. Complete information on the supported "
-"document formats can be found in the <ulink "
-"url=\"http://www.crosswire.org/sword/develop/index.jsp\"> developers "
-"section</ulink> of the &sword; Project, &cbs;."
-msgstr "바이블타임은 &sword; 프로젝트에서 지원하는 파일 형식으로 만들어진 책들을 읽도록 설계되었습니다. 지원하는 파일 형식에 대해서는 &cbs; &sword; 프로젝트의 <ulink url=\"http://www.crosswire.org/sword/develop/index.jsp\">개발자 섹션</ulink>을 참조하세요."
+"document formats can be found in the <ulink url=\"http://www.crosswire.org/"
+"sword/develop/index.jsp\"> developers section</ulink> of the &sword; "
+"Project, &cbs;."
+msgstr ""
+"바이블타임은 &sword; 프로젝트에서 지원하는 파일 형식으로 만들어진 책들을 읽도"
+"록 설계되었습니다. 지원하는 파일 형식에 대해서는 &cbs; &sword; 프로젝트의 "
+"<ulink url=\"http://www.crosswire.org/sword/develop/index.jsp\">개발자 섹션</"
+"ulink>을 참조하세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:21
 msgid "Available works"
 msgstr "사용 가능한 책들"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:27
 msgid "Bibles"
 msgstr "성경"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:29
 msgid ""
 "The full Bible text, with optional things like Strong's Numbers, headings "
@@ -400,76 +443,84 @@ msgid ""
 "include not only modern versions, but also ancient texts like the Codex "
 "Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
 "is the most advanced section in the library of the &sword; project."
-msgstr "스트롱 번호, 제목, 각주와 같은 옵션 항목을 포함할 수 있는 성경 전체 본문. 다양한 언어로 된 성경을 구할 수 있으며 최근 버전 뿐만아니라 코덱스 레닌그라드(\"WLC\", 히브리어), 셉투젠트(\"LXX\", 헬라어)와 같은 고대본도 있습니다. 이것은 &sword; 프로젝트의 라이브러리 중에서 가장 개선된 부분입니다."
+msgstr ""
+"스트롱 번호, 제목, 각주와 같은 옵션 항목을 포함할 수 있는 성경 전체 본문. 다"
+"양한 언어로 된 성경을 구할 수 있으며 최근 버전 뿐만아니라 코덱스 레닌그라드"
+"(\"WLC\", 히브리어), 셉투젠트(\"LXX\", 헬라어)와 같은 고대본도 있습니다. 이것"
+"은 &sword; 프로젝트의 라이브러리 중에서 가장 개선된 부분입니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:39
 msgid "Books"
 msgstr "도서"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:41
 msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
 "\"Josephus: The Complete Works\""
-msgstr "\"그리스도를 본 받아\", \"에누마 엘리쉬\", \"요세푸스: The Complete Works\"등을 포함한 다양한 도서들"
+msgstr ""
+"\"그리스도를 본 받아\", \"에누마 엘리쉬\", \"요세푸스: The Complete Works\"등"
+"을 포함한 다양한 도서들"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:46
 msgid "Commentaries"
 msgstr "주석"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:48
 msgid ""
 "Commentaries available include classics like John Wesley's \"Notes on the "
-"Bible\", Matthew Henry's commentary and Luther's \"Commentary on "
-"Galatians.\" With the <emphasis>Personal</emphasis> commentary you can <link"
-" linkend=\"hdbk-op-parts-desk-write\"> record your own personal notes</link>"
-" to sections of the Bible."
-msgstr "요한 웨슬리의 \"Notes on the Bible\", 매튜 헨리의 주석과 루터의 \"Commentary on Galatians.\"과 같은 고전, 성경의 특정 부분에 <link linkend=\"hdbk-op-parts-desk-write\">사용자 나름의 메모를 남길 수 있는</link> <emphasis>개인</emphasis> 주석을 포함하는 주석들."
+"Bible\", Matthew Henry's commentary and Luther's \"Commentary on Galatians."
+"\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
+"\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
+"sections of the Bible."
+msgstr ""
+"요한 웨슬리의 \"Notes on the Bible\", 매튜 헨리의 주석과 루터의 \"Commentary "
+"on Galatians.\"과 같은 고전, 성경의 특정 부분에 <link linkend=\"hdbk-op-"
+"parts-desk-write\">사용자 나름의 메모를 남길 수 있는</link> <emphasis>개인</"
+"emphasis> 주석을 포함하는 주석들."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:57
 msgid "Daily devotionals"
 msgstr "매일 성경 읽기"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:59
 msgid ""
-"Many people appreciate these daily portions from God's word. Available works"
-" include Daily Light on the Daily Path, and the Losungen."
-msgstr "많은 사람들이 하나님의 말씀을 매일 접하는 것에 대하여 유용하게 여깁니다. 말씀읽는 아침/저녁(Daily Light on the Daily Path), 로순겐(Losungen)등을 포함하여 여러 방법이 있습니다."
+"Many people appreciate these daily portions from God's word. Available works "
+"include Daily Light on the Daily Path, and the Losungen."
+msgstr ""
+"많은 사람들이 하나님의 말씀을 매일 접하는 것에 대하여 유용하게 여깁니다. 말씀"
+"읽는 아침/저녁(Daily Light on the Daily Path), 로순겐(Losungen)등을 포함하여 "
+"여러 방법이 있습니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:66
 msgid "Lexicons/Dictionaries"
 msgstr "어휘사전/성경사전"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
 msgid ""
-"Lexicons available include: Robinson's Morphological Analysis Codes, and the"
-" International Standard Bible Encyclopaedia. Dictionaries available include "
-"Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's"
-" Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
+"Lexicons available include: Robinson's Morphological Analysis Codes, and the "
+"International Standard Bible Encyclopaedia. Dictionaries available include "
+"Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's "
+"Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
 "Bible."
-msgstr "어휘 사전으로는 로빈슨의 형태 분석 코드와 국제표준 성경 백과사전을 들 수 있습니다. 사전으로는 스트롱의 히브리어 성경 사전과 헬라어 성경 사전, 웹스터의 1913년 개정판 완본 사전, 네이브의 주제별 성경 등을 들 수 있습니다."
+msgstr ""
+"어휘 사전으로는 로빈슨의 형태 분석 코드와 국제표준 성경 백과사전을 들 수 있습"
+"니다. 사전으로는 스트롱의 히브리어 성경 사전과 헬라어 성경 사전, 웹스터의 "
+"1913년 개정판 완본 사전, 네이브의 주제별 성경 등을 들 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
 msgid ""
-"Over 280 documents in 50 languages are available from the <ulink "
-"url=\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder"
-" type=\"variablelist\" id=\"0\"/> There are several other repositories that "
+"Over 280 documents in 50 languages are available from the <ulink url="
+"\"http://www.crosswire.org\">&cbs;</ulink>.  These include: <placeholder "
+"type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
 
@@ -483,9 +534,14 @@ msgstr "동기"
 msgid ""
 "Our desire is to serve God, and to do our part to help others grow in their "
 "relationship with Him. We have striven to make this a powerful, quality "
-"program, and still make it simple and intuitive to operate. It is our desire"
-" that God be praised, as He is the source of all good things."
-msgstr "우리의 소망은 하나님을 섬기고 다른 사람들이 하나님과의 관계에 있어 성장하도록 돕는 것에 우리의 역할을 감당하는 것입니다. 지금까지 우리는 이 고성능, 고품질의 프로그램을 만들기 위해서 노력해 왔으나 지속적으로 단순하고 직관적으로 동작 할 수 있도록 제작하고 있습니다. 주께서 모든 좋은 것의 원천이신 것처럼 하나님께서 찬양 받으시는 것이 저희의 소망입니다."
+"program, and still make it simple and intuitive to operate. It is our desire "
+"that God be praised, as He is the source of all good things."
+msgstr ""
+"우리의 소망은 하나님을 섬기고 다른 사람들이 하나님과의 관계에 있어 성장하도"
+"록 돕는 것에 우리의 역할을 감당하는 것입니다. 지금까지 우리는 이 고성능, 고품"
+"질의 프로그램을 만들기 위해서 노력해 왔으나 지속적으로 단순하고 직관적으로 동"
+"작 할 수 있도록 제작하고 있습니다. 주께서 모든 좋은 것의 원천이신 것처럼 하나"
+"님께서 찬양 받으시는 것이 저희의 소망입니다."
 
 #. type: Content of: <chapter><sect1><sect2><blockquote><attribution>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:91
@@ -498,7 +554,9 @@ msgid ""
 "Every good thing given and every perfect gift is from above, coming down "
 "from the Father of lights, with whom there is no variation or shifting "
 "shadow."
-msgstr "각양 좋은 은사와 온전한 선물이 다 위로부터 빛들의 아버지께로서 내려오나니 그는 변함도 없으시고 회전하는 그림자도 없으시니라."
+msgstr ""
+"각양 좋은 은사와 온전한 선물이 다 위로부터 빛들의 아버지께로서 내려오나니 그"
+"는 변함도 없으시고 회전하는 그림자도 없으시니라."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:96
@@ -520,7 +578,9 @@ msgstr "프로그램 개요"
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><para><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:11
@@ -530,16 +590,24 @@ msgstr "바이블타임 응용 창"
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:5
 msgid ""
-"This is what a typical &bibletime; session looks like: <placeholder "
-"type=\"mediaobject\" id=\"0\"/> You can easily see the different parts of "
-"the application. The top left window is used to open installed works in the "
-"Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The"
-" little \"Mag\" window below the Bookshelf is used to display extra "
+"This is what a typical &bibletime; session looks like: <placeholder type="
+"\"mediaobject\" id=\"0\"/> You can easily see the different parts of the "
+"application. The top left window is used to open installed works in the "
+"Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The "
+"little \"Mag\" window below the Bookshelf is used to display extra "
 "information that is embedded in documents. When you move your mouse over a "
 "footnote marker, for example, then the Mag will display the actual content "
 "of the footnote. The toolbar gives you quick access to important functions, "
 "and the Desk on the right side is where you do your real work."
-msgstr "이것은 전형적인 바이블타임 세션의 모습입니다: <placeholder type=\"mediaobject\" id=\"0\"/> 여러분은 응용의 여러 요소들을 쉽게 확인할 수 있습니다. 좌상단 창은 책꽂이 탭을 통해서 설치된 책들을 열 수 있고, 북마크 탭을 통해서 나름의 북마크를 관리할 수 있습니다. 책꽂이 아래에 있는 작은 돋보기 창은 책에 포함되어 있는 부가 정보를 출력하는데 사용합니다. 예를 들어 마우스를 각주 표시에 올려두면 돋보기 창은 각주의 실제 내용을 출력합니다. 툴바를 사용하면 중요 기능들에 빠르게 접근할 수 있으며, 우측에 있는 책상이 실제 작업이 이루어지는 곳입니다."
+msgstr ""
+"이것은 전형적인 바이블타임 세션의 모습입니다: <placeholder type=\"mediaobject"
+"\" id=\"0\"/> 여러분은 응용의 여러 요소들을 쉽게 확인할 수 있습니다. 좌상단 "
+"창은 책꽂이 탭을 통해서 설치된 책들을 열 수 있고, 북마크 탭을 통해서 나름의 "
+"북마크를 관리할 수 있습니다. 책꽂이 아래에 있는 작은 돋보기 창은 책에 포함되"
+"어 있는 부가 정보를 출력하는데 사용합니다. 예를 들어 마우스를 각주 표시에 올"
+"려두면 돋보기 창은 각주의 실제 내용을 출력합니다. 툴바를 사용하면 중요 기능들"
+"에 빠르게 접근할 수 있으며, 우측에 있는 책상이 실제 작업이 이루어지는 곳입니"
+"다."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:25
@@ -561,10 +629,12 @@ msgstr "책꽂이"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:32
 msgid ""
-"The Bookshelf lists all installed works, sorted by category and language. It"
-" also has a category called \"Bookmarks\". This is where you can store and "
+"The Bookshelf lists all installed works, sorted by category and language. It "
+"also has a category called \"Bookmarks\". This is where you can store and "
 "access your own bookmarks."
-msgstr "책꽂이는 설치된 책들을 분류 및 언어로 정렬하여 나열해 줍니다. \"북마크\" 탭을 통해서 여러분은 나름의 북마크를 저장하고 조회할 수 있습니다."
+msgstr ""
+"책꽂이는 설치된 책들을 분류 및 언어로 정렬하여 나열해 줍니다. \"북마크\" 탭"
+"을 통해서 여러분은 나름의 북마크를 저장하고 조회할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
@@ -591,7 +661,12 @@ msgid ""
 "you want to open, and it will be opened for reading at the specified "
 "location. You can also drag a verse reference into an existing read window, "
 "then it will jump to the specified location."
-msgstr "어떤 성경을 읽고 있다가 읽고 있는 구절을 간편하게 다른 성경으로 열 수 있습니다. 절 참조를 <mousebutton>좌측 마우스 버튼</mousebutton> 클릭해서 (커서가 손모양으로 바뀜) 책꽂이로 끌어다가 열고자 하는 책에 놓으면 해당하는 책을 원하는 위치로 바로 열 수 있습니다. 또한 절 참조를 끌어다가 읽기 창에 놓으면 해당 구절로 바로 이동할 수 있습니다."
+msgstr ""
+"어떤 성경을 읽고 있다가 읽고 있는 구절을 간편하게 다른 성경으로 열 수 있습니"
+"다. 절 참조를 <mousebutton>좌측 마우스 버튼</mousebutton> 클릭해서 (커서가 손"
+"모양으로 바뀜) 책꽂이로 끌어다가 열고자 하는 책에 놓으면 해당하는 책을 원하"
+"는 위치로 바로 열 수 있습니다. 또한 절 참조를 끌어다가 읽기 창에 놓으면 해당 "
+"구절로 바로 이동할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:59
@@ -604,13 +679,20 @@ msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
 "relevant for this work.  <guimenuitem>\"About this work\"</guimenuitem> "
-"opens a window with lots of interesting information about the selected work."
-"  <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog for "
-"encrypted documents, where you can enter the unlock key to access the work. "
-"For additional information on locked works, please see the <ulink "
-"url=\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> Locked "
-"Modules</ulink> page on the &cbs; web site."
-msgstr "책 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하면 이 책과 관련한 추가 항목이 있는 메뉴를 볼 수 있습니다.  <guimenuitem>\"추가 정보\"</guimenuitem> 는 선택한 책에 대한 다양한 정보를 가지고 있는 창을 엽니다.  <guimenuitem>\"잠금 해제\"</guimenuitem>는 잠금이 된 책으로 읽을 수 있도록 키를 입력하는 작은 창을 엽니다. 잠금이 된 책에 대한 추가적인 정보는 &cbs; 사이트에서 <ulink url=\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\">잠궈진 모듈들</ulink> 페이지를 확인해 보세요."
+"opens a window with lots of interesting information about the selected "
+"work.  <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog "
+"for encrypted documents, where you can enter the unlock key to access the "
+"work. For additional information on locked works, please see the <ulink url="
+"\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> Locked Modules</"
+"ulink> page on the &cbs; web site."
+msgstr ""
+"책 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하면 이 책과 "
+"관련한 추가 항목이 있는 메뉴를 볼 수 있습니다.  <guimenuitem>\"추가 정보\"</"
+"guimenuitem> 는 선택한 책에 대한 다양한 정보를 가지고 있는 창을 엽니다.  "
+"<guimenuitem>\"잠금 해제\"</guimenuitem>는 잠금이 된 책으로 읽을 수 있도록 키"
+"를 입력하는 작은 창을 엽니다. 잠금이 된 책에 대한 추가적인 정보는 &cbs; 사이"
+"트에서 <ulink url=\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\">"
+"잠궈진 모듈들</ulink> 페이지를 확인해 보세요."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:76
@@ -621,15 +703,20 @@ msgstr "책에서 찾기"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:78
 msgid ""
-"You can search in a work by clicking with the "
-"<mousebutton>right</mousebutton> mouse button on its symbol and selecting "
-"<guimenuitem>\"Search in work(s)\"</guimenuitem>. By pressing &Shift; and "
-"clicking on other works you can select more than one. Then follow the same "
-"procedure to open the search dialog. You will be searching in all of these "
-"documents. A complete description of the operation of the search features "
-"can be found on the <link linkend=\"hdbk-op-search\">Searching in Works "
-"section</link>."
-msgstr "책 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하고 <guimenuitem>\"책에서 찾기\"</guimenuitem>를 선택하면 해당 책에 대한 검색을 할 수 있습니다. 시프트 키를 누르고 책을 클릭하면 하나 이상을 선택할 수 있습니다. 그 다음에 검색 창을 여는 과정은 동일합니다. 선택한 모든 문서들을 검색하게 됩니다. 검색 기능에 대한 자세한 설명은 <link linkend=\"hdbk-op-search\">책에서 검색하기 섹션</link>에서 찾을 수 있습니다."
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
+"in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
+"you can select more than one. Then follow the same procedure to open the "
+"search dialog. You will be searching in all of these documents. A complete "
+"description of the operation of the search features can be found on the "
+"<link linkend=\"hdbk-op-search\">Searching in Works section</link>."
+msgstr ""
+"책 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하고 "
+"<guimenuitem>\"책에서 찾기\"</guimenuitem>를 선택하면 해당 책에 대한 검색을 "
+"할 수 있습니다. 시프트 키를 누르고 책을 클릭하면 하나 이상을 선택할 수 있습니"
+"다. 그 다음에 검색 창을 여는 과정은 동일합니다. 선택한 모든 문서들을 검색하"
+"게 됩니다. 검색 기능에 대한 자세한 설명은 <link linkend=\"hdbk-op-search\">책"
+"에서 검색하기 섹션</link>에서 찾을 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:91
@@ -644,30 +731,40 @@ msgstr "책을 여기에 끌어다 놓으세요"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:98
 msgid ""
-"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark"
-" category of the bookshelf and select <guimenuitem>\"Create new "
-"folder\"</guimenuitem> to create a new bookmark subfolder. You can use "
-"normal drag &amp; drop functions to drag verse references from read windows "
-"or search results to the bookmark folder, and to rearrange bookmarks between"
-" folders."
-msgstr "책꽂이의 북마크 탭에서 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하고 <guimenuitem>\"새 폴더\"</guimenuitem> 메뉴를 선택하면 새 하위 폴더를 만들 수 있습니다. 읽기 창이나 검색 결과에서 북마크 폴더로 절 참조를 끌어다 놓기 할수 있으며 폴더간에 북마크를 끌어다 놓기로 재정렬 할 수 있습니다."
+"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
+"category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
+"guimenuitem> to create a new bookmark subfolder. You can use normal drag "
+"&amp; drop functions to drag verse references from read windows or search "
+"results to the bookmark folder, and to rearrange bookmarks between folders."
+msgstr ""
+"책꽂이의 북마크 탭에서 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭하"
+"고 <guimenuitem>\"새 폴더\"</guimenuitem> 메뉴를 선택하면 새 하위 폴더를 만"
+"들 수 있습니다. 읽기 창이나 검색 결과에서 북마크 폴더로 절 참조를 끌어다 놓"
+"기 할수 있으며 폴더간에 북마크를 끌어다 놓기로 재정렬 할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:106
 msgid ""
-"You can also import bookmarks from other people or export bookmarks to share"
-" them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
-"folder as described above, and select <guimenuitem>\"Export "
-"bookmarks\"</guimenuitem>. This will bring up a dialog box for you to save "
-"the bookmark collection. You can import bookmarks in a similar way."
-msgstr "다른 사람이 만든 북마크를 가져오기 할 수 뿐만아니라 북마크 내보배기로 다른 사람과 공유할 수도 있습니다. 이 기능을 수행하려면 북마크 폴더의 <guimenu>컨텍스트 메뉴</guimenu>를 위에서 언급한 것처럼 열고 <guimenuitem>\"폴더 내보내기\"</guimenuitem>를 선택합니다. 그러면 북마크 폴더를 저장하기 위한 대화창이 나옵니다. 북마크 가져오기도 비슷한 방식으로 수행할 수 있습니다."
+"You can also import bookmarks from other people or export bookmarks to share "
+"them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
+"folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
+"guimenuitem>. This will bring up a dialog box for you to save the bookmark "
+"collection. You can import bookmarks in a similar way."
+msgstr ""
+"다른 사람이 만든 북마크를 가져오기 할 수 뿐만아니라 북마크 내보배기로 다른 사"
+"람과 공유할 수도 있습니다. 이 기능을 수행하려면 북마크 폴더의 <guimenu>컨텍스"
+"트 메뉴</guimenu>를 위에서 언급한 것처럼 열고 <guimenuitem>\"폴더 내보내기"
+"\"</guimenuitem>를 선택합니다. 그러면 북마크 폴더를 저장하기 위한 대화창이 나"
+"옵니다. 북마크 가져오기도 비슷한 방식으로 수행할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:114
 msgid ""
 "You can also click with the <mousebutton>right</mousebutton> on folders and "
 "bookmarks to change their names and descriptions."
-msgstr "또한 폴더나 북마크를 <mousebutton>우측</mousebutton> 마우스로 클릭하여 제목이나 설명을 수정할 수도 있습니다."
+msgstr ""
+"또한 폴더나 북마크를 <mousebutton>우측</mousebutton> 마우스로 클릭하여 제목이"
+"나 설명을 수정할 수도 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:121
@@ -682,7 +779,10 @@ msgid ""
 "additional information (e.g., Strong's numbers), then this additional "
 "information will be displayed in the Mag, and not in the text itself. Just "
 "try it out."
-msgstr "바이블타임의 좌측 하단에 있는 이 작은 창은 오로지 수동적으로만 동작합니다. 마우스 커서가 스트롱 번호와 같은 부가 정보가 있는 곳에 위치하면 그 부가 정보가 읽기 창이 아니라 돋보기 창에 표시됩니다. 바로 시도해 보세요."
+msgstr ""
+"바이블타임의 좌측 하단에 있는 이 작은 창은 오로지 수동적으로만 동작합니다. 마"
+"우스 커서가 스트롱 번호와 같은 부가 정보가 있는 곳에 위치하면 그 부가 정보가 "
+"읽기 창이 아니라 돋보기 창에 표시됩니다. 바로 시도해 보세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:132
@@ -693,11 +793,15 @@ msgstr "책상"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:133
 msgid ""
 "The Desk is where the real work with &bibletime; takes place. Here you can "
-"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-"
-"search\">search</link> in them, and even save your annotations in the "
-"personal commentary module (see <link linkend=\"hdbk-op-parts-desk-"
-"write\">below</link>)."
-msgstr "책상은 바이블타임의 실제 작업이 일어나는 곳 입니다. 책꽂이를 통해서 이곳에 책을 열 수 있고, 읽으며, 그 안에서 특정 내용을 <link linkend=\"hdbk-op-search\">검색</link>할 수 있고, 개인 주석 모듈에 나름의 메모를 저장할 수도 있습니다.(<link linkend=\"hdbk-op-parts-desk-write\">아래</link>를 참조하세요)."
+"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
+"\">search</link> in them, and even save your annotations in the personal "
+"commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
+"link>)."
+msgstr ""
+"책상은 바이블타임의 실제 작업이 일어나는 곳 입니다. 책꽂이를 통해서 이곳에 책"
+"을 열 수 있고, 읽으며, 그 안에서 특정 내용을 <link linkend=\"hdbk-op-search"
+"\">검색</link>할 수 있고, 개인 주석 모듈에 나름의 메모를 저장할 수도 있습니"
+"다.(<link linkend=\"hdbk-op-parts-desk-write\">아래</link>를 참조하세요)."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:140
@@ -707,13 +811,18 @@ msgstr "책 읽기"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:141
 msgid ""
-"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already "
-"seen</link>, you can open works for reading simply by clicking on their "
-"symbol in the Bookshelf. A read window will open in the Desk's area. Every "
-"read window has a toolbar. There you can find tools to navigate in the work "
-"that this read window is connected to, as well as history buttons like the "
-"ones that you know from your browser."
-msgstr "<link linkend=\"hdbk-op-parts-bookshelf-open\">이미 앞에서 다룬</link> 것처럼 책꽂이에서 책의 아이콘을 클릭하는 것만으로 간단하게 책을 열 수 있습니다. 읽기 창은 책상 영역에 열릴 것입니다. 각 읽기 창에는 툴바가 배치됩니다. 툴바에는 웹 브라우저와 같은 기록에서의 이동 버튼 뿐만아니라 읽기 창과 연결되어 권, 장, 절별로 이동할 수 있는 도구들도 있습니다."
+"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
+"link>, you can open works for reading simply by clicking on their symbol in "
+"the Bookshelf. A read window will open in the Desk's area. Every read window "
+"has a toolbar. There you can find tools to navigate in the work that this "
+"read window is connected to, as well as history buttons like the ones that "
+"you know from your browser."
+msgstr ""
+"<link linkend=\"hdbk-op-parts-bookshelf-open\">이미 앞에서 다룬</link> 것처"
+"럼 책꽂이에서 책의 아이콘을 클릭하는 것만으로 간단하게 책을 열 수 있습니다. "
+"읽기 창은 책상 영역에 열릴 것입니다. 각 읽기 창에는 툴바가 배치됩니다. 툴바에"
+"는 웹 브라우저와 같은 기록에서의 이동 버튼 뿐만아니라 읽기 창과 연결되어 권, "
+"장, 절별로 이동할 수 있는 도구들도 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
@@ -724,12 +833,11 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "The currently active window can be auto scrolled up or down.  Start "
-"scrolling by press Shift+Down. You can increasing the scrolling speed by "
-"pressing Shift+Down multiple times. To pause scrolling press Space. To start"
-" scrolling again at the previous speed press Space again. To slow down "
+"scrolling by press Shift+Down. You can increase the scrolling speed by "
+"pressing Shift+Down multiple times. To pause scrolling press Space. To start "
+"scrolling again at the previous speed press Space again. To slow down "
 "scrolling or scroll the other direction press Shift+Up one or more times. "
-"Pressing any other key or changing the active window will stop the "
-"scrolling."
+"Pressing any other key or changing the active window will stop the scrolling."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -741,14 +849,21 @@ msgstr "읽기 창의 배치"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:165
 msgid ""
 "Of course, you can open multiple works at the same time.  There are several "
-"possibilities for arranging the read windows on the desk. Please have a look"
-" at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
+"possibilities for arranging the read windows on the desk. Please have a look "
+"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
 "that you can either control the placement of the read windows completely "
-"yourself, or have &bibletime; handle the placement automatically. To achieve"
-" this, you have to select one of the automatic placement modes available at "
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works."
-msgstr "물론 동시에 여러권의 창을 열 수도 있습니다. 책상 위에 읽기 창들을 배치하는 다양한 방법이 있습니다. 메인 메뉴의 <guimenu>창관리</guimenu> 메뉴에 항목들을 살펴보면 사용자가 직접 읽기창의 배치를 다룰 수도 있고 바이블타임이 배치를 자동으로 다루도록 지정할 수도 있음을 알 수 있습니다. 이 작업은 <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열 모드</guimenuitem> </menuchoice>에 있는 배치 모드중의 하나를 선택해야 합니다. 그냥 시도해 보세요. 단순하며 원하는 대로 동작할 것입니다."
+"yourself, or have &bibletime; handle the placement automatically. To achieve "
+"this, you have to select one of the automatic placement modes available at "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> </menuchoice>. Just try it out, it's simple and works."
+msgstr ""
+"물론 동시에 여러권의 창을 열 수도 있습니다. 책상 위에 읽기 창들을 배치하는 다"
+"양한 방법이 있습니다. 메인 메뉴의 <guimenu>창관리</guimenu> 메뉴에 항목들을 "
+"살펴보면 사용자가 직접 읽기창의 배치를 다룰 수도 있고 바이블타임이 배치를 자"
+"동으로 다루도록 지정할 수도 있음을 알 수 있습니다. 이 작업은 <menuchoice> "
+"<guimenu>창관리</guimenu> <guimenuitem>배열 모드</guimenuitem> </menuchoice>"
+"에 있는 배치 모드중의 하나를 선택해야 합니다. 그냥 시도해 보세요. 단순하며 원"
+"하는 대로 동작할 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:180
@@ -759,16 +874,18 @@ msgstr "개인 주석 편집하기"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:182
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink "
-"url=\"http://www.crosswire.org\">&cbs;</ulink>.  This work is called "
-"\"Personal commentary\"."
-msgstr "성경의 특정 부분에 대한 나름의 주석을 달고 싶다면 <ulink url=\"http://www.crosswire.org\">&cbs;</ulink>라이브러리에서 특정한 책을 설치해야 하는데 바로 \"개인 주석\"이라는 불리는 책입니다."
+"install a certain work from the library of the <ulink url=\"http://www."
+"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+msgstr ""
+"성경의 특정 부분에 대한 나름의 주석을 달고 싶다면 <ulink url=\"http://www."
+"crosswire.org\">&cbs;</ulink>라이브러리에서 특정한 책을 설치해야 하는데 바로 "
+"\"개인 주석\"이라는 불리는 책입니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:187
 msgid ""
-"Open the personal commentary by clicking on its symbol in the Bookshelf with"
-" a <mousebutton>left</mousebutton> mouse button.  You can edit this "
+"Open the personal commentary by clicking on its symbol in the Bookshelf with "
+"a <mousebutton>left</mousebutton> mouse button.  You can edit this "
 "commentary by just clicking on any verse.  A dialog opens which allows you "
 "to add or edit text for that verse."
 msgstr ""
@@ -779,14 +896,18 @@ msgid ""
 "If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
 "deactivated, please check if you have write permission for the files of the "
 "personal commentary."
-msgstr "만약 <menuchoice> <guimenu>편집</guimenu> </menuchoice> 메뉴가 선택 불가 상태라면 개인 주석 파일에 대한 쓰기 권한이 있는지 확인해야 합니다."
+msgstr ""
+"만약 <menuchoice> <guimenu>편집</guimenu> </menuchoice> 메뉴가 선택 불가 상태"
+"라면 개인 주석 파일에 대한 쓰기 권한이 있는지 확인해야 합니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:202
 msgid ""
-"Drag &amp; drop works here. Drop a verse reference and the text of the verse"
-" will be inserted."
-msgstr "책을 여기에 끌어다 놓으세요. 절참조를 가져다 놓으면 해당 구절이 추가될 것입니다."
+"Drag &amp; drop works here. Drop a verse reference and the text of the verse "
+"will be inserted."
+msgstr ""
+"책을 여기에 끌어다 놓으세요. 절참조를 가져다 놓으면 해당 구절이 추가될 것입니"
+"다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:212
@@ -803,7 +924,13 @@ msgid ""
 "<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo "
 "action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how "
 "you can search in entire works."
-msgstr "다른 프로그램에서 사용하던 것과 같이 현재의 읽기 창에서(예를 들어 성경의 한 장) 특정 단어나 문장을 열 수 있습니다. 이 기능은 읽기 창을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭한 다음 <guimenuitem>찾기...</guimenuitem> 메뉴를 선택하거나 <keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo> 단축키를 통해서 사용할 수 있습니다. 책 전체에서 검색하는 방법을 배우려면 핸드북을 계속해서 읽으세요."
+msgstr ""
+"다른 프로그램에서 사용하던 것과 같이 현재의 읽기 창에서(예를 들어 성경의 한 "
+"장) 특정 단어나 문장을 열 수 있습니다. 이 기능은 읽기 창을 <mousebutton>우측"
+"</mousebutton> 마우스 버튼으로 클릭한 다음 <guimenuitem>찾기...</"
+"guimenuitem> 메뉴를 선택하거나 <keycombo action=\"simul\"> <keycap>&Ctrl;F</"
+"keycap></keycombo> 단축키를 통해서 사용할 수 있습니다. 책 전체에서 검색하는 "
+"방법을 배우려면 핸드북을 계속해서 읽으세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:225
@@ -813,14 +940,18 @@ msgstr "검색 창 열기"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:226
 msgid ""
-"You can search in a work by clicking with the "
-"<mousebutton>right</mousebutton> mouse button on its symbol in the "
-"<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in "
-"work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other "
-"work's names you can select more than one. Then follow the same procedure to"
-" open the search dialog. You will be searching in all of these works at the "
-"same time."
-msgstr "<guimenu>책꽂이</guimenu>에서 특정 책의 아이콘을 <mousebutton>우측</mousebutton> 마우스 버튼으로 클릭한 다음 <guimenuitem>...에서 찾기</guimenuitem>를 선택하여 책 검색을 할 수 있습니다. &Shift; 또는 &Ctrl; 를 누른 상태에서 다른 책의 이름을 클릭하면 한 권 이상의 책을 선택할 수 있습니다. 그 다음에 검색 창을 여는 과정은 동일합니다. 이 책들을 한번에 검색할 것입니다."
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
+"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
+"&Shift; or &Ctrl; and clicking on other work's names you can select more "
+"than one. Then follow the same procedure to open the search dialog. You will "
+"be searching in all of these works at the same time."
+msgstr ""
+"<guimenu>책꽂이</guimenu>에서 특정 책의 아이콘을 <mousebutton>우측</"
+"mousebutton> 마우스 버튼으로 클릭한 다음 <guimenuitem>...에서 찾기</"
+"guimenuitem>를 선택하여 책 검색을 할 수 있습니다. &Shift; 또는 &Ctrl; 를 누"
+"른 상태에서 다른 책의 이름을 클릭하면 한 권 이상의 책을 선택할 수 있습니다. "
+"그 다음에 검색 창을 여는 과정은 동일합니다. 이 책들을 한번에 검색할 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:236
@@ -828,14 +959,17 @@ msgid ""
 "You can also access the search dialog by clicking on <menuchoice> "
 "<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
 "the appropriate entry."
-msgstr "메인 메뉴의 <menuchoice> <guimenu>찾기</guimenu> </menuchoice>를 클릭한 다음 적절한 항목을 선택하여 검색창을 열수도 있습니다."
+msgstr ""
+"메인 메뉴의 <menuchoice> <guimenu>찾기</guimenu> </menuchoice>를 클릭한 다음 "
+"적절한 항목을 선택하여 검색창을 열수도 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:242
 msgid ""
-"A third possibility to start searches is to click on the search symbol in an"
-" open read window."
-msgstr "검색을 시작할 수 있는 세번째 방법은 읽기창의 검색 아이콘을 클릭하는 것입니다."
+"A third possibility to start searches is to click on the search symbol in an "
+"open read window."
+msgstr ""
+"검색을 시작할 수 있는 세번째 방법은 읽기창의 검색 아이콘을 클릭하는 것입니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:247
@@ -852,15 +986,19 @@ msgstr "검색어 대화창 옵션 탭"
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:249
 #: docs/handbook/en/docbook/hdbk-operation.docbook:379
 msgid ""
-"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder "
-"type=\"mediaobject\" id=\"1\"/>"
-msgstr "<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject\" id=\"1\"/>"
+"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject"
+"\" id=\"1\"/>"
+msgstr ""
+"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject"
+"\" id=\"1\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:257
@@ -870,11 +1008,14 @@ msgstr "책 선택하기"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:258
 msgid ""
-"At the top of the options tab you will find "
-"<guibutton>Choose</guibutton>(works). If you would like to search in "
-"multiple works, click on this button and you will be offered a menu where "
-"you can select the works you want to search in."
-msgstr "검색창 상단에서 <guibutton>선택...</guibutton> 버튼을 찾을 수 있는데. 이 버튼은 여러 책을 동시에 검색하고 싶을 때 사용합니다. 이 버튼을 누르면 검색 대상이 될 책들을 선택할 수 있습니다."
+"At the top of the options tab you will find <guibutton>Choose</"
+"guibutton>(works). If you would like to search in multiple works, click on "
+"this button and you will be offered a menu where you can select the works "
+"you want to search in."
+msgstr ""
+"검색창 상단에서 <guibutton>선택...</guibutton> 버튼을 찾을 수 있는데. 이 버튼"
+"은 여러 책을 동시에 검색하고 싶을 때 사용합니다. 이 버튼을 누르면 검색 대상"
+"이 될 책들을 선택할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:265
@@ -888,7 +1029,10 @@ msgid ""
 "selecting one of the predefined scopes from the list in <guimenu>Search "
 "scope</guimenu>. You can define your own search ranges by clicking the "
 "<guibutton>Setup ranges</guibutton> button."
-msgstr "<guimenu>범위</guimenu> 목록에서 미리 정의된 범위를 선택하면 성경의 특정한 부분들로 검색 범위를 좁힐 수 있습니다. <guibutton>설정...</guibutton>버튼을 통해서 나름의 검색 범위를 정의할 수 있습니다."
+msgstr ""
+"<guimenu>범위</guimenu> 목록에서 미리 정의된 범위를 선택하면 성경의 특정한 부"
+"분들로 검색 범위를 좁힐 수 있습니다. <guibutton>설정...</guibutton>버튼을 통"
+"해서 나름의 검색 범위를 정의할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:275
@@ -898,13 +1042,18 @@ msgstr "기본적인 검색 문법 소개"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:277
 msgid ""
-"Enter the search phrase separated by spaces.  By default the search function"
-" will return results that match all the words.  If you want to find any of "
+"Enter the search phrase separated by spaces.  By default the search function "
+"will return results that match all the words.  If you want to find any of "
 "the words entered, select the <guimenu>Some words</guimenu> button.  If you "
 "want to perform a more complex search, select the <guimenu>Free</guimenu> "
 "button.  You can see examples of searches by clicking on <guimenu>full "
 "syntax</guimenu>."
-msgstr "검색어는 공백으로 구분해서 입력합니다. 기본적으로는 모든 단어가 일치하는 결과를 리턴할 것입니다. 한 단어라도 일치하는 결과를 얻으려면 <guimenu>일부 단어</guimenu> 버튼을 클릭합니다. 좀더 복잡한 검색을 하고 싶다면 <guimenu>고급 검색</guimenu> 버튼을 클릭합니다. <guimenu>전체 문법</guimenu>을 클릭하면 다양한 검색 예제를 확인할 수 있습니다."
+msgstr ""
+"검색어는 공백으로 구분해서 입력합니다. 기본적으로는 모든 단어가 일치하는 결과"
+"를 리턴할 것입니다. 한 단어라도 일치하는 결과를 얻으려면 <guimenu>일부 단어</"
+"guimenu> 버튼을 클릭합니다. 좀더 복잡한 검색을 하고 싶다면 <guimenu>고급 검색"
+"</guimenu> 버튼을 클릭합니다. <guimenu>전체 문법</guimenu>을 클릭하면 다양한 "
+"검색 예제를 확인할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:286
@@ -919,99 +1068,86 @@ msgstr ""
 msgid ""
 "To search text other than the main text, enter the text type followed by "
 "':', and then the search term.  Refer to the table below for examples."
-msgstr "성경 본문이 아닌 내용에서 검색할 때는 ':'로 끝나는 구분자를 입력한 다음에 검색어를 입력합니다. 아래에 있는 표를 참조하세요."
+msgstr ""
+"성경 본문이 아닌 내용에서 검색할 때는 ':'로 끝나는 구분자를 입력한 다음에 검"
+"색어를 입력합니다. 아래에 있는 표를 참조하세요."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:297
 msgid "Search Types"
 msgstr "검색 타입들"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:303
 msgid "Prefix"
 msgstr "접두어"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:304
 msgid "Meaning"
 msgstr "의미"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:305
 msgid "Example"
 msgstr "예제"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:310
 msgid "heading:"
 msgstr "heading:"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:311
 msgid "searches headings"
 msgstr "제목 검색"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:312
 msgid "heading:Jesus"
 msgstr "heading:예수"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:315
 msgid "footnote:"
 msgstr "footnote:"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:316
 msgid "searches footnotes"
 msgstr "각주 검색"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:317
 msgid "footnote:Moses"
 msgstr "footnote:모세"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:320
 msgid "strong:"
 msgstr "strong:"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:321
 msgid "searches Strong's Numbers"
 msgstr "스트롱 번호 검색"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:322
 msgid "strong:G535"
 msgstr "strong:G535"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:325
 msgid "morph:"
 msgstr "morph:"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:326
 msgid "searches morphology codes"
 msgstr "형태소 코드 검색"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:327
 msgid "morph:N-GSM"
 msgstr "morph:N-GSM"
@@ -1024,19 +1160,26 @@ msgstr "사용 가능한 검색 타입들: <placeholder type=\"table\" id=\"0\"/
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:334
 msgid ""
-"You can right click on an installed work and select <guimenu>About</guimenu>"
-" to find which of the above search criteria may work for you.  Not all works"
-" have the built in features for performing this type of search."
-msgstr "설치된 책을 우측 마우스로 클릭하고 <guimenu>추가 정보</guimenu>를 선택하면 위의 검색 타입 중에 어떤 것을 사용할 수 있을 지 확인할 수 있습니다. 모든 책이 이러한 검색 기능들을 지원하는 것은 아닙니다."
+"You can right click on an installed work and select <guimenu>About</guimenu> "
+"to find which of the above search criteria may work for you.  Not all works "
+"have the built in features for performing this type of search."
+msgstr ""
+"설치된 책을 우측 마우스로 클릭하고 <guimenu>추가 정보</guimenu>를 선택하면 위"
+"의 검색 타입 중에 어떤 것을 사용할 수 있을 지 확인할 수 있습니다. 모든 책이 "
+"이러한 검색 기능들을 지원하는 것은 아닙니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:340
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
-"many advanced features, and you can read more about it here: <ulink "
-"url=\"http://lucene.apache.org/java/docs/index.html\"> "
-"http://lucene.apache.org/java/docs/index.html</ulink>."
-msgstr "바이블타임은 검색에 Lucene 검색 엔진을 사용합니다. Lucene 검색 엔진은 다양한 고급 검색 기능들을 가지고 있는데 자세한 내용은 <ulink url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/java/docs/index.html</ulink>를 참조할 수 있습니다."
+"many advanced features, and you can read more about it here: <ulink url="
+"\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
+"java/docs/index.html</ulink>."
+msgstr ""
+"바이블타임은 검색에 Lucene 검색 엔진을 사용합니다. Lucene 검색 엔진은 다양한 "
+"고급 검색 기능들을 가지고 있는데 자세한 내용은 <ulink url=\"http://lucene."
+"apache.org/java/docs/index.html\"> http://lucene.apache.org/java/docs/index."
+"html</ulink>를 참조할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:349
@@ -1047,26 +1190,34 @@ msgstr "검색 결과"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:350
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
-"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse"
-" button allows you to copy, save, or print all verses that were found in a "
+"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
+"button allows you to copy, save, or print all verses that were found in a "
 "certain work at once. This also works when you click on one or more of the "
 "references to copy, save or print them. Clicking on a particular reference "
 "opens that verse up in context in the preview window below."
-msgstr "여기에서 얼마나 많은 검색어가 찾아졌는지 책 별로 정렬해서 확인할 수 있습니다. <mousebutton>우측</mousebutton> 마우스 버튼을 클릭하면 특정 책에서 찾아진 모든 구절에 한번에 복사, 저장, 인쇄할 수 있습니다. 이 작업은 하나 또는 하나 이상의 구절에 대하여도 복사, 저장, 인쇄할 수 있습니다. 특정 절 참조를 클릭하면 그 구절의 내용을 우측의 미리보기 창을 통해서 확인할 수 있습니다."
+msgstr ""
+"여기에서 얼마나 많은 검색어가 찾아졌는지 책 별로 정렬해서 확인할 수 있습니"
+"다. <mousebutton>우측</mousebutton> 마우스 버튼을 클릭하면 특정 책에서 찾아"
+"진 모든 구절에 한번에 복사, 저장, 인쇄할 수 있습니다. 이 작업은 하나 또는 하"
+"나 이상의 구절에 대하여도 복사, 저장, 인쇄할 수 있습니다. 특정 절 참조를 클릭"
+"하면 그 구절의 내용을 우측의 미리보기 창을 통해서 확인할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:359
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
-msgstr "특정 절 참조를 끌어다가 책꽂이의 특정 책 아이콘에 놓으면 해당 구절을 새 읽기창에 엽니다."
+msgstr ""
+"특정 절 참조를 끌어다가 책꽂이의 특정 책 아이콘에 놓으면 해당 구절을 새 읽기"
+"창에 엽니다."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:364
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
-msgstr "특정 절 참조를 끌어다가 현재 읽기 창에 놓으면 해당 구절로 바로 이동합니다."
+msgstr ""
+"특정 절 참조를 끌어다가 현재 읽기 창에 놓으면 해당 구절로 바로 이동합니다."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:368
@@ -1082,10 +1233,13 @@ msgstr "검색 결과 분석"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:373
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
-"display. This gives a simple graphic analysis of the number of instances the"
-" search string was found in each book of the Bible, and you can also save "
-"the analysis."
-msgstr "검색 분석 창을 보려면 <guibutton>결과 분석</guibutton>을 클릭합니다. 검색 결과 분석 창에는 성경의 각 책별로 검색어가 존재하는 개수를 단순한 그래프로 보여주고 분석 내용을 저장할 수 있도록 해줍니다."
+"display. This gives a simple graphic analysis of the number of instances the "
+"search string was found in each book of the Bible, and you can also save the "
+"analysis."
+msgstr ""
+"검색 분석 창을 보려면 <guibutton>결과 분석</guibutton>을 클릭합니다. 검색 결"
+"과 분석 창에는 성경의 각 책별로 검색어가 존재하는 개수를 단순한 그래프로 보여"
+"주고 분석 내용을 저장할 수 있도록 해줍니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:379
@@ -1097,7 +1251,9 @@ msgstr "검색 분석 대화창 박스"
 msgid ""
 "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:391
@@ -1108,11 +1264,15 @@ msgstr "<guimenuitem>책꽂이 관리자</guimenuitem>"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:393
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
-"Bookshelf. You can install new works to your Bookshelf, and update or remove"
-" existing works from your Bookshelf. Access it by clicking <menuchoice> "
-"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> "
-"</menuchoice> in the main menu."
-msgstr "<guimenuitem>책꽂이 관리자</guimenuitem>는 여러분의 책장을 관리하기 위한 도구입니다. 새로운 책들을 책꽂이에 설치할 수 있으며 책꽂이에서 기존 책을 갱신하거나 제거할 수 있습니다. 메인 메뉴의 <menuchoice> <guimenu>설정</guimenu> <guimenuitem>책꽂이 관리</guimenuitem> </menuchoice>로 만날 수 있습니다."
+"Bookshelf. You can install new works to your Bookshelf, and update or remove "
+"existing works from your Bookshelf. Access it by clicking <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
+"menuchoice> in the main menu."
+msgstr ""
+"<guimenuitem>책꽂이 관리자</guimenuitem>는 여러분의 책장을 관리하기 위한 도구"
+"입니다. 새로운 책들을 책꽂이에 설치할 수 있으며 책꽂이에서 기존 책을 갱신하거"
+"나 제거할 수 있습니다. 메인 메뉴의 <menuchoice> <guimenu>설정</guimenu> "
+"<guimenuitem>책꽂이 관리</guimenuitem> </menuchoice>로 만날 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
@@ -1126,8 +1286,8 @@ msgid ""
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
 "libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
 "online repository of &sword; modules, or another site offering &sword; "
-"modules). &bibletime; will automatically maintain a list of remote libraries"
-" and the works available from them."
+"modules). &bibletime; will automatically maintain a list of remote libraries "
+"and the works available from them."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -1135,11 +1295,11 @@ msgstr ""
 msgid ""
 "To begin the installation process, select one or more libraries that you "
 "want to install works from.  Then click on the <guibutton>Next</guibutton> "
-"button. Then select one or more languages and click the "
-"<guibutton>Next</guibutton> button. You will see a list of categories. "
-"Double-click on a category to see works for that category. Select one or "
-"more works and then click on the <guibutton>Install Works</guibutton>. After"
-" the works are installed, click on the <guibutton>Finish</guibutton>."
+"button. Then select one or more languages and click the <guibutton>Next</"
+"guibutton> button. You will see a list of categories. Double-click on a "
+"category to see works for that category. Select one or more works and then "
+"click on the <guibutton>Install Works</guibutton>. After the works are "
+"installed, click on the <guibutton>Finish</guibutton>."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1177,15 +1337,20 @@ msgstr "내보내기와 인쇄하기"
 #: docs/handbook/en/docbook/hdbk-operation.docbook:441
 msgid ""
 "In many places, you can open a context menu by clicking with the "
-"<mousebutton>right</mousebutton> mouse button. Depending on context, it will"
-" allow you to <guimenuitem>Select</guimenuitem>, "
-"<guimenuitem>Copy</guimenuitem> (to clipboard), "
-"<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> text. "
-"This works for example in the read windows, when you click on the normal "
-"text or the verse reference, or in the search result page when you click on "
-"a work or one or more verse references. It is pretty straightforward, so "
-"just try it out."
-msgstr "다양한 곳에서 <mousebutton>우측</mousebutton> 마우스 버튼을 클릭해서 컨텍스트 메뉴를 열 수 있습니다. 장소에 따라서 <guimenuitem>복사</guimenuitem> (클립보드로), <guimenuitem>저장</guimenuitem> 또는 <guimenuitem>인쇄</guimenuitem> 메뉴를 만날 수 있습니다. 예를 들면 읽기창에서는 일반 텍스트나 절참조를 클릭할 때 동작하고 검색 결과 창에서는 특정 책이나 하나 이상의 절참조를 클릭할 때 동작합니다. 아주 간단하므로 그냥 시도해 보세요."
+"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
+"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
+"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
+msgstr ""
+"다양한 곳에서 <mousebutton>우측</mousebutton> 마우스 버튼을 클릭해서 컨텍스"
+"트 메뉴를 열 수 있습니다. 장소에 따라서 <guimenuitem>복사</guimenuitem> (클립"
+"보드로), <guimenuitem>저장</guimenuitem> 또는 <guimenuitem>인쇄</"
+"guimenuitem> 메뉴를 만날 수 있습니다. 예를 들면 읽기창에서는 일반 텍스트나 절"
+"참조를 클릭할 때 동작하고 검색 결과 창에서는 특정 책이나 하나 이상의 절참조"
+"를 클릭할 때 동작합니다. 아주 간단하므로 그냥 시도해 보세요."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:454
@@ -1195,7 +1360,10 @@ msgid ""
 "&bibletime; works, we suggest that you use one of the presentation or "
 "editing tools on your system to format your document, rather than printing "
 "from &bibletime; directly."
-msgstr "바이블타임의 인쇄 기능은 도구로서 가장 기본적인 부분만 다룹니다. 바이블타임의 책 내용을 포함하는 문서나 프레젠테이션을 작성하고 있다면 바이블타임에서 직접 인쇄하기 보다는 여러분의 시스템에 있는 적절한 도구를 사용하기를 권합니다."
+msgstr ""
+"바이블타임의 인쇄 기능은 도구로서 가장 기본적인 부분만 다룹니다. 바이블타임"
+"의 책 내용을 포함하는 문서나 프레젠테이션을 작성하고 있다면 바이블타임에서 직"
+"접 인쇄하기 보다는 여러분의 시스템에 있는 적절한 도구를 사용하기를 권합니다."
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:2
@@ -1214,64 +1382,75 @@ msgid ""
 "main menu of &bibletime;. They are ordered in just the way they appear in "
 "&bibletime;, with all the sub-items listed under the major menu item they "
 "belong to. You can also see the shortcut of each item;a complete listing of "
-"all shortcuts can be found in the <link linkend=\"hdbk-reference-"
-"shortcuts\">shortcuts section</link>."
-msgstr "이 섹션에서는 바이블타임의 메인 메뉴 모든 항목에 대한 자세한 설명을 볼 수 있습니다. 바이블타입에 나오는 순서로 각 주메뉴에 포함된 부메뉴 목록을 포함하여 배열했습니다. 각 항목의 단축키도 확인할 수 있는데 단축키 전체 목록은 <link linkend=\"hdbk-reference-shortcuts\">단축키 섹션</link>에서 확인할 수 있습니다."
+"all shortcuts can be found in the <link linkend=\"hdbk-reference-shortcuts"
+"\">shortcuts section</link>."
+msgstr ""
+"이 섹션에서는 바이블타임의 메인 메뉴 모든 항목에 대한 자세한 설명을 볼 수 있"
+"습니다. 바이블타입에 나오는 순서로 각 주메뉴에 포함된 부메뉴 목록을 포함하여 "
+"배열했습니다. 각 항목의 단축키도 확인할 수 있는데 단축키 전체 목록은 <link "
+"linkend=\"hdbk-reference-shortcuts\">단축키 섹션</link>에서 확인할 수 있습니"
+"다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:15
 msgid "<guimenu>File</guimenu>"
 msgstr "<guimenu>파일</guimenu>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:24
 msgid ""
-"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:21
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>파일</guimenu> <guimenuitem>책 열기</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>파일"
+"</guimenu> <guimenuitem>책 열기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:32
 msgid ""
-"<action>Open work.</action> This will give you a menu that will allow you to"
-" open installed books."
+"<action>Open work.</action> This will give you a menu that will allow you to "
+"open installed books."
 msgstr "<action>책 열기.</action> 설치된 책을 열수 있는 메뉴가 나타납니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:46
 msgid ""
 "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:39
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>File</guimenu> "
-"<guimenuitem>Quit</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>파일</guimenu> <guimenuitem>나가기</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Quit</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>파일</guimenu> <guimenuitem>나가기</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:55
 msgid ""
-"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to"
-" write unsaved changes to disk."
-msgstr "<action>바이블타임을 닫습니다.</action> 저장하지 않은 것이 있다면 확인을 받습니다."
+"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
+"write unsaved changes to disk."
+msgstr ""
+"<action>바이블타임을 닫습니다.</action> 저장하지 않은 것이 있다면 확인을 받습"
+"니다."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:18
@@ -1295,299 +1474,354 @@ msgstr "<placeholder type=\"variablelist\" id=\"0\"/>"
 msgid "<guimenu>View</guimenu>"
 msgstr "<guimenu>보기</guimenu>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:79
 msgid ""
 "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:71
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> "
-"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기</guimenu> <guimenuitem>전체 화면</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>보기</guimenu> <guimenuitem>전체 화면</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:88
 msgid ""
 "<action>Toggles full screen display.</action> Toggle this setting to "
 "maximize the &bibletime; window."
-msgstr "<action>전체 화면 모드 켜기/끄기.</action> 전체 화면 모드와 일반 화면 모드간를 토글합니다."
+msgstr ""
+"<action>전체 화면 모드 켜기/끄기.</action> 전체 화면 모드와 일반 화면 모드간"
+"를 토글합니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:98
 msgid ""
 "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:95
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기</guimenu> <guimenuitem>책꽂이 보기</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기"
+"</guimenu> <guimenuitem>책꽂이 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:107
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
-"turn the Bookshelf on the left pane on or off. This can be handy if you need"
-" more space for the Mag."
-msgstr "<action>책꽂이 보이기/숨기기.</action> 좌측 판넬에 책꽂이 보이기/숨기기를 수행합니다. 이 설정은 돋보기 영역을 확대하고 싶을 때 유용합니다."
+"turn the Bookshelf on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+"<action>책꽂이 보이기/숨기기.</action> 좌측 판넬에 책꽂이 보이기/숨기기를 수"
+"행합니다. 이 설정은 돋보기 영역을 확대하고 싶을 때 유용합니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:119
 msgid ""
-"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:116
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기</guimenu> <guimenuitem>북마크 보기</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기"
+"</guimenu> <guimenuitem>북마크 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:128
 msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
-"turn the Bookmarks on the left pane on or off. This can be handy if you need"
-" more space for the Mag."
-msgstr "<action>북마크 보이기/숨기기.</action> 좌측 판넬에 북마크 보이기/숨기기를 수행합니다. 이 설정은 돋보기 영역을 확대하고 싶을 때 유용합니다."
+"turn the Bookmarks on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+"<action>북마크 보이기/숨기기.</action> 좌측 판넬에 북마크 보이기/숨기기를 수"
+"행합니다. 이 설정은 돋보기 영역을 확대하고 싶을 때 유용합니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:140
 msgid ""
 "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:137
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기</guimenu> <guimenuitem>돋보기창 보기</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기"
+"</guimenu> <guimenuitem>돋보기창 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:149
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
-msgstr "<action>돋보기창 보이기/숨기기.</action> 좌측 판넬에 돋보기창 보이기/숨기기를 수행합니다."
+msgstr ""
+"<action>돋보기창 보이기/숨기기.</action> 좌측 판넬에 돋보기창 보이기/숨기기"
+"를 수행합니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:160
 msgid ""
-"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:157
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>View</guimenu> <guimenuitem>Show parallel text "
-"headers</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기</guimenu> <guimenuitem>성경 제목줄 보기</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>보기"
+"</guimenu> <guimenuitem>성경 제목줄 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:169
 msgid ""
 "<action>Toggles viewing of additional works</action> Toggle this setting to "
 "allow you to view additional works in parallel to your current open books."
-msgstr "<action>성경 제목줄 보이기/숨기기</action> 현재 읽기창에서 다른 책을 열거나 추가할 때 사용할 수 있는 성경 제목줄을 보이기/숨기기 합니다."
+msgstr ""
+"<action>성경 제목줄 보이기/숨기기</action> 현재 읽기창에서 다른 책을 열거나 "
+"추가할 때 사용할 수 있는 성경 제목줄을 보이기/숨기기 합니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:177
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> "
-"</keycombo> </shortcut> <guimenu>View</guimenu> "
-"<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </keycombo> </shortcut> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> <guimenuitem>기본 도구 모음 보기</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
+"keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
+"guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
+"keycombo> </shortcut> <guimenu>보기</guimenu> <guimenuitem>도구모음</"
+"guimenuitem> <guimenuitem>기본 도구 모음 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:189
 msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
 "the main toolbar on or off."
-msgstr "<action>기본 도구 모음 보이기/숨기기.</action> 메인 툴바의 기본 도구 모음 보이기/숨기기를 수행합니다."
+msgstr ""
+"<action>기본 도구 모음 보이기/숨기기.</action> 메인 툴바의 기본 도구 모음 보"
+"이기/숨기기를 수행합니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:196
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show navigation</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> <guimenuitem>검색 도구 모음 보기</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> "
+"<guimenuitem>검색 도구 모음 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:203
 msgid ""
 "<action>Toggles Navigation in works.</action> Toggle this setting to add or "
 "remove the navigation combo box in works.  This can be handy to view the "
 "full toolbar in the open works"
-msgstr "<action>책 내부에 대한 검색 도구 모음 보이기/숨기기.</action> 읽기창의 여러 콤보 박스로 구성된 검색 도구 모음 보이기/숨기기를 수행합니다. 읽기창에서는 전체 툴바를 보이도록 하는 것이 편리할 수 있습니다."
+msgstr ""
+"<action>책 내부에 대한 검색 도구 모음 보이기/숨기기.</action> 읽기창의 여러 "
+"콤보 박스로 구성된 검색 도구 모음 보이기/숨기기를 수행합니다. 읽기창에서는 전"
+"체 툴바를 보이도록 하는 것이 편리할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:212
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show works</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> <guimenuitem>책 도구 모음 보기</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> "
+"<guimenuitem>책 도구 모음 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:219
 msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
 "remove the works icons in the open works."
-msgstr "<action>책 도구 모음 보이기/숨기기.</action> 읽기창의 책 도구 모음 보이기/숨기기를 수행합니다."
+msgstr ""
+"<action>책 도구 모음 보이기/숨기기.</action> 읽기창의 책 도구 모음 보이기/숨"
+"기기를 수행합니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:227
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show tools</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> <guimenuitem>일반 도구 모음 보기</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> "
+"<guimenuitem>일반 도구 모음 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:234
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
 "remove the tools icons in the open works."
-msgstr "<action>일반 도구 모음 보이기/숨기기.</action> 읽기창의 일반 도구 모음 보이기/숨기기를 수행합니다."
+msgstr ""
+"<action>일반 도구 모음 보이기/숨기기.</action> 읽기창의 일반 도구 모음 보이"
+"기/숨기기를 수행합니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:242
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show format</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> <guimenuitem>형식 도구 모음 보기</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> "
+"<guimenuitem>형식 도구 모음 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:249
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
 "Personal Commentaries. It will add or remove the formatting toolbar."
-msgstr "<action>형식 도구 모음 보이기/숨기기.</action> 개인 주석에서 HTML을 편집할 때 형식 도구 모음의 보이기/숨기기를 수행합니다."
+msgstr ""
+"<action>형식 도구 모음 보이기/숨기기.</action> 개인 주석에서 HTML을 편집할 "
+"때 형식 도구 모음의 보이기/숨기기를 수행합니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:258
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> <guimenuitem>읽기창에 도구 모음 보기</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>도구모음</guimenuitem> "
+"<guimenuitem>읽기창에 도구 모음 보기</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:265
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
 "remove the complete toolbar in open works."
-msgstr "<action>읽기창에 도구 모음 보이기/숨기기.</action> 읽기창의 툴바 전체에 대한 보이기/숨기기를 수행합니다."
+msgstr ""
+"<action>읽기창에 도구 모음 보이기/숨기기.</action> 읽기창의 툴바 전체에 대한 "
+"보이기/숨기기를 수행합니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:274
 msgid "<guimenu>Search</guimenu>"
 msgstr "<guimenu>찾기</guimenu>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:286
 #: docs/handbook/en/docbook/hdbk-reference.docbook:312
 #: docs/handbook/en/docbook/hdbk-reference.docbook:839
 msgid ""
 "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:279
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> "
-"<placeholder type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> "
-"<guimenuitem>Search in standard bible</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>찾기</guimenu> <guimenuitem>책꽂이에서 찾기</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in "
+"standard bible</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>찾기</guimenu> <guimenuitem>책꽂이에서 찾기</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:295
 msgid ""
-"<action>Opens the Search Dialog to search in the standard Bible "
-"only</action>. More works can be added in the Search Dialog. A more detailed"
-" search description can be found in the <link linkend=\"hdbk-op-"
-"search\">Searching in works</link> section."
-msgstr "<action>표준 성경에 대한 검색 대화창을 엽니다</action>. 검색 대화창에서 다른 성경을 추가 및 제외할 수 있습니다. 검색에 대한 더 자세한 설명은 <link linkend=\"hdbk-op-search\">책 검색하기</link> 섹션을 참고하세요."
+"<action>Opens the Search Dialog to search in the standard Bible only</"
+"action>. More works can be added in the Search Dialog. A more detailed "
+"search description can be found in the <link linkend=\"hdbk-op-search"
+"\">Searching in works</link> section."
+msgstr ""
+"<action>표준 성경에 대한 검색 대화창을 엽니다</action>. 검색 대화창에서 다른 "
+"성경을 추가 및 제외할 수 있습니다. 검색에 대한 더 자세한 설명은 <link "
+"linkend=\"hdbk-op-search\">책 검색하기</link> 섹션을 참고하세요."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:305
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in"
-" open work(s)</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>찾기</guimenu> <guimenuitem>열린 책에서 찾기</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in open "
+"work(s)</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>찾기</guimenu> <guimenuitem>열린 책에서 찾기"
+"</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:321
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. Works "
 "can be added or removed in the Search Dialog. A more detailed search "
 "description can be found in the <link linkend=\"hdbk-op-search\">Searching "
 "in works</link> section."
-msgstr "<action>열린 책들에 대한 검색 대화창을 엽니다</action>. 검색 대화창에서 다른 성경을 추가 및 제외할 수 있습니다. 검색에 대한 더 자세한 설명은 <link linkend=\"hdbk-op-search\">책 검색하기</link> 섹션을 참고하세요."
+msgstr ""
+"<action>열린 책들에 대한 검색 대화창을 엽니다</action>. 검색 대화창에서 다른 "
+"성경을 추가 및 제외할 수 있습니다. 검색에 대한 더 자세한 설명은 <link "
+"linkend=\"hdbk-op-search\">책 검색하기</link> 섹션을 참고하세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:334
 msgid "<guimenu>Window</guimenu>"
 msgstr "<guimenu>창관리</guimenu>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:347
 #: docs/handbook/en/docbook/hdbk-reference.docbook:370
 msgid ""
-"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:340
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close "
-"window</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>창 닫기</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close window</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>창 닫기</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:357
 msgid "<action>Closes active window</action>."
 msgstr "<action>현재창을 닫습니다</action>."
@@ -1595,106 +1829,125 @@ msgstr "<action>현재창을 닫습니다</action>."
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:363
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> "
-"<placeholder type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
-"<guimenuitem>Close all</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>모든창 닫기</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close all</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>모든창 닫기</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:380
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>열린 모든 창을 닫습니다</action>."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:393
 msgid ""
-"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\""
-" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:386
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
-"<guimenuitem>Cascade</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>계단식 배열</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Cascade</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>계단식 배열</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
 msgstr "<action>열린 모든 창을 계단식으로 배열합니다</action>."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:417
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:410
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> "
-"<guimenuitem>Tile</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>타일</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>타일</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:427
 msgid "<action>Tiles all open windows</action>."
 msgstr "<action>열린 모든 창을 타일 형태로 배열합니다</action>."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:441
 msgid ""
-"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:434
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "vertically</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>수직 배열</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>수직 배열</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:451
 msgid "<action>Automatically tiles all open windows vertically</action>."
 msgstr "<action>열린 모든 창을 수직으로 자동 배열합니다</action>."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:465
 msgid ""
-"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:458
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder "
-"type=\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "horizontally</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>수평 배열</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>창관리</guimenu> <guimenuitem>수평 배열</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:475
 msgid "<action>Automatically tiles all open windows horizontally</action>."
 msgstr "<action>열린 모든 창을 수평으로 자동 배열합니다</action>."
@@ -1702,233 +1955,281 @@ msgstr "<action>열린 모든 창을 수평으로 자동 배열합니다</action
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:483
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열 모드</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열 모드</guimenuitem> "
+"</menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:490
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
-"the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically,"
-" Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
-msgstr "<action>기본적인 창 배열 동작을 제어합니다</action>. 메뉴를 통해서 창 배열을 직접 다룰 수도 있고(수동 배열), 탭형식, 자동 수직 배열, 자동 수평 배열, 자동 배열, 자동 계단식 배열 등으로 설정할 수도 있습니다. 바로 해보세요!"
+"the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, "
+"Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
+msgstr ""
+"<action>기본적인 창 배열 동작을 제어합니다</action>. 메뉴를 통해서 창 배열을 "
+"직접 다룰 수도 있고(수동 배열), 탭형식, 자동 수직 배열, 자동 수평 배열, 자동 "
+"배열, 자동 계단식 배열 등으로 설정할 수도 있습니다. 바로 해보세요!"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:501
 msgid ""
-"<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save "
-"session</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>세션 저장</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>세션 저장</guimenuitem> "
+"</menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:509
 msgid ""
 "<action>Directly saves the current session</action>. This will open a "
-"context menu where you can select an existing session to save to. It will be"
-" overwritten with your current session. See the next item on how to save to "
-"a new session."
-msgstr "<action>현재 세션을 바로 저장합니다</action>. 선택하면 어떤 세션을 저장할지 선택하는 메뉴가 나옵니다. 선택한 세션의 정보를 현재 내용으로 업데이트합니다. 새로운 세션 저장은 다음 항목을 참고하세요."
+"context menu where you can select an existing session to save to. It will be "
+"overwritten with your current session. See the next item on how to save to a "
+"new session."
+msgstr ""
+"<action>현재 세션을 바로 저장합니다</action>. 선택하면 어떤 세션을 저장할지 "
+"선택하는 메뉴가 나옵니다. 선택한 세션의 정보를 현재 내용으로 업데이트합니다. "
+"새로운 세션 저장은 다음 항목을 참고하세요."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:519
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> "
-"<keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> "
-"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut> <guimenu>창관리</guimenu> <guimenuitem>새로운 세션으로 저장</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
+"as new session</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>창관리</guimenu> <guimenuitem>새로운 "
+"세션으로 저장</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:531
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
-msgstr "<action>현재 세션을 새 이름으로 저장합니다</action>. 세션 정보를 저장할 새로운 이름을 받습니다."
+msgstr ""
+"<action>현재 세션을 새 이름으로 저장합니다</action>. 세션 정보를 저장할 새로"
+"운 이름을 받습니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:539
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load "
-"session</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>세션 변경</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>세션 변경</guimenuitem> "
+"</menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:547
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
-msgstr "<action>다른 세션을 로드합니다</action>. 어떤 세션을 로드할지 선택하는 메뉴가 나옵니다."
+msgstr ""
+"<action>다른 세션을 로드합니다</action>. 어떤 세션을 로드할지 선택하는 메뉴"
+"가 나옵니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:555
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete "
-"session</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>세션 삭제</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>세션 삭제</guimenuitem> "
+"</menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:563
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
-msgstr "<action>세션을 삭제합니다</action>. 어떤 세션을 삭제할지 선택하는 메뉴가 나옵니다."
+msgstr ""
+"<action>세션을 삭제합니다</action>. 어떤 세션을 삭제할지 선택하는 메뉴가 나옵"
+"니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:573
 msgid "<guimenu>Settings</guimenu>"
 msgstr "<guimenu>설정</guimenu>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:581
 msgid ""
-"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:578
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Settings</guimenu> <guimenuitem>Configure "
-"&bibletime;</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>설정</guimenu> <guimenuitem>바이블타임 설정</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>설정"
+"</guimenu> <guimenuitem>바이블타임 설정</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:590
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
 "needs.  Please see the <link linkend=\"hdbk-config-bt\">Configuring "
 "&bibletime; section</link> for details."
-msgstr "<action>바이블타임 설정 대화창을 엽니다</action>. 필요에 따라 바이블타임에 적용할 수 있는 다양한 설정을 할 수 있습니다. 자세한 내용은 <link linkend=\"hdbk-config-bt\">바이블타임 설정 섹션</link>을 참고하세요."
+msgstr ""
+"<action>바이블타임 설정 대화창을 엽니다</action>. 필요에 따라 바이블타임에 적"
+"용할 수 있는 다양한 설정을 할 수 있습니다. 자세한 내용은 <link linkend="
+"\"hdbk-config-bt\">바이블타임 설정 섹션</link>을 참고하세요."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:610
 msgid ""
-"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:602
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> "
-"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>설정</guimenu> <guimenuitem>책꽂이 관리자</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>설정</guimenu> <guimenuitem>책꽂이 관리자</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:619
 msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
 "bookshelfmanager\">Bookshelf Manager section</link> for details."
-msgstr "<action>&sword; 환경을 변경할 수 있고 책꽂이를 관리할 수 있는 대화창을 엽니다</action>. 자세한 내용은 <link linkend=\"hdbk-op-bookshelfmanager\">책꽂이 관리자 섹션</link>을 참고하세요."
+msgstr ""
+"<action>&sword; 환경을 변경할 수 있고 책꽂이를 관리할 수 있는 대화창을 엽니다"
+"</action>. 자세한 내용은 <link linkend=\"hdbk-op-bookshelfmanager\">책꽂이 관"
+"리자 섹션</link>을 참고하세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:630
 msgid "<guimenu>Help</guimenu>"
 msgstr "<guimenu>도움말</guimenu>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:643
 #: docs/handbook/en/docbook/hdbk-reference.docbook:667
 msgid ""
-"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:635
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> "
-"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>도움말</guimenu> <guimenuitem>핸드북</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>도움말</guimenu> <guimenuitem>핸드북</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:652
-msgid ""
-"<action>Opens &bibletime;'s user guide</action> You are reading it now."
-msgstr "<action>바이블타임 사용 설명서를 엽니다</action> 지금 읽고 계신 자료입니다."
+msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
+msgstr ""
+"<action>바이블타임 사용 설명서를 엽니다</action> 지금 읽고 계신 자료입니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:659
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> "
-"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>도움말</guimenu> <guimenuitem>성경 공부 요령</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>도움말</guimenu> <guimenuitem>성경 공부 요령</guimenuitem> </"
+"menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:676
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
-"scriptures to see what they say. This particular study guide has been chosen"
-" as it takes care not to advocate any particular denominational doctrine. We"
-" expect you to read and study the scriptures to understand what they say. If"
-" you start with the attitude that you want to have the Lord sow his word in "
+"scriptures to see what they say. This particular study guide has been chosen "
+"as it takes care not to advocate any particular denominational doctrine. We "
+"expect you to read and study the scriptures to understand what they say. If "
+"you start with the attitude that you want to have the Lord sow his word in "
 "your heart He will not disappoint you."
-msgstr "<action>성경 공부 요령을 엽니다</action> 이 자료가 독자로 하여금 성경이 무엇을 말하고 있는지 연구하도록 유도하는 것이 저희 바이블타임 팀의 소망입니다. 이 특별한 학습 가이드는 특정 교단의 교리를 옹호하지 않도록 주의를 기울여 선택되었습니다. 저희는 여러분이 성경이 말하는 바를 이해하기 위하여 성경을 읽고 연구하기를 바랍니다. 만약 여러분이 하나님께서 여러분의 마음에 그의 말씀의 씨를 뿌리시기를 원하는 태도로 시작한다면 그는 여러분을 실망시키지 않으실 것입니다."
+msgstr ""
+"<action>성경 공부 요령을 엽니다</action> 이 자료가 독자로 하여금 성경이 무엇"
+"을 말하고 있는지 연구하도록 유도하는 것이 저희 바이블타임 팀의 소망입니다. "
+"이 특별한 학습 가이드는 특정 교단의 교리를 옹호하지 않도록 주의를 기울여 선택"
+"되었습니다. 저희는 여러분이 성경이 말하는 바를 이해하기 위하여 성경을 읽고 연"
+"구하기를 바랍니다. 만약 여러분이 하나님께서 여러분의 마음에 그의 말씀의 씨를 "
+"뿌리시기를 원하는 태도로 시작한다면 그는 여러분을 실망시키지 않으실 것입니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:698
 msgid ""
-"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:690
 msgid ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> "
-"</keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/>도움말</guimenu> <guimenuitem>오늘의 팁</guimenuitem> </menuchoice>"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>도움말</guimenu> <guimenuitem>오늘의 팁</guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:706
 msgid ""
 "<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
 "tip that will assist in the use of &bibletime;."
-msgstr "<action>도움이 될 만한 팁을 엽니다</action> 오늘의 팁은 바이블타임을 사용하는 과정에 있어 유용한 팁을 제공합니다."
+msgstr ""
+"<action>도움이 될 만한 팁을 엽니다</action> 오늘의 팁은 바이블타임을 사용하"
+"는 과정에 있어 유용한 팁을 제공합니다."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:714
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> "
-"</menuchoice>"
-msgstr "<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>바이블타임에 대하여</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>바이블타임에 대하여</"
+"guimenuitem> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:721
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
 "contains information about &bibletime; software version, project "
 "contributors, &sword; software version, &qt; software version and the "
 "license agreement."
-msgstr "<action>바이블타임 프로젝트에 대한 정보를 보여주는 창을 엽니다</action> 이 정보에는 바이블타임 소프트웨어 버전, 프로젝트 기여자, &sword; 소프트웨어 버전, &qt; 소프트웨어 버전, 라이선스 동의 등이 포함됩니다."
+msgstr ""
+"<action>바이블타임 프로젝트에 대한 정보를 보여주는 창을 엽니다</action> 이 정"
+"보에는 바이블타임 소프트웨어 버전, 프로젝트 기여자, &sword; 소프트웨어 버전, "
+"&qt; 소프트웨어 버전, 라이선스 동의 등이 포함됩니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:733
@@ -1942,16 +2243,16 @@ msgid ""
 "works."
 msgstr "이 섹션에서는 책 연관 아이콘들에 대한 설명을 볼 수 있습니다."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:747
 msgid ""
-"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\""
-" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:744
 #: docs/handbook/en/docbook/hdbk-reference.docbook:767
 #: docs/handbook/en/docbook/hdbk-reference.docbook:790
@@ -1965,158 +2266,158 @@ msgstr "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"
 #: docs/handbook/en/docbook/hdbk-reference.docbook:974
 #: docs/handbook/en/docbook/hdbk-reference.docbook:997
 msgid ""
-"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" "
-"id=\"0\"/></guimenu> </menuchoice>"
-msgstr "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></guimenu> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
+"guimenu> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
+"guimenu> </menuchoice>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:756
 msgid "Scrolls forward through history."
 msgstr "기록에서 앞으로 이동."
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:770
 msgid ""
 "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:779
 msgid "Scrolls back through history."
 msgstr "기록에서 뒤로 이동"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:793
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:802
 msgid "Select an installed bible."
 msgstr "설치된 성경 선택"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:816
 msgid ""
-"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:825
 msgid "Select an additional bible."
 msgstr "추가 성경 선택"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:848
 msgid "Search in selected works."
 msgstr "선택한 책에서 찾기"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:862
 msgid ""
-"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:871
 msgid "Display configuration."
 msgstr "화면 설정"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:885
 msgid ""
-"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:894
 msgid "Select an installed commentary."
 msgstr "설치된 주석 선택"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:908
 msgid ""
-"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:917
 msgid "Select additional commentary."
 msgstr "추가 주석 선택"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:931
 msgid ""
 "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:940
 msgid "Synchronize displayed entry with active Bible window."
 msgstr "현재 표시된 항목과 성경 읽기창을 동기화"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:954
 msgid ""
 "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:963
 msgid "Select a book."
 msgstr "책 선택"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:977
 msgid ""
-"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\""
-" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:986
 msgid "Select an installed glossary or devotional."
 msgstr "설치된 사전이나 매일 성경 읽기 선택"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1000
 msgid ""
-"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1009
 msgid "Select an additional glossary or devotional."
 msgstr "설치된 사전이나 매일 성경 읽기 선택"
@@ -2129,478 +2430,474 @@ msgstr "단축키 색인"
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1021
 msgid ""
-"This is an index of all shortcuts and their corresponding description in the"
-" handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
+"This is an index of all shortcuts and their corresponding description in the "
+"handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
 "directly find out which shortcuts a certain menu item has, you can either "
 "look at the entry itself in &bibletime; (as it always shows the shortcut), "
 "or you can look it in the <link linkend=\"hdbk-reference-menus\">Main Menu "
 "reference</link>."
-msgstr "모든 단축키와 그에 대한 설명입니다. 단축키들은 알파벳 순으로 정렬되어 있습니다. 어떤 메뉴 항목에 단축키가 있는지 확인하고 싶다면 바이블타임에 표시되어 있는 것을 보거나 <link linkend=\"hdbk-reference-menus\">메인 메뉴 레퍼런스</link>를 살펴보면 됩니다."
+msgstr ""
+"모든 단축키와 그에 대한 설명입니다. 단축키들은 알파벳 순으로 정렬되어 있습니"
+"다. 어떤 메뉴 항목에 단축키가 있는지 확인하고 싶다면 바이블타임에 표시되어 있"
+"는 것을 보거나 <link linkend=\"hdbk-reference-menus\">메인 메뉴 레퍼런스</"
+"link>를 살펴보면 됩니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1036
 msgid "Shortcut"
 msgstr "단축키"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1037
 msgid "Description"
 msgstr "설명"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1043
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1046
 msgid "Moves back in the history of read windows."
 msgstr "읽기창에서 기록에서 뒤로 이동"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1050
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1053
 msgid "Moves forward in the history of read windows."
 msgstr "읽기창에서 기록에서 앞으로 이동"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1058
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1062
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem>"
-" </menuchoice> </link> equivalent; opens the search dialog to search in the "
+"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
+"</menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
-msgstr "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> <guimenu>찾기</guimenu> <guimenuitem>책꽂이에서 찾기</guimenuitem> </menuchoice> </link>와 동일; 기본 성경에서 찾는 검색 대화창을 엽니다."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>찾기</guimenu> <guimenuitem>책꽂이에서 찾기</guimenuitem> </"
+"menuchoice> </link>와 동일; 기본 성경에서 찾는 검색 대화창을 엽니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1073
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1078
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> "
-"</menuchoice> equivalent; toggle automatic window tiling."
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> <guimenuitem>자동 수직 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합니다."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> "
+"<guimenuitem>자동 수직 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열"
+"을 토글합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1088
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1092
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> "
-"</menuchoice> equivalent; toggle automatic window tiling."
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> <guimenuitem>자동 수평 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합니다."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> "
+"<guimenuitem>자동 수평 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열"
+"을 토글합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1102
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1107
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> "
-"equivalent; toggle automatic window tiling."
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> <guimenuitem>자동 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합니다."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
+"toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> "
+"<guimenuitem>자동 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토"
+"글합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1117
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1121
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window cascading."
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> <guimenuitem>자동 계단식 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합니다."
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> "
+"<guimenuitem>자동 계단식 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배"
+"열을 토글합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1131
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1136
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
 "equivalent; toggle manual window placement."
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> <guimenuitem>수동 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합니다."
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> "
+"<guimenuitem>수동 배열</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토"
+"글합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1146
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1150
 msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement "
-"mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> "
-"equivalent; organizes windows with tabs across the top."
-msgstr "<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> <guimenuitem>탭형식</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합니다."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
+"organizes windows with tabs across the top."
+msgstr ""
+"<menuchoice> <guimenu>창관리</guimenu> <guimenuitem>배열모드</guimenuitem> "
+"<guimenuitem>탭형식</guimenuitem> </menuchoice>과 동일; 자동 창 배열을 토글합"
+"니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1160
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1164
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> "
-"</menuchoice> </link> equivalent; saves current layout as new session."
-msgstr "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>새로운 세션으로 저장</guimenuitem> </menuchoice> </link>과 동일; 현재 레이아웃을 새로운 세션으로 저장합니다."
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
+"menuchoice> </link> equivalent; saves current layout as new session."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>창관리</guimenu> <guimenuitem>새로운 세션으로 저장</guimenuitem> </"
+"menuchoice> </link>과 동일; 현재 레이아웃을 새로운 세션으로 저장합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1174
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1178
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice>"
-" </link> equivalent; closes all open windows."
-msgstr "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>모든 창 닫기</guimenuitem> </menuchoice> </link>와 동일; 열린 모든창을 닫습니다."
+"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
+"</link> equivalent; closes all open windows."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>창관리</guimenu> <guimenuitem>모든 창 닫기</guimenuitem> </"
+"menuchoice> </link>와 동일; 열린 모든창을 닫습니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1187
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1190
 msgid "Select all. This selects all text in read windows."
 msgstr "전체 선택. 읽기 창의 모든 텍스트를 선택합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1195
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1198
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "복사. 선택한 텍스트를 클립보드로 복사합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1204
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1207
 msgid "Search. This lets you search within the text of a read window."
 msgstr "찾기. 읽기창에 있는 텍스트에서 검색합니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1213
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1218
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> "
-"</menuchoice> </link> equivalent."
-msgstr "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>수직 배열</guimenuitem> </menuchoice> </link>과 동일."
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>창관리</guimenu> <guimenuitem>수직 배열</guimenuitem> </menuchoice> "
+"</link>과 동일."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1229
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1234
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice>"
-" <guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> "
-"</menuchoice> </link> equivalent."
-msgstr "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>수평 배열</guimenuitem> </menuchoice> </link>과 동일."
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>창관리</guimenu> <guimenuitem>수평 배열</guimenuitem> </menuchoice> "
+"</link>과 동일."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1245
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1250
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> "
-"</link> windows equivalent."
-msgstr "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>타일</guimenuitem> </menuchoice> </link>과 동일."
+"<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
+"link> windows equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> <guimenu>창"
+"관리</guimenu> <guimenuitem>타일</guimenuitem> </menuchoice> </link>과 동일."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1261
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1266
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> "
-"</link> windows equivalent."
-msgstr "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> <guimenu>창관리</guimenu> <guimenuitem>계단식 배열</guimenuitem> </menuchoice> </link>과 동일."
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
+"link> windows equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> <guimenu>"
+"창관리</guimenu> <guimenuitem>계단식 배열</guimenuitem> </menuchoice> </link>"
+"과 동일."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1277
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1280
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
 msgstr "위치 변경. 키보드 포커스를 선택한 책의 툴바로 옮깁니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1286
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1289
 msgid "Search with works of this window."
 msgstr "이 책에서 찾기"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1294
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1298
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
 "</menuchoice> </link> equivalent; opens the search dialog to search in all "
 "currently opened works."
-msgstr "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> <guimenu>찾기</guimenu> <guimenuitem>열린 책에서 찾기</guimenuitem> </menuchoice> </link>와 동일; 현재 열린 책들에 대한 검색 대화창을 엽니다."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>찾기</guimenu> <guimenuitem>열린 책에서 찾기</guimenuitem> </"
+"menuchoice> </link>와 동일; 현재 열린 책들에 대한 검색 대화창을 엽니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1309
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1313
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
-"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> "
-"</link> equivalent; closes &bibletime;."
-msgstr "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> <guimenu>파일</guimenu> <guimenuitem>나가기</guimenuitem> </menuchoice> </link>와 동일; 바이블타임을 닫습니다."
+"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+"link> equivalent; closes &bibletime;."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> <guimenu>파일"
+"</guimenu> <guimenuitem>나가기</guimenuitem> </menuchoice> </link>와 동일; 바"
+"이블타임을 닫습니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1322
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1325
 msgid "Closes the current window."
 msgstr "현재 창을 닫습니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1330
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1335
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-"</menuchoice> equivalent; opens the handbook."
-msgstr "<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>핸드북</guimenuitem> </menuchoice>과 동일; 핸드북을 엽니다."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
+"menuchoice> equivalent; opens the handbook."
+msgstr ""
+"<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>핸드북</guimenuitem> </"
+"menuchoice>과 동일; 핸드북을 엽니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1343
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1348
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy "
-"HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
-msgstr "<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>성경공부요령</guimenuitem> </menuchoice>과 동일; 성경 공부 요령을 엽니다."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
+msgstr ""
+"<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>성경공부요령</"
+"guimenuitem> </menuchoice>과 동일; 성경 공부 요령을 엽니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1357
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1362
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the "
-"Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
-msgstr "<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>오늘의 팁</guimenuitem> </menuchoice> 바이블타임 사용에 유용한 팁을 엽니다."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
+"guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
+msgstr ""
+"<menuchoice> <guimenu>도움말</guimenu> <guimenuitem>오늘의 팁</guimenuitem> "
+"</menuchoice> 바이블타임 사용에 유용한 팁을 엽니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1370
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1375
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
-"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf "
-"Manager</guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf "
-"Manager."
-msgstr "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> <menuchoice> <guimenu>설정</guimenu> <guimenuitem>책꽂이 관리자</guimenuitem> </menuchoice> </link>와 동일; 책꽂이 관리자를 엽니다."
+"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
+"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>설정</guimenu> <guimenuitem>책꽂이 관리자</"
+"guimenuitem> </menuchoice> </link>와 동일; 책꽂이 관리자를 엽니다."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1385
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1390
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> "
-"</menuchoice> </link> equivalent; toggles display of the Bookshelf."
-msgstr "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>책꽂이 보기</guimenuitem> </menuchoice> </link>와 동일; 책꽂이 보이기/숨기기."
+"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
+"menuchoice> </link> equivalent; toggles display of the Bookshelf."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>보기</guimenu> <guimenuitem>책꽂이 보기</guimenuitem> </menuchoice> "
+"</link>와 동일; 책꽂이 보이기/숨기기."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1400
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1405
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> "
-"</link> equivalent; toggles display of the mag(nifying glass)."
-msgstr "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> <guimenu>보기</guimenu> <guimenuitem>돋보기창 보기</guimenuitem> </menuchoice> </link>와 동일; 돋보기창 보이기/숨기기."
+"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
+"link> equivalent; toggles display of the mag(nifying glass)."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> <guimenu>보"
+"기</guimenu> <guimenuitem>돋보기창 보기</guimenuitem> </menuchoice> </link>"
+"와 동일; 돋보기창 보이기/숨기기."
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1416
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
 msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll "
-"down</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
+"guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
 msgstr ""
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
 msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll "
-"up</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
+"guimenuitem> </menuchoice>"
 msgstr ""
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
 msgstr ""
 
-#. type: Content of:
-#. <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
 msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll "
-"pause</guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
+"guimenuitem> </menuchoice>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -2617,12 +2914,13 @@ msgstr "바이블타임을 시작하는 방법"
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject>
 #: docs/handbook/en/docbook/hdbk-start.docbook:13
 msgid ""
-"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" "
-"depth=\"32\" format=\"PNG\" /> </imageobject>"
-msgstr "<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth=\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-#. type: Content of:
-#. <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
+#. type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-start.docbook:17
 msgid "&bibletime; start icon"
 msgstr "바이블타임 시작 아이콘"
@@ -2631,9 +2929,12 @@ msgstr "바이블타임 시작 아이콘"
 #: docs/handbook/en/docbook/hdbk-start.docbook:9
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
-"can launch &bibletime; from the Start Menu with this icon: <placeholder "
-"type=\"mediaobject\" id=\"0\"/>"
-msgstr "바이블타임은 데스크탑에 통합된 실행 파일 입니다. 아래의 아이콘으로 시작 메뉴에서 바이블타임을 실행시킬 수 있습니다: <placeholder type=\"mediaobject\" id=\"0\"/>"
+"can launch &bibletime; from the Start Menu with this icon: <placeholder type="
+"\"mediaobject\" id=\"0\"/>"
+msgstr ""
+"바이블타임은 데스크탑에 통합된 실행 파일 입니다. 아래의 아이콘으로 시작 메뉴"
+"에서 바이블타임을 실행시킬 수 있습니다: <placeholder type=\"mediaobject\" id="
+"\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
@@ -2647,7 +2948,10 @@ msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type: <placeholder type=\"screen\" "
 "id=\"0\"/>"
-msgstr "바이블타임은 콘솔 명령으로도 실행시킬 수 있습니다. 바이블타임을 실행 시키려면 콘솔창에서 아래의 명령을 입력합니다: <placeholder type=\"screen\" id=\"0\"/>"
+msgstr ""
+"바이블타임은 콘솔 명령으로도 실행시킬 수 있습니다. 바이블타임을 실행 시키려"
+"면 콘솔창에서 아래의 명령을 입력합니다: <placeholder type=\"screen\" id="
+"\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:28
@@ -2671,9 +2975,13 @@ msgstr "bibletime --open-default-bible \"John 3:16\""
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible: <placeholder type=\"screen\" id=\"0\"/> To open at a given "
-"passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can"
-" also use booknames in your current bookname language."
-msgstr "콘솔에서도 바이블타임을 사용할 수도 있습니다; 기본 성경에서 임의의 구절을 열려면: <placeholder type=\"screen\" id=\"0\"/> 요한복음 3:16 처럼 지정한 구절을 열려면: <placeholder type=\"screen\" id=\"1\"/> 현재 언어로 된 성경 이름을 사용할 수도 있습니다."
+"passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
+"also use booknames in your current bookname language."
+msgstr ""
+"콘솔에서도 바이블타임을 사용할 수도 있습니다; 기본 성경에서 임의의 구절을 열"
+"려면: <placeholder type=\"screen\" id=\"0\"/> 요한복음 3:16 처럼 지정한 구절"
+"을 열려면: <placeholder type=\"screen\" id=\"1\"/> 현재 언어로 된 성경 이름"
+"을 사용할 수도 있습니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
@@ -2686,22 +2994,23 @@ msgid ""
 "If you are starting &bibletime; for the first time, you will want to "
 "configure the following options, available under the <link linkend=\"hdbk-"
 "reference-menus-settings\">Settings menu bar</link>."
-msgstr "바이블타임을 처음 시작하고 있다면 <link linkend=\"hdbk-reference-menus-settings\">설정 메뉴 바</link>에 있는 옵션을 설정해야 할 것입니다."
+msgstr ""
+"바이블타임을 처음 시작하고 있다면 <link linkend=\"hdbk-reference-menus-"
+"settings\">설정 메뉴 바</link>에 있는 옵션을 설정해야 할 것입니다."
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:49
 msgid "<interface>Bookshelf Manager</interface>"
 msgstr "<interface>책꽂이 관리자</interface>"
 
-#. type: Content of:
-#. <chapter><sect1><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:52
 msgid ""
 "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
 "no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">The Bookshelf Manager section</link> for further details."
-" If you start off with an empty Bookshelf, it will be helpful to install at "
+"bookshelfmanager\">The Bookshelf Manager section</link> for further details. "
+"If you start off with an empty Bookshelf, it will be helpful to install at "
 "least one Bible, Commentary, Lexicon and one Book to get to know "
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
@@ -2712,14 +3021,16 @@ msgstr ""
 msgid "<interface>Configure &bibletime; dialog</interface>"
 msgstr "<interface>바이블타임 설정 대화창</interface>"
 
-#. type: Content of:
-#. <chapter><sect1><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:70
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
 "detailed description</link> of this dialog."
-msgstr "<action>바이블타임을 설정합니다.</action> 이 대화창을 통해서 여러분의 필요를 바이블타임에 반영할 수 있습니다. 대화창의 <link linkend=\"hdbk-config-bt\">상세 설명</link>을 확인해 보세요."
+msgstr ""
+"<action>바이블타임을 설정합니다.</action> 이 대화창을 통해서 여러분의 필요를 "
+"바이블타임에 반영할 수 있습니다. 대화창의 <link linkend=\"hdbk-config-bt\">상"
+"세 설명</link>을 확인해 보세요."
 
 #. type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:5
@@ -2821,12 +3132,12 @@ msgstr ""
 msgid "Holmlund"
 msgstr ""
 
-#.  TRANS:ROLES_OF_TRANSLATORS
+#.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:49
 msgid ""
-"<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> "
-"</copyright>"
+"<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
+"copyright>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -2837,12 +3148,12 @@ msgstr "바이블타임 핸드북은 바이블타임 성경 공부 프로그램�
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
-msgid "<date>November 2019</date>"
+msgid "<date>December 2019</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
-msgid "2.11.2+"
+msgid "3.0.0+"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>

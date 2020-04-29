@@ -61,7 +61,7 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
           <phrase>Boîte de dialogue Options - polices</phrase>
         </textobject>
         <caption>
-          <para>Le dialogue Options - polices</para>
+          <para>La boîte de dialogue Options - Polices.</para>
         </caption>
       </mediaobject>
       <para>&bibletime; peut maintenant utiliser toutes les polices supportées. Tant que
@@ -85,7 +85,7 @@ url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> tutoriel sur
 l'unicode</ulink>.</para>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
-        <para>Fonts can be installed from a number of sources:</para>
+        <para>Les polices peuvent être installées à partir de nombreuses sources :</para>
         <itemizedlist>
           <listitem>
             <para>Votre distribution *nix.</para>
