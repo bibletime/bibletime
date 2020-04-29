@@ -17,6 +17,7 @@
 /CMakeLists.txt.user
 /CMakeLists.txt.user.*
 /CMakeFiles
+/config.cmake
 /dirlist
 /.kdev4
 /log
