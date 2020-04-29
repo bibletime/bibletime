@@ -8,23 +8,27 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/docs/license.html"
 ######################################################
 # Scan for handbook and howto translations:
 #
-FUNCTION(GetDocLangs parentDir out)
+FUNCTION(GetDocLangs type out)
     SET(outList tmp)
     LIST(REMOVE_ITEM outList tmp)
     SET(l "[abcdefghijklmnopqrstuvwxyz]")
     SET(u "[ABCDEFGHIJKLMNOPQRSTUVWXYZ]")
     SET(regex "^${l}${l}(_${u}${u}${u}?)?$")
-    FILE(GLOB files "${parentDir}/*")
+    FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/i18n/${type}/${type}-*.po")
     FOREACH(file IN LISTS files)
-        STRING(REGEX REPLACE "^.*/" "" basename "${file}")
-        IF(("${basename}" MATCHES "${regex}") AND (IS_DIRECTORY "${file}"))
+        GET_FILENAME_COMPONENT(basename "${file}" NAME_WE)
+        STRING(REGEX REPLACE "^${type}-" "" basename "${basename}")
+        IF(("${basename}" MATCHES "${regex}")
+            AND NOT (IS_DIRECTORY "${file}"))
             LIST(APPEND outList "${basename}")
         ENDIF()
     ENDFOREACH()
     SET("${out}" "${outList}" PARENT_SCOPE)
+    STRING(REPLACE ";" ", " outList "${outList}")
+    MESSAGE(STATUS "Found ${type} translations: ${outList}")
 ENDFUNCTION()
-GetDocLangs("${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook" HANDBOOK_LOCALE_LANGS)
-GetDocLangs("${CMAKE_CURRENT_SOURCE_DIR}/docs/howto" HOWTO_LOCALE_LANGS)
+GetDocLangs("handbook" HANDBOOK_LOCALE_LANGS)
+GetDocLangs("howto" HOWTO_LOCALE_LANGS)
 
 
 ######################################################
