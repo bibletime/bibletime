@@ -1,4 +1,4 @@
-name: BibleTime default builder for GitHub Workflows
+name: GitHub Workflow
 
 on:
   push:
@@ -41,3 +41,13 @@ jobs:
     - name: Install
       run: make "-j$(cat "${HOME}/info/num_threads")" install
       working-directory: build
+    - uses: actions/upload-artifact@v2
+      if: success()
+      with:
+        name: handbooks
+        path: '~/local/share/doc/bibletime/handbook/'
+    - uses: actions/upload-artifact@v2
+      if: success()
+      with:
+        name: howtos
+        path: '~/local/share/doc/bibletime/howto/'
