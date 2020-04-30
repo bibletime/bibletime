@@ -16,7 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install required packages
-      run: sudo apt-get install --no-install-recommends libsword-dev cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl
+      run: |
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends libsword-dev cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl
     - name: Configure the build
       run: |
         cmake -E make_directory ${HOME}/local build
