@@ -21,7 +21,7 @@ jobs:
       run: |
         cmake -E make_directory ${HOME}/local build
         cd build
-        cmake -DCMAKE_INSTALL_PREFIX=${HOME}/local/" ..
+        cmake "-DCMAKE_INSTALL_PREFIX=${HOME}/local/" ..
     - name: Compile
       run: cmake --build .
       working-directory: build
