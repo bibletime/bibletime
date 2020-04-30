@@ -110,20 +110,10 @@ IF(Sword_FOUND)
 ENDIF()
 
 INCLUDE(FindPackageHandleStandardArgs)
-IF(CMAKE_VERSION VERSION_LESS 2.8.11)
-  FIND_PACKAGE_HANDLE_STANDARD_ARGS(Sword
-                                    REQUIRED_VARS FindSword_Sword_FOUND
-                                    VERSION_VAR Sword_VERSION)
-  IF(SWORD_FOUND)
-    SET(Sword_FOUND TRUE)
-  ENDIF()
-  UNSET(SWORD_FOUND)
-ELSE()
-  FIND_PACKAGE_HANDLE_STANDARD_ARGS(Sword
-                                    FOUND_VAR Sword_FOUND
-                                    REQUIRED_VARS FindSword_Sword_FOUND
-                                    VERSION_VAR Sword_VERSION)
-ENDIF()
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(Sword
+                                  FOUND_VAR Sword_FOUND
+                                  REQUIRED_VARS FindSword_Sword_FOUND
+                                  VERSION_VAR Sword_VERSION)
 UNSET(FindSword_Sword_FOUND)
 
 IF(Sword_FOUND AND NOT Sword_FIND_QUIETLY)
