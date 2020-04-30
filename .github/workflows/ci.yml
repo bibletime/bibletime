@@ -12,28 +12,32 @@ on:
 
 defaults:
   run:
-    env:
-      NUM_THREADS: 2
+    shell: bash
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Gather system information
+      run: |
+        mkdir -p "${HOME}/info"
+        cd "${HOME}/info"
+        echo 2 > num_threads
     - name: Install required packages
       run: |
         sudo apt-get update
         sudo apt-get install --no-install-recommends cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl
     - name: Install Sword
-      run: ./tests/scripts/install-sword.sh "${HOME}/local" "$NUM_THREADS"
+      run: ./tests/scripts/install-sword.sh "${HOME}/local" "$(cat "${HOME}/info/num_threads)"
     - name: Configure the build
       run: |
-        cmake -E make_directory "${HOME}/local" build
+        mkdir -p "${HOME}/local" build
         cd build
         cmake "-DCMAKE_PREFIX_PATH=${HOME}/local/" "-DCMAKE_INSTALL_PREFIX=${HOME}/local/" ..
     - name: Compile
-      run: make "-j$NUM_THREADS"
+      run: make "-j$(cat "${HOME}/info/num_threads)"
       working-directory: build
     - name: Install
-      run: make "-j$NUM_THREADS" install
+      run: make "-j$(cat "${HOME}/info/num_threads)" install
       working-directory: build
