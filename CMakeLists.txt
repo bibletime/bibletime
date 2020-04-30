@@ -5,6 +5,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 ######################################################
 # Set CMake policies:
 #
+MESSAGE(STATUS "Using CMake ${CMAKE_VERSION}: ${CMAKE_COMMAND}")
 IF(MSVC) # Automatically link Qt executables to qtmain target on Windows
     CMAKE_POLICY(SET CMP0020 NEW)
 ENDIF()
