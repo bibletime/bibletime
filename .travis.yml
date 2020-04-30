@@ -52,6 +52,12 @@ addons:
       - qt512webengine
       - qt512xmlpatterns
       - qt512tools
+      # Documentation:
+      - fop
+      - po4a
+      - xsltproc
+      - docbook-xml
+      - docbook-xsl
   coverity_scan:
     project:
       name: "bibletime/bibletime"

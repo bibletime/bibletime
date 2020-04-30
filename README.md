@@ -19,15 +19,37 @@ The following requirements are needed only if you want to develop BibleTime.
 
 ### DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
  - po4a
- - xsltproc, docbook-xml, docbook-xsl
+ - xsltproc
+ - docbook-xsl
+ - docbook-xml
+ - fop (for PDF generation)
 
-These packages are used by BT committers to prepare
-the documentation for the Handbook, Howto and the
-website.  This tool set can be used by translators to
-generate, test and validate their work.
-There is no need to rely on these packages to bundle
-BibleTime for distribution as the compiled documentation
-is in the source tree ready for installation.
+These packages are only used by the build system when document generation and
+installation is enabled. By default, all translations of the handbook and howto
+documents are generated and installed. This can be changed using the following
+options to CMake:
+
+ * GENERATE_HANDBOOK_HTML - whether to generate and install the HTML handbook
+ * GENERATE_HANDBOOK_HTML_LANGUAGES
+       - list of language codes to use for HTML handbook, or empty for all
+         languages
+ * GENERATE_HANDBOOK_PDF - whether to generate and install the PDF handbook
+ * GENERATE_HANDBOOK_PDF_LANGUAGES
+       - list of language codes to use for PDF handbook, or empty for all
+         languages
+ * GENERATE_HOWTO_HTML - whether to generate and install the HTML howto
+ * GENERATE_HOWTO_HTML_LANGUAGES
+       - list of language codes to use for HTML howto, or empty for all
+         languages
+ * GENERATE_HOWTO_PDF - whether to generate and install the PDF howto
+ * GENERATE_HOWTO_PDF_LANGUAGES
+       - list of language codes to use for PDF howto, or empty for all languages
+
+For example, passing `-DGENERATE-HOWTO_HTML_LANGUAGES=en;et` to the cmake
+command to restricts generation and installation of howto HTML versions to the
+English and Estonian translations only, and `-DGENERATE_HOWTO_PDF=OFF` disables
+generation of the howto in PDF format.
+
 
 ### PROCEDURE
 
