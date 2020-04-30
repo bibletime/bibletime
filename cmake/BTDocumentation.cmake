@@ -314,7 +314,7 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
                 SET(d "${DOCS_BINARY_DIR}/${doc}/${l}")
                 FOREACH(image IN LISTS images)
                     IF(CMAKE_VERSION VERSION_LESS 3.14)
-                        FILE(COPY "${image}" "${d}/pdf/")
+                        FILE(COPY "${image}" DESTINATION "${d}/pdf/")
                     ELSE()
                         GET_FILENAME_COMPONENT(imageName "${image}" NAME)
                         FILE(CREATE_LINK "${image}" "${d}/pdf/${imageName}"
