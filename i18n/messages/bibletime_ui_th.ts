@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="th">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="th" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -22,477 +20,477 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="762"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="761"/>
         <source>&amp;File</source>
         <translation>&amp;ไฟล์</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="763"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="762"/>
         <source>&amp;View</source>
         <translation>&amp;สำรวจ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="767"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="766"/>
         <source>&amp;Search</source>
         <translation>&amp;ค้นหา</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="768"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="767"/>
         <source>&amp;Window</source>
         <translation>&amp;หน้าต่าง</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
         <source>Sw&amp;itch session</source>
         <translation>&amp;เปลี่ยนเซสชั่น</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="776"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="775"/>
         <source>Se&amp;ttings</source>
         <translation>&amp;การตั้งค่า</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="779"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="778"/>
         <source>&amp;Help</source>
         <translation>&amp;ช่วยเหลือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="144"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="143"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;แสดงแถบเครื่องมือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="137"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="136"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;เต็มหน้าจอ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="115"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="114"/>
         <source>&amp;Quit</source>
         <translation>&amp;ปิด</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="277"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="276"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="283"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="282"/>
         <source>Information about the BibleTime program</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="772"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
         <source>&amp;Delete session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="769"/>
         <source>&amp;Arrangement mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="170"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="169"/>
         <source>&amp;Manual mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="176"/>
         <source>Auto-tile &amp;vertically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="183"/>
         <source>Auto-tile &amp;horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="204"/>
         <source>Auto-&amp;cascade</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="211"/>
         <source>&amp;Cascade</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="225"/>
         <source>Tile &amp;vertically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="233"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="232"/>
         <source>Tile &amp;horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="247"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="246"/>
         <source>Cl&amp;ose all windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="250"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="249"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="259"/>
         <source>Bookshelf Manager...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="266"/>
         <source>&amp;Handbook</source>
         <translation>&amp;คู่มือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="274"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="273"/>
         <source>&amp;Bible Study Howto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="598"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="595"/>
         <source>Please enter a name for the new session.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="606"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="603"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="607"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="604"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="118"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="117"/>
         <source>Quit BibleTime</source>
         <translation>ปิด BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="122"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="121"/>
         <source>Auto scroll up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="127"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="126"/>
         <source>Auto scroll down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="132"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="131"/>
         <source>Auto scroll pause</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="140"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="139"/>
         <source>Toggle fullscreen mode of the main window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="149"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="148"/>
         <source>Search in &amp;open works...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="155"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="162"/>
         <source>Save as &amp;new session...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="165"/>
         <source>Create and save a new session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="173"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="172"/>
         <source>Manually arrange the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="180"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="179"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="186"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="190"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="193"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="197"/>
         <source>Ta&amp;bbed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="200"/>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="208"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="207"/>
         <source>Automatically cascade the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="215"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="214"/>
         <source>Cascade the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="218"/>
         <source>&amp;Tile</source>
         <translation>&amp;ปู</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="221"/>
         <source>Tile the open windows</source>
         <translation>ปูหน้าต่างที่เปิดอยู่</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="229"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="228"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="236"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="235"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="240"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="239"/>
         <source>Close &amp;window</source>
         <translation>ปิด &amp;หน้าต่าง</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="243"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="242"/>
         <source>Close the current open window</source>
         <translation>ปิดหน้าต่างที่เปิดอยู่ ณ ปัจจุบัน</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="253"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;ตั้งค่า BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="255"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>เลือกการตั้งค่า BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="263"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="262"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="270"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="269"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>เปิดคู่มือ BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="287"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="286"/>
         <source>&amp;Tip of the day...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="290"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="289"/>
         <source>Show tips about BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="438"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="437"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="443"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="442"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="448"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="447"/>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="756"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="755"/>
         <source>Main toolbar</source>
         <translation>แถบเครื่องมือหลัก</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="756"/>
         <source>Navigation toolbar</source>
         <translation>แถบเครื่องมือนำทาง</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="758"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="757"/>
         <source>Works toolbar</source>
         <translation>แถบเครื่องมือหนังสือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="759"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="758"/>
         <source>Tools toolbar</source>
         <translation>แถบเครื่องมือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="760"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="759"/>
         <source>Format toolbar</source>
         <translation>แถบเครื่องมือการฟอร์แมต</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="765"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="764"/>
         <source>Scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="796"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="795"/>
         <source>Show main toolbar</source>
         <translation>แสดงแถบเครื่องมือหลัก</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="797"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="796"/>
         <source>Show navigation bar</source>
         <translation>แสดงแถบเครื่องมือนำทาง</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="798"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="797"/>
         <source>Show works toolbar</source>
         <translation>แสดงแถบเครื่องมือหนังสือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="799"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="798"/>
         <source>Show tools toolbar</source>
         <translation>แสดงแถบเครื่องมือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="800"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="799"/>
         <source>Show formatting toolbar</source>
         <translation>แสดงแถบเครื่องมือการฟอร์แมต</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="801"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="800"/>
         <source>Show bookshelf</source>
         <translation>แสดงชั้นหนังสือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="802"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="801"/>
         <source>Show bookmarks</source>
         <translation>แสดงบุ๊กมาร์ก</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="803"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="802"/>
         <source>Show mag</source>
         <translation>แสดง mag</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="764"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="763"/>
         <source>Toolbars</source>
         <translation>แถบเครื่องมือ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="795"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="794"/>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="805"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="804"/>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="769"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="768"/>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="782"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="781"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="927"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="924"/>
         <source>Whats this widget?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="151"/>
         <source>Search in all works that are currently open</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="158"/>
         <source>Search in the standard Bible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="597"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="594"/>
         <source>New Session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="98"/>
         <source>Initializing the SWORD engine...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="106"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="198"/>
         <source>Unlock Work</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="199"/>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="227"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="228"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="281"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="280"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;เกี่ยวกับ BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="754"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="753"/>
         <source>Bookmarks</source>
         <translation>บุ๊กมาร์ก</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_init.cpp" line="755"/>
+        <location filename="../../src/frontend/bibletime_init.cpp" line="754"/>
         <source>Mag</source>
         <translation>Mag</translation>
     </message>
@@ -500,30 +498,29 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTimeApp</name>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="68"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="67"/>
         <source>Warning!</source>
         <translation>เตือนภัย!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="69"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="68"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="80"/>
+        <source>Error loading configuration!</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="81"/>
-        <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="82"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="105"/>
-        <location filename="../../src/frontend/bibletimeapp.cpp" line="115"/>
+        <location filename="../../src/frontend/bibletimeapp.cpp" line="104"/>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -531,22 +528,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="94"/>
         <source>Updating Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="96"/>
         <source>The selected works are being updated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="100"/>
         <source>Installing Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="102"/>
         <source>The selected works are being installed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="52"/>
@@ -556,103 +553,103 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="53"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="67"/>
         <source>Choose Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="69"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="85"/>
         <source>Updating Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="87"/>
         <source>Updating information from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="94"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
         <source>Install, update, or remove works on your bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="92"/>
         <source>Bookshelf task</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="95"/>
         <source>Install additional works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
         <source>Update installed works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="102"/>
         <source>Remove installed works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
         <source>Install Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="180"/>
         <source>Choose one or more works to install.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
         <source>Update Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="186"/>
         <source>Choose one or more works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="192"/>
         <source>Remove Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="193"/>
         <source>Choose one or more works to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="96"/>
         <source>Canceling Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="99"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -660,17 +657,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
         <source>The complete legally binding license is below.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="117"/>
@@ -683,8 +680,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(มีลิขสิทธิ์) 1999-2016, ของทีมงาน BibleTeam</translation>
+        <translation>(มีลิขสิทธิ์) 1999-2016, ของทีมงาน BibleTeam</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -699,32 +697,32 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="154"/>
         <source>documentation and translation manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="176"/>
         <source>project manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="180"/>
         <source>tester</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="180"/>
         <source>usability expert</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
         <source>The SWORD Project: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
@@ -749,63 +747,58 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="144"/>
         <source>designer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
         <source>developer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="155"/>
         <source>project founder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="161"/>
         <source>packager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
         <source>creator of The Sword Project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="164"/>
         <source>domain sponsor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="165"/>
         <source>howto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="145"/>
         <source>artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
-        <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(มีลิขสิทธิ์) 1999-2016, ของทีมงาน BibleTeam {1999-2020,?}</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="178"/>
         <source>documentation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="193"/>
         <source>The following people translated BibleTime into their language:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
@@ -815,7 +808,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
         <source>SWORD library version %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
@@ -825,7 +818,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -833,7 +826,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="118"/>
@@ -899,7 +892,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="151"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
@@ -909,12 +902,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="165"/>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="166"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="211"/>
@@ -1049,7 +1042,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="159"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="161"/>
@@ -1087,22 +1080,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="201"/>
         <source>The folder where the new works will be installed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="206"/>
         <source>There are no works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="213"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
@@ -1117,7 +1110,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="221"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1131,44 +1124,44 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Old testament</source>
         <translation>พันธสัญญาเดิม</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
-        <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
-        <source>History</source>
-        <translation type="unfinished"></translation>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
-        <source>Prophets</source>
-        <translation type="unfinished"></translation>
+        <source>History</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>Prophets</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>New testament</source>
         <translation>พันธสัญญาใหม่</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
-        <source>Gospels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
-        <source>Letters/Epistles</source>
-        <translation type="unfinished"></translation>
+        <source>Gospels</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="55"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1176,7 +1169,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="66"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1184,22 +1177,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="42"/>
         <source>Copy by References</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="54"/>
         <source>First</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="63"/>
         <source>Last</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="72"/>
         <source>Copy size is to large.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1222,27 +1215,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="109"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="110"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="111"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="112"/>
@@ -1252,17 +1245,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="113"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="120"/>
         <source>Display settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="123"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1289,74 +1282,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
-    <name>BtEditTextPage</name>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
-        <source>Bold</source>
-        <translation type="unfinished">ตัวหนา</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
-        <source>Italic</source>
-        <translation type="unfinished">ตัวเอียง</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
-        <source>Underline</source>
-        <translation type="unfinished">ขีดเส้นใต้</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
-        <source>Left</source>
-        <translation type="unfinished">ซ้าย</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
-        <source>Align left</source>
-        <translation type="unfinished">จัดแนวซ้าย</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
-        <source>Center</source>
-        <translation type="unfinished">กึ่งกลาง</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
-        <source>Right</source>
-        <translation type="unfinished">ขวา</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
-        <source>Align right</source>
-        <translation type="unfinished">จัดแนวขวา</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
-        <source>Font</source>
-        <translation type="unfinished">ฟอนท์</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
-        <source>Font size</source>
-        <translation type="unfinished">ขนาดฟอนท์</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
-        <source>Font color</source>
-        <translation type="unfinished">สีฟอนท์</translation>
-    </message>
-</context>
-<context>
     <name>BtFindWidget</name>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="86"/>
         <source>The text you want to search for</source>
         <comment>findWidget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="88"/>
@@ -1371,7 +1302,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="90"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1402,7 +1333,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="153"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
@@ -1420,47 +1351,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="96"/>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="103"/>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="114"/>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="120"/>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="128"/>
         <source>Manage Search Indexes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="131"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="134"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="137"/>
         <source>Delete the selected indexes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="138"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
@@ -1470,12 +1401,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="142"/>
         <source>Create new indexes for the selected works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="143"/>
         <source>Create...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
@@ -1485,7 +1416,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="145"/>
         <source>Index size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1512,12 +1443,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="61"/>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="72"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="68"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1546,7 +1477,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="37"/>
         <source>Preparing to index modules...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="37"/>
@@ -1556,17 +1487,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="41"/>
         <source>Creating indices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="65"/>
         <source>Creating index for work: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="76"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="80"/>
@@ -1576,15 +1507,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="81"/>
         <source>An internal error occurred while building the index:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>BtModuleTextModel</name>
     <message>
-        <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="303"/>
+        <location filename="../../src/backend/models/btmoduletextmodel.cpp" line="328"/>
         <source>Click to edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1605,15 +1536,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="49"/>
         <source>Sets the grouping order for the items in this menu.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>BtQmlInterface</name>
     <message>
-        <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="189"/>
+        <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="181"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1626,7 +1557,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="53"/>
         <source>Select the works which should be searched.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1634,12 +1565,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="30"/>
         <source>Configure shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="41"/>
@@ -1658,30 +1589,30 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="221"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="235"/>
         <source>Select to change key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="128"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="129"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="130"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="143"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="151"/>
@@ -1701,7 +1632,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="181"/>
         <source>Default key:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1709,28 +1640,28 @@ shortcut</source>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="25"/>
         <source>Getting Library List</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="31"/>
         <location filename="../../src/backend/btsourcesthread.cpp" line="43"/>
         <source>Updating stopped</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="47"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="60"/>
         <source>Remote libraries have been updated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="63"/>
         <source>The following remote libraries failed to update: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1738,7 +1669,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
@@ -1748,7 +1679,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
@@ -1758,7 +1689,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
@@ -1768,7 +1699,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
@@ -1778,94 +1709,109 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="204"/>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="206"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>BtTextEditDialog</name>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="85"/>
         <source>Bold</source>
-        <translation type="vanished">ตัวหนา</translation>
+        <translation>ตัวหนา</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="93"/>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="101"/>
         <source>Italic</source>
-        <translation type="vanished">ตัวเอียง</translation>
+        <translation>ตัวเอียง</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="114"/>
         <source>Underline</source>
-        <translation type="vanished">ขีดเส้นใต้</translation>
+        <translation>ขีดเส้นใต้</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="119"/>
         <source>Left</source>
-        <translation type="vanished">ซ้าย</translation>
+        <translation>ซ้าย</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="125"/>
         <source>Align left</source>
-        <translation type="vanished">จัดแนวซ้าย</translation>
+        <translation>จัดแนวซ้าย</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="136"/>
         <source>Center</source>
-        <translation type="vanished">กึ่งกลาง</translation>
+        <translation>กึ่งกลาง</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="141"/>
         <source>Right</source>
-        <translation type="vanished">ขวา</translation>
+        <translation>ขวา</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="147"/>
         <source>Align right</source>
-        <translation type="vanished">จัดแนวขวา</translation>
+        <translation>จัดแนวขวา</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="221"/>
         <source>Font</source>
-        <translation type="vanished">ฟอนท์</translation>
+        <translation>ฟอนท์</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="233"/>
         <source>Font size</source>
-        <translation type="vanished">ขนาดฟอนท์</translation>
+        <translation>ขนาดฟอนท์</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bttexteditdialog.cpp" line="244"/>
         <source>Font color</source>
-        <translation type="vanished">สีฟอนท์</translation>
+        <translation>สีฟอนท์</translation>
     </message>
 </context>
 <context>
@@ -1873,7 +1819,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
@@ -1888,32 +1834,32 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Use textual variants</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1921,7 +1867,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="53"/>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="56"/>
@@ -1959,72 +1905,72 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
         <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="134"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="140"/>
         <source>Select the icon again to stop the synchronization.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="147"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="151"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="154"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="160"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="165"/>
         <source>You can save personal notes for specific verse references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, open it like any other window, or in  parallel with a bible. Click a verse to edit it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="174"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="170"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2045,27 +1991,27 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="79"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Before you can use this application some works must be installed. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="82"/>
         <source>Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="84"/>
         <source>Choose the &quot;Install works&quot; button to download works. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="85"/>
         <source>The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="88"/>
@@ -2083,7 +2029,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="142"/>
         <source>Choose action group:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="144"/>
@@ -2168,29 +2114,29 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="98"/>
         <source>Save chapter as plain text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="101"/>
         <source>Save chapter as HTML</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="104"/>
         <source>Print chapter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="116"/>
         <source>Text of reference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="122"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="125"/>
         <source>Reference with text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="211"/>
@@ -2229,7 +2175,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="70"/>
         <source>Toggle tree view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2242,12 +2188,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="697"/>
         <source>The work to which the bookmark points to is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="400"/>
         <source>Can drop only bookmarks or one folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
@@ -2262,47 +2208,47 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="110"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="113"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="120"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="123"/>
         <source>Import to folder...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="126"/>
         <source>Export from folder...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="129"/>
         <source>Print bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="133"/>
         <source>Remove selected items...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="404"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="411"/>
@@ -2317,12 +2263,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="465"/>
         <source>Drag references from text views to this view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="619"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2365,7 +2311,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="62"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2379,96 +2325,72 @@ shortcut</source>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="101"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="102"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="100"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="106"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="104"/>
         <source>Show startup logo:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="105"/>
+        <source>Show the BibleTime logo on startup.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="107"/>
-        <source>Show the BibleTime logo on startup.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="109"/>
         <source>Available display styles:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="110"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="108"/>
         <source>Style preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="116"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="114"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="217"/>
-        <source>&lt;span class=&quot;jesuswords&quot;&gt; For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="222"/>
-        <source>&lt;span class=&quot;jesuswords&quot;&gt;For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="227"/>
-        <source>&lt;span class=&quot;jesuswords&quot;&gt;He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="232"/>
-        <source>&lt;span class=&quot;jesuswords&quot;&gt;This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
-        <source>&lt;span class=&quot;jesuswords&quot;&gt;For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
-        <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="215"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">เพราะว่าพระเจ้าทรงรักโลก จนได้ทรงประทานพระบุตรองค์เดียวของพระองค์ที่บังเกิดมา เพื่อผู้ใดที่เชื่อในพระบุตรนั้นจะไม่พินาศ แต่มีชีวิตนิรันดร์</translation>
+        <translation>เพราะว่าพระเจ้าทรงรักโลก จนได้ทรงประทานพระบุตรองค์เดียวของพระองค์ที่บังเกิดมา เพื่อผู้ใดที่เชื่อในพระบุตรนั้นจะไม่พินาศ แต่มีชีวิตนิรันดร์</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="220"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">เพราะว่าพระเจ้าไม่ได้ทรงใช้พระบุตรของพระองค์เข้ามาในโลกเพื่อจะพิพากษาโลก แต่เพื่อช่วยโลกให้รอดโดยพระบุตรนั้น</translation>
+        <translation>เพราะว่าพระเจ้าไม่ได้ทรงใช้พระบุตรของพระองค์เข้ามาในโลกเพื่อจะพิพากษาโลก แต่เพื่อช่วยโลกให้รอดโดยพระบุตรนั้น</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="225"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">ผู้ที่เชื่อในพระบุตรก็ไม่ต้องถูกพิพากษาลงโทษ แต่ผู้ที่มิได้เชื่อก็ต้องถูกพิพากษาลงโทษอยู่แล้ว เพราะเขามิได้เชื่อในพระนามพระบุตรองค์เดียวที่บังเกิดจากพระเจ้า</translation>
+        <translation>ผู้ที่เชื่อในพระบุตรก็ไม่ต้องถูกพิพากษาลงโทษ แต่ผู้ที่มิได้เชื่อก็ต้องถูกพิพากษาลงโทษอยู่แล้ว เพราะเขามิได้เชื่อในพระนามพระบุตรองค์เดียวที่บังเกิดจากพระเจ้า</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="235"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">เพราะทุกคนที่ประพฤติชั่วก็เกลียดความสว่าง และไม่มาถึงความสว่าง ด้วยกลัวว่าการกระทำของตนจะถูกตำหนิ</translation>
+        <translation>เพราะทุกคนที่ประพฤติชั่วก็เกลียดความสว่าง และไม่มาถึงความสว่าง ด้วยกลัวว่าการกระทำของตนจะถูกตำหนิ</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="240"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">แต่ผู้ที่ประพฤติตามความจริงก็มาสู่ความสว่าง เพื่อจะให้การกระทำของตนปรากฏว่า ได้กระทำการนั้นโดยพึ่งพระเจ้า</translation>
+        <translation>แต่ผู้ที่ประพฤติตามความจริงก็มาสู่ความสว่าง เพื่อจะให้การกระทำของตนปรากฏว่า ได้กระทำการนั้นโดยพึ่งพระเจ้า</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="230"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">หลักของการพิพากษามีอย่างนี้ คือความสว่างได้เข้ามาในโลกแล้ว แต่มนุษย์ได้รักความมืดมากกว่ารักความสว่าง เพราะกิจการของเขาชั่ว</translation>
+        <translation>หลักของการพิพากษามีอย่างนี้ คือความสว่างได้เข้ามาในโลกแล้ว แต่มนุษย์ได้รักความมืดมากกว่ารักความสว่าง เพราะกิจการของเขาชั่ว</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="97"/>
         <source>Display</source>
         <translation>การแสดง</translation>
     </message>
@@ -2478,12 +2400,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="247"/>
         <source>Back in history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="255"/>
         <source>Forward in history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="212"/>
@@ -2498,7 +2420,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="220"/>
         <source>Copy by references...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="224"/>
@@ -2508,32 +2430,32 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="228"/>
         <source>Change location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="232"/>
         <source>Page down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="236"/>
         <source>Page up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="241"/>
         <source>Search with works of this window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="411"/>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="421"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="470"/>
@@ -2556,22 +2478,22 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="52"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="50"/>
         <source>Entries of the current work</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="51"/>
         <source>Next entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="53"/>
         <source>Previous entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2579,48 +2501,48 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="52"/>
         <source>Next entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="56"/>
         <source>Previous entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="60"/>
         <source>Copy reference only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="63"/>
         <source>Save entry as HTML</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
         <source>Print reference only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="78"/>
         <source>Strong&apos;s Search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="69"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
         <source>Entry with text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="72"/>
         <source>Entry as plain text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="244"/>
         <source>Lexicon window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="250"/>
@@ -2647,173 +2569,173 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="806"/>
         <source>Version</source>
         <translation>เวอร์ชั่น</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="810"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="818"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
         <source>unknown</source>
         <translation>ไม่ปรากฏ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="815"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="814"/>
         <source>Markup</source>
         <translation>มาร์กอัป</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="822"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Location</source>
         <translation>ตำแหน่งที่อยู่</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="826"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Language</source>
         <translation>ภาษา</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="829"/>
         <source>Category</source>
         <translation>หมวดหมู่</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
         <source>Writable</source>
         <translation>สามารถเขียนได้</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>yes</source>
         <translation>ใช่</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>no</source>
         <translation>ไม่ใช่</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Unlock key</source>
         <translation>คีย์ปลดล็อค</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="845"/>
         <source>Unlock info</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Features</source>
         <translation>คุณสมบัติ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="875"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="874"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="879"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="878"/>
         <source>About</source>
         <translation>เกี่ยวกับ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="883"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="882"/>
         <source>Distribution license</source>
         <translation>ใบอนุญาตการแจกจ่าย</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="884"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="883"/>
         <source>Distribution source</source>
         <translation>แหล่งการแจกจ่าย</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="885"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="884"/>
         <source>Distribution notes</source>
         <translation>โน้ตการแจกจ่าย</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="886"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="885"/>
         <source>Text source</source>
         <translation>แหล่งข้อความ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="887"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="886"/>
         <source>Copyright notes</source>
         <translation>โน้ตลิขสิทธิ์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="888"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="887"/>
         <source>Copyright holder</source>
         <translation>เจ้าของลิขสิทธิ์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="889"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="888"/>
         <source>Copyright date</source>
         <translation>วันที่ลิขสิทธิ์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="890"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="889"/>
         <source>Copyright contact name</source>
         <translation>ชื่อผู้ติดต่อด้านลิขสิทธิ์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="891"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="890"/>
         <source>Copyright contact address</source>
         <translation>ที่อยู่ติดต่อของลิขสิทธิ์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="892"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="891"/>
         <source>Copyright contact email</source>
         <translation>อีเมลติดต่อเรืองลิขสิทธิ์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Bibles</source>
         <translation>ฉบับพระคำภีร์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Commentaries</source>
         <translation>อรรถกถา</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Books</source>
         <translation>หนังสือ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Maps and Images</source>
         <translation>แผนที่และรูปภาพ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="991"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Daily Devotionals</source>
         <translation>การสักการะบูชาประจำวัน</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="993"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="992"/>
         <source>Lexicons and Dictionaries</source>
         <translation>อรรถกถาและพจนานุกรม</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="995"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Glossaries</source>
         <translation>อภิธานศัพท์</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
         <source>Unknown</source>
         <translation>ไม่มีใครรู้จัก</translation>
     </message>
@@ -2828,7 +2750,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="46"/>
         <source>Text filters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
@@ -2841,7 +2763,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="44"/>
         <source>New Installation Source</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="52"/>
@@ -2862,17 +2784,17 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="73"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="96"/>
         <source>Get list...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="97"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="110"/>
@@ -2886,39 +2808,39 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="110"/>
         <source>Please provide a caption.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="119"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Please provide a server name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="132"/>
         <source>Please provide a valid, readable path.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="136"/>
         <source>Please provide a path.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="166"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="167"/>
         <source>Get source list from remote server?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="173"/>
@@ -2945,37 +2867,24 @@ Do you want to continue?</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="146"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="141"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;เวอร์ชัน: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="68"/>
         <source>Copy</source>
         <translation>ก๊อบ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="62"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="63"/>
         <source>Select all</source>
         <translation>เลือกทั้งหมด</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="79"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="80"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Personal Commentary Editor</name>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
-        <source>Edit Plain text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="63"/>
-        <source>Edit HTML text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2988,8 +2897,8 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="147"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>ชื่อภาษา</translation>
     </message>
     <message>
@@ -3344,25 +3253,25 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="509"/>
         <source>Zapotec, San Juan Guelav໚</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="515"/>
         <source>Zapotec, Amatlán</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="519"/>
         <source>Zapotec, Yalálag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="525"/>
         <source>Zapotec, Quioquitani-Quierí</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="297"/>
@@ -3399,7 +3308,7 @@ Do you want to continue?</source>
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="316"/>
@@ -3501,19 +3410,19 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="365"/>
         <source>Mam, Todos Santos Cuchumatán</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="376"/>
         <source>Nahuatl, Michoacán</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="379"/>
@@ -3729,13 +3638,13 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
         <source>Chinantec, Ozumacín</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
         <source>Itzá</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="330"/>
@@ -3747,7 +3656,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="401"/>
         <source>Otomi, Querétaro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="407"/>
@@ -3760,7 +3669,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="424"/>
         <source>Quiché, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="452"/>
@@ -3772,7 +3681,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="485"/>
         <source>Tzotzil, Zinacantán</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="504"/>
@@ -3830,7 +3739,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
         <source>Strong&apos;s numbers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
@@ -3840,47 +3749,47 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="346"/>
         <source>Morphological tags</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="348"/>
         <source>Lemmas</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="350"/>
         <source>Hebrew vowel points</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="352"/>
         <source>Hebrew cantillation marks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="354"/>
         <source>Greek accents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="356"/>
         <source>Red letter words</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="358"/>
         <source>Textual variants</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="360"/>
         <source>Scripture cross-references</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="362"/>
         <source>Morph segmentation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="35"/>
@@ -3944,7 +3853,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="53"/>
         <source>BibleTime bookmark files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/btbookmarksmodel.cpp" line="519"/>
@@ -3954,7 +3863,7 @@ Do you want to continue?</source>
         <translation>ไม่ปรากฏ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btbookmarksmodel.cpp" line="913"/>
+        <location filename="../../src/backend/btbookmarksmodel.cpp" line="918"/>
         <source>New folder</source>
         <translation>แฟ้มใหม่</translation>
     </message>
@@ -3967,12 +3876,12 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/util/tool.cpp" line="67"/>
         <source>Please check permissions etc.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="169"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="190"/>
@@ -3982,27 +3891,27 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/util/tool.cpp" line="179"/>
         <source>Encrypted - needs unlock key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="60"/>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="61"/>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="66"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="203"/>
         <source>Double click for more information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="185"/>
@@ -4077,123 +3986,123 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/backend/filters/osistohtml.cpp" line="415"/>
         <source>Verb tense changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="564"/>
         <source>Export Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="577"/>
         <source>Import bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="314"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="168"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="173"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="23"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="24"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="53"/>
         <source>Show this help message and exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="56"/>
         <source>Output BibleTime version and exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="59"/>
         <source>Open a clean session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="62"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="65"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="168"/>
         <source>Error: %1 expects an argument.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="171"/>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/main.cpp" line="176"/>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="62"/>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="79"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="213"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="228"/>
         <source>Abbreviation</source>
         <translation>คำย่อ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="221"/>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="302"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="236"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="317"/>
         <source>Cross references</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="349"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="364"/>
         <source>Footnote</source>
         <translation>แสดงเชิงอรรถ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="397"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="412"/>
         <source>Strongs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="473"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="488"/>
         <source>Morphology</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/btinforendering.cpp" line="522"/>
+        <location filename="../../src/backend/rendering/btinforendering.cpp" line="537"/>
         <source>Word lookup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4330,7 +4239,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
         <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
@@ -4350,22 +4259,22 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>All of the words (AND is added between the words)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="152"/>
         <source>Scope:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
         <source>The text you want to search for</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="177"/>
@@ -4375,7 +4284,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="372"/>
         <source>No search scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
@@ -4385,7 +4294,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
         <source>Configure predefined scopes for search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
@@ -4400,22 +4309,22 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
         <source>Full lucene syntax</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
         <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="163"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4423,7 +4332,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="90"/>
         <source>Text of the selected search result item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="102"/>
@@ -4441,48 +4350,48 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="50"/>
         <source>Search Syntax Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="97"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="102"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="113"/>
         <source>Which words to find</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="139"/>
         <source>Grouping and order</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="106"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="157"/>
         <source>Wildcards (partial words)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="108"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="180"/>
         <source>Text fields (different parts of text)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="110"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
         <source>Other syntax features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="115"/>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="122"/>
@@ -4526,38 +4435,38 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="141"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="144"/>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
         <source>&quot;says lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="152"/>
         <source>&quot;says the lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>
@@ -4577,7 +4486,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
@@ -4587,7 +4496,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="175"/>
@@ -4597,12 +4506,12 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="177"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
         <source>Available text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
@@ -4617,12 +4526,12 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
         <source>Searches Strong&apos;s numbers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
         <source>Searches morphology codes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
@@ -4638,45 +4547,45 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="198"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="201"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4700,14 +4609,14 @@ Do you want to continue?</source>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="69"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
         <source>Reference only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="73"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="85"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="93"/>
         <source>Reference with text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="79"/>
@@ -4739,7 +4648,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4747,12 +4656,12 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="143"/>
         <source>S&amp;earch range:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="144"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="155"/>
@@ -4762,57 +4671,57 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="158"/>
         <source>Edi&amp;t current range:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="159"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="164"/>
         <source>Parsed search range:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="178"/>
         <source>New range</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="147"/>
         <source>&amp;Add new scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="148"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="152"/>
         <source>Delete current &amp;scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="153"/>
         <source>Delete the selected search scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="156"/>
         <source>Change the name of the selected search scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="165"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="141"/>
         <source>Setup Search Scopes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -4820,12 +4729,12 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="240"/>
         <source>Save Search Analysis</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="252"/>
         <source>BibleTime Search Analysis</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="268"/>
@@ -4835,7 +4744,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="272"/>
         <source>Results by work and book</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="274"/>
@@ -4845,7 +4754,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="302"/>
         <source>Total hits</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="312"/>
@@ -4858,7 +4767,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="145"/>
         <source>Missing indices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="97"/>
@@ -4868,17 +4777,17 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="146"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="147"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="191"/>
@@ -4888,32 +4797,32 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="192"/>
         <source>An internal error occurred while executing your search:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="243"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="251"/>
         <source>&amp;Analyze results...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="252"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="255"/>
         <source>&amp;Manage Indexes...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="256"/>
         <source>Recreate search indexes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="260"/>
@@ -4937,14 +4846,14 @@ Do you want to continue?</source>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="53"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="68"/>
         <source>Reference only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="58"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="73"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="82"/>
         <source>Reference with text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="65"/>
