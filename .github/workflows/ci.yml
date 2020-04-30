@@ -10,6 +10,11 @@ on:
       - 'master'
       - 'stable-*'
 
+defaults:
+  run:
+    env:
+      NUM_THREADS: 2
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,15 +23,17 @@ jobs:
     - name: Install required packages
       run: |
         sudo apt-get update
-        sudo apt-get install --no-install-recommends libsword-dev cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl
+        sudo apt-get install --no-install-recommends cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl
+    - name: Install Sword
+      run: ./tests/scripts/install-sword.sh "${HOME}/local" "$NUM_THREADS"
     - name: Configure the build
       run: |
-        cmake -E make_directory ${HOME}/local build
+        cmake -E make_directory "${HOME}/local" build
         cd build
-        cmake "-DCMAKE_INSTALL_PREFIX=${HOME}/local/" ..
+        cmake "-DCMAKE_PREFIX_PATH=${HOME}/local/" "-DCMAKE_INSTALL_PREFIX=${HOME}/local/" ..
     - name: Compile
-      run: cmake --build .
+      run: make "-j$NUM_THREADS"
       working-directory: build
     - name: Install
-      run: cmake --install .
+      run: make "-j$NUM_THREADS" install
       working-directory: build
