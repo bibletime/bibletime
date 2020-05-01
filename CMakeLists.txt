@@ -11,6 +11,39 @@ IF(MSVC) # Automatically link Qt executables to qtmain target on Windows
 ENDIF()
 CMAKE_POLICY(SET CMP0028 NEW)
 
+
+######################################################
+# Build-time user options:
+#
+SET(BUILD_HANDBOOK_HTML "ON" CACHE BOOL
+    "Whether to build and install the handbook in HTML format")
+SET(BUILD_HANDBOOK_HTML_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and
+install the handbook in HTML format if BUILD_HANDBOOK_HTML is enabled. \
+Leave empty use all supported languages.")
+
+SET(BUILD_HANDBOOK_PDF "ON" CACHE BOOL
+    "Whether to build and install the handbook in PDF")
+SET(BUILD_HANDBOOK_PDF_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and \
+install the handbook in PDF format if BUILD_HANDBOOK_PDF is enabled. \
+Leave empty use all supported languages.")
+
+SET(BUILD_HOWTO_HTML "ON" CACHE BOOL
+    "Whether to build and install the howto in HTML format")
+SET(BUILD_HOWTO_HTML_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and \
+install the howto in HTML format if BUILD_HOWTO_HTML is enabled. \
+Leave empty use all supported languages.")
+
+SET(BUILD_HOWTO_PDF "ON" CACHE BOOL
+    "Whether to build and install the howto in PDF format")
+SET(BUILD_HOWTO_PDF_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and \
+install the howto in PDF format if BUILD_HOWTO_PDF is enabled. \
+Leave empty use all supported languages.")
+
+
 ######################################################
 # Misc. settings:
 #
