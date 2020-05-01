@@ -77,6 +77,15 @@ FUNCTION(GetDocLangs type out)
     NewUniqueSortedList(outList "en" ${outList})
     SET("${out}" "${outList}" PARENT_SCOPE)
 ENDFUNCTION()
+FUNCTION(GetDocArtifacts doc)
+    STRING(TOUPPER "${doc}" udoc)
+    NewUniqueSortedList(images)
+    SET(imageDir "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/images")
+    IF(IS_DIRECTORY "${imageDir}")
+        FILE(GLOB images "${imageDir}/*")
+    ENDIF()
+    SET("${udoc}_IMAGES" "${images}" PARENT_SCOPE)
+ENDFUNCTION()
 FUNCTION(CheckMissingTranslations doc type)
     STRING(TOUPPER "${doc}" udoc)
     IF(BUILD_${udoc}_${type})
@@ -110,6 +119,7 @@ FUNCTION(CheckMissingTranslations doc type)
 ENDFUNCTION()
 IF(BUILD_HANDBOOK)
     GetDocLangs("handbook" AVAILABLE_HANDBOOK_LANGUAGES)
+    GetDocArtifacts("handbook")
     CheckMissingTranslations("handbook" "HTML")
     CheckMissingTranslations("handbook" "PDF")
     NewUniqueSortedList(BUILD_HANDBOOK_LANGUAGES
@@ -118,6 +128,7 @@ IF(BUILD_HANDBOOK)
 ENDIF()
 IF(BUILD_HOWTO)
     GetDocLangs("howto" AVAILABLE_HOWTO_LANGUAGES)
+    GetDocArtifacts("howto")
     CheckMissingTranslations("howto" "HTML")
     CheckMissingTranslations("howto" "PDF")
     NewUniqueSortedList(BUILD_HOWTO_LANGUAGES
@@ -130,54 +141,69 @@ NewUniqueSortedList(ALL_DOC_LANGUAGES
 
 
 ######################################################
+# General documentation targets generation:
+#
+FUNCTION(AddDocTarget name)
+    ADD_CUSTOM_TARGET("${name}" DEPENDS ${ARGN})
+    SET_TARGET_PROPERTIES("${name}" PROPERTIES FOLDER "Documentation")
+ENDFUNCTION()
+AddDocTarget("docs")
+SET_TARGET_PROPERTIES("docs" PROPERTIES EXCLUDE_FROM_ALL FALSE)
+FUNCTION(AddDocSubTarget parent name)
+    IF(NOT TARGET "${name}")
+        AddDocTarget("${name}" ${ARGN})
+        ADD_DEPENDENCIES("${parent}" "${name}")
+    ELSEIF(NOT ("${ARGN}" STREQUAL ""))
+        ADD_DEPENDENCIES("${name}" ${ARGN})
+    ENDIF()
+ENDFUNCTION()
+
+
+######################################################
 # Generate po4a configurations and targets for handbook and howto:
 #
 FUNCTION(BUILD_PO4A_CONF_AND_TARGET doc)
     STRING(TOUPPER "${doc}" udoc)
     IF(BUILD_${udoc})
-        SET("${udoc}_PO4A_LANGUAGES" "${BUILD_${udoc}_LANGUAGES}")
-        LIST(REMOVE_ITEM "${udoc}_PO4A_LANGUAGES" "en")
-        FOREACH(l IN LISTS ${udoc}_PO4A_LANGUAGES)
-            FILE(MAKE_DIRECTORY "${DOCS_BINARY_DIR}/${doc}/${l}")
-        ENDFOREACH()
-        STRING(REPLACE ";" " " "${udoc}_PO4A_LANGUAGES"
-            "${${udoc}_PO4A_LANGUAGES}")
-        FILE(GLOB srcFiles
-            "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/docbook/*.docbook")
-        FILE(WRITE "${DOCS_BINARY_DIR}/${doc}/po4a.conf"
-            "[po4a_langs] ${${udoc}_PO4A_LANGUAGES}
+        AddDocTarget("${doc}_translations")
+        SET(docbookInputDir "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/docbook")
+        FILE(GLOB_RECURSE inputs "${docbookInputDir}/*")
+        AddDocSubTarget("${doc}_translations" "${doc}_translation_en"
+            "${inputs}")
+
+        SET(generatedLanguages "${BUILD_${udoc}_LANGUAGES}")
+        LIST(REMOVE_ITEM generatedLanguages "en")
+        SET(po4aDirBase "${DOCS_BINARY_DIR}/${doc}/po4a")
+        SET(docbookDirBase "${DOCS_BINARY_DIR}/${doc}/docbook")
+        FOREACH(l IN LISTS generatedLanguages)
+            FILE(MAKE_DIRECTORY "${po4aDirBase}/${l}")
+            SET(docbookDir "${docbookDirBase}/${l}")
+            FILE(MAKE_DIRECTORY "${docbookDir}")
+            SET(confFile "${po4aDirBase}/${l}/po4a.conf")
+            FILE(WRITE "${confFile}"
+                "[po4a_langs] ${l}
 [po4a_paths] ${CMAKE_CURRENT_SOURCE_DIR}/i18n/${doc}/${doc}.pot \
 $lang:${CMAKE_CURRENT_SOURCE_DIR}/i18n/${doc}/${doc}-$lang.po\n")
-        FOREACH(srcFile IN LISTS srcFiles)
-            GET_FILENAME_COMPONENT(srcFileName "${srcFile}" NAME)
-            FILE(APPEND "${DOCS_BINARY_DIR}/${doc}/po4a.conf"
-                "[type: docbook] ${srcFile} \
-\$lang:${DOCS_BINARY_DIR}/${doc}/\$lang/docbook/${srcFileName}\n")
+            FOREACH(input IN LISTS inputs)
+                FILE(RELATIVE_PATH relativeInput "${docbookInputDir}"
+                    "${input}")
+                FILE(APPEND "${confFile}"
+                    "[type: docbook] ${docbookInputDir}/${relativeInput} \
+\$lang:${docbookDirBase}/\$lang/${relativeInput}\n")
+            ENDFOREACH()
+            SET(stampFile "${docbookDir}/stamp")
+            ADD_CUSTOM_COMMAND(OUTPUT "${stampFile}"
+                COMMAND "${PO4A_COMMAND}" --verbose --no-backups --keep 0
+                    --porefs none "${confFile}"
+                COMMAND "${CMAKE_COMMAND}" -E touch "${stampFile}"
+                DEPENDS "${confFile}" ${inputs})
+            AddDocSubTarget("${doc}_translations" "${doc}_translation_${l}"
+                "${stampFile}")
         ENDFOREACH()
-        ADD_CUSTOM_TARGET("${doc}_translations"
-            COMMAND "${PO4A_COMMAND}" --verbose --no-backups --keep 0
-                "${DOCS_BINARY_DIR}/${doc}/po4a.conf")
-        SET_TARGET_PROPERTIES("${doc}_translations"
-            PROPERTIES FOLDER "Documentation")
     ENDIF()
 ENDFUNCTION()
 BUILD_PO4A_CONF_AND_TARGET("handbook")
 BUILD_PO4A_CONF_AND_TARGET("howto")
-
-
-######################################################
-# General documentation targets generation:
-#
-ADD_CUSTOM_TARGET("docs" ALL)
-SET_TARGET_PROPERTIES("docs" PROPERTIES FOLDER "Documentation")
-FUNCTION(AddDocTypeTargets doc)
-    IF(NOT TARGET "${doc}")
-        ADD_CUSTOM_TARGET("${doc}")
-        SET_TARGET_PROPERTIES("${doc}" PROPERTIES FOLDER "Documentation")
-        ADD_DEPENDENCIES("docs" "${doc}")
-    ENDIF()
-    ADD_DEPENDENCIES("${doc}" ${ARGN})
-ENDFUNCTION()
 
 
 ######################################################
@@ -210,31 +236,28 @@ ${BT_DOCBOOK_XSL_HTML_CHUNK_XSL}")
     FUNCTION(GenerateHtmlDoc doc)
         STRING(TOUPPER "${doc}" udoc)
         IF(${BUILD_${udoc}_HTML})
-            ADD_CUSTOM_TARGET("${doc}_html")
-            SET_TARGET_PROPERTIES("${doc}_html"
-                PROPERTIES FOLDER "Documentation")
-            AddDocTypeTargets("${doc}" "${doc}_html")
-            FILE(GLOB IMAGE_FILES
-                "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/images/*.png")
+            AddDocSubTarget("docs" "${doc}")
+            AddDocSubTarget("${doc}" "${doc}_html")
             FOREACH(l IN LISTS "DO_BUILD_${udoc}_HTML_LANGUAGES")
-                SET(d "${DOCS_BINARY_DIR}/${doc}/${l}")
+                SET(d "${DOCS_BINARY_DIR}/${doc}/html/${l}")
+                FILE(MAKE_DIRECTORY "${d}")
                 IF("${l}" STREQUAL "en")
-                    SET(i "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}")
+                    SET(i "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/docbook")
                 ELSE()
-                    SET(i "${d}")
+                    SET(i "${DOCS_BINARY_DIR}/${doc}/docbook/${l}")
                 ENDIF()
-                FILE(MAKE_DIRECTORY "${d}/html")
-                ADD_CUSTOM_TARGET("${doc}_html_${l}"
-                    COMMAND "${XSLTPROC_COMMAND}" --nonet --output "${d}/html/"
+                SET(stampFile "${d}/.stamp")
+                ADD_CUSTOM_COMMAND(OUTPUT "${stampFile}"
+                    COMMAND "${XSLTPROC_COMMAND}" --nonet --output "${d}/"
                         --stringparam l10n.gentext.default.language "${l}"
-                        "${BT_DOCBOOK_XSL}" "${i}/docbook/index.docbook"
-                    DEPENDS "${doc}_translations")
-                SET_TARGET_PROPERTIES("${doc}_html_${l}"
-                    PROPERTIES FOLDER "Documentation")
-                ADD_DEPENDENCIES("${doc}_html" "${doc}_html_${l}")
-                INSTALL(DIRECTORY "${d}/html/"
-                        DESTINATION "${BT_DOCDIR}/${doc}/html/${l}")
-                INSTALL(FILES ${HTML_FILES} ${IMAGE_FILES}
+                        "${BT_DOCBOOK_XSL}" "${i}/index.docbook"
+                    COMMAND "${CMAKE_COMMAND}" -E touch "${stampFile}"
+                    DEPENDS "${doc}_translation_${l}")
+                AddDocSubTarget("${doc}_html" "${doc}_html_${l}" "${stampFile}")
+                INSTALL(DIRECTORY "${d}/"
+                        DESTINATION "${BT_DOCDIR}/${doc}/html/${l}/"
+                        PATTERN ".*" EXCLUDE)
+                INSTALL(FILES ${${udoc}_IMAGES}
                         DESTINATION "${BT_DOCDIR}/${doc}/html/${l}/")
             ENDFOREACH()
         ENDIF()
@@ -272,50 +295,47 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
     FUNCTION(GeneratePdfDoc doc)
         STRING(TOUPPER "${doc}" udoc)
         IF(${BUILD_${udoc}_PDF})
-            ADD_CUSTOM_TARGET("${doc}_pdf")
-            SET_TARGET_PROPERTIES("${doc}_pdf"
-                PROPERTIES FOLDER "Documentation")
-            AddDocTypeTargets("${doc}" "${doc}_pdf")
-            NewUniqueSortedList(images)
-            SET(imageDir "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/images")
-            IF(IS_DIRECTORY "${imageDir}")
-                FILE(GLOB images "${imageDir}/*")
-            ENDIF()
+            AddDocSubTarget("docs" "${doc}")
+            AddDocSubTarget("${doc}" "${doc}_xslfo")
+            AddDocSubTarget("${doc}" "${doc}_pdf")
             FOREACH(l IN LISTS DO_BUILD_${udoc}_PDF_LANGUAGES)
-                SET(d "${DOCS_BINARY_DIR}/${doc}/${l}")
-                FOREACH(image IN LISTS images)
+                SET(dx "${DOCS_BINARY_DIR}/${doc}/xslfo/${l}")
+                FILE(MAKE_DIRECTORY "${dx}")
+                IF("${l}" STREQUAL "en")
+                    SET(i "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/docbook")
+                ELSE()
+                    SET(i "${DOCS_BINARY_DIR}/${doc}/docbook/${l}")
+                ENDIF()
+                ADD_CUSTOM_COMMAND(OUTPUT "${dx}/${doc}.fo"
+                    COMMENT "Generating ${dx}/${doc}.fo"
+                    COMMAND "${XSLTPROC_COMMAND}" --nonet
+                        --output "${dx}/${doc}.fo"
+                        "${BT_DOCBOOK_PDF_XSL}" "${i}/index.docbook"
+                    DEPENDS "${doc}_translation_${l}")
+                AddDocSubTarget("${doc}_xslfo" "${doc}_xslfo_${l}"
+                    "${dx}/${doc}.fo")
+
+                FOREACH(image IN LISTS "${udoc}_IMAGES")
                     IF(CMAKE_VERSION VERSION_LESS 3.14)
-                        FILE(COPY "${image}" DESTINATION "${d}/pdf/")
+                        FILE(COPY "${image}" DESTINATION "${dx}/")
                     ELSE()
                         GET_FILENAME_COMPONENT(imageName "${image}" NAME)
-                        FILE(CREATE_LINK "${image}" "${d}/pdf/${imageName}"
+                        FILE(CREATE_LINK "${image}" "${dx}/${imageName}"
                             COPY_ON_ERROR)
                     ENDIF()
                 ENDFOREACH()
-                IF("${l}" STREQUAL "en")
-                    SET(i "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}")
-                ELSE()
-                    SET(i "${d}")
-                ENDIF()
-                FILE(MAKE_DIRECTORY "${d}/pdf")
-                ADD_CUSTOM_COMMAND(OUTPUT "${d}/pdf/tmp.fo"
-                    COMMENT "Generating xsl:fo file for ${doc} (PDF) generation"
-                    COMMAND "${XSLTPROC_COMMAND}" --nonet
-                        --output "${d}/pdf/tmp.fo"
-                        "${BT_DOCBOOK_PDF_XSL}" "${i}/docbook/index.docbook"
-                    DEPENDS "${doc}_translations")
-                ADD_CUSTOM_COMMAND(OUTPUT "${d}/pdf/${doc}.pdf"
-                    COMMENT "Generating ${doc} (PDF) for ${l}"
-                    COMMAND "${FOP_COMMAND}" -pdf "${d}/pdf/${doc}.pdf"
-                        -fo "${d}/pdf/tmp.fo"
-                    DEPENDS "${d}/pdf/tmp.fo")
-                ADD_CUSTOM_TARGET("${doc}_pdf_${l}"
-                    DEPENDS "${d}/pdf/${doc}.pdf")
-                INSTALL(FILES "${d}/pdf/${doc}.pdf"
+
+                SET(dp "${DOCS_BINARY_DIR}/${doc}/pdf/${l}")
+                FILE(MAKE_DIRECTORY "${dp}")
+                ADD_CUSTOM_COMMAND(OUTPUT "${dp}/${doc}.pdf"
+                    COMMENT "Generating ${dp}/${doc}.pdf"
+                    COMMAND "${FOP_COMMAND}" -pdf "${dp}/${doc}.pdf"
+                        -fo "${dx}/${doc}.fo"
+                    DEPENDS "${doc}_xslfo_${l}")
+                AddDocSubTarget("${doc}_pdf" "${doc}_pdf_${l}"
+                    "${dp}/${doc}.pdf" ${${udoc}_IMAGES})
+                INSTALL(FILES "${dp}/${doc}.pdf"
                         DESTINATION "${BT_DOCDIR}/${doc}/pdf/${l}/")
-                SET_TARGET_PROPERTIES("${doc}_pdf_${l}"
-                    PROPERTIES FOLDER "Documentation")
-                ADD_DEPENDENCIES("${doc}_pdf" "${doc}_pdf_${l}")
             ENDFOREACH()
         ENDIF()
     ENDFUNCTION()
