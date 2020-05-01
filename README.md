@@ -29,25 +29,25 @@ installation is enabled. By default, all translations of the handbook and howto
 documents are generated and installed. This can be changed using the following
 options to CMake:
 
- * GENERATE_HANDBOOK_HTML - whether to generate and install the HTML handbook
- * GENERATE_HANDBOOK_HTML_LANGUAGES
+ * BUILD_HANDBOOK_HTML - whether to generate and install the HTML handbook
+ * BUILD_HANDBOOK_HTML_LANGUAGES
        - list of language codes to use for HTML handbook, or empty for all
          languages
- * GENERATE_HANDBOOK_PDF - whether to generate and install the PDF handbook
- * GENERATE_HANDBOOK_PDF_LANGUAGES
+ * BUILD_HANDBOOK_PDF - whether to generate and install the PDF handbook
+ * BUILD_HANDBOOK_PDF_LANGUAGES
        - list of language codes to use for PDF handbook, or empty for all
          languages
- * GENERATE_HOWTO_HTML - whether to generate and install the HTML howto
- * GENERATE_HOWTO_HTML_LANGUAGES
+ * BUILD_HOWTO_HTML - whether to generate and install the HTML howto
+ * BUILD_HOWTO_HTML_LANGUAGES
        - list of language codes to use for HTML howto, or empty for all
          languages
- * GENERATE_HOWTO_PDF - whether to generate and install the PDF howto
- * GENERATE_HOWTO_PDF_LANGUAGES
+ * BUILD_HOWTO_PDF - whether to generate and install the PDF howto
+ * BUILD_HOWTO_PDF_LANGUAGES
        - list of language codes to use for PDF howto, or empty for all languages
 
 For example, passing `-DGENERATE-HOWTO_HTML_LANGUAGES=en;et` to the cmake
 command to restricts generation and installation of howto HTML versions to the
-English and Estonian translations only, and `-DGENERATE_HOWTO_PDF=OFF` disables
+English and Estonian translations only, and `-DBUILD_HOWTO_PDF=OFF` disables
 generation of the howto in PDF format.
 
 
