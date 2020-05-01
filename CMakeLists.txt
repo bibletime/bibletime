@@ -301,22 +301,15 @@ FILE(GLOB_RECURSE bibletime_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
 )
-IF(MSVC) # For the Windows Application Icon
-    LIST(APPEND bibletime_SOURCES "cmake/BTWinIcon.rc")
-ENDIF()
 IF(APPLE)
     ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
+    SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
 ELSEIF(MSVC)
-    ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES})
+    ADD_EXECUTABLE("bibletime" WIN32 ${bibletime_SOURCES} "cmake/BTWinIcon.rc")
 ELSE()
     ADD_EXECUTABLE("bibletime" ${bibletime_SOURCES})
 ENDIF()
 PREPARE_CXX_TARGET(bibletime)
-IF(APPLE)
-    SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
-ELSE()
-    SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "bibletime")
-ENDIF()
 TARGET_LINK_LIBRARIES("bibletime"
     PRIVATE
         bibletime_backend
@@ -396,8 +389,8 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.BibleTime.appdata.xml"
         DESTINATION "${BT_DATAROOTDIR}/metainfo/")
 
-# Windows:
-IF(MSVC)
+
+IF(MSVC) # Windows:
   # sword locale information
   FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
@@ -408,10 +401,7 @@ IF(MSVC)
     SET(bibletime_PDB "${bibletime_BINARY_DIR}/Debug/bibletime.pdb")
     INSTALL(FILES "${bibletime_PDB}" DESTINATION "${BT_BINDIR}")
   ENDIF()
-ENDIF()
-
-# OS X:
-IF(APPLE)
+ELSEIF(APPLE) # OS X:
   # sword locale information, needed for DMG image
   FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
@@ -426,8 +416,7 @@ ENDIF()
 #
 IF(WIN32 AND NOT UNIX)
   INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
-ENDIF()
-IF(APPLE)
+ELSEIF(APPLE)
   INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageMacOS.cmake")
 ENDIF()
 
