@@ -1,29 +1,29 @@
-SET(GENERATE_HANDBOOK_HTML "ON" CACHE BOOL
-    "Whether to generate and install the handbook in HTML format")
-SET(GENERATE_HANDBOOK_HTML_LANGUAGES "" CACHE STRING
-    "A semicolon-separated list of language codes for which to generate and \
-install the handbook in HTML format if GENERATE_HANDBOOK_HTML is enabled. \
+SET(BUILD_HANDBOOK_HTML "ON" CACHE BOOL
+    "Whether to build and install the handbook in HTML format")
+SET(BUILD_HANDBOOK_HTML_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and
+install the handbook in HTML format if BUILD_HANDBOOK_HTML is enabled. \
 Leave empty use all supported languages.")
 
-SET(GENERATE_HANDBOOK_PDF "ON" CACHE BOOL
-    "Whether to generate and install the handbook in PDF")
-SET(GENERATE_HANDBOOK_PDF_LANGUAGES "" CACHE STRING
-    "A semicolon-separated list of language codes for which to generate and \
-install the handbook in PDF format if GENERATE_HANDBOOK_PDF is enabled. \
+SET(BUILD_HANDBOOK_PDF "ON" CACHE BOOL
+    "Whether to build and install the handbook in PDF")
+SET(BUILD_HANDBOOK_PDF_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and \
+install the handbook in PDF format if BUILD_HANDBOOK_PDF is enabled. \
 Leave empty use all supported languages.")
 
-SET(GENERATE_HOWTO_HTML "ON" CACHE BOOL
-    "Whether to generate and install the howto in HTML format")
-SET(GENERATE_HOWTO_HTML_LANGUAGES "" CACHE STRING
-    "A semicolon-separated list of language codes for which to generate and \
-install the howto in HTML format if GENERATE_HOWTO_HTML is enabled. \
+SET(BUILD_HOWTO_HTML "ON" CACHE BOOL
+    "Whether to build and install the howto in HTML format")
+SET(BUILD_HOWTO_HTML_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and \
+install the howto in HTML format if BUILD_HOWTO_HTML is enabled. \
 Leave empty use all supported languages.")
 
-SET(GENERATE_HOWTO_PDF "ON" CACHE BOOL
-    "Whether to generate and install the howto in PDF format")
-SET(GENERATE_HOWTO_PDF_LANGUAGES "" CACHE STRING
-    "A semicolon-separated list of language codes for which to generate and \
-install the howto in PDF format if GENERATE_HOWTO_PDF is enabled. \
+SET(BUILD_HOWTO_PDF "ON" CACHE BOOL
+    "Whether to build and install the howto in PDF format")
+SET(BUILD_HOWTO_PDF_LANGUAGES "" CACHE STRING
+    "A semicolon-separated list of language codes for which to build and \
+install the howto in PDF format if BUILD_HOWTO_PDF is enabled. \
 Leave empty use all supported languages.")
 
 
@@ -37,11 +37,11 @@ MACRO(ToggleOnOff out)
         SET("${out}" OFF)
     ENDIF()
 ENDMACRO()
-ToggleOnOff("GENERATE_HTML" GENERATE_HANDBOOK_HTML OR GENERATE_HOWTO_HTML)
-ToggleOnOff("GENERATE_PDF" GENERATE_HANDBOOK_PDF OR GENERATE_HOWTO_PDF)
-ToggleOnOff("GENERATE_HANDBOOK" GENERATE_HANDBOOK_HTML OR GENERATE_HANDBOOK_PDF)
-ToggleOnOff("GENERATE_HOWTO" GENERATE_HOWTO_HTML OR GENERATE_HOWTO_PDF)
-ToggleOnOff("GENERATE_DOCS" GENERATE_HTML OR GENERATE_PDF)
+ToggleOnOff("BUILD_HTML" BUILD_HANDBOOK_HTML OR BUILD_HOWTO_HTML)
+ToggleOnOff("BUILD_PDF" BUILD_HANDBOOK_PDF OR BUILD_HOWTO_PDF)
+ToggleOnOff("BUILD_HANDBOOK" BUILD_HANDBOOK_HTML OR BUILD_HANDBOOK_PDF)
+ToggleOnOff("BUILD_HOWTO" BUILD_HOWTO_HTML OR BUILD_HOWTO_PDF)
+ToggleOnOff("BUILD_DOCS" BUILD_HTML OR BUILD_PDF)
 SET(DOCS_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/docs")
 
 
@@ -55,7 +55,7 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/docs/license.html"
 ######################################################
 # Return if nothing to do:
 #
-IF(NOT GENERATE_DOCS)
+IF(NOT BUILD_DOCS)
     RETURN()
 ENDIF()
 
@@ -73,7 +73,7 @@ MACRO(FIND_REQUIRED_PROGRAM var name)
 ENDMACRO()
 FIND_REQUIRED_PROGRAM(PO4A_COMMAND po4a)
 FIND_REQUIRED_PROGRAM(XSLTPROC_COMMAND xsltproc)
-IF(GENERATE_PDF)
+IF(BUILD_PDF)
     FIND_REQUIRED_PROGRAM(FOP_COMMAND fop)
 ENDIF()
 
@@ -108,8 +108,8 @@ FUNCTION(GetDocLangs type out)
 ENDFUNCTION()
 FUNCTION(CheckMissingTranslations doc type)
     STRING(TOUPPER "${doc}" udoc)
-    IF(GENERATE_${udoc}_${type})
-        SET(in "GENERATE_${udoc}_${type}_LANGUAGES")
+    IF(BUILD_${udoc}_${type})
+        SET(in "BUILD_${udoc}_${type}_LANGUAGES")
         SET(available ${AVAILABLE_${udoc}_LANGUAGES})
         SET(out "DO_${in}")
         SET(in "${${in}}")
@@ -137,34 +137,34 @@ FUNCTION(CheckMissingTranslations doc type)
         ENDIF()
     ENDIF()
 ENDFUNCTION()
-IF(GENERATE_HANDBOOK)
+IF(BUILD_HANDBOOK)
     GetDocLangs("handbook" AVAILABLE_HANDBOOK_LANGUAGES)
     CheckMissingTranslations("handbook" "HTML")
     CheckMissingTranslations("handbook" "PDF")
-    NewUniqueSortedList(GENERATE_HANDBOOK_LANGUAGES
-        ${DO_GENERATE_HANDBOOK_HTML_LANGUAGES}
-        ${DO_GENERATE_HANDBOOK_PDF_LANGUAGES})
+    NewUniqueSortedList(BUILD_HANDBOOK_LANGUAGES
+        ${DO_BUILD_HANDBOOK_HTML_LANGUAGES}
+        ${DO_BUILD_HANDBOOK_PDF_LANGUAGES})
 ENDIF()
-IF(GENERATE_HOWTO)
+IF(BUILD_HOWTO)
     GetDocLangs("howto" AVAILABLE_HOWTO_LANGUAGES)
     CheckMissingTranslations("howto" "HTML")
     CheckMissingTranslations("howto" "PDF")
-    NewUniqueSortedList(GENERATE_HOWTO_LANGUAGES
-        ${DO_GENERATE_HOWTO_HTML_LANGUAGES}
-        ${DO_GENERATE_HOWTO_PDF_LANGUAGES})
+    NewUniqueSortedList(BUILD_HOWTO_LANGUAGES
+        ${DO_BUILD_HOWTO_HTML_LANGUAGES}
+        ${DO_BUILD_HOWTO_PDF_LANGUAGES})
 ENDIF()
 NewUniqueSortedList(ALL_DOC_LANGUAGES
-    ${GENERATE_HANDBOOK_LANGUAGES}
-    ${GENERATE_HOWTO_LANGUAGES})
+    ${BUILD_HANDBOOK_LANGUAGES}
+    ${BUILD_HOWTO_LANGUAGES})
 
 
 ######################################################
 # Generate po4a configurations and targets for handbook and howto:
 #
-FUNCTION(GENERATE_PO4A_CONF_AND_TARGET doc)
+FUNCTION(BUILD_PO4A_CONF_AND_TARGET doc)
     STRING(TOUPPER "${doc}" udoc)
-    IF(GENERATE_${udoc})
-        SET("${udoc}_PO4A_LANGUAGES" "${GENERATE_${udoc}_LANGUAGES}")
+    IF(BUILD_${udoc})
+        SET("${udoc}_PO4A_LANGUAGES" "${BUILD_${udoc}_LANGUAGES}")
         LIST(REMOVE_ITEM "${udoc}_PO4A_LANGUAGES" "en")
         FOREACH(l IN LISTS ${udoc}_PO4A_LANGUAGES)
             FILE(MAKE_DIRECTORY "${DOCS_BINARY_DIR}/${doc}/${l}")
@@ -190,8 +190,8 @@ $lang:${CMAKE_CURRENT_SOURCE_DIR}/i18n/${doc}/${doc}-$lang.po\n")
             PROPERTIES FOLDER "Documentation")
     ENDIF()
 ENDFUNCTION()
-GENERATE_PO4A_CONF_AND_TARGET("handbook")
-GENERATE_PO4A_CONF_AND_TARGET("howto")
+BUILD_PO4A_CONF_AND_TARGET("handbook")
+BUILD_PO4A_CONF_AND_TARGET("howto")
 
 
 ######################################################
@@ -212,7 +212,7 @@ ENDFUNCTION()
 ######################################################
 # Rules for HTML:
 #
-IF(GENERATE_HTML)
+IF(BUILD_HTML)
     # Generate XSL files for HTML:
     IF(NOT DEFINED BT_DOCBOOK_XSL_HTML_CHUNK_XSL)
         FIND_FILE(BT_DOCBOOK_XSL_HTML_CHUNK_XSL
@@ -238,14 +238,14 @@ ${BT_DOCBOOK_XSL_HTML_CHUNK_XSL}")
 
     FUNCTION(GenerateHtmlDoc doc)
         STRING(TOUPPER "${doc}" udoc)
-        IF(${GENERATE_${udoc}_HTML})
+        IF(${BUILD_${udoc}_HTML})
             ADD_CUSTOM_TARGET("${doc}_html")
             SET_TARGET_PROPERTIES("${doc}_html"
                 PROPERTIES FOLDER "Documentation")
             AddDocTypeTargets("${doc}" "${doc}_html")
             FILE(GLOB IMAGE_FILES
                 "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}/images/*.png")
-            FOREACH(l IN LISTS "DO_GENERATE_${udoc}_HTML_LANGUAGES")
+            FOREACH(l IN LISTS "DO_BUILD_${udoc}_HTML_LANGUAGES")
                 SET(d "${DOCS_BINARY_DIR}/${doc}/${l}")
                 IF("${l}" STREQUAL "en")
                     SET(i "${CMAKE_CURRENT_SOURCE_DIR}/docs/${doc}")
@@ -275,7 +275,7 @@ ENDIF()
 ######################################################
 # Rules for PDF:
 #
-IF(GENERATE_PDF)
+IF(BUILD_PDF)
     # Generate XSL files for PDF:
     IF(NOT DEFINED BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL)
         FIND_FILE(BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL
@@ -300,7 +300,7 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
 
     FUNCTION(GeneratePdfDoc doc)
         STRING(TOUPPER "${doc}" udoc)
-        IF(${GENERATE_${udoc}_PDF})
+        IF(${BUILD_${udoc}_PDF})
             ADD_CUSTOM_TARGET("${doc}_pdf")
             SET_TARGET_PROPERTIES("${doc}_pdf"
                 PROPERTIES FOLDER "Documentation")
@@ -310,7 +310,7 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
             IF(IS_DIRECTORY "${imageDir}")
                 FILE(GLOB images "${imageDir}/*")
             ENDIF()
-            FOREACH(l IN LISTS DO_GENERATE_${udoc}_PDF_LANGUAGES)
+            FOREACH(l IN LISTS DO_BUILD_${udoc}_PDF_LANGUAGES)
                 SET(d "${DOCS_BINARY_DIR}/${doc}/${l}")
                 FOREACH(image IN LISTS images)
                     IF(CMAKE_VERSION VERSION_LESS 3.14)
