@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, BibleTime團隊</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>貢獻者&amp;C</translation>
@@ -1825,53 +1821,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">粗體</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">斜體</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">底線</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">左</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">向左對齊</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">中</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">右</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">向右對齊</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">字體</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">字體大小</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">字體顏色</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2444,30 +2393,6 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">&#x3000;神愛世人，甚至把他的獨生子賜給他們，叫一切信他的，不至滅亡，反得永生。</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">因為&#x3000;神差他的兒子到世上來，不是要定世人的罪，而是要使世人藉著他得救。</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">信他的，不被定罪；不信的，罪已經定了，因為他不信&#x3000;神獨生子的名。</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">凡作惡的都恨光，不來接近光，免得他的惡行暴露出來。</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">凡行真理的，就來接近光，好顯明他所作的都是靠著&#x3000;神而作的。</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">這就是審判, 光來到世上, 世人因為自己的行為邪惡, 不愛光倒愛黑暗, 定他們罪的原因, 就在這裡。</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

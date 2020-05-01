@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>%BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, BibleTime Ekibi</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Katkı Sağlayanlar</translation>
@@ -1819,13 +1815,6 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="206"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Yazı Tipi</translation>
     </message>
 </context>
 <context>

@@ -1818,53 +1818,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Félkövér</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Dőlt</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Aláhúzott</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Balra igazított</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Balra igazított</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Középre igazított</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Jobbra igazított</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Jobbra igazított</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Betűtípus</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Betűméret</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Betűszín</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2437,30 +2390,6 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">Mert úgy szerette Isten e világot, hogy az ő egyszülött Fiát adta, hogy valaki hiszen ő benne, el ne vesszen, hanem örök élete legyen.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">Mert nem azért küldte az Isten az ő Fiát a világra, hogy kárhoztassa a világot, hanem hogy megtartassék a világ általa.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">A ki hiszen ő benne, el nem kárhozik; a ki pedig nem hisz, immár elkárhozott, mivelhogy nem hitt az Isten egyszülött Fiának nevében.</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">Mert minden, a ki hamisan cselekszik, gyűlöli a világosságot és nem megy a világosságra, hogy az ő cselekedetei fel ne fedessenek.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">A ki pedig az igazságot cselekszi, az a világosságra megy, hogy az ő cselekedetei nyilvánvalókká legyenek, hogy Isten szerint való cselekedetek.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">Az ítélet pedig az, hogy a világosság eljött a világba, de az emberek jobban szerették a sötétséget, mint a világosságot, mert a cselekedeteik gonoszak.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

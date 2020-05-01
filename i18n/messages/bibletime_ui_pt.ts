@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, A Equipa do BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Colaboradores</translation>
@@ -1825,53 +1821,6 @@ atalho</translation>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Negrito</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Itálico</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Sublinhado</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Esquerda</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Alinhar à esquerda</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Centro</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Direita</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Alinhar à direita</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Tipo de letra</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Tamanho do tipo de letra</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Cor do tipo de letra</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2445,30 +2394,6 @@ atalho</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">Tanto amou Deus o mundo, que lhe entregou o seu Filho Unigénito, a fim de que todo o que nele crê não se perca, mas tenha a vida eterna.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">De facto, Deus não enviou o seu Filho ao mundo para condenar o mundo, mas para que o mundo seja salvo por Ele.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">Quem nele crê não é condenado, mas quem não crê já está condenado, por não crer no Filho Unigénito de Deus.</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">De facto, quem pratica o mal odeia a Luz e não se aproxima da Luz para que as suas acções não sejam desmascaradas.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">Mas quem pratica a verdade aproxima-se da Luz, de modo a tornar-se claro que os seus actos são feitos segundo Deus.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">E a condenação está nisto: a Luz veio ao mundo, e os homens preferiram as trevas à Luz, porque as suas obras eram más.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

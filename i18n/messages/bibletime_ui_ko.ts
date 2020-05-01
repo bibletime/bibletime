@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>바이블타임(&amp;B)</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, The BibleTime Team</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>기여자(&amp;C)</translation>
@@ -1825,53 +1821,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">굵게</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">이탤릭</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">밑줄</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">왼쪽</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">좌 정렬</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">중앙</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">오른쪽</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">우 정렬</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">글꼴</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">글꼴 크기</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">글꼴 색상</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2445,30 +2394,6 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니 이는 저를 믿는 자마다 멸망치 않고 영생을 얻게 하려 하심이니라.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">하나님이 그 아들을 세상에 보내신 것은 세상을 심판하려 하심이 아니요 저로 말미암아 세상이 구원을 받게 하려 하심이라.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">저를 믿는 자는 심판을 받지 아니하는 것이요 믿지 아니하는 자는 하나님의 독생자의 이름을 믿지 아니하므로 벌써 심판을 받은 것이니라</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">악을 행하는 자마다 빛을 미워하여 빛으로 오지 아니하나니 이는 그 행위가 드러날까 함이요.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">진리를 쫓는 자는 빛으로 오나니 이는 그 행위가 하나님 안에서 행한 것임을 나타내려 함이라 하시니라.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">그 정죄는 이것이니 곧 빛이 세상에 왔으되 사람들이 자기 행위가 악하므로 빛보다 어두움을 더 사랑한 것이니라.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

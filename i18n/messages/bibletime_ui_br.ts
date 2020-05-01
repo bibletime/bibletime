@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, Skipalh BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Kendaolerien</translation>
@@ -1822,53 +1818,6 @@ berradenn-glavier</translation>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="206"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Druz</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Stouet</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Islinennañ</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Kleiz</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Linennañ a-gleiz</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Kreizañ</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Dehoù</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Linennañ a-zehoù</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Skritur</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Ment ar skritur</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Liv ar skritur</translation>
     </message>
 </context>
 <context>

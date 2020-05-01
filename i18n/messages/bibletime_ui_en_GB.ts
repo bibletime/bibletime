@@ -1821,53 +1821,6 @@ shortcut</translation>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Bold</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Italic</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Underline</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Left</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Align left</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Center</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Right</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Align right</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Font</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Font size</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Font colour</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2441,30 +2394,6 @@ shortcut</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, The BibleTime Komanda</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Atbalstītāji</translation>
@@ -1825,53 +1821,6 @@ saīsne</translation>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Trekns</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Slīps</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Pasvītrots</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Pa kreisi</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Izlīdzināt pa kreisi</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Centrā</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Pa labi</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Izlīdzināt pa labi</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Fonts</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Fonta izmērs</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Fonta krāsa</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2445,30 +2394,6 @@ saīsne</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">Jo tik ļoti Dievs pasauli mīlējis, ka Viņš devis Savu vienpiedzimušo Dēlu, lai neviens, kas Viņam tic, nepazustu, bet dabūtu mūžīgo dzīvību,</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">jo Dievs Savu Dēlu nav sūtījis pasaulē, lai Tas pasauli tiesātu, bet lai pasaule caur Viņu tiktu glābta. </translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">Kas tic Viņam, netiek tiesāts, bet, kas netic, ir jau spriedumu dabūjis, tāpēc ka nav ticējis Dieva vienpiedzimušā Dēla Vārdam.</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">Jo ikviens, kas dara ļaunu, ienīst gaismu un nenāk pie gaismas, lai viņa darbi netiktu atklāti.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">Bet, kas dara patiesību, nāk pie gaismas, lai būtu redzami viņa darbi, ka tie Dievā darīti.&quot; </translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">Bet šī ir tā tiesa, ka gaisma ir nākusi pasaulē, bet cilvēkiem tumsība ir bijusi mīļāka par gaismu, tāpēc ka viņu darbi bija ļauni. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

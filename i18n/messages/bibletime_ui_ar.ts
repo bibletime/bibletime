@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;بيبل تايم</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, The BibleTime Team</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>ال&amp;مساهمون</translation>
@@ -1822,53 +1818,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">غامق</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">مائل</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">تسطير</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">يسار</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">محاذاة يسار</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">توسيط</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">يمين</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">محاذاة يمين</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">الخط</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">حجم الخط</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">لون الخط</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2441,30 +2390,6 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">لانه هكذا احب الله العالم حتى بذل ابنه الوحيد لكي لا يهلك كل من يؤمن به بل تكون له الحياة الابدية.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">لانه لم يرسل الله ابنه الى العالم ليدين العالم بل ليخلّص به العالم.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">الذي يؤمن به لا يدان والذي لا يؤمن قد دين لانه لم يؤمن باسم ابن الله الوحيد.</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">لان كل من يعمل السيّآت يبغض النور ولا يأتي الى النور لئلا توبخ اعماله.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">واما من يفعل الحق فيقبل الى النور لكي تظهر اعماله انها بالله معمولة.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">وهذه هي الدينونة ان النور قد جاء الى العالم واحب الناس الظلمة اكثر من النور لان اعمالهم كانت شريرة.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

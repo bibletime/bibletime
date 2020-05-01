@@ -27,7 +27,7 @@ SET_TARGET_PROPERTIES("messages" PROPERTIES FOLDER "Messages")
 
 # Template file for translators:
 ADD_CUSTOM_TARGET("messages_default" COMMAND
-    "${QT_LUPDATE_EXECUTABLE}" "-extensions" "cpp,h"
+    "${QT_LUPDATE_EXECUTABLE}" "-no-obsolete" "-extensions" "cpp,h"
     "${CMAKE_CURRENT_SOURCE_DIR}/src" "-ts" "${TS_DIR}/bibletime_ui.ts")
 SET_TARGET_PROPERTIES("messages_default" PROPERTIES FOLDER "Messages")
 ADD_DEPENDENCIES("messages" "messages_default")
@@ -45,7 +45,7 @@ FOREACH(TS_FILE IN LISTS TS_FILES)
     INSTALL(FILES "${TS_QM_FILE}" DESTINATION "${BT_LOCALEDIR}/")
 
     ADD_CUSTOM_TARGET("messages_${TS_LANG}" COMMAND
-        "${QT_LUPDATE_EXECUTABLE}" "-extensions" "cpp,h"
+        "${QT_LUPDATE_EXECUTABLE}" "-no-obsolete" "-extensions" "cpp,h"
         "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${TS_FILE}")
     SET_TARGET_PROPERTIES("messages_${TS_LANG}" PROPERTIES
         FOLDER "Messages")

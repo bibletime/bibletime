@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c)1999-2016, l&apos;équipe BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Contributeurs</translation>
@@ -1825,53 +1821,6 @@ raccourci</translation>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Gras</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Italique</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Souligner</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Gauche</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Aligner à gauche</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Centrer</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Droit</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Aligner à droite</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Police</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Taille de police</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Couleur de la police</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2445,30 +2394,6 @@ raccourci</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">Dieu a tant aimé le monde qu&apos;il a donné son Fils, l&apos;Unique-Engendré, afin que quiconque croit en lui ne se perde pas, mais ait la vie éternelle.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">Car Dieu n&apos;a pas envoyé le Fils dans le monde pour juger le monde, mais pour que le monde soit sauvé par son entremise.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">Qui croit en lui n&apos;est pas jugé; qui ne croit pas est déjà jugé, parce qu&apos;il n&apos;a pas cru au nom du Fils Unique-Engendré de Dieu.</translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">Quiconque, en effet, commet le mal hait la lumière et ne vient pas à la lumière, de peur que ses œuvres ne soient démontrées coupables.</translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">Mais celui qui fait la vérité vient à la lumière, afin qu&apos;il soit manifesté que ses œuvres sont faites en Dieu.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">Et tel est le jugement&#x202f;: la lumière est venue dans le monde et les hommes ont mieux aimé les ténèbres que la lumière, car leurs œuvres étaient mauvaises.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>

@@ -683,10 +683,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;BibleTime</translation>
     </message>
     <message>
-        <source>(c)1999-2016, The BibleTime Team</source>
-        <translation type="vanished">(c) 1999–2016, The Bibletime -tiimi</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Tekijät</translation>
@@ -1825,53 +1821,6 @@ pikanäppäin</translation>
     </message>
 </context>
 <context>
-    <name>BtTextEditDialog</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Lihavoitu</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Kursivoitu</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Alleviivaus</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation type="vanished">Vasen</translation>
-    </message>
-    <message>
-        <source>Align left</source>
-        <translation type="vanished">Sijoita vasemmalle</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation type="vanished">Keski</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation type="vanished">Oikea</translation>
-    </message>
-    <message>
-        <source>Align right</source>
-        <translation type="vanished">Sijoita oikealle</translation>
-    </message>
-    <message>
-        <source>Font</source>
-        <translation type="vanished">Kirjasin</translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="vanished">Kirjasimen koko</translation>
-    </message>
-    <message>
-        <source>Font color</source>
-        <translation type="vanished">Kirjasimen väri</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -2445,30 +2394,6 @@ pikanäppäin</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation type="vanished">Jumala on rakastanut maailmaa niin paljon, että antoi ainoan Poikansa, jottei yksikään, joka häneen uskoo, joutuisi kadotukseen, vaan saisi iankaikkisen elämän.</translation>
-    </message>
-    <message>
-        <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation type="vanished">Ei Jumala lähettänyt Poikaansa tuomitsemaan maailmaa, vaan pelastamaan sen.</translation>
-    </message>
-    <message>
-        <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation type="vanished">Sitä, joka uskoo häneen, ei tuomita, mutta se, joka ei usko, on jo tuomittu, koska hän ei uskonut Jumalan ainoaan Poikaan. </translation>
-    </message>
-    <message>
-        <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation type="vanished">Sillä jokainen, joka pahaa tekee, vihaa valkeutta eikä tule valkeuteen, ettei hänen tekojansa nuhdeltaisi. </translation>
-    </message>
-    <message>
-        <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
-        <translation type="vanished">Mutta joka totuuden tekee, se tulee valkeuteen, että hänen tekonsa tulisivat julki, sillä ne ovat Jumalassa tehdyt.</translation>
-    </message>
-    <message>
-        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="vanished">Mutta tämä on tuomio, että valkeus on tullut maailmaan, ja ihmiset rakastivat pimeyttä enemmän kuin valkeutta; sillä heidän tekonsa olivat pahat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>
