@@ -1,11 +1,15 @@
+2020-04-30 Jaak Ristioa <jaak@ristioja.ee>
+    * Removed generated docs from tree, improved documentation generation logic,
+      enabled it by default in builds and added means to disable it with CMake.
+
 2019-03-22 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix bug #223 - Double-clicking a verse number makes the bible scroll with mouse pointer movements 
-	
+    * Fix bug #223 - Double-clicking a verse number makes the bible scroll with mouse pointer movements
+
 2019-03-21 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #183 - Support for dark mode.
 
 2019-01-14 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix bug #218 - Entering Bible reference in navigation toolbar returns text low in page 
+    * Fix bug #218 - Entering Bible reference in navigation toolbar returns text low in page
 
 2019-01-03 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #69 - Saving chapter as HTML or plain text in parallel
