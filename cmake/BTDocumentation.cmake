@@ -232,10 +232,10 @@ ${BT_DOCBOOK_XSL_HTML_CHUNK_XSL}")
                 SET_TARGET_PROPERTIES("${doc}_html_${l}"
                     PROPERTIES FOLDER "Documentation")
                 ADD_DEPENDENCIES("${doc}_html" "${doc}_html_${l}")
-                INSTALL(DIRECTORY "${d}/html"
-                        DESTINATION "${BT_DOCDIR}/${doc}/${l}/")
+                INSTALL(DIRECTORY "${d}/html/"
+                        DESTINATION "${BT_DOCDIR}/${doc}/html/${l}")
                 INSTALL(FILES ${HTML_FILES} ${IMAGE_FILES}
-                        DESTINATION "${BT_DOCDIR}/${doc}/${l}/html/")
+                        DESTINATION "${BT_DOCDIR}/${doc}/html/${l}/")
             ENDFOREACH()
         ENDIF()
     ENDFUNCTION()
@@ -312,7 +312,7 @@ ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
                 ADD_CUSTOM_TARGET("${doc}_pdf_${l}"
                     DEPENDS "${d}/pdf/${doc}.pdf")
                 INSTALL(FILES "${d}/pdf/${doc}.pdf"
-                        DESTINATION "${BT_DOCDIR}/${doc}/${l}/pdf/")
+                        DESTINATION "${BT_DOCDIR}/${doc}/pdf/${l}/")
                 SET_TARGET_PROPERTIES("${doc}_pdf_${l}"
                     PROPERTIES FOLDER "Documentation")
                 ADD_DEPENDENCIES("${doc}_pdf" "${doc}_pdf_${l}")
