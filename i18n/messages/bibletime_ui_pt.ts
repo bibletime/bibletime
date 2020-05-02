@@ -1950,8 +1950,8 @@ atalho</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
-        <source>The currently active window can be auto scrolled up or down. Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation>A janela atualmente ativa pode ser deslocada automaticamente para cima ou para baixo. Comece a deslocação pressionando Shift + Baixo. Pode aumentar a velocidade de deslocação pressionando Shift + Baixo várias vezes. Para pausar a deslocação, pressione Espaço. Para começar a deslocar novamente na velocidade anterior, pressione Espaço novamente. Para diminuir a deslocação ou deslocar na outra direção, pressione Shift + Cima uma ou mais vezes. Pressionar qualquer outra tecla ou alterar a janela ativa interromperá a deslocação.</translation>
+        <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>

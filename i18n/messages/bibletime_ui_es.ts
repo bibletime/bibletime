@@ -1950,8 +1950,8 @@ atajo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
-        <source>The currently active window can be auto scrolled up or down. Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation>La ventana actualmente activa puede desplazarse automáticamente hacia arriba o hacia abajo. Comience a desplazarse presionando Shift+Abajo. Puede aumentar la velocidad de desplazamiento presionando Shift+Abajo varias veces. Para pausar el desplazamiento, presione la barra espaciadora. Para comenzar a desplazarse nuevamente a la velocidad anterior, presione la barra espaciadora nuevamente. Para ralentizar el desplazamiento o desplazarse en la otra dirección, presione Shift+Arriba una o más veces. Al presionar cualquier otra tecla o cambiar la ventana activa, se detendrá el desplazamiento.</translation>
+        <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>

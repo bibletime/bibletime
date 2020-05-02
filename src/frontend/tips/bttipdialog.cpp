@@ -116,7 +116,7 @@ void BtTipDialog::initTips() {
     m_tips.clear();
 
     m_tips << tr("The currently active window can be auto scrolled up or down."
-                 " Start scrolling by press Shift+Down. You can increase the"
+                 " Start scrolling by pressing Shift+Down. You can increase the"
                  " scrolling speed by pressing Shift+Down multiple times. To"
                  " pause scrolling press Space. To start scrolling again at the"
                  " previous speed press Space again. To slow down scrolling or scroll"

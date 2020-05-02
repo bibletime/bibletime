@@ -1950,8 +1950,8 @@ raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
-        <source>The currently active window can be auto scrolled up or down. Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation>La fenêtre actuellement active peut défiler automatiquement vers le haut ou vers le bas. Lancez le défilement en appuyant sur Maj + Bas. Vous pouvez augmenter la vitesse de défilement en appuyant plusieurs fois sur Maj + Bas. Pour suspendre le défilement, appuyez sur Espace. Pour recommencer le défilement à la vitesse précédente, appuyez à nouveau sur Espace. Pour ralentir le défilement ou faire défiler dans l&apos;autre sens, appuyez sur Maj + Haut une ou plusieurs fois. Appuyez sur une autre touche ou modifiez la fenêtre active pour arrêter le défilement.</translation>
+        <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>

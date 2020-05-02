@@ -1950,8 +1950,8 @@ alias</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
-        <source>The currently active window can be auto scrolled up or down. Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation>Het huidige actieve venster kan automatisch omhoog en omlaag gescrold worden. Begin met scrollen door Shift+Down in te toetsen. De scroll snelheid kan worden verhoogd door meerdere keren Shift+Down in te toetsen. Om weer met de vorige snelheid te scrollen, druk dan op de Spatiebalk. Om het scrollen te vertragen of in een andere richting te scrollen, toets dan één of meerdere keren op Shift+Up. Als een andere toets wordt ingedrukt of als een ander venster actief wordt, dan zal het scrollen stoppen.</translation>
+        <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>

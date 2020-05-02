@@ -1950,8 +1950,8 @@ pikanäppäin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
-        <source>The currently active window can be auto scrolled up or down. Start scrolling by press Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation>Tällä hetkellä aktiivista ikkunaa voi vierittää automaattisesti ylös tai alas. Aloita vieritys painamalla Vaihto+Alas. Voit lisätä vieritysvauhtia painamalla Vaihto+Alas useamman kerran. Pysäyttääksesi vierityksen paina välilyönti-näppäintä. Jatkaaksesi vieritystä jälleen aiemmalla nopeudella paina välilyönti-näppäintä uudelleen. Hidastaaksesi vieritystä tai vierittääksesi toiseen suuntaan, paina Vaihto-Ylös yhden tai useamman kerran. Minkä tahansa muun näppäimen painaminen tai aktiivisen ikkunan vaihtaminen pysäyttää vierityksen.</translation>
+        <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
