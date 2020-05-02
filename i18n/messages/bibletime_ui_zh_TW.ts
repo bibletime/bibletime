@@ -152,17 +152,57 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>如何研經(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="598"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="326"/>
+        <source>Error locating handbook!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="327"/>
+        <source>A suitable installed handbook could not be found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="334"/>
+        <source>Error opening handbook!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="335"/>
+        <source>The installed handbook could not be opened!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="343"/>
+        <source>Error locating howto!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="344"/>
+        <source>A suitable installed howto could not be found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="351"/>
+        <source>Error opening howto!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="352"/>
+        <source>The installed howto could not be opened!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="622"/>
         <source>Please enter a name for the new session.</source>
         <translation>請輸入新工作階段的名稱.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="606"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="630"/>
         <source>Session already exists</source>
         <translation>工作階段已存在</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="607"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="631"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>工作階段&quot;%1&quot; 已存在，請提供一個其他名稱</translation>
     </message>
@@ -442,7 +482,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>在標準聖經中搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bibletime_slots.cpp" line="597"/>
+        <location filename="../../src/frontend/bibletime_slots.cpp" line="621"/>
         <source>New Session</source>
         <translation>新工作階段</translation>
     </message>
