@@ -319,13 +319,37 @@ void BibleTime::slotSearchDefaultBible() {
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
-    QString filePath(util::directory::getHandbookDir().canonicalPath() + "/index.html");
-    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+    auto url(util::directory::getHandbook());
+    if (url.isEmpty()) {
+        message::showCritical(
+                    this,
+                    tr("Error locating handbook!"),
+                    tr("A suitable installed handbook could not be found!"));
+        return;
+    }
+    url.prepend("file://");
+    if (!QDesktopServices::openUrl(url))
+        message::showCritical(
+                    this,
+                    tr("Error opening handbook!"),
+                    tr("The installed handbook could not be opened!"));
 }
 
 void BibleTime::openOnlineHelp_Howto() {
-    QString filePath(util::directory::getHowtoDir().canonicalPath() + "/index.html");
-    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+    auto url(util::directory::getHowto());
+    if (url.isEmpty()) {
+        message::showCritical(
+                    this,
+                    tr("Error locating howto!"),
+                    tr("A suitable installed howto could not be found!"));
+        return;
+    }
+    url.prepend("file://");
+    if (!QDesktopServices::openUrl(url))
+        message::showCritical(
+                    this,
+                    tr("Error opening howto!"),
+                    tr("The installed howto could not be opened!"));
 }
 
 void BibleTime::slotOpenAboutDialog() {

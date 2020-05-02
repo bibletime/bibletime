@@ -93,11 +93,11 @@ const QDir &getPicsDir();
 /** Return the path to the translation files. */
 const QDir &getLocaleDir();
 
-/** Return the path to the handbook files, either of the current locale or en as fallback. */
-const QDir &getHandbookDir();
+/** \returns an absolute path to a handbook or QString() if not found. */
+QString getHandbook();
 
-/** Return the path to the bible study howto files, either of the current locale or en as fallback. */
-const QDir &getHowtoDir();
+/** \returns an absolute path to a howto or QString() if not found. */
+QString getHowto();
 
 /** Return the path to the default display template files. */
 const QDir &getDisplayTemplatesDir();

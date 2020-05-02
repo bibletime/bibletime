@@ -21,6 +21,7 @@
 #include <QFileInfoList>
 #include <QLocale>
 #include <QStandardPaths>
+#include <QStringList>
 #include "btassert.h"
 #ifdef Q_OS_WIN32
 #include <windows.h>
@@ -36,8 +37,7 @@ std::unique_ptr<QDir> cachedIconDir;
 std::unique_ptr<QDir> cachedLicenseDir;
 std::unique_ptr<QDir> cachedPicsDir;
 std::unique_ptr<QDir> cachedLocaleDir;
-std::unique_ptr<QDir> cachedHandbookDir;
-std::unique_ptr<QDir> cachedHowtoDir;
+std::unique_ptr<QDir> cachedDocDir;
 std::unique_ptr<QDir> cachedDisplayTemplatesDir;
 std::unique_ptr<QDir> cachedUserDisplayTemplatesDir;
 std::unique_ptr<QDir> cachedUserBaseDir;
@@ -163,24 +163,12 @@ bool initDirectoryCache() {
     QString localeName(QLocale().name());
     QString langCode(localeName.section('_', 0, 0));
 
-    cachedHandbookDir.reset(new QDir(wDir));
-    if (!cachedHandbookDir->cd("share/doc/bibletime/handbook/" + localeName)) {
-        if (!cachedHandbookDir->cd("share/doc/bibletime/handbook/" + langCode)) {
-            if (!cachedHandbookDir->cd("share/doc/bibletime/handbook/en/")) {
-                qWarning() << "Cannot find handbook directory relative to" << wDir.absolutePath();
-                return false;
-            }
-        }
-    }
 
-    cachedHowtoDir.reset(new QDir(wDir));
-    if (!cachedHowtoDir->cd("share/doc/bibletime/howto/" + localeName)) {
-        if (!cachedHowtoDir->cd("share/doc/bibletime/howto/" + langCode)) {
-            if (!cachedHowtoDir->cd("share/doc/bibletime/howto/en/")) {
-                qWarning() << "Cannot find handbook directory relative to" << wDir.absolutePath();
-                return false;
-            }
-        }
+    cachedDocDir.reset(new QDir(wDir));
+    if (!cachedDocDir->cd(BT_DOCDIR)) {
+        qWarning() << "Cannot find documentation directory relative to"
+                   << wDir.absolutePath();
+        return false;
     }
 
     cachedDisplayTemplatesDir.reset(new QDir(wDir)); //display templates dir
@@ -389,13 +377,48 @@ const QDir &getLocaleDir() {
     return *cachedLocaleDir;
 }
 
-const QDir &getHandbookDir() {
-    return *cachedHandbookDir;
+namespace {
+
+QString getDocFile(QString docName) {
+    auto dir(*cachedDocDir);
+    QString r;
+    if (dir.cd(docName)) {
+        QStringList tryLanguages;
+        tryLanguages.append(QLocale().name());
+        {
+            auto const & localeName = tryLanguages.back();
+            if (localeName.contains('_'))
+                tryLanguages.append(localeName.section('_', 0, 0));
+        }
+        tryLanguages.append("en");
+        auto const tryDoc =
+                [&dir,&tryLanguages](QString const & type,
+                                     QString const & filename) -> QString
+                {
+                    if (dir.cd(type)) {
+                        for (auto const & tryLanguage : tryLanguages) {
+                            if (dir.cd(tryLanguage)) {
+                                if (dir.exists(filename))
+                                    return dir.absoluteFilePath(filename);
+                                dir.cdUp();
+                            }
+                        }
+                        dir.cdUp();
+                    }
+                    return {};
+                };
+        r = tryDoc("html", "index.html");
+        if (r.isEmpty())
+            r = tryDoc("pdf", docName + ".pdf");
+    }
+    return r;
 }
 
-const QDir &getHowtoDir() {
-    return *cachedHowtoDir;
-}
+} // anonymous namespace
+
+QString getHandbook() { return getDocFile("handbook"); }
+
+QString getHowto() { return getDocFile("howto"); }
 
 const QDir &getDisplayTemplatesDir() {
     return *cachedDisplayTemplatesDir;
