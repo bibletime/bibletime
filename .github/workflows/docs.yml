@@ -1,0 +1,87 @@
+name: Generate and publish docs
+
+on:
+  create
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: code
+    - name: Check if the reference was a valid tag for a valid repository
+      working-directory: code
+      id: isValidTag
+      continue-on-error: true
+      run: |
+        echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+        echo "GITHUB_REF: ${GITHUB_REF}"
+        echo "GITHUB_SHA: ${GITHUB_SHA}"
+        test "${GITHUB_REPOSITORY}" = "bibletime/bibletime"
+        git show-ref --tags "${GITHUB_REF}"
+        echo "${GITHUB_REF#refs/tags/}" | grep -vq /
+        echo "${GITHUB_REF#refs/tags/}" | grep -Eq '^v[[:digit:]]+\.'
+    - name: Gather system information
+      if: steps.isValidTag.outcome == 'success'
+      run: |
+        mkdir -p "${HOME}/info"
+        cd "${HOME}/info"
+        echo 2 > num_threads
+    - name: Install required packages
+      if: steps.isValidTag.outcome == 'success'
+      run: |
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends cmake make po4a xsltproc docbook-xml docbook-xsl fop
+    - name: Configure, generate and install the documentation
+      if: steps.isValidTag.outcome == 'success'
+      run: |
+        mkdir -p install build
+        cd build
+        cmake -DBUILD_BIBLETIME=NO -DCMAKE_INSTALL_PREFIX=../install/ ../code
+        make "-j$(cat "${HOME}/info/num_threads")"
+        make "-j$(cat "${HOME}/info/num_threads")" install
+    - uses: actions/checkout@v2
+      if: steps.isValidTag.outcome == 'success'
+      with:
+        repository: bibletime/generated_docs
+        path: generated_docs
+        fetch-depth: 0
+        token: ${{ secrets.PAT }}
+    - name: Configure generated documentation repository copy
+      if: steps.isValidTag.outcome == 'success'
+      working-directory: generated_docs
+      run: |
+        git config --worktree user.name 'GitHub workflow'
+        git config --worktree user.email 'invalid@invalid'
+    - name: Add, commit and push the generated documentation
+      if: steps.isValidTag.outcome == 'success'
+      working-directory: generated_docs
+      run: |
+        SHORTREF="${GITHUB_REF#refs/tags/}"
+        SHORTREF="${SHORTREF%_generate_docs_only}"
+        EMPTY=""
+        git rm -rf --ignore-unmatch "docs/${SHORTREF}"
+        mkdir -p "docs/${SHORTREF}"
+        mv ../install/share/doc/bibletime/{handbook,howto} "docs/${SHORTREF}/"
+        git add "docs/${SHORTREF}"
+        ../code/.github/workflows/generate_docs_index.sh > docs/index.html
+        git add docs/index.html
+        cat << EOF > commitMessage
+        Automatic update for ${GITHUB_REF}
+        $EMPTY
+        GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+        GITHUB_REF: ${GITHUB_REF}
+        GITHUB_SHA: ${GITHUB_SHA}
+        GITHUB_ACTOR: ${GITHUB_ACTOR}
+        $EMPTY
+        GITHUB_RUN_ID: ${GITHUB_RUN_ID}
+        GITHUB_RUN_NUMBER: ${GITHUB_RUN_NUMBER}
+        GITHUB_ACTION: ${GITHUB_ACTION}
+        EOF
+        git commit -F commitMessage
+        git push
