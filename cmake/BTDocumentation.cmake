@@ -221,9 +221,9 @@ IF(BUILD_HTML)
                 "/usr/share/xml/docbook/stylesheet/nwalsh/html/"
             NO_DEFAULT_PATH)
         IF(NOT BT_DOCBOOK_XSL_HTML_CHUNK_XSL)
-            MESSAGE(WARNING "The required file html/chunk.xsl from docbook-xsl \
-    was not found on the system! Please specify its full path with \
-    -DBT_DOCBOOK_XSL_HTML_CHUNK_XSL=path/to/html/chunk.xsl")
+            MESSAGE(FATAL_ERROR "The required file html/chunk.xsl from \
+docbook-xsl was not found on the system! Please specify its full path with \
+-DBT_DOCBOOK_XSL_HTML_CHUNK_XSL=path/to/html/chunk.xsl")
         ELSE()
             MESSAGE(STATUS "Found XSL for HTML generation: \
 ${BT_DOCBOOK_XSL_HTML_CHUNK_XSL}")
@@ -280,8 +280,8 @@ IF(BUILD_PDF)
                 "/usr/local/share/xsl/docbook/fo/"
             NO_DEFAULT_PATH)
         IF(NOT BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL)
-            MESSAGE(WARNING "The required file fo/docbook.xsl from docbook-xsl \
-was not found on the system! Please specify its full path with \
+            MESSAGE(FATAL_ERROR "The required file fo/docbook.xsl from \
+docbook-xsl was not found on the system! Please specify its full path with \
 -DBT_DOCBOOK_XSL_PDF_DOCBOOK_XSL=path/to/html/chunk.xsl")
         ELSE()
             MESSAGE(STATUS "Found XSL for PDF generation: \
