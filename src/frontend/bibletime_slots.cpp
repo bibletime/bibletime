@@ -327,8 +327,7 @@ void BibleTime::openOnlineHelp_Handbook() {
                     tr("A suitable installed handbook could not be found!"));
         return;
     }
-    url.prepend("file://");
-    if (!QDesktopServices::openUrl(url))
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(url)))
         message::showCritical(
                     this,
                     tr("Error opening handbook!"),
@@ -344,8 +343,7 @@ void BibleTime::openOnlineHelp_Howto() {
                     tr("A suitable installed howto could not be found!"));
         return;
     }
-    url.prepend("file://");
-    if (!QDesktopServices::openUrl(url))
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(url)))
         message::showCritical(
                     this,
                     tr("Error opening howto!"),
