@@ -1,5 +1,5 @@
-[main]
-; disabled, stable-2.11 ist the currently active branch
+[mainOFF]
+; disabled, stable-3.0 is the currently active branch
 host = https://www.transifex.com
 
 [bibletime.bibletime_ui]
