@@ -14,7 +14,7 @@ The following requirements are needed only if you want to develop BibleTime.
  - A C++11 compiler.
  - QT 5.9+ (https://www.qt.io)
  - Sword 1.8.1+ (https://crosswire.org/sword)
- - CLucene 0.9.19a+ (https://clucene.sf.net)
+ - CLucene 0.9.19+ (https://clucene.sf.net)
  - CMake 3.10+ (https://cmake.org)
 
 ### DOCUMENTATION GENERATION REQUIREMENTS (OPTIONAL)
