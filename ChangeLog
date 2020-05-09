@@ -1,3 +1,6 @@
+2020-05-09 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 3.0 RC 1.
+
 2020-04-30 Jaak Ristioa <jaak@ristioja.ee>
     * Removed generated docs from tree, improved documentation generation logic,
       enabled it by default in builds and added means to disable it with CMake.
