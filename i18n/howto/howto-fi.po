@@ -4,12 +4,12 @@
 #
 # Translators:
 # Ilpo Kantonen, 2005,2009,2016
-# Ilpo Kantonen, 2005,2009,2016,2019
+# Ilpo Kantonen, 2005,2009,2016,2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2019-11-15 12:20+0000\n"
+"PO-Revision-Date: 2020-05-03 20:33+0000\n"
 "Last-Translator: Ilpo Kantonen\n"
 "Language-Team: Finnish (http://www.transifex.com/bibletime/bibletime/"
 "language/fi/)\n"
@@ -101,6 +101,10 @@ msgid ""
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
 msgstr ""
+"Kuuleminen ja lukeminen tarjoavat teleskooppikuvan pyhistä kirjoituksista, "
+"kun taas tutkimukset ja muistaminen tarjoavat mikroskooppisen kuvan pyhistä "
+"kirjoituksista. Pyhien kirjoitusten mietiskely tuo kuulemisen, lukemisen, "
+"opiskelun ja muistamisen yhdessä  ja vahvistaa Sanan mielessämme."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
@@ -278,6 +282,8 @@ msgid ""
 "What do the verses around it say? \"Context is king\" is the rule -- the "
 "passage must make sense within the structure of the entire passage and book."
 msgstr ""
+"Mitä ympärillä olevat jakeet kertovat? \"Konteksti on kuningas\" on sääntö - "
+"kohta on oltava järkevä koko kappaleen ja kirjan rakenteessa."
 
 #. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:123
@@ -354,6 +360,8 @@ msgid ""
 "don't sound a trumpet. (how might someone <quote>sound a trumpet</"
 "quote>today?)"
 msgstr ""
+"Älä kuulosta trumpetilta. (kuinka joku voi <quote>kuulostaa trumpetilta</"
+"quote>tänä päivänä?)"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
@@ -368,7 +376,7 @@ msgstr "jne."
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:164
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Kun annat <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:181
@@ -428,6 +436,10 @@ msgid ""
 "it. Then you could look up related words and references listed for them, e."
 "g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
 msgstr ""
+"Oletetaan, että halusit tutkia sanaa \"lunastus\". Ensin etsit kyseistä "
+"sanaa vastaavuudesta ja etsit sille lueteltuja viitteitä. Sitten voit etsiä "
+"niihin liittyviä sanoja ja viitteitä, esimerkiksi \"lunastaa, lunastettu, "
+"lunnaat\", jopa \"ostaa\" tai \"ostettu\"."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:223
@@ -443,6 +455,11 @@ msgid ""
 "both being translated \"judge\" in English? (We're using Strong's from here "
 "out.)"
 msgstr ""
+"Entä jos huomasit KJV: n ristiriidan Mt.7: 1,  <quote>Älä tuomitse, ettei "
+"sinua tuomita</quote>ja 1 Cor.2:15 <quote>Hän, joka on hengellinen, "
+"tuomitsee kaikki asiat.</quote>Ehkä on olemassa kaksi erilaista "
+"kreikkalaista sanaa, joista molemmat käännetään suomeksi \"tuomita\"? "
+"(Käytämme Strong'ia täältä.)"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:232
@@ -475,6 +492,9 @@ msgid ""
 "language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
 "the meaning of 350 and you have your answer!"
 msgstr ""
+"Käänny takaisin kreikan sanakirjaan. (Muista, että olet UT: ssä, joten kieli "
+"on kreikka, kun taas VT on heprea.) Vertaa 2919: n merkitystä 350: een ja "
+"sinulla on vastaus!"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:254
@@ -526,6 +546,9 @@ msgid ""
 "name. Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
 msgstr ""
+"Jumalan sanan ymmärtäminen on erittäin tärkeää kaikille, jotka vetoavat "
+"Jumalan nimeen. Raamatun opiskelu on yksi ensisijaisista tavoista, joilla "
+"opimme kommunikoimaan Jumalan kanssa."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:7
@@ -543,6 +566,9 @@ msgid ""
 "popularity. Bible sales in North America: more than $500 million per year. "
 "The Bible is both the all-time and year-to-year best seller!"
 msgstr ""
+"Suosio. Raamatun myynti Pohjois-Amerikassa: yli 500 miljoonaa dollaria "
+"vuodessa. Raamattu on sekä kaikkien aikojen että vuosittain eniten myyty "
+"kirja!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:16
@@ -712,6 +738,13 @@ msgid ""
 "gospel from 130 A. D. How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
+"Kymmenen kopiota Caesarin <emphasis>Gallian sota</emphasis> löytyy, joista "
+"aikaisin kopioitiin 900 vuotta sen jälkeen kun Caesar kirjoitti alkuperäisen "
+"teoksen jne. Uudessa Testamentissa meillä on kokonaisia käsikirjoituksia, "
+"jotka ovat peräisin 350 jKr., papyrukset, jotka sisältävät suurimman osan "
+"Uudesta Testamentista 200-luvulta, ja fragmentti Johanneksen evankeliumista "
+"vuodesta 130 AD Kuinka monta käsikirjoitusta meidän on verrattava toisiinsa? "
+"5000 kreikkalaista ja 10 000 latinalaista!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:90
@@ -720,6 +753,9 @@ msgid ""
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
 "emphasis>p. 25-26"
 msgstr ""
+"Tekstikriitikko F. J. A. Hort, \"Uusi testamentti alkuperäisellä kreikan "
+"kielellä\", vol. 1 p561, Macmillan Co., siteeraa <emphasis>Elämän "
+"kysymykset</emphasis>s. 25-26"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:93
@@ -932,6 +968,8 @@ msgid ""
 "We see that this is a conditional promise, specifically speaking of the "
 "truth of God's word."
 msgstr ""
+"Näemme, että tämä on ehdollinen lupaus, puhuu erityisesti Jumalan Sanan "
+"totuudesta."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:213

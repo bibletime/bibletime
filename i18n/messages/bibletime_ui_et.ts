@@ -154,42 +154,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="326"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga käsiraamatu asukoha tuvastamisel!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="327"/>
         <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobilikku paigaldatud käsiraamatut ei leitud!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="334"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga käsiraamatu avamisel!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="335"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Paigaldatud käsiraamatu avamine ebaõnnestus!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="343"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga Piibli uurimise õpetuse asukoha tuvastamisel!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="344"/>
         <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobilikku paigaldatud Piibli uurimise õpetust ei leitud!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="351"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga Piibli uurimise õpetuse avamisel!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="352"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Paigaldatud Piibli uurimise õpetuse avamine ebaõnnestus!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="622"/>
@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(c) 1999-2016, BibleTime&apos;i meeskond {1999-2020,?}</translation>
+        <translation>(c)1999-2020, BibleTime meeskond</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">Rasvane</translation>
+        <translation>Rasvane</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">Kursiiv</translation>
+        <translation>Kursiiv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">Allajoonitud</translation>
+        <translation>Allajoonitud</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">Vasakule</translation>
+        <translation>Vasakule</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">Joonda vasakule</translation>
+        <translation>Joonda vasakule</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">Keskele</translation>
+        <translation>Keskele</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">Paremale</translation>
+        <translation>Paremale</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">Joonda paremale</translation>
+        <translation>Joonda paremale</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">Kirjatüüp</translation>
+        <translation>Kirjatüüp</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">Kirja suurus</translation>
+        <translation>Kirja suurus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">Kirja värv</translation>
+        <translation>Kirja värv</translation>
     </message>
 </context>
 <context>
@@ -1548,12 +1548,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="61"/>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="72"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita salasõna</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="68"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Peida salasõna</translation>
     </message>
 </context>
 <context>
@@ -1951,7 +1951,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiivset akent saab automaatselt üles või alla kerida. Automaatse kerimise algatamiseks vajutage Shift+alla. Kerimise kiiruse suurendamiseks vajutage Shift+alla mitu korda. Automaatse kerimise ajutiseks seiskamiseks vajutage tühikut. Kerimise jätkamiseks eelmisel kiirusel vajutage uuesti tühikut. Kerimise aeglustamiseks või teises suunas kerimiseks vajutage Shift+üles üks või mitu korda. Teiste klahvide vajutamine või aktiivse akna muutmine peatab automaatse kerimise.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
@@ -2408,32 +2408,32 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="217"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt; For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Nõnda on Jumal maailma armastanud, et ta oma ainusündinud Poja on andnud, et ükski, kes temasse usub, ei hukkuks, vaid tal oleks igavene elu.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="222"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Jumal ei ole oma Poega läkitanud maailma, et ta maailma üle kohut mõistaks, vaid et maailm saaks tema läbi päästetud.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="227"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Kes usub temasse, selle üle ei mõisteta kohut, aga kes ei usu, selle üle on kohus juba mõistetud, sest ta ei ole uskunud Jumala ainusündinud Poja nimesse.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="232"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Aga see on kohus, et valgus on tulnud maailma ja inimesed armastasid pimedust rohkem kui valgust, sest nende teod olid kurjad.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Igaüks, kes teeb kurja, vihkab valgust ega tule valguse juurde, et ta tegusid ei paljastataks.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Aga kes teeb tõtt, see tuleb valguse juurde, et ta teod saaksid avalikuks, sest need on tehtud Jumalas.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>
@@ -2673,7 +2673,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Unlock info</source>
-        <translation type="unfinished"></translation>
+        <translation>Lahtilukustamise info</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
@@ -2939,12 +2939,12 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigeeri tavalise tekstina</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="63"/>
         <source>Edit HTML text</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigeeri HTML&apos;ina</translation>
     </message>
 </context>
 <context>

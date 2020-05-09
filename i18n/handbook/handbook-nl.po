@@ -6,7 +6,7 @@
 # Gary Holmlund <garywholmlund@gmail.com>, 2018
 # Harald <dutchbrussels@gmail.com>, 2016
 # Harald <dutchbrussels@gmail.com>, 2016
-# Jaak Ristioja <jaak@ristioja.ee>, 2020
+# Jaak Ristioja, 2020
 # jan boorsma <janboorsma@gmail.com>, 2020
 # Johan van der Lingen <johanlingen@gmail.com>, 2006
 # Johan van der Lingen <johanlingen@hotmail.com>, 2006
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
 "PO-Revision-Date: 2020-04-29 20:28+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Last-Translator: Jaak Ristioja\n"
 "Language-Team: Dutch (http://www.transifex.com/bibletime/bibletime/language/"
 "nl/)\n"
 "Language: nl\n"

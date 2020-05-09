@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2016, The BibleTime Team {1999-2020,?}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">Полужирный</translation>
+        <translation>Полужирный</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">Курсив</translation>
+        <translation>Курсив</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">Подчёркнутый</translation>
+        <translation>Подчёркнутый</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">По левому краю</translation>
+        <translation>По левому краю</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">Выровнять слева</translation>
+        <translation>Выровнять слева</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">По центру</translation>
+        <translation>По центру</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">По правому краю</translation>
+        <translation>По правому краю</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">Выровнять справа</translation>
+        <translation>Выровнять справа</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">Шрифт</translation>
+        <translation>Шрифт</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">Размер шрифта</translation>
+        <translation>Размер шрифта</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">Цвет шрифта</translation>
+        <translation>Цвет шрифта</translation>
     </message>
 </context>
 <context>

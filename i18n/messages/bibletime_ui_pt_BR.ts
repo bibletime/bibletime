@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2016, A Equipe BibleTime {1999-2020,?}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">Negrito</translation>
+        <translation>Negrito</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">Itálico</translation>
+        <translation>Itálico</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">Sublinhado</translation>
+        <translation>Sublinhado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">Esquerda</translation>
+        <translation>Esquerda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">Alinhar à esquerda</translation>
+        <translation>Alinhar à esquerda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">Central</translation>
+        <translation>Central</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">Direita</translation>
+        <translation>Direita</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">Alinhar à direita</translation>
+        <translation>Alinhar à direita</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">Fonte</translation>
+        <translation>Fonte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">Tamanho da Fonte</translation>
+        <translation>Tamanho da Fonte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">Cor da Fonte</translation>
+        <translation>Cor da Fonte</translation>
     </message>
 </context>
 <context>

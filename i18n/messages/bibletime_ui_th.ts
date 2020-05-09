@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(มีลิขสิทธิ์) 1999-2016, ของทีมงาน BibleTeam {1999-2020,?}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">ตัวหนา</translation>
+        <translation>ตัวหนา</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">ตัวเอียง</translation>
+        <translation>ตัวเอียง</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">ขีดเส้นใต้</translation>
+        <translation>ขีดเส้นใต้</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">ซ้าย</translation>
+        <translation>ซ้าย</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">จัดแนวซ้าย</translation>
+        <translation>จัดแนวซ้าย</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">กึ่งกลาง</translation>
+        <translation>กึ่งกลาง</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">ขวา</translation>
+        <translation>ขวา</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">จัดแนวขวา</translation>
+        <translation>จัดแนวขวา</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">ฟอนท์</translation>
+        <translation>ฟอนท์</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">ขนาดฟอนท์</translation>
+        <translation>ขนาดฟอนท์</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">สีฟอนท์</translation>
+        <translation>สีฟอนท์</translation>
     </message>
 </context>
 <context>

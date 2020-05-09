@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2016, The BibleTime Team {1999-2020,?}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">굵게</translation>
+        <translation>굵게</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">이탤릭</translation>
+        <translation>이탤릭</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">밑줄</translation>
+        <translation>밑줄</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">왼쪽</translation>
+        <translation>왼쪽</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">좌 정렬</translation>
+        <translation>좌 정렬</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">중앙</translation>
+        <translation>중앙</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">오른쪽</translation>
+        <translation>오른쪽</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">우 정렬</translation>
+        <translation>우 정렬</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">글꼴</translation>
+        <translation>글꼴</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">글꼴 크기</translation>
+        <translation>글꼴 크기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">글꼴 색상</translation>
+        <translation>글꼴 색상</translation>
     </message>
 </context>
 <context>

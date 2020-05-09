@@ -4,14 +4,14 @@
 #
 # Translators:
 # Ilpo Kantonen, 2005,2009,2016
-# Ilpo Kantonen, 2005,2009,2016,2019
-# Jaak Ristioja <jaak@ristioja.ee>, 2019
+# Ilpo Kantonen, 2005,2009,2016,2019-2020
+# Jaak Ristioja, 2019-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2019-12-22 00:22+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"PO-Revision-Date: 2020-05-09 12:06+0000\n"
+"Last-Translator: Jaak Ristioja\n"
 "Language-Team: Finnish (http://www.transifex.com/bibletime/bibletime/"
 "language/fi/)\n"
 "Language: fi\n"
@@ -457,6 +457,11 @@ msgid ""
 "Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
 "is the most advanced section in the library of the &sword; project."
 msgstr ""
+"Raamatun koko teksti, valinnaisilla asioilla kuten Strongin numeroilla, "
+"otsikoilla ja / tai alaviitteillä tekstissä. Raamattuja on saatavana monilla "
+"kielillä, ja niihin sisältyy paitsi moderneja versioita, myös muinaisia "
+"tekstejä, kuten Codex Leningradensis (\"WLC\", heprea) ja Septuaginta (\"LXX"
+"\", kreikka). Tämä on &sword;-projektin kehittynein osa."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:39
@@ -486,6 +491,11 @@ msgid ""
 "\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
 "sections of the Bible."
 msgstr ""
+"Kommentaareissa on klassikkoja kuten John Wesleyn \"Notes on the Bible\", "
+"Matthew Henryn kommentaari ja Lutherin \"Galatalaiskirjeen kommentaari."
+"\"<emphasis>Henkilökohtaisella</emphasis> kommentaarillasi voit <link "
+"linkend=\"hdbk-op-parts-desk-write\"> tallentaa omat henkilökohtaiset "
+"muistiinpanosi</link> Raamatun osiin."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:57
@@ -515,6 +525,11 @@ msgid ""
 "Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
 "Bible."
 msgstr ""
+"Saatavilla olevia sanakirjoja ovat: Robinsonin morfologiset analyysikoodit "
+"ja kansainvälinen Raamatun tietosanakirja. Saatavilla olevia sanakirjoja "
+"ovat Strongin heprealainen Raamatun sanakirja, Strongin Kreikan Raamatun "
+"sanakirja, Websterin uudistettu englannin kielen sanaton sanakirja 1913 ja "
+"Naven ajankohtainen Raamattu."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
@@ -524,6 +539,10 @@ msgid ""
 "type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
+"Yli 280 asiakirjaa 50 kielellä on saatavana lähteestä <ulink url=\"http://"
+"www.crosswire.org\">&cbs;</ulink>.  Nämä sisältävät: <placeholder type="
+"\"variablelist\" id=\"0\"/> On olemassa useita muita tietolähteitä, joita "
+"&bibletime; käyttää."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:84
@@ -601,6 +620,15 @@ msgid ""
 "of the footnote. The toolbar gives you quick access to important functions, "
 "and the Desk on the right side is where you do your real work."
 msgstr ""
+"Tällainen on tyypillinen &bibletime; käyttö: <placeholder type=\"mediaobject"
+"\" id=\"0\"/> Voit helposti nähdä ohjelman eri osat. Vasemmanpuoleisinta "
+"ikkunaa käytetään avaamaan asennettuja Kirjahyllyn teoksia. Ja kirjanmerkki-"
+"välilehdellä voit hallita kirjanmerkkejäsi. Pientä \"Suurennuslasi\"-ikkunaa "
+"Kirjahyllyn alla käytetään näyttämään teokseen sisältyviä lisätietoja. Kun "
+"siirrät hiiren esimerkiksi alaviitemerkin ylle, Suurennuslasi näyttää sen "
+"alaviitteen sisällön. Työkalu antaa sinulle nopean pääsyn tärkeisiin "
+"toimintoihin ja teoksen todellisen käsittelyn teet työpöydällä oikealla "
+"puolella."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:25
@@ -644,6 +672,12 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
+"Avataksesi teoksen kirjahyllystä lukemista varten, yksinkertaisesti "
+"kaksoisnapauta <mousebutton>hiiren vasenta painiketta </mousebutton> "
+"halutussa kategoriassa (Raamatut, kommentaarit, sanakirjat, kirjat, "
+"hartaustekstit tai sanastot) nähdäksesi sen sisällön. Sitten vain "
+"kaksoisnapauta teosta avataksesi sen lukemista varten. Lukuikkuna ilmestyy "
+"työpöytäalueelle."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -656,6 +690,13 @@ msgid ""
 "location. You can also drag a verse reference into an existing read window, "
 "then it will jump to the specified location."
 msgstr ""
+"Jos olet lukemassa tiettyä teosta ja haluat avata toisen teoksen lukemassasi "
+"kohdassa, voit käyttää pikanäppäintä. Yksinkertaisesti napsauta "
+"<mousebutton>hiiren vasenta painiketta</mousebutton> jakeessa / viitteessä "
+"(osoitin vaihtuu kädessä) ja vedä se Kirjahyllyyn. Pudota se teokseen, jonka "
+"haluat avata ja se avautuu lukemista varten siinä paikassa. Voit myös vetää "
+"jakeen viitteen olemassaolevaan ikkunaan. Sitten se hyppää määriteltyyn "
+"paikkaan."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:59
@@ -675,6 +716,15 @@ msgid ""
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> Locked Modules</"
 "ulink> page on the &cbs; web site."
 msgstr ""
+"Jos napsautat hiiren <mousebutton>oikeaa</mousebutton> painiketta teoksen "
+"symbolin yllä, näet valikon lisäosat, jotka ovat merkityksellisiä tässä "
+"teoksessa.  <guimenuitem>\"Tietoja tästä teoksesta\"</guimenuitem> avaa "
+"ikkunan, jossa on paljon mielenkiintoista tietoa valitusta teoksesta.  "
+"<guimenuitem>\"Avaa tämä teos\"</guimenuitem> avaa pienen ikkunan salattuja "
+"tietoja teoksesta, missä voit antaa salausavaimen avataksesi teoksen. "
+"Saadaksesi lisätietoja salatuista teoksista, ole hyvä ja katso <ulink url="
+"\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> Lukitut "
+"moduulit</ulink> sivua &cbs; www-sivustolla."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:76
@@ -834,6 +884,10 @@ msgid ""
 "commentary by just clicking on any verse.  A dialog opens which allows you "
 "to add or edit text for that verse."
 msgstr ""
+"Avaa henkilökohtainen kommentaarisi napsauttamalla sen symbolia "
+"Kirjahyllyssä hiiren<mousebutton>vasemmalla</mousebutton> painikkeella. Voit "
+"muokata tätä kommentaaria napsauttamalla jotain jaetta. Se avaa ikkunan, "
+"jossa voit lisätä tai muokata sen jakeen tekstiä."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:194
@@ -842,6 +896,9 @@ msgid ""
 "deactivated, please check if you have write permission for the files of the "
 "personal commentary."
 msgstr ""
+"If <menuchoice> <guimenu>Muokkaa teosta</guimenu> </menuchoice> ei ole "
+"aktiivinen. Ole hyvä ja tarkista, onko sinulla kirjoitusoikeus "
+"henkilökohtaisen kommentaarisi tiedostoihin."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:202
@@ -1540,6 +1597,8 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show works</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Työkalut</guimenuitem> "
+"<guimenuitem>Näytä teokset</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:219
@@ -1554,6 +1613,8 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show tools</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Työkalut</guimenuitem> "
+"<guimenuitem>Näytä työkalut</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:234
@@ -1803,6 +1864,8 @@ msgid ""
 "<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> Ikkuna</guimenu> <guimenuitem>Talleta käyttöjakso</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:509
@@ -1840,6 +1903,8 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Lataa</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:547
@@ -1856,6 +1921,8 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Poista</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:563
@@ -1887,6 +1954,9 @@ msgid ""
 ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Asetukset</guimenu> <guimenuitem>&bibletime; asetukset</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:590
@@ -1914,6 +1984,10 @@ msgid ""
 "\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Asetukset</guimenu> <guimenuitem>Kirjahyllyn hallinta</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:619
@@ -1962,6 +2036,9 @@ msgid ""
 "\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Apua</guimenu> <guimenuitem>Raamatun opas</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:676
@@ -1991,6 +2068,9 @@ msgid ""
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
 "\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Apua</guimenu> <guimenuitem>Päivän vihje</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:706
@@ -2325,7 +2405,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1131
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1136
@@ -2364,7 +2444,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1174
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1178
@@ -2503,6 +2583,9 @@ msgid ""
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
 "link> equivalent; closes &bibletime;."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Tiedosto</guimenu> <guimenuitem>Poistu</guimenuitem> </menuchoice> "
+"</link> sama kuin; sulkee &bibletime;-ohjelman."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1322
@@ -2588,11 +2671,14 @@ msgid ""
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
 "link> equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>Näytä</guimenu> <guimenuitem>Näytä suurennuslasi</guimenuitem> </"
+"menuchoice> </link> sama kuin näytä suurennuslasi."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1416
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Alas</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
@@ -2600,11 +2686,13 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Automaattivieritys alas</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Ylös</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
@@ -2612,11 +2700,13 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Automaattivieritys ylös</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
@@ -2624,6 +2714,8 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Automaattivierityksen "
+"tauko</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
@@ -2657,6 +2749,9 @@ msgid ""
 "can launch &bibletime; from the Start Menu with this icon: <placeholder type="
 "\"mediaobject\" id=\"0\"/>"
 msgstr ""
+"&bibletime; on suoritettava tiedosto, joka on integroitu työpöydän kanssa. "
+"Voit käynnistää &bibletime;-ohjelman käynnistysvalikon tästä kuvakkeesta: "
+"<placeholder type=\"mediaobject\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
@@ -2671,6 +2766,9 @@ msgid ""
 "&bibletime;, open a terminal window and type: <placeholder type=\"screen\" "
 "id=\"0\"/>"
 msgstr ""
+"&bibletime;-ohjelman voi käynnistää terminaalissa komentorivillä. "
+"Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna ja kirjoita: "
+"<placeholder type=\"screen\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:28
@@ -2681,7 +2779,7 @@ msgstr "Käynnistyksen säätäminen"
 #: docs/handbook/en/docbook/hdbk-start.docbook:31
 #, no-wrap
 msgid "bibletime --open-default-bible \"&lt;random&gt;\""
-msgstr ""
+msgstr "bibletime --open-default-bible \"&lt;random&gt;\""
 
 #. type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:33
@@ -2697,6 +2795,11 @@ msgid ""
 "passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
 "also use booknames in your current bookname language."
 msgstr ""
+"Avataksesi Raamatun satunnaisesta paikasta, voit käyttää &bibletime; "
+"ohjelmaa avaamaan satunnaisen jakeen oletus-Raamatusta: <placeholder type="
+"\"screen\" id=\"0\"/> Avataksesi tietyn jakeen kuten Joh 3:16, käytä: "
+"<placeholder type=\"screen\" id=\"1\"/> Voit käyttää myös Raamatun kirjojen "
+"nimiä käyttämälläsi kielellä."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
@@ -2710,6 +2813,9 @@ msgid ""
 "configure the following options, available under the <link linkend=\"hdbk-"
 "reference-menus-settings\">Settings menu bar</link>."
 msgstr ""
+"Jos käytät &bibletime; ohjelmaa ensimmäistä kertaa, voit asettaa seuraavat "
+"asetukset <link linkend=\"hdbk-reference-menus-settings\">Valikon "
+"Asetuksissa</link>."
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:49
@@ -2728,11 +2834,19 @@ msgid ""
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
 msgstr ""
+"<action>Muokkaa sinun Kirjahyllyäsi</action>.  Tässä ikkunassa voit muokata "
+"kirjahyllyäsi, lisätä tai poistaa teoksia Kirjahyllystä  Se näkyy vain, jos "
+"yhtään oletus-Kirjahyllyä ei ole. Ole hyvä ja katso <link linkend=\"hdbk-op-"
+"bookshelfmanager\">Kirjahyllyn hallinta osiota</link> lisätietoja "
+"saadaksesi. Jos aloitat tyhjällä Kirjahyllyllä, se avustaa lisäämään yhden "
+"Raamatun, kommentaarin, sanakirjan tai jonkun teoksen.käyttääksesi "
+"&bibletime;n perusominaisuuksia nopeasti. Sinulle esitetään luettelo "
+"teoksista, joita on saatavilla &cbs; tai muissa arkistoissa."
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:66
 msgid "<interface>Configure &bibletime; dialog</interface>"
-msgstr ""
+msgstr "<interface>&bibletime; asetukset-ikkuna</interface>"
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:70
@@ -2788,7 +2902,7 @@ msgstr "Alt"
 #. type: Content of the Space entity
 #: docs/handbook/en/docbook/index.docbook:14
 msgid "Space"
-msgstr ""
+msgstr "Välilyönti"
 
 #. type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:24
@@ -2864,12 +2978,12 @@ msgstr "&bibletime;n käsikirja jaetaan &bibletime;-ohjelman yhteydessä."
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
 msgid "<date>December 2019</date>"
-msgstr ""
+msgstr "<date>Joulukuu 2019</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
 msgid "3.0.0+"
-msgstr ""
+msgstr "3.0.0+"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:64
@@ -2881,6 +2995,12 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs; and several other repositories."
 msgstr ""
+"&bibletime; on täysin vapaa Raamatun tutkimisohjelma. Ohjelman "
+"käyttöliittymä on rakennettu &qt; kehitysympäristössä, jonka ansiosta "
+"ohjelma toimii useissa käyttöjärjestelmissä mukaan lukien Linux, Windows, "
+"FreeBSD ja Mac OS X. Ohjelma käyttää &sword; ohjelmakirjastoa toimiakseen "
+"yli 900 vapaan Raamatun tekstin, kommentaarien, sanakirjojen ja teosten "
+"kanssa yli 50 kielellä &cbs; ja useissa muissa ohjelmalähteissä."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:74

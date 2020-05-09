@@ -29,12 +29,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="763"/>
         <source>&amp;View</source>
-        <translation>&amp;Zobrazenie</translation>
+        <translation>&amp;Zobraziť</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="767"/>
         <source>&amp;Search</source>
-        <translation>&amp;Hľadanie</translation>
+        <translation>&amp;Hľadať</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="768"/>
@@ -44,12 +44,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="771"/>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmen&amp;iť reláciu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="776"/>
         <source>Se&amp;ttings</source>
-        <translation>Nas&amp;tavenia</translation>
+        <translation>&amp;Nastavenia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="779"/>
@@ -139,7 +139,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="260"/>
         <source>Bookshelf Manager...</source>
-        <translation type="unfinished"></translation>
+        <translation>Správca knižnice...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="267"/>
@@ -199,12 +199,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="630"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Relácia už existuje.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="631"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Relácia s názvom „%1“ už existuje. Uveďte, prosím, iný názov.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="118"/>
@@ -214,17 +214,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="122"/>
         <source>Auto scroll up</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatické skrolovanie nahor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="127"/>
         <source>Auto scroll down</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatické skrolovanie nadol</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="132"/>
         <source>Auto scroll pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozastaviť automatické skrolovanie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="140"/>
@@ -239,7 +239,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="156"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation>Hľadať v štandardnej &amp;Biblií…</translation>
+        <translation>Hľadať vo východzej &amp;Biblii…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="163"/>
@@ -329,7 +329,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="254"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation>Kon&amp;figurácia BibleTime…</translation>
+        <translation>&amp;Nastaviť BibleTime…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="256"/>
@@ -374,7 +374,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="756"/>
         <source>Main toolbar</source>
-        <translation>Hlavný nástrojový panel</translation>
+        <translation>Hlavný panel nástrojov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="757"/>
@@ -389,7 +389,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="759"/>
         <source>Tools toolbar</source>
-        <translation>Nástrojový panel</translation>
+        <translation>Panel s nástrojmi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="760"/>
@@ -399,17 +399,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="765"/>
         <source>Scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrolovanie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="796"/>
         <source>Show main toolbar</source>
-        <translation>Zobraziť hlavný panel</translation>
+        <translation>Zobraziť hlavný panel nástrojov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="797"/>
         <source>Show navigation bar</source>
-        <translation>Zobraziť hlavný panel</translation>
+        <translation>Zobraziť navičaný panel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="798"/>
@@ -419,7 +419,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="799"/>
         <source>Show tools toolbar</source>
-        <translation>Zobraziť panel nástrojov</translation>
+        <translation>Zobraziť panel s nástrojmi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="800"/>
@@ -444,12 +444,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="764"/>
         <source>Toolbars</source>
-        <translation>Panely</translation>
+        <translation>Panely nástrojov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="795"/>
         <source>Show toolbars in text windows</source>
-        <translation>Zobraziť panel nástrojov v textových oknách</translation>
+        <translation>Zobraziť panel nástrojov v oknách s textom</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="805"/>
@@ -464,7 +464,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="782"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
-        <translation>Zobraziť dialóg &quot;Čo je toto&quot;</translation>
+        <translation>Zobraziť dialóg „Čo je toto“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="927"/>
@@ -479,7 +479,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="159"/>
         <source>Search in the standard Bible</source>
-        <translation>Hľadať v štandardnej biblií</translation>
+        <translation>Hľadať vo východzej biblii</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="621"/>
@@ -499,7 +499,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Inicializácia ponuky a panelov…</translation>
+        <translation>Inicializuje sa menu a panely nástrojov…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="198"/>
@@ -524,7 +524,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="281"/>
         <source>&amp;About BibleTime</source>
-        <translation>&amp;O BibleTime</translation>
+        <translation>&amp;O programe BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="754"/>
@@ -542,7 +542,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="68"/>
         <source>Warning!</source>
-        <translation type="unfinished"></translation>
+        <translation>Varovanie!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="69"/>
@@ -571,128 +571,128 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="94"/>
         <source>Updating Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizujú sa diela</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="96"/>
         <source>The selected works are being updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraté diela sa aktualizujú.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="100"/>
         <source>Installing Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštalujú sa diela</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="102"/>
         <source>The selected works are being installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraté diela sa inštalujú.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="52"/>
         <source>Choose Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Výber jazykov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelflanguagespage.cpp" line="53"/>
         <source>Choose one or more languages to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si jeden, alebo viac jazykov inštalovaných diel.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="67"/>
         <source>Choose Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Výber vzdialených zdrojov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="69"/>
         <source>Choose one or more remote libraries to install works from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si jeden, alebo viac zdrojov, odkiaľ sa bude inštalovať.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="85"/>
         <source>Updating Remote Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizácia vzdialených zdrojov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="87"/>
         <source>Updating information from remote libraries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovanie informácií zo vzdialených zdrojov.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="81"/>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="94"/>
         <source>Bookshelf Manager</source>
-        <translation>Manažér Knižnice</translation>
+        <translation>Správca knižnice</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="83"/>
         <source>Install, update, or remove works on your bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainštalujte, aktualizujte, alebo odstráňte diela z vašej knižnice.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;WARNING&lt;/span&gt;: Installing or updating works uses the internet. If you live in a persecuted country you may not want to do this.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;VAROVANIE: &lt;/span&gt;Na inštaláciu a aktualizáciu diel se používa internet. Ak žijete v krajine, kde sú porušované ľudské práva, zrejme toto nechcete.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="92"/>
         <source>Bookshelf task</source>
-        <translation type="unfinished"></translation>
+        <translation>Úloha v knižnici</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="95"/>
         <source>Install additional works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainštalovať ďalšie diela (bude použitý internet)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="99"/>
         <source>Update installed works (uses internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovať nainštalované diela (bude použitý internet)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelftaskpage.cpp" line="102"/>
         <source>Remove installed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť nainštalované diela</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="179"/>
         <source>Install Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštalácia diel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="180"/>
         <source>Choose one or more works to install.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si jedno, alebo viac diel na inštaláciu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="185"/>
         <source>Update Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizácia diel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="186"/>
         <source>Choose one or more works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si jedno, alebo viac diel na aktualizáciu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="192"/>
         <source>Remove Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstránenie diel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="193"/>
         <source>Choose one or more works to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si jedno, alebo viac diel na odstránenie.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="96"/>
         <source>Canceling Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruší sa sťahovanie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="99"/>
         <source>The Bookshelf Manager will close when the current download finishes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Správca knižnice sa po skončení sťahovania zatvorí.</translation>
     </message>
 </context>
 <context>
@@ -715,7 +715,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="117"/>
         <source>About BibleTime</source>
-        <translation>O BibleTime</translation>
+        <translation>O programe BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="129"/>
@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c)1999-2020, tím programu BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -991,22 +991,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="91"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastaviť</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="149"/>
         <source>Installing &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštaluje sa „%1“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="182"/>
         <source>Some of the selected works were not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niektoré z vybratých diel neboli nainštalované.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfinstallfinalpage.cpp" line="186"/>
         <source>The selected works have been installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraté diela boli nainštalované.</translation>
     </message>
 </context>
 <context>
@@ -1030,7 +1030,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfremovefinalpage.cpp" line="53"/>
         <source>The selected works have been removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraté diela boli odstránené.</translation>
     </message>
 </context>
 <context>
@@ -1043,7 +1043,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="131"/>
         <source>&lt; Add new remote library &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; Pridať nový vzdialený zdroj &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="133"/>
@@ -1053,12 +1053,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="181"/>
         <source>Delete Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť zdroj</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcespage.cpp" line="182"/>
         <source>Do you really want to delete this source?</source>
-        <translation>Skutočne chcete odstrániť tento zdroj?</translation>
+        <translation>Naozaj chcete odstrániť tento zdroj?</translation>
     </message>
 </context>
 <context>
@@ -1066,7 +1066,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfsourcesprogresspage.cpp" line="83"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastaviť</translation>
     </message>
 </context>
 <context>
@@ -1103,17 +1103,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="183"/>
         <source>Install Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštalovať diela &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="189"/>
         <source>Update Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovať diela &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="196"/>
         <source>Remove Works &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť diela &gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="200"/>
@@ -1128,22 +1128,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="206"/>
         <source>There are no works to update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie sú žiadne diela na aktualizáciu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="208"/>
         <source>No works are currently installed so they cannot be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiadne diela nie sú nainštalované, takže nemôžu byť odstránené.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="213"/>
         <source>No works can be installed with the current selection of remote libraries and languages. Please go back and make a different selection.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiadne diela nemôžu byť nainštalované v tejto kombinácii vzdialených zdrojov a jazykov. prosím, vráťte sa, a vyberte inú.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="218"/>
         <source>Grouping:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoskupovanie:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfworkspage.cpp" line="219"/>
@@ -1169,42 +1169,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation type="unfinished"></translation>
+        <translation>Starý zákon</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished"></translation>
+        <translation>5 kníh Mojžišových</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Dejepisné</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation type="unfinished"></translation>
+        <translation>Prorocké</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový zákon</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation type="unfinished"></translation>
+        <translation>Žalmy</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation>Listy</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished"></translation>
+        <translation>Pavlove listy</translation>
     </message>
 </context>
 <context>
@@ -1212,7 +1212,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="66"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Východzia relácia</translation>
     </message>
 </context>
 <context>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">Tučné</translation>
+        <translation>Tučné</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">Kurzíva</translation>
+        <translation>Kurzíva</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">Podčiarknuté</translation>
+        <translation>Podčiarknuté</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">Vľavo</translation>
+        <translation>Vľavo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">Zarovnanie doľava</translation>
+        <translation>Zarovnanie doľava</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">Na stred</translation>
+        <translation>Na stred</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">Vpravo</translation>
+        <translation>Vpravo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">Zarovnanie doprava</translation>
+        <translation>Zarovnanie doprava</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">Písmo</translation>
+        <translation>Písmo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">Veľkosť písma</translation>
+        <translation>Veľkosť písma</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">Farba písma</translation>
+        <translation>Farba písma</translation>
     </message>
 </context>
 <context>
@@ -1397,17 +1397,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="88"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Predchádzajúce</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="89"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Ďalšie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="90"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozlišovať veľkosť písmen</translation>
     </message>
 </context>
 <context>
@@ -1481,7 +1481,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="131"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Ak je zvolené, tak tie indexy, ku ktorým nebude existovať dielo, budu vymazané pri spustení BibleTime</translation>
+        <translation>Ak je toto vybraté, tak tie indexy, ku ktorým nebude existovať dielo, budu vymazané pri spustení BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="134"/>
@@ -1491,12 +1491,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="137"/>
         <source>Delete the selected indexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť vybraté zdroje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="138"/>
         <source>Delete</source>
-        <translation>Zmazať</translation>
+        <translation>Vymazať</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btindexdialog.cpp" line="140"/>
@@ -1548,12 +1548,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="61"/>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="72"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť heslo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmessageinputdialog.cpp" line="68"/>
         <source>Hide password</source>
-        <translation type="unfinished"></translation>
+        <translation>Skryť heslo</translation>
     </message>
 </context>
 <context>
@@ -1649,7 +1649,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/modelview/btqmlinterface.cpp" line="189"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť</translation>
     </message>
 </context>
 <context>
@@ -1694,33 +1694,33 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="221"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="235"/>
         <source>Select to change key</source>
-        <translation>Vyberte kláves zmeny</translation>
+        <translation>Vyberte na zmenu kláves</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="128"/>
         <source>Action
 name</source>
-        <translation>Pomenovanie
-akcie</translation>
+        <translation>Názov
+činnosti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="129"/>
         <source>First
 shortcut</source>
-        <translation>Prvá
+        <translation>Primárna
 skratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="130"/>
         <source>Second
 shortcut</source>
-        <translation>Druhá
+        <translation>Sekundárna
 skratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="143"/>
         <source>Shortcut for selected action name</source>
-        <translation>Klávesová skratka pre označenú akciu</translation>
+        <translation>Klávesová skratka pre vybratú činnosť</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="151"/>
@@ -1730,7 +1730,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="157"/>
         <source>Default</source>
-        <translation>Štandardná</translation>
+        <translation>Východzia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="163"/>
@@ -1740,7 +1740,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="181"/>
         <source>Default key:</source>
-        <translation>Štandardný kláves:</translation>
+        <translation>Východzia klávesová skratka:</translation>
     </message>
 </context>
 <context>
@@ -1748,28 +1748,28 @@ skratka</translation>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="25"/>
         <source>Getting Library List</source>
-        <translation type="unfinished"></translation>
+        <translation>Získava sa zoznam zdrojov</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="31"/>
         <location filename="../../src/backend/btsourcesthread.cpp" line="43"/>
         <source>Updating stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizácia zastavená</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="47"/>
         <source>Updating remote library &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovanie vzdialeného zdroja „%1“</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="60"/>
         <source>Remote libraries have been updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdialené zdroje boli aktualizované.</translation>
     </message>
     <message>
         <location filename="../../src/backend/btsourcesthread.cpp" line="63"/>
         <source>The following remote libraries failed to update: </source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizácia nasledujúcich vzdialených zdrojov zlyhala:</translation>
     </message>
 </context>
 <context>
@@ -1777,47 +1777,47 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Východzie diela sa použijú, ak nie je vybraté iné dielo, napríklad po kliknutí na odkaz v Biblii alebo v slovníku.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Bible:</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Východzia Biblia sa použije, keď sa klikne na odkaz do Biblie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Commentary:</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentár:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Východzí komentár sa použije, keď sa klikne na odkaz do komentára</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Lexicon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lexikón:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Východzí lexikón sa použije, keď sa klikne na odkaz do lexikónu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished"></translation>
+        <translation>Denné zamyslenie:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished"></translation>
+        <translation>Východzie denné zamyslenie sa použije, keď sa klikne na odkaz do denného zamyslenia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
@@ -1865,7 +1865,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtre ovplyvňujú vzhľad textu. Tu môžte špecifikovať východzie nastavenia pre všetky filtre. Tieto nastavenia sa aplikujú len na novootvorené okná. Môžte zmeniť tieto nastavenia pre každé otvorené okno zvlášť.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
@@ -1875,7 +1875,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
         <source>Show section headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť hlavičky sekcií</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
@@ -1905,7 +1905,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Use textual variants</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť varianty textu</translation>
     </message>
 </context>
 <context>
@@ -1956,7 +1956,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
         <source>To add multiple Bible works in parallel in your active Bible or commentary window select this icon and choose another Bible or commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ak chcete pridať viac Biblií pre paralelné zobrazenie v aktívnom okne, alebo okne komentárov, použite túto ikonu a pridajte ďalšiu Bibliu, alebo komentár.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
@@ -2032,7 +2032,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="76"/>
         <source>Welcome to BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Vitajte v programe BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="79"/>
@@ -2042,32 +2042,32 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
         <source>Before you can use this application some works must be installed. </source>
-        <translation type="unfinished"></translation>
+        <translation>Pred tým, než použijete tento program, musíte nainštalovať nejaké diela. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="82"/>
         <source>Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. </source>
-        <translation type="unfinished"></translation>
+        <translation>Rôzne diela, ako sú Biblie, knihy, komentáre a slovníky, sú dostupné na inštaláciu zo vzdialených zdrojov. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="84"/>
         <source>Choose the &quot;Install works&quot; button to download works. </source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte „Inštalovať diela“ na stiahnutie diel. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="85"/>
         <source>The menu &quot;Settings &gt; Bookshelf Manager&quot; also installs works and can be used later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu „Nastavenia &gt; Správca knižnice“ tiež inštaluje diela a môže byť použité aj neskôr.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="88"/>
         <source>Install later</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštalovať neskôr</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="90"/>
         <source>Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštalovať diela...</translation>
     </message>
 </context>
 <context>
@@ -2075,7 +2075,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="142"/>
         <source>Choose action group:</source>
-        <translation>Vyberte skupinu akcií:</translation>
+        <translation>Vyberte skupinu činností:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="144"/>
@@ -2112,7 +2112,7 @@ skratka</translation>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
-   &quot;%1&quot; v skupine &quot;%2&quot;</translation>
+   „%1“ v skupine „%2“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="140"/>
@@ -2229,7 +2229,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="618"/>
         <source>Delete Items</source>
-        <translation>Zmazať položky</translation>
+        <translation>Vymazať položky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="697"/>
@@ -2314,7 +2314,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="619"/>
         <source>Do you really want to delete the selected items and folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Naozaj chcete vymazať vybraté položky a priečinky?</translation>
     </message>
 </context>
 <context>
@@ -2383,12 +2383,12 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="106"/>
         <source>Show startup logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť logo pri spustení:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="107"/>
         <source>Show the BibleTime logo on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri spustení zobrazí logo BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="109"/>
@@ -2403,37 +2403,37 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="116"/>
         <source>Did you know? You can help translating the GUI of BibleTime to your language at &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedeli ste, že môžete pomôcť preložiť GUI programu BibleTime do vášho jazyka na stránke &lt;a href=&quot;https://www.transifex.com/bibletime/bibletime/&quot;&gt;Transifex&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="217"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt; For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt; Veď Boh tak miloval svet, že dal svojho jednorodeného Syna, aby nezahynul nik, kto v neho verí, ale aby mal večný život.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="222"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Lebo Boh neposlal Syna na svet, aby svet odsúdil, ale aby sa skrze neho svet spasil.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="227"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Kto v neho verí, nie je súdený. Ale kto neverí, už je odsúdený, pretože neuveril v meno Jednorodeného Božieho Syna.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="232"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;A súd je v tomto: Svetlo prišlo na svet, a ľudia milovali tmu viac ako svetlo, lebo ich skutky boli zlé.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Veď každý, kto zle robí, nenávidí svetlo a nejde na svetlo, aby jeho skutky neboli odhalené.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Ale kto koná pravdu, ide na svetlo, aby bolo vidieť, že svoje skutky koná v Bohu.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>
@@ -2791,7 +2791,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="45"/>
         <source>Standard works</source>
-        <translation>Štandardné diela</translation>
+        <translation>Východzie diela</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="46"/>
@@ -2809,7 +2809,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="44"/>
         <source>New Installation Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový inštalačný zdroj</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="52"/>
@@ -2939,12 +2939,12 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť obyčajný text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="63"/>
         <source>Edit HTML text</source>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť HTML text</translation>
     </message>
 </context>
 <context>
@@ -3859,22 +3859,22 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="36"/>
         <source>Remote FTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdialené FTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="37"/>
         <source>Remote SFTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdialené SFTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="38"/>
         <source>Remote HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdialené HTTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="39"/>
         <source>Remote HTTPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdialené HTTPS</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="415"/>
@@ -4066,7 +4066,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="168"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation>Táto skratka je v konflikte so skratkou pre nasledovné akcie:</translation>
+        <translation>Táto skratka je v konflikte so skratkou pre nasledujúce činnosti:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="173"/>
@@ -4131,7 +4131,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="79"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation>Štandardná šablóna &quot;%1&quot; nebola nájdená!</translation>
+        <translation>Štandardná šablóna „%1“ nebola nájdená!</translation>
     </message>
     <message>
         <location filename="../../src/backend/rendering/btinforendering.cpp" line="213"/>
@@ -4189,13 +4189,13 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="84"/>
         <source>Back</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Späť</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="85"/>
         <source>Next</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ďalej</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="86"/>
@@ -4207,7 +4207,7 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="87"/>
         <source>Finish</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Dokončiť</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="88"/>
@@ -4244,7 +4244,7 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
-        <translation>Obnoviť štandardné</translation>
+        <translation>Obnoviť východzie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="89"/>
@@ -4257,7 +4257,7 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
-        <translation>Všetko uložiť</translation>
+        <translation>Uložiť všetko</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="73"/>
@@ -4269,7 +4269,7 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="74"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <translation>Áno pre všetko</translation>
+        <translation>Áno na všetko</translation>
     </message>
     <message>
         <location filename="../../src/frontend/messagedialog.cpp" line="75"/>
@@ -4281,7 +4281,7 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/messagedialog.cpp" line="76"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <translation>Pre všetko nie</translation>
+        <translation>Nie na všetko</translation>
     </message>
 </context>
 <context>
@@ -4289,12 +4289,12 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
         <source>Search for:</source>
-        <translation>Hľadať:</translation>
+        <translation>Vyhľadať:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>&amp;Search</source>
-        <translation>&amp;Hľadanie</translation>
+        <translation>&amp;Hľadať</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
@@ -4329,7 +4329,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="152"/>
         <source>Scope:</source>
-        <translation>Záber:</translation>
+        <translation>Rozsah:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
@@ -4354,7 +4354,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
         <source>Configure predefined scopes for search</source>
-        <translation>Konfigurovať preddefinované zábery hľadania</translation>
+        <translation>Konfigurovať preddefinované rozsahy hľadania</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
@@ -4384,7 +4384,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="163"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation>Vybrať záber (knihy/kapitoly/verše do vyhľadávania).&lt;br /&gt;Použiteľné pre Biblie a komentáre.</translation>
+        <translation>Vybrať rozsah (knihy/kapitoly/verše do vyhľadávania).&lt;br /&gt;Použiteľné pre Biblie a komentáre.</translation>
     </message>
 </context>
 <context>
@@ -4511,12 +4511,12 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
         <source>&quot;says lord&quot;</source>
-        <translation>&quot;hovorí pán&quot;</translation>
+        <translation>„hovorí pán“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="152"/>
         <source>&quot;says the lord&quot;</source>
-        <translation>&quot;hovorí Pán&quot;</translation>
+        <translation>„hovorí Pán“</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
@@ -4751,7 +4751,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="147"/>
         <source>&amp;Add new scope</source>
-        <translation>Prid&amp;ať nový záber</translation>
+        <translation>Prid&amp;ať nový rozsah</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="148"/>
@@ -4761,17 +4761,17 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="152"/>
         <source>Delete current &amp;scope</source>
-        <translation>Z&amp;mazať aktuálny záber</translation>
+        <translation>Vy&amp;mazať aktuálny rozsah</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="153"/>
         <source>Delete the selected search scope</source>
-        <translation>Zmazať označený záber hľadania</translation>
+        <translation>Vymazať vybratý rozsah hľadania</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="156"/>
         <source>Change the name of the selected search scope</source>
-        <translation>Zmeniť názov označeného záberu hľadania</translation>
+        <translation>Zmeniť názov označeného rozsahu hľadania</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="165"/>
@@ -4781,7 +4781,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="141"/>
         <source>Setup Search Scopes</source>
-        <translation>Nastaviť zábery hľadania</translation>
+        <translation>Nastaviť rozsahy hľadania</translation>
     </message>
 </context>
 <context>
@@ -4842,7 +4842,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="147"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation>Indexovanie môže trvať dlhšiu dobu. Kliknite na &quot;Áno&quot; pre zindexovanie modulov a spustenie hľadania, alebo &quot;Nie&quot; na zrušenie hľadania.</translation>
+        <translation>Indexovanie môže trvať dlhšiu dobu. Kliknite na „Áno“ pre zindexovanie modulov a spustenie hľadania, alebo „Nie“ na zrušenie hľadania.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
@@ -4877,12 +4877,12 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="255"/>
         <source>&amp;Manage Indexes...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Spravovať indexy...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="256"/>
         <source>Recreate search indexes</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovu vytvoriť indexy hľadania</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="260"/>

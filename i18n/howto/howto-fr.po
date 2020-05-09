@@ -6,7 +6,7 @@
 # Cedric Delalande <lauryced@yahoo.fr>, 2004
 # Delalande Cédric, 2005
 # Delalande Cedric <lauryced@tiscali.fr>, 2005
-# Jaak Ristioja <jaak@ristioja.ee>, 2019
+# Jaak Ristioja, 2019
 # L'Africain <lafricain79@gmail.com>, 2018
 # Sebastien Forestier <forestie _-AT-_ caramail -_DOT_- com>, 2004
 # Vincent BERZIN <berzinv _-AT-_ gmail -_DOT_- com>, 2011
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
 "PO-Revision-Date: 2019-12-10 20:06+0000\n"
-"Last-Translator: Jaak Ristioja <jaak@ristioja.ee>\n"
+"Last-Translator: Jaak Ristioja\n"
 "Language-Team: French (http://www.transifex.com/bibletime/bibletime/language/"
 "fr/)\n"
 "Language: fr\n"

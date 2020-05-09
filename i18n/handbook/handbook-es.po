@@ -4,7 +4,7 @@
 #
 # Translators:
 # Gary Holmlund <garywholmlund@gmail.com>, 2018
-# Jaak Ristioja <jaak@ristioja.ee>, 2019
+# Jaak Ristioja, 2019
 # Pier Jose Gotta Perez <piegope@protonmail.com>, 2017
 # Roy Alvear <racl@fedoraproject.org>, 2010
 # Roy Eddekel Alvear Aguirre <racl@gulix.cl>, 2010

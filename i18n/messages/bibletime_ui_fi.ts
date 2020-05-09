@@ -154,42 +154,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="326"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Käsikirjan paikallistamisessa virhe!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="327"/>
         <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sopivaa asennettua käsikirjaa ei löytynyt!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="334"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe käsikirjan avaamisessa!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="335"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennettua käsikirjaa ei voitu avata!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="343"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe oppaan paikallistamisessa!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="344"/>
         <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sopivaa asennettua opasta ei löytynyt!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="351"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe oppaan avaamisessa!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="352"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennettua opasta ei voitu avata!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="622"/>
@@ -825,7 +825,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished">(c) 1999–2016, The Bibletime -tiimi {1999-2020,?}</translation>
+        <translation>(c) 1999-2020, BibleTime-tiimi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -1330,60 +1330,60 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="136"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="141"/>
         <source>Bold</source>
-        <translation type="unfinished">Lihavoitu</translation>
+        <translation>Lihavoitu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="149"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="157"/>
         <source>Italic</source>
-        <translation type="unfinished">Kursivoitu</translation>
+        <translation>Kursivoitu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="162"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="170"/>
         <source>Underline</source>
-        <translation type="unfinished">Alleviivaus</translation>
+        <translation>Alleviivaus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="175"/>
         <source>Left</source>
-        <translation type="unfinished">Vasen</translation>
+        <translation>Vasen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="181"/>
         <source>Align left</source>
-        <translation type="unfinished">Sijoita vasemmalle</translation>
+        <translation>Sijoita vasemmalle</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="186"/>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="192"/>
         <source>Center</source>
-        <translation type="unfinished">Keski</translation>
+        <translation>Keski</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="197"/>
         <source>Right</source>
-        <translation type="unfinished">Oikea</translation>
+        <translation>Oikea</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="203"/>
         <source>Align right</source>
-        <translation type="unfinished">Sijoita oikealle</translation>
+        <translation>Sijoita oikealle</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="277"/>
         <source>Font</source>
-        <translation type="unfinished">Kirjasin</translation>
+        <translation>Kirjasin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="289"/>
         <source>Font size</source>
-        <translation type="unfinished">Kirjasimen koko</translation>
+        <translation>Kirjasimen koko</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btedittextpage.cpp" line="300"/>
         <source>Font color</source>
-        <translation type="unfinished">Kirjasimen väri</translation>
+        <translation>Kirjasimen väri</translation>
     </message>
 </context>
 <context>
@@ -1951,7 +1951,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiivista ikkunaa voidaan vierittää automaattisesti ylös- tai alaspäin. Aloita vieritys painamalla Vaihto + Alas Voit lisätä vieritysnopeutta painamalla Vaihto + Alas useita kertoja. Voit keskeyttää vierityksen painamalla välilyöntiä. Aloita vieritys uudelleen edellisellä nopeudella painamalla uudelleen Välilyönti-näppäintä. Hidasta vieritystä tai vierittämistä toiseen suuntaan painamalla Vaihto + Ylös yksi tai useampia kertoja. Minkä tahansa muun näppäimen painaminen tai aktiivisen ikkunan vaihtaminen lopettaa vierityksen.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
@@ -2408,32 +2408,32 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="217"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt; For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt; Sillä niin on Jumala maailmaa rakastanut, että hän antoi ainokaisen Poikansa, ettei yksikään, joka häneen uskoo, hukkuisi, vaan hänellä olisi iankaikkinen elämä.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="222"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Sillä&#xa0;ei Jumala lähettänyt Poikaansa maailmaan tuomitsemaan maailmaa,&#xa0;vaan&#xa0;sitä varten,&#xa0;että maailma hänen&#xa0;kauttansa&#xa0;pelastuisi.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="227"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Joka uskoo Häneen, sitä ei tuomita; mutta joka ei usko, se on jo tuomittu, koska hän ei ole uskonut Jumalan ainokaisen Pojan nimeen.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="232"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Tämä on tuomio, että valo on tullut maailmaan, ja ihmiset rakastivat pimeyttä eikä valoa; sillä heidän tekonsa olivat pahoja.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="237"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Jokainen, joka tekee pahaa, vihaa valoa eikä tule valoon, etteivät hänen tekonsa paljastuisi.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="242"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.&lt;/span&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Mutta se, joka tekee totuuden, tulee selville, että hänen tekonsa paljastetaan, että ne on tehty Jumalassa.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="99"/>
@@ -2939,12 +2939,12 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="58"/>
         <source>Edit Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa tekstiä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/edittextwizard/btplainorhtmlpage.cpp" line="63"/>
         <source>Edit HTML text</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa HTML-tekstiä</translation>
     </message>
 </context>
 <context>
