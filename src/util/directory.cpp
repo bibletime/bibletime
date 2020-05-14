@@ -165,7 +165,7 @@ bool initDirectoryCache() {
 
 
     cachedDocDir.reset(new QDir(wDir));
-    if (!cachedDocDir->cd(BT_DOCDIR)) {
+    if (!cachedDocDir->cd(BT_RUNTIME_DOCDIR)) {
         qWarning() << "Cannot find documentation directory relative to"
                    << wDir.absolutePath();
         return false;
