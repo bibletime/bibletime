@@ -1,3 +1,6 @@
+2019-05-15 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #233 - Error selecting search results.
+
 2020-05-09 Jaak Ristioja <jaak@ristioja.ee>
     * Released 3.0 RC 1.
 
