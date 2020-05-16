@@ -54,7 +54,8 @@ div.entry, td.entry, td.currententry {
     text-align: justify;
     /*color:white;*/
     /*The background colour of selected text as of kde 3.5.2*/
-    background-color: #A5A5FF;
+/*    background-color: #A5A5FF; */
+    background-color: #CURRENT_ENTRY#;
 }
 .currententry[dir=rtl] {
     text-align: right;
@@ -312,7 +313,7 @@ a[name="crossref"] {
 }
 
 .highlightwords {
-    background-color: #ffff66;
+background-color: #HIGHLIGHT#;
 }
 .highlightwords2 {
     background-color: #ffaa00;

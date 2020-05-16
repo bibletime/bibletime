@@ -67,7 +67,7 @@ td.entry, td.currententry {
 div.currententry {
 }
 span.currententry {
-    background-color:#D4FFCB;
+    background-color: #CURRENT_ENTRY#;
 }
 
 
@@ -80,10 +80,9 @@ td.entry + td.entry {
 #bible div.currententry, #bible td.currententry {
     border:1px solid black;
     padding:2px;
-    background-color:#F6FFF7;
+    background-color: #CURRENT_ENTRY#;
 }
 #bible span.currententry {
-    background-color:#C8FFB6;
 }
 
 /*Same for books!*/
@@ -296,7 +295,7 @@ a[name="crossref"] {
 }
 
 .highlightwords {
-    background-color: #ffff66;
+    background-color: #HIGHLIGHT#;
 }
 .highlightwords2 {
     background-color: #ffaa00;
