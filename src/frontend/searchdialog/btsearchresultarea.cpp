@@ -88,6 +88,7 @@ void BtSearchResultArea::initView() {
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
     m_previewDisplay = new QTextBrowser(this);
+    m_previewDisplay->setOpenLinks(false);
     m_previewDisplay->setToolTip(tr("Text of the selected search result item"));
     frameLayout->addWidget(m_previewDisplay);
 
