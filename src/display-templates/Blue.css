@@ -55,7 +55,7 @@ td.entry, td.currententry {
     padding: 2px;
      /*vertical-align: middle;*/
     text-align: justify;
-    background-color: #E6E4FF;
+    background-color: #CURRENT_ENTRY#;
 }
 .currententry[dir=rtl] {
     text-align:right !important;
@@ -327,7 +327,7 @@ a[name="crossref"] {
 }
 
 .highlightwords {
-    background-color: #ffff66;
+    background-color: #HIGHLIGHT#;
 }
 .highlightwords2 {
     background-color: #ffaa00;
