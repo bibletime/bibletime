@@ -335,9 +335,7 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
 }
 
 void BtBookshelfTreeModel::setCheckedModules(BtConstModuleSet const & modules) {
-    using MIMCI = ModuleItemMap::const_iterator;
-
-    for (MIMCI it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
+    for (auto it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
         if (modules.contains(it.key())) {
             setData(getIndex(*it.value()), Qt::Checked, Qt::CheckStateRole);
         } else {
