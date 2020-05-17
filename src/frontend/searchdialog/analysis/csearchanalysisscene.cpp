@@ -61,8 +61,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
 void CSearchAnalysisScene::analyse(
         const CSwordModuleSearch::Results &results)
 {
-    using RCI = CSwordModuleSearch::Results::const_iterator;
-
     /**
     * Steps of analysing our search result;
     * -Create the items for all available books ("Genesis" - "Revelation")
@@ -94,13 +92,12 @@ void CSearchAnalysisScene::analyse(
     bool ok = true;
     while (ok && analysisItem) {
         moduleIndex = 0;
-        for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
+        for (auto * const keyPtr : m_results.keys()) {
             qApp->processEvents( QEventLoop::AllEvents );
-            if (!m_lastPosList.contains(it.key())) {
-                m_lastPosList.insert(it.key(), 0);
-            }
+            if (!m_lastPosList.contains(keyPtr))
+                m_lastPosList.insert(keyPtr, 0);
 
-            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), it.key())));
+            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), keyPtr)));
             m_maxCount = (count > m_maxCount) ? count : m_maxCount;
 
             ++moduleIndex;
@@ -123,10 +120,8 @@ void CSearchAnalysisScene::analyse(
 void CSearchAnalysisScene::setResults(
         const CSwordModuleSearch::Results &results)
 {
-    using RCI = CSwordModuleSearch::Results::const_iterator;
-
     m_results.clear();
-    for (RCI it = results.begin(); it != results.end(); ++it) {
+    for (auto it = results.begin(); it != results.end(); ++it) {
         const CSwordModuleInfo *m = it.key();
         if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
             m_results.insert(m, it.value());
@@ -232,8 +227,6 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-    using RCI = CSwordModuleSearch::Results::const_iterator;
-
     auto const fileName =
             QFileDialog::getSaveFileName(
                 nullptr,
@@ -274,9 +267,9 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += tr("Book");
     text += "</th>";
 
-    for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
+    for (auto * const keyPtr : m_results.keys()) {
         text += "<th>";
-        text += it.key()->name().toHtmlEscaped();
+        text += keyPtr->name().toHtmlEscaped();
         text += "</th>";
     }
     text += "</tr>";
@@ -290,8 +283,7 @@ void CSearchAnalysisScene::saveAsHTML() {
         text += keyBook.toHtmlEscaped();
         text += "</td>";
 
-        int mi = 0; // Module index
-        for (RCI it = m_results.begin(); it != m_results.end(); ++it, ++mi) {
+        for (int mi = 0; mi < m_results.size(); ++mi) {
             text += "<td class=\"r\">";
             text += QString::number(m_itemList.value(keyBook)->getCountForModule(mi));
             text += "</td>";
@@ -302,9 +294,9 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += tr("Total hits");
     text += "</th>";
 
-    for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
+    for (auto const & resultValue : m_results) {
         text += "<td class=\"r\">";
-        text += QString::number(it.value().getCount());
+        text += QString::number(resultValue.getCount());
         text += "</td>";
     }
 
