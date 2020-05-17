@@ -136,49 +136,45 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
 
     QString text;
 
-    ListInfoData::const_iterator end = list.end();
-    for (ListInfoData::const_iterator it = list.begin(); it != end; ++it) {
-        switch ( (*it).first ) {
+    for (auto const & infoData : list) {
+        auto const & value = infoData.second;
+        switch (infoData.first) {
             case Lemma:
-                text.append( decodeStrongs( (*it).second ) );
+                text.append(decodeStrongs(value));
                 continue;
             case Morph:
-                text.append( decodeMorph( (*it).second ) );
+                text.append(decodeMorph(value));
                 continue;
             case CrossReference:
-                text.append( decodeCrossReference( (*it).second, modules ) );
+                text.append(decodeCrossReference(value, modules));
                 continue;
             case Footnote:
-                text.append( decodeFootnote( (*it).second ) );
+                text.append(decodeFootnote(value));
                 continue;
             case Abbreviation:
-                text.append( decodeAbbreviation( (*it).second ) );
+                text.append(decodeAbbreviation(value));
                 continue;
             case Text:
-                text.append( (*it).second );
+                text.append(value);
                 continue;
             case Reference:
-                if((*it).second.contains("strongs:"))
-                {
-                    QString v = (*it).second.right((*it).second.size() -
-                        (*it).second.lastIndexOf('/') - 1);
-
-                    if((*it).second.contains("GREEK"))
+                if (value.contains("strongs:")) {
+                    auto v(value.right(value.size() - value.lastIndexOf('/')
+                                       - 1));
+                    if (value.contains("GREEK")) {
                         v.prepend('G');
-                    else if((*it).second.contains("HEBREW"))
+                    } else if (value.contains("HEBREW")) {
                         v.prepend('H');
-                    else
+                    } else {
                         BT_ASSERT(false && "not implemented");
-
+                    }
                     text.append(decodeStrongs(v));
-                }
-                else if ((*it).second.contains("sword:"))
-                {
-                    text.append( decodeSwordReference( (*it).second ) );
+                } else if (value.contains("sword:")) {
+                    text.append(decodeSwordReference(value));
                     continue;
-                }
-                else
+                } else {
                     BT_ASSERT(false); /// \todo Why is this here?
+                }
                 Q_FALLTHROUGH();
             default:
                 continue;
@@ -372,18 +368,15 @@ CSwordModuleInfo *  getStrongsModule (bool wantHebrew) {
 }
 
 QString decodeStrongs(QString const & data) {
-    QStringList strongs = data.split("|");
     QString ret;
-
-    QStringList::const_iterator end = strongs.end();
-    for (QStringList::const_iterator it = strongs.begin(); it != end; ++it) {
-        bool wantHebrew = (*it).left(1) == QString("H");
+    for (auto const & strongs : data.split('|')) {
+        bool const wantHebrew = strongs.left(1) == "H";
         CSwordModuleInfo * module = getStrongsModule(wantHebrew);
         QString text;
         if (module) {
             QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(module);
-            key->setKey(lexModule->normalizeStrongsKey(*it));
+            key->setKey(lexModule->normalizeStrongsKey(strongs));
             text = key->renderedText();
         }
         //if the module could not be found just display an empty lemma info
@@ -395,7 +388,7 @@ QString decodeStrongs(QString const & data) {
             QString("<div class=\"strongsinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
             .arg(lang)
             .arg(QObject::tr("Strongs"))
-            .arg(*it)
+            .arg(strongs)
             .arg(text)
         );
     }
