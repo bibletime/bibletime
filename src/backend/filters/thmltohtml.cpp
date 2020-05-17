@@ -83,9 +83,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 
     tag = QRegExp("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+(type|value|class)=\"([^\"]+)\"[^>]+((type|value|class)=\"([^\"]+)\")*([^<]*)>");
 
-    for (QStringList::iterator it = list.begin(); it != list.end(); ++it) {
-        QString e( *it );
-
+    for (auto e : list) {
         const bool textPresent = (e.trimmed().remove(QRegExp("[.,;:]")).left(1) != "<");
 
         if (!textPresent) {
@@ -277,16 +275,13 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                 QString::fromUtf8(
                                     myUserData->lastTextNode.c_str()).split(";"));
                             QString oldRef; // the previous reference to use as a base for the next refs
-                            for (QStringList::const_iterator it(refs.begin());
-                                 it != refs.end();
-                                 ++it)
-                            {
+                            for (auto const & ref : refs) {
                                 if (!oldRef.isEmpty())
                                     options.refBase = oldRef; // Use the last ref as a base, e.g. Rom 1,2-3, when the next ref is only 3:3-10
 
                                 // Use the parsed result as the base for the next ref:
                                 oldRef = ReferenceManager::parseVerseReference(
-                                                (*it),
+                                                ref,
                                                 options);
 
                                 // Prepend a ref divider if we're after the first one
@@ -304,7 +299,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                    .append("\" crossrefs=\"")
                                    .append(oldRef.toUtf8().constData())
                                    .append("\">")
-                                   .append(it->toUtf8().constData())
+                                   .append(ref.toUtf8().constData())
                                    .append("</a>");
                                 insertSemicolon = true;
                             }
