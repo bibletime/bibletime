@@ -334,9 +334,9 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
             QString rText = getStrongsNumberText(text, sIndex, strongsNumber);
             if (rText.isEmpty()) break;
 
-            for (iterator it = begin(); it != end(); ++it) {
-                if ((*it).keyText() == rText) {
-                    (*it).addKeyName(key);
+            for (auto & result : *this) {
+                if (result.keyText() == rText) {
+                    result.addKeyName(key);
                     goto continueloop; // break, then continue
                 }
             }
