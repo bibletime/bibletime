@@ -195,8 +195,8 @@ bool setTargetList( const QStringList& targets ) {
 #endif
 
     bool setDataPath = false;
-    for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
-        QString t = DU::convertDirSeparators(*it);
+    for (auto const & target : targets) {
+        QString t = DU::convertDirSeparators(target);
 #ifdef Q_OS_WIN
         if (t.contains(DU::convertDirSeparators(DU::getUserHomeDir().canonicalPath().append("\\Sword")))) {
 #else
@@ -224,9 +224,8 @@ QStringList sourceNameList() {
     QStringList names;
 
     //add Sword remote sources
-    for (InstallSourceMap::iterator it = mgr.sources.begin(); it != mgr.sources.end(); ++it) {
-        names << QString::fromLocal8Bit(it->second->caption);
-    }
+    for (auto const & sourcePair : mgr.sources)
+        names << QString::fromLocal8Bit(sourcePair.second->caption);
 
     // Add local directory sources
     SWConfig config(configFilename().toLatin1());
