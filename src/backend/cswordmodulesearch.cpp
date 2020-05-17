@@ -286,8 +286,7 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     if ((token != "*") && (token != ""))
         tokenList.append(token);
 
-    using TLI = QStringList::iterator;
-    for (TLI it = tokenList.begin(); it != tokenList.end(); ++it) {
+    for (auto it = tokenList.begin(); it != tokenList.end(); ++it) {
         int pos;
         //-----------------------------------------------------------
         // remove all the NOT(!) tokens - these do not need to be
