@@ -139,11 +139,10 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     shutdownModules(); // Remove previous modules
     m_dataModel.clear();
 
-    sword::ModMap::iterator end = Modules.end();
     const LoadError ret = static_cast<LoadError>(load());
 
-    for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
-        sword::SWModule * const curMod = it->second;
+    for (auto const & modulePair : Modules) {
+        sword::SWModule * const curMod = modulePair.second;
         BT_ASSERT(curMod);
         CSwordModuleInfo * newModule;
 
@@ -234,11 +233,10 @@ void CSwordBackend::shutdownModules() {
      * modules. If these modules are removed, the filters need to be removed as well,
      * so that they are re-created for the new module objects.
      */
-    using FMCI = sword::FilterMap::const_iterator;
-    for (FMCI it = cipherFilters.begin(); it != cipherFilters.end(); ++it) {
+    for (auto const & filterPair : cipherFilters) {
         //Delete the Filter and remove it from the cleanup list
-        cleanupFilters.remove(it->second);
-        delete it->second;
+        cleanupFilters.remove(filterPair.second);
+        delete filterPair.second;
     }
     cipherFilters.clear();
 }
@@ -460,7 +458,6 @@ QString CSwordBackend::getPrivateSwordConfigFile() const {
 // Return a list of used Sword dirs. Useful for the installer.
 QStringList CSwordBackend::swordDirList() const {
     namespace DU = util::directory;
-    using SLCI = QStringList::const_iterator;
 
     // Get the set of sword directories that could contain modules:
     QSet<QString> swordDirSet;
@@ -488,15 +485,15 @@ QStringList CSwordBackend::swordDirList() const {
     }
 
     // Search the sword.conf file(s) for sword directories that could contain modules
-    for (SLCI it = configs.begin(); it != configs.end(); ++it) {
-        if (!QFileInfo(*it).exists())
+    for (auto const & filename : configs) {
+        if (!QFileInfo(filename).exists())
             continue;
 
         /*
           Get all DataPath and AugmentPath entries from the config file and add
           them to the list:
         */
-        sword::SWConfig conf(it->toUtf8().constData());
+        sword::SWConfig conf(filename.toUtf8().constData());
         swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
         const sword::ConfigEntMap group(conf["Install"]);
