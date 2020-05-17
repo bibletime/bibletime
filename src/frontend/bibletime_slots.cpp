@@ -648,9 +648,6 @@ void BibleTime::saveToNewProfile() {
 
 /** Slot to refresh the saved profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
-    using SNHM = BtConfig::SessionNamesHashMap;
-    using SNHMCI = SNHM::const_iterator;
-
     m_windowLoadProfileMenu->clear();
     m_windowDeleteProfileMenu->clear();
 
@@ -663,7 +660,7 @@ void BibleTime::refreshProfileMenus() {
 
 
     if (enableActions) {
-        for (SNHMCI it = sessions.constBegin(); it != sessions.constEnd(); ++it) {
+        for (auto it = sessions.constBegin(); it != sessions.constEnd(); ++it) {
             QAction * a;
 
             a = m_windowLoadProfileMenu->addAction(it.value());
