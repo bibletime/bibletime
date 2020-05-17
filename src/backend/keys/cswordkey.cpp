@@ -113,11 +113,11 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         // Reserve characters to reduce number of memory allocations:
         ret.reserve(text.size());
 
-        for (const QChar * c = text.constBegin(); c != text.constEnd(); c++) {
-            if (c->toLatin1()) {
-                ret.append(*c);
+        for (auto const & c : text) {
+            if (c.toLatin1()) {
+                ret.append(c);
             } else {
-                ret.append("&#").append(c->unicode()).append(";");
+                ret.append("&#").append(c.unicode()).append(";");
             }
         }
 
