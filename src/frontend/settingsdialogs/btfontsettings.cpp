@@ -47,11 +47,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 
     CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
     using L = CLanguageMgr::Language;
-    for (CLanguageMgr::LangMapIterator it = langMap.constBegin();
-         it != langMap.constEnd();
-         it++)
-    {
-        const L * const l = *it;
+    for (auto const & l : langMap) {
         const QString &(L::*f)() const =
             l->translatedName().isEmpty()
             ? &L::abbrev
@@ -60,7 +56,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
         m_fontMap.insert((l->*f)(), btConfig().getFontForLanguage(*l));
     }
 
-    for (FontMap::ConstIterator it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
+    for (auto it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
         const QString &k = it.key();
         if (m_fontMap[k].first) { // show font icon
             m_languageComboBox->addItem(CResMgr::settings::fonts::icon(), k);
@@ -105,10 +101,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 }
 
 void BtFontSettingsPage::save() const {
-    for (FontMap::ConstIterator it = m_fontMap.constBegin();
-         it != m_fontMap.constEnd();
-         it++)
-    {
+    for (auto it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); it++) {
         const QString &k = it.key();
         const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(k);
         if (!lang->isValid()) {
