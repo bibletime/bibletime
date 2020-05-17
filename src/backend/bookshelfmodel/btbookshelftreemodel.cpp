@@ -76,7 +76,7 @@ int BtBookshelfTreeModel::rowCount(const QModelIndex & parent) const {
 }
 
 int BtBookshelfTreeModel::columnCount(const QModelIndex & parent) const {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
 
     return 1;
 }
