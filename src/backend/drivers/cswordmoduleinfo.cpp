@@ -418,14 +418,8 @@ void CSwordModuleInfo::buildIndex() {
                                                    | lucene::document::Field::INDEX_TOKENIZED)));
             textBuffer.clear();
 
-            using ALI = sword::AttributeList::iterator;
-            using AVI = sword::AttributeValue::iterator;
-
-            for (ALI it = m_module.getEntryAttributes()["Footnote"].begin();
-                 it != m_module.getEntryAttributes()["Footnote"].end();
-                 ++it)
-            {
-                lucene_utf8towcs(wcharBuffer, it->second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
+            for (auto & vp : m_module.getEntryAttributes()["Footnote"]) {
+                lucene_utf8towcs(wcharBuffer, vp.second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
                 doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("footnote")),
                                                        static_cast<const TCHAR *>(wcharBuffer),
                                                        lucene::document::Field::STORE_NO
@@ -433,11 +427,10 @@ void CSwordModuleInfo::buildIndex() {
             }
 
             // Headings
-            for (AVI it = m_module.getEntryAttributes()["Heading"]["Preverse"].begin();
-                 it != m_module.getEntryAttributes()["Heading"]["Preverse"].end();
-                 ++it)
+            for (auto & vp
+                 : m_module.getEntryAttributes()["Heading"]["Preverse"])
             {
-                lucene_utf8towcs(wcharBuffer, it->second, BT_MAX_LUCENE_FIELD_LENGTH);
+                lucene_utf8towcs(wcharBuffer, vp.second, BT_MAX_LUCENE_FIELD_LENGTH);
                 doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("heading")),
                                                        static_cast<const TCHAR *>(wcharBuffer),
                                                        lucene::document::Field::STORE_NO
