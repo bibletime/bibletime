@@ -253,10 +253,8 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
 BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale(const QStringList& scopeModules) {
     StringMap map = value<BtConfig::StringMap>("properties/searchScopes", m_defaultSearchScopes);
 
-
     // Convert map to current locale:
-    for (StringMap::Iterator it = map.begin(); it != map.end(); it++) {
-        QString &data = it.value();
+    for (auto & data : map) {
         sword::ListKey list = parseVerseListWithModules(data, scopeModules);
         data.clear();
         for (int i = 0; i < list.getCount(); i++) {
