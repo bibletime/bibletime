@@ -33,7 +33,6 @@
 #include <localemgr.h>
 #include <swlocale.h>
 
-using SBLCI = std::list<sword::SWBuf>::const_iterator;
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
@@ -128,9 +127,10 @@ void CDisplaySettingsPage::resetLanguage() {
     int i = atv.indexOf(best);
     if (i > 0) {
         atv.resize(i);
-        const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
-        for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
-            const char * abbr = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+        auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
+        auto const locales = localeMgr.getAvailableLocales();
+        for (auto const & locale : locales) {
+            const char * abbr = localeMgr.getLocale(locale.c_str())->getName();
             i = atv.indexOf(abbr);
             if (i >= 0) {
                 best = abbr;
@@ -166,29 +166,28 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
 }
 
 void CDisplaySettingsPage::initSwordLocaleCombo() {
-    using SSMCI = QMap<QString, QString>::const_iterator;
-
     QMap<QString, QString> languageNames;
     BT_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
     languageNames.insert(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName(), "en_US");
 
-    const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
-    for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
-        const char * const abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+    auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
+    for (auto const & locale : localeMgr.getAvailableLocales()) {
+        const char * const abbreviation =
+                localeMgr.getLocale(locale.c_str())->getName();
         const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForAbbrev(abbreviation);
 
         if (l->isValid()) {
             languageNames.insert(l->translatedName(), abbreviation);
         } else {
             languageNames.insert(
-                sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getDescription(),
+                localeMgr.getLocale(locale.c_str())->getDescription(),
                 abbreviation);
         }
     }
 
     int index = 0;
     QVector<QString> atv = bookNameAbbreviationsTryVector();
-    for (SSMCI it = languageNames.constBegin(); it != languageNames.constEnd(); ++it) {
+    for (auto it = languageNames.constBegin(); it != languageNames.constEnd(); ++it) {
         if (!atv.isEmpty()) {
             int i = atv.indexOf(it.value());
             if (i >= 0) {
