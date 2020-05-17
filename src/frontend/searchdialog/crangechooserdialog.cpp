@@ -45,10 +45,8 @@ CRangeChooserDialog::CRangeChooserDialog(const QStringList& scopeModules, QWidge
 
     // Add the existing scopes
     BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale(scopeModules);
-    BtConfig::StringMap::Iterator it;
-    for (it = map.begin(); it != map.end(); ++it) {
+    for (auto it = map.begin(); it != map.end(); ++it)
         new RangeItem(it.key(), it.value(), m_rangeList);
-    }
     resetEditControls();
 }
 
@@ -264,14 +262,11 @@ void CRangeChooserDialog::accept() {
 }
 
 void CRangeChooserDialog::restoreDefaults() {
-    using SMCI = BtConfig::StringMap::ConstIterator;
-
     m_rangeList->clear();
     btConfig().deleteSearchScopesWithCurrentLocale();
     const BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale(m_scopeModules);
-    for (SMCI it = map.begin(); it != map.end(); ++it) {
+    for (auto it = map.begin(); it != map.end(); ++it)
         new RangeItem(it.key(), it.value(), m_rangeList);
-    };
     m_rangeList->setCurrentItem(nullptr);
     resetEditControls();
 }
