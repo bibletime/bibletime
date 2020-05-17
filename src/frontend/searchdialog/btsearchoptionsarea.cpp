@@ -215,22 +215,18 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
     QString t;
 
     m_modules.clear(); //remove old modules
-    BtConstModuleList::const_iterator end_it = modules.end();
-
-    for (BtConstModuleList::const_iterator it(modules.begin()); it != end_it; ++it) {
+    for (auto * const modulePtr : modules) {
         /// \todo Check for containsRef compat
-        if (*it == nullptr) { //don't operate on null modules.
+        if (!modulePtr) //don't operate on null modules.
             continue;
-        }
-        qDebug() << "new module:" << (*it)->name();
-        if ( !m_modules.contains(*it) ) {
-            m_modules.append( *it );
-            t.append( (*it)->name() );
-            if (*it != modules.last()) {
+        qDebug() << "new module:" << modulePtr->name();
+        if (!m_modules.contains(modulePtr)) {
+            m_modules.append(modulePtr);
+            t.append(modulePtr->name());
+            if (modulePtr != modules.last())
                 t += QString::fromLatin1(", "); // so that it will become a readable list (WLC, LXX, GerLut...)
-            }
         }
-    };
+    }
     //m_modulesLabel->setText(t);
     int existingIndex = m_modulesCombo->findText(t);
     qDebug() << "index of the module list string which already exists in combobox:" << existingIndex;
