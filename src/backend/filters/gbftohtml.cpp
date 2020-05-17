@@ -126,8 +126,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     tag = QRegExp("<W([HGT])([^>]*)>");
     tag.setMinimal(true);
 
-    for (QStringList::iterator it = list.begin(); it != list.end(); ++it) {
-        QString e = (*it); //current entry to process
+    for (auto e : list) { // for each entry to process
         //qWarning(e.latin1());
 
         //check if there is a word to which the strongs info belongs to.
@@ -138,7 +137,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         const bool textPresent = (e.trimmed().remove(QRegExp("[.,;:]")).left(2) != "<W");
 
         if (!textPresent) {
-            result += (*it);
+            result += e;
             continue;
         }
 
