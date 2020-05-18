@@ -62,8 +62,10 @@ BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
     message::prepareDialogBox(m_buttonBox);
     mainLayout->addWidget(m_buttonBox);
 
-    BT_CONNECT(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
+               this, &BtEditBookmarkDialog::accept);
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
+               this, &BtEditBookmarkDialog::reject);
 
     retranslateUi();
 
