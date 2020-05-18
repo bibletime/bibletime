@@ -140,7 +140,7 @@ class BibleTime : public QMainWindow {
 
         BibleTime(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
-        ~BibleTime();
+        ~BibleTime() override;
 
         static inline BibleTime *instance() { return m_instance; }
 

@@ -29,7 +29,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
                             double *scaleFactor,
                             const CSwordModuleSearch::Results &results);
 
-        ~CSearchAnalysisItem();
+        ~CSearchAnalysisItem() override;
 
         /**
           Sets the resultcount of this item.

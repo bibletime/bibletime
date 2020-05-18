@@ -38,7 +38,7 @@ class BtSearchOptionsArea : public QWidget {
     public:
 
         BtSearchOptionsArea(QWidget *parent = nullptr);
-        ~BtSearchOptionsArea();
+        ~BtSearchOptionsArea() override;
         /*
         * Add text to search combox box history
         */
