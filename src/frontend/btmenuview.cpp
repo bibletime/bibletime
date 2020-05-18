@@ -27,10 +27,30 @@ BtMenuView::BtMenuView(QString const & title, QWidget * parent)
     , m_parentIndex(QModelIndex())
     , m_actions(nullptr)
 {
-    BT_CONNECT(this, SIGNAL(aboutToShow()),
-               this, SLOT(slotAboutToShow()));
-    BT_CONNECT(this, SIGNAL(triggered(QAction*)),
-               this, SLOT(slotActionTriggered(QAction*)));
+    BT_CONNECT(this, &QMenu::aboutToShow,
+               [this]{
+                   /* The signal "aboutToHide" comes before the signal
+                      "triggered" and leads to executing a deleted action and a
+                      crash. It is much safer to remove the menus here. */
+                   removeMenus();
+                   m_indexMap.clear();
+
+                   delete m_actions;
+                   m_actions = m_model ? new QActionGroup(this) : nullptr;
+
+                   preBuildMenu(m_actions);
+                   if (m_model)
+                       buildMenu(this, m_parentIndex);
+                   postBuildMenu(m_actions);
+               });
+    BT_CONNECT(this, &QMenu::triggered,
+               [this](QAction * const action) {
+                   if (!m_indexMap.contains(action))
+                       return;
+                   QPersistentModelIndex itemIndex(m_indexMap.value(action));
+                   if (itemIndex.isValid())
+                       emit triggered(itemIndex);
+               });
 }
 
 BtMenuView::~BtMenuView() {
@@ -177,23 +197,6 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
         }
     }
 }
-
-void BtMenuView::slotAboutToShow() {
-    // The signal "aboutToHide" comes before the signal "triggered" and
-    // leads to executing a deleted action and a crash. It is much safer
-    // to remove the menus here.
-    removeMenus();
-    m_indexMap.clear();
-
-    delete m_actions;
-    m_actions = m_model ? new QActionGroup(this) : nullptr;
-
-    preBuildMenu(m_actions);
-    if (m_model)
-        buildMenu(this, m_parentIndex);
-    postBuildMenu(m_actions);
-}
-
 void BtMenuView::removeMenus() {
     // QMenu::clear() is documented only to delete direct child actions:
     clear();
@@ -201,12 +204,4 @@ void BtMenuView::removeMenus() {
     // Delete submenus also:
     Q_FOREACH (QObject * const child, children())
         delete qobject_cast<QMenu *>(child);
-}
-
-void BtMenuView::slotActionTriggered(QAction *action) {
-    if (!m_indexMap.contains(action)) return;
-    QPersistentModelIndex itemIndex(m_indexMap.value(action));
-    if (itemIndex.isValid()) {
-        emit triggered(itemIndex);
-    }
 }
