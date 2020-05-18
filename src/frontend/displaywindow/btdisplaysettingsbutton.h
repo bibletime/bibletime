@@ -45,9 +45,6 @@ class BtDisplaySettingsButton: public QToolButton {
         void sigModulesChanged(const BtConstModuleList &modules);
         void sigChanged();
 
-    protected slots:
-        void slotOptionToggled(QAction *action);
-
     protected:
         void initMenu();
         void retranslateUi();

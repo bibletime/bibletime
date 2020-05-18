@@ -34,8 +34,47 @@ BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
     initMenu();
     retranslateUi();
 
-    BT_CONNECT(m_popup, SIGNAL(triggered(QAction *)),
-               this, SLOT(slotOptionToggled(QAction *)));
+    BT_CONNECT(m_popup, &QMenu::triggered,
+               [this](QAction * const action) {
+                   bool checked = action->isChecked();
+
+                   if (action == m_verseNumbersAction) {
+                       m_displayOptions.verseNumbers = checked;
+                       emit sigDisplayOptionsChanged(m_displayOptions);
+                   } else if (action == m_variantAction) {
+                       m_filterOptions.textualVariants = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_hebrewPointsAction) {
+                       m_filterOptions.hebrewPoints = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_greekAccentsAction) {
+                       m_filterOptions.greekAccents = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_hebrewCantillationAction) {
+                       m_filterOptions.hebrewCantillation = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_headingsAction) {
+                       m_filterOptions.headings = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_morphSegmentationAction) {
+                       m_filterOptions.morphSegmentation = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_scriptureReferencesAction) {
+                       m_filterOptions.scriptureReferences = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_footnotesAction) {
+                       m_filterOptions.footnotes = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else if (action == m_redWordsAction) {
+                       m_filterOptions.redLetterWords = checked;
+                       emit sigFilterOptionsChanged(m_filterOptions);
+                   } else {
+                       BT_ASSERT(false && "Shouldn't happen!");
+                       return;
+                   }
+
+                   emit sigChanged();
+               });
 }
 
 void BtDisplaySettingsButton::setDisplayOptions(
@@ -122,48 +161,6 @@ void BtDisplaySettingsButton::retranslateToolTip() {
     else {
         setToolTip(tr("Display settings: No options available"));
     }
-}
-
-void BtDisplaySettingsButton::slotOptionToggled(QAction *action) {
-    bool checked = action->isChecked();
-
-
-    if (action == m_verseNumbersAction) {
-        m_displayOptions.verseNumbers = checked;
-        emit sigDisplayOptionsChanged(m_displayOptions);
-    } else if (action == m_variantAction) {
-        m_filterOptions.textualVariants = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_hebrewPointsAction) {
-        m_filterOptions.hebrewPoints = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_greekAccentsAction) {
-        m_filterOptions.greekAccents = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_hebrewCantillationAction) {
-        m_filterOptions.hebrewCantillation = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_headingsAction) {
-        m_filterOptions.headings = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_morphSegmentationAction) {
-        m_filterOptions.morphSegmentation = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_scriptureReferencesAction) {
-        m_filterOptions.scriptureReferences = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_footnotesAction) {
-        m_filterOptions.footnotes = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else if (action == m_redWordsAction) {
-        m_filterOptions.redLetterWords = checked;
-        emit sigFilterOptionsChanged(m_filterOptions);
-    } else {
-        BT_ASSERT(false && "Shouldn't happen!");
-        return;
-    }
-
-    emit sigChanged();
 }
 
 /** No descriptions */
