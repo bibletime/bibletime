@@ -23,17 +23,15 @@ BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)
         , m_timerId(0)
         , m_firstClickLock(true)
 {
-    BT_CONNECT(this, SIGNAL(aboutToShow()),
-               this, SLOT(startFirstClickDelayTimer()));
-}
-
-void BtVerseKeyMenu::startFirstClickDelayTimer() {
-    m_firstClickLock = true;
-    if (m_timerId) {
-        killTimer(m_timerId);
-        m_timerId = 0;
-    }
-    m_timerId = startTimer(300);
+    BT_CONNECT(this, &QMenu::aboutToShow,
+               [this] {
+                   m_firstClickLock = true;
+                   if (m_timerId) {
+                       killTimer(m_timerId);
+                       m_timerId = 0;
+                   }
+                   m_timerId = startTimer(300);
+               });
 }
 
 void BtVerseKeyMenu::timerEvent(QTimerEvent* e) {

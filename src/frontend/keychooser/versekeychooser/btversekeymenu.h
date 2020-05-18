@@ -33,9 +33,6 @@ class BtVerseKeyMenu : public QMenu {
         void mouseReleaseEvent(QMouseEvent* event) override;
         /** Frees the mouse button release after the delay has elapsed.*/
         void timerEvent(QTimerEvent* event) override;
-    private slots:
-        /** Starts the delay timer for the first mouse button release.*/
-        void startFirstClickDelayTimer();
 
     private:
         int m_timerId;
