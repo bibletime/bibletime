@@ -54,8 +54,23 @@ CMDIArea::CMDIArea(BibleTime * parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-    BT_CONNECT(this, SIGNAL(subWindowActivated(QMdiSubWindow *)),
-               this, SLOT(slotSubWindowActivated(QMdiSubWindow *)));
+    BT_CONNECT(this, &QMdiArea::subWindowActivated,
+               [this](QMdiSubWindow* client) {
+                   if (subWindowList().isEmpty())
+                       m_bibleTime->clearMdiToolBars();
+
+                   if (client == nullptr) {
+                       return;
+                   }
+                   emit sigSetToplevelCaption( client->windowTitle().trimmed() );
+
+                   // Notify child window it is active
+                   CDisplayWindow* const activeWindow = getDisplayWindow(client);
+                   if (activeWindow != nullptr && activeWindow != m_activeWindow) {
+                       m_activeWindow = activeWindow;
+                       activeWindow->windowActivated();
+                   }
+               });
 }
 
 void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
@@ -285,23 +300,6 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     return ret;
 }
 
-void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
-    if (subWindowList().isEmpty())
-        m_bibleTime->clearMdiToolBars();
-
-    if (client == nullptr) {
-        return;
-    }
-    emit sigSetToplevelCaption( client->windowTitle().trimmed() );
-
-    // Notify child window it is active
-    CDisplayWindow* const activeWindow = getDisplayWindow(client);
-    if (activeWindow != nullptr && activeWindow != m_activeWindow) {
-        m_activeWindow = activeWindow;
-        activeWindow->windowActivated();
-    }
-}
-
 void CMDIArea::findNextTextInActiveWindow(QString const & text, bool cs)
 { findTextInActiveWindow(text, cs, false); }
 
@@ -354,7 +352,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
             /*
               Do not handle window activation or deactivation here, it will
               produce wrong results because this event is handled too early. Let
-              slotSubWindowActivated() handle this.
+              lambda connected to subWindowActivated() handle this.
             */
 
             // Check if subwindow was maximized or un-maximized:
@@ -389,16 +387,16 @@ void CMDIArea::triggerWindowUpdate() {
     if (updatesEnabled()) {
         switch (m_mdiArrangementMode) {
             case ArrangementModeTileVertical:
-                QTimer::singleShot(0, this, SLOT(myTileVertical()));
+                QTimer::singleShot(0, this, &CMDIArea::myTileVertical);
                 break;
             case ArrangementModeTileHorizontal:
-                QTimer::singleShot(0, this, SLOT(myTileHorizontal()));
+                QTimer::singleShot(0, this, &CMDIArea::myTileHorizontal);
                 break;
             case ArrangementModeTile:
-                QTimer::singleShot(0, this, SLOT(myTile()));
+                QTimer::singleShot(0, this, &CMDIArea::myTile);
                 break;
             case ArrangementModeCascade:
-                QTimer::singleShot(0, this, SLOT(myCascade()));
+                QTimer::singleShot(0, this, &CMDIArea::myCascade);
                 break;
             default:
                 break;

@@ -167,11 +167,6 @@ class CMDIArea: public QMdiArea {
     protected slots:
 
         /**
-          Called whan a subwindow was activated.
-        */
-        void slotSubWindowActivated(QMdiSubWindow *client);
-
-        /**
           Called whan a tabbed subwindow is closed from the tab
         */
         void closeTab(int i);
