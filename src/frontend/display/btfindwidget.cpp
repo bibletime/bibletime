@@ -17,77 +17,65 @@
 #include <QLineEdit>
 #include <QSpacerItem>
 #include <QToolButton>
+#include <utility>
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 
-
-namespace {
-inline QToolButton * newToolButton(QIcon const & icon,
-                                   char const * const slot,
-                                   QWidget * const parent,
-                                   QHBoxLayout * const layout)
-{
-    QToolButton * const button = new QToolButton(parent);
-    button->setIcon(icon);
-    button->setIconSize(QSize(16, 16));
-    button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    button->setAutoRaise(true);
-    layout->addWidget(button);
-    BT_CONNECT_QOBJECT(button, SIGNAL(released()), parent, slot);
-    return button;
-}
-} // anonymous namespace
 
 BtFindWidget::BtFindWidget(QWidget * parent)
     : QWidget(parent)
 {
     // Overall layout:
-    m_layout = new QHBoxLayout(this);
-    m_layout->setMargin(0);
-    m_layout->setSpacing(8);
+    auto widgetLayout = new QHBoxLayout(this);
+    widgetLayout->setMargin(0);
+    widgetLayout->setSpacing(8);
 
     // Buttons and text editor:
-    #define newButton(...) newToolButton(__VA_ARGS__, this, m_layout)
+    auto const newButton =
+            [this, widgetLayout](QIcon const & icon, auto && ... slot) {
+                QToolButton * const button = new QToolButton(this);
+                button->setIcon(icon);
+                button->setIconSize(QSize(16, 16));
+                button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+                button->setAutoRaise(true);
+                widgetLayout->addWidget(button);
+                BT_CONNECT(button, &QToolButton::released,
+                           std::forward<decltype(slot)>(slot)...);
+                return button;
+            };
 
     // Close button:
-    newButton(CResMgr::findWidget::icon_close(), SLOT(hide()));
+    newButton(CResMgr::findWidget::icon_close(), this, &BtFindWidget::hide);
 
     // Text editor:
     m_textEditor = new QLineEdit(this);
-    m_layout->addWidget(m_textEditor);
-    BT_CONNECT(m_textEditor, SIGNAL(textChanged(QString const &)),
-               this,         SLOT(textChanged(QString const &)));
-    BT_CONNECT(m_textEditor, SIGNAL(returnPressed()),
-              this,          SLOT(returnPressed()));
+    widgetLayout->addWidget(m_textEditor);
+    BT_CONNECT(m_textEditor, &QLineEdit::textChanged,
+               [this](QString const & v) { highlightText(v, caseSensitive()); });
+    BT_CONNECT(m_textEditor, &QLineEdit::returnPressed,
+               [this] { highlightText(text(), caseSensitive()); });
 
     // Next and Previous buttons:
-    m_previousButton = newButton(CResMgr::findWidget::icon_previous(),
-                                 SLOT(findPrevious()));
+    m_previousButton = newButton(
+                           CResMgr::findWidget::icon_previous(),
+                           [this] { findPrevious(text(), caseSensitive()); });
     m_nextButton = newButton(CResMgr::findWidget::icon_next(),
-                             SLOT(findNext()));
+                             [this] { findNext(text(), caseSensitive()); });
 
     // Case checkbox:
     m_caseCheckBox = new QCheckBox(this);
-    BT_CONNECT(m_caseCheckBox, SIGNAL(stateChanged(int)),
-               this,           SLOT(caseStateChanged(int)));
-    m_layout->addWidget(m_caseCheckBox);
+    BT_CONNECT(m_caseCheckBox, &QCheckBox::stateChanged,
+               [this](int const s) { highlightText(text(), s == Qt::Checked); });
+    widgetLayout->addWidget(m_caseCheckBox);
 
     // Spacer:
-    m_layout->addItem(new QSpacerItem(0,
-                                      0,
-                                      QSizePolicy::Expanding,
-                                      QSizePolicy::Minimum));
+    widgetLayout->addItem(new QSpacerItem(0,
+                                          0,
+                                          QSizePolicy::Expanding,
+                                          QSizePolicy::Minimum));
     setFocusProxy(m_textEditor);
 
     retranslateUi();
-}
-
-void BtFindWidget::retranslateUi() {
-    m_textEditor->setToolTip(tr("The text you want to search for",
-                                "findWidget"));
-    m_previousButton->setText(tr("Previous"));
-    m_nextButton->setText(tr("Next"));
-    m_caseCheckBox->setText(tr("Match case"));
 }
 
 bool BtFindWidget::caseSensitive() const
@@ -100,4 +88,12 @@ void BtFindWidget::showAndSelect() {
     show();
     m_textEditor->selectAll();
     m_textEditor->setFocus(Qt::ShortcutFocusReason);
+}
+
+void BtFindWidget::retranslateUi() {
+    m_textEditor->setToolTip(tr("The text you want to search for",
+                                "findWidget"));
+    m_previousButton->setText(tr("Previous"));
+    m_nextButton->setText(tr("Next"));
+    m_caseCheckBox->setText(tr("Match case"));
 }

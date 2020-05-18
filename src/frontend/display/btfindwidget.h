@@ -17,7 +17,6 @@
 
 
 class QCheckBox;
-class QHBoxLayout;
 class QLineEdit;
 class QString;
 class QToolButton;
@@ -32,28 +31,13 @@ public: /* Methods: */
 
     void showAndSelect();
 
-private slots:
-
-    void findNext() { emit findNext(text(), caseSensitive()); }
-    void findPrevious() { emit findPrevious(text(), caseSensitive()); }
-    void returnPressed() { emitChange(text(), caseSensitive()); }
-    void textChanged(QString const & txt) { emitChange(txt, caseSensitive()); }
-    void caseStateChanged(int st) { emitChange(text(), st == Qt::Checked); }
-
-private: /* Methods: */
-
-    void retranslateUi();
-
-    void highlightText(QString const & text)
-    { emit highlightText(text, caseSensitive()); }
-
     bool caseSensitive() const;
 
     QString text() const;
 
-    void emitChange(QString const & text, bool const caseSensitive) {
-        emit highlightText(text, caseSensitive);
-    }
+private: /* Methods: */
+
+    void retranslateUi();
 
 signals:
 
@@ -63,7 +47,6 @@ signals:
 
 private: /* Fields: */
 
-    QHBoxLayout * m_layout;
     QLineEdit * m_textEditor;
     QToolButton * m_nextButton;
     QToolButton * m_previousButton;
