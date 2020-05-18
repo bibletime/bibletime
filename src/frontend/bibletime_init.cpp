@@ -94,20 +94,6 @@ void BibleTime::initView() {
                this, SLOT(slotAutoScroll()));
 }
 
-QAction* BibleTime::initAction(QAction* action, QString text, QIcon const & icon,
-                               QKeySequence accel, const QString& tooltip,
-                               const QString& actionName, const char* slot) {
-    action->setText(text);
-    action->setIcon(icon);
-    action->setShortcut(accel);
-    if (tooltip != QString())
-        action->setToolTip(tooltip);
-    m_actionCollection->addAction(actionName, action);
-    if (slot)
-        BT_CONNECT(action, SIGNAL(triggered()), this, slot);
-    return action;
-}
-
 // Creates QAction's for all actions that can have keyboard shortcuts
 // Used in creating the main window and by the configuration dialog for setting shortcuts
 void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
