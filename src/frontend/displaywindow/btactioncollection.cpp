@@ -36,22 +36,6 @@ void BtActionCollection::addAction(QString const & name,
     }
 }
 
-void BtActionCollection::addAction(QString const & name,
-                                   QObject const * const receiver,
-                                   char const * const member)
-{
-    QAction * const action = new QAction{name, this};
-    try {
-        if (receiver && member)
-            BT_CONNECT(action,   SIGNAL(triggered()),
-                       receiver, SLOT(triggered()));
-        return addAction(name, action);
-    } catch (...) {
-        delete action;
-        throw;
-    }
-}
-
 void BtActionCollection::removeAction(QString const & name) {
     #ifndef NDEBUG
     int const r =

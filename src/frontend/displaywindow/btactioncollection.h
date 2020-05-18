@@ -55,10 +55,6 @@ public: /* Methods: */
 
     void addAction(QString const & name, QAction * const action);
 
-    void addAction(QString const & name,
-                   QObject const * const receiver,
-                   const char * const member = nullptr);
-
     void removeAction(QString const & name);
 
     QAction & action(QString const & name) const;
