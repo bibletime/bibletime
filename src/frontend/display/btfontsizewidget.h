@@ -32,10 +32,6 @@ public slots:
 
     void setFontSize(int size);
 
-private slots:
-
-    virtual void changed(QString const & text);
-
 signals:
 
     void fontSizeChanged(int);

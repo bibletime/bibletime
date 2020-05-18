@@ -32,12 +32,11 @@ BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
         addItem(QString::number(size), QVariant(size));
     }
 
-    BT_CONNECT(this, SIGNAL(currentIndexChanged(QString const &)),
-               this, SLOT(changed(QString const &)));
-}
-
-void BtFontSizeWidget::changed(QString const & text) {
-    emit fontSizeChanged(text.toInt());
+    BT_CONNECT(this,
+               static_cast<void (QComboBox::*)(QString const &)>(
+                   &QComboBox::currentIndexChanged),
+               [this](QString const & text)
+               { emit fontSizeChanged(text.toInt()); });
 }
 
 void BtFontSizeWidget::setFontSize(int size) {
