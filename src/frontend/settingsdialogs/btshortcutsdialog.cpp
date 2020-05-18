@@ -63,8 +63,8 @@ BtShortcutsDialog::BtShortcutsDialog(QWidget* parent)
     message::prepareDialogBox(buttons);
     vLayout->addWidget(buttons);
 
-    BT_CONNECT(buttons, SIGNAL(accepted()), this, SLOT(accept()));
-    BT_CONNECT(buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(buttons, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    BT_CONNECT(buttons, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
 // get new primary key from dialog
