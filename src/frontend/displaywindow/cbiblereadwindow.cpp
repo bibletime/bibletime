@@ -239,7 +239,8 @@ void CBibleReadWindow::setupPopupMenu() {
     // Save raw HTML action for debugging purposes
     if (btApp->debugMode()) {
         QAction* debugAction = new QAction("Raw HTML", this);
-        BT_CONNECT(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
+        BT_CONNECT(debugAction, &QAction::triggered,
+                   this,        &CBibleReadWindow::saveRawHTML);
         m_actions.saveMenu->addAction(debugAction);
     } // end of Save Raw HTML
     popup()->addMenu(m_actions.saveMenu);
@@ -403,7 +404,7 @@ bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
         * This is not really in a KHTML event handler but works anyway.
         * Sometime KDE/Qt is hard to use ...
         */
-        QTimer::singleShot(0, this, SLOT(syncWindows()));
+        QTimer::singleShot(0, this, &CBibleReadWindow::syncWindows);
     }
 
     return ret;
