@@ -66,8 +66,20 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
     m_bbox->addButton(QDialogButtonBox::Cancel);
     message::prepareDialogBox(m_bbox);
     setButtonBox(m_bbox);
-    BT_CONNECT(m_bbox, SIGNAL(clicked(QAbstractButton *)),
-              SLOT(slotButtonClicked(QAbstractButton *)));
+    BT_CONNECT(m_bbox, &QDialogButtonBox::clicked,
+              [this](QAbstractButton * const button) {
+                  switch (m_bbox->buttonRole(button)) {
+                  case QDialogButtonBox::AcceptRole:
+                      save();
+                      [[fallthrough]];
+                  case QDialogButtonBox::RejectRole:
+                      close();
+                      break;
+                  default:
+                      save();
+                      break;
+                  }
+              });
 
     loadDialogSettings();
 
@@ -85,19 +97,6 @@ void CConfigurationDialog::save() {
     m_swordPage->save();
     m_displayPage->save();
     emit signalSettingsChanged( );
-}
-
-/** Called if any button was clicked*/
-void CConfigurationDialog::slotButtonClicked(QAbstractButton* button) {
-    if (button == static_cast<QAbstractButton*>(m_bbox->button(QDialogButtonBox::Cancel))) {
-        close();
-        return;
-    }
-
-    save();
-
-    if (button == static_cast<QAbstractButton*>(m_bbox->button(QDialogButtonBox::Ok)))
-        close();
 }
 
 void CConfigurationDialog::loadDialogSettings() {

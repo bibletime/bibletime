@@ -32,9 +32,6 @@ class CConfigurationDialog : public BtConfigDialog {
         virtual ~CConfigurationDialog();
         void save();
 
-    protected slots:
-        void slotButtonClicked(QAbstractButton *);
-
     private:
         BtActionCollection* m_actionCollection;
         CDisplaySettingsPage* m_displayPage;
