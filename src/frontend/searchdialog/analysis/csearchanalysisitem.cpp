@@ -79,7 +79,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
         if (m_resultCountArray[index] > Value) {
             Value = m_resultCountArray[index];
         }
-    };
+    }
 
     while (drawn < m_moduleCount) {
         for (index = 0; index < m_moduleCount; index++) {
@@ -124,8 +124,6 @@ int CSearchAnalysisItem::width() {
 
 /** Returns the tooltip for this item. */
 const QString CSearchAnalysisItem::getToolTip() {
-    using RCI = CSwordModuleSearch::Results::const_iterator;
-
     QString toolTipString("<center><b>");
     toolTipString.append(m_bookName.toHtmlEscaped())
                  .append("</b></center><hr/><table cellspacing=\"0\" "
@@ -134,7 +132,7 @@ const QString CSearchAnalysisItem::getToolTip() {
 
     /// \todo Fix that loop
     int i = 0;
-    for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
+    for (auto it = m_results.begin(); it != m_results.end(); ++it) {
         const CSwordModuleInfo * const info = it.key();
 
         const int count = it.value().getCount();

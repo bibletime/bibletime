@@ -61,7 +61,7 @@ bool addSource(sword::InstallSource& source) {
 /** Returns the Source struct. */
 sword::InstallSource source(const QString &name) {
     BtInstallMgr mgr;
-    InstallSourceMap::iterator source = mgr.sources.find(name.toLatin1().data());
+    auto const source = mgr.sources.find(name.toLatin1().data());
     if (source != mgr.sources.end()) {
         return *(source->second);
     }
@@ -102,7 +102,7 @@ bool deleteSource(const QString &name) {
     //this code can probably be shortened by using the stl remove_if functionality
     SWBuf sourceConfigEntry = is.getConfEnt();
     bool notFound = true;
-    ConfigEntMap::iterator it = config["Sources"].begin();
+    auto it(config["Sources"].begin());
     while (it != config["Sources"].end()) {
         //SWORD lib gave us a "nice" surprise: getConfEnt() adds uid, so old sources added by BT are not recognized here
         if (it->second == sourceConfigEntry) {

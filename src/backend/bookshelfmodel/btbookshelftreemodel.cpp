@@ -422,8 +422,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
 }
 
 void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
-    using MIMI = ModuleItemMap::iterator;
-    const MIMI it = m_modules.find(&module);
+    auto const it = m_modules.find(&module);
     if (it == m_modules.end())
         return;
 

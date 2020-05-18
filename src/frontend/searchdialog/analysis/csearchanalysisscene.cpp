@@ -14,7 +14,6 @@
 
 #include <QApplication>
 #include <QFileDialog>
-#include <QHashIterator>
 #include <QTextCodec>
 #include <QTextDocument>
 #include "../../../backend/keys/cswordversekey.h"
@@ -146,11 +145,9 @@ void CSearchAnalysisScene::setResults(
 void CSearchAnalysisScene::reset() {
     m_scaleFactor = 0.0;
 
-    QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList ); // iterator for items
-    while ( it.hasNext() ) {
-        it.next();
-        if (it.value()) it.value()->hide();
-    }
+    for (auto * const itemPtr : m_itemList)
+        if (itemPtr)
+            itemPtr->hide();
     m_lastPosList.clear();
 
     if (m_legend) m_legend->hide();
@@ -169,13 +166,12 @@ void CSearchAnalysisScene::slotResized() {
         m_scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
                         / static_cast<double>(m_maxCount);
     }
-    QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
-    while ( it.hasNext() ) {
-        it.next();
-        if (it.value()) {
-            it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX, height() - LOWER_BORDER - BAR_LOWER_BORDER);
-        }
-    }
+    for (auto * const itemPtr : m_itemList)
+        if (itemPtr)
+            itemPtr->setRect(itemPtr->rect().x(),
+                             UPPER_BORDER,
+                             BAR_WIDTH + (m_results.count() - 1) * BAR_DELTAX,
+                             height() - LOWER_BORDER - BAR_LOWER_BORDER);
     update();
 }
 

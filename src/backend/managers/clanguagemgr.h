@@ -117,7 +117,6 @@ class CLanguageMgr {
 
         using LanguageList = QList<Language *>;
         using LangMap = QHash<QString, Language const *>;
-        using LangMapIterator = LangMap::const_iterator;
 
 
         /** Returns the singleton instance, creating it if one does not exist. */

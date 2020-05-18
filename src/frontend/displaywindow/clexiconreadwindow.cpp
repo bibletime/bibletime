@@ -363,20 +363,16 @@ void CLexiconReadWindow::slotFillBackHistory() {
     menu->clear();
 
     /// \todo take the history list and fill the menu
-    QListIterator<QAction*> it(keyChooser()->history()->getBackList());
-    while (it.hasNext()) {
-        menu->addAction(it.next());
-    }
+    for (QAction * const actionPtr: keyChooser()->history()->getBackList())
+        menu->addAction(actionPtr);
 }
 
 void CLexiconReadWindow::slotFillForwardHistory() {
     QMenu* menu = m_actions.forwardInHistory->popupMenu();
     menu->clear();
     /// \todo take the history list and fill the menu using addAction
-    QListIterator<QAction*> it(keyChooser()->history()->getFwList());
-    while (it.hasNext()) {
-        menu->addAction(it.next());
-    }
+    for (QAction * const actionPtr : keyChooser()->history()->getFwList())
+        menu->addAction(actionPtr);
 }
 
 

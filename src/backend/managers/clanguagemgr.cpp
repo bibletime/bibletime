@@ -85,7 +85,7 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 }
 
 const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& abbrev ) const {
-    LangMapIterator it = m_langMap.find(abbrev);
+    auto it(m_langMap.find(abbrev));
     if (it != m_langMap.constEnd()) return *it; //Language is already here
 
     //try to search in the alternative abbrevs

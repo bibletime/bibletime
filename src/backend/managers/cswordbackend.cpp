@@ -197,7 +197,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
 void CSwordBackend::AddRenderFilters(sword::SWModule * module,
                                      sword::ConfigEntMap & section)
 {
-    sword::ConfigEntMap::const_iterator entry = section.find("SourceType");
+    auto entry(section.find("SourceType"));
     if (entry != section.end()) {
         if (entry->second == "OSIS") {
             module->addRenderFilter(&m_osisFilter);
@@ -497,8 +497,7 @@ QStringList CSwordBackend::swordDirList() const {
         swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
         const sword::ConfigEntMap group(conf["Install"]);
-        using CEMCI = sword::ConfigEntMap::const_iterator ;
-        for (std::pair<CEMCI, CEMCI> its = group.equal_range("AugmentPath");
+        for (auto its = group.equal_range("AugmentPath");
              its.first != its.second;
              ++(its.first))
         {

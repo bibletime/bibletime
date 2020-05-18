@@ -114,18 +114,15 @@ void CLexiconKeyChooser::refreshContent() {
         //     qWarning("resetted");
     }
     else {
-        using EntryMap = std::multimap<unsigned int, QStringList const *>;
-        EntryMap entryMap;
-
-        QListIterator<const CSwordLexiconModuleInfo*> mit(m_modules);
-        while (mit.hasNext()) {
-            const QStringList &entries = mit.next()->entries();
-            entryMap.insert( std::make_pair(entries.count(), &entries) );
+        std::multimap<unsigned int, QStringList const *> entryMap;
+        for (auto const * const modulePtr : m_modules) {
+            auto const & entries = modulePtr->entries();
+            entryMap.emplace(entries.count(), &entries);
         }
 
         QStringList goodEntries; //The string list which contains the entries which are available in all modules
 
-        EntryMap::iterator it = entryMap.begin(); //iterator to go thoigh all selected modules
+        auto it(entryMap.begin()); // iterator to go though all selected modules
         QStringList refEntries = *(it->second); //copy the items for the first time
         const QStringList *cmpEntries = (++it)->second; //list for comparision, starts with the second module in the map
 
@@ -147,7 +144,7 @@ void CLexiconKeyChooser::refreshContent() {
             * because the final list can only have the entries of goodEntries as maxiumum
             */
             refEntries = goodEntries;
-        };
+        }
 
         m_widget->reset(goodEntries, 0, true); //write down the entries
     } //end of ELSE

@@ -61,8 +61,7 @@ public: /* Methods: */
     */
     inline const QString & currentSessionName() const {
         QMutexLocker lock(&m_mutex);
-        using SSHCI = QHash<QString, QString>::const_iterator;
-        SSHCI it = m_sessionNames.constFind(m_currentSessionKey);
+        auto it(m_sessionNames.constFind(m_currentSessionKey));
         BT_ASSERT(it != m_sessionNames.constEnd());
         return it.value();
     }

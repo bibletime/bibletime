@@ -118,7 +118,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
 #define STANDARD_WORKS_COMBO_ADD(name) \
     comboList.append(m_ ## name ## Combo); \
     m = btConfig().getDefaultSwordModuleByType(#name); \
-    moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString());
+    moduleList << (m ? m->config(CSwordModuleInfo::Description) : QString())
 
         STANDARD_WORKS_COMBO_ADD(standardBible);
         STANDARD_WORKS_COMBO_ADD(standardCommentary);
@@ -132,10 +132,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     QString module = QString();
     int item = 0;
     int count = 0;
-    QListIterator<QComboBox*> it(comboList);
-    while (it.hasNext()) {
-        //for (QComboBox* combo = comboList.first(); combo; combo = comboList.next() )
-        QComboBox* combo = it.next();
+    for (auto * const combo : comboList) {
         module = moduleList[comboList.indexOf(combo)];
         count = combo->count();
 
@@ -154,7 +151,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     btConfig().setDefaultSwordModuleByType(\
         #name, \
         CSwordBackend::instance()->findModuleByDescription(m_ ## name ## Combo->currentText()) \
-    );
+    )
 
 void BtStandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardBible);

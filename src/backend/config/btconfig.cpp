@@ -225,7 +225,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
 
     QMutexLocker lock(&this->m_mutex);
     // Check the cache first:
-    FontCacheMap::const_iterator it(m_fontCache.find(&language));
+    auto it(m_fontCache.find(&language));
     if (it != m_fontCache.end())
         return *it;
 
@@ -270,7 +270,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules,
      * We want to make sure that the search scopes are saved with english
      * key names so loading them will always work with each locale set.
      */
-    BtConfig::StringMap::Iterator iter = searchScopes.begin();
+    auto iter(searchScopes.begin());
     while (iter != searchScopes.end()) {
         QString &data = iter.value();
         bool parsingWorked = true;

@@ -84,6 +84,6 @@ void BtActionCollection::writeShortcuts(QString const & group) const {
 BtActionCollection::Item * BtActionCollection::findActionItem(
         QString const & name) const
 {
-    ActionMap::const_iterator const it = m_actions.find(name);
-    return (it != m_actions.constEnd()) ? *it : nullptr;
+    auto const it(m_actions.find(name));
+    return (it != m_actions.end()) ? *it : nullptr;
 }

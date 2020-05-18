@@ -438,12 +438,8 @@ int BtQmlInterface::fontSize(int column) const {
 QString BtQmlInterface::getSelectedText() {
 
     QString text;
-    QMap<int, QString>::const_iterator i = m_selectedText.constBegin();
-    while (i != m_selectedText.constEnd()) {
-        text.append(i.value());
-        text.append('\n');
-        ++i;
-    }
+    for (auto const & value : m_selectedText)
+        text.append(value).append('\n');
     return text;
 }
 
