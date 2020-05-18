@@ -218,6 +218,8 @@ void CRangeChooserDialog::updateResultList() {
 
     Q_FOREACH(const QString & moduleName, m_scopeModules) {
         auto module = CSwordBackend::instance()->findModuleByName(moduleName);
+        if (!module)
+            continue;
         VK vk = module->module().getKey();
         sword::ListKey verses = vk.parseVerseList(range.toUtf8().constData(),
                                                   "Genesis 1:1", true);
