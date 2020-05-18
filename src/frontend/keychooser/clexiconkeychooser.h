@@ -45,13 +45,6 @@ class CLexiconKeyChooser : public CKeyChooser {
 
         void setKey(CSwordKey* key) override;
 
-        /**
-        * used to react to changes in the @ref CKeyChooserWidget
-        *
-        * @param index not used
-        **/
-        void activated(int index);
-
         void refreshContent() override;
 
         void setModules(const BtConstModuleList &modules,
