@@ -32,8 +32,10 @@ CKeyChooser::CKeyChooser(const BtConstModuleList &,
     : QWidget(parent)
     , m_history(historyPtr)
 {
-    BT_CONNECT(history(), SIGNAL(historyMoved(QString)),
-               this,      SLOT(setKey(QString const &)));
+    BT_CONNECT(historyPtr, &BTHistory::historyMoved,
+               this,
+               static_cast<void (CKeyChooser::*)(QString const &)>(
+                   &CKeyChooser::setKey));
 }
 
 CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,
