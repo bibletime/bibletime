@@ -160,7 +160,6 @@ signals:
     void dragOccuring(const QString& moduleName, const QString& keyName);
 
 private slots:
-    void timeoutEvent();
     void slotSetHighlightWords();
 
 private:

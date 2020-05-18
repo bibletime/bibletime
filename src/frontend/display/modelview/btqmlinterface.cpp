@@ -15,6 +15,7 @@
 #include <QClipboard>
 #include <QScreen>
 #include <QTimer>
+#include <utility>
 #include "../../../backend/config/btconfig.h"
 #include "../../../backend/drivers/cswordbookmoduleinfo.h"
 #include "../../../backend/drivers/cswordlexiconmoduleinfo.h"
@@ -51,7 +52,14 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
     m_linkTimer->setSingleShot(true);
     m_findState.enabled = false;
 
-    BT_CONNECT(m_linkTimer, SIGNAL(timeout()), this, SLOT(timeoutEvent()));
+    BT_CONNECT(m_linkTimer, &QTimer::timeout,
+               [this] {
+                   auto infoList(Rendering::detectInfo(
+                                     getReferenceFromUrl(m_timeoutUrl)));
+                   if (!infoList.isEmpty())
+                       BibleTime::instance()->infoDisplay()->setInfo(
+                                   std::move(infoList));
+               });
 }
 
 BtQmlInterface::~BtQmlInterface() {
@@ -282,13 +290,6 @@ void BtQmlInterface::setMagReferenceByUrl(const QString& url) {
         return;
     m_timeoutUrl = url;
     m_linkTimer->start(400);
-}
-
-void BtQmlInterface::timeoutEvent() {
-    QString link = getReferenceFromUrl(m_timeoutUrl);
-    Rendering::ListInfoData infoList(Rendering::detectInfo(link));
-    if (!(infoList.isEmpty()))
-        BibleTime::instance()->infoDisplay()->setInfo(infoList);
 }
 
 void BtQmlInterface::settingsChanged() {
