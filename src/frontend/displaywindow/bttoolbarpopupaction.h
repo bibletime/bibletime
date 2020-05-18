@@ -37,11 +37,6 @@ class BtToolBarPopupAction : public QWidgetAction {
     protected:
         QWidget* createWidget(QWidget* parent) override;
 
-    private slots:
-
-// Slot to emit a triggered signal when the toolbar button is pressed
-        void buttonPressed();
-
     private:
         QMenu* m_menu;
         QToolButton* m_button;

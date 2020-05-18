@@ -57,13 +57,9 @@ QWidget* BtToolBarPopupAction::createWidget(QWidget* parent) {
     m_button->setDefaultAction(this);
     m_button->setPopupMode(QToolButton::MenuButtonPopup);
     m_button->setMenu(m_menu);
-    BT_CONNECT(m_button, SIGNAL(pressed()), this, SLOT(buttonPressed()));
+    BT_CONNECT(m_button, &BtToolButton::pressed,
+               this /* Meeded */, [this] { emit triggered(); });
     return m_button;
-}
-
-// Slot to emit a triggered signal when the toolbar button is pressed
-void BtToolBarPopupAction::buttonPressed() {
-    emit triggered();
 }
 
 // Function to catch the Shortcut event and emit the triggered signal
