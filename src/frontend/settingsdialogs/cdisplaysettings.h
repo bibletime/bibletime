@@ -39,7 +39,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         void retranslateUi();
 
-    protected slots:
+    private slots:
         /** Update the style preview widget. */
         void updateStylePreview();
 
