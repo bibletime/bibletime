@@ -34,9 +34,6 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
         inline BtConstModuleSet checkedModules() const
         { return bookshelfWidget()->treeModel()->checkedModules(); }
 
-    protected slots:
-        void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
-
     protected:
         void retranslateUi();
 };

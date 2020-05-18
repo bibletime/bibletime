@@ -32,11 +32,9 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
     BtBookshelfTreeModel::Grouping grouping(groupingOrderKey);
     BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(grouping, this);
     treeModel->setCheckable(true);
-    BT_CONNECT(treeModel,
-               SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-               this,
-               SLOT(slotGroupingOrderChanged(
-                            BtBookshelfTreeModel::Grouping const &)));
+    BT_CONNECT(treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
+               [](BtBookshelfTreeModel::Grouping const & grouping)
+               { grouping.saveTo(groupingOrderKey); });
 
     // Initialize the bookshelf widget:
     bookshelfWidget()->showHideAction()->setVisible(false);
@@ -51,8 +49,4 @@ void BtSearchModuleChooserDialog::retranslateUi() {
     setWindowTitle(tr("Works to Search in"));
     util::tool::initExplanationLabel(label(), QString(),
                                      tr("Select the works which should be searched."));
-}
-
-void BtSearchModuleChooserDialog::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
-    g.saveTo(groupingOrderKey);
 }
