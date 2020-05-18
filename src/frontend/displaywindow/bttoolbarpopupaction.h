@@ -27,7 +27,7 @@ class BtToolBarPopupAction : public QWidgetAction {
     public:
 
         BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent);
-        ~BtToolBarPopupAction();
+        ~BtToolBarPopupAction() override;
 
 // return the QMenu object so a popup menu can be constructed
         QMenu* popupMenu() const;

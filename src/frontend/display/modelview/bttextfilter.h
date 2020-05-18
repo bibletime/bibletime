@@ -33,9 +33,9 @@ class BtTextFilter: public BtModuleTextFilter {
 
 public:
     BtTextFilter();
-    ~BtTextFilter();
+    ~BtTextFilter() override;
 
-    QString processText(const QString& text, bool selected);
+    QString processText(const QString& text, bool selected) override;
     void setShowReferences(bool on);
 
 private:

@@ -33,7 +33,7 @@ class BtBibleKeyWidget : public QWidget  {
                          CSwordVerseKey *key, QWidget *parent = nullptr,
                          const char *name = nullptr);
 
-        ~BtBibleKeyWidget();
+        ~BtBibleKeyWidget() override;
         bool setKey(CSwordVerseKey* key);
         void setModule(const CSwordBibleModuleInfo *m = nullptr);
         bool eventFilter(QObject *o, QEvent *e) override;
