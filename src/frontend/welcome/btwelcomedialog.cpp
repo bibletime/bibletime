@@ -61,15 +61,14 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     retranslateUi();
 
-    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    BT_CONNECT(m_buttonBox, SIGNAL(accepted()), this, SLOT(slotAccept()));
-
-}
-
-void BtWelcomeDialog::slotAccept() {
-    hide();
-    accept();
-    BibleTime::instance()->slotBookshelfWizard();
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
+               this, &BtWelcomeDialog::reject);
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
+               [this] {
+                   hide();
+                   accept();
+                   BibleTime::instance()->slotBookshelfWizard();
+               });
 }
 
 void BtWelcomeDialog::retranslateUi() {

@@ -31,9 +31,6 @@ public:
 protected:
     void retranslateUi();
 
-private slots:
-    void slotAccept();
-
 private:
 
     QLabel *m_iconLabel;
