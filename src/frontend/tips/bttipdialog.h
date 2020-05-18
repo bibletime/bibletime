@@ -35,22 +35,10 @@ class BtTipDialog: public QDialog {
 
     private: /* Methods: */
 
-        /** Enter tips in this function */
-        void initTips();
+        void retranslateUi();
 
         /** Sends the current tip to the web view */
         void displayTip();
-
-    private slots:
-
-        /** Called when the show tips at startup checkbox changes. */
-        void startupBoxChanged(bool checked);
-
-        /** Called when the next tip button is pressed. */
-        void nextTip();
-
-        /** Called when any link in a tip is clicked. */
-        void linkClicked(const QUrl& url);
 
     private: /* Fields: */
 

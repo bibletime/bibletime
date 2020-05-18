@@ -98,21 +98,24 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
     mainLayout->addLayout(hLayout);
     setLayout(mainLayout);
 
-    BT_CONNECT(m_showTipsCheckBox, SIGNAL(toggled(bool)),
-               this,               SLOT(startupBoxChanged(bool)));
-    BT_CONNECT(m_buttonBox, SIGNAL(rejected()),
-               this,        SLOT(reject()));
-    BT_CONNECT(nextButton, SIGNAL(clicked()),
-               this,       SLOT(nextTip()));
-    BT_CONNECT(m_tipView, SIGNAL(anchorClicked(QUrl const &)),
-               this,              SLOT(linkClicked(QUrl const &)));
+    BT_CONNECT(m_showTipsCheckBox, &QCheckBox::toggled,
+               [](bool v) { btConfig().setValue("GUI/showTipAtStartup", v); });
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
+               this,        &BtTipDialog::reject);
+    BT_CONNECT(nextButton, &QPushButton::clicked,
+               [this]{
+                   m_tipNumber = (m_tipNumber + 1) % m_tips.size();
+                   btConfig().setValue(LastTipNumberKey, m_tipNumber);
+                   displayTip();
+               });
+    BT_CONNECT(m_tipView, &QTextBrowser::anchorClicked,
+               [](QUrl const & url) { QDesktopServices::openUrl(url); });
 
     m_tipNumber = btConfig().value<int>(LastTipNumberKey, 0);
-    initTips();
-    displayTip();
+    retranslateUi();
 }
 
-void BtTipDialog::initTips() {
+void BtTipDialog::retranslateUi() {
     m_tips.clear();
 
     m_tips << tr("The currently active window can be auto scrolled up or down."
@@ -174,25 +177,9 @@ void BtTipDialog::initTips() {
     m_tips << tr("You can save your open windows in a session. Such a session can easily be restored"
         " later on. You can save as many sessions as you like. The session feature can be"
         " accessed under the Window menu entry.");
-}
 
-void BtTipDialog::displayTip() {
-    m_tipView->setHtml(make_html(this, m_tips[m_tipNumber]));
-}
-
-void BtTipDialog::startupBoxChanged(bool checked) {
-    btConfig().setValue("GUI/showTipAtStartup", checked);
-}
-
-void BtTipDialog::nextTip() {
-    m_tipNumber++;
-    if (m_tipNumber >= m_tips.count()) {
-        m_tipNumber = 0;
-    }
-    btConfig().setValue(LastTipNumberKey, m_tipNumber);
     displayTip();
 }
 
-void BtTipDialog::linkClicked(const QUrl& url) {
-    QDesktopServices::openUrl(url);
-}
+void BtTipDialog::displayTip()
+{ m_tipView->setHtml(make_html(this, m_tips[m_tipNumber])); }
