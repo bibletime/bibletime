@@ -167,8 +167,8 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
                this,               &BtBookshelfWorksPage::completeChanged);
     BT_CONNECT(m_installPageModel, &BtInstallPageModel::groupingOrderChanged,
                this, &BtBookshelfWorksPage::slotGroupingOrderChanged);
-    BT_CONNECT(m_nameFilterEdit, SIGNAL(textEdited(QString)),
-               filterModel, SLOT(setNameFilterFixedString(QString)));
+    BT_CONNECT(m_nameFilterEdit, &QLineEdit::textEdited,
+               filterModel, &BtBookshelfFilterModel::setNameFilterFixedString);
 
     retranslateUi();
 }
