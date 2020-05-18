@@ -38,9 +38,6 @@ class BtBookshelfGroupingMenu: public QMenu {
         void initMenu(bool showNoGrouping);
         void retranslateUi();
 
-    private slots:
-        void slotGroupingActionTriggered(QAction *action);
-
     private:
         QActionGroup *m_groupingActionGroup;
         QAction *m_groupingCatLangAction;

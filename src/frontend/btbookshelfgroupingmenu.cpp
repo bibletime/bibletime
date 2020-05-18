@@ -60,8 +60,9 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
 
     m_groupingActionGroup = new QActionGroup(this);
     m_groupingActionGroup->setExclusive(true);
-    BT_CONNECT(m_groupingActionGroup, SIGNAL(triggered(QAction *)),
-               this, SLOT(slotGroupingActionTriggered(QAction *)));
+    BT_CONNECT(m_groupingActionGroup, &QActionGroup::triggered,
+               [this](QAction * const action)
+               { emit signalGroupingOrderChanged(getActionRef(action)); });
 
     m_groupingCatLangAction = new QAction(this);
     m_groupingCatLangAction->setCheckable(true);
@@ -109,8 +110,4 @@ void BtBookshelfGroupingMenu::retranslateUi() {
     if (m_groupingNoneAction != nullptr) {
         m_groupingNoneAction->setText(tr("No grouping"));
     }
-}
-
-void BtBookshelfGroupingMenu::slotGroupingActionTriggered(QAction *action) {
-    emit signalGroupingOrderChanged(getActionRef(action));
 }
