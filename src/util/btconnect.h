@@ -15,21 +15,16 @@
 
 #include <QObject>
 #include "btassert.h"
-#include "btwrap.h"
 
 
 #ifndef NDEBUG
-#define BT_CONNECT_WITH(with, ...) \
+#define BT_CONNECT(...) \
     do { \
-        bool const ok = with connect(__VA_ARGS__); \
+        bool const ok = connect(__VA_ARGS__); \
         BT_ASSERT(ok); \
     } while (false)
-#define BT_CONNECT(...)         BT_CONNECT_WITH(,         BT_WRAP(__VA_ARGS__))
-#define BT_CONNECT_QOBJECT(...) BT_CONNECT_WITH(QObject::,BT_WRAP(__VA_ARGS__))
 #else
-#define BT_CONNECT_WITH(with, ...)  with connect(__VA_ARGS__)
-#define BT_CONNECT(...)                  connect(__VA_ARGS__)
-#define BT_CONNECT_QOBJECT(...) QObject::connect(__VA_ARGS__)
+#define BT_CONNECT(...) connect(__VA_ARGS__)
 #endif
 
 #endif /* BTCONNECT_H */
