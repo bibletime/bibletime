@@ -49,8 +49,26 @@
 void BibleTime::slotSettingsOptions() {
     qDebug() << "BibleTime::slotSettingsOptions";
     CConfigurationDialog *dlg = new CConfigurationDialog(this, m_actionCollection);
-    BT_CONNECT(dlg,  SIGNAL(signalSettingsChanged()),
-               this, SLOT(slotSettingsChanged()) );
+    BT_CONNECT(dlg,  &CConfigurationDialog::signalSettingsChanged,
+               [this]{
+                   qDebug() << "BibleTime::slotSettingsChanged";
+                   auto const language =
+                           btConfig().value<QString>("GUI/booknameLanguage",
+                                                     QLocale().name());
+                   CSwordBackend::instance()->booknameLanguage(language);
+
+                   /** \todo update the bookmarks after Bible bookname language
+                             has been changed. */
+                   /* for (QTreeWidgetItemIterator it = m_mainIndex; *it; ++it)
+                       if (auto * citem = dynamic_cast<CIndexItemBase*>(*it))
+                           citem->update(); */
+
+                   m_actionCollection->readShortcuts("Application shortcuts");
+                   refreshDisplayWindows();
+                   refreshProfileMenus();
+                   m_infoDisplay->updateColors();
+                   qDebug() << "BibleTime::slotSettingsChanged";
+               });
 
     dlg->show();
 }
@@ -60,30 +78,6 @@ void BibleTime::saveConfigSettings() {
     CConfigurationDialog* dlg = new CConfigurationDialog(this, nullptr);
     dlg->save();
     delete dlg;
-}
-
-/** Is called when settings in the optionsdialog were changed (ok or apply) */
-void BibleTime::slotSettingsChanged() {
-    qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = btConfig().value<QString>("GUI/booknameLanguage",
-                                                       QLocale().name());
-    CSwordBackend::instance()->booknameLanguage(language);
-
-// \todo update the bookmarks after Bible bookname language has been changed
-//     QTreeWidgetItemIterator it(m_mainIndex);
-//     while (*it) {
-//         CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
-//         if (citem) {
-//             citem->update();
-//         }
-//         ++it;
-//     }
-
-    m_actionCollection->readShortcuts("Application shortcuts");
-    refreshDisplayWindows();
-    refreshProfileMenus();
-    m_infoDisplay->updateColors();
-    qDebug() << "BibleTime::slotSettingsChanged";
 }
 
 /** Opens the bookshelf wizard. */

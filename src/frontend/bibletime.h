@@ -400,12 +400,6 @@ public slots:
         bool autoScrollAnyKey(int key);
 
         /**
-        * Is called when settings in the optionsdialog have been
-        * changed (ok or apply)
-        */
-        void slotSettingsChanged();
-
-        /**
          * Called when search button is pressed
          **/
         void slotSearchModules();
