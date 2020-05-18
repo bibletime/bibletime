@@ -33,12 +33,12 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     QFont font = m_textBrowser->font();
     font.setPointSize(font.pointSize()+2);
     m_textBrowser->setFont(font);
-    BT_CONNECT(m_textBrowser, SIGNAL(anchorClicked(QUrl)),
-               this,      SLOT(linkClicked(QUrl)));
+    BT_CONNECT(m_textBrowser, &QTextBrowser::anchorClicked,
+               [](QUrl const & url) { QDesktopServices::openUrl(url); });
     l->addWidget(m_textBrowser);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttons, &QDialogButtonBox::rejected, this, &QDialog::reject);
     l->addWidget(m_buttons);
 
     setLayout(l);
@@ -218,10 +218,6 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
     m_textBrowser->setHtml(html);
 
     message::prepareDialogBox(m_buttons);
-}
-
-void BtSearchSyntaxHelpDialog::linkClicked(const QUrl &url) {
-    QDesktopServices::openUrl(url);
 }
 
 } // namespace Search

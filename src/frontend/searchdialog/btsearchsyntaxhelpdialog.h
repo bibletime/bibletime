@@ -29,9 +29,6 @@ class BtSearchSyntaxHelpDialog: public QDialog {
     protected:
         void retranslateUi();
 
-    protected slots:
-        void linkClicked(const QUrl &url);
-
     private:
         QTextBrowser  *m_textBrowser;
         QDialogButtonBox *m_buttons;
