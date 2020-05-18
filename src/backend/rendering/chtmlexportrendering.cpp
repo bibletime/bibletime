@@ -194,9 +194,10 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         if (m_addText)
             entry.append(key_renderedText);
 
-        if (!i.childList()->isEmpty())
+        if (!i.childList()->isEmpty()) {
             Q_FOREACH (KeyTreeItem const * const c, *(i.childList()))
                 entry.append(renderEntry(*c));
+        }
 
         entry.append("</div>");
 

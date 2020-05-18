@@ -97,11 +97,12 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
         if (!success) break;
     }
 
-    if (!success)
+    if (!success) {
         // Delete already created indices:
         Q_FOREACH(CSwordModuleInfo * const m, indexedModules)
             if (m->hasIndex())
                 m->deleteIndex();
+    }
     return success;
 }
 
