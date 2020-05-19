@@ -34,9 +34,6 @@ class BtModuleChooserDialog : public QDialog {
         inline BtBookshelfWidget *bookshelfWidget() const { return m_bookshelfWidget; }
         inline QDialogButtonBox *buttonBox() const { return m_buttonBox; }
 
-    protected slots:
-        void slotModuleAbout(CSwordModuleInfo *module);
-
     private:
         QLabel            *m_captionLabel;
         BtBookshelfWidget *m_bookshelfWidget;
