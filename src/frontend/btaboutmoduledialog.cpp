@@ -36,12 +36,14 @@ BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
     vboxLayout->addWidget(m_textEdit);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttons, &QDialogButtonBox::rejected,
+               this, &BTAboutModuleDialog::reject);
     vboxLayout->addWidget(m_buttons);
 
     retranslateUi();
 
-    BT_CONNECT(moduleInfo, SIGNAL(destroyed()), this, SLOT(close()));
+    BT_CONNECT(moduleInfo, &QObject::destroyed,
+               this, &BTAboutModuleDialog::close);
 }
 
 void BTAboutModuleDialog::retranslateUi() {
