@@ -42,8 +42,7 @@ CBookKeyChooser::CBookKeyChooser(const BtConstModuleList & modules,
     setKey(key);
 
     adjustFont();
-    BT_CONNECT(this,      SIGNAL(keyChanged(CSwordKey *)),
-               history(), SLOT(add(CSwordKey *)));
+    BT_CONNECT(this, &CBookKeyChooser::keyChanged, history(), &BTHistory::add);
 }
 
 void CBookKeyChooser::setKey(CSwordKey * newKey) {
@@ -172,8 +171,10 @@ void CBookKeyChooser::setModules(const BtConstModuleList & modules,
             w->comboBox().setMaximumWidth(maxWidth);
             w->comboBox().setCurrentIndex(0);
 
-            BT_CONNECT(w, SIGNAL(changed(int)),  SLOT(keyChooserChanged(int)));
-            BT_CONNECT(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
+            BT_CONNECT(w, &CKeyChooserWidget::changed,
+                       this, &CBookKeyChooser::keyChooserChanged);
+            BT_CONNECT(w, &CKeyChooserWidget::focusOut,
+                       this, &CBookKeyChooser::keyChooserChanged);
 
             m_layout->addWidget(w);
             w->setProperty(ID_PROPERTY_NAME, i+1);
