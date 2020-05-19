@@ -205,7 +205,7 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desk
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
         DESTINATION "${BT_DATAROOTDIR}/applications/" RENAME "info.bibletime.BibleTime.desktop")
 
-INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.BibleTime.appdata.xml"
+INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.BibleTime.metainfo.xml"
         DESTINATION "${BT_DATAROOTDIR}/metainfo/")
 
 
