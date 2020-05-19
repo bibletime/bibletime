@@ -49,14 +49,12 @@ CBookTreeChooser::CBookTreeChooser(const BtConstModuleList & modules,
     m_treeView->setHeaderHidden(true);
 
     //when user selects the item whe must react
-    BT_CONNECT(m_treeView,
-               SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
-               SLOT(itemActivated(QTreeWidgetItem *)));
+    BT_CONNECT(m_treeView, &QTreeWidget::currentItemChanged,
+               this, &CBookTreeChooser::itemActivated);
 
     setKey(key);
     adjustFont();
-    BT_CONNECT(this, SIGNAL(keyChanged(CSwordKey *)),
-               history(), SLOT(add(CSwordKey *)));
+    BT_CONNECT(this, &CBookTreeChooser::keyChanged, history(), &BTHistory::add);
 }
 
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */
