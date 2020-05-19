@@ -151,9 +151,6 @@ protected:
     QString m_nodeInfo;
     int m_magTimerId;
 
-private slots:
-    void slotDelayedMoveToAnchor();
-
 private:
 
     BtQmlScrollView* m_widget;

@@ -279,9 +279,6 @@ void BtModelViewReadDisplay::selectAll() {
 void BtModelViewReadDisplay::moveToAnchor( const QString& /*anchor*/ ) {
 }
 
-void BtModelViewReadDisplay::slotDelayedMoveToAnchor() {
-}
-
 // Scroll the view to the correct location specified by anchor
 void BtModelViewReadDisplay::slotGoToAnchor(const QString& /*anchor*/) {
 }
