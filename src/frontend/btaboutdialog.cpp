@@ -88,7 +88,8 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     mainLayout->addWidget(m_buttonBox);
     setLayout(mainLayout);
 
-    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
+               this, &BtAboutDialog::reject);
 
     retranslateUi();
 }
@@ -110,7 +111,14 @@ void BtAboutDialog::initTab(QTextBrowser *&tab) {
     font.setPointSize(font.pointSize()+2);
     tab->setFont(font);
     m_tabWidget->addTab(tab, "");
-    BT_CONNECT(tab, SIGNAL(anchorClicked(const QUrl&)), this, SLOT(linkClicked(const QUrl&)));
+    BT_CONNECT(tab, &QTextBrowser::anchorClicked,
+               [](QUrl const & url) {
+                   if (url.host() == "qt") {
+                       qApp->aboutQt();
+                   } else {
+                       QDesktopServices::openUrl(url);
+                   }
+               });
 }
 
 void BtAboutDialog::retranslateUi() {
@@ -289,13 +297,5 @@ void BtAboutDialog::retranslateLicenceTab() {
         content.replace("<!-- HEADER -->", MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
         m_licenceTab->setText(content);
         licFile.close();
-    }
-}
-
-void BtAboutDialog::linkClicked(const QUrl &url) {
-    if (url.host() == "qt") {
-            qApp->aboutQt();
-    } else {
-        QDesktopServices::openUrl(url);
     }
 }

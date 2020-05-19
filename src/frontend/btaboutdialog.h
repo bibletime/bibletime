@@ -39,9 +39,6 @@ class BtAboutDialog: public QDialog {
         void retranslateQtTab();
         void retranslateLicenceTab();
 
-    private slots:
-        void linkClicked(const QUrl &url);
-
     private:
         QTabWidget *m_tabWidget;
         QTextBrowser *m_bibletimeTab;
