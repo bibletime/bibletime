@@ -36,9 +36,6 @@ class BtBookshelfView: public QTreeView {
         void keyPressEvent(QKeyEvent *event) override;
         void mousePressEvent(QMouseEvent *event) override;
 
-    protected slots:
-        void slotItemActivated(const QModelIndex &index);
-        void slotItemHovered(const QModelIndex &index);
 };
 
 #endif // BTBOOKSHELFVIEW_H

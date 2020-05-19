@@ -32,10 +32,14 @@ BtBookshelfView::BtBookshelfView(QWidget *parent)
     */
     // setRootIsDecorated(false);
 
-    BT_CONNECT(this, SIGNAL(activated(QModelIndex)),
-               this, SLOT(slotItemActivated(QModelIndex)));
-    BT_CONNECT(this, SIGNAL(entered(QModelIndex)),
-               this, SLOT(slotItemHovered(QModelIndex)));
+    BT_CONNECT(this, &BtBookshelfView::activated,
+               [this](QModelIndex const & index) {
+                   if (auto * const module = getModule(index))
+                       emit moduleActivated(module);
+               });
+    BT_CONNECT(this, &BtBookshelfView::entered,
+               [this](QModelIndex const & index)
+               { emit moduleHovered(getModule(index)); });
 }
 
 CSwordModuleInfo * BtBookshelfView::getModule(const QModelIndex & index) const {
@@ -98,15 +102,4 @@ void BtBookshelfView::mousePressEvent(QMouseEvent *event) {
     else {
         QTreeView::mousePressEvent(event);
     }
-}
-
-void BtBookshelfView::slotItemActivated(const QModelIndex &index) {
-    CSwordModuleInfo *i(getModule(index));
-    if (i != nullptr) {
-        emit moduleActivated(i);
-    }
-}
-
-void BtBookshelfView::slotItemHovered(const QModelIndex &index) {
-    emit moduleHovered(getModule(index));
 }
