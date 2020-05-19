@@ -43,9 +43,6 @@ class CSearchAnalysisDialog : public QDialog {
         void initView();
         void resizeEvent(QResizeEvent* event) override;
 
-    private slots:
-        void buttonClicked(QAbstractButton* button);
-
     private:
         CSearchAnalysisScene* m_analysis;
         CSearchAnalysisView* m_analysisView;

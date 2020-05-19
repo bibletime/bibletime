@@ -58,23 +58,17 @@ void CSearchAnalysisDialog::initView() {
 ////    m_analysisView->show();
     vboxLayout->addWidget(m_analysisView);
 
-    m_buttonBox = new QDialogButtonBox(this);
-    m_buttonBox->setOrientation(Qt::Horizontal);
-    m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
-    m_buttonBox->addButton(QDialogButtonBox::Save);
+    m_buttonBox = new QDialogButtonBox(
+                        QDialogButtonBox::Save | QDialogButtonBox::Close,
+                        this);
     //tr("Save as HTML"),
     message::prepareDialogBox(m_buttonBox);
     vboxLayout->addWidget(m_buttonBox);
 
-    BT_CONNECT(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    BT_CONNECT(m_buttonBox, SIGNAL(clicked(QAbstractButton *)),
-               this, SLOT(buttonClicked(QAbstractButton *)));
-}
-
-void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button) {
-    if (m_buttonBox->buttonRole(button) == QDialogButtonBox::AcceptRole) {
-        m_analysis->saveAsHTML();
-    }
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
+               this, &CSearchAnalysisDialog::reject);
+    BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
+               [this]{ m_analysis->saveAsHTML(); });
 }
 
 void CSearchAnalysisDialog::resizeEvent(QResizeEvent* event) {
