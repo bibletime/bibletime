@@ -87,31 +87,50 @@ void BtFontChooserWidget::retranslateUi() {
 }
 
 void BtFontChooserWidget::connectListWidgets() {
-    BT_CONNECT(m_fontListWidget,
-               SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
-               this,
-               SLOT(fontChanged(QListWidgetItem *, QListWidgetItem *)));
+    BT_CONNECT(m_fontListWidget, &CListWidget::currentItemChanged,
+               [this](QListWidgetItem * const current, QListWidgetItem *) {
+                   if (current) {
+                       auto const fontFamily(current->text());
+                       m_font.setFamily(fontFamily);
+                       loadStyles(fontFamily);
+                       outputHtmlText();
+                       emit fontSelected(m_font);
+                   }
+               });
     BT_CONNECT(
-             m_styleListWidget,
-             SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
-             this,
-             SLOT(styleChanged(QListWidgetItem *, QListWidgetItem *)));
-    BT_CONNECT(
-             m_sizeListWidget,
-             SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
-             this,
-             SLOT(sizeChanged(QListWidgetItem *, QListWidgetItem *)));
-}
+             m_styleListWidget, &CListWidget::currentItemChanged,
+             [this](QListWidgetItem * const current, QListWidgetItem *) {
+                 if (!current)
+                     return;
 
-void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == nullptr)
-        return;
+                 auto const styleString(current->text());
+                 m_font.setBold(
+                             styleString.contains("bold", Qt::CaseInsensitive));
+                 m_font.setItalic(
+                     styleString.contains("italic", Qt::CaseInsensitive)
+                     || styleString.contains("oblique", Qt::CaseInsensitive));
 
-    const QString fontFamily = current->text();
-    m_font.setFamily(fontFamily);
-    loadStyles(fontFamily);
-    outputHtmlText();
-    emit fontSelected(m_font);
+                 // Save style if the user choose it
+                 if (m_styleListWidget->hasFocus())
+                     m_choosenStyle = styleString;
+
+                 loadSizes(m_fontListWidget->currentItem()->text(),
+                           styleString);
+
+                 outputHtmlText();
+                 emit fontSelected(m_font);
+             });
+    BT_CONNECT(m_sizeListWidget, &CListWidget::currentItemChanged,
+               [this](QListWidgetItem * const current, QListWidgetItem *) {
+                   if (!current)
+                       return;
+
+                   m_font.setPointSize(
+                               m_sizeListWidget->currentItem()->text().toInt());
+
+                   outputHtmlText();
+                   emit fontSelected(m_font);
+               });
 }
 
 void BtFontChooserWidget::loadFonts() {
@@ -224,44 +243,11 @@ void BtFontChooserWidget::setFont(const QFont& font) {
     connectListWidgets();
 }
 
-void BtFontChooserWidget::setFontStyle(const QString& styleString, QFont* font) {
-    font->setBold(styleString.contains("bold", Qt::CaseInsensitive));
-    font->setItalic(styleString.contains("italic", Qt::CaseInsensitive)
-                    || styleString.contains("oblique", Qt::CaseInsensitive));
-}
-
 void BtFontChooserWidget::setSampleText(const QString& htmlText) {
     m_htmlText = htmlText;
     outputHtmlText();
 }
 
-void BtFontChooserWidget::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == nullptr)
-        return;
-
-    m_font.setPointSize(m_sizeListWidget->currentItem()->text().toInt());
-
-    outputHtmlText();
-    emit fontSelected(m_font);
-}
-
 QSize BtFontChooserWidget::sizeHint() const {
     return QSize(170, 100);
-}
-
-void BtFontChooserWidget::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
-    if (current == nullptr)
-        return;
-
-    QString styleString = current->text();
-    setFontStyle(styleString, &m_font);
-
-    // Save style if the user choose it
-    if (m_styleListWidget->hasFocus())
-        m_choosenStyle = styleString;
-
-    loadSizes(m_fontListWidget->currentItem()->text(), styleString);
-
-    outputHtmlText();
-    emit fontSelected(m_font);
 }

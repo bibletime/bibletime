@@ -55,14 +55,6 @@ class BtFontChooserWidget : public QFrame {
         void restoreListWidgetValue(QListWidget* listWidget, const QString& value);
         QString saveListWidgetValue(QListWidget* listWidget);
 
-
-    private slots:
-
-        void fontChanged(QListWidgetItem* current, QListWidgetItem* previous);
-        void setFontStyle(const QString& styleString, QFont* font);
-        void sizeChanged(QListWidgetItem* current, QListWidgetItem* previous);
-        void styleChanged(QListWidgetItem* current, QListWidgetItem* previous);
-
     private: /* Fields: */
 
         QLabel *m_fontNameLabel;
