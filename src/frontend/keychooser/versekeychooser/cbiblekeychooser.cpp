@@ -51,15 +51,14 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 
-    BT_CONNECT(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)),
-               SLOT(beforeRefChange(CSwordVerseKey *)));
-    BT_CONNECT(w_ref, SIGNAL(changed(CSwordVerseKey *)),
-               SLOT(refChanged(CSwordVerseKey *)));
+    BT_CONNECT(w_ref, &BtBibleKeyWidget::beforeChange,
+               this, &CBibleKeyChooser::beforeRefChange);
+    BT_CONNECT(w_ref, &BtBibleKeyWidget::changed,
+               this, &CBibleKeyChooser::refChanged);
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
-    BT_CONNECT(this,      SIGNAL(keyChanged(CSwordKey *)),
-               history(), SLOT(add(CSwordKey *)));
+    BT_CONNECT(this, &CBibleKeyChooser::keyChanged, history(), &BTHistory::add);
 }
 
 CSwordKey* CBibleKeyChooser::key() {
