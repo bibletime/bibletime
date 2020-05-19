@@ -51,12 +51,42 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CReadWindow* readWindow, QWidget*
     layout->addWidget(m_widget);
     m_widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    BT_CONNECT(m_widget->qmlInterface(), SIGNAL(updateReference(const QString&)),
-               this, SLOT(slotUpdateReference(const QString&)));
-    BT_CONNECT(m_widget->qmlInterface(), SIGNAL(dragOccuring(const QString&,const QString&)),
-               this, SLOT(slotDragOccuring(const QString&, const QString&)));
-    BT_CONNECT(m_widget, SIGNAL(referenceDropped(const QString&)),
-               this, SLOT(slotReferenceDropped(const QString&)));
+    BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::updateReference,
+               [this](QString const & reference) {
+                   auto & window = *parentWindow();
+                   auto & key = *window.key();
+                   key.setKey(reference);
+                   window.keyChooser()->updateKey(&key);
+                   window.setWindowTitle(window.windowCaption());
+               });
+    BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::dragOccuring,
+               [this](const QString& moduleName, const QString& keyName) {
+                   auto & drag = *new QDrag(this);
+                   auto & mimedata =
+                           *new BTMimeData(moduleName, keyName, QString());
+                   drag.setMimeData(&mimedata);
+                   //add real Bible text from module/key
+                   if (auto * const module =
+                        CSwordBackend::instance()->findModuleByName(moduleName))
+                   {
+                       drag.setPixmap(
+                               module->moduleIcon().pixmap(
+                                   parentWindow()->mainToolBar()->iconSize()));
+                       std::unique_ptr<CSwordKey> key(
+                                   CSwordKey::createInstance(module));
+                       key->setKey(keyName);
+                       // This works across applications:
+                       mimedata.setText(key->strippedText());
+                   }
+                   drag.exec(Qt::CopyAction, Qt::CopyAction);
+               });
+    BT_CONNECT(m_widget, &BtQmlScrollView::referenceDropped,
+               [this](QString const & reference) { /// \todo Fix me
+                   auto & window = *parentWindow();
+                   auto key(window.key());
+                   key->setKey(reference);
+                   window.lookupKey(reference);
+               });
 }
 
 BtModelViewReadDisplay::~BtModelViewReadDisplay() {
@@ -254,40 +284,6 @@ void BtModelViewReadDisplay::slotDelayedMoveToAnchor() {
 
 // Scroll the view to the correct location specified by anchor
 void BtModelViewReadDisplay::slotGoToAnchor(const QString& /*anchor*/) {
-}
-
-void BtModelViewReadDisplay::slotUpdateReference(const QString& reference) {
-    CDisplayWindow* window = parentWindow();
-    auto key = window->key();
-    key->setKey(reference);
-    window->keyChooser()->updateKey(key);
-    QString caption = window->windowCaption();
-    window->setWindowTitle(window->windowCaption());
-}
-
-void BtModelViewReadDisplay::slotDragOccuring(const QString& moduleName, const QString& keyName) {
-    QDrag* drag = new QDrag(this);
-    BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString());
-    drag->setMimeData(mimedata);
-    //add real Bible text from module/key
-    if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-        CDisplayWindow* window = parentWindow();
-        QToolBar * tb = window->mainToolBar();
-        QSize size = tb->iconSize();
-        QIcon icon = module->moduleIcon();
-        drag->setPixmap(icon.pixmap(size));
-        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-        key->setKey(keyName);
-        mimedata->setText(key->strippedText()); // This works across applications!
-    }
-    drag->exec(Qt::CopyAction, Qt::CopyAction);
-}
-
-void BtModelViewReadDisplay::slotReferenceDropped(const QString& reference) {  // TODO - Fix me
-    CDisplayWindow* window = parentWindow();
-    auto key = window->key();
-    key->setKey(reference);
-    window->lookupKey(reference);
 }
 
 // Save the Lemma (Strongs number) attribute
