@@ -35,8 +35,8 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     m_languageComboBox = new QComboBox(this);
     m_languageLabel->setBuddy(m_languageComboBox);
     m_languageCheckBox = new QCheckBox(this);
-    BT_CONNECT(m_languageCheckBox, SIGNAL(toggled(bool)),
-               this,               SLOT(useOwnFontClicked(bool)) );
+    BT_CONNECT(m_languageCheckBox, &QCheckBox::toggled,
+               this, &BtFontSettingsPage::useOwnFontClicked);
 
 
     QHBoxLayout *hLayout = new QHBoxLayout;
@@ -74,10 +74,24 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     */
     // m_fontChooser->setSampleText("SOMETHING");
 
-    BT_CONNECT(m_fontChooser, SIGNAL(fontSelected(QFont const &)),
-               this, SLOT(newDisplayWindowFontSelected(QFont const &)));
-    BT_CONNECT(m_languageComboBox, SIGNAL(activated(QString const &)),
-               this, SLOT(newDisplayWindowFontAreaSelected(QString const &)));
+    BT_CONNECT(m_fontChooser, &BtFontChooserWidget::fontSelected,
+               [this](QFont const & newFont) {
+                   auto const languageName(m_languageComboBox->currentText());
+                   m_fontMap.insert(
+                               languageName,
+                               BtConfig::FontSettingsPair(
+                                   m_fontMap[languageName].first,
+                                   newFont));
+               });
+    BT_CONNECT(m_languageComboBox,
+               static_cast<void (QComboBox::*)(QString const &)>(
+                   &QComboBox::activated),
+               [this](QString const & usage) {
+                   auto const & p = m_fontMap[usage];
+                   useOwnFontClicked(p.first);
+                   m_languageCheckBox->setChecked(p.first);
+                   m_fontChooser->setFont(p.second);
+               });
 
     const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
     m_fontChooser->setFont(v.second);
@@ -116,19 +130,6 @@ void BtFontSettingsPage::save() const {
             btConfig().setFontForLanguage(*lang, it.value());
         }
     }
-}
-
-void BtFontSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
-    const QString languageName = m_languageComboBox->currentText();
-    m_fontMap.insert(languageName,
-                     BtConfig::FontSettingsPair(m_fontMap[languageName].first, newFont));
-}
-
-void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString &usage) {
-    const BtConfig::FontSettingsPair &p = m_fontMap[usage];
-    useOwnFontClicked(p.first);
-    m_languageCheckBox->setChecked(p.first);
-    m_fontChooser->setFont(p.second);
 }
 
 void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
