@@ -113,26 +113,6 @@ public: /* Methods: */
         return *m_comboBox;
     }
 
-public slots:
-
-    /**
-    * is called to lock the combobox
-    */
-    void lock();
-
-    /**
-    * is called to unlock the combobox
-    */
-    void unlock();
-
-    /**
-    * is called to move the combobox to a certain index
-    * @param index the index to jump to
-    */
-    void changeCombo(int index);
-
-    void slotComboChanged(int index);
-
 signals:
 
     /**
@@ -148,13 +128,6 @@ signals:
     * @param index The new index of the ComboBox
     */
     void focusOut(int index);
-
-protected slots:
-
-    /**
-    * Is called when the return key was presed in the combobox.
-    */
-    void slotReturnPressed();
 
 private: /* Fields: */
 
