@@ -27,6 +27,7 @@
 #include <QProgressDialog>
 #include <QApplication>
 #include "../../backend/btinstallbackend.h"
+#include "../../backend/btinstallmgr.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
@@ -96,126 +97,116 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
     getListButton->setToolTip(tr("Download a list of sources from CrossWire server and add sources"));
     buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
-    BT_CONNECT(getListButton, SIGNAL(clicked()), SLOT(slotGetListClicked()));
+    BT_CONNECT(getListButton, &QPushButton::clicked,
+               [this]{
+                   if (message::showQuestion(
+                           this,
+                           tr("Get source list from remote server?"),
+                           tr("List of sources will be downloaded from a "
+                              "remote server. Sources will be added to the "
+                              "current list. New source will replace an "
+                              "old one if it has the same label. You can "
+                              "later remove the sources you don't want to "
+                              "keep.\n\nDo you want to continue?"),
+                           QMessageBox::Yes | QMessageBox::No,
+                           QMessageBox::Yes) == QMessageBox::No)
+                       return;
+
+                   BtInstallMgr iMgr;
+
+                   QProgressDialog progressDialog(tr("Connecting..."),
+                                                  tr("Cancel"),
+                                                  0,
+                                                  100,
+                                                  this);
+                   progressDialog.setValue(0);
+                   progressDialog.setWindowTitle(tr("Downloading List"));
+                   progressDialog.setMinimumDuration(0);
+                   BT_CONNECT(&progressDialog, &QProgressDialog::canceled,
+                              [&iMgr]{
+                                  iMgr.terminate();
+                                  qApp->processEvents();
+                              });
+                   /** \todo connect this directly to the dialog setValue(int)
+                             if possible: */
+                   BT_CONNECT(&iMgr, &BtInstallMgr::percentCompleted,
+                              [&progressDialog](const int, const int current) {
+                                  progressDialog.setLabelText(
+                                              tr("Refreshing..."));
+                                  progressDialog.setValue(current);
+                                  qApp->processEvents();
+                              });
+
+                   progressDialog.show();
+                   qApp->processEvents();
+
+                   if (!iMgr.refreshRemoteSourceConfiguration()) {
+                       // make sure the dialog closes with autoClose:
+                       progressDialog.setValue(100);
+                       m_remoteListAdded = true;
+                       accept();
+                   } else {
+                       qWarning("InstallMgr: getting remote list returned an "
+                                "error.");
+                   }
+               });
     mainLayout->addWidget(buttonBox);
-    BT_CONNECT(buttonBox, SIGNAL(accepted()), SLOT(slotOk()));
-    BT_CONNECT(buttonBox, SIGNAL(rejected()), SLOT(reject()));
-    BT_CONNECT(m_protocolCombo, SIGNAL(activated(int)),
-               this,            SLOT(slotProtocolChanged()));
-}
+    BT_CONNECT(buttonBox, &QDialogButtonBox::accepted,
+               [this]{
+                   struct Error { QString msg; };
+                   try {
+                       if (m_captionEdit->text().trimmed().isEmpty())
+                           throw Error{tr("Please provide a caption.")};
 
-void CSwordSetupInstallSourcesDialog::slotOk() {
-    //run a few tests to validate the input first
-    if ( m_captionEdit->text().trimmed().isEmpty() ) { //no caption
-        message::showInformation( this, tr( "Error" ), tr("Please provide a caption."));
-        return;
-    }
+                       auto is(BtInstallBackend::source(m_captionEdit->text()));
+                       if (is.caption.c_str() == m_captionEdit->text())
+                           throw Error{tr("A source with this caption already "
+                                          "exists. Please provide a different "
+                                          "caption.")};
 
-    //BTInstallMgr iMgr;
-    //sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
-    sword::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
-    if (is.caption.c_str() == m_captionEdit->text()) { // source already exists
-        message::showInformation( this, tr( "Error" ),
-                               tr("A source with this caption already exists. Please provide a different caption."));
-        return;
-    }
+                       if (isRemote(m_protocolCombo->currentText())
+                           && m_serverEdit->text().trimmed().isEmpty())
+                           throw Error{tr("Please provide a server name.")};
 
-    if ( this->isRemote(m_protocolCombo->currentText()) &&
-            m_serverEdit->text().trimmed().isEmpty() ) { //no server name
-        message::showInformation( this, tr( "Error" ), tr("Please provide a server name."));
-        return;
-    }
+                       if (m_protocolCombo->currentText() == PROTO_FILE) {
+                           if (m_pathEdit->text().isEmpty())
+                               throw Error{tr("Please provide a path.")};
 
-    if ( m_protocolCombo->currentText() == PROTO_FILE) {
-        const QFileInfo fi( m_pathEdit->text() );
-        if (!fi.exists() || !fi.isReadable()) { //no valid and readable path
-            message::showInformation( this, tr( "Error" ), tr("Please provide a valid, readable path."));
-            return;
-        }
-        else if ( m_pathEdit->text().isEmpty() ) {
-            message::showInformation( this, tr( "Error" ), tr("Please provide a path."));
+                           QFileInfo const fi(m_pathEdit->text());
+                           if (!fi.exists() || !fi.isReadable())
+                               throw Error{tr("Please provide a valid, "
+                                              "readable path.")};
+                       }
+                   } catch (Error const & e) {
+                       message::showCritical(this, tr("Error"), e.msg);
+                       return;
+                   }
+                   accept();
+               });
+    BT_CONNECT(buttonBox, &QDialogButtonBox::rejected,
+               this, &CSwordSetupInstallSourcesDialog::reject);
+    BT_CONNECT(m_protocolCombo,
+               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+               [this]{
+                   if (this->isRemote(m_protocolCombo->currentText())) { //REMOTE
+                       m_serverLabel->setEnabled(true);
+                       m_serverEdit->setEnabled(true);
+                   }
+                   else { //LOCAL, no server needed
+                       m_serverLabel->setEnabled(false);
+                       m_serverEdit->setEnabled(false);
 
-        }
-    }
+                       QString dirname = QFileDialog::getExistingDirectory(this);
+                       if (dirname.isEmpty()) {
+                           return; // user cancelled
+                       }
+                       QDir dir(dirname);
+                       if (dir.exists()) {
+                           m_pathEdit->setText( dir.canonicalPath() );
+                       }
+                   }
 
-    accept(); //only if nothing else failed
-}
-
-void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
-    if (this->isRemote(m_protocolCombo->currentText())) { //REMOTE
-        m_serverLabel->setEnabled(true);
-        m_serverEdit->setEnabled(true);
-    }
-    else { //LOCAL, no server needed
-        m_serverLabel->setEnabled(false);
-        m_serverEdit->setEnabled(false);
-
-        QString dirname = QFileDialog::getExistingDirectory(this);
-        if (dirname.isEmpty()) {
-            return; // user cancelled
-        }
-        QDir dir(dirname);
-        if (dir.exists()) {
-            m_pathEdit->setText( dir.canonicalPath() );
-        }
-    }
-
-}
-
-void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
-    QString message(tr("List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.\n\nDo you want to continue?"));
-    QMessageBox::StandardButton answer = message::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-    if (answer == QMessageBox::No) {
-        return;
-    }
-    BtInstallMgr iMgr;
-
-    m_progressDialog = new QProgressDialog("", tr("Cancel"), 0 , 100, this);
-    m_progressDialog->setWindowTitle(tr("Downloading List"));
-    m_progressDialog->setMinimumDuration(0);
-    BT_CONNECT(m_progressDialog, SIGNAL(canceled()),
-               SLOT(slotRefreshCanceled()));
-    m_currentInstallMgr = &iMgr; //for the progress dialog
-    // connect this directly to the dialog setValue(int) if possible
-    BT_CONNECT(&iMgr, SIGNAL(percentCompleted(const int, const int)),
-               SLOT(slotRefreshProgress(const int, const int)));
-
-    m_progressDialog->show();
-    qApp->processEvents();
-    this->slotRefreshProgress(0, 0);
-    m_progressDialog->setLabelText(tr("Connecting..."));
-    m_progressDialog->setValue(0);
-    qApp->processEvents();
-    int ret = iMgr.refreshRemoteSourceConfiguration();
-
-    if ( !ret ) { //make sure the sources were updated sucessfully
-        m_progressDialog->setValue(100); //make sure the dialog closes
-        m_remoteListAdded = true;
-        accept();
-    }
-    else {
-        qWarning("InstallMgr: getting remote list returned an error.");
-    }
-    delete m_progressDialog;
-    m_progressDialog = nullptr;
-}
-
-void CSwordSetupInstallSourcesDialog::slotRefreshProgress(const int, const int current) {
-    if (m_progressDialog) {
-        if (m_progressDialog->labelText() != tr("Refreshing...")) {
-            m_progressDialog->setLabelText(tr("Refreshing..."));
-        }
-        m_progressDialog->setValue(current);
-    }
-    qApp->processEvents();
-}
-
-void CSwordSetupInstallSourcesDialog::slotRefreshCanceled() {
-    BT_ASSERT(m_currentInstallMgr);
-    if (m_currentInstallMgr) {
-        m_currentInstallMgr->terminate();
-    }
-    qApp->processEvents();
+               });
 }
 
 sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
