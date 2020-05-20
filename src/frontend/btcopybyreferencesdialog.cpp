@@ -79,14 +79,16 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
 
     loadSelectionKeys();
 
-    BT_CONNECT(m_keyChooser1, SIGNAL(keyChanged(CSwordKey *)),
-               this, SLOT(slotKeyChanged(CSwordKey *)));
+    BT_CONNECT(m_keyChooser1, &CKeyChooser::keyChanged,
+               this, &BtCopyByReferencesDialog::slotKeyChanged);
 
-    BT_CONNECT(m_keyChooser2, SIGNAL(keyChanged(CSwordKey *)),
-               this, SLOT(slotKeyChanged(CSwordKey *)));
+    BT_CONNECT(m_keyChooser2, &CKeyChooser::keyChanged,
+               this, &BtCopyByReferencesDialog::slotKeyChanged);
 
-    BT_CONNECT(m_buttons, SIGNAL(accepted()), this, SLOT(accept()));
-    BT_CONNECT(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    BT_CONNECT(m_buttons, &QDialogButtonBox::accepted,
+               this, &BtCopyByReferencesDialog::accept);
+    BT_CONNECT(m_buttons, &QDialogButtonBox::rejected,
+               this, &BtCopyByReferencesDialog::reject);
 
     slotKeyChanged(nullptr);
 }
