@@ -48,12 +48,6 @@ public slots:
 
     void setInfo(CSwordModuleInfo * module);
 
-private slots:
-
-    void lookupInfo(const QUrl &);
-    void selectAll();
-    void slotContextMenu(const QPoint& point);
-
 private:
     void setBrowserFont(const CSwordModuleInfo* const module);
 
