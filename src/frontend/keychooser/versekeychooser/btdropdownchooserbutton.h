@@ -24,7 +24,9 @@ class BtBibleKeyWidget;
 class BtDropdownChooserButton : public QToolButton {
         Q_OBJECT
     public:
-        BtDropdownChooserButton(BtBibleKeyWidget* ref);
+        template <typename TriggeredFunctor>
+        BtDropdownChooserButton(BtBibleKeyWidget * ref,
+                                TriggeredFunctor && triggeredFunctor);
 
         /** The item list is constructed here just before the menu is shown.*/
         void mousePressEvent(QMouseEvent* event) override;
@@ -34,9 +36,6 @@ class BtDropdownChooserButton : public QToolButton {
         BtBibleKeyWidget* ref() {
             return m_ref;
         }
-    public slots:
-        /** When a menu item is selected the key will be changed.*/
-        virtual void slotMenuTriggered(QAction* action) = 0;
     protected:
         BtBibleKeyWidget* m_ref;
         void wheelEvent(QWheelEvent* event) override;
@@ -50,8 +49,6 @@ class BtBookDropdownChooserButton : public BtDropdownChooserButton {
     public:
         BtBookDropdownChooserButton(BtBibleKeyWidget* ref);
         void newList() override;
-    public slots:
-        void slotMenuTriggered(QAction* action) override;
 };
 
 /** See BtDropdownChooserButton.*/
@@ -60,8 +57,6 @@ class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
     public:
         BtChapterDropdownChooserButton(BtBibleKeyWidget* ref);
         void newList() override;
-    public slots:
-        void slotMenuTriggered(QAction* action) override;
 };
 
 /** See BtDropdownChooserButton.*/
@@ -70,7 +65,5 @@ class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
     public:
         BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
         void newList() override;
-    public slots:
-        void slotMenuTriggered(QAction* action) override;
 };
 #endif

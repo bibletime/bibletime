@@ -20,9 +20,13 @@
 
 const unsigned int ARROW_HEIGHT = 15;
 
-BtDropdownChooserButton::BtDropdownChooserButton(BtBibleKeyWidget* ref)
-        : QToolButton(),
-        m_ref(ref) {
+template <typename TriggeredFunctor>
+BtDropdownChooserButton::BtDropdownChooserButton(
+        BtBibleKeyWidget * const ref,
+        TriggeredFunctor && triggeredFunctor)
+    : QToolButton()
+    , m_ref(ref)
+{
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
     setAutoRaise(false);
@@ -35,8 +39,8 @@ BtDropdownChooserButton::BtDropdownChooserButton(BtBibleKeyWidget* ref)
     BtVerseKeyMenu* m = new BtVerseKeyMenu(this);
 //    KAcceleratorManager::setNoAccel(m);
     setMenu(m);
-    BT_CONNECT(m,    SIGNAL(triggered(QAction *)),
-               this, SLOT(slotMenuTriggered(QAction *)));
+    BT_CONNECT(m, &BtVerseKeyMenu::triggered,
+               std::forward<TriggeredFunctor>(triggeredFunctor));
 }
 
 
@@ -61,10 +65,16 @@ void BtDropdownChooserButton::wheelEvent(QWheelEvent * e) {
 
 //******************Book dropdown button*************************************/
 
-BtBookDropdownChooserButton::BtBookDropdownChooserButton(BtBibleKeyWidget* ref)
-        : BtDropdownChooserButton(ref) {
+BtBookDropdownChooserButton::BtBookDropdownChooserButton(
+        BtBibleKeyWidget * const ref)
+    : BtDropdownChooserButton(
+        ref,
+        [this](QAction * const action)
+        { m_ref->slotChangeBook(action->property("bookname").toString()); })
+{
     setToolTip(tr("Select book"));
-    BT_CONNECT(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepBook(int)));
+    BT_CONNECT(this, &BtDropdownChooserButton::stepItem,
+               m_ref, &BtBibleKeyWidget::slotStepBook);
 }
 
 void BtBookDropdownChooserButton::newList() {
@@ -74,17 +84,19 @@ void BtBookDropdownChooserButton::newList() {
         m->addAction(bookname)->setProperty("bookname", bookname);
 }
 
-void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    m_ref->slotChangeBook(action->property("bookname").toString());
-}
-
 
 //****************** Chapter dropdown button *************************************/
 
-BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(BtBibleKeyWidget* ref)
-        : BtDropdownChooserButton(ref) {
+BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(
+        BtBibleKeyWidget * const ref)
+    : BtDropdownChooserButton(
+        ref,
+        [this](QAction * const action)
+        { m_ref->slotChangeChapter(action->property("chapter").toInt()); })
+{
     setToolTip(tr("Select chapter"));
-    BT_CONNECT(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepChapter(int)));
+    BT_CONNECT(this, &BtDropdownChooserButton::stepItem,
+               m_ref, &BtBibleKeyWidget::slotStepChapter);
 }
 
 void BtChapterDropdownChooserButton::newList() {
@@ -94,17 +106,19 @@ void BtChapterDropdownChooserButton::newList() {
         m->addAction(QString::number(i))->setProperty("chapter", i);
 }
 
-void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    m_ref->slotChangeChapter(action->property("chapter").toInt());
-}
-
 
 //****************** Verse dropdown button *************************************/
 
-BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(BtBibleKeyWidget* ref)
-        : BtDropdownChooserButton(ref) {
+BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(
+        BtBibleKeyWidget * const ref)
+    : BtDropdownChooserButton(
+        ref,
+        [this](QAction * const action)
+        { m_ref->slotChangeVerse(action->property("verse").toInt()); })
+{
     setToolTip(tr("Select verse"));
-    BT_CONNECT(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepVerse(int)));
+    BT_CONNECT(this, &BtDropdownChooserButton::stepItem,
+               m_ref, &BtBibleKeyWidget::slotStepVerse);
 }
 
 void BtVerseDropdownChooserButton::newList() {
@@ -112,8 +126,4 @@ void BtVerseDropdownChooserButton::newList() {
     int count = ref()->m_module->verseCount(ref()->m_key->book(), ref()->m_key->getChapter());
     for (int i = 1; i <= count; i++)
         m->addAction(QString::number(i))->setProperty("verse", i);
-}
-
-void BtVerseDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    m_ref->slotChangeVerse(action->property("verse").toInt());
 }
