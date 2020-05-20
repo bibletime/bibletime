@@ -57,14 +57,6 @@ protected: /* Methods: */
 
     void wheelEvent(QWheelEvent * e) override;
 
-protected slots:
-
-    void slotLock();
-    void slotUnlock();
-    void slotUpClick();
-    void slotDownClick();
-    void slotScroller(int);
-
 private: /* Fields: */
 
     QVBoxLayout * m_layout;

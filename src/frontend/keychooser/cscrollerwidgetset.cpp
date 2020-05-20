@@ -55,12 +55,14 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget * parent)
     m_layout->addWidget(m_buttonDown, 0);
     setMinimumWidth(WIDTH); // Kludge to add some spacing but seems to work.
 
-    BT_CONNECT(m_scrollButton, SIGNAL(lock()), SLOT(slotLock()));
-    BT_CONNECT(m_scrollButton, SIGNAL(unlock()), SLOT(slotUnlock()));
-    BT_CONNECT(m_scrollButton, SIGNAL(change_requested(int)),
-               SLOT(slotScroller(int)));
-    BT_CONNECT(m_buttonUp, SIGNAL(clicked()), SLOT(slotUpClick()));
-    BT_CONNECT(m_buttonDown, SIGNAL(clicked()), SLOT(slotDownClick()));
+    BT_CONNECT(m_scrollButton, &CScrollButton::lock,
+               this, &CScrollerWidgetSet::scroller_pressed);
+    BT_CONNECT(m_scrollButton, &CScrollButton::unlock,
+               this, &CScrollerWidgetSet::scroller_released);
+    BT_CONNECT(m_scrollButton, &CScrollButton::change_requested,
+               this, &CScrollerWidgetSet::change);
+    BT_CONNECT(m_buttonUp, &QToolButton::clicked, [this]{ emit change(-1); });
+    BT_CONNECT(m_buttonDown, &QToolButton::clicked, [this]{ emit change(1); });
 }
 
 /** Sets the tooltips for the given entries using the parameters as text. */
@@ -82,24 +84,4 @@ void CScrollerWidgetSet::wheelEvent(QWheelEvent * e) {
         emit change((delta > 0) ? -1 : 1);
         e->accept();
     }
-}
-
-void CScrollerWidgetSet::slotLock() {
-    emit scroller_pressed();
-}
-
-void CScrollerWidgetSet::slotUnlock() {
-    emit scroller_released();
-}
-
-void CScrollerWidgetSet::slotScroller(int n) {
-    emit change(n);
-}
-
-void CScrollerWidgetSet::slotUpClick() {
-    slotScroller(-1);
-}
-
-void CScrollerWidgetSet::slotDownClick() {
-    slotScroller(1);
 }
