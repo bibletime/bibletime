@@ -63,8 +63,8 @@ BtQmlScrollView::BtQmlScrollView(QWidget * parent, CReadDisplay* readDisplay)
     QQuickItem* root = m_quickWidget->rootObject();
     m_qmlInterface = root->findChild<BtQmlInterface*>();
 
-    BT_CONNECT(m_quickWidget, SIGNAL(referenceDropped(const QString&)),
-               this, SIGNAL(referenceDropped(const QString&)));
+    BT_CONNECT(m_quickWidget, &BtQuickWidget::referenceDropped,
+               this, &BtQmlScrollView::referenceDropped);
 }
 
 BtQmlScrollView::~BtQmlScrollView() {
@@ -84,9 +84,12 @@ void BtQmlScrollView::contextMenuEvent(QContextMenuEvent* event) {
 void BtQmlScrollView::initScrollBar() {
     m_scrollBar->setRange(-100,100);
     m_scrollBar->setValue(0);
-    BT_CONNECT(m_scrollBar, SIGNAL(sliderMoved(int)), this, SLOT(slotSliderMoved(int)));
-    BT_CONNECT(m_scrollBar, SIGNAL(sliderPressed()), this, SLOT(slotSliderPressed()));
-    BT_CONNECT(m_scrollBar, SIGNAL(sliderReleased()), this, SLOT(slotSliderReleased()));
+    BT_CONNECT(m_scrollBar, &QScrollBar::sliderMoved,
+               this, &BtQmlScrollView::slotSliderMoved);
+    BT_CONNECT(m_scrollBar, &QScrollBar::sliderPressed,
+               this, &BtQmlScrollView::slotSliderPressed);
+    BT_CONNECT(m_scrollBar, &QScrollBar::sliderReleased,
+               this, &BtQmlScrollView::slotSliderReleased);
 }
 
 void BtQmlScrollView::slotSliderMoved(int value) {
