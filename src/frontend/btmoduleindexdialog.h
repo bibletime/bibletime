@@ -53,10 +53,6 @@ class BtModuleIndexDialog: public QProgressDialog {
         */
         bool indexAllModulesPrivate(const QList<CSwordModuleInfo*> &modules);
 
-    private slots:
-        void slotModuleProgress(int percentage);
-        void slotFinished();
-
     private: /* Fields: */
         int m_currentModuleIndex;
 };

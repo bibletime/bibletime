@@ -12,11 +12,14 @@
 
 #include "btmoduleindexdialog.h"
 
+#include <array>
 #include <QApplication>
 #include <QMutexLocker>
+#include <utility>
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
+#include "../util/btdebugonly.h"
 #include "messagedialog.h"
 
 
@@ -56,10 +59,21 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
         */
         indexedModules.append(m);
 
-        BT_CONNECT(this, SIGNAL(canceled()), m, SLOT(cancelIndexing()));
-        BT_CONNECT(m, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
-        BT_CONNECT(m,    SIGNAL(indexingProgress(int)),
-                   this, SLOT(slotModuleProgress(int)));
+        std::array<QMetaObject::Connection, 3u> connections{
+                BT_CONNECT(this, &BtModuleIndexDialog::canceled,
+                           m /* needed */,  [m]{ m->cancelIndexing(); }),
+                BT_CONNECT(m, &CSwordModuleInfo::indexingFinished,
+                           this, // needed
+                           [this]{
+                               setValue(m_currentModuleIndex * 100 + 100);
+                               qApp->processEvents();
+                           }),
+                BT_CONNECT(m, &CSwordModuleInfo::indexingProgress,
+                           this, // needed
+                           [this](int percentage) {
+                               setValue(m_currentModuleIndex * 100 + percentage);
+                               qApp->processEvents();
+                           })};
 
         // Single module indexing blocks until finished:
         setLabelText(tr("Creating index for work: %1").arg(m->name()));
@@ -85,12 +99,10 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
 
         m_currentModuleIndex++;
 
-        disconnect(this, SIGNAL(canceled()),
-                   m,    SLOT(cancelIndexing()));
-        disconnect(m,    SIGNAL(indexingFinished()),
-                   this, SLOT(slotFinished()));
-        disconnect(m,    SIGNAL(indexingProgress(int)),
-                   this, SLOT(slotModuleProgress(int)));
+        for (auto & connection : connections) {
+            BT_DEBUG_ONLY(auto const r =) disconnect(std::move(connection));
+            BT_ASSERT(r);
+        }
 
         if (wasCanceled()) success = false;
 
@@ -104,14 +116,4 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
                 m->deleteIndex();
     }
     return success;
-}
-
-void BtModuleIndexDialog::slotModuleProgress(int percentage) {
-    setValue(m_currentModuleIndex * 100 + percentage);
-    qApp->processEvents();
-}
-
-void BtModuleIndexDialog::slotFinished() {
-    setValue(m_currentModuleIndex * 100 + 100);
-    qApp->processEvents();
 }
