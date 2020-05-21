@@ -55,13 +55,21 @@ BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
 
     retranslateUi();
 
-    BT_CONNECT(m_nameFilterEdit,  SIGNAL(textEdited(QString)),
-               m_postFilterModel, SLOT(setNameFilterFixedString(QString)));
-    BT_CONNECT(m_treeView, SIGNAL(contextMenuActivated(QPoint)),
-               this,       SLOT(slotShowContextMenu(QPoint)));
-    BT_CONNECT(m_treeView,
-               SIGNAL(moduleContextMenuActivated(CSwordModuleInfo *, QPoint)),
-               this, SLOT(slotShowItemContextMenu(CSwordModuleInfo *, QPoint)));
+    BT_CONNECT(m_nameFilterEdit,  &QLineEdit::textEdited,
+               m_postFilterModel,
+               &BtBookshelfFilterModel::setNameFilterFixedString);
+    BT_CONNECT(m_treeView, &BtBookshelfView::contextMenuActivated,
+               [this](QPoint const & pos){ m_contextMenu->popup(pos); });
+    BT_CONNECT(m_treeView, &BtBookshelfView::moduleContextMenuActivated,
+               [this](CSwordModuleInfo * const module, QPoint const & pos) {
+                   if (!m_itemContextMenu)
+                       m_itemContextMenu = m_contextMenu;
+                   m_itemContextMenu->setProperty(
+                               "BtModule",
+                               QVariant::fromValue(
+                                   static_cast<void *>(module)));
+                   m_itemContextMenu->popup(pos);
+               });
 }
 
 void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
@@ -98,19 +106,19 @@ void BtBookshelfWidget::initActions() {
     m_showHideAction = new QAction(this);
     m_showHideAction->setIcon(CResMgr::mainIndex::showHide::icon());
     m_showHideAction->setCheckable(true);
-    BT_CONNECT(m_showHideAction,  SIGNAL(toggled(bool)),
-               m_postFilterModel, SLOT(setShowHidden(bool)));
+    BT_CONNECT(m_showHideAction,  &QAction::toggled,
+               m_postFilterModel, &BtBookshelfFilterModel::setShowHidden);
 }
 
 void BtBookshelfWidget::initMenus() {
     // Grouping menu:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
     BT_CONNECT(m_groupingMenu,
-               SIGNAL(signalGroupingOrderChanged(
-                          BtBookshelfTreeModel::Grouping)),
-               this,
-               SLOT(slotGroupingActionTriggered(
-                        BtBookshelfTreeModel::Grouping)));
+               &BtBookshelfGroupingMenu::signalGroupingOrderChanged,
+               [this](BtBookshelfTreeModel::Grouping const & grouping) {
+                   m_treeModel->setGroupingOrder(grouping);
+                   m_treeView->setRootIsDecorated(!grouping.isEmpty());
+               });
 
     // Context menu
     m_contextMenu = new QMenu(this);
@@ -177,28 +185,6 @@ bool BtBookshelfWidget::eventFilter(QObject *object, QEvent *event) {
         }
     }
     return false;
-}
-
-void BtBookshelfWidget::slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping) {
-    m_treeModel->setGroupingOrder(grouping);
-    m_treeView->setRootIsDecorated(!grouping.isEmpty());
-}
-
-void BtBookshelfWidget::slotShowContextMenu(const QPoint &pos) {
-    m_contextMenu->popup(pos);
-}
-
-void BtBookshelfWidget::slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos)
-{
-    if (m_itemContextMenu != nullptr) {
-        m_itemContextMenu->setProperty("BtModule",
-                                       QVariant::fromValue(
-                                           static_cast<void *>(module)));
-        m_itemContextMenu->popup(pos);
-    } else {
-        m_itemContextMenu = m_contextMenu;
-        slotShowItemContextMenu(module, pos);
-    }
 }
 
 void BtBookshelfWidget::findExpanded(

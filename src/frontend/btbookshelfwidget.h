@@ -81,11 +81,6 @@ class BtBookshelfWidget: public QWidget {
         void restoreExpanded(const QModelIndex& index, const QStringList& nodeList);
         void retranslateUi();
 
-    protected slots:
-        void slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping);
-        void slotShowContextMenu(const QPoint &pos);
-        void slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos);
-
     private:
         // Models:
         QAbstractItemModel     *m_sourceModel;
