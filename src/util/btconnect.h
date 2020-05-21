@@ -19,10 +19,11 @@
 
 #ifndef NDEBUG
 #define BT_CONNECT(...) \
-    do { \
-        bool const ok = connect(__VA_ARGS__); \
-        BT_ASSERT(ok); \
-    } while (false)
+    [&,this]{ \
+        auto r(connect(__VA_ARGS__)); \
+        BT_ASSERT(r); \
+        return r; \
+    }()
 #else
 #define BT_CONNECT(...) connect(__VA_ARGS__)
 #endif
