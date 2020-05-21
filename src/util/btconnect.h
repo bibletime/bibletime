@@ -20,7 +20,7 @@
 #ifndef NDEBUG
 #define BT_CONNECT(...) \
     [&,this]{ \
-        auto r(connect(__VA_ARGS__)); \
+        auto r(this->connect(__VA_ARGS__)); \
         BT_ASSERT(r); \
         return r; \
     }()
