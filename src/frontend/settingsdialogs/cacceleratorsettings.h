@@ -45,13 +45,6 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
 
         void retranslateUi();
 
-    protected slots:
-
-        void slotKeyChooserTypeChanged(const QString& title);
-
-        // complete the keyChangeRequest
-        void completeKeyChangeRequest(BtShortcutsEditor* shortcutsEditor, const QString& keys);
-
     private:
         struct WindowType {
             QPointer<BtShortcutsEditor> keyChooser;
@@ -63,11 +56,6 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
                 actionCollection = nullptr;
             }
         };
-
-        void clearConflictsWithKeys(const QString& keys, const QList<BtShortcutsEditor*> list);
-        QString findConflictsWithKeys(const QString& keys, const QList<BtShortcutsEditor*> list);
-        QList<BtShortcutsEditor*> getShortcutsEditorListForGroup(BtShortcutsEditor* currentEditor);
-        QString getTitleForEditor(BtShortcutsEditor* editor);
 
         WindowType m_application;
         WindowType m_general;
