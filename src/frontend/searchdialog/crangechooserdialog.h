@@ -90,33 +90,6 @@ private: /* Methods: */
 private slots:
 
     /**
-      Adds a new range to the list.
-    */
-    void addNewRange();
-
-    /**
-      Handles changes in m_rangeList.
-    */
-    void selectedRangeChanged(QListWidgetItem * current,
-                              QListWidgetItem * previous);
-
-    /**
-      Parses the entered text and prints out the result in the list box below
-      the edit area.
-    */
-    void updateResultList();
-
-    /**
-      Deletes the selected range.
-    */
-    void deleteCurrentRange();
-
-    /**
-      Restores the default ranges.
-    */
-    void restoreDefaults();
-
-    /**
       Called when m_nameEdit changes.
     */
     void nameEditTextChanged(const QString &newText);
