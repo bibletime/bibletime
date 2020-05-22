@@ -81,52 +81,9 @@ protected: /* Methods: */
     void mouseMoveEvent(QMouseEvent * event) override;
     void leaveEvent(QEvent * event) override;
 
-protected slots:
-
-    /** Prevents annoying folder collapsing while dropping. */
-    void expandAutoCollapsedItem(QModelIndex const & index) { expand(index); }
-
-    /** Is called when an item was clicked or activated. */
-    void slotExecuted(QModelIndex const & index);
-
-    /** Shows the context menu at the given position. */
-    void contextMenu(QPoint const & p);
-
-    /** Adds a new subfolder to the current item. */
-    void createNewFolder();
-
-    /** Opens a dialog to change the current folder. */
-    void changeFolder();
-
-    /** Exports the bookmarks from the selected folder. */
-    void exportBookmarks();
-
-    /** Changes the current bookmark. */
-    void editBookmark();
-
-    /** Sorts the current folder bookmarks. */
-    void sortFolderBookmarks();
-
-    /** Sorts all bookmarks. */
-    void sortAllBookmarks();
-
-    /** Import bookmarks from a file and add them to the selected folder. */
-    void importBookmarks();
-
-    /** Deletes the selected entries after user confirmation. */
-    void confirmDeleteEntries();
-
-    /** Deletes the selected entries. */
-    void deleteEntries();
-
-    /** Prints the selected bookmarks. */
-    void printBookmarks();
-
-    /** Slot for the mag update timer. */
-    void magTimeout();
-
 private: /* Methods: */
 
+    void deleteEntries();
     bool enableAction(QModelIndex const & index,
                       MenuAction const type) const;
 
