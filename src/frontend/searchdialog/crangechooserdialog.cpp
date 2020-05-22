@@ -181,7 +181,7 @@ void CRangeChooserDialog::addNewRange() {
 void CRangeChooserDialog::selectedRangeChanged(QListWidgetItem * current,
                                                QListWidgetItem * previous)
 {
-    Q_UNUSED(current);
+    Q_UNUSED(current)
     if (previous) {
         BT_ASSERT(dynamic_cast<RangeItem *>(previous));
         saveCurrentToRange(static_cast<RangeItem*>(previous));
