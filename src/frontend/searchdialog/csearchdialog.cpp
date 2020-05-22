@@ -78,12 +78,6 @@ void CSearchDialog::closeDialog() {
         m_staticDialog->closeButtonClicked();
 }
 
-void CSearchDialog::manageIndexesButtonClicked() {
-
-    BtIndexDialog dlg(this);
-    dlg.exec();
-}
-
 CSearchDialog* CSearchDialog::getSearchDialog() {
     BT_ASSERT(m_staticDialog);
     return m_staticDialog;
@@ -272,19 +266,19 @@ void CSearchDialog::showModulesSelector() {
 /** Initializes the signal slot connections */
 void CSearchDialog::initConnections() {
     // Search button is clicked
-    BT_CONNECT(m_searchOptionsArea->searchButton(), SIGNAL(clicked()),
-               this,                                SLOT(startSearch()));
+    BT_CONNECT(m_searchOptionsArea->searchButton(), &QPushButton::clicked,
+               [this] { startSearch(); });
     // Return/Enter is pressed in the search text field
-    BT_CONNECT(m_searchOptionsArea, SIGNAL(sigStartSearch()),
-               this,                SLOT(startSearch()) );
-    BT_CONNECT(m_closeButton, SIGNAL(clicked()),
-               this,          SLOT(closeButtonClicked()));
+    BT_CONNECT(m_searchOptionsArea, &BtSearchOptionsArea::sigStartSearch,
+               [this] { startSearch(); });
+    BT_CONNECT(m_closeButton, &QPushButton::clicked,
+               this, &CSearchDialog::closeButtonClicked);
 
-    BT_CONNECT(m_analyseButton, SIGNAL(clicked()),
-               m_searchResultArea, SLOT(showAnalysis()));
+    BT_CONNECT(m_analyseButton, &QPushButton::clicked,
+               m_searchResultArea, &BtSearchResultArea::showAnalysis);
 
-    BT_CONNECT(m_manageIndexes, SIGNAL(clicked()),
-               this, SLOT(manageIndexesButtonClicked()));
+    BT_CONNECT(m_manageIndexes, &QPushButton::clicked,
+               [this] { BtIndexDialog(this).exec(); });
 }
 
 /** Resets the parts to the default. */

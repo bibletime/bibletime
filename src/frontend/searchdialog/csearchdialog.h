@@ -122,8 +122,6 @@ class CSearchDialog : public QDialog {
         */
         void initConnections();
 
-        void manageIndexesButtonClicked();
-
         void closeButtonClicked();
 
     private:
