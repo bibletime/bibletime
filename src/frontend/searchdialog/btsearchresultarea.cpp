@@ -43,12 +43,8 @@ const QString ResultSplitterSizesKey = "GUI/SearchDialog/SearchResultsArea/resul
 namespace Search {
 
 BtSearchResultArea::BtSearchResultArea(QWidget *parent)
-        : QWidget(parent) {
-    initView();
-    initConnections();
-}
-
-void BtSearchResultArea::initView() {
+    : QWidget(parent)
+{
     QVBoxLayout *mainLayout;
     QWidget *resultListsWidget;
     QVBoxLayout *resultListsWidgetLayout;
@@ -70,8 +66,19 @@ void BtSearchResultArea::initView() {
     m_resultListSplitter = new QSplitter(resultListsWidget);
     m_resultListSplitter->setOrientation(Qt::Vertical);
     m_moduleListBox = new CModuleResultView(m_resultListSplitter);
+    BT_CONNECT(m_moduleListBox, &CModuleResultView::moduleSelected,
+               m_resultListBox, &CSearchResultView::setupTree);
+    BT_CONNECT(m_moduleListBox,  &CModuleResultView::moduleChanged,
+               m_previewDisplay, &QTextBrowser::clear);
+    BT_CONNECT(m_moduleListBox, &CModuleResultView::strongsSelected,
+               m_resultListBox, &CSearchResultView::setupStrongsTree);
     m_resultListSplitter->addWidget(m_moduleListBox);
+
     m_resultListBox = new CSearchResultView(m_resultListSplitter);
+    BT_CONNECT(m_resultListBox, &CSearchResultView::keySelected,
+               this,            &BtSearchResultArea::updatePreview);
+    BT_CONNECT(m_resultListBox, &CSearchResultView::keyDeselected,
+               this,            &BtSearchResultArea::clearPreview);
     m_resultListSplitter->addWidget(m_resultListBox);
     resultListsWidgetLayout->addWidget(m_resultListSplitter);
 
@@ -85,36 +92,30 @@ void BtSearchResultArea::initView() {
 
     mainLayout->addWidget(m_mainSplitter);
 
+    m_contextMenu = new QMenu(this);
+        m_selectAllAction = new QAction(tr("Select all"), this);
+        m_selectAllAction->setShortcut(QKeySequence::SelectAll);
+        BT_CONNECT(m_selectAllAction, &QAction::triggered,
+                   m_previewDisplay,  &QTextBrowser::selectAll);
+        m_contextMenu->addAction(m_selectAllAction);
+
+        m_copyAction = new QAction(tr("Copy"));
+        m_copyAction->setShortcut(QKeySequence::Copy);
+        BT_CONNECT(m_copyAction,     &QAction::triggered,
+                   m_previewDisplay, &QTextBrowser::copy);
+        m_contextMenu->addAction(m_copyAction);
+
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
     m_previewDisplay = new QTextBrowser(this);
     m_previewDisplay->setOpenLinks(false);
     m_previewDisplay->setToolTip(tr("Text of the selected search result item"));
+    m_previewDisplay->setContextMenuPolicy(Qt::CustomContextMenu);
+    BT_CONNECT(m_previewDisplay, &QTextBrowser::customContextMenuRequested,
+               [this](QPoint const & loc) { m_contextMenu->exec(loc); });
     frameLayout->addWidget(m_previewDisplay);
 
-    m_previewDisplay->setContextMenuPolicy(Qt::CustomContextMenu);
-    BT_CONNECT(m_previewDisplay, SIGNAL(customContextMenuRequested(const QPoint&)),
-        this, SLOT(slotContextMenu(const QPoint&)));
-
     loadDialogSettings();
-}
-
-void BtSearchResultArea::slotContextMenu(const QPoint& /* point */ ) {
-
-    QAction selectAllAction(tr("Select all"));
-    selectAllAction.setShortcut(QKeySequence::SelectAll);
-    BT_CONNECT(&selectAllAction, SIGNAL(triggered()),
-               this,            SLOT(selectAll()));
-
-    QAction copyAction(tr("Copy"));
-    copyAction.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
-    BT_CONNECT(&copyAction,                     SIGNAL(triggered()),
-               m_previewDisplay, SLOT(copy()));
-
-    QMenu menu;
-    menu.addAction(&selectAllAction);
-    menu.addAction(&copyAction);
-    menu.exec(QCursor::pos());
 }
 
 void BtSearchResultArea::setSearchResult(
@@ -241,27 +242,6 @@ void BtSearchResultArea::setBrowserFont(const CSwordModuleInfo* const module) {
     } else {
         m_previewDisplay->setFont(btConfig().getDefaultFont());
     }
-}
-
-/** Initializes the signal slot conections of the child widgets, */
-void BtSearchResultArea::initConnections() {
-    BT_CONNECT(m_resultListBox, SIGNAL(keySelected(QString const &)),
-               this,            SLOT(updatePreview(QString const &)));
-    BT_CONNECT(m_resultListBox, SIGNAL(keyDeselected()), this, SLOT(clearPreview()));
-    BT_CONNECT(m_moduleListBox,
-               SIGNAL(moduleSelected(CSwordModuleInfo const *,
-                                     sword::ListKey const &)),
-               m_resultListBox,
-               SLOT(setupTree(CSwordModuleInfo const *,
-                              sword::ListKey const &)));
-    BT_CONNECT(m_moduleListBox,                      SIGNAL(moduleChanged()),
-               m_previewDisplay, SLOT(clear()));
-
-    // connect the strongs list
-    BT_CONNECT(m_moduleListBox,
-               SIGNAL(strongsSelected(CSwordModuleInfo *, QStringList const &)),
-               m_resultListBox,
-               SLOT(setupStrongsTree(CSwordModuleInfo *, QStringList const &)));
 }
 
 /**

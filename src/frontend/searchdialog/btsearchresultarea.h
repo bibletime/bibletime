@@ -29,8 +29,10 @@ class CModuleResultView;
 class CSearchResultView;
 }
 class CSwordModuleInfo;
+class QAction;
 class QFrame;
 class QHBoxLayout;
+class QMenu;
 class QTreeWidget;
 
 namespace Search {
@@ -124,15 +126,6 @@ class BtSearchResultArea : public QWidget {
         void showAnalysis() { CSearchAnalysisDialog(m_results, this).exec(); }
 
     protected: /* Methods: */
-        /**
-        * Initializes the view of this widget.
-        */
-        void initView();
-
-        /**
-        * Initializes the signal slot conections of the child widgets
-        */
-        void initConnections();
 
         /**
         * Load the settings from the resource file
@@ -158,18 +151,11 @@ class BtSearchResultArea : public QWidget {
         void clearPreview();
 
         /**
-        * Select all text
-        */
-        inline void selectAll() { m_previewDisplay->selectAll(); }
-
-        /**
         * Copy selected text
         */
         inline void copySelection() {
             m_previewDisplay->copy();
         }
-
-        void slotContextMenu(const QPoint& point);
 
     private: /* Fields: */
         CSwordModuleSearch::Results m_results;
@@ -178,6 +164,11 @@ class BtSearchResultArea : public QWidget {
         CSearchResultView* m_resultListBox;
 
         QFrame *m_displayFrame;
+
+        QMenu * m_contextMenu;
+            QAction * m_selectAllAction;
+            QAction * m_copyAction;
+
         QTextBrowser* m_previewDisplay;
 
         QSplitter *m_mainSplitter;
