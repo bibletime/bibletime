@@ -44,39 +44,34 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     setObjectName("CReadWindow");
     CDisplayWindow::setDisplayWidget(newDisplay);
     if (m_readDisplayWidget) {
-        disconnect(m_readDisplayWidget->connectionsProxy(),
-                   SIGNAL(referenceClicked(QString const &, QString const &)),
-                   this,
-                   SLOT(lookupModKey(QString const &, QString const &)));
-        disconnect(m_readDisplayWidget->connectionsProxy(),
-                   SIGNAL(referenceDropped(QString const &)),
-                   this,
-                   SLOT(lookupKey(QString const &)));
+        auto * const connectionProxy = m_readDisplayWidget->connectionsProxy();
+        disconnect(connectionProxy, &CDisplayConnections::referenceClicked,
+                   this, &CReadWindow::lookupModKey);
+        disconnect(connectionProxy, &CDisplayConnections::referenceDropped,
+                   this, &CReadWindow::lookupKey);
 
         if (BtModelViewReadDisplay * const v =
                 dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-            QObject::disconnect(v,    SIGNAL(completed()),
-                                this, SLOT(slotMoveToAnchor()));
+            disconnect(v,    &BtModelViewReadDisplay::completed,
+                       this, &CReadWindow::slotMoveToAnchor);
     }
 
     m_readDisplayWidget = static_cast<CReadDisplay *>(newDisplay);
-    BT_CONNECT(m_readDisplayWidget->connectionsProxy(),
-               SIGNAL(referenceClicked(QString const &, QString const &)),
-               this,
-               SLOT(lookupModKey(QString const &, QString const &)));
-
-    BT_CONNECT(m_readDisplayWidget->connectionsProxy(),
-               SIGNAL(referenceDropped(QString const &)),
-               this,
-               SLOT(lookupKey(QString const &)));
+    {
+        auto * const connectionProxy = m_readDisplayWidget->connectionsProxy();
+        BT_CONNECT(connectionProxy, &CDisplayConnections::referenceClicked,
+                   this,            &CReadWindow::lookupModKey);
+        BT_CONNECT(connectionProxy, &CDisplayConnections::referenceDropped,
+                   this,            &CReadWindow::lookupKey);
+    }
 
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        BT_CONNECT(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()));
+        BT_CONNECT(v,    &BtModelViewReadDisplay::completed,
+                   this, &CReadWindow::slotMoveToAnchor);
 
-    BibleTime* bt = btMainWindow();
-    BT_CONNECT(bt, SIGNAL(colorThemeChanged()),
-               this, SLOT(colorThemeChangedSlot()));
+    BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
+               this,           &CReadWindow::colorThemeChangedSlot);
 }
 
 void CReadWindow::lookupSwordKey(CSwordKey * newKey) {
@@ -157,7 +152,7 @@ void CReadWindow::copyByReferences() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
         auto model = v->qmlInterface()->textModel();
-        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);        
+        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);
         int rtn = dlg.exec();
         if (rtn == QDialog::Rejected)
             return;
