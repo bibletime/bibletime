@@ -48,9 +48,8 @@ static CSearchDialog* m_staticDialog = nullptr;
 void CSearchDialog::openDialog(const BtConstModuleList modules,
                                const QString &searchText, QWidget *parentDialog)
 {
-    if (!m_staticDialog) {
+    if (!m_staticDialog)
         m_staticDialog = new CSearchDialog(parentDialog);
-    };
     m_staticDialog->reset();
 
     if (modules.count()) {
