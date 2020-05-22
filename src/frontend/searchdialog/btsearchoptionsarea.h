@@ -120,7 +120,11 @@ class BtSearchOptionsArea : public QWidget {
         void setupRanges();
         void syntaxHelp();
         void slotSearchTextEditReturnPressed();
+
+        /// \todo Implement validation
+        #if 0
         void slotValidateText(const QString& newText);
+        #endif
 
     signals:
         void sigSetSearchButtonStatus(bool);

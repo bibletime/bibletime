@@ -206,8 +206,10 @@ void BtSearchOptionsArea::initConnections() {
                this,           SLOT(moduleListTextSelected(int)));
     BT_CONNECT(m_helpLabel, SIGNAL(linkActivated(QString)),
                this,        SLOT(syntaxHelp()));
+    #if 0
     BT_CONNECT(m_searchTextCombo, SIGNAL(editTextChanged(QString const &)),
                this,              SLOT(slotValidateText(QString const &)));
+    #endif
 }
 
 /** Sets the modules used by the search. */
@@ -317,13 +319,18 @@ void BtSearchOptionsArea::saveSettings() {
 void BtSearchOptionsArea::readSettings() {
     const QStringList texts = btConfig().value<QStringList>("properties/searchTexts", QStringList());
     //for some reason the slot was called when setting the upmost item
-    disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
+    #if 0
+    disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)),
+               this, SLOT(slotValidateText(const QString&)));
+    #endif
     Q_FOREACH (const QString & text, texts) {
         if (text.size() > 0)
             m_searchTextCombo->addItem(text);
     }
-    BT_CONNECT(m_searchTextCombo, SIGNAL(editTextChanged(QString const &)),
+    #if 0
+    BT_CONNECT(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
                this,              SLOT(slotValidateText(QString const &)));
+    #endif
 
     m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory", QStringList()));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
@@ -410,32 +417,30 @@ bool BtSearchOptionsArea::eventFilter(QObject* obj, QEvent* event) {
     return QWidget::eventFilter(obj, event);
 }
 
-void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
-//     static const QRegExp re("\\b(AND|OR)\\b");
-//     if (newText.isEmpty() || !newText.contains(re) ) {
-//         if (!m_typeAndButton->isEnabled()) {
-//             m_typeOrButton->setEnabled(true);
-//             m_typeAndButton->setEnabled(true);
-//             m_typeAndButton->setToolTip(tr("All of the words (AND is added between the words)"));
-//             m_typeOrButton->setToolTip(tr("Some of the words"));
-//         }
-//     }
-//     else {
-//         if (m_typeAndButton->isEnabled()) {
-//             m_typeOrButton->setChecked(true);
-//             m_typeOrButton->setEnabled(false);
-//             m_typeAndButton->setEnabled(false);
-//             m_typeAndButton->setToolTip(tr("Full syntax is used because text includes AND or OR"));
-//             m_typeOrButton->setToolTip(tr("Full syntax is used because text includes AND or OR"));
-//         }
-//     }
+#if 0
+void BtSearchOptionsArea::slotValidateText(QString const & newText) {
+    static const QRegExp re("\\b(AND|OR)\\b");
+    if (newText.isEmpty() || !newText.contains(re)) {
+        if (!m_typeAndButton->isEnabled()) {
+            m_typeOrButton->setEnabled(true);
+            m_typeAndButton->setEnabled(true);
+            m_typeAndButton->setToolTip(
+                    tr("All of the words (AND is added between the words)"));
+            m_typeOrButton->setToolTip(tr("Some of the words"));
+        }
+    } else {
+        if (m_typeAndButton->isEnabled()) {
+            m_typeOrButton->setChecked(true);
+            m_typeOrButton->setEnabled(false);
+            m_typeAndButton->setEnabled(false);
+            m_typeAndButton->setToolTip(
+                    tr("Full syntax is used because text includes AND or OR"));
+            m_typeOrButton->setToolTip(
+                    tr("Full syntax is used because text includes AND or OR"));
+        }
+    }
 }
-
-//bool BtSearchOptionsArea::isAndSearchType()
-//{
-//
-//}
-
+#endif
 
 } // namespace Search
 
