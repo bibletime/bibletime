@@ -52,14 +52,6 @@ class BtBookshelfDockWidget: public QDockWidget {
         void initMenus();
         void retranslateUi();
 
-    protected slots:
-        void slotModuleActivated(CSwordModuleInfo *module);
-        void slotModuleChecked(CSwordModuleInfo *module, bool checked);
-        void slotItemActionTriggered(QAction *action);
-        void slotPrepareItemContextMenu();
-        void slotModulesChanged();
-        void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
-
     protected:
         BtBookshelfTreeModel *m_treeModel;
 
@@ -71,7 +63,6 @@ class BtBookshelfDockWidget: public QDockWidget {
 
         // Item context menu:
         QMenu *m_itemContextMenu;
-        QActionGroup *m_itemActionGroup;
         QAction *m_itemOpenAction;
         QAction *m_itemSearchAction;
         QAction *m_itemUnlockAction;

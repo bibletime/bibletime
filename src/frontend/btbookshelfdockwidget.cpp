@@ -19,6 +19,7 @@
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QVBoxLayout>
+#include <utility>
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
@@ -83,29 +84,64 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     setWidget(m_stackedWidget);
 
     // Connect signals:
-    BT_CONNECT(m_bookshelfWidget->treeView(),
-               SIGNAL(moduleActivated(CSwordModuleInfo *)),
-               this, SLOT(slotModuleActivated(CSwordModuleInfo *)));
-    BT_CONNECT(m_bookshelfWidget->treeView(),
-               SIGNAL(moduleHovered(CSwordModuleInfo *)),
-               this, SIGNAL(moduleHovered(CSwordModuleInfo *)));
-    BT_CONNECT(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo *, bool)),
-               this,        SLOT(slotModuleChecked(CSwordModuleInfo *, bool)));
-    BT_CONNECT(m_treeModel,
-               SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-               this,
-               SLOT(slotGroupingOrderChanged(
-                            BtBookshelfTreeModel::Grouping const &)));
-    BT_CONNECT(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
-               m_treeModel,                         SLOT(setCheckable(bool)));
-    BT_CONNECT(bookshelfModel,
-               SIGNAL(rowsInserted(QModelIndex const &, int, int)),
-               this, SLOT(slotModulesChanged()));
-    BT_CONNECT(bookshelfModel,
-               SIGNAL(rowsRemoved(QModelIndex const &, int, int)),
-               this, SLOT(slotModulesChanged()));
-    BT_CONNECT(m_installButton,       SIGNAL(clicked()),
-               BibleTime::instance(), SLOT(slotBookshelfWizard()));
+    BT_CONNECT(m_bookshelfWidget->treeView(), &BtBookshelfView::moduleActivated,
+               [this](CSwordModuleInfo * module) {
+                   if (!module->isLocked()) {
+                       emit moduleOpenTriggered(module);
+                   } else {
+                       /**
+                         \todo Implement a better unlock dialog, which could
+                               incorporate the following warning message.
+                               Actually the whole case when the user tries to
+                               open a locked module needs to be rethought and
+                               refactored.
+                       */
+                       message::showWarning(
+                                   this,
+                                   tr("Warning: Module locked!"),
+                                   tr("You are trying to access an encrypted "
+                                      "module. Please provide an unlock key in "
+                                      "the following dialog to open the "
+                                      "module."));
+
+                       /** \todo We need to keep the module name because
+                                 unlocking currently reloads sword. */
+                       auto const moduleName(module->name());
+                       if (BibleTime::moduleUnlock(module)) {
+                           // Re-initialize module pointer:
+                           auto const & backend = CSwordBackend::instance();
+                           module = backend->findModuleByName(moduleName);
+                           BT_ASSERT(module);
+                           emit moduleOpenTriggered(module);
+                       }
+                   }
+               });
+    BT_CONNECT(m_bookshelfWidget->treeView(), &BtBookshelfView::moduleHovered,
+               this, &BtBookshelfDockWidget::moduleHovered);
+    BT_CONNECT(m_treeModel, &BtBookshelfTreeModel::moduleChecked,
+               [](CSwordModuleInfo * const module, bool const checked)
+               { module->setHidden(!checked); });
+    BT_CONNECT(m_treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
+               [this](BtBookshelfTreeModel::Grouping const & g) {
+                   g.saveTo(groupingOrderKey);
+                   emit groupingOrderChanged(g);
+               });
+    BT_CONNECT(m_bookshelfWidget->showHideAction(), &QAction::toggled,
+               m_treeModel, &BtBookshelfTreeModel::setCheckable);
+    auto modulesChangedSlot =
+            [this]{
+                auto const & moduleList =
+                        CSwordBackend::instance()->model()->moduleList();
+                m_stackedWidget->setCurrentWidget(moduleList.empty()
+                                                  ? m_welcomeWidget
+                                                  : m_bookshelfWidget);
+            };
+    BT_CONNECT(bookshelfModel, &BtBookshelfModel::rowsInserted,
+               this/*needed*/, modulesChangedSlot);
+    BT_CONNECT(bookshelfModel, &BtBookshelfModel::rowsRemoved,
+               this/*needed*/, std::move(modulesChangedSlot));
+    BT_CONNECT(m_installButton,       &QPushButton::clicked,
+               BibleTime::instance(), &BibleTime::slotBookshelfWizard);
 
     retranslateUi();
 }
@@ -114,31 +150,48 @@ void BtBookshelfDockWidget::initMenus() {
     namespace RM = CResMgr::mainIndex;
 
     m_itemContextMenu = new QMenu(this);
-    m_itemActionGroup = new QActionGroup(this);
-    BT_CONNECT(m_itemActionGroup, SIGNAL(triggered(QAction *)),
-               this,              SLOT(slotItemActionTriggered(QAction *)));
+    auto const addMenuAction =
+        [this](void (BtBookshelfDockWidget::* signal)(CSwordModuleInfo *)) {
+            auto * const action = new QAction(this);
+            BT_CONNECT(action, &QAction::triggered,
+                       [this, signal] {
+                           if (CSwordModuleInfo * const module =
+                                   static_cast<CSwordModuleInfo *>(
+                                       m_itemContextMenu->property("BtModule")
+                                           .value<void *>()))
+                               emit (this->*signal)(module);
+                       });
+            m_itemContextMenu->addAction(action);
+            return action;
+        };
 
-    m_itemOpenAction = new QAction(this);
-    m_itemActionGroup->addAction(m_itemOpenAction);
-    m_itemContextMenu->addAction(m_itemOpenAction);
+    m_itemOpenAction =
+            addMenuAction(&BtBookshelfDockWidget::moduleOpenTriggered);
 
-    m_itemSearchAction = new QAction(this);
+    m_itemSearchAction =
+            addMenuAction(&BtBookshelfDockWidget::moduleSearchTriggered);
     m_itemSearchAction->setIcon(RM::search::icon());
-    m_itemActionGroup->addAction(m_itemSearchAction);
-    m_itemContextMenu->addAction(m_itemSearchAction);
 
-    m_itemUnlockAction = new QAction(this);
+    m_itemUnlockAction =
+            addMenuAction(&BtBookshelfDockWidget::moduleUnlockTriggered);
     m_itemUnlockAction->setIcon(RM::unlockModule::icon());
-    m_itemActionGroup->addAction(m_itemUnlockAction);
-    m_itemContextMenu->addAction(m_itemUnlockAction);
 
-    m_itemAboutAction = new QAction(this);
+    m_itemAboutAction =
+            addMenuAction(&BtBookshelfDockWidget::moduleAboutTriggered);
     m_itemAboutAction->setIcon(RM::aboutModule::icon());
-    m_itemActionGroup->addAction(m_itemAboutAction);
-    m_itemContextMenu->addAction(m_itemAboutAction);
 
-    BT_CONNECT(m_itemContextMenu, SIGNAL(aboutToShow()),
-               this,              SLOT(slotPrepareItemContextMenu()));
+    BT_CONNECT(m_itemContextMenu, &QMenu::aboutToShow,
+               [this]{
+                   void * v =
+                           m_itemContextMenu->property("BtModule")
+                                                .value<void*>();
+                   CSwordModuleInfo *module = static_cast<CSwordModuleInfo*>(v);
+                   m_itemOpenAction->setEnabled(!module->isLocked());
+                   m_itemSearchAction->setText(
+                               tr("&Search in %1...").arg(module->name()));
+                   m_itemSearchAction->setEnabled(!module->isLocked());
+                   m_itemUnlockAction->setEnabled(module->isLocked());
+               });
 }
 
 void BtBookshelfDockWidget::retranslateUi() {
@@ -151,80 +204,6 @@ void BtBookshelfDockWidget::retranslateUi() {
     m_installLabel->setText(tr("There are currently no works installed. Please "
                                "click the button below to install new works."));
     m_installButton->setText(tr("&Install works..."));
-}
-
-void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
-    if (!module->isLocked()) {
-        emit moduleOpenTriggered(module);
-    } else {
-        /**
-          \todo Implement a better unlock dialog, which could incorporate the following
-                warning message. Actually the whole case when the user tries to open a locked
-                module needs to be rethought and refactored.
-        */
-        message::showWarning(this, tr("Warning: Module locked!"),
-                             tr("You are trying to access an encrypted module. Please "
-                                "provide an unlock key in the following dialog to open the "
-                                "module."));
-
-        /// \todo We need to keep the module name because unlocking currently reloads sword.
-        const QString moduleName(module->name());
-
-        if (BibleTime::moduleUnlock(module)) {
-            // Re-initialize module pointer:
-            module = CSwordBackend::instance()->findModuleByName(moduleName);
-            BT_ASSERT(module);
-
-            emit moduleOpenTriggered(module);
-        }
-    }
-}
-
-void BtBookshelfDockWidget::slotModuleChecked(CSwordModuleInfo *module, bool c) {
-    module->setHidden(!c);
-}
-
-void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
-    CSwordModuleInfo * const module =
-        static_cast<CSwordModuleInfo *>(
-                m_itemContextMenu->property("BtModule").value<void *>());
-    if (module == nullptr) return;
-
-    if (action == m_itemOpenAction) {
-        emit moduleOpenTriggered(module);
-    }
-    else if (action == m_itemSearchAction) {
-        emit moduleSearchTriggered(module);
-    }
-    else if (action == m_itemUnlockAction) {
-        emit moduleUnlockTriggered(module);
-    }
-    else if (action == m_itemAboutAction) {
-        emit moduleAboutTriggered(module);
-    }
-}
-
-void BtBookshelfDockWidget::slotPrepareItemContextMenu() {
-    void *v = m_itemContextMenu->property("BtModule").value<void*>();
-    CSwordModuleInfo *module = static_cast<CSwordModuleInfo*>(v);
-    m_itemOpenAction->setEnabled(!module->isLocked());
-    m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
-    m_itemSearchAction->setEnabled(!module->isLocked());
-    m_itemUnlockAction->setEnabled(module->isLocked());
-}
-
-void BtBookshelfDockWidget::slotModulesChanged() {
-    const BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
-    m_stackedWidget->setCurrentWidget(bookshelfModel->moduleList().empty()
-                                      ? m_welcomeWidget
-                                      : m_bookshelfWidget);
-}
-
-void BtBookshelfDockWidget::slotGroupingOrderChanged(
-        const BtBookshelfTreeModel::Grouping &g)
-{
-    g.saveTo(groupingOrderKey);
-    emit groupingOrderChanged(g);
 }
 
 void BtBookshelfDockWidget::loadBookshelfState() {
