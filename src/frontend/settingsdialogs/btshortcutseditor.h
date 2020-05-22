@@ -38,7 +38,7 @@ class BtShortcutsEditor : public QWidget {
         void clearConflictWithKeys(const QString& keys);
 
         // finds any shortcut keys in the table matching the specified keys - returns the Action Name for it.
-        QString findConflictWithKeys(const QString& keys);
+        QString findConflictWithKeys(QString const & keys) const;
 
         // used by application to complete the keyChangeRequest signal
         // stores "keys" into the custom shortcuts dialog field

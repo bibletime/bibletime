@@ -381,7 +381,7 @@ void BtShortcutsEditor::clearConflictWithKeys(const QString& keys) {
 }
 
 // finds any shortcut keys in the table matching the specified keys - returns the Action Name for it.
-QString BtShortcutsEditor::findConflictWithKeys(const QString& keys) {
+QString BtShortcutsEditor::findConflictWithKeys(QString const & keys) const {
     QString conflict;
     for (int i = 0; i < m_table->rowCount(); i++) {
         if ( (m_table->item(i, 1)->text() == keys) || (m_table->item(i, 2)->text() == keys) )
