@@ -100,8 +100,6 @@ class BtSearchOptionsArea : public QWidget {
           Get unique works list from the Works combobox
         */
         QStringList getUniqueWorksList();
-        /** Sets the modules when user selects them from the combobox.*/
-        void moduleListTextSelected(int index);
 
         /**
         * Reimplementation.
@@ -117,9 +115,6 @@ class BtSearchOptionsArea : public QWidget {
         void chooseModules();
 
     protected slots:
-        void setupRanges();
-        void syntaxHelp();
-        void slotSearchTextEditReturnPressed();
 
         /// \todo Implement validation
         #if 0

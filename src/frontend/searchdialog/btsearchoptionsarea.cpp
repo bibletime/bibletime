@@ -196,19 +196,39 @@ void BtSearchOptionsArea::initView() {
 }
 
 void BtSearchOptionsArea::initConnections() {
-    BT_CONNECT(m_searchTextCombo->lineEdit(), SIGNAL(returnPressed()),
-               this, SLOT(slotSearchTextEditReturnPressed()));
-    BT_CONNECT(m_chooseModulesButton, SIGNAL(clicked()),
-               this,                  SLOT(chooseModules()));
-    BT_CONNECT(m_chooseRangeButton, SIGNAL(clicked()),
-               this,                SLOT(setupRanges()));
-    BT_CONNECT(m_modulesCombo, SIGNAL(activated(int)),
-               this,           SLOT(moduleListTextSelected(int)));
-    BT_CONNECT(m_helpLabel, SIGNAL(linkActivated(QString)),
-               this,        SLOT(syntaxHelp()));
+    BT_CONNECT(m_searchTextCombo->lineEdit(), &QLineEdit::returnPressed,
+               [this]{
+                   m_searchTextCombo->addToHistory(
+                               m_searchTextCombo->currentText());
+                   emit sigStartSearch();
+               });
+    BT_CONNECT(m_chooseModulesButton, &QPushButton::clicked,
+               this,                  &BtSearchOptionsArea::chooseModules);
+    BT_CONNECT(m_chooseRangeButton, &QPushButton::clicked,
+               [this]{
+                   CRangeChooserDialog(getUniqueWorksList(), this).exec();
+                   refreshRanges();
+               });
+    BT_CONNECT(m_modulesCombo,
+               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+               [this](int const index) {
+                   BtConstModuleList moduleList;
+                   for (auto const & name
+                        : m_modulesCombo->itemText(index).split(", "))
+                       moduleList.append(
+                            CSwordBackend::instance()->findModuleByName(name));
+                   // Set the list and the combobox list and text:
+                   setModules(moduleList);
+               });
+    BT_CONNECT(m_helpLabel, &QLabel::linkActivated,
+               [this]{
+                   auto * const dlg = new BtSearchSyntaxHelpDialog(this);
+                   dlg->setAttribute(Qt::WA_DeleteOnClose);
+                   dlg->show();
+               });
     #if 0
-    BT_CONNECT(m_searchTextCombo, SIGNAL(editTextChanged(QString const &)),
-               this,              SLOT(slotValidateText(QString const &)));
+    BT_CONNECT(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
+               this,              &BtSearchOptionsArea::slotValidateText);
     #endif
 }
 
@@ -250,18 +270,6 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
     }
     btConfig().setValue("history/searchModuleHistory", historyList);
     emit sigSetSearchButtonStatus(!modules.isEmpty());
-}
-
-// Catch activated signal of module selector combobox
-void BtSearchOptionsArea::moduleListTextSelected(int index) {
-    //create the module list
-    QString text = m_modulesCombo->itemText(index);
-    QStringList moduleNamesList = text.split(", ");
-    BtConstModuleList moduleList;
-    Q_FOREACH(QString const & name, moduleNamesList)
-        moduleList.append(CSwordBackend::instance()->findModuleByName(name));
-    //set the list and the combobox list and text
-    setModules(moduleList);
 }
 
 QStringList BtSearchOptionsArea::getUniqueWorksList() {
@@ -320,8 +328,8 @@ void BtSearchOptionsArea::readSettings() {
     const QStringList texts = btConfig().value<QStringList>("properties/searchTexts", QStringList());
     //for some reason the slot was called when setting the upmost item
     #if 0
-    disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)),
-               this, SLOT(slotValidateText(const QString&)));
+    disconnect(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
+               this,              &BtSearchOptionsArea::slotValidateText);
     #endif
     Q_FOREACH (const QString & text, texts) {
         if (text.size() > 0)
@@ -329,7 +337,7 @@ void BtSearchOptionsArea::readSettings() {
     }
     #if 0
     BT_CONNECT(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
-               this,              SLOT(slotValidateText(QString const &)));
+               this,              &BtSearchOptionsArea::slotValidateText);
     #endif
 
     m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory", QStringList()));
@@ -352,21 +360,6 @@ void BtSearchOptionsArea::readSettings() {
 
 void BtSearchOptionsArea::aboutToShow() {
     m_searchTextCombo->setFocus();
-}
-
-void BtSearchOptionsArea::setupRanges() {
-    QStringList modules = getUniqueWorksList();
-    CRangeChooserDialog * chooser = new CRangeChooserDialog(modules, this);
-    chooser->exec();
-    delete chooser;
-
-    refreshRanges();
-}
-
-void BtSearchOptionsArea::syntaxHelp() {
-    BtSearchSyntaxHelpDialog * dlg = new BtSearchSyntaxHelpDialog(this);
-    dlg->setAttribute(Qt::WA_DeleteOnClose);
-    dlg->show();
 }
 
 void BtSearchOptionsArea::refreshRanges() {
@@ -398,11 +391,6 @@ bool BtSearchOptionsArea::hasSearchScope() {
 
 void BtSearchOptionsArea::addToHistory(const QString& text) {
     m_searchTextCombo->addToHistory(text);
-}
-
-void BtSearchOptionsArea::slotSearchTextEditReturnPressed() {
-    m_searchTextCombo->addToHistory( m_searchTextCombo->currentText() );
-    emit sigStartSearch();
 }
 
 bool BtSearchOptionsArea::eventFilter(QObject* obj, QEvent* event) {
