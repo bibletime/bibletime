@@ -120,6 +120,9 @@ class BtSearchResultArea : public QWidget {
         */
         void reset();
 
+        /** Shows a dialog with the search analysis of the current search. */
+        void showAnalysis() { CSearchAnalysisDialog(m_results, this).exec(); }
+
     protected: /* Methods: */
         /**
         * Initializes the view of this widget.
@@ -153,13 +156,6 @@ class BtSearchResultArea : public QWidget {
          * Clear the preview of the selected key.
          */
         void clearPreview();
-
-        /**
-        * Shows a dialog with the search analysis of the current search.
-        */
-        inline void showAnalysis() {
-            CSearchAnalysisDialog(m_results, this).exec();
-        }
 
         /**
         * Select all text
