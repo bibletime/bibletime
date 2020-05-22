@@ -57,7 +57,8 @@ void CBookReadWindow::initActions() {
 
     m_treeAction = &ac->action("toggleTree");
     BT_ASSERT(m_treeAction);
-    BT_CONNECT(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()));
+    BT_CONNECT(m_treeAction, &QAction::triggered,
+               this, &CBookReadWindow::treeToggled);
     addAction(m_treeAction);
 
     ac->readShortcuts("Book shortcuts");
@@ -77,12 +78,12 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 void CBookReadWindow::initConnections() {
     CLexiconReadWindow::initConnections();
 
-    BT_CONNECT(m_treeChooser, SIGNAL(keyChanged(CSwordKey *)),
-               this,          SLOT(lookupSwordKey(CSwordKey *)));
-    BT_CONNECT(m_treeChooser, SIGNAL(keyChanged(CSwordKey *)),
-               keyChooser(),  SLOT(updateKey(CSwordKey *)));
-    BT_CONNECT(keyChooser(),  SIGNAL(keyChanged(CSwordKey *)),
-               m_treeChooser, SLOT(updateKey(CSwordKey *)));
+    BT_CONNECT(m_treeChooser, &CBookTreeChooser::keyChanged,
+               this,          &CBookReadWindow::lookupSwordKey);
+    BT_CONNECT(m_treeChooser, &CBookTreeChooser::keyChanged,
+               keyChooser(),  &CKeyChooser::updateKey);
+    BT_CONNECT(keyChooser(),  &CKeyChooser::keyChanged,
+               m_treeChooser, &CBookTreeChooser::updateKey);
 }
 
 /** Init the view */
@@ -145,10 +146,10 @@ void CBookReadWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
     CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
     btMainWindow()->navToolBar()->addWidget(keyChooser);
-    BT_CONNECT(keyChooser, SIGNAL(keyChanged(CSwordKey *)),
-               this,       SLOT(lookupSwordKey(CSwordKey *)));
-    BT_CONNECT(this,       SIGNAL(sigKeyChanged(CSwordKey *)),
-               keyChooser, SLOT(updateKey(CSwordKey *)));
+    BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
+               this,       &CBookReadWindow::lookupSwordKey);
+    BT_CONNECT(this,       &CBookReadWindow::sigKeyChanged,
+               keyChooser, &CKeyChooser::updateKey);
 
     // Works toolbar
     btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
