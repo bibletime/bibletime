@@ -43,10 +43,6 @@ class BtOpenWorkActionMenu: public BtMenuView {
 
         void postBuildMenu(QActionGroup * actions) override;
 
-    private slots:
-        void slotIndexTriggered(const QModelIndex &index);
-        void slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping);
-
     private:
         // Models:
         BtBookshelfTreeModel   *m_treeModel;
@@ -69,9 +65,6 @@ class BtOpenWorkAction: public QAction {
 
     protected:
         void retranslateUi();
-
-    private slots:
-        void slotModelChanged();
 
     private:
         BtOpenWorkActionMenu *m_menu;
