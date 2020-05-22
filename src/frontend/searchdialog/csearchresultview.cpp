@@ -50,14 +50,44 @@ void CSearchResultView::initView() {
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
     m_actions.copyMenu->setIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon());
 
+    struct SelectedKeysList : QList<CSwordKey *> {
+        SelectedKeysList(CSearchResultView & self) {
+            auto const * const m = self.m_module;
+            auto const selectedItems(self.selectedItems());
+            reserve(selectedItems.size());
+            try {
+                Q_FOREACH(auto const * const i, self.selectedItems()) {
+                    append(CSwordKey::createInstance(m));
+                    last()->setKey(i->text(0));
+                }
+            } catch (...) {
+                qDeleteAll(*this);
+            }
+        }
+
+        ~SelectedKeysList() noexcept { qDeleteAll(*this); }
+    };
+
     m_actions.copy.result = new QAction(tr("Reference only"), this);
-    BT_CONNECT(m_actions.copy.result, SIGNAL(triggered()),
-               this,                  SLOT(copyItems()));
+    BT_CONNECT(m_actions.copy.result, &QAction::triggered,
+               [this]{
+                   SelectedKeysList keys(*this);
+                   CExportManager(true, tr("Copying search result"))
+                           .copyKeyList(keys, CExportManager::Text, false);
+
+                   qDeleteAll(keys);
+               });
     m_actions.copyMenu->addAction(m_actions.copy.result);
 
     m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
-    BT_CONNECT(m_actions.copy.resultWithText, SIGNAL(triggered()),
-               this,                          SLOT(copyItemsWithText()));
+    BT_CONNECT(m_actions.copy.resultWithText, &QAction::triggered,
+               [this]{
+                   SelectedKeysList keys(*this);
+                   CExportManager(true, tr("Copying search result"))
+                           .copyKeyList(keys, CExportManager::Text, true);
+
+                   qDeleteAll(keys);
+               });
     m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
 
     m_popup->addMenu(m_actions.copyMenu);
@@ -66,35 +96,55 @@ void CSearchResultView::initView() {
     m_actions.saveMenu->setIcon(CResMgr::searchdialog::result::foundItems::saveMenu::icon());
 
     m_actions.save.result = new QAction(tr("Reference only"), this);
-    BT_CONNECT(m_actions.save.result, SIGNAL(triggered()),
-               this,                  SLOT(saveItems()) );
+    BT_CONNECT(m_actions.save.result, &QAction::triggered,
+               [this]{
+                   SelectedKeysList keys(*this);
+                   CExportManager(true, tr("Saving search result"))
+                           .saveKeyList( keys, CExportManager::Text, false);
+               });
     m_actions.saveMenu->addAction(m_actions.save.result);
 
     m_actions.save.resultWithText = new QAction(tr("Reference with text"), this);
     m_actions.saveMenu->addAction(m_actions.save.resultWithText);
-    BT_CONNECT(m_actions.save.resultWithText, SIGNAL(triggered()),
-               this,                          SLOT(saveItemsWithText()));
+    BT_CONNECT(m_actions.save.resultWithText, &QAction::triggered,
+               [this]{
+                   SelectedKeysList keys(*this);
+                   CExportManager(true, tr("Saving search result"))
+                           .saveKeyList(keys, CExportManager::Text, true);
+               });
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
     m_actions.printMenu->setIcon(CResMgr::searchdialog::result::foundItems::printMenu::icon());
 
     m_actions.print.result = new QAction(tr("Reference with text"), this);
-    BT_CONNECT(m_actions.print.result, SIGNAL(triggered()),
-               this,                   SLOT(printItems()));
+    BT_CONNECT(m_actions.print.result, &QAction::triggered,
+               [this]{
+                   QStringList list;
+                   for (auto const * const k : selectedItems())
+                       list.append(k->text(0));
+                   CExportManager(true, tr("Printing search result"))
+                           .printKeyList(list,
+                                         m_module,
+                                         btConfig().getDisplayOptions(),
+                                         btConfig().getFilterOptions());
+               });
     m_actions.printMenu->addAction(m_actions.print.result);
     m_popup->addMenu(m_actions.printMenu);
 }
 
 /** No descriptions */
 void CSearchResultView::initConnections() {
-    //  BT_CONNECT(this, SIGNAL(executed(QListViewItem *)),
-    //             this, SLOT(executed(QListViewItem *)));
     /// \todo are these right after porting?
     //items: current, previous
-    BT_CONNECT(this,
-               SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
-               this, SLOT(executed(QTreeWidgetItem *, QTreeWidgetItem *)));
+    BT_CONNECT(this, &CSearchResultView::currentItemChanged,
+               [this](QTreeWidgetItem * const current, QTreeWidgetItem *) {
+                   if (current) {
+                       emit keySelected(current->text(0));
+                   } else {
+                       emit keyDeselected();
+                   }
+               });
 }
 
 /** Setups the list with the given module. */
@@ -150,103 +200,10 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, const QStringList 
     //executed(currentItem());
 }
 
-/// \todo is this still valid?
-/** Is connected to the signal executed, which is emitted when a mew item was chosen. */
-void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
-    if (current) {
-        emit keySelected(current->text(0));
-    }
-    else {
-        emit keyDeselected();
-    }
-}
-
 /// \todo another function?
 /** Reimplementation to show the popup menu. */
 void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
     m_popup->exec(event->globalPos());
-}
-
-void CSearchResultView::printItems() {
-    QList<QTreeWidgetItem*> items = selectedItems();
-    CExportManager mgr(true, tr("Printing search result"));
-
-    QStringList list;
-    Q_FOREACH(QTreeWidgetItem const * const k, items)
-        list.append( k->text(0) );
-    mgr.printKeyList( list, module(), btConfig().getDisplayOptions(), btConfig().getFilterOptions() );
-}
-
-void CSearchResultView::saveItems() {
-    CExportManager mgr(true, tr("Saving search result"));
-
-    const CSwordModuleInfo *m = module();
-    CSwordKey* k = nullptr;
-    QList<QTreeWidgetItem*> items = selectedItems();
-    QList<CSwordKey*> keys;
-    Q_FOREACH(QTreeWidgetItem const * const i, items) {
-        k = CSwordKey::createInstance( m );
-        k->setKey(i->text(0));
-        keys.append( k );
-    }
-    mgr.saveKeyList( keys, CExportManager::Text, false);
-
-    qDeleteAll(keys);
-    keys.clear(); //delete all the keys we created
-}
-
-void CSearchResultView::saveItemsWithText() {
-    CExportManager mgr(true, tr("Saving search result"));
-
-    const CSwordModuleInfo *m = module();
-    CSwordKey* k = nullptr;
-    QList<QTreeWidgetItem*> items = selectedItems();
-    QList<CSwordKey*> keys;
-    Q_FOREACH(QTreeWidgetItem const * const i, items) {
-        k = CSwordKey::createInstance( m );
-        k->setKey(i->text(0));
-        keys.append( k );
-    }
-    mgr.saveKeyList( keys, CExportManager::Text, true);
-
-    qDeleteAll(keys);
-    keys.clear(); //delete all the keys we created
-}
-
-void CSearchResultView::copyItems() {
-    CExportManager mgr(true, tr("Copying search result"));
-
-    const CSwordModuleInfo *m = module();
-    CSwordKey* k = nullptr;
-    QList<QTreeWidgetItem*> items = selectedItems();
-    QList<CSwordKey*> keys;
-    Q_FOREACH(QTreeWidgetItem const * const i, items) {
-        k = CSwordKey::createInstance( m );
-        k->setKey(i->text(0));
-        keys.append( k );
-    }
-    mgr.copyKeyList( keys, CExportManager::Text, false);
-
-    qDeleteAll(keys);
-    keys.clear(); //delete all the keys we created
-}
-
-void CSearchResultView::copyItemsWithText() {
-    CExportManager mgr(true, tr("Copying search result"));
-
-    const CSwordModuleInfo *m = module();
-    CSwordKey* k = nullptr;
-    QList<QTreeWidgetItem*> items = selectedItems();
-    QList<CSwordKey*> keys;
-    Q_FOREACH(QTreeWidgetItem const * const i, items) {
-        k = CSwordKey::createInstance( m );
-        k->setKey(i->text(0));
-        keys.append( k );
-    }
-    mgr.copyKeyList( keys, CExportManager::Text, true);
-
-    qDeleteAll(keys);
-    keys.clear(); //delete all the keys we created
 }
 
 /// \todo port this to the new d'n'd

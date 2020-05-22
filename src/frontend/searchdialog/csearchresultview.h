@@ -50,7 +50,6 @@ class CSearchResultView  : public QTreeWidget {
         QStringList mimeTypes () const override;
 
     public slots: // Public slots
-        void saveItems();
 
         /**
           Setups the list with the given module.
@@ -58,19 +57,8 @@ class CSearchResultView  : public QTreeWidget {
         void setupTree(const CSwordModuleInfo *m, const sword::ListKey &results);
 
         void setupStrongsTree(CSwordModuleInfo*, const QStringList&);
-        void copyItemsWithText();
-        void copyItems();
-        void saveItemsWithText();
 
         void contextMenuEvent(QContextMenuEvent* event) override;
-
-    protected slots: // Protected slots
-        void printItems();
-
-        /**
-        * Is connected to the signal which is emitted when a new item was chosen.
-        */
-        void executed(QTreeWidgetItem* current, QTreeWidgetItem*);
 
     private:
         struct {
