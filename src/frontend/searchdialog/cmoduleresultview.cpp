@@ -67,32 +67,67 @@ void CModuleResultView::initView() {
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
     m_actions.copyMenu->setIcon(CResMgr::searchdialog::result::moduleList::copyMenu::icon());
     m_actions.copy.result = new QAction(tr("Reference only"), this);
-    BT_CONNECT(m_actions.copy.result, SIGNAL(triggered()),
-               this,                  SLOT(copyResult()));
+    BT_CONNECT(m_actions.copy.result, &QAction::triggered,
+               [this]{
+                   if (auto * const m = activeModule())
+                       CExportManager(true, tr("Copying search result"))
+                               .copyKeyList(m_results[m],
+                                            m,
+                                            CExportManager::Text,
+                                            false);
+               });
     m_actions.copyMenu->addAction(m_actions.copy.result);
     m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
-    BT_CONNECT(m_actions.copy.resultWithText, SIGNAL(triggered()),
-               this,                           SLOT(copyResultWithText()));
+    BT_CONNECT(m_actions.copy.resultWithText, &QAction::triggered,
+               [this]{
+                   if (auto * const m = activeModule())
+                       CExportManager(true, tr("Copying search result"))
+                               .copyKeyList(m_results[m],
+                                            m,
+                                            CExportManager::Text,
+                                            true);
+               });
     m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
     m_popup->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
     m_actions.saveMenu->setIcon(CResMgr::searchdialog::result::moduleList::saveMenu::icon());
     m_actions.save.result = new QAction(tr("Reference only"), this);
-    BT_CONNECT(m_actions.save.result, SIGNAL(triggered()),
-               this,                  SLOT(saveResult()));
+    BT_CONNECT(m_actions.save.result, &QAction::triggered,
+               [this]{
+                   if (auto * const m = activeModule())
+                       CExportManager(true, tr("Saving search result"))
+                               .saveKeyList(m_results[m],
+                                            m,
+                                            CExportManager::Text,
+                                            false);
+               });
     m_actions.saveMenu->addAction(m_actions.save.result);
     m_actions.save.resultWithText = new QAction(tr("Reference with text"), this);
-    BT_CONNECT(m_actions.save.resultWithText, SIGNAL(triggered()),
-               this,                          SLOT(saveResultWithText()));
+    BT_CONNECT(m_actions.save.resultWithText, &QAction::triggered,
+               [this]{
+                   if (auto * const m = activeModule())
+                       CExportManager(true, tr("Saving search result"))
+                               .saveKeyList(m_results[m],
+                                            m,
+                                            CExportManager::Text,
+                                            true);
+               });
     m_actions.saveMenu->addAction(m_actions.save.resultWithText);
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
     m_actions.printMenu->setIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon());
     m_actions.print.result = new QAction(tr("Reference with text"), this);
-    BT_CONNECT(m_actions.print.result, SIGNAL(triggered()),
-               this,                   SLOT(printResult()));
+    BT_CONNECT(m_actions.print.result, &QAction::triggered,
+               [this]{
+                   if (auto * const m = activeModule())
+                       CExportManager(true, tr("Printing search result"))
+                               .printKeyList(m_results[m],
+                                             m,
+                                             btConfig().getDisplayOptions(),
+                                             btConfig().getFilterOptions());
+               });
     m_actions.printMenu->addAction(m_actions.print.result);
     m_popup->addMenu(m_actions.printMenu);
 }
@@ -100,10 +135,8 @@ void CModuleResultView::initView() {
 /** Initializes the connections of this widget, */
 void CModuleResultView::initConnections() {
     /// \todo
-    BT_CONNECT(this,
-               SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
-               this,
-               SLOT(executed(QTreeWidgetItem *, QTreeWidgetItem *)));
+    BT_CONNECT(this, &CModuleResultView::currentItemChanged,
+               this, &CModuleResultView::executed);
 }
 
 void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
@@ -224,54 +257,5 @@ void CModuleResultView::contextMenuEvent( QContextMenuEvent * event ) {
     //make sure that all entries have the correct status
     m_popup->exec(event->globalPos());
 }
-
-/** Copies the whole search result into the clipboard. */
-void CModuleResultView::copyResult() {
-    CSwordModuleInfo *m = activeModule();
-    if (m != nullptr) {
-        CExportManager mgr(true, tr("Copying search result"));
-
-        mgr.copyKeyList(m_results[m], m, CExportManager::Text, false);
-    };
-}
-
-/** Copies the whole search result with the text into the clipboard. */
-void CModuleResultView::copyResultWithText() {
-    CSwordModuleInfo *m = activeModule();
-    if (m != nullptr) {
-        CExportManager mgr(true, tr("Copying search result"));
-        mgr.copyKeyList(m_results[m], m, CExportManager::Text, true);
-    };
-}
-
-/** Saves the search result keys. */
-void CModuleResultView::saveResult() {
-    CSwordModuleInfo *m = activeModule();
-    if (m != nullptr) {
-        CExportManager mgr(true, tr("Saving search result"));
-        mgr.saveKeyList(m_results[m], m, CExportManager::Text, false);
-    };
-}
-
-/** Saves the search result with it's text. */
-void CModuleResultView::saveResultWithText() {
-    CSwordModuleInfo *m = activeModule();
-    if (m != nullptr) {
-        CExportManager mgr(true, tr("Saving search result"));
-        mgr.saveKeyList(m_results[m], m, CExportManager::Text, true);
-    };
-}
-
-/** Appends the whole search result to the printer queue. */
-void CModuleResultView::printResult() {
-    CSwordModuleInfo *m = activeModule();
-    if (m != nullptr) {
-        CExportManager mgr(true, tr("Printing search result"));
-        mgr.printKeyList(m_results[m], m, btConfig().getDisplayOptions(),
-                         btConfig().getFilterOptions());
-    };
-}
-
-
 
 } //end of namespace Search

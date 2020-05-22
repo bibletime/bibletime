@@ -72,29 +72,9 @@ class CModuleResultView : public QTreeWidget {
         */
         void executed(QTreeWidgetItem*, QTreeWidgetItem*);
         /**
-        * Copies the whole search result with the text into the clipboard.
-        */
-        void copyResultWithText();
-        /**
-        * Copies the whole search result into the clipboard.
-        */
-        void copyResult();
-        /**
         * This event handler (reimplemented from QWidget) opens the popup menu at the given position.
         */
         void contextMenuEvent( QContextMenuEvent * event ) override;
-        /**
-        * Appends the whole search result to the printer queue.
-        */
-        void printResult();
-        /**
-        * Saves the search result with it's text.
-        */
-        void saveResultWithText();
-        /**
-        * Saves the search result keys.
-        */
-        void saveResult();
 
     signals:
         void moduleSelected(const CSwordModuleInfo*, const sword::ListKey&);
