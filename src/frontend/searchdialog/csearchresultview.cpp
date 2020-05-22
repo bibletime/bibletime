@@ -206,7 +206,7 @@ void CSearchResultView::saveItemsWithText() {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
-    };
+    }
     mgr.saveKeyList( keys, CExportManager::Text, true);
 
     qDeleteAll(keys);
@@ -224,7 +224,7 @@ void CSearchResultView::copyItems() {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
-    };
+    }
     mgr.copyKeyList( keys, CExportManager::Text, false);
 
     qDeleteAll(keys);
@@ -242,7 +242,7 @@ void CSearchResultView::copyItemsWithText() {
         k = CSwordKey::createInstance( m );
         k->setKey(i->text(0));
         keys.append( k );
-    };
+    }
     mgr.copyKeyList( keys, CExportManager::Text, true);
 
     qDeleteAll(keys);
