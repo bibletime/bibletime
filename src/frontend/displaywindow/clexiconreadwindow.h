@@ -122,10 +122,6 @@ protected slots: // Protected slots
     void saveAsPlain();
     void saveRawHTML();
 
-    void slotFillBackHistory();
-    void slotFillForwardHistory();
-
-    void slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled);
 };
 
 #endif

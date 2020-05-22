@@ -145,22 +145,40 @@ void CLexiconReadWindow::initActions() {
 void CLexiconReadWindow::initConnections() {
     BT_ASSERT(keyChooser());
 
-    BT_CONNECT(keyChooser(), SIGNAL(keyChanged(CSwordKey *)),
-               this,         SLOT(lookupSwordKey(CSwordKey *)));
-    BT_CONNECT(history(), SIGNAL(historyChanged(bool, bool)),
-               this,      SLOT(slotUpdateHistoryButtons(bool, bool)));
+    BT_CONNECT(keyChooser(), &CKeyChooser::keyChanged,
+               this,         &CLexiconReadWindow::lookupSwordKey);
+    BT_CONNECT(history(), &BTHistory::historyChanged,
+               [this](bool const backEnabled, bool const fwEnabled) {
+                   BT_ASSERT(m_actions.backInHistory);
+                   BT_ASSERT(keyChooser());
+
+                   m_actions.backInHistory->setEnabled(backEnabled);
+                   m_actions.forwardInHistory->setEnabled(fwEnabled);
+               });
 
     //connect the history actions to the right slots
-    BT_CONNECT(m_actions.backInHistory->popupMenu(), SIGNAL(aboutToShow()),
-               this, SLOT(slotFillBackHistory()));
-    BT_CONNECT(m_actions.backInHistory->popupMenu(),
-               SIGNAL(triggered(QAction *)),
-               keyChooser()->history(), SLOT(move(QAction *)));
-    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), SIGNAL(aboutToShow()),
-               this, SLOT(slotFillForwardHistory()));
-    BT_CONNECT(m_actions.forwardInHistory->popupMenu(),
-               SIGNAL(triggered(QAction *)),
-               keyChooser()->history(), SLOT(move(QAction *)));
+    BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::aboutToShow,
+               this, // Needed
+               [this]{
+                   QMenu * menu = m_actions.backInHistory->popupMenu();
+                   menu->clear();
+                   for (auto * const actionPtr
+                        : keyChooser()->history()->getBackList())
+                       menu->addAction(actionPtr);
+               });
+    BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::triggered,
+               keyChooser()->history(), &BTHistory::move);
+    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::aboutToShow,
+               this, // Needed
+               [this]{
+                   QMenu* menu = m_actions.forwardInHistory->popupMenu();
+                   menu->clear();
+                   for (auto * const actionPtr
+                        : keyChooser()->history()->getFwList())
+                       menu->addAction(actionPtr);
+               });
+    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::triggered,
+               keyChooser()->history(), &BTHistory::move);
 
 }
 
@@ -221,10 +239,10 @@ void CLexiconReadWindow::setupMainWindowToolBars() {
     CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
     keyChooser->key()->setKey(keyReference);
     btMainWindow()->navToolBar()->addWidget(keyChooser);
-    BT_CONNECT(keyChooser, SIGNAL(keyChanged(CSwordKey *)),
-               this,       SLOT(lookupSwordKey(CSwordKey *)));
-    BT_CONNECT(this,       SIGNAL(sigKeyChanged(CSwordKey *)),
-               keyChooser, SLOT(updateKey(CSwordKey *)));
+    BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
+               this,       &CLexiconReadWindow::lookupSwordKey);
+    BT_CONNECT(this,       &CLexiconReadWindow::sigKeyChanged,
+               keyChooser, &CKeyChooser::updateKey);
     btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
@@ -265,7 +283,8 @@ void CLexiconReadWindow::setupPopupMenu() {
     // Save raw HTML action for debugging purposes
     if (btApp->debugMode()) {
         QAction* debugAction = new QAction("Raw HTML", this);
-        BT_CONNECT(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
+        BT_CONNECT(debugAction, &QAction::triggered,
+                   this,        &CLexiconReadWindow::saveRawHTML);
         m_actions.saveMenu->addAction(debugAction);
     } // end of Save Raw HTML
 
@@ -356,30 +375,4 @@ void CLexiconReadWindow::saveRawHTML() {
 void CLexiconReadWindow::saveAsPlain() {
     CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(key(), CExportManager::Text, true, modules());
-}
-
-void CLexiconReadWindow::slotFillBackHistory() {
-    QMenu* menu = m_actions.backInHistory->popupMenu();
-    menu->clear();
-
-    /// \todo take the history list and fill the menu
-    for (QAction * const actionPtr: keyChooser()->history()->getBackList())
-        menu->addAction(actionPtr);
-}
-
-void CLexiconReadWindow::slotFillForwardHistory() {
-    QMenu* menu = m_actions.forwardInHistory->popupMenu();
-    menu->clear();
-    /// \todo take the history list and fill the menu using addAction
-    for (QAction * const actionPtr : keyChooser()->history()->getFwList())
-        menu->addAction(actionPtr);
-}
-
-
-void CLexiconReadWindow::slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled) {
-    BT_ASSERT(m_actions.backInHistory);
-    BT_ASSERT(keyChooser());
-
-    m_actions.backInHistory->setEnabled( backEnabled );
-    m_actions.forwardInHistory->setEnabled( fwEnabled );
 }
