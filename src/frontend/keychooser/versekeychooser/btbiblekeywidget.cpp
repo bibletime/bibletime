@@ -65,7 +65,11 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     clearRef->setIcon(CResMgr::icon_clearEdit());
     clearRef->setAutoRaise(true);
     clearRef->setStyleSheet("QToolButton{margin:0px;}");
-    BT_CONNECT(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );
+    BT_CONNECT(clearRef, &QToolButton::clicked,
+               [this]{
+                   m_textbox->setText("");
+                   m_textbox->setFocus();
+               });
 
     m_bookScroller = new CScrollerWidgetSet(this);
 
@@ -110,8 +114,8 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 
     m_dropDownHoverTimer.setInterval(500);
     m_dropDownHoverTimer.setSingleShot(true);
-    BT_CONNECT(&m_dropDownHoverTimer, SIGNAL(timeout()),
-               m_dropDownButtons, SLOT(hide()));
+    BT_CONNECT(&m_dropDownHoverTimer, &QTimer::timeout,
+               m_dropDownButtons, &QWidget::hide);
 
     QString scrollButtonToolTip(tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."));
     m_bookScroller->setToolTips(
@@ -131,27 +135,37 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     );
 
     // signals and slots connections
+    auto const initScrollerConnections =
+            [this](CScrollerWidgetSet & scroller,
+                   void (BtBibleKeyWidget::*stepFunction)(int))
+            {
+                BT_CONNECT(&scroller, &CScrollerWidgetSet::change,
+                           this, stepFunction);
+                BT_CONNECT(&scroller, &CScrollerWidgetSet::scroller_pressed,
+                           [this]{
+                               updatelock = true;
+                               oldKey = m_key->key();
+                           });
+                BT_CONNECT(&scroller, &CScrollerWidgetSet::scroller_released,
+                           [this]{
+                               updatelock = false;
+                               if (oldKey != m_key->key())
+                                   emit changed(m_key);
+                           });
+            };
+    initScrollerConnections(*m_bookScroller, &BtBibleKeyWidget::slotStepBook);
+    initScrollerConnections(*m_chapterScroller,
+                            &BtBibleKeyWidget::slotStepChapter);
+    initScrollerConnections(*m_verseScroller, &BtBibleKeyWidget::slotStepVerse);
 
-    BT_CONNECT(m_bookScroller, SIGNAL(change(int)), SLOT(slotStepBook(int)));
-    BT_CONNECT(m_bookScroller, SIGNAL(scroller_pressed()),
-               SLOT(slotUpdateLock()));
-    BT_CONNECT(m_bookScroller, SIGNAL(scroller_released()),
-               SLOT(slotUpdateUnlock()));
-    BT_CONNECT(m_textbox, SIGNAL(returnPressed()),
-               SLOT(slotReturnPressed()));
-    BT_CONNECT(m_chapterScroller, SIGNAL(change(int)),
-               SLOT(slotStepChapter(int)));
-    BT_CONNECT(m_chapterScroller, SIGNAL(scroller_pressed()),
-               SLOT(slotUpdateLock()));
-    BT_CONNECT(m_chapterScroller, SIGNAL(scroller_released()),
-               SLOT(slotUpdateUnlock()));
-    BT_CONNECT(m_verseScroller, SIGNAL(change(int)), SLOT(slotStepVerse(int)));
-    BT_CONNECT(m_verseScroller, SIGNAL(scroller_pressed()),
-               SLOT(slotUpdateLock()));
-    BT_CONNECT(m_verseScroller, SIGNAL(scroller_released()),
-               SLOT(slotUpdateUnlock()));
-    BT_CONNECT(m_key->afterChangedSignaller(), SIGNAL(signal()),
-               this,                           SLOT(updateText()));
+    BT_CONNECT(m_textbox, &QLineEdit::returnPressed,
+               [this]{
+                   m_key->setKey(m_textbox->text());
+                   emit changed(m_key);
+               });
+
+    BT_CONNECT(m_key->afterChangedSignaller(), &BtSignal::signal,
+               this,                           &BtBibleKeyWidget::updateText);
 
     setKey(key);    // The order of these two functions is important.
     setModule();
@@ -211,11 +225,6 @@ void BtBibleKeyWidget::resetDropDownButtons() {
                                    m_textbox->width(), h);
 }
 
-void BtBibleKeyWidget::slotClearRef( ) {
-    m_textbox->setText("");
-    m_textbox->setFocus();
-}
-
 void BtBibleKeyWidget::updateText() {
     QString text(m_key->key());
     m_textbox->setText(text);
@@ -236,23 +245,6 @@ bool BtBibleKeyWidget::setKey(CSwordVerseKey *key) {
 
     m_key->setKey(key->key());
     return true;
-}
-
-void BtBibleKeyWidget::slotReturnPressed() {
-    m_key->setKey(m_textbox->text());
-    emit changed(m_key);
-}
-
-/* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
-void BtBibleKeyWidget::slotUpdateLock() {
-    updatelock = true;
-    oldKey = m_key->key();
-}
-
-void BtBibleKeyWidget::slotUpdateUnlock() {
-    updatelock = false;
-    if (oldKey != m_key->key())
-        emit changed(m_key);
 }
 
 void BtBibleKeyWidget::slotStepBook(int offset) {

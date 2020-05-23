@@ -49,15 +49,6 @@ class BtBibleKeyWidget : public QWidget  {
         void resetDropDownButtons();
 
     protected slots: // Protected slots
-        /**
-        * Is called when the return key was presed in the textbox.
-        */
-        void slotReturnPressed();
-
-        void slotClearRef();
-
-        void slotUpdateLock();
-        void slotUpdateUnlock();
 
         /**
          * \brief Change the book by the given offset.
