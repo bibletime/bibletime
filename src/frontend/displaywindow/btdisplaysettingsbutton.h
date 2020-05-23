@@ -31,11 +31,13 @@ class BtDisplaySettingsButton: public QToolButton {
     public:
         BtDisplaySettingsButton(QWidget *parent = nullptr);
 
+        void setDisplayOptionsNoRepopulate(
+                DisplayOptions const & displaySettings);
+        void setFilterOptionsNoRepopulate(FilterOptions const & moduleSettings);
+
     public slots:
-        void setDisplayOptions(const DisplayOptions &displaySettings,
-                               bool repopulate = true);
-        void setFilterOptions(const FilterOptions &moduleSettings,
-                              bool repopulate = true);
+        void setDisplayOptions(DisplayOptions const & displaySettings);
+        void setFilterOptions(FilterOptions const & moduleSettings);
 
         void setModules(const BtConstModuleList &modules);
 

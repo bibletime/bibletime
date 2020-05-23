@@ -77,24 +77,27 @@ BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
                });
 }
 
+void BtDisplaySettingsButton::setDisplayOptionsNoRepopulate(
+        DisplayOptions const & displaySettings)
+{ m_displayOptions = displaySettings; }
+
+
+void BtDisplaySettingsButton::setFilterOptionsNoRepopulate(
+        FilterOptions const & moduleSettings)
+{ m_filterOptions = moduleSettings; }
+
 void BtDisplaySettingsButton::setDisplayOptions(
-        const DisplayOptions &displaySettings,
-        bool repopulate)
+        DisplayOptions const & displaySettings)
 {
     m_displayOptions = displaySettings;
-    if (repopulate) {
-        repopulateMenu();
-    }
+    repopulateMenu();
 }
 
 void BtDisplaySettingsButton::setFilterOptions(
-        const FilterOptions &moduleSettings,
-        bool repopulate)
+        FilterOptions const & moduleSettings)
 {
     m_filterOptions = moduleSettings;
-    if (repopulate) {
-        repopulateMenu();
-    }
+    repopulateMenu();
 }
 
 void BtDisplaySettingsButton::setModules(

@@ -71,20 +71,39 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     setModules(modules);
 
     // Connect this to the backend module list changes
-    BT_CONNECT(CSwordBackend::instance(),
-               SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-               SLOT(reload(CSwordBackend::SetupChangedReason)));
+    BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
+               this,                      &CDisplayWindow::reload);
     BibleTime* mainwindow = btMainWindow();
-    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowHeader(bool)),
-               SLOT(slotShowHeader(bool)));
-    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowNavigator(bool)),
-               SLOT(slotShowNavigator(bool)));
-    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowToolButtons(bool)),
-               SLOT(slotShowToolButtons(bool)));
-    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowModuleChooser(bool)),
-               SLOT(slotShowModuleChooser(bool)));
-    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowFormatToolbar(bool)),
-               SLOT(slotShowFormatToolBar(bool)));
+    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowHeader,
+               this, // Needed
+               [this](bool const show){
+                   if (auto * const b = headerBar())
+                       b->setVisible(show);
+               });
+    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowNavigator,
+               this, // Needed
+               [this](bool const show) {
+                   if (auto * const b = mainToolBar())
+                       b->setVisible(show);
+               });
+    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowToolButtons,
+               this, // Needed
+               [this](bool const show) {
+                   if (auto * const b = buttonsToolBar())
+                       b->setVisible(show);
+               });
+    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowModuleChooser,
+               this, // Needed
+               [this](bool const show) {
+                   if (auto * const b = moduleChooserBar())
+                       b->setVisible(show);
+               });
+    BT_CONNECT(mainwindow, &BibleTime::toggledTextWindowFormatToolbar,
+               this, // Needed
+               [this](bool const show) {
+                   if (auto * const b = formatToolBar())
+                       b->setVisible(show);
+               });
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -349,19 +368,6 @@ void CDisplayWindow::slotRemoveModule(int index) {
     emit sigModuleListChanged();
 }
 
-/** Sets the new display options for this window. */
-void CDisplayWindow::setDisplayOptions(const DisplayOptions &displayOptions) {
-    m_displayOptions = displayOptions;
-    displayWidget()->setDisplayOptions(displayOptions);
-    emit sigDisplayOptionsChanged(m_displayOptions);
-}
-
-/** Sets the new filter options of this window. */
-void CDisplayWindow::setFilterOptions(const FilterOptions &filterOptions) {
-    m_filterOptions = filterOptions;
-    emit sigFilterOptionsChanged(m_filterOptions);
-}
-
 /** Returns true if the window may be closed. */
 bool CDisplayWindow::queryClose() {
     return true;
@@ -485,48 +491,32 @@ void CDisplayWindow::setFormatToolBar( QToolBar* bar ) {
 
 /** Sets the display settings button. */
 void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
-    BT_CONNECT(this,   SIGNAL(sigDisplayOptionsChanged(DisplayOptions const &)),
-               button, SLOT(setDisplayOptions(DisplayOptions const &)));
-    BT_CONNECT(this,   SIGNAL(sigFilterOptionsChanged(FilterOptions const &)),
-               button, SLOT(setFilterOptions(FilterOptions const &)));
-    BT_CONNECT(this,   SIGNAL(sigModulesChanged(BtConstModuleList const &)),
-               button, SLOT(setModules(BtConstModuleList const &)));
+    BT_CONNECT(this,   &CDisplayWindow::sigDisplayOptionsChanged,
+               button, &BtDisplaySettingsButton::setDisplayOptions);
+    BT_CONNECT(this,   &CDisplayWindow::sigFilterOptionsChanged,
+               button, &BtDisplaySettingsButton::setFilterOptions);
+    BT_CONNECT(this,   &CDisplayWindow::sigModulesChanged,
+               button, &BtDisplaySettingsButton::setModules);
 
-    button->setDisplayOptions(displayOptions(), false);
-    button->setFilterOptions(filterOptions(), false);
+    button->setDisplayOptionsNoRepopulate(displayOptions());
+    button->setFilterOptionsNoRepopulate(filterOptions());
     button->setModules(modules());
 
-    BT_CONNECT(button, SIGNAL(sigFilterOptionsChanged(FilterOptions const &)),
-               this,   SLOT(setFilterOptions(FilterOptions const &)));
-    BT_CONNECT(button, SIGNAL(sigDisplayOptionsChanged(DisplayOptions const &)),
-               this,   SLOT(setDisplayOptions(DisplayOptions const &)));
-    BT_CONNECT(button, SIGNAL(sigChanged()),
-               this,   SLOT(lookup()));
-}
-
-void CDisplayWindow::slotShowHeader(bool show) {
-    if (headerBar())
-        headerBar()->setVisible(show);
-}
-
-void CDisplayWindow::slotShowNavigator(bool show) {
-    if (mainToolBar())
-        mainToolBar()->setVisible(show);
-}
-
-void CDisplayWindow::slotShowToolButtons(bool show) {
-    if (buttonsToolBar())
-        buttonsToolBar()->setVisible(show);
-}
-
-void CDisplayWindow::slotShowModuleChooser(bool show) {
-    if (moduleChooserBar())
-        moduleChooserBar()->setVisible(show);
-}
-
-void CDisplayWindow::slotShowFormatToolBar(bool show) {
-    if (formatToolBar())
-        formatToolBar()->setVisible(show);
+    BT_CONNECT(button, &BtDisplaySettingsButton::sigFilterOptionsChanged,
+               this, // Needed
+               [this](FilterOptions const & filterOptions) {
+                   m_filterOptions = filterOptions;
+                   emit sigFilterOptionsChanged(m_filterOptions);
+               });
+    BT_CONNECT(button, &BtDisplaySettingsButton::sigDisplayOptionsChanged,
+               this, // Needed
+               [this](DisplayOptions const & displayOptions) {
+                   m_displayOptions = displayOptions;
+                   displayWidget()->setDisplayOptions(displayOptions);
+                   emit sigDisplayOptionsChanged(m_displayOptions);
+               });
+    BT_CONNECT(button, &BtDisplaySettingsButton::sigChanged,
+               this,   &CDisplayWindow::lookup);
 }
 
 /** Lookup the current key. Used to refresh the display. */
@@ -578,8 +568,8 @@ QMenu* CDisplayWindow::popup() {
     // qWarning("CReadWindow::popup()");
     if (!m_popupMenu) {
         m_popupMenu = new QMenu(this);
-        BT_CONNECT(m_popupMenu, SIGNAL(aboutToShow()),
-                   this,        SLOT(updatePopupMenu()));
+        BT_CONNECT(m_popupMenu, &QMenu::aboutToShow,
+                   [this]{ updatePopupMenu(); });
         if (displayWidget()) {
             displayWidget()->installPopup(m_popupMenu);
         }

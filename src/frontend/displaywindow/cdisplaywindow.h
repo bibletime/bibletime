@@ -223,12 +223,6 @@ public slots:
     /** Refresh the settings of this window.*/
     virtual void reload(CSwordBackend::SetupChangedReason reason);
 
-    void slotShowNavigator(bool show);
-    void slotShowToolButtons(bool show);
-    void slotShowModuleChooser(bool show);
-    void slotShowFormatToolBar(bool show);
-    void slotShowHeader(bool show);
-
 protected:
 
     friend class CBibleReadWindow;
@@ -294,15 +288,6 @@ protected:
     void clearMainWindowToolBars();
 
 protected slots:
-    /**
-          Sets the new filter options of this window.
-        */
-    void setFilterOptions(const FilterOptions &filterOptions);
-
-    /**
-          Sets the new display options for this window.
-        */
-    void setDisplayOptions(const DisplayOptions &displayOptions);
 
     virtual void modulesChanged();
 
