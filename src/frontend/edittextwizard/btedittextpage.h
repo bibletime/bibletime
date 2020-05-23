@@ -38,20 +38,6 @@ public: /* Methods: */
     void initializePage() final override;
     bool validatePage() final override;
 
-private slots:
-    void toggleBold(bool checked);
-    void toggleItalic(bool checked);
-    void toggleUnderline(bool checked);
-
-    void alignLeft(bool);
-    void alignCenter(bool);
-    void alignRight(bool);
-
-    void slotFontFamilyChosen(const QFont&);
-    void slotFontSizeChosen(int);
-
-    void slotCurrentCharFormatChanged(const QTextCharFormat &);
-
 signals:
 
     void signalFontChanged(const QFont &);
