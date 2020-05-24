@@ -17,6 +17,7 @@
 #include <QDockWidget>
 #include <QLabel>
 #include <QLocale>
+#include <QMdiSubWindow>
 #include <QMenu>
 #include <QMenuBar>
 #include <QPointer>
@@ -84,14 +85,16 @@ void BibleTime::initView() {
     m_magDock->setWidget(m_infoDisplay);
     addDockWidget(Qt::LeftDockWidgetArea, m_magDock);
 
-    BT_CONNECT(m_bookshelfDock, SIGNAL(moduleHovered(CSwordModuleInfo *)),
-               m_infoDisplay,   SLOT(setInfo(CSwordModuleInfo *)));
+    BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleHovered,
+               m_infoDisplay,
+               static_cast<void (CInfoDisplay::*)(CSwordModuleInfo *)>(
+                   &CInfoDisplay::setInfo));
 
     m_mdi->setMinimumSize(100, 100);
     m_mdi->setFocusPolicy(Qt::ClickFocus);
 
-    BT_CONNECT(&m_autoScrollTimer, SIGNAL(timeout()),
-               this, SLOT(slotAutoScroll()));
+    BT_CONNECT(&m_autoScrollTimer, &QTimer::timeout,
+               this, &BibleTime::slotAutoScroll);
 }
 
 // Creates QAction's for all actions that can have keyboard shortcuts
@@ -372,18 +375,17 @@ void BibleTime::createCentralWidget()
     widget->setLayout(layout);
     setCentralWidget(widget);
 
-    BT_CONNECT(m_findWidget, SIGNAL(findNext(QString const &,bool)),
-               m_mdi, SLOT(findNextTextInActiveWindow(QString const &, bool)));
+    BT_CONNECT(m_findWidget, &BtFindWidget::findNext,
+               m_mdi,        &CMDIArea::findNextTextInActiveWindow);
 
-    BT_CONNECT(m_findWidget, SIGNAL(findPrevious(QString const &,bool)),
-               m_mdi,
-               SLOT(findPreviousTextInActiveWindow(QString const &, bool)));
+    BT_CONNECT(m_findWidget, &BtFindWidget::findPrevious,
+               m_mdi,        &CMDIArea::findPreviousTextInActiveWindow);
 
-    BT_CONNECT(m_findWidget, SIGNAL(highlightText(QString const &,bool)),
-               m_mdi, SLOT(highlightTextInActiveWindow(QString const &, bool)));
+    BT_CONNECT(m_findWidget, &BtFindWidget::highlightText,
+               m_mdi,        &CMDIArea::highlightTextInActiveWindow);
 
-    BT_CONNECT(m_mdi, SIGNAL(subWindowActivated(QMdiSubWindow *)),
-               this, SLOT(slotActiveWindowChanged(QMdiSubWindow *)));
+    BT_CONNECT(m_mdi, &CMDIArea::subWindowActivated,
+               this,  &BibleTime::slotActiveWindowChanged);
 }
 
 /** Initializes the action objects of the GUI */
@@ -393,30 +395,31 @@ void BibleTime::initActions() {
 
     // File menu actions:
     m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
-    BT_CONNECT(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo *)),
-               this, SLOT(createReadDisplayWindow(CSwordModuleInfo *)));
+    BT_CONNECT(m_openWorkAction, &BtOpenWorkAction::triggered,
+               [this](CSwordModuleInfo * const module)
+               { createReadDisplayWindow(module); });
 
     m_quitAction = &m_actionCollection->action("quit");
     m_quitAction->setMenuRole(QAction::QuitRole);
-    BT_CONNECT(m_quitAction, SIGNAL(triggered()),
-               this,         SLOT(quit()));
+    BT_CONNECT(m_quitAction, &QAction::triggered,
+               this,         &BibleTime::quit);
 
     // AutoScroll actions:
     m_autoScrollUpAction = &m_actionCollection->action("autoScrollUp");
-    BT_CONNECT(m_autoScrollUpAction, SIGNAL(triggered()),
-               this,                SLOT(autoScrollUp()));
+    BT_CONNECT(m_autoScrollUpAction, &QAction::triggered,
+               this,                 &BibleTime::autoScrollUp);
     m_autoScrollDownAction = &m_actionCollection->action("autoScrollDown");
-    BT_CONNECT(m_autoScrollDownAction, SIGNAL(triggered()),
-               this,                SLOT(autoScrollDown()));
+    BT_CONNECT(m_autoScrollDownAction, &QAction::triggered,
+               this,                   &BibleTime::autoScrollDown);
     m_autoScrollPauseAction = &m_actionCollection->action("autoScrollPause");
-    BT_CONNECT(m_autoScrollPauseAction, SIGNAL(triggered()),
-               this,                SLOT(autoScrollPause()));
+    BT_CONNECT(m_autoScrollPauseAction, &QAction::triggered,
+               this,                    &BibleTime::autoScrollPause);
 
     // View menu actions:
     m_windowFullscreenAction = &m_actionCollection->action("toggleFullscreen");
     m_windowFullscreenAction->setCheckable(true);
-    BT_CONNECT(m_windowFullscreenAction, SIGNAL(triggered()),
-               this,                     SLOT(toggleFullscreen()));
+    BT_CONNECT(m_windowFullscreenAction, &QAction::triggered,
+               this,                     &BibleTime::toggleFullscreen);
 
     // Special case these actions, overwrite those already in collection
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
@@ -439,83 +442,83 @@ void BibleTime::initActions() {
             &m_actionCollection->action("showParallelTextHeaders");
     m_showTextAreaHeadersAction->setCheckable(true);
     m_showTextAreaHeadersAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowHeaders", true));
-    BT_CONNECT(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
-               this,                        SLOT(slotToggleTextWindowHeader()));
+    BT_CONNECT(m_showTextAreaHeadersAction, &QAction::toggled,
+               this, &BibleTime::slotToggleTextWindowHeader);
 
     m_showMainWindowToolbarAction = &m_actionCollection->action("showToolbar");
     m_showMainWindowToolbarAction->setCheckable(true);
     m_showMainWindowToolbarAction->setChecked(btConfig().sessionValue<bool>("GUI/showMainToolbar", true));
-    BT_CONNECT(m_showMainWindowToolbarAction, SIGNAL(triggered()),
-               this, SLOT(slotToggleMainToolbar()));
+    BT_CONNECT(m_showMainWindowToolbarAction, &QAction::triggered,
+               this, &BibleTime::slotToggleMainToolbar);
 
     m_showTextWindowNavigationAction =
             &m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
-    BT_CONNECT(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
-               this, SLOT(slotToggleNavigatorToolbar()));
+    BT_CONNECT(m_showTextWindowNavigationAction, &QAction::toggled,
+               this, &BibleTime::slotToggleNavigatorToolbar);
 
     m_showTextWindowModuleChooserAction =
             &m_actionCollection->action("showWorks");
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
-    BT_CONNECT(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
-               this, SLOT(slotToggleWorksToolbar()));
+    BT_CONNECT(m_showTextWindowModuleChooserAction, &QAction::toggled,
+               this, &BibleTime::slotToggleWorksToolbar);
 
     m_showTextWindowToolButtonsAction =
             &m_actionCollection->action("showTools");
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
-    BT_CONNECT(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
-               this, SLOT(slotToggleToolsToolbar()));
+    BT_CONNECT(m_showTextWindowToolButtonsAction, &QAction::toggled,
+               this, &BibleTime::slotToggleToolsToolbar);
 
     m_showFormatToolbarAction = &m_actionCollection->action("showFormat");
     m_showFormatToolbarAction->setCheckable(true);
     m_showFormatToolbarAction->setChecked(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
-    BT_CONNECT(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
-               this,                      SLOT(slotToggleFormatToolbar()));
+    BT_CONNECT(m_showFormatToolbarAction, &QAction::toggled,
+               this,                      &BibleTime::slotToggleFormatToolbar);
 
     m_toolbarsInEachWindow =
             &m_actionCollection->action("showToolbarsInTextWindows");
     m_toolbarsInEachWindow->setCheckable(true);
     m_toolbarsInEachWindow->setChecked(btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
-    BT_CONNECT(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
-               this,                   SLOT(slotToggleToolBarsInEachWindow()));
+    BT_CONNECT(m_toolbarsInEachWindow, &QAction::toggled,
+               this, &BibleTime::slotToggleToolBarsInEachWindow);
 
     // Search menu actions:
     m_searchOpenWorksAction = &m_actionCollection->action("searchOpenWorks");
-    BT_CONNECT(m_searchOpenWorksAction, SIGNAL(triggered()),
-               this,                    SLOT(slotSearchModules()));
+    BT_CONNECT(m_searchOpenWorksAction, &QAction::triggered,
+               this,                    &BibleTime::slotSearchModules);
 
     m_searchStandardBibleAction = &m_actionCollection->action("searchStdBible");
-    BT_CONNECT(m_searchStandardBibleAction, SIGNAL(triggered()),
-               this,                        SLOT(slotSearchDefaultBible()));
+    BT_CONNECT(m_searchStandardBibleAction, &QAction::triggered,
+               this,                        &BibleTime::slotSearchDefaultBible);
 
     // Window menu actions:
     m_windowCloseAction = &m_actionCollection->action("closeWindow");
-    BT_CONNECT(m_windowCloseAction, SIGNAL(triggered()),
-               m_mdi,               SLOT(closeActiveSubWindow()));
+    BT_CONNECT(m_windowCloseAction, &QAction::triggered,
+               m_mdi,               &CMDIArea::closeActiveSubWindow);
 
     m_windowCloseAllAction = &m_actionCollection->action("closeAllWindows");
-    BT_CONNECT(m_windowCloseAllAction, SIGNAL(triggered()),
-               m_mdi,                 SLOT(closeAllSubWindows()));
+    BT_CONNECT(m_windowCloseAllAction, &QAction::triggered,
+               m_mdi,                  &CMDIArea::closeAllSubWindows);
 
     m_windowCascadeAction = &m_actionCollection->action("cascade");
-    BT_CONNECT(m_windowCascadeAction, SIGNAL(triggered()),
-               this,                  SLOT(slotCascade()));
+    BT_CONNECT(m_windowCascadeAction, &QAction::triggered,
+               this,                  &BibleTime::slotCascade);
 
     m_windowTileAction = &m_actionCollection->action("tile");
-    BT_CONNECT(m_windowTileAction, SIGNAL(triggered()),
-               this,               SLOT(slotTile()));
+    BT_CONNECT(m_windowTileAction, &QAction::triggered,
+               this,               &BibleTime::slotTile);
 
     m_windowTileVerticalAction = &m_actionCollection->action("tileVertically");
-    BT_CONNECT(m_windowTileVerticalAction, SIGNAL(triggered()),
-               this,                       SLOT(slotTileVertical()));
+    BT_CONNECT(m_windowTileVerticalAction, &QAction::triggered,
+               this,                       &BibleTime::slotTileVertical);
 
     m_windowTileHorizontalAction =
             &m_actionCollection->action("tileHorizontally");
-    BT_CONNECT(m_windowTileHorizontalAction, SIGNAL(triggered()),
-               this,                         SLOT(slotTileHorizontal()));
+    BT_CONNECT(m_windowTileHorizontalAction, &QAction::triggered,
+               this,                         &BibleTime::slotTileHorizontal);
 
     alignmentMode alignment = btConfig().sessionValue<alignmentMode>("GUI/alignmentMode", autoTileVertical);
 
@@ -566,35 +569,35 @@ void BibleTime::initActions() {
 
     m_windowSaveToNewProfileAction =
             &m_actionCollection->action("saveNewSession");
-    BT_CONNECT(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
-               this,                           SLOT(saveToNewProfile()));
+    BT_CONNECT(m_windowSaveToNewProfileAction, &QAction::triggered,
+               this,                           &BibleTime::saveToNewProfile);
 
     m_setPreferencesAction = &m_actionCollection->action("setPreferences");
     m_setPreferencesAction->setMenuRole( QAction::PreferencesRole );
-    BT_CONNECT(m_setPreferencesAction, SIGNAL(triggered()),
-               this,                   SLOT(slotSettingsOptions()));
+    BT_CONNECT(m_setPreferencesAction, &QAction::triggered,
+               this,                   &BibleTime::slotSettingsOptions);
 
     m_bookshelfWizardAction = &m_actionCollection->action("bookshelfWizard");
     m_bookshelfWizardAction->setMenuRole( QAction::ApplicationSpecificRole );
-    BT_CONNECT(m_bookshelfWizardAction, SIGNAL(triggered()),
-               this,                     SLOT(slotBookshelfWizard()));
+    BT_CONNECT(m_bookshelfWizardAction, &QAction::triggered,
+               this,                    &BibleTime::slotBookshelfWizard);
 
     m_openHandbookAction = &m_actionCollection->action("openHandbook");
-    BT_CONNECT(m_openHandbookAction, SIGNAL(triggered()),
-               this,                 SLOT(openOnlineHelp_Handbook()));
+    BT_CONNECT(m_openHandbookAction, &QAction::triggered,
+               this,                 &BibleTime::openOnlineHelp_Handbook);
 
     m_bibleStudyHowtoAction = &m_actionCollection->action("bibleStudyHowto");
-    BT_CONNECT(m_bibleStudyHowtoAction, SIGNAL(triggered()),
-               this,                    SLOT(openOnlineHelp_Howto()));
+    BT_CONNECT(m_bibleStudyHowtoAction, &QAction::triggered,
+               this,                    &BibleTime::openOnlineHelp_Howto);
 
     m_aboutBibleTimeAction = &m_actionCollection->action("aboutBibleTime");
     m_aboutBibleTimeAction->setMenuRole( QAction::AboutRole );
-    BT_CONNECT(m_aboutBibleTimeAction, SIGNAL(triggered()),
-               this,                   SLOT(slotOpenAboutDialog()) );
+    BT_CONNECT(m_aboutBibleTimeAction, &QAction::triggered,
+               this,                   &BibleTime::slotOpenAboutDialog);
 
     m_tipOfTheDayAction = &m_actionCollection->action("tipOfTheDay");
-    BT_CONNECT(m_tipOfTheDayAction, SIGNAL(triggered()),
-               this,                SLOT(slotOpenTipDialog()) );
+    BT_CONNECT(m_tipOfTheDayAction, &QAction::triggered,
+               this,                &BibleTime::slotOpenTipDialog);
 
     #ifndef NDEBUG
     m_debugWidgetAction = new QAction(this);
@@ -651,8 +654,8 @@ void BibleTime::initMenubar() {
     // Window menu:
     m_windowMenu = new QMenu(this);
     m_openWindowsMenu = new QMenu(this);
-    BT_CONNECT(m_openWindowsMenu, SIGNAL(aboutToShow()),
-               this,              SLOT(slotOpenWindowsMenuAboutToShow()));
+    BT_CONNECT(m_openWindowsMenu, &QMenu::aboutToShow,
+               this,              &BibleTime::slotOpenWindowsMenuAboutToShow);
     m_windowMenu->addMenu(m_openWindowsMenu);
     m_windowMenu->addAction(m_windowCloseAction);
     m_windowMenu->addAction(m_windowCloseAllAction);
@@ -675,8 +678,8 @@ void BibleTime::initMenubar() {
     m_windowArrangementActionGroup->addAction(m_windowAutoTileAction);
     m_windowArrangementMenu->addAction(m_windowAutoCascadeAction);
     m_windowArrangementActionGroup->addAction(m_windowAutoCascadeAction);
-    BT_CONNECT(m_windowArrangementActionGroup, SIGNAL(triggered(QAction *)),
-               this, SLOT(slotUpdateWindowArrangementActions(QAction *)));
+    BT_CONNECT(m_windowArrangementActionGroup, &QActionGroup::triggered,
+               this, &BibleTime::slotUpdateWindowArrangementActions);
 
     m_windowMenu->addMenu(m_windowArrangementMenu);
     m_windowMenu->addSeparator();
@@ -686,14 +689,16 @@ void BibleTime::initMenubar() {
     m_windowMenu->addMenu(m_windowLoadProfileMenu);
     m_windowDeleteProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowDeleteProfileMenu);
-    BT_CONNECT(m_windowLoadProfileMenu, SIGNAL(triggered(QAction *)),
-               this,                    SLOT(loadProfile(QAction *)));
-    BT_CONNECT(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction *)),
-               this,                      SLOT(deleteProfile(QAction *)));
+    BT_CONNECT(m_windowLoadProfileMenu, &QMenu::triggered,
+               this,
+               static_cast<void (BibleTime::*)(QAction *)>(
+                   &BibleTime::loadProfile));
+    BT_CONNECT(m_windowDeleteProfileMenu, &QMenu::triggered,
+               this,                      &BibleTime::deleteProfile);
     refreshProfileMenus();
     menuBar()->addMenu(m_windowMenu);
-    BT_CONNECT(m_windowMenu, SIGNAL(aboutToShow()),
-               this,         SLOT(slotWindowMenuAboutToShow()));
+    BT_CONNECT(m_windowMenu, &QMenu::aboutToShow,
+               this,         &BibleTime::slotWindowMenuAboutToShow);
 
     #ifndef Q_OS_MAC
     m_settingsMenu = new QMenu(this);
@@ -794,25 +799,25 @@ void BibleTime::retranslateUiActions(BtActionCollection* ac) {
 /** Initializes the SIGNAL / SLOT connections */
 void BibleTime::initConnections() {
     // Bookmarks page connections:
-    BT_CONNECT(m_bookmarksPage,
-               SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo *>,
-                                              QString const &)),
+    BT_CONNECT(m_bookmarksPage, &CBookmarkIndex::createReadDisplayWindow,
                this,
-               SLOT(createReadDisplayWindow(QList<CSwordModuleInfo *>,
-                                            QString const &)));
+               static_cast<CDisplayWindow * (BibleTime::*)(
+                                                QList<CSwordModuleInfo *>,
+                                                QString const &)>(
+                   &BibleTime::createReadDisplayWindow));
 
     // Bookshelf dock connections:
-    BT_CONNECT(m_bookshelfDock, SIGNAL(moduleOpenTriggered(CSwordModuleInfo *)),
-               this, SLOT(createReadDisplayWindow(CSwordModuleInfo *)));
-    BT_CONNECT(m_bookshelfDock,
-               SIGNAL(moduleSearchTriggered(CSwordModuleInfo *)),
-               this, SLOT(searchInModule(CSwordModuleInfo *)));
-    BT_CONNECT(m_bookshelfDock,
-               SIGNAL(moduleUnlockTriggered(CSwordModuleInfo *)),
-               this, SLOT(slotModuleUnlock(CSwordModuleInfo *)));
-    BT_CONNECT(m_bookshelfDock,
-               SIGNAL(moduleAboutTriggered(CSwordModuleInfo *)),
-               this, SLOT(moduleAbout(CSwordModuleInfo *)));
+    BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleOpenTriggered,
+               [this](CSwordModuleInfo * const module)
+               { createReadDisplayWindow(module); });
+    BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleSearchTriggered,
+               this,
+               static_cast<void (BibleTime::*)(CSwordModuleInfo *)>(
+                   &BibleTime::searchInModule));
+    BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleUnlockTriggered,
+               this,            &BibleTime::slotModuleUnlock);
+    BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleAboutTriggered,
+               this,            &BibleTime::moduleAbout);
 }
 
 void BibleTime::initSwordConfigFile() {
