@@ -23,11 +23,6 @@
 #include "../messagedialog.h"
 
 
-void BtWelcomeDialog::openWelcome() {
-    BtWelcomeDialog dlg(BibleTime::instance());
-    dlg.exec();
-}
-
 BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
     : QDialog(parent, wflags)
 {
@@ -35,7 +30,7 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
     setWindowIcon(CResMgr::mainMenu::help::tipOfTheDay::icon());
     resize(560, 300);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout;
+    QVBoxLayout * mainLayout = new QVBoxLayout(this);
 
     m_iconLabel = new QLabel(this);
     m_iconLabel->setPixmap(BtIcons::instance().icon_bibletime.pixmap(48));
@@ -49,11 +44,11 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     m_buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
 
-    m_installButton = m_buttonBox->addButton(
-                "", QDialogButtonBox::AcceptRole);
+    m_installButton = m_buttonBox->addButton(QString(),
+                                             QDialogButtonBox::AcceptRole);
 
-    m_laterButton = m_buttonBox->addButton(
-                "", QDialogButtonBox::RejectRole);
+    m_laterButton = m_buttonBox->addButton(QString(),
+                                           QDialogButtonBox::RejectRole);
 
     mainLayout->addWidget(m_buttonBox);
 
@@ -71,27 +66,30 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
                });
 }
 
+void BtWelcomeDialog::openWelcome()
+{ BtWelcomeDialog(BibleTime::instance()).exec(); }
+
 void BtWelcomeDialog::retranslateUi() {
     setWindowTitle(tr("Welcome to BibleTime"));
 
-    QString msg("<p>");
-    msg += tr("BibleTime is an easy to use but powerful Bible study tool.");
-    msg += "</p><p>";
-    msg += tr("Before you can use this application some works must be installed. ");
-    msg += tr("Various works such as Bibles, books, commentaries, and lexicons are available from remote libraries. ");
-    msg += "</p><p>";
-    msg += tr("Choose the \"Install works\" button to download works. ");
-    msg += tr("The menu \"Settings > Bookshelf Manager\" also installs works and can be used later.");
-    m_label->setText(msg);
+    m_label->setText(
+                QString("<p>%1</p><p>%2</p><p>%3</p>")
+                    .arg(tr("BibleTime is an easy to use but powerful Bible "
+                            "study tool."))
+                    .arg(tr("Before you can use this application some works "
+                            "must be installed. Various works such as Bibles, "
+                            "books, commentaries, and lexicons are available "
+                            "from remote libraries."))
+                    .arg(tr("Choose the \"Install works\" button to download "
+                            "works. The menu \"Settings > Bookshelf Manager\" "
+                            "also installs works and can be used later.")));
 
     m_laterButton->setText(tr("Install later"));
 
-    m_installButton->setText( QString("      ") + tr("Install works...") + QString("      "));
-    QFont font = m_installButton->font();
+    m_installButton->setText(
+                QString("      %1      ").arg(tr("Install works...")));
+
+    QFont font(m_installButton->font());
     font.setBold(true);
     m_installButton->setFont(font);
 }
-
-//void BtWelcomeDialog::linkClicked(const QUrl& url) {
-//    QDesktopServices::openUrl(url);
-//}

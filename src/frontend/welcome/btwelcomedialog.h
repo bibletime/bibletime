@@ -15,29 +15,34 @@
 
 #include <QDialog>
 
+
 class QDialogButtonBox;
 class QLabel;
+class QPushButton;
 
 class BtWelcomeDialog: public QDialog {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
 
-    BtWelcomeDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
+    BtWelcomeDialog(QWidget * parent = nullptr,
+                    Qt::WindowFlags wflags = Qt::Dialog);
 
     static void openWelcome();
 
-protected:
+protected: /* Methods: */
+
     void retranslateUi();
 
-private:
+private: /* Fields: */
 
-    QLabel *m_iconLabel;
-    QLabel *m_label;
-    QPushButton *m_laterButton;
-    QPushButton *m_installButton;
-    QDialogButtonBox* m_buttonBox;
+    QLabel * m_iconLabel;
+    QLabel * m_label;
+    QPushButton * m_laterButton;
+    QPushButton * m_installButton;
+    QDialogButtonBox * m_buttonBox;
+
 };
 
 #endif
