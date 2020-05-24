@@ -41,11 +41,9 @@ IF(WIN32)
     ADD_COMPILE_OPTIONS("/Zi")
 ELSE()
     ADD_COMPILE_OPTIONS(
-        "-ggdb" "-Wall" "-Wextra"
-        "$<$<STREQUAL:$<CONFIGURATION>,Release>:-O2>"
+        "-O2" "-ggdb" "-Wall" "-Wextra"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
         "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DQT_NO_DEBUG>"
-        "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
     )
 ENDIF()
 UNSET(BibleTime_CXXFLAGS)
