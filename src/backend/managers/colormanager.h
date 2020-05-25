@@ -20,27 +20,30 @@
 
 class ColorManager {
 
-public: /* Types: */
+private: /* Types: */
 
-    typedef QMap<QString, QString> ColorMap;
+    using ColorMap = QMap<QString, QString>;
 
 public: /* Methods: */
 
     static ColorManager & instance();
 
-    QString loadColorMaps();
-    QString replaceColors(const QString& content);
-    QString getBackgroundColor(const QString& style = QString());
-    QString getForegroundColor(const QString& style = QString());
-    QString getCrossRefColor(const QString& style = QString());
+    void loadColorMaps();
+    QString replaceColors(QString content);
+    QString getBackgroundColor(QString const & style = QString());
+    QString getForegroundColor(QString const & style = QString());
+    QString getCrossRefColor(QString const & style = QString());
 
-private: /* Fields: */
+private: /* Methods: */
 
     ColorManager();
     ColorMap createColorMapWithDefaults();
     bool darkMode() const;
-    QString getColorByPattern(const QString& pattern, const QString& style = QString());
-    void loadColorMap(const QString & filename);
+    QString getColorByPattern(QString const & pattern,
+                              QString const & style = QString());
+    void loadColorMap(QString const & filename);
+
+private: /* Fields: */
 
     QMap<QString, ColorMap> m_colorMaps;
 
