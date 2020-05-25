@@ -141,7 +141,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
 
     const LoadError ret = static_cast<LoadError>(load());
 
-    for (auto const & modulePair : Modules) {
+    for (auto const & modulePair : getModules()) {
         sword::SWModule * const curMod = modulePair.second;
         BT_ASSERT(curMod);
         CSwordModuleInfo * newModule;
