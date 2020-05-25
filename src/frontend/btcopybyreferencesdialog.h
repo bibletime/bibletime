@@ -23,7 +23,6 @@ class QComboBox;
 class QDialogButtonBox;
 class QLabel;
 class CKeyChooser;
-class BtConstModuleList;
 class BTHistory;
 class CSwordKey;
 class BtModuleTextModel;

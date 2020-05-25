@@ -17,20 +17,7 @@
 
 class CSwordModuleInfo;
 
-using BtModuleList = QList<CSwordModuleInfo *>; /*
-using BtConstModuleList = QList<CSwordModuleInfo const *>; */
-
-class BtConstModuleList : public QList<CSwordModuleInfo const *> {
-public: /* Methods */
-    inline BtConstModuleList() {}
-    inline BtConstModuleList(BtModuleList const & other) {
-        Q_FOREACH(CSwordModuleInfo const * const m, other)
-            this->append(m);
-    }
-    inline BtConstModuleList(QList<CSwordModuleInfo const *> const & other) {
-        Q_FOREACH(CSwordModuleInfo const * const m, other)
-            this->append(m);
-    }
-};
+using BtModuleList = QList<CSwordModuleInfo *>;
+using BtConstModuleList = QList<CSwordModuleInfo const *>;
 
 #endif // BTMODULELIST_H

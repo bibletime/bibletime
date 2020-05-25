@@ -25,7 +25,6 @@
 class BtQuickWidget;
 class BtTextFilter;
 class BtQmlInterface;
-class BtConstModuleList;
 class CReadDisplay;
 class CSwordModuleInfo;
 class CSwordKey;
