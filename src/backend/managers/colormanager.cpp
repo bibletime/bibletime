@@ -17,6 +17,7 @@
 #include <QDir>
 #include <QPalette>
 #include <QSettings>
+#include <utility>
 #include "../../util/directory.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 
@@ -57,20 +58,20 @@ QString ColorManager::loadColorMaps() {
     return errorMessage;
 }
 
-ColorManager::ColorMap* ColorManager::createColorMapWithDefaults(){
-    ColorMap * colorDefs = new ColorMap();
+ColorManager::ColorMap ColorManager::createColorMapWithDefaults(){
+    ColorMap colorDefs;
     if (darkMode()) {
-        colorDefs->insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
-        colorDefs->insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
-        colorDefs->insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
-        colorDefs->insert("CROSSREF_COLOR",  QColor("#aac2ff").name());
-        colorDefs->insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
+        colorDefs.insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
+        colorDefs.insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
+        colorDefs.insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
+        colorDefs.insert("CROSSREF_COLOR",  QColor("#aac2ff").name());
+        colorDefs.insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
     } else {
-        colorDefs->insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
-        colorDefs->insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
-        colorDefs->insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
-        colorDefs->insert("CROSSREF_COLOR",  QColor("#1414ff").name());
-        colorDefs->insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
+        colorDefs.insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
+        colorDefs.insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
+        colorDefs.insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
+        colorDefs.insert("CROSSREF_COLOR",  QColor("#1414ff").name());
+        colorDefs.insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
     }
     return colorDefs;
 }
@@ -80,32 +81,27 @@ void ColorManager::loadColorMap(const QString & filePath) {
     QString cMapPath = cssInfo.path() + "/" + cssInfo.completeBaseName() + ".cmap";
     QFileInfo cMapInfo(cMapPath);
     QString fileName = cssInfo.fileName();
-    ColorMap * colorMap = createColorMapWithDefaults();
+    auto colorMap(createColorMapWithDefaults());
     if (cMapInfo.exists()) {
         QString group = darkMode()? "dark": "light";
         QSettings cMapSettings(cMapPath, QSettings::IniFormat);
-        if (m_colorMaps.contains(fileName)) {
-            ColorMap * oldMap = m_colorMaps.value(fileName);
-            delete oldMap;
-        }
         cMapSettings.beginGroup(group);
         QStringList colorKeys = cMapSettings.childKeys();
         for (QString colorKey:colorKeys) {
             QString value = cMapSettings.value(colorKey).toString();
-            colorMap->insert(colorKey,value);
+            colorMap.insert(colorKey,value);
         }
     }
-    m_colorMaps.insert(fileName, colorMap);
+    m_colorMaps[fileName] = std::move(colorMap);
 }
 
 QString ColorManager::replaceColors(const QString& content) {
     QString activeTemplate = CDisplayTemplateMgr::activeTemplateName();
-    ColorMap * colorMap = m_colorMaps[activeTemplate];
+    ColorMap const & colorMap = m_colorMaps[activeTemplate];
     QString newContent = content;
-    QStringList keys = colorMap->keys();
-    for (QString key : keys) {
+    for (auto const & key : colorMap.keys()) {
         QString pattern = "#" + key + "#";
-        QString value = colorMap->value(key);
+        auto value(colorMap.value(key));
         newContent = newContent.replace(pattern, value);
     }
     return newContent;
@@ -115,9 +111,10 @@ QString ColorManager::getColorByPattern(const QString& pattern, const QString& s
     QString activeTemplate;
     if (style.isEmpty())
         activeTemplate = CDisplayTemplateMgr::activeTemplateName();
-    ColorMap * colorMap = m_colorMaps[activeTemplate];
-    BT_ASSERT(colorMap != nullptr);
-    QString value = colorMap->value(pattern);
+    auto const it(m_colorMaps.find(activeTemplate));
+    BT_ASSERT(it != m_colorMaps.end());
+    ColorMap const & colorMap = *it;
+    auto value(colorMap.value(pattern));
     BT_ASSERT(!value.isEmpty());
     return value;
 }

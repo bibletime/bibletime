@@ -40,12 +40,12 @@ public: /* Methods: */
 private: /* Fields: */
 
     ColorManager(QObject * parent = nullptr);
-    ColorMap * createColorMapWithDefaults();
+    ColorMap createColorMapWithDefaults();
     bool darkMode() const;
     QString getColorByPattern(const QString& pattern, const QString& style = QString());
     void loadColorMap(const QString & filename);
 
-    QMap<QString, ColorMap *> m_colorMaps;
+    QMap<QString, ColorMap> m_colorMaps;
 
 }; /* class ColorManager */
 
