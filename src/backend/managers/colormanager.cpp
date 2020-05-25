@@ -69,7 +69,6 @@ ColorMap* ColorManager::createColorMapWithDefaults(){
         colorDefs->insert("CROSSREF_COLOR",  QColor("#aac2ff").name());
         colorDefs->insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
     } else {
-        colorDefs = new QMap<QString, QString>();
         colorDefs->insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
         colorDefs->insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
         colorDefs->insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
@@ -87,18 +86,17 @@ void ColorManager::loadColorMap(const QString & filePath) {
     ColorMap * colorMap = createColorMapWithDefaults();
     if (cMapInfo.exists()) {
         QString group = darkMode()? "dark": "light";
-        QSettings * cMapSettings = new QSettings(cMapPath,QSettings::IniFormat);
+        QSettings cMapSettings(cMapPath, QSettings::IniFormat);
         if (m_colorMaps.contains(fileName)) {
             ColorMap * oldMap = m_colorMaps.value(fileName);
             delete oldMap;
         }
-        cMapSettings->beginGroup(group);
-        QStringList colorKeys = cMapSettings->childKeys();
+        cMapSettings.beginGroup(group);
+        QStringList colorKeys = cMapSettings.childKeys();
         for (QString colorKey:colorKeys) {
-            QString value = cMapSettings->value(colorKey).toString();
+            QString value = cMapSettings.value(colorKey).toString();
             colorMap->insert(colorKey,value);
         }
-        cMapSettings->endGroup();
     }
     m_colorMaps.insert(fileName, colorMap);
 }
