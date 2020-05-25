@@ -1,4 +1,3 @@
-
 /*********
 *
 * In the name of the Father, and of the Son, and of the Holy Spirit.
@@ -20,10 +19,6 @@
 
 class ColorManager {
 
-private: /* Types: */
-
-    using ColorMap = std::map<QString, QString>;
-
 public: /* Methods: */
 
     static ColorManager & instance();
@@ -37,15 +32,10 @@ public: /* Methods: */
 private: /* Methods: */
 
     ColorManager();
-    ColorMap createColorMapWithDefaults();
-    bool darkMode() const;
-    QString getColorByPattern(QString const & pattern,
-                              QString const & style = QString());
-    void loadColorMap(QString const & filename);
 
 private: /* Fields: */
 
-    std::map<QString, ColorMap> m_colorMaps;
+    std::map<QString, std::map<QString, QString> > m_colorMaps;
 
 }; /* class ColorManager */
 
