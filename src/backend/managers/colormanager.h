@@ -14,7 +14,7 @@
 #ifndef COLORMANAGER_H
 #define COLORMANAGER_H
 
-#include <QMap>
+#include <map>
 #include <QString>
 
 
@@ -22,7 +22,7 @@ class ColorManager {
 
 private: /* Types: */
 
-    using ColorMap = QMap<QString, QString>;
+    using ColorMap = std::map<QString, QString>;
 
 public: /* Methods: */
 
@@ -45,7 +45,7 @@ private: /* Methods: */
 
 private: /* Fields: */
 
-    QMap<QString, ColorMap> m_colorMaps;
+    std::map<QString, ColorMap> m_colorMaps;
 
 }; /* class ColorManager */
 

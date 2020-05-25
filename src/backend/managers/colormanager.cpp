@@ -51,17 +51,17 @@ void ColorManager::loadColorMaps() {
 ColorManager::ColorMap ColorManager::createColorMapWithDefaults(){
     ColorMap colorDefs;
     if (darkMode()) {
-        colorDefs.insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
-        colorDefs.insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
-        colorDefs.insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
-        colorDefs.insert("CROSSREF_COLOR",  QColor("#aac2ff").name());
-        colorDefs.insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
+        colorDefs.emplace("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
+        colorDefs.emplace("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
+        colorDefs.emplace("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
+        colorDefs.emplace("CROSSREF_COLOR",  QColor("#aac2ff").name());
+        colorDefs.emplace("JESUS_WORDS_COLOR",QColor("#ff0000").name());
     } else {
-        colorDefs.insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
-        colorDefs.insert("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
-        colorDefs.insert("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
-        colorDefs.insert("CROSSREF_COLOR",  QColor("#1414ff").name());
-        colorDefs.insert("JESUS_WORDS_COLOR",QColor("#ff0000").name());
+        colorDefs.emplace("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
+        colorDefs.emplace("BACKGROUND_COLOR", qApp->palette().color(QPalette::Base).name());
+        colorDefs.emplace("HIGHLIGHT_COLOR",  QColor("#ffff00").name());
+        colorDefs.emplace("CROSSREF_COLOR",  QColor("#1414ff").name());
+        colorDefs.emplace("JESUS_WORDS_COLOR",QColor("#ff0000").name());
     }
     return colorDefs;
 }
@@ -78,16 +78,15 @@ void ColorManager::loadColorMap(QString const & filePath) {
         static QString const light("light");
         cMapSettings.beginGroup(darkMode() ? dark : light);
         for (auto const & colorKey : cMapSettings.childKeys())
-            colorMap.insert(colorKey, cMapSettings.value(colorKey).toString());
+            colorMap.emplace(colorKey, cMapSettings.value(colorKey).toString());
     }
     m_colorMaps[std::move(fileName)] = std::move(colorMap);
 }
 
 QString ColorManager::replaceColors(QString content) {
     auto const activeTemplate(CDisplayTemplateMgr::activeTemplateName());
-    auto const & colorMap = m_colorMaps[activeTemplate];
-    for (auto const & key : colorMap.keys())
-        content.replace(QString("#%1#").arg(key), colorMap.value(key));
+    for (auto const & [key, value] : m_colorMaps[activeTemplate])
+        content.replace(QString("#%1#").arg(key), value);
     return content;
 }
 
@@ -97,11 +96,12 @@ QString ColorManager::getColorByPattern(QString const & pattern,
     QString activeTemplate;
     if (style.isEmpty())
         activeTemplate = CDisplayTemplateMgr::activeTemplateName();
-    auto const it(m_colorMaps.find(activeTemplate));
-    BT_ASSERT(it != m_colorMaps.end());
-    auto value(it->value(pattern));
-    BT_ASSERT(!value.isEmpty());
-    return value;
+    auto const mapIt(m_colorMaps.find(activeTemplate));
+    BT_ASSERT(mapIt != m_colorMaps.end());
+    auto const valueIt(mapIt->second.find(pattern));
+    BT_ASSERT(valueIt != mapIt->second.end());
+    BT_ASSERT(!valueIt->second.isEmpty());
+    return valueIt->second;
 }
 
 QString ColorManager::getBackgroundColor(QString const & style)
