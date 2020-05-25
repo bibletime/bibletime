@@ -18,30 +18,35 @@
 #include <QObject>
 #include <QString>
 
-typedef QMap<QString, QString> ColorMap;
-typedef QMap<QString, ColorMap *> ColorMaps;
 
 class ColorManager : public QObject {
 
-    Q_OBJECT
+Q_OBJECT
 
-    public: 
-        static ColorManager * instance();
-        QString loadColorMaps();
-        ColorMap* createColorMapWithDefaults();
-        QString replaceColors(const QString& content);
-        QString getBackgroundColor(const QString& style = QString());
-        QString getForegroundColor(const QString& style = QString());
-        QString getCrossRefColor(const QString& style = QString());
+public: /* Types: */
 
-    private: 
-        ColorManager(QObject * parent = nullptr);
-        bool darkMode() const;
-        QString getColorByPattern(const QString& pattern, const QString& style = QString());
-        void loadColorMap(const QString & filename);
+    typedef QMap<QString, QString> ColorMap;
 
-        static ColorManager * m_instance;
-        ColorMaps m_colorMaps;
+public: /* Methods: */
+
+    static ColorManager * instance();
+
+    QString loadColorMaps();
+    QString replaceColors(const QString& content);
+    QString getBackgroundColor(const QString& style = QString());
+    QString getForegroundColor(const QString& style = QString());
+    QString getCrossRefColor(const QString& style = QString());
+
+private: /* Fields: */
+
+    ColorManager(QObject * parent = nullptr);
+    ColorMap * createColorMapWithDefaults();
+    bool darkMode() const;
+    QString getColorByPattern(const QString& pattern, const QString& style = QString());
+    void loadColorMap(const QString & filename);
+
+    static ColorManager * m_instance;
+    QMap<QString, ColorMap *> m_colorMaps;
 
 }; /* class ColorManager */
 

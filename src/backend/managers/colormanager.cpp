@@ -60,7 +60,7 @@ QString ColorManager::loadColorMaps() {
     return errorMessage;
 }
 
-ColorMap* ColorManager::createColorMapWithDefaults(){
+ColorManager::ColorMap* ColorManager::createColorMapWithDefaults(){
     ColorMap * colorDefs = new ColorMap();
     if (darkMode()) {
         colorDefs->insert("FOREGROUND_COLOR", qApp->palette().color(QPalette::WindowText).name());
