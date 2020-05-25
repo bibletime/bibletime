@@ -15,13 +15,10 @@
 #define COLORMANAGER_H
 
 #include <QMap>
-#include <QObject>
 #include <QString>
 
 
-class ColorManager : public QObject {
-
-Q_OBJECT
+class ColorManager {
 
 public: /* Types: */
 
@@ -39,7 +36,7 @@ public: /* Methods: */
 
 private: /* Fields: */
 
-    ColorManager(QObject * parent = nullptr);
+    ColorManager();
     ColorMap createColorMapWithDefaults();
     bool darkMode() const;
     QString getColorByPattern(const QString& pattern, const QString& style = QString());

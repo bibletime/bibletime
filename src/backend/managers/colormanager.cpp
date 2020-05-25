@@ -27,9 +27,7 @@ ColorManager & ColorManager::instance() {
     return r;
 }
 
-ColorManager::ColorManager(QObject * parent)
-    : QObject(parent) {
-}
+ColorManager::ColorManager() = default;
 
 bool ColorManager::darkMode() const {
     QPalette p = qApp->palette();
