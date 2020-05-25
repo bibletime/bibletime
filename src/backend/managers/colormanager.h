@@ -29,7 +29,7 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    static ColorManager * instance();
+    static ColorManager & instance();
 
     QString loadColorMaps();
     QString replaceColors(const QString& content);
@@ -45,7 +45,6 @@ private: /* Fields: */
     QString getColorByPattern(const QString& pattern, const QString& style = QString());
     void loadColorMap(const QString & filename);
 
-    static ColorManager * m_instance;
     QMap<QString, ColorMap *> m_colorMaps;
 
 }; /* class ColorManager */

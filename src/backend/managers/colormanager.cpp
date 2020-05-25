@@ -20,14 +20,11 @@
 #include "../../util/directory.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 
-ColorManager * ColorManager::m_instance = nullptr;
 
-ColorManager * ColorManager::instance() {
-    if (m_instance == nullptr)
-        m_instance = new ColorManager();
-    return m_instance;
+ColorManager & ColorManager::instance() {
+    static ColorManager r;
+    return r;
 }
-
 
 ColorManager::ColorManager(QObject * parent)
     : QObject(parent) {

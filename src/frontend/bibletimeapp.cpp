@@ -109,7 +109,7 @@ bool BibleTimeApp::initDisplayTemplateManager() {
 bool BibleTimeApp::initColorManager() {
 
     QString errorMessage;
-    errorMessage = ColorManager::instance()->loadColorMaps();
+    errorMessage = ColorManager::instance().loadColorMaps();
     if (errorMessage.isNull())
         return true;
     message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
