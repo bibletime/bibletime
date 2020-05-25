@@ -85,8 +85,8 @@ void ColorManager::loadColorMap(QString const & filePath) {
 
 QString ColorManager::replaceColors(QString content) {
     auto const activeTemplate(CDisplayTemplateMgr::activeTemplateName());
-    for (auto const & [key, value] : m_colorMaps[activeTemplate])
-        content.replace(QString("#%1#").arg(key), value);
+    for (auto const & cp : m_colorMaps[activeTemplate])
+        content.replace(QString("#%1#").arg(cp.first), cp.second);
     return content;
 }
 
