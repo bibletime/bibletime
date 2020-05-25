@@ -15,6 +15,7 @@
 
 #include "cswordmoduleinfo.h"
 
+#include <optional>
 #include <QStringList>
 #include "../keys/cswordversekey.h"
 
@@ -32,9 +33,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
                               CSwordBackend & backend,
                               ModuleType type = Bible);
 
-        inline ~CSwordBibleModuleInfo() {
-            delete m_bookList;
-        }
+        ~CSwordBibleModuleInfo() noexcept;
 
         /**
           \returns the number of avalable verses for the given chapter and book.
@@ -65,7 +64,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         /**
           \returns a QStringList containing the books available in this module.
         */
-        QStringList *books() const;
+        QStringList const & books() const;
 
         /**
           \returns the index of the book given by its name.
@@ -121,7 +120,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         mutable bool m_hasOT;
         mutable bool m_hasNT;
 
-        mutable QStringList *m_bookList; //This booklist is cached
+        mutable std::optional<QStringList> m_bookList; //This booklist is cached
         mutable QString m_cachedLocale;
 };
 

@@ -79,8 +79,7 @@ BtBookDropdownChooserButton::BtBookDropdownChooserButton(
 
 void BtBookDropdownChooserButton::newList() {
     QMenu* m = menu();
-    QStringList* booklist = ref()->m_module->books();
-    Q_FOREACH(QString const & bookname, *booklist)
+    for (auto const & bookname : ref()->m_module->books())
         m->addAction(bookname)->setProperty("bookname", bookname);
 }
 

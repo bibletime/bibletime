@@ -28,10 +28,9 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule & module,
         , m_boundsInitialized(false)
         , m_lowerBound(nullptr)
         , m_upperBound(nullptr)
-        , m_bookList(nullptr)
-{
-    // Intentionally empty
-}
+{}
+
+CSwordBibleModuleInfo::~CSwordBibleModuleInfo() noexcept = default;
 
 void CSwordBibleModuleInfo::initBounds() const {
     /// \todo The fields calculated by this method could be cached to disk.
@@ -60,19 +59,18 @@ void CSwordBibleModuleInfo::initBounds() const {
 
 
 /** Returns the books available in this module */
-QStringList *CSwordBibleModuleInfo::books() const {
+QStringList const & CSwordBibleModuleInfo::books() const {
     {
         CSwordBackend & b = backend();
         if (m_cachedLocale != b.booknameLanguage()) {
             // Reset the booklist because the locale has changed
             m_cachedLocale = b.booknameLanguage();
-            delete m_bookList;
-            m_bookList = nullptr;
+            m_bookList.reset();
         }
     }
 
     if (!m_bookList) {
-        m_bookList = new QStringList();
+        m_bookList.emplace();
 
         // Initialize m_hasOT and m_hasNT
         if (!m_boundsInitialized)
@@ -100,7 +98,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
         }
     }
 
-    return m_bookList;
+    return *m_bookList;
 }
 
 unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const {
