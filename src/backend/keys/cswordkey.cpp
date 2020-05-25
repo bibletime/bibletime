@@ -15,6 +15,7 @@
 #include <QRegExp>
 #include <QString>
 #include <QTextCodec>
+#include <string>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "cswordldkey.h"
@@ -133,12 +134,8 @@ QString CSwordKey::strippedText() {
         return QString();
 
     auto & m = m_module->module();
-    if (dynamic_cast<sword::SWKey*>(this)) {
-        char * buffer = new char[strlen(rawKey()) + 1];
-        strcpy(buffer, rawKey());
-        m.getKey()->setText(buffer);
-        delete [] buffer;
-    }
+    if (dynamic_cast<sword::SWKey *>(this))
+        m.getKey()->setText(std::string(rawKey()).c_str());
 
     return QString::fromUtf8(m.stripText());
 }
