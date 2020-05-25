@@ -74,7 +74,9 @@ public: /* Tyepes */
             , m_icon(other.m_icon)
             , m_parent(other.m_parent)
             , m_text(other.m_text)
-            , m_tooltip(other.m_tooltip) {;}
+            , m_tooltip(other.m_tooltip)
+        {}
+
         virtual ~BookmarkItemBase() {
             qDeleteAll(m_children);
         }
@@ -430,7 +432,7 @@ public: /* Fields */
     QTimer m_saveTimer;
     static BtBookmarksModel * m_defaultModel;
 
-    Q_DECLARE_PUBLIC(BtBookmarksModel);
+    Q_DECLARE_PUBLIC(BtBookmarksModel)
     BtBookmarksModel * const q_ptr;
 
 };
@@ -493,7 +495,7 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
         : m_description(description)
         , m_moduleName(module.name())
 {
-    Q_UNUSED(title);
+    Q_UNUSED(title)
 
     if (((module.type() == CSwordModuleInfo::Bible) || (module.type() == CSwordModuleInfo::Commentary))) {
         /// here we only translate \param key into english
@@ -505,7 +507,7 @@ BookmarkItem::BookmarkItem(CSwordModuleInfo const & module,
     }
     else {
         m_key = key;
-    };
+    }
 
     setIcon(CResMgr::mainIndex::bookmark::icon());
     setText(toHeader(key, module.name()));
@@ -606,7 +608,7 @@ int BtBookmarksModel::rowCount(const QModelIndex & parent) const {
 }
 
 int BtBookmarksModel::columnCount(const QModelIndex & parent) const {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
     return 1;
 }
 
@@ -662,9 +664,9 @@ Qt::ItemFlags BtBookmarksModel::flags(const QModelIndex & index) const {
 }
 
 QVariant BtBookmarksModel::headerData(int section, Qt::Orientation orientation, int role) const {
-    Q_UNUSED(section);
-    Q_UNUSED(orientation);
-    Q_UNUSED(role);
+    Q_UNUSED(section)
+    Q_UNUSED(orientation)
+    Q_UNUSED(role)
 
     return QVariant();
 }
