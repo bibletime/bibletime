@@ -962,7 +962,7 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
             parents.append(f);
 
         Q_FOREACH(BookmarkFolder * const f, parents) {
-            emit layoutAboutToBeChanged();
+            Q_EMIT layoutAboutToBeChanged();
 
             QModelIndexList indexes;
             for(int i = 0; i < f->children().size(); ++i)
@@ -980,7 +980,7 @@ void BtBookmarksModel::sortItems(QModelIndex const & parent,
                     if(iii == indexes[ii].internalPointer())
                         changePersistentIndex(createIndex(ii, 0, iii), createIndex(i, 0, iii));
             }
-            emit layoutChanged();
+            Q_EMIT layoutChanged();
 
             d->needSave();
         }

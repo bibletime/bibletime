@@ -38,7 +38,7 @@ class BtBibleKeyWidget : public QWidget  {
         void setModule(const CSwordBibleModuleInfo *m = nullptr);
         bool eventFilter(QObject *o, QEvent *e) override;
 
-    signals:
+    Q_SIGNALS:
         void beforeChange(CSwordVerseKey* key);
         void changed(CSwordVerseKey* key);
 
@@ -48,7 +48,7 @@ class BtBibleKeyWidget : public QWidget  {
         void resizeEvent(QResizeEvent *event) override;
         void resetDropDownButtons();
 
-    protected slots: // Protected slots
+    protected Q_SLOTS: // Protected slots
 
         /**
          * \brief Change the book by the given offset.
@@ -86,7 +86,7 @@ class BtBibleKeyWidget : public QWidget  {
          */
         void slotChangeVerse(int verse);
 
-    public slots:
+    public Q_SLOTS:
         void updateText();
 
     private:

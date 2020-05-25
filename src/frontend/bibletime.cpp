@@ -309,12 +309,12 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
     btConfig().sync();
 
     // temporary for testing
-    emit colorThemeChanged();
+    Q_EMIT colorThemeChanged();
 }
 
 bool BibleTime::event(QEvent* event) {
     if (event->type() == QEvent::PaletteChange) {
-        emit colorThemeChanged();
+        Q_EMIT colorThemeChanged();
         // allow to continue to update other parts of Qt widgets
     }
     if (event->type() == QEvent::Close)

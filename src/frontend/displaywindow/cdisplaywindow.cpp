@@ -338,7 +338,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     m_actionCollection->readShortcuts("Displaywindow shortcuts");
     m_actionCollection->readShortcuts("Readwindow shortcuts");
-    emit sigModuleListSet(m_modules);
+    Q_EMIT sigModuleListSet(m_modules);
 }
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
@@ -347,7 +347,7 @@ void CDisplayWindow::slotAddModule(int index, QString module) {
     displayWidget()->setModules(m_modules);
     lookup();
     modulesChanged();
-    emit sigModuleListChanged();
+    Q_EMIT sigModuleListChanged();
 }
 
 void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
@@ -356,7 +356,7 @@ void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
     displayWidget()->setModules(m_modules);
     lookup();
     modulesChanged();
-    emit sigModuleListChanged();
+    Q_EMIT sigModuleListChanged();
 }
 
 void CDisplayWindow::slotRemoveModule(int index) {
@@ -365,7 +365,7 @@ void CDisplayWindow::slotRemoveModule(int index) {
     displayWidget()->setModules(m_modules);
     lookup();
     modulesChanged();
-    emit sigModuleListChanged();
+    Q_EMIT sigModuleListChanged();
 }
 
 /** Returns true if the window may be closed. */
@@ -399,7 +399,7 @@ void CDisplayWindow::modulesChanged() {
         close();
     }
     else {
-        emit sigModulesChanged(modules());
+        Q_EMIT sigModulesChanged(modules());
         key()->setModule(modules().first());
         keyChooser()->setModules(modules());
     }
@@ -456,9 +456,9 @@ bool CDisplayWindow::init() {
 
     m_filterOptions = btConfig().getFilterOptions();
     m_displayOptions = btConfig().getDisplayOptions();
-    emit sigDisplayOptionsChanged(m_displayOptions);
-    emit sigFilterOptionsChanged(m_filterOptions);
-    emit sigModulesChanged(modules());
+    Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
+    Q_EMIT sigFilterOptionsChanged(m_filterOptions);
+    Q_EMIT sigModulesChanged(modules());
 
     m_isReady = true;
     return true;
@@ -506,14 +506,14 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
                this, // Needed
                [this](FilterOptions const & filterOptions) {
                    m_filterOptions = filterOptions;
-                   emit sigFilterOptionsChanged(m_filterOptions);
+                   Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                });
     BT_CONNECT(button, &BtDisplaySettingsButton::sigDisplayOptionsChanged,
                this, // Needed
                [this](DisplayOptions const & displayOptions) {
                    m_displayOptions = displayOptions;
                    displayWidget()->setDisplayOptions(displayOptions);
-                   emit sigDisplayOptionsChanged(m_displayOptions);
+                   Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
                });
     BT_CONNECT(button, &BtDisplaySettingsButton::sigChanged,
                this,   &CDisplayWindow::lookup);
@@ -538,7 +538,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
     if (m && modules().contains(m)) {
         key()->setKey(keyName);
         keyChooser()->setKey(key()); //the key chooser does send an update signal
-        emit sigKeyChanged(key());
+        Q_EMIT sigKeyChanged(key());
     }
     else {     //given module not displayed in this window
         //if the module is displayed in another display window we assume a wrong drop

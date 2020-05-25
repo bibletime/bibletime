@@ -44,7 +44,7 @@ public: /* Methods: */
     QSize sizeHint() const override;
     void updateColors();
 
-public slots:
+public Q_SLOTS:
 
     void setInfo(CSwordModuleInfo * module);
 

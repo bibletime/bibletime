@@ -15,8 +15,8 @@
 class test_CSwordBackend : public QObject {
     Q_OBJECT
 
-private slots:
-    void initTestCase(); 
+private Q_SLOTS:
+    void initTestCase();
 
     void instance();
     void moduleList();

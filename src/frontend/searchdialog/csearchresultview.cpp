@@ -140,9 +140,9 @@ void CSearchResultView::initConnections() {
     BT_CONNECT(this, &CSearchResultView::currentItemChanged,
                [this](QTreeWidgetItem * const current, QTreeWidgetItem *) {
                    if (current) {
-                       emit keySelected(current->text(0));
+                       Q_EMIT keySelected(current->text(0));
                    } else {
-                       emit keyDeselected();
+                       Q_EMIT keyDeselected();
                    }
                });
 }

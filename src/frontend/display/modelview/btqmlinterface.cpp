@@ -101,7 +101,7 @@ int BtQmlInterface::getContextMenuIndex() const {
 
 void BtQmlInterface::setContextMenuIndex(int index) {
     m_contextMenuIndex = index;
-    emit contextMenuIndexChanged();
+    Q_EMIT contextMenuIndexChanged();
 }
 
 QString BtQmlInterface::getActiveLink() const {
@@ -110,7 +110,7 @@ QString BtQmlInterface::getActiveLink() const {
 
 void BtQmlInterface::setActiveLink(const QString& link) {
     m_activeLink = link;
-    emit activeLinkChanged();
+    Q_EMIT activeLinkChanged();
 }
 
 QColor BtQmlInterface::getBackgroundColor() const {
@@ -210,7 +210,7 @@ void BtQmlInterface::openContextMenu(int x, int y, int width) {
     int column = int(xRatio * m_moduleNames.count());
     if (column < 0 || column >= m_moduleNames.count())
         return;
-    emit contextMenu(x, y, column);
+    Q_EMIT contextMenu(x, y, column);
 }
 
 QString BtQmlInterface::getLemmaFromLink(const QString& url) {
@@ -295,15 +295,15 @@ void BtQmlInterface::setMagReferenceByUrl(const QString& url) {
 void BtQmlInterface::settingsChanged() {
     getFontsFromSettings();
     changeColorTheme();
-    emit textChanged();
+    Q_EMIT textChanged();
 }
 
 void BtQmlInterface::pageDown() {
-    emit pageDownChanged();
+    Q_EMIT pageDownChanged();
 }
 
 void BtQmlInterface::pageUp() {
-    emit pageUpChanged();
+    Q_EMIT pageUpChanged();
 }
 
 void BtQmlInterface::getFontsFromSettings() {
@@ -326,7 +326,7 @@ void BtQmlInterface::getFontsFromSettings() {
             }
         }
         m_fonts.append(font);
-        emit fontChanged();
+        Q_EMIT fontChanged();
     }
 }
 
@@ -338,25 +338,25 @@ void BtQmlInterface::setKey( CSwordKey* key ) {
 
 void BtQmlInterface::scrollToSwordKey(CSwordKey * key) {
     m_swordKey = key;
-    emit currentModelIndexChanged();
+    Q_EMIT currentModelIndexChanged();
 }
 
 void BtQmlInterface::setModules(const QStringList &modules) {
     m_moduleNames = modules;
     m_moduleTextModel->setModules(modules);
     getFontsFromSettings();
-    emit numModulesChanged();
+    Q_EMIT numModulesChanged();
 }
 
 void BtQmlInterface::referenceChosen() {
-    emit referenceChange();
+    Q_EMIT referenceChange();
     //    updateModel();
-    emit currentModelIndexChanged();
+    Q_EMIT currentModelIndexChanged();
 }
 
 void BtQmlInterface::changeReference(int i) {
     QString reference = m_moduleTextModel->indexToKeyName(i);
-    emit updateReference(reference);
+    Q_EMIT updateReference(reference);
 }
 
 void BtQmlInterface::dragHandler(int index, const QString& activeLink) {
@@ -375,7 +375,7 @@ void BtQmlInterface::dragHandler(int index, const QString& activeLink) {
         keyName = m_moduleTextModel->indexToKeyName(index);
     }
 
-    emit dragOccuring(moduleName, keyName);
+    Q_EMIT dragOccuring(moduleName, keyName);
 }
 
 const CSwordModuleInfo* BtQmlInterface::module() const {
@@ -506,8 +506,8 @@ RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QStrin
 }
 
 void BtQmlInterface::changeColorTheme() {
-    emit backgroundColorChanged();
-    emit foregroundColorChanged();
+    Q_EMIT backgroundColorChanged();
+    Q_EMIT foregroundColorChanged();
 }
 
 void BtQmlInterface::copyRange(int index1, int index2) {
@@ -611,7 +611,7 @@ void BtQmlInterface::slotSetHighlightWords() {
     m_moduleTextModel->setHighlightWords(m_highlightWords, m_caseSensitive);
     m_findState.enabled = false;
     m_moduleTextModel->setFindState(m_findState);
-    emit highlightWordsChanged();
+    Q_EMIT highlightWordsChanged();
     QApplication::restoreOverrideCursor();
 }
 
@@ -630,8 +630,8 @@ void BtQmlInterface::findText(const QString& /*text*/,
         getNextMatchingItem(m_findState.index);
 
     m_moduleTextModel->setFindState(m_findState);
-    emit highlightWordsChanged();
-    emit positionItemOnScreen(m_findState.index);
+    Q_EMIT highlightWordsChanged();
+    Q_EMIT positionItemOnScreen(m_findState.index);
     QApplication::restoreOverrideCursor();
 }
 

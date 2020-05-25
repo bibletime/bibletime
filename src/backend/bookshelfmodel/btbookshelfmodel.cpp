@@ -221,5 +221,5 @@ void BtBookshelfModel::moduleDataChanged(CSwordModuleInfo * module) {
     BT_ASSERT(m_data.count(module) == 1);
 
     QModelIndex i(index(m_data.indexOf(module), 0));
-    emit dataChanged(i, i);
+    Q_EMIT dataChanged(i, i);
 }

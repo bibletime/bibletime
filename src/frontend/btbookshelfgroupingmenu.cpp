@@ -62,7 +62,7 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
     m_groupingActionGroup->setExclusive(true);
     BT_CONNECT(m_groupingActionGroup, &QActionGroup::triggered,
                [this](QAction * const action)
-               { emit signalGroupingOrderChanged(getActionRef(action)); });
+               { Q_EMIT signalGroupingOrderChanged(getActionRef(action)); });
 
     m_groupingCatLangAction = new QAction(this);
     m_groupingCatLangAction->setCheckable(true);

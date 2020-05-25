@@ -212,12 +212,12 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
 
     if (!i) {
         //Clear list
-        emit moduleChanged();
+        Q_EMIT moduleChanged();
         return;
     }
     if (CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(i->text(0))) {
-        emit moduleChanged();
-        emit moduleSelected(m, m_results.value(m));
+        Q_EMIT moduleChanged();
+        Q_EMIT moduleSelected(m, m_results.value(m));
         return;
     }
 
@@ -231,8 +231,8 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
     for (int cnt = 0; cnt < strongsResult->count(); cnt++) {
         if (strongsResult->at(cnt).keyText() == itemText) {
             //clear the verses list
-            emit moduleChanged();
-            emit strongsSelected(activeModule(),
+            Q_EMIT moduleChanged();
+            Q_EMIT strongsSelected(activeModule(),
                                  strongsResult->at(cnt).getKeyList());
             return;
         }

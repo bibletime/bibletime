@@ -37,7 +37,7 @@ public: /* Methods: */
     int nextId() const final override;
     QStringList selectedSources() const;
 
-private slots:
+private Q_SLOTS:
 
     void slotButtonClicked(int row);
 

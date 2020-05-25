@@ -78,7 +78,7 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
     if (toBeDeleted.empty())
         return;
     m_dataModel.removeModules(toBeDeleted);
-    emit sigSwordSetupChanged(RemovedModules);
+    Q_EMIT sigSwordSetupChanged(RemovedModules);
 
     BtInstallMgr installMgr;
     QMap<QString, sword::SWMgr *> mgrDict; // Maps config paths to SWMgr objects
@@ -190,7 +190,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
         }
     }
 
-    emit sigSwordSetupChanged(reason);
+    Q_EMIT sigSwordSetupChanged(reason);
     return ret;
 }
 

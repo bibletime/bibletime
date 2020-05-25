@@ -179,7 +179,7 @@ public:
 
     virtual bool hasSelectedText() = 0;
 
-signals:
+Q_SIGNALS:
     /** The module list was set because backend was reloaded.*/
     void sigModuleListSet(QStringList modules);
     /** A module was added to this window.*/
@@ -205,7 +205,7 @@ signals:
     /**  signal for sword key change */
     void sigKeyChanged(CSwordKey* key);
 
-public slots:
+public Q_SLOTS:
     /** Receives a signal telling that a module should be added.*/
     void slotAddModule(int index, QString module);
     void slotReplaceModule(int index, QString newModule);
@@ -287,7 +287,7 @@ protected:
     void setToolBarsHidden();
     void clearMainWindowToolBars();
 
-protected slots:
+protected Q_SLOTS:
 
     virtual void modulesChanged();
 

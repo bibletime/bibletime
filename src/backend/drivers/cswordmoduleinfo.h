@@ -408,7 +408,7 @@ wrong, or if the config file was write protected return false.
     */
     static QString englishCategoryName(const CSwordModuleInfo::Category & category);
 
-public slots:
+public Q_SLOTS:
 
     inline void cancelIndexing(std::memory_order const memoryOrder =
                                         std::memory_order_relaxed) noexcept
@@ -430,7 +430,7 @@ protected: /* Methods: */
     bool hasImportantFilterOption() const;
     void setImportantFilterOptions(bool enable);
 
-signals:
+Q_SIGNALS:
 
     void hasIndexChanged(bool hasIndex);
     void hiddenChanged(bool hidden);

@@ -62,7 +62,7 @@ public: /* Methods: */
 
     CBookmarkIndex(QWidget * const parent = nullptr);
 
-signals:
+Q_SIGNALS:
 
     /** \brief Emitted when a module should be opened. */
     void createReadDisplayWindow(QList<CSwordModuleInfo *>, QString const &);

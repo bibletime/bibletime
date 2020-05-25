@@ -96,7 +96,7 @@ void CConfigurationDialog::save() {
     m_fontsPage->save();
     m_swordPage->save();
     m_displayPage->save();
-    emit signalSettingsChanged( );
+    Q_EMIT signalSettingsChanged( );
 }
 
 void CConfigurationDialog::loadDialogSettings() {

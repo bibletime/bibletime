@@ -32,7 +32,7 @@ void CScrollButton::mousePressEvent(QMouseEvent *e) {
     if (e->button() != Qt::LeftButton) return;
     m_isLocked = true;
     grabMouse(Qt::BlankCursor);
-    emit lock();
+    Q_EMIT lock();
 }
 
 void CScrollButton::mouseReleaseEvent(QMouseEvent *e) {
@@ -41,7 +41,7 @@ void CScrollButton::mouseReleaseEvent(QMouseEvent *e) {
     m_isLocked = false;
     m_movement = 0.0;
     releaseMouse();
-    emit unlock();
+    Q_EMIT unlock();
 }
 #include <stdio.h>
 void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
@@ -61,7 +61,7 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
 
             // Emit the change request signal only when the mouse was moved far enough
             if (m_movement >= 1.0 || m_movement <= -1.0) {
-                emit change_requested(static_cast<int>(m_movement));
+                Q_EMIT change_requested(static_cast<int>(m_movement));
                 m_movement = 0.0;
             }
         }

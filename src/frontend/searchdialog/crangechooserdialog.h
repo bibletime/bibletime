@@ -87,7 +87,7 @@ private: /* Methods: */
     */
     void resetEditControls();
 
-private slots:
+private Q_SLOTS:
 
     /**
       Called when m_nameEdit changes.

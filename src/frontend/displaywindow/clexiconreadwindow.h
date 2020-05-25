@@ -45,7 +45,7 @@ public:
     /** Insert the keyboard accelerators of this window into the given actioncollection.*/
     static void insertKeyboardActions( BtActionCollection* const a );
 
-public slots:
+public Q_SLOTS:
     void reload(CSwordBackend::SetupChangedReason reason) override;
 
 protected:
@@ -109,7 +109,7 @@ private:
         */
     CSwordLDKey* ldKey();
 
-protected slots: // Protected slots
+protected Q_SLOTS: // Protected slots
     void previousEntry();
     void nextEntry();
     /**

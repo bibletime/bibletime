@@ -50,7 +50,7 @@ protected: /* Methods: */
     bool hasSelectedText() override;
 
 
-protected slots:
+protected Q_SLOTS:
 
     void lookupSwordKey(CSwordKey *) override;
 

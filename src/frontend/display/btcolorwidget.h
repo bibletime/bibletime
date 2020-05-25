@@ -26,7 +26,7 @@ public:
 
     QSize sizeHint() const override;
 
-public slots:
+public Q_SLOTS:
 
     void setColor(QColor const & color);
 
@@ -34,7 +34,7 @@ protected: /* Methods: */
 
     void mouseReleaseEvent(QMouseEvent * event) override;
 
-signals:
+Q_SIGNALS:
 
     void changed(QColor const & color);
 

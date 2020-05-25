@@ -35,13 +35,13 @@ class BtDisplaySettingsButton: public QToolButton {
                 DisplayOptions const & displaySettings);
         void setFilterOptionsNoRepopulate(FilterOptions const & moduleSettings);
 
-    public slots:
+    public Q_SLOTS:
         void setDisplayOptions(DisplayOptions const & displaySettings);
         void setFilterOptions(FilterOptions const & moduleSettings);
 
         void setModules(const BtConstModuleList &modules);
 
-    signals:
+    Q_SIGNALS:
         void sigFilterOptionsChanged(FilterOptions filterOptions);
         void sigDisplayOptionsChanged(DisplayOptions displayOptions);
         void sigModulesChanged(const BtConstModuleList &modules);

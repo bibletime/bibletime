@@ -54,7 +54,7 @@ void BTHistory::move(QAction* historyItem) {
     //find the action in the list
     m_index = m_historyList.indexOf(historyItem);
     //move to the selected item in the list, it will be the current item
-    emit historyMoved(m_historyList.at(m_index)->property(ActionText).toString()); // signal to "outsiders"; key has been changed
+    Q_EMIT historyMoved(m_historyList.at(m_index)->property(ActionText).toString()); // signal to "outsiders"; key has been changed
     sendChangedSignal();
 
     m_inHistoryFunction = false;
@@ -99,7 +99,7 @@ QList<QAction*> BTHistory::getFwList() {
 void BTHistory::sendChangedSignal() {
     bool backEnabled = m_index > 0; //there are items in the back list
     bool fwEnabled = m_historyList.size() > m_index + 1; //there are items in the fw list
-    emit historyChanged(backEnabled, fwEnabled);
+    Q_EMIT historyChanged(backEnabled, fwEnabled);
     BT_ASSERT(class_invariant());
 }
 

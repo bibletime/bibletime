@@ -71,7 +71,7 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
 
     m_key = dynamic_cast<CSwordVerseKey*>(key);
     w_ref->setKey(m_key);
-    emit keyChanged(m_key);
+    Q_EMIT keyChanged(m_key);
 }
 
 void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
@@ -92,7 +92,7 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
 
     setUpdatesEnabled(false);
     m_key = key;
-    emit keyChanged(m_key);
+    Q_EMIT keyChanged(m_key);
 
     setUpdatesEnabled(true);
 }

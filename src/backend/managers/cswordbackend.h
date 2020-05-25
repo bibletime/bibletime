@@ -239,7 +239,7 @@ public: /* Methods: */
     */
     void deleteOrphanedIndices();
 
-signals:
+Q_SIGNALS:
 
     void sigSwordSetupChanged(CSwordBackend::SetupChangedReason reason);
 

@@ -128,7 +128,7 @@ public:
     BtQmlInterface * qmlInterface() const;
 
 
-signals:
+Q_SIGNALS:
     void completed();
 
 protected:

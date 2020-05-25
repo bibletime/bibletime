@@ -61,8 +61,9 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget * parent)
                this, &CScrollerWidgetSet::scroller_released);
     BT_CONNECT(m_scrollButton, &CScrollButton::change_requested,
                this, &CScrollerWidgetSet::change);
-    BT_CONNECT(m_buttonUp, &QToolButton::clicked, [this]{ emit change(-1); });
-    BT_CONNECT(m_buttonDown, &QToolButton::clicked, [this]{ emit change(1); });
+    BT_CONNECT(m_buttonUp, &QToolButton::clicked, [this]{ Q_EMIT change(-1); });
+    BT_CONNECT(m_buttonDown, &QToolButton::clicked,
+               [this]{ Q_EMIT change(1); });
 }
 
 /** Sets the tooltips for the given entries using the parameters as text. */
@@ -81,7 +82,7 @@ void CScrollerWidgetSet::wheelEvent(QWheelEvent * e) {
     if (delta == 0) {
         e->ignore();
     } else {
-        emit change((delta > 0) ? -1 : 1);
+        Q_EMIT change((delta > 0) ? -1 : 1);
         e->accept();
     }
 }

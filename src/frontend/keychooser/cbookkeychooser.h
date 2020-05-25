@@ -50,7 +50,7 @@ public:
     */
     void setKey(CSwordKey * key, const bool emitSignal);
 
-public slots: // Public slots
+public Q_SLOTS: // Public slots
 
     /**
     * Updates the keychoosers for the given key but emit no signal.
@@ -67,7 +67,7 @@ protected: /* Methods: */
 
     void adjustFont() override;
 
-protected slots:
+protected Q_SLOTS:
 
     /**
     * A keychooser changed. Update and emit a signal if necessary.

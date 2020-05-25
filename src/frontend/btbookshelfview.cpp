@@ -35,11 +35,11 @@ BtBookshelfView::BtBookshelfView(QWidget *parent)
     BT_CONNECT(this, &BtBookshelfView::activated,
                [this](QModelIndex const & index) {
                    if (auto * const module = getModule(index))
-                       emit moduleActivated(module);
+                       Q_EMIT moduleActivated(module);
                });
     BT_CONNECT(this, &BtBookshelfView::entered,
                [this](QModelIndex const & index)
-               { emit moduleHovered(getModule(index)); });
+               { Q_EMIT moduleHovered(getModule(index)); });
 }
 
 CSwordModuleInfo * BtBookshelfView::getModule(const QModelIndex & index) const {
@@ -57,10 +57,10 @@ void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
                 QRect itemRect(visualRect(currentIndex()));
                 QPoint p(viewport()->mapToGlobal(itemRect.bottomLeft()));
                 if (i == nullptr) {
-                    emit contextMenuActivated(p);
+                    Q_EMIT contextMenuActivated(p);
                 }
                 else {
-                    emit moduleContextMenuActivated(i, p);
+                    Q_EMIT moduleContextMenuActivated(i, p);
                 }
             }
             event->accept();
@@ -70,7 +70,7 @@ void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
             QModelIndex i(currentIndex());
             CSwordModuleInfo *m(getModule(i));
             if (m != nullptr) {
-                emit moduleActivated(m);
+                Q_EMIT moduleActivated(m);
             }
             else {
                 setExpanded(i, !isExpanded(i));
@@ -92,10 +92,10 @@ void BtBookshelfView::mousePressEvent(QMouseEvent *event) {
         }
         CSwordModuleInfo *i(getModule(clickedItemIndex));
         if (i == nullptr) {
-            emit contextMenuActivated(mapToGlobal(event->pos()));
+            Q_EMIT contextMenuActivated(mapToGlobal(event->pos()));
         }
         else {
-            emit moduleContextMenuActivated(i, mapToGlobal(event->pos()));
+            Q_EMIT moduleContextMenuActivated(i, mapToGlobal(event->pos()));
         }
         event->accept();
     }

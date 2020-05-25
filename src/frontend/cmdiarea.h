@@ -92,7 +92,7 @@ class CMDIArea: public QMdiArea {
         */
         void enableWindowMinMaxFlags(bool enable);
 
-    public slots:
+    public Q_SLOTS:
 
         /**
           Uses Qt's tileSubWindows function.
@@ -135,7 +135,7 @@ class CMDIArea: public QMdiArea {
 
         void highlightTextInActiveWindow(const QString& text, bool caseSensitive);
 
-    signals:
+    Q_SIGNALS:
 
         /**
         * Emits a signal to set the caption of the toplevel widget.
@@ -164,7 +164,7 @@ class CMDIArea: public QMdiArea {
 
         void fixSystemMenu(QMdiSubWindow* subWindow);
 
-    protected slots:
+    protected Q_SLOTS:
 
         /**
           Called whan a tabbed subwindow is closed from the tab

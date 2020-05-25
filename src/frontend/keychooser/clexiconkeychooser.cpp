@@ -99,7 +99,7 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
     updateKey(key);
 
     //   qWarning("setKey end");
-    emit keyChanged( m_key);
+    Q_EMIT keyChanged( m_key);
 }
 
 inline bool my_cmpEntries(const QString& a, const QString& b) {

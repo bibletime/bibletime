@@ -57,7 +57,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
         m_removeAction->setIcon(
                     CResMgr::displaywindows::general::icon_removeModule());
         BT_CONNECT(m_removeAction, &QAction::triggered,
-                   [this] { emit sigModuleRemove(m_id); });
+                   [this] { Q_EMIT sigModuleRemove(m_id); });
         popup->addAction(m_removeAction);
 
         // Add Replace and Add menus, both have all modules in them
@@ -72,7 +72,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
         BT_CONNECT(m_replaceMenu, &BtModuleChooserMenu::sigModuleChosen,
                    [this](CSwordModuleInfo * const module) {
                         BT_ASSERT(module);
-                        emit sigModuleReplace(m_id, module->name());
+                        Q_EMIT sigModuleReplace(m_id, module->name());
                     });
         popup->addMenu(m_replaceMenu);
 
@@ -86,7 +86,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(
         BT_CONNECT(m_addMenu, &BtModuleChooserMenu::sigModuleChosen,
                    [this](CSwordModuleInfo * const module) {
                         BT_ASSERT(module);
-                        emit sigModuleAdd(m_id + 1, module->name());
+                        Q_EMIT sigModuleAdd(m_id + 1, module->name());
                     });
         popup->addMenu(m_addMenu);
     m_button->setMenu(popup);

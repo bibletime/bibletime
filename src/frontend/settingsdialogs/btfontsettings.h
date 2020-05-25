@@ -41,7 +41,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
         void save() const;
 
-    protected slots:
+    protected Q_SLOTS:
 
         // This slot is called when the "Use own font for language" button was clicked.
         void useOwnFontClicked(bool);

@@ -45,8 +45,8 @@ void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
     displayOptions() = conf.getDisplayOptions();
     conf.endGroup();
 
-    emit sigFilterOptionsChanged(filterOptions());
-    emit sigDisplayOptionsChanged(displayOptions());
+    Q_EMIT sigFilterOptionsChanged(filterOptions());
+    Q_EMIT sigDisplayOptionsChanged(displayOptions());
 
     // Apply settings to display:
     lookup();

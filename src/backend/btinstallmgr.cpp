@@ -84,7 +84,7 @@ void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
     const int filePercent  = calculateIntPercentage(dlnow, dltotal);
 
     //qApp->processEvents();
-    emit percentCompleted(totalPercent, filePercent);
+    Q_EMIT percentCompleted(totalPercent, filePercent);
 }
 
 
@@ -96,7 +96,7 @@ void BtInstallMgr::preStatus(long totalBytes,
     BT_ASSERT(completedBytes <= totalBytes);
     if (m_firstCallOfPreStatus) {
         m_firstCallOfPreStatus = false;
-        emit downloadStarted();
+        Q_EMIT downloadStarted();
     }
     m_completedBytes = completedBytes;
     m_totalBytes = totalBytes;

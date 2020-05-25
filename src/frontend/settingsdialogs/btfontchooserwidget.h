@@ -38,7 +38,7 @@ class BtFontChooserWidget : public QFrame {
 
         QSize sizeHint() const override;
 
-    signals:
+    Q_SIGNALS:
 
         void fontSelected(const QFont&);
 

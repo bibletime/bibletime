@@ -200,7 +200,7 @@ void BtSearchOptionsArea::initConnections() {
                [this]{
                    m_searchTextCombo->addToHistory(
                                m_searchTextCombo->currentText());
-                   emit sigStartSearch();
+                   Q_EMIT sigStartSearch();
                });
     BT_CONNECT(m_chooseModulesButton, &QPushButton::clicked,
                this,                  &BtSearchOptionsArea::chooseModules);
@@ -269,7 +269,7 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
         historyList.append(m_modulesCombo->itemText(i));
     }
     btConfig().setValue("history/searchModuleHistory", historyList);
-    emit sigSetSearchButtonStatus(!modules.isEmpty());
+    Q_EMIT sigSetSearchButtonStatus(!modules.isEmpty());
 }
 
 QStringList BtSearchOptionsArea::getUniqueWorksList() {

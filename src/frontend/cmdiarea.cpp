@@ -62,7 +62,7 @@ CMDIArea::CMDIArea(BibleTime * parent)
                    if (client == nullptr) {
                        return;
                    }
-                   emit sigSetToplevelCaption( client->windowTitle().trimmed() );
+                   Q_EMIT sigSetToplevelCaption( client->windowTitle().trimmed() );
 
                    // Notify child window it is active
                    CDisplayWindow* const activeWindow = getDisplayWindow(client);
@@ -283,10 +283,10 @@ void CMDIArea::myCascade() {
 
 void CMDIArea::emitWindowCaptionChanged() {
     if (activeSubWindow()) {
-        emit sigSetToplevelCaption(activeSubWindow()->windowTitle());
+        Q_EMIT sigSetToplevelCaption(activeSubWindow()->windowTitle());
     }
     else {
-        emit sigSetToplevelCaption(QString());
+        Q_EMIT sigSetToplevelCaption(QString());
     }
 }
 
@@ -372,7 +372,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
             break;
         case QEvent::WindowTitleChange:
             if (o == activeSubWindow()) {
-                emit sigSetToplevelCaption(w->windowTitle());
+                Q_EMIT sigSetToplevelCaption(w->windowTitle());
             }
             return QMdiArea::eventFilter(o, e);
             break;

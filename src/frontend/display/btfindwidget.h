@@ -39,7 +39,7 @@ private: /* Methods: */
 
     void retranslateUi();
 
-signals:
+Q_SIGNALS:
 
     void findPrevious(QString const & text, bool caseSensitive);
     void findNext(QString const & text, bool caseSensitive);

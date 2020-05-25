@@ -109,7 +109,7 @@ void BtBookshelfLanguagesPage::initializeLanguages() {
 bool BtBookshelfLanguagesPage::skipPage() const noexcept
 { return m_model->rowCount() == 1; }
 
-void BtBookshelfLanguagesPage::slotDataChanged() { emit completeChanged(); }
+void BtBookshelfLanguagesPage::slotDataChanged() { Q_EMIT completeChanged(); }
 
 bool BtBookshelfLanguagesPage::isComplete() const
 { return selectedLanguages().count() > 0; }

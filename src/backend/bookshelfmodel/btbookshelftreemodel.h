@@ -129,7 +129,7 @@ public: /* Methods: */
         return m_checkedModulesCache;
     }
 
-public slots:
+public Q_SLOTS:
 
     void setSourceModel(QAbstractItemModel * sourceModel);
     void setGroupingOrder(const BtBookshelfTreeModel::Grouping & groupingOrder,
@@ -140,7 +140,7 @@ public slots:
     }
     void setCheckedModules(BtConstModuleSet const & modules);
 
-signals:
+Q_SIGNALS:
 
     void groupingOrderChanged(BtBookshelfTreeModel::Grouping newGrouping);
     void moduleChecked(CSwordModuleInfo * module, bool checked);
@@ -149,7 +149,7 @@ protected: /* Methods: */
 
     void resetData();
 
-protected slots:
+protected Q_SLOTS:
 
     void moduleDataChanged(const QModelIndex & topLeft,
                            const QModelIndex & bottomRight);

@@ -59,9 +59,9 @@ BtEditTextPage::BtEditTextPage(QWidget * parent)
                    BT_ASSERT(!m_handingFormatChangeFromEditor);
                    m_handingFormatChangeFromEditor = true;
                    QFont f = m_htmlTextEdit->currentFont();
-                   emit signalFontChanged(f);
-                   emit signalFontSizeChanged(f.pointSize());
-                   emit signalFontColorChanged(m_htmlTextEdit->textColor());
+                   Q_EMIT signalFontChanged(f);
+                   Q_EMIT signalFontSizeChanged(f.pointSize());
+                   Q_EMIT signalFontColorChanged(m_htmlTextEdit->textColor());
 
                    m_actions.bold->setChecked(f.bold());
                    m_actions.italic->setChecked(f.italic());

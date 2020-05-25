@@ -42,7 +42,7 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
                    if (auto * const i =
                             static_cast<CSwordModuleInfo *>(
                                     model()->data(index, MPR).value<void *>()))
-                       emit triggered(i);
+                       Q_EMIT triggered(i);
                });
 }
 

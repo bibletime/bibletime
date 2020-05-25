@@ -52,7 +52,7 @@ protected:
 
        virtual void wheelEvent(QWheelEvent * event) override;
 
-private slots:
+private Q_SLOTS:
     void scrollTimerSlot();
 
 private:
@@ -66,7 +66,7 @@ private:
 
     QTimer m_timer;
 
-signals:
+Q_SIGNALS:
     void referenceDropped(const QString& reference);
 };
 

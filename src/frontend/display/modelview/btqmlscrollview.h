@@ -65,12 +65,12 @@ protected:
     virtual void	resizeEvent(QResizeEvent *event) override;
     void contextMenuEvent(QContextMenuEvent* event) override;
 
-private slots:
+private Q_SLOTS:
     void slotSliderMoved(int value);
     void slotSliderPressed();
     void slotSliderReleased();
 
-signals:
+Q_SIGNALS:
     void referenceDropped(const QString& reference);
 
 private:    void initScrollBar();

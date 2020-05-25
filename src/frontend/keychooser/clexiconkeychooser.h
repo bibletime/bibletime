@@ -39,7 +39,7 @@ class CLexiconKeyChooser : public CKeyChooser {
                            BTHistory *history, CSwordKey *key = nullptr,
                            QWidget *parent = nullptr);
 
-    public slots:
+    public Q_SLOTS:
 
         CSwordKey *key() override;
 
@@ -58,10 +58,10 @@ class CLexiconKeyChooser : public CKeyChooser {
 
         inline void adjustFont() override {}
 
-    public slots: // Public slots
+    public Q_SLOTS: // Public slots
         void updateKey(CSwordKey* key) override;
 
-    protected slots:
+    protected Q_SLOTS:
         void setKey(const QString & newKey) override;
 
 };

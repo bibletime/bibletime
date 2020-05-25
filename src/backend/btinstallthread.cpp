@@ -61,7 +61,7 @@ void BtInstallThread::run() {
 }
 
 void BtInstallThread::installModule() {
-    emit preparingInstall(m_currentModuleIndex);
+    Q_EMIT preparingInstall(m_currentModuleIndex);
 
     const CSwordModuleInfo * const module = m_modules.at(m_currentModuleIndex);
 
@@ -83,32 +83,32 @@ void BtInstallThread::installModule() {
                                           module->name().toLatin1(),
                                           &installSource);
         if (status == 0) {
-            emit statusUpdated(m_currentModuleIndex, 100);
+            Q_EMIT statusUpdated(m_currentModuleIndex, 100);
         } else {
             qWarning() << "Error with install: " << status
                        << "module:" << module->name();
         }
-        emit installCompleted(m_currentModuleIndex, status == 0);
+        Q_EMIT installCompleted(m_currentModuleIndex, status == 0);
     } else { // Local source
         int status = m_iMgr.installModule(&lMgr,
                                           installSource.directory.c_str(),
                                           module->name().toLatin1());
         if (status == 0) {
-            emit statusUpdated(m_currentModuleIndex, 100);
+            Q_EMIT statusUpdated(m_currentModuleIndex, 100);
         } else if (status != -1) {
             qWarning() << "Error with install: " << status
                        << "module:" << module->name();
         }
-        emit installCompleted(m_currentModuleIndex, status == 0);
+        Q_EMIT installCompleted(m_currentModuleIndex, status == 0);
     }
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/) {
-    emit statusUpdated(m_currentModuleIndex, totalProgress);
+    Q_EMIT statusUpdated(m_currentModuleIndex, totalProgress);
 }
 
 void BtInstallThread::slotDownloadStarted() {
-    emit downloadStarted(m_currentModuleIndex);
+    Q_EMIT downloadStarted(m_currentModuleIndex);
 }
 
 bool BtInstallThread::removeModule() {

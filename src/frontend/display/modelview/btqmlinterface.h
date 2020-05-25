@@ -139,7 +139,7 @@ public:
     void setModules(const QStringList &modules);
     void settingsChanged();
 
-signals:
+Q_SIGNALS:
     void activeLinkChanged();
     void backgroundColorChanged();
     void contextMenuIndexChanged();
@@ -159,7 +159,7 @@ signals:
     void updateReference(const QString& reference);
     void dragOccuring(const QString& moduleName, const QString& keyName);
 
-private slots:
+private Q_SLOTS:
     void slotSetHighlightWords();
 
 private:

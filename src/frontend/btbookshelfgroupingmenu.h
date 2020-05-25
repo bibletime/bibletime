@@ -31,7 +31,7 @@ class BtBookshelfGroupingMenu: public QMenu {
                                                 QWidget *parent = nullptr)
         : QMenu(parent) { initMenu(showNoGrouping); }
 
-    signals:
+    Q_SIGNALS:
         void signalGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &);
 
     private:

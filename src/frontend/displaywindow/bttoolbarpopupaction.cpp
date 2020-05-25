@@ -58,14 +58,14 @@ QWidget* BtToolBarPopupAction::createWidget(QWidget* parent) {
     m_button->setPopupMode(QToolButton::MenuButtonPopup);
     m_button->setMenu(m_menu);
     BT_CONNECT(m_button, &BtToolButton::pressed,
-               this /* Meeded */, [this] { emit triggered(); });
+               this /* Meeded */, [this] { Q_EMIT triggered(); });
     return m_button;
 }
 
 // Function to catch the Shortcut event and emit the triggered signal
 bool BtToolBarPopupAction::event(QEvent *event) {
     if (event->type() == QEvent::Shortcut) {
-        emit triggered();
+        Q_EMIT triggered();
         return true;
     }
     return QWidgetAction::event(event);

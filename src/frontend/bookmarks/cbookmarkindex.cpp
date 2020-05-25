@@ -258,7 +258,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                    // Clicked on a bookmark:
                    if (m_bookmarksModel->isBookmark(index))
                        if (auto * const mod = m_bookmarksModel->module(index))
-                           emit createReadDisplayWindow(
+                           Q_EMIT createReadDisplayWindow(
                                    QList<CSwordModuleInfo *>() << mod,
                                    m_bookmarksModel->key(index));
                });

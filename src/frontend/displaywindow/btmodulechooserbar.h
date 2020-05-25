@@ -28,7 +28,7 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         /** Initialize with module list.*/
         void setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window);
 
-    public slots:
+    public Q_SLOTS:
         /**
         * The backend module list was updated, module list and widgets must be updated.
         * The signal comes from the window, not from the backend. The new list can

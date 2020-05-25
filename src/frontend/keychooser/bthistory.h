@@ -37,7 +37,7 @@ class BTHistory: public QObject {
         */
         QList<QAction*> getFwList();
 
-    public slots:
+    public Q_SLOTS:
         /**
         * Add a new key to the history.
         */
@@ -55,7 +55,7 @@ class BTHistory: public QObject {
         */
         void fw();
 
-    signals:
+    Q_SIGNALS:
         /**
         * Signal will be sent when the history has been changed (added, moved)
         */

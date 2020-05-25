@@ -39,17 +39,17 @@ void CDisplayConnections::saveAsPlain() {
 
 /** Emits the signal. */
 void CDisplayConnections::emitReferenceClicked( const QString& module, const QString& key) {
-    emit referenceClicked( module, key );
+    Q_EMIT referenceClicked( module, key );
 }
 
 /** Emits the signal. */
 void CDisplayConnections::emitReferenceDropped( const QString& key) {
-    emit referenceDropped(key);
+    Q_EMIT referenceDropped(key);
 }
 
 /** Emits the signal. */
 void CDisplayConnections::emitTextChanged() {
-    emit textChanged();
+    Q_EMIT textChanged();
 }
 
 void CDisplayConnections::copyAll() {

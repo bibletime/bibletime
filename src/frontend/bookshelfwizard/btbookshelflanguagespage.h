@@ -38,7 +38,7 @@ public: /* Methods: */
     QStringList selectedLanguages() const;
     bool skipPage() const noexcept;
 
-private slots:
+private Q_SLOTS:
 
     void slotDataChanged();
 

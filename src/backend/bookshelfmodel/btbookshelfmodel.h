@@ -131,7 +131,7 @@ public: /* Methods: */
         return m_data;
     }
 
-protected slots:
+protected Q_SLOTS:
 
     /**
       Slot DIRECTLY called by CSwordModuleInfo when the hidden status of the respective

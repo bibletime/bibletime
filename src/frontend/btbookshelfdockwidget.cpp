@@ -87,7 +87,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     BT_CONNECT(m_bookshelfWidget->treeView(), &BtBookshelfView::moduleActivated,
                [this](CSwordModuleInfo * module) {
                    if (!module->isLocked()) {
-                       emit moduleOpenTriggered(module);
+                       Q_EMIT moduleOpenTriggered(module);
                    } else {
                        /**
                          \todo Implement a better unlock dialog, which could
@@ -112,7 +112,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
                            auto const & backend = CSwordBackend::instance();
                            module = backend->findModuleByName(moduleName);
                            BT_ASSERT(module);
-                           emit moduleOpenTriggered(module);
+                           Q_EMIT moduleOpenTriggered(module);
                        }
                    }
                });
@@ -124,7 +124,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     BT_CONNECT(m_treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
                [this](BtBookshelfTreeModel::Grouping const & g) {
                    g.saveTo(groupingOrderKey);
-                   emit groupingOrderChanged(g);
+                   Q_EMIT groupingOrderChanged(g);
                });
     BT_CONNECT(m_bookshelfWidget->showHideAction(), &QAction::toggled,
                m_treeModel, &BtBookshelfTreeModel::setCheckable);
@@ -159,7 +159,7 @@ void BtBookshelfDockWidget::initMenus() {
                                    static_cast<CSwordModuleInfo *>(
                                        m_itemContextMenu->property("BtModule")
                                            .value<void *>()))
-                               emit (this->*signal)(module);
+                               Q_EMIT (this->*signal)(module);
                        });
             m_itemContextMenu->addAction(action);
             return action;

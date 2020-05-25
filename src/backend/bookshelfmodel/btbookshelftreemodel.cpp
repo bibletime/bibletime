@@ -183,16 +183,16 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
     for (;;) {
         if (item->checkState() != newState) {
             item->setCheckState(newState);
-            emit dataChanged(p.second, p.second);
+            Q_EMIT dataChanged(p.second, p.second);
             if (item->type() == Item::ITEM_MODULE) {
                 ModuleItem & mItem = *static_cast<ModuleItem *>(item);
                 CSwordModuleInfo & mInfo = mItem.moduleInfo();
                 if (newState == Qt::Checked) {
                     m_checkedModulesCache.insert(&mInfo);
-                    emit moduleChecked(&mInfo, true);
+                    Q_EMIT moduleChecked(&mInfo, true);
                 } else {
                     m_checkedModulesCache.remove(&mInfo);
-                    emit moduleChecked(&mInfo, false);
+                    Q_EMIT moduleChecked(&mInfo, false);
                 }
             } else {
                 const QList<Item *> & children = item->children();
@@ -320,7 +320,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
     }
 
     if (emitSignal)
-        emit groupingOrderChanged(groupingOrder);
+        Q_EMIT groupingOrderChanged(groupingOrder);
 }
 
 void BtBookshelfTreeModel::setCheckable(bool checkable) {
@@ -349,7 +349,7 @@ void BtBookshelfTreeModel::resetData() {
     queue.append(QModelIndex());
     do {
         QModelIndex parent(queue.takeFirst());
-        emit dataChanged(index(0, 0, parent),
+        Q_EMIT dataChanged(index(0, 0, parent),
                          index(rowCount(parent) - 1, columnCount() - 1, parent));
         for (int i = 0; i < rowCount(parent); i++) {
             const QModelIndex childIndex(index(i, 0, parent));
@@ -515,7 +515,7 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
             break;
 
         parentItem.setCheckState(newState);
-        emit dataChanged(parentIndex, parentIndex);
+        Q_EMIT dataChanged(parentIndex, parentIndex);
     } // for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent())
 }
 
@@ -535,7 +535,7 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex & topLeft,
         QModelIndex itemIndex(getIndex(*m_modules[&module]));
         BT_ASSERT(itemIndex.isValid());
 
-        emit dataChanged(itemIndex, itemIndex);
+        Q_EMIT dataChanged(itemIndex, itemIndex);
 
         /*
           Also emit signals for parent items because the change might alter them
@@ -543,7 +543,7 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex & topLeft,
         */
         do {
             itemIndex = itemIndex.parent();
-            emit dataChanged(itemIndex, itemIndex);
+            Q_EMIT dataChanged(itemIndex, itemIndex);
         } while (itemIndex.isValid());
     }
 }

@@ -453,13 +453,13 @@ void BtModuleTextModel::setFindState(const FindState& findState) {
     if (m_findState.enabled && m_findState.index != findState.index) {
         QModelIndex oldIndexToClear = index(m_findState.index, 0);
         m_findState  = findState;
-        emit dataChanged(oldIndexToClear, oldIndexToClear);
+        Q_EMIT dataChanged(oldIndexToClear, oldIndexToClear);
     } else {
         m_findState  = findState;
     }
     if (findState.enabled) {
         QModelIndex index = this->index(findState.index, 0);
-        emit dataChanged(index, index);
+        Q_EMIT dataChanged(index, index);
     }
 }
 void BtModuleTextModel::setHighlightWords(
@@ -505,6 +505,6 @@ bool BtModuleTextModel::setData(
     CSwordVerseKey mKey(module);
     mKey.setKey(key);
     const_cast<CSwordModuleInfo*>(module)->write(&mKey, value.toString());
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index);
     return true;
 }

@@ -42,7 +42,7 @@ class CBibleKeyChooser : public CKeyChooser  {
                          BTHistory *history, CSwordKey *key = nullptr,
                          QWidget *parent = nullptr);
 
-    public slots:
+    public Q_SLOTS:
 
         CSwordKey* key() override;
 
@@ -64,7 +64,7 @@ class CBibleKeyChooser : public CKeyChooser  {
         void adjustFont() override;
         void refreshContent() override;
 
-    protected slots:
+    protected Q_SLOTS:
 
         void setKey(const QString & newKey) override;
 

@@ -99,17 +99,17 @@ void BtModuleChooserButton::moduleChosen(
         if (newModule) {
             m_popup->setSelectedModule(newModule->name());
             setIcon(newModule->moduleIcon());
-            emit sigModuleAdd(m_popup->buttonIndex(), newModule->name());
+            Q_EMIT sigModuleAdd(m_popup->buttonIndex(), newModule->name());
         }
     } else {
         if (newModule) {
             m_popup->setSelectedModule(newModule->name());
             setIcon(newModule->moduleIcon());
-            emit sigModuleReplace(m_popup->buttonIndex(), newModule->name());
+            Q_EMIT sigModuleReplace(m_popup->buttonIndex(), newModule->name());
         } else {
             m_popup->setSelectedModule(QString());
             setIcon(icon());
-            emit sigModuleRemove(m_popup->buttonIndex());
+            Q_EMIT sigModuleRemove(m_popup->buttonIndex());
         }
     }
 }

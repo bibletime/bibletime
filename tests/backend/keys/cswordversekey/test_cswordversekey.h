@@ -16,11 +16,10 @@
 class test_CSwordVerseKey : public QObject
 {
     Q_OBJECT
-public:
 
+private Q_SLOTS:
 
-private slots:
-    void initTestCase(); 
+    void initTestCase();
 
     void CSwordVerseKey_module_constructor();
     void CSwordVerseKey_copy_constructor();
@@ -34,7 +33,7 @@ private slots:
     void previous();
     void setModule();
 
-    void cleanupTestCase(); 
+    void cleanupTestCase();
 
 private:
     CSwordKey* m_key;

@@ -132,7 +132,7 @@ public: /* Methods: */
     */
     QHash<int, QByteArray> roleNames() const override;
 
-public slots:
+public Q_SLOTS:
 
     /**
       \brief Save bookmarks or specified branch to file.

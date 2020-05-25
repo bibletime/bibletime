@@ -59,7 +59,7 @@ bool CKCComboBox::eventFilter(QObject * o, QEvent * e) {
             if (index == -1)
                 index = 0; // return 0 if not found
             setCurrentIndex(index);
-            emit focusOut(index);
+            Q_EMIT focusOut(index);
             return false;
         }
 
@@ -67,17 +67,17 @@ bool CKCComboBox::eventFilter(QObject * o, QEvent * e) {
             return false;
 
         if (f->reason() == Qt::ActiveWindowFocusReason) {
-            emit activated(currentText());
+            Q_EMIT activated(currentText());
             return false;
         }
 
         if (f->reason() == Qt::MouseFocusReason) {
-            emit activated(currentText());
+            Q_EMIT activated(currentText());
             return false;
         }
 
         if (o == this) {
-            emit activated(currentText());
+            Q_EMIT activated(currentText());
             return false;
         }
     }
@@ -155,7 +155,7 @@ void CKeyChooserWidget::reset(const QStringList * list, int index, bool do_emit)
     }
 
     if (do_emit)
-        emit changed(m_comboBox->currentIndex());
+        Q_EMIT changed(m_comboBox->currentIndex());
 
     m_comboBox->sizeHint(); //without this function call the combo box won't be properly sized!
     //DON'T REMOVE OR MOVE THE show()! Otherwise QComboBox's sizeHint() function won't work properly!
@@ -208,7 +208,7 @@ void CKeyChooserWidget::init() {
                                m_comboBox->itemText(
                                    m_comboBox->currentIndex()));
                    if (m_comboBox->currentText() != m_oldKey)
-                       emit changed(m_comboBox->currentIndex());
+                       Q_EMIT changed(m_comboBox->currentIndex());
                });
     BT_CONNECT(m_scroller, &CScrollerWidgetSet::change,
                [this](int n) {
@@ -225,7 +225,7 @@ void CKeyChooserWidget::init() {
                    if (new_index != old_index) {
                        m_comboBox->setCurrentIndex(new_index);
                        if (!updatelock)
-                           emit changed(new_index);
+                           Q_EMIT changed(new_index);
                    }
                });
     BT_CONNECT(m_comboBox,
@@ -238,7 +238,7 @@ void CKeyChooserWidget::init() {
 
                    const QString key(m_comboBox->itemText(index));
                    if (m_oldKey.isNull() || (m_oldKey != key))
-                       emit changed(index);
+                       Q_EMIT changed(index);
 
                    m_oldKey = key;
 
@@ -254,7 +254,7 @@ void CKeyChooserWidget::init() {
                //            emit changed(index);
                            /* a workaround because focusOut is not checked, the
                               slot connected to changed to check: */
-                           emit focusOut(index);
+                           Q_EMIT focusOut(index);
                            break;
                        }
                    }

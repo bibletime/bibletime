@@ -41,7 +41,7 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         void applyProfileSettings(const QString & windowGroup) override;
         bool syncAllowed() const override;
 
-    public slots:
+    public Q_SLOTS:
         void nextBook();
         void previousBook();
         void nextChapter();

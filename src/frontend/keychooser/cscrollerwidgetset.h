@@ -40,7 +40,7 @@ public: /* Methods: */
                      const QString & scrollButton,
                      const QString & previousEntry);
 
-signals:
+Q_SIGNALS:
 
     /**
     * Is emitted to proceed to some other entry relative to the

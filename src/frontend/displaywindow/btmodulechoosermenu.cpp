@@ -103,11 +103,11 @@ BtModuleChooserMenu::BtModuleChooserMenu(
                     if (itemIndex.isValid()) {
                         auto const & sortedModel =
                                 *static_cast<SortModel *>(m_sortedModel);
-                        emit sigModuleChosen(
+                        Q_EMIT sigModuleChosen(
                                     sortedModel.m_sourceModel->module(
                                         sortedModel.mapToSource(itemIndex)));
                     } else {
-                        emit sigModuleChosen(nullptr);
+                        Q_EMIT sigModuleChosen(nullptr);
                     }
                });
 }
@@ -126,7 +126,7 @@ void BtModuleChooserMenu::preBuildMenu(QActionGroup * actionGroup) {
                     || (m_buttonIndex <= 0 && m_leftLikeModules <= 1));
         m_noneAction->setActionGroup(actionGroup);
         BT_CONNECT(m_noneAction, &QAction::triggered,
-                   [this]{ emit triggered(QModelIndex()); });
+                   [this]{ Q_EMIT triggered(QModelIndex()); });
         addAction(m_noneAction);
 
         addSeparator();

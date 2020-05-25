@@ -97,7 +97,7 @@ protected: /* Methods: */
     m_actions;
 
 
-public slots:
+public Q_SLOTS:
 
     void nextBook();
     void previousBook();
@@ -108,7 +108,7 @@ public slots:
 
     void reload(CSwordBackend::SetupChangedReason reason) override;
 
-protected slots:
+protected Q_SLOTS:
 
     /**
         * Copies the current chapter into the clipboard.

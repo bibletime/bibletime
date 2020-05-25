@@ -22,12 +22,12 @@ public:
 
     // Public slots can be used as part of a test.
     // They are not automatically ran.
-public slots:
+public Q_SLOTS:
     void slotThreadFinished();
     void slotShowMessage(const QString & msg);
 
     // Private slots are automatically ran as tests.
-private slots:
+private Q_SLOTS:
     void initTestCase();
     void installRemoteSources();
     void cleanupTestCase();

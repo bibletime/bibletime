@@ -49,7 +49,7 @@ BtMenuView::BtMenuView(QString const & title, QWidget * parent)
                        return;
                    QPersistentModelIndex itemIndex(m_indexMap.value(action));
                    if (itemIndex.isValid())
-                       emit triggered(itemIndex);
+                       Q_EMIT triggered(itemIndex);
                });
 }
 

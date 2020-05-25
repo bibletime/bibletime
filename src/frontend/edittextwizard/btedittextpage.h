@@ -38,7 +38,7 @@ public: /* Methods: */
     void initializePage() final override;
     bool validatePage() final override;
 
-signals:
+Q_SIGNALS:
 
     void signalFontChanged(const QFont &);
     void signalFontColorChanged(const QColor &);

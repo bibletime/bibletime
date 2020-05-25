@@ -17,7 +17,7 @@ class BtUrlHandler : public QObject
 {
     Q_OBJECT
 
-public slots:
+public Q_SLOTS:
     void showQt(const QUrl &url);
 };
 

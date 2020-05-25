@@ -45,7 +45,7 @@ class BtCopyByReferencesDialog : public QDialog {
     QString getReference1();
     QString getReference2();
 
-    private slots:
+    private Q_SLOTS:
 
         void slotKeyChanged(CSwordKey * newKey);
 

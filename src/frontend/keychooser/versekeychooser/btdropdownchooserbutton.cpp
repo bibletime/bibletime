@@ -57,7 +57,7 @@ void BtDropdownChooserButton::wheelEvent(QWheelEvent * e) {
     if (delta == 0) {
         e->ignore();
     } else {
-        emit stepItem((delta > 0) ? -1 : 1);
+        Q_EMIT stepItem((delta > 0) ? -1 : 1);
         e->accept();
     }
 }

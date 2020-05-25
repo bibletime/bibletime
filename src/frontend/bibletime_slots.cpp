@@ -201,14 +201,14 @@ void BibleTime::slotToggleMainToolbar() {
 void BibleTime::slotToggleTextWindowHeader() {
     bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowHeaders", true);
     btConfig().setSessionValue("GUI/showTextWindowHeaders", !currentState);
-    emit toggledTextWindowHeader(!currentState);
+    Q_EMIT toggledTextWindowHeader(!currentState);
 }
 
 void BibleTime::slotToggleNavigatorToolbar() {
     bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true);
     btConfig().setSessionValue("GUI/showTextWindowNavigator", !currentState);
     if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
-        emit toggledTextWindowNavigator(!currentState);
+        Q_EMIT toggledTextWindowNavigator(!currentState);
     else
         m_navToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
 }
@@ -217,7 +217,7 @@ void BibleTime::slotToggleToolsToolbar() {
     bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true);
     btConfig().setSessionValue("GUI/showTextWindowToolButtons", !currentState);
     if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
-        emit toggledTextWindowToolButtons(!currentState);
+        Q_EMIT toggledTextWindowToolButtons(!currentState);
     else
         m_toolsToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
 }
@@ -226,7 +226,7 @@ void BibleTime::slotToggleWorksToolbar() {
     bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true);
     btConfig().setSessionValue("GUI/showTextWindowModuleSelectorButtons", !currentState);
     if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
-        emit toggledTextWindowModuleChooser(!currentState);
+        Q_EMIT toggledTextWindowModuleChooser(!currentState);
     else
         m_worksToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
 }
@@ -235,7 +235,7 @@ void BibleTime::slotToggleFormatToolbar() {
     bool currentState = btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true);
     btConfig().setSessionValue("GUI/showFormatToolbarButtons", !currentState);
     if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
-        emit toggledTextWindowFormatToolbar(!currentState);
+        Q_EMIT toggledTextWindowFormatToolbar(!currentState);
     else
         m_formatToolBar->setVisible(!currentState);
 }
@@ -254,10 +254,10 @@ void BibleTime::showOrHideToolBars() {
         m_toolsToolBar->setVisible(false);
         m_formatToolBar->setVisible(false);
         // set state of sub window widets
-        emit toggledTextWindowNavigator(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
-        emit toggledTextWindowModuleChooser(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
-        emit toggledTextWindowToolButtons(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
-        emit toggledTextWindowFormatToolbar(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
+        Q_EMIT toggledTextWindowNavigator(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
+        Q_EMIT toggledTextWindowModuleChooser(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        Q_EMIT toggledTextWindowToolButtons(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
+        Q_EMIT toggledTextWindowFormatToolbar(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     }
     else {
         // set state of main window widgets
@@ -266,10 +266,10 @@ void BibleTime::showOrHideToolBars() {
         m_toolsToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
         m_formatToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
         //set sub window widgets invisible
-        emit toggledTextWindowNavigator(false);
-        emit toggledTextWindowToolButtons(false);
-        emit toggledTextWindowModuleChooser(false);
-        emit toggledTextWindowFormatToolbar(false);
+        Q_EMIT toggledTextWindowNavigator(false);
+        Q_EMIT toggledTextWindowToolButtons(false);
+        Q_EMIT toggledTextWindowModuleChooser(false);
+        Q_EMIT toggledTextWindowFormatToolbar(false);
     }
 }
 

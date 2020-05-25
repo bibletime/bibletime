@@ -91,7 +91,7 @@ class BtSearchOptionsArea : public QWidget {
         void saveSettings();
         bool eventFilter(QObject* obj, QEvent* event) override;
 
-    public slots:
+    public Q_SLOTS:
         /**
           Sets the modules used by the search.
         */
@@ -114,14 +114,14 @@ class BtSearchOptionsArea : public QWidget {
          */
         void chooseModules();
 
-    protected slots:
+    protected Q_SLOTS:
 
         /// \todo Implement validation
         #if 0
         void slotValidateText(const QString& newText);
         #endif
 
-    signals:
+    Q_SIGNALS:
         void sigSetSearchButtonStatus(bool);
         void sigStartSearch();
 

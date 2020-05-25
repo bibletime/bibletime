@@ -29,7 +29,7 @@ class CScrollButton: public QToolButton {
     public:
         CScrollButton(QWidget *parent = nullptr);
 
-    signals:
+    Q_SIGNALS:
         /**
         * \brief The lock() signal is emitted when the button grabs the mouse
         *        and enters the locked state.

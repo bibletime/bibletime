@@ -43,7 +43,7 @@ class BtShortcutsDialog : public QDialog {
         // change the First or Second shortcut in the dialog
         void changeSelectedShortcut(const QString& keys);
 
-    signals:
+    Q_SIGNALS:
         // make a keyChangeRequest back to the application
         void keyChangeRequest(const QString& keys);
 

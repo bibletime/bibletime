@@ -110,7 +110,7 @@ class CSearchDialog : public QDialog {
         */
         void saveDialogSettings() const;
 
-    protected slots:
+    protected Q_SLOTS:
         /**
           Starts the search with the set modules and the set search text.
         */

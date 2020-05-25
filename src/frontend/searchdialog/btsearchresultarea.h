@@ -116,7 +116,7 @@ class BtSearchResultArea : public QWidget {
             return minimumSize();
         }
 
-    public slots:
+    public Q_SLOTS:
         /**
         * Resets the current list of modules and the displayed list of found entries.
         */
@@ -139,7 +139,7 @@ class BtSearchResultArea : public QWidget {
 
         void setBrowserFont(const CSwordModuleInfo* const module);
 
-    protected slots:
+    protected Q_SLOTS:
         /**
         * Update the preview of the selected key.
         */

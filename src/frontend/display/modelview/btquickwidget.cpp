@@ -86,7 +86,7 @@ void BtQuickWidget::dropEvent( QDropEvent* e ) {
             const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
             if (btmimedata != nullptr) {
                 BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
-                emit referenceDropped(item.key());
+                Q_EMIT referenceDropped(item.key());
                 e->acceptProposedAction();
                 return;
             }

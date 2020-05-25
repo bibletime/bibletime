@@ -52,7 +52,7 @@ class CBookTreeChooser : public CKeyChooser {
 
         void setKey(CSwordKey*, const bool emitSinal);
 
-    public slots: // Public slots
+    public Q_SLOTS: // Public slots
         void updateKey( CSwordKey* ) override;
 
         void doShow();
@@ -65,7 +65,7 @@ class CBookTreeChooser : public CKeyChooser {
         void adjustFont() override;
         void addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item);
 
-    protected slots: // Protected slots
+    protected Q_SLOTS: // Protected slots
         void itemActivated( QTreeWidgetItem* item );
         void setKey(const QString & newKey) override;
 

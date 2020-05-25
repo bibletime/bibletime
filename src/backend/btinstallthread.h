@@ -50,7 +50,7 @@ class BtInstallThread: public QThread {
         void stopInstall()
         { m_stopRequested.store(true, std::memory_order_relaxed); }
 
-    signals:
+    Q_SIGNALS:
 
         /** Emitted when starting the installation. */
         void preparingInstall(int moduleIndex);
@@ -73,7 +73,7 @@ class BtInstallThread: public QThread {
         void installModule();
         bool removeModule();
 
-    private slots:
+    private Q_SLOTS:
 
         void slotDownloadStarted();
         void slotManagerStatusUpdated(int totalProgress, int fileProgress);

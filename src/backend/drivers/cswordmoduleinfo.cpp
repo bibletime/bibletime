@@ -147,7 +147,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
     /// \todo write to Sword config as well
 
     if (unlockKeyIsValid() != unlocked)
-        emit unlockedChanged(!unlocked);
+        Q_EMIT unlockedChanged(!unlocked);
     return true;
 }
 
@@ -341,7 +341,7 @@ void CSwordModuleInfo::buildIndex() {
             verseSpan = static_cast<CSwordLexiconModuleInfo *>(this)->entries().size();
         }
 
-        emit indexingProgress(0);
+        Q_EMIT indexingProgress(0);
 
         sword::SWKey * const key = m_module.getKey();
         sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(key);
@@ -481,9 +481,9 @@ void CSwordModuleInfo::buildIndex() {
 
             if (verseIndex % 200 == 0) {
                 if (verseSpan == 0) { // Prevent division by zero
-                    emit indexingProgress(0);
+                    Q_EMIT indexingProgress(0);
                 } else {
-                    emit indexingProgress(
+                    Q_EMIT indexingProgress(
                             static_cast<int>(
                                     (100 * (verseIndex - verseLowIndex))
                                     / verseSpan));
@@ -508,7 +508,7 @@ void CSwordModuleInfo::buildIndex() {
                 module_config.setValue("module-version",
                                        config(CSwordModuleInfo::ModuleVersion));
             module_config.setValue("index-version", INDEX_VERSION);
-            emit hasIndexChanged(true);
+            Q_EMIT hasIndexChanged(true);
         }
     // } catch (CLuceneError & e) {
     } catch (...) {
@@ -522,7 +522,7 @@ void CSwordModuleInfo::buildIndex() {
 
 void CSwordModuleInfo::deleteIndex() {
     deleteIndexForModule(m_cachedName);
-    emit hasIndexChanged(false);
+    Q_EMIT hasIndexChanged(false);
 }
 
 void CSwordModuleInfo::deleteIndexForModule(const QString & name) {
@@ -1054,6 +1054,6 @@ bool CSwordModuleInfo::setHidden(bool hide) {
         hiddenModules.removeOne(m_cachedName);
     }
     btConfig().setValue("state/hiddenModules", hiddenModules);
-    emit hiddenChanged(hide);
+    Q_EMIT hiddenChanged(hide);
     return true;
 }

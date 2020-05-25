@@ -80,7 +80,7 @@ class BtMenuView: public QMenu {
         */
         QModelIndex parentIndex() const { return m_parentIndex; }
 
-    signals:
+    Q_SIGNALS:
         /**
           This signal is emitted when the user activates a menu item corresponding to an
           index in the associated model.

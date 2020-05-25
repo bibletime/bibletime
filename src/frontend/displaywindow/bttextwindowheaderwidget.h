@@ -51,7 +51,7 @@ class BtTextWindowHeaderWidget : public QWidget {
         */
         void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
-    signals:
+    Q_SIGNALS:
         /** User selected a module from menu to replace an existing module.*/
         void sigModuleReplace ( int index, QString newModule );
         /** User selected a module from menu to add. */

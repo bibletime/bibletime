@@ -55,10 +55,10 @@ class CSearchAnalysisScene : public QGraphicsScene {
          */
         void resizeHeight(int height);
 
-    public slots:
+    public Q_SLOTS:
         void saveAsHTML();
 
-    protected slots: // Protected slots
+    protected Q_SLOTS: // Protected slots
         /**
         * No descriptions
         */

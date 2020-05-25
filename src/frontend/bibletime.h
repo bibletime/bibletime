@@ -217,7 +217,7 @@ class BibleTime : public QMainWindow {
           */
         void setDisplayFocus();
 
-public slots:
+public Q_SLOTS:
         /**
         * Opens the optionsdialog of BibleTime.
         */
@@ -314,7 +314,7 @@ public slots:
         */
         void closeEvent(QCloseEvent *event) override;
 
-    protected slots:
+    protected Q_SLOTS:
         /**
          * Creates a new presenter in the MDI area according to the type of the module.
          */
@@ -421,7 +421,7 @@ public slots:
         */
         void slotOpenAboutDialog();
 
-    signals:
+    Q_SIGNALS:
         void toggledTextWindowHeader(bool newState);
         void toggledTextWindowNavigator(bool newState);
         void toggledTextWindowToolButtons(bool newState);

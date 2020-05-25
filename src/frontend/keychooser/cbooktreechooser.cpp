@@ -86,7 +86,7 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
     m_treeView->scrollToItem(matching_item);
 
     if (emitSignal) {
-        emit keyChanged(m_key);
+        Q_EMIT keyChanged(m_key);
     }
 }
 
@@ -139,7 +139,7 @@ void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
     if (item) {
         m_key->setKey(item->text(1));
         //tell possible listeners about the change
-        emit keyChanged(m_key);
+        Q_EMIT keyChanged(m_key);
     }
 }
 

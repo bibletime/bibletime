@@ -150,7 +150,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                            [this]{
                                updatelock = false;
                                if (oldKey != m_key->key())
-                                   emit changed(m_key);
+                                   Q_EMIT changed(m_key);
                            });
             };
     initScrollerConnections(*m_bookScroller, &BtBibleKeyWidget::slotStepBook);
@@ -161,7 +161,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     BT_CONNECT(m_textbox, &QLineEdit::returnPressed,
                [this]{
                    m_key->setKey(m_textbox->text());
-                   emit changed(m_key);
+                   Q_EMIT changed(m_key);
                });
 
     BT_CONNECT(m_key->afterChangedSignaller(), &BtSignal::signal,
@@ -248,7 +248,7 @@ bool BtBibleKeyWidget::setKey(CSwordVerseKey *key) {
 }
 
 void BtBibleKeyWidget::slotStepBook(int offset) {
-    emit beforeChange(m_key);
+    Q_EMIT beforeChange(m_key);
 
     if(offset >= 0)
         for(; offset != 0; offset--)
@@ -258,11 +258,11 @@ void BtBibleKeyWidget::slotStepBook(int offset) {
             m_key->previous( CSwordVerseKey::UseBook );
 
     if (!updatelock)
-        emit changed(m_key);
+        Q_EMIT changed(m_key);
 }
 
 void BtBibleKeyWidget::slotStepChapter(int offset) {
-    emit beforeChange(m_key);
+    Q_EMIT beforeChange(m_key);
 
     if(offset >= 0)
         for(; offset != 0; offset--)
@@ -272,11 +272,11 @@ void BtBibleKeyWidget::slotStepChapter(int offset) {
             m_key->previous( CSwordVerseKey::UseChapter );
 
     if (!updatelock)
-        emit changed(m_key);
+        Q_EMIT changed(m_key);
 }
 
 void BtBibleKeyWidget::slotStepVerse(int offset) {
-    emit beforeChange(m_key);
+    Q_EMIT beforeChange(m_key);
 
     if(offset >= 0)
         for(; offset != 0; offset--)
@@ -286,42 +286,43 @@ void BtBibleKeyWidget::slotStepVerse(int offset) {
             m_key->previous( CSwordVerseKey::UseVerse );
 
     if (!updatelock)
-        emit changed(m_key);
+        Q_EMIT changed(m_key);
 }
 
 
 void BtBibleKeyWidget::slotChangeVerse(int n) {
     if (m_key->getVerse() != n) {
-        emit beforeChange(m_key);
+        Q_EMIT beforeChange(m_key);
         m_key->emitBeforeChanged();
         m_key->setVerse(n);
         m_key->emitAfterChanged();
         setKey( m_key );
     }
-    if (!updatelock) emit changed(m_key);
+    if (!updatelock)
+        Q_EMIT changed(m_key);
 }
 
 void BtBibleKeyWidget::slotChangeChapter(int n) {
     if (m_key->getChapter() != n) {
-        emit beforeChange(m_key);
+        Q_EMIT beforeChange(m_key);
         m_key->emitBeforeChanged();
         m_key->setChapter(n);
         m_key->emitAfterChanged();
         setKey( m_key );
     }
     if (!updatelock)
-        emit changed(m_key);
+        Q_EMIT changed(m_key);
 }
 
 void BtBibleKeyWidget::slotChangeBook(QString bookname) {
     if (m_key->book() != bookname) {
-        emit beforeChange(m_key);
+        Q_EMIT beforeChange(m_key);
         m_key->emitBeforeChanged();
         m_key->book( bookname );
         m_key->emitAfterChanged();
         setKey( m_key );
     }
     if (!updatelock)
-        emit changed(m_key);
+        Q_EMIT changed(m_key);
 }
 

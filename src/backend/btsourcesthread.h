@@ -35,7 +35,7 @@ public: /* Methods: */
     inline bool finishedSuccessfully() const noexcept
     { return m_finishedSuccessfully.load(std::memory_order_acquire); }
 
-signals:
+Q_SIGNALS:
 
     void percentComplete(int percent);
     void showMessage(QString const & msg);

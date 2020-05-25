@@ -44,10 +44,10 @@ public: /* Methods: */
     int nextId() const final override;
     BtModuleSet selectedWorks() const;
 
-public slots:
+public Q_SLOTS:
     void slotStopInstall();
 
-private slots:
+private Q_SLOTS:
 
     void slotInstallStarted(int moduleIndex);
     void slotOneItemCompleted(int moduleIndex, bool status);

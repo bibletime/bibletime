@@ -35,7 +35,7 @@ class BtOpenWorkActionMenu: public BtMenuView {
         inline BtBookshelfTreeModel *treeModel() const { return m_treeModel; }
         inline BtBookshelfFilterModel *postFilterModel() const { return m_postFilterModel; }
 
-    signals:
+    Q_SIGNALS:
         void triggered(CSwordModuleInfo *module);
 
     private:
@@ -60,7 +60,7 @@ class BtOpenWorkAction: public QAction {
                                   QObject *parent = nullptr);
         ~BtOpenWorkAction();
 
-    signals:
+    Q_SIGNALS:
         void triggered(CSwordModuleInfo *module);
 
     protected:

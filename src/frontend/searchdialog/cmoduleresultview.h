@@ -66,7 +66,7 @@ class CModuleResultView : public QTreeWidget {
                                  QTreeWidgetItem *parent,
                                  const QString &searchedText);
 
-    protected slots:
+    protected Q_SLOTS:
         /**
         * Is executed when an item was selected in the list.
         */
@@ -76,7 +76,7 @@ class CModuleResultView : public QTreeWidget {
         */
         void contextMenuEvent( QContextMenuEvent * event ) override;
 
-    signals:
+    Q_SIGNALS:
         void moduleSelected(const CSwordModuleInfo*, const sword::ListKey&);
         void moduleChanged();
         void strongsSelected(CSwordModuleInfo*, const QStringList&);

@@ -39,7 +39,7 @@ class BtDropdownChooserButton : public QToolButton {
     protected:
         BtBibleKeyWidget* m_ref;
         void wheelEvent(QWheelEvent* event) override;
-    signals:
+    Q_SIGNALS:
         void stepItem(int step);
 };
 

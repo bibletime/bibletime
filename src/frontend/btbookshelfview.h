@@ -25,7 +25,7 @@ class BtBookshelfView: public QTreeView {
 
         CSwordModuleInfo *getModule(const QModelIndex &index) const;
 
-    signals:
+    Q_SIGNALS:
         void contextMenuActivated(QPoint pos);
         void moduleContextMenuActivated(CSwordModuleInfo *item,
                                         QPoint pos);

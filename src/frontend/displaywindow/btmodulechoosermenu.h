@@ -54,7 +54,7 @@ public: /* Methods: */
 
     int buttonIndex() const noexcept { return m_buttonIndex; }
 
-signals:
+Q_SIGNALS:
 
     void sigModuleChosen(CSwordModuleInfo * module);
 

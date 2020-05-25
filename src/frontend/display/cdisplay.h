@@ -155,7 +155,7 @@ class CDisplayConnections : public QObject {
 public:
     CDisplayConnections( CDisplay* parent );
 
-public slots:
+public Q_SLOTS:
     virtual void selectAll();
     void emitReferenceClicked( const QString& module, const QString& key);
     void emitReferenceDropped( const QString& key );
@@ -184,7 +184,7 @@ public slots:
 
     void openFindTextDialog();
 
-signals:
+Q_SIGNALS:
     void referenceClicked(const QString& module, const QString& key);
     void referenceDropped(const QString& key);
     void textChanged();

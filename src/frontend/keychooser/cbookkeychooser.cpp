@@ -114,7 +114,7 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
     }
 
     if (emitSignal)
-        emit keyChanged(m_key);
+        Q_EMIT keyChanged(m_key);
 }
 
 /** Returns the key of this kechooser. */

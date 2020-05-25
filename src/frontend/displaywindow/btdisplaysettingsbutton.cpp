@@ -40,40 +40,40 @@ BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
 
                    if (action == m_verseNumbersAction) {
                        m_displayOptions.verseNumbers = checked;
-                       emit sigDisplayOptionsChanged(m_displayOptions);
+                       Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
                    } else if (action == m_variantAction) {
                        m_filterOptions.textualVariants = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_hebrewPointsAction) {
                        m_filterOptions.hebrewPoints = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_greekAccentsAction) {
                        m_filterOptions.greekAccents = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_hebrewCantillationAction) {
                        m_filterOptions.hebrewCantillation = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_headingsAction) {
                        m_filterOptions.headings = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_morphSegmentationAction) {
                        m_filterOptions.morphSegmentation = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_scriptureReferencesAction) {
                        m_filterOptions.scriptureReferences = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_footnotesAction) {
                        m_filterOptions.footnotes = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else if (action == m_redWordsAction) {
                        m_filterOptions.redLetterWords = checked;
-                       emit sigFilterOptionsChanged(m_filterOptions);
+                       Q_EMIT sigFilterOptionsChanged(m_filterOptions);
                    } else {
                        BT_ASSERT(false && "Shouldn't happen!");
                        return;
                    }
 
-                   emit sigChanged();
+                   Q_EMIT sigChanged();
                });
 }
 

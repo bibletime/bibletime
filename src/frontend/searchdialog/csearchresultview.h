@@ -49,7 +49,7 @@ class CSearchResultView  : public QTreeWidget {
         QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const override;
         QStringList mimeTypes () const override;
 
-    public slots: // Public slots
+    public Q_SLOTS: // Public slots
 
         /**
           Setups the list with the given module.
@@ -87,7 +87,7 @@ class CSearchResultView  : public QTreeWidget {
         QMenu* m_popup;
         const CSwordModuleInfo *m_module;
 
-    signals: // Signals
+    Q_SIGNALS: // Signals
         void keySelected(const QString&);
         void keyDeselected();
 };

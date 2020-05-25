@@ -28,11 +28,11 @@ public: /* Methods: */
 
     int fontSize() const;
 
-public slots:
+public Q_SLOTS:
 
     void setFontSize(int size);
 
-signals:
+Q_SIGNALS:
 
     void fontSizeChanged(int);
 

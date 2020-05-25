@@ -79,7 +79,7 @@ public: /* Methods: */
         return m_categoryFilter;
     }
 
-public slots:
+public Q_SLOTS:
     void setEnabled(bool enable);
 
     // Name filter:

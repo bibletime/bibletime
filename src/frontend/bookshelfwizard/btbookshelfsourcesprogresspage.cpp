@@ -123,7 +123,7 @@ void BtBookshelfSourcesProgressPage::slotThreadFinished() {
     if (m_thread->finishedSuccessfully())
         BtBookshelfWizard::setAutoUpdateSources(false);
     m_installCompleted = true;
-    emit QWizardPage::completeChanged();
+    Q_EMIT QWizardPage::completeChanged();
     btWizard().downloadFinished();
 }
 

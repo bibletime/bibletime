@@ -21,11 +21,11 @@ class test_BtInstallThread : public QObject
 {
     Q_OBJECT
 
-public slots:
+public Q_SLOTS:
     void slotOneItemCompleted(int moduleIndex, bool successful);
     void slotThreadFinished();
 
-private slots:
+private Q_SLOTS:
     void initTestCase();
     void installModules();
     void cleanupTestCase();

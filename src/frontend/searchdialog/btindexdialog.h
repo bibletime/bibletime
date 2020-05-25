@@ -40,7 +40,7 @@ private: /* Methods: */
     void populateModuleList();
     void retranslateUi();
 
-private slots:
+private Q_SLOTS:
 
     void autoDeleteOrphanedIndicesChanged(int newState);
     void slotSwordSetupChanged();

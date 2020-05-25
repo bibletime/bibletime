@@ -44,11 +44,11 @@ class BtShortcutsEditor : public QWidget {
         // stores "keys" into the custom shortcuts dialog field
         void changeShortcutInDialog(const QString& keys);
 
-    signals:
+    Q_SIGNALS:
         // make a keyChangeRequest back to the application
         void keyChangeRequest(BtShortcutsEditor*, const QString& keys);
 
-    private slots:
+    private Q_SLOTS:
 
         // called when a different action name row is selected
         void changeRow(int row, int column);

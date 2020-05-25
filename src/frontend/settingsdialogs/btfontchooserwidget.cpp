@@ -94,7 +94,7 @@ void BtFontChooserWidget::connectListWidgets() {
                        m_font.setFamily(fontFamily);
                        loadStyles(fontFamily);
                        outputHtmlText();
-                       emit fontSelected(m_font);
+                       Q_EMIT fontSelected(m_font);
                    }
                });
     BT_CONNECT(
@@ -118,7 +118,7 @@ void BtFontChooserWidget::connectListWidgets() {
                            styleString);
 
                  outputHtmlText();
-                 emit fontSelected(m_font);
+                 Q_EMIT fontSelected(m_font);
              });
     BT_CONNECT(m_sizeListWidget, &CListWidget::currentItemChanged,
                [this](QListWidgetItem * const current, QListWidgetItem *) {
@@ -129,7 +129,7 @@ void BtFontChooserWidget::connectListWidgets() {
                                m_sizeListWidget->currentItem()->text().toInt());
 
                    outputHtmlText();
-                   emit fontSelected(m_font);
+                   Q_EMIT fontSelected(m_font);
                });
 }
 

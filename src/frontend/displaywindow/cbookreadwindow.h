@@ -38,7 +38,7 @@ public: /* Methods: */
     void applyProfileSettings(const QString & windowGroup) override;
     static void insertKeyboardActions(BtActionCollection * const a);
 
-public slots:
+public Q_SLOTS:
 
     void reload(CSwordBackend::SetupChangedReason reason) override;
 
@@ -52,11 +52,11 @@ protected: /* Methods: */
 
     void setupPopupMenu() override;
 
-protected slots:
+protected Q_SLOTS:
 
     void modulesChanged() override;
 
-private slots:
+private Q_SLOTS:
 
     /**
         * Is called when the action was executed to toggle the tree view.

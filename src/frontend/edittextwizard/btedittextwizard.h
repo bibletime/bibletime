@@ -34,7 +34,7 @@ public: /* Methods: */
     void setTitle(const QString& text);
     QString text() const;
 
-public slots:
+public Q_SLOTS:
 
     void accept() final override;
 

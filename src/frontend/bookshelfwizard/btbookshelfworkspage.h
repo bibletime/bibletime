@@ -44,7 +44,7 @@ public: /* Methods: */
     QString installPath() const;
     int nextId() const final override;
 
-private slots:
+private Q_SLOTS:
 
     void slotGroupingActionTriggered(
             BtBookshelfTreeModel::Grouping const & grouping);

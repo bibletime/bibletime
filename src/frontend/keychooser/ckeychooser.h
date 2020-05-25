@@ -52,7 +52,7 @@ public: /* Methods: */
                                         CSwordKey * key,
                                         QWidget * parent);
 
-public slots:
+public Q_SLOTS:
 
     /**
       Sets the CKey
@@ -82,7 +82,7 @@ public slots:
     */
     virtual void refreshContent() = 0;
 
-signals:
+Q_SIGNALS:
 
     /**
     * is emitted if the @ref CKey was changed by the user
@@ -100,7 +100,7 @@ protected: /* Methods: */
     */
     virtual void adjustFont() = 0;
 
-protected slots:
+protected Q_SLOTS:
 
     virtual void setKey(const QString & newKey) = 0;
 

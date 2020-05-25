@@ -43,7 +43,7 @@ protected: /* Methods: */
 
     bool eventFilter(QObject * o, QEvent * e) override;
 
-signals:
+Q_SIGNALS:
 
     /**
     * Emitted when the user moves the focus away from the combo by pressing tab
@@ -113,7 +113,7 @@ public: /* Methods: */
         return *m_comboBox;
     }
 
-signals:
+Q_SIGNALS:
 
     /**
     * Is emitted if the widget changed, but

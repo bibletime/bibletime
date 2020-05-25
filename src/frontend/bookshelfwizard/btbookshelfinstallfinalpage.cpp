@@ -190,6 +190,6 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
 
     m_installCompleted = true;
-    emit QWizardPage::completeChanged();
+    Q_EMIT QWizardPage::completeChanged();
     btWizard().downloadFinished();
 }

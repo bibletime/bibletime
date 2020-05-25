@@ -27,7 +27,7 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
     public:
         BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype, QStringList modules, CDisplayWindow *window);
 
-    public slots:
+    public Q_SLOTS:
         /**
           The backend module list was updated, module list and widgets must be updated from
           scratch.
@@ -39,7 +39,7 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         */
         void slotWindowModulesChanged() override;
 
-    signals:
+    Q_SIGNALS:
         /** User selected a module from menu to replace another module*/
         void sigModuleReplace ( int index, QString newModule );
         /** User selected a module from menu to add */

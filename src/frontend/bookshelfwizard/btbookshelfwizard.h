@@ -56,7 +56,7 @@ public: /* Methods: */
     void downloadStarted();
     void downloadFinished();
 
-public slots:
+public Q_SLOTS:
 
     void accept() final override;
 

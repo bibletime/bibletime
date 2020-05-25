@@ -38,7 +38,7 @@ public: /* Methods: */
 
     bool isUserDisclaimerConfirmed() const override;
 
-signals:
+Q_SIGNALS:
 
     /**
       Download status. Percent of total and file.

@@ -44,7 +44,7 @@ void BtColorWidget::mouseReleaseEvent(QMouseEvent * event) {
             this));
         if (color.isValid()) {
             setColor(color);
-            emit changed(color);
+            Q_EMIT changed(color);
         }
     }
 }
