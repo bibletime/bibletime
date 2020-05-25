@@ -74,11 +74,8 @@ void BibleTime::slotSettingsOptions() {
 }
 
 /** Save the settings, used when no settings have been saved before **/
-void BibleTime::saveConfigSettings() {
-    CConfigurationDialog* dlg = new CConfigurationDialog(this, nullptr);
-    dlg->save();
-    delete dlg;
-}
+void BibleTime::saveConfigSettings()
+{ CConfigurationDialog(this, nullptr).save(); }
 
 /** Opens the bookshelf wizard. */
 void BibleTime::slotBookshelfWizard() {
