@@ -81,7 +81,7 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
         "}td{"
             "padding:0.2em 0.3em;"
             "border:3px solid ";
-    html += palette().color(QPalette::Foreground).name();
+    html += palette().color(QPalette::WindowText).name();
     html += ";"
             "color:";
     html += palette().color(QPalette::Text).name();
