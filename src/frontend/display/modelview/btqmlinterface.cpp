@@ -106,11 +106,11 @@ void BtQmlInterface::setActiveLink(const QString& link) {
 }
 
 QColor BtQmlInterface::getBackgroundColor() const {
-    return ColorManager::instance()->getBackgroundColor();
+    return ColorManager::instance().getBackgroundColor();
 }
 
 QColor BtQmlInterface::getForegroundColor() const {
-    return ColorManager::instance()->getForegroundColor();
+    return ColorManager::instance().getForegroundColor();
 }
 
 int BtQmlInterface::getCurrentModelIndex() const {

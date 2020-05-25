@@ -249,7 +249,7 @@ void CDisplaySettingsPage::updateStylePreview() {
     QString text = render.renderKeyTree(tree);
     text.replace("#CHAPTERTITLE#", "");
     updateColors();
-    text = ColorManager::instance()->replaceColors(text);
+    text = ColorManager::instance().replaceColors(text);
     m_stylePreviewViewer->setText(text);
 
     btConfig().setValue("GUI/activeTemplateName", oldStyleName);
@@ -263,7 +263,7 @@ void CDisplaySettingsPage::save() {
 
 void CDisplaySettingsPage::updateColors(const QString& style) {
     QPalette p = m_stylePreviewViewer->palette();
-    p.setColor(QPalette::Window, ColorManager::instance()->getBackgroundColor(style));
-    p.setColor(QPalette::WindowText, ColorManager::instance()->getForegroundColor(style));
+    p.setColor(QPalette::Window, ColorManager::instance().getBackgroundColor(style));
+    p.setColor(QPalette::WindowText, ColorManager::instance().getForegroundColor(style));
     m_stylePreviewViewer->setPalette(p);
 }
