@@ -35,20 +35,19 @@ class BtToolButton: public QToolButton {
 // This class provides a toolbar widget that has a icon plus a right side down arrow
 // The icon is typically set to a back or forward arrow and the down arrow has a popup
 // menu when clicked. The menu is typicallly populated with history actions.
-BtToolBarPopupAction::BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent)
-        : QWidgetAction(parent), m_icon(icon), m_text(text) {
-    setText(text);
-    m_menu = new QMenu();
-}
+BtToolBarPopupAction::BtToolBarPopupAction(QIcon const & icon,
+                                           QString const & text,
+                                           QObject * parent)
+    : QWidgetAction(parent)
+    , m_menu(std::make_unique<QMenu>())
+    , m_icon(icon)
+    , m_text(text)
+{ setText(text); }
 
-BtToolBarPopupAction::~BtToolBarPopupAction() {
-    delete m_menu;
-}
+BtToolBarPopupAction::~BtToolBarPopupAction() = default;
 
 // return the QMenu object so a popup menu can be constructed
-QMenu* BtToolBarPopupAction::popupMenu() const {
-    return m_menu;
-}
+QMenu * BtToolBarPopupAction::popupMenu() const { return m_menu.get(); }
 
 QWidget* BtToolBarPopupAction::createWidget(QWidget* parent) {
     m_button = new BtToolButton(parent);
@@ -56,7 +55,7 @@ QWidget* BtToolBarPopupAction::createWidget(QWidget* parent) {
     setToolTip(m_text);
     m_button->setDefaultAction(this);
     m_button->setPopupMode(QToolButton::MenuButtonPopup);
-    m_button->setMenu(m_menu);
+    m_button->setMenu(m_menu.get());
     BT_CONNECT(m_button, &BtToolButton::pressed,
                this /* Meeded */, [this] { Q_EMIT triggered(); });
     return m_button;

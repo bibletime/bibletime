@@ -14,6 +14,7 @@
 #define BT_TOOLBAR_POPUP_ACTION_H
 
 #include <QWidgetAction>
+#include <memory>
 
 
 class QIcon;
@@ -38,7 +39,7 @@ class BtToolBarPopupAction : public QWidgetAction {
         QWidget* createWidget(QWidget* parent) override;
 
     private:
-        QMenu* m_menu;
+        std::unique_ptr<QMenu> const m_menu;
         QToolButton* m_button;
         QIcon m_icon;
         QString m_text;
