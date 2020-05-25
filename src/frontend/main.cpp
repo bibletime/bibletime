@@ -309,10 +309,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Initalize color manager
-    if (!app.initColorManager()) {
-        qFatal("Error initializing color manager!");
-        return EXIT_FAILURE;
-    }
+    app.initColorManager();
 
     app.initIcons();
 

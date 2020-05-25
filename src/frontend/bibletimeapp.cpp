@@ -106,14 +106,7 @@ bool BibleTimeApp::initDisplayTemplateManager() {
     return false;
 }
 
-bool BibleTimeApp::initColorManager() {
-
-    QString errorMessage;
-    errorMessage = ColorManager::instance().loadColorMaps();
-    if (errorMessage.isNull())
-        return true;
-    message::showCritical(nullptr, tr("Fatal error!"), errorMessage);
-    return false;
-}
+void BibleTimeApp::initColorManager()
+{ ColorManager::instance().loadColorMaps(); }
 
 void BibleTimeApp::initIcons() { m_icons = new BtIcons(); }
