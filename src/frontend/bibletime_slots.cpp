@@ -78,10 +78,8 @@ void BibleTime::saveConfigSettings()
 { CConfigurationDialog(this, nullptr).save(); }
 
 /** Opens the bookshelf wizard. */
-void BibleTime::slotBookshelfWizard() {
-    BtBookshelfWizard dlg(BibleTime::instance());
-    dlg.exec();
-}
+void BibleTime::slotBookshelfWizard()
+{ BtBookshelfWizard(BibleTime::instance()).exec(); }
 
 /** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {
