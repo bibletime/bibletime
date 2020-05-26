@@ -119,8 +119,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->horizontalHeader()->setStretchLastSection(true);
     m_table->verticalHeader()->setVisible(false);
     m_table->setShowGrid(false);
-    BT_CONNECT(m_table, &QTableWidget::cellClicked,
-               this,    &BtShortcutsEditor::changeRow);
+    BT_CONNECT(m_table, &QTableWidget::itemSelectionChanged,
+               this,    &BtShortcutsEditor::slotSelectionChanged);
     vBox->addWidget(m_table);
 
     // Create the area below the table where the shortcuts are edited:
@@ -227,7 +227,7 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
         });
     m_table->sortItems(0);
     m_table->selectRow(0);
-    changeRow(0, 0);
+    slotSelectionChanged();
     BT_CONNECT(m_dlg, &BtShortcutsDialog::keyChangeRequest,
                this,  &BtShortcutsEditor::makeKeyChangeRequest);
 }
@@ -241,19 +241,17 @@ void BtShortcutsEditor::commitChanges() {
 }
 
 // called when a different action name row is selected
-void BtShortcutsEditor::changeRow(int row, int column) {
-    Q_UNUSED(column) /// \todo Is this correct?
-
-    auto & item = *getShortcutsEditor(*m_table, row);
-    m_currentRow = row;
+void BtShortcutsEditor::slotSelectionChanged() {
+    m_currentRow = m_table->currentRow();
+    auto & item = *getShortcutsEditor(*m_table, m_currentRow);
     auto const defaultKeys = item.getDefaultKeys();
 
     m_defaultLabelValue->setText(defaultKeys.toString());
 
-    QTableWidgetItem* item1 = m_table->item(row, 1);
+    QTableWidgetItem* item1 = m_table->item(m_currentRow, 1);
     QString shortcut = item1->text();
 
-    QTableWidgetItem* item2 = m_table->item(row, 2);
+    QTableWidgetItem* item2 = m_table->item(m_currentRow, 2);
     QString alternate = item2->text();
 
     QString bothKeys = shortcut;

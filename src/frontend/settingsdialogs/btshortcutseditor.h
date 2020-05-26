@@ -50,7 +50,7 @@ class BtShortcutsEditor : public QWidget {
     private Q_SLOTS:
 
         // called when a different action name row is selected
-        void changeRow(int row, int column);
+        void slotSelectionChanged();
 
         // called when the none radio button is clicked
         void noneButtonClicked(bool checked);
