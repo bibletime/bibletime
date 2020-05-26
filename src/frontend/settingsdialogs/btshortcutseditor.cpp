@@ -263,7 +263,7 @@ void BtShortcutsEditor::commitChanges() {
 
 // called when a different action name row is selected
 void BtShortcutsEditor::changeRow(int row, int column) {
-    Q_UNUSED(column); /// \todo Is this correct?
+    Q_UNUSED(column) /// \todo Is this correct?
 
     BtShortcutsEditorItem* item = getShortcutsEditor(row);
     m_currentRow = row;
@@ -292,7 +292,7 @@ void BtShortcutsEditor::changeRow(int row, int column) {
 
 // called when the none radio button is clicked
 void BtShortcutsEditor::noneButtonClicked(bool checked) {
-    Q_UNUSED(checked); /// \todo Is this correct?
+    Q_UNUSED(checked) /// \todo Is this correct?
 
     if (m_currentRow < 0)
         return;
@@ -306,7 +306,7 @@ void BtShortcutsEditor::noneButtonClicked(bool checked) {
 
 // called when the default radio button is clicked
 void BtShortcutsEditor::defaultButtonClicked(bool checked) {
-    Q_UNUSED(checked); /// \todo Is this correct?
+    Q_UNUSED(checked) /// \todo Is this correct?
 
     if (m_currentRow < 0)
         return;
@@ -321,7 +321,7 @@ void BtShortcutsEditor::defaultButtonClicked(bool checked) {
 
 // called when the custom radio button is clicked
 void BtShortcutsEditor::customButtonClicked(bool checked) {
-    Q_UNUSED(checked); /// \todo Is this correct?
+    Q_UNUSED(checked) /// \todo Is this correct?
 
     if (m_currentRow < 0)
         return;

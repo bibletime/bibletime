@@ -92,7 +92,7 @@ void BtInstallMgr::preStatus(long totalBytes,
                              long completedBytes,
                              const char * message)
 {
-    Q_UNUSED(message);
+    Q_UNUSED(message)
     BT_ASSERT(completedBytes <= totalBytes);
     if (m_firstCallOfPreStatus) {
         m_firstCallOfPreStatus = false;

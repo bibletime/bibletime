@@ -63,7 +63,7 @@ QVariant BtInstallPageModel::data(QModelIndex const & i, int role) const {
 }
 
 int BtInstallPageModel::columnCount(QModelIndex const & parent) const {
-    Q_UNUSED(parent);
+    Q_UNUSED(parent)
     return 3;
 }
 

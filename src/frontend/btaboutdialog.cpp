@@ -95,7 +95,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
 }
 
 void BtAboutDialog::resizeEvent(QResizeEvent* event) {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     QString version = "BibleTime " BT_VERSION;
     QFontMetrics fm(m_versionLabel->font());
     int w = width()  - m_iconLabel->width() - 80;

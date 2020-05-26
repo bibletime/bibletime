@@ -78,7 +78,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
 }
 
 QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
-    Q_UNUSED(key);
+    Q_UNUSED(key)
     BT_ASSERT(dynamic_cast<BtPrinter::KeyTreeItem const *>(&i));
     BtPrinter::KeyTreeItem const * const printItem =
             static_cast<BtPrinter::KeyTreeItem const *>(&i);

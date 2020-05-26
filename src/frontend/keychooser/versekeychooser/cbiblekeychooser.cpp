@@ -75,7 +75,7 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
 }
 
 void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
-    Q_UNUSED(key);
+    Q_UNUSED(key)
 
     BT_ASSERT(m_key);
 

@@ -241,7 +241,7 @@ void CBookKeyChooser::setupCombo(const QString & key,
 
 /** A keychooser changed. Update and emit a signal if necessary. */
 void CBookKeyChooser::keyChooserChanged(int newIndex) {
-    Q_UNUSED(newIndex);
+    Q_UNUSED(newIndex)
     QStringList items;
 
     const int max = std::min(m_chooserWidgets.count(),

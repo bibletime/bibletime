@@ -29,7 +29,7 @@ CPlainTextExportRendering::CPlainTextExportRendering(
 QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
                                                CSwordKey * k)
 {
-    Q_UNUSED(k);
+    Q_UNUSED(k)
 
     if (!m_addText)
         return QString(i.key()).append("\n");
@@ -57,7 +57,7 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
 }
 
 QString CPlainTextExportRendering::finishText(const QString &text, const KeyTree &tree) {
-    Q_UNUSED(tree);
+    Q_UNUSED(tree)
     return text;
 }
 

@@ -29,7 +29,7 @@ CrossRefRendering::CrossRefRendering(const DisplayOptions &displayOptions,
 }
 
 QString CrossRefRendering::finishText(const QString &text, const KeyTree &tree) {
-    Q_UNUSED(tree);
+    Q_UNUSED(tree)
     return text;
 }
 
