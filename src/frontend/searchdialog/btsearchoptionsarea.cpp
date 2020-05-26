@@ -283,11 +283,19 @@ QStringList BtSearchOptionsArea::getUniqueWorksList() {
 
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog dlg(this);
+    #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     auto & ms = modules();
     dlg.setCheckedModules(QSet<CSwordModuleInfo const *>(ms.begin(), ms.end()));
+    #else
+    dlg.setCheckedModules(modules().toSet());
+    #endif
     if (dlg.exec() == QDialog::Accepted) {
+        #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
         auto const cms(dlg.checkedModules());
         setModules(BtConstModuleList(cms.begin(), cms.end()));
+        #else
+        setModules(dlg.checkedModules().values());
+        #endif
     }
 }
 
