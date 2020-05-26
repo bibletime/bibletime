@@ -12,6 +12,7 @@
 
 #include "btshortcutseditor.h"
 
+#include <optional>
 #include <QAction>
 #include <QGroupBox>
 #include <QHeaderView>
@@ -23,93 +24,77 @@
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QVBoxLayout>
+#include <utility>
 #include "../displaywindow/btactioncollection.h"
 #include "../../util/btconnect.h"
 #include "btshortcutsdialog.h"
 
 
-// *************** BtShortcutsEditorItem *******************************************************************
-// BtShortcutsEditorItem is the widget for the first column of the BtShortcutsEditor
-// It holds extra information about the action
+namespace {
 
+/** Widget for the first column of the BtShortcutsEditor holding extra
+    information about the action. */
 class BtShortcutsEditorItem : public QTableWidgetItem {
-    public:
-        BtShortcutsEditorItem(QAction* action);
-        ~BtShortcutsEditorItem();
-        void commitChanges();
-        QKeySequence getDefaultKeys();
-        void setDefaultKeys(QKeySequence keys);
-        void setFirstHotkey(QKeySequence keys);
-        void setSecondHotkey(const QString& keys);
-        QAction* getAction();
-        void deleteHotkeys();
 
-    private:
-        QAction *m_action;
-        QKeySequence *m_newFirstHotkey;
-        QKeySequence *m_newSecondHotkey;
-        QKeySequence m_defaultKeys;
+public: /* Methods: */
+
+    BtShortcutsEditorItem(QAction * action,
+                          QKeySequence defaultKeys)
+        : m_action(action)
+        , m_defaultKeys(std::move(defaultKeys))
+    {
+        setText(action->text().replace(QRegExp("&(.)"), "\\1"));
+        setIcon(action->icon());
+        setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+        QList<QKeySequence> list = m_action->shortcuts();
+        if (list.count() > 0)
+            m_newFirstHotkey.emplace(list.at(0));
+        if (list.count() > 1)
+            m_newSecondHotkey.emplace(list.at(1));
+    }
+
+    void commitChanges() {
+        if (!m_action)
+            return;
+        QList<QKeySequence> list;
+        if (m_newFirstHotkey && !m_newFirstHotkey->isEmpty())
+            list << *m_newFirstHotkey;
+        if (m_newSecondHotkey && !m_newSecondHotkey->isEmpty())
+            list << *m_newSecondHotkey;
+
+        m_action->setShortcuts(list);
+    }
+
+    QKeySequence getDefaultKeys() const { return m_defaultKeys; }
+
+    template <typename ... Args>
+    void setFirstHotkey(Args && ... args)
+    { m_newFirstHotkey.emplace(std::forward<Args>(args)...); }
+
+    template <typename ... Args>
+    void setSecondHotkey(Args && ... args)
+    { m_newSecondHotkey.emplace(std::forward<Args>(args)...); }
+
+    void deleteHotkeys() noexcept {
+        m_newFirstHotkey.reset();
+        m_newSecondHotkey.reset();
+    }
+
+private: /* Fields: */
+
+    QAction *m_action;
+    std::optional<QKeySequence> m_newFirstHotkey;
+    std::optional<QKeySequence> m_newSecondHotkey;
+    QKeySequence m_defaultKeys;
+
 };
 
-BtShortcutsEditorItem::BtShortcutsEditorItem(QAction* action)
-        : m_action(action), m_newFirstHotkey(nullptr), m_newSecondHotkey(nullptr) {
-    QList<QKeySequence> list = m_action->shortcuts();
-    if (list.count() > 0)
-        m_newFirstHotkey = new QKeySequence(list.at(0));
-    if (list.count() > 1)
-        m_newSecondHotkey = new QKeySequence(list.at(1));
-}
+// Get the shortcut editor item from the zeroth column of the table:
+inline auto getShortcutsEditor(QTableWidget const & tableWidget, int const row)
+{ return dynamic_cast<BtShortcutsEditorItem *>(tableWidget.item(row, 0)); }
 
-BtShortcutsEditorItem::~BtShortcutsEditorItem() {
-    delete m_newFirstHotkey;
-    delete m_newSecondHotkey;
-}
-
-QAction* BtShortcutsEditorItem::getAction() {
-    return m_action;
-}
-
-QKeySequence BtShortcutsEditorItem::getDefaultKeys() {
-    return m_defaultKeys;
-}
-
-void BtShortcutsEditorItem::setDefaultKeys(QKeySequence keys) {
-    m_defaultKeys = keys;
-}
-
-void BtShortcutsEditorItem::setFirstHotkey(QKeySequence keys) {
-    if (m_newFirstHotkey == nullptr)
-        m_newFirstHotkey = new QKeySequence();
-    *m_newFirstHotkey = keys;
-}
-
-void BtShortcutsEditorItem::setSecondHotkey(const QString& keys) {
-    if (m_newSecondHotkey == nullptr)
-        m_newSecondHotkey = new QKeySequence();
-    *m_newSecondHotkey = QKeySequence(keys);
-}
-
-// Deletes hotkey information
-void BtShortcutsEditorItem::deleteHotkeys() {
-    delete m_newFirstHotkey;
-    m_newFirstHotkey = nullptr;
-    delete m_newSecondHotkey;
-    m_newSecondHotkey = nullptr;
-}
-
-// Moves the hotkey information into the QAction variable
-void BtShortcutsEditorItem::commitChanges() {
-    QList<QKeySequence> list;
-    if ( (m_newFirstHotkey != nullptr) && (*m_newFirstHotkey != QKeySequence()) ) {
-        list << *m_newFirstHotkey;
-    }
-    if ( (m_newSecondHotkey != nullptr) && (*m_newSecondHotkey != QKeySequence()) )
-        list << *m_newSecondHotkey;
-
-    if (m_action != nullptr)
-        m_action->setShortcuts(list);
-}
-
+} // anonymous namespace
 
 // ******************* BtShortcutsEditor *******************************************************
 
@@ -197,14 +182,10 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
             m_table->insertRow(count);
 
             {
-                BtShortcutsEditorItem * const item =
-                        new BtShortcutsEditorItem{&action};
+                auto * const item =
+                        new BtShortcutsEditorItem(&action, defaultKeys);
                 try {
                     /// \todo Remove this & hack and use Qt properties instead:
-                    item->setText(action.text().replace(QRegExp("&(.)"), "\\1"));
-                    item->setIcon(action.icon());
-                    item->setDefaultKeys(defaultKeys);
-                    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
                     m_table->setItem(count, 0, item);
                 } catch (...) {
                     delete item;
@@ -249,15 +230,11 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
                this,  &BtShortcutsEditor::makeKeyChangeRequest);
 }
 
-// get the shortcut editor item from the zeroth column of the table
-BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int const row)
-{ return dynamic_cast<BtShortcutsEditorItem *>(m_table->item(row, 0)); }
-
 // saves shortcut keys into the QAction
 void BtShortcutsEditor::commitChanges() {
     int const rows = m_table->rowCount();
     for (int row = 0; row < rows; row++)
-        if (auto * const btItem = getShortcutsEditor(row))
+        if (auto * const btItem = getShortcutsEditor(*m_table, row))
             btItem->commitChanges();
 }
 
@@ -265,9 +242,9 @@ void BtShortcutsEditor::commitChanges() {
 void BtShortcutsEditor::changeRow(int row, int column) {
     Q_UNUSED(column) /// \todo Is this correct?
 
-    BtShortcutsEditorItem* item = getShortcutsEditor(row);
+    auto & item = *getShortcutsEditor(*m_table, row);
     m_currentRow = row;
-    QKeySequence defaultKeys = item->getDefaultKeys();
+    auto const defaultKeys = item.getDefaultKeys();
 
     m_defaultLabelValue->setText(defaultKeys.toString());
 
@@ -296,10 +273,10 @@ void BtShortcutsEditor::noneButtonClicked(bool checked) {
 
     if (m_currentRow < 0)
         return;
-    BtShortcutsEditorItem* item = getShortcutsEditor(m_currentRow);
+    auto & item = *getShortcutsEditor(*m_table, m_currentRow);
     m_customPushButton->setText("");
-    item->deleteHotkeys();
-    item->setFirstHotkey(QKeySequence(""));
+    item.deleteHotkeys();
+    item.setFirstHotkey("");
     m_table->item(m_currentRow, 1)->setText("");
     m_table->item(m_currentRow, 2)->setText("");
 }
@@ -310,10 +287,10 @@ void BtShortcutsEditor::defaultButtonClicked(bool checked) {
 
     if (m_currentRow < 0)
         return;
-    BtShortcutsEditorItem* item = getShortcutsEditor(m_currentRow);
-    QKeySequence defaultKeys = item->getDefaultKeys();
-    item->deleteHotkeys();
-    item->setFirstHotkey(defaultKeys);
+    auto & item = *getShortcutsEditor(*m_table, m_currentRow);
+    auto const defaultKeys = item.getDefaultKeys();
+    item.deleteHotkeys();
+    item.setFirstHotkey(defaultKeys);
     m_customPushButton->setText(defaultKeys.toString());
     m_table->item(m_currentRow, 1)->setText(defaultKeys.toString());
     m_table->item(m_currentRow, 2)->setText("");
@@ -336,9 +313,9 @@ void BtShortcutsEditor::customButtonClicked(bool checked) {
         QString newAltKeys = m_dlg->getSecondKeys();
         if (newPriKeys == newAltKeys)
             newAltKeys = "";
-        BtShortcutsEditorItem* item = getShortcutsEditor(m_currentRow);
-        item->setFirstHotkey(newPriKeys);
-        item->setSecondHotkey(newAltKeys);
+        auto & item = *getShortcutsEditor(*m_table, m_currentRow);
+        item.setFirstHotkey(newPriKeys);
+        item.setSecondHotkey(newAltKeys);
         m_table->item(m_currentRow, 1)->setText(newPriKeys);
         m_table->item(m_currentRow, 2)->setText(newAltKeys);
     }
@@ -363,14 +340,14 @@ void BtShortcutsEditor::changeShortcutInDialog(const QString& keys) {
 void BtShortcutsEditor::clearConflictWithKeys(const QString& keys) {
     QString conflict;
     for (int row = 0; row < m_table->rowCount(); row++) {
-        BtShortcutsEditorItem* item = getShortcutsEditor(row);
+        auto & item = *getShortcutsEditor(*m_table, row);
         if (m_table->item(row, 1)->text() == keys) {
             m_table->item(row, 1)->setText("");
-            item->setFirstHotkey(QKeySequence(""));
+            item.setFirstHotkey(QKeySequence(""));
         }
         if (m_table->item(row, 2)->text() == keys) {
             m_table->item(row, 2)->setText("");
-            item->setSecondHotkey(QKeySequence("").toString());
+            item.setSecondHotkey(QKeySequence("").toString());
         }
     }
 }

@@ -17,7 +17,6 @@
 
 
 class BtActionCollection;
-class BtShortcutsEditorItem;
 class BtShortcutsDialog;
 class QGroupBox;
 class QLabel;
@@ -66,9 +65,6 @@ class BtShortcutsEditor : public QWidget {
         void makeKeyChangeRequest(const QString& keys);
 
     private:
-
-        // get the shortcut editor item from the zeroth column of the table
-        BtShortcutsEditorItem* getShortcutsEditor(int row);
 
         BtShortcutsDialog* m_dlg;
         QTableWidget* m_table;
