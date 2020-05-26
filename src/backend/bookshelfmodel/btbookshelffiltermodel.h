@@ -26,25 +26,25 @@ public: /* Methods: */
 
     BtBookshelfFilterModel(QObject * parent = nullptr);
 
-    bool enabled() const { return m_enabled; }
+    bool enabled() const noexcept { return m_enabled; }
 
     bool filterAcceptsRow(int row, const QModelIndex & parent) const override;
 
-    int nameFilterRole() const { return m_nameFilterRole; }
-    int nameFilterKeyColumn() const { return m_nameFilterColumn; }
-    QString const & nameFilter() const { return m_nameFilter; }
-    Qt::CaseSensitivity nameFilterCase() const
+    int nameFilterRole() const noexcept { return m_nameFilterRole; }
+    int nameFilterKeyColumn() const noexcept { return m_nameFilterColumn; }
+    QString const & nameFilter() const noexcept { return m_nameFilter; }
+    Qt::CaseSensitivity nameFilterCase() const noexcept
     { return m_nameFilterCase; }
 
-    int hiddenFilterRole() const { return m_hiddenFilterRole; }
+    int hiddenFilterRole() const noexcept { return m_hiddenFilterRole; }
     int hiddenFilterKeyColumn() const { return m_hiddenFilterColumn; }
-    bool showHidden() const { return m_showHidden; }
-    bool showShown() const { return m_showShown; }
-    int categoryFilterRole() const { return m_categoryFilterRole; }
-    int categoryFilterKeyColumn() const
+    bool showHidden() const noexcept { return m_showHidden; }
+    bool showShown() const noexcept { return m_showShown; }
+    int categoryFilterRole() const noexcept { return m_categoryFilterRole; }
+    int categoryFilterKeyColumn() const noexcept
     { return m_categoryFilterColumn; }
 
-    CSwordModuleInfo::Categories shownCategories() const
+    CSwordModuleInfo::Categories shownCategories() const noexcept
     { return m_categoryFilter; }
 
 public Q_SLOTS:
