@@ -25,8 +25,9 @@ class QRadioButton;
 class BtShortcutsDialog : public QDialog {
         Q_OBJECT
     public:
-        BtShortcutsDialog(QWidget* parent);
 
+        explicit BtShortcutsDialog(QWidget * parent = nullptr,
+                                   Qt::WindowFlags f = Qt::WindowFlags());
 
         // get new first keys from dialog
         QString getFirstKeys();
@@ -50,6 +51,10 @@ class BtShortcutsDialog : public QDialog {
     protected:
         // get key from users input, put into primary or alternate label for display to user
         void keyReleaseEvent(QKeyEvent* event) override;
+
+    private: /* Methods: */
+
+        void retranslateUi();
 
     private:
         QLabel* m_primaryLabel;
