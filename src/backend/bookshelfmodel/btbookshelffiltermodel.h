@@ -28,7 +28,7 @@ public: /* Methods: */
 
     bool enabled() const noexcept { return m_enabled; }
 
-    bool filterAcceptsRow(int row, const QModelIndex & parent) const override;
+    bool filterAcceptsRow(int row, QModelIndex const & parent) const override;
 
     int nameFilterRole() const noexcept { return m_nameFilterRole; }
     int nameFilterKeyColumn() const noexcept { return m_nameFilterColumn; }
@@ -54,7 +54,7 @@ public Q_SLOTS:
     // Name filter:
     void setNameFilterRole(int role);
     void setNameFilterKeyColumn(int column);
-    void setNameFilterFixedString(const QString & nameFilter);
+    void setNameFilterFixedString(QString const & nameFilter);
     void setNameFilterCase(Qt::CaseSensitivity value);
 
     // Hidden filter:
@@ -66,13 +66,13 @@ public Q_SLOTS:
     // Category filter:
     void setCategoryFilterRole(int role);
     void setCategoryFilterKeyColumn(int column);
-    void setShownCategories(const CSwordModuleInfo::Categories & categories);
+    void setShownCategories(CSwordModuleInfo::Categories const & categories);
 
 private: /* Methods: */
 
-    bool nameFilterAcceptsRow(int row, const QModelIndex & parent) const;
-    bool hiddenFilterAcceptsRow(int row, const QModelIndex & parent) const;
-    bool categoryFilterAcceptsRow(int row, const QModelIndex & parent) const;
+    bool nameFilterAcceptsRow(int row, QModelIndex const & parent) const;
+    bool hiddenFilterAcceptsRow(int row, QModelIndex const & parent) const;
+    bool categoryFilterAcceptsRow(int row, QModelIndex const & parent) const;
 
 private: /* Fields: */
 
