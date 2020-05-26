@@ -110,9 +110,9 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->setColumnCount(3);
     m_table->setAlternatingRowColors(true);
     m_table->setSelectionBehavior(QAbstractItemView::SelectRows);
-    m_table->setHorizontalHeaderLabels({tr("Action\nname"),
-                                        tr("First\nshortcut"),
-                                        tr("Second\nshortcut")});
+    m_table->setHorizontalHeaderLabels({tr("Action"),
+                                        tr("Shortcut"),
+                                        tr("Alternate")});
     m_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
     m_table->horizontalHeader()->resizeSection(0, 180);
     m_table->horizontalHeader()->resizeSection(1, 100);
