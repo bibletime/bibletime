@@ -152,6 +152,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
 
             m_customPushButton = new QPushButton(m_shortcutChooser);
             m_customPushButton->setMinimumWidth(140);
+            BT_CONNECT(m_customPushButton, &QPushButton::clicked,
+                       this, &BtShortcutsEditor::customButtonClicked);
             hLayout->addWidget(m_customPushButton);
 
             hLayout->addItem(new QSpacerItem(1,
