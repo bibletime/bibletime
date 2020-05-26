@@ -258,12 +258,10 @@ BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int row) {
 
 // saves shortcut keys into the QAction
 void BtShortcutsEditor::commitChanges() {
-    int rows = m_table->rowCount();
-    for (int row = 0; row < rows; row++) {
-        BtShortcutsEditorItem* btItem = getShortcutsEditor(row);
-        if (btItem != nullptr)
+    int const rows = m_table->rowCount();
+    for (int row = 0; row < rows; row++)
+        if (auto * const btItem = getShortcutsEditor(row))
             btItem->commitChanges();
-    }
 }
 
 // called when a different action name row is selected
