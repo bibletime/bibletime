@@ -250,11 +250,8 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
 }
 
 // get the shortcut editor item from the zeroth column of the table
-BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int row) {
-    QTableWidgetItem* item = m_table->item(row, 0);
-    BtShortcutsEditorItem* btItem = dynamic_cast<BtShortcutsEditorItem*>(item);
-    return btItem;
-}
+BtShortcutsEditorItem* BtShortcutsEditor::getShortcutsEditor(int const row)
+{ return dynamic_cast<BtShortcutsEditorItem *>(m_table->item(row, 0)); }
 
 // saves shortcut keys into the QAction
 void BtShortcutsEditor::commitChanges() {
