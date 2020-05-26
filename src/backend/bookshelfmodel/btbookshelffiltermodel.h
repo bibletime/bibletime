@@ -26,60 +26,29 @@ public: /* Methods: */
 
     BtBookshelfFilterModel(QObject * parent = nullptr);
 
-    inline bool enabled() const {
-        return m_enabled;
-    }
+    bool enabled() const { return m_enabled; }
 
     bool filterAcceptsRow(int row, const QModelIndex & parent) const override;
 
-    // Name filter:
-    inline int nameFilterRole() const {
-        return m_nameFilterRole;
-    }
+    int nameFilterRole() const { return m_nameFilterRole; }
+    int nameFilterKeyColumn() const { return m_nameFilterColumn; }
+    QString const & nameFilter() const { return m_nameFilter; }
+    Qt::CaseSensitivity nameFilterCase() const
+    { return m_nameFilterCase; }
 
-    inline int nameFilterKeyColumn() const {
-        return m_nameFilterColumn;
-    }
+    int hiddenFilterRole() const { return m_hiddenFilterRole; }
+    int hiddenFilterKeyColumn() const { return m_hiddenFilterColumn; }
+    bool showHidden() const { return m_showHidden; }
+    bool showShown() const { return m_showShown; }
+    int categoryFilterRole() const { return m_categoryFilterRole; }
+    int categoryFilterKeyColumn() const
+    { return m_categoryFilterColumn; }
 
-    inline const QString &nameFilter() const {
-        return m_nameFilter;
-    }
-
-    inline Qt::CaseSensitivity nameFilterCase() const {
-        return m_nameFilterCase;
-    }
-
-    // Hidden filter:
-    int hiddenFilterRole() const {
-        return m_hiddenFilterRole;
-    }
-
-    int hiddenFilterKeyColumn() const {
-        return m_hiddenFilterColumn;
-    }
-
-    inline bool showHidden() const {
-        return m_showHidden;
-    }
-
-    inline bool showShown() const {
-        return m_showShown;
-    }
-
-    // Category filter:
-    int categoryFilterRole() const {
-        return m_categoryFilterRole;
-    }
-
-    int categoryFilterKeyColumn() const {
-        return m_categoryFilterColumn;
-    }
-
-    inline CSwordModuleInfo::Categories shownCategories() const {
-        return m_categoryFilter;
-    }
+    CSwordModuleInfo::Categories shownCategories() const
+    { return m_categoryFilter; }
 
 public Q_SLOTS:
+
     void setEnabled(bool enable);
 
     // Name filter:
