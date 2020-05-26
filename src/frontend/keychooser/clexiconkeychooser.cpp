@@ -158,7 +158,7 @@ void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
     while (!m_modules.isEmpty())
         m_modules.takeFirst(); // not deleting the pointer
 
-    Q_FOREACH(CSwordModuleInfo const * const m, modules)
+    for (auto const * const m : modules)
         if (CSLMI const * const lexicon = dynamic_cast<CSLMI const *>(m))
             m_modules.append(lexicon);
 

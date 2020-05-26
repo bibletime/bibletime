@@ -51,10 +51,10 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
         {
             const QStringList filter("*.tmpl");
             // Preload global display templates from disk:
-            Q_FOREACH(const QString & file, td.entryList(filter, readableFileFilter))
+            for (auto const & file : td.entryList(filter, readableFileFilter))
                 loadTemplate(td.canonicalPath() + "/" + file);
             // Preload user display templates from disk:
-            Q_FOREACH(const QString & file, utd.entryList(filter, readableFileFilter))
+            for (auto const & file : utd.entryList(filter, readableFileFilter))
                 loadTemplate(utd.canonicalPath() + "/" + file);
         }
 
@@ -67,10 +67,10 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) :
         {
             const QStringList cssfilter("*.css");
             // Load global app stylesheets
-            Q_FOREACH(const QString & file, td.entryList(cssfilter, readableFileFilter))
+            for (auto const & file : td.entryList(cssfilter, readableFileFilter))
                 loadCSSTemplate(td.canonicalPath() + "/" + file);
             // Load user app stylesheets
-            Q_FOREACH(const QString & file, utd.entryList(cssfilter, readableFileFilter))
+            for (auto const & file : utd.entryList(cssfilter, readableFileFilter))
                 loadCSSTemplate(utd.canonicalPath() + "/" + file);
         }
     }
@@ -143,7 +143,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
         // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        Q_FOREACH(const CSwordModuleInfo * const mi, settings.modules) {
+        for (auto const * const mi : settings.modules) {
             header.append("<th style=\"width:")
             .append(QString::number(static_cast<int>(100.0 / moduleCount)))
             .append("%;\">")
@@ -169,7 +169,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     }
     {
         const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
-        Q_FOREACH(const CLanguageMgr::Language * const lang, langMap) {
+        for (auto const * const lang : langMap) {
             if (lang->abbrev().isEmpty())
                 continue;
 

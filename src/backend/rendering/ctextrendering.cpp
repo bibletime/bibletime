@@ -78,11 +78,8 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
         m_stopKey( i.m_stopKey ),
         m_alternativeContent( i.m_alternativeContent )
 {
-    const KeyTree &tree = *i.childList();
-    Q_FOREACH (const KeyTreeItem * const item, tree) {
+    for (KeyTreeItem const * const item : *i.childList())
         m_childList.append(new KeyTreeItem((*item))); //deep copy
-    }
-
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
@@ -178,9 +175,9 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     //collect all modules which are available and used by child items
     BtConstModuleList modules;
 
-    Q_FOREACH (const KeyTreeItem * const c, tree) {
+    for (KeyTreeItem const * const c : tree) {
         BT_ASSERT(c);
-        Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
+        for (auto const * const mod : c->modules()) {
             if (!modules.contains(mod))
                 modules.append(mod);
         }
@@ -199,15 +196,14 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
         std::unique_ptr<CSwordKey> key(
                 CSwordKey::createInstance(modules.first()));
-        Q_FOREACH (const KeyTreeItem * const c, tree) {
+        for (KeyTreeItem const * const c : tree) {
             key->setKey(c->key());
             t.append(renderEntry(*c, key.get()));
         }
     }
     else {
-        Q_FOREACH (const KeyTreeItem * const c, tree) {
+        for (KeyTreeItem const * const c : tree)
             t.append( renderEntry( *c ) );
-        }
     }
 
     return finishText(t, tree);

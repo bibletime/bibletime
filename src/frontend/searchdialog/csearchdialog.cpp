@@ -119,16 +119,14 @@ void CSearchDialog::startSearch() {
     /// \warning indexing is some kind of internal optimization, so we leave
     /// modules const, but unconst them here only
     QList<CSwordModuleInfo*> unindexedModules;
-    Q_FOREACH(const CSwordModuleInfo * const m,
-              CSwordModuleSearch::unindexedModules(modules()))
+    for (auto const * const m : CSwordModuleSearch::unindexedModules(modules()))
         unindexedModules.append(const_cast<CSwordModuleInfo*>(m));
 
     if (unindexedModules.size() > 0) {
         // Build the list of module names:
         QStringList moduleNameList;
-        Q_FOREACH (const CSwordModuleInfo *m, unindexedModules) {
+        for (auto const * const m : unindexedModules)
             moduleNameList.append(m->name());
-        }
         QString moduleNames("<br><center>");
         moduleNames.append(moduleNameList.join(", "));
         moduleNames.append("</center><br>");

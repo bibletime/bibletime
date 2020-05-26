@@ -104,7 +104,7 @@ void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
 
     m_modules.clear();
 
-    Q_FOREACH(CSwordModuleInfo const * const mod, modules)
+    for (auto const * const mod : modules)
         if (mod->type() == CSwordModuleInfo::Bible
             || mod->type() == CSwordModuleInfo::Commentary)
             if (CSBMI const * const bible = dynamic_cast<CSBMI const *>(mod))

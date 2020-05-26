@@ -136,7 +136,7 @@ void BtFontChooserWidget::connectListWidgets() {
 void BtFontChooserWidget::loadFonts() {
     m_fontListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH(QString const & font, database.families())
+    for (auto const & font : database.families())
         m_fontListWidget->addItem(font);
 
     // This triggers loading the styles for the first font
@@ -146,7 +146,7 @@ void BtFontChooserWidget::loadFonts() {
 void BtFontChooserWidget::loadStyles(const QString& font) {
     m_styleListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH (const QString &style, database.styles(font)) {
+    for (auto const & style : database.styles(font)) {
         m_styleListWidget->addItem(style);
         // This triggers loading the sizes for the first style
         restoreListWidgetValue(m_styleListWidget, m_choosenStyle);
@@ -159,7 +159,7 @@ void BtFontChooserWidget::loadSizes(const QString& font, const QString& style) {
     // Put new values into listWidget
     m_sizeListWidget->clear();
     QFontDatabase database;
-    Q_FOREACH(int const size, database.pointSizes(font, style))
+    for (int const size : database.pointSizes(font, style))
         m_sizeListWidget->addItem(QString::number(size));
 
     restoreListWidgetValue(m_sizeListWidget, saveText);

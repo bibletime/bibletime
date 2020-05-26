@@ -26,7 +26,7 @@ BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
     setValidator(m_validator);
     completer()->setCompletionMode(QCompleter::PopupCompletion);
 
-    Q_FOREACH (int const size, QFontDatabase().standardSizes()) {
+    for (int const size : QFontDatabase().standardSizes()) {
         if (size > m_validator->top())
             m_validator->setTop(size);
         addItem(QString::number(size), QVariant(size));

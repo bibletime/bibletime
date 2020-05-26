@@ -136,7 +136,7 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
 
 void BtBookshelfModel::addModules(BtModuleSet const & modules) {
     QList<CSwordModuleInfo *> newModules;
-    Q_FOREACH(CSwordModuleInfo * const module, modules)
+    for (auto * const module : modules)
         if (!m_data.contains(module))
             newModules.append(module);
 
@@ -146,7 +146,7 @@ void BtBookshelfModel::addModules(BtModuleSet const & modules) {
     beginInsertRows(QModelIndex(),
                     m_data.size(),
                     m_data.size() + newModules.size() - 1);
-    Q_FOREACH(CSwordModuleInfo * const module, newModules) {
+    for (auto * const module : newModules) {
         m_data.append(module);
         BT_CONNECT(module, &CSwordModuleInfo::hiddenChanged,
                    this,   &BtBookshelfModel::moduleHidden);
@@ -188,12 +188,12 @@ void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> & modules,
 
 void BtBookshelfModel::removeModules(BtConstModuleSet const & modules, bool destroy){
     // This is inefficient, since signals are emitted for each removed module:
-    Q_FOREACH(CSwordModuleInfo const * const module, modules)
+    for (auto const * const module : modules)
         removeModule(const_cast<CSwordModuleInfo *>(module), destroy);
 }
 
 CSwordModuleInfo * BtBookshelfModel::getModule(const QString & name) const {
-    Q_FOREACH(CSwordModuleInfo * const module, m_data)
+    for (auto * const module : m_data)
         if (UNLIKELY(module->name() == name))
             return module;
     return nullptr;

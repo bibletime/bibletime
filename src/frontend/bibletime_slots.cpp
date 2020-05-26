@@ -102,7 +102,7 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
     BT_ASSERT(m_openWindowsMenu);
 
     m_openWindowsMenu->clear();
-    Q_FOREACH (QMdiSubWindow * const window, m_mdi->usableWindowList()) {
+    for (auto * const window : m_mdi->usableWindowList()) {
         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
         openWindowAction->setCheckable(true);
         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
@@ -279,7 +279,7 @@ void BibleTime::slotSearchModules() {
     //get the modules of the open windows
     BtConstModuleList modules;
 
-    Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
+    for (auto const * const subWindow : m_mdi->subWindowList()) {
         const CDisplayWindow * const w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
         if (w != nullptr) {
             modules << w->modules();
@@ -359,9 +359,7 @@ void BibleTime::saveProfile() {
     conf.setSessionValue("FindIsVisible", m_findWidget->isVisibleTo(this));
 
     QStringList windowsList;
-    Q_FOREACH (const QMdiSubWindow * const w,
-               m_mdi->subWindowList(QMdiArea::StackingOrder))
-    {
+    for (auto const * const w : m_mdi->subWindowList(QMdiArea::StackingOrder)) {
         CDisplayWindow * const displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
         if (!displayWindow)
             continue;
@@ -451,15 +449,13 @@ void BibleTime::reloadProfile() {
 
     QWidget * focusWindow = nullptr;
     QMap<QString, WindowLoadStatus> failedWindows;
-    Q_FOREACH (const QString & w,
-               conf.sessionValue<QStringList>("windowsList"))
-    {
+    for (auto const & w : conf.sessionValue<QStringList>("windowsList")) {
         const QString windowGroup = "window/" + w + '/';
 
         // Try to determine window modules:
         WindowLoadStatus wls;
-        Q_FOREACH (const QString &moduleName,
-                   conf.sessionValue<QStringList>(windowGroup + "modules"))
+        for (auto const & moduleName
+             : conf.sessionValue<QStringList>(windowGroup + "modules"))
         {
             CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
             if (m) {

@@ -202,6 +202,6 @@ void BtMenuView::removeMenus() {
     clear();
 
     // Delete submenus also:
-    Q_FOREACH (QObject * const child, children())
+    for (auto * const child : children())
         delete qobject_cast<QMenu *>(child);
 }

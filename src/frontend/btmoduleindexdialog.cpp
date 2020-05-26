@@ -50,7 +50,7 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
     bool success = true;
 
     QList <CSwordModuleInfo*> indexedModules;
-    Q_FOREACH(CSwordModuleInfo * const m, modules) {
+    for (auto * const m : modules) {
         BT_ASSERT(!m->hasIndex());
 
         /*
@@ -111,7 +111,7 @@ bool BtModuleIndexDialog::indexAllModulesPrivate(const QList<CSwordModuleInfo*> 
 
     if (!success) {
         // Delete already created indices:
-        Q_FOREACH(CSwordModuleInfo * const m, indexedModules)
+        for (auto * const m : indexedModules)
             if (m->hasIndex())
                 m->deleteIndex();
     }

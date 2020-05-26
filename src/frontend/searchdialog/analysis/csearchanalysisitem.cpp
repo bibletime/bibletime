@@ -54,7 +54,7 @@ CSearchAnalysisItem::~CSearchAnalysisItem() {
 }
 
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
-    Q_FOREACH(int const hits, m_resultCountArray)
+    for (int const hits : m_resultCountArray)
         if (hits)
             return true;
     return false;

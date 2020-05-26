@@ -274,15 +274,11 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
 
 QStringList BtSearchOptionsArea::getUniqueWorksList() {
     QSet<QString> moduleSet;
-    QStringList historyList = btConfig().value<QStringList>("history/searchModuleHistory", QStringList());
-    Q_FOREACH(const QString& value, historyList) {
-        QStringList moduleNamesList = value.split(", ");
-        Q_FOREACH(const QString& name, moduleNamesList) {
+    for (auto const & value
+         : btConfig().value<QStringList>("history/searchModuleHistory", QStringList()))
+        for (auto const & name : value.split(", "))
             moduleSet.insert(name);
-        }
-    }
-    QStringList modules = moduleSet.values();
-    return modules;
+    return moduleSet.values();
 }
 
 void BtSearchOptionsArea::chooseModules() {
@@ -326,10 +322,9 @@ void BtSearchOptionsArea::readSettings() {
     disconnect(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
                this,              &BtSearchOptionsArea::slotValidateText);
     #endif
-    Q_FOREACH (const QString & text, texts) {
+    for (auto const & text : texts)
         if (text.size() > 0)
             m_searchTextCombo->addItem(text);
-    }
     #if 0
     BT_CONNECT(m_searchTextCombo, &CHistoryComboBox::editTextChanged,
                this,              &BtSearchOptionsArea::slotValidateText);

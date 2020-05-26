@@ -298,8 +298,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules,
 }
 
 sword::ListKey BtConfig::parseVerseListWithModules(const QString& data, const QStringList& scopeModules) {
-
-    Q_FOREACH(QString moduleName, scopeModules) {
+    for (auto const & moduleName : scopeModules) {
         auto module = CSwordBackend::instance()->findModuleByName(moduleName);
         if (module == nullptr)
             continue;

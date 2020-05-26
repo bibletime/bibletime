@@ -27,7 +27,7 @@ public: /* Methods: */
     {}
 
     BtConstModuleSet(QSet<CSwordModuleInfo *> other) {
-        Q_FOREACH(CSwordModuleInfo const * const item, other)
+        for (auto const * const item : other)
             insert(item);
     }
 

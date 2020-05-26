@@ -156,8 +156,7 @@ RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, co
 }
 
 void BtCopyByReferencesDialog::loadSelectionKeys() {
-
-    Q_FOREACH( auto m, m_modules ) {
+    for (auto m : m_modules) {
         QString name = m->name();
         m_moduleNameCombo->addItem(name);
     }

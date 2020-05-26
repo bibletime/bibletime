@@ -347,7 +347,7 @@ QString decodeFootnote(QString const & data) {
 }
 
 CSwordModuleInfo * getFirstAvalibleStrongsModule (bool wantHebrew) {
-    Q_FOREACH(CSwordModuleInfo * m, CSwordBackend::instance()->moduleList()) {
+    for (auto * const m : CSwordBackend::instance()->moduleList()) {
         if (m->type() == CSwordLexiconModuleInfo::Lexicon) {
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(m);
             if (wantHebrew && m->has(CSwordModuleInfo::HebrewDef) && lexModule->hasStrongsKeys())
@@ -399,7 +399,7 @@ QString decodeMorph(QString const & data) {
     QStringList morphs = data.split("|");
     QString ret;
 
-    Q_FOREACH (QString morph, morphs) {
+    for (auto const & morph : morphs) {
         //qDebug() << "CInfoDisplay::decodeMorph, morph: " << morph;
         CSwordModuleInfo * module = nullptr;
         bool skipFirstChar = false;

@@ -36,7 +36,7 @@ BtConfigCore::BtConfigCore(const QString & settingsFile)
     m_settings.beginGroup(GROUP_SESSIONS);
     const QStringList sessionKeys = m_settings.childGroups();
     m_settings.endGroup();
-    Q_FOREACH (const QString & sessionKey, sessionKeys) {
+    for (auto const & sessionKey : sessionKeys) {
         // Skip empty//keys just in case:
         if (sessionKey.isEmpty())
             continue;

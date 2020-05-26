@@ -346,7 +346,7 @@ void CBookmarkIndex::mouseReleaseEvent(QMouseEvent* event) {
 QMimeData * CBookmarkIndex::dragObject() {
     BTMimeData * const mimeData = new BTMimeData{};
 
-    Q_FOREACH(QModelIndex const & widgetItem, selectedIndexes()) {
+    for (auto const & widgetItem : selectedIndexes()) {
         if (!widgetItem.isValid())
             break;
         if (m_bookmarksModel->isBookmark(widgetItem)) {
@@ -514,7 +514,7 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
         QModelIndexList const list = selectedIndexes();
         QModelIndexList newList;
 
-        Q_FOREACH(QModelIndex const & index, list) {
+        for (auto const & index : list) {
             if (m_bookmarksModel->isFolder(index)) {
                 bookmarksOnly = false;
                 // Only one item allowed if a folder is selected:
@@ -621,10 +621,10 @@ void CBookmarkIndex::deleteEntries() {
        will be invalidated. Need to delete per index because selected indexes
        might be under different parents. */
     QList<QPersistentModelIndex> list;
-    Q_FOREACH(QModelIndex const & i, selectedIndexes())
+    for (auto const & i : selectedIndexes())
         list.append(i);
 
-    Q_FOREACH(QModelIndex const & i, list)
+    for (auto const & i : list)
         model()->removeRows(i.row(), 1, i.parent());
 }
 

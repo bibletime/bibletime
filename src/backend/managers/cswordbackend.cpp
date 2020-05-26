@@ -59,7 +59,7 @@ CSwordBackend::~CSwordBackend() {
 BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
 {
     BtModuleList l;
-    Q_FOREACH(CSwordModuleInfo * m, moduleList())
+    for (auto * const m : moduleList())
         if(m->type() == type)
             l.append(m);
     return l;
@@ -67,7 +67,7 @@ BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
 
 CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::ModuleType type) {
 
-    Q_FOREACH(CSwordModuleInfo * m, moduleList())
+    for (CSwordModuleInfo * const m : moduleList())
         if(m->type() == type)
             return m;
     return nullptr;
@@ -119,7 +119,7 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
 
 QList<CSwordModuleInfo *> CSwordBackend::getPointerList(const QStringList & names) const {
     QList<CSwordModuleInfo *> list;
-    Q_FOREACH (const QString & name, names)
+    for (auto const & name : names)
         if (CSwordModuleInfo * const mInfo = findModuleByName(name))
             list.append(mInfo);
     return list;
@@ -127,7 +127,7 @@ QList<CSwordModuleInfo *> CSwordBackend::getPointerList(const QStringList & name
 
 BtConstModuleList CSwordBackend::getConstPointerList(const QStringList & names) const {
     BtConstModuleList list;
-    Q_FOREACH (const QString & name, names)
+    for (auto const & name : names)
         if (CSwordModuleInfo const * const mInfo = findModuleByName(name))
             list.append(mInfo);
     return list;
@@ -282,21 +282,21 @@ void CSwordBackend::setFilterOptions(const FilterOptions & options) {
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & description) const {
-    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
+    for (auto * const mod : m_dataModel.moduleList())
         if (mod->config(CSwordModuleInfo::Description) == description)
             return mod;
     return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
-    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
+    for (auto * const mod : m_dataModel.moduleList())
         if (mod->name().compare(name, Qt::CaseInsensitive) == 0)
             return mod;
     return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
-    Q_FOREACH(CSwordModuleInfo * const mod, m_dataModel.moduleList())
+    for (auto * const mod : m_dataModel.moduleList())
         if (&mod->module() == swmodule)
             return mod;
     return nullptr;
@@ -401,7 +401,7 @@ const QString CSwordBackend::booknameLanguage(const QString & language) {
         // Use what sword returns, language may be different.
         const QByteArray newLocaleName(QString(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()).toUtf8());
 
-        Q_FOREACH(CSwordModuleInfo const * const mod, m_dataModel.moduleList()) {
+        for (auto const * const mod : m_dataModel.moduleList()) {
             if (mod->type() == CSwordModuleInfo::Bible
                 || mod->type() == CSwordModuleInfo::Commentary)
             {
@@ -517,7 +517,7 @@ QStringList CSwordBackend::swordDirList() const {
 
 void CSwordBackend::deleteOrphanedIndices() {
     const QStringList entries = QDir(CSwordModuleInfo::getGlobalBaseIndexLocation()).entryList(QDir::Dirs);
-    Q_FOREACH(const QString & entry, entries) {
+    for (auto const & entry : entries) {
         if (entry == "." || entry == "..")
             continue;
         if (CSwordModuleInfo * const module = findModuleByName(entry)) {

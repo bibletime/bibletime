@@ -432,7 +432,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
 void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
     m_modules.clear();
 
-    Q_FOREACH(CSwordModuleInfo const * const mod, newModules)
+    for (auto const * const mod : newModules)
         m_modules.append(mod->name());
 }
 

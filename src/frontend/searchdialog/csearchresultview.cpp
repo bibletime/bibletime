@@ -56,7 +56,7 @@ void CSearchResultView::initView() {
             auto const selectedItems(self.selectedItems());
             reserve(selectedItems.size());
             try {
-                Q_FOREACH(auto const * const i, self.selectedItems()) {
+                for (auto const * const i : self.selectedItems()) {
                     append(CSwordKey::createInstance(m));
                     last()->setKey(i->text(0));
                 }
@@ -187,7 +187,7 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, const QStringList 
     QTreeWidgetItem* oldItem = nullptr;
     QTreeWidgetItem* item = nullptr;
 
-    Q_FOREACH(QString const & s, vList) {
+    for (auto const & s : vList) {
         item = new QTreeWidgetItem(this, oldItem);
         item->setText(0, (s));
         oldItem = item;
@@ -226,7 +226,7 @@ void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
 
 QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items ) const {
     BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString());
-    Q_FOREACH(QTreeWidgetItem const * const i, items)
+    for (auto const * const i : items)
         mdata->appendBookmark(m_module->name(), i->text(0), QString());
     return mdata;
 }

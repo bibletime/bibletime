@@ -153,7 +153,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
 
     bool strongsAvailable = false;
 
-    Q_FOREACH(const CSwordModuleInfo * m, results.keys()) {
+    for (auto const * const m : results.keys()) {
         QTreeWidgetItem * const item =
                 new QTreeWidgetItem(this,
                                     QStringList(m->name())

@@ -50,7 +50,7 @@ QVariant Item::data(int role) const {
             if (m_children.empty())
                 return true;
 
-            Q_FOREACH(Item const * const child, m_children)
+            for (auto const * const child : m_children)
                 if (!child->data(role).toBool())
                     return false;
             return true;

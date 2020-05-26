@@ -51,7 +51,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                            QString("dir=\"%1\" ")
                                .arg(modules.first()->textDirectionAsHtml()));
 
-            Q_FOREACH (KeyTreeItem const * const item, tree)
+            for (KeyTreeItem const * const item : tree)
                 ret.append(renderEntry(*item));
         }
 
@@ -195,7 +195,7 @@ QString CHTMLExportRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             entry.append(key_renderedText);
 
         if (!i.childList()->isEmpty()) {
-            Q_FOREACH (KeyTreeItem const * const c, *(i.childList()))
+            for (KeyTreeItem const * const c : *(i.childList()))
                 entry.append(renderEntry(*c));
         }
 

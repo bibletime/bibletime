@@ -38,12 +38,12 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
     CSwordKey * key = CSwordKey::createInstance(modules.first());
     QString renderedText = QString(i.key());
     if (modules.count() > 1) {
-        Q_FOREACH(CSwordModuleInfo const * const module, modules)
+        for (auto const * const module : modules)
             renderedText += "   " + module->name();
     }
     renderedText += ":\n";
 
-    Q_FOREACH(CSwordModuleInfo const * const module, modules) {
+    for (auto const * const module : modules) {
         key->setModule(module);
         key->setKey(i.key());
         QString entry = key->strippedText().append("\n");

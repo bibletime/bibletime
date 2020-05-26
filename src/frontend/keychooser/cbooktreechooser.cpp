@@ -97,7 +97,7 @@ void CBookTreeChooser::setModules(const BtConstModuleList &modules,
 
     //Add given modules into private list
     m_modules.clear();
-    Q_FOREACH(CSwordModuleInfo const * const m, modules) {
+    for (auto const * const m : modules) {
         const CSBMI *book = dynamic_cast<const CSBMI*>(m);
         if (book != nullptr) {
             m_modules.append(book);

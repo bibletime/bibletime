@@ -76,7 +76,7 @@ CMDIArea::CMDIArea(BibleTime * parent)
 void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
     // Change Qt QMdiSubWindow Close action to have no shortcuts
     // This makes our closeWindow actions with Ctrl-W work correctly
-    Q_FOREACH(QAction * const action, subWindow->systemMenu()->actions()) {
+    for (auto * const action : subWindow->systemMenu()->actions()) {
         if (action->text().contains("Close")) {
             action->setShortcuts(QList<QKeySequence>());
             break;
@@ -143,7 +143,7 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             triggerWindowUpdate();
             break;
     }
-    Q_FOREACH(QTabBar * const tab, findChildren<QTabBar *>()) {
+    for (auto * const tab : findChildren<QTabBar *>()) {
         QObject* parent = tab->parent();
         if (parent == this)
             tab->setTabsClosable(true);
@@ -174,7 +174,7 @@ void CMDIArea::myTileVertical() {
 
     const int widthForEach = width() / windows.count();
     int x = 0;
-    Q_FOREACH (QMdiSubWindow * const window, windows) {
+    for (auto * const window : windows) {
         window->showNormal();
 
         const int preferredWidth = window->minimumWidth() + window->baseSize().width();
@@ -207,7 +207,7 @@ void CMDIArea::myTileHorizontal() {
 
     const int heightForEach = height() / windows.count();
     int y = 0;
-    Q_FOREACH (QMdiSubWindow * const window, windows) {
+    for (auto * const window : windows) {
         window->showNormal();
 
         const int preferredHeight = window->minimumHeight() + window->baseSize().height();
@@ -260,7 +260,7 @@ void CMDIArea::myCascade() {
         unsigned int x = 0;
         unsigned int y = 0;
 
-        Q_FOREACH (QMdiSubWindow * const window, windows) {
+        for (auto * const window : windows) {
             if (window == active) { //leave out the active window which should be the top window
                 continue;
             }
@@ -294,7 +294,7 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     //Take care: when new windows are added, they will not appear
     //in subWindowList() when their ChildAdded-Event is triggered
     QList<QMdiSubWindow*> ret;
-    Q_FOREACH(QMdiSubWindow * const w, subWindowList())
+    for (auto * const w : subWindowList())
         if (!w->isHidden())
             ret.append(w);
     return ret;
@@ -406,7 +406,7 @@ void CMDIArea::triggerWindowUpdate() {
 
 void CMDIArea::enableWindowMinMaxFlags(bool enable)
 {
-    Q_FOREACH (QMdiSubWindow * const subWindow, subWindowList()) {
+    for (auto * const subWindow : subWindowList()) {
         Qt::WindowFlags flags = subWindow->windowFlags();
         if (enable) {
             flags |= (Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);

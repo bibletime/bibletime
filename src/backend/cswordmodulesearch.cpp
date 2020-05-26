@@ -27,7 +27,7 @@ void CSwordModuleSearch::startSearch() {
     CSwordBackend::instance()->setFilterOptions(btConfig().getFilterOptions());
 
     // Search module-by-module:
-    Q_FOREACH(CSwordModuleInfo const * const m, m_searchModules) {
+    for (auto const * const m : m_searchModules) {
         sword::ListKey results;
         size_t const found =
                 m->searchIndexed(m_searchText, m_searchScope, results);
@@ -59,7 +59,7 @@ const BtConstModuleList CSwordModuleSearch::unindexedModules(
         const BtConstModuleList &modules)
 {
     BtConstModuleList unindexed;
-    Q_FOREACH(CSwordModuleInfo const * const m, modules)
+    for (auto const * const m : modules)
         if (!m->hasIndex())
             unindexed.append(m);
     return unindexed;
@@ -85,9 +85,7 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
     // search the searched text for "strong:" until it is not found anymore
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
     // \todo find all possible seperators
-    Q_FOREACH (QString const & newSearchText,
-               searchedText.split(QRegExp("\\s")))
-    {
+    for (auto const & newSearchText : searchedText.split(QRegExp("\\s"))) {
         // strong search text index for finding "strong:"
         int sstIndex = newSearchText.indexOf("strong:");
         if (sstIndex == -1)

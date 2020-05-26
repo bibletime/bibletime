@@ -244,7 +244,7 @@ void BibleTime::moduleAbout(CSwordModuleInfo *module) {
 
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() const {
-    Q_FOREACH(QMdiSubWindow const * const subWindow, m_mdi->subWindowList())
+    for (auto const * const subWindow : m_mdi->subWindowList())
         if (CDisplayWindow * const window =
                 dynamic_cast<CDisplayWindow*>(subWindow->widget()))
             window->reload(CSwordBackend::OtherChange);
@@ -256,7 +256,7 @@ void BibleTime::closeEvent(QCloseEvent *event) {
       window returns false, the querying is stopped and the close event is ignored. If all
       subwindows return true, the close event is accepted.
     */
-    Q_FOREACH (QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
+    for (auto * const subWindow : m_mdi->subWindowList()) {
         if (CDisplayWindow * const window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
             if (!window->queryClose()) {
                 event->ignore();
