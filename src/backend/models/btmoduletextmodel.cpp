@@ -46,6 +46,10 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
     roleNames[ModuleEntry::Text2Role] = "text2";                    // text in column 2
     roleNames[ModuleEntry::Text3Role] = "text3";                    // text in column 3
     roleNames[ModuleEntry::Text4Role] = "text4";                    // text in column 4
+    roleNames[ModuleEntry::Title1Role] = "title1";                  // title in column 1
+    roleNames[ModuleEntry::Title2Role] = "title2";                  // title in column 2
+    roleNames[ModuleEntry::Title3Role] = "title3";                  // title in column 3
+    roleNames[ModuleEntry::Title4Role] = "title4";                  // title in column 4
     roleNames[ModuleEntry::Selected] = "selected";                  // bool - This index row is partially or fully selected
     roleNames[ModuleEntry::ColumnSelected] = "columnSelected";      // which column contains the selected text
     roleNames[ModuleEntry::PosFirst] = "posFirst";                  // on the first item selected, selection starts here
@@ -262,6 +266,15 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
     return QString();
 }
 
+static int getColumnFromRole(int role) {
+    if (role >= ModuleEntry::Text1Role && role <= ModuleEntry::Text4Role)
+        return role - ModuleEntry::Text1Role;
+    if (role >= ModuleEntry::Title1Role && role <= ModuleEntry::Title4Role)
+        return role - ModuleEntry::Title1Role;
+    return 0;
+}
+
+
 QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const {
     int row = index.row();
     CSwordVerseKey key = indexToVerseKey(row);
@@ -270,7 +283,11 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             role == ModuleEntry::Text1Role ||
             role == ModuleEntry::Text2Role ||
             role == ModuleEntry::Text3Role ||
-            role == ModuleEntry::Text4Role) {
+            role == ModuleEntry::Text4Role ||
+            role == ModuleEntry::Title1Role ||
+            role == ModuleEntry::Title2Role ||
+            role == ModuleEntry::Title3Role ||
+            role == ModuleEntry::Title4Role) {
         if (verse == 0)
             return QString();
         QString text;
@@ -283,7 +300,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
         if ( role == ModuleEntry::TextRole) {
             modules = m_moduleInfoList;
         } else {
-            int column = role - ModuleEntry::Text1Role;
+            int column = getColumnFromRole(role);
             CSwordModuleInfo const * module;
             if ((column + 1) > m_moduleInfoList.count())
                 module = m_moduleInfoList.at(0);
@@ -293,11 +310,19 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             CSwordVerseKey mKey(module);
             mKey.setKey(key.key());
 
+            // Title only for verse 1 of Personal commentary
+            if (role == ModuleEntry::Title1Role ||
+                    role == ModuleEntry::Title2Role ||
+                    role == ModuleEntry::Title3Role ||
+                    role == ModuleEntry::Title4Role ){
+                if (module->isWritable() && verse == 1)
+                    return "<center><h3>" + chapterTitle + "</h3></center>";
+                return "";
+            }
+
             // Personal commentary
             if (module->isWritable()) {
                 QString text;
-                if (verse == 1)
-                    text = "<center><h3>" + chapterTitle + "</h3></center>";
                 QString rawText = mKey.rawText();
                 if (rawText.isEmpty())
                     rawText = "<span style=\"color:gray\"><small>" + tr("Click to edit") + "</small></span>";

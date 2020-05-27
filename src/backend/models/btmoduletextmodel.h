@@ -44,12 +44,16 @@ struct ModuleEntry {
         Text2Role = Qt::UserRole + 4,
         Text3Role = Qt::UserRole + 5,
         Text4Role = Qt::UserRole + 6,
-        Selected = Qt::UserRole + 7,
-        ColumnSelected = Qt::UserRole + 8,
-        PosFirst = Qt::UserRole + 9,
-        PosLast = Qt::UserRole + 10,
-        SelectFirstIndex = Qt::UserRole + 11,
-        SelectLastIndex = Qt::UserRole + 12
+        Title1Role = Qt::UserRole + 7,
+        Title2Role = Qt::UserRole + 8,
+        Title3Role = Qt::UserRole + 9,
+        Title4Role = Qt::UserRole + 10,
+        Selected = Qt::UserRole + 11,
+        ColumnSelected = Qt::UserRole + 12,
+        PosFirst = Qt::UserRole + 13,
+        PosLast = Qt::UserRole + 14,
+        SelectFirstIndex = Qt::UserRole + 15,
+        SelectLastIndex = Qt::UserRole + 16
     };
 };
 

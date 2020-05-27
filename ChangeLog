@@ -1,3 +1,6 @@
+2019-05-27 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #243 and #244 - Issues with editing Personal Commentary
+
 2019-05-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #233 - Error selecting search results.
 
