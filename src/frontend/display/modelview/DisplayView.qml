@@ -311,18 +311,27 @@ Rectangle {
                     return Text.PlainText;
                 }
 
+                function isBlank(text) {
+                    var t = text;
+                    t.trim();
+                    return t.length === 0;
+                }
+
                 width: listView.width
                 height: {
+                    var h = 30;
                     if (listView.columns == 1)
-                        return Math.max(column0Text.height,20) + vertSpace
+                        h = Math.max(column0Text.height,20) + vertSpace;
                     if (listView.columns == 2)
-                        return Math.max(column0Text.height, column1Text.height) + vertSpace
+                        h = Math.max(column0Text.height, column1Text.height) + vertSpace;
                     if (listView.columns == 3)
-                        return Math.max(column0Text.height, column1Text.height, column2Text.height) + vertSpace
+                        h = Math.max(column0Text.height, column1Text.height, column2Text.height) + vertSpace;
                     if (listView.columns == 4)
-                        return Math.max(column0Text.height, column1Text.height,
-                                        column2Text.height, column3Text.height) + vertSpace
-                    return 30;
+                        h = Math.max(column0Text.height, column1Text.height,
+                                        column2Text.height, column3Text.height) + vertSpace;
+                    if (! isBlank(title1))
+                        h = h + column0Title.height;
+                    return h;
                 }
 
                 Item {
@@ -348,14 +357,28 @@ Rectangle {
                     }
                 }
 
-                TextEdit {
-                    id: column0Text
+                Text {
+                    id: column0Title
 
                     anchors.top: parent.top
                     anchors.left: space1.right
                     width: parent.textWidth
-                    text: text1
-                    textFormat: { delegate.textIsHtml(text1) }
+                    text: title1
+                    textFormat: Text.RichText
+                    visible: ! isBlank(title1)
+                }
+
+                TextEdit {
+                    id: column0Text
+
+                    anchors.top: isBlank(title1) ? parent.top : column0Title.bottom
+                    anchors.left: space1.right
+                    width: parent.textWidth
+                    text: {
+                        var isHtml = delegate.textIsHtml(text1);
+                        textFormat = isHtml;
+                        return text1;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName0
@@ -392,15 +415,29 @@ Rectangle {
                     }
                 }
 
-                TextEdit {
-                    id: column1Text
+                Text {
+                    id: column1Title
 
                     anchors.top: parent.top
                     anchors.left: space2.right
+                    width: parent.textWidth
+                    text: title2
+                    textFormat: Text.RichText
+                    visible: ! isBlank(title2)
+                }
+
+                TextEdit {
+                    id: column1Text
+
+                    anchors.top: isBlank(title2) ? parent.top : column1Title.bottom
+                    anchors.left: space2.right
                     anchors.leftMargin: 0
                     width: parent.textWidth
-                    text: text2
-                    textFormat: { delegate.textIsHtml(text2) }
+                    text: {
+                        var isHtml = delegate.textIsHtml(text2);
+                        textFormat = isHtml;
+                        return text2;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName1
@@ -435,15 +472,29 @@ Rectangle {
                     }
                 }
 
-                TextEdit {
-                    id: column2Text
+                Text {
+                    id: column2Title
 
                     anchors.top: parent.top
                     anchors.left: space3.right
+                    width: parent.textWidth
+                    text: title3
+                    textFormat: Text.RichText
+                    visible: ! isBlank(title3)
+                }
+
+                TextEdit {
+                    id: column2Text
+
+                    anchors.top: isBlank(title3) ? parent.top : column2Title.bottom
+                    anchors.left: space3.right
                     anchors.leftMargin: 0
                     width: parent.textWidth
-                    text: text3
-                    textFormat: { delegate.textIsHtml(text3) }
+                    text: {
+                        var isHtml = delegate.textIsHtml(text3);
+                        textFormat = isHtml;
+                        return text3;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName2
@@ -479,15 +530,29 @@ Rectangle {
                     }
                 }
 
-                TextEdit {
-                    id: column3Text
+                Text {
+                    id: column3Title
 
                     anchors.top: parent.top
                     anchors.left: space4.right
+                    width: parent.textWidth
+                    text: title4
+                    textFormat: Text.RichText
+                    visible: ! isBlank(title4)
+                }
+
+                TextEdit {
+                    id: column3Text
+
+                    anchors.top: isBlank(title4) ? parent.top : column3Title.bottom
+                    anchors.left: space4.right
                     anchors.leftMargin: 0
                     width: parent.textWidth
-                    text: text4
-                    textFormat: { delegate.textIsHtml(text4) }
+                    text: {
+                        var isHtml = delegate.textIsHtml(text4);
+                        textFormat = isHtml;
+                        return text4;
+                    }
                     readOnly: true
                     color: listView.textColor
                     font.family: btQmlInterface.fontName3
