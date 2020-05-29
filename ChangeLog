@@ -1,3 +1,6 @@
+2019-05-29 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #252 - Choosing a text from the history returns the text lower in the page
+
 2019-05-27 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #243 and #244 - Issues with editing Personal Commentary
 
