@@ -33,3 +33,23 @@ FilterOptions::FilterOptions()
       textualVariants(0), redLetterWords(0), scriptureReferences(0),
       morphSegmentation(0) {
 }
+
+bool FilterOptions::filterOptionsAreEqual(const FilterOptions& opts) {
+    return opts.footnotes == footnotes &&
+            opts.strongNumbers == strongNumbers &&
+            opts.headings == headings &&
+            opts.morphTags == morphTags &&
+            opts.lemmas == lemmas &&
+            opts.hebrewPoints == hebrewPoints &&
+            opts.hebrewCantillation == hebrewCantillation &&
+            opts.greekAccents == greekAccents &&
+            opts.textualVariants == textualVariants &&
+            opts.redLetterWords == redLetterWords &&
+            opts.scriptureReferences == scriptureReferences &&
+            opts.morphSegmentation == morphSegmentation;
+}
+
+bool DisplayOptions::displayOptionsAreEqual(const DisplayOptions& opts) {
+    return opts.lineBreaks == lineBreaks &&
+            opts.verseNumbers == verseNumbers;
+}

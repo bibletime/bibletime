@@ -495,10 +495,16 @@ void BtModuleTextModel::setHighlightWords(
 }
 
 void BtModuleTextModel::setDisplayOptions(const DisplayOptions & displayOptions) {
+    if (m_displayOptions.displayOptionsAreEqual(displayOptions))
+        return;
+    beginResetModel();
     m_displayOptions = displayOptions;
+    endResetModel();
 }
 
 void BtModuleTextModel::setFilterOptions(FilterOptions filterOptions) {
+    if (m_filterOptions.filterOptionsAreEqual(filterOptions))
+            return;
     beginResetModel();
     m_filterOptions = filterOptions;
     endResetModel();

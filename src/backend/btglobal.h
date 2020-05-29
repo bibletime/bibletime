@@ -37,6 +37,7 @@ struct FilterOptions {
     int scriptureReferences; /**< 0 for disabled, 1 for enabled */
     int morphSegmentation; /**< 0 for disabled, 1 for enabled */
     FilterOptions();
+    bool filterOptionsAreEqual(const FilterOptions& opts);
 };
 Q_DECLARE_METATYPE(FilterOptions)
 
@@ -46,6 +47,7 @@ Q_DECLARE_METATYPE(FilterOptions)
 struct DisplayOptions {
     int lineBreaks;
     int verseNumbers;
+    bool displayOptionsAreEqual(const DisplayOptions& opts);
 
 /**
   Work around for Windows compiler bug in Visual Studio 2008 & 2010. The Crash
