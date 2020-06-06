@@ -134,8 +134,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                                 QMessageBox::Yes) == QMessageBox::Yes)
                         {
                             // Clear conflicts with keys:
-                            for (int i = 0; i < list.count(); i++)
-                                list.at(i)->clearConflictWithKeys(keys);
+                            for (auto * const editor : list)
+                                editor->clearConflictWithKeys(keys);
 
                             shortcutsEditor->changeShortcutInDialog(keys);
                         }
