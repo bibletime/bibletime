@@ -72,55 +72,37 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
             BT_CONNECT(
                 windowType.keyChooser,
                 &BtShortcutsEditor::keyChangeRequest,
-                [this](BtShortcutsEditor * shortcutsEditor,
-                       QString const & keys)
-                {
+                [this, &windowType](QString const & keys) {
                     /* Check the BtShortcutsEditor's for shortcut conflicts.
                        Either clear the conflicts and set the new shortcut or do
                        nothing. */
 
                     /* Get the list of shortcuts editors that can conflict with
                        a key change in the current shortcut editor: */
-                    QList<BtShortcutsEditor*> list;
-                    list.append(m_application.keyChooser);
-                    list.append(m_general.keyChooser);
-                    if ((shortcutsEditor == m_application.keyChooser)
-                        || (shortcutsEditor == m_general.keyChooser))
+                    QList<WindowType *> list;
+                    list.append(&m_application);
+                    list.append(&m_general);
+                    if ((&windowType == &m_application)
+                        || (&windowType == &m_general))
                     {
-                        list.append(m_bible.keyChooser);
-                        list.append(m_commentary.keyChooser);
-                        list.append(m_lexicon.keyChooser);
-                        list.append(m_book.keyChooser);
+                        list.append(&m_bible);
+                        list.append(&m_commentary);
+                        list.append(&m_lexicon);
+                        list.append(&m_book);
                     } else {
-                        list.append(shortcutsEditor);
+                        list.append(&windowType);
                     }
-
-                    // Find conflicts with keys:
-                    auto const getTitleForEditor =
-                            [this](BtShortcutsEditor const * const editor) {
-                                if (editor == m_application.keyChooser)
-                                    return m_application.title;
-                                if (editor == m_general.keyChooser)
-                                    return m_general.title;
-                                if (editor == m_bible.keyChooser)
-                                    return m_bible.title;
-                                if (editor == m_commentary.keyChooser)
-                                    return m_commentary.title;
-                                if (editor == m_lexicon.keyChooser)
-                                    return m_lexicon.title;
-                                if (editor == m_book.keyChooser)
-                                    return m_book.title;
-                                return QString();
-                            };
                     QString conflicts;
-                    for (auto const * const editor : list)
+                    for (auto const * const windowType2 : list) {
+                        auto const & editor = windowType2->keyChooser;
                         if (auto conflict = editor->findConflictWithKeys(keys);
                             !conflict.isEmpty())
                             conflicts.append(
                                         "\n   "
                                         + tr("\"%1\" in the \"%2\" group")
                                             .arg(std::move(conflict))
-                                            .arg(getTitleForEditor(editor)));
+                                            .arg(windowType2->title));
+                    }
 
                     if (!conflicts.isEmpty()) {
                         if (message::showQuestion(
@@ -134,13 +116,14 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                                 QMessageBox::Yes) == QMessageBox::Yes)
                         {
                             // Clear conflicts with keys:
-                            for (auto * const editor : list)
-                                editor->clearConflictWithKeys(keys);
+                            for (auto const * const windowType2 : list)
+                                windowType2->keyChooser->clearConflictWithKeys(
+                                                            keys);
 
-                            shortcutsEditor->changeShortcutInDialog(keys);
+                            windowType.keyChooser->changeShortcutInDialog(keys);
                         }
                     } else {
-                        shortcutsEditor->changeShortcutInDialog(keys);
+                        windowType.keyChooser->changeShortcutInDialog(keys);
                     }
                 });
         };

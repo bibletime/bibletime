@@ -45,7 +45,7 @@ class BtShortcutsEditor : public QWidget {
 
     Q_SIGNALS:
         // make a keyChangeRequest back to the application
-        void keyChangeRequest(BtShortcutsEditor*, const QString& keys);
+        void keyChangeRequest(QString const & keys);
 
     private Q_SLOTS:
 

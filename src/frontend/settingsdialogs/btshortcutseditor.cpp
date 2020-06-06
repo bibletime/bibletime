@@ -327,7 +327,7 @@ void BtShortcutsEditor::makeKeyChangeRequest(const QString& keys) {
     // The application will check other BtShortcutsEditors and put out a message if the shortcut
     // is already in use. If the user requests reassignment, the application calls the BtShortcutsEditors to
     // reassign and set the shortcut.
-    keyChangeRequest(this, keys);
+    Q_EMIT keyChangeRequest(keys);
 }
 
 // used by application to complete the keyChangeRequest signal
