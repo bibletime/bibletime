@@ -97,11 +97,14 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                         auto const & editor = windowType2->keyChooser;
                         if (auto conflict = editor->findConflictWithKeys(keys);
                             !conflict.isEmpty())
-                            conflicts.append(
-                                        "\n   "
-                                        + tr("\"%1\" in the \"%2\" group")
+                        {
+                            conflicts
+                                .append("<li>")
+                                .append(tr("\"%1\" in the \"%2\" group")
                                             .arg(std::move(conflict))
-                                            .arg(windowType2->title));
+                                            .arg(windowType2->title))
+                                .append("</li>");
+                        }
                     }
 
                     if (!conflicts.isEmpty()) {
@@ -110,8 +113,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                                 tr("Do you want to clear the conflicting "
                                    "shortcuts and continue?"),
                                 tr("This shortcut conflicts with the shortcut "
-                                   "for the following actions:") + "<br/><br/>"
-                                + conflicts,
+                                   "for the following actions:")
+                                + "<ul>" + conflicts + "</ul>",
                                 QMessageBox::Yes | QMessageBox::No,
                                 QMessageBox::Yes) == QMessageBox::Yes)
                         {
