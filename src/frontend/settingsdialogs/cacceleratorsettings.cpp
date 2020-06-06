@@ -209,7 +209,7 @@ QString CAcceleratorSettingsPage::getTitleForEditor(BtShortcutsEditor* editor) {
         return m_bible.title;
     if (editor == m_commentary.keyChooser)
         return m_commentary.title;
-    if (editor == m_application.keyChooser)
+    if (editor == m_lexicon.keyChooser)
         return m_lexicon.title;
     if (editor == m_book.keyChooser)
         return m_book.title;
