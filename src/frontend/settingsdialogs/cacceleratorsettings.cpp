@@ -95,6 +95,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                         list.append(&windowType);
                     }
                     QString conflicts;
+                    int numConflicts = 0;
                     for (auto const * const windowType2 : list) {
                         auto const & editor = windowType2->keyChooser;
                         if (auto conflict = editor->findConflictWithKeys(keys);
@@ -106,6 +107,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                                             .arg(std::move(conflict))
                                             .arg(windowType2->title))
                                 .append("</li>");
+                            ++numConflicts;
                         }
                     }
 
@@ -115,7 +117,9 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                                 tr("Shortcut conflict detected"),
                                 tr("The shortcut \"%1\" you want to assign to "
                                    "\"%2\" in the \"%3\" group conflicts with "
-                                   "the following shortcuts:")
+                                   "the following %n shortcut(s):",
+                                   nullptr,
+                                   numConflicts)
                                     .arg(keys).arg(actionName)
                                     .arg(windowType.title)
                                 + "<ul>" + conflicts + "</ul>"
