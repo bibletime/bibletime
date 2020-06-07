@@ -24,6 +24,26 @@
 #include "../messagedialog.h"
 
 
+BtConfigDialog::Page::Page(QIcon const & icon, QWidget * const parent)
+    : QWidget(parent)
+    , m_icon(icon)
+{}
+
+void BtConfigDialog::Page::setHeaderText(QString const & headerText) {
+    m_headerText = headerText;
+    if (m_listWidgetItem)
+        m_listWidgetItem->setText(headerText);
+}
+
+void BtConfigDialog::Page::setListWidgetItem(QListWidgetItem * const item)
+        noexcept
+{
+    m_listWidgetItem = item;
+    item->setIcon(m_icon);
+    item->setText(m_headerText);
+}
+
+
 BtConfigDialog::BtConfigDialog(QWidget * const parent,
                                Qt::WindowFlags const flags)
     : QDialog(parent, flags)

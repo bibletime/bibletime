@@ -44,26 +44,15 @@ public: /* Types: */
 
     public: /* Methods: */
 
-        inline Page(QIcon const & icon, QWidget * const parent)
-            : QWidget(parent)
-            , m_icon(icon)
-        {}
+        Page(QIcon const & icon, QWidget * const parent);
 
-        inline void setHeaderText(QString const & headerText) {
-            m_headerText = headerText;
-            if (m_listWidgetItem)
-                m_listWidgetItem->setText(headerText);
-        }
+        void setHeaderText(QString const & headerText);
 
         virtual void save() const = 0;
 
     private: /* Methods: */
 
-        void setListWidgetItem(QListWidgetItem * const item) noexcept {
-            m_listWidgetItem = item;
-            item->setIcon(m_icon);
-            item->setText(m_headerText);
-        }
+        void setListWidgetItem(QListWidgetItem * const item) noexcept;
 
     private: /* Fields: */
 
