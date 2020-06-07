@@ -15,13 +15,10 @@
 
 #include <QDialog>
 
-#include <QIcon>
-#include <QListWidgetItem>
 
-
-class QDialogButtonBox;
+class QListWidget;
+class QListWidgetItem;
 class QStackedWidget;
-class QVBoxLayout;
 
 /**
 * Base class for configuration dialogs. A dialog which has a page chooser (icons
@@ -44,21 +41,17 @@ public: /* Types: */
 
     public: /* Methods: */
 
-        Page(QIcon const & icon, QWidget * const parent);
+        Page(QIcon const & icon, QWidget * const parent = nullptr);
+        ~Page() noexcept;
 
         void setHeaderText(QString const & headerText);
 
         virtual void save() const = 0;
 
-    private: /* Methods: */
-
-        void setListWidgetItem(QListWidgetItem * const item) noexcept;
-
     private: /* Fields: */
 
-        QIcon const m_icon;
-        QString m_headerText;
-        QListWidgetItem * m_listWidgetItem = nullptr;
+        QListWidgetItem * const m_listWidgetItem;
+        bool m_ownsListWidgetItem = true;
 
     };
 
@@ -67,7 +60,10 @@ public: /* Methods: */
     BtConfigDialog(QWidget * const parent = nullptr,
                    Qt::WindowFlags const flags = 0);
 
-    /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
+    /**
+      \brief Adds the page to this dialog, taking ownership.
+      \param[in] page pointer to the page to add.
+    */
     void addPage(Page * const pageWidget);
 
     void save();
@@ -80,7 +76,6 @@ private: /* Fields: */
 
     QListWidget * const m_contentsList;
     QStackedWidget * const m_pageWidget;
-    QVBoxLayout * m_pageLayout;
     int m_maxItemWidth = 0;
 
 };

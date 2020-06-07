@@ -16,6 +16,7 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QListWidget>
+#include <QListWidgetItem>
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QVBoxLayout>
@@ -24,24 +25,38 @@
 #include "../messagedialog.h"
 
 
-BtConfigDialog::Page::Page(QIcon const & icon, QWidget * const parent)
+namespace {
+
+void resizeListWidget(QListWidget & listWidget) {
+    BT_ASSERT(listWidget.count() > 0);
+    listWidget.setFixedWidth(
+                listWidget.visualItemRect(listWidget.item(0)).width()
+                + listWidget.frameWidth() * 2);
+}
+
+} // anonymous namespace
+
+BtConfigDialog::Page::Page(QIcon const & icon, QWidget * parent)
     : QWidget(parent)
-    , m_icon(icon)
-{}
-
-void BtConfigDialog::Page::setHeaderText(QString const & headerText) {
-    m_headerText = headerText;
-    if (m_listWidgetItem)
-        m_listWidgetItem->setText(headerText);
-}
-
-void BtConfigDialog::Page::setListWidgetItem(QListWidgetItem * const item)
-        noexcept
+    , m_listWidgetItem(new QListWidgetItem)
 {
-    m_listWidgetItem = item;
-    item->setIcon(m_icon);
-    item->setText(m_headerText);
+    try {
+        m_listWidgetItem->setIcon(icon);
+        m_listWidgetItem->setTextAlignment(Qt::AlignHCenter);
+        m_listWidgetItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    } catch (...) {
+        delete m_listWidgetItem;
+        throw;
+    }
 }
+
+BtConfigDialog::Page::~Page() noexcept {
+    if (m_ownsListWidgetItem)
+        delete m_listWidgetItem;
+}
+
+void BtConfigDialog::Page::setHeaderText(QString const & headerText)
+{ m_listWidgetItem->setText(headerText); }
 
 
 BtConfigDialog::BtConfigDialog(QWidget * const parent,
@@ -52,25 +67,33 @@ BtConfigDialog::BtConfigDialog(QWidget * const parent,
 {
     QHBoxLayout * const mainLayout = new QHBoxLayout(this);
 
+    m_contentsList->setUniformItemSizes(true);
     m_contentsList->setViewMode(QListView::IconMode);
     m_contentsList->setMovement(QListView::Static);
     BT_CONNECT(m_contentsList, &QListWidget::currentRowChanged,
                m_pageWidget,   &QStackedWidget::setCurrentIndex);
+    BT_CONNECT(m_contentsList, &QListWidget::itemChanged,
+               [this]{ resizeListWidget(*m_contentsList); });
     mainLayout->addWidget(m_contentsList);
 
-    m_pageLayout = new QVBoxLayout;
-    mainLayout->addLayout(m_pageLayout);
+    auto * const pageLayout = new QVBoxLayout;
+    try {
+        mainLayout->addLayout(pageLayout);
+    } catch (...) {
+        delete pageLayout;
+        throw;
+    }
 
     m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding,
                                 QSizePolicy::MinimumExpanding);
-    m_pageLayout->addWidget(m_pageWidget);
+    pageLayout->addWidget(m_pageWidget);
 
     QFrame * const buttonBoxRuler = new QFrame(this);
     buttonBoxRuler->setGeometry(QRect(1, 1, 1, 3));
     buttonBoxRuler->setFrameShape(QFrame::HLine);
     buttonBoxRuler->setFrameShadow(QFrame::Sunken);
     buttonBoxRuler->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_pageLayout->addWidget(buttonBoxRuler);
+    pageLayout->addWidget(buttonBoxRuler);
 
     // Add button box:
     auto * const bbox = new QDialogButtonBox(this);
@@ -84,32 +107,16 @@ BtConfigDialog::BtConfigDialog(QWidget * const parent,
                &QPushButton::clicked,
                [this]{ close(); });
     message::prepareDialogBox(bbox);
-    m_pageLayout->addWidget(bbox);
+    pageLayout->addWidget(bbox);
 }
 
 void BtConfigDialog::addPage(Page * const pageWidget) {
     m_pageWidget->addWidget(pageWidget);
 
-    QListWidgetItem * const item = new QListWidgetItem(m_contentsList);
-    item->setTextAlignment(Qt::AlignHCenter);
-    item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-    pageWidget->setListWidgetItem(item);
+    m_contentsList->addItem(pageWidget->m_listWidgetItem);
+    pageWidget->m_ownsListWidgetItem = false;
 
-    int const thisItemWidth = m_contentsList->visualItemRect(item).width();
-    if (m_maxItemWidth < thisItemWidth) {
-        // Reset the list width:
-        m_maxItemWidth = thisItemWidth;
-        m_contentsList->setFixedWidth(
-                m_maxItemWidth + (m_contentsList->frameWidth() * 2));
-    }
-
-    // All items should have the same width:
-    for (int i = 0; i < m_contentsList->count(); ++i)
-        m_contentsList->item(i)->setSizeHint(
-                QSize(m_maxItemWidth,
-                      m_contentsList->visualItemRect(
-                            m_contentsList->item(i)).height()));
-
+    resizeListWidget(*m_contentsList);
     if (m_pageWidget->count() == 1)
         m_contentsList->setCurrentRow(0);
 }
