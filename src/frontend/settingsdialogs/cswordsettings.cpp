@@ -12,6 +12,7 @@
 
 #include "cswordsettings.h"
 
+#include <QTabWidget>
 #include <QVBoxLayout>
 #include "../../util/cresmgr.h"
 #include "../bibletimeapp.h"

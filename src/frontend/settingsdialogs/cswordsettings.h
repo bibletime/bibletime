@@ -21,6 +21,7 @@
 class BtTextFiltersTab;
 class CConfigurationDialog;
 class BtStandardWorksTab;
+class QTabWidget;
 
 class CSwordSettingsPage: public BtConfigDialog::Page {
 
