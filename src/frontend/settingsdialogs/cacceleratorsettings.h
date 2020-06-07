@@ -46,15 +46,11 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
         void retranslateUi();
 
     private:
+
         struct WindowType {
             QPointer<BtShortcutsEditor> keyChooser;
-            BtActionCollection* actionCollection;
+            BtActionCollection * actionCollection = nullptr;
             QString title;
-
-            WindowType() {
-                keyChooser = nullptr;
-                actionCollection = nullptr;
-            }
         };
 
         WindowType m_application;
