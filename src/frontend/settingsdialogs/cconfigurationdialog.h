@@ -26,29 +26,38 @@ class QDialogButtonBox;
 class QWidget;
 
 class CConfigurationDialog : public BtConfigDialog {
-        Q_OBJECT
-    public:
-        CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
-        virtual ~CConfigurationDialog();
-        void save();
 
-    private:
-        BtActionCollection* m_actionCollection;
-        CDisplaySettingsPage* m_displayPage;
-        CSwordSettingsPage* m_swordPage;
-        CAcceleratorSettingsPage* m_acceleratorsPage;
-        BtFontSettingsPage* m_fontsPage;
-        QDialogButtonBox* m_bbox;
+    Q_OBJECT
 
-        // Load the settings from the resource file
-        void loadDialogSettings();
+public: /* Methods: */
 
-        // Save the settings to the resource file
-        void saveDialogSettings() const;
+    CConfigurationDialog(QWidget * parent,
+                         BtActionCollection * actionCollection);
+    virtual ~CConfigurationDialog();
 
-    Q_SIGNALS:
-        void signalSettingsChanged();
+    void save();
+
+Q_SIGNALS:
+
+    void signalSettingsChanged();
+
+private: /* Methods: */
+
+    // Load the settings from the resource file
+    void loadDialogSettings();
+
+    // Save the settings to the resource file
+    void saveDialogSettings() const;
+
+private: /* Fields: */
+
+    BtActionCollection * m_actionCollection = nullptr;
+    CDisplaySettingsPage * m_displayPage = nullptr;
+    CSwordSettingsPage * m_swordPage = nullptr;
+    CAcceleratorSettingsPage * m_acceleratorsPage = nullptr;
+    BtFontSettingsPage * m_fontsPage = nullptr;
+    QDialogButtonBox * m_bbox = nullptr;
+
 };
-
 
 #endif

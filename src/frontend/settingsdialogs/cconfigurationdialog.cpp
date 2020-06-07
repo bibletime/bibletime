@@ -29,17 +29,15 @@
 
 
 namespace {
-const QString GeometryKey = "GUI/SettingsDialog/geometry";
+QString const GeometryKey = "GUI/SettingsDialog/geometry";
 } // anonymous namespace
 
-CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection* actionCollection )
-        : BtConfigDialog(parent),
-        m_actionCollection(actionCollection),
-        m_displayPage(nullptr),
-        m_swordPage(nullptr),
-        m_acceleratorsPage(nullptr),
-        m_fontsPage(nullptr),
-        m_bbox(nullptr) {
+CConfigurationDialog::CConfigurationDialog(
+        QWidget * parent,
+        BtActionCollection * actionCollection)
+    : BtConfigDialog(parent)
+    , m_actionCollection(actionCollection)
+{
     setWindowTitle(tr("Configure BibleTime"));
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -61,34 +59,24 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
 
     // Dialog buttons
     m_bbox = new QDialogButtonBox(this);
-    m_bbox->addButton(QDialogButtonBox::Ok);
-    m_bbox->addButton(QDialogButtonBox::Apply);
-    m_bbox->addButton(QDialogButtonBox::Cancel);
+    BT_CONNECT(m_bbox->addButton(QDialogButtonBox::Ok),
+               &QPushButton::clicked,
+               [this] { save(); close(); });
+    BT_CONNECT(m_bbox->addButton(QDialogButtonBox::Apply),
+               &QPushButton::clicked,
+               [this] { save(); });
+    BT_CONNECT(m_bbox->addButton(QDialogButtonBox::Cancel),
+               &QPushButton::clicked,
+               [this]{ close(); });
     message::prepareDialogBox(m_bbox);
     setButtonBox(m_bbox);
-    BT_CONNECT(m_bbox, &QDialogButtonBox::clicked,
-              [this](QAbstractButton * const button) {
-                  switch (m_bbox->buttonRole(button)) {
-                  case QDialogButtonBox::AcceptRole:
-                      save();
-                      [[fallthrough]];
-                  case QDialogButtonBox::RejectRole:
-                      close();
-                      break;
-                  default:
-                      save();
-                      break;
-                  }
-              });
 
     loadDialogSettings();
 
     setCurrentPage(0);
 }
 
-CConfigurationDialog::~CConfigurationDialog() {
-    saveDialogSettings();
-}
+CConfigurationDialog::~CConfigurationDialog() { saveDialogSettings(); }
 
 /** Save the dialog settings **/
 void CConfigurationDialog::save() {
@@ -96,13 +84,11 @@ void CConfigurationDialog::save() {
     m_fontsPage->save();
     m_swordPage->save();
     m_displayPage->save();
-    Q_EMIT signalSettingsChanged( );
+    Q_EMIT signalSettingsChanged();
 }
 
-void CConfigurationDialog::loadDialogSettings() {
-    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
-}
+void CConfigurationDialog::loadDialogSettings()
+{ restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray())); }
 
-void CConfigurationDialog::saveDialogSettings() const {
-    btConfig().setValue(GeometryKey, saveGeometry());
-}
+void CConfigurationDialog::saveDialogSettings() const
+{ btConfig().setValue(GeometryKey, saveGeometry()); }
