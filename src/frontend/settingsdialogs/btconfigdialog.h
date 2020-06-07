@@ -70,9 +70,6 @@ public: /* Methods: */
     /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
     void addPage(Page * const pageWidget);
 
-    /** Changes the current page using the given index number. */
-    void setCurrentPage(int const newIndex);
-
     void save();
 
 Q_SIGNALS:

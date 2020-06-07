@@ -111,11 +111,8 @@ void BtConfigDialog::addPage(Page * const pageWidget) {
                             m_contentsList->item(i)).height()));
 
     if (m_pageWidget->count() == 1)
-        setCurrentPage(0);
+        m_contentsList->setCurrentRow(0);
 }
-
-void BtConfigDialog::setCurrentPage(int const newIndex)
-{ m_contentsList->setCurrentRow(newIndex); }
 
 void BtConfigDialog::save() {
     for (int i = 0; i < m_pageWidget->count(); ++i) {
