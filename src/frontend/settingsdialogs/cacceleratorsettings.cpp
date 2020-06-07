@@ -72,7 +72,9 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
             BT_CONNECT(
                 windowType.keyChooser,
                 &BtShortcutsEditor::keyChangeRequest,
-                [this, &windowType](QString const & keys) {
+                [this, &windowType](QString const & actionName,
+                                    QString const & keys)
+                {
                     /* Check the BtShortcutsEditor's for shortcut conflicts.
                        Either clear the conflicts and set the new shortcut or do
                        nothing. */
@@ -110,11 +112,15 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                     if (!conflicts.isEmpty()) {
                         if (message::showQuestion(
                                 this,
-                                tr("Do you want to clear the conflicting "
-                                   "shortcuts and continue?"),
-                                tr("This shortcut conflicts with the shortcut "
-                                   "for the following actions:")
-                                + "<ul>" + conflicts + "</ul>",
+                                tr("Shortcut conflict detected"),
+                                tr("The shortcut \"%1\" you want to assign to "
+                                   "\"%2\" in the \"%3\" group conflicts with "
+                                   "the following shortcuts:")
+                                    .arg(keys).arg(actionName)
+                                    .arg(windowType.title)
+                                + "<ul>" + conflicts + "</ul>"
+                                + tr("Do you want to clear these conflicting "
+                                     "shortcuts and continue?"),
                                 QMessageBox::Yes | QMessageBox::No,
                                 QMessageBox::Yes) == QMessageBox::Yes)
                         {

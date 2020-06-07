@@ -229,7 +229,11 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->selectRow(0);
     slotSelectionChanged();
     BT_CONNECT(m_dlg, &BtShortcutsDialog::keyChangeRequest,
-               this,  &BtShortcutsEditor::makeKeyChangeRequest);
+               [this](QString const & keys) {
+                   Q_EMIT keyChangeRequest(
+                               m_table->item(m_currentRow, 0)->text(),
+                               keys);
+               });
 }
 
 // saves shortcut keys into the QAction
@@ -319,15 +323,6 @@ void BtShortcutsEditor::customButtonClicked(bool checked) {
         m_table->item(m_currentRow, 1)->setText(newPriKeys);
         m_table->item(m_currentRow, 2)->setText(newAltKeys);
     }
-}
-
-// complete the keyChangeRequest
-void BtShortcutsEditor::makeKeyChangeRequest(const QString& keys) {
-    // signal the application that this BtShortcutsEditor wants to change this shortcut (keys)
-    // The application will check other BtShortcutsEditors and put out a message if the shortcut
-    // is already in use. If the user requests reassignment, the application calls the BtShortcutsEditors to
-    // reassign and set the shortcut.
-    Q_EMIT keyChangeRequest(keys);
 }
 
 // used by application to complete the keyChangeRequest signal

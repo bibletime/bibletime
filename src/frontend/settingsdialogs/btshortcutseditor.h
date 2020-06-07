@@ -44,8 +44,8 @@ class BtShortcutsEditor : public QWidget {
         void changeShortcutInDialog(const QString& keys);
 
     Q_SIGNALS:
-        // make a keyChangeRequest back to the application
-        void keyChangeRequest(QString const & keys);
+
+        void keyChangeRequest(QString const & actionName, QString const & keys);
 
     private Q_SLOTS:
 
@@ -60,9 +60,6 @@ class BtShortcutsEditor : public QWidget {
 
         // called when the custom radio button is clicked
         void customButtonClicked(bool checked);
-
-        // makes the keyChangeRequest
-        void makeKeyChangeRequest(const QString& keys);
 
     private:
 
