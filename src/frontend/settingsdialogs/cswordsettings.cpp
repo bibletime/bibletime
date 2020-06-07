@@ -46,7 +46,7 @@ void CSwordSettingsPage::retranslateUi() {
     m_tabWidget->setTabText(m_tabWidget->indexOf(m_filtersTab), tr("Text filters"));
 }
 
-void CSwordSettingsPage::save() {
+void CSwordSettingsPage::save() const {
     m_worksTab->save();
     m_filtersTab->save();
 }

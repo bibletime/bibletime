@@ -33,6 +33,8 @@ class QVBoxLayout;
 */
 class BtConfigDialog : public QDialog {
 
+    Q_OBJECT
+
 public: /* Types: */
 
     /** Base class for configuration dialog pages. */
@@ -52,6 +54,8 @@ public: /* Types: */
             if (m_listWidgetItem)
                 m_listWidgetItem->setText(headerText);
         }
+
+        virtual void save() const = 0;
 
     private: /* Methods: */
 
@@ -77,11 +81,14 @@ public: /* Methods: */
     /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
     void addPage(Page * const pageWidget);
 
-    /** Adds a button box to the lower edge of the dialog. */
-    void setButtonBox(QDialogButtonBox * const buttonBox);
-
     /** Changes the current page using the given index number. */
     void setCurrentPage(int const newIndex);
+
+    void save();
+
+Q_SIGNALS:
+
+    void signalSettingsChanged();
 
 private: /* Fields: */
 

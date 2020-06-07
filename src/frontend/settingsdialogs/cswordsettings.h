@@ -30,7 +30,7 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
 
         CSwordSettingsPage(CConfigurationDialog * parent = nullptr);
 
-        void save();
+        void save() const final override;
 
     protected: /* Methods: */
 

@@ -39,7 +39,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
         BtFontSettingsPage(CConfigurationDialog *parent = nullptr);
 
-        void save() const;
+        void save() const final override;
 
     protected Q_SLOTS:
 

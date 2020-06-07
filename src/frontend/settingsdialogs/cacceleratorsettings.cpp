@@ -188,7 +188,7 @@ void CAcceleratorSettingsPage::retranslateUi() {
     m_typeChooser->addItem(m_book.title);
 }
 
-void CAcceleratorSettingsPage::save() {
+void CAcceleratorSettingsPage::save() const {
     if (m_application.keyChooser)
         m_application.keyChooser->commitChanges();
     if (m_general.keyChooser)

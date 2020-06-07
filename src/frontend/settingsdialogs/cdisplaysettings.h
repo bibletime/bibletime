@@ -31,7 +31,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         CDisplaySettingsPage(CConfigurationDialog *parent = nullptr);
 
-        void save();
+        void save() const final override;
 
         static void resetLanguage();
 

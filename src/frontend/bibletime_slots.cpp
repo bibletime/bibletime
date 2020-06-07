@@ -48,8 +48,8 @@
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
     qDebug() << "BibleTime::slotSettingsOptions";
-    CConfigurationDialog *dlg = new CConfigurationDialog(this, m_actionCollection);
-    BT_CONNECT(dlg,  &CConfigurationDialog::signalSettingsChanged,
+    CConfigurationDialog *dlg = new CConfigurationDialog(this);
+    BT_CONNECT(dlg,  &BtConfigDialog::signalSettingsChanged,
                [this]{
                    qDebug() << "BibleTime::slotSettingsChanged";
                    auto const language =
@@ -75,7 +75,7 @@ void BibleTime::slotSettingsOptions() {
 
 /** Save the settings, used when no settings have been saved before **/
 void BibleTime::saveConfigSettings()
-{ CConfigurationDialog(this, nullptr).save(); }
+{ CConfigurationDialog(this).save(); }
 
 /** Opens the bookshelf wizard. */
 void BibleTime::slotBookshelfWizard()

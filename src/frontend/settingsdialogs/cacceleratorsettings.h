@@ -39,7 +39,7 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
 
         CAcceleratorSettingsPage(CConfigurationDialog *parent = nullptr);
 
-        void save();
+        void save() const final override;
 
     protected: /* Methods: */
 

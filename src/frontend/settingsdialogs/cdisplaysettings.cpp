@@ -255,7 +255,7 @@ void CDisplaySettingsPage::updateStylePreview() {
     btConfig().setValue("GUI/activeTemplateName", oldStyleName);
 }
 
-void CDisplaySettingsPage::save() {
+void CDisplaySettingsPage::save() const {
     btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
     btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
     btConfig().setValue("GUI/booknameLanguage", m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()));

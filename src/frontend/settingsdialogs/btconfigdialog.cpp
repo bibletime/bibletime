@@ -16,10 +16,12 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QListWidget>
+#include <QPushButton>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
+#include "../messagedialog.h"
 
 
 BtConfigDialog::BtConfigDialog(QWidget * const parent,
@@ -42,6 +44,27 @@ BtConfigDialog::BtConfigDialog(QWidget * const parent,
     m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding,
                                 QSizePolicy::MinimumExpanding);
     m_pageLayout->addWidget(m_pageWidget);
+
+    QFrame * const buttonBoxRuler = new QFrame(this);
+    buttonBoxRuler->setGeometry(QRect(1, 1, 1, 3));
+    buttonBoxRuler->setFrameShape(QFrame::HLine);
+    buttonBoxRuler->setFrameShadow(QFrame::Sunken);
+    buttonBoxRuler->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    m_pageLayout->addWidget(buttonBoxRuler);
+
+    // Add button box:
+    auto * const bbox = new QDialogButtonBox(this);
+    BT_CONNECT(bbox->addButton(QDialogButtonBox::Ok),
+               &QPushButton::clicked,
+               [this] { save(); close(); });
+    BT_CONNECT(bbox->addButton(QDialogButtonBox::Apply),
+               &QPushButton::clicked,
+               [this] { save(); });
+    BT_CONNECT(bbox->addButton(QDialogButtonBox::Cancel),
+               &QPushButton::clicked,
+               [this]{ close(); });
+    message::prepareDialogBox(bbox);
+    m_pageLayout->addWidget(bbox);
 }
 
 void BtConfigDialog::addPage(Page * const pageWidget) {
@@ -67,24 +90,17 @@ void BtConfigDialog::addPage(Page * const pageWidget) {
                       m_contentsList->visualItemRect(
                             m_contentsList->item(i)).height()));
 
-    setCurrentPage(m_contentsList->row(item));
-}
-
-void BtConfigDialog::setButtonBox(QDialogButtonBox * const box) {
-    BT_ASSERT(box);
-    BT_ASSERT(m_pageLayout->count() == 1); // Only m_pageWidget in layout
-
-    // First add a horizontal ruler:
-    QFrame * const buttonBoxRuler = new QFrame(this);
-    buttonBoxRuler->setGeometry(QRect(1, 1, 1, 3));
-    buttonBoxRuler->setFrameShape(QFrame::HLine);
-    buttonBoxRuler->setFrameShadow(QFrame::Sunken);
-    buttonBoxRuler->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_pageLayout->addWidget(buttonBoxRuler);
-
-    // Add button box:
-    m_pageLayout->addWidget(box);
+    if (m_pageWidget->count() == 1)
+        setCurrentPage(0);
 }
 
 void BtConfigDialog::setCurrentPage(int const newIndex)
 { m_contentsList->setCurrentRow(newIndex); }
+
+void BtConfigDialog::save() {
+    for (int i = 0; i < m_pageWidget->count(); ++i) {
+        BT_ASSERT(dynamic_cast<Page *>(m_pageWidget->widget(i)));
+        static_cast<Page *>(m_pageWidget->widget(i))->save();
+    }
+    Q_EMIT signalSettingsChanged();
+}
