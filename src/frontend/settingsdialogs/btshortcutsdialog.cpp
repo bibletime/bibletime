@@ -18,6 +18,7 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QVBoxLayout>
+#include <memory>
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
 
