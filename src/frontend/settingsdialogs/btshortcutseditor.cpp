@@ -279,7 +279,7 @@ void BtShortcutsEditor::noneButtonClicked(bool checked) {
     auto & item = *getShortcutsEditor(*m_table, m_currentRow);
     m_customPushButton->setText("");
     item.deleteHotkeys();
-    item.setFirstHotkey("");
+    item.setFirstHotkey();
     m_table->item(m_currentRow, 1)->setText("");
     m_table->item(m_currentRow, 2)->setText("");
 }
@@ -337,11 +337,11 @@ void BtShortcutsEditor::clearConflictWithKeys(const QString& keys) {
         auto & item = *getShortcutsEditor(*m_table, row);
         if (m_table->item(row, 1)->text() == keys) {
             m_table->item(row, 1)->setText("");
-            item.setFirstHotkey(QKeySequence(""));
+            item.setFirstHotkey();
         }
         if (m_table->item(row, 2)->text() == keys) {
             m_table->item(row, 2)->setText("");
-            item.setSecondHotkey(QKeySequence("").toString());
+            item.setSecondHotkey();
         }
     }
 }
