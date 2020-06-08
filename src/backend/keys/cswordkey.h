@@ -34,9 +34,9 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    CSwordKey & operator=(CSwordKey const &) = delete;
+    virtual ~CSwordKey() noexcept;
 
-    virtual inline ~CSwordKey() { delete m_beforeChangedSignaller; }
+    CSwordKey & operator=(CSwordKey const &) = delete;
 
     /**
       \returns The key which belongs to the current object.

@@ -33,6 +33,11 @@
 
 const QTextCodec * CSwordKey::m_cp1252Codec = QTextCodec::codecForName("Windows-1252");
 
+CSwordKey::~CSwordKey() noexcept {
+    delete m_beforeChangedSignaller.data();
+    delete m_afterChangedSignaller.data();
+}
+
 QString CSwordKey::rawText() {
     if (!m_module)
         return QString();
