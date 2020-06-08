@@ -12,7 +12,6 @@
 
 #include "btshortcutseditor.h"
 
-#include <optional>
 #include <QAction>
 #include <QGroupBox>
 #include <QHeaderView>
@@ -49,19 +48,19 @@ public: /* Methods: */
 
         QList<QKeySequence> list = m_action->shortcuts();
         if (list.count() > 0)
-            m_newFirstHotkey.emplace(list.at(0));
+            m_newFirstHotkey = list.at(0);
         if (list.count() > 1)
-            m_newSecondHotkey.emplace(list.at(1));
+            m_newSecondHotkey = list.at(1);
     }
 
     void commitChanges() {
         if (!m_action)
             return;
         QList<QKeySequence> list;
-        if (m_newFirstHotkey && !m_newFirstHotkey->isEmpty())
-            list << *m_newFirstHotkey;
-        if (m_newSecondHotkey && !m_newSecondHotkey->isEmpty())
-            list << *m_newSecondHotkey;
+        if (!m_newFirstHotkey.isEmpty())
+            list << m_newFirstHotkey;
+        if (!m_newSecondHotkey.isEmpty())
+            list << m_newSecondHotkey;
 
         m_action->setShortcuts(list);
     }
@@ -70,22 +69,22 @@ public: /* Methods: */
 
     template <typename ... Args>
     void setFirstHotkey(Args && ... args)
-    { m_newFirstHotkey.emplace(std::forward<Args>(args)...); }
+    { m_newFirstHotkey = QKeySequence(std::forward<Args>(args)...); }
 
     template <typename ... Args>
     void setSecondHotkey(Args && ... args)
-    { m_newSecondHotkey.emplace(std::forward<Args>(args)...); }
+    { m_newSecondHotkey = QKeySequence(std::forward<Args>(args)...); }
 
     void deleteHotkeys() noexcept {
-        m_newFirstHotkey.reset();
-        m_newSecondHotkey.reset();
+        m_newFirstHotkey = QKeySequence();
+        m_newSecondHotkey = QKeySequence();
     }
 
 private: /* Fields: */
 
     QAction *m_action;
-    std::optional<QKeySequence> m_newFirstHotkey;
-    std::optional<QKeySequence> m_newSecondHotkey;
+    QKeySequence m_newFirstHotkey;
+    QKeySequence m_newSecondHotkey;
     QKeySequence m_defaultKeys;
 
 };
