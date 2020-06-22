@@ -158,7 +158,7 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 ######################################################
 # Tests:
 #
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
+#INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
 
 
 ######################################################
@@ -212,7 +212,7 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.
 
 IF(MSVC) # Windows:
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${SWORD_DATADIR}/sword/locales.d/")
 
