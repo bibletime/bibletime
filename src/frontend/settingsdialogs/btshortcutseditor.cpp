@@ -109,6 +109,7 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->setColumnCount(3);
     m_table->setAlternatingRowColors(true);
     m_table->setSelectionBehavior(QAbstractItemView::SelectRows);
+    m_table->setSelectionMode(QAbstractItemView::SingleSelection);
     m_table->setHorizontalHeaderLabels({tr("Action"),
                                         tr("Shortcut"),
                                         tr("Alternate")});
