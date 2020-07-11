@@ -228,7 +228,7 @@ BtShortcutsEditor::BtShortcutsEditor(BtActionCollection* collection, QWidget* pa
     m_table->selectRow(0);
     slotSelectionChanged();
     BT_CONNECT(m_dlg, &BtShortcutsDialog::keyChangeRequest,
-               [this](QString const & keys) {
+               [this](QKeySequence const & keys) {
                    Q_EMIT keyChangeRequest(
                                m_table->item(m_currentRow, 0)->text(),
                                keys);
@@ -326,20 +326,19 @@ void BtShortcutsEditor::customButtonClicked(bool checked) {
 
 // used by application to complete the keyChangeRequest signal
 // stores "keys" into the custom shortcuts dialog field
-void BtShortcutsEditor::changeShortcutInDialog(const QString& keys) {
-    m_dlg->changeSelectedShortcut(keys);
-}
+void BtShortcutsEditor::changeShortcutInDialog(QKeySequence const & keys)
+{ m_dlg->changeSelectedShortcut(keys); }
 
 // clears any shortcut keys in the table matching the specified keys
-void BtShortcutsEditor::clearConflictWithKeys(const QString& keys) {
-    QString conflict;
+void BtShortcutsEditor::clearConflictWithKeys(QKeySequence const & keys) {
+    auto const keyString(keys.toString());
     for (int row = 0; row < m_table->rowCount(); row++) {
         auto & item = *getShortcutsEditor(*m_table, row);
-        if (m_table->item(row, 1)->text() == keys) {
+        if (m_table->item(row, 1)->text() == keyString) {
             m_table->item(row, 1)->setText("");
             item.setFirstHotkey();
         }
-        if (m_table->item(row, 2)->text() == keys) {
+        if (m_table->item(row, 2)->text() == keyString) {
             m_table->item(row, 2)->setText("");
             item.setSecondHotkey();
         }
@@ -347,11 +346,12 @@ void BtShortcutsEditor::clearConflictWithKeys(const QString& keys) {
 }
 
 // finds any shortcut keys in the table matching the specified keys - returns the Action Name for it.
-QString BtShortcutsEditor::findConflictWithKeys(QString const & keys) const {
-    QString conflict;
-    for (int i = 0; i < m_table->rowCount(); i++) {
-        if ( (m_table->item(i, 1)->text() == keys) || (m_table->item(i, 2)->text() == keys) )
+QString
+BtShortcutsEditor::findConflictWithKeys(QKeySequence const & keys) const {
+    auto const keyString(keys.toString());
+    for (int i = 0; i < m_table->rowCount(); i++)
+        if ((m_table->item(i, 1)->text() == keyString)
+            || (m_table->item(i, 2)->text() == keyString))
             return m_table->item(i, 0)->text();
-    }
-    return conflict;
+    return {};
 }

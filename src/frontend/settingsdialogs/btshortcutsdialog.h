@@ -16,6 +16,7 @@
 #include <QDialog>
 
 
+class QKeySequence;
 class QLabel;
 class QRadioButton;
 
@@ -42,11 +43,11 @@ class BtShortcutsDialog : public QDialog {
         void setSecondKeys(const QString& keys);
 
         // change the First or Second shortcut in the dialog
-        void changeSelectedShortcut(const QString& keys);
+        void changeSelectedShortcut(QKeySequence const & keys);
 
     Q_SIGNALS:
         // make a keyChangeRequest back to the application
-        void keyChangeRequest(const QString& keys);
+        void keyChangeRequest(QKeySequence const & keys);
 
     protected:
         // get key from users input, put into primary or alternate label for display to user

@@ -19,6 +19,7 @@
 class BtActionCollection;
 class BtShortcutsDialog;
 class QGroupBox;
+class QKeySequence;
 class QLabel;
 class QPushButton;
 class QRadioButton;
@@ -34,18 +35,19 @@ class BtShortcutsEditor : public QWidget {
         void commitChanges();
 
         // clears any shortcut keys in the table matching the specified keys
-        void clearConflictWithKeys(const QString& keys);
+        void clearConflictWithKeys(QKeySequence const & keys);
 
         // finds any shortcut keys in the table matching the specified keys - returns the Action Name for it.
-        QString findConflictWithKeys(QString const & keys) const;
+        QString findConflictWithKeys(QKeySequence const & keys) const;
 
         // used by application to complete the keyChangeRequest signal
         // stores "keys" into the custom shortcuts dialog field
-        void changeShortcutInDialog(const QString& keys);
+        void changeShortcutInDialog(QKeySequence const & keys);
 
     Q_SIGNALS:
 
-        void keyChangeRequest(QString const & actionName, QString const & keys);
+        void keyChangeRequest(QString const & actionName,
+                              QKeySequence const & keys);
 
     private Q_SLOTS:
 

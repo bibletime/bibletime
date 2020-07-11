@@ -73,7 +73,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                 windowType.keyChooser,
                 &BtShortcutsEditor::keyChangeRequest,
                 [this, &windowType](QString const & actionName,
-                                    QString const & keys)
+                                    QKeySequence const & keys)
                 {
                     /* Check the BtShortcutsEditor's for shortcut conflicts.
                        Either clear the conflicts and set the new shortcut or do
@@ -120,7 +120,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                                    "the following %n shortcut(s):",
                                    nullptr,
                                    numConflicts)
-                                    .arg(keys).arg(actionName)
+                                    .arg(keys.toString()).arg(actionName)
                                     .arg(windowType.title)
                                 + "<ul>" + conflicts + "</ul>"
                                 + tr("Do you want to clear these conflicting "

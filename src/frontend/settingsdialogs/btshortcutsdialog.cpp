@@ -105,19 +105,20 @@ void BtShortcutsDialog::keyReleaseEvent(QKeyEvent* event) {
     if ( (event->modifiers() & Qt::ControlModifier) == Qt::ControlModifier)
         keyStr = "Ctrl+" + keyStr;
 
-    QKeySequence completeKeys(keyStr);
-    QString completeStr = completeKeys.toString();
-
-    keyChangeRequest(completeStr);
+    keyChangeRequest(keyStr);
 }
 
 // complete the keyChangeRequest
-void BtShortcutsDialog::changeSelectedShortcut(const QString& keys) {
+void BtShortcutsDialog::changeSelectedShortcut(QKeySequence const & keys) {
+    if (!m_primaryButton->isChecked() || !m_alternateButton->isChecked())
+        return;
+
+    auto const keysString(keys.toString());
     if (m_primaryButton->isChecked())
-        m_primaryLabel->setText(keys);
+        m_primaryLabel->setText(keysString);
 
     if (m_alternateButton->isChecked())
-        m_alternateLabel->setText(keys);
+        m_alternateLabel->setText(keysString);
 }
 
 void BtShortcutsDialog::retranslateUi() {
