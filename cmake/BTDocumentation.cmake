@@ -219,6 +219,10 @@ IF(BUILD_HTML)
                 "/usr/share/sgml/docbook/xsl-stylesheets/html/"
                 "/usr/share/xsl/docbook/html/"
                 "/usr/share/xml/docbook/stylesheet/nwalsh/html/"
+                "/usr/local/share/xml/docbook/stylesheet/docbook-xsl/html/"
+                "/usr/local/share/sgml/docbook/xsl-stylesheets/html/"
+                "/usr/local/share/xsl/docbook/html/"
+                "/usr/local/share/xml/docbook/stylesheet/nwalsh/html/"
             NO_DEFAULT_PATH)
         IF(NOT BT_DOCBOOK_XSL_HTML_CHUNK_XSL)
             MESSAGE(FATAL_ERROR "The required file html/chunk.xsl from \
@@ -277,6 +281,9 @@ IF(BUILD_PDF)
             HINTS
                 "/usr/share/xml/docbook/stylesheet/docbook-xsl/fo/"
                 "/usr/share/sgml/docbook/xsl-stylesheets/fo/"
+                "/usr/share/xsl/docbook/fo/"
+                "/usr/local/share/xml/docbook/stylesheet/docbook-xsl/fo/"
+                "/usr/local/share/sgml/docbook/xsl-stylesheets/fo/"
                 "/usr/local/share/xsl/docbook/fo/"
             NO_DEFAULT_PATH)
         IF(NOT BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL)
