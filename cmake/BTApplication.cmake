@@ -157,7 +157,7 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 ######################################################
 # Tests:
 #
-#INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
 
 
 ######################################################
