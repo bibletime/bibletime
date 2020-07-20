@@ -226,15 +226,6 @@ void BibleTime::slotToggleWorksToolbar() {
         m_worksToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
 }
 
-void BibleTime::slotToggleFormatToolbar() {
-    bool currentState = btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true);
-    btConfig().setSessionValue("GUI/showFormatToolbarButtons", !currentState);
-    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
-        Q_EMIT toggledTextWindowFormatToolbar(!currentState);
-    else
-        m_formatToolBar->setVisible(!currentState);
-}
-
 void BibleTime::slotToggleToolBarsInEachWindow() {
     bool currentState = btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true);
     btConfig().setSessionValue("GUI/showToolbarsInEachWindow", !currentState);
@@ -247,24 +238,20 @@ void BibleTime::showOrHideToolBars() {
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
         m_toolsToolBar->setVisible(false);
-        m_formatToolBar->setVisible(false);
         // set state of sub window widets
         Q_EMIT toggledTextWindowNavigator(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
         Q_EMIT toggledTextWindowModuleChooser(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
         Q_EMIT toggledTextWindowToolButtons(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
-        Q_EMIT toggledTextWindowFormatToolbar(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     }
     else {
         // set state of main window widgets
         m_navToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
         m_worksToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
         m_toolsToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
-        m_formatToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
         //set sub window widgets invisible
         Q_EMIT toggledTextWindowNavigator(false);
         Q_EMIT toggledTextWindowToolButtons(false);
         Q_EMIT toggledTextWindowModuleChooser(false);
-        Q_EMIT toggledTextWindowFormatToolbar(false);
     }
 }
 
@@ -439,7 +426,6 @@ void BibleTime::reloadProfile() {
     setQActionCheckedNoTrigger(m_showTextWindowNavigationAction, conf.sessionValue<bool>("GUI/showTextWindowNavigator", true));
     setQActionCheckedNoTrigger(m_showTextWindowModuleChooserAction, conf.sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     setQActionCheckedNoTrigger(m_showTextWindowToolButtonsAction, conf.sessionValue<bool>("GUI/showTextWindowToolButtons", true));
-    setQActionCheckedNoTrigger(m_showFormatToolbarAction, conf.sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     setQActionCheckedNoTrigger(m_toolbarsInEachWindow, conf.sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
 
     m_mdi->setMDIArrangementMode(static_cast<MAM>(
