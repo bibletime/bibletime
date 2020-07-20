@@ -55,7 +55,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
       m_moduleChooserBar(nullptr),
       m_mainToolBar(nullptr),
       m_buttonsToolBar(nullptr),
-      m_formatToolBar(nullptr),
       m_headerBar(nullptr),
       m_popupMenu(nullptr),
       m_displayWidget(nullptr),
@@ -83,8 +82,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
                SLOT(slotShowToolButtons(bool)));
     BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowModuleChooser(bool)),
                SLOT(slotShowModuleChooser(bool)));
-    BT_CONNECT(mainwindow, SIGNAL(toggledTextWindowFormatToolbar(bool)),
-               SLOT(slotShowFormatToolBar(bool)));
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -104,14 +101,11 @@ void CDisplayWindow::setToolBarsHidden() {
         m_buttonsToolBar->setHidden(true);
     if (m_moduleChooserBar)
         m_moduleChooserBar->setHidden(true);
-    if (m_formatToolBar)
-        m_formatToolBar->setHidden(true);
 }
 void CDisplayWindow::clearMainWindowToolBars() {
     // Clear main window toolbars, except for works toolbar
     btMainWindow()->navToolBar()->clear();
     btMainWindow()->toolsToolBar()->clear();
-    btMainWindow()->formatToolBar()->clear();
 }
 
 void CDisplayWindow::windowActivated() {
@@ -477,12 +471,6 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
     m_buttonsToolBar = bar;
 }
 
-/** Setup the Format toolbar. */
-void CDisplayWindow::setFormatToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Format"), true );
-    m_formatToolBar = bar;
-}
-
 /** Sets the display settings button. */
 void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
     BT_CONNECT(this,   SIGNAL(sigDisplayOptionsChanged(DisplayOptions const &)),
@@ -522,11 +510,6 @@ void CDisplayWindow::slotShowToolButtons(bool show) {
 void CDisplayWindow::slotShowModuleChooser(bool show) {
     if (moduleChooserBar())
         moduleChooserBar()->setVisible(show);
-}
-
-void CDisplayWindow::slotShowFormatToolBar(bool show) {
-    if (formatToolBar())
-        formatToolBar()->setVisible(show);
 }
 
 /** Lookup the current key. Used to refresh the display. */

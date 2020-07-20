@@ -166,12 +166,6 @@ class BibleTime : public QMainWindow {
         inline QToolBar *toolsToolBar() const {
             return m_toolsToolBar;
         }
-        /**
-        * Get pointer to Format toolbar
-        */
-        inline QToolBar *formatToolBar() const {
-            return m_formatToolBar;
-        }
 
         /**
           \returns a pointer to the info display.
@@ -351,7 +345,6 @@ public slots:
         void slotToggleToolsToolbar();
         void slotToggleNavigatorToolbar();
         void slotToggleWorksToolbar();
-        void slotToggleFormatToolbar();
 
         void slotToggleToolBarsInEachWindow();
 
@@ -432,7 +425,6 @@ public slots:
         void toggledTextWindowNavigator(bool newState);
         void toggledTextWindowToolButtons(bool newState);
         void toggledTextWindowModuleChooser(bool newState);
-        void toggledTextWindowFormatToolbar(bool newState);
         void colorThemeChanged();
 
     private:
@@ -449,7 +441,6 @@ public slots:
         QToolBar* m_navToolBar;
         BtModuleChooserBar* m_worksToolBar;
         QToolBar* m_toolsToolBar;
-        QToolBar* m_formatToolBar;
 
         // File menu:
         QMenu *m_fileMenu;
@@ -468,7 +459,6 @@ public slots:
         QAction *m_showTextWindowNavigationAction;
         QAction *m_showTextWindowModuleChooserAction;
         QAction *m_showTextWindowToolButtonsAction;
-        QAction *m_showFormatToolbarAction;
         QAction *m_toolbarsInEachWindow;
 
         // Search menu:

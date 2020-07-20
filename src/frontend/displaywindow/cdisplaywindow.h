@@ -119,9 +119,6 @@ public:
     /** Sets and inits the properties of the tool buttons toolbar.*/
     void setButtonsToolBar( QToolBar* bar );
 
-    /** Sets and inits the properties of the format toolbar.*/
-    void setFormatToolBar( QToolBar* bar );
-
     /** Returns the main navigation toolbar. */
     inline QToolBar *mainToolBar() const {
         return m_mainToolBar;
@@ -130,11 +127,6 @@ public:
     /** Returns the tool buttons toolbar. */
     inline QToolBar *buttonsToolBar() const {
         return m_buttonsToolBar;
-    }
-
-    /** Returns the format toolbar. */
-    inline QToolBar *formatToolBar() const {
-        return m_formatToolBar;
     }
 
     /** Initialize the toolbars.*/
@@ -226,7 +218,6 @@ public slots:
     void slotShowNavigator(bool show);
     void slotShowToolButtons(bool show);
     void slotShowModuleChooser(bool show);
-    void slotShowFormatToolBar(bool show);
     void slotShowHeader(bool show);
 
 protected:
@@ -355,7 +346,6 @@ private:
     BtModuleChooserBar* m_moduleChooserBar;
     QToolBar* m_mainToolBar;
     QToolBar* m_buttonsToolBar;
-    QToolBar* m_formatToolBar;
     QToolBar* m_headerBar;
     QMenu* m_popupMenu;
     CDisplay* m_displayWidget;

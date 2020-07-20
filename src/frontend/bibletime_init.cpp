@@ -320,7 +320,6 @@ void BibleTime::clearMdiToolBars() {
     m_navToolBar->clear();
     m_worksToolBar->clear();
     m_toolsToolBar->clear();
-    m_formatToolBar->clear();
 }
 
 CKeyChooser* BibleTime::keyChooser() const {
@@ -351,9 +350,6 @@ void BibleTime::createMenuAndToolBar()
 
     m_toolsToolBar = createToolBar("ToolsToolBar", this, visible);
     addToolBar(m_toolsToolBar);
-
-    m_formatToolBar = createToolBar("FormatToolBar", this, visible);
-    addToolBar(m_formatToolBar);
 }
 
 void BibleTime::createCentralWidget()
@@ -468,12 +464,6 @@ void BibleTime::initActions() {
     m_showTextWindowToolButtonsAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
     BT_CONNECT(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
                this, SLOT(slotToggleToolsToolbar()));
-
-    m_showFormatToolbarAction = &m_actionCollection->action("showFormat");
-    m_showFormatToolbarAction->setCheckable(true);
-    m_showFormatToolbarAction->setChecked(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
-    BT_CONNECT(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
-               this,                      SLOT(slotToggleFormatToolbar()));
 
     m_toolbarsInEachWindow =
             &m_actionCollection->action("showToolbarsInTextWindows");
@@ -628,7 +618,6 @@ void BibleTime::initMenubar() {
     m_toolBarsMenu->addAction(m_showTextWindowNavigationAction);
     m_toolBarsMenu->addAction(m_showTextWindowModuleChooserAction);
     m_toolBarsMenu->addAction(m_showTextWindowToolButtonsAction);
-    m_toolBarsMenu->addAction(m_showFormatToolbarAction);
     m_toolBarsMenu->addSeparator();
     m_toolBarsMenu->addAction(m_toolbarsInEachWindow);
     m_viewMenu->addMenu(m_toolBarsMenu);
@@ -743,7 +732,6 @@ void BibleTime::retranslateUi() {
     m_navToolBar->setWindowTitle(tr("Navigation toolbar"));
     m_worksToolBar->setWindowTitle(tr("Works toolbar"));
     m_toolsToolBar->setWindowTitle(tr("Tools toolbar"));
-    m_formatToolBar->setWindowTitle(tr("Format toolbar"));
 
     m_fileMenu->setTitle(tr("&File"));
     m_viewMenu->setTitle(tr("&View"));
