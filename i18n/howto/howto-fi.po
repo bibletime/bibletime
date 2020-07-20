@@ -5,12 +5,13 @@
 # Translators:
 # Ilpo Kantonen, 2005,2009,2016
 # Ilpo Kantonen, 2005,2009,2016,2019-2020
+# Jaak Ristioja, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2020-05-03 20:33+0000\n"
-"Last-Translator: Ilpo Kantonen\n"
+"PO-Revision-Date: 2020-07-20 22:04+0000\n"
+"Last-Translator: Jaak Ristioja\n"
 "Language-Team: Finnish (http://www.transifex.com/bibletime/bibletime/"
 "language/fi/)\n"
 "Language: fi\n"
@@ -74,6 +75,11 @@ msgid ""
 "\" Their study was an end in itself. In this they were grievously deceived. "
 "[...]"
 msgstr ""
+"Juutalaiset, joiden kanssa Jeesus puhui [...], kuvittelivat, että Raamatun "
+"hallinta merkitsee elämän hallintaa. Hillel totesi: \"Se, joka on saanut "
+"itselleen Tooran sanat, on saanut itselleen tulevaisuuden maailman elämän.\" "
+"Heidän tutkimuksensa oli päämäärä sinänsä. Tässä heidät petettiin vakavasti. "
+"[...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:28
@@ -209,6 +215,11 @@ msgid ""
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
 msgstr ""
+"Navigaattorit kuvaavat tätä sanomalla, että koska peukalo voi koskettaa "
+"kaikkia sormia, voimme mietiskellä Sanaa kuten mitä tahansa ensimmäisistä "
+"neljästä. Mietiskely on avain ilmoitukseen. Uuden kristityn pitää kuulla ja "
+"lukea Raamattua enemmän kuin tutkia ja muistaa sitä. Tämä tarkoittaa, että "
+"he tutustuvat Raamatun yleiseen viestiin."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:91
@@ -316,6 +327,11 @@ msgid ""
 "relate to the thought of the key verse. Once you find it, write it as Roman "
 "numeral One of your outline:"
 msgstr ""
+"Tutkitaan yhdessä Matt.6: 1-18. Lue se itsenäisesti etsimällä ensin "
+"avainjae. Se on jae, joka kokoaa koko Raamatun kohdan. Luuletko löytäneesi "
+"sen? Testaa se vertailemalla eri kohtia löytämääsi avainjakeeseen ja "
+"kysymällä itseltäsi, liittyvätko ne avainjakeen ajatukseen. Kun löydät "
+"avainjakeen, kirjoita se roomalaisena numerona yksi luonnokseesi:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:140
@@ -329,6 +345,9 @@ msgid ""
 "give any examples? What area of our lives is being addressed? <emphasis>Our "
 "motives!</emphasis> What sub-headings develop this thought?"
 msgstr ""
+"Mitä tarkoittaa <quote>harjoittaa vanhurskautta</quote>? Antaako kohta "
+"esimerkkejä? Mitä elämämme osa-alueita käsitellään? <emphasis>Meidän "
+"motiivimme!</emphasis> Mitkä alaotsikot kehittävät tätä ajatusta?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
@@ -576,6 +595,8 @@ msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
+"kirjoittaja. Sen on kirjoittanut 1600 vuoden aikana 40 erilaista eri taustat "
+"omaavaa kirjoittajaa, mutta se luetaan kuin yhden kirjoittamana."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21
@@ -583,6 +604,9 @@ msgid ""
 "preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
 "</emphasis> compares New Testament manuscripts with other ancient texts:"
 msgstr ""
+"säilyttäminen. F. F. Bruce vertaa Uuden Testamentin käsikirjoituksia muihin "
+"muinaisiin teksteihin teoksessaan <emphasis>Ovatko Uuden Testamentin kirjat "
+"luotettavia?</emphasis> :"
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:28
@@ -783,6 +807,12 @@ msgid ""
 "As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
 msgstr ""
+"<emphasis>Hebr.4:12</emphasis> \"<emphasis>Sillä Jumalan sana on elävä ja "
+"voimallinen...</emphasis>\" Jeesus sanoi <emphasis>(Matt.4:4),</emphasis>\" "
+"<emphasis>Kirjoitettu on: Ei ihminen elä ainoastaan leivästä, vaan "
+"jokaisesta sanasta, joka Jumalan suusta lähtee.</emphasis>\" Kun luemme "
+"Raamattua, Jumalan Henki on siellä puhumassa sydämellemme jatkuvasti "
+"tuoreella tavalla."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:109
@@ -791,6 +821,9 @@ msgid ""
 "God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
 "Jesus' attitude toward the Scriptures."
 msgstr ""
+"2 Tim.3:16 julistaa, \" <emphasis>Kaikki kirjoitukset ovat Jumalan "
+"inspiroimia  [lit., Jumalan hengittämä].</emphasis>\" Uskotko sinä tämän? "
+"Ennen kuin vastaat, mieti Jeesuksen suhtautumista pyhiin kirjoituksiin."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:114
@@ -819,6 +852,20 @@ msgid ""
 "of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
 "to detract from the other.  ..."
 msgstr ""
+"Hän viittasi ihmiskirjoittajiin, mutta piti itsestään selvänä, että heidän "
+"takanaan oli yksi jumalallinen kirjoittaja. Hän voisi yhtä hyvin sanoa "
+"'Mooses sanoi' tai 'Jumala sanoi' (Mark.7: 10). Hän voi lainata 1. Moos. "
+"2:24: n kertojan kommentin itse Luojaan (Matt.19: 4-5). Samoin Hän sanoi: "
+"\"Jesaja profetoi hyvin teistä tekopyhiä, niin kuin on kirjoitettu\", Kun "
+"hän jatkoi lainaamista, on Herran Jumalan suora puhe (Mark.7:6 &amp; "
+"Jes.29:13). Uuden Testamentin kirjoittajat ovat saaneet itse Jeesukselta "
+"kaksinaisen vakuutuksen pyhien kirjoituksista. Heille oli aivan yhtä totta "
+"sanoa, että 'Jumala puhui vanhoista isiemme kautta profeettojen "
+"toimesta' (Hepr.1: 1), koska sanottiin, että 'Pyhän Hengen liikuttamat "
+"ihmiset puhuivat Jumalasta' (2 Piet. 01:21). Jumala ei puhunut tavalla, joka "
+"hävittäisi ihmiskirjailijoiden persoonallisuuden, eikä ihmiset puhuneet "
+"tavalla, joka pilaisi jumalallisen kirjoittajan sanan. Jumala puhui. Miehet "
+"puhuivat. Kummankaan totuuden ei saa antaa vähentää toisiaan. ..."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:134
@@ -828,6 +875,10 @@ msgid ""
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
 msgstr ""
+"Tämä oli Kristuksen näkemys Raamatusta. Heidän todistajansa oli Jumalan "
+"todistaja. Raamatun todistus on Jumalan todistus. Ja tärkein syy siihen, "
+"miksi kristitty uskoo Raamatun jumalalliseen alkuperään, on se, että Jeesus "
+"Kristus itse opetti sen."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:140
@@ -838,6 +889,11 @@ msgid ""
 "Bible really is God speaking to us, it follows that it will be our authority "
 "in all matters of faith and conduct."
 msgstr ""
+"2 Tim. 3:16 lukee, \" <emphasis>ja kannattavaa opettaa, korjata, harkita "
+"vanhurskautta, jotta Jumalan mies olisi riittävä, varusteltu jokaiselle "
+"hyvälle työlle.</emphasis>\" Jos hyväksymme, että Raamattu todella "
+"tarkoittaa sitä, että Jumala puhuu meille, siitä seuraa, että se on meidän "
+"valtuutemme kaikissa uskon ja käytöksen asioissa."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:148
@@ -851,6 +907,9 @@ msgid ""
 "<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
 msgstr ""
+"Mitä Raamatun tutkiminen antaa sinulle? 1. Tess.2:13 sanoo, että Raamattu \" "
+"<emphasis>tekee työnsä sinussa, joka uskot.</emphasis>\"   Kirjoita jokaisen "
+"pyhän kirjoituksen viereen Sanan suorittama työ."
 
 #. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:154
@@ -889,6 +948,8 @@ msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
 "to give you the inheritance among all those who are sanctified. \""
 msgstr ""
+"rakentaa - \"... Hänen armonsa Sana, joka pystyy rakentamaan sinut ja "
+"antamaan sinulle perinnön kaikkien pyhitettyjen keskuudessa\"."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
@@ -961,6 +1022,11 @@ msgid ""
 "v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
 "Mine...</emphasis>\""
 msgstr ""
+"Joh. 8:32 \" <emphasis>ja tiedät totuuden, ja totuus vapauttaa sinut.</"
+"emphasis>\"Tätä lainataan yleensä suoraan. Onko tämä ehdollinen vai ehdoton "
+"lupaus? Soveltuuko se kaikenlaiseen tietoon? Löydä vastaukset tutkimalla "
+"lauseen ensimmäinen puolikasta, v.31.\" <emphasis>Jos pysyt minun Sanassani, "
+"niin olet todella minun oppilaani...</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:211
@@ -980,6 +1046,11 @@ msgid ""
 "emphasis>\"One thing studying the Bible does for us is to ground us in the "
 "truth, with the result that we won't be easily \"blown away.\""
 msgstr ""
+"Kreikankielinen sana \"tuuli\" käytetty Ef. 4:14 merkitsee "
+"<emphasis>voimakasta tuulta.</emphasis>\" <emphasis>Seurauksena on, että "
+"emme enää ole lapsia, heittälehtineet sinne täänne aaltojen ja opin tuulien "
+"mukaan...</emphasis>\"Yksi asia, jota Raamatun opiskelu tekee, on ankkuroida "
+"meidät totuuteen, minkä seurauksena meitä ei helposti \"puhalleta pois\"."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
@@ -988,6 +1059,9 @@ msgid ""
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
 "of God.</emphasis>\" Mt.22:29"
 msgstr ""
+"<emphasis>Mutta Jeesus vastasi ja sanoi heille,</emphasis>\" "
+"<emphasis>Olette erehtyneet [KJV Ye do err], ette ymmärrä kirjoituksia tai "
+"Jumalan voimaa.</emphasis>\" Matt.22:29"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:224
@@ -1071,6 +1145,9 @@ msgid ""
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
 "emphasis>\""
 msgstr ""
+"2 Tim. 2:15 (KJV) \" <emphasis>Pyri kaikin voimin osoittautumaan Jumalan "
+"silmissä luotettavaksi työntekijäksi, joka ei häpeä työtään ja joka opettaa "
+"totuuden sanaa oikein.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:272
@@ -1080,6 +1157,10 @@ msgid ""
 "spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
 "\""
 msgstr ""
+"Kol. 3:16 \" <emphasis>Antakaa Kristuksen sanan asua runsaana "
+"keskuudessanne. Opettakaa ja neuvokaa toisianne kaikella viisaudella ja "
+"laulakaa kiitollisin mielin Jumalalle psalmeja, ylistysvirsiä ja hengellisiä "
+"lauluja.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:277
@@ -1133,6 +1214,16 @@ msgid ""
 "and Romans says, \" <emphasis>Christ also died for sins once for all</"
 "emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
+"Totuus Jumalan aloitteen lopullisuudesta Kristuksessa ilmaistaan yhdellä "
+"kreikkalaisen testamentin sanalla, nimeltään adverbi <foreignphrase>hapax</"
+"foreignphrase>ja <foreignphrase>ephapax</foreignphrase>. Se käännetään "
+"yleensä virallisessa versiossa kerran, tarkoittaen kerran kaikille. Sitä "
+"käytetään siihen, mitä tehdään niin, että se on ikuinen pätevyys eikä "
+"koskaan tarvitse toistaa, ja sitä sovelletaan NT: ssä sekä ilmoitukseen että "
+"lunastamiseen. Siksi Juude viittaa uskoon, joka kerran oli annettu kaikille "
+"pyhille (juutalaiset 3), ja roomalaiset sanovat: \" <emphasis>Kristus kuoli "
+"myös syntien tähden kerran kaikista</emphasis>\" (Room. 6:10, katso myös 1 "
+"Piet. 3:18; Hebr. 9:26-28)."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:305
@@ -1147,6 +1238,15 @@ msgid ""
 "foreignphrase>for our authority and <foreignphrase>sola gratia</"
 "foreignphrase>for our salvation."
 msgstr ""
+"Siksi voimme sanoa, että Jumala on puhunut kerran kaikille ja Kristus on "
+"kärsinyt kerran kaikista. Tämä tarkoittaa, että kristillinen ilmoitus ja "
+"kristillinen lunastus ovat molemmat samankaltaisia Kristuksessa. Mitään ei "
+"voida lisätä kumpaankaan olematta halventavaa Kristukselle ... Nämä ovat "
+"kaksi kiveä, joille protestantti uskonpuhdistus rakennettiin - Jumala "
+"ilmaisi sanan lisäämättä ihmisten perinteitä ja Kristuksen loppuunsaatettu "
+"työ lisäämättä inhimillisiä ansioita. Reformoitujen hienot avainsanat olivat "
+"<foreignphrase>sola scriptura</foreignphrase>meidän valtuudelle ja "
+"<foreignphrase>sola gratia</foreignphrase>pelastukseemme."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:320
@@ -1230,6 +1330,19 @@ msgid ""
 "understand, which the untaught and unstable distort, as they do also the "
 "rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
+"Olemme jo oppineet \"3 Cs: sta\": sisältö, konteksti, ristiviittaukset. "
+"Haluamme laajentaa sitä nyt sukeltamalla lyhyesti Raamatun hermeneutiikkaan, "
+"jonka tavoitteena on löytää alkuperäisen kirjoittajan (ja Kirjoittajan!) "
+"tarkoittama merkitys. Vaikka monien kappaleiden soveltamiset ovat päteviä, "
+"vain yksi tulkinta on kelvollinen. Raamattu itse sanoo tämän sanomalla, "
+"ettei mikään kirjoitus ole yksityisen tulkinnan alainen (2. Piet. 1:20 KJV "
+"<quote>Tietäen tämän ensin, ettei mikään pyhien kirjoitusten profetia ole "
+"omin neuvoin tulkittavissa.</quote>). Tietyt säännöt auttavat oikean "
+"merkityksen löytämisessä; Ohittamatta näitä sääntöjä ihmiset ovat tuoneet "
+"paljon ongelmia itselleen ja seuraajilleen. 2 Piet. 3:16 <quote>...joissa on "
+"joitain vaikeasti ymmärrettäviä asioita, jotka opettamattomat ja epävakaat "
+"vääristävät, kuten he tekevät myös muita kirjoituksia, omaksi tuhoksensa.</"
+"quote>"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:17
@@ -1238,6 +1351,9 @@ msgid ""
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you. How do you study it out? Keep these rules in mind:"
 msgstr ""
+"Kuinka tutkimme kappaleen halutun merkityksen? Oletetaan, että huomio on "
+"kiinnitetty tiettyyn jakeeseen, jonka tarkoitus ei ole sinulle selvä. Kuinka "
+"opit siitä? Pidä nämä säännöt mielessä:"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:22
@@ -1281,6 +1397,16 @@ msgid ""
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
 msgstr ""
+"Vertaa pyhiä kirjoituksia toisten pyhien kirjoitusten kanssa. Näkemällä, "
+"kuinka samaa kreikkalaista tai heprealaista sanaa (ei englanninkielistä "
+"sanaa) käytetään pyhissä kirjoituksissa, voidaan selventää tai heijastaa "
+"uutta valintaa määritelmään. Kuinka sama kirjoittaja käyttää tätä sanaa "
+"muualla? Onko muita kirjoittajia? Viitetyökalut voivat antaa sinulle sanan "
+"käytön myös muissa kuin raamatullisissa asiakirjoissa. Miksi meidän on "
+"mentävä alkuperäisiin kieliin? Miksi suomenkielinen sana ei ole tarpeeksi "
+"hyvä? <emphasis>Koska useampi kuin yksi kreikkalainen sana voidaan kääntää "
+"samaksi suomenkieliseksi sanaksi ja kreikan sanoilla voi olla erilainen "
+"merkitys.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1296,6 +1422,11 @@ msgid ""
 "up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
 "emphasis> (AMG Publishers, 1991)."
 msgstr ""
+"Joh. 20:17 <emphasis>\"Älä koske minuun\"</emphasis> (KJV) kuulostaa "
+"kovalta, eikö niin? Kuulostaa siltä, että Jeesus ei halua tulla kosketuksi "
+"nyt, kun Hän on noussut ylös, että Hän on liian pyhä tai jotain. Mutta se ei "
+"tunnu oikealta, joten katsotaanpa sitä Spiros Zodhiates' <emphasis>Uuden "
+"Testamentin täydellinen sanatutkiminen</emphasis> (AMG Publishers, 1991)."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:61
@@ -1314,6 +1445,19 @@ msgid ""
 "something. \" This is a negative command, so it is to stop doing something "
 "that is already occurring. So, what have we found?"
 msgstr ""
+"Määritelmä: Käännyttäessä kohtaan Joh. 20:17 sanan \"Kosketa\" yläpuolella "
+"näemme \"pim680\". Kirjaimet antavat meille koodin puheosalle, ja numero "
+"viittaa Strongin sanakirjaviitteeseen. Tarkastellaan määritelmää (s. 879). "
+"\"680. Haptomai; haptosta (681), kosketus. Viittaa sellaiseen esineen "
+"käsittelyyn, joka vaikuttaa siihen muuntavasti ... Eroaa pselaphaosta "
+"(5584), joka tarkoittaa oikeastaan vain koskettaa jotain pintaa.\" Katso nyt "
+"\"pim\". Zodiaattien kieliopit tulevat heti ilmoituksen jälkeen; sivulla s. "
+"Näemme 849, että pim tarkoittaa \"nykyinen välttämätön aktiivinen (80)\". "
+"Sivulla 857, \"Nykyinen pakollinen. Aktiivisessa äänessä se voi tarkoittaa "
+"käskyä tehdä jotain tulevaisuudessa jatkuvaa tai toistuvaa toimintaa tai, "
+"jos se hylätään, käsky lopettaa jonkin tekeminen.\" Tämä on negatiivinen "
+"komento, joten on lopettaa tekemistä jo tapahtuvaksi. Joten mitä olemme "
+"löytäneet?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
@@ -1348,6 +1492,14 @@ msgid ""
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
 msgstr ""
+"Määritelmä aleipho (218) - \"öljytä\" (Strong); mutta meillä on myös toinen "
+"kreikkalainen sana, käännetty \"voitelu\", chrio (5548) - \"voidella tai "
+"hieroa öljyllä, ts. pyhittää asemaan tai uskonnolliseen palvelukseen"
+"\" (Strong's). Koska se on verbi, katso myös jännitettä, \"apta\" -"
+"määrittelemätön menneisyyden partisiipin aktiivi. \"Aoristinen partisiippi "
+"ilmaisee yksinkertaista toimintaa toisin kuin jatkuvaa toimintaa ... Kun sen "
+"suhde pääverbiin on ajallinen, se tarkoittaa yleensä toimintaa ennen "
+"pääverbiä.\" (Zodhiates s. 851)"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:100
@@ -1381,7 +1533,7 @@ msgstr ""
 #: docs/howto/en/docbook/howto-interpretation.docbook:97
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Aleiphon Ristiviitteet: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:125
@@ -1410,7 +1562,7 @@ msgstr "2 Cor.1:21 Nyt Hän, kuka.... voitelee meitä, on Jumala"
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Chrion Ristiviitteet: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:142
@@ -1419,6 +1571,9 @@ msgid ""
 "references and the definitions, and sum up the difference: <emphasis>"
 "\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
 msgstr ""
+"Joten mitä eroa aleifon ja chrion välillä on?  Katsele taaksepäin "
+"viittauksia ja määritelmiä ja tee yhteenveto eroista: <emphasis>\"aleipho\" "
+"on käytännöllinen öljyn käyttö ja \"chrio\" on henkinen</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:147
@@ -1428,6 +1583,10 @@ msgid ""
 "robbers he poured oil and wine in the wound. So oil had a medicinal use in "
 "Jesus' day."
 msgstr ""
+"Osoituksena (vaikka sanaa ei käytetä) öljyn käytännöllisestä käytöstä "
+"tuolloin, kun hyvä samarialainen välitti ryöstäjien lyömästä miehestä, hän "
+"kaatoi öljyä ja viiniä haavaan. Joten öljyllä oli lääketieteellistä käyttöä "
+"Jeesuksen päivinä."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
@@ -1437,6 +1596,10 @@ msgid ""
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
 msgstr ""
+"Sovelkaamme nyt sitä, mitä juuri opimme tämän sanaopinnon perusteella, Jaak. "
+"5:14 <emphasis>\"Onko joku teistä sairas? Anna hänen kutsua kirkon "
+"vanhimmat; ja rukoillaan häntä, voitelemalla hänet öljyllä Herran nimessä."
+"\"</emphasis>Onko \"voitelu\" henkistä vai käytännöllistä? Käytännöllistä!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:157
@@ -1448,6 +1611,12 @@ msgid ""
 "for him in the name of the Lord. Doesn't that express a beautiful balance of "
 "practical and spiritual in our God!"
 msgstr ""
+"Ja aikamuoto kreikkalaisessa kielessä, joka on aorist partisiippi, "
+"käännettäisiin paremmin \"voideltu\", joten järjestys on ensin voitelu, "
+"sitten rukous (\"Herran nimessä\" viittaa rukoukseen, ei voiteluun). Jaak. "
+"5: n mukaan vanhempien tulisi antaa sairaalle lääkettä ja rukoilla hänen "
+"puolesta Herran nimessä. Eikö se ilmaise kaunista tasapainoa "
+"käytännöllisyyttä ja hengellisyyttä Jumalassamme!"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:167
@@ -1464,6 +1633,12 @@ msgid ""
 "confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
+"Tulkitse pyhiä kirjoituksia sopusoinnussa muiden pyhien kirjoitusten kanssa. "
+"Mitä sanat kummallakin puolella ovat? Mikä on luvun teema? Kirja? Soveltuuko "
+"tulkintasi näihin? Jos ei, se on puutteellinen. Yleensä konteksti tarjoaa "
+"sen, mitä tarvitsemme oikein tulkitaksesi kohdan. Konteksti on avain. Jos "
+"merkitys säilyy hämmentävänä sen jälkeen, kun olemme tulkineet tekstiä sen "
+"yhteydessä, meidän on tutkittava kauemmas."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
@@ -1487,6 +1662,10 @@ msgid ""
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
 msgstr ""
+"Vesikasteesta ei ole keskusteltu täällä, mikä olisi suuri siirtymä Jeesuksen "
+"ja Nikodeemuksen käsittelemästä aiheesta. Varo äkillistä aiheenvaihdosta. "
+"Sinulla ei ehkä ole aavistustakaan, että tulkintasi on suistunut pois "
+"raiteiltaan. Vesi on lapsivesi, \"vedestä syntynyt\" = luonnollinen syntymä."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:187
@@ -1500,6 +1679,9 @@ msgid ""
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
 msgstr ""
+"1 Kor. 14:34 <quote>Naisten tulee olla hiljaa kirkoissa</quote>on otettava "
+"raamatullisessa yhteydessä 1 Kor. 11:5 <quote>Jokainen nainen [...] "
+"rukoillessaan tai profetoidessaan [...]</quote>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:195
@@ -1519,6 +1701,16 @@ msgid ""
 "being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
 "not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
+"Apt 2:38 <quote>Ja Pietari sanoi heille, \"Kääntykää ja ottakaa itse kukin "
+"kaste Jeesuksen Kristuksen nimeen, jotta syntienne annettaisiin anteeksi "
+"[...]\"</quote>. Onko tämä kasteen uudistamisen opetus? Jos tämä oli ainoa "
+"pyhien kirjoitusten jae, joka meillä oli, meidän olisi pääteltävä siitä. "
+"Mutta muualla olevan selkeän opetuksen valossa, että uudistuminen tapahtuu "
+"uskossa Kristukseen, meidän on tulkittava se muuten. Pietari kehottaa "
+"kastetta keinona kuuntelijoilleen vastata evankeliumiin. Jos kaste olisi "
+"polku uudestisyntymiseen, kuinka Paavali voisi kirjoittaa 1. Kor. 1:17 "
+"<emphasis>\"Sillä Kristus ei lähettänyt minua kastamaan, vaan julistamaan "
+"evankeliumia\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:211
@@ -1533,6 +1725,10 @@ msgid ""
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
+"Aluksi emme kysy <quote>Mitä se merkitsee minulle?</quote>mutta <quote>Mitä "
+"se merkitsi alkuperäisille lukijoille?</quote>; myöhemmin voimme kysyä, "
+"<quote>Mitä se merkitsee minulle?</quote>. Meidän on otettava huomioon "
+"tekijän ja vastaanottajien historiallinen ja kulttuurinen tausta."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:221
@@ -1548,6 +1744,12 @@ msgid ""
 "third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
 "explain the apparent contradiction."
 msgstr ""
+"<quote>3 päivää &amp; 3 yötä</quote>(Matt. 12:40) ovat johtaneet siihen, "
+"että jotkut ovat keksineet \"keskiviikon ristiinnaulitsemusteorian\", erit. "
+"Armstrongismin kultin. Kuinka Jeesus kuoli perjantaina iltapäivällä ja nousi "
+"sunnuntaiaamuna vielä \"nousi kolmantena päivänä\" (Matt. 16: 21)? \"Kolmen"
+"\" tai \"päivän\" tarkat merkitykset eivät auta selittämään ilmeistä "
+"ristiriitaa."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:229
@@ -1561,6 +1763,15 @@ msgid ""
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
 msgstr ""
+"Tarvitsemme historiallisen makupalan: Juutalaiset laskivat minkä tahansa "
+"päivän osan koko päiväksi, koska laskisimme ämpäriä vettä (jos vettä olisi "
+"kuusi ja puoli ämpäriä, voisimme sanoa, että oli 7 ämpärillistä vettä, "
+"vaikka yksi oli vain osittain täynnä). Juutalaisten mielestä mikä tahansa "
+"päivän osa laskettiin täydeksi päiväksi, ja päivät alkoivat klo 18 ja "
+"päättyivät klo 18. Perjantai klo 15 - 18 = 1. päivä. Perjantaista klo 18 - "
+"lauantaihin klo 18 = 2. päivä. Lauantaista klo 18 aina sunnuntaihin klo 5 –"
+"15 on 3. päivä. Tulkkaus kulttuurikontekstissa pitää meidät poissa "
+"vaikeuksista."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:240
@@ -1577,6 +1788,12 @@ msgid ""
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
+"1- Moos.15:7-21. Historiallinen asiayhteys on, että eläinten leikkaaminen "
+"kahteen osaan ja sitten kävely kappaleiden välillä oli normaali tapa tehdä "
+"sopimus Abrahamin päivänä. Molemmat osapuolet kävelivät välillä lupaamalla, "
+"että hajoaminen tapahtuu heille, jos he eivät vastaa heidän osuuttaan "
+"sopimuksesta. Mutta tässä tapauksessa vain Jumala menee läpi, mikä tekee "
+"siitä yksipuolisen liiton."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:251
@@ -1589,6 +1806,8 @@ msgid ""
 "Let literal language be literal and figurative language be figurative. And "
 "watch out for idioms, which have special meanings."
 msgstr ""
+"Olkoon kirjaimellinen kieli kirjaimellinen ja kuvaava kieli kuvaannollinen. "
+"Varo ilmaisuja, joilla on erityinen merkitys."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:257
@@ -1607,6 +1826,10 @@ msgid ""
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
 msgstr ""
+"Sääntö 1, \"pahan\" ja \"silmän\" määritelmä - ei apua täältä. Sääntö 2, "
+"asiayhteys: näyttää sekoittavan meitä vielä enemmän. Se ei näytä sopivan "
+"siihen, mikä menee ennen ja jälkeen! Tämän pitäisi antaa meille huomiota "
+"siihen, että emme ymmärrä sitä oikein!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:264
@@ -1618,6 +1841,13 @@ msgid ""
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
 msgstr ""
+"Meillä on täällä heprealainen sanonta, <quote>paha silmä</quote>. "
+"Tarkastellaan tämän ilmauksen muita käyttötarkoituksia: Matt. 20:15 \" "
+"<emphasis>Ja kai minä saan omallani tehdä mitä haluan? Vai onko silmäsi "
+"kateellinen [lit.\"paha\"] koska olen antelias [lit. \"hyvä\"]?</emphasis>\" "
+"Huomaamme, että \"pahan silmän\" omistuminen on heprealainen sanonta, koska "
+"se on niukka tai kateellinen. Palaa nyt kohtaan Matt. 6 ja huomaa, kuinka "
+"tämä ymmärrys liittyy niin täydellisesti kontekstiin."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:275
@@ -1652,6 +1882,18 @@ msgid ""
 "is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
+"Myöhempien Aikojen Pyhät (mormonit) käyttävät viittauksia Jumalan "
+"ruumiinosiin todistaakseen, että Jumala oli aikoinaan ihminen samalla "
+"tavalla kuin me. Kun he vakuuttavat ihmiset siitä, he jatkavat opettamaan, "
+"että meistä voi tulla Jumala niin kuin hän on! Ryhmä mormonien vanhimpia "
+"haastoi Walter Martinin (teoksen <emphasis>Kulttien valtakunta</emphasis>) "
+"hänen pitämässään luennossa, jossa luetellaan nämä jakeet. Sitten tohtori "
+"Martin pyysi mormoneja lukemaan vielä yhden pyhien kirjoituksen: Ps.91: "
+"<quote>Hän levittää siipensä yllesi, ja sinä olet turvassa niiden alla. "
+"Hänen uskollisuutensa on sinulle muuri ja kilpi.</quote>. W. M. sanoi, "
+"<quote>Samoilla tulkintasäännöillä, jotka olet todistanut Jumalan olevan "
+"mies, todistit vain, että Hän on lintu</quote>. Mormonien piti nauraa, kun "
+"he tajusivat asemansa naurettavuuden."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:297
@@ -1686,6 +1928,13 @@ msgid ""
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
+"Jotkut vertaukset ovat allegorioita. Esimerkiksi vertaus kylväjästä on "
+"allegooria: siemen on Jumalan sana, piikit ovat huolia ja ahneutta jne. "
+"Mutta useimmat vertaukset eivät ole allegorioita, vaan vain kertomuksia "
+"yhden asian havainnollistamiseksi. On vaarallista saada oppimme "
+"vertauksista; niitä voidaan kiertää sanomalla kaikenlaisia asioita. Meidän "
+"on saatava oppimme selkeistä pyhistä kirjoituksista, joissa se esitetään. "
+"Jos vertaus kuvaa sitä, niin hyvä."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:311
@@ -1733,6 +1982,10 @@ msgid ""
 "had to prepare for a time when he wouldn't have it. But he is not commended "
 "for his unethical behavior in cheating his master."
 msgstr ""
+"Taloudenhoitajaa kiitetään vain yhdestä asiasta, hänen rajuudestaan käyttää "
+"sitä, mitä hänellä oli oltava valmistautuakseen aikaan, jolloin hänellä ei "
+"olisi sitä. Mutta häntä ei kiitetä epäeettisestä käytöksestään isäntänsä "
+"huijaamisessa."
 
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5
@@ -1771,6 +2024,8 @@ msgid ""
 "<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
+"<copyright> <year>1999-2016</year> <holder>&bibletime; Tiimi (bt-"
+"devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:31
@@ -1779,6 +2034,9 @@ msgid ""
 "the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
 msgstr ""
+"Tämän asiakirjan on alun perin luonut Bob Harman, ja se on lisensoitu "
+"lisenssiehdoin <ulink url=\"http://creativecommons.org/licenses/by-sa/3.0/"
+"\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:35
@@ -1800,6 +2058,7 @@ msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
 msgstr ""
+"<application>Raamatunluvun HowTo</application> on opas Raamatun oppimiseen."
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:43
@@ -1811,6 +2070,12 @@ msgid ""
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
+"&bibletime; Tiimin toive on, että tämä HowTo houkuttelee lukijoita tutkimaan "
+"pyhiä kirjoituksia nähdäkseen mitä he sanovat. Tämä erityinen opas on "
+"valittu, koska siinä huolehditaan siitä, ettei se kannata mitään erityistä "
+"uskonnollista oppia. Suosittelemme, että luet ja tutkit pyhiä kirjoituksia "
+"ymmärtääksesi heidän sanomansa. Jos aloitat asenteella, että haluat Herran "
+"kylvävän sanansa sydämessäsi, Hän ei petä sinua."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:52
@@ -1820,4 +2085,4 @@ msgstr "Raamattu"
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:54
 msgid "HowTo"
-msgstr ""
+msgstr "HowTo"

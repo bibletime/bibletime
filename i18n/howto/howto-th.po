@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Anthony Quick <antonii.wai@gmail.com>, 2017
+# Anthony Quick <antonii.wai@gmail.com>, 2017,2020
 # Jaak Ristioja, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2020-04-29 21:08+0000\n"
-"Last-Translator: Jaak Ristioja\n"
+"PO-Revision-Date: 2020-05-14 14:47+0000\n"
+"Last-Translator: Anthony Quick <antonii.wai@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/bibletime/bibletime/language/"
 "th/)\n"
 "Language: th\n"
@@ -233,7 +233,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:111
 msgid "Content"
-msgstr ""
+msgstr "เนื้อหา"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:112
@@ -245,7 +245,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:117
 msgid "Context"
-msgstr ""
+msgstr "บริบท"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:118
@@ -328,7 +328,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid "do it secretly."
-msgstr ""
+msgstr "จงกระทำอย่างลับๆ"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:174
@@ -338,7 +338,7 @@ msgstr "ฯลฯ"
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:164
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "เมื่อท่านให้ <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:181
@@ -665,7 +665,7 @@ msgstr "30 - 310 ปี"
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:77
 msgid "5000 Greek &amp; 10,000 Latin"
-msgstr ""
+msgstr "กรีก 5000 &amp; ละติน 10,000"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:82
@@ -1004,7 +1004,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
 msgid "Not a little!"
-msgstr ""
+msgstr "ไม่ใช่น้อย!"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:280
@@ -1661,7 +1661,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:39
 msgid "Abstract"
-msgstr ""
+msgstr "นามธรรม"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:40

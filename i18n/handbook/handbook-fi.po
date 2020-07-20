@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2020-05-09 12:06+0000\n"
+"PO-Revision-Date: 2020-07-20 22:02+0000\n"
 "Last-Translator: Jaak Ristioja\n"
 "Language-Team: Finnish (http://www.transifex.com/bibletime/bibletime/"
 "language/fi/)\n"
@@ -102,8 +102,7 @@ msgstr ""
 "ole määritelty viitteeksi. Esimerkki: Standardi Raamattua käytetään "
 "näyttämään ristiviitteen sisältö Raamatussa. Kun viet hiiren niiden sanojen "
 "ylle, suurennuslasi näyttää viitattujen jakeiden sisällön määrittelemäsi "
-"standardi-Raamatun mukaan. Tekstisuotimilla voit kontrolloida tekstien "
-"ulkomuotoa."
+"standardi-Raamatun mukaan. Tekstisuotimilla voit säätää tekstien ulkomuotoa."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:50
@@ -743,6 +742,13 @@ msgid ""
 "description of the operation of the search features can be found on the "
 "<link linkend=\"hdbk-op-search\">Searching in Works section</link>."
 msgstr ""
+"Voit etsiä teoksessa napsuttamalla hiiren <mousebutton>oikeaa</mousebutton> "
+"painiketta sen kuvakkeella ja valitse<guimenuitem>\"Etsi teoksista\"</"
+"guimenuitem>. Painamalla &Shift; ja napsauttamalla toisessa teoksessa voit "
+"valita useamman teoksen. Avaa sitten valintaikkuna noudattamalla samaa "
+"menettelytapaa. Haet kaikista näistä asiakirjoista. Täydellinen kuvaus "
+"hakuominaisuuksien toiminnasta on osiossa<link linkend=\"hdbk-op-search"
+"\">Etsiminen teoksen osassa</link>."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:91
@@ -763,6 +769,12 @@ msgid ""
 "&amp; drop functions to drag verse references from read windows or search "
 "results to the bookmark folder, and to rearrange bookmarks between folders."
 msgstr ""
+"Napsauta hiiren <mousebutton>oikeaa</mousebutton> painiketta Kirjahyllyn "
+"kirjanmerkkiluokassa ja valitse <guimenuitem>\"Luo uusi kansio\"</"
+"guimenuitem> luodaksesi uuden kirjanmerkkien alikansion. Voit käyttää "
+"normaalia vedä &amp; pudota toimintoja raahataksesi jakeen viitteen "
+"lukuikkunasta tai esinnän tuloksista kirjanmerkkikansioon ja järjestä "
+"uudelleen kirjanmerkit kansioiden välillä."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:106
@@ -773,6 +785,12 @@ msgid ""
 "guimenuitem>. This will bring up a dialog box for you to save the bookmark "
 "collection. You can import bookmarks in a similar way."
 msgstr ""
+"Voit myös tuoda kirjanmerkkejä muilta ihmisiltä tai viedä kirjanmerkkejä "
+"jakamaan niitä. Voit tehdä tämän avaamalla kirjanmerkkikansion "
+"<guimenu>kontekstivalikon</guimenu> kuten aiemmin on kuvattu ja voit valita "
+"<guimenuitem>\"Vie kirjanmerkit\"</guimenuitem>. Tämä tuo esiin "
+"valintaikkunan, jolla voit tallentaa kirjanmerkkikokoelman. Voit tuoda "
+"kirjanmerkkejä samalla tavalla."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:114
@@ -797,6 +815,10 @@ msgid ""
 "information will be displayed in the Mag, and not in the text itself. Just "
 "try it out."
 msgstr ""
+"Tämä pieni ikkuna &bibletime; ikkunan vasemmassa alalaidassa on täysin "
+"passiivinen. Aina kun hiiren osoitin sijaitsee jonkin tekstin yllä, jossa on "
+"lisätietoja (esim. Strongin numerot), nämä lisätiedot näytetään "
+"suurennuslasissa, ei itse tekstissä. Kokeile vain."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:132
@@ -812,6 +834,10 @@ msgid ""
 "commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
 "link>)."
 msgstr ""
+"Teos näkyy &bibletime; työpöydällä. Tässä voit avata teoksia Kirjahyllystä "
+"lukeaksesi niitä, <link linkend=\"hdbk-op-search\">etsiä</link> niistä, ja "
+"jopa tallettaa merkintöjä henkilökohtaiseen kommentaarimodeuuliisi (katso "
+"<link linkend=\"hdbk-op-parts-desk-write\">alla</link>)."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:140
@@ -828,6 +854,12 @@ msgid ""
 "read window is connected to, as well as history buttons like the ones that "
 "you know from your browser."
 msgstr ""
+"Kuten olemme <link linkend=\"hdbk-op-parts-bookshelf-open\">jo nähneet</"
+"link>, voit avata teoksen lukemista varten yksinkertaisesti napsauttamalla "
+"hiirellä niitä Kirjahyllyssä. Lukuikkuna avautuu työpöytäalueelle. "
+"Jokaisessa lukuikkunassa on työkalurivi. Sieltä voit löytää työkalut tämän "
+"ikkunan teokseen, kuten myös historia-painikkeet, jotka ovat tuttuja "
+"selaimesta."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
@@ -844,6 +876,13 @@ msgid ""
 "scrolling or scroll the other direction press Shift+Up one or more times. "
 "Pressing any other key or changing the active window will stop the scrolling."
 msgstr ""
+"Tällä hetkellä aktiivista ikkunaa voi vierittää ylös- tai alaspäin. Aloita "
+"vieritys painamalla Vaihto+Alas. Voit lisätä vieritysvauhtia painamalla "
+"Vaihto+Alas useita kertoja. Paina Välilyöntinäppäintä pysäyttääksesi "
+"vierityksen. Aloittaaksesi vierityksen jälleen paina Välilyöntinäppäintä. "
+"Hidastaaksesi alaspäin vieritystä tai vierittääksesi toiseen suuntaan paina "
+"Vaihto+Ylös yhden tai useamman kerran. Minkä thansa muun näppäimen "
+"painaminen tai aktiivisen ikkunan vaihtaminen pysäyttää vierityksen."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:164
@@ -862,6 +901,14 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> </menuchoice>. Just try it out, it's simple and works."
 msgstr ""
+"Voit tietenkin avata useamman teoksen samaan aikaan. On olemassa useita "
+"mahdollisuuksia järjestää lukuikkunoita työpöydälle. Ole hyvä ja katso "
+"<guimenu>ikkunaa</guimenu> päävalikossa. Siellä voit nähdä, että voit joko "
+"asettaa lukuikkunan paikan täysin haluamaksesi tai voit antaa &bibletime; "
+"ohjelman käsitellä sijoitus automaattisesti. Tämän saavuttamiseksi sinun on "
+"valittava yksi käytettävissä olevista automaattisista sijoittelutiloista "
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> </menuchoice>. Kokeile vain. Se on yksinkertainen ja toimii."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:180
@@ -875,6 +922,10 @@ msgid ""
 "install a certain work from the library of the <ulink url=\"http://www."
 "crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
 msgstr ""
+"Voidaksesi tallettaa sinun omat kommenttisi Raamatun osista, sinun tulee "
+"asentaa yksinkertainen teos <ulink url=\"http://www.crosswire.org\">&cbs;</"
+"ulink> kirjastosta.  Tätä teosta kutsutaan \"Henkilökohtaiseksi "
+"kommentaariksi\"."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:187
@@ -924,6 +975,12 @@ msgid ""
 "action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how "
 "you can search in entire works."
 msgstr ""
+"Voit katsoa sanaa tai fraasia avoimesta lukuikkunasta (s.o. Raamatun luku, "
+"jota olet lukemassa) juuri kuten olet tottunut muista ohjelmista. Tämä "
+"toiminnon saa napsauttamalla hiiren <mousebutton>oikeaa</mousebutton> "
+"painiketta ja valitsemalla <guimenuitem>Etsi...</guimenuitem>, tai "
+"käyttämällä pikakomentoa <keycombo action=\"simul\"> <keycap>&Ctrl;F</"
+"keycap></keycombo>. Lue oppiaksesi etsimään koko teoksesta."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:225
@@ -940,6 +997,12 @@ msgid ""
 "than one. Then follow the same procedure to open the search dialog. You will "
 "be searching in all of these works at the same time."
 msgstr ""
+"Voit etsiä teoksessa napsauttamalla hiiren <mousebutton>oikeaa</mousebutton> "
+"painiketta symbolin päällä <guimenu>Kirjahyllyssä</guimenu> ja valitsemalla "
+"<guimenuitem>Etsi teoksista</guimenuitem>. Pitämällä &Shift; tai &Ctrl; ja "
+"napsauttamalla toista teoksen nimeä, voit valita useamman kuin yhden "
+"teoksen. Sitten samanlaisella prosessilla avaa etsintäikkuna. Etsit kaikista "
+"näistä teoksista samaan aikaan.."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:236
@@ -948,6 +1011,8 @@ msgid ""
 "<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
 "the appropriate entry."
 msgstr ""
+"Pääset hakuikkunaan napsauttamalla <menuchoice> <guimenu>Etsi</guimenu> </"
+"menuchoice> päävalikonssa ja valitsemalla sopivan toiminnon."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:242
@@ -1000,6 +1065,10 @@ msgid ""
 "this button and you will be offered a menu where you can select the works "
 "you want to search in."
 msgstr ""
+"Asetukset-välilehden yläosasta löydät <guibutton>Valitse</"
+"guibutton>(teokset). Jos haluat etsiä useista teoksista, napsauta tätä "
+"painiketta. Sinulle tarjotaan valikko, josta voit valita haluamasi teokset. "
+"Haku etsii niistä teoksista."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:265
@@ -1014,6 +1083,10 @@ msgid ""
 "scope</guimenu>. You can define your own search ranges by clicking the "
 "<guibutton>Setup ranges</guibutton> button."
 msgstr ""
+"Voit rajata haun laajuutta tiettyihin Raamatun osiin valitsemalla jonkin "
+"ennalta määritellyistä laajuuksista luettelossa <guimenu>Hakualue</guimenu>. "
+"Voit määritellä oman hakusi rajat napsauttamalla <guibutton>Aseta rajat</"
+"guibutton> painiketta."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:275
@@ -1030,6 +1103,11 @@ msgid ""
 "button.  You can see examples of searches by clicking on <guimenu>full "
 "syntax</guimenu>."
 msgstr ""
+"Kirjoita hakulause välilyönnillä erotettuna. Oletuksena hakutoiminto tuottaa "
+"tulokset, jotka vastaavat kaikkia sanoja. Jos haluat löytää syötetyistä "
+"sanoista, valitse <guimenu>Joitakin sanoja</guimenu> painiketta.  Jos haluat "
+"tehdä monipuolisemman haun, valitse <guimenu>Vapaa</guimenu> painike.  Voit "
+"nähdä esimerkkejä hauista napsauttamalla <guimenu>koko syntaksi</guimenu>."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:286
@@ -1038,6 +1116,10 @@ msgid ""
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
+"Voit käyttää jokerimerkkejä: '*' vastaa mitä tahansa merkkijonoa, kun taas "
+"'?' vastaa mitä tahansa yhtä merkkiä. Sulkujen käytöllä voit ryhmitellä "
+"hakutermejä, esim. '(Jeesus TAI henki) JA Jumala'. Huom. Ohjelmassa voi "
+"käytössä olla englanninkieliset sanat. TAI = OR ja JA = AND."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
@@ -1045,6 +1127,8 @@ msgid ""
 "To search text other than the main text, enter the text type followed by "
 "':', and then the search term.  Refer to the table below for examples."
 msgstr ""
+"Jos haluat hakea muuta kuin päätekstiä, kirjoita tekstityyppi, jota seuraa "
+"':' ja sitten hakutermi. Katso esimerkkejä alla olevasta taulukosta."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:297
@@ -1171,6 +1255,15 @@ msgid ""
 "references to copy, save or print them. Clicking on a particular reference "
 "opens that verse up in context in the preview window below."
 msgstr ""
+"Tässä voit nähdä, kuinka monta hakujonon esiintymää löytyi, järjestettynä "
+"teosten mukaan. Napsauttamalla teosta hiiren <mousebutton>oikealla</"
+"mousebutton> painikkeella, voit kopioida, tallettaa tai tulostaa kaikki "
+"löytyneet jakeet siinä teoksessa sillä haulla.\n"
+"\n"
+"mouse button allows you to copy, save, or print all verses that were found "
+"in a certain work at once. This also works when you click on one or more of "
+"the references to copy, save or print them. Clicking on a particular "
+"reference opens that verse up in context in the preview window below."
 
 #. type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:359
@@ -1208,6 +1301,10 @@ msgid ""
 "search string was found in each book of the Bible, and you can also save the "
 "analysis."
 msgstr ""
+"Napsauta <guibutton>Hakuanalyysi</guibutton> avataksesi haun tarkastelun "
+"näytön. Tämä antaa yksinkertaisen graafisen analyysin siitä, kuinka monta "
+"kertaa hakusana löytyi jokaisesta Raamatun kirjasta. Ja voit myös tallentaa "
+"analyysin tuloksen."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:379
@@ -1237,6 +1334,11 @@ msgid ""
 "<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
 "menuchoice> in the main menu."
 msgstr ""
+"<guimenuitem>Kirjahyllyn hallinta</guimenuitem> on työkalu Kirjahyllyn "
+"ylläpitoon. Voit asentaa uusia teoksia Kirjahyllyyn, ja päivittää tai "
+"poistaa olemassa olevia teoksia Kirjahyllystä. Voit käyttää sitä "
+"napsauttamalla <menuchoice> <guimenu>Asetukset</guimenu> "
+"<guimenuitem>Kirjahyllyn hallinta</guimenuitem> </menuchoice> päävalikossa."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
@@ -1253,6 +1355,13 @@ msgid ""
 "modules). &bibletime; will automatically maintain a list of remote libraries "
 "and the works available from them."
 msgstr ""
+"Tämän ominaisuuden avulla voit muodostaa yhteyden teosten arkistoon "
+"(nimeltään \"kirjasto\") ja siirtää yhden tai useamman teoksen oman koneesi "
+"paikalliseen Kirjahyllyyn. Nämä kirjastot voivat olla paikallisia (esim. "
+"&sword; CD) tai etäyhteyksiä (esim. Crosswiren &sword; moduulien kirjasto "
+"tai online-arkisto tai muu sivusto, joka tarjoaa &sword; moduuleja). "
+"&bibletime; ylläpitää automaattisesti luetteloa etäkirjastoista ja niistä "
+"saatavissa olevista teoksista."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:413
@@ -1265,6 +1374,13 @@ msgid ""
 "click on the <guibutton>Install Works</guibutton>. After the works are "
 "installed, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"Aloittaaksesi asennuksen, valitse yksi tai useampi kirjasto, josta haluat "
+"asentaa teoksia. Sitten napsauta <guibutton>Seuraava</guibutton> painiketta. "
+"Sitten valitse yksi tai useampi kieli ja napsauta <guibutton>Seuraava</"
+"guibutton> painiketta. Näet luettelon kategorioista. Kaksoisnapsauta "
+"kategoriaa nähdäksesi teokset siinä kategoriassa. Valitse yksi tai useampi "
+"teos ja sitten napsauta <guibutton>Asenna teokset</guibutton>. Kun teokset "
+"on asennettu, napsauta <guibutton>Valmis</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
@@ -1278,6 +1394,9 @@ msgid ""
 "or more work and click the <guibutton>Update Works</guibutton>. After the "
 "works are updated, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"Jos on olemassa päivitettävissä olevia teoksia, ne näytetään. Valitse yksi "
+"tai useampi teos ja napsauta <guibutton>Päivitä teokset</guibutton>. Teokset "
+"päivittyvät ja lopuksi napsauta <guibutton>Valmis</guibutton>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
@@ -1291,6 +1410,9 @@ msgid ""
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
+"Tämän toiminnon avulla voit poistaa yhden tai useamman teoksen "
+"Kirjahyllystäsi, jolloin levytilaa vapautetaan paljon. Valitse vain teokset "
+"<guibutton>Poista teokset</guibutton> painiketta."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -1309,6 +1431,14 @@ msgid ""
 "search result page when you click on a work or one or more verse references. "
 "It is pretty straightforward, so just try it out."
 msgstr ""
+"Monissa paikoissa voit avata kontekstivalikon napsauttamalla hiiren "
+"<mousebutton>oikeaa</mousebutton> painiketta. Asiayhteydestä riippuen "
+"ohjelma antaa mahdollisuuden <guimenuitem>Valita</guimenuitem>, "
+"<guimenuitem>Kopioida</guimenuitem> (leikepöydälle), <guimenuitem>Tallentaa</"
+"guimenuitem> tai <guimenuitem>Tulostaa</guimenuitem> tekstin. Tämä toimii "
+"esimerkiksi lukuikkunoissa, kun napsautat normaalia tekstiä tai "
+"jaeviittausta, tai hakutulossivulla, kun napsautat teosta tai yhtä tai "
+"useampaa jaeviittausta. Se on melko suoraviivaista, joten kokeile sitä."
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:454
@@ -1319,6 +1449,11 @@ msgid ""
 "editing tools on your system to format your document, rather than printing "
 "from &bibletime; directly."
 msgstr ""
+"Tulostaminen &bibletime; ohjelmasta on melko yksinkertaista ja se on "
+"tarkoitettu apuohjelmaksi. Jos kirjoitat asiakirjaa tai esitystä, joka "
+"sisältää tekstiä &bibletime; ohjelmasta suosittelemme, että käytät jotakin "
+"järjestelmän esitys- tai muokkaustyökaluista asiakirjan muotoiluun sen "
+"sijaan, että tulostat &bibletime; ohjelmasta suoraan."
 
 #. type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:2
@@ -1340,6 +1475,12 @@ msgid ""
 "all shortcuts can be found in the <link linkend=\"hdbk-reference-shortcuts"
 "\">shortcuts section</link>."
 msgstr ""
+"Tässä osiossa voit löytää yksityiskohtaisen kuvauksen kaikista &bibletime; "
+"ohjelman päävalikon kohdista. Ne on järjestetty juuri sellaisena kuin ne "
+"ovat valikossa. Ja kaikki alakohdat luetellaan sen päävalikkokohteen alla, "
+"johon ne kuuluvat. Voit myös nähdä kunkin kohteen pikakuvakkeen. Täydellinen "
+"luettelo kaikista pikakuvakkeista löytyy <link linkend=\"hdbk-reference-"
+"shortcuts\">pikavalintojen osiossa</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:15
@@ -1454,6 +1595,8 @@ msgid ""
 "<action>Toggles full screen display.</action> Toggle this setting to "
 "maximize the &bibletime; window."
 msgstr ""
+"<action>Valitsee koko ruudun näytön.</action> Valitse tämä maksimoidaksesi "
+"&bibletime; ikkunan koko."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:98
@@ -1509,6 +1652,9 @@ msgid ""
 "turn the Bookmarks on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
 msgstr ""
+"<action>Valitsee kirjanmerkkien näkymisen.</action> Valitse tämä asetus "
+"näyttääksesi tai piilottaaksesi kirjanmerkit vasemmasta paneelista. Tämä voi "
+"olla kätevä, jos tarvitset lisää tilaa Suurennuslasille."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:140
@@ -1553,6 +1699,9 @@ msgid ""
 ">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Näytä</guimenu> <guimenuitem>Näytä vierekkäin tekstiotsikot</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:169
@@ -1560,6 +1709,8 @@ msgid ""
 "<action>Toggles viewing of additional works</action> Toggle this setting to "
 "allow you to view additional works in parallel to your current open books."
 msgstr ""
+"<action>Valitsee lisäteosten näyttämisen</action> Valitse tämä valinta "
+"voidaksesi nähdä lisäteoksia vierkkäin nykyisen avoimen teoksen rinnalla."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:177
@@ -1568,6 +1719,9 @@ msgid ""
 "keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
 "guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
+"keycombo> </shortcut> <guimenu>Näytä</guimenu> <guimenuitem>Työkalut</"
+"guimenuitem> <guimenuitem>Näytä päärivi</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:189
@@ -1575,6 +1729,8 @@ msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
 "the main toolbar on or off."
 msgstr ""
+"<action>Valitse päätyökalurivinäyttö.</action> Valitse tämä asetus "
+"saadaksesi päätyökalurivin näkyviin tai pois."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:196
@@ -1582,6 +1738,8 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show navigation</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Työkalut</guimenuitem> "
+"<guimenuitem>Näytä navigointi</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:203
@@ -1590,6 +1748,9 @@ msgid ""
 "remove the navigation combo box in works.  This can be handy to view the "
 "full toolbar in the open works"
 msgstr ""
+"<action>Valitse Navigointi teoksessa.</action> Valitse tämä asetus "
+"lisätäksesi tai poistaaksesi navigaation yhdistelmävalinnat teoksesta.  Tämä "
+"on kätevä tapa nähdä koko työkalurivi avoimessa teoksessa."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:212
@@ -1606,6 +1767,8 @@ msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
 "remove the works icons in the open works."
 msgstr ""
+"<action>Valitse Työkalurivi teoksessa.</action> Valitse tämä asetus "
+"lisätäksesi tai poistaaksesi teoksen kuvakkeet avoimessa teoksessa."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:227
@@ -1622,6 +1785,8 @@ msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
 "remove the tools icons in the open works."
 msgstr ""
+"<action>Valitse työkalut teoksessa.</action> Valitse tämä asetus lisätäksesi "
+"tai poistaaksesti työkalukuvakkeet avoimessa teoksessa."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:242
@@ -1629,6 +1794,8 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show format</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Työkalut</guimenuitem> "
+"<guimenuitem>Näyttömuoto</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:249
@@ -1636,6 +1803,9 @@ msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
 "Personal Commentaries. It will add or remove the formatting toolbar."
 msgstr ""
+"<action>Valitsee muodon.</action> Valitse tämä asetus kun muokkaat HTML:ää "
+"Henkilökohtaisessa kommentaarissasi. Se lisää tai poistaa "
+"muotoilutyökalurivin."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:258
@@ -1643,6 +1813,9 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Näytä</guimenu> <guimenuitem>Työkalurivi</guimenuitem> "
+"<guimenuitem>Näyttää työkalurivit teksti-ikkunassa</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:265
@@ -1650,6 +1823,8 @@ msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
 "remove the complete toolbar in open works."
 msgstr ""
+"<action>Valitsee työkalurivit teoksessa.</action> Valitse tämä asetus "
+"lisätäksesi tai poistaaksesi kokonainen työkalurivi avoimessa teoksessa."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:274
@@ -1675,6 +1850,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in "
 "standard bible</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Etsi</guimenu> <guimenuitem>Etsii standardi-"
+"Raamatusta</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:295
@@ -1684,6 +1863,9 @@ msgid ""
 "search description can be found in the <link linkend=\"hdbk-op-search"
 "\">Searching in works</link> section."
 msgstr ""
+"<action>Avaa etsintäikkunan etsiäkseen vain standardi-Raamatusta</action>. "
+"Lisää teoksia voi lisätä Etsi-ikkunassa. Yksityiskohtaisempi etsintäkuvaus "
+"löytyy <link linkend=\"hdbk-op-search\">Etsi teoksissa</link> osiosta."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:305
@@ -1693,6 +1875,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in open "
 "work(s)</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Etsi</guimenu> <guimenuitem>Etsi avoinna "
+"olevista teoksista</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:321
@@ -1702,6 +1888,10 @@ msgid ""
 "description can be found in the <link linkend=\"hdbk-op-search\">Searching "
 "in works</link> section."
 msgstr ""
+"<action>Avaa etsintäikkunan etsiäkseen kaikista avoinna olevista teoksista</"
+"action>. Teoksia voi lisätä tai poistaa etsintäikkunassa. "
+"Yksityiskohtaisempi etsinnän kuvaus löytyy <link linkend=\"hdbk-op-search"
+"\">Etsiminen teoksista</link> osiosta."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:334
@@ -1726,6 +1916,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close window</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ikkuna</guimenu> <guimenuitem>Sulje ikkuna</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:357
@@ -1767,11 +1961,15 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Cascade</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ikkuna</guimenu> <guimenuitem>Lomitus</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
-msgstr ""
+msgstr "<action>Lomittaa kaikki avoimet ikkunat</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:417
@@ -1790,11 +1988,15 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ikkuna</guimenu> <guimenuitem>Aseta</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:427
 msgid "<action>Tiles all open windows</action>."
-msgstr ""
+msgstr "<action>Aseta kaikki avoinna olevat ikkunat</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:441
@@ -1813,11 +2015,16 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "vertically</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ikkuna</guimenu> <guimenuitem>Aseta "
+"pystysuoraan</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:451
 msgid "<action>Automatically tiles all open windows vertically</action>."
 msgstr ""
+"<action>Asettaa avoinna olevat ikkunat pystysuoraan automaattisesti</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:465
@@ -1836,11 +2043,16 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "horizontally</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ikkuna</guimenu> <guimenuitem>Aseta "
+"vaakatasoon</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:475
 msgid "<action>Automatically tiles all open windows horizontally</action>."
 msgstr ""
+"<action>Aseta auki olevat ikkunat vaakatasoon automaattisesti</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:483
@@ -1848,6 +2060,8 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:490
@@ -1857,6 +2071,12 @@ msgid ""
 "the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, "
 "Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
 msgstr ""
+"<action>Hallitsee ikkunoiden perusasettelun käyttäytymistä</action>. "
+"Avautuvassa kontekstivalikossa voit joko määrittää, että haluat huolehtia "
+"ikkunajärjestelystä itse (manuaalitila), välilehdet, automaattinen "
+"ikkunoiden pystysuuntainen asetus, automaattinen ikkunoiden vaakasuuntainen "
+"määrittäminen, automaattinen ikkunoiden lomitus tai automaattinen lomitus. "
+"Kokeile niitä!"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:501
@@ -1887,6 +2107,9 @@ msgid ""
 "keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
 "as new session</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Ikkuna</guimenu> "
+"<guimenuitem>Talleta uudeksi käyttökerraksi</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:531
@@ -1966,6 +2189,10 @@ msgid ""
 "needs.  Please see the <link linkend=\"hdbk-config-bt\">Configuring "
 "&bibletime; section</link> for details."
 msgstr ""
+"<action>Avaa &bibletime;n asetusten pääikkunan</action>. Voit asettaa "
+"kaikenlaisia hyviä asetuksia siellä sopeuttaaksesi &bibletime; omiin "
+"tarpeisiisi.  Ole hyvä ja katso <link linkend=\"hdbk-config-bt\">&bibletime;"
+"n asetukset</link> osiota yksityiskohtien näkemiseksi."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:610
@@ -1996,6 +2223,10 @@ msgid ""
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
 "bookshelfmanager\">Bookshelf Manager section</link> for details."
 msgstr ""
+"<action>Avaa ikkunan, jossa voit muuttaa &sword; asetuksia ja hallita "
+"Kirjahyllyä</action>. Ole hyvä ja katso <link linkend=\"hdbk-op-"
+"bookshelfmanager\">Kirjahyllyn hallinta</link> osiota lisätietojen "
+"saamiseksi."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:630
@@ -2051,6 +2282,13 @@ msgid ""
 "you start with the attitude that you want to have the Lord sow his word in "
 "your heart He will not disappoint you."
 msgstr ""
+"<action>Avaa oppaan kuinka oppia Raamattua</action> &bibletime; tiimin toive "
+"on että tämä HowTo houkuttelee lukijoita tutkimaan pyhiä kirjoituksia "
+"nähdäkseen mitä he sanovat. Tämä erityinen opas on valittu, koska siinä "
+"huolehditaan siitä, ettei se kannata mitään erityistä uskonnollista oppia. "
+"Odotamme sinun lukevan ja tutkivan pyhiä kirjoituksia ymmärtääksesi heidän "
+"sanomansa. Jos aloitat asenteella, että haluat Herran kylvävän sanansa "
+"sydämessäsi, Hän ei petä sinua."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:698
@@ -2098,6 +2336,9 @@ msgid ""
 "contributors, &sword; software version, &qt; software version and the "
 "license agreement."
 msgstr ""
+"<action>Avaa ikkunaan &bibletime; projektin tiedot</action> sisältäen tiedot "
+"&bibletime; ohjelman version, projektin avustajat, &sword; ohjelman version, "
+"&qt; ohjelman version ja lisenssiehdot."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:733
@@ -2109,7 +2350,7 @@ msgstr "Teosten viitteet"
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
-msgstr ""
+msgstr "Tässä osiossa voit löytää kuvauksen avoimen teoksen kuvakkeille."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:747
@@ -2246,7 +2487,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:940
 msgid "Synchronize displayed entry with active Bible window."
-msgstr ""
+msgstr "Synkronisoi näytön aktiivisen Raamatun ikkunan kanssa."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:954
@@ -2293,7 +2534,7 @@ msgstr "Valitse ylimääräinen sanasto tai hartaus."
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1019
 msgid "Shortcuts index"
-msgstr ""
+msgstr "Pikanäppäimet"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1021
@@ -2305,11 +2546,17 @@ msgid ""
 "or you can look it in the <link linkend=\"hdbk-reference-menus\">Main Menu "
 "reference</link>."
 msgstr ""
+"Tämä on luettelo pikanäppäimistä ja niitä vastaava kuvaus käsikirjassa. "
+"Pikanäppäimet on lajiteltu  Pikanäppäimet on lajiteltu (karkeasti). Jos "
+"haluat löytää suoraan, mitä yksinkertainen pikanäppäin tai valikko sisältää, "
+"voit joko katsoa sitä &bibletime;:stä (kun se näyttää aina pikanäppäimen), "
+"tai voit katsoa sitä  <link linkend=\"hdbk-reference-menus\">Päävalikon "
+"viitteistä</link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1036
 msgid "Shortcut"
-msgstr ""
+msgstr "Pikanäppäin"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1037
@@ -2349,6 +2596,9 @@ msgid ""
 "</menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Etsi</guimenu> <guimenuitem>Etsi oletus-Raamatusta</guimenuitem> </"
+"menuchoice> </link> sama kuin avaa etsintäikkuna etsintään oletus-Raamatusta."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1073
@@ -2362,6 +2612,10 @@ msgid ""
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window tiling."
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> <guimenuitem>Sijoittaa automaattisesti laatoiksi "
+"pystysuunnassa</guimenuitem> </menuchoice> sama kuin valitse automaattinen "
+"ikkunoiden laatoitus-sijoitus."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1088
@@ -2375,6 +2629,9 @@ msgid ""
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window tiling."
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> <guimenuitem>Järjestää laatoiksi pystysuunnassa</guimenuitem> </"
+"menuchoice> sama kuin valitse automaattinen ikkunoiden sijoitus laatoiksi."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1102
@@ -2388,6 +2645,9 @@ msgid ""
 "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
 "toggle automatic window tiling."
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> <guimenuitem>Automaattinen</guimenuitem> </menuchoice> Sama "
+"kuin asetus automaattinen ikkunoiden asettelu."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1117
@@ -2401,6 +2661,9 @@ msgid ""
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window cascading."
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> <guimenuitem>Automaattinen lomitus</guimenuitem> </menuchoice> "
+"Sama kuin lomita automaattisesti ikkunat."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1131
@@ -2414,6 +2677,9 @@ msgid ""
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
 "equivalent; toggle manual window placement."
 msgstr ""
+"<menuchoice> <guimenu>ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> <guimenuitem>Manuaalinen tila</guimenuitem> </menuchoice> Sama "
+"kuin manuaalinen (käsin) ikkunoiden sijoittaminen."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1146
@@ -2427,6 +2693,9 @@ msgid ""
 "guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
 "organizes windows with tabs across the top."
 msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Järjestelytila</"
+"guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> Sama kuin "
+"järjestää ikkunat välilehdiksi."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1160
@@ -2440,6 +2709,10 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
 "menuchoice> </link> equivalent; saves current layout as new session."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Tallenna uudeksi käyttökerraksi</"
+"guimenuitem> </menuchoice> </link> sama kuin tallenna nykyinen asettelu "
+"uudeksi käyttökerraksi."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1174
@@ -2453,6 +2726,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
 "</link> equivalent; closes all open windows."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </"
+"menuchoice> </link> sama kuin sulje kaikki avoimet ikkunat."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1187
@@ -2496,6 +2772,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
 "menuchoice> </link> equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Järjestä pystysuuntaan</guimenuitem> "
+"</menuchoice> </link> Sama."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1229
@@ -2509,6 +2788,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
 "menuchoice> </link> equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Järjestä pystysuuntaan</guimenuitem> "
+"</menuchoice> </link> Sama."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1245
@@ -2522,6 +2804,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
 "link> windows equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Järjestä</guimenuitem> </menuchoice> "
+"</link> ikkunat samalla tavalla."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1261
@@ -2535,6 +2820,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
 "link> windows equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Lomita</guimenuitem> </menuchoice> </"
+"link> sama kuin ikkuna."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1277
@@ -2546,6 +2834,8 @@ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
 msgstr ""
+"Vaihda sijainti. Vaihtaa kohdistuksen työkalurivin kenttään valittua teosta "
+"varten."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1286
@@ -2570,6 +2860,10 @@ msgid ""
 "</menuchoice> </link> equivalent; opens the search dialog to search in all "
 "currently opened works."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Etsi</guimenu> <guimenuitem>Etsi avoimista teoksista</guimenuitem> "
+"</menuchoice> </link> sama kuin avaa etsintäikkunan etsiäkseen kaikista "
+"tällä hetkellä auki olevista teoksista."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1309
@@ -2608,6 +2902,8 @@ msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
 msgstr ""
+"<menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Käsikirja</guimenuitem> </"
+"menuchoice> sama kuin avaa käsikirja."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1343
@@ -2620,6 +2916,8 @@ msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
+"<menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Raamatun lukemisen HowTo</"
+"guimenuitem> </menuchoice> sama kuin avaa Raamatunluvun HowTo:n."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1357
@@ -2632,6 +2930,8 @@ msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
 "guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
 msgstr ""
+"<menuchoice> <guimenu>Apua</guimenu> <guimenuitem>Päivän vihje</guimenuitem> "
+"</menuchoice> Avaa hyödyllisen vihjeen &bibletime;:n käyttöön.."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1370
@@ -2645,6 +2945,9 @@ msgid ""
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
 "guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Asetukset</guimenu> <guimenuitem>Kirjahyllyn hallinta</"
+"guimenuitem> </menuchoice> </link> sama kuin avaa Kirjahyllyn hallinnan."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1385
@@ -2658,6 +2961,9 @@ msgid ""
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
 "menuchoice> </link> equivalent; toggles display of the Bookshelf."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>Näytä</guimenu> <guimenuitem>Näytä Kirjahylly</guimenuitem> </"
+"menuchoice> </link> sama kuin valinta näytä Kirjahylly."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1400
