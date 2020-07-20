@@ -1234,7 +1234,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="72"/>
-        <source>Copy size is to large.</source>
+        <source>Copy size is too large.</source>
         <translation>El tamaño de la copia es muy grande.</translation>
     </message>
 </context>

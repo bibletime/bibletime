@@ -69,7 +69,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     m_moduleNameCombo = new QComboBox();
     gridLayout->addWidget(m_moduleNameCombo, 2,1);
 
-    m_sizeToLarge = new QLabel(tr("Copy size is to large."));
+    m_sizeToLarge = new QLabel(tr("Copy size is too large."));
     m_sizeToLarge->setVisible(false);
     hLayout->addWidget(m_sizeToLarge);
 
