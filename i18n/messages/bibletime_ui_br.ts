@@ -697,12 +697,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime a zo un ostilh studi biblek aes da implijout met pegen galloudus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime a zo embannet dindan al lisañs GPL. Gellout a rit pellgargañ hag implijout ar programm hep strizhadur ebet gant palioù personel, prevez, pe publik c&apos;hoazh, gellout a rit dasparzhañ pe rannañ ar programm ma c&apos;hallfec&apos;h rannañ hepken ar c&apos;hod-mammenn hag a genglot.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
         <source>The complete legally binding license is below.</source>
         <translation>Al lisañs klok strizh a-fet lezenn a zo dindan.</translation>
     </message>
@@ -747,32 +747,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>mailh war an ergonomiezh</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime a implij ar raktres SWORD. Ar raktres SWORD a zo ur raktres meziant digoust eus ar CrossWire Bible Society. E bal a zo krouiñ ostilhoù digor o c&apos;hod mammenn lies-pladfurm &amp;mdash; gwarezet gant al lisañs publik hollek GNU &amp;mdash; hag a ro an tu d&apos;ar brogrammourien ha d&apos;an embregerezhioù Biblek da c&apos;hellout skrivañ meziantoù Biblek buanoc&apos;h hag en un doare aesoc&apos;h.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>The SWORD Project: </source>
         <translation>Ar raktres SWORD:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>Qt toolkit version %1</source>
         <translation>Stumm %1 ar voest-ostilhoù Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
         <source>More info...</source>
         <translation>Muioc&apos;h a ditouroù...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
         <source>&amp;License</source>
         <translation>&amp;Lisañs</translation>
     </message>
@@ -833,27 +833,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>An dud da-heul o deus troet BibleTime en o yezh dezho:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <source>SWORD library version %1</source>
         <translation>Stumm %1 eus al levraoueg SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ar programm-mañ a implij stumm %1 eus Qt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt a zo un arload lies-pladfurm hag un ensavadur etrefas implijader, krouet gant ar yezh C++. Embannet eo bet dindan al lisañs LGPL.</translation>
     </message>

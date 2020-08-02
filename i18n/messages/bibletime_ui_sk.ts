@@ -149,47 +149,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="260"/>
         <source>&amp;Bible Study Howto</source>
-        <translation>Ako študovať &amp;Bibliu</translation>
+        <translation>Príručka Ako študovať &amp;Bibliu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="313"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri lokalizovaní pomocníka!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="314"/>
         <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa nájsť nainštalovaný vhodný pomocník!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="320"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri otváraní pomocníka!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="321"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa otvoriť nainštalovaný pomocník!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="329"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri lokalizovaní príručky!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="330"/>
         <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa nájsť nainštalovanú vhodnú príručku!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="336"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri otváraní príručky!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="337"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa otvoriť nainštalovanú príručku!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="606"/>
@@ -484,17 +484,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="98"/>
         <source>Initializing the SWORD engine...</source>
-        <translation>Spúšťanie systému SWORD…</translation>
+        <translation>Spúšťa sa systém SWORD…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="106"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>Vytváranie BibleTime rozhrania…</translation>
+        <translation>Vytvára sa rozhranie BibleTime…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="113"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Inicializuje sa menu a panely nástrojov…</translation>
+        <translation>Inicializujú sa menu a panely nástrojov…</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime.cpp" line="198"/>
@@ -542,17 +542,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="69"/>
         <source>Migration to the new configuration system is not yet implemented. Proceeding might result in &lt;b&gt;loss of data&lt;/b&gt;. Please backup your configuration files before you continue!&lt;br/&gt;&lt;br/&gt;Do you want to continue? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrácia na nový konfiguračný systém ešte nie je implementovaná. Pokračovanie môže spôsobiť &lt;b&gt; stratu dát &lt;/b&gt;. Prosím, zálohujte si svoji konfiguráciu, kým budete pokračovať! &lt;br/&gt; &lt;br/&gt; Chcete pokračovať? Stlačte „Nie“ pre okamžité ukončenie BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="81"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri načítavaní konfigurácie.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="82"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zlyhalo načítanie konfigurácie BibleTime.  Vyzerá, že súčasný konfiguračný súbor pochádza z novšej verzie BibleTime. Pravdepodobne ste nainštalovali staršiu verziu BibleTime. Načítanie novšieho konfiguračného súboru môže spôsobiť &lt;b&gt;stratu dát&lt;/b&gt;. &lt;br/&gt;&lt;br/&gt; Stále sa chcete pokúsiť načítať novší konfiguračný súbor? Stlačte „Nie“ pre okamžité ukončenie BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletimeapp.cpp" line="105"/>
@@ -694,15 +694,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="132"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime je mocným nástrojom na štúdium Biblie, a zároveň sa ľahko používa.</translation>
+        <translation>BibleTime je mocný nástroj na štúdium Biblie, ktorý sa ľahko používa.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime je vydaný pod licenciou GPL. Môžete si tento program stiahnuť a používať pre osobné, verejné alebo aj komerčné účely bez obmedzenia. Pokiaľ však program distribuujete ďalej, musíte spolu s ním distribuovať aj jeho zdrojové kódy.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
         <source>The complete legally binding license is below.</source>
         <translation>Kompletná záväzná licencia je nižšie:</translation>
     </message>
@@ -747,32 +747,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>expert na použiteľnosť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime využíva projekt SWORD. Projekt SWORD je slobodný softvér organizácie Crosswire Biblie Society Biblie. Jej cieľom je vytvoriť multiplatformové open-source nástroje &amp;mdash; vydané pod GNU General Public License, ktoré umožňujú programátorom a biblickým spoločnostiam rýchlejšie a ľahšie vytvárať nový biblický softvér.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>The SWORD Project: </source>
         <translation>Projekt SWORD: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt vo verzii %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
         <source>More info...</source>
         <translation>Viac informácií…</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
         <source>&amp;License</source>
         <translation>&amp;Licencia</translation>
     </message>
@@ -833,27 +833,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Nasledujúci ľudia preložili BibleTime do svojho jazyka:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Niektoré mená môžu chýbať, prosím vložte nový nedostatok na %1, ak ste si všimli chyby alebo vynechanie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <source>SWORD library version %1</source>
         <translation>Knižnica SWORD vo verzii %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
         <source>This program uses Qt version %1.</source>
         <translation>Tento program používa Qt verziu %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>QT je multiplatformová C++ knižnica. Qt bolo vydané pod licenciou LGPL.</translation>
     </message>
@@ -1219,17 +1219,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="54"/>
         <source>First</source>
-        <translation type="unfinished"></translation>
+        <translation>Prvá</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="63"/>
         <source>Last</source>
-        <translation type="unfinished"></translation>
+        <translation>Posledná</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btcopybyreferencesdialog.cpp" line="72"/>
         <source>Copy size is too large.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veľkosť kópie je príliš veľká.</translation>
     </message>
 </context>
 <context>
@@ -1596,7 +1596,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="76"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="80"/>
@@ -1606,7 +1606,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="81"/>
         <source>An internal error occurred while building the index:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri vytváraní indexu sa vyskytla interná chyba:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
 </context>
 <context>
@@ -1935,7 +1935,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="83"/>
         <source>Show tips at startup</source>
-        <translation>Zobraziť tipy dňa pri štarte</translation>
+        <translation>Zobraziť tipy dňa pri spustení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="94"/>
@@ -1945,7 +1945,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="118"/>
         <source>The currently active window can be auto scrolled up or down. Start scrolling by pressing Shift+Down. You can increase the scrolling speed by pressing Shift+Down multiple times. To pause scrolling press Space. To start scrolling again at the previous speed press Space again. To slow down scrolling or scroll the other direction press Shift+Up one or more times. Pressing any other key or changing the active window will stop the scrolling.</source>
-        <translation type="unfinished"></translation>
+        <translation>Práve aktívne okno sa môže automaticky posúvať nahor alebo nadol. Posúvanie spustíte stlačením Shift+Dolu. Môžte zvýšiť rýchlosť posúvania stlačením Shift+Dolu viac krát. Na pozastavenie posúvania stlačte Medzerník. Na pokračovanie posúvania predošlou rýchlosťou stlačte znovu Medzerník. Na spomalenie posúvania, alebo posúvanie opačným smerom stlačte Shift+Hore jeden alebo viac krát. Posúvanie sa zastaví stlačením hocijakej inej klávesy, alebo zmenením aktívneho okna.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
@@ -2000,7 +2000,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="165"/>
         <source>You can save personal notes for specific verse references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source, English as the language,  and look under Commentary. Once installed, open it like any other window, or in  parallel with a bible. Click a verse to edit it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Môžete si ukladať vlastné poznámky ku konkrétnym veršom. Najprv si ale musíte nainštalovať modul Personal commentary (Vlastný komentár). Otvorte Správcu knižnice, vyberte Crosswire ako zdroj, English (Angličtinu) ako jazyk a pohľadajte v časti Komentáre. Keď ho budete mať nainštalovaný, otvorte ho ako každé iné okno, alebo paralelne s Bibliou. Kliknite na verš, aby ste ho upravili.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="174"/>
@@ -2031,7 +2031,7 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="79"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime je mocným nástrojom na štúdium Biblie, a zároveň sa ľahko používa.</translation>
+        <translation>BibleTime je mocný nástroj na štúdium Biblie, ktorý sa ľahko používa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/welcome/btwelcomedialog.cpp" line="81"/>
@@ -2475,12 +2475,12 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="226"/>
         <source>Page down</source>
-        <translation type="unfinished"></translation>
+        <translation>O stránku nižšie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="230"/>
         <source>Page up</source>
-        <translation type="unfinished"></translation>
+        <translation>O stránku vyššie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="235"/>
@@ -2662,7 +2662,7 @@ skratka</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Unlock info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informácie k odomknutiu</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
@@ -3945,17 +3945,17 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/util/tool.cpp" line="60"/>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba pri zápise do súboru.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="61"/>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosím, skontrolujte, či máte dostatok miesta na disku.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="66"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Súbor nemohol byť otvorený pre zápis.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="203"/>
@@ -4115,7 +4115,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="62"/>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>CSS šablóna nebola nájdená!</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="79"/>
@@ -4190,7 +4190,7 @@ Chcete pokračovať?</translation>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="86"/>
         <source>Commit</source>
         <comment>Dialog Button</comment>
-        <translation type="unfinished"></translation>
+        <translation>Potvrdiť</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/btbookshelfwizard.cpp" line="87"/>
@@ -4836,7 +4836,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="187"/>
         <source>&lt;UNKNOWN EXCEPTION&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;UNKNOWN EXCEPTION&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="191"/>
@@ -4846,7 +4846,7 @@ Chcete pokračovať?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="192"/>
         <source>An internal error occurred while executing your search:&lt;br/&gt;&lt;br/&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri vykonávaní vášho vyhľadávania sa vyskytla sa interná chyba:&lt;br/&gt;&lt;br/&gt;%1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="243"/>

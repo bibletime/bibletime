@@ -697,12 +697,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime - это простой в использовании, но мощный инструмент для изучения Библии.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>Программа BibleTime выпущена по лицензии GPL. Вы можете скачать и использовать программу в личных, общественных или коммерческих целях без ограничений, но должны распространять созданную на ее основе программу только вместе с соответствующим исходным кодом.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
         <source>The complete legally binding license is below.</source>
         <translation>Полный текст лицензии приведен ниже.</translation>
     </message>
@@ -747,32 +747,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>эксперт по функциональности</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime использует Проект SWORD. Проект SWORD это программный продукт Библейского Общества Crosswire. Он предназначен для создания кроссплатформенного набора инструментов с открытым исходным кодом защищенного GNU General Public License, с помощью которого программисты и Библейские общества могут просто и быстро создавать свои программные продукты.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>The SWORD Project: </source>
         <translation>Проект SWORD: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>Qt toolkit version %1</source>
         <translation>Версия Qt %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
         <source>More info...</source>
         <translation>Больше информации...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
         <source>&amp;License</source>
         <translation>&amp;Лицензия</translation>
     </message>
@@ -833,27 +833,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Следующие люди перевели BibleTime на свой язык:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Некоторые имена могут отсутствовать, если вы заметили ошибки или упущения, сообщите в %1 о проблеме.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>&amp;SWORD</source>
         <translation>Проект &amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <source>SWORD library version %1</source>
         <translation>Версия библиотеки SWORD %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
         <source>This program uses Qt version %1.</source>
         <translation>Эта программа использует Qt версии %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt - это кроссплатформенный фреймворк для создания приложений, написанный на языке C++. Он выпущен по лицензии LGPL.</translation>
     </message>

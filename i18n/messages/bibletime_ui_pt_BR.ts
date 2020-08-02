@@ -154,42 +154,42 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="313"/>
         <source>Error locating handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro na busca do manual!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="314"/>
         <source>A suitable installed handbook could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Uma instalação adequada do manual não pôde ser encontrada!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="320"/>
         <source>Error opening handbook!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao abrir manual!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="321"/>
         <source>The installed handbook could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>O manual instalado não pôde ser aberto!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="329"/>
         <source>Error locating howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao buscar &quot;Como Fazer&quot;!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="330"/>
         <source>A suitable installed howto could not be found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Uma instalação adequada do &quot;Como Fazer&quot; não pôde ser encontrada!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="336"/>
         <source>Error opening howto!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao abrir o &quot;Como Fazer&quot;!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="337"/>
         <source>The installed howto could not be opened!</source>
-        <translation type="unfinished"></translation>
+        <translation>O &quot;Como Fazer&quot; instalado não pôde ser aberto!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_slots.cpp" line="606"/>
@@ -214,17 +214,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="108"/>
         <source>Auto scroll up</source>
-        <translation type="unfinished"></translation>
+        <translation>Rolagem automática para cima</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="113"/>
         <source>Auto scroll down</source>
-        <translation type="unfinished"></translation>
+        <translation>Rolagem automática para baixo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="118"/>
         <source>Auto scroll pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pausar rolagem automática</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="126"/>
@@ -394,7 +394,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="739"/>
         <source>Scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Rolagem</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bibletime_init.cpp" line="770"/>
@@ -697,12 +697,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime é uma poderosa ferramenta de estudo Bíblico e fácil de usar.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>Bibletime é lançado sob a licença GPL. Você pode baixar e usar o programa para propósitos pessoais, privados, públicos ou comerciais, sem restrições, mas para ceder ou distribuir o programa, você tem que necessariamente distribuir o correspondente código fonte.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
         <source>The complete legally binding license is below.</source>
         <translation>Abaixo está a licença completa vinculada juridicamente.</translation>
     </message>
@@ -747,32 +747,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>especialista em usabilidade</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime faz uso do SWORD Project. O SWORD Project é um projeto de software livre da sociedade bíblica Crosswire. Seu propósito é criar ferramentas de código aberto e independentes de plataforma &amp;mdash; cobertas pela Licença Pública Geral GNU &amp;mdash; que permite programadores e sociedades bíblicas escreverem novos softwares bíblicos de maneira rápida e fácil.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>The SWORD Project: </source>
         <translation>O projeto SWORD:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt kit de ferramentas versão %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
         <source>More info...</source>
         <translation>Mais informações...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
         <source>&amp;License</source>
         <translation>&amp;Licença</translation>
     </message>
@@ -819,7 +819,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
         <source>(c)1999-2020, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c)1999-2020, A Equipe BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="177"/>
@@ -833,27 +833,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>As seguintes pessoas traduziram BibleTime em suas línguas:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Alguns nomes podem ter sido esquecidos, por favor, crie um pedido em %1 para nos avisar de erros ou omissões.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <source>SWORD library version %1</source>
         <translation>biblioteca SWORD versão %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
         <source>This program uses Qt version %1.</source>
         <translation>Este programa usa Qt versão %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt é um aplicativo multiplataforma e um framework para interface gráfica, criado com a linguagem C++ e foi lançado sob licença LGPL.</translation>
     </message>
