@@ -199,6 +199,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Jan B&#x11B;lohoubek</li>"
                    "<li>M&aacute;rio Castanheira</li>"
                    "<li>Chun-shek Chan</li>"
+                   "<li>Ján Ďanovský</li>"
                    "<li>Nouhoun Y. Diarra</li>"
                    "<li>Rafael Fagundes</li>"
                    "<li>Eeli Kaikkonen</li>"
