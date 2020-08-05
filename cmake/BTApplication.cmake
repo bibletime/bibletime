@@ -179,10 +179,10 @@ INSTALL(FILES "docs/license.html"
 # See QTBUG-55259, Affects windeployqt and macdeployqt
 IF(APPLE)
     INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
-        DESTINATION "${BT_BINDIR}/BibleTime.app/Contents/MacOS")
+        DESTINATION "${BT_BINDIR}/BibleTime.app/Contents/share/bibletime/qml")
 ELSE()
     INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
-        DESTINATION "${BT_BINDIR}/")
+        DESTINATION "${BT_DATAROOTDIR}/bibletime/qml")
 ENDIF()
 
 FILE(GLOB INSTALL_TMPL_LIST

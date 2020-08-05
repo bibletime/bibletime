@@ -36,7 +36,7 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
     setAcceptDrops(true);
 
     namespace DU = util::directory;
-    QString qmlFile = QCoreApplication::applicationDirPath() + "/" + "DisplayView.qml";
+    QString qmlFile = QCoreApplication::applicationDirPath() + "/../share/bibletime/qml/" + "DisplayView.qml";
     setSource(QUrl::fromLocalFile(qmlFile));
     setupScrollTimer();
 }
