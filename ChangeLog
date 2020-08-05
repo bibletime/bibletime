@@ -1,3 +1,6 @@
+2019-08-06 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #260 - BIbleTime 3.0 installs /usr/bin/DisplayView.qml
+
 2020-08-02 Jaak Ristioja <jaak@ristioja.ee>
     * Released 3.0.
 
