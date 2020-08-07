@@ -289,7 +289,7 @@ IF(BUILD_PDF)
         IF(NOT BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL)
             MESSAGE(FATAL_ERROR "The required file fo/docbook.xsl from \
 docbook-xsl was not found on the system! Please specify its full path with \
--DBT_DOCBOOK_XSL_PDF_DOCBOOK_XSL=path/to/html/chunk.xsl")
+-DBT_DOCBOOK_XSL_PDF_DOCBOOK_XSL=path/to/fo/docbook.xsl")
         ELSE()
             MESSAGE(STATUS "Found XSL for PDF generation: \
 ${BT_DOCBOOK_XSL_PDF_DOCBOOK_XSL}")
