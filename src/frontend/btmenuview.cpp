@@ -33,7 +33,6 @@ BtMenuView::BtMenuView(QString const & title, QWidget * parent)
                       "triggered" and leads to executing a deleted action and a
                       crash. It is much safer to remove the menus here. */
                    removeMenus();
-                   m_indexMap.clear();
 
                    delete m_actions;
                    m_actions = m_model ? new QActionGroup(this) : nullptr;
@@ -42,14 +41,6 @@ BtMenuView::BtMenuView(QString const & title, QWidget * parent)
                    if (m_model)
                        buildMenu(this, m_parentIndex);
                    postBuildMenu(m_actions);
-               });
-    BT_CONNECT(this, &QMenu::triggered,
-               [this](QAction * const action) {
-                   if (!m_indexMap.contains(action))
-                       return;
-                   QPersistentModelIndex itemIndex(m_indexMap.value(action));
-                   if (itemIndex.isValid())
-                       Q_EMIT triggered(itemIndex);
                });
 }
 
@@ -61,7 +52,6 @@ void BtMenuView::setModel(QAbstractItemModel *model) {
     m_model = model;
     delete m_actions;
     m_actions = nullptr;
-    m_indexMap.clear();
     m_parentIndex = QModelIndex();
 }
 
@@ -185,14 +175,17 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
             QAction *childAction = newAction(parentMenu, childIndex);
 
             if (childAction != nullptr) {
-                // Map index
-                m_indexMap.insert(childAction, childIndex);
 
                 // Add action to action group:
                 childAction->setActionGroup(m_actions);
 
                 // Add action to menu:
                 parentMenu->addAction(childAction);
+
+                // Handle triggered signal:
+                BT_CONNECT(childAction, &QAction::triggered,
+                           [this, index = QPersistentModelIndex(childIndex)]
+                           { Q_EMIT triggered(index); });
             }
         }
     }

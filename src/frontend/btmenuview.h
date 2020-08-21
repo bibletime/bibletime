@@ -15,7 +15,6 @@
 
 #include <QMenu>
 
-#include <QMap>
 #include <QPersistentModelIndex>
 
 
@@ -138,7 +137,6 @@ class BtMenuView: public QMenu {
         QAbstractItemModel *m_model;
         QPersistentModelIndex m_parentIndex;
         QActionGroup *m_actions;
-        QMap<QAction *, QPersistentModelIndex> m_indexMap;
 
 };
 
