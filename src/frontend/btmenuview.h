@@ -61,24 +61,6 @@ class BtMenuView: public QMenu {
         */
         inline QAbstractItemModel *model() const { return m_model; }
 
-        /**
-          Sets or resets the parent index for the items of the associated model, which to
-          represent. The menu will only show data items below the given index. This function
-          has no effect if the given index is valid, but does not belong to the model
-          associated with this menu.
-          \param[in] parentIndex the new parent index.
-          \warning (Re)setting the parent index will only take effect the next time the menu
-                   is to be shown.
-          \warning Changing the model using setModel() will automatically reset this index.
-        */
-        void setParentIndex(const QModelIndex &parentIndex);
-
-        /**
-          Returns the parent index of the items of the assiciated model, which are to be
-          represented by this menu. By default this is an invalid index.
-        */
-        QModelIndex parentIndex() const { return m_parentIndex; }
-
     Q_SIGNALS:
         /**
           This signal is emitted when the user activates a menu item corresponding to an
@@ -135,7 +117,6 @@ class BtMenuView: public QMenu {
     private: /* Fields: */
 
         QAbstractItemModel *m_model;
-        QPersistentModelIndex m_parentIndex;
         QActionGroup *m_actions;
 
 };

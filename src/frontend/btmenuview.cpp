@@ -24,11 +24,12 @@ BtMenuView::BtMenuView(QWidget * parent)
 BtMenuView::BtMenuView(QString const & title, QWidget * parent)
     : QMenu(title, parent)
     , m_model(nullptr)
-    , m_parentIndex(QModelIndex())
     , m_actions(nullptr)
 {
     BT_CONNECT(this, &QMenu::aboutToShow,
                [this]{
+                   setActiveAction(nullptr); // Work around QTBUG-77273
+
                    /* The signal "aboutToHide" comes before the signal
                       "triggered" and leads to executing a deleted action and a
                       crash. It is much safer to remove the menus here. */
@@ -39,7 +40,7 @@ BtMenuView::BtMenuView(QString const & title, QWidget * parent)
 
                    preBuildMenu(m_actions);
                    if (m_model)
-                       buildMenu(this, m_parentIndex);
+                       buildMenu(this, QModelIndex());
                    postBuildMenu(m_actions);
                });
 }
@@ -52,12 +53,6 @@ void BtMenuView::setModel(QAbstractItemModel *model) {
     m_model = model;
     delete m_actions;
     m_actions = nullptr;
-    m_parentIndex = QModelIndex();
-}
-
-void BtMenuView::setParentIndex(const QModelIndex &parentIndex) {
-    if (parentIndex.isValid() && parentIndex.model() != m_model) return;
-    m_parentIndex = parentIndex;
 }
 
 void BtMenuView::preBuildMenu(QActionGroup *) {
