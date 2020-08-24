@@ -13,7 +13,7 @@ IF(APPLE)
         SET(BT_MAC_APP  "${CMAKE_INSTALL_PREFIX}/BibleTime.app")
 
         INSTALL(CODE "
-            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} ${BT_MAC_APP}   -qmldir=${BT_MAC_APP}/Contents/share/bibletime/qml)
+            EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} ${BT_MAC_APP}   -qmldir=${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview)
         ")
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
