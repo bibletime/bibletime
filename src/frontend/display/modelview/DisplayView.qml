@@ -34,20 +34,6 @@ Rectangle {
         contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
-    function leftMouseMove(x, y) {
-        if (mousePressedX < 0)
-            return;
-        if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
-            return;
-        }
-        mouseMovedX = x;
-        mouseMovedY = y;
-        column = Math.floor(mousePressedX / (listView.width / listView.columns));
-        sortPoints();
-        selectItems();
-        btQmlInterface.selectByIndex(indexFirst, indexLast, column, textPosFirst, textPosLast);
-    }
-
     function leftMousePress(x, y) {
         var item1 = listView.itemAt( x,y + listView.contentY);
 
@@ -69,6 +55,20 @@ Rectangle {
         var index = listView.indexAt( x,y + listView.contentY);
         btQmlInterface.dragHandler(index, url);
         return;
+    }
+
+    function leftMouseMove(x, y) {
+        if (mousePressedX < 0)
+            return;
+        if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
+            return;
+        }
+        mouseMovedX = x;
+        mouseMovedY = y;
+        column = Math.floor(mousePressedX / (listView.width / listView.columns));
+        sortPoints();
+        selectItems();
+        btQmlInterface.selectByIndex(indexFirst, indexLast, column, textPosFirst, textPosLast);
     }
 
     function leftMouseRelease(x, y) {
@@ -268,23 +268,6 @@ Rectangle {
                     return column3Text;
                 }
 
-                function selectSingle(item,posFirst, posLast, columnSelected) {
-                    item.select(posFirst, posLast);
-                }
-
-                function selectFirst(item, posFirst, columnSelected) {
-                    item.select(posFirst, item.length);
-                }                    color: listView.textBackgroundColor
-
-
-                function selectLast(item, posLast, columnSelected) {
-                    item.select(0, posLast);
-                }
-
-                function selectAll(item, columnSelected) {
-                    item.selectAll();
-                }
-
                 function setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast) {
                     if (updating)
                         return;
@@ -303,6 +286,23 @@ Rectangle {
                         btQmlInterface.saveSelectedText(index, item.selectedText)
                     }
                     updating = false;
+                }
+
+                function selectSingle(item,posFirst, posLast, columnSelected) {
+                    item.select(posFirst, posLast);
+                }
+
+                function selectFirst(item, posFirst, columnSelected) {
+                    item.select(posFirst, item.length);
+                }                    color: listView.textBackgroundColor
+
+
+                function selectLast(item, posLast, columnSelected) {
+                    item.select(0, posLast);
+                }
+
+                function selectAll(item, columnSelected) {
+                    item.selectAll();
                 }
 
                 function textIsHtml(dtext) {
