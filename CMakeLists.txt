@@ -1,5 +1,5 @@
 PROJECT(bibletime CXX)
-CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
 
 
 ######################################################
