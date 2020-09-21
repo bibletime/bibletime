@@ -47,13 +47,7 @@ struct ModuleEntry {
         Title1Role = Qt::UserRole + 7,
         Title2Role = Qt::UserRole + 8,
         Title3Role = Qt::UserRole + 9,
-        Title4Role = Qt::UserRole + 10,
-        Selected = Qt::UserRole + 11,
-        ColumnSelected = Qt::UserRole + 12,
-        PosFirst = Qt::UserRole + 13,
-        PosLast = Qt::UserRole + 14,
-        SelectFirstIndex = Qt::UserRole + 15,
-        SelectLastIndex = Qt::UserRole + 16
+        Title4Role = Qt::UserRole + 10
     };
 };
 
@@ -61,7 +55,7 @@ class BtModuleTextFilter {
 
 public:
     virtual ~BtModuleTextFilter() = 0;
-    virtual QString processText(const QString& text, bool selected=false) = 0;
+    virtual QString processText(const QString& text) = 0;
 };
 
 
@@ -129,24 +123,7 @@ public:
     virtual bool setData(const QModelIndex &index,
                          const QVariant &value, int role = Qt::EditRole) override;
 
-    void deSelect();
-    bool isSelected();
-    void selectByIndex(int first, int last, int column, int posFirst, int posLast);
-    int getFirstSelectionIndex() {
-        return m_firstSelected;
-    }
-    int getLastSelectionIndex() {
-        return m_lastSelected;
-    }
-
-    int getSelectionColumn() {
-        return m_columnSelected;
-    }
-
-    bool hasSelectedText();
-
     void setDisplayOptions(const DisplayOptions & displayOptions);
-
 
     /** Set the state of the currently found word functionality */
     void setFindState(const FindState& findState);
@@ -196,16 +173,10 @@ private:
 
     int m_firstEntry;
     int m_maxEntries;
-    int m_firstSelected;
-    int m_lastSelected;
-    int m_columnSelected;
-    int m_posFirst;
-    int m_posLast;
     BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;
     FindState m_findState;
 };
-
 
 #endif

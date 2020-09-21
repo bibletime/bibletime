@@ -29,6 +29,7 @@
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
 #include "../display/modelview/btqmlinterface.h"
+#include "../display/modelview/btquickwidget.h"
 #include "../searchdialog/csearchdialog.h"
 #include "btactioncollection.h"
 
@@ -157,7 +158,7 @@ void CReadWindow::copyByReferences() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
         auto model = v->qmlInterface()->textModel();
-        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);        
+        BtCopyByReferencesDialog  dlg(modules(), history(), key(), model, this);
         int rtn = dlg.exec();
         if (rtn == QDialog::Rejected)
             return;
@@ -177,9 +178,32 @@ void CReadWindow::copyByReferences() {
 bool CReadWindow::hasSelectedText() {
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
-        auto model = v->qmlInterface()->textModel();
-        return model->hasSelectedText();
+        bool selected = v->qmlInterface()->hasSelectedText();
+        return selected;
     }
     return false;
 }
 
+int CReadWindow::getSelectedColumn() const {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        return  v->quickWidget()->getSelectedColumn();
+    }
+    return 0;
+}
+
+int CReadWindow::getFirstSelectedIndex() const {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        return  v->quickWidget()->getFirstSelectedIndex();
+    }
+    return 0;
+}
+
+int CReadWindow::getLastSelectedIndex() const {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        return  v->quickWidget()->getLastSelectedIndex();
+    }
+    return 0;
+}

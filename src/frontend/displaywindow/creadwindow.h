@@ -33,6 +33,12 @@ public: /* Methods: */
 
     virtual CSwordModuleInfo::ModuleType moduleType() const = 0;
 
+    int getSelectedColumn() const;
+
+    int getFirstSelectedIndex() const;
+
+    int getLastSelectedIndex() const;
+
 protected: /* Methods: */
 
     void setDisplayWidget(CDisplay * newDisplay) override;
@@ -48,7 +54,6 @@ protected: /* Methods: */
     void copyByReferences() override;
 
     bool hasSelectedText() override;
-
 
 protected slots:
 

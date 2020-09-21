@@ -15,7 +15,7 @@
 
 #include <QWidget>
 #include "creaddisplay.h"
-
+#include "modelview/btqmlscrollview.h"
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QPoint>
@@ -124,6 +124,10 @@ public:
     void settingsChanged();
 
     void updateReferenceText() override;
+
+    BtQuickWidget* quickWidget() {
+        return m_widget->quickWidget();
+    }
 
     BtQmlInterface * qmlInterface() const;
 

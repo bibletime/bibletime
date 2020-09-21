@@ -83,10 +83,8 @@ public:
     Q_INVOKABLE void referenceChosen();
     Q_INVOKABLE void setMagReferenceByUrl(const QString& url);
     Q_INVOKABLE void setRawText(int row, int column, const QString& text);
-    Q_INVOKABLE void deSelect();
-    Q_INVOKABLE bool isSelected();
-    Q_INVOKABLE void selectByIndex(int first, int last, int column, int textFirst, int textLast);
     Q_INVOKABLE void clearSelectedText();
+    Q_INVOKABLE bool hasSelectedText();
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
     Q_INVOKABLE bool shiftKeyDown();
 

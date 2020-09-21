@@ -40,6 +40,10 @@ public:
     void scroll(int pixels);
     void updateReferenceText();
 
+    int getSelectedColumn() const;
+    int getFirstSelectedIndex() const;
+    int getLastSelectedIndex() const;
+
 protected:
        void dragMoveEvent(QDragMoveEvent * event) override;
        void dragEnterEvent( QDragEnterEvent* e ) override;

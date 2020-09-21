@@ -22,8 +22,7 @@ BtTextFilter::BtTextFilter() :
 BtTextFilter::~BtTextFilter() {
 }
 
-QString BtTextFilter::processText(const QString &text, bool selected) {
-    m_selected = selected;
+QString BtTextFilter::processText(const QString &text) {
     if (text.isEmpty())
         return text;
     QString localText = fixNonRichText(text);
