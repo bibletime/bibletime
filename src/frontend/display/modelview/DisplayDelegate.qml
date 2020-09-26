@@ -96,7 +96,19 @@ Item {
             return columnView1;
         if (column === 2)
             return columnView2;
-        return columnView3;
+        if (column === 3)
+            return columnView3;
+        if (column === 4)
+            return columnView4;
+        if (column === 5)
+            return columnView5;
+        if (column === 6)
+            return columnView6;
+        if (column === 7)
+            return columnView7;
+        if (column === 8)
+            return columnView8;
+        return columnView9;
     }
 
     width: listView.width
@@ -105,8 +117,8 @@ Item {
     ColumnItem {
         id: columnView0
         property int column: 0
-        property string displayText: text1
-        property string displayTitle: title1
+        property string displayText: text0
+        property string displayTitle: title0
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: delegate.left
@@ -117,8 +129,8 @@ Item {
     ColumnItem {
         id: columnView1
         property int column: 1
-        property string displayText: text2
-        property string displayTitle: title2
+        property string displayText: text1
+        property string displayTitle: title1
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView0.right
@@ -129,8 +141,8 @@ Item {
     ColumnItem {
         id: columnView2
         property int column: 2
-        property string displayText: text3
-        property string displayTitle: title3
+        property string displayText: text2
+        property string displayTitle: title2
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView1.right
@@ -141,11 +153,83 @@ Item {
     ColumnItem {
         id: columnView3
         property int column: 3
+        property string displayText: text3
+        property string displayTitle: title3
+        anchors.top: delegate.top
+        anchors.bottom: delegate.bottom
+        anchors.left: columnView2.right
+        width: delegate.textWidth
+        onHovered: delegate.hovered(link)
+    }
+
+    ColumnItem {
+        id: columnView4
+        property int column: 4
         property string displayText: text4
         property string displayTitle: title4
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
-        anchors.left: columnView2.right
+        anchors.left: columnView3.right
+        width: delegate.textWidth
+        onHovered: delegate.hovered(link)
+    }
+
+    ColumnItem {
+        id: columnView5
+        property int column: 5
+        property string displayText: text5
+        property string displayTitle: title5
+        anchors.top: delegate.top
+        anchors.bottom: delegate.bottom
+        anchors.left: columnView4.right
+        width: delegate.textWidth
+        onHovered: delegate.hovered(link)
+    }
+
+    ColumnItem {
+        id: columnView6
+        property int column: 6
+        property string displayText: text6
+        property string displayTitle: title6
+        anchors.top: delegate.top
+        anchors.bottom: delegate.bottom
+        anchors.left: columnView5.right
+        width: delegate.textWidth
+        onHovered: delegate.hovered(link)
+    }
+
+    ColumnItem {
+        id: columnView7
+        property int column: 7
+        property string displayText: text7
+        property string displayTitle: title7
+        anchors.top: delegate.top
+        anchors.bottom: delegate.bottom
+        anchors.left: columnView6.right
+        width: delegate.textWidth
+        onHovered: delegate.hovered(link)
+    }
+
+    ColumnItem {
+        id: columnView8
+        property int column: 8
+        property string displayText: text8
+        property string displayTitle: title8
+        anchors.top: delegate.top
+        anchors.bottom: delegate.bottom
+        anchors.left: columnView7.right
+        width: delegate.textWidth
+        onHovered: delegate.hovered(link)
+    }
+
+    ColumnItem {
+        id: columnView9
+        property int column: 9
+        property string displayText: text9
+        property string displayTitle: title9
+        anchors.top: delegate.top
+        anchors.bottom: delegate.bottom
+        anchors.left: columnView8.right
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }

@@ -1,3 +1,6 @@
+2019-09-26 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #268 - The parallel reading UI is broken in 3.0.0, when showing more than 4 versions
+
 2019-08-06 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #260 - BIbleTime 3.0 installs /usr/bin/DisplayView.qml
 
