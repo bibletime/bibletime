@@ -16,38 +16,56 @@ import QtQuick 2.2
 Rectangle {
     id: display
 
-    property int column: 0
     property int contextMenuIndex: btQmlInterface.contextMenuIndex
+
+    // Mouse movement properties
     property int dragDistance: 8
-    property int indexFirst: -1
-    property int indexLast: -1
     property int mouseMovedX: 0
     property int mouseMovedY: 0
     property int mousePressedX: 0
     property int mousePressedY: 0
     property point mouseLR
     property point mouseUL
-    property int textPosFirst: -1
-    property int textPosLast: -1
+
+    // Text selection properties
+    property int column: 0          // Column containing selected text
+    property int indexFirst: -1     // Index of first delegate item with selected text
+    property int indexLast: -1      // Index of last delegate item with selected text
+    property int textPosFirst: -1   // Position of first selected character
+    property int textPosLast: -1    // Position of last selected character
 
     function saveContextMenuIndex(x, y) {
         contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
-    function leftMousePress(x, y) {
-        var item1 = listView.itemAt( x,y + listView.contentY);
+    function getSelectedColumn() {
+        return column;
+    }
 
-        // Transform to item relative point
-        var xItem = x - item1.x + listView.contentX;
-        var yItem = y - item1.y + listView.contentY;
+    function getFirstSelectedIndex() {
+        return indexFirst;
+    }
+
+    function getLastSelectedIndex() {
+        return indexLast;
+    }
+
+    function leftMousePress(x, y) {
+        var delegateItem = listView.itemAt( x, y + listView.contentY);
+        if (delegateItem === null)
+            return;
+
+        // Transform to delegate relative point
+        var delegateX = x - delegateItem.x + listView.contentX;
+        var delegateY = y - delegateItem.y + listView.contentY;
 
         // If not a cross reference link, save cursor position for later use
-        var  url = item1.linkAt(xItem, yItem);
+        var  url = delegateItem.linkAt(delegateX, delegateY);
         if (url === "" || url.includes("lemmamorph") || url.includes("footnote")) {
             // Start selection of items
             mousePressedX = x;
             mousePressedY = y;
-            btQmlInterface.deSelect();
+            deselectByIndex();
             return;
         }
 
@@ -63,12 +81,14 @@ Rectangle {
         if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
             return;
         }
+
         mouseMovedX = x;
         mouseMovedY = y;
+
         column = Math.floor(mousePressedX / (listView.width / listView.columns));
-        sortPoints();
-        selectItems();
-        btQmlInterface.selectByIndex(indexFirst, indexLast, column, textPosFirst, textPosLast);
+        sortMousePoints();
+        getSelectedTextPositions();
+        selectByIndex();
     }
 
     function leftMouseRelease(x, y) {
@@ -80,7 +100,7 @@ Rectangle {
         openPersonalCommentary(mousePressedX, mousePressedY);
     }
 
-    function sortPoints() {
+    function sortMousePoints() {
         if (mousePressedX < mouseMovedX) {
             if (mousePressedY < mouseMovedY) {
                 mouseUL = Qt.point(mousePressedX, mousePressedY);
@@ -100,22 +120,60 @@ Rectangle {
         }
     }
 
-    function selectItems() {
-        var itemFirst = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
-        var itemLast = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
-        if (itemFirst === null || itemLast === null)
+    function getSelectedTextPositions() {
+        var firstDelegateItem = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
+        var lastDelegateItem = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
+        if (firstDelegateItem === null || lastDelegateItem === null)
             return;
 
         indexFirst = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
+        var delegateXFirst = listView.contentX + mouseUL.x - firstDelegateItem.x;
+        var delegateYFirst = listView.contentY + mouseUL.y - firstDelegateItem.y;
+        textPosFirst = firstDelegateItem.positionAt(delegateXFirst, delegateYFirst, column);
+
         indexLast = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
+        var delegateXLast = listView.contentX + mouseLR.x - lastDelegateItem.x;
+        var delegateYLast = listView.contentY + mouseLR.y - lastDelegateItem.y;
+        textPosLast = lastDelegateItem.positionAt(delegateXLast, delegateYLast, column);
+    }
 
-        var textXFirst = listView.contentX + mouseUL.x - itemFirst.x;
-        var textYFirst = listView.contentY + mouseUL.y - itemFirst.y;
-        textPosFirst = itemFirst.positionAt(textXFirst, textYFirst, column);
+    function selectDelegateItem(index, delegateItem) {
+        if (delegateItem === null)
+            return;
+        if (index === indexFirst && index === indexLast)
+            delegateItem.selectSingle(column, textPosFirst, textPosLast);
+        else if (index === indexFirst)
+            delegateItem.selectFirst(column, textPosFirst);
+        else if (index === indexLast)
+            delegateItem.selectLast(column, textPosLast);
+        else if (index > indexFirst && index < indexLast)
+            delegateItem.selectAll(column);
+        else
+            return;
 
-        var textXLast = listView.contentX + mouseLR.x - itemLast.x;
-        var textYLast = listView.contentY + mouseLR.y - itemLast.y;
-        textPosLast = itemLast.positionAt(textXLast, textYLast, column);
+        var columnSelectedText = delegateItem.getSelectedText(column);
+        btQmlInterface.saveSelectedText(index, columnSelectedText)
+    }
+
+    function selectByIndex() {
+        if (indexFirst < 0 || indexLast < 0 || indexFirst > indexLast)
+            return;
+
+        var index;
+        for (index = indexFirst; index <= indexLast; index++) {
+            var delegateItem = listView.itemAtIndex(index);
+            selectDelegateItem(index, delegateItem);
+        }
+    }
+
+    function deselectByIndex() {
+        if (indexFirst < 0 || indexLast < 0 || indexFirst > indexLast)
+            return;
+        var index;
+        for (index = indexFirst; index <= indexLast; index++) {
+            var delegateItem = listView.itemAtIndex(index);
+            delegateItem.deselect(column);
+        }
     }
 
     function openPersonalCommentary(x, y) {
@@ -130,6 +188,18 @@ Rectangle {
 
     function scroll(value) {
         listView.scroll(value);
+    }
+
+    function textIsHtml(dtext) {
+        if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
+            return Text.RichText;
+        return Text.PlainText;
+    }
+
+    function isBlank(text) {
+        var t = text;
+        t.trim();
+        return t.length === 0;
     }
 
     width: 10
@@ -152,7 +222,6 @@ Rectangle {
             updateReferenceText();
         }
     }
-
 
     ListView {
         id: listView
@@ -204,370 +273,11 @@ Rectangle {
             updateReferenceText();
         }
 
-        delegate: Component {
-            Rectangle {
-                id: delegate
-                property int spacing: 1.5 * btQmlInterface.pixelsPerMM
-                property int textWidth: (listView.width / listView.columns) - (spacing *  ((listView.columns+1)/listView.columns)  )
-                property int vertSpace: 2 * btQmlInterface.pixelsPerMM
-                property bool updating: false
-                property string selectedText
-
-                function positionAt(x, y, column) {
-                    var textItem
-                    if (column === 0)
-                        textItem = column0Text;
-                    else if (column === 1)
-                        textItem = column1Text;
-                    else if (column === 2)
-                        textItem = column2Text;
-                    else
-                        textItem = column3Text;
-
-                    var xItem = textItem.x;
-                    var position = textItem.positionAt(x - xItem, y);
-                    return position;
-                }
-
-                function linkAt(x, y) {
-                    var textItem;
-                    if (column3Text.visible && x >= column3Text.x)
-                        textItem = column3Text;
-                    else if (column2Text.visible && x >= column2Text.x)
-                        textItem = column2Text;
-                    else if (column1Text.visible && x >= column1Text.x)
-                        textItem = column1Text;
-                    else
-                        textItem = column0Text;
-
-                    var xTextItem = x - textItem.x;
-                    var yTextItem = y - textItem.y;
-                    return textItem.linkAt(xTextItem, yTextItem);
-                }
-
-                function hovered(link) {
-                    if (btQmlInterface.shiftKeyDown())
-                        return;
-                    btQmlInterface.setMagReferenceByUrl(link);
-                    btQmlInterface.activeLink = link;
-                }
-
-                function dragStart(index, active) {
-                    if (active) {
-                        btQmlInterface.dragHandler(index, btQmlInterface.activeLink);
-                    }
-                }
-
-                function getColumnItem(column) {
-                    if (column === 0)
-                        return column0Text;
-                    if (column === 1)
-                        return column1Text;
-                    if (column === 2)
-                        return column2Text;
-                    return column3Text;
-                }
-
-                function setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast) {
-                    if (updating)
-                        return;
-                    updating = true;
-
-                    if (selected) {
-                        var item = getColumnItem(columnSelected);
-                        if (selectFirstIndex && selectLastIndex)
-                            selectSingle(item, posFirst, posLast, columnSelected);
-                        else if (selectFirstIndex)
-                            selectFirst(item, posFirst, columnSelected)
-                        else if (selectLastIndex)
-                            selectLast(item, posLast, columnSelected)
-                        else
-                            selectAll(item, columnSelected);
-                        btQmlInterface.saveSelectedText(index, item.selectedText)
-                    }
-                    updating = false;
-                }
-
-                function selectSingle(item,posFirst, posLast, columnSelected) {
-                    item.select(posFirst, posLast);
-                }
-
-                function selectFirst(item, posFirst, columnSelected) {
-                    item.select(posFirst, item.length);
-                }                    color: listView.textBackgroundColor
-
-
-                function selectLast(item, posLast, columnSelected) {
-                    item.select(0, posLast);
-                }
-
-                function selectAll(item, columnSelected) {
-                    item.selectAll();
-                }
-
-                function textIsHtml(dtext) {
-                    if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
-                        return Text.RichText;
-                    return Text.PlainText;
-                }
-
-                function isBlank(text) {
-                    var t = text;
-                    t.trim();
-                    return t.length === 0;
-                }
-
-                width: listView.width
-                height: {
-                    var h = 30;
-                    if (listView.columns == 1)
-                        h = Math.max(column0Text.height,20) + vertSpace;
-                    if (listView.columns == 2)
-                        h = Math.max(column0Text.height, column1Text.height) + vertSpace;
-                    if (listView.columns == 3)
-                        h = Math.max(column0Text.height, column1Text.height, column2Text.height) + vertSpace;
-                    if (listView.columns == 4)
-                        h = Math.max(column0Text.height, column1Text.height,
-                                        column2Text.height, column3Text.height) + vertSpace;
-                    if (! isBlank(title1))
-                        h = h + column0Title.height;
-                    return h;
-                }
-
-                Item {
-                    id: space1
-                    height: 10
-                    width: parent.spacing
-                    anchors.left: parent.left
-                    anchors.top: parent.top
-                }
-
-                Rectangle {
-                    id: r0
-
-                    anchors.top: delegate.top
-                    anchors.bottom: delegate.bottom
-                    anchors.left: column0Text.left
-                    anchors.right: column0Text.right
-                    color: listView.textBackgroundColor
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(0);
-                    }
-                }
-
-                Text {
-                    id: column0Title
-
-                    anchors.top: parent.top
-                    anchors.left: space1.right
-                    width: parent.textWidth
-                    text: title1
-                    textFormat: Text.RichText
-                    visible: ! isBlank(title1)
-                }
-
-                TextEdit {
-                    id: column0Text
-
-                    anchors.top: isBlank(title1) ? parent.top : column0Title.bottom
-                    anchors.left: space1.right
-                    width: parent.textWidth
-                    text: {
-                        var isHtml = delegate.textIsHtml(text1);
-                        textFormat = isHtml;
-                        return text1;
-                    }
-                    readOnly: true
-                    color: listView.textColor
-                    font.family: btQmlInterface.fontName0
-                    font.pointSize: btQmlInterface.fontSize0
-                    wrapMode: Text.WordWrap
-                    visible: listView.columns > 0
-                    z:1
-                    onLinkHovered: delegate.hovered(link)
-                    onTextChanged: {
-                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
-                    }
-                }
-
-                Item {
-                    id: space2
-                    height: 10
-                    width: parent.spacing
-                    anchors.left: column0Text.right
-                    anchors.top: parent.top
-                }
-
-                Rectangle {
-                    id: r1
-
-                    anchors.top: delegate.top
-                    anchors.bottom: delegate.bottom
-                    anchors.left: column1Text.left
-                    anchors.right: column1Text.right
-                    color: listView.textBackgroundColor
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(1);
-                    }
-                }
-
-                Text {
-                    id: column1Title
-
-                    anchors.top: parent.top
-                    anchors.left: space2.right
-                    width: parent.textWidth
-                    text: title2
-                    textFormat: Text.RichText
-                    visible: ! isBlank(title2)
-                }
-
-                TextEdit {
-                    id: column1Text
-
-                    anchors.top: isBlank(title2) ? parent.top : column1Title.bottom
-                    anchors.left: space2.right
-                    anchors.leftMargin: 0
-                    width: parent.textWidth
-                    text: {
-                        var isHtml = delegate.textIsHtml(text2);
-                        textFormat = isHtml;
-                        return text2;
-                    }
-                    readOnly: true
-                    color: listView.textColor
-                    font.family: btQmlInterface.fontName1
-                    font.pointSize: btQmlInterface.fontSize1
-                    wrapMode: Text.WordWrap
-                    visible: listView.columns > 1
-                    onLinkHovered: delegate.hovered(link)
-                    onTextChanged: {
-                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
-                    }
-                }
-
-                Item {
-                    id: space3
-                    height: 10
-                    width: parent.spacing
-                    anchors.left: column1Text.right
-                    anchors.top: parent.top
-                }
-
-                Rectangle {
-                    id: r2
-                    anchors.top: delegate.top
-                    anchors.bottom: delegate.bottom
-                    anchors.left: column2Text.left
-                    anchors.right: column2Text.right
-                    color: listView.textBackgroundColor
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(2);
-                    }
-                }
-
-                Text {
-                    id: column2Title
-
-                    anchors.top: parent.top
-                    anchors.left: space3.right
-                    width: parent.textWidth
-                    text: title3
-                    textFormat: Text.RichText
-                    visible: ! isBlank(title3)
-                }
-
-                TextEdit {
-                    id: column2Text
-
-                    anchors.top: isBlank(title3) ? parent.top : column2Title.bottom
-                    anchors.left: space3.right
-                    anchors.leftMargin: 0
-                    width: parent.textWidth
-                    text: {
-                        var isHtml = delegate.textIsHtml(text3);
-                        textFormat = isHtml;
-                        return text3;
-                    }
-                    readOnly: true
-                    color: listView.textColor
-                    font.family: btQmlInterface.fontName2
-                    font.pointSize: btQmlInterface.fontSize2
-                    wrapMode: Text.WordWrap
-                    visible: listView.columns > 2
-                    z: 1
-                    onLinkHovered: delegate.hovered(link)
-                    onTextChanged: {
-                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
-                    }
-                }
-
-                Item {
-                    id: space4
-                    height: 10
-                    width: parent.spacing
-                    anchors.left: column2Text.right
-                    anchors.top: parent.top
-                }
-
-                Rectangle {
-                    id: r3
-                    anchors.top: delegate.top
-                    anchors.bottom: delegate.bottom
-                    anchors.left: column3Text.left
-                    anchors.right: column3Text.right
-                    color: listView.textBackgroundColor
-                    border.width: 1
-                    border.color: "lavender"
-                    visible: {
-                        return btQmlInterface.moduleIsWritable(3);
-                    }
-                }
-
-                Text {
-                    id: column3Title
-
-                    anchors.top: parent.top
-                    anchors.left: space4.right
-                    width: parent.textWidth
-                    text: title4
-                    textFormat: Text.RichText
-                    visible: ! isBlank(title4)
-                }
-
-                TextEdit {
-                    id: column3Text
-
-                    anchors.top: isBlank(title4) ? parent.top : column3Title.bottom
-                    anchors.left: space4.right
-                    anchors.leftMargin: 0
-                    width: parent.textWidth
-                    text: {
-                        var isHtml = delegate.textIsHtml(text4);
-                        textFormat = isHtml;
-                        return text4;
-                    }
-                    readOnly: true
-                    color: listView.textColor
-                    font.family: btQmlInterface.fontName3
-                    font.pointSize: btQmlInterface.fontSize3
-                    wrapMode: Text.WordWrap
-                    visible: listView.columns > 3
-                    z: 1
-                    onLinkHovered: delegate.hovered(link)
-                    onTextChanged: {
-                        delegate.setSelection(selected, selectFirstIndex, selectLastIndex, posFirst, posLast)
-                    }
-                }
+        delegate: DisplayDelegate {
+            id: dd
+            Component.onCompleted: {
+                selectDelegateItem(index, dd);
             }
         }
     }
 }
-
-

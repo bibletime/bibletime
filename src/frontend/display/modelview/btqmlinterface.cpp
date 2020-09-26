@@ -350,7 +350,6 @@ void BtQmlInterface::setModules(const QStringList &modules) {
 
 void BtQmlInterface::referenceChosen() {
     Q_EMIT referenceChange();
-    //    updateModel();
     Q_EMIT currentModelIndexChanged();
 }
 
@@ -470,22 +469,6 @@ void BtQmlInterface::configModuleByType(const QString& type, const QStringList& 
         btConfig().setDefaultSwordModuleByType(type, module);
     }
 }
-
-#if 0
-bool BtQmlInterface::isCopyToLarge(const QString& ref1, const QString& ref2) {
-    RefIndexes ri = normalizeReferences(ref1, ref2);
-    CSwordModuleInfo::ModuleType type = m_swordKey->module()->type();
-    if (type == CSwordModuleInfo::Bible ||
-            type == CSwordModuleInfo::Commentary) {
-        if ((ri.index2-ri.index1) > 2500)
-            return true;
-    } else {
-        if ( ri.index2-ri.index1 > 25)
-            return true;
-    }
-    return false;
-}
-#endif
 
 RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QString& ref2) {
     RefIndexes ri;
@@ -697,21 +680,8 @@ void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
     return;
 }
 
-void BtQmlInterface::deSelect() {
-    m_moduleTextModel->deSelect();
-    clearSelectedText();
-}
-
-bool BtQmlInterface::isSelected() {
-    return m_moduleTextModel->isSelected();
-}
-
-void BtQmlInterface::selectByIndex(int first, int last,
-                                   int column,
-                                   int posFirst, int posLast) {
-    m_moduleTextModel->selectByIndex(first, last,
-                                     column,
-                                     posFirst, posLast);
+bool BtQmlInterface::hasSelectedText() {
+    return ! m_selectedText.isEmpty();
 }
 
 void BtQmlInterface::clearSelectedText() {

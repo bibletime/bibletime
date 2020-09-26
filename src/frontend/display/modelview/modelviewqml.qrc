@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/qml">
+        <file alias="ColumnItem.qml">./ColumnItem.qml</file>
+        <file alias="DisplayDelegate.qml">./DisplayDelegate.qml</file>
         <file alias="DisplayView.qml">./DisplayView.qml</file>
     </qresource>
 </RCC>

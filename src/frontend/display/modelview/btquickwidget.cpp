@@ -17,6 +17,7 @@
 #include <QGuiApplication>
 #include <QMimeData>
 #include <QMouseEvent>
+#include <QQmlEngine>
 #include <QQuickItem>
 #include <QWheelEvent>
 #include "../../../util/btassert.h"
@@ -36,8 +37,11 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
     setAcceptDrops(true);
 
     namespace DU = util::directory;
-    QString qmlFile = ":/qml/DisplayView.qml";
-    setSource(QUrl::fromLocalFile(qmlFile));
+    auto e = engine();
+    engine()->addImportPath("qrc:/qml");
+    QString qmlFile = "qrc:/qml/DisplayView.qml";
+    QUrl url(qmlFile);
+    setSource(url);
     setupScrollTimer();
 }
 
@@ -119,6 +123,33 @@ void BtQuickWidget::updateReferenceText() {
     QQuickItem* root = rootObject();
     BT_ASSERT(root);
     QMetaObject::invokeMethod(root,"updateReferenceText");
+}
+
+int BtQuickWidget::getSelectedColumn() const {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant var;
+    QMetaObject::invokeMethod(root,"getSelectedColumn",
+                                        Qt::DirectConnection, Q_RETURN_ARG(QVariant, var));
+    return var.toInt();
+}
+
+int BtQuickWidget::getFirstSelectedIndex() const {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant var;
+    QMetaObject::invokeMethod(root,"getFirstSelectedIndex",
+                                        Qt::DirectConnection, Q_RETURN_ARG(QVariant, var));
+    return var.toInt();
+}
+
+int BtQuickWidget::getLastSelectedIndex() const {
+    QQuickItem* root = rootObject();
+    BT_ASSERT(root);
+    QVariant var;
+    QMetaObject::invokeMethod(root,"getLastSelectedIndex",
+                                        Qt::DirectConnection, Q_RETURN_ARG(QVariant, var));
+    return var.toInt();
 }
 
 void BtQuickWidget::scroll(int pixels) {
