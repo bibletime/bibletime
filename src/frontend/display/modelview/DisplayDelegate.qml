@@ -17,7 +17,7 @@ Item {
     id: delegate
     property int spacing: 1.5 * btQmlInterface.pixelsPerMM
     property int textWidth: (listView.width / listView.columns)
-    property int vertSpace: 2 * btQmlInterface.pixelsPerMM
+    property int vertSpace: 1 * btQmlInterface.pixelsPerMM
     property bool updating: false
     property string selectedText
 
@@ -28,18 +28,13 @@ Item {
 
     function linkAt(x, y) {
         var textItem;
-        if (columnView3.visible && x >= columnView3.x)
-            textItem = columnView3;
-        else if (columnView2.visible && x >= columnView2.x)
-            textItem = columnView2;
-        else if (columnView1.visible && x >= columnView1.x)
-            textItem = columnView1;
-        else
-            textItem = columnView0;
-
-        var xTextItem = x - textItem.x;
-        var yTextItem = y - textItem.y;
-        return textItem.linkAt(xTextItem, yTextItem);
+        var i;
+        for (i = listView.columns; i >= 0; --i) {
+            textItem = getColumnItem(i);
+            if (x > textItem.x)
+                break;
+        }
+        return textItem.linkAt(textItem.x, textItem.y);
     }
 
     function hovered(link) {
@@ -53,16 +48,6 @@ Item {
         if (active) {
             btQmlInterface.dragHandler(index, btQmlInterface.activeLink);
         }
-    }
-
-    function getColumnItem(column) {
-        if (column === 0)
-            return columnView0;
-        if (column === 1)
-            return columnView1;
-        if (column === 2)
-            return columnView2;
-        return columnView3;
     }
 
     function selectSingle(column,posFirst1, posLast1) {
@@ -97,16 +82,21 @@ Item {
 
     function getDelegateHeight() {
         var h = 30;
-        if (listView.columns === 1)
-            h = Math.max(columnView0.minHeight(),20) + vertSpace;
-        if (listView.columns === 2)
-            h = Math.max(columnView0.minHeight(), columnView1.minHeight()) + vertSpace;
-        if (listView.columns === 3)
-            h = Math.max(columnView0.minHeight(), columnView1.minHeight(), columnView2.minHeight()) + vertSpace;
-        if (listView.columns === 4)
-            h = Math.max(columnView0.minHeight(), columnView1.minHeight(),
-                         columnView2.minHeight(), columnView3.minHeight()) + vertSpace;
-        return h;
+        var i;
+        for (i = 0; i < listView.columns; ++i) {
+            h = Math.max(getColumnItem(i).minHeight(), h);
+        }
+        return h + vertSpace;
+    }
+
+    function getColumnItem(column) {
+        if (column === 0)
+            return columnView0;
+        if (column === 1)
+            return columnView1;
+        if (column === 2)
+            return columnView2;
+        return columnView3;
     }
 
     width: listView.width
