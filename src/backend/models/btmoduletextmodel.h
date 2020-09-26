@@ -40,14 +40,28 @@ struct ModuleEntry {
     enum TextRoles {
         ReferenceRole = Qt::UserRole + 1,
         TextRole = Qt::UserRole + 2,
-        Text1Role = Qt::UserRole + 3,
-        Text2Role = Qt::UserRole + 4,
-        Text3Role = Qt::UserRole + 5,
-        Text4Role = Qt::UserRole + 6,
-        Title1Role = Qt::UserRole + 7,
-        Title2Role = Qt::UserRole + 8,
-        Title3Role = Qt::UserRole + 9,
-        Title4Role = Qt::UserRole + 10
+
+        Text0Role = Qt::UserRole + 10,
+        Text1Role = Qt::UserRole + 11,
+        Text2Role = Qt::UserRole + 12,
+        Text3Role = Qt::UserRole + 13,
+        Text4Role = Qt::UserRole + 14,
+        Text5Role = Qt::UserRole + 15,
+        Text6Role = Qt::UserRole + 16,
+        Text7Role = Qt::UserRole + 17,
+        Text8Role = Qt::UserRole + 18,
+        Text9Role = Qt::UserRole + 19,
+
+        Title0Role = Qt::UserRole + 20,
+        Title1Role = Qt::UserRole + 21,
+        Title2Role = Qt::UserRole + 22,
+        Title3Role = Qt::UserRole + 23,
+        Title4Role = Qt::UserRole + 24,
+        Title5Role = Qt::UserRole + 25,
+        Title6Role = Qt::UserRole + 26,
+        Title7Role = Qt::UserRole + 27,
+        Title8Role = Qt::UserRole + 28,
+        Title9Role = Qt::UserRole + 29
     };
 };
 
