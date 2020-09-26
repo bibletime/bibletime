@@ -33,6 +33,7 @@ FUNCTION(PREPARE_CXX_TARGET target)
     ENDIF()
 ENDFUNCTION()
 SET(CMAKE_AUTOMOC ON)
+SET(CMAKE_AUTORCC ON)
 ADD_DEFINITIONS(
     "-DBT_VERSION=\"${BT_VERSION_FULL}\""
     "-DQT_NO_KEYWORDS"
@@ -126,6 +127,7 @@ TARGET_LINK_LIBRARIES(bibletime_backend
 FILE(GLOB_RECURSE bibletime_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.qrc"
 )
 IF(APPLE)
     ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
@@ -175,15 +177,6 @@ INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
 
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_DATADIR}/bibletime/license/")
-
-# See QTBUG-55259, Affects windeployqt and macdeployqt
-IF(APPLE)
-    INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
-        DESTINATION "${BT_BINDIR}/BibleTime.app/Contents/share/bibletime/qml")
-ELSE()
-    INSTALL(FILES "src/frontend/display/modelview/DisplayView.qml"
-        DESTINATION "${BT_DATAROOTDIR}/bibletime/qml")
-ENDIF()
 
 FILE(GLOB INSTALL_TMPL_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
