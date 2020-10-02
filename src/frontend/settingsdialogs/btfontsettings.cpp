@@ -85,7 +85,11 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
                });
     BT_CONNECT(m_languageComboBox,
                static_cast<void (QComboBox::*)(QString const &)>(
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
                    &QComboBox::activated),
+#else
+                   &QComboBox::textActivated),
+#endif
                [this](QString const & usage) {
                    auto const & p = m_fontMap[usage];
                    useOwnFontClicked(p.first);

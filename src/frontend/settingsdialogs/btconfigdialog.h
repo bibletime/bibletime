@@ -58,7 +58,7 @@ public: /* Types: */
 public: /* Methods: */
 
     BtConfigDialog(QWidget * const parent = nullptr,
-                   Qt::WindowFlags const flags = 0);
+                   Qt::WindowFlags const flags = Qt::WindowFlags());
 
     /**
       \brief Adds the page to this dialog, taking ownership.

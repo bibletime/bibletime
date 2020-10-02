@@ -53,7 +53,7 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e) {
 }
 
 void BtDropdownChooserButton::wheelEvent(QWheelEvent * e) {
-    int const delta = e->delta();
+    int const delta = e->angleDelta().y();
     if (delta == 0) {
         e->ignore();
     } else {

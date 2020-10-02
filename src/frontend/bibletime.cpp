@@ -92,7 +92,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
         if (!pm.load(splashImage)) {
             qWarning("Can't load startuplogo! Check your installation.");
         }
-        splash = new QSplashScreen(this, pm);
+        splash = new QSplashScreen(pm);
         splash->setAttribute(Qt::WA_DeleteOnClose);
         splash->finish(this);
         splash->showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),

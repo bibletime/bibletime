@@ -31,7 +31,7 @@ class BTAboutModuleDialog: public QDialog {
 
         BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
                             QWidget *parent = nullptr,
-                            Qt::WindowFlags flags = nullptr);
+                            Qt::WindowFlags flags = Qt::WindowFlags());
 
     protected: /* Methods: */
 

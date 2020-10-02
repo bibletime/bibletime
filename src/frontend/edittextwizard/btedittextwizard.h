@@ -26,7 +26,7 @@ class BtEditTextWizard final: public QWizard {
 
 public: /* Methods: */
 
-    BtEditTextWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = 0);
+    BtEditTextWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
     bool htmlMode() const;
     void setFont(const QFont& font);
