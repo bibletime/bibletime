@@ -162,7 +162,11 @@ class CLanguageMgr {
     private:
         void init();
         inline const QStringList makeStringList(const QString& abbrevs) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
             return abbrevs.split( ";", QString::KeepEmptyParts, Qt::CaseSensitive );
+#else
+            return abbrevs.split( ";", Qt::KeepEmptyParts, Qt::CaseSensitive );
+#endif
         }
 
         Language m_defaultLanguage;

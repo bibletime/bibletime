@@ -113,10 +113,14 @@ void CReadWindow::resizeEvent(QResizeEvent * e) {
 
 void CReadWindow::openSearchStrongsDialog() {
     QString searchText;
-    for (auto const & strongNumber
-         : displayWidget()->getCurrentNodeInfo().split(
-             '|',
-             QString::SkipEmptyParts))
+    Q_FOREACH(QString const & strongNumber,
+              displayWidget()->getCurrentNodeInfo().split(
+                  '|',
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                  QString::SkipEmptyParts))
+#else
+                  Qt::SkipEmptyParts))
+#endif
         searchText.append("strong:").append(strongNumber).append(' ');
     Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
 }
