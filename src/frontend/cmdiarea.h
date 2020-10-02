@@ -55,7 +55,7 @@ class CMDIArea: public QMdiArea {
           Reimplementation of QMdiArea::addSubWindow().
         */
         QMdiSubWindow * addSubWindow(QWidget * widget,
-                                     Qt::WindowFlags windowFlags = nullptr);
+                                     Qt::WindowFlags windowFlags = Qt::WindowFlags());
 
         /**
           Returns the BibleTime main window

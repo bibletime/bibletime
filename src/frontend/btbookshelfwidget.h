@@ -34,7 +34,7 @@ class QToolButton;
 class BtBookshelfWidget: public QWidget {
     Q_OBJECT
     public:
-        explicit BtBookshelfWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+        explicit BtBookshelfWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
         void setSourceModel(QAbstractItemModel *model);
 

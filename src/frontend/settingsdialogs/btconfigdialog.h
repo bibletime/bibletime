@@ -72,7 +72,7 @@ public: /* Types: */
 public: /* Methods: */
 
     BtConfigDialog(QWidget * const parent = nullptr,
-                   Qt::WindowFlags const flags = 0);
+                   Qt::WindowFlags const flags = Qt::WindowFlags());
 
     /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
     void addPage(Page * const pageWidget);

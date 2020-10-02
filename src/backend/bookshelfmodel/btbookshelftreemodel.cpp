@@ -214,7 +214,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex & itemIndex,
 
 Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex & index) const {
     if (!index.isValid())
-        return nullptr;
+        return Qt::ItemFlags();
 
     Qt::ItemFlags f(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 

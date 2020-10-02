@@ -38,7 +38,7 @@ class BtBookshelfWizard final: public QWizard {
 
 public: /* Methods: */
 
-    BtBookshelfWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = 0);
+    BtBookshelfWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
     QStringList selectedSources() const;
     QStringList selectedLanguages() const;

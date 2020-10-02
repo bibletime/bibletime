@@ -80,7 +80,11 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 
     BT_CONNECT(m_fontChooser, SIGNAL(fontSelected(QFont const &)),
                this, SLOT(newDisplayWindowFontSelected(QFont const &)));
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
     BT_CONNECT(m_languageComboBox, SIGNAL(activated(QString const &)),
+#else
+    BT_CONNECT(m_languageComboBox, SIGNAL(textActivated(QString const &)),
+#endif
                this, SLOT(newDisplayWindowFontAreaSelected(QString const &)));
 
     const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());

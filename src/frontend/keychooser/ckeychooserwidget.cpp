@@ -67,17 +67,29 @@ bool CKCComboBox::eventFilter(QObject * o, QEvent * e) {
             return false;
 
         if (f->reason() == Qt::ActiveWindowFocusReason) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
             emit activated(currentText());
+#else
+            emit textActivated(currentText());
+#endif
             return false;
         }
 
         if (f->reason() == Qt::MouseFocusReason) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
             emit activated(currentText());
+#else
+            emit textActivated(currentText());
+#endif
             return false;
         }
 
         if (o == this) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
             emit activated(currentText());
+#else
+            emit textActivated(currentText());
+#endif
             return false;
         }
     }

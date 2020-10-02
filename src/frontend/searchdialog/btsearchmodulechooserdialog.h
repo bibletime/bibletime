@@ -26,7 +26,7 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
     Q_OBJECT
     public:
         BtSearchModuleChooserDialog(QWidget *parent = nullptr,
-                                    Qt::WindowFlags flags = nullptr);
+                                    Qt::WindowFlags flags = Qt::WindowFlags());
 
         inline void setCheckedModules(BtConstModuleSet const & modules)
         { bookshelfWidget()->treeModel()->setCheckedModules(modules); }

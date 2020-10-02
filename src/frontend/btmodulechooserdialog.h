@@ -26,7 +26,7 @@ class BtModuleChooserDialog : public QDialog {
     Q_OBJECT
 
     protected:
-        explicit BtModuleChooserDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+        explicit BtModuleChooserDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
         void retranslateUi();
 
