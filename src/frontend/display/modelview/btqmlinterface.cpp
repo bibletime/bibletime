@@ -267,13 +267,7 @@ QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
 
 void BtQmlInterface::setRawText(int row, int column, const QString& text) {
     QModelIndex index = m_moduleTextModel->index(row, 0);
-    int role = ModuleEntry::Text1Role;
-    if (column == 1)
-        role = ModuleEntry::Text2Role;
-    else if (column == 2)
-        role = ModuleEntry::Text3Role;
-    else if (column == 3)
-        role = ModuleEntry::Text4Role;
+    int role = ModuleEntry::Text0Role + column;
     m_moduleTextModel->setData(index, text, role);
 }
 
