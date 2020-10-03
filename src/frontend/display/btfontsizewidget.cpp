@@ -32,7 +32,7 @@ BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
         addItem(QString::number(size), QVariant(size));
     }
 
-    BT_CONNECT(this, SIGNAL(currentIndexChanged(QString const &)),
+    BT_CONNECT(this, SIGNAL(currentTextChanged(QString const &)),
                this, SLOT(changed(QString const &)));
 }
 
