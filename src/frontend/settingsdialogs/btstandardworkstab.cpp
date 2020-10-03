@@ -169,34 +169,34 @@ void BtStandardWorksTab::retranslateUi() {
            "when a hyperlink into a Bible or lexicon was clicked."));
 
     m_standardBibleLabel->setText(tr("Bible:"));
-    m_standardBibleCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardBibleCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
 
     m_standardCommentaryLabel->setText(tr("Commentary:"));
-    m_standardCommentaryCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardCommentaryCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardCommentaryCombo->setToolTip(tr("The standard commentary is used when a hyperlink into a commentary is clicked"));
 
     m_standardLexiconLabel->setText(tr("Lexicon:"));
-    m_standardLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardLexiconCombo->setToolTip(tr("The standard lexicon is used when a hyperlink into a lexicon is clicked"));
 
     m_standardDailyDevotionalLabel->setText(tr("Daily devotional:"));
-    m_standardDailyDevotionalCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardDailyDevotionalCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardDailyDevotionalCombo->setToolTip(tr("The standard devotional will be used to display a short start up devotional"));
 
     m_standardHebrewStrongsLexiconLabel->setText(tr("Hebrew Strong's lexicon:"));
-    m_standardHebrewStrongsLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardHebrewStrongsLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardHebrewStrongsLexiconCombo->setToolTip(tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked"));
 
     m_standardGreekStrongsLexiconLabel->setText(tr("Greek Strong's lexicon:"));
-    m_standardGreekStrongsLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardGreekStrongsLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardGreekStrongsLexiconCombo->setToolTip(tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked"));
 
     m_standardHebrewMorphLexiconLabel->setText(tr("Hebrew morphological lexicon:"));
-    m_standardHebrewMorphLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardHebrewMorphLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardHebrewMorphLexiconCombo->setToolTip(tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked"));
 
     m_standardGreekMorphLexiconLabel->setText(tr("Greek morphological lexicon:"));
-    m_standardGreekMorphLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_standardGreekMorphLexiconCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     m_standardGreekMorphLexiconCombo->setToolTip(tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked"));
 }
