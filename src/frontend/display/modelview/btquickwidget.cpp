@@ -37,7 +37,6 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
     setAcceptDrops(true);
 
     namespace DU = util::directory;
-    auto e = engine();
     engine()->addImportPath("qrc:/qml");
     QString qmlFile = "qrc:/qml/DisplayView.qml";
     QUrl url(qmlFile);
