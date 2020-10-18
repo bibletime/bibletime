@@ -15,14 +15,12 @@
 
 #include <QTreeWidget>
 
-// Sword includes
-#include <listkey.h>
-
 
 class CSwordModuleInfo;
 class CReadDisplay;
 class QAction;
 class QMenu;
+namespace sword { class ListKey; }
 
 namespace Search {
 

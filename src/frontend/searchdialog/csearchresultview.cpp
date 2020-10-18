@@ -26,6 +26,9 @@
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
 
+// Sword includes
+#include <listkey.h>
+
 
 namespace Search {
 
