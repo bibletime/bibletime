@@ -26,6 +26,9 @@
 #include "btbookshelfwizard.h"
 #include "btbookshelfwizardenums.h"
 
+// Sword includes:
+#include <installmgr.h>
+
 
 namespace {
 QString const LanguagesKey = "GUI/BookshelfWizard/languages";
