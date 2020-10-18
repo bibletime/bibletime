@@ -114,7 +114,7 @@ public:
     /** Convert index(row) into CSwordVerseKey. */
     CSwordKey* indexToKey(int index, int moduleNum) const;
 
-    /** Convert CSwordKey into index(row). */
+    /** Convert CSwordKey into index. */
     int keyToIndex(const CSwordKey* key) const;
 
     /** Convert CSwordVerseKey into index(row). */
@@ -122,6 +122,9 @@ public:
 
     /** Get reference name from index(row). */
     QString indexToKeyName(int index) const;
+
+    /** Get index offset of first entry of module */
+    int getFirstEntryIndex() const;
 
     /** Reimplemented from QAbstractItemModel. */
     int columnCount(const QModelIndex & parent = QModelIndex()) const override;

@@ -44,6 +44,7 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
       m_linkTimer(new QTimer(this)),
       m_moduleTextModel(new BtModuleTextModel(this)),
       m_swordKey(nullptr),
+      m_backgroundHighlightColorIndex(-1),
       m_caseSensitive(false) {
 
     m_moduleTextModel->setTextFilter(&m_textFilter);
@@ -107,6 +108,14 @@ void BtQmlInterface::setActiveLink(const QString& link) {
 
 QColor BtQmlInterface::getBackgroundColor() const {
     return ColorManager::instance().getBackgroundColor();
+}
+
+QColor BtQmlInterface::getBackgroundHighlightColor() const {
+    return ColorManager::instance().getBackgroundHighlightColor();
+}
+
+int BtQmlInterface::getBackgroundHighlightColorIndex() const {
+    return m_backgroundHighlightColorIndex;
 }
 
 QColor BtQmlInterface::getForegroundColor() const {
@@ -330,6 +339,12 @@ void BtQmlInterface::setKey( CSwordKey* key ) {
 }
 
 void BtQmlInterface::scrollToSwordKey(CSwordKey * key) {
+    m_backgroundHighlightColorIndex = m_moduleTextModel->keyToIndex(key);
+
+    /* Convert from sword index to ListView index */
+    m_backgroundHighlightColorIndex = m_backgroundHighlightColorIndex - m_moduleTextModel->getFirstEntryIndex();
+
+    emit backgroundHighlightColorIndexChanged();
     m_swordKey = key;
     emit currentModelIndexChanged();
 }
@@ -486,6 +501,7 @@ RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QStrin
 }
 
 void BtQmlInterface::changeColorTheme() {
+    emit backgroundHighlightColorChanged();
     emit backgroundColorChanged();
     emit foregroundColorChanged();
 }
