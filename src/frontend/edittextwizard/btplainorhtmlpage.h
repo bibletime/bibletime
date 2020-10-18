@@ -25,7 +25,7 @@ class BtPlainOrHtmlPage final: public QWizardPage {
 
 public:
 
-    BtPlainOrHtmlPage(QWidget * parent = 0);
+    BtPlainOrHtmlPage(QWidget * parent = nullptr);
     bool htmlMode() const;
     void setHtmlMode(bool html);
 

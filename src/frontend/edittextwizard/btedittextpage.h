@@ -27,7 +27,7 @@ class BtEditTextPage final: public QWizardPage {
 
 public: /* Methods: */
 
-    BtEditTextPage(QWidget * parent = 0);
+    BtEditTextPage(QWidget * parent = nullptr);
 
     void setFont(const QFont& font);
     void setText(const QString& text);

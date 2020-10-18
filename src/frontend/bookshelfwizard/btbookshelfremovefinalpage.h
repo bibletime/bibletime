@@ -29,7 +29,7 @@ class BtBookshelfRemoveFinalPage final: public BtBookshelfWizardPage {
 
 public: /* Methods: */
 
-    BtBookshelfRemoveFinalPage(QWidget * parent = 0);
+    BtBookshelfRemoveFinalPage(QWidget * parent = nullptr);
 
     bool isComplete() const final override;
     void initializePage() final override;

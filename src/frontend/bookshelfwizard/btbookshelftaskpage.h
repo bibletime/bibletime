@@ -29,7 +29,7 @@ class BtBookshelfTaskPage final: public BtBookshelfWizardPage {
 
 public: /* Methods: */
 
-    BtBookshelfTaskPage(QWidget * parent = 0);
+    BtBookshelfTaskPage(QWidget * parent = nullptr);
 
     int nextId() const final override;
     WizardTaskType taskType() const;

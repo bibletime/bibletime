@@ -30,7 +30,7 @@ class BtBookshelfSourcesPage final: public BtBookshelfWizardPage {
 
 public: /* Methods: */
 
-    BtBookshelfSourcesPage(QWidget * parent = 0);
+    BtBookshelfSourcesPage(QWidget * parent = nullptr);
 
     bool isComplete() const final override;
     void initializePage() final override;

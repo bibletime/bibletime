@@ -29,7 +29,7 @@ class BtBookshelfLanguagesPage final: public BtBookshelfWizardPage {
 
 public: /* Methods: */
 
-    BtBookshelfLanguagesPage(QWidget * parent = 0);
+    BtBookshelfLanguagesPage(QWidget * parent = nullptr);
 
     void initializeLanguages();
     void initializePage() final override;

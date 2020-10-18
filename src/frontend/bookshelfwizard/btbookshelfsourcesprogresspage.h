@@ -27,7 +27,7 @@ class BtBookshelfSourcesProgressPage final: public BtBookshelfWizardPage {
 
 public: /* Methods: */
 
-    BtBookshelfSourcesProgressPage(QWidget * parent = 0);
+    BtBookshelfSourcesProgressPage(QWidget * parent = nullptr);
     inline ~BtBookshelfSourcesProgressPage() noexcept override
     { destroyThread(); }
 
