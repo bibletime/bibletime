@@ -118,6 +118,8 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     return m_entries;
 }
 
+bool CSwordLexiconModuleInfo::snap() const { return module().getRawEntry(); }
+
 void CSwordLexiconModuleInfo::testForStrongsKeys() {
     auto & m = module();
     m.setPosition(sword::TOP);

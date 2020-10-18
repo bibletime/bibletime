@@ -55,12 +55,8 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         */
         const QStringList &entries() const;
 
-        /**
-          Jumps to the closest entry in the module.
-        */
-        inline bool snap() const override {
-            return module().getRawEntry();
-        }
+        /** Jumps to the closest entry in the module. */
+        bool snap() const override;
 
     private: /* Fields: */
 
