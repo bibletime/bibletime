@@ -20,6 +20,7 @@ FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 ######################################################
 # Build options, definitions, linker flags etc for all targets:
 #
+INCLUDE(BTCompileFlags)
 INCLUDE(BTUseCcache)
 INCLUDE(CheckIPOSupported)
 CHECK_IPO_SUPPORTED(RESULT HAVE_IPO)
@@ -102,6 +103,27 @@ TARGET_COMPILE_OPTIONS(bibletime_backend
     PUBLIC
         ${BibleTime_CXXFLAGS}
         ${Sword_CFLAGS_OTHER}
+)
+BtAddCxxCompilerFlags(bibletime_backend PUBLIC
+    "-Walloca"
+    "-Wextra-semi"
+    "-Wformat=2"
+    "-Wformat-signedness"
+    "-Wfloat-equal"
+    "-Wformat"
+    "-Wlogical-op"
+    "-Wno-packed"
+    "-Wno-padded"
+    "-Wno-switch-enum"
+    "-Wpointer-arith"
+    "-Wsuggest-override"
+    "-Wunused-parameter"
+    "-Wzero-as-null-pointer-constant"
+    "-fasynchronous-unwind-tables"
+    "-fcf-protection=full"
+    "-fstack-clash-protection"
+    "-fstack-protector-strong"
+    "-pipe"
 )
 TARGET_INCLUDE_DIRECTORIES(bibletime_backend
     PRIVATE
