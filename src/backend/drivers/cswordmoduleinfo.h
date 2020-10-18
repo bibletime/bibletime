@@ -24,12 +24,6 @@
 #include <QMetaType>
 #include <QString>
 
-// Sword includes:
-#include <listkey.h>
-#include <swmodule.h>
-#include <swsearchable.h>
-#include <swversion.h>
-
 
 #ifdef CLUCENE2
 // CLucene no longer lists the following functions in its headers
@@ -39,6 +33,11 @@ extern size_t lucene_wcstoutf8 (char *,  const wchar_t *, size_t maxslen);
 
 class CSwordBackend;
 class CSwordKey;
+namespace sword {
+class ListKey;
+class SWModule;
+class SWVersion;
+} // namespace sword
 
 
 /**

@@ -43,6 +43,8 @@
 #include <swbuf.h>
 #include <swconfig.h>
 #include <swkey.h>
+#include <swmodule.h>
+#include <swversion.h>
 #include <rtfhtml.h>
 #include <versekey.h>
 
