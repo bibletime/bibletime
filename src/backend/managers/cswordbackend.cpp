@@ -195,7 +195,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     return ret;
 }
 
-void CSwordBackend::AddRenderFilters(sword::SWModule * module,
+void CSwordBackend::addRenderFilters(sword::SWModule * module,
                                      sword::ConfigEntMap & section)
 {
     sword::ConfigEntMap::const_iterator entry = section.find("SourceType");

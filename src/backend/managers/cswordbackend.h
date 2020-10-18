@@ -252,7 +252,7 @@ protected: /* Methods: */
     CSwordBackend();
 
     /** Reimplemented from sword::SWMgr. */
-    void AddRenderFilters(sword::SWModule * module,
+    void addRenderFilters(sword::SWModule * module,
                           sword::ConfigEntMap & section) override;
 
     QStringList getSharedSwordConfigFiles() const;
