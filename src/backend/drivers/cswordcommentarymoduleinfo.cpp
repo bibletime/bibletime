@@ -12,6 +12,9 @@
 
 #include "cswordcommentarymoduleinfo.h"
 
+// Sword includes:
+#include <swmodule.h>
+
 
 bool CSwordCommentaryModuleInfo::isWritable() const {
     /*
