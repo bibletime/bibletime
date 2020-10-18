@@ -16,6 +16,7 @@
 #include "../keys/cswordtreekey.h"
 
 // Sword includes:
+#include <swmodule.h>
 #include <treekey.h>
 #include <treekeyidx.h>
 
