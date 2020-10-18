@@ -15,9 +15,8 @@
 
 #include "cswordmoduleinfo.h"
 
-// Sword includes:
-#include <treekeyidx.h>
 
+namespace sword { class TreeKeyIdx; }
 
 /**
   \brief Class for generic book support
