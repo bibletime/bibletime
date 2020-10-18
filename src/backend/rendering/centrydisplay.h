@@ -17,9 +17,6 @@
 #include "../drivers/btmodulelist.h"
 #include "ctextrendering.h"
 
-// Sword includes:
-#include <swmodule.h>
-
 
 struct DisplayOptions;
 struct FilterOptions;
