@@ -23,6 +23,7 @@
 
 // Sword includes:
 #include <filemgr.h>
+#include <installmgr.h>
 #include <swconfig.h>
 #include <swbuf.h>
 

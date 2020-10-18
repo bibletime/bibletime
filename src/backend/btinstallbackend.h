@@ -17,9 +17,8 @@
 #include <QString>
 #include "managers/cswordbackend.h"
 
-// Sword includes:
-#include <installmgr.h>
 
+namespace sword { class InstallSource; }
 
 class CSwordModuleInfo;
 
