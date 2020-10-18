@@ -43,12 +43,10 @@ public:
                const DisplayOptions &displayOptions,
                const FilterOptions &filterOptions) override;
 
-    void setMouseTracking(const bool trackingEnabled) {
-        m_useMouseTracking = trackingEnabled;
-    };
-    bool getMouseTracking() const {
-        return m_useMouseTracking;
-    };
+    void setMouseTracking(bool const trackingEnabled)
+    { m_useMouseTracking = trackingEnabled; }
+
+    bool getMouseTracking() const { return m_useMouseTracking; }
 
 protected: // Protected methods
 
