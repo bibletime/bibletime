@@ -15,13 +15,11 @@
 
 #include <QDialog>
 
-// Sword includes:
-#include <installmgr.h>
-
 
 class QComboBox;
 class QLabel;
 class QLineEdit;
+namespace sword { class InstallSource; }
 
 class CSwordSetupInstallSourcesDialog final: public QDialog  {
         Q_OBJECT

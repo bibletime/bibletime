@@ -32,6 +32,9 @@
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
 
+// Sword includes:
+#include <installmgr.h>
+
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path
 const QString PROTO_FTP( QObject::tr("Remote FTP") ); //Remote path
