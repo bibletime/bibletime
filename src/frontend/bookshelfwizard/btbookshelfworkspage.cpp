@@ -33,6 +33,9 @@
 #include "btbookshelfwizard.h"
 #include "btinstallpagemodel.h"
 
+// Sword includes:
+#include <installmgr.h>
+
 
 namespace {
 QString const groupingOrderKey("GUI/BookshelfWizard/InstallPage/grouping");
