@@ -23,12 +23,17 @@
 #include "cswordversekey.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <swkey.h>
 #include <swmodule.h>
 #include <treekey.h>
 #include <treekeyidx.h>
 #include <utilstr.h>
 #include <versekey.h>
+#pragma GCC diagnostic pop
 
 
 const QTextCodec * CSwordKey::m_cp1252Codec = QTextCodec::codecForName("Windows-1252");

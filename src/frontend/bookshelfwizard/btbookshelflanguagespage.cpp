@@ -27,7 +27,10 @@
 #include "btbookshelfwizardenums.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <installmgr.h>
+#pragma GCC diagnostic pop
 
 
 namespace {

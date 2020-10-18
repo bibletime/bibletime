@@ -14,7 +14,10 @@
 #define FILTERS_PLAINTOHTML_H
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <swfilter.h>
+#pragma GCC diagnostic pop
 
 
 namespace sword {

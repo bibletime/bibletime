@@ -46,8 +46,11 @@
 #include "settingsdialogs/cdisplaysettings.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
 #include <swlog.h>
 #include <swmgr.h>
+#pragma GCC diagnostic pop
 
 #ifndef NDEBUG
 #include <QLabel>

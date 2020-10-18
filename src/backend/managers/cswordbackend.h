@@ -31,7 +31,9 @@
 
 // Sword includes:
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <swmgr.h>
 #include <swbuf.h>
 #include <swmodule.h>

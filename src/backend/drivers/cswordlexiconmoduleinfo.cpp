@@ -21,7 +21,12 @@
 #include "../../util/directory.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <swmodule.h>
+#pragma GCC diagnostic pop
 
 
 //Change it once the format changed to make all systems rebuild their caches

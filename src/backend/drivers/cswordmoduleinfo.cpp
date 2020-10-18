@@ -39,6 +39,9 @@
 #include "cswordlexiconmoduleinfo.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <listkey.h>
 #include <swbuf.h>
 #include <swconfig.h>
@@ -47,6 +50,7 @@
 #include <swversion.h>
 #include <rtfhtml.h>
 #include <versekey.h>
+#pragma GCC diagnostic pop
 
 
 //Increment this, if the index format changes

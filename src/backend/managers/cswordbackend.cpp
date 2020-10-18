@@ -28,12 +28,16 @@
 #include "../drivers/cswordlexiconmoduleinfo.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <encfiltmgr.h>
 #include <filemgr.h>
 #include <rtfhtml.h>
 #include <swfiltermgr.h>
 #include <swfilter.h>
 #include <utilstr.h>
+#pragma GCC diagnostic pop
 
 
 using namespace Rendering;

@@ -20,7 +20,10 @@
 #include "../managers/cswordbackend.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <utilxml.h>
+#pragma GCC diagnostic pop
 
 
 Filters::GbfToHtml::GbfToHtml() : sword::GBFHTML() {

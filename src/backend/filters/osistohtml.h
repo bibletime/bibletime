@@ -14,9 +14,15 @@
 #define FILTERS_OSISTOHTML_H
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <osishtmlhref.h>
 #include <swbuf.h>
 #include <swmodule.h>
+#pragma GCC diagnostic pop
+
 
 namespace Filters {
 

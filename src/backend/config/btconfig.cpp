@@ -19,7 +19,12 @@
 #include "../managers/cswordbackend.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <versekey.h> // For search scope configuration
+#pragma GCC diagnostic pop
 
 
 #define BTCONFIG_API_VERSION 1

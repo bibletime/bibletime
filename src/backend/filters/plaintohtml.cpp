@@ -16,7 +16,11 @@
 #include <QtGlobal>
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <swbuf.h>
+#pragma GCC diagnostic pop
 
 
 char Filters::PlainToHtml::processText(sword::SWBuf &text,

@@ -16,8 +16,12 @@
 #include <QObject>
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <installmgr.h>
 #include <remotetrans.h>
+#pragma GCC diagnostic pop
 
 
 /**
