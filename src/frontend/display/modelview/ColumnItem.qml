@@ -43,7 +43,10 @@ Item {
     }
 
     function linkAt(x, y) {
-        return columnText.linkAt(x, y);
+        var textRelativeX = x - columnText.x;
+        var textRelativeY = y - columnText.y;
+        var url = columnText.linkAt(textRelativeX, textRelativeY);
+        return url;
     }
 
     function positionAt(x, y) {
