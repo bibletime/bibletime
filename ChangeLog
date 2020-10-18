@@ -1,3 +1,6 @@
+2019-10-18 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #279 - Highlighting of choosen text
+
 2019-09-26 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #268 - The parallel reading UI is broken in 3.0.0, when showing more than 4 versions
 

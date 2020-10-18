@@ -75,8 +75,10 @@ void ColorManager::loadColorMaps() {
                                      p.color(QPalette::WindowText).name());
                     colorMap.emplace("BACKGROUND_COLOR",
                                      p.color(QPalette::Base).name());
-                    colorMap.emplace("HIGHLIGHT_COLOR",
+                    colorMap.emplace("HIGHLIGHT",
                                      QColor("#ffff00").name());
+                    colorMap.emplace("BACKGROUND_HIGHLIGHT",
+                                     QColor("#444466").name());
                     colorMap.emplace("CROSSREF_COLOR",
                                      QColor("#aac2ff").name());
                     colorMap.emplace("JESUS_WORDS_COLOR",
@@ -86,8 +88,10 @@ void ColorManager::loadColorMaps() {
                                      p.color(QPalette::WindowText).name());
                     colorMap.emplace("BACKGROUND_COLOR",
                                      p.color(QPalette::Base).name());
-                    colorMap.emplace("HIGHLIGHT_COLOR",
+                    colorMap.emplace("HIGHLIGHT",
                                      QColor("#ffff00").name());
+                    colorMap.emplace("BACKGROUND_HIGHLIGHT",
+                                     QColor("#ddddff").name());
                     colorMap.emplace("CROSSREF_COLOR",
                                      QColor("#1414ff").name());
                     colorMap.emplace("JESUS_WORDS_COLOR",
@@ -126,6 +130,9 @@ QString ColorManager::replaceColors(QString content) {
 
 QString ColorManager::getBackgroundColor(QString const & style)
 { return getColorByPattern(m_colorMaps, "BACKGROUND_COLOR", style); }
+
+QString ColorManager::getBackgroundHighlightColor(QString const & style)
+{ return getColorByPattern(m_colorMaps, "BACKGROUND_HIGHLIGHT", style); }
 
 QString ColorManager::getForegroundColor(QString const & style)
 { return getColorByPattern(m_colorMaps, "FOREGROUND_COLOR", style); }

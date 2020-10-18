@@ -390,6 +390,10 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
     return keyName;
 }
 
+int BtModuleTextModel::getFirstEntryIndex() const {
+    return m_firstEntry;
+}
+
 void BtModuleTextModel::setFindState(const FindState& findState) {
     if (m_findState.enabled && m_findState.index != findState.index) {
         QModelIndex oldIndexToClear = index(m_findState.index, 0);

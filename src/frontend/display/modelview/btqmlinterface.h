@@ -54,6 +54,8 @@ class BtQmlInterface : public QObject {
     };
     Q_PROPERTY(QString      activeLink              READ getActiveLink  NOTIFY activeLinkChanged    WRITE setActiveLink)
     Q_PROPERTY(QColor       backgroundColor         READ getBackgroundColor NOTIFY backgroundColorChanged)
+    Q_PROPERTY(QColor       backgroundHighlightColor READ getBackgroundHighlightColor NOTIFY backgroundHighlightColorChanged)
+    Q_PROPERTY(int          backgroundHighlightColorIndex READ getBackgroundHighlightColorIndex NOTIFY backgroundHighlightColorIndexChanged)
     Q_PROPERTY(int          contextMenuIndex        READ getContextMenuIndex NOTIFY contextMenuIndexChanged WRITE setContextMenuIndex)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
     Q_PROPERTY(int          fontSize0               READ getFontSize0   NOTIFY fontChanged)
@@ -99,7 +101,9 @@ public:
 
     QString getActiveLink() const;
     QColor getBackgroundColor() const;
+    QColor getBackgroundHighlightColor() const;
     QColor getForegroundColor() const;
+    int getBackgroundHighlightColorIndex() const;
     void changeColorTheme();
     void copyRange(int index1, int index2);
     void copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module);
@@ -140,6 +144,8 @@ public:
 Q_SIGNALS:
     void activeLinkChanged();
     void backgroundColorChanged();
+    void backgroundHighlightColorChanged();
+    void backgroundHighlightColorIndexChanged();
     void contextMenuIndexChanged();
     void contextMenu(int x, int y, int moduleNum);
     void currentModelIndexChanged();
@@ -180,6 +186,7 @@ private:
     CSwordKey* m_swordKey;
 
     QList<QFont> m_fonts;
+    int m_backgroundHighlightColorIndex;
     bool m_caseSensitive;
     QString m_highlightWords;
     QStringList m_moduleNames;

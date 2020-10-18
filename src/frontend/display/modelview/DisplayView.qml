@@ -172,7 +172,8 @@ Rectangle {
         var index;
         for (index = indexFirst; index <= indexLast; index++) {
             var delegateItem = listView.itemAtIndex(index);
-            delegateItem.deselect(column);
+            if (delegateItem !== null)
+                delegateItem.deselect(column);
         }
     }
 
@@ -231,6 +232,7 @@ Rectangle {
         property int columns: btQmlInterface.numModules
         property int savedRow: 0
         property int savedColumn: 0
+        property int backgroundHighlightIndex: btQmlInterface.backgroundHighlightColorIndex
 
         function scroll(value) {
             var y = contentY;

@@ -20,6 +20,7 @@ Item {
     property alias selectedText: columnText.selectedText
     property color textColor: btQmlInterface.foregroundColor
     property color textBackgroundColor: btQmlInterface.backgroundColor
+    property color textBackgroundHighlightColor: btQmlInterface.backgroundHighlightColor
 
     signal hovered(string link);
     signal setSelection(bool selected, int selectFirstIndex, int selectLastIndex, int posFirst, int posLast)
@@ -70,12 +71,9 @@ Item {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        color: textBackgroundColor
-        border.width: 1
+        color: (listView.backgroundHighlightIndex === index)? textBackgroundHighlightColor: textBackgroundColor
+        border.width: (btQmlInterface.moduleIsWritable(columnView.column))? 1 : 0
         border.color: "gray"
-        visible: {
-            return btQmlInterface.moduleIsWritable(columnView.column);
-        }
     }
 
     Text {
