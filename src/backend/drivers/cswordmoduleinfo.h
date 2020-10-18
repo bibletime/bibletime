@@ -373,9 +373,7 @@ wrong, or if the config file was write protected return false.
     * Returns true if this module is Unicode encoded. False if the charset is iso8859-1.
     * Protected because it should not be used outside of the CSword*ModuleInfo classes.
     */
-    inline bool isUnicode() const {
-        return m_module.isUnicode();
-    }
+    bool isUnicode() const noexcept;
 
     /**
       Returns an icon for this module.

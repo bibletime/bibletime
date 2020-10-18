@@ -911,6 +911,9 @@ QString CSwordModuleInfo::aboutText() const {
     return text;
 }
 
+bool CSwordModuleInfo::isUnicode() const noexcept
+{ return m_module.isUnicode(); }
+
 QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
     CSwordModuleInfo::Category const cat(module.m_cachedCategory);
     switch (cat) {
