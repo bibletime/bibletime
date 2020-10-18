@@ -35,7 +35,7 @@ inline int calculateIntPercentage(T done, T total) {
     // Special care (see warning in BtInstallMgr::statusUpdate()).
     if (done > total)
         done = total;
-    if (total == 0)
+    if (total <= 0.0)
         return 100;
 
     return normalizeCompletionPercentage<int>((done / total) * 100);
