@@ -34,7 +34,7 @@ Item {
             if (x > textItem.x)
                 break;
         }
-        return textItem.linkAt(textItem.x, textItem.y);
+        return textItem.linkAt(x - textItem.x, y - textItem.y);
     }
 
     function hovered(link) {
