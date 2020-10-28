@@ -95,7 +95,7 @@ class CMDIArea: public QMdiArea {
     public slots:
 
         /**
-          Uses Qt's tileSubWindows function.
+          Our own auto tile version which, if only one subwindow is left, shows it
           \note This not set an automatic arrangement mode, it just arranges the
                 subwindows once. However, this method is also used when
                 arranging the subwindows into a tile automatically.
