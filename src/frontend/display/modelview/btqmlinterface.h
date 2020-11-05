@@ -88,6 +88,7 @@ public:
     Q_INVOKABLE void clearSelectedText();
     Q_INVOKABLE bool hasSelectedText();
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
+    Q_INVOKABLE void setKeyFromLink(const QString& link);
     Q_INVOKABLE bool shiftKeyDown();
 
     BtQmlInterface(QObject *parent = nullptr);
@@ -158,6 +159,7 @@ Q_SIGNALS:
     void pixelsPerMMChanged();
     void positionItemOnScreen(int index);
     void referenceChange();
+    void newBibleReference(const QString& reference);
     void textChanged();
     void textModelChanged();
     void updateReference(const QString& reference);

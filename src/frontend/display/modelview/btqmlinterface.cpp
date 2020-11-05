@@ -339,6 +339,17 @@ void BtQmlInterface::setKey( CSwordKey* key ) {
     m_swordKey = key;
 }
 
+void BtQmlInterface::setKeyFromLink(const QString& link) {
+    QRegExp rx("sword://Bible/(.*)/(.*)\\|\\|(.*)=(.*)");
+    rx.setMinimal(false);
+    int pos1 = rx.indexIn(link);
+    QString keyName;
+    if (pos1 > -1) {
+        keyName = rx.cap(2);
+        emit newBibleReference(keyName);
+    }
+}
+
 void BtQmlInterface::scrollToSwordKey(CSwordKey * key) {
     m_backgroundHighlightColorIndex = m_moduleTextModel->keyToIndex(key);
 

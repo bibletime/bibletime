@@ -1,3 +1,6 @@
+2019-11-05 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #283 - Clicking on verse number should make that verse the reference box
+
 2019-10-28 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #277 - Modules rearrange themselfs 
 
