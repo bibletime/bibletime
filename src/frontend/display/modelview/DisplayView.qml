@@ -26,6 +26,9 @@ Rectangle {
     property int mousePressedY: 0
     property point mouseLR
     property point mouseUL
+    property bool draggingInProgress: false
+    property bool selectionInProgress: false
+    property string pressedLink: ""
 
     // Text selection properties
     property int column: 0          // Column containing selected text
@@ -51,53 +54,67 @@ Rectangle {
     }
 
     function leftMousePress(x, y) {
+        // Save cursor position for later use
+        mousePressedX = x;
+        mousePressedY = y;
         var delegateItem = listView.itemAt( x, y + listView.contentY);
         if (delegateItem === null)
             return;
-
         // Transform to delegate relative point
         var delegateX = x - delegateItem.x + listView.contentX;
         var delegateY = y - delegateItem.y + listView.contentY;
-
-        // If not a cross reference link, save cursor position for later use
-        var  url = delegateItem.linkAt(delegateX, delegateY);
-        if (url === "" || url.includes("lemmamorph") || url.includes("footnote")) {
-            // Start selection of items
-            mousePressedX = x;
-            mousePressedY = y;
-            deselectByIndex();
-            return;
-        }
-
-        // Start drag operation for cross reference link
-        var index = listView.indexAt( x,y + listView.contentY);
-        btQmlInterface.dragHandler(index, url);
-        return;
+        pressedLink = delegateItem.linkAt(delegateX, delegateY);
     }
 
     function leftMouseMove(x, y) {
-        if (mousePressedX < 0)
-            return;
+        draggingInProgress = false;
+        selectionInProgress = false;
+        mouseMovedX = x;
+        mouseMovedY = y;
+        // Do nothing unless mouse moved some distance from pressed location
         if ((Math.abs(mousePressedX - x) < dragDistance) && (Math.abs(mousePressedY - y) < dragDistance)) {
             return;
         }
-
-        mouseMovedX = x;
-        mouseMovedY = y;
-
-        column = Math.floor(mousePressedX / (listView.width / listView.columns));
-        sortMousePoints();
-        getSelectedTextPositions();
-        selectByIndex();
+        if (isCrossReference(pressedLink)) {
+            // Start drag operation for cross reference link
+            if (!draggingInProgress) {
+                draggingInProgress = true;
+                var index = listView.indexAt( mousePressedX, mousePressedY + listView.contentY);
+                btQmlInterface.dragHandler(index, pressedLink);
+            }
+        } else {
+            // Do text selection
+            column = Math.floor(mousePressedX / (listView.width / listView.columns));
+            sortMousePoints();
+            getSelectedTextPositions();
+            selectByIndex();
+            selectionInProgress = true;
+        }
     }
 
     function leftMouseRelease(x, y) {
-        if (mousePressedX < 0)
+        processMouseRelease(x, y);
+        draggingInProgress = false;
+        selectionInProgress = false;
+    }
+
+    function processMouseRelease(x, y) {
+        if (draggingInProgress)
             return;
-        if ((Math.abs(mousePressedX - x) > dragDistance) && (Math.abs(mousePressedY - y) > dragDistance)) {
+        if (selectionInProgress)
             return;
-        }
-        openPersonalCommentary(mousePressedX, mousePressedY);
+        deselectByIndex();
+        if (openPersonalCommentary(mousePressedX, mousePressedY))
+            return;
+        if (! isCrossReference(pressedLink))
+            return;
+        btQmlInterface.setKeyFromLink(pressedLink);
+    }
+
+    function isCrossReference(url) {
+        if (url === "" || url.includes("lemmamorph") || url.includes("footnote"))
+            return false;
+        return true;
     }
 
     function sortMousePoints() {
@@ -180,7 +197,7 @@ Rectangle {
     function openPersonalCommentary(x, y) {
         var index = listView.indexAt( x,y + listView.contentY);
         var column = Math.floor(x / (listView.width / listView.columns));
-        listView.startEdit(index, column);
+        return listView.startEdit(index, column);
     }
 
     function updateReferenceText() {
@@ -241,10 +258,11 @@ Rectangle {
 
         function startEdit(row, column) {
             if (!btQmlInterface.moduleIsWritable(column))
-                return
+                return false;
             savedRow = row;
             savedColumn = column;
             btQmlInterface.openEditor(row, column);
+            return true;
         }
 
         function finishEdit(newText) {

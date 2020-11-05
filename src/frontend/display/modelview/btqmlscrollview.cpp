@@ -65,6 +65,7 @@ BtQmlScrollView::BtQmlScrollView(QWidget * parent, CReadDisplay* readDisplay)
 
     BT_CONNECT(m_quickWidget, SIGNAL(referenceDropped(const QString&)),
                this, SIGNAL(referenceDropped(const QString&)));
+    BT_CONNECT(m_qmlInterface, &BtQmlInterface::newBibleReference, this, &BtQmlScrollView::referenceDropped);
 }
 
 BtQmlScrollView::~BtQmlScrollView() {
