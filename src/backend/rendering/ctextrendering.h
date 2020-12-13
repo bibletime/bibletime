@@ -41,10 +41,10 @@ class CTextRendering {
 
         class KeyTreeSharedPointer: public QSharedPointer<KeyTreeItem> {
             public:
-                inline KeyTreeSharedPointer(KeyTreeItem * i)
+                KeyTreeSharedPointer(KeyTreeItem * i)
                     : QSharedPointer<KeyTreeItem>(i) {}
 
-                inline operator const KeyTreeItem * () const { return data(); }
+                operator KeyTreeItem const * () const { return data(); }
         };
 
         using KeyTree = QList<KeyTreeSharedPointer>;
@@ -88,41 +88,28 @@ class CTextRendering {
 
                 KeyTreeItem(const KeyTreeItem &i);
 
-                inline const QString &getAlternativeContent() const {
-                    return m_alternativeContent;
-                }
+                QString const & getAlternativeContent() const
+                { return m_alternativeContent; }
 
-                inline void setAlternativeContent(const QString& newContent) {
-                    m_alternativeContent = newContent;
-                }
+                void setAlternativeContent(QString const & newContent)
+                { m_alternativeContent = newContent; }
 
-                inline bool hasAlternativeContent() const {
-                    return !m_alternativeContent.isNull();
-                }
+                bool hasAlternativeContent() const
+                { return !m_alternativeContent.isNull(); }
 
-                inline const BtConstModuleList& modules() const {
-                    return m_moduleList;
-                }
+                BtConstModuleList const & modules() const
+                { return m_moduleList; }
 
-                inline const QString& key() const {
-                    return m_key;
-                }
+                QString const & key() const { return m_key; }
 
-                inline const Settings& settings() const {
-                    return m_settings;
-                }
+                Settings const & settings() const { return m_settings; }
 
-                inline KeyTree* childList() const {
-                    return &m_childList;
-                }
+                KeyTree * childList() const { return &m_childList; }
 
-                inline void setMappedKey(CSwordKey const * key) const {
-                    m_mappedKey = key;
-                }
+                void setMappedKey(CSwordKey const * key) const
+                { m_mappedKey = key; }
 
-                inline CSwordKey const * mappedKey() const {
-                    return m_mappedKey;
-                }
+                CSwordKey const * mappedKey() const { return m_mappedKey; }
 
             protected: /* Methods: */
 

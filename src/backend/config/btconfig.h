@@ -140,7 +140,7 @@ public: /* Methods: */
      * Returns a default font that is suitable for the current language.
      * \returns QFont suitable for current language.
      */
-    inline const QFont & getDefaultFont() const {
+    QFont const & getDefaultFont() const {
         QMutexLocker lock(&this->m_mutex);
         return m_defaultFont;
     }

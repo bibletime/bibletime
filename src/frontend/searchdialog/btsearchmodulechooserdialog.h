@@ -28,10 +28,10 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
         BtSearchModuleChooserDialog(QWidget *parent = nullptr,
                                     Qt::WindowFlags flags = Qt::WindowFlags());
 
-        inline void setCheckedModules(BtConstModuleSet const & modules)
+        void setCheckedModules(BtConstModuleSet const & modules)
         { bookshelfWidget()->treeModel()->setCheckedModules(modules); }
 
-        inline BtConstModuleSet checkedModules() const
+        BtConstModuleSet checkedModules() const
         { return bookshelfWidget()->treeModel()->checkedModules(); }
 
     protected:

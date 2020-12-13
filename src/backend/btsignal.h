@@ -37,7 +37,7 @@ public:
     /**
       Immediately emits the beforeChanged() signal.
     */
-    inline void emitSignal() { Q_EMIT signal(); }
+    void emitSignal() { Q_EMIT signal(); }
 
 Q_SIGNALS:
 

@@ -38,16 +38,16 @@ private: /* Types: */
 
     public:
 
-        inline RangeItem(const QString &caption,
-                         const QString &range = QString(),
-                         QListWidget * parent = nullptr)
+        RangeItem(QString const & caption,
+                  QString const & range = QString(),
+                  QListWidget * parent = nullptr)
             : QListWidgetItem(caption, parent)
             , m_range(range) {}
 
-        inline const QString caption() const { return text(); }
-        inline void setCaption(const QString &caption) { setText(caption); }
-        inline const QString &range() const { return m_range; }
-        inline void setRange(const QString &range) { m_range = range; }
+        QString caption() const { return text(); }
+        void setCaption(QString const & caption) { setText(caption); }
+        QString const & range() const { return m_range; }
+        void setRange(QString const & range) { m_range = range; }
 
     private: /* Fields: */
 

@@ -59,7 +59,7 @@ class BtMenuView: public QMenu {
           Returns a pointer to the data model associated with this menu.
           \retval 0 If this menu is not associated to any model.
         */
-        inline QAbstractItemModel *model() const { return m_model; }
+        QAbstractItemModel * model() const { return m_model; }
 
     Q_SIGNALS:
         /**

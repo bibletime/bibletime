@@ -39,13 +39,9 @@ public: /* Methods: */
     */
     QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline CSwordModuleInfo & moduleInfo() const {
-        return m_moduleInfo;
-    }
+    CSwordModuleInfo & moduleInfo() const { return m_moduleInfo; }
 
-    inline bool fitFor(const CSwordModuleInfo &) const override {
-        return false;
-    }
+    bool fitFor(CSwordModuleInfo const &) const override { return false; }
 
 private: /* Fields: */
 

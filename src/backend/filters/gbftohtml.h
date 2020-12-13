@@ -31,8 +31,8 @@ class GbfToHtml: public sword::GBFHTML {
     protected: /* Types: */
         class UserData: public sword::GBFHTML::MyUserData {
             public:
-                inline UserData(const sword::SWModule *module,
-                                 const sword::SWKey *key)
+                UserData(sword::SWModule const * module,
+                         sword::SWKey const * key)
                     : sword::GBFHTML::MyUserData(module, key),
                       swordFootnote(1)
                 {
@@ -57,11 +57,10 @@ class GbfToHtml: public sword::GBFHTML {
 
     protected: /* Methods: */
         /** Reimplemented from sword::OSISHTMLHREF. */
-        inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module, const sword::SWKey *key) override
-        {
-            return new UserData(module, key);
-        }
+        sword::BasicFilterUserData * createUserData(
+                sword::SWModule const * module,
+                sword::SWKey const * key) override
+        { return new UserData(module, key); }
 };
 
 } // namespace Filters

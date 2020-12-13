@@ -32,9 +32,7 @@ class CSearchResultView  : public QTreeWidget {
         /**
           \returns the module which is currently used.
         */
-        inline const CSwordModuleInfo *module() const {
-            return m_module;
-        }
+        CSwordModuleInfo const * module() const { return m_module; }
 
     protected: // Protected methods
         /**

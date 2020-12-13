@@ -23,10 +23,10 @@ namespace {
 
 class BtToolButton: public QToolButton {
     public:
-        inline BtToolButton(QWidget *parent = nullptr)
+        BtToolButton(QWidget *parent = nullptr)
             : QToolButton(parent) {}
     private:
-        inline void nextCheckState() override {}
+        void nextCheckState() override {}
 };
 
 } // anonymous namespace

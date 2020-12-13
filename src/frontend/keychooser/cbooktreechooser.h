@@ -43,9 +43,7 @@ class CBookTreeChooser : public CKeyChooser {
         void setModules(const BtConstModuleList &modules,
                         bool refresh = true) override;
 
-        inline CSwordKey *key() override {
-            return m_key;
-        }
+        CSwordKey * key() override { return m_key; }
 
         void setKey(CSwordKey *key) override;
 

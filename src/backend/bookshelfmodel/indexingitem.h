@@ -24,14 +24,13 @@ class IndexingItem: public GroupItem<Item::ITEM_INDEXING> {
 
 public: /* Methods: */
 
-    inline IndexingItem(const CSwordModuleInfo & module)
+    IndexingItem(CSwordModuleInfo const & module)
         : m_indexed(module.hasIndex()) {}
 
     QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const override {
-        return module.hasIndex() == m_indexed;
-    }
+    bool fitFor(CSwordModuleInfo const & module) const override
+    { return module.hasIndex() == m_indexed; }
 
 private: /* Fields: */
 

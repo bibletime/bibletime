@@ -24,7 +24,7 @@ class BtSourcesThread: public QThread {
 
 public: /* Methods: */
 
-    inline BtSourcesThread(QObject * parent = nullptr)
+    BtSourcesThread(QObject * parent = nullptr)
         : QThread(parent)
         , m_stop(false)
         , m_finishedSuccessfully(false)
@@ -32,7 +32,7 @@ public: /* Methods: */
 
     void stop() noexcept { m_stop.store(true, std::memory_order_release); }
 
-    inline bool finishedSuccessfully() const noexcept
+    bool finishedSuccessfully() const noexcept
     { return m_finishedSuccessfully.load(std::memory_order_acquire); }
 
 Q_SIGNALS:
@@ -46,7 +46,7 @@ protected: /* Methods: */
 
 private: /* Methods: */
 
-    inline bool shouldStop() const noexcept
+    bool shouldStop() const noexcept
     { return m_stop.load(std::memory_order_acquire); }
 
 private: /* Fields: */

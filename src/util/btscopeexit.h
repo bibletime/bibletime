@@ -23,8 +23,8 @@ class BtScopeExit {
 
 public: /* Methods: */
 
-    inline BtScopeExit(F f) : m_f{f} {}
-    inline ~BtScopeExit() noexcept { m_f(); }
+    BtScopeExit(F f) : m_f{f} {}
+    ~BtScopeExit() noexcept { m_f(); }
 
 private: /* Fields: */
 

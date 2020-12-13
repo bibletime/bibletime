@@ -31,9 +31,14 @@ class BtOpenWorkActionMenu: public BtMenuView {
                              QWidget *parent = nullptr);
 
         void setSourceModel(QAbstractItemModel *model);
-        inline QAbstractItemModel *sourceModel() const { return m_treeModel->sourceModel(); }
-        inline BtBookshelfTreeModel *treeModel() const { return m_treeModel; }
-        inline BtBookshelfFilterModel *postFilterModel() const { return m_postFilterModel; }
+
+        QAbstractItemModel * sourceModel() const
+        { return m_treeModel->sourceModel(); }
+
+        BtBookshelfTreeModel * treeModel() const { return m_treeModel; }
+
+        BtBookshelfFilterModel * postFilterModel() const
+        { return m_postFilterModel; }
 
     Q_SIGNALS:
         void triggered(CSwordModuleInfo *module);

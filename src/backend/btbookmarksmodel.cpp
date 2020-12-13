@@ -62,7 +62,7 @@ public: /* Tyepes */
 
     public: /* Methods: */
 
-        inline BookmarkItemBase(BookmarkItemBase * parent = nullptr)
+        BookmarkItemBase(BookmarkItemBase * parent = nullptr)
             : m_parent(parent) {
             if(m_parent) {
                 BT_ASSERT(!m_parent->m_children.contains(this));
@@ -82,65 +82,63 @@ public: /* Tyepes */
         }
 
         /** Children routines. */
-        inline void addChild(BookmarkItemBase * child) {
+        void addChild(BookmarkItemBase * child) {
             child->setParent(this);
             BT_ASSERT(!m_children.contains(child));
             m_children.append(child);
         }
 
-        inline int childCount() const { return m_children.size(); }
+        int childCount() const { return m_children.size(); }
 
-        inline BookmarkItemBase * child(int index) const {
+        BookmarkItemBase * child(int index) const {
             return m_children[index];
         }
 
-        inline QList<BookmarkItemBase *> & children() {
+        QList<BookmarkItemBase *> & children() {
             return m_children;
         }
 
-        inline void insertChild(int index, BookmarkItemBase * child) {
+        void insertChild(int index, BookmarkItemBase * child) {
             child->setParent(this);
             BT_ASSERT(!m_children.contains(child));
             m_children.insert(index, child);
         }
 
-        inline void insertChildren(int index, QList<BookmarkItemBase *> children) {
+        void insertChildren(int index, QList<BookmarkItemBase *> children) {
             for (auto * const c : children)
                 insertChild(index++, c);
         }
 
-        inline void removeChild(int index) {
+        void removeChild(int index) {
             delete m_children[index];
             m_children.removeAt(index);
         }
 
 
-        inline void setText(const QString & text) { m_text = text; }
+        void setText(QString const & text) { m_text = text; }
 
-        inline const QString & text() const { return m_text; }
+        QString const & text() const { return m_text; }
 
-        inline void setToolTip(const QString & tooltip) { m_tooltip = tooltip; }
+        void setToolTip(QString const & tooltip) { m_tooltip = tooltip; }
 
         virtual QString toolTip() const { return m_tooltip; }
 
-        inline void setFlags(Qt::ItemFlags flags) { m_flags = flags; }
+        void setFlags(Qt::ItemFlags flags) { m_flags = flags; }
 
-        inline Qt::ItemFlags flags() const { return m_flags; }
+        Qt::ItemFlags flags() const { return m_flags; }
 
-        inline void setIcon(const QIcon & icon) { m_icon = icon; }
+        void setIcon(QIcon const & icon) { m_icon = icon; }
 
-        inline QIcon icon() const { return m_icon; }
+        QIcon icon() const { return m_icon; }
 
-        inline void setParent(BookmarkItemBase * parent) {
-            m_parent = parent;
-        }
+        void setParent(BookmarkItemBase * parent) { m_parent = parent; }
 
-        inline BookmarkItemBase * parent() const { return m_parent; }
+        BookmarkItemBase * parent() const { return m_parent; }
 
         /**
           \returns index of this item in parent's child array.
          */
-        inline int index() const {
+        int index() const {
             BT_ASSERT(parent());
             for(int i = 0; i < parent()->childCount(); ++i)
                 if(parent()->child(i) == this)
@@ -178,22 +176,24 @@ public: /* Tyepes */
         /** Returns the used key. */
         QString key() const;
 
-        inline void setKey(const QString & key) { m_key = key; }
+        void setKey(QString const & key) { m_key = key; }
 
         /** Returns the used description. */
-        inline const QString &description() const { return m_description; }
+        QString const & description() const { return m_description; }
 
-        inline void setDescription(const QString & description) { m_description = description; }
+        void setDescription(QString const & description)
+        { m_description = description; }
 
         /** Returns a tooltip for this bookmark. */
         QString toolTip() const override;
 
         /** Returns the english key.*/
-        inline const QString & englishKey() const { return m_key; }
+        QString const & englishKey() const { return m_key; }
 
-        inline void setModule(const QString & moduleName) { m_moduleName = moduleName; }
+        void setModule(QString const & moduleName)
+        { m_moduleName = moduleName; }
 
-        inline const QString & moduleName() const { return m_moduleName; }
+        QString const & moduleName() const { return m_moduleName; }
 
     private:
         QString m_key;
@@ -230,7 +230,7 @@ public: /* Methods */
     }
     ~BtBookmarksModelPrivate() { delete m_rootItem; }
 
-    inline static QString defaultBookmarksFile() {
+    static QString defaultBookmarksFile() {
         return util::directory::getUserBaseDir().absolutePath() + "/bookmarks.xml";
     }
 
@@ -257,7 +257,7 @@ public: /* Methods */
     }
 
     template <typename T>
-    inline T * itemAs(QModelIndex const & index) const
+    T * itemAs(QModelIndex const & index) const
     { return dynamic_cast<T *>(item(index)); }
 
     /// \test

@@ -25,14 +25,13 @@ class LanguageItem: public GroupItem<Item::ITEM_LANGUAGE> {
 
 public: /* Methods: */
 
-    inline LanguageItem(const CSwordModuleInfo & module)
+    LanguageItem(CSwordModuleInfo const & module)
         : m_language(module.language()) {}
 
     QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const override {
-        return module.language() == m_language;
-    }
+    bool fitFor(CSwordModuleInfo const & module) const override
+    { return module.language() == m_language; }
 
 private: /* Fields: */
 

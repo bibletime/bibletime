@@ -33,8 +33,8 @@ class OsisToHtml: public sword::OSISHTMLHREF {
     protected: /* Types: */
         class UserData: public sword::OSISHTMLHREF::MyUserData {
             public:
-                inline UserData(const sword::SWModule *module,
-                                const sword::SWKey *key)
+                UserData(sword::SWModule const * module,
+                         sword::SWKey const * key)
                      : sword::OSISHTMLHREF::MyUserData(module, key),
                        swordFootnote(1), inCrossrefNote(false),
                        entryAttributes(module->getEntryAttributes()),
@@ -67,12 +67,10 @@ class OsisToHtml: public sword::OSISHTMLHREF {
 
     protected: /* Methods: */
         /** Reimplemented from sword::OSISHTMLHREF. */
-        inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module,
-                const sword::SWKey *key) override
-        {
-            return new UserData(module, key);
-        }
+        sword::BasicFilterUserData * createUserData(
+                sword::SWModule const * module,
+                sword::SWKey const * key) override
+        { return new UserData(module, key); }
 
     private: /* Methods: */
         void renderReference(const char *osisRef, sword::SWBuf &buf,

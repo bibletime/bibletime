@@ -31,7 +31,8 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        inline CCommentaryReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
+        CCommentaryReadWindow(QList<CSwordModuleInfo *> const & modules,
+                              CMDIArea * parent)
             : CLexiconReadWindow(modules, parent) {}
 
         CSwordModuleInfo::ModuleType moduleType() const override

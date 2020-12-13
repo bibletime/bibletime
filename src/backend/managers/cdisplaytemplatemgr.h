@@ -33,11 +33,11 @@ class CDisplayTemplateMgr {
         */
         struct Settings {
 
-            inline Settings()
+            Settings()
                 : langAbbrev("en")
                 , textDirection(CSwordModuleInfo::LeftToRight) {}
 
-            inline const char * textDirectionAsHtmlDirAttr() const {
+            char const * textDirectionAsHtmlDirAttr() const {
                 return textDirection == CSwordModuleInfo::LeftToRight ? "ltr" : "rtl";
             }
 
@@ -69,9 +69,8 @@ class CDisplayTemplateMgr {
         /**
           \returns the list of available templates.
         */
-        inline const QStringList & availableTemplates() const {
-            return m_availableTemplateNamesCache;
-        }
+        QStringList const & availableTemplates() const
+        { return m_availableTemplateNamesCache; }
 
         /**
           \brief Fills the template.
@@ -92,7 +91,7 @@ class CDisplayTemplateMgr {
         /**
           \returns the name of the default template.
         */
-        static inline const char * defaultTemplateName() { return "Blue.css"; }
+        static char const * defaultTemplateName() { return "Blue.css"; }
 
         /**
           \returns the name of the active template.
@@ -102,7 +101,7 @@ class CDisplayTemplateMgr {
         /**
           \returns The singleton instance of the instance of this class.
         */
-        static inline CDisplayTemplateMgr * instance() {
+        static CDisplayTemplateMgr * instance() {
             BT_ASSERT(m_instance);
             return m_instance;
         }

@@ -191,9 +191,7 @@ public: /* Methods: */
     /**
     * Returns the module object so all objects can access the original Sword module.
     */
-    inline sword::SWModule & module() const {
-        return m_module;
-    }
+    sword::SWModule & module() const { return m_module; }
 
     /**
     * Sets the unlock key of the modules and writes the key into the config file.
@@ -236,9 +234,7 @@ wrong, or if the config file was write protected return false.
       \retval true if this module has a version number
       \retval false if it doesn't have a version number
     */
-    inline bool hasVersion() const {
-        return m_cachedHasVersion;
-    }
+    bool hasVersion() const { return m_cachedHasVersion; }
 
     /**
       \returns true if the module's index has been built.
@@ -279,9 +275,7 @@ wrong, or if the config file was write protected return false.
     /**
       \returns the type of the module.
     */
-    inline ModuleType type() const {
-        return m_type;
-    }
+    ModuleType type() const { return m_type; }
 
     /**
     * Returns the required Sword version for this module.
@@ -294,17 +288,13 @@ wrong, or if the config file was write protected return false.
             after each duplicate.
       \returns The name of this module.
     */
-    inline const QString & name() const {
-        return m_cachedName;
-    }
+    QString const & name() const { return m_cachedName; }
 
     /**
     * Snaps to the closest entry in the module if the current key is
     * not present in the data files.
     */
-    virtual inline bool snap() const {
-        return false;
-    }
+    virtual bool snap() const { return false; }
 
     /**
       \returns whether the module supports the feature given as parameter.
@@ -333,23 +323,17 @@ wrong, or if the config file was write protected return false.
     /**
       \returns the language of the module.
     */
-    inline const CLanguageMgr::Language * language() const {
-        return m_cachedLanguage;
-    }
+    CLanguageMgr::Language const * language() const { return m_cachedLanguage; }
 
     /**
       \returns whether this module may be written to.
     */
-    inline virtual bool isWritable() const {
-        return false;
-    }
+    virtual bool isWritable() const { return false; }
 
     /**
     * Returns true if this module is hidden (not to be shown with other modules in certain views).
     */
-    inline bool isHidden() const {
-        return m_hidden;
-    }
+    bool isHidden() const { return m_hidden; }
 
     /**
       Shows or hides the module.
@@ -361,9 +345,7 @@ wrong, or if the config file was write protected return false.
     /**
       \returns the category of this module.
     */
-    inline CSwordModuleInfo::Category category() const {
-        return m_cachedCategory;
-    }
+    CSwordModuleInfo::Category category() const { return m_cachedCategory; }
 
     /**
     * The about text which belongs to this module.
@@ -379,9 +361,7 @@ wrong, or if the config file was write protected return false.
     /**
       Returns an icon for this module.
     */
-    inline QIcon moduleIcon() const {
-        return CSwordModuleInfo::moduleIcon(*this);
-    }
+    QIcon moduleIcon() const { return CSwordModuleInfo::moduleIcon(*this); }
 
     /**
       Returns an icon for the given module.
@@ -409,8 +389,8 @@ wrong, or if the config file was write protected return false.
 
 public Q_SLOTS:
 
-    inline void cancelIndexing(std::memory_order const memoryOrder =
-                                        std::memory_order_relaxed) noexcept
+    void cancelIndexing(std::memory_order const memoryOrder =
+                                std::memory_order_relaxed) noexcept
     { m_cancelIndexing.store(true, memoryOrder); }
 
 protected: /* Methods: */
@@ -419,9 +399,7 @@ protected: /* Methods: */
                      CSwordBackend & backend,
                      ModuleType type);
 
-    inline CSwordBackend & backend() const {
-        return m_backend;
-    }
+    CSwordBackend & backend() const { return m_backend; }
 
     QString getSimpleConfigEntry(const QString & name) const;
     QString getFormattedConfigEntry(const QString & name) const;

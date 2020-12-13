@@ -75,10 +75,10 @@ struct ParseOptions {
 
 /* Methods: */
 
-    inline ParseOptions(QString const & refDestinationModule_ = QString(),
-                        QString const & refBase_ = QString(),
-                        QString const & sourceLanguage_ = QString(),
-                        QString const & destinationLanguage_ = "en")
+    ParseOptions(QString const & refDestinationModule_ = QString(),
+                 QString const & refBase_ = QString(),
+                 QString const & sourceLanguage_ = QString(),
+                 QString const & destinationLanguage_ = "en")
         : refDestinationModule(refDestinationModule_)
         , refBase(refBase_)
         , sourceLanguage(sourceLanguage_)

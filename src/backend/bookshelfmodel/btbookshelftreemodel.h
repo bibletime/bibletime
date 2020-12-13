@@ -65,24 +65,24 @@ public: /* Types: */
             /**
               \warning Be careful using this constructor!
             */
-            explicit inline Grouping(bool empty = false) {
+            explicit Grouping(bool empty = false) {
                 if (empty)
                     return;
                 push_back(GROUP_CATEGORY);
                 push_back(GROUP_LANGUAGE);
             }
 
-            explicit inline Grouping(Group group) { push_back(group); }
+            explicit Grouping(Group group) { push_back(group); }
 
-            explicit inline Grouping(const QString & configKey) {
+            explicit Grouping(const QString & configKey) {
                 if (loadFrom(configKey))
                     return;
                 push_back(GROUP_CATEGORY);
                 push_back(GROUP_LANGUAGE);
             }
 
-            inline Grouping(Grouping const & copy) = default;
-            inline Grouping & operator=(Grouping const & copy) = default;
+            Grouping(Grouping const & copy) = default;
+            Grouping & operator=(Grouping const & copy) = default;
 
             bool loadFrom(const QString & configKey);
             void saveTo(const QString & configKey) const;
@@ -115,17 +115,17 @@ public: /* Methods: */
                  const QVariant & value,
                  int role) override;
 
-    inline CSwordModuleInfo * module(QModelIndex const & index) const {
+    CSwordModuleInfo * module(QModelIndex const & index) const {
         return static_cast<CSwordModuleInfo *>(
                 data(index,
                      BtBookshelfModel::ModulePointerRole).value<void *>());
     }
-    inline QAbstractItemModel * sourceModel() const { return m_sourceModel; }
-    inline const Grouping & groupingOrder() const { return m_groupingOrder; }
-    inline bool checkable() const { return m_checkable; }
-    inline CheckedBehavior defaultChecked() const { return m_defaultChecked; }
-    inline QList<CSwordModuleInfo *> modules() const { return m_modules.keys(); }
-    inline BtModuleSet const & checkedModules() const {
+    QAbstractItemModel * sourceModel() const { return m_sourceModel; }
+    Grouping const & groupingOrder() const { return m_groupingOrder; }
+    bool checkable() const { return m_checkable; }
+    CheckedBehavior defaultChecked() const { return m_defaultChecked; }
+    QList<CSwordModuleInfo *> modules() const { return m_modules.keys(); }
+    BtModuleSet const & checkedModules() const {
         return m_checkedModulesCache;
     }
 
@@ -135,9 +135,7 @@ public Q_SLOTS:
     void setGroupingOrder(const BtBookshelfTreeModel::Grouping & groupingOrder,
                           bool emitSignal = true);
     void setCheckable(bool checkable);
-    inline void setDefaultChecked(CheckedBehavior b) {
-        m_defaultChecked = b;
-    }
+    void setDefaultChecked(CheckedBehavior b) { m_defaultChecked = b; }
     void setCheckedModules(BtConstModuleSet const & modules);
 
 Q_SIGNALS:

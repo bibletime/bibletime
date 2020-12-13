@@ -34,16 +34,14 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         /**
           Sets the resultcount of this item.
         */
-        inline void setCountForModule(const int moduleIndex, const int count) {
-            m_resultCountArray[moduleIndex] = count;
-        }
+        void setCountForModule(int const moduleIndex, int const count)
+        { m_resultCountArray[moduleIndex] = count; }
 
         /**
           Returns the resultcount of this item.
         */
-        inline int getCountForModule(const int moduleIndex) const {
-            return m_resultCountArray[moduleIndex];
-        }
+        int getCountForModule(int const moduleIndex) const
+        { return m_resultCountArray[moduleIndex]; }
 
         /**
         * Does one of the modules contain hits?

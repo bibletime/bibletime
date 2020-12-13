@@ -39,34 +39,37 @@ class BtBookshelfWidget: public QWidget {
         void setSourceModel(QAbstractItemModel *model);
 
         // Getters for models:
-        inline BtBookshelfTreeModel *treeModel() const { return m_treeModel; }
-        inline BtBookshelfFilterModel *postFilterModel() const { return m_postFilterModel; }
+        BtBookshelfTreeModel * treeModel() const { return m_treeModel; }
+        BtBookshelfFilterModel * postFilterModel() const
+        { return m_postFilterModel; }
 
         // Setters for models:
         void setTreeModel(BtBookshelfTreeModel *model);
 
         // Getters for widgets:
-        inline QWidget *leftCornerWidget() const { return m_leftCornerWidget; }
-        inline QLabel *nameFilterLabel() const { return m_nameFilterLabel; }
-        inline QLineEdit *nameFilterEdit() const { return m_nameFilterEdit; }
-        inline QToolButton *groupingButton() const { return m_groupingButton; }
-        inline QToolButton *showHideButton() const { return m_showHideButton; }
-        inline QWidget *rightCornerWidget() const { return m_rightCornerWidget; }
-        inline BtBookshelfView *treeView() const { return m_treeView; }
-        inline BtBookshelfGroupingMenu *groupingMenu() const { return m_groupingMenu; }
-        inline QMenu *contextMenu() const { return m_contextMenu; }
-        inline QMenu *itemContextMenu() const { return m_itemContextMenu; }
+        QWidget * leftCornerWidget() const { return m_leftCornerWidget; }
+        QLabel * nameFilterLabel() const { return m_nameFilterLabel; }
+        QLineEdit * nameFilterEdit() const { return m_nameFilterEdit; }
+        QToolButton * groupingButton() const { return m_groupingButton; }
+        QToolButton * showHideButton() const { return m_showHideButton; }
+        QWidget * rightCornerWidget() const { return m_rightCornerWidget; }
+        BtBookshelfView * treeView() const { return m_treeView; }
+        BtBookshelfGroupingMenu * groupingMenu() const
+        { return m_groupingMenu; }
+        QMenu * contextMenu() const { return m_contextMenu; }
+        QMenu * itemContextMenu() const { return m_itemContextMenu; }
 
         // Setters for widgets:
         void setLeftCornerWidget(QWidget *w);
         void setRightCornerWidget(QWidget *w);
 
         // Getters for actions:
-        inline QAction *showHideAction() const { return m_showHideAction; }
+        QAction * showHideAction() const { return m_showHideAction; }
 
         // Setters for context menus:
-        inline void setContextMenu(QMenu *newMenu) { m_contextMenu = newMenu; }
-        inline void setItemContextMenu(QMenu *newMenu) { m_itemContextMenu = newMenu; }
+        void setContextMenu(QMenu * newMenu) { m_contextMenu = newMenu; }
+        void setItemContextMenu(QMenu * newMenu)
+        { m_itemContextMenu = newMenu; }
 
         bool eventFilter(QObject *object, QEvent *event) override;
 

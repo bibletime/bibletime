@@ -142,7 +142,7 @@ class BibleTime : public QMainWindow {
 
         ~BibleTime() override;
 
-        static inline BibleTime *instance() { return m_instance; }
+        static BibleTime * instance() { return m_instance; }
 
         /**
         *  Save the configuration dialog settings, don't open dialog
@@ -151,28 +151,21 @@ class BibleTime : public QMainWindow {
         /**
         * Get pointer to Navigation toolbar
         */
-        inline QToolBar *navToolBar() const {
-            return m_navToolBar;
-        }
+        QToolBar * navToolBar() const { return m_navToolBar; }
         /**
         * Get pointer to Works toolbar
         */
-        inline BtModuleChooserBar *worksToolBar() const {
-            return m_worksToolBar;
-        }
+        BtModuleChooserBar * worksToolBar() const { return m_worksToolBar; }
         /**
         * Get pointer to Tools toolbar
         */
-        inline QToolBar *toolsToolBar() const {
-            return m_toolsToolBar;
-        }
+        QToolBar * toolsToolBar() const { return m_toolsToolBar; }
 
         /**
           \returns a pointer to the info display.
         */
-        inline InfoDisplay::CInfoDisplay *infoDisplay() const {
-            return m_infoDisplay;
-        }
+        InfoDisplay::CInfoDisplay * infoDisplay() const
+        { return m_infoDisplay; }
 
         /**
         * Clears the actions of the MDI related toolbars

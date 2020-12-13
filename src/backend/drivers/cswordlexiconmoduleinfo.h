@@ -25,8 +25,8 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
     public: /* Methods: */
-        inline CSwordLexiconModuleInfo(sword::SWModule & module,
-                                       CSwordBackend & backend)
+        CSwordLexiconModuleInfo(sword::SWModule & module,
+                                CSwordBackend & backend)
                 : CSwordModuleInfo(module, backend, Lexicon),
                 m_hasStrongsKeys(false),
                 m_hasLeadingStrongsLetter(false),

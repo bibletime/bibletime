@@ -45,13 +45,13 @@ public: /* Methods: */
     */
     explicit BtConfigCore(const QString & settingsFile);
 
-    inline ~BtConfigCore() { sync(); }
+    ~BtConfigCore() { sync(); }
 
 
     /**
       \returns the key of the current session.
     */
-    inline const QString & currentSessionKey() const {
+    QString const & currentSessionKey() const {
         QMutexLocker lock(&m_mutex);
         return m_currentSessionKey;
     }
@@ -59,7 +59,7 @@ public: /* Methods: */
     /**
       \returns the name of the current session.
     */
-    inline const QString & currentSessionName() const {
+    QString const & currentSessionName() const {
         QMutexLocker lock(&m_mutex);
         auto it(m_sessionNames.constFind(m_currentSessionKey));
         BT_ASSERT(it != m_sessionNames.constEnd());
@@ -69,7 +69,7 @@ public: /* Methods: */
     /**
       \returns a hashmap with the keys and printable names of the sessions.
     */
-    inline const SessionNamesHashMap & sessionNames() const {
+    SessionNamesHashMap const & sessionNames() const {
         QMutexLocker lock(&m_mutex);
         return m_sessionNames;
     }
@@ -113,7 +113,7 @@ public: /* Methods: */
       \returns the value of type specified by the template parameter.
     */
     template<typename T>
-    inline T value(const QString & key, const T & defaultValue = T()) {
+    T value(QString const & key, T const & defaultValue = T()) {
         QMutexLocker lock(&m_mutex);
         return m_settings.value(group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
@@ -126,8 +126,8 @@ public: /* Methods: */
       \param[in] defaultValue The value to return if no saved value is found.
       \returns the value.
     */
-    inline QVariant qVariantValue(const QString & key,
-                                  const QVariant & defaultValue = QVariant())
+    QVariant qVariantValue(QString const & key,
+                           QVariant const & defaultValue = QVariant())
     {
         QMutexLocker lock(&m_mutex);
         return m_settings.value(group() + key,
@@ -142,7 +142,7 @@ public: /* Methods: */
       \returns the value of type specified by the template parameter.
     */
     template<typename T>
-    inline T sessionValue(const QString & key, const T & defaultValue = T()) {
+    T sessionValue(QString const & key, T const & defaultValue = T()) {
         QMutexLocker lock(&m_mutex);
         return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
@@ -155,7 +155,7 @@ public: /* Methods: */
       \param[in] value Value to set.
     */
     template<typename T>
-    inline void setValue(const QString & key, const T & value) {
+    void setValue(QString const & key, T const & value) {
         QMutexLocker lock(&m_mutex);
         m_settings.setValue(group() + key, QVariant::fromValue<T>(value));
     }
@@ -167,7 +167,7 @@ public: /* Methods: */
       \param[in] value Value to set.
     */
     template<typename T>
-    inline void setSessionValue(const QString & key, const T & value) {
+    void setSessionValue(QString const & key, T const & value) {
         QMutexLocker lock(&m_mutex);
         m_settings.setValue(m_cachedCurrentSessionGroup + group() + key,
                             QVariant::fromValue<T>(value));
@@ -226,7 +226,7 @@ public: /* Methods: */
     /**
       \brief Synchronize the underlying QSettings.
     */
-    inline void sync() {
+    void sync() {
         QMutexLocker lock(&m_mutex);
         m_settings.sync();
     }
@@ -241,7 +241,7 @@ public: /* Methods: */
 
       \param[in] prefix the prefix to append
     */
-    inline void beginGroup(QString prefix) {
+    void beginGroup(QString prefix) {
         BT_ASSERT(!prefix.isEmpty());
         while (prefix.startsWith('/'))
             prefix.remove(0, 1);
@@ -264,7 +264,7 @@ public: /* Methods: */
 
       \warning Locks the object (recursively) until endGroup().
     */
-    inline void endGroup() {
+    void endGroup() {
         BT_ASSERT(!m_groups.isEmpty()
                   && "BtConfig::endGroup() called, but no beginGroup() active");
         m_groups.removeLast();
@@ -280,7 +280,7 @@ public: /* Methods: */
 
       \returns the group string or an empty string if no group is set.
     */
-    inline QString group() const {
+    QString group() const {
         QMutexLocker lock(&m_mutex);
         if (m_cachedGroup.isNull()) {
             m_cachedGroup = m_groups.isEmpty()

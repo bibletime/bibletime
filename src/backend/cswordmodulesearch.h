@@ -50,22 +50,19 @@ class CSwordModuleSearch: public QObject {
         };
 
     public: /* Methods: */
-        inline CSwordModuleSearch()
-            : m_foundItems(0u) {}
+        CSwordModuleSearch() : m_foundItems(0u) {}
 
         /**
           Sets the text which should be search in the modules.
           \param[in] text the text to search.
         */
-        inline void setSearchedText(const QString &text) {
-            m_searchText = text;
-        }
+        void setSearchedText(QString const & text) { m_searchText = text; }
 
         /**
           Set the modules which should be searched.
           \param[in] modules the modules to search in.
         */
-        inline void setModules(const BtConstModuleList &modules) {
+        void setModules(BtConstModuleList const & modules) {
             if (modules.empty())
                 return;
             BT_ASSERT(unindexedModules(modules).empty());
@@ -81,9 +78,7 @@ class CSwordModuleSearch: public QObject {
         /**
           Resets the search scope.
         */
-        inline void resetSearchScope() {
-            m_searchScope.clear();
-        }
+        void resetSearchScope() { m_searchScope.clear(); }
 
         /**
           \returns the search scope.
@@ -101,9 +96,7 @@ class CSwordModuleSearch: public QObject {
         /**
           \returns the number of found items in the last search.
         */
-        inline size_t foundItems() const {
-            return m_foundItems;
-        }
+        size_t foundItems() const { return m_foundItems; }
 
         /**
           \returns the results of the search.

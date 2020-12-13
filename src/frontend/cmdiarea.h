@@ -73,9 +73,8 @@ class CMDIArea: public QMdiArea {
         /**
           Returns the current MDI arrangement mode.
         */
-        inline MDIArrangementMode getMDIArrangementMode() const {
-            return m_mdiArrangementMode;
-        }
+        MDIArrangementMode getMDIArrangementMode() const
+        { return m_mdiArrangementMode; }
 
         /**
         * Forces an update of the currently chosen window arrangement.

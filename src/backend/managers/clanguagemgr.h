@@ -42,7 +42,7 @@ class CLanguageMgr {
                 /**
                   \returns the abbreviation of the this language.
                 */
-                inline const QString & abbrev() const {
+                QString const & abbrev() const {
                     if (m_abbrev.isEmpty() && m_altAbbrevs.count()) {
                         /* No standard abbrev but alternative ones */
                         return m_altAbbrevs.first();
@@ -53,54 +53,49 @@ class CLanguageMgr {
                 /**
                   \returns the translated name of this language.
                 */
-                inline const QString & translatedName() const {
-                    return m_translatedName;
-                }
+                QString const & translatedName() const
+                { return m_translatedName; }
 
                 /**
                   \returns the english name of this language.
                 */
-                inline const QString & englishName() const {
-                    return m_englishName;
-                }
+                QString const & englishName() const { return m_englishName; }
 
                 /**
                   \returns a list of alternative abbreviations for this language.
                 */
-                inline const QStringList & alternativeAbbrevs() const {
-                    return m_altAbbrevs;
-                }
+                QStringList const & alternativeAbbrevs() const
+                { return m_altAbbrevs; }
 
                 /**
                   \returns whether this language object is valid, i.e. has an
                            abbreviation and an english name.
                 */
-                inline bool isValid() const {
-                    return (!m_abbrev.isEmpty() && !m_englishName.isEmpty());
-                }
+                bool isValid() const
+                { return (!m_abbrev.isEmpty() && !m_englishName.isEmpty()); }
 
             private: /* Methods: */
 
-                inline Language() {}
+                Language() = default;
 
-                inline Language(const char * abbrev,
-                                const char * englishName,
-                                const QString & translatedName)
+                Language(char const * abbrev,
+                         char const * englishName,
+                         QString const & translatedName)
                     : m_abbrev(abbrev)
                     , m_englishName(QString::fromUtf8(englishName))
                     , m_translatedName(translatedName) {}
 
-                inline Language(const QString & abbrev,
-                                const QString & englishName,
-                                const QString & translatedName)
+                Language(QString const & abbrev,
+                         QString const & englishName,
+                         QString const & translatedName)
                     : m_abbrev(abbrev)
                     , m_englishName(englishName)
                     , m_translatedName(translatedName) {}
 
-                inline Language(const char * abbrev,
-                                const char * englishName,
-                                const QString & translatedName,
-                                const QStringList & altAbbrevs)
+                Language(char const * abbrev,
+                         char const * englishName,
+                         QString const & translatedName,
+                         QStringList const & altAbbrevs)
                     : m_abbrev(abbrev)
                     , m_englishName(QString::fromUtf8(englishName))
                     , m_translatedName(translatedName)
@@ -133,9 +128,7 @@ class CLanguageMgr {
         * Returns the standard languages available as standard. Does nothing for Sword.
         * @return A LangMap map which contains all known languages
         */
-        inline const CLanguageMgr::LangMap* languages() const {
-            return &m_langMap;
-        }
+        CLanguageMgr::LangMap const * languages() const { return &m_langMap; }
         /**
         * Returns the languages which are available. The languages cover all available modules, but nothing more.
         * @return A map of all languages with modules available for them
@@ -155,13 +148,12 @@ class CLanguageMgr {
         /** Default language so we don't return NULL pointers.
         * @return Pointer to the default language
         */
-        inline const CLanguageMgr::Language* defaultLanguage() const {
-            return &m_defaultLanguage;
-        }
+        CLanguageMgr::Language const * defaultLanguage() const
+        { return &m_defaultLanguage; }
 
     private:
         void init();
-        inline const QStringList makeStringList(const QString& abbrevs) {
+        QStringList makeStringList(QString const & abbrevs) {
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
             return abbrevs.split( ";", QString::KeepEmptyParts, Qt::CaseSensitive );
 #else

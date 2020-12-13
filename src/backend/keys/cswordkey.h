@@ -63,17 +63,14 @@ public: /* Methods: */
     /**
       \returns the module which belongs to this key.
     */
-    inline const CSwordModuleInfo * module() const {
-        return m_module;
-    }
+    CSwordModuleInfo const * module() const { return m_module; }
 
     /**
       Sets the module which belongs to this key.
       \param[in] newModule the module to set.
     */
-    virtual inline void setModule(const CSwordModuleInfo * newModule) {
-        m_module = newModule;
-    }
+    virtual void setModule(const CSwordModuleInfo * newModule)
+    { m_module = newModule; }
 
     /**
       \returns the raw, unchanged text from the module (i.e. without any filter
@@ -102,7 +99,7 @@ public: /* Methods: */
     static CSwordKey * createInstance(const CSwordModuleInfo * module);
 
     /** Check whether key is valid. Can be invalidated during av11n mapping. */
-    inline bool isValid() const { return m_valid; }
+    bool isValid() const { return m_valid; }
 
     /**
       This is called before a key change to emit a signal
@@ -116,11 +113,11 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    inline CSwordKey(const CSwordModuleInfo * const module = nullptr)
+    CSwordKey(CSwordModuleInfo const * const module = nullptr)
         : m_module(module)
         , m_valid(true) {}
 
-    inline CSwordKey(const CSwordKey & copy)
+    CSwordKey(CSwordKey const & copy)
         : m_module(copy.m_module)
         , m_valid(copy.m_valid) {}
 
@@ -129,7 +126,7 @@ protected: /* Methods: */
     */
     virtual const char * rawKey() const = 0;
 
-    static inline const QTextCodec * cp1252Codec() { return m_cp1252Codec; }
+    static QTextCodec const * cp1252Codec() { return m_cp1252Codec; }
 
 protected: /* Fields: */
 

@@ -48,7 +48,7 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    inline BtBookshelfModel(QObject * const parent = nullptr)
+    BtBookshelfModel(QObject * const parent = nullptr)
         : QAbstractListModel(parent) {}
 
     // Virtual methods implemented from QAbstractListModel:
@@ -67,7 +67,7 @@ public: /* Methods: */
       CSwordModuleInfo instance corresponding to the given index.
       \param[in] index An index to this model.
     */
-    inline CSwordModuleInfo * module(const QModelIndex & index) const {
+    CSwordModuleInfo * module(QModelIndex const & index) const {
         return static_cast<CSwordModuleInfo *>(
                data(index,
                     BtBookshelfModel::ModulePointerRole).value<void *>());
@@ -127,9 +127,7 @@ public: /* Methods: */
     /**
       Returns the list of handled modules as a list of CSwordModuleInfo* pointers.
     */
-    inline const QList<CSwordModuleInfo *> & moduleList() const {
-        return m_data;
-    }
+    QList<CSwordModuleInfo *> const & moduleList() const { return m_data; }
 
 protected Q_SLOTS:
 

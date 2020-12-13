@@ -30,9 +30,12 @@ class BtModuleChooserDialog : public QDialog {
 
         void retranslateUi();
 
-        inline QLabel *label() const { return m_captionLabel; }
-        inline BtBookshelfWidget *bookshelfWidget() const { return m_bookshelfWidget; }
-        inline QDialogButtonBox *buttonBox() const { return m_buttonBox; }
+        QLabel * label() const { return m_captionLabel; }
+
+        BtBookshelfWidget * bookshelfWidget() const
+        { return m_bookshelfWidget; }
+
+        QDialogButtonBox * buttonBox() const { return m_buttonBox; }
 
     private:
         QLabel            *m_captionLabel;

@@ -126,9 +126,7 @@ public:
 
     virtual void setFilterOptions(FilterOptions /* filterOptions*/) {}
 
-    inline virtual QString getCurrentNodeInfo() const {
-        return QString();
-    }
+    virtual QString getCurrentNodeInfo() const { return {}; }
 
 protected:
     /**

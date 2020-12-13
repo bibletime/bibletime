@@ -31,11 +31,10 @@ class BtBookshelfDockWidget: public QDockWidget {
     public:
         BtBookshelfDockWidget(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
-        static inline BtBookshelfDockWidget *getInstance() { return m_instance; }
+        static BtBookshelfDockWidget * getInstance() { return m_instance; }
 
-        inline const BtBookshelfTreeModel::Grouping &groupingOrder() const {
-            return m_treeModel->groupingOrder();
-        }
+        BtBookshelfTreeModel::Grouping groupingOrder() const
+        { return m_treeModel->groupingOrder(); }
 
         void loadBookshelfState();
         void saveBookshelfState();

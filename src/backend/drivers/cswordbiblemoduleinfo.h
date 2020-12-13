@@ -75,7 +75,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         /**
           \returns whether this module has the Old Testament texts.
         */
-        inline bool hasOldTestament() const {
+        bool hasOldTestament() const {
             if (!m_boundsInitialized)
                 initBounds();
             return m_hasOT;
@@ -84,7 +84,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         /**
           \returns whether this module has the New Testament texts.
         */
-        inline bool hasNewTestament() const {
+        bool hasNewTestament() const {
             if (!m_boundsInitialized)
                 initBounds();
             return m_hasNT;
@@ -93,7 +93,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         /**
           \returns the key which represents the lower bound of this module.
         */
-        inline const CSwordVerseKey &lowerBound() const {
+        CSwordVerseKey const & lowerBound() const {
             if (!m_boundsInitialized)
                 initBounds();
             return m_lowerBound;
@@ -102,7 +102,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         /**
           \returns the key which represents the upper bound of this module.
         */
-        inline const CSwordVerseKey &upperBound() const {
+        CSwordVerseKey const & upperBound() const {
             if (!m_boundsInitialized)
                 initBounds();
             return m_upperBound;

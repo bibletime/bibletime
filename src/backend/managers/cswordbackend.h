@@ -96,17 +96,17 @@ public: /* Methods: */
     ~CSwordBackend() override;
 
     /** \returns the CSwordBackend singleton instance (created if needed). */
-    static inline CSwordBackend * createInstance() {
+    static CSwordBackend * createInstance() {
         BT_ASSERT(!m_instance);
         m_instance = new CSwordBackend();
         return m_instance;
     }
 
     /** \returns the singleton instance, creating it if one does not exist. */
-    static inline CSwordBackend * instance() { return m_instance; }
+    static CSwordBackend * instance() { return m_instance; }
 
     /** \brief Destroys the singleton instance, if one exists. */
-    static inline void destroyInstance() {
+    static void destroyInstance() {
         delete m_instance;
         m_instance = nullptr;
     }
@@ -116,14 +116,12 @@ public: /* Methods: */
       \note This method is equivalent to model()->modules().
       \returns The list of modules managed by this backend.
     */
-    inline const QList<CSwordModuleInfo*> & moduleList() const {
-        return m_dataModel.moduleList();
-    }
+    QList<CSwordModuleInfo*> const & moduleList() const
+    { return m_dataModel.moduleList(); }
+
     BtModuleList moduleList(CSwordModuleInfo::ModuleType type) const;
 
-    inline BtBookshelfModel * model() {
-        return &m_dataModel;
-    }
+    BtBookshelfModel * model() { return &m_dataModel; }
 
     CSwordModuleInfo * findFirstAvailableModule(CSwordModuleInfo::ModuleType type);
 
@@ -180,9 +178,7 @@ public: /* Methods: */
       \returns The global config object containing the configs of all modules
                merged together.
     */
-    inline sword::SWConfig * getConfig() const {
-        return config;
-    }
+    sword::SWConfig * getConfig() const { return config; }
 
     /**
       \param[in] option The option name to return.

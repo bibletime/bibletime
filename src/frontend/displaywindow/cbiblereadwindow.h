@@ -33,7 +33,8 @@ class CBibleReadWindow: public CLexiconReadWindow  {
 
 public: /* Methods: */
 
-    inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
+    CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
+                     CMDIArea * parent)
         : CLexiconReadWindow(modules, parent) {}
 
     CSwordModuleInfo::ModuleType moduleType() const override

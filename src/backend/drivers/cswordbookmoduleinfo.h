@@ -35,7 +35,7 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         /**
           \returns the maximal depth of sections and subsections.
         */
-        inline int depth() const { return m_depth; }
+        int depth() const { return m_depth; }
 
         /**
           \returns A treekey filled with the structure of this module. Don't

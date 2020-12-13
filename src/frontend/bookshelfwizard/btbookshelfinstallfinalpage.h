@@ -34,8 +34,7 @@ class BtBookshelfInstallFinalPage final: public BtBookshelfWizardPage {
 public: /* Methods: */
 
     BtBookshelfInstallFinalPage(QWidget * parent = nullptr);
-    inline ~BtBookshelfInstallFinalPage() noexcept final override
-    { destroyThread(); }
+    ~BtBookshelfInstallFinalPage() noexcept final override { destroyThread(); }
 
     void destroyThread() noexcept;
 

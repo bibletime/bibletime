@@ -22,7 +22,7 @@ namespace Search {
 
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
     public: /* Methods: */
-        inline CSearchAnalysisLegendItem(const BtConstModuleList &modules)
+        CSearchAnalysisLegendItem(BtConstModuleList const & modules)
             : m_moduleList(modules) {}
 
     private: /* Methods: */

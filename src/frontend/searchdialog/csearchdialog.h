@@ -74,9 +74,8 @@ class CSearchDialog : public QDialog {
         /**
           Returns the list of used modules.
         */
-        inline BtConstModuleList modules() const {
-            return m_searchOptionsArea->modules();
-        }
+        BtConstModuleList modules() const
+        { return m_searchOptionsArea->modules(); }
 
         /**
         * Sets the search text which is used for the search.
@@ -93,9 +92,8 @@ class CSearchDialog : public QDialog {
         /**
           \returns the used search scope as a list key
         */
-        inline sword::ListKey searchScope() const {
-            return m_searchOptionsArea->searchScope();
-        }
+        sword::ListKey searchScope() const
+        { return m_searchOptionsArea->searchScope(); }
 
         /**
         * Resets the parts to the default.

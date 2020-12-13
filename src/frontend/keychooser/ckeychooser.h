@@ -37,7 +37,7 @@ public: /* Methods: */
     /**
       \returns the history object of this keychooser.
     */
-    inline BTHistory * history() const { return m_history; }
+    BTHistory * history() const { return m_history; }
 
     /**
     * Creates a proper Instance, either

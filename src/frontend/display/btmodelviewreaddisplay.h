@@ -103,9 +103,7 @@ public:
     void moveToAnchor( const QString& anchor ) override;
 
     void openFindTextDialog() override;
-    inline QString getCurrentNodeInfo() const override {
-        return m_nodeInfo;
-    }
+    QString getCurrentNodeInfo() const override { return m_nodeInfo; }
 
     void pageDown();
 

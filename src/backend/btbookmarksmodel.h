@@ -157,7 +157,7 @@ public Q_SLOTS:
 
 private:
 
-    inline bool slotSave() { return save(); }
+    bool slotSave() { return save(); }
 
 private: /* Fields: */
     Q_DECLARE_PRIVATE(BtBookmarksModel)

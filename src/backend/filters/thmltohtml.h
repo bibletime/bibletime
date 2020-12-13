@@ -32,8 +32,8 @@ class ThmlToHtml: public sword::ThMLHTML {
     protected: /* Types: */
         class UserData: public sword::ThMLHTML::MyUserData {
             public:
-                inline UserData(const sword::SWModule *module,
-                                const sword::SWKey *key)
+                UserData(sword::SWModule const * module,
+                         sword::SWKey const * key)
                     : sword::ThMLHTML::MyUserData(module, key),
                       inscriptRef(false), inFootnoteTag(false),
                       swordFootnote(1) {}
@@ -56,11 +56,10 @@ class ThmlToHtml: public sword::ThMLHTML {
 
     protected: /* Methods: */
 
-        inline sword::BasicFilterUserData *createUserData(
-                const sword::SWModule *module, const sword::SWKey *key) override
-        {
-            return new UserData(module, key);
-        }
+        sword::BasicFilterUserData * createUserData(
+                sword::SWModule const * module,
+                sword::SWKey const * key) override
+        { return new UserData(module, key); }
 };
 
 } // namespace Filters

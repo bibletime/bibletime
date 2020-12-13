@@ -38,14 +38,12 @@ class BtEditBookmarkDialog : public QDialog  {
         /**
         * Returns the description written in the description box.
         */
-        inline const QString descriptionText() {
-            return m_descriptionEdit->toPlainText();
-        }
+        QString descriptionText() { return m_descriptionEdit->toPlainText(); }
 
         /**
         * Returns the title written in the title box.
         */
-        inline const QString titleText() { return m_titleEdit->text(); }
+        QString titleText() { return m_titleEdit->text(); }
 
     protected: /* Methods: */
         void retranslateUi();

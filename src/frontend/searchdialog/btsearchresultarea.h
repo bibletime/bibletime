@@ -52,22 +52,22 @@ namespace Search {
 */
 class StrongsResult {
     public: /* Methods: */
-        inline StrongsResult() {}
-        inline StrongsResult(const QString &text,
-                             const QString &keyName)
+        StrongsResult() {}
+        StrongsResult(QString const & text,
+                      QString const & keyName)
             : m_text(text)
         {
             m_keyNameList.append(keyName);
         }
 
         const QString &keyText() const { return m_text; }
-        inline int keyCount() const { return m_keyNameList.count(); }
-        inline void addKeyName(const QString &keyName) {
+        int keyCount() const { return m_keyNameList.count(); }
+        void addKeyName(QString const & keyName) {
             if (m_keyNameList.contains(keyName)) return;
             m_keyNameList.append(keyName);
         }
 
-        inline const QStringList &getKeyList() const { return m_keyNameList; }
+        QStringList const & getKeyList() const { return m_keyNameList; }
 
     private: /* Fields: */
         QString m_text;
@@ -100,7 +100,7 @@ class BtSearchResultArea : public QWidget {
         Q_OBJECT
     public: /* Methods: */
         BtSearchResultArea(QWidget *parent = nullptr);
-        inline ~BtSearchResultArea() override { saveDialogSettings(); }
+        ~BtSearchResultArea() override { saveDialogSettings(); }
 
         /**
         * Sets the modules which contain the result of each.
@@ -153,7 +153,7 @@ class BtSearchResultArea : public QWidget {
         /**
         * Copy selected text
         */
-        inline void copySelection() {
+        void copySelection() {
             m_previewDisplay->copy();
         }
 

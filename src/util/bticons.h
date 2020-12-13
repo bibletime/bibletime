@@ -42,9 +42,9 @@ public: /* Methods: */
 
     BtIcons();
 
-    static inline BtIcons & instance() { 
+    static BtIcons & instance() {
         BT_ASSERT(m_instance);
-        return *m_instance; 
+        return *m_instance;
     }
 
 private: /* Fields: */

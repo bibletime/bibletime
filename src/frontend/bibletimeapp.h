@@ -31,7 +31,7 @@ class BibleTimeApp : public QApplication {
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
 
-        inline void startInit(bool const debugMode = false) {
+        void startInit(bool const debugMode = false) {
             m_init = true;
             m_debugMode = debugMode;
         }

@@ -22,13 +22,13 @@ class BtModuleSet: public QSet<CSwordModuleInfo *> {
 
 public: /* Methods: */
 
-    inline BtModuleSet() {}
+    BtModuleSet() = default;
 
-    inline BtModuleSet(QSet<CSwordModuleInfo *> const & copy)
+    BtModuleSet(QSet<CSwordModuleInfo *> const & copy)
         : QSet<CSwordModuleInfo *>(copy)
     {}
 
-    inline bool contains(CSwordModuleInfo const * const m) const {
+    bool contains(CSwordModuleInfo const * const m) const {
         return this->QSet<CSwordModuleInfo *>::contains(
                 const_cast<CSwordModuleInfo *>(m));
     }

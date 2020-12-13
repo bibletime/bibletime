@@ -26,24 +26,21 @@ class CategoryItem: public GroupItem<Item::ITEM_CATEGORY> {
 
 public: /* Methods: */
 
-    inline CategoryItem(const CSwordModuleInfo & module)
+    CategoryItem(CSwordModuleInfo const & module)
         : m_category(module.category()) {}
 
-    inline const CSwordModuleInfo::Category & category() const {
-        return m_category;
-    }
+    CSwordModuleInfo::Category category() const { return m_category; }
 
     QVariant data(int role = Qt::DisplayRole) const override;
 
-    inline bool fitFor(const CSwordModuleInfo & module) const override {
-        return module.category() == m_category;
-    }
+    bool fitFor(CSwordModuleInfo const & module) const override
+    { return module.category() == m_category; }
 
     bool operator<(const Item & other) const override;
 
 private: /* Fields: */
 
-    const CSwordModuleInfo::Category m_category;
+    CSwordModuleInfo::Category const m_category;
 
 };
 

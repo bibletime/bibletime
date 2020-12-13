@@ -36,7 +36,7 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    inline Item(Type type)
+    Item(Type type)
         : m_type(type)
         , m_parent(nullptr)
         , m_checkState(Qt::Unchecked) {}
@@ -46,30 +46,24 @@ public: /* Methods: */
     /**
       \brief Returns the type of this item.
     */
-    inline Type type() const {
-        return m_type;
-    }
+    Type type() const { return m_type; }
 
     /**
       \brief Returns a pointer to the parent item of this item.
       \retval 0 if this item has no parent.
     */
-    inline Item * parent() const {
-        return m_parent;
-    }
+    Item * parent() const { return m_parent; }
 
     /**
       \brief Returns the list of child items of this node.
     */
-    inline QList<Item *> & children() {
-        return m_children;
-    }
+    QList<Item *> & children() { return m_children; }
 
     /**
       \brief Returns the index of this item under its parent.
       \retval -1 if this item has no parent.
     */
-    inline int childIndex() const {
+    int childIndex() const {
         return m_parent == nullptr
                ? -1
                : m_parent->m_children.indexOf(const_cast<Item *>(this));
@@ -88,7 +82,7 @@ public: /* Methods: */
       \param[in] index The child index to insert the item at.
       \param[in] newItem The item to insert.
     */
-    inline void insertChild(int index, Item * newItem) {
+    void insertChild(int index, Item * newItem) {
         BT_ASSERT(newItem);
         BT_ASSERT(index >= 0 && index <= m_children.size());
         m_children.insert(index, newItem);
@@ -96,7 +90,7 @@ public: /* Methods: */
     }
 
     template <class T>
-    inline T * getGroupItem(CSwordModuleInfo & module, int & outIndex) {
+    T * getGroupItem(CSwordModuleInfo & module, int & outIndex) {
         for (int i = 0; i < m_children.size(); i++) {
             BT_ASSERT(m_children.at(i)->type() == T::staticItemType());
             T * item = static_cast<T *>(m_children.at(i));
@@ -116,17 +110,13 @@ public: /* Methods: */
     /**
       \brief Returns the check state of this item.
     */
-    inline Qt::CheckState checkState() const {
-        return m_checkState;
-    }
+    Qt::CheckState checkState() const { return m_checkState; }
 
     /**
       \brief Sets the check state of this item.
       \param[in] state new check state.
     */
-    inline void setCheckState(const Qt::CheckState state) {
-        m_checkState = state;
-    }
+    void setCheckState(const Qt::CheckState state) { m_checkState = state; }
 
     /**
       \brief Returns whether this item is fit to contain the given module.
@@ -134,7 +124,7 @@ public: /* Methods: */
       \retval true If this item is a group and can contain the given module.
       \retval false This item is not a group or is a wrong group.
     */
-    inline virtual bool fitFor(const CSwordModuleInfo & module) const = 0;
+    virtual bool fitFor(const CSwordModuleInfo & module) const = 0;
 
     /**
       \brief Comparsion operator used sorting child items.
@@ -143,7 +133,7 @@ public: /* Methods: */
 
 private: /* Methods: */
 
-    inline void setParent(Item * parent) noexcept
+    void setParent(Item * parent) noexcept
     { m_parent = (static_cast<void>(BT_ASSERT(parent)), parent); }
 
 private: /* Fields: */
@@ -159,8 +149,7 @@ class RootItem: public Item {
 
 public: /* Methods: */
 
-    inline RootItem()
-        : Item(Item::ITEM_ROOT) {}
+    RootItem() : Item(Item::ITEM_ROOT) {}
 
     bool fitFor(const CSwordModuleInfo &) const override;
 
@@ -171,12 +160,9 @@ class GroupItem: public Item {
 
 public: /* Methods: */
 
-    inline GroupItem()
-        : Item(TYPE) {}
+    GroupItem() : Item(TYPE) {}
 
-    inline static Item::Type staticItemType() {
-        return TYPE;
-    }
+    static Item::Type staticItemType() { return TYPE; }
 
 };
 

@@ -390,10 +390,9 @@ namespace {
 
 /// Helper object for reloadProfile()
 struct WindowLoadStatus {
-    inline WindowLoadStatus() : window(nullptr) {}
     QStringList failedModules;
     QList<CSwordModuleInfo*> okModules;
-    CDisplayWindow * window;
+    CDisplayWindow * window = nullptr;
 };
 
 } // anonymous namespace

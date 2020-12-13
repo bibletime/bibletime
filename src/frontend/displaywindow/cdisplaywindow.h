@@ -51,9 +51,7 @@ public:
     static void insertKeyboardActions( BtActionCollection* const a );
 
     /** Returns pointer to the mdi area object.*/
-    inline CMDIArea *mdi() const {
-        return m_mdi;
-    }
+    CMDIArea * mdi() const { return m_mdi; }
 
     /** Returns the correct window caption.*/
     const QString windowCaption();
@@ -62,9 +60,7 @@ public:
     const BtConstModuleList modules() const;
 
     /** Returns the used modules as a string list. */
-    inline const QStringList &getModuleList() const {
-        return m_modules;
-    }
+    QStringList const & getModuleList() const { return m_modules; }
 
     /** Store the settings of this window in the given CProfileWindow object.*/
     virtual void storeProfileSettings(QString const & windowGroup) const;
@@ -73,19 +69,13 @@ public:
     virtual void applyProfileSettings(const QString & windowGroup);
 
     /** Returns the display options used by this display window. */
-    inline const DisplayOptions &displayOptions() const {
-        return m_displayOptions;
-    }
+    DisplayOptions const & displayOptions() const { return m_displayOptions; }
 
     /** Returns the filter options used by this window. */
-    inline const FilterOptions &filterOptions() const {
-        return m_filterOptions;
-    }
+    FilterOptions const & filterOptions() const { return m_filterOptions; }
 
     /** Returns true if the widget is ready for use. */
-    inline bool isReady() const {
-        return m_isReady;
-    }
+    bool isReady() const { return m_isReady; }
 
     /** Returns true if the window may be closed.*/
     virtual bool queryClose();
@@ -94,15 +84,13 @@ public:
     BTHistory* history();
 
     /** Returns the keychooser widget of this display window. */
-    inline CKeyChooser *keyChooser() const {
-        return m_keyChooser;
-    }
+    CKeyChooser * keyChooser() const { return m_keyChooser; }
 
     /** Sets the new sword key.*/
     void setKey( CSwordKey* key );
 
     /** Returns the key of this display window. */
-    inline CSwordKey *key() const {
+    CSwordKey * key() const {
         BT_ASSERT(m_swordKey);
         return m_swordKey;
     }
@@ -120,14 +108,10 @@ public:
     void setButtonsToolBar( QToolBar* bar );
 
     /** Returns the main navigation toolbar. */
-    inline QToolBar *mainToolBar() const {
-        return m_mainToolBar;
-    }
+    QToolBar * mainToolBar() const { return m_mainToolBar; }
 
     /** Returns the tool buttons toolbar. */
-    inline QToolBar *buttonsToolBar() const {
-        return m_buttonsToolBar;
-    }
+    QToolBar * buttonsToolBar() const { return m_buttonsToolBar; }
 
     /** Initialize the toolbars.*/
     virtual void initToolbars() = 0;
@@ -138,7 +122,7 @@ public:
     virtual void setupPopupMenu() = 0;
 
     /** Returns the display widget used by this implementation of CDisplayWindow. */
-    virtual inline CDisplay *displayWidget() const {
+    virtual CDisplay * displayWidget() const {
         BT_ASSERT(m_displayWidget);
         return m_displayWidget;
     }
@@ -161,9 +145,7 @@ public:
         */
     void windowActivated();
 
-    inline BtActionCollection *actionCollection() const {
-        return m_actionCollection;
-    }
+    BtActionCollection * actionCollection() const { return m_actionCollection; }
 
     virtual void copySelectedText() = 0;
 
@@ -225,16 +207,12 @@ protected:
     /**
           \returns the display options used by this display window.
         */
-    inline DisplayOptions &displayOptions() {
-        return m_displayOptions;
-    }
+    DisplayOptions & displayOptions() { return m_displayOptions; }
 
     /**
           \returns the filter options used by this window.
         */
-    inline FilterOptions &filterOptions() {
-        return m_filterOptions;
-    }
+    FilterOptions & filterOptions() { return m_filterOptions; }
 
     /** Initializes the internel keyboard actions.*/
     virtual void initActions();
@@ -243,9 +221,7 @@ protected:
     void setKeyChooser( CKeyChooser* ck );
 
     /** Returns the module chooser bar. */
-    inline BtModuleChooserBar *moduleChooserBar() const {
-        return m_moduleChooserBar;
-    }
+    BtModuleChooserBar * moduleChooserBar() const { return m_moduleChooserBar; }
 
     /** Lookup the given key.*/
     virtual void lookupSwordKey( CSwordKey* ) = 0;
@@ -255,9 +231,7 @@ protected:
 
     void setHeaderBar(QToolBar* header);
 
-    inline QToolBar *headerBar() const {
-        return m_headerBar;
-    }
+    QToolBar * headerBar() const { return m_headerBar; }
 
     /** Sets the modules. */
     void setModules( const QList<CSwordModuleInfo*>& modules );
@@ -306,14 +280,14 @@ protected Q_SLOTS:
 private: /* Methods: */
 
     template <typename Name, typename ... Args>
-    inline QAction & initAction(Name && name, Args && ... args) {
+    QAction & initAction(Name && name, Args && ... args) {
         QAction & a = m_actionCollection->action(std::forward<Name>(name));
         BT_CONNECT(&a, &QAction::triggered, std::forward<Args>(args)...);
         return a;
     }
 
     template <typename ... Args>
-    inline void initAddAction(Args && ... args)
+    void initAddAction(Args && ... args)
     { addAction(&initAction(std::forward<Args>(args)...)); }
 
 private:

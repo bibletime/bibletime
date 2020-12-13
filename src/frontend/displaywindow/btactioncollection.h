@@ -49,7 +49,7 @@ private: /* Types: */
 
 public: /* Methods: */
 
-    inline BtActionCollection(QObject * const parent = nullptr)
+    BtActionCollection(QObject * const parent = nullptr)
             : QObject{parent}
     {}
 
@@ -60,14 +60,14 @@ public: /* Methods: */
     QAction & action(QString const & name) const;
 
     template <typename T>
-    inline T & actionAs(QString const & name) const {
+    T & actionAs(QString const & name) const {
         QAction & a = action(name);
         BT_ASSERT(dynamic_cast<T *>(&a));
         return static_cast<T &>(a);
     }
 
     template <typename F>
-    inline void foreachQAction(F && f) const {
+    void foreachQAction(F && f) const {
         for (Item const * const item : m_actions)
             f(*(item->m_action), item->m_defaultKeys);
     }
