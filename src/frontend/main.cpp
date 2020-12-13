@@ -10,7 +10,6 @@
 *
 **********/
 
-#include <cstdlib>
 #include <iostream>
 #include <memory>
 #include <QDateTime>
@@ -224,9 +223,6 @@ int main(int argc, char* argv[]) {
     QString openBibleKey;
     if (int const r = parseCommandLine(ignoreSession, openBibleKey))
         return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
-
-    // Initialize random number generator:
-    srand(qHash(QDateTime::currentDateTime().toString(Qt::ISODate)));
 
     // Setup debugging:
 #ifdef Q_OS_WIN

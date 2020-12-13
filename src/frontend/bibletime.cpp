@@ -15,6 +15,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <exception>
+#include <random>
 #include <QAction>
 #include <QApplication>
 #include <QCloseEvent>
@@ -61,6 +62,11 @@ namespace {
  */
 constexpr int const autoScrollTimeInterval = 200;
 
+int randInt(int min, int max) {
+    static std::mt19937 rng((std::random_device()()));
+    return std::uniform_int_distribution<int>(min, max)(rng);
+}
+
 } // anonymous namespace
 
 BibleTime *BibleTime::m_instance = nullptr;
@@ -91,7 +97,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
             splash1, splash2, splash3
         };
         QString splashImage = DU::getPicsDir().canonicalPath().append("/")
-                                              .append(splashes[rand() % 3]);
+                                              .append(splashes[randInt(0, 2)]);
         QPixmap pm;
         if (!pm.load(splashImage)) {
             qWarning("Can't load startuplogo! Check your installation.");
@@ -289,7 +295,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         if (bibleKey == "random") {
             CSwordVerseKey vk(nullptr);
             const int maxIndex = 31100;
-            int newIndex = rand() % maxIndex;
+            int newIndex = randInt(0, maxIndex);
             vk.setPosition(sword::TOP);
             vk.setIndex(newIndex);
             createReadDisplayWindow(bible, vk.key());
