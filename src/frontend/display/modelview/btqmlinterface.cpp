@@ -346,7 +346,7 @@ void BtQmlInterface::setKeyFromLink(const QString& link) {
     QString keyName;
     if (pos1 > -1) {
         keyName = rx.cap(2);
-        emit newBibleReference(keyName);
+        Q_EMIT newBibleReference(keyName);
     }
 }
 
