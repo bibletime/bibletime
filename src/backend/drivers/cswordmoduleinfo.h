@@ -14,7 +14,6 @@
 #define CSWORDMODULEINFO_H
 
 #include <QObject>
-#include "btdisplayholder.h"
 
 #include "../managers/clanguagemgr.h"
 
@@ -23,6 +22,7 @@
 #include <QList>
 #include <QMetaType>
 #include <QString>
+#include "../rendering/centrydisplay.h"
 
 
 #ifdef CLUCENE2
@@ -49,10 +49,7 @@ class SWVersion;
  * @version $Id: cswordmoduleinfo.h,v 1.83 2007/02/04 23:12:32 joachim Exp $
  */
 
-class CSwordModuleInfo
-    : public QObject
-    , public BtDisplayHolder<CSwordModuleInfo>
-{
+class CSwordModuleInfo: public QObject {
 
     Q_OBJECT
 
@@ -164,6 +161,11 @@ public: /* Methods: */
     CSwordModuleInfo(CSwordModuleInfo const &) = delete;
     CSwordModuleInfo & operator=(CSwordModuleInfo &&) = delete;
     CSwordModuleInfo & operator=(CSwordModuleInfo const &) = delete;
+
+    void setDisplay(Rendering::CEntryDisplay * display = nullptr) noexcept
+    { m_display = display; }
+
+    Rendering::CEntryDisplay * getDisplay() const noexcept { return m_display; }
 
     /**
     * Returns the base directory for search indices
@@ -437,6 +439,7 @@ Q_SIGNALS:
 
 private: /* Fields: */
 
+    Rendering::CEntryDisplay * m_display = nullptr;
     sword::SWModule & m_module;
     CSwordBackend & m_backend;
     ModuleType const m_type;
