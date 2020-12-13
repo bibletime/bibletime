@@ -12,9 +12,15 @@
 
 #include "bibletimeapp.h"
 
+#ifdef Q_OS_WIN
+#include <array>
+#endif
 #include <QDebug>
 #include <QPainter>
 #include <QtGlobal>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
 #include "../backend/config/btconfig.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
@@ -35,6 +41,17 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
 
     // Support for retina displays
     this->setAttribute(Qt::AA_UseHighDpiPixmaps);
+
+    #ifdef Q_OS_WIN
+    // On Windows, add a path for Qt plugins to be loaded from:
+    addLibraryPath(applicationDirPath() + "/plugins");
+
+    // Must set HOME var on Windows:
+    // getenv and qgetenv don't work right on Windows with unicode characters
+    std::array<wchar_t, 4096u> homeDir;
+    GetEnvironmentVariable(TEXT("APPDATA"), homeDir.data(), homeDir.size());
+    SetEnvironmentVariable(TEXT("HOME"), homeDir.data());
+    #endif
 }
 
 BibleTimeApp::~BibleTimeApp() {

@@ -30,9 +30,6 @@
 #include "display/modelview/btqmlinterface.h"
 #include "searchdialog/btsearchoptionsarea.h"
 #include "welcome/btwelcomedialog.h"
-#ifdef Q_OS_WIN
-#include <windows.h>
-#endif
 
 /// \todo Reimplement signal handler which handles consecutive crashes.
 
@@ -237,19 +234,6 @@ int main(int argc, char* argv[]) {
     debugStream.reset(new QFile);
     debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
     installMessageHandler();
-#endif
-
-#ifdef Q_OS_WIN
-
-    // On Windows, add a path for Qt plugins to be loaded from
-    app.addLibraryPath(app.applicationDirPath() + "/plugins");
-
-    // Must set HOME var on Windows
-    // getenv and qgetenv don't work right on Windows with unicode characters
-#define BUFSIZE 4096
-    wchar_t homeDir[BUFSIZE];
-    GetEnvironmentVariable(TEXT("APPDATA"), homeDir, BUFSIZE);
-    SetEnvironmentVariable(TEXT("HOME"), homeDir);
 #endif
 
     registerMetaTypes();
