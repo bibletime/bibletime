@@ -33,8 +33,8 @@ public: /* Methods: */
     Rendering::CEntryDisplay * getDisplay() const noexcept { return m_display; }
 
     void display() noexcept {
-        if (auto * display = m_display)
-            display->display(static_cast<CRTP &>(*this));
+        if (m_display)
+            m_display->display(static_cast<CRTP &>(*this));
     }
 
 private: /* Fields: */
