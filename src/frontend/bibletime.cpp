@@ -51,13 +51,17 @@
 #include "messagedialog.h"
 #include "searchdialog/csearchdialog.h"
 
+
+namespace {
+
 /**
  * Auto scroll time interval in milliseconds
  * This value is divided by an integer (2, 3, 4, etc.) to get the
  * time interval that is used.
  */
-static const int autoScrollTimeInterval = 200;
+constexpr int const autoScrollTimeInterval = 200;
 
+} // anonymous namespace
 
 BibleTime *BibleTime::m_instance = nullptr;
 
