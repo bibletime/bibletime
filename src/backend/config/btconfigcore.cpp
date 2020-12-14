@@ -16,11 +16,12 @@
 #include <limits>
 
 
-const QString BtConfigCore::GROUP_SESSIONS      = "sessions/";
-const QString BtConfigCore::KEY_CURRENT_SESSION = "sessions/currentSession";
-const QString BtConfigCore::GROUP_SESSION       = "sessions/%1/";
-const QString BtConfigCore::KEY_SESSION_NAME    = "sessions/%1/name";
-
+namespace {
+QString const GROUP_SESSIONS      = "sessions/";
+QString const KEY_CURRENT_SESSION = "sessions/currentSession";
+QString const GROUP_SESSION       = "sessions/%1/";
+QString const KEY_SESSION_NAME    = "sessions/%1/name";
+} // anonymous namespace
 
 BtConfigCore::BtConfigCore(const QString & settingsFile)
     : m_mutex(QMutex::Recursive)
