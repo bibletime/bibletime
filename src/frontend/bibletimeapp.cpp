@@ -15,8 +15,12 @@
 #ifdef Q_OS_WIN
 #include <array>
 #endif
+#include <memory>
+#include <QByteArray>
 #include <QDebug>
+#include <QFile>
 #include <QPainter>
+#include <QString>
 #include <QtGlobal>
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -30,10 +34,63 @@
 #include "messagedialog.h"
 
 
+namespace {
+
+std::unique_ptr<QFile> debugStream;
+
+void myMessageOutput(QtMsgType type,
+                     QMessageLogContext const &,
+                     QString const & message)
+{
+    QByteArray msg = message.toLatin1();
+    switch (type) {
+    case QtDebugMsg:
+        if (btApp->debugMode()) { // Only show messages if they are enabled!
+            debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
+            debugStream->write(msg);
+            debugStream->write("\n");
+            debugStream->flush();
+        }
+        break;
+    case QtInfoMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
+        debugStream->write(msg);
+        debugStream->write("\n");
+        debugStream->flush();
+        break;
+    case QtWarningMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
+        debugStream->write(msg);
+        debugStream->write("\n");
+        debugStream->flush();
+        break;
+    case QtCriticalMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
+        debugStream->write(msg);
+        debugStream->write("\nPlease report this bug at "
+                           "https://github.com/bibletime/bibletime/issues"
+                           "\n");
+        debugStream->flush();
+        break;
+    case QtFatalMsg:
+        debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
+        debugStream->write(msg);
+        debugStream->write("\nPlease report this bug at "
+                           "https://github.com/bibletime/bibletime/issues"
+                           "\n");
+
+        // Dump core on purpose (see qInstallMsgHandler documentation):
+        debugStream->close();
+        abort();
+    }
+}
+
+} // anonymous namespace
+
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     : QApplication(argc, argv)
     , m_init(false)
-    , m_debugMode(false)
+    , m_debugMode(qgetenv("BIBLETIME_DEBUG") == QByteArray("1"))
     , m_icons(nullptr)
 {
     setApplicationName("bibletime");
@@ -51,6 +108,22 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     std::array<wchar_t, 4096u> homeDir;
     GetEnvironmentVariable(TEXT("APPDATA"), homeDir.data(), homeDir.size());
     SetEnvironmentVariable(TEXT("HOME"), homeDir.data());
+    #endif
+
+    // Setup message handler:
+    #ifdef Q_OS_WIN
+    // Use the default Qt message handler if --debug is not specified
+    // This works with Visual Studio debugger Output Window
+    if (showDebugMessages) {
+        debugStream.reset(
+                    new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
+        debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
+        qInstallMessageHandler(myMessageOutput);
+    }
+    #else
+    debugStream.reset(new QFile);
+    debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
+    qInstallMessageHandler(myMessageOutput);
     #endif
 }
 

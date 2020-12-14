@@ -11,10 +11,8 @@
 **********/
 
 #include <iostream>
-#include <memory>
 #include <QDateTime>
 #include <QDesktopServices>
-#include <QFile>
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QQmlEngine>
@@ -62,63 +60,6 @@ void printHelp(const QString &executable) {
                                         " Qt toolkit, see %1.")
                             .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
               << std::endl;
-}
-
-/*******************************************************************************
-  Console messaging.
-*******************************************************************************/
-
-std::unique_ptr<QFile> debugStream;
-
-void myMessageOutput(
-        QtMsgType type,
-        const QMessageLogContext&,
-        const QString& message ) {
-    QByteArray msg = message.toLatin1();
-    switch (type) {
-    case QtDebugMsg:
-        if (btApp->debugMode()) { // Only show messages if they are enabled!
-            debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
-            debugStream->write(msg);
-            debugStream->write("\n");
-            debugStream->flush();
-        }
-        break;
-    case QtInfoMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") INFO: ");
-        debugStream->write(msg);
-        debugStream->write("\n");
-        debugStream->flush();
-        break;
-    case QtWarningMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
-        debugStream->write(msg);
-        debugStream->write("\n");
-        debugStream->flush();
-        break;
-    case QtCriticalMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
-        debugStream->write(msg);
-        debugStream->write("\nPlease report this bug at "
-                           "https://github.com/bibletime/bibletime/issues"
-                           "\n");
-        debugStream->flush();
-        break;
-    case QtFatalMsg:
-        debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
-        debugStream->write(msg);
-        debugStream->write("\nPlease report this bug at "
-                           "https://github.com/bibletime/bibletime/issues"
-                           "\n");
-
-        // Dump core on purpose (see qInstallMsgHandler documentation):
-        debugStream->close();
-        abort();
-    }
-}
-
-inline void installMessageHandler() {
-    qInstallMessageHandler(myMessageOutput);
 }
 
 /*******************************************************************************
@@ -228,21 +169,6 @@ int main(int argc, char* argv[]) {
             return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
         app.setDebugMode(showDebugMessages);
     }
-
-    // Setup debugging:
-#ifdef Q_OS_WIN
-    // Use the default Qt message handler if --debug is not specified
-    // This works with Visual Studio debugger Output Window
-    if (showDebugMessages) {
-        debugStream.reset(new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
-        debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
-        installMessageHandler();
-    }
-#else
-    debugStream.reset(new QFile);
-    debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
-    installMessageHandler();
-#endif
 
     registerMetaTypes();
 
