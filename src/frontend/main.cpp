@@ -69,7 +69,6 @@ void printHelp(const QString &executable) {
 *******************************************************************************/
 
 std::unique_ptr<QFile> debugStream;
-bool showDebugMessages = false;
 
 void myMessageOutput(
         QtMsgType type,
@@ -78,7 +77,7 @@ void myMessageOutput(
     QByteArray msg = message.toLatin1();
     switch (type) {
     case QtDebugMsg:
-        if (showDebugMessages) { // Only show messages if they are enabled!
+        if (btApp->debugMode()) { // Only show messages if they are enabled!
             debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
             debugStream->write(msg);
             debugStream->write("\n");
@@ -135,7 +134,10 @@ inline void installMessageHandler() {
   \retval 0 Parsing was successful.
   \retval 1 Parsing failed, the application should exit with EXIT_FAILURE.
 */
-int parseCommandLine(bool & ignoreSession, QString & openBibleKey) {
+int parseCommandLine(bool & showDebugMessages,
+                     bool & ignoreSession,
+                     QString & openBibleKey)
+{
     QStringList args = BibleTimeApp::arguments();
     for (int i = 1; i < args.size(); i++) {
         const QString &arg = args.at(i);
@@ -218,8 +220,14 @@ int main(int argc, char* argv[]) {
     // Parse command line arguments:
     bool ignoreSession = false;
     QString openBibleKey;
-    if (int const r = parseCommandLine(ignoreSession, openBibleKey))
-        return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
+    {
+        bool showDebugMessages = false;
+        if (int const r = parseCommandLine(showDebugMessages,
+                                           ignoreSession,
+                                           openBibleKey))
+            return r < 0 ? EXIT_SUCCESS : EXIT_FAILURE;
+        app.setDebugMode(showDebugMessages);
+    }
 
     // Setup debugging:
 #ifdef Q_OS_WIN
@@ -243,7 +251,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    app.startInit(showDebugMessages);
+    app.startInit();
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
     }

@@ -31,17 +31,16 @@ class BibleTimeApp : public QApplication {
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
 
-        void startInit(bool const debugMode = false) {
-            m_init = true;
-            m_debugMode = debugMode;
-        }
+        void startInit() { m_init = true; }
 
         bool initBtConfig();
         void initColorManager();
         bool initDisplayTemplateManager();
         void initIcons();
 
-        bool debugMode() const { return m_debugMode; }
+        bool debugMode() const noexcept { return m_debugMode; }
+        void setDebugMode(bool const debugMode) noexcept
+        { m_debugMode = debugMode; }
 
     private: /* Fields: */
 
