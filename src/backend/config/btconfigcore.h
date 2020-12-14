@@ -340,7 +340,6 @@ private: /* Fields: */
     static const QString KEY_CURRENT_SESSION;
     static const QString GROUP_SESSION;
     static const QString KEY_SESSION_NAME;
-    static const QString UI_FONT_SIZE;
 };
 
 #endif // BTCONFIGCORE_H

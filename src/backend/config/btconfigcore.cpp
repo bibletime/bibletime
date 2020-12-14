@@ -20,7 +20,6 @@ const QString BtConfigCore::GROUP_SESSIONS      = "sessions/";
 const QString BtConfigCore::KEY_CURRENT_SESSION = "sessions/currentSession";
 const QString BtConfigCore::GROUP_SESSION       = "sessions/%1/";
 const QString BtConfigCore::KEY_SESSION_NAME    = "sessions/%1/name";
-const QString BtConfigCore::UI_FONT_SIZE        = "ui/fontSize";
 
 
 BtConfigCore::BtConfigCore(const QString & settingsFile)
