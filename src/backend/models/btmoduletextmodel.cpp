@@ -218,7 +218,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             int column = getColumnFromRole(role);
             CSwordModuleInfo const * module;
             if ((column + 1) > m_moduleInfoList.count())
-                module = m_moduleInfoList.at(0);
+                return "";
             else
                 module = m_moduleInfoList.at(column);
             modules.append(module);
