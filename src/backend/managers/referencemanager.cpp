@@ -55,33 +55,9 @@ QString ReferenceManager::encodeHyperlink(QString const & moduleName,
                 ret.append(c);
             }
         }
+    } else { // Slashes do not appear in verses and dictionary entries:
+        ret.append(key);
     }
-    else { //slashes do not appear in verses and dictionary entries
-
-        switch (type) {
-
-            case Bible: //bibles or commentary keys need parsing
-
-            case Commentary: {
-                /*                  CSwordModuleInfo* mod = CSwordBackend::instance()()->findModuleByName(moduleName);
-
-                                  ParseOptions options;
-                                  options.refDestinationModule = mod->name();
-                                  options.refBase =
-                                  options.sourceLanguage = mod->module()->Lang();
-                                  options.destinationLanguage = "en";
-
-                                ret.append( parseVerseReference(key, options) ); //we add the english key, so drag and drop will work in all cases*/
-                ret.append(key);
-                break;
-            }
-
-            default:
-                ret.append( key ); //use the standard key, no parsing required
-                break;
-        }
-    }
-
     return ret;
 }
 
