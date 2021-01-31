@@ -24,6 +24,23 @@
 #include "cswordbackend.h"
 
 
+namespace {
+
+template <typename Prefix>
+bool removeCaseInsensitivePrefix(QString & str, Prefix && prefix) {
+    using Prefix_ = std::remove_reference_t<Prefix>;
+    static_assert(std::is_array_v<Prefix_>);
+    static_assert(std::extent_v<Prefix_> > 0u);
+    static_assert(std::is_same_v<char const, std::remove_extent_t<Prefix_>>);
+    if (str.startsWith(prefix, Qt::CaseInsensitive)) {
+        str = str.mid(sizeof(prefix) - 1u);
+        return true;
+    }
+    return false;
+}
+
+} // anonymous namespace
+
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
 QString ReferenceManager::encodeHyperlink(QString const & moduleName,
                                           QString const & key,
@@ -79,21 +96,15 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
         ref.chop(1);
 
     //find out which type we have by looking at the beginning (protocoll section of URL)
-    if (ref.left(8).toLower() == "sword://") { //Bible, Commentary or Lexicon
-        ref = ref.mid(8);
-
-        if (ref.left(6).toLower() == "bible/") {
+    if (removeCaseInsensitivePrefix(ref, "sword://")) { //Bible, Commentary or Lexicon
+        if (removeCaseInsensitivePrefix(ref, "bible/")) {
             type = ReferenceManager::Bible;
-            ref = ref.mid(6); //inclusive trailing slash
-        } else if (ref.left(11).toLower() == "commentary/") {
+        } else if (removeCaseInsensitivePrefix(ref, "commentary/")) {
             type = ReferenceManager::Commentary;
-            ref = ref.mid(11); //inclusive trailing slash
-        } else if (ref.left(8).toLower() == "lexicon/") {
+        } else if (removeCaseInsensitivePrefix(ref, "lexicon/")) {
             type = ReferenceManager::Lexicon;
-            ref = ref.mid(8); //inclusive trailing slash
-        } else if (ref.left(5).toLower() == "book/") {
+        } else if (removeCaseInsensitivePrefix(ref, "book/")) {
             type = ReferenceManager::GenericBook;
-            ref = ref.mid(5); //inclusive trailing slash
         }
 
         // string up to next slash is the modulename
@@ -134,12 +145,9 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
     else if (ref.left(8).toLower() == "morph://" || ref.left(10).toLower() == "strongs://") { //strongs or morph URL have the same format
         enum { IsMorph, IsStrongs } preType = IsMorph;
 
-        if (ref.left(8).toLower() == "morph://") { //morph code hyperlink
-            ref = ref.mid(8);
+        if (removeCaseInsensitivePrefix(ref, "morph://")) {
             preType = IsMorph;
-        }
-        else if (ref.left(10).toLower() == "strongs://") {
-            ref = ref.mid(10);
+        } else if (removeCaseInsensitivePrefix(ref, "strongs://")) {
             preType = IsStrongs;
         }
 
