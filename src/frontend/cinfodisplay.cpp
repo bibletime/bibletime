@@ -75,10 +75,11 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                    QString module;
                    QString keyName;
                    ReferenceManager::Type type;
-                   ReferenceManager::decodeHyperlink(url.toString(),
-                                                     module,
-                                                     keyName,
-                                                     type);
+                   if (!ReferenceManager::decodeHyperlink(url.toString(),
+                                                          module,
+                                                          keyName,
+                                                          type))
+                       return;
                    if (module.isEmpty())
                        module = ReferenceManager::preferredModule( type );
 
