@@ -132,64 +132,42 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
     }
 
     case AnchorOnly: {
-        QString moduleName;
-        QString keyName;
-        ReferenceManager::Type type;
-        if (ReferenceManager::decodeHyperlink(activeAnchor(),
-                                              moduleName,
-                                              keyName,
-                                              type))
-            return keyName;
+        if (auto const decodedLink =
+                    ReferenceManager::decodeHyperlink(activeAnchor()))
+            return decodedLink->key;
         return {};
     }
 
     case AnchorTextOnly: {
-        QString moduleName;
-        QString keyName;
-        ReferenceManager::Type type;
-        if (ReferenceManager::decodeHyperlink(activeAnchor(),
-                                              moduleName,
-                                              keyName,
-                                              type))
-        {
-            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-                key->setKey(keyName);
-
-                return key->strippedText();
-            }
+        auto const decodedLink(
+                    ReferenceManager::decodeHyperlink(activeAnchor()));
+        if (decodedLink && decodedLink->module) {
+            std::unique_ptr<CSwordKey> key(
+                        CSwordKey::createInstance(decodedLink->module));
+            key->setKey(decodedLink->key);
+            return key->strippedText();
         }
-        return QString();
+        return {};
     }
 
     case AnchorWithText: {
-        QString moduleName;
-        QString keyName;
-        ReferenceManager::Type type;
-        if (ReferenceManager::decodeHyperlink(activeAnchor(),
-                                              moduleName,
-                                              keyName,
-                                              type))
-        {
-            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
-                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-                key->setKey(keyName);
+        auto const decodedLink(
+                    ReferenceManager::decodeHyperlink(activeAnchor()));
+        if (decodedLink && decodedLink->module) {
+            std::unique_ptr<CSwordKey> key(
+                        CSwordKey::createInstance(decodedLink->module));
+            key->setKey(decodedLink->key);
 
-                FilterOptions filterOptions;
-                CSwordBackend::instance()->setFilterOptions(filterOptions);
+            FilterOptions filterOptions;
+            CSwordBackend::instance()->setFilterOptions(filterOptions);
 
-                return QString(key->strippedText()).append("\n(")
-                        .append(key->key())
-                        .append(", ")
-                        .append(key->module()->name())
-                        .append(")");
-                /*    ("%1\n(%2, %3)")
-                        .arg()
-                        .arg(key->key())
-                        .arg(key->module()->name());*/
-            }
+            return QString(key->strippedText()).append("\n(")
+                    .append(key->key())
+                    .append(", ")
+                    .append(key->module()->name())
+                    .append(")");
         }
-        return QString();
+        return {};
     }
     default:
         break;

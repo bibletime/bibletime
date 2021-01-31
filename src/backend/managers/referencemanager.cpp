@@ -63,78 +63,84 @@ QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
     return ret;
 }
 
-/** Decodes the given hyperlink to module and key. */
-bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& module, QString& key, ReferenceManager::Type& type ) {
-    /**
-    * We have to decide between three types of URLS: sword://Type/Module/Key, morph://Testament/key and strongs://Testament/Key
+/** Decodes the given hyperlink. */
+std::optional<ReferenceManager::DecodedHyperlink>
+ReferenceManager::decodeHyperlink(QString const & hyperlink) {
+    /*
+       The following types of URLs are supported:
+         sword://bible/<module>/<key>
+         sword://commentary/<module>/<key>
+         sword://lexicon/<module>/<key>
+         sword://book/<module>/<key>
+         morph://hebrew/<key>
+         morph://greek/<key>
+         strongs://hebrew/<key>
+         strongs://greek/<key>
+       where <module> is the name of a module and <key> is any non-empty string.
+       If <module> is empty, or not present, the preferred module is returned
+       (if present).
     */
-    module = QString();
-    key = QString();
 
-    type = Unknown; //not yet known
     QStringRef ref(&hyperlink);
 
 
-    //find out which type we have by looking at the beginning (protocoll section of URL)
+    DecodedHyperlink ret;
+    int slashPos; // position of the last parsed slash
     if (removeCaseInsensitivePrefix(ref, "sword://")) { //Bible, Commentary or Lexicon
         if (removeCaseInsensitivePrefix(ref, "bible/")) {
-            type = ReferenceManager::Bible;
+            ret.type = ReferenceManager::Bible;
         } else if (removeCaseInsensitivePrefix(ref, "commentary/")) {
-            type = ReferenceManager::Commentary;
+            ret.type = ReferenceManager::Commentary;
         } else if (removeCaseInsensitivePrefix(ref, "lexicon/")) {
-            type = ReferenceManager::Lexicon;
+            ret.type = ReferenceManager::Lexicon;
         } else if (removeCaseInsensitivePrefix(ref, "book/")) {
-            type = ReferenceManager::GenericBook;
+            ret.type = ReferenceManager::GenericBook;
+        } else {
+            return {};
         }
 
         // string up to next slash is the modulename
-        if (ref.at(0) != '/' ) { //we have a module given
-
-            auto const slashPos = ref.indexOf('/');
-            if (slashPos < 0) // if key is empty
-                return false;
-            if (slashPos == 0)
-                module = preferredModule(type);
-
-            // the rest is the key
-            key = ref.toString();
-        }
-        else {
-            key = ref.mid(1).toString();
+        slashPos = ref.indexOf('/');
+        if (slashPos < 0) // if key is empty
+            return {};
+        if (slashPos == 0) {
+            ret.module = preferredModule(ret.type);
+        } else { // We have a module given
+            ret.module = CSwordBackend::instance()->findModuleByName(
+                             ref.left(slashPos).toString());
+            if (!ret.module)
+                ret.module = preferredModule(ret.type);
         }
     } else {
-        auto const handleMorphOrStrongs =
-                [&ref, &key, &module, &type](Type const hebrewType,
-                                             Type const greekType)
-                {
-                    //part up to next slash is the language
-                    auto const pos = ref.indexOf("/");
-                    if (pos > 0) { //found
-                        auto const language(ref.left(pos).toString().toLower());
-
-                        if (language == "hebrew") {
-                            type = hebrewType;
-                        } else if (language == "greek") {
-                            type = greekType;
-                        } /// \bug or else?
-
-                        // the remaining part is the key:
-                        key = ref.mid(pos + 1).toString();
-                        module = preferredModule(type);
-                    } /// \bug or else?
-                };
-
+        struct { Type hebrew; Type greek; } types;
         if (removeCaseInsensitivePrefix(ref, "morph://")) {
-            handleMorphOrStrongs(MorphHebrew, MorphGreek);
+            types = {MorphHebrew, MorphGreek};
         } else if (removeCaseInsensitivePrefix(ref, "strongs://")) {
-            handleMorphOrStrongs(StrongsHebrew, StrongsGreek);
-        } /// \bug or else?
+            types = {StrongsHebrew, StrongsGreek};
+        } else {
+            return {};
+        }
+
+        // Part up to next slash is the language:
+        slashPos = ref.indexOf('/');
+        if (slashPos <= 0) // if language or key is empty (0 or -1)
+            return {};
+        auto const language(ref.left(slashPos).toString().toLower());
+        if (language == "hebrew") {
+            ret.type = types.hebrew;
+        } else if (language == "greek") {
+            ret.type = types.greek;
+        } else {
+            return {};
+        }
+
+        ret.module = preferredModule(ret.type);
     }
-
-    if (key.isEmpty() && module.isEmpty())
-        return false;
-
-    return true;
+    ref = ref.mid(slashPos + 1); // The remaining part is the key
+    if (ref.isEmpty()) // require non-empty key
+        return {};
+    ret.key = ref.toString();
+    return ret;
 }
 
 /** Returns true if the parameter is a hyperlink. */

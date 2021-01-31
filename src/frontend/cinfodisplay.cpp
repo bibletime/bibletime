@@ -72,22 +72,15 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                        || !ReferenceManager::isHyperlink(url.toString()))
                        return;
 
-                   QString module;
-                   QString keyName;
-                   ReferenceManager::Type type;
-                   if (!ReferenceManager::decodeHyperlink(url.toString(),
-                                                          module,
-                                                          keyName,
-                                                          type))
+                   auto const decodedLink(
+                               ReferenceManager::decodeHyperlink(
+                                   url.toString()));
+                   if (!decodedLink && !decodedLink->module)
                        return;
-                   if (module.isEmpty())
-                       module = ReferenceManager::preferredModule( type );
 
-                   auto const * m =
-                           CSwordBackend::instance()->findModuleByName(module);
-                   BT_ASSERT(m);
+                   auto const * const m = decodedLink->module;
                    std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(m));
-                   key->setKey(keyName);
+                   key->setKey(decodedLink->key);
 
                    setInfo(key->renderedText(), m->language()->abbrev());
                });

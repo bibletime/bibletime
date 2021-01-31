@@ -304,23 +304,14 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
                                       DisplayOptions const & displayOptions,
                                       FilterOptions const & filterOptions)
 {
-    QString moduleName;
-    QString keyName;
-    ReferenceManager::Type type;
-    if (!ReferenceManager::decodeHyperlink(hyperlink,
-                                           moduleName,
-                                           keyName,
-                                           type))
+    auto const decodedLink(ReferenceManager::decodeHyperlink(hyperlink));
+    if (!decodedLink && !decodedLink->module)
         return false;
-    if (moduleName.isEmpty())
-        moduleName = ReferenceManager::preferredModule(type);
+    auto const * const module = decodedLink->module;
+    auto const & keyName = decodedLink->key;
 
     BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     PrintSettings settings{displayOptions};
-    CSwordModuleInfo const * module =
-            CSwordBackend::instance()->findModuleByName(moduleName);
-    if (!module)
-        return false;
     //check if we have a range of entries or a single one
     if ((module->type() == CSwordModuleInfo::Bible)
         || (module->type() == CSwordModuleInfo::Commentary))

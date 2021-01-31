@@ -14,6 +14,7 @@
 #define REFERENCEMANAGER_H
 
 #include <QString>
+#include <optional>
 #include "../drivers/cswordmoduleinfo.h"
 
 
@@ -33,6 +34,12 @@ enum Type {
     StrongsGreek, /**< Module for greek strongs */
 };
 
+struct DecodedHyperlink {
+    Type type;
+    CSwordModuleInfo * module;
+    QString key;
+};
+
 /** Turn a hyperlink into module, key and type.
 * Decodes the given hyperlink into module, key and type.
 * @param hyperlink The hyperlink to decode
@@ -40,8 +47,8 @@ enum Type {
 * @param key The string which will contain the key after decoding
 * @param type The type param will contain the reference type after decoding
 */
-[[nodiscard]]
-bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, Type& type);
+std::optional<DecodedHyperlink> decodeHyperlink(QString const & hyperlink);
+
 /**
 * Returns a hyperlink used to be embedded in the display windows.
 * At the moment the format is sword://module/key
