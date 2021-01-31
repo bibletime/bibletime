@@ -146,17 +146,17 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
                             type = hebrewType;
                         } else if (language == "greek") {
                             type = greekType;
-                        }
+                        } /// \bug or else?
                         key = ref.mid(pos + 1); // the remaining part is the key
                         module = preferredModule(type);
-                    }
+                    } /// \bug or else?
                 };
 
         if (removeCaseInsensitivePrefix(ref, "morph://")) {
             handleMorphOrStrongs(MorphHebrew, MorphGreek);
         } else if (removeCaseInsensitivePrefix(ref, "strongs://")) {
             handleMorphOrStrongs(StrongsHebrew, StrongsGreek);
-        }
+        } /// \bug or else?
     }
 
     if (key.isEmpty() && module.isEmpty())
