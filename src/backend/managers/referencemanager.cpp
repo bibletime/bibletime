@@ -64,20 +64,7 @@ QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
     auto ret(initRet(type).append(moduleName.isEmpty()
                                   ? preferredModule(type) // fallback
                                   : moduleName).append('/'));
-    if (type == GenericBook) {
-        /* Replace all / of the key (e.g. of a CSwordTreeKey) with the escape
-           sequence \/ so we know it's a link internal divider (e.g. of
-           CSwordTreeKey): */
-        for (auto const c : key) {
-            if (c == '/') {
-                ret.append("\\/");
-            } else {
-                ret.append(c);
-            }
-        }
-    } else { // Slashes do not appear in verses and dictionary entries:
-        ret.append(key);
-    }
+    ret.append(key);
     return ret;
 }
 
@@ -92,9 +79,6 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
     type = Unknown; //not yet known
     QStringRef ref(&hyperlink);
 
-    // Remove the trailing slash (unless escaped):
-    if (ref.endsWith('/') && !ref.endsWith("\\/"))
-        ref.chop(1);
 
     //find out which type we have by looking at the beginning (protocoll section of URL)
     if (removeCaseInsensitivePrefix(ref, "sword://")) { //Bible, Commentary or Lexicon
@@ -111,18 +95,11 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
         // string up to next slash is the modulename
         if (ref.at(0) != '/' ) { //we have a module given
 
-            while (true) {
-                const int pos = ref.indexOf("/");
-
-                if ((pos > 0) && ref.at(pos - 1) != '\\') { //found a slash which is not escaped
-                    module = ref.mid(0, pos).toString();
-                    ref = ref.mid(pos + 1);
-                    break;
-                }
-                else if (pos == -1) {
-                    break;
-                }
-            }
+            auto const slashPos = ref.indexOf('/');
+            if (slashPos < 0) // if key is empty
+                return false;
+            if (slashPos == 0)
+                module = preferredModule(type);
 
             // the rest is the key
             key = ref.toString();
@@ -130,9 +107,6 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
         else {
             key = ref.mid(1).toString();
         }
-
-        //replace \/ escapes with /
-        key.replace(QRegExp("\\\\/"), "/");
     } else {
         auto const handleMorphOrStrongs =
                 [&ref, &key, &module, &type](Type const hebrewType,
