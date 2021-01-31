@@ -64,12 +64,6 @@ QString encodeHyperlink(CSwordModuleInfo const & module, QString const & key);
 * @return True if the passed string is a hyperlink
 */
 bool isHyperlink( const QString& hyperlink );
-/**
-* Returns the preferred module name for the given type.
-* @param type The type which is used to find the module
-* @return The default module name for the passed type
-*/
-QString preferredModule(Type const type);
 
 struct ParseOptions {
 

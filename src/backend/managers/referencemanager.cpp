@@ -83,6 +83,24 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
 
     QStringRef ref(&hyperlink);
 
+    static auto const preferredModule =
+            [](ReferenceManager::Type const type) -> CSwordModuleInfo * {
+                char const * typeStr;
+                switch (type) {
+                    #define RET_CASE(t,str) \
+                        case t: typeStr = "standard" str; break;
+                    RET_CASE(Bible, "Bible");
+                    RET_CASE(Commentary, "Commentary");
+                    RET_CASE(Lexicon, "Lexicon");
+                    RET_CASE(StrongsHebrew, "HebrewStrongsLexicon");
+                    RET_CASE(StrongsGreek, "GreekStrongsLexicon");
+                    RET_CASE(MorphHebrew, "HebrewMorphLexicon");
+                    RET_CASE(MorphGreek, "GreekMorphLexicon");
+                    #undef RET_CASE
+                    case Unknown: default: return nullptr;
+                }
+                return btConfig().getDefaultSwordModuleByType(typeStr);
+            };
 
     DecodedHyperlink ret;
     int slashPos; // position of the last parsed slash
@@ -148,30 +166,6 @@ bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
     return hyperlink.startsWith("sword://")
            || hyperlink.startsWith("strongs://")
            || hyperlink.startsWith("morph://");
-}
-
-/** Returns the preferred module name for the given type. */
-QString ReferenceManager::preferredModule(ReferenceManager::Type const type) {
-    static auto const getModuleTypeString =
-            [](ReferenceManager::Type const type) -> char const * {
-                switch (type) {
-                    #define RET_CASE(t,str) \
-                        case ReferenceManager::t: return "standard" str
-                    RET_CASE(Bible, "Bible");
-                    RET_CASE(Commentary, "Commentary");
-                    RET_CASE(Lexicon, "Lexicon");
-                    RET_CASE(StrongsHebrew, "HebrewStrongsLexicon");
-                    RET_CASE(StrongsGreek, "GreekStrongsLexicon");
-                    RET_CASE(MorphHebrew, "HebrewMorphLexicon");
-                    RET_CASE(MorphGreek, "GreekMorphLexicon");
-                    #undef RET_CASE
-                    default: return nullptr;
-                }
-            };
-    if (auto const typeStr = getModuleTypeString(type))
-        if (auto const module = btConfig().getDefaultSwordModuleByType(typeStr))
-            return module->name();
-    return {};
 }
 
 /** Parses the given verse references using the given language and the module.*/
