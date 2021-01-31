@@ -43,11 +43,6 @@ public:
                const DisplayOptions &displayOptions,
                const FilterOptions &filterOptions) override;
 
-    void setMouseTracking(bool const trackingEnabled)
-    { m_useMouseTracking = trackingEnabled; }
-
-    bool getMouseTracking() const { return m_useMouseTracking; }
-
 protected: // Protected methods
 
     friend class BtHtmlJsObject;
@@ -66,7 +61,6 @@ private: // Public attributes
 
     QString m_activeAnchor;
 
-    bool m_useMouseTracking;
 };
 
 #endif
