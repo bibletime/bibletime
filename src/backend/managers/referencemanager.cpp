@@ -198,37 +198,26 @@ bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
 
 /** Returns the preferred module name for the given type. */
 QString ReferenceManager::preferredModule(ReferenceManager::Type const type) {
-    CSwordModuleInfo* module = nullptr;
-
-    switch (type) {
-
-        case ReferenceManager::Bible:
-            module = btConfig().getDefaultSwordModuleByType( "standardBible" );
-            break;
-        case ReferenceManager::Commentary:
-            module = btConfig().getDefaultSwordModuleByType( "standardCommentary" );
-            break;
-        case ReferenceManager::Lexicon:
-            module = btConfig().getDefaultSwordModuleByType( "standardLexicon" );
-            break;
-        case ReferenceManager::StrongsHebrew:
-            module = btConfig().getDefaultSwordModuleByType( "standardHebrewStrongsLexicon" );
-            break;
-        case ReferenceManager::StrongsGreek:
-            module = btConfig().getDefaultSwordModuleByType( "standardGreekStrongsLexicon" );
-            break;
-        case ReferenceManager::MorphHebrew:
-            module = btConfig().getDefaultSwordModuleByType( "standardHebrewMorphLexicon" );
-            break;
-        case ReferenceManager::MorphGreek:
-            module = btConfig().getDefaultSwordModuleByType( "standardGreekMorphLexicon" );
-            break;
-        default:
-            module = nullptr;
-            break;
-    }
-
-    return module ? module->name() : QString();
+    static auto const getModuleTypeString =
+            [](ReferenceManager::Type const type) -> char const * {
+                switch (type) {
+                    #define RET_CASE(t,str) \
+                        case ReferenceManager::t: return "standard" str
+                    RET_CASE(Bible, "Bible");
+                    RET_CASE(Commentary, "Commentary");
+                    RET_CASE(Lexicon, "Lexicon");
+                    RET_CASE(StrongsHebrew, "HebrewStrongsLexicon");
+                    RET_CASE(StrongsGreek, "GreekStrongsLexicon");
+                    RET_CASE(MorphHebrew, "HebrewMorphLexicon");
+                    RET_CASE(MorphGreek, "GreekMorphLexicon");
+                    #undef RET_CASE
+                    default: return nullptr;
+                }
+            };
+    if (auto const typeStr = getModuleTypeString(type))
+        if (auto const module = btConfig().getDefaultSwordModuleByType(typeStr))
+            return module->name();
+    return {};
 }
 
 /** No descriptions */
