@@ -397,7 +397,7 @@ QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes opti
     return QString();
 }
 
-const QString CSwordBackend::booknameLanguage(const QString & language) {
+QString CSwordBackend::booknameLanguage(QString const & language) {
     if (!language.isEmpty()) {
         sword::LocaleMgr::getSystemLocaleMgr()->setDefaultLocaleName(language.toUtf8().constData());
 
