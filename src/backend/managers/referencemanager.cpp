@@ -27,45 +27,23 @@ QString ReferenceManager::encodeHyperlink(QString const & moduleName,
                                           QString const & key,
                                           ReferenceManager::Type const type)
 {
-    QString ret = QString();
-
-    switch (type) {
-
-        case Bible:
-            ret = QString("sword://Bible/");
-            break;
-        case Commentary:
-            ret = QString("sword://Commentary/");
-            break;
-        case Lexicon:
-            ret = QString("sword://Lexicon/");
-            break;
-        case GenericBook:
-            ret = QString("sword://Book/");
-            break;
-        case MorphHebrew:
-            ret = QString("morph://Hebrew/");
-            break;
-        case MorphGreek:
-            ret = QString("morph://Greek/");
-            break;
-        case StrongsHebrew:
-            ret = QString("strongs://Hebrew/");
-            break;
-        case StrongsGreek:
-            ret = QString("strongs://Greek/");
-            break;
-        default:
-            break;
-    }
-
-    if (!moduleName.isEmpty()) {
-        ret.append( moduleName ).append('/');
-    }
-    else { //if module is empty use fallback module
-        ret.append( preferredModule(type) ).append('/');
-    }
-
+    static auto const initRet =
+            [](ReferenceManager::Type const type) -> QString {
+                switch (type) {
+                    case Bible:         return "sword://Bible/";
+                    case Commentary:    return "sword://Commentary/";
+                    case Lexicon:       return "sword://Lexicon/";
+                    case GenericBook:   return "sword://Book/";
+                    case MorphHebrew:   return "morph://Hebrew/";
+                    case MorphGreek:    return "morph://Greek/";
+                    case StrongsHebrew: return "strongs://Hebrew/";
+                    case StrongsGreek:  return "strongs://Greek/";
+                    default: return {};
+                }
+            };
+    auto ret(initRet(type).append(moduleName.isEmpty()
+                                  ? preferredModule(type) // fallback
+                                  : moduleName).append('/'));
     if (type == GenericBook) {
         const QString s = (!key.isEmpty() ? key : QString());
         QString newKey = QString();
