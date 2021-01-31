@@ -27,13 +27,13 @@
 namespace {
 
 template <typename Prefix>
-bool removeCaseInsensitivePrefix(QString & str, Prefix && prefix) {
+bool removeCaseInsensitivePrefix(QStringRef & ref, Prefix && prefix) {
     using Prefix_ = std::remove_reference_t<Prefix>;
     static_assert(std::is_array_v<Prefix_>);
     static_assert(std::extent_v<Prefix_> > 0u);
     static_assert(std::is_same_v<char const, std::remove_extent_t<Prefix_>>);
-    if (str.startsWith(prefix, Qt::CaseInsensitive)) {
-        str = str.mid(sizeof(prefix) - 1u);
+    if (ref.startsWith(prefix, Qt::CaseInsensitive)) {
+        ref = ref.mid(sizeof(prefix) - 1u);
         return true;
     }
     return false;
@@ -89,7 +89,7 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
     key = QString();
 
     type = Unknown; //not yet known
-    QString ref = hyperlink;
+    QStringRef ref(&hyperlink);
 
     // Remove the trailing slash (unless escaped):
     if (ref.endsWith('/') && !ref.endsWith("\\/"))
@@ -114,7 +114,7 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
                 const int pos = ref.indexOf("/");
 
                 if ((pos > 0) && ref.at(pos - 1) != '\\') { //found a slash which is not escaped
-                    module = ref.mid(0, pos);
+                    module = ref.mid(0, pos).toString();
                     ref = ref.mid(pos + 1);
                     break;
                 }
@@ -124,10 +124,10 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
             }
 
             // the rest is the key
-            key = ref;
+            key = ref.toString();
         }
         else {
-            key = ref.mid(1);
+            key = ref.mid(1).toString();
         }
 
         //replace \/ escapes with /
@@ -140,14 +140,16 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
                     //part up to next slash is the language
                     auto const pos = ref.indexOf("/");
                     if (pos > 0) { //found
-                        auto const language(ref.left(pos).toLower());
+                        auto const language(ref.left(pos).toString().toLower());
 
                         if (language == "hebrew") {
                             type = hebrewType;
                         } else if (language == "greek") {
                             type = greekType;
                         } /// \bug or else?
-                        key = ref.mid(pos + 1); // the remaining part is the key
+
+                        // the remaining part is the key:
+                        key = ref.mid(pos + 1).toString();
                         module = preferredModule(type);
                     } /// \bug or else?
                 };
