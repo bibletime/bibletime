@@ -135,8 +135,7 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
         key.replace(QRegExp("\\\\/"), "/");
     }
     else if (ref.left(8).toLower() == "morph://" || ref.left(10).toLower() == "strongs://") { //strongs or morph URL have the same format
-        enum PreType {IsMorph, IsStrongs};
-        PreType preType = IsMorph;
+        enum { IsMorph, IsStrongs } preType = IsMorph;
 
         if (ref.left(8).toLower() == "morph://") { //morph code hyperlink
             ref = ref.mid(8);
