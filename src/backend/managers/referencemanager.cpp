@@ -161,13 +161,6 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
     return ret;
 }
 
-/** Returns true if the parameter is a hyperlink. */
-bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
-    return hyperlink.startsWith("sword://")
-           || hyperlink.startsWith("strongs://")
-           || hyperlink.startsWith("morph://");
-}
-
 /** Parses the given verse references using the given language and the module.*/
 QString ReferenceManager::parseVerseReference(
         QString const & ref,

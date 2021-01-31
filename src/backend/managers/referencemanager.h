@@ -58,13 +58,6 @@ std::optional<DecodedHyperlink> decodeHyperlink(QString const & hyperlink);
 */
 QString encodeHyperlink(CSwordModuleInfo const & module, QString const & key);
 
-/**
-* Returns true if the parameter is a hyperlink.
-* @param hyperlink The string which is tested
-* @return True if the passed string is a hyperlink
-*/
-bool isHyperlink( const QString& hyperlink );
-
 struct ParseOptions {
 
 /* Methods: */
