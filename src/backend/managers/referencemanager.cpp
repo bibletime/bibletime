@@ -141,50 +141,30 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
 
         //replace \/ escapes with /
         key.replace(QRegExp("\\\\/"), "/");
-    }
-    else if (ref.left(8).toLower() == "morph://" || ref.left(10).toLower() == "strongs://") { //strongs or morph URL have the same format
-        enum { IsMorph, IsStrongs } preType = IsMorph;
+    } else {
+        auto const handleMorphOrStrongs =
+                [&ref, &key, &module, &type](Type const hebrewType,
+                                             Type const greekType)
+                {
+                    //part up to next slash is the language
+                    auto const pos = ref.indexOf("/");
+                    if (pos > 0) { //found
+                        auto const language(ref.left(pos).toLower());
+
+                        if (language == "hebrew") {
+                            type = hebrewType;
+                        } else if (language == "greek") {
+                            type = greekType;
+                        }
+                        key = ref.mid(pos + 1); // the remaining part is the key
+                        module = preferredModule(type);
+                    }
+                };
 
         if (removeCaseInsensitivePrefix(ref, "morph://")) {
-            preType = IsMorph;
+            handleMorphOrStrongs(MorphHebrew, MorphGreek);
         } else if (removeCaseInsensitivePrefix(ref, "strongs://")) {
-            preType = IsStrongs;
-        }
-
-        //part up to next slash is the language
-        const int pos = ref.indexOf("/");
-
-        if (pos > 0) { //found
-            auto const language(ref.mid(0, pos).toLower());
-
-            if (language == "hebrew") {
-                switch (preType) {
-
-                    case IsMorph:
-                        type = ReferenceManager::MorphHebrew;
-                        break;
-
-                    case IsStrongs:
-                        type = ReferenceManager::StrongsHebrew;
-                        break;
-                }
-            }
-            else if (language == "greek") {
-                switch (preType) {
-
-                    case IsMorph:
-                        type = ReferenceManager::MorphGreek;
-                        break;
-
-                    case IsStrongs:
-                        type = ReferenceManager::StrongsGreek;
-                        break;
-                }
-            }
-
-            key = ref.mid(pos + 1); // the remaining part is the key
-
-            module = preferredModule(type);
+            handleMorphOrStrongs(StrongsHebrew, StrongsGreek);
         }
     }
 
