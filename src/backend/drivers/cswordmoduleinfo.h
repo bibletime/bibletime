@@ -85,11 +85,11 @@ public: /* Types: */
 
     /** The module type. */
     enum ModuleType {
+        Unknown, /**< Fall back type for unknown modules */
         Bible, /**< Bible module */
         Commentary, /**< Commentary module */
         Lexicon, /**< Lexicon module */
         GenericBook, /**< Generic book module */
-        Unknown /**< Fall back type for unknown modules */
     };
 
     /**
