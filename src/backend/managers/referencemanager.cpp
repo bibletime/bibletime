@@ -309,8 +309,10 @@ ReferenceManager::Type ReferenceManager::typeFromModule( const CSwordModuleInfo:
 }
 
 /** Parses the given verse references using the given language and the module.*/
-const QString ReferenceManager::parseVerseReference( const QString& ref, const ReferenceManager::ParseOptions& options) {
-
+QString ReferenceManager::parseVerseReference(
+        QString const & ref,
+        ReferenceManager::ParseOptions const & options)
+{
     CSwordModuleInfo* const mod = CSwordBackend::instance()->findModuleByName(options.refDestinationModule);
     //BT_ASSERT(mod); tested later
 
