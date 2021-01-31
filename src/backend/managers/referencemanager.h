@@ -63,7 +63,6 @@ struct ParseOptions {
     /* The following are only valid for verse-based destination modules: */
     QString refBase;
     QString sourceLanguage;
-    QString destinationLanguage{"en"};
 };
 
 /** Parses the given verse references using the given language and the module.

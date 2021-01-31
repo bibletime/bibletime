@@ -180,16 +180,18 @@ QString ReferenceManager::parseVerseReference(
     }
 
     QString sourceLanguage = options.sourceLanguage;
-    QString destinationLanguage = options.destinationLanguage;
 
     sword::StringList locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
     if (/*options.sourceLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage.toUtf8().constData()) == locales.end()) { //sourceLanguage not available
         sourceLanguage = "en_US";
     }
 
-    if (/*options.destinationLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage.toUtf8().constData()) == locales.end()) { //destination not available
-        destinationLanguage = "en_US";
-    }
+    auto const * const destinationLanguage =
+            std::find(locales.begin(),
+                      locales.end(),
+                      sourceLanguage.toUtf8().constData()) == locales.end()
+            ? "en_US"
+            : "en";
 
     QString ret;
     QStringList refList = ref.split(";");
@@ -225,7 +227,7 @@ QString ReferenceManager::parseVerseReference(
             if (dynamic_cast<sword::VerseKey*>(lk.getElement(i))) { // a range
                 sword::VerseKey* k = dynamic_cast<sword::VerseKey*>(lk.getElement(i));
                 BT_ASSERT(k);
-                k->setLocale( destinationLanguage.toUtf8().constData() );
+                k->setLocale(destinationLanguage);
 
                 ret.append( QString::fromUtf8(k->getRangeText()) ).append("; ");
             }
@@ -233,7 +235,7 @@ QString ReferenceManager::parseVerseReference(
                 sword::VerseKey vk;
                 vk.setLocale( sourceLanguage.toUtf8().constData() );
                 vk = lk.getElement(i)->getText();
-                vk.setLocale( destinationLanguage.toUtf8().constData() );
+                vk.setLocale(destinationLanguage);
 
                 ret.append( QString::fromUtf8(vk.getText()) ).append("; ");
             }
