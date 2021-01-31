@@ -49,11 +49,7 @@ QString ReferenceManager::encodeHyperlink(QString const & moduleName,
         //replace all / of the key (e.g. of a CSwordTreeKey) with
         // the escape sequence \/ so we know it's a link internal divider (e.g. of CSwordTreeKey)!
 
-        QChar c;
-
-        for (int i = 0; i < key.length(); ++i) {
-            c = key.at(i);
-
+        for (auto const c : key) {
             if (c == '/') {
                 newKey.append("\\/");
             }
