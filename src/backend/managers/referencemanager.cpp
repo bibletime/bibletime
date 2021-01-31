@@ -252,7 +252,7 @@ bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
 }
 
 /** Returns the preferred module name for the given type. */
-const QString ReferenceManager::preferredModule( const ReferenceManager::Type type ) {
+QString ReferenceManager::preferredModule(ReferenceManager::Type const type) {
     QString moduleName = QString();
     CSwordModuleInfo* module = nullptr;
 

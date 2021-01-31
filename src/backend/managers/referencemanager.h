@@ -64,7 +64,7 @@ bool isHyperlink( const QString& hyperlink );
 * @param type The type which is used to find the module
 * @return The default module name for the passed type
 */
-const QString preferredModule( const Type type );
+QString preferredModule(Type const type);
 /**
 * Returns the type of the passed module type
 * @param type The CSwordModuleInfo module typpe
