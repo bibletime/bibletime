@@ -45,15 +45,14 @@ QString ReferenceManager::encodeHyperlink(QString const & moduleName,
                                   ? preferredModule(type) // fallback
                                   : moduleName).append('/'));
     if (type == GenericBook) {
-        const QString s = (!key.isEmpty() ? key : QString());
         QString newKey = QString();
         //replace all / of the key (e.g. of a CSwordTreeKey) with
         // the escape sequence \/ so we know it's a link internal divider (e.g. of CSwordTreeKey)!
 
         QChar c;
 
-        for (int i = 0; i < s.length(); ++i) {
-            c = s.at(i);
+        for (int i = 0; i < key.length(); ++i) {
+            c = key.at(i);
 
             if (c == '/') {
                 newKey.append("\\/");
