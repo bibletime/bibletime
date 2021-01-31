@@ -16,8 +16,6 @@
 #include <QRegExp>
 #include <QDebug>
 #include "../../util/btassert.h"
-#include "../../util/tounderlying.h"
-#include "../../util/unreachable.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordversekey.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -45,22 +43,19 @@ bool removeCaseInsensitivePrefix(QStringRef & ref, Prefix && prefix) {
 QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
                                           QString const & key)
 {
-    static auto const initRet =
-            [](ReferenceManager::Type const type) -> QString {
-                switch (type) {
-                    case Bible:         return "sword://Bible/";
-                    case Commentary:    return "sword://Commentary/";
-                    case Lexicon:       return "sword://Lexicon/";
-                    case GenericBook:   return "sword://Book/";
-                    case MorphHebrew:   return "morph://Hebrew/";
-                    case MorphGreek:    return "morph://Greek/";
-                    case StrongsHebrew: return "strongs://Hebrew/";
-                    case StrongsGreek:  return "strongs://Greek/";
-                    default: return {};
-                }
-            };
-    auto const type = typeFromModule(module.type());
-    auto ret(initRet(type));
+    auto const initStr =
+        [&module]() noexcept -> char const * {
+            switch (module.type()) {
+                case CSwordModuleInfo::Bible: return "sword://Bible/";
+                case CSwordModuleInfo::Commentary: return "sword://Commentary/";
+                case CSwordModuleInfo::Lexicon: return "sword://Lexicon/";
+                case CSwordModuleInfo::GenericBook: return "sword://Book/";
+                case CSwordModuleInfo::Unknown: default: return nullptr;
+            }
+        }();
+    if (!initStr)
+        return {};
+    QString ret(initStr);
     BT_ASSERT(!module.name().isEmpty());
     ret.append(module.name());
     ret.append('/');
@@ -171,37 +166,6 @@ QString ReferenceManager::preferredModule(ReferenceManager::Type const type) {
         if (auto const module = btConfig().getDefaultSwordModuleByType(typeStr))
             return module->name();
     return {};
-}
-
-ReferenceManager::Type
-ReferenceManager::typeFromModule(CSwordModuleInfo::ModuleType const type) {
-    /* While this could instead be a series of simple casts from one enum to
-       another, we need to keep the following switch to ensure we are warned by
-       the compiler when the enums change in unintended ways which break the
-       assumptions for the simple casts. The compiler is usually smart enough
-       to optimize all of the following to something as simple as `mov eax, edi`
-       (move argument to return value register) on x86_64. */
-    switch(type) {
-        #define RET_CASE(Value) \
-            case CSwordModuleInfo::Value: \
-                static_assert(toUnderlying(Value) \
-                              == toUnderlying(CSwordModuleInfo::Value)); \
-                return Value
-        RET_CASE(Unknown);
-        RET_CASE(Bible);
-        RET_CASE(Commentary);
-        RET_CASE(Lexicon);
-        RET_CASE(GenericBook);
-        #undef RET_CASE
-    };
-    /* In C++ enum variables can have values other than what the named values,
-       and hence in those cases the above switch would fall through here.
-       However, assuming that we do not us such values for type, and relying on
-       the compiler to warn us on missing cases in the above switch, we can
-       safely assume that control flow never reaches this line. We avoid a
-       -Wreturn-type warning here by using UNREACHABLE(). For a discussion on
-       why such a warning is given, see GCC PR #87950. */
-    UNREACHABLE();
 }
 
 /** Parses the given verse references using the given language and the module.*/

@@ -63,13 +63,6 @@ bool isHyperlink( const QString& hyperlink );
 * @return The default module name for the passed type
 */
 QString preferredModule(Type const type);
-/**
-* Returns the type of the passed module type
-* @param type The CSwordModuleInfo module typpe
-* @return The ReferenceManager type
-*/
-Type typeFromModule(CSwordModuleInfo::ModuleType const type);
-
 
 struct ParseOptions {
 
