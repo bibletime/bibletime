@@ -59,27 +59,11 @@ std::optional<DecodedHyperlink> decodeHyperlink(QString const & hyperlink);
 QString encodeHyperlink(CSwordModuleInfo const & module, QString const & key);
 
 struct ParseOptions {
-
-/* Methods: */
-
-    ParseOptions(QString const & refDestinationModule_ = QString(),
-                 QString const & refBase_ = QString(),
-                 QString const & sourceLanguage_ = QString(),
-                 QString const & destinationLanguage_ = "en")
-        : refDestinationModule(refDestinationModule_)
-        , refBase(refBase_)
-        , sourceLanguage(sourceLanguage_)
-        , destinationLanguage(destinationLanguage_)
-    {}
-
-/* Fields: */
-
     QString refDestinationModule;
     /* The following are only valid for verse-based destination modules: */
     QString refBase;
     QString sourceLanguage;
-    QString destinationLanguage;
-
+    QString destinationLanguage{"en"};
 };
 
 /** Parses the given verse references using the given language and the module.

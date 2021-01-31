@@ -81,10 +81,10 @@ void renderReference(char const * const osisRef,
 
         if (mod) {
             using namespace ReferenceManager;
-            ParseOptions const options(
+            ParseOptions const options{
                     mod->name(),
                     QString::fromUtf8(myUserData.key->getText()),
-                    myModule.getLanguage());
+                    myModule.getLanguage()};
 
             auto const hyperlink( // Hyperlink with key and mod
                         encodeHyperlink(

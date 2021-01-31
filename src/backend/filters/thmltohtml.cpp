@@ -267,11 +267,11 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                 btConfig().getDefaultSwordModuleByType(
                                         "standardBible"))
                         {
-                            ReferenceManager::ParseOptions options(
+                            ReferenceManager::ParseOptions options{
                                     mod->name(),
                                     // current module key:
                                     QString::fromUtf8(myUserData->key->getText()),
-                                    myModule->getLanguage());
+                                    myModule->getLanguage()};
 
                             //it's ok to split the reference, because to descriptive text is given
                             bool insertSemicolon = false;
@@ -328,11 +328,11 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                 ReferenceManager::parseVerseReference(
                                     QString::fromUtf8(
                                             tag.getAttribute("passage")),
-                                    ReferenceManager::ParseOptions(
+                                    ReferenceManager::ParseOptions{
                                         mod->name(),
                                         QString::fromUtf8(
                                                 myUserData->key->getText()),
-                                        myModule->getLanguage())));
+                                        myModule->getLanguage()}));
                         buf.append("<span class=\"crossreference\">")
                            .append("<a href=\"")
                            .append(
