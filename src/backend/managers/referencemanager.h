@@ -49,7 +49,9 @@ bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, T
 * @param type The type which is used to encode the hyperlink
 * @return The encoded hyperlink
 */
-const QString encodeHyperlink( const QString module, const QString key, const Type type);
+QString encodeHyperlink(QString const & module,
+                        QString const & key,
+                        Type const type);
 
 /**
 * Returns true if the parameter is a hyperlink.

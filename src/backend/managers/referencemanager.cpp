@@ -23,7 +23,10 @@
 
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
-const QString ReferenceManager::encodeHyperlink( const QString moduleName, const QString key, const ReferenceManager::Type type) {
+QString ReferenceManager::encodeHyperlink(QString const & moduleName,
+                                          QString const & key,
+                                          ReferenceManager::Type const type)
+{
     QString ret = QString();
 
     switch (type) {
