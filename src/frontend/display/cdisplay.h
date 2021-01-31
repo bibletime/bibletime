@@ -171,8 +171,6 @@ public Q_SLOTS:
     void openFindTextDialog();
 
 Q_SIGNALS:
-    void referenceClicked(const QString& module, const QString& key);
-    void referenceDropped(const QString& key);
     void textChanged();
 
 private:

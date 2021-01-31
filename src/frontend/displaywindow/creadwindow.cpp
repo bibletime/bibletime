@@ -45,12 +45,6 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     setObjectName("CReadWindow");
     CDisplayWindow::setDisplayWidget(newDisplay);
     if (m_readDisplayWidget) {
-        auto * const connectionProxy = m_readDisplayWidget->connectionsProxy();
-        disconnect(connectionProxy, &CDisplayConnections::referenceClicked,
-                   this, &CReadWindow::lookupModKey);
-        disconnect(connectionProxy, &CDisplayConnections::referenceDropped,
-                   this, &CReadWindow::lookupKey);
-
         if (BtModelViewReadDisplay * const v =
                 dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
             disconnect(v,    &BtModelViewReadDisplay::completed,
@@ -58,13 +52,6 @@ void CReadWindow::setDisplayWidget(CDisplay * newDisplay) {
     }
 
     m_readDisplayWidget = static_cast<CReadDisplay *>(newDisplay);
-    {
-        auto * const connectionProxy = m_readDisplayWidget->connectionsProxy();
-        BT_CONNECT(connectionProxy, &CDisplayConnections::referenceClicked,
-                   this,            &CReadWindow::lookupModKey);
-        BT_CONNECT(connectionProxy, &CDisplayConnections::referenceDropped,
-                   this,            &CReadWindow::lookupKey);
-    }
 
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
