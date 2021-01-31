@@ -40,6 +40,7 @@ enum Type {
 * @param key The string which will contain the key after decoding
 * @param type The type param will contain the reference type after decoding
 */
+[[nodiscard]]
 bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, Type& type);
 /**
 * Returns a hyperlink used to be embedded in the display windows.
