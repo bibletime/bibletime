@@ -129,9 +129,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
     else {
         return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" ")
                .append("href=\"")
-               .append(ReferenceManager::encodeHyperlink(
-                           module->name(), item.key(), ReferenceManager::typeFromModule(module->type()))
-                      )
+               .append(ReferenceManager::encodeHyperlink(*module, item.key()))
                .append("\">").append(linkText).append("</a>\n");
     }
 }

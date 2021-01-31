@@ -42,9 +42,8 @@ bool removeCaseInsensitivePrefix(QStringRef & ref, Prefix && prefix) {
 } // anonymous namespace
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
-QString ReferenceManager::encodeHyperlink(QString const & moduleName,
-                                          QString const & key,
-                                          ReferenceManager::Type const type)
+QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
+                                          QString const & key)
 {
     static auto const initRet =
             [](ReferenceManager::Type const type) -> QString {
@@ -60,6 +59,8 @@ QString ReferenceManager::encodeHyperlink(QString const & moduleName,
                     default: return {};
                 }
             };
+    auto const type = typeFromModule(module.type());
+    auto const & moduleName(module.name());
     auto ret(initRet(type).append(moduleName.isEmpty()
                                   ? preferredModule(type) // fallback
                                   : moduleName).append('/'));

@@ -45,14 +45,11 @@ bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, T
 /**
 * Returns a hyperlink used to be embedded in the display windows.
 * At the moment the format is sword://module/key
-* @param module The module which is used to encode the hyperlink
+* @param module The module to which to link.
 * @param key The key which is used to encode the hyperlink
-* @param type The type which is used to encode the hyperlink
 * @return The encoded hyperlink
 */
-QString encodeHyperlink(QString const & module,
-                        QString const & key,
-                        Type const type);
+QString encodeHyperlink(CSwordModuleInfo const & module, QString const & key);
 
 /**
 * Returns true if the parameter is a hyperlink.

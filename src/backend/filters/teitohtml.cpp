@@ -148,9 +148,8 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
             buf.append("<a href=\"")
                .append( // create the hyperlink with key and mod
                     ReferenceManager::encodeHyperlink(
-                        mod->name(),
-                        ReferenceManager::parseVerseReference(hrefRef, options),
-                        ReferenceManager::typeFromModule(mod->type())
+                        *mod,
+                        ReferenceManager::parseVerseReference(hrefRef, options)
                     ).toUtf8().constData()
                 )
                .append("\" crossrefs=\"")
@@ -197,9 +196,8 @@ void TeiToHtml::renderTargetReference(const char *osisRef, sword::SWBuf &buf,
             buf.append("<a class=\"crossreference\" href=\"")
                .append( // create the hyperlink with key and mod
                     ReferenceManager::encodeHyperlink(
-                        mod->name(),
-                        hrefRef.toUtf8().constData(),
-                        ReferenceManager::typeFromModule(mod->type())
+                        *mod,
+                        hrefRef.toUtf8().constData()
                     ).toUtf8().constData()
                 )
                .append("\">");

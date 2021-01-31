@@ -87,9 +87,9 @@ void renderReference(char const * const osisRef,
                     myModule.getLanguage());
 
             auto const hyperlink( // Hyperlink with key and mod
-                        encodeHyperlink(mod->name(),
-                                        parseVerseReference(hrefRef, options),
-                                        typeFromModule(mod->type())).toUtf8());
+                        encodeHyperlink(
+                              *mod,
+                              parseVerseReference(hrefRef, options)).toUtf8());
 
             // Ref must contain the osisRef module marker if there was any:
             auto const moduleMarker(parseVerseReference(ref, options).toUtf8());

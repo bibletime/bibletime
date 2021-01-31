@@ -296,9 +296,8 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                                 buf.append("<a href=\"")
                                    .append(
                                         ReferenceManager::encodeHyperlink(
-                                            mod->name(),
-                                            oldRef,
-                                            ReferenceManager::typeFromModule(mod->type())
+                                            *mod,
+                                            oldRef
                                         ).toUtf8().constData()
                                     )
                                    .append("\" crossrefs=\"")
@@ -338,10 +337,8 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                            .append("<a href=\"")
                            .append(
                                 ReferenceManager::encodeHyperlink(
-                                    mod->name(),
-                                    completeRef,
-                                    ReferenceManager::typeFromModule(
-                                        mod->type())
+                                    *mod,
+                                    completeRef
                                 ).toUtf8().constData()
                             )
                            .append("\" crossrefs=\"")

@@ -79,13 +79,7 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
     if (!linkText.isEmpty()) { //if we have a valid link text
         //     qWarning("rendering");
         return QString("<a href=\"%1\">%2</a>")
-               .arg(
-                   ReferenceManager::encodeHyperlink(
-                       module->name(),
-                       item.key(),
-                       ReferenceManager::typeFromModule(module->type())
-                   )
-               )
+               .arg(ReferenceManager::encodeHyperlink(*module, item.key()))
                .arg(linkText);
     }
 
