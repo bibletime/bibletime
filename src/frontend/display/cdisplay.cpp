@@ -38,16 +38,6 @@ void CDisplayConnections::saveAsPlain() {
 }
 
 /** Emits the signal. */
-void CDisplayConnections::emitReferenceClicked( const QString& module, const QString& key) {
-    Q_EMIT referenceClicked( module, key );
-}
-
-/** Emits the signal. */
-void CDisplayConnections::emitReferenceDropped( const QString& key) {
-    Q_EMIT referenceDropped(key);
-}
-
-/** Emits the signal. */
 void CDisplayConnections::emitTextChanged() {
     Q_EMIT textChanged();
 }
@@ -159,26 +149,6 @@ bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart p
         util::tool::savePlainFile(filename, content);
     }
     return true;
-}
-
-/** Emits the signal which used when a reference was clicked. */
-void CDisplay::emitReferenceClicked( const QString& reference ) {
-    QString module, key;
-    ReferenceManager::Type type;
-    ReferenceManager::decodeHyperlink(reference, module, key, type);
-    if (module.isEmpty()) {
-        module = ReferenceManager::preferredModule( type );
-    }
-    m_connections->emitReferenceClicked(module, key);
-}
-
-/** Used when a reference was dropped onto the widget. */
-void CDisplay::emitReferenceDropped( const QString& reference ) {
-    QString module;
-    QString key;
-    ReferenceManager::Type type;
-    ReferenceManager::decodeHyperlink(reference, module, key, type);
-    m_connections->emitReferenceDropped(key);
 }
 
 /** Returns the connections object used for signals and slots. */

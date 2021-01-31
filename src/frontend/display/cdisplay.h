@@ -129,16 +129,6 @@ public:
     virtual QString getCurrentNodeInfo() const { return {}; }
 
 protected:
-    /**
-        * Used when a reference was dropped onto the widget.
-        */
-    void emitReferenceDropped( const QString& reference );
-    /**
-        * Emits the signal which used when a reference was clicked.
-        */
-    void emitReferenceClicked( const QString& reference );
-
-protected:
     CDisplay(CDisplayWindow* parent);
     virtual ~CDisplay();
 
@@ -155,8 +145,6 @@ public:
 
 public Q_SLOTS:
     virtual void selectAll();
-    void emitReferenceClicked( const QString& module, const QString& key);
-    void emitReferenceDropped( const QString& key );
     void emitTextChanged();
 
     //stuff which works in every CDisplay
