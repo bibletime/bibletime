@@ -70,7 +70,7 @@ QString preferredModule(Type const type);
 * @param type The CSwordModuleInfo module typpe
 * @return The ReferenceManager type
 */
-ReferenceManager::Type typeFromModule( const CSwordModuleInfo::ModuleType type );
+Type typeFromModule(CSwordModuleInfo::ModuleType const type);
 
 
 struct ParseOptions {

@@ -16,6 +16,8 @@
 #include <QRegExp>
 #include <QDebug>
 #include "../../util/btassert.h"
+#include "../../util/tounderlying.h"
+#include "../../util/unreachable.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordversekey.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -220,25 +222,35 @@ QString ReferenceManager::preferredModule(ReferenceManager::Type const type) {
     return {};
 }
 
-/** No descriptions */
-ReferenceManager::Type ReferenceManager::typeFromModule( const CSwordModuleInfo::ModuleType type) {
-    switch (type) {
-
-        case CSwordModuleInfo::Bible:
-            return ReferenceManager::Bible;
-
-        case CSwordModuleInfo::Commentary:
-            return ReferenceManager::Commentary;
-
-        case CSwordModuleInfo::Lexicon:
-            return ReferenceManager::Lexicon;
-
-        case CSwordModuleInfo::GenericBook:
-            return ReferenceManager::GenericBook;
-
-        default:
-            return ReferenceManager::Unknown;
-    }
+ReferenceManager::Type
+ReferenceManager::typeFromModule(CSwordModuleInfo::ModuleType const type) {
+    /* While this could instead be a series of simple casts from one enum to
+       another, we need to keep the following switch to ensure we are warned by
+       the compiler when the enums change in unintended ways which break the
+       assumptions for the simple casts. The compiler is usually smart enough
+       to optimize all of the following to something as simple as `mov eax, edi`
+       (move argument to return value register) on x86_64. */
+    switch(type) {
+        #define RET_CASE(Value) \
+            case CSwordModuleInfo::Value: \
+                static_assert(toUnderlying(Value) \
+                              == toUnderlying(CSwordModuleInfo::Value)); \
+                return Value
+        RET_CASE(Unknown);
+        RET_CASE(Bible);
+        RET_CASE(Commentary);
+        RET_CASE(Lexicon);
+        RET_CASE(GenericBook);
+        #undef RET_CASE
+    };
+    /* In C++ enum variables can have values other than what the named values,
+       and hence in those cases the above switch would fall through here.
+       However, assuming that we do not us such values for type, and relying on
+       the compiler to warn us on missing cases in the above switch, we can
+       safely assume that control flow never reaches this line. We avoid a
+       -Wreturn-type warning here by using UNREACHABLE(). For a discussion on
+       why such a warning is given, see GCC PR #87950. */
+    UNREACHABLE();
 }
 
 /** Parses the given verse references using the given language and the module.*/
