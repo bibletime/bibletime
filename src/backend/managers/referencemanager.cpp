@@ -177,8 +177,7 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
                 }
             }
 
-            ref = ref.mid(pos + 1);
-            key = ref; //the remaining part is the key
+            key = ref.mid(pos + 1); // the remaining part is the key
 
             module = preferredModule(type);
         }
