@@ -73,10 +73,10 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
 
     type = Unknown; //not yet known
     QString ref = hyperlink;
-    //remove the trailing slash
 
-    if (ref.right(1) == "/" && ref.right(2) != "\\/") //trailing slash, but not escaped
-        ref = ref.left(ref.length() - 1);
+    // Remove the trailing slash (unless escaped):
+    if (ref.endsWith('/') && !ref.endsWith("\\/"))
+        ref.chop(1);
 
     //find out which type we have by looking at the beginning (protocoll section of URL)
     if (ref.left(8).toLower() == "sword://") { //Bible, Commentary or Lexicon
