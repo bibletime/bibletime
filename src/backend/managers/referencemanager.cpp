@@ -130,15 +130,6 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
             key = ref.mid(1);
         }
 
-        //the key may be an osis key like "NASBLex:Moses", which sets the module, too
-        //   const int modPos = key.find(":");
-        //   if (modPos != -1 && key.at(modPos-1).isLetter() && key.at(modPos+1).isLetter()) {
-        //    module = key.left(modPos);
-        //    key = key.mid(modPos+1);
-        //
-        //    qWarning("found the module name %s with key %s", module.latin1(), key.latin1());
-        //   }
-
         //replace \/ escapes with /
         key.replace(QRegExp("\\\\/"), "/");
     } else {
