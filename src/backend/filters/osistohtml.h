@@ -72,9 +72,6 @@ class OsisToHtml: public sword::OSISHTMLHREF {
                 sword::SWKey const * key) override
         { return new UserData(module, key); }
 
-    private: /* Methods: */
-        void renderReference(const char *osisRef, sword::SWBuf &buf,
-                             sword::SWModule *myModule, UserData *myUserData);
 };
 
 } // namespace Filters

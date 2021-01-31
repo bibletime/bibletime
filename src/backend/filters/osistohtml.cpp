@@ -30,6 +30,83 @@
 #pragma GCC diagnostic pop
 
 
+namespace {
+
+template <typename UserData>
+void renderReference(char const * const osisRef,
+                     sword::SWBuf & buf,
+                     sword::SWModule const & myModule,
+                     UserData const & myUserData)
+{
+    QString const ref(osisRef);
+    //BT_ASSERT(!ref.isEmpty()); checked later
+
+    if (!ref.isEmpty()) {
+        /* find out the mod, using the current module makes sense if it's a
+           bible or commentary because the refs link into a bible by default.
+           If the osisRef is something like "ModuleID:key comes here" then the
+           modulename is given, so we'll use that one. */
+
+        auto const * mod =
+                CSwordBackend::instance()->findSwordModuleByPointer(&myModule);
+        //BT_ASSERT(mod); checked later
+        if (!mod || (mod->type() != CSwordModuleInfo::Bible
+                     && mod->type() != CSwordModuleInfo::Commentary))
+        {
+            mod = btConfig().getDefaultSwordModuleByType("standardBible");
+            if (!mod)
+                mod = CSwordBackend::instance()->findFirstAvailableModule(
+                          CSwordModuleInfo::Bible);
+        }
+
+        // BT_ASSERT(mod); There's no necessarily a module or standard Bible
+
+        //if the osisRef like "GerLut:key" contains a module, use that
+        auto const pos = ref.indexOf(":");
+
+        QString hrefRef;
+        if ((pos >= 0)
+            && ref.at(pos - 1).isLetter()
+            && ref.at(pos + 1).isLetter())
+        {
+            auto const newModuleName(ref.left(pos));
+            hrefRef = ref.mid(pos + 1);
+
+            if (auto const * const moduleByName =
+                    CSwordBackend::instance()->findModuleByName(newModuleName))
+                mod = moduleByName;
+        } else {
+            hrefRef = ref;
+        }
+
+        if (mod) {
+            using namespace ReferenceManager;
+            ParseOptions const options(
+                    mod->name(),
+                    QString::fromUtf8(myUserData.key->getText()),
+                    myModule.getLanguage());
+
+            auto const hyperlink( // Hyperlink with key and mod
+                        encodeHyperlink(mod->name(),
+                                        parseVerseReference(hrefRef, options),
+                                        typeFromModule(mod->type())).toUtf8());
+
+            // Ref must contain the osisRef module marker if there was any:
+            auto const moduleMarker(parseVerseReference(ref, options).toUtf8());
+
+            buf.append("<a href=\"")
+               .append(hyperlink.constData())
+               .append("\" crossrefs=\"")
+               .append(moduleMarker.constData())
+               .append("\">");
+        }
+        /** \todo Should we add something if there were no referenced module
+                  available? */
+    }
+} // renderReference()
+
+} // anonymous namespace
+
 Filters::OsisToHtml::OsisToHtml() : sword::OSISHTMLHREF() {
     setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 
@@ -299,9 +376,10 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
         }
         else if (!strcmp(tag.getName(), "reference")) { // <reference> tag
             if (!tag.isEndTag() && !tag.isEmpty()) {
-
-                renderReference(tag.getAttribute("osisRef"), buf, myModule, myUserData);
-
+                renderReference(tag.getAttribute("osisRef"),
+                                buf,
+                                *myModule,
+                                *myUserData);
             }
             else if (tag.isEndTag()) {
                 buf.append("</a>");
@@ -550,60 +628,3 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 
     return false;
 }
-
-void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, UserData *myUserData) {
-    QString ref( osisRef );
-    QString hrefRef( ref );
-    //BT_ASSERT(!ref.isEmpty()); checked later
-
-    if (!ref.isEmpty()) {
-        //find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
-        //If the osisRef is something like "ModuleID:key comes here" then the
-        // modulename is given, so we'll use that one
-
-        CSwordModuleInfo* mod = CSwordBackend::instance()->findSwordModuleByPointer(myModule);
-        //BT_ASSERT(mod); checked later
-        if (!mod || (mod->type() != CSwordModuleInfo::Bible
-                     && mod->type() != CSwordModuleInfo::Commentary)) {
-
-            mod = btConfig().getDefaultSwordModuleByType("standardBible");
-            if (! mod)
-                mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
-        }
-
-        // BT_ASSERT(mod); There's no necessarily a module or standard Bible
-
-        //if the osisRef like "GerLut:key" contains a module, use that
-        int pos = ref.indexOf(":");
-
-        if ((pos >= 0) && ref.at(pos - 1).isLetter() && ref.at(pos + 1).isLetter()) {
-            QString newModuleName = ref.left(pos);
-            hrefRef = ref.mid(pos + 1);
-
-            if (CSwordBackend::instance()->findModuleByName(newModuleName)) {
-                mod = CSwordBackend::instance()->findModuleByName(newModuleName);
-            }
-        }
-
-        if (mod) {
-            ReferenceManager::ParseOptions const options(
-                    mod->name(),
-                    QString::fromUtf8(myUserData->key->getText()),
-                    myModule->getLanguage());
-
-            buf.append("<a href=\"")
-               .append( //create the hyperlink with key and mod
-                    ReferenceManager::encodeHyperlink(
-                        mod->name(),
-                        ReferenceManager::parseVerseReference(hrefRef, options),
-                        ReferenceManager::typeFromModule(mod->type())
-                    ).toUtf8().constData()
-                )
-               .append("\" crossrefs=\"")
-               .append(ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()) //ref must contain the osisRef module marker if there was any
-               .append("\">");
-        }
-        // should we add something if there were no referenced module available?
-    }
-}
-
