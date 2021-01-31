@@ -307,7 +307,11 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     QString moduleName;
     QString keyName;
     ReferenceManager::Type type;
-    ReferenceManager::decodeHyperlink(hyperlink, moduleName, keyName, type);
+    if (!ReferenceManager::decodeHyperlink(hyperlink,
+                                           moduleName,
+                                           keyName,
+                                           type))
+        return false;
     if (moduleName.isEmpty())
         moduleName = ReferenceManager::preferredModule(type);
 
@@ -315,7 +319,8 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     PrintSettings settings{displayOptions};
     CSwordModuleInfo const * module =
             CSwordBackend::instance()->findModuleByName(moduleName);
-    BT_ASSERT(module);
+    if (!module)
+        return false;
     //check if we have a range of entries or a single one
     if ((module->type() == CSwordModuleInfo::Bible)
         || (module->type() == CSwordModuleInfo::Commentary))
