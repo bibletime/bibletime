@@ -191,9 +191,9 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
 
 /** Returns true if the parameter is a hyperlink. */
 bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
-    return (    hyperlink.left(8)  == "sword://")
-           || (hyperlink.left(10) == "strongs://")
-           || (hyperlink.left(8)  == "morph://");
+    return hyperlink.startsWith("sword://")
+           || hyperlink.startsWith("strongs://")
+           || hyperlink.startsWith("morph://");
 }
 
 /** Returns the preferred module name for the given type. */
