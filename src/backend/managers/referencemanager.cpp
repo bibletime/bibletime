@@ -150,9 +150,9 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
         const int pos = ref.indexOf("/");
 
         if (pos > 0) { //found
-            const QString language = ref.mid(0, pos);
+            auto const language(ref.mid(0, pos).toLower());
 
-            if (language.toLower() == "hebrew") {
+            if (language == "hebrew") {
                 switch (preType) {
 
                     case IsMorph:
@@ -164,7 +164,7 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
                         break;
                 }
             }
-            else if (language.toLower() == "greek") {
+            else if (language == "greek") {
                 switch (preType) {
 
                     case IsMorph:
