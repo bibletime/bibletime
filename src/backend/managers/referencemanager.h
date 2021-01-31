@@ -22,6 +22,7 @@
  */
 namespace ReferenceManager {
 enum Type {
+    Unknown, /**< Unknown */
     Bible, /**< Bibles */
     Commentary, /**< Commentary */
     Lexicon, /**< Lexicon */
@@ -30,7 +31,6 @@ enum Type {
     MorphGreek, /**< Module for greek morphology */
     StrongsHebrew, /**< Module for hebrew strongs */
     StrongsGreek, /**< Module for greek strongs */
-    Unknown /**< Unknown */
 };
 
 /** Turn a hyperlink into module, key and type.
