@@ -82,19 +82,16 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
     if (ref.left(8).toLower() == "sword://") { //Bible, Commentary or Lexicon
         ref = ref.mid(8);
 
-        if (ref.left(5).toLower() == "bible") { //a bible hyperlink
+        if (ref.left(6).toLower() == "bible/") {
             type = ReferenceManager::Bible;
             ref = ref.mid(6); //inclusive trailing slash
-        }
-        else if (ref.left(10).toLower() == "commentary") { // a Commentary hyperlink
+        } else if (ref.left(11).toLower() == "commentary/") {
             type = ReferenceManager::Commentary;
             ref = ref.mid(11); //inclusive trailing slash
-        }
-        else if (ref.left(7).toLower() == "lexicon") { // a Lexicon hyperlink
+        } else if (ref.left(8).toLower() == "lexicon/") {
             type = ReferenceManager::Lexicon;
             ref = ref.mid(8); //inclusive trailing slash
-        }
-        else if (ref.left(4).toLower() == "book") { // a Book hyperlink
+        } else if (ref.left(5).toLower() == "book/") {
             type = ReferenceManager::GenericBook;
             ref = ref.mid(5); //inclusive trailing slash
         }
