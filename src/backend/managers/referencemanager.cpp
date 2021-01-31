@@ -45,20 +45,16 @@ QString ReferenceManager::encodeHyperlink(QString const & moduleName,
                                   ? preferredModule(type) // fallback
                                   : moduleName).append('/'));
     if (type == GenericBook) {
-        QString newKey = QString();
-        //replace all / of the key (e.g. of a CSwordTreeKey) with
-        // the escape sequence \/ so we know it's a link internal divider (e.g. of CSwordTreeKey)!
-
+        /* Replace all / of the key (e.g. of a CSwordTreeKey) with the escape
+           sequence \/ so we know it's a link internal divider (e.g. of
+           CSwordTreeKey): */
         for (auto const c : key) {
             if (c == '/') {
-                newKey.append("\\/");
-            }
-            else {
-                newKey.append(c);
+                ret.append("\\/");
+            } else {
+                ret.append(c);
             }
         }
-
-        ret.append( newKey );
     }
     else { //slashes do not appear in verses and dictionary entries
 
