@@ -68,10 +68,6 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
                });
     BT_CONNECT(m_textBrowser, &QTextBrowser::anchorClicked,
                [this](QUrl const & url) {
-                   if (url.isEmpty()
-                       || !ReferenceManager::isHyperlink(url.toString()))
-                       return;
-
                    auto const decodedLink(
                                ReferenceManager::decodeHyperlink(
                                    url.toString()));
