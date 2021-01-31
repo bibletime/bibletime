@@ -60,10 +60,10 @@ QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
                 }
             };
     auto const type = typeFromModule(module.type());
-    auto const & moduleName(module.name());
-    auto ret(initRet(type).append(moduleName.isEmpty()
-                                  ? preferredModule(type) // fallback
-                                  : moduleName).append('/'));
+    auto ret(initRet(type));
+    BT_ASSERT(!module.name().isEmpty());
+    ret.append(module.name());
+    ret.append('/');
     ret.append(key);
     return ret;
 }
