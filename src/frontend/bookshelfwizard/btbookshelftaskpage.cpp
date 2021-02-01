@@ -104,8 +104,7 @@ void BtBookshelfTaskPage::retranslateUi() {
 }
 
 bool BtBookshelfTaskPage::timeToUpdate() const {
-    BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
-    if (bookshelfModel->moduleList().empty())
+    if (CSwordBackend::instance()->moduleList().empty())
         return true;
 
     return BtBookshelfWizard::autoUpdateSources();
