@@ -84,8 +84,6 @@ public:
 
     void setText( const QString& newText ) override;
 
-    bool hasSelection() const override;
-
     QWidget* view() override;
 
     void selectAll() override;

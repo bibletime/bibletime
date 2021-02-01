@@ -90,10 +90,6 @@ public:
         */
     virtual void setText( const QString& newText ) = 0;
     /**
-        * Returns true if the display widget has a selection. Otherwise false.
-        */
-    virtual bool hasSelection() const = 0;
-    /**
         * Returns the view of this display widget.
         */
     virtual QWidget* view() = 0;

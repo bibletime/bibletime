@@ -240,11 +240,6 @@ void BtModelViewReadDisplay::pageUp() {
     m_widget->pageUp();
 }
 
-// See if any text is selected
-bool BtModelViewReadDisplay::hasSelection() const {
-    return false;
-}
-
 void BtModelViewReadDisplay::highlightText(const QString& text, bool caseSensitive) {
     m_widget->qmlInterface()->setHighlightWords(text, caseSensitive);
 }
