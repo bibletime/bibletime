@@ -18,6 +18,7 @@
 #include <memory>
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/drivers/btmoduleset.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "btbookshelfwizardenums.h"
 
 
@@ -73,6 +74,7 @@ private: /* Fields: */
     QLineEdit * m_nameFilterEdit;
 
     BtInstallPageModel * m_installPageModel;
+    std::vector<std::unique_ptr<CSwordBackend const>> m_usedBackends;
     std::shared_ptr<BtBookshelfModel> m_bookshelfModel;
 
     QMenu * m_contextMenu;

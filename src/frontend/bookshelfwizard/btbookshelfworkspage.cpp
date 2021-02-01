@@ -248,11 +248,13 @@ void BtBookshelfWorksPage::initializePage() {
     {
         QSet<QString> addedModuleNames;
         m_bookshelfModel->clear();
+        m_usedBackends.clear();
         for (auto const & sourceName : sources) {
             sword::InstallSource const source =
                     BtInstallBackend::source(sourceName);
-            std::unique_ptr<CSwordBackend const> const backend(
+            std::unique_ptr<CSwordBackend const> backend(
                         BtInstallBackend::backend(source));
+            bool backendUsed = false;
             for (auto * const module : backend->moduleList()) {
                 if (filter(m_taskType, languages, module)) {
                     QString const & moduleName = module->name();
@@ -262,8 +264,11 @@ void BtBookshelfWorksPage::initializePage() {
                     m_bookshelfModel->addModule(module);
                     module->setProperty("installSourceName",
                                         QString(source.caption.c_str()));
+                    backendUsed = true;
                 }
             }
+            if (backendUsed)
+                m_usedBackends.emplace_back(std::move(backend));
         }
         if (m_taskType != WizardTaskType::installWorks)
             m_bookshelfView->expandAll();
