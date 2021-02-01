@@ -243,8 +243,7 @@ int main(int argc, char* argv[]) {
     // The following must be done after the bibletime window is visible:
     mainWindow->processCommandline(ignoreSession, openBibleKey);
 
-    BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
-    if (bookshelfModel->moduleList().empty())
+    if (CSwordBackend::instance()->moduleList().empty())
         BtWelcomeDialog::openWelcome();
     else if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
