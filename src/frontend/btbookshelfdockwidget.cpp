@@ -131,7 +131,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     auto modulesChangedSlot =
             [this]{
                 auto const & moduleList =
-                        CSwordBackend::instance()->model()->moduleList();
+                        CSwordBackend::instance()->moduleList();
                 m_stackedWidget->setCurrentWidget(moduleList.empty()
                                                   ? m_welcomeWidget
                                                   : m_bookshelfWidget);
