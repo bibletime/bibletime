@@ -72,7 +72,6 @@ void BtInstallThread::installModule() {
     QVariant vModuleName = module->property("installSourceName");
     QString moduleName = vModuleName.toString();
     sword::InstallSource installSource = BtInstallBackend::source(moduleName);
-    std::unique_ptr<CSwordBackend> backendForSource(BtInstallBackend::backend(installSource));
 
     // Check whether it's an update. If yes, remove existing module first:
     /// \todo silently removing without undo if the user cancels the update is WRONG!!!
