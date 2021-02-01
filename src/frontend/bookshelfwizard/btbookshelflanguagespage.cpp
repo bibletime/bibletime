@@ -98,11 +98,13 @@ void BtBookshelfLanguagesPage::initializePage() {
 void BtBookshelfLanguagesPage::initializeLanguages() {
     // Get languages from sources:
     std::set<QString> languages;
-    for (auto const & sourceName : btWizard().selectedSources())
-        for (auto const * module :
-             BtInstallBackend::backend(
-                 BtInstallBackend::source(sourceName))->moduleList())
+    for (auto const & sourceName : btWizard().selectedSources()) {
+        std::shared_ptr<CSwordBackend const> const backend(
+                    BtInstallBackend::backend(
+                        BtInstallBackend::source(sourceName)));
+        for (auto const * module : backend->moduleList())
             languages.insert(module->language()->translatedName());
+    }
 
     // Update languages model:
     m_model->clear();
