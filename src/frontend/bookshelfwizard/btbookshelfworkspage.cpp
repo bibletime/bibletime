@@ -251,7 +251,8 @@ void BtBookshelfWorksPage::initializePage() {
         for (auto const & sourceName : sources) {
             sword::InstallSource const source =
                     BtInstallBackend::source(sourceName);
-            CSwordBackend * const backend = BtInstallBackend::backend(source);
+            std::unique_ptr<CSwordBackend const> const backend(
+                        BtInstallBackend::backend(source));
             for (auto * const module : backend->moduleList()) {
                 if (filter(m_taskType, languages, module)) {
                     QString const & moduleName = module->name();

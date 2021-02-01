@@ -272,12 +272,12 @@ QDir swordDir() {
 #endif
 }
 
-CSwordBackend * backend(const sword::InstallSource & is) {
+std::unique_ptr<CSwordBackend> backend(sword::InstallSource const & is) {
     /// \anchor BackendNotSingleton
-    CSwordBackend * const ret = new CSwordBackend(isRemote(is)
-                                                  ? is.localShadow.c_str()
-                                                  : is.directory.c_str(),
-                                                  false);
+    auto ret(std::make_unique<CSwordBackend>(isRemote(is)
+                                             ? is.localShadow.c_str()
+                                             : is.directory.c_str(),
+                                             false));
     ret->initModules(CSwordBackend::OtherChange);
     return ret;
 }

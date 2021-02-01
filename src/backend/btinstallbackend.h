@@ -13,6 +13,7 @@
 #ifndef INSTBACKEND_H
 #define INSTBACKEND_H
 
+#include <memory>
 #include <QDir>
 #include <QString>
 #include "managers/cswordbackend.h"
@@ -63,7 +64,7 @@ QString swordConfigFilename();
 QDir swordDir();
 
 /** Returns backend Sword manager for the source. */
-CSwordBackend * backend(const sword::InstallSource & is);
+std::unique_ptr<CSwordBackend> backend(sword::InstallSource const & is);
 
 } // namespace BtInstallBackend
 
