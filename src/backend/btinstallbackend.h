@@ -33,9 +33,6 @@ sword::InstallSource source(const QString &name);
 /** Deletes the source. */
 bool deleteSource(const QString &name);
 
-/** Returns the moduleinfo list for the source. */
-QList<CSwordModuleInfo*> moduleList(const QString &name);
-
 /** Tells if the source is remote or local. */
 bool isRemote(const sword::InstallSource& source);
 

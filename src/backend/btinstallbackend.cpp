@@ -138,14 +138,6 @@ bool deleteSource(const QString &name) {
     return true; /// \todo dummy
 }
 
-/** Returns the moduleinfo list for the source. Delete the pointer after using. IS THIS POSSIBLE?*/
-QList<CSwordModuleInfo*> moduleList(QString name) {
-    /// \todo dummy
-    Q_UNUSED(name)
-    BT_ASSERT(false && "not implemented");
-    return QList<CSwordModuleInfo*>();
-}
-
 bool isRemote(const sword::InstallSource& source) {
     return !strcmp(source.type, "FTP") ||
             !strcmp(source.type, "SFTP") ||
