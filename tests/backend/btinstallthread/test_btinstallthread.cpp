@@ -24,7 +24,6 @@
 #include "backend/btinstallbackend.h"
 #include "backend/btinstallthread.h"
 #include "backend/config/btconfig.h"
-#include "backend/managers/cswordbackend.h"
 #include "util/btconnect.h"
 #include "util/directory.h"
 
@@ -82,10 +81,10 @@ void test_BtInstallThread::getInstallPath() {
 
 void test_BtInstallThread::findModulesToInstall() {
     sword::InstallSource const source = BtInstallBackend::source(s_sourceName);
-    std::unique_ptr<CSwordBackend const> const installBackend(
-                BtInstallBackend::backend(source));
+    m_installBackend = BtInstallBackend::backend(source);
     for (auto moduleName : s_moduleList) {
-        CSwordModuleInfo * module = installBackend->findModuleByName(moduleName);
+        CSwordModuleInfo * module =
+                m_installBackend->findModuleByName(moduleName);
         QVERIFY(module != 0);
         module->setProperty("installSourceName", s_sourceName);
         m_modules.append(module);

@@ -10,8 +10,10 @@
 *
 **********/
 
+#include <memory>
 #include <QtTest/QtTest>
 #include <QString>
+#include "backend/managers/cswordbackend.h"
 
 class BtInstallThread;
 class CSwordModuleInfo;
@@ -38,6 +40,7 @@ private:
 
     BtInstallThread * m_thread = nullptr;
     QEventLoop * m_eventLoop = nullptr;
+    std::unique_ptr<CSwordBackend const> m_installBackend;
     QList<CSwordModuleInfo *> m_modules;
     QString m_destination;
 };
