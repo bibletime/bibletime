@@ -64,7 +64,7 @@ void test_BtInstallThread::initTestCase() {
 void test_BtInstallThread::initBackend() {
     QVERIFY(util::directory::initDirectoryCache());
     CSwordBackend* backend = CSwordBackend::createInstance();
-    QVERIFY(backend != 0);
+    QVERIFY(backend);
     BibleTimeApp::init();
     backend->initModules(CSwordBackend::OtherChange);
 }
@@ -85,7 +85,7 @@ void test_BtInstallThread::findModulesToInstall() {
     for (auto moduleName : s_moduleList) {
         CSwordModuleInfo * module =
                 m_installBackend->findModuleByName(moduleName);
-        QVERIFY(module != 0);
+        QVERIFY(module);
         module->setProperty("installSourceName", s_sourceName);
         m_modules.append(module);
     }
@@ -136,7 +136,7 @@ void test_BtInstallThread::slotThreadFinished() {
 
 void test_BtInstallThread::cleanupTestCase() {
     CSwordBackend::destroyInstance();
-    QVERIFY(CSwordBackend::instance() == 0);
+    QVERIFY(!CSwordBackend::instance());
 }
 
 QTEST_MAIN(test_BtInstallThread)
