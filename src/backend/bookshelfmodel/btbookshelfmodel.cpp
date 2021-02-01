@@ -18,6 +18,13 @@
 #include "../../util/macros.h"
 
 
+BtBookshelfModel::BtBookshelfModel(ConstructInPrivate const &) {}
+
+std::shared_ptr<BtBookshelfModel> BtBookshelfModel::newInstance()
+{ return std::make_shared<BtBookshelfModel>(ConstructInPrivate()); }
+
+BtBookshelfModel::~BtBookshelfModel() noexcept = default;
+
 int BtBookshelfModel::rowCount(const QModelIndex & parent) const {
     if (parent.isValid())
         return 0;

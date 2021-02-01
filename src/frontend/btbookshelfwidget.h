@@ -15,6 +15,7 @@
 
 #include <QWidget>
 
+#include <memory>
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
@@ -36,7 +37,7 @@ class BtBookshelfWidget: public QWidget {
     public:
         explicit BtBookshelfWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
-        void setSourceModel(QAbstractItemModel *model);
+        void setSourceModel(std::shared_ptr<QAbstractItemModel> model);
 
         // Getters for models:
         BtBookshelfTreeModel * treeModel() const { return m_treeModel; }
@@ -86,7 +87,7 @@ class BtBookshelfWidget: public QWidget {
 
     private:
         // Models:
-        QAbstractItemModel     *m_sourceModel;
+        std::shared_ptr<QAbstractItemModel> m_sourceModel;
         BtBookshelfTreeModel   *m_treeModel;
         BtBookshelfFilterModel *m_postFilterModel;
 

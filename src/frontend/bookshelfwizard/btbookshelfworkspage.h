@@ -15,6 +15,7 @@
 
 #include "btbookshelfwizardpage.h"
 
+#include <memory>
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/drivers/btmoduleset.h"
 #include "btbookshelfwizardenums.h"
@@ -72,7 +73,7 @@ private: /* Fields: */
     QLineEdit * m_nameFilterEdit;
 
     BtInstallPageModel * m_installPageModel;
-    BtBookshelfModel * m_bookshelfModel;
+    std::shared_ptr<BtBookshelfModel> m_bookshelfModel;
 
     QMenu * m_contextMenu;
     BtBookshelfGroupingMenu * m_groupingMenu;

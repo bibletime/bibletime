@@ -15,6 +15,7 @@
 
 #include <QAbstractListModel>
 
+#include <memory>
 #include "../drivers/btconstmoduleset.h"
 #include "../drivers/btmoduleset.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -46,10 +47,24 @@ public: /* Types: */
         UserRole
     };
 
+private: /* Types: */
+
+    /// Used to restrict construction to newInstance() only.
+    struct ConstructInPrivate {};
+
 public: /* Methods: */
 
-    BtBookshelfModel(QObject * const parent = nullptr)
-        : QAbstractListModel(parent) {}
+    BtBookshelfModel(BtBookshelfModel &&) = delete;
+    BtBookshelfModel(BtBookshelfModel const &) = delete;
+    BtBookshelfModel(ConstructInPrivate const &);
+
+    static std::shared_ptr<BtBookshelfModel> newInstance();
+
+    ~BtBookshelfModel() noexcept;
+
+    BtBookshelfModel & operator=(BtBookshelfModel &&) = delete;
+    BtBookshelfModel & operator=(BtBookshelfModel const &) = delete;
+
 
     // Virtual methods implemented from QAbstractListModel:
     int rowCount(const QModelIndex & parent = QModelIndex()) const override;

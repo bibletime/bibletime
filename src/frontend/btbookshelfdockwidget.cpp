@@ -53,12 +53,12 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_treeModel = new BtBookshelfTreeModel(groupingOrderKey, this);
 
     // Get backend model:
-    BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
+    auto bookshelfModelPtr(CSwordBackend::instance()->model());
 
     // Setup bookshelf widgets:
     m_bookshelfWidget = new BtBookshelfWidget(this);
     m_bookshelfWidget->setTreeModel(m_treeModel);
-    m_bookshelfWidget->setSourceModel(bookshelfModel);
+    m_bookshelfWidget->setSourceModel(bookshelfModelPtr);
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
     m_bookshelfWidget->treeView()->setMouseTracking(true); // required for moduleHovered
     /// \bug The correct grouping action is not selected on startup.
@@ -78,7 +78,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_stackedWidget = new QStackedWidget(this);
     m_stackedWidget->addWidget(m_bookshelfWidget);
     m_stackedWidget->addWidget(m_welcomeWidget);
-    m_stackedWidget->setCurrentWidget(bookshelfModel->moduleList().empty()
+    m_stackedWidget->setCurrentWidget(bookshelfModelPtr->moduleList().empty()
                                       ? m_welcomeWidget
                                       : m_bookshelfWidget);
     setWidget(m_stackedWidget);
@@ -136,9 +136,9 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
                                                   ? m_welcomeWidget
                                                   : m_bookshelfWidget);
             };
-    BT_CONNECT(bookshelfModel, &BtBookshelfModel::rowsInserted,
+    BT_CONNECT(bookshelfModelPtr.get(), &BtBookshelfModel::rowsInserted,
                this/*needed*/, modulesChangedSlot);
-    BT_CONNECT(bookshelfModel, &BtBookshelfModel::rowsRemoved,
+    BT_CONNECT(bookshelfModelPtr.get(), &BtBookshelfModel::rowsRemoved,
                this/*needed*/, std::move(modulesChangedSlot));
     BT_CONNECT(m_installButton,       &QPushButton::clicked,
                BibleTime::instance(), &BibleTime::slotBookshelfWizard);

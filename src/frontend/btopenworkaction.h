@@ -13,6 +13,7 @@
 #ifndef BTOPENWORKACTION_H
 #define BTOPENWORKACTION_H
 
+#include <memory>
 #include <QAction>
 #include "btmenuview.h"
 
@@ -30,9 +31,9 @@ class BtOpenWorkActionMenu: public BtMenuView {
         BtOpenWorkActionMenu(const QString &groupingConfigKey,
                              QWidget *parent = nullptr);
 
-        void setSourceModel(QAbstractItemModel *model);
+        void setSourceModel(std::shared_ptr<QAbstractItemModel> model);
 
-        QAbstractItemModel * sourceModel() const
+        std::shared_ptr<QAbstractItemModel> sourceModel() const
         { return m_treeModel->sourceModel(); }
 
         BtBookshelfTreeModel * treeModel() const { return m_treeModel; }

@@ -47,13 +47,14 @@ CSwordBackend * CSwordBackend::m_instance = nullptr;
 CSwordBackend::CSwordBackend()
         : sword::SWMgr(nullptr, nullptr, false,
                        new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
-        , m_dataModel(this)
+        , m_dataModel(BtBookshelfModel::newInstance())
 {}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
                        false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
                        false, augmentHome)
+        , m_dataModel(BtBookshelfModel::newInstance())
 {}
 
 CSwordBackend::~CSwordBackend() {
@@ -81,7 +82,7 @@ CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::Mod
 void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
     if (toBeDeleted.empty())
         return;
-    m_dataModel.removeModules(toBeDeleted);
+    m_dataModel->removeModules(toBeDeleted);
     Q_EMIT sigSwordSetupChanged(RemovedModules);
 
     BtInstallMgr installMgr;
@@ -141,7 +142,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     // qWarning("globalSwordConfigPath is %s", globalConfPath);
 
     shutdownModules(); // Remove previous modules
-    m_dataModel.clear();
+    m_dataModel->clear();
 
     const LoadError ret = static_cast<LoadError>(load());
 
@@ -188,7 +189,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
                 }
             }
 
-                m_dataModel.addModule(newModule);
+                m_dataModel->addModule(newModule);
         } else {
             delete newModule;
         }
@@ -228,7 +229,7 @@ void CSwordBackend::addRenderFilters(sword::SWModule * module,
 }
 
 void CSwordBackend::shutdownModules() {
-    m_dataModel.clear(true);
+    m_dataModel->clear(true);
     //BT  mods are deleted now, delete Sword mods, too.
     deleteAllModules();
 
@@ -286,21 +287,21 @@ void CSwordBackend::setFilterOptions(const FilterOptions & options) {
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByDescription(const QString & description) const {
-    for (auto * const mod : m_dataModel.moduleList())
+    for (auto * const mod : m_dataModel->moduleList())
         if (mod->config(CSwordModuleInfo::Description) == description)
             return mod;
     return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
-    for (auto * const mod : m_dataModel.moduleList())
+    for (auto * const mod : m_dataModel->moduleList())
         if (mod->name().compare(name, Qt::CaseInsensitive) == 0)
             return mod;
     return nullptr;
 }
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
-    for (auto * const mod : m_dataModel.moduleList())
+    for (auto * const mod : m_dataModel->moduleList())
         if (&mod->module() == swmodule)
             return mod;
     return nullptr;
@@ -405,7 +406,7 @@ QString CSwordBackend::booknameLanguage(QString const & language) {
         // Use what sword returns, language may be different.
         const QByteArray newLocaleName(QString(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()).toUtf8());
 
-        for (auto const * const mod : m_dataModel.moduleList()) {
+        for (auto const * const mod : m_dataModel->moduleList()) {
             if (mod->type() == CSwordModuleInfo::Bible
                 || mod->type() == CSwordModuleInfo::Commentary)
             {

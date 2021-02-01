@@ -37,7 +37,6 @@
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
     : QWidget(parent, flags)
-    , m_sourceModel(nullptr)
     , m_treeModel(nullptr)
     , m_leftCornerWidget(nullptr)
     , m_rightCornerWidget(nullptr)
@@ -72,11 +71,14 @@ BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
                });
 }
 
-void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
+void
+BtBookshelfWidget::setSourceModel(std::shared_ptr<QAbstractItemModel> model) {
     BT_ASSERT(model);
-    m_sourceModel = model;
-    if (m_treeModel != nullptr) {
-        m_treeModel->setSourceModel(model);
+    if (m_treeModel) {
+        m_sourceModel = model;
+        m_treeModel->setSourceModel(std::move(model));
+    } else {
+        m_sourceModel = std::move(model);
     }
 }
 

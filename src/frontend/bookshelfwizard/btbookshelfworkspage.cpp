@@ -146,7 +146,8 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
         m_installPageModel->setDefaultChecked(BtBookshelfTreeModel::CHECKED);
     filterModel->setSourceModel(m_installPageModel);
 
-    m_bookshelfModel = new BtBookshelfModel(this);
+    /// \todo is this useless if m_taskType == WizardTaskType::removeWorks?
+    m_bookshelfModel = BtBookshelfModel::newInstance();
     if (m_taskType == WizardTaskType::removeWorks) {
         m_installPageModel->setSourceModel(CSwordBackend::instance()->model());
     } else {

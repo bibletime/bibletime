@@ -15,6 +15,7 @@
 
 #include <QAbstractItemModel>
 
+#include <memory>
 #include <QList>
 #include <QMap>
 #include <QPersistentModelIndex>
@@ -120,7 +121,9 @@ public: /* Methods: */
                 data(index,
                      BtBookshelfModel::ModulePointerRole).value<void *>());
     }
-    QAbstractItemModel * sourceModel() const { return m_sourceModel; }
+    std::shared_ptr<QAbstractItemModel> sourceModel() const noexcept
+    { return m_sourceModel; }
+
     Grouping const & groupingOrder() const { return m_groupingOrder; }
     bool checkable() const { return m_checkable; }
     CheckedBehavior defaultChecked() const { return m_defaultChecked; }
@@ -131,7 +134,7 @@ public: /* Methods: */
 
 public Q_SLOTS:
 
-    void setSourceModel(QAbstractItemModel * sourceModel);
+    void setSourceModel(std::shared_ptr<QAbstractItemModel> sourceModel);
     void setGroupingOrder(const BtBookshelfTreeModel::Grouping & groupingOrder,
                           bool emitSignal = true);
     void setCheckable(bool checkable);
@@ -187,7 +190,7 @@ private: /* Methods: */
 
 private: /* Fields: */
 
-    QAbstractItemModel * m_sourceModel;
+    std::shared_ptr<QAbstractItemModel> m_sourceModel;
     BookshelfModel::Item * m_rootItem;
     ModuleItemMap m_modules;
     SourceIndexMap m_sourceIndexMap;

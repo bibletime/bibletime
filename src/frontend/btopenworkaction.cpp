@@ -46,9 +46,9 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
                });
 }
 
-void BtOpenWorkActionMenu::setSourceModel(QAbstractItemModel *model) {
-    m_treeModel->setSourceModel(model);
-}
+void BtOpenWorkActionMenu::setSourceModel(
+        std::shared_ptr<QAbstractItemModel> model)
+{ m_treeModel->setSourceModel(std::move(model)); }
 
 void BtOpenWorkActionMenu::retranslateUi() {
     if (!m_groupingMenu)

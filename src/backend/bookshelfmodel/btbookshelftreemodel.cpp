@@ -44,7 +44,6 @@ void BtBookshelfTreeModel::Grouping::saveTo(const QString & configKey) const {
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
     : QAbstractItemModel(parent)
-    , m_sourceModel(nullptr)
     , m_rootItem(new RootItem)
     , m_defaultChecked(MODULE_HIDDEN)
     , m_checkable(false) {}
@@ -52,7 +51,6 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
 BtBookshelfTreeModel::BtBookshelfTreeModel(const QString & configKey,
                                            QObject * parent)
        : QAbstractItemModel(parent)
-       , m_sourceModel(nullptr)
        , m_rootItem(new RootItem)
        , m_groupingOrder(configKey)
        , m_defaultChecked(MODULE_HIDDEN)
@@ -61,7 +59,6 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(const QString & configKey,
 BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping & grouping,
                                            QObject * parent)
         : QAbstractItemModel(parent)
-        , m_sourceModel(nullptr)
         , m_rootItem(new RootItem)
         , m_groupingOrder(grouping)
         , m_defaultChecked(MODULE_HIDDEN)
@@ -239,17 +236,20 @@ QVariant BtBookshelfTreeModel::headerData(int section,
     return QVariant();
 }
 
-void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel * sourceModel) {
+void BtBookshelfTreeModel::setSourceModel(
+        std::shared_ptr<QAbstractItemModel> sourceModel)
+{
     if (m_sourceModel == sourceModel)
         return;
 
-    if (m_sourceModel != nullptr) {
-        disconnect(m_sourceModel, &QAbstractItemModel::rowsAboutToBeRemoved,
-                   this,          &BtBookshelfTreeModel::moduleRemoved);
-        disconnect(m_sourceModel, &QAbstractItemModel::rowsInserted,
-                   this,          &BtBookshelfTreeModel::moduleInserted);
-        disconnect(m_sourceModel, &QAbstractItemModel::dataChanged,
-                   this,          &BtBookshelfTreeModel::moduleDataChanged);
+    if (m_sourceModel) {
+        auto & model = *m_sourceModel;
+        disconnect(&model, &QAbstractItemModel::rowsAboutToBeRemoved,
+                   this,   &BtBookshelfTreeModel::moduleRemoved);
+        disconnect(&model, &QAbstractItemModel::rowsInserted,
+                   this,   &BtBookshelfTreeModel::moduleInserted);
+        disconnect(&model, &QAbstractItemModel::dataChanged,
+                   this,   &BtBookshelfTreeModel::moduleDataChanged);
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
         delete m_rootItem;
         m_modules.clear();
@@ -259,29 +259,30 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel * sourceModel) {
         endRemoveRows();
     }
 
-    m_sourceModel = sourceModel;
+    m_sourceModel = std::move(sourceModel);
 
-    if (sourceModel != nullptr) {
-        BT_CONNECT(sourceModel, &QAbstractItemModel::rowsAboutToBeRemoved,
-                   this,        &BtBookshelfTreeModel::moduleRemoved);
-        BT_CONNECT(sourceModel, &QAbstractItemModel::rowsInserted,
-                   this,        &BtBookshelfTreeModel::moduleInserted);
-        BT_CONNECT(sourceModel, &QAbstractItemModel::dataChanged,
-                   this,        &BtBookshelfTreeModel::moduleDataChanged);
+    if (m_sourceModel) {
+        auto & model = *m_sourceModel;
+        BT_CONNECT(&model, &QAbstractItemModel::rowsAboutToBeRemoved,
+                   this,   &BtBookshelfTreeModel::moduleRemoved);
+        BT_CONNECT(&model, &QAbstractItemModel::rowsInserted,
+                   this,   &BtBookshelfTreeModel::moduleInserted);
+        BT_CONNECT(&model, &QAbstractItemModel::dataChanged,
+                   this,   &BtBookshelfTreeModel::moduleDataChanged);
 
-        for (int i = 0; i < sourceModel->rowCount(); i++) {
-            const QModelIndex moduleIndex(sourceModel->index(i, 0));
+        for (int i = 0; i < model.rowCount(); i++) {
+            const QModelIndex moduleIndex(model.index(i, 0));
             CSwordModuleInfo & module = *static_cast<CSwordModuleInfo *>(
-                sourceModel->data(moduleIndex,
-                                  BtBookshelfModel::ModulePointerRole).value<void*>());
+                model.data(moduleIndex,
+                           BtBookshelfModel::ModulePointerRole).value<void*>());
 
             bool checked;
             if (m_defaultChecked == MODULE_HIDDEN) {
-                checked = !sourceModel->data(moduleIndex,
-                                             BtBookshelfModel::ModuleHiddenRole).toBool();
+                checked = !model.data(moduleIndex,
+                                      BtBookshelfModel::ModuleHiddenRole).toBool();
             } else if (m_defaultChecked == MODULE_INDEXED) {
-                checked = !sourceModel->data(moduleIndex,
-                                             BtBookshelfModel::ModuleHasIndexRole).toBool();
+                checked = !model.data(moduleIndex,
+                                      BtBookshelfModel::ModuleHasIndexRole).toBool();
             } else {
                 checked = (m_defaultChecked == CHECKED);
             }

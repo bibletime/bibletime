@@ -13,6 +13,7 @@
 #ifndef CSWORDBACKEND_H
 #define CSWORDBACKEND_H
 
+#include <memory>
 #include <QObject>
 #include <QString>
 #include <QStringList>
@@ -117,11 +118,11 @@ public: /* Methods: */
       \returns The list of modules managed by this backend.
     */
     QList<CSwordModuleInfo*> const & moduleList() const
-    { return m_dataModel.moduleList(); }
+    { return m_dataModel->moduleList(); }
 
     BtModuleList moduleList(CSwordModuleInfo::ModuleType type) const;
 
-    BtBookshelfModel * model() { return &m_dataModel; }
+    std::shared_ptr<BtBookshelfModel> model() { return m_dataModel; }
 
     CSwordModuleInfo * findFirstAvailableModule(CSwordModuleInfo::ModuleType type);
 
@@ -271,7 +272,7 @@ private: /* Fields: */
     Rendering::CEntryDisplay   m_entryDisplay;
     Rendering::CBookDisplay    m_bookDisplay;
 
-    BtBookshelfModel m_dataModel;
+    std::shared_ptr<BtBookshelfModel> const m_dataModel;
 
     static CSwordBackend * m_instance;
 
