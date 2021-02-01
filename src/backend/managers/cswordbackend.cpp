@@ -149,20 +149,22 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     for (auto const & modulePair : getModules()) {
         sword::SWModule * const curMod = modulePair.second;
         BT_ASSERT(curMod);
-        CSwordModuleInfo * newModule;
+        std::unique_ptr<CSwordModuleInfo> newModule;
 
         const char * const modType = curMod->getType();
         if (!strcmp(modType, "Biblical Texts")) {
-            newModule = new CSwordBibleModuleInfo(*curMod, *this);
+            newModule = std::make_unique<CSwordBibleModuleInfo>(*curMod, *this);
             newModule->setDisplay(&m_chapterDisplay);
         } else if (!strcmp(modType, "Commentaries")) {
-            newModule = new CSwordCommentaryModuleInfo(*curMod, *this);
+            newModule = std::make_unique<CSwordCommentaryModuleInfo>(*curMod,
+                                                                     *this);
             newModule->setDisplay(&m_entryDisplay);
         } else if (!strcmp(modType, "Lexicons / Dictionaries")) {
-            newModule = new CSwordLexiconModuleInfo(*curMod, *this);
+            newModule = std::make_unique<CSwordLexiconModuleInfo>(*curMod,
+                                                                  *this);
             newModule->setDisplay(&m_entryDisplay);
         } else if (!strcmp(modType, "Generic Books")) {
-            newModule = new CSwordBookModuleInfo(*curMod, *this);
+            newModule = std::make_unique<CSwordBookModuleInfo>(*curMod, *this);
             newModule->setDisplay(&m_bookDisplay);
         } else {
             continue;
@@ -189,9 +191,9 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
                 }
             }
 
-                m_dataModel->addModule(newModule);
-        } else {
-            delete newModule;
+                /// \todo Refactor data model to use shared_ptr to contain works
+                m_dataModel->addModule(newModule.get());
+                newModule.release();
         }
     }
 
