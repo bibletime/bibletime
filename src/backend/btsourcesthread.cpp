@@ -35,7 +35,7 @@ void BtSourcesThread::run() {
     QStringList const sourceNames = BtInstallBackend::sourceNameList();
     auto const sourceCount = sourceNames.count();
     BT_ASSERT(sourceCount >= 0);
-    std::unique_ptr<int[]> failedSources{new int[sourceCount]};
+    auto const failedSources(std::make_unique<int[]>(sourceCount));
     std::size_t numFailedSources = 0u;
     BtInstallMgr iMgr;
     for (int i = 0; i < sourceCount; ++i) {
