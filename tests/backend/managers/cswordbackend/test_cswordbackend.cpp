@@ -35,13 +35,13 @@ private:
 void test_CSwordBackend::initTestCase() {
     QVERIFY(util::directory::initDirectoryCache());
     CSwordBackend* backend = CSwordBackend::createInstance();
-    QVERIFY(backend != 0);
+    QVERIFY(backend);
     BibleTimeApp::init();
     backend->initModules(CSwordBackend::OtherChange);
 }
 
 void test_CSwordBackend::instance() {
-     QVERIFY(CSwordBackend::instance() != 0);    
+     QVERIFY(CSwordBackend::instance());
 }
 
 void test_CSwordBackend::moduleList() {
@@ -203,7 +203,7 @@ void test_CSwordBackend::setFilterOptions() {
         QByteArray optName = backend->optionName(CSwordModuleInfo::morphSegmentation).toUtf8();
 
         // Test only if morph option is available
-        if (backend->getGlobalOption(optName.constData()) != 0) {
+        if (backend->getGlobalOption(optName.constData())) {
 
             fOpt.morphSegmentation = 1;
             backend->setFilterOptions(fOpt);
@@ -234,7 +234,7 @@ void test_CSwordBackend::booknameLanguage() {
 
     CSwordBackend* backend = CSwordBackend::instance();
     CSwordModuleInfo* module = backend->findModuleByName("KJV");
-    QVERIFY(module != 0);
+    QVERIFY(module);
     CSwordVerseKey* vKey = dynamic_cast<CSwordVerseKey*>(CSwordKey::createInstance(module));
 
     backend->booknameLanguage(language);
@@ -244,17 +244,17 @@ void test_CSwordBackend::booknameLanguage() {
 
 void test_CSwordBackend::findModuleByDescription() {
     CSwordBackend* backend = CSwordBackend::instance();
-    QVERIFY(backend->findModuleByDescription("Josephus: The Complete Works") != 0);
+    QVERIFY(backend->findModuleByDescription("Josephus: The Complete Works"));
 }
 
 void test_CSwordBackend::findModuleByName() {
     CSwordBackend* backend = CSwordBackend::instance();
-    QVERIFY(backend->findModuleByName("KJV") != 0);
-    QVERIFY(backend->findModuleByName("KJVA") != 0);
-    QVERIFY(backend->findModuleByName("Scofield") != 0);
-    QVERIFY(backend->findModuleByName("Josephus") != 0);
-    QVERIFY(backend->findModuleByName("StrongsGreek") != 0);
-    QVERIFY(backend->findModuleByName("ABC") == 0);
+    QVERIFY(backend->findModuleByName("KJV"));
+    QVERIFY(backend->findModuleByName("KJVA"));
+    QVERIFY(backend->findModuleByName("Scofield"));
+    QVERIFY(backend->findModuleByName("Josephus"));
+    QVERIFY(backend->findModuleByName("StrongsGreek"));
+    QVERIFY(backend->findModuleByName("ABC"));
 }
 
 void test_CSwordBackend::findModuleByPointer() {
@@ -269,7 +269,7 @@ void test_CSwordBackend::findModuleByPointer() {
 void test_CSwordBackend::getConfig() {
     CSwordBackend* backend = CSwordBackend::instance();
     sword::SWConfig* config = backend->getConfig();
-    QVERIFY(config != 0);
+    QVERIFY(config);
 }
 
 void test_CSwordBackend::optionName_data() {
@@ -403,7 +403,7 @@ void test_CSwordBackend::getConstPointerList() {
 
 void test_CSwordBackend::cleanupTestCase() {
      CSwordBackend::destroyInstance();
-     QVERIFY(CSwordBackend::instance() == 0);    
+     QVERIFY(!CSwordBackend::instance());
 }
 
 QTEST_MAIN(test_CSwordBackend)
