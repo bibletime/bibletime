@@ -120,8 +120,6 @@ public: /* Methods: */
     QList<CSwordModuleInfo*> const & moduleList() const
     { return m_dataModel->moduleList(); }
 
-    BtModuleList moduleList(CSwordModuleInfo::ModuleType type) const;
-
     std::shared_ptr<BtBookshelfModel> model() { return m_dataModel; }
 
     CSwordModuleInfo * findFirstAvailableModule(CSwordModuleInfo::ModuleType type);

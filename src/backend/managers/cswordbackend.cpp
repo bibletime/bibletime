@@ -61,15 +61,6 @@ CSwordBackend::~CSwordBackend() {
     shutdownModules();
 }
 
-BtModuleList CSwordBackend::moduleList(CSwordModuleInfo::ModuleType type) const
-{
-    BtModuleList l;
-    for (auto * const m : moduleList())
-        if(m->type() == type)
-            l.append(m);
-    return l;
-}
-
 CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::ModuleType type) {
 
     for (CSwordModuleInfo * const m : moduleList())

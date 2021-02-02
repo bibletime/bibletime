@@ -46,11 +46,6 @@ void test_CSwordBackend::instance() {
 
 void test_CSwordBackend::moduleList() {
     QVERIFY(CSwordBackend::instance()->moduleList().count() > 0);
-    QVERIFY(CSwordBackend::instance()->moduleList(CSwordModuleInfo::Bible).count() > 0);
-    QVERIFY(CSwordBackend::instance()->moduleList(CSwordModuleInfo::Commentary).count() > 0);
-    QVERIFY(CSwordBackend::instance()->moduleList(CSwordModuleInfo::Lexicon).count() > 0);
-    QVERIFY(CSwordBackend::instance()->moduleList(CSwordModuleInfo::GenericBook).count() > 0);
-    QVERIFY(CSwordBackend::instance()->moduleList(CSwordModuleInfo::Unknown).count() == 0);
 }
 
 // Should CSwordBackend::shutdownModules be private?
