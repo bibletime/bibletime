@@ -41,7 +41,7 @@ public:
 void test_BtSourcesThread::initTestCase() {
     QVERIFY(util::directory::initDirectoryCache());
     CSwordBackend* backend = CSwordBackend::createInstance();
-    QVERIFY(backend != 0);
+    QVERIFY(backend);
     BibleTimeApp::init();
     backend->initModules(CSwordBackend::OtherChange);
 }
@@ -67,7 +67,7 @@ void test_BtSourcesThread::slotShowMessage(const QString & msg) {
 
 void test_BtSourcesThread::cleanupTestCase() {
     CSwordBackend::destroyInstance();
-    QVERIFY(CSwordBackend::instance() == 0);
+    QVERIFY(!CSwordBackend::instance());
 }
 
 QTEST_MAIN(test_BtSourcesThread)
