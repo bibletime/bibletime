@@ -182,18 +182,17 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
              * Reading from the module can happen in subtle ways. The addModule below causes a read
              * to determine if the locked or unlocked icon is used by the model.
              */
-            {
-                if (newModule->isEncrypted()) {
-                    const QString unlockKey = btConfig().getModuleEncryptionKey(newModule->name());
-                    if (!unlockKey.isNull())
-                        setCipherKey(newModule->name().toUtf8().constData(),
-                                     unlockKey.toUtf8().constData());
-                }
+            if (newModule->isEncrypted()) {
+                auto const unlockKey(
+                        btConfig().getModuleEncryptionKey(newModule->name()));
+                if (!unlockKey.isNull())
+                    setCipherKey(newModule->name().toUtf8().constData(),
+                                 unlockKey.toUtf8().constData());
             }
 
-                /// \todo Refactor data model to use shared_ptr to contain works
-                m_dataModel->addModule(newModule.get());
-                newModule.release();
+            /// \todo Refactor data model to use shared_ptr to contain works
+            m_dataModel->addModule(newModule.get());
+            newModule.release();
         }
     }
 
