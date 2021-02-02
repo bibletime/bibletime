@@ -46,16 +46,16 @@ private:
 void test_CSwordVerseKey::initTestCase() {
     QVERIFY(util::directory::initDirectoryCache());
     CSwordBackend* backend = CSwordBackend::createInstance();
-    QVERIFY(backend != 0);
+    QVERIFY(backend);
     BibleTimeApp::init();
     backend->initModules(CSwordBackend::OtherChange);
 
     m_moduleKJV = backend->findModuleByName("KJV");
-    QVERIFY(m_moduleKJV != 0);
+    QVERIFY(m_moduleKJV);
     m_moduleKJVA = backend->findModuleByName("KJVA");
-    QVERIFY(m_moduleKJVA != 0);
+    QVERIFY(m_moduleKJVA);
     m_moduleJosephus = backend->findModuleByName("Josephus");
-    QVERIFY(m_moduleKJVA != 0);
+    QVERIFY(m_moduleKJVA);
 }
 
 void test_CSwordVerseKey::CSwordVerseKey_module_constructor() {
@@ -143,7 +143,7 @@ void test_CSwordVerseKey::setKey() {
 
     CSwordBackend* backend = CSwordBackend::instance();
     CSwordModuleInfo* module = backend->findModuleByName(moduleName);
-    QVERIFY(module != 0);
+    QVERIFY(module);
     CSwordVerseKey* vKey = dynamic_cast<CSwordVerseKey*>(CSwordKey::createInstance(module));
 
     vKey->setKey(reference);
@@ -172,7 +172,7 @@ void test_CSwordVerseKey::next() {
 
     CSwordBackend* backend = CSwordBackend::instance();
     CSwordModuleInfo* module = backend->findModuleByName(moduleName);
-    QVERIFY(module != 0);
+    QVERIFY(module);
     CSwordVerseKey* vKey = dynamic_cast<CSwordVerseKey*>(CSwordKey::createInstance(module));
 
     vKey->setKey(reference);
@@ -200,7 +200,7 @@ void test_CSwordVerseKey::previous() {
 
     CSwordBackend* backend = CSwordBackend::instance();
     CSwordModuleInfo* module = backend->findModuleByName(moduleName);
-    QVERIFY(module != 0);
+    QVERIFY(module);
     CSwordVerseKey* vKey = dynamic_cast<CSwordVerseKey*>(CSwordKey::createInstance(module));
 
     vKey->setKey(reference);
@@ -212,7 +212,7 @@ void test_CSwordVerseKey::previous() {
 
 void test_CSwordVerseKey::setModule() {
     CSwordVerseKey* vKey = dynamic_cast<CSwordVerseKey*>(CSwordKey::createInstance(m_moduleKJV));
-    QVERIFY(vKey != 0);
+    QVERIFY(vKey);
 
     QSignalSpy beforeSpy(vKey->beforeChangedSignaller(), &BtSignal::signal);
     QSignalSpy afterSpy(vKey->afterChangedSignaller(), &BtSignal::signal);
@@ -223,7 +223,7 @@ void test_CSwordVerseKey::setModule() {
     QCOMPARE(afterSpy.count(), 1);
 
     const CSwordModuleInfo* module = vKey->module();
-    QVERIFY(module != 0);
+    QVERIFY(module);
     QCOMPARE(module->name(), QString("KJVA"));
 }
 
@@ -231,7 +231,7 @@ void test_CSwordVerseKey::setModule() {
 
 void test_CSwordVerseKey::cleanupTestCase() {
      CSwordBackend::destroyInstance();
-     QVERIFY(CSwordBackend::instance() == 0);
+     QVERIFY(!CSwordBackend::instance());
 }
 
 QTEST_MAIN(test_CSwordVerseKey)
