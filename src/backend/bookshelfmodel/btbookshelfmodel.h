@@ -102,12 +102,6 @@ public: /* Methods: */
     void addModule(CSwordModuleInfo * const module);
 
     /**
-      Appends the all the modules in the given set to this model.
-      \param[in] modules Set of modules to add.
-    */
-    void addModules(BtModuleSet const & modules);
-
-    /**
       Removes the given module from this model and optionally destroys it.
       \param[in] module The module to remove from this model.
       \param[in] destroy If true, the given CSwordModuleInfo instance is destroyed.

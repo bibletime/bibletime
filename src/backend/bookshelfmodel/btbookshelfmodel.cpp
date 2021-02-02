@@ -141,30 +141,6 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     endInsertRows();
 }
 
-void BtBookshelfModel::addModules(BtModuleSet const & modules) {
-    QList<CSwordModuleInfo *> newModules;
-    for (auto * const module : modules)
-        if (!m_data.contains(module))
-            newModules.append(module);
-
-    if (newModules.isEmpty())
-        return;
-
-    beginInsertRows(QModelIndex(),
-                    m_data.size(),
-                    m_data.size() + newModules.size() - 1);
-    for (auto * const module : newModules) {
-        m_data.append(module);
-        BT_CONNECT(module, &CSwordModuleInfo::hiddenChanged,
-                   this,   &BtBookshelfModel::moduleHidden);
-        BT_CONNECT(module, &CSwordModuleInfo::hasIndexChanged,
-                   this,   &BtBookshelfModel::moduleIndexed);
-        BT_CONNECT(module, &CSwordModuleInfo::unlockedChanged,
-                   this,   &BtBookshelfModel::moduleUnlocked);
-    }
-    endInsertRows();
-}
-
 void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
                                     bool destroy) {
     const int index = m_data.indexOf(module);
