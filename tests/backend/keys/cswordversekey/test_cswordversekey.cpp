@@ -10,17 +10,25 @@
 *
 **********/
 
-#include <memory>
-#include <QtTest/QtTest>
-#include <QSignalSpy>
-#include <qdebug.h>
-#include <swbuf.h>
 #include "test_cswordversekey.h"
+
+#include <memory>
+#include <qdebug.h>
+#include <QSignalSpy>
+#include <QtTest/QtTest>
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/config/btconfig.h"
 #include "util/directory.h"
+
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <swbuf.h>
+#pragma GCC diagnostic pop
+
 
 class BibleTimeApp
 {
