@@ -146,7 +146,7 @@ int BtQmlInterface::getCurrentModelIndex() const {
         CSwordTreeKey p(key);
         p.root();
         if(p != key)
-            return static_cast<int>(key.getIndex())/4;
+            return static_cast<int>(key.getOffset() / 4u);
     }
     else if (moduleIsLexicon(module())){
         const CSwordLexiconModuleInfo *li =
