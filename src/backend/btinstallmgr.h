@@ -30,7 +30,7 @@
 class BtInstallMgr
         : public QObject
         , public sword::InstallMgr
-        , public sword::StatusReporter
+        , private sword::StatusReporter
 {
 
     Q_OBJECT
