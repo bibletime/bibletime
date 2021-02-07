@@ -27,13 +27,9 @@
 #pragma GCC diagnostic pop
 
 
-CSwordLDKey::CSwordLDKey(const CSwordModuleInfo *module) {
-    if ((m_module = dynamic_cast<const CSwordLexiconModuleInfo*>(module))) {
-        //    *(m_module->module()) = TOP;
-    }
-
-    SWKey::operator= (" ");
-}
+CSwordLDKey::CSwordLDKey(CSwordModuleInfo const * module)
+    : CSwordKey(module)
+{ SWKey::operator=(" "); }
 
 /** No descriptions */
 CSwordLDKey::CSwordLDKey(CSwordLDKey const & k)
