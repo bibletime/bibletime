@@ -14,6 +14,7 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#include <QFontDialog>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -24,7 +25,6 @@
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
 #include "../bibletimeapp.h"
-#include "btfontchooserwidget.h"
 #include "cconfigurationdialog.h"
 
 
@@ -67,14 +67,16 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 
     /// \todo remember the last selected font and jump there.
 
-    m_fontChooser = new BtFontChooserWidget(this);
+    m_fontChooser = new QFontDialog(this);
+    m_fontChooser->setOptions(QFontDialog::NoButtons
+                              | QFontDialog::DontUseNativeDialog);
     /**
       \todo Eeli's wishlist: why not show something relevant here, like a Bible
             verse in chosen (not tr()'ed!) language?
     */
     // m_fontChooser->setSampleText("SOMETHING");
 
-    BT_CONNECT(m_fontChooser, &BtFontChooserWidget::fontSelected,
+    BT_CONNECT(m_fontChooser, &QFontDialog::currentFontChanged,
                [this](QFont const & newFont) {
                    auto const languageName(m_languageComboBox->currentText());
                    m_fontMap.insert(
@@ -98,7 +100,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
                });
 
     const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
-    m_fontChooser->setFont(v.second);
+    m_fontChooser->setCurrentFont(v.second);
     useOwnFontClicked(v.first);
     m_languageCheckBox->setChecked(v.first);
     m_fontChooser->setMinimumSize(m_fontChooser->sizeHint());
