@@ -58,14 +58,10 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(int          backgroundHighlightColorIndex READ getBackgroundHighlightColorIndex NOTIFY backgroundHighlightColorIndexChanged)
     Q_PROPERTY(int          contextMenuIndex        READ getContextMenuIndex NOTIFY contextMenuIndexChanged WRITE setContextMenuIndex)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
-    Q_PROPERTY(int          fontSize0               READ getFontSize0   NOTIFY fontChanged)
-    Q_PROPERTY(int          fontSize1               READ getFontSize1   NOTIFY fontChanged)
-    Q_PROPERTY(int          fontSize2               READ getFontSize2   NOTIFY fontChanged)
-    Q_PROPERTY(int          fontSize3               READ getFontSize3   NOTIFY fontChanged)
-    Q_PROPERTY(QString      fontName0               READ getFontName0   NOTIFY fontChanged)
-    Q_PROPERTY(QString      fontName1               READ getFontName1   NOTIFY fontChanged)
-    Q_PROPERTY(QString      fontName2               READ getFontName2   NOTIFY fontChanged)
-    Q_PROPERTY(QString      fontName3               READ getFontName3   NOTIFY fontChanged)
+    Q_PROPERTY(QFont        font0                   READ getFont0   NOTIFY fontChanged)
+    Q_PROPERTY(QFont        font1                   READ getFont1   NOTIFY fontChanged)
+    Q_PROPERTY(QFont        font2                   READ getFont2   NOTIFY fontChanged)
+    Q_PROPERTY(QFont        font3                   READ getFont3   NOTIFY fontChanged)
     Q_PROPERTY(QColor       foregroundColor         READ getForegroundColor NOTIFY foregroundColorChanged)
     Q_PROPERTY(QString      highlightWords          READ getHighlightWords NOTIFY highlightWordsChanged)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
@@ -111,14 +107,10 @@ public:
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
     int getCurrentModelIndex() const;
-    QString getFontName0() const;
-    QString getFontName1() const;
-    QString getFontName2() const;
-    QString getFontName3() const;
-    int getFontSize0() const;
-    int getFontSize1() const;
-    int getFontSize2() const;
-    int getFontSize3() const;
+    QFont getFont0() const;
+    QFont getFont1() const;
+    QFont getFont2() const;
+    QFont getFont3() const;
     QString getHighlightWords() const;
     CSwordKey* getKey() const;
     QString getLemmaFromLink(const QString& url);
@@ -173,8 +165,7 @@ private:
     bool copyKey(CSwordKey const * const key, Format const format, bool const addText);
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
-    QString fontName(int column) const;
-    int fontSize(int column) const;
+    QFont font(int column) const;
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
     const CSwordModuleInfo* module() const;
