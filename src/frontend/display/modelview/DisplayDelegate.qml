@@ -122,6 +122,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: delegate.left
+        font: btQmlInterface.font0
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -134,6 +135,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView0.right
+        font: btQmlInterface.font1
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -146,6 +148,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView1.right
+        font: btQmlInterface.font2
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -158,6 +161,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView2.right
+        font: btQmlInterface.font3
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -170,6 +174,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView3.right
+        font: btQmlInterface.font4
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -182,6 +187,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView4.right
+        font: btQmlInterface.font5
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -194,6 +200,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView5.right
+        font: btQmlInterface.font6
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -206,6 +213,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView6.right
+        font: btQmlInterface.font7
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -218,6 +226,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView7.right
+        font: btQmlInterface.font8
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
@@ -230,6 +239,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView8.right
+        font: btQmlInterface.font9
         width: delegate.textWidth
         onHovered: delegate.hovered(link)
     }
