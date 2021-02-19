@@ -96,7 +96,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
                    auto const & p = m_fontMap[usage];
                    useOwnFontClicked(p.first);
                    m_languageCheckBox->setChecked(p.first);
-                   m_fontChooser->setFont(p.second);
+                   m_fontChooser->setCurrentFont(p.second);
                });
 
     const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
