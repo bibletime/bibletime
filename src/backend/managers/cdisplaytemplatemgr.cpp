@@ -177,11 +177,40 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
             if (fp.first) {
                 const QFont & f = fp.second;
 
+                /* QFont::weight() returns an int in the range [0, 99] but CSS
+                   requires a real number in the range [1, 1000]. No extra
+                   checks are needed for floating point precision in the result
+                   range. */
+                auto const fontWeight = 1.0 + (f.weight() * 999.0) / 99.0;
+
+                auto const fontStyleString =
+                        [&f]() {
+                            switch ((int) f.style()) {
+                            case QFont::StyleItalic: return "italic";
+                            case QFont::StyleOblique: return "oblique";
+                            case QFont::StyleNormal:
+                            default:
+                                return "normal";
+                            }
+                        }();
+
+                auto const textDecorationString =
+                        [&f]() {
+                            if (f.underline())
+                                return f.strikeOut()
+                                        ? "underline line-through"
+                                        : "underline";
+                            return f.strikeOut() ? "line-through" : "none";
+                        }();
+
+                /// \todo Add support translating more QFont properties to CSS.
+
                 langCSS.append("*[lang=").append(lang->abbrev()).append("]{")
                        .append("font-family:").append(f.family())
                        .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
-                       .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
-                       .append(";font-style:").append(f.italic() ? "italic" : "normal")
+                       .append("pt;font-weight:").append(QString::number(fontWeight))
+                       .append(";font-style:").append(fontStyleString)
+                       .append(";text-decoration:").append(textDecorationString)
                        .append('}');
             }
         }
