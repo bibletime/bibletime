@@ -85,8 +85,7 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
         color: columnView.textColor
-        font.family: btQmlInterface.fontName0
-        font.pointSize: btQmlInterface.fontSize0
+        font: btQmlInterface.font0
         text: displayTitle
         textFormat: Text.RichText
         visible: displayTitle != ""
@@ -100,8 +99,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.left: columnView.left
         color: columnView.textColor
-        font.family: btQmlInterface.fontName0
-        font.pointSize: btQmlInterface.fontSize0
+        font: btQmlInterface.font0
         readOnly: true
         text: {
             var isHtml = columnView.textIsHtml(displayText);

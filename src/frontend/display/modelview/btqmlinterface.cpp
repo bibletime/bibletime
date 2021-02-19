@@ -407,52 +407,16 @@ CSwordKey* BtQmlInterface::getKey() const {
     return m_swordKey;
 }
 
-QString BtQmlInterface::fontName(int column) const {
+QFont BtQmlInterface::font(int column) const {
     if (column >= 0 && column < m_fonts.count())
-        return m_fonts.at(column).family();
-    return QApplication::font().family();
+        return m_fonts.at(column);
+    return QApplication::font();
 }
 
-QString BtQmlInterface::getFontName0() const {
-    return fontName(0);
-}
-
-QString BtQmlInterface::getFontName1() const {
-    return fontName(1);
-}
-
-QString BtQmlInterface::getFontName2() const {
-    return fontName(2);
-}
-
-QString BtQmlInterface::getFontName3() const {
-    return fontName(3);
-}
-
-int BtQmlInterface::getFontSize0()const {
-    return fontSize(0);
-}
-
-int BtQmlInterface::getFontSize1()const {
-    return fontSize(1);
-}
-
-int BtQmlInterface::getFontSize2()const {
-    return fontSize(2);
-}
-
-int BtQmlInterface::getFontSize3()const {
-    return fontSize(3);
-}
-
-
-int BtQmlInterface::fontSize(int column) const {
-    if (column >= 0 && column < m_fonts.count()) {
-        int size = m_fonts.at(column).pointSize();
-        return size;
-    }
-    return QApplication::font().pointSize();
-}
+QFont BtQmlInterface::getFont0() const { return font(0); }
+QFont BtQmlInterface::getFont1() const { return font(1); }
+QFont BtQmlInterface::getFont2() const { return font(2); }
+QFont BtQmlInterface::getFont3() const { return font(3); }
 
 QString BtQmlInterface::getSelectedText() {
 
