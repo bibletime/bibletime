@@ -21,6 +21,7 @@ Item {
     property color textColor: btQmlInterface.foregroundColor
     property color textBackgroundColor: btQmlInterface.backgroundColor
     property color textBackgroundHighlightColor: btQmlInterface.backgroundHighlightColor
+    required property font font
 
     signal hovered(string link);
     signal setSelection(bool selected, int selectFirstIndex, int selectLastIndex, int posFirst, int posLast)
@@ -85,7 +86,7 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
         color: columnView.textColor
-        font: btQmlInterface.font0
+        font: columnView.font
         text: displayTitle
         textFormat: Text.RichText
         visible: displayTitle != ""
@@ -99,7 +100,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.left: columnView.left
         color: columnView.textColor
-        font: btQmlInterface.font0
+        font: columnView.font
         readOnly: true
         text: {
             var isHtml = columnView.textIsHtml(displayText);
