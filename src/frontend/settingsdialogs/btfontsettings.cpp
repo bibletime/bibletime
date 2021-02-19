@@ -14,6 +14,7 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#include <QFontDialog>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -24,7 +25,6 @@
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
 #include "../bibletimeapp.h"
-#include "btfontchooserwidget.h"
 #include "cconfigurationdialog.h"
 
 
@@ -71,14 +71,16 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 
     /// \todo remember the last selected font and jump there.
 
-    m_fontChooser = new BtFontChooserWidget(this);
+    m_fontChooser = new QFontDialog(this);
+    m_fontChooser->setOptions(QFontDialog::NoButtons
+                              | QFontDialog::DontUseNativeDialog);
     /**
       \todo Eeli's wishlist: why not show something relevant here, like a Bible
             verse in chosen (not tr()'ed!) language?
     */
     // m_fontChooser->setSampleText("SOMETHING");
 
-    BT_CONNECT(m_fontChooser, SIGNAL(fontSelected(QFont const &)),
+    BT_CONNECT(m_fontChooser, SIGNAL(currentFontChanged(QFont const &)),
                this, SLOT(newDisplayWindowFontSelected(QFont const &)));
 #if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
     BT_CONNECT(m_languageComboBox, SIGNAL(activated(QString const &)),
@@ -88,7 +90,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
                this, SLOT(newDisplayWindowFontAreaSelected(QString const &)));
 
     const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
-    m_fontChooser->setFont(v.second);
+    m_fontChooser->setCurrentFont(v.second);
     useOwnFontClicked(v.first);
     m_languageCheckBox->setChecked(v.first);
     m_fontChooser->setMinimumSize(m_fontChooser->sizeHint());
@@ -139,7 +141,7 @@ void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString &usage) 
     const BtConfig::FontSettingsPair &p = m_fontMap[usage];
     useOwnFontClicked(p.first);
     m_languageCheckBox->setChecked(p.first);
-    m_fontChooser->setFont(p.second);
+    m_fontChooser->setCurrentFont(p.second);
 }
 
 void BtFontSettingsPage::useOwnFontClicked(bool isOn) {

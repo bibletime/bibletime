@@ -20,10 +20,10 @@
 #include "../../backend/config/btconfig.h"
 
 
-class BtFontChooserWidget;
 class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
+class QFontDialog;
 class QGroupBox;
 class QLabel;
 
@@ -62,7 +62,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
         QLabel *m_languageLabel;
         QComboBox *m_languageComboBox;
         QCheckBox *m_languageCheckBox;
-        BtFontChooserWidget* m_fontChooser;
+        QFontDialog * m_fontChooser;
 
         FontMap m_fontMap;
 
