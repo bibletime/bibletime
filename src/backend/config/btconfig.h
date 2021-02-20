@@ -141,7 +141,7 @@ public: /* Methods: */
      * \returns QFont suitable for current language.
      */
     QFont const & getDefaultFont() const {
-        QMutexLocker lock(&this->m_mutex);
+        std::lock_guard const guard(m_mutex);
         return m_defaultFont;
     }
 

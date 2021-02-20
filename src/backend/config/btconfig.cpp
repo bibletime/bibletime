@@ -213,7 +213,7 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
     const QString & englishName = language.englishName();
     BT_ASSERT(!englishName.isEmpty());
 
-    QMutexLocker lock(&this->m_mutex);
+    std::lock_guard const guard(m_mutex);
     // write the language to the settings
     setValue("fonts/" + englishName, fontSettings.second.toString());
     setValue("font standard settings/" + englishName, fontSettings.first);
@@ -228,7 +228,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
     const QString & englishName = language.englishName();
     BT_ASSERT(!englishName.isEmpty());
 
-    QMutexLocker lock(&this->m_mutex);
+    std::lock_guard const guard(m_mutex);
     // Check the cache first:
     auto it(m_fontCache.find(&language));
     if (it != m_fontCache.end())

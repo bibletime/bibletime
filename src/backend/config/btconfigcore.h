@@ -15,9 +15,9 @@
 
 #include <QSettings>
 
+#include <mutex>
 #include <QCoreApplication>
 #include <QHash>
-#include <QMutex>
 #include <QStringList>
 #include "../../util/btassert.h"
 
@@ -52,7 +52,7 @@ public: /* Methods: */
       \returns the key of the current session.
     */
     QString const & currentSessionKey() const {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         return m_currentSessionKey;
     }
 
@@ -60,7 +60,7 @@ public: /* Methods: */
       \returns the name of the current session.
     */
     QString const & currentSessionName() const {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         auto it(m_sessionNames.constFind(m_currentSessionKey));
         BT_ASSERT(it != m_sessionNames.constEnd());
         return it.value();
@@ -70,7 +70,7 @@ public: /* Methods: */
       \returns a hashmap with the keys and printable names of the sessions.
     */
     SessionNamesHashMap const & sessionNames() const {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         return m_sessionNames;
     }
 
@@ -114,7 +114,7 @@ public: /* Methods: */
     */
     template<typename T>
     T value(QString const & key, T const & defaultValue = T()) {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         return m_settings.value(group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
     }
@@ -129,7 +129,7 @@ public: /* Methods: */
     QVariant qVariantValue(QString const & key,
                            QVariant const & defaultValue = QVariant())
     {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         return m_settings.value(group() + key,
                                 QVariant::fromValue(defaultValue));
     }
@@ -143,7 +143,7 @@ public: /* Methods: */
     */
     template<typename T>
     T sessionValue(QString const & key, T const & defaultValue = T()) {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
     }
@@ -156,7 +156,7 @@ public: /* Methods: */
     */
     template<typename T>
     void setValue(QString const & key, T const & value) {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         m_settings.setValue(group() + key, QVariant::fromValue<T>(value));
     }
 
@@ -168,7 +168,7 @@ public: /* Methods: */
     */
     template<typename T>
     void setSessionValue(QString const & key, T const & value) {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         m_settings.setValue(m_cachedCurrentSessionGroup + group() + key,
                             QVariant::fromValue<T>(value));
     }
@@ -227,7 +227,7 @@ public: /* Methods: */
       \brief Synchronize the underlying QSettings.
     */
     void sync() {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         m_settings.sync();
     }
 
@@ -281,7 +281,7 @@ public: /* Methods: */
       \returns the group string or an empty string if no group is set.
     */
     QString group() const {
-        QMutexLocker lock(&m_mutex);
+        std::lock_guard const guard(m_mutex);
         if (m_cachedGroup.isNull()) {
             m_cachedGroup = m_groups.isEmpty()
                             ? ""
@@ -313,7 +313,7 @@ private: /* Methods: */
 protected: /* Fields: */
 
     /** Required for asynchronous access */
-    mutable QMutex m_mutex;
+    mutable std::recursive_mutex m_mutex;
 
 private: /* Fields: */
 

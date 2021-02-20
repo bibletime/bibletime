@@ -24,8 +24,7 @@ QString const KEY_SESSION_NAME    = "sessions/%1/name";
 } // anonymous namespace
 
 BtConfigCore::BtConfigCore(const QString & settingsFile)
-    : m_mutex(QMutex::Recursive)
-    , m_settings(settingsFile, QSettings::IniFormat)
+    : m_settings(settingsFile, QSettings::IniFormat)
 {
     /**
       \todo Read UI language from settings, and initialize translator for tr()
@@ -74,7 +73,7 @@ BtConfigCore::BtConfigCore(const QString & settingsFile)
 void BtConfigCore::setCurrentSession(const QString & key) {
     BT_ASSERT(!key.isEmpty());
 
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     BT_ASSERT(m_sessionNames.contains(key));
     m_currentSessionKey = key;
     m_cachedCurrentSessionGroup = GROUP_SESSION.arg(key);
@@ -88,7 +87,7 @@ QString BtConfigCore::addSession(const QString & name) {
 
     // Generate a new session key:
     QString key = QString::number(0u, 36);
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     if (m_sessionNames.contains(key)) {
         QString keyPrefix;
         std::size_t i = 1u;
@@ -114,7 +113,7 @@ QString BtConfigCore::addSession(const QString & name) {
 
 
 void BtConfigCore::deleteSession(const QString & key) {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     BT_ASSERT(m_sessionNames.contains(key));
     BT_ASSERT(key != m_currentSessionKey);
     m_sessionNames.remove(key);
@@ -124,7 +123,7 @@ void BtConfigCore::deleteSession(const QString & key) {
 }
 
 QStringList BtConfigCore::childKeys() {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     return childKeys__();
 }
 
@@ -146,7 +145,7 @@ QStringList BtConfigCore::childKeys(const QString & subkey) {
 }
 
 QStringList BtConfigCore::childGroups() {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     return childGroups__();
 }
 
@@ -168,12 +167,12 @@ QStringList BtConfigCore::childGroups(const QString & subkey) {
 }
 
 QStringList BtConfigCore::sessionChildGroups() {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     return sessionChildGroups__();
 }
 
 QStringList BtConfigCore::sessionChildGroups__() {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     m_settings.beginGroup(m_cachedCurrentSessionGroup + group());
     const QStringList gs = m_settings.childGroups();
     m_settings.endGroup();
@@ -188,7 +187,7 @@ QStringList BtConfigCore::sessionChildGroups(const QString & subkey) {
 }
 
 void BtConfigCore::remove(const QString & key) {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     if (m_groups.isEmpty()) {
         m_settings.remove(key);
     } else {
@@ -197,7 +196,7 @@ void BtConfigCore::remove(const QString & key) {
 }
 
 void BtConfigCore::sessionRemove(const QString & key) {
-    QMutexLocker lock(&m_mutex);
+    std::lock_guard const guard(m_mutex);
     if (m_groups.isEmpty()) {
         m_settings.remove(m_cachedCurrentSessionGroup + key);
     } else {
