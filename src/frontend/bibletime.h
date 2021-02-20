@@ -19,7 +19,7 @@
 #include <QTimer>
 #include "displaywindow/cdisplaywindow.h"
 #ifndef NDEBUG
-#include <QMutex>
+#include <mutex>
 #endif
 
 
@@ -538,7 +538,7 @@ public Q_SLOTS:
     private:
         QAction *m_debugWidgetAction;
         static QLabel *m_debugWindow;
-        static QMutex m_debugWindowLock;
+        static std::mutex m_debugWindowLock;
 #endif
 };
 

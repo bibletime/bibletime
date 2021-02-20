@@ -55,7 +55,6 @@
 #ifndef NDEBUG
 #include <QLabel>
 #include <QMetaObject>
-#include <QMutexLocker>
 #include <QTimer>
 #endif
 
@@ -896,11 +895,11 @@ void BibleTime::initBackends() {
 #ifndef NDEBUG
 
 QLabel *BibleTime::m_debugWindow = nullptr;
-QMutex BibleTime::m_debugWindowLock;
+std::mutex BibleTime::m_debugWindowLock;
 
 void BibleTime::slotShowDebugWindow(bool show) {
     if (show) {
-        QMutexLocker lock(&m_debugWindowLock);
+        std::lock_guard const guard(m_debugWindowLock);
         if (m_debugWindow == nullptr) {
             m_debugWindow = new QLabel(nullptr, Qt::Dialog);
             m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
@@ -919,7 +918,7 @@ void BibleTime::slotShowDebugWindow(bool show) {
 }
 
 void BibleTime::deleteDebugWindow() {
-    QMutexLocker lock(&m_debugWindowLock);
+    std::lock_guard const guard(m_debugWindowLock);
     if (m_debugWindow != nullptr) {
         disconnect(m_debugWindow, &QObject::destroyed,
                    this,          &BibleTime::slotDebugWindowClosing);
@@ -929,13 +928,13 @@ void BibleTime::deleteDebugWindow() {
 }
 
 void BibleTime::slotDebugWindowClosing() {
-    QMutexLocker lock(&m_debugWindowLock);
+    std::lock_guard const guard(m_debugWindowLock);
     m_debugWindow = nullptr;
     m_debugWidgetAction->setChecked(false);
 }
 
 void BibleTime::slotDebugTimeout() {
-    QMutexLocker lock(&m_debugWindowLock);
+    std::lock_guard const guard(m_debugWindowLock);
     if (!m_debugWindow || m_debugWindow->isVisible() == false)
         return;
     QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
