@@ -218,8 +218,8 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
     setValue("fonts/" + englishName, fontSettings.second.toString());
     setValue("font standard settings/" + englishName, fontSettings.first);
 
-    // Remove language from the cache:
-    m_fontCache.remove(&language);
+    // Update cache:
+    m_fontCache[&language] = fontSettings;
 }
 
 BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
