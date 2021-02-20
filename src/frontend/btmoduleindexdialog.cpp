@@ -14,7 +14,7 @@
 
 #include <array>
 #include <QApplication>
-#include <QMutexLocker>
+#include <mutex>
 #include <utility>
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
@@ -25,8 +25,8 @@
 
 bool BtModuleIndexDialog::indexAllModules(const QList<CSwordModuleInfo *> &modules)
 {
-    static QMutex mutex;
-    QMutexLocker lock(&mutex);
+    static std::mutex mutex;
+    std::lock_guard guard(mutex);
 
     if (modules.empty()) return true;
 
