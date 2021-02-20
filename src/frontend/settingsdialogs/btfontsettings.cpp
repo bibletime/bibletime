@@ -46,14 +46,11 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     hLayout->addWidget(m_languageCheckBox);
 
     CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
-    using L = CLanguageMgr::Language;
     for (auto const & l : langMap) {
-        const QString &(L::*f)() const =
-            l->translatedName().isEmpty()
-            ? &L::abbrev
-            : &L::translatedName;
-
-        m_fontMap.insert((l->*f)(), btConfig().getFontForLanguage(*l));
+        auto langName = l->translatedName().isEmpty()
+                        ? l->abbrev()
+                        : l->translatedName();
+        m_fontMap.insert(std::move(langName), btConfig().getFontForLanguage(*l));
     }
 
     for (auto it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
