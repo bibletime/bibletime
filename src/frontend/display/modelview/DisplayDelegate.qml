@@ -20,6 +20,27 @@ Item {
     property int vertSpace: 1 * btQmlInterface.pixelsPerMM
     property bool updating: false
     property string selectedText
+    required property int index
+    required property string text0
+    required property string text1
+    required property string text2
+    required property string text3
+    required property string text4
+    required property string text5
+    required property string text6
+    required property string text7
+    required property string text8
+    required property string text9
+    required property string title0
+    required property string title1
+    required property string title2
+    required property string title3
+    required property string title4
+    required property string title5
+    required property string title6
+    required property string title7
+    required property string title8
+    required property string title9
 
     function positionAt(x, y, column) {
         var columnViewItem = getColumnItem(column);
