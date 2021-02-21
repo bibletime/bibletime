@@ -35,15 +35,12 @@
 #include "ccommentaryreadwindow.h"
 
 
-void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
-    CLexiconReadWindow::applyProfileSettings(windowGroup);
+void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {
+    CLexiconReadWindow::applyProfileSettings(conf);
 
     setObjectName("CBibleReadWindow");
-    BtConfig & conf = btConfig();
-    conf.beginGroup(windowGroup);
-    filterOptions() = conf.getFilterOptions();
-    displayOptions() = conf.getDisplayOptions();
-    conf.endGroup();
+    filterOptions() = BtConfig::loadFilterOptionsFromGroup(conf);
+    displayOptions() = BtConfig::loadDisplayOptionsFromGroup(conf);
 
     Q_EMIT sigFilterOptionsChanged(filterOptions());
     Q_EMIT sigDisplayOptionsChanged(displayOptions());
@@ -52,14 +49,11 @@ void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
     lookup();
 }
 
-void CBibleReadWindow::storeProfileSettings(QString const & windowGroup) const {
-    BtConfig & conf = btConfig();
-    conf.beginGroup(windowGroup);
-    conf.setFilterOptions(filterOptions());
-    conf.setDisplayOptions(displayOptions());
-    conf.endGroup();
+void CBibleReadWindow::storeProfileSettings(BtConfigCore & conf) const {
+    BtConfig::storeFilterOptionsToGroup(filterOptions(), conf);
+    BtConfig::storeDisplayOptionsToGroup(displayOptions(), conf);
 
-    CLexiconReadWindow::storeProfileSettings(windowGroup);
+    CLexiconReadWindow::storeProfileSettings(conf);
 }
 
 

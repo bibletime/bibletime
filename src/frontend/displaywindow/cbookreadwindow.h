@@ -35,8 +35,8 @@ public: /* Methods: */
     CSwordModuleInfo::ModuleType moduleType() const override
     { return CSwordModuleInfo::GenericBook; }
 
-    void storeProfileSettings(QString const & windowGroup) const override;
-    void applyProfileSettings(const QString & windowGroup) override;
+    void storeProfileSettings(BtConfigCore & windowConf) const override;
+    void applyProfileSettings(BtConfigCore const & windowConf) override;
     static void insertKeyboardActions(BtActionCollection * const a);
 
 public Q_SLOTS:

@@ -26,8 +26,9 @@
 #include "../../util/cresmgr.h"
 
 namespace {
-const QString CHTMLWriteDisplayFontKey = "HtmlWriteDisplay/font";
-const QString CHTMLWriteDisplayFontColorKey = "HtmlWriteDisplay/fontColor";
+const QString CHTMLWriteDisplayGroup = "HtmlWriteDisplay";
+const QString CHTMLWriteDisplayFontKey = "font";
+const QString CHTMLWriteDisplayFontColorKey = "fontColor";
 }
 
 
@@ -68,11 +69,12 @@ BtEditTextPage::BtEditTextPage(QWidget * parent)
                    m_actions.underline->setChecked(f.underline());
                    m_handingFormatChangeFromEditor = false;
 
-                   BtConfig & conf = btConfig();
-                   conf.setSessionValue(CHTMLWriteDisplayFontKey,
-                                        m_htmlTextEdit->currentFont());
-                   conf.setSessionValue(CHTMLWriteDisplayFontColorKey,
-                                        m_htmlTextEdit->textColor());
+                   auto conf = btConfig().session().group(
+                                   CHTMLWriteDisplayGroup);
+                   conf.setValue(CHTMLWriteDisplayFontKey,
+                                 m_htmlTextEdit->currentFont());
+                   conf.setValue(CHTMLWriteDisplayFontColorKey,
+                                 m_htmlTextEdit->textColor());
                });
 
     retranslateUi();
@@ -137,9 +139,9 @@ void BtEditTextPage::retranslateUi() {
 }
 
 QFont BtEditTextPage::initHtmlFont() {
-    BtConfig & conf = btConfig();
-    m_htmlTextEdit->setTextColor(conf.sessionValue(CHTMLWriteDisplayFontColorKey, m_htmlTextEdit->textColor()));
-    QFont f = conf.sessionValue(CHTMLWriteDisplayFontKey, m_htmlTextEdit->currentFont());
+    auto const conf = btConfig().session().group(CHTMLWriteDisplayGroup);
+    m_htmlTextEdit->setTextColor(conf.value(CHTMLWriteDisplayFontColorKey, m_htmlTextEdit->textColor()));
+    QFont f = conf.value(CHTMLWriteDisplayFontKey, m_htmlTextEdit->currentFont());
     m_htmlTextEdit->setCurrentFont(f);
     return f;
 }

@@ -13,14 +13,15 @@
 #ifndef BTCONFIGCORE_H
 #define BTCONFIGCORE_H
 
-#include <QSettings>
-
-#include <mutex>
-#include <QCoreApplication>
-#include <QHash>
+#include <memory>
+#include <QString>
 #include <QStringList>
-#include "../../util/btassert.h"
+#include <QVariant>
+#include <utility>
 
+
+class BtConfig;
+class QSettings;
 
 /**
   \note Session keys are QStrings because we even want to handle cases where the
@@ -29,81 +30,16 @@
 */
 class BtConfigCore {
 
-    Q_DECLARE_TR_FUNCTIONS(BtConfigCore)
-
-public: /* Types: */
-
-    using SessionNamesHashMap = QHash<QString, QString>;
+    friend class BtConfig;
 
 public: /* Methods: */
 
-    BtConfigCore(BtConfigCore const &) = delete;
-    BtConfigCore & operator=(BtConfigCore const &) = delete;
+    BtConfigCore(BtConfigCore &&) = default;
+    BtConfigCore(BtConfigCore const &) = default;
+    BtConfigCore & operator=(BtConfigCore &&) = default;
+    BtConfigCore & operator=(BtConfigCore const &) = default;
 
-    /**
-      \param[in] settingsFile The filename of the settings file.
-    */
-    explicit BtConfigCore(const QString & settingsFile);
-
-    ~BtConfigCore() { sync(); }
-
-
-    /**
-      \returns the key of the current session.
-    */
-    QString const & currentSessionKey() const {
-        std::lock_guard const guard(m_mutex);
-        return m_currentSessionKey;
-    }
-
-    /**
-      \returns the name of the current session.
-    */
-    QString const & currentSessionName() const {
-        std::lock_guard const guard(m_mutex);
-        auto it(m_sessionNames.constFind(m_currentSessionKey));
-        BT_ASSERT(it != m_sessionNames.constEnd());
-        return it.value();
-    }
-
-    /**
-      \returns a hashmap with the keys and printable names of the sessions.
-    */
-    SessionNamesHashMap const & sessionNames() const {
-        std::lock_guard const guard(m_mutex);
-        return m_sessionNames;
-    }
-
-    /**
-      \brief Notifies the configuration system that the session settings
-             should be read from and saved to the given session.
-
-      \pre The session with the given key must exist.
-      \param[in] key the key of the session to switch to.
-      \post the sessionValue() and value() methods will work with the settings
-            of the given session.
-    */
-    void setCurrentSession(const QString & key);
-
-    /**
-      \brief Creates a new session with the given name.
-
-      \pre The given name must not be an empty string.
-      \param[in] name the name of the session
-      \returns the key of the created session.
-    */
-    QString addSession(const QString & name);
-
-    /**
-      \brief Deletes the session with the given key.
-
-      \pre The session with the given key must exist.
-      \pre The session with the given key must not be the current session.
-      \param[in] key the key of the session to delete.
-      \post The session with the given key and its settings are deleted.
-      \returns whether deleting the session was successful.
-    */
-    void deleteSession(const QString & key);
+    ~BtConfigCore();
 
     /**
       \brief Returns the settings value for the given global key.
@@ -112,11 +48,11 @@ public: /* Methods: */
       \param[in] defaultValue The value to return if no saved value is found.
       \returns the value of type specified by the template parameter.
     */
-    template<typename T>
-    T value(QString const & key, T const & defaultValue = T()) {
-        std::lock_guard const guard(m_mutex);
-        return m_settings.value(group() + key,
-                                QVariant::fromValue(defaultValue)).template value<T>();
+    template <typename T>
+    T value(QString const & key, T const & defaultValue = T()) const {
+        return qVariantValue(
+                    key,
+                    QVariant::fromValue(defaultValue)).template value<T>();
     }
 
     /**
@@ -127,214 +63,63 @@ public: /* Methods: */
       \returns the value.
     */
     QVariant qVariantValue(QString const & key,
-                           QVariant const & defaultValue = QVariant())
-    {
-        std::lock_guard const guard(m_mutex);
-        return m_settings.value(group() + key,
-                                QVariant::fromValue(defaultValue));
-    }
+                           QVariant const & defaultValue = QVariant()) const;
 
     /**
-      \brief Returns the settings value for the given session key.
-
-      \param[in] key Session key to get the value for.
-      \param[in] defaultValue The value to return if no saved value is found.
-      \returns the value of type specified by the template parameter.
-    */
-    template<typename T>
-    T sessionValue(QString const & key, T const & defaultValue = T()) {
-        std::lock_guard const guard(m_mutex);
-        return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
-                                QVariant::fromValue(defaultValue)).template value<T>();
-    }
-
-    /**
-      \brief Sets a value for a global settings key.
+      \brief Sets a value for a key.
 
       \param[in] key Ket to set.
       \param[in] value Value to set.
     */
-    template<typename T>
-    void setValue(QString const & key, T const & value) {
-        std::lock_guard const guard(m_mutex);
-        m_settings.setValue(group() + key, QVariant::fromValue<T>(value));
-    }
+    template <typename T>
+    void setValue(QString const & key, T const & value)
+    { return setValue_(key, QVariant::fromValue(value)); }
+
+    /** \returns a list of first-level keys in the current group. */
+    QStringList childKeys() const;
+
+    /** \returns a list of first-level groups in the current group. */
+    QStringList childGroups() const;
 
     /**
-      \brief Sets a value for a session settings key.
-
-      \param[in] key Ket to set.
-      \param[in] value Value to set.
-    */
-    template<typename T>
-    void setSessionValue(QString const & key, T const & value) {
-        std::lock_guard const guard(m_mutex);
-        m_settings.setValue(m_cachedCurrentSessionGroup + group() + key,
-                            QVariant::fromValue<T>(value));
-    }
-
-    /**
-      \returns a list of first-level keys in the current group in global settings.
-    */
-    QStringList childKeys();
-
-    /**
-      \pre subkey is not empty
-      \param[in] subkey the subkey
-      \returns a list of keys under the current group and subkey in global settings.
-    */
-    QStringList childKeys(const QString & subkey);
-
-    /**
-      \returns a list of first-level groups in the current group in global settings.
-    */
-    QStringList childGroups();
-
-    /**
-      \pre subkey is not empty
-      \param[in] subkey the subkey
-      \returns a list of groups under the current group and subkey in global settings.
-    */
-    QStringList childGroups(const QString & subkey);
-
-    /**
-      \returns a list of first-level groups in the current group in session settings.
-    */
-    QStringList sessionChildGroups();
-
-    /**
-      \pre subkey is not empty
-      \param[in] subkey the subkey
-      \returns a list of groups under the current group and subkey in session settings.
-    */
-    QStringList sessionChildGroups(const QString & subkey);
-
-    /**
-      \brief removes a key all its children from global settings.
-
+      \brief removes a key (and its children) from the current group.
       \param[in] key the key to remove
     */
-    void remove(const QString & key);
+    void remove(QString const & key);
 
     /**
-      \brief removes a key all its children from session settings.
-
-      \param[in] key the key to remove
-    */
-    void sessionRemove(const QString & key);
-
-    /**
-      \brief Synchronize the underlying QSettings.
-    */
-    void sync() {
-        std::lock_guard const guard(m_mutex);
-        m_settings.sync();
-    }
-
-    /**
-      \brief Appends the given prefix to the current group.
-
-      The current group is automatically prepended to all keys when reading or
-      writing settings values. The behaviour is similar to QSettings::beginGroup().
-
-      \warning Locks the object (recursively) until endGroup().
-
       \param[in] prefix the prefix to append
+      \returns a BtConfigCore object for a subgroup.
     */
-    void beginGroup(QString prefix) {
-        BT_ASSERT(!prefix.isEmpty());
-        while (prefix.startsWith('/'))
-            prefix.remove(0, 1);
-        BT_ASSERT(!prefix.isEmpty());
-        while (prefix.endsWith('/'))
-            prefix.chop(1);
-        BT_ASSERT(!prefix.isEmpty());
-
-        m_mutex.lock();
-        m_groups.append(prefix);
-        m_cachedGroup = QString();
-    }
+    template <typename Prefix>
+    BtConfigCore group(Prefix && prefix) const &
+    { return {m_state, m_groupPrefix + prefix + '/'}; }
 
     /**
-      \brief Resets the current group to its previous value.
-
-      Call this function after you are done with a started group. Every call to
-      beginGroup() must be matched with a call to this function in the same
-      thread.
-
-      \warning Locks the object (recursively) until endGroup().
+      \param[in] prefix the prefix to append
+      \returns a BtConfigCore object for a subgroup.
     */
-    void endGroup() {
-        BT_ASSERT(!m_groups.isEmpty()
-                  && "BtConfig::endGroup() called, but no beginGroup() active");
-        m_groups.removeLast();
-        m_cachedGroup = QString();
-        m_mutex.unlock();
+    template <typename Prefix>
+    BtConfigCore group(Prefix && prefix) && {
+        m_groupPrefix.append(prefix).append('/');
+        return std::move(*this);
     }
 
-    /**
-      \brief Returns the current group.
-
-      Returns the group the BtConfig is currently set to. It will contain a
-      trailing / so is suitable to be preprended to a key directly.
-
-      \returns the group string or an empty string if no group is set.
-    */
-    QString group() const {
-        std::lock_guard const guard(m_mutex);
-        if (m_cachedGroup.isNull()) {
-            m_cachedGroup = m_groups.isEmpty()
-                            ? ""
-                            : m_groups.join("/") + '/';
-        }
-        return m_cachedGroup;
-    }
+    /** \brief Synchronizes the configuration to disk. */
+    void sync();
 
 private: /* Methods: */
 
-    /**
-      \Brief Same childKeys(), but not thread-safe.
-      \returns a list of first-level keys in the current group in global settings.
-    */
-    QStringList childKeys__();
+    BtConfigCore(std::shared_ptr<QSettings> state,
+                 QString groupPrefix = QString());
 
-    /**
-      \Brief Same childGroups(), but not thread-safe.
-      \returns a list of first-level groups in the current group in global settings.
-    */
-    QStringList childGroups__();
-
-    /**
-      \Brief Same sessionChildGroups(), but not thread-safe.
-      \returns a list of first-level groups in the current group in session settings.
-    */
-    QStringList sessionChildGroups__();
-
-protected: /* Fields: */
-
-    /** Required for asynchronous access */
-    mutable std::recursive_mutex m_mutex;
+    void setValue_(QString const & key, QVariant value);
 
 private: /* Fields: */
 
-    /** Underlying backend */
-    QSettings m_settings;
+    std::shared_ptr<QSettings> m_state;
+    QString m_groupPrefix; ///< Empty or absolute path with trailing slash
 
-    /** List of active group prefixes */
-    QStringList m_groups;
-
-    /** Cached group() string or QString() if not cached */
-    mutable QString m_cachedGroup;
-
-    /** Index of currently active session */
-    QString m_currentSessionKey;
-
-    /** Cached group name of the currently active session */
-    mutable QString m_cachedCurrentSessionGroup;
-
-    /** Keys and names all sessions */
-    SessionNamesHashMap m_sessionNames;
-
-};
+}; /* class BtConfigCore */
 
 #endif // BTCONFIGCORE_H

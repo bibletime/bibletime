@@ -38,8 +38,8 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Commentary; }
 
-        void storeProfileSettings(QString const & windowGroup) const override;
-        void applyProfileSettings(const QString & windowGroup) override;
+        void storeProfileSettings(BtConfigCore & windowConf) const override;
+        void applyProfileSettings(BtConfigCore const & windowConf) override;
         bool syncAllowed() const override;
 
     public Q_SLOTS:

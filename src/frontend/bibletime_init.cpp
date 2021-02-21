@@ -343,7 +343,9 @@ void BibleTime::createMenuAndToolBar()
     addToolBar(m_mainToolBar);
 
     // Set visibility of main window toolbars based on config
-    bool visible = ! btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true);
+    bool visible =
+            !btConfig().session().value<bool>("GUI/showToolbarsInEachWindow",
+                                              true);
 
     m_navToolBar = createToolBar("NavToolBar", this, visible);
     addToolBar(m_navToolBar);
@@ -436,44 +438,46 @@ void BibleTime::initActions() {
     m_actionCollection->removeAction("showMag");
     m_actionCollection->addAction("showMag", m_showMagAction);
 
+    auto const sessionGuiConf = btConfig().session().group("GUI");
+
     m_showTextAreaHeadersAction =
             &m_actionCollection->action("showParallelTextHeaders");
     m_showTextAreaHeadersAction->setCheckable(true);
-    m_showTextAreaHeadersAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowHeaders", true));
+    m_showTextAreaHeadersAction->setChecked(sessionGuiConf.value<bool>("showTextWindowHeaders", true));
     BT_CONNECT(m_showTextAreaHeadersAction, &QAction::toggled,
                this, &BibleTime::slotToggleTextWindowHeader);
 
     m_showMainWindowToolbarAction = &m_actionCollection->action("showToolbar");
     m_showMainWindowToolbarAction->setCheckable(true);
-    m_showMainWindowToolbarAction->setChecked(btConfig().sessionValue<bool>("GUI/showMainToolbar", true));
+    m_showMainWindowToolbarAction->setChecked(sessionGuiConf.value<bool>("showMainToolbar", true));
     BT_CONNECT(m_showMainWindowToolbarAction, &QAction::triggered,
                this, &BibleTime::slotToggleMainToolbar);
 
     m_showTextWindowNavigationAction =
             &m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
-    m_showTextWindowNavigationAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
+    m_showTextWindowNavigationAction->setChecked(sessionGuiConf.value<bool>("showTextWindowNavigator", true));
     BT_CONNECT(m_showTextWindowNavigationAction, &QAction::toggled,
                this, &BibleTime::slotToggleNavigatorToolbar);
 
     m_showTextWindowModuleChooserAction =
             &m_actionCollection->action("showWorks");
     m_showTextWindowModuleChooserAction->setCheckable(true);
-    m_showTextWindowModuleChooserAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+    m_showTextWindowModuleChooserAction->setChecked(sessionGuiConf.value<bool>("showTextWindowModuleSelectorButtons", true));
     BT_CONNECT(m_showTextWindowModuleChooserAction, &QAction::toggled,
                this, &BibleTime::slotToggleWorksToolbar);
 
     m_showTextWindowToolButtonsAction =
             &m_actionCollection->action("showTools");
     m_showTextWindowToolButtonsAction->setCheckable(true);
-    m_showTextWindowToolButtonsAction->setChecked(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
+    m_showTextWindowToolButtonsAction->setChecked(sessionGuiConf.value<bool>("showTextWindowToolButtons", true));
     BT_CONNECT(m_showTextWindowToolButtonsAction, &QAction::toggled,
                this, &BibleTime::slotToggleToolsToolbar);
 
     m_toolbarsInEachWindow =
             &m_actionCollection->action("showToolbarsInTextWindows");
     m_toolbarsInEachWindow->setCheckable(true);
-    m_toolbarsInEachWindow->setChecked(btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
+    m_toolbarsInEachWindow->setChecked(sessionGuiConf.value<bool>("showToolbarsInEachWindow", true));
     BT_CONNECT(m_toolbarsInEachWindow, &QAction::toggled,
                this, &BibleTime::slotToggleToolBarsInEachWindow);
 
@@ -512,7 +516,7 @@ void BibleTime::initActions() {
     BT_CONNECT(m_windowTileHorizontalAction, &QAction::triggered,
                this,                         &BibleTime::slotTileHorizontal);
 
-    alignmentMode alignment = btConfig().sessionValue<alignmentMode>("GUI/alignmentMode", autoTileVertical);
+    alignmentMode alignment = sessionGuiConf.value<alignmentMode>("alignmentMode", autoTileVertical);
 
     m_windowManualModeAction = &m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);

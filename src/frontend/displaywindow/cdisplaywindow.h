@@ -24,6 +24,7 @@
 #include "btactioncollection.h"
 
 
+class BtConfigCore;
 class CDisplay;
 class BtDisplaySettingsButton;
 class CKeyChooser;
@@ -62,11 +63,17 @@ public:
     /** Returns the used modules as a string list. */
     QStringList const & getModuleList() const { return m_modules; }
 
-    /** Store the settings of this window in the given CProfileWindow object.*/
-    virtual void storeProfileSettings(QString const & windowGroup) const;
+    /**
+       \brief Stores the settings of this window to configuration.
+       \param[in] windowConf The locked configuration group.
+    */
+    virtual void storeProfileSettings(BtConfigCore & windowConf) const;
 
-    /** Load the settings the given CProfileWindow object into this window.*/
-    virtual void applyProfileSettings(const QString & windowGroup);
+    /**
+       \brief Loads the settings of this window from configuration.
+       \param[in] windowConf The locked configuration group.
+    */
+    virtual void applyProfileSettings(BtConfigCore const & windowConf);
 
     /** Returns the display options used by this display window. */
     DisplayOptions const & displayOptions() const { return m_displayOptions; }

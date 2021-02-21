@@ -143,11 +143,7 @@ const BtConstModuleList CDisplayWindow::modules() const {
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */
-void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
-    BtConfig & conf = btConfig();
-
-    conf.beginGroup(windowGroup);
-
+void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
     QWidget const * const w = getProfileWindow(parentWidget());
     BT_ASSERT(w);
 
@@ -157,15 +153,15 @@ void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
             managers. Might be related to Qt bug QTBUG-7634.
     */
     const QRect rect(w->x(), w->y(), w->width(), w->height());
-    conf.setSessionValue<QRect>("windowRect", rect);
-    conf.setSessionValue<bool>("staysOnTop",
-                               w->windowFlags() & Qt::WindowStaysOnTopHint);
-    conf.setSessionValue<bool>("staysOnBottom",
-                               w->windowFlags() & Qt::WindowStaysOnBottomHint);
-    conf.setSessionValue("maximized", w->isMaximized());
+    conf.setValue<QRect>("windowRect", rect);
+    conf.setValue<bool>("staysOnTop",
+                        w->windowFlags() & Qt::WindowStaysOnTopHint);
+    conf.setValue<bool>("staysOnBottom",
+                        w->windowFlags() & Qt::WindowStaysOnBottomHint);
+    conf.setValue("maximized", w->isMaximized());
 
     bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
-    conf.setSessionValue("hasFocus", hasFocus);
+    conf.setValue("hasFocus", hasFocus);
     // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
 
     // Save current key:
@@ -174,25 +170,21 @@ void CDisplayWindow::storeProfileSettings(QString const & windowGroup) const {
             // Save keys in english only:
             const QString oldLang = QString::fromLatin1(vk->getLocale());
             vk->setLocale("en");
-            conf.setSessionValue("key", k->key());
+            conf.setValue("key", k->key());
             vk->setLocale(oldLang.toLatin1());
         } else {
-            conf.setSessionValue("key", k->key());
+            conf.setValue("key", k->key());
         }
     }
 
     // Save list of modules:
-    conf.setSessionValue("modules", m_modules);
+    conf.setValue("modules", m_modules);
 
     // Default for "not a write window":
-    conf.setSessionValue("writeWindowType", int(0));
-
-    conf.endGroup();
+    conf.setValue("writeWindowType", int(0));
 }
 
-void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
-    BtConfig & conf = btConfig();
-    conf.beginGroup(windowGroup);
+void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
     setUpdatesEnabled(false);
 
     QWidget * const w = getProfileWindow(parentWidget());
@@ -203,18 +195,17 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
             because they give slightly incorrect results with some window
             managers. Might be related to Qt bug QTBUG-7634.
     */
-    const QRect rect = conf.sessionValue<QRect>("windowRect");
+    const QRect rect = conf.value<QRect>("windowRect");
     w->resize(rect.width(), rect.height());
     w->move(rect.x(), rect.y());
-    if (conf.sessionValue<bool>("staysOnTop", false))
+    if (conf.value<bool>("staysOnTop", false))
         w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnTopHint);
-    if (conf.sessionValue<bool>("staysOnBottom", false))
+    if (conf.value<bool>("staysOnBottom", false))
         w->setWindowFlags(w->windowFlags() | Qt::WindowStaysOnBottomHint);
-    if (conf.sessionValue<bool>("maximized"))
+    if (conf.value<bool>("maximized"))
         w->showMaximized();
 
     setUpdatesEnabled(true);
-    conf.endGroup();
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
@@ -406,7 +397,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        bar->setVisible(btConfig().session().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     }
 }
 
@@ -415,7 +406,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
-    header->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowHeaders", true));
+    header->setVisible(btConfig().session().value<bool>("GUI/showTextWindowHeaders", true));
 }
 
 /** Sets the modules. */
@@ -431,21 +422,23 @@ bool CDisplayWindow::init() {
     initView();
     setMinimumSize( 100, 100 );
 
+    auto const & conf = btConfig();
+
     setWindowTitle(windowCaption());
     //setup focus stuff.
     setFocusPolicy(Qt::ClickFocus);
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
-    if (!btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
+    if (!conf.session().value<bool>("GUI/showToolbarsInEachWindow", true))
         setToolBarsHidden();
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
     initConnections();
     setupPopupMenu();
 
-    m_filterOptions = btConfig().getFilterOptions();
-    m_displayOptions = btConfig().getDisplayOptions();
+    m_filterOptions = conf.getFilterOptions();
+    m_displayOptions = conf.getDisplayOptions();
     Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
     Q_EMIT sigFilterOptionsChanged(m_filterOptions);
     Q_EMIT sigModulesChanged(modules());
@@ -463,13 +456,13 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
 
 /** Setup the Navigation toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Navigation"), btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
+    prepareToolBar(bar, tr("Navigation"), btConfig().session().value<bool>("GUI/showTextWindowNavigator", true));
     m_mainToolBar = bar;
 }
 
 /** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Tool"), btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
+    prepareToolBar(bar, tr("Tool"), btConfig().session().value<bool>("GUI/showTextWindowToolButtons", true));
     m_buttonsToolBar = bar;
 }
 
@@ -591,7 +584,7 @@ void CDisplayWindow::printAnchorWithText() {
 }
 
 void CDisplayWindow::setFocusKeyChooser() {
-    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true)) {
+    if (btConfig().session().value<bool>("GUI/showToolbarsInEachWindow", true)){
         keyChooser()->setFocus();
     } else {
         CKeyChooser* mainWinKeyChooser = btMainWindow()->keyChooser();

@@ -93,22 +93,18 @@ void CCommentaryReadWindow::initActions() {
     actionCollection()->readShortcuts("Commentary shortcuts");
 }
 
-void CCommentaryReadWindow::applyProfileSettings(const QString & windowGroup) {
-    CLexiconReadWindow::applyProfileSettings(windowGroup);
-
-    BT_ASSERT(windowGroup.endsWith('/'));
+void CCommentaryReadWindow::applyProfileSettings(BtConfigCore const & conf) {
+    CLexiconReadWindow::applyProfileSettings(conf);
     BT_ASSERT(m_syncButton);
-    m_syncButton->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncEnabled", false));
+    m_syncButton->setChecked(conf.value<bool>("syncEnabled", false));
 }
 
-void CCommentaryReadWindow::storeProfileSettings(QString const & windowGroup)
+void CCommentaryReadWindow::storeProfileSettings(BtConfigCore & conf)
         const
 {
-    CLexiconReadWindow::storeProfileSettings(windowGroup);
-
-    BT_ASSERT(windowGroup.endsWith('/'));
+    CLexiconReadWindow::storeProfileSettings(conf);
     BT_ASSERT(m_syncButton);
-    btConfig().setSessionValue(windowGroup + "syncEnabled", m_syncButton->isChecked());
+    conf.setValue("syncEnabled", m_syncButton->isChecked());
 }
 
 void CCommentaryReadWindow::initToolbars() {

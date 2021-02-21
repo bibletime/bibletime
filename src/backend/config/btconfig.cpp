@@ -12,11 +12,11 @@
 
 #include "btconfig.h"
 
-#include <QDebug>
-#include "../../util/btassert.h"
+#include <QSettings>
+#include <memory>
 #include "../../util/directory.h" // DU::getUserBaseDir()
-#include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/cswordbackend.h"
+
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -30,8 +30,11 @@
 #define BTCONFIG_API_VERSION 1
 namespace {
 const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
-}
-
+QString const GROUP_SESSIONS = "sessions";
+QString const GROUP_SESSIONS_PREFIX = GROUP_SESSIONS + '/';
+QString const KEY_CURRENT_SESSION = "sessions/currentSession";
+QString const KEY_SESSION_NAME = "sessions/%1/name";
+} // anonymous namespace
 
 /*
  * set the instance variable initially to 0, so it can be safely checked
@@ -43,7 +46,8 @@ BtConfig::StringMap BtConfig::m_defaultSearchScopes;
 
 
 BtConfig::BtConfig(const QString & settingsFile)
-    : BtConfigCore(settingsFile)
+    : BtConfigCore(
+          std::make_shared<QSettings>(settingsFile, QSettings::IniFormat))
 {
     BT_ASSERT(!m_instance && "BtConfig already initialized!");
     m_instance = this;
@@ -65,6 +69,40 @@ BtConfig::BtConfig(const QString & settingsFile)
     if (pointSize < minPointSize)
         m_defaultFont.setPointSizeF(minPointSize);
 #endif
+
+    // Read all session keys and names:
+    auto sessionsConf = group(GROUP_SESSIONS);
+    for (auto && sessionKey : sessionsConf.childGroups()) {
+        // Skip empty//keys just in case:
+        if (sessionKey.isEmpty())
+            continue;
+
+        auto sessionName =
+                sessionsConf.value<QString>(sessionKey + "/name");
+        if (!sessionName.isEmpty())
+            m_sessionNames.insert(std::move(sessionKey),
+                                  std::move(sessionName));
+    }
+
+    // Get current session key:
+    m_currentSessionKey = value<QString>(KEY_CURRENT_SESSION);
+
+    /*
+      If no session with the current session key exists, default to the first
+      session found. If no sessions were found, create a default session.
+    */
+    if (m_currentSessionKey.isEmpty()
+        || !m_sessionNames.contains(m_currentSessionKey))
+    {
+        if (m_sessionNames.isEmpty()) {
+            m_currentSessionKey = QString::number(0, 36);
+            setValue(KEY_CURRENT_SESSION, m_currentSessionKey);
+            setValue(KEY_SESSION_NAME.arg(m_currentSessionKey),
+                     tr("Default Session"));
+        } else {
+            m_currentSessionKey = m_sessionNames.keys().first();
+        }
+    }
 }
 
 BtConfig::InitState BtConfig::initBtConfig() {
@@ -95,6 +133,53 @@ BtConfig& BtConfig::getInstance() {
     return *m_instance;
 }
 
+void BtConfig::setCurrentSession(QString const & key) {
+    BT_ASSERT(!key.isEmpty());
+    BT_ASSERT(m_sessionNames.contains(key));
+    m_currentSessionKey = key;
+
+    setValue(KEY_CURRENT_SESSION, key);
+}
+
+QString BtConfig::addSession(QString const & name) {
+    BT_ASSERT(!name.isEmpty());
+
+    // Generate a new session key:
+    QString key = QString::number(0u, 36);
+    if (m_sessionNames.contains(key)) {
+        QString keyPrefix;
+        std::size_t i = 1u;
+        for (;;) {
+            key = QString::number(i, 36);
+            if (!m_sessionNames.contains(keyPrefix + key))
+                break;
+            if (i == std::numeric_limits<std::size_t>::max()) {
+                i = 0u;
+                keyPrefix.append('_');
+            } else {
+                i++;
+            }
+        };
+    }
+    BT_ASSERT(!m_sessionNames.contains(key));
+    m_sessionNames.insert(key, name);
+
+    setValue(KEY_SESSION_NAME.arg(key), name);
+    return key;
+}
+
+
+void BtConfig::deleteSession(QString const & key) {
+    BT_ASSERT(m_sessionNames.contains(key));
+    BT_ASSERT(key != m_currentSessionKey);
+    m_sessionNames.remove(key);
+
+    remove(GROUP_SESSIONS_PREFIX + key);
+}
+
+BtConfigCore BtConfig::session() const
+{ return group(GROUP_SESSIONS_PREFIX + m_currentSessionKey); }
+
 void BtConfig::destroyInstance() {
     delete m_instance;
     m_instance = nullptr;
@@ -113,98 +198,97 @@ QString BtConfig::getModuleEncryptionKey(const QString & name) {
 }
 
 BtConfig::ShortcutsMap BtConfig::getShortcuts(QString const & shortcutGroup) {
-    beginGroup(shortcutGroup);
-        ShortcutsMap allShortcuts;
-        for (QString const & key : childKeys()) {
-            QVariant variant = qVariantValue(key);
+    ShortcutsMap allShortcuts;
+    auto shortcutsConf = group(shortcutGroup);
+    for (QString const & key : shortcutsConf.childKeys()) {
+        auto const variant = shortcutsConf.qVariantValue(key);
 
-            QList<QKeySequence> shortcuts;
+        QList<QKeySequence> shortcuts;
 
-            if (variant.type() == QVariant::List) { // For BibleTime before 2.9
-                for (QVariant const & shortcut : variant.toList())
-                    shortcuts.append(shortcut.toString());
-            } else if (variant.type() == QVariant::StringList
-                       || variant.type() == QVariant::String)
-            { // a StringList with one element is recognized as a QVariant::String
-                for (QString const & shortcut : variant.toStringList())
-                    shortcuts.append(shortcut);
-            } else { // it's something we don't know, skip it
-                continue;
-            }
-
-            allShortcuts.insert(key, shortcuts);
+        if (variant.type() == QVariant::List) { // For BibleTime before 2.9
+            for (QVariant const & shortcut : variant.toList())
+                shortcuts.append(shortcut.toString());
+        } else if (variant.type() == QVariant::StringList
+                   || variant.type() == QVariant::String)
+        { // a StringList with one element is recognized as a QVariant::String
+            for (QString const & shortcut : variant.toStringList())
+                shortcuts.append(shortcut);
+        } else { // it's something we don't know, skip it
+            continue;
         }
-    endGroup();
+
+        allShortcuts.insert(key, shortcuts);
+    }
     return allShortcuts;
 }
 
 void BtConfig::setShortcuts(QString const & shortcutGroup,
                             ShortcutsMap const  & shortcuts)
 {
-    beginGroup(shortcutGroup);
-        for (auto it = shortcuts.begin(); it != shortcuts.end(); ++it) {
-            // Write beautiful string lists (since 2.9):
-            /// \note saving QKeySequences directly doesn't appear to work!
-            QStringList varList;
-            for (QKeySequence const & shortcut : it.value())
-                varList.append(shortcut.toString());
+    auto shortcutsConf = group(shortcutGroup);
+    for (auto it = shortcuts.begin(); it != shortcuts.end(); ++it) {
+        // Write beautiful string lists (since 2.9):
+        /// \note saving QKeySequences directly doesn't appear to work!
+        QStringList varList;
+        for (QKeySequence const & shortcut : it.value())
+            varList.append(shortcut.toString());
 
-            if (!varList.empty())
-                setValue(it.key(), varList);
-        }
-    endGroup();
+        if (!varList.empty())
+            shortcutsConf.setValue(it.key(), varList);
+    }
 }
 
-FilterOptions BtConfig::getFilterOptions() {
+FilterOptions BtConfig::loadFilterOptionsFromGroup(BtConfigCore const & group) {
     FilterOptions os;
-    beginGroup("presentation");
-    os.footnotes           = sessionValue<bool>("footnotes", true);
-    os.strongNumbers       = sessionValue<bool>("strongNumbers", true);
-    os.headings            = sessionValue<bool>("headings", true);
-    os.morphTags           = sessionValue<bool>("morphTags", true);
-    os.lemmas              = sessionValue<bool>("lemmas", true);
-    os.redLetterWords      = sessionValue<bool>("redLetterWords", true);
-    os.hebrewPoints        = sessionValue<bool>("hebrewPoints", true);
-    os.hebrewCantillation  = sessionValue<bool>("hebrewCantillation", true);
-    os.greekAccents        = sessionValue<bool>("greekAccents", true);
-    os.textualVariants     = sessionValue<bool>("textualVariants", false);
-    os.scriptureReferences = sessionValue<bool>("scriptureReferences", true);
-    os.morphSegmentation   = sessionValue<bool>("morphSegmentation", true);
-    endGroup();
+    auto const subConf = group.group("presentation");
+    os.footnotes           = subConf.value<bool>("footnotes", true);
+    os.strongNumbers       = subConf.value<bool>("strongNumbers", true);
+    os.headings            = subConf.value<bool>("headings", true);
+    os.morphTags           = subConf.value<bool>("morphTags", true);
+    os.lemmas              = subConf.value<bool>("lemmas", true);
+    os.redLetterWords      = subConf.value<bool>("redLetterWords", true);
+    os.hebrewPoints        = subConf.value<bool>("hebrewPoints", true);
+    os.hebrewCantillation  = subConf.value<bool>("hebrewCantillation", true);
+    os.greekAccents        = subConf.value<bool>("greekAccents", true);
+    os.textualVariants     = subConf.value<bool>("textualVariants", false);
+    os.scriptureReferences = subConf.value<bool>("scriptureReferences", true);
+    os.morphSegmentation   = subConf.value<bool>("morphSegmentation", true);
     return os;
 }
 
-void BtConfig::setFilterOptions(const FilterOptions & os) {
-    beginGroup("presentation");
-    setSessionValue("footnotes", static_cast<bool>(os.footnotes));
-    setSessionValue("strongNumbers", static_cast<bool>(os.strongNumbers));
-    setSessionValue("headings", static_cast<bool>(os.headings));
-    setSessionValue("morphTags", static_cast<bool>(os.morphTags));
-    setSessionValue("lemmas", static_cast<bool>(os.lemmas));
-    setSessionValue("redLetterWords", static_cast<bool>(os.redLetterWords));
-    setSessionValue("hebrewPoints", static_cast<bool>(os.hebrewPoints));
-    setSessionValue("hebrewCantillation", static_cast<bool>(os.hebrewCantillation));
-    setSessionValue("greekAccents", static_cast<bool>(os.greekAccents));
-    setSessionValue("textualVariants", static_cast<bool>(os.textualVariants));
-    setSessionValue("scriptureReferences", static_cast<bool>(os.scriptureReferences));
-    setSessionValue("morphSegmentation", static_cast<bool>(os.morphSegmentation));
-    endGroup();
+void BtConfig::storeFilterOptionsToGroup(FilterOptions const & os,
+                                         BtConfigCore & group)
+{
+    auto subConf = group.group("presentation");
+    subConf.setValue("footnotes", static_cast<bool>(os.footnotes));
+    subConf.setValue("strongNumbers", static_cast<bool>(os.strongNumbers));
+    subConf.setValue("headings", static_cast<bool>(os.headings));
+    subConf.setValue("morphTags", static_cast<bool>(os.morphTags));
+    subConf.setValue("lemmas", static_cast<bool>(os.lemmas));
+    subConf.setValue("redLetterWords", static_cast<bool>(os.redLetterWords));
+    subConf.setValue("hebrewPoints", static_cast<bool>(os.hebrewPoints));
+    subConf.setValue("hebrewCantillation", static_cast<bool>(os.hebrewCantillation));
+    subConf.setValue("greekAccents", static_cast<bool>(os.greekAccents));
+    subConf.setValue("textualVariants", static_cast<bool>(os.textualVariants));
+    subConf.setValue("scriptureReferences", static_cast<bool>(os.scriptureReferences));
+    subConf.setValue("morphSegmentation", static_cast<bool>(os.morphSegmentation));
 }
 
-DisplayOptions BtConfig::getDisplayOptions() {
+DisplayOptions
+BtConfig::loadDisplayOptionsFromGroup(BtConfigCore const & group) {
     DisplayOptions os;
-    beginGroup("presentation");
-    os.lineBreaks   = sessionValue<bool>("lineBreaks", false);
-    os.verseNumbers = sessionValue<bool>("verseNumbers", true);
-    endGroup();
+    auto const subConf = group.group("presentation");
+    os.lineBreaks   = subConf.value<bool>("lineBreaks", false);
+    os.verseNumbers = subConf.value<bool>("verseNumbers", true);
     return os;
 }
 
-void BtConfig::setDisplayOptions(const DisplayOptions & os) {
-    beginGroup("presentation");
-    setSessionValue("lineBreaks", static_cast<bool>(os.lineBreaks));
-    setSessionValue("verseNumbers", static_cast<bool>(os.verseNumbers));
-    endGroup();
+void BtConfig::storeDisplayOptionsToGroup(DisplayOptions const & os,
+                                          BtConfigCore & group)
+{
+    auto subConf = group.group("presentation");
+    subConf.setValue("lineBreaks", static_cast<bool>(os.lineBreaks));
+    subConf.setValue("verseNumbers", static_cast<bool>(os.verseNumbers));
 }
 
 void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
@@ -213,7 +297,6 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
     const QString & englishName = language.englishName();
     BT_ASSERT(!englishName.isEmpty());
 
-    std::lock_guard const guard(m_mutex);
     // write the language to the settings
     setValue("fonts/" + englishName, fontSettings.second.toString());
     setValue("font standard settings/" + englishName, fontSettings.first);
@@ -228,7 +311,6 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
     const QString & englishName = language.englishName();
     BT_ASSERT(!englishName.isEmpty());
 
-    std::lock_guard const guard(m_mutex);
     // Check the cache first:
     auto it(m_fontCache.find(&language));
     if (it != m_fontCache.end())

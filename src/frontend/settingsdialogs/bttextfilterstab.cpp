@@ -22,7 +22,7 @@
 
 #define TEXT_FILTERS_TAB_ADD_ROW(name,def) \
         m_ ## name ## Check = new QCheckBox(this); \
-        m_ ## name ## Check->setChecked(btConfig().sessionValue<bool>(#name,(def))); \
+        m_ ## name ## Check->setChecked(conf.value<bool>(#name,(def))); \
         layout->addWidget(m_ ## name ## Check);
 
 BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
@@ -37,7 +37,8 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     m_explanationLabel->setMaximumHeight(50);
     layout->addWidget(m_explanationLabel);
 
-    btConfig().beginGroup("presentation");
+    {
+        auto const conf = btConfig().session().group("presentation");
         TEXT_FILTERS_TAB_ADD_ROW(verseNumbers, true);
         TEXT_FILTERS_TAB_ADD_ROW(headings, true);
         TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints, true);
@@ -46,7 +47,7 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
         TEXT_FILTERS_TAB_ADD_ROW(greekAccents, true);
         TEXT_FILTERS_TAB_ADD_ROW(textualVariants, false);
         TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences, true);
-    btConfig().endGroup();
+    }
 
     layout->addStretch(4);
 
@@ -54,19 +55,18 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
 }
 
 #define TEXT_FILTERS_TAB_SAVE(name) \
-    btConfig().setSessionValue(#name, m_ ## name ## Check->isChecked())
+    conf.setValue(#name, m_ ## name ## Check->isChecked())
 
 void BtTextFiltersTab::save() {
-    btConfig().beginGroup("presentation");
-        TEXT_FILTERS_TAB_SAVE(verseNumbers);
-        TEXT_FILTERS_TAB_SAVE(headings);
-        TEXT_FILTERS_TAB_SAVE(hebrewPoints);
-        TEXT_FILTERS_TAB_SAVE(hebrewCantillation);
-        TEXT_FILTERS_TAB_SAVE(morphSegmentation);
-        TEXT_FILTERS_TAB_SAVE(greekAccents);
-        TEXT_FILTERS_TAB_SAVE(textualVariants);
-        TEXT_FILTERS_TAB_SAVE(scriptureReferences);
-    btConfig().endGroup();
+    auto conf = btConfig().session().group("presentation");
+    TEXT_FILTERS_TAB_SAVE(verseNumbers);
+    TEXT_FILTERS_TAB_SAVE(headings);
+    TEXT_FILTERS_TAB_SAVE(hebrewPoints);
+    TEXT_FILTERS_TAB_SAVE(hebrewCantillation);
+    TEXT_FILTERS_TAB_SAVE(morphSegmentation);
+    TEXT_FILTERS_TAB_SAVE(greekAccents);
+    TEXT_FILTERS_TAB_SAVE(textualVariants);
+    TEXT_FILTERS_TAB_SAVE(scriptureReferences);
 }
 
 

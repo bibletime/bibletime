@@ -30,20 +30,17 @@
 #include "bttoolbarpopupaction.h"
 
 
-void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {
-    CLexiconReadWindow::applyProfileSettings(windowGroup);
+void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
+    CLexiconReadWindow::applyProfileSettings(conf);
 
     BT_ASSERT(m_treeAction);
-    BT_ASSERT(windowGroup.endsWith('/'));
-    if (btConfig().sessionValue<bool>(windowGroup + "treeShown", true) != m_treeAction->isChecked())
+    if (conf.value<bool>("treeShown", true) != m_treeAction->isChecked())
         m_treeAction->activate(QAction::Trigger);
 }
 
-void CBookReadWindow::storeProfileSettings(QString const & windowGroup) const {
-    CLexiconReadWindow::storeProfileSettings(windowGroup);
-
-    BT_ASSERT(windowGroup.endsWith('/'));
-    btConfig().setSessionValue(windowGroup + "treeShown", m_treeAction->isChecked());
+void CBookReadWindow::storeProfileSettings(BtConfigCore & conf) const {
+    CLexiconReadWindow::storeProfileSettings(conf);
+    conf.setValue("treeShown", m_treeAction->isChecked());
 }
 
 void CBookReadWindow::initActions() {
