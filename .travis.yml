@@ -42,7 +42,6 @@ addons:
     project:
       name: "bibletime/bibletime"
       description: "BibleTime build submitted via Travis CI"
-    notification_email: bibletime-coverity@heh.ee
     build_command_prepend: "mkdir b && cd b && cmake .. -DCMAKE_INSTALL_PREFIX=${HOME}/local/"
     build_command: "cmake --build ."
     branch_pattern: .*_coverity_scan
