@@ -394,7 +394,10 @@ void BibleTime::initActions() {
     insertKeyboardActions(m_actionCollection);
 
     // File menu actions:
-    m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
+    m_openWorkAction =
+            new BtOpenWorkAction(btConfig(),
+                                 "GUI/mainWindow/openWorkAction/grouping",
+                                 this);
     BT_CONNECT(m_openWorkAction, &BtOpenWorkAction::triggered,
                [this](CSwordModuleInfo * const module)
                { createReadDisplayWindow(module); });

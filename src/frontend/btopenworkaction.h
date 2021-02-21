@@ -18,6 +18,7 @@
 #include "btmenuview.h"
 
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../backend/config/btconfigcore.h"
 
 
 class BtBookshelfGroupingMenu;
@@ -28,8 +29,9 @@ class CSwordModuleInfo;
 class BtOpenWorkActionMenu: public BtMenuView {
     Q_OBJECT
     public:
-        BtOpenWorkActionMenu(const QString &groupingConfigKey,
-                             QWidget *parent = nullptr);
+        BtOpenWorkActionMenu(BtConfigCore groupingConfigGroup,
+                             QString groupingConfigKey,
+                             QWidget * parent = nullptr);
 
         void setSourceModel(std::shared_ptr<QAbstractItemModel> model);
 
@@ -56,14 +58,16 @@ class BtOpenWorkActionMenu: public BtMenuView {
 
         // Grouping menu:
         BtBookshelfGroupingMenu *m_groupingMenu;
-        const QString m_groupingConfigKey;
+        BtConfigCore m_groupingConfigGroup;
+        QString const m_groupingConfigKey;
 };
 
 class BtOpenWorkAction: public QAction {
     Q_OBJECT
     public:
-        explicit BtOpenWorkAction(const QString &groupingConfigKey,
-                                  QObject *parent = nullptr);
+        explicit BtOpenWorkAction(BtConfigCore groupingConfigGroup,
+                                  QString groupingConfigKey,
+                                  QObject * parent = nullptr);
         ~BtOpenWorkAction();
 
     Q_SIGNALS:

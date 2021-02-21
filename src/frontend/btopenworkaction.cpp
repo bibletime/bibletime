@@ -13,7 +13,6 @@
 #include "btopenworkaction.h"
 
 #include <utility>
-#include "../backend/config/btconfig.h"
 #include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btconnect.h"
@@ -22,16 +21,20 @@
 #include "btbookshelfgroupingmenu.h"
 
 
-BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
-                                           QWidget *parent)
+BtOpenWorkActionMenu::BtOpenWorkActionMenu(BtConfigCore groupingConfigGroup,
+                                           QString groupingConfigKey,
+                                           QWidget * parent)
     : BtMenuView(parent)
     , m_treeModel(nullptr)
     , m_postFilterModel(nullptr)
     , m_groupingMenu(nullptr)
-    , m_groupingConfigKey(groupingConfigKey)
+    , m_groupingConfigGroup(std::move(groupingConfigGroup))
+    , m_groupingConfigKey(std::move(groupingConfigKey))
 {
     // Setup models:
-    m_treeModel = new BtBookshelfTreeModel(btConfig(), groupingConfigKey, this);
+    m_treeModel = new BtBookshelfTreeModel(m_groupingConfigGroup,
+                                           m_groupingConfigKey,
+                                           this);
     m_postFilterModel = new BtBookshelfFilterModel(this);
     m_postFilterModel->setSourceModel(m_treeModel);
     setModel(m_postFilterModel);
@@ -68,18 +71,20 @@ void BtOpenWorkActionMenu::postBuildMenu(QActionGroup * actions) {
                &BtBookshelfGroupingMenu::signalGroupingOrderChanged,
                [this](BtBookshelfTreeModel::Grouping const & grouping) {
                    m_treeModel->setGroupingOrder(grouping);
-                   grouping.saveTo(btConfig(), m_groupingConfigKey);
+                   grouping.saveTo(m_groupingConfigGroup, m_groupingConfigKey);
                });
 
     retranslateUi();
     addMenu(m_groupingMenu);
 }
 
-BtOpenWorkAction::BtOpenWorkAction(const QString &groupingConfigKey,
-                                   QObject *parent)
+BtOpenWorkAction::BtOpenWorkAction(BtConfigCore groupingConfigGroup,
+                                   QString groupingConfigKey,
+                                   QObject * parent)
     : QAction(parent)
 {
-    m_menu = new BtOpenWorkActionMenu(groupingConfigKey);
+    m_menu = new BtOpenWorkActionMenu(std::move(groupingConfigGroup),
+                                      std::move(groupingConfigKey));
     m_menu->setSourceModel(CSwordBackend::instance()->model());
 
     setMenu(m_menu);
