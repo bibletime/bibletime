@@ -433,21 +433,4 @@ QString decodeSwordReference(QString const & data) {
            .arg(text);
 }
 
-QString getWordTranslation(QString const & data) {
-    CSwordModuleInfo * const module = btConfig().getDefaultSwordModuleByType("standardLexicon");
-    if (!module)
-        return QString();
-
-    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
-    key->setKey(data);
-    if (key->key().toUpper() != data.toUpper()) //key not present in the lexicon
-        return QString();
-
-    return QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
-                  .arg(module->language()->abbrev())
-                  .arg(QObject::tr("Word lookup"))
-                  .arg(data)
-                  .arg(key->renderedText());
-}
-
 } // namespace Rendering {
