@@ -1,4 +1,4 @@
-dist: bionic
+dist: focal
 language: cpp
 cache: ccache
 
@@ -13,28 +13,16 @@ os:
 
 addons:
   apt:
-    sources:
-      - sourceline: ppa:ubuntu-toolchain-r/test
-      - sourceline: ppa:beineri/opt-qt-5.12.6-bionic
-      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-7 main'
-        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main'
-        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-9 main'
-        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
     packages:
       # Compilers:
       - gcc
       - g++
-      - gcc-8
-      - g++-8
-      - gcc-9
-      - g++-9
-      - clang-7
-      - clang-8
-      - clang-9
+      - gcc-10
+      - g++-10
+      - clang
       # Tools:
       - cmake
+      # Libraries:
       - libclucene-dev
       # System Qt:
       - libqt5svg5-dev
@@ -43,15 +31,6 @@ addons:
       - qtdeclarative5-dev
       - qttools5-dev
       - qtwebengine5-dev
-      # Qt 5.12:
-      - libglvnd-dev
-      - mesa-common-dev
-      - qt512base
-      - qt512declarative
-      - qt512svg
-      - qt512webengine
-      - qt512xmlpatterns
-      - qt512tools
       # Documentation:
       - fop
       - po4a
@@ -75,24 +54,12 @@ env:
      - NUM_THREADS=2
   jobs:
      - CC=gcc CXX=g++
-     - CC=gcc-8 CXX=g++-8
-     - CC=gcc-9 CXX=g++-9
+     - CC=gcc-10 CXX=g++-10
      - CC=clang CXX=clang++
-     - CC=clang-7 CXX=clang++-7
-     - CC=clang-8 CXX=clang++-8
-     - CC=clang-9 CXX=clang++-9
-     - CC=gcc CXX=g++ SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-     - CC=gcc-8 CXX=g++-8 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-     - CC=gcc-9 CXX=g++-9 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-     - CC=clang CXX=clang++ SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-     - CC=clang-7 CXX=clang++-7 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-     - CC=clang-8 CXX=clang++-8 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
-     - CC=clang-9 CXX=clang++-9 SOURCE_QT="/opt/qt512/bin/qt512-env.sh"
 
 before_install:
   - uname -a
   - test "$(uname -m)" == "aarch64" && USE_CCACHE=0 || USE_CCACHE=1
-  - test -z "$SOURCE_QT" || source "$SOURCE_QT"
   - ./tests/scripts/install-sword.sh "${HOME}/local" "$NUM_THREADS"
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
