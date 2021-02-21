@@ -13,13 +13,13 @@
 #include "crossrefrendering.h"
 
 #include <QtGlobal>
-#include "../backend/drivers/cswordmoduleinfo.h"
-#include "../backend/keys/cswordversekey.h"
-#include "../backend/managers/referencemanager.h"
-#include "../util/btassert.h"
+#include "../../util/btassert.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../keys/cswordversekey.h"
+#include "../managers/referencemanager.h"
 
 
-namespace InfoDisplay {
+namespace Rendering {
 
 CrossRefRendering::CrossRefRendering(const DisplayOptions &displayOptions,
                                      const FilterOptions &filterOptions)
@@ -86,4 +86,4 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
     return QString();
 }
 
-}
+} // namespace Rendering
