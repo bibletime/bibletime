@@ -32,7 +32,6 @@
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "bibletime.h"
-#include "crossrefrendering.h"
 
 
 using namespace Rendering;
