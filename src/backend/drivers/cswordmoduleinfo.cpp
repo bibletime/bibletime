@@ -23,10 +23,10 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QLocale>
+#include <QScopeGuard>
 #include <QSettings>
 #include <QTextDocument>
 #include "../../util/btassert.h"
-#include "../../util/btscopeexit.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
 #include "../config/btconfig.h"
@@ -277,7 +277,10 @@ inline void CSwordModuleInfo::setImportantFilterOptions(bool enable) {
 }
 
 void CSwordModuleInfo::buildIndex() {
-    BT_SCOPE_EXIT(m_cancelIndexing.store(false, std::memory_order_relaxed););
+    auto cleanup =
+            qScopeGuard(
+                [this]() noexcept
+                { m_cancelIndexing.store(false, std::memory_order_relaxed); });
 #define CANCEL_INDEXING (m_cancelIndexing.load(std::memory_order_relaxed))
 
 #ifndef BT_NO_LUCENE

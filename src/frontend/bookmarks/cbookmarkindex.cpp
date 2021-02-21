@@ -23,6 +23,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPaintEvent>
+#include <QScopeGuard>
 #include <QTimer>
 #include <QToolTip>
 #include "../../backend/config/btconfig.h"
@@ -32,7 +33,6 @@
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/bticons.h"
-#include "../../util/btscopeexit.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
 #include "../../util/directory.h"
@@ -453,7 +453,8 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
     auto const connection =
             BT_CONNECT(this, &CBookmarkIndex::collapsed,
                        [this](QModelIndex const & index) { expand(index); });
-    BT_SCOPE_EXIT(disconnect(connection););
+    auto cleanup = qScopeGuard([this, &connection]() noexcept
+                               { disconnect(connection); });
     QModelIndex const index = indexAt(event->pos());
     QModelIndex parentIndex;
     int indexUnderParent = 0;
