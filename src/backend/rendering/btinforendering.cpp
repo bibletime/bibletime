@@ -16,82 +16,21 @@
 #include <QtGlobal>
 #include "../../util/btassert.h"
 #include "../btglobal.h"
-#include "../keys/cswordversekey.h"
-#include "../managers/cdisplaytemplatemgr.h"
-#include "../managers/referencemanager.h"
-#include "chtmlexportrendering.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
+#include "../keys/cswordkey.h"
+#include "../managers/cdisplaytemplatemgr.h"
+#include "crossrefrendering.h"
 
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <versekey.h>
+#pragma GCC diagnostic pop
 
-using namespace Rendering;
-using namespace sword;
 
 namespace Rendering {
-namespace {
-
-class CrossRefRendering : public CHTMLExportRendering {
-public:
-    CrossRefRendering(
-            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = btConfig().getFilterOptions())
-        : CHTMLExportRendering(true, displayOptions, filterOptions)
-    {}
-
-    QString entryLink(const KeyTreeItem &item, const CSwordModuleInfo *module) override {
-        BT_ASSERT(module);
-
-        QString linkText;
-
-        const bool isBible = (module->type() == CSwordModuleInfo::Bible);
-        CSwordVerseKey vk(module); //only valid for bible modules, i.e. isBible == true
-        if (isBible) {
-            vk.setKey(item.key());
-        }
-
-        switch (item.settings().keyRenderingFace) {
-            case KeyTreeItem::Settings::NoKey:
-                linkText = QString();
-                break; //no key is valid for all modules
-            case KeyTreeItem::Settings::CompleteShort:
-                if (isBible) {
-                    linkText = QString::fromUtf8(vk.getShortText());
-                    break;
-                }
-                Q_FALLTHROUGH();
-            case KeyTreeItem::Settings::CompleteLong:
-                if (isBible) {
-                    linkText = vk.key();
-                    break;
-                }
-                Q_FALLTHROUGH();
-            case KeyTreeItem::Settings::SimpleKey:
-                if (isBible) {
-                    linkText = QString::number(vk.getVerse());
-                    break;
-                }
-                Q_FALLTHROUGH();
-            default: //default behaviour to return the passed key
-                linkText = item.key();
-                break;
-        }
-
-        if (!linkText.isEmpty()) { //if we have a valid link text
-            //     qWarning("rendering");
-            return QString("<a href=\"%1\">%2</a>")
-                   .arg(ReferenceManager::encodeHyperlink(*module, item.key()))
-                   .arg(linkText);
-        }
-
-        return QString();
-    }
-
-    QString finishText(const QString &text, const KeyTree &tree) override {
-        Q_UNUSED(tree)
-        return text;
-    }
-}; // class CrossRefRendering
-
-} // anonymous namespace
 
 ListInfoData detectInfo(QString const & data) {
     ListInfoData list;
