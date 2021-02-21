@@ -17,7 +17,6 @@
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/macros.h"
-#include "../config/btconfig.h"
 #include "categoryitem.h"
 #include "indexingitem.h"
 #include "languageitem.h"
@@ -27,9 +26,11 @@
 
 using namespace BookshelfModel;
 
-bool BtBookshelfTreeModel::Grouping::loadFrom(const QString & configKey) {
-    BT_ASSERT(!configKey.isNull());
-    QVariant v = btConfig().qVariantValue(configKey, QVariant());
+bool BtBookshelfTreeModel::Grouping::loadFrom(BtConfigCore const & config,
+                                              const QString & key)
+{
+    BT_ASSERT(!key.isNull());
+    QVariant v = config.qVariantValue(key, QVariant());
     if (!v.canConvert<Grouping>())
         return false;
 
@@ -37,9 +38,11 @@ bool BtBookshelfTreeModel::Grouping::loadFrom(const QString & configKey) {
     return true;
 }
 
-void BtBookshelfTreeModel::Grouping::saveTo(const QString & configKey) const {
-    BT_ASSERT(!configKey.isNull());
-    btConfig().setValue(configKey, QVariant::fromValue(*this));
+void BtBookshelfTreeModel::Grouping::saveTo(BtConfigCore & config,
+                                            QString const & key) const
+{
+    BT_ASSERT(!key.isNull());
+    config.setValue(key, QVariant::fromValue(*this));
 }
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
@@ -48,11 +51,12 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
     , m_defaultChecked(MODULE_HIDDEN)
     , m_checkable(false) {}
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(const QString & configKey,
+BtBookshelfTreeModel::BtBookshelfTreeModel(BtConfigCore const & config,
+                                           QString const & configKey,
                                            QObject * parent)
        : QAbstractItemModel(parent)
        , m_rootItem(new RootItem)
-       , m_groupingOrder(configKey)
+       , m_groupingOrder(config, configKey)
        , m_defaultChecked(MODULE_HIDDEN)
        , m_checkable(false) {}
 

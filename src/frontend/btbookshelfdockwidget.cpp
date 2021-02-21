@@ -20,6 +20,7 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <utility>
+#include "../backend/config/btconfig.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
@@ -50,7 +51,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     initMenus();
 
     // Setup tree model:
-    m_treeModel = new BtBookshelfTreeModel(groupingOrderKey, this);
+    m_treeModel = new BtBookshelfTreeModel(btConfig(), groupingOrderKey, this);
 
     // Get backend model:
     auto bookshelfModelPtr(CSwordBackend::instance()->model());
@@ -123,7 +124,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
                { module->setHidden(!checked); });
     BT_CONNECT(m_treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
                [this](BtBookshelfTreeModel::Grouping const & g) {
-                   g.saveTo(groupingOrderKey);
+                   g.saveTo(btConfig(), groupingOrderKey);
                    Q_EMIT groupingOrderChanged(g);
                });
     BT_CONNECT(m_bookshelfWidget->showHideAction(), &QAction::toggled,

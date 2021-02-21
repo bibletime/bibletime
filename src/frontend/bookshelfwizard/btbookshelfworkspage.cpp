@@ -72,7 +72,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
                                            QWidget * parent)
     : BtBookshelfWizardPage(parent)
     , m_taskType(iType)
-    , m_groupingOrder(groupingOrderKey)
+    , m_groupingOrder(btConfig(), groupingOrderKey)
 {
     // Initialize menus:
     m_groupingMenu = new BtBookshelfGroupingMenu(this);
@@ -305,7 +305,7 @@ void BtBookshelfWorksPage::slotGroupingOrderChanged(
         BtBookshelfTreeModel::Grouping const & g)
 {
     m_groupingOrder = g;
-    m_groupingOrder.saveTo(groupingOrderKey);
+    m_groupingOrder.saveTo(btConfig(), groupingOrderKey);
 }
 
 BtModuleSet const & BtBookshelfWorksPage::checkedModules() const

@@ -19,6 +19,7 @@
 #include <QList>
 #include <QMap>
 #include <QPersistentModelIndex>
+#include "../config/btconfigcore.h"
 #include "../drivers/btconstmoduleset.h"
 #include "../drivers/btmoduleset.h"
 #include "btbookshelfmodel.h"
@@ -75,8 +76,8 @@ public: /* Types: */
 
             explicit Grouping(Group group) { push_back(group); }
 
-            explicit Grouping(const QString & configKey) {
-                if (loadFrom(configKey))
+            Grouping(BtConfigCore const & config, QString const & key) {
+                if (loadFrom(config, key))
                     return;
                 push_back(GROUP_CATEGORY);
                 push_back(GROUP_LANGUAGE);
@@ -85,15 +86,17 @@ public: /* Types: */
             Grouping(Grouping const & copy) = default;
             Grouping & operator=(Grouping const & copy) = default;
 
-            bool loadFrom(const QString & configKey);
-            void saveTo(const QString & configKey) const;
+            bool loadFrom(BtConfigCore const & config, QString const & key);
+            void saveTo(BtConfigCore & config, QString const & key) const;
 
     };
 
 public: /* Methods: */
 
     BtBookshelfTreeModel(QObject * parent = nullptr);
-    BtBookshelfTreeModel(const QString & configKey, QObject * parent = nullptr);
+    BtBookshelfTreeModel(BtConfigCore const & config,
+                         QString const & configKey,
+                         QObject * parent = nullptr);
     BtBookshelfTreeModel(const Grouping & grouping, QObject * parent = nullptr);
     ~BtBookshelfTreeModel() override;
 

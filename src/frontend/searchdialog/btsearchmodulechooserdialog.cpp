@@ -15,6 +15,7 @@
 #include <QAction>
 #include <QToolButton>
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../../backend/config/btconfig.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
@@ -29,12 +30,12 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
     : BtModuleChooserDialog(parent, flags)
 {
     // Initialize the tree model:
-    BtBookshelfTreeModel::Grouping grouping(groupingOrderKey);
+    BtBookshelfTreeModel::Grouping grouping(btConfig(), groupingOrderKey);
     BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(grouping, this);
     treeModel->setCheckable(true);
     BT_CONNECT(treeModel, &BtBookshelfTreeModel::groupingOrderChanged,
                [](BtBookshelfTreeModel::Grouping const & grouping)
-               { grouping.saveTo(groupingOrderKey); });
+               { grouping.saveTo(btConfig(), groupingOrderKey); });
 
     // Initialize the bookshelf widget:
     bookshelfWidget()->showHideAction()->setVisible(false);

@@ -13,6 +13,7 @@
 #include "btopenworkaction.h"
 
 #include <utility>
+#include "../backend/config/btconfig.h"
 #include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btconnect.h"
@@ -30,7 +31,7 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
     , m_groupingConfigKey(groupingConfigKey)
 {
     // Setup models:
-    m_treeModel = new BtBookshelfTreeModel(groupingConfigKey, this);
+    m_treeModel = new BtBookshelfTreeModel(btConfig(), groupingConfigKey, this);
     m_postFilterModel = new BtBookshelfFilterModel(this);
     m_postFilterModel->setSourceModel(m_treeModel);
     setModel(m_postFilterModel);
@@ -67,7 +68,7 @@ void BtOpenWorkActionMenu::postBuildMenu(QActionGroup * actions) {
                &BtBookshelfGroupingMenu::signalGroupingOrderChanged,
                [this](BtBookshelfTreeModel::Grouping const & grouping) {
                    m_treeModel->setGroupingOrder(grouping);
-                   grouping.saveTo(m_groupingConfigKey);
+                   grouping.saveTo(btConfig(), m_groupingConfigKey);
                });
 
     retranslateUi();
