@@ -13,3 +13,4 @@ CMakeLists.txt text whitespace=space-before-tab,tab-in-indent,trailing-space
 /.git* export-ignore
 /.mailmap export-ignore
 /.travis.yml export-ignore
+/archive.sh export-ignore
