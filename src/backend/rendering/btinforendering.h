@@ -55,7 +55,6 @@ QString decodeFootnote(QString const & data);
 QString decodeStrongs(QString const & data);
 QString decodeMorph(QString const & data);
 QString decodeSwordReference(QString const & data);
-QString getWordTranslation(QString const & data);
 
 } /* namespace Rendering { */
 
