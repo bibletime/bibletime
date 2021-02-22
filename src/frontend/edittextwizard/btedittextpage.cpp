@@ -37,10 +37,10 @@ BtEditTextPage::BtEditTextPage(QWidget * parent)
     , m_plainTextEdit(new QTextEdit(this))
     , m_htmlTextEdit(new QTextEdit(this))
     , m_toolBar(new QToolBar(this))
-    , m_wizard(nullptr)
-    , m_handingFormatChangeFromEditor(false) {
-
-    m_wizard = qobject_cast<BtEditTextWizard *>(parent);
+    , m_wizard(qobject_cast<BtEditTextWizard *>(parent))
+    , m_handingFormatChangeFromEditor(false)
+    , m_htmlMode(m_wizard->htmlMode())
+{
     QVBoxLayout * verticalLayout = new QVBoxLayout(this);
     verticalLayout->addWidget(m_toolBar);
     verticalLayout->addWidget(m_plainTextEdit);
