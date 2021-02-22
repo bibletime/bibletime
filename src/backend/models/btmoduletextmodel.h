@@ -25,10 +25,6 @@
 
 /** For the BtFindWidget buttons (previous, next) */
 struct FindState {
-
-    // Prev/Next word highlighting enabled
-    bool enabled;
-
     // Model row for item with highlight
     int index;
 
@@ -143,7 +139,7 @@ public:
     void setDisplayOptions(const DisplayOptions & displayOptions);
 
     /** Set the state of the currently found word functionality */
-    void setFindState(const FindState& findState);
+    void setFindState(std::optional<FindState> findState);
 
     /** Set the color of word that are highlighted */
     void setHighlightWords(const QString& highlightWords, bool caseSensitive);
@@ -192,7 +188,7 @@ private:
     BtModuleTextFilter * m_textFilter;
     DisplayOptions m_displayOptions;
     FilterOptions m_filterOptions;
-    FindState m_findState;
+    std::optional<FindState> m_findState;
 };
 
 #endif

@@ -33,8 +33,6 @@ BtModuleTextModel::BtModuleTextModel(QObject *parent)
       m_firstEntry(0),
       m_maxEntries(0),
       m_textFilter(nullptr) {
-
-    m_findState.enabled = false;
     QHash<int, QByteArray> roleNames;
     roleNames[ModuleEntry::ReferenceRole] =  "keyName";             // reference
     roleNames[ModuleEntry::TextRole] = "line";                      // not used
@@ -137,10 +135,10 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
 
     if ( ! m_highlightWords.isEmpty()) {
         QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
-        if (m_findState.enabled && index.row() == m_findState.index) {
+        if (m_findState && index.row() == m_findState->index) {
             // t = highlightFindPreviousNextField(t); now inlined:
             int from = 0;
-            for (int i = 0; i < m_findState.subIndex; ++i) {
+            for (int i = 0; i < m_findState->subIndex; ++i) {
                 int pos = t.indexOf("\"highlightwords\"", from);
                 if (pos == -1)
                     return t;
@@ -390,16 +388,16 @@ int BtModuleTextModel::getFirstEntryIndex() const {
     return m_firstEntry;
 }
 
-void BtModuleTextModel::setFindState(const FindState& findState) {
-    if (m_findState.enabled && m_findState.index != findState.index) {
-        QModelIndex oldIndexToClear = index(m_findState.index, 0);
-        m_findState  = findState;
+void BtModuleTextModel::setFindState(std::optional<FindState> findState) {
+    if (m_findState && m_findState->index != findState->index) {
+        QModelIndex oldIndexToClear = index(m_findState->index, 0);
+        m_findState = std::move(findState);
         Q_EMIT dataChanged(oldIndexToClear, oldIndexToClear);
     } else {
-        m_findState  = findState;
+        m_findState = std::move(findState);
     }
-    if (findState.enabled) {
-        QModelIndex index = this->index(findState.index, 0);
+    if (m_findState) {
+        QModelIndex index = this->index(m_findState->index, 0);
         Q_EMIT dataChanged(index, index);
     }
 }

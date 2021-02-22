@@ -51,7 +51,6 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
     m_moduleTextModel->setTextFilter(&m_textFilter);
     m_textFilter.setShowReferences(true);
     m_linkTimer->setSingleShot(true);
-    m_findState.enabled = false;
 
     BT_CONNECT(m_linkTimer, &QTimer::timeout,
                [this] {
@@ -583,7 +582,7 @@ void BtQmlInterface::setHighlightWords(const QString& words, bool caseSensitive)
 void BtQmlInterface::slotSetHighlightWords() {
     QApplication::setOverrideCursor(Qt::WaitCursor);
     m_moduleTextModel->setHighlightWords(m_highlightWords, m_caseSensitive);
-    m_findState.enabled = false;
+    m_findState.reset();
     m_moduleTextModel->setFindState(m_findState);
     Q_EMIT highlightWordsChanged();
     QApplication::restoreOverrideCursor();
@@ -592,20 +591,17 @@ void BtQmlInterface::slotSetHighlightWords() {
 void BtQmlInterface::findText(const QString& /*text*/,
                               bool /*caseSensitive*/, bool backward) {
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    if (! m_findState.enabled) {  // initialize it
-        m_findState.enabled = true;
-        m_findState.index = getCurrentModelIndex();
-        m_findState.subIndex = 0;
-    }
+    if (!m_findState)
+        m_findState = FindState{getCurrentModelIndex(), 0};
 
     if (backward)
-        getPreviousMatchingItem(m_findState.index);
+        getPreviousMatchingItem(m_findState->index);
     else
-        getNextMatchingItem(m_findState.index);
+        getNextMatchingItem(m_findState->index);
 
     m_moduleTextModel->setFindState(m_findState);
     Q_EMIT highlightWordsChanged();
-    Q_EMIT positionItemOnScreen(m_findState.index);
+    Q_EMIT positionItemOnScreen(m_findState->index);
     QApplication::restoreOverrideCursor();
 }
 
@@ -618,9 +614,9 @@ int BtQmlInterface::countHighlightsInItem(int index) {
 
 void BtQmlInterface::getNextMatchingItem(int startIndex) {
     int num = countHighlightsInItem(startIndex);
-    if (num > m_findState.subIndex) { // Found within startIndex item
-        m_findState.index = startIndex;
-        ++m_findState.subIndex;
+    if (num > m_findState->subIndex) { // Found within startIndex item
+        m_findState->index = startIndex;
+        ++m_findState->subIndex;
         return;
     }
 
@@ -631,8 +627,8 @@ void BtQmlInterface::getNextMatchingItem(int startIndex) {
     for (int i = 0; i < 1000; ++i) {
         int num = countHighlightsInItem(index);
         if (num > 0 ) {
-            m_findState.index = index;
-            m_findState.subIndex = 1;
+            m_findState->index = index;
+            m_findState->subIndex = 1;
             return;
         }
         ++index;
@@ -642,10 +638,10 @@ void BtQmlInterface::getNextMatchingItem(int startIndex) {
 
 void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
     int num = countHighlightsInItem(startIndex);
-    if (num > 0 && m_findState.subIndex == 0) {
+    if (num > 0 && m_findState->subIndex == 0) {
         // Found within startIndex item
-        m_findState.index = startIndex;
-        m_findState.subIndex = 1;
+        m_findState->index = startIndex;
+        m_findState->subIndex = 1;
         return;
     }
 
@@ -653,17 +649,17 @@ void BtQmlInterface::getPreviousMatchingItem(int startIndex) {
         return;
 
     int index = startIndex;
-    if (m_findState.subIndex == 0)
+    if (m_findState->subIndex == 0)
         --index;
     for (int i = 0; i < 1000; ++i) {
         int num = countHighlightsInItem(index);
         if (num > 0 ) {
-            m_findState.index = index;
-            if (m_findState.subIndex == 0)
-                m_findState.subIndex = num;
+            m_findState->index = index;
+            if (m_findState->subIndex == 0)
+                m_findState->subIndex = num;
             else
-                --m_findState.subIndex;
-            if (m_findState.subIndex != 0)
+                --m_findState->subIndex;
+            if (m_findState->subIndex != 0)
                 return;
         }
         --index;

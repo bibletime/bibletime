@@ -14,6 +14,7 @@
 #define BT_DISPLAY_VIEW_INTERFACE_H
 
 #include <memory>
+#include <optional>
 #include <QFont>
 #include <QList>
 #include <QObject>
@@ -199,7 +200,7 @@ private:
     QString m_timeoutUrl;
     int m_contextMenuIndex;
     QString m_activeLink;
-    FindState m_findState;
+    std::optional<FindState> m_findState;
     QTimer m_timer;
     QMap<int, QString> m_selectedText;
 };
