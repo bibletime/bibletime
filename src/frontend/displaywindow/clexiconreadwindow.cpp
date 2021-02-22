@@ -40,7 +40,6 @@
 CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)
     : CReadWindow(moduleList, parent) {
     setObjectName("CLexiconReadWindow");
-    moduleList.first();
     setKey( CSwordKey::createInstance(moduleList.first()) );
 }
 
