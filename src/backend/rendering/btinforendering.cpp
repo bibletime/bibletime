@@ -12,8 +12,10 @@
 
 #include "btinforendering.h"
 
+#include <memory>
 #include <QStringList>
 #include <QtGlobal>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../btglobal.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
@@ -406,31 +408,23 @@ QString decodeMorph(QString const & data) {
 }
 
 QString decodeSwordReference(QString const & data) {
-    QString moduleName;
-    QString reference;
-    QString text;
-    CSwordModuleInfo * module = nullptr;
-
     QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
     rx.setMinimal(false);
-    int pos1 = rx.indexIn(data);
-    if (pos1 > -1) {
-        moduleName = rx.cap(2);
-        reference = rx.cap(3);
-        module = CSwordBackend::instance()->findModuleByName(moduleName);
-        if (module) {
-            QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
+    if (rx.indexIn(data) >= 0) {
+        if (auto * const module =
+                    CSwordBackend::instance()->findModuleByName(rx.cap(2)))
+        {
+            std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+            auto reference = rx.cap(3);
             key->setKey(reference);
-            text = key->renderedText();
-        } else {
-            return "";
+            return QString("<div class=\"crossrefinfo\" lang=\"%1\">"
+                           "<h3>%2</h3><p>%3</p></div>")
+                    .arg(module->language()->abbrev())
+                    .arg(std::move(reference))
+                    .arg(key->renderedText());
         }
     }
-
-    return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
-           .arg(module->language()->abbrev())
-           .arg(reference)
-           .arg(text);
+    return {};
 }
 
 } // namespace Rendering {
