@@ -16,8 +16,10 @@
 // This installs the lists of available modules.
 // It should be the first test ran.
 
-#include <QEventLoop>
-#include <stdio.h>
+#include <condition_variable>
+#include <cstdio>
+#include <memory>
+#include <mutex>
 #include "backend/managers/cswordbackend.h"
 #include "backend/config/btconfig.h"
 #include "backend/btsourcesthread.h"
@@ -51,22 +53,27 @@ void test_BtSourcesThread::initTestCase() {
 }
 
 void test_BtSourcesThread::installRemoteSources() {
-    m_thread = new BtSourcesThread(this);
-    BT_CONNECT(m_thread,   &BtSourcesThread::showMessage,
-               this, &test_BtSourcesThread::slotShowMessage);
-    BT_CONNECT(m_thread, &BtSourcesThread::finished,
-               this,     &test_BtSourcesThread::slotThreadFinished);
-    m_thread->start();
-    m_eventLoop = new QEventLoop(this);
-    m_eventLoop->exec();
-}
+    auto const thread = std::make_unique<BtSourcesThread>();
 
-void test_BtSourcesThread::slotThreadFinished() {
-    m_eventLoop->exit();
-}
+    std::mutex mutex;
+    std::condition_variable cond;
+    bool done = false;
 
-void test_BtSourcesThread::slotShowMessage(const QString & msg) {
-    fprintf(stderr, "        %s\n", msg.toLocal8Bit().constData());
+    BT_CONNECT(
+            thread.get(), &BtSourcesThread::showMessage,
+            [](QString const & m)
+            { fprintf(stderr, "        %s\n", m.toLocal8Bit().constData()); });
+    BT_CONNECT(
+            thread.get(), &BtSourcesThread::finished,
+            [&mutex, &cond, &done]() {
+                std::lock_guard const guard(mutex);
+                done = true;
+                cond.notify_one();
+            });
+    thread->start();
+
+    std::unique_lock lock(mutex);
+    cond.wait(lock, [&done]() noexcept { return done; });
 }
 
 void test_BtSourcesThread::cleanupTestCase() {
