@@ -171,7 +171,6 @@ private:
 
     CSwordTreeKey indexToBookKey(int index) const;
 
-    QString highlightFindPreviousNextField(const QString& text) const;
     bool isBible() const;
     bool isBook() const;
     bool isCommentary() const;

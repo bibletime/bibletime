@@ -137,8 +137,20 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
 
     if ( ! m_highlightWords.isEmpty()) {
         QString t = CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
-        if (m_findState.enabled && index.row() == m_findState.index)
-            t = highlightFindPreviousNextField(t);
+        if (m_findState.enabled && index.row() == m_findState.index) {
+            // t = highlightFindPreviousNextField(t); now inlined:
+            int from = 0;
+            for (int i = 0; i < m_findState.subIndex; ++i) {
+                int pos = t.indexOf("\"highlightwords\"", from);
+                if (pos == -1)
+                    return t;
+                else {
+                    from = pos + 1;
+                }
+            }
+            int position = from + 14; // highlightwords = 14, quote was already added
+            t.insert(position, "2");
+        }
         return QVariant(t);
     }
 
@@ -260,22 +272,6 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
         return text;
     }
     return QString();
-}
-
-QString BtModuleTextModel::highlightFindPreviousNextField(const QString& text) const {
-    QString t = text;
-    int from = 0;
-    for (int i = 0; i < m_findState.subIndex; ++i) {
-        int pos = t.indexOf("\"highlightwords\"", from);
-        if (pos == -1)
-            return t;
-        else {
-            from = pos + 1;
-        }
-    }
-    int position = from + 14; // highlightwords = 14, quote was already added
-    t.insert(position, "2");
-    return t;
 }
 
 int BtModuleTextModel::columnCount(const QModelIndex & /*parent*/) const {
