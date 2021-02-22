@@ -60,7 +60,6 @@ public: /* Methods: */
 
 private:
     QLineEdit * m_inputTextEdit;
-    QTextBrowser * m_infoTextView;
 };
 
 #endif // BTMESSAGEINPUTDIALOG_H

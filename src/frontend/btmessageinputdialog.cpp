@@ -36,11 +36,11 @@ BtMessageInputDialog::BtMessageInputDialog(QString const & title,
     QVBoxLayout * verticalLayout = new QVBoxLayout(this);
 
     if (!infoMessage.isEmpty()) {
-        m_infoTextView = new QTextBrowser(this);
-        m_infoTextView->setPlainText(infoMessage);
-        m_infoTextView->setReadOnly(true);
-        m_infoTextView->setOpenLinks(false);
-        verticalLayout->addWidget(m_infoTextView);
+        auto * const infoTextView = new QTextBrowser(this);
+        infoTextView->setPlainText(infoMessage);
+        infoTextView->setReadOnly(true);
+        infoTextView->setOpenLinks(false);
+        verticalLayout->addWidget(infoTextView);
         resize(480, 200);
     }
 
