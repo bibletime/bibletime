@@ -104,7 +104,7 @@ void ColorManager::loadColorMaps() {
                     static QString const light("light");
                     cMapSettings.beginGroup(darkMode() ? dark : light);
                     for (auto const & colorKey : cMapSettings.childKeys())
-                        colorMap.emplace(colorKey, cMapSettings.value(colorKey).toString());
+                        colorMap[colorKey] = cMapSettings.value(colorKey).toString();
                 }
                 m_colorMaps[std::move(fileName)] = std::move(colorMap);
             };
