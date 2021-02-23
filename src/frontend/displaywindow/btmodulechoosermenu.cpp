@@ -117,17 +117,17 @@ void BtModuleChooserMenu::preBuildMenu(QActionGroup * actionGroup) {
     actionGroup->setExclusive(true);
 
     if (m_flags & AddNoneButton) {
-        m_noneAction = new QAction(this);
-        m_noneAction->setCheckable(true);
-        m_noneAction->setText(tr("NONE"));
-        m_noneAction->setChecked(m_selectedModule.isEmpty());
-        m_noneAction->setDisabled(
+        QAction * noneAction = new QAction(this);
+        noneAction->setCheckable(true);
+        noneAction->setText(tr("NONE"));
+        noneAction->setChecked(m_selectedModule.isEmpty());
+        noneAction->setDisabled(
                     m_newModulesToUse.size() <= 1
                     || (m_buttonIndex <= 0 && m_leftLikeModules <= 1));
-        m_noneAction->setActionGroup(actionGroup);
-        BT_CONNECT(m_noneAction, &QAction::triggered,
+        noneAction->setActionGroup(actionGroup);
+        BT_CONNECT(noneAction, &QAction::triggered,
                    [this]{ Q_EMIT triggered(QModelIndex()); });
-        addAction(m_noneAction);
+        addAction(noneAction);
 
         addSeparator();
     }

@@ -70,7 +70,6 @@ public: /* Fields: */
     CSwordModuleInfo::ModuleType const m_moduleType;
     void * const m_sortedModel;
     Flags const m_flags;
-    QAction * m_noneAction;
     QStringList m_newModulesToUse;
     QString m_selectedModule;
     int m_buttonIndex;
