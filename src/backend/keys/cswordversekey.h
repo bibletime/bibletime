@@ -82,6 +82,8 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         CSwordVerseKey(const sword::VerseKey *k,
                        const CSwordModuleInfo *module);
 
+        sword::SWKey const & asSwordKey() const noexcept final override;
+
         CSwordKey* copy() const override;
 
         QString key() const override;

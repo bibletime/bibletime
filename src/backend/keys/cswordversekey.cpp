@@ -52,6 +52,9 @@ CSwordVerseKey::CSwordVerseKey(const VerseKey *k,
     // Intentionally empty
 }
 
+sword::SWKey const & CSwordVerseKey::asSwordKey() const noexcept
+{ return *this; }
+
 /** Clones this object. */
 CSwordKey* CSwordVerseKey::copy() const {
     return new CSwordVerseKey(*this);

@@ -20,6 +20,7 @@
 
 class CSwordModuleInfo;
 class QTextCodec;
+namespace sword { class SWKey; }
 
 /** Base class for all Sword based keys. */
 class CSwordKey {
@@ -37,6 +38,9 @@ public: /* Methods: */
     virtual ~CSwordKey() noexcept;
 
     CSwordKey & operator=(CSwordKey const &) = delete;
+
+    /** \returns a reference to this object as a sword::SWKey. */
+    virtual sword::SWKey const & asSwordKey() const noexcept = 0;
 
     /**
       \returns The key which belongs to the current object.

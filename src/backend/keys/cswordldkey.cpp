@@ -44,6 +44,8 @@ CSwordLDKey::CSwordLDKey(const SWKey *k, const CSwordModuleInfo *module)
     // Intentionally empty
 }
 
+sword::SWKey const & CSwordLDKey::asSwordKey() const noexcept { return *this; }
+
 /** Clones this object by copying the members. */
 CSwordLDKey* CSwordLDKey::copy() const {
     return new CSwordLDKey(*this);

@@ -226,15 +226,15 @@ const QString CTextRendering::renderKeyRange(
     std::unique_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
     upperBound->setKey(stop);
 
-    sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.get());
-    sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.get());
+    auto const & sw_start = lowerBound->asSwordKey();
+    auto const & sw_stop = upperBound->asSwordKey();
 
-    BT_ASSERT((*sw_start == *sw_stop) || (*sw_start < *sw_stop));
+    BT_ASSERT((sw_start == sw_stop) || (sw_start < sw_stop));
 
-    if (*sw_start == *sw_stop) { //same key, render single key
+    if (sw_start == sw_stop) { //same key, render single key
         return renderSingleKey(lowerBound->key(), modules);
     }
-    else if (*sw_start < *sw_stop) { // Render range
+    else if (sw_start < sw_stop) { // Render range
         KeyTree tree;
         KeyTreeItem::Settings settings = keySettings;
 

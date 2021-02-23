@@ -27,6 +27,9 @@ CSwordTreeKey::CSwordTreeKey(const TreeKeyIdx *k,
     // Intentionally empty
 }
 
+sword::SWKey const & CSwordTreeKey::asSwordKey() const noexcept
+{ return *this; }
+
 CSwordTreeKey* CSwordTreeKey::copy() const {
     return new CSwordTreeKey(*this);
 }

@@ -46,6 +46,8 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
         CSwordTreeKey( const CSwordTreeKey& k );
 
+        sword::SWKey const & asSwordKey() const noexcept final override;
+
         void setModule(const CSwordModuleInfo *newModule) override;
 
         CSwordTreeKey* copy() const override;

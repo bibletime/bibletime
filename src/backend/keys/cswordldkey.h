@@ -74,6 +74,8 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         */
         CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module);
 
+        sword::SWKey const & asSwordKey() const noexcept final override;
+
         CSwordLDKey* copy() const override;
         /**
         * Uses the parameter to returns the next entry afer this key.
