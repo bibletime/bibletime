@@ -50,15 +50,15 @@ BtToolBarPopupAction::~BtToolBarPopupAction() = default;
 QMenu * BtToolBarPopupAction::popupMenu() const { return m_menu.get(); }
 
 QWidget* BtToolBarPopupAction::createWidget(QWidget* parent) {
-    m_button = new BtToolButton(parent);
+    auto * const button = new BtToolButton(parent);
     setIcon(m_icon);
     setToolTip(m_text);
-    m_button->setDefaultAction(this);
-    m_button->setPopupMode(QToolButton::MenuButtonPopup);
-    m_button->setMenu(m_menu.get());
-    BT_CONNECT(m_button, &BtToolButton::pressed,
+    button->setDefaultAction(this);
+    button->setPopupMode(QToolButton::MenuButtonPopup);
+    button->setMenu(m_menu.get());
+    BT_CONNECT(button, &BtToolButton::pressed,
                this /* Meeded */, [this] { Q_EMIT triggered(); });
-    return m_button;
+    return button;
 }
 
 // Function to catch the Shortcut event and emit the triggered signal

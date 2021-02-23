@@ -40,7 +40,6 @@ class BtToolBarPopupAction : public QWidgetAction {
 
     private:
         std::unique_ptr<QMenu> const m_menu;
-        QToolButton* m_button;
         QIcon m_icon;
         QString m_text;
 };
