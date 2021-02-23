@@ -88,13 +88,13 @@ void CSwordTreeKey::setModule(const CSwordModuleInfo *newModule) {
     BT_ASSERT(newModule);
     if (m_module == newModule) return;
     BT_ASSERT(newModule->type() == CSwordModuleInfo::GenericBook);
+    BT_ASSERT(dynamic_cast<CSwordBookModuleInfo const *>(newModule));
 
     m_module = newModule;
 
     const QString oldKey = key();
 
-    const CSwordBookModuleInfo *newBook = dynamic_cast<const CSwordBookModuleInfo*>(newModule);
-    copyFrom( *(newBook->tree()) );
+    copyFrom(*static_cast<CSwordBookModuleInfo const *>(newModule)->tree());
 
     setKey(oldKey); //try to restore our old key
 
