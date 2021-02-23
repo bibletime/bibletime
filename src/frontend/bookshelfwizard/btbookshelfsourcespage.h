@@ -53,7 +53,6 @@ private: /* Fields: */
     QTableView * m_sourcesTableView;
     QVBoxLayout * m_verticalLayout;
     BtListModel * m_model;
-    BtInstallMgr * m_currentInstallMgr;
 
 }; /* class BtBookshelfSourcesPage */
 
