@@ -1,3 +1,6 @@
+2019-13-30 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #299 - The preview on Settings dialog displays text as red
+
 2019-13-30 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #287 - Scrolling is exceedingly slow
 
