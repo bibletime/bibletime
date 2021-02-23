@@ -53,7 +53,6 @@ private:
 
 private: /* Fields: */
 
-    CReadDisplay * m_htmlPart;
     QTextBrowser * m_textBrowser;
     BibleTime * m_mainWindow;
 
