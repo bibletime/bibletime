@@ -12,6 +12,7 @@
 
 #include "cdisplaywindow.h"
 
+#include <QClipboard>
 #include <QCloseEvent>
 #include <QDebug>
 #include <QMdiSubWindow>
@@ -20,11 +21,16 @@
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/keys/cswordkey.h"
+#include "../../backend/rendering/cdisplayrendering.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
 #include "../bibletimeapp.h"
+#include "../btcopybyreferencesdialog.h"
+#include "../cexportmanager.h"
 #include "../cmdiarea.h"
+#include "../display/btmodelviewreaddisplay.h"
 #include "../display/cdisplay.h"
+#include "../display/modelview/btquickwidget.h"
 #include "../keychooser/ckeychooser.h"
 #include "../keychooser/bthistory.h"
 #include "../searchdialog/csearchdialog.h"
@@ -259,6 +265,13 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
 }
 
+void CDisplayWindow::resizeEvent(QResizeEvent * e) {
+    Q_UNUSED(e)
+    if (displayWidget())
+        static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
+}
+
 void CDisplayWindow::initActions() {
     BtActionCollection* ac = actionCollection();
 
@@ -293,6 +306,73 @@ void CDisplayWindow::initActions() {
                   &BTHistory::fw);
 
     ac->readShortcuts("Displaywindow shortcuts");
+}
+
+void CDisplayWindow::slotMoveToAnchor() {
+    static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
+}
+
+void CDisplayWindow::copySelectedText() {
+    if (auto * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        QGuiApplication::clipboard()->setText(
+                    v->qmlInterface()->getSelectedText());
+}
+
+void CDisplayWindow::copyByReferences() {
+    if (auto const * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+    {
+        auto const & qml = *v->qmlInterface();
+        BtCopyByReferencesDialog dlg(modules(),
+                                     history(),
+                                     key(),
+                                     qml.textModel(),
+                                     this);
+        if (dlg.exec() != QDialog::Accepted)
+            return;
+
+        auto const & m = *modules().at(dlg.getColumn());
+        if (m.type() == CSwordModuleInfo::Bible
+            || m.type() == CSwordModuleInfo::Commentary)
+        {
+            qml.copyVerseRange(dlg.getReference1(), dlg.getReference2(), &m);
+        } else {
+            qml.copyRange(dlg.getIndex1(), dlg.getIndex2());
+        }
+    }
+}
+
+bool CDisplayWindow::hasSelectedText() {
+    if (auto const * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        return v->qmlInterface()->hasSelectedText();
+    return false;
+}
+
+void CDisplayWindow::copyDisplayedText()
+{ CExportManager().copyKey(key(), CExportManager::Text, true); }
+
+int CDisplayWindow::getSelectedColumn() const {
+    if (auto const * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        return v->quickWidget()->getSelectedColumn();
+    return 0;
+}
+
+int CDisplayWindow::getFirstSelectedIndex() const {
+    if (auto const * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        return v->quickWidget()->getFirstSelectedIndex();
+    return 0;
+}
+
+int CDisplayWindow::getLastSelectedIndex() const {
+    if (auto const * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        return v->quickWidget()->getLastSelectedIndex();
+    return 0;
 }
 
 /** Refresh the settings of this window. */
@@ -384,6 +464,27 @@ void CDisplayWindow::modulesChanged() {
         key()->setModule(modules().first());
         keyChooser()->setModules(modules());
     }
+}
+
+void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
+    BT_ASSERT(newKey);
+
+    if (!isReady() || !newKey || modules().empty() || !modules().first())
+        return;
+
+    if (key() != newKey)
+        key()->setKey(newKey->key());
+
+    /// \todo next-TODO how about options?
+    auto * const display = modules().first()->getDisplay();
+    BT_ASSERT(display);
+
+    displayWidget()->setDisplayOptions(displayOptions());
+    displayWidget()->setFilterOptions(filterOptions());
+    displayWidget()->scrollToKey(newKey);
+    BibleTime::instance()->autoScrollStop();
+
+    setWindowTitle(windowCaption());
 }
 
 /** Sets the module chooser bar. */
@@ -542,7 +643,7 @@ void CDisplayWindow::updatePopupMenu() {
 
 ///** Returns the installed popup menu. */
 QMenu* CDisplayWindow::popup() {
-    // qWarning("CReadWindow::popup()");
+    // qWarning("CDisplayWindow::popup()");
     if (!m_popupMenu) {
         m_popupMenu = new QMenu(this);
         BT_CONNECT(m_popupMenu, &QMenu::aboutToShow,
@@ -558,8 +659,27 @@ QMenu* CDisplayWindow::popup() {
 }
 
 /** Sets the display widget used by this display window. */
-void CDisplayWindow::setDisplayWidget( CDisplay* newDisplay ) {
+void CDisplayWindow::setDisplayWidget(CDisplay * newDisplay) {
+    // Lets be orwellianly paranoid here:
+    BT_ASSERT(dynamic_cast<CReadDisplay *>(newDisplay));
+
     m_displayWidget = newDisplay;
+    if (m_readDisplayWidget) {
+        if (BtModelViewReadDisplay * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+            disconnect(v,    &BtModelViewReadDisplay::completed,
+                       this, &CDisplayWindow::slotMoveToAnchor);
+    }
+
+    m_readDisplayWidget = static_cast<CReadDisplay *>(newDisplay);
+
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        BT_CONNECT(v,    &BtModelViewReadDisplay::completed,
+                   this, &CDisplayWindow::slotMoveToAnchor);
+
+    BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
+               this,           &CDisplayWindow::colorThemeChangedSlot);
 }
 
 void CDisplayWindow::closeEvent(QCloseEvent* e) {
@@ -594,9 +714,34 @@ void CDisplayWindow::setFocusKeyChooser() {
 }
 
 void CDisplayWindow::pageDown() {
-
+    if (auto * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        v->pageDown();
 }
 
 void CDisplayWindow::pageUp() {
+    if (auto * const v =
+                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+        v->pageUp();
+}
 
+void CDisplayWindow::openSearchStrongsDialog() {
+    QString searchText;
+    Q_FOREACH(QString const & strongNumber,
+              displayWidget()->getCurrentNodeInfo().split(
+                  '|',
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                  QString::SkipEmptyParts))
+#else
+                  Qt::SkipEmptyParts))
+#endif
+        searchText.append("strong:").append(strongNumber).append(' ');
+    Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
+}
+
+void CDisplayWindow::colorThemeChangedSlot() {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        v->qmlInterface()->changeColorTheme();
+    }
 }

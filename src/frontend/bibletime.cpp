@@ -47,7 +47,6 @@
 #include "displaywindow/ccommentaryreadwindow.h"
 #include "displaywindow/cdisplaywindow.h"
 #include "displaywindow/clexiconreadwindow.h"
-#include "displaywindow/creadwindow.h"
 #include "keychooser/ckeychooser.h"
 #include "messagedialog.h"
 #include "searchdialog/csearchdialog.h"
@@ -146,8 +145,8 @@ BibleTime::~BibleTime() {
 
 namespace {
 
-CReadWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
-                                 CMDIArea * const parent)
+CDisplayWindow * createReadInstance(QList<CSwordModuleInfo *> const modules,
+                                    CMDIArea * const parent)
 {
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:

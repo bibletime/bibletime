@@ -21,6 +21,7 @@
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
+#include "../display/creaddisplay.h"
 #include "btactioncollection.h"
 
 
@@ -35,18 +36,15 @@ class QMenu;
 class QToolBar;
 class BTHistory;
 class BibleTime;
+class CLexiconReadWindow;
 
-/** The base class for all display windows of BibleTime.
-  *
-  * Inherits QMainWindow.
-  *
-  * Inherited by CReadWindow and CWriteWindow.
-  *
-  * @author The BibleTime team
-  */
+/** \brief The base class for all display windows of BibleTime. */
 class CDisplayWindow : public QMainWindow {
     Q_OBJECT
+    friend class CLexiconReadWindow;
 public:
+
+    virtual CSwordModuleInfo::ModuleType moduleType() const = 0;
 
     /** Insert the keyboard accelerators of this window into the given actioncollection.*/
     static void insertKeyboardActions( BtActionCollection* const a );
@@ -154,11 +152,26 @@ public:
 
     BtActionCollection * actionCollection() const { return m_actionCollection; }
 
-    virtual void copySelectedText() = 0;
+    /**
+      Catches the signal when the KHTMLPart has finished the layout (anchors are
+      not ready before that).
+    */
+    virtual void slotMoveToAnchor();
 
-    virtual void copyByReferences() = 0;
+    virtual void copySelectedText();
 
-    virtual bool hasSelectedText() = 0;
+    virtual void copyByReferences();
+
+    virtual bool hasSelectedText();
+
+    /** Updates the status of the popup menu entries. */
+    virtual void copyDisplayedText();
+
+    int getSelectedColumn() const;
+
+    int getFirstSelectedIndex() const;
+
+    int getLastSelectedIndex() const;
 
 Q_SIGNALS:
     /** The module list was set because backend was reloaded.*/
@@ -211,6 +224,8 @@ protected:
     CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
     ~CDisplayWindow() override;
 
+    void resizeEvent(QResizeEvent * e) override;
+
     /**
           \returns the display options used by this display window.
         */
@@ -231,7 +246,7 @@ protected:
     BtModuleChooserBar * moduleChooserBar() const { return m_moduleChooserBar; }
 
     /** Lookup the given key.*/
-    virtual void lookupSwordKey( CSwordKey* ) = 0;
+    virtual void lookupSwordKey(CSwordKey *);
 
     /** Sets the module chooser bar.*/
     void setModuleChooserBar( BtModuleChooserBar* bar );
@@ -297,6 +312,13 @@ private: /* Methods: */
     void initAddAction(Args && ... args)
     { addAction(&initAction(std::forward<Args>(args)...)); }
 
+private Q_SLOTS:
+
+    /** Opens the search dialog with the strong info of the last clicked word.*/
+    void openSearchStrongsDialog();
+
+    void colorThemeChangedSlot();
+
 private:
     BtActionCollection* m_actionCollection;
     CMDIArea* m_mdi;
@@ -317,6 +339,7 @@ private:
     QMenu* m_popupMenu;
     CDisplay* m_displayWidget;
     BTHistory* m_history;
+    CReadDisplay * m_readDisplayWidget = nullptr;
 };
 
 #endif

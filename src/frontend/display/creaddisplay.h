@@ -19,7 +19,7 @@
 #include "../../backend/managers/cswordbackend.h"
 
 
-class CReadWindow;
+class CDisplayWindow;
 
 /** The base class for all read-only widgets like KHTMLView.
   *@author The BibleTime team
@@ -47,7 +47,7 @@ protected: // Protected methods
 
     friend class BtHtmlJsObject;
 
-    CReadDisplay( CReadWindow* readWindow );
+    CReadDisplay(CDisplayWindow * displayWindow);
 
     /**
         * Sets the current anchor to the parameter.

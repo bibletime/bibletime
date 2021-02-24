@@ -13,7 +13,7 @@
 #ifndef CLEXICONREADWINDOW_H
 #define CLEXICONREADWINDOW_H
 
-#include "creadwindow.h"
+#include "cdisplaywindow.h"
 
 #include "../keychooser/ckeychooser.h"
 
@@ -27,13 +27,13 @@ class QMenu;
 
 /** The class used to display lexicons. It is also used as the class that other display window types are derived from.
   *
-  * Inherits CReadWindow.
+  * Inherits CDisplayWindow.
   *
   * Inherited by CBibleReadWindow, CBookReadWindow, and CCommentaryReadWindow.
   *
   * @author The BibleTime team
   */
-class CLexiconReadWindow : public CReadWindow  {
+class CLexiconReadWindow : public CDisplayWindow  {
     Q_OBJECT
 public:
     CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);

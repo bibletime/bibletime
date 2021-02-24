@@ -31,7 +31,6 @@
 #include "../cinfodisplay.h"
 #include "../cmdiarea.h"
 #include "../displaywindow/cdisplaywindow.h"
-#include "../displaywindow/creadwindow.h"
 #include "../keychooser/ckeychooser.h"
 #include "modelview/btqmlscrollview.h"
 #include "modelview/btqmlinterface.h"
@@ -40,9 +39,12 @@
 
 using namespace InfoDisplay;
 
-BtModelViewReadDisplay::BtModelViewReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
-    : QWidget(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_widget(nullptr)
-
+BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
+                                               QWidget * parentWidget)
+    : QWidget(parentWidget)
+    , CReadDisplay(displayWindow)
+    , m_magTimerId(0)
+    , m_widget(nullptr)
 {
     setObjectName("BtModelViewReadDisplay");
     QHBoxLayout* layout = new QHBoxLayout(this);

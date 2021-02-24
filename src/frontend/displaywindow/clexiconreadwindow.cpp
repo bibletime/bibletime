@@ -38,7 +38,7 @@
 
 
 CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)
-    : CReadWindow(moduleList, parent) {
+    : CDisplayWindow(moduleList, parent) {
     setObjectName("CLexiconReadWindow");
     setKey( CSwordKey::createInstance(moduleList.first()) );
 }
@@ -81,7 +81,7 @@ void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 
 void CLexiconReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
-    CReadWindow::initActions();
+    CDisplayWindow::initActions();
     insertKeyboardActions(ac);
 
     m_actions.backInHistory =
@@ -316,7 +316,7 @@ void CLexiconReadWindow::updatePopupMenu() {
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CReadWindow::reload(reason);
+    CDisplayWindow::reload(reason);
 
     if (BtModelViewReadDisplay * const dw =
             dynamic_cast<BtModelViewReadDisplay *>(displayWidget()))

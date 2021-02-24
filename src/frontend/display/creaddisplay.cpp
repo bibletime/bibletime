@@ -22,12 +22,10 @@
 #include "../../backend/keys/cswordversekey.h"
 #include "../cexportmanager.h"
 #include "../displaywindow/cdisplaywindow.h"
-#include "../displaywindow/creadwindow.h"
 
 
-CReadDisplay::CReadDisplay(CReadWindow* readWindow) :
-    CDisplay(readWindow),
-    m_activeAnchor(QString())
+CReadDisplay::CReadDisplay(CDisplayWindow * displayWindow)
+    : CDisplay(displayWindow)
 {}
 
 /** Returns the current active anchor. */

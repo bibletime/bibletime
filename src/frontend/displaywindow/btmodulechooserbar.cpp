@@ -18,8 +18,8 @@
 #include <QToolBar>
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
+#include "../displaywindow/cdisplaywindow.h"
 #include "btmodulechooserbutton.h"
-#include "creadwindow.h"
 
 
 BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
@@ -89,13 +89,13 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
        widget with that QAction may follow, but the widget might already have
        been deleted. */
     BT_CONNECT(b,        &BtModuleChooserButton::sigModuleAdd,
-               m_window, &CReadWindow::slotAddModule,
+               m_window, &CDisplayWindow::slotAddModule,
                Qt::QueuedConnection);
     BT_CONNECT(b,        &BtModuleChooserButton::sigModuleReplace,
-               m_window, &CReadWindow::slotReplaceModule,
+               m_window, &CDisplayWindow::slotReplaceModule,
                Qt::QueuedConnection);
     BT_CONNECT(b,        &BtModuleChooserButton::sigModuleRemove,
-               m_window, &CReadWindow::slotRemoveModule,
+               m_window, &CDisplayWindow::slotRemoveModule,
                Qt::QueuedConnection);
 
     a->setVisible(true);
@@ -104,7 +104,10 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
 
 
 /** Sets the modules which are chosen in this module chooser bar. */
-void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window) {
+void BtModuleChooserBar::setModules(QStringList useModules,
+                                    CSwordModuleInfo::ModuleType type,
+                                    CDisplayWindow * window)
+{
     m_modules = useModules;
     m_window = window;
     m_moduleType = type;
@@ -122,9 +125,9 @@ void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::Mo
     }
     updateButtonMenus();
 
-    BT_CONNECT(m_window, &CReadWindow::sigModuleListSet,
+    BT_CONNECT(m_window, &CDisplayWindow::sigModuleListSet,
                this,     &BtModuleChooserBar::slotBackendModulesChanged);
-    BT_CONNECT(m_window, &CReadWindow::sigModuleListChanged,
+    BT_CONNECT(m_window, &CDisplayWindow::sigModuleListChanged,
                this,     &BtModuleChooserBar::slotWindowModulesChanged);
 }
 

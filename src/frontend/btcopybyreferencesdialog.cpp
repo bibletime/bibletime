@@ -25,7 +25,7 @@
 #include "../backend/models/btmoduletextmodel.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../frontend/display/btmodelviewreaddisplay.h"
-#include "../frontend/displaywindow/creadwindow.h"
+#include "../frontend/displaywindow/cdisplaywindow.h"
 #include "../util/btconnect.h"
 #include "display/modelview/btqmlinterface.h"
 #include "keychooser/ckeychooser.h"
@@ -36,11 +36,11 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
                                                    BTHistory * historyPtr,
                                                    CSwordKey * key,
                                                    BtModuleTextModel const * model,
-                                                   CReadWindow * parent)
+                                                   CDisplayWindow * parent)
         : QDialog(parent), m_modules(modules), m_key(key),
           m_keyChooser1(nullptr), m_keyChooser2(nullptr),
           m_moduleTextModel(model), m_buttons(nullptr),
-          m_readWindow(parent) {
+          m_displayWindow(parent) {
 
     setWindowTitle(tr("Copy by References"));
     setMinimumWidth(400);
@@ -164,12 +164,12 @@ void BtCopyByReferencesDialog::loadSelectionKeys() {
         m_moduleNameCombo->addItem(name);
     }
 
-    int column = m_readWindow->getSelectedColumn();
+    int column = m_displayWindow->getSelectedColumn();
     if (column < 0)
         column = 0;
 
-    int first = m_readWindow->getFirstSelectedIndex();
-    int last  = m_readWindow->getLastSelectedIndex();
+    int first = m_displayWindow->getFirstSelectedIndex();
+    int last  = m_displayWindow->getLastSelectedIndex();
     if (first < 0 || last < 0)
         return; // defaults to top of view.
 

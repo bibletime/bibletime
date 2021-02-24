@@ -65,7 +65,8 @@ class BtModelViewReadDisplay : public QWidget, public CReadDisplay {
 
 public:
 
-    BtModelViewReadDisplay( CReadWindow* readWindow, QWidget* parent = nullptr );
+    BtModelViewReadDisplay(CDisplayWindow * displayWindow,
+                           QWidget * parent = nullptr);
 
     ~BtModelViewReadDisplay() override;
 

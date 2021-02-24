@@ -28,8 +28,8 @@
 #include "../displaywindow/cbiblereadwindow.h"
 #include "../displaywindow/cbookreadwindow.h"
 #include "../displaywindow/ccommentaryreadwindow.h"
+#include "../displaywindow/cdisplaywindow.h"
 #include "../displaywindow/clexiconreadwindow.h"
-#include "../displaywindow/creadwindow.h"
 #include "../messagedialog.h"
 #include "cconfigurationdialog.h"
 

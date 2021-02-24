@@ -18,15 +18,18 @@
 #include <QToolBar>
 #include <QStringList>
 
-class CReadWindow;
+class CDisplayWindow;
 class BtModuleChooserButton;
 
 class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         Q_OBJECT
     public:
         BtModuleChooserBar(QWidget* parent);
+
         /** Initialize with module list.*/
-        void setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window);
+        void setModules(QStringList useModules,
+                        CSwordModuleInfo::ModuleType type,
+                        CDisplayWindow * window);
 
     public Q_SLOTS:
         /**
@@ -54,7 +57,7 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
 
     private:
         int m_idCounter;
-        CReadWindow* m_window;
+        CDisplayWindow * m_window;
         CSwordModuleInfo::ModuleType m_moduleType;
         QList<BtModuleChooserButton*> m_buttonList;
 };

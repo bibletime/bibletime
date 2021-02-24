@@ -21,10 +21,10 @@
 
 class QComboBox;
 class QDialogButtonBox;
+class CDisplayWindow;
 class QLabel;
 class CKeyChooser;
 class BTHistory;
-class CReadWindow;
 class CSwordKey;
 class BtModuleTextModel;
 struct RefIndexes;
@@ -37,7 +37,7 @@ class BtCopyByReferencesDialog : public QDialog {
                                  BTHistory * historyPtr,
                                  CSwordKey * key,
                                  BtModuleTextModel const * model,
-                                 CReadWindow * parent = nullptr);
+                                 CDisplayWindow * parent = nullptr);
 
     int getIndex1();
     int getIndex2();
@@ -63,7 +63,7 @@ class BtCopyByReferencesDialog : public QDialog {
         BtModuleTextModel const * m_moduleTextModel;
         QLabel * m_sizeToLarge;
         QDialogButtonBox * m_buttons;
-        CReadWindow * m_readWindow;
+        CDisplayWindow * m_displayWindow;
 
         RefIndexes m_ri;
 
