@@ -32,4 +32,4 @@ If applicable, please add screenshots to help explain your problem.
  - (If compiled from source) Qt Version
 
 **Additional context**
-Add any other context about the problem here, e.g. including output of `bibletime --debug` in case of crashes.
+Add any other context about the problem here, e.g. including output of `bibletime --debug` and/or backtraces in case of crashes.
