@@ -47,16 +47,6 @@ public: /* Methods: */
 
 protected: /* Methods: */
 
-    template <typename ... Args>
-    QAction & initAction(QString actionName, Args && ... args) {
-        QAction & action = m_actionCollection->action(std::move(actionName));
-        BT_CONNECT(&action,
-                   &QAction::triggered,
-                   std::forward<Args>(args)...);
-        addAction(&action);
-        return action;
-    }
-
     void initActions() override;
     void initView() override;
     void setupPopupMenu() override;

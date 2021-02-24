@@ -127,58 +127,58 @@ void CBibleReadWindow::initActions() {
 
     insertKeyboardActions(ac);
 
-    initAction("nextBook", this, &CBibleReadWindow::nextBook);
-    initAction("previousBook", this, &CBibleReadWindow::previousBook);
-    initAction("nextChapter", this, &CBibleReadWindow::nextChapter);
-    initAction("previousChapter", this, &CBibleReadWindow::previousChapter);
-    initAction("nextVerse", this, &CBibleReadWindow::nextVerse);
-    initAction("previousVerse", this, &CBibleReadWindow::previousVerse);
+    initAddAction("nextBook", this, &CBibleReadWindow::nextBook);
+    initAddAction("previousBook", this, &CBibleReadWindow::previousBook);
+    initAddAction("nextChapter", this, &CBibleReadWindow::nextChapter);
+    initAddAction("previousChapter", this, &CBibleReadWindow::previousChapter);
+    initAddAction("nextVerse", this, &CBibleReadWindow::nextVerse);
+    initAddAction("previousVerse", this, &CBibleReadWindow::previousVerse);
 
     m_actions.findText = &ac->action("findText");
     m_actions.findStrongs = &ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
     m_actions.copy.referenceOnly = &ac->action("copyReferenceOnly");
 
     m_actions.copy.referenceTextOnly =
-            &initAction("copyTextOfReference",
-                        displayWidget()->connectionsProxy(),
-                        &CDisplayConnections::copyAnchorTextOnly);
+            &initAddAction("copyTextOfReference",
+                           displayWidget()->connectionsProxy(),
+                           &CDisplayConnections::copyAnchorTextOnly);
 
     m_actions.copy.referenceAndText =
-            &initAction("copyReferenceWithText",
-                        displayWidget()->connectionsProxy(),
-                        &CDisplayConnections::copyAnchorWithText);
+            &initAddAction("copyReferenceWithText",
+                           displayWidget()->connectionsProxy(),
+                           &CDisplayConnections::copyAnchorWithText);
 
     m_actions.copy.chapter =
-            &initAction("copyChapter",
-                        this,
-                        &CBibleReadWindow::copyDisplayedText);
+            &initAddAction("copyChapter",
+                           this,
+                           &CBibleReadWindow::copyDisplayedText);
 
     m_actions.copy.selectedText = &ac->action("copySelectedText");
 
     m_actions.copy.byReferences = &ac->action("copyByReferences");
 
     m_actions.save.referenceAndText =
-            &initAction("saveReferenceWithText",
-                        displayWidget()->connectionsProxy(),
-                        &CDisplayConnections::saveAnchorWithText);
+            &initAddAction("saveReferenceWithText",
+                           displayWidget()->connectionsProxy(),
+                           &CDisplayConnections::saveAnchorWithText);
 
     m_actions.save.chapterAsPlain =
-            &initAction("saveChapterAsPlainText",
-                        this,
-                        &CBibleReadWindow::saveChapterPlain);
+            &initAddAction("saveChapterAsPlainText",
+                           this,
+                           &CBibleReadWindow::saveChapterPlain);
 
     m_actions.save.chapterAsHTML =
-            &initAction("saveChapterAsHTML",
-                        this,
-                        &CBibleReadWindow::saveChapterHTML);
+            &initAddAction("saveChapterAsHTML",
+                           this,
+                           &CBibleReadWindow::saveChapterHTML);
 
     m_actions.print.reference =
-            &initAction("printReferenceWithText",
-                        this,
-                        &CBibleReadWindow::printAnchorWithText);
+            &initAddAction("printReferenceWithText",
+                           this,
+                           &CBibleReadWindow::printAnchorWithText);
 
     m_actions.print.chapter =
-            &initAction("printChapter", this, &CBibleReadWindow::printAll);
+            &initAddAction("printChapter", this, &CBibleReadWindow::printAll);
 
     ac->readShortcuts("Bible shortcuts");
 }
