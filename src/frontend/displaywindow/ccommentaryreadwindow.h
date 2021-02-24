@@ -13,7 +13,7 @@
 #ifndef CCOMMENTARYREADWINDOW_H
 #define CCOMMENTARYREADWINDOW_H
 
-#include "clexiconreadwindow.h"
+#include "cdisplaywindow.h"
 
 
 class BtActionCollection;
@@ -23,7 +23,7 @@ class QAction;
 /**
   *@author The BibleTime team
   */
-class CCommentaryReadWindow : public CLexiconReadWindow  {
+class CCommentaryReadWindow : public CDisplayWindow  {
         Q_OBJECT
     public:
         /**
@@ -33,7 +33,8 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
 
         CCommentaryReadWindow(QList<CSwordModuleInfo *> const & modules,
                               CMDIArea * parent)
-            : CLexiconReadWindow(modules, parent) {}
+            : CDisplayWindow(modules, parent)
+        {}
 
         CSwordModuleInfo::ModuleType moduleType() const override
         { return CSwordModuleInfo::Commentary; }
@@ -59,8 +60,6 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
     private:
         QAction* m_syncButton;
         CSwordVerseKey* verseKey();
-    protected:
-        void setupPopupMenu() override;
 };
 
 #endif

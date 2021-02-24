@@ -15,112 +15,35 @@
 
 #include "cdisplaywindow.h"
 
-#include "../keychooser/ckeychooser.h"
 
-
-class BtActionCollection;
-class BtToolBarPopupAction;
 class CSwordLDKey;
-class CSwordKey;
-class QAction;
-class QMenu;
 
-/** The class used to display lexicons. It is also used as the class that other display window types are derived from.
-  *
-  * Inherits CDisplayWindow.
-  *
-  * Inherited by CBibleReadWindow, CBookReadWindow, and CCommentaryReadWindow.
-  *
-  * @author The BibleTime team
-  */
-class CLexiconReadWindow : public CDisplayWindow  {
-    Q_OBJECT
-public:
-    CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
-    ~CLexiconReadWindow() override;
+/** \brief The class used to display lexicons. */
+class CLexiconReadWindow: public CDisplayWindow {
 
-    CSwordModuleInfo::ModuleType moduleType() const override
-    { return CSwordModuleInfo::Lexicon; }
+public: /* Methods: */
 
-    /** Insert the keyboard accelerators of this window into the given actioncollection.*/
-    static void insertKeyboardActions( BtActionCollection* const a );
+    CLexiconReadWindow(QList<CSwordModuleInfo *> const & modules,
+                       CMDIArea * parent);
+
+    static void insertKeyboardActions(BtActionCollection * a);
 
 public Q_SLOTS:
+
     void reload(CSwordBackend::SetupChangedReason reason) override;
 
-protected:
-
-    template <typename ... Args>
-    QAction & initAction(QString actionName, Args && ... args) {
-        QAction & action =
-                actionCollection()->action(std::move(actionName));
-        BT_CONNECT(&action,
-                   &QAction::triggered,
-                   std::forward<Args>(args)...);
-        addAction(&action);
-        return action;
-    }
+protected: /* Methods: */
 
     void initActions() override;
-    void initToolbars() override;
-    void initConnections() override;
-    void initView() override;
-    void updatePopupMenu() override;
-    void setupPopupMenu() override;
 
-    void setupMainWindowToolBars() override;
+protected Q_SLOTS:
 
-    struct ActionsStruct {
-        BtToolBarPopupAction* backInHistory;
-        BtToolBarPopupAction* forwardInHistory;
-
-        QAction* findText;
-        QAction* findStrongs;
-
-        QMenu* copyMenu;
-        struct {
-            QAction* byReferences;
-            QAction* reference;
-            QAction* entry;
-            QAction* selectedText;
-        }
-        copy;
-
-        QMenu* saveMenu;
-        struct {
-            QAction* reference;
-            QAction* entryAsPlain;
-            QAction* entryAsHTML;
-        }
-        save;
-
-        QMenu* printMenu;
-        struct {
-            QAction* reference;
-            QAction* entry;
-        }
-        print;
-    }
-    m_actions;
-
-private:
-    /**
-        * Reimplementation to return the right key.
-        */
-    CSwordLDKey* ldKey();
-
-protected Q_SLOTS: // Protected slots
     void previousEntry();
     void nextEntry();
-    /**
-        * This function saves the entry as html using the CExportMgr class.
-        */
-    void saveAsHTML();
-    /**
-        * This function saves the entry as plain text using the CExportMgr class.
-        */
-    void saveAsPlain();
-    void saveRawHTML();
+
+private: /* Methods: */
+
+    CSwordLDKey * ldKey();
 
 };
 

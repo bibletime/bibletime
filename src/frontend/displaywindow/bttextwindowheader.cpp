@@ -24,7 +24,7 @@
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "bttextwindowheaderwidget.h"
-#include "clexiconreadwindow.h"
+#include "cdisplaywindow.h"
 
 
 BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,

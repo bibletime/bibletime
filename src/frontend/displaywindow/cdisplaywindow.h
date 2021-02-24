@@ -26,7 +26,9 @@
 
 
 class BtConfigCore;
+class BtToolBarPopupAction;
 class CDisplay;
+class CSwordLDKey;
 class BtDisplaySettingsButton;
 class CKeyChooser;
 class CMDIArea;
@@ -44,7 +46,7 @@ class CDisplayWindow : public QMainWindow {
     friend class CLexiconReadWindow;
 public:
 
-    virtual CSwordModuleInfo::ModuleType moduleType() const = 0;
+    virtual CSwordModuleInfo::ModuleType moduleType() const;
 
     /** Insert the keyboard accelerators of this window into the given actioncollection.*/
     static void insertKeyboardActions( BtActionCollection* const a );
@@ -118,13 +120,8 @@ public:
     /** Returns the tool buttons toolbar. */
     QToolBar * buttonsToolBar() const { return m_buttonsToolBar; }
 
-    /** Initialize the toolbars.*/
-    virtual void initToolbars() = 0;
-
     /** Sets the display settings button.*/
     void setDisplaySettingsButton( BtDisplaySettingsButton* button );
-
-    virtual void setupPopupMenu() = 0;
 
     /** Returns the display widget used by this implementation of CDisplayWindow. */
     virtual CDisplay * displayWidget() const {
@@ -236,6 +233,17 @@ protected:
         */
     FilterOptions & filterOptions() { return m_filterOptions; }
 
+    template <typename ... Args>
+    QAction & initAction(QString actionName, Args && ... args) {
+        QAction & action =
+                actionCollection()->action(std::move(actionName));
+        BT_CONNECT(&action,
+                   &QAction::triggered,
+                   std::forward<Args>(args)...);
+        addAction(&action);
+        return action;
+    }
+
     /** Initializes the internel keyboard actions.*/
     virtual void initActions();
 
@@ -259,16 +267,24 @@ protected:
     void setModules( const QList<CSwordModuleInfo*>& modules );
 
     /** Initializes the signal / slot connections of this display window.*/
-    virtual void initConnections() = 0;
+    virtual void initConnections();
 
     /** Initialize the view of this display window.*/
-    virtual void initView() = 0;
+    virtual void initView();
+
+    /** Initialize the toolbars.*/
+    virtual void initToolbars();
+
+    virtual void setupPopupMenu();
+
+    /** Update the status of the popup menu entries. */
+    virtual void updatePopupMenu();
 
     /** Returns the installed RMB popup menu.*/
     QMenu* popup();
 
     /** Called to add actions to mainWindow toolbars */
-    virtual void setupMainWindowToolBars() = 0;
+    virtual void setupMainWindowToolBars();
 
     void closeEvent(QCloseEvent* e) override;
 
@@ -285,8 +301,6 @@ protected Q_SLOTS:
         */
     void lookup();
 
-    virtual void updatePopupMenu();
-
     void slotSearchInModules();
 
     void printAll();
@@ -298,6 +312,16 @@ protected Q_SLOTS:
     virtual void pageDown();
 
     virtual void pageUp();
+
+    /**
+        * This function saves the entry as html using the CExportMgr class.
+        */
+    void saveAsHTML();
+    /**
+        * This function saves the entry as plain text using the CExportMgr class.
+        */
+    void saveAsPlain();
+    void saveRawHTML();
 
 private: /* Methods: */
 
@@ -318,6 +342,33 @@ private Q_SLOTS:
     void openSearchStrongsDialog();
 
     void colorThemeChangedSlot();
+
+protected: /* Fields: */
+
+    struct ActionsStruct {
+        BtToolBarPopupAction * backInHistory;
+        BtToolBarPopupAction * forwardInHistory;
+        QAction * findText;
+        QAction * findStrongs;
+        QMenu * copyMenu;
+        struct {
+            QAction * byReferences;
+            QAction * reference;
+            QAction * entry;
+            QAction * selectedText;
+        } copy;
+        QMenu * saveMenu;
+        struct {
+            QAction * reference;
+            QAction * entryAsPlain;
+            QAction * entryAsHTML;
+        } save;
+        QMenu * printMenu;
+        struct {
+            QAction * reference;
+            QAction * entry;
+        } print;
+    } m_actions;
 
 private:
     BtActionCollection* m_actionCollection;

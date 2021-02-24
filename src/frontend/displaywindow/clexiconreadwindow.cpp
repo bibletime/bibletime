@@ -12,366 +12,45 @@
 
 #include "clexiconreadwindow.h"
 
-#include <QAction>
-#include <QDebug>
-#include <QFile>
-#include <QFileDialog>
-#include <QMenu>
 #include "../../backend/keys/cswordldkey.h"
-#include "../../backend/keys/cswordkey.h"
-#include "../../util/btassert.h"
-#include "../../util/btconnect.h"
-#include "../../util/directory.h"
 #include "../../util/cresmgr.h"
-#include "../../util/tool.h"
-#include "../bibletime.h"
-#include "../bibletimeapp.h"
-#include "../cexportmanager.h"
-#include "../display/btmodelviewreaddisplay.h"
-#include "../keychooser/bthistory.h"
 #include "../keychooser/ckeychooser.h"
-#include "btactioncollection.h"
-#include "bttoolbarpopupaction.h"
-#include "btdisplaysettingsbutton.h"
-#include "bttextwindowheader.h"
-#include "btmodulechooserbar.h"
 
 
-CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)
-    : CDisplayWindow(moduleList, parent) {
-    setObjectName("CLexiconReadWindow");
-    setKey( CSwordKey::createInstance(moduleList.first()) );
-}
+CLexiconReadWindow::CLexiconReadWindow(
+        QList<CSwordModuleInfo *> const & modules,
+        CMDIArea * parent)
+    : CDisplayWindow(modules, parent)
+{}
 
-CLexiconReadWindow::~CLexiconReadWindow() {
-}
+void CLexiconReadWindow::insertKeyboardActions(BtActionCollection * a) {
+    auto * actn = new QAction(tr("Next entry"), a);
+    actn->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
+    a->addAction("nextEntry", actn);
 
-void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
-    QAction* qaction;
-    qaction = new QAction( tr("Next entry"), a);
-    qaction->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
-    a->addAction("nextEntry", qaction);
-
-    qaction = new QAction( tr("Previous entry"), a);
-    qaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
-    a->addAction("previousEntry", qaction);
-
-    qaction = new QAction(tr("Copy reference only"), a);
-    a->addAction("copyReferenceOnly", qaction);
-
-    qaction = new QAction(tr("Save entry as HTML"), a);
-    a->addAction("saveHtml", qaction);
-
-    qaction = new QAction(tr("Print reference only"), a);
-    a->addAction("printReferenceOnly", qaction);
-
-    qaction = new QAction(tr("Entry with text"), a);
-    a->addAction("copyEntryWithText", qaction);
-
-    qaction = new QAction(tr("Entry as plain text"), a);
-    a->addAction("saveEntryAsPlain", qaction);
-
-    qaction = new QAction(tr("Entry with text"), a);
-    a->addAction("printEntryWithText", qaction);
-
-    qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's Search"), a);
-    qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
+    actn = new QAction(tr("Previous entry"), a);
+    actn->setShortcut(CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
+    a->addAction("previousEntry", actn);
 }
 
 void CLexiconReadWindow::initActions() {
-    BtActionCollection* ac = actionCollection();
     CDisplayWindow::initActions();
-    insertKeyboardActions(ac);
-
-    m_actions.backInHistory =
-            &ac->actionAs<BtToolBarPopupAction>(
-                CResMgr::displaywindows::general::backInHistory::actionName);
-    addAction(m_actions.backInHistory);
-
-    m_actions.forwardInHistory =
-            &ac->actionAs<BtToolBarPopupAction>(
-                CResMgr::displaywindows::general::forwardInHistory::actionName);
-    addAction(m_actions.forwardInHistory);
-
+    insertKeyboardActions(actionCollection());
     initAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
     initAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
-
-    m_actions.findText = &ac->action("findText");
-
-    m_actions.findStrongs =
-            &initAction(
-                CResMgr::displaywindows::general::findStrongs::actionName,
-                this,
-                &CLexiconReadWindow::openSearchStrongsDialog);
-
-    m_actions.copy.reference =
-            &initAction("copyReferenceOnly",
-                        displayWidget()->connectionsProxy(),
-                        &CDisplayConnections::copyAnchorOnly);
-
-    m_actions.copy.entry = &initAction("copyEntryWithText",
-                                       displayWidget()->connectionsProxy(),
-                                       &CDisplayConnections::copyAll);
-
-    m_actions.copy.selectedText = &ac->action("copySelectedText");
-
-    m_actions.copy.byReferences = &ac->action("copyByReferences");
-
-    m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
-                                              this,
-                                              &CLexiconReadWindow::saveAsPlain);
-
-    m_actions.save.entryAsHTML = &initAction("saveHtml",
-                                             this,
-                                             &CLexiconReadWindow::saveAsHTML);
-
-    m_actions.print.reference =
-            &initAction("printReferenceOnly",
-                        this,
-                        &CLexiconReadWindow::printAnchorWithText);
-    addAction(m_actions.print.reference);
-
-    m_actions.print.entry = &initAction("printEntryWithText",
-                                        this,
-                                        &CLexiconReadWindow::printAll);
-
-    // init with the user defined settings
-    ac->readShortcuts("Lexicon shortcuts");
-}
-
-/** No descriptions */
-void CLexiconReadWindow::initConnections() {
-    BT_ASSERT(keyChooser());
-
-    BT_CONNECT(keyChooser(), &CKeyChooser::keyChanged,
-               this,         &CLexiconReadWindow::lookupSwordKey);
-    BT_CONNECT(history(), &BTHistory::historyChanged,
-               [this](bool const backEnabled, bool const fwEnabled) {
-                   BT_ASSERT(m_actions.backInHistory);
-                   BT_ASSERT(keyChooser());
-
-                   m_actions.backInHistory->setEnabled(backEnabled);
-                   m_actions.forwardInHistory->setEnabled(fwEnabled);
-               });
-
-    //connect the history actions to the right slots
-    BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::aboutToShow,
-               this, // Needed
-               [this]{
-                   QMenu * menu = m_actions.backInHistory->popupMenu();
-                   menu->clear();
-                   for (auto * const actionPtr
-                        : keyChooser()->history()->getBackList())
-                       menu->addAction(actionPtr);
-               });
-    BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::triggered,
-               keyChooser()->history(), &BTHistory::move);
-    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::aboutToShow,
-               this, // Needed
-               [this]{
-                   QMenu* menu = m_actions.forwardInHistory->popupMenu();
-                   menu->clear();
-                   for (auto * const actionPtr
-                        : keyChooser()->history()->getFwList())
-                       menu->addAction(actionPtr);
-               });
-    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::triggered,
-               keyChooser()->history(), &BTHistory::move);
-
-}
-
-void CLexiconReadWindow::initView() {
-    // Create display widget for this window
-    auto readDisplay = new BtModelViewReadDisplay(this, this);
-    setDisplayWidget(readDisplay);
-    setCentralWidget( displayWidget()->view() );
-    readDisplay->setModules(getModuleList());
-    setWindowIcon(util::tool::getIconForModule(modules().first()));
-
-    // Create the Navigation toolbar
-    setMainToolBar( new QToolBar(this) );
-    addToolBar(mainToolBar());
-
-    // Create keychooser
-    setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
-
-    // Create the Works toolbar
-    setModuleChooserBar( new BtModuleChooserBar(this));
-    moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
-    addToolBar(moduleChooserBar());
-
-    // Create the Tools toolbar
-    setButtonsToolBar( new QToolBar(this) );
-    addToolBar(buttonsToolBar());
-
-    // Create the Text Header toolbar
-    addToolBarBreak();
-    setHeaderBar(new QToolBar(this));
-    addToolBar(headerBar());
-}
-
-void CLexiconReadWindow::initToolbars() {
-    //Navigation toolbar
-    BT_ASSERT(m_actions.backInHistory);
-    mainToolBar()->addWidget(keyChooser());
-    mainToolBar()->addAction(m_actions.backInHistory); //1st button
-    mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
-
-    //Tools toolbar
-    buttonsToolBar()->addAction(
-                &actionCollection()->action(
-                    CResMgr::displaywindows::general::search::actionName));
-
-    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
-    setDisplaySettingsButton(button);
-    buttonsToolBar()->addWidget(button);
-
-    // Text Header toolbar
-    BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), getModuleList(), this);
-    headerBar()->addWidget(h);
-}
-
-void CLexiconReadWindow::setupMainWindowToolBars() {
-    // Navigation toolbar
-    QString keyReference = key()->key();
-    CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
-    keyChooser->key()->setKey(keyReference);
-    btMainWindow()->navToolBar()->addWidget(keyChooser);
-    BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
-               this,       &CLexiconReadWindow::lookupSwordKey);
-    BT_CONNECT(this,       &CLexiconReadWindow::sigKeyChanged,
-               keyChooser, &CKeyChooser::updateKey);
-    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
-    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
-
-    // Works toolbar
-    btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
-
-    // Tools toolbar
-    btMainWindow()->toolsToolBar()->addAction(
-                &actionCollection()->action(
-                    CResMgr::displaywindows::general::search::actionName));
-    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
-    setDisplaySettingsButton(button);
-    btMainWindow()->toolsToolBar()->addWidget(button);
-}
-
-void CLexiconReadWindow::setupPopupMenu() {
-    popup()->setTitle(tr("Lexicon window"));
-    popup()->setIcon(util::tool::getIconForModule(modules().first()));
-    popup()->addAction(m_actions.findText);
-    popup()->addAction(m_actions.findStrongs);
-    popup()->addSeparator();
-
-    m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
-    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
-    m_actions.copyMenu->addAction(m_actions.copy.byReferences);
-    m_actions.copyMenu->addSeparator();
-    m_actions.copyMenu->addAction(m_actions.copy.reference);
-    m_actions.copyMenu->addAction(m_actions.copy.entry);
-    popup()->addMenu(m_actions.copyMenu);
-
-    m_actions.saveMenu = new QMenu(
-                tr("Save..."),
-                popup()
-                );
-    m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
-    m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
-
-    // Save raw HTML action for debugging purposes
-    if (btApp->debugMode()) {
-        QAction* debugAction = new QAction("Raw HTML", this);
-        BT_CONNECT(debugAction, &QAction::triggered,
-                   this,        &CLexiconReadWindow::saveRawHTML);
-        m_actions.saveMenu->addAction(debugAction);
-    } // end of Save Raw HTML
-
-    popup()->addMenu(m_actions.saveMenu);
-
-    m_actions.printMenu = new QMenu(
-                tr("Print..."),
-                popup()
-                );
-    m_actions.printMenu->addAction(m_actions.print.reference);
-    m_actions.printMenu->addAction(m_actions.print.entry);
-    popup()->addMenu(m_actions.printMenu);
-}
-
-/** Reimplemented. */
-void CLexiconReadWindow::updatePopupMenu() {
-    //enable the action depending on the supported module features
-
-    CReadDisplay const & display =
-            *static_cast<CReadDisplay *>(displayWidget());
-
-    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
-
-    bool const hasActiveAnchor = display.hasActiveAnchor();
-    m_actions.copy.reference->setEnabled(hasActiveAnchor);
-
-    m_actions.print.reference->setEnabled(hasActiveAnchor);
-
-    m_actions.copy.selectedText->setEnabled(hasSelectedText());
+    m_actionCollection->readShortcuts("Lexicon shortcuts");
 }
 
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CDisplayWindow::reload(reason);
-
-    if (BtModelViewReadDisplay * const dw =
-            dynamic_cast<BtModelViewReadDisplay *>(displayWidget()))
-        dw->settingsChanged();
-
     actionCollection()->readShortcuts("Lexicon shortcuts");
 }
 
-/** No descriptions */
-void CLexiconReadWindow::nextEntry() {
-    keyChooser()->setKey(ldKey()->NextEntry());
-}
+void CLexiconReadWindow::nextEntry()
+{ keyChooser()->setKey(ldKey()->NextEntry()); }
 
-/** No descriptions */
-void CLexiconReadWindow::previousEntry() {
-    keyChooser()->setKey(ldKey()->PreviousEntry());
-}
+void CLexiconReadWindow::previousEntry()
+{ keyChooser()->setKey(ldKey()->PreviousEntry()); }
 
-/** Reimplementation to return the right key. */
-CSwordLDKey* CLexiconReadWindow::ldKey() {
-    return dynamic_cast<CSwordLDKey*>(CDisplayWindow::key());
-}
-
-/** This function saves the entry as html using the CExportMgr class. */
-void CLexiconReadWindow::saveAsHTML() {
-    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(key(), CExportManager::HTML, true, modules());
-}
-
-/** Saving the raw HTML for debugging purposes */
-void CLexiconReadWindow::saveRawHTML() {
-    auto const savefilename =
-            QFileDialog::getSaveFileName(
-                nullptr,
-                QObject::tr("Save file"),
-                "",
-                QObject::tr("HTML files") + " (*.html *.htm);;"
-                + QObject::tr("All files") + " (*)");
-    if (savefilename.isEmpty()) return;
-    BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
-    if (disp) {
-        QFile file(savefilename);
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            qWarning() << "saveRawHTML: could not open file" << savefilename;
-            return;
-        }
-        QString source = disp->getCurrentSource();
-        file.write(source.toUtf8());
-        file.close();
-        file.flush();
-    }
-}
-
-/** This function saves the entry as html using the CExportMgr class. */
-void CLexiconReadWindow::saveAsPlain() {
-    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(key(), CExportManager::Text, true, modules());
-}
+CSwordLDKey * CLexiconReadWindow::ldKey()
+{ return dynamic_cast<CSwordLDKey*>(m_swordKey); }

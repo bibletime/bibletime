@@ -15,6 +15,7 @@
 #include <QClipboard>
 #include <QCloseEvent>
 #include <QDebug>
+#include <QFileDialog>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QStringList>
@@ -23,6 +24,7 @@
 #include "../../backend/keys/cswordkey.h"
 #include "../../backend/rendering/cdisplayrendering.h"
 #include "../../util/cresmgr.h"
+#include "../../util/tool.h"
 #include "../bibletime.h"
 #include "../bibletimeapp.h"
 #include "../btcopybyreferencesdialog.h"
@@ -37,6 +39,7 @@
 #include "bttoolbarpopupaction.h"
 #include "btmodulechooserbar.h"
 #include "btdisplaysettingsbutton.h"
+#include "bttextwindowheader.h"
 
 
 namespace {
@@ -103,12 +106,16 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
                    if (auto * const b = moduleChooserBar())
                        b->setVisible(show);
                });
+    setKey(CSwordKey::createInstance(modules.first()));
 }
 
 CDisplayWindow::~CDisplayWindow() {
     delete m_swordKey;
     m_swordKey = nullptr;
 }
+
+CSwordModuleInfo::ModuleType CDisplayWindow::moduleType() const
+{ return CSwordModuleInfo::Lexicon; }
 
 BibleTime* CDisplayWindow::btMainWindow() {
     return dynamic_cast<BibleTime*>(m_mdi->parent()->parent());
@@ -263,6 +270,28 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
                 );
     action->setShortcut(CResMgr::displaywindows::general::forwardInHistory::accel);
     a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
+
+    actn = new QAction(tr("Copy reference only"), a);
+    a->addAction("copyReferenceOnly", actn);
+
+    actn = new QAction(tr("Save entry as HTML"), a);
+    a->addAction("saveHtml", actn);
+
+    actn = new QAction(tr("Print reference only"), a);
+    a->addAction("printReferenceOnly", actn);
+
+    actn = new QAction(tr("Entry with text"), a);
+    a->addAction("copyEntryWithText", actn);
+
+    actn = new QAction(tr("Entry as plain text"), a);
+    a->addAction("saveEntryAsPlain", actn);
+
+    actn = new QAction(tr("Entry with text"), a);
+    a->addAction("printEntryWithText", actn);
+
+    actn = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's Search"), a);
+    actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
+    a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, actn);
 }
 
 void CDisplayWindow::resizeEvent(QResizeEvent * e) {
@@ -273,9 +302,7 @@ void CDisplayWindow::resizeEvent(QResizeEvent * e) {
 }
 
 void CDisplayWindow::initActions() {
-    BtActionCollection* ac = actionCollection();
-
-    insertKeyboardActions(ac);
+    insertKeyboardActions(m_actionCollection);
 
     namespace DWG = CResMgr::displaywindows::general;
     initAction(DWG::search::actionName,
@@ -305,7 +332,230 @@ void CDisplayWindow::initActions() {
                   keyChooser()->history(),
                   &BTHistory::fw);
 
-    ac->readShortcuts("Displaywindow shortcuts");
+    auto * const ac = m_actionCollection;
+    m_actions.backInHistory =
+            &ac->actionAs<BtToolBarPopupAction>(
+                CResMgr::displaywindows::general::backInHistory::actionName);
+    addAction(m_actions.backInHistory);
+
+    m_actions.forwardInHistory =
+            &ac->actionAs<BtToolBarPopupAction>(
+                CResMgr::displaywindows::general::forwardInHistory::actionName);
+    addAction(m_actions.forwardInHistory);
+
+    m_actions.findText = &ac->action("findText");
+
+    m_actions.findStrongs =
+            &initAction(
+                CResMgr::displaywindows::general::findStrongs::actionName,
+                this,
+                &CDisplayWindow::openSearchStrongsDialog);
+
+    m_actions.copy.reference =
+            &initAction("copyReferenceOnly",
+                        displayWidget()->connectionsProxy(),
+                        &CDisplayConnections::copyAnchorOnly);
+
+    m_actions.copy.entry = &initAction("copyEntryWithText",
+                                       displayWidget()->connectionsProxy(),
+                                       &CDisplayConnections::copyAll);
+
+    m_actions.copy.selectedText = &ac->action("copySelectedText");
+
+    m_actions.copy.byReferences = &ac->action("copyByReferences");
+
+    m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
+                                              this,
+                                              &CDisplayWindow::saveAsPlain);
+
+    m_actions.save.entryAsHTML = &initAction("saveHtml",
+                                             this,
+                                             &CDisplayWindow::saveAsHTML);
+
+    m_actions.print.reference =
+            &initAction("printReferenceOnly",
+                        this,
+                        &CDisplayWindow::printAnchorWithText);
+    addAction(m_actions.print.reference);
+
+    m_actions.print.entry = &initAction("printEntryWithText",
+                                        this,
+                                        &CDisplayWindow::printAll);
+
+    // init with the user defined settings
+    m_actionCollection->readShortcuts("Displaywindow shortcuts");
+}
+
+void CDisplayWindow::initConnections() {
+    BT_ASSERT(keyChooser());
+
+    BT_CONNECT(keyChooser(), &CKeyChooser::keyChanged,
+               this,         &CDisplayWindow::lookupSwordKey);
+    BT_CONNECT(history(), &BTHistory::historyChanged,
+               [this](bool const backEnabled, bool const fwEnabled) {
+                   BT_ASSERT(m_actions.backInHistory);
+                   BT_ASSERT(keyChooser());
+
+                   m_actions.backInHistory->setEnabled(backEnabled);
+                   m_actions.forwardInHistory->setEnabled(fwEnabled);
+               });
+
+    //connect the history actions to the right slots
+    BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::aboutToShow,
+               this, // Needed
+               [this]{
+                   QMenu * menu = m_actions.backInHistory->popupMenu();
+                   menu->clear();
+                   for (auto * const actionPtr
+                        : keyChooser()->history()->getBackList())
+                       menu->addAction(actionPtr);
+               });
+    BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::triggered,
+               keyChooser()->history(), &BTHistory::move);
+    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::aboutToShow,
+               this, // Needed
+               [this]{
+                   QMenu* menu = m_actions.forwardInHistory->popupMenu();
+                   menu->clear();
+                   for (auto * const actionPtr
+                        : keyChooser()->history()->getFwList())
+                       menu->addAction(actionPtr);
+               });
+    BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::triggered,
+               keyChooser()->history(), &BTHistory::move);
+}
+
+void CDisplayWindow::initView() {
+    // Create display widget for this window
+    auto readDisplay = new BtModelViewReadDisplay(this, this);
+    setDisplayWidget(readDisplay);
+    setCentralWidget( displayWidget()->view() );
+    readDisplay->setModules(getModuleList());
+    setWindowIcon(util::tool::getIconForModule(modules().first()));
+
+    // Create the Navigation toolbar
+    setMainToolBar( new QToolBar(this) );
+    addToolBar(mainToolBar());
+
+    // Create keychooser
+    setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
+
+    // Create the Works toolbar
+    setModuleChooserBar( new BtModuleChooserBar(this));
+    moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
+    addToolBar(moduleChooserBar());
+
+    // Create the Tools toolbar
+    setButtonsToolBar( new QToolBar(this) );
+    addToolBar(buttonsToolBar());
+
+    // Create the Text Header toolbar
+    addToolBarBreak();
+    setHeaderBar(new QToolBar(this));
+    addToolBar(headerBar());
+}
+
+void CDisplayWindow::initToolbars() {
+    //Navigation toolbar
+    BT_ASSERT(m_actions.backInHistory);
+    mainToolBar()->addWidget(keyChooser());
+    mainToolBar()->addAction(m_actions.backInHistory); //1st button
+    mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
+
+    //Tools toolbar
+    buttonsToolBar()->addAction(
+                &actionCollection()->action(
+                    CResMgr::displaywindows::general::search::actionName));
+
+    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    setDisplaySettingsButton(button);
+    buttonsToolBar()->addWidget(button);
+
+    // Text Header toolbar
+    BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), getModuleList(), this);
+    headerBar()->addWidget(h);
+}
+
+void CDisplayWindow::setupPopupMenu() {
+    popup()->setTitle(tr("Lexicon window"));
+    popup()->setIcon(util::tool::getIconForModule(modules().first()));
+    popup()->addAction(m_actions.findText);
+    popup()->addAction(m_actions.findStrongs);
+    popup()->addSeparator();
+
+    m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
+    m_actions.copyMenu->addAction(m_actions.copy.selectedText);
+    m_actions.copyMenu->addAction(m_actions.copy.byReferences);
+    m_actions.copyMenu->addSeparator();
+    m_actions.copyMenu->addAction(m_actions.copy.reference);
+    m_actions.copyMenu->addAction(m_actions.copy.entry);
+    popup()->addMenu(m_actions.copyMenu);
+
+    m_actions.saveMenu = new QMenu(
+                tr("Save..."),
+                popup()
+                );
+    m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
+    m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
+
+    // Save raw HTML action for debugging purposes
+    if (btApp->debugMode()) {
+        QAction* debugAction = new QAction("Raw HTML", this);
+        BT_CONNECT(debugAction, &QAction::triggered,
+                   this,        &CDisplayWindow::saveRawHTML);
+        m_actions.saveMenu->addAction(debugAction);
+    } // end of Save Raw HTML
+
+    popup()->addMenu(m_actions.saveMenu);
+
+    m_actions.printMenu = new QMenu(
+                tr("Print..."),
+                popup()
+                );
+    m_actions.printMenu->addAction(m_actions.print.reference);
+    m_actions.printMenu->addAction(m_actions.print.entry);
+    popup()->addMenu(m_actions.printMenu);
+}
+
+void CDisplayWindow::updatePopupMenu() {
+    //enable the action depending on the supported module features
+
+    CReadDisplay const & display =
+            *static_cast<CReadDisplay *>(displayWidget());
+
+    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
+
+    bool const hasActiveAnchor = display.hasActiveAnchor();
+    m_actions.copy.reference->setEnabled(hasActiveAnchor);
+
+    m_actions.print.reference->setEnabled(hasActiveAnchor);
+
+    m_actions.copy.selectedText->setEnabled(hasSelectedText());
+}
+
+void CDisplayWindow::setupMainWindowToolBars() {
+    // Navigation toolbar
+    QString keyReference = key()->key();
+    CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
+    keyChooser->key()->setKey(keyReference);
+    btMainWindow()->navToolBar()->addWidget(keyChooser);
+    BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
+               this,       &CDisplayWindow::lookupSwordKey);
+    BT_CONNECT(this,       &CDisplayWindow::sigKeyChanged,
+               keyChooser, &CKeyChooser::updateKey);
+    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
+    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
+
+    // Works toolbar
+    btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
+
+    // Tools toolbar
+    btMainWindow()->toolsToolBar()->addAction(
+                &actionCollection()->action(
+                    CResMgr::displaywindows::general::search::actionName));
+    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    setDisplaySettingsButton(button);
+    btMainWindow()->toolsToolBar()->addWidget(button);
 }
 
 void CDisplayWindow::slotMoveToAnchor() {
@@ -387,19 +637,24 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     if (m_modules.isEmpty()) {
         close();
-        return;
+    } else {
+        displayWidget()->reloadModules();
+
+        if (CKeyChooser * const kc = keyChooser())
+            kc->setModules(modules(), false);
+
+        lookup();
+
+        m_actionCollection->readShortcuts("Displaywindow shortcuts");
+        m_actionCollection->readShortcuts("Readwindow shortcuts");
+        Q_EMIT sigModuleListSet(m_modules);
     }
 
-    displayWidget()->reloadModules();
+    if (auto * const dw =
+            dynamic_cast<BtModelViewReadDisplay *>(displayWidget()))
+        dw->settingsChanged();
 
-    if (CKeyChooser * const kc = keyChooser())
-        kc->setModules(modules(), false);
-
-    lookup();
-
-    m_actionCollection->readShortcuts("Displaywindow shortcuts");
-    m_actionCollection->readShortcuts("Readwindow shortcuts");
-    Q_EMIT sigModuleListSet(m_modules);
+    actionCollection()->readShortcuts("Lexicon shortcuts");
 }
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
@@ -635,12 +890,6 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
     lookupModKey(modules().first()->name(), keyName);
 }
 
-/** Update the status of the popup menu entries. */
-void CDisplayWindow::updatePopupMenu() {
-    /// \todo Verify this should be empty and comment.
-}
-
-
 ///** Returns the installed popup menu. */
 QMenu* CDisplayWindow::popup() {
     // qWarning("CDisplayWindow::popup()");
@@ -723,6 +972,42 @@ void CDisplayWindow::pageUp() {
     if (auto * const v =
                 dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
         v->pageUp();
+}
+
+/** This function saves the entry as html using the CExportMgr class. */
+void CDisplayWindow::saveAsHTML() {
+    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
+    mgr.saveKey(key(), CExportManager::HTML, true, modules());
+}
+
+/** This function saves the entry as html using the CExportMgr class. */
+void CDisplayWindow::saveAsPlain() {
+    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
+    mgr.saveKey(key(), CExportManager::Text, true, modules());
+}
+
+/** Saving the raw HTML for debugging purposes */
+void CDisplayWindow::saveRawHTML() {
+    auto const savefilename =
+            QFileDialog::getSaveFileName(
+                nullptr,
+                QObject::tr("Save file"),
+                "",
+                QObject::tr("HTML files") + " (*.html *.htm);;"
+                + QObject::tr("All files") + " (*)");
+    if (savefilename.isEmpty()) return;
+    BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
+    if (disp) {
+        QFile file(savefilename);
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            qWarning() << "saveRawHTML: could not open file" << savefilename;
+            return;
+        }
+        QString source = disp->getCurrentSource();
+        file.write(source.toUtf8());
+        file.close();
+        file.flush();
+    }
 }
 
 void CDisplayWindow::openSearchStrongsDialog() {

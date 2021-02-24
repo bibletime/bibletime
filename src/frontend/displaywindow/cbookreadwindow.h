@@ -13,14 +13,14 @@
 #ifndef CBOOKREADWINDOW_H
 #define CBOOKREADWINDOW_H
 
-#include "clexiconreadwindow.h"
+#include "cdisplaywindow.h"
 
 
 class BtActionCollection;
 class CBookTreeChooser;
 class QAction;
 
-class CBookReadWindow: public CLexiconReadWindow {
+class CBookReadWindow: public CDisplayWindow {
 
     Q_OBJECT
 
@@ -28,7 +28,7 @@ public: /* Methods: */
 
     CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
                     CMDIArea * parent)
-        : CLexiconReadWindow(modules, parent)
+        : CDisplayWindow(modules, parent)
         , m_treeAction(nullptr)
         , m_treeChooser(nullptr) {}
 
@@ -39,10 +39,6 @@ public: /* Methods: */
     void applyProfileSettings(BtConfigCore const & windowConf) override;
     static void insertKeyboardActions(BtActionCollection * const a);
 
-public Q_SLOTS:
-
-    void reload(CSwordBackend::SetupChangedReason reason) override;
-
 protected: /* Methods: */
 
     void initActions() override;
@@ -50,8 +46,6 @@ protected: /* Methods: */
     void initConnections() override;
     void initView() override;
     void setupMainWindowToolBars() override;
-
-    void setupPopupMenu() override;
 
 protected Q_SLOTS:
 

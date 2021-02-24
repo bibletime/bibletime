@@ -13,7 +13,7 @@
 #ifndef CBIBLEREADWINDOW_H
 #define CBIBLEREADWINDOW_H
 
-#include "clexiconreadwindow.h"
+#include "cdisplaywindow.h"
 
 #include <QAction>
 #include "../../util/btconnect.h"
@@ -27,7 +27,7 @@ class QEvent;
 class QMenu;
 class QObject;
 
-class CBibleReadWindow: public CLexiconReadWindow  {
+class CBibleReadWindow: public CDisplayWindow  {
 
     Q_OBJECT
 
@@ -35,7 +35,8 @@ public: /* Methods: */
 
     CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
                      CMDIArea * parent)
-        : CLexiconReadWindow(modules, parent) {}
+        : CDisplayWindow(modules, parent)
+    {}
 
     CSwordModuleInfo::ModuleType moduleType() const override
     { return CSwordModuleInfo::Bible; }
@@ -57,10 +58,7 @@ protected: /* Methods: */
     }
 
     void initActions() override;
-    void initToolbars() override;
-    void initConnections() override;
     void initView() override;
-    void setupMainWindowToolBars() override;
     void setupPopupMenu() override;
     void updatePopupMenu() override;
     bool eventFilter( QObject* o, QEvent* e) override;

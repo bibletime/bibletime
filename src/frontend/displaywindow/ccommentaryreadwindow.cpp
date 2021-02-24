@@ -64,12 +64,9 @@ void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
 }
 
 void CCommentaryReadWindow::initActions() {
-    CLexiconReadWindow::initActions(); //make sure the predefined actions are available
+    CDisplayWindow::initActions(); //make sure the predefined actions are available
     BtActionCollection* ac = actionCollection();
     insertKeyboardActions(ac);
-
-    ac->action("nextEntry").setEnabled(false);
-    ac->action("previousEntry").setEnabled(false);
 
     auto const initAction = [this, ac](QString actionName,
                                        void (CCommentaryReadWindow::* slot)())
@@ -94,7 +91,7 @@ void CCommentaryReadWindow::initActions() {
 }
 
 void CCommentaryReadWindow::applyProfileSettings(BtConfigCore const & conf) {
-    CLexiconReadWindow::applyProfileSettings(conf);
+    CDisplayWindow::applyProfileSettings(conf);
     BT_ASSERT(m_syncButton);
     m_syncButton->setChecked(conf.value<bool>("syncEnabled", false));
 }
@@ -102,24 +99,24 @@ void CCommentaryReadWindow::applyProfileSettings(BtConfigCore const & conf) {
 void CCommentaryReadWindow::storeProfileSettings(BtConfigCore & conf)
         const
 {
-    CLexiconReadWindow::storeProfileSettings(conf);
+    CDisplayWindow::storeProfileSettings(conf);
     BT_ASSERT(m_syncButton);
     conf.setValue("syncEnabled", m_syncButton->isChecked());
 }
 
 void CCommentaryReadWindow::initToolbars() {
-    CLexiconReadWindow::initToolbars();
+    CDisplayWindow::initToolbars();
     buttonsToolBar()->addAction(m_syncButton);
 }
 
 void CCommentaryReadWindow::setupMainWindowToolBars() {
-    CLexiconReadWindow::setupMainWindowToolBars();
+    CDisplayWindow::setupMainWindowToolBars();
     btMainWindow()->toolsToolBar()->addAction(m_syncButton);
 }
 
 /** Reimplementation to handle the keychooser refresh. */
 void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CLexiconReadWindow::reload(reason);
+    CDisplayWindow::reload(reason);
 
     //refresh the book lists
     verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );
@@ -173,12 +170,4 @@ void CCommentaryReadWindow::previousVerse() {
 
 bool CCommentaryReadWindow::syncAllowed() const {
     return m_syncButton->isChecked();
-}
-
-
-/*!
-    \fn CCommentaryReadWindow::setupPopupMenu()
- */
-void CCommentaryReadWindow::setupPopupMenu() {
-    CLexiconReadWindow::setupPopupMenu();
 }

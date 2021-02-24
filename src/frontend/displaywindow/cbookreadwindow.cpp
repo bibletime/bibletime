@@ -31,7 +31,7 @@
 
 
 void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
-    CLexiconReadWindow::applyProfileSettings(conf);
+    CDisplayWindow::applyProfileSettings(conf);
 
     BT_ASSERT(m_treeAction);
     if (conf.value<bool>("treeShown", true) != m_treeAction->isChecked())
@@ -39,18 +39,14 @@ void CBookReadWindow::applyProfileSettings(BtConfigCore const & conf) {
 }
 
 void CBookReadWindow::storeProfileSettings(BtConfigCore & conf) const {
-    CLexiconReadWindow::storeProfileSettings(conf);
+    CDisplayWindow::storeProfileSettings(conf);
     conf.setValue("treeShown", m_treeAction->isChecked());
 }
 
 void CBookReadWindow::initActions() {
-    CLexiconReadWindow::initActions();
+    CDisplayWindow::initActions();
     BtActionCollection* ac = actionCollection();
     insertKeyboardActions(ac);
-
-    //cleanup, not a clean oo-solution
-    ac->action("nextEntry").setEnabled(false);
-    ac->action("previousEntry").setEnabled(false);
 
     m_treeAction = &ac->action("toggleTree");
     BT_ASSERT(m_treeAction);
@@ -73,7 +69,7 @@ void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 
 /** No descriptions */
 void CBookReadWindow::initConnections() {
-    CLexiconReadWindow::initConnections();
+    CDisplayWindow::initConnections();
 
     BT_CONNECT(m_treeChooser, &CBookTreeChooser::keyChanged,
                this,          &CBookReadWindow::lookupSwordKey);
@@ -174,14 +170,6 @@ void CBookReadWindow::treeToggled() {
 
 /** Reimplementation to take care of the tree chooser. */
 void CBookReadWindow::modulesChanged() {
-    CLexiconReadWindow::modulesChanged();
+    CDisplayWindow::modulesChanged();
     m_treeChooser->setModules(modules());
-}
-
-void CBookReadWindow::setupPopupMenu() {
-    CLexiconReadWindow::setupPopupMenu();
-}
-
-void CBookReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CLexiconReadWindow::reload(reason);
 }

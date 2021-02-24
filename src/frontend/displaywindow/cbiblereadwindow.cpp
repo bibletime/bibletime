@@ -36,7 +36,7 @@
 
 
 void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {
-    CLexiconReadWindow::applyProfileSettings(conf);
+    CDisplayWindow::applyProfileSettings(conf);
 
     setObjectName("CBibleReadWindow");
     filterOptions() = BtConfig::loadFilterOptionsFromGroup(conf);
@@ -53,7 +53,7 @@ void CBibleReadWindow::storeProfileSettings(BtConfigCore & conf) const {
     BtConfig::storeFilterOptionsToGroup(filterOptions(), conf);
     BtConfig::storeDisplayOptionsToGroup(displayOptions(), conf);
 
-    CLexiconReadWindow::storeProfileSettings(conf);
+    CDisplayWindow::storeProfileSettings(conf);
 }
 
 
@@ -123,12 +123,9 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 void CBibleReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
 
-    CLexiconReadWindow::initActions(); //make sure the predefined actions are available
+    CDisplayWindow::initActions(); //make sure the predefined actions are available
 
     insertKeyboardActions(ac);
-
-    ac->action("nextEntry").setEnabled(false);
-    ac->action("previousEntry").setEnabled(false);
 
     initAction("nextBook", this, &CBibleReadWindow::nextBook);
     initAction("previousBook", this, &CBibleReadWindow::previousBook);
@@ -186,16 +183,8 @@ void CBibleReadWindow::initActions() {
     ac->readShortcuts("Bible shortcuts");
 }
 
-void CBibleReadWindow::initConnections() {
-    CLexiconReadWindow::initConnections();
-}
-
-void CBibleReadWindow::initToolbars() {
-    CLexiconReadWindow::initToolbars();
-}
-
 void CBibleReadWindow::initView() {
-    CLexiconReadWindow::initView();
+    CDisplayWindow::initView();
 
     parentWidget()->installEventFilter(this);
 }
@@ -368,7 +357,7 @@ void CBibleReadWindow::saveChapterPlain() {
 }
 
 void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
-    CLexiconReadWindow::reload(reason);
+    CDisplayWindow::reload(reason);
 
     if (m_modules.isEmpty()) {
         close();
@@ -384,7 +373,7 @@ void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
 
 /** No descriptions */
 bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
-    const bool ret = CLexiconReadWindow::eventFilter(o, e);
+    const bool ret = CDisplayWindow::eventFilter(o, e);
 
     //   BT_ASSERT(o->inherits("CDisplayWindow"));
     //   qWarning("class: %s", o->className());
@@ -405,7 +394,7 @@ bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
 }
 
 void CBibleReadWindow::lookupSwordKey( CSwordKey* newKey ) {
-    CLexiconReadWindow::lookupSwordKey(newKey);
+    CDisplayWindow::lookupSwordKey(newKey);
     syncWindows();
 }
 
@@ -416,8 +405,4 @@ void CBibleReadWindow::syncWindows() {
             w->lookupKey( key()->key() );
         }
     }
-}
-
-void CBibleReadWindow::setupMainWindowToolBars() {
-    CLexiconReadWindow::setupMainWindowToolBars();
 }
