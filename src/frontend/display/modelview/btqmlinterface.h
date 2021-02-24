@@ -183,7 +183,7 @@ private:
     void getFontsFromSettings();
     QString getReferenceFromUrl(const QString& url);
     const CSwordModuleInfo* module() const;
-    std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format, bool const addText);
+    static std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format, bool const addText);
     RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
     QString stripHtml(const QString& html);
 
