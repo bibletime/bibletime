@@ -121,9 +121,10 @@ public:
 
     void updateReferenceText() override;
 
-    BtQuickWidget* quickWidget() {
-        return m_widget->quickWidget();
-    }
+    BtQuickWidget * quickWidget() { return m_widget->quickWidget(); }
+
+    BtQuickWidget const * quickWidget() const
+    { return m_widget->quickWidget(); }
 
     BtQmlInterface * qmlInterface() const;
 
