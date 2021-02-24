@@ -142,7 +142,7 @@ void CDisplayWindow::windowActivated() {
 }
 
 /** Returns the right window caption. */
-const QString CDisplayWindow::windowCaption() {
+QString CDisplayWindow::windowCaption() {
     if (!m_modules.count()) {
         return QString();
     }
@@ -151,9 +151,8 @@ const QString CDisplayWindow::windowCaption() {
 }
 
 /** Returns the used modules as a pointer list */
-const BtConstModuleList CDisplayWindow::modules() const {
-    return CSwordBackend::instance()->getConstPointerList(m_modules);
-}
+BtConstModuleList CDisplayWindow::modules() const
+{ return CSwordBackend::instance()->getConstPointerList(m_modules); }
 
 /** Store the settings of this window in the given CProfileWindow object. */
 void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {

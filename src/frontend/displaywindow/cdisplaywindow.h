@@ -55,10 +55,10 @@ public:
     CMDIArea * mdi() const { return m_mdi; }
 
     /** Returns the correct window caption.*/
-    const QString windowCaption();
+    QString windowCaption();
 
     /** Returns the used modules as a pointer list.*/
-    const BtConstModuleList modules() const;
+    BtConstModuleList modules() const;
 
     /** Returns the used modules as a string list. */
     QStringList const & getModuleList() const { return m_modules; }
