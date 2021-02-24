@@ -176,7 +176,7 @@ private Q_SLOTS:
 
 private:
     void configModuleByType(const QString& type, const QStringList& availableModuleNames);
-    bool copyKey(CSwordKey const * const key, Format const format, bool const addText);
+    bool copyKey(CSwordKey const * const key, Format const format, bool const addText) const;
     QString decodeLemma(const QString& value);
     QString decodeMorph(const QString& value);
     QFont font(int column) const;

@@ -513,7 +513,7 @@ void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, co
 
 bool BtQmlInterface::copyKey(CSwordKey const * const key,
                              Format const format,
-                             bool const addText)
+                             bool const addText) const
 {
     if (!key || !key->module())
         return false;
