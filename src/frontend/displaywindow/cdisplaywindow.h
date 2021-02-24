@@ -124,13 +124,13 @@ public:
     void setDisplaySettingsButton( BtDisplaySettingsButton* button );
 
     /** Returns the display widget used by this implementation of CDisplayWindow. */
-    virtual CDisplay * displayWidget() const {
+    CDisplay * displayWidget() const {
         BT_ASSERT(m_displayWidget);
         return m_displayWidget;
     }
 
     /** Sets the display widget used by this display window.*/
-    virtual void setDisplayWidget( CDisplay* newDisplay );
+    void setDisplayWidget(CDisplay * newDisplay);
 
     /**
         * Returns whether syncs to the active window are allowed at this time for this display window
@@ -153,13 +153,13 @@ public:
       Catches the signal when the KHTMLPart has finished the layout (anchors are
       not ready before that).
     */
-    virtual void slotMoveToAnchor();
+    void slotMoveToAnchor();
 
-    virtual void copySelectedText();
+    void copySelectedText();
 
-    virtual void copyByReferences();
+    void copyByReferences();
 
-    virtual bool hasSelectedText();
+    bool hasSelectedText();
 
     /** Updates the status of the popup menu entries. */
     virtual void copyDisplayedText();
@@ -206,10 +206,10 @@ public Q_SLOTS:
         * Lookup the specified key in the given module. If the module is not chosen withing
         * this display window create a new displaywindow with the right module in it.
         */
-    virtual void lookupModKey( const QString& module, const QString& key );
+    void lookupModKey(QString const & module, QString const & key);
 
     /** Lookup the key in the chosen modules.*/
-    virtual void lookupKey( const QString& key );
+    void lookupKey(QString const & key);
 
     /** Refresh the settings of this window.*/
     virtual void reload(CSwordBackend::SetupChangedReason reason);
@@ -305,9 +305,9 @@ protected Q_SLOTS:
 
     void setFocusKeyChooser();
 
-    virtual void pageDown();
+    void pageDown();
 
-    virtual void pageUp();
+    void pageUp();
 
     /**
         * This function saves the entry as html using the CExportMgr class.
