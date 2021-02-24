@@ -36,7 +36,7 @@ class BtCopyByReferencesDialog : public QDialog {
         BtCopyByReferencesDialog(const BtConstModuleList & modules,
                                  BTHistory * historyPtr,
                                  CSwordKey * key,
-                                 BtModuleTextModel * model,
+                                 BtModuleTextModel const * model,
                                  CReadWindow * parent = nullptr);
 
     int getIndex1();
@@ -60,7 +60,7 @@ class BtCopyByReferencesDialog : public QDialog {
         CKeyChooser * m_keyChooser1;
         CKeyChooser * m_keyChooser2;
         QComboBox * m_moduleNameCombo;
-        BtModuleTextModel * m_moduleTextModel;
+        BtModuleTextModel const * m_moduleTextModel;
         QLabel * m_sizeToLarge;
         QDialogButtonBox * m_buttons;
         CReadWindow * m_readWindow;

@@ -35,7 +35,7 @@
 BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & modules,
                                                    BTHistory * historyPtr,
                                                    CSwordKey * key,
-                                                   BtModuleTextModel * model,
+                                                   BtModuleTextModel const * model,
                                                    CReadWindow * parent)
         : QDialog(parent), m_modules(modules), m_key(key),
           m_keyChooser1(nullptr), m_keyChooser2(nullptr),
