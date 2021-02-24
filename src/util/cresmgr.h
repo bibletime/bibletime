@@ -324,9 +324,6 @@ extern const QKeySequence accel;
 namespace previousEntry {
 extern const QKeySequence accel;
 }
-namespace copyMenu { BT_GETICON(edit_copy) }
-namespace saveMenu { BT_GETICON(file_save) }
-namespace printMenu { BT_GETICON(print) }
 }
 
 namespace writeWindow {

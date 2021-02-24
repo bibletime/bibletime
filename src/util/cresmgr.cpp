@@ -185,9 +185,6 @@ const char* actionName = "commentary_syncWindow";
 }
 }
 namespace lexiconWindow {
-namespace entryList {
-QString tooltip;
-}
 namespace nextEntry {
 const QKeySequence accel(Qt::CTRL + Qt::Key_V);
 }
