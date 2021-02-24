@@ -234,12 +234,8 @@ protected:
     FilterOptions & filterOptions() { return m_filterOptions; }
 
     template <typename ... Args>
-    QAction & initAction(QString actionName, Args && ... args) {
-        QAction & action =
-                actionCollection()->action(std::move(actionName));
-        BT_CONNECT(&action,
-                   &QAction::triggered,
-                   std::forward<Args>(args)...);
+    QAction & initAddAction(Args && ... args) {
+        QAction & action = initAction(std::forward<Args>(args)...);
         addAction(&action);
         return action;
     }
@@ -331,10 +327,6 @@ private: /* Methods: */
         BT_CONNECT(&a, &QAction::triggered, std::forward<Args>(args)...);
         return a;
     }
-
-    template <typename ... Args>
-    void initAddAction(Args && ... args)
-    { addAction(&initAction(std::forward<Args>(args)...)); }
 
 private Q_SLOTS:
 

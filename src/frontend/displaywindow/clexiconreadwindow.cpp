@@ -36,8 +36,8 @@ void CLexiconReadWindow::insertKeyboardActions(BtActionCollection * a) {
 void CLexiconReadWindow::initActions() {
     CDisplayWindow::initActions();
     insertKeyboardActions(actionCollection());
-    initAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
-    initAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
+    initAddAction("nextEntry", this, &CLexiconReadWindow::nextEntry);
+    initAddAction("previousEntry", this, &CLexiconReadWindow::previousEntry);
     m_actionCollection->readShortcuts("Lexicon shortcuts");
 }
 

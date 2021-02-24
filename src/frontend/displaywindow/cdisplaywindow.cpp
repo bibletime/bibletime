@@ -346,41 +346,41 @@ void CDisplayWindow::initActions() {
     m_actions.findText = &ac->action("findText");
 
     m_actions.findStrongs =
-            &initAction(
+            &initAddAction(
                 CResMgr::displaywindows::general::findStrongs::actionName,
                 this,
                 &CDisplayWindow::openSearchStrongsDialog);
 
     m_actions.copy.reference =
-            &initAction("copyReferenceOnly",
-                        displayWidget()->connectionsProxy(),
-                        &CDisplayConnections::copyAnchorOnly);
+            &initAddAction("copyReferenceOnly",
+                           displayWidget()->connectionsProxy(),
+                           &CDisplayConnections::copyAnchorOnly);
 
-    m_actions.copy.entry = &initAction("copyEntryWithText",
-                                       displayWidget()->connectionsProxy(),
-                                       &CDisplayConnections::copyAll);
+    m_actions.copy.entry = &initAddAction("copyEntryWithText",
+                                          displayWidget()->connectionsProxy(),
+                                          &CDisplayConnections::copyAll);
 
     m_actions.copy.selectedText = &ac->action("copySelectedText");
 
     m_actions.copy.byReferences = &ac->action("copyByReferences");
 
-    m_actions.save.entryAsPlain = &initAction("saveEntryAsPlain",
-                                              this,
-                                              &CDisplayWindow::saveAsPlain);
+    m_actions.save.entryAsPlain = &initAddAction("saveEntryAsPlain",
+                                                 this,
+                                                 &CDisplayWindow::saveAsPlain);
 
-    m_actions.save.entryAsHTML = &initAction("saveHtml",
-                                             this,
-                                             &CDisplayWindow::saveAsHTML);
+    m_actions.save.entryAsHTML = &initAddAction("saveHtml",
+                                                this,
+                                                &CDisplayWindow::saveAsHTML);
 
     m_actions.print.reference =
-            &initAction("printReferenceOnly",
-                        this,
-                        &CDisplayWindow::printAnchorWithText);
+            &initAddAction("printReferenceOnly",
+                           this,
+                           &CDisplayWindow::printAnchorWithText);
     addAction(m_actions.print.reference);
 
-    m_actions.print.entry = &initAction("printEntryWithText",
-                                        this,
-                                        &CDisplayWindow::printAll);
+    m_actions.print.entry = &initAddAction("printEntryWithText",
+                                           this,
+                                           &CDisplayWindow::printAll);
 
     // init with the user defined settings
     m_actionCollection->readShortcuts("Displaywindow shortcuts");
