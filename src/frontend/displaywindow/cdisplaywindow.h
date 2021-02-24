@@ -84,9 +84,6 @@ public:
     /** Returns true if the widget is ready for use. */
     bool isReady() const { return m_isReady; }
 
-    /** Returns true if the window may be closed.*/
-    virtual bool queryClose();
-
     /** Returns history for this window */
     BTHistory* history();
 
@@ -281,8 +278,6 @@ protected:
 
     /** Called to add actions to mainWindow toolbars */
     virtual void setupMainWindowToolBars();
-
-    void closeEvent(QCloseEvent* e) override;
 
     void setToolBarsHidden();
     void clearMainWindowToolBars();

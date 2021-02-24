@@ -683,11 +683,6 @@ void CDisplayWindow::slotRemoveModule(int index) {
     Q_EMIT sigModuleListChanged();
 }
 
-/** Returns true if the window may be closed. */
-bool CDisplayWindow::queryClose() {
-    return true;
-}
-
 /** Sets the keychooser widget for this display window. */
 void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
     m_keyChooser = ck;
@@ -928,15 +923,6 @@ void CDisplayWindow::setDisplayWidget(CDisplay * newDisplay) {
 
     BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
                this,           &CDisplayWindow::colorThemeChangedSlot);
-}
-
-void CDisplayWindow::closeEvent(QCloseEvent* e) {
-    if (!queryClose()) {
-        e->ignore();
-    }
-    else {
-        e->accept();
-    }
 }
 
 void CDisplayWindow::slotSearchInModules() {

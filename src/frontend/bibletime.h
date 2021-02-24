@@ -296,11 +296,6 @@ public Q_SLOTS:
         */
         void refreshDisplayWindows() const;
 
-        /**
-        * Reimplemented from QWidget.
-        */
-        void closeEvent(QCloseEvent *event) override;
-
     protected Q_SLOTS:
         /**
          * Creates a new presenter in the MDI area according to the type of the module.

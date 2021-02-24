@@ -259,23 +259,6 @@ void BibleTime::refreshDisplayWindows() const {
             window->reload(CSwordBackend::OtherChange);
 }
 
-void BibleTime::closeEvent(QCloseEvent *event) {
-    /*
-      Sequentially queries all open subwindows whether its fine to close them. If some sub-
-      window returns false, the querying is stopped and the close event is ignored. If all
-      subwindows return true, the close event is accepted.
-    */
-    for (auto * const subWindow : m_mdi->subWindowList()) {
-        if (CDisplayWindow * const window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-            if (!window->queryClose()) {
-                event->ignore();
-                return;
-            }
-        }
-    }
-    event->accept();
-}
-
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
     if (btConfig().value<bool>("state/crashedTwoTimes", false)) {
         return;
