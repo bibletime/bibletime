@@ -135,6 +135,7 @@ public:
     QVariant getTextModel();
     bool isBibleOrCommentary();
     BtModuleTextModel * textModel();
+    BtModuleTextModel const * textModel() const;
     void pageDown();
     void pageUp();
     void referenceChoosen();

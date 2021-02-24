@@ -442,6 +442,9 @@ BtModuleTextModel * BtQmlInterface::textModel() {
     return m_moduleTextModel;
 }
 
+BtModuleTextModel const * BtQmlInterface::textModel() const
+{ return m_moduleTextModel; }
+
 bool BtQmlInterface::moduleIsWritable(int column) {
     if (column >= m_moduleNames.count())
         return false;
