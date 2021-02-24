@@ -500,7 +500,7 @@ void BtQmlInterface::copyRange(int index1, int index2) {
     delete key;
 }
 
-void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) {
+void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) const {
     CSwordVerseKey dummy(module);
     CSwordVerseKey vk(module);
     dummy.setKey(ref1);
