@@ -486,7 +486,7 @@ void BtQmlInterface::changeColorTheme() {
     Q_EMIT foregroundColorChanged();
 }
 
-void BtQmlInterface::copyRange(int index1, int index2) {
+void BtQmlInterface::copyRange(int index1, int index2) const {
     QString text;
     CSwordKey * key = m_swordKey->copy();
 

@@ -109,7 +109,7 @@ public:
     QColor getForegroundColor() const;
     int getBackgroundHighlightColorIndex() const;
     void changeColorTheme();
-    void copyRange(int index1, int index2);
+    void copyRange(int index1, int index2) const;
     void copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) const;
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
