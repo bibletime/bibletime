@@ -68,20 +68,14 @@ void CCommentaryReadWindow::initActions() {
     BtActionCollection* ac = actionCollection();
     insertKeyboardActions(ac);
 
-    auto const initAction = [this, ac](QString actionName,
-                                       void (CCommentaryReadWindow::* slot)())
-    {
-        QAction & action = ac->action(std::move(actionName));
-        BT_CONNECT(&action, &QAction::triggered, this, slot);
-        addAction(&action);
-    };
-
-    initAction("nextBook", &CCommentaryReadWindow::nextBook);
-    initAction("previousBook", &CCommentaryReadWindow::previousBook);
-    initAction("nextChapter", &CCommentaryReadWindow::nextChapter);
-    initAction("previousChapter", &CCommentaryReadWindow::previousChapter);
-    initAction("nextVerse", &CCommentaryReadWindow::nextVerse);
-    initAction("previousVerse", &CCommentaryReadWindow::previousVerse);
+    initAddAction("nextBook", this, &CCommentaryReadWindow::nextBook);
+    initAddAction("previousBook", this, &CCommentaryReadWindow::previousBook);
+    initAddAction("nextChapter", this, &CCommentaryReadWindow::nextChapter);
+    initAddAction("previousChapter",
+                  this,
+                  &CCommentaryReadWindow::previousChapter);
+    initAddAction("nextVerse", this, &CCommentaryReadWindow::nextVerse);
+    initAddAction("previousVerse", this, &CCommentaryReadWindow::previousVerse);
 
     QAction & qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     m_syncButton = &qaction;
