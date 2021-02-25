@@ -142,7 +142,7 @@ QString BtCopyByReferencesDialog::getReference2() {
 
 RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, const QString& ref2) {
     RefIndexes ri;
-    CSwordKey * key = m_key->copy();
+    std::unique_ptr<CSwordKey> key(m_key->copy());
     key->setKey(ref1);
     ri.index1 = m_moduleTextModel->keyToIndex(*key);
     key->setKey(ref2);
