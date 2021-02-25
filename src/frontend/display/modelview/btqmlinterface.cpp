@@ -488,7 +488,7 @@ void BtQmlInterface::changeColorTheme() {
 
 void BtQmlInterface::copyRange(int index1, int index2) const {
     QString text;
-    CSwordKey * key = m_swordKey->copy();
+    std::unique_ptr<CSwordKey> key(m_swordKey->copy());
 
     for (int i=index1; i<=index2; ++i) {
         QString keyName = m_moduleTextModel->indexToKeyName(i);
@@ -497,7 +497,6 @@ void BtQmlInterface::copyRange(int index1, int index2) const {
     }
     QClipboard *clipboard = QGuiApplication::clipboard();
     clipboard->setText(text);
-    delete key;
 }
 
 void BtQmlInterface::copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module) const {
