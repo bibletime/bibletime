@@ -263,14 +263,6 @@ protected Q_SLOTS:
 
     void printAnchorWithText();
 
-    /**
-        * This function saves the entry as html using the CExportMgr class.
-        */
-    void saveAsHTML();
-    /**
-        * This function saves the entry as plain text using the CExportMgr class.
-        */
-    void saveAsPlain();
     void saveRawHTML();
 
 private: /* Methods: */

@@ -383,13 +383,27 @@ void CDisplayWindow::initActions() {
 
     m_actions.copy.byReferences = &ac->action("copyByReferences");
 
-    m_actions.save.entryAsPlain = &initAddAction("saveEntryAsPlain",
-                                                 this,
-                                                 &CDisplayWindow::saveAsPlain);
+    m_actions.save.entryAsPlain =
+            &initAddAction(
+                "saveEntryAsPlain",
+                [this]{
+                    CExportManager mgr(true,
+                                       tr("Saving"),
+                                       filterOptions(),
+                                       displayOptions());
+                    mgr.saveKey(key(), CExportManager::Text, true, modules());
+                });
 
-    m_actions.save.entryAsHTML = &initAddAction("saveHtml",
-                                                this,
-                                                &CDisplayWindow::saveAsHTML);
+    m_actions.save.entryAsHTML =
+            &initAddAction(
+                "saveHtml",
+                [this]{
+                    CExportManager mgr(true,
+                                       tr("Saving"),
+                                       filterOptions(),
+                                       displayOptions());
+                    mgr.saveKey(key(), CExportManager::HTML, true, modules());
+                });
 
     m_actions.print.reference =
             &initAddAction("printReferenceOnly",
@@ -871,18 +885,6 @@ void CDisplayWindow::printAll()
 
 void CDisplayWindow::printAnchorWithText()
 { m_displayWidget->printAnchorWithText(m_displayOptions, m_filterOptions); }
-
-/** This function saves the entry as html using the CExportMgr class. */
-void CDisplayWindow::saveAsHTML() {
-    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(key(), CExportManager::HTML, true, modules());
-}
-
-/** This function saves the entry as html using the CExportMgr class. */
-void CDisplayWindow::saveAsPlain() {
-    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
-    mgr.saveKey(key(), CExportManager::Text, true, modules());
-}
 
 /** Saving the raw HTML for debugging purposes */
 void CDisplayWindow::saveRawHTML() {
