@@ -28,7 +28,7 @@
 #include "../bibletimeapp.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
-#include "../display/cdisplay.h"
+#include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 #include "btdisplaysettingsbutton.h"
@@ -140,13 +140,13 @@ void CBibleReadWindow::initActions() {
 
     m_actions.copy.referenceTextOnly =
             &initAddAction("copyTextOfReference",
-                           displayWidget()->connectionsProxy(),
-                           &CDisplayConnections::copyAnchorTextOnly);
+                           displayWidget(),
+                           &BtModelViewReadDisplay::copyAnchorTextOnly);
 
     m_actions.copy.referenceAndText =
             &initAddAction("copyReferenceWithText",
-                           displayWidget()->connectionsProxy(),
-                           &CDisplayConnections::copyAnchorWithText);
+                           displayWidget(),
+                           &BtModelViewReadDisplay::copyAnchorWithText);
 
     m_actions.copy.chapter =
             &initAddAction("copyChapter",
@@ -159,8 +159,8 @@ void CBibleReadWindow::initActions() {
 
     m_actions.save.referenceAndText =
             &initAddAction("saveReferenceWithText",
-                           displayWidget()->connectionsProxy(),
-                           &CDisplayConnections::saveAnchorWithText);
+                           displayWidget(),
+                           &BtModelViewReadDisplay::saveAnchorWithText);
 
     m_actions.save.chapterAsPlain =
             &initAddAction("saveChapterAsPlainText",
@@ -237,7 +237,7 @@ void CBibleReadWindow::setupPopupMenu() {
 /** Reimplemented. */
 void CBibleReadWindow::updatePopupMenu() {
 
-    CDisplay const & display = *displayWidget();
+    auto const & display = *displayWidget();
     m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
     bool const hasActiveAnchor = display.hasActiveAnchor();

@@ -29,6 +29,7 @@ class CInfoDisplay;
 class BtActionClass;
 class BtBookshelfDockWidget;
 class BtFindWidget;
+class BtModelViewReadDisplay;
 class BtOpenWorkAction;
 class CBookmarkIndex;
 class CDisplayWindow;
@@ -194,7 +195,7 @@ class BibleTime : public QMainWindow {
         /**
           Get a pointer to the display associated with the current window
         */
-        CDisplay* getCurrentDisplay();
+        BtModelViewReadDisplay * getCurrentDisplay();
         /**
           Open the BtFindWidget below the mdi area
         */

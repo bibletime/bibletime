@@ -26,7 +26,7 @@
 
 class BtConfigCore;
 class BtToolBarPopupAction;
-class CDisplay;
+class BtModelViewReadDisplay;
 class CSwordLDKey;
 class BtDisplaySettingsButton;
 class CKeyChooser;
@@ -117,13 +117,13 @@ public:
     void setDisplaySettingsButton( BtDisplaySettingsButton* button );
 
     /** Returns the display widget used by this implementation of CDisplayWindow. */
-    CDisplay * displayWidget() const {
+    BtModelViewReadDisplay * displayWidget() const {
         BT_ASSERT(m_displayWidget);
         return m_displayWidget;
     }
 
     /** Sets the display widget used by this display window.*/
-    void setDisplayWidget(CDisplay * newDisplay);
+    void setDisplayWidget(BtModelViewReadDisplay * newDisplay);
 
     /**
         * Returns whether syncs to the active window are allowed at this time for this display window
@@ -141,12 +141,6 @@ public:
     void windowActivated();
 
     BtActionCollection * actionCollection() const { return m_actionCollection; }
-
-    /**
-      Catches the signal when the KHTMLPart has finished the layout (anchors are
-      not ready before that).
-    */
-    void slotMoveToAnchor();
 
     void copySelectedText();
 
@@ -213,8 +207,6 @@ protected:
 
     CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
     ~CDisplayWindow() override;
-
-    void resizeEvent(QResizeEvent * e) override;
 
     /**
           \returns the display options used by this display window.
@@ -371,9 +363,9 @@ private:
     QToolBar* m_buttonsToolBar;
     QToolBar* m_headerBar;
     QMenu* m_popupMenu;
-    CDisplay* m_displayWidget;
+    BtModelViewReadDisplay * m_displayWidget;
     BTHistory* m_history;
-    CDisplay * m_readDisplayWidget = nullptr;
+    BtModelViewReadDisplay * m_readDisplayWidget = nullptr;
 };
 
 #endif

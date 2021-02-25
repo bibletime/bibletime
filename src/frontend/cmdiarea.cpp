@@ -25,7 +25,7 @@
 #include "../util/btconnect.h"
 #include "bibletime.h"
 #include "displaywindow/btmodulechooserbar.h"
-#include "display/cdisplay.h"
+#include "display/btmodelviewreaddisplay.h"
 
 
 namespace {

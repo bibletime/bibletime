@@ -21,7 +21,7 @@
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
 #include "../bibletimeapp.h"
-#include "../display/cdisplay.h"
+#include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 #include "btmodulechooserbar.h"

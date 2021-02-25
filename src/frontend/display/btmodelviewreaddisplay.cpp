@@ -13,8 +13,10 @@
 #include "btmodelviewreaddisplay.h"
 
 #include <memory>
+#include <QClipboard>
 #include <QDebug>
 #include <QDrag>
+#include <QFileDialog>
 #include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QMenu>
@@ -22,12 +24,15 @@
 #include <QTimer>
 #include <QToolBar>
 #include "../../backend/keys/cswordkey.h"
+#include "../../backend/drivers/cswordbiblemoduleinfo.h"
 #include "../../backend/managers/referencemanager.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/directory.h"
+#include "../../util/tool.h"
 #include "../bibletime.h"
 #include "../BtMimeData.h"
+#include "../cexportmanager.h"
 #include "../cinfodisplay.h"
 #include "../cmdiarea.h"
 #include "../displaywindow/cdisplaywindow.h"
@@ -42,7 +47,8 @@ using namespace InfoDisplay;
 BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                                                QWidget * parentWidget)
     : QWidget(parentWidget)
-    , CDisplay(displayWindow)
+    , m_parentWindow(displayWindow)
+    , m_popup(nullptr)
     , m_magTimerId(0)
     , m_widget(nullptr)
 {
@@ -91,20 +97,114 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                });
 }
 
-BtModelViewReadDisplay::~BtModelViewReadDisplay() {
+BtModelViewReadDisplay::~BtModelViewReadDisplay() = default;
+
+bool BtModelViewReadDisplay::copy(TextType const format, TextPart const part) {
+    QGuiApplication::clipboard()->setText(text(format, part));
+    return true;
+}
+
+void BtModelViewReadDisplay::copySelectedText() {
+    parentWindow()->copySelectedText();
+}
+
+void BtModelViewReadDisplay::copyByReferences() {
+    parentWindow()->copyByReferences();
+}
+
+bool BtModelViewReadDisplay::save(TextType const format, TextPart const part) {
+    const QString content = text(format, part);
+    QString filter;
+    switch (format) {
+    case HTMLText:
+        filter = QObject::tr("HTML files") + " (*.html *.htm);;";
+        break;
+    case PlainText:
+        filter = QObject::tr("Text files") + " (*.txt);;";
+        break;
+    }
+    filter += QObject::tr("All files") + " (*)";
+
+    const QString filename = QFileDialog::getSaveFileName(nullptr, QObject::tr("Save document ..."), "", filter);
+
+    if (!filename.isEmpty()) {
+        util::tool::savePlainFile(filename, content);
+    }
+    return true;
+}
+
+void BtModelViewReadDisplay::print(TextPart const type,
+                                   DisplayOptions const & displayOptions,
+                                   FilterOptions const & filterOptions)
+{
+    using CSBiMI = CSwordBibleModuleInfo;
+    CDisplayWindow* window = parentWindow();
+    CSwordKey* const key = window->key();
+    const CSwordModuleInfo *module = key->module();
+
+    const CDisplayWindow *displayWindow = parentWindow();
+    CExportManager mgr(false, QString(), displayWindow->filterOptions(), displayWindow->displayOptions());
+
+    switch (type) {
+    case Document: {
+        if (module->type() == CSwordModuleInfo::Bible) {
+            CSwordVerseKey* vk = dynamic_cast<CSwordVerseKey*>(key);
+
+            CSwordVerseKey startKey(*vk);
+            startKey.setVerse(1);
+
+            CSwordVerseKey stopKey(*vk);
+
+            const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
+            if (bible) {
+                stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.book()), startKey.getChapter()));
+            }
+
+            mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
+        }
+        else if (module->type() == CSwordModuleInfo::Lexicon || module->type() == CSwordModuleInfo::Commentary ) {
+            mgr.printKey(module, key->key(), key->key(), displayOptions, filterOptions);
+        }
+        else if (module->type() == CSwordModuleInfo::GenericBook) {
+            CSwordTreeKey* tree = dynamic_cast<CSwordTreeKey*>(key);
+
+            CSwordTreeKey startKey(*tree);
+            //        while (startKey.previousSibling()) { // go to first sibling on this level!
+            //        }
+
+            CSwordTreeKey stopKey(*tree);
+            //    if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(module)) {
+            //          while ( stopKey.nextSibling() ) { //go to last displayed sibling!
+            //          }
+            //        }
+            mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
+        }
+        break;
+    }
+
+    case AnchorWithText: {
+        if (hasActiveAnchor()) {
+            mgr.printByHyperlink(m_activeAnchor, displayOptions, filterOptions );
+        }
+        break;
+    }
+
+    default:
+        break;
+    }
 }
 
 void BtModelViewReadDisplay::reloadModules() {
     qmlInterface()->textModel()->reloadModules();
 }
 
-const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
-                                            const CDisplay::TextPart part) {
+QString
+BtModelViewReadDisplay::text(TextType const format, TextPart const part) {
     QString text;
     switch (part) {
     case Document: {
         if (format == HTMLText) {
-            text = getCurrentSource();
+            text = m_currentSource;
         }
         else {
             CDisplayWindow* window = parentWindow();
@@ -135,14 +235,14 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
 
     case AnchorOnly: {
         if (auto const decodedLink =
-                    ReferenceManager::decodeHyperlink(activeAnchor()))
+                    ReferenceManager::decodeHyperlink(m_activeAnchor))
             return decodedLink->key;
         return {};
     }
 
     case AnchorTextOnly: {
         auto const decodedLink(
-                    ReferenceManager::decodeHyperlink(activeAnchor()));
+                    ReferenceManager::decodeHyperlink(m_activeAnchor));
         if (decodedLink && decodedLink->module) {
             std::unique_ptr<CSwordKey> key(
                         CSwordKey::createInstance(decodedLink->module));
@@ -154,7 +254,7 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
 
     case AnchorWithText: {
         auto const decodedLink(
-                    ReferenceManager::decodeHyperlink(activeAnchor()));
+                    ReferenceManager::decodeHyperlink(m_activeAnchor));
         if (decodedLink && decodedLink->module) {
             std::unique_ptr<CSwordKey> key(
                         CSwordKey::createInstance(decodedLink->module));
@@ -178,10 +278,6 @@ const QString BtModelViewReadDisplay::text( const CDisplay::TextType format,
 
 }
 
-// Puts html text the view
-void BtModelViewReadDisplay::setText( const QString& /*newText*/ ) {
-}
-
 void BtModelViewReadDisplay::setDisplayFocus() {
     m_widget->quickWidget()->setFocus();
 }
@@ -193,17 +289,13 @@ void BtModelViewReadDisplay::setDisplayOptions(const DisplayOptions &displayOpti
 void BtModelViewReadDisplay::contextMenu(QContextMenuEvent* event) {
     QString activeLink = m_widget->qmlInterface()->getActiveLink();
     QString reference = m_widget->qmlInterface()->getBibleUrlFromLink(activeLink);
-    setActiveAnchor(reference);
+    m_activeAnchor = reference;
     QString lemma = m_widget->qmlInterface()->getLemmaFromLink(activeLink);
     setLemma(lemma);
 
     if (QMenu* popup = installedPopup()) {
         popup->exec(event->globalPos());
     }
-}
-
-QString BtModelViewReadDisplay::getCurrentSource( ) {
-    return this->currentSource;
 }
 
 BtQmlInterface * BtModelViewReadDisplay::qmlInterface() const {
@@ -249,20 +341,6 @@ void BtModelViewReadDisplay::highlightText(const QString& text, bool caseSensiti
 void BtModelViewReadDisplay::findText(const QString& text,
                                       bool caseSensitive, bool backward) {
     m_widget->qmlInterface()->findText(text, caseSensitive, backward);
-}
-
-// Reimplementation
-// Returns the BtModelViewReadDisplayView object
-QWidget* BtModelViewReadDisplay::view() {
-    return m_widget;
-}
-
-// Select all text in the viewer
-void BtModelViewReadDisplay::selectAll() {
-}
-
-// Scroll to the correct location as specified by the anchor
-void BtModelViewReadDisplay::moveToAnchor( const QString& /*anchor*/ ) {
 }
 
 // Save the Lemma (Strongs number) attribute

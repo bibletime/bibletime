@@ -36,7 +36,7 @@
 #include "cmdiarea.h"
 #include "bookshelfwizard/btbookshelfwizard.h"
 #include "display/btfindwidget.h"
-#include "display/cdisplay.h"
+#include "display/btmodelviewreaddisplay.h"
 #include "displaywindow/btmodulechooserbar.h"
 #include "displaywindow/cdisplaywindow.h"
 #include "messagedialog.h"
@@ -587,7 +587,7 @@ void BibleTime::slotAutoScroll() {
         m_autoScrollTimer.stop();
         return;
     }
-    CDisplay * display = getCurrentDisplay();
+    auto * display = getCurrentDisplay();
     if (display) {
         display->scroll(m_autoScroll.speed >0 ? -1 : 1 );
         display->updateReferenceText();

@@ -41,7 +41,7 @@
 #include "btmessageinputdialog.h"
 #include "cmdiarea.h"
 #include "display/btfindwidget.h"
-#include "display/cdisplay.h"
+#include "display/btmodelviewreaddisplay.h"
 #include "displaywindow/btactioncollection.h"
 #include "displaywindow/cbiblereadwindow.h"
 #include "displaywindow/cbookreadwindow.h"
@@ -335,7 +335,7 @@ const CSwordModuleInfo* BibleTime::getCurrentModule() {
     return w->modules().first();
 }
 
-CDisplay* BibleTime::getCurrentDisplay() {
+BtModelViewReadDisplay * BibleTime::getCurrentDisplay() {
     QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
     if (!activeSubWindow)
         return nullptr;
@@ -346,8 +346,7 @@ CDisplay* BibleTime::getCurrentDisplay() {
 }
 
 void BibleTime::setDisplayFocus() {
-    CDisplay* display = getCurrentDisplay();
-    if (display)
+    if (auto * display = getCurrentDisplay())
         display->setDisplayFocus();
 }
 

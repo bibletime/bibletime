@@ -31,7 +31,6 @@
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
-#include "../display/cdisplay.h"
 #include "../display/modelview/btquickwidget.h"
 #include "../keychooser/ckeychooser.h"
 #include "../keychooser/bthistory.h"
@@ -221,11 +220,7 @@ void CDisplayWindow::applyProfileSettings(BtConfigCore const & conf) {
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
-    QAction* actn = new QAction(QIcon(), tr("Select all"), a);
-    actn->setShortcut(QKeySequence::SelectAll);
-    a->addAction("selectAll", actn);
-
-    actn = new QAction(QIcon(), tr("Copy"), a);
+    auto * actn = new QAction(QIcon(), tr("Copy"), a);
     actn->setShortcut(QKeySequence::Copy);
     a->addAction("copySelectedText", actn);
 
@@ -293,13 +288,6 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, actn);
 }
 
-void CDisplayWindow::resizeEvent(QResizeEvent * e) {
-    Q_UNUSED(e)
-    if (displayWidget())
-        displayWidget()->moveToAnchor(
-                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
-}
-
 void CDisplayWindow::initActions() {
     insertKeyboardActions(m_actionCollection);
 
@@ -311,19 +299,16 @@ void CDisplayWindow::initActions() {
     initAddAction("pageDown", this, &CDisplayWindow::pageDown);
     initAddAction("pageUp", this, &CDisplayWindow::pageUp);
 
-    CDisplayConnections * const conn = displayWidget()->connectionsProxy();
-    initAddAction("selectAll",
-                  conn,
-                  &CDisplayConnections::selectAll);
+    auto * const dw = displayWidget();
     initAddAction("copySelectedText",
-                  conn,
-                  &CDisplayConnections::copySelectedText);
+                  dw,
+                  &BtModelViewReadDisplay::copySelectedText);
     initAddAction("copyByReferences",
-                  conn,
-                  &CDisplayConnections::copyByReferences);
+                  dw,
+                  &BtModelViewReadDisplay::copyByReferences);
     initAddAction("findText",
-                  conn,
-                  &CDisplayConnections::openFindTextDialog);
+                  dw,
+                  &BtModelViewReadDisplay::openFindTextDialog);
     initAddAction(DWG::backInHistory::actionName,
                   keyChooser()->history(),
                   &BTHistory::back);
@@ -352,12 +337,12 @@ void CDisplayWindow::initActions() {
 
     m_actions.copy.reference =
             &initAddAction("copyReferenceOnly",
-                           displayWidget()->connectionsProxy(),
-                           &CDisplayConnections::copyAnchorOnly);
+                           dw,
+                           &BtModelViewReadDisplay::copyAnchorOnly);
 
     m_actions.copy.entry = &initAddAction("copyEntryWithText",
-                                          displayWidget()->connectionsProxy(),
-                                          &CDisplayConnections::copyAll);
+                                          dw,
+                                          &BtModelViewReadDisplay::copyAll);
 
     m_actions.copy.selectedText = &ac->action("copySelectedText");
 
@@ -519,7 +504,7 @@ void CDisplayWindow::setupPopupMenu() {
 void CDisplayWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
 
-    CDisplay const & display = *displayWidget();
+    auto const & display = *displayWidget();
 
     m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
@@ -554,11 +539,6 @@ void CDisplayWindow::setupMainWindowToolBars() {
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);
-}
-
-void CDisplayWindow::slotMoveToAnchor() {
-    displayWidget()->moveToAnchor(
-                Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
 void CDisplayWindow::copySelectedText() {
@@ -895,24 +875,12 @@ QMenu* CDisplayWindow::popup() {
 }
 
 /** Sets the display widget used by this display window. */
-void CDisplayWindow::setDisplayWidget(CDisplay * newDisplay) {
+void CDisplayWindow::setDisplayWidget(BtModelViewReadDisplay * newDisplay) {
     // Lets be orwellianly paranoid here:
     BT_ASSERT(newDisplay);
 
     m_displayWidget = newDisplay;
-    if (m_readDisplayWidget) {
-        if (BtModelViewReadDisplay * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-            disconnect(v,    &BtModelViewReadDisplay::completed,
-                       this, &CDisplayWindow::slotMoveToAnchor);
-    }
-
-    m_readDisplayWidget = static_cast<CDisplay *>(newDisplay);
-
-    if (BtModelViewReadDisplay * const v =
-            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        BT_CONNECT(v,    &BtModelViewReadDisplay::completed,
-                   this, &CDisplayWindow::slotMoveToAnchor);
+    m_readDisplayWidget = newDisplay;
 
     BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
                this,           &CDisplayWindow::colorThemeChangedSlot);
@@ -922,13 +890,11 @@ void CDisplayWindow::slotSearchInModules() {
     Search::CSearchDialog::openDialog(modules());
 }
 
-void CDisplayWindow::printAll() {
-    m_displayWidget->connectionsProxy()->printAll( m_displayOptions, m_filterOptions);
-}
+void CDisplayWindow::printAll()
+{ m_displayWidget->printAll(m_displayOptions, m_filterOptions); }
 
-void CDisplayWindow::printAnchorWithText() {
-    m_displayWidget->connectionsProxy()->printAnchorWithText( m_displayOptions, m_filterOptions);
-}
+void CDisplayWindow::printAnchorWithText()
+{ m_displayWidget->printAnchorWithText(m_displayOptions, m_filterOptions); }
 
 void CDisplayWindow::setFocusKeyChooser() {
     if (btConfig().session().value<bool>("GUI/showToolbarsInEachWindow", true)){
