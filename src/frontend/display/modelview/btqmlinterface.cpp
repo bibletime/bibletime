@@ -466,10 +466,8 @@ RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QStrin
     RefIndexes ri;
     CSwordKey * key = m_swordKey->copy();
     key->setKey(ref1);
-    QString x1 = key->key();
     ri.index1 = m_moduleTextModel->keyToIndex(key);
     key->setKey(ref2);
-    QString x2 = key->key();
     ri.index2 = m_moduleTextModel->keyToIndex(key);
     ri.r1 = ref1;
     ri.r2 = ref2;
