@@ -164,7 +164,7 @@ QString BtModuleTextModel::lexiconData(const QModelIndex & index, int role) cons
     QString keyName = lexiconModule->entries()[row];
 
     if (role == ModuleEntry::TextRole ||
-            role == ModuleEntry::Text1Role) {
+            role == ModuleEntry::Text0Role) {
         Rendering::CEntryDisplay entryDisplay;
         QString text = entryDisplay.text(moduleList, keyName,
                                          m_displayOptions, m_filterOptions);
