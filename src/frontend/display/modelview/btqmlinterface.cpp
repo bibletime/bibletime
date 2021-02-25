@@ -462,22 +462,6 @@ void BtQmlInterface::configModuleByType(const QString& type, const QStringList& 
     }
 }
 
-RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QString& ref2) {
-    RefIndexes ri;
-    std::unique_ptr<CSwordKey> key(m_swordKey->copy());
-    key->setKey(ref1);
-    ri.index1 = m_moduleTextModel->keyToIndex(*key);
-    key->setKey(ref2);
-    ri.index2 = m_moduleTextModel->keyToIndex(*key);
-    ri.r1 = ref1;
-    ri.r2 = ref2;
-    if (ri.index1 > ri.index2) {
-        ri.r1.swap(ri.r2);
-        std::swap(ri.index1, ri.index2);
-    }
-    return ri;
-}
-
 void BtQmlInterface::changeColorTheme() {
     Q_EMIT backgroundHighlightColorChanged();
     Q_EMIT backgroundColorChanged();
