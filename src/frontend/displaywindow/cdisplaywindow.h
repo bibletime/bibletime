@@ -282,11 +282,6 @@ private: /* Methods: */
         return a;
     }
 
-private Q_SLOTS:
-
-    /** Opens the search dialog with the strong info of the last clicked word.*/
-    void openSearchStrongsDialog();
-
 protected: /* Fields: */
 
     struct ActionsStruct {

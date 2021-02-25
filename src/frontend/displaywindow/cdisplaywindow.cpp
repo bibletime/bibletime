@@ -353,8 +353,22 @@ void CDisplayWindow::initActions() {
     m_actions.findStrongs =
             &initAddAction(
                 CResMgr::displaywindows::general::findStrongs::actionName,
-                this,
-                &CDisplayWindow::openSearchStrongsDialog);
+                [this]{
+                    QString searchText;
+                    for (auto const & strongNumber
+                         : m_displayWidget->getCurrentNodeInfo().split(
+                             '|',
+                             #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                             QString::SkipEmptyParts))
+                             #else
+                             Qt::SkipEmptyParts))
+                             #endif
+                        searchText.append("strong:").append(strongNumber)
+                                .append(' ');
+                    Search::CSearchDialog::openDialog(modules(),
+                                                      searchText,
+                                                      nullptr);
+                });
 
     m_actions.copy.reference =
             &initAddAction("copyReferenceOnly",
@@ -892,18 +906,4 @@ void CDisplayWindow::saveRawHTML() {
         file.close();
         file.flush();
     }
-}
-
-void CDisplayWindow::openSearchStrongsDialog() {
-    QString searchText;
-    Q_FOREACH(QString const & strongNumber,
-              m_displayWidget->getCurrentNodeInfo().split(
-                  '|',
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-                  QString::SkipEmptyParts))
-#else
-                  Qt::SkipEmptyParts))
-#endif
-        searchText.append("strong:").append(strongNumber).append(' ');
-    Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
 }
