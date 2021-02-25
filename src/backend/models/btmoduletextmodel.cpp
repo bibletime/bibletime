@@ -227,10 +227,6 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
             // Title only for verse 1 of Personal commentary
             if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title9Role) {
-//            if (role == ModuleEntry::Title1Role ||
-//                    role == ModuleEntry::Title2Role ||
-//                    role == ModuleEntry::Title3Role ||
-//                    role == ModuleEntry::Title4Role ){
                 if (module->isWritable() && verse == 1)
                     return "<center><h3>" + chapterTitle + "</h3></center>";
                 return "";
