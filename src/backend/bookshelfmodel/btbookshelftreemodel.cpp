@@ -47,7 +47,7 @@ void BtBookshelfTreeModel::Grouping::saveTo(BtConfigCore & config,
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
     : QAbstractItemModel(parent)
-    , m_rootItem(new RootItem)
+    , m_rootItem(std::make_unique<RootItem>())
     , m_defaultChecked(MODULE_HIDDEN)
     , m_checkable(false) {}
 
@@ -55,7 +55,7 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(BtConfigCore const & config,
                                            QString const & configKey,
                                            QObject * parent)
        : QAbstractItemModel(parent)
-       , m_rootItem(new RootItem)
+       , m_rootItem(std::make_unique<RootItem>())
        , m_groupingOrder(config, configKey)
        , m_defaultChecked(MODULE_HIDDEN)
        , m_checkable(false) {}
@@ -63,14 +63,12 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(BtConfigCore const & config,
 BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping & grouping,
                                            QObject * parent)
         : QAbstractItemModel(parent)
-        , m_rootItem(new RootItem)
+        , m_rootItem(std::make_unique<RootItem>())
         , m_groupingOrder(grouping)
         , m_defaultChecked(MODULE_HIDDEN)
         , m_checkable(false) {}
 
-BtBookshelfTreeModel::~BtBookshelfTreeModel() {
-    delete m_rootItem;
-}
+BtBookshelfTreeModel::~BtBookshelfTreeModel() = default;
 
 int BtBookshelfTreeModel::rowCount(const QModelIndex & parent) const {
     return getItem(parent).children().size();
@@ -108,7 +106,7 @@ QModelIndex BtBookshelfTreeModel::parent(const QModelIndex & index) const {
     Item * parentItem(childItem->parent());
     BT_ASSERT(parentItem);
 
-    if (parentItem == m_rootItem)
+    if (parentItem == m_rootItem.get())
         return QModelIndex();
 
     return createIndex(parentItem->childIndex(), 0, parentItem);
@@ -255,11 +253,10 @@ void BtBookshelfTreeModel::setSourceModel(
         disconnect(&model, &QAbstractItemModel::dataChanged,
                    this,   &BtBookshelfTreeModel::moduleDataChanged);
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
-        delete m_rootItem;
+        m_rootItem = std::make_unique<RootItem>();
         m_modules.clear();
         m_sourceIndexMap.clear();
         m_checkedModulesCache.clear();
-        m_rootItem = new RootItem;
         endRemoveRows();
     }
 
@@ -309,9 +306,8 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping & groupingOrder,
         m_checkedModulesCache.clear();
 
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
-        delete m_rootItem;
+        m_rootItem = std::make_unique<RootItem>();
         m_modules.clear();
-        m_rootItem = new RootItem;
         endRemoveRows();
 
         for (int i = 0; i < m_sourceModel->rowCount(); i++) {
@@ -435,7 +431,8 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo & module) {
 
     // Set i to be the lowest item (including empty groups) to remove:
     BT_ASSERT(i->parent());
-    while (i->parent() != m_rootItem && i->parent()->children().size() <= 1)
+    while (i->parent() != m_rootItem.get()
+           && i->parent()->children().size() <= 1)
         i = i->parent();
     BT_ASSERT(i);
     BT_ASSERT(i->parent());

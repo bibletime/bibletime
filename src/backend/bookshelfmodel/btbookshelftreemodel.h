@@ -194,7 +194,7 @@ private: /* Methods: */
 private: /* Fields: */
 
     std::shared_ptr<QAbstractItemModel> m_sourceModel;
-    BookshelfModel::Item * m_rootItem;
+    std::unique_ptr<BookshelfModel::Item> m_rootItem;
     ModuleItemMap m_modules;
     SourceIndexMap m_sourceIndexMap;
     Grouping m_groupingOrder;
