@@ -265,8 +265,6 @@ protected Q_SLOTS:
 
     void printAnchorWithText();
 
-    void setFocusKeyChooser();
-
     /**
         * This function saves the entry as html using the CExportMgr class.
         */

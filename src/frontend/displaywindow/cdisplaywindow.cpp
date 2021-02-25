@@ -299,7 +299,18 @@ void CDisplayWindow::initActions() {
     initAction(DWG::search::actionName,
                this,
                &CDisplayWindow::slotSearchInModules);
-    initAddAction("openLocation", this, &CDisplayWindow::setFocusKeyChooser);
+    initAddAction(
+                "openLocation",
+                [this]{
+                    if (btConfig().session().value<bool>(
+                            "GUI/showToolbarsInEachWindow",
+                            true))
+                    {
+                        keyChooser()->setFocus();
+                    } else if (auto * const kc = btMainWindow()->keyChooser()) {
+                        kc->setFocus();
+                    }
+                });
     initAddAction("pageDown",
                   [this]{
                       if (m_displayWidget)
@@ -848,16 +859,6 @@ void CDisplayWindow::printAll()
 
 void CDisplayWindow::printAnchorWithText()
 { m_displayWidget->printAnchorWithText(m_displayOptions, m_filterOptions); }
-
-void CDisplayWindow::setFocusKeyChooser() {
-    if (btConfig().session().value<bool>("GUI/showToolbarsInEachWindow", true)){
-        keyChooser()->setFocus();
-    } else {
-        CKeyChooser* mainWinKeyChooser = btMainWindow()->keyChooser();
-        if (mainWinKeyChooser)
-            mainWinKeyChooser->setFocus();
-    }
-}
 
 /** This function saves the entry as html using the CExportMgr class. */
 void CDisplayWindow::saveAsHTML() {
