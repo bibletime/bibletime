@@ -436,7 +436,11 @@ void CDisplayWindow::initView() {
 
     // Create the Text Header toolbar
     addToolBarBreak();
-    setHeaderBar(new QToolBar(this));
+    m_headerBar = new QToolBar(this);
+    m_headerBar->setMovable(false);
+    m_headerBar->setWindowTitle(tr("Text area header"));
+    m_headerBar->setVisible(btConfig().session().value<bool>("GUI/showTextWindowHeaders", true));
+
     addToolBar(headerBar());
 }
 
@@ -685,14 +689,6 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         bar->setLayoutDirection(Qt::LeftToRight);
         bar->setVisible(btConfig().session().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     }
-}
-
-/** Setup the module header of text area. */
-void CDisplayWindow::setHeaderBar( QToolBar* header ) {
-    m_headerBar = header;
-    header->setMovable(false);
-    header->setWindowTitle(tr("Text area header"));
-    header->setVisible(btConfig().session().value<bool>("GUI/showTextWindowHeaders", true));
 }
 
 /** Sets the modules. */

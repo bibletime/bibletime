@@ -224,8 +224,6 @@ protected:
     /** Sets the module chooser bar.*/
     void setModuleChooserBar( BtModuleChooserBar* bar );
 
-    void setHeaderBar(QToolBar* header);
-
     QToolBar * headerBar() const { return m_headerBar; }
 
     /** Sets the modules. */
