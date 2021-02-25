@@ -148,7 +148,8 @@ void CDisplayWindow::windowActivated() {
 QString CDisplayWindow::windowCaption() {
     if (m_modules.isEmpty())
         return {};
-    return QString(key()->key()).append(" (").append(m_modules.join(" | ")).append(")");
+    return QString(m_swordKey->key()).append(" (").append(m_modules.join(" | "))
+                .append(")");
 }
 
 /** Returns the used modules as a pointer list */
@@ -178,7 +179,7 @@ void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
     // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
 
     // Save current key:
-    if (CSwordKey * const k = key()) {
+    if (CSwordKey * const k = m_swordKey) {
         if (sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(k)) {
             // Save keys in english only:
             const QString oldLang = QString::fromLatin1(vk->getLocale());
@@ -389,7 +390,10 @@ void CDisplayWindow::initActions() {
                                        tr("Saving"),
                                        filterOptions(),
                                        displayOptions());
-                    mgr.saveKey(key(), CExportManager::Text, true, modules());
+                    mgr.saveKey(m_swordKey,
+                                CExportManager::Text,
+                                true,
+                                modules());
                 });
 
     m_actions.save.entryAsHTML =
@@ -400,7 +404,10 @@ void CDisplayWindow::initActions() {
                                        tr("Saving"),
                                        filterOptions(),
                                        displayOptions());
-                    mgr.saveKey(key(), CExportManager::HTML, true, modules());
+                    mgr.saveKey(m_swordKey,
+                                CExportManager::HTML,
+                                true,
+                                modules());
                 });
 
     m_actions.print.reference =
@@ -469,7 +476,10 @@ void CDisplayWindow::initView() {
     addToolBar(mainToolBar());
 
     // Create keychooser
-    setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
+    setKeyChooser(CKeyChooser::createInstance(modules(),
+                                              history(),
+                                              m_swordKey,
+                                              mainToolBar()));
 
     // Create the Works toolbar
     setModuleChooserBar( new BtModuleChooserBar(this));
@@ -567,8 +577,12 @@ void CDisplayWindow::updatePopupMenu() {
 
 void CDisplayWindow::setupMainWindowToolBars() {
     // Navigation toolbar
-    QString keyReference = key()->key();
-    CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
+    QString keyReference = m_swordKey->key();
+    auto * const keyChooser =
+            CKeyChooser::createInstance(modules(),
+                                        history(),
+                                        m_swordKey,
+                                        btMainWindow()->navToolBar());
     keyChooser->key()->setKey(keyReference);
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     BT_CONNECT(keyChooser, &CKeyChooser::keyChanged,
@@ -597,7 +611,7 @@ bool CDisplayWindow::hasSelectedText() {
 }
 
 void CDisplayWindow::copyDisplayedText()
-{ CExportManager().copyKey(key(), CExportManager::Text, true); }
+{ CExportManager().copyKey(m_swordKey, CExportManager::Text, true); }
 
 int CDisplayWindow::getSelectedColumn() const {
     if (m_displayWidget)
@@ -696,7 +710,7 @@ void CDisplayWindow::modulesChanged() {
     }
     else {
         Q_EMIT sigModulesChanged(modules());
-        key()->setModule(modules().first());
+        m_swordKey->setModule(modules().first());
         keyChooser()->setModules(modules());
     }
 }
@@ -707,8 +721,8 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     if (!isReady() || !newKey || modules().empty() || !modules().first())
         return;
 
-    if (key() != newKey)
-        key()->setKey(newKey->key());
+    if (m_swordKey != newKey)
+        m_swordKey->setKey(newKey->key());
 
     /// \todo next-TODO how about options?
     auto * const display = modules().first()->getDisplay();
@@ -816,9 +830,7 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
 }
 
 /** Lookup the current key. Used to refresh the display. */
-void CDisplayWindow::lookup() {
-    lookupSwordKey( key() );
-}
+void CDisplayWindow::lookup() { lookupSwordKey(m_swordKey); }
 
 void CDisplayWindow::lookupKey( const QString& keyName ) {
     /* This function is called for example after a bookmark was dropped on this window
@@ -838,9 +850,9 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
 
     /// \todo check for containsRef compat
     if (m && modules().contains(m)) {
-        key()->setKey(keyName);
-        keyChooser()->setKey(key()); //the key chooser does send an update signal
-        Q_EMIT sigKeyChanged(key());
+        m_swordKey->setKey(keyName);
+        keyChooser()->setKey(m_swordKey); //the key chooser does send an update signal
+        Q_EMIT sigKeyChanged(m_swordKey);
     }
     else {     //given module not displayed in this window
         //if the module is displayed in another display window we assume a wrong drop
