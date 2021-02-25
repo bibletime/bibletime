@@ -135,7 +135,6 @@ Q_SIGNALS:
 
 protected:
 
-    void slotGoToAnchor(const QString& anchor);
     struct DNDData {
         bool mousePressed;
         bool isDragging;

@@ -265,10 +265,6 @@ void BtModelViewReadDisplay::selectAll() {
 void BtModelViewReadDisplay::moveToAnchor( const QString& /*anchor*/ ) {
 }
 
-// Scroll the view to the correct location specified by anchor
-void BtModelViewReadDisplay::slotGoToAnchor(const QString& /*anchor*/) {
-}
-
 // Save the Lemma (Strongs number) attribute
 void BtModelViewReadDisplay::setLemma(const QString& lemma) {
     m_nodeInfo = lemma;
