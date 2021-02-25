@@ -208,15 +208,9 @@ protected:
     CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
     ~CDisplayWindow() override;
 
-    /**
-          \returns the display options used by this display window.
-        */
-    DisplayOptions & displayOptions() { return m_displayOptions; }
+    void setDisplayOptions(DisplayOptions const & v) { m_displayOptions = v; }
 
-    /**
-          \returns the filter options used by this window.
-        */
-    FilterOptions & filterOptions() { return m_filterOptions; }
+    void setFilterOptions(FilterOptions const & v) { m_filterOptions = v; }
 
     template <typename ... Args>
     QAction & initAddAction(Args && ... args) {

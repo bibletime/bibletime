@@ -39,8 +39,8 @@ void CBibleReadWindow::applyProfileSettings(BtConfigCore const & conf) {
     CDisplayWindow::applyProfileSettings(conf);
 
     setObjectName("CBibleReadWindow");
-    filterOptions() = BtConfig::loadFilterOptionsFromGroup(conf);
-    displayOptions() = BtConfig::loadDisplayOptionsFromGroup(conf);
+    setFilterOptions(BtConfig::loadFilterOptionsFromGroup(conf));
+    setDisplayOptions(BtConfig::loadDisplayOptionsFromGroup(conf));
 
     Q_EMIT sigFilterOptionsChanged(filterOptions());
     Q_EMIT sigDisplayOptionsChanged(displayOptions());
