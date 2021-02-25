@@ -42,7 +42,7 @@ using namespace InfoDisplay;
 BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                                                QWidget * parentWidget)
     : QWidget(parentWidget)
-    , CReadDisplay(displayWindow)
+    , CDisplay(displayWindow)
     , m_magTimerId(0)
     , m_widget(nullptr)
 {

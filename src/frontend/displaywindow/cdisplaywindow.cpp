@@ -296,7 +296,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
 void CDisplayWindow::resizeEvent(QResizeEvent * e) {
     Q_UNUSED(e)
     if (displayWidget())
-        static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+        displayWidget()->moveToAnchor(
                 Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
@@ -519,8 +519,7 @@ void CDisplayWindow::setupPopupMenu() {
 void CDisplayWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
 
-    CReadDisplay const & display =
-            *static_cast<CReadDisplay *>(displayWidget());
+    CDisplay const & display = *displayWidget();
 
     m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
@@ -558,7 +557,7 @@ void CDisplayWindow::setupMainWindowToolBars() {
 }
 
 void CDisplayWindow::slotMoveToAnchor() {
-    static_cast<CReadDisplay *>(displayWidget())->moveToAnchor(
+    displayWidget()->moveToAnchor(
                 Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 }
 
@@ -898,7 +897,7 @@ QMenu* CDisplayWindow::popup() {
 /** Sets the display widget used by this display window. */
 void CDisplayWindow::setDisplayWidget(CDisplay * newDisplay) {
     // Lets be orwellianly paranoid here:
-    BT_ASSERT(dynamic_cast<CReadDisplay *>(newDisplay));
+    BT_ASSERT(newDisplay);
 
     m_displayWidget = newDisplay;
     if (m_readDisplayWidget) {
@@ -908,7 +907,7 @@ void CDisplayWindow::setDisplayWidget(CDisplay * newDisplay) {
                        this, &CDisplayWindow::slotMoveToAnchor);
     }
 
-    m_readDisplayWidget = static_cast<CReadDisplay *>(newDisplay);
+    m_readDisplayWidget = static_cast<CDisplay *>(newDisplay);
 
     if (BtModelViewReadDisplay * const v =
             dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))

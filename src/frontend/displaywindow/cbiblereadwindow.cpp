@@ -28,7 +28,7 @@
 #include "../bibletimeapp.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
-#include "../display/creaddisplay.h"
+#include "../display/cdisplay.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 #include "btdisplaysettingsbutton.h"
@@ -237,8 +237,7 @@ void CBibleReadWindow::setupPopupMenu() {
 /** Reimplemented. */
 void CBibleReadWindow::updatePopupMenu() {
 
-    CReadDisplay const & display =
-            *static_cast<CReadDisplay *>(displayWidget());
+    CDisplay const & display = *displayWidget();
     m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
 
     bool const hasActiveAnchor = display.hasActiveAnchor();

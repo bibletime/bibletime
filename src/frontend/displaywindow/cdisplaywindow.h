@@ -21,7 +21,6 @@
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
-#include "../display/creaddisplay.h"
 #include "btactioncollection.h"
 
 
@@ -374,7 +373,7 @@ private:
     QMenu* m_popupMenu;
     CDisplay* m_displayWidget;
     BTHistory* m_history;
-    CReadDisplay * m_readDisplayWidget = nullptr;
+    CDisplay * m_readDisplayWidget = nullptr;
 };
 
 #endif

@@ -33,13 +33,13 @@
 #include "../../../util/directory.h"
 #include "../../BtMimeData.h"
 #include "../../display/btmodelviewreaddisplay.h"
-#include "../../display/creaddisplay.h"
+#include "../../display/cdisplay.h"
 #include "../../display/modelview/btqmlinterface.h"
 #include "btquickwidget.h"
 #include "bttextfilter.h"
 
 
-BtQmlScrollView::BtQmlScrollView(QWidget * parent, CReadDisplay* readDisplay)
+BtQmlScrollView::BtQmlScrollView(QWidget * parent, CDisplay* readDisplay)
     : QWidget(parent),
       m_readDisplay(readDisplay),
       m_qmlInterface(nullptr),

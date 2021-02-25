@@ -41,6 +41,7 @@
 #include "btmessageinputdialog.h"
 #include "cmdiarea.h"
 #include "display/btfindwidget.h"
+#include "display/cdisplay.h"
 #include "displaywindow/btactioncollection.h"
 #include "displaywindow/cbiblereadwindow.h"
 #include "displaywindow/cbookreadwindow.h"

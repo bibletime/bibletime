@@ -25,7 +25,7 @@
 class BtQuickWidget;
 class BtTextFilter;
 class BtQmlInterface;
-class CReadDisplay;
+class CDisplay;
 class CSwordModuleInfo;
 class CSwordKey;
 struct FilterOptions;
@@ -36,7 +36,7 @@ class BtQmlScrollView : public QWidget {
     Q_OBJECT
 public:
 
-    BtQmlScrollView(QWidget * parent, CReadDisplay* readDisplay);
+    BtQmlScrollView(QWidget * parent, CDisplay* readDisplay);
     ~BtQmlScrollView() override;
 
     /** hightlight text */
@@ -74,7 +74,7 @@ Q_SIGNALS:
 
 private:    void initScrollBar();
 
-    CReadDisplay* m_readDisplay;
+    CDisplay* m_readDisplay;
     BtQmlInterface* m_qmlInterface;
     BtQuickWidget* m_quickWidget;
     QScrollBar* m_scrollBar;

@@ -14,6 +14,7 @@
 #define CDISPLAY_H
 
 #include <QMap>
+#include <utility>
 #include "../../backend/btglobal.h"
 #include "../../backend/managers/cswordbackend.h"
 
@@ -106,9 +107,9 @@ public:
         */
     CDisplayWindow* parentWindow() const;
 
-    virtual void print(const CDisplay::TextPart,
-                       const DisplayOptions &displayOptions,
-                       const FilterOptions &filterOptions) = 0;
+    void print(CDisplay::TextPart const,
+               DisplayOptions const & displayOptions,
+               FilterOptions const & filterOptions);
     /**
         * Installs the popup which should be opened when the right mouse button was pressed.
         */
@@ -124,14 +125,30 @@ public:
 
     virtual QString getCurrentNodeInfo() const { return {}; }
 
+    /** \returns whether the display has an active anchor. */
+    bool hasActiveAnchor() const { return !m_activeAnchor.isEmpty(); }
+
+    /** \returns the current active anchor. */
+    QString const & activeAnchor() const noexcept { return m_activeAnchor; }
+
+    /** \brief Moves the widget to the given anchor. */
+    virtual void moveToAnchor(QString const &) = 0;
+
 protected:
     CDisplay(CDisplayWindow* parent);
     virtual ~CDisplay();
+
+    /**
+        \brief Sets the current anchor.
+        \param[in] anchor The new current anchor.
+    */
+    void setActiveAnchor(QString anchor) { m_activeAnchor = std::move(anchor); }
 
 private:
     CDisplayWindow* m_parentWindow;
     CDisplayConnections* m_connections;
     QMenu* m_popup;
+    QString m_activeAnchor; //< Holds the current anchor
 };
 
 class CDisplayConnections : public QObject {

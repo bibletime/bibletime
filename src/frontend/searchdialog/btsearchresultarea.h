@@ -20,7 +20,6 @@
 #include <QWidget>
 #include "../../backend/managers/cswordbackend.h"
 #include "../../backend/cswordmodulesearch.h"
-#include "../display/creaddisplay.h"
 #include "analysis/csearchanalysisdialog.h"
 
 

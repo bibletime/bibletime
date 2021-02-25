@@ -20,7 +20,6 @@
 #include "../backend/rendering/btinforendering.h"
 
 
-class CReadDisplay;
 class QAction;
 class QSize;
 class BibleTime;

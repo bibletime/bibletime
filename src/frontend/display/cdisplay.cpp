@@ -18,8 +18,10 @@
 #include <QMenu>
 #include <QTimer>
 #include "../../backend/managers/referencemanager.h"
+#include "../../backend/drivers/cswordbiblemoduleinfo.h"
 #include "../../util/tool.h"
 #include "../btcopybyreferencesdialog.h"
+#include "../cexportmanager.h"
 #include "../displaywindow/cdisplaywindow.h"
 
 
@@ -158,6 +160,67 @@ CDisplayConnections* CDisplay::connectionsProxy() const {
 
 CDisplayWindow* CDisplay::parentWindow() const {
     return m_parentWindow;
+}
+
+void CDisplay::print(CDisplay::TextPart const type,
+                     DisplayOptions const & displayOptions,
+                     FilterOptions const & filterOptions)
+{
+    using CSBiMI = CSwordBibleModuleInfo;
+    CDisplayWindow* window = parentWindow();
+    CSwordKey* const key = window->key();
+    const CSwordModuleInfo *module = key->module();
+
+    const CDisplayWindow *displayWindow = parentWindow();
+    CExportManager mgr(false, QString(), displayWindow->filterOptions(), displayWindow->displayOptions());
+
+    switch (type) {
+    case Document: {
+        if (module->type() == CSwordModuleInfo::Bible) {
+            CSwordVerseKey* vk = dynamic_cast<CSwordVerseKey*>(key);
+
+            CSwordVerseKey startKey(*vk);
+            startKey.setVerse(1);
+
+            CSwordVerseKey stopKey(*vk);
+
+            const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
+            if (bible) {
+                stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.book()), startKey.getChapter()));
+            }
+
+            mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
+        }
+        else if (module->type() == CSwordModuleInfo::Lexicon || module->type() == CSwordModuleInfo::Commentary ) {
+            mgr.printKey(module, key->key(), key->key(), displayOptions, filterOptions);
+        }
+        else if (module->type() == CSwordModuleInfo::GenericBook) {
+            CSwordTreeKey* tree = dynamic_cast<CSwordTreeKey*>(key);
+
+            CSwordTreeKey startKey(*tree);
+            //        while (startKey.previousSibling()) { // go to first sibling on this level!
+            //        }
+
+            CSwordTreeKey stopKey(*tree);
+            //    if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(module)) {
+            //          while ( stopKey.nextSibling() ) { //go to last displayed sibling!
+            //          }
+            //        }
+            mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);
+        }
+        break;
+    }
+
+    case AnchorWithText: {
+        if (hasActiveAnchor()) {
+            mgr.printByHyperlink( activeAnchor(), displayOptions, filterOptions );
+        }
+        break;
+    }
+
+    default:
+        break;
+    }
 }
 
 /** Installs the popup which should be opened when the right mouse button was pressed. */

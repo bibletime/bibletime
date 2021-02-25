@@ -22,7 +22,6 @@
 #include "../bibletime.h"
 #include "../bibletimeapp.h"
 #include "../display/cdisplay.h"
-#include "../display/creaddisplay.h"
 #include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 #include "btmodulechooserbar.h"

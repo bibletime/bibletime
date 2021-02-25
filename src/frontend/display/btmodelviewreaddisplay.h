@@ -14,7 +14,7 @@
 #define BTMODELVIEWREADDISPLAY_H
 
 #include <QWidget>
-#include "creaddisplay.h"
+#include "cdisplay.h"
 #include "modelview/btqmlscrollview.h"
 #include <QDragEnterEvent>
 #include <QDropEvent>
@@ -60,7 +60,7 @@ class BtQmlInterface;
 
 /** The view implementation for the Model/View read display.
   */
-class BtModelViewReadDisplay : public QWidget, public CReadDisplay {
+class BtModelViewReadDisplay : public QWidget, public CDisplay {
     Q_OBJECT
 
 public:
