@@ -87,8 +87,7 @@ void CBookReadWindow::initView() {
     m_treeChooser->hide();
     splitter->setStretchFactor(1,3);
 
-    BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
-    if (disp)
+    if (auto * const disp = displayWidget())
         disp->setModules(getModuleList());
 
     // Create Navigation toolbar
