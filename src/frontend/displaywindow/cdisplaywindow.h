@@ -267,10 +267,6 @@ protected Q_SLOTS:
 
     void setFocusKeyChooser();
 
-    void pageDown();
-
-    void pageUp();
-
     /**
         * This function saves the entry as html using the CExportMgr class.
         */

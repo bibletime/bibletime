@@ -78,7 +78,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
     setObjectName("CDisplayWindow");
     m_actionCollection = new BtActionCollection(this);
 
-    for (auto const * const mod : newModules)
+    for (auto const * const mod : modules)
         m_modules.append(mod->name());
 
     // Connect this to the backend module list changes
@@ -300,8 +300,16 @@ void CDisplayWindow::initActions() {
                this,
                &CDisplayWindow::slotSearchInModules);
     initAddAction("openLocation", this, &CDisplayWindow::setFocusKeyChooser);
-    initAddAction("pageDown", this, &CDisplayWindow::pageDown);
-    initAddAction("pageUp", this, &CDisplayWindow::pageUp);
+    initAddAction("pageDown",
+                  [this]{
+                      if (m_displayWidget)
+                          m_displayWidget->pageUp();
+                  });
+    initAddAction("pageUp",
+                  [this]{
+                      if (m_displayWidget)
+                          m_displayWidget->pageUp();
+                  });
 
     initAddAction("copySelectedText",
                   m_displayWidget,
@@ -849,16 +857,6 @@ void CDisplayWindow::setFocusKeyChooser() {
         if (mainWinKeyChooser)
             mainWinKeyChooser->setFocus();
     }
-}
-
-void CDisplayWindow::pageDown() {
-    if (m_displayWidget)
-        m_displayWidget->pageDown();
-}
-
-void CDisplayWindow::pageUp() {
-    if (m_displayWidget)
-        m_displayWidget->pageUp();
 }
 
 /** This function saves the entry as html using the CExportMgr class. */
