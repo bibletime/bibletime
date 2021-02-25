@@ -275,7 +275,5 @@ void BtModelViewReadDisplay::setLemma(const QString& lemma) {
 }
 
 // Open the Find text dialog
-void BtModelViewReadDisplay::openFindTextDialog() {
-    BibleTime* bibleTime = parentWindow()->mdi()->bibleTimeWindow();
-    bibleTime->openFindWidget();
-}
+void BtModelViewReadDisplay::openFindTextDialog()
+{ parentWindow()->btMainWindow()->openFindWidget(); }
