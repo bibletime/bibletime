@@ -61,11 +61,11 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
 
     BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::updateReference,
                [this](QString const & reference) {
-                   auto & window = *parentWindow();
-                   auto & key = *window.key();
-                   key.setKey(reference);
-                   window.keyChooser()->updateKey(&key);
-                   window.setWindowTitle(window.windowCaption());
+                   auto * const key = m_parentWindow->key();
+                   key->setKey(reference);
+                   m_parentWindow->keyChooser()->updateKey(key);
+                   m_parentWindow->setWindowTitle(
+                               m_parentWindow->windowCaption());
                });
     BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::dragOccuring,
                [this](const QString& moduleName, const QString& keyName) {
@@ -79,7 +79,7 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                    {
                        drag.setPixmap(
                                module->moduleIcon().pixmap(
-                                   parentWindow()->mainToolBar()->iconSize()));
+                                   m_parentWindow->mainToolBar()->iconSize()));
                        std::unique_ptr<CSwordKey> key(
                                    CSwordKey::createInstance(module));
                        key->setKey(keyName);
@@ -90,10 +90,9 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                });
     BT_CONNECT(m_widget, &BtQmlScrollView::referenceDropped,
                [this](QString const & reference) { /// \todo Fix me
-                   auto & window = *parentWindow();
-                   auto key(window.key());
+                   auto key(m_parentWindow->key());
                    key->setKey(reference);
-                   window.lookupKey(reference);
+                   m_parentWindow->lookupKey(reference);
                });
 }
 
@@ -104,13 +103,11 @@ bool BtModelViewReadDisplay::copy(TextType const format, TextPart const part) {
     return true;
 }
 
-void BtModelViewReadDisplay::copySelectedText() {
-    parentWindow()->copySelectedText();
-}
+void BtModelViewReadDisplay::copySelectedText()
+{ m_parentWindow->copySelectedText(); }
 
-void BtModelViewReadDisplay::copyByReferences() {
-    parentWindow()->copyByReferences();
-}
+void BtModelViewReadDisplay::copyByReferences()
+{ m_parentWindow->copyByReferences(); }
 
 bool BtModelViewReadDisplay::save(TextType const format, TextPart const part) {
     const QString content = text(format, part);
@@ -138,12 +135,13 @@ void BtModelViewReadDisplay::print(TextPart const type,
                                    FilterOptions const & filterOptions)
 {
     using CSBiMI = CSwordBibleModuleInfo;
-    CDisplayWindow* window = parentWindow();
-    CSwordKey* const key = window->key();
+    CSwordKey* const key = m_parentWindow->key();
     const CSwordModuleInfo *module = key->module();
 
-    const CDisplayWindow *displayWindow = parentWindow();
-    CExportManager mgr(false, QString(), displayWindow->filterOptions(), displayWindow->displayOptions());
+    CExportManager mgr(false,
+                       QString(),
+                       m_parentWindow->filterOptions(),
+                       m_parentWindow->displayOptions());
 
     switch (type) {
     case Document: {
@@ -207,8 +205,7 @@ BtModelViewReadDisplay::text(TextType const format, TextPart const part) {
             text = m_currentSource;
         }
         else {
-            CDisplayWindow* window = parentWindow();
-            CSwordKey* const key = window->key();
+            CSwordKey* const key = m_parentWindow->key();
             const CSwordModuleInfo *module = key->module();
             //This is never used for Bibles, so it is not implemented for
             //them.  If it should be, see CReadDisplay::print() for example
@@ -350,4 +347,4 @@ void BtModelViewReadDisplay::setLemma(const QString& lemma) {
 
 // Open the Find text dialog
 void BtModelViewReadDisplay::openFindTextDialog()
-{ parentWindow()->btMainWindow()->openFindWidget(); }
+{ m_parentWindow->btMainWindow()->openFindWidget(); }

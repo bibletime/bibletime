@@ -112,9 +112,6 @@ public: /* Methods: */
     */
     bool save(TextType const format, TextPart const part);
 
-    /** \returns the parent window used for this display widget. */
-    CDisplayWindow* parentWindow() const { return m_parentWindow; }
-
     void print(TextPart const,
                DisplayOptions const & displayOptions,
                FilterOptions const & filterOptions);
