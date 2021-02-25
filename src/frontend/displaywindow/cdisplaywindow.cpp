@@ -68,6 +68,8 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
       m_displayWidget(nullptr),
       m_history(nullptr) {
 
+    setMinimumSize( 100, 100 );
+
     // Cannot delete on close. QMdiSubWindow and this window work
     // as pairs. They must be deleted in a specific order.
     // QMdiSubWindow handles this procedure.
@@ -736,7 +738,6 @@ void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
 bool CDisplayWindow::init() {
     initView();
-    setMinimumSize( 100, 100 );
 
     auto const & conf = btConfig();
 
