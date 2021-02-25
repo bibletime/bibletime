@@ -410,7 +410,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo & module,
         Item & parentItem = getItem(parentIndex);
         ModuleItem * const newItem = new ModuleItem(module, *this);
         newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
-        const int newIndex(parentItem.indexFor(newItem));
+        const int newIndex(parentItem.indexFor(*newItem));
 
         // Actually do the insertion:
         beginInsertRows(parentIndex, newIndex, newIndex);

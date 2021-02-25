@@ -74,7 +74,7 @@ public: /* Methods: */
              inserted.
       \param[in] newItem Pointer to the item that would be inserted.
     */
-    int indexFor(Item * newItem);
+    int indexFor(Item const & newItem);
 
     /**
       \brief Inserts the given item as a child at the given index.

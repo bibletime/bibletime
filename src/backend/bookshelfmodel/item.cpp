@@ -21,17 +21,15 @@ Item::~Item() {
     qDeleteAll(m_children);
 }
 
-int Item::indexFor(Item * newItem) {
-    BT_ASSERT(newItem);
-
+int Item::indexFor(Item const & newItem) {
     if (m_children.empty())
         return 0;
 
     int i = 0;
     for (;;) {
         Item * const nextItem(m_children.at(i));
-        BT_ASSERT(nextItem->type() == newItem->type());
-        if (*newItem < *nextItem)
+        BT_ASSERT(nextItem->type() == newItem.type());
+        if (newItem < *nextItem)
             return i;
 
         i++;

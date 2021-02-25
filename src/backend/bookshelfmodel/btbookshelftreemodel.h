@@ -183,7 +183,7 @@ private: /* Methods: */
 
         if (!groupItem) {
             groupItem = new T(module);
-            groupIndex = parentItem.indexFor(groupItem);
+            groupIndex = parentItem.indexFor(*groupItem);
             beginInsertRows(parentIndex, groupIndex, groupIndex);
             parentItem.insertChild(groupIndex, groupItem);
             endInsertRows();
