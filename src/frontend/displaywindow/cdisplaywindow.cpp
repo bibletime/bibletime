@@ -301,15 +301,14 @@ void CDisplayWindow::initActions() {
     initAddAction("pageDown", this, &CDisplayWindow::pageDown);
     initAddAction("pageUp", this, &CDisplayWindow::pageUp);
 
-    auto * const dw = displayWidget();
     initAddAction("copySelectedText",
-                  dw,
+                  m_displayWidget,
                   &BtModelViewReadDisplay::copySelectedText);
     initAddAction("copyByReferences",
-                  dw,
+                  m_displayWidget,
                   &BtModelViewReadDisplay::copyByReferences);
     initAddAction("findText",
-                  dw,
+                  m_displayWidget,
                   &BtModelViewReadDisplay::openFindTextDialog);
     initAddAction(DWG::backInHistory::actionName,
                   keyChooser()->history(),
@@ -339,11 +338,11 @@ void CDisplayWindow::initActions() {
 
     m_actions.copy.reference =
             &initAddAction("copyReferenceOnly",
-                           dw,
+                           m_displayWidget,
                            &BtModelViewReadDisplay::copyAnchorOnly);
 
     m_actions.copy.entry = &initAddAction("copyEntryWithText",
-                                          dw,
+                                          m_displayWidget,
                                           &BtModelViewReadDisplay::copyAll);
 
     m_actions.copy.selectedText = &ac->action("copySelectedText");
@@ -415,7 +414,7 @@ void CDisplayWindow::initView() {
     // Create display widget for this window
     auto readDisplay = new BtModelViewReadDisplay(this, this);
     setDisplayWidget(readDisplay);
-    setCentralWidget( displayWidget()->view() );
+    setCentralWidget(m_displayWidget->view());
     readDisplay->setModules(getModuleList());
     setWindowIcon(util::tool::getIconForModule(modules().first()));
 
@@ -505,12 +504,10 @@ void CDisplayWindow::setupPopupMenu() {
 
 void CDisplayWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
+    m_actions.findStrongs->setEnabled(
+                !m_displayWidget->getCurrentNodeInfo().isNull());
 
-    auto const & display = *displayWidget();
-
-    m_actions.findStrongs->setEnabled(!display.getCurrentNodeInfo().isNull());
-
-    bool const hasActiveAnchor = display.hasActiveAnchor();
+    bool const hasActiveAnchor = m_displayWidget->hasActiveAnchor();
     m_actions.copy.reference->setEnabled(hasActiveAnchor);
 
     m_actions.print.reference->setEnabled(hasActiveAnchor);
@@ -583,7 +580,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     if (m_modules.isEmpty()) {
         close();
     } else {
-        displayWidget()->reloadModules();
+        m_displayWidget->reloadModules();
 
         if (CKeyChooser * const kc = keyChooser())
             kc->setModules(modules(), false);
@@ -595,9 +592,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         Q_EMIT sigModuleListSet(m_modules);
     }
 
-    if (auto * const dw =
-            dynamic_cast<BtModelViewReadDisplay *>(displayWidget()))
-        dw->settingsChanged();
+    if (m_displayWidget)
+        m_displayWidget->settingsChanged();
 
     actionCollection()->readShortcuts("Lexicon shortcuts");
 }
@@ -605,7 +601,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 void CDisplayWindow::slotAddModule(int index, QString module) {
     BT_ASSERT(index <= m_modules.size());
     m_modules.insert(index, module);
-    displayWidget()->setModules(m_modules);
+    m_displayWidget->setModules(m_modules);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
@@ -614,7 +610,7 @@ void CDisplayWindow::slotAddModule(int index, QString module) {
 void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
     BT_ASSERT(index < m_modules.size());
     m_modules.replace(index, newModule);
-    displayWidget()->setModules(m_modules);
+    m_displayWidget->setModules(m_modules);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
@@ -623,7 +619,7 @@ void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
 void CDisplayWindow::slotRemoveModule(int index) {
     BT_ASSERT(index < m_modules.size());
     m_modules.removeAt(index);
-    displayWidget()->setModules(m_modules);
+    m_displayWidget->setModules(m_modules);
     lookup();
     modulesChanged();
     Q_EMIT sigModuleListChanged();
@@ -668,9 +664,9 @@ void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     auto * const display = modules().first()->getDisplay();
     BT_ASSERT(display);
 
-    displayWidget()->setDisplayOptions(displayOptions());
-    displayWidget()->setFilterOptions(filterOptions());
-    displayWidget()->scrollToKey(newKey);
+    m_displayWidget->setDisplayOptions(displayOptions());
+    m_displayWidget->setFilterOptions(filterOptions());
+    m_displayWidget->scrollToKey(newKey);
     BibleTime::instance()->autoScrollStop();
 
     setWindowTitle(windowCaption());
@@ -778,7 +774,7 @@ void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
                this, // Needed
                [this](DisplayOptions const & displayOptions) {
                    m_displayOptions = displayOptions;
-                   displayWidget()->setDisplayOptions(displayOptions);
+                   m_displayWidget->setDisplayOptions(displayOptions);
                    Q_EMIT sigDisplayOptionsChanged(m_displayOptions);
                });
     BT_CONNECT(button, &BtDisplaySettingsButton::sigChanged,
@@ -830,12 +826,8 @@ QMenu* CDisplayWindow::popup() {
         m_popupMenu = new QMenu(this);
         BT_CONNECT(m_popupMenu, &QMenu::aboutToShow,
                    [this]{ updatePopupMenu(); });
-        if (displayWidget()) {
-            displayWidget()->installPopup(m_popupMenu);
-        }
-        /*   else {
-            qWarning("CDisplayWindow:: can't instal popup menu");
-            }*/
+        if (m_displayWidget)
+            m_displayWidget->installPopup(m_popupMenu);
     }
     return m_popupMenu;
 }
@@ -902,15 +894,15 @@ void CDisplayWindow::saveRawHTML() {
                 "",
                 QObject::tr("HTML files") + " (*.html *.htm);;"
                 + QObject::tr("All files") + " (*)");
-    if (savefilename.isEmpty()) return;
-    BtModelViewReadDisplay* disp = dynamic_cast<BtModelViewReadDisplay*>(displayWidget());
-    if (disp) {
+    if (savefilename.isEmpty())
+        return;
+    if (m_displayWidget) {
         QFile file(savefilename);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
             qWarning() << "saveRawHTML: could not open file" << savefilename;
             return;
         }
-        QString source = disp->getCurrentSource();
+        QString source = m_displayWidget->getCurrentSource();
         file.write(source.toUtf8());
         file.close();
         file.flush();
@@ -920,7 +912,7 @@ void CDisplayWindow::saveRawHTML() {
 void CDisplayWindow::openSearchStrongsDialog() {
     QString searchText;
     Q_FOREACH(QString const & strongNumber,
-              displayWidget()->getCurrentNodeInfo().split(
+              m_displayWidget->getCurrentNodeInfo().split(
                   '|',
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
                   QString::SkipEmptyParts))
