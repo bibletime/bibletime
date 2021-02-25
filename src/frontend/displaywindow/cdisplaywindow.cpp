@@ -543,12 +543,6 @@ void CDisplayWindow::setupMainWindowToolBars() {
     btMainWindow()->toolsToolBar()->addWidget(button);
 }
 
-void CDisplayWindow::copySelectedText() {
-    if (m_displayWidget)
-        QGuiApplication::clipboard()->setText(
-                    m_displayWidget->qmlInterface()->getSelectedText());
-}
-
 void CDisplayWindow::copyByReferences() {
     if (m_displayWidget) {
         auto const & qml = *m_displayWidget->qmlInterface();

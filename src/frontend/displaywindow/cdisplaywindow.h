@@ -142,8 +142,6 @@ public:
 
     BtActionCollection * actionCollection() const { return m_actionCollection; }
 
-    void copySelectedText();
-
     void copyByReferences();
 
     bool hasSelectedText();

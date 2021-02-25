@@ -104,7 +104,7 @@ bool BtModelViewReadDisplay::copy(TextType const format, TextPart const part) {
 }
 
 void BtModelViewReadDisplay::copySelectedText()
-{ m_parentWindow->copySelectedText(); }
+{ QGuiApplication::clipboard()->setText(qmlInterface()->getSelectedText()); }
 
 void BtModelViewReadDisplay::copyByReferences()
 { m_parentWindow->copyByReferences(); }
