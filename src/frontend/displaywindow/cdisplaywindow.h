@@ -142,8 +142,6 @@ public:
 
     BtActionCollection * actionCollection() const { return m_actionCollection; }
 
-    void copyByReferences();
-
     bool hasSelectedText();
 
     /** Updates the status of the popup menu entries. */

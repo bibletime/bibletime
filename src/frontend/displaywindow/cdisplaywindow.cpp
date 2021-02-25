@@ -27,7 +27,6 @@
 #include "../../util/tool.h"
 #include "../bibletime.h"
 #include "../bibletimeapp.h"
-#include "../btcopybyreferencesdialog.h"
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
@@ -542,28 +541,6 @@ void CDisplayWindow::setupMainWindowToolBars() {
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);
-}
-
-void CDisplayWindow::copyByReferences() {
-    if (m_displayWidget) {
-        auto const & qml = *m_displayWidget->qmlInterface();
-        BtCopyByReferencesDialog dlg(modules(),
-                                     history(),
-                                     key(),
-                                     qml.textModel(),
-                                     this);
-        if (dlg.exec() != QDialog::Accepted)
-            return;
-
-        auto const & m = *modules().at(dlg.getColumn());
-        if (m.type() == CSwordModuleInfo::Bible
-            || m.type() == CSwordModuleInfo::Commentary)
-        {
-            qml.copyVerseRange(dlg.getReference1(), dlg.getReference2(), &m);
-        } else {
-            qml.copyRange(dlg.getIndex1(), dlg.getIndex2());
-        }
-    }
 }
 
 bool CDisplayWindow::hasSelectedText() {

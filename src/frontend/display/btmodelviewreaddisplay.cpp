@@ -30,6 +30,7 @@
 #include "../../util/btconnect.h"
 #include "../../util/directory.h"
 #include "../../util/tool.h"
+#include "../btcopybyreferencesdialog.h"
 #include "../bibletime.h"
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
@@ -106,8 +107,25 @@ bool BtModelViewReadDisplay::copy(TextType const format, TextPart const part) {
 void BtModelViewReadDisplay::copySelectedText()
 { QGuiApplication::clipboard()->setText(qmlInterface()->getSelectedText()); }
 
-void BtModelViewReadDisplay::copyByReferences()
-{ m_parentWindow->copyByReferences(); }
+void BtModelViewReadDisplay::copyByReferences() {
+    auto const & qml = *qmlInterface();
+    BtCopyByReferencesDialog dlg(m_parentWindow->modules(),
+                                 m_parentWindow->history(),
+                                 m_parentWindow->key(),
+                                 qml.textModel(),
+                                 m_parentWindow);
+    if (dlg.exec() != QDialog::Accepted)
+        return;
+
+    auto const & m = *m_parentWindow->modules().at(dlg.getColumn());
+    if (m.type() == CSwordModuleInfo::Bible
+        || m.type() == CSwordModuleInfo::Commentary)
+    {
+        qml.copyVerseRange(dlg.getReference1(), dlg.getReference2(), &m);
+    } else {
+        qml.copyRange(dlg.getIndex1(), dlg.getIndex2());
+    }
+}
 
 bool BtModelViewReadDisplay::save(TextType const format, TextPart const part) {
     const QString content = text(format, part);
