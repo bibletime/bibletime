@@ -226,9 +226,6 @@ protected:
 
     QToolBar * headerBar() const { return m_headerBar; }
 
-    /** Sets the modules. */
-    void setModules( const QList<CSwordModuleInfo*>& modules );
-
     /** Initializes the signal / slot connections of this display window.*/
     virtual void initConnections();
 

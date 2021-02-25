@@ -77,7 +77,9 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
 
     setObjectName("CDisplayWindow");
     m_actionCollection = new BtActionCollection(this);
-    setModules(modules);
+
+    for (auto const * const mod : newModules)
+        m_modules.append(mod->name());
 
     // Connect this to the backend module list changes
     BT_CONNECT(CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,
@@ -689,14 +691,6 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         bar->setLayoutDirection(Qt::LeftToRight);
         bar->setVisible(btConfig().session().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     }
-}
-
-/** Sets the modules. */
-void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
-    m_modules.clear();
-
-    for (auto const * const mod : newModules)
-        m_modules.append(mod->name());
 }
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
