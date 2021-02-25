@@ -542,17 +542,14 @@ void CDisplayWindow::setupMainWindowToolBars() {
 }
 
 void CDisplayWindow::copySelectedText() {
-    if (auto * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
+    if (m_readDisplayWidget)
         QGuiApplication::clipboard()->setText(
-                    v->qmlInterface()->getSelectedText());
+                    m_readDisplayWidget->qmlInterface()->getSelectedText());
 }
 
 void CDisplayWindow::copyByReferences() {
-    if (auto const * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-    {
-        auto const & qml = *v->qmlInterface();
+    if (m_readDisplayWidget) {
+        auto const & qml = *m_readDisplayWidget->qmlInterface();
         BtCopyByReferencesDialog dlg(modules(),
                                      history(),
                                      key(),
@@ -573,9 +570,8 @@ void CDisplayWindow::copyByReferences() {
 }
 
 bool CDisplayWindow::hasSelectedText() {
-    if (auto const * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        return v->qmlInterface()->hasSelectedText();
+    if (m_readDisplayWidget)
+        return m_readDisplayWidget->qmlInterface()->hasSelectedText();
     return false;
 }
 
@@ -583,23 +579,20 @@ void CDisplayWindow::copyDisplayedText()
 { CExportManager().copyKey(key(), CExportManager::Text, true); }
 
 int CDisplayWindow::getSelectedColumn() const {
-    if (auto const * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        return v->quickWidget()->getSelectedColumn();
+    if (m_readDisplayWidget)
+        return m_readDisplayWidget->quickWidget()->getSelectedColumn();
     return 0;
 }
 
 int CDisplayWindow::getFirstSelectedIndex() const {
-    if (auto const * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        return v->quickWidget()->getFirstSelectedIndex();
+    if (m_readDisplayWidget)
+        return m_readDisplayWidget->quickWidget()->getFirstSelectedIndex();
     return 0;
 }
 
 int CDisplayWindow::getLastSelectedIndex() const {
-    if (auto const * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        return v->quickWidget()->getLastSelectedIndex();
+    if (m_readDisplayWidget)
+        return m_readDisplayWidget->quickWidget()->getLastSelectedIndex();
     return 0;
 }
 
@@ -907,15 +900,13 @@ void CDisplayWindow::setFocusKeyChooser() {
 }
 
 void CDisplayWindow::pageDown() {
-    if (auto * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        v->pageDown();
+    if (m_readDisplayWidget)
+        m_readDisplayWidget->pageDown();
 }
 
 void CDisplayWindow::pageUp() {
-    if (auto * const v =
-                dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget))
-        v->pageUp();
+    if (m_readDisplayWidget)
+        m_readDisplayWidget->pageUp();
 }
 
 /** This function saves the entry as html using the CExportMgr class. */
@@ -969,8 +960,6 @@ void CDisplayWindow::openSearchStrongsDialog() {
 }
 
 void CDisplayWindow::colorThemeChangedSlot() {
-    if (BtModelViewReadDisplay * const v =
-            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
-        v->qmlInterface()->changeColorTheme();
-    }
+    if (m_readDisplayWidget)
+        m_readDisplayWidget->qmlInterface()->changeColorTheme();
 }
