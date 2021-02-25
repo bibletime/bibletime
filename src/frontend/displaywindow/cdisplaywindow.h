@@ -259,8 +259,6 @@ protected Q_SLOTS:
         */
     void lookup();
 
-    void slotSearchInModules();
-
     void printAll();
 
     void printAnchorWithText();

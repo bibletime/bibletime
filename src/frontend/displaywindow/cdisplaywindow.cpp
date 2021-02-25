@@ -297,8 +297,7 @@ void CDisplayWindow::initActions() {
 
     namespace DWG = CResMgr::displaywindows::general;
     initAction(DWG::search::actionName,
-               this,
-               &CDisplayWindow::slotSearchInModules);
+               [this]{ Search::CSearchDialog::openDialog(modules()); });
     initAddAction(
                 "openLocation",
                 [this]{
@@ -848,10 +847,6 @@ void CDisplayWindow::setDisplayWidget(BtModelViewReadDisplay * newDisplay) {
 
     BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
                this,           &CDisplayWindow::colorThemeChangedSlot);
-}
-
-void CDisplayWindow::slotSearchInModules() {
-    Search::CSearchDialog::openDialog(modules());
 }
 
 void CDisplayWindow::printAll()
