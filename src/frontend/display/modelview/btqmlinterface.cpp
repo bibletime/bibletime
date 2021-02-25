@@ -350,7 +350,7 @@ void BtQmlInterface::setKeyFromLink(const QString& link) {
 }
 
 void BtQmlInterface::scrollToSwordKey(CSwordKey * key) {
-    m_backgroundHighlightColorIndex = m_moduleTextModel->keyToIndex(key);
+    m_backgroundHighlightColorIndex = m_moduleTextModel->keyToIndex(*key);
 
     /* Convert from sword index to ListView index */
     m_backgroundHighlightColorIndex = m_backgroundHighlightColorIndex - m_moduleTextModel->getFirstEntryIndex();
@@ -466,9 +466,9 @@ RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QStrin
     RefIndexes ri;
     std::unique_ptr<CSwordKey> key(m_swordKey->copy());
     key->setKey(ref1);
-    ri.index1 = m_moduleTextModel->keyToIndex(key);
+    ri.index1 = m_moduleTextModel->keyToIndex(*key);
     key->setKey(ref2);
-    ri.index2 = m_moduleTextModel->keyToIndex(key);
+    ri.index2 = m_moduleTextModel->keyToIndex(*key);
     ri.r1 = ref1;
     ri.r2 = ref2;
     if (ri.index1 > ri.index2) {

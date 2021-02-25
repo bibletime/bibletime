@@ -145,10 +145,10 @@ RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, co
     CSwordKey * key = m_key->copy();
     key->setKey(ref1);
     QString x1 = key->key();
-    ri.index1 = m_moduleTextModel->keyToIndex(key);
+    ri.index1 = m_moduleTextModel->keyToIndex(*key);
     key->setKey(ref2);
     QString x2 = key->key();
-    ri.index2 = m_moduleTextModel->keyToIndex(key);
+    ri.index2 = m_moduleTextModel->keyToIndex(*key);
     ri.r1 = ref1;
     ri.r2 = ref2;
     if (ri.index1 > ri.index2) {

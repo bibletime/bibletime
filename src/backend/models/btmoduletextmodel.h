@@ -111,7 +111,7 @@ public:
     CSwordKey* indexToKey(int index, int moduleNum) const;
 
     /** Convert CSwordKey into index. */
-    int keyToIndex(const CSwordKey* key) const;
+    int keyToIndex(CSwordKey const & key) const;
 
     /** Convert CSwordVerseKey into index(row). */
     int verseKeyToIndex(const CSwordVerseKey& key) const;
