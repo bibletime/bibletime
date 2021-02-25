@@ -90,9 +90,6 @@ public:
     /** Returns the keychooser widget of this display window. */
     CKeyChooser * keyChooser() const { return m_keyChooser; }
 
-    /** Sets the new sword key.*/
-    void setKey( CSwordKey* key );
-
     /** Returns the key of this display window. */
     CSwordKey * key() const {
         BT_ASSERT(m_swordKey);

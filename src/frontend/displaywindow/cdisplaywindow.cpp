@@ -106,7 +106,7 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
                    if (auto * const b = moduleChooserBar())
                        b->setVisible(show);
                });
-    setKey(CSwordKey::createInstance(modules.first()));
+    m_swordKey = CSwordKey::createInstance(modules.first());
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -686,12 +686,6 @@ void CDisplayWindow::slotRemoveModule(int index) {
 /** Sets the keychooser widget for this display window. */
 void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
     m_keyChooser = ck;
-}
-
-/** Sets the new sword key. */
-void CDisplayWindow::setKey( CSwordKey* key ) {
-    BT_ASSERT(key);
-    m_swordKey = key;
 }
 
 BTHistory* CDisplayWindow::history() {
