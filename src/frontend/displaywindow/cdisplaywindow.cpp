@@ -31,6 +31,7 @@
 #include "../cexportmanager.h"
 #include "../cmdiarea.h"
 #include "../display/btmodelviewreaddisplay.h"
+#include "../display/modelview/btqmlinterface.h"
 #include "../display/modelview/btquickwidget.h"
 #include "../keychooser/ckeychooser.h"
 #include "../keychooser/bthistory.h"
