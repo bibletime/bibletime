@@ -91,9 +91,6 @@ class CTextRendering {
                 QString const & getAlternativeContent() const
                 { return m_alternativeContent; }
 
-                void setAlternativeContent(QString const & newContent)
-                { m_alternativeContent = newContent; }
-
                 bool hasAlternativeContent() const
                 { return !m_alternativeContent.isNull(); }
 
