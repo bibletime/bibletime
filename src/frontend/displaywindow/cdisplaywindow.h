@@ -287,8 +287,6 @@ private Q_SLOTS:
     /** Opens the search dialog with the strong info of the last clicked word.*/
     void openSearchStrongsDialog();
 
-    void colorThemeChangedSlot();
-
 protected: /* Fields: */
 
     struct ActionsStruct {

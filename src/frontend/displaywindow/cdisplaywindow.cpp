@@ -846,7 +846,10 @@ void CDisplayWindow::setDisplayWidget(BtModelViewReadDisplay * newDisplay) {
     m_displayWidget = newDisplay;
 
     BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
-               this,           &CDisplayWindow::colorThemeChangedSlot);
+               [this]{
+                   if (m_displayWidget)
+                       m_displayWidget->qmlInterface()->changeColorTheme();
+               });
 }
 
 void CDisplayWindow::printAll()
@@ -903,9 +906,4 @@ void CDisplayWindow::openSearchStrongsDialog() {
 #endif
         searchText.append("strong:").append(strongNumber).append(' ');
     Search::CSearchDialog::openDialog(modules(), searchText, nullptr);
-}
-
-void CDisplayWindow::colorThemeChangedSlot() {
-    if (m_displayWidget)
-        m_displayWidget->qmlInterface()->changeColorTheme();
 }
