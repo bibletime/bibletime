@@ -11,7 +11,7 @@ You can just download and install BibleTime from
 The following requirements are needed only if you want to develop BibleTime.
 
 ### BUILD REQUIREMENTS
- - A C++11 compiler.
+ - A C++17 compiler.
  - QT 5.12+ (https://www.qt.io)
  - Sword 1.8.1+ (https://crosswire.org/sword)
  - CLucene 0.9.19+ (https://clucene.sf.net)
