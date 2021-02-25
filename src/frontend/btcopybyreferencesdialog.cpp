@@ -27,7 +27,6 @@
 #include "../frontend/display/btmodelviewreaddisplay.h"
 #include "../frontend/displaywindow/cdisplaywindow.h"
 #include "../util/btconnect.h"
-#include "display/modelview/btqmlinterface.h"
 #include "keychooser/ckeychooser.h"
 #include "messagedialog.h"
 
