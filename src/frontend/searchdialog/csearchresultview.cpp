@@ -77,8 +77,6 @@ void CSearchResultView::initView() {
                    SelectedKeysList keys(*this);
                    CExportManager(true, tr("Copying search result"))
                            .copyKeyList(keys, CExportManager::Text, false);
-
-                   qDeleteAll(keys);
                });
     m_actions.copyMenu->addAction(m_actions.copy.result);
 
@@ -88,8 +86,6 @@ void CSearchResultView::initView() {
                    SelectedKeysList keys(*this);
                    CExportManager(true, tr("Copying search result"))
                            .copyKeyList(keys, CExportManager::Text, true);
-
-                   qDeleteAll(keys);
                });
     m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
 
