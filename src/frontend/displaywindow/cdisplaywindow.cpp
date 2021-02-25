@@ -786,12 +786,18 @@ void CDisplayWindow::lookup() {
     lookupSwordKey( key() );
 }
 
-void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& keyName ) {
+void CDisplayWindow::lookupKey( const QString& keyName ) {
+    /* This function is called for example after a bookmark was dropped on this window
+    */
+    BT_ASSERT(modules().first());
+
     if (!isReady()) {
         return;
     }
 
-    CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
+    CSwordModuleInfo *m =
+            CSwordBackend::instance()->findModuleByName(
+                modules().first()->name());
     if (!m) {
         return; /// \todo check if this is correct behavior
     }
@@ -809,14 +815,6 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         BT_ASSERT(mainWindow);
         mainWindow->createReadDisplayWindow(m, keyName);
     }
-}
-
-void CDisplayWindow::lookupKey( const QString& keyName ) {
-    /* This function is called for example after a bookmark was dropped on this window
-    */
-    BT_ASSERT(modules().first());
-
-    lookupModKey(modules().first()->name(), keyName);
 }
 
 ///** Returns the installed popup menu. */

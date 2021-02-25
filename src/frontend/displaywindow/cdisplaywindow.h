@@ -185,12 +185,6 @@ public Q_SLOTS:
     void slotReplaceModule(int index, QString newModule);
     void slotRemoveModule(int index);
 
-    /**
-        * Lookup the specified key in the given module. If the module is not chosen withing
-        * this display window create a new displaywindow with the right module in it.
-        */
-    void lookupModKey(QString const & module, QString const & key);
-
     /** Lookup the key in the chosen modules.*/
     void lookupKey(QString const & key);
 
