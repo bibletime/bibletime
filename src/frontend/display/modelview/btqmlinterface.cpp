@@ -464,7 +464,7 @@ void BtQmlInterface::configModuleByType(const QString& type, const QStringList& 
 
 RefIndexes BtQmlInterface::normalizeReferences(const QString& ref1, const QString& ref2) {
     RefIndexes ri;
-    CSwordKey * key = m_swordKey->copy();
+    std::unique_ptr<CSwordKey> key(m_swordKey->copy());
     key->setKey(ref1);
     ri.index1 = m_moduleTextModel->keyToIndex(key);
     key->setKey(ref2);
