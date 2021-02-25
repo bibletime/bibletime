@@ -542,14 +542,14 @@ void CDisplayWindow::setupMainWindowToolBars() {
 }
 
 void CDisplayWindow::copySelectedText() {
-    if (m_readDisplayWidget)
+    if (m_displayWidget)
         QGuiApplication::clipboard()->setText(
-                    m_readDisplayWidget->qmlInterface()->getSelectedText());
+                    m_displayWidget->qmlInterface()->getSelectedText());
 }
 
 void CDisplayWindow::copyByReferences() {
-    if (m_readDisplayWidget) {
-        auto const & qml = *m_readDisplayWidget->qmlInterface();
+    if (m_displayWidget) {
+        auto const & qml = *m_displayWidget->qmlInterface();
         BtCopyByReferencesDialog dlg(modules(),
                                      history(),
                                      key(),
@@ -570,8 +570,8 @@ void CDisplayWindow::copyByReferences() {
 }
 
 bool CDisplayWindow::hasSelectedText() {
-    if (m_readDisplayWidget)
-        return m_readDisplayWidget->qmlInterface()->hasSelectedText();
+    if (m_displayWidget)
+        return m_displayWidget->qmlInterface()->hasSelectedText();
     return false;
 }
 
@@ -579,20 +579,20 @@ void CDisplayWindow::copyDisplayedText()
 { CExportManager().copyKey(key(), CExportManager::Text, true); }
 
 int CDisplayWindow::getSelectedColumn() const {
-    if (m_readDisplayWidget)
-        return m_readDisplayWidget->quickWidget()->getSelectedColumn();
+    if (m_displayWidget)
+        return m_displayWidget->quickWidget()->getSelectedColumn();
     return 0;
 }
 
 int CDisplayWindow::getFirstSelectedIndex() const {
-    if (m_readDisplayWidget)
-        return m_readDisplayWidget->quickWidget()->getFirstSelectedIndex();
+    if (m_displayWidget)
+        return m_displayWidget->quickWidget()->getFirstSelectedIndex();
     return 0;
 }
 
 int CDisplayWindow::getLastSelectedIndex() const {
-    if (m_readDisplayWidget)
-        return m_readDisplayWidget->quickWidget()->getLastSelectedIndex();
+    if (m_displayWidget)
+        return m_displayWidget->quickWidget()->getLastSelectedIndex();
     return 0;
 }
 
@@ -873,7 +873,6 @@ void CDisplayWindow::setDisplayWidget(BtModelViewReadDisplay * newDisplay) {
     BT_ASSERT(newDisplay);
 
     m_displayWidget = newDisplay;
-    m_readDisplayWidget = newDisplay;
 
     BT_CONNECT(btMainWindow(), &BibleTime::colorThemeChanged,
                this,           &CDisplayWindow::colorThemeChangedSlot);
@@ -900,13 +899,13 @@ void CDisplayWindow::setFocusKeyChooser() {
 }
 
 void CDisplayWindow::pageDown() {
-    if (m_readDisplayWidget)
-        m_readDisplayWidget->pageDown();
+    if (m_displayWidget)
+        m_displayWidget->pageDown();
 }
 
 void CDisplayWindow::pageUp() {
-    if (m_readDisplayWidget)
-        m_readDisplayWidget->pageUp();
+    if (m_displayWidget)
+        m_displayWidget->pageUp();
 }
 
 /** This function saves the entry as html using the CExportMgr class. */
@@ -960,6 +959,6 @@ void CDisplayWindow::openSearchStrongsDialog() {
 }
 
 void CDisplayWindow::colorThemeChangedSlot() {
-    if (m_readDisplayWidget)
-        m_readDisplayWidget->qmlInterface()->changeColorTheme();
+    if (m_displayWidget)
+        m_displayWidget->qmlInterface()->changeColorTheme();
 }

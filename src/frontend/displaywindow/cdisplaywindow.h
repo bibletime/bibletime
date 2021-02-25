@@ -357,9 +357,8 @@ private:
     QToolBar* m_buttonsToolBar;
     QToolBar* m_headerBar;
     QMenu* m_popupMenu;
-    BtModelViewReadDisplay * m_displayWidget;
+    BtModelViewReadDisplay * m_displayWidget = nullptr;
     BTHistory* m_history;
-    BtModelViewReadDisplay * m_readDisplayWidget = nullptr;
 };
 
 #endif
