@@ -26,7 +26,7 @@ If applicable, please add screenshots to help explain your problem.
 **System information (please complete the following information):**
  - OS and OS version: [e.g. Debian 10, Windows 10]
  - BibleTime Version [e.g. 3.1_rc2]
- - How BibleTime was installed [e.g. from system packages, Snap, Installer, compiled from source code]
+ - How BibleTime was installed [e.g. from system packages, Snap, Flatpak, installer, compiled from source code]
  - Versions of modules related to the crash (if known)
  - (If compiled from source) Sword Version
  - (If compiled from source) Qt Version
