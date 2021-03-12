@@ -109,10 +109,6 @@ class CTextRendering {
 
                 CSwordKey const * mappedKey() const { return m_mappedKey; }
 
-            protected: /* Methods: */
-
-                KeyTreeItem();
-
             private: /* Fields: */
 
                 Settings m_settings;
