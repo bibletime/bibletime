@@ -18,6 +18,7 @@
 #include <QString>
 #include "../backend/btglobal.h"
 #include "../backend/config/btconfig.h"
+#include "../backend/drivers/btmodulelist.h"
 
 
 class CSwordKey;
