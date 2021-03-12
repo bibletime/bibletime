@@ -30,6 +30,8 @@
 #include "../drivers/cswordmoduleinfo.h"
 
 
+namespace sword { class ListKey; }
+
 class BibleTimeApp;
 
 class BtConfig: public BtConfigCore {
