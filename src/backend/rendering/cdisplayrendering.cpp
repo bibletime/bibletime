@@ -26,7 +26,7 @@ namespace Rendering {
 
 CDisplayRendering::CDisplayRendering(const DisplayOptions &displayOptions,
                                      const FilterOptions &filterOptions)
-        : CHTMLExportRendering(true, displayOptions, filterOptions)
+        : CTextRendering(true, displayOptions, filterOptions)
 {
     // Intentionally empty
 }

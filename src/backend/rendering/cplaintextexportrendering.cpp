@@ -21,7 +21,7 @@ CPlainTextExportRendering::CPlainTextExportRendering(
         bool addText,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
-        : CHTMLExportRendering(addText, displayOptions, filterOptions)
+        : CTextRendering(addText, displayOptions, filterOptions)
 {
     // Intentionally empty
 }

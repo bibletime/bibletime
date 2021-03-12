@@ -14,7 +14,7 @@
 #define RENDERINGCPLAINTEXTEXPORTRENDERING_H
 
 #include "../config/btconfig.h"
-#include "chtmlexportrendering.h"
+#include "ctextrendering.h"
 
 
 namespace Rendering {
@@ -24,7 +24,7 @@ namespace Rendering {
  * @short Text rendering as plain text.
  * @author The BibleTime team
  */
-class CPlainTextExportRendering: public CHTMLExportRendering {
+class CPlainTextExportRendering: public CTextRendering {
 
     public: /* Methods: */
 

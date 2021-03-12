@@ -26,8 +26,8 @@
 #include "../../../backend/managers/cswordbackend.h"
 #include "../../../backend/models/btmoduletextmodel.h"
 #include "../../../backend/rendering/btinforendering.h"
-#include "../../../backend/rendering/chtmlexportrendering.h"
 #include "../../../backend/rendering/cplaintextexportrendering.h"
+#include "../../../backend/rendering/ctextrendering.h"
 #include "../../../backend/rendering/btinforendering.h"
 #include "../../../util/btconnect.h"
 #include "../../bibletime.h"
@@ -545,9 +545,9 @@ std::unique_ptr<Rendering::CTextRendering> BtQmlInterface::newRenderer(Format co
     using R = std::unique_ptr<Rendering::CTextRendering>;
     BT_ASSERT((format == Text) || (format == HTML));
     if (format == HTML)
-        return R{new Rendering::CHTMLExportRendering(addText,
-                                                     displayOptions,
-                                                     filterOptions)};
+        return R{new Rendering::CTextRendering(addText,
+                                               displayOptions,
+                                               filterOptions)};
     return R{new Rendering::CPlainTextExportRendering(addText,
                                                       displayOptions,
                                                       filterOptions)};

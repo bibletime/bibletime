@@ -17,6 +17,8 @@
 #include <QSharedPointer>
 #include <QString>
 
+#include "../btglobal.h"
+#include "../config/btconfig.h"
 #include "../drivers/btmodulelist.h"
 
 
@@ -29,7 +31,6 @@ namespace Rendering {
  * It provides several methods to convert an abstract tree of items
  * into a string of html.
  *
- * See the implementations @ref CHTMLExportRendering and especially @ref CDisplayRendering.
  * @short Text rendering based on trees
  * @author The BibleTime team
 */
@@ -127,6 +128,13 @@ class CTextRendering {
 
     public: /* Methods: */
 
+        CTextRendering(
+            bool addText,
+            DisplayOptions const & displayOptions =
+                    btConfig().getDisplayOptions(),
+            FilterOptions const & filterOptions =
+                    btConfig().getFilterOptions());
+
         virtual ~CTextRendering() {}
 
         const QString renderKeyTree(const KeyTree &tree);
@@ -146,9 +154,17 @@ class CTextRendering {
     protected: /* Methods: */
 
         BtConstModuleList collectModules(const KeyTree &tree) const;
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) = 0;
-        virtual QString finishText(const QString &text, const KeyTree &tree) = 0;
-        virtual void initRendering() = 0;
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
+        virtual QString finishText(const QString &text, const KeyTree &tree);
+        virtual QString entryLink(KeyTreeItem const & item,
+                                  CSwordModuleInfo const * module);
+        virtual void initRendering();
+
+    protected: /* Fields: */
+
+        DisplayOptions const m_displayOptions;
+        FilterOptions const m_filterOptions;
+        bool const m_addText;
 
 }; /* class CTextRendering */
 

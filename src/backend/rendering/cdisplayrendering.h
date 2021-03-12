@@ -13,7 +13,7 @@
 #ifndef RENDERINGCDISPLAYRENDERING_H
 #define RENDERINGCDISPLAYRENDERING_H
 
-#include "chtmlexportrendering.h"
+#include "ctextrendering.h"
 
 #include "../config/btconfig.h"
 
@@ -25,7 +25,7 @@ namespace Rendering {
  * @author The BibleTime team
  */
 
-class CDisplayRendering : public CHTMLExportRendering {
+class CDisplayRendering : public CTextRendering {
 
     public: /* Methods: */
 

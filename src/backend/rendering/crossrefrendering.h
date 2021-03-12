@@ -13,14 +13,14 @@
 #ifndef RENDERINGCROSSREFRENDERING_H
 #define RENDERINGCROSSREFRENDERING_H
 
-#include "chtmlexportrendering.h"
+#include "ctextrendering.h"
 
 #include "../config/btconfig.h"
 
 
 namespace Rendering {
 
-class CrossRefRendering : public Rendering::CHTMLExportRendering {
+class CrossRefRendering : public Rendering::CTextRendering {
 
 public: /* Methods: */
 

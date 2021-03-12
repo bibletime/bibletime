@@ -24,8 +24,8 @@
 #include "../backend/managers/referencemanager.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../backend/rendering/centrydisplay.h"
-#include "../backend/rendering/chtmlexportrendering.h"
 #include "../backend/rendering/cplaintextexportrendering.h"
+#include "../backend/rendering/ctextrendering.h"
 #include "../util/btassert.h"
 #include "../util/tool.h"
 #include "btprinter.h"
@@ -437,9 +437,9 @@ std::unique_ptr<CTextRendering> CExportManager::newRenderer(Format const format,
     using R = std::unique_ptr<CTextRendering>;
     BT_ASSERT((format == Text) || (format == HTML));
     if (format == HTML)
-        return R{new CHTMLExportRendering(addText,
-                                          m_displayOptions,
-                                          filterOptions)};
+        return R{new CTextRendering(addText,
+                                    m_displayOptions,
+                                    filterOptions)};
     return R{new CPlainTextExportRendering(addText,
                                            m_displayOptions,
                                            filterOptions)};
