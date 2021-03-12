@@ -21,6 +21,7 @@
 #include "../drivers/cswordlexiconmoduleinfo.h"
 #include "../keys/cswordkey.h"
 #include "../managers/cdisplaytemplatemgr.h"
+#include "../managers/cswordbackend.h"
 #include "crossrefrendering.h"
 
 // Sword includes:
