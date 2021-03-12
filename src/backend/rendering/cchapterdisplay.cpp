@@ -17,6 +17,13 @@
 #include "../keys/cswordversekey.h"
 #include "cdisplayrendering.h"
 
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <swmodule.h>
+#pragma GCC diagnostic pop
+
 
 const QString Rendering::CChapterDisplay::text(
         const BtConstModuleList &modules,
