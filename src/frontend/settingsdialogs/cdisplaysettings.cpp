@@ -30,8 +30,13 @@
 #include "cconfigurationdialog.h"
 
 // Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wsuggest-override"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <localemgr.h>
 #include <swlocale.h>
+#pragma GCC diagnostic pop
 
 
 /** Initializes the startup section of the OD. */
