@@ -22,7 +22,6 @@
 #include <QList>
 #include <QMetaType>
 #include <QString>
-#include "../rendering/centrydisplay.h"
 
 
 #ifdef CLUCENE2
@@ -39,6 +38,7 @@ class SWModule;
 class SWVersion;
 } // namespace sword
 
+namespace Rendering { class CEntryDisplay; }
 
 /**
  * Base class for Sword modules.
