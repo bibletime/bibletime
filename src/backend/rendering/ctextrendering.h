@@ -13,10 +13,8 @@
 #ifndef CTEXTRENDERING_H
 #define CTEXTRENDERING_H
 
-#include <QList>
-#include <QSharedPointer>
+#include <list>
 #include <QString>
-
 #include "../btglobal.h"
 #include "../config/btconfig.h"
 #include "../drivers/btmodulelist.h"
@@ -40,15 +38,7 @@ class CTextRendering {
 
         class KeyTreeItem;
 
-        class KeyTreeSharedPointer: public QSharedPointer<KeyTreeItem> {
-            public:
-                KeyTreeSharedPointer(KeyTreeItem * i)
-                    : QSharedPointer<KeyTreeItem>(i) {}
-
-                operator KeyTreeItem const * () const { return data(); }
-        };
-
-        using KeyTree = QList<KeyTreeSharedPointer>;
+        using KeyTree = std::list<KeyTreeItem>;
 
         class KeyTreeItem {
 

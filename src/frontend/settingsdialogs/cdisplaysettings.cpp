@@ -217,35 +217,29 @@ void CDisplaySettingsPage::updateStylePreview() {
     CTextRendering::KeyTreeItem::Settings settings;
     settings.highlight = false;
 
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:16\">16</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\"> For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</span>")),
-                     settings));
+    static QString const markup(
+                "\n<span class=\"entryname\"><a name=\"crossref\" "
+                "href=\"sword://Bible/WEB/John 3:%1\">%1</a></span>"
+                "<span class=\"jesuswords\">%2</span>");
 
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">For God didn't send his Son into the world to judge the world, but that the world should be saved through him.</span>")),
-                     settings));
-
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.</span>")),
-                     settings) );
-
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</span>")),
-                     settings));
-
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:20\">20</a></span>%1<br/>")
-                     .arg(tr("<span class=\"jesuswords\">For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.</span>")),
-                     settings));
-
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:21\">21</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</span>")),
-                     settings));
+    auto const addVerse =
+            [&tree,&settings](int num, QString const & translation)
+            { tree.emplace_back(markup.arg(num).arg(translation), settings); };
+    addVerse(16, tr("For God so loved the world, that he gave his one and only "
+                    "Son, that whoever believes in him should not perish, but "
+                    "have eternal life."));
+    addVerse(17, tr("For God didn't send his Son into the world to judge the "
+                    "world, but that the world should be saved through him."));
+    addVerse(18, tr("He who believes in him is not judged. He who doesn't "
+                    "believe has been judged already, because he has not "
+                    "believed in the name of the one and only Son of God."));
+    addVerse(19, tr("This is the judgement, that the light has come into the "
+                    "world, and men loved the darkness rather than the light; "
+                    "for their works were evil."));
+    addVerse(20, tr("For everyone who does evil hates the light, and doesn't "
+                    "come to the light, lest his works would be exposed."));
+    addVerse(21, tr("But he who does the truth comes to the light, that his "
+                    "works may be revealed, that they have been done in God."));
 
     /// \todo Remove the following hack:
     const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();

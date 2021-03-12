@@ -207,11 +207,10 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                           while (!items.empty()) {
                               QModelIndex const index(items.takeFirst());
                               if (m_bookmarksModel->isBookmark(index)) {
-                                  tree.append(
-                                      new BtPrinter::KeyTreeItem{
+                                  tree.emplace_back(
                                               m_bookmarksModel->key(index),
                                               m_bookmarksModel->module(index),
-                                              settings});
+                                              settings);
                               } else if (m_bookmarksModel->isFolder(index)) {
                                   int const numChildren =
                                           m_bookmarksModel->rowCount(index);
@@ -222,7 +221,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                               }
                           }
                       }
-                      BT_ASSERT(!tree.isEmpty());
+                      BT_ASSERT(!tree.empty());
 
                       BtPrinter{btConfig().getDisplayOptions(),
                                 btConfig().getFilterOptions(),

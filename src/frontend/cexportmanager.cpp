@@ -125,9 +125,9 @@ bool CExportManager::saveKeyList(sword::ListKey const & l,
     while (!list.popError()) {
         if (progressWasCancelled())
             return false;
-        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
-                            module,
-                            itemSettings));
+        tree.emplace_back(QString::fromLocal8Bit(list.getText()),
+                          module,
+                          itemSettings);
         incProgress();
         list.increment();
     }
@@ -158,7 +158,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey *> const & list,
     for (CSwordKey const * const k : list) {
         if (progressWasCancelled())
             return false;
-        tree.append(new KTI(k->key(), k->module(), itemSettings));
+        tree.emplace_back(k->key(), k->module(), itemSettings);
         incProgress();
     };
 
@@ -222,9 +222,9 @@ bool CExportManager::copyKeyList(sword::ListKey const & l,
     while (!list.popError()) {
         if (progressWasCancelled())
             return false;
-        tree.append(new KTI(QString::fromLocal8Bit(list.getText()),
-                            module,
-                            itemSettings));
+        tree.emplace_back(QString::fromLocal8Bit(list.getText()),
+                          module,
+                          itemSettings);
         list.increment();
     }
 
@@ -249,7 +249,7 @@ bool CExportManager::copyKeyList(QList<CSwordKey *> const & list,
     for (CSwordKey const * const k : list) {
         if (progressWasCancelled())
             return false;
-        tree.append(new KTI(k->key(), k->module(), itemSettings));
+        tree.emplace_back(k->key(), k->module(), itemSettings);
         incProgress();
     };
 
@@ -278,7 +278,7 @@ bool CExportManager::printKey(CSwordKey const * const key,
 {
     PrintSettings settings{displayOptions};
     BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
-    tree.append(new BtPrinter::KeyTreeItem(key->key(), key->module(), settings));
+    tree.emplace_back(key->key(), key->module(), settings);
     BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
 }
@@ -290,11 +290,11 @@ bool CExportManager::printKey(CSwordModuleInfo const * const module,
                               FilterOptions const & filterOptions)
 {
     PrintSettings settings{displayOptions};
-    BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
+    BtPrinter::KeyTree tree;
     if (startKey != stopKey) {
-        tree.append(new BtPrinter::KeyTreeItem(startKey, stopKey, module, settings));
+        tree.emplace_back(startKey, stopKey, module, settings);
     } else {
-        tree.append(new BtPrinter::KeyTreeItem(startKey, module, settings));
+        tree.emplace_back(startKey, module, settings);
     }
     BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
@@ -326,24 +326,22 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
             if (sword::VerseKey const * const element =
                     dynamic_cast<sword::VerseKey const *>(verses.getElement(i)))
             {
-                tree.append(
-                        new BtPrinter::KeyTreeItem(
-                                QString::fromUtf8(
-                                        element->getLowerBound().getText()),
-                                QString::fromUtf8(
-                                        element->getUpperBound().getText()),
-                                module,
-                                settings) );
+                tree.emplace_back(
+                            QString::fromUtf8(
+                                element->getLowerBound().getText()),
+                            QString::fromUtf8(
+                                element->getUpperBound().getText()),
+                            module,
+                            settings);
             } else if (verses.getElement(i)) {
-                tree.append(
-                        new BtPrinter::KeyTreeItem(
+                tree.emplace_back(
                             QString::fromUtf8(verses.getElement(i)->getText()),
                             module,
-                            settings) );
+                            settings);
             }
         }
     } else {
-        tree.append(new BtPrinter::KeyTreeItem(keyName, module, settings));
+        tree.emplace_back(keyName, module, settings);
     }
     BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
     return true;
@@ -368,10 +366,10 @@ bool CExportManager::printKeyList(sword::ListKey const & list,
                     dynamic_cast<const sword::VerseKey*>(swKey))
         {
             QString const startKey = vKey->getText();
-            tree.append(new KTI(startKey, startKey, module, settings));
+            tree.emplace_back(startKey, startKey, module, settings);
         } else {
             QString const key = swKey->getText();
-            tree.append(new KTI(key, key, module, settings));
+            tree.emplace_back(key, key, module, settings);
         }
         incProgress();
     }
@@ -395,7 +393,7 @@ bool CExportManager::printKeyList(QStringList const & list,
     for (QString const & key: list) {
         if (progressWasCancelled())
             return false;
-        tree.append(new BtPrinter::KeyTreeItem(key, module, settings));
+        tree.emplace_back(key, module, settings);
         incProgress();
     }
     BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);

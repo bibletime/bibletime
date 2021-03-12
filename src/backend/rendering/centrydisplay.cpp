@@ -80,17 +80,15 @@ const QString CEntryDisplay::textKeyRendering(
             if (k1.getChapter() == 1) { // 1:1, also prepend 0:0 before that
                 k1.setChapter(0);
                 k1.setVerse(0);
-                if ( k1.rawText().length() > 0 ) {
-                    tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
-                }
+                if (k1.rawText().length() > 0)
+                    tree.emplace_back(k1.key(), modules, preverse_settings);
                 k1.setChapter(1);
             }
             k1.setVerse(0);
-            if ( k1.rawText().length() > 0 ) {
-                tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
-            }
+            if (k1.rawText().length() > 0)
+                tree.emplace_back(k1.key(), modules, preverse_settings);
         }
     }
-    tree.append( new Rendering::CTextRendering::KeyTreeItem(keyName, modules, normal_settings) );
+    tree.emplace_back(keyName, modules, normal_settings);
     return render.renderKeyTree(tree);
 }

@@ -54,12 +54,10 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
     : m_settings(i.m_settings)
     , m_moduleList(i.m_moduleList)
     , m_key(i.m_key)
+    , m_childList(i.m_childList)
     , m_stopKey(i.m_stopKey)
     , m_alternativeContent(i.m_alternativeContent)
-{
-    for (KeyTreeItem const * const item : *i.childList())
-        m_childList.append(new KeyTreeItem((*item))); //deep copy
-}
+{}
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
                                          const QString &stopKey,
@@ -85,39 +83,35 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
             bool ok = true;
 
             while (ok && ((start < stop) || (start == stop)) ) { //range
-                m_childList.append(
-                            new KeyTreeItem(start.key(),
-                                            module,
-                                            KeyTreeItem::Settings{
-                                                false,
-                                                settings.keyRenderingFace}));
+                m_childList.emplace_back(start.key(),
+                                         module,
+                                         KeyTreeItem::Settings{
+                                             false,
+                                             settings.keyRenderingFace});
                 ok = start.next(CSwordVerseKey::UseVerse);
             }
         }
         else if (m_key.isEmpty()) {
-            m_childList.append(
-                        new KeyTreeItem(startKey,
-                                        module,
-                                        KeyTreeItem::Settings{
-                                            false,
-                                            settings.keyRenderingFace}));
+            m_childList.emplace_back(startKey,
+                                     module,
+                                     KeyTreeItem::Settings{
+                                         false,
+                                         settings.keyRenderingFace});
         }
     }
     else if ((module->type() == CSwordModuleInfo::Lexicon) || (module->type() == CSwordModuleInfo::Commentary) ) {
-        m_childList.append(
-                    new KeyTreeItem(startKey,
-                                    module,
-                                    KeyTreeItem::Settings{
-                                        false,
-                                        KeyTreeItem::Settings::NoKey}));
+        m_childList.emplace_back(startKey,
+                                 module,
+                                 KeyTreeItem::Settings{
+                                     false,
+                                     KeyTreeItem::Settings::NoKey});
     }
     else if (module->type() == CSwordModuleInfo::GenericBook) {
-        m_childList.append(
-                    new KeyTreeItem(startKey,
-                                    module,
-                                    KeyTreeItem::Settings{
-                                        false,
-                                        KeyTreeItem::Settings::NoKey}));
+        m_childList.emplace_back(startKey,
+                                 module,
+                                 KeyTreeItem::Settings{
+                                     false,
+                                     KeyTreeItem::Settings::NoKey});
     }
 
     //make it into "<simple|range> (modulename)"
@@ -161,13 +155,10 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
     //collect all modules which are available and used by child items
     BtConstModuleList modules;
 
-    for (KeyTreeItem const * const c : tree) {
-        BT_ASSERT(c);
-        for (auto const * const mod : c->modules()) {
+    for (auto const & item : tree)
+        for (auto const * const mod : item.modules())
             if (!modules.contains(mod))
                 modules.append(mod);
-        }
-    }
     return modules;
 }
 
@@ -183,14 +174,14 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
         std::unique_ptr<CSwordKey> key(
                 CSwordKey::createInstance(modules.first()));
-        for (KeyTreeItem const * const c : tree) {
-            key->setKey(c->key());
-            t.append(renderEntry(*c, key.get()));
+        for (auto const & item : tree) {
+            key->setKey(item.key());
+            t.append(renderEntry(item, key.get()));
         }
     }
     else {
-        for (KeyTreeItem const * const c : tree)
-            t.append( renderEntry( *c ) );
+        for (auto const & item : tree)
+            t.append(renderEntry(item));
     }
 
     return finishText(t, tree);
@@ -244,11 +235,11 @@ const QString CTextRendering::renderKeyRange(
 
             if (vk_start->getChapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
                 vk_start->setVerse(0);
-                tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
+                tree.emplace_back(vk_start->key(), modules, settings);
                 vk_start->setChapter(1);
                 vk_start->setVerse(0);
             }
-            tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
+            tree.emplace_back(vk_start->key(), modules, settings);
             if (!vk_start->next(CSwordVerseKey::UseVerse)) {
                 /// \todo Notify the user about this failure.
                 break;
@@ -266,8 +257,7 @@ const QString CTextRendering::renderSingleKey(
         const KeyTreeItem::Settings &settings)
 {
     KeyTree tree;
-    tree.append( new KeyTreeItem(key, modules, settings) );
-
+    tree.emplace_back(key, modules, settings);
     return renderKeyTree(tree);
 }
 
@@ -279,7 +269,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                       : "<div class=\"entry\">";
         ret.append(i.getAlternativeContent());
 
-        if (!i.childList()->isEmpty()) {
+        if (!i.childList()->empty()) {
             KeyTree const & tree = *i.childList();
 
             BtConstModuleList const modules(collectModules(tree));
@@ -290,8 +280,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                            QString("dir=\"%1\" ")
                                .arg(modules.first()->textDirectionAsHtml()));
 
-            for (KeyTreeItem const * const item : tree)
-                ret.append(renderEntry(*item));
+            for (auto const & item : tree)
+                ret.append(renderEntry(item));
         }
 
         ret.append("</div>");
@@ -433,10 +423,9 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         if (m_addText)
             entry.append(key_renderedText);
 
-        if (!i.childList()->isEmpty()) {
-            for (KeyTreeItem const * const c : *(i.childList()))
-                entry.append(renderEntry(*c));
-        }
+        if (!i.childList()->empty())
+            for (auto const & item : *i.childList())
+                entry.append(renderEntry(item));
 
         entry.append("</div>");
 

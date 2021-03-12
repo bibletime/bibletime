@@ -87,9 +87,9 @@ QString BtPrinter::renderEntry(KeyTreeItem const & i, CSwordKey * key) {
                 QString::fromLatin1("<div class=\"entry\"><div class=\""
                                     "rangeheading\">%1</div>").arg(
                                             printItem->getAlternativeContent());
-        if (!i.childList()->isEmpty()) {
-            for (KeyTreeItem const * const c : *i.childList())
-                ret.append(CDisplayRendering::renderEntry(*c));
+        if (!i.childList()->empty()) {
+            for (auto const & item : *i.childList())
+                ret.append(CDisplayRendering::renderEntry(item));
         }
         ret.append("</div>");
         return ret;

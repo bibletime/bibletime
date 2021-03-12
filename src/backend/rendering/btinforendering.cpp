@@ -200,27 +200,22 @@ QString decodeCrossReference(QString const & data, BtConstModuleList const & mod
             sword::VerseKey * const vk = dynamic_cast<sword::VerseKey*>(key);
 
             if (vk && vk->isBoundSet()) { // render a range of keys
-                tree.append(new CTextRendering::KeyTreeItem(
-                    QString::fromUtf8(vk->getLowerBound().getText()),
-                    QString::fromUtf8(vk->getUpperBound().getText()),
-                    module,
-                    settings
-                ));
+                tree.emplace_back(
+                            QString::fromUtf8(vk->getLowerBound().getText()),
+                            QString::fromUtf8(vk->getUpperBound().getText()),
+                            module,
+                            settings);
             } else {
-                tree.append(new CTextRendering::KeyTreeItem(
-                    QString::fromUtf8(key->getText()),
-                    QString::fromUtf8(key->getText()),
-                    module,
-                    settings
-                ));
+                tree.emplace_back(QString::fromUtf8(key->getText()),
+                                  QString::fromUtf8(key->getText()),
+                                  module,
+                                  settings);
             }
         }
     } else if (module) {
-        tree.append(new CTextRendering::KeyTreeItem(data.mid((pos == -1)
-                                                             ? 0
-                                                             : pos + 1),
-                                                    module,
-                                                    settings));
+        tree.emplace_back(data.mid((pos == -1) ? 0 : pos + 1),
+                          module,
+                          settings);
     }
 
     // qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
