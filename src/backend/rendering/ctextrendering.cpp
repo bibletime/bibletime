@@ -32,43 +32,30 @@ using namespace Rendering;
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
                                          const CSwordModuleInfo *module,
                                          const Settings &settings)
-        : m_settings(settings),
-        m_moduleList(),
-        m_key( key ),
-        m_childList(),
-        m_stopKey( QString() ),
-        m_alternativeContent( QString() ) {
-    m_moduleList.append( const_cast<CSwordModuleInfo*>(module) ); //BAD CODE
-}
+    : m_settings(settings)
+    , m_key(key)
+{ m_moduleList.append(const_cast<CSwordModuleInfo *>(module)); } // BAD CODE
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &content,
                                          const Settings &settings)
-        : m_settings( settings ),
-        m_moduleList(),
-        m_key( QString() ),
-        m_childList(),
-        m_stopKey( QString() ),
-        m_alternativeContent( content ) {
-}
+    : m_settings(settings)
+    , m_alternativeContent(content)
+{}
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
                                          const BtConstModuleList &mods,
                                          const Settings &settings)
-        : m_settings( settings ),
-        m_moduleList( mods ),
-        m_key( key ),
-        m_childList(),
-        m_stopKey( QString() ),
-        m_alternativeContent( QString() ) {
-}
+    : m_settings(settings)
+    , m_moduleList(mods)
+    , m_key(key)
+{}
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
-        : m_settings( i.m_settings ),
-        m_moduleList( i.m_moduleList ),
-        m_key( i.m_key ),
-        m_childList(),
-        m_stopKey( i.m_stopKey ),
-        m_alternativeContent( i.m_alternativeContent )
+    : m_settings(i.m_settings)
+    , m_moduleList(i.m_moduleList)
+    , m_key(i.m_key)
+    , m_stopKey(i.m_stopKey)
+    , m_alternativeContent(i.m_alternativeContent)
 {
     for (KeyTreeItem const * const item : *i.childList())
         m_childList.append(new KeyTreeItem((*item))); //deep copy
@@ -78,12 +65,10 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
                                          const QString &stopKey,
                                          const CSwordModuleInfo *module,
                                          const Settings &settings)
-        : m_settings( settings ),
-        m_moduleList(),
-        m_key( startKey ),
-        m_childList(),
-        m_stopKey( stopKey ),
-        m_alternativeContent( QString() ) {
+    : m_settings(settings)
+    , m_key(startKey)
+    , m_stopKey(stopKey)
+{
     BT_ASSERT(module);
     m_moduleList.append(module);
 
