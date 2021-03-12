@@ -158,7 +158,6 @@ class CTextRendering {
         virtual QString finishText(const QString &text, const KeyTree &tree);
         virtual QString entryLink(KeyTreeItem const & item,
                                   CSwordModuleInfo const * module);
-        virtual void initRendering();
 
     protected: /* Fields: */
 

@@ -196,7 +196,8 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
 }
 
 const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
-    initRendering();
+    //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
+    CSwordBackend::instance()->setFilterOptions(m_filterOptions);
 
     const BtConstModuleList modules = collectModules(tree);
     QString t;
@@ -483,11 +484,6 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
     //  qDebug("CTextRendering: %s", renderedText.latin1());
     return renderedText;
-}
-
-void CTextRendering::initRendering() {
-    //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
-    CSwordBackend::instance()->setFilterOptions(m_filterOptions);
 }
 
 QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
