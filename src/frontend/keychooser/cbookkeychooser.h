@@ -23,67 +23,60 @@ class CSwordBookModuleInfo;
 class CSwordKey;
 class CSwordTreeKey;
 
-/**
-  \brief The keychooser implementation for books.
-*/
-class CBookKeyChooser: public CKeyChooser {
+class CBookKeyChooser final : public CKeyChooser {
 
     Q_OBJECT
 
 public:
 
-    CBookKeyChooser(const BtConstModuleList & modules,
+    CBookKeyChooser(BtConstModuleList const & modules,
                     BTHistory * history,
                     CSwordKey * key = nullptr,
                     QWidget * parent = nullptr);
 
-    void refreshContent() override;
+    void refreshContent() final override;
 
-    void setModules(const BtConstModuleList & modules,
-                    bool refresh = false) override;
-    CSwordKey * key() override;
+    void setModules(BtConstModuleList const & modules,
+                    bool refresh = false) final override;
+    CSwordKey * key() final override;
 
-    void setKey(CSwordKey * key) override;
+    void setKey(CSwordKey * key) final override;
 
-    /**
-    * Sets a new key to this keychooser
-    */
-    void setKey(CSwordKey * key, const bool emitSignal);
+    /** \brief Sets a new key to this keychooser. */
+    void setKey(CSwordKey * key, bool const emitSignal);
 
-public Q_SLOTS: // Public slots
+public Q_SLOTS:
 
-    /**
-    * Updates the keychoosers for the given key but emit no signal.
-    */
-    void updateKey(CSwordKey * key) override;
+    /** \brief Updates the keychoosers for the given key but emit no signal. */
+    void updateKey(CSwordKey * key) final override;
 
 protected: /* Methods: */
 
     /**
-    * Fills the combo given by depth with the items from the key having depth "depth".
-    * The parent sibling is given by key.
+       Fills the combo given by depth with the items from the key having depth
+       "depth". The parent sibling is given by key.
     */
-    void setupCombo(const QString & key, const int depth, const int currentItem);
+    void setupCombo(QString const & key,
+                    int const depth,
+                    int const currentItem);
 
 private: /* Methods: */
 
     void adjustFont();
-    void handleHistoryMoved(QString const & newKey) override;
+    void handleHistoryMoved(QString const & newKey) final override;
 
 private Q_SLOTS:
 
-    /**
-    * A keychooser changed. Update and emit a signal if necessary.
-    */
+    /** \brief A keychooser changed. Update and emit a signal if necessary. */
     void keyChooserChanged(int);
 
 private: /* Fields: */
 
     QList<CKeyChooserWidget *> m_chooserWidgets;
-    QList<const CSwordBookModuleInfo *> m_modules;
+    QList<CSwordBookModuleInfo const *> m_modules;
     CSwordTreeKey * m_key;
     QHBoxLayout * m_layout;
 
-};
+}; /* class CBookKeyChooser */
 
-#endif
+#endif /* CBOOKKEYCHOOSER_H */
