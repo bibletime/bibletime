@@ -23,9 +23,6 @@ namespace Search {
 
 class CSearchAnalysisScene;
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
 class CSearchAnalysisView : public QGraphicsView {
     public:
         CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* parent);

@@ -27,9 +27,6 @@ namespace Search {
 
 class CSearchAnalysisLegendItem;
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
 class CSearchAnalysisScene : public QGraphicsScene {
         Q_OBJECT
     public:

@@ -28,7 +28,6 @@ class QStackedWidget;
 
 /**
  * @brief The shortcut settings page.
- * @author The BibleTime team <info@bibletime.info>
  */
 class CAcceleratorSettingsPage: public BtConfigDialog::Page {
 

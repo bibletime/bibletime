@@ -21,7 +21,6 @@ namespace util {
 
 /**
  * Tools for working with directories.
- * @author The BibleTime team <info@bibletime.info>
 */
 namespace directory {
 

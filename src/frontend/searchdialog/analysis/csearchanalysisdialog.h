@@ -26,9 +26,6 @@ namespace Search {
 class CSearchAnalysisView;
 class CSearchAnalysisScene;
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
 class CSearchAnalysisDialog : public QDialog {
         Q_OBJECT
     public:
