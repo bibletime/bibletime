@@ -1,0 +1,59 @@
+name: Generate and publish API documentation
+
+on:
+  push:
+    branches:
+      - 'master'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: code
+    - name: Install required packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends doxygen graphviz
+    - name: Run Doxygen
+      run: |
+        cd docs
+        doxygen
+    - uses: actions/checkout@v2
+      with:
+        repository: bibletime/api_docs
+        path: api_docs
+        token: ${{ secrets.PAT }}
+    - name: Configure API documentation repository checkout, clear local copy
+      working-directory: api_docs
+      run: |
+        git config --worktree user.name 'GitHub workflow'
+        git config --worktree user.email 'invalid@invalid'
+        git rm -rf docs
+    - name: Move generated API documentation to repository
+      run: |
+        mv -f docs/doxygen/html api_docs/docs
+    - name: Commit and push the generated documentation
+      working-directory: api_docs
+      run: |
+        EMPTY=""
+        git add docs
+        cat << EOF > commitMessage
+        Automatic update for ${GITHUB_REF}
+        $EMPTY
+        GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+        GITHUB_REF: ${GITHUB_REF}
+        GITHUB_SHA: ${GITHUB_SHA}
+        GITHUB_ACTOR: ${GITHUB_ACTOR}
+        $EMPTY
+        GITHUB_RUN_ID: ${GITHUB_RUN_ID}
+        GITHUB_RUN_NUMBER: ${GITHUB_RUN_NUMBER}
+        GITHUB_ACTION: ${GITHUB_ACTION}
+        EOF
+        git commit --amend -F commitMessage
+        git push --force
