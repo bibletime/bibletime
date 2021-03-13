@@ -34,7 +34,7 @@ jobs:
       run: |
         git config --worktree user.name 'GitHub workflow'
         git config --worktree user.email 'invalid@invalid'
-        git rm -rf docs
+        git rm -rf --ignore-unmatch docs
     - name: Move generated API documentation to repository
       run: |
         mv -f code/docs/doxygen/html api_docs/docs
