@@ -26,14 +26,16 @@ void setupRenderTree(CSwordTreeKey & swordTree,
                      Rendering::CTextRendering::KeyTree & renderTree,
                      QString const & highlightKey)
 {
-    const QString key = swordTree.key();
     const unsigned long offset = swordTree.getOffset();
 
-    Rendering::CTextRendering::KeyTreeItem::Settings settings;
-    settings.highlight = (key == highlightKey);
+    {
+        auto const key = swordTree.key();
+        Rendering::CTextRendering::KeyTreeItem::Settings settings;
+        settings.highlight = (key == highlightKey);
 
-    /// \todo Check whether this is correct:
-    renderTree.emplace_back(key, swordTree.module(), settings);
+        /// \todo Check whether this is correct:
+        renderTree.emplace_back(key, swordTree.module(), settings);
+    }
 
     if (swordTree.hasChildren()) { //print tree for the child items
         swordTree.firstChild();
