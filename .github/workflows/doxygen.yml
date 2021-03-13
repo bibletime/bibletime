@@ -34,7 +34,10 @@ jobs:
       run: |
         git config --worktree user.name 'GitHub workflow'
         git config --worktree user.email 'invalid@invalid'
-        git rm -rf --ignore-unmatch docs
+        git checkout --orphan updated
+        git rm -rf --cached --ignore-unmatch .
+        git rm -rf --ignore-unmatch .
+        git clean -dffx
     - name: Move generated API documentation to repository
       run: |
         mv -f code/docs/doxygen/html api_docs/docs
@@ -55,5 +58,5 @@ jobs:
         GITHUB_RUN_NUMBER: ${GITHUB_RUN_NUMBER}
         GITHUB_ACTION: ${GITHUB_ACTION}
         EOF
-        git commit --amend -F commitMessage
-        git push --force
+        git commit -F commitMessage
+        git push --force origin HEAD:master
