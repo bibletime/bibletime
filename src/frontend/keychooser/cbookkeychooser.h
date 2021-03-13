@@ -69,7 +69,7 @@ private: /* Methods: */
 
     void adjustFont();
 
-protected Q_SLOTS:
+private Q_SLOTS:
 
     /**
     * A keychooser changed. Update and emit a signal if necessary.
