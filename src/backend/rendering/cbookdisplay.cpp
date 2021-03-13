@@ -133,7 +133,7 @@ void Rendering::CBookDisplay::setupRenderTree(CSwordTreeKey * swordTree, CTextRe
 
     if (swordTree->hasChildren()) { //print tree for the child items
         swordTree->firstChild();
-        setupRenderTree(swordTree, renderTree->back().childList(), highlightKey);
+        setupRenderTree(swordTree, &renderTree->back().childList(), highlightKey);
         swordTree->setOffset( offset ); //go back where we came from
     }
 

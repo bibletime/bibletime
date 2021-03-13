@@ -269,8 +269,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                       : "<div class=\"entry\">";
         ret.append(i.getAlternativeContent());
 
-        if (!i.childList()->empty()) {
-            KeyTree const & tree = *i.childList();
+        if (!i.childList().empty()) {
+            KeyTree const & tree = i.childList();
 
             BtConstModuleList const modules(collectModules(tree));
 
@@ -423,8 +423,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         if (m_addText)
             entry.append(key_renderedText);
 
-        if (!i.childList()->empty())
-            for (auto const & item : *i.childList())
+        if (!i.childList().empty())
+            for (auto const & item : i.childList())
                 entry.append(renderEntry(item));
 
         entry.append("</div>");

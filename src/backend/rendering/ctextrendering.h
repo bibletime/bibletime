@@ -92,7 +92,7 @@ class CTextRendering {
 
                 Settings const & settings() const { return m_settings; }
 
-                KeyTree * childList() const { return &m_childList; }
+                KeyTree & childList() const noexcept { return m_childList; }
 
                 void setMappedKey(CSwordKey const * key) const
                 { m_mappedKey = key; }
