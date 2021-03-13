@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef RENDERINGCROSSREFRENDERING_H
-#define RENDERINGCROSSREFRENDERING_H
+#pragma once
 
 #include "ctextrendering.h"
 
@@ -39,5 +38,3 @@ protected: /* Methods: */
 }; /* class CrossRefRendering */
 
 } /* namespace Rendering */
-
-#endif /* RENDERINGCROSSREFRENDERING_H */

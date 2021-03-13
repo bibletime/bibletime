@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTM_MODULE_TEXT_FILTER_H
-#define BTM_MODULE_TEXT_FILTER_H
+#pragma once
 
 #include "../../../backend/models/btmoduletextmodel.h"
 
@@ -50,5 +49,3 @@ private:
 
     QStringList m_parts;
 };
-
-#endif

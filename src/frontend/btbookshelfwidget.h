@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFWIDGET_H
-#define BTBOOKSHELFWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -115,5 +114,3 @@ class BtBookshelfWidget: public QWidget {
         QAction *m_itemUnlockAction;
         QAction *m_itemAboutAction;
 };
-
-#endif // BTBOOKSHELFWIDGET_H

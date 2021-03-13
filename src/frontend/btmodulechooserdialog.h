@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMODULECHOOSERDIALOG_H
-#define BTMODULECHOOSERDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -42,5 +41,3 @@ class BtModuleChooserDialog : public QDialog {
         BtBookshelfWidget *m_bookshelfWidget;
         QDialogButtonBox  *m_buttonBox;
 };
-
-#endif // BTMODULECHOOSERDIALOG_H

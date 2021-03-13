@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSEARCHOPTIONSAREA_H
-#define BTSEARCHOPTIONSAREA_H
+#pragma once
 
 #include <QWidget>
 
@@ -146,6 +145,3 @@ class BtSearchOptionsArea : public QWidget {
 };
 
 }
-
-
-#endif

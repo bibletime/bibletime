@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFSOURCESPROGRESSPAGE
-#define BTBOOKSHELFSOURCESPROGRESSPAGE
+#pragma once
 
 #include "btbookshelfwizardpage.h"
 
@@ -56,5 +55,3 @@ private: /* Methods: */
     BtSourcesThread * m_thread = nullptr;
 
 };
-
-#endif

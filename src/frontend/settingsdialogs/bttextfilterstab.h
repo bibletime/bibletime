@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTTEXTFILTERSTAB_H
-#define BTTEXTFILTERSTAB_H
+#pragma once
 
 #include <QWidget>
 
@@ -50,5 +49,3 @@ class BtTextFiltersTab: public QWidget {
         TEXT_FILTERS_TAB_FIELD(scriptureReferences);
 
 };
-
-#endif /* BTTEXTFILTERSTAB_H */

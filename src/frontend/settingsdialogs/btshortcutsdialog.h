@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_SHORTCUTS_DIALOG_H
-#define BT_SHORTCUTS_DIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -63,5 +62,3 @@ class BtShortcutsDialog : public QDialog {
         QRadioButton* m_primaryButton;
         QRadioButton* m_alternateButton;
 };
-
-#endif

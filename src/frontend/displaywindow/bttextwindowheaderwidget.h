@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_MODULECHOOSERHEADERWIDGET
-#define BT_MODULECHOOSERHEADERWIDGET
+#pragma once
 
 #include <QWidget>
 
@@ -69,5 +68,3 @@ class BtTextWindowHeaderWidget : public QWidget {
         QLabel* m_label;
         QToolButton* m_button;
 };
-
-#endif

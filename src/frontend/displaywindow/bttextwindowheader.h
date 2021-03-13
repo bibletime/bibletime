@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_TEXTWINDOWHEADER
-#define BT_TEXTWINDOWHEADER
+#pragma once
 
 #include "btwindowmodulechooser.h"
 #include <QStringList>
@@ -66,5 +65,3 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
     private:
         QList<BtTextWindowHeaderWidget*> m_widgetList;
 };
-
-#endif

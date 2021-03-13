@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTWELCOMEDIALOG_H
-#define BTWELCOMEDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -44,5 +43,3 @@ private: /* Fields: */
     QDialogButtonBox * m_buttonBox;
 
 };
-
-#endif

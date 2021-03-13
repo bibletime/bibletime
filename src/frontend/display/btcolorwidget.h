@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTCOLORWIDGET_H
-#define BTCOLORWIDGET_H
+#pragma once
 
 #include <QFrame>
 
@@ -39,7 +38,3 @@ Q_SIGNALS:
     void changed(QColor const & color);
 
 };
-
-#endif
-
-

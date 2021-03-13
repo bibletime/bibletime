@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSEARCHMODULECHOOSERDIALOG_H
-#define BTSEARCHMODULECHOOSERDIALOG_H
+#pragma once
 
 #include "../btmodulechooserdialog.h"
 
@@ -37,5 +36,3 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
     protected:
         void retranslateUi();
 };
-
-#endif // BTSEARCHMODULECHOOSERDIALOG_H

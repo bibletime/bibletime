@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMENUVIEW_H
-#define BTMENUVIEW_H
+#pragma once
 
 #include <QMenu>
 
@@ -120,5 +119,3 @@ class BtMenuView: public QMenu {
         QActionGroup *m_actions;
 
 };
-
-#endif // BTMENUVIEW_H

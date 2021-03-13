@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMODULESET_H
-#define BTMODULESET_H
+#pragma once
 
 #include <QSet>
 
@@ -34,5 +33,3 @@ public: /* Methods: */
     }
 
 };
-
-#endif /* BTMODULESET_H */

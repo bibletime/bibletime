@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef REFERENCEMANAGER_H
-#define REFERENCEMANAGER_H
+#pragma once
 
 #include <QString>
 #include <optional>
@@ -73,7 +72,4 @@ struct ParseOptions {
 */
 QString parseVerseReference(QString const & ref, ParseOptions const & options);
 
-};
-
-#endif
-
+}

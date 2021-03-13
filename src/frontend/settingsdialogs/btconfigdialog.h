@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTCONFIGDIALOG_H
-#define BTCONFIGDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -79,5 +78,3 @@ private: /* Fields: */
     int m_maxItemWidth = 0;
 
 };
-
-#endif

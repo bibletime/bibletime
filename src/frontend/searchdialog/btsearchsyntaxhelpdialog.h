@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTTABDIALOG_H
-#define BTTABDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -35,5 +34,3 @@ class BtSearchSyntaxHelpDialog: public QDialog {
 };
 
 } // namespace Search
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef TOOL_H
-#define TOOL_H
+#pragma once
 
 #include <QIcon>
 #include <QString>
@@ -103,5 +102,3 @@ int mWidth(const QWidget * widget, int mCount);
 
 } /* namespace tool { */
 } /* namespace util { */
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDLEXICONMODULEINFO_H
-#define CSWORDLEXICONMODULEINFO_H
+#pragma once
 
 #include "cswordmoduleinfo.h"
 
@@ -76,5 +75,3 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         */
         mutable QStringList m_entries;
 };
-
-#endif

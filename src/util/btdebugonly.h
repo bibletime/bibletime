@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTDEBUGONLY_H
-#define BTDEBUGONLY_H
+#pragma once
 
 #ifdef NDEBUG
 #define BT_DEBUG_ONLY(...)
@@ -20,5 +19,3 @@
 #define BT_DEBUG_ONLY(...) __VA_ARGS__
 #define BT_NDEBUG_ONLY(...)
 #endif
-
-#endif /* BTDEBUGONLY_H */

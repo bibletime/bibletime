@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFSOURCESPAGE
-#define BTBOOKSHELFSOURCESPAGE
+#pragma once
 
 #include "btbookshelfwizardpage.h"
 
@@ -55,5 +54,3 @@ private: /* Fields: */
     BtListModel * m_model;
 
 }; /* class BtBookshelfSourcesPage */
-
-#endif

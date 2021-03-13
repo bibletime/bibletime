@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef RENDERINGCDISPLAYRENDERING_H
-#define RENDERINGCDISPLAYRENDERING_H
+#pragma once
 
 #include "ctextrendering.h"
 
@@ -45,5 +44,3 @@ class CDisplayRendering : public CTextRendering {
 }; /* class CDisplayRendering */
 
 } /* namespace Rendering */
-
-#endif

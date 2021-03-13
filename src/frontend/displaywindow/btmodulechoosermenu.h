@@ -10,6 +10,8 @@
 *
 **********/
 
+#pragma once
+
 #include "../btmenuview.h"
 
 #include <QFlags>

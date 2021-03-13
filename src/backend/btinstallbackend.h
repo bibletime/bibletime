@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef INSTBACKEND_H
-#define INSTBACKEND_H
+#pragma once
 
 #include <memory>
 #include <QDir>
@@ -67,5 +66,3 @@ QDir swordDir();
 std::unique_ptr<CSwordBackend> backend(sword::InstallSource const & is);
 
 } // namespace BtInstallBackend
-
-#endif

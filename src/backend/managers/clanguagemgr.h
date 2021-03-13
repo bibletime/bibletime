@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CLANGUAGEMGR_H
-#define CLANGUAGEMGR_H
+#pragma once
 
 #include <QHash>
 #include <QList>
@@ -164,5 +163,3 @@ private: /* Fields: */
     static CLanguageMgr * m_instance;
 
 }; /* class CLanguageMgr */
-
-#endif

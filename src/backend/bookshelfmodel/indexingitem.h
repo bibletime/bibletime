@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef INDEXINGITEM_H
-#define INDEXINGITEM_H
+#pragma once
 
 #include "item.h"
 
@@ -39,5 +38,3 @@ private: /* Fields: */
 };
 
 } // namespace BookshelfModel
-
-#endif // INDEXINGITEM_H

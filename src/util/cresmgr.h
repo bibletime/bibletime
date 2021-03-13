@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CRESMGR_H
-#define CRESMGR_H
+#pragma once
 
 #include <QKeySequence>
 #include <QString>
@@ -448,5 +447,3 @@ BT_GETICON2(icon_remove, remove)
 
 #undef BT_GETICON
 #undef BT_GETICON2
-
-#endif

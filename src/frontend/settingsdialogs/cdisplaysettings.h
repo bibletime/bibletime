@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CDISPLAYSETTINGS_H
-#define CDISPLAYSETTINGS_H
+#pragma once
 
 #include "btconfigdialog.h"
 
@@ -62,5 +61,3 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         QLabel *m_previewLabel;
 
 };
-
-#endif

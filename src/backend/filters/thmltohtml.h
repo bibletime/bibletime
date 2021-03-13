@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef FILTERS_THMLTOHTML_H
-#define FILTERS_THMLTOHTML_H
+#pragma once
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -63,5 +62,3 @@ class ThmlToHtml: public sword::ThMLHTML {
 };
 
 } // namespace Filters
-
-#endif

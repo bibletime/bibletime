@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef SEARCHCSEARCHANALYSISLEGENDITEM_H
-#define SEARCHCSEARCHANALYSISLEGENDITEM_H
+#pragma once
 
 #include <QGraphicsRectItem>
 
@@ -34,5 +33,3 @@ class CSearchAnalysisLegendItem : public QGraphicsRectItem {
 };
 
 } // namespace Search
-
-#endif

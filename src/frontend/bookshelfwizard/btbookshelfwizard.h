@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFWIZARD_H
-#define BTBOOKSHELFWIZARD_H
+#pragma once
 
 #include <QWizard>
 
@@ -84,5 +83,3 @@ private: /* Fields: */
     BtBookshelfInstallFinalPage * const m_installFinalPage;
 
 }; /* class BtBookshelfWizard */
-
-#endif

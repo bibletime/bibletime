@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSIGNAL_H
-#define BTSIGNAL_H
+#pragma once
 
 #include <QObject>
 
@@ -44,4 +43,3 @@ Q_SIGNALS:
     void signal();
 
 };
-#endif

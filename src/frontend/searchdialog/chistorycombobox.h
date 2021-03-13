@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CHISTORYCOMBOBOX_H
-#define CHISTORYCOMBOBOX_H
+#pragma once
 
 #include <QComboBox>
 
@@ -32,5 +31,3 @@ class CHistoryComboBox : public QComboBox {
 };
 
 } //end of namespace Search
-
-#endif

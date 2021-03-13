@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CBOOKTREECHOOSER_H
-#define CBOOKTREECHOOSER_H
+#pragma once
 
 #include "ckeychooser.h"
 
@@ -69,5 +68,3 @@ private: /* Fields: */
     QTreeWidget * m_treeView;
 
 }; /* class CBookTreeChooser */
-
-#endif /* CBOOKTREECHOOSER_H */

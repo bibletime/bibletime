@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CCOMMENTARYREADWINDOW_H
-#define CCOMMENTARYREADWINDOW_H
+#pragma once
 
 #include "cdisplaywindow.h"
 
@@ -61,5 +60,3 @@ class CCommentaryReadWindow : public CDisplayWindow  {
         QAction* m_syncButton;
         CSwordVerseKey* verseKey();
 };
-
-#endif

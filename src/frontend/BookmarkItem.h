@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BIBLETIME_BOOKMARKITEM_H
-#define BIBLETIME_BOOKMARKITEM_H
+#pragma once
 
 #include <QString>
 
@@ -52,5 +51,3 @@ protected: /* Fields: */
     QString m_description; /**< The description of a bookmark. */
 
 };
-
-#endif /* BIBLETIME_BOOKMARKITEM_H */

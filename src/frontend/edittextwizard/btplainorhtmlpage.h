@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_PLAIN_OR_HTML_PAGE
-#define BT_PLAIN_OR_HTML_PAGE
+#pragma once
 
 #include <QWizardPage>
 
@@ -38,5 +37,3 @@ private:
     QGroupBox * m_groupBox;
     QVBoxLayout * m_verticalLayout;
 };
-
-#endif

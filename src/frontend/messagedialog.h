@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef UTIL_DIALOG_UTIL_H
-#define UTIL_DIALOG_UTIL_H
+#pragma once
 
 #include <QMessageBox>
 
@@ -46,5 +45,3 @@ QMessageBox::StandardButton showInformation(QWidget * parent, const QString & ti
 QMessageBox::StandardButton showQuestion(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons = QMessageBox::Ok, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton);
 
 } // namespace message
-
-#endif

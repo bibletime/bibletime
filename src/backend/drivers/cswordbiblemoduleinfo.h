@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDBIBLEMODULEINFO_H
-#define CSWORDBIBLEMODULEINFO_H
+#pragma once
 
 #include "cswordmoduleinfo.h"
 
@@ -123,5 +122,3 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         mutable std::optional<QStringList> m_bookList; //This booklist is cached
         mutable QString m_cachedLocale;
 };
-
-#endif

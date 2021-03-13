@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTCONSTMODULESET_H
-#define BTCONSTMODULESET_H
+#pragma once
 
 #include <QSet>
 
@@ -32,5 +31,3 @@ public: /* Methods: */
     }
 
 };
-
-#endif /* BTCONSTMODULESET_H */

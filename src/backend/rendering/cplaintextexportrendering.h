@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef RENDERINGCPLAINTEXTEXPORTRENDERING_H
-#define RENDERINGCPLAINTEXTEXPORTRENDERING_H
+#pragma once
 
 #include "../config/btconfig.h"
 #include "ctextrendering.h"
@@ -41,5 +40,3 @@ class CPlainTextExportRendering: public CTextRendering {
 }; /* class CPlainTextExportRendering */
 
 } /* namespace Rendering */
-
-#endif

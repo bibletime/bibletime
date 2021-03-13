@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFGROUPINGMENU_H
-#define BTBOOKSHELFGROUPINGMENU_H
+#pragma once
 
 #include <QMenu>
 
@@ -46,5 +45,3 @@ class BtBookshelfGroupingMenu: public QMenu {
         QAction *m_groupingLangAction;
         QAction *m_groupingNoneAction;
 };
-
-#endif // BTBOOKSHELFGROUPINGMENU_H

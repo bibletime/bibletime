@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFTASKPAGE
-#define BTBOOKSHELFTASKPAGE
+#pragma once
 
 #include "btbookshelfwizardpage.h"
 
@@ -49,5 +48,3 @@ private: /* Fields: */
     QRadioButton * m_removeRadioButton;
 
 };
-
-#endif

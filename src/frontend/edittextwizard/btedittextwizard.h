@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_EDIT_TEXT_WIZARD_H
-#define BT_EDIT_TEXT_WIZARD_H
+#pragma once
 
 #include <QWizard>
 #include "../../util/btassert.h"
@@ -46,5 +45,3 @@ private:
     BtEditTextPage * const m_editTextPage;
 
 }; /* class BtEditTextWizard */
-
-#endif

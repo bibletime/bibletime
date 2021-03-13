@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef SEARCHCSEARCHANALYSISDIALOG_H
-#define SEARCHCSEARCHANALYSISDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -50,5 +49,3 @@ class CSearchAnalysisDialog : public QDialog {
 };
 
 }
-
-#endif

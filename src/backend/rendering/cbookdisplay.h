@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef RENDERINGCBOOKDISPLAY_H
-#define RENDERINGCBOOKDISPLAY_H
+#pragma once
 
 #include "centrydisplay.h"
 
@@ -40,5 +39,3 @@ class CBookDisplay: public CEntryDisplay {
 }; /* class CBookDisplay */
 
 } /* namespace Rendering */
-
-#endif

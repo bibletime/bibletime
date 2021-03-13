@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTLISTMODEL_H
-#define BTLISTMODEL_H
+#pragma once
 
 #include <QStandardItemModel>
 
@@ -35,4 +34,3 @@ private:
     int m_columnCount;
 
 };
-#endif

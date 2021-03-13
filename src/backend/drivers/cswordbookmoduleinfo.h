@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDGENBOOKMODULEINFO_H
-#define CSWORDGENBOOKMODULEINFO_H
+#pragma once
 
 #include "cswordmoduleinfo.h"
 
@@ -54,5 +53,3 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
     private: /* Fields: */
         int m_depth;
 };
-
-#endif

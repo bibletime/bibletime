@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTHISTORY_H
-#define BTHISTORY_H
+#pragma once
 
 #include <QObject>
 
@@ -74,5 +73,3 @@ class BTHistory: public QObject {
         int m_index; //pointer to the current item; -1==empty, 0==first etc.
         bool m_inHistoryFunction; //to prevent recursive behaviour
 };
-
-#endif

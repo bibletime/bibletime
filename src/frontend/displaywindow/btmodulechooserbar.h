@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_MODULECHOOSERBAR
-#define BT_MODULECHOOSERBAR
+#pragma once
 
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "btwindowmodulechooser.h"
@@ -61,5 +60,3 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         CSwordModuleInfo::ModuleType m_moduleType;
         QList<BtModuleChooserButton*> m_buttonList;
 };
-
-#endif

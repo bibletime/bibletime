@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSOURCESTHREAD_H
-#define BTSOURCESTHREAD_H
+#pragma once
 
 #include <QThread>
 
@@ -55,5 +54,3 @@ private: /* Fields: */
     std::atomic<bool> m_finishedSuccessfully;
 
 }; /* class BtSourcesThread */
-
-#endif

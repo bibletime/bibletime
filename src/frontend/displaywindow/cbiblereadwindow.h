@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CBIBLEREADWINDOW_H
-#define CBIBLEREADWINDOW_H
+#pragma once
 
 #include "cdisplaywindow.h"
 
@@ -122,5 +121,3 @@ private: /* Methods: */
     CSwordVerseKey* verseKey();
 
 };
-
-#endif /* CBIBLEREADWINDOW_H */

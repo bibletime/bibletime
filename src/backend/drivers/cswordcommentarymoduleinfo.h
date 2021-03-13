@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDCOMMENTARYMODULEINFO_H
-#define CSWORDCOMMENTARYMODULEINFO_H
+#pragma once
 
 #include "cswordbiblemoduleinfo.h"
 
@@ -34,5 +33,3 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
 
         bool isWritable() const override;
 };
-
-#endif

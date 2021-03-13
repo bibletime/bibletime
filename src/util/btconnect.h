@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTCONNECT_H
-#define BTCONNECT_H
+#pragma once
 
 #include <QObject>
 #include "btassert.h"
@@ -27,5 +26,3 @@
 #else
 #define BT_CONNECT(...) connect(__VA_ARGS__)
 #endif
-
-#endif /* BTCONNECT_H */

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTCONFIG_H
-#define BTCONFIG_H
+#pragma once
 
 #include "btconfigcore.h"
 
@@ -305,5 +304,3 @@ Q_DECLARE_METATYPE(QList<int>)
 inline BtConfig & btConfig() {
     return BtConfig::getInstance();
 }
-
-#endif // BTCONFIG_H

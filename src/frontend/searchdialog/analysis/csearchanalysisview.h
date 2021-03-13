@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef SEARCHCSEARCHANALYSISVIEW_H
-#define SEARCHCSEARCHANALYSISVIEW_H
+#pragma once
 
 #include <QGraphicsView>
 
@@ -38,5 +37,3 @@ class CSearchAnalysisView : public QGraphicsView {
 };
 
 }
-
-#endif

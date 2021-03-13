@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSTRINGMGR_H
-#define BTSTRINGMGR_H
+#pragma once
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -46,5 +45,3 @@ class BtStringMgr : public sword::StringMgr {
         bool supportsUnicode() const override;
 
 };
-
-#endif /* BTSTRINGMGR_H */

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMODELVIEWREADDISPLAY_H
-#define BTMODELVIEWREADDISPLAY_H
+#pragma once
 
 #include <QWidget>
 
@@ -209,5 +208,3 @@ private: /* Fields: */
     QString m_currentAnchorCache;
 
 };
-
-#endif

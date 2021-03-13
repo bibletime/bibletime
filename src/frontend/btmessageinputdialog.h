@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMESSAGEINPUTDIALOG_H
-#define BTMESSAGEINPUTDIALOG_H
+#pragma once
 
 #include <QDialog>
 class QLineEdit;
@@ -61,5 +60,3 @@ public: /* Methods: */
 private:
     QLineEdit * m_inputTextEdit;
 };
-
-#endif // BTMESSAGEINPUTDIALOG_H

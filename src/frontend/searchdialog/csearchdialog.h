@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSEARCHDIALOG_H
-#define CSEARCHDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -134,5 +133,3 @@ class CSearchDialog : public QDialog {
 
 
 } //end of namespace Search
-
-#endif

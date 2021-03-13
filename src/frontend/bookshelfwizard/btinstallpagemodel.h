@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTINSTALLPAGEMODEL_H
-#define BTINSTALLPAGEMODEL_H
+#pragma once
 
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 
@@ -34,5 +33,3 @@ public: /* Methods: */
                         int role = Qt::DisplayRole) const final override;
 
 }; /* class BtInstallPageModel */
-
-#endif /* BTINSTALLPAGEMODEL_H */

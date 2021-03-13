@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef RENDERINGCCHAPTERDISPLAY_H
-#define RENDERINGCCHAPTERDISPLAY_H
+#pragma once
 
 #include "centrydisplay.h"
 
@@ -36,5 +35,3 @@ class CChapterDisplay: public CEntryDisplay {
 }; /* class CChapterDisplay */
 
 } /* namespace Rendering */
-
-#endif

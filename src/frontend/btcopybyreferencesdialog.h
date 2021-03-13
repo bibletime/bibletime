@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_COPY_BY_REFERENCES_DIALOG_H
-#define BT_COPY_BY_REFERENCES_DIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -68,5 +67,3 @@ class BtCopyByReferencesDialog : public QDialog {
         RefIndexes m_ri;
 
 };
-
-#endif

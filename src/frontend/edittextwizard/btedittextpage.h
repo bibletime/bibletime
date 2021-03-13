@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_EDIT_TEXT_PAGE
-#define BT_EDIT_TEXT_PAGE
+#pragma once
 
 #include <QWizardPage>
 #include <QTextCharFormat>
@@ -73,5 +72,3 @@ private:
     }
     m_actions;
 };
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDSETTINGS_H
-#define CSWORDSETTINGS_H
+#pragma once
 
 #include "btconfigdialog.h"
 
@@ -44,5 +43,3 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
         BtTextFiltersTab * m_filtersTab;
 
 };
-
-#endif

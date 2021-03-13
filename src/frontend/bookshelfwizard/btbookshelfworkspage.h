@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFWORKSPAGE
-#define BTBOOKSHELFWORKSPAGE
+#pragma once
 
 #include "btbookshelfwizardpage.h"
 
@@ -82,5 +81,3 @@ private: /* Fields: */
     QMenu * m_itemContextMenu;
 
 }; /* class BtBookshelfWorksPage */
-
-#endif

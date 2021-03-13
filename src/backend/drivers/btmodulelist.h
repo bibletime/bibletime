@@ -10,14 +10,12 @@
 *
 **********/
 
-#ifndef BTMODULELIST_H
-#define BTMODULELIST_H
+#pragma once
 
 #include <QList>
+
 
 class CSwordModuleInfo;
 
 using BtModuleList = QList<CSwordModuleInfo *>;
 using BtConstModuleList = QList<CSwordModuleInfo const *>;
-
-#endif // BTMODULELIST_H

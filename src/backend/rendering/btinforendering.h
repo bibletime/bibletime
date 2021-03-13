@@ -10,9 +10,7 @@
 *
 **********/
 
-#ifndef BTINFORENDERING_H
-#define BTINFORENDERING_H
-
+#pragma once
 
 #include <QList>
 #include <QPair>
@@ -57,5 +55,3 @@ QString decodeMorph(QString const & data);
 QString decodeSwordReference(QString const & data);
 
 } /* namespace Rendering { */
-
-#endif // BTINFORENDERING_H

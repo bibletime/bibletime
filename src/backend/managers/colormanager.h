@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef COLORMANAGER_H
-#define COLORMANAGER_H
+#pragma once
 
 #include <map>
 #include <QString>
@@ -39,5 +38,3 @@ private: /* Fields: */
     std::map<QString, std::map<QString, QString> > m_colorMaps;
 
 }; /* class ColorManager */
-
-#endif

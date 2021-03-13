@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CKEYCHOOSERWIDGET_H
-#define CKEYCHOOSERWIDGET_H
+#pragma once
 
 #include <QComboBox>
 
@@ -149,5 +148,3 @@ private: /* Fields: */
     QString m_oldKey;
 
 };
-
-#endif

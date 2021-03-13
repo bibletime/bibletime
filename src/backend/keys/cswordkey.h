@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDKEY_H
-#define CSWORDKEY_H
+#pragma once
 
 #include <QPointer>
 #include <QString>
@@ -141,5 +140,3 @@ protected: /* Fields: */
 
     bool m_valid;
 };
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDLDKEY_H
-#define CSWORDLDKEY_H
+#pragma once
 
 #include "cswordkey.h"
 
@@ -99,7 +98,3 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         const char* rawKey() const override;
 
 };
-
-
-#endif
-

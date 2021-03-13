@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CINFODISPLAY_H
-#define CINFODISPLAY_H
+#pragma once
 
 #include <QWidget>
 
@@ -58,5 +57,3 @@ private: /* Fields: */
 };
 
 } //end of InfoDisplay namespace
-
-#endif

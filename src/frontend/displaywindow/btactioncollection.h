@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_ACTION_COLLECTION_H
-#define BT_ACTION_COLLECTION_H
+#pragma once
 
 #include <QObject>
 
@@ -104,5 +103,3 @@ private: /* Fields: */
     ActionMap m_actions;
 
 };
-
-#endif

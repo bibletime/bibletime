@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSCROLLBUTTON_H
-#define CSCROLLBUTTON_H
+#pragma once
 
 #include <QToolButton>
 
@@ -82,5 +81,3 @@ class CScrollButton: public QToolButton {
          */
         float m_movement;
 };
-
-#endif

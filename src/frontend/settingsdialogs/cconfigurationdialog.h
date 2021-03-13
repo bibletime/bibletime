@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CCONFIGURATIONDIALOG_H
-#define CCONFIGURATIONDIALOG_H
+#pragma once
 
 #include "btconfigdialog.h"
 
@@ -27,5 +26,3 @@ public: /* Methods: */
     ~CConfigurationDialog() noexcept override;
 
 };
-
-#endif

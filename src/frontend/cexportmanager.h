@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CEXPORTMANAGER_H
-#define CEXPORTMANAGER_H
+#pragma once
 
 #include <memory>
 #include <QList>
@@ -130,5 +129,3 @@ private: /* Fields: */
     QProgressDialog * m_progressDialog;
 
 };
-
-#endif

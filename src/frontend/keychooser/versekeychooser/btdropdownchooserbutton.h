@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTDROPDOWNCHOOSERBUTTON_H
-#define BTDROPDOWNCHOOSERBUTTON_H
+#pragma once
 
 #include <QToolButton>
 
@@ -66,4 +65,3 @@ class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
         BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
         void newList() override;
 };
-#endif

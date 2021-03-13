@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFFILTERMODEL_H
-#define BTBOOKSHELFFILTERMODEL_H
+#pragma once
 
 #include <QSortFilterProxyModel>
 
@@ -96,5 +95,3 @@ private: /* Fields: */
     int m_categoryFilterColumn;
 
 };
-
-#endif // BTBOOKSHELFFILTERMODEL_H

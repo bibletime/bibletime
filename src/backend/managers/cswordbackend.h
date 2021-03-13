@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDBACKEND_H
-#define CSWORDBACKEND_H
+#pragma once
 
 #include <memory>
 #include <QObject>
@@ -275,5 +274,3 @@ private: /* Fields: */
     static CSwordBackend * m_instance;
 
 };
-
-#endif

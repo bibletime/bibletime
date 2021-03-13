@@ -10,10 +10,7 @@
 *
 **********/
 
-#ifndef BTSTRINGJOIN_H
-#define BTSTRINGJOIN_H
+#pragma once
 
 #define BT_STRING_JOIN_(a, b) a ## b
 #define BT_STRING_JOIN(a, b) BT_STRING_JOIN_(a, b)
-
-#endif /* BTSTRINGJOIN_H */

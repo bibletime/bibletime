@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFDOCKWIDGET_H
-#define BTBOOKSHELFDOCKWIDGET_H
+#pragma once
 
 #include <QDockWidget>
 
@@ -69,5 +68,3 @@ class BtBookshelfDockWidget: public QDockWidget {
 
         static BtBookshelfDockWidget *m_instance;
 };
-
-#endif // BTBOOKSHELFDOCKWIDGET_H

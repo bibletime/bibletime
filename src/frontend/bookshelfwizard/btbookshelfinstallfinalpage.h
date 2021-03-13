@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFINSTALLFINALPAGE
-#define BTBOOKSHELFINSTALLFINALPAGE
+#pragma once
 
 #include "btbookshelfwizardpage.h"
 
@@ -73,5 +72,3 @@ private: /* Fields: */
     int m_lastStatus = -1;
 
 }; /* class BtBookshelfInstallFinalPage */
-
-#endif

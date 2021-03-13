@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMODULEINDEXDIALOG_H
-#define BTMODULEINDEXDIALOG_H
+#pragma once
 
 #include <QProgressDialog>
 
@@ -56,5 +55,3 @@ class BtModuleIndexDialog: public QProgressDialog {
     private: /* Fields: */
         int m_currentModuleIndex;
 };
-
-#endif

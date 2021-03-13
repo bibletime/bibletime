@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTABOUTDIALOG_H
-#define BTABOUTDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -50,5 +49,3 @@ class BtAboutDialog: public QDialog {
         QLabel *m_iconLabel;
         QLabel *m_versionLabel;
 };
-
-#endif

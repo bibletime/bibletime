@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CACCELERATORSETTINGS_H
-#define CACCELERATORSETTINGS_H
+#pragma once
 
 #include "btconfigdialog.h"
 
@@ -65,5 +64,3 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
         QStackedWidget* m_keyChooserStack;
 
 };
-
-#endif

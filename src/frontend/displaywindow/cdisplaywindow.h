@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CDISPLAYWINDOW_H
-#define CDISPLAYWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 
@@ -322,5 +321,3 @@ private:
     BtModelViewReadDisplay * m_displayWidget = nullptr;
     BTHistory* m_history;
 };
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTOPENWORKACTION_H
-#define BTOPENWORKACTION_H
+#pragma once
 
 #include <memory>
 #include <QAction>
@@ -79,5 +78,3 @@ class BtOpenWorkAction: public QAction {
     private:
         BtOpenWorkActionMenu *m_menu;
 };
-
-#endif // BTOPENWORKACTION_H

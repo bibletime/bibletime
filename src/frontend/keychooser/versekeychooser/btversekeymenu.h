@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTVERSEKEYMENU_H
-#define BTVERSEKEYMENU_H
+#pragma once
 
 #include <QMenu>
 
@@ -38,5 +37,3 @@ class BtVerseKeyMenu : public QMenu {
         int m_timerId;
         bool m_firstClickLock;
 };
-
-#endif

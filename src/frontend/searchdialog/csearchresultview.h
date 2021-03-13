@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSEARCHRESULTSVIEW_H
-#define CSEARCHRESULTSVIEW_H
+#pragma once
 
 #include <QTreeWidget>
 
@@ -89,6 +88,3 @@ class CSearchResultView  : public QTreeWidget {
 };
 
 } //end of namespace Search
-
-#endif
-

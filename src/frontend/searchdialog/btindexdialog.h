@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTINDEXDIALOG_H
-#define BTINDEXDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -59,5 +58,3 @@ private: /* Fields: */
     QTreeWidgetItem * m_modsWithoutIndices;
 
 };
-
-#endif /* BTINDEXDIALOG_H */

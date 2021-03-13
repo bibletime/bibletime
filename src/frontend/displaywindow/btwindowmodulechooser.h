@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_WINDOWMODULECHOOSER
-#define BT_WINDOWMODULECHOOSER
+#pragma once
 
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include <QStringList>
@@ -58,5 +57,3 @@ class BtWindowModuleChooser {
         /** The cache of the window module list. Kept for convenience.*/
         QStringList m_modules;
 };
-
-#endif

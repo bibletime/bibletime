@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTINSTALLMGR_H
-#define BTINSTALLMGR_H
+#pragma once
 
 #include <QObject>
 
@@ -75,5 +74,3 @@ private: /* Fields: */
     bool m_firstCallOfPreStatus;
 
 };
-
-#endif /* BTINSTALLMGR_H */

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTTIPDIALOG_H
-#define BTTIPDIALOG_H
+#pragma once
 
 #include <QDialog>
 #include <QStringList>
@@ -48,5 +47,3 @@ class BtTipDialog: public QDialog {
         int m_tipNumber;
         QStringList m_tips;
 };
-
-#endif

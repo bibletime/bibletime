@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBIBLEKEYWIDGET_H
-#define BTBIBLEKEYWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -113,5 +112,3 @@ class BtBibleKeyWidget : public QWidget  {
         QString oldKey;
         const CSwordBibleModuleInfo *m_module;
 };
-
-#endif

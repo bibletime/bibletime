@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BIBLETIME_BTMIMEDATA_H
-#define BIBLETIME_BTMIMEDATA_H
+#pragma once
 
 #include <QMimeData>
 
@@ -74,5 +73,3 @@ private: /* Fields: */
     ItemList m_bookmarkList;
 
 };
-
-#endif /* BIBLETIME_BTMIMEDATA_H */

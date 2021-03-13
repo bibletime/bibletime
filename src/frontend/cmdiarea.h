@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CMDIAREA_H
-#define CMDIAREA_H
+#pragma once
 
 #include <QMdiArea>
 
@@ -180,5 +179,3 @@ class CMDIArea: public QMdiArea {
         BibleTime* m_bibleTime;
 
 }; /* class CMDIArea */
-
-#endif

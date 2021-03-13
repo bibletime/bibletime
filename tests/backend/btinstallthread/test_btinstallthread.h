@@ -10,6 +10,8 @@
 *
 **********/
 
+#pragma once
+
 #include <memory>
 #include <QtTest/QtTest>
 #include <QString>

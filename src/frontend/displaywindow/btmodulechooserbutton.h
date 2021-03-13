@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_MODULECHOOSERBUTTON
-#define BT_MODULECHOOSERBUTTON
+#pragma once
 
 #include <QToolButton>
 
@@ -69,5 +68,3 @@ class BtModuleChooserButton: public QToolButton {
 
         BtModuleChooserMenu * m_popup;
 };
-
-#endif

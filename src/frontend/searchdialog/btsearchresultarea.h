@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSEARCHRESULTAREA_H
-#define BTSEARCHRESULTAREA_H
+#pragma once
 
 #include <QList>
 #include <QSplitter>
@@ -175,5 +174,3 @@ class BtSearchResultArea : public QWidget {
 };
 
 } //namespace Search
-
-#endif

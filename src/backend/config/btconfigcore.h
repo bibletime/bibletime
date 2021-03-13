@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTCONFIGCORE_H
-#define BTCONFIGCORE_H
+#pragma once
 
 #include <memory>
 #include <QString>
@@ -121,5 +120,3 @@ private: /* Fields: */
     QString m_groupPrefix; ///< Empty or absolute path with trailing slash
 
 }; /* class BtConfigCore */
-
-#endif // BTCONFIGCORE_H

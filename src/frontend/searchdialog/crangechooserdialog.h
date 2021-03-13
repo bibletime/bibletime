@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CRANGECHOOSERDIALOG_H
-#define CRANGECHOOSERDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -118,5 +117,3 @@ private:
 }; /* class CRangeChooserDialog */
 
 } /* namespace Search */
-
-#endif

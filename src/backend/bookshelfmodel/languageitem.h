@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef LANGUAGEITEM_H
-#define LANGUAGEITEM_H
+#pragma once
 
 #include "item.h"
 
@@ -40,5 +39,3 @@ private: /* Fields: */
 };
 
 } // namespace BookshelfModel
-
-#endif // LANGUAGEITEM_H

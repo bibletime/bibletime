@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_TOOLBAR_POPUP_ACTION_H
-#define BT_TOOLBAR_POPUP_ACTION_H
+#pragma once
 
 #include <QWidgetAction>
 #include <memory>
@@ -43,5 +42,3 @@ class BtToolBarPopupAction : public QWidgetAction {
         QIcon m_icon;
         QString m_text;
 };
-
-#endif

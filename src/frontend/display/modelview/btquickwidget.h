@@ -10,14 +10,13 @@
 *
 **********/
 
+#pragma once
+
 /**
     The BtQuickWidget is a subclass of QQuickWidget. The subclass was
     needed to be able to catch the drop event when a bookmark is dropped
     on a read window.
   */
-
-#ifndef BTQUICKWIDGET_H
-#define BTQUICKWIDGET_H
 
 #include <QTimer>
 #include <QWidget>
@@ -73,6 +72,3 @@ private:
 Q_SIGNALS:
     void referenceDropped(const QString& reference);
 };
-
-
-#endif

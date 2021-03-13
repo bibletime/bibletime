@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CENTRYDISPLAY_H
-#define CENTRYDISPLAY_H
+#pragma once
 
 #include <QString>
 #include "../drivers/btmodulelist.h"
@@ -49,5 +48,3 @@ class CEntryDisplay {
 }; /* class CEntryDisplay */
 
 } /* namespace Rendering */
-
-#endif

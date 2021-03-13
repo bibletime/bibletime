@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTDISPLAYSETTINGSBUTTON_H
-#define BTDISPLAYSETTINGSBUTTON_H
+#pragma once
 
 #include <QToolButton>
 
@@ -73,5 +72,3 @@ class BtDisplaySettingsButton: public QToolButton {
         QAction *m_footnotesAction;
         QAction *m_morphSegmentationAction;
 };
-
-#endif

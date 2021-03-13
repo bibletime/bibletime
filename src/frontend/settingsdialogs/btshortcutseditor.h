@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_SHORTCUTS_EDITOR_H
-#define BT_SHORTCUTS_EDITOR_H
+#pragma once
 
 #include <QWidget>
 
@@ -75,6 +74,3 @@ class BtShortcutsEditor : public QWidget {
         QLabel* m_defaultLabelValue;
         int m_currentRow;
 };
-
-#endif
-

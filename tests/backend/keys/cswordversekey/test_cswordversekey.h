@@ -10,6 +10,8 @@
 *
 **********/
 
+#pragma once
+
 #include <QtTest/QtTest>
 #include "backend/keys/cswordversekey.h"
 

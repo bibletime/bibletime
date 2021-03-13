@@ -10,6 +10,8 @@
 *
 **********/
 
+#pragma once
+
 #include <QObject>
 
 class test_BtListModel : public QObject {

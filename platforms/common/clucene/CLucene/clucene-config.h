@@ -12,8 +12,8 @@
 
 #ifndef _SRC_CLUCENE_CLUCENE_CONFIG_H
 #define _SRC_CLUCENE_CLUCENE_CONFIG_H 1
- 
-/* src/CLucene/clucene-config.h. 
+
+/* src/CLucene/clucene-config.h.
 *  Generated automatically at end of cmake.
 */
 
@@ -26,46 +26,46 @@
 #define _CL_HAVE_VECTOR  1
 #define _CL_HAVE_LIST  1
 #define _CL_HAVE_SET  1
-#define _CL_HAVE_MATH_H  1 
+#define _CL_HAVE_MATH_H  1
 #define _CL_HAVE_STDARG_H  1
 #define _CL_HAVE_STDEXCEPT 1
-#define _CL_HAVE_FCNTL_H  1 
+#define _CL_HAVE_FCNTL_H  1
 
-#define _CL_HAVE_WCSCPY  1 
-#define _CL_HAVE_WCSNCPY  1 
-#define _CL_HAVE_WCSCAT  1 
-#define _CL_HAVE_WCSCHR  1 
-#define _CL_HAVE_WCSSTR  1 
-#define _CL_HAVE_WCSLEN  1 
-#define _CL_HAVE_WCSCMP  1 
-#define _CL_HAVE_WCSNCMP  1 
-#define _CL_HAVE_WCSCSPN  1 
+#define _CL_HAVE_WCSCPY  1
+#define _CL_HAVE_WCSNCPY  1
+#define _CL_HAVE_WCSCAT  1
+#define _CL_HAVE_WCSCHR  1
+#define _CL_HAVE_WCSSTR  1
+#define _CL_HAVE_WCSLEN  1
+#define _CL_HAVE_WCSCMP  1
+#define _CL_HAVE_WCSNCMP  1
+#define _CL_HAVE_WCSCSPN  1
 
 /* CMake will look for these headers: */
 
 /* Define to 1 if you have the ANSI C header files. */
-#define _CL_STDC_HEADERS  1 
+#define _CL_STDC_HEADERS  1
 
 /* Define to 1 if you have the <string.h> header file. */
 #define _CL_HAVE_STRING_H  1
 
 /* Define to 1 if you have the <strings.h> header file. */
-#define _CL_HAVE_STRINGS_H  1 
+#define _CL_HAVE_STRINGS_H  1
 
 /* Define to 1 if you have the <memory.h> header file. */
-#define _CL_HAVE_MEMORY_H  1 
+#define _CL_HAVE_MEMORY_H  1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#define _CL_HAVE_UNISTD_H  1 
+#define _CL_HAVE_UNISTD_H  1
 
 /* Define to 1 if you have the <io.h> header file. */
-#define _CL_HAVE_IO_H  1 
+#define _CL_HAVE_IO_H  1
 
 /* Define to 1 if you have the <direct.h> header file. */
-#define _CL_HAVE_DIRECT_H  1 
+#define _CL_HAVE_DIRECT_H  1
 
 /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'. */
-#define _CL_HAVE_DIRENT_H  1 
+#define _CL_HAVE_DIRENT_H  1
 
 /* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'. */
 /* #undef _CL_HAVE_SYS_DIR_H */
@@ -74,32 +74,32 @@
 /* #undef _CL_HAVE_SYS_NDIR_H */
 
 /* Define to 1 if you have the <errno.h> header file. */
-#define _CL_HAVE_ERRNO_H  1 
+#define _CL_HAVE_ERRNO_H  1
 
 /* Define to 1 if you have the <wchar.h> header file. */
-#define _CL_HAVE_WCHAR_H  1 
+#define _CL_HAVE_WCHAR_H  1
 
 /* Define to 1 if you have a functioning <wchar.h> header file. */
-#define _CL_HAVE_WCTYPE_H   
+#define _CL_HAVE_WCTYPE_H
 
 /* Define to 1 if you have the <ctype.h> header file. */
-#define _CL_HAVE_CTYPE_H  1 
+#define _CL_HAVE_CTYPE_H  1
 
 /* Define to 1 if you have the <windows.h> header file. */
 //#define _CL_HAVE_WINDOWS_H  1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
-#define _CL_HAVE_SYS_TYPES_H  1 
+#define _CL_HAVE_SYS_TYPES_H  1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
-#define _CL_HAVE_INTTYPES_H  1 
+#define _CL_HAVE_INTTYPES_H  1
 
 
 /* CMake will look for these symbols: */
 
 /* Define to 1 if the system has the type `float_t'. */
 //todo: HACK
-#define _CL_HAVE_FLOAT_T  1 
+#define _CL_HAVE_FLOAT_T  1
 
 #ifdef __MINGW32__
 //typedef float float_t;
@@ -108,34 +108,34 @@
 
 /* Define to 1 if the system has the type `intptr_t'. */
 //todo: HACK
-#define _CL_HAVE_INTPTR_T  1 
+#define _CL_HAVE_INTPTR_T  1
 
 /* Define to 1 if the system has the type `wchar_t'. */
 //todo: HACK
-#define _CL_HAVE_WCHAR_T  1 
+#define _CL_HAVE_WCHAR_T  1
 
 
 
 /* CMake will look for these functions: */
 
 /* Define to 1 if you have the `printf' function. */
-#define _CL_HAVE_PRINTF  1 
+#define _CL_HAVE_PRINTF  1
 
 /* Define to 1 if you have the `snprintf' function. */
-#define _CL_HAVE_SNPRINTF  1 
- 
+#define _CL_HAVE_SNPRINTF  1
+
 
 
 /* CMake will determine these module specificics */
 
 /* Define if you have POSIX threads libraries and header files. */
-#define _CL_HAVE_PTHREAD  1 
+#define _CL_HAVE_PTHREAD  1
 
 /* Define if you have POSIX threads libraries and header files. */
 //#define _CL_HAVE_WIN32_THREADS  1
 
 /* define if the compiler supports ISO C++ standard library */
-#define _CL_HAVE_STD   
+#define _CL_HAVE_STD
 
 
 /* Disable multithreading */
@@ -147,10 +147,10 @@
 
 
 /* Define to 1 if you have the <ext/hash_map> header file. */
-#define _CL_HAVE_EXT_HASH_MAP  1 
+#define _CL_HAVE_EXT_HASH_MAP  1
 
 /* Define to 1 if you have the <ext/hash_set> header file. */
-#define _CL_HAVE_EXT_HASH_SET  1 
+#define _CL_HAVE_EXT_HASH_SET  1
 
 
 /* Define to 1 if you have the <functional> header file. */
@@ -213,10 +213,10 @@
 #endif
 
 /* Define to 1 if you have the <stdint.h> header file. */
-#define _CL_HAVE_STDINT_H  1 
+#define _CL_HAVE_STDINT_H  1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
-#define _CL_HAVE_STDLIB_H  1 
+#define _CL_HAVE_STDLIB_H  1
 
 /* define if the compiler supports Standard Template Library */
 /* #undef _CL_HAVE_STL */
@@ -235,11 +235,11 @@
 /* #undef _CL_HAVE_SWPRINTF_BUG */
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
-#define _CL_HAVE_SYS_STAT_H  1 
+#define _CL_HAVE_SYS_STAT_H  1
 
 /* Define to 1 if you have the <sys/timeb.h> header file. */
 #ifndef __SYMBIAN32__
-#define _CL_HAVE_SYS_TIMEB_H  1 
+#define _CL_HAVE_SYS_TIMEB_H  1
 #endif
 
 /* Define to 1 if you have the <tchar.h> header file. */
@@ -259,34 +259,34 @@
 /* #undef _CL_HAVE_WCSCASECMP */
 
 /* Define to 1 if you have the `wcscat' function. */
-#define _CL_HAVE_WCSCAT  1 
+#define _CL_HAVE_WCSCAT  1
 
 /* Define to 1 if you have the `wcschr' function. */
-#define _CL_HAVE_WCSCHR  1 
+#define _CL_HAVE_WCSCHR  1
 
 /* Define to 1 if you have the `wcscmp' function. */
-#define _CL_HAVE_WCSCMP  1 
+#define _CL_HAVE_WCSCMP  1
 
 /* Define to 1 if you have the `wcscpy' function. */
-#define _CL_HAVE_WCSCPY  1 
+#define _CL_HAVE_WCSCPY  1
 
 /* Define to 1 if you have the `wcscspn' function. */
-#define _CL_HAVE_WCSCSPN  1 
+#define _CL_HAVE_WCSCSPN  1
 
 /* Define to 1 if you have the `wcsicmp' function. */
 #define _CL_HAVE_WCSICMP
 
 /* Define to 1 if you have the `wcslen' function. */
-#define _CL_HAVE_WCSLEN  1 
+#define _CL_HAVE_WCSLEN  1
 
 /* Define to 1 if you have the `wcsncmp' function. */
-#define _CL_HAVE_WCSNCMP  1 
+#define _CL_HAVE_WCSNCMP  1
 
 /* Define to 1 if you have the `wcsncpy' function. */
-#define _CL_HAVE_WCSNCPY  1 
+#define _CL_HAVE_WCSNCPY  1
 
 /* Define to 1 if you have the `wcsstr' function. */
-#define _CL_HAVE_WCSSTR  1 
+#define _CL_HAVE_WCSSTR  1
 
 /* Define to 1 if you have the `wcstod' function. */
 #define _CL_HAVE_WCSTOD
@@ -348,7 +348,7 @@
 /* #undef _CL_STAT_MACROS_BROKEN */
 
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
-#define _CL_TIME_WITH_SYS_TIME  1 
+#define _CL_TIME_WITH_SYS_TIME  1
 
 /* Version number of package */
 /* #undef _CL_VERSION */

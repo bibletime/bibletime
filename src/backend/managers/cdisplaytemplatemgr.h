@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CDISPLAYTEMPLATEMGR_H
-#define CDISPLAYTEMPLATEMGR_H
+#pragma once
 
 #include <QHash>
 #include <QStringList>
@@ -127,5 +126,3 @@ class CDisplayTemplateMgr {
         QStringList m_availableTemplateNamesCache;
 
 };
-
-#endif

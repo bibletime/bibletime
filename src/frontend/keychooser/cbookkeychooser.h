@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CBOOKKEYCHOOSER_H
-#define CBOOKKEYCHOOSER_H
+#pragma once
 
 #include "ckeychooser.h"
 
@@ -78,5 +77,3 @@ private: /* Fields: */
     QHBoxLayout * m_layout;
 
 }; /* class CBookKeyChooser */
-
-#endif /* CBOOKKEYCHOOSER_H */

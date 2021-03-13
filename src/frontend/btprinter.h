@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTPRINTER_H
-#define BTPRINTER_H
+#pragma once
 
 #include <QObject>
 #include "../backend/rendering/cdisplayrendering.h"
@@ -42,5 +41,3 @@ private: /* Methods: */
     QString finishText(QString const & text, KeyTree const & tree) override;
 
 };
-
-#endif /* BTPRINTER_H */

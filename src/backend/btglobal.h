@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTGLOBAL_H
-#define BTGLOBAL_H
+#pragma once
 
 #include <QMetaType>
 
@@ -79,5 +78,3 @@ enum alignmentMode { /* Values provided for serialization */
 QDataStream &operator<<(QDataStream &out, const alignmentMode &mode);
 QDataStream &operator>>(QDataStream &in, alignmentMode &mode);
 Q_DECLARE_METATYPE(alignmentMode)
-
-#endif // BTGLOBAL_H

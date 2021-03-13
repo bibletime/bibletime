@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef FILTERS_OSISTOHTML_H
-#define FILTERS_OSISTOHTML_H
+#pragma once
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -75,5 +74,3 @@ class OsisToHtml: public sword::OSISHTMLHREF {
 };
 
 } // namespace Filters
-
-#endif

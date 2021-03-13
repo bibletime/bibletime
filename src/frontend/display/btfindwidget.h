@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTFINDIDGET_H
-#define BTFINDIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -53,5 +52,3 @@ private: /* Fields: */
     QCheckBox * m_caseCheckBox;
 
 };
-
-#endif

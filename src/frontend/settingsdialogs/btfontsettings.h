@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTFONTSETTINGS_H
-#define BTFONTSETTINGS_H
+#pragma once
 
 #include "btconfigdialog.h"
 
@@ -61,5 +60,3 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
         FontMap m_fontMap;
 
 };
-
-#endif

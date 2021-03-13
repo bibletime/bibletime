@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef FILTERS_PLAINTOHTML_H
-#define FILTERS_PLAINTOHTML_H
+#pragma once
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -42,5 +41,3 @@ class PlainToHtml: public sword::SWFilter {
 };
 
 } // namespace Filters
-
-#endif

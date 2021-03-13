@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CATEGORYITEM_H
-#define CATEGORYITEM_H
+#pragma once
 
 #include "item.h"
 
@@ -45,5 +44,3 @@ private: /* Fields: */
 };
 
 } // namespace BookshelfModel
-
-#endif // CATEGORYITEM_H

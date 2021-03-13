@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BIBLETIME_H
-#define BIBLETIME_H
+#pragma once
 
 #include <QMainWindow>
 
@@ -537,5 +536,3 @@ public Q_SLOTS:
         static std::mutex m_debugWindowLock;
 #endif
 };
-
-#endif

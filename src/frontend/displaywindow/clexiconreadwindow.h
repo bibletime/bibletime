@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CLEXICONREADWINDOW_H
-#define CLEXICONREADWINDOW_H
+#pragma once
 
 #include "cdisplaywindow.h"
 
@@ -46,5 +45,3 @@ private: /* Methods: */
     CSwordLDKey * ldKey();
 
 };
-
-#endif

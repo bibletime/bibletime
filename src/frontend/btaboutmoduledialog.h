@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTABOUTMODULEDIALOG_H
-#define BTABOUTMODULEDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -44,5 +43,3 @@ class BTAboutModuleDialog: public QDialog {
         QDialogButtonBox *m_buttons;
 
 }; /* class BTAboutModuleDialog */
-
-#endif

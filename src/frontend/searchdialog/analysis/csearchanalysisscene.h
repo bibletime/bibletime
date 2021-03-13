@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef SEARCHCSEARCHANALYSISSCENE_H
-#define SEARCHCSEARCHANALYSISSCENE_H
+#pragma once
 
 #include <QGraphicsScene>
 
@@ -82,5 +81,3 @@ class CSearchAnalysisScene : public QGraphicsScene {
 };
 
 }
-
-#endif

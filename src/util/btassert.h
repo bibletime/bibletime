@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTASSERT_H
-#define BTASSERT_H
+#pragma once
 
 #if !defined(QT_NO_DEBUG) && !defined(NDEBUG)
 #include <QtGlobal>
@@ -20,5 +19,3 @@
 #include <cassert>
 #define BT_ASSERT(...) assert(__VA_ARGS__)
 #endif
-
-#endif /* BTASSERT_H */

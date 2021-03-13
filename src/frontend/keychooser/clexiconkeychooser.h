@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CLEXICONKEYCHOOSER_H
-#define CLEXICONKEYCHOOSER_H
+#pragma once
 
 #include "ckeychooser.h"
 
@@ -61,5 +60,3 @@ private: /* Fields: */
     QHBoxLayout * m_layout;
 
 }; /* class CLexiconKeyChooser */
-
-#endif /* CLEXICONKEYCHOOSER_H */

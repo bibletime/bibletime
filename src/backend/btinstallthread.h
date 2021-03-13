@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTINSTALLTHREAD_H
-#define BTINSTALLTHREAD_H
+#pragma once
 
 #include <QThread>
 
@@ -87,5 +86,3 @@ class BtInstallThread: public QThread {
         std::atomic<bool> m_stopRequested;
 
 };
-
-#endif

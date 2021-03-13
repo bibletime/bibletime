@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CTEXTRENDERING_H
-#define CTEXTRENDERING_H
+#pragma once
 
 #include <list>
 #include <QString>
@@ -158,5 +157,3 @@ class CTextRendering {
 }; /* class CTextRendering */
 
 } /* namespace Rendering */
-
-#endif

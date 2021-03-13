@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CMODULERESULTSVIEW_H
-#define CMODULERESULTSVIEW_H
+#pragma once
 
 #include <QTreeWidget>
 
@@ -114,5 +113,3 @@ class CModuleResultView : public QTreeWidget {
 
 
 } //end of namespace Search
-
-#endif

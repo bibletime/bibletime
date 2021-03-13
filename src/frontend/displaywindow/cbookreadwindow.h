@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CBOOKREADWINDOW_H
-#define CBOOKREADWINDOW_H
+#pragma once
 
 #include "cdisplaywindow.h"
 
@@ -63,5 +62,3 @@ private: /* Fields: */
     QAction * m_treeAction;
     CBookTreeChooser * m_treeChooser;
 };
-
-#endif

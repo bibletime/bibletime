@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFWIZARDPAGE_H
-#define BTBOOKSHELFWIZARDPAGE_H
+#pragma once
 
 #include <QWizardPage>
 
@@ -29,5 +28,3 @@ public: /* Methods: */
     BtBookshelfWizard & btWizard() const noexcept;
 
 }; /* class BtBookshelfWizardPage */
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef MODULEITEM_H
-#define MODULEITEM_H
+#pragma once
 
 #include "item.h"
 
@@ -51,5 +50,3 @@ private: /* Fields: */
 };
 
 } // namespace BookshelfModel
-
-#endif // MODULEITEM_H

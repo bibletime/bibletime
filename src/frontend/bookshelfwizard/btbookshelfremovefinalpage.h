@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFREMOVEFINALPAGE
-#define BTBOOKSHELFREMOVEFINALPAGE
+#pragma once
 
 #include "btbookshelfwizardpage.h"
 
@@ -45,5 +44,3 @@ private: /* Fields: */
     QVBoxLayout * m_verticalLayout;
 
 }; /* class BtBookshelfRemoveFinalPage */
-
-#endif

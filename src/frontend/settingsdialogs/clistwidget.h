@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CLISTWIDGET_H
-#define CLISTWIDGET_H
+#pragma once
 
 #include <QListWidget>
 
@@ -24,5 +23,3 @@ class CListWidget : public QListWidget {
         QSize sizeHint() const override;
         void setCharWidth(int width);
 };
-
-#endif

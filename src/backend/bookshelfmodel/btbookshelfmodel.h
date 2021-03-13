@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFMODEL_H
-#define BTBOOKSHELFMODEL_H
+#pragma once
 
 #include <QAbstractListModel>
 
@@ -181,5 +180,3 @@ private: /* Fields: */
     QList<CSwordModuleInfo *> m_data;
 
 };
-
-#endif // BTBOOKSHELFMODEL_H

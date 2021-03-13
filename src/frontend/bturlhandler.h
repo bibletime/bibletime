@@ -10,6 +10,8 @@
 *
 **********/
 
+#pragma once
+
 #include <QObject>
 #include <QUrl>
 
@@ -22,4 +24,3 @@ public Q_SLOTS:
 };
 
 //  QDesktopServices::setUrlHandler("help", helpInstance, "showHelp");
-

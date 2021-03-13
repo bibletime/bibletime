@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef FILTERS_TEITOHTML_H
-#define FILTERS_TEITOHTML_H
+#pragma once
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -44,5 +43,3 @@ class TeiToHtml: public sword::TEIHTMLHREF {
 };
 
 } // namespace Filters
-
-#endif

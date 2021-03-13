@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDSETUPINSTALLSOURCESDIALOG_H
-#define CSWORDSETUPINSTALLSOURCESDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -38,6 +37,3 @@ class CSwordSetupInstallSourcesDialog final: public QDialog  {
         QComboBox *m_protocolCombo;
         bool m_remoteListAdded;
 };
-
-
-#endif //CSWORDSETUPINSTALLSOURCESDIALOG_H

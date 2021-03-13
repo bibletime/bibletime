@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTEDITBOOKMARKDIALOG_H
-#define BTEDITBOOKMARKDIALOG_H
+#pragma once
 
 #include <QDialog>
 #include <QLineEdit>
@@ -59,5 +58,3 @@ class BtEditBookmarkDialog : public QDialog  {
         QDialogButtonBox *m_buttonBox;
 
 };
-
-#endif

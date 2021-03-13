@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTICONS_H
-#define BTICONS_H
+#pragma once
 
 #include <QIcon>
 #include <QString>
@@ -146,5 +145,3 @@ public: /* Fields: */
 };
 
 QString iconToHtml(QIcon const & icon, int const extent = 32);
-
-#endif /* BTICONS_H */

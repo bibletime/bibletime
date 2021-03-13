@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFVIEW_H
-#define BTBOOKSHELFVIEW_H
+#pragma once
 
 #include <QTreeView>
 
@@ -37,5 +36,3 @@ class BtBookshelfView: public QTreeView {
         void mousePressEvent(QMouseEvent *event) override;
 
 };
-
-#endif // BTBOOKSHELFVIEW_H

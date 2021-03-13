@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CBOOKMARKINDEX_H
-#define CBOOKMARKINDEX_H
+#pragma once
 
 #include <QTimer>
 #include <QToolTip>
@@ -108,5 +107,3 @@ private: /* Fields: */
     BtBookmarksModel * m_bookmarksModel;
 
 };
-
-#endif

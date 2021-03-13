@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDMODULEINFO_H
-#define CSWORDMODULEINFO_H
+#pragma once
 
 #include <QObject>
 
@@ -434,5 +433,3 @@ private: /* Fields: */
 
 Q_DECLARE_METATYPE(CSwordModuleInfo::Category);
 Q_DECLARE_OPERATORS_FOR_FLAGS(CSwordModuleInfo::Categories)
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDVERSEKEY_H
-#define CSWORDVERSEKEY_H
+#pragma once
 
 #include "cswordkey.h"
 
@@ -115,5 +114,3 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         const char * rawKey() const override;
 
 };
-
-#endif

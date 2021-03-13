@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BT_DISPLAY_VIEW_INTERFACE_H
-#define BT_DISPLAY_VIEW_INTERFACE_H
+#pragma once
 
 #include <memory>
 #include <optional>
@@ -204,5 +203,3 @@ private:
     QTimer m_timer;
     QMap<int, QString> m_selectedText;
 };
-
-#endif

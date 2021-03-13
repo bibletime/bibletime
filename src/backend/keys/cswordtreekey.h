@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDTREEKEYIDX_H
-#define CSWORDTREEKEYIDX_H
+#pragma once
 
 #include "cswordkey.h"
 
@@ -69,5 +68,3 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
         const char * rawKey() const override;
 };
-
-#endif

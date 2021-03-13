@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTFONTSIZEWIDGET_H
-#define BTFONTSIZEWIDGET_H
+#pragma once
 
 #include <QComboBox>
 
@@ -41,5 +40,3 @@ private: /* Fields: */
     QIntValidator * const m_validator;
 
 }; /* class BtFontSizeWidget { */
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef SEARCHCSEARCHANALYSISITEM_H
-#define SEARCHCSEARCHANALYSISITEM_H
+#pragma once
 
 #include <QGraphicsRectItem>
 
@@ -70,5 +69,3 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
 };
 
 }
-
-#endif

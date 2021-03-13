@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CBIBLEKEYCHOOSER_H
-#define CBIBLEKEYCHOOSER_H
+#pragma once
 
 #include "../ckeychooser.h"
 
@@ -62,5 +61,3 @@ private: /* Fields: */
     CSwordVerseKey * m_key;
 
 }; /* class CBibleKeyChooser */
-
-#endif /* CBIBLEKEYCHOOSER_H */

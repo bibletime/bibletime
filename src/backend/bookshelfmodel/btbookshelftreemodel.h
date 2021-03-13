@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFTREEMODEL_H
-#define BTBOOKSHELFTREEMODEL_H
+#pragma once
 
 #include <QAbstractItemModel>
 
@@ -209,5 +208,3 @@ QDataStream & operator <<(QDataStream & os, const BtBookshelfTreeModel::Grouping
 QDataStream & operator >>(QDataStream & is, BtBookshelfTreeModel::Grouping & o);
 
 Q_DECLARE_METATYPE(BtBookshelfTreeModel::Grouping)
-
-#endif // BTBOOKSHELFTREEMODEL_H

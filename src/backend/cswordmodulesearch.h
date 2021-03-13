@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSWORDMODULESEARCH_H
-#define CSWORDMODULESEARCH_H
+#pragma once
 
 #include <QObject>
 
@@ -139,5 +138,3 @@ class CSwordModuleSearch: public QObject {
 QDataStream &operator<<(QDataStream &out, const CSwordModuleSearch::SearchType &searchType);
 QDataStream &operator>>(QDataStream &in, CSwordModuleSearch::SearchType &searchType);
 Q_DECLARE_METATYPE(CSwordModuleSearch::SearchType)
-
-#endif

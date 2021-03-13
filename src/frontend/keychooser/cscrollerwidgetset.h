@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CSCROLLERWIDGETSET_H
-#define CSCROLLERWIDGETSET_H
+#pragma once
 
 #include <QWidget>
 
@@ -65,5 +64,3 @@ private: /* Fields: */
     CScrollButton * m_scrollButton;
 
 };
-
-#endif

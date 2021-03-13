@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef UTIL_FILESDIRECTORYUTIL_H
-#define UTIL_FILESDIRECTORYUTIL_H
+#pragma once
 
 #include <QDir>
 #include <QIcon>
@@ -134,5 +133,3 @@ const QDir &getUserDisplayTemplatesDir();
 
 } // namespace directory
 } // namespace util
-
-#endif

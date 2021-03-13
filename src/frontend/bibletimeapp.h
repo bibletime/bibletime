@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BIBLETIMEAPP_H
-#define BIBLETIMEAPP_H
+#pragma once
 
 #include <QApplication>
 
@@ -51,5 +50,3 @@ class BibleTimeApp : public QApplication {
 };
 
 #define btApp (static_cast<BibleTimeApp *>(BibleTimeApp::instance()))
-
-#endif

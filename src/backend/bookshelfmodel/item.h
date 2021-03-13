@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef ITEM_H
-#define ITEM_H
+#pragma once
 
 #include <QList>
 #include <QVariant>
@@ -167,5 +166,3 @@ public: /* Methods: */
 };
 
 } // Namespace BookshelfModel
-
-#endif // ITEM_H

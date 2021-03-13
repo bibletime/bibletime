@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKSHELFWIZARDENUM_H
-#define BTBOOKSHELFWIZARDENUM_H
+#pragma once
 
 enum WizardPage: int {
     taskPage,
@@ -30,5 +29,3 @@ enum WizardTaskType {
     updateWorks,
     removeWorks
 };
-
-#endif

@@ -10,17 +10,16 @@
 *
 **********/
 
+#pragma once
+
 /**
   This class is part of the view implementation for the model/view read display.
   This widget contains the BtQuickWidget and a QScrollBar to its right. It implements
   the scrolling for the view.
   */
 
-
-#ifndef BTQMLSCROLLVIEW_H
-#define BTQMLSCROLLVIEW_H
-
 #include <QWidget>
+
 
 class BtQuickWidget;
 class BtTextFilter;
@@ -80,5 +79,3 @@ private:    void initScrollBar();
     QScrollBar* m_scrollBar;
     int m_scrollBarPosition;
 };
-
-#endif

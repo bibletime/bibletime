@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTBOOKMARKSMODEL_H
-#define BTBOOKMARKSMODEL_H
+#pragma once
 
 #include <QAbstractItemModel>
 
@@ -164,5 +163,3 @@ private: /* Fields: */
     BtBookmarksModelPrivate * const d_ptr;
 
 };
-
-#endif // BTBOOKMARKSMODEL_H

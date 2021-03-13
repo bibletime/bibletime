@@ -10,9 +10,7 @@
 *
 **********/
 
-#ifndef MACROS_H
-#define MACROS_H
-
+#pragma once
 
 /**
   \file macros.h
@@ -45,6 +43,3 @@
     #define LIKELY(c)   !!(c)
     #define UNLIKELY(c) !!(c)
 #endif
-
-
-#endif // #ifdef MACROS_H

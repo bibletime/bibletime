@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef FILTERS_GBFTOHTML_H
-#define FILTERS_GBFTOHTML_H
+#pragma once
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -64,5 +63,3 @@ class GbfToHtml: public sword::GBFHTML {
 };
 
 } // namespace Filters
-
-#endif

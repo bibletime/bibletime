@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTMODULETEXTMODEL_H
-#define BTMODULETEXTMODEL_H
+#pragma once
 
 #include <QAbstractListModel>
 #include <QColor>
@@ -190,5 +189,3 @@ private:
     FilterOptions m_filterOptions;
     std::optional<FindState> m_findState;
 };
-
-#endif

@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTSTANDARDWORKSTAB_H
-#define BTSTANDARDWORKSTAB_H
+#pragma once
 
 #include <QWidget>
 
@@ -52,5 +51,3 @@ class BtStandardWorksTab: public QWidget {
         STANDARD_WORKS_TAB_FIELD(standardHebrewMorphLexicon);
         STANDARD_WORKS_TAB_FIELD(standardGreekMorphLexicon);
 };
-
-#endif /* BTSTANDARDWORKSTAB_H */

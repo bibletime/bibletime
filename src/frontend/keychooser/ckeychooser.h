@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef CKEYCHOOSER_H
-#define CKEYCHOOSER_H
+#pragma once
 
 #include <QWidget>
 
@@ -102,5 +101,3 @@ private: /* Fields: */
     BTHistory * const m_history;
 
 };
-
-#endif
