@@ -34,7 +34,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
                                          const Settings &settings)
     : m_settings(settings)
     , m_key(key)
-{ m_moduleList.append(const_cast<CSwordModuleInfo *>(module)); } // BAD CODE
+{ m_moduleList.append(module); }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &content,
                                          const Settings &settings)
