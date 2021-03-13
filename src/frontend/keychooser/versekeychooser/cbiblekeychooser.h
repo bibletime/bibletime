@@ -19,54 +19,48 @@
 #include "../../../backend/drivers/cswordbiblemoduleinfo.h"
 
 
-class QWidget;
-
 class BtBibleKeyWidget;
 class CSwordVerseKey;
 class CSwordBibleModuleInfo;
+class QWidget;
 
-/** This class implements the KeyChooser for bibles and commentaries
- *
- * it inhertits @ref CKeyChooser
- *
- * it uses a BtBibleKeyWidget to represent the bible keys
- *
-  * @author The BibleTime team
-  */
+/** \brief A key chooser for bibles and commentaries. */
+class CBibleKeyChooser final : public CKeyChooser {
 
-class CBibleKeyChooser : public CKeyChooser  {
-        Q_OBJECT
+    Q_OBJECT
 
-    public:
-        CBibleKeyChooser(const BtConstModuleList &modules,
-                         BTHistory *history, CSwordKey *key = nullptr,
-                         QWidget *parent = nullptr);
+public: /* Methods: */
 
-    public Q_SLOTS:
+    CBibleKeyChooser(BtConstModuleList const & modules,
+                     BTHistory * history,
+                     CSwordKey * key = nullptr,
+                     QWidget * parent = nullptr);
 
-        CSwordKey* key() override;
+public Q_SLOTS:
 
-        void setKey(CSwordKey *key) override;
+    CSwordKey * key() final override;
 
-        void setModules(const BtConstModuleList &modules,
-                        bool refresh = true) override;
+    void setKey(CSwordKey * key) final override;
 
-        /**
-        * used to do actions after key changes
-        */
-        void refChanged(CSwordVerseKey *key);
+    void setModules(BtConstModuleList const & modules,
+                    bool refresh = true) final override;
 
-        void updateKey(CSwordKey* key) override;
-        void refreshContent() override;
+    /** \brief used to do actions after key changes. */
+    void refChanged(CSwordVerseKey * key);
 
-    private: /* Methods: */
+    void updateKey(CSwordKey * key) final override;
+    void refreshContent() final override;
 
-        void handleHistoryMoved(QString const & newKey) override;
+private: /* Methods: */
 
-    private:
-        BtBibleKeyWidget* w_ref;
-        QList<const CSwordBibleModuleInfo*> m_modules;
-        CSwordVerseKey *m_key;
-};
+    void handleHistoryMoved(QString const & newKey) final override;
 
-#endif
+private: /* Fields: */
+
+    BtBibleKeyWidget * w_ref;
+    QList<CSwordBibleModuleInfo const *> m_modules;
+    CSwordVerseKey * m_key;
+
+}; /* class CBibleKeyChooser */
+
+#endif /* CBIBLEKEYCHOOSER_H */
