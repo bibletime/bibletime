@@ -62,6 +62,9 @@ class CTextRendering {
 
             public: /* Methods: */
 
+                KeyTreeItem(KeyTreeItem &&) = delete;
+                KeyTreeItem(KeyTreeItem const &&) = delete;
+
                 KeyTreeItem(const QString &key,
                             const CSwordModuleInfo *module,
                             const Settings &settings);
@@ -77,7 +80,8 @@ class CTextRendering {
 
                 KeyTreeItem(const QString &content, const Settings &settings);
 
-                KeyTreeItem(const KeyTreeItem &i);
+                KeyTreeItem & operator=(KeyTreeItem &&) = delete;
+                KeyTreeItem & operator=(KeyTreeItem const &&) = delete;
 
                 QString const & getAlternativeContent() const
                 { return m_alternativeContent; }

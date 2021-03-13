@@ -50,15 +50,6 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
     , m_key(key)
 {}
 
-CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
-    : m_settings(i.m_settings)
-    , m_moduleList(i.m_moduleList)
-    , m_key(i.m_key)
-    , m_childList(i.m_childList)
-    , m_stopKey(i.m_stopKey)
-    , m_alternativeContent(i.m_alternativeContent)
-{}
-
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
                                          const QString &stopKey,
                                          const CSwordModuleInfo *module,
