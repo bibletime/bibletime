@@ -19,61 +19,55 @@
 #include "ckeychooserwidget.h"
 
 
-namespace sword {
-class TreeKeyIdx;
-}
+namespace sword { class TreeKeyIdx; }
+class BTHistory;
 class CSwordBookModuleInfo;
 class CSwordKey;
 class QTreeWidget;
 class QTreeWidgetItem;
-class BTHistory;
 
-/** The keychooser implementation for books.
-  * @author The BibleTime team
-  */
-class CBookTreeChooser : public CKeyChooser {
-        Q_OBJECT
-    public:
-        CBookTreeChooser(const BtConstModuleList &modules,
-                         BTHistory *history, CSwordKey *key = nullptr,
-                         QWidget *parent = nullptr);
+class CBookTreeChooser final : public CKeyChooser {
 
-        void refreshContent() override;
+    Q_OBJECT
 
-        void setModules(const BtConstModuleList &modules,
-                        bool refresh = true) override;
+public: /* Methods: */
 
-        CSwordKey * key() override { return m_key; }
+    CBookTreeChooser(BtConstModuleList const & modules,
+                     BTHistory * history,
+                     CSwordKey * key = nullptr,
+                     QWidget * parent = nullptr);
 
-        void setKey(CSwordKey *key) override;
+    void refreshContent() final override;
+    void setModules(BtConstModuleList const & modules,
+                    bool refresh = true) final override;
 
+    CSwordKey * key() final override { return m_key; }
+    void setKey(CSwordKey * key) final override;
+    void setKey(CSwordKey *, const bool emitSinal);
 
-        void setKey(CSwordKey*, const bool emitSinal);
+public Q_SLOTS:
 
-    public Q_SLOTS: // Public slots
-        void updateKey( CSwordKey* ) override;
+    void updateKey(CSwordKey *) final override;
+    void doShow();
 
-        void doShow();
+private: /* Methods: */
 
-    protected: // Protected methods
-        /**
-        * Creates the first level of the tree structure.
-        */
-        void setupTree();
-        void addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item);
+    /** \brief Creates the first level of the tree structure. */
+    void setupTree();
+    void addKeyChildren(CSwordTreeKey * key, QTreeWidgetItem * item);
+    void adjustFont();
 
-    private: /* Methods: */
+private Q_SLOTS:
 
-        void adjustFont();
+    void itemActivated(QTreeWidgetItem * item);
+    void setKey(QString const & newKey) final override;
 
-    protected Q_SLOTS: // Protected slots
-        void itemActivated( QTreeWidgetItem* item );
-        void setKey(const QString & newKey) override;
+private: /* Fields: */
 
-    private:
-        QList<const CSwordBookModuleInfo*> m_modules;
-        CSwordTreeKey* m_key;
-        QTreeWidget* m_treeView;
-};
+    QList<CSwordBookModuleInfo const *> m_modules;
+    CSwordTreeKey * m_key;
+    QTreeWidget * m_treeView;
 
-#endif
+}; /* class CBookTreeChooser */
+
+#endif /* CBOOKTREECHOOSER_H */
