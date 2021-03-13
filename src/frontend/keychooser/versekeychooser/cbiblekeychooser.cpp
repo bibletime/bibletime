@@ -51,8 +51,6 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 
-    BT_CONNECT(w_ref, &BtBibleKeyWidget::beforeChange,
-               this, &CBibleKeyChooser::beforeRefChange);
     BT_CONNECT(w_ref, &BtBibleKeyWidget::changed,
                this, &CBibleKeyChooser::refChanged);
 
@@ -72,15 +70,6 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
     m_key = dynamic_cast<CSwordVerseKey*>(key);
     w_ref->setKey(m_key);
     Q_EMIT keyChanged(m_key);
-}
-
-void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
-    Q_UNUSED(key)
-
-    BT_ASSERT(m_key);
-
-    if (!updatesEnabled())
-        return;
 }
 
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {

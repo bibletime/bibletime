@@ -52,10 +52,6 @@ class CBibleKeyChooser : public CKeyChooser  {
                         bool refresh = true) override;
 
         /**
-        * used to do actions before key changes
-        */
-        void beforeRefChange(CSwordVerseKey *key);
-        /**
         * used to do actions after key changes
         */
         void refChanged(CSwordVerseKey *key);
