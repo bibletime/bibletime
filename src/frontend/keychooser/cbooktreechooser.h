@@ -56,11 +56,11 @@ private: /* Methods: */
     void setupTree();
     void addKeyChildren(CSwordTreeKey * key, QTreeWidgetItem * item);
     void adjustFont();
+    void handleHistoryMoved(QString const & newKey) final override;
 
 private Q_SLOTS:
 
     void itemActivated(QTreeWidgetItem * item);
-    void setKey(QString const & newKey) final override;
 
 private: /* Fields: */
 

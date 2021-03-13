@@ -95,9 +95,7 @@ protected: /* Methods: */
                 BTHistory * history,
                 QWidget * parent = nullptr);
 
-protected Q_SLOTS:
-
-    virtual void setKey(const QString & newKey) = 0;
+    virtual void handleHistoryMoved(QString const & newKey) = 0;
 
 private: /* Fields: */
 

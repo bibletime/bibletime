@@ -59,8 +59,9 @@ class CLexiconKeyChooser : public CKeyChooser {
     public Q_SLOTS: // Public slots
         void updateKey(CSwordKey* key) override;
 
-    protected Q_SLOTS:
-        void setKey(const QString & newKey) override;
+    private: /* Methods: */
+
+        void handleHistoryMoved(QString const & newKey) override;
 
 };
 

@@ -33,9 +33,7 @@ CKeyChooser::CKeyChooser(const BtConstModuleList &,
     , m_history(historyPtr)
 {
     BT_CONNECT(historyPtr, &BTHistory::historyMoved,
-               this,
-               static_cast<void (CKeyChooser::*)(QString const &)>(
-                   &CKeyChooser::setKey));
+               [this](QString const & newKey){ handleHistoryMoved(newKey); });
 }
 
 CKeyChooser * CKeyChooser::createInstance(const BtConstModuleList & modules,

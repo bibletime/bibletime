@@ -272,7 +272,7 @@ void CBookKeyChooser::updateKey(CSwordKey * key) {
     setKey(key, false);
 }
 
-void CBookKeyChooser::setKey(const QString & newKey) {
+void CBookKeyChooser::handleHistoryMoved(QString const & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }

@@ -112,7 +112,7 @@ void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
     w_ref->updateText();
 }
 
-void CBibleKeyChooser::setKey(const QString & newKey) {
+void CBibleKeyChooser::handleHistoryMoved(QString const & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }

@@ -68,6 +68,7 @@ protected: /* Methods: */
 private: /* Methods: */
 
     void adjustFont();
+    void handleHistoryMoved(QString const & newKey) override;
 
 private Q_SLOTS:
 
@@ -75,8 +76,6 @@ private Q_SLOTS:
     * A keychooser changed. Update and emit a signal if necessary.
     */
     void keyChooserChanged(int);
-
-    void setKey(const QString & newKey) override;
 
 private: /* Fields: */
 

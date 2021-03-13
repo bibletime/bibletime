@@ -59,9 +59,9 @@ class CBibleKeyChooser : public CKeyChooser  {
         void updateKey(CSwordKey* key) override;
         void refreshContent() override;
 
-    protected Q_SLOTS:
+    private: /* Methods: */
 
-        void setKey(const QString & newKey) override;
+        void handleHistoryMoved(QString const & newKey) override;
 
     private:
         BtBibleKeyWidget* w_ref;

@@ -162,7 +162,7 @@ void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
     }
 }
 
-void CLexiconKeyChooser::setKey(const QString & newKey) {
+void CLexiconKeyChooser::handleHistoryMoved(QString const & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }
