@@ -39,7 +39,6 @@ class BtBibleKeyWidget : public QWidget  {
         bool eventFilter(QObject *o, QEvent *e) override;
 
     Q_SIGNALS:
-        void beforeChange(CSwordVerseKey* key);
         void changed(CSwordVerseKey* key);
 
     protected:
