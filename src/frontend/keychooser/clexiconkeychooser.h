@@ -23,46 +23,43 @@ class CSwordModuleInfo;
 class QHBoxLayout;
 class QWidget;
 
-/**
- * This class implements the KeyChooser for lexicons
- *
- * it inhertits @ref CKeyChooser
- * it uses 1 @ref CKeyChooserWidget to represent the lexicon keys
- *
-  * @author The BibleTime team
-  */
-class CLexiconKeyChooser : public CKeyChooser {
-        Q_OBJECT
+class CLexiconKeyChooser final : public CKeyChooser {
 
-    public:
-        CLexiconKeyChooser(const BtConstModuleList &modules,
-                           BTHistory *history, CSwordKey *key = nullptr,
-                           QWidget *parent = nullptr);
+    Q_OBJECT
 
-    public Q_SLOTS:
+public: /* Methods: */
 
-        CSwordKey *key() override;
+    CLexiconKeyChooser(BtConstModuleList const & modules,
+                       BTHistory * history,
+                       CSwordKey * key = nullptr,
+                       QWidget * parent = nullptr);
 
-        void setKey(CSwordKey* key) override;
+public Q_SLOTS:
 
-        void refreshContent() override;
+    CSwordKey * key() final override;
 
-        void setModules(const BtConstModuleList &modules,
-                        bool refresh = true) override;
+    void setKey(CSwordKey * key) final override;
 
-    protected:
-        CKeyChooserWidget *m_widget;
-        CSwordLDKey* m_key;
-        QList<const CSwordLexiconModuleInfo*> m_modules;
-        QHBoxLayout *m_layout;
+    void refreshContent() final override;
 
-    public Q_SLOTS: // Public slots
-        void updateKey(CSwordKey* key) override;
+    void setModules(BtConstModuleList const & modules,
+                    bool refresh = true) final override;
 
-    private: /* Methods: */
+public Q_SLOTS:
 
-        void handleHistoryMoved(QString const & newKey) override;
+    void updateKey(CSwordKey* key) final override;
 
-};
+private: /* Methods: */
 
-#endif
+    void handleHistoryMoved(QString const & newKey) final override;
+
+private: /* Fields: */
+
+    CKeyChooserWidget * m_widget;
+    CSwordLDKey * m_key;
+    QList<CSwordLexiconModuleInfo const *> m_modules;
+    QHBoxLayout * m_layout;
+
+}; /* class CLexiconKeyChooser */
+
+#endif /* CLEXICONKEYCHOOSER_H */
