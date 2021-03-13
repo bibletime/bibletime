@@ -22,7 +22,7 @@ jobs:
         sudo apt-get install --no-install-recommends doxygen graphviz
     - name: Run Doxygen
       run: |
-        cd docs
+        cd code/docs
         doxygen
     - uses: actions/checkout@v2
       with:
@@ -37,7 +37,7 @@ jobs:
         git rm -rf docs
     - name: Move generated API documentation to repository
       run: |
-        mv -f docs/doxygen/html api_docs/docs
+        mv -f code/docs/doxygen/html api_docs/docs
     - name: Commit and push the generated documentation
       working-directory: api_docs
       run: |
