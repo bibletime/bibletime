@@ -102,10 +102,6 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
     Q_EMIT keyChanged( m_key);
 }
 
-inline bool my_cmpEntries(const QString& a, const QString& b) {
-    return a < b;
-}
-
 /** Reimplementation. */
 void CLexiconKeyChooser::refreshContent() {
     if (m_modules.count() == 1) {
@@ -132,8 +128,7 @@ void CLexiconKeyChooser::refreshContent() {
             std::set_union(
                 refEntries.begin(), --(refEntries.end()), //--end() is the last valid entry
                 cmpEntries->begin(), --(cmpEntries->end()),
-                std::back_inserter(goodEntries), //append valid entries to the end of goodEntries
-                my_cmpEntries  //ci_cmpEntries is the comparision function
+                std::back_inserter(goodEntries) //append valid entries to the end of goodEntries
             );
 
             cmpEntries = ( ++it )->second; //this is a pointer to the string list of a new module
