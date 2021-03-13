@@ -61,7 +61,6 @@ class CBibleKeyChooser : public CKeyChooser  {
         void refChanged(CSwordVerseKey *key);
 
         void updateKey(CSwordKey* key) override;
-        void adjustFont() override;
         void refreshContent() override;
 
     protected Q_SLOTS:

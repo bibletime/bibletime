@@ -56,8 +56,6 @@ class CLexiconKeyChooser : public CKeyChooser {
         QList<const CSwordLexiconModuleInfo*> m_modules;
         QHBoxLayout *m_layout;
 
-        void adjustFont() override {}
-
     public Q_SLOTS: // Public slots
         void updateKey(CSwordKey* key) override;
 

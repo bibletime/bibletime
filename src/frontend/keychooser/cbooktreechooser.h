@@ -60,8 +60,11 @@ class CBookTreeChooser : public CKeyChooser {
         * Creates the first level of the tree structure.
         */
         void setupTree();
-        void adjustFont() override;
         void addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item);
+
+    private: /* Methods: */
+
+        void adjustFont();
 
     protected Q_SLOTS: // Protected slots
         void itemActivated( QTreeWidgetItem* item );

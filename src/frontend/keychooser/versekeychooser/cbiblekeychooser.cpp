@@ -123,8 +123,6 @@ void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
     w_ref->updateText();
 }
 
-void CBibleKeyChooser::adjustFont() {}
-
 void CBibleKeyChooser::setKey(const QString & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);

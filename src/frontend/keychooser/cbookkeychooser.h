@@ -65,7 +65,9 @@ protected: /* Methods: */
     */
     void setupCombo(const QString & key, const int depth, const int currentItem);
 
-    void adjustFont() override;
+private: /* Methods: */
+
+    void adjustFont();
 
 protected Q_SLOTS:
 

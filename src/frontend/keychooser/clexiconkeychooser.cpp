@@ -159,7 +159,6 @@ void CLexiconKeyChooser::setModules(const BtConstModuleList &modules,
 
     if (refresh) {
         refreshContent();
-        //   adjustFont();
     }
 }
 

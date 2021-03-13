@@ -95,11 +95,6 @@ protected: /* Methods: */
                 BTHistory * history,
                 QWidget * parent = nullptr);
 
-    /**
-      Resets the appropriate font to for the modules.
-    */
-    virtual void adjustFont() = 0;
-
 protected Q_SLOTS:
 
     virtual void setKey(const QString & newKey) = 0;
