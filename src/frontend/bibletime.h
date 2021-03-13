@@ -103,9 +103,9 @@ struct AutoScroll {
   * </p>
   */
 
-/** @mainpage BibleTime - sourcecode documentation
+/** @mainpage BibleTime - Source Code Documentation
  * BibleTime main page.
- * <p>This is the sourcecode documentation of BibleTime, a Bible study tool.
+ * <p>This is the source code documentation of BibleTime, a Bible study tool.
  * <p>
  * The main class of BibleTime is called @ref BibleTime, which is the main window
  * and initializes all important parts at startup.
