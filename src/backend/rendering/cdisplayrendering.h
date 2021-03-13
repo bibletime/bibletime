@@ -37,8 +37,8 @@ class CDisplayRendering : public CTextRendering {
 
     protected: /* Methods: */
 
-        QString entryLink(const KeyTreeItem &item,
-                          const CSwordModuleInfo * module) override;
+        QString entryLink(KeyTreeItem const & item,
+                          CSwordModuleInfo const & module) override;
 
         QString finishText(const QString &text, const KeyTree &tree) override;
 

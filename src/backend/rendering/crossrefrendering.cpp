@@ -33,14 +33,13 @@ QString CrossRefRendering::finishText(const QString &text, const KeyTree &tree) 
     return text;
 }
 
-QString CrossRefRendering::entryLink(const KeyTreeItem &item,
-                                     const CSwordModuleInfo *module)
+QString CrossRefRendering::entryLink(KeyTreeItem const & item,
+                                     CSwordModuleInfo const & module)
 {
-    BT_ASSERT(module);
     QString linkText;
 
-    const bool isBible = (module->type() == CSwordModuleInfo::Bible);
-    CSwordVerseKey vk(module); //only valid for bible modules, i.e. isBible == true
+    const bool isBible = (module.type() == CSwordModuleInfo::Bible);
+    CSwordVerseKey vk(&module); // only valid for bible modules, i.e. isBible == true
     if (isBible) {
         vk.setKey(item.key());
     }
@@ -79,7 +78,7 @@ QString CrossRefRendering::entryLink(const KeyTreeItem &item,
     if (!linkText.isEmpty()) { //if we have a valid link text
         //     qWarning("rendering");
         return QString("<a href=\"%1\">%2</a>")
-               .arg(ReferenceManager::encodeHyperlink(*module, item.key()))
+               .arg(ReferenceManager::encodeHyperlink(module, item.key()))
                .arg(linkText);
     }
 

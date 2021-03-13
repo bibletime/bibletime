@@ -313,6 +313,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     QString key_renderedText;
 
     for (auto const & modulePtr : modules) {
+        BT_ASSERT(modulePtr);
         if (myVK) {
             key->setModule(*modules.begin());
             key->setKey(i.key());
@@ -418,7 +419,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
         if(key->isValid() && i.key() == key->key())
-            entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, modulePtr)).append("</span>");
+            entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, *modulePtr)).append("</span>");
 
         if (m_addText)
             entry.append(key_renderedText);
@@ -473,5 +474,5 @@ QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
     \fn CTextRendering::entryLink( KeyTreeItem& item )
  */
 QString CTextRendering::entryLink(KeyTreeItem const & item,
-                                  CSwordModuleInfo const *)
+                                  CSwordModuleInfo const &)
 { return item.key(); }

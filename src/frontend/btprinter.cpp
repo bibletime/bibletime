@@ -53,13 +53,12 @@ void BtPrinter::printKeyTree(KeyTree const & tree) {
 }
 
 QString BtPrinter::entryLink(KeyTreeItem const & item,
-                             CSwordModuleInfo const * module)
+                             CSwordModuleInfo const & module)
 {
-    BT_ASSERT(module);
-    if (module->type() != CSwordModuleInfo::Bible)
+    if (module.type() != CSwordModuleInfo::Bible)
         return item.key();
 
-    CSwordVerseKey vk(module);
+    CSwordVerseKey vk(&module);
     vk.setKey(item.key());
     switch (item.settings().keyRenderingFace) {
         case KeyTreeItem::Settings::CompleteShort:

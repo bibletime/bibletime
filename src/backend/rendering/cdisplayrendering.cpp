@@ -31,13 +31,13 @@ CDisplayRendering::CDisplayRendering(const DisplayOptions &displayOptions,
     // Intentionally empty
 }
 
-QString CDisplayRendering::entryLink(const KeyTreeItem &item,
-                                     const CSwordModuleInfo * module)
+QString CDisplayRendering::entryLink(KeyTreeItem const & item,
+                                     CSwordModuleInfo const & module)
 {
     QString linkText;
 
-    const bool isBible = module && (module->type() == CSwordModuleInfo::Bible);
-    CSwordVerseKey vk(module); //only valid for bible modules, i.e. isBible == true
+    const bool isBible = module.type() == CSwordModuleInfo::Bible;
+    CSwordVerseKey vk(&module); // only valid for bible modules, i.e. isBible == true
     vk.setIntros(true);
 
     if (isBible) {
@@ -56,7 +56,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
     case KeyTreeItem::Settings::ExpandedShort:
         if (isBible) {
-            linkText = module->name() + ':' + QString::fromUtf8(vk.getShortText());
+            linkText = module.name() + ':' + QString::fromUtf8(vk.getShortText());
             break;
         }
         Q_FALLTHROUGH();
@@ -70,7 +70,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
     case KeyTreeItem::Settings::ExpandedLong:
         if (isBible) {
-            linkText = QString("%1 (%2)").arg(vk.key()).arg(module->name());
+            linkText = QString("%1 (%2)").arg(vk.key()).arg(module.name());
             break;
         }
         Q_FALLTHROUGH();
@@ -129,7 +129,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
     else {
         return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" ")
                .append("href=\"")
-               .append(ReferenceManager::encodeHyperlink(*module, item.key()))
+               .append(ReferenceManager::encodeHyperlink(module, item.key()))
                .append("\">").append(linkText).append("</a>\n");
     }
 }
