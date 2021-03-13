@@ -20,6 +20,35 @@
 #include "cdisplayrendering.h"
 
 
+namespace {
+
+void setupRenderTree(CSwordTreeKey & swordTree,
+                     Rendering::CTextRendering::KeyTree & renderTree,
+                     QString const & highlightKey)
+{
+    const QString key = swordTree.key();
+    const unsigned long offset = swordTree.getOffset();
+
+    Rendering::CTextRendering::KeyTreeItem::Settings settings;
+    settings.highlight = (key == highlightKey);
+
+    /// \todo Check whether this is correct:
+    renderTree.emplace_back(key, swordTree.module(), settings);
+
+    if (swordTree.hasChildren()) { //print tree for the child items
+        swordTree.firstChild();
+        setupRenderTree(swordTree, renderTree.back().childList(), highlightKey);
+        swordTree.setOffset(offset); //go back where we came from
+    }
+
+    if (swordTree.nextSibling()) { //print tree for next entry on the same depth
+        setupRenderTree(swordTree, renderTree, highlightKey);
+        swordTree.setOffset(offset); //return to the value we had at the beginning of this block!
+    }
+}
+
+} // anonymous namespace
+
 const QString Rendering::CBookDisplay::text(
         const BtConstModuleList &modules,
         const QString &keyName,
@@ -112,33 +141,10 @@ const QString Rendering::CBookDisplay::text(
     //const bool hasToplevelText = !key->strippedText().isEmpty();
     key->firstChild(); //go to the first sibling on the same level
 
-    setupRenderTree(key.get(), &tree, keyName);
+    setupRenderTree(*key, tree, keyName);
 
     const QString renderedText = render.renderKeyTree(tree);
 
     key->setOffset( offset ); //restore key
     return renderedText;
-}
-
-void Rendering::CBookDisplay::setupRenderTree(CSwordTreeKey * swordTree, CTextRendering::KeyTree * renderTree, const QString& highlightKey) {
-
-    const QString key = swordTree->key();
-    const unsigned long offset = swordTree->getOffset();
-
-    CTextRendering::KeyTreeItem::Settings settings;
-    settings.highlight = (key == highlightKey);
-
-    /// \todo Check whether this is correct:
-    renderTree->emplace_back(key, swordTree->module(), settings);
-
-    if (swordTree->hasChildren()) { //print tree for the child items
-        swordTree->firstChild();
-        setupRenderTree(swordTree, &renderTree->back().childList(), highlightKey);
-        swordTree->setOffset( offset ); //go back where we came from
-    }
-
-    if (swordTree->nextSibling()) { //print tree for next entry on the same depth
-        setupRenderTree(swordTree, renderTree, highlightKey);
-        swordTree->setOffset( offset ); //return to the value we had at the beginning of this block!
-    }
 }

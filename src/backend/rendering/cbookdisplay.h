@@ -37,12 +37,6 @@ class CBookDisplay: public CEntryDisplay {
                            const DisplayOptions &displayOptions,
                            const FilterOptions &filterOptions) override;
 
-    protected: /* Methods: */
-
-        void setupRenderTree(CSwordTreeKey *swordTree,
-                             CTextRendering::KeyTree *renderTree,
-                             const QString &highlightKey);
-
 }; /* class CBookDisplay */
 
 } /* namespace Rendering */
