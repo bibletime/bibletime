@@ -3237,7 +3237,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:49
 msgid ""
-"<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 

@@ -2,9 +2,9 @@
 *
 * In the name of the Father, and of the Son, and of the Holy Spirit.
 *
-* This file is part of BibleTime's source code, http://www.bibletime.info/
+* This file is part of BibleTime's source code, https://bibletime.info/
 *
-* Copyright 1999-2020 by the BibleTime developers.
+* Copyright 1999-2021 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License
 * version 2.0.
 *
@@ -135,7 +135,7 @@ void BtTipDialog::retranslateUi() {
         + "<br><center>" + iconToHtml(CResMgr::modules::commentary::icon_add()) + "</center>";
 
     m_tips << tr("To learn more about the BibleTime project please go to our web site.")
-        + "<br><center><a href=\"http://www.bibletime.info\">www.bibletime.info</a></center>";
+        + "<br><center><a href=\"https://bibletime.info\">bibletime.info</a></center>";
 
     m_tips << tr("To synchronize a commentary window with the active Bible window, activate the"
         " commentary window and select this icon.") + "<br><center>"

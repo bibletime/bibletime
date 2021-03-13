@@ -69,13 +69,13 @@ also build in `./build/`, but then install to `/usr/local`.
 
 Please report any bugs your find to
 [our issue tracker](https://github.com/bibletime/bibletime/issues)
-or see [the BibleTime homepage](http://www.bibletime.info/) for additional information.
+or see [the BibleTime homepage](https://bibletime.info/) for additional information.
 
 ## DOCUMENTATION
 
 You can find information about BibleTime, the installation
 and its usage in the following places:
- - http://www.bibletime.info/
+ - https://bibletime.info/
  - The BibleTime handbook available in the Help menu of the BibleTime application.
  - There's a Bible study tutorial in the help menu.
 

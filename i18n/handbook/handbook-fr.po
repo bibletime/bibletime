@@ -3287,10 +3287,10 @@ msgstr "Holmlund"
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:49
 msgid ""
-"<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2019</year> <holder>L'équipe de &bibletime;</holder> "
+"<copyright> <year>1999-2021</year> <holder>L'équipe de &bibletime;</holder> "
 "</copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>

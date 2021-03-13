@@ -1737,10 +1737,10 @@ msgstr "BibleTime チーム"
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
-"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
-"<copyright> <year>1999-2016</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>1999-2021</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
