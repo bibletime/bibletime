@@ -1,3 +1,6 @@
+2021-03-15 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #306 - Change sample text in settings dialog
+
 2019-13-30 Gary Holmlund <gw@holmlund.org>
     * Fix bug #299 - The preview on Settings dialog displays text as red
 
