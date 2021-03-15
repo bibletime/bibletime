@@ -75,6 +75,9 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     m_stylePreviewViewer->setAlignment(Qt::AlignTop);
     m_stylePreviewViewer->setMargin(15);
     m_stylePreviewViewer->setAutoFillBackground(true);
+    QFont font = m_stylePreviewViewer->font();
+    font.setPointSize(font.pointSize()+2);
+    m_stylePreviewViewer->setFont(font);
 
     mainLayout->addWidget(m_previewLabel);
     mainLayout->addWidget(m_stylePreviewViewer);
@@ -213,34 +216,89 @@ void CDisplaySettingsPage::updateStylePreview() {
     settings.highlight = false;
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:16\">16</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\"> For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</span>")),
+                     QString(tr("<div class=\"sectiontitle\">CHAPTER 3</div><div></div>")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">For God didn't send his Son into the world to judge the world, but that the world should be saved through him.</span>")),
+                     QString(tr("<div  xml:lang=\"en\" lang=\"en\" class=\"sectiontitle\">The New Birth </div>")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.</span>")),
-                     settings) );
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:1\">1 </a></span>%1")
+                     .arg(tr(
+"<span lemma=\"G1161\">Now</span> <span lemma=\"G444\">there was a man</span>"
+"<span lemma=\"G5330\"> of the Pharisees</span>, <span lemma=\"G3686\">named</span> "
+"<span class=\"crossreference\">"
+"<a href=\"sword://Bible/NASB/John 7:50; \" name=crossref>John 7:50</a>;"
+"<a href=\"sword://Bible/NASB/John 19:39; \" name=crossref>19:39</a>"
+"</span>"
+"<span lemma=\"G3530\"> Nicodemus</span>, a "
+"<span class=\"crossreference\"><a href=\"sword://Bible/NASB/Luke 23:13; \" name=crossref>Luke 23:13</a>;"
+"<a href=\"sword://Bible/NASB/John 7:26; \" name=crossref> John 7:26</a>,"
+"<a href=\"sword://Bible/NASB/John 7:48; \" name=crossref>48</a></span> <span lemma=\"G758\">ruler</span>"
+"<span lemma=\"G2453\"> of the Jews</span>;"
+                    )), settings));
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</span>")),
-                     settings));
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:1\">2 </a></span>%1")
+                     .arg(tr(
+                              "<span lemma=\"G3778\">this </span>"
+"<span lemma=\"G3778\">man </span>"
+"<span lemma=\"G2064\">came </span>"
+"<span lemma=\"G3571\">to Jesus by night </span>"
+"<span lemma=\"G3004\">and said</span> to Him, <span class=\"crossreference\">"
+"<a href=\"sword://Bible/NASB/Matthew 23:7; \" name=crossref>\"Matt 23:7</a>;"
+"<a href=\"sword://Bible/NASB/John 3:26; \" name=crossref> John 3:26</a></span>"
+"<span lemma=\"G4461\"> Rabbi</span>,"
+"<span lemma=\"G3609a\">we know </span>"
+"<span lemma=\"G2064\">that You have come </span>"
+"<span lemma=\"G2316\">from God </span>"
+"<span class=\"transchange\" title=\"Added text\"><span class=\"added\">as </span></span>"
+"<span lemma=\"G1320\">a teacher</span>; "
+"<span lemma=\"G3762\">for no </span>"
+"<span lemma=\"G3762\">one </span>"
+"<span lemma=\"G1410\">can </span>"
+"<span lemma=\"G4160\">do </span>"
+"<span lemma=\"G3778\">these </span>"
+"<span class=\"footnote\" note=\"NASB/John 3:2/1\">(1)</span>"
+"<span class=\"crossreference\"><a href=\"sword://Bible/NASB/John 2:11; \" name=crossref>John 2:11</a></span>"
+"<span lemma=\"G4592\"> signs </span>"
+"<span lemma=\"G4160\">that You do </span>"
+"<span lemma=\"G1437|G3361\">unless </span>"
+"<span class=\"crossreference\"><a href=\"sword://Bible/NASB/John 9:33; \" name=crossref>John 9:33</a>;"
+"<a href=\"sword://Bible/NASB/John 10:38; \" name=crossref>10:38</a>;"
+"<a href=\"sword://Bible/NASB/John 14:10-John 14:11; \" name=crossref>14:10f</a>;"
+"<a href=\"sword://Bible/NASB/Acts 2:22; \" name=crossref>Acts 2:22</a>;"
+"<a href=\"sword://Bible/NASB/Acts 10:38; \" name=crossref>10:38</a></span>"
+"<span lemma=\"G2316\"> God</span> is with him.\""
+                    )), settings));
+
 
     tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:20\">20</a></span>%1<br/>")
-                     .arg(tr("<span class=\"jesuswords\">For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.</span>")),
-                     settings));
-
-    tree.append( new CTextRendering::KeyTreeItem(
-                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:21\">21</a></span>%1")
-                     .arg(tr("<span class=\"jesuswords\">But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</span>")),
-                     settings));
+                     QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:1\">3 </a></span>%1")
+                     .arg(tr(
+"<span lemma=\"G2424\">Jesus answered and said to him</span>,"
+"<span class=\"jesuswords\">\"Truly, >truly, I say to you, unless one  "
+"<span class=\"crossreference\">"
+"<a href=\"sword://Bible/NASB/II Corinthians 5:17; \" name=crossref>2 Cor 5:17</a>; "
+"<a href=\"sword://Bible/NASB/I Peter 1:23; \" name=crossref>1 Pet 1:23</a>"
+"</span> "
+"<span lemma=\"G1080\">is born </span>  "
+"<span class=\"footnote\" note=\"NASB/John 3:3/1\">(1)</span> "
+"<span lemma=\"G509\">again</span> "
+"<span lemma=\"G1410|G3756\">he cannot</span> "
+"<span lemma=\"G3708\">see</span> "
+"<span class=\"crossreference\">"
+"<a href=\"sword://Bible/NASB/Matthew 19:24; \" name=crossref>Matt 19:24</a>; "
+"<a href=\"sword://Bible/NASB/Matthew 21:31; \" name=crossref>21:31</a>; "
+"<a href=\"sword://Bible/NASB/Mark 9:47; \" name=crossref>Mark 9:47</a>; "
+"<a href=\"sword://Bible/NASB/Mark 10:14-Mark 10:15; \" name=crossref>10:14f</a>; "
+"<a href=\"sword://Bible/NASB/John 3:5; \" name=crossref>John 3:5</a>"
+"</span> "
+"<span lemma=\"G932\">the kingdom </span> "
+"<span lemma=\"G2316\">of God </span>.\""
+"</span>"
+                    )), settings));
 
     /// \todo Remove the following hack:
     const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();

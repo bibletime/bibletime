@@ -1,22 +1,25 @@
-2019-13-30 Gary Holmlund <gw@holmlund.org>
+2021-13-30 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #306 - Change sample text in settings dialog 
+
+2021-02-18 Gary Holmlund <gw@holmlund.org>
     * Fix bug #299 - The preview on Settings dialog displays text as red
 
-2019-13-30 Gary Holmlund <gary.holmlund@gmail.com>
+2021-12-30 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #287 - Scrolling is exceedingly slow
 
-2019-11-05 Gary Holmlund <gary.holmlund@gmail.com>
+2020-11-05 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #283 - Clicking on verse number should make that verse the reference box
 
-2019-10-28 Gary Holmlund <gary.holmlund@gmail.com>
+2020-10-28 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #277 - Modules rearrange themselfs 
 
-2019-10-18 Gary Holmlund <gary.holmlund@gmail.com>
+2020-10-18 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #279 - Highlighting of choosen text
 
-2019-09-26 Gary Holmlund <gary.holmlund@gmail.com>
+2020-09-26 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #268 - The parallel reading UI is broken in 3.0.0, when showing more than 4 versions
 
-2019-08-06 Gary Holmlund <gary.holmlund@gmail.com>
+2020-08-06 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #260 - BIbleTime 3.0 installs /usr/bin/DisplayView.qml
 
 2020-08-02 Jaak Ristioja <jaak@ristioja.ee>
