@@ -278,7 +278,7 @@ void CDisplaySettingsPage::updateStylePreview() {
                      QString("\n<span class=\"entryname\"><a name=\"crossref\" href=\"sword://Bible/WEB/John 3:1\">3 </a></span>%1")
                      .arg(tr(
 "<span lemma=\"G2424\">Jesus answered and said to him</span>,"
-"<span class=\"jesuswords\">\"Truly, >truly, I say to you, unless one  "
+"<span class=\"jesuswords\">\"Truly, truly, I say to you, unless one  "
 "<span class=\"crossreference\">"
 "<a href=\"sword://Bible/NASB/II Corinthians 5:17; \" name=crossref>2 Cor 5:17</a>; "
 "<a href=\"sword://Bible/NASB/I Peter 1:23; \" name=crossref>1 Pet 1:23</a>"
