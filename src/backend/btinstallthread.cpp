@@ -139,7 +139,7 @@ bool BtInstallThread::removeModule() {
     if (prefixPath.contains(dataPath)) {
         prefixPath.remove(prefixPath.indexOf(dataPath), dataPath.length());
     } else {
-        prefixPath = QString::fromLatin1(CSwordBackend::instance()->prefixPath);
+        prefixPath = CSwordBackend::instance()->prefixPath();
     }
 
     sword::SWMgr mgr(prefixPath.toLatin1());

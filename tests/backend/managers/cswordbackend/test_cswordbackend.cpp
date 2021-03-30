@@ -62,164 +62,165 @@ void test_CSwordBackend::moduleList() {
 void test_CSwordBackend::setFilterOptions() {
     CSwordBackend* backend = CSwordBackend::instance();
     backend->setFilterOptions(FilterOptions());
+    auto & raw = backend->raw();
     FilterOptions fOpt;
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::footnotes).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.footnotes = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.footnotes = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::strongNumbers).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.strongNumbers = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.strongNumbers = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::headings).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.headings = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.headings = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::morphTags).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.morphTags = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.morphTags = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::lemmas).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.lemmas = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.lemmas = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::hebrewPoints).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.hebrewPoints = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.hebrewPoints = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::hebrewCantillation).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.hebrewCantillation = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.hebrewCantillation = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::greekAccents).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.greekAccents = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.greekAccents = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::scriptureReferences).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.scriptureReferences = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.scriptureReferences = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::redLetterWords).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
 
         fOpt.redLetterWords = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "On");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "On");
 
         fOpt.redLetterWords = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Off");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Off");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::textualVariants).toUtf8();
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Primary Reading");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Primary Reading");
 
         fOpt.textualVariants = 1;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Secondary Reading");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Secondary Reading");
 
         fOpt.textualVariants = 0;
         backend->setFilterOptions(fOpt);
-        QVERIFY(QString(backend->getGlobalOption(optName.constData())) == "Primary Reading");
+        QVERIFY(QString(raw.getGlobalOption(optName.constData())) == "Primary Reading");
     }
 
     {
         QByteArray optName = backend->optionName(CSwordModuleInfo::morphSegmentation).toUtf8();
 
         // Test only if morph option is available
-        if (backend->getGlobalOption(optName.constData())) {
+        if (raw.getGlobalOption(optName.constData())) {
 
             fOpt.morphSegmentation = 1;
             backend->setFilterOptions(fOpt);
-            QCOMPARE(backend->getGlobalOption(optName.constData()), "On");
+            QCOMPARE(raw.getGlobalOption(optName.constData()), "On");
 
             fOpt.morphSegmentation = 0;
             backend->setFilterOptions(fOpt);
-            QCOMPARE(backend->getGlobalOption(optName.constData()), "Off");
+            QCOMPARE(raw.getGlobalOption(optName.constData()), "Off");
         }
     }
 }

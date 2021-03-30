@@ -148,7 +148,8 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
        backend->setCipherKey() does not work correctly for modules from which
        data was already fetched. Therefore we have to reload the modules in
        bibletime.cpp */
-    m_backend.setCipherKey(m_module.getName(), unlockKey.toUtf8().constData());
+    m_backend.raw().setCipherKey(m_module.getName(),
+                                 unlockKey.toUtf8().constData());
 
     /// \todo write to Sword config as well
 

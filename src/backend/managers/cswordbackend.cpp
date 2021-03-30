@@ -45,15 +45,15 @@ using namespace Rendering;
 CSwordBackend * CSwordBackend::m_instance = nullptr;
 
 CSwordBackend::CSwordBackend()
-        : sword::SWMgr(nullptr, nullptr, false,
-                       new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
+        : m_manager(nullptr, nullptr, false,
+                    new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
         , m_dataModel(BtBookshelfModel::newInstance())
 {}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
-        : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
-                       false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
-                       false, augmentHome)
+        : m_manager(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
+                    false, new sword::EncodingFilterMgr(sword::ENC_UTF8),
+                    false, augmentHome)
         , m_dataModel(BtBookshelfModel::newInstance())
 {}
 
@@ -135,9 +135,9 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     shutdownModules(); // Remove previous modules
     m_dataModel->clear();
 
-    const LoadError ret = static_cast<LoadError>(load());
+    const LoadError ret = static_cast<LoadError>(m_manager.load());
 
-    for (auto const & modulePair : getModules()) {
+    for (auto const & modulePair : m_manager.getModules()) {
         sword::SWModule * const curMod = modulePair.second;
         BT_ASSERT(curMod);
         std::unique_ptr<CSwordModuleInfo> newModule;
@@ -177,8 +177,9 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
                 auto const unlockKey(
                         btConfig().getModuleEncryptionKey(newModule->name()));
                 if (!unlockKey.isNull())
-                    setCipherKey(newModule->name().toUtf8().constData(),
-                                 unlockKey.toUtf8().constData());
+                    m_manager.setCipherKey(
+                                newModule->name().toUtf8().constData(),
+                                unlockKey.toUtf8().constData());
             }
 
             /// \todo Refactor data model to use shared_ptr to contain works
@@ -191,8 +192,8 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
     return ret;
 }
 
-void CSwordBackend::addRenderFilters(sword::SWModule * module,
-                                     sword::ConfigEntMap & section)
+void CSwordBackend::Private::addRenderFilters(sword::SWModule * module,
+                                              sword::ConfigEntMap & section)
 {
     auto entry(section.find("SourceType"));
     if (entry != section.end()) {
@@ -222,6 +223,10 @@ void CSwordBackend::addRenderFilters(sword::SWModule * module,
 
 void CSwordBackend::shutdownModules() {
     m_dataModel->clear(true);
+    m_manager.shutdownModules();
+}
+
+void CSwordBackend::Private::shutdownModules() {
     //BT  mods are deleted now, delete Sword mods, too.
     deleteAllModules();
 
@@ -244,21 +249,21 @@ void CSwordBackend::setOption(const CSwordModuleInfo::FilterTypes type,
     if (type == CSwordModuleInfo::textualVariants) {
         switch (state) {
         case 0:
-            setGlobalOption(optionName(type).toUtf8().constData(),
-                            "Primary Reading");
+            m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
+                                      "Primary Reading");
             break;
         case 1:
-            setGlobalOption(optionName(type).toUtf8().constData(),
-                            "Secondary Reading");
+            m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
+                                      "Secondary Reading");
             break;
         default:
-            setGlobalOption(optionName(type).toUtf8().constData(),
-                            "All Readings");
+            m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
+                                      "All Readings");
             break;
         }
     } else {
-        setGlobalOption(optionName(type).toUtf8().constData(),
-                        state ? "On" : "Off");
+        m_manager.setGlobalOption(optionName(type).toUtf8().constData(),
+                                  state ? "On" : "Off");
     }
 }
 
@@ -415,7 +420,11 @@ QString CSwordBackend::booknameLanguage(QString const & language) {
 
 void CSwordBackend::reloadModules(const SetupChangedReason reason) {
     shutdownModules();
+    m_manager.reloadConfig();
+    initModules(reason);
+}
 
+void CSwordBackend::Private::reloadConfig() {
     //delete Sword's config to make Sword reload it!
 
     if (myconfig) { // force reload on config object because we may have changed the paths
@@ -428,8 +437,6 @@ void CSwordBackend::reloadModules(const SetupChangedReason reason) {
     } else if (config) {
         config->load();
     }
-
-    initModules(reason);
 }
 
 // Get one or more shared sword config (sword.conf) files
@@ -439,7 +446,7 @@ QStringList CSwordBackend::getSharedSwordConfigFiles() const {
     return QStringList(util::directory::convertDirSeparators(qgetenv("SWORD_PATH")) += "/Sword/sword.conf");
 #else
     // /etc/sword.conf, /usr/local/etc/sword.conf
-    return QString(globalConfPath).split(":");
+    return QString(m_manager.globalConfPath).split(":");
 #endif
 }
 

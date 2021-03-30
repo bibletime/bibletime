@@ -53,7 +53,7 @@
         BibleTimeApp::~BibleTimeApp(). Only when \ref BackendNotSingleton
         "managing modules" separate backends are created.
 */
-class CSwordBackend: public QObject, public sword::SWMgr {
+class CSwordBackend: public QObject {
 
     Q_OBJECT
 
@@ -176,7 +176,7 @@ public: /* Methods: */
       \returns The global config object containing the configs of all modules
                merged together.
     */
-    sword::SWConfig * getConfig() const { return config; }
+    sword::SWConfig * getConfig() const { return m_manager.config; }
 
     /**
       \param[in] option The option name to return.
@@ -235,6 +235,11 @@ public: /* Methods: */
     */
     void deleteOrphanedIndices();
 
+    QString prefixPath() const
+    { return QString::fromLatin1(m_manager.prefixPath); }
+
+    sword::SWMgr & raw() { return m_manager; }
+
 Q_SIGNALS:
 
     void sigSwordSetupChanged(CSwordBackend::SetupChangedReason reason);
@@ -248,8 +253,6 @@ protected: /* Methods: */
     CSwordBackend();
 
     /** Reimplemented from sword::SWMgr. */
-    void addRenderFilters(sword::SWModule * module,
-                          sword::ConfigEntMap & section) override;
 
     QStringList getSharedSwordConfigFiles() const;
     QString getPrivateSwordConfigPath() const;
@@ -257,12 +260,26 @@ protected: /* Methods: */
 
 private: /* Fields: */
 
-    // Filters:
-    Filters::GbfToHtml   m_gbfFilter;
-    Filters::OsisToHtml  m_osisFilter;
-    Filters::PlainToHtml m_plainFilter;
-    Filters::TeiToHtml   m_teiFilter;
-    Filters::ThmlToHtml  m_thmlFilter;
+    struct Private: public sword::SWMgr {
+
+    /* Methods: */
+
+        using sword::SWMgr::SWMgr;
+
+        void shutdownModules();
+        void reloadConfig();
+        void addRenderFilters(sword::SWModule * module,
+                              sword::ConfigEntMap & section) override;
+
+    /* Fields: */
+
+        Filters::GbfToHtml   m_gbfFilter;
+        Filters::OsisToHtml  m_osisFilter;
+        Filters::PlainToHtml m_plainFilter;
+        Filters::TeiToHtml   m_teiFilter;
+        Filters::ThmlToHtml  m_thmlFilter;
+
+    } m_manager;
 
     // Displays:
     Rendering::CChapterDisplay m_chapterDisplay;
