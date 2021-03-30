@@ -35,12 +35,12 @@
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <swmgr.h>
-#include <swbuf.h>
-#include <swmodule.h>
-#include <swversion.h>
-#include <localemgr.h>
-#include <utilstr.h>
 #pragma GCC diagnostic pop
+
+namespace sword {
+class Module;
+class Config;
+} // namespace sword
 
 /**
   \brief The backend layer main class, a backend implementation of Sword.

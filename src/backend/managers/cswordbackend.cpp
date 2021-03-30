@@ -33,9 +33,11 @@
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <encfiltmgr.h>
 #include <filemgr.h>
+#include <localemgr.h>
 #include <rtfhtml.h>
 #include <swfiltermgr.h>
 #include <swfilter.h>
+#include <swversion.h>
 #include <utilstr.h>
 #pragma GCC diagnostic pop
 
