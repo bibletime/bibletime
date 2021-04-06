@@ -17,7 +17,6 @@
 #include "../backend/drivers/btmodulelist.h"
 
 
-class BTHistory;
 class BtModuleTextModel;
 class CDisplayWindow;
 class CKeyChooser;
@@ -43,11 +42,8 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    BtCopyByReferencesDialog(BtConstModuleList const & modules,
-                             BTHistory * historyPtr,
-                             CSwordKey * key,
-                             BtModuleTextModel const * model,
-                             CDisplayWindow * parent = nullptr);
+    BtCopyByReferencesDialog(BtModuleTextModel const * model,
+                             CDisplayWindow * parent);
 
     Result const & result() const noexcept { return m_result; }
 

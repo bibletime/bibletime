@@ -32,14 +32,11 @@
 
 
 BtCopyByReferencesDialog::BtCopyByReferencesDialog(
-        BtConstModuleList const & modules,
-        BTHistory * historyPtr,
-        CSwordKey * key,
         BtModuleTextModel const * model,
         CDisplayWindow * parent)
     : QDialog(parent)
-    , m_modules(modules)
-    , m_key(key)
+    , m_modules(parent->modules())
+    , m_key(parent->key())
     , m_moduleTextModel(model)
 {
     setWindowTitle(tr("Copy by References"));
@@ -57,8 +54,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     auto * const label1 = new QLabel(tr("First"));
     gridLayout->addWidget(label1, 0,0);
 
+    auto * const historyPtr = parent->history();
     m_keyChooser1 =
-            CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
+            CKeyChooser::createInstance(m_modules, historyPtr, m_key->copy(), this);
     gridLayout->addWidget(m_keyChooser1,0,1);
 
     auto * const hLayout = new QHBoxLayout;
@@ -68,7 +66,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->addWidget(label2, 1,0);
 
     m_keyChooser2 =
-            CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
+            CKeyChooser::createInstance(m_modules, historyPtr, m_key->copy(), this);
     gridLayout->addWidget(m_keyChooser2,1,1);
 
     m_moduleNameCombo = new QComboBox();
