@@ -110,21 +110,21 @@ bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString&
     CSwordModuleInfo::ModuleType type = m_modules.at(0)->type();
     if (type == CSwordModuleInfo::Bible ||
             type == CSwordModuleInfo::Commentary) {
-        if ((m_ri.index2-m_ri.index1) > 2700)
+        if ((m_refIndexes.index2 - m_refIndexes.index1) > 2700)
             return true;
     } else {
-        if ( m_ri.index2-m_ri.index1 > 100)
+        if ( m_refIndexes.index2 - m_refIndexes.index1 > 100)
             return true;
     }
     return false;
 }
 
 int BtCopyByReferencesDialog::getIndex1() {
-    return m_ri.index1;
+    return m_refIndexes.index1;
 }
 
 int BtCopyByReferencesDialog::getIndex2() {
-    return m_ri.index2;
+    return m_refIndexes.index2;
 }
 
 int BtCopyByReferencesDialog::getColumn() {
@@ -132,17 +132,17 @@ int BtCopyByReferencesDialog::getColumn() {
 }
 
 QString BtCopyByReferencesDialog::getReference1() {
-    return m_ri.r1;
+    return m_refIndexes.r1;
 }
 
 QString BtCopyByReferencesDialog::getReference2() {
-    return m_ri.r2;
+    return m_refIndexes.r2;
 }
 
 void BtCopyByReferencesDialog::normalizeReferences(QString const & ref1,
                                                    QString const & ref2)
 {
-    decltype(m_ri) ri;
+    decltype(m_refIndexes) ri;
     std::unique_ptr<CSwordKey> key(m_key->copy());
     key->setKey(ref1);
     ri.index1 = m_moduleTextModel->keyToIndex(*key);
@@ -154,7 +154,7 @@ void BtCopyByReferencesDialog::normalizeReferences(QString const & ref1,
         ri.r1.swap(ri.r2);
         std::swap(ri.index1, ri.index2);
     }
-    m_ri = ri;
+    m_refIndexes = ri;
 }
 
 void BtCopyByReferencesDialog::loadSelectionKeys() {

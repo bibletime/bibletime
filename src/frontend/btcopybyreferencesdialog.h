@@ -66,6 +66,6 @@ class BtCopyByReferencesDialog : public QDialog {
             QString r2;
             int index1;
             int index2;
-        } m_ri;
+        } m_refIndexes;
 
 };
