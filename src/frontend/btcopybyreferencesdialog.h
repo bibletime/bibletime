@@ -58,7 +58,6 @@ private: /* Fields: */
     BtModuleTextModel const * m_moduleTextModel;
     QLabel * m_sizeToLarge;
     QPushButton * m_okButton;
-    CDisplayWindow * m_displayWindow;
 
     struct {
         QString r1;

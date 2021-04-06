@@ -41,7 +41,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     , m_modules(modules)
     , m_key(key)
     , m_moduleTextModel(model)
-    , m_displayWindow(parent)
 {
     setWindowTitle(tr("Copy by References"));
     setMinimumWidth(400);
@@ -90,12 +89,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         for (auto m : m_modules)
             m_moduleNameCombo->addItem(m->name());
 
-        auto column = m_displayWindow->getSelectedColumn();
+        auto column = parent->getSelectedColumn();
         if (column < 0)
             column = 0;
 
-        auto const first = m_displayWindow->getFirstSelectedIndex();
-        auto const last = m_displayWindow->getLastSelectedIndex();
+        auto const first = parent->getFirstSelectedIndex();
+        auto const last = parent->getLastSelectedIndex();
         if (first >= 0 && last >= 0) {
             m_keyChooser1->setKey(m_moduleTextModel->indexToKey(first, 0));
             m_keyChooser2->setKey(m_moduleTextModel->indexToKey(last, 0));
