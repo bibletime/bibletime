@@ -16,10 +16,10 @@
 
 #include <QList>
 #include <QTimer>
-#include "displaywindow/cdisplaywindow.h"
 #ifndef NDEBUG
 #include <mutex>
 #endif
+#include "../backend/drivers/cswordmoduleinfo.h"
 
 
 namespace InfoDisplay {
@@ -36,7 +36,6 @@ class CBookmarkIndex;
 class CDisplayWindow;
 class CKeyChooser;
 class CMDIArea;
-class CSwordModuleInfo;
 class QAction;
 class QLabel;
 class QMdiSubWindow;
