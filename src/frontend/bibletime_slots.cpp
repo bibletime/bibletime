@@ -400,17 +400,6 @@ void BibleTime::loadProfile(const QString & profileKey) {
     refreshProfileMenus();
 }
 
-namespace {
-
-/// Helper object for reloadProfile()
-struct WindowLoadStatus {
-    QStringList failedModules;
-    QList<CSwordModuleInfo*> okModules;
-    CDisplayWindow * window = nullptr;
-};
-
-} // anonymous namespace
-
 void BibleTime::reloadProfile() {
     using MAM = CMDIArea::MDIArrangementMode;
     using message::setQActionCheckedNoTrigger;
@@ -449,6 +438,11 @@ void BibleTime::reloadProfile() {
     m_findWidget->setVisible(sessionConf.value<bool>("FindIsVisible", false));
 
     QWidget * focusWindow = nullptr;
+    struct WindowLoadStatus {
+        QStringList failedModules;
+        QList<CSwordModuleInfo *> okModules;
+        CDisplayWindow * window = nullptr;
+    };
     QMap<QString, WindowLoadStatus> failedWindows;
     for (auto const & w : sessionConf.value<QStringList>("windowsList")) {
         BT_ASSERT(!w.endsWith('/'));
