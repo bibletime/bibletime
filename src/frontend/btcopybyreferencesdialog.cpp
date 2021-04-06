@@ -84,28 +84,22 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
 
     loadSelectionKeys();
 
-    BT_CONNECT(m_keyChooser1, &CKeyChooser::keyChanged,
-               this, &BtCopyByReferencesDialog::slotKeyChanged);
+    auto const handleKeyChanged = [this]{
+        bool const toLarge = isCopyToLarge(m_keyChooser1->key()->key(),
+                                           m_keyChooser2->key()->key());
+        m_sizeToLarge->setVisible(toLarge);
+        m_okButton->setEnabled(!toLarge);
+    };
 
-    BT_CONNECT(m_keyChooser2, &CKeyChooser::keyChanged,
-               this, &BtCopyByReferencesDialog::slotKeyChanged);
+    BT_CONNECT(m_keyChooser1, &CKeyChooser::keyChanged, handleKeyChanged);
+    BT_CONNECT(m_keyChooser2, &CKeyChooser::keyChanged, handleKeyChanged);
 
     BT_CONNECT(buttons, &QDialogButtonBox::accepted,
                this, &BtCopyByReferencesDialog::accept);
     BT_CONNECT(buttons, &QDialogButtonBox::rejected,
                this, &BtCopyByReferencesDialog::reject);
 
-    slotKeyChanged(nullptr);
-}
-
-void BtCopyByReferencesDialog::slotKeyChanged(CSwordKey * /* newKey */) {
-
-    QString ref1 = m_keyChooser1->key()->key();
-    QString ref2 = m_keyChooser2->key()->key();
-
-    bool toLarge = isCopyToLarge(ref1, ref2);
-    m_sizeToLarge->setVisible(toLarge);
-    m_okButton->setEnabled(!toLarge);
+    handleKeyChanged();
 }
 
 bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString& ref2) {

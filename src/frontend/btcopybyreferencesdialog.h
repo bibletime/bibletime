@@ -41,10 +41,6 @@ class BtCopyByReferencesDialog : public QDialog {
     QString const & getReference1() const noexcept { return m_refIndexes.r1; }
     QString const & getReference2() const noexcept { return m_refIndexes.r2; }
 
-    private Q_SLOTS:
-
-        void slotKeyChanged(CSwordKey * newKey);
-
     private:
 
         bool isCopyToLarge(const QString& ref1, const QString& ref2);
