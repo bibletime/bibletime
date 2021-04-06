@@ -117,7 +117,7 @@ void BtModelViewReadDisplay::copyByReferences() {
     if (dlg.exec() != QDialog::Accepted)
         return;
 
-    auto const & m = *m_parentWindow->modules().at(dlg.getColumn());
+    auto const & m = dlg.getModule();
     if (m.type() == CSwordModuleInfo::Bible
         || m.type() == CSwordModuleInfo::Commentary)
     {

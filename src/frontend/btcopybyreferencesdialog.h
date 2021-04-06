@@ -22,6 +22,7 @@ class BtModuleTextModel;
 class CDisplayWindow;
 class CKeyChooser;
 class CSwordKey;
+class CSwordModuleInfo;
 class QComboBox;
 class QLabel;
 class QPushButton;
@@ -40,7 +41,7 @@ public: /* Methods: */
 
     int getIndex1() const noexcept { return m_result.index1; }
     int getIndex2() const noexcept { return m_result.index2; }
-    int getColumn();
+    CSwordModuleInfo const & getModule() const noexcept { return *m_result.module; }
     QString const & getReference1() const noexcept { return m_result.reference1; }
     QString const & getReference2() const noexcept { return m_result.reference2; }
 
@@ -56,6 +57,7 @@ private: /* Fields: */
     QPushButton * m_okButton;
 
     struct {
+        CSwordModuleInfo const * module;
         QString reference1;
         QString reference2;
         int index1;

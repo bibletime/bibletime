@@ -136,12 +136,13 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     BT_CONNECT(m_keyChooser2, &CKeyChooser::keyChanged, handleKeyChanged);
 
     BT_CONNECT(buttons, &QDialogButtonBox::accepted,
-               this, &BtCopyByReferencesDialog::accept);
+               [this] {
+                   m_result.module =
+                           m_modules.at(m_moduleNameCombo->currentIndex());
+                   accept();
+               });
     BT_CONNECT(buttons, &QDialogButtonBox::rejected,
                this, &BtCopyByReferencesDialog::reject);
 
     handleKeyChanged();
 }
-
-int BtCopyByReferencesDialog::getColumn()
-{ return m_moduleNameCombo->currentIndex(); }
