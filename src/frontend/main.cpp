@@ -21,6 +21,7 @@
 #include "../backend/bookshelfmodel/btbookshelfmodel.h"
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfig.h"
+#include "../backend/managers/cswordbackend.h"
 #include "../util/directory.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
