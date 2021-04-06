@@ -44,7 +44,6 @@ class BtCopyByReferencesDialog : public QDialog {
     private:
 
         bool isCopyToLarge(const QString& ref1, const QString& ref2);
-        void normalizeReferences(QString const & ref1, QString const & ref2);
         void loadSelectionKeys();
 
         const BtConstModuleList m_modules;
