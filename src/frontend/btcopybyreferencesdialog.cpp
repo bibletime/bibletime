@@ -128,19 +128,17 @@ bool BtCopyByReferencesDialog::isCopyToLarge(QString const & ref1,
                                              QString const & ref2)
 {
     { // Normalize references:
-        decltype(m_refIndexes) ri;
         std::unique_ptr<CSwordKey> key(m_key->copy());
         key->setKey(ref1);
-        ri.index1 = m_moduleTextModel->keyToIndex(*key);
+        m_refIndexes.index1 = m_moduleTextModel->keyToIndex(*key);
         key->setKey(ref2);
-        ri.index2 = m_moduleTextModel->keyToIndex(*key);
-        ri.r1 = ref1;
-        ri.r2 = ref2;
-        if (ri.index1 > ri.index2) {
-            ri.r1.swap(ri.r2);
-            std::swap(ri.index1, ri.index2);
+        m_refIndexes.index2 = m_moduleTextModel->keyToIndex(*key);
+        m_refIndexes.r1 = ref1;
+        m_refIndexes.r2 = ref2;
+        if (m_refIndexes.index1 > m_refIndexes.index2) {
+            m_refIndexes.r1.swap(m_refIndexes.r2);
+            std::swap(m_refIndexes.index1, m_refIndexes.index2);
         }
-        m_refIndexes = ri;
     }
 
     auto const type = m_modules.at(0)->type();
