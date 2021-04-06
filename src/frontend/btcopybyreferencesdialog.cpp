@@ -108,18 +108,18 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     auto const handleKeyChanged = [this]{
         // Calculate result:
-        m_refIndexes.reference1 = m_keyChooser1->key()->key();
-        m_refIndexes.reference2 = m_keyChooser2->key()->key();
+        m_result.reference1 = m_keyChooser1->key()->key();
+        m_result.reference2 = m_keyChooser2->key()->key();
         {
             std::unique_ptr<CSwordKey> key(m_key->copy());
-            key->setKey(m_refIndexes.reference1);
-            m_refIndexes.index1 = m_moduleTextModel->keyToIndex(*key);
-            key->setKey(m_refIndexes.reference2);
-            m_refIndexes.index2 = m_moduleTextModel->keyToIndex(*key);
+            key->setKey(m_result.reference1);
+            m_result.index1 = m_moduleTextModel->keyToIndex(*key);
+            key->setKey(m_result.reference2);
+            m_result.index2 = m_moduleTextModel->keyToIndex(*key);
         }
-        if (m_refIndexes.index1 > m_refIndexes.index2) {
-            m_refIndexes.reference1.swap(m_refIndexes.reference2);
-            std::swap(m_refIndexes.index1, m_refIndexes.index2);
+        if (m_result.index1 > m_result.index2) {
+            m_result.reference1.swap(m_result.reference2);
+            std::swap(m_result.index1, m_result.index2);
         }
 
         auto const type = m_modules.at(0)->type();
@@ -127,8 +127,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                 || type == CSwordModuleInfo::Commentary)
                                ? 2700
                                : 100;
-        bool const toLarge =
-                m_refIndexes.index2 - m_refIndexes.index1 > threshold;
+        bool const toLarge = m_result.index2 - m_result.index1 > threshold;
         m_sizeToLarge->setVisible(toLarge);
         m_okButton->setEnabled(!toLarge);
     };

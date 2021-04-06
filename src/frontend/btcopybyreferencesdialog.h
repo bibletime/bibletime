@@ -38,11 +38,11 @@ public: /* Methods: */
                              BtModuleTextModel const * model,
                              CDisplayWindow * parent = nullptr);
 
-    int getIndex1() const noexcept { return m_refIndexes.index1; }
-    int getIndex2() const noexcept { return m_refIndexes.index2; }
+    int getIndex1() const noexcept { return m_result.index1; }
+    int getIndex2() const noexcept { return m_result.index2; }
     int getColumn();
-    QString const & getReference1() const noexcept { return m_refIndexes.reference1; }
-    QString const & getReference2() const noexcept { return m_refIndexes.reference2; }
+    QString const & getReference1() const noexcept { return m_result.reference1; }
+    QString const & getReference2() const noexcept { return m_result.reference2; }
 
 private: /* Fields: */
 
@@ -60,6 +60,6 @@ private: /* Fields: */
         QString reference2;
         int index1;
         int index2;
-    } m_refIndexes;
+    } m_result;
 
 }; /* class BtCopyByReferencesDialog */
