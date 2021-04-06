@@ -108,17 +108,17 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     auto const handleKeyChanged = [this]{
         // Calculate result:
-        m_refIndexes.r1 = m_keyChooser1->key()->key();
-        m_refIndexes.r2 = m_keyChooser2->key()->key();
+        m_refIndexes.reference1 = m_keyChooser1->key()->key();
+        m_refIndexes.reference2 = m_keyChooser2->key()->key();
         {
             std::unique_ptr<CSwordKey> key(m_key->copy());
-            key->setKey(m_refIndexes.r1);
+            key->setKey(m_refIndexes.reference1);
             m_refIndexes.index1 = m_moduleTextModel->keyToIndex(*key);
-            key->setKey(m_refIndexes.r2);
+            key->setKey(m_refIndexes.reference2);
             m_refIndexes.index2 = m_moduleTextModel->keyToIndex(*key);
         }
         if (m_refIndexes.index1 > m_refIndexes.index2) {
-            m_refIndexes.r1.swap(m_refIndexes.r2);
+            m_refIndexes.reference1.swap(m_refIndexes.reference2);
             std::swap(m_refIndexes.index1, m_refIndexes.index2);
         }
 

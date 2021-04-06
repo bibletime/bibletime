@@ -41,8 +41,8 @@ public: /* Methods: */
     int getIndex1() const noexcept { return m_refIndexes.index1; }
     int getIndex2() const noexcept { return m_refIndexes.index2; }
     int getColumn();
-    QString const & getReference1() const noexcept { return m_refIndexes.r1; }
-    QString const & getReference2() const noexcept { return m_refIndexes.r2; }
+    QString const & getReference1() const noexcept { return m_refIndexes.reference1; }
+    QString const & getReference2() const noexcept { return m_refIndexes.reference2; }
 
 private: /* Fields: */
 
@@ -56,8 +56,8 @@ private: /* Fields: */
     QPushButton * m_okButton;
 
     struct {
-        QString r1;
-        QString r2;
+        QString reference1;
+        QString reference2;
         int index1;
         int index2;
     } m_refIndexes;
