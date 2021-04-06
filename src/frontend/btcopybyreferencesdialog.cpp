@@ -38,7 +38,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
                                                    CDisplayWindow * parent)
         : QDialog(parent), m_modules(modules), m_key(key),
           m_keyChooser1(nullptr), m_keyChooser2(nullptr),
-          m_moduleTextModel(model), m_buttons(nullptr),
+          m_moduleTextModel(model),
           m_displayWindow(parent) {
 
     setWindowTitle(tr("Copy by References"));
@@ -75,9 +75,12 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     m_sizeToLarge->setVisible(false);
     hLayout->addWidget(m_sizeToLarge);
 
-    m_buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    message::prepareDialogBox(m_buttons);
-    hLayout->addWidget(m_buttons);
+    auto const buttons =
+            new QDialogButtonBox(QDialogButtonBox::Ok
+                                 | QDialogButtonBox::Cancel);
+    message::prepareDialogBox(buttons);
+    hLayout->addWidget(buttons);
+    m_okButton = buttons->button(QDialogButtonBox::Ok);
 
     loadSelectionKeys();
 
@@ -87,9 +90,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     BT_CONNECT(m_keyChooser2, &CKeyChooser::keyChanged,
                this, &BtCopyByReferencesDialog::slotKeyChanged);
 
-    BT_CONNECT(m_buttons, &QDialogButtonBox::accepted,
+    BT_CONNECT(buttons, &QDialogButtonBox::accepted,
                this, &BtCopyByReferencesDialog::accept);
-    BT_CONNECT(m_buttons, &QDialogButtonBox::rejected,
+    BT_CONNECT(buttons, &QDialogButtonBox::rejected,
                this, &BtCopyByReferencesDialog::reject);
 
     slotKeyChanged(nullptr);
@@ -102,7 +105,7 @@ void BtCopyByReferencesDialog::slotKeyChanged(CSwordKey * /* newKey */) {
 
     bool toLarge = isCopyToLarge(ref1, ref2);
     m_sizeToLarge->setVisible(toLarge);
-    m_buttons->button(QDialogButtonBox::Ok)->setEnabled(!toLarge);
+    m_okButton->setEnabled(!toLarge);
 }
 
 bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString& ref2) {

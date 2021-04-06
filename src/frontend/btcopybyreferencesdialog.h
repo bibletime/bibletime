@@ -18,7 +18,7 @@
 
 
 class QComboBox;
-class QDialogButtonBox;
+class QPushButton;
 class CDisplayWindow;
 class QLabel;
 class CKeyChooser;
@@ -58,7 +58,7 @@ class BtCopyByReferencesDialog : public QDialog {
         QComboBox * m_moduleNameCombo;
         BtModuleTextModel const * m_moduleTextModel;
         QLabel * m_sizeToLarge;
-        QDialogButtonBox * m_buttons;
+        QPushButton * m_okButton;
         CDisplayWindow * m_displayWindow;
 
         struct {
