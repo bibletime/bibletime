@@ -119,24 +119,8 @@ bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString&
     return false;
 }
 
-int BtCopyByReferencesDialog::getIndex1() {
-    return m_refIndexes.index1;
-}
-
-int BtCopyByReferencesDialog::getIndex2() {
-    return m_refIndexes.index2;
-}
-
 int BtCopyByReferencesDialog::getColumn() {
     return m_moduleNameCombo->currentIndex();
-}
-
-QString BtCopyByReferencesDialog::getReference1() {
-    return m_refIndexes.r1;
-}
-
-QString BtCopyByReferencesDialog::getReference2() {
-    return m_refIndexes.r2;
 }
 
 void BtCopyByReferencesDialog::normalizeReferences(QString const & ref1,

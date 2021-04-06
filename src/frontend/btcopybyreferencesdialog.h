@@ -35,11 +35,11 @@ class BtCopyByReferencesDialog : public QDialog {
                                  BtModuleTextModel const * model,
                                  CDisplayWindow * parent = nullptr);
 
-    int getIndex1();
-    int getIndex2();
+    int getIndex1() const noexcept { return m_refIndexes.index1; }
+    int getIndex2() const noexcept { return m_refIndexes.index2; }
     int getColumn();
-    QString getReference1();
-    QString getReference2();
+    QString const & getReference1() const noexcept { return m_refIndexes.r1; }
+    QString const & getReference2() const noexcept { return m_refIndexes.r2; }
 
     private Q_SLOTS:
 
