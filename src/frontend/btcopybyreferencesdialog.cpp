@@ -72,9 +72,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     m_moduleNameCombo = new QComboBox();
     gridLayout->addWidget(m_moduleNameCombo, 2,1);
 
-    m_sizeToLarge = new QLabel(tr("Copy size is too large."));
-    m_sizeToLarge->setVisible(false);
-    hLayout->addWidget(m_sizeToLarge);
+    m_sizeTooLargeLabel = new QLabel(tr("Copy size is too large."));
+    m_sizeTooLargeLabel->setVisible(false);
+    hLayout->addWidget(m_sizeTooLargeLabel);
 
     auto const buttons =
             new QDialogButtonBox(QDialogButtonBox::Ok
@@ -125,9 +125,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                                 || type == CSwordModuleInfo::Commentary)
                                ? 2700
                                : 100;
-        bool const toLarge = m_result.index2 - m_result.index1 > threshold;
-        m_sizeToLarge->setVisible(toLarge);
-        m_okButton->setEnabled(!toLarge);
+        bool const tooLarge = m_result.index2 - m_result.index1 > threshold;
+        m_sizeTooLargeLabel->setVisible(tooLarge);
+        m_okButton->setEnabled(!tooLarge);
     };
 
     BT_CONNECT(m_keyChooser1, &CKeyChooser::keyChanged, handleKeyChanged);
