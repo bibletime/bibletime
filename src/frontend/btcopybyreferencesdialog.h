@@ -44,10 +44,6 @@ public: /* Methods: */
     QString const & getReference1() const noexcept { return m_refIndexes.r1; }
     QString const & getReference2() const noexcept { return m_refIndexes.r2; }
 
-private: /* Methods: */
-
-    bool isCopyToLarge(QString const & ref1, QString const & ref2);
-
 private: /* Fields: */
 
     BtConstModuleList const m_modules;

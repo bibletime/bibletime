@@ -107,8 +107,28 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     }
 
     auto const handleKeyChanged = [this]{
-        bool const toLarge = isCopyToLarge(m_keyChooser1->key()->key(),
-                                           m_keyChooser2->key()->key());
+        // Calculate result:
+        m_refIndexes.r1 = m_keyChooser1->key()->key();
+        m_refIndexes.r2 = m_keyChooser2->key()->key();
+        {
+            std::unique_ptr<CSwordKey> key(m_key->copy());
+            key->setKey(m_refIndexes.r1);
+            m_refIndexes.index1 = m_moduleTextModel->keyToIndex(*key);
+            key->setKey(m_refIndexes.r2);
+            m_refIndexes.index2 = m_moduleTextModel->keyToIndex(*key);
+        }
+        if (m_refIndexes.index1 > m_refIndexes.index2) {
+            m_refIndexes.r1.swap(m_refIndexes.r2);
+            std::swap(m_refIndexes.index1, m_refIndexes.index2);
+        }
+
+        auto const type = m_modules.at(0)->type();
+        auto const threshold = (type == CSwordModuleInfo::Bible
+                                || type == CSwordModuleInfo::Commentary)
+                               ? 2700
+                               : 100;
+        bool const toLarge =
+                m_refIndexes.index2 - m_refIndexes.index1 > threshold;
         m_sizeToLarge->setVisible(toLarge);
         m_okButton->setEnabled(!toLarge);
     };
@@ -122,31 +142,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
                this, &BtCopyByReferencesDialog::reject);
 
     handleKeyChanged();
-}
-
-bool BtCopyByReferencesDialog::isCopyToLarge(QString const & ref1,
-                                             QString const & ref2)
-{
-    { // Normalize references:
-        std::unique_ptr<CSwordKey> key(m_key->copy());
-        key->setKey(ref1);
-        m_refIndexes.index1 = m_moduleTextModel->keyToIndex(*key);
-        key->setKey(ref2);
-        m_refIndexes.index2 = m_moduleTextModel->keyToIndex(*key);
-        m_refIndexes.r1 = ref1;
-        m_refIndexes.r2 = ref2;
-        if (m_refIndexes.index1 > m_refIndexes.index2) {
-            m_refIndexes.r1.swap(m_refIndexes.r2);
-            std::swap(m_refIndexes.index1, m_refIndexes.index2);
-        }
-    }
-
-    auto const type = m_modules.at(0)->type();
-    auto const threshold = (type == CSwordModuleInfo::Bible
-                            || type == CSwordModuleInfo::Commentary)
-                           ? 2700
-                           : 100;
-    return m_refIndexes.index2 - m_refIndexes.index1 > threshold;
 }
 
 int BtCopyByReferencesDialog::getColumn()
