@@ -142,9 +142,11 @@ bool BtCopyByReferencesDialog::isCopyToLarge(QString const & ref1,
     }
 
     auto const type = m_modules.at(0)->type();
-    if (type == CSwordModuleInfo::Bible || type == CSwordModuleInfo::Commentary)
-        return m_refIndexes.index2 - m_refIndexes.index1 > 2700;
-    return m_refIndexes.index2 - m_refIndexes.index1 > 100;
+    auto const threshold = (type == CSwordModuleInfo::Bible
+                            || type == CSwordModuleInfo::Commentary)
+                           ? 2700
+                           : 100;
+    return m_refIndexes.index2 - m_refIndexes.index1 > threshold;
 }
 
 int BtCopyByReferencesDialog::getColumn()
