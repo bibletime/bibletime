@@ -31,41 +31,45 @@
 #include "messagedialog.h"
 
 
-BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & modules,
-                                                   BTHistory * historyPtr,
-                                                   CSwordKey * key,
-                                                   BtModuleTextModel const * model,
-                                                   CDisplayWindow * parent)
-        : QDialog(parent), m_modules(modules), m_key(key),
-          m_keyChooser1(nullptr), m_keyChooser2(nullptr),
-          m_moduleTextModel(model),
-          m_displayWindow(parent) {
-
+BtCopyByReferencesDialog::BtCopyByReferencesDialog(
+        BtConstModuleList const & modules,
+        BTHistory * historyPtr,
+        CSwordKey * key,
+        BtModuleTextModel const * model,
+        CDisplayWindow * parent)
+    : QDialog(parent)
+    , m_modules(modules)
+    , m_key(key)
+    , m_moduleTextModel(model)
+    , m_displayWindow(parent)
+{
     setWindowTitle(tr("Copy by References"));
     setMinimumWidth(400);
 
-    QVBoxLayout* vLayout = new QVBoxLayout(this);
+    auto * const vLayout = new QVBoxLayout(this);
     setLayout(vLayout);
 
-    QGridLayout* gridLayout = new QGridLayout();
+    auto * const gridLayout = new QGridLayout();
     gridLayout->setHorizontalSpacing(15);
     gridLayout->setVerticalSpacing(15);
     gridLayout->setContentsMargins(11,11,11,16);
     vLayout->addLayout(gridLayout);
 
-    QLabel* label1 = new QLabel(tr("First"));
+    auto * const label1 = new QLabel(tr("First"));
     gridLayout->addWidget(label1, 0,0);
 
-    m_keyChooser1 = CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
+    m_keyChooser1 =
+            CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
     gridLayout->addWidget(m_keyChooser1,0,1);
 
-    QHBoxLayout* hLayout = new QHBoxLayout;
+    auto * const hLayout = new QHBoxLayout;
     vLayout->addLayout(hLayout);
 
-    QLabel* label2 = new QLabel(tr("Last"));
+    auto * const label2 = new QLabel(tr("Last"));
     gridLayout->addWidget(label2, 1,0);
 
-    m_keyChooser2 = CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
+    m_keyChooser2 =
+            CKeyChooser::createInstance(modules, historyPtr, key->copy(), this);
     gridLayout->addWidget(m_keyChooser2,1,1);
 
     m_moduleNameCombo = new QComboBox();
@@ -121,7 +125,9 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     handleKeyChanged();
 }
 
-bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString& ref2) {
+bool BtCopyByReferencesDialog::isCopyToLarge(QString const & ref1,
+                                             QString const & ref2)
+{
     { // Normalize references:
         decltype(m_refIndexes) ri;
         std::unique_ptr<CSwordKey> key(m_key->copy());
@@ -138,18 +144,11 @@ bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString&
         m_refIndexes = ri;
     }
 
-    CSwordModuleInfo::ModuleType type = m_modules.at(0)->type();
-    if (type == CSwordModuleInfo::Bible ||
-            type == CSwordModuleInfo::Commentary) {
-        if ((m_refIndexes.index2 - m_refIndexes.index1) > 2700)
-            return true;
-    } else {
-        if ( m_refIndexes.index2 - m_refIndexes.index1 > 100)
-            return true;
-    }
-    return false;
+    auto const type = m_modules.at(0)->type();
+    if (type == CSwordModuleInfo::Bible || type == CSwordModuleInfo::Commentary)
+        return m_refIndexes.index2 - m_refIndexes.index1 > 2700;
+    return m_refIndexes.index2 - m_refIndexes.index1 > 100;
 }
 
-int BtCopyByReferencesDialog::getColumn() {
-    return m_moduleNameCombo->currentIndex();
-}
+int BtCopyByReferencesDialog::getColumn()
+{ return m_moduleNameCombo->currentIndex(); }

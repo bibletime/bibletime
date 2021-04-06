@@ -17,23 +17,26 @@
 #include "../backend/drivers/btmodulelist.h"
 
 
-class QComboBox;
-class QPushButton;
-class CDisplayWindow;
-class QLabel;
-class CKeyChooser;
 class BTHistory;
-class CSwordKey;
 class BtModuleTextModel;
+class CDisplayWindow;
+class CKeyChooser;
+class CSwordKey;
+class QComboBox;
+class QLabel;
+class QPushButton;
 
 class BtCopyByReferencesDialog : public QDialog {
-        Q_OBJECT
-    public:
-        BtCopyByReferencesDialog(const BtConstModuleList & modules,
-                                 BTHistory * historyPtr,
-                                 CSwordKey * key,
-                                 BtModuleTextModel const * model,
-                                 CDisplayWindow * parent = nullptr);
+
+    Q_OBJECT
+
+public: /* Methods: */
+
+    BtCopyByReferencesDialog(BtConstModuleList const & modules,
+                             BTHistory * historyPtr,
+                             CSwordKey * key,
+                             BtModuleTextModel const * model,
+                             CDisplayWindow * parent = nullptr);
 
     int getIndex1() const noexcept { return m_refIndexes.index1; }
     int getIndex2() const noexcept { return m_refIndexes.index2; }
@@ -41,25 +44,27 @@ class BtCopyByReferencesDialog : public QDialog {
     QString const & getReference1() const noexcept { return m_refIndexes.r1; }
     QString const & getReference2() const noexcept { return m_refIndexes.r2; }
 
-    private:
+private: /* Methods: */
 
-        bool isCopyToLarge(const QString& ref1, const QString& ref2);
+    bool isCopyToLarge(QString const & ref1, QString const & ref2);
 
-        const BtConstModuleList m_modules;
-        CSwordKey * m_key;
-        CKeyChooser * m_keyChooser1;
-        CKeyChooser * m_keyChooser2;
-        QComboBox * m_moduleNameCombo;
-        BtModuleTextModel const * m_moduleTextModel;
-        QLabel * m_sizeToLarge;
-        QPushButton * m_okButton;
-        CDisplayWindow * m_displayWindow;
+private: /* Fields: */
 
-        struct {
-            QString r1;
-            QString r2;
-            int index1;
-            int index2;
-        } m_refIndexes;
+    BtConstModuleList const m_modules;
+    CSwordKey * m_key;
+    CKeyChooser * m_keyChooser1;
+    CKeyChooser * m_keyChooser2;
+    QComboBox * m_moduleNameCombo;
+    BtModuleTextModel const * m_moduleTextModel;
+    QLabel * m_sizeToLarge;
+    QPushButton * m_okButton;
+    CDisplayWindow * m_displayWindow;
 
-};
+    struct {
+        QString r1;
+        QString r2;
+        int index1;
+        int index2;
+    } m_refIndexes;
+
+}; /* class BtCopyByReferencesDialog */
