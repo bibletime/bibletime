@@ -31,6 +31,16 @@ class BtCopyByReferencesDialog : public QDialog {
 
     Q_OBJECT
 
+public: /* Types: */
+
+    struct Result {
+        CSwordModuleInfo const * module;
+        QString reference1;
+        QString reference2;
+        int index1;
+        int index2;
+    };
+
 public: /* Methods: */
 
     BtCopyByReferencesDialog(BtConstModuleList const & modules,
@@ -39,11 +49,7 @@ public: /* Methods: */
                              BtModuleTextModel const * model,
                              CDisplayWindow * parent = nullptr);
 
-    int getIndex1() const noexcept { return m_result.index1; }
-    int getIndex2() const noexcept { return m_result.index2; }
-    CSwordModuleInfo const & getModule() const noexcept { return *m_result.module; }
-    QString const & getReference1() const noexcept { return m_result.reference1; }
-    QString const & getReference2() const noexcept { return m_result.reference2; }
+    Result const & result() const noexcept { return m_result; }
 
 private: /* Fields: */
 
@@ -56,12 +62,6 @@ private: /* Fields: */
     QLabel * m_sizeToLarge;
     QPushButton * m_okButton;
 
-    struct {
-        CSwordModuleInfo const * module;
-        QString reference1;
-        QString reference2;
-        int index1;
-        int index2;
-    } m_result;
+    Result m_result;
 
 }; /* class BtCopyByReferencesDialog */

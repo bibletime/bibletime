@@ -117,13 +117,13 @@ void BtModelViewReadDisplay::copyByReferences() {
     if (dlg.exec() != QDialog::Accepted)
         return;
 
-    auto const & m = dlg.getModule();
-    if (m.type() == CSwordModuleInfo::Bible
-        || m.type() == CSwordModuleInfo::Commentary)
+    auto const & result = dlg.result();
+    if (result.module->type() == CSwordModuleInfo::Bible
+        || result.module->type() == CSwordModuleInfo::Commentary)
     {
-        qml.copyVerseRange(dlg.getReference1(), dlg.getReference2(), &m);
+        qml.copyVerseRange(result.reference1, result.reference2, result.module);
     } else {
-        qml.copyRange(dlg.getIndex1(), dlg.getIndex2());
+        qml.copyRange(result.index1, result.index2);
     }
 }
 
