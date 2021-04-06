@@ -26,12 +26,15 @@ namespace InfoDisplay {
 class CInfoDisplay;
 }
 class BtActionClass;
+class BtActionCollection;
 class BtBookshelfDockWidget;
 class BtFindWidget;
+class BtModuleChooserBar;
 class BtModelViewReadDisplay;
 class BtOpenWorkAction;
 class CBookmarkIndex;
 class CDisplayWindow;
+class CKeyChooser;
 class CMDIArea;
 class CSwordModuleInfo;
 class QAction;
