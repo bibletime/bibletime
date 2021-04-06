@@ -42,12 +42,6 @@ class QActionGroup;
 class QToolBar;
 class QSplitter;
 
-struct AutoScroll {
-    bool enabled;
-    bool paused;
-    int speed;
-};
-
 /**
   * @page backend The structure of the backend
   * <p>
@@ -494,7 +488,11 @@ public Q_SLOTS:
         CMDIArea* m_mdi;
         BtFindWidget* m_findWidget;
 
-        AutoScroll m_autoScroll;
+        struct {
+            bool enabled;
+            bool paused;
+            int speed;
+        } m_autoScroll;
         QTimer m_autoScrollTimer;
 
 
