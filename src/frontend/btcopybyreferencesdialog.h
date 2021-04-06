@@ -15,7 +15,6 @@
 #include <QDialog>
 
 #include "../backend/drivers/btmodulelist.h"
-#include "display/modelview/btqmlinterface.h"
 
 
 class QComboBox;
@@ -26,8 +25,6 @@ class CKeyChooser;
 class BTHistory;
 class CSwordKey;
 class BtModuleTextModel;
-struct RefIndexes;
-
 
 class BtCopyByReferencesDialog : public QDialog {
         Q_OBJECT
@@ -51,7 +48,7 @@ class BtCopyByReferencesDialog : public QDialog {
     private:
 
         bool isCopyToLarge(const QString& ref1, const QString& ref2);
-        RefIndexes normalizeReferences(const QString& ref1, const QString& ref2);
+        void normalizeReferences(QString const & ref1, QString const & ref2);
         void loadSelectionKeys();
 
         const BtConstModuleList m_modules;
@@ -64,6 +61,11 @@ class BtCopyByReferencesDialog : public QDialog {
         QDialogButtonBox * m_buttons;
         CDisplayWindow * m_displayWindow;
 
-        RefIndexes m_ri;
+        struct {
+            QString r1;
+            QString r2;
+            int index1;
+            int index2;
+        } m_ri;
 
 };

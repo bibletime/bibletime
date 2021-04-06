@@ -106,7 +106,7 @@ void BtCopyByReferencesDialog::slotKeyChanged(CSwordKey * /* newKey */) {
 }
 
 bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString& ref2) {
-    m_ri = normalizeReferences(ref1, ref2);
+    normalizeReferences(ref1, ref2);
     CSwordModuleInfo::ModuleType type = m_modules.at(0)->type();
     if (type == CSwordModuleInfo::Bible ||
             type == CSwordModuleInfo::Commentary) {
@@ -139,8 +139,10 @@ QString BtCopyByReferencesDialog::getReference2() {
     return m_ri.r2;
 }
 
-RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, const QString& ref2) {
-    RefIndexes ri;
+void BtCopyByReferencesDialog::normalizeReferences(QString const & ref1,
+                                                   QString const & ref2)
+{
+    decltype(m_ri) ri;
     std::unique_ptr<CSwordKey> key(m_key->copy());
     key->setKey(ref1);
     ri.index1 = m_moduleTextModel->keyToIndex(*key);
@@ -152,7 +154,7 @@ RefIndexes BtCopyByReferencesDialog::normalizeReferences(const QString& ref1, co
         ri.r1.swap(ri.r2);
         std::swap(ri.index1, ri.index2);
     }
-    return ri;
+    m_ri = ri;
 }
 
 void BtCopyByReferencesDialog::loadSelectionKeys() {

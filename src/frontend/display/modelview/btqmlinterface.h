@@ -30,13 +30,6 @@ class CSwordModuleInfo;
 class QTimer;
 class RoleItemModel;
 
-struct RefIndexes {
-    QString r1;
-    QString r2;
-    int index1;
-    int index2;
-};
-
 /**
  * /brief This class provides communications between QML and c++.
  *
