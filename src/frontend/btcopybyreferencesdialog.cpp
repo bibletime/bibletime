@@ -82,7 +82,26 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(const BtConstModuleList & mod
     hLayout->addWidget(buttons);
     m_okButton = buttons->button(QDialogButtonBox::Ok);
 
-    loadSelectionKeys();
+    { // Load selection keys:
+        for (auto m : m_modules)
+            m_moduleNameCombo->addItem(m->name());
+
+        auto column = m_displayWindow->getSelectedColumn();
+        if (column < 0)
+            column = 0;
+
+        auto const first = m_displayWindow->getFirstSelectedIndex();
+        auto const last = m_displayWindow->getLastSelectedIndex();
+        if (first >= 0 && last >= 0) {
+            m_keyChooser1->setKey(m_moduleTextModel->indexToKey(first, 0));
+            m_keyChooser2->setKey(m_moduleTextModel->indexToKey(last, 0));
+
+            auto const index =
+                    m_moduleNameCombo->findText(m_modules.at(column)->name());
+            if (index >= 0)
+                m_moduleNameCombo->setCurrentIndex(index);
+        } // else default to top of view.
+    }
 
     auto const handleKeyChanged = [this]{
         bool const toLarge = isCopyToLarge(m_keyChooser1->key()->key(),
@@ -134,33 +153,3 @@ bool BtCopyByReferencesDialog::isCopyToLarge(const QString& ref1, const QString&
 int BtCopyByReferencesDialog::getColumn() {
     return m_moduleNameCombo->currentIndex();
 }
-
-void BtCopyByReferencesDialog::loadSelectionKeys() {
-    for (auto m : m_modules) {
-        QString name = m->name();
-        m_moduleNameCombo->addItem(name);
-    }
-
-    int column = m_displayWindow->getSelectedColumn();
-    if (column < 0)
-        column = 0;
-
-    int first = m_displayWindow->getFirstSelectedIndex();
-    int last  = m_displayWindow->getLastSelectedIndex();
-    if (first < 0 || last < 0)
-        return; // defaults to top of view.
-
-    CSwordKey* firstKey = m_moduleTextModel->indexToKey(first, 0);
-    CSwordKey* lastKey = m_moduleTextModel->indexToKey(last, 0);
-    m_keyChooser1->setKey(firstKey);
-    m_keyChooser2->setKey(lastKey);
-
-    const CSwordModuleInfo* m = m_modules.at(column);
-
-    QString moduleName = m->name();
-    int index = m_moduleNameCombo->findText(moduleName);
-    if (index >= 0)
-        m_moduleNameCombo->setCurrentIndex(index);
-}
-
-
