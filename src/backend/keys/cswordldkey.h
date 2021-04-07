@@ -55,7 +55,7 @@ class CSwordModuleInfo;
   * @version $Id: cswordldkey.h,v 1.24 2006/02/25 11:38:15 joachim Exp $
   */
 
-class CSwordLDKey final : public CSwordKey, public sword::SWKey {
+class CSwordLDKey final : public CSwordKey {
 
     public:
 
@@ -96,5 +96,9 @@ class CSwordLDKey final : public CSwordKey, public sword::SWKey {
     protected:
 
         const char* rawKey() const final override;
+
+    private: /* Fields: */
+
+        sword::SWKey m_key;
 
 };

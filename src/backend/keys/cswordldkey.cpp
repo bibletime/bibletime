@@ -29,22 +29,21 @@
 
 CSwordLDKey::CSwordLDKey(CSwordModuleInfo const * module)
     : CSwordKey(module)
-{ SWKey::operator=(" "); }
+{ m_key = " "; }
 
 /** No descriptions */
 CSwordLDKey::CSwordLDKey(CSwordLDKey const & k)
     : CSwordKey(k)
-    , SWKey(k.getText())
+    , m_key(k.m_key.getText())
 {}
 
 /** No descriptions */
-CSwordLDKey::CSwordLDKey(const SWKey *k, const CSwordModuleInfo *module)
-    : CSwordKey(module), SWKey(*k)
-{
-    // Intentionally empty
-}
+CSwordLDKey::CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module)
+    : CSwordKey(module)
+    , m_key(*k)
+{}
 
-sword::SWKey const & CSwordLDKey::asSwordKey() const noexcept { return *this; }
+sword::SWKey const & CSwordLDKey::asSwordKey() const noexcept { return m_key; }
 
 /** Clones this object by copying the members. */
 CSwordLDKey* CSwordLDKey::copy() const {
@@ -67,14 +66,14 @@ QString CSwordLDKey::key() const {
     BT_ASSERT(m_module);
 
     if (m_module->isUnicode()) {
-        return QString::fromUtf8(getText());
+        return QString::fromUtf8(m_key.getText());
     } else {
-        return cp1252Codec()->toUnicode(getText());
+        return cp1252Codec()->toUnicode(m_key.getText());
     }
 }
 
 const char * CSwordLDKey::rawKey() const {
-    return getText();
+    return m_key.getText();
 }
 
 bool CSwordLDKey::setKey(const QString &newKey) {
@@ -94,18 +93,18 @@ bool CSwordLDKey::setKey(const char *newKey) {
     BT_ASSERT(newKey);
 
     if (newKey) {
-        SWKey::operator = (newKey); //set the key
-        m_module->module().setKey(this);
+        m_key = newKey; //set the key
+        m_module->module().setKey(&m_key);
         m_module->snap();
     }
 
-    return !popError();
+    return !m_key.popError();
 }
 
 /** Uses the parameter to returns the next entry afer this key. */
 CSwordLDKey* CSwordLDKey::NextEntry() {
     auto & m = m_module->module();
-    m.setKey(this); // use this key as base for the next one!
+    m.setKey(&m_key); // use this key as base for the next one!
     //   m.getKey()->setText( (const char*)key().utf8() );
 
     m.setSkipConsecutiveLinks(true);
@@ -113,7 +112,7 @@ CSwordLDKey* CSwordLDKey::NextEntry() {
     m.setSkipConsecutiveLinks(false);
 
     setKey(m.getKeyText());
-    setText(m.getKeyText());
+    m_key.setText(m.getKeyText());
 
     return this;
 }
@@ -121,14 +120,14 @@ CSwordLDKey* CSwordLDKey::NextEntry() {
 /** Uses the parameter to returns the next entry afer this key. */
 CSwordLDKey* CSwordLDKey::PreviousEntry() {
     auto & m = m_module->module();
-    m.setKey(this); // use this key as base for the next one!
+    m.setKey(&m_key); // use this key as base for the next one!
     //   m.getKey()->setText( (const char*)key().utf8() );
 
     m.setSkipConsecutiveLinks(true);
     m--;
     m.setSkipConsecutiveLinks(false);
 
-    setText(m.getKeyText());
+    m_key.setText(m.getKeyText());
 
     return this;
 }
