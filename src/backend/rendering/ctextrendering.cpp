@@ -195,8 +195,9 @@ const QString CTextRendering::renderKeyRange(
     std::unique_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
     upperBound->setKey(stop);
 
-    auto const & sw_start = lowerBound->asSwordKey();
-    auto const & sw_stop = upperBound->asSwordKey();
+    /// const_cast required because SWKey comparison operators are not const:
+    auto & sw_start = const_cast<sword::SWKey &>(lowerBound->asSwordKey());
+    auto & sw_stop = const_cast<sword::SWKey &>(upperBound->asSwordKey());
 
     BT_ASSERT((sw_start == sw_stop) || (sw_start < sw_stop));
 
