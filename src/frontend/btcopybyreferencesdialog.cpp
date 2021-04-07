@@ -26,6 +26,7 @@
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../frontend/display/btmodelviewreaddisplay.h"
 #include "../frontend/displaywindow/cdisplaywindow.h"
+#include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "keychooser/ckeychooser.h"
 #include "messagedialog.h"
@@ -101,17 +102,14 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         auto column = parent->getSelectedColumn();
         if (column < 0)
             column = 0;
+        BT_ASSERT(column < modules.size());
 
         auto const first = parent->getFirstSelectedIndex();
         auto const last = parent->getLastSelectedIndex();
         if (first >= 0 && last >= 0) {
             m_keyChooser1->setKey(m_moduleTextModel->indexToKey(first, 0));
             m_keyChooser2->setKey(m_moduleTextModel->indexToKey(last, 0));
-
-            auto const index =
-                    m_moduleNameCombo->findText(modules.at(column)->name());
-            if (index >= 0)
-                m_moduleNameCombo->setCurrentIndex(index);
+            m_moduleNameCombo->setCurrentIndex(column);
         } // else default to top of view.
     }
 
