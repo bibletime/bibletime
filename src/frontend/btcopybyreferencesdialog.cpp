@@ -35,7 +35,6 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
         BtModuleTextModel const * model,
         CDisplayWindow * parent)
     : QDialog(parent)
-    , m_modules(parent->modules())
     , m_key(parent->key())
     , m_moduleTextModel(model)
 {
@@ -55,8 +54,17 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->addWidget(label1, 0,0);
 
     auto * const historyPtr = parent->history();
+    auto const modules = parent->modules();
+    {
+        auto const type = modules.at(0)->type();
+        m_copyThreshold = (type == CSwordModuleInfo::Bible
+                           || type == CSwordModuleInfo::Commentary)
+                          ? 2700
+                          : 100;
+    }
+
     m_keyChooser1 =
-            CKeyChooser::createInstance(m_modules, historyPtr, m_key->copy(), this);
+            CKeyChooser::createInstance(modules, historyPtr, m_key->copy(), this);
     gridLayout->addWidget(m_keyChooser1,0,1);
 
     auto * const hLayout = new QHBoxLayout;
@@ -66,7 +74,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     gridLayout->addWidget(label2, 1,0);
 
     m_keyChooser2 =
-            CKeyChooser::createInstance(m_modules, historyPtr, m_key->copy(), this);
+            CKeyChooser::createInstance(modules, historyPtr, m_key->copy(), this);
     gridLayout->addWidget(m_keyChooser2,1,1);
 
     m_moduleNameCombo = new QComboBox();
@@ -84,8 +92,11 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
     m_okButton = buttons->button(QDialogButtonBox::Ok);
 
     { // Load selection keys:
-        for (auto m : m_modules)
-            m_moduleNameCombo->addItem(m->name());
+        for (auto const * const m : modules)
+            m_moduleNameCombo->addItem(m->name(),
+                                       QVariant::fromValue(
+                                           const_cast<void *>(
+                                               static_cast<void const *>(m))));
 
         auto column = parent->getSelectedColumn();
         if (column < 0)
@@ -98,7 +109,7 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
             m_keyChooser2->setKey(m_moduleTextModel->indexToKey(last, 0));
 
             auto const index =
-                    m_moduleNameCombo->findText(m_modules.at(column)->name());
+                    m_moduleNameCombo->findText(modules.at(column)->name());
             if (index >= 0)
                 m_moduleNameCombo->setCurrentIndex(index);
         } // else default to top of view.
@@ -120,12 +131,8 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
             std::swap(m_result.index1, m_result.index2);
         }
 
-        auto const type = m_modules.at(0)->type();
-        auto const threshold = (type == CSwordModuleInfo::Bible
-                                || type == CSwordModuleInfo::Commentary)
-                               ? 2700
-                               : 100;
-        bool const tooLarge = m_result.index2 - m_result.index1 > threshold;
+        bool const tooLarge =
+                m_result.index2 - m_result.index1 > m_copyThreshold;
         m_sizeTooLargeLabel->setVisible(tooLarge);
         m_okButton->setEnabled(!tooLarge);
     };
@@ -135,8 +142,10 @@ BtCopyByReferencesDialog::BtCopyByReferencesDialog(
 
     BT_CONNECT(buttons, &QDialogButtonBox::accepted,
                [this] {
+                   auto const userData = m_moduleNameCombo->currentData();
                    m_result.module =
-                           m_modules.at(m_moduleNameCombo->currentIndex());
+                           static_cast<CSwordModuleInfo const *>(
+                               userData.value<void *>());
                    accept();
                });
     BT_CONNECT(buttons, &QDialogButtonBox::rejected,

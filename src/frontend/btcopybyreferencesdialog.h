@@ -14,8 +14,6 @@
 
 #include <QDialog>
 
-#include "../backend/drivers/btmodulelist.h"
-
 
 class BtModuleTextModel;
 class CDisplayWindow;
@@ -49,7 +47,7 @@ public: /* Methods: */
 
 private: /* Fields: */
 
-    BtConstModuleList const m_modules;
+    int m_copyThreshold;
     CSwordKey * m_key;
     CKeyChooser * m_keyChooser1;
     CKeyChooser * m_keyChooser2;
