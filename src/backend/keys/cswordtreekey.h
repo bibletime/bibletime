@@ -30,7 +30,7 @@ class CSwordModuleInfo;
  * @author The BibleTime team
  */
 
-class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
+class CSwordTreeKey final : public CSwordKey, public sword::TreeKeyIdx {
 
     public:
 
@@ -47,9 +47,9 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
         sword::SWKey const & asSwordKey() const noexcept final override;
 
-        void setModule(const CSwordModuleInfo *newModule) override;
+        void setModule(const CSwordModuleInfo *newModule) final override;
 
-        CSwordTreeKey* copy() const override;
+        CSwordTreeKey* copy() const final override;
 
         /**
         * Returns the TreeKeyIdx::getLocalKey value in unicode.
@@ -58,13 +58,13 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
         */
         QString getLocalNameUnicode();
 
-        QString key() const override;
+        QString key() const final override;
 
-        bool setKey(const QString &key) override;
+        bool setKey(const QString &key) final override;
 
-        bool setKey(const char *key) override;
+        bool setKey(const char *key) final override;
 
     protected:
 
-        const char * rawKey() const override;
+        const char * rawKey() const final override;
 };
