@@ -50,7 +50,7 @@ class CSwordModuleInfo;
  * @author The BibleTime team
  */
 
-class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
+class CSwordVerseKey final : public CSwordKey, public sword::VerseKey {
 
     public: /* Types: */
         enum JumpType {
@@ -83,13 +83,13 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
 
         sword::SWKey const & asSwordKey() const noexcept final override;
 
-        CSwordKey* copy() const override;
+        CSwordKey* copy() const final override;
 
-        QString key() const override;
+        QString key() const final override;
 
-        bool setKey(const QString &key) override;
+        bool setKey(const QString &key) final override;
 
-        bool setKey(const char *key) override;
+        bool setKey(const char *key) final override;
 
         /**
         * Jumps to the next entry of the given type
@@ -107,10 +107,10 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         */
         QString book(const QString& newBook = QString());
 
-        void setModule(const CSwordModuleInfo *newModule) override;
+        void setModule(const CSwordModuleInfo *newModule) final override;
 
     protected:
 
-        const char * rawKey() const override;
+        const char * rawKey() const final override;
 
 };
