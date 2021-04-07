@@ -55,7 +55,7 @@ class CSwordModuleInfo;
   * @version $Id: cswordldkey.h,v 1.24 2006/02/25 11:38:15 joachim Exp $
   */
 
-class CSwordLDKey : public CSwordKey, public sword::SWKey {
+class CSwordLDKey final : public CSwordKey, public sword::SWKey {
 
     public:
 
@@ -75,7 +75,7 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
 
         sword::SWKey const & asSwordKey() const noexcept final override;
 
-        CSwordLDKey* copy() const override;
+        CSwordLDKey* copy() const final override;
         /**
         * Uses the parameter to returns the next entry afer this key.
         */
@@ -85,16 +85,16 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         */
         CSwordLDKey* PreviousEntry();
 
-        void setModule(const CSwordModuleInfo *module) override;
+        void setModule(const CSwordModuleInfo *module) final override;
 
-        QString key() const override;
+        QString key() const final override;
 
-        bool setKey(const QString &newKey) override;
+        bool setKey(const QString &newKey) final override;
 
-        bool setKey(const char *key) override;
+        bool setKey(const char *key) final override;
 
     protected:
 
-        const char* rawKey() const override;
+        const char* rawKey() const final override;
 
 };
