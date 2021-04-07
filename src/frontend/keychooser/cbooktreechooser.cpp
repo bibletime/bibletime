@@ -106,7 +106,7 @@ void CBookTreeChooser::setModules(const BtConstModuleList &modules,
 
     //if there exists a module and a key, setup the visible tree
     if (refresh && m_modules.count() && m_key) {
-        const uint offset = m_key->getOffset(); //actually unnecessary, taken care of in setupTree
+        auto const offset = m_key->getOffset(); //actually unnecessary, taken care of in setupTree
         setupTree();
         m_key->setOffset( offset );
 
@@ -181,7 +181,7 @@ void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item)
             columns << key->getLocalNameUnicode() << key->key();
             QTreeWidgetItem *i = new QTreeWidgetItem(item, columns, QTreeWidgetItem::Type);
             i->setData(0, Qt::ToolTipRole, key->getLocalNameUnicode());
-            int offset = key->getOffset();
+            auto const offset = key->getOffset();
             addKeyChildren(key, i);
             key->setOffset(offset);
         }
