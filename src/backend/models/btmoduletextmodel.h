@@ -22,6 +22,8 @@
 #include "../keys/cswordldkey.h"
 
 
+class CSwordModuleInfo;
+
 /** For the BtFindWidget buttons (previous, next) */
 struct FindState {
     // Model row for item with highlight
@@ -105,6 +107,10 @@ public:
 
     /** Convert index(row) into CSwordVerseKey. */
     CSwordVerseKey indexToVerseKey(int index) const;
+
+    /** Convert index(row) into CSwordVerseKey. */
+    CSwordVerseKey indexToVerseKey(int index,
+                                   CSwordModuleInfo const & module) const;
 
     /** Convert index(row) into CSwordVerseKey. */
     CSwordKey* indexToKey(int index, int moduleNum) const;

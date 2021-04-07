@@ -328,10 +328,13 @@ int BtModuleTextModel::verseKeyToIndex(const CSwordVerseKey& key) const {
 }
 
 CSwordVerseKey BtModuleTextModel::indexToVerseKey(int index) const
-{
-    const CSwordModuleInfo* module = m_moduleInfoList.at(0);
-    CSwordVerseKey key(module);
+{ return indexToVerseKey(index, *m_moduleInfoList.front()); }
 
+CSwordVerseKey
+BtModuleTextModel::indexToVerseKey(int index,
+                                   CSwordModuleInfo const & module) const
+{
+    CSwordVerseKey key(&module);
     key.setIntros(true);
     key.setIndex(index + m_firstEntry);
     return key;
