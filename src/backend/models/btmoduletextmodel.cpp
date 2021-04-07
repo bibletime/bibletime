@@ -427,12 +427,9 @@ bool BtModuleTextModel::setData(
         const QModelIndex &index,
         const QVariant &value,
         int role) {
-    CSwordVerseKey key = indexToVerseKey(index.row());
-    int column = getColumnFromRole(role);
-    const CSwordModuleInfo* module = m_moduleInfoList.at(column);
-    CSwordVerseKey mKey(module);
-    mKey.setKey(key);
-    const_cast<CSwordModuleInfo*>(module)->write(&mKey, value.toString());
+    auto const & module = *m_moduleInfoList.at(getColumnFromRole(role));
+    CSwordVerseKey mKey(indexToVerseKey(index.row(), module));
+    const_cast<CSwordModuleInfo &>(module).write(&mKey, value.toString());
     Q_EMIT dataChanged(index, index);
     return true;
 }
