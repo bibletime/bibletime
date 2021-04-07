@@ -316,7 +316,7 @@ bool BtModuleTextModel::isLexicon() const {
 // Function is valid for Bibles, Commentaries, and Books
 int BtModuleTextModel::keyToIndex(CSwordKey const & key) const {
     if (auto const * const treeKey = dynamic_cast<CSwordTreeKey const *>(&key))
-        return treeKey->getOffset() / 4u;
+        return treeKey->offset() / 4u;
     if (auto const * const vKey = dynamic_cast<CSwordVerseKey const *>(&key))
         return vKey->getIndex();
     return 0;

@@ -144,9 +144,9 @@ int BtQmlInterface::getCurrentModelIndex() const {
         QString keyName = m_swordKey->key();
         key.setKey(keyName);
         CSwordTreeKey p(key);
-        p.root();
+        p.positionToRoot();
         if(p != key)
-            return static_cast<int>(key.getOffset() / 4u);
+            return static_cast<int>(key.offset() / 4u); /// \todo Check range!
     }
     else if (moduleIsLexicon(module())){
         const CSwordLexiconModuleInfo *li =

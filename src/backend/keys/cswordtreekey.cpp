@@ -18,17 +18,19 @@
 #include "../drivers/cswordbookmoduleinfo.h"
 
 
-CSwordTreeKey::CSwordTreeKey( const CSwordTreeKey& k ) : CSwordKey(k), TreeKeyIdx(k) {}
+CSwordTreeKey::CSwordTreeKey(CSwordTreeKey const & copy)
+    : CSwordKey(copy)
+    , m_key(copy.m_key)
+{}
 
-CSwordTreeKey::CSwordTreeKey(const TreeKeyIdx *k,
-                             const CSwordModuleInfo *module)
-    : CSwordKey(module), TreeKeyIdx(*k)
-{
-    // Intentionally empty
-}
+CSwordTreeKey::CSwordTreeKey(sword::TreeKeyIdx const * k,
+                             CSwordModuleInfo const * module)
+    : CSwordKey(module)
+    , m_key(*k)
+{}
 
-sword::SWKey const & CSwordTreeKey::asSwordKey() const noexcept
-{ return *this; }
+sword::TreeKeyIdx const & CSwordTreeKey::asSwordKey() const noexcept
+{ return m_key; }
 
 CSwordTreeKey* CSwordTreeKey::copy() const {
     return new CSwordTreeKey(*this);
@@ -39,16 +41,14 @@ QString CSwordTreeKey::key() const {
     //return getTextUnicode();
     BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
-        return QString::fromUtf8(getText());
+        return QString::fromUtf8(m_key.getText());
     }
     else {
-        return cp1252Codec()->toUnicode(getText());
+        return cp1252Codec()->toUnicode(m_key.getText());
     }
 }
 
-const char * CSwordTreeKey::rawKey() const {
-    return getText();
-}
+const char * CSwordTreeKey::rawKey() const { return m_key.getText(); }
 
 bool CSwordTreeKey::setKey(const QString &newKey) {
     //return key( newKey.toLocal8Bit().constData() );
@@ -66,13 +66,13 @@ bool CSwordTreeKey::setKey(const char *newKey) {
     BT_ASSERT(newKey);
 
     if (newKey) {
-        TreeKeyIdx::operator = (newKey);
+        m_key = newKey;
     }
     else {
-        root();
+        positionToRoot();
     }
 
-    return !popError();
+    return !m_key.popError();
 }
 
 QString CSwordTreeKey::getLocalNameUnicode() {
@@ -80,10 +80,10 @@ QString CSwordTreeKey::getLocalNameUnicode() {
     //Only UTF-8 and latin1 are legal Sword module encodings
     BT_ASSERT(m_module);
     if (m_module->isUnicode()) {
-        return QString::fromUtf8(getLocalName());
+        return QString::fromUtf8(m_key.getLocalName());
     }
     else {
-        return cp1252Codec()->toUnicode(getLocalName());
+        return cp1252Codec()->toUnicode(m_key.getLocalName());
     }
 }
 
@@ -97,11 +97,12 @@ void CSwordTreeKey::setModule(const CSwordModuleInfo *newModule) {
 
     const QString oldKey = key();
 
-    copyFrom(*static_cast<CSwordBookModuleInfo const *>(newModule)->tree());
+    m_key.copyFrom(
+                *static_cast<CSwordBookModuleInfo const *>(newModule)->tree());
 
     setKey(oldKey); //try to restore our old key
 
     //set the key to the root node
-    root();
-    firstChild();
+    positionToRoot();
+    positionToFirstChild();
 }

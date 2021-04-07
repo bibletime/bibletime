@@ -30,9 +30,30 @@ class CSwordModuleInfo;
  * @author The BibleTime team
  */
 
-class CSwordTreeKey final : public CSwordKey, public sword::TreeKeyIdx {
+class CSwordTreeKey final : public CSwordKey {
+
+    public: /* Types: */
+
+        using Offset =
+                decltype(std::declval<sword::TreeKeyIdx const &>().getOffset());
 
     public:
+
+        #define BibleTime_CSwordTreeKey_DEFINE_COMP(op) \
+            friend bool operator op(CSwordTreeKey const & lhs, \
+                                    CSwordTreeKey const & rhs) \
+            { return lhs.offset() op rhs.offset(); }
+        #if __cpp_impl_three_way_comparison >= 201907L
+        BibleTime_CSwordTreeKey_DEFINE_COMP(<=>)
+        #else
+        BibleTime_CSwordTreeKey_DEFINE_COMP(<)
+        BibleTime_CSwordTreeKey_DEFINE_COMP(<=)
+        BibleTime_CSwordTreeKey_DEFINE_COMP(==)
+        BibleTime_CSwordTreeKey_DEFINE_COMP(!=)
+        BibleTime_CSwordTreeKey_DEFINE_COMP(>=)
+        BibleTime_CSwordTreeKey_DEFINE_COMP(>)
+        #endif
+        #undef BibleTime_CSwordTreeKey_DEFINE_COMP
 
         CSwordTreeKey & operator=(CSwordTreeKey const &) = delete;
 
@@ -45,7 +66,7 @@ class CSwordTreeKey final : public CSwordKey, public sword::TreeKeyIdx {
 
         CSwordTreeKey( const CSwordTreeKey& k );
 
-        sword::SWKey const & asSwordKey() const noexcept final override;
+        sword::TreeKeyIdx const & asSwordKey() const noexcept final override;
 
         void setModule(const CSwordModuleInfo *newModule) final override;
 
@@ -64,7 +85,20 @@ class CSwordTreeKey final : public CSwordKey, public sword::TreeKeyIdx {
 
         bool setKey(const char *key) final override;
 
+        bool hasChildren() { return m_key.hasChildren(); }
+        void positionToRoot() { m_key.root(); }
+        bool positionToParent() { return m_key.parent(); }
+        bool positionToFirstChild() { return m_key.firstChild(); }
+        bool positionToNextSibling() { return m_key.nextSibling(); }
+        Offset offset() const { return m_key.getOffset(); }
+        void setOffset(Offset value) { m_key.setOffset(value); }
+
     protected:
 
         const char * rawKey() const final override;
+
+    private: /* Fields: */
+
+        sword::TreeKeyIdx m_key;
+
 };

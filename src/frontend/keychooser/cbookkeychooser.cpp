@@ -57,11 +57,11 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
     QString oldKey(m_key->key());
 
     if (oldKey.isEmpty()) { // Don't set keys equal to "/", always use a key which may have content
-        m_key->firstChild();
+        m_key->positionToFirstChild();
         oldKey = m_key->key();
     }
 
-    auto const oldOffset = m_key->getOffset();
+    auto const oldOffset = m_key->offset();
 
     QStringList siblings; // Split up key
     if (m_key && !oldKey.isEmpty())
@@ -73,9 +73,9 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
 
     int depth = 0;
 
-    m_key->root(); //start iteration at root node
+    m_key->positionToRoot(); //start iteration at root node
 
-    while (m_key->firstChild() && (depth < siblings.count())) {
+    while (m_key->positionToFirstChild() && (depth < siblings.count())) {
         QString key = m_key->key();
         int index = (depth == 0) ? -1 : 0;
 
@@ -84,7 +84,7 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
         do { //look for matching sibling
             ++index;
             found = (m_key->getLocalNameUnicode() == siblings[depth]);
-        } while (!found && m_key->nextSibling());
+        } while (!found && m_key->positionToNextSibling());
 
         if (found) {
             key = m_key->key(); //found: change key to this level
@@ -96,7 +96,7 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
 
         //last iteration: check to see if another box can be filled with child entries
         if (depth == siblings.count() - 1 && m_key->hasChildren()) {
-            m_key->firstChild();
+            m_key->positionToFirstChild();
             setupCombo(m_key->key(), ++depth, 0);
         }
 
@@ -111,7 +111,7 @@ void CBookKeyChooser::setKey(CSwordKey * newKey, const bool emitSignal) {
     }
 
     if (oldKey.isEmpty()) {
-        m_key->root();
+        m_key->positionToRoot();
     } else {
         //m_key->key(oldKey);
         m_key->setOffset(oldOffset);
@@ -228,8 +228,8 @@ void CBookKeyChooser::setupCombo(const QString & key,
 
     CSwordTreeKey tmpKey(*m_key);
     tmpKey.setKey(key);
-    tmpKey.sword::TreeKeyIdx::parent();
-    tmpKey.firstChild();
+    tmpKey.positionToParent();
+    tmpKey.positionToFirstChild();
 
     QStringList items;
     if (depth > 0)
@@ -237,7 +237,7 @@ void CBookKeyChooser::setupCombo(const QString & key,
 
     do {
         items.append(tmpKey.getLocalNameUnicode());
-    } while (tmpKey.nextSibling());
+    } while (tmpKey.positionToNextSibling());
 
     if (chooserWidget)
         chooserWidget->reset(items, currentItem, false);

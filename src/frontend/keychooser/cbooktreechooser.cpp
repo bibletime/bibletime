@@ -106,7 +106,7 @@ void CBookTreeChooser::setModules(const BtConstModuleList &modules,
 
     //if there exists a module and a key, setup the visible tree
     if (refresh && m_modules.count() && m_key) {
-        auto const offset = m_key->getOffset(); //actually unnecessary, taken care of in setupTree
+        auto const offset = m_key->offset(); //actually unnecessary, taken care of in setupTree
         setupTree();
         m_key->setOffset( offset );
 
@@ -163,9 +163,9 @@ void CBookTreeChooser::doShow() {
 void CBookTreeChooser::setupTree() {
     m_treeView->clear();
 
-    const unsigned long offset = m_key->getOffset();
+    auto const offset = m_key->offset();
 
-    m_key->root();
+    m_key->positionToRoot();
     addKeyChildren(m_key, m_treeView->invisibleRootItem());
 
     m_key->setOffset( offset );
@@ -175,17 +175,17 @@ void CBookTreeChooser::setupTree() {
 /** Populates tree widget with items. */
 void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item) {
     if (key->hasChildren()) {
-        key->firstChild();
+        key->positionToFirstChild();
         do {
             QStringList columns;
             columns << key->getLocalNameUnicode() << key->key();
             QTreeWidgetItem *i = new QTreeWidgetItem(item, columns, QTreeWidgetItem::Type);
             i->setData(0, Qt::ToolTipRole, key->getLocalNameUnicode());
-            auto const offset = key->getOffset();
+            auto const offset = key->offset();
             addKeyChildren(key, i);
             key->setOffset(offset);
         }
-        while (key->nextSibling());
+        while (key->positionToNextSibling());
     }
 }
 
