@@ -558,12 +558,8 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     BT_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
-    {
-        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(this));
-        const sword::SWKey * const s = dynamic_cast<sword::SWKey *>(key.get());
-        if (s)
-            m_module.setKey(*s);
-    }
+    m_module.setKey(CSwordKey::createInstance(this)->asSwordKey());
+
     QList<sword::VerseKey *> list;
 
     results.clear();
