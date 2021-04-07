@@ -18,7 +18,6 @@
 #include "ckeychooserwidget.h"
 
 
-namespace sword { class TreeKeyIdx; }
 class BTHistory;
 class CSwordBookModuleInfo;
 class CSwordKey;
