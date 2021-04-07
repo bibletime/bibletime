@@ -62,7 +62,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
     vk.setKey(item.key());
     switch (item.settings().keyRenderingFace) {
         case KeyTreeItem::Settings::CompleteShort:
-            return QString::fromUtf8(vk.getShortText());
+            return vk.shortText();
 
         case KeyTreeItem::Settings::CompleteLong:
             return vk.key();
@@ -72,7 +72,7 @@ QString BtPrinter::entryLink(KeyTreeItem const & item,
 
         case KeyTreeItem::Settings::SimpleKey: // fall through:
         default:
-            return QString::number(vk.getVerse());
+            return QString::number(vk.verse());
     }
 }
 

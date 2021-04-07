@@ -122,7 +122,7 @@ BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(
 
 void BtVerseDropdownChooserButton::newList() {
     QMenu* m = menu();
-    int count = ref()->m_module->verseCount(ref()->m_key->book(), ref()->m_key->getChapter());
+    int count = ref()->m_module->verseCount(ref()->m_key->bookName(), ref()->m_key->chapter());
     for (int i = 1; i <= count; i++)
         m->addAction(QString::number(i))->setProperty("verse", i);
 }

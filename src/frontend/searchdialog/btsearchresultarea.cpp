@@ -177,8 +177,8 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.previous(CSwordVerseKey::UseVerse);
 
             //include Headings in display, they are indexed and searched too
-            if (vk.getVerse() == 1) {
-                if (vk.getChapter() == 1) {
+            if (vk.verse() == 1) {
+                if (vk.chapter() == 1) {
                     vk.setChapter(0);
                 }
                 vk.setVerse(0);
@@ -206,8 +206,8 @@ void BtSearchResultArea::updatePreview(const QString& key) {
                     ->setIntros(true);
 
             //include Headings in display, they are indexed and searched too
-            if (vk.getVerse() == 1) {
-                if (vk.getChapter() == 1) {
+            if (vk.verse() == 1) {
+                if (vk.chapter() == 1) {
                     vk.setChapter(0);
                 }
                 vk.setVerse(0);

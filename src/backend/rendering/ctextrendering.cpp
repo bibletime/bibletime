@@ -225,7 +225,7 @@ const QString CTextRendering::renderKeyRange(
                       it should be displayed as one entry with the caption 1-5.
             */
 
-            if (vk_start->getChapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
+            if (vk_start->chapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
                 vk_start->setVerse(0);
                 tree.emplace_back(vk_start->key(), modules, settings);
                 vk_start->setChapter(1);
@@ -348,10 +348,9 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             {
                 if (vk->isBoundSet()) {
                     CSwordVerseKey pk(*vk);
-                    for (auto i = vk->getLowerBound().getIndex();
-                         i < vk->getUpperBound().getIndex();
-                         ++i)
-                    {
+                    auto const lowerBoundIndex = vk->lowerBound().index();
+                    auto const upperBoundIndex = vk->upperBound().index();
+                    for (auto i = lowerBoundIndex; i < upperBoundIndex; ++i) {
                         key_renderedText += " ";
                         pk.setIndex(i + 1);
                         key_renderedText += pk.renderedText();

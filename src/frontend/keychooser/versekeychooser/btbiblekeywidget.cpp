@@ -285,7 +285,7 @@ void BtBibleKeyWidget::slotStepVerse(int offset) {
 
 
 void BtBibleKeyWidget::slotChangeVerse(int n) {
-    if (m_key->getVerse() != n) {
+    if (m_key->verse() != n) {
         m_key->emitBeforeChanged();
         m_key->setVerse(n);
         m_key->emitAfterChanged();
@@ -296,7 +296,7 @@ void BtBibleKeyWidget::slotChangeVerse(int n) {
 }
 
 void BtBibleKeyWidget::slotChangeChapter(int n) {
-    if (m_key->getChapter() != n) {
+    if (m_key->chapter() != n) {
         m_key->emitBeforeChanged();
         m_key->setChapter(n);
         m_key->emitAfterChanged();
@@ -307,9 +307,9 @@ void BtBibleKeyWidget::slotChangeChapter(int n) {
 }
 
 void BtBibleKeyWidget::slotChangeBook(QString bookname) {
-    if (m_key->book() != bookname) {
+    if (m_key->bookName() != bookname) {
         m_key->emitBeforeChanged();
-        m_key->book( bookname );
+        m_key->setBookName(bookname);
         m_key->emitAfterChanged();
         setKey( m_key );
     }

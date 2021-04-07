@@ -211,7 +211,7 @@ static int getColumnFromRole(int role) {
 QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const {
     int row = index.row();
     CSwordVerseKey key = indexToVerseKey(row);
-    int verse = key.getVerse();
+    int verse = key.verse();
 
     if (role >= ModuleEntry::TextRole && role <= ModuleEntry::Title9Role) {
         if (verse == 0)
@@ -220,7 +220,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
 
         QString chapterTitle;
         if (verse == 1)
-            chapterTitle = key.book() + " " + QString::number(key.getChapter());
+            chapterTitle = key.bookName() + " " + QString::number(key.chapter());
 
         BtConstModuleList modules;
         if ( role == ModuleEntry::TextRole) {
@@ -318,12 +318,12 @@ int BtModuleTextModel::keyToIndex(CSwordKey const & key) const {
     if (auto const * const treeKey = dynamic_cast<CSwordTreeKey const *>(&key))
         return treeKey->offset() / 4u;
     if (auto const * const vKey = dynamic_cast<CSwordVerseKey const *>(&key))
-        return vKey->getIndex();
+        return vKey->index();
     return 0;
 }
 
 int BtModuleTextModel::verseKeyToIndex(const CSwordVerseKey& key) const {
-    int index = key.getIndex() - m_firstEntry;
+    int index = key.index() - m_firstEntry;
     return index;
 }
 

@@ -44,7 +44,7 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
         vk.setKey(item.mappedKey() ? item.mappedKey()->key() : item.key());
     }
 
-    if (isBible && (vk.getVerse() == 0)) {
+    if (isBible && (vk.verse() == 0)) {
         return QString(); //Warning: return already here
     }
 
@@ -56,14 +56,14 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
 
     case KeyTreeItem::Settings::ExpandedShort:
         if (isBible) {
-            linkText = module.name() + ':' + QString::fromUtf8(vk.getShortText());
+            linkText = module.name() + ':' + vk.shortText();
             break;
         }
         Q_FALLTHROUGH();
 
     case KeyTreeItem::Settings::CompleteShort:
         if (isBible) {
-            linkText = QString::fromUtf8(vk.getShortText());
+            linkText = vk.shortText();
             break;
         }
         Q_FALLTHROUGH();
@@ -88,29 +88,29 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
                 CSwordVerseKey baseKey(*item.modules().begin());
                 baseKey.setKey(item.key());
 
-                if (vk.book() != baseKey.book()) {
-                    linkText = QString::fromUtf8(vk.getShortText());
-                } else if (vk.getChapter() != baseKey.getChapter()) {
-                    linkText = QString("%1:%2").arg(vk.getChapter()).arg(vk.getVerse());
+                if (vk.bookName() != baseKey.bookName()) {
+                    linkText = vk.shortText();
+                } else if (vk.chapter() != baseKey.chapter()) {
+                    linkText = QString("%1:%2").arg(vk.chapter()).arg(vk.verse());
                 } else {
-                    linkText = QString::number(vk.getVerse());
+                    linkText = QString::number(vk.verse());
                 }
 
                 if(vk.isBoundSet()) {
                     linkText += "-";
-                    sword::VerseKey const upper = vk.getUpperBound();
-                    sword::VerseKey const lower = vk.getLowerBound();
-                    if (upper.getBook() != lower.getBook()) {
-                        linkText += QString::fromUtf8(upper.getShortText());
-                    } else if(upper.getChapter() != lower.getChapter()) {
-                        linkText += QString("%1:%2").arg(upper.getChapter())
-                                                    .arg(lower.getVerse());
+                    auto const upper = vk.upperBound();
+                    auto const lower = vk.lowerBound();
+                    if (upper.book() != lower.book()) {
+                        linkText += upper.shortText();
+                    } else if(upper.chapter() != lower.chapter()) {
+                        linkText += QString("%1:%2").arg(upper.chapter())
+                                                    .arg(lower.verse());
                     } else {
-                        linkText += QString::number(upper.getVerse());
+                        linkText += QString::number(upper.verse());
                     }
                 }
             } else {
-                linkText = QString::number(vk.getVerse());
+                linkText = QString::number(vk.verse());
             }
             break;
         } // else fall through for non-Bible modules

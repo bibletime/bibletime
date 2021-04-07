@@ -248,7 +248,7 @@ void test_CSwordBackend::booknameLanguage() {
 
     backend->booknameLanguage(language);
     vKey->setKey(reference);
-    QCOMPARE(QString(vKey->getBookName()), bookName);
+    QCOMPARE(vKey->bookName(), bookName);
 }
 
 void test_CSwordBackend::findModuleByDescription() {

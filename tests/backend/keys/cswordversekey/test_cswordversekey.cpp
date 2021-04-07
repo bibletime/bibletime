@@ -87,9 +87,10 @@ void test_CSwordVerseKey::CSwordVerseKey_copy_constructor() {
     }
 
     const CSwordVerseKey* copyKey = new CSwordVerseKey(*key);
-    QCOMPARE(QString(copyKey->getBookName()), QString(key->getBookName()));
-    QCOMPARE(QString(copyKey->getChapter()), QString(key->getChapter()));
-    QCOMPARE(QString(copyKey->getVerse()), QString(key->getVerse()));
+    QCOMPARE(copyKey->bookName(), key->bookName());
+    QCOMPARE(copyKey->book(), key->book());
+    QCOMPARE(copyKey->chapter(), key->chapter());
+    QCOMPARE(copyKey->verse(), key->verse());
 }
 
 void test_CSwordVerseKey::CSwordVerseKey_versekey_module_constructor() {
@@ -105,15 +106,18 @@ void test_CSwordVerseKey::CSwordVerseKey_versekey_module_constructor() {
 
     CSwordVerseKey* key2 = nullptr;
     try {
-        key2 = new CSwordVerseKey(key,m_moduleKJV);
+        key2 = new CSwordVerseKey(
+                   static_cast<sword::VerseKey const *>(&key->asSwordKey()),
+                   m_moduleKJV);
         key2->setKey("Matthew 15:39");
     }
     catch (...) {
         QFAIL("constructor failed");
     }
-    QCOMPARE(QString(key2->getBookName()), QString(key->getBookName()));
-    QCOMPARE(QString(key2->getChapter()), QString(key->getChapter()));
-    QCOMPARE(QString(key2->getVerse()), QString(key->getVerse()));
+    QCOMPARE(key2->bookName(), key->bookName());
+    QCOMPARE(key2->book(), key->book());
+    QCOMPARE(key2->chapter(), key->chapter());
+    QCOMPARE(key2->verse(), key->verse());
 
 
 }

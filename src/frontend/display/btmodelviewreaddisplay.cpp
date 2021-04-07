@@ -169,7 +169,7 @@ void BtModelViewReadDisplay::print(TextPart const type,
 
             const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
             if (bible) {
-                stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.book()), startKey.getChapter()));
+                stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.bookName()), startKey.chapter()));
             }
 
             mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);

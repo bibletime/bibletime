@@ -66,17 +66,17 @@ const QString Rendering::CChapterDisplay::text(
         k1.setIntros(true);
         k1.setKey(keyName);
 
-        if (k1.getChapter() == 1)
+        if (k1.chapter() == 1)
             k1.setChapter(0); // Chapter 1, start with 0:0, otherwise X:0
 
         k1.setVerse(0);
 
         startKey = k1.key();
 
-        if (k1.getChapter() == 0)
+        if (k1.chapter() == 0)
             k1.setChapter(1);
 
-        k1.setVerse(bible->verseCount(k1.book(), k1.getChapter()));
+        k1.setVerse(bible->verseCount(k1.bookName(), k1.chapter()));
         endKey = k1.key();
     }
 

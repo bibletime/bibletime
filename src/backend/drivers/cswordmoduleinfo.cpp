@@ -329,8 +329,8 @@ void CSwordModuleInfo::buildIndex() {
 
         if(bm)
         {
-            verseLowIndex = bm->lowerBound().getIndex();
-            verseHighIndex = bm->upperBound().getIndex();
+            verseLowIndex = bm->lowerBound().index();
+            verseHighIndex = bm->upperBound().index();
         }
         else
         {
@@ -377,7 +377,7 @@ void CSwordModuleInfo::buildIndex() {
         BT_ASSERT(wcharBuffer);
 
         if(bm && vk) // Implied that vk could be null due to cast above
-            vk->setIndex(bm->lowerBound().getIndex());
+            vk->setIndex(bm->lowerBound().index());
         else
             m_module.setPosition(sword::TOP);
 

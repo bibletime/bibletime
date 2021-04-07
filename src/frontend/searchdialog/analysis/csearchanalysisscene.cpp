@@ -87,7 +87,7 @@ void CSearchAnalysisScene::analyse(
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
 
-    CSearchAnalysisItem* analysisItem = m_itemList[key.book()];
+    CSearchAnalysisItem* analysisItem = m_itemList[key.bookName()];
     bool ok = true;
     while (ok && analysisItem) {
         moduleIndex = 0;
@@ -96,7 +96,7 @@ void CSearchAnalysisScene::analyse(
             if (!m_lastPosList.contains(keyPtr))
                 m_lastPosList.insert(keyPtr, 0);
 
-            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), keyPtr)));
+            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.bookName(), keyPtr)));
             m_maxCount = (count > m_maxCount) ? count : m_maxCount;
 
             ++moduleIndex;
@@ -109,7 +109,7 @@ void CSearchAnalysisScene::analyse(
             xPos += static_cast<int>(analysisItem->width() + SPACE_BETWEEN_PARTS);
         }
         ok = key.next(CSwordVerseKey::UseBook);
-        analysisItem = m_itemList[key.book()];
+        analysisItem = m_itemList[key.bookName()];
     }
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
@@ -132,10 +132,10 @@ void CSearchAnalysisScene::setResults(
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
-        analysisItem = new CSearchAnalysisItem(m_results.count(), key.book(), &m_scaleFactor, m_results);
+        analysisItem = new CSearchAnalysisItem(m_results.count(), key.bookName(), &m_scaleFactor, m_results);
         addItem(analysisItem);
         analysisItem->hide();
-        m_itemList.insert(key.book(), analysisItem);
+        m_itemList.insert(key.bookName(), analysisItem);
     }
     while (key.next(CSwordVerseKey::UseBook));
     update();

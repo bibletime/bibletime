@@ -50,7 +50,7 @@ QString CrossRefRendering::entryLink(KeyTreeItem const & item,
             break; //no key is valid for all modules
         case KeyTreeItem::Settings::CompleteShort:
             if (isBible) {
-                linkText = QString::fromUtf8(vk.getShortText());
+                linkText = vk.shortText();
                 break;
             }
             //fall through for non-Bible modules
@@ -64,7 +64,7 @@ QString CrossRefRendering::entryLink(KeyTreeItem const & item,
             Q_FALLTHROUGH();
         case KeyTreeItem::Settings::SimpleKey:
             if (isBible) {
-                linkText = QString::number(vk.getVerse());
+                linkText = QString::number(vk.verse());
                 break;
             }
             //fall through for non-Bible modules

@@ -76,8 +76,8 @@ const QString CEntryDisplay::textKeyRendering(
             false,
             CTextRendering::KeyTreeItem::Settings::NoKey};
 
-        if (k1.getVerse() == 1) { // X:1, prepend X:0
-            if (k1.getChapter() == 1) { // 1:1, also prepend 0:0 before that
+        if (k1.verse() == 1) { // X:1, prepend X:0
+            if (k1.chapter() == 1) { // 1:1, also prepend 0:0 before that
                 k1.setChapter(0);
                 k1.setVerse(0);
                 if (k1.rawText().length() > 0)
