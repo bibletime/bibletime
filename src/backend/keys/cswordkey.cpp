@@ -48,8 +48,7 @@ QString CSwordKey::rawText() {
         return QString();
 
     auto & m = m_module->module();
-    if (dynamic_cast<sword::SWKey *>(this))
-        m.getKey()->setText( rawKey() );
+    m.getKey()->setText( rawKey() );
 
     if (key().isNull())
         return QString();
@@ -60,27 +59,23 @@ QString CSwordKey::rawText() {
 QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     BT_ASSERT(m_module);
 
-    sword::SWKey * const k = dynamic_cast<sword::SWKey *>(this);
-
     auto & m = m_module->module();
-    if (k) {
-        sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey());
-        if (vk_mod)
-            vk_mod->setIntros(true);
+    sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey());
+    if (vk_mod)
+        vk_mod->setIntros(true);
 
-        m.getKey()->setText(rawKey());
+    m.getKey()->setText(rawKey());
 
-        if (m_module->type() == CSwordModuleInfo::Lexicon) {
-            m_module->snap();
-            /* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
-            i.e. the module key contains this key (e.g. 0123 contains 123) */
+    if (m_module->type() == CSwordModuleInfo::Lexicon) {
+        m_module->snap();
+        /* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
+        i.e. the module key contains this key (e.g. 0123 contains 123) */
 
-            if (sword::stricmp(m.getKey()->getText(), rawKey())
-                && !strstr(m.getKey()->getText(), rawKey()))
-            {
-                qDebug("return an empty key for %s", m.getKey()->getText());
-                return QString();
-            }
+        if (sword::stricmp(m.getKey()->getText(), rawKey())
+            && !strstr(m.getKey()->getText(), rawKey()))
+        {
+            qDebug("return an empty key for %s", m.getKey()->getText());
+            return QString();
         }
     }
 
@@ -144,8 +139,7 @@ QString CSwordKey::strippedText() {
         return QString();
 
     auto & m = m_module->module();
-    if (dynamic_cast<sword::SWKey *>(this))
-        m.getKey()->setText(std::string(rawKey()).c_str());
+    m.getKey()->setText(std::string(rawKey()).c_str());
 
     return QString::fromUtf8(m.stripText());
 }
