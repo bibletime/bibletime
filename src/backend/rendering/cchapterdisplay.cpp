@@ -38,6 +38,7 @@ const QString Rendering::CChapterDisplay::text(
     BT_ASSERT(!keyName.isEmpty());
 
     const CSwordModuleInfo *module = modules.first();
+    BT_ASSERT(module->type() == CSwordModuleInfo::Bible);
 
     if (modules.count() == 1)
         module->module().setSkipConsecutiveLinks( true ); //skip empty, linked verses
@@ -48,37 +49,29 @@ const QString Rendering::CChapterDisplay::text(
         ? CTextRendering::KeyTreeItem::Settings::SimpleKey
         : CTextRendering::KeyTreeItem::Settings::NoKey;
 
-    QString startKey = keyName;
-    QString endKey = startKey;
+    // HACK: enable headings for VerseKeys:
+    static_cast<sword::VerseKey *>(module->module().getKey())
+            ->setIntros(true);
 
-    //check whether there's an intro we have to include
-    BT_ASSERT((module->type() == CSwordModuleInfo::Bible));
+    BT_ASSERT(dynamic_cast<CSBMI const *>(module));
+    const CSBMI *bible = static_cast<const CSBMI*>(module);
 
-    if (module->type() == CSwordModuleInfo::Bible) {
-        // HACK: enable headings for VerseKeys:
-        static_cast<sword::VerseKey *>(module->module().getKey())
-                ->setIntros(true);
+    CSwordVerseKey k1(module);
+    k1.setIntros(true);
+    k1.setKey(keyName);
 
-        BT_ASSERT(dynamic_cast<CSBMI const *>(module));
-        const CSBMI *bible = static_cast<const CSBMI*>(module);
+    if (k1.chapter() == 1)
+        k1.setChapter(0); // Chapter 1, start with 0:0, otherwise X:0
 
-        CSwordVerseKey k1(module);
-        k1.setIntros(true);
-        k1.setKey(keyName);
+    k1.setVerse(0);
 
-        if (k1.chapter() == 1)
-            k1.setChapter(0); // Chapter 1, start with 0:0, otherwise X:0
+    auto const startKey = k1.key();
 
-        k1.setVerse(0);
+    if (k1.chapter() == 0)
+        k1.setChapter(1);
 
-        startKey = k1.key();
-
-        if (k1.chapter() == 0)
-            k1.setChapter(1);
-
-        k1.setVerse(bible->verseCount(k1.bookName(), k1.chapter()));
-        endKey = k1.key();
-    }
+    k1.setVerse(bible->verseCount(k1.bookName(), k1.chapter()));
+    auto const endKey = k1.key();
 
     CDisplayRendering render(displayOptions, filterOptions);
     return render.renderKeyRange( startKey, endKey, modules, keyName, settings );
