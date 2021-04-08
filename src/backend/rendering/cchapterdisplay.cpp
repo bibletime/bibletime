@@ -65,14 +65,13 @@ const QString Rendering::CChapterDisplay::text(
 
     k1.setVerse(0);
 
-    auto const startKey = k1.key();
+    auto const startKey = k1;
 
     if (k1.chapter() == 0)
         k1.setChapter(1);
 
     k1.setVerse(bible->verseCount(k1.bookName(), k1.chapter()));
-    auto const endKey = k1.key();
 
     CDisplayRendering render(displayOptions, filterOptions);
-    return render.renderKeyRange( startKey, endKey, modules, keyName, settings );
+    return render.renderKeyRange(startKey, k1, modules, keyName, settings);
 }

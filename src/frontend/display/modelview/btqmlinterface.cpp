@@ -508,11 +508,9 @@ bool BtQmlInterface::copyKey(CSwordKey const * const key,
     CSwordVerseKey const * const vk =
             dynamic_cast<CSwordVerseKey const *>(key);
     if (vk && vk->isBoundSet()) {
-        text = render->renderKeyRange(
-                    vk->lowerBound().key(),
-                    vk->upperBound().key(),
-                    modules
-                    );
+        text = render->renderKeyRange(vk->lowerBound(),
+                                      vk->upperBound(),
+                                      modules);
     } else {
         text = render->renderSingleKey(key->key(), modules);
     }

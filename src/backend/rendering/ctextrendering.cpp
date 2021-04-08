@@ -179,45 +179,24 @@ const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
 }
 
 const QString CTextRendering::renderKeyRange(
-        const QString &start,
-        const QString &stop,
+        CSwordVerseKey const & lowerBound,
+        CSwordVerseKey const & upperBound,
         const BtConstModuleList &modules,
         const QString &highlightKey,
         const KeyTreeItem::Settings &keySettings)
 {
 
-    const CSwordModuleInfo *module = modules.first();
-    //qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
-
-    std::unique_ptr<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
-    lowerBound->setKey(start);
-
-    std::unique_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
-    upperBound->setKey(stop);
-
-    /// const_cast required because SWKey comparison operators are not const:
-    auto & sw_start = const_cast<sword::SWKey &>(lowerBound->asSwordKey());
-    auto & sw_stop = const_cast<sword::SWKey &>(upperBound->asSwordKey());
-
-    BT_ASSERT((sw_start == sw_stop) || (sw_start < sw_stop));
-
-    if (sw_start == sw_stop) { //same key, render single key
-        return renderSingleKey(lowerBound->key(), modules, keySettings);
-    }
-    else if (sw_start < sw_stop) { // Render range
+    if (lowerBound == upperBound) { //same key, render single key
+        return renderSingleKey(lowerBound.key(), modules, keySettings);
+    } else { // Render range
+        BT_ASSERT(lowerBound < upperBound);
         KeyTree tree;
         KeyTreeItem::Settings settings = keySettings;
 
-        CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.get());
-        BT_ASSERT(vk_start);
-
-        CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.get());
-        BT_ASSERT(vk_stop);
-
-        while ((*vk_start < *vk_stop) || (*vk_start == *vk_stop)) {
-
+        auto curKey = lowerBound;
+        do {
             //make sure the key given by highlightKey gets marked as current key
-            settings.highlight = (!highlightKey.isEmpty() ? (vk_start->key() == highlightKey) : false);
+            settings.highlight = (!highlightKey.isEmpty() ? (curKey.key() == highlightKey) : false);
 
             /**
                 \todo We need to take care of linked verses if we render one or
@@ -225,18 +204,18 @@ const QString CTextRendering::renderKeyRange(
                       it should be displayed as one entry with the caption 1-5.
             */
 
-            if (vk_start->chapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
-                vk_start->setVerse(0);
-                tree.emplace_back(vk_start->key(), modules, settings);
-                vk_start->setChapter(1);
-                vk_start->setVerse(0);
+            if (curKey.chapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
+                curKey.setVerse(0);
+                tree.emplace_back(curKey.key(), modules, settings);
+                curKey.setChapter(1);
+                curKey.setVerse(0);
             }
-            tree.emplace_back(vk_start->key(), modules, settings);
-            if (!vk_start->next(CSwordVerseKey::UseVerse)) {
+            tree.emplace_back(curKey.key(), modules, settings);
+            if (!curKey.next(CSwordVerseKey::UseVerse)) {
                 /// \todo Notify the user about this failure.
                 break;
             }
-        }
+        } while (curKey < upperBound);
         return renderKeyTree(tree);
     }
 

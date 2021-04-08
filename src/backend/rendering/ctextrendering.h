@@ -20,6 +20,7 @@
 
 
 class CSwordKey;
+class CSwordVerseKey;
 
 namespace Rendering {
 
@@ -129,8 +130,8 @@ class CTextRendering {
         const QString renderKeyTree(const KeyTree &tree);
 
         const QString renderKeyRange(
-                const QString &start,
-                const QString &stop,
+                CSwordVerseKey const & lowerBound,
+                CSwordVerseKey const & upperBound,
                 const BtConstModuleList &modules,
                 const QString &hightlightKey = QString(),
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());

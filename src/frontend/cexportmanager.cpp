@@ -88,10 +88,9 @@ bool CExportManager::saveKey(CSwordKey const * const key,
                 dynamic_cast<CSwordVerseKey const *>(key);
         auto const render = newRenderer(format, addText);
         if (vk && vk->isBoundSet()) {
-            text = render->renderKeyRange(
-                        vk->lowerBound().key(),
-                        vk->upperBound().key(),
-                        modules);
+            text = render->renderKeyRange(vk->lowerBound(),
+                                          vk->upperBound(),
+                                          modules);
             QString chapterTitle  = vk->bookName() + " " + QString::number(vk->chapter());
             text.replace("#CHAPTERTITLE#", chapterTitle);
         } else { // no range supported
@@ -191,11 +190,9 @@ bool CExportManager::copyKey(CSwordKey const * const key,
         CSwordVerseKey const * const vk =
                 dynamic_cast<CSwordVerseKey const *>(key);
         if (vk && vk->isBoundSet()) {
-            text = render->renderKeyRange(
-                       vk->lowerBound().key(),
-                       vk->upperBound().key(),
-                       modules
-                   );
+            text = render->renderKeyRange(vk->lowerBound(),
+                                          vk->upperBound(),
+                                          modules);
         } else { // no range supported
             text = render->renderSingleKey(key->key(), modules);
         }

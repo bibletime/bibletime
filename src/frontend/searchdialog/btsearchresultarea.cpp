@@ -184,16 +184,15 @@ void BtSearchResultArea::updatePreview(const QString& key) {
                 vk.setVerse(0);
             }
 
-            const QString startKey = vk.key();
+            auto const startKey = vk;
 
             vk.setKey(key);
 
             vk.next(CSwordVerseKey::UseVerse);
             vk.next(CSwordVerseKey::UseVerse);
-            const QString endKey = vk.key();
 
             settings.keyRenderingFace = CTextRendering::KeyTreeItem::Settings::CompleteShort;
-            text = render.renderKeyRange(startKey, endKey, modules, key, settings);
+            text = render.renderKeyRange(startKey, vk, modules, key, settings);
         }
         //for commentaries only one verse, but with heading
         else if (module->type() == CSwordModuleInfo::Commentary) {
@@ -212,13 +211,12 @@ void BtSearchResultArea::updatePreview(const QString& key) {
                 }
                 vk.setVerse(0);
             }
-            const QString startKey = vk.key();
+            auto const startKey = vk;
 
             vk.setKey(key);
-            const QString endKey = vk.key();
 
             settings.keyRenderingFace = CTextRendering::KeyTreeItem::Settings::NoKey;
-            text = render.renderKeyRange(startKey, endKey, modules, key, settings);
+            text = render.renderKeyRange(startKey, vk, modules, key, settings);
         }
         else {
             text = render.renderSingleKey(key, modules, settings);
