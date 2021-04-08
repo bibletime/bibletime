@@ -66,15 +66,13 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
     m_resultListSplitter = new QSplitter(resultListsWidget);
     m_resultListSplitter->setOrientation(Qt::Vertical);
     m_moduleListBox = new CModuleResultView(m_resultListSplitter);
-    BT_CONNECT(m_moduleListBox, &CModuleResultView::moduleSelected,
-               m_resultListBox, &CSearchResultView::setupTree);
-    BT_CONNECT(m_moduleListBox,  &CModuleResultView::moduleChanged,
-               m_previewDisplay, &QTextBrowser::clear);
-    BT_CONNECT(m_moduleListBox, &CModuleResultView::strongsSelected,
-               m_resultListBox, &CSearchResultView::setupStrongsTree);
     m_resultListSplitter->addWidget(m_moduleListBox);
 
     m_resultListBox = new CSearchResultView(m_resultListSplitter);
+    BT_CONNECT(m_moduleListBox, &CModuleResultView::moduleSelected,
+               m_resultListBox, &CSearchResultView::setupTree);
+    BT_CONNECT(m_moduleListBox, &CModuleResultView::strongsSelected,
+               m_resultListBox, &CSearchResultView::setupStrongsTree);
     BT_CONNECT(m_resultListBox, &CSearchResultView::keySelected,
                this,            &BtSearchResultArea::updatePreview);
     BT_CONNECT(m_resultListBox, &CSearchResultView::keyDeselected,
@@ -95,14 +93,10 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
     m_contextMenu = new QMenu(this);
         m_selectAllAction = new QAction(tr("Select all"), this);
         m_selectAllAction->setShortcut(QKeySequence::SelectAll);
-        BT_CONNECT(m_selectAllAction, &QAction::triggered,
-                   m_previewDisplay,  &QTextBrowser::selectAll);
         m_contextMenu->addAction(m_selectAllAction);
 
         m_copyAction = new QAction(tr("Copy"));
         m_copyAction->setShortcut(QKeySequence::Copy);
-        BT_CONNECT(m_copyAction,     &QAction::triggered,
-                   m_previewDisplay, &QTextBrowser::copy);
         m_contextMenu->addAction(m_copyAction);
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
@@ -111,6 +105,12 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
     m_previewDisplay->setOpenLinks(false);
     m_previewDisplay->setToolTip(tr("Text of the selected search result item"));
     m_previewDisplay->setContextMenuPolicy(Qt::CustomContextMenu);
+    BT_CONNECT(m_selectAllAction, &QAction::triggered,
+               m_previewDisplay,  &QTextBrowser::selectAll);
+    BT_CONNECT(m_copyAction,     &QAction::triggered,
+               m_previewDisplay, &QTextBrowser::copy);
+    BT_CONNECT(m_moduleListBox,  &CModuleResultView::moduleChanged,
+               m_previewDisplay, &QTextBrowser::clear);
     BT_CONNECT(m_previewDisplay, &QTextBrowser::customContextMenuRequested,
                [this](QPoint const & loc) { m_contextMenu->exec(loc); });
     frameLayout->addWidget(m_previewDisplay);
