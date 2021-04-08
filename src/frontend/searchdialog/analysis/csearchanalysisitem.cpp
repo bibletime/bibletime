@@ -41,16 +41,11 @@ CSearchAnalysisItem::CSearchAnalysisItem(
         : m_results(results),
           m_scaleFactor(scaleFactor),
           m_bookName(bookname),
-          m_moduleCount(moduleCount),
-          m_bufferPixmap(nullptr)
+          m_moduleCount(moduleCount)
 {
     m_resultCountArray.resize(m_moduleCount);
     int index = 0;
     for (index = 0; index < m_moduleCount; ++index) m_resultCountArray[index] = 0;
-}
-
-CSearchAnalysisItem::~CSearchAnalysisItem() {
-    delete m_bufferPixmap;
 }
 
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
@@ -104,10 +99,10 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
         Value = newValue;
     }
     if (!m_bufferPixmap) {
-        m_bufferPixmap = new QPixmap(width(), BAR_LOWER_BORDER);
+        m_bufferPixmap = std::make_unique<QPixmap>(width(), BAR_LOWER_BORDER);
         //m_bufferPixmap->resize(width(),BAR_LOWER_BORDER);
         m_bufferPixmap->fill();
-        QPainter p(m_bufferPixmap);
+        QPainter p(m_bufferPixmap.get());
         f = p.font();
         f.setPointSize(ITEM_TEXT_SIZE);
         p.setFont(f);
