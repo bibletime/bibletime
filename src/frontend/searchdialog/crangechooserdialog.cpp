@@ -141,7 +141,6 @@ void CRangeChooserDialog::initConnections() {
                                backend->findModuleByName(moduleName);
                        if (!module)
                            continue;
-                       sword::VerseKey(module->module().getKey());
                        auto const verses(
                                    sword::VerseKey(module->module().getKey())
                                         .parseVerseList(
