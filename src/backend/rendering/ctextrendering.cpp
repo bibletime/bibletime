@@ -202,7 +202,7 @@ const QString CTextRendering::renderKeyRange(
     BT_ASSERT((sw_start == sw_stop) || (sw_start < sw_stop));
 
     if (sw_start == sw_stop) { //same key, render single key
-        return renderSingleKey(lowerBound->key(), modules);
+        return renderSingleKey(lowerBound->key(), modules, keySettings);
     }
     else if (sw_start < sw_stop) { // Render range
         KeyTree tree;
