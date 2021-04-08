@@ -40,12 +40,11 @@ CSearchAnalysisItem::CSearchAnalysisItem(
         const CSwordModuleSearch::Results &results)
         : m_results(results),
           m_scaleFactor(scaleFactor),
-          m_bookName(bookname),
-          m_moduleCount(moduleCount)
+          m_bookName(bookname)
 {
-    m_resultCountArray.resize(m_moduleCount);
+    m_resultCountArray.resize(moduleCount);
     int index = 0;
-    for (index = 0; index < m_moduleCount; ++index) m_resultCountArray[index] = 0;
+    for (index = 0; index < moduleCount; ++index) m_resultCountArray[index] = 0;
 }
 
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
@@ -61,8 +60,10 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
     f.setPointSize(ITEM_TEXT_SIZE);
     painter->setFont(f);
 
+    auto const moduleCount = m_resultCountArray.size();
+
     /**
-    * We have to paint so many bars as we have modules available (we use m_moduleCount)
+    * We have to paint so many bars as we have modules available (we use moduleCount)
     * We paint inside the area which is given by height and width of this rectangle item
     */
     int index = 0;
@@ -70,18 +71,18 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
     int Value = 0;
 
     //find out the biggest value
-    for (index = 0;index < m_moduleCount; index++) {
+    for (index = 0;index < moduleCount; index++) {
         if (m_resultCountArray[index] > Value) {
             Value = m_resultCountArray[index];
         }
     }
 
-    while (drawn < m_moduleCount) {
-        for (index = 0; index < m_moduleCount; index++) {
+    while (drawn < moduleCount) {
+        for (index = 0; index < moduleCount; index++) {
             if (m_resultCountArray[index] == Value) {
                 #define S(...) static_cast<int>(__VA_ARGS__)
-                QPoint p1(S(rect().x()) + (m_moduleCount - drawn - 1)*BAR_DELTAX,
-                          S(rect().height()) + S(y()) - BAR_LOWER_BORDER - (m_moduleCount - drawn)*BAR_DELTAY);
+                QPoint p1(S(rect().x()) + (moduleCount - drawn - 1)*BAR_DELTAX,
+                          S(rect().height()) + S(y()) - BAR_LOWER_BORDER - (moduleCount - drawn)*BAR_DELTAY);
                 QPoint p2(p1.x() + BAR_WIDTH,
                           p1.y() - S(!m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))));
                 #undef S
@@ -93,7 +94,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
         }
         //finds the next smaller value
         int newValue = 0;
-        for (index = 0;index < m_moduleCount; index++)
+        for (index = 0;index < moduleCount; index++)
             if (m_resultCountArray[index] < Value && m_resultCountArray[index] >= newValue)
                 newValue = m_resultCountArray[index];
         Value = newValue;
@@ -114,7 +115,8 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 
 /** Returns the width of this item. */
 int CSearchAnalysisItem::width() {
-    return m_moduleCount*(m_moduleCount > 1 ? BAR_DELTAX : 0) + BAR_WIDTH;
+    auto const moduleCount = m_resultCountArray.size();
+    return moduleCount * (moduleCount > 1 ? BAR_DELTAX : 0) + BAR_WIDTH;
 }
 
 /** Returns the tooltip for this item. */

@@ -61,7 +61,6 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         CSwordModuleSearch::Results m_results;
         double *m_scaleFactor;
         QString m_bookName;
-        int m_moduleCount;
         QVector<int> m_resultCountArray;
         std::unique_ptr<QPixmap> m_bufferPixmap;
 
