@@ -132,7 +132,7 @@ void CSearchAnalysisScene::setResults(
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
-        analysisItem = new CSearchAnalysisItem(m_results.count(), key.bookName(), &m_scaleFactor, m_results);
+        analysisItem = new CSearchAnalysisItem(key.bookName(), &m_scaleFactor, m_results);
         addItem(analysisItem);
         analysisItem->hide();
         m_itemList.insert(key.bookName(), analysisItem);

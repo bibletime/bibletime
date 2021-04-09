@@ -34,7 +34,6 @@ const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the
 const int BAR_LOWER_BORDER = 100;
 
 CSearchAnalysisItem::CSearchAnalysisItem(
-        const int moduleCount,
         const QString &bookname,
         double *scaleFactor,
         const CSwordModuleSearch::Results &results)
@@ -42,6 +41,7 @@ CSearchAnalysisItem::CSearchAnalysisItem(
           m_scaleFactor(scaleFactor),
           m_bookName(bookname)
 {
+    auto const moduleCount = results.size();
     m_resultCountArray.resize(moduleCount);
     int index = 0;
     for (index = 0; index < moduleCount; ++index) m_resultCountArray[index] = 0;

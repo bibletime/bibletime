@@ -25,7 +25,7 @@ namespace Search {
 
 class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
-        CSearchAnalysisItem(const int moduleCount, const QString &bookname,
+        CSearchAnalysisItem(const QString &bookname,
                             double *scaleFactor,
                             const CSwordModuleSearch::Results &results);
 
