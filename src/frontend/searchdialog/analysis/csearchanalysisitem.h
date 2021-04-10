@@ -26,7 +26,7 @@ namespace Search {
 
 class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
-        CSearchAnalysisItem(QString const & bookname,
+        CSearchAnalysisItem(QString bookname,
                             QVector<std::size_t> resultCountArray);
 
         /**

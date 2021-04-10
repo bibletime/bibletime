@@ -18,6 +18,7 @@
 #include <QPen>
 #include <QPoint>
 #include <QRect>
+#include <utility>
 #include "../../../backend/drivers/cswordmoduleinfo.h"
 #include "csearchanalysisscene.h"
 
@@ -34,9 +35,9 @@ const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the
 const int BAR_LOWER_BORDER = 100;
 
 CSearchAnalysisItem::CSearchAnalysisItem(
-        QString const & bookname,
+        QString bookname,
         QVector<std::size_t> resultCountArray)
-    : m_bookName(bookname)
+    : m_bookName(std::move(bookname))
     , m_resultCountArray(std::move(resultCountArray))
 {}
 
