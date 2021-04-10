@@ -21,6 +21,7 @@
 #include <QVector>
 #include <utility>
 #include "../../../backend/keys/cswordversekey.h"
+#include "../../../util/btassert.h"
 #include "../../../util/tool.h"
 #include "../csearchdialog.h"
 
@@ -103,11 +104,17 @@ CSearchAnalysisScene::CSearchAnalysisScene(
             {
                 const sword::ListKey & result = m_results[keyPtr];
 
-                const int length = bookName.length();
                 unsigned int i = lastPosList[keyPtr];
                 const unsigned int resultCount = result.getCount();
                 while (i < resultCount) {
-                    if (strncmp(bookName.toUtf8(), result.getElement(i)->getText(), length))
+                    /* m_results only contains results from Bibles and
+                       Commentaries, as filtered above. */
+                    BT_ASSERT(dynamic_cast<sword::VerseKey const *>(
+                                  result.getElement(i)));
+                    auto const * const vk =
+                            static_cast<sword::VerseKey const *>(
+                                result.getElement(i));
+                    if (bookName != QString::fromUtf8(vk->getBookName()))
                         break;
                     i++;
                     ++count;
