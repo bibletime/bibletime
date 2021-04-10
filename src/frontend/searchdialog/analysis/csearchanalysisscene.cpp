@@ -132,11 +132,10 @@ void CSearchAnalysisScene::slotResized() {
                         / static_cast<double>(m_maxCount);
     }
     for (auto * const itemPtr : m_itemList)
-        if (itemPtr)
-            itemPtr->setRect(itemPtr->rect().x(),
-                             UPPER_BORDER,
-                             BAR_WIDTH + (m_results.count() - 1) * BAR_DELTAX,
-                             height() - LOWER_BORDER - BAR_LOWER_BORDER);
+        itemPtr->setRect(itemPtr->rect().x(),
+                         UPPER_BORDER,
+                         BAR_WIDTH + (m_results.count() - 1) * BAR_DELTAX,
+                         height() - LOWER_BORDER - BAR_LOWER_BORDER);
     update();
 }
 
