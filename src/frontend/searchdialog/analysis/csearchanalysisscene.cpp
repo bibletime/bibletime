@@ -53,7 +53,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         CSwordModuleSearch::Results const & results,
         QObject * parent)
     : QGraphicsScene(parent)
-    , m_scaleFactor(0.0)
 {
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
@@ -106,7 +105,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         }
         if (haveHitsInAnyModule) {
             auto analysisItem = new CSearchAnalysisItem(key.bookName(),
-                                                        &m_scaleFactor,
                                                         m_results,
                                                         std::move(resultCountArray));
             addItem(analysisItem);
@@ -125,17 +123,20 @@ CSearchAnalysisScene::CSearchAnalysisScene(
 
 /** No descriptions */
 void CSearchAnalysisScene::slotResized() {
+    double scaleFactor;
     if (m_maxCount <= 0) {
-        m_scaleFactor = 0.0;
+        scaleFactor = 0.0;
     } else {
-        m_scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
-                        / static_cast<double>(m_maxCount);
+        scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
+                      / static_cast<double>(m_maxCount);
     }
-    for (auto * const itemPtr : m_itemList)
+    for (auto * const itemPtr : m_itemList) {
+        itemPtr->setScaleFactor(scaleFactor);
         itemPtr->setRect(itemPtr->rect().x(),
                          UPPER_BORDER,
                          BAR_WIDTH + (m_results.count() - 1) * BAR_DELTAX,
                          height() - LOWER_BORDER - BAR_LOWER_BORDER);
+    }
     update();
 }
 

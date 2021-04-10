@@ -35,11 +35,9 @@ const int BAR_LOWER_BORDER = 100;
 
 CSearchAnalysisItem::CSearchAnalysisItem(
         QString const & bookname,
-        double * scaleFactor,
         CSwordModuleSearch::Results const & results,
         QVector<std::size_t> resultCountArray)
     : m_results(results)
-    , m_scaleFactor(scaleFactor)
     , m_bookName(bookname)
     , m_resultCountArray(std::move(resultCountArray))
 {}
@@ -74,7 +72,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
                 QPoint p1(S(rect().x()) + (moduleCount - drawn - 1)*BAR_DELTAX,
                           S(rect().height()) + S(y()) - BAR_LOWER_BORDER - (moduleCount - drawn)*BAR_DELTAY);
                 QPoint p2(p1.x() + BAR_WIDTH,
-                          p1.y() - S(!m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))));
+                          p1.y() - S(!m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*m_scaleFactor)));
                 #undef S
                 QRect r(p1, p2);
                 painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );

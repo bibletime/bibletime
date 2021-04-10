@@ -63,7 +63,6 @@ class CSearchAnalysisScene : public QGraphicsScene {
         QHash<QString, CSearchAnalysisItem*> m_itemList;
         QMap<const CSwordModuleInfo*, unsigned int> m_lastPosList;
         std::size_t m_maxCount = 0;
-        double m_scaleFactor;
         std::unique_ptr<CSearchAnalysisLegendItem> m_legend;
 };
 
