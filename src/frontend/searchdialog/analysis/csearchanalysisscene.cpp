@@ -76,10 +76,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         CSwordVerseKey key(nullptr);
         key.setKey("Genesis 1:1");
         do {
-            analysisItem = new CSearchAnalysisItem(key.bookName(), &m_scaleFactor, m_results);
-            addItem(analysisItem);
-            analysisItem->hide();
-            m_itemList.insert(key.bookName(), analysisItem);
         }
         while (key.next(CSwordVerseKey::UseBook));
     }
@@ -98,10 +94,12 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     m_maxCount = 0;
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
+    do {
+        auto analysisItem = new CSearchAnalysisItem(key.bookName(), &m_scaleFactor, m_results);
+        addItem(analysisItem);
+        analysisItem->hide();
+        m_itemList.insert(key.bookName(), analysisItem);
 
-    CSearchAnalysisItem* analysisItem = m_itemList[key.bookName()];
-    bool ok = true;
-    while (ok && analysisItem) {
         moduleIndex = 0;
         bool haveHitsInAnyModule = false;
         for (auto * const keyPtr : m_results.keys()) {
@@ -124,9 +122,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
             analysisItem->show();
             xPos += static_cast<int>(analysisItem->width() + SPACE_BETWEEN_PARTS);
         }
-        ok = key.next(CSwordVerseKey::UseBook);
-        analysisItem = m_itemList[key.bookName()];
-    }
+    } while (key.next(CSwordVerseKey::UseBook));
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
 }
