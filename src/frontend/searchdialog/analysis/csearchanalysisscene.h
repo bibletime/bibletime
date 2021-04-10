@@ -61,9 +61,6 @@ class CSearchAnalysisScene : public QGraphicsScene {
         */
         void slotResized();
 
-    protected:
-        void setResults(const CSwordModuleSearch::Results &results);
-
     private:
         /** \returns the count of the book in the module. */
         std::size_t getCount(QString const & book,

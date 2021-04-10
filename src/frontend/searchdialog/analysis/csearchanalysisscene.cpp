@@ -67,7 +67,28 @@ void CSearchAnalysisScene::analyse(
     *   -Find out how many times we found the book
     *   -Set the count to the items which belongs to the book
     */
-    setResults(results);
+    m_results.clear();
+    for (auto it = results.begin(); it != results.end(); ++it) {
+        const CSwordModuleInfo *m = it.key();
+        if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
+            m_results.insert(m, it.value());
+        }
+    }
+
+    m_itemList.clear();
+    {
+        CSearchAnalysisItem* analysisItem = nullptr;
+        CSwordVerseKey key(nullptr);
+        key.setKey("Genesis 1:1");
+        do {
+            analysisItem = new CSearchAnalysisItem(key.bookName(), &m_scaleFactor, m_results);
+            addItem(analysisItem);
+            analysisItem->hide();
+            m_itemList.insert(key.bookName(), analysisItem);
+        }
+        while (key.next(CSwordVerseKey::UseBook));
+    }
+    update();
 
     m_lastPosList.clear();
     const int numberOfModules = m_results.count();
@@ -115,32 +136,6 @@ void CSearchAnalysisScene::analyse(
     }
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
-}
-
-/** Sets the module list used for the analysis. */
-void CSearchAnalysisScene::setResults(
-        const CSwordModuleSearch::Results &results)
-{
-    m_results.clear();
-    for (auto it = results.begin(); it != results.end(); ++it) {
-        const CSwordModuleInfo *m = it.key();
-        if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
-            m_results.insert(m, it.value());
-        }
-    }
-
-    m_itemList.clear();
-    CSearchAnalysisItem* analysisItem = nullptr;
-    CSwordVerseKey key(nullptr);
-    key.setKey("Genesis 1:1");
-    do {
-        analysisItem = new CSearchAnalysisItem(key.bookName(), &m_scaleFactor, m_results);
-        addItem(analysisItem);
-        analysisItem->hide();
-        m_itemList.insert(key.bookName(), analysisItem);
-    }
-    while (key.next(CSwordVerseKey::UseBook));
-    update();
 }
 
 /** Sets back the items and deletes things to cleanup */
