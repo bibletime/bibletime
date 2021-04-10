@@ -87,6 +87,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
+        auto const bookName = key.bookName();
         moduleIndex = 0;
         bool haveHitsInAnyModule = false;
         QVector<std::size_t> resultCountArray(m_results.size(), 0u);
@@ -95,7 +96,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
             if (!m_lastPosList.contains(keyPtr))
                 m_lastPosList.insert(keyPtr, 0);
 
-            auto const count = getCount(key.bookName(), keyPtr);
+            auto const count = getCount(bookName, keyPtr);
             resultCountArray[moduleIndex] = count;
             if (count) {
                 m_maxCount = std::max(m_maxCount, count);
@@ -104,17 +105,45 @@ CSearchAnalysisScene::CSearchAnalysisScene(
             ++moduleIndex;
         }
         if (haveHitsInAnyModule) {
-            auto analysisItem = new CSearchAnalysisItem(key.bookName(),
-                                                        m_results,
+            QString toolTip("<center><b>");
+            toolTip.append(bookName.toHtmlEscaped())
+                   .append("</b></center><hr/><table cellspacing=\"0\" "
+                           "cellpadding=\"3\" width=\"100%\" height=\"100%\" "
+                           "align=\"center\">");
+
+            /// \todo Fix that loop
+            int i = 0;
+            for (auto it = m_results.begin(); it != m_results.end(); ++it) {
+                const CSwordModuleInfo * const info = it.key();
+
+                auto const count = it.value().getCount();
+                double const percent =
+                        (info && count)
+                        ? ((static_cast<double>(resultCountArray.at(i))
+                            * static_cast<double>(100.0))
+                           / static_cast<double>(count))
+                        : 0.0;
+                toolTip.append("<tr bgcolor=\"white\"><td><b><font color=\"")
+                       .append(getColor(i).name()).append("\">")
+                       .append(info ? info->name() : QString())
+                       .append("</font></b></td><td>")
+                       .append(QString::number(resultCountArray.at(i)))
+                       .append(" (")
+                       .append(QString::number(percent, 'g', 2))
+                       .append("%)</td></tr>");
+                ++i;
+            }
+            toolTip.append("</table>");
+
+            auto analysisItem = new CSearchAnalysisItem(bookName,
                                                         std::move(resultCountArray));
             addItem(analysisItem);
 
             analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
-            QString tip = analysisItem->getToolTip();
-            analysisItem->setToolTip(tip);
+            analysisItem->setToolTip(toolTip);
             xPos += static_cast<int>(analysisItem->width() + SPACE_BETWEEN_PARTS);
 
-            m_itemList.insert(key.bookName(), analysisItem);
+            m_itemList.insert(bookName, analysisItem);
         }
     } while (key.next(CSwordVerseKey::UseBook));
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );

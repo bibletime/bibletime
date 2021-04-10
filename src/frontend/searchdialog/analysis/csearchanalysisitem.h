@@ -27,7 +27,6 @@ namespace Search {
 class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
         CSearchAnalysisItem(QString const & bookname,
-                            CSwordModuleSearch::Results const &results,
                             QVector<std::size_t> resultCountArray);
 
         /**
@@ -40,10 +39,6 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         * Returns the width of this item.
         */
         int width() const;
-        /**
-        * Returns the tooltip for this item.
-        */
-        QString getToolTip() const;
 
         void setScaleFactor(double value) noexcept { m_scaleFactor = value; }
 
@@ -51,7 +46,6 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
     private: /* Fields: */
-        CSwordModuleSearch::Results m_results;
         double m_scaleFactor = 0.0;
         QString m_bookName;
         QVector<std::size_t> m_resultCountArray;

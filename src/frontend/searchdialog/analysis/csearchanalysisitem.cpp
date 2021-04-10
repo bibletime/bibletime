@@ -35,10 +35,8 @@ const int BAR_LOWER_BORDER = 100;
 
 CSearchAnalysisItem::CSearchAnalysisItem(
         QString const & bookname,
-        CSwordModuleSearch::Results const & results,
         QVector<std::size_t> resultCountArray)
-    : m_results(results)
-    , m_bookName(bookname)
+    : m_bookName(bookname)
     , m_resultCountArray(std::move(resultCountArray))
 {}
 
@@ -105,40 +103,6 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 int CSearchAnalysisItem::width() const {
     auto const moduleCount = m_resultCountArray.size();
     return moduleCount * (moduleCount > 1 ? BAR_DELTAX : 0) + BAR_WIDTH;
-}
-
-/** Returns the tooltip for this item. */
-QString CSearchAnalysisItem::getToolTip() const {
-    QString toolTipString("<center><b>");
-    toolTipString.append(m_bookName.toHtmlEscaped())
-                 .append("</b></center><hr/><table cellspacing=\"0\" "
-                         "cellpadding=\"3\" width=\"100%\" height=\"100%\" "
-                         "align=\"center\">");
-
-    /// \todo Fix that loop
-    int i = 0;
-    for (auto it = m_results.begin(); it != m_results.end(); ++it) {
-        const CSwordModuleInfo * const info = it.key();
-
-        const int count = it.value().getCount();
-        const double percent = (info && count)
-                             ? ((static_cast<double>(m_resultCountArray.at(i))
-                                 * static_cast<double>(100.0))
-                                / static_cast<double>(count))
-                             : 0.0;
-        toolTipString.append("<tr bgcolor=\"white\"><td><b><font color=\"")
-                     .append(CSearchAnalysisScene::getColor(i).name()).append("\">")
-                     .append(info ? info->name() : QString())
-                     .append("</font></b></td><td>")
-                     .append(QString::number(m_resultCountArray.at(i)))
-                     .append(" (")
-                     .append(QString::number(percent, 'g', 2))
-                     .append("%)</td></tr>");
-        ++i;
-    }
-
-    toolTipString.append("</table>");
-    return toolTipString;
 }
 
 }
