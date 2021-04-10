@@ -19,7 +19,6 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/tool.h"
 #include "../csearchdialog.h"
-#include "csearchanalysisitem.h"
 #include "csearchanalysislegenditem.h"
 
 // Sword includes
