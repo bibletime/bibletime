@@ -14,6 +14,7 @@
 
 #include <QGraphicsScene>
 
+#include <cstddef>
 #include <memory>
 #include <QColor>
 #include <QHash>
@@ -64,15 +65,14 @@ class CSearchAnalysisScene : public QGraphicsScene {
         void setResults(const CSwordModuleSearch::Results &results);
 
     private:
-        /**
-        * Returns the count of the book in the module
-        */
-        unsigned int getCount(const QString &book, const CSwordModuleInfo *module);
+        /** \returns the count of the book in the module. */
+        std::size_t getCount(QString const & book,
+                             CSwordModuleInfo const * module);
 
         CSwordModuleSearch::Results m_results;
         QHash<QString, CSearchAnalysisItem*> m_itemList;
         QMap<const CSwordModuleInfo*, unsigned int> m_lastPosList;
-        int m_maxCount = 0;
+        std::size_t m_maxCount = 0;
         double m_scaleFactor;
         std::unique_ptr<CSearchAnalysisLegendItem> m_legend;
 };

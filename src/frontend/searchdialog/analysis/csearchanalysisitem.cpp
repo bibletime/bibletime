@@ -68,7 +68,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
     */
     int index = 0;
     int drawn = 0;
-    int Value = 0;
+    std::size_t Value = 0;
 
     //find out the biggest value
     for (index = 0;index < moduleCount; index++) {
@@ -93,7 +93,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
             }
         }
         //finds the next smaller value
-        int newValue = 0;
+        std::size_t newValue = 0u;
         for (index = 0;index < moduleCount; index++)
             if (m_resultCountArray[index] < Value && m_resultCountArray[index] >= newValue)
                 newValue = m_resultCountArray[index];
@@ -142,7 +142,7 @@ QString CSearchAnalysisItem::getToolTip() const {
                      .append(CSearchAnalysisScene::getColor(i).name()).append("\">")
                      .append(info ? info->name() : QString())
                      .append("</font></b></td><td>")
-                     .append(m_resultCountArray.at(i))
+                     .append(QString::number(m_resultCountArray.at(i)))
                      .append(" (")
                      .append(QString::number(percent, 'g', 2))
                      .append("%)</td></tr>");

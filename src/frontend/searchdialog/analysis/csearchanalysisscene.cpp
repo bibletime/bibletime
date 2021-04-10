@@ -94,7 +94,7 @@ void CSearchAnalysisScene::analyse(
             if (!m_lastPosList.contains(keyPtr))
                 m_lastPosList.insert(keyPtr, 0);
 
-            int count = getCount(key.bookName(), keyPtr);
+            auto const count = getCount(key.bookName(), keyPtr);
             analysisItem->setCountForModule(moduleIndex, count);
             m_maxCount = std::max(m_maxCount, count);
 
@@ -202,14 +202,14 @@ QColor CSearchAnalysisScene::getColor(int index) {
     }
 }
 
-unsigned int CSearchAnalysisScene::getCount(const QString &book,
-                                            const CSwordModuleInfo* module)
+std::size_t CSearchAnalysisScene::getCount(QString const & book,
+                                           CSwordModuleInfo const * module)
 {
     const sword::ListKey & result = m_results[module];
 
     const int length = book.length();
     unsigned int i = m_lastPosList[module];
-    unsigned int count = 0;
+    std::size_t count = 0u;
     const unsigned int resultCount = result.getCount();
     while (i < resultCount) {
         if (strncmp(book.toUtf8(), result.getElement(i)->getText(), length))

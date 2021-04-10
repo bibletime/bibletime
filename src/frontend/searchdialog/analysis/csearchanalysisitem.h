@@ -14,6 +14,7 @@
 
 #include <QGraphicsRectItem>
 
+#include <cstddef>
 #include <QGraphicsScene>
 #include <memory>
 #include "../../../backend/cswordmodulesearch.h"
@@ -32,13 +33,13 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         /**
           Sets the resultcount of this item.
         */
-        void setCountForModule(int const moduleIndex, int const count)
+        void setCountForModule(int const moduleIndex, std::size_t const count)
         { m_resultCountArray[moduleIndex] = count; }
 
         /**
           Returns the resultcount of this item.
         */
-        int getCountForModule(int const moduleIndex) const
+        std::size_t getCountForModule(int const moduleIndex) const
         { return m_resultCountArray[moduleIndex]; }
 
         /**
@@ -61,7 +62,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         CSwordModuleSearch::Results m_results;
         double *m_scaleFactor;
         QString m_bookName;
-        QVector<int> m_resultCountArray;
+        QVector<std::size_t> m_resultCountArray;
         std::unique_ptr<QPixmap> m_bufferPixmap;
 
 };
