@@ -81,7 +81,6 @@ void CSearchAnalysisScene::analyse(
     int xPos = static_cast<int>(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
     int moduleIndex = 0;
     m_maxCount = 0;
-    int count = 0;
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
 
@@ -94,7 +93,8 @@ void CSearchAnalysisScene::analyse(
             if (!m_lastPosList.contains(keyPtr))
                 m_lastPosList.insert(keyPtr, 0);
 
-            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.bookName(), keyPtr)));
+            int count = getCount(key.bookName(), keyPtr);
+            analysisItem->setCountForModule(moduleIndex, count);
             m_maxCount = (count > m_maxCount) ? count : m_maxCount;
 
             ++moduleIndex;
