@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <QApplication>
 #include <QFileDialog>
+#include <QMap>
 #include <QTextCodec>
 #include <QTextDocument>
 #include <QVector>
@@ -84,6 +85,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     int xPos = static_cast<int>(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
     int moduleIndex = 0;
     m_maxCount = 0;
+    QMap<CSwordModuleInfo const *, unsigned int> lastPosList;
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
@@ -93,10 +95,26 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         QVector<std::size_t> resultCountArray(m_results.size(), 0u);
         for (auto * const keyPtr : m_results.keys()) {
             qApp->processEvents( QEventLoop::AllEvents );
-            if (!m_lastPosList.contains(keyPtr))
-                m_lastPosList.insert(keyPtr, 0);
 
-            auto const count = getCount(bookName, keyPtr);
+            if (!lastPosList.contains(keyPtr))
+                lastPosList.insert(keyPtr, 0);
+
+            std::size_t count = 0u;
+            {
+                const sword::ListKey & result = m_results[keyPtr];
+
+                const int length = bookName.length();
+                unsigned int i = lastPosList[keyPtr];
+                const unsigned int resultCount = result.getCount();
+                while (i < resultCount) {
+                    if (strncmp(bookName.toUtf8(), result.getElement(i)->getText(), length))
+                        break;
+                    i++;
+                    ++count;
+                }
+                lastPosList.insert(keyPtr, i);
+            }
+
             resultCountArray[moduleIndex] = count;
             if (count) {
                 m_maxCount = std::max(m_maxCount, count);
@@ -195,25 +213,6 @@ QColor CSearchAnalysisScene::getColor(int index) {
         default:
             return Qt::red;
     }
-}
-
-std::size_t CSearchAnalysisScene::getCount(QString const & book,
-                                           CSwordModuleInfo const * module)
-{
-    const sword::ListKey & result = m_results[module];
-
-    const int length = book.length();
-    unsigned int i = m_lastPosList[module];
-    std::size_t count = 0u;
-    const unsigned int resultCount = result.getCount();
-    while (i < resultCount) {
-        if (strncmp(book.toUtf8(), result.getElement(i)->getText(), length))
-            break;
-        i++;
-        ++count;
-    }
-    m_lastPosList.insert(module, i);
-    return count;
 }
 
 void CSearchAnalysisScene::saveAsHTML() {

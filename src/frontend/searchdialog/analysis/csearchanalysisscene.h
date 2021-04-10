@@ -18,7 +18,6 @@
 #include <memory>
 #include <QColor>
 #include <QHash>
-#include <QMap>
 #include "../../../backend/cswordmodulesearch.h"
 #include "csearchanalysisitem.h"
 #include "csearchanalysislegenditem.h"
@@ -55,13 +54,9 @@ class CSearchAnalysisScene : public QGraphicsScene {
         void slotResized();
 
     private:
-        /** \returns the count of the book in the module. */
-        std::size_t getCount(QString const & book,
-                             CSwordModuleInfo const * module);
 
         CSwordModuleSearch::Results m_results;
         QHash<QString, CSearchAnalysisItem*> m_itemList;
-        QMap<const CSwordModuleInfo*, unsigned int> m_lastPosList;
         std::size_t m_maxCount = 0;
         std::unique_ptr<CSearchAnalysisLegendItem> m_legend;
 };
