@@ -149,7 +149,8 @@ const QString CSearchAnalysisItem::getToolTip() {
         ++i;
     }
 
-    return toolTipString.append("</table>");
+    toolTipString.append("</table>");
+    return toolTipString;
 }
 
 }
