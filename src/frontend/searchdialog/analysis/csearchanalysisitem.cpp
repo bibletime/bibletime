@@ -47,13 +47,6 @@ CSearchAnalysisItem::CSearchAnalysisItem(
     for (index = 0; index < moduleCount; ++index) m_resultCountArray[index] = 0;
 }
 
-bool CSearchAnalysisItem::hasHitsInAnyModule() const {
-    for (int const hits : m_resultCountArray)
-        if (hits)
-            return true;
-    return false;
-}
-
 /** Reimplementation. Draws the content of this item. */
 void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
     QFont f = painter->font();

@@ -89,6 +89,7 @@ void CSearchAnalysisScene::analyse(
     bool ok = true;
     while (ok && analysisItem) {
         moduleIndex = 0;
+        bool haveHitsInAnyModule = false;
         for (auto * const keyPtr : m_results.keys()) {
             qApp->processEvents( QEventLoop::AllEvents );
             if (!m_lastPosList.contains(keyPtr))
@@ -96,11 +97,13 @@ void CSearchAnalysisScene::analyse(
 
             auto const count = getCount(key.bookName(), keyPtr);
             analysisItem->setCountForModule(moduleIndex, count);
-            m_maxCount = std::max(m_maxCount, count);
-
+            if (count) {
+                m_maxCount = std::max(m_maxCount, count);
+                haveHitsInAnyModule = true;
+            }
             ++moduleIndex;
         }
-        if (analysisItem->hasHitsInAnyModule()) {
+        if (haveHitsInAnyModule) {
             analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
             QString tip = analysisItem->getToolTip();
             analysisItem->setToolTip(tip);

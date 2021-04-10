@@ -43,10 +43,6 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         { return m_resultCountArray[moduleIndex]; }
 
         /**
-        * Does one of the modules contain hits?
-        */
-        bool hasHitsInAnyModule() const;
-        /**
         * Returns the width of this item.
         */
         int width() const;
