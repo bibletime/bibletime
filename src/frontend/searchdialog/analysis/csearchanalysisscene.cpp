@@ -12,6 +12,7 @@
 
 #include "csearchanalysisscene.h"
 
+#include <algorithm>
 #include <QApplication>
 #include <QFileDialog>
 #include <QTextCodec>
@@ -95,7 +96,7 @@ void CSearchAnalysisScene::analyse(
 
             int count = getCount(key.bookName(), keyPtr);
             analysisItem->setCountForModule(moduleIndex, count);
-            m_maxCount = (count > m_maxCount) ? count : m_maxCount;
+            m_maxCount = std::max(m_maxCount, count);
 
             ++moduleIndex;
         }
