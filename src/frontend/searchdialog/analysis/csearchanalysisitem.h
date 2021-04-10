@@ -26,15 +26,10 @@ namespace Search {
 
 class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
-        CSearchAnalysisItem(const QString &bookname,
-                            double *scaleFactor,
-                            const CSwordModuleSearch::Results &results);
-
-        /**
-          Sets the resultcount of this item.
-        */
-        void setCountForModule(int const moduleIndex, std::size_t const count)
-        { m_resultCountArray[moduleIndex] = count; }
+        CSearchAnalysisItem(QString const & bookname,
+                            double * scaleFactor,
+                            CSwordModuleSearch::Results const &results,
+                            QVector<std::size_t> resultCountArray);
 
         /**
           Returns the resultcount of this item.

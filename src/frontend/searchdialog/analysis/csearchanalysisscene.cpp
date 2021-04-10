@@ -17,6 +17,8 @@
 #include <QFileDialog>
 #include <QTextCodec>
 #include <QTextDocument>
+#include <QVector>
+#include <utility>
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/tool.h"
 #include "../csearchdialog.h"
@@ -71,15 +73,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         }
     }
 
-    {
-        CSearchAnalysisItem* analysisItem = nullptr;
-        CSwordVerseKey key(nullptr);
-        key.setKey("Genesis 1:1");
-        do {
-        }
-        while (key.next(CSwordVerseKey::UseBook));
-    }
-
     const int numberOfModules = m_results.count();
     if (!numberOfModules)
         return;
@@ -95,20 +88,16 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     CSwordVerseKey key(nullptr);
     key.setKey("Genesis 1:1");
     do {
-        auto analysisItem = new CSearchAnalysisItem(key.bookName(), &m_scaleFactor, m_results);
-        addItem(analysisItem);
-        analysisItem->hide();
-        m_itemList.insert(key.bookName(), analysisItem);
-
         moduleIndex = 0;
         bool haveHitsInAnyModule = false;
+        QVector<std::size_t> resultCountArray(m_results.size(), 0u);
         for (auto * const keyPtr : m_results.keys()) {
             qApp->processEvents( QEventLoop::AllEvents );
             if (!m_lastPosList.contains(keyPtr))
                 m_lastPosList.insert(keyPtr, 0);
 
             auto const count = getCount(key.bookName(), keyPtr);
-            analysisItem->setCountForModule(moduleIndex, count);
+            resultCountArray[moduleIndex] = count;
             if (count) {
                 m_maxCount = std::max(m_maxCount, count);
                 haveHitsInAnyModule = true;
@@ -116,11 +105,18 @@ CSearchAnalysisScene::CSearchAnalysisScene(
             ++moduleIndex;
         }
         if (haveHitsInAnyModule) {
+            auto analysisItem = new CSearchAnalysisItem(key.bookName(),
+                                                        &m_scaleFactor,
+                                                        m_results,
+                                                        std::move(resultCountArray));
+            addItem(analysisItem);
+
             analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
             QString tip = analysisItem->getToolTip();
             analysisItem->setToolTip(tip);
-            analysisItem->show();
             xPos += static_cast<int>(analysisItem->width() + SPACE_BETWEEN_PARTS);
+
+            m_itemList.insert(key.bookName(), analysisItem);
         }
     } while (key.next(CSwordVerseKey::UseBook));
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
@@ -250,7 +246,11 @@ void CSearchAnalysisScene::saveAsHTML() {
 
         for (int mi = 0; mi < m_results.size(); ++mi) {
             text += "<td class=\"r\">";
-            text += QString::number(m_itemList.value(keyBook)->getCountForModule(mi));
+            if (auto it = m_itemList.find(keyBook); it != m_itemList.end()) {
+                text += QString::number((*it)->getCountForModule(mi));
+            } else {
+                text += '0';
+            }
             text += "</td>";
         }
         text += "</tr>";

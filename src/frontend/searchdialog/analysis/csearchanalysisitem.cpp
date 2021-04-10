@@ -34,18 +34,15 @@ const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the
 const int BAR_LOWER_BORDER = 100;
 
 CSearchAnalysisItem::CSearchAnalysisItem(
-        const QString &bookname,
-        double *scaleFactor,
-        const CSwordModuleSearch::Results &results)
-        : m_results(results),
-          m_scaleFactor(scaleFactor),
-          m_bookName(bookname)
-{
-    auto const moduleCount = results.size();
-    m_resultCountArray.resize(moduleCount);
-    int index = 0;
-    for (index = 0; index < moduleCount; ++index) m_resultCountArray[index] = 0;
-}
+        QString const & bookname,
+        double * scaleFactor,
+        CSwordModuleSearch::Results const & results,
+        QVector<std::size_t> resultCountArray)
+    : m_results(results)
+    , m_scaleFactor(scaleFactor)
+    , m_bookName(bookname)
+    , m_resultCountArray(std::move(resultCountArray))
+{}
 
 /** Reimplementation. Draws the content of this item. */
 void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
