@@ -47,18 +47,15 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 
-CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
+CSearchAnalysisScene::CSearchAnalysisScene(
+        CSwordModuleSearch::Results const & results,
+        QObject * parent)
     : QGraphicsScene(parent)
     , m_scaleFactor(0.0)
 {
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
-}
 
-/** Starts the analysis of the search result. This should be called only once because QCanvas handles the updates automatically. */
-void CSearchAnalysisScene::analyse(
-        const CSwordModuleSearch::Results &results)
-{
     /**
     * Steps of analysing our search result;
     * -Create the items for all available books ("Genesis" - "Revelation")
@@ -67,7 +64,6 @@ void CSearchAnalysisScene::analyse(
     *   -Find out how many times we found the book
     *   -Set the count to the items which belongs to the book
     */
-    m_results.clear();
     for (auto it = results.begin(); it != results.end(); ++it) {
         const CSwordModuleInfo *m = it.key();
         if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
@@ -75,7 +71,6 @@ void CSearchAnalysisScene::analyse(
         }
     }
 
-    m_itemList.clear();
     {
         CSearchAnalysisItem* analysisItem = nullptr;
         CSwordVerseKey key(nullptr);
@@ -88,9 +83,7 @@ void CSearchAnalysisScene::analyse(
         }
         while (key.next(CSwordVerseKey::UseBook));
     }
-    update();
 
-    m_lastPosList.clear();
     const int numberOfModules = m_results.count();
     if (!numberOfModules)
         return;
@@ -136,23 +129,6 @@ void CSearchAnalysisScene::analyse(
     }
     setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
-}
-
-/** Sets back the items and deletes things to cleanup */
-void CSearchAnalysisScene::reset() {
-    m_scaleFactor = 0.0;
-
-    for (auto * const itemPtr : m_itemList)
-        if (itemPtr)
-            itemPtr->hide();
-    m_lastPosList.clear();
-
-    if (m_legend) {
-        m_legend->hide();
-        m_legend.reset();
-    }
-
-    update();
 }
 
 /** No descriptions */

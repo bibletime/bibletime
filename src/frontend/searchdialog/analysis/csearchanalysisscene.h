@@ -31,14 +31,8 @@ namespace Search {
 class CSearchAnalysisScene : public QGraphicsScene {
         Q_OBJECT
     public:
-        CSearchAnalysisScene(QObject* parent);
-
-        /**
-        * Starts the analysis of the search result.
-        * This should be called only once because
-        * QCanvas handles the updates automatically.
-        */
-        void analyse(const CSwordModuleSearch::Results &results);
+        CSearchAnalysisScene(CSwordModuleSearch::Results const & results,
+                             QObject* parent);
 
         /**
         * This function returns a color for each module
@@ -46,7 +40,6 @@ class CSearchAnalysisScene : public QGraphicsScene {
         */
         static QColor getColor(int index);
 
-        void reset();
         /**
          * resize the height of the scene
          */
