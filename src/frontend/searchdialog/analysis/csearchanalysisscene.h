@@ -14,18 +14,18 @@
 
 #include <QGraphicsScene>
 
+#include <memory>
 #include <QColor>
 #include <QHash>
 #include <QMap>
 #include "../../../backend/cswordmodulesearch.h"
 #include "csearchanalysisitem.h"
+#include "csearchanalysislegenditem.h"
 
 
 class CSwordModuleInfo;
 
 namespace Search {
-
-class CSearchAnalysisLegendItem;
 
 class CSearchAnalysisScene : public QGraphicsScene {
         Q_OBJECT
@@ -74,7 +74,7 @@ class CSearchAnalysisScene : public QGraphicsScene {
         QMap<const CSwordModuleInfo*, unsigned int> m_lastPosList;
         int m_maxCount = 0;
         double m_scaleFactor;
-        CSearchAnalysisLegendItem* m_legend;
+        std::unique_ptr<CSearchAnalysisLegendItem> m_legend;
 };
 
 }

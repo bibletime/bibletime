@@ -19,7 +19,6 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/tool.h"
 #include "../csearchdialog.h"
-#include "csearchanalysislegenditem.h"
 
 // Sword includes
 #include <listkey.h>
@@ -48,9 +47,9 @@ const int LEGEND_WIDTH = 85;
 
 
 CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
-        : QGraphicsScene(parent),
-        m_scaleFactor(0.0),
-        m_legend(nullptr) {
+    : QGraphicsScene(parent)
+    , m_scaleFactor(0.0)
+{
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
 }
@@ -73,8 +72,8 @@ void CSearchAnalysisScene::analyse(
     const int numberOfModules = m_results.count();
     if (!numberOfModules)
         return;
-    m_legend = new CSearchAnalysisLegendItem(m_results.keys());
-    addItem(m_legend);
+    m_legend = std::make_unique<CSearchAnalysisLegendItem>(m_results.keys());
+    addItem(m_legend.get());
     m_legend->setRect(LEFT_BORDER, UPPER_BORDER,
                       LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules - 1) );
     m_legend->show();
@@ -149,10 +148,10 @@ void CSearchAnalysisScene::reset() {
             itemPtr->hide();
     m_lastPosList.clear();
 
-    if (m_legend) m_legend->hide();
-
-    delete m_legend;
-    m_legend = nullptr;
+    if (m_legend) {
+        m_legend->hide();
+        m_legend.reset();
+    }
 
     update();
 }
