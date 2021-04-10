@@ -33,10 +33,7 @@ class CSearchAnalysisDialog : public QDialog {
                               QWidget *parentDialog = nullptr);
 
     protected: // Protected methods
-        /**
-         * Initializes this dialog.
-         */
-        void initView();
+
         void resizeEvent(QResizeEvent* event) override;
 
     private:
