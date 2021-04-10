@@ -47,8 +47,8 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
 
     private: /* Fields: */
         double m_scaleFactor = 0.0;
-        QString m_bookName;
-        QVector<std::size_t> m_resultCountArray;
+        QString const m_bookName;
+        QVector<std::size_t> const m_resultCountArray;
         std::unique_ptr<QPixmap> m_bufferPixmap;
 
 };
