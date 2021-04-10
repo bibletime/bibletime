@@ -44,15 +44,15 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         /**
         * Does one of the modules contain hits?
         */
-        bool hasHitsInAnyModule();
+        bool hasHitsInAnyModule() const;
         /**
         * Returns the width of this item.
         */
-        int width();
+        int width() const;
         /**
         * Returns the tooltip for this item.
         */
-        const QString getToolTip();
+        QString getToolTip() const;
 
     private:
         void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;

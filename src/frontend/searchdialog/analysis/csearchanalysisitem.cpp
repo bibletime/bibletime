@@ -47,7 +47,7 @@ CSearchAnalysisItem::CSearchAnalysisItem(
     for (index = 0; index < moduleCount; ++index) m_resultCountArray[index] = 0;
 }
 
-bool CSearchAnalysisItem::hasHitsInAnyModule() {
+bool CSearchAnalysisItem::hasHitsInAnyModule() const {
     for (int const hits : m_resultCountArray)
         if (hits)
             return true;
@@ -114,13 +114,13 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 }
 
 /** Returns the width of this item. */
-int CSearchAnalysisItem::width() {
+int CSearchAnalysisItem::width() const {
     auto const moduleCount = m_resultCountArray.size();
     return moduleCount * (moduleCount > 1 ? BAR_DELTAX : 0) + BAR_WIDTH;
 }
 
 /** Returns the tooltip for this item. */
-const QString CSearchAnalysisItem::getToolTip() {
+QString CSearchAnalysisItem::getToolTip() const {
     QString toolTipString("<center><b>");
     toolTipString.append(m_bookName.toHtmlEscaped())
                  .append("</b></center><hr/><table cellspacing=\"0\" "
