@@ -28,15 +28,10 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
         CSearchAnalysisItem(QString bookname, int numModules);
 
-        QString const & bookName() const noexcept { return m_bookName; }
+        auto const & bookName() const noexcept { return m_bookName; }
+        auto & counts() noexcept { return m_counts; }
+        auto const  & counts() const noexcept { return m_counts; }
 
-        QVector<std::size_t> & counts() noexcept { return m_resultCountArray; }
-        QVector<std::size_t> const  & counts() const noexcept
-        { return m_resultCountArray; }
-
-        /**
-        * Returns the width of this item.
-        */
         int width() const;
 
         void setScaleFactor(double value) noexcept { m_scaleFactor = value; }
@@ -47,7 +42,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
     private: /* Fields: */
         double m_scaleFactor = 0.0;
         QString const m_bookName;
-        QVector<std::size_t> m_resultCountArray;
+        QVector<std::size_t> m_counts;
         std::unique_ptr<QPixmap> m_bufferPixmap;
 
 };

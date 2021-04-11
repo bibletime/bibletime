@@ -36,7 +36,7 @@ const int BAR_LOWER_BORDER = 100;
 
 CSearchAnalysisItem::CSearchAnalysisItem(QString bookname, int numModules)
     : m_bookName(std::move(bookname))
-    , m_resultCountArray(numModules, 0u)
+    , m_counts(numModules, 0u)
 {}
 
 /** Reimplementation. Draws the content of this item. */
@@ -45,7 +45,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
     f.setPointSize(ITEM_TEXT_SIZE);
     painter->setFont(f);
 
-    auto const moduleCount = m_resultCountArray.size();
+    auto const moduleCount = m_counts.size();
 
     /**
     * We have to paint so many bars as we have modules available (we use moduleCount)
@@ -57,19 +57,19 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 
     //find out the biggest value
     for (index = 0;index < moduleCount; index++) {
-        if (m_resultCountArray[index] > Value) {
-            Value = m_resultCountArray[index];
+        if (m_counts[index] > Value) {
+            Value = m_counts[index];
         }
     }
 
     while (drawn < moduleCount) {
         for (index = 0; index < moduleCount; index++) {
-            if (m_resultCountArray[index] == Value) {
+            if (m_counts[index] == Value) {
                 #define S(...) static_cast<int>(__VA_ARGS__)
                 QPoint p1(S(rect().x()) + (moduleCount - drawn - 1)*BAR_DELTAX,
                           S(rect().height()) + S(y()) - BAR_LOWER_BORDER - (moduleCount - drawn)*BAR_DELTAY);
                 QPoint p2(p1.x() + BAR_WIDTH,
-                          p1.y() - S(!m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*m_scaleFactor)));
+                          p1.y() - S(!m_counts[index] ? 0 : ((m_counts[index])*m_scaleFactor)));
                 #undef S
                 QRect r(p1, p2);
                 painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );
@@ -80,8 +80,8 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
         //finds the next smaller value
         std::size_t newValue = 0u;
         for (index = 0;index < moduleCount; index++)
-            if (m_resultCountArray[index] < Value && m_resultCountArray[index] >= newValue)
-                newValue = m_resultCountArray[index];
+            if (m_counts[index] < Value && m_counts[index] >= newValue)
+                newValue = m_counts[index];
         Value = newValue;
     }
     if (!m_bufferPixmap) {
@@ -100,7 +100,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 
 /** Returns the width of this item. */
 int CSearchAnalysisItem::width() const {
-    auto const moduleCount = m_resultCountArray.size();
+    auto const moduleCount = m_counts.size();
     return moduleCount * (moduleCount > 1 ? BAR_DELTAX : 0) + BAR_WIDTH;
 }
 
