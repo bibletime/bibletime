@@ -32,8 +32,8 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
         /**
           Returns the resultcount of this item.
         */
-        std::size_t getCountForModule(int const moduleIndex) const
-        { return m_resultCountArray[moduleIndex]; }
+        QVector<std::size_t> & counts() noexcept
+        { return m_resultCountArray; }
 
         /**
         * Returns the width of this item.
@@ -48,7 +48,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
     private: /* Fields: */
         double m_scaleFactor = 0.0;
         QString const m_bookName;
-        QVector<std::size_t> const m_resultCountArray;
+        QVector<std::size_t> m_resultCountArray;
         std::unique_ptr<QPixmap> m_bufferPixmap;
 
 };

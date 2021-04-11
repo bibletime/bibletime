@@ -282,7 +282,7 @@ void CSearchAnalysisScene::saveAsHTML() {
         for (int mi = 0; mi < m_results.size(); ++mi) {
             text += "<td class=\"r\">";
             if (auto it = m_itemList.find(keyBook); it != m_itemList.end()) {
-                text += QString::number((*it)->getCountForModule(mi));
+                text += QString::number((*it)->counts()[mi]);
             } else {
                 text += '0';
             }
