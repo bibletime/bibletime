@@ -59,14 +59,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
 
-    /**
-    * Steps of analysing our search result;
-    * -Create the items for all available books ("Genesis" - "Revelation")
-    * -Iterate through all modules we analyse
-    *  -Go through all books of this module
-    *   -Find out how many times we found the book
-    *   -Set the count to the items which belongs to the book
-    */
     for (auto it = results.begin(); it != results.end(); ++it) {
         const CSwordModuleInfo *m = it.key();
         if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
