@@ -34,11 +34,9 @@ const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the
 // Used for the text below the bars
 const int BAR_LOWER_BORDER = 100;
 
-CSearchAnalysisItem::CSearchAnalysisItem(
-        QString bookname,
-        QVector<std::size_t> resultCountArray)
+CSearchAnalysisItem::CSearchAnalysisItem(QString bookname, int numModules)
     : m_bookName(std::move(bookname))
-    , m_resultCountArray(std::move(resultCountArray))
+    , m_resultCountArray(numModules, 0u)
 {}
 
 /** Reimplementation. Draws the content of this item. */

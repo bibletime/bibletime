@@ -16,8 +16,8 @@
 
 #include <cstddef>
 #include <memory>
+#include <map>
 #include <QColor>
-#include <QHash>
 #include "../../../backend/cswordmodulesearch.h"
 #include "csearchanalysisitem.h"
 #include "csearchanalysislegenditem.h"
@@ -56,7 +56,7 @@ class CSearchAnalysisScene : public QGraphicsScene {
     private:
 
         CSwordModuleSearch::Results m_results;
-        QHash<QString, CSearchAnalysisItem*> m_itemList;
+        std::map<std::tuple<char, char>, CSearchAnalysisItem *> m_itemList;
         std::size_t m_maxCount = 0;
         std::unique_ptr<CSearchAnalysisLegendItem> m_legend;
 };

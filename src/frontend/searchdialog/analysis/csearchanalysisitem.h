@@ -26,13 +26,12 @@ namespace Search {
 
 class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
-        CSearchAnalysisItem(QString bookname,
-                            QVector<std::size_t> resultCountArray);
+        CSearchAnalysisItem(QString bookname, int numModules);
 
-        /**
-          Returns the resultcount of this item.
-        */
-        QVector<std::size_t> & counts() noexcept
+        QString const & bookName() const noexcept { return m_bookName; }
+
+        QVector<std::size_t> & counts() noexcept { return m_resultCountArray; }
+        QVector<std::size_t> const  & counts() const noexcept
         { return m_resultCountArray; }
 
         /**
