@@ -262,14 +262,12 @@ wrong, or if the config file was write protected return false.
     size_t indexSize() const;
 
     /**
-      This function uses CLucene to perform and index based search. It also
-      overwrites the variable containing the last search result.
-      \returns the number of results found
+      This function uses CLucene to perform and index based search.
+      \returns the result
       \throws on error
     */
-    size_t searchIndexed(const QString & searchedText,
-                         const sword::ListKey & scope,
-                         sword::ListKey & results) const;
+    sword::ListKey searchIndexed(QString const & searchedText,
+                                 sword::ListKey const & scope) const;
 
     /**
       \returns the type of the module.

@@ -40,11 +40,9 @@ Results search(QString const & searchText,
     // Search module-by-module:
     Results r;
     r.reserve(modules.size());
-    for (auto const * const m : modules) {
-        sword::ListKey results;
-        m->searchIndexed(searchText, scope, results);
-        r.emplace_back(ModuleSearchResult{m, std::move(results)});
-    }
+    for (auto const * const m : modules)
+        r.emplace_back(
+                    ModuleSearchResult{m, m->searchIndexed(searchText, scope)});
     return r;
 }
 

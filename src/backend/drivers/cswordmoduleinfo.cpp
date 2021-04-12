@@ -544,9 +544,9 @@ size_t CSwordModuleInfo::indexSize() const {
     return DU::getDirSizeRecursive(getModuleBaseIndexLocation());
 }
 
-size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
-                                       const sword::ListKey & scope,
-                                       sword::ListKey & results) const
+sword::ListKey
+CSwordModuleInfo::searchIndexed(QString const & searchedText,
+                                sword::ListKey const & scope) const
 {
     std::unique_ptr<char[]> sPutfBuffer(
             new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
@@ -561,8 +561,6 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     m_module.setKey(CSwordKey::createInstance(this)->asSwordKey());
 
     QList<sword::VerseKey *> list;
-
-    results.clear();
 
 #ifndef BT_NO_LUCENE
     // do not use any stop words
@@ -590,6 +588,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     if (vk)
         vk->setIntros(true);
 
+    sword::ListKey results;
 #ifdef CLUCENE2
     for (size_t i = 0; i < h->length(); ++i) {
 #else
@@ -623,7 +622,7 @@ size_t CSwordModuleInfo::searchIndexed(const QString & searchedText,
     qDeleteAll(list);
     list.clear();
 
-    return static_cast<size_t>(results.getCount());
+    return results;
 }
 
 sword::SWVersion CSwordModuleInfo::minimumSwordVersion() const {
