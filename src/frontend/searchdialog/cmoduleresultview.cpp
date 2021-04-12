@@ -145,20 +145,21 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
     /// \todo implement sorting in this method.
 
     clear();
-
-    m_results = results;
-
+    m_results.clear();
     qDeleteAll(m_strongsResults);
     m_strongsResults.clear();
 
     bool strongsAvailable = false;
 
-    for (auto const * const m : results.keys()) {
+    for (auto const & result : results) {
+        auto const * const m = result.module;
+        BT_ASSERT(!m_results.contains(m));
+        m_results.insert(m, result.results);
         QTreeWidgetItem * const item =
                 new QTreeWidgetItem(this,
                                     QStringList(m->name())
                                     << QString::number(
-                                            results.value(m).getCount()));
+                                        result.results.getCount()));
 
         item->setIcon(0, util::tool::getIconForModule(m));
         /*
@@ -179,7 +180,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
             const int sTokenIndex = searchedText.indexOf(" ", sstIndex);
             const QString sNumber(searchedText.mid(sstIndex, sTokenIndex - sstIndex));
 
-            setupStrongsResults(m, results[m], item, sNumber);
+            setupStrongsResults(m, result.results, item, sNumber);
 
             /// \todo item->setOpen(true);
             strongsAvailable = true;

@@ -44,7 +44,8 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
 
     //   for (unsigned int index=0; index < m_moduleList->count(); index++){
     int moduleIndex = 0;
-    for (auto const * const m : m_moduleList) {
+    for (auto const & result : *m_results) {
+        auto const * const m = result.module;
         // the module color indicators
         QPoint p1(S(rect().x()) + LEGEND_INNER_BORDER, S(rect().y()) + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE));
     #undef S

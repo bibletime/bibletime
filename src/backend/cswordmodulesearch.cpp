@@ -27,14 +27,11 @@ void CSwordModuleSearch::startSearch() {
     CSwordBackend::instance()->setFilterOptions(btConfig().getFilterOptions());
 
     // Search module-by-module:
+    m_results.reserve(m_searchModules.size());
     for (auto const * const m : m_searchModules) {
         sword::ListKey results;
-        size_t const found =
-                m->searchIndexed(m_searchText, m_searchScope, results);
-        if (found > 0u) {
-            m_results.insert(m, results);
-            m_foundItems += found;
-        }
+        m_foundItems += m->searchIndexed(m_searchText, m_searchScope, results);
+        m_results.emplace_back(ModuleSearchResult{m, std::move(results)});
     }
 }
 

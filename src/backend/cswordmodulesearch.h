@@ -14,8 +14,8 @@
 
 #include <QObject>
 
-#include <QHash>
 #include <QMetaType>
+#include <vector>
 #include "../util/btassert.h"
 #include "drivers/btmodulelist.h"
 
@@ -40,7 +40,13 @@ class CSwordModuleSearch: public QObject {
         Q_OBJECT
 
     public: /* Types: */
-        using Results = QHash<const CSwordModuleInfo*, sword::ListKey>;
+
+        struct ModuleSearchResult {
+            CSwordModuleInfo const * module;
+            sword::ListKey results;
+        };
+
+        using Results = std::vector<ModuleSearchResult>;
 
         enum SearchType { /* Values provided for serialization */
             AndType = 0,

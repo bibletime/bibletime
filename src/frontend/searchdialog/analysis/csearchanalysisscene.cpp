@@ -59,26 +59,24 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
 
-    for (auto it = results.begin(); it != results.end(); ++it) {
-        const CSwordModuleInfo *m = it.key();
-        if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
-            m_results.insert(m, it.value());
-        }
-    }
+    for (auto const & result : results)
+        if ((result.module->type() == CSwordModuleInfo::Bible)
+            || (result.module->type() == CSwordModuleInfo::Commentary))
+            m_results.emplace_back(result);
 
-    const int numberOfModules = m_results.count();
+    const int numberOfModules = m_results.size();
     if (!numberOfModules)
         return;
-    m_legend = std::make_unique<CSearchAnalysisLegendItem>(m_results.keys());
+    m_legend = std::make_unique<CSearchAnalysisLegendItem>(&m_results);
     addItem(m_legend.get());
     m_legend->setRect(LEFT_BORDER, UPPER_BORDER,
                       LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules - 1) );
     m_legend->show();
 
     int moduleIndex = 0;
-    for (auto * const keyPtr : m_results.keys()) {
+    for (auto const & result : m_results) {
         qApp->processEvents(QEventLoop::AllEvents);
-        auto const & moduleResults = m_results[keyPtr];
+        auto const & moduleResults = result.results;
         auto const numModuleResults = moduleResults.getCount();
         for (int i = 0u; i < numModuleResults; ++i) {
             /* m_results only contains results from Bibles and
@@ -127,10 +125,10 @@ CSearchAnalysisScene::CSearchAnalysisScene(
                        "align=\"center\">");
 
         int i = 0;
-        for (auto it = m_results.begin(); it != m_results.end(); ++it) {
-            const CSwordModuleInfo * const info = it.key();
+        for (auto const & result : m_results) {
+            auto const * const info = result.module;
 
-            auto const count = it.value().getCount();
+            auto const count = result.results.getCount();
             double const percent =
                     (info && count)
                     ? ((static_cast<double>(analysisItem.counts()[i])
@@ -150,7 +148,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         toolTip.append("</table>");
         analysisItem.setToolTip(toolTip);
     }
-    setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
+    setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.size() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
 }
 
@@ -160,7 +158,7 @@ void CSearchAnalysisScene::slotResized() {
     if (m_maxCount <= 0) {
         scaleFactor = 0.0;
     } else {
-        scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
+        scaleFactor = static_cast<double>(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.size() - 1) * BAR_DELTAY)
                       / static_cast<double>(m_maxCount);
     }
     for (auto const & vp : m_itemList) {
@@ -168,7 +166,7 @@ void CSearchAnalysisScene::slotResized() {
         analysisItem.setScaleFactor(scaleFactor);
         analysisItem.setRect(analysisItem.rect().x(),
                              UPPER_BORDER,
-                             BAR_WIDTH + (m_results.count() - 1) * BAR_DELTAX,
+                             BAR_WIDTH + (m_results.size() - 1) * BAR_DELTAX,
                              height() - LOWER_BORDER - BAR_LOWER_BORDER);
     }
     update();
@@ -243,9 +241,9 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += tr("Book");
     text += "</th>";
 
-    for (auto * const keyPtr : m_results.keys()) {
+    for (auto const & result : m_results) {
         text += "<th>";
-        text += keyPtr->name().toHtmlEscaped();
+        text += result.module->name().toHtmlEscaped();
         text += "</th>";
     }
     text += "</tr>";
@@ -263,9 +261,9 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += tr("Total hits");
     text += "</th>";
 
-    for (auto const & resultValue : m_results) {
+    for (auto const & result : m_results) {
         text += "<td class=\"r\">";
-        text += QString::number(resultValue.getCount());
+        text += QString::number(result.results.getCount());
         text += "</td>";
     }
 

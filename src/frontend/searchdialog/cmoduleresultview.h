@@ -106,7 +106,7 @@ class CModuleResultView : public QTreeWidget {
 
         QMenu* m_popup;
 
-        CSwordModuleSearch::Results m_results;
+        QHash<CSwordModuleInfo const *, sword::ListKey> m_results;
         QHash<const CSwordModuleInfo*, StrongsResultList*> m_strongsResults;
         QSize m_size;
 };

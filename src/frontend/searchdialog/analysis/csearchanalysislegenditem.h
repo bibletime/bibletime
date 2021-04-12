@@ -13,22 +13,25 @@
 #pragma once
 
 #include <QGraphicsRectItem>
-
-#include "../../../backend/drivers/btmodulelist.h"
+#include "../../../backend/cswordmodulesearch.h"
 
 
 namespace Search {
 
+class CSearchAnalysisScene;
+
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
     public: /* Methods: */
-        CSearchAnalysisLegendItem(BtConstModuleList const & modules)
-            : m_moduleList(modules) {}
+        CSearchAnalysisLegendItem(CSwordModuleSearch::Results const * results)
+            : m_results(results)
+        {}
 
     private: /* Methods: */
         void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
     private: /* Fields: */
-        BtConstModuleList m_moduleList;
+
+        CSwordModuleSearch::Results const * const m_results;
 
 };
 
