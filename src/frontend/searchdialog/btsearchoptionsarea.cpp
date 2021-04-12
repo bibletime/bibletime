@@ -383,10 +383,6 @@ sword::ListKey BtSearchOptionsArea::searchScope() {
     return sword::ListKey();
 }
 
-bool BtSearchOptionsArea::hasSearchScope() {
-    return (searchScope().getCount() > 0);
-}
-
 void BtSearchOptionsArea::addToHistory(const QString& text) {
     m_searchTextCombo->addToHistory(text);
 }

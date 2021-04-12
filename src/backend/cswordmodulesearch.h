@@ -28,118 +28,37 @@
 #pragma GCC diagnostic pop
 
 
-/**
- * CSwordModuleSearch manages the search on Sword modules. It manages the thread(s)
- * and manages the different modules.
-  *
-  * @author The BibleTime team
-  * @version $Id: cswordmodulesearch.h,v 1.34 2006/08/08 19:32:48 joachim Exp $
-  */
+namespace CSwordModuleSearch {
 
-class CSwordModuleSearch: public QObject {
-        Q_OBJECT
-
-    public: /* Types: */
-
-        struct ModuleSearchResult {
-            CSwordModuleInfo const * module;
-            sword::ListKey results;
-        };
-
-        using Results = std::vector<ModuleSearchResult>;
-
-        enum SearchType { /* Values provided for serialization */
-            AndType = 0,
-            OrType = 1,
-            FullType = 2
-        };
-
-    public: /* Methods: */
-        CSwordModuleSearch() : m_foundItems(0u) {}
-
-        /**
-          Sets the text which should be search in the modules.
-          \param[in] text the text to search.
-        */
-        void setSearchedText(QString const & text) { m_searchText = text; }
-
-        /**
-          Set the modules which should be searched.
-          \param[in] modules the modules to search in.
-        */
-        void setModules(BtConstModuleList const & modules) {
-            if (modules.empty())
-                return;
-            BT_ASSERT(unindexedModules(modules).empty());
-            m_searchModules = modules;
-        }
-
-        /**
-          Sets the search scope.
-          \param[in] scope the scope used for the search.
-        */
-        void setSearchScope(const sword::ListKey &scope);
-
-        /**
-          Resets the search scope.
-        */
-        void resetSearchScope() { m_searchScope.clear(); }
-
-        /**
-          \returns the search scope.
-        */
-        const sword::ListKey &searchScope() const {
-            return m_searchScope;
-        }
-
-        /**
-          Starts the search for the search text.
-          \throws on error
-        */
-        void startSearch();
-
-        /**
-          \returns the number of found items in the last search.
-        */
-        size_t foundItems() const { return m_foundItems; }
-
-        /**
-          \returns the results of the search.
-        */
-        const Results &results() const {
-            return m_results;
-        }
-
-        /**
-          \returns the list of unindexed modules in the given list.
-        */
-        static const BtConstModuleList unindexedModules(const BtConstModuleList & modules);
-
-        /**
-        * This function highlights the searched text in the content using the search type given by search flags
-        */
-        static QString highlightSearchedText(const QString& content, const QString& searchedText);
-
-        /**
-          Prepares the search string given by user for a specific search type
-        */
-        static QString prepareSearchText(QString const & orig,
-                                         SearchType const searchType);
-
-    protected:
-        /**
-        * This function breakes the queryString into clucene tokens
-        */
-        static QStringList queryParser(const QString& queryString);
-
-    private: /* Fields: */
-        QString                        m_searchText;
-        sword::ListKey                 m_searchScope;
-        BtConstModuleList              m_searchModules;
-
-        Results                        m_results;
-        size_t                         m_foundItems;
+struct ModuleSearchResult {
+    CSwordModuleInfo const * module;
+    sword::ListKey results;
 };
+
+using Results = std::vector<ModuleSearchResult>;
+
+enum SearchType { /* Values provided for serialization */
+    AndType = 0,
+    OrType = 1,
+    FullType = 2
+};
+
+Results search(QString const & searchText,
+               BtConstModuleList const & modules,
+               sword::ListKey scope);
+
+/**
+* This function highlights the searched text in the content using the search type given by search flags
+*/
+QString highlightSearchedText(QString const & content,
+                              QString const & searchedText);
+
+/**
+  Prepares the search string given by user for a specific search type
+*/
+QString prepareSearchText(QString const & orig, SearchType const searchType);
+
+} // namespace CSwordModuleSearch
 
 QDataStream &operator<<(QDataStream &out, const CSwordModuleSearch::SearchType &searchType);
 QDataStream &operator>>(QDataStream &in, CSwordModuleSearch::SearchType &searchType);

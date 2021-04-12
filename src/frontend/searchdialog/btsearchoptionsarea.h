@@ -69,9 +69,6 @@ class BtSearchOptionsArea : public QWidget {
         */
         sword::ListKey searchScope();
 
-        bool hasSearchScope();
-
-
     protected:
         /**
         * Initializes this page.

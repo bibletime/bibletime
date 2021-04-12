@@ -115,12 +115,15 @@ void CSearchDialog::startSearch() {
     // Insert search text into history list of combobox
     m_searchOptionsArea->addToHistory(originalSearchText);
 
+    auto searchModules = modules();
+
     // Check that we have the indices we need for searching
     /// \warning indexing is some kind of internal optimization, so we leave
     /// modules const, but unconst them here only
     QList<CSwordModuleInfo*> unindexedModules;
-    for (auto const * const m : CSwordModuleSearch::unindexedModules(modules()))
-        unindexedModules.append(const_cast<CSwordModuleInfo*>(m));
+    for (auto const * const m : searchModules)
+        if (!m->hasIndex())
+            unindexedModules.append(const_cast<CSwordModuleInfo*>(m));
 
     if (unindexedModules.size() > 0) {
         // Build the list of module names:
@@ -152,23 +155,17 @@ void CSearchDialog::startSearch() {
         }
     }
 
-    // Set the search options:
-    CSwordModuleSearch searcher;
-    searcher.setSearchedText(searchText);
-    searcher.setModules(modules());
-    if (m_searchOptionsArea->hasSearchScope()) {
-        searcher.setSearchScope(m_searchOptionsArea->searchScope());
-    } else {
-        searcher.resetSearchScope();
-    }
-
     // Disable the dialog:
     setEnabled(false);
     setCursor(Qt::WaitCursor);
 
     // Execute search:
+    CSwordModuleSearch::Results searchResult;
     try {
-        searcher.startSearch();
+        searchResult =
+                CSwordModuleSearch::search(searchText,
+                                           searchModules,
+                                           m_searchOptionsArea->searchScope());
     } catch (...) {
         QString msg;
         try {
@@ -190,8 +187,8 @@ void CSearchDialog::startSearch() {
     }
 
     // Display the search results:
-    if (searcher.foundItems() > 0u) {
-        m_searchResultArea->setSearchResult(searcher.results());
+    if (!searchResult.empty()) {
+        m_searchResultArea->setSearchResult(searchResult);
     } else {
         m_searchResultArea->reset();
     }
