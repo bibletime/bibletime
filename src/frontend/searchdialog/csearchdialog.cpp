@@ -153,12 +153,13 @@ void CSearchDialog::startSearch() {
     }
 
     // Set the search options:
-    m_searcher.setSearchedText(searchText);
-    m_searcher.setModules(modules());
+    CSwordModuleSearch searcher;
+    searcher.setSearchedText(searchText);
+    searcher.setModules(modules());
     if (m_searchOptionsArea->hasSearchScope()) {
-        m_searcher.setSearchScope(m_searchOptionsArea->searchScope());
+        searcher.setSearchScope(m_searchOptionsArea->searchScope());
     } else {
-        m_searcher.resetSearchScope();
+        searcher.resetSearchScope();
     }
 
     // Disable the dialog:
@@ -167,7 +168,7 @@ void CSearchDialog::startSearch() {
 
     // Execute search:
     try {
-        m_searcher.startSearch();
+        searcher.startSearch();
     } catch (...) {
         QString msg;
         try {
@@ -189,8 +190,8 @@ void CSearchDialog::startSearch() {
     }
 
     // Display the search results:
-    if (m_searcher.foundItems() > 0u) {
-        m_searchResultArea->setSearchResult(m_searcher.results());
+    if (searcher.foundItems() > 0u) {
+        m_searchResultArea->setSearchResult(searcher.results());
     } else {
         m_searchResultArea->reset();
     }

@@ -15,7 +15,6 @@
 #include <QDialog>
 
 #include <QString>
-#include "../../backend/cswordmodulesearch.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "btsearchoptionsarea.h"
 
@@ -127,8 +126,6 @@ class CSearchDialog : public QDialog {
         QPushButton* m_closeButton;
         BtSearchResultArea* m_searchResultArea;
         BtSearchOptionsArea* m_searchOptionsArea;
-
-        CSwordModuleSearch m_searcher;
 };
 
 
