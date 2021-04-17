@@ -57,13 +57,6 @@ class CSearchDialog : public QDialog {
         void initView();
 
         /**
-          Sets the list of modules for the search.
-        */
-        void setModules(const BtConstModuleList modules) {
-            m_searchOptionsArea->setModules(modules);
-        }
-
-        /**
           Returns the list of used modules.
         */
         BtConstModuleList modules() const

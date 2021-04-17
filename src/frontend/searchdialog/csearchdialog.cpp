@@ -53,7 +53,7 @@ void CSearchDialog::openDialog(const BtConstModuleList modules,
     m_staticDialog->reset();
 
     if (modules.count()) {
-        m_staticDialog->setModules(modules);
+        m_staticDialog->m_searchOptionsArea->setModules(modules);
     }
     else {
         m_staticDialog->showModulesSelector();
