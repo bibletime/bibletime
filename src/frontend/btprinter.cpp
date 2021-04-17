@@ -19,7 +19,6 @@
 #include "../backend/keys/cswordversekey.h"
 #include "../backend/managers/cdisplaytemplatemgr.h"
 #include "../util/btassert.h"
-#include "bibletime.h"
 
 
 namespace {
