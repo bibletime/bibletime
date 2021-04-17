@@ -14,9 +14,7 @@
 
 #include <memory>
 #include <cassert>
-#ifndef BT_NO_LUCENE
 #include <CLucene.h>
-#endif
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
@@ -225,9 +223,6 @@ QString CSwordModuleInfo::getModuleStandardIndexLocation() const {
 }
 
 bool CSwordModuleInfo::hasIndex() const {
-#ifdef BT_NO_LUCENE
-    return false;
-#else
     { // Is this a directory?
         QFileInfo fi(getModuleStandardIndexLocation());
         if (!fi.isDir())
@@ -256,7 +251,6 @@ bool CSwordModuleInfo::hasIndex() const {
     // Is the index there?
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation()
                                                    .toLatin1().constData());
-#endif
 }
 
 bool CSwordModuleInfo::hasImportantFilterOption() const {
@@ -284,7 +278,6 @@ void CSwordModuleInfo::buildIndex() {
                 { m_cancelIndexing.store(false, std::memory_order_relaxed); });
 #define CANCEL_INDEXING (m_cancelIndexing.load(std::memory_order_relaxed))
 
-#ifndef BT_NO_LUCENE
     try {
         // Without this we don't get strongs, lemmas, etc.
         m_backend.setFilterOptions(btConfig().getFilterOptions());
@@ -522,9 +515,6 @@ void CSwordModuleInfo::buildIndex() {
         deleteIndex();
         throw;
     }
-#else
-    return false;
-#endif
 }
 
 void CSwordModuleInfo::deleteIndex() {
@@ -557,7 +547,6 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     // work around Swords thread insafety for Bibles and Commentaries
     m_module.setKey(CSwordKey::createInstance(this)->asSwordKey());
 
-#ifndef BT_NO_LUCENE
     // do not use any stop words
     static const TCHAR * stop_words[1u]  = { nullptr };
     lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
@@ -604,7 +593,6 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
             results.add(*swKey); // No scope, give me all buffers
         }
     }
-#endif
 
     return results;
 }
