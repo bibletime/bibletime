@@ -17,9 +17,12 @@
 #include "../managers/clanguagemgr.h"
 
 #include <atomic>
+#include <memory>
 #include <QIcon>
 #include <QMetaType>
 #include <QString>
+#include <vector>
+#include "../cswordmodulesearch.h"
 
 
 // CLucene no longer lists the following functions in its headers
@@ -30,6 +33,7 @@ class CSwordBackend;
 class CSwordKey;
 namespace sword {
 class ListKey;
+class SWKey;
 class SWModule;
 class SWVersion;
 } // namespace sword
@@ -263,8 +267,9 @@ wrong, or if the config file was write protected return false.
       \returns the result
       \throws on error
     */
-    sword::ListKey searchIndexed(QString const & searchedText,
-                                 sword::ListKey const & scope) const;
+    CSwordModuleSearch::ModuleResultList
+    searchIndexed(QString const & searchedText,
+                  sword::ListKey const & scope) const;
 
     /**
       \returns the type of the module.

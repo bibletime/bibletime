@@ -26,9 +26,6 @@
 #include "../BtMimeData.h"
 #include "../cexportmanager.h"
 
-// Sword includes
-#include <listkey.h>
-
 
 namespace Search {
 
@@ -147,24 +144,25 @@ void CSearchResultView::initConnections() {
 }
 
 /** Setups the list with the given module. */
-void CSearchResultView::setupTree(const CSwordModuleInfo *m,
-                                  const sword::ListKey & result)
+void CSearchResultView::setupTree(
+        CSwordModuleInfo const * m,
+        CSwordModuleSearch::ModuleResultList const & result)
 {
     clear();
 
     if (!m) return;
 
     m_module = m;
-    const int count = result.getCount();
-    if (!count) return;
+    if (result.empty())
+        return;
 
     setUpdatesEnabled(false);
 
     QTreeWidgetItem* oldItem = nullptr;
     QTreeWidgetItem* item = nullptr;
-    for (int index = 0; index < count; index++) {
+    for (auto const & keyPtr : result) {
         item = new QTreeWidgetItem(this, oldItem);
-        item->setText(0, QString::fromUtf8(result.getElement(index)->getText()));
+        item->setText(0, QString::fromUtf8(keyPtr->getText()));
         oldItem = item;
     }
 

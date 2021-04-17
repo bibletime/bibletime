@@ -531,7 +531,7 @@ size_t CSwordModuleInfo::indexSize() const {
     return DU::getDirSizeRecursive(getModuleBaseIndexLocation());
 }
 
-sword::ListKey
+CSwordModuleSearch::ModuleResultList
 CSwordModuleInfo::searchIndexed(QString const & searchedText,
                                 sword::ListKey const & scope) const
 {
@@ -568,7 +568,7 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     if (vk)
         vk->setIntros(true);
 
-    sword::ListKey results;
+    CSwordModuleSearch::ModuleResultList results;
     for (size_t i = 0; i < h->length(); ++i) {
         doc = &h->doc(i);
         lucene_wcstoutf8(utfBuffer,
@@ -586,11 +586,11 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
                 if (vkey->getLowerBound().compare(*swKey) <= 0
                     && vkey->getUpperBound().compare(*swKey) >= 0)
                 {
-                    results.add(*swKey);
+                    results.emplace_back(swKey->clone());
                 }
             }
-        } else {
-            results.add(*swKey); // No scope, give me all buffers
+        } else { // No scope, give me all buffers
+            results.emplace_back(swKey->clone());
         }
     }
 

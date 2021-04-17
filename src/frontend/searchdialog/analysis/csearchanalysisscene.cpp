@@ -26,9 +26,6 @@
 #include "../../../util/tool.h"
 #include "../csearchdialog.h"
 
-// Sword includes
-#include <listkey.h>
-
 
 namespace Search {
 
@@ -64,7 +61,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
             || (result.module->type() == CSwordModuleInfo::Commentary))
             m_results.emplace_back(result);
 
-    const int numberOfModules = m_results.size();
+    auto const numberOfModules = m_results.size();
     if (!numberOfModules)
         return;
     m_legend = std::make_unique<CSearchAnalysisLegendItem>(&m_results);
@@ -76,16 +73,14 @@ CSearchAnalysisScene::CSearchAnalysisScene(
     int moduleIndex = 0;
     for (auto const & result : m_results) {
         qApp->processEvents(QEventLoop::AllEvents);
-        auto const & moduleResults = result.results;
-        auto const numModuleResults = moduleResults.getCount();
-        for (int i = 0u; i < numModuleResults; ++i) {
+        for (auto const & moduleresultPtr : result.results) {
             /* m_results only contains results from Bibles and
                Commentaries, as filtered above. */
             BT_ASSERT(dynamic_cast<sword::VerseKey const *>(
-                          moduleResults.getElement(i)));
+                          moduleresultPtr.get()));
             auto const * const vk =
                     static_cast<sword::VerseKey const *>(
-                        moduleResults.getElement(i));
+                        moduleresultPtr.get());
             auto key = std::tuple(vk->getTestament(), vk->getBook());
             CSearchAnalysisItem * analysisItem;
             static_assert(std::is_same_v<decltype(key),
@@ -128,7 +123,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(
         for (auto const & result : m_results) {
             auto const * const info = result.module;
 
-            auto const count = result.results.getCount();
+            auto const count = result.results.size();
             double const percent =
                     (info && count)
                     ? ((static_cast<double>(analysisItem.counts()[i])
@@ -263,7 +258,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     for (auto const & result : m_results) {
         text += "<td class=\"r\">";
-        text += QString::number(result.results.getCount());
+        text += QString::number(result.results.size());
         text += "</td>";
     }
 

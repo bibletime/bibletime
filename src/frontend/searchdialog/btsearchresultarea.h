@@ -80,9 +80,9 @@ class StrongsResult {
 */
 class StrongsResultList: public QList<StrongsResult> {
     public: /* Methods: */
-        StrongsResultList(const CSwordModuleInfo *module,
-                          const sword::ListKey &results,
-                          const QString &strongsNumber);
+        StrongsResultList(CSwordModuleInfo const *module,
+                          CSwordModuleSearch::ModuleResultList const & results,
+                          QString const & strongsNumber);
 
     private: /* Methods: */
         QString getStrongsNumberText(const QString &verseContent,
@@ -103,8 +103,7 @@ class BtSearchResultArea : public QWidget {
         /**
         * Sets the modules which contain the result of each.
         */
-        void setSearchResult(
-            const CSwordModuleSearch::Results &results);
+        void setSearchResult(CSwordModuleSearch::Results results);
 
         QSize sizeHint() const override {
             return baseSize();

@@ -17,12 +17,12 @@
 #include <QString>
 #include "../backend/btglobal.h"
 #include "../backend/config/btconfig.h"
+#include "../backend/cswordmodulesearch.h"
 #include "../backend/drivers/btmodulelist.h"
 
 
 class CSwordKey;
 class CSwordModuleInfo;
-class ListKey;
 class QProgressDialog;
 namespace Rendering {
 class CTextRendering;
@@ -51,7 +51,7 @@ public: /* Methods: */
                  bool const addText,
                  const BtConstModuleList& modules);
 
-    bool saveKeyList(sword::ListKey const & list,
+    bool saveKeyList(CSwordModuleSearch::ModuleResultList const & list,
                      CSwordModuleInfo const * const module,
                      Format const format,
                      bool const addText);
@@ -64,7 +64,7 @@ public: /* Methods: */
                  Format const format,
                  bool const addText);
 
-    bool copyKeyList(sword::ListKey const & list,
+    bool copyKeyList(CSwordModuleSearch::ModuleResultList const & list,
                      CSwordModuleInfo const * const module,
                      Format const format,
                      bool const addText);
@@ -90,7 +90,7 @@ public: /* Methods: */
                           DisplayOptions const & displayOptions,
                           FilterOptions const & filterOptions);
 
-    bool printKeyList(sword::ListKey const & list,
+    bool printKeyList(CSwordModuleSearch::ModuleResultList const & list,
                       CSwordModuleInfo const * const module,
                       DisplayOptions const & displayOptions,
                       FilterOptions const & filterOptions);

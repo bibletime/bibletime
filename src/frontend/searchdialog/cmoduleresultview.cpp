@@ -158,8 +158,7 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
         QTreeWidgetItem * const item =
                 new QTreeWidgetItem(this,
                                     QStringList(m->name())
-                                    << QString::number(
-                                        result.results.getCount()));
+                                    << QString::number(result.results.size()));
 
         item->setIcon(0, util::tool::getIconForModule(m));
         /*
@@ -191,10 +190,11 @@ void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
     setRootIsDecorated( strongsAvailable );
 }
 
-void CModuleResultView::setupStrongsResults(const CSwordModuleInfo *module,
-                                            const sword::ListKey &results,
-                                            QTreeWidgetItem *parent,
-                                            const QString &sNumber)
+void CModuleResultView::setupStrongsResults(
+        CSwordModuleInfo const * module,
+        CSwordModuleSearch::ModuleResultList const & results,
+        QTreeWidgetItem * parent,
+        QString const & sNumber)
 {
     StrongsResultList *m = new StrongsResultList(module, results, sNumber);
     m_strongsResults[module] = m;

@@ -61,7 +61,7 @@ class CModuleResultView : public QTreeWidget {
 
 
         void setupStrongsResults(const CSwordModuleInfo *module,
-                                 const sword::ListKey &results,
+                                 CSwordModuleSearch::ModuleResultList const & results,
                                  QTreeWidgetItem *parent,
                                  const QString &searchedText);
 
@@ -76,7 +76,8 @@ class CModuleResultView : public QTreeWidget {
         void contextMenuEvent( QContextMenuEvent * event ) override;
 
     Q_SIGNALS:
-        void moduleSelected(const CSwordModuleInfo*, const sword::ListKey&);
+        void moduleSelected(CSwordModuleInfo const *,
+                            CSwordModuleSearch::ModuleResultList const &);
         void moduleChanged();
         void strongsSelected(CSwordModuleInfo*, const QStringList&);
 
@@ -106,7 +107,8 @@ class CModuleResultView : public QTreeWidget {
 
         QMenu* m_popup;
 
-        QHash<CSwordModuleInfo const *, sword::ListKey> m_results;
+        QHash<CSwordModuleInfo const *, CSwordModuleSearch::ModuleResultList>
+                m_results;
         QHash<const CSwordModuleInfo*, StrongsResultList*> m_strongsResults;
         QSize m_size;
 };

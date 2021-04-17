@@ -118,16 +118,14 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
     loadDialogSettings();
 }
 
-void BtSearchResultArea::setSearchResult(
-        const CSwordModuleSearch::Results &results)
-{
+void BtSearchResultArea::setSearchResult(CSwordModuleSearch::Results results) {
     const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
     reset(); //clear current modules
 
-    m_results = results;
+    m_results = std::move(results);
 
     // Populate listbox:
-    m_moduleListBox->setupTree(results, searchedText);
+    m_moduleListBox->setupTree(m_results, searchedText);
 
     // Pre-select the first module in the list:
     m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
@@ -274,13 +272,14 @@ void BtSearchResultArea::saveDialogSettings() const {
 * StrongsResultList:
 ******************************************************************************/
 
-StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
-                                     const sword::ListKey & result,
-                                     const QString &strongsNumber)
+StrongsResultList::StrongsResultList(
+        CSwordModuleInfo const * module,
+        CSwordModuleSearch::ModuleResultList const & result,
+        QString const & strongsNumber)
 {
     using namespace Rendering;
 
-    int count = result.getCount();
+    auto const count = result.size();
     if (!count)
         return;
 
@@ -301,11 +300,12 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
 
     qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
 
-    for (int index = 0; index < count; index++) {
-        progress.setValue(index);
+    int index = 0;
+    for (auto const & keyPtr : result) {
+        progress.setValue(index++);
         qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
 
-        QString key = QString::fromUtf8(result.getElement(index)->getText());
+        QString key = QString::fromUtf8(keyPtr->getText());
         QString text = CDisplayRendering().renderSingleKey(key, modules, settings);
         for (int sIndex = 0;;) {
             continueloop:

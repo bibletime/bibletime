@@ -14,6 +14,7 @@
 
 #include <QObject>
 
+#include <memory>
 #include <QMetaType>
 #include <vector>
 #include "../util/btassert.h"
@@ -30,9 +31,11 @@
 
 namespace CSwordModuleSearch {
 
+using ModuleResultList = std::vector<std::shared_ptr<sword::SWKey const>>;
+
 struct ModuleSearchResult {
     CSwordModuleInfo const * module;
-    sword::ListKey results;
+    ModuleResultList results;
 };
 
 using Results = std::vector<ModuleSearchResult>;

@@ -101,12 +101,12 @@ bool CExportManager::saveKey(CSwordKey const * const key,
     return true;
 }
 
-bool CExportManager::saveKeyList(sword::ListKey const & l,
+bool CExportManager::saveKeyList(CSwordModuleSearch::ModuleResultList const & l,
                                  CSwordModuleInfo const * module,
                                  Format const format,
                                  bool const addText)
 {
-    if (!l.getCount())
+    if (l.empty())
         return false;
 
     QString const filename = getSaveFileName(format);
@@ -115,20 +115,17 @@ bool CExportManager::saveKeyList(sword::ListKey const & l,
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    setProgressRange(l.getCount());
+    setProgressRange(l.size()); /// \todo check size
     KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
-    sword::ListKey list(l);
-    list.setPosition(sword::TOP);
-    while (!list.popError()) {
+    for (auto const & keyPtr : l) {
         if (progressWasCancelled())
             return false;
-        tree.emplace_back(QString::fromLocal8Bit(list.getText()),
+        tree.emplace_back(QString::fromLocal8Bit(keyPtr->getText()),
                           module,
                           itemSettings);
         incProgress();
-        list.increment();
     }
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
@@ -202,27 +199,24 @@ bool CExportManager::copyKey(CSwordKey const * const key,
     return true;
 }
 
-bool CExportManager::copyKeyList(sword::ListKey const & l,
+bool CExportManager::copyKeyList(CSwordModuleSearch::ModuleResultList const & l,
                                  CSwordModuleInfo const * const module,
                                  Format const format,
                                  bool const addText)
 {
-    sword::ListKey list = l;
-    if (!list.getCount())
+    if (l.empty())
         return false;
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     KTI::Settings itemSettings;
     itemSettings.highlight = false;
 
-    list.setPosition(sword::TOP);
-    while (!list.popError()) {
+    for (auto const & keyPtr : l) {
         if (progressWasCancelled())
             return false;
-        tree.emplace_back(QString::fromLocal8Bit(list.getText()),
+        tree.emplace_back(QString::fromLocal8Bit(keyPtr->getText()),
                           module,
                           itemSettings);
-        list.increment();
     }
 
     copyToClipboard(newRenderer(format, addText)->renderKeyTree(tree));
@@ -344,21 +338,22 @@ bool CExportManager::printByHyperlink(QString const & hyperlink,
     return true;
 }
 
-bool CExportManager::printKeyList(sword::ListKey const & list,
-                                  CSwordModuleInfo const * const module,
-                                  DisplayOptions const & displayOptions,
-                                  FilterOptions const & filterOptions)
+bool CExportManager::printKeyList(
+        CSwordModuleSearch::ModuleResultList const & list,
+        CSwordModuleInfo const * const module,
+        DisplayOptions const & displayOptions,
+        FilterOptions const & filterOptions)
 {
-    if (!list.getCount())
+    if (list.empty())
         return false;
     PrintSettings settings{displayOptions};
     BtPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    setProgressRange(list.getCount());
-    for (int i = 0; i < list.getCount(); i++) {
+    setProgressRange(list.size());
+    for (auto const & keyPtr : list) {
         if (progressWasCancelled())
             return false;
-        sword::SWKey const * const swKey = list.getElement(i);
+        sword::SWKey const * const swKey = keyPtr.get();
         if (sword::VerseKey const * const vKey =
                     dynamic_cast<const sword::VerseKey*>(swKey))
         {

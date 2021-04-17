@@ -188,7 +188,7 @@ void CSearchDialog::startSearch() {
 
     // Display the search results:
     if (!searchResult.empty()) {
-        m_searchResultArea->setSearchResult(searchResult);
+        m_searchResultArea->setSearchResult(std::move(searchResult));
     } else {
         m_searchResultArea->reset();
     }

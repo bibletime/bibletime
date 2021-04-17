@@ -14,12 +14,13 @@
 
 #include <QTreeWidget>
 
+#include "../../backend/cswordmodulesearch.h"
+
 
 class CSwordModuleInfo;
 class CReadDisplay;
 class QAction;
 class QMenu;
-namespace sword { class ListKey; }
 
 namespace Search {
 
@@ -49,7 +50,8 @@ class CSearchResultView  : public QTreeWidget {
         /**
           Setups the list with the given module.
         */
-        void setupTree(const CSwordModuleInfo *m, const sword::ListKey &results);
+        void setupTree(CSwordModuleInfo const * m,
+                       CSwordModuleSearch::ModuleResultList const & results);
 
         void setupStrongsTree(CSwordModuleInfo*, const QStringList&);
 
