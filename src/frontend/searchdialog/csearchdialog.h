@@ -29,7 +29,7 @@ namespace Search {
 /**
   \note destroys itself on close
 */
-class CSearchDialog : public QDialog {
+class CSearchDialog final: public QDialog {
         Q_OBJECT
     public:
         static void openDialog(const BtConstModuleList modules,
@@ -38,7 +38,7 @@ class CSearchDialog : public QDialog {
 
         static void closeDialog();
 
-    protected:
+    private:
 
         friend class CSearchAnalysisScene;
         friend class BtSearchResultArea;
@@ -93,7 +93,7 @@ class CSearchDialog : public QDialog {
         */
         void saveDialogSettings() const;
 
-    protected Q_SLOTS:
+    private Q_SLOTS:
         /**
           Starts the search with the set modules and the set search text.
         */
