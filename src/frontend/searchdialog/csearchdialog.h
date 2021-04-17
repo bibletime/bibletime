@@ -57,12 +57,6 @@ class CSearchDialog : public QDialog {
         void initView();
 
         /**
-          Starts the search with the given module list and given search text.
-        */
-        void startSearch(const BtConstModuleList modules,
-                         const QString &searchText);
-
-        /**
           Sets the list of modules for the search.
         */
         void setModules(const BtConstModuleList modules) {

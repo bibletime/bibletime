@@ -200,17 +200,6 @@ void CSearchDialog::startSearch() {
     setCursor(Qt::ArrowCursor);
 }
 
-void CSearchDialog::startSearch(const BtConstModuleList modules,
-                                const QString &searchText)
-{
-    m_searchResultArea->reset();
-    m_searchOptionsArea->reset();
-    setModules(modules);
-    setSearchText(searchText);
-
-    startSearch();
-}
-
 /** Sets the search text which is used for the search. */
 void CSearchDialog::setSearchText( const QString &searchText ) {
     m_searchOptionsArea->setSearchText(searchText);
