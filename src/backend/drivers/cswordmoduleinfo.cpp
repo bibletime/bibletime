@@ -560,8 +560,6 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     // work around Swords thread insafety for Bibles and Commentaries
     m_module.setKey(CSwordKey::createInstance(this)->asSwordKey());
 
-    QList<sword::VerseKey *> list;
-
 #ifndef BT_NO_LUCENE
     // do not use any stop words
     static const TCHAR * stop_words[1u]  = { nullptr };
@@ -618,9 +616,6 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
         }
     }
 #endif
-
-    qDeleteAll(list);
-    list.clear();
 
     return results;
 }

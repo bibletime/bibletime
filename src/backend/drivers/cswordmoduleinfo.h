@@ -18,7 +18,6 @@
 
 #include <atomic>
 #include <QIcon>
-#include <QList>
 #include <QMetaType>
 #include <QString>
 
