@@ -318,9 +318,6 @@ void CSwordModuleInfo::buildIndex() {
         std::unique_ptr<IW> writer(new IW(index.toLatin1().constData(), &an, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
-#ifndef CLUCENE2
-        writer->setMinMergeDocs(1000);
-#endif
 
         CSwordBibleModuleInfo *bm = qobject_cast<CSwordBibleModuleInfo*>(this);
 
@@ -570,12 +567,8 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
                                                                                      static_cast<const TCHAR *>(_T("content")),
                                                                                      &analyzer));
 
-    std::unique_ptr<lucene::search::Hits> h(searcher.search(q.get(),
-                                                           #ifdef CLUCENE2
-                                                           lucene::search::Sort::INDEXORDER()));
-                                                           #else
-                                                           lucene::search::Sort::INDEXORDER));
-                                                           #endif
+    std::unique_ptr<lucene::search::Hits> h(
+                searcher.search(q.get(), lucene::search::Sort::INDEXORDER()));
 
     const bool useScope = (scope.getCount() > 0);
 
@@ -587,11 +580,7 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
         vk->setIntros(true);
 
     sword::ListKey results;
-#ifdef CLUCENE2
     for (size_t i = 0; i < h->length(); ++i) {
-#else
-    for (int i = 0; i < h->length(); ++i) {
-#endif
         doc = &h->doc(i);
         lucene_wcstoutf8(utfBuffer,
                          static_cast<const wchar_t *>(doc->get(static_cast<const TCHAR *>(_T("key")))),
