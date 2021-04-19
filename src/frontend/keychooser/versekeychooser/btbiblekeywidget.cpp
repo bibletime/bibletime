@@ -50,13 +50,12 @@ class BtLineEdit : public QLineEdit {
 };
 
 
-BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
-                                   CSwordVerseKey *key, QWidget *parent,
-                                   const char *name)
+BtBibleKeyWidget::BtBibleKeyWidget(
+        CSwordBibleModuleInfo const * mod,
+        CSwordVerseKey * key,
+        QWidget * parent)
    : QWidget(parent), m_key(key), m_dropDownHoverTimer(this)
 {
-    Q_UNUSED(name)
-
     auto const slotStep =
             [this](int offset, CSwordVerseKey::JumpType const jumpType) {
                 if (!offset)

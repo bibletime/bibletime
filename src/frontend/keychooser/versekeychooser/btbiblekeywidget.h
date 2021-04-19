@@ -27,9 +27,9 @@ class BtBibleKeyWidget : public QWidget  {
         Q_OBJECT
 
     public:
-        BtBibleKeyWidget(const CSwordBibleModuleInfo *module,
-                         CSwordVerseKey *key, QWidget *parent = nullptr,
-                         const char *name = nullptr);
+        BtBibleKeyWidget(CSwordBibleModuleInfo const * module,
+                         CSwordVerseKey * key,
+                         QWidget * parent = nullptr);
 
         ~BtBibleKeyWidget() override;
         bool setKey(CSwordVerseKey* key);
