@@ -57,44 +57,27 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 {
     Q_UNUSED(name)
 
+    auto const slotStep =
+            [this](int offset, CSwordVerseKey::JumpType const jumpType) {
+                if (offset >= 0) {
+                    for(; offset != 0; offset--)
+                        m_key->next(jumpType);
+                } else {
+                    for(; offset != 0; offset++)
+                        m_key->previous(jumpType);
+                }
+                if (!updatelock)
+                    Q_EMIT changed(m_key);
+            };
     auto const slotStepBook =
-            [this](int offset) {
-                if(offset >= 0)
-                    for(; offset != 0; offset--)
-                        m_key->next(CSwordVerseKey::UseBook);
-                else
-                    for(; offset != 0; offset++)
-                        m_key->previous(CSwordVerseKey::UseBook);
-
-                if (!updatelock)
-                    Q_EMIT changed(m_key);
-            };
-
+            [slotStep](int offset)
+            { slotStep(offset, CSwordVerseKey::UseBook); };
     auto const slotStepChapter =
-            [this](int offset) {
-                if(offset >= 0)
-                    for(; offset != 0; offset--)
-                        m_key->next(CSwordVerseKey::UseChapter);
-                else
-                    for(; offset != 0; offset++)
-                        m_key->previous(CSwordVerseKey::UseChapter);
-
-                if (!updatelock)
-                    Q_EMIT changed(m_key);
-            };
-
+            [slotStep](int offset)
+            { slotStep(offset, CSwordVerseKey::UseChapter); };
     auto const slotStepVerse =
-            [this](int offset) {
-                if(offset >= 0)
-                    for(; offset != 0; offset--)
-                        m_key->next(CSwordVerseKey::UseVerse);
-                else
-                    for(; offset != 0; offset++)
-                        m_key->previous(CSwordVerseKey::UseVerse);
-
-                if (!updatelock)
-                    Q_EMIT changed(m_key);
-            };
+            [slotStep](int offset)
+            { slotStep(offset, CSwordVerseKey::UseVerse); };
 
     updatelock = false;
     m_module = mod;
