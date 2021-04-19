@@ -23,43 +23,23 @@ class BtBibleKeyWidget;
 class BtDropdownChooserButton : public QToolButton {
         Q_OBJECT
     public:
-        template <typename TriggeredFunctor>
-        BtDropdownChooserButton(BtBibleKeyWidget & ref,
-                                TriggeredFunctor && triggeredFunctor);
+        BtDropdownChooserButton(void (BtBibleKeyWidget::*populateMenu)(QMenu &),
+                                BtBibleKeyWidget & parent);
 
         /** The item list is constructed here just before the menu is shown.*/
         void mousePressEvent(QMouseEvent* event) override;
-        /** Recreates the menu list.*/
-        virtual void newList(QMenu & menu,
-                             BtBibleKeyWidget const & keyWidget) = 0;
 
-    protected:
-        BtBibleKeyWidget const & m_ref;
+    protected: /* Methods: */
+
         void wheelEvent(QWheelEvent* event) override;
+
     Q_SIGNALS:
+
         void stepItem(int step);
-};
 
-/** See BtDropdownChooserButton.*/
-class BtBookDropdownChooserButton : public BtDropdownChooserButton {
-        Q_OBJECT
-    public:
-        BtBookDropdownChooserButton(BtBibleKeyWidget & ref);
-        void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
-};
+    private: /* Fields: */
 
-/** See BtDropdownChooserButton.*/
-class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
-        Q_OBJECT
-    public:
-        BtChapterDropdownChooserButton(BtBibleKeyWidget & ref);
-        void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
-};
+        void (BtBibleKeyWidget::*m_populateMenu)(QMenu &);
+        BtBibleKeyWidget & m_parent;
 
-/** See BtDropdownChooserButton.*/
-class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
-        Q_OBJECT
-    public:
-        BtVerseDropdownChooserButton(BtBibleKeyWidget & ref);
-        void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };

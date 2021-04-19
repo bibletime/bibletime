@@ -18,6 +18,7 @@
 #include <QFocusEvent>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QMenu>
 #include <QMouseEvent>
 #include <QPixmap>
 #include <QString>
@@ -99,11 +100,40 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     m_dropDownButtons->setAttribute(Qt::WA_WindowPropagation);
     m_dropDownButtons->setCursor(Qt::ArrowCursor);
     QHBoxLayout *dropDownButtonsLayout(new QHBoxLayout(m_dropDownButtons));
-    dropDownButtonsLayout->addWidget(new BtBookDropdownChooserButton(*this), 2);
-    dropDownButtonsLayout->addWidget(new BtChapterDropdownChooserButton(*this),
-                                     1);
-    dropDownButtonsLayout->addWidget(new BtVerseDropdownChooserButton(*this),
-                                     1);
+
+    auto * const bookChooser =
+            new BtDropdownChooserButton(&BtBibleKeyWidget::populateBookMenu,
+                                        *this);
+    bookChooser->setToolTip(tr("Select book"));
+    BT_CONNECT(bookChooser->menu(), &QMenu::triggered,
+               [this](QAction * const action)
+               { slotChangeBook(action->property("bookname").toString()); });
+    BT_CONNECT(bookChooser, &BtDropdownChooserButton::stepItem,
+               this, &BtBibleKeyWidget::slotStepBook);
+    dropDownButtonsLayout->addWidget(bookChooser, 2);
+
+    auto * const chapterChooser =
+            new BtDropdownChooserButton(&BtBibleKeyWidget::populateChapterMenu,
+                                        *this);
+    chapterChooser->setToolTip(tr("Select chapter"));
+    BT_CONNECT(chapterChooser->menu(), &QMenu::triggered,
+               [this](QAction * const action)
+               { slotChangeChapter(action->property("chapter").toInt()); });
+    BT_CONNECT(chapterChooser, &BtDropdownChooserButton::stepItem,
+               this, &BtBibleKeyWidget::slotStepChapter);
+    dropDownButtonsLayout->addWidget(chapterChooser, 1);
+
+    auto * const verseChooser =
+            new BtDropdownChooserButton(&BtBibleKeyWidget::populateVerseMenu,
+                                        *this);
+    verseChooser->setToolTip(tr("Select verse"));
+    BT_CONNECT(verseChooser->menu(), &QMenu::triggered,
+               [this](QAction * const action)
+               { slotChangeVerse(action->property("verse").toInt()); });
+    BT_CONNECT(verseChooser, &BtDropdownChooserButton::stepItem,
+               this, &BtBibleKeyWidget::slotStepVerse);
+    dropDownButtonsLayout->addWidget(verseChooser, 1);
+
     dropDownButtonsLayout->setContentsMargins(0, 0, 0, 0);
     dropDownButtonsLayout->setSpacing(0);
     m_dropDownButtons->setLayout(dropDownButtonsLayout);
@@ -313,3 +343,20 @@ void BtBibleKeyWidget::slotChangeBook(QString bookname) {
         Q_EMIT changed(m_key);
 }
 
+
+void BtBibleKeyWidget::populateBookMenu(QMenu & menu) {
+    for (auto const & bookname : m_module->books())
+        menu.addAction(bookname)->setProperty("bookname", bookname);
+}
+
+void BtBibleKeyWidget::populateChapterMenu(QMenu & menu) {
+    int count = m_module->chapterCount(m_key->book());
+    for (int i = 1; i <= count; i++)
+        menu.addAction(QString::number(i))->setProperty("chapter", i);
+}
+
+void BtBibleKeyWidget::populateVerseMenu(QMenu & menu) {
+    int count = m_module->verseCount(m_key->bookName(), m_key->chapter());
+    for (int i = 1; i <= count; i++)
+        menu.addAction(QString::number(i))->setProperty("verse", i);
+}

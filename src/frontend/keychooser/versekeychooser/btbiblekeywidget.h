@@ -23,6 +23,7 @@ class BtDropdownChooserButton;
 class CLexiconKeyChooser;
 class CSwordVerseKey;
 class QLineEdit;
+class QMenu;
 
 class BtBibleKeyWidget : public QWidget  {
         Q_OBJECT
@@ -86,6 +87,12 @@ class BtBibleKeyWidget : public QWidget  {
 
     public Q_SLOTS:
         void updateText();
+
+    private: /* Methods: */
+
+        void populateBookMenu(QMenu & menu);
+        void populateChapterMenu(QMenu & menu);
+        void populateVerseMenu(QMenu & menu);
 
     private:
         friend class CLexiconKeyChooser;
