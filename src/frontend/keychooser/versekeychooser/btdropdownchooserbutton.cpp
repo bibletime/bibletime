@@ -69,12 +69,12 @@ BtBookDropdownChooserButton::BtBookDropdownChooserButton(
         BtBibleKeyWidget * const ref)
     : BtDropdownChooserButton(
         ref,
-        [this](QAction * const action)
-        { m_ref->slotChangeBook(action->property("bookname").toString()); })
+        [ref](QAction * const action)
+        { ref->slotChangeBook(action->property("bookname").toString()); })
 {
     setToolTip(tr("Select book"));
     BT_CONNECT(this, &BtDropdownChooserButton::stepItem,
-               m_ref, &BtBibleKeyWidget::slotStepBook);
+               ref, &BtBibleKeyWidget::slotStepBook);
 }
 
 void BtBookDropdownChooserButton::newList(QMenu & menu,
@@ -91,12 +91,12 @@ BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(
         BtBibleKeyWidget * const ref)
     : BtDropdownChooserButton(
         ref,
-        [this](QAction * const action)
-        { m_ref->slotChangeChapter(action->property("chapter").toInt()); })
+        [ref](QAction * const action)
+        { ref->slotChangeChapter(action->property("chapter").toInt()); })
 {
     setToolTip(tr("Select chapter"));
     BT_CONNECT(this, &BtDropdownChooserButton::stepItem,
-               m_ref, &BtBibleKeyWidget::slotStepChapter);
+               ref, &BtBibleKeyWidget::slotStepChapter);
 }
 
 void BtChapterDropdownChooserButton::newList(QMenu & menu,
@@ -114,12 +114,12 @@ BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(
         BtBibleKeyWidget * const ref)
     : BtDropdownChooserButton(
         ref,
-        [this](QAction * const action)
-        { m_ref->slotChangeVerse(action->property("verse").toInt()); })
+        [ref](QAction * const action)
+        { ref->slotChangeVerse(action->property("verse").toInt()); })
 {
     setToolTip(tr("Select verse"));
     BT_CONNECT(this, &BtDropdownChooserButton::stepItem,
-               m_ref, &BtBibleKeyWidget::slotStepVerse);
+               ref, &BtBibleKeyWidget::slotStepVerse);
 }
 
 void BtVerseDropdownChooserButton::newList(QMenu & menu,
