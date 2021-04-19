@@ -61,6 +61,8 @@ public: /* Methods: */
     */
     virtual bool setKey(const char * key) = 0;
 
+    void setLocale(char const * const locale);
+
     /**
       \returns a clone of this object.
     */

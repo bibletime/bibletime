@@ -43,6 +43,9 @@ CSwordKey::~CSwordKey() noexcept {
     delete m_afterChangedSignaller.data();
 }
 
+void CSwordKey::setLocale(char const * const locale)
+{ asSwordKey().setLocale(locale); }
+
 QString CSwordKey::rawText() {
     if (!m_module)
         return QString();
