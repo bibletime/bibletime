@@ -149,8 +149,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                     auto bookname = action->property("bookname").toString();
                     if (m_key->bookName() != bookname) {
                         m_key->setBookName(std::move(bookname));
-                        m_key->emitAfterChanged();
-                        setKey(m_key);
+                        updateText();
                     }
                     if (!updatelock)
                         Q_EMIT changed(m_key);
@@ -167,8 +166,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                    int const n = action->property("chapter").toInt();
                    if (m_key->chapter() != n) {
                        m_key->setChapter(n);
-                       m_key->emitAfterChanged();
-                       setKey(m_key);
+                       updateText();
                    }
                    if (!updatelock)
                        Q_EMIT changed(m_key);
@@ -187,8 +185,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                    int const n = action->property("verse").toInt();
                    if (m_key->verse() != n) {
                        m_key->setVerse(n);
-                       m_key->emitAfterChanged();
-                       setKey(m_key);
+                       updateText();
                    }
                    if (!updatelock)
                        Q_EMIT changed(m_key);
