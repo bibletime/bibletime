@@ -36,7 +36,6 @@
 
 
 CSwordKey::~CSwordKey() noexcept {
-    delete m_beforeChangedSignaller.data();
     delete m_afterChangedSignaller.data();
 }
 
@@ -143,11 +142,6 @@ QString CSwordKey::strippedText() {
     return QString::fromUtf8(m.stripText());
 }
 
-void CSwordKey::emitBeforeChanged() {
-    if (!m_beforeChangedSignaller.isNull())
-        m_beforeChangedSignaller->emitSignal();
-}
-
 void CSwordKey::emitAfterChanged() {
     if (!m_afterChangedSignaller.isNull())
         m_afterChangedSignaller->emitSignal();
@@ -183,13 +177,6 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
             return nullptr;
 
     }
-}
-
-const BtSignal * CSwordKey::beforeChangedSignaller() {
-    if (m_beforeChangedSignaller.isNull())
-        m_beforeChangedSignaller = new BtSignal();
-
-    return m_beforeChangedSignaller;
 }
 
 const BtSignal * CSwordKey::afterChangedSignaller() {

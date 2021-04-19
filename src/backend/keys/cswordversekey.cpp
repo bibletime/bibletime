@@ -72,8 +72,6 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
             static_cast<sword::VerseKey *>(bible->module().getKey())->getVersificationSystem();
     bool inVersification = true;
 
-    emitBeforeChanged();
-
     if (strcmp(m_key.getVersificationSystem(), newVersification)) {
         /// Remap key position to new versification
         sword::VerseKey oldKey(m_key);
@@ -174,8 +172,6 @@ bool CSwordVerseKey::setKey(const QString &newKey) {
 }
 
 bool CSwordVerseKey::setKey(const char *newKey) {
-    emitBeforeChanged();
-
     if(QByteArray(newKey).contains('-')) {
         sword::VerseKey vk(newKey, newKey, m_key.getVersificationSystem());
         m_key.setLowerBound(vk.getLowerBound());
@@ -266,13 +262,11 @@ bool CSwordVerseKey::next( const JumpType type ) {
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != nullptr) {
         if (m_key._compare(bible->lowerBound().m_key) < 0 ) {
-            emitBeforeChanged();
             setKey(bible->lowerBound().m_key);
             ret = false;
         }
 
         if (m_key._compare(bible->upperBound().m_key) > 0 ) {
-            emitBeforeChanged();
             setKey(bible->upperBound().m_key);
             ret = false;
         }
@@ -355,13 +349,11 @@ bool CSwordVerseKey::previous( const JumpType type ) {
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != nullptr) {
         if (m_key._compare(bible->lowerBound().m_key) < 0 ) {
-            emitBeforeChanged();
             setKey(bible->lowerBound().m_key);
             ret = false;
         }
 
         if (m_key._compare(bible->upperBound().m_key) > 0 ) {
-            emitBeforeChanged();
             setKey(bible->upperBound().m_key);
             ret = false;
         }

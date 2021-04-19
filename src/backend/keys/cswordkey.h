@@ -94,7 +94,6 @@ public: /* Methods: */
     */
     QString strippedText();
 
-    const BtSignal * beforeChangedSignaller();
     const BtSignal * afterChangedSignaller();
 
     /**
@@ -105,11 +104,6 @@ public: /* Methods: */
 
     /** Check whether key is valid. Can be invalidated during av11n mapping. */
     bool isValid() const { return m_valid; }
-
-    /**
-      This is called before a key change to emit a signal
-    */
-    void emitBeforeChanged();
 
     /**
       This is called after a key change to emit a signal
@@ -134,7 +128,6 @@ protected: /* Methods: */
 protected: /* Fields: */
 
     const CSwordModuleInfo * m_module;
-    QPointer<BtSignal> m_beforeChangedSignaller;
     QPointer<BtSignal> m_afterChangedSignaller;
 
     bool m_valid;

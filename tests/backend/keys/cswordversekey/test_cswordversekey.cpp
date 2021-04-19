@@ -218,12 +218,10 @@ void test_CSwordVerseKey::setModule() {
     CSwordVerseKey* vKey = dynamic_cast<CSwordVerseKey*>(CSwordKey::createInstance(m_moduleKJV));
     QVERIFY(vKey);
 
-    QSignalSpy beforeSpy(vKey->beforeChangedSignaller(), &BtSignal::signal);
     QSignalSpy afterSpy(vKey->afterChangedSignaller(), &BtSignal::signal);
 
     vKey->setModule(m_moduleKJVA);
 
-    QCOMPARE(beforeSpy.count(), 1);
     QCOMPARE(afterSpy.count(), 1);
 
     const CSwordModuleInfo* module = vKey->module();
