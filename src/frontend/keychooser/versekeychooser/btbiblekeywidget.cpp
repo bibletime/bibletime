@@ -57,6 +57,45 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 {
     Q_UNUSED(name)
 
+    auto const slotStepBook =
+            [this](int offset) {
+                if(offset >= 0)
+                    for(; offset != 0; offset--)
+                        m_key->next(CSwordVerseKey::UseBook);
+                else
+                    for(; offset != 0; offset++)
+                        m_key->previous(CSwordVerseKey::UseBook);
+
+                if (!updatelock)
+                    Q_EMIT changed(m_key);
+            };
+
+    auto const slotStepChapter =
+            [this](int offset) {
+                if(offset >= 0)
+                    for(; offset != 0; offset--)
+                        m_key->next(CSwordVerseKey::UseChapter);
+                else
+                    for(; offset != 0; offset++)
+                        m_key->previous(CSwordVerseKey::UseChapter);
+
+                if (!updatelock)
+                    Q_EMIT changed(m_key);
+            };
+
+    auto const slotStepVerse =
+            [this](int offset) {
+                if(offset >= 0)
+                    for(; offset != 0; offset--)
+                        m_key->next(CSwordVerseKey::UseVerse);
+                else
+                    for(; offset != 0; offset++)
+                        m_key->previous(CSwordVerseKey::UseVerse);
+
+                if (!updatelock)
+                    Q_EMIT changed(m_key);
+            };
+
     updatelock = false;
     m_module = mod;
 
@@ -106,10 +145,17 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                                         *this);
     bookChooser->setToolTip(tr("Select book"));
     BT_CONNECT(bookChooser->menu(), &QMenu::triggered,
-               [this](QAction * const action)
-               { slotChangeBook(action->property("bookname").toString()); });
-    BT_CONNECT(bookChooser, &BtDropdownChooserButton::stepItem,
-               this, &BtBibleKeyWidget::slotStepBook);
+               [this](QAction * const action) {
+                    auto bookname = action->property("bookname").toString();
+                    if (m_key->bookName() != bookname) {
+                        m_key->setBookName(std::move(bookname));
+                        m_key->emitAfterChanged();
+                        setKey(m_key);
+                    }
+                    if (!updatelock)
+                        Q_EMIT changed(m_key);
+               });
+    BT_CONNECT(bookChooser, &BtDropdownChooserButton::stepItem, slotStepBook);
     dropDownButtonsLayout->addWidget(bookChooser, 2);
 
     auto * const chapterChooser =
@@ -117,10 +163,19 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                                         *this);
     chapterChooser->setToolTip(tr("Select chapter"));
     BT_CONNECT(chapterChooser->menu(), &QMenu::triggered,
-               [this](QAction * const action)
-               { slotChangeChapter(action->property("chapter").toInt()); });
-    BT_CONNECT(chapterChooser, &BtDropdownChooserButton::stepItem,
-               this, &BtBibleKeyWidget::slotStepChapter);
+               [this](QAction * const action) {
+                   int const n = action->property("chapter").toInt();
+                   if (m_key->chapter() != n) {
+                       m_key->setChapter(n);
+                       m_key->emitAfterChanged();
+                       setKey(m_key);
+                   }
+                   if (!updatelock)
+                       Q_EMIT changed(m_key);
+               });
+    BT_CONNECT(chapterChooser,
+               &BtDropdownChooserButton::stepItem,
+               slotStepChapter);
     dropDownButtonsLayout->addWidget(chapterChooser, 1);
 
     auto * const verseChooser =
@@ -128,10 +183,17 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                                         *this);
     verseChooser->setToolTip(tr("Select verse"));
     BT_CONNECT(verseChooser->menu(), &QMenu::triggered,
-               [this](QAction * const action)
-               { slotChangeVerse(action->property("verse").toInt()); });
-    BT_CONNECT(verseChooser, &BtDropdownChooserButton::stepItem,
-               this, &BtBibleKeyWidget::slotStepVerse);
+               [this](QAction * const action) {
+                   int const n = action->property("verse").toInt();
+                   if (m_key->verse() != n) {
+                       m_key->setVerse(n);
+                       m_key->emitAfterChanged();
+                       setKey(m_key);
+                   }
+                   if (!updatelock)
+                       Q_EMIT changed(m_key);
+               });
+    BT_CONNECT(verseChooser, &BtDropdownChooserButton::stepItem, slotStepVerse);
     dropDownButtonsLayout->addWidget(verseChooser, 1);
 
     dropDownButtonsLayout->setContentsMargins(0, 0, 0, 0);
@@ -165,11 +227,11 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 
     // signals and slots connections
     auto const initScrollerConnections =
-            [this](CScrollerWidgetSet & scroller,
-                   void (BtBibleKeyWidget::*stepFunction)(int))
+            [this](CScrollerWidgetSet & scroller, auto stepFunction)
             {
-                BT_CONNECT(&scroller, &CScrollerWidgetSet::change,
-                           this, stepFunction);
+                BT_CONNECT(&scroller,
+                           &CScrollerWidgetSet::change,
+                           stepFunction);
                 BT_CONNECT(&scroller, &CScrollerWidgetSet::scroller_pressed,
                            [this]{
                                updatelock = true;
@@ -182,10 +244,9 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                                    Q_EMIT changed(m_key);
                            });
             };
-    initScrollerConnections(*m_bookScroller, &BtBibleKeyWidget::slotStepBook);
-    initScrollerConnections(*m_chapterScroller,
-                            &BtBibleKeyWidget::slotStepChapter);
-    initScrollerConnections(*m_verseScroller, &BtBibleKeyWidget::slotStepVerse);
+    initScrollerConnections(*m_bookScroller, slotStepBook);
+    initScrollerConnections(*m_chapterScroller, slotStepChapter);
+    initScrollerConnections(*m_verseScroller, slotStepVerse);
 
     BT_CONNECT(m_textbox, &QLineEdit::returnPressed,
                [this]{
@@ -275,74 +336,6 @@ bool BtBibleKeyWidget::setKey(CSwordVerseKey *key) {
     m_key->setKey(key->key());
     return true;
 }
-
-void BtBibleKeyWidget::slotStepBook(int offset) {
-    if(offset >= 0)
-        for(; offset != 0; offset--)
-            m_key->next( CSwordVerseKey::UseBook );
-    else
-        for(; offset != 0; offset++)
-            m_key->previous( CSwordVerseKey::UseBook );
-
-    if (!updatelock)
-        Q_EMIT changed(m_key);
-}
-
-void BtBibleKeyWidget::slotStepChapter(int offset) {
-    if(offset >= 0)
-        for(; offset != 0; offset--)
-            m_key->next( CSwordVerseKey::UseChapter );
-    else
-        for(; offset != 0; offset++)
-            m_key->previous( CSwordVerseKey::UseChapter );
-
-    if (!updatelock)
-        Q_EMIT changed(m_key);
-}
-
-void BtBibleKeyWidget::slotStepVerse(int offset) {
-    if(offset >= 0)
-        for(; offset != 0; offset--)
-            m_key->next( CSwordVerseKey::UseVerse );
-    else
-        for(; offset != 0; offset++)
-            m_key->previous( CSwordVerseKey::UseVerse );
-
-    if (!updatelock)
-        Q_EMIT changed(m_key);
-}
-
-
-void BtBibleKeyWidget::slotChangeVerse(int n) {
-    if (m_key->verse() != n) {
-        m_key->setVerse(n);
-        m_key->emitAfterChanged();
-        setKey( m_key );
-    }
-    if (!updatelock)
-        Q_EMIT changed(m_key);
-}
-
-void BtBibleKeyWidget::slotChangeChapter(int n) {
-    if (m_key->chapter() != n) {
-        m_key->setChapter(n);
-        m_key->emitAfterChanged();
-        setKey( m_key );
-    }
-    if (!updatelock)
-        Q_EMIT changed(m_key);
-}
-
-void BtBibleKeyWidget::slotChangeBook(QString bookname) {
-    if (m_key->bookName() != bookname) {
-        m_key->setBookName(bookname);
-        m_key->emitAfterChanged();
-        setKey( m_key );
-    }
-    if (!updatelock)
-        Q_EMIT changed(m_key);
-}
-
 
 void BtBibleKeyWidget::populateBookMenu(QMenu & menu) {
     for (auto const & bookname : m_module->books())
