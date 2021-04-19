@@ -111,23 +111,23 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                    m_textbox->setFocus();
                });
 
-    m_bookScroller = new CScrollerWidgetSet(this);
+    auto * const bookScroller = new CScrollerWidgetSet(this);
 
     m_textbox = new BtLineEdit( this );
     setFocusProxy(m_textbox);
     m_textbox->setContentsMargins(0, 0, 0, 0);
 
-    m_chapterScroller = new CScrollerWidgetSet(this);
-    m_verseScroller = new CScrollerWidgetSet(this);
+    auto * const chapterScroller = new CScrollerWidgetSet(this);
+    auto * const verseScroller = new CScrollerWidgetSet(this);
 
     QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
     m_mainLayout->setContentsMargins(0, 0, 0, 0);
     m_mainLayout->setSpacing(0);
     m_mainLayout->addWidget(clearRef);
-    m_mainLayout->addWidget(m_bookScroller);
+    m_mainLayout->addWidget(bookScroller);
     m_mainLayout->addWidget(m_textbox);
-    m_mainLayout->addWidget(m_chapterScroller);
-    m_mainLayout->addWidget(m_verseScroller);
+    m_mainLayout->addWidget(chapterScroller);
+    m_mainLayout->addWidget(verseScroller);
 
 
     setTabOrder(m_textbox, nullptr);
@@ -206,17 +206,17 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                m_dropDownButtons, &QWidget::hide);
 
     QString scrollButtonToolTip(tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."));
-    m_bookScroller->setToolTips(
+    bookScroller->setToolTips(
         tr("Next book"),
         scrollButtonToolTip,
         tr("Previous book")
     );
-    m_chapterScroller->setToolTips(
+    chapterScroller->setToolTips(
         tr("Next chapter"),
         scrollButtonToolTip,
         tr("Previous chapter")
     );
-    m_verseScroller->setToolTips(
+    verseScroller->setToolTips(
         tr("Next verse"),
         scrollButtonToolTip,
         tr("Previous verse")
@@ -241,9 +241,9 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
                                    Q_EMIT changed(m_key);
                            });
             };
-    initScrollerConnections(*m_bookScroller, slotStepBook);
-    initScrollerConnections(*m_chapterScroller, slotStepChapter);
-    initScrollerConnections(*m_verseScroller, slotStepVerse);
+    initScrollerConnections(*bookScroller, slotStepBook);
+    initScrollerConnections(*chapterScroller, slotStepChapter);
+    initScrollerConnections(*verseScroller, slotStepVerse);
 
     BT_CONNECT(m_textbox, &QLineEdit::returnPressed,
                [this]{

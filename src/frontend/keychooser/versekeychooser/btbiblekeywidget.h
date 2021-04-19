@@ -16,7 +16,6 @@
 
 #include <QTimer>
 #include "../../../backend/drivers/cswordbiblemoduleinfo.h"
-#include "../cscrollerwidgetset.h"
 
 
 class CLexiconKeyChooser;
@@ -60,10 +59,6 @@ class BtBibleKeyWidget : public QWidget  {
         CSwordVerseKey *m_key;
 
         QLineEdit* m_textbox;
-
-        CScrollerWidgetSet *m_bookScroller;
-        CScrollerWidgetSet *m_chapterScroller;
-        CScrollerWidgetSet *m_verseScroller;
 
         QWidget *m_dropDownButtons;
         QTimer m_dropDownHoverTimer;
