@@ -104,9 +104,6 @@ class BtBibleKeyWidget : public QWidget  {
 
         QWidget *m_dropDownButtons;
         QTimer m_dropDownHoverTimer;
-        BtDropdownChooserButton* m_bookDropdownButton;
-        BtDropdownChooserButton* m_chapterDropdownButton;
-        BtDropdownChooserButton* m_verseDropdownButton;
 
         bool updatelock;
         QString oldKey;

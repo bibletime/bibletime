@@ -99,12 +99,11 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     m_dropDownButtons->setAttribute(Qt::WA_WindowPropagation);
     m_dropDownButtons->setCursor(Qt::ArrowCursor);
     QHBoxLayout *dropDownButtonsLayout(new QHBoxLayout(m_dropDownButtons));
-    m_bookDropdownButton = new BtBookDropdownChooserButton(*this);
-    dropDownButtonsLayout->addWidget(m_bookDropdownButton, 2);
-    m_chapterDropdownButton = new BtChapterDropdownChooserButton(*this);
-    dropDownButtonsLayout->addWidget(m_chapterDropdownButton, 1);
-    m_verseDropdownButton = new BtVerseDropdownChooserButton(*this);
-    dropDownButtonsLayout->addWidget(m_verseDropdownButton, 1);
+    dropDownButtonsLayout->addWidget(new BtBookDropdownChooserButton(*this), 2);
+    dropDownButtonsLayout->addWidget(new BtChapterDropdownChooserButton(*this),
+                                     1);
+    dropDownButtonsLayout->addWidget(new BtVerseDropdownChooserButton(*this),
+                                     1);
     dropDownButtonsLayout->setContentsMargins(0, 0, 0, 0);
     dropDownButtonsLayout->setSpacing(0);
     m_dropDownButtons->setLayout(dropDownButtonsLayout);
