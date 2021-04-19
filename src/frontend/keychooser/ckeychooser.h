@@ -51,19 +51,11 @@ public: /* Methods: */
                                         CSwordKey * key,
                                         QWidget * parent);
 
-public Q_SLOTS:
-
     /**
       Sets the CKey
       \param key the key which the widget should be set to.
     */
     virtual void setKey(CSwordKey * key) = 0;
-
-    /**
-      Updates the CKey.
-      \param key the key which the widget should be set to.
-    */
-    virtual void updateKey(CSwordKey * key) = 0;
 
     /**
       \returns the current CKey.
@@ -80,6 +72,15 @@ public Q_SLOTS:
       Refreshes the content of the different key chooser parts.
     */
     virtual void refreshContent() = 0;
+
+public Q_SLOTS:
+
+    /**
+      Updates the CKey.
+      \param key the key which the widget should be set to.
+    */
+    virtual void updateKey(CSwordKey * key) = 0;
+
 
 Q_SIGNALS:
 

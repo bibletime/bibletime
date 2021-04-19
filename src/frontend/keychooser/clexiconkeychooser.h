@@ -33,7 +33,7 @@ public: /* Methods: */
                        CSwordKey * key = nullptr,
                        QWidget * parent = nullptr);
 
-public Q_SLOTS:
+public: /* Methods: */
 
     CSwordKey * key() final override;
 

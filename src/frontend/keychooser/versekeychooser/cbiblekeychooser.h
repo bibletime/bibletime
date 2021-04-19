@@ -35,8 +35,6 @@ public: /* Methods: */
                      CSwordKey * key = nullptr,
                      QWidget * parent = nullptr);
 
-public Q_SLOTS:
-
     CSwordKey * key() final override;
 
     void setKey(CSwordKey * key) final override;
@@ -44,8 +42,11 @@ public Q_SLOTS:
     void setModules(BtConstModuleList const & modules,
                     bool refresh = true) final override;
 
-    void updateKey(CSwordKey * key) final override;
     void refreshContent() final override;
+
+public Q_SLOTS:
+
+    void updateKey(CSwordKey * key) final override;
 
 private: /* Methods: */
 
