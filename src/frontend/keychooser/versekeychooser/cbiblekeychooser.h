@@ -44,9 +44,6 @@ public Q_SLOTS:
     void setModules(BtConstModuleList const & modules,
                     bool refresh = true) final override;
 
-    /** \brief used to do actions after key changes. */
-    void refChanged(CSwordVerseKey * key);
-
     void updateKey(CSwordKey * key) final override;
     void refreshContent() final override;
 

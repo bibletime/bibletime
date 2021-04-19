@@ -52,7 +52,19 @@ CBibleKeyChooser::CBibleKeyChooser(const BtConstModuleList & modules,
     layout->addWidget(w_ref);
 
     BT_CONNECT(w_ref, &BtBibleKeyWidget::changed,
-               this, &CBibleKeyChooser::refChanged);
+               [this](CSwordVerseKey * key) {
+                   BT_ASSERT(m_key);
+                   BT_ASSERT(key);
+
+                   if (!updatesEnabled())
+                       return;
+
+                   setUpdatesEnabled(false);
+                   m_key = key;
+                   Q_EMIT keyChanged(m_key);
+
+                   setUpdatesEnabled(true);
+               });
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
@@ -70,20 +82,6 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
     m_key = dynamic_cast<CSwordVerseKey*>(key);
     w_ref->setKey(m_key);
     Q_EMIT keyChanged(m_key);
-}
-
-void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
-    BT_ASSERT(m_key);
-    BT_ASSERT(key);
-
-    if (!updatesEnabled())
-        return;
-
-    setUpdatesEnabled(false);
-    m_key = key;
-    Q_EMIT keyChanged(m_key);
-
-    setUpdatesEnabled(true);
 }
 
 void CBibleKeyChooser::setModules(const BtConstModuleList &modules,
