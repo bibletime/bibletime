@@ -30,11 +30,9 @@ class BtDropdownChooserButton : public QToolButton {
         /** The item list is constructed here just before the menu is shown.*/
         void mousePressEvent(QMouseEvent* event) override;
         /** Recreates the menu list.*/
-        virtual void newList() = 0;
-        /** Returns the verse reference widget which this button belongs to.*/
-        BtBibleKeyWidget* ref() {
-            return m_ref;
-        }
+        virtual void newList(QMenu & menu,
+                             BtBibleKeyWidget const & keyWidget) = 0;
+
     protected:
         BtBibleKeyWidget* m_ref;
         void wheelEvent(QWheelEvent* event) override;
@@ -47,7 +45,7 @@ class BtBookDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtBookDropdownChooserButton(BtBibleKeyWidget* ref);
-        void newList() override;
+        void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };
 
 /** See BtDropdownChooserButton.*/
@@ -55,7 +53,7 @@ class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtChapterDropdownChooserButton(BtBibleKeyWidget* ref);
-        void newList() override;
+        void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };
 
 /** See BtDropdownChooserButton.*/
@@ -63,5 +61,5 @@ class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
-        void newList() override;
+        void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };

@@ -47,7 +47,7 @@ BtDropdownChooserButton::BtDropdownChooserButton(
 void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e) {
     //recreate the menu
     menu()->clear();
-    this->newList();
+    newList(*menu(), *m_ref);
 
     QToolButton::mousePressEvent(e);
 }
@@ -77,10 +77,11 @@ BtBookDropdownChooserButton::BtBookDropdownChooserButton(
                m_ref, &BtBibleKeyWidget::slotStepBook);
 }
 
-void BtBookDropdownChooserButton::newList() {
-    QMenu* m = menu();
-    for (auto const & bookname : ref()->m_module->books())
-        m->addAction(bookname)->setProperty("bookname", bookname);
+void BtBookDropdownChooserButton::newList(QMenu & menu,
+                                          BtBibleKeyWidget const & keyWidget)
+{
+    for (auto const & bookname : keyWidget.m_module->books())
+        menu.addAction(bookname)->setProperty("bookname", bookname);
 }
 
 
@@ -98,11 +99,12 @@ BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(
                m_ref, &BtBibleKeyWidget::slotStepChapter);
 }
 
-void BtChapterDropdownChooserButton::newList() {
-    QMenu* m = menu();
-    int count = ref()->m_module->chapterCount(ref()->m_key->book());
+void BtChapterDropdownChooserButton::newList(QMenu & menu,
+                                             BtBibleKeyWidget const & kw)
+{
+    int count = kw.m_module->chapterCount(kw.m_key->book());
     for (int i = 1; i <= count; i++)
-        m->addAction(QString::number(i))->setProperty("chapter", i);
+        menu.addAction(QString::number(i))->setProperty("chapter", i);
 }
 
 
@@ -120,9 +122,10 @@ BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(
                m_ref, &BtBibleKeyWidget::slotStepVerse);
 }
 
-void BtVerseDropdownChooserButton::newList() {
-    QMenu* m = menu();
-    int count = ref()->m_module->verseCount(ref()->m_key->bookName(), ref()->m_key->chapter());
+void BtVerseDropdownChooserButton::newList(QMenu & menu,
+                                           BtBibleKeyWidget const & kw)
+{
+    int count = kw.m_module->verseCount(kw.m_key->bookName(), kw.m_key->chapter());
     for (int i = 1; i <= count; i++)
-        m->addAction(QString::number(i))->setProperty("verse", i);
+        menu.addAction(QString::number(i))->setProperty("verse", i);
 }
