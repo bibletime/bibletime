@@ -24,7 +24,7 @@ class BtDropdownChooserButton : public QToolButton {
         Q_OBJECT
     public:
         template <typename TriggeredFunctor>
-        BtDropdownChooserButton(BtBibleKeyWidget * ref,
+        BtDropdownChooserButton(BtBibleKeyWidget & ref,
                                 TriggeredFunctor && triggeredFunctor);
 
         /** The item list is constructed here just before the menu is shown.*/
@@ -34,7 +34,7 @@ class BtDropdownChooserButton : public QToolButton {
                              BtBibleKeyWidget const & keyWidget) = 0;
 
     protected:
-        BtBibleKeyWidget* m_ref;
+        BtBibleKeyWidget const & m_ref;
         void wheelEvent(QWheelEvent* event) override;
     Q_SIGNALS:
         void stepItem(int step);
@@ -44,7 +44,7 @@ class BtDropdownChooserButton : public QToolButton {
 class BtBookDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
-        BtBookDropdownChooserButton(BtBibleKeyWidget* ref);
+        BtBookDropdownChooserButton(BtBibleKeyWidget & ref);
         void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };
 
@@ -52,7 +52,7 @@ class BtBookDropdownChooserButton : public BtDropdownChooserButton {
 class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
-        BtChapterDropdownChooserButton(BtBibleKeyWidget* ref);
+        BtChapterDropdownChooserButton(BtBibleKeyWidget & ref);
         void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };
 
@@ -60,6 +60,6 @@ class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
 class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
-        BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
+        BtVerseDropdownChooserButton(BtBibleKeyWidget & ref);
         void newList(QMenu & menu, BtBibleKeyWidget const & keyWidget) override;
 };
