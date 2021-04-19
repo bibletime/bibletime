@@ -179,13 +179,12 @@ void CDisplayWindow::storeProfileSettings(BtConfigCore & conf) const {
     // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
 
     // Save current key:
-    if (CSwordKey * const k = m_swordKey) {
-        if (sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(k)) {
+    if (auto const * const k = m_swordKey) {
+        if (auto const * const vk = dynamic_cast<CSwordVerseKey const *>(k)) {
             // Save keys in english only:
-            const QString oldLang = QString::fromLatin1(vk->getLocale());
-            vk->setLocale("en");
-            conf.setValue("key", k->key());
-            vk->setLocale(oldLang.toLatin1());
+            std::unique_ptr<CSwordVerseKey> const clone(vk->copy());
+            clone->setLocale("en");
+            conf.setValue("key", clone->key());
         } else {
             conf.setValue("key", k->key());
         }
