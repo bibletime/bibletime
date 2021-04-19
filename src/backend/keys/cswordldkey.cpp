@@ -43,6 +43,8 @@ CSwordLDKey::CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module)
     , m_key(*k)
 {}
 
+sword::SWKey & CSwordLDKey::asSwordKey() noexcept { return m_key; }
+
 sword::SWKey const & CSwordLDKey::asSwordKey() const noexcept { return m_key; }
 
 /** Clones this object by copying the members. */

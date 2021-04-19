@@ -39,6 +39,9 @@ public: /* Methods: */
     CSwordKey & operator=(CSwordKey const &) = delete;
 
     /** \returns a reference to this object as a sword::SWKey. */
+    virtual sword::SWKey & asSwordKey() noexcept = 0;
+
+    /** \returns a reference to this object as a sword::SWKey. */
     virtual sword::SWKey const & asSwordKey() const noexcept = 0;
 
     /**

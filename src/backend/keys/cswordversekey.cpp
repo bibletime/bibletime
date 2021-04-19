@@ -52,6 +52,8 @@ CSwordVerseKey::CSwordVerseKey(sword::VerseKey const * k,
     , m_key(*k)
 {}
 
+sword::SWKey & CSwordVerseKey::asSwordKey() noexcept { return m_key; }
+
 sword::SWKey const & CSwordVerseKey::asSwordKey() const noexcept
 { return m_key; }
 
