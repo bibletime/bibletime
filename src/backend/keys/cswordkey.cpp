@@ -14,7 +14,6 @@
 
 #include <QRegExp>
 #include <QString>
-#include <QTextCodec>
 #include <string>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -35,8 +34,6 @@
 #include <versekey.h>
 #pragma GCC diagnostic pop
 
-
-const QTextCodec * CSwordKey::m_cp1252Codec = QTextCodec::codecForName("Windows-1252");
 
 CSwordKey::~CSwordKey() noexcept {
     delete m_beforeChangedSignaller.data();

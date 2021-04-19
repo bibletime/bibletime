@@ -15,6 +15,7 @@
 #include <QDebug>
 #include <QTextCodec>
 #include "../../util/btassert.h"
+#include "../../util/cp1252.h"
 #include "../drivers/cswordbookmoduleinfo.h"
 
 
@@ -44,7 +45,7 @@ QString CSwordTreeKey::key() const {
         return QString::fromUtf8(m_key.getText());
     }
     else {
-        return cp1252Codec()->toUnicode(m_key.getText());
+        return util::cp1252().toUnicode(m_key.getText());
     }
 }
 
@@ -58,7 +59,7 @@ bool CSwordTreeKey::setKey(const QString &newKey) {
         return setKey(newKey.toUtf8().constData());
     }
     else {
-        return setKey(cp1252Codec()->fromUnicode(newKey).constData());
+        return setKey(util::cp1252().fromUnicode(newKey).constData());
     }
 }
 
@@ -83,7 +84,7 @@ QString CSwordTreeKey::getLocalNameUnicode() {
         return QString::fromUtf8(m_key.getLocalName());
     }
     else {
-        return cp1252Codec()->toUnicode(m_key.getLocalName());
+        return util::cp1252().toUnicode(m_key.getLocalName());
     }
 }
 

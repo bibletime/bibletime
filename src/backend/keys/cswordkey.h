@@ -18,7 +18,6 @@
 
 
 class CSwordModuleInfo;
-class QTextCodec;
 namespace sword { class SWKey; }
 
 /** Base class for all Sword based keys. */
@@ -132,11 +131,8 @@ protected: /* Methods: */
     */
     virtual const char * rawKey() const = 0;
 
-    static QTextCodec const * cp1252Codec() { return m_cp1252Codec; }
-
 protected: /* Fields: */
 
-    static const QTextCodec * m_cp1252Codec;
     const CSwordModuleInfo * m_module;
     QPointer<BtSignal> m_beforeChangedSignaller;
     QPointer<BtSignal> m_afterChangedSignaller;
