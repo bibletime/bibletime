@@ -59,12 +59,16 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 
     auto const slotStep =
             [this](int offset, CSwordVerseKey::JumpType const jumpType) {
-                if (offset >= 0) {
-                    for(; offset != 0; offset--)
+                if (!offset)
+                    return;
+                if (offset > 0) {
+                    do {
                         m_key->next(jumpType);
+                    } while (--offset);
                 } else {
-                    for(; offset != 0; offset++)
+                    do {
                         m_key->previous(jumpType);
+                    } while (++offset);
                 }
                 if (!updatelock)
                     Q_EMIT changed(m_key);
