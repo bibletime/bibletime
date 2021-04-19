@@ -102,7 +102,6 @@ class CSwordVerseKey final : public CSwordKey {
         CSwordVerseKey(const sword::VerseKey *k,
                        const CSwordModuleInfo *module);
 
-        sword::SWKey & asSwordKey() noexcept final override;
         sword::SWKey const & asSwordKey() const noexcept final override;
 
         CSwordVerseKey * copy() const final override;

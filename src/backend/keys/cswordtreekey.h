@@ -66,7 +66,6 @@ class CSwordTreeKey final : public CSwordKey {
 
         CSwordTreeKey( const CSwordTreeKey& k );
 
-        sword::TreeKeyIdx & asSwordKey() noexcept final override;
         sword::TreeKeyIdx const & asSwordKey() const noexcept final override;
 
         void setModule(const CSwordModuleInfo *newModule) final override;

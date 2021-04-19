@@ -45,9 +45,6 @@ CSwordKey::~CSwordKey() noexcept {
 
 QString CSwordKey::normalizedKey() const { return key(); }
 
-void CSwordKey::setLocale(char const * const locale)
-{ asSwordKey().setLocale(locale); }
-
 QString CSwordKey::rawText() {
     if (!m_module)
         return QString();

@@ -39,9 +39,6 @@ public: /* Methods: */
     CSwordKey & operator=(CSwordKey const &) = delete;
 
     /** \returns a reference to this object as a sword::SWKey. */
-    virtual sword::SWKey & asSwordKey() noexcept = 0;
-
-    /** \returns a reference to this object as a sword::SWKey. */
     virtual sword::SWKey const & asSwordKey() const noexcept = 0;
 
     /**
@@ -63,8 +60,6 @@ public: /* Methods: */
       \param[in] key The key which should be used to set the current one.
     */
     virtual bool setKey(const char * key) = 0;
-
-    void setLocale(char const * const locale);
 
     /**
       \returns a clone of this object.

@@ -29,8 +29,6 @@ CSwordTreeKey::CSwordTreeKey(sword::TreeKeyIdx const * k,
     , m_key(*k)
 {}
 
-sword::TreeKeyIdx & CSwordTreeKey::asSwordKey() noexcept { return m_key; }
-
 sword::TreeKeyIdx const & CSwordTreeKey::asSwordKey() const noexcept
 { return m_key; }
 

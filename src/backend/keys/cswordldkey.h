@@ -73,7 +73,6 @@ class CSwordLDKey final : public CSwordKey {
         */
         CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module);
 
-        sword::SWKey & asSwordKey() noexcept final override;
         sword::SWKey const & asSwordKey() const noexcept final override;
 
         CSwordLDKey* copy() const final override;
