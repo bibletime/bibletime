@@ -14,6 +14,7 @@
 
 #include <QDebug>
 #include <QStringList>
+#include <string_view>
 #include "../../util/btassert.h"
 #include "../drivers/cswordbiblemoduleinfo.h"
 #include "../drivers/cswordcommentarymoduleinfo.h"
@@ -156,6 +157,16 @@ QString CSwordVerseKey::key() const {
     return QString::fromUtf8(m_key.isBoundSet()
                              ? m_key.getRangeText()
                              : m_key.getText());
+}
+
+QString CSwordVerseKey::normalizedKey() const {
+    if (m_key.getLocale() == std::string_view("en"))
+        return key();
+    sword::VerseKey clone(m_key);
+    clone.setLocale("en");
+    return QString::fromUtf8(clone.isBoundSet()
+                             ? clone.getRangeText()
+                             : clone.getText());
 }
 
 const char * CSwordVerseKey::rawKey() const { return m_key.getText(); }

@@ -49,6 +49,9 @@ public: /* Methods: */
     */
     virtual QString key() const = 0;
 
+    /// \returns the normalized (English) key.
+    virtual QString normalizedKey() const;
+
     /**
       Sets the current key using a utf8 enabled QString.
       \param[in] key The key which should be used to set the current one.

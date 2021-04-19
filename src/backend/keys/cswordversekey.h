@@ -108,6 +108,7 @@ class CSwordVerseKey final : public CSwordKey {
         CSwordVerseKey * copy() const final override;
 
         QString key() const final override;
+        QString normalizedKey() const final override;
 
         bool setKey(const QString &key) final override;
 

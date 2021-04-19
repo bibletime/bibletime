@@ -43,6 +43,8 @@ CSwordKey::~CSwordKey() noexcept {
     delete m_afterChangedSignaller.data();
 }
 
+QString CSwordKey::normalizedKey() const { return key(); }
+
 void CSwordKey::setLocale(char const * const locale)
 { asSwordKey().setLocale(locale); }
 
