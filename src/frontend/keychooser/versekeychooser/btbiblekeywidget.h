@@ -19,7 +19,6 @@
 #include "../cscrollerwidgetset.h"
 
 
-class BtDropdownChooserButton;
 class CLexiconKeyChooser;
 class CSwordVerseKey;
 class QLineEdit;
@@ -57,11 +56,6 @@ class BtBibleKeyWidget : public QWidget  {
         void populateVerseMenu(QMenu & menu);
 
     private:
-        friend class CLexiconKeyChooser;
-        friend class BtDropdownChooserButton;
-        friend class BtBookDropdownChooserButton;
-        friend class BtChapterDropdownChooserButton;
-        friend class BtVerseDropdownChooserButton;
 
         CSwordVerseKey *m_key;
 
