@@ -19,7 +19,7 @@ addons:
       - g++
       - gcc-10
       - g++-10
-      - clang
+      #- clang already installed by Travis
       # Tools:
       - cmake
       # Libraries:
