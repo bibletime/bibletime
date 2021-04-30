@@ -12,6 +12,7 @@
 
 #include "cplaintextexportrendering.h"
 
+#include <memory>
 #include "../keys/cswordkey.h"
 
 
@@ -35,7 +36,8 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
         return QString(i.key()).append("\n");
 
     const BtConstModuleList modules = i.modules();
-    CSwordKey * key = CSwordKey::createInstance(modules.first());
+    std::unique_ptr<CSwordKey> const key(
+                CSwordKey::createInstance(modules.first()));
     QString renderedText = QString(i.key());
     if (modules.count() > 1) {
         for (auto const * const module : modules)
@@ -51,8 +53,6 @@ QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
             entry.append("\n");
         renderedText.append( entry );
     }
-
-    delete key;
     return renderedText;
 }
 
