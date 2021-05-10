@@ -18,7 +18,6 @@
 #include <QLayout>
 #include <QRegExp>
 #include <QSize>
-#include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QtAlgorithms>
 #include <QMenu>
@@ -33,6 +32,7 @@
 #include "../util/btconnect.h"
 #include "bibletime.h"
 #include "crossrefrendering.h"
+#include "bttextbrowser.h"
 
 
 using namespace Rendering;
@@ -47,7 +47,7 @@ CInfoDisplay::CInfoDisplay(BibleTime * parent)
     QVBoxLayout * const layout = new QVBoxLayout(this);
     layout->setContentsMargins(2, 2, 2, 2); // Leave small border
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    m_textBrowser = new QTextBrowser(this);
+    m_textBrowser = new BtTextBrowser(this);
     m_textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
     BT_CONNECT(m_textBrowser, SIGNAL(customContextMenuRequested(const QPoint&)),
         this, SLOT(slotContextMenu(const QPoint&)));
