@@ -1,3 +1,6 @@
+2021-05-10 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #317 - Drag'n'Drop broken in BT 3.0 in mag view and search dialog
+
 2021-03-15 Gary Holmlund <gw@holmlund.org>
     * Fix bug #306 - Change sample text in settings dialog
 

@@ -20,7 +20,6 @@
 #include <QSize>
 #include <QSplitter>
 #include <QStringList>
-#include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
@@ -101,7 +100,7 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
-    m_previewDisplay = new QTextBrowser(this);
+    m_previewDisplay = new BtTextBrowser(this);
     m_previewDisplay->setOpenLinks(false);
     m_previewDisplay->setToolTip(tr("Text of the selected search result item"));
     m_previewDisplay->setContextMenuPolicy(Qt::CustomContextMenu);

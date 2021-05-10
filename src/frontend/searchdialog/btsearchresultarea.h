@@ -15,11 +15,11 @@
 #include <QList>
 #include <QSplitter>
 #include <QStringList>
-#include <QTextBrowser>
 #include <QWidget>
 #include "../../backend/managers/cswordbackend.h"
 #include "../../backend/cswordmodulesearch.h"
 #include "analysis/csearchanalysisdialog.h"
+#include "../bttextbrowser.h"
 
 
 namespace Search {
@@ -166,7 +166,7 @@ class BtSearchResultArea : public QWidget {
             QAction * m_selectAllAction;
             QAction * m_copyAction;
 
-        QTextBrowser* m_previewDisplay;
+        BtTextBrowser* m_previewDisplay;
 
         QSplitter *m_mainSplitter;
         QSplitter *m_resultListSplitter;

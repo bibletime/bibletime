@@ -22,7 +22,7 @@
 class QAction;
 class QSize;
 class BibleTime;
-class QTextBrowser;
+class BtTextBrowser;
 
 namespace InfoDisplay {
 
@@ -51,7 +51,7 @@ private:
 
 private: /* Fields: */
 
-    QTextBrowser * m_textBrowser;
+    BtTextBrowser * m_textBrowser;
     BibleTime * m_mainWindow;
 
 };
