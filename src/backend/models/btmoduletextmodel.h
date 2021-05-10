@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <optional>
 #include <QAbstractListModel>
 #include <QColor>
 #include <QStringList>
