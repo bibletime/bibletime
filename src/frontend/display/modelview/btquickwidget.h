@@ -48,11 +48,11 @@ protected:
        void dragEnterEvent( QDragEnterEvent* e ) override;
        void dropEvent( QDropEvent* e ) override;
 
+       virtual bool event(QEvent* e) override;
        virtual void mousePressEvent(QMouseEvent *event) override;
        virtual void mouseMoveEvent(QMouseEvent *event) override;
        virtual void mouseReleaseEvent(QMouseEvent *event) override;
        virtual void mouseDoubleClickEvent(QMouseEvent *event) override;
-
        virtual void wheelEvent(QWheelEvent * event) override;
 
 private Q_SLOTS:

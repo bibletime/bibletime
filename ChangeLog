@@ -1,3 +1,6 @@
+2021-05-16 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #316 - Mag viewer made unusable in BT version 3
+
 2021-05-10 Gary Holmlund <gw@holmlund.org>
     * Fix bug #317 - Drag'n'Drop broken in BT 3.0 in mag view and search dialog
 

@@ -70,6 +70,7 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QVariant     textModel               READ getTextModel NOTIFY textModelChanged)
 
 public:
+    Q_INVOKABLE void cancelMagTimer();
     Q_INVOKABLE void changeReference(int i);
     Q_INVOKABLE void dragHandler(int index,const QString& link);
     Q_INVOKABLE QString getRawText(int row, int column);

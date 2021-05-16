@@ -19,6 +19,7 @@
 #include <QMouseEvent>
 #include <QQmlEngine>
 #include <QQuickItem>
+#include <Qt>
 #include <QWheelEvent>
 #include "../../../util/btassert.h"
 #include "../../../util/directory.h"
@@ -157,6 +158,14 @@ void BtQuickWidget::scroll(int pixels) {
     QVariant vPixels(pixels);
     QMetaObject::invokeMethod(root,"scroll",
                               Q_ARG(QVariant, vPixels));
+}
+
+// Catch Leave event here insteaded of leaveEvent(e), because
+// QMdiSubwindow does not pass leaveEvent on down.
+bool BtQuickWidget::event(QEvent* e) {
+    if (e->type() == QEvent::Leave)
+        getQmlInterface()->cancelMagTimer();
+    return QQuickWidget::event(e);
 }
 
 void BtQuickWidget::mouseDoubleClickEvent(QMouseEvent *event) {
