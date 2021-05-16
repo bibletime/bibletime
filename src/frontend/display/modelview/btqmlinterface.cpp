@@ -280,6 +280,10 @@ void BtQmlInterface::setRawText(int row, int column, const QString& text) {
     m_moduleTextModel->setData(index, text, role);
 }
 
+void BtQmlInterface::cancelMagTimer() {
+    m_linkTimer->stop();
+}
+
 void BtQmlInterface::setMagReferenceByUrl(const QString& url) {
     if (url.isEmpty())
         return;
