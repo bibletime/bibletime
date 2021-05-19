@@ -69,4 +69,4 @@ script:
 
 
 notifications:
-  irc: "chat.freenode.net#bibletime"
+  irc: "irc.oftc.net#bibletime"
