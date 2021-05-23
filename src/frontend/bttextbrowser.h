@@ -10,8 +10,7 @@
 *
 **********/
 
-#ifndef BTTEXTBROWSER_H
-#define BTTEXTBROWSER_H
+#pragma once
 
 #include <QTextBrowser>
 
@@ -42,4 +41,3 @@ private:
     bool m_readyToStartDrag = false;
 };
 
-#endif
