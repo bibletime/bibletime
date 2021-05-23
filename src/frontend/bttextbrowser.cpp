@@ -34,6 +34,8 @@ void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
         m_isDragging = false;
         m_dragUrl = anchorAt(event->pos());
         m_startPos = event->pos();
+    } else {
+        m_mousePressed = false;
     }
     QTextBrowser::mousePressEvent(event);
 }
