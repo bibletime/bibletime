@@ -12,15 +12,15 @@
 
 #include "bttextbrowser.h"
 
+#include <memory>
 #include <QApplication>
 #include <QDrag>
 #include <QMouseEvent>
-
 #include "../backend/keys/cswordkey.h"
 #include "../backend/managers/referencemanager.h"
 #include "../backend/managers/cswordbackend.h"
 #include "BtMimeData.h"
-#include "memory"
+
 
 BtTextBrowser::BtTextBrowser(QWidget *parent)
     : QTextBrowser(parent),

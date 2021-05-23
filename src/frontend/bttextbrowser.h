@@ -13,8 +13,9 @@
 #ifndef BTTEXTBROWSER_H
 #define BTTEXTBROWSER_H
 
-#include <QPoint>
 #include <QTextBrowser>
+
+#include <QPoint>
 
 /**
 * This class is a subclass of QTextBrowser. It adds the
