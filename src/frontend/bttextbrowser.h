@@ -35,11 +35,11 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
-    bool m_isDragging = false;
-    bool m_mousePressed = false;
     QString m_hoveredUrl;
     QString m_dragUrl;
     QPoint m_startPos;
+    bool m_isDragging = false;
+    bool m_mousePressed = false;
 };
 
 #endif
