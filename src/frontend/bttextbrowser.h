@@ -37,7 +37,6 @@ protected:
 
 private:
     QString m_hoveredUrl;
-    QString m_dragUrl;
     QPoint m_startPos;
     bool m_isDragging = false;
     bool m_mousePressed = false;

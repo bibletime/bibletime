@@ -38,7 +38,6 @@ void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::LeftButton) {
         m_mousePressed = true;
         m_isDragging = false;
-        m_dragUrl = anchorAt(event->pos());
         m_startPos = event->pos();
     } else {
         m_mousePressed = false;
@@ -60,7 +59,7 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
         if ((current - m_startPos).manhattanLength() > qApp->startDragDistance()) {
 
             auto const decodedLink =
-                        ReferenceManager::decodeHyperlink(m_dragUrl);
+                        ReferenceManager::decodeHyperlink(anchorAt(m_startPos));
 
 
             if (! decodedLink) {
