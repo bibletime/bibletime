@@ -55,6 +55,8 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
         auto const dragManhattanLength =
                 (event->pos() - m_startPos).manhattanLength();
         if (dragManhattanLength >= qApp->startDragDistance()) {
+            m_readyToStartDrag = false;
+
             if (auto const decodedLink =
                         ReferenceManager::decodeHyperlink(anchorAt(m_startPos)))
             {
@@ -70,7 +72,6 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
                 }
 
                 drag->exec(Qt::CopyAction, Qt::CopyAction);
-                m_readyToStartDrag = false;
                 return;
             }
         }
