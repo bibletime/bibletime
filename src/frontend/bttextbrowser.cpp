@@ -55,32 +55,24 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
         auto const dragManhattanLength =
                 (event->pos() - m_startPos).manhattanLength();
         if (dragManhattanLength >= qApp->startDragDistance()) {
+            if (auto const decodedLink =
+                        ReferenceManager::decodeHyperlink(anchorAt(m_startPos)))
+            {
+                QDrag* drag = new QDrag(this);
+                BTMimeData* mimedata = new BTMimeData(decodedLink->module->name(), decodedLink->key, QString());
+                drag->setMimeData(mimedata);
 
-            auto const decodedLink =
-                        ReferenceManager::decodeHyperlink(anchorAt(m_startPos));
+                //add real Bible text from module/key
+                if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(decodedLink->module->name())) {
+                    std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+                    key->setKey(decodedLink->key);
+                    mimedata->setText(key->strippedText());
+                }
 
-
-            if (! decodedLink) {
-                QTextBrowser::mouseMoveEvent(event);
+                drag->exec(Qt::CopyAction, Qt::CopyAction);
+                m_readyToStartDrag = false;
                 return;
             }
-
-            QDrag* drag = new QDrag(this);
-            BTMimeData* mimedata = new BTMimeData(decodedLink->module->name(), decodedLink->key, QString());
-            drag->setMimeData(mimedata);
-
-
-
-            //add real Bible text from module/key
-            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(decodedLink->module->name())) {
-                std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
-                key->setKey(decodedLink->key);
-                mimedata->setText(key->strippedText());
-            }
-
-            drag->exec(Qt::CopyAction, Qt::CopyAction);
-            m_readyToStartDrag = false;
-            return;
         }
     }
     QTextBrowser::mouseMoveEvent(event);
