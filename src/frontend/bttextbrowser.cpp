@@ -29,7 +29,7 @@ BtTextBrowser::BtTextBrowser(QWidget *parent)
 }
 
 void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
-    if (event->button() == Qt::LeftButton) {
+    if (event->buttons() == Qt::LeftButton) {
         m_mousePressed = true;
         m_isDragging = false;
         m_dragUrl = anchorAt(event->pos());
