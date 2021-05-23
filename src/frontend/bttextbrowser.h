@@ -38,8 +38,7 @@ protected:
 private:
     QString m_hoveredUrl;
     QPoint m_startPos;
-    bool m_isDragging = false;
-    bool m_mousePressed = false;
+    bool m_readyToStartDrag = false;
 };
 
 #endif

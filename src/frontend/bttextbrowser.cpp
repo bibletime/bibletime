@@ -31,30 +31,27 @@ BtTextBrowser::BtTextBrowser(QWidget *parent)
 void BtTextBrowser::keyPressEvent(QKeyEvent * event) {
     QTextBrowser::keyPressEvent(event);
     if (event->isAccepted())
-        m_mousePressed = false;
+        m_readyToStartDrag = false;
 }
 
 void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::LeftButton) {
-        m_mousePressed = true;
-        m_isDragging = false;
         m_startPos = event->pos();
+        m_readyToStartDrag = true;
     } else {
-        m_mousePressed = false;
+        m_readyToStartDrag = false;
     }
     QTextBrowser::mousePressEvent(event);
 }
 
 void BtTextBrowser::mouseReleaseEvent(QMouseEvent *event) {
-    if (event->button() == Qt::LeftButton) {
-        m_mousePressed = false;
-    }
+    m_readyToStartDrag = false;
     QTextBrowser::mouseReleaseEvent(event);
 }
 
 void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
     // If we have not started dragging, and the left mouse button is down, start the drag
-    if (!m_isDragging && m_mousePressed) {
+    if (m_readyToStartDrag) {
         QPoint current(event->x(), event->y());
         if ((current - m_startPos).manhattanLength() > qApp->startDragDistance()) {
 
@@ -80,9 +77,8 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
                 mimedata->setText(key->strippedText());
             }
 
-            m_isDragging = true;
             drag->exec(Qt::CopyAction, Qt::CopyAction);
-            m_mousePressed = false;
+            m_readyToStartDrag = false;
             return;
         }
     }
