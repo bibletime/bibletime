@@ -23,9 +23,7 @@
 #include "memory"
 
 BtTextBrowser::BtTextBrowser(QWidget *parent)
-    : QTextBrowser(parent),
-      m_isDragging(false),
-      m_mousePressed(false)
+    : QTextBrowser(parent)
 {
     setTextInteractionFlags(Qt::TextSelectableByMouse);
 }
