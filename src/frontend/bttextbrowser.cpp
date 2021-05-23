@@ -60,9 +60,11 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
             if (auto const decodedLink =
                         ReferenceManager::decodeHyperlink(anchorAt(m_startPos)))
             {
-                QDrag* drag = new QDrag(this);
-                BTMimeData* mimedata = new BTMimeData(decodedLink->module->name(), decodedLink->key, QString());
-                drag->setMimeData(mimedata);
+                auto mimedata =
+                        std::make_unique<BTMimeData>(
+                            decodedLink->module->name(),
+                            decodedLink->key,
+                            QString());
 
                 //add real Bible text from module/key
                 if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(decodedLink->module->name())) {
@@ -71,6 +73,8 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
                     mimedata->setText(key->strippedText());
                 }
 
+                auto * const drag = new QDrag(this);
+                drag->setMimeData(mimedata.release());
                 drag->exec(Qt::CopyAction, Qt::CopyAction);
                 return;
             }
