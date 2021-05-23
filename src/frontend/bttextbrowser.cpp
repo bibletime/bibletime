@@ -28,6 +28,12 @@ BtTextBrowser::BtTextBrowser(QWidget *parent)
     setTextInteractionFlags(Qt::TextSelectableByMouse);
 }
 
+void BtTextBrowser::keyPressEvent(QKeyEvent * event) {
+    QTextBrowser::keyPressEvent(event);
+    if (event->isAccepted())
+        m_mousePressed = false;
+}
+
 void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::LeftButton) {
         m_mousePressed = true;
