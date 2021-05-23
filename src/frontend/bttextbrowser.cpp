@@ -52,8 +52,9 @@ void BtTextBrowser::mouseReleaseEvent(QMouseEvent *event) {
 void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
     // If we have not started dragging, and the left mouse button is down, start the drag
     if (m_readyToStartDrag) {
-        QPoint current(event->x(), event->y());
-        if ((current - m_startPos).manhattanLength() > qApp->startDragDistance()) {
+        auto const dragManhattanLength =
+                (event->pos() - m_startPos).manhattanLength();
+        if (dragManhattanLength >= qApp->startDragDistance()) {
 
             auto const decodedLink =
                         ReferenceManager::decodeHyperlink(anchorAt(m_startPos));
