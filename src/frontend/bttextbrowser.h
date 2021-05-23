@@ -27,7 +27,7 @@ class BtTextBrowser: public QTextBrowser {
     Q_OBJECT
 
 public:
-    BtTextBrowser(QWidget *parent);
+    BtTextBrowser(QWidget * parent = nullptr);
 
 protected:
     void keyPressEvent(QKeyEvent * event) override;
