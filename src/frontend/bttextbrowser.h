@@ -16,28 +16,30 @@
 
 #include <QPoint>
 
-/**
-* This class is a subclass of QTextBrowser. It adds the
-* ability to drag a reference so it can be dropped on
-* another widget
-*/
 
+/**
+* \brief A QTextBrowser subclass which adds the ability to start drags for
+         references.
+*/
 class BtTextBrowser: public QTextBrowser {
 
     Q_OBJECT
 
-public:
+public: /* Methods: */
+
     BtTextBrowser(QWidget * parent = nullptr);
 
-protected:
-    void keyPressEvent(QKeyEvent * event) override;
-    void mousePressEvent(QMouseEvent *event) override;
-    void mouseMoveEvent(QMouseEvent *event) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
+protected: /* Methods: */
 
-private:
+    void keyPressEvent(QKeyEvent * event) override;
+    void mousePressEvent(QMouseEvent * event) override;
+    void mouseMoveEvent(QMouseEvent * event) override;
+    void mouseReleaseEvent(QMouseEvent * event) override;
+
+private: /* Fields: */
+
     QString m_hoveredUrl;
     QPoint m_startPos;
     bool m_readyToStartDrag = false;
-};
 
+}; /* class BtTextBrowser */

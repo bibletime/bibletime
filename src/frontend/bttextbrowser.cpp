@@ -22,11 +22,9 @@
 #include "BtMimeData.h"
 
 
-BtTextBrowser::BtTextBrowser(QWidget *parent)
+BtTextBrowser::BtTextBrowser(QWidget * parent)
     : QTextBrowser(parent)
-{
-    setTextInteractionFlags(Qt::TextSelectableByMouse);
-}
+{ setTextInteractionFlags(Qt::TextSelectableByMouse); }
 
 void BtTextBrowser::keyPressEvent(QKeyEvent * event) {
     QTextBrowser::keyPressEvent(event);
@@ -34,7 +32,7 @@ void BtTextBrowser::keyPressEvent(QKeyEvent * event) {
         m_readyToStartDrag = false;
 }
 
-void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
+void BtTextBrowser::mousePressEvent(QMouseEvent * event) {
     if (event->buttons() == Qt::LeftButton) {
         m_startPos = event->pos();
         m_readyToStartDrag = true;
@@ -44,13 +42,12 @@ void BtTextBrowser::mousePressEvent(QMouseEvent *event) {
     QTextBrowser::mousePressEvent(event);
 }
 
-void BtTextBrowser::mouseReleaseEvent(QMouseEvent *event) {
+void BtTextBrowser::mouseReleaseEvent(QMouseEvent * event) {
     m_readyToStartDrag = false;
     QTextBrowser::mouseReleaseEvent(event);
 }
 
-void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
-    // If we have not started dragging, and the left mouse button is down, start the drag
+void BtTextBrowser::mouseMoveEvent(QMouseEvent * event) {
     if (m_readyToStartDrag) {
         auto const dragManhattanLength =
                 (event->pos() - m_startPos).manhattanLength();
@@ -67,13 +64,17 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
                             QString());
 
                 //add real Bible text from module/key
-                if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(decodedLink->module->name())) {
-                    std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(module));
+                if (auto const * const module =
+                            CSwordBackend::instance()->findModuleByName(
+                                decodedLink->module->name()))
+                {
+                    std::unique_ptr<CSwordKey> key(
+                                CSwordKey::createInstance(module));
                     key->setKey(decodedLink->key);
                     mimedata->setText(key->strippedText());
                 }
 
-                auto * const drag = new QDrag(this);
+                auto * const drag = new QDrag(this); // Deleted by Qt
                 drag->setMimeData(mimedata.release());
                 drag->exec(Qt::CopyAction, Qt::CopyAction);
                 return;
