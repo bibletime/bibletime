@@ -42,6 +42,7 @@ void BtTextBrowser::mouseReleaseEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         m_mousePressed = false;
     }
+    QTextBrowser::mouseReleaseEvent(event);
 }
 
 void BtTextBrowser::mouseMoveEvent(QMouseEvent *event) {
