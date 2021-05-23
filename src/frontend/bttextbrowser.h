@@ -38,7 +38,6 @@ protected: /* Methods: */
 
 private: /* Fields: */
 
-    QString m_hoveredUrl;
     QPoint m_startPos;
     bool m_readyToStartDrag = false;
 
