@@ -180,12 +180,6 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 
 
 ######################################################
-# Tests:
-#
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTests.cmake")
-
-
-######################################################
 # Installation:
 #
 INSTALL(TARGETS "bibletime" DESTINATION "${BT_BINDIR}")
