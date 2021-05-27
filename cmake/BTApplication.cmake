@@ -76,8 +76,9 @@ ENDIF()
 
 
 ######################################################
-# bibletime_backend static library. Shared between the bibletime app and all
-# tests:
+# bibletime_backend object library. This mostly exists for the purpose of
+# keeping the backend and frontend as separate modules with no GUI dependencies
+# or frontend code in the backend.
 #
 FILE(GLOB_RECURSE bibletime_BACKEND_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.cpp"
