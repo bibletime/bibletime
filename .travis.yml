@@ -92,7 +92,6 @@ env:
 before_install:
   - uname -a
   - test "$(uname -m)" == "aarch64" && USE_CCACHE=0 || USE_CCACHE=1
-  - test -z "$SOURCE_QT" || source "$SOURCE_QT"
   - ./tests/scripts/install-sword.sh "${HOME}/local" "$NUM_THREADS"
   - export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 
