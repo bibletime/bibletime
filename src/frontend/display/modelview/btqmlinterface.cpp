@@ -202,16 +202,11 @@ QString BtQmlInterface::getRawText(int row, int column) {
 
 void BtQmlInterface::openEditor(int row, int column) {
     BtEditTextWizard wiz;
-    QString verse = m_moduleTextModel->indexToKeyName(row);
-    wiz.setTitle(tr("Edit") + " " + verse);
-    wiz.setText(getRawText(row,column));
-    QFont font = m_fonts.at(column);
-    wiz.setFont(font);
-    int rtn = wiz.exec();
-    if (rtn == 0)
-        return;
-    setRawText(row, column, wiz.text());
-    return;
+    wiz.setTitle(tr("Edit %1").arg(m_moduleTextModel->indexToKeyName(row)));
+    wiz.setText(getRawText(row, column));
+    wiz.setFont(m_fonts.at(column));
+    if (wiz.exec() == QDialog::Accepted)
+        setRawText(row, column, wiz.text());
 }
 
 void BtQmlInterface::openContextMenu(int x, int y, int width) {
