@@ -111,6 +111,9 @@ public:
     /** Convert index(row) into CSwordVerseKey. */
     CSwordVerseKey indexToVerseKey(int index) const;
 
+    /** Convert index(row) into verse. */
+    int indexToVerse(int index) const;
+
     /** Convert index(row) into CSwordVerseKey. */
     CSwordKey* indexToKey(int index, int moduleNum) const;
 

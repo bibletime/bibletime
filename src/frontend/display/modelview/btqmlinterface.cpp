@@ -194,8 +194,8 @@ QString BtQmlInterface::getRawText(int row, int column) {
 
 void BtQmlInterface::openEditor(int row, int column) {
     BtEditTextWizard wiz;
-    QString verse = m_moduleTextModel->indexToKeyName(row);
-    wiz.setTitle(tr("Edit") + " " + verse);
+    QString keyName = m_moduleTextModel->indexToKeyName(row);
+    wiz.setTitle(tr("Edit") + " " + keyName);
     wiz.setText(getRawText(row,column));
     QFont font = m_fonts.at(column);
     wiz.setFont(font);
@@ -204,6 +204,10 @@ void BtQmlInterface::openEditor(int row, int column) {
         return;
     setRawText(row, column, wiz.text());
     return;
+}
+
+int BtQmlInterface::indexToVerse(int index) {
+    return m_moduleTextModel->indexToVerse(index);
 }
 
 void BtQmlInterface::openContextMenu(int x, int y, int width) {
