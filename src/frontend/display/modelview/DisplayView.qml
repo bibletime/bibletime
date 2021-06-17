@@ -259,6 +259,8 @@ Rectangle {
         function startEdit(row, column) {
             if (!btQmlInterface.moduleIsWritable(column))
                 return false;
+            if (btQmlInterface.indexToVerse(row) === 0 )
+                return false;
             savedRow = row;
             savedColumn = column;
             btQmlInterface.openEditor(row, column);

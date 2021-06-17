@@ -340,6 +340,16 @@ BtModuleTextModel::indexToVerseKey(int index,
     return key;
 }
 
+int BtModuleTextModel::indexToVerse(int index) const
+{
+    const CSwordModuleInfo* module = m_moduleInfoList.at(0);
+    CSwordVerseKey key(module);
+
+    key.setIntros(true);
+    key.setIndex(index + m_firstEntry);
+    return key.verse();
+}
+
 CSwordKey* BtModuleTextModel::indexToKey(int index, int moduleNum) const
 {
     const CSwordModuleInfo* module = m_moduleInfoList.at(moduleNum);

@@ -209,6 +209,10 @@ void BtQmlInterface::openEditor(int row, int column) {
         setRawText(row, column, wiz.text());
 }
 
+int BtQmlInterface::indexToVerse(int index) {
+    return m_moduleTextModel->indexToVerse(index);
+}
+
 void BtQmlInterface::openContextMenu(int x, int y, int width) {
     double xRatio = x / static_cast<double>(width);
     int column = int(xRatio * m_moduleNames.count());

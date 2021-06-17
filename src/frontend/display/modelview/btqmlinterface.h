@@ -86,6 +86,7 @@ public:
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
     Q_INVOKABLE void setKeyFromLink(const QString& link);
     Q_INVOKABLE bool shiftKeyDown();
+    Q_INVOKABLE int indexToVerse(int index);
 
     BtQmlInterface(QObject *parent = nullptr);
     ~BtQmlInterface();
