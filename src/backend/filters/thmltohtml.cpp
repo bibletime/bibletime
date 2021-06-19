@@ -89,13 +89,15 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
     tag = QRegExp("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+(type|value|class)=\"([^\"]+)\"[^>]+((type|value|class)=\"([^\"]+)\")*([^<]*)>");
 
     for (auto e : list) {
-        const bool textPresent = (e.trimmed().remove(QRegExp("[.,;:]")).left(1) != "<");
 
-        if (!textPresent) {
-            continue;
+        // pass text ahead of <sync> stright through
+        int pos2 = tag.indexIn(e, 0);
+        if (pos2 >= 0) {
+            result.append(e.left(pos2));
+            e = e.remove(0, pos2);
         }
 
-
+        // parse <sync> and change to <span>
         bool hasLemmaAttr = false;
         bool hasMorphAttr = false;
 
