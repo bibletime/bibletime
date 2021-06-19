@@ -1,3 +1,6 @@
+2021-06-18 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #319 - BIBdraft does not display any text (ThML issue)
+
 2021-05-16 Gary Holmlund <gw@holmlund.org>
     * Fix bug #316 - Mag viewer made unusable in BT version 3
 
