@@ -177,4 +177,10 @@ void BtModuleChooserMenu::update(QStringList newModulesToUse,
     m_selectedModule = newSelectedModule;
     m_buttonIndex = newButtonIndexIndex;
     m_leftLikeModules = newLeftLikeModules;
+    rebuildMenu();
+}
+
+void BtModuleChooserMenu::setSelectedModule(QString newSelectedModule) noexcept{
+    m_selectedModule = std::move(newSelectedModule);
+    rebuildMenu();
 }
