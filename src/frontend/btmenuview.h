@@ -60,6 +60,8 @@ class BtMenuView: public QMenu {
         */
         QAbstractItemModel * model() const { return m_model; }
 
+        bool event(QEvent * e) override;
+
     Q_SIGNALS:
         /**
           This signal is emitted when the user activates a menu item corresponding to an
@@ -109,7 +111,11 @@ class BtMenuView: public QMenu {
         */
         virtual QMenu *newMenu(QMenu *parentMenu, const QModelIndex &itemIndex);
 
-    private:
+        /** \brief Rebuilds the menu. */
+        void rebuildMenu();
+
+    private: /* Methods: */
+
         void buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex);
         void removeMenus();
 

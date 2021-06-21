@@ -13,9 +13,18 @@
 #include "btmenuview.h"
 
 #include <QActionGroup>
+#include <QCoreApplication>
+#include <QEvent>
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 
+
+namespace {
+
+char const persistentIndexPropertyName[] = "BtMenuView persistent index";
+constexpr auto const rebuildEventType = QEvent::User;
+
+} // anonymous namespace
 
 BtMenuView::BtMenuView(QWidget * parent)
     : BtMenuView(QString(), parent)
@@ -25,34 +34,45 @@ BtMenuView::BtMenuView(QString const & title, QWidget * parent)
     : QMenu(title, parent)
     , m_model(nullptr)
     , m_actions(nullptr)
-{
-    BT_CONNECT(this, &QMenu::aboutToShow,
-               [this]{
-                   setActiveAction(nullptr); // Work around QTBUG-77273
-
-                   /* The signal "aboutToHide" comes before the signal
-                      "triggered" and leads to executing a deleted action and a
-                      crash. It is much safer to remove the menus here. */
-                   removeMenus();
-
-                   delete m_actions;
-                   m_actions = m_model ? new QActionGroup(this) : nullptr;
-
-                   preBuildMenu(m_actions);
-                   if (m_model)
-                       buildMenu(this, QModelIndex());
-                   postBuildMenu(m_actions);
-               });
-}
+{}
 
 BtMenuView::~BtMenuView() {
     delete m_actions;
 }
 
 void BtMenuView::setModel(QAbstractItemModel *model) {
+    if (m_model)
+        m_model->disconnect(this);
     m_model = model;
-    delete m_actions;
-    m_actions = nullptr;
+    rebuildMenu();
+    if (model) {
+        /* Instead of connecting each signal to rebuildMenu() directly, we
+           instead queue events to this BtMenuView instance. The multiple
+           "rebuild" events can be merged by the event handler to avoid
+           consecutive rebuild events from causing needless rebuilds. */
+        auto const triggerRebuild =
+                [this] {
+                    QCoreApplication::postEvent(this,
+                                                new QEvent(rebuildEventType),
+                                                Qt::HighEventPriority);
+                };
+        BT_CONNECT(model, &QAbstractItemModel::dataChanged, triggerRebuild);
+        BT_CONNECT(model, &QAbstractItemModel::layoutChanged, triggerRebuild);
+        BT_CONNECT(model, &QAbstractItemModel::modelReset, triggerRebuild);
+        BT_CONNECT(model, &QAbstractItemModel::rowsInserted, triggerRebuild);
+        BT_CONNECT(model, &QAbstractItemModel::rowsMoved, triggerRebuild);
+        BT_CONNECT(model, &QAbstractItemModel::rowsRemoved, triggerRebuild);
+    }
+}
+
+bool BtMenuView::event(QEvent * const e) {
+    if (e->type() == rebuildEventType) {
+        e->accept();
+        QCoreApplication::removePostedEvents(this, rebuildEventType);
+        rebuildMenu();
+        return true;
+    }
+    return QMenu::event(e);
 }
 
 void BtMenuView::preBuildMenu(QActionGroup *) {
@@ -150,6 +170,29 @@ QMenu *BtMenuView::newMenu(QMenu *parentMenu, const QModelIndex &itemIndex) {
     return childMenu;
 }
 
+void BtMenuView::rebuildMenu() {
+    removeMenus();
+
+    delete m_actions;
+    m_actions = m_model ? new QActionGroup(this) : nullptr;
+
+    preBuildMenu(m_actions);
+    if (m_model)
+        buildMenu(this, QModelIndex());
+    postBuildMenu(m_actions);
+
+    if (m_actions)
+        BT_CONNECT(m_actions, &QActionGroup::triggered,
+                   [this](QAction * const action){
+                        auto const indexProperty =
+                                action->property(persistentIndexPropertyName);
+                        if (!indexProperty.isValid())
+                            return;
+                        Q_EMIT triggered(
+                                    indexProperty.toPersistentModelIndex());
+                    });
+}
+
 void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
     BT_ASSERT(m_model);
     BT_ASSERT(m_actions);
@@ -177,10 +220,9 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
                 // Add action to menu:
                 parentMenu->addAction(childAction);
 
-                // Handle triggered signal:
-                BT_CONNECT(childAction, &QAction::triggered,
-                           [this, index = QPersistentModelIndex(childIndex)]
-                           { Q_EMIT triggered(index); });
+                // Pass persistent model index for handling of triggered():
+                childAction->setProperty(persistentIndexPropertyName,
+                                         QPersistentModelIndex(childIndex));
             }
         }
     }
@@ -190,6 +232,7 @@ void BtMenuView::removeMenus() {
     clear();
 
     // Delete submenus also:
-    for (auto * const child : children())
-        delete qobject_cast<QMenu *>(child);
+    for (auto * const childMenu
+         : findChildren<QMenu *>(QString(), Qt::FindDirectChildrenOnly))
+        childMenu->deleteLater();
 }

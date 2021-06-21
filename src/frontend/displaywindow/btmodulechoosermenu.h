@@ -51,8 +51,7 @@ public: /* Methods: */
     { return m_moduleType; }
 
     QString const & selectedModule() const noexcept { return m_selectedModule; }
-    void setSelectedModule(QString newSelectedModule) noexcept
-    { m_selectedModule = std::move(newSelectedModule); }
+    void setSelectedModule(QString newSelectedModule) noexcept;
 
     int buttonIndex() const noexcept { return m_buttonIndex; }
 
