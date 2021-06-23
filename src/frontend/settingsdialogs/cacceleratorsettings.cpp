@@ -49,10 +49,11 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
     BT_CONNECT(m_typeChooser, SIGNAL(activated(QString const &)),
+        SLOT(slotKeyChooserTypeChanged(QString const&)) );
 #else
     BT_CONNECT(m_typeChooser, SIGNAL(textActivated(QString const &)),
+        SLOT(slotKeyChooserTypeChanged(QString const&)));
 #endif
-               SLOT(slotKeyChooserTypeChanged(QString const &)) );
 
     // m_*.title strings are empty here, they are filled and added to the stacked widget in the retranslateUi() function
     m_keyChooserStack = new QStackedWidget(this);
