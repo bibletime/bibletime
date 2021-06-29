@@ -122,7 +122,7 @@ public: /* Types: */
 
     /**
        \param abbrev the language abbreviation
-       \returns a pointer to the language of the given abbreviation, if present.
+       \returns a pointer to the language of the given abbreviation.
     */
     CLanguageMgr::Language const *
     languageForAbbrev(QString const & abbrev) const;
