@@ -35,10 +35,7 @@ CLanguageMgr *CLanguageMgr::instance() {
     return m_instance;
 }
 
-CLanguageMgr::CLanguageMgr()
-    : m_defaultLanguage("", "", QString())
-    , m_langMap()
-{
+CLanguageMgr::CLanguageMgr() {
     m_availableModulesCache.moduleCount = 0;
     init();
 }
@@ -98,13 +95,6 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     m_cleanupLangPtrs.append(newLang);
 
     return newLang;
-}
-
-const CLanguageMgr::Language* CLanguageMgr::languageForTranslatedName( const QString& name ) const {
-    for (auto const * const lang : m_langList)
-        if (lang->translatedName() == name)
-            return lang;
-    return &m_defaultLanguage; //invalid language
 }
 
 void CLanguageMgr::init() {

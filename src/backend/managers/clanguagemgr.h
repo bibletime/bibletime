@@ -30,7 +30,6 @@ public: /* Types: */
     class Language {
 
         friend class CLanguageMgr;
-        friend class BtFontSettingsPage;
 
     public: /* Methods: */
 
@@ -128,18 +127,6 @@ public: /* Types: */
     CLanguageMgr::Language const *
     languageForAbbrev(QString const & abbrev) const;
 
-    /**
-       \param language the translated language name
-       \returns a pointer to the language of the given translated language name,
-                if present.
-    */
-    CLanguageMgr::Language const *
-    languageForTranslatedName(QString const & language) const;
-
-    /** \returns a non-null pointer to the default language. */
-    CLanguageMgr::Language const * defaultLanguage() const
-    { return &m_defaultLanguage; }
-
 private: /* Methods: */
 
     void init();
@@ -154,7 +141,6 @@ private: /* Methods: */
 
 private: /* Fields: */
 
-    Language m_defaultLanguage;
     mutable LanguageList m_langList;
     mutable LangMap m_langMap;
     mutable LanguageList m_cleanupLangPtrs;
