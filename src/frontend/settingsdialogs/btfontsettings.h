@@ -15,9 +15,10 @@
 
 #include "btconfigdialog.h"
 
-#include <QMap>
 #include <QWidget>
+#include <vector>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/managers/clanguagemgr.h"
 
 
 class CConfigurationDialog;
@@ -33,7 +34,10 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
     private: /* Types: */
 
-        using FontMap = QMap<QString, BtConfig::FontSettingsPair>;
+        struct WorkSetting {
+            CLanguageMgr::Language const & language;
+            BtConfig::FontSettingsPair settings;
+        };
 
     public: /* Methods: */
 
@@ -45,12 +49,6 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
         // This slot is called when the "Use own font for language" button was clicked.
         void useOwnFontClicked(bool);
-
-        // Called when a new font in the fonts page was selected.
-        void newDisplayWindowFontSelected(const QFont &);
-
-        // Called when the combobox contents is changed
-        void newDisplayWindowFontAreaSelected(const QString&);
 
     private: /* Methods: */
 
@@ -64,7 +62,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
         QCheckBox *m_languageCheckBox;
         QFontDialog * m_fontChooser;
 
-        FontMap m_fontMap;
+        std::vector<WorkSetting> m_workSettings;
 
 };
 
