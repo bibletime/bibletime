@@ -81,7 +81,11 @@ class CLanguageMgr {
 
             private: /* Methods: */
 
-                inline Language() {}
+                Language() = delete;
+                Language(Language &&) = delete;
+                Language(Language const &) = delete;
+                Language & operator=(Language &&) = delete;
+                Language & operator=(Language const &) = delete;
 
                 inline Language(const char * abbrev,
                                 const char * englishName,
