@@ -173,10 +173,6 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
       pos = text.find(re, endPos);
      }
     */
-    const CLanguageMgr::Language* const lang =
-        (modules.count() >= 1)
-        ? modules.first()->language()
-        : CLanguageMgr::instance()->defaultLanguage();
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
 
@@ -184,8 +180,13 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
 
     CDisplayTemplateMgr::Settings settings;
     settings.modules = modules;
-    if (modules.count() == 1 && lang->isValid())
-        settings.langAbbrev = lang->abbrev();
+    if (modules.count() == 1) {
+        if (auto * const lang = modules.first()->language()) {
+            auto const & abbrev = lang->abbrev();
+            if (!abbrev.isEmpty())
+                settings.langAbbrev = abbrev;
+        }
+    }
 
     if (modules.count() == 1)
         settings.textDirection = modules.first()->textDirection();
