@@ -12,6 +12,7 @@
 
 #include "btfontsettings.h"
 
+#include <set>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QFontDialog>
@@ -45,17 +46,30 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     hLayout->addWidget(m_languageComboBox, 1);
     hLayout->addWidget(m_languageCheckBox);
 
-    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
-    for (auto const & l : langMap) {
-        auto langName = l->translatedName().isEmpty()
-                        ? l->abbrev()
-                        : l->translatedName();
-        m_fontMap.insert(std::move(langName), btConfig().getFontForLanguage(*l));
-    }
+    struct Comp {
+        bool operator()(CLanguageMgr::Language const * lhs,
+                        CLanguageMgr::Language const * rhs) const
+        {
+            int cmp = lhs->translatedName().compare(rhs->translatedName());
+            if (cmp == 0) {
+                cmp = lhs->abbrev().compare(rhs->abbrev());
+                BT_ASSERT(cmp != 0);
+            }
+            return cmp < 0;
+        }
+    };
+    std::set<CLanguageMgr::Language const *, Comp> languages;
+    for (auto const * const language
+         : CLanguageMgr::instance()->availableLanguages().values())
+        languages.emplace(language);
 
-    for (auto it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
-        const QString &k = it.key();
-        if (m_fontMap[k].first) { // show font icon
+    for (auto const * const l : languages) {
+        m_workSettings.emplace_back(
+                    WorkSetting{*l, btConfig().getFontForLanguage(*l)});
+        auto const & k = l->translatedName().isEmpty()
+                         ? l->abbrev()
+                         : l->translatedName();
+        if (m_workSettings.back().settings.first) { // show font icon
             m_languageComboBox->addItem(CResMgr::settings::fonts::icon(), k);
         } else { // don't show icon for font
             m_languageComboBox->addItem(k);
@@ -75,28 +89,22 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 
     BT_CONNECT(m_fontChooser, &QFontDialog::currentFontChanged,
                [this](QFont const & newFont) {
-                   auto const languageName(m_languageComboBox->currentText());
-                   m_fontMap.insert(
-                               languageName,
-                               BtConfig::FontSettingsPair(
-                                   m_fontMap[languageName].first,
-                                   newFont));
+                   auto & work =
+                           m_workSettings[m_languageComboBox->currentIndex()];
+                   work.settings.second = newFont;
                });
     BT_CONNECT(m_languageComboBox,
-               static_cast<void (QComboBox::*)(QString const &)>(
-#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
-                   &QComboBox::activated),
-#else
-                   &QComboBox::textActivated),
-#endif
-               [this](QString const & usage) {
-                   auto const & p = m_fontMap[usage];
+               qOverload<int>(&QComboBox::currentIndexChanged),
+               [this](int const newIndex) {
+                   auto const i = static_cast<std::size_t>(newIndex);
+                   auto const & p = m_workSettings[i].settings;
                    useOwnFontClicked(p.first);
                    m_languageCheckBox->setChecked(p.first);
                    m_fontChooser->setCurrentFont(p.second);
                });
 
-    const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
+    auto const & v =
+            m_workSettings[m_languageComboBox->currentIndex()].settings;
     m_fontChooser->setCurrentFont(v.second);
     useOwnFontClicked(v.first);
     m_languageCheckBox->setChecked(v.first);
@@ -118,26 +126,13 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
 }
 
 void BtFontSettingsPage::save() const {
-    for (auto it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); it++) {
-        const QString &k = it.key();
-        const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(k);
-        if (!lang->isValid()) {
-            // We possibly use a language, for which we have only the abbrevation
-            if (!lang->abbrev().isEmpty()) {
-                // Create a temp language:
-                const CLanguageMgr::Language l(k, k, k);
-                btConfig().setFontForLanguage(l, it.value());
-            }
-        }
-        else {
-            btConfig().setFontForLanguage(*lang, it.value());
-        }
-    }
+    for (auto const & work : m_workSettings)
+        btConfig().setFontForLanguage(work.language, work.settings);
 }
 
 void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
     m_fontChooser->setEnabled(isOn);
-    m_fontMap[m_languageComboBox->currentText()].first = isOn;
+    m_workSettings[m_languageComboBox->currentIndex()].settings.first = isOn;
     m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(),
                                     isOn
                                     ? CResMgr::settings::fonts::icon()

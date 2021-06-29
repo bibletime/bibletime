@@ -14,9 +14,10 @@
 
 #include "btconfigdialog.h"
 
-#include <QMap>
 #include <QWidget>
+#include <vector>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/managers/clanguagemgr.h"
 
 
 class CConfigurationDialog;
@@ -32,7 +33,10 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
     private: /* Types: */
 
-        using FontMap = QMap<QString, BtConfig::FontSettingsPair>;
+        struct WorkSetting {
+            CLanguageMgr::Language const & language;
+            BtConfig::FontSettingsPair settings;
+        };
 
     public: /* Methods: */
 
@@ -57,6 +61,6 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
         QCheckBox *m_languageCheckBox;
         QFontDialog * m_fontChooser;
 
-        FontMap m_fontMap;
+        std::vector<WorkSetting> m_workSettings;
 
 };
