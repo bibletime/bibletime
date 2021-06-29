@@ -13,6 +13,7 @@
 #include "btconfig.h"
 
 #include <QDebug>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../../util/directory.h" // DU::getUserBaseDir()
 #include "../managers/cdisplaytemplatemgr.h"
@@ -205,13 +206,21 @@ void BtConfig::setDisplayOptions(const DisplayOptions & os) {
 void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
                                   const FontSettingsPair & fontSettings)
 {
+    auto fontAsString = fontSettings.second.toString();
+
     const QString & englishName = language.englishName();
     BT_ASSERT(!englishName.isEmpty());
+    auto const & abbrev = language.abbrev();
+    BT_ASSERT(!abbrev.isEmpty());
 
     QMutexLocker lock(&this->m_mutex);
     // write the language to the settings
-    setValue("fonts/" + englishName, fontSettings.second.toString());
+    setValue("fonts/" + englishName, fontAsString);
     setValue("font standard settings/" + englishName, fontSettings.first);
+
+    // (over-)write the language to the settings using abbreviation:
+    setValue("fonts/" + abbrev, std::move(fontAsString));
+    setValue("font standard settings/" + abbrev, fontSettings.first);
 
     // Remove language from the cache:
     m_fontCache.remove(&language);
@@ -231,11 +240,26 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
 
     const QString & englishName = language.englishName();
     BT_ASSERT(!englishName.isEmpty());
-    fontSettings.first = value<bool>("font standard settings/" + englishName, false);
+    auto const & abbrev = language.abbrev();
+    BT_ASSERT(!abbrev.isEmpty());
+
+    auto v = qVariantValue("font standard settings/" + abbrev);
+    if (v.canConvert<bool>()) {
+        fontSettings.first = v.value<bool>();
+    } else {
+        fontSettings.first =
+                value<bool>("font standard settings/" + englishName, false);
+    }
 
     QFont font;
     if (fontSettings.first) {
-        if (!font.fromString(value<QString>("fonts/" + englishName, getDefaultFont().toString()))) {
+        v = qVariantValue("fonts/" + abbrev);
+        auto fontName =
+                v.canConvert<QString>()
+                ? v.value<QString>()
+                : value<QString>("fonts/" + englishName,
+                                 getDefaultFont().toString());
+        if (!font.fromString(std::move(fontName))) {
             /// \todo
         }
     } else {
