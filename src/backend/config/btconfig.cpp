@@ -309,9 +309,6 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
 BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
         const CLanguageMgr::Language & language)
 {
-    const QString & englishName = language.englishName();
-    BT_ASSERT(!englishName.isEmpty());
-
     // Check the cache first:
     auto it(m_fontCache.find(&language));
     if (it != m_fontCache.end())
@@ -320,6 +317,8 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
     // Retrieve the font from the settings
     FontSettingsPair fontSettings;
 
+    const QString & englishName = language.englishName();
+    BT_ASSERT(!englishName.isEmpty());
     fontSettings.first = value<bool>("font standard settings/" + englishName, false);
 
     QFont font;
