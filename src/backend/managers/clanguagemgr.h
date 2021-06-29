@@ -60,7 +60,11 @@ public: /* Types: */
 
     private: /* Methods: */
 
-        Language() = default;
+        Language() = delete;
+        Language(Language &&) = delete;
+        Language(Language const &) = delete;
+        Language & operator=(Language &&) = delete;
+        Language & operator=(Language const &) = delete;
 
         Language(char const * abbrev,
                  char const * englishName,
