@@ -35,7 +35,6 @@ class CLanguageMgr {
         class Language {
 
             friend class CLanguageMgr;
-            friend class BtFontSettingsPage;
 
             public: /* Methods: */
 
@@ -152,18 +151,6 @@ class CLanguageMgr {
         */
         const CLanguageMgr::Language* languageForAbbrev( const QString& abbrev ) const;
 
-        /** Language for translated language name.
-        * @param abbrev The translated language name
-        * @return Pointer to a language for the given translated language name
-        */
-        const CLanguageMgr::Language* languageForTranslatedName( const QString& language ) const;
-        /** Default language so we don't return NULL pointers.
-        * @return Pointer to the default language
-        */
-        inline const CLanguageMgr::Language* defaultLanguage() const {
-            return &m_defaultLanguage;
-        }
-
     private:
         void init();
         inline const QStringList makeStringList(const QString& abbrevs) {
@@ -174,7 +161,6 @@ class CLanguageMgr {
 #endif
         }
 
-        Language m_defaultLanguage;
         mutable LanguageList m_langList;
         mutable LangMap m_langMap;
         mutable LanguageList m_cleanupLangPtrs;
