@@ -41,8 +41,7 @@ CLanguageMgr::CLanguageMgr() {
 }
 
 CLanguageMgr::~CLanguageMgr() {
-    qDeleteAll(m_cleanupLangPtrs);
-    m_cleanupLangPtrs.clear();
+    qDeleteAll(m_abbrLangMap);
     qDeleteAll(m_langList);
     m_langList.clear();
 }
@@ -65,18 +64,10 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
         }
 
         //now create a map of available langs
-        for (auto const & abbrev : abbrevs) {
-            const Language* const lang = languageForAbbrev(abbrev);
-
-            if (lang->isValid()) {
-                m_availableModulesCache.availableLanguages.insert( abbrev, lang );
-            }
-            else { //invalid lang used by a module, create a new language using the abbrev
-                Language* newLang = new Language(abbrev, abbrev, abbrev);
-                m_cleanupLangPtrs.append(newLang);
-                m_availableModulesCache.availableLanguages.insert( abbrev, newLang );
-            }
-        }
+        for (auto const & abbrev : abbrevs)
+            m_availableModulesCache.availableLanguages.insert(
+                        abbrev,
+                        languageForAbbrev(abbrev));
     }
     return m_availableModulesCache.availableLanguages;
 }
@@ -90,9 +81,12 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
         if (lang->alternativeAbbrevs().contains(abbrev))
             return lang;
 
+    if (auto const it = m_abbrLangMap.find(abbrev); it != m_abbrLangMap.end())
+        return it.value();
+
     // Invalid lang used by a modules, create a new language using the abbrev
     Language* newLang = new Language(abbrev, abbrev, abbrev); //return a language which holds the valid abbrev
-    m_cleanupLangPtrs.append(newLang);
+    m_abbrLangMap.insert(abbrev, newLang);
 
     return newLang;
 }
