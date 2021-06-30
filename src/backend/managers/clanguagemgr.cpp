@@ -89,6 +89,7 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     for (auto const * const lang : m_langList)
         if (lang->alternativeAbbrevs().contains(abbrev))
             return lang;
+    Q_ASSERT(abbrev != "en");
 
     if (auto const it = m_abbrLangMap.find(abbrev); it != m_abbrLangMap.end())
         return it.value();
@@ -111,11 +112,13 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
         // Attempt to retrieve translated name:
         QString trName = englishName;
         {
-            QStringList tryLanguages;
+            QStringList tryTranslateNames;
             {
                 auto localeName = QLocale().name();
                 while (!localeName.isEmpty() && localeName != "en") {
-                    tryLanguages.append(localeName);
+                    tryTranslateNames.append(abbrev + '.' + localeName);
+                    if (localeName == abbrev)
+                        tryTranslateNames.append(localeName);
                     while (localeName.back().isLetterOrNumber()) {
                         localeName.chop(1);
                         if (localeName.isEmpty())
@@ -126,13 +129,12 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
                         localeName.chop(1);
                 }
             }
-            for (auto const & tryLanguage : tryLanguages) {
-                auto const abbrevTr = abbrev + '.' + tryLanguage;
+            for (auto const & translateName : tryTranslateNames) {
                 auto newTrName(
                             QString::fromUtf8(
                                 locale->translate(
-                                    abbrevTr.toUtf8().constData())));
-                if (newTrName != abbrevTr) {
+                                    translateName.toUtf8().constData())));
+                if (newTrName != translateName) {
                     trName = std::move(newTrName);
                     break;
                 }
