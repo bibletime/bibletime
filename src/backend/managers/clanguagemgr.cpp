@@ -254,9 +254,10 @@ void CLanguageMgr::init() {
     m_langList.append( new Language("got", "Gothic", QObject::tr("Gothic")) );
     m_langList.append( new Language("gv", "Manx", QObject::tr("Manx")) );
     m_langList.append( new Language("grc", "Greek, Ancient (to 1453)", QObject::tr("Greek, Ancient (to 1453)")) );
-    m_langList.append( new Language("he", "Hebrew", QObject::tr("Hebrew")) );
     m_langList.append( new Language("hau", "Hausa", QObject::tr("Hausa")) );
     m_langList.append( new Language("haw", "Hawaiian", QObject::tr("Hawaiian")) );
+    m_langList.append( new Language("hbo", "Hebrew, Ancient", QObject::tr("Hebrew, Ancient")) );
+    m_langList.append( new Language("he", "Hebrew", QObject::tr("Hebrew")) );
     m_langList.append( new Language("hi", "Hindi", QObject::tr("Hindi")) );
     //  m_langList.append( new Language("ho", "Hiri Motu", QObject::tr("Hiri Motu")) );
     m_langList.append( new Language("hr", "Croatian", QObject::tr("Croatian")) );
