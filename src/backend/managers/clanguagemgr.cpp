@@ -12,8 +12,17 @@
 
 #include "clanguagemgr.h"
 
+#include <QLocale>
+#include <utility>
 #include "../drivers/cswordmoduleinfo.h"
 #include "cswordbackend.h"
+
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <localemgr.h>
+#include <swlocale.h>
+#pragma GCC diagnostic pop
 
 
 /****************************************************/
@@ -88,8 +97,56 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     if (it != m_abbrLangMap.end())
         return it.value();
 
-    // Invalid lang used by a modules, create a new language using the abbrev
-    Language* newLang = new Language(abbrev, abbrev, abbrev); //return a language which holds the valid abbrev
+    Language * newLang;
+    if (auto * const locale =
+                sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
+    {
+        // Attempt to retrieve english name:
+        auto englishName = abbrev;
+        {
+            auto const abbrevEn = abbrev + ".en";
+            auto newEnglishName(
+                        QString::fromUtf8(
+                            locale->translate(abbrevEn.toUtf8().constData())));
+            if (newEnglishName != abbrevEn)
+                englishName = std::move(newEnglishName);
+        }
+
+        // Attempt to retrieve translated name:
+        QString trName = englishName;
+        {
+            QStringList tryLanguages;
+            {
+                auto localeName = QLocale().name();
+                while (!localeName.isEmpty() && localeName != "en") {
+                    tryLanguages.append(localeName);
+                    while (localeName.back().isLetterOrNumber()) {
+                        localeName.chop(1);
+                        if (localeName.isEmpty())
+                            break;
+                    }
+                    while (!localeName.isEmpty()
+                           && !localeName.back().isLetterOrNumber())
+                        localeName.chop(1);
+                }
+            }
+            for (auto const & tryLanguage : tryLanguages) {
+                auto const abbrevTr = abbrev + '.' + tryLanguage;
+                auto newTrName(
+                            QString::fromUtf8(
+                                locale->translate(
+                                    abbrevTr.toUtf8().constData())));
+                if (newTrName != abbrevTr) {
+                    trName = std::move(newTrName);
+                    break;
+                }
+            }
+        }
+
+        newLang = new Language(abbrev, englishName, trName);
+    } else {
+        newLang = new Language(abbrev, abbrev, abbrev);
+    }
     m_abbrLangMap.insert(abbrev, newLang);
 
     return newLang;
