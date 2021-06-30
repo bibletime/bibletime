@@ -163,7 +163,7 @@ class CLanguageMgr {
 
         mutable LanguageList m_langList;
         mutable LangMap m_langMap;
-        mutable LanguageList m_cleanupLangPtrs;
+        mutable LangMap m_abbrLangMap;
 
         struct ModuleCache {
             int moduleCount;
