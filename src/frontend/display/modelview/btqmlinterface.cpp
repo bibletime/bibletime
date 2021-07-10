@@ -415,6 +415,10 @@ CSwordKey* BtQmlInterface::getKey() const {
     return m_swordKey;
 }
 
+CSwordKey* BtQmlInterface::getMouseClickedKey() const {
+    return m_moduleTextModel->indexToKey(m_contextMenuIndex, 0);
+}
+
 QFont BtQmlInterface::font(int column) const {
     if (column >= 0 && column < m_fonts.count())
         return m_fonts.at(column);

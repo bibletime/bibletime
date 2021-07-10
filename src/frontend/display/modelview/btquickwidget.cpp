@@ -152,6 +152,10 @@ int BtQuickWidget::getLastSelectedIndex() const {
     return var.toInt();
 }
 
+CSwordKey* BtQuickWidget::getMouseClickedKey() {
+    return getQmlInterface()->getMouseClickedKey();
+}
+
 void BtQuickWidget::scroll(int pixels) {
     QQuickItem* root = rootObject();
     BT_ASSERT(root);

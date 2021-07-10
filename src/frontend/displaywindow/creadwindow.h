@@ -39,6 +39,8 @@ public: /* Methods: */
 
     int getLastSelectedIndex() const;
 
+    CSwordKey* getMouseClickedKey() const;
+
 protected: /* Methods: */
 
     void setDisplayWidget(CDisplay * newDisplay) override;

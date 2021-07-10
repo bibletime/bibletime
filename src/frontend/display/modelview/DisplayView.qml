@@ -16,7 +16,7 @@ import QtQuick 2.2
 Rectangle {
     id: display
 
-    property int contextMenuIndex: btQmlInterface.contextMenuIndex
+    property alias contextMenuIndex: btQmlInterface.contextMenuIndex
 
     // Mouse movement properties
     property int dragDistance: 8

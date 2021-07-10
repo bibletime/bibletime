@@ -43,6 +43,7 @@ public:
     int getSelectedColumn() const;
     int getFirstSelectedIndex() const;
     int getLastSelectedIndex() const;
+    CSwordKey* getMouseClickedKey();
 
 protected:
        void dragMoveEvent(QDragMoveEvent * event) override;

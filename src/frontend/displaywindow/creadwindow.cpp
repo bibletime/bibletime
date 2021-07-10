@@ -209,3 +209,11 @@ int CReadWindow::getLastSelectedIndex() const {
     }
     return 0;
 }
+
+CSwordKey* CReadWindow::getMouseClickedKey() const {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_readDisplayWidget)) {
+        return  v->quickWidget()->getMouseClickedKey();
+    }
+    return 0;
+}
