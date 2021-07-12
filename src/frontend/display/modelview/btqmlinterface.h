@@ -57,6 +57,7 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(QColor       backgroundHighlightColor READ getBackgroundHighlightColor NOTIFY backgroundHighlightColorChanged)
     Q_PROPERTY(int          backgroundHighlightColorIndex READ getBackgroundHighlightColorIndex NOTIFY backgroundHighlightColorIndexChanged)
     Q_PROPERTY(int          contextMenuIndex        READ getContextMenuIndex NOTIFY contextMenuIndexChanged WRITE setContextMenuIndex)
+    Q_PROPERTY(int          contextMenuColumn       READ getContextMenuColumn NOTIFY contextMenuColumnChanged WRITE setContextMenuColumn)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
     Q_PROPERTY(QFont        font0                   READ getFont0   NOTIFY fontChanged)
     Q_PROPERTY(QFont        font1                   READ getFont1   NOTIFY fontChanged)
@@ -114,6 +115,7 @@ public:
     void copyVerseRange(const QString& ref1, const QString& ref2, const CSwordModuleInfo * module);
     QString getBibleUrlFromLink(const QString& url);
     int getContextMenuIndex() const;
+    int getContextMenuColumn() const;
     int getCurrentModelIndex() const;
     QFont getFont0() const;
     QFont getFont1() const;
@@ -143,6 +145,7 @@ public:
     void scrollToSwordKey(CSwordKey * key);
     void setActiveLink(const QString& link);
     void setContextMenuIndex(int index);
+    void setContextMenuColumn(int index);
     void setFilterOptions(FilterOptions filterOptions);
     void setHighlightWords(const QString& words, bool caseSensitivy);
     void setKey(CSwordKey* key);
@@ -155,6 +158,7 @@ signals:
     void backgroundHighlightColorChanged();
     void backgroundHighlightColorIndexChanged();
     void contextMenuIndexChanged();
+    void contextMenuColumnChanged();
     void contextMenu(int x, int y, int moduleNum);
     void currentModelIndexChanged();
     void fontChanged();
@@ -202,6 +206,7 @@ private:
     BtTextFilter m_textFilter;
     QString m_timeoutUrl;
     int m_contextMenuIndex;
+    int m_contextMenuColumn;
     QString m_activeLink;
     FindState m_findState;
     QTimer m_timer;

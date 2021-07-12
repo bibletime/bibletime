@@ -1,3 +1,6 @@
+2021-07-12 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #303 - Saves chapter as" does not save chapter right-clicked on
+
 2021-06-18 Gary Holmlund <gw@holmlund.org>
     * Fix bug #319 - BIBdraft does not display any text (ThML issue)
 

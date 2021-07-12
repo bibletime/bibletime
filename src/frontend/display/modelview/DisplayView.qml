@@ -17,6 +17,7 @@ Rectangle {
     id: display
 
     property alias contextMenuIndex: btQmlInterface.contextMenuIndex
+    property alias contextMenuColumn: btQmlInterface.contextMenuColumn
 
     // Mouse movement properties
     property int dragDistance: 8
@@ -38,6 +39,7 @@ Rectangle {
     property int textPosLast: -1    // Position of last selected character
 
     function saveContextMenuIndex(x, y) {
+        contextMenuColumn = Math.floor(x / (listView.width / listView.columns));
         contextMenuIndex = listView.indexAt(x,y+listView.contentY);
     }
 
