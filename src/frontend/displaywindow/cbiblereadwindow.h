@@ -15,6 +15,7 @@
 #include "cdisplaywindow.h"
 
 #include <QAction>
+#include "../cexportmanager.h"
 #include "../../util/btconnect.h"
 #include "btactioncollection.h"
 
@@ -119,5 +120,7 @@ private: /* Methods: */
         * Wrapper around key() to return the right type of key.
         */
     CSwordVerseKey* verseKey();
+
+    void saveChapter(CExportManager::Format const format);
 
 };

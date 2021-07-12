@@ -622,6 +622,14 @@ int CDisplayWindow::getLastSelectedIndex() const {
     return 0;
 }
 
+CSwordKey* CDisplayWindow::getMouseClickedKey() const {
+    if (BtModelViewReadDisplay * const v =
+            dynamic_cast<BtModelViewReadDisplay *>(m_displayWidget)) {
+        return  v->quickWidget()->getMouseClickedKey();
+    }
+    return nullptr;
+}
+
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     { // First make sure all used Sword modules are still present:

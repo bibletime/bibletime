@@ -120,6 +120,7 @@ public:
     QFont getFont9() const;
     QString getHighlightWords() const;
     CSwordKey* getKey() const;
+    CSwordKey* getMouseClickedKey() const;
     QString getLemmaFromLink(const QString& url);
     int getNumModules() const;
     bool getPageDown() const;

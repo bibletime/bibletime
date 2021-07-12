@@ -152,6 +152,8 @@ public:
 
     int getLastSelectedIndex() const;
 
+    CSwordKey* getMouseClickedKey() const;
+
 Q_SIGNALS:
     /** The module list was set because backend was reloaded.*/
     void sigModuleListSet(QStringList modules);
