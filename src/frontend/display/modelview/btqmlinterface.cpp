@@ -105,6 +105,15 @@ void BtQmlInterface::setContextMenuIndex(int index) {
     Q_EMIT contextMenuIndexChanged();
 }
 
+int BtQmlInterface::getContextMenuColumn() const {
+    return m_contextMenuColumn;
+}
+
+void BtQmlInterface::setContextMenuColumn(int index) {
+    m_contextMenuColumn = index;
+    emit contextMenuColumnChanged();
+}
+
 QString BtQmlInterface::getActiveLink() const {
     return m_activeLink;
 }
@@ -412,7 +421,7 @@ CSwordKey* BtQmlInterface::getKey() const {
 }
 
 CSwordKey* BtQmlInterface::getMouseClickedKey() const {
-    return m_moduleTextModel->indexToKey(m_contextMenuIndex, 0);
+    return m_moduleTextModel->indexToKey(m_contextMenuIndex, m_contextMenuColumn);
 }
 
 QFont BtQmlInterface::font(int column) const {
