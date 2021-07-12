@@ -111,7 +111,7 @@ int BtQmlInterface::getContextMenuColumn() const {
 
 void BtQmlInterface::setContextMenuColumn(int index) {
     m_contextMenuColumn = index;
-    emit contextMenuColumnChanged();
+    Q_EMIT contextMenuColumnChanged();
 }
 
 QString BtQmlInterface::getActiveLink() const {
