@@ -33,10 +33,6 @@
 #include "../../cinfodisplay.h"
 #include "../../edittextwizard/btedittextwizard.h"
 
-// Sword includes:
-#include <swkey.h>
-
-
 
 BtQmlInterface::BtQmlInterface(QObject* parent)
     : QObject(parent),
