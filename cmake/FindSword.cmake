@@ -33,7 +33,7 @@ MACRO(FindSword_unset_all)
 ENDMACRO()
 FindSword_unset_all()
 
-INCLUDE(FindPkgConfig)
+FIND_PACKAGE(PkgConfig QUIET)
 
 IF(PKG_CONFIG_FOUND)
   # Workaround PKG_CONFIG_PATH set to include CMAKE_PREFIX_PATH paths:
