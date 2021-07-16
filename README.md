@@ -51,20 +51,6 @@ English and Estonian translations only, and `-DBUILD_HOWTO_PDF=OFF` disables
 generation of the howto in PDF format.
 
 
-### PROCEDURE
-
-In the toplevel directory of this package, you can find
-the scripts `build-debug.sh` and `build-release.sh`.
-
-Run `build-debug.sh` to build BibleTime in debug mode.
-It will build in the directory `./build/` and install to
-`./build/install/`. You can run it just there, you do not
-have to install it to `/usr/`.
-
-For a real installation, run `build-release.sh`. This will
-also build in `./build/`, but then install to `/usr/local`.
-
-
 ## FEEDBACK
 
 Please report any bugs your find to
