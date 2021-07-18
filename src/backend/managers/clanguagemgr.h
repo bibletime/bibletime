@@ -103,10 +103,6 @@ public: /* Types: */
     std::shared_ptr<CLanguageMgr::Language const>
     languageForAbbrev(QString const & abbrev) const;
 
-private: /* Methods: */
-
-    void init();
-
 private: /* Fields: */
 
     mutable LanguageList m_langList;

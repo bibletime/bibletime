@@ -48,138 +48,6 @@ CLanguageMgr *CLanguageMgr::instance() {
 
 CLanguageMgr::CLanguageMgr() {
     m_availableModulesCache.moduleCount = 0;
-    init();
-}
-
-CLanguageMgr::~CLanguageMgr() = default;
-
-const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
-    QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
-
-    // Do we have to refill the cached map?
-    if (m_availableModulesCache.moduleCount != mods.count()) {
-        m_availableModulesCache.availableLanguages.clear();
-        m_availableModulesCache.moduleCount = mods.count();
-
-        //collect the languages abbrevs of all modules
-        QStringList abbrevs;
-
-        for (auto const * const mod : mods) {
-            auto & m = mod->module();
-            if (!abbrevs.contains(m.getLanguage()))
-                abbrevs.append(m.getLanguage());
-        }
-
-        //now create a map of available langs
-        for (auto const & abbrev : abbrevs)
-            m_availableModulesCache.availableLanguages.insert(
-                        abbrev,
-                        languageForAbbrev(abbrev));
-    }
-    return m_availableModulesCache.availableLanguages;
-}
-
-std::shared_ptr<CLanguageMgr::Language const>
-CLanguageMgr::languageForAbbrev(QString const & abbrev) const {
-    auto it(m_langMap.find(abbrev));
-    if (it != m_langMap.constEnd()) return *it; //Language is already here
-
-    //try to search in the alternative abbrevs
-    for (auto const & lang : m_langList)
-        if (lang->alternativeAbbrevs().contains(abbrev))
-            return lang;
-    Q_ASSERT(abbrev != "en");
-
-    if (auto const it = m_abbrLangMap.find(abbrev); it != m_abbrLangMap.end())
-        return it.value();
-
-    std::shared_ptr<Language const> newLang;
-    if (auto * const locale =
-                sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
-    {
-        // Attempt to retrieve english name:
-        auto englishName = abbrev;
-        {
-            auto const abbrevEn = abbrev + ".en";
-            auto newEnglishName(
-                        QString::fromUtf8(
-                            locale->translate(abbrevEn.toUtf8().constData())));
-            if (newEnglishName != abbrevEn)
-                englishName = std::move(newEnglishName);
-        }
-
-        struct SwordLanguage: Language {
-
-        // Methods:
-
-            SwordLanguage(QString abbrev, QString englishName)
-                : Language(std::move(abbrev))
-                , m_englishName(std::move(englishName))
-            {}
-
-            QString translatedName() const override {
-                if (auto * const locale =
-                            sword::LocaleMgr::getSystemLocaleMgr()->getLocale(
-                                    "locales"))
-                {
-                    QStringList tryTranslateNames;
-                    {
-                        auto localeName = QLocale().name();
-                        while (!localeName.isEmpty() && localeName != "en") {
-                            tryTranslateNames.append(
-                                        m_abbrev + '.' + localeName);
-                            if (localeName == m_abbrev)
-                                tryTranslateNames.append(localeName);
-                            while (localeName.back().isLetterOrNumber()) {
-                                localeName.chop(1);
-                                if (localeName.isEmpty())
-                                    break;
-                            }
-                            while (!localeName.isEmpty()
-                                   && !localeName.back().isLetterOrNumber())
-                                localeName.chop(1);
-                        }
-                    }
-                    for (auto const & translateName : tryTranslateNames) {
-                        auto trName =
-                                QString::fromUtf8(
-                                    locale->translate(
-                                        translateName.toUtf8().constData()));
-                        if (trName != translateName)
-                            return trName;
-                    }
-                }
-                return m_englishName;
-            }
-
-            QString const & englishName() const override
-            { return m_englishName; }
-
-        // Fields:
-
-            QString const m_englishName;
-
-        }; // struct SwordLanguage
-
-        newLang = std::make_shared<SwordLanguage>(abbrev,
-                                                  std::move(englishName));
-    } else {
-        struct WeirdLanguage: Language {
-            WeirdLanguage(QString abbrev) : Language(std::move(abbrev)) {}
-            QString translatedName() const override { return abbrev(); }
-            QString const & englishName() const override { return abbrev(); }
-        }; // struct WeirdLanguage
-        newLang = std::make_shared<WeirdLanguage>(abbrev);
-    }
-    m_abbrLangMap.insert(abbrev, newLang);
-
-    return newLang;
-}
-
-void CLanguageMgr::init() {
-
-    //if we've already inserted all items we do not proceed
-    if (m_langMap.count() > 0) return;
 
     // Developers: It's easy to get a list of used language codes from all modules:
     // Refresh all sources; go to .sword/InstallMgr/; run:
@@ -481,4 +349,129 @@ void CLanguageMgr::init() {
     addLanguage("ztq", QT_TRANSLATE_NOOP("QObject", "Zapotec, Quioquitani-Quier\u00ed"));
     addLanguage("zty", QT_TRANSLATE_NOOP("QObject", "Zapotec, Yatee"));
     addLanguage("zu", QT_TRANSLATE_NOOP("QObject", "Zulu"));
+}
+
+CLanguageMgr::~CLanguageMgr() = default;
+
+const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
+    QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
+
+    // Do we have to refill the cached map?
+    if (m_availableModulesCache.moduleCount != mods.count()) {
+        m_availableModulesCache.availableLanguages.clear();
+        m_availableModulesCache.moduleCount = mods.count();
+
+        //collect the languages abbrevs of all modules
+        QStringList abbrevs;
+
+        for (auto const * const mod : mods) {
+            auto & m = mod->module();
+            if (!abbrevs.contains(m.getLanguage()))
+                abbrevs.append(m.getLanguage());
+        }
+
+        //now create a map of available langs
+        for (auto const & abbrev : abbrevs)
+            m_availableModulesCache.availableLanguages.insert(
+                        abbrev,
+                        languageForAbbrev(abbrev));
+    }
+    return m_availableModulesCache.availableLanguages;
+}
+
+std::shared_ptr<CLanguageMgr::Language const>
+CLanguageMgr::languageForAbbrev(QString const & abbrev) const {
+    auto it(m_langMap.find(abbrev));
+    if (it != m_langMap.constEnd()) return *it; //Language is already here
+
+    //try to search in the alternative abbrevs
+    for (auto const & lang : m_langList)
+        if (lang->alternativeAbbrevs().contains(abbrev))
+            return lang;
+    Q_ASSERT(abbrev != "en");
+
+    if (auto const it = m_abbrLangMap.find(abbrev); it != m_abbrLangMap.end())
+        return it.value();
+
+    std::shared_ptr<Language const> newLang;
+    if (auto * const locale =
+                sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
+    {
+        // Attempt to retrieve english name:
+        auto englishName = abbrev;
+        {
+            auto const abbrevEn = abbrev + ".en";
+            auto newEnglishName(
+                        QString::fromUtf8(
+                            locale->translate(abbrevEn.toUtf8().constData())));
+            if (newEnglishName != abbrevEn)
+                englishName = std::move(newEnglishName);
+        }
+
+        struct SwordLanguage: Language {
+
+        // Methods:
+
+            SwordLanguage(QString abbrev, QString englishName)
+                : Language(std::move(abbrev))
+                , m_englishName(std::move(englishName))
+            {}
+
+            QString translatedName() const override {
+                if (auto * const locale =
+                            sword::LocaleMgr::getSystemLocaleMgr()->getLocale(
+                                    "locales"))
+                {
+                    QStringList tryTranslateNames;
+                    {
+                        auto localeName = QLocale().name();
+                        while (!localeName.isEmpty() && localeName != "en") {
+                            tryTranslateNames.append(
+                                        m_abbrev + '.' + localeName);
+                            if (localeName == m_abbrev)
+                                tryTranslateNames.append(localeName);
+                            while (localeName.back().isLetterOrNumber()) {
+                                localeName.chop(1);
+                                if (localeName.isEmpty())
+                                    break;
+                            }
+                            while (!localeName.isEmpty()
+                                   && !localeName.back().isLetterOrNumber())
+                                localeName.chop(1);
+                        }
+                    }
+                    for (auto const & translateName : tryTranslateNames) {
+                        auto trName =
+                                QString::fromUtf8(
+                                    locale->translate(
+                                        translateName.toUtf8().constData()));
+                        if (trName != translateName)
+                            return trName;
+                    }
+                }
+                return m_englishName;
+            }
+
+            QString const & englishName() const override
+            { return m_englishName; }
+
+        // Fields:
+
+            QString const m_englishName;
+
+        }; // struct SwordLanguage
+
+        newLang = std::make_shared<SwordLanguage>(abbrev,
+                                                  std::move(englishName));
+    } else {
+        struct WeirdLanguage: Language {
+            WeirdLanguage(QString abbrev) : Language(std::move(abbrev)) {}
+            QString translatedName() const override { return abbrev(); }
+            QString const & englishName() const override { return abbrev(); }
+        }; // struct WeirdLanguage
+        newLang = std::make_shared<WeirdLanguage>(abbrev);
+    }
+    m_abbrLangMap.insert(abbrev, newLang);
+
+    return newLang;
 }
