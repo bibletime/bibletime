@@ -80,10 +80,6 @@ public: /* Types: */
 
     }; /* class Language */
 
-    using LanguageList = QList<std::shared_ptr<CLanguageMgr::Language const>>;
-    using LangMap = QHash<QString, std::shared_ptr<CLanguageMgr::Language const>>;
-
-
     /** \returns the singleton instance, creating it if one does not exist. */
     static CLanguageMgr * instance();
 
@@ -101,14 +97,10 @@ public: /* Types: */
        \param abbrev the language abbreviation
        \returns a pointer to the language of the given abbreviation.
     */
-    std::shared_ptr<CLanguageMgr::Language const>
-    languageForAbbrev(QString const & abbrev) const;
+    static std::shared_ptr<CLanguageMgr::Language const>
+    languageForAbbrev(QString const & abbrev);
 
 private: /* Fields: */
-
-    mutable LanguageList m_langList;
-    mutable LangMap m_langMap;
-    mutable LangMap m_abbrLangMap;
 
     struct ModuleCache {
         int moduleCount = 0;

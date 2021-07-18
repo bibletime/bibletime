@@ -110,7 +110,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_cachedName(QString::fromUtf8(module.getName()))
     , m_cachedCategory(retrieveCategory(type, module))
     , m_cachedLanguage(
-        CLanguageMgr::instance()->languageForAbbrev(
+        CLanguageMgr::languageForAbbrev(
             m_cachedCategory == Glossary
             /* Special handling for glossaries, we use the "from language" as
                language for the module: */

@@ -176,15 +176,16 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
 
 void CDisplaySettingsPage::initSwordLocaleCombo() {
     QMap<QString, QString> languageNames;
-    BT_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
-    languageNames.insert(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName(), "en_US");
+    BT_ASSERT(CLanguageMgr::languageForAbbrev("en_US"));
+    languageNames.insert(
+                CLanguageMgr::languageForAbbrev("en_US")->translatedName(),
+                "en_US");
 
     auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
     for (auto const & locale : localeMgr.getAvailableLocales()) {
         const char * const abbreviation =
                 localeMgr.getLocale(locale.c_str())->getName();
-        auto const l =
-                CLanguageMgr::instance()->languageForAbbrev(abbreviation);
+        auto const l = CLanguageMgr::languageForAbbrev(abbreviation);
         if (l->isValid()) {
             languageNames.insert(l->translatedName(), abbreviation);
         } else {

@@ -25,28 +25,24 @@
 #pragma GCC diagnostic pop
 
 
-/****************************************************/
-/******************** CLanguageMgr ******************/
-/****************************************************/
+namespace {
 
-CLanguageMgr::Language::~Language() = default;
+using LanguageList = QList<std::shared_ptr<CLanguageMgr::Language const>>;
+using LangMap = QHash<QString, std::shared_ptr<CLanguageMgr::Language const>>;
 
-CLanguageMgr *CLanguageMgr::m_instance = nullptr;
+struct LanguageInfo {
 
-void CLanguageMgr::destroyInstance() {
-    delete m_instance;
-    m_instance = nullptr;
-}
+    LanguageInfo();
 
-CLanguageMgr *CLanguageMgr::instance() {
-    if (m_instance == nullptr) {
-        m_instance = new CLanguageMgr();
-    }
+    LanguageList m_langList;
+    LangMap m_langMap;
+    LangMap m_abbrLangMap;
+};
 
-    return m_instance;
-}
+static_assert(std::is_nothrow_move_assignable_v<LanguageInfo>, "");
+static_assert(std::is_nothrow_move_constructible_v<LanguageInfo>, "");
 
-CLanguageMgr::CLanguageMgr() {
+LanguageInfo::LanguageInfo() {
     // Developers: It's easy to get a list of used language codes from all modules:
     // Refresh all sources; go to .sword/InstallMgr/; run:
     // grep -R -hs Lang= *|cut -c 6-|sort|uniq
@@ -82,9 +78,11 @@ CLanguageMgr::CLanguageMgr() {
     QObject::tr("Names of languages", "No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ ");
 
     auto const addLanguage =
-        [this](QString abbrev, QString englishName, QStringList altAbbrevs = {})
+        [this](QString abbrev,
+               QString englishName,
+               QStringList altAbbrevs = {})
         {
-            struct BibleTimeLanguage: Language {
+            struct BibleTimeLanguage: CLanguageMgr::Language {
 
             // Methods:
 
@@ -349,6 +347,32 @@ CLanguageMgr::CLanguageMgr() {
     addLanguage("zu", QT_TRANSLATE_NOOP("QObject", "Zulu"));
 }
 
+} // anonymous namespace
+
+/****************************************************/
+/******************** CLanguageMgr ******************/
+/****************************************************/
+
+CLanguageMgr::Language::~Language() = default;
+
+CLanguageMgr *CLanguageMgr::m_instance = nullptr;
+
+void CLanguageMgr::destroyInstance() {
+    delete m_instance;
+    m_instance = nullptr;
+}
+
+CLanguageMgr *CLanguageMgr::instance() {
+    if (m_instance == nullptr) {
+        m_instance = new CLanguageMgr();
+    }
+
+    return m_instance;
+}
+
+CLanguageMgr::CLanguageMgr() {
+}
+
 CLanguageMgr::~CLanguageMgr() = default;
 
 std::set<std::shared_ptr<CLanguageMgr::Language const>> const &
@@ -378,17 +402,20 @@ CLanguageMgr::availableLanguages() {
 }
 
 std::shared_ptr<CLanguageMgr::Language const>
-CLanguageMgr::languageForAbbrev(QString const & abbrev) const {
-    auto it(m_langMap.find(abbrev));
-    if (it != m_langMap.constEnd()) return *it; //Language is already here
+CLanguageMgr::languageForAbbrev(QString const & abbrev) {
+    static LanguageInfo info;
+
+    auto it(info.m_langMap.find(abbrev));
+    if (it != info.m_langMap.constEnd()) return *it; //Language is already here
 
     //try to search in the alternative abbrevs
-    for (auto const & lang : m_langList)
+    for (auto const & lang : info.m_langList)
         if (lang->alternativeAbbrevs().contains(abbrev))
             return lang;
     Q_ASSERT(abbrev != "en");
 
-    if (auto const it = m_abbrLangMap.find(abbrev); it != m_abbrLangMap.end())
+    if (auto const it = info.m_abbrLangMap.find(abbrev);
+        it != info.m_abbrLangMap.end())
         return it.value();
 
     std::shared_ptr<Language const> newLang;
@@ -469,7 +496,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) const {
         }; // struct WeirdLanguage
         newLang = std::make_shared<WeirdLanguage>(abbrev);
     }
-    m_abbrLangMap.insert(abbrev, newLang);
+    info.m_abbrLangMap.insert(abbrev, newLang);
 
     return newLang;
 }
