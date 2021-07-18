@@ -98,9 +98,6 @@ public: /* Types: */
 
     virtual ~CLanguageMgr();
 
-    /** \returns a map which contains all known (standard) languages. */
-    CLanguageMgr::LangMap const * languages() const { return &m_langMap; }
-
     /** \returns a map of available languages (those with modules present). */
     CLanguageMgr::LangMap const & availableLanguages();
 
