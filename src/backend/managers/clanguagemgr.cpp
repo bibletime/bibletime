@@ -384,19 +384,12 @@ CLanguageMgr::availableLanguages() {
         m_availableModulesCache.availableLanguages.clear();
         m_availableModulesCache.moduleCount = mods.count();
 
-        //collect the languages abbrevs of all modules
-        QStringList abbrevs;
-
         for (auto const * const mod : mods) {
-            auto & m = mod->module();
-            if (!abbrevs.contains(m.getLanguage()))
-                abbrevs.append(m.getLanguage());
+            m_availableModulesCache.availableLanguages.emplace(mod->language());
+            if (auto lang2 = mod->glossaryTargetlanguage())
+                m_availableModulesCache.availableLanguages.emplace(
+                            std::move(lang2));
         }
-
-        //now create a map of available langs
-        for (auto const & abbrev : abbrevs)
-            m_availableModulesCache.availableLanguages.insert(
-                        languageForAbbrev(abbrev));
     }
     return m_availableModulesCache.availableLanguages;
 }
