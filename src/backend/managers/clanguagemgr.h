@@ -16,6 +16,7 @@
 #include <QList>
 #include <QString>
 #include <QStringList>
+#include <utility>
 
 
 /**
@@ -59,36 +60,19 @@ public: /* Types: */
 
     private: /* Methods: */
 
-        Language() = delete;
         Language(Language &&) = delete;
         Language(Language const &) = delete;
         Language & operator=(Language &&) = delete;
         Language & operator=(Language const &) = delete;
 
-        Language(char const * abbrev,
-                 char const * englishName,
-                 QString const & translatedName)
-            : m_abbrev(abbrev)
-            , m_englishName(QString::fromUtf8(englishName))
-            , m_translatedName(translatedName)
-        {}
-
-        Language(QString const & abbrev,
-                 QString const & englishName,
-                 QString const & translatedName)
-            : m_abbrev(abbrev)
-            , m_englishName(englishName)
-            , m_translatedName(translatedName)
-        {}
-
-        Language(char const * abbrev,
-                 char const * englishName,
-                 QString const & translatedName,
-                 QStringList const & altAbbrevs)
-            : m_abbrev(abbrev)
-            , m_englishName(QString::fromUtf8(englishName))
-            , m_translatedName(translatedName)
-            , m_altAbbrevs(altAbbrevs)
+        Language(QString abbrev,
+                 QString englishName,
+                 QString translatedName,
+                 QStringList altAbbrevs = {})
+            : m_abbrev(std::move(abbrev))
+            , m_englishName(std::move(englishName))
+            , m_translatedName(std::move(translatedName))
+            , m_altAbbrevs(std::move(altAbbrevs))
         {}
 
     private: /* Fields: */

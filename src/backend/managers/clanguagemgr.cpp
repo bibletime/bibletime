@@ -13,7 +13,6 @@
 #include "clanguagemgr.h"
 
 #include <QLocale>
-#include <utility>
 #include "../drivers/cswordmoduleinfo.h"
 #include "cswordbackend.h"
 
