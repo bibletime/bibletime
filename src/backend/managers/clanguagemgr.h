@@ -32,6 +32,10 @@ public: /* Types: */
 
         friend class CLanguageMgr;
 
+    private: /* Types: */
+
+        enum class TranslatedNameSource { None, BibleTime, Sword };
+
     public: /* Methods: */
 
         /** \returns the abbreviation of the this language. */
@@ -43,8 +47,7 @@ public: /* Types: */
         }
 
         /** \returns the translated name of this language. */
-        QString const & translatedName() const
-        { return m_translatedName; }
+        QString translatedName() const;
 
         /** \returns the english name of this language. */
         QString const & englishName() const { return m_englishName; }
@@ -67,20 +70,20 @@ public: /* Types: */
 
         Language(QString abbrev,
                  QString englishName,
-                 QString translatedName,
+                 TranslatedNameSource translatedNameSource,
                  QStringList altAbbrevs = {})
             : m_abbrev(std::move(abbrev))
             , m_englishName(std::move(englishName))
-            , m_translatedName(std::move(translatedName))
             , m_altAbbrevs(std::move(altAbbrevs))
+            , m_translatedNameSource(translatedNameSource)
         {}
 
     private: /* Fields: */
 
         QString const m_abbrev;
         QString const m_englishName;
-        QString const m_translatedName;
         QStringList const m_altAbbrevs;
+        TranslatedNameSource const m_translatedNameSource;
 
     }; /* class Language */
 
