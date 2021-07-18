@@ -32,10 +32,6 @@ public: /* Types: */
 
         friend class CLanguageMgr;
 
-    private: /* Types: */
-
-        enum class TranslatedNameSource { None, BibleTime, Sword };
-
     public: /* Methods: */
 
         /** \returns the abbreviation of the this language. */
@@ -47,10 +43,10 @@ public: /* Types: */
         }
 
         /** \returns the translated name of this language. */
-        QString translatedName() const;
+        virtual QString translatedName() const = 0;
 
         /** \returns the english name of this language. */
-        QString const & englishName() const { return m_englishName; }
+        virtual QString const & englishName() const = 0;
 
         /** \returns a list of alternative abbreviations for this language. */
         QStringList const & alternativeAbbrevs() const
@@ -59,31 +55,26 @@ public: /* Types: */
         /** \returns whether this language object is valid, i.e. has an
                      abbreviation and an english name. */
         bool isValid() const
-        { return (!m_abbrev.isEmpty() && !m_englishName.isEmpty()); }
+        { return (!m_abbrev.isEmpty() && !englishName().isEmpty()); }
 
-    private: /* Methods: */
+        virtual ~Language();
+
+    protected: /* Methods: */
 
         Language(Language &&) = delete;
         Language(Language const &) = delete;
         Language & operator=(Language &&) = delete;
         Language & operator=(Language const &) = delete;
 
-        Language(QString abbrev,
-                 QString englishName,
-                 TranslatedNameSource translatedNameSource,
-                 QStringList altAbbrevs = {})
+        Language(QString abbrev, QStringList altAbbrevs = {})
             : m_abbrev(std::move(abbrev))
-            , m_englishName(std::move(englishName))
             , m_altAbbrevs(std::move(altAbbrevs))
-            , m_translatedNameSource(translatedNameSource)
         {}
 
     private: /* Fields: */
 
         QString const m_abbrev;
-        QString const m_englishName;
         QStringList const m_altAbbrevs;
-        TranslatedNameSource const m_translatedNameSource;
 
     }; /* class Language */
 

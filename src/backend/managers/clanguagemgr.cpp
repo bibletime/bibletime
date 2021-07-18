@@ -29,43 +29,7 @@
 /******************** CLanguageMgr ******************/
 /****************************************************/
 
-QString CLanguageMgr::Language::translatedName() const {
-    if (m_translatedNameSource == TranslatedNameSource::None)
-        return m_englishName;
-    if (m_translatedNameSource == TranslatedNameSource::BibleTime)
-        return QObject::tr(m_englishName.toUtf8());
-
-    BT_ASSERT(m_translatedNameSource == TranslatedNameSource::Sword);
-    if (auto * const locale =
-                sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
-    {
-        QStringList tryTranslateNames;
-        {
-            auto localeName = QLocale().name();
-            while (!localeName.isEmpty() && localeName != "en") {
-                tryTranslateNames.append(m_abbrev + '.' + localeName);
-                if (localeName == m_abbrev)
-                    tryTranslateNames.append(localeName);
-                while (localeName.back().isLetterOrNumber()) {
-                    localeName.chop(1);
-                    if (localeName.isEmpty())
-                        break;
-                }
-                while (!localeName.isEmpty()
-                       && !localeName.back().isLetterOrNumber())
-                    localeName.chop(1);
-            }
-        }
-        for (auto const & translateName : tryTranslateNames) {
-            auto trName(QString::fromUtf8(
-                            locale->translate(
-                                translateName.toUtf8().constData())));
-            if (trName != translateName)
-                return trName;
-        }
-    }
-    return m_englishName;
-}
+CLanguageMgr::Language::~Language() = default;
 
 CLanguageMgr *CLanguageMgr::m_instance = nullptr;
 
@@ -133,7 +97,6 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
         return it.value();
 
     Language * newLang;
-    using TNS = Language::TranslatedNameSource;
     if (auto * const locale =
                 sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
     {
@@ -147,9 +110,68 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
             if (newEnglishName != abbrevEn)
                 englishName = std::move(newEnglishName);
         }
-        newLang = new Language(abbrev, englishName, TNS::Sword);
+
+        struct SwordLanguage: Language {
+
+        // Methods:
+
+            SwordLanguage(QString abbrev, QString englishName)
+                : Language(std::move(abbrev))
+                , m_englishName(std::move(englishName))
+            {}
+
+            QString translatedName() const override {
+                if (auto * const locale =
+                            sword::LocaleMgr::getSystemLocaleMgr()->getLocale(
+                                    "locales"))
+                {
+                    QStringList tryTranslateNames;
+                    {
+                        auto localeName = QLocale().name();
+                        while (!localeName.isEmpty() && localeName != "en") {
+                            tryTranslateNames.append(
+                                        m_abbrev + '.' + localeName);
+                            if (localeName == m_abbrev)
+                                tryTranslateNames.append(localeName);
+                            while (localeName.back().isLetterOrNumber()) {
+                                localeName.chop(1);
+                                if (localeName.isEmpty())
+                                    break;
+                            }
+                            while (!localeName.isEmpty()
+                                   && !localeName.back().isLetterOrNumber())
+                                localeName.chop(1);
+                        }
+                    }
+                    for (auto const & translateName : tryTranslateNames) {
+                        auto trName =
+                                QString::fromUtf8(
+                                    locale->translate(
+                                        translateName.toUtf8().constData()));
+                        if (trName != translateName)
+                            return trName;
+                    }
+                }
+                return m_englishName;
+            }
+
+            QString const & englishName() const override
+            { return m_englishName; }
+
+        // Fields:
+
+            QString const m_englishName;
+
+        }; // struct SwordLanguage
+
+        newLang = new SwordLanguage(abbrev, englishName);
     } else {
-        newLang = new Language(abbrev, abbrev, TNS::None);
+        struct WeirdLanguage: Language {
+            WeirdLanguage(QString abbrev) : Language(std::move(abbrev)) {}
+            QString translatedName() const override { return abbrev(); }
+            QString const & englishName() const override { return abbrev(); }
+        }; // struct WeirdLanguage
+        newLang = new WeirdLanguage(abbrev);
     }
     m_abbrLangMap.insert(abbrev, newLang);
 
@@ -198,11 +220,32 @@ void CLanguageMgr::init() {
     auto const addLanguage =
         [this](QString abbrev, QString englishName, QStringList altAbbrevs = {})
         {
+            struct BibleTimeLanguage: Language {
+
+            // Methods:
+
+                BibleTimeLanguage(QString abbrev,
+                                  QString englishName,
+                                  QStringList altAbbrevs)
+                    : Language(std::move(abbrev), std::move(altAbbrevs))
+                    , m_englishName(std::move(englishName))
+                {}
+
+                QString translatedName() const override
+                { return QObject::tr(m_englishName.toUtf8()); }
+
+                QString const & englishName() const override
+                { return m_englishName; }
+
+            // Fields:
+
+                QString const m_englishName;
+
+            }; // struct BibleTimeLanguage
             auto * const language =
-                    new Language(std::move(abbrev),
-                                 std::move(englishName),
-                                 Language::TranslatedNameSource::BibleTime,
-                                 std::move(altAbbrevs));
+                    new BibleTimeLanguage(std::move(abbrev),
+                                          std::move(englishName),
+                                          std::move(altAbbrevs));
             m_langList.append(language);
             m_langMap.insert(language->abbrev(), language);
         };
