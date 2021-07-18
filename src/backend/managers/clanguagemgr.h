@@ -115,14 +115,6 @@ private: /* Methods: */
 
     void init();
 
-    QStringList makeStringList(QString const & abbrevs) {
-        #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-        return abbrevs.split(";", QString::KeepEmptyParts, Qt::CaseSensitive);
-        #else
-        return abbrevs.split(";", Qt::KeepEmptyParts, Qt::CaseSensitive );
-        #endif
-    }
-
 private: /* Fields: */
 
     mutable LanguageList m_langList;

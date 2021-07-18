@@ -232,7 +232,7 @@ void CLanguageMgr::init() {
     m_langList.append( new Language("de", "German", QObject::tr("German")) );
     m_langList.append( new Language("dug", "Duruma", QObject::tr("Duruma")) );
     //  m_langList.append( new Language("dz", "Dzongkha", QObject::tr("Dzongkha")) );
-    m_langList.append( new Language("el", "Greek, Modern (1453-)", QObject::tr("Greek, Modern (1453-)"), makeStringList("gre;ell")) );
+    m_langList.append( new Language("el", "Greek, Modern (1453-)", QObject::tr("Greek, Modern (1453-)"), {"gre", "ell"}) );
     m_langList.append( new Language("en", "English", QObject::tr("English")) );
     m_langList.append( new Language("en_US", "American English", QObject::tr("American English")) );
     m_langList.append( new Language("enm", "English, Middle (1100-1500)", QObject::tr("English, Middle (1100-1500)")) );
