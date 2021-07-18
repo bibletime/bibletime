@@ -60,8 +60,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
         }
     };
     std::set<std::shared_ptr<CLanguageMgr::Language const>, Comp> languages;
-    for (auto const & language
-         : CLanguageMgr::instance()->availableLanguages().values())
+    for (auto const & language : CLanguageMgr::instance()->availableLanguages())
         languages.emplace(language);
 
     for (auto const & l : languages) {

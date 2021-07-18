@@ -168,8 +168,8 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                .append('}');
     }
     {
-        const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
-        for (auto const & lang : langMap) {
+        for (auto const & lang : CLanguageMgr::instance()->availableLanguages())
+        {
             if (lang->abbrev().isEmpty())
                 continue;
 

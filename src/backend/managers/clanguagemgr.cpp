@@ -353,7 +353,8 @@ CLanguageMgr::CLanguageMgr() {
 
 CLanguageMgr::~CLanguageMgr() = default;
 
-const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
+std::set<std::shared_ptr<CLanguageMgr::Language const>> const &
+CLanguageMgr::availableLanguages() {
     QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
 
     // Do we have to refill the cached map?
@@ -373,7 +374,6 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
         //now create a map of available langs
         for (auto const & abbrev : abbrevs)
             m_availableModulesCache.availableLanguages.insert(
-                        abbrev,
                         languageForAbbrev(abbrev));
     }
     return m_availableModulesCache.availableLanguages;

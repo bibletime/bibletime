@@ -17,6 +17,7 @@
 #include <QList>
 #include <QString>
 #include <QStringList>
+#include <set>
 #include <utility>
 
 
@@ -94,7 +95,7 @@ public: /* Types: */
     virtual ~CLanguageMgr();
 
     /** \returns a map of available languages (those with modules present). */
-    CLanguageMgr::LangMap const & availableLanguages();
+    std::set<std::shared_ptr<Language const>> const & availableLanguages();
 
     /**
        \param abbrev the language abbreviation
@@ -111,7 +112,7 @@ private: /* Fields: */
 
     struct ModuleCache {
         int moduleCount;
-        LangMap availableLanguages;
+        std::set<std::shared_ptr<Language const>> availableLanguages;
     } m_availableModulesCache;
 
     static CLanguageMgr * m_instance;
