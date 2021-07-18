@@ -47,8 +47,6 @@ CLanguageMgr *CLanguageMgr::instance() {
 }
 
 CLanguageMgr::CLanguageMgr() {
-    m_availableModulesCache.moduleCount = 0;
-
     // Developers: It's easy to get a list of used language codes from all modules:
     // Refresh all sources; go to .sword/InstallMgr/; run:
     // grep -R -hs Lang= *|cut -c 6-|sort|uniq

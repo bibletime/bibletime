@@ -111,7 +111,7 @@ private: /* Fields: */
     mutable LangMap m_abbrLangMap;
 
     struct ModuleCache {
-        int moduleCount;
+        int moduleCount = 0;
         std::set<std::shared_ptr<Language const>> availableLanguages;
     } m_availableModulesCache;
 
