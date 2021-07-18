@@ -12,6 +12,8 @@
 
 #pragma once
 
+#include <vector>
+
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
@@ -34,22 +36,23 @@ class OsisToHtml: public sword::OSISHTMLHREF {
             public:
                 UserData(sword::SWModule const * module,
                          sword::SWKey const * key)
-                     : sword::OSISHTMLHREF::MyUserData(module, key),
-                       swordFootnote(1), inCrossrefNote(false),
-                       entryAttributes(module->getEntryAttributes()),
-                       noteType(Unknown) {}
+                     : sword::OSISHTMLHREF::MyUserData(module, key)
+                     , swordFootnote(1)
+                     , inCrossrefNote(false)
+                     , entryAttributes(module->getEntryAttributes())
+                {}
 
                 unsigned short int swordFootnote;
                 bool inCrossrefNote;
                 sword::AttributeTypeList entryAttributes;
 
                 enum NoteType {
-                    Unknown,
                     Alternative,
                     CrossReference,
                     Footnote,
                     StrongsMarkup
-                } noteType;
+                };
+                std::vector<NoteType> noteTypes;
 
                 struct {
                     sword::SWBuf who;
