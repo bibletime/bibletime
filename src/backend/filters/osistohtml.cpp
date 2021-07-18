@@ -231,7 +231,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 
                 if (type == "crossReference") { //note containing cross references
                     myUserData->inCrossrefNote = true;
-                    myUserData->noteType = UserData::CrossReference;
+                    myUserData->noteTypes.emplace_back(UserData::CrossReference);
 
                     /*
                      * Do not count crossrefs as footnotes if they are displayed in the text. This will cause problems
@@ -258,7 +258,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                     */
 
                     myUserData->suspendTextPassThru = true;
-                    myUserData->noteType = UserData::StrongsMarkup;
+                    myUserData->noteTypes.emplace_back(UserData::StrongsMarkup);
                 }
 
                 else {
@@ -276,20 +276,18 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                     buf.append( (n.length() > 0) ? n.c_str() : "*" );
                     buf.append("</span> ");
 
-                    myUserData->noteType = UserData::Footnote;
+                    myUserData->noteTypes.emplace_back(UserData::Footnote);
                     myUserData->suspendTextPassThru = true;
                 }
             }
-            else { //if (tag.isEndTag()) {
-                BT_ASSERT(myUserData->noteType != UserData::Unknown);
-
-                if (myUserData->noteType == UserData::CrossReference) {
+            else if (/* tag.isEndTag() && */ !myUserData->noteTypes.empty()) {
+                if (myUserData->noteTypes.back() == UserData::CrossReference) {
                     buf.append("</span> ");
 //                     myUserData->suspendTextPassThru = false;
                     myUserData->inCrossrefNote = false;
                 }
 
-                myUserData->noteType = UserData::Unknown;
+                myUserData->noteTypes.pop_back();
                 myUserData->suspendTextPassThru = false;
             }
         }

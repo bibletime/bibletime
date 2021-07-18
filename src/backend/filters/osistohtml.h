@@ -13,6 +13,8 @@
 #ifndef FILTERS_OSISTOHTML_H
 #define FILTERS_OSISTOHTML_H
 
+#include <vector>
+
 // Sword includes:
 #include <osishtmlhref.h>
 #include <swbuf.h>
@@ -29,22 +31,23 @@ class OsisToHtml: public sword::OSISHTMLHREF {
             public:
                 inline UserData(const sword::SWModule *module,
                                 const sword::SWKey *key)
-                     : sword::OSISHTMLHREF::MyUserData(module, key),
-                       swordFootnote(1), inCrossrefNote(false),
-                       entryAttributes(module->getEntryAttributes()),
-                       noteType(Unknown) {}
+                     : sword::OSISHTMLHREF::MyUserData(module, key)
+                     , swordFootnote(1)
+                     , inCrossrefNote(false)
+                     , entryAttributes(module->getEntryAttributes())
+                {}
 
                 unsigned short int swordFootnote;
                 bool inCrossrefNote;
                 sword::AttributeTypeList entryAttributes;
 
                 enum NoteType {
-                    Unknown,
                     Alternative,
                     CrossReference,
                     Footnote,
                     StrongsMarkup
-                } noteType;
+                };
+                std::vector<NoteType> noteTypes;
 
                 struct {
                     sword::SWBuf who;
