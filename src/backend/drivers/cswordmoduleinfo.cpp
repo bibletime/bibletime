@@ -116,6 +116,10 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                language for the module: */
             ? config(GlossaryFrom)
             : module.getLanguage()))
+    , m_cachedGlossaryTargetLanguage(
+        m_cachedCategory == Glossary
+        ? CLanguageMgr::languageForAbbrev(module.getLanguage())
+        : std::shared_ptr<CLanguageMgr::Language const>())
     , m_cachedHasVersion(!QString((*m_backend.getConfig())[module.getName()]["Version"]).isEmpty())
 {
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",

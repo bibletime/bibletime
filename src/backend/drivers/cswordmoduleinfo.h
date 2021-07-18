@@ -325,6 +325,10 @@ wrong, or if the config file was write protected return false.
     std::shared_ptr<CLanguageMgr::Language const> language() const
     { return m_cachedLanguage; }
 
+    /** \returns the target language of the glossary, if this is a glossary. */
+    std::shared_ptr<CLanguageMgr::Language const> glossaryTargetlanguage() const
+    { return m_cachedGlossaryTargetLanguage; }
+
     /**
       \returns whether this module may be written to.
     */
@@ -428,6 +432,8 @@ private: /* Fields: */
     QString const m_cachedName;
     CSwordModuleInfo::Category const m_cachedCategory;
     std::shared_ptr<CLanguageMgr::Language const> const m_cachedLanguage;
+    std::shared_ptr<CLanguageMgr::Language const> const
+            m_cachedGlossaryTargetLanguage;
     bool const m_cachedHasVersion;
 
 };
