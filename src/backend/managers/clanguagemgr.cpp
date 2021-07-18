@@ -108,8 +108,8 @@ LanguageInfo::LanguageInfo() {
                     std::make_shared<BibleTimeLanguage>(std::move(abbrev),
                                                         std::move(englishName),
                                                         std::move(altAbbrevs));
-            m_langList.append(language);
-            m_langMap.insert(language->abbrev(), std::move(language));
+            m_langMap.insert(language->abbrev(), language);
+            m_langList.append(std::move(language));
         };
 
     //  addLanguage("aa", QT_TRANSLATE_NOOP("QObject", "Afar"));
