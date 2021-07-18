@@ -324,10 +324,7 @@ void BtQmlInterface::getFontsFromSettings() {
         QFont font;
         CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
         if (m != nullptr) {
-
-            const CLanguageMgr::Language* lang = m->language();
-            if (lang != nullptr) {
-
+            if (auto const lang = m->language()) {
                 BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
                 if (fontPair.first) {
                     font = fontPair.second;

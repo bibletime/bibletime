@@ -179,7 +179,7 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
     CDisplayTemplateMgr::Settings settings;
     settings.modules = modules;
     if (modules.count() == 1)
-        if (auto * const lang = modules.first()->language())
+        if (auto const lang = modules.first()->language())
             if (auto const & abbrev = lang->abbrev(); !abbrev.isEmpty())
                 settings.langAbbrev = abbrev;
 

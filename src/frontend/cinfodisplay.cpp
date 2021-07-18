@@ -139,7 +139,7 @@ void CInfoDisplay::setInfo(CSwordModuleInfo * const module) {
 
 void CInfoDisplay::setBrowserFont(const CSwordModuleInfo* const module) {
     if (module) {
-            const CLanguageMgr::Language* lang = module->language();
+            auto const lang = module->language();
             m_textBrowser->setFont(btConfig().getFontForLanguage(*lang).second);
     } else {
         m_textBrowser->setFont(btConfig().getDefaultFont());

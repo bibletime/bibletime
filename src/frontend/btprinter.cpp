@@ -98,7 +98,7 @@ QString BtPrinter::finishText(QString const & text, KeyTree const & tree) {
     BtConstModuleList const modules = collectModules(tree);
     BT_ASSERT(!modules.empty());
 
-    CLanguageMgr::Language const * const lang = modules.first()->language();
+    auto const lang = modules.first()->language();
     BT_ASSERT(lang);
 
     CDisplayTemplateMgr::Settings settings;

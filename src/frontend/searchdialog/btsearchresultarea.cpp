@@ -232,7 +232,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
 void BtSearchResultArea::setBrowserFont(const CSwordModuleInfo* const module) {
     if (module) {
-            const CLanguageMgr::Language* lang = module->language();
+            auto const lang = module->language();
             m_previewDisplay->setFont(btConfig().getFontForLanguage(*lang).second);
     } else {
         m_previewDisplay->setFont(btConfig().getDefaultFont());

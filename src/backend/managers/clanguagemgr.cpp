@@ -51,11 +51,7 @@ CLanguageMgr::CLanguageMgr() {
     init();
 }
 
-CLanguageMgr::~CLanguageMgr() {
-    qDeleteAll(m_abbrLangMap);
-    qDeleteAll(m_langList);
-    m_langList.clear();
-}
+CLanguageMgr::~CLanguageMgr() = default;
 
 const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
     QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
@@ -83,12 +79,13 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
     return m_availableModulesCache.availableLanguages;
 }
 
-const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& abbrev ) const {
+std::shared_ptr<CLanguageMgr::Language const>
+CLanguageMgr::languageForAbbrev(QString const & abbrev) const {
     auto it(m_langMap.find(abbrev));
     if (it != m_langMap.constEnd()) return *it; //Language is already here
 
     //try to search in the alternative abbrevs
-    for (auto const * const lang : m_langList)
+    for (auto const & lang : m_langList)
         if (lang->alternativeAbbrevs().contains(abbrev))
             return lang;
     Q_ASSERT(abbrev != "en");
@@ -96,7 +93,7 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     if (auto const it = m_abbrLangMap.find(abbrev); it != m_abbrLangMap.end())
         return it.value();
 
-    Language * newLang;
+    std::shared_ptr<Language const> newLang;
     if (auto * const locale =
                 sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
     {
@@ -164,14 +161,15 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
 
         }; // struct SwordLanguage
 
-        newLang = new SwordLanguage(abbrev, englishName);
+        newLang = std::make_shared<SwordLanguage>(abbrev,
+                                                  std::move(englishName));
     } else {
         struct WeirdLanguage: Language {
             WeirdLanguage(QString abbrev) : Language(std::move(abbrev)) {}
             QString translatedName() const override { return abbrev(); }
             QString const & englishName() const override { return abbrev(); }
         }; // struct WeirdLanguage
-        newLang = new WeirdLanguage(abbrev);
+        newLang = std::make_shared<WeirdLanguage>(abbrev);
     }
     m_abbrLangMap.insert(abbrev, newLang);
 
@@ -242,12 +240,12 @@ void CLanguageMgr::init() {
                 QString const m_englishName;
 
             }; // struct BibleTimeLanguage
-            auto * const language =
-                    new BibleTimeLanguage(std::move(abbrev),
-                                          std::move(englishName),
-                                          std::move(altAbbrevs));
+            auto language =
+                    std::make_shared<BibleTimeLanguage>(std::move(abbrev),
+                                                        std::move(englishName),
+                                                        std::move(altAbbrevs));
             m_langList.append(language);
-            m_langMap.insert(language->abbrev(), language);
+            m_langMap.insert(language->abbrev(), std::move(language));
         };
 
     //  addLanguage("aa", QT_TRANSLATE_NOOP("QObject", "Afar"));

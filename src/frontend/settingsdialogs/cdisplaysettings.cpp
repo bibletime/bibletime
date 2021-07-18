@@ -183,8 +183,8 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
     for (auto const & locale : localeMgr.getAvailableLocales()) {
         const char * const abbreviation =
                 localeMgr.getLocale(locale.c_str())->getName();
-        const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForAbbrev(abbreviation);
-
+        auto const l =
+                CLanguageMgr::instance()->languageForAbbrev(abbreviation);
         if (l->isValid()) {
             languageNames.insert(l->translatedName(), abbreviation);
         } else {

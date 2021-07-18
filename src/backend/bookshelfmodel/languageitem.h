@@ -34,7 +34,7 @@ public: /* Methods: */
 
 private: /* Fields: */
 
-    const CLanguageMgr::Language * m_language;
+    std::shared_ptr<CLanguageMgr::Language const> m_language;
 
 };
 

@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <memory>
 #include <QHash>
 #include <QList>
 #include <QString>
@@ -78,8 +79,8 @@ public: /* Types: */
 
     }; /* class Language */
 
-    using LanguageList = QList<Language *>;
-    using LangMap = QHash<QString, Language const *>;
+    using LanguageList = QList<std::shared_ptr<CLanguageMgr::Language const>>;
+    using LangMap = QHash<QString, std::shared_ptr<CLanguageMgr::Language const>>;
 
 
     /** \returns the singleton instance, creating it if one does not exist. */
@@ -99,7 +100,7 @@ public: /* Types: */
        \param abbrev the language abbreviation
        \returns a pointer to the language of the given abbreviation.
     */
-    CLanguageMgr::Language const *
+    std::shared_ptr<CLanguageMgr::Language const>
     languageForAbbrev(QString const & abbrev) const;
 
 private: /* Methods: */

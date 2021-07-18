@@ -322,7 +322,8 @@ wrong, or if the config file was write protected return false.
     /**
       \returns the language of the module.
     */
-    CLanguageMgr::Language const * language() const { return m_cachedLanguage; }
+    std::shared_ptr<CLanguageMgr::Language const> language() const
+    { return m_cachedLanguage; }
 
     /**
       \returns whether this module may be written to.
@@ -426,7 +427,7 @@ private: /* Fields: */
     // Cached data:
     QString const m_cachedName;
     CSwordModuleInfo::Category const m_cachedCategory;
-    const CLanguageMgr::Language * const m_cachedLanguage;
+    std::shared_ptr<CLanguageMgr::Language const> const m_cachedLanguage;
     bool const m_cachedHasVersion;
 
 };

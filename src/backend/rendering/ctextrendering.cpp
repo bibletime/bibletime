@@ -427,7 +427,7 @@ QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
     settings.modules = collectModules(tree);
     if (settings.modules.count() == 1) {
         CSwordModuleInfo const * const firstModule = settings.modules.first();
-        CLanguageMgr::Language const * const lang = firstModule->language();
+        auto const lang = firstModule->language();
         settings.langAbbrev = lang->isValid() ? lang->abbrev() : "unknown";
         settings.textDirection = firstModule->textDirection();
     } else {
