@@ -280,7 +280,7 @@ void CLanguageMgr::init() {
     m_langList.append( new Language("jac", "Jacalteco, Eastern", QObject::tr("Jacalteco, Eastern")) );
     m_langList.append( new Language("jvn", "Javanese, Caribbean", QObject::tr("Javanese, Caribbean")) );
     m_langList.append( new Language("ka", "Georgian", QObject::tr("Georgian")) );
-    m_langList.append( new Language("kek", "Kekch\u00ed", QObject::tr("Kekch\u00ed", "kek")) );
+    m_langList.append( new Language("kek", "Kekchi", QObject::tr("Kekchi")) );
     //  m_langList.append( new Language("ki", "Kikuyu", QObject::tr("Kikuyu")) );
     //  m_langList.append( new Language("kj", "Kuanyama", QObject::tr("Kuanyama")) );
     //  m_langList.append( new Language("kk", "Kazakh", QObject::tr("Kazakh")) );
@@ -407,7 +407,7 @@ void CLanguageMgr::init() {
     m_langList.append( new Language("xh", "Xhosa", QObject::tr("Xhosa")) );
     m_langList.append( new Language("xtd", "Mixtec, Diuxi-Tilantongo", QObject::tr("Mixtec, Diuxi-Tilantongo")) );
     m_langList.append( new Language("yi", "Yiddish", QObject::tr("Yiddish")) );
-    m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoryba")) );
+    m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoruba")) );
     //  m_langList.append( new Language("za", "Zhuang", QObject::tr("Zhuang")) );
     m_langList.append( new Language("zab", "Zapotec, San Juan Guelav\u00eda", QObject::tr("Zapotec, San Juan Guelav\u00eda")) );
     m_langList.append( new Language("zaw", "Zapotec, Mitla", QObject::tr("Zapotec, Mitla")) );
