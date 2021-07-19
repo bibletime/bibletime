@@ -186,40 +186,38 @@ const QString CTextRendering::renderKeyRange(
         const KeyTreeItem::Settings &keySettings)
 {
 
-    if (lowerBound == upperBound) { //same key, render single key
+    if (lowerBound == upperBound) // same key, render single key:
         return renderSingleKey(lowerBound.key(), modules, keySettings);
-    } else { // Render range
-        BT_ASSERT(lowerBound < upperBound);
-        KeyTree tree;
-        KeyTreeItem::Settings settings = keySettings;
 
-        auto curKey = lowerBound;
-        do {
-            //make sure the key given by highlightKey gets marked as current key
-            settings.highlight = (!highlightKey.isEmpty() ? (curKey.key() == highlightKey) : false);
+    // Render range:
+    BT_ASSERT(lowerBound < upperBound);
+    KeyTree tree;
+    KeyTreeItem::Settings settings = keySettings;
 
-            /**
-                \todo We need to take care of linked verses if we render one or
-                      (esp) more modules. If the verses 2,3,4,5 are linked to 1,
-                      it should be displayed as one entry with the caption 1-5.
-            */
+    auto curKey = lowerBound;
+    do {
+        //make sure the key given by highlightKey gets marked as current key
+        settings.highlight = (!highlightKey.isEmpty() ? (curKey.key() == highlightKey) : false);
 
-            if (curKey.chapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
-                curKey.setVerse(0);
-                tree.emplace_back(curKey.key(), modules, settings);
-                curKey.setChapter(1);
-                curKey.setVerse(0);
-            }
+        /**
+            \todo We need to take care of linked verses if we render one or
+                  (esp) more modules. If the verses 2,3,4,5 are linked to 1,
+                  it should be displayed as one entry with the caption 1-5.
+        */
+
+        if (curKey.chapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
+            curKey.setVerse(0);
             tree.emplace_back(curKey.key(), modules, settings);
-            if (!curKey.next(CSwordVerseKey::UseVerse)) {
-                /// \todo Notify the user about this failure.
-                break;
-            }
-        } while (curKey < upperBound);
-        return renderKeyTree(tree);
-    }
-
-    return QString();
+            curKey.setChapter(1);
+            curKey.setVerse(0);
+        }
+        tree.emplace_back(curKey.key(), modules, settings);
+        if (!curKey.next(CSwordVerseKey::UseVerse)) {
+            /// \todo Notify the user about this failure.
+            break;
+        }
+    } while (curKey < upperBound);
+    return renderKeyTree(tree);
 }
 
 const QString CTextRendering::renderSingleKey(
