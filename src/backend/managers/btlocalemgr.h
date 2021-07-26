@@ -12,36 +12,26 @@
 
 #pragma once
 
+#include <map>
 #include <QString>
 
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <localemgr.h>
+#include <swbuf.h>
 #pragma GCC diagnostic pop
 
 
-/**
-  A replacement for sword::LocaleMgr which provides direct access to the list of
-  locales.
-*/
-class BtLocaleMgr final: public sword::LocaleMgr {
+namespace sword { class SWLocale; }
 
-public: /* Methods: */
 
-    BtLocaleMgr();
-    BtLocaleMgr(BtLocaleMgr &&) = delete;
-    BtLocaleMgr(BtLocaleMgr const &) = delete;
+/** An interface replacement for sword::LocaleMgr. */
+namespace BtLocaleMgr {
 
-    ~BtLocaleMgr() final override;
-
-    BtLocaleMgr & operator=(BtLocaleMgr &&) = delete;
-    BtLocaleMgr & operator=(BtLocaleMgr const &) = delete;
-
-    static sword::LocaleMap const & internalSwordLocales();
-    static sword::SWLocale * localeTranslator();
-    static QString defaultLocaleName();
-    static void setDefaultLocaleName(QString const & localeName);
+std::map<sword::SWBuf, sword::SWLocale *> const & internalSwordLocales();
+sword::SWLocale * localeTranslator();
+QString defaultLocaleName();
+void setDefaultLocaleName(QString const & localeName);
 
 };

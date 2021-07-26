@@ -14,16 +14,28 @@
 
 #include "../../util/btassert.h"
 
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <localemgr.h>
+#pragma GCC diagnostic pop
 
 namespace {
 
-BtLocaleMgr & btLocaleMgrInstance() {
+struct BtLocaleMgrImpl final: public sword::LocaleMgr {
+
+    friend sword::LocaleMap const & ::BtLocaleMgr::internalSwordLocales();
+
+};
+
+BtLocaleMgrImpl & btLocaleMgrInstance() {
     auto * btLocaleMgr =
-            dynamic_cast<BtLocaleMgr *>(sword::LocaleMgr::getSystemLocaleMgr());
+            dynamic_cast<BtLocaleMgrImpl *>(
+                sword::LocaleMgr::getSystemLocaleMgr());
     if (!btLocaleMgr) {
         /* Beware that sword::StringMgr::setSystemStringMgr() also replaces the
            Sword system locale manager with new sword::LocaleMgr(). */
-        btLocaleMgr = new BtLocaleMgr();
+        btLocaleMgr = new BtLocaleMgrImpl();
         sword::LocaleMgr::setSystemLocaleMgr(btLocaleMgr);
     }
     return *btLocaleMgr;
@@ -31,10 +43,7 @@ BtLocaleMgr & btLocaleMgrInstance() {
 
 } // anonymous namespace
 
-BtLocaleMgr::BtLocaleMgr() = default;
-BtLocaleMgr::~BtLocaleMgr() = default;
-
-sword::LocaleMap const & BtLocaleMgr::internalSwordLocales() {
+auto BtLocaleMgr::internalSwordLocales() -> sword::LocaleMap const & {
     auto const & btLocaleMgr = btLocaleMgrInstance();
     BT_ASSERT(btLocaleMgr.locales);
     return *btLocaleMgr.locales;
