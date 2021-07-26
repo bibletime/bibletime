@@ -133,8 +133,7 @@ void CDisplaySettingsPage::resetLanguage() {
         if (swordAbbreviation == "locales")
             continue;
         QString abbreviation(swordAbbreviation.c_str());
-        i = atv.indexOf(abbreviation);
-        if (i >= 0) {
+        if (auto const i = atv.indexOf(abbreviation); i >= 0) {
             best = std::move(abbreviation);
             if (i == 0)
                 break;
@@ -156,8 +155,7 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
         const QString localeLanguageAndCountry = QLocale().name();
         if (!localeLanguageAndCountry.isEmpty()) {
             atv.append(localeLanguageAndCountry);
-            int i = localeLanguageAndCountry.indexOf('_');
-            if (i > 0)
+            if (auto const i = localeLanguageAndCountry.indexOf('_'); i > 0)
                 atv.append(localeLanguageAndCountry.left(i));
         }
     }
