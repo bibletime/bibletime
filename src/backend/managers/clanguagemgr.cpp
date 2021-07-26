@@ -346,11 +346,21 @@ LanguageInfo::LanguageInfo() {
 
 } // anonymous namespace
 
+CLanguageMgr::Language::Language(QString abbrev, QStringList altAbbrevs)
+    : m_abbrev(std::move(abbrev))
+    , m_altAbbrevs(std::move(altAbbrevs))
+{ BT_ASSERT(!m_abbrev.isEmpty()); }
+
 CLanguageMgr::Language::~Language() = default;
 
 std::shared_ptr<CLanguageMgr::Language const>
 CLanguageMgr::languageForAbbrev(QString const & abbrev) {
     static LanguageInfo info;
+
+    BT_ASSERT(info.m_langMap.contains("en"));
+    static auto const defaultLanguage = *info.m_langMap.find("en");
+    if (abbrev.isEmpty())
+        return defaultLanguage;
 
     auto it(info.m_langMap.find(abbrev));
     if (it != info.m_langMap.constEnd()) return *it; //Language is already here
@@ -359,7 +369,6 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
     for (auto const & lang : info.m_langList)
         if (lang->alternativeAbbrevs().contains(abbrev))
             return lang;
-    BT_ASSERT(abbrev != "en");
 
     if (auto const it = info.m_abbrLangMap.find(abbrev);
         it != info.m_abbrLangMap.end())

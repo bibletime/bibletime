@@ -40,12 +40,7 @@ class Language {
 public: /* Methods: */
 
     /** \returns the abbreviation of the this language. */
-    QString const & abbrev() const {
-        if (m_abbrev.isEmpty() && m_altAbbrevs.count())
-            /* No standard abbrev but alternative ones */
-            return m_altAbbrevs.first();
-        return m_abbrev;
-    }
+    QString const & abbrev() const { return m_abbrev; }
 
     /** \returns the translated name of this language. */
     virtual QString translatedName() const = 0;
@@ -59,8 +54,7 @@ public: /* Methods: */
 
     /** \returns whether this language object is valid, i.e. has an
                  abbreviation and an english name. */
-    bool isValid() const
-    { return (!m_abbrev.isEmpty() && !englishName().isEmpty()); }
+    bool isValid() const { return !englishName().isEmpty(); }
 
     virtual ~Language();
 
@@ -71,10 +65,7 @@ protected: /* Methods: */
     Language & operator=(Language &&) = delete;
     Language & operator=(Language const &) = delete;
 
-    Language(QString abbrev, QStringList altAbbrevs = {})
-        : m_abbrev(std::move(abbrev))
-        , m_altAbbrevs(std::move(altAbbrevs))
-    {}
+    Language(QString abbrev, QStringList altAbbrevs = {});
 
 private: /* Fields: */
 
