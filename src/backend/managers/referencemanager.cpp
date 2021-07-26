@@ -182,19 +182,19 @@ QString ReferenceManager::parseVerseReference(
 
     QString sourceLanguage = options.sourceLanguage;
 
-    auto const haveLocale =
-            [](QString const & locale) {
+    bool const haveLocaleForSourceLanguage =
+            [&locale = sourceLanguage]() {
                 if (locale == "locales")
                     return false;
                 auto const & locales = BtLocaleMgr::internalSwordLocales();
                 return locales.find(locale.toUtf8().constData())
                         != locales.end();
-            };
-    if (!haveLocale(sourceLanguage))
+            }();
+    if (!haveLocaleForSourceLanguage)
         sourceLanguage = "en_US";
 
     auto const * const destinationLanguage =
-            haveLocale(sourceLanguage) ? "en" : "en_US";
+            haveLocaleForSourceLanguage ? "en" : "en_US";
 
     CSwordVerseKey baseKey(nullptr);
     baseKey.setLocale(sourceLanguage.toUtf8().constData());
