@@ -126,23 +126,19 @@ void CDisplaySettingsPage::retranslateUi() {
 void CDisplaySettingsPage::resetLanguage() {
     QVector<QString> atv = bookNameAbbreviationsTryVector();
 
-    QString best = "en_US";
-    BT_ASSERT(atv.contains(best));
-    int i = atv.indexOf(best);
-    if (i > 0) {
-        atv.resize(i);
-        for (auto const & localePair : BtLocaleMgr::internalSwordLocales()) {
-            auto const & swordAbbreviation = localePair.first;
-            if (swordAbbreviation == "locales")
-                continue;
-            QString abbreviation(swordAbbreviation.c_str());
-            i = atv.indexOf(abbreviation);
-            if (i >= 0) {
-                best = std::move(abbreviation);
-                if (i == 0)
-                    break;
-                atv.resize(i);
-            }
+    BT_ASSERT(!atv.isEmpty());
+    QString best = atv.takeLast();
+    for (auto const & localePair : BtLocaleMgr::internalSwordLocales()) {
+        auto const & swordAbbreviation = localePair.first;
+        if (swordAbbreviation == "locales")
+            continue;
+        QString abbreviation(swordAbbreviation.c_str());
+        i = atv.indexOf(abbreviation);
+        if (i >= 0) {
+            best = std::move(abbreviation);
+            if (i == 0)
+                break;
+            atv.resize(i);
         }
     }
     btConfig().setValue("GUI/booknameLanguage", best);
