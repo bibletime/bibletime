@@ -22,6 +22,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
+#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
