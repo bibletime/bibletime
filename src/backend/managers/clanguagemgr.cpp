@@ -359,7 +359,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
     for (auto const & lang : info.m_langList)
         if (lang->alternativeAbbrevs().contains(abbrev))
             return lang;
-    Q_ASSERT(abbrev != "en");
+    BT_ASSERT(abbrev != "en");
 
     if (auto const it = info.m_abbrLangMap.find(abbrev);
         it != info.m_abbrLangMap.end())
