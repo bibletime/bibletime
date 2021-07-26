@@ -19,6 +19,7 @@
 #include <QVBoxLayout>
 #include <QFormLayout>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/managers/btlocalemgr.h"
 #include "../../backend/managers/colormanager.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 #include "../../backend/rendering/cdisplayrendering.h"
@@ -30,13 +31,7 @@
 #include "cconfigurationdialog.h"
 
 // Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wextra-semi"
-#pragma GCC diagnostic ignored "-Wsuggest-override"
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <localemgr.h>
 #include <swlocale.h>
-#pragma GCC diagnostic pop
 
 
 /** Initializes the startup section of the OD. */
@@ -136,11 +131,14 @@ void CDisplaySettingsPage::resetLanguage() {
     int i = atv.indexOf(best);
     if (i > 0) {
         atv.resize(i);
-        auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
-        for (const char * const abbr : localeMgr.getAvailableLocales()) {
-            i = atv.indexOf(abbr);
+        for (auto const & localePair : BtLocaleMgr::internalSwordLocales()) {
+            auto const & swordAbbreviation = localePair.first;
+            if (swordAbbreviation == "locales")
+                continue;
+            QString abbreviation(swordAbbreviation.c_str());
+            i = atv.indexOf(abbreviation);
             if (i >= 0) {
-                best = abbr;
+                best = std::move(abbreviation);
                 if (i == 0)
                     break;
                 atv.resize(i);
@@ -179,15 +177,17 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
                 CLanguageMgr::languageForAbbrev("en_US")->translatedName(),
                 "en_US");
 
-    auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
-    for (char const * const abbreviation : localeMgr.getAvailableLocales()) {
+    for (auto const & localePair : BtLocaleMgr::internalSwordLocales()) {
+        auto const & swordAbbreviation = localePair.first;
+        if (swordAbbreviation == "locales")
+            continue;
+        QString abbreviation(swordAbbreviation.c_str());
         auto const l = CLanguageMgr::languageForAbbrev(abbreviation);
         if (l->isValid()) {
-            languageNames.insert(l->translatedName(), abbreviation);
+            languageNames.insert(l->translatedName(), std::move(abbreviation));
         } else {
-            languageNames.insert(
-                localeMgr.getLocale(abbreviation)->getDescription(),
-                abbreviation);
+            languageNames.insert(localePair.second->getDescription(),
+                                 std::move(abbreviation));
         }
     }
 
