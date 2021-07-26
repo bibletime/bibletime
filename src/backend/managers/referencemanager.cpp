@@ -12,20 +12,14 @@
 
 #include "referencemanager.h"
 
-#include <algorithm>
 #include <QRegExp>
 #include <QDebug>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordversekey.h"
 #include "../drivers/cswordmoduleinfo.h"
+#include "btlocalemgr.h"
 #include "cswordbackend.h"
-
-// Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <localemgr.h>
-#pragma GCC diagnostic pop
 
 
 namespace {
@@ -188,14 +182,13 @@ QString ReferenceManager::parseVerseReference(
 
     QString sourceLanguage = options.sourceLanguage;
 
-    auto const availableLocales =
-            sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
     auto const haveLocale =
-            [&availableLocales](QString const & locale) {
-                return std::find(availableLocales.begin(),
-                                 availableLocales.end(),
-                                 locale.toUtf8().constData())
-                        != availableLocales.end();
+            [](QString const & locale) {
+                if (locale == "locales")
+                    return false;
+                auto const & locales = BtLocaleMgr::internalSwordLocales();
+                return locales.find(locale.toUtf8().constData())
+                        != locales.end();
             };
     if (!haveLocale(sourceLanguage))
         sourceLanguage = "en_US";
