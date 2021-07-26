@@ -137,9 +137,7 @@ void CDisplaySettingsPage::resetLanguage() {
     if (i > 0) {
         atv.resize(i);
         auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
-        auto const locales = localeMgr.getAvailableLocales();
-        for (auto const & locale : locales) {
-            const char * abbr = localeMgr.getLocale(locale.c_str())->getName();
+        for (const char * const abbr : localeMgr.getAvailableLocales()) {
             i = atv.indexOf(abbr);
             if (i >= 0) {
                 best = abbr;
@@ -182,15 +180,13 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
                 "en_US");
 
     auto & localeMgr = *sword::LocaleMgr::getSystemLocaleMgr();
-    for (auto const & locale : localeMgr.getAvailableLocales()) {
-        const char * const abbreviation =
-                localeMgr.getLocale(locale.c_str())->getName();
+    for (char const * const abbreviation : localeMgr.getAvailableLocales()) {
         auto const l = CLanguageMgr::languageForAbbrev(abbreviation);
         if (l->isValid()) {
             languageNames.insert(l->translatedName(), abbreviation);
         } else {
             languageNames.insert(
-                localeMgr.getLocale(locale.c_str())->getDescription(),
+                localeMgr.getLocale(abbreviation)->getDescription(),
                 abbreviation);
         }
     }
