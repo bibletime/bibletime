@@ -12,7 +12,10 @@
 
 #include "clanguagemgr.h"
 
+#include <QHash>
 #include <QLocale>
+#include <QObject>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "btlocalemgr.h"

@@ -13,12 +13,8 @@
 #pragma once
 
 #include <memory>
-#include <QHash>
-#include <QList>
 #include <QString>
 #include <QStringList>
-#include <set>
-#include <utility>
 
 
 namespace CLanguageMgr {
