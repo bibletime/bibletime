@@ -12,6 +12,8 @@
 
 #pragma once
 
+#include <QString>
+
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
@@ -39,5 +41,7 @@ public: /* Methods: */
 
     static sword::LocaleMap const & internalSwordLocales();
     static sword::SWLocale * localeTranslator();
+    static QString defaultLocaleName();
+    static void setDefaultLocaleName(QString const & localeName);
 
 };

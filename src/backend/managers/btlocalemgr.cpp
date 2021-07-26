@@ -42,3 +42,11 @@ sword::LocaleMap const & BtLocaleMgr::internalSwordLocales() {
 
 sword::SWLocale * BtLocaleMgr::localeTranslator()
 { return btLocaleMgrInstance().getLocale("locales"); }
+
+QString BtLocaleMgr::defaultLocaleName()
+{ return btLocaleMgrInstance().getDefaultLocaleName(); }
+
+void BtLocaleMgr::setDefaultLocaleName(QString const & localeName) {
+    static_cast<sword::LocaleMgr &>(btLocaleMgrInstance()).setDefaultLocaleName(
+                localeName.toUtf8().constData());
+}

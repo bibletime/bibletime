@@ -26,6 +26,7 @@
 #include "../drivers/cswordbookmoduleinfo.h"
 #include "../drivers/cswordcommentarymoduleinfo.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
+#include "btlocalemgr.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -33,7 +34,6 @@
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <encfiltmgr.h>
 #include <filemgr.h>
-#include <localemgr.h>
 #include <rtfhtml.h>
 #include <swfiltermgr.h>
 #include <swfilter.h>
@@ -399,11 +399,11 @@ QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes opti
 
 QString CSwordBackend::booknameLanguage(QString const & language) {
     if (!language.isEmpty()) {
-        sword::LocaleMgr::getSystemLocaleMgr()->setDefaultLocaleName(language.toUtf8().constData());
+        BtLocaleMgr::setDefaultLocaleName(language);
 
         // Refresh the locale of all Bible and commentary modules!
         // Use what sword returns, language may be different.
-        const QByteArray newLocaleName(QString(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()).toUtf8());
+        const QByteArray newLocaleName(BtLocaleMgr::defaultLocaleName().toUtf8());
 
         for (auto const * const mod : m_dataModel->moduleList()) {
             if (mod->type() == CSwordModuleInfo::Bible
@@ -417,7 +417,7 @@ QString CSwordBackend::booknameLanguage(QString const & language) {
         }
 
     }
-    return sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName();
+    return BtLocaleMgr::defaultLocaleName();
 }
 
 void CSwordBackend::reloadModules(const SetupChangedReason reason) {
