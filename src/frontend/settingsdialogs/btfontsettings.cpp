@@ -22,6 +22,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
@@ -61,8 +62,13 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
         }
     };
     std::set<std::shared_ptr<CLanguageMgr::Language const>, Comp> languages;
-    for (auto const & language : CLanguageMgr::instance()->availableLanguages())
-        languages.emplace(language);
+    {
+        auto const availableLanguages =
+                CSwordBackend::instance()->availableLanguages();
+        BT_ASSERT(availableLanguages);
+        for (auto const & language : *availableLanguages)
+            languages.emplace(language);
+    }
 
     for (auto const & l : languages) {
         m_workSettings.emplace_back(

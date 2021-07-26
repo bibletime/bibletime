@@ -17,10 +17,11 @@
 #include <QFileInfo>
 #include <QStringList>
 #include <QTextStream>
+#include "../../util/btassert.h"
 #include "../../util/directory.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
-#include "clanguagemgr.h"
+#include "cswordbackend.h"
 
 
 #define CSSTEMPLATEBASE "Basic.tmpl"
@@ -168,8 +169,10 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                .append('}');
     }
     {
-        for (auto const & lang : CLanguageMgr::instance()->availableLanguages())
-        {
+        auto const availableLanguages =
+                CSwordBackend::instance()->availableLanguages();
+        BT_ASSERT(availableLanguages);
+        for (auto const & lang : *availableLanguages) {
             if (lang->abbrev().isEmpty())
                 continue;
 

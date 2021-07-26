@@ -372,25 +372,6 @@ CLanguageMgr::CLanguageMgr() {
 
 CLanguageMgr::~CLanguageMgr() = default;
 
-std::set<std::shared_ptr<CLanguageMgr::Language const>> const &
-CLanguageMgr::availableLanguages() {
-    QList<CSwordModuleInfo*> const & mods = CSwordBackend::instance()->moduleList();
-
-    // Do we have to refill the cached map?
-    if (m_availableModulesCache.moduleCount != mods.count()) {
-        m_availableModulesCache.availableLanguages.clear();
-        m_availableModulesCache.moduleCount = mods.count();
-
-        for (auto const * const mod : mods) {
-            m_availableModulesCache.availableLanguages.emplace(mod->language());
-            if (auto lang2 = mod->glossaryTargetlanguage())
-                m_availableModulesCache.availableLanguages.emplace(
-                            std::move(lang2));
-        }
-    }
-    return m_availableModulesCache.availableLanguages;
-}
-
 std::shared_ptr<CLanguageMgr::Language const>
 CLanguageMgr::languageForAbbrev(QString const & abbrev) {
     static LanguageInfo info;

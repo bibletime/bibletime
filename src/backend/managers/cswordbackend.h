@@ -16,6 +16,7 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include <set>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../drivers/btconstmoduleset.h"
@@ -28,6 +29,7 @@
 #include "../rendering/cbookdisplay.h"
 #include "../rendering/cchapterdisplay.h"
 #include "../rendering/centrydisplay.h"
+#include "clanguagemgr.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -81,6 +83,11 @@ public: /* Types: */
         NoModules = 1
     };
 
+private: /* Types: */
+
+    using AvailableLanguagesCacheContainer =
+            std::set<std::shared_ptr<CLanguageMgr::Language const>>;
+
 public: /* Methods: */
 
     /**
@@ -122,6 +129,9 @@ public: /* Methods: */
     std::shared_ptr<BtBookshelfModel> model() { return m_dataModel; }
 
     CSwordModuleInfo * findFirstAvailableModule(CSwordModuleInfo::ModuleType type);
+
+    std::shared_ptr<AvailableLanguagesCacheContainer const>
+    availableLanguages() noexcept;
 
     /**
       \brief Initializes the Sword modules.
@@ -287,6 +297,8 @@ private: /* Fields: */
     Rendering::CBookDisplay    m_bookDisplay;
 
     std::shared_ptr<BtBookshelfModel> const m_dataModel;
+    std::shared_ptr<AvailableLanguagesCacheContainer const>
+            m_availableLanguagesCache;
 
     static CSwordBackend * m_instance;
 

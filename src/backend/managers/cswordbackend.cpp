@@ -18,6 +18,7 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
+#include "../../util/btconnect.h"
 #include "../../util/directory.h"
 #include "../btglobal.h"
 #include "../btinstallmgr.h"
@@ -50,7 +51,19 @@ CSwordBackend::CSwordBackend()
         : m_manager(nullptr, nullptr, false,
                     new sword::EncodingFilterMgr(sword::ENC_UTF8), true)
         , m_dataModel(BtBookshelfModel::newInstance())
-{}
+{
+    auto const clearCache =
+            [this]() noexcept {
+                std::atomic_store_explicit(
+                            &m_availableLanguagesCache,
+                            decltype(m_availableLanguagesCache)(),
+                            std::memory_order_relaxed);
+            };
+    BT_CONNECT(m_dataModel.get(), &BtBookshelfModel::rowsAboutToBeInserted,
+               clearCache);
+    BT_CONNECT(m_dataModel.get(), &BtBookshelfModel::rowsAboutToBeRemoved,
+               clearCache);
+}
 
 CSwordBackend::CSwordBackend(const QString & path, const bool augmentHome)
         : m_manager(!path.isEmpty() ? path.toLocal8Bit().constData() : nullptr,
@@ -70,6 +83,37 @@ CSwordModuleInfo * CSwordBackend::findFirstAvailableModule(CSwordModuleInfo::Mod
             return m;
     return nullptr;
 
+}
+
+std::shared_ptr<CSwordBackend::AvailableLanguagesCacheContainer const>
+CSwordBackend::availableLanguages() noexcept
+{
+    auto oldCache = std::atomic_load_explicit(&m_availableLanguagesCache,
+                                              std::memory_order_acquire);
+    if (oldCache)
+        return oldCache;
+
+    auto const generateCache =
+            [&model = *m_dataModel] {
+                AvailableLanguagesCacheContainer newCache;
+                for (auto const * const mod : model.moduleList()) {
+                    newCache.emplace(mod->language());
+                    if (auto lang2 = mod->glossaryTargetlanguage())
+                        newCache.emplace(std::move(lang2));
+                }
+
+                return std::make_shared<AvailableLanguagesCacheContainer const>(
+                            std::move(newCache)); // also makes container const
+            };
+
+    for (auto newCache = generateCache();; newCache = generateCache())
+        if (std::atomic_compare_exchange_strong_explicit(
+                &m_availableLanguagesCache,
+                &oldCache,
+                newCache,
+                std::memory_order_acq_rel,
+                std::memory_order_relaxed))
+            return newCache;
 }
 
 void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {

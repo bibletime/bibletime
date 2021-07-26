@@ -90,9 +90,6 @@ public: /* Types: */
 
     virtual ~CLanguageMgr();
 
-    /** \returns a map of available languages (those with modules present). */
-    std::set<std::shared_ptr<Language const>> const & availableLanguages();
-
     /**
        \param abbrev the language abbreviation
        \returns a pointer to the language of the given abbreviation.
@@ -101,11 +98,6 @@ public: /* Types: */
     languageForAbbrev(QString const & abbrev);
 
 private: /* Fields: */
-
-    struct ModuleCache {
-        int moduleCount = 0;
-        std::set<std::shared_ptr<Language const>> availableLanguages;
-    } m_availableModulesCache;
 
     static CLanguageMgr * m_instance;
 
