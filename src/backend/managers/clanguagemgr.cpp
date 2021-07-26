@@ -260,7 +260,6 @@ LanguageInfo::LanguageInfo() {
     //  addLanguage({"pa"}, QT_TRANSLATE_NOOP("QObject", "Panjabi"));
     addLanguage({"pap"}, QT_TRANSLATE_NOOP("QObject", "Papiamento"));
     //  addLanguage({"pi"}, QT_TRANSLATE_NOOP("QObject", "Pali"));
-    addLanguage({"ppk"}, QT_TRANSLATE_NOOP("QObject", "Uma"));
     addLanguage({"pl"}, QT_TRANSLATE_NOOP("QObject", "Polish"));
     addLanguage({"pot"}, QT_TRANSLATE_NOOP("QObject", "Potawatomi"));
     addLanguage({"ppk"}, QT_TRANSLATE_NOOP("QObject", "Uma"));
