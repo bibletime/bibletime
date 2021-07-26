@@ -34,9 +34,6 @@ struct LanguageInfo {
     LangMap m_abbrLangMap;
 };
 
-static_assert(std::is_nothrow_move_assignable_v<LanguageInfo>, "");
-static_assert(std::is_nothrow_move_constructible_v<LanguageInfo>, "");
-
 LanguageInfo::LanguageInfo() {
     // Developers: It's easy to get a list of used language codes from all modules:
     // Refresh all sources; go to .sword/InstallMgr/; run:
