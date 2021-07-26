@@ -156,7 +156,7 @@ LanguageInfo::LanguageInfo() {
     //  addLanguage("dz", QT_TRANSLATE_NOOP("QObject", "Dzongkha"));
     addLanguage("el", QT_TRANSLATE_NOOP("QObject", "Greek, Modern (1453-)"), {"gre", "ell"});
     addLanguage("en", QT_TRANSLATE_NOOP("QObject", "English"));
-    addLanguage("en_US", QT_TRANSLATE_NOOP("QObject", "American English"));
+    addLanguage("en-US", QT_TRANSLATE_NOOP("QObject", "American English"));
     addLanguage("enm", QT_TRANSLATE_NOOP("QObject", "English, Middle (1100-1500)"));
     addLanguage("eo", QT_TRANSLATE_NOOP("QObject", "Esperanto"));
     addLanguage("es", QT_TRANSLATE_NOOP("QObject", "Spanish"));
@@ -273,7 +273,7 @@ LanguageInfo::LanguageInfo() {
     addLanguage("prs", QT_TRANSLATE_NOOP("QObject", "Persian (Dari)"));
     //  addLanguage("ps", QT_TRANSLATE_NOOP("QObject", "Pushto"));
     addLanguage("pt", QT_TRANSLATE_NOOP("QObject", "Portuguese"));
-    addLanguage("pt_BR", QT_TRANSLATE_NOOP("QObject", "Brazilian Portuguese"));//added by ourself
+    addLanguage("pt-BR", QT_TRANSLATE_NOOP("QObject", "Brazilian Portuguese"));
     //  addLanguage("qu", QT_TRANSLATE_NOOP("QObject", "Quechua"));
     addLanguage("qut", QT_TRANSLATE_NOOP("QObject", "Quich\u00e9, West Central"));
     //  addLanguage("rm", QT_TRANSLATE_NOOP("QObject", "Raeto-Romance"));
@@ -353,8 +353,15 @@ CLanguageMgr::Language::Language(QString abbrev, QStringList altAbbrevs)
 
 CLanguageMgr::Language::~Language() = default;
 
+QString CLanguageMgr::fixSwordBcp47(QString input) {
+    input.replace('_', '-');
+    return input;
+}
+
 std::shared_ptr<CLanguageMgr::Language const>
 CLanguageMgr::languageForAbbrev(QString const & abbrev) {
+    BT_ASSERT(!abbrev.contains('_')); // Weak check for certain BCP 47 bugs
+
     static LanguageInfo info;
 
     BT_ASSERT(info.m_langMap.contains("en"));

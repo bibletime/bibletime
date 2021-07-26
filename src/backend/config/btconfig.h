@@ -237,6 +237,10 @@ public: /* Methods: */
      * \param[in] searchScopes Search scopes in any locale.
      */
     void setSearchScopesWithCurrentLocale(const QStringList& scopeModules, StringMap searchScopes);
+
+    /** \returns the configured language code for book names. */
+    QString booknameLanguage();
+
     /*
      * Ensure that the verse range is valid for at least one of the scopeModules
      */

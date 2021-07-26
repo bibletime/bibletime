@@ -12,6 +12,7 @@
 
 #include "btconfig.h"
 
+#include <QLocale>
 #include <QSettings>
 #include <memory>
 #include <utility>
@@ -408,6 +409,19 @@ void BtConfig::setSearchScopesWithCurrentLocale(const QStringList& scopeModules,
             iter = searchScopes.erase(iter);
     }
     setValue("properties/searchScopes", searchScopes);
+}
+
+QString BtConfig::booknameLanguage() {
+    static QString const key("GUI/booknameLanguage");
+    auto r = value<QString>(key, QLocale().name());
+
+    // Maintain backwards compatibility with BibleTime versions older than 3.1:
+    bool const updateConfig = r.contains('_');
+    r.replace('_', '-'); // BCP 47
+    if (updateConfig)
+        setValue(key, r);
+
+    return r;
 }
 
 sword::ListKey BtConfig::parseVerseListWithModules(const QString& data, const QStringList& scopeModules) {

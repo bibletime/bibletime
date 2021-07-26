@@ -111,14 +111,16 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_cachedCategory(retrieveCategory(type, module))
     , m_cachedLanguage(
         CLanguageMgr::languageForAbbrev(
-            m_cachedCategory == Glossary
-            /* Special handling for glossaries, we use the "from language" as
-               language for the module: */
-            ? config(GlossaryFrom)
-            : module.getLanguage()))
+              CLanguageMgr::fixSwordBcp47(
+                  m_cachedCategory == Glossary
+                  /* Special handling for glossaries, we use the "from language" as
+                     language for the module: */
+                  ? config(GlossaryFrom)
+                  : module.getLanguage())))
     , m_cachedGlossaryTargetLanguage(
         m_cachedCategory == Glossary
-        ? CLanguageMgr::languageForAbbrev(module.getLanguage())
+        ? CLanguageMgr::languageForAbbrev(
+              CLanguageMgr::fixSwordBcp47(module.getLanguage()))
         : std::shared_ptr<CLanguageMgr::Language const>())
     , m_cachedHasVersion(!QString((*m_backend.getConfig())[module.getName()]["Version"]).isEmpty())
 {

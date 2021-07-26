@@ -16,7 +16,6 @@
 #include <QDebug>
 #include <QDockWidget>
 #include <QLabel>
-#include <QLocale>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMenuBar>
@@ -886,8 +885,7 @@ void BibleTime::initBackends() {
 
     CSwordBackend *backend = CSwordBackend::createInstance();
 
-    backend->booknameLanguage(btConfig().value<QString>("GUI/booknameLanguage",
-                                                        QLocale().name()));
+    backend->booknameLanguage(btConfig().booknameLanguage());
 
     CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 

@@ -19,7 +19,6 @@
 #include <QDesktopServices>
 #include <QInputDialog>
 #include <QList>
-#include <QLocale>
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QProcess>
@@ -52,10 +51,8 @@ void BibleTime::slotSettingsOptions() {
     BT_CONNECT(dlg,  &BtConfigDialog::signalSettingsChanged,
                [this]{
                    qDebug() << "BibleTime::slotSettingsChanged";
-                   auto const language =
-                           btConfig().value<QString>("GUI/booknameLanguage",
-                                                     QLocale().name());
-                   CSwordBackend::instance()->booknameLanguage(language);
+                   CSwordBackend::instance()->booknameLanguage(
+                               btConfig().booknameLanguage());
 
                    /** \todo update the bookmarks after Bible bookname language
                              has been changed. */

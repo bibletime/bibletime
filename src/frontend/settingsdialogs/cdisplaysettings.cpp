@@ -132,7 +132,8 @@ void CDisplaySettingsPage::resetLanguage() {
         auto const & swordAbbreviation = localePair.first;
         if (swordAbbreviation == "locales")
             continue;
-        QString abbreviation(swordAbbreviation.c_str());
+        auto abbreviation =
+                CLanguageMgr::fixSwordBcp47(swordAbbreviation.c_str());
         if (auto const i = atv.indexOf(abbreviation); i >= 0) {
             best = std::move(abbreviation);
             if (i == 0)
@@ -147,15 +148,16 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
     QVector<QString> atv;
     atv.reserve(4);
     {
-        QString settingsLanguage = btConfig().value<QString>("GUI/booknameLanguage");
+        QString settingsLanguage = btConfig().booknameLanguage();
         if (!settingsLanguage.isEmpty())
             atv.append(settingsLanguage);
     }
     {
-        const QString localeLanguageAndCountry = QLocale().name();
+        auto localeLanguageAndCountry = QLocale().name(); // ISO 639 _ ISO 3166
         if (!localeLanguageAndCountry.isEmpty()) {
+            localeLanguageAndCountry.replace('_', '-'); // Ensure BCP 47
             atv.append(localeLanguageAndCountry);
-            if (auto const i = localeLanguageAndCountry.indexOf('_'); i > 0)
+            if (auto const i = localeLanguageAndCountry.indexOf('-'); i > 0)
                 atv.append(localeLanguageAndCountry.left(i));
         }
     }
@@ -177,7 +179,8 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
             continue; // work around Sword not checking [Meta] Name= validity
         if (swordAbbreviation == "locales")
             continue;
-        QString abbreviation(swordAbbreviation.c_str());
+        auto abbreviation =
+                CLanguageMgr::fixSwordBcp47(swordAbbreviation.c_str());
         auto const l = CLanguageMgr::languageForAbbrev(abbreviation);
         if (l->isValid()) {
             languageNames.insert(l->translatedName(), std::move(abbreviation));
