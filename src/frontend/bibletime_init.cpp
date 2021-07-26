@@ -27,7 +27,6 @@
 #include <QVBoxLayout>
 #include "../backend/config/btconfig.h"
 #include "../backend/managers/btstringmgr.h"
-#include "../backend/managers/clanguagemgr.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
