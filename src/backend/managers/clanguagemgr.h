@@ -45,18 +45,17 @@ class Language {
 
 public: /* Methods: */
 
-    /** \returns the abbreviation of the this language. */
-    QString const & abbrev() const { return m_abbrev; }
+    /** \returns the first abbreviation of this language. */
+    QString const & abbrev() const { return m_abbrevs.first(); }
+
+    /** \returns the abbreviations of this language. */
+    QStringList const & abbrevs() const { return m_abbrevs; }
 
     /** \returns the translated name of this language. */
     virtual QString translatedName() const = 0;
 
     /** \returns the english name of this language. */
     virtual QString const & englishName() const = 0;
-
-    /** \returns a list of alternative abbreviations for this language. */
-    QStringList const & alternativeAbbrevs() const
-    { return m_altAbbrevs; }
 
     /** \returns whether this language object is valid, i.e. has an
                  abbreviation and an english name. */
@@ -71,12 +70,11 @@ protected: /* Methods: */
     Language & operator=(Language &&) = delete;
     Language & operator=(Language const &) = delete;
 
-    Language(QString abbrev, QStringList altAbbrevs = {});
+    Language(QStringList abbrevs);
 
 private: /* Fields: */
 
-    QString const m_abbrev;
-    QStringList const m_altAbbrevs;
+    QStringList const m_abbrevs;
 
 }; /* class Language */
 
