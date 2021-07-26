@@ -137,7 +137,6 @@ BibleTimeApp::~BibleTimeApp() {
     btConfig().setValue("state/crashedTwoTimes", false);
 
     delete CDisplayTemplateMgr::instance();
-    CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
     delete m_icons;
 

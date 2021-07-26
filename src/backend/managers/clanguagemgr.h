@@ -21,84 +21,66 @@
 #include <utility>
 
 
+namespace CLanguageMgr {
+
+class Language;
+
 /**
-  \brief Manages the languages and provides functions to work with them.
-  \note This is a singleton.
+   \param abbrev the language abbreviation
+   \returns a pointer to the language of the given abbreviation.
 */
-class CLanguageMgr {
+std::shared_ptr<Language const> languageForAbbrev(QString const & abbrev);
 
-public: /* Types: */
 
-    /** \brief A language descriptor for CLanguageMgr. */
-    class Language {
+/** \brief A language descriptor for CLanguageMgr. */
+class Language {
 
-        friend class CLanguageMgr;
+    friend std::shared_ptr<Language const> languageForAbbrev(QString const &);
 
-    public: /* Methods: */
+public: /* Methods: */
 
-        /** \returns the abbreviation of the this language. */
-        QString const & abbrev() const {
-            if (m_abbrev.isEmpty() && m_altAbbrevs.count())
-                /* No standard abbrev but alternative ones */
-                return m_altAbbrevs.first();
-            return m_abbrev;
-        }
+    /** \returns the abbreviation of the this language. */
+    QString const & abbrev() const {
+        if (m_abbrev.isEmpty() && m_altAbbrevs.count())
+            /* No standard abbrev but alternative ones */
+            return m_altAbbrevs.first();
+        return m_abbrev;
+    }
 
-        /** \returns the translated name of this language. */
-        virtual QString translatedName() const = 0;
+    /** \returns the translated name of this language. */
+    virtual QString translatedName() const = 0;
 
-        /** \returns the english name of this language. */
-        virtual QString const & englishName() const = 0;
+    /** \returns the english name of this language. */
+    virtual QString const & englishName() const = 0;
 
-        /** \returns a list of alternative abbreviations for this language. */
-        QStringList const & alternativeAbbrevs() const
-        { return m_altAbbrevs; }
+    /** \returns a list of alternative abbreviations for this language. */
+    QStringList const & alternativeAbbrevs() const
+    { return m_altAbbrevs; }
 
-        /** \returns whether this language object is valid, i.e. has an
-                     abbreviation and an english name. */
-        bool isValid() const
-        { return (!m_abbrev.isEmpty() && !englishName().isEmpty()); }
+    /** \returns whether this language object is valid, i.e. has an
+                 abbreviation and an english name. */
+    bool isValid() const
+    { return (!m_abbrev.isEmpty() && !englishName().isEmpty()); }
 
-        virtual ~Language();
+    virtual ~Language();
 
-    protected: /* Methods: */
+protected: /* Methods: */
 
-        Language(Language &&) = delete;
-        Language(Language const &) = delete;
-        Language & operator=(Language &&) = delete;
-        Language & operator=(Language const &) = delete;
+    Language(Language &&) = delete;
+    Language(Language const &) = delete;
+    Language & operator=(Language &&) = delete;
+    Language & operator=(Language const &) = delete;
 
-        Language(QString abbrev, QStringList altAbbrevs = {})
-            : m_abbrev(std::move(abbrev))
-            , m_altAbbrevs(std::move(altAbbrevs))
-        {}
-
-    private: /* Fields: */
-
-        QString const m_abbrev;
-        QStringList const m_altAbbrevs;
-
-    }; /* class Language */
-
-    /** \returns the singleton instance, creating it if one does not exist. */
-    static CLanguageMgr * instance();
-
-    /** Destroys the singleton instance, if one exists. */
-    static void destroyInstance();
-
-    CLanguageMgr();
-
-    virtual ~CLanguageMgr();
-
-    /**
-       \param abbrev the language abbreviation
-       \returns a pointer to the language of the given abbreviation.
-    */
-    static std::shared_ptr<CLanguageMgr::Language const>
-    languageForAbbrev(QString const & abbrev);
+    Language(QString abbrev, QStringList altAbbrevs = {})
+        : m_abbrev(std::move(abbrev))
+        , m_altAbbrevs(std::move(altAbbrevs))
+    {}
 
 private: /* Fields: */
 
-    static CLanguageMgr * m_instance;
+    QString const m_abbrev;
+    QStringList const m_altAbbrevs;
 
-}; /* class CLanguageMgr */
+}; /* class Language */
+
+} /* namespace CLanguageMgr */

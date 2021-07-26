@@ -346,31 +346,7 @@ LanguageInfo::LanguageInfo() {
 
 } // anonymous namespace
 
-/****************************************************/
-/******************** CLanguageMgr ******************/
-/****************************************************/
-
 CLanguageMgr::Language::~Language() = default;
-
-CLanguageMgr *CLanguageMgr::m_instance = nullptr;
-
-void CLanguageMgr::destroyInstance() {
-    delete m_instance;
-    m_instance = nullptr;
-}
-
-CLanguageMgr *CLanguageMgr::instance() {
-    if (m_instance == nullptr) {
-        m_instance = new CLanguageMgr();
-    }
-
-    return m_instance;
-}
-
-CLanguageMgr::CLanguageMgr() {
-}
-
-CLanguageMgr::~CLanguageMgr() = default;
 
 std::shared_ptr<CLanguageMgr::Language const>
 CLanguageMgr::languageForAbbrev(QString const & abbrev) {
