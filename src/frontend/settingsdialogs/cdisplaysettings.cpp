@@ -179,6 +179,8 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
 
     for (auto const & localePair : BtLocaleMgr::internalSwordLocales()) {
         auto const & swordAbbreviation = localePair.first;
+        if (swordAbbreviation.size() <= 0)
+            continue; // work around Sword not checking [Meta] Name= validity
         if (swordAbbreviation == "locales")
             continue;
         QString abbreviation(swordAbbreviation.c_str());
