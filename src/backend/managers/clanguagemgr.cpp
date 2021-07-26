@@ -15,14 +15,11 @@
 #include <QLocale>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
+#include "btlocalemgr.h"
 #include "cswordbackend.h"
 
 // Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <localemgr.h>
 #include <swlocale.h>
-#pragma GCC diagnostic pop
 
 
 namespace {
@@ -412,9 +409,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
         return it.value();
 
     std::shared_ptr<Language const> newLang;
-    if (auto * const locale =
-                sword::LocaleMgr::getSystemLocaleMgr()->getLocale("locales"))
-    {
+    if (auto * const locale = BtLocaleMgr::localeTranslator()) {
         // Attempt to retrieve english name:
         auto englishName = abbrev;
         {
@@ -436,10 +431,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
             {}
 
             QString translatedName() const override {
-                if (auto * const locale =
-                            sword::LocaleMgr::getSystemLocaleMgr()->getLocale(
-                                    "locales"))
-                {
+                if (auto * const locale = BtLocaleMgr::localeTranslator()) {
                     QStringList tryTranslateNames;
                     {
                         auto localeName = QLocale().name();

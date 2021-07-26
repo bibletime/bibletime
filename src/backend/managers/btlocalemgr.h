@@ -38,5 +38,6 @@ public: /* Methods: */
     BtLocaleMgr & operator=(BtLocaleMgr const &) = delete;
 
     static sword::LocaleMap const & internalSwordLocales();
+    static sword::SWLocale * localeTranslator();
 
 };

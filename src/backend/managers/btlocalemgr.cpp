@@ -15,10 +15,9 @@
 #include "../../util/btassert.h"
 
 
-BtLocaleMgr::BtLocaleMgr() = default;
-BtLocaleMgr::~BtLocaleMgr() = default;
+namespace {
 
-sword::LocaleMap const & BtLocaleMgr::internalSwordLocales() {
+BtLocaleMgr & btLocaleMgrInstance() {
     auto * btLocaleMgr =
             dynamic_cast<BtLocaleMgr *>(sword::LocaleMgr::getSystemLocaleMgr());
     if (!btLocaleMgr) {
@@ -27,6 +26,19 @@ sword::LocaleMap const & BtLocaleMgr::internalSwordLocales() {
         btLocaleMgr = new BtLocaleMgr();
         sword::LocaleMgr::setSystemLocaleMgr(btLocaleMgr);
     }
-    BT_ASSERT(btLocaleMgr->locales);
-    return *btLocaleMgr->locales;
+    return *btLocaleMgr;
 }
+
+} // anonymous namespace
+
+BtLocaleMgr::BtLocaleMgr() = default;
+BtLocaleMgr::~BtLocaleMgr() = default;
+
+sword::LocaleMap const & BtLocaleMgr::internalSwordLocales() {
+    auto const & btLocaleMgr = btLocaleMgrInstance();
+    BT_ASSERT(btLocaleMgr.locales);
+    return *btLocaleMgr.locales;
+}
+
+sword::SWLocale * BtLocaleMgr::localeTranslator()
+{ return btLocaleMgrInstance().getLocale("locales"); }
