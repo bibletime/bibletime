@@ -165,7 +165,7 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
                 atv.append(localeLanguageAndCountry.left(i));
         }
     }
-    BT_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    BT_ASSERT(CLanguageMgr::languageForAbbrev("en_US"));
     atv.append("en_US");
     return atv;
 }
