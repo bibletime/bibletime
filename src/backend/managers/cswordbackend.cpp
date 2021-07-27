@@ -441,27 +441,26 @@ QString CSwordBackend::configOptionName(const CSwordModuleInfo::FilterTypes opti
     return QString();
 }
 
-QString CSwordBackend::booknameLanguage(QString const & language) {
-    if (!language.isEmpty()) {
-        BtLocaleMgr::setDefaultLocaleName(language);
+QString CSwordBackend::booknameLanguage() const
+{ return BtLocaleMgr::defaultLocaleName(); }
 
-        // Refresh the locale of all Bible and commentary modules!
-        // Use what sword returns, language may be different.
-        const QByteArray newLocaleName(BtLocaleMgr::defaultLocaleName().toUtf8());
+void CSwordBackend::setBooknameLanguage(QString const & language) {
+    BtLocaleMgr::setDefaultLocaleName(language);
 
-        for (auto const * const mod : m_dataModel->moduleList()) {
-            if (mod->type() == CSwordModuleInfo::Bible
-                || mod->type() == CSwordModuleInfo::Commentary)
-            {
-                // Create a new key, it will get the default bookname language:
-                using VK = sword::VerseKey;
-                VK & vk = *static_cast<VK *>(mod->module().getKey());
-                vk.setLocale(newLocaleName.constData());
-            }
+    // Refresh the locale of all Bible and commentary modules!
+    // Use what sword returns, language may be different.
+    const QByteArray newLocaleName(BtLocaleMgr::defaultLocaleName().toUtf8());
+
+    for (auto const * const mod : m_dataModel->moduleList()) {
+        if (mod->type() == CSwordModuleInfo::Bible
+            || mod->type() == CSwordModuleInfo::Commentary)
+        {
+            // Create a new key, it will get the default bookname language:
+            using VK = sword::VerseKey;
+            VK & vk = *static_cast<VK *>(mod->module().getKey());
+            vk.setLocale(newLocaleName.constData());
         }
-
     }
-    return BtLocaleMgr::defaultLocaleName();
 }
 
 void CSwordBackend::reloadModules(const SetupChangedReason reason) {

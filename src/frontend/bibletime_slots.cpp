@@ -51,7 +51,7 @@ void BibleTime::slotSettingsOptions() {
     BT_CONNECT(dlg,  &BtConfigDialog::signalSettingsChanged,
                [this]{
                    qDebug() << "BibleTime::slotSettingsChanged";
-                   CSwordBackend::instance()->booknameLanguage(
+                   CSwordBackend::instance()->setBooknameLanguage(
                                btConfig().booknameLanguage());
 
                    /** \todo update the bookmarks after Bible bookname language

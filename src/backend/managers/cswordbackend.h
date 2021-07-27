@@ -154,12 +154,15 @@ public: /* Methods: */
 
     void setFilterOptions(const FilterOptions & options);
 
+    /** \returns the language for the international booknames of Sword. */
+    QString booknameLanguage() const;
+
     /**
       \brief Sets the language for the international booknames of Sword.
       \param[in] langName The abbreviation string which should be used for the
                           Sword backend.
     */
-    QString booknameLanguage(QString const & langName = QString());
+    void setBooknameLanguage(QString const & langName);
 
     /**
       \brief Searches for a module with the given description.

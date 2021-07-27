@@ -885,7 +885,7 @@ void BibleTime::initBackends() {
 
     CSwordBackend *backend = CSwordBackend::createInstance();
 
-    backend->booknameLanguage(btConfig().booknameLanguage());
+    backend->setBooknameLanguage(btConfig().booknameLanguage());
 
     CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 

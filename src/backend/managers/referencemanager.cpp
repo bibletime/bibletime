@@ -204,7 +204,7 @@ QString ReferenceManager::parseVerseReference(
     /* HACK: We have to workaround a Sword bug, we have to set the default
        locale to the same as the sourceLanguage! */
     auto const oldLocaleName(backend.booknameLanguage());
-    backend.booknameLanguage(sourceLanguage);
+    backend.setBooknameLanguage(sourceLanguage);
 
     sword::VerseKey dummy;
     dummy.setLocale(sourceLanguage.toUtf8().constData());
@@ -239,6 +239,6 @@ QString ReferenceManager::parseVerseReference(
             }
         }
     }
-    backend.booknameLanguage(oldLocaleName);
+    backend.setBooknameLanguage(oldLocaleName);
     return ret;
 }
