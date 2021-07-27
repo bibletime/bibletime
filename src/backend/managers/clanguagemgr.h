@@ -53,10 +53,6 @@ public: /* Methods: */
     /** \returns the english name of this language. */
     virtual QString const & englishName() const = 0;
 
-    /** \returns whether this language object is valid, i.e. has an
-                 abbreviation and an english name. */
-    bool isValid() const { return !englishName().isEmpty(); }
-
     virtual ~Language();
 
 protected: /* Methods: */

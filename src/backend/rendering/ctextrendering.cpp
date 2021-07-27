@@ -278,7 +278,6 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     QString entry;
     bool isRTL;
     QString preverseHeading;
-    QString langAttr;
     QString key_renderedText;
 
     for (auto const & modulePtr : modules) {
@@ -302,19 +301,9 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         entry = QString();
 
         auto & swModule = modulePtr->module();
-        if (modulePtr->language()->isValid()) {
-            langAttr = QString(" xml:lang=\"")
-                       .append(modulePtr->language()->abbrev())
-                       .append("\" lang=\"")
-                       .append(modulePtr->language()->abbrev())
-                       .append("\"");
-        } else {
-            langAttr = QString(" xml:lang=\"")
-                       .append(swModule.getLanguage())
-                       .append("\" lang=\"")
-                       .append(swModule.getLanguage())
-                       .append("\"");
-        }
+        auto const langAttr =
+                QString(" xml:lang=\"%1\" lang=\"%1\"").arg(
+                    modulePtr->language()->abbrev());
 
         if (key->isValid() && i.key() == key->key()) {
             key_renderedText = key->renderedText();
@@ -425,8 +414,7 @@ QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
     settings.modules = collectModules(tree);
     if (settings.modules.count() == 1) {
         CSwordModuleInfo const * const firstModule = settings.modules.first();
-        auto const lang = firstModule->language();
-        settings.langAbbrev = lang->isValid() ? lang->abbrev() : "unknown";
+        settings.langAbbrev = firstModule->language()->abbrev();
         settings.textDirection = firstModule->textDirection();
     } else {
         settings.langAbbrev = "unknown";

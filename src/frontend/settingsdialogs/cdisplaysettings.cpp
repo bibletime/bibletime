@@ -181,13 +181,8 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
             continue;
         auto abbreviation =
                 CLanguageMgr::fixSwordBcp47(swordAbbreviation.c_str());
-        auto const l = CLanguageMgr::languageForAbbrev(abbreviation);
-        if (l->isValid()) {
-            languageNames.insert(l->translatedName(), std::move(abbreviation));
-        } else {
-            languageNames.insert(localePair.second->getDescription(),
-                                 std::move(abbreviation));
-        }
+        auto const l = CLanguageMgr::languageForAbbrev(std::move(abbreviation));
+        languageNames.insert(l->translatedName(), l->abbrev());
     }
 
     int index = 0;

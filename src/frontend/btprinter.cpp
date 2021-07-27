@@ -98,14 +98,11 @@ QString BtPrinter::finishText(QString const & text, KeyTree const & tree) {
     BtConstModuleList const modules = collectModules(tree);
     BT_ASSERT(!modules.empty());
 
-    auto const lang = modules.first()->language();
-    BT_ASSERT(lang);
-
     CDisplayTemplateMgr::Settings settings;
     //settings.modules = modules;
     settings.pageCSS_ID = "printer";
-    if (modules.count() == 1 && lang->isValid())
-        settings.langAbbrev = lang->abbrev();
+    if (modules.count() == 1)
+        settings.langAbbrev = modules.first()->language()->abbrev();
 
     if (modules.count() == 1)
         settings.textDirection = modules.first()->textDirection();

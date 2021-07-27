@@ -81,7 +81,7 @@ LanguageInfo::LanguageInfo() {
                 BibleTimeLanguage(QStringList abbrevs, QString englishName)
                     : Language(std::move(abbrevs))
                     , m_englishName(std::move(englishName))
-                {}
+                { BT_ASSERT(!m_englishName.isEmpty()); }
 
                 QString translatedName() const override
                 { return QObject::tr(m_englishName.toUtf8()); }
@@ -380,7 +380,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
             auto newEnglishName(
                         QString::fromUtf8(
                             locale->translate(abbrevEn.toUtf8().constData())));
-            if (newEnglishName != abbrevEn)
+            if (!newEnglishName.isEmpty() && newEnglishName != abbrevEn)
                 englishName = std::move(newEnglishName);
         }
 
@@ -391,7 +391,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
             SwordLanguage(QString abbrev, QString englishName)
                 : Language(QStringList{std::move(abbrev)})
                 , m_englishName(std::move(englishName))
-            {}
+            { BT_ASSERT(!m_englishName.isEmpty()); }
 
             QString translatedName() const override {
                 if (auto * const locale = BtLocaleMgr::localeTranslator()) {
