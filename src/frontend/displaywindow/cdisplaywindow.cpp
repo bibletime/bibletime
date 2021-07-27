@@ -303,7 +303,7 @@ void CDisplayWindow::initActions() {
     initAddAction("pageDown",
                   [this]{
                       if (m_displayWidget)
-                          m_displayWidget->pageUp();
+                          m_displayWidget->pageDown();
                   });
     initAddAction("pageUp",
                   [this]{
