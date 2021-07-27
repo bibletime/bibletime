@@ -371,80 +371,68 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
         it != info.m_abbrLangMap.end())
         return it.value();
 
-    std::shared_ptr<Language const> newLang;
-    if (auto * const locale = BtLocaleMgr::localeTranslator()) {
-        // Attempt to retrieve english name:
-        auto englishName = abbrev;
-        {
-            auto const abbrevEn = abbrev + ".en";
-            auto newEnglishName(
-                        QString::fromUtf8(
-                            locale->translate(abbrevEn.toUtf8().constData())));
-            if (!newEnglishName.isEmpty() && newEnglishName != abbrevEn)
-                englishName = std::move(newEnglishName);
-        }
+    struct SwordLanguage: Language {
 
-        struct SwordLanguage: Language {
+    // Methods:
 
-        // Methods:
-
-            SwordLanguage(QString abbrev, QString englishName)
-                : Language(QStringList{std::move(abbrev)})
-                , m_englishName(std::move(englishName))
-            { BT_ASSERT(!m_englishName.isEmpty()); }
-
-            QString translatedName() const override {
-                if (auto * const locale = BtLocaleMgr::localeTranslator()) {
-                    QStringList tryTranslateNames;
-                    {
-                        auto localeName = QLocale().name();
-                        while (!localeName.isEmpty() && localeName != "en") {
-                            tryTranslateNames.append(
-                                        abbrev() + '.' + localeName);
-                            if (localeName == abbrev())
-                                tryTranslateNames.append(localeName);
-                            while (localeName.back().isLetterOrNumber()) {
-                                localeName.chop(1);
-                                if (localeName.isEmpty())
-                                    break;
-                            }
-                            while (!localeName.isEmpty()
-                                   && !localeName.back().isLetterOrNumber())
-                                localeName.chop(1);
-                        }
+        SwordLanguage(QString abbrev)
+            : Language(QStringList{abbrev})
+            , m_englishName(
+                [](QString abbrev) {
+                    if (auto * const locale = BtLocaleMgr::localeTranslator()) {
+                        auto const abbrevEn = abbrev + ".en";
+                        auto englishName(
+                                    QString::fromUtf8(
+                                        locale->translate(
+                                            abbrevEn.toUtf8().constData())));
+                        if (!englishName.isEmpty() && englishName != abbrevEn)
+                            return englishName;
                     }
-                    for (auto const & translateName : tryTranslateNames) {
-                        auto trName =
-                                QString::fromUtf8(
-                                    locale->translate(
-                                        translateName.toUtf8().constData()));
-                        if (trName != translateName)
-                            return trName;
+                    return abbrev;
+                }(std::move(abbrev)))
+        { BT_ASSERT(!m_englishName.isEmpty()); }
+
+        QString translatedName() const override {
+            if (auto * const locale = BtLocaleMgr::localeTranslator()) {
+                QStringList tryTranslateNames;
+                {
+                    auto localeName = QLocale().name();
+                    while (!localeName.isEmpty() && localeName != "en") {
+                        tryTranslateNames.append(abbrev() + '.' + localeName);
+                        if (localeName == abbrev())
+                            tryTranslateNames.append(localeName);
+                        while (localeName.back().isLetterOrNumber()) {
+                            localeName.chop(1);
+                            if (localeName.isEmpty())
+                                break;
+                        }
+                        while (!localeName.isEmpty()
+                               && !localeName.back().isLetterOrNumber())
+                            localeName.chop(1);
                     }
                 }
-                return m_englishName;
+                for (auto const & translateName : tryTranslateNames) {
+                    auto trName =
+                            QString::fromUtf8(
+                                locale->translate(
+                                    translateName.toUtf8().constData()));
+                    if (trName != translateName)
+                        return trName;
+                }
             }
+            return m_englishName;
+        }
 
-            QString const & englishName() const override
-            { return m_englishName; }
+        QString const & englishName() const override
+        { return m_englishName; }
 
-        // Fields:
+    // Fields:
 
-            QString const m_englishName;
+        QString const m_englishName;
 
-        }; // struct SwordLanguage
+    }; // struct SwordLanguage
 
-        newLang = std::make_shared<SwordLanguage>(abbrev,
-                                                  std::move(englishName));
-    } else {
-        struct WeirdLanguage: Language {
-            WeirdLanguage(QStringList abbrevs) : Language(std::move(abbrevs)) {}
-            QString translatedName() const override { return abbrev(); }
-            QString const & englishName() const override { return abbrev(); }
-        }; // struct WeirdLanguage
-        newLang = std::make_shared<WeirdLanguage>(QStringList{abbrev});
-    }
+    auto newLang = std::make_shared<SwordLanguage>(abbrev);
     info.m_abbrLangMap.insert(abbrev, newLang);
-
     return newLang;
 }
