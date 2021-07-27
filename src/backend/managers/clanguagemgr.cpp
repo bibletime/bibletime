@@ -334,11 +334,6 @@ CLanguageMgr::Language::~Language() = default;
 QString CLanguageMgr::Language::translatedName() const
 { return QObject::tr(englishName().toUtf8()); }
 
-QString CLanguageMgr::fixSwordBcp47(QString input) {
-    input.replace('_', '-');
-    return input;
-}
-
 std::shared_ptr<CLanguageMgr::Language const>
 CLanguageMgr::languageForAbbrev(QString const & abbrev) {
     BT_ASSERT(!abbrev.contains('_')); // Weak check for certain BCP 47 bugs

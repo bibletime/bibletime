@@ -100,5 +100,11 @@ QString remoteModuleToolTip(const CSwordModuleInfo & module,
 */
 int mWidth(const QWidget * widget, int mCount);
 
+/**
+   \param[in] input The potentially invalid BCP 47 string from Sword to fix.
+   \returns a string (hopefully) more conformant to BCP 47
+ */
+QString fixSwordBcp47(QString input);
+
 } /* namespace tool { */
 } /* namespace util { */

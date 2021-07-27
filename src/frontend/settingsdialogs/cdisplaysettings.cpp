@@ -133,7 +133,7 @@ void CDisplaySettingsPage::resetLanguage() {
         if (swordAbbreviation == "locales")
             continue;
         auto abbreviation =
-                CLanguageMgr::fixSwordBcp47(swordAbbreviation.c_str());
+                util::tool::fixSwordBcp47(swordAbbreviation.c_str());
         if (auto const i = atv.indexOf(abbreviation); i >= 0) {
             best = std::move(abbreviation);
             if (i == 0)
@@ -180,7 +180,7 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
         if (swordAbbreviation == "locales")
             continue;
         auto abbreviation =
-                CLanguageMgr::fixSwordBcp47(swordAbbreviation.c_str());
+                util::tool::fixSwordBcp47(swordAbbreviation.c_str());
         auto const l = CLanguageMgr::languageForAbbrev(std::move(abbreviation));
         languageNames.insert(l->translatedName(), l->abbrev());
     }

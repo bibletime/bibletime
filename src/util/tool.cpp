@@ -220,6 +220,10 @@ int mWidth(const QWidget * const widget, const int mCount) {
     #endif
 }
 
+QString fixSwordBcp47(QString input) {
+    input.replace('_', '-');
+    return input;
+}
 
 } // namespace tool {
 } // namespace util {

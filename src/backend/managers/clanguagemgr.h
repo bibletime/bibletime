@@ -22,12 +22,6 @@ namespace CLanguageMgr {
 class Language;
 
 /**
-   \param[in] input The potentially invalid BCP 47 string from Sword to fix.
-   \returns a string (hopefully) more conformant to BCP 47
- */
-QString fixSwordBcp47(QString input);
-
-/**
    \param[in] abbrev the language abbreviation in BCP 47 format.
    \returns a pointer to the language of the given abbreviation.
 */

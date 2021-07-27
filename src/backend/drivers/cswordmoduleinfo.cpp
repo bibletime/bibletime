@@ -27,6 +27,7 @@
 #include "../../util/btassert.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
+#include "../../util/tool.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
 #include "../managers/clanguagemgr.h"
@@ -111,7 +112,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_cachedCategory(retrieveCategory(type, module))
     , m_cachedLanguage(
         CLanguageMgr::languageForAbbrev(
-              CLanguageMgr::fixSwordBcp47(
+              util::tool::fixSwordBcp47(
                   m_cachedCategory == Glossary
                   /* Special handling for glossaries, we use the "from language" as
                      language for the module: */
@@ -120,7 +121,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_cachedGlossaryTargetLanguage(
         m_cachedCategory == Glossary
         ? CLanguageMgr::languageForAbbrev(
-              CLanguageMgr::fixSwordBcp47(module.getLanguage()))
+              util::tool::fixSwordBcp47(module.getLanguage()))
         : std::shared_ptr<CLanguageMgr::Language const>())
     , m_cachedHasVersion(!QString((*m_backend.getConfig())[module.getName()]["Version"]).isEmpty())
 {
