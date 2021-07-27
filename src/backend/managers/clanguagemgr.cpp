@@ -438,7 +438,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
                                                   std::move(englishName));
     } else {
         struct WeirdLanguage: Language {
-            WeirdLanguage(QStringList abbrev) : Language(std::move(abbrev)) {}
+            WeirdLanguage(QStringList abbrevs) : Language(std::move(abbrevs)) {}
             QString translatedName() const override { return abbrev(); }
             QString const & englishName() const override { return abbrev(); }
         }; // struct WeirdLanguage
