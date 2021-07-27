@@ -27,17 +27,11 @@
 
 namespace {
 
-using LangMap = QHash<QString, std::shared_ptr<Language const>>;
-
-struct LanguageInfo {
-
-    LanguageInfo();
-
-    LangMap m_langMap;
-    LangMap m_abbrLangMap;
+struct LanguageMap: QHash<QString, std::shared_ptr<Language const>> {
+    LanguageMap();
 };
 
-LanguageInfo::LanguageInfo() {
+LanguageMap::LanguageMap() {
     // Developers: It's easy to get a list of used language codes from all modules:
     // Refresh all sources; go to .sword/InstallMgr/; run:
     // grep -R -hs Lang= *|cut -c 6-|sort|uniq
@@ -78,8 +72,8 @@ LanguageInfo::LanguageInfo() {
                     std::make_shared<Language>(std::move(abbrevs),
                                                std::move(englishName));
             for (auto const & abbrev : language->abbrevs()) {
-                BT_ASSERT(!m_langMap.contains(abbrev));
-                m_langMap.insert(abbrev, language);
+                BT_ASSERT(!contains(abbrev));
+                insert(abbrev, language);
             }
         };
 
@@ -336,19 +330,16 @@ QString Language::translatedName() const
 std::shared_ptr<Language const> Language::fromAbbrev(QString const & abbrev) {
     BT_ASSERT(!abbrev.contains('_')); // Weak check for certain BCP 47 bugs
 
-    static LanguageInfo info;
+    static LanguageMap languageMap;
 
-    BT_ASSERT(info.m_langMap.contains("en"));
-    static auto const defaultLanguage = *info.m_langMap.find("en");
+    BT_ASSERT(languageMap.contains("en"));
+    static auto const defaultLanguage = *languageMap.find("en");
     if (abbrev.isEmpty())
         return defaultLanguage;
 
-    auto it(info.m_langMap.find(abbrev));
-    if (it != info.m_langMap.constEnd()) return *it; //Language is already here
-
-    if (auto const it = info.m_abbrLangMap.find(abbrev);
-        it != info.m_abbrLangMap.end())
-        return it.value();
+    auto it(languageMap.find(abbrev));
+    if (it != languageMap.constEnd())
+        return *it;
 
     struct SwordLanguage: Language {
 
@@ -403,6 +394,6 @@ std::shared_ptr<Language const> Language::fromAbbrev(QString const & abbrev) {
     }; // struct SwordLanguage
 
     auto newLang = std::make_shared<SwordLanguage>(QStringList{abbrev}, abbrev);
-    info.m_abbrLangMap.insert(abbrev, newLang);
+    languageMap.insert(abbrev, newLang);
     return newLang;
 }
