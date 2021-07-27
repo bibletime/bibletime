@@ -10,16 +10,16 @@
 *
 **********/
 
-#include "clanguagemgr.h"
+#include "language.h"
 
 #include <QHash>
 #include <QLocale>
 #include <QObject>
 #include <utility>
-#include "../../util/btassert.h"
-#include "../drivers/cswordmoduleinfo.h"
-#include "btlocalemgr.h"
-#include "cswordbackend.h"
+#include "../util/btassert.h"
+#include "drivers/cswordmoduleinfo.h"
+#include "managers/btlocalemgr.h"
+#include "managers/cswordbackend.h"
 
 // Sword includes:
 #include <swlocale.h>
@@ -27,7 +27,7 @@
 
 namespace {
 
-using LangMap = QHash<QString, std::shared_ptr<CLanguageMgr::Language const>>;
+using LangMap = QHash<QString, std::shared_ptr<Language const>>;
 
 struct LanguageInfo {
 
@@ -75,9 +75,8 @@ LanguageInfo::LanguageInfo() {
     auto const addLanguage =
         [this](QStringList abbrevs, QString englishName) {
             auto language =
-                    std::make_shared<CLanguageMgr::Language>(
-                        std::move(abbrevs),
-                        std::move(englishName));
+                    std::make_shared<Language>(std::move(abbrevs),
+                                               std::move(englishName));
             for (auto const & abbrev : language->abbrevs()) {
                 BT_ASSERT(!m_langMap.contains(abbrev));
                 m_langMap.insert(abbrev, language);
@@ -320,7 +319,7 @@ LanguageInfo::LanguageInfo() {
 
 } // anonymous namespace
 
-CLanguageMgr::Language::Language(QStringList abbrevs, QString englishName)
+Language::Language(QStringList abbrevs, QString englishName)
     : m_abbrevs(std::move(abbrevs))
     , m_englishName(std::move(englishName))
 {
@@ -329,13 +328,12 @@ CLanguageMgr::Language::Language(QStringList abbrevs, QString englishName)
     BT_ASSERT(!m_englishName.isEmpty());
 }
 
-CLanguageMgr::Language::~Language() = default;
+Language::~Language() = default;
 
-QString CLanguageMgr::Language::translatedName() const
+QString Language::translatedName() const
 { return QObject::tr(englishName().toUtf8()); }
 
-std::shared_ptr<CLanguageMgr::Language const>
-CLanguageMgr::languageForAbbrev(QString const & abbrev) {
+std::shared_ptr<Language const> Language::fromAbbrev(QString const & abbrev) {
     BT_ASSERT(!abbrev.contains('_')); // Weak check for certain BCP 47 bugs
 
     static LanguageInfo info;

@@ -49,9 +49,8 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     hLayout->addWidget(m_languageCheckBox);
 
     struct Comp {
-        bool operator()(
-                std::shared_ptr<CLanguageMgr::Language const> const & lhs,
-                std::shared_ptr<CLanguageMgr::Language const> const & rhs) const
+        bool operator()(std::shared_ptr<Language const> const & lhs,
+                        std::shared_ptr<Language const> const & rhs) const
         {
             int cmp = lhs->translatedName().compare(rhs->translatedName());
             if (cmp == 0) {
@@ -61,7 +60,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
             return cmp < 0;
         }
     };
-    std::set<std::shared_ptr<CLanguageMgr::Language const>, Comp> languages;
+    std::set<std::shared_ptr<Language const>, Comp> languages;
     {
         auto const availableLanguages =
                 CSwordBackend::instance()->availableLanguages();

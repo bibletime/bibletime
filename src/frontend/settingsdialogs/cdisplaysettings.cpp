@@ -161,14 +161,14 @@ QVector<QString> CDisplaySettingsPage::bookNameAbbreviationsTryVector() {
                 atv.append(localeLanguageAndCountry.left(i));
         }
     }
-    atv.append(CLanguageMgr::languageForAbbrev({})->abbrev());
+    atv.append(Language::fromAbbrev({})->abbrev());
     return atv;
 }
 
 void CDisplaySettingsPage::initSwordLocaleCombo() {
     QMap<QString, QString> languageNames;
     {
-        auto const defaultLanguage = CLanguageMgr::languageForAbbrev({});
+        auto const defaultLanguage = Language::fromAbbrev({});
         languageNames.insert(defaultLanguage->translatedName(),
                              defaultLanguage->abbrev());
     }
@@ -181,7 +181,7 @@ void CDisplaySettingsPage::initSwordLocaleCombo() {
             continue;
         auto abbreviation =
                 util::tool::fixSwordBcp47(swordAbbreviation.c_str());
-        auto const l = CLanguageMgr::languageForAbbrev(std::move(abbreviation));
+        auto const l = Language::fromAbbrev(std::move(abbreviation));
         languageNames.insert(l->translatedName(), l->abbrev());
     }
 

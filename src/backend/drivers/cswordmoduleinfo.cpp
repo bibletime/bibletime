@@ -30,7 +30,6 @@
 #include "../../util/tool.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordkey.h"
-#include "../managers/clanguagemgr.h"
 #include "../managers/cswordbackend.h"
 #include "../rendering/centrydisplay.h"
 #include "../cswordmodulesearch.h"
@@ -111,7 +110,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
     , m_cachedName(QString::fromUtf8(module.getName()))
     , m_cachedCategory(retrieveCategory(type, module))
     , m_cachedLanguage(
-        CLanguageMgr::languageForAbbrev(
+        Language::fromAbbrev(
               util::tool::fixSwordBcp47(
                   m_cachedCategory == Glossary
                   /* Special handling for glossaries, we use the "from language" as
@@ -120,9 +119,9 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                   : module.getLanguage())))
     , m_cachedGlossaryTargetLanguage(
         m_cachedCategory == Glossary
-        ? CLanguageMgr::languageForAbbrev(
+        ? Language::fromAbbrev(
               util::tool::fixSwordBcp47(module.getLanguage()))
-        : std::shared_ptr<CLanguageMgr::Language const>())
+        : std::shared_ptr<Language const>())
     , m_cachedHasVersion(!QString((*m_backend.getConfig())[module.getName()]["Version"]).isEmpty())
 {
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",

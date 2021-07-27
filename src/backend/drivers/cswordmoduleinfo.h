@@ -14,8 +14,6 @@
 
 #include <QObject>
 
-#include "../managers/clanguagemgr.h"
-
 #include <atomic>
 #include <memory>
 #include <QIcon>
@@ -23,6 +21,7 @@
 #include <QString>
 #include <vector>
 #include "../cswordmodulesearch.h"
+#include "../language.h"
 
 
 // CLucene no longer lists the following functions in its headers
@@ -322,11 +321,11 @@ wrong, or if the config file was write protected return false.
     /**
       \returns the language of the module.
     */
-    std::shared_ptr<CLanguageMgr::Language const> language() const
+    std::shared_ptr<Language const> language() const
     { return m_cachedLanguage; }
 
     /** \returns the target language of the glossary, if this is a glossary. */
-    std::shared_ptr<CLanguageMgr::Language const> glossaryTargetlanguage() const
+    std::shared_ptr<Language const> glossaryTargetlanguage() const
     { return m_cachedGlossaryTargetLanguage; }
 
     /**
@@ -431,9 +430,8 @@ private: /* Fields: */
     // Cached data:
     QString const m_cachedName;
     CSwordModuleInfo::Category const m_cachedCategory;
-    std::shared_ptr<CLanguageMgr::Language const> const m_cachedLanguage;
-    std::shared_ptr<CLanguageMgr::Language const> const
-            m_cachedGlossaryTargetLanguage;
+    std::shared_ptr<Language const> const m_cachedLanguage;
+    std::shared_ptr<Language const> const m_cachedGlossaryTargetLanguage;
     bool const m_cachedHasVersion;
 
 };

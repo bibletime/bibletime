@@ -294,8 +294,8 @@ void BtConfig::storeDisplayOptionsToGroup(DisplayOptions const & os,
     subConf.setValue("verseNumbers", static_cast<bool>(os.verseNumbers));
 }
 
-void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
-                                  const FontSettingsPair & fontSettings)
+void BtConfig::setFontForLanguage(Language const & language,
+                                  FontSettingsPair const & fontSettings)
 {
     auto fontAsString = fontSettings.second.toString();
 
@@ -317,9 +317,8 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
     m_fontCache[&language] = fontSettings;
 }
 
-BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
-        const CLanguageMgr::Language & language)
-{
+BtConfig::FontSettingsPair
+BtConfig::getFontForLanguage(Language const & language) {
     // Check the cache first:
     auto it(m_fontCache.find(&language));
     if (it != m_fontCache.end())

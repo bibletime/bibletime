@@ -20,7 +20,7 @@
 #include <set>
 #include "../../backend/btinstallbackend.h"
 #include "../../backend/config/btconfig.h"
-#include "../../backend/managers/clanguagemgr.h"
+#include "../../backend/language.h"
 #include "../../backend/models/btlistmodel.h"
 #include "../../util/btconnect.h"
 #include "btbookshelfwizard.h"

@@ -51,7 +51,7 @@ public: /* Types: */
 
 private: /* Types: */
 
-    using FontCacheMap = QHash<const CLanguageMgr::Language *, FontSettingsPair>;
+    using FontCacheMap = QHash<Language const *, FontSettingsPair>;
 
     enum InitState {
         INIT_NEED_UNIMPLEMENTED_BACKWARD_MIGRATE = -2,
@@ -202,8 +202,8 @@ public: /* Methods: */
      * \param[in] language pointer to a language to set the font for
      * \param[in] fontSettings FontSettingsPair to set
      */
-    void setFontForLanguage(const CLanguageMgr::Language & language,
-                            const FontSettingsPair & fontSettings);
+    void setFontForLanguage(Language const & language,
+                            FontSettingsPair const & fontSettings);
 
     /*!
      * \brief Get font for a language.
@@ -213,7 +213,7 @@ public: /* Methods: */
      * \param[in] language pointer to a language to get the font for.
      * \returns FontSettingsPair for given language
      */
-    FontSettingsPair getFontForLanguage(const CLanguageMgr::Language & language);
+    FontSettingsPair getFontForLanguage(Language const & language);
 
     /// \todo: unit test these functions
     /*!

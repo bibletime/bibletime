@@ -17,21 +17,7 @@
 #include <QStringList>
 
 
-namespace CLanguageMgr {
-
-class Language;
-
-/**
-   \param[in] abbrev the language abbreviation in BCP 47 format.
-   \returns a pointer to the language of the given abbreviation.
-*/
-std::shared_ptr<Language const> languageForAbbrev(QString const & abbrev);
-
-
-/** \brief A language descriptor for CLanguageMgr. */
 class Language {
-
-    friend std::shared_ptr<Language const> languageForAbbrev(QString const &);
 
 public: /* Methods: */
 
@@ -56,11 +42,15 @@ public: /* Methods: */
     /** \returns the english name of this language. */
     QString const & englishName() const noexcept { return m_englishName; }
 
+    /**
+       \param[in] abbrev the language abbreviation in BCP 47 format.
+       \returns a pointer to the language of the given abbreviation.
+    */
+    static std::shared_ptr<Language const> fromAbbrev(QString const & abbrev);
+
 private: /* Fields: */
 
     QStringList const m_abbrevs;
     QString const m_englishName;
 
 }; /* class Language */
-
-} /* namespace CLanguageMgr */

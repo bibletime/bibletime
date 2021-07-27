@@ -567,7 +567,7 @@ QString BookmarkItem::toolTip() const {
     BT_ASSERT(k);
     k->setKey(key());
 
-    // const CLanguageMgr::Language* lang = module()->language();
+    // Language const * lang = module()->language();
     // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
     QString const header(toHeader(key(), module()->name()));

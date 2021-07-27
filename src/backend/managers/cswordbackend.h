@@ -18,18 +18,18 @@
 #include <QStringList>
 #include <set>
 #include "../../util/btassert.h"
+#include "../bookshelfmodel/btbookshelfmodel.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../drivers/btconstmoduleset.h"
-#include "../bookshelfmodel/btbookshelfmodel.h"
 #include "../filters/gbftohtml.h"
 #include "../filters/osistohtml.h"
 #include "../filters/plaintohtml.h"
 #include "../filters/teitohtml.h"
 #include "../filters/thmltohtml.h"
+#include "../language.h"
 #include "../rendering/cbookdisplay.h"
 #include "../rendering/cchapterdisplay.h"
 #include "../rendering/centrydisplay.h"
-#include "clanguagemgr.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -86,7 +86,7 @@ public: /* Types: */
 private: /* Types: */
 
     using AvailableLanguagesCacheContainer =
-            std::set<std::shared_ptr<CLanguageMgr::Language const>>;
+            std::set<std::shared_ptr<Language const>>;
 
 public: /* Methods: */
 

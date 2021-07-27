@@ -17,7 +17,7 @@
 #include <QWidget>
 #include <vector>
 #include "../../backend/config/btconfig.h"
-#include "../../backend/managers/clanguagemgr.h"
+#include "../../backend/language.h"
 
 
 class CConfigurationDialog;
@@ -34,7 +34,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
     private: /* Types: */
 
         struct WorkSetting {
-            CLanguageMgr::Language const & language;
+            Language const & language;
             BtConfig::FontSettingsPair settings;
         };
 
