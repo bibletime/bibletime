@@ -41,6 +41,15 @@ class Language {
 
 public: /* Methods: */
 
+    Language(Language &&) = delete;
+    Language(Language const &) = delete;
+    Language(QStringList abbrevs, QString englishName);
+
+    virtual ~Language();
+
+    Language & operator=(Language &&) = delete;
+    Language & operator=(Language const &) = delete;
+
     /** \returns the first abbreviation of this language. */
     QString const & abbrev() const { return m_abbrevs.first(); }
 
@@ -51,22 +60,12 @@ public: /* Methods: */
     virtual QString translatedName() const = 0;
 
     /** \returns the english name of this language. */
-    virtual QString const & englishName() const = 0;
-
-    virtual ~Language();
-
-protected: /* Methods: */
-
-    Language(Language &&) = delete;
-    Language(Language const &) = delete;
-    Language & operator=(Language &&) = delete;
-    Language & operator=(Language const &) = delete;
-
-    Language(QStringList abbrevs);
+    QString const & englishName() const noexcept { return m_englishName; }
 
 private: /* Fields: */
 
     QStringList const m_abbrevs;
+    QString const m_englishName;
 
 }; /* class Language */
 

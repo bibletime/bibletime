@@ -76,22 +76,10 @@ LanguageInfo::LanguageInfo() {
         [this](QStringList abbrevs, QString englishName) {
             struct BibleTimeLanguage: CLanguageMgr::Language {
 
-            // Methods:
-
-                BibleTimeLanguage(QStringList abbrevs, QString englishName)
-                    : Language(std::move(abbrevs))
-                    , m_englishName(std::move(englishName))
-                { BT_ASSERT(!m_englishName.isEmpty()); }
+                using Language::Language;
 
                 QString translatedName() const override
-                { return QObject::tr(m_englishName.toUtf8()); }
-
-                QString const & englishName() const override
-                { return m_englishName; }
-
-            // Fields:
-
-                QString const m_englishName;
+                { return QObject::tr(englishName().toUtf8()); }
 
             }; // struct BibleTimeLanguage
             auto language =
@@ -339,11 +327,13 @@ LanguageInfo::LanguageInfo() {
 
 } // anonymous namespace
 
-CLanguageMgr::Language::Language(QStringList abbrevs)
+CLanguageMgr::Language::Language(QStringList abbrevs, QString englishName)
     : m_abbrevs(std::move(abbrevs))
+    , m_englishName(std::move(englishName))
 {
     BT_ASSERT(!m_abbrevs.isEmpty());
     BT_ASSERT(!m_abbrevs.contains(QString()));
+    BT_ASSERT(!m_englishName.isEmpty());
 }
 
 CLanguageMgr::Language::~Language() = default;
@@ -373,11 +363,9 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
 
     struct SwordLanguage: Language {
 
-    // Methods:
-
-        SwordLanguage(QString abbrev)
-            : Language(QStringList{abbrev})
-            , m_englishName(
+        SwordLanguage(QStringList abbrevs, QString abbrev)
+            : Language(
+                std::move(abbrevs),
                 [](QString abbrev) {
                     if (auto * const locale = BtLocaleMgr::localeTranslator()) {
                         auto const abbrevEn = abbrev + ".en";
@@ -390,7 +378,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
                     }
                     return abbrev;
                 }(std::move(abbrev)))
-        { BT_ASSERT(!m_englishName.isEmpty()); }
+        {}
 
         QString translatedName() const override {
             if (auto * const locale = BtLocaleMgr::localeTranslator()) {
@@ -420,19 +408,12 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
                         return trName;
                 }
             }
-            return m_englishName;
+            return englishName();
         }
-
-        QString const & englishName() const override
-        { return m_englishName; }
-
-    // Fields:
-
-        QString const m_englishName;
 
     }; // struct SwordLanguage
 
-    auto newLang = std::make_shared<SwordLanguage>(abbrev);
+    auto newLang = std::make_shared<SwordLanguage>(QStringList{abbrev}, abbrev);
     info.m_abbrLangMap.insert(abbrev, newLang);
     return newLang;
 }
