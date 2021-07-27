@@ -17,9 +17,7 @@
 #include <QObject>
 #include <utility>
 #include "../util/btassert.h"
-#include "drivers/cswordmoduleinfo.h"
 #include "managers/btlocalemgr.h"
-#include "managers/cswordbackend.h"
 
 // Sword includes:
 #include <swlocale.h>
