@@ -1,3 +1,6 @@
+2021-07-27 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #330 - Support of dark mode in personal note
+
 2021-07-12 Gary Holmlund <gw@holmlund.org>
     * Fix bug #303 - Saves chapter as" does not save chapter right-clicked on
 

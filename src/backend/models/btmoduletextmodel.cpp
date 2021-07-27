@@ -252,6 +252,8 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
                 text += QString::number(verse) + "  " + rawText;
 
                 text = ColorManager::instance().replaceColors(text);
+                text = ColorManager::instance().replaceDarkWithLight(text);
+
                 return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
             }
         }
