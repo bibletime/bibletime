@@ -54,6 +54,10 @@ BtEditTextPage::BtEditTextPage(QWidget * parent)
     m_plainTextEdit->setAutoFormatting(QTextEdit::AutoNone);
     m_htmlTextEdit->setAutoFormatting(QTextEdit::AutoAll);
 
+    QPalette p = m_htmlTextEdit->palette();
+    p.setColor(QPalette::Base, QColor("lightgray"));
+    m_htmlTextEdit->setPalette(p);
+
     BT_CONNECT(m_htmlTextEdit, SIGNAL(currentCharFormatChanged(QTextCharFormat)),
                this, SLOT(slotCurrentCharFormatChanged(QTextCharFormat)),
                Qt::DirectConnection);

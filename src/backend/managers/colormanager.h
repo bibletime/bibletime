@@ -24,11 +24,12 @@ public: /* Methods: */
     static ColorManager & instance();
 
     void loadColorMaps();
-    QString replaceColors(QString content);
     QString getBackgroundColor(QString const & style = QString());
     QString getBackgroundHighlightColor(QString const & style = QString());
     QString getForegroundColor(QString const & style = QString());
     QString getCrossRefColor(QString const & style = QString());
+    QString replaceColors(QString content);
+    QString replaceDarkWithLight(const QString & content);
 
 private: /* Methods: */
 

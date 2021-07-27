@@ -16,6 +16,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QPalette>
+#include <QRegularExpression>
 #include <QSettings>
 #include <utility>
 #include "../../util/directory.h"
@@ -126,6 +127,23 @@ QString ColorManager::replaceColors(QString content) {
     for (auto const & cp : m_colorMaps[activeTemplate])
         content.replace(pattern.arg(cp.first), cp.second);
     return content;
+}
+
+QString ColorManager::replaceDarkWithLight(const QString & content) {
+    QString text = content;
+    if (darkMode()) {
+        // Match black and near black.
+        QRegularExpression re("color:#([0-4][0-9a-f][0-4][0-9a-f][0-4][0-9a-f])");
+        int end = 0;
+        QRegularExpressionMatch match = re.match(text);
+        while (match.hasMatch()) {
+            int start = match.capturedStart();
+            end = match.capturedEnd();
+            text = text.replace(start, 13, "color:#ffffff");
+            match = re.match(text,end);
+        }
+    }
+    return text;
 }
 
 QString ColorManager::getBackgroundColor(QString const & style)
