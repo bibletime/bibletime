@@ -57,7 +57,7 @@ public: /* Methods: */
     QStringList const & abbrevs() const { return m_abbrevs; }
 
     /** \returns the translated name of this language. */
-    virtual QString translatedName() const = 0;
+    virtual QString translatedName() const;
 
     /** \returns the english name of this language. */
     QString const & englishName() const noexcept { return m_englishName; }

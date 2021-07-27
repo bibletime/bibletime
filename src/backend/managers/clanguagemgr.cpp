@@ -74,17 +74,10 @@ LanguageInfo::LanguageInfo() {
 
     auto const addLanguage =
         [this](QStringList abbrevs, QString englishName) {
-            struct BibleTimeLanguage: CLanguageMgr::Language {
-
-                using Language::Language;
-
-                QString translatedName() const override
-                { return QObject::tr(englishName().toUtf8()); }
-
-            }; // struct BibleTimeLanguage
             auto language =
-                    std::make_shared<BibleTimeLanguage>(std::move(abbrevs),
-                                                        std::move(englishName));
+                    std::make_shared<CLanguageMgr::Language>(
+                        std::move(abbrevs),
+                        std::move(englishName));
             for (auto const & abbrev : language->abbrevs()) {
                 BT_ASSERT(!m_langMap.contains(abbrev));
                 m_langMap.insert(abbrev, language);
@@ -338,6 +331,9 @@ CLanguageMgr::Language::Language(QStringList abbrevs, QString englishName)
 
 CLanguageMgr::Language::~Language() = default;
 
+QString CLanguageMgr::Language::translatedName() const
+{ return QObject::tr(englishName().toUtf8()); }
+
 QString CLanguageMgr::fixSwordBcp47(QString input) {
     input.replace('_', '-');
     return input;
@@ -408,7 +404,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
                         return trName;
                 }
             }
-            return QObject::tr(englishName().toUtf8());
+            return Language::translatedName();
         }
 
     }; // struct SwordLanguage
