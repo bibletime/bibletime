@@ -408,7 +408,7 @@ CLanguageMgr::languageForAbbrev(QString const & abbrev) {
                         return trName;
                 }
             }
-            return englishName();
+            return QObject::tr(englishName().toUtf8());
         }
 
     }; // struct SwordLanguage
