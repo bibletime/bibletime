@@ -231,10 +231,12 @@ Rectangle {
 
         onPageDownChanged: {
             listView.scroll(listView.height * 0.8);
+            listView.returnToBounds()
             updateReferenceText();
         }
         onPageUpChanged: {
             listView.scroll(listView.height * -0.8);
+            listView.returnToBounds()
             updateReferenceText();
         }
         onPositionItemOnScreen: {
@@ -275,6 +277,8 @@ Rectangle {
 
         function updateReferenceText() {
             var index = indexAt(contentX,contentY+30);
+            if (index < 0)
+                return;
             btQmlInterface.changeReference(index);
         }
 
