@@ -7,10 +7,10 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+**Bug description**
 A clear and concise description of what the bug is. Please only describe one issue per bug report.
 
-**To Reproduce**
+**Steps to reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
@@ -23,7 +23,7 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, please add screenshots to help explain your problem.
 
-**System information (please complete the following information):**
+**System information:**
  - OS and OS version: [e.g. Debian 10, Windows 10]
  - BibleTime Version [e.g. 3.1_rc2]
  - How BibleTime was installed [e.g. from system packages, Snap, Flatpak, installer, compiled from source code]
