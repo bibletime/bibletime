@@ -1,4 +1,8 @@
 2021-07-27 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #331 - Scrolling the QML view with Page Up and Page Down keys 
+      past content yields strange results
+
+2021-07-27 Gary Holmlund <gw@holmlund.org>
     * Fix bug #330 - Support of dark mode in personal note
 
 2021-07-12 Gary Holmlund <gw@holmlund.org>
