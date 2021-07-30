@@ -11,7 +11,7 @@
 **********/
 
 import BibleTime 1.0
-import QtQuick 2.2
+import QtQuick 2.10
 
 Rectangle {
     id: display
@@ -231,12 +231,10 @@ Rectangle {
 
         onPageDownChanged: {
             listView.scroll(listView.height * 0.8);
-            listView.returnToBounds()
             updateReferenceText();
         }
         onPageUpChanged: {
             listView.scroll(listView.height * -0.8);
-            listView.returnToBounds()
             updateReferenceText();
         }
         onPositionItemOnScreen: {
@@ -288,6 +286,7 @@ Rectangle {
         anchors.rightMargin: 0
         anchors.topMargin: 0
         anchors.bottomMargin: 0
+        boundsMovement: Flickable.StopAtBounds
         focus: true
         maximumFlickVelocity: 900
         model: btQmlInterface.textModel
