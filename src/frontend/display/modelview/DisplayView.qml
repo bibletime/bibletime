@@ -11,7 +11,8 @@
 **********/
 
 import BibleTime 1.0
-import QtQuick 2.2
+import QtQuick 2.9
+import QtQml 2.3
 
 Rectangle {
     id: display
@@ -246,6 +247,7 @@ Rectangle {
     }
 
     ListView {
+        objectName: "DisplayListView"
         id: listView
 
         property color textColor: btQmlInterface.foregroundColor
@@ -294,6 +296,10 @@ Rectangle {
         spacing: 2
         highlightFollowsCurrentItem: true
         currentIndex: btQmlInterface.currentModelIndex
+        Component.onCompleted: {
+            btQmlInterface.setBoundsMovement();
+        }
+
         onCurrentIndexChanged: {
             positionViewAtIndex(currentIndex,ListView.Beginning)
         }

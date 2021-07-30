@@ -92,6 +92,7 @@ public:
     Q_INVOKABLE void clearSelectedText();
     Q_INVOKABLE bool hasSelectedText();
     Q_INVOKABLE void saveSelectedText(int index, const QString& text);
+    Q_INVOKABLE void setBoundsMovement();
     Q_INVOKABLE void setKeyFromLink(const QString& link);
     Q_INVOKABLE bool shiftKeyDown();
     Q_INVOKABLE int indexToVerse(int index);

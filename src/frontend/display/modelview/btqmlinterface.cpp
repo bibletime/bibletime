@@ -13,6 +13,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QQuickItem>
 #include <QScreen>
 #include <QTimer>
 #include "../../../backend/config/btconfig.h"
@@ -707,3 +708,12 @@ bool BtQmlInterface::shiftKeyDown() {
     return QGuiApplication::keyboardModifiers() & Qt::ShiftModifier;
 }
 
+void BtQmlInterface::setBoundsMovement() {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QQuickItem* displayListView = parent()->findChild<QQuickItem*>("DisplayListView");
+    if (displayListView != nullptr) {
+        int StopAtBounds = 0;
+        displayListView->setProperty("boundsMovement", StopAtBounds);
+    }
+#endif
+}
