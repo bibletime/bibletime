@@ -15,7 +15,7 @@
     * Fix bug #317 - Drag'n'Drop broken in BT 3.0 in mag view and search dialog
 
 2021-13-30 Gary Holmlund <gw@holmlund.org>
-    * Fix bug #306 - Change sample text in settings dialog 
+    * Fix bug #306 - Change sample text in settings dialog
 
 2021-02-18 Gary Holmlund <gw@holmlund.org>
     * Fix bug #299 - The preview on Settings dialog displays text as red
@@ -27,7 +27,7 @@
     * Fix bug #283 - Clicking on verse number should make that verse the reference box
 
 2020-10-28 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix bug #277 - Modules rearrange themselfs 
+    * Fix bug #277 - Modules rearrange themselfs
 
 2020-10-18 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #279 - Highlighting of choosen text
