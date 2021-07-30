@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -697,12 +695,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime é uma poderosa ferramenta de estudo Bíblico e fácil de usar.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>O Bibletime é lançado sob a licença GPL. Você pode trasnferir e usar o programa para propósitos pessoais, privados, públicos ou comerciais sem restrições, mas para ceder ou distribuir o programa, você tem que necessariamente distribuir o código fonte correspondente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
         <source>The complete legally binding license is below.</source>
         <translation>Abaixo está a licença completa vinculada juridicamente.</translation>
     </message>
@@ -747,32 +745,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>especialista em usabilidade</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime faz uso do Projecto SWORD. O Projecto SWORD é o projecto de software livre da Sociedade Bíblica Crosswire. O seu propósito é criar ferramentas de código aberto e independentes de plataforma &amp;mdash; cobertas pela Licença Pública Geral GNU &amp;mdash; que permite programadores e sociedades bíblicas escreverem novos softwares bíblicos de maneira mais rápida e fácil.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
         <source>The SWORD Project: </source>
         <translation>O projecto SWORD:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>Qt toolkit version %1</source>
         <translation>Kit de ferramentas Qt versão %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
         <source>More info...</source>
         <translation>Mais informações...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
         <source>&amp;License</source>
         <translation>&amp;Licença</translation>
     </message>
@@ -833,27 +831,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>As seguintes pessoas traduziram o BibleTime para as suas línguas:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Alguns nomes poderão estar omissos, por favor submeta um pedido de correcção em %1 se encontrar erros ou omissões.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
         <source>SWORD library version %1</source>
         <translation>versão da biblioteca SWORD %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
         <source>This program uses Qt version %1.</source>
         <translation>Este programa usa o Qt versão %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt é uma aplicação multiplataforma e um framework de interface gráfica, criado com a linguagem C++. Foi lançado sob licença LGPL.</translation>
     </message>
@@ -2867,7 +2865,7 @@ De facto, Deus não enviou o seu Filho ao mundo para condenar o mundo, mas para 
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="166"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>A lista de fontes será descarregada de um servidor remoto. Fontes serão adicionadas à lista actual. Novas fontes substituirão as antigas se estas tiverem o mesmo rótulo.  Você poderá depois remover as fontes que não deseja manter
@@ -2947,8 +2945,8 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="147"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Nomes de idiomas</translation>
     </message>
     <message>

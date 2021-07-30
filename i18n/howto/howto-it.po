@@ -5,13 +5,14 @@
 # Translators:
 # Giovanni Tedaldi, 2009-2010
 # Ren, 2018
-# Ren, 2018
+# Renato G, 2021
+# Renato G, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2018-06-06 23:48+0000\n"
-"Last-Translator: Gary Holmlund <garywholmlund@gmail.com>\n"
+"PO-Revision-Date: 2021-05-20 16:18+0000\n"
+"Last-Translator: Renato G\n"
 "Language-Team: Italian (http://www.transifex.com/bibletime/bibletime/"
 "language/it/)\n"
 "Language: it\n"
@@ -1224,6 +1225,16 @@ msgid ""
 "and Romans says, \" <emphasis>Christ also died for sins once for all</"
 "emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
+"La verità sulla finalità dell'iniziativa di Dio in Cristo è trasmessa da una "
+"parola del Testamento greco, cioè l'avverbio <foreignphrase>hapax</"
+"foreignphrase>e <foreignphrase>ephapax</foreignphrase>. Di solito è tradotto "
+"nella Versione Autorizzata con una volta, che significa una volta per tutte. "
+"È usato per ciò che è fatto in modo da avere una validità perpetua e non ha "
+"più bisogno di essere ripetuto, ed è applicato nel NT sia alla rivelazione "
+"che alla redenzione. Così, Giuda si riferisce alla fede che è stata "
+"trasmessa una volta per tutte ai santi (Giuda 3), e Romani dice, \" "
+"<emphasis>Cristo è morto per i peccati una volta per sempre</emphasis>"
+"\" (Rom.6:10, vedi anche 1 Pi.3:18; Eb.9:26-28)."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:305
@@ -1330,6 +1341,19 @@ msgid ""
 "understand, which the untaught and unstable distort, as they do also the "
 "rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
+"Abbiamo già imparato le \"3 C\": contenuto, contesto, riferimenti "
+"incrociati. Vogliamo ora ampliare il discorso approfondendo brevemente "
+"l'ermeneutica biblica, il cui obiettivo è scoprire il significato inteso "
+"dall'autore originale (e dall'Autore!). Mentre molte applicazioni di un "
+"passaggio sono valide, solo una interpretazione è valida. La Scrittura "
+"stessa lo dice affermando che nessuna scrittura è di interpretazione privata "
+"(2 Pi.1:20 <quote>Sappiate prima di tutto questo: che nessuna profezia della "
+"Scrittura proviene da un'interpretazione personale.</quote>). Alcune regole "
+"aiutano a scoprire il significato corretto; ignorando queste regole le "
+"persone hanno causato molti problemi a se stesse e ai loro seguaci. 2 "
+"Pi.3:16 <quote>...in esse vi sono alcune cose difficili da comprendere, che "
+"gli uomini ignoranti ed instabili torcono, come fanno con le altre "
+"Scritture, a loro propria perdizione.</quote>"
 
 #. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:17
@@ -1384,6 +1408,15 @@ msgid ""
 "word may be translated into the same English word, and the Greek words may "
 "have different shades of meaning.</emphasis>"
 msgstr ""
+"Confronta le Scritture con le Scritture. Vedere come la stessa parola greca "
+"o ebraica (non la parola in italiano) è usata nelle Scritture può chiarire o "
+"gettare nuova luce sulla definizione. In che modo lo stesso autore usa "
+"questa parola altrove? E gli altri autori? I tuoi strumenti di riferimento "
+"possono darti anche gli usi della parola in documenti non biblici. Perché "
+"dobbiamo andare alle lingue originali, perché la traduzione in italiano non "
+"è sufficiente? <emphasis>Perché talvolta più di una parola greca può essere "
+"tradotta con la stessa parola in italiano, mentre le parole greche possono "
+"avere diverse sfumature di significato.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1399,6 +1432,11 @@ msgid ""
 "up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
 "emphasis> (AMG Publishers, 1991)."
 msgstr ""
+"In Gv.20:17 <emphasis>\"Non toccarmi\"</emphasis> suona duro, vero? Sembra "
+"che Gesù non voglia essere toccato ora che è risorto, che è troppo santo o "
+"qualcosa del genere. Ma questo non sembra esatto, quindi cerchiamo nel testo "
+"dell'autore Spiros Zodhiates <emphasis>The Complete Word Study New "
+"Testament</emphasis> (AMG Publishers, 1991)."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:61
@@ -1417,6 +1455,20 @@ msgid ""
 "something. \" This is a negative command, so it is to stop doing something "
 "that is already occurring. So, what have we found?"
 msgstr ""
+"Definizione: Passando a Giovanni 20:17, sopra la parola \"Toccare\" vediamo "
+"\"pim680\". Le lettere ci danno un codice per la parte del discorso, e il "
+"numero si riferisce al riferimento del dizionario Strong. Cerchiamo la "
+"definizione (p. 879). \"680. Haptomai; da hapto (681), toccare. Si riferisce "
+"alla manipolazione di un oggetto tale da esercitare un'influenza modificante "
+"su di esso... Distinto da pselaphao (5584), che in realtà significa solo "
+"toccare la superficie di qualcosa.\" Ora cerchiamo \"pim\". I codici "
+"grammaticali in Zodhiates vengono subito dopo l'Apocalisse; a p. 849 vediamo "
+"che pim sta per \"imperativo presente attivo (80)\". A p.857, \"Imperativo "
+"presente. Nella voce attiva, può indicare un comando di fare qualcosa nel "
+"futuro che comporta un'azione continua o ripetuta o, quando è negato, un "
+"comando di smettere di fare qualcosa.\" Questo è un comando negativo, quindi "
+"si tratta di smettere di fare qualcosa che sta già avvenendo. Quindi, cosa "
+"abbiamo trovato?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
@@ -1438,6 +1490,8 @@ msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>. What is this anointing?"
 msgstr ""
+"In Giacomo 5:14, <emphasis>gli anziani della chiesa devono pregare e ungere "
+"i malati</emphasis>. Cos'è questa unzione di cui si parla?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:86
@@ -1450,6 +1504,14 @@ msgid ""
 "continuous action...When its relationship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
 msgstr ""
+"Definizione di aleipho (218) - \"all'olio\" (Strong); ma abbiamo anche "
+"un'altra parola greca tradotta \"ungere\", chrio (5548) - \"spalmare o "
+"strofinare con olio, cioè consacrare ad un ufficio o servizio religioso"
+"\" (Strong). Dato che è un verbo, considerate anche il tempo, \"apta\" "
+"participio aoristo attivo. \"Il participio aoristo esprime un'azione "
+"semplice, in opposizione all'azione continua... Quando la sua relazione con "
+"il verbo principale è temporale, di solito significa un'azione precedente a "
+"quella del verbo principale.\" (Zodhiates p.851)"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:100
@@ -1525,6 +1587,10 @@ msgid ""
 "references and the definitions, and sum up the difference: <emphasis>"
 "\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
 msgstr ""
+"Dunque qual è la differenza tra aleipho e chrio? Ritorniamo ai riferimenti "
+"incrociati e alle definizioni, e riassumiamo la differenza: <emphasis>"
+"\"aleipho\" è l'uso pratico dell'olio e \"chrio\" è quello spirituale</"
+"emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:147
@@ -1547,6 +1613,10 @@ msgid ""
 "church; and let them pray over him, anointing him with oil in the name of "
 "the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
 msgstr ""
+"Ora applichiamo ciò che abbiamo appena imparato da questo studio delle "
+"parole a Giacomo 5:14 <emphasis>\"Qualcuno di voi è infermo? Chiami gli "
+"anziani della chiesa, ed essi preghino su di lui, ungendolo di olio nel nome "
+"del Signore\"</emphasis>L'unzione qui è spirituale o pratica? Pratica!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:157
@@ -1558,6 +1628,12 @@ msgid ""
 "for him in the name of the Lord. Doesn't that express a beautiful balance of "
 "practical and spiritual in our God!"
 msgstr ""
+"E il tempo in greco, il participio aoristo, sarebbe meglio tradotto \"avendo "
+"unto\", quindi l'ordine è prima l'unzione, poi la preghiera (\"nel nome del "
+"Signore\" si riferisce alla preghiera, non all'unzione). Giacomo 5 sta "
+"dicendo che gli anziani dovrebbero dare la medicina al malato e pregare per "
+"lui nel nome del Signore. Questo non esprime un bellissimo equilibrio tra "
+"pratico e spirituale nel nostro Dio?"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:167
@@ -1574,6 +1650,13 @@ msgid ""
 "confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
+"Interpretiamo le Scritture in armonia con le altre Scritture. Cosa dicono i "
+"versetti di ogni parte? Qual è il tema del capitolo? Del libro? La sua "
+"interpretazione si accorda con questi? Se no, è difettosa. Di solito, il "
+"contesto ci fornisce ciò di cui abbiamo bisogno per interpretare "
+"correttamente il passaggio. Il contesto è la chiave. Se rimane confusione "
+"sul significato dopo che abbiamo interpretato il testo nel suo contesto, "
+"dobbiamo guardare più a fondo."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
@@ -1586,6 +1669,9 @@ msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis>In context, what is the water under discussion here?"
 msgstr ""
+"In una lezione precedente abbiamo considerato Gv.3:5 <emphasis>\"nato "
+"d'acqua e di Spirito.\"</emphasis>In questo contesto, di quale acqua si sta "
+"discutendo?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:180
@@ -1595,6 +1681,11 @@ msgid ""
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
 msgstr ""
+"Qui non è in discussione il battesimo in acqua, perché sarebbe un grande "
+"cambiamento riguardo all'argomento discusso da Gesù e Nicodemo. Fai "
+"attenzione ad un improvviso cambio di argomento, potrebbe essere un indizio "
+"che la tua interpretazione è uscita fuori tema! L'acqua è il liquido "
+"amniotico, \"nato dall'acqua\" = nascita naturale."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:187
@@ -1608,6 +1699,9 @@ msgid ""
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
 msgstr ""
+"1 Cor.14:34 <quote>le donne tacciano nelle assemblee</quote>va considerato "
+"nel contesto biblico di 1 Cor.11:5 <quote>ogni donna, che prega o profetizza "
+"[...]</quote>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:195
@@ -1627,6 +1721,16 @@ msgid ""
 "being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
 "not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
+"Atti 2:38 <quote>Allora Pietro disse loro: «Ravvedetevi e ciascuno di voi "
+"sia battezzato nel nome di Gesù Cristo per il perdono dei peccati [...]\"</"
+"quote>. Questo è l'insegnamento della rigenerazione battesimale? Se fosse "
+"l'unico versetto della Scrittura che abbiamo, dovremmo concludere così. Ma "
+"alla luce del chiaro insegnamento altrove che la rigenerazione avviene per "
+"fede in Cristo, dobbiamo interpretarlo diversamente. Pietro sta esortando i "
+"suoi ascoltatori al battesimo come risposta al vangelo. Se il battesimo "
+"fosse la via per nascere di nuovo, come potrebbe Paolo scrivere 1 Cor.1:17 "
+"<emphasis>\"Cristo infatti non mi ha mandato a battezzare, ma ad "
+"evangelizzare\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:211
@@ -1641,6 +1745,10 @@ msgid ""
 "<quote>What does it mean to me?</quote>. We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
+"All'inizio non ci chiediamo <quote>Cosa significa per me?</quote>ma "
+"<quote>Cosa significava per i lettori originali?</quote>; in seguito "
+"possiamo chiederci, <quote>Cosa significa per me?</quote>. Dobbiamo tenere "
+"presente le circostanze storiche e culturali dell'autore e dei destinatari."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:221
@@ -1656,6 +1764,12 @@ msgid ""
 "third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
 "explain the apparent contradiction."
 msgstr ""
+"<quote>3 giorni e 3 notti</quote>(Mt.12:40) ha portato alcuni a proporre una "
+"\"teoria della crocifissione del mercoledì\", specialmente tra i seguaci "
+"dell'Armstrongismo. Come potrebbe Gesù morire il venerdì pomeriggio e "
+"risorgere la domenica mattina ma \"risorgere il terzo giorno\" (Mt. 16:21)? "
+"I significati esatti di \"tre\" o \"giorni\" non aiutano a spiegare "
+"l'apparente contraddizione."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:229
@@ -1669,6 +1783,15 @@ msgid ""
 "Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
 "us out of trouble."
 msgstr ""
+"Abbiamo bisogno di una nota storica: Gli ebrei contavano qualsiasi parte di "
+"un giorno come un giorno intero, come noi contiamo i secchi d'acqua (se ci "
+"sono 6 secchi e mezzo d'acqua, diremo che ci sono 7 secchi d'acqua anche se "
+"uno è solo parzialmente pieno). Quindi, per la mentalità ebraica, qualsiasi "
+"parte di un giorno andava contata come un giorno intero, e inoltre i giorni "
+"iniziavano alle 18.00 e finivano alle 18.00. Venerdì dalle 15.00 alle 18.00 "
+"= giorno 1. Venerdì dalle 18 alle 18 di sabato = giorno 2. Sabato dalle "
+"18.00 alle 5.00 circa di domenica = giorno 3. Interpretare nel contesto "
+"culturale ci tiene fuori dai guai."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:240
@@ -1685,6 +1808,12 @@ msgid ""
 "the contract. But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
+"Gen.15:7-21. Il contesto storico è che tagliare animali in due e poi "
+"camminare tra i pezzi era il modo comune di stipulare un contratto ai tempi "
+"di Abramo. Entrambi i contraenti camminavano nel mezzo, prendendo l'impegno "
+"che lo smembramento sarebbe avvenuto a loro se non avessero rispettato la "
+"loro parte del contratto. Ma nel brano citato fu solo Dio a passare, "
+"rendendolo un patto unilaterale."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:251
@@ -1708,7 +1837,7 @@ msgstr "Esempio 4A"
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:259
 msgid "<quote>evil eye</quote>in Mt.6:23."
-msgstr ""
+msgstr "<quote>occhio malvagio</quote>in Mt.6:23."
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:260
@@ -1717,6 +1846,10 @@ msgid ""
 "seems to confuse us even more. It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
 msgstr ""
+"Regola 1, definizione di \"male\" e \"occhio\": qui non ci aiutano. Regola "
+"2, contesto: sembra confonderci ancora di più. Non sembra combaciare con ciò "
+"che va prima e dopo! Questo dovrebbe farci capire che non siamo sulla strada "
+"giusta!"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:264
@@ -1728,6 +1861,12 @@ msgid ""
 "\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
 msgstr ""
+"Ciò che abbiamo qui è un idioma ebraico, <quote>occhio malvagio</quote>. "
+"Cerchiamo altri usi di questo idioma: Mt.20:15 \" <emphasis>Non mi è forse "
+"lecito fare del mio ciò che voglio? O il tuo occhio è cattivo, perché io "
+"sono buono?</emphasis>\" Scopriamo che avere un \"occhio malvagio\" è un "
+"idioma ebraico per esprimere avarizia o invidia. Ora torniamo a Mt.6 e "
+"notiamo come questo si collega perfettamente al contesto del verso."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:275
@@ -1760,6 +1899,18 @@ msgid ""
 "is a bird</quote>. The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
+"I riferimenti a parti del corpo di Dio sono usati dai Santi degli Ultimi "
+"Giorni (Mormoni) per dimostrare che Dio una volta era un uomo proprio come "
+"noi. Una volta che hanno convinto la gente di questo, passano ad insegnare "
+"che possiamo diventare Dio proprio come Lui! Durante una conferenza da lui "
+"tenuta, un gruppo di anziani mormoni sfidò Walter Martin (autore di "
+"<emphasis>Kingdom of the Cults</emphasis>) con un'enumerazione di versetti "
+"di questo genere. Il dr. Martin chiese allora ai mormoni di leggere un'altra "
+"scrittura: Sal.91:4 <quote>Egli ti coprirà con le sue penne e sotto le sue "
+"ali troverai rifugio</quote>. W.M. disse, <quote>Con le stesse regole di "
+"interpretazione che hai appena usato per dimostrare che Dio è un uomo, hai "
+"appena dimostrato che è un uccello</quote>. I mormoni dovettero ridere "
+"mentre si rendevano conto della ridicolaggine della loro posizione."
 
 #. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:297
@@ -1794,6 +1945,13 @@ msgid ""
 "twisted to say all sorts of things. We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
+"Alcune parabole sono allegorie, per esempio, la parabola del seminatore è "
+"un'allegoria: il seme è la parola di Dio, le spine sono preoccupazioni e "
+"avidità, ecc. Ma la maggior parte delle parabole non sono allegorie ma "
+"semplicemente storie per illustrare un punto. È pericoloso trarre la nostra "
+"dottrina dalle parabole; esse possono essere distorte per dire ogni sorta di "
+"cose. Abbiamo bisogno di ottenere la nostra dottrina da scritture chiare che "
+"la espongano; poi, se una parabola la illustra, tanto meglio."
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:311
@@ -1831,6 +1989,8 @@ msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
 "the parable? Is it an allegory?"
 msgstr ""
+"La parabola dell'amministratore disonesto in Lu.16:1-9. Qual è il senso "
+"della parabola? È un'allegoria?"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:323
@@ -1839,6 +1999,10 @@ msgid ""
 "had to prepare for a time when he wouldn't have it. But he is not commended "
 "for his unethical behavior in cheating his master."
 msgstr ""
+"L'amministratore viene lodato solo per una cosa: per la sua astuzia "
+"nell'usare ciò che aveva per prepararsi a un tempo in cui non l'avrebbe "
+"avuto. Ma non viene lodato per il suo comportamento immorale "
+"nell'imbrogliare il suo padrone."
 
 #. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:5

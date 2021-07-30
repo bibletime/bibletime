@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message>
-        <source></source>
+        <source/>
         <translatorcomment>Bibletime User Interface translation
 Copyright (C) 1999-2016 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
-        <translation></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -697,12 +695,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime on helppokäyttöinen ja tehokas Raamatun opiskelun työkalu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="280"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="279"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime on julkaistu GPL-lisenssin alla. Voit ladata ohjelman ja käyttää sitä henkilökohtaisessa, yksityisessä, julkisessa tai kaupallisessa käytössä ilman rajoituksia, mutta voit jakaa ohjelmaa edelleen vain jos jaat myös vastaavan lähdekoodin.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="286"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="285"/>
         <source>The complete legally binding license is below.</source>
         <translation>Täydellinen, laillisesti sitova lisenssi on alla.</translation>
     </message>
@@ -747,32 +745,32 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>käytettävyysasiantuntija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime käyttää SWORD-projektia. SWORD-projekti on CrossWire Bible Societyn avoin raamattuohjelmistoprojekti. Sen tarkoitus on luoda alustariippumattomia GPL-lisenssoituja avoimen lähdekoodin työkaluja, jotka antavat ohjelmoijille ja raamattuseuroille mahdollisuuden tehdä uusia Raamattuun liittyviä ohjelmistoja nopeasti ja helposti.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
         <source>The SWORD Project: </source>
         <translation>SWORD-projekti: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt ohjelmistoalusta versio %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="267"/>
         <source>More info...</source>
         <translation>Lisätietoa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="273"/>
         <source>&amp;License</source>
         <translation>&amp;Lisenssi</translation>
     </message>
@@ -833,27 +831,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Seuraavat henkilöt ovat kääntäneet BibleTimen omalle kielelleen:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
         <translation>Joitain nimiä voi puuttua, lähetä sähköpostia osoitteeseen %1, jos huomaat puutteita.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
         <source>SWORD library version %1</source>
         <translation>SWORD-kirjaston versio %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="261"/>
         <source>This program uses Qt version %1.</source>
         <translation>Tämä ohjelma käyttää Qt:n versiota %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt on C++-kielellä tehty alustariippumaton sovellus- ja käyttöliittymäkehikko. Se on julkaistu LGPL-lisenssin alla.</translation>
     </message>
@@ -2268,12 +2266,12 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="123"/>
         <source>Import to folder...</source>
-        <translation>Tuo kansioon...</translation>
+        <translation>Tuo kansiosta...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="126"/>
         <source>Export from folder...</source>
-        <translation>Vie kansiosta...</translation>
+        <translation>Vie kansioon...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="129"/>
@@ -2407,7 +2405,7 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="222"/>
         <source>&lt;span class=&quot;jesuswords&quot;&gt;For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.&lt;/span&gt;</source>
-        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Sillä&#xa0;ei Jumala lähettänyt Poikaansa maailmaan tuomitsemaan maailmaa,&#xa0;vaan&#xa0;sitä varten,&#xa0;että maailma hänen&#xa0;kauttansa&#xa0;pelastuisi.&lt;/span&gt;</translation>
+        <translation>&lt;span class=&quot;jesuswords&quot;&gt;Sillä ei Jumala lähettänyt Poikaansa maailmaan tuomitsemaan maailmaa, vaan sitä varten, että maailma hänen kauttansa pelastuisi.&lt;/span&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="227"/>
@@ -2866,7 +2864,7 @@ pikanäppäin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfwizard/cswordsetupinstallsourcesdialog.cpp" line="166"/>
-        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.
 
 Do you want to continue?</source>
         <translation>Lista lähteistä ladataan etäpalvelimelta. Lähteet lisätään nykyiseen listaan. Uusi lähde korvaa vanhan, jos niillä on sama nimi. Voit myöhemmin poistaa ne lähteet, joita et halua pitää listassa.
@@ -2946,8 +2944,8 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="147"/>
         <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn't actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Kielten nimet</translation>
     </message>
     <message>
@@ -4515,7 +4513,7 @@ Haluatko jatkaa?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos;&#xa0; vastaa mitä tahansa merkkijonoa tyhjästä merkkijonosta lähtien, kun &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; vastaa yhtä merkkiä. Jokerimerkkiä ei voi käyttää sanan alussa.</translation>
+        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos;  vastaa mitä tahansa merkkijonoa tyhjästä merkkijonosta lähtien, kun &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; vastaa yhtä merkkiä. Jokerimerkkiä ei voi käyttää sanan alussa.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="163"/>

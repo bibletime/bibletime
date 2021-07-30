@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Hanjo Kim <lordmiss@gmail.com>, 2020
 # rokmcssu <yaraba@daum.net>, 2017
 # rokmcssu <yaraba@daum.net>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2019-12-22 00:22+0000\n"
-"Last-Translator: Jaak Ristioja\n"
+"PO-Revision-Date: 2020-12-27 05:09+0000\n"
+"Last-Translator: Hanjo Kim <lordmiss@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/"
 "ko/)\n"
 "Language: ko\n"
@@ -194,7 +195,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:94
 msgid "Fonts can be installed from a number of sources:"
-msgstr ""
+msgstr "글꼴은 여러 곳에서 설치할 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:97
@@ -523,6 +524,10 @@ msgid ""
 "type=\"variablelist\" id=\"0\"/> There are several other repositories that "
 "&bibletime; will load and use."
 msgstr ""
+"<ulink url=\"http://www.crosswire.org\">&cbs;</ulink>에서 50여개의 언어로 만"
+"들어진 280개가 넘는 문서를 구할 수 있습니다. 다음과 같습니다: <placeholder "
+"type=\"variablelist\" id=\"0\"/> 바이블타임이 사용할 수 있는 다른 저장소들도 "
+"있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:84
@@ -639,7 +644,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
 msgid "Opening works"
-msgstr ""
+msgstr "책 여는 중"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:39
@@ -650,6 +655,10 @@ msgid ""
 "display its contents. Then just double-click on one of the works to open it "
 "for reading. A read window will appear in the Desk area."
 msgstr ""
+"책꽂이에서 책을 읽으려면 우선 책을 가지고 있는 분류(성경, 주석, 사전, 도서, "
+"매일성경읽기 또는 용어집)를 <mousebutton>좌측 마우스 버튼</mousebutton>으로 "
+"클릭해서 엽니다. 그 다음에 여러 책들 중에서 하나를 클릭합니다. 그러면 읽기 창"
+"이 책상 영역에 나타납니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
@@ -827,7 +836,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:152
 msgid "Auto Scrolling"
-msgstr ""
+msgstr "자동 스크롤"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:153
@@ -1270,14 +1279,14 @@ msgid ""
 "menuchoice> in the main menu."
 msgstr ""
 "<guimenuitem>책꽂이 관리자</guimenuitem>는 여러분의 책장을 관리하기 위한 도구"
-"입니다. 새로운 책들을 책꽂이에 설치할 수 있으며 책꽂이에서 기존 책을 갱신하거"
-"나 제거할 수 있습니다. 메인 메뉴의 <menuchoice> <guimenu>설정</guimenu> "
+"입니다. 새로운 책들을 책꽂이에 설치할 수 있으며 책꽂이에서 기존 책을 업데이트"
+"하거나 제거할 수 있습니다. 메인 메뉴의 <menuchoice> <guimenu>설정</guimenu> "
 "<guimenuitem>책꽂이 관리</guimenuitem> </menuchoice>로 만날 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:403
 msgid "Install works"
-msgstr ""
+msgstr "책 설치"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:404
@@ -1305,7 +1314,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
 msgid "Update works"
-msgstr ""
+msgstr "책 업데이트"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:425
@@ -1314,6 +1323,9 @@ msgid ""
 "or more work and click the <guibutton>Update Works</guibutton>. After the "
 "works are updated, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"업데이트할 책이 있으면 표시됩니다. 한개 이상의 책을 선택하고 <guibutton>책 업"
+"데이트</guibutton>를 클릭하세요. 책이 업데이트되면 <guibutton>종료</"
+"guibutton>을 클릭하세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
