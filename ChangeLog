@@ -1,5 +1,5 @@
 2021-07-29 Gary Holmlund <gw@holmlund.org>
-    * Fix bug #331 - Scrolling the QML view with Page Up and Page Down keys 
+    * Fix bug #331 - Scrolling the QML view with Page Up and Page Down keys
       past content yields strange results
 
 2021-07-12 Gary Holmlund <gw@holmlund.org>
@@ -27,7 +27,7 @@
     * Fix bug #283 - Clicking on verse number should make that verse the reference box
 
 2019-10-28 Gary Holmlund <gary.holmlund@gmail.com>
-    * Fix bug #277 - Modules rearrange themselfs 
+    * Fix bug #277 - Modules rearrange themselfs
 
 2019-10-18 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug #279 - Highlighting of choosen text
