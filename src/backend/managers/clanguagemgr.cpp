@@ -123,13 +123,13 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
                     tryTranslateNames.append(abbrev + '.' + localeName);
                     if (localeName == abbrev)
                         tryTranslateNames.append(localeName);
-                    while (localeName.back().isLetterOrNumber()) {
+                    while (localeName.operator[](localeName.size() - 1).isLetterOrNumber()) {
                         localeName.chop(1);
                         if (localeName.isEmpty())
                             break;
                     }
                     while (!localeName.isEmpty()
-                           && !localeName.back().isLetterOrNumber())
+                           && !localeName.operator[](localeName.size() - 1).isLetterOrNumber())
                         localeName.chop(1);
                 }
             }
