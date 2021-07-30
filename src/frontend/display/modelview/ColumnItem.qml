@@ -21,7 +21,7 @@ Item {
     property color textColor: btQmlInterface.foregroundColor
     property color textBackgroundColor: btQmlInterface.backgroundColor
     property color textBackgroundHighlightColor: btQmlInterface.backgroundHighlightColor
-    required property font font
+    property font font
 
     signal hovered(string link);
     signal setSelection(bool selected, int selectFirstIndex, int selectLastIndex, int posFirst, int posLast)
