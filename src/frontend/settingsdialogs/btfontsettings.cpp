@@ -94,7 +94,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
                    work.settings.second = newFont;
                });
     BT_CONNECT(m_languageComboBox,
-               qOverload<int>(&QComboBox::currentIndexChanged),
+               QOverload<int>::of(&QComboBox::currentIndexChanged),
                [this](int const newIndex) {
                    auto const i = static_cast<std::size_t>(newIndex);
                    auto const & p = m_workSettings[i].settings;
