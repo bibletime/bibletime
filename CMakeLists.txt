@@ -46,6 +46,10 @@ SET(BUILD_HOWTO_PDF_LANGUAGES "" CACHE STRING
 install the howto in PDF format if BUILD_HOWTO_PDF is enabled. \
 Leave empty use all supported languages.")
 
+SET(INSTALL_GENERATED_DOCS "OFF" CACHE BOOL
+    "Install generated_docs from a specified path.")
+SET(GENERATED_DOCS_DIR "" CACHE PATH
+    "Path to the checked out generated_docs for this revision of BibleTime")
 
 ######################################################
 # Misc. settings:

@@ -24,6 +24,14 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/docs/license.html"
 
 
 ######################################################
+
+IF(INSTALL_GENERATED_DOCS)
+    INSTALL(DIRECTORY ${GENERATED_DOCS_DIR}/handbook DESTINATION ${BT_DOCDIR})
+    INSTALL(DIRECTORY ${GENERATED_DOCS_DIR}/howto DESTINATION ${BT_DOCDIR})
+ENDIF()
+
+
+######################################################
 # Return if nothing to do:
 #
 IF(NOT BUILD_DOCS)
