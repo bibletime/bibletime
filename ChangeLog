@@ -1,3 +1,6 @@
+2021-08-09 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #334 - Copy text disabled on Bible Time 3.0.1 with Qt less than 5.13
+
 2021-07-30 Jaak Ristioja <jaak@ristioja.ee>
     * Released 3.0.1.
 
