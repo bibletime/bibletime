@@ -35,6 +35,8 @@ Rectangle {
     property int column: 0          // Column containing selected text
     property int indexFirst: -1     // Index of first delegate item with selected text
     property int indexLast: -1      // Index of last delegate item with selected text
+    property Item itemFirst: null   // First delegate item with selected text
+    property Item itemLast: null    // Last delegate item with selected text
     property int textPosFirst: -1   // Position of first selected character
     property int textPosLast: -1    // Position of last selected character
 
@@ -59,6 +61,12 @@ Rectangle {
         // Save cursor position for later use
         mousePressedX = x;
         mousePressedY = y;
+
+        if (btQmlInterface.hasSelectedText()) {
+            deselectByItem();
+            return;
+        }
+
         var delegateItem = listView.itemAt( x, y + listView.contentY);
         if (delegateItem === null)
             return;
@@ -89,7 +97,7 @@ Rectangle {
             column = Math.floor(mousePressedX / (listView.width / listView.columns));
             sortMousePoints();
             getSelectedTextPositions();
-            selectByIndex();
+            selectByItem();
             selectionInProgress = true;
         }
     }
@@ -105,7 +113,7 @@ Rectangle {
             return;
         if (selectionInProgress)
             return;
-        deselectByIndex();
+        deselectByItem();
         if (openPersonalCommentary(mousePressedX, mousePressedY))
             return;
         if (! isCrossReference(pressedLink))
@@ -146,54 +154,68 @@ Rectangle {
             return;
 
         indexFirst = listView.indexAt(mouseUL.x, mouseUL.y + listView.contentY);
+        itemFirst = listView.itemAt(mouseUL.x, mouseUL.y + listView.contentY);
         var delegateXFirst = listView.contentX + mouseUL.x - firstDelegateItem.x;
         var delegateYFirst = listView.contentY + mouseUL.y - firstDelegateItem.y;
         textPosFirst = firstDelegateItem.positionAt(delegateXFirst, delegateYFirst, column);
 
         indexLast = listView.indexAt(mouseLR.x, mouseLR.y + listView.contentY);
+        itemLast = listView.itemAt(mouseLR.x, mouseLR.y + listView.contentY);
         var delegateXLast = listView.contentX + mouseLR.x - lastDelegateItem.x;
         var delegateYLast = listView.contentY + mouseLR.y - lastDelegateItem.y;
         textPosLast = lastDelegateItem.positionAt(delegateXLast, delegateYLast, column);
     }
 
-    function selectDelegateItem(index, delegateItem) {
-        if (delegateItem === null)
+    function selectDelegateItem(index, dItem) {
+        if (dItem === null || dItem === 0)
             return;
-        if (index === indexFirst && index === indexLast)
-            delegateItem.selectSingle(column, textPosFirst, textPosLast);
-        else if (index === indexFirst)
-            delegateItem.selectFirst(column, textPosFirst);
-        else if (index === indexLast)
-            delegateItem.selectLast(column, textPosLast);
-        else if (index > indexFirst && index < indexLast)
-            delegateItem.selectAll(column);
+        if (dItem === itemFirst && dItem === itemLast)
+            dItem.selectSingle(column, textPosFirst, textPosLast);
+        else if (dItem === itemFirst)
+            dItem.selectFirst(column, textPosFirst);
+        else if (dItem === itemLast)
+            dItem.selectLast(column, textPosLast);
+        else if (dItem !== itemFirst && dItem !== itemLast)
+            dItem.selectAll(column);
         else
             return;
 
-        var columnSelectedText = delegateItem.getSelectedText(column);
+        var columnSelectedText = dItem.getSelectedText(column);
         btQmlInterface.saveSelectedText(index, columnSelectedText)
     }
 
-    function selectByIndex() {
-        if (indexFirst < 0 || indexLast < 0 || indexFirst > indexLast)
-            return;
+    function nextItem(currentItem) {
+        var nextY = currentItem.y+currentItem.height+listView.spacing;
+        var nextI = listView.itemAt(currentItem.x, nextY);
+        return nextI;
+    }
 
-        var index;
-        for (index = indexFirst; index <= indexLast; index++) {
-            var delegateItem = listView.itemAtIndex(index);
-            selectDelegateItem(index, delegateItem);
+    function selectByItem() {
+        var delegateItem = itemFirst;
+        var loopIndex = 0;
+        while (true) {
+            selectDelegateItem(loopIndex, delegateItem);
+            if (delegateItem == itemLast)
+                break;
+            delegateItem = nextItem(delegateItem);
+            loopIndex++;
         }
     }
 
-    function deselectByIndex() {
-        if (indexFirst < 0 || indexLast < 0 || indexFirst > indexLast)
+    function deselectByItem() {
+        if (itemFirst == null)
             return;
-        var index;
-        for (index = indexFirst; index <= indexLast; index++) {
-            var delegateItem = listView.itemAtIndex(index);
-            if (delegateItem !== null)
-                delegateItem.deselect(column);
+        var delegateItem = itemFirst;
+        while (true) {
+            delegateItem.deselect(column);
+            if (delegateItem == itemLast)
+                break;
+            delegateItem = nextItem(delegateItem);
         }
+        itemFirst = null;
+        itemLast = null
+        column = 0;
+        btQmlInterface.clearSelectedText();
     }
 
     function openPersonalCommentary(x, y) {
@@ -302,9 +324,9 @@ Rectangle {
 
         delegate: DisplayDelegate {
             id: dd
-            Component.onCompleted: {
-                selectDelegateItem(index, dd);
-            }
+//            Component.onCompleted: {
+//                selectDelegateItem(index, dd);
+//            }
         }
     }
 }
