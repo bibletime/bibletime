@@ -40,9 +40,6 @@ class CSearchDialog final: public QDialog {
 
     private:
 
-        friend class CSearchAnalysisScene;
-        friend class BtSearchResultArea;
-
         CSearchDialog(QWidget *parent);
         ~CSearchDialog();
 
