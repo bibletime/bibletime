@@ -21,6 +21,7 @@
 #include <QVector>
 #include <type_traits>
 #include <utility>
+#include "../../../backend/drivers/cswordmoduleinfo.h"
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/btassert.h"
 #include "../../../util/tool.h"
