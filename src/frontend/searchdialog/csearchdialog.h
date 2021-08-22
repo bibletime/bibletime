@@ -55,13 +55,6 @@ class CSearchDialog final: public QDialog {
         void setSearchText( const QString &searchText );
 
         /**
-          \returns the search text which is set currently.
-        */
-        QString searchText() const {
-            return m_searchOptionsArea->searchText();
-        }
-
-        /**
           \returns the used search scope as a list key
         */
         sword::ListKey searchScope() const
