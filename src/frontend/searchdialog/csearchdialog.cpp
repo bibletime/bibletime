@@ -119,7 +119,8 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 
     verticalLayout->addLayout(horizontalLayout);
 
-    loadDialogSettings();
+    // Load dialog settings:
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 
     // Search button is clicked
     BT_CONNECT(m_searchOptionsArea->searchButton(), &QPushButton::clicked,
@@ -138,8 +139,10 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 }
 
 CSearchDialog::~CSearchDialog() {
-    saveDialogSettings();
     m_staticDialog = nullptr;
+
+    // Save dialog settings:
+    btConfig().setValue(GeometryKey, saveGeometry());
 }
 
 void CSearchDialog::startSearch() {
@@ -255,14 +258,5 @@ void CSearchDialog::reset() {
     m_searchResultArea->reset();
     m_analyseButton->setEnabled(false);
 }
-
-void CSearchDialog::loadDialogSettings() {
-    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
-}
-
-void CSearchDialog::saveDialogSettings() const {
-    btConfig().setValue(GeometryKey, saveGeometry());
-}
-
 
 } //end of namespace Search
