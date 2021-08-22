@@ -72,7 +72,7 @@ void BibleTime::initView() {
 
     m_bookmarksDock = new QDockWidget(this);
     m_bookmarksDock->setObjectName("BookmarksDock");
-    m_bookmarksPage = new CBookmarkIndex(nullptr);
+    m_bookmarksPage = new CBookmarkIndex(this);
     m_bookmarksDock->setWidget(m_bookmarksPage);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookmarksDock);
     tabifyDockWidget(m_bookmarksDock, m_bookshelfDock);
