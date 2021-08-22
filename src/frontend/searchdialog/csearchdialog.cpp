@@ -78,11 +78,6 @@ void CSearchDialog::closeDialog() {
         m_staticDialog->close();
 }
 
-CSearchDialog* CSearchDialog::getSearchDialog() {
-    BT_ASSERT(m_staticDialog);
-    return m_staticDialog;
-}
-
 CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(nullptr),
         m_searchResultArea(nullptr), m_searchOptionsArea(nullptr) {

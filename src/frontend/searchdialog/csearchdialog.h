@@ -43,11 +43,6 @@ class CSearchDialog final: public QDialog {
         friend class CSearchAnalysisScene;
         friend class BtSearchResultArea;
 
-        /**
-        * Only interesting for the class members! Useful to get the searched text etc.
-        */
-        static CSearchDialog* getSearchDialog();
-
         CSearchDialog(QWidget *parent);
         ~CSearchDialog();
 
