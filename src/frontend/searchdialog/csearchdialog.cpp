@@ -59,7 +59,7 @@ void CSearchDialog::openDialog(const BtConstModuleList modules,
         m_staticDialog->showModulesSelector();
     }
 
-    m_staticDialog->setSearchText(searchText);
+    m_staticDialog->m_searchOptionsArea->setSearchText(searchText);
     if (m_staticDialog->isHidden()) {
         m_staticDialog->show();
     }
@@ -243,11 +243,6 @@ void CSearchDialog::startSearch() {
     // Re-enable the dialog:
     setEnabled(true);
     setCursor(Qt::ArrowCursor);
-}
-
-/** Sets the search text which is used for the search. */
-void CSearchDialog::setSearchText( const QString &searchText ) {
-    m_searchOptionsArea->setSearchText(searchText);
 }
 
 void CSearchDialog::showModulesSelector() {
