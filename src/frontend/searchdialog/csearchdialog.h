@@ -50,12 +50,6 @@ class CSearchDialog final: public QDialog {
         { return m_searchOptionsArea->modules(); }
 
         /**
-          \returns the used search scope as a list key
-        */
-        sword::ListKey searchScope() const
-        { return m_searchOptionsArea->searchScope(); }
-
-        /**
         * Resets the parts to the default.
         */
         void reset();
