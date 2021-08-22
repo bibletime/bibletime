@@ -209,8 +209,7 @@ void BtSearchOptionsArea::initConnections() {
                    CRangeChooserDialog(getUniqueWorksList(), this).exec();
                    refreshRanges();
                });
-    BT_CONNECT(m_modulesCombo,
-               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+    BT_CONNECT(m_modulesCombo, qOverload<int>(&QComboBox::activated),
                [this](int const index) {
                    BtConstModuleList moduleList;
                    for (auto const & name

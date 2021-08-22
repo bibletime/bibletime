@@ -163,9 +163,7 @@ BtBookshelfWorksPage::BtBookshelfWorksPage(WizardTaskType iType,
                this,
                &BtBookshelfWorksPage::slotGroupingActionTriggered);
     if (m_taskType != WizardTaskType::removeWorks) {
-        BT_CONNECT(m_pathCombo,
-                   static_cast<void (QComboBox::*)(int)>(
-                        &QComboBox::currentIndexChanged),
+        BT_CONNECT(m_pathCombo, qOverload<int>(&QComboBox::currentIndexChanged),
                    this, &BtBookshelfWorksPage::slotPathChanged);
         BT_CONNECT(
                 CSwordBackend::instance(), &CSwordBackend::sigSwordSetupChanged,

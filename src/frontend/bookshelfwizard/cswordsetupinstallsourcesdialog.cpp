@@ -188,8 +188,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
                });
     BT_CONNECT(buttonBox, &QDialogButtonBox::rejected,
                this, &CSwordSetupInstallSourcesDialog::reject);
-    BT_CONNECT(m_protocolCombo,
-               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+    BT_CONNECT(m_protocolCombo, qOverload<int>(&QComboBox::activated),
                [this]{
                    if (this->isRemote(m_protocolCombo->currentText())) { //REMOTE
                        m_serverLabel->setEnabled(true);

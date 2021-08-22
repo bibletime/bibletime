@@ -56,8 +56,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     initSwordLocaleCombo();
 
     m_styleChooserCombo = new QComboBox( this ); //create first to enable buddy for label
-    BT_CONNECT(m_styleChooserCombo,
-               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+    BT_CONNECT(m_styleChooserCombo, qOverload<int>(&QComboBox::activated),
                this, &CDisplaySettingsPage::updateStylePreview);
 
     m_availableLabel = new QLabel(this);

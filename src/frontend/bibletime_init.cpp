@@ -87,8 +87,7 @@ void BibleTime::initView() {
 
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleHovered,
                m_infoDisplay,
-               static_cast<void (CInfoDisplay::*)(CSwordModuleInfo *)>(
-                   &CInfoDisplay::setInfo));
+               qOverload<CSwordModuleInfo *>(&CInfoDisplay::setInfo));
     BT_CONNECT(m_bookmarksPage, &CBookmarkIndex::magInfoProvided,
                m_infoDisplay,
                qOverload<Rendering::InfoType, QString const &>(
@@ -690,9 +689,7 @@ void BibleTime::initMenubar() {
     m_windowDeleteProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowDeleteProfileMenu);
     BT_CONNECT(m_windowLoadProfileMenu, &QMenu::triggered,
-               this,
-               static_cast<void (BibleTime::*)(QAction *)>(
-                   &BibleTime::loadProfile));
+               this, qOverload<QAction *>(&BibleTime::loadProfile));
     BT_CONNECT(m_windowDeleteProfileMenu, &QMenu::triggered,
                this,                      &BibleTime::deleteProfile);
     refreshProfileMenus();
@@ -800,9 +797,7 @@ void BibleTime::initConnections() {
     // Bookmarks page connections:
     BT_CONNECT(m_bookmarksPage, &CBookmarkIndex::createReadDisplayWindow,
                this,
-               static_cast<CDisplayWindow * (BibleTime::*)(
-                                                QList<CSwordModuleInfo *>,
-                                                QString const &)>(
+               qOverload<QList<CSwordModuleInfo *>, QString const &>(
                    &BibleTime::createReadDisplayWindow));
 
     // Bookshelf dock connections:
@@ -810,9 +805,7 @@ void BibleTime::initConnections() {
                [this](CSwordModuleInfo * const module)
                { createReadDisplayWindow(module); });
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleSearchTriggered,
-               this,
-               static_cast<void (BibleTime::*)(CSwordModuleInfo *)>(
-                   &BibleTime::searchInModule));
+               this, qOverload<CSwordModuleInfo *>(&BibleTime::searchInModule));
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleUnlockTriggered,
                this,            &BibleTime::slotModuleUnlock);
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleAboutTriggered,

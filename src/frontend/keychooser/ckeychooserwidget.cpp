@@ -240,8 +240,7 @@ void CKeyChooserWidget::init() {
                            Q_EMIT changed(new_index);
                    }
                });
-    BT_CONNECT(m_comboBox,
-               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+    BT_CONNECT(m_comboBox, qOverload<int>(&QComboBox::activated),
                [this](int index) {
                    if (!updatesEnabled())
                        return;

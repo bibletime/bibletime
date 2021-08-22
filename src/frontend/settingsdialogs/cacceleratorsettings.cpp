@@ -48,8 +48,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_typeChooser = new QComboBox(this);
     layoutForWindowTypeChooser->addWidget(m_typeChooser);
 
-    BT_CONNECT(m_typeChooser,
-               static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
+    BT_CONNECT(m_typeChooser, qOverload<int>(&QComboBox::activated),
                [this](int i) { m_keyChooserStack->setCurrentIndex(i); });
 
     // m_*.title strings are empty here, they are filled and added to the stacked widget in the retranslateUi() function

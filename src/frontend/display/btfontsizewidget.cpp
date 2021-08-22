@@ -32,9 +32,7 @@ BtFontSizeWidget::BtFontSizeWidget(QWidget * parent)
         addItem(QString::number(size), QVariant(size));
     }
 
-    BT_CONNECT(this,
-               static_cast<void (QComboBox::*)(QString const &)>(
-                   &QComboBox::currentTextChanged),
+    BT_CONNECT(this, qOverload<QString const &>(&QComboBox::currentTextChanged),
                [this](QString const & text)
                { Q_EMIT fontSizeChanged(text.toInt()); });
 }
