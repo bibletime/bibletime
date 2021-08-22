@@ -76,7 +76,7 @@ void BibleTime::saveConfigSettings()
 
 /** Opens the bookshelf wizard. */
 void BibleTime::slotBookshelfWizard()
-{ BtBookshelfWizard(BibleTime::instance()).exec(); }
+{ BtBookshelfWizard(this).exec(); }
 
 /** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {
