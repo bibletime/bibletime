@@ -813,6 +813,8 @@ void BibleTime::initConnections() {
                this,            &BibleTime::slotModuleUnlock);
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleAboutTriggered,
                this,            &BibleTime::moduleAbout);
+    BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::installWorksClicked,
+               this,            &BibleTime::slotBookshelfWizard);
 }
 
 void BibleTime::initSwordConfigFile() {

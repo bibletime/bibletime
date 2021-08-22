@@ -45,6 +45,7 @@ class BtBookshelfDockWidget: public QDockWidget {
         void moduleUnlockTriggered(CSwordModuleInfo *module);
         void moduleAboutTriggered(CSwordModuleInfo *module);
         void groupingOrderChanged(BtBookshelfTreeModel::Grouping newGrouping);
+        void installWorksClicked();
 
     protected:
         void initMenus();

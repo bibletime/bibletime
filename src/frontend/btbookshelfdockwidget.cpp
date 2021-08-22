@@ -141,8 +141,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
                this/*needed*/, modulesChangedSlot);
     BT_CONNECT(bookshelfModelPtr.get(), &BtBookshelfModel::rowsRemoved,
                this/*needed*/, std::move(modulesChangedSlot));
-    BT_CONNECT(m_installButton,       &QPushButton::clicked,
-               BibleTime::instance(), &BibleTime::slotBookshelfWizard);
+    BT_CONNECT(m_installButton, &QPushButton::clicked,
+               this, &BtBookshelfDockWidget::installWorksClicked);
 
     retranslateUi();
 }
