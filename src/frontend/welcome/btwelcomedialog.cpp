@@ -19,12 +19,12 @@
 #include "../../util/btconnect.h"
 #include "../../util/bticons.h"
 #include "../../util/cresmgr.h"
-#include "../bibletime.h"
 
 
 BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
     : QDialog(parent, wflags)
 {
+    setWindowModality(Qt::ApplicationModal);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(CResMgr::mainMenu::help::tipOfTheDay::icon());
     resize(560, 300);
@@ -58,15 +58,8 @@ BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
     BT_CONNECT(m_buttonBox, &QDialogButtonBox::rejected,
                this, &BtWelcomeDialog::reject);
     BT_CONNECT(m_buttonBox, &QDialogButtonBox::accepted,
-               [this] {
-                   hide();
-                   accept();
-                   BibleTime::instance()->slotBookshelfWizard();
-               });
+               this, &BtWelcomeDialog::accept);
 }
-
-void BtWelcomeDialog::openWelcome()
-{ BtWelcomeDialog(BibleTime::instance()).exec(); }
 
 void BtWelcomeDialog::retranslateUi() {
     setWindowTitle(tr("Welcome to BibleTime"));

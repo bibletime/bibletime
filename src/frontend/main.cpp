@@ -237,6 +237,10 @@ int main(int argc, char* argv[]) {
         mainWindow->saveConfigSettings();
     }
 
+    auto const showWelcome = CSwordBackend::instance()->moduleList().empty();
+    if (showWelcome && BtWelcomeDialog().exec() == QDialog::Accepted)
+        mainWindow->slotBookshelfWizard();
+
     // restore the workspace and process command line options
     //app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
     mainWindow->show();
@@ -244,9 +248,7 @@ int main(int argc, char* argv[]) {
     // The following must be done after the bibletime window is visible:
     mainWindow->processCommandline(ignoreSession, openBibleKey);
 
-    if (CSwordBackend::instance()->moduleList().empty())
-        BtWelcomeDialog::openWelcome();
-    else if (btConfig().value<bool>("GUI/showTipAtStartup", true))
+    if (!showWelcome && btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
     BtUrlHandler btUrlHandler;

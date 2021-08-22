@@ -28,8 +28,6 @@ public: /* Methods: */
     BtWelcomeDialog(QWidget * parent = nullptr,
                     Qt::WindowFlags wflags = Qt::Dialog);
 
-    static void openWelcome();
-
 protected: /* Methods: */
 
     void retranslateUi();
