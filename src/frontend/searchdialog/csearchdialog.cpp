@@ -85,8 +85,56 @@ CSearchDialog::CSearchDialog(QWidget *parent)
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
 
-    initView();
-    initConnections();
+
+    QVBoxLayout* verticalLayout = new QVBoxLayout(this);
+    setLayout(verticalLayout);
+
+    m_searchOptionsArea = new BtSearchOptionsArea(this);
+    verticalLayout->addWidget(m_searchOptionsArea);
+
+    m_searchResultArea = new BtSearchResultArea(this);
+    m_searchResultArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    verticalLayout->addWidget(m_searchResultArea);
+
+    QLabel* hint = new QLabel(tr("Drag any verse reference onto an open Bible window"), this);
+    verticalLayout->addWidget(hint);
+
+    QHBoxLayout* horizontalLayout = new QHBoxLayout();
+
+    QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    horizontalLayout->addItem(spacerItem);
+
+    m_analyseButton = new QPushButton(tr("&Analyze results..."), this);
+    m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
+    horizontalLayout->addWidget(m_analyseButton);
+
+    m_manageIndexes = new QPushButton(tr("&Manage Indexes..."), this);
+    m_manageIndexes->setToolTip(tr("Recreate search indexes"));
+    horizontalLayout->addWidget(m_manageIndexes);
+
+    m_closeButton = new QPushButton(this);
+    m_closeButton->setText(tr("&Close"));
+    m_closeButton->setIcon(CResMgr::searchdialog::icon_close());
+    horizontalLayout->addWidget(m_closeButton);
+
+    verticalLayout->addLayout(horizontalLayout);
+
+    loadDialogSettings();
+
+    // Search button is clicked
+    BT_CONNECT(m_searchOptionsArea->searchButton(), &QPushButton::clicked,
+               [this] { startSearch(); });
+    // Return/Enter is pressed in the search text field
+    BT_CONNECT(m_searchOptionsArea, &BtSearchOptionsArea::sigStartSearch,
+               [this] { startSearch(); });
+    BT_CONNECT(m_closeButton, &QPushButton::clicked,
+               this, &CSearchDialog::close);
+
+    BT_CONNECT(m_analyseButton, &QPushButton::clicked,
+               m_searchResultArea, &BtSearchResultArea::showAnalysis);
+
+    BT_CONNECT(m_manageIndexes, &QPushButton::clicked,
+               [this] { BtIndexDialog(this).exec(); });
 }
 
 CSearchDialog::~CSearchDialog() {
@@ -202,65 +250,8 @@ void CSearchDialog::setSearchText( const QString &searchText ) {
     m_searchOptionsArea->setSearchText(searchText);
 }
 
-/** Initializes this object. */
-void CSearchDialog::initView() {
-
-    QVBoxLayout* verticalLayout = new QVBoxLayout(this);
-    setLayout(verticalLayout);
-
-    m_searchOptionsArea = new BtSearchOptionsArea(this);
-    verticalLayout->addWidget(m_searchOptionsArea);
-
-    m_searchResultArea = new BtSearchResultArea(this);
-    m_searchResultArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    verticalLayout->addWidget(m_searchResultArea);
-
-    QLabel* hint = new QLabel(tr("Drag any verse reference onto an open Bible window"), this);
-    verticalLayout->addWidget(hint);
-
-    QHBoxLayout* horizontalLayout = new QHBoxLayout();
-
-    QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    horizontalLayout->addItem(spacerItem);
-
-    m_analyseButton = new QPushButton(tr("&Analyze results..."), this);
-    m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
-    horizontalLayout->addWidget(m_analyseButton);
-
-    m_manageIndexes = new QPushButton(tr("&Manage Indexes..."), this);
-    m_manageIndexes->setToolTip(tr("Recreate search indexes"));
-    horizontalLayout->addWidget(m_manageIndexes);
-
-    m_closeButton = new QPushButton(this);
-    m_closeButton->setText(tr("&Close"));
-    m_closeButton->setIcon(CResMgr::searchdialog::icon_close());
-    horizontalLayout->addWidget(m_closeButton);
-
-    verticalLayout->addLayout(horizontalLayout);
-
-    loadDialogSettings();
-}
-
 void CSearchDialog::showModulesSelector() {
     m_searchOptionsArea->chooseModules();
-}
-
-/** Initializes the signal slot connections */
-void CSearchDialog::initConnections() {
-    // Search button is clicked
-    BT_CONNECT(m_searchOptionsArea->searchButton(), &QPushButton::clicked,
-               [this] { startSearch(); });
-    // Return/Enter is pressed in the search text field
-    BT_CONNECT(m_searchOptionsArea, &BtSearchOptionsArea::sigStartSearch,
-               [this] { startSearch(); });
-    BT_CONNECT(m_closeButton, &QPushButton::clicked,
-               this, &CSearchDialog::close);
-
-    BT_CONNECT(m_analyseButton, &QPushButton::clicked,
-               m_searchResultArea, &BtSearchResultArea::showAnalysis);
-
-    BT_CONNECT(m_manageIndexes, &QPushButton::clicked,
-               [this] { BtIndexDialog(this).exec(); });
 }
 
 /** Resets the parts to the default. */

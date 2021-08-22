@@ -44,11 +44,6 @@ class CSearchDialog final: public QDialog {
         ~CSearchDialog();
 
         /**
-         * Initializes this object.
-         */
-        void initView();
-
-        /**
           Returns the list of used modules.
         */
         BtConstModuleList modules() const
@@ -92,10 +87,6 @@ class CSearchDialog final: public QDialog {
         void startSearch();
 
         void showModulesSelector();
-        /**
-        * Initializes the signal slot connections
-        */
-        void initConnections();
 
     private:
         QPushButton* m_analyseButton;
