@@ -63,9 +63,12 @@ namespace {
  */
 constexpr int const autoScrollTimeInterval = 200;
 
-int randInt(int min, int max) {
+template <typename T>
+auto randInt(T min, T max)
+        -> std::enable_if_t<std::is_integral_v<std::decay_t<T>>, T>
+{
     static std::mt19937 rng((std::random_device()()));
-    return std::uniform_int_distribution<int>(min, max)(rng);
+    return std::uniform_int_distribution<std::decay_t<T>>(min, max)(rng);
 }
 
 } // anonymous namespace
@@ -98,7 +101,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
             splash1, splash2, splash3
         };
         auto const splashNumber =
-                randInt(0u, std::extent_v<decltype(splashes)> - 1u);
+                randInt<std::size_t>(0u, std::extent_v<decltype(splashes)> - 1u);
         QString splashImage = DU::getPicsDir().canonicalPath().append("/")
                                               .append(splashes[splashNumber]);
         QPixmap pm;
@@ -280,8 +283,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
         if (bibleKey == "random") {
             CSwordVerseKey vk(nullptr);
-            const int maxIndex = 31100;
-            int newIndex = randInt(0, maxIndex);
+            auto const newIndex = randInt<decltype(vk.index())>(0, 31100);
             vk.positionToTop();
             vk.setIndex(newIndex);
             createReadDisplayWindow(bible, vk.key());
