@@ -94,10 +94,6 @@ class BtSearchOptionsArea : public QWidget {
         QStringList getUniqueWorksList();
 
         /**
-        * Reimplementation.
-        */
-        void aboutToShow();
-        /**
         * Refreshes the list of ranges and the range combobox.
         */
         void refreshRanges();

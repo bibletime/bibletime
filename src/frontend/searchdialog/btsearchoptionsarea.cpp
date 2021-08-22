@@ -358,10 +358,6 @@ void BtSearchOptionsArea::readSettings() {
     }
 }
 
-void BtSearchOptionsArea::aboutToShow() {
-    m_searchTextCombo->setFocus();
-}
-
 void BtSearchOptionsArea::refreshRanges() {
     //the first option is fixed, the others can be edited using the "Setup ranges" button.
     m_rangeChooserCombo->clear();
