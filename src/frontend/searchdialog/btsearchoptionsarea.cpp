@@ -271,7 +271,6 @@ void BtSearchOptionsArea::setModules(const BtConstModuleList &modules) {
         historyList.append(m_modulesCombo->itemText(i));
     }
     btConfig().setValue("history/searchModuleHistory", historyList);
-    Q_EMIT sigSetSearchButtonStatus(!modules.isEmpty());
 }
 
 QStringList BtSearchOptionsArea::getUniqueWorksList() {

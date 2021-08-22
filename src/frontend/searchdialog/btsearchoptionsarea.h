@@ -110,7 +110,6 @@ class BtSearchOptionsArea : public QWidget {
         #endif
 
     Q_SIGNALS:
-        void sigSetSearchButtonStatus(bool);
         void sigStartSearch();
 
     private:
