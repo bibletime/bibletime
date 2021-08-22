@@ -44,9 +44,9 @@ const QString GeometryKey = "GUI/SearchDialog/geometry";
 
 namespace Search {
 
-CSearchDialog::CSearchDialog(QWidget *parent)
-        : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(nullptr),
-        m_searchResultArea(nullptr), m_searchOptionsArea(nullptr) {
+CSearchDialog::CSearchDialog(QWidget * const parent)
+    : QDialog(parent)
+{
     setWindowIcon(CResMgr::searchdialog::icon());
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
