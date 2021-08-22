@@ -15,6 +15,7 @@
 #include <QTimer>
 #include <QToolTip>
 #include <QTreeView>
+#include "../../backend/rendering/btinforendering.h"
 
 
 class BTMimeData;
@@ -65,6 +66,7 @@ Q_SIGNALS:
 
     /** \brief Emitted when a module should be opened. */
     void createReadDisplayWindow(QList<CSwordModuleInfo *>, QString const &);
+    void magInfoProvided(Rendering::InfoType const, QString const & data);
 
 protected: /* Methods: */
 

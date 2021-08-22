@@ -36,13 +36,11 @@
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
 #include "../../util/directory.h"
-#include "../bibletime.h"
 #include "../bibletimeapp.h"
 #include "../bookmarks/bteditbookmarkdialog.h"
 #include "../bookmarks/cbookmarkindex.h"
 #include "../btprinter.h"
 #include "../BtMimeData.h"
-#include "../cinfodisplay.h"
 #include "../messagedialog.h"
 #include "../searchdialog/csearchdialog.h"
 
@@ -304,18 +302,15 @@ CBookmarkIndex::CBookmarkIndex(QWidget * const parent)
                        && m_previousEventItem == itemUnderPointer
                        && m_bookmarksModel->isBookmark(itemUnderPointer))
                    {
-                       BT_ASSERT(BibleTime::instance()->infoDisplay());
-                       InfoDisplay::CInfoDisplay & infoDisplay =
-                               *(BibleTime::instance()->infoDisplay());
                        if (CSwordModuleInfo const * const module =
                                    m_bookmarksModel->module(itemUnderPointer))
                        {
-                           infoDisplay.setInfo(
+                           Q_EMIT magInfoProvided(
                                Rendering::CrossReference,
                                module->name() + ":"
                                + m_bookmarksModel->key(itemUnderPointer));
                        } else {
-                           infoDisplay.setInfo(
+                           Q_EMIT magInfoProvided(
                                        Rendering::Text,
                                        tr("The work to which the bookmark "
                                           "points to is not installed."));

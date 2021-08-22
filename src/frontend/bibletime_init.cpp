@@ -89,6 +89,10 @@ void BibleTime::initView() {
                m_infoDisplay,
                static_cast<void (CInfoDisplay::*)(CSwordModuleInfo *)>(
                    &CInfoDisplay::setInfo));
+    BT_CONNECT(m_bookmarksPage, &CBookmarkIndex::magInfoProvided,
+               m_infoDisplay,
+               qOverload<Rendering::InfoType, QString const &>(
+                   &CInfoDisplay::setInfo));
 
     m_mdi->setMinimumSize(100, 100);
     m_mdi->setFocusPolicy(Qt::ClickFocus);

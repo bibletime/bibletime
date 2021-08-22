@@ -37,13 +37,13 @@ public: /* Methods: */
     void unsetInfo();
     void setInfo(const QString & renderedData,
                  const QString & lang = QString());
-    void setInfo(Rendering::InfoType const, QString const & data);
     void setInfo(Rendering::ListInfoData const &);
     QSize sizeHint() const override;
     void updateColors();
 
 public Q_SLOTS:
 
+    void setInfo(Rendering::InfoType const, QString const & data);
     void setInfo(CSwordModuleInfo * module);
 
 private:
