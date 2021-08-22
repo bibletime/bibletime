@@ -105,8 +105,6 @@ class CSearchDialog final: public QDialog {
         */
         void initConnections();
 
-        void closeButtonClicked();
-
     private:
         QPushButton* m_analyseButton;
         QPushButton* m_manageIndexes;

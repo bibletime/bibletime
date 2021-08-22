@@ -75,7 +75,7 @@ void CSearchDialog::openDialog(const BtConstModuleList modules,
 
 void CSearchDialog::closeDialog() {
     if (m_staticDialog != nullptr)
-        m_staticDialog->closeButtonClicked();
+        m_staticDialog->close();
 }
 
 CSearchDialog* CSearchDialog::getSearchDialog() {
@@ -257,7 +257,7 @@ void CSearchDialog::initConnections() {
     BT_CONNECT(m_searchOptionsArea, &BtSearchOptionsArea::sigStartSearch,
                [this] { startSearch(); });
     BT_CONNECT(m_closeButton, &QPushButton::clicked,
-               this, &CSearchDialog::closeButtonClicked);
+               this, &CSearchDialog::close);
 
     BT_CONNECT(m_analyseButton, &QPushButton::clicked,
                m_searchResultArea, &BtSearchResultArea::showAnalysis);
@@ -270,11 +270,6 @@ void CSearchDialog::initConnections() {
 void CSearchDialog::reset() {
     m_searchOptionsArea->reset();
     m_searchResultArea->reset();
-}
-
-void CSearchDialog::closeButtonClicked() {
-    // With Qt::WA_DeleteOnClose set, the dialog will be deleted now
-    m_staticDialog->close();
 }
 
 void CSearchDialog::loadDialogSettings() {
