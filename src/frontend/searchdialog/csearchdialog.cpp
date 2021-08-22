@@ -161,7 +161,7 @@ void CSearchDialog::startSearch() {
     // Insert search text into history list of combobox
     m_searchOptionsArea->addToHistory(originalSearchText);
 
-    auto searchModules = modules();
+    auto const & searchModules = m_searchOptionsArea->modules();
 
     // Check that we have the indices we need for searching
     /// \warning indexing is some kind of internal optimization, so we leave

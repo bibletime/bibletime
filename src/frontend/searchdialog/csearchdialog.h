@@ -44,12 +44,6 @@ class CSearchDialog final: public QDialog {
         ~CSearchDialog();
 
         /**
-          Returns the list of used modules.
-        */
-        BtConstModuleList modules() const
-        { return m_searchOptionsArea->modules(); }
-
-        /**
         * Resets the parts to the default.
         */
         void reset();
