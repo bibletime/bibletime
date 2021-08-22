@@ -226,11 +226,11 @@ void CSearchDialog::initView() {
     QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
     horizontalLayout->addItem(spacerItem);
 
-    m_analyseButton = new QPushButton(tr("&Analyze results..."), nullptr);
+    m_analyseButton = new QPushButton(tr("&Analyze results..."), this);
     m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
     horizontalLayout->addWidget(m_analyseButton);
 
-    m_manageIndexes = new QPushButton(tr("&Manage Indexes..."), nullptr);
+    m_manageIndexes = new QPushButton(tr("&Manage Indexes..."), this);
     m_manageIndexes->setToolTip(tr("Recreate search indexes"));
     horizontalLayout->addWidget(m_manageIndexes);
 
