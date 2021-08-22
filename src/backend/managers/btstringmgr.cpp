@@ -33,10 +33,18 @@ bool isUtf8(const char * buf) {
     unsigned char c;
     bool gotone = false;
 
-#define F 0   /* character never appears in text */
-#define T 1   /* character appears in plain ASCII text */
-#define I 2   /* character appears in ISO-8859 text */
-#define X 3   /* character appears in non-ISO extended ASCII (Mac, IBM PC) */
+    /* Marks characters which never appear in text: */
+    static constexpr unsigned char const F = 0;
+
+    /* Marks characters which appear in plain ASCII texts: */
+    static constexpr unsigned char const T = 1;
+
+    /* Marks characters which appear in ISO-8859 texts: */
+    static constexpr unsigned char const I = 2;
+
+    /* Marks characters which appear in non-ISO extended ASCII (Mac, IBM PC): */
+    static constexpr unsigned char const X = 3;
+
     static const unsigned char text_chars[] = {
         /*                  BEL BS HT LF    FF CR    */
         F, F, F, F, F, F, F, T, T, T, T, F, T, T, F, F,  /* 0x0X */
@@ -59,9 +67,6 @@ bool isUtf8(const char * buf) {
         I, I, I, I, I, I, I, I, I, I, I, I, I, I, I, I   /* 0xfX */
     };
     static_assert(std::extent_v<decltype(text_chars)> == 256u);
-    #undef F
-    #undef I
-    #undef X
 
     /* *ulen = 0; */
 
@@ -74,7 +79,6 @@ bool isUtf8(const char * buf) {
 
             if (text_chars[c] != T)
                 return false;
-    #undef T
 
         }
         else if ((c & 0x40) == 0) { /* 10xxxxxx never 1st byte */
