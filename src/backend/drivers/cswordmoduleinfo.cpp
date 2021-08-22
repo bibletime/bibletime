@@ -98,7 +98,9 @@ inline CSwordModuleInfo::Category retrieveCategory(
     }
 }
 
-}
+static const TCHAR * stop_words[] = { nullptr };
+
+} // anonymous namespace
 
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                                    CSwordBackend & backend,
@@ -299,7 +301,6 @@ void CSwordModuleInfo::buildIndex() {
         m_backend.setOption(CSwordModuleInfo::redLetterWords, false);
 
         // Do not use any stop words:
-        static const TCHAR * stop_words[1u]  = { nullptr };
         lucene::analysis::standard::StandardAnalyzer an(stop_words);
         const QString index(getModuleStandardIndexLocation());
 
@@ -554,7 +555,6 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     m_module.setKey(CSwordKey::createInstance(this)->asSwordKey());
 
     // do not use any stop words
-    static const TCHAR * stop_words[1u]  = { nullptr };
     lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
     lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
     lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
