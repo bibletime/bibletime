@@ -20,7 +20,6 @@
 #include "../../util/bticons.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
-#include "../messagedialog.h"
 
 
 BtWelcomeDialog::BtWelcomeDialog(QWidget *parent, Qt::WindowFlags wflags)
