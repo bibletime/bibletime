@@ -54,8 +54,6 @@ class CSearchDialog final: public QDialog {
         */
         void startSearch();
 
-        void showModulesSelector();
-
     private:
         QPushButton* m_analyseButton;
         QPushButton* m_manageIndexes;
