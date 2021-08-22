@@ -497,24 +497,6 @@ public Q_SLOTS:
         } m_autoScroll;
         QTimer m_autoScrollTimer;
 
-
-    protected:
-        void closeAllModuleWindows();
-        void syncAllBibles(const QString& key);
-        void syncAllCommentaries(const QString& key);
-        void syncAllLexicons(const QString& key);
-        void syncAllVerseBasedModules(const QString& key);
-        void openWindow(const QString& moduleName, const QString& key);
-        void openDefaultBible(const QString& key);
-        QString getCurrentReference();
-        QStringList searchInModule(const QString& module, const QString& searchText);
-        QStringList searchInOpenModules(const QString& searchText);
-        QStringList searchInDefaultBible(const QString& searchText);
-        QStringList getModulesOfType(const QString& type);
-
-        // Helper function
-        void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
-
     private:
         /**
          * Set the visibility of all tool bars according to the configuration
