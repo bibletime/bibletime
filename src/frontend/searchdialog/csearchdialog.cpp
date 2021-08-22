@@ -123,11 +123,9 @@ CSearchDialog::CSearchDialog(QWidget *parent)
     restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 
     // Search button is clicked
-    BT_CONNECT(m_searchOptionsArea->searchButton(), &QPushButton::clicked,
-               [this] { startSearch(); });
     // Return/Enter is pressed in the search text field
     BT_CONNECT(m_searchOptionsArea, &BtSearchOptionsArea::sigStartSearch,
-               [this] { startSearch(); });
+               this,                &CSearchDialog::startSearch);
     BT_CONNECT(m_closeButton, &QPushButton::clicked,
                this, &CSearchDialog::close);
 

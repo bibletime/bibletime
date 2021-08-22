@@ -196,12 +196,15 @@ void BtSearchOptionsArea::initView() {
 }
 
 void BtSearchOptionsArea::initConnections() {
+    auto startSearch =
+            [this]{
+                m_searchTextCombo->addToHistory(
+                            m_searchTextCombo->currentText());
+                Q_EMIT sigStartSearch();
+            };
+    BT_CONNECT(m_searchButton, &QPushButton::clicked, startSearch);
     BT_CONNECT(m_searchTextCombo->lineEdit(), &QLineEdit::returnPressed,
-               [this]{
-                   m_searchTextCombo->addToHistory(
-                               m_searchTextCombo->currentText());
-                   Q_EMIT sigStartSearch();
-               });
+               std::move(startSearch));
     BT_CONNECT(m_chooseModulesButton, &QPushButton::clicked,
                this,                  &BtSearchOptionsArea::chooseModules);
     BT_CONNECT(m_chooseRangeButton, &QPushButton::clicked,
