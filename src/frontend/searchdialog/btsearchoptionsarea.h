@@ -67,7 +67,17 @@ class BtSearchOptionsArea : public QWidget {
         */
         sword::ListKey searchScope();
 
-    protected:
+        /**
+         * Opens the modules chooser dialog.
+         */
+        void chooseModules();
+
+        /**
+          Sets the modules used by the search.
+        */
+        void setModules(const BtConstModuleList &modules);
+
+    private: /* Methods: */
         /**
         * Initializes this page.
         */
@@ -83,24 +93,15 @@ class BtSearchOptionsArea : public QWidget {
         void saveSettings();
         bool eventFilter(QObject* obj, QEvent* event) override;
 
-    public Q_SLOTS:
-        /**
-          Sets the modules used by the search.
-        */
-        void setModules(const BtConstModuleList &modules);
-        /**
-          Get unique works list from the Works combobox
-        */
-        QStringList getUniqueWorksList();
-
         /**
         * Refreshes the list of ranges and the range combobox.
         */
         void refreshRanges();
+
         /**
-         * Opens the modules chooser dialog.
-         */
-        void chooseModules();
+          Get unique works list from the Works combobox
+        */
+        QStringList getUniqueWorksList();
 
     protected Q_SLOTS:
 
