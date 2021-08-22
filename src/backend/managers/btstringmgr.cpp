@@ -71,7 +71,7 @@ bool isUtf8(const char * buf) {
 
     /* *ulen = 0; */
 
-    for (i = 0; (c = buf[i]); i++) {
+    for (i = 0; (c = static_cast<unsigned char>(buf[i])); i++) {
         if ((c & 0x80) == 0) {        /* 0xxxxxxx is plain ASCII */
             /*
              * Even if the whole file is valid UTF-8 sequences,
@@ -109,7 +109,7 @@ bool isUtf8(const char * buf) {
             for (n = 0; n < following; n++) {
                 i++;
 
-                if (!(c = buf[i]))
+                if (!(c = static_cast<unsigned char>(buf[i])))
                     goto done;
 
                 if ((c & 0x80) == 0 || (c & 0x40))
