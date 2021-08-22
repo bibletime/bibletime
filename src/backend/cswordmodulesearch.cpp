@@ -13,7 +13,6 @@
 #include "cswordmodulesearch.h"
 
 #include <algorithm>
-#include <cstring>
 #include "../util/tool.h"
 #include "btglobal.h"
 #include "config/btconfig.h"
@@ -31,7 +30,7 @@ Results search(QString const & searchText,
                           [](auto const * const m) { return m->hasIndex(); }));
 
     // Reset scope if empty, otherwise we would crash:
-    if (!std::strlen(scope.getRangeText()))
+    if (*scope.getRangeText() == '\0')
         scope.clear();
 
     /// \todo What is the purpose of the following statement?
