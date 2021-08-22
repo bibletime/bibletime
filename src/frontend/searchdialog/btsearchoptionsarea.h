@@ -53,8 +53,6 @@ class BtSearchOptionsArea : public QWidget {
 
         CSwordModuleSearch::SearchType searchType();
 
-        QPushButton * searchButton() const { return m_searchButton; }
-
         /**
           Returns the list of used modules.
         */
