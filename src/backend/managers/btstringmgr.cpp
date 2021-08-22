@@ -12,6 +12,7 @@
 
 #include "btstringmgr.h"
 
+#include <cstddef>
 #include <cstring>
 #include <QString>
 #include <type_traits>
