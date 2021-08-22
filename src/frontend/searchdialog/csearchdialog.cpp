@@ -238,8 +238,8 @@ void CSearchDialog::startSearch() {
     } else {
         m_searchResultArea->reset();
     }
-    m_staticDialog->raise();
-    m_staticDialog->activateWindow();
+    raise();
+    activateWindow();
 
     // Re-enable the dialog:
     setEnabled(true);
