@@ -30,7 +30,6 @@
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
 #include "cmoduleresultview.h"
-#include "csearchdialog.h"
 #include "csearchresultview.h"
 
 
@@ -41,7 +40,7 @@ const QString ResultSplitterSizesKey = "GUI/SearchDialog/SearchResultsArea/resul
 
 namespace Search {
 
-BtSearchResultArea::BtSearchResultArea(QWidget *parent)
+BtSearchResultArea::BtSearchResultArea(QWidget * parent)
     : QWidget(parent)
 {
     QVBoxLayout *mainLayout;
@@ -117,10 +116,12 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
     loadDialogSettings();
 }
 
-void BtSearchResultArea::setSearchResult(CSwordModuleSearch::Results results) {
-    const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
+void BtSearchResultArea::setSearchResult(QString searchedText,
+                                         CSwordModuleSearch::Results results)
+{
     reset(); //clear current modules
 
+    m_searchedText = std::move(searchedText);
     m_results = std::move(results);
 
     // Populate listbox:
@@ -128,16 +129,12 @@ void BtSearchResultArea::setSearchResult(CSwordModuleSearch::Results results) {
 
     // Pre-select the first module in the list:
     m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
-
-    BT_ASSERT(qobject_cast<CSearchDialog *>(parent()));
-    static_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(true);
 }
 
 void BtSearchResultArea::reset() {
     m_moduleListBox->clear();
     m_resultListBox->clear();
     m_previewDisplay->setText("<html><head/><body></body></html>");
-    qobject_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(false);
 }
 
 void BtSearchResultArea::clearPreview() {
@@ -149,8 +146,6 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
     CSwordModuleInfo* module = m_moduleListBox->activeModule();
     if ( module ) {
-        const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
-
         QString text;
         CDisplayRendering render;
 
@@ -222,7 +217,8 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         if (modules.count() > 0)
             setBrowserFont(modules.at(0));
 
-        QString text2 = CSwordModuleSearch::highlightSearchedText(text, searchedText);
+        QString text2 =
+                CSwordModuleSearch::highlightSearchedText(text, m_searchedText);
         text2.replace("#CHAPTERTITLE#", "");
         text2 = ColorManager::instance().replaceColors(text2);
         m_previewDisplay->setText(text2);

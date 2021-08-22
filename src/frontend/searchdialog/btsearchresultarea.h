@@ -97,13 +97,14 @@ class StrongsResultList: public QList<StrongsResult> {
 class BtSearchResultArea : public QWidget {
         Q_OBJECT
     public: /* Methods: */
-        BtSearchResultArea(QWidget *parent = nullptr);
+        BtSearchResultArea(QWidget * parent = nullptr);
         ~BtSearchResultArea() override { saveDialogSettings(); }
 
         /**
         * Sets the modules which contain the result of each.
         */
-        void setSearchResult(CSwordModuleSearch::Results results);
+        void setSearchResult(QString searchedText,
+                             CSwordModuleSearch::Results results);
 
         QSize sizeHint() const override {
             return baseSize();
@@ -155,6 +156,7 @@ class BtSearchResultArea : public QWidget {
         }
 
     private: /* Fields: */
+        QString m_searchedText;
         CSwordModuleSearch::Results m_results;
 
         CModuleResultView* m_moduleListBox;

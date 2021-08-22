@@ -188,7 +188,9 @@ void CSearchDialog::startSearch() {
 
     // Display the search results:
     if (!searchResult.empty()) {
-        m_searchResultArea->setSearchResult(std::move(searchResult));
+        m_searchResultArea->setSearchResult(m_searchOptionsArea->searchText(),
+                                            std::move(searchResult));
+        m_analyseButton->setEnabled(true);
     } else {
         m_searchResultArea->reset();
     }
@@ -270,6 +272,7 @@ void CSearchDialog::initConnections() {
 void CSearchDialog::reset() {
     m_searchOptionsArea->reset();
     m_searchResultArea->reset();
+    m_analyseButton->setEnabled(false);
 }
 
 void CSearchDialog::loadDialogSettings() {
