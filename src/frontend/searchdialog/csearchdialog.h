@@ -32,13 +32,6 @@ namespace Search {
 class CSearchDialog final: public QDialog {
         Q_OBJECT
     public:
-        static void openDialog(BtConstModuleList modules,
-                               QString const & searchText = QString(),
-                               QWidget * parentDialog = nullptr);
-
-        static void closeDialog();
-
-    private:
 
         CSearchDialog(QWidget *parent);
         ~CSearchDialog();

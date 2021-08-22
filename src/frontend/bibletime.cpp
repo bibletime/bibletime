@@ -199,13 +199,6 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
     return createReadDisplayWindow(QList<CSwordModuleInfo*>() << module, key);
 }
 
-void BibleTime::searchInModule(CSwordModuleInfo *module) {
-    /// \todo Refactor this.
-    BtConstModuleList modules;
-    modules.append(module);
-    Search::CSearchDialog::openDialog(modules, QString());
-}
-
 bool BibleTime::moduleUnlock(CSwordModuleInfo * module, QWidget * parent) {
     BT_ASSERT(module);
 
@@ -315,9 +308,7 @@ bool BibleTime::event(QEvent* event) {
         Q_EMIT colorThemeChanged();
         // allow to continue to update other parts of Qt widgets
     }
-    if (event->type() == QEvent::Close)
-        Search::CSearchDialog::closeDialog();
-    else if (event->type() == QEvent::KeyPress) {
+    if (event->type() == QEvent::KeyPress) {
         QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
         if (keyEvent->modifiers() > 0)
             return false;
@@ -353,6 +344,14 @@ BtModelViewReadDisplay * BibleTime::getCurrentDisplay() {
 void BibleTime::setDisplayFocus() {
     if (auto * display = getCurrentDisplay())
         display->setDisplayFocus();
+}
+
+void BibleTime::openSearchDialog(BtConstModuleList modules,
+                                 QString const & searchText)
+{
+    if (!m_searchDialog)
+        m_searchDialog = new Search::CSearchDialog(this);
+    m_searchDialog->reset(std::move(modules), searchText);
 }
 
 void BibleTime::openFindWidget()

@@ -282,7 +282,7 @@ void BibleTime::slotSearchModules() {
             modules << w->modules();
         }
     }
-    Search::CSearchDialog::openDialog(modules, QString());
+    openSearchDialog(std::move(modules));
 }
 
 void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
@@ -301,7 +301,7 @@ void BibleTime::slotSearchDefaultBible() {
     if (bible) {
         module.append(bible);
     }
-    Search::CSearchDialog::openDialog(module, QString());
+    openSearchDialog(std::move(module));
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
@@ -654,10 +654,4 @@ void BibleTime::refreshProfileMenus() {
                 a->setDisabled(true);
         }
     }
-}
-
-// Quit from BibleTime
-void BibleTime::quit() {
-    Search::CSearchDialog::closeDialog();
-    close();
 }

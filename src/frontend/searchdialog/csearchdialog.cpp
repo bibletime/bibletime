@@ -44,22 +44,6 @@ const QString GeometryKey = "GUI/SearchDialog/geometry";
 
 namespace Search {
 
-static CSearchDialog* m_staticDialog = nullptr;
-
-void CSearchDialog::openDialog(BtConstModuleList modules,
-                               QString const & searchText,
-                               QWidget * parentDialog)
-{
-    if (!m_staticDialog)
-        m_staticDialog = new CSearchDialog(parentDialog);
-    m_staticDialog->reset(std::move(modules), searchText);
-}
-
-void CSearchDialog::closeDialog() {
-    if (m_staticDialog != nullptr)
-        m_staticDialog->close();
-}
-
 CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(nullptr),
         m_searchResultArea(nullptr), m_searchOptionsArea(nullptr) {
@@ -118,12 +102,8 @@ CSearchDialog::CSearchDialog(QWidget *parent)
                [this] { BtIndexDialog(this).exec(); });
 }
 
-CSearchDialog::~CSearchDialog() {
-    m_staticDialog = nullptr;
-
-    // Save dialog settings:
-    btConfig().setValue(GeometryKey, saveGeometry());
-}
+CSearchDialog::~CSearchDialog() // Save dialog settings:
+{ btConfig().setValue(GeometryKey, saveGeometry()); }
 
 void CSearchDialog::startSearch() {
     QString originalSearchText(m_searchOptionsArea->searchText());

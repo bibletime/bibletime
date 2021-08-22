@@ -15,16 +15,17 @@
 #include <QMainWindow>
 
 #include <QList>
+#include <QPointer>
 #include <QTimer>
 #ifndef NDEBUG
 #include <mutex>
 #endif
+#include "../backend/drivers/btmodulelist.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
 
 
-namespace InfoDisplay {
-class CInfoDisplay;
-}
+namespace InfoDisplay { class CInfoDisplay; }
+namespace Search { class CSearchDialog; }
 class BtActionClass;
 class BtActionCollection;
 class BtBookshelfDockWidget;
@@ -200,6 +201,9 @@ class BibleTime : public QMainWindow {
           */
         void setDisplayFocus();
 
+        void openSearchDialog(BtConstModuleList modules,
+                              QString const & searchText = QString());
+
 public Q_SLOTS:
         /**
         * Opens the optionsdialog of BibleTime.
@@ -298,10 +302,8 @@ public Q_SLOTS:
          */
         CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
         CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString());
-        void searchInModule(CSwordModuleInfo *module);
         void slotModuleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);
-        void quit();
 
         /**
           Automatically scroll the display
@@ -496,6 +498,7 @@ public Q_SLOTS:
             int speed;
         } m_autoScroll;
         QTimer m_autoScrollTimer;
+        QPointer<Search::CSearchDialog> m_searchDialog;
 
     private:
         /**

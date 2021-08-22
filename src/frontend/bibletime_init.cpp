@@ -406,7 +406,7 @@ void BibleTime::initActions() {
     m_quitAction = &m_actionCollection->action("quit");
     m_quitAction->setMenuRole(QAction::QuitRole);
     BT_CONNECT(m_quitAction, &QAction::triggered,
-               this,         &BibleTime::quit);
+               this,         &BibleTime::close);
 
     // AutoScroll actions:
     m_autoScrollUpAction = &m_actionCollection->action("autoScrollUp");
@@ -805,7 +805,8 @@ void BibleTime::initConnections() {
                [this](CSwordModuleInfo * const module)
                { createReadDisplayWindow(module); });
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleSearchTriggered,
-               this, qOverload<CSwordModuleInfo *>(&BibleTime::searchInModule));
+               this,
+               [this](CSwordModuleInfo * const m) { openSearchDialog({m}); });
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleUnlockTriggered,
                this,            &BibleTime::slotModuleUnlock);
     BT_CONNECT(m_bookshelfDock, &BtBookshelfDockWidget::moduleAboutTriggered,

@@ -34,7 +34,6 @@
 #include "../display/modelview/btquickwidget.h"
 #include "../keychooser/ckeychooser.h"
 #include "../keychooser/bthistory.h"
-#include "../searchdialog/csearchdialog.h"
 #include "bttoolbarpopupaction.h"
 #include "btmodulechooserbar.h"
 #include "btdisplaysettingsbutton.h"
@@ -287,7 +286,7 @@ void CDisplayWindow::initActions() {
 
     namespace DWG = CResMgr::displaywindows::general;
     initAction(DWG::search::actionName,
-               [this]{ Search::CSearchDialog::openDialog(modules()); });
+               [this]{ BibleTime::instance()->openSearchDialog(modules()); });
     initAddAction(
                 "openLocation",
                 [this]{
@@ -355,9 +354,8 @@ void CDisplayWindow::initActions() {
                              #endif
                         searchText.append("strong:").append(strongNumber)
                                 .append(' ');
-                    Search::CSearchDialog::openDialog(modules(),
-                                                      searchText,
-                                                      nullptr);
+                    BibleTime::instance()->openSearchDialog(modules(),
+                                                            searchText);
                 });
 
     m_actions.copy.reference =
