@@ -32,9 +32,9 @@ namespace Search {
 class CSearchDialog final: public QDialog {
         Q_OBJECT
     public:
-        static void openDialog(const BtConstModuleList modules,
-                               const QString &searchText = QString(),
-                               QWidget *parentDialog = nullptr);
+        static void openDialog(BtConstModuleList modules,
+                               QString const & searchText = QString(),
+                               QWidget * parentDialog = nullptr);
 
         static void closeDialog();
 
@@ -46,7 +46,7 @@ class CSearchDialog final: public QDialog {
         /**
         * Resets the parts to the default.
         */
-        void reset();
+        void reset(BtConstModuleList modules, QString const & searchText);
 
     private Q_SLOTS:
         /**

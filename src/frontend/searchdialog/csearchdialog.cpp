@@ -22,6 +22,7 @@
 #include <QRegExp>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <utility>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/cswordmodulesearch.h"
 #include "../../backend/keys/cswordkey.h"
@@ -45,32 +46,13 @@ namespace Search {
 
 static CSearchDialog* m_staticDialog = nullptr;
 
-void CSearchDialog::openDialog(const BtConstModuleList modules,
-                               const QString &searchText, QWidget *parentDialog)
+void CSearchDialog::openDialog(BtConstModuleList modules,
+                               QString const & searchText,
+                               QWidget * parentDialog)
 {
     if (!m_staticDialog)
         m_staticDialog = new CSearchDialog(parentDialog);
-    m_staticDialog->reset();
-
-    if (modules.count()) {
-        m_staticDialog->m_searchOptionsArea->setModules(modules);
-    }
-    else {
-        m_staticDialog->m_searchOptionsArea->chooseModules();
-    }
-
-    m_staticDialog->m_searchOptionsArea->setSearchText(searchText);
-    if (m_staticDialog->isHidden()) {
-        m_staticDialog->show();
-    }
-
-    if (modules.count() && !searchText.isEmpty()) {
-        m_staticDialog->startSearch();
-    }
-    // moved these to after the startSearch() because
-    // the progress dialog caused them to loose focus.
-    m_staticDialog->raise();
-    m_staticDialog->activateWindow();
+    m_staticDialog->reset(std::move(modules), searchText);
 }
 
 void CSearchDialog::closeDialog() {
@@ -246,11 +228,30 @@ void CSearchDialog::startSearch() {
     setCursor(Qt::ArrowCursor);
 }
 
-/** Resets the parts to the default. */
-void CSearchDialog::reset() {
+void CSearchDialog::reset(BtConstModuleList modules, QString const & searchText)
+{
     m_searchOptionsArea->reset();
     m_searchResultArea->reset();
     m_analyseButton->setEnabled(false);
+
+    auto const haveModules = !modules.isEmpty();
+    if (haveModules) {
+        m_searchOptionsArea->setModules(std::move(modules));
+    } else {
+        m_searchOptionsArea->chooseModules();
+    }
+
+    m_searchOptionsArea->setSearchText(searchText);
+    if (isHidden())
+        show();
+
+    if (haveModules && !searchText.isEmpty())
+        startSearch();
+
+    // moved these to after the startSearch() because
+    // the progress dialog caused them to loose focus.
+    raise();
+    activateWindow();
 }
 
 } //end of namespace Search
