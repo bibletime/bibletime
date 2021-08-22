@@ -127,15 +127,15 @@ done:
 } // anonymous namespace
 
 char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
-    size_t max = (maxlen > 0u) ? maxlen : strlen(text)+1;
+    std::size_t max = (maxlen > 0u) ? maxlen : std::strlen(text) + 1u;
 
     if (LIKELY(max > 1u)) {
         max--;
         if (isUtf8(text)) {
-            strncpy(text, QString::fromUtf8(text).toUpper().toUtf8().constData(), max);
+            std::strncpy(text, QString::fromUtf8(text).toUpper().toUtf8().constData(), max);
         }
         else {
-            strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
+            std::strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
         }
         text[max] = '\0';
     } else if (max == 1u) {
@@ -148,11 +148,11 @@ char * BtStringMgr::upperUTF8(char * text, unsigned int maxlen) const {
 }
 
 char * BtStringMgr::upperLatin1(char * text, unsigned int maxlen) const {
-    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
+    std::size_t max = (maxlen > 0u) ? maxlen : std::strlen(text);
 
     if (LIKELY(max > 1u)) {
         max--;
-        strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
+        std::strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
         text[max] = '\0';
     } else if (max == 1u) {
         text[0u] = '\0';
