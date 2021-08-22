@@ -24,6 +24,7 @@
 #include <QMdiSubWindow>
 #include <QSplashScreen>
 #include <QSplitter>
+#include <type_traits>
 #include "../backend/config/btconfig.h"
 #include "../backend/drivers/cswordbiblemoduleinfo.h"
 #include "../backend/drivers/cswordbookmoduleinfo.h"
@@ -93,11 +94,13 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
         static const char splash1[] = "startuplogo.png";
         static const char splash2[] = "startuplogo_christmas.png";
         static const char splash3[] = "startuplogo_easter.jpg";
-        static const char * const splashes[3] = {
+        static const char * const splashes[] = {
             splash1, splash2, splash3
         };
+        auto const splashNumber =
+                randInt(0u, std::extent_v<decltype(splashes)> - 1u);
         QString splashImage = DU::getPicsDir().canonicalPath().append("/")
-                                              .append(splashes[randInt(0, 2)]);
+                                              .append(splashes[splashNumber]);
         QPixmap pm;
         if (!pm.load(splashImage)) {
             qWarning("Can't load startuplogo! Check your installation.");
