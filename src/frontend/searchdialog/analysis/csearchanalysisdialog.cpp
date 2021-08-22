@@ -19,6 +19,7 @@
 #include <QDialogButtonBox>
 #include <QtGlobal>
 #include <QVBoxLayout>
+#include <utility>
 #include "../../../backend/drivers/cswordmoduleinfo.h"
 #include "../../../util/btconnect.h"
 #include "../../messagedialog.h"
@@ -32,13 +33,15 @@ static const int DIALOG_HEIGHT = 400;
 static const int DIALOG_BORDER = 30;
 
 CSearchAnalysisDialog::CSearchAnalysisDialog(
+        QString searchedText,
         const CSwordModuleSearch::Results &results,
         QWidget *parentDialog)
         : QDialog(parentDialog)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
 
-    m_analysis = new CSearchAnalysisScene(results, this);
+    m_analysis =
+            new CSearchAnalysisScene(std::move(searchedText), results, this);
     m_analysisView = new CSearchAnalysisView(m_analysis, this);
     ////    m_analysisView->show();
     vboxLayout->addWidget(m_analysisView);

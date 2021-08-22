@@ -25,7 +25,6 @@
 #include "../../../backend/keys/cswordversekey.h"
 #include "../../../util/btassert.h"
 #include "../../../util/tool.h"
-#include "../csearchdialog.h"
 
 
 namespace Search {
@@ -50,9 +49,11 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 CSearchAnalysisScene::CSearchAnalysisScene(
+        QString searchedText,
         CSwordModuleSearch::Results const & results,
         QObject * parent)
     : QGraphicsScene(parent)
+    , m_searchedText(std::move(searchedText))
 {
     setBackgroundBrush(QBrush(Qt::white));
     setSceneRect(0, 0, 1, 1);
@@ -230,7 +231,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += "</h1><p><span style=\"font-weight:bold\">";
     text += tr("Search text:");
     text += "</span>&nbsp;";
-    text += CSearchDialog::getSearchDialog()->searchText().toHtmlEscaped();
+    text += m_searchedText.toHtmlEscaped();
     text += "</p><table><caption>";
     text += tr("Results by work and book");
     text += "</caption><tr><th>";

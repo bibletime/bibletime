@@ -121,7 +121,8 @@ class BtSearchResultArea : public QWidget {
         void reset();
 
         /** Shows a dialog with the search analysis of the current search. */
-        void showAnalysis() { CSearchAnalysisDialog(m_results, this).exec(); }
+        void showAnalysis()
+        { CSearchAnalysisDialog(m_searchedText, m_results, this).exec(); }
 
     protected: /* Methods: */
 

@@ -30,8 +30,9 @@ namespace Search {
 class CSearchAnalysisScene : public QGraphicsScene {
         Q_OBJECT
     public:
-        CSearchAnalysisScene(CSwordModuleSearch::Results const & results,
-                             QObject* parent);
+        CSearchAnalysisScene(QString searchedText,
+                             CSwordModuleSearch::Results const & results,
+                             QObject * parent);
 
         /**
         * This function returns a color for each module
@@ -55,6 +56,7 @@ class CSearchAnalysisScene : public QGraphicsScene {
 
     private:
 
+        QString const m_searchedText;
         CSwordModuleSearch::Results m_results;
         std::map<std::tuple<char, char>, CSearchAnalysisItem *> m_itemList;
         std::size_t m_maxCount = 0;
