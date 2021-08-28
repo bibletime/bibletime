@@ -146,7 +146,7 @@ extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace autoTile {
-BT_GETICON(tile_auto);
+BT_GETICON(tile_auto)
 extern const QKeySequence accel;
 extern const char* actionName;
 }
