@@ -13,12 +13,15 @@
 #include "btbookshelftaskpage.h"
 
 #include <QApplication>
-#include <QDate>
 #include <QGroupBox>
 #include <QLabel>
+#include <QList>
 #include <QRadioButton>
+#include <QSizePolicy>
+#include <QSpacerItem>
+#include <QStaticStringData>
+#include <QStringLiteral>
 #include <QVBoxLayout>
-#include "../../backend/config/btconfig.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "btbookshelfwizard.h"
 

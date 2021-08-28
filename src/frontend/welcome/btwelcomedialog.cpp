@@ -13,6 +13,8 @@
 #include "btwelcomedialog.h"
 
 #include <QDialogButtonBox>
+#include <QFlags>
+#include <QFont>
 #include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>

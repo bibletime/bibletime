@@ -14,6 +14,12 @@
 
 #include "btconfigdialog.h"
 
+#include <QObject>
+#include <QString>
+#include <Qt>
+
+
+class QWidget;
 
 class CConfigurationDialog : public BtConfigDialog {
 

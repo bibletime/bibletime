@@ -13,13 +13,17 @@
 #pragma once
 
 #include <QWidgetAction>
+
 #include <memory>
+#include <QIcon>
+#include <QObject>
+#include <QString>
 
 
-class QIcon;
+class QEvent;
+class QWidget;
+
 class QMenu;
-class QString;
-class QToolButton;
 
 // This class manages the toolbar display for going forward and backward in history.
 class BtToolBarPopupAction : public QWidgetAction {

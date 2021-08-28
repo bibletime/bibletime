@@ -14,8 +14,12 @@
 
 #include <QComboBox>
 
+#include <QObject>
+#include <QString>
+
 
 class QIntValidator;
+class QWidget;
 
 class BtFontSizeWidget: public QComboBox {
 

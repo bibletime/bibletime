@@ -15,6 +15,8 @@
 #include <QColorDialog>
 #include <QMouseEvent>
 #include <QPalette>
+#include <QSizePolicy>
+#include <Qt>
 
 
 BtColorWidget::BtColorWidget(QWidget * parent)

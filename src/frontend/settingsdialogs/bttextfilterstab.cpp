@@ -14,8 +14,10 @@
 
 #include <QCheckBox>
 #include <QLabel>
+#include <QSizePolicy>
 #include <QVBoxLayout>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/config/btconfigcore.h"
 #include "../../util/tool.h"
 #include "cswordsettings.h"
 

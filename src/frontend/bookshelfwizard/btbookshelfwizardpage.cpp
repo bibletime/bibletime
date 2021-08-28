@@ -12,6 +12,7 @@
 
 #include "btbookshelfwizardpage.h"
 
+#include <QWizard>
 #include "btbookshelfwizard.h"
 #include "../../util/btassert.h"
 

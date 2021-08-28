@@ -14,6 +14,9 @@
 
 #include <QApplication>
 
+#include <QObject>
+#include <QString>
+
 
 class BtIcons;
 

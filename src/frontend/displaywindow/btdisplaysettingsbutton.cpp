@@ -12,15 +12,17 @@
 
 #include "btdisplaysettingsbutton.h"
 
-#include <QHash>
+#include <QAction>
+#include <QList>
 #include <QMenu>
 #include <QString>
-#include <QToolTip>
 #include <QToolButton>
+#include "../../backend/btglobal.h"
+#include "../../backend/drivers/btmodulelist.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
 
 
 BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)

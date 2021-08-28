@@ -15,7 +15,6 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
 #include "btstandardworkstab.h"
 #include "bttextfilterstab.h"
 #include "cconfigurationdialog.h"

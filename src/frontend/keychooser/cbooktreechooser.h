@@ -14,8 +14,11 @@
 
 #include "ckeychooser.h"
 
+#include <QList>
+#include <QObject>
+#include <QString>
+#include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/keys/cswordtreekey.h"
-#include "ckeychooserwidget.h"
 
 
 class BTHistory;
@@ -23,6 +26,7 @@ class CSwordBookModuleInfo;
 class CSwordKey;
 class QTreeWidget;
 class QTreeWidgetItem;
+class QWidget;
 
 class CBookTreeChooser final : public CKeyChooser {
 

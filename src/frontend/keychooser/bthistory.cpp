@@ -14,6 +14,8 @@
 
 #include <QAction>
 #include <QList>
+#include <QVariant>
+#include <QWidget>
 #include "../../backend/keys/cswordkey.h"
 #include "../../util/btassert.h"
 

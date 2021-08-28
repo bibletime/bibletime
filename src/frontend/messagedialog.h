@@ -13,9 +13,12 @@
 #pragma once
 
 #include <QMessageBox>
+#include <QString>
+
 
 class QAction;
 class QDialogButtonBox;
+class QWidget;
 
 namespace message {
 

@@ -12,15 +12,22 @@
 
 #include "btbookshelflanguagespage.h"
 
+#include <memory>
 #include <QApplication>
-#include <QHBoxLayout>
+#include <QList>
 #include <QListView>
-#include <QPushButton>
+#include <QStandardItem>
+#include <QStandardItemModel>
+#include <QStaticStringData>
+#include <QStringLiteral>
+#include <Qt>
 #include <QVBoxLayout>
 #include <set>
 #include "../../backend/btinstallbackend.h"
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/language.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../backend/models/btlistmodel.h"
 #include "../../util/btconnect.h"
 #include "btbookshelfwizard.h"

@@ -16,6 +16,7 @@
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QLineEdit>
+#include <QSizePolicy>
 #include <QSpacerItem>
 #include <QTextBrowser>
 #include <QVBoxLayout>

@@ -15,14 +15,17 @@
 #include <QDialog>
 
 #include <QListWidgetItem>
+#include <QObject>
+#include <QString>
+#include <QStringList>
 
 
 class QDialogButtonBox;
 class QLabel;
 class QLineEdit;
-class QListWidget;
 class QPushButton;
 class QTextEdit;
+class QWidget;
 
 namespace Search {
 

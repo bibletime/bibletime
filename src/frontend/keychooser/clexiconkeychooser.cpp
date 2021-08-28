@@ -13,14 +13,23 @@
 #include "clexiconkeychooser.h"
 
 #include <algorithm>
+#include <iterator>
+#include <map>
+#include <QBoxLayout>
+#include <QComboBox>
 #include <QHBoxLayout>
+#include <QLayout>
+#include <QStringList>
+#include <Qt>
+#include <utility>
+#include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/keys/cswordkey.h"
 #include "../../backend/keys/cswordldkey.h"
 #include "../../util/btconnect.h"
-#include "../../util/cresmgr.h"
 #include "bthistory.h"
 #include "ckeychooserwidget.h"
-#include "cscrollbutton.h"
 
 
 CLexiconKeyChooser::CLexiconKeyChooser(const BtConstModuleList & modules,

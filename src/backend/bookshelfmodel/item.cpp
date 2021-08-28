@@ -12,6 +12,9 @@
 
 #include "item.h"
 
+#include <QtAlgorithms>
+#include <QString>
+#include "../../util/btassert.h"
 #include "btbookshelfmodel.h"
 
 

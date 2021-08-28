@@ -12,16 +12,27 @@
 
 #include "cbookkeychooser.h"
 
-#include <QDebug>
+#include <algorithm>
+#include <memory>
+#include <QComboBox>
 #include <QHBoxLayout>
 #include <QList>
+#include <QStringList>
+#include <Qt>
+#include <QtAlgorithms>
+#include <QtGlobal>
+#include <QVariant>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/drivers/cswordbookmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/keys/cswordkey.h"
 #include "../../backend/keys/cswordtreekey.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "bthistory.h"
+#include "ckeychooserwidget.h"
 
 
 #define ID_PROPERTY_NAME "CBookKeyChooser_ID"

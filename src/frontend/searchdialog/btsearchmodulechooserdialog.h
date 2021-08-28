@@ -14,12 +14,13 @@
 
 #include "../btmodulechooserdialog.h"
 
+#include <QObject>
+#include <QString>
+#include <Qt>
 #include "../../backend/drivers/btconstmoduleset.h"
-#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
-class BtBookshelfTreeModel;
-class CSwordModuleInfo;
+class QWidget;
 
 class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
     Q_OBJECT
@@ -27,11 +28,9 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
         BtSearchModuleChooserDialog(QWidget *parent = nullptr,
                                     Qt::WindowFlags flags = Qt::WindowFlags());
 
-        void setCheckedModules(BtConstModuleSet const & modules)
-        { bookshelfWidget()->treeModel()->setCheckedModules(modules); }
+        void setCheckedModules(BtConstModuleSet const & modules);
 
-        BtConstModuleSet checkedModules() const
-        { return bookshelfWidget()->treeModel()->checkedModules(); }
+        BtConstModuleSet checkedModules() const;
 
     protected:
         void retranslateUi();

@@ -14,6 +14,12 @@
 
 #include <QComboBox>
 
+#include <QObject>
+#include <QString>
+#include <QStringList>
+
+
+class QWidget;
 
 namespace Search {
 

@@ -14,8 +14,10 @@
 
 #include <QCheckBox>
 #include <QHBoxLayout>
+#include <QFlags>
 #include <QList>
 #include <QPushButton>
+#include <QSizePolicy>
 #include <QSpacerItem>
 #include <QStringList>
 #include <QTreeWidget>

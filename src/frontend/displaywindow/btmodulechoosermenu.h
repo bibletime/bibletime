@@ -15,12 +15,17 @@
 #include "../btmenuview.h"
 
 #include <QFlags>
+#include <QObject>
 #include <QString>
 #include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
 class QAction;
+class QActionGroup;
+class QMenu;
+class QModelIndex;
+class QWidget;
 
 class BtModuleChooserMenu final: public BtMenuView {
 

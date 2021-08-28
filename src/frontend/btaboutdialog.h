@@ -14,11 +14,17 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
+
+
 class QDialogButtonBox;
 class QLabel;
+class QResizeEvent;
 class QTabWidget;
-class QUrl;
 class QTextBrowser;
+class QWidget;
 
 class BtAboutDialog: public QDialog {
         Q_OBJECT

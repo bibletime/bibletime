@@ -15,9 +15,8 @@
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
 #include "../util/btconnect.h"
-#include "../util/tool.h"
 #include "btaboutmoduledialog.h"
 #include "btbookshelfview.h"
 #include "btbookshelfwidget.h"

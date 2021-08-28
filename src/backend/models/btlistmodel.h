@@ -14,6 +14,9 @@
 
 #include <QStandardItemModel>
 
+#include <QObject>
+#include <QString>
+
 /**
     \brief This is a generic list model with optional checkboxes on first
     column and optional delete icon in second column.

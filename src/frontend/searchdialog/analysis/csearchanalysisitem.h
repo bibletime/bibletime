@@ -15,12 +15,15 @@
 #include <QGraphicsRectItem>
 
 #include <cstddef>
-#include <QGraphicsScene>
+#include <QPixmap>
+#include <QString>
+#include <QVector>
 #include <memory>
-#include "../../../backend/cswordmodulesearch.h"
 
 
-class CSwordModuleInfo;
+class QPainter;
+class QStyleOptionGraphicsItem;
+class QWidget;
 
 namespace Search {
 

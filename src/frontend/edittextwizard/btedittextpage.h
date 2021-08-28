@@ -13,12 +13,18 @@
 #pragma once
 
 #include <QWizardPage>
-#include <QTextCharFormat>
+
+#include <QColor>
+#include <QFont>
+#include <QObject>
+#include <QString>
+
 
 class BtEditTextWizard;
+class QAction;
 class QTextEdit;
 class QToolBar;
-class QVBoxLayout;
+class QWidget;
 
 class BtEditTextPage final: public QWizardPage {
 

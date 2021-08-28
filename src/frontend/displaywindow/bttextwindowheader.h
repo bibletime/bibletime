@@ -13,11 +13,14 @@
 #pragma once
 
 #include "btwindowmodulechooser.h"
+#include <QList>
+#include <QObject>
+#include <QString>
 #include <QStringList>
 #include <QWidget>
+#include "../../backend/drivers/cswordmoduleinfo.h"
 
-class QAction;
-class QToolButton;
+
 class CDisplayWindow;
 class BtTextWindowHeaderWidget;
 

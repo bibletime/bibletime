@@ -14,9 +14,9 @@
 
 #include "btconfigdialog.h"
 
+#include <QObject>
 #include <QPointer>
-#include <QWidget>
-#include "btshortcutseditor.h"
+#include <QString>
 
 
 class BtActionCollection;

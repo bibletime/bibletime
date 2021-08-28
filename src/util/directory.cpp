@@ -13,15 +13,17 @@
 #include "directory.h"
 
 #include <memory>
+#include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
-#include <QFile>
 #include <QFileInfo>
 #include <QFileInfoList>
+#include <QFlags>
+#include <QList>
 #include <QLocale>
-#include <QStandardPaths>
 #include <QStringList>
+#include <QtGlobal>
 #include "btassert.h"
 #ifdef Q_OS_WIN32
 #include <windows.h>

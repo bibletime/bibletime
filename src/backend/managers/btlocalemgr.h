@@ -15,15 +15,11 @@
 #include <map>
 #include <QString>
 
-// Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wextra-semi"
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <swbuf.h>
-#pragma GCC diagnostic pop
 
-
-namespace sword { class SWLocale; }
+namespace sword {
+class SWBuf;
+class SWLocale;
+} // namespace sword
 
 
 /** An interface replacement for sword::LocaleMgr. */

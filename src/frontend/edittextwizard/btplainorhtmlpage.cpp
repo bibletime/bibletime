@@ -12,10 +12,11 @@
 
 #include "btplainorhtmlpage.h"
 
-#include "btedittextwizard.h"
 #include <QApplication>
 #include <QGroupBox>
 #include <QRadioButton>
+#include <QSizePolicy>
+#include <QSpacerItem>
 #include <QVBoxLayout>
 
 

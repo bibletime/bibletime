@@ -20,9 +20,10 @@
 
 
 namespace sword {
-    class SWKey;
-    class SWModule;
-}
+class SWBuf;
+class SWKey;
+class SWModule;
+} // namespace sword
 
 namespace Filters {
 

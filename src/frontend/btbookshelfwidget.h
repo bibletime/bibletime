@@ -15,7 +15,10 @@
 #include <QWidget>
 
 #include <memory>
-#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include <QObject>
+#include <QString>
+#include <QStringList>
+#include <Qt>
 
 
 class BtBookshelfFilterModel;
@@ -25,10 +28,12 @@ class BtBookshelfView;
 class QAbstractItemModel;
 class QAction;
 class QActionGroup;
+class QEvent;
 class QHBoxLayout;
 class QLabel;
 class QLineEdit;
 class QMenu;
+class QModelIndex;
 class QToolButton;
 
 class BtBookshelfWidget: public QWidget {

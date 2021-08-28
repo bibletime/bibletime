@@ -14,7 +14,6 @@
 #include <QDialogButtonBox>
 #include <QTextEdit>
 #include <QVBoxLayout>
-#include <QWidget>
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "../util/btconnect.h"
 #include "btaboutmoduledialog.h"

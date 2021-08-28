@@ -19,7 +19,6 @@
 #include <utility>
 
 
-class BtConfig;
 class QSettings;
 
 /**

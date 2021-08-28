@@ -14,11 +14,14 @@
 
 #include <QMenu>
 
+#include <QObject>
+#include <QString>
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class QAction;
 class QActionGroup;
+class QWidget;
 
 class BtBookshelfGroupingMenu: public QMenu {
     Q_OBJECT

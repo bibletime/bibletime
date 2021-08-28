@@ -13,6 +13,7 @@
 #include "bturlhandler.h"
 
 #include <QApplication>
+#include <QUrl>
 
 
 void BtUrlHandler::showQt(const QUrl &url) {

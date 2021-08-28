@@ -16,9 +16,13 @@
 #include <QToolButton>
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/btconstmoduleset.h"
+#include "../../backend/drivers/btmoduleset.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btconnect.h"
 #include "../../util/tool.h"
+#include "../btbookshelfwidget.h"
+#include "../btmodulechooserdialog.h"
 
 
 namespace {
@@ -45,6 +49,13 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
 
     retranslateUi();
 }
+
+void BtSearchModuleChooserDialog::setCheckedModules(
+        BtConstModuleSet const & modules)
+{ bookshelfWidget()->treeModel()->setCheckedModules(modules); }
+
+BtConstModuleSet BtSearchModuleChooserDialog::checkedModules() const
+{ return bookshelfWidget()->treeModel()->checkedModules(); }
 
 void BtSearchModuleChooserDialog::retranslateUi() {
     setWindowTitle(tr("Works to Search in"));

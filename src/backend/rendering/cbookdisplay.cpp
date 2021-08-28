@@ -13,11 +13,15 @@
 #include "cbookdisplay.h"
 
 #include <memory>
-#include <QtAlgorithms>
 #include "../../util/btassert.h"
+#include "../btglobal.h"
+#include "../drivers/btmodulelist.h"
 #include "../drivers/cswordbookmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../keys/cswordkey.h"
 #include "../keys/cswordtreekey.h"
 #include "cdisplayrendering.h"
+#include "ctextrendering.h"
 
 
 namespace {

@@ -11,19 +11,27 @@
 **********/
 
 #include "btedittextpage.h"
-#include "btedittextwizard.h"
 
 #include <QAction>
-#include <QApplication>
+#include <QDebug>
 #include <QFontComboBox>
+#include <Qt>
+#include <QtGlobal>
 #include <QTextEdit>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include <QWidget>
 #include "../../backend/config/btconfig.h"
-#include "../display/btfontsizewidget.h"
-#include "../display/btcolorwidget.h"
+#include "../../backend/config/btconfigcore.h"
+#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
+#include "../display/btcolorwidget.h"
+#include "../display/btfontsizewidget.h"
+#include "btedittextwizard.h"
+
+
+class QTextCharFormat;
 
 namespace {
 const QString CHTMLWriteDisplayGroup = "HtmlWriteDisplay";

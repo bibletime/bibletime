@@ -16,9 +16,13 @@
 
 #include <memory>
 #include <QList>
+#include <QObject>
 #include <QMap>
+#include <QModelIndex>
 #include <QPersistentModelIndex>
-#include "../config/btconfigcore.h"
+#include <QString>
+#include <QtCore>
+#include <QVariant>
 #include "../drivers/btconstmoduleset.h"
 #include "../drivers/btmoduleset.h"
 #include "btbookshelfmodel.h"
@@ -26,8 +30,8 @@
 
 
 namespace BookshelfModel { class ModuleItem; }
+class BtConfigCore;
 class CSwordModuleInfo;
-class QDataStream;
 
 class BtBookshelfTreeModel: public QAbstractItemModel {
 

@@ -14,14 +14,15 @@
 
 #include "btbookshelfwizardpage.h"
 
+#include <QObject>
+#include <QString>
 #include <QStringList>
 
 
-class BtInstallMgr;
 class BtListModel;
-class QPushButton;
 class QTableView;
 class QVBoxLayout;
+class QWidget;
 
 class BtBookshelfSourcesPage final: public BtBookshelfWizardPage {
 

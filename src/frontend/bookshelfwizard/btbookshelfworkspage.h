@@ -15,8 +15,10 @@
 #include "btbookshelfwizardpage.h"
 
 #include <memory>
+#include <QObject>
+#include <QString>
+#include <vector>
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "../../backend/drivers/btmoduleset.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "btbookshelfwizardenums.h"
 
@@ -25,11 +27,13 @@ class BtBookshelfGroupingMenu;
 class BtBookshelfModel;
 class BtBookshelfView;
 class BtInstallPageModel;
+class BtModuleSet;
 class QComboBox;
 class QLabel;
 class QLineEdit;
 class QMenu;
 class QToolButton;
+class QWidget;
 
 class BtBookshelfWorksPage final: public BtBookshelfWizardPage {
 

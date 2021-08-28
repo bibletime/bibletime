@@ -12,11 +12,21 @@
 
 #include "btmodulechoosermenu.h"
 
+#include <QAbstractItemModel>
+#include <QAction>
+#include <QActionGroup>
+#include <QModelIndex>
 #include <QSortFilterProxyModel>
+#include <QVariant>
+#include <utility>
+#include "../../backend/bookshelfmodel/btbookshelfmodel.h"
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
+#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
+#include "../btmenuview.h"
 
 
 namespace {

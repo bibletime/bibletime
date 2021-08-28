@@ -14,12 +14,14 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
 #include "../../../backend/cswordmodulesearch.h"
 
 
-class CSwordModuleInfo;
-class QAbstractButton;
 class QDialogButtonBox;
+class QResizeEvent;
+class QWidget;
 
 namespace Search {
 

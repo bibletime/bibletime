@@ -13,7 +13,12 @@
 #include "cplaintextexportrendering.h"
 
 #include <memory>
+#include <QList>
+#include <QtGlobal>
+#include "../drivers/btmodulelist.h"
+#include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
+
 
 
 namespace Rendering {

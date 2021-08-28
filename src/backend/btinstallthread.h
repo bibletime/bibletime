@@ -15,14 +15,15 @@
 #include <QThread>
 
 #include <atomic>
+#include <QList>
+#include <QObject>
+#include <QString>
+#include <Qt>
 #include "btinstallmgr.h"
 #include "../util/btconnect.h"
 
 
-class BtInstallProgressDialog;
-class CSwordBackend;
 class CSwordModuleInfo;
-
 
 class BtInstallThread: public QThread {
 

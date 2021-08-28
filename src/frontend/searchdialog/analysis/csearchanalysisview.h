@@ -14,10 +14,9 @@
 
 #include <QGraphicsView>
 
-#include <QSize>
-
 
 class QResizeEvent;
+class QWidget;
 
 namespace Search {
 

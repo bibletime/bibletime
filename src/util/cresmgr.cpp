@@ -12,6 +12,8 @@
 
 #include "cresmgr.h"
 
+#include <Qt>
+
 
 namespace CResMgr {
 

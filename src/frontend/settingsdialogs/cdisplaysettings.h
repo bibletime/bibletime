@@ -14,7 +14,9 @@
 
 #include "btconfigdialog.h"
 
-#include <QWidget>
+#include <QObject>
+#include <QString>
+#include <QVector>
 
 
 class CConfigurationDialog;

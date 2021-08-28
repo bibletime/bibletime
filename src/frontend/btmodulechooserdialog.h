@@ -14,12 +14,15 @@
 
 #include <QDialog>
 
-#include "btbookshelfwidget.h"
+#include <QObject>
+#include <QString>
+#include <Qt>
 
 
-class CSwordModuleInfo;
+class BtBookshelfWidget;
 class QDialogButtonBox;
 class QLabel;
+class QWidget;
 
 class BtModuleChooserDialog : public QDialog {
     Q_OBJECT

@@ -18,8 +18,15 @@
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <gbfhtml.h>
+#include <swbasicfilter.h>
 #pragma GCC diagnostic pop
 
+
+namespace sword {
+class SWBuf;
+class SWKey;
+class SWModule;
+} // namespace sword
 
 namespace Filters {
 

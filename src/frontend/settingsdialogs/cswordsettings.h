@@ -14,7 +14,8 @@
 
 #include "btconfigdialog.h"
 
-#include <QWidget>
+#include <QObject>
+#include <QString>
 
 
 class BtTextFiltersTab;

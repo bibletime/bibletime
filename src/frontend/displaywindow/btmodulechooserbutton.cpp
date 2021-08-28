@@ -12,16 +12,10 @@
 
 #include "btmodulechooserbutton.h"
 
-#include <QAction>
-#include <QActionGroup>
-#include <QSortFilterProxyModel>
-#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
-#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../btmenuview.h"
 #include "btmodulechoosermenu.h"
 
 

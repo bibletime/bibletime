@@ -14,11 +14,12 @@
 
 #include "item.h"
 
-#include "../drivers/cswordmoduleinfo.h"
-#include "btbookshelfmodel.h"
+#include <Qt>
+#include <QVariant>
 
 
 class BtBookshelfTreeModel;
+class CSwordModuleInfo;
 
 namespace BookshelfModel {
 

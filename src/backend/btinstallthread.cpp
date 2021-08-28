@@ -14,18 +14,18 @@
 
 #include <memory>
 #include <QDebug>
+#include <QByteArray>
 #include <QDir>
 #include <QString>
-#include <QThread>
+#include <QVariant>
 #include "btinstallbackend.h"
+#include "drivers/cswordmoduleinfo.h"
 #include "managers/cswordbackend.h"
 
 // Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wsuggest-override"
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <filemgr.h>
-#pragma GCC diagnostic pop
+#include <installmgr.h>
+#include <swbuf.h>
+#include <swmgr.h>
 
 
 namespace {

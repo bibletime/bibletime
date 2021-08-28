@@ -13,6 +13,8 @@
 #include "btshortcutsdialog.h"
 
 #include <QDialogButtonBox>
+#include <QFlags>
+#include <QFrame>
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QLabel>

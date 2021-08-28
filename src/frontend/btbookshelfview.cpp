@@ -12,10 +12,16 @@
 
 #include "btbookshelfview.h"
 
-#include <QApplication>
+#include <QAbstractItemModel>
+#include <QKeyEvent>
+#include <QModelIndex>
 #include <QMouseEvent>
-#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "../backend/drivers/cswordmoduleinfo.h"
+#include <QPoint>
+#include <QRect>
+#include <QVariant>
+#include <QWidget>
+#include <Qt>
+#include "../backend/bookshelfmodel/btbookshelfmodel.h"
 #include "../util/btconnect.h"
 
 

@@ -14,11 +14,16 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
+
 
 class QCheckBox;
 class QPushButton;
 class QTreeWidget;
 class QTreeWidgetItem;
+class QWidget;
 
 /**
 * This class encapsulates the "Manage search indices" page of the Bookshelf

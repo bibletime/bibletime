@@ -14,9 +14,11 @@
 
 #include <QToolButton>
 
+#include <QObject>
+#include <QString>
+
 
 class QMouseEvent;
-class QWheelEvent;
 class QWidget;
 
 /**

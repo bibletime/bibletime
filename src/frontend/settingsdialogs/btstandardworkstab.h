@@ -14,9 +14,11 @@
 
 #include <QWidget>
 
+#include <QObject>
+#include <QString>
+
 
 class CSwordSettingsPage;
-class QCheckBox;
 class QComboBox;
 class QLabel;
 

@@ -14,9 +14,13 @@
 
 #include <QMenu>
 
+#include <QObject>
+#include <QString>
+
 
 class QMouseEvent;
 class QTimerEvent;
+class QWidget;
 
 /**
 * Menu for book/ch/v dropdown lists.

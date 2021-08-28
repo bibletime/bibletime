@@ -14,19 +14,22 @@
 
 #include <QAction>
 #include <QContextMenuEvent>
-#include <QHeaderView>
 #include <QMenu>
 #include <QStringList>
-#include <QTreeWidget>
 #include <QtAlgorithms>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <vector>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/cswordmodulesearch.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
-#include "../bibletimeapp.h"
 #include "../cexportmanager.h"
+#include "btsearchresultarea.h"
 
 
 namespace Search {

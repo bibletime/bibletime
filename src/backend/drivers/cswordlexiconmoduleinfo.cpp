@@ -12,12 +12,15 @@
 
 #include "cswordlexiconmoduleinfo.h"
 
-#include <QFile>
+#include <QChar>
 #include <QDataStream>
+#include <QDebug>
+#include <QDir>
+#include <QFile>
+#include <QIODevice>
+#include <QList>
 #include <QRegExp>
 #include <QTextCodec>
-#include <QDebug>
-
 #include "../../util/directory.h"
 
 // Sword includes:
@@ -25,6 +28,7 @@
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <swkey.h>
 #include <swmodule.h>
 #pragma GCC diagnostic pop
 

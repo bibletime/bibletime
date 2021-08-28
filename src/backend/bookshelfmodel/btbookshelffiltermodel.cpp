@@ -12,8 +12,11 @@
 
 #include "btbookshelffiltermodel.h"
 
-#include "btbookshelfmodel.h"
+#include <QAbstractItemModel>
+#include <QVariant>
 #include "../../util/btassert.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "btbookshelfmodel.h"
 
 
 BtBookshelfFilterModel::BtBookshelfFilterModel(QObject * const parent)

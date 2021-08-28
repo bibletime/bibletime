@@ -12,9 +12,17 @@
 
 #include "btmenuview.h"
 
+#include <QAbstractItemModel>
+#include <QAction>
 #include <QActionGroup>
 #include <QCoreApplication>
 #include <QEvent>
+#include <QIcon>
+#include <QList>
+#include <QModelIndex>
+#include <QPersistentModelIndex>
+#include <QVariant>
+#include <Qt>
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 

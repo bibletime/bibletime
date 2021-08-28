@@ -15,16 +15,18 @@
 #include "btbookshelfwizardpage.h"
 
 #include <QList>
+#include <QObject>
+#include <QString>
 #include "../../backend/drivers/btmoduleset.h"
 
 
-class BtBookshelfWizard;
 class BtInstallThread;
+class CSwordModuleInfo;
 class QLabel;
 class QProgressBar;
 class QPushButton;
-class QSwordModuleInfo;
 class QVBoxLayout;
+class QWidget;
 
 class BtBookshelfInstallFinalPage final: public BtBookshelfWizardPage {
 

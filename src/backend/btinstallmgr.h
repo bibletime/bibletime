@@ -14,6 +14,8 @@
 
 #include <QObject>
 
+#include <QString>
+
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"

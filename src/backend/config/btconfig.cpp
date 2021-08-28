@@ -12,11 +12,23 @@
 
 #include "btconfig.h"
 
+#include <cstddef>
+#include <limits>
+#include <QByteArray>
+#include <QDir>
+#include <QFile>
+#include <QKeySequence>
 #include <QLocale>
 #include <QSettings>
+#include <QVariant>
 #include <memory>
+#include <type_traits>
 #include <utility>
-#include "../../util/directory.h" // DU::getUserBaseDir()
+#include "../../util/btassert.h"
+#include "../../util/directory.h"
+#include "../btglobal.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../language.h"
 #include "../managers/cswordbackend.h"
 
 
@@ -25,6 +37,8 @@
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <swkey.h>
+#include <swmodule.h>
 #include <listkey.h>
 #include <versekey.h> // For search scope configuration
 #pragma GCC diagnostic pop

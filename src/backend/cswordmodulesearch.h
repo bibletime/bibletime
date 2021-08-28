@@ -12,12 +12,10 @@
 
 #pragma once
 
-#include <QObject>
-
 #include <memory>
 #include <QMetaType>
+#include <QString>
 #include <vector>
-#include "../util/btassert.h"
 #include "drivers/btmodulelist.h"
 
 // Sword includes:
@@ -28,6 +26,10 @@
 #include <listkey.h>
 #pragma GCC diagnostic pop
 
+
+class CSwordModuleInfo;
+class QDataStream;
+namespace sword { class SWKey; }
 
 namespace CSwordModuleSearch {
 

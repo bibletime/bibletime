@@ -12,14 +12,22 @@
 
 #include "btshortcutseditor.h"
 
+#include <QAbstractItemView>
 #include <QAction>
+#include <QDialog>
 #include <QGroupBox>
+#include <QHBoxLayout>
 #include <QHeaderView>
 #include <QKeySequence>
 #include <QLabel>
+#include <QList>
 #include <QPushButton>
 #include <QRadioButton>
+#include <QRegExp>
+#include <QSizePolicy>
 #include <QSpacerItem>
+#include <Qt>
+#include <QtGlobal>
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QVBoxLayout>

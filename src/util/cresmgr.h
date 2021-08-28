@@ -13,8 +13,10 @@
 #pragma once
 
 #include <QKeySequence>
-#include <QString>
 #include "bticons.h"
+
+
+class QIcon;
 
 #define BT_GETICON2(fname,name) \
     inline QIcon const & fname() { return BtIcons::instance().icon_ ## name; }

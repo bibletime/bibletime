@@ -17,7 +17,6 @@
 #include <QCoreApplication>
 #include <QFont>
 #include <QHash>
-#include <QKeySequence>
 #include <QList>
 #include <QMap>
 #include <QMetaType>
@@ -26,12 +25,12 @@
 #include <QStringList>
 #include "../../util/btassert.h"
 #include "../btglobal.h"
-#include "../drivers/cswordmoduleinfo.h"
 
 
+class CSwordModuleInfo;
+class Language;
+class QKeySequence;
 namespace sword { class ListKey; }
-
-class BibleTimeApp;
 
 class BtConfig: public BtConfigCore {
 

@@ -14,11 +14,17 @@
 
 #include "ckeychooser.h"
 
+#include <QList>
+#include <QObject>
+#include <QString>
+#include "../../backend/drivers/btmodulelist.h"
 
+
+class BTHistory;
 class CKeyChooserWidget;
+class CSwordKey;
 class CSwordLDKey;
 class CSwordLexiconModuleInfo;
-class CSwordModuleInfo;
 class QHBoxLayout;
 class QWidget;
 

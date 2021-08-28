@@ -14,9 +14,16 @@
 
 #include "cdisplaywindow.h"
 
+#include <QList>
+#include <QObject>
+#include <QString>
+#include "../../backend/drivers/cswordmoduleinfo.h"
+
 
 class BtActionCollection;
+class BtConfigCore;
 class CBookTreeChooser;
+class CMDIArea;
 class QAction;
 
 class CBookReadWindow: public CDisplayWindow {

@@ -12,6 +12,9 @@
 
 #include "indexingitem.h"
 
+#include <QObject>
+#include <QString>
+
 
 namespace BookshelfModel {
 

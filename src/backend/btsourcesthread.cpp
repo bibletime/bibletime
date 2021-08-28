@@ -12,12 +12,19 @@
 
 #include "btsourcesthread.h"
 
+#include <cstddef>
+#include <QDebug>
+#include <QList>
 #include <QString>
+#include <QStringList>
 #include <memory>
-#include <type_traits>
+#include <utility>
 #include "../util/btassert.h"
 #include "btinstallbackend.h"
 #include "btinstallmgr.h"
+
+// Sword includes:
+#include <installmgr.h>
 
 
 void BtSourcesThread::run() {

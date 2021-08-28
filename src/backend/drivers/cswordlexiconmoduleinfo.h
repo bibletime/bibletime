@@ -14,8 +14,13 @@
 
 #include "cswordmoduleinfo.h"
 
+#include <QObject>
+#include <QString>
 #include <QStringList>
 
+
+class CSwordBackend;
+namespace sword { class SWModule; }
 
 /**
   The implementation of CModuleInfo for the Sword lexiccons and citionaries.

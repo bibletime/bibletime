@@ -13,7 +13,11 @@
 #pragma once
 
 #include <QObject>
-#include <QUrl>
+
+#include <QString>
+
+
+class QUrl;
 
 class BtUrlHandler : public QObject
 {

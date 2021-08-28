@@ -14,11 +14,15 @@
 
 #include "btbookshelfwizardpage.h"
 
+#include <QObject>
+#include <QString>
+
 
 class BtSourcesThread;
 class QLabel;
 class QProgressBar;
 class QPushButton;
+class QWidget;
 
 class BtBookshelfSourcesProgressPage final: public BtBookshelfWizardPage {
 

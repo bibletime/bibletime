@@ -14,8 +14,12 @@
 
 #include <QWizardPage>
 
+#include <QObject>
+#include <QString>
+
 
 class BtBookshelfWizard;
+class QWidget;
 
 class BtBookshelfWizardPage: public QWizardPage {
 

@@ -12,14 +12,22 @@
 
 #include "bticons.h"
 
-#include <QByteArray>
+#include <QBrush>
 #include <QBuffer>
-#include <QPixmap>
-#include <QDebug>
+#include <QByteArray>
+#include <QDir>
 #include <QIconEngine>
+#include <QImage>
 #include <QPainter>
+#include <QPixmap>
+#include <QPoint>
+#include <QRect>
+#include <Qt>
+#include <QtGui>
 #include "directory.h"
 
+
+class QSize;
 
 namespace {
 

@@ -12,18 +12,22 @@
 
 #pragma once
 
-#include <memory>
-#include <QAction>
 #include "btmenuview.h"
 
+#include <memory>
+#include <QAction>
+#include <QObject>
+#include <QString>
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfigcore.h"
 
 
 class BtBookshelfGroupingMenu;
-class BtBookshelfTreeModel;
 class BtBookshelfFilterModel;
 class CSwordModuleInfo;
+class QAbstractItemModel;
+class QActionGroup;
+class QWidget;
 
 class BtOpenWorkActionMenu: public BtMenuView {
     Q_OBJECT

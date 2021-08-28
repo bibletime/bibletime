@@ -12,10 +12,12 @@
 
 #include "btedittextwizard.h"
 
-#include <QApplication>
+#include <QByteArray>
+#include <QDialog>
 #include "btedittextpage.h"
 #include "btplainorhtmlpage.h"
 #include "../../backend/config/btconfig.h"
+
 
 void translateQWizardStandardButtons(QWizard * wizard);
 

@@ -12,11 +12,13 @@
 
 #include "btbookshelfgroupingmenu.h"
 
+#include <QAction>
+#include <QActionGroup>
+#include <QVariant>
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
-#include "../util/directory.h"
-#include "bibletimeapp.h"
 
 
 namespace {

@@ -12,15 +12,13 @@
 
 #include "bttextwindowheader.h"
 
-#include <QAction>
-#include <QDebug>
-#include <QFrame>
 #include <QHBoxLayout>
-#include <QLabel>
+#include <QLayout>
 #include <QSizePolicy>
 #include <QStringList>
-#include <QToolButton>
+#include <Qt>
 #include <QWidget>
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "bttextwindowheaderwidget.h"

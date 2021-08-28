@@ -24,6 +24,7 @@
 
 #include <algorithm>
 #include <memory>
+#include <QDir>
 #include <QDomElement>
 #include <QDomNode>
 #include <QFile>

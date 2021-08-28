@@ -14,6 +14,9 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
+
 
 class QComboBox;
 class QLabel;

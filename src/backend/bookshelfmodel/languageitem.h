@@ -14,9 +14,13 @@
 
 #include "item.h"
 
+#include <Qt>
+#include <QVariant>
+#include <memory>
 #include "../drivers/cswordmoduleinfo.h"
-#include "btbookshelfmodel.h"
 
+
+class Language;
 
 namespace BookshelfModel {
 

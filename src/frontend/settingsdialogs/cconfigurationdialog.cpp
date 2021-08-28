@@ -12,6 +12,7 @@
 
 #include "cconfigurationdialog.h"
 
+#include <QByteArray>
 #include "../../backend/config/btconfig.h"
 #include "btfontsettings.h"
 #include "cacceleratorsettings.h"

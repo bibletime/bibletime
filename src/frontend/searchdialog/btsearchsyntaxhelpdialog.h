@@ -14,9 +14,14 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
+
+
 class QDialogButtonBox;
-class QUrl;
 class QTextBrowser;
+class QWidget;
 
 namespace Search {
 

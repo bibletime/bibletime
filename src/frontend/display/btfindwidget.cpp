@@ -12,10 +12,14 @@
 
 #include "btfindwidget.h"
 
+#include <QIcon>
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QSize>
+#include <QSizePolicy>
 #include <QSpacerItem>
+#include <Qt>
 #include <QToolButton>
 #include <utility>
 #include "../../util/btconnect.h"

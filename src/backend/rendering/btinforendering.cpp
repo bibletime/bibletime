@@ -12,23 +12,38 @@
 
 #include "btinforendering.h"
 
+#include <map>
 #include <memory>
+#include <QByteArray>
+#include <QChar>
+#include <QObject>
+#include <QRegExp>
+#include <QSharedPointer>
 #include <QStringList>
-#include <QtGlobal>
+#include <Qt>
 #include <utility>
 #include "../../util/btassert.h"
 #include "../btglobal.h"
+#include "../config/btconfig.h"
+#include "../drivers/btmodulelist.h"
 #include "../drivers/cswordlexiconmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 #include "../keys/cswordkey.h"
+#include "../language.h"
 #include "../managers/cdisplaytemplatemgr.h"
 #include "../managers/cswordbackend.h"
 #include "crossrefrendering.h"
+#include "ctextrendering.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <listkey.h>
+#include <swbuf.h>
+#include <swkey.h>
+#include <swmodule.h>
 #include <versekey.h>
 #pragma GCC diagnostic pop
 

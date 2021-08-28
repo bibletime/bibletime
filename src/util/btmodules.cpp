@@ -12,6 +12,8 @@
 
 #include "btmodules.h"
 
+#include <QString>
+#include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/managers/cswordbackend.h"
 
 

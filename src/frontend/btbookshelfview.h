@@ -14,8 +14,16 @@
 
 #include <QTreeView>
 
+#include <QObject>
+#include <QString>
+
 
 class CSwordModuleInfo;
+class QKeyEvent;
+class QModelIndex;
+class QMouseEvent;
+class QPoint;
+class QWidget;
 
 class BtBookshelfView: public QTreeView {
         Q_OBJECT

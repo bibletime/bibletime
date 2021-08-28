@@ -12,9 +12,14 @@
 
 #include "clexiconreadwindow.h"
 
+#include <QAction>
+#include <QString>
+#include "../../backend/keys/cswordkey.h"
 #include "../../backend/keys/cswordldkey.h"
+#include "../../backend/managers/cswordbackend.h"
 #include "../../util/cresmgr.h"
 #include "../keychooser/ckeychooser.h"
+#include "btactioncollection.h"
 
 
 CLexiconReadWindow::CLexiconReadWindow(

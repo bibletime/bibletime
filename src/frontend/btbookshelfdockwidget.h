@@ -14,16 +14,20 @@
 
 #include <QDockWidget>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "btbookshelfwidget.h"
 
 
+class BtBookshelfWidget;
+class CSwordModuleInfo;
 class QAction;
-class QActionGroup;
 class QLabel;
 class QMenu;
 class QPushButton;
 class QStackedWidget;
+class QWidget;
 
 class BtBookshelfDockWidget: public QDockWidget {
         Q_OBJECT

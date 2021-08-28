@@ -12,27 +12,40 @@
 
 #include "btbookshelfsourcespage.h"
 
-#include <QAbstractItemView>
 #include <QApplication>
-#include <QDate>
-#include <QHBoxLayout>
+#include <QDialog>
+#include <QFontMetrics>
 #include <QHeaderView>
+#include <QList>
 #include <QMessageBox>
 #include <QModelIndex>
-#include <QProgressDialog>
 #include <QPushButton>
+#include <QStandardItem>
+#include <QStandardItemModel>
+#include <QStaticStringData>
+#include <QStringLiteral>
 #include <QTableView>
+#include <Qt>
 #include <QtGlobal>
+#include <QVariant>
 #include <QVBoxLayout>
+#include <QWizardPage>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/btinstallbackend.h"
-#include "../../backend/btinstallmgr.h"
 #include "../../backend/models/btlistmodel.h"
 #include "../../util/btconnect.h"
 #include "cswordsetupinstallsourcesdialog.h"
 #include "btbookshelflanguagespage.h"
 #include "btbookshelfwizard.h"
 #include "btbookshelfwizardenums.h"
+
+// Sword includes:
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wextra-semi"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <installmgr.h>
+#include <swbuf.h>
+#pragma GCC diagnostic pop
 
 
 namespace {

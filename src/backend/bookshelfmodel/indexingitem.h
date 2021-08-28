@@ -14,6 +14,8 @@
 
 #include "item.h"
 
+#include <Qt>
+#include <QVariant>
 #include "../drivers/cswordmoduleinfo.h"
 
 

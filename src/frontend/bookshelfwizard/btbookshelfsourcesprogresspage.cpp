@@ -13,15 +13,18 @@
 #include "btbookshelfsourcesprogresspage.h"
 
 #include <QApplication>
-#include <QDate>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QProgressBar>
 #include <QPushButton>
+#include <QSizePolicy>
+#include <QSpacerItem>
+#include <QStaticStringData>
+#include <QStringLiteral>
+#include <Qt>
 #include <QVBoxLayout>
-#include "../../backend/btinstallbackend.h"
+#include <QWizardPage>
 #include "../../backend/btsourcesthread.h"
-#include "../../backend/config/btconfig.h"
 #include "../../util/btconnect.h"
 #include "btbookshelfwizardenums.h"
 #include "btbookshelfwizard.h"

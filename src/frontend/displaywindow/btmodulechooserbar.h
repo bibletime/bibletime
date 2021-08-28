@@ -12,12 +12,18 @@
 
 #pragma once
 
-#include "../../backend/drivers/cswordmoduleinfo.h"
-#include "btwindowmodulechooser.h"
 #include <QToolBar>
+#include "btwindowmodulechooser.h"
+
+#include <QList>
+#include <QObject>
+#include <QString>
 #include <QStringList>
+#include "../../backend/drivers/cswordmoduleinfo.h"
+
 
 class CDisplayWindow;
+class QWidget;
 class BtModuleChooserButton;
 
 class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {

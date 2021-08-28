@@ -19,6 +19,7 @@
 #include <QTreeWidgetItem>
 #include <QWidget>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/keys/cswordversekey.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"

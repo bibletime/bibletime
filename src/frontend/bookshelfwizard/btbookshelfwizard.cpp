@@ -15,10 +15,14 @@
 #include <QAbstractButton>
 #include <QApplication>
 #include <QByteArray>
+#include <QDialog>
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QRect>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/btmoduleset.h"
+#include "../../util/btassert.h"
 #include "btbookshelfinstallfinalpage.h"
 #include "btbookshelflanguagespage.h"
 #include "btbookshelfremovefinalpage.h"

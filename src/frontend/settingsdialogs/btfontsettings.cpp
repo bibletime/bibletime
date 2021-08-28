@@ -12,22 +12,28 @@
 
 #include "btfontsettings.h"
 
-#include <set>
+#include <algorithm>
+#include <cstddef>
+#include <memory>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QFont>
 #include <QFontDialog>
 #include <QGroupBox>
 #include <QHBoxLayout>
+#include <QIcon>
 #include <QLabel>
+#include <QNonConstOverload>
+#include <QPair>
+#include <Qt>
 #include <QVBoxLayout>
-#include <QWidget>
+#include <set>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/language.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../../util/tool.h"
-#include "../bibletimeapp.h"
 #include "cconfigurationdialog.h"
 
 

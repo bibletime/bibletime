@@ -14,10 +14,12 @@
 
 #include <QWidget>
 
+#include <QObject>
+#include <QString>
+
 
 class QCheckBox;
 class QLineEdit;
-class QString;
 class QToolButton;
 
 class BtFindWidget: public QWidget {

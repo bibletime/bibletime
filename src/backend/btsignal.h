@@ -14,6 +14,8 @@
 
 #include <QObject>
 
+#include <QString>
+
 
 /**
 * BtSignal

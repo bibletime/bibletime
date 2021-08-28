@@ -12,17 +12,23 @@
 
 #include "btbookshelftreemodel.h"
 
+#include <QDataStream>
+#include <QModelIndexList>
+#include <QPair>
 #include <QtGlobal>
 #include <type_traits>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/macros.h"
+#include "../config/btconfigcore.h"
+#include "../drivers/btconstmoduleset.h"
+#include "../drivers/btmoduleset.h"
 #include "categoryitem.h"
 #include "indexingitem.h"
 #include "languageitem.h"
 #include "moduleitem.h"
 
-#include <QDebug>
 
 using namespace BookshelfModel;
 

@@ -12,14 +12,13 @@
 
 #include "csearchanalysisitem.h"
 
+#include <QBrush>
 #include <QFont>
-#include <QGraphicsRectItem>
 #include <QPainter>
-#include <QPen>
 #include <QPoint>
 #include <QRect>
+#include <QRectF>
 #include <utility>
-#include "../../../backend/drivers/cswordmoduleinfo.h"
 #include "csearchanalysisscene.h"
 
 

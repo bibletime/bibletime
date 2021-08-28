@@ -12,19 +12,23 @@
 
 #include "cmdiarea.h"
 
+#include <QAction>
 #include <QEvent>
+#include <QFlags>
+#include <QKeySequence>
 #include <QMdiSubWindow>
 #include <QMenu>
+#include <QPoint>
+#include <QRect>
+#include <QSize>
 #include <QStyle>
-#include <QtGlobal>
-#include <QtMath>
 #include <QTabBar>
 #include <QTimer>
-#include <QToolBar>
+#include <QWidget>
 #include <QWindowStateChangeEvent>
+#include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "bibletime.h"
-#include "displaywindow/btmodulechooserbar.h"
 #include "displaywindow/cdisplaywindow.h"
 #include "display/btmodelviewreaddisplay.h"
 

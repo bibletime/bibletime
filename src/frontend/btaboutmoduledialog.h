@@ -14,10 +14,15 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
+
 
 class CSwordModuleInfo;
 class QDialogButtonBox;
 class QTextEdit;
+class QWidget;
 
 /**
     Dialog to show the information about a module.

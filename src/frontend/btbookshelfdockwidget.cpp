@@ -12,21 +12,26 @@
 
 #include "btbookshelfdockwidget.h"
 
+#include <memory>
 #include <QAction>
-#include <QActionGroup>
 #include <QLabel>
+#include <QList>
 #include <QMenu>
 #include <QPushButton>
 #include <QStackedWidget>
+#include <QVariant>
 #include <QVBoxLayout>
+#include <QWidget>
 #include <utility>
+#include "../backend/bookshelfmodel/btbookshelfmodel.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfig.h"
+#include "../backend/drivers/cswordmoduleinfo.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
 #include "bibletime.h"
-#include "bibletimeapp.h"
 #include "btbookshelfview.h"
 #include "btbookshelfwidget.h"
 #include "messagedialog.h"

@@ -13,9 +13,9 @@
 #include "btmodulechooserbar.h"
 
 #include <QAction>
-#include <QDebug>
 #include <QList>
-#include <QToolBar>
+#include <Qt>
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btconnect.h"
 #include "../../util/btmodules.h"
 #include "../displaywindow/cdisplaywindow.h"

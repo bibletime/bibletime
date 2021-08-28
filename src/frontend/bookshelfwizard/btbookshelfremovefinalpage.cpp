@@ -12,12 +12,15 @@
 
 #include "btbookshelfremovefinalpage.h"
 
-#include <QDebug>
 #include <QLabel>
+#include <QSizePolicy>
 #include <QSpacerItem>
+#include <QStaticStringData>
+#include <QStringLiteral>
+#include <Qt>
 #include <QVBoxLayout>
+#include "../../backend/drivers/btmoduleset.h"
 #include "../../backend/managers/cswordbackend.h"
-#include "../../util/btconnect.h"
 #include "btbookshelfwizard.h"
 
 

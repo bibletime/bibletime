@@ -14,13 +14,14 @@
 
 #include "btconfigdialog.h"
 
-#include <QWidget>
+#include <QObject>
+#include <QString>
 #include <vector>
 #include "../../backend/config/btconfig.h"
-#include "../../backend/language.h"
 
 
 class CConfigurationDialog;
+class Language;
 class QCheckBox;
 class QComboBox;
 class QFontDialog;

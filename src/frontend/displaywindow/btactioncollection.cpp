@@ -12,8 +12,9 @@
 
 #include "btactioncollection.h"
 
-#include "../../util/btconnect.h"
-#include "../../util/directory.h"
+#include <QHash>
+#include "../../backend/config/btconfig.h"
+#include "../../util/btassert.h"
 
 
 QAction & BtActionCollection::action(QString const & name) const {

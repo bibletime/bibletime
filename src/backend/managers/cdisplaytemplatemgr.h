@@ -13,6 +13,7 @@
 #pragma once
 
 #include <QHash>
+#include <QString>
 #include <QStringList>
 #include "../../util/btassert.h"
 #include "../drivers/btmodulelist.h"

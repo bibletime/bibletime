@@ -12,6 +12,8 @@
 
 #include "btinstallpagemodel.h"
 
+#include <QtGlobal>
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
 

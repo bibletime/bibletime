@@ -13,8 +13,13 @@
 #pragma once
 
 #include <QDialog>
+
 #include <QLineEdit>
+#include <QObject>
+#include <QString>
+#include <Qt>
 #include <QTextEdit>
+
 
 class QDialogButtonBox;
 class QFormLayout;

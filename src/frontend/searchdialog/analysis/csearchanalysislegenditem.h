@@ -16,9 +16,11 @@
 #include "../../../backend/cswordmodulesearch.h"
 
 
-namespace Search {
+class QPainter;
+class QStyleOptionGraphicsItem;
+class QWidget;
 
-class CSearchAnalysisScene;
+namespace Search {
 
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
     public: /* Methods: */

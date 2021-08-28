@@ -13,10 +13,16 @@
 #include "colormanager.h"
 
 #include <QApplication>
+#include <QColor>
 #include <QDir>
+#include <QFileInfo>
+#include <QList>
 #include <QPalette>
 #include <QSettings>
+#include <QStringList>
+#include <QVariant>
 #include <utility>
+#include "../../util/btassert.h"
 #include "../../util/directory.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 

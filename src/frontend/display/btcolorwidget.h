@@ -14,6 +14,14 @@
 
 #include <QFrame>
 
+#include <QColor>
+#include <QObject>
+#include <QSize>
+#include <QString>
+
+
+class QMouseEvent;
+class QWidget;
 
 class BtColorWidget: public QFrame {
 

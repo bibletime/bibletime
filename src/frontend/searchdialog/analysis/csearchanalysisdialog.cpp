@@ -12,15 +12,15 @@
 
 #include "csearchanalysisdialog.h"
 
-#include <QAbstractButton>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QRect>
 #include <QtGlobal>
 #include <QVBoxLayout>
 #include <utility>
-#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../backend/cswordmodulesearch.h"
 #include "../../../util/btconnect.h"
 #include "../../messagedialog.h"
 #include "csearchanalysisscene.h"

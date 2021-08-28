@@ -12,7 +12,6 @@
 
 #include "bttoolbarpopupaction.h"
 
-#include <QAction>
 #include <QEvent>
 #include <QMenu>
 #include <QToolButton>

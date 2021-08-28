@@ -15,6 +15,7 @@
 #include <QMimeData>
 
 #include <QList>
+#include <QObject>
 #include <QString>
 #include "BookmarkItem.h"
 

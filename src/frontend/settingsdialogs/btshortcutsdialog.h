@@ -14,10 +14,16 @@
 
 #include <QDialog>
 
+#include <QKeySequence>
+#include <QObject>
+#include <QString>
+#include <Qt>
 
-class QKeySequence;
+
+class QKeyEvent;
 class QLabel;
 class QRadioButton;
+class QWidget;
 
 // *************** BtShortcutsDialog ***************************************************************************
 // A dialog to allow the user to input a shortcut for a primary and alternate key

@@ -12,12 +12,20 @@
 
 #include "cbooktreechooser.h"
 
+#include <memory>
 #include <QApplication>
+#include <QCursor>
 #include <QHBoxLayout>
+#include <QStringList>
+#include <Qt>
+#include <QTreeWidgetItemIterator>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/btmodulelist.h"
 #include "../../backend/drivers/cswordbookmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/keys/cswordkey.h"
 #include "../../backend/keys/cswordtreekey.h"
 #include "../../util/btconnect.h"
 #include "bthistory.h"

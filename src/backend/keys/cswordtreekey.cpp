@@ -12,11 +12,16 @@
 
 #include "cswordtreekey.h"
 
-#include <QDebug>
+#include <QByteArray>
 #include <QTextCodec>
 #include "../../util/btassert.h"
 #include "../../util/cp1252.h"
 #include "../drivers/cswordbookmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "cswordkey.h"
+
+// Sword includes:
+#include <treekeyidx.h>
 
 
 CSwordTreeKey::CSwordTreeKey(CSwordTreeKey const & copy)

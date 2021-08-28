@@ -15,12 +15,11 @@
 #include <memory>
 #include <QDir>
 #include <QString>
-#include "managers/cswordbackend.h"
+#include <QStringList>
 
 
+class CSwordBackend;
 namespace sword { class InstallSource; }
-
-class CSwordModuleInfo;
 
 namespace BtInstallBackend {
 

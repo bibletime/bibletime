@@ -14,12 +14,16 @@
 
 #include <QToolButton>
 
+#include <QObject>
+#include <QString>
 #include "../../backend/btglobal.h"
-#include "../../backend/managers/cswordbackend.h"
+#include "../../backend/drivers/btmodulelist.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 
 
-class CSwordModuleInfo;
+class QAction;
 class QMenu;
+class QWidget;
 
 /** This class manages the display options of the selected modules.
   * @author The BibleTime team

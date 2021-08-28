@@ -13,8 +13,14 @@
 #pragma once
 
 #include <QDialog>
+
+#include <QObject>
+#include <QString>
+#include <Qt>
+
+
 class QLineEdit;
-class QTextBrowser;
+class QWidget;
 
 /**
  * @brief The BtMessageInputDialog class provides a editable

@@ -14,8 +14,15 @@
 
 #include "cdisplaywindow.h"
 
+#include <QList>
+#include <QObject>
+#include "../../backend/managers/cswordbackend.h"
 
+
+class BtActionCollection;
+class CMDIArea;
 class CSwordLDKey;
+class CSwordModuleInfo;
 
 /** \brief The class used to display lexicons. */
 class CLexiconReadWindow: public CDisplayWindow {

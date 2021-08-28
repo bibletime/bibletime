@@ -14,6 +14,12 @@
 
 #include <QDialog>
 
+#include <QIcon>
+#include <QObject>
+#include <QString>
+#include <QWidget>
+#include <Qt>
+
 
 class QListWidget;
 class QListWidgetItem;

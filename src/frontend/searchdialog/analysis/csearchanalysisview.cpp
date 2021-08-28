@@ -12,8 +12,10 @@
 
 #include "csearchanalysisview.h"
 
+#include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QResizeEvent>
+#include <QRectF>
+#include <Qt>
 #include <QWidget>
 #include "csearchanalysisscene.h"
 

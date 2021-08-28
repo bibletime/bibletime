@@ -13,15 +13,17 @@
 #pragma once
 
 #include <QDialog>
+
+#include <QObject>
+#include <QString>
 #include <QStringList>
+#include <Qt>
 
 
-class QAbstractButton;
 class QCheckBox;
 class QDialogButtonBox;
-class QPushButton;
-class QUrl;
 class QTextBrowser;
+class QWidget;
 /**
   The Tip Of The Day dialog.
 */

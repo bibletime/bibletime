@@ -13,7 +13,6 @@
 #include "btversekeymenu.h"
 
 #include <QMenu>
-#include <QMouseEvent>
 #include <QTimerEvent>
 #include "../../../util/btconnect.h"
 

@@ -14,12 +14,16 @@
 
 #include <QMdiArea>
 
+#include <QObject>
+#include <QString>
+#include <QtCore>
 #include <QList>
 
 
 class BibleTime;
-class CSwordModuleInfo;
 class CDisplayWindow;
+class QMdiSubWindow;
+class QWidget;
 
 /**
   A custom MDI area widget.

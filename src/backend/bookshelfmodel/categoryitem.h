@@ -14,9 +14,9 @@
 
 #include "item.h"
 
-#include <QCoreApplication>
+#include <Qt>
+#include <QVariant>
 #include "../drivers/cswordmoduleinfo.h"
-#include "btbookshelfmodel.h"
 
 
 namespace BookshelfModel {

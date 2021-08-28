@@ -12,12 +12,12 @@
 
 #pragma once
 
-#include <QIcon>
 #include <QString>
 #include <QTextCodec>
 
 
 class CSwordModuleInfo;
+class QIcon;
 class QLabel;
 class QWidget;
 

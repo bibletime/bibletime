@@ -12,6 +12,8 @@
 
 #include "BtMimeData.h"
 
+#include <QByteArray>
+
 
 BTMimeData::BTMimeData() {}
 

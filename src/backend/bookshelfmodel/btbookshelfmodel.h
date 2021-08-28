@@ -15,10 +15,16 @@
 #include <QAbstractListModel>
 
 #include <memory>
+#include <QList>
+#include <QModelIndex>
+#include <QObject>
+#include <QString>
+#include <Qt>
+#include <QVariant>
 #include "../drivers/btconstmoduleset.h"
-#include "../drivers/btmoduleset.h"
-#include "../drivers/cswordmoduleinfo.h"
 
+
+class CSwordModuleInfo;
 
 /**
   Implements a simple list model projecting CSwordModuleInfo instances. This model is mostly

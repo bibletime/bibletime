@@ -12,9 +12,13 @@
 
 #include "language.h"
 
+#include <QByteArray>
+#include <QCharRef>
 #include <QHash>
+#include <QList>
 #include <QLocale>
 #include <QObject>
+#include <QtGlobal>
 #include <utility>
 #include "../util/btassert.h"
 #include "managers/btlocalemgr.h"

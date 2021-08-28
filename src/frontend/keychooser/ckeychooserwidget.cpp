@@ -13,11 +13,14 @@
 #include "ckeychooserwidget.h"
 
 #include <QComboBox>
+#include <QEvent>
 #include <QFocusEvent>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QNonConstOverload>
 #include <QString>
-#include <QWheelEvent>
+#include <Qt>
+#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "cscrollerwidgetset.h"
 

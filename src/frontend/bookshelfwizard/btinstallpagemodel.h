@@ -14,6 +14,12 @@
 
 #include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 
+#include <QModelIndex>
+#include <QObject>
+#include <QString>
+#include <QVariant>
+#include <Qt>
+
 
 class BtInstallPageModel: public BtBookshelfTreeModel {
 

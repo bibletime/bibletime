@@ -14,9 +14,11 @@
 
 #include <QWizard>
 
+#include <QObject>
+#include <QString>
 #include <QStringList>
+#include <Qt>
 #include "btbookshelfwizardenums.h"
-#include "../../util/btassert.h"
 
 
 class BtBookshelfWorksPage;
@@ -25,10 +27,10 @@ class BtBookshelfLanguagesPage;
 class BtBookshelfSourcesPage;
 class BtBookshelfSourcesProgressPage;
 class BtBookshelfTaskPage;
-class BtBookshelfUpdatePage;
 class BtModuleSet;
 class QKeyEvent;
 class QMessageBox;
+class QWidget;
 
 /** \brief The Bookshelf Manager wizard. */
 class BtBookshelfWizard final: public QWizard {

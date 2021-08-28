@@ -14,10 +14,12 @@
 
 #include "centrydisplay.h"
 
-#include "ctextrendering.h"
+#include <QString>
+#include "../drivers/btmodulelist.h"
 
 
-class CSwordTreeKey;
+struct DisplayOptions;
+struct FilterOptions;
 
 namespace Rendering {
 

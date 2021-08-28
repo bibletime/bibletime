@@ -14,8 +14,13 @@
 
 #include <QSortFilterProxyModel>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
 #include "../drivers/cswordmoduleinfo.h"
 
+
+class QModelIndex;
 
 class BtBookshelfFilterModel: public QSortFilterProxyModel {
 

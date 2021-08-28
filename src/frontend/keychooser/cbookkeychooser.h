@@ -14,13 +14,19 @@
 
 #include "ckeychooser.h"
 
+#include <QObject>
+#include <QString>
 #include <QList>
-#include "ckeychooserwidget.h"
+#include "../../backend/drivers/btmodulelist.h"
 
 
+class BTHistory;
+class CKeyChooserWidget;
 class CSwordBookModuleInfo;
 class CSwordKey;
 class CSwordTreeKey;
+class QHBoxLayout;
+class QWidget;
 
 class CBookKeyChooser final : public CKeyChooser {
 

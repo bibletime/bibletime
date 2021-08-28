@@ -13,10 +13,10 @@
 #pragma once
 
 #include <cstddef>
-#include <QDir>
-#include <QIcon>
 #include <QString>
 
+
+class QDir;
 
 namespace util {
 

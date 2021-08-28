@@ -15,9 +15,12 @@
 #include <QDialogButtonBox>
 #include <QFrame>
 #include <QHBoxLayout>
+#include <QListView>
 #include <QListWidget>
 #include <QListWidgetItem>
 #include <QPushButton>
+#include <QRect>
+#include <QSizePolicy>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include "../../util/btassert.h"

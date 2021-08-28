@@ -14,6 +14,12 @@
 
 #include <QListWidget>
 
+#include <QObject>
+#include <QSize>
+#include <QString>
+
+
+class QWidget;
 
 class CListWidget : public QListWidget {
         Q_OBJECT

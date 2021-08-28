@@ -14,19 +14,23 @@
 
 #include <QTreeWidget>
 
-#include <QLabel>
-#include "btsearchresultarea.h"
+#include <QHash>
+#include <QObject>
+#include <QSize>
+#include <QString>
+#include <QStringList>
+#include "../../backend/cswordmodulesearch.h"
 
 
 class CSwordModuleInfo;
 class QAction;
 class QContextMenuEvent;
 class QMenu;
-class QPoint;
-class QStringList;
-class StrongsResultList;
+class QWidget;
 
 namespace Search {
+
+class StrongsResultList;
 
 class CModuleResultView : public QTreeWidget {
         Q_OBJECT

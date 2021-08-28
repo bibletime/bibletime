@@ -14,11 +14,16 @@
 
 #include <QMenu>
 
-#include <QPersistentModelIndex>
+#include <QObject>
+#include <QString>
 
 
 class QAbstractItemModel;
+class QAction;
 class QActionGroup;
+class QEvent;
+class QModelIndex;
+class QWidget;
 
 /**
   This is a special menu, which shows the contents of an item model. The menu is repopulated

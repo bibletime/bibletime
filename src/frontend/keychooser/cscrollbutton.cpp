@@ -13,12 +13,10 @@
 #include "cscrollbutton.h"
 
 #include <cmath>
-#include <QApplication>
 #include <QCursor>
-#include <QEvent>
 #include <QMouseEvent>
 #include <QPoint>
-#include <QWheelEvent>
+#include <Qt>
 
 
 CScrollButton::CScrollButton(QWidget *parent)
@@ -43,7 +41,7 @@ void CScrollButton::mouseReleaseEvent(QMouseEvent *e) {
     releaseMouse();
     Q_EMIT unlock();
 }
-#include <stdio.h>
+
 void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
     if (m_isLocked) {
         // Recalculate the center of the widget (might change during grab):

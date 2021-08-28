@@ -12,18 +12,38 @@
 
 #include "btbookshelfworkspage.h"
 
+#include <algorithm>
+#include <QAbstractItemView>
 #include <QApplication>
+#include <QByteArray>
 #include <QComboBox>
+#include <QDir>
+#include <QFileInfo>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
 #include <QLineEdit>
+#include <QList>
+#include <QMenu>
+#include <QNonConstOverload>
 #include <QSet>
+#include <QSizePolicy>
+#include <QStaticStringData>
+#include <QStringList>
+#include <QStringLiteral>
+#include <Qt>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include <QWizard>
+#include <utility>
 #include "../../backend/btinstallbackend.h"
+#include "../../backend/bookshelfmodel/btbookshelfmodel.h"
 #include "../../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/btmoduleset.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/language.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
@@ -37,6 +57,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <installmgr.h>
+#include <swbuf.h>
 #include <swversion.h>
 #pragma GCC diagnostic pop
 

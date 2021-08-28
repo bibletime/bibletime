@@ -13,6 +13,7 @@
 #include "btglobal.h"
 
 #include <QDataStream>
+#include <QtGlobal>
 
 
 QDataStream &operator<<(QDataStream &out, const alignmentMode &mode) {

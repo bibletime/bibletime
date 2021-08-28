@@ -12,17 +12,24 @@
 
 #include "crangechooserdialog.h"
 
+#include <QByteArray>
 #include <QDialogButtonBox>
+#include <QFlags>
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
+#include <QList>
 #include <QListWidget>
 #include <QListWidgetItem>
+#include <QMap>
 #include <QPushButton>
+#include <QRegExp>
+#include <Qt>
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
@@ -35,6 +42,8 @@
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #include <versekey.h>
 #include <listkey.h>
+#include <swkey.h>
+#include <swmodule.h>
 #pragma GCC diagnostic pop
 
 namespace Search {

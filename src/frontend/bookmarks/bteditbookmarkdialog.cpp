@@ -13,15 +13,15 @@
 #include "bteditbookmarkdialog.h"
 
 #include <QDialogButtonBox>
+#include <QFlags>
 #include <QFormLayout>
 #include <QLabel>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QTextOption>
 #include <QVBoxLayout>
-#include <QWidget>
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
-#include "../bibletimeapp.h"
 #include "../messagedialog.h"
 
 

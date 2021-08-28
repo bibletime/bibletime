@@ -12,10 +12,13 @@
 
 #include "messagedialog.h"
 
+#include <QAbstractButton>
 #include <QAction>
 #include <QDialogButtonBox>
 #include <QMessageBox>
+#include <QObject>
 #include <QPushButton>
+#include <Qt>
 #include "../util/btassert.h"
 
 

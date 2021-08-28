@@ -12,26 +12,37 @@
 
 #include "cdisplaysettings.h"
 
+#include <map>
+#include <memory>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QFont>
 #include <QLabel>
 #include <QLocale>
+#include <QMap>
+#include <QNonConstOverload>
+#include <QPalette>
+#include <QSizePolicy>
+#include <Qt>
 #include <QVBoxLayout>
 #include <QFormLayout>
+#include <utility>
 #include "../../backend/config/btconfig.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
+#include "../../backend/language.h"
 #include "../../backend/managers/btlocalemgr.h"
 #include "../../backend/managers/colormanager.h"
 #include "../../backend/managers/cdisplaytemplatemgr.h"
 #include "../../backend/rendering/cdisplayrendering.h"
+#include "../../backend/rendering/ctextrendering.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../../util/tool.h"
-#include "../bibletimeapp.h"
 #include "cconfigurationdialog.h"
 
 // Sword includes:
-#include <swlocale.h>
+#include <swbuf.h>
 
 
 /** Initializes the startup section of the OD. */

@@ -14,8 +14,15 @@
 
 #include "cswordmoduleinfo.h"
 
+#include <QObject>
+#include <QString>
 
-namespace sword { class TreeKeyIdx; }
+
+class CSwordBackend;
+namespace sword {
+class SWModule;
+class TreeKeyIdx;
+}
 
 /**
   \brief Class for generic book support

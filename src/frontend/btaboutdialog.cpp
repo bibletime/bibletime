@@ -13,15 +13,24 @@
 #include "btaboutdialog.h"
 
 #include <QApplication>
+#include <QColor>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
+#include <QDir>
+#include <QFile>
+#include <QFont>
 #include <QFontMetrics>
+#include <QHBoxLayout>
+#include <QIODevice>
 #include <QLabel>
+#include <QPalette>
 #include <QTabWidget>
 #include <QTextBrowser>
 #include <QTextStream>
+#include <QtGlobal>
 #include <QUrl>
 #include <QVBoxLayout>
+#include <QWidget>
 #include "../util/btconnect.h"
 #include "../util/bticons.h"
 #include "../util/directory.h"

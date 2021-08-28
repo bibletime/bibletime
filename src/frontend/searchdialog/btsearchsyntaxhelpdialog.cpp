@@ -12,13 +12,18 @@
 
 #include "btsearchsyntaxhelpdialog.h"
 
+#include <QColor>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
+#include <QFont>
+#include <QPalette>
 #include <QTextBrowser>
 #include <QVBoxLayout>
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
 
+
+class QUrl;
 
 namespace Search {
 

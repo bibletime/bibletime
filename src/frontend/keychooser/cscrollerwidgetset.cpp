@@ -12,7 +12,9 @@
 
 #include "cscrollerwidgetset.h"
 
+#include <QPoint>
 #include <QString>
+#include <Qt>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWheelEvent>

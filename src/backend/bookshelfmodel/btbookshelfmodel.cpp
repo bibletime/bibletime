@@ -13,9 +13,14 @@
 #include "btbookshelfmodel.h"
 
 #include <QIcon>
+#include <QSet>
+#include <QtAlgorithms>
+#include <QtGlobal>
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/macros.h"
+#include "../drivers/cswordmoduleinfo.h"
+#include "../drivers/btconstmoduleset.h"
 
 
 BtBookshelfModel::BtBookshelfModel(ConstructInPrivate const &) {}

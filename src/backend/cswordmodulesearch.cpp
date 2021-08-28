@@ -13,10 +13,20 @@
 #include "cswordmodulesearch.h"
 
 #include <algorithm>
+#include <QChar>
+#include <QDataStream>
+#include <QList>
+#include <QRegExp>
+#include <QStringList>
+#include <QtCore>
+#include "../util/btassert.h"
 #include "../util/tool.h"
-#include "btglobal.h"
 #include "config/btconfig.h"
+#include "drivers/cswordmoduleinfo.h"
 #include "managers/cswordbackend.h"
+
+// Sword includes:
+#include <listkey.h>
 
 
 namespace CSwordModuleSearch {

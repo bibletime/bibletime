@@ -14,6 +14,9 @@
 
 #include "cswordkey.h"
 
+#include <QString>
+#include <type_traits>
+
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"

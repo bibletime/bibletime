@@ -12,13 +12,16 @@
 
 #include "btstandardworkstab.h"
 
-#include <QCheckBox>
 #include <QComboBox>
 #include <QFormLayout>
 #include <QLabel>
+#include <QList>
+#include <QSizePolicy>
+#include <QStringList>
 #include <QVBoxLayout>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/drivers/cswordlexiconmoduleinfo.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/managers/cswordbackend.h"
 #include "../../util/tool.h"
 #include "cswordsettings.h"

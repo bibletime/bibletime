@@ -12,12 +12,17 @@
 
 #include "btopenworkaction.h"
 
+#include <QAbstractItemModel>
+#include <QVariant>
+#include <QtGlobal>
 #include <utility>
 #include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../backend/bookshelfmodel/btbookshelfmodel.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "../backend/config/btconfigcore.h"
 #include "../backend/managers/cswordbackend.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
-#include "bibletimeapp.h"
 #include "btbookshelfgroupingmenu.h"
 
 

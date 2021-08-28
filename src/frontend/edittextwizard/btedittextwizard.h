@@ -13,10 +13,16 @@
 #pragma once
 
 #include <QWizard>
-#include "../../util/btassert.h"
+
+#include <QObject>
+#include <QString>
+#include <Qt>
+
 
 class BtPlainOrHtmlPage;
 class BtEditTextPage;
+class QFont;
+class QWidget;
 
 /** \brief The Edit Text wizard for editing the personal commentary. */
 class BtEditTextWizard final: public QWizard {

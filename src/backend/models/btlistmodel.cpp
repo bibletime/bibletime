@@ -12,7 +12,9 @@
 
 #include "btlistmodel.h"
 
+#include <QList>
 #include <QStandardItem>
+
 
 BtListModel::BtListModel(bool checkable, QObject *parent, int numColumns)
     : QStandardItemModel(parent),

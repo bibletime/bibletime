@@ -13,19 +13,21 @@
 #include "tool.h"
 
 #include <QApplication>
+#include <QChar>
 #include <QFile>
-#include <QFileDialog>
+#include <QFileDevice>
+#include <QFontMetrics>
+#include <QFrame>
+#include <QIODevice>
 #include <QLabel>
-#include <QRegExp>
+#include <QMessageBox>
+#include <QObject>
 #include <QTextStream>
 #include <QtGlobal>
 #include <QWidget>
 #include "../backend/drivers/cswordmoduleinfo.h"
-#include "../backend/managers/cswordbackend.h"
-#include "../frontend/messagedialog.h"
 #include "btassert.h"
 #include "cresmgr.h"
-#include "directory.h"
 
 
 namespace util {

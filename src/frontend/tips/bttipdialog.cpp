@@ -13,20 +13,27 @@
 #include "bttipdialog.h"
 
 #include <QCheckBox>
+#include <QColor>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
+#include <QFlags>
+#include <QFont>
 #include <QHBoxLayout>
+#include <QList>
+#include <QPalette>
 #include <QPushButton>
+#include <QSizePolicy>
 #include <QTextBrowser>
 #include <QVBoxLayout>
+#include <QWidget>
 #include "../../backend/config/btconfig.h"
 #include "../../util/btconnect.h"
 #include "../../util/bticons.h"
 #include "../../util/cresmgr.h"
-#include "../../util/directory.h"
-#include "../bibletimeapp.h"
 #include "../messagedialog.h"
 
+
+class QUrl;
 
 namespace {
 

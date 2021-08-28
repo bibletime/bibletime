@@ -15,12 +15,16 @@
 #ifdef Q_OS_WIN
 #include <array>
 #endif
+#include <cstdio>
+#include <cstdlib>
 #include <memory>
 #include <QByteArray>
 #include <QDebug>
 #include <QFile>
-#include <QPainter>
+#include <QIODevice>
+#include <QMessageBox>
 #include <QString>
+#include <Qt>
 #include <QtGlobal>
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -33,6 +37,8 @@
 #include "../util/bticons.h"
 #include "messagedialog.h"
 
+
+class QMessageLogContext;
 
 namespace {
 
@@ -81,7 +87,7 @@ void myMessageOutput(QtMsgType type,
 
         // Dump core on purpose (see qInstallMsgHandler documentation):
         debugStream->close();
-        abort();
+        std::abort();
     }
 }
 

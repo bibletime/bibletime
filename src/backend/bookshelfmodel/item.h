@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <Qt>
 #include <QList>
 #include <QVariant>
 #include "../../util/btassert.h"

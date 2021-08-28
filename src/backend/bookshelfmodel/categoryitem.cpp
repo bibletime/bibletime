@@ -12,6 +12,9 @@
 
 #include "categoryitem.h"
 
+#include <QIcon>
+#include "../drivers/cswordmoduleinfo.h"
+
 
 namespace BookshelfModel {
 

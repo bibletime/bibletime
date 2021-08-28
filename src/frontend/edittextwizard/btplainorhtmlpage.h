@@ -14,9 +14,14 @@
 
 #include <QWizardPage>
 
+#include <QObject>
+#include <QString>
+
+
 class QGroupBox;
 class QRadioButton;
 class QVBoxLayout;
+class QWidget;
 
 class BtPlainOrHtmlPage final: public QWizardPage {
 

@@ -14,10 +14,15 @@
 
 #include <QDialog>
 
+#include <QObject>
+#include <QString>
+#include <Qt>
+
 
 class QDialogButtonBox;
 class QLabel;
 class QPushButton;
+class QWidget;
 
 class BtWelcomeDialog: public QDialog {
 

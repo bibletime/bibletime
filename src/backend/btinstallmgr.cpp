@@ -12,8 +12,15 @@
 
 #include "btinstallmgr.h"
 
+#include <QByteArray>
+#include <QtGlobal>
 #include "../util/btassert.h"
 #include "btinstallbackend.h"
+
+
+// Sword includes:
+#include <defs.h>
+#include <installmgr.h>
 
 
 namespace {

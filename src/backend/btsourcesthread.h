@@ -15,6 +15,8 @@
 #include <QThread>
 
 #include <atomic>
+#include <QObject>
+#include <QString>
 
 
 class BtSourcesThread: public QThread {

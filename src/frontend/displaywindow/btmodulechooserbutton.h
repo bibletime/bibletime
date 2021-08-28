@@ -14,12 +14,15 @@
 
 #include <QToolButton>
 
+#include <QObject>
 #include <QString>
 #include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
 class BtModuleChooserMenu;
+class QIcon;
+class QWidget;
 
 /* A toolbar button for choosing a module in a window. When user selects a
    module, button sends a signal. This button needs to get a signal back after

@@ -14,16 +14,18 @@
 
 #include <QComboBox>
 #include <QHBoxLayout>
+#include <QKeySequence>
 #include <QLabel>
 #include <QList>
+#include <QMessageBox>
+#include <QNonConstOverload>
 #include <QStackedWidget>
+#include <Qt>
 #include <QVBoxLayout>
-#include <QWidget>
 #include <utility>
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
 #include "../bibletime.h"
-#include "../bibletimeapp.h"
 #include "../displaywindow/btactioncollection.h"
 #include "../displaywindow/cbiblereadwindow.h"
 #include "../displaywindow/cbookreadwindow.h"
@@ -31,6 +33,7 @@
 #include "../displaywindow/cdisplaywindow.h"
 #include "../displaywindow/clexiconreadwindow.h"
 #include "../messagedialog.h"
+#include "btshortcutseditor.h"
 #include "cconfigurationdialog.h"
 
 

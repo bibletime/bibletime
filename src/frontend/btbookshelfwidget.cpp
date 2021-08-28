@@ -12,28 +12,32 @@
 
 #include "btbookshelfwidget.h"
 
-#include <QActionGroup>
+#include <QAction>
 #include <QApplication>
 #include <QHBoxLayout>
-#include <QHeaderView>
 #include <QEvent>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
+#include <QList>
 #include <QMenu>
+#include <QModelIndex>
 #include <QToolButton>
+#include <QVariant>
 #include <QVBoxLayout>
+#include <utility>
 #include "../backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfig.h"
 #include "../util/btassert.h"
 #include "../util/btconnect.h"
 #include "../util/cresmgr.h"
-#include "../util/directory.h"
-#include "bibletimeapp.h"
-#include "btbookshelfdockwidget.h"
 #include "btbookshelfgroupingmenu.h"
 #include "btbookshelfview.h"
 
+
+class CSwordModuleInfo;
+class QPoint;
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
     : QWidget(parent, flags)

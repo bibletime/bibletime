@@ -12,19 +12,19 @@
 
 #include "cswordldkey.h"
 
+#include <QByteArray>
 #include <QTextCodec>
 #include "../../util/btassert.h"
 #include "../../util/cp1252.h"
-#include "../drivers/cswordlexiconmoduleinfo.h"
+#include "../drivers/cswordmoduleinfo.h"
 
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#include <swkey.h>
 #include <swmodule.h>
-#include <swld.h>
-#include <utilstr.h>
 #pragma GCC diagnostic pop
 
 

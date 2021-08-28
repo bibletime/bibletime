@@ -14,17 +14,23 @@
 
 #include <cstdlib>
 #include <cstring>
+#include <QByteArray>
+#include <QChar>
+#include <QCharRef>
+#include <QList>
 #include <QRegExp>
 #include <QString>
+#include <QStringList>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../managers/cswordbackend.h"
 
 // Sword includes:
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <utilxml.h>
-#pragma GCC diagnostic pop
+#include <gbfhtml.h>
+#include <swbasicfilter.h>
+#include <swbuf.h>
+#include <swkey.h>
+#include <swmodule.h>
 
 
 Filters::GbfToHtml::GbfToHtml() : sword::GBFHTML() {

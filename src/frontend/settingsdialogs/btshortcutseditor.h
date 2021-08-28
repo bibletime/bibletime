@@ -14,11 +14,14 @@
 
 #include <QWidget>
 
+#include <QKeySequence>
+#include <QObject>
+#include <QString>
+
 
 class BtActionCollection;
 class BtShortcutsDialog;
 class QGroupBox;
-class QKeySequence;
 class QLabel;
 class QPushButton;
 class QRadioButton;

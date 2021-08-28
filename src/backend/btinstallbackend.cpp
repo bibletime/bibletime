@@ -13,10 +13,15 @@
 #include "btinstallbackend.h"
 
 #include <cstring>
+#include <map>
+#include <QByteArray>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
-#include <QFileInfo>
+#include <QIODevice>
+#include <QList>
+#include <type_traits>
+#include <utility>
 #include "../util/btassert.h"
 #include "../util/directory.h"
 #include "managers/cswordbackend.h"
@@ -26,8 +31,8 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <filemgr.h>
 #include <installmgr.h>
+#include <multimapwdef.h>
 #include <swconfig.h>
 #include <swbuf.h>
 #pragma GCC diagnostic pop

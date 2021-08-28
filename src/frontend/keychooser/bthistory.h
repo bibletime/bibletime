@@ -15,6 +15,7 @@
 #include <QObject>
 
 #include <QList>
+#include <QString>
 
 
 class CSwordKey;

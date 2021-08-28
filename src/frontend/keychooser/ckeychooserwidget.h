@@ -14,17 +14,16 @@
 
 #include <QComboBox>
 
+#include <QObject>
+#include <QString>
 #include <QStringList>
+#include <QWidget>
 #include "../../util/btassert.h"
 
 
-class CLexiconKeyChooser;
 class CScrollerWidgetSet;
-class QWheelEvent;
-class QHBoxLayout;
-class QWidget;
-class QObject;
 class QEvent;
+class QHBoxLayout;
 
 /**
 * We use this class to control the focus move in the combobox

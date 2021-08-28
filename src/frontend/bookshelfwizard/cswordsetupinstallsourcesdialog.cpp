@@ -12,28 +12,32 @@
 
 #include "cswordsetupinstallsourcesdialog.h"
 
+#include <QByteArray>
 #include <QComboBox>
+#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QLayout>
 #include <QLineEdit>
+#include <QMessageBox>
+#include <QNonConstOverload>
 #include <QPushButton>
+#include <Qt>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 #include <QProgressDialog>
 #include <QApplication>
 #include "../../backend/btinstallbackend.h"
 #include "../../backend/btinstallmgr.h"
-#include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../messagedialog.h"
 
 // Sword includes:
 #include <installmgr.h>
+#include <swbuf.h>
 
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path

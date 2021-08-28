@@ -14,7 +14,9 @@
 
 #include <QWidget>
 
+#include <QObject>
 #include <QString>
+#include <QStringList>
 #include "../../backend/drivers/cswordmoduleinfo.h"
 
 
@@ -22,7 +24,6 @@ class BtModuleChooserMenu;
 class QAction;
 class QLabel;
 class QToolButton;
-
 
 /**
 * A widget for choosing a module in a window. Consists of a label and a button.

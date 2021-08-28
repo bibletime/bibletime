@@ -14,11 +14,14 @@
 
 #include <QWidget>
 
+#include <QObject>
+#include <QString>
+
 
 class CScrollButton;
-class QString;
 class QToolButton;
 class QVBoxLayout;
+class QWheelEvent;
 
 /**
  * This class implements the Scroller Widget-set, which

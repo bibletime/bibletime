@@ -14,13 +14,13 @@
 
 #include "btbookshelfwizardpage.h"
 
-#include "../../backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "../../backend/drivers/btmoduleset.h"
+#include <QObject>
+#include <QString>
 
 
-class BtBookshelfWizard;
 class QLabel;
 class QVBoxLayout;
+class QWidget;
 
 class BtBookshelfRemoveFinalPage final: public BtBookshelfWizardPage {
 

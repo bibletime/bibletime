@@ -12,9 +12,14 @@
 
 #pragma once
 
+#include <QString>
 #include "../config/btconfig.h"
 #include "ctextrendering.h"
 
+
+class CSwordKey;
+struct DisplayOptions;
+struct FilterOptions;
 
 namespace Rendering {
 

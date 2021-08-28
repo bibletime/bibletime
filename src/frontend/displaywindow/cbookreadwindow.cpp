@@ -13,10 +13,12 @@
 #include "cbookreadwindow.h"
 
 #include <QAction>
-#include <QMenu>
 #include <QSplitter>
+#include <Qt>
 #include <QToolBar>
-#include "../../backend/keys/cswordtreekey.h"
+#include "../../backend/config/btconfigcore.h"
+#include "../../backend/drivers/btmodulelist.h"
+#include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../util/btassert.h"
 #include "../../util/btconnect.h"
 #include "../../util/cresmgr.h"
@@ -24,6 +26,7 @@
 #include "../bibletime.h"
 #include "../display/btmodelviewreaddisplay.h"
 #include "../keychooser/cbooktreechooser.h"
+#include "../keychooser/ckeychooser.h"
 #include "btactioncollection.h"
 #include "btdisplaysettingsbutton.h"
 #include "btmodulechooserbar.h"

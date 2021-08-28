@@ -14,6 +14,8 @@
 
 #include "btbookshelfwizardpage.h"
 
+#include <QObject>
+#include <QString>
 #include "btbookshelfwizardenums.h"
 
 
@@ -21,6 +23,7 @@ class QGroupBox;
 class QLabel;
 class QRadioButton;
 class QVBoxLayout;
+class QWidget;
 
 class BtBookshelfTaskPage final: public BtBookshelfWizardPage {
 
