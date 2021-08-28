@@ -436,5 +436,5 @@ private: /* Fields: */
 
 };
 
-Q_DECLARE_METATYPE(CSwordModuleInfo::Category);
+Q_DECLARE_METATYPE(CSwordModuleInfo::Category)
 Q_DECLARE_OPERATORS_FOR_FLAGS(CSwordModuleInfo::Categories)
