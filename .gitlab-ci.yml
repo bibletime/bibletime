@@ -1,3 +1,0 @@
-include:
-  - project: bibletime/ci
-    file: /workflows/bibletime/bibletime.yml
