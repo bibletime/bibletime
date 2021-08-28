@@ -34,4 +34,4 @@ sword::SWLocale * localeTranslator();
 QString defaultLocaleName();
 void setDefaultLocaleName(QString const & localeName);
 
-};
+}
