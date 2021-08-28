@@ -54,21 +54,21 @@ QString CrossRefRendering::entryLink(KeyTreeItem const & item,
                 break;
             }
             //fall through for non-Bible modules
-            Q_FALLTHROUGH();
+            [[fallthrough]];
         case KeyTreeItem::Settings::CompleteLong:
             if (isBible) {
                 linkText = vk.key();
                 break;
             }
             //fall through for non-Bible modules
-            Q_FALLTHROUGH();
+            [[fallthrough]];
         case KeyTreeItem::Settings::SimpleKey:
             if (isBible) {
                 linkText = QString::number(vk.verse());
                 break;
             }
             //fall through for non-Bible modules
-            Q_FALLTHROUGH();
+            [[fallthrough]];
         default: { //default behaviour to return the passed key
             linkText = item.key();
             break;

@@ -59,28 +59,28 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
             linkText = module.name() + ':' + vk.shortText();
             break;
         }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
 
     case KeyTreeItem::Settings::CompleteShort:
         if (isBible) {
             linkText = vk.shortText();
             break;
         }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
 
     case KeyTreeItem::Settings::ExpandedLong:
         if (isBible) {
             linkText = QString("%1 (%2)").arg(vk.key()).arg(module.name());
             break;
         }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
 
     case KeyTreeItem::Settings::CompleteLong:
         if (isBible) {
             linkText = vk.key();
             break;
         }
-        Q_FALLTHROUGH();
+        [[fallthrough]];
 
     case KeyTreeItem::Settings::SimpleKey:
         if (isBible) {
@@ -114,7 +114,7 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
             }
             break;
         } // else fall through for non-Bible modules
-        Q_FALLTHROUGH();
+        [[fallthrough]];
 
     default: //default behaviour to return the passed key
         linkText = item.key();

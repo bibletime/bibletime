@@ -111,7 +111,7 @@ QString formatInfo(const ListInfoData & list,  BtConstModuleList const & modules
                 } else {
                     BT_ASSERT(false); /// \todo Why is this here?
                 }
-                Q_FALLTHROUGH();
+                [[fallthrough]];
             default:
                 continue;
         }

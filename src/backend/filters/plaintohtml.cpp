@@ -13,7 +13,6 @@
 #include "plaintohtml.h"
 
 #include <QDebug>
-#include <QtGlobal>
 
 // Sword includes:
 #pragma GCC diagnostic push
@@ -86,7 +85,7 @@ char Filters::PlainToHtml::processText(sword::SWBuf &text,
                 text += "</span>";
                 inFootNote = false;
             }
-            Q_FALLTHROUGH();
+            [[fallthrough]];
 
         default:
             text += *from;

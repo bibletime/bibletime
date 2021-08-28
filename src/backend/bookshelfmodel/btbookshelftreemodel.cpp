@@ -123,7 +123,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex & index, int role) const {
         case Qt::CheckStateRole:
             if (!m_checkable)
                 break;
-            Q_FALLTHROUGH();
+            [[fallthrough]];
 
         case BtBookshelfTreeModel::CheckStateRole:
             return i->checkState();
