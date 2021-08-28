@@ -36,7 +36,7 @@
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <installmgr.h>
+#include <installmgr.h> // IWYU pragma: keep for BtInstallBackend::source()
 #pragma GCC diagnostic pop
 
 

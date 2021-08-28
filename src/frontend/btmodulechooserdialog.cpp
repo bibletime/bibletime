@@ -15,7 +15,7 @@
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "../backend/drivers/cswordmoduleinfo.h"
+#include "../backend/drivers/cswordmoduleinfo.h" // IWYU pragma: keep for Qt con
 #include "../util/btconnect.h"
 #include "btaboutmoduledialog.h"
 #include "btbookshelfview.h"

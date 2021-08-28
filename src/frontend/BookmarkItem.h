@@ -15,7 +15,7 @@
 #include <QString>
 
 
-class BTMimeData;
+class BTMimeData; /* IWYU pragma: keep because needs to be friend. */
 
 /**
   Class which represents a bookmark. Includes key, module name and description,
