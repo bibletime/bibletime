@@ -13,6 +13,7 @@
 #include "gbftohtml.h"
 
 #include <cstdlib>
+#include <cstring>
 #include <QRegExp>
 #include <QString>
 #include "../../util/btassert.h"
@@ -256,7 +257,7 @@ char hexToChar(char const * const hex) {
 
 bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
     if (!substituteToken(buf, token)) { // More than a simple replace
-        size_t const tokenLength = strlen(token);
+        size_t const tokenLength = std::strlen(token);
 
         BT_ASSERT(dynamic_cast<UserData *>(userData));
         UserData * const myUserData = static_cast<UserData *>(userData);
@@ -267,15 +268,15 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
         /* We use several append calls because appendFormatted slows down
            filtering, which should be fast. */
 
-        if (!strncmp(token, "WG", 2u)
-            || !strncmp(token, "WH", 2u)
-            || !strncmp(token, "WT", 2u))
+        if (!std::strncmp(token, "WG", 2u)
+            || !std::strncmp(token, "WH", 2u)
+            || !std::strncmp(token, "WT", 2u))
         {
             buf.append('<').append(token).append('>');
-        } else if (!strncmp(token, "RB", 2u)) {
+        } else if (!std::strncmp(token, "RB", 2u)) {
             myUserData->hasFootnotePreTag = true;
             buf.append("<span class=\"footnotepre\">");
-        } else if (!strncmp(token, "RF", 2u)) {
+        } else if (!std::strncmp(token, "RF", 2u)) {
             if (myUserData->hasFootnotePreTag) {
                 //     qWarning("inserted footnotepre end");
                 buf.append("</span>");
@@ -291,16 +292,16 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
                .append("\">*</span> ");
             myUserData->swordFootnote++;
             userData->suspendTextPassThru = true;
-        } else if (!strncmp(token, "Rf", 2u)) { // End of footnote
+        } else if (!std::strncmp(token, "Rf", 2u)) { // End of footnote
             userData->suspendTextPassThru = false;
-        } else if (!strncmp(token, "FN", 2u)) {
+        } else if (!std::strncmp(token, "FN", 2u)) {
             // The end </font> tag is inserted in addTokenSubsitute
             buf.append("<font face=\"");
             for (size_t i = 2u; i < tokenLength; i++)
                 if (token[i] != '\"')
                     buf.append(token[i]);
             buf.append("\">");
-        } else if (!strncmp(token, "CA", 2u)) { // ASCII value <CA##> in hex
+        } else if (!std::strncmp(token, "CA", 2u)) { // ASCII value <CA##> in hex
             BT_ASSERT(tokenLength == 4u);
             buf.append(static_cast<char>(hexToChar(token + 2u)));
         } else {
