@@ -225,9 +225,22 @@ void BtQuickWidget::mouseReleased(int x, int y) {
 
 void BtQuickWidget::setupScrollTimer() {
     m_scrollTimer.setInterval(100);
-    connect(&m_scrollTimer, &QTimer::timeout,
-            this, &BtQuickWidget::scrollTimerSlot);
     m_scrollTimer.setSingleShot(false);
+    connect(&m_scrollTimer, &QTimer::timeout, this,
+            [this]{
+                int y = mapFromGlobal(QCursor::pos()).y();
+                if ((y >= 0) & (y-height() < 0))
+                    return;
+                if (y < 0) {
+                    scroll(-8);
+                } else {
+                    scroll(8);
+                }
+                int y2 = y * y;
+                if (y2 > 100)
+                    y2 = 100;
+                m_scrollTimer.setInterval(500 / y2);
+            });
 }
 
 void BtQuickWidget::startScrollTimer() {
@@ -236,21 +249,6 @@ void BtQuickWidget::startScrollTimer() {
 }
 
 void BtQuickWidget::stopScrollTimer() { m_scrollTimer.stop(); }
-
-void BtQuickWidget::scrollTimerSlot() {
-    int y = mapFromGlobal(QCursor::pos()).y();
-    if ((y >= 0) & (y-height() < 0))
-        return;
-    if (y < 0) {
-        scroll(-8);
-    } else {
-        scroll(8);
-    }
-    int y2 = y * y;
-    if (y2 > 100)
-        y2 = 100;
-    m_scrollTimer.setInterval(500 / y2);
-}
 
 void BtQuickWidget::wheelEvent(QWheelEvent * event) {
     BibleTime::instance()->autoScrollStop();

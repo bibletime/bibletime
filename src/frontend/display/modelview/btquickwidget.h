@@ -56,9 +56,6 @@ protected:
        virtual void mouseDoubleClickEvent(QMouseEvent *event) override;
        virtual void wheelEvent(QWheelEvent * event) override;
 
-private Q_SLOTS:
-    void scrollTimerSlot();
-
 private:
     BtQmlInterface* getQmlInterface() const;
     void setupScrollTimer();
