@@ -78,20 +78,14 @@ void BtQuickWidget::dragEnterEvent( QDragEnterEvent* e ) {
     return;
 }
 
-// Reimplementation from QQuickWidget
-void BtQuickWidget::dropEvent( QDropEvent* e ) {
-    if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
-        //see docs for BTMimeData and QMimeData
-        const QMimeData* mimedata = e->mimeData();
-        if (mimedata != nullptr) {
-            const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
-            if (btmimedata != nullptr) {
-                BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmarks().first();
-                Q_EMIT referenceDropped(item.key());
-                e->acceptProposedAction();
-                return;
-            }
-        }
+void BtQuickWidget::dropEvent(QDropEvent * const e) {
+    if (auto const * const btmimedata =
+                qobject_cast<BTMimeData const *>(e->mimeData()))
+    {
+        BookmarkItem item = btmimedata->bookmarks().first();
+        Q_EMIT referenceDropped(item.key());
+        e->acceptProposedAction();
+        return;
     }
 }
 
