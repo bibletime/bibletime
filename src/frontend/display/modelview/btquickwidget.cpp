@@ -46,36 +46,26 @@ BtQmlInterface* BtQuickWidget::getQmlInterface() const {
     return m_scrollView->getQmlInterface();
 }
 
-// Reimplementation from QQuickWidget
-void BtQuickWidget::dragEnterEvent( QDragEnterEvent* e ) {
-    if ( ! e->mimeData()->hasFormat("BibleTime/Bookmark"))
-        return;
+void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
+    if (auto const * const btmimedata =
+                qobject_cast<BTMimeData const *>(e->mimeData()))
+    {
+        auto const & item = btmimedata->bookmarks().first();
+        auto * const m =
+                CSwordBackend::instance()->findModuleByName(item.module());
+        BT_ASSERT(m);
 
-    const QMimeData* mimedata = e->mimeData();
-    if (mimedata == nullptr)
-        return;
-
-    const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
-    if (btmimedata == nullptr)
-        return;
-
-    BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmarks().first();
-    QString moduleName = item.module();
-    CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
-    BT_ASSERT(m);
-
-    // Is bible reference bookmark compatible with the module type?
-    CSwordModuleInfo::ModuleType bookmarkType = m->type();
-    if ((bookmarkType == CSwordModuleInfo::Bible ||
-        bookmarkType == CSwordModuleInfo::Commentary)) {
-        if (getQmlInterface()->isBibleOrCommentary()) {
+        // Is bible reference bookmark compatible with the module type?
+        CSwordModuleInfo::ModuleType bookmarkType = m->type();
+        if ((bookmarkType == CSwordModuleInfo::Bible
+             || bookmarkType == CSwordModuleInfo::Commentary)
+            && getQmlInterface()->isBibleOrCommentary())
+        {
             e->acceptProposedAction();
-            return;
+        } else {
+            QQuickWidget::dragEnterEvent(e);
         }
     }
-
-    QQuickWidget::dragEnterEvent(e);
-    return;
 }
 
 void BtQuickWidget::dropEvent(QDropEvent * const e) {
