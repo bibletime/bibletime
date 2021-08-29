@@ -129,33 +129,27 @@ QString BtTextFilter::processText(const QString &text) {
     }
     auto parts = splitText(localText);
     fixDoubleBR(parts);
-    if (m_showReferences) {
 
-        int i = 0;
-        int count = parts.count();
-        do {
-            auto const & part = parts.at(i);
-            auto const partIsTag = part.startsWith('<');
+    int i = 0;
+    int count = parts.count();
+    do {
+        auto const & part = parts.at(i);
+        auto const partIsTag = part.startsWith('<');
 
-            if (partIsTag && part.contains("class=\"footnote\"")) {
-                i= i + rewriteFootnoteAsLink(parts, i, part);
+        if (partIsTag && part.contains("class=\"footnote\"")) {
+            i= i + rewriteFootnoteAsLink(parts, i, part);
 
-            } else if (partIsTag && (part.contains("href=\"") ) ) {
-                i = i + rewriteHref(parts, i, part);
+        } else if (partIsTag && (part.contains("href=\"") ) ) {
+            i = i + rewriteHref(parts, i, part);
 
-            } else if (partIsTag && (
-                           part.contains("lemma=\"") ||part.contains("morph=\"") ) ) {
-                i= i+ rewriteLemmaOrMorphAsLink(parts, i, part);
+        } else if (partIsTag && (
+                       part.contains("lemma=\"") ||part.contains("morph=\"") ) ) {
+            i= i+ rewriteLemmaOrMorphAsLink(parts, i, part);
 
-            } else {
-                i++;
-            }
-        } while (i < count);
+        } else {
+            i++;
+        }
+    } while (i < count);
 
-    }
     return parts.join("");
-}
-
-void BtTextFilter::setShowReferences(bool on) {
-    m_showReferences = on;
 }

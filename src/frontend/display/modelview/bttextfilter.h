@@ -35,9 +35,5 @@ public:
     ~BtTextFilter() override;
 
     QString processText(const QString& text) override;
-    void setShowReferences(bool on);
 
-private:
-
-    bool m_showReferences = false;
 };

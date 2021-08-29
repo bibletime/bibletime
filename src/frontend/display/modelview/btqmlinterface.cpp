@@ -46,7 +46,6 @@ BtQmlInterface::BtQmlInterface(QObject* parent)
       m_caseSensitive(false) {
 
     m_moduleTextModel->setTextFilter(&m_textFilter);
-    m_textFilter.setShowReferences(true);
     m_linkTimer->setSingleShot(true);
 
     BT_CONNECT(m_linkTimer, &QTimer::timeout,
