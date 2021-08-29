@@ -96,7 +96,7 @@ void BtTextFilter::fixDoubleBR() {
 // Output:         <span class="footnote" note="ESV2011/Luke 11:37/1">1</span>
 
 int BtTextFilter::rewriteFootnoteAsLink(int i, const QString& part) {
-    if (i+2 > m_parts.count())
+    if (i + 2 >= m_parts.count())
         return 1;
 
     QRegExp rxlen("note=\"([^\"]*)");
