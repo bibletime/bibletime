@@ -130,9 +130,7 @@ QString BtTextFilter::processText(const QString &text) {
     auto parts = splitText(localText);
     fixDoubleBR(parts);
 
-    int i = 0;
-    int count = parts.count();
-    do {
+    for (int i = 0; i < parts.count();) {
         auto const & part = parts.at(i);
         auto const partIsTag = part.startsWith('<');
 
@@ -149,7 +147,6 @@ QString BtTextFilter::processText(const QString &text) {
         } else {
             i++;
         }
-    } while (i < count);
-
+    }
     return parts.join("");
 }
