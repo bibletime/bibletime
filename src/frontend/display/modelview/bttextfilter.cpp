@@ -76,7 +76,7 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
 int rewriteHref(QStringList & parts, int i, QString const & part) {
     QRegExp rx1("<a\\s(\\w+)=\"([\\s\\S]*)\"\\s(\\w+)=\"([\\s\\S]*)\"");
     rx1.setMinimal(false);
-    if (rx1.indexIn(part) >= 0 && rx1.captureCount() == 4) {
+    if (rx1.indexIn(part) >= 0) {
         if (rx1.cap(1) == "href")
             parts[i] = "<a " + rx1.cap(1) + "=\"" + rx1.cap(2) + "||" + rx1.cap(3) + "=" + rx1.cap(4) + "\" name=\"crossref\">";
         else
