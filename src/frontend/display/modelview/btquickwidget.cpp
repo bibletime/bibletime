@@ -241,9 +241,7 @@ void BtQuickWidget::stopScrollTimer() {
 }
 
 void BtQuickWidget::scrollTimerSlot() {
-    QPoint globalPoint = QCursor::pos();
-    QPoint point = mapFromGlobal(globalPoint);
-    int y = point.y();
+    int y = mapFromGlobal(QCursor::pos()).y();
     if ((y >= 0) & (y-height() < 0))
         return;
     if (y < 0) {
@@ -254,8 +252,7 @@ void BtQuickWidget::scrollTimerSlot() {
     int y2 = y * y;
     if (y2 > 100)
         y2 = 100;
-    int interval = 500 / y2;
-    m_timer.setInterval(interval);
+    m_timer.setInterval(500 / y2);
 }
 
 void BtQuickWidget::wheelEvent(QWheelEvent * event) {
