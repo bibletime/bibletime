@@ -29,7 +29,8 @@ QString const HtmlModeKey = "GUI/EditTextWizard/htmlMode";
 BtEditTextWizard::BtEditTextWizard(QWidget * parent, Qt::WindowFlags flags)
     : QWizard(parent, flags)
     , m_plainOrHtmlPage(new BtPlainOrHtmlPage(this))
-    , m_editTextPage(new BtEditTextPage(this)) {
+    , m_editTextPage(new BtEditTextPage(*this))
+{
     addPage(m_plainOrHtmlPage);
     addPage(m_editTextPage);
 

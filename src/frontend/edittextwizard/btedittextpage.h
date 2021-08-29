@@ -24,7 +24,6 @@ class BtEditTextWizard;
 class QAction;
 class QTextEdit;
 class QToolBar;
-class QWidget;
 
 class BtEditTextPage final: public QWizardPage {
 
@@ -32,7 +31,7 @@ class BtEditTextPage final: public QWizardPage {
 
 public: /* Methods: */
 
-    BtEditTextPage(QWidget * parent = nullptr);
+    BtEditTextPage(BtEditTextWizard & parent);
 
     void setFont(const QFont& font);
     void setText(const QString& text);
@@ -57,10 +56,10 @@ private:
     void setupToolBar();
 
 
+    BtEditTextWizard & m_wizard;
     QTextEdit * m_plainTextEdit;
     QTextEdit * m_htmlTextEdit;
     QToolBar * m_toolBar;
-    BtEditTextWizard * m_wizard;
     bool m_handingFormatChangeFromEditor;
 
     bool m_htmlMode;

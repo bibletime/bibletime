@@ -20,7 +20,6 @@
 #include <QTextEdit>
 #include <QToolBar>
 #include <QVBoxLayout>
-#include <QWidget>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/config/btconfigcore.h"
 #include "../../util/btassert.h"
@@ -40,14 +39,14 @@ const QString CHTMLWriteDisplayFontColorKey = "fontColor";
 }
 
 
-BtEditTextPage::BtEditTextPage(QWidget * parent)
-    : QWizardPage(parent)
+BtEditTextPage::BtEditTextPage(BtEditTextWizard & parent)
+    : QWizardPage(&parent)
+    , m_wizard(parent)
     , m_plainTextEdit(new QTextEdit(this))
     , m_htmlTextEdit(new QTextEdit(this))
     , m_toolBar(new QToolBar(this))
-    , m_wizard(qobject_cast<BtEditTextWizard *>(parent))
     , m_handingFormatChangeFromEditor(false)
-    , m_htmlMode(m_wizard->htmlMode())
+    , m_htmlMode(m_wizard.htmlMode())
 {
     QVBoxLayout * verticalLayout = new QVBoxLayout(this);
     verticalLayout->addWidget(m_toolBar);
@@ -89,7 +88,7 @@ BtEditTextPage::BtEditTextPage(QWidget * parent)
 }
 
 void BtEditTextPage::cleanupPage() {
-    m_htmlMode = m_wizard->htmlMode();
+    m_htmlMode = m_wizard.htmlMode();
     if (m_htmlMode)
         m_text = m_htmlTextEdit->toHtml();
     else
@@ -97,7 +96,7 @@ void BtEditTextPage::cleanupPage() {
 }
 
 void BtEditTextPage::initializePage() {
-    m_htmlMode = m_wizard->htmlMode();
+    m_htmlMode = m_wizard.htmlMode();
     if (m_htmlMode) {
         initHtmlFont();
         m_htmlTextEdit->setHtml(m_text);
@@ -123,7 +122,7 @@ void BtEditTextPage::initializePage() {
 }
 
 bool BtEditTextPage::validatePage() {
-    m_htmlMode = m_wizard->htmlMode();
+    m_htmlMode = m_wizard.htmlMode();
     if (m_htmlMode)
         m_text = m_htmlTextEdit->toHtml();
     else
