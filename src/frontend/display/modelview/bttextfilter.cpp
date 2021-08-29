@@ -22,7 +22,12 @@ BtTextFilter::~BtTextFilter() = default;
 QString BtTextFilter::processText(const QString &text) {
     if (text.isEmpty())
         return text;
-    QString localText = fixNonRichText(text);
+    QString localText = text;
+    { // Fix !P tag which is not rich text:
+        int index = 0;
+        while ((index = localText.indexOf("<!P>")) >= 0)
+            localText.remove(index,4);
+    }
     splitText(localText);
     fixDoubleBR();
     if (m_showReferences) {
@@ -49,15 +54,6 @@ QString BtTextFilter::processText(const QString &text) {
 
     }
     return m_parts.join("");
-}
-
-QString BtTextFilter::fixNonRichText(const QString& text) {
-    // Fix !P tag which is not rich text
-    QString localText = text;
-    int index = 0;
-    while ((index = localText.indexOf("<!P>")) >= 0)
-        localText.remove(index,4);
-    return localText;
 }
 
 void BtTextFilter::splitText(const QString& text) {

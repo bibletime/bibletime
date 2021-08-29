@@ -39,7 +39,6 @@ public:
 
 private:
     void fixDoubleBR();
-    QString fixNonRichText(const QString& text);
     int rewriteFootnoteAsLink(int i, const QString& part);
     int rewriteHref(int i, const QString& part);
     int rewriteLemmaOrMorphAsLink(int i, const QString& part);
