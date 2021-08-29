@@ -224,17 +224,18 @@ void BtQuickWidget::mouseReleased(int x, int y) {
 }
 
 void BtQuickWidget::setupScrollTimer() {
-    m_timer.setInterval(100);
-    connect(&m_timer, &QTimer::timeout, this, &BtQuickWidget::scrollTimerSlot);
-    m_timer.setSingleShot(false);
+    m_scrollTimer.setInterval(100);
+    connect(&m_scrollTimer, &QTimer::timeout,
+            this, &BtQuickWidget::scrollTimerSlot);
+    m_scrollTimer.setSingleShot(false);
 }
 
 void BtQuickWidget::startScrollTimer() {
-    if (!m_timer.isActive())
-        m_timer.start();
+    if (!m_scrollTimer.isActive())
+        m_scrollTimer.start();
 }
 
-void BtQuickWidget::stopScrollTimer() { m_timer.stop(); }
+void BtQuickWidget::stopScrollTimer() { m_scrollTimer.stop(); }
 
 void BtQuickWidget::scrollTimerSlot() {
     int y = mapFromGlobal(QCursor::pos()).y();
@@ -248,7 +249,7 @@ void BtQuickWidget::scrollTimerSlot() {
     int y2 = y * y;
     if (y2 > 100)
         y2 = 100;
-    m_timer.setInterval(500 / y2);
+    m_scrollTimer.setInterval(500 / y2);
 }
 
 void BtQuickWidget::wheelEvent(QWheelEvent * event) {

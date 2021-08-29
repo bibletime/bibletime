@@ -68,7 +68,7 @@ private:
 
     BtQmlScrollView* m_scrollView;
 
-    QTimer m_timer;
+    QTimer m_scrollTimer;
 
 Q_SIGNALS:
     void referenceDropped(const QString& reference);
