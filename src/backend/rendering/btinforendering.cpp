@@ -305,12 +305,13 @@ CSwordModuleInfo * getFirstAvalibleStrongsModule (bool wantHebrew) {
     return nullptr;
 }
 
-CSwordModuleInfo *  getStrongsModule (bool wantHebrew) {
-    CSwordModuleInfo * module = btConfig().getDefaultSwordModuleByType(
-                wantHebrew ? "standardHebrewStrongsLexicon" : "standardGreekStrongsLexicon");
-    if (!module)
-        module = getFirstAvalibleStrongsModule(wantHebrew);
-    return module;
+CSwordModuleInfo * getStrongsModule(bool const wantHebrew) {
+    static QString const types[] = {"standardGreekStrongsLexicon",
+                                    "standardHebrewStrongsLexicon"};
+    if (auto * const m =
+                btConfig().getDefaultSwordModuleByType(types[wantHebrew]))
+        return m;
+    return getFirstAvalibleStrongsModule(wantHebrew);
 }
 
 QString decodeStrongs(QString const & data) {
