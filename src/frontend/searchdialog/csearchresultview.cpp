@@ -223,10 +223,12 @@ void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
 
 
 QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items ) const {
-    BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString());
+    if (items.empty())
+        return nullptr;
+    BTMimeData::ItemList bookmarks;
     for (auto const * const i : items)
-        mdata->appendBookmark(m_module->name(), i->text(0), QString());
-    return mdata;
+        bookmarks.append({m_module->name(), i->text(0), {}});
+    return new BTMimeData(std::move(bookmarks));
 }
 
 QStringList CSearchResultView::mimeTypes () const {

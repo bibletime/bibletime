@@ -12,23 +12,9 @@
 
 #include "BtMimeData.h"
 
-#include <QByteArray>
+#include <utility>
 
 
-BTMimeData::BTMimeData() {}
-
-BTMimeData::BTMimeData(QString const & module,
-                       QString const & key,
-                       QString const & description)
-{ appendBookmark(module, key, description); }
-
-BTMimeData::BTMimeData(QString const & text) { setText(text); }
-
-
-void BTMimeData::appendBookmark(QString const & module,
-                                QString const & key,
-                                QString const & description)
-{
-    m_bookmarkList.append(BookmarkItem(module, key, description));
-    setData("BibleTime/Bookmark", QByteArray());
-}
+BTMimeData::BTMimeData(ItemList bookmarks)
+    : m_bookmarkList(std::move(bookmarks))
+{ setData("BibleTime/Bookmark", {}); }

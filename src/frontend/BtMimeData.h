@@ -39,29 +39,7 @@ public: /* Types: */
 
 public: /* Methods: */
 
-    /** Creates a new empty BTMimeData. */
-    BTMimeData();
-
-    /** Creates a new BTMimeData.
-    * Creates a new bookmark item and appends it to the list.
-    * MIME type "BibleTime/Bookmark" is added.
-    * Bookmarks can not be reached by data() method, use bookmark() or bookmarks() instead.
-    */
-    BTMimeData(QString const & module,
-               QString const & key,
-               QString const & description);
-
-    /** Creates a new BTMimeData, setting the text MIME type (see QMimeData::setText()). */
-    BTMimeData(QString const & text);
-
-
-    /** Appends a new bookmark item into the list.
-    * Creates the item using the arguments.
-    * MIME type "BibleTime/Bookmark" is added.
-    */
-    void appendBookmark(QString const & module,
-                        QString const & key,
-                        QString const & description);
+    BTMimeData(ItemList bookmarks);
 
     /** \returns the bookmarks list. */
     ItemList const & bookmarks() const noexcept { return m_bookmarkList; }

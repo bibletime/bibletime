@@ -71,9 +71,9 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
     BT_CONNECT(m_widget->qmlInterface(), &BtQmlInterface::dragOccuring,
                [this](const QString& moduleName, const QString& keyName) {
                    auto & drag = *new QDrag(this);
-                   auto & mimedata =
-                           *new BTMimeData(moduleName, keyName, QString());
-                   drag.setMimeData(&mimedata);
+                   auto mimedata =
+                           std::make_unique<BTMimeData>(
+                               BTMimeData::ItemList{{moduleName, keyName, {}}});
                    //add real Bible text from module/key
                    if (auto * const module =
                         CSwordBackend::instance()->findModuleByName(moduleName))
@@ -85,8 +85,9 @@ BtModelViewReadDisplay::BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                                    CSwordKey::createInstance(module));
                        key->setKey(keyName);
                        // This works across applications:
-                       mimedata.setText(key->strippedText());
+                       mimedata->setText(key->strippedText());
                    }
+                   drag.setMimeData(mimedata.release());
                    drag.exec(Qt::CopyAction, Qt::CopyAction);
                });
     BT_CONNECT(m_widget, &BtQmlScrollView::referenceDropped,

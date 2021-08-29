@@ -59,9 +59,10 @@ void BtTextBrowser::mouseMoveEvent(QMouseEvent * event) {
             {
                 auto mimedata =
                         std::make_unique<BTMimeData>(
-                            decodedLink->module->name(),
-                            decodedLink->key,
-                            QString());
+                            BTMimeData::ItemList{{
+                                decodedLink->module->name(),
+                                decodedLink->key,
+                                {}}});
 
                 //add real Bible text from module/key
                 if (auto const * const module =

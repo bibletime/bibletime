@@ -338,8 +338,7 @@ void CBookmarkIndex::mouseReleaseEvent(QMouseEvent* event) {
 
 /** Creates a drag mime data object for the current selection. */
 QMimeData * CBookmarkIndex::dragObject() {
-    BTMimeData * const mimeData = new BTMimeData{};
-
+    BTMimeData::ItemList bookmarks;
     for (auto const & widgetItem : selectedIndexes()) {
         if (!widgetItem.isValid())
             break;
@@ -349,11 +348,12 @@ QMimeData * CBookmarkIndex::dragObject() {
             CSwordModuleInfo * const module =
                     m_bookmarksModel->module(widgetItem);
             const QString moduleName = module ? module->name() : QString();
-            mimeData->appendBookmark(moduleName, m_bookmarksModel->key(widgetItem),
-                                     m_bookmarksModel->description(widgetItem));
+            bookmarks.append({moduleName,
+                              m_bookmarksModel->key(widgetItem),
+                              m_bookmarksModel->description(widgetItem)});
         }
     }
-    return mimeData;
+    return new BTMimeData(std::move(bookmarks));
 }
 
 void CBookmarkIndex::dragEnterEvent(QDragEnterEvent * event) {
