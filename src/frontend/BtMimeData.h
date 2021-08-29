@@ -44,9 +44,6 @@ public: /* Methods: */
     /** \returns the bookmarks list. */
     ItemList const & bookmarks() const noexcept { return m_bookmarkList; }
 
-    /** \returns the first bookmark item in the list. */
-    BookmarkItem const & bookmark() const { return m_bookmarkList.first(); }
-
 private: /* Fields: */
 
     ItemList m_bookmarkList;

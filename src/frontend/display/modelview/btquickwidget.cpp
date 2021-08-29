@@ -59,7 +59,7 @@ void BtQuickWidget::dragEnterEvent( QDragEnterEvent* e ) {
     if (btmimedata == nullptr)
         return;
 
-    BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
+    BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmarks().first();
     QString moduleName = item.module();
     CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
     BT_ASSERT(m);
@@ -86,7 +86,7 @@ void BtQuickWidget::dropEvent( QDropEvent* e ) {
         if (mimedata != nullptr) {
             const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
             if (btmimedata != nullptr) {
-                BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
+                BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmarks().first();
                 Q_EMIT referenceDropped(item.key());
                 e->acceptProposedAction();
                 return;

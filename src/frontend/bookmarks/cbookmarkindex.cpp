@@ -485,9 +485,10 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
                 dynamic_cast<BTMimeData const *>(event->mimeData()))
         {
             //create the new bookmark
-            QString const moduleName(mdata->bookmark().module());
-            QString const keyText(mdata->bookmark().key());
-            QString const description(mdata->bookmark().description());
+            auto const & bookmark = mdata->bookmarks().first();
+            QString const moduleName(bookmark.module());
+            QString const keyText(bookmark.key());
+            QString const description(bookmark.description());
             CSwordModuleInfo * minfo =
                     CSwordBackend::instance()->findModuleByName(moduleName);
             BT_ASSERT(minfo);
