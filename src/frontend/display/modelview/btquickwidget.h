@@ -58,7 +58,6 @@ protected:
 
 private:
     BtQmlInterface* getQmlInterface() const;
-    void setupScrollTimer();
     void startScrollTimer();
     void stopScrollTimer();
 

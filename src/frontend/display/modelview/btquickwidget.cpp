@@ -39,7 +39,24 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
 
     engine()->addImportPath("qrc:/qml");
     setSource(QUrl("qrc:/qml/DisplayView.qml"));
-    setupScrollTimer();
+
+    m_scrollTimer.setInterval(100);
+    m_scrollTimer.setSingleShot(false);
+    connect(&m_scrollTimer, &QTimer::timeout, this,
+            [this]{
+                int y = mapFromGlobal(QCursor::pos()).y();
+                if ((y >= 0) & (y-height() < 0))
+                    return;
+                if (y < 0) {
+                    scroll(-8);
+                } else {
+                    scroll(8);
+                }
+                int y2 = y * y;
+                if (y2 > 100)
+                    y2 = 100;
+                m_scrollTimer.setInterval(500 / y2);
+            });
 }
 
 BtQmlInterface* BtQuickWidget::getQmlInterface() const {
@@ -221,26 +238,6 @@ void BtQuickWidget::mouseReleased(int x, int y) {
     QVariant vY(y);
     QMetaObject::invokeMethod(root,"leftMouseRelease",
                               Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
-}
-
-void BtQuickWidget::setupScrollTimer() {
-    m_scrollTimer.setInterval(100);
-    m_scrollTimer.setSingleShot(false);
-    connect(&m_scrollTimer, &QTimer::timeout, this,
-            [this]{
-                int y = mapFromGlobal(QCursor::pos()).y();
-                if ((y >= 0) & (y-height() < 0))
-                    return;
-                if (y < 0) {
-                    scroll(-8);
-                } else {
-                    scroll(8);
-                }
-                int y2 = y * y;
-                if (y2 > 100)
-                    y2 = 100;
-                m_scrollTimer.setInterval(500 / y2);
-            });
 }
 
 void BtQuickWidget::startScrollTimer() {
