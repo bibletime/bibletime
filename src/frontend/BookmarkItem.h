@@ -13,38 +13,33 @@
 #pragma once
 
 #include <QString>
+#include <utility>
 
-
-class BTMimeData; /* IWYU pragma: keep because needs to be friend. */
 
 /**
   Class which represents a bookmark. Includes key, module name and description,
-  all QStrings which have getter methods. Can be created only through
-  BTMimeData object.
+  all QStrings which have getter methods.
 */
-class BookmarkItem {
-
-friend class BTMimeData;
+class BookmarkItem final {
 
 public: /* Methods: */
 
-    /** \returns the key */
-    QString const & key() const noexcept { return m_key; }
+    BookmarkItem(QString module, QString key, QString description)
+        : m_moduleName(std::move(module))
+        , m_key(std::move(key))
+        , m_description(std::move(description))
+    {}
 
     /** \returns the module name */
     QString const & module() const noexcept { return m_moduleName; }
 
+    /** \returns the key */
+    QString const & key() const noexcept { return m_key; }
+
     /** \returns the bookmark description */
     QString const & description() const noexcept { return m_description; }
 
-protected: /* Methods: */
-
-    /** Creates a new bookmark item. */
-    BookmarkItem(QString const & module,
-                 QString const & key,
-                 QString const & description);
-
-protected: /* Fields: */
+private: /* Fields: */
 
     QString m_moduleName;  /**< The module which is used by this item. */
     QString m_key;         /**< The key of a bookmark. */
