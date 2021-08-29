@@ -90,24 +90,24 @@ int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, QString const & part)
         return 1;
 
     QString value;
-    QRegExp rx1("lemma=\"([^\"]*)*");
-    int pos1 = rx1.indexIn(part);
-    if (pos1 > -1)
-        value = "lemma=" + rx1.cap(1);
-
-    QRegExp rx2("morph=\"([^\"]*)(\"){0,1}");
-    int pos2 = rx2.indexIn(part);
-    if (pos2 > -1) {
-        if (!value.isEmpty())
-            value += "||";
-        value += "morph=" + rx2.cap(1);
+    {
+        QRegExp rx1("lemma=\"([^\"]*)*");
+        if (rx1.indexIn(part) > -1)
+            value = "lemma=" + rx1.cap(1);
+    }{
+        QRegExp rx2("morph=\"([^\"]*)(\"){0,1}");
+        if (rx2.indexIn(part) > -1) {
+            if (value.isEmpty()) {
+                value = "morph=" + rx2.cap(1);
+            } else {
+                value += "||morph=" + rx2.cap(1);
+            }
+        }
     }
 
-    QString refText = parts.at(i+1);
-    QString url = "sword://lemmamorph/" + value + "/" + refText;
-    QString newEntry;
-    newEntry = "<a id=lemmamorph href=\"" + url + "\">";
-    parts[i] = newEntry;
+    auto const & refText = parts.at(i + 1);
+    parts[i] = "<a id=lemmamorph href=\"sword://lemmamorph/"
+               + value + "/" + refText + "\">";
     parts[i+2] = "</a>";
     return 3;
 }
