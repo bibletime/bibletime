@@ -62,7 +62,6 @@ private:
     QToolBar * m_toolBar;
     bool m_handingFormatChangeFromEditor;
 
-    bool m_htmlMode;
     QFont m_plainTextFont;
     QString m_text;
 

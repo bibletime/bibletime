@@ -46,7 +46,6 @@ BtEditTextPage::BtEditTextPage(BtEditTextWizard & parent)
     , m_htmlTextEdit(new QTextEdit(this))
     , m_toolBar(new QToolBar(this))
     , m_handingFormatChangeFromEditor(false)
-    , m_htmlMode(m_wizard.htmlMode())
 {
     QVBoxLayout * verticalLayout = new QVBoxLayout(this);
     verticalLayout->addWidget(m_toolBar);
@@ -88,16 +87,15 @@ BtEditTextPage::BtEditTextPage(BtEditTextWizard & parent)
 }
 
 void BtEditTextPage::cleanupPage() {
-    m_htmlMode = m_wizard.htmlMode();
-    if (m_htmlMode)
+    if (m_htmlTextEdit->isVisible())
         m_text = m_htmlTextEdit->toHtml();
     else
         m_text = m_plainTextEdit->toPlainText();
 }
 
 void BtEditTextPage::initializePage() {
-    m_htmlMode = m_wizard.htmlMode();
-    if (m_htmlMode) {
+    auto const htmlMode = m_wizard.htmlMode();
+    if (htmlMode) {
         initHtmlFont();
         m_htmlTextEdit->setHtml(m_text);
         m_plainTextEdit->clear();
@@ -116,14 +114,13 @@ void BtEditTextPage::initializePage() {
     m_plainTextEdit->setAcceptRichText(false);
     m_htmlTextEdit->setAcceptRichText(true);
 
-    m_plainTextEdit->setVisible(!m_htmlMode);
-    m_htmlTextEdit->setVisible(m_htmlMode);
-    m_toolBar->setVisible(m_htmlMode);
+    m_plainTextEdit->setVisible(!htmlMode);
+    m_htmlTextEdit->setVisible(htmlMode);
+    m_toolBar->setVisible(htmlMode);
 }
 
 bool BtEditTextPage::validatePage() {
-    m_htmlMode = m_wizard.htmlMode();
-    if (m_htmlMode)
+    if (m_htmlTextEdit->isVisible())
         m_text = m_htmlTextEdit->toHtml();
     else
         m_text = m_plainTextEdit->toPlainText();
