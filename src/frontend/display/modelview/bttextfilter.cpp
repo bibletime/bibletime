@@ -135,14 +135,15 @@ QString BtTextFilter::processText(const QString &text) {
         int count = parts.count();
         do {
             auto const & part = parts.at(i);
+            auto const partIsTag = part.startsWith('<');
 
-            if (part.startsWith("<") && part.contains("class=\"footnote\"")) {
+            if (partIsTag && part.contains("class=\"footnote\"")) {
                 i= i + rewriteFootnoteAsLink(parts, i, part);
 
-            } else if (part.startsWith("<") && (part.contains("href=\"") ) ) {
+            } else if (partIsTag && (part.contains("href=\"") ) ) {
                 i = i + rewriteHref(parts, i, part);
 
-            } else if (part.startsWith("<") && (
+            } else if (partIsTag && (
                            part.contains("lemma=\"") ||part.contains("morph=\"") ) ) {
                 i= i+ rewriteLemmaOrMorphAsLink(parts, i, part);
 
