@@ -31,10 +31,6 @@ class BtQuickWidget : public QQuickWidget {
 public:
     BtQuickWidget(BtQmlScrollView* widget);
 
-    void mousePressed(int x, int y);
-    void mouseMove(int x, int y);
-    void mouseReleased(int x, int y);
-
     void saveContextMenuIndex(int x, int y);
     void scroll(int pixels);
     void updateReferenceText();
@@ -55,6 +51,17 @@ protected:
        virtual void mouseReleaseEvent(QMouseEvent *event) override;
        virtual void mouseDoubleClickEvent(QMouseEvent *event) override;
        virtual void wheelEvent(QWheelEvent * event) override;
+
+private: /* Methods: */
+
+   template <typename ... Args>
+   void callQml(char const * const method, Args && ... args) {
+       QMetaObject::invokeMethod(rootObject(),
+                                 method,
+                                 Q_ARG(QVariant, args)...);
+   }
+
+   QVariant getFromQml(char const * method) const;
 
 private:
 

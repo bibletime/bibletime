@@ -103,60 +103,27 @@ void BtQuickWidget::dragMoveEvent( QDragMoveEvent* e ) {
 }
 
 void BtQuickWidget::saveContextMenuIndex(int x, int y) {
-    int x1 = x - geometry().x();  // Translate to BtQuickWidget
-    int y1 = y - geometry().y();
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant vX(x1);
-    QVariant vY(y1);
-    QMetaObject::invokeMethod(root,"saveContextMenuIndex",
-                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
+    callQml("saveContextMenuIndex",
+            x - geometry().x(), // Translate to BtQuickWidget
+            y - geometry().y());
 }
 
-void BtQuickWidget::updateReferenceText() {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QMetaObject::invokeMethod(root,"updateReferenceText");
-}
+void BtQuickWidget::updateReferenceText() { callQml("updateReferenceText"); }
 
-int BtQuickWidget::getSelectedColumn() const {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant var;
-    QMetaObject::invokeMethod(root,"getSelectedColumn",
-                                        Qt::DirectConnection, Q_RETURN_ARG(QVariant, var));
-    return var.toInt();
-}
+int BtQuickWidget::getSelectedColumn() const
+{ return getFromQml("getSelectedColumn").toInt(); }
 
-int BtQuickWidget::getFirstSelectedIndex() const {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant var;
-    QMetaObject::invokeMethod(root,"getFirstSelectedIndex",
-                                        Qt::DirectConnection, Q_RETURN_ARG(QVariant, var));
-    return var.toInt();
-}
+int BtQuickWidget::getFirstSelectedIndex() const
+{ return getFromQml("getFirstSelectedIndex").toInt(); }
 
-int BtQuickWidget::getLastSelectedIndex() const {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant var;
-    QMetaObject::invokeMethod(root,"getLastSelectedIndex",
-                                        Qt::DirectConnection, Q_RETURN_ARG(QVariant, var));
-    return var.toInt();
-}
+int BtQuickWidget::getLastSelectedIndex() const
+{ return getFromQml("getLastSelectedIndex").toInt(); }
 
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
     return m_scrollView->getQmlInterface()->getMouseClickedKey();
 }
 
-void BtQuickWidget::scroll(int pixels) {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant vPixels(pixels);
-    QMetaObject::invokeMethod(root,"scroll",
-                              Q_ARG(QVariant, vPixels));
-}
+void BtQuickWidget::scroll(int const pixels) { callQml("scroll", pixels); }
 
 // Catch Leave event here insteaded of leaveEvent(e), because
 // QMdiSubwindow does not pass leaveEvent on down.
@@ -173,7 +140,7 @@ void BtQuickWidget::mouseDoubleClickEvent(QMouseEvent *event) {
 
 void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
-        mousePressed(event->x(), event->y());
+        callQml("leftMousePress", event->x(), event->y());
         event->accept();
         return;
     }
@@ -190,7 +157,7 @@ void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
             m_scrollTimer.stop();
         }
 
-        mouseMove(event->x(), y);
+        callQml("leftMouseMove", event->x(), y);
         event->accept();
         return;
     }
@@ -199,43 +166,24 @@ void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
 
 void BtQuickWidget::mouseReleaseEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
-        mouseReleased(event->x(), event->y());
+        m_scrollTimer.stop();
+        callQml("leftMouseRelease", event->x(), event->y());
         event->accept();
         return;
     }
     return QQuickWidget::mouseReleaseEvent(event);
 }
 
-void BtQuickWidget::mousePressed(int x, int y) {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant vX(x);
-    QVariant vY(y);
-    QMetaObject::invokeMethod(root,"leftMousePress",
-                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
-
-}
-
-void BtQuickWidget::mouseMove(int x, int y) {
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant vX(x);
-    QVariant vY(y);
-    QMetaObject::invokeMethod(root,"leftMouseMove",
-                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
-}
-
-void BtQuickWidget::mouseReleased(int x, int y) {
-    m_scrollTimer.stop();
-    QQuickItem* root = rootObject();
-    BT_ASSERT(root);
-    QVariant vX(x);
-    QVariant vY(y);
-    QMetaObject::invokeMethod(root,"leftMouseRelease",
-                              Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
-}
-
 void BtQuickWidget::wheelEvent(QWheelEvent * event) {
     BibleTime::instance()->autoScrollStop();
     QQuickWidget::wheelEvent(event);
+}
+
+QVariant BtQuickWidget::getFromQml(char const * method) const {
+    QVariant r;
+    QMetaObject::invokeMethod(rootObject(),
+                              method,
+                              Qt::DirectConnection,
+                              Q_RETURN_ARG(QVariant, r));
+    return r;
 }
