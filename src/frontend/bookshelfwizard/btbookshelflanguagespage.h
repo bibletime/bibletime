@@ -19,8 +19,8 @@
 #include <QStringList>
 
 
-class BtListModel;
 class QListView;
+class QStandardItemModel;
 class QVBoxLayout;
 class QWidget;
 
@@ -52,6 +52,6 @@ private: /* Fields: */
     bool m_firstTimeInit = true;
     QListView * m_languagesListView;
     QVBoxLayout * m_verticalLayout;
-    BtListModel * m_model;
+    QStandardItemModel * m_model;
 
 }; /* class BtBookshelfLanguagesPage */

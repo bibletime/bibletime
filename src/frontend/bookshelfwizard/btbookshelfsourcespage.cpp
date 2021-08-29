@@ -32,7 +32,6 @@
 #include <QWizardPage>
 #include "../../backend/config/btconfig.h"
 #include "../../backend/btinstallbackend.h"
-#include "../../backend/models/btlistmodel.h"
 #include "../../util/btconnect.h"
 #include "cswordsetupinstallsourcesdialog.h"
 #include "btbookshelflanguagespage.h"
@@ -70,7 +69,7 @@ BtBookshelfSourcesPage::BtBookshelfSourcesPage(QWidget * parent)
     m_verticalLayout->addWidget(m_sourcesTableView);
 
     // Create sources model:
-    m_model = new BtListModel(true, this, 2);
+    m_model = new QStandardItemModel(this);
     m_sourcesTableView->setModel(m_model);
     BT_CONNECT(m_model, &QStandardItemModel::dataChanged,
                this,    &QWizardPage::completeChanged);
@@ -133,8 +132,10 @@ void BtBookshelfSourcesPage::updateSourcesModel() {
     };
 
     QString const removeText = tr("Remove");
-    for (QString source : sourceList) {
-        m_model->appendItem(source);
+    for (auto const & source : sourceList) {
+        auto * const item = new QStandardItem(source);
+        item->setCheckable(true);
+        m_model->appendRow(item);
         int const row = m_model->rowCount() - 1;
         QPushButton * button = addButton(row, 1, removeText, ButtonTagRemove);
         BT_CONNECT(button, &QPushButton::clicked,

@@ -28,7 +28,6 @@
 #include "../../backend/drivers/cswordmoduleinfo.h"
 #include "../../backend/language.h"
 #include "../../backend/managers/cswordbackend.h"
-#include "../../backend/models/btlistmodel.h"
 #include "../../util/btconnect.h"
 #include "btbookshelfwizard.h"
 #include "btbookshelfwizardenums.h"
@@ -55,7 +54,7 @@ BtBookshelfLanguagesPage::BtBookshelfLanguagesPage(QWidget * parent)
     m_verticalLayout->addWidget(m_languagesListView);
 
     // Create languages Model:
-    m_model = new BtListModel(true, this);
+    m_model = new QStandardItemModel(this);
     m_languagesListView->setModel(m_model);
     BT_CONNECT(m_model, &QStandardItemModel::dataChanged,
                this,    &BtBookshelfLanguagesPage::slotDataChanged);
@@ -114,8 +113,11 @@ void BtBookshelfLanguagesPage::initializeLanguages() {
 
     // Update languages model:
     m_model->clear();
-    for (auto const & lang : languages)
-        m_model->appendItem(lang);
+    for (auto const & language : languages) {
+        auto * const item = new QStandardItem(language);
+        item->setCheckable(true);
+        m_model->appendRow(item);
+    }
     if (languages.size() == 1u)
         m_model->item(0, 0)->setCheckState(Qt::Checked);
 }

@@ -19,7 +19,7 @@
 #include <QStringList>
 
 
-class BtListModel;
+class QStandardItemModel;
 class QTableView;
 class QVBoxLayout;
 class QWidget;
@@ -52,6 +52,6 @@ private: /* Fields: */
     bool m_firstTimeInit = true;
     QTableView * m_sourcesTableView;
     QVBoxLayout * m_verticalLayout;
-    BtListModel * m_model;
+    QStandardItemModel * m_model;
 
 }; /* class BtBookshelfSourcesPage */
