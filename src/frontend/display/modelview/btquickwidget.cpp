@@ -230,9 +230,8 @@ void BtQuickWidget::setupScrollTimer() {
 }
 
 void BtQuickWidget::startScrollTimer() {
-    if (m_timer.isActive())
-        return;
-    m_timer.start();
+    if (!m_timer.isActive())
+        m_timer.start();
 }
 
 void BtQuickWidget::stopScrollTimer() {
