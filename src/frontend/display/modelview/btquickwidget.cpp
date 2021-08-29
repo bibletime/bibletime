@@ -94,7 +94,7 @@ void BtQuickWidget::dropEvent( QDropEvent* e ) {
                 return;
             }
         }
-    };
+    }
 }
 
 // Reimplementation from QQuickWidget
