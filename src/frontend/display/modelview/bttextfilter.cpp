@@ -15,12 +15,9 @@
 #include <QDebug>
 
 
-BtTextFilter::BtTextFilter() :
-    m_showReferences(false) {
-}
+BtTextFilter::BtTextFilter() = default;
 
-BtTextFilter::~BtTextFilter() {
-}
+BtTextFilter::~BtTextFilter() = default;
 
 QString BtTextFilter::processText(const QString &text) {
     if (text.isEmpty())

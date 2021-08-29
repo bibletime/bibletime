@@ -45,7 +45,7 @@ private:
     int rewriteLemmaOrMorphAsLink(int i, const QString& part);
     void splitText(const QString& text);
 
-    bool m_showReferences;
+    bool m_showReferences = false;
 
     QStringList m_parts;
 };
