@@ -187,7 +187,7 @@ void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
             if (!m_scrollTimer.isActive())
                 m_scrollTimer.start();
         } else {
-            stopScrollTimer();
+            m_scrollTimer.stop();
         }
 
         mouseMove(event->x(), y);
@@ -226,7 +226,7 @@ void BtQuickWidget::mouseMove(int x, int y) {
 }
 
 void BtQuickWidget::mouseReleased(int x, int y) {
-    stopScrollTimer();
+    m_scrollTimer.stop();
     QQuickItem* root = rootObject();
     BT_ASSERT(root);
     QVariant vX(x);
@@ -234,8 +234,6 @@ void BtQuickWidget::mouseReleased(int x, int y) {
     QMetaObject::invokeMethod(root,"leftMouseRelease",
                               Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
 }
-
-void BtQuickWidget::stopScrollTimer() { m_scrollTimer.stop(); }
 
 void BtQuickWidget::wheelEvent(QWheelEvent * event) {
     BibleTime::instance()->autoScrollStop();
