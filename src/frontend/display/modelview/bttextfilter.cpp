@@ -135,15 +135,13 @@ QString BtTextFilter::processText(const QString &text) {
         auto const partIsTag = part.startsWith('<');
 
         if (partIsTag && part.contains("class=\"footnote\"")) {
-            i= i + rewriteFootnoteAsLink(parts, i, part);
-
-        } else if (partIsTag && (part.contains("href=\"") ) ) {
-            i = i + rewriteHref(parts, i, part);
-
-        } else if (partIsTag && (
-                       part.contains("lemma=\"") ||part.contains("morph=\"") ) ) {
-            i= i+ rewriteLemmaOrMorphAsLink(parts, i, part);
-
+            i += rewriteFootnoteAsLink(parts, i, part);
+        } else if (partIsTag && (part.contains("href=\""))) {
+            i += rewriteHref(parts, i, part);
+        } else if (partIsTag
+                   && (part.contains("lemma=\"") || part.contains("morph=\"")))
+        {
+            i += rewriteLemmaOrMorphAsLink(parts, i, part);
         } else {
             i++;
         }
