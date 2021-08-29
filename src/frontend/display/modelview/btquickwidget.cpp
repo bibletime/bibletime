@@ -184,7 +184,8 @@ void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
     if ((event->buttons() & Qt::LeftButton) == Qt::LeftButton) {
         auto const y = event->y();
         if (y < 0 || y > height()) {
-            startScrollTimer();
+            if (!m_scrollTimer.isActive())
+                m_scrollTimer.start();
         } else {
             stopScrollTimer();
         }
@@ -232,11 +233,6 @@ void BtQuickWidget::mouseReleased(int x, int y) {
     QVariant vY(y);
     QMetaObject::invokeMethod(root,"leftMouseRelease",
                               Q_ARG(QVariant, vX), Q_ARG(QVariant, vY));
-}
-
-void BtQuickWidget::startScrollTimer() {
-    if (!m_scrollTimer.isActive())
-        m_scrollTimer.start();
 }
 
 void BtQuickWidget::stopScrollTimer() { m_scrollTimer.stop(); }
