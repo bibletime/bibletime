@@ -137,6 +137,8 @@ int BtTextFilter::rewriteHref(int i, const QString& part) {
 // Typical input: <span lemma="H07225">God</span>
 // Output: "<a href="sword://lemmamorph/lemma=H0430||/God" style="color: black">"
 int BtTextFilter::rewriteLemmaOrMorphAsLink(int i, const QString& part) {
+    if (i + 2 >= m_parts.count())
+        return 1;
 
     QString value;
     QRegExp rx1("lemma=\"([^\"]*)*");
