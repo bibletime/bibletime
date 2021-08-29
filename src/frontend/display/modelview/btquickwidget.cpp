@@ -234,10 +234,7 @@ void BtQuickWidget::startScrollTimer() {
         m_timer.start();
 }
 
-void BtQuickWidget::stopScrollTimer() {
-    if (m_timer.isActive())
-        m_timer.stop();
-}
+void BtQuickWidget::stopScrollTimer() { m_timer.stop(); }
 
 void BtQuickWidget::scrollTimerSlot() {
     int y = mapFromGlobal(QCursor::pos()).y();
