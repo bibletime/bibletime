@@ -38,11 +38,6 @@ public:
     void setShowReferences(bool on);
 
 private:
-    void fixDoubleBR(QStringList & parts);
-    int rewriteFootnoteAsLink(QStringList & parts, int i, const QString& part);
-    int rewriteHref(QStringList & parts, int i, const QString& part);
-    int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, const QString& part);
-    QStringList splitText(const QString& text);
 
     bool m_showReferences = false;
 };
