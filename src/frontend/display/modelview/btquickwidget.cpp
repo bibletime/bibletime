@@ -38,9 +38,7 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
     setAcceptDrops(true);
 
     engine()->addImportPath("qrc:/qml");
-    QString qmlFile = "qrc:/qml/DisplayView.qml";
-    QUrl url(qmlFile);
-    setSource(url);
+    setSource(QUrl("qrc:/qml/DisplayView.qml"));
     setupScrollTimer();
 }
 
