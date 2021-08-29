@@ -57,7 +57,6 @@ protected:
        virtual void wheelEvent(QWheelEvent * event) override;
 
 private:
-    BtQmlInterface* getQmlInterface() const;
     void startScrollTimer();
     void stopScrollTimer();
 

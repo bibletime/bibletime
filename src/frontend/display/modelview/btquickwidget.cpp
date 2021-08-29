@@ -59,10 +59,6 @@ BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
             });
 }
 
-BtQmlInterface* BtQuickWidget::getQmlInterface() const {
-    return m_scrollView->getQmlInterface();
-}
-
 void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
     if (auto const * const btmimedata =
                 qobject_cast<BTMimeData const *>(e->mimeData()))
@@ -76,7 +72,7 @@ void BtQuickWidget::dragEnterEvent(QDragEnterEvent * const e) {
         CSwordModuleInfo::ModuleType bookmarkType = m->type();
         if ((bookmarkType == CSwordModuleInfo::Bible
              || bookmarkType == CSwordModuleInfo::Commentary)
-            && getQmlInterface()->isBibleOrCommentary())
+            && m_scrollView->getQmlInterface()->isBibleOrCommentary())
         {
             e->acceptProposedAction();
         } else {
@@ -151,7 +147,7 @@ int BtQuickWidget::getLastSelectedIndex() const {
 }
 
 CSwordKey* BtQuickWidget::getMouseClickedKey() {
-    return getQmlInterface()->getMouseClickedKey();
+    return m_scrollView->getQmlInterface()->getMouseClickedKey();
 }
 
 void BtQuickWidget::scroll(int pixels) {
@@ -166,7 +162,7 @@ void BtQuickWidget::scroll(int pixels) {
 // QMdiSubwindow does not pass leaveEvent on down.
 bool BtQuickWidget::event(QEvent* e) {
     if (e->type() == QEvent::Leave)
-        getQmlInterface()->cancelMagTimer();
+        m_scrollView->getQmlInterface()->cancelMagTimer();
     return QQuickWidget::event(e);
 }
 
