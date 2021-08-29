@@ -36,8 +36,7 @@ BtEditTextWizard::BtEditTextWizard(QWidget * parent, Qt::WindowFlags flags)
 
     retranslateUi();
     restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
-    bool htmlMode = btConfig().value<bool>(HtmlModeKey, true);
-    m_plainOrHtmlPage->setHtmlMode(htmlMode);
+    m_plainOrHtmlPage->setHtmlMode(btConfig().value<bool>(HtmlModeKey, true));
 }
 
 void BtEditTextWizard::accept() {
