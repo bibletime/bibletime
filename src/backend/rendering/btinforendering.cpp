@@ -292,7 +292,7 @@ QString decodeFootnote(QString const & data) {
            .arg(text);
 }
 
-CSwordModuleInfo * getFirstAvalibleStrongsModule (bool wantHebrew) {
+CSwordModuleInfo * getFirstAvailableStrongsModule(bool wantHebrew) {
     for (auto * const m : CSwordBackend::instance()->moduleList()) {
         if (m->type() == CSwordLexiconModuleInfo::Lexicon) {
             auto lexModule = qobject_cast<CSwordLexiconModuleInfo *>(m);
@@ -311,7 +311,7 @@ CSwordModuleInfo * getStrongsModule(bool const wantHebrew) {
     if (auto * const m =
                 btConfig().getDefaultSwordModuleByType(types[wantHebrew]))
         return m;
-    return getFirstAvalibleStrongsModule(wantHebrew);
+    return getFirstAvailableStrongsModule(wantHebrew);
 }
 
 QString decodeStrongs(QString const & data) {
