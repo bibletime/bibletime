@@ -140,6 +140,22 @@ void BtEditTextPage::setFont(const QFont& font) {
 }
 
 void BtEditTextPage::retranslateUi() {
+    m_actions.bold->setText(tr("Bold"));
+    m_actions.bold->setToolTip(tr("Bold"));
+    m_actions.italic->setText(tr("Italic"));
+    m_actions.italic->setToolTip(tr("Italic"));
+    m_actions.underline->setText(tr("Underline"));
+    m_actions.underline->setToolTip(tr("Underline"));
+    m_actions.alignLeft->setText(tr("Left"));
+    m_actions.alignLeft->setToolTip(tr("Align left"));
+    m_actions.alignCenter->setText(tr("Center"));
+    m_actions.alignCenter->setToolTip(tr("Align center"));
+    m_actions.alignRight->setText(tr("Right"));
+    m_actions.alignRight->setToolTip(tr("Align right"));
+
+    m_fontFamilyComboBox->setToolTip(tr("Font"));
+    m_fontSizeWidget->setToolTip(tr("Font size"));
+    m_fontColorChooser->setToolTip(tr("Font color"));
 }
 
 QFont BtEditTextPage::initHtmlFont() {
@@ -154,14 +170,12 @@ void BtEditTextPage::initActions() {
     QFont f = initHtmlFont();
 
     //--------------------bold toggle-------------------------
-    m_actions.bold = new QAction(
-                CResMgr::displaywindows::writeWindow::boldText::icon(),
-                tr("Bold"),
-                this);
+    m_actions.bold = new QAction(this);
+    m_actions.bold->setIcon(
+                CResMgr::displaywindows::writeWindow::boldText::icon());
     m_actions.bold->setCheckable(true);
     m_actions.bold->setChecked(f.bold());
     m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
-    m_actions.bold->setToolTip( tr("Bold") );
     BT_CONNECT(m_actions.bold, &QAction::toggled,
                [this](bool const checked) {
                    if (!m_handingFormatChangeFromEditor)
@@ -170,10 +184,9 @@ void BtEditTextPage::initActions() {
                });
 
     //--------------------italic toggle-------------------------
-    m_actions.italic = new QAction(
-                CResMgr::displaywindows::writeWindow::italicText::icon(),
-                tr("Italic"),
-                this );
+    m_actions.italic = new QAction(this);
+    m_actions.italic->setIcon(
+                CResMgr::displaywindows::writeWindow::italicText::icon());
     m_actions.italic->setCheckable(true);
     m_actions.italic->setChecked(f.italic());
     m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
@@ -182,13 +195,11 @@ void BtEditTextPage::initActions() {
                    if (!m_handingFormatChangeFromEditor)
                        m_htmlTextEdit->setFontItalic(checked);
                });
-    m_actions.italic->setToolTip( tr("Italic") );
 
     //--------------------underline toggle-------------------------
-    m_actions.underline = new QAction(
-                CResMgr::displaywindows::writeWindow::underlinedText::icon(),
-                tr("Underline"),
-                this );
+    m_actions.underline = new QAction(this);
+    m_actions.underline->setIcon(
+                CResMgr::displaywindows::writeWindow::underlinedText::icon());
     m_actions.underline->setCheckable(true);
     m_actions.underline->setChecked(f.underline());
     m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
@@ -197,12 +208,11 @@ void BtEditTextPage::initActions() {
                    if (!m_handingFormatChangeFromEditor)
                        m_htmlTextEdit->setFontUnderline(checked);
                });
-    m_actions.underline->setToolTip( tr("Underline") );
 
     //--------------------align left toggle-------------------------
-    m_actions.alignLeft = new QAction(
-                CResMgr::displaywindows::writeWindow::alignLeft::icon(),
-                tr("Left"), this);
+    m_actions.alignLeft = new QAction(this);
+    m_actions.alignLeft->setIcon(
+                CResMgr::displaywindows::writeWindow::alignLeft::icon());
     m_actions.alignLeft->setCheckable(true);
     m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
     BT_CONNECT(m_actions.alignLeft, &QAction::toggled,
@@ -215,12 +225,11 @@ void BtEditTextPage::initActions() {
                        alignmentChanged(Qt::AlignLeft);
                    }
                });
-    m_actions.alignLeft->setToolTip( tr("Align left") );
 
     //--------------------align center toggle-------------------------
-    m_actions.alignCenter = new QAction(
-                CResMgr::displaywindows::writeWindow::alignCenter::icon(),
-                tr("Center"), this);
+    m_actions.alignCenter = new QAction(this);
+    m_actions.alignCenter->setIcon(
+                CResMgr::displaywindows::writeWindow::alignCenter::icon());
     m_actions.alignCenter->setCheckable(true);
     m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
     BT_CONNECT(m_actions.alignCenter, &QAction::toggled,
@@ -233,12 +242,11 @@ void BtEditTextPage::initActions() {
                        alignmentChanged(Qt::AlignHCenter);
                    }
                });
-    m_actions.alignCenter->setToolTip( tr("Center") );
 
     //--------------------align right toggle-------------------------
-    m_actions.alignRight = new QAction(
-                CResMgr::displaywindows::writeWindow::alignRight::icon(),
-                tr("Right"), this);
+    m_actions.alignRight = new QAction(this);
+    m_actions.alignRight->setIcon(
+                CResMgr::displaywindows::writeWindow::alignRight::icon());
     m_actions.alignRight->setCheckable(true);
     m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
     BT_CONNECT(m_actions.alignRight, &QAction::toggled,
@@ -251,7 +259,6 @@ void BtEditTextPage::initActions() {
                        alignmentChanged(Qt::AlignRight);
                    }
                });
-    m_actions.alignRight->setToolTip( tr("Align right") );
 }
 
 /** The text's alignment changed. Enable the right buttons. */
@@ -286,44 +293,41 @@ void BtEditTextPage::setupToolBar() {
     QFont f = m_htmlTextEdit->currentFont();
 
     //--------------------font chooser-------------------------
-    QFontComboBox* fontFamilyCombo = new QFontComboBox(this);
-    fontFamilyCombo->setCurrentFont(f);
-    fontFamilyCombo->setToolTip( tr("Font") );
-    m_toolBar->addWidget(fontFamilyCombo);
-    BT_CONNECT(fontFamilyCombo, &QFontComboBox::currentFontChanged,
+    m_fontFamilyComboBox = new QFontComboBox(this);
+    m_fontFamilyComboBox->setCurrentFont(f);
+    m_toolBar->addWidget(m_fontFamilyComboBox);
+    BT_CONNECT(m_fontFamilyComboBox, &QFontComboBox::currentFontChanged,
                [this](QFont const & font) {
                    if (!m_handingFormatChangeFromEditor)
                        m_htmlTextEdit->setFontFamily(font.family());
                });
     BT_CONNECT(this,            &BtEditTextPage::signalFontChanged,
-               fontFamilyCombo, &QFontComboBox::setCurrentFont,
+               m_fontFamilyComboBox, &QFontComboBox::setCurrentFont,
                Qt::DirectConnection);
 
     //--------------------font size chooser-------------------------
-    BtFontSizeWidget* fontSizeChooser = new BtFontSizeWidget(this);
-    fontSizeChooser->setFontSize(f.pointSize());
-    fontSizeChooser->setToolTip( tr("Font size") );
-    m_toolBar->addWidget(fontSizeChooser);
-    BT_CONNECT(fontSizeChooser, &BtFontSizeWidget::fontSizeChanged,
+    m_fontSizeWidget = new BtFontSizeWidget(this);
+    m_fontSizeWidget->setFontSize(f.pointSize());
+    m_toolBar->addWidget(m_fontSizeWidget);
+    BT_CONNECT(m_fontSizeWidget, &BtFontSizeWidget::fontSizeChanged,
                [this](int const newSize) {
                    if (!m_handingFormatChangeFromEditor)
                        m_htmlTextEdit->setFontPointSize(
                                    static_cast<qreal>(newSize));
                });
-    BT_CONNECT(this,            &BtEditTextPage::signalFontSizeChanged,
-               fontSizeChooser, &BtFontSizeWidget::setFontSize,
+    BT_CONNECT(this,             &BtEditTextPage::signalFontSizeChanged,
+               m_fontSizeWidget, &BtFontSizeWidget::setFontSize,
                Qt::DirectConnection);
 
     //--------------------color button-------------------------
-    BtColorWidget* fontColorChooser = new BtColorWidget();
-    fontColorChooser->setColor(m_htmlTextEdit->textColor());
-    fontColorChooser->setToolTip(tr("Font color"));
-    m_toolBar->addWidget(fontColorChooser);
-    BT_CONNECT(fontColorChooser, &BtColorWidget::changed,
-               m_htmlTextEdit,   &QTextEdit::setTextColor,
+    m_fontColorChooser = new BtColorWidget();
+    m_fontColorChooser->setColor(m_htmlTextEdit->textColor());
+    m_toolBar->addWidget(m_fontColorChooser);
+    BT_CONNECT(m_fontColorChooser, &BtColorWidget::changed,
+               m_htmlTextEdit,     &QTextEdit::setTextColor,
                Qt::DirectConnection);
-    BT_CONNECT(this,             &BtEditTextPage::signalFontColorChanged,
-               fontColorChooser, &BtColorWidget::setColor,
+    BT_CONNECT(this,               &BtEditTextPage::signalFontColorChanged,
+               m_fontColorChooser, &BtColorWidget::setColor,
                Qt::DirectConnection);
 
     m_toolBar->addSeparator();

@@ -20,8 +20,11 @@
 #include <QString>
 
 
+class BtColorWidget;
 class BtEditTextWizard;
+class BtFontSizeWidget;
 class QAction;
+class QFontComboBox;
 class QTextEdit;
 class QToolBar;
 
@@ -60,6 +63,9 @@ private:
     QTextEdit * m_plainTextEdit;
     QTextEdit * m_htmlTextEdit;
     QToolBar * m_toolBar;
+        QFontComboBox * m_fontFamilyComboBox;
+        BtFontSizeWidget * m_fontSizeWidget;
+        BtColorWidget * m_fontColorChooser;
     bool m_handingFormatChangeFromEditor;
 
     QFont m_plainTextFont;
