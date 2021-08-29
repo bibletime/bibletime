@@ -86,6 +86,9 @@ int rewriteHref(QStringList & parts, int i, QString const & part) {
 // Output: "<a href="sword://lemmamorph/lemma=H0430||/God" style="color: black">"
 int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, QString const & part)
 {
+    if (i + 2 >= parts.count())
+        return 1;
+
     QString value;
     QRegExp rx1("lemma=\"([^\"]*)*");
     int pos1 = rx1.indexIn(part);
