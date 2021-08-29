@@ -30,9 +30,7 @@ QString BtTextFilter::processText(const QString &text) {
     fixDoubleBR();
     if (m_showReferences) {
 
-        int i = 0;
-        int count = m_parts.count();
-        do {
+        for (int i = 0; i < m_parts.count();) {
             QString part = m_parts.at(i);
 
             if (part.startsWith("<") && part.contains("class=\"footnote\"")) {
@@ -48,7 +46,7 @@ QString BtTextFilter::processText(const QString &text) {
             } else {
                 i++;
             }
-        } while (i < count);
+        }
 
     }
     return m_parts.join("");
