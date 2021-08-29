@@ -76,13 +76,12 @@ void BtBookshelfLanguagesPage::initializePage() {
     { // Select languages:
         QStringList languages;
         if (m_firstTimeInit) {
-            languages << btConfig().value<QStringList>(LanguagesKey,
-                                                       QStringList{});
+            languages = btConfig().value<QStringList>(LanguagesKey);
             if (languages.isEmpty())
-                languages << tr("English");
+                languages = QStringList{tr("English")};
             m_firstTimeInit = false;
         } else {
-            languages << selectedLanguages();
+            languages = selectedLanguages();
         }
 
         bool scrolledToFirstSelected = false;
