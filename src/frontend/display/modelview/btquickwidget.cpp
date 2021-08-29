@@ -182,16 +182,14 @@ void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
 
 void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
     if ((event->buttons() & Qt::LeftButton) == Qt::LeftButton) {
-        int y = event->y();
-        if ( y < 0) {
-            startScrollTimer();
-        } else if (y > height()) {
+        auto const y = event->y();
+        if (y < 0 || y > height()) {
             startScrollTimer();
         } else {
             stopScrollTimer();
         }
 
-        mouseMove(event->x(), event->y());
+        mouseMove(event->x(), y);
         event->accept();
         return;
     }
