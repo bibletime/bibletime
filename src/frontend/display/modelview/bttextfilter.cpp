@@ -138,7 +138,7 @@ QString BtTextFilter::processText(const QString &text) {
         int i = 0;
         int count = parts.count();
         do {
-            QString part = parts.at(i);
+            auto const & part = parts.at(i);
 
             if (part.startsWith("<") && part.contains("class=\"footnote\"")) {
                 i= i + rewriteFootnoteAsLink(parts, i, part);
