@@ -51,7 +51,7 @@ void fixDoubleBR(QStringList & parts) {
 // Output:         <span class="footnote" note="ESV2011/Luke 11:37/1">1</span>
 
 int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
-    if (i+2 > parts.count())
+    if (i + 2 >= parts.count())
         return 1;
 
     QRegExp rxlen("note=\"([^\"]*)");
