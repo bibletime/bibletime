@@ -55,13 +55,10 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
         return 1;
 
     QRegExp rxlen("note=\"([^\"]*)");
-    int pos = rxlen.indexIn(part);
-    if (pos > -1) {
-        QString noteValue = rxlen.cap(1);
-        QString footnoteText = parts.at(i+1);
-        QString url = "sword://footnote/" + noteValue + "=" + footnoteText;
-        QString newEntry = "<a class=\"footnote\" href=\"" + url + "\">";
-        parts[i] = newEntry;
+    if (rxlen.indexIn(part) > -1) {
+        auto const & footnoteText = parts.at(i + 1);
+        parts[i] = "<a class=\"footnote\" href=\"sword://footnote/"
+                   + rxlen.cap(1) + "=" + footnoteText + "\">";
         parts[i+1] = "(" + footnoteText + ")";
         parts[i+2] = "</a>";
         return 3;
