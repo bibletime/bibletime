@@ -486,19 +486,20 @@ void CBookmarkIndex::dropEvent(QDropEvent * event) {
         {
             //create the new bookmark
             auto const & bookmark = mdata->bookmarks().first();
-            QString const moduleName(bookmark.module());
-            QString const keyText(bookmark.key());
-            QString const description(bookmark.description());
-            CSwordModuleInfo * minfo =
-                    CSwordBackend::instance()->findModuleByName(moduleName);
+            QString moduleName(bookmark.module());
+            QString keyText(bookmark.key());
+            QString description(bookmark.description());
+            auto * minfo =
+                    CSwordBackend::instance()->findModuleByName(
+                        std::move(moduleName));
             BT_ASSERT(minfo);
 
             /// \todo add title
             m_bookmarksModel->addBookmark(indexUnderParent,
                                           parentIndex,
                                           *minfo,
-                                          keyText,
-                                          description);
+                                          std::move(keyText),
+                                          std::move(description));
         }
     } else {
         event->accept();
