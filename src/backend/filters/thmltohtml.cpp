@@ -16,6 +16,7 @@
 #include <QString>
 #include <QTextCodec>
 #include <QUrl>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -196,7 +197,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
             pos = tag.indexIn(e, pos);
         }
 
-        result.append( e );
+        result.append(std::move(e));
     }
 
     if (!list.isEmpty())
