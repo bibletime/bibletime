@@ -94,7 +94,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
         // pass text ahead of <sync> stright through
         if (auto const pos = tag.indexIn(e, 0); pos >= 0) {
             result.append(e.left(pos));
-            e = e.remove(0, pos);
+            e.remove(0, pos);
         }
 
         // parse <sync> and change to <span>
