@@ -161,27 +161,24 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
 void TeiToHtml::renderTargetReference(const char *osisRef, sword::SWBuf &buf,
                                 sword::BasicFilterUserData *myUserData)
 {
-    QString ref( osisRef );
-    QString hrefRef( ref );
-
-    if (!ref.isEmpty()) {
+    if (QString ref = osisRef; !ref.isEmpty()) {
         //find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
         //If the target is something like "ModuleID:key comes here" then the
         // modulename is given, so we'll use that one
 
-        const char * currentModuleName = myUserData->module->getName();
-        CSwordModuleInfo* mod = CSwordBackend::instance()->findModuleByName(currentModuleName);
+        CSwordModuleInfo * mod;
+        auto const & backend = *CSwordBackend::instance();
 
         //if the target like "GerLut:key" contains a module, use that
-        int pos = ref.indexOf(":");
-
-        if (pos >= 0) {
+        if (auto const pos = ref.indexOf(":"); pos >= 0) {
             QString newModuleName = ref.left(pos);
-            hrefRef = ref.mid(pos + 1);
+            ref.remove(0, pos + 1);
 
-            if (CSwordBackend::instance()->findModuleByName(newModuleName)) {
-                mod = CSwordBackend::instance()->findModuleByName(newModuleName);
-            }
+            mod = backend.findModuleByName(newModuleName);
+            if (!mod)
+                mod = backend.findModuleByName(myUserData->module->getName());
+        } else {
+            mod = backend.findModuleByName(myUserData->module->getName());
         }
 
         if (mod) {
@@ -194,7 +191,7 @@ void TeiToHtml::renderTargetReference(const char *osisRef, sword::SWBuf &buf,
                .append( // create the hyperlink with key and mod
                     ReferenceManager::encodeHyperlink(
                         *mod,
-                        hrefRef.toUtf8().constData()
+                        ref.toUtf8().constData()
                     ).toUtf8().constData()
                 )
                .append("\">");
