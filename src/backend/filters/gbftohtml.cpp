@@ -21,6 +21,7 @@
 #include <QRegExp>
 #include <QString>
 #include <QStringList>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../managers/cswordbackend.h"
@@ -93,49 +94,53 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         return 1; //no processing should be done, may happen in a search
     }
 
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->getName() );
-
-    if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::morphTags) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
-        return 1; //WARNING: Return alread here
+    if (auto * const m =
+                CSwordBackend::instance()->findModuleByName(module->getName()))
+    {
+        // only parse if the module has strongs or lemmas:
+        if (!m->has(CSwordModuleInfo::lemmas)
+            && !m->has(CSwordModuleInfo::morphTags)
+            && !m->has(CSwordModuleInfo::strongNumbers))
+            return 1; //WARNING: Return already here
     }
 
     //Am Anfang<WH07225> schuf<WH01254><WTH8804> Gott<WH0430> Himmel<WH08064> und<WT> Erde<WH0776>.
     //A simple word<WT> means: No entry for this word "word"
-    QString result;
 
-    QString t = QString::fromUtf8(buf.c_str());
-
-    QRegExp tag("([.,;:]?<W[HGT][^>]*>\\s*)+");
-
-    QStringList list;
-
-    int lastMatchEnd = 0;
-
-    int pos = tag.indexIn(t, 0);
-
-    if (pos == -1) { //no strong or morph code found in this text
-        return 1; //WARNING: Return already here
-    }
 
     //split the text into parts which end with the GBF tag marker for strongs/lemmas
-    while (pos != -1) {
-        list.append(t.mid(lastMatchEnd, pos + tag.matchedLength() - lastMatchEnd));
+    QStringList list;
+    {
+        auto const t = QString::fromUtf8(buf.c_str());
+        QRegExp tag("([.,;:]?<W[HGT][^>]*>\\s*)+");
 
-        lastMatchEnd = pos + tag.matchedLength();
-        pos = tag.indexIn(t, pos + tag.matchedLength());
-    }
+        int pos = tag.indexIn(t, 0);
 
-    //append the trailing text to the list.
-    if (!t.right(t.length() - lastMatchEnd).isEmpty()) {
-        list.append(t.right(t.length() - lastMatchEnd));
+        if (pos == -1) { //no strong or morph code found in this text
+            return 1; //WARNING: Return already here
+        }
+
+        int lastMatchEnd = 0;
+        while (pos != -1) {
+            list.append(t.mid(lastMatchEnd, pos + tag.matchedLength() - lastMatchEnd));
+
+            lastMatchEnd = pos + tag.matchedLength();
+            pos = tag.indexIn(t, pos + tag.matchedLength());
+        }
+
+        //append the trailing text to the list.
+        if (!t.right(t.length() - lastMatchEnd).isEmpty()) {
+            list.append(t.right(t.length() - lastMatchEnd));
+        }
     }
 
     //list is now a list of words with 1-n Strongs at the end, which belong to this word.
 
     //now create the necessary HTML in list entries and concat them to the result
-    tag = QRegExp("<W([HGT])([^>]*)>");
+    QRegExp tag("<W([HGT])([^>]*)>");
     tag.setMinimal(true);
 
+    QString result;
     for (auto & e : list) { // for each entry to process
         //qWarning(e.latin1());
 
@@ -144,9 +149,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         //If not, leave out the strongs info, because it can't be tight to a text
         //Comparing the first char with < is not enough, because the tokenReplace is done already
         //so there might be html tags already.
-        const bool textPresent = (e.trimmed().remove(QRegExp("[.,;:]")).left(2) != "<W");
-
-        if (!textPresent) {
+        if (e.trimmed().remove(QRegExp("[.,;:]")).left(2) == "<W") {
             result += e;
             continue;
         }
@@ -156,12 +159,11 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         bool hasLemmaAttr = false;
         bool hasMorphAttr = false;
 
-        QString value = QString();
         int tagAttributeStart = -1;
 
         while (pos != -1) { //work on all strong/lemma tags in this section, should be between 1-3 loops
             const bool isMorph = (tag.cap(1) == "T");
-            value = isMorph ? tag.cap(2) : tag.cap(2).prepend( tag.cap(1) );
+            auto const value = isMorph ? tag.cap(2) : tag.cap(2).prepend( tag.cap(1) );
 
             if (value.isEmpty()) {
                 break;
@@ -214,13 +216,12 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
                     }
                 }
                 else { //attribute was not yet inserted
-                    QString attr = QString(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
-
-                    e.insert(tagAttributeStart, attr);
-                    pos += attr.length();
-
                     hasMorphAttr = isMorph;
                     hasLemmaAttr = !isMorph;
+
+                    auto attr = QString(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
+                    pos += attr.length();
+                    e.insert(tagAttributeStart, std::move(attr));
                 }
 
                 //tagAttributeStart remains the same
