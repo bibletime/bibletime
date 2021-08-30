@@ -110,31 +110,32 @@ bool TeiToHtml::handleToken(sword::SWBuf &buf, const char *token,
 void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
                                 sword::BasicFilterUserData *myUserData)
 {
-    QString ref( osisRef );
-    QString hrefRef( ref );
 
-    if (!ref.isEmpty()) {
+    if (QString ref = osisRef; !ref.isEmpty()) {
         //find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
         //If the osisRef is something like "ModuleID:key comes here" then the
         // modulename is given, so we'll use that one
 
-        CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType( "standardBible" );
-        if (! mod)
-            mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
-
-        // BT_ASSERT(mod); There's no necessarily a module or standard Bible
+        CSwordModuleInfo * mod;
+        QString hrefRef;
 
         //if the osisRef like "GerLut:key" contains a module, use that
-        int pos = ref.indexOf(":");
-
-        if ((pos >= 0) && ref.at(pos - 1).isLetter() && ref.at(pos + 1).isLetter()) {
-            QString newModuleName = ref.left(pos);
+        if (auto const pos = ref.indexOf(":");
+            (pos >= 0)
+            && ref.at(pos - 1).isLetter()
+            && ref.at(pos + 1).isLetter())
+        {
             hrefRef = ref.mid(pos + 1);
-
-            if (CSwordBackend::instance()->findModuleByName(newModuleName)) {
-                mod = CSwordBackend::instance()->findModuleByName(newModuleName);
-            }
+            mod = CSwordBackend::instance()->findModuleByName(ref.left(pos));
+            if (!mod)
+                mod = btConfig().getDefaultSwordModuleByType("standardBible");
+        } else {
+            hrefRef = ref;
+            mod = btConfig().getDefaultSwordModuleByType("standardBible");
         }
+        if (!mod)
+            mod = CSwordBackend::instance()->findFirstAvailableModule(
+                      CSwordModuleInfo::Bible);
 
         if (mod) {
             ReferenceManager::ParseOptions const options{
