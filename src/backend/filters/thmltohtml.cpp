@@ -103,14 +103,12 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 
         int pos = tag.indexIn(e);
         bool insertedTag = false;
-        QString value;
-        QString valueClass;
 
         while (pos != -1) {
             bool isMorph = false;
             bool isStrongs = false;
-            value = QString();
-            valueClass = QString();
+            QString value;
+            QString valueClass;
 
             // check 3 attribute/value pairs
 
