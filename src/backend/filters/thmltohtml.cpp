@@ -86,7 +86,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
     QRegExp tag("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+(type|value|class)=\"([^\"]+)\"[^>]+((type|value|class)=\"([^\"]+)\")*([^<]*)>");
 
     QString result;
-    for (auto e : list) {
+    for (auto & e : list) {
 
         // pass text ahead of <sync> stright through
         int pos2 = tag.indexIn(e, 0);
