@@ -321,9 +321,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     if (! mod)
                         mod = CSwordBackend::instance()->findFirstAvailableModule(CSwordModuleInfo::Bible);
 
-                    if (mod)
-                    {
-                        ;
+                    if (mod) {
                         BT_ASSERT(tag.getAttribute("passage"));
                         QString const completeRef(
                                 ReferenceManager::parseVerseReference(
