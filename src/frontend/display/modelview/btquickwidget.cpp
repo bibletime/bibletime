@@ -21,14 +21,14 @@
 #include <QQuickItem>
 #include <Qt>
 #include <QWheelEvent>
+#include "../../../backend/drivers/cswordmoduleinfo.h"
+#include "../../../backend/managers/cswordbackend.h"
 #include "../../../util/btassert.h"
 #include "../../../util/directory.h"
 #include "../../BtMimeData.h"
-#include "btqmlinterface.h"
 #include "../../display/btmodelviewreaddisplay.h"
-#include "../../../backend/drivers/cswordmoduleinfo.h"
-#include "../../../backend/managers/cswordbackend.h"
 #include "../../displaywindow/cdisplaywindow.h"
+#include "btqmlinterface.h"
 
 
 BtQuickWidget::BtQuickWidget(BtQmlScrollView* parent)
