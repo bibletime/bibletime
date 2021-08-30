@@ -182,7 +182,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                     if (attrPos >= 0) {
                         QString attr;
                         attr.append(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
-                        e.insert(attrPos, attr);
+                        e.insert(attrPos, attr); /// \bug e.replace() instead?
 
                         hasMorphAttr = isMorph;
                         hasLemmaAttr = !isMorph;
