@@ -17,7 +17,7 @@
 #include <QList>
 #include <QObject>
 #include <QString>
-#include "BookmarkItem.h"
+#include "BookmarkItem.h" // IWYU pragma: keep for Qt's moc
 
 
 /**
