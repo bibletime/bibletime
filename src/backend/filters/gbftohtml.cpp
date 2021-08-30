@@ -111,27 +111,23 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
     //split the text into parts which end with the GBF tag marker for strongs/lemmas
     QStringList list;
     {
-        auto const t = QString::fromUtf8(buf.c_str());
-        QRegExp tag("([.,;:]?<W[HGT][^>]*>\\s*)+");
-
-        int pos = tag.indexIn(t, 0);
-
-        if (pos == -1) { //no strong or morph code found in this text
-            return 1; //WARNING: Return already here
-        }
-
-        int lastMatchEnd = 0;
-        while (pos != -1) {
-            list.append(t.mid(lastMatchEnd, pos + tag.matchedLength() - lastMatchEnd));
-
-            lastMatchEnd = pos + tag.matchedLength();
-            pos = tag.indexIn(t, pos + tag.matchedLength());
+        auto t = QString::fromUtf8(buf.c_str());
+        {
+            QRegExp tag("([.,;:]?<W[HGT][^>]*>\\s*)+");
+            auto pos = tag.indexIn(t);
+            if (pos == -1) //no strong or morph code found in this text
+                return 1; //WARNING: Return already here
+            do {
+                auto const partLength = pos + tag.matchedLength();
+                list.append(t.left(partLength));
+                t.remove(0, partLength);
+                pos = tag.indexIn(t);
+            } while (pos != -1);
         }
 
         //append the trailing text to the list.
-        if (!t.right(t.length() - lastMatchEnd).isEmpty()) {
-            list.append(t.right(t.length() - lastMatchEnd));
-        }
+        if (!t.isEmpty())
+            list.append(std::move(t));
     }
 
     //list is now a list of words with 1-n Strongs at the end, which belong to this word.
