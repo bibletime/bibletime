@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2015-02-11 20:30+0100\n"
-"PO-Revision-Date: 2021-06-24 08:08+0000\n"
+"PO-Revision-Date: 2021-08-08 07:16+0000\n"
 "Last-Translator: \"Sleepy\" Eutychus\n"
 "Language-Team: Japanese (http://www.transifex.com/bibletime/bibletime/"
 "language/ja/)\n"
@@ -26,7 +26,7 @@ msgstr ""
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:2
 msgid "Bible Study Basics"
-msgstr "聖書研究法"
+msgstr "聖書研究の基礎"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
@@ -157,7 +157,7 @@ msgstr ""
 #: docs/howto/en/docbook/howto-basics.docbook:57
 #: docs/howto/en/docbook/index.docbook:53
 msgid "Study"
-msgstr "研究する"
+msgstr "研究"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:58
@@ -185,7 +185,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:69
 msgid "Memorize"
-msgstr "記憶する"
+msgstr "記憶"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:70
@@ -199,7 +199,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:75
 msgid "Meditate"
-msgstr "黙想する"
+msgstr "黙想"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:76
@@ -209,10 +209,9 @@ msgid ""
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
 msgstr ""
-"旧約聖書『詩篇』1篇2〜3節 <quote><b>主</b>のおしえを喜びとし<br />昼も夜も そ"
-"のおしえを口ずさむ人。<br />その人は<br />流れのほとりに植えられた木。<br />"
-"時が来ると実を結び<br />その葉は枯れず<br />そのなすことはすべて栄える。</"
-"quote>"
+"旧約聖書『詩篇』1篇2〜3節 <quote>【主】のおしえを喜びとし / 昼も夜も そのおし"
+"えを口ずさむ人。 / その人は / 流れのほとりに植えられた木。 / 時が来ると実を結"
+"び / その葉は枯れず / そのなすことはすべて栄える。</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:82
@@ -579,7 +578,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:7
 msgid "A Book that is Unique"
-msgstr "唯一の書"
+msgstr "ユニークな書"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:8
@@ -601,8 +600,8 @@ msgid ""
 "authorship. It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
-"著述―1,600年以上もの時間をかけて、生まれも育ちも時代背景も別々の40人が別々に"
-"書いたにもかかわらず、ただひとりの神の著書として読むことができます。"
+"著作性―1,600年以上もの時間をかけて、生まれも育ちも時代背景も別々の40人が別々"
+"に書いたにもかかわらず、ただひとりの神の著書として読むことができます。"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:21
@@ -1091,7 +1090,7 @@ msgstr "神の力"
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:236
 msgid "A Book that Wars"
-msgstr "闘いの書"
+msgstr "戦の書"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:237
@@ -1192,16 +1191,16 @@ msgid ""
 "endless, and excessive devotion to books is wearying to the body.</emphasis>"
 "\""
 msgstr ""
-"旧約聖書『伝道者の書』12章11、12節<br />《 <emphasis>知恵のある者たちのことば"
-"は<br />突き棒のようなもの、<br />それらが編纂された書は<br />よく打ち付けら"
-"れた釘のようなもの。<br />これらは一人の牧者によって与えられた。<br />わが子"
-"よ、さらに次のことにも気をつけよ。<br />多くの書物を書くのはきりがない。<br /"
-">学びに没頭すると、からだが疲れる。</emphasis>》"
+"旧約聖書『伝道者の書』12章11、12節《 <emphasis>知恵のある者たちのことばは / "
+"突き棒のようなもの、 / それらが編纂された書は / よく打ち付けられた釘のような"
+"もの。 / これらは一人の牧者によって与えられた。 / わが子よ、さらに次のことに"
+"も気をつけよ。 / 多くの書物を書くのはきりがない。 / 学びに没頭すると、からだ"
+"が疲れる。</emphasis>》"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:288
 msgid "Appendix: \"Once for All\""
-msgstr "付録:「これを最後に」"
+msgstr "付録:「ただ一度」"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:290
@@ -1866,8 +1865,8 @@ msgstr "例 4B"
 #: docs/howto/en/docbook/howto-interpretation.docbook:276
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr ""
-"旧約聖書『イザヤ書』59章1節《<quote><b>主</b>の手が短くて救えないのではない。"
-"</quote>》"
+"旧約聖書『イザヤ書』59章1節《<quote>【主】の手が短くて救えないのではない。</"
+"quote>》"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:278
@@ -2053,7 +2052,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:39
 msgid "Abstract"
-msgstr "抄録"
+msgstr "本書の概要"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:40

@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Hanjo Kim <lordmiss@gmail.com>, 2020
+# Hanjo Kim <lordmiss@gmail.com>, 2020-2021
+# Jaak Ristioja, 2021
 # rokmcssu <yaraba@daum.net>, 2017
 # rokmcssu <yaraba@daum.net>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: BibleTime\n"
 "POT-Creation-Date: 2019-12-22 02:05+0200\n"
-"PO-Revision-Date: 2020-12-27 05:09+0000\n"
-"Last-Translator: Hanjo Kim <lordmiss@gmail.com>\n"
+"PO-Revision-Date: 2021-08-30 19:37+0000\n"
+"Last-Translator: Jaak Ristioja\n"
 "Language-Team: Korean (http://www.transifex.com/bibletime/bibletime/language/"
 "ko/)\n"
 "Language: ko\n"
@@ -848,6 +849,12 @@ msgid ""
 "scrolling or scroll the other direction press Shift+Up one or more times. "
 "Pressing any other key or changing the active window will stop the scrolling."
 msgstr ""
+"현재 활성 윈도우는 자동으로 위아래 스크롤이 가능합니다. Shift+Down을 눌러서 "
+"스크롤을 시작하세요. Shift+Down을 여러번 누르면 스크롤 속도를 올릴 수 있습니"
+"다. 스크롤을 멈추려면 스페이스를 누르세요. 이전 속도로 다시 스크롤을 시작하려"
+"면 스페이스를 다시 누르면 됩니다. 스크롤 속도를 늦추거나 반대 방향으로 스크롤"
+"하려면 Shift+Up을 누르면 됩니다. 다른 키를 누르거나 활성 윈도우를 바꾸면 스크"
+"롤은 멈춥니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:164
@@ -898,6 +905,9 @@ msgid ""
 "commentary by just clicking on any verse.  A dialog opens which allows you "
 "to add or edit text for that verse."
 msgstr ""
+"책장에서 개인주석 아이콘을 <mousebutton>왼쪽</mousebutton> 마우스 버튼으로 눌"
+"러서 여세요. 아무 절을 눌러서 이 주석을 편집할 수 있습니다. 해당 절에 대한 글"
+"을 입력하거나 수정할 수 있는 대화창이 열립니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:194
@@ -1071,6 +1081,9 @@ msgid ""
 "match any single character. The use of parenthesis allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
+"와일드카드를 사용할 수 있습니다: '*' 은 모든 수의 문자에, while '?' 은 한 개"
+"의 문자에 대응합니다. 괄호를 쓰면 '(Jesus OR spirit) AND God' 과 같이 검색어"
+"를 묶을 수 있습니다."
 
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:291
@@ -1298,6 +1311,11 @@ msgid ""
 "modules). &bibletime; will automatically maintain a list of remote libraries "
 "and the works available from them."
 msgstr ""
+"이 기능으로 책 저장소 (라이브러리)에 연결하여 로컬 책장에 하나 또는 여럿의 책"
+"을 다운받을 수 있습니다. 이 라이브러리들은 로컬 (&sword; CD처럼), 또는 외부 "
+"(Crosswire의 온라인 저장소 또는 &sword; 모듈을 제공하는 다른 사이트)일 수 있"
+"습니다. &bibletime; 은 외부 라이브러리의 목록 및 거기에서 사용 가능한 책의 목"
+"록을 자동으로 관리합니다."
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:413
@@ -1310,6 +1328,12 @@ msgid ""
 "click on the <guibutton>Install Works</guibutton>. After the works are "
 "installed, click on the <guibutton>Finish</guibutton>."
 msgstr ""
+"설치 과정을 시작하려면 하나 혹은 여러개의 라이브러리를 선택하세요. 그리고 나"
+"서 <guibutton>다음</guibutton> 버튼을 클릭하세요. 그 후 하나 또는 여러개의 언"
+"어를 선택하고 나서 <guibutton>다음</guibutton> 버튼을 클릭하세요. 여러 카테고"
+"리를 볼 수 있습니다. 해당 카테고리 내의 책을 보려면 카테고리를 더블클릭하세"
+"요. 하나 또는 여러개의 책을 선택한 후에 <guibutton>책 설치</guibutton>를 클릭"
+"하세요. 책이 다 설치되면 <guibutton>마침</guibutton>을 클릭하세요."
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
@@ -1330,7 +1354,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:432
 msgid "Remove works"
-msgstr ""
+msgstr "책 삭제"
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:433
@@ -1339,6 +1363,8 @@ msgid ""
 "Bookshelf too free up disk space. Simply choose the works` and click on the "
 "<guibutton>Remove works</guibutton> button."
 msgstr ""
+"이 기능은 책장에서 하나 또는 여러 개의 책을 삭제할 수 있도록 해 줍니다. 그냥 "
+"책을 선택하고 <guibutton>책 삭제</guibutton> 버튼을 클릭하면 됩니다."
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -2879,7 +2905,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1416
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Down</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1420
@@ -2887,11 +2913,13 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll down</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>자동 스크롤 다운</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1429
 msgid "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Shift;+Up</keycap></keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1433
@@ -2899,11 +2927,13 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll up</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>자동 스크롤 업</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1442
 msgid "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Space;</keycap> </keycombo>"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1447
@@ -2911,6 +2941,8 @@ msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Auto scroll pause</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu>보기</guimenu> <guimenuitem>자동 스크롤 멈춤</"
+"guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
@@ -3027,6 +3059,13 @@ msgid ""
 "&bibletime;'s basic features quickly.  You will be presented with a list of "
 "works that are available from the &cbs; and other repositories;"
 msgstr ""
+"<action>책장 수정</action>.  이 대화창은 책장 수정, 즉 시스템에 책을 넣거나 "
+"삭제할 수 있도록 해 줍니다. 이 기능은 기본 책장이 발견되지 않는 경우에만 나타"
+"납니다. <link linkend=\"hdbk-op-bookshelfmanager\">책장 관리자</link>부분에"
+"서 더 자세한 내용을 볼 수 있습니다. 만약 빈 책장으로 시작했다면, 최소한 하나 "
+"이상의 성경, 주석, 렉시콘, 그리고 도서 하나를 설치하는 것이 &bibletime; 의 기"
+"본 기능을 빠르게 익히는데 도움이 될 것입니다. $cbs; 와 다른 저장소에서 사용 "
+"가능한 책의 리스트를 보여드릴 것입니다."
 
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:66
@@ -3087,7 +3126,7 @@ msgstr "Alt"
 #. type: Content of the Space entity
 #: docs/handbook/en/docbook/index.docbook:14
 msgid "Space"
-msgstr ""
+msgstr "스페이스"
 
 #. type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:24
@@ -3137,12 +3176,12 @@ msgstr "Abthorpe"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid "Gary"
-msgstr ""
+msgstr "Gary"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:45
 msgid "Holmlund"
-msgstr ""
+msgstr "Holmlund"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -3151,6 +3190,8 @@ msgid ""
 "<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2019</year> <holder>The &bibletime; Team</holder> </"
+"copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:55
@@ -3161,12 +3202,12 @@ msgstr "바이블타임 핸드북은 바이블타임 성경 공부 프로그램�
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:59
 msgid "<date>December 2019</date>"
-msgstr ""
+msgstr "<date>2019년 12월</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:61
 msgid "3.0.0+"
-msgstr ""
+msgstr "3.0.0+"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:64
@@ -3178,11 +3219,17 @@ msgid ""
 "Bible texts, commentaries, dictionaries and books in over 50 languages "
 "provided by the &cbs; and several other repositories."
 msgstr ""
+"&bibletime; 은 완전히 무료 성경 공부 프로그램입니다. 프로그램의 사용자 인터페"
+"이스는 &qt; 프레임워크로 만들어져서, 리눅스, 윈도우, FreeBSD 그리고 맥OS와 같"
+"은 운영체제에서 실행될 수 있습니다. 이 소프트웨어는 &sword; 프로그램 라이브러"
+"리를 사용하기 때문에 900개 이상의 무료 성경 번역본, 주석, 사전, 그리고 관련 "
+"도서들을 50개 이상의 언어로 제공하는 &cbs; 그리고 다른 저장소들을 사용할 수 "
+"있습니다."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:74
 msgid "Qt5"
-msgstr ""
+msgstr "Qt5"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:75
