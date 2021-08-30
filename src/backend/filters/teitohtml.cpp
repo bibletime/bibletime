@@ -45,10 +45,7 @@ bool TeiToHtml::handleToken(sword::SWBuf &buf, const char *token,
 
         sword::XMLTag tag(token);
 
-        if (0) {
-
-        }
-        else if (!strcmp(tag.getName(), "ref")) {
+        if (!strcmp(tag.getName(), "ref")) {
 
             if (!tag.isEndTag() && !tag.isEmpty()) {
 
