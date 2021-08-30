@@ -116,15 +116,16 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                 if (i > 4)
                     i++;
 
-                if (tag.cap(i) == "type") {
-                    isMorph   = (tag.cap(i + 1) == "morph");
-                    isStrongs = (tag.cap(i + 1) == "Strongs");
-                }
-                else if (tag.cap(i) == "value") {
-                    value = tag.cap(i + 1);
-                }
-                else if (tag.cap(i) == "class") {
-                    valueClass = tag.cap(i + 1);
+                auto const attrName = tag.cap(i);
+                auto const attrValue = tag.cap(i + 1);
+                if (attrName == "type") {
+                    isMorph   = (attrValue == "morph");
+                    isStrongs = (attrValue == "Strongs");
+                } else if (attrName == "value") {
+                    value = attrValue;
+                } else {
+                    BT_ASSERT(attrName == "class");
+                    valueClass = attrValue;
                 }
             }
 
