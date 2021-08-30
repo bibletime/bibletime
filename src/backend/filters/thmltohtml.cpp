@@ -62,32 +62,30 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
         return 1;
     }
 
-    QString result;
-
-    QString t = QString::fromUtf8(buf.c_str());
-    QRegExp tag("([.,;]?<sync[^>]+(type|value)=\"([^\"]+)\"[^>]+(type|value)=\"([^\"]+)\"([^<]*)>)+");
-
     QStringList list;
-    int lastMatchEnd = 0;
-    int pos = tag.indexIn(t, 0);
+    {
+        auto t = QString::fromUtf8(buf.c_str());
+        {
+            QRegExp tag("([.,;]?<sync[^>]+(type|value)=\"([^\"]+)\"[^>]+(type|value)=\"([^\"]+)\"([^<]*)>)+");
+            auto pos = tag.indexIn(t);
+            if (pos == -1) //no strong or morph code found in this text
+                return 1; //WARNING: Return already here
+            do {
+                auto const partLength = pos + tag.matchedLength();
+                list.append(t.left(partLength));
+                t.remove(0, partLength);
+                pos = tag.indexIn(t);
+            } while (pos != -1);
+        }
 
-    if (pos == -1) { //no strong or morph code found in this text
-        return 1; //WARNING: Return already here
+        // Append the trailing text to the list:
+        if (!t.isEmpty())
+            list.append(std::move(t));
     }
 
-    while (pos != -1) {
-        list.append(t.mid(lastMatchEnd, pos + tag.matchedLength() - lastMatchEnd));
+    QRegExp tag("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+(type|value|class)=\"([^\"]+)\"[^>]+((type|value|class)=\"([^\"]+)\")*([^<]*)>");
 
-        lastMatchEnd = pos + tag.matchedLength();
-        pos = tag.indexIn(t, pos + tag.matchedLength());
-    }
-
-    if (!t.right(t.length() - lastMatchEnd).isEmpty()) {
-        list.append(t.right(t.length() - lastMatchEnd));
-    }
-
-    tag = QRegExp("<sync[^>]+(type|value|class)=\"([^\"]+)\"[^>]+(type|value|class)=\"([^\"]+)\"[^>]+((type|value|class)=\"([^\"]+)\")*([^<]*)>");
-
+    QString result;
     for (auto e : list) {
 
         // pass text ahead of <sync> stright through
