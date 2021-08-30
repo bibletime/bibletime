@@ -56,10 +56,13 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 {
     sword::ThMLHTML::processText(buf, key, module);
 
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->getName() );
-
-    if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
-        return 1;
+    if (auto * const m =
+                CSwordBackend::instance()->findModuleByName(module->getName()))
+    {
+        // only parse if the module has strongs or lemmas:
+        if (!m->has(CSwordModuleInfo::lemmas)
+            && !m->has(CSwordModuleInfo::strongNumbers))
+            return 1;
     }
 
     QStringList list;
