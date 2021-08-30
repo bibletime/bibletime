@@ -198,7 +198,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
         result.append( e );
     }
 
-    if (list.count())
+    if (!list.isEmpty())
         buf = result.toUtf8();
 
     return 1;
