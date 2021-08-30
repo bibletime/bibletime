@@ -233,7 +233,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         result += e;
     }
 
-    if (list.count())
+    if (!list.isEmpty())
         buf = result.toUtf8().constData();
 
     return 1;
