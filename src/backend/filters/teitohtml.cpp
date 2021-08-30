@@ -127,7 +127,11 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
         //if the osisRef like "GerLut:key" contains a module, use that
         int pos = ref.indexOf(":");
 
-        if ((pos >= 0) && ref.at(pos - 1).isLetter() && ref.at(pos + 1).isLetter()) {
+        if ((pos > 0)
+            && (pos < ref.size() - 1)
+            && ref.at(pos - 1).isLetter()
+            && ref.at(pos + 1).isLetter())
+        {
             QString newModuleName = ref.left(pos);
             hrefRef = ref.mid(pos + 1);
 
