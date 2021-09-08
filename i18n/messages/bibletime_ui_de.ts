@@ -841,7 +841,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="225"/>
         <source>Some names may be missing, please file an issue at %1 if you notice errors or omissions.</source>
-        <translation>Es könnte sein, dass hier Namen fehlen. Bitte öffnen sie ein Ticket unter %a, wenn Sie Fehler oder Auslassungen feststellen.</translation>
+        <translation>Es könnte sein, dass hier Namen fehlen. Bitte öffnen sie ein Ticket unter %1, wenn Sie Fehler oder Auslassungen feststellen.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
