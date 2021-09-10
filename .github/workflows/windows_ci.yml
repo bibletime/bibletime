@@ -14,7 +14,7 @@ jobs:
 
     - name: call the other repo
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.repository_dispatch }}
         EVENT: push
         ORG: bibletime
         REPO: biblwtime-win
