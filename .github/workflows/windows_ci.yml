@@ -14,10 +14,10 @@ jobs:
 
     - name: call the bibletime-win repo
       env:
-        GITHUB_TOKEN: ${{ secrets.repository_dispatch }}
+        GITHUB_TOKEN: ${{ secrets.REPOSITORY_DISPATCH }}
         EVENT: repository_dispatch
         ORG: bibletime
-        REPO: biblwtime-win
+        REPO: bibletime-win
       run: |
         echo curl -d "{\"event_type\": \"${EVENT}\"}" -H "Content-Type: application/json" -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.everest-preview+json" "https://api.github.com/repos/${ORG}/${REPO}/dispatches"
         curl -d "{\"event_type\": \"${EVENT}\"}" -H "Content-Type: application/json" -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.everest-preview+json" "https://api.github.com/repos/${ORG}/${REPO}/dispatches"
