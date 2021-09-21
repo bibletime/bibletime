@@ -31,7 +31,7 @@ jobs:
     - name: Install required packages
       run: |
         apt-get update
-        apt-get install --no-install-recommends -yyy cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl git svn
+        apt-get install --no-install-recommends -yyy cmake make libclucene-dev libqt5svg5-dev libqt5xmlpatterns5-dev qtbase5-dev qtdeclarative5-dev qttools5-dev qtwebengine5-dev fop po4a xsltproc docbook-xml docbook-xsl git subversion
     - name: Install Sword
       run: ./ci-install-sword.sh "${HOME}/local" "$(cat "${HOME}/info/num_threads")"
     - name: Configure the build
