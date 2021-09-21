@@ -39,9 +39,9 @@ jobs:
           docbook-xsl \
           fop \
           g++ \
-          gcc \
           git \
           libclucene-dev \
+          libsword-dev \
           libqt5svg5-dev \
           libqt5xmlpatterns5-dev \
           make \
@@ -51,10 +51,7 @@ jobs:
           qtdeclarative5-dev \
           qttools5-dev \
           qtwebengine5-dev \
-          subversion \
           xsltproc
-    - name: Install Sword
-      run: ./ci-install-sword.sh "${HOME}/local" "$(cat "${HOME}/info/num_threads")"
     - name: Configure the build
       run: |
         mkdir -p "${HOME}/local" build
