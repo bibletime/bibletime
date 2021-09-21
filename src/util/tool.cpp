@@ -23,7 +23,6 @@
 #include <QMessageBox>
 #include <QObject>
 #include <QTextStream>
-#include <QtGlobal>
 #include <QWidget>
 #include "../backend/drivers/cswordmoduleinfo.h"
 #include "btassert.h"
@@ -211,15 +210,9 @@ QString remoteModuleToolTip(const CSwordModuleInfo & module,
 
 int mWidth(const QWidget * const widget, const int mCount) {
     const QString mString(mCount, 'M');
-    #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
     if (widget)
         return widget->fontMetrics().horizontalAdvance(mString);
     return QApplication::fontMetrics().horizontalAdvance(mString);
-    #else
-    if (widget)
-        return widget->fontMetrics().width(mString);
-    return QApplication::fontMetrics().width(mString);
-    #endif
 }
 
 QString fixSwordBcp47(QString input) {

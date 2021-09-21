@@ -302,11 +302,7 @@ void BtBibleKeyWidget::updateText() {
     QString text(m_key->key());
     m_textbox->setText(text);
     QFontMetrics fm(m_textbox->font());
-    #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
     int nw(m_textbox->minimumSizeHint().width() + fm.horizontalAdvance(text));
-    #else
-    int nw(m_textbox->minimumSizeHint().width() + fm.width(text));
-    #endif
     if (nw > m_textbox->minimumWidth()) {
         m_textbox->setMinimumWidth(nw);
         m_textbox->updateGeometry();

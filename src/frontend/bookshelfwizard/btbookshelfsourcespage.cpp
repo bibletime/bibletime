@@ -155,16 +155,10 @@ void BtBookshelfSourcesPage::updateSourcesModel() {
 
     // Calculate button column width:
     QFontMetrics const fontMetrics = m_sourcesTableView->fontMetrics();
-    #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
     m_sourcesTableView->setColumnWidth(
                 1,
                 qMax(fontMetrics.horizontalAdvance(removeText),
                      fontMetrics.horizontalAdvance(addText)) + 60);
-    #else
-    m_sourcesTableView->setColumnWidth(1,
-                                       qMax(fontMetrics.width(removeText),
-                                            fontMetrics.width(addText)) + 60);
-    #endif
 }
 
 bool BtBookshelfSourcesPage::isComplete() const {
