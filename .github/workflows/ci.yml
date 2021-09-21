@@ -17,6 +17,8 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    container:
+      image: debian:11
     steps:
     - uses: actions/checkout@v2
     - name: Gather system information
