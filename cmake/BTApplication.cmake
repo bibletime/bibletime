@@ -153,8 +153,8 @@ qtquick_compiler_add_resources(bibletime_RESOURCES
 FILE(GLOB_RECURSE bibletime_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
-    ${bibletime_RESOURCES}
 )
+LIST(APPEND bibletime_SOURCES ${bibletime_RESOURCES})
 IF(APPLE)
     ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
     SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
