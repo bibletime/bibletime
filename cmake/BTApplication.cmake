@@ -13,6 +13,7 @@ FIND_PACKAGE(Qt5Svg ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5PrintSupport ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Qml ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Qt5Quick ${REQUIRED_QT_VERSION} REQUIRED)
+FIND_PACKAGE(Qt5QuickCompiler REQUIRED)
 FIND_PACKAGE(Qt5QuickWidgets ${REQUIRED_QT_VERSION} REQUIRED)
 FIND_PACKAGE(Sword 1.8.1 REQUIRED)
 
@@ -34,7 +35,6 @@ FUNCTION(PREPARE_CXX_TARGET target)
     ENDIF()
 ENDFUNCTION()
 SET(CMAKE_AUTOMOC ON)
-SET(CMAKE_AUTORCC ON)
 ADD_DEFINITIONS(
     "-DBT_VERSION=\"${BT_VERSION_FULL}\""
     "-DQT_NO_KEYWORDS"
@@ -147,10 +147,13 @@ TARGET_LINK_LIBRARIES(bibletime_backend
 ######################################################
 # The bibletime application:
 #
+
+qtquick_compiler_add_resources(bibletime_RESOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
 FILE(GLOB_RECURSE bibletime_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.qrc"
+    ${bibletime_RESOURCES}
 )
 IF(APPLE)
     ADD_EXECUTABLE("bibletime" MACOSX_BUNDLE ${bibletime_SOURCES})
