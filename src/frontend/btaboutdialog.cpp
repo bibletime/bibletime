@@ -239,6 +239,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Giovanni Tedaldi</li>"
                    "<li>Dmitry Yurevich</li>"
                    "<li>Esteban Zeller</li>"
+                   "<li>Cyrille Mattiuzzo</li>"
                "</ul><p>";
     content += tr("Some names may be missing, please file an issue at %1 if "
                   "you notice errors or omissions.").arg(MAKE_LINK_STATIC(
