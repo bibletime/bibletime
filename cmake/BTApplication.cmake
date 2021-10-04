@@ -61,7 +61,7 @@ ELSE()
   SET(CMAKE_CXX_FLAGS_RELEASE "")
   SET(CMAKE_CXX_FLAGS_DEBUG "")
   IF(APPLE)
-    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/")
+    SET(T "/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/")
     LIST(APPEND BibleTime_CXXFLAGS
         "-mmacosx-version-min=10.12"
         "-stdlib=libc++"
