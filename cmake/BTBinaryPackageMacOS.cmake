@@ -12,8 +12,10 @@ IF(APPLE)
         SET(MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/Info.plist")
         SET(BT_MAC_APP  "${CMAKE_INSTALL_PREFIX}/BibleTime.app")
 
+        SET(INFO_FILE ${BT_MAC_APP}/Contents/Info.plist)
         INSTALL(CODE "
             EXECUTE_PROCESS(COMMAND ${QT_MACDEPLOYQT_EXECUTABLE} ${BT_MAC_APP}   -qmldir=${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview)
+            CONFIGURE_FILE( ${INFO_FILE} ${INFO_FILE})
         ")
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 

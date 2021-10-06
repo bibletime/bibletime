@@ -1,3 +1,6 @@
+2021-10-05 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #346 - macOS build does not provide version metadata
+
 2021-08-30 Jaak Ristioja <jaak@ristioja.ee>
     * Released 3.0.2.
 
