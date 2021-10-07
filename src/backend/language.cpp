@@ -187,11 +187,10 @@ LanguageMap::LanguageMap() {
     addLanguage({"beu"}, QT_TRANSLATE_NOOP("QObject", "Blagar"));
     addLanguage({"bgs"}, QT_TRANSLATE_NOOP("QObject", "Tagabawa"));
     addLanguage({"bgt"}, QT_TRANSLATE_NOOP("QObject", "Bughotu"));
-    // This doesn't exist in the official codes
-    addLanguage({"bh"}, QT_TRANSLATE_NOOP("QObject", "Bihari"));
     addLanguage({"bhg"}, QT_TRANSLATE_NOOP("QObject", "Binandere"));
     addLanguage({"bhl"}, QT_TRANSLATE_NOOP("QObject", "Bimin"));
     addLanguage({"big"}, QT_TRANSLATE_NOOP("QObject", "Biangai"));
+    addLanguage({"bih", "bh"}, QT_TRANSLATE_NOOP("QObject", "Bihari"));
     addLanguage({"bis", "bi"}, QT_TRANSLATE_NOOP("QObject", "Bislama"));
     addLanguage({"bjp"}, QT_TRANSLATE_NOOP("QObject", "Fanamaket"));
     addLanguage({"bjr"}, QT_TRANSLATE_NOOP("QObject", "Binumarien"));
@@ -349,7 +348,7 @@ LanguageMap::LanguageMap() {
 
     addLanguage({"ebk"}, QT_TRANSLATE_NOOP("QObject", "East Bontok"));
     addLanguage({"eko"}, QT_TRANSLATE_NOOP("QObject", "Koti"));
-    addLanguage({"ell", "el"}, QT_TRANSLATE_NOOP("QObject", "Greek, Modern (1453-)"));
+    addLanguage({"ell", "el", "gre"}, QT_TRANSLATE_NOOP("QObject", "Greek, Modern (1453-)"));
     addLanguage({"emi"}, QT_TRANSLATE_NOOP("QObject", "Mussau-Emira"));
     addLanguage({"emp"}, QT_TRANSLATE_NOOP("QObject", "Northern Emberá"));
     addLanguage({"en-US"}, QT_TRANSLATE_NOOP("QObject", "English, American"));
@@ -663,8 +662,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"mmo"}, QT_TRANSLATE_NOOP("QObject", "Mangga Buang"));
     addLanguage({"mmx"}, QT_TRANSLATE_NOOP("QObject", "Madak"));
     addLanguage({"mna"}, QT_TRANSLATE_NOOP("QObject", "Mbula"));
-    // This doesn't exist in the official codes
-    addLanguage({"mo"}, QT_TRANSLATE_NOOP("QObject", "Moldavian"));
+    addLanguage({"mol", "mo"}, QT_TRANSLATE_NOOP("QObject", "Moldavian"));
     addLanguage({"mon", "mn"}, QT_TRANSLATE_NOOP("QObject", "Mongolian"));
     addLanguage({"mop"}, QT_TRANSLATE_NOOP("QObject", "Mopán Maya"));
     addLanguage({"mos"}, QT_TRANSLATE_NOOP("QObject", "Mossi"));
@@ -691,9 +689,9 @@ LanguageMap::LanguageMap() {
     addLanguage({"mux"}, QT_TRANSLATE_NOOP("QObject", "Bo-Ung"));
     addLanguage({"muy"}, QT_TRANSLATE_NOOP("QObject", "Muyang"));
     addLanguage({"mva"}, QT_TRANSLATE_NOOP("QObject", "Manam"));
-    // This doesn't exist in the official codes
+    // Code "mvc" is deprecated - merged with "mam"
     addLanguage({"mvc"}, QT_TRANSLATE_NOOP("QObject", "Central Mam"));
-    // This doesn't exist in the official codes
+    // Code "mvj" is deprecated - merged with "mam"
     addLanguage({"mvj"}, QT_TRANSLATE_NOOP("QObject", "Mam, Todos Santos Cuchumat\u00e1n"));
     addLanguage({"mvn"}, QT_TRANSLATE_NOOP("QObject", "Minaveha"));
     addLanguage({"mwc"}, QT_TRANSLATE_NOOP("QObject", "Are"));
@@ -826,15 +824,15 @@ LanguageMap::LanguageMap() {
     addLanguage({"pus", "ps"}, QT_TRANSLATE_NOOP("QObject", "Pushto"));
     addLanguage({"pwg"}, QT_TRANSLATE_NOOP("QObject", "Gapapaiwa"));
 
-    addLanguage({"que", "qu"}, QT_TRANSLATE_NOOP("QObject", "Quechua"));
-    // This doesn't exist in the offical codes
-    addLanguage({"qut"}, QT_TRANSLATE_NOOP("QObject", "Quich\u00e9, West Central"));
     addLanguage({"qub"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huallaga Huánuco"));
     addLanguage({"quc"}, QT_TRANSLATE_NOOP("QObject", "K'iche'"));
+    addLanguage({"que", "qu"}, QT_TRANSLATE_NOOP("QObject", "Quechua"));
     addLanguage({"quf"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Lambayeque"));
     addLanguage({"quh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, South Bolivian"));
     addLanguage({"qul"}, QT_TRANSLATE_NOOP("QObject", "Quechua, North Bolivian"));
     addLanguage({"qup"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Southern Pastaza"));
+    // Code "qut" is deprecated - merged with "quc"
+    addLanguage({"qut"}, QT_TRANSLATE_NOOP("QObject", "Quich\u00e9, West Central"));
     addLanguage({"qvc"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Cajamarca"));
     addLanguage({"qve"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Eastern Apurímac"));
     addLanguage({"qvh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huamalíes-Dos de Mayo Huánuco"));
@@ -1005,7 +1003,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"tyv-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Tuvinian (Cyrillic script)"));
     addLanguage({"tzj"}, QT_TRANSLATE_NOOP("QObject", "Tz'utujil"));
     addLanguage({"tzo"}, QT_TRANSLATE_NOOP("QObject", "Tzotzil"));
-    // This doesn't exist in official codes
+    // Code "tzz" is deprecated - merged with "tzo"
     addLanguage({"tzz"}, QT_TRANSLATE_NOOP("QObject", "Tzotzil, Zinacant\u00e1n"));
 
     addLanguage({"ubr"}, QT_TRANSLATE_NOOP("QObject", "Ubir"));
