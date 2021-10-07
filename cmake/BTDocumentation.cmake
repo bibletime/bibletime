@@ -15,14 +15,6 @@ ToggleOnOff("BUILD_HOWTO" BUILD_HOWTO_HTML OR BUILD_HOWTO_PDF)
 ToggleOnOff("BUILD_DOCS" BUILD_HTML OR BUILD_PDF)
 SET(DOCS_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/docs")
 
-
-######################################################
-# Always install the license file:
-#
-INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/docs/license.html"
-        DESTINATION "${BT_DOCDIR}/license/")
-
-
 ######################################################
 
 IF(INSTALL_GENERATED_DOCS)
