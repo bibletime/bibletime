@@ -131,15 +131,15 @@ LanguageMap::LanguageMap() {
     addLanguage({"anv"}, QT_TRANSLATE_NOOP("QObject", "Denya"));
     addLanguage({"aoi"}, QT_TRANSLATE_NOOP("QObject", "Anindilyakwa"));
     addLanguage({"aoj"}, QT_TRANSLATE_NOOP("QObject", "Mufian"));
-    addLanguage({"aom", "Ömie"}, QT_TRANSLATE_NOOP("QObject", "Ömie"));
+    addLanguage({"aom", "\u00f6mie"}, QT_TRANSLATE_NOOP("QObject", "\u00f6mie"));
     addLanguage({"aon"}, QT_TRANSLATE_NOOP("QObject", "Bumbita Arapesh"));
     addLanguage({"apb"}, QT_TRANSLATE_NOOP("QObject", "Sa'a"));
     addLanguage({"ape"}, QT_TRANSLATE_NOOP("QObject", "Bukiyip"));
-    addLanguage({"apn"}, QT_TRANSLATE_NOOP("QObject", "Apinayé"));
+    addLanguage({"apn"}, QT_TRANSLATE_NOOP("QObject", "Apinay\u00e9"));
     addLanguage({"apr"}, QT_TRANSLATE_NOOP("QObject", "Arop-Lokep"));
-    addLanguage({"apu"}, QT_TRANSLATE_NOOP("QObject", "Apurinã"));
+    addLanguage({"apu"}, QT_TRANSLATE_NOOP("QObject", "Apurin\u00e3"));
     addLanguage({"apw"}, QT_TRANSLATE_NOOP("QObject", "Western Apache"));
-    addLanguage({"apy"}, QT_TRANSLATE_NOOP("QObject", "Apalaí"));
+    addLanguage({"apy"}, QT_TRANSLATE_NOOP("QObject", "Apala\u00ed"));
     addLanguage({"apz"}, QT_TRANSLATE_NOOP("QObject", "Safeyoka"));
     addLanguage({"ara", "ar"}, QT_TRANSLATE_NOOP("QObject", "Arabic"));
     addLanguage({"arb"}, QT_TRANSLATE_NOOP("QObject", "Standard Arabic"));
@@ -197,7 +197,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"bjv"}, QT_TRANSLATE_NOOP("QObject", "Bedjond"));
     addLanguage({"bkd"}, QT_TRANSLATE_NOOP("QObject", "Binukid"));
     addLanguage({"bki"}, QT_TRANSLATE_NOOP("QObject", "Baki"));
-    addLanguage({"bkq"}, QT_TRANSLATE_NOOP("QObject", "Bakairí"));
+    addLanguage({"bkq"}, QT_TRANSLATE_NOOP("QObject", "Bakair\u00ed"));
     addLanguage({"bkx"}, QT_TRANSLATE_NOOP("QObject", "Baikeno"));
     addLanguage({"bla"}, QT_TRANSLATE_NOOP("QObject", "Siksika"));
     addLanguage({"blw"}, QT_TRANSLATE_NOOP("QObject", "Balangao"));
@@ -236,16 +236,16 @@ LanguageMap::LanguageMap() {
     addLanguage({"bzh"}, QT_TRANSLATE_NOOP("QObject", "Mapos Buang"));
     addLanguage({"bzj"}, QT_TRANSLATE_NOOP("QObject", "English, Belize Kriol"));
 
-    addLanguage({"caa"}, QT_TRANSLATE_NOOP("QObject", "Chortí"));
+    addLanguage({"caa"}, QT_TRANSLATE_NOOP("QObject", "Chort\u00ed"));
     addLanguage({"cab"}, QT_TRANSLATE_NOOP("QObject", "Garifuna"));
     addLanguage({"cac"}, QT_TRANSLATE_NOOP("QObject", "Chuj"));
     addLanguage({"caf"}, QT_TRANSLATE_NOOP("QObject", "Southern Carrier"));
     addLanguage({"cak"}, QT_TRANSLATE_NOOP("QObject", "Kaqchikel"));
-    addLanguage({"cao"}, QT_TRANSLATE_NOOP("QObject", "Chácobo"));
+    addLanguage({"cao"}, QT_TRANSLATE_NOOP("QObject", "Ch\u00e1cobo"));
     addLanguage({"cap"}, QT_TRANSLATE_NOOP("QObject", "Chipaya"));
     addLanguage({"car"}, QT_TRANSLATE_NOOP("QObject", "Galibi Carib"));
     addLanguage({"cat", "ca"}, QT_TRANSLATE_NOOP("QObject", "Catalan"));
-    addLanguage({"cav"}, QT_TRANSLATE_NOOP("QObject", "Cavineña"));
+    addLanguage({"cav"}, QT_TRANSLATE_NOOP("QObject", "Cavine\u00f1a"));
     addLanguage({"cax"}, QT_TRANSLATE_NOOP("QObject", "Chiquitano"));
     addLanguage({"cbc"}, QT_TRANSLATE_NOOP("QObject", "Carapana"));
     addLanguage({"cbi"}, QT_TRANSLATE_NOOP("QObject", "Chachi"));
@@ -269,8 +269,8 @@ LanguageMap::LanguageMap() {
     addLanguage({"chq"}, QT_TRANSLATE_NOOP("QObject", "Chinantec, Quiotepec"));
     addLanguage({"chr"}, QT_TRANSLATE_NOOP("QObject", "Cherokee"));
     addLanguage({"chv", "cv"}, QT_TRANSLATE_NOOP("QObject", "Chuvash"));
-    addLanguage({"chz"}, QT_TRANSLATE_NOOP("QObject", "Chinantec, Ozumacín"));
-    addLanguage({"cjo"}, QT_TRANSLATE_NOOP("QObject", "Ashéninka Pajonal"));
+    addLanguage({"chz"}, QT_TRANSLATE_NOOP("QObject", "Chinantec, Ozumac\u00edn"));
+    addLanguage({"cjo"}, QT_TRANSLATE_NOOP("QObject", "Ash\u00e9ninka Pajonal"));
     addLanguage({"cjs"}, QT_TRANSLATE_NOOP("QObject", "Shor"));
     addLanguage({"cjs-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Shor (Cyrillic script)"));
     addLanguage({"cjv"}, QT_TRANSLATE_NOOP("QObject", "Chuave"));
@@ -282,20 +282,20 @@ LanguageMap::LanguageMap() {
     addLanguage({"clu"}, QT_TRANSLATE_NOOP("QObject", "Caluyanun"));
     addLanguage({"cme"}, QT_TRANSLATE_NOOP("QObject", "Cerma"));
     addLanguage({"cmn"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Mandarin"));
-    addLanguage({"cni"}, QT_TRANSLATE_NOOP("QObject", "Asháninka"));
+    addLanguage({"cni"}, QT_TRANSLATE_NOOP("QObject", "Ash\u00e1ninka"));
     addLanguage({"cnl"}, QT_TRANSLATE_NOOP("QObject", "Chinantec, Lalana"));
     addLanguage({"cnt"}, QT_TRANSLATE_NOOP("QObject", "Chinantec, Tepetotutla"));
     addLanguage({"cof"}, QT_TRANSLATE_NOOP("QObject", "Colorado"));
-    addLanguage({"con"}, QT_TRANSLATE_NOOP("QObject", "Cofán"));
+    addLanguage({"con"}, QT_TRANSLATE_NOOP("QObject", "Cof\u00e1n"));
     addLanguage({"cop", "cop-sa"}, QT_TRANSLATE_NOOP("QObject", "Coptic"));
     addLanguage({"cor", "kw"}, QT_TRANSLATE_NOOP("QObject", "Cornish"));
     addLanguage({"cos", "co"}, QT_TRANSLATE_NOOP("QObject", "Corsican"));
     addLanguage({"cot"}, QT_TRANSLATE_NOOP("QObject", "Caquinte"));
     addLanguage({"cpa"}, QT_TRANSLATE_NOOP("QObject", "Chinantec, Palantla"));
-    addLanguage({"cpb"}, QT_TRANSLATE_NOOP("QObject", "Ucayali-Yurúa Ashéninka"));
-    addLanguage({"cpc"}, QT_TRANSLATE_NOOP("QObject", "Ajyíninka Apurucayali"));
-    addLanguage({"cpu"}, QT_TRANSLATE_NOOP("QObject", "Pichis Ashéninka"));
-    addLanguage({"cpy"}, QT_TRANSLATE_NOOP("QObject", "South Ucayali Ashéninka"));
+    addLanguage({"cpb"}, QT_TRANSLATE_NOOP("QObject", "Ucayali-Yur\u00faa Ash\u00e9ninka"));
+    addLanguage({"cpc"}, QT_TRANSLATE_NOOP("QObject", "Ajy\u00edninka Apurucayali"));
+    addLanguage({"cpu"}, QT_TRANSLATE_NOOP("QObject", "Pichis Ash\u00e9ninka"));
+    addLanguage({"cpy"}, QT_TRANSLATE_NOOP("QObject", "South Ucayali Ash\u00e9ninka"));
     addLanguage({"crh"}, QT_TRANSLATE_NOOP("QObject", "Crimean Tatar"));
     addLanguage({"crh-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Crimean Tatar (Cyrillic script)"));
     addLanguage({"crn"}, QT_TRANSLATE_NOOP("QObject", "El Nayar Cora"));
@@ -318,7 +318,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"cya"}, QT_TRANSLATE_NOOP("QObject", "Nopala Chatino"));
     addLanguage({"cym", "cy"}, QT_TRANSLATE_NOOP("QObject", "Welsh"));
 
-    addLanguage({"daa"}, QT_TRANSLATE_NOOP("QObject", "Dangaléat"));
+    addLanguage({"daa"}, QT_TRANSLATE_NOOP("QObject", "Dangal\u00e9at"));
     addLanguage({"dad"}, QT_TRANSLATE_NOOP("QObject", "Marik"));
     addLanguage({"dah"}, QT_TRANSLATE_NOOP("QObject", "Gwahatike"));
     addLanguage({"dan", "da"}, QT_TRANSLATE_NOOP("QObject", "Danish"));
@@ -350,7 +350,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"eko"}, QT_TRANSLATE_NOOP("QObject", "Koti"));
     addLanguage({"ell", "el", "gre"}, QT_TRANSLATE_NOOP("QObject", "Greek, Modern (1453-)"));
     addLanguage({"emi"}, QT_TRANSLATE_NOOP("QObject", "Mussau-Emira"));
-    addLanguage({"emp"}, QT_TRANSLATE_NOOP("QObject", "Northern Emberá"));
+    addLanguage({"emp"}, QT_TRANSLATE_NOOP("QObject", "Northern Ember\u00e1"));
     addLanguage({"en-US"}, QT_TRANSLATE_NOOP("QObject", "English, American"));
     addLanguage({"eng", "en"}, QT_TRANSLATE_NOOP("QObject", "English"));
     addLanguage({"enm"}, QT_TRANSLATE_NOOP("QObject", "English, Middle (1100-1500)"));
@@ -400,19 +400,19 @@ LanguageMap::LanguageMap() {
     addLanguage({"gmv"}, QT_TRANSLATE_NOOP("QObject", "Gamo"));
     addLanguage({"gng"}, QT_TRANSLATE_NOOP("QObject", "Ngangam"));
     addLanguage({"gnn"}, QT_TRANSLATE_NOOP("QObject", "Gumatj"));
-    addLanguage({"gnw"}, QT_TRANSLATE_NOOP("QObject", "Western Bolivian Guaraní"));
+    addLanguage({"gnw"}, QT_TRANSLATE_NOOP("QObject", "Western Bolivian Guaran\u00ed"));
     addLanguage({"gof"}, QT_TRANSLATE_NOOP("QObject", "Gofa"));
     addLanguage({"got"}, QT_TRANSLATE_NOOP("QObject", "Gothic"));
     addLanguage({"grc"}, QT_TRANSLATE_NOOP("QObject", "Greek, Ancient (to 1453)"));
     addLanguage({"grn", "gn"}, QT_TRANSLATE_NOOP("QObject", "Guarani"));
-    addLanguage({"gub"}, QT_TRANSLATE_NOOP("QObject", "Guajajára"));
+    addLanguage({"gub"}, QT_TRANSLATE_NOOP("QObject", "Guajaj\u00e1ra"));
     addLanguage({"gue"}, QT_TRANSLATE_NOOP("QObject", "Gurinji"));
     addLanguage({"guh"}, QT_TRANSLATE_NOOP("QObject", "Guahibo"));
-    addLanguage({"gui"}, QT_TRANSLATE_NOOP("QObject", "Eastern Bolivian Guaraní"));
+    addLanguage({"gui"}, QT_TRANSLATE_NOOP("QObject", "Eastern Bolivian Guaran\u00ed"));
     addLanguage({"guj", "gu"}, QT_TRANSLATE_NOOP("QObject", "Gujarati"));
     addLanguage({"gul"}, QT_TRANSLATE_NOOP("QObject", "English, Sea Island Creole"));
     addLanguage({"gum"}, QT_TRANSLATE_NOOP("QObject", "Guambiano"));
-    addLanguage({"gun"}, QT_TRANSLATE_NOOP("QObject", "Mbyá Guaraní"));
+    addLanguage({"gun"}, QT_TRANSLATE_NOOP("QObject", "Mby\u00e1 Guaran\u00ed"));
     addLanguage({"guo"}, QT_TRANSLATE_NOOP("QObject", "Guayabero"));
     addLanguage({"gup"}, QT_TRANSLATE_NOOP("QObject", "Gunwinggu"));
     addLanguage({"gv"}, QT_TRANSLATE_NOOP("QObject", "Manx"));
@@ -420,7 +420,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"gvf"}, QT_TRANSLATE_NOOP("QObject", "Golin"));
     addLanguage({"gvn"}, QT_TRANSLATE_NOOP("QObject", "Kuku-Yalanji"));
     addLanguage({"gwi"}, QT_TRANSLATE_NOOP("QObject", "Gwichʼin"));
-    addLanguage({"gym"}, QT_TRANSLATE_NOOP("QObject", "Ngäbere"));
+    addLanguage({"gym"}, QT_TRANSLATE_NOOP("QObject", "Ng\u00e4bere"));
     addLanguage({"gyr"}, QT_TRANSLATE_NOOP("QObject", "Guarayu"));
 
     addLanguage({"hans"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Simplified"));
@@ -434,7 +434,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"heg"}, QT_TRANSLATE_NOOP("QObject", "Helong"));
     addLanguage({"her", "hz"}, QT_TRANSLATE_NOOP("QObject", "Herero"));
     addLanguage({"hin", "hi"}, QT_TRANSLATE_NOOP("QObject", "Hindi"));
-    addLanguage({"hix"}, QT_TRANSLATE_NOOP("QObject", "Hixkaryána"));
+    addLanguage({"hix"}, QT_TRANSLATE_NOOP("QObject", "Hixkary\u00e1na"));
     addLanguage({"hla"}, QT_TRANSLATE_NOOP("QObject", "Halia"));
     addLanguage({"hlt"}, QT_TRANSLATE_NOOP("QObject", "Matu Chin"));
     addLanguage({"hmo", "ho"}, QT_TRANSLATE_NOOP("QObject", "Hiri Motu"));
@@ -472,7 +472,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"iqw"}, QT_TRANSLATE_NOOP("QObject", "Ikwo"));
     addLanguage({"isl", "is"}, QT_TRANSLATE_NOOP("QObject", "Icelandic"));
     addLanguage({"ita", "it"}, QT_TRANSLATE_NOOP("QObject", "Italian"));
-    addLanguage({"itz"}, QT_TRANSLATE_NOOP("QObject", "Itzá"));
+    addLanguage({"itz"}, QT_TRANSLATE_NOOP("QObject", "Itz\u00e1"));
     addLanguage({"iws"}, QT_TRANSLATE_NOOP("QObject", "Sepik Iwam"));
     addLanguage({"ixl"}, QT_TRANSLATE_NOOP("QObject", "Ixil, San Juan Cotzal"));
     addLanguage({"izz"}, QT_TRANSLATE_NOOP("QObject", "Izii"));
@@ -496,19 +496,19 @@ LanguageMap::LanguageMap() {
     addLanguage({"kas", "ks"}, QT_TRANSLATE_NOOP("QObject", "Kashmiri"));
     addLanguage({"kat", "ka"}, QT_TRANSLATE_NOOP("QObject", "Georgian"));
     addLanguage({"kaz", "kk"}, QT_TRANSLATE_NOOP("QObject", "Kazakh"));
-    addLanguage({"kbc"}, QT_TRANSLATE_NOOP("QObject", "Kadiwéu"));
+    addLanguage({"kbc"}, QT_TRANSLATE_NOOP("QObject", "Kadiw\u00e9u"));
     addLanguage({"kbd"}, QT_TRANSLATE_NOOP("QObject", "Kabardian"));
-    addLanguage({"kbh"}, QT_TRANSLATE_NOOP("QObject", "Camsá"));
+    addLanguage({"kbh"}, QT_TRANSLATE_NOOP("QObject", "Cams\u00e1"));
     addLanguage({"kbm"}, QT_TRANSLATE_NOOP("QObject", "Iwal"));
     addLanguage({"kbq"}, QT_TRANSLATE_NOOP("QObject", "Kamano"));
     addLanguage({"kdc"}, QT_TRANSLATE_NOOP("QObject", "Kutu"));
     addLanguage({"kde"}, QT_TRANSLATE_NOOP("QObject", "Makonde"));
     addLanguage({"kdl"}, QT_TRANSLATE_NOOP("QObject", "Tsikimba"));
-    addLanguage({"kek"}, QT_TRANSLATE_NOOP("QObject", "Kekchí"));
+    addLanguage({"kek"}, QT_TRANSLATE_NOOP("QObject", "Kekch\u00ed"));
     addLanguage({"ken"}, QT_TRANSLATE_NOOP("QObject", "Kenyang"));
     addLanguage({"kew"}, QT_TRANSLATE_NOOP("QObject", "West Kewa"));
     addLanguage({"kgf"}, QT_TRANSLATE_NOOP("QObject", "Kube"));
-    addLanguage({"kgk"}, QT_TRANSLATE_NOOP("QObject", "Kaiwá"));
+    addLanguage({"kgk"}, QT_TRANSLATE_NOOP("QObject", "Kaiw\u00e1"));
     addLanguage({"kgp"}, QT_TRANSLATE_NOOP("QObject", "Kaingang"));
     addLanguage({"khm", "km"}, QT_TRANSLATE_NOOP("QObject", "Khmer"));
     addLanguage({"khs"}, QT_TRANSLATE_NOOP("QObject", "Kasua"));
@@ -527,7 +527,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"kky"}, QT_TRANSLATE_NOOP("QObject", "Guugu Yimidhirr"));
     addLanguage({"klt"}, QT_TRANSLATE_NOOP("QObject", "Nukna"));
     addLanguage({"klv"}, QT_TRANSLATE_NOOP("QObject", "Maskelynes"));
-    addLanguage({"kmg"}, QT_TRANSLATE_NOOP("QObject", "Kâte"));
+    addLanguage({"kmg"}, QT_TRANSLATE_NOOP("QObject", "K\u00e2te"));
     addLanguage({"kmh"}, QT_TRANSLATE_NOOP("QObject", "Kalam"));
     addLanguage({"kmk"}, QT_TRANSLATE_NOOP("QObject", "Limos Kalinga"));
     addLanguage({"kmo"}, QT_TRANSLATE_NOOP("QObject", "Kwoma"));
@@ -545,7 +545,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"kos"}, QT_TRANSLATE_NOOP("QObject", "Kosraean"));
     addLanguage({"kpf"}, QT_TRANSLATE_NOOP("QObject", "Komba"));
     addLanguage({"kpg"}, QT_TRANSLATE_NOOP("QObject", "Kapingamarangi"));
-    addLanguage({"kpj"}, QT_TRANSLATE_NOOP("QObject", "Karajá"));
+    addLanguage({"kpj"}, QT_TRANSLATE_NOOP("QObject", "Karaj\u00e1"));
     addLanguage({"kpl"}, QT_TRANSLATE_NOOP("QObject", "Kpala"));
     addLanguage({"kpr"}, QT_TRANSLATE_NOOP("QObject", "Korafe-Yegha"));
     addLanguage({"kpw"}, QT_TRANSLATE_NOOP("QObject", "Kobon"));
@@ -579,7 +579,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"kyf"}, QT_TRANSLATE_NOOP("QObject", "Kouya"));
     addLanguage({"kyg"}, QT_TRANSLATE_NOOP("QObject", "Keyagana"));
     addLanguage({"kyq"}, QT_TRANSLATE_NOOP("QObject", "Kenga"));
-    addLanguage({"kyz"}, QT_TRANSLATE_NOOP("QObject", "Kayabí"));
+    addLanguage({"kyz"}, QT_TRANSLATE_NOOP("QObject", "Kayab\u00ed"));
     addLanguage({"kze"}, QT_TRANSLATE_NOOP("QObject", "Kosena"));
 
     addLanguage({"lac"}, QT_TRANSLATE_NOOP("QObject", "Lacandon"));
@@ -596,7 +596,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"lgl"}, QT_TRANSLATE_NOOP("QObject", "Wala"));
     addLanguage({"lid"}, QT_TRANSLATE_NOOP("QObject", "Nyindrou"));
     addLanguage({"lif"}, QT_TRANSLATE_NOOP("QObject", "Limbu"));
-    addLanguage({"lin", "ln"}, QT_TRANSLATE_NOOP("QObject", "Lingàla"));
+    addLanguage({"lin", "ln"}, QT_TRANSLATE_NOOP("QObject", "Ling\u00e0la"));
     addLanguage({"lit", "lt"}, QT_TRANSLATE_NOOP("QObject", "Lithuanian"));
     addLanguage({"llg"}, QT_TRANSLATE_NOOP("QObject", "Lole"));
     addLanguage({"lmo"}, QT_TRANSLATE_NOOP("QObject", "Lombard"));
@@ -604,28 +604,28 @@ LanguageMap::LanguageMap() {
     addLanguage({"lww"}, QT_TRANSLATE_NOOP("QObject", "Lewo"));
     addLanguage({"lzh"}, QT_TRANSLATE_NOOP("QObject", "Chinese, Literary"));
 
-    addLanguage({"maa"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, San Jerónimo Tecóatl"));
+    addLanguage({"maa"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, San Jer\u00f3nimo Tec\u00f3atl"));
     addLanguage({"mah", "mh"}, QT_TRANSLATE_NOOP("QObject", "Marshallese"));
-    addLanguage({"maj"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, Jalapa De Díaz"));
+    addLanguage({"maj"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, Jalapa De D\u00edaz"));
     addLanguage({"mal", "ml"}, QT_TRANSLATE_NOOP("QObject", "Malayalam"));
     addLanguage({"mam"}, QT_TRANSLATE_NOOP("QObject", "Mam"));
-    addLanguage({"maq"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, Chiquihuitlán"));
+    addLanguage({"maq"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, Chiquihuitl\u00e1n"));
     addLanguage({"mar", "mr"}, QT_TRANSLATE_NOOP("QObject", "Marathi"));
     addLanguage({"mau"}, QT_TRANSLATE_NOOP("QObject", "Mazatec, Huautla"));
-    addLanguage({"mav"}, QT_TRANSLATE_NOOP("QObject", "Sateré-Mawé"));
+    addLanguage({"mav"}, QT_TRANSLATE_NOOP("QObject", "Sater\u00e9-Maw\u00e9"));
     addLanguage({"maz"}, QT_TRANSLATE_NOOP("QObject", "Central Mazahua"));
     addLanguage({"mbb"}, QT_TRANSLATE_NOOP("QObject", "Manobo, Western Bukidnon"));
     addLanguage({"mbc"}, QT_TRANSLATE_NOOP("QObject", "Macushi"));
     addLanguage({"mbh"}, QT_TRANSLATE_NOOP("QObject", "Mangseng"));
-    addLanguage({"mbj"}, QT_TRANSLATE_NOOP("QObject", "Nadëb"));
-    addLanguage({"mbl"}, QT_TRANSLATE_NOOP("QObject", "Maxakalí"));
+    addLanguage({"mbj"}, QT_TRANSLATE_NOOP("QObject", "Nad\u00ebb"));
+    addLanguage({"mbl"}, QT_TRANSLATE_NOOP("QObject", "Maxakal\u00ed"));
     addLanguage({"mbs"}, QT_TRANSLATE_NOOP("QObject", "Manobo, Sarangani"));
     addLanguage({"mbt"}, QT_TRANSLATE_NOOP("QObject", "Manobo, Matigsalug"));
     addLanguage({"mca"}, QT_TRANSLATE_NOOP("QObject", "Maca"));
     addLanguage({"mcb"}, QT_TRANSLATE_NOOP("QObject", "Machiguenga"));
     addLanguage({"mcd"}, QT_TRANSLATE_NOOP("QObject", "Sharanahua"));
-    addLanguage({"mcf"}, QT_TRANSLATE_NOOP("QObject", "Matsés"));
-    addLanguage({"mco"}, QT_TRANSLATE_NOOP("QObject", "Mixe, Coatlán"));
+    addLanguage({"mcf"}, QT_TRANSLATE_NOOP("QObject", "Mats\u00e9s"));
+    addLanguage({"mco"}, QT_TRANSLATE_NOOP("QObject", "Mixe, Coatl\u00e1n"));
     addLanguage({"mcp"}, QT_TRANSLATE_NOOP("QObject", "Makaa"));
     addLanguage({"mcq"}, QT_TRANSLATE_NOOP("QObject", "Ese"));
     addLanguage({"mdy"}, QT_TRANSLATE_NOOP("QObject", "Male (Ethiopia)"));
@@ -639,12 +639,12 @@ LanguageMap::LanguageMap() {
     addLanguage({"mgh"}, QT_TRANSLATE_NOOP("QObject", "Makhuwa-Meetto"));
     addLanguage({"mgw"}, QT_TRANSLATE_NOOP("QObject", "Matumbi"));
     addLanguage({"mhl"}, QT_TRANSLATE_NOOP("QObject", "Mauwake"));
-    addLanguage({"mib"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Atatláhuca"));
+    addLanguage({"mib"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Atatl\u00e1huca"));
     addLanguage({"mic"}, QT_TRANSLATE_NOOP("QObject", "Mi'kmaq"));
     addLanguage({"mie"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Ocotepec"));
     addLanguage({"mig"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, San Miguel El Grande"));
     addLanguage({"mih"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Chayuco"));
-    addLanguage({"mil"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Peñoles"));
+    addLanguage({"mil"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Pe\u00f1oles"));
     addLanguage({"mio"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Pinotepa Nacional"));
     addLanguage({"mir"}, QT_TRANSLATE_NOOP("QObject", "Mixe, Isthmus"));
     addLanguage({"mit"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Southern Puebla"));
@@ -664,12 +664,12 @@ LanguageMap::LanguageMap() {
     addLanguage({"mna"}, QT_TRANSLATE_NOOP("QObject", "Mbula"));
     addLanguage({"mol", "mo"}, QT_TRANSLATE_NOOP("QObject", "Moldavian"));
     addLanguage({"mon", "mn"}, QT_TRANSLATE_NOOP("QObject", "Mongolian"));
-    addLanguage({"mop"}, QT_TRANSLATE_NOOP("QObject", "Mopán Maya"));
+    addLanguage({"mop"}, QT_TRANSLATE_NOOP("QObject", "Mop\u00e1n Maya"));
     addLanguage({"mos"}, QT_TRANSLATE_NOOP("QObject", "Mossi"));
     addLanguage({"mox"}, QT_TRANSLATE_NOOP("QObject", "Molima"));
     addLanguage({"mph"}, QT_TRANSLATE_NOOP("QObject", "Maung"));
     addLanguage({"mpj"}, QT_TRANSLATE_NOOP("QObject", "Martu Wangka"));
-    addLanguage({"mpm"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Yosondúa"));
+    addLanguage({"mpm"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Yosond\u00faa"));
     addLanguage({"mpp"}, QT_TRANSLATE_NOOP("QObject", "Migabac"));
     addLanguage({"mps"}, QT_TRANSLATE_NOOP("QObject", "Dadibi"));
     addLanguage({"mpt"}, QT_TRANSLATE_NOOP("QObject", "Mian"));
@@ -697,18 +697,18 @@ LanguageMap::LanguageMap() {
     addLanguage({"mwc"}, QT_TRANSLATE_NOOP("QObject", "Are"));
     addLanguage({"mwe"}, QT_TRANSLATE_NOOP("QObject", "Mwera (Chimwera)"));
     addLanguage({"mwp"}, QT_TRANSLATE_NOOP("QObject", "Kala Lagaw Ya"));
-    addLanguage({"mxb"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Tezoatlán"));
+    addLanguage({"mxb"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Tezoatl\u00e1n"));
     addLanguage({"mxp"}, QT_TRANSLATE_NOOP("QObject", "Mixe, Tlahuitoltepec"));
     addLanguage({"mxq"}, QT_TRANSLATE_NOOP("QObject", "Mixe, Juquila"));
     addLanguage({"mxt"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Jamiltepec"));
     addLanguage({"mya", "my"}, QT_TRANSLATE_NOOP("QObject", "Burmese"));
     addLanguage({"myk"}, QT_TRANSLATE_NOOP("QObject", "Mamara Senoufo"));
-    addLanguage({"myu"}, QT_TRANSLATE_NOOP("QObject", "Mundurukú"));
+    addLanguage({"myu"}, QT_TRANSLATE_NOOP("QObject", "Munduruk\u00fa"));
     addLanguage({"myw"}, QT_TRANSLATE_NOOP("QObject", "Muyuw"));
     addLanguage({"myy"}, QT_TRANSLATE_NOOP("QObject", "Macuna"));
     addLanguage({"mzz"}, QT_TRANSLATE_NOOP("QObject", "Maiadomu"));
 
-    addLanguage({"nab"}, QT_TRANSLATE_NOOP("QObject", "Southern Nambikuára"));
+    addLanguage({"nab"}, QT_TRANSLATE_NOOP("QObject", "Southern Nambiku\u00e1ra"));
     addLanguage({"naf"}, QT_TRANSLATE_NOOP("QObject", "Nabak"));
     addLanguage({"nak"}, QT_TRANSLATE_NOOP("QObject", "Nakanai"));
     addLanguage({"nas"}, QT_TRANSLATE_NOOP("QObject", "Naasioi"));
@@ -720,7 +720,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"nca"}, QT_TRANSLATE_NOOP("QObject", "Iyo"));
     addLanguage({"nch"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Central Huasteca"));
     addLanguage({"ncj"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Northern Puebla"));
-    addLanguage({"ncl"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Michoacán"));
+    addLanguage({"ncl"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Michoac\u00e1n"));
     addLanguage({"ncq"}, QT_TRANSLATE_NOOP("QObject", "Northern Katang"));
     addLanguage({"ncu"}, QT_TRANSLATE_NOOP("QObject", "Chumburung"));
     addLanguage({"nde", "nd"}, QT_TRANSLATE_NOOP("QObject", "North Ndebele"));
@@ -733,7 +733,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"ngu"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Guerrero"));
     addLanguage({"nhe"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Eastern Huasteca"));
     addLanguage({"nhg"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Tetelcingo"));
-    addLanguage({"nhi"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Zacatlán-Ahuacatlán-Tepetzintla"));
+    addLanguage({"nhi"}, QT_TRANSLATE_NOOP("QObject", "Nahuatl, Zacatl\u00e1n-Ahuacatl\u00e1n-Tepetzintla"));
     addLanguage({"nho"}, QT_TRANSLATE_NOOP("QObject", "Takuu"));
     addLanguage({"nhr"}, QT_TRANSLATE_NOOP("QObject", "Naro"));
     addLanguage({"nhu"}, QT_TRANSLATE_NOOP("QObject", "Noone"));
@@ -750,7 +750,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"nno", "nn"}, QT_TRANSLATE_NOOP("QObject", "Norwegian Nynorsk"));
     addLanguage({"nnq"}, QT_TRANSLATE_NOOP("QObject", "Ngindo"));
     addLanguage({"noa"}, QT_TRANSLATE_NOOP("QObject", "Woun Meu"));
-    addLanguage({"nob", "nb"}, QT_TRANSLATE_NOOP("QObject", "Norwegian Bokmål"));
+    addLanguage({"nob", "nb"}, QT_TRANSLATE_NOOP("QObject", "Norwegian Bokm\u00e5l"));
     addLanguage({"nog"}, QT_TRANSLATE_NOOP("QObject", "Nogai"));
     addLanguage({"nog-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Nogai (Cyrillic script)"));
     addLanguage({"nop"}, QT_TRANSLATE_NOOP("QObject", "Numanggang"));
@@ -763,7 +763,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"nss"}, QT_TRANSLATE_NOOP("QObject", "Nali"));
     addLanguage({"ntj"}, QT_TRANSLATE_NOOP("QObject", "Ngaanyatjarra"));
     addLanguage({"ntp"}, QT_TRANSLATE_NOOP("QObject", "Northern Tepehuan"));
-    addLanguage({"ntu"}, QT_TRANSLATE_NOOP("QObject", "Natügu"));
+    addLanguage({"ntu"}, QT_TRANSLATE_NOOP("QObject", "Nat\u00fcgu"));
     addLanguage({"nuy"}, QT_TRANSLATE_NOOP("QObject", "Nunggubuyu"));
     addLanguage({"nvm"}, QT_TRANSLATE_NOOP("QObject", "Namiae"));
     addLanguage({"nwi"}, QT_TRANSLATE_NOOP("QObject", "Southwest Tanna"));
@@ -786,11 +786,11 @@ LanguageMap::LanguageMap() {
     addLanguage({"ote"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Mezquital"));
     addLanguage({"otm"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Eastern Highland"));
     addLanguage({"otn"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Tenango"));
-    addLanguage({"ots"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Estado de México"));
-    addLanguage({"otq"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Querétaro"));
+    addLanguage({"ots"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Estado de M\u00e9xico"));
+    addLanguage({"otq"}, QT_TRANSLATE_NOOP("QObject", "Otomi, Quer\u00e9taro"));
 
-    addLanguage({"pab"}, QT_TRANSLATE_NOOP("QObject", "Parecís"));
-    addLanguage({"pad"}, QT_TRANSLATE_NOOP("QObject", "Paumarí"));
+    addLanguage({"pab"}, QT_TRANSLATE_NOOP("QObject", "Parec\u00eds"));
+    addLanguage({"pad"}, QT_TRANSLATE_NOOP("QObject", "Paumar\u00ed"));
     addLanguage({"pah"}, QT_TRANSLATE_NOOP("QObject", "Tenharim"));
     addLanguage({"pan", "pa"}, QT_TRANSLATE_NOOP("QObject", "Panjabi"));
     addLanguage({"pao"}, QT_TRANSLATE_NOOP("QObject", "Northern Paiute"));
@@ -803,7 +803,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"pjt"}, QT_TRANSLATE_NOOP("QObject", "Pitjantjatjara"));
     addLanguage({"pli", "pi"}, QT_TRANSLATE_NOOP("QObject", "Pali"));
     addLanguage({"pls"}, QT_TRANSLATE_NOOP("QObject", "San Marcos Tlalcoyalco Popoloca"));
-    addLanguage({"plu"}, QT_TRANSLATE_NOOP("QObject", "Palikúr"));
+    addLanguage({"plu"}, QT_TRANSLATE_NOOP("QObject", "Palik\u00far"));
     addLanguage({"pma"}, QT_TRANSLATE_NOOP("QObject", "Paama"));
     addLanguage({"poe"}, QT_TRANSLATE_NOOP("QObject", "San Juan Atzingo Popoloca"));
     addLanguage({"poh"}, QT_TRANSLATE_NOOP("QObject", "Poqomchi'"));
@@ -817,14 +817,14 @@ LanguageMap::LanguageMap() {
     addLanguage({"ppk"}, QT_TRANSLATE_NOOP("QObject", "Uma"));
     addLanguage({"ppo"}, QT_TRANSLATE_NOOP("QObject", "Folopa"));
     addLanguage({"prf"}, QT_TRANSLATE_NOOP("QObject", "Paranan"));
-    addLanguage({"pri"}, QT_TRANSLATE_NOOP("QObject", "Paicî"));
+    addLanguage({"pri"}, QT_TRANSLATE_NOOP("QObject", "Paic\u00ee"));
     addLanguage({"prs"}, QT_TRANSLATE_NOOP("QObject", "Dari"));
     addLanguage({"ptp"}, QT_TRANSLATE_NOOP("QObject", "Patep"));
     addLanguage({"ptu"}, QT_TRANSLATE_NOOP("QObject", "Bambam"));
     addLanguage({"pus", "ps"}, QT_TRANSLATE_NOOP("QObject", "Pushto"));
     addLanguage({"pwg"}, QT_TRANSLATE_NOOP("QObject", "Gapapaiwa"));
 
-    addLanguage({"qub"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huallaga Huánuco"));
+    addLanguage({"qub"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huallaga Hu\u00e1nuco"));
     addLanguage({"quc"}, QT_TRANSLATE_NOOP("QObject", "K'iche'"));
     addLanguage({"que", "qu"}, QT_TRANSLATE_NOOP("QObject", "Quechua"));
     addLanguage({"quf"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Lambayeque"));
@@ -834,15 +834,15 @@ LanguageMap::LanguageMap() {
     // Code "qut" is deprecated - merged with "quc"
     addLanguage({"qut"}, QT_TRANSLATE_NOOP("QObject", "Quich\u00e9, West Central"));
     addLanguage({"qvc"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Cajamarca"));
-    addLanguage({"qve"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Eastern Apurímac"));
-    addLanguage({"qvh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huamalíes-Dos de Mayo Huánuco"));
+    addLanguage({"qve"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Eastern Apur\u00edmac"));
+    addLanguage({"qvh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huamal\u00edes-Dos de Mayo Hu\u00e1nuco"));
     addLanguage({"qvm"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Margos-Yarowilca-Lauricocha"));
-    addLanguage({"qvn"}, QT_TRANSLATE_NOOP("QObject", "Quechua, North Junín"));
-    addLanguage({"qvs"}, QT_TRANSLATE_NOOP("QObject", "Quechua, San Martín"));
+    addLanguage({"qvn"}, QT_TRANSLATE_NOOP("QObject", "Quechua, North Jun\u00edn"));
+    addLanguage({"qvs"}, QT_TRANSLATE_NOOP("QObject", "Quechua, San Mart\u00edn"));
     addLanguage({"qvw"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huaylla Wanca"));
     addLanguage({"qvz"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Northern Pastaza"));
     addLanguage({"qwh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Huaylas Ancash"));
-    addLanguage({"qxh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Panao Huánuco"));
+    addLanguage({"qxh"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Panao Hu\u00e1nuco"));
     addLanguage({"qxn"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Northern Conchucos Ancash"));
     addLanguage({"qxo"}, QT_TRANSLATE_NOOP("QObject", "Quechua, Southern Conchucos Ancash"));
 
@@ -850,7 +850,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"rgu"}, QT_TRANSLATE_NOOP("QObject", "Ringgou"));
     addLanguage({"rkb"}, QT_TRANSLATE_NOOP("QObject", "Rikbaktsa"));
     addLanguage({"rmc"}, QT_TRANSLATE_NOOP("QObject", "Romani, Carpathian"));
-    addLanguage({"rmq"}, QT_TRANSLATE_NOOP("QObject", "Caló"));
+    addLanguage({"rmq"}, QT_TRANSLATE_NOOP("QObject", "Cal\u00f3"));
     addLanguage({"rmy"}, QT_TRANSLATE_NOOP("QObject", "Romani, Vlax"));
     addLanguage({"roh", "rm"}, QT_TRANSLATE_NOOP("QObject", "Romansh"));
     addLanguage({"ron", "ro"}, QT_TRANSLATE_NOOP("QObject", "Romanian"));
@@ -909,7 +909,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"srm"}, QT_TRANSLATE_NOOP("QObject", "Saramaccan"));
     addLanguage({"srn"}, QT_TRANSLATE_NOOP("QObject", "Sranan Tongo"));
     addLanguage({"srp", "sr"}, QT_TRANSLATE_NOOP("QObject", "Serbian"));
-    addLanguage({"srq"}, QT_TRANSLATE_NOOP("QObject", "Sirionó"));
+    addLanguage({"srq"}, QT_TRANSLATE_NOOP("QObject", "Sirion\u00f3"));
     addLanguage({"ssd"}, QT_TRANSLATE_NOOP("QObject", "Siroi"));
     addLanguage({"ssg"}, QT_TRANSLATE_NOOP("QObject", "Seimat"));
     addLanguage({"ssw", "ss"}, QT_TRANSLATE_NOOP("QObject", "Swati"));
@@ -966,14 +966,14 @@ LanguageMap::LanguageMap() {
     addLanguage({"tlf"}, QT_TRANSLATE_NOOP("QObject", "Telefol"));
     addLanguage({"tlh"}, QT_TRANSLATE_NOOP("QObject", "Klingon"));
     addLanguage({"tna"}, QT_TRANSLATE_NOOP("QObject", "Tacana"));
-    addLanguage({"tnc"}, QT_TRANSLATE_NOOP("QObject", "Tanimuca-Retuarã"));
+    addLanguage({"tnc"}, QT_TRANSLATE_NOOP("QObject", "Tanimuca-Retuar\u00e3"));
     addLanguage({"tnk"}, QT_TRANSLATE_NOOP("QObject", "Kwamera"));
     addLanguage({"tnn"}, QT_TRANSLATE_NOOP("QObject", "North Tanna"));
     addLanguage({"tnp"}, QT_TRANSLATE_NOOP("QObject", "Whitesands"));
     addLanguage({"toc"}, QT_TRANSLATE_NOOP("QObject", "Totonac, Coyutla"));
     addLanguage({"tod"}, QT_TRANSLATE_NOOP("QObject", "Toma"));
     addLanguage({"toj"}, QT_TRANSLATE_NOOP("QObject", "Tojolabal"));
-    addLanguage({"too"}, QT_TRANSLATE_NOOP("QObject", "Totonac, Xicotepec De Juárez"));
+    addLanguage({"too"}, QT_TRANSLATE_NOOP("QObject", "Totonac, Xicotepec De Ju\u00e1rez"));
     addLanguage({"ton", "to"}, QT_TRANSLATE_NOOP("QObject", "Tonga (Tonga Islands)"));
     addLanguage({"top"}, QT_TRANSLATE_NOOP("QObject", "Totonac, Papantla"));
     addLanguage({"tos"}, QT_TRANSLATE_NOOP("QObject", "Totonac, Highland"));
@@ -998,7 +998,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"tvk"}, QT_TRANSLATE_NOOP("QObject", "Southeast Ambrym"));
     addLanguage({"twi", "tw"}, QT_TRANSLATE_NOOP("QObject", "Twi"));
     addLanguage({"txq"}, QT_TRANSLATE_NOOP("QObject", "Tii"));
-    addLanguage({"txu"}, QT_TRANSLATE_NOOP("QObject", "Kayapó"));
+    addLanguage({"txu"}, QT_TRANSLATE_NOOP("QObject", "Kayap\u00f3"));
     addLanguage({"tyv"}, QT_TRANSLATE_NOOP("QObject", "Tuvinian"));
     addLanguage({"tyv-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Tuvinian (Cyrillic script)"));
     addLanguage({"tzj"}, QT_TRANSLATE_NOOP("QObject", "Tz'utujil"));
@@ -1015,7 +1015,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"ulk"}, QT_TRANSLATE_NOOP("QObject", "Meriam Mir"));
     addLanguage({"upv"}, QT_TRANSLATE_NOOP("QObject", "Uripiv-Wala-Rano-Atchin"));
     addLanguage({"ura"}, QT_TRANSLATE_NOOP("QObject", "Urarina"));
-    addLanguage({"urb"}, QT_TRANSLATE_NOOP("QObject", "Urubú-Kaapor"));
+    addLanguage({"urb"}, QT_TRANSLATE_NOOP("QObject", "Urub\u00fa-Kaapor"));
     addLanguage({"urd", "ur"}, QT_TRANSLATE_NOOP("QObject", "Urdu"));
     addLanguage({"ur-Deva"}, QT_TRANSLATE_NOOP("QObject", "Urdu (Deva script)"));
     addLanguage({"urt"}, QT_TRANSLATE_NOOP("QObject", "Urat"));
@@ -1033,7 +1033,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"viv"}, QT_TRANSLATE_NOOP("QObject", "Iduna"));
     addLanguage({"vls"}, QT_TRANSLATE_NOOP("QObject", "Vlaams"));
     addLanguage({"vmi"}, QT_TRANSLATE_NOOP("QObject", "Miwa"));
-    addLanguage({"vol", "vo"}, QT_TRANSLATE_NOOP("QObject", "Volapük"));
+    addLanguage({"vol", "vo"}, QT_TRANSLATE_NOOP("QObject", "Volap\u00fck"));
 
     addLanguage({"waj"}, QT_TRANSLATE_NOOP("QObject", "Waffa"));
     addLanguage({"wal"}, QT_TRANSLATE_NOOP("QObject", "Wolaytta"));
@@ -1058,7 +1058,7 @@ LanguageMap::LanguageMap() {
 
     addLanguage({"xal"}, QT_TRANSLATE_NOOP("QObject", "Kalmyk"));
     addLanguage({"xal-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Kalmyk (Cyrillic script)"));
-    addLanguage({"xav"}, QT_TRANSLATE_NOOP("QObject", "Xavánte"));
+    addLanguage({"xav"}, QT_TRANSLATE_NOOP("QObject", "Xav\u00e1nte"));
     addLanguage({"xbi"}, QT_TRANSLATE_NOOP("QObject", "Kombio"));
     addLanguage({"xed"}, QT_TRANSLATE_NOOP("QObject", "Hdi"));
     addLanguage({"xho", "xh"}, QT_TRANSLATE_NOOP("QObject", "Xhosa"));
@@ -1067,7 +1067,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"xon"}, QT_TRANSLATE_NOOP("QObject", "Konkomba"));
     addLanguage({"xsi"}, QT_TRANSLATE_NOOP("QObject", "Sio"));
     addLanguage({"xtd"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Diuxi-Tilantongo"));
-    addLanguage({"xtm"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Magdalena Peñasco"));
+    addLanguage({"xtm"}, QT_TRANSLATE_NOOP("QObject", "Mixtec, Magdalena Pe\u00f1asco"));
 
     addLanguage({"yaa"}, QT_TRANSLATE_NOOP("QObject", "Yaminahua"));
     addLanguage({"yad"}, QT_TRANSLATE_NOOP("QObject", "Yagua"));
@@ -1083,7 +1083,7 @@ LanguageMap::LanguageMap() {
     addLanguage({"yle"}, QT_TRANSLATE_NOOP("QObject", "Yele"));
     addLanguage({"yml"}, QT_TRANSLATE_NOOP("QObject", "Iamalele"));
     addLanguage({"yor", "yo"}, QT_TRANSLATE_NOOP("QObject", "Yoruba"));
-    addLanguage({"yre"}, QT_TRANSLATE_NOOP("QObject", "Yaouré"));
+    addLanguage({"yre"}, QT_TRANSLATE_NOOP("QObject", "Yaour\u00e9"));
     addLanguage({"yrk"}, QT_TRANSLATE_NOOP("QObject", "Nenets"));
     addLanguage({"yrk-Cyrl"}, QT_TRANSLATE_NOOP("QObject", "Nenets (Cyrillic script)"));
     addLanguage({"yss"}, QT_TRANSLATE_NOOP("QObject", "Yessan-Mayo"));
@@ -1092,15 +1092,15 @@ LanguageMap::LanguageMap() {
     addLanguage({"yuw"}, QT_TRANSLATE_NOOP("QObject", "Yau (Morobe Province)"));
     addLanguage({"yva"}, QT_TRANSLATE_NOOP("QObject", "Yawa"));
 
-    addLanguage({"zaa"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Sierra de Juárez"));
+    addLanguage({"zaa"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Sierra de Ju\u00e1rez"));
     addLanguage({"zab"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, San Juan Guelav\u00eda"));
-    addLanguage({"zac"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Ocotlán"));
+    addLanguage({"zac"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Ocotl\u00e1n"));
     addLanguage({"zad"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Cajonos"));
     addLanguage({"zai"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Isthmus"));
     addLanguage({"zaj"}, QT_TRANSLATE_NOOP("QObject", "Zaramo"));
-    addLanguage({"zam"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Miahuatlán"));
+    addLanguage({"zam"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Miahuatl\u00e1n"));
     addLanguage({"zao"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Ozolotepec"));
-    addLanguage({"zar"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Rincón"));
+    addLanguage({"zar"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Rinc\u00f3n"));
     addLanguage({"zas"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Santo Domingo Albarradas"));
     addLanguage({"zat"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Tabaa"));
     addLanguage({"zav"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Yatzachi"));
@@ -1113,10 +1113,10 @@ LanguageMap::LanguageMap() {
     addLanguage({"zia"}, QT_TRANSLATE_NOOP("QObject", "Zia"));
     addLanguage({"ziw"}, QT_TRANSLATE_NOOP("QObject", "Zigula"));
     addLanguage({"zlm"}, QT_TRANSLATE_NOOP("QObject", "Malay"));
-    addLanguage({"zos"}, QT_TRANSLATE_NOOP("QObject", "Francisco León Zoque"));
+    addLanguage({"zos"}, QT_TRANSLATE_NOOP("QObject", "Francisco Le\u00f3n Zoque"));
     addLanguage({"zpc"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Choapan"));
-    addLanguage({"zpi"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Santa María Quiegolani"));
-    addLanguage({"zpl"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Lachixío"));
+    addLanguage({"zpi"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Santa Mar\u00eda Quiegolani"));
+    addLanguage({"zpl"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Lachix\u00edo"));
     addLanguage({"zpm"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Mixtepec"));
     addLanguage({"zpo"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Amatl\u00e1n"));
     addLanguage({"zpq"}, QT_TRANSLATE_NOOP("QObject", "Zapotec, Zoogocho"));
