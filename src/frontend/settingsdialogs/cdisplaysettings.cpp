@@ -66,6 +66,11 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     initSwordLocaleCombo();
 
+    // Light/Dark Mode
+    m_lightDarkLabel = new QLabel(this);
+    m_lightDarkCombo = new QComboBox(this);
+    formLayout->addRow(m_lightDarkLabel, m_lightDarkCombo);
+
     m_styleChooserCombo = new QComboBox( this ); //create first to enable buddy for label
     BT_CONNECT(m_styleChooserCombo, qOverload<int>(&QComboBox::activated),
                this, &CDisplaySettingsPage::updateStylePreview);
@@ -106,6 +111,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     mainLayout->addWidget(m_transifexLabel);
 
     retranslateUi(); // also calls updateStylePreview();
+    m_lightDarkCombo->setCurrentIndex(btConfig().value<int>("GUI/lightDarkMode"));
 }
 
 void CDisplaySettingsPage::retranslateUi() {
@@ -118,6 +124,11 @@ void CDisplaySettingsPage::retranslateUi() {
 
     m_showLogoLabel->setText(tr("Show startup logo:"));
     m_showLogoLabel->setToolTip(tr("Show the BibleTime logo on startup."));
+
+    m_lightDarkLabel->setText(tr("Light / dark Mode (Requires restart)"));
+    m_lightDarkCombo->addItem(tr("System default"));
+    m_lightDarkCombo->addItem(tr("Light"));
+    m_lightDarkCombo->addItem(tr("Dark"));
 
     m_availableLabel->setText(tr("Available display styles:"));
     m_previewLabel->setText(tr("Style preview"));
@@ -319,6 +330,7 @@ void CDisplaySettingsPage::save() const {
     btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
     btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
     btConfig().setValue("GUI/booknameLanguage", m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()));
+    btConfig().setValue("GUI/lightDarkMode", m_lightDarkCombo->currentIndex());
 }
 
 void CDisplaySettingsPage::updateColors(const QString& style) {

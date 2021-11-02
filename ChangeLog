@@ -1,3 +1,6 @@
+2021-11-01 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #339 - Add light / dark mode 
+
 2021-10-05 Gary Holmlund <gw@holmlund.org>
     * Fix bug #346 - macOS build does not provide version metadata
 
