@@ -22,6 +22,7 @@
 #include "../backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "../backend/config/btconfig.h"
 #include "../backend/managers/cswordbackend.h"
+#include "../backend/managers/colormanager.h"
 #include "../util/directory.h"
 #include "bibletime.h"
 #include "bibletimeapp.h"
@@ -182,6 +183,8 @@ int main(int argc, char* argv[]) {
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;
     }
+
+    ColorManager::instance().initLightDarkPalette();
 
 #ifdef Q_OS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that

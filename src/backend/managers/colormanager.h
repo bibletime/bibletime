@@ -18,10 +18,17 @@
 
 class ColorManager {
 
+    enum LightDarkMode {
+        systemDefault = 0,
+        light = 1,
+        dark = 2
+    };
+
 public: /* Methods: */
 
     static ColorManager & instance();
 
+    void initLightDarkPalette();
     void loadColorMaps();
     QString replaceColors(QString content);
     QString getBackgroundColor(QString const & style = QString());
