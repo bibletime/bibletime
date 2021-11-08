@@ -30,20 +30,25 @@ documents are generated and installed. This can be changed using the following
 options to CMake:
 
  * BUILD_HANDBOOK_HTML - whether to generate and install the HTML handbook
+   (default: "ON")
  * BUILD_HANDBOOK_HTML_LANGUAGES
        - list of language codes to use for HTML handbook, or empty for all
-         languages
+         languages (default: "")
  * BUILD_HANDBOOK_PDF - whether to generate and install the PDF handbook
+   (default: "ON")
  * BUILD_HANDBOOK_PDF_LANGUAGES
        - list of language codes to use for PDF handbook, or empty for all
-         languages
- * BUILD_HOWTO_HTML - whether to generate and install the HTML howto
+         languages (default: "")
+ * BUILD_HOWTO_HTML - whether to generate and install the HTML howto (default:
+   "ON")
  * BUILD_HOWTO_HTML_LANGUAGES
        - list of language codes to use for HTML howto, or empty for all
-         languages
- * BUILD_HOWTO_PDF - whether to generate and install the PDF howto
+         languages (default: "")
+ * BUILD_HOWTO_PDF - whether to generate and install the PDF howto (default:
+   "ON")
  * BUILD_HOWTO_PDF_LANGUAGES
        - list of language codes to use for PDF howto, or empty for all languages
+         (default: "")
 
 For example, passing `-DGENERATE-HOWTO_HTML_LANGUAGES=en;et` to the cmake
 command to restricts generation and installation of howto HTML versions to the
