@@ -12,6 +12,8 @@
 
 #include "btinstallmgr.h"
 
+#include <type_traits>
+#include <utility>
 #include "../util/btassert.h"
 #include "btinstallbackend.h"
 
@@ -41,6 +43,20 @@ inline int calculateIntPercentage(T done, T total) {
     return normalizeCompletionPercentage<int>((done / total) * 100);
 }
 
+template <typename ... Ts> struct MakeVoid { using type = void; };
+template <typename ... Ts> using VoidT = typename MakeVoid<Ts...>::type;
+
+template <typename T, class = void>
+struct TimeoutDisabler { void operator()(T &) const noexcept {} };
+
+template <typename T>
+struct TimeoutDisabler<T,
+        VoidT<decltype(std::declval<T &>().setTimeoutMillis(0))>>
+{
+    void operator()(T & obj) const noexcept
+    { obj.setTimeoutMillis(0); }
+};
+
 } // anonymous namespace
 
 using namespace sword;
@@ -53,7 +69,7 @@ BtInstallMgr::BtInstallMgr(QObject * parent)
         , m_firstCallOfPreStatus(true)
 { // Use this class also as status reporter:
     this->setFTPPassive(true);
-    setTimeoutMillis(0);
+    TimeoutDisabler<BtInstallMgr>()(*this);
 }
 
 BtInstallMgr::~BtInstallMgr() {
