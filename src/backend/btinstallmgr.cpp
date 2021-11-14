@@ -59,7 +59,7 @@ BtInstallMgr::BtInstallMgr(QObject * parent)
         , m_completedBytes(0)
         , m_firstCallOfPreStatus(true)
 {
-    this->setFTPPassive(true);
+    setFTPPassive(true);
     setTimeoutMillis(0);
 }
 
