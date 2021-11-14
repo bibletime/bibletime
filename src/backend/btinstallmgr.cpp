@@ -58,7 +58,7 @@ BtInstallMgr::BtInstallMgr(QObject * parent)
         , m_totalBytes(1)
         , m_completedBytes(0)
         , m_firstCallOfPreStatus(true)
-{ // Use this class also as status reporter:
+{
     this->setFTPPassive(true);
     setTimeoutMillis(0);
 }
