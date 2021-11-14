@@ -14,6 +14,8 @@
 
 #include <QByteArray>
 #include <QtGlobal>
+#include <type_traits>
+#include <utility>
 #include "../util/btassert.h"
 #include "btinstallbackend.h"
 
@@ -48,6 +50,15 @@ inline int calculateIntPercentage(T done, T total) {
     return normalizeCompletionPercentage<int>((done / total) * 100);
 }
 
+template <typename T, class = void>
+struct HasSetTimeoutMillis : std::false_type {};
+
+template <typename T>
+struct HasSetTimeoutMillis<T,
+        std::void_t<decltype(std::declval<T &>().setTimeoutMillis(0))>>
+    : std::true_type
+{};
+
 } // anonymous namespace
 
 using namespace sword;
@@ -60,7 +71,8 @@ BtInstallMgr::BtInstallMgr(QObject * parent)
         , m_firstCallOfPreStatus(true)
 {
     setFTPPassive(true);
-    setTimeoutMillis(0);
+    if constexpr (HasSetTimeoutMillis<BtInstallMgr>::value)
+        setTimeoutMillis(0);
 }
 
 BtInstallMgr::~BtInstallMgr() {
