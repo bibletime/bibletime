@@ -187,8 +187,8 @@ void BtBookshelfInstallFinalPage::slotThreadFinished() {
     m_progressBar->setValue(100);
     m_stopButton->setEnabled(false);
     if (m_installFailed) {
-        m_msgLabel->setText(tr("Some of the selected works were not "
-                               "installed."));
+        m_msgLabel->setText(
+                    tr("Some of the selected works were not installed."));
         m_msgLabel->setStyleSheet("QLabel{color:red}");
     } else {
         m_msgLabel->setText(tr("The selected works have been installed."));
