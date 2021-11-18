@@ -80,7 +80,7 @@ ENDIF()
 # keeping the backend and frontend as separate modules with no GUI dependencies
 # or frontend code in the backend.
 #
-FILE(GLOB_RECURSE bibletime_BACKEND_SOURCES
+FILE(GLOB_RECURSE bibletime_BACKEND_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/*.h"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/util/*.cpp"
@@ -150,7 +150,7 @@ TARGET_LINK_LIBRARIES(bibletime_backend
 
 qtquick_compiler_add_resources(bibletime_RESOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/modelviewqml.qrc")
-FILE(GLOB_RECURSE bibletime_SOURCES
+FILE(GLOB_RECURSE bibletime_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/*.h"
 )
@@ -187,10 +187,11 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 # Installation:
 #
 INSTALL(TARGETS "bibletime" DESTINATION "${BT_BINDIR}")
-FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
+FILE(GLOB INSTALL_ICONS_LIST CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
         DESTINATION "${BT_DATADIR}/bibletime/icons/")
-FILE(GLOB INSTALL_ICONS_LIST_PNG
+FILE(GLOB INSTALL_ICONS_LIST_PNG CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_DATADIR}/bibletime/icons/")
@@ -198,7 +199,7 @@ INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_DATADIR}/bibletime/license/")
 
-FILE(GLOB INSTALL_TMPL_LIST
+FILE(GLOB INSTALL_TMPL_LIST CONFIGURE_DEPENDS
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css"
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.cmap"
         "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/Basic.tmpl"
@@ -225,7 +226,8 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.
 
 IF(MSVC) # Windows:
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST CONFIGURE_DEPENDS
+          "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${SWORD_DATADIR}/sword/locales.d/")
 
@@ -236,7 +238,8 @@ IF(MSVC) # Windows:
   ENDIF()
 ELSEIF(APPLE) # OS X:
   # sword locale information, needed for DMG image
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST CONFIGURE_DEPENDS
+          "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "./BibleTime.app/Contents/share/sword/locales.d/")
   INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns"
