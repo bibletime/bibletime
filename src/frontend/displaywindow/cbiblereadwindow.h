@@ -82,6 +82,7 @@ protected: /* Methods: */
             QAction* chapter;
         }
         print;
+        QAction* speakSelectedText;
     }
     m_actions;
 

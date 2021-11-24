@@ -23,6 +23,7 @@ class BtQmlScrollView;
 class BtQmlInterface;
 class CDisplayWindow;
 class QMenu;
+class QTextToSpeech;
 
 /**
   * @page modelviewmain Details about the model/view read display
@@ -123,6 +124,9 @@ public: /* Methods: */
                              FilterOptions const & filterOptions)
     { print(AnchorWithText, displayOptions, filterOptions); }
 
+    /** \brief Speaks the currently selected text (text-to-speech). */
+    void speakSelectedText();
+
     /**
         \brief Installs the popup which should be opened when the right mouse
                button was pressed.
@@ -207,4 +211,5 @@ private: /* Fields: */
     BtQmlScrollView* m_widget;
     QString m_currentAnchorCache;
 
+    std::unique_ptr<QTextToSpeech> m_textToSpeech;
 };

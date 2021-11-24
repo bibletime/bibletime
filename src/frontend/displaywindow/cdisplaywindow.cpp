@@ -279,6 +279,9 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's Search"), a);
     actn->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
     a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, actn);
+
+    actn = new QAction(QIcon(), tr("Speak selected text"), a);
+    a->addAction("speakSelectedText", actn);
 }
 
 void CDisplayWindow::initActions() {
@@ -325,6 +328,10 @@ void CDisplayWindow::initActions() {
     initAddAction(DWG::forwardInHistory::actionName,
                   keyChooser()->history(),
                   &BTHistory::fw);
+
+    initAddAction("speakSelectedText",
+                  m_displayWidget,
+                  &BtModelViewReadDisplay::speakSelectedText);
 
     auto * const ac = m_actionCollection;
     m_actions.backInHistory =
@@ -404,6 +411,8 @@ void CDisplayWindow::initActions() {
     m_actions.print.entry = &initAddAction("printEntryWithText",
                                            this,
                                            &CDisplayWindow::printAll);
+
+    m_actions.speakSelectedText = &ac->action("speakSelectedText");
 
     // init with the user defined settings
     m_actionCollection->readShortcuts("Displaywindow shortcuts");
@@ -558,6 +567,8 @@ void CDisplayWindow::updatePopupMenu() {
     m_actions.print.reference->setEnabled(hasActiveAnchor);
 
     m_actions.copy.selectedText->setEnabled(hasSelectedText());
+
+    m_actions.speakSelectedText->setEnabled(hasSelectedText());
 }
 
 void CDisplayWindow::setupMainWindowToolBars() {
