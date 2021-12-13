@@ -7,7 +7,7 @@ Qt toolkit.
 ## INSTALLATION
 
 You can just download and install BibleTime from
-[github](https://github.com/bibletime/bibletime/releases/latest).
+[GitHub](https://github.com/bibletime/bibletime/releases/latest).
 The following requirements are needed only if you want to develop BibleTime.
 
 ### BUILD REQUIREMENTS
