@@ -391,6 +391,7 @@ public slots:
         void autoScrollDown();
         void autoScrollPause();
         bool autoScrollAnyKey(int key);
+        void autoScrollEnablePauseAction(bool enable);
 
         /**
         * Is called when settings in the optionsdialog have been

@@ -117,6 +117,7 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action = new QAction(a);
     action->setText(tr("Auto scroll pause"));
     action->setShortcut(QKeySequence(Qt::Key_Space));
+    action->setDisabled(true);
     a->addAction("autoScrollPause", action);
 
     action = new QAction(a);

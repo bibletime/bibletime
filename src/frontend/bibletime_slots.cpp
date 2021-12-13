@@ -536,6 +536,7 @@ void BibleTime::autoScrollUp() {
         setAutoScrollTimerInterval();
     } else {
         m_autoScroll.enabled = true;
+        autoScrollEnablePauseAction(true);
         m_autoScroll.speed = 1;
         m_autoScroll.paused = false;
         setAutoScrollTimerInterval();
@@ -553,6 +554,7 @@ void BibleTime::autoScrollDown() {
         setAutoScrollTimerInterval();
     } else {
         m_autoScroll.enabled = true;
+        autoScrollEnablePauseAction(true);
         m_autoScroll.speed = -1;
         m_autoScroll.paused = false;
         setAutoScrollTimerInterval();
@@ -579,6 +581,12 @@ bool BibleTime::autoScrollAnyKey(int /* key */) {
 void BibleTime::autoScrollStop() {
     m_autoScrollTimer.stop();
     m_autoScroll.enabled = false;
+    autoScrollEnablePauseAction(false);
+}
+
+void BibleTime::autoScrollEnablePauseAction(bool enable) {
+    m_autoScrollPauseAction = &m_actionCollection->action("autoScrollPause");
+    m_autoScrollPauseAction->setEnabled(enable);
 }
 
 void BibleTime::slotAutoScroll() {
