@@ -1,3 +1,6 @@
+2021-12-12 Gary Holmlund <gw@holmlund.org>
+    * Fix bug #357 - Toolbar buttons cannot be activated using keyboard
+
 2021-11-01 Gary Holmlund <gw@holmlund.org>
     * Fix bug #339 - Add light / dark mode 
 

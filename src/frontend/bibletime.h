@@ -377,6 +377,7 @@ public Q_SLOTS:
         void autoScrollDown();
         void autoScrollPause();
         bool autoScrollAnyKey(int key);
+        void autoScrollEnablePauseAction(bool enable);
 
         /**
          * Called when search button is pressed
