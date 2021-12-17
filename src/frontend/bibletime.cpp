@@ -83,8 +83,6 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     BT_ASSERT(!m_instance);
     m_instance = this;
 
-    m_autoScroll.enabled = false;
-
     QSplashScreen *splash = nullptr;
     QString splashHtml;
     static auto const splashTextAlignment =
@@ -364,7 +362,6 @@ void BibleTime::setAutoScrollTimerInterval() {
     if (m_autoScroll.speed == 0) {
         m_autoScrollTimer.stop();
         m_autoScrollTimer.setInterval(autoScrollTimeInterval/2);
-        m_autoScroll.enabled = false;
     } else {
         double timeDivisor = std::pow(0.6,std::abs(m_autoScroll.speed));
         int interval = static_cast<int>(autoScrollTimeInterval*timeDivisor);

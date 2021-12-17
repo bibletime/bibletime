@@ -520,14 +520,13 @@ void BibleTime::toggleFullscreen() {
 
 void BibleTime::autoScrollUp() {
     setDisplayFocus();
-    if (m_autoScroll.enabled){
+    if (m_autoScroll.speed) {
         if (m_autoScroll.speed < 10) {
             ++m_autoScroll.speed;
         }
         m_autoScroll.paused = false;
         setAutoScrollTimerInterval();
     } else {
-        m_autoScroll.enabled = true;
         autoScrollEnablePauseAction(true);
         m_autoScroll.speed = 1;
         m_autoScroll.paused = false;
@@ -538,14 +537,13 @@ void BibleTime::autoScrollUp() {
 
 void BibleTime::autoScrollDown() {
     setDisplayFocus();
-    if (m_autoScroll.enabled){
+    if (m_autoScroll.speed){
         if (m_autoScroll.speed > -10) {
             --m_autoScroll.speed;
         }
         m_autoScroll.paused = false;
         setAutoScrollTimerInterval();
     } else {
-        m_autoScroll.enabled = true;
         autoScrollEnablePauseAction(true);
         m_autoScroll.speed = -1;
         m_autoScroll.paused = false;
@@ -555,7 +553,7 @@ void BibleTime::autoScrollDown() {
 }
 
 void BibleTime::autoScrollPause() {
-    if (! m_autoScroll.enabled)
+    if (!m_autoScroll.speed)
         return;
     setDisplayFocus();
     m_autoScroll.paused = ! m_autoScroll.paused;
@@ -564,7 +562,7 @@ void BibleTime::autoScrollPause() {
 }
 
 bool BibleTime::autoScrollAnyKey(int /* key */) {
-    if ( ! m_autoScroll.enabled)
+    if (!m_autoScroll.speed)
         return false;
     autoScrollStop();
     return true;
@@ -572,7 +570,7 @@ bool BibleTime::autoScrollAnyKey(int /* key */) {
 
 void BibleTime::autoScrollStop() {
     m_autoScrollTimer.stop();
-    m_autoScroll.enabled = false;
+    m_autoScroll.speed = 0;
     autoScrollEnablePauseAction(false);
 }
 

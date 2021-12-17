@@ -494,7 +494,6 @@ public Q_SLOTS:
         BtFindWidget* m_findWidget;
 
         struct {
-            bool enabled;
             bool paused;
             int speed;
         } m_autoScroll;
