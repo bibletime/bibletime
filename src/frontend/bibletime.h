@@ -494,8 +494,8 @@ public Q_SLOTS:
         BtFindWidget* m_findWidget;
 
         struct {
-            bool paused;
-            int speed;
+            bool paused = false;
+            int speed = 0;
         } m_autoScroll;
         QTimer m_autoScrollTimer;
         QPointer<Search::CSearchDialog> m_searchDialog;
