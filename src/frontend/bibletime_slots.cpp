@@ -543,7 +543,7 @@ void BibleTime::autoScroll() {
          * This value is divided by an integer (2, 3, 4, etc.) to get the
          * time interval that is used.
          */
-        constexpr int const autoScrollTimeInterval = 200;
+        static constexpr int const autoScrollTimeInterval = 200;
 
         double timeDivisor = std::pow(0.6, std::abs(m_autoScrollSpeed));
         int interval = static_cast<int>(autoScrollTimeInterval * timeDivisor);
