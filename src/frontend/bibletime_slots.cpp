@@ -44,6 +44,28 @@
 #include "tips/bttipdialog.h"
 
 
+namespace {
+
+void setAutoScrollTimerInterval(QTimer & timer, int speed) {
+    /**
+     * Auto scroll time interval in milliseconds
+     * This value is divided by an integer (2, 3, 4, etc.) to get the
+     * time interval that is used.
+     */
+    constexpr int const autoScrollTimeInterval = 200;
+
+    if (speed == 0) {
+        timer.stop();
+    } else {
+        double timeDivisor = std::pow(0.6, std::abs(speed));
+        int interval = static_cast<int>(autoScrollTimeInterval * timeDivisor);
+        timer.setInterval(interval);
+        timer.start();
+    }
+}
+
+} // anonymous namespace
+
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
     qDebug() << "BibleTime::slotSettingsOptions";
@@ -527,7 +549,7 @@ void BibleTime::autoScrollUp() {
         autoScrollEnablePauseAction(true);
         m_autoScrollSpeed = 1;
     }
-    setAutoScrollTimerInterval();
+    setAutoScrollTimerInterval(m_autoScrollTimer, m_autoScrollSpeed);
 }
 
 void BibleTime::autoScrollDown() {
@@ -539,7 +561,7 @@ void BibleTime::autoScrollDown() {
         autoScrollEnablePauseAction(true);
         m_autoScrollSpeed = -1;
     }
-    setAutoScrollTimerInterval();
+    setAutoScrollTimerInterval(m_autoScrollTimer, m_autoScrollSpeed);
 }
 
 void BibleTime::autoScrollPause() {

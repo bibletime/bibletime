@@ -56,13 +56,6 @@
 
 namespace {
 
-/**
- * Auto scroll time interval in milliseconds
- * This value is divided by an integer (2, 3, 4, etc.) to get the
- * time interval that is used.
- */
-constexpr int const autoScrollTimeInterval = 200;
-
 template <typename T>
 auto randInt(T min, T max)
         -> std::enable_if_t<std::is_integral_v<std::decay_t<T>>, T>
@@ -354,15 +347,3 @@ void BibleTime::openFindWidget()
     m_findWidget->setVisible(true);
     m_findWidget->showAndSelect();
 }
-
-void BibleTime::setAutoScrollTimerInterval() {
-    if (m_autoScrollSpeed == 0) {
-        m_autoScrollTimer.stop();
-    } else {
-        double timeDivisor = std::pow(0.6, std::abs(m_autoScrollSpeed));
-        int interval = static_cast<int>(autoScrollTimeInterval*timeDivisor);
-        m_autoScrollTimer.setInterval(interval);
-        m_autoScrollTimer.start();
-    }
-}
-

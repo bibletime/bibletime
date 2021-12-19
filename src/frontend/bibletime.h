@@ -504,8 +504,6 @@ public Q_SLOTS:
          */
         void showOrHideToolBars();
 
-        void setAutoScrollTimerInterval();
-
 #ifndef NDEBUG
         void deleteDebugWindow();
     private:
