@@ -44,35 +44,6 @@
 #include "tips/bttipdialog.h"
 
 
-namespace {
-
-template <bool goingUp>
-bool nudgeAutoScrollSpeed(QTimer & timer, int & speed) {
-    static constexpr int const nudgeSpeed = goingUp ? 1 : -1;
-    if (speed != nudgeSpeed * 10) { // Stay in range [-10, 10]
-        speed += nudgeSpeed;
-        if (speed == 0) {
-            timer.stop();
-            return false;
-        }
-
-        /**
-         * Auto scroll time interval in milliseconds
-         * This value is divided by an integer (2, 3, 4, etc.) to get the
-         * time interval that is used.
-         */
-        constexpr int const autoScrollTimeInterval = 200;
-
-        double timeDivisor = std::pow(0.6, std::abs(speed));
-        int interval = static_cast<int>(autoScrollTimeInterval * timeDivisor);
-        timer.setInterval(interval);
-    }
-    timer.start();
-    return true;
-}
-
-} // anonymous namespace
-
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
     qDebug() << "BibleTime::slotSettingsOptions";
@@ -547,19 +518,36 @@ void BibleTime::toggleFullscreen() {
     m_mdi->triggerWindowUpdate();
 }
 
-void BibleTime::autoScrollUp() {
+template <bool goingUp>
+void BibleTime::autoScroll() {
     setDisplayFocus();
-    m_autoScrollPauseAction->setEnabled(
-                nudgeAutoScrollSpeed<true>(m_autoScrollTimer,
-                                           m_autoScrollSpeed));
+
+    static constexpr int const nudgeSpeed = goingUp ? 1 : -1;
+    if (m_autoScrollSpeed != nudgeSpeed * 10) { // Stay in range [-10, 10]
+        m_autoScrollSpeed += nudgeSpeed;
+        if (m_autoScrollSpeed == 0) {
+            m_autoScrollTimer.stop();
+            m_autoScrollPauseAction->setEnabled(false);
+            return;
+        }
+
+        /**
+         * Auto scroll time interval in milliseconds
+         * This value is divided by an integer (2, 3, 4, etc.) to get the
+         * time interval that is used.
+         */
+        constexpr int const autoScrollTimeInterval = 200;
+
+        double timeDivisor = std::pow(0.6, std::abs(m_autoScrollSpeed));
+        int interval = static_cast<int>(autoScrollTimeInterval * timeDivisor);
+        m_autoScrollTimer.setInterval(interval);
+    }
+    m_autoScrollTimer.start();
+    m_autoScrollPauseAction->setEnabled(true);
 }
 
-void BibleTime::autoScrollDown() {
-    setDisplayFocus();
-    m_autoScrollPauseAction->setEnabled(
-                nudgeAutoScrollSpeed<false>(m_autoScrollTimer,
-                                            m_autoScrollSpeed));
-}
+template void BibleTime::autoScroll<true>();
+template void BibleTime::autoScroll<false>();
 
 void BibleTime::autoScrollPause() {
     if (!m_autoScrollSpeed)

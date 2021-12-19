@@ -373,8 +373,6 @@ public Q_SLOTS:
         */
         void toggleFullscreen();
 
-        void autoScrollUp();
-        void autoScrollDown();
         void autoScrollPause();
         bool autoScrollAnyKey();
 
@@ -497,6 +495,10 @@ public Q_SLOTS:
         QPointer<Search::CSearchDialog> m_searchDialog;
 
     private:
+
+        template <bool goingUp>
+        void autoScroll();
+
         /**
          * Set the visibility of all tool bars according to the configuration
          * taking the toolbarsInEachWindow setting into account.
@@ -515,3 +517,6 @@ public Q_SLOTS:
         static std::mutex m_debugWindowLock;
 #endif
 };
+
+extern template void BibleTime::autoScroll<true>();
+extern template void BibleTime::autoScroll<false>();

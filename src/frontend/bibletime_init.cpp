@@ -412,10 +412,10 @@ void BibleTime::initActions() {
     // AutoScroll actions:
     m_autoScrollUpAction = &m_actionCollection->action("autoScrollUp");
     BT_CONNECT(m_autoScrollUpAction, &QAction::triggered,
-               this,                 &BibleTime::autoScrollUp);
+               this,                 &BibleTime::autoScroll<true>);
     m_autoScrollDownAction = &m_actionCollection->action("autoScrollDown");
     BT_CONNECT(m_autoScrollDownAction, &QAction::triggered,
-               this,                   &BibleTime::autoScrollDown);
+               this,                   &BibleTime::autoScroll<false>);
     m_autoScrollPauseAction = &m_actionCollection->action("autoScrollPause");
     BT_CONNECT(m_autoScrollPauseAction, &QAction::triggered,
                this,                    &BibleTime::autoScrollPause);
