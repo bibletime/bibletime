@@ -528,8 +528,6 @@ void BibleTime::autoScrollUp() {
         m_autoScrollSpeed = 1;
     }
     setAutoScrollTimerInterval();
-    if (m_autoScrollSpeed)
-        m_autoScrollTimer.start();
 }
 
 void BibleTime::autoScrollDown() {
@@ -542,8 +540,6 @@ void BibleTime::autoScrollDown() {
         m_autoScrollSpeed = -1;
     }
     setAutoScrollTimerInterval();
-    if (m_autoScrollSpeed)
-        m_autoScrollTimer.start();
 }
 
 void BibleTime::autoScrollPause() {
