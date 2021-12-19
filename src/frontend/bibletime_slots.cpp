@@ -524,15 +524,13 @@ void BibleTime::autoScrollUp() {
         if (m_autoScroll.speed < 10) {
             ++m_autoScroll.speed;
         }
-        m_autoScroll.paused = false;
-        setAutoScrollTimerInterval();
     } else {
         autoScrollEnablePauseAction(true);
         m_autoScroll.speed = 1;
-        m_autoScroll.paused = false;
-        setAutoScrollTimerInterval();
-        m_autoScrollTimer.start();
     }
+    setAutoScrollTimerInterval();
+    if (m_autoScroll.speed)
+        m_autoScrollTimer.start();
 }
 
 void BibleTime::autoScrollDown() {
@@ -541,24 +539,24 @@ void BibleTime::autoScrollDown() {
         if (m_autoScroll.speed > -10) {
             --m_autoScroll.speed;
         }
-        m_autoScroll.paused = false;
-        setAutoScrollTimerInterval();
     } else {
         autoScrollEnablePauseAction(true);
         m_autoScroll.speed = -1;
-        m_autoScroll.paused = false;
-        setAutoScrollTimerInterval();
-        m_autoScrollTimer.start();
     }
+    setAutoScrollTimerInterval();
+    if (m_autoScroll.speed)
+        m_autoScrollTimer.start();
 }
 
 void BibleTime::autoScrollPause() {
     if (!m_autoScroll.speed)
         return;
     setDisplayFocus();
-    m_autoScroll.paused = ! m_autoScroll.paused;
-    if ( ! m_autoScroll.paused)
+    if (m_autoScrollTimer.isActive()) {
+        m_autoScrollTimer.stop();
+    } else {
         m_autoScrollTimer.start();
+    }
 }
 
 bool BibleTime::autoScrollAnyKey(int /* key */) {
@@ -580,10 +578,6 @@ void BibleTime::autoScrollEnablePauseAction(bool enable) {
 }
 
 void BibleTime::slotAutoScroll() {
-    if (m_autoScroll.paused) {
-        m_autoScrollTimer.stop();
-        return;
-    }
     auto * display = getCurrentDisplay();
     if (display) {
         display->scroll(m_autoScroll.speed >0 ? -1 : 1 );
