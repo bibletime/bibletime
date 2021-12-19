@@ -524,11 +524,18 @@ void BibleTime::autoScroll() {
 
     static constexpr int const nudgeSpeed = goingUp ? 1 : -1;
     if (m_autoScrollSpeed != nudgeSpeed * 10) { // Stay in range [-10, 10]
-        m_autoScrollSpeed += nudgeSpeed;
-        if (m_autoScrollSpeed == 0) {
-            m_autoScrollTimer.stop();
-            m_autoScrollPauseAction->setEnabled(false);
-            return;
+        if (m_autoScrollSpeed != 0
+            && (m_autoScrollSpeed > 0) != goingUp // going in the opposite when
+            && !m_autoScrollTimer.isActive())     // resuming from pause
+        {
+            m_autoScrollSpeed = nudgeSpeed; // start safe at slow speed
+        } else {
+            m_autoScrollSpeed += nudgeSpeed;
+            if (m_autoScrollSpeed == 0) {
+                m_autoScrollTimer.stop();
+                m_autoScrollPauseAction->setEnabled(false);
+                return;
+            }
         }
 
         /**
