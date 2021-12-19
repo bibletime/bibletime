@@ -520,36 +520,34 @@ void BibleTime::toggleFullscreen() {
 
 void BibleTime::autoScrollUp() {
     setDisplayFocus();
-    if (m_autoScroll.speed) {
-        if (m_autoScroll.speed < 10) {
-            ++m_autoScroll.speed;
-        }
+    if (m_autoScrollSpeed) {
+        if (m_autoScrollSpeed < 10)
+            ++m_autoScrollSpeed;
     } else {
         autoScrollEnablePauseAction(true);
-        m_autoScroll.speed = 1;
+        m_autoScrollSpeed = 1;
     }
     setAutoScrollTimerInterval();
-    if (m_autoScroll.speed)
+    if (m_autoScrollSpeed)
         m_autoScrollTimer.start();
 }
 
 void BibleTime::autoScrollDown() {
     setDisplayFocus();
-    if (m_autoScroll.speed){
-        if (m_autoScroll.speed > -10) {
-            --m_autoScroll.speed;
-        }
+    if (m_autoScrollSpeed){
+        if (m_autoScrollSpeed > -10)
+            --m_autoScrollSpeed;
     } else {
         autoScrollEnablePauseAction(true);
-        m_autoScroll.speed = -1;
+        m_autoScrollSpeed = -1;
     }
     setAutoScrollTimerInterval();
-    if (m_autoScroll.speed)
+    if (m_autoScrollSpeed)
         m_autoScrollTimer.start();
 }
 
 void BibleTime::autoScrollPause() {
-    if (!m_autoScroll.speed)
+    if (!m_autoScrollSpeed)
         return;
     setDisplayFocus();
     if (m_autoScrollTimer.isActive()) {
@@ -560,7 +558,7 @@ void BibleTime::autoScrollPause() {
 }
 
 bool BibleTime::autoScrollAnyKey(int /* key */) {
-    if (!m_autoScroll.speed)
+    if (!m_autoScrollSpeed)
         return false;
     autoScrollStop();
     return true;
@@ -568,7 +566,7 @@ bool BibleTime::autoScrollAnyKey(int /* key */) {
 
 void BibleTime::autoScrollStop() {
     m_autoScrollTimer.stop();
-    m_autoScroll.speed = 0;
+    m_autoScrollSpeed = 0;
     autoScrollEnablePauseAction(false);
 }
 
@@ -580,7 +578,7 @@ void BibleTime::autoScrollEnablePauseAction(bool enable) {
 void BibleTime::slotAutoScroll() {
     auto * display = getCurrentDisplay();
     if (display) {
-        display->scroll(m_autoScroll.speed >0 ? -1 : 1 );
+        display->scroll(m_autoScrollSpeed > 0 ? -1 : 1);
         display->updateReferenceText();
     }
 }

@@ -493,9 +493,7 @@ public Q_SLOTS:
         CMDIArea* m_mdi;
         BtFindWidget* m_findWidget;
 
-        struct {
-            int speed = 0;
-        } m_autoScroll;
+        int m_autoScrollSpeed = 0;
         QTimer m_autoScrollTimer;
         QPointer<Search::CSearchDialog> m_searchDialog;
 

@@ -359,11 +359,11 @@ void BibleTime::openFindWidget()
 }
 
 void BibleTime::setAutoScrollTimerInterval() {
-    if (m_autoScroll.speed == 0) {
+    if (m_autoScrollSpeed == 0) {
         m_autoScrollTimer.stop();
         m_autoScrollTimer.setInterval(autoScrollTimeInterval/2);
     } else {
-        double timeDivisor = std::pow(0.6,std::abs(m_autoScroll.speed));
+        double timeDivisor = std::pow(0.6, std::abs(m_autoScrollSpeed));
         int interval = static_cast<int>(autoScrollTimeInterval*timeDivisor);
         m_autoScrollTimer.setInterval(interval);
     }
