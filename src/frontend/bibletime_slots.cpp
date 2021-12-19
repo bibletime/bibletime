@@ -46,22 +46,29 @@
 
 namespace {
 
-void setAutoScrollTimerInterval(QTimer & timer, int speed) {
-    /**
-     * Auto scroll time interval in milliseconds
-     * This value is divided by an integer (2, 3, 4, etc.) to get the
-     * time interval that is used.
-     */
-    constexpr int const autoScrollTimeInterval = 200;
+template <bool goingUp>
+bool nudgeAutoScrollSpeed(QTimer & timer, int & speed) {
+    static constexpr int const nudgeSpeed = goingUp ? 1 : -1;
+    if (speed != nudgeSpeed * 10) { // Stay in range [-10, 10]
+        speed += nudgeSpeed;
+        if (speed == 0) {
+            timer.stop();
+            return false;
+        }
 
-    if (speed == 0) {
-        timer.stop();
-    } else {
+        /**
+         * Auto scroll time interval in milliseconds
+         * This value is divided by an integer (2, 3, 4, etc.) to get the
+         * time interval that is used.
+         */
+        constexpr int const autoScrollTimeInterval = 200;
+
         double timeDivisor = std::pow(0.6, std::abs(speed));
         int interval = static_cast<int>(autoScrollTimeInterval * timeDivisor);
         timer.setInterval(interval);
-        timer.start();
     }
+    timer.start();
+    return true;
 }
 
 } // anonymous namespace
@@ -542,26 +549,16 @@ void BibleTime::toggleFullscreen() {
 
 void BibleTime::autoScrollUp() {
     setDisplayFocus();
-    if (m_autoScrollSpeed) {
-        if (m_autoScrollSpeed < 10)
-            ++m_autoScrollSpeed;
-    } else {
-        autoScrollEnablePauseAction(true);
-        m_autoScrollSpeed = 1;
-    }
-    setAutoScrollTimerInterval(m_autoScrollTimer, m_autoScrollSpeed);
+    autoScrollEnablePauseAction(
+                nudgeAutoScrollSpeed<true>(m_autoScrollTimer,
+                                           m_autoScrollSpeed));
 }
 
 void BibleTime::autoScrollDown() {
     setDisplayFocus();
-    if (m_autoScrollSpeed){
-        if (m_autoScrollSpeed > -10)
-            --m_autoScrollSpeed;
-    } else {
-        autoScrollEnablePauseAction(true);
-        m_autoScrollSpeed = -1;
-    }
-    setAutoScrollTimerInterval(m_autoScrollTimer, m_autoScrollSpeed);
+    autoScrollEnablePauseAction(
+                nudgeAutoScrollSpeed<false>(m_autoScrollTimer,
+                                            m_autoScrollSpeed));
 }
 
 void BibleTime::autoScrollPause() {
