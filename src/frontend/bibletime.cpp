@@ -310,11 +310,8 @@ bool BibleTime::event(QEvent* event) {
         QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
         if (keyEvent->modifiers() > 0)
             return false;
-        int value = keyEvent->key();
-        bool accepted = autoScrollAnyKey(value);
-        if (accepted) {
+        if (autoScrollAnyKey())
             return true;
-        }
     }
     return QMainWindow::event(event);
 }

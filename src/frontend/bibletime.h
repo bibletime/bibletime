@@ -376,7 +376,7 @@ public Q_SLOTS:
         void autoScrollUp();
         void autoScrollDown();
         void autoScrollPause();
-        bool autoScrollAnyKey(int key);
+        bool autoScrollAnyKey();
         void autoScrollEnablePauseAction(bool enable);
 
         /**

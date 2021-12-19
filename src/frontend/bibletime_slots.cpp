@@ -557,7 +557,7 @@ void BibleTime::autoScrollPause() {
     }
 }
 
-bool BibleTime::autoScrollAnyKey(int /* key */) {
+bool BibleTime::autoScrollAnyKey() {
     if (!m_autoScrollSpeed)
         return false;
     autoScrollStop();
