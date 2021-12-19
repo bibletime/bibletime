@@ -522,28 +522,28 @@ template <bool goingUp>
 void BibleTime::autoScroll() {
     setDisplayFocus();
 
-    static constexpr int const nudgeSpeed = goingUp ? 1 : -1;
-    if (m_autoScrollSpeed != nudgeSpeed * 10) { // Stay in range [-10, 10]
-        if (m_autoScrollSpeed != 0
-            && (m_autoScrollSpeed > 0) != goingUp // going in the opposite when
-            && !m_autoScrollTimer.isActive())     // resuming from pause
-        {
-            m_autoScrollSpeed = nudgeSpeed; // start safe at slow speed
-        } else {
-            m_autoScrollSpeed += nudgeSpeed;
-            if (m_autoScrollSpeed == 0) {
-                m_autoScrollTimer.stop();
-                m_autoScrollPauseAction->setEnabled(false);
-                return;
-            }
-        }
+    static constexpr int const intervals[21] = {
+        1, 2, 3, 5, 9, 15, 25, 43, 72, 120, 200,
+        120, 72, 43, 25, 15, 9, 5, 3, 2, 1
+    };
 
-        static constexpr int const intervals[21] = {
-            1, 2, 3, 5, 9, 15, 25, 43, 72, 120, 200,
-            120, 72, 43, 25, 15, 9, 5, 3, 2, 1
-        };
+    static constexpr int const nudgeSpeed = goingUp ? 1 : -1;
+    if (m_autoScrollSpeed == 0
+        || ((m_autoScrollSpeed > 0) != goingUp // going in the opposite when
+            && !m_autoScrollTimer.isActive())) // resuming from pause
+    {
+        m_autoScrollSpeed = nudgeSpeed; // start safe at slow speed
+        m_autoScrollTimer.setInterval(intervals[m_autoScrollSpeed + 10]);
+    } else if (m_autoScrollSpeed != nudgeSpeed * 10) { // Stay in [-10, 10]
+        m_autoScrollSpeed += nudgeSpeed;
+        if (m_autoScrollSpeed == 0) {
+            m_autoScrollTimer.stop();
+            m_autoScrollPauseAction->setEnabled(false);
+            return;
+        }
         m_autoScrollTimer.setInterval(intervals[m_autoScrollSpeed + 10]);
     }
+
     m_autoScrollTimer.start();
     m_autoScrollPauseAction->setEnabled(true);
 }
