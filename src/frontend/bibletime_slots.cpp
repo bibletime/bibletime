@@ -549,14 +549,14 @@ void BibleTime::toggleFullscreen() {
 
 void BibleTime::autoScrollUp() {
     setDisplayFocus();
-    autoScrollEnablePauseAction(
+    m_autoScrollPauseAction->setEnabled(
                 nudgeAutoScrollSpeed<true>(m_autoScrollTimer,
                                            m_autoScrollSpeed));
 }
 
 void BibleTime::autoScrollDown() {
     setDisplayFocus();
-    autoScrollEnablePauseAction(
+    m_autoScrollPauseAction->setEnabled(
                 nudgeAutoScrollSpeed<false>(m_autoScrollTimer,
                                             m_autoScrollSpeed));
 }
@@ -582,12 +582,7 @@ bool BibleTime::autoScrollAnyKey() {
 void BibleTime::autoScrollStop() {
     m_autoScrollTimer.stop();
     m_autoScrollSpeed = 0;
-    autoScrollEnablePauseAction(false);
-}
-
-void BibleTime::autoScrollEnablePauseAction(bool enable) {
-    m_autoScrollPauseAction = &m_actionCollection->action("autoScrollPause");
-    m_autoScrollPauseAction->setEnabled(enable);
+    m_autoScrollPauseAction->setEnabled(false);
 }
 
 void BibleTime::slotAutoScroll() {
