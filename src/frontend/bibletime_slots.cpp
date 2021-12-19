@@ -538,16 +538,11 @@ void BibleTime::autoScroll() {
             }
         }
 
-        /**
-         * Auto scroll time interval in milliseconds
-         * This value is divided by an integer (2, 3, 4, etc.) to get the
-         * time interval that is used.
-         */
-        static constexpr int const autoScrollTimeInterval = 200;
-
-        double timeDivisor = std::pow(0.6, std::abs(m_autoScrollSpeed));
-        int interval = static_cast<int>(autoScrollTimeInterval * timeDivisor);
-        m_autoScrollTimer.setInterval(interval);
+        static constexpr int const intervals[21] = {
+            1, 2, 3, 5, 9, 15, 25, 43, 72, 120, 200,
+            120, 72, 43, 25, 15, 9, 5, 3, 2, 1
+        };
+        m_autoScrollTimer.setInterval(intervals[m_autoScrollSpeed + 10]);
     }
     m_autoScrollTimer.start();
     m_autoScrollPauseAction->setEnabled(true);
