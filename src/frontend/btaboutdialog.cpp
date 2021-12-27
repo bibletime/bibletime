@@ -90,9 +90,6 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     auto const addTab = [this]{
         auto * const tab = new QTextBrowser(this);
         tab->setOpenLinks(false);
-        auto font = tab->font();
-        font.setPointSize(font.pointSize() + 2);
-        tab->setFont(font);
         m_tabWidget->addTab(tab, "");
         BT_CONNECT(tab, &QTextBrowser::anchorClicked,
                    [](QUrl const & url) {
