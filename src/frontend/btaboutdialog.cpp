@@ -89,14 +89,14 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     auto const addTab = [this]{
         auto * const tab = new QTextBrowser(this);
-        tab->setOpenExternalLinks(true);
+        tab->setOpenLinks(false);
         auto font = tab->font();
         font.setPointSize(font.pointSize() + 2);
         tab->setFont(font);
         m_tabWidget->addTab(tab, "");
         BT_CONNECT(tab, &QTextBrowser::anchorClicked,
                    [](QUrl const & url) {
-                       if (url.host() == "qt") {
+                       if (url.scheme() == "qt") {
                            qApp->aboutQt();
                        } else {
                            QDesktopServices::openUrl(url);
@@ -280,7 +280,6 @@ void BtAboutDialog::retranslateQtTab() {
     content += tr("Qt is a cross-platform application and UI framework, created with C++ "
                   "language. It has been released under the LGPL license.");
 
-    // See BtUrlHandler
     content += " " MAKE_LINK(content, "qt://about", tr("More info...")) "</p>";
 
     m_qtTab->setText(MAKE_HTML(m_qtTab, content));
