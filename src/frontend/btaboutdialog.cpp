@@ -150,7 +150,7 @@ void BtAboutDialog::retranslateBtTab() {
     content += tr("(c)1999-2021, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("https://bibletime.info", "bibletime.info")
                "</p>";
-    m_bibletimeTab->setText(MAKE_HTML(m_bibletimeTab, content));
+    m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
 }
 
 void BtAboutDialog::retranslateContributorsTab() {
@@ -245,7 +245,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                           "https://github.com/bibletime/bibletime/issues"));
     content += "</p>";
 
-    m_contributorsTab->setText(MAKE_HTML(m_contributorsTab, content));
+    m_contributorsTab->setHtml(MAKE_HTML(m_contributorsTab, content));
 }
 
 
@@ -266,7 +266,7 @@ void BtAboutDialog::retranslateSwordTab() {
     content += MAKE_LINK_STATIC("http://www.crosswire.org/sword/",
                                 "www.crosswire.org/sword") "</p>";
 
-    m_swordTab->setText(MAKE_HTML(m_swordTab, content));
+    m_swordTab->setHtml(MAKE_HTML(m_swordTab, content));
 }
 
 void BtAboutDialog::retranslateQtTab() {
@@ -282,7 +282,7 @@ void BtAboutDialog::retranslateQtTab() {
 
     content += " " MAKE_LINK(content, "qt://about", tr("More info...")) "</p>";
 
-    m_qtTab->setText(MAKE_HTML(m_qtTab, content));
+    m_qtTab->setHtml(MAKE_HTML(m_qtTab, content));
 }
 
 void BtAboutDialog::retranslateLicenceTab() {
@@ -303,7 +303,7 @@ void BtAboutDialog::retranslateLicenceTab() {
 
         QString content(QTextStream(&licFile).readAll().replace("<!-- TR TEXT -->", text));
         content.replace("<!-- HEADER -->", MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
-        m_licenceTab->setText(content);
+        m_licenceTab->setHtml(content);
         licFile.close();
     }
 }
