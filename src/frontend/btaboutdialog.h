@@ -35,7 +35,6 @@ class BtAboutDialog: public QDialog {
         void resizeEvent(QResizeEvent* event) override;
 
     private:
-        void initTab(QTextBrowser *&tab);
 
         void retranslateUi();
         void retranslateBtTab();

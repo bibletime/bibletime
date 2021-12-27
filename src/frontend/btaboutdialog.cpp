@@ -87,11 +87,28 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     m_tabWidget = new QTabWidget(this);
     mainLayout->addWidget(m_tabWidget);
 
-    initTab(m_bibletimeTab);
-    initTab(m_contributorsTab);
-    initTab(m_swordTab);
-    initTab(m_qtTab);
-    initTab(m_licenceTab);
+    auto const addTab = [this]{
+        auto * const tab = new QTextBrowser(this);
+        tab->setOpenExternalLinks(true);
+        auto font = tab->font();
+        font.setPointSize(font.pointSize() + 2);
+        tab->setFont(font);
+        m_tabWidget->addTab(tab, "");
+        BT_CONNECT(tab, &QTextBrowser::anchorClicked,
+                   [](QUrl const & url) {
+                       if (url.host() == "qt") {
+                           qApp->aboutQt();
+                       } else {
+                           QDesktopServices::openUrl(url);
+                       }
+                   });
+        return tab;
+    };
+    m_bibletimeTab = addTab();
+    m_contributorsTab = addTab();
+    m_swordTab = addTab();
+    m_qtTab = addTab();
+    m_licenceTab = addTab();
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
     mainLayout->addWidget(m_buttonBox);
@@ -110,24 +127,6 @@ void BtAboutDialog::resizeEvent(QResizeEvent* event) {
     int w = width()  - m_iconLabel->width() - 80;
     QString shortVersion = fm.elidedText(version, Qt::ElideMiddle, w);
     m_versionLabel->setText(shortVersion);
-}
-
-
-void BtAboutDialog::initTab(QTextBrowser *&tab) {
-    tab = new QTextBrowser(this);
-    tab->setOpenExternalLinks(true);
-    QFont font = tab->font();
-    font.setPointSize(font.pointSize()+2);
-    tab->setFont(font);
-    m_tabWidget->addTab(tab, "");
-    BT_CONNECT(tab, &QTextBrowser::anchorClicked,
-               [](QUrl const & url) {
-                   if (url.host() == "qt") {
-                       qApp->aboutQt();
-                   } else {
-                       QDesktopServices::openUrl(url);
-                   }
-               });
 }
 
 void BtAboutDialog::retranslateUi() {
