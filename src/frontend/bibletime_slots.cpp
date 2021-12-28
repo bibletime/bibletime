@@ -438,7 +438,6 @@ void BibleTime::reloadProfile() {
     struct WindowLoadStatus {
         QStringList failedModules;
         QList<CSwordModuleInfo *> okModules;
-        CDisplayWindow * window = nullptr;
     };
     QMap<QString, WindowLoadStatus> failedWindows;
     for (auto const & w : sessionConf.value<QStringList>("windowsList")) {
@@ -469,14 +468,11 @@ void BibleTime::reloadProfile() {
             failedWindows.insert(w, wls);
 
         // Try to respawn the window:
-        BT_ASSERT(!wls.window);
         auto const key = windowConf.value<QString>("key");
-        wls.window = createReadDisplayWindow(wls.okModules, key);
-
-        if (wls.window) {
-            wls.window->applyProfileSettings(windowConf);
+        if (auto * const window = createReadDisplayWindow(wls.okModules, key)) {
+            window->applyProfileSettings(windowConf);
             if (windowConf.value<bool>("hasFocus", false))
-                focusWindow = wls.window;
+                focusWindow = window;
         } else {
             failedWindows.insert(w, wls);
         }
