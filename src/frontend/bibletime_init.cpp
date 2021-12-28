@@ -90,16 +90,20 @@ public: // Methods:
                         m = m->superClass();
                     } while (m);
                     if (!objectHierarchy.isEmpty()) {
-                        objectHierarchy += "<br/><b>child of:</b> ";
+                        objectHierarchy
+                                .append("<br/>")
+                                .append(tr("<b>child of:</b> %1").arg(
+                                            classHierarchy));
                     } else {
-                        objectHierarchy += "<b>This widget is:</b> ";
+                        objectHierarchy.append(
+                                    tr("<b>This widget is:</b> %1").arg(
+                                        classHierarchy));
                     }
-                    objectHierarchy += classHierarchy;
                     w = w->parent();
                 } while (w);
                 setText(objectHierarchy);
             } else {
-                setText("No widget");
+                setText(tr("No widget"));
             }
             resize(minimumSizeHint());
         } else {
