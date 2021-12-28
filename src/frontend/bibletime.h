@@ -126,7 +126,7 @@ class QSplitter;
  * saveSettings().
  * This is the general way of all BibleTime classes.
  */
-class BibleTime : public QMainWindow {
+class BibleTime final : public QMainWindow {
 
     Q_OBJECT
 
@@ -228,7 +228,7 @@ Q_SIGNALS:
     void toggledTextWindowModuleChooser(bool newState);
     void colorThemeChanged();
 
-protected: // Protected methods
+private: // Methods:
 
     bool event(QEvent * event) override;
 
@@ -271,7 +271,18 @@ protected: // Protected methods
     */
     void refreshDisplayWindows() const;
 
-protected Q_SLOTS:
+    template <bool goingUp>
+    void autoScroll();
+
+    /**
+      Set the visibility of all tool bars according to the configuration taking
+      the toolbarsInEachWindow setting into account.
+    */
+    void showOrHideToolBars();
+
+    void slotShowDebugWindow(bool);
+
+private Q_SLOTS:
 
     /**
       Creates a new presenter in the MDI area according to the type of the
@@ -354,19 +365,6 @@ protected Q_SLOTS:
 
     /** Open the About Dialog. */
     void slotOpenAboutDialog();
-
-private: // Methods:
-
-    template <bool goingUp>
-    void autoScroll();
-
-    /**
-      Set the visibility of all tool bars according to the configuration taking
-      the toolbarsInEachWindow setting into account.
-    */
-    void showOrHideToolBars();
-
-    void slotShowDebugWindow(bool);
 
 private: // Fields:
 
