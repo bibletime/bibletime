@@ -767,7 +767,7 @@ void BibleTime::retranslateUi() {
     m_helpMenu->setTitle(tr("&Help"));
 
     #ifndef NDEBUG
-    m_debugWidgetAction->setText(tr("Show \"Whats this widget\" dialog"));
+    m_debugWidgetAction->setText(tr("Show \"What's this widget\" dialog"));
     #endif
 
     retranslateUiActions(m_actionCollection);
@@ -906,7 +906,7 @@ void BibleTime::slotShowDebugWindow(bool show) {
         m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
         m_debugWindow->setTextFormat(Qt::RichText);
         m_debugWindow->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        m_debugWindow->setWindowTitle(tr("Whats this widget?"));
+        m_debugWindow->setWindowTitle(tr("What's this widget?"));
         m_debugWindow->show();
         BT_CONNECT(m_debugWindow, &QObject::destroyed, m_debugWidgetAction,
                    [action=m_debugWidgetAction] { action->setChecked(false); },
