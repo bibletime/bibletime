@@ -17,9 +17,6 @@
 #include <QList>
 #include <QPointer>
 #include <QTimer>
-#ifndef NDEBUG
-#include <mutex>
-#endif
 #include "../backend/drivers/btmodulelist.h"
 #include "../backend/drivers/cswordmoduleinfo.h"
 
@@ -514,7 +511,6 @@ public Q_SLOTS:
     private:
         QAction *m_debugWidgetAction;
         static QLabel *m_debugWindow;
-        static std::mutex m_debugWindowLock;
 #endif
 };
 

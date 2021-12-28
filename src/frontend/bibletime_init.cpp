@@ -900,11 +900,9 @@ void BibleTime::initBackends() {
 #ifndef NDEBUG
 
 QLabel *BibleTime::m_debugWindow = nullptr;
-std::mutex BibleTime::m_debugWindowLock;
 
 void BibleTime::slotShowDebugWindow(bool show) {
     if (show) {
-        std::lock_guard const guard(m_debugWindowLock);
         if (m_debugWindow == nullptr) {
             m_debugWindow = new QLabel(nullptr, Qt::Dialog);
             m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
@@ -923,7 +921,6 @@ void BibleTime::slotShowDebugWindow(bool show) {
 }
 
 void BibleTime::deleteDebugWindow() {
-    std::lock_guard const guard(m_debugWindowLock);
     if (m_debugWindow != nullptr) {
         disconnect(m_debugWindow, &QObject::destroyed,
                    this,          &BibleTime::slotDebugWindowClosing);
@@ -933,13 +930,11 @@ void BibleTime::deleteDebugWindow() {
 }
 
 void BibleTime::slotDebugWindowClosing() {
-    std::lock_guard const guard(m_debugWindowLock);
     m_debugWindow = nullptr;
     m_debugWidgetAction->setChecked(false);
 }
 
 void BibleTime::slotDebugTimeout() {
-    std::lock_guard const guard(m_debugWindowLock);
     if (!m_debugWindow || m_debugWindow->isVisible() == false)
         return;
     QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
