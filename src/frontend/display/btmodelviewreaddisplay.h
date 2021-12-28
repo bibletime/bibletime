@@ -62,7 +62,7 @@ class QMenu;
 class BtModelViewReadDisplay : public QWidget {
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     enum TextType {
         HTMLText, /* Used for HTML markup */
@@ -77,7 +77,7 @@ public: /* Types: */
         AnchorWithText
     };
 
-public: /* Methods: */
+public: // methods:
 
     BtModelViewReadDisplay(CDisplayWindow * displayWindow,
                            QWidget * parent = nullptr);
@@ -193,7 +193,7 @@ public: /* Methods: */
 Q_SIGNALS:
     void completed();
 
-private: /* Fields: */
+private: // fields:
 
     CDisplayWindow* m_parentWindow;
     QMenu* m_popup;

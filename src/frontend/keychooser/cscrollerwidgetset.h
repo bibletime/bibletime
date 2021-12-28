@@ -31,7 +31,7 @@ class CScrollerWidgetSet: public QWidget {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CScrollerWidgetSet(QWidget * parent = nullptr);
 
@@ -55,11 +55,11 @@ Q_SIGNALS:
 
     void scroller_released();
 
-protected: /* Methods: */
+protected: // methods:
 
     void wheelEvent(QWheelEvent * e) override;
 
-private: /* Fields: */
+private: // fields:
 
     QVBoxLayout * m_layout;
     QToolButton * m_buttonUp;

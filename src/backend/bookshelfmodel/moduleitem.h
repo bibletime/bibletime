@@ -25,7 +25,7 @@ namespace BookshelfModel {
 
 class ModuleItem: public Item {
 
-public: /* Methods: */
+public: // methods:
 
     ModuleItem(CSwordModuleInfo & module,
                BtBookshelfTreeModel & parentModel)
@@ -43,7 +43,7 @@ public: /* Methods: */
 
     bool fitFor(CSwordModuleInfo const &) const override { return false; }
 
-private: /* Fields: */
+private: // fields:
 
     CSwordModuleInfo & m_moduleInfo;
     BtBookshelfTreeModel & m_parentModel;

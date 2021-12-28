@@ -34,7 +34,7 @@ class CSearchResultView  : public QTreeWidget {
         */
         CSwordModuleInfo const * module() const { return m_module; }
 
-    protected: // Protected methods
+    protected: // methods:
         /**
         * Initializes the view of this widget.
         */
@@ -45,7 +45,7 @@ class CSearchResultView  : public QTreeWidget {
         QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const override;
         QStringList mimeTypes () const override;
 
-    public Q_SLOTS: // Public slots
+    public Q_SLOTS:
 
         /**
           Setups the list with the given module.
@@ -84,7 +84,7 @@ class CSearchResultView  : public QTreeWidget {
         QMenu* m_popup;
         const CSwordModuleInfo *m_module;
 
-    Q_SIGNALS: // Signals
+    Q_SIGNALS:
         void keySelected(const QString&);
         void keyDeselected();
 };

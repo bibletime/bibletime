@@ -23,7 +23,7 @@ namespace BookshelfModel {
 
 class IndexingItem: public GroupItem<Item::ITEM_INDEXING> {
 
-public: /* Methods: */
+public: // methods:
 
     IndexingItem(CSwordModuleInfo const & module)
         : m_indexed(module.hasIndex()) {}
@@ -33,7 +33,7 @@ public: /* Methods: */
     bool fitFor(CSwordModuleInfo const & module) const override
     { return module.hasIndex() == m_indexed; }
 
-private: /* Fields: */
+private: // fields:
 
     bool m_indexed;
 

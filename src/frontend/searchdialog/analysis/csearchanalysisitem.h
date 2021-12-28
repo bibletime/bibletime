@@ -42,7 +42,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
     private:
         void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
-    private: /* Fields: */
+    private: // fields:
         double m_scaleFactor = 0.0;
         QString const m_bookName;
         QVector<std::size_t> m_counts;

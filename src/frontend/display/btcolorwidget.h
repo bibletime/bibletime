@@ -37,7 +37,7 @@ public Q_SLOTS:
 
     void setColor(QColor const & color);
 
-protected: /* Methods: */
+protected: // methods:
 
     void mouseReleaseEvent(QMouseEvent * event) override;
 

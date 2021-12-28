@@ -31,7 +31,7 @@ class CKeyChooser: public QWidget {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     /**
       \returns the history object of this keychooser.
@@ -89,7 +89,7 @@ Q_SIGNALS:
     */
     void keyChanged(CSwordKey * newKey);
 
-protected: /* Methods: */
+protected: // methods:
 
     CKeyChooser(const BtConstModuleList & info,
                 BTHistory * history,
@@ -97,7 +97,7 @@ protected: /* Methods: */
 
     virtual void handleHistoryMoved(QString const & newKey) = 0;
 
-private: /* Fields: */
+private: // fields:
 
     BTHistory * const m_history;
 

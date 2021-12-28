@@ -38,7 +38,7 @@ class CBookmarkIndex: public QTreeView {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     enum MenuAction {
         NewFolder = 0,
@@ -58,7 +58,7 @@ public: /* Types: */
         ActionEnd = ActionCount
     };
 
-public: /* Methods: */
+public: // methods:
 
     CBookmarkIndex(QWidget * const parent = nullptr);
 
@@ -68,7 +68,7 @@ Q_SIGNALS:
     void createReadDisplayWindow(QList<CSwordModuleInfo *>, QString const &);
     void magInfoProvided(Rendering::InfoType const, QString const & data);
 
-protected: /* Methods: */
+protected: // methods:
 
     QMimeData * dragObject();
 
@@ -82,7 +82,7 @@ protected: /* Methods: */
     void mouseMoveEvent(QMouseEvent * event) override;
     void leaveEvent(QEvent * event) override;
 
-private: /* Methods: */
+private: // methods:
 
     void deleteEntries();
     bool enableAction(QModelIndex const & index,
@@ -93,7 +93,7 @@ private: /* Methods: */
     void showExtraItem();
     void hideExtraItem();
 
-private: /* Fields: */
+private: // fields:
 
     QAction * m_actions[ActionCount];
 

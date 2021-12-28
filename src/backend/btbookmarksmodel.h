@@ -27,7 +27,7 @@ class BtBookmarksModel: public QAbstractItemModel {
     Q_OBJECT
 
 
-public: /* Methods: */
+public: // methods:
 
     enum BookmarksRoles {
         TypeRole = Qt::UserRole + 1
@@ -158,7 +158,7 @@ private:
 
     bool slotSave() { return save(); }
 
-private: /* Fields: */
+private: // fields:
     Q_DECLARE_PRIVATE(BtBookmarksModel)
     BtBookmarksModelPrivate * const d_ptr;
 

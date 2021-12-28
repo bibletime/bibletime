@@ -34,7 +34,7 @@ namespace Rendering {
 */
 class CTextRendering {
 
-    public: /* Types: */
+    public: // types:
 
         class KeyTreeItem;
 
@@ -42,7 +42,7 @@ class CTextRendering {
 
         class KeyTreeItem {
 
-            public: /* Types: */
+            public: // types:
 
                 struct Settings {
 
@@ -60,7 +60,7 @@ class CTextRendering {
 
                 }; /* struct Settings */
 
-            public: /* Methods: */
+            public: // methods:
 
                 KeyTreeItem(KeyTreeItem &&) = delete;
                 KeyTreeItem(KeyTreeItem const &&) = delete;
@@ -103,7 +103,7 @@ class CTextRendering {
 
                 CSwordKey const * mappedKey() const { return m_mappedKey; }
 
-            private: /* Fields: */
+            private: // fields:
 
                 Settings m_settings;
                 BtConstModuleList m_moduleList;
@@ -116,7 +116,7 @@ class CTextRendering {
 
         }; /* class KeyTreeItem */
 
-    public: /* Methods: */
+    public: // methods:
 
         CTextRendering(
             bool addText,
@@ -141,7 +141,7 @@ class CTextRendering {
                 const BtConstModuleList &modules,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
-    protected: /* Methods: */
+    protected: // methods:
 
         BtConstModuleList collectModules(const KeyTree &tree) const;
         virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
@@ -149,7 +149,7 @@ class CTextRendering {
         virtual QString entryLink(KeyTreeItem const & item,
                                   CSwordModuleInfo const & module);
 
-    protected: /* Fields: */
+    protected: // fields:
 
         DisplayOptions const m_displayOptions;
         FilterOptions const m_filterOptions;

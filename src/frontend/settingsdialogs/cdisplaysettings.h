@@ -28,7 +28,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         CDisplaySettingsPage(CConfigurationDialog *parent = nullptr);
 
@@ -36,7 +36,7 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         static void resetLanguage();
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void retranslateUi();
 
@@ -44,13 +44,13 @@ class CDisplaySettingsPage: public BtConfigDialog::Page {
         /** Update the style preview widget. */
         void updateStylePreview();
 
-    private: /* Methods: */
+    private: // methods:
 
         static QVector<QString> bookNameAbbreviationsTryVector();
         void initSwordLocaleCombo();
         void updateColors(const QString& style = QString());
 
-    private: /* Fields: */
+    private: // fields:
 
         QLabel* m_showLogoLabel;
         QCheckBox* m_showLogoCheck;

@@ -28,7 +28,7 @@ class BtBookshelfSourcesPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfSourcesPage(QWidget * parent = nullptr);
 
@@ -41,13 +41,13 @@ private Q_SLOTS:
 
     void slotButtonClicked(int row);
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
     void selectSourcesInModel(QStringList const & sources);
     void updateSourcesModel();
 
-private: /* Fields: */
+private: // fields:
 
     bool m_firstTimeInit = true;
     QTableView * m_sourcesTableView;

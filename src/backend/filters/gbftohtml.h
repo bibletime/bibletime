@@ -34,7 +34,7 @@ namespace Filters {
   \brief GBF to HTML conversion filter.
 */
 class GbfToHtml: public sword::GBFHTML {
-    protected: /* Types: */
+    protected: // types:
         class UserData: public sword::GBFHTML::MyUserData {
             public:
                 UserData(sword::SWModule const * module,
@@ -48,7 +48,7 @@ class GbfToHtml: public sword::GBFHTML {
                 short unsigned int swordFootnote;
         };
 
-    public: /* Methods: */
+    public: // methods:
         GbfToHtml();
 
         /** Reimplemented from sword::OSISHTMLHREF. */
@@ -61,7 +61,7 @@ class GbfToHtml: public sword::GBFHTML {
                          const sword::SWKey *key,
                          const sword::SWModule *module = nullptr) override;
 
-    protected: /* Methods: */
+    protected: // methods:
         /** Reimplemented from sword::OSISHTMLHREF. */
         sword::BasicFilterUserData * createUserData(
                 sword::SWModule const * module,

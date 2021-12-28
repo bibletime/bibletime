@@ -28,7 +28,7 @@ class CBibleKeyChooser final : public CKeyChooser {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CBibleKeyChooser(BtConstModuleList const & modules,
                      BTHistory * history,
@@ -48,11 +48,11 @@ public Q_SLOTS:
 
     void updateKey(CSwordKey * key) final override;
 
-private: /* Methods: */
+private: // methods:
 
     void handleHistoryMoved(QString const & newKey) final override;
 
-private: /* Fields: */
+private: // fields:
 
     BtBibleKeyWidget * w_ref;
     QList<CSwordBibleModuleInfo const *> m_modules;

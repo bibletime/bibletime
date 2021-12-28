@@ -31,7 +31,7 @@ class CBibleReadWindow: public CDisplayWindow  {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CBibleReadWindow(QList<CSwordModuleInfo *> const & modules,
                      CMDIArea * parent)
@@ -45,7 +45,7 @@ public: /* Methods: */
     void applyProfileSettings(BtConfigCore const & windowConf) override;
     static void insertKeyboardActions( BtActionCollection* const a );
 
-protected: /* Methods: */
+protected: // methods:
 
     void initActions() override;
     void initView() override;
@@ -114,7 +114,7 @@ protected Q_SLOTS:
     void lookupSwordKey(CSwordKey * newKey) override;
     void syncWindows();
 
-private: /* Methods: */
+private: // methods:
 
     /**
         * Wrapper around key() to return the right type of key.

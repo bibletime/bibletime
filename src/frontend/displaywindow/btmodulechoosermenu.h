@@ -31,7 +31,7 @@ class BtModuleChooserMenu final: public BtMenuView {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     enum Flag {
         DisableNonBiblesOnFirstButton,
@@ -40,7 +40,7 @@ public: /* Types: */
     };
     Q_DECLARE_FLAGS(Flags, Flag)
 
-public: /* Methods: */
+public: // methods:
 
     BtModuleChooserMenu(QString const & title,
                         CSwordModuleInfo::ModuleType moduleType,
@@ -64,14 +64,14 @@ Q_SIGNALS:
 
     void sigModuleChosen(CSwordModuleInfo * module);
 
-private: /* Methods: */
+private: // methods:
 
     void preBuildMenu(QActionGroup * actionGroup) final override;
 
     QAction * newAction(QMenu * parentMenu,
                         QModelIndex const & itemIndex) final override;
 
-public: /* Fields: */
+public: // fields:
 
     CSwordModuleInfo::ModuleType const m_moduleType;
     void * const m_sortedModel;

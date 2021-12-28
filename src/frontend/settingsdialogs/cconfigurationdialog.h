@@ -25,7 +25,7 @@ class CConfigurationDialog : public BtConfigDialog {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CConfigurationDialog(QWidget * const parent = nullptr,
                          Qt::WindowFlags const f = Qt::WindowFlags());

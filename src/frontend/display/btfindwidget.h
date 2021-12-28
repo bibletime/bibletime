@@ -26,7 +26,7 @@ class BtFindWidget: public QWidget {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtFindWidget(QWidget * parent = nullptr);
 
@@ -36,7 +36,7 @@ public: /* Methods: */
 
     QString text() const;
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
 
@@ -46,7 +46,7 @@ Q_SIGNALS:
     void findNext(QString const & text, bool caseSensitive);
     void highlightText(QString const & text, bool caseSensitive);
 
-private: /* Fields: */
+private: // fields:
 
     QLineEdit * m_textEditor;
     QToolButton * m_nextButton;

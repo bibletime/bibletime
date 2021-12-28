@@ -26,17 +26,17 @@ class BtStandardWorksTab: public QWidget {
 
     Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         BtStandardWorksTab(CSwordSettingsPage * parent);
 
         void save();
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void retranslateUi();
 
-    private: /* Fields: */
+    private: // fields:
 
         QLabel * m_explanationLabel;
 

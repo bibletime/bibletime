@@ -32,7 +32,7 @@ class BtBookshelfInstallFinalPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfInstallFinalPage(QWidget * parent = nullptr);
     ~BtBookshelfInstallFinalPage() noexcept final override { destroyThread(); }
@@ -54,11 +54,11 @@ private Q_SLOTS:
     void slotStatusUpdated(int moduleIndex, int status);
     void slotThreadFinished();
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
 
-private: /* Fields: */
+private: // fields:
 
     QLabel * m_msgLabel;
     QLabel * m_msgLabel2;

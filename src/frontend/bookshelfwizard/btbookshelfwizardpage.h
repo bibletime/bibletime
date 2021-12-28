@@ -25,7 +25,7 @@ class BtBookshelfWizardPage: public QWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfWizardPage(QWidget * parent = nullptr);
 

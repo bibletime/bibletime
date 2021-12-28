@@ -52,7 +52,7 @@ protected:
        virtual void mouseDoubleClickEvent(QMouseEvent *event) override;
        virtual void wheelEvent(QWheelEvent * event) override;
 
-private: /* Methods: */
+private: // methods:
 
    template <typename ... Args>
    void callQml(char const * const method, Args && ... args) {

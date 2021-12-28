@@ -25,7 +25,7 @@ class BtInstallPageModel: public BtBookshelfTreeModel {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtInstallPageModel(Grouping const & grouping,
                        QObject * const parent = nullptr);

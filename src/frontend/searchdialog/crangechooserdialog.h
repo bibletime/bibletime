@@ -34,7 +34,7 @@ class CRangeChooserDialog: public QDialog {
 
         Q_OBJECT
 
-private: /* Types: */
+private: // types:
 
     class RangeItem: public QListWidgetItem {
 
@@ -51,19 +51,19 @@ private: /* Types: */
         QString const & range() const { return m_range; }
         void setRange(QString const & range) { m_range = range; }
 
-    private: /* Fields: */
+    private: // fields:
 
         QString m_range;
 
     }; /* class RangeItem */
 
-public: /* Methods: */
+public: // methods:
 
     CRangeChooserDialog(const QStringList& rangeScopeModule, QWidget *parentDialog = nullptr);
 
     void accept() override;
 
-private: /* Methods: */
+private: // methods:
 
     /**
       Initializes widgets.

@@ -28,14 +28,14 @@ namespace Filters {
   \brief TEI to HTML conversion filter.
 */
 class TeiToHtml: public sword::TEIHTMLHREF {
-    public: /* Methods: */
+    public: // methods:
         TeiToHtml();
 
         bool handleToken(sword::SWBuf &buf,
                          const char *token,
                          sword::BasicFilterUserData *userData) override;
 
-    private: /* Methods: */
+    private: // methods:
         void renderReference(const char *osisRef, sword::SWBuf &buf,
                              sword::BasicFilterUserData *myUserData);
         void renderTargetReference(const char *osisRef, sword::SWBuf &buf,

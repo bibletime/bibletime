@@ -32,7 +32,7 @@ class CBookTreeChooser final : public CKeyChooser {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CBookTreeChooser(BtConstModuleList const & modules,
                      BTHistory * history,
@@ -52,7 +52,7 @@ public Q_SLOTS:
     void updateKey(CSwordKey *) final override;
     void doShow();
 
-private: /* Methods: */
+private: // methods:
 
     /** \brief Creates the first level of the tree structure. */
     void setupTree();
@@ -64,7 +64,7 @@ private Q_SLOTS:
 
     void itemActivated(QTreeWidgetItem * item);
 
-private: /* Fields: */
+private: // fields:
 
     QList<CSwordBookModuleInfo const *> m_modules;
     CSwordTreeKey * m_key;

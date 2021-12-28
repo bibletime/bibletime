@@ -30,7 +30,7 @@ class CInfoDisplay: public QWidget {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CInfoDisplay(BibleTime * parent = nullptr);
 
@@ -49,7 +49,7 @@ public Q_SLOTS:
 private:
     void setBrowserFont(const CSwordModuleInfo* const module);
 
-private: /* Fields: */
+private: // fields:
 
     BtTextBrowser * m_textBrowser;
     BibleTime * m_mainWindow;

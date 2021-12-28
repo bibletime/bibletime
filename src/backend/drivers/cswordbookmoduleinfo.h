@@ -30,7 +30,7 @@ class TreeKeyIdx;
 class CSwordBookModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
         /**
           \param module The module which belongs to this object
           \param backend The parent backend for this book module.
@@ -50,13 +50,13 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         */
         sword::TreeKeyIdx *tree() const;
 
-    private: /* Methods: */
+    private: // methods:
 
         /**
         * A recursive helper function to help computng the module depth!
         */
         void computeDepth(sword::TreeKeyIdx * const key, const int level = 0);
 
-    private: /* Fields: */
+    private: // fields:
         int m_depth;
 };

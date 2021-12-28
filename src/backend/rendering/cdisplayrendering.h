@@ -26,7 +26,7 @@ namespace Rendering {
 
 class CDisplayRendering : public CTextRendering {
 
-    public: /* Methods: */
+    public: // methods:
 
         static QString keyToHTMLAnchor(const QString &key);
 
@@ -34,7 +34,7 @@ class CDisplayRendering : public CTextRendering {
             const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
             const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
-    protected: /* Methods: */
+    protected: // methods:
 
         QString entryLink(KeyTreeItem const & item,
                           CSwordModuleInfo const & module) override;

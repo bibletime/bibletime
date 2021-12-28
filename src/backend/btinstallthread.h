@@ -64,11 +64,11 @@ class BtInstallThread: public QThread {
         /** Emitted when installing is complete. */
         void installCompleted(int moduleIndex, bool success);
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void run() override;
 
-    private: /* Methods: */
+    private: // methods:
 
         void installModule();
         bool removeModule();
@@ -78,7 +78,7 @@ class BtInstallThread: public QThread {
         void slotDownloadStarted();
         void slotManagerStatusUpdated(int totalProgress, int fileProgress);
 
-    private: /* Fields: */
+    private: // fields:
 
         const QList<CSwordModuleInfo *> & m_modules;
         const QString m_destination;

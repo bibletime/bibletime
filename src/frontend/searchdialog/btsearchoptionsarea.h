@@ -77,7 +77,7 @@ class BtSearchOptionsArea : public QWidget {
         */
         void setModules(const BtConstModuleList &modules);
 
-    private: /* Methods: */
+    private: // methods:
         /**
         * Initializes this page.
         */

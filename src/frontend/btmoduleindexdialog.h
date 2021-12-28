@@ -26,7 +26,7 @@ class BtModuleIndexDialog: public QProgressDialog {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     /**
       Creates and shows the indexing progress dialog and starts the actual
@@ -39,7 +39,7 @@ public: /* Methods: */
     */
     static bool indexAllModules(QList<CSwordModuleInfo *> const & modules);
 
-private: /* Methods: */
+private: // methods:
 
     BtModuleIndexDialog(int numModules);
 
@@ -54,7 +54,7 @@ private: /* Methods: */
     */
     bool indexAllModulesPrivate(QList<CSwordModuleInfo *> const & modules);
 
-private: /* Fields: */
+private: // fields:
 
     int m_currentModuleIndex;
 

@@ -33,7 +33,7 @@ class BtModuleChooserButton: public QToolButton {
 
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         /** \brief Constructs an new empty button.
             \note updateMenu() is needed to update the icon, menu items etc.

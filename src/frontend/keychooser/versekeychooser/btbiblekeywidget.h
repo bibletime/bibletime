@@ -48,7 +48,7 @@ class BtBibleKeyWidget : public QWidget  {
     public Q_SLOTS:
         void updateText();
 
-    private: /* Methods: */
+    private: // methods:
 
         void populateBookMenu(QMenu & menu);
         void populateChapterMenu(QMenu & menu);

@@ -27,7 +27,7 @@ class CSwordModuleInfo;
 /** \brief The class used to display lexicons. */
 class CLexiconReadWindow: public CDisplayWindow {
 
-public: /* Methods: */
+public: // methods:
 
     CLexiconReadWindow(QList<CSwordModuleInfo *> const & modules,
                        CMDIArea * parent);
@@ -38,7 +38,7 @@ public Q_SLOTS:
 
     void reload(CSwordBackend::SetupChangedReason reason) override;
 
-protected: /* Methods: */
+protected: // methods:
 
     void initActions() override;
 
@@ -47,7 +47,7 @@ protected Q_SLOTS:
     void previousEntry();
     void nextEntry();
 
-private: /* Methods: */
+private: // methods:
 
     CSwordLDKey * ldKey();
 

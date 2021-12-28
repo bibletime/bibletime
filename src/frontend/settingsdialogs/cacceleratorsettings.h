@@ -33,13 +33,13 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         CAcceleratorSettingsPage(CConfigurationDialog *parent = nullptr);
 
         void save() const final override;
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void retranslateUi();
 

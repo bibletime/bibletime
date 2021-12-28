@@ -32,11 +32,11 @@ class BtMessageInputDialog : public QDialog
 {
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     enum InputType { Normal, Password };
 
-public: /* Methods: */
+public: // methods:
 
     /**
      * @brief The BtMessageInputDialog class provides a editable

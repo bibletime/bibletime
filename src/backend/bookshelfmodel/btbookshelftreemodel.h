@@ -38,12 +38,12 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
     Q_OBJECT
     Q_ENUMS(Group)
 
-private: /* Types: */
+private: // types:
 
     using ModuleItemMap = QMap<CSwordModuleInfo *, BookshelfModel::ModuleItem *>;
     using SourceIndexMap = QMap<CSwordModuleInfo *, QPersistentModelIndex>;
 
-public: /* Types: */
+public: // types:
 
     enum ModuleRole {
         CheckStateRole = BtBookshelfModel::UserRole,
@@ -65,7 +65,7 @@ public: /* Types: */
 
     class Grouping: public QList<Group> {
 
-        public: /* Methods: */
+        public: // methods:
 
             /**
               \warning Be careful using this constructor!
@@ -94,7 +94,7 @@ public: /* Types: */
 
     };
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfTreeModel(QObject * parent = nullptr);
     BtBookshelfTreeModel(BtConfigCore const & config,
@@ -152,7 +152,7 @@ Q_SIGNALS:
     void groupingOrderChanged(BtBookshelfTreeModel::Grouping newGrouping);
     void moduleChecked(CSwordModuleInfo * module, bool checked);
 
-protected: /* Methods: */
+protected: // methods:
 
     void resetData();
 
@@ -163,7 +163,7 @@ protected Q_SLOTS:
     void moduleInserted(const QModelIndex & parent, int start, int end);
     void moduleRemoved(const QModelIndex & parent, int start, int end);
 
-private: /* Methods: */
+private: // methods:
 
     void addModule(CSwordModuleInfo & module, bool checked);
     void addModule(CSwordModuleInfo & module,
@@ -194,7 +194,7 @@ private: /* Methods: */
         return index(groupIndex, 0, parentIndex);
     }
 
-private: /* Fields: */
+private: // fields:
 
     std::shared_ptr<QAbstractItemModel> m_sourceModel;
     std::unique_ptr<BookshelfModel::Item> m_rootItem;

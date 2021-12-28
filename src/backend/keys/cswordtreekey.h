@@ -35,7 +35,7 @@ class CSwordModuleInfo;
 
 class CSwordTreeKey final : public CSwordKey {
 
-    public: /* Types: */
+    public: // types:
 
         using Offset =
                 decltype(std::declval<sword::TreeKeyIdx const &>().getOffset());
@@ -100,7 +100,7 @@ class CSwordTreeKey final : public CSwordKey {
 
         const char * rawKey() const final override;
 
-    private: /* Fields: */
+    private: // fields:
 
         sword::TreeKeyIdx m_key;
 

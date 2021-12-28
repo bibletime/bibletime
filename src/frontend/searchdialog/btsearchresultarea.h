@@ -49,7 +49,7 @@ namespace Search {
 *   To add a new verse to a strongs text result use addKeyName.
 */
 class StrongsResult {
-    public: /* Methods: */
+    public: // methods:
         StrongsResult() {}
         StrongsResult(QString const & text,
                       QString const & keyName)
@@ -67,7 +67,7 @@ class StrongsResult {
 
         QStringList const & getKeyList() const { return m_keyNameList; }
 
-    private: /* Fields: */
+    private: // fields:
         QString m_text;
         QStringList m_keyNameList;
 };
@@ -79,12 +79,12 @@ class StrongsResult {
 * This class makes use of the above class StrongsResult.
 */
 class StrongsResultList: public QList<StrongsResult> {
-    public: /* Methods: */
+    public: // methods:
         StrongsResultList(CSwordModuleInfo const *module,
                           CSwordModuleSearch::ModuleResultList const & results,
                           QString const & strongsNumber);
 
-    private: /* Methods: */
+    private: // methods:
         QString getStrongsNumberText(const QString &verseContent,
                                      int &startIndex,
                                      const QString &lemmaText);
@@ -96,7 +96,7 @@ class StrongsResultList: public QList<StrongsResult> {
   */
 class BtSearchResultArea : public QWidget {
         Q_OBJECT
-    public: /* Methods: */
+    public: // methods:
         BtSearchResultArea(QWidget * parent = nullptr);
         ~BtSearchResultArea() override { saveDialogSettings(); }
 
@@ -124,7 +124,7 @@ class BtSearchResultArea : public QWidget {
         void showAnalysis()
         { CSearchAnalysisDialog(m_searchedText, m_results, this).exec(); }
 
-    protected: /* Methods: */
+    protected: // methods:
 
         /**
         * Load the settings from the resource file
@@ -156,7 +156,7 @@ class BtSearchResultArea : public QWidget {
             m_previewDisplay->copy();
         }
 
-    private: /* Fields: */
+    private: // fields:
         QString m_searchedText;
         CSwordModuleSearch::Results m_results;
 

@@ -57,7 +57,7 @@ namespace {
 
 class DebugWindow : public QLabel {
 
-public: // Methods:
+public: // methods:
 
     DebugWindow()
         : QLabel(nullptr, Qt::Dialog)
@@ -108,7 +108,7 @@ public: // Methods:
         }
     }
 
-private: // Fields:
+private: // fields:
 
     int const m_updateTimerId;
 

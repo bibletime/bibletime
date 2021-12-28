@@ -34,12 +34,12 @@ class BtIndexDialog final: public QDialog {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtIndexDialog(QWidget * parent = nullptr,
                   Qt::WindowFlags f = Qt::WindowFlags());
 
-private: /* Methods: */
+private: // methods:
 
     void populateModuleList();
     void retranslateUi();
@@ -51,7 +51,7 @@ private Q_SLOTS:
     void createIndices();
     void deleteIndices();
 
-private: /* Fields: */
+private: // fields:
 
     QCheckBox * m_autoDeleteOrphanedIndicesBox;
     QTreeWidget * m_moduleList;

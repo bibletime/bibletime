@@ -26,7 +26,7 @@
 */
 class CDisplayTemplateMgr {
 
-    public: /* Types: */
+    public: // types:
 
         /**
           Settings which are used to fill the content into the template.
@@ -58,7 +58,7 @@ class CDisplayTemplateMgr {
 
         };
 
-    public: /* Methods: */
+    public: // methods:
 
         /**
           \param[out] errorMessage Set to error string on error, otherwise set
@@ -112,13 +112,13 @@ class CDisplayTemplateMgr {
         */
         void setMultiModuleHeadersVisible(bool visible);
 
-    private: /* Methods: */
+    private: // methods:
 
         /** Preloads a single template from disk: */
         void loadTemplate(const QString & filename);
         void loadCSSTemplate(const QString & filename);
 
-    private: /* Fields: */
+    private: // fields:
 
         bool m_multiModuleHeaders;
         QHash<QString, QString> m_templateMap;

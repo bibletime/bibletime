@@ -29,7 +29,7 @@ class BtEditTextWizard final: public QWizard {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtEditTextWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 

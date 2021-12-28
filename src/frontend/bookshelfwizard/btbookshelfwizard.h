@@ -37,7 +37,7 @@ class BtBookshelfWizard final: public QWizard {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfWizard(QWidget * parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
@@ -64,12 +64,12 @@ public Q_SLOTS:
 protected:
     virtual void keyPressEvent(QKeyEvent * event) override;
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
     void stopDownload();
 
-private: /* Fields: */
+private: // fields:
 
     bool m_downloadInProgress;
     bool m_closeRequested;

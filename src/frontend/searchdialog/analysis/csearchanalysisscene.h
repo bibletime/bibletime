@@ -48,7 +48,7 @@ class CSearchAnalysisScene : public QGraphicsScene {
     public Q_SLOTS:
         void saveAsHTML();
 
-    protected Q_SLOTS: // Protected slots
+    protected Q_SLOTS:
         /**
         * No descriptions
         */

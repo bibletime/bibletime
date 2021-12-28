@@ -31,7 +31,7 @@ namespace Filters {
   \brief OSIS to HTMl conversion filter.
 */
 class OsisToHtml: public sword::OSISHTMLHREF {
-    protected: /* Types: */
+    protected: // types:
         class UserData: public sword::OSISHTMLHREF::MyUserData {
             public:
                 UserData(sword::SWModule const * module,
@@ -59,7 +59,7 @@ class OsisToHtml: public sword::OSISHTMLHREF {
                 } quote;
         };
 
-    public: /* Methods: */
+    public: // methods:
         OsisToHtml();
 
         /** Reimplemented from sword::OSISHTMLHREF. */
@@ -67,7 +67,7 @@ class OsisToHtml: public sword::OSISHTMLHREF {
                          const char *token,
                          sword::BasicFilterUserData *userData) override;
 
-    protected: /* Methods: */
+    protected: // methods:
         /** Reimplemented from sword::OSISHTMLHREF. */
         sword::BasicFilterUserData * createUserData(
                 sword::SWModule const * module,

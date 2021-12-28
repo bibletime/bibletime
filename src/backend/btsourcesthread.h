@@ -23,7 +23,7 @@ class BtSourcesThread: public QThread {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtSourcesThread(QObject * parent = nullptr)
         : QThread(parent)
@@ -41,16 +41,16 @@ Q_SIGNALS:
     void percentComplete(int percent);
     void showMessage(QString const & msg);
 
-protected: /* Methods: */
+protected: // methods:
 
     void run() override;
 
-private: /* Methods: */
+private: // methods:
 
     bool shouldStop() const noexcept
     { return m_stop.load(std::memory_order_acquire); }
 
-private: /* Fields: */
+private: // fields:
 
     std::atomic<bool> m_stop;
     std::atomic<bool> m_finishedSuccessfully;

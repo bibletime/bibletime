@@ -26,7 +26,7 @@ class BtBookshelfRemoveFinalPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfRemoveFinalPage(QWidget * parent = nullptr);
 
@@ -34,11 +34,11 @@ public: /* Methods: */
     void initializePage() final override;
     int nextId() const final override;
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
 
-private: /* Fields: */
+private: // fields:
 
     QLabel * m_msgLabel;
     QVBoxLayout * m_verticalLayout;

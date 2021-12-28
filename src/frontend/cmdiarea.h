@@ -33,7 +33,7 @@ class CMDIArea: public QMdiArea {
         Q_OBJECT
         Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
 
-    public: /* Types: */
+    public: // types:
 
         /**
           Possible MDI subwindow arrangement modes.
@@ -47,7 +47,7 @@ class CMDIArea: public QMdiArea {
             ArrangementModeTabbed = 6
         };
 
-    public: /* Methods: */
+    public: // methods:
 
         /**
           \param[in] parent BibleTime main window used for parent widget.
@@ -144,7 +144,7 @@ class CMDIArea: public QMdiArea {
         */
         void sigSetToplevelCaption(const QString&);
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void findTextInActiveWindow(QString const & text,
                                     bool caseSensitive,
@@ -173,11 +173,11 @@ class CMDIArea: public QMdiArea {
         */
         void closeTab(int i);
 
-    protected: /* Fields: */
+    protected: // fields:
 
         MDIArrangementMode m_mdiArrangementMode;
 
-    private: /* Fields: */
+    private: // fields:
 
         CDisplayWindow* m_activeWindow;
         BibleTime* m_bibleTime;

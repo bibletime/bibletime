@@ -19,11 +19,11 @@
 
 class BtIcons {
 
-public: /* Types: */
+public: // types:
 
     class RegularIcon: public QIcon {
 
-    public: /* Methods: */
+    public: // methods:
 
         RegularIcon(char const * const name);
 
@@ -31,13 +31,13 @@ public: /* Types: */
 
     class OverlayedIcon: public QIcon {
 
-    public: /* Methods: */
+    public: // methods:
 
         OverlayedIcon(QIcon const & icon, QIcon const & overlayedIcon);
 
     };
 
-public: /* Methods: */
+public: // methods:
 
     BtIcons();
 
@@ -46,11 +46,11 @@ public: /* Methods: */
         return *m_instance;
     }
 
-private: /* Fields: */
+private: // fields:
 
     static BtIcons * m_instance;
 
-public: /* Fields: */
+public: // fields:
 
     QIcon const icon_null;
 

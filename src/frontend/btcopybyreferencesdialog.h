@@ -28,7 +28,7 @@ class BtCopyByReferencesDialog : public QDialog {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     struct Result {
         CSwordModuleInfo const * module;
@@ -38,14 +38,14 @@ public: /* Types: */
         int index2;
     };
 
-public: /* Methods: */
+public: // methods:
 
     BtCopyByReferencesDialog(BtModuleTextModel const * model,
                              CDisplayWindow * parent);
 
     Result const & result() const noexcept { return m_result; }
 
-private: /* Fields: */
+private: // fields:
 
     int m_copyThreshold;
     CSwordKey * m_key;

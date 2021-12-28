@@ -23,7 +23,7 @@ namespace BookshelfModel {
 
 class CategoryItem: public GroupItem<Item::ITEM_CATEGORY> {
 
-public: /* Methods: */
+public: // methods:
 
     CategoryItem(CSwordModuleInfo const & module)
         : m_category(module.category()) {}
@@ -37,7 +37,7 @@ public: /* Methods: */
 
     bool operator<(const Item & other) const override;
 
-private: /* Fields: */
+private: // fields:
 
     CSwordModuleInfo::Category const m_category;
 

@@ -22,7 +22,7 @@
 */
 class BookmarkItem final {
 
-public: /* Methods: */
+public: // methods:
 
     BookmarkItem(QString module, QString key, QString description)
         : m_moduleName(std::move(module))
@@ -39,7 +39,7 @@ public: /* Methods: */
     /** \returns the bookmark description */
     QString const & description() const noexcept { return m_description; }
 
-private: /* Fields: */
+private: // fields:
 
     QString m_moduleName;  /**< The module which is used by this item. */
     QString m_key;         /**< The key of a bookmark. */

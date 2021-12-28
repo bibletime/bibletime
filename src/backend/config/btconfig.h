@@ -38,7 +38,7 @@ class BtConfig: public BtConfigCore {
 
     friend class BibleTimeApp;
 
-public: /* Types: */
+public: // types:
 
     /*!
     * The first parameter indicates whether the custom font should be used or not.
@@ -48,7 +48,7 @@ public: /* Types: */
     using StringMap = QMap<QString, QString>;
     using ShortcutsMap = QHash<QString, QList<QKeySequence> >;
 
-private: /* Types: */
+private: // types:
 
     using FontCacheMap = QHash<Language const *, FontSettingsPair>;
 
@@ -58,7 +58,7 @@ private: /* Types: */
         INIT_NEED_UNIMPLEMENTED_FORWARD_MIGRATE = 2,
     };
 
-public: /* Methods: */
+public: // methods:
 
     static BtConfig & getInstance();
 
@@ -273,7 +273,7 @@ public: /* Methods: */
     void setDefaultSwordModuleByType(const QString & moduleType,
                                      const CSwordModuleInfo * const module);
 
-private: /* Methods: */
+private: // methods:
 
     explicit BtConfig(const QString & settingsFile);
 
@@ -282,7 +282,7 @@ private: /* Methods: */
 
     static void destroyInstance();
 
-private: /* Fields: */
+private: // fields:
 
     static BtConfig * m_instance; //!< singleton instance
 

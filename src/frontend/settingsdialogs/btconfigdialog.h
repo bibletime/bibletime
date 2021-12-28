@@ -37,14 +37,14 @@ class BtConfigDialog : public QDialog {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     /** Base class for configuration dialog pages. */
     class Page : public QWidget {
 
         friend class BtConfigDialog;
 
-    public: /* Methods: */
+    public: // methods:
 
         Page(QIcon const & icon, QWidget * const parent = nullptr);
         ~Page() noexcept;
@@ -53,14 +53,14 @@ public: /* Types: */
 
         virtual void save() const = 0;
 
-    private: /* Fields: */
+    private: // fields:
 
         QListWidgetItem * const m_listWidgetItem;
         bool m_ownsListWidgetItem = true;
 
     };
 
-public: /* Methods: */
+public: // methods:
 
     BtConfigDialog(QWidget * const parent = nullptr,
                    Qt::WindowFlags const flags = Qt::WindowFlags());
@@ -77,7 +77,7 @@ Q_SIGNALS:
 
     void signalSettingsChanged();
 
-private: /* Fields: */
+private: // fields:
 
     QListWidget * const m_contentsList;
     QStackedWidget * const m_pageWidget;

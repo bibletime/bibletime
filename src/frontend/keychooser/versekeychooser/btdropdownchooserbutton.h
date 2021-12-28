@@ -29,7 +29,7 @@ class BtDropdownChooserButton : public QToolButton {
         /** The item list is constructed here just before the menu is shown.*/
         void mousePressEvent(QMouseEvent* event) override;
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void wheelEvent(QWheelEvent* event) override;
 
@@ -37,7 +37,7 @@ class BtDropdownChooserButton : public QToolButton {
 
         void stepItem(int step);
 
-    private: /* Fields: */
+    private: // fields:
 
         void (BtBibleKeyWidget::*m_populateMenu)(QMenu &);
         BtBibleKeyWidget & m_parent;

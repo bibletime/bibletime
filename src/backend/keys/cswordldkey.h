@@ -97,7 +97,7 @@ class CSwordLDKey final : public CSwordKey {
 
         const char* rawKey() const final override;
 
-    private: /* Fields: */
+    private: // fields:
 
         sword::SWKey m_key;
 

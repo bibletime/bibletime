@@ -19,7 +19,7 @@ class CSwordModuleInfo;
 
 class BtConstModuleSet: public QSet<CSwordModuleInfo const *> {
 
-public: /* Methods: */
+public: // methods:
 
     BtConstModuleSet(QSet<CSwordModuleInfo const *> const & copy)
         : QSet<CSwordModuleInfo const *>(copy)

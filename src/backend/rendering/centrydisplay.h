@@ -24,7 +24,7 @@ namespace Rendering {
 
 class CEntryDisplay {
 
-    public: /* Methods: */
+    public: // methods:
 
         virtual ~CEntryDisplay() {}
 

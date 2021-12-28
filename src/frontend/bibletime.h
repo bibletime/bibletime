@@ -228,7 +228,7 @@ Q_SIGNALS:
     void toggledTextWindowModuleChooser(bool newState);
     void colorThemeChanged();
 
-private: // Methods:
+private: // methods:
 
     bool event(QEvent * event) override;
 
@@ -366,7 +366,7 @@ private Q_SLOTS:
     /** Open the About Dialog. */
     void slotOpenAboutDialog();
 
-private: // Fields:
+private: // fields:
 
     static BibleTime * m_instance;
 

@@ -19,7 +19,7 @@
 
 class Language {
 
-public: /* Methods: */
+public: // methods:
 
     Language(Language &&) = delete;
     Language(Language const &) = delete;
@@ -48,7 +48,7 @@ public: /* Methods: */
     */
     static std::shared_ptr<Language const> fromAbbrev(QString const & abbrev);
 
-private: /* Fields: */
+private: // fields:
 
     QStringList const m_abbrevs;
     QString const m_englishName;

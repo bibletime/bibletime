@@ -43,7 +43,7 @@ namespace {
     information about the action. */
 class BtShortcutsEditorItem : public QTableWidgetItem {
 
-public: /* Methods: */
+public: // methods:
 
     BtShortcutsEditorItem(QAction * action,
                           QKeySequence defaultKeys)
@@ -88,7 +88,7 @@ public: /* Methods: */
         m_newSecondHotkey = QKeySequence();
     }
 
-private: /* Fields: */
+private: // fields:
 
     QAction *m_action;
     QKeySequence m_newFirstHotkey;

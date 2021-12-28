@@ -52,7 +52,7 @@ class CSwordModuleInfo: public QObject {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     /**
      * These are the options which could be supported by modules and by this backend.
@@ -154,7 +154,7 @@ public: /* Types: */
     };
     Q_DECLARE_FLAGS(Categories, Category)
 
-public: /* Methods: */
+public: // methods:
 
     CSwordModuleInfo(CSwordModuleInfo &&) = delete;
     CSwordModuleInfo(CSwordModuleInfo const &) = delete;
@@ -396,7 +396,7 @@ public Q_SLOTS:
                                 std::memory_order_relaxed) noexcept
     { m_cancelIndexing.store(true, memoryOrder); }
 
-protected: /* Methods: */
+protected: // methods:
 
     CSwordModuleInfo(sword::SWModule & module,
                      CSwordBackend & backend,
@@ -418,7 +418,7 @@ Q_SIGNALS:
     void indexingFinished();
     void indexingProgress(int);
 
-private: /* Fields: */
+private: // fields:
 
     Rendering::CEntryDisplay * m_display = nullptr;
     sword::SWModule & m_module;

@@ -23,7 +23,7 @@ namespace sword { class SWKey; }
 /** Base class for all Sword based keys. */
 class CSwordKey {
 
-public: /* Types: */
+public: // types:
 
     enum TextRenderType {
         Normal = 0,
@@ -31,7 +31,7 @@ public: /* Types: */
         ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
     };
 
-public: /* Methods: */
+public: // methods:
 
     virtual ~CSwordKey() noexcept;
 
@@ -110,7 +110,7 @@ public: /* Methods: */
     */
     void emitAfterChanged();
 
-protected: /* Methods: */
+protected: // methods:
 
     CSwordKey(CSwordModuleInfo const * const module = nullptr)
         : m_module(module)
@@ -125,7 +125,7 @@ protected: /* Methods: */
     */
     virtual const char * rawKey() const = 0;
 
-protected: /* Fields: */
+protected: // fields:
 
     const CSwordModuleInfo * m_module;
     QPointer<BtSignal> m_afterChangedSignaller;

@@ -30,7 +30,7 @@ class CTextRendering;
 
 class CExportManager {
 
-public: /* Types: */
+public: // types:
 
     /** The format the export actions should have. */
     enum Format {
@@ -38,7 +38,7 @@ public: /* Types: */
         Text
     };
 
-public: /* Methods: */
+public: // methods:
 
     CExportManager(const bool showProgress = true,
                    const QString &progressLabel = QString(),
@@ -100,12 +100,12 @@ public: /* Methods: */
                       DisplayOptions const & displayOptions,
                       FilterOptions const & filterOptions);
 
-protected: /* Methods: */
+protected: // methods:
 
     /** \returns a filename to save a file. */
     const QString getSaveFileName(Format const format);
 
-private: /* Methods: */
+private: // methods:
 
     std::unique_ptr<Rendering::CTextRendering> newRenderer(Format const format,
                                                            bool const addText);
@@ -121,7 +121,7 @@ private: /* Methods: */
     /** \brief Closes the progress dialog immediately. */
     void closeProgressDialog();
 
-private: /* Fields: */
+private: // fields:
 
     FilterOptions m_filterOptions;
     DisplayOptions m_displayOptions;

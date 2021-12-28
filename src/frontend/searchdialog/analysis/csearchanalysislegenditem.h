@@ -23,15 +23,15 @@ class QWidget;
 namespace Search {
 
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
-    public: /* Methods: */
+    public: // methods:
         CSearchAnalysisLegendItem(CSwordModuleSearch::Results const * results)
             : m_results(results)
         {}
 
-    private: /* Methods: */
+    private: // methods:
         void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
 
-    private: /* Fields: */
+    private: // fields:
 
         CSwordModuleSearch::Results const * const m_results;
 

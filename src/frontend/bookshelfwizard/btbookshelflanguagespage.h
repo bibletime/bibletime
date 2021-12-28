@@ -28,7 +28,7 @@ class BtBookshelfLanguagesPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfLanguagesPage(QWidget * parent = nullptr);
 
@@ -43,11 +43,11 @@ private Q_SLOTS:
 
     void slotDataChanged();
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
 
-private: /* Fields: */
+private: // fields:
 
     bool m_firstTimeInit = true;
     QListView * m_languagesListView;

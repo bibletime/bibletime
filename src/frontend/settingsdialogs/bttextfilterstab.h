@@ -27,17 +27,17 @@ class BtTextFiltersTab: public QWidget {
 
     Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         BtTextFiltersTab(CSwordSettingsPage * parent);
 
         void save();
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void retranslateUi();
 
-    private: /* Fields: */
+    private: // fields:
 
         QLabel * m_explanationLabel;
 

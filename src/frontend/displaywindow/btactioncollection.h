@@ -25,11 +25,11 @@ class BtActionCollection: public QObject {
 
     Q_OBJECT
 
-private: /* Types: */
+private: // types:
 
     class Item: public QObject {
 
-    public: /* Methods: */
+    public: // methods:
 
         Item(QAction * const action, QObject * const parent)
             : QObject{parent}
@@ -37,7 +37,7 @@ private: /* Types: */
             , m_action{action}
         {}
 
-    public: /* Fields: */
+    public: // fields:
 
         QKeySequence const m_defaultKeys;
         QAction * const m_action;
@@ -45,7 +45,7 @@ private: /* Types: */
     };
     using ActionMap = QMap<QString, Item *>;
 
-public: /* Methods: */
+public: // methods:
 
     BtActionCollection(QObject * const parent = nullptr)
             : QObject{parent}
@@ -93,11 +93,11 @@ public: /* Methods: */
 
     QKeySequence getDefaultShortcut(QAction * const action) const;
 
-private: /* Methods: */
+private: // methods:
 
     Item * findActionItem(QString const & name) const;
 
-private: /* Fields: */
+private: // fields:
 
     ActionMap m_actions;
 

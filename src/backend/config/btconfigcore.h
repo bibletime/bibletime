@@ -30,7 +30,7 @@ class BtConfigCore {
 
     friend class BtConfig;
 
-public: /* Methods: */
+public: // methods:
 
     BtConfigCore(BtConfigCore &&) = default;
     BtConfigCore(BtConfigCore const &) = default;
@@ -106,14 +106,14 @@ public: /* Methods: */
     /** \brief Synchronizes the configuration to disk. */
     void sync();
 
-private: /* Methods: */
+private: // methods:
 
     BtConfigCore(std::shared_ptr<QSettings> state,
                  QString groupPrefix = QString());
 
     void setValue_(QString const & key, QVariant value);
 
-private: /* Fields: */
+private: // fields:
 
     std::shared_ptr<QSettings> m_state;
     QString m_groupPrefix; ///< Empty or absolute path with trailing slash

@@ -23,7 +23,7 @@ class BtPrinter final: public QObject, public Rendering::CDisplayRendering {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtPrinter(DisplayOptions const & displayOptions,
               FilterOptions const & filterOptions,
@@ -31,7 +31,7 @@ public: /* Methods: */
 
     void printKeyTree(KeyTree const &);
 
-private: /* Methods: */
+private: // methods:
 
     QString entryLink(KeyTreeItem const & item,
                       CSwordModuleInfo const & module) override;

@@ -28,7 +28,7 @@ namespace sword { class SWModule; }
 class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
         CSwordLexiconModuleInfo(sword::SWModule & module,
                                 CSwordBackend & backend)
                 : CSwordModuleInfo(module, backend, Lexicon),
@@ -62,7 +62,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         /** Jumps to the closest entry in the module. */
         bool snap() const override;
 
-    private: /* Fields: */
+    private: // fields:
 
         /**
           See if module keys are consistent with Strong's references

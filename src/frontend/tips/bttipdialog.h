@@ -30,18 +30,18 @@ class QWidget;
 class BtTipDialog: public QDialog {
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         BtTipDialog(QWidget *parent = nullptr, Qt::WindowFlags wflags = Qt::Dialog);
 
-    private: /* Methods: */
+    private: // methods:
 
         void retranslateUi();
 
         /** Sends the current tip to the web view */
         void displayTip();
 
-    private: /* Fields: */
+    private: // fields:
 
         QDialogButtonBox* m_buttonBox;
         QTextBrowser* m_tipView;

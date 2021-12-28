@@ -35,7 +35,7 @@ class CSearchAnalysisDialog : public QDialog {
                               CSwordModuleSearch::Results const & results,
                               QWidget * parentDialog = nullptr);
 
-    protected: // Protected methods
+    protected: // methods:
 
         void resizeEvent(QResizeEvent* event) override;
 

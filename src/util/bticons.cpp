@@ -33,7 +33,7 @@ namespace {
 
 class BtOverlayIconEngine: public QIconEngine {
 
-public: /* Methods: */
+public: // methods:
 
     BtOverlayIconEngine(QIcon const & icon, QIcon const & overlay)
         : m_icon(icon)
@@ -78,7 +78,7 @@ public: /* Methods: */
         return pix;
     }
 
-private: /* Fields: */
+private: // fields:
 
     QIcon const & m_icon;
     QIcon const & m_overlayIcon;

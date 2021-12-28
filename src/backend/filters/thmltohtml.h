@@ -28,7 +28,7 @@ namespace Filters {
   \brief ThML to HTML conversion filter.
 */
 class ThmlToHtml: public sword::ThMLHTML {
-    protected: /* Types: */
+    protected: // types:
         class UserData: public sword::ThMLHTML::MyUserData {
             public:
                 UserData(sword::SWModule const * module,
@@ -42,7 +42,7 @@ class ThmlToHtml: public sword::ThMLHTML {
                 unsigned short int swordFootnote;
         };
 
-    public: /* Methods: */
+    public: // methods:
         ThmlToHtml();
 
         bool handleToken(sword::SWBuf &buf,
@@ -53,7 +53,7 @@ class ThmlToHtml: public sword::ThMLHTML {
                          const sword::SWKey *key,
                          const sword::SWModule *module = nullptr) override;
 
-    protected: /* Methods: */
+    protected: // methods:
 
         sword::BasicFilterUserData * createUserData(
                 sword::SWModule const * module,

@@ -266,7 +266,7 @@ protected Q_SLOTS:
 
     void saveRawHTML();
 
-private: /* Methods: */
+private: // methods:
 
     template <typename Name, typename ... Args>
     QAction & initAction(Name && name, Args && ... args) {
@@ -275,7 +275,7 @@ private: /* Methods: */
         return a;
     }
 
-protected: /* Fields: */
+protected: // fields:
 
     struct ActionsStruct {
         BtToolBarPopupAction * backInHistory;

@@ -31,7 +31,7 @@ namespace Rendering {
 */
 class CBookDisplay: public CEntryDisplay {
 
-    public: /* Methods: */
+    public: // methods:
 
         const QString text(const BtConstModuleList &modules,
                            const QString &key,

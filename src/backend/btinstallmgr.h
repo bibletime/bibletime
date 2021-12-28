@@ -36,7 +36,7 @@ class BtInstallMgr
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtInstallMgr(QObject * parent = nullptr);
     ~BtInstallMgr() override;
@@ -53,7 +53,7 @@ Q_SIGNALS:
 
     void downloadStarted();
 
-protected: /* Methods: */
+protected: // methods:
 
     /** \note Reimplementation of sword::StatusReporter::statusUpdate(). */
     void statusUpdate(double dltotal, double dlnow) override;
@@ -69,7 +69,7 @@ protected: /* Methods: */
                    long completedBytes,
                    const char * message) override;
 
-private: /* Fields: */
+private: // fields:
 
     long m_totalBytes;
     long m_completedBytes;

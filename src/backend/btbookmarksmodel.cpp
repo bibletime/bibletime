@@ -57,11 +57,11 @@ inline QString toHeader(QString const & key, QString const & moduleName)
 
 class BtBookmarksModelPrivate {
 
-public: /* Tyepes */
+public: // types:
 
     class BookmarkItemBase {
 
-    public: /* Methods: */
+    public: // methods:
 
         BookmarkItemBase(BookmarkItemBase * parent = nullptr)
             : m_parent(parent) {
@@ -220,7 +220,7 @@ public: /* Tyepes */
     };
 
 
-public: /* Methods */
+public: // methods:
 
     BtBookmarksModelPrivate(BtBookmarksModel * parent)
         : m_rootItem(new BookmarkFolder("Root"))
@@ -284,7 +284,6 @@ public: /* Methods */
                 m_saveTimer.start();
         }
     }
-public: /* Loader */
 
     /** Loads a list of items (with subitem trees) from a named file
     * or from the default bookmarks file. */
@@ -427,7 +426,7 @@ public: /* Loader */
     }
 
 
-public: /* Fields */
+public: // fields:
 
     BookmarkFolder * m_rootItem;
     QTimer m_saveTimer;

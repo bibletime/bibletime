@@ -27,17 +27,17 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         CSwordSettingsPage(CConfigurationDialog * parent = nullptr);
 
         void save() const final override;
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void retranslateUi();
 
-    private: /* Fields: */
+    private: // fields:
 
         QTabWidget * m_tabWidget;
         BtStandardWorksTab * m_worksTab;

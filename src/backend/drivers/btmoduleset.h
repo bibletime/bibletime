@@ -19,7 +19,7 @@ class CSwordModuleInfo;
 
 class BtModuleSet: public QSet<CSwordModuleInfo *> {
 
-public: /* Methods: */
+public: // methods:
 
     BtModuleSet() = default;
 

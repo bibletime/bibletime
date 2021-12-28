@@ -24,7 +24,7 @@ class ColorManager {
         dark = 2
     };
 
-public: /* Methods: */
+public: // methods:
 
     static ColorManager & instance();
 
@@ -36,11 +36,11 @@ public: /* Methods: */
     QString getForegroundColor(QString const & style = QString());
     QString getCrossRefColor(QString const & style = QString());
 
-private: /* Methods: */
+private: // methods:
 
     ColorManager();
 
-private: /* Fields: */
+private: // fields:
 
     std::map<QString, std::map<QString, QString> > m_colorMaps;
 

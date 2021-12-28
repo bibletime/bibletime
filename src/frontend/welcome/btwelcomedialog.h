@@ -28,16 +28,16 @@ class BtWelcomeDialog: public QDialog {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtWelcomeDialog(QWidget * parent = nullptr,
                     Qt::WindowFlags wflags = Qt::Dialog);
 
-protected: /* Methods: */
+protected: // methods:
 
     void retranslateUi();
 
-private: /* Fields: */
+private: // fields:
 
     QLabel * m_iconLabel;
     QLabel * m_label;

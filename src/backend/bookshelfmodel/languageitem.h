@@ -26,7 +26,7 @@ namespace BookshelfModel {
 
 class LanguageItem: public GroupItem<Item::ITEM_LANGUAGE> {
 
-public: /* Methods: */
+public: // methods:
 
     LanguageItem(CSwordModuleInfo const & module)
         : m_language(module.language()) {}
@@ -36,7 +36,7 @@ public: /* Methods: */
     bool fitFor(CSwordModuleInfo const & module) const override
     { return module.language() == m_language; }
 
-private: /* Fields: */
+private: // fields:
 
     std::shared_ptr<Language const> m_language;
 

@@ -25,7 +25,7 @@ class BtFontSizeWidget: public QComboBox {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtFontSizeWidget(QWidget * parent = nullptr);
 
@@ -39,7 +39,7 @@ Q_SIGNALS:
 
     void fontSizeChanged(int);
 
-private: /* Fields: */
+private: // fields:
 
     QIntValidator * const m_validator;
 

@@ -32,7 +32,7 @@ class BtEditTextPage final: public QWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtEditTextPage(BtEditTextWizard & parent);
 

@@ -26,7 +26,7 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfFilterModel(QObject * parent = nullptr);
 
@@ -72,13 +72,13 @@ public Q_SLOTS:
     void setCategoryFilterKeyColumn(int column);
     void setShownCategories(CSwordModuleInfo::Categories const & categories);
 
-private: /* Methods: */
+private: // methods:
 
     bool nameFilterAcceptsRow(int row, QModelIndex const & parent) const;
     bool hiddenFilterAcceptsRow(int row, QModelIndex const & parent) const;
     bool categoryFilterAcceptsRow(int row, QModelIndex const & parent) const;
 
-private: /* Fields: */
+private: // fields:
 
     bool m_enabled;
 

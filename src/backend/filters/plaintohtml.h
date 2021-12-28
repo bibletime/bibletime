@@ -32,7 +32,7 @@ namespace Filters {
 */
 class PlainToHtml: public sword::SWFilter {
 
-    protected: /* Methods: */
+    protected: // methods:
 
         /** Reimplemented from sword::SWFilter. */
         char processText(sword::SWBuf &buf,

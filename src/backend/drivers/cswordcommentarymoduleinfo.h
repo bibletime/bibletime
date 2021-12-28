@@ -23,7 +23,7 @@
 class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         CSwordCommentaryModuleInfo(sword::SWModule & module,
                                    CSwordBackend & backend)

@@ -27,7 +27,7 @@
 class CSwordBibleModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
         CSwordBibleModuleInfo(sword::SWModule & module,
                               CSwordBackend & backend,
                               ModuleType type = Bible);
@@ -107,11 +107,11 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
             return m_upperBound;
         }
 
-    private: /* Methods: */
+    private: // methods:
 
         void initBounds() const;
 
-    private: /* Fields: */
+    private: // fields:
 
         mutable bool m_boundsInitialized;
         mutable CSwordVerseKey m_lowerBound;

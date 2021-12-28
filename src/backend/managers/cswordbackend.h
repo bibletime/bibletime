@@ -59,7 +59,7 @@ class CSwordBackend: public QObject {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     /**
       \brief The reason for the sigSwordSetupChanged signal, i.e. why the module
@@ -83,12 +83,12 @@ public: /* Types: */
         NoModules = 1
     };
 
-private: /* Types: */
+private: // types:
 
     using AvailableLanguagesCacheContainer =
             std::set<std::shared_ptr<Language const>>;
 
-public: /* Methods: */
+public: // methods:
 
     /**
       \note Used by BtInstallBackend only.
@@ -257,7 +257,7 @@ Q_SIGNALS:
 
     void sigSwordSetupChanged(CSwordBackend::SetupChangedReason reason);
 
-protected: /* Methods: */
+protected: // methods:
 
     /**
       Creates the SWModule objects using SWMgr's methods, it adds the
@@ -271,11 +271,11 @@ protected: /* Methods: */
     QString getPrivateSwordConfigPath() const;
     QString getPrivateSwordConfigFile() const;
 
-private: /* Fields: */
+private: // fields:
 
     struct Private: public sword::SWMgr {
 
-    /* Methods: */
+    // Methods:
 
         using sword::SWMgr::SWMgr;
 
@@ -284,7 +284,7 @@ private: /* Fields: */
         void addRenderFilters(sword::SWModule * module,
                               sword::ConfigEntMap & section) override;
 
-    /* Fields: */
+    // Fields:
 
         Filters::GbfToHtml   m_gbfFilter;
         Filters::OsisToHtml  m_osisFilter;

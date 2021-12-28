@@ -39,7 +39,7 @@ class BtBookshelfWorksPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfWorksPage(WizardTaskType iType, QWidget * parent = nullptr);
 
@@ -57,11 +57,11 @@ private Q_SLOTS:
     void slotPathChanged(int const index);
     void slotInitPathCombo();
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
 
-private: /* Fields: */
+private: // fields:
 
     WizardTaskType const m_taskType;
     BtBookshelfTreeModel::Grouping m_groupingOrder;

@@ -32,7 +32,7 @@ class QWidget;
 class BtEditBookmarkDialog : public QDialog  {
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
         BtEditBookmarkDialog(const QString &key,
                              const QString &title,
                              const QString &description,
@@ -49,10 +49,10 @@ class BtEditBookmarkDialog : public QDialog  {
         */
         QString titleText() { return m_titleEdit->text(); }
 
-    protected: /* Methods: */
+    protected: // methods:
         void retranslateUi();
 
-    private: /* Fields: */
+    private: // fields:
         QFormLayout *m_layout;
             QLabel *m_keyLabel;
                 QLabel *m_keyTextLabel;

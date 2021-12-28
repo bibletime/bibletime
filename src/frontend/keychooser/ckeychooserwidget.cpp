@@ -27,12 +27,12 @@
 
 class BtKeyLineEdit : public QLineEdit {
 
-public: /* Methods: */
+public: // methods:
 
     BtKeyLineEdit(QWidget * parent)
         : QLineEdit(parent) {}
 
-protected: /* Methods: */
+protected: // methods:
 
     void focusInEvent(QFocusEvent * event) override {
         const Qt::FocusReason reason = event->reason();

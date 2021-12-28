@@ -30,14 +30,14 @@ namespace Rendering {
  */
 class CPlainTextExportRendering: public CTextRendering {
 
-    public: /* Methods: */
+    public: // methods:
 
         CPlainTextExportRendering(
             bool addText,
             const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
             const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
-    protected: /* Methods: */
+    protected: // methods:
 
         QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr) override;
         QString finishText(const QString &text, const KeyTree &tree) override;

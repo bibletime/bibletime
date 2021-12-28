@@ -25,18 +25,18 @@ class BtTextBrowser: public QTextBrowser {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtTextBrowser(QWidget * parent = nullptr);
 
-protected: /* Methods: */
+protected: // methods:
 
     void keyPressEvent(QKeyEvent * event) override;
     void mousePressEvent(QMouseEvent * event) override;
     void mouseMoveEvent(QMouseEvent * event) override;
     void mouseReleaseEvent(QMouseEvent * event) override;
 
-private: /* Fields: */
+private: // fields:
 
     QPoint m_startPos;
     bool m_readyToStartDrag = false;

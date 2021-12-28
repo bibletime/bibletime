@@ -119,12 +119,12 @@ class BtMenuView: public QMenu {
         /** \brief Rebuilds the menu. */
         void rebuildMenu();
 
-    private: /* Methods: */
+    private: // methods:
 
         void buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex);
         void removeMenus();
 
-    private: /* Fields: */
+    private: // fields:
 
         QAbstractItemModel *m_model;
         QActionGroup *m_actions;

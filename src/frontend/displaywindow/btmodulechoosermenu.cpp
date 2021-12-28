@@ -33,7 +33,7 @@ namespace {
 
 struct SortModel final: public QSortFilterProxyModel {
 
-/* Methods: */
+// Methods:
 
     SortModel(CSwordModuleInfo::ModuleType moduleType,
               QObject * parent = nullptr)
@@ -86,7 +86,7 @@ struct SortModel final: public QSortFilterProxyModel {
                    && (module->type() == CSwordModuleInfo::Commentary));
     }
 
-/* Fields: */
+// Fields:
 
     CSwordModuleInfo::ModuleType const m_moduleType;
     bool const m_showHidden;

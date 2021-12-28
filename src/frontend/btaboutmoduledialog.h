@@ -31,17 +31,17 @@ class BTAboutModuleDialog: public QDialog {
 
         Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
                             QWidget *parent = nullptr,
                             Qt::WindowFlags flags = Qt::WindowFlags());
 
-    protected: /* Methods: */
+    protected: // methods:
 
         void retranslateUi();
 
-    private: /* Fields: */
+    private: // fields:
 
         const CSwordModuleInfo *m_moduleInfo;
         QTextEdit        *m_textEdit;

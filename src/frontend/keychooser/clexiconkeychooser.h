@@ -32,14 +32,14 @@ class CLexiconKeyChooser final : public CKeyChooser {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CLexiconKeyChooser(BtConstModuleList const & modules,
                        BTHistory * history,
                        CSwordKey * key = nullptr,
                        QWidget * parent = nullptr);
 
-public: /* Methods: */
+public: // methods:
 
     CSwordKey * key() final override;
 
@@ -54,11 +54,11 @@ public Q_SLOTS:
 
     void updateKey(CSwordKey* key) final override;
 
-private: /* Methods: */
+private: // methods:
 
     void handleHistoryMoved(QString const & newKey) final override;
 
-private: /* Fields: */
+private: // fields:
 
     CKeyChooserWidget * m_widget;
     CSwordLDKey * m_key;

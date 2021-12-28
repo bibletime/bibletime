@@ -24,7 +24,7 @@ namespace BookshelfModel {
 
 class Item {
 
-public: /* Types: */
+public: // types:
 
     enum Type {
         ITEM_ROOT         = 0,
@@ -34,7 +34,7 @@ public: /* Types: */
         ITEM_INDEXING     = 4
     };
 
-public: /* Methods: */
+public: // methods:
 
     Item(Type type)
         : m_type(type)
@@ -131,12 +131,12 @@ public: /* Methods: */
     */
     virtual bool operator<(const Item & other) const;
 
-private: /* Methods: */
+private: // methods:
 
     void setParent(Item * parent) noexcept
     { m_parent = (static_cast<void>(BT_ASSERT(parent)), parent); }
 
-private: /* Fields: */
+private: // fields:
 
     Type m_type;
     Item * m_parent;
@@ -147,7 +147,7 @@ private: /* Fields: */
 
 class RootItem: public Item {
 
-public: /* Methods: */
+public: // methods:
 
     RootItem() : Item(Item::ITEM_ROOT) {}
 
@@ -158,7 +158,7 @@ public: /* Methods: */
 template <Item::Type TYPE>
 class GroupItem: public Item {
 
-public: /* Methods: */
+public: // methods:
 
     GroupItem() : Item(TYPE) {}
 

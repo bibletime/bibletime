@@ -32,19 +32,19 @@ class BTMimeData: public QMimeData {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     /** Type for bookmark item list. Usage: BTMimeData::ItemList. */
     using ItemList = QList<BookmarkItem>;
 
-public: /* Methods: */
+public: // methods:
 
     BTMimeData(ItemList bookmarks);
 
     /** \returns the bookmarks list. */
     ItemList const & bookmarks() const noexcept { return m_bookmarkList; }
 
-private: /* Fields: */
+private: // fields:
 
     ItemList m_bookmarkList;
 

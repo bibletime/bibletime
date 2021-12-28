@@ -30,7 +30,7 @@ class CBookReadWindow: public CDisplayWindow {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CBookReadWindow(QList<CSwordModuleInfo *> const & modules,
                     CMDIArea * parent)
@@ -45,7 +45,7 @@ public: /* Methods: */
     void applyProfileSettings(BtConfigCore const & windowConf) override;
     static void insertKeyboardActions(BtActionCollection * const a);
 
-protected: /* Methods: */
+protected: // methods:
 
     void initActions() override;
     void initToolbars() override;
@@ -64,7 +64,7 @@ private Q_SLOTS:
         */
     void treeToggled();
 
-private: /* Fields: */
+private: // fields:
 
     QAction * m_treeAction;
     CBookTreeChooser * m_treeChooser;

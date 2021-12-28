@@ -28,7 +28,7 @@ class BtBookshelfSourcesProgressPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfSourcesProgressPage(QWidget * parent = nullptr);
     ~BtBookshelfSourcesProgressPage() noexcept override { destroyThread(); }
@@ -46,11 +46,11 @@ private Q_SLOTS:
 
     void slotThreadFinished();
 
-private: /* Methods: */
+private: // methods:
 
     void retranslateUi();
 
-private: /* Methods: */
+private: // methods:
 
     bool m_installCompleted = false;
     QLabel * m_msgLabel;

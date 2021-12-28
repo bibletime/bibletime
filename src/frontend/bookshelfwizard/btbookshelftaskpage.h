@@ -29,19 +29,19 @@ class BtBookshelfTaskPage final: public BtBookshelfWizardPage {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfTaskPage(QWidget * parent = nullptr);
 
     int nextId() const final override;
     WizardTaskType taskType() const;
 
-private: /* Methods: */
+private: // methods:
 
     bool timeToUpdate() const;
     void retranslateUi();
 
-private: /* Fields: */
+private: // fields:
 
     QLabel * m_warningLabel;
     QGroupBox * m_groupBox;

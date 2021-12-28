@@ -32,14 +32,14 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
-    private: /* Types: */
+    private: // types:
 
         struct WorkSetting {
             Language const & language;
             BtConfig::FontSettingsPair settings;
         };
 
-    public: /* Methods: */
+    public: // methods:
 
         BtFontSettingsPage(CConfigurationDialog *parent = nullptr);
 
@@ -50,11 +50,11 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
         // This slot is called when the "Use own font for language" button was clicked.
         void useOwnFontClicked(bool);
 
-    private: /* Methods: */
+    private: // methods:
 
         void retranslateUi();
 
-    private: /* Fields: */
+    private: // fields:
 
         QGroupBox *m_fontsGroupBox;
         QLabel *m_languageLabel;

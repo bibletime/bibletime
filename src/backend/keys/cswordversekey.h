@@ -52,14 +52,14 @@ class CSwordModuleInfo;
 
 class CSwordVerseKey final : public CSwordKey {
 
-    public: /* Types: */
+    public: // types:
         enum JumpType {
             UseBook,
             UseChapter,
             UseVerse
         };
 
-    public: /* Methods: */
+    public: // methods:
 
         #define BibleTime_CSwordVerseKey_DEFINE_COMP(op) \
             friend bool operator op(CSwordVerseKey const & lhs, \
@@ -164,7 +164,7 @@ class CSwordVerseKey final : public CSwordKey {
 
         const char * rawKey() const final override;
 
-    private: /* Fields: */
+    private: // fields:
 
         sword::VerseKey m_key;
 

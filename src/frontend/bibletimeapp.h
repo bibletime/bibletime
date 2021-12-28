@@ -28,7 +28,7 @@ class BibleTimeApp : public QApplication {
 
     Q_OBJECT
 
-    public: /* Methods: */
+    public: // methods:
 
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
@@ -44,7 +44,7 @@ class BibleTimeApp : public QApplication {
         void setDebugMode(bool const debugMode) noexcept
         { m_debugMode = debugMode; }
 
-    private: /* Fields: */
+    private: // fields:
 
         bool m_init;
         bool m_debugMode;

@@ -36,7 +36,7 @@ class BtBookshelfModel: public QAbstractListModel {
 
     Q_OBJECT
 
-public: /* Types: */
+public: // types:
 
     enum ModuleRole {
         ModuleNameRole = Qt::UserRole,
@@ -52,12 +52,12 @@ public: /* Types: */
         UserRole
     };
 
-private: /* Types: */
+private: // types:
 
     /// Used to restrict construction to newInstance() only.
     struct ConstructInPrivate {};
 
-public: /* Methods: */
+public: // methods:
 
     BtBookshelfModel(BtBookshelfModel &&) = delete;
     BtBookshelfModel(BtBookshelfModel const &) = delete;
@@ -167,7 +167,7 @@ protected Q_SLOTS:
     */
     void moduleUnlocked(bool unlocked);
 
-private: /* Methods: */
+private: // methods:
 
     /**
       Called internally when module data changes. This method emits any neccessary
@@ -177,7 +177,7 @@ private: /* Methods: */
     */
     void moduleDataChanged(CSwordModuleInfo * module);
 
-private: /* Fields: */
+private: // fields:
 
     /**
       The underlying data as a list of pointers to the respective CSwordModuleInfo

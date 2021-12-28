@@ -21,14 +21,14 @@ namespace Rendering {
 
 class CrossRefRendering : public Rendering::CTextRendering {
 
-public: /* Methods: */
+public: // methods:
 
     CrossRefRendering(
         const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
         const FilterOptions &filterOptions = btConfig().getFilterOptions()
     );
 
-protected: /* Methods: */
+protected: // methods:
 
     QString entryLink(KeyTreeItem const & item,
                       CSwordModuleInfo const & module) override;

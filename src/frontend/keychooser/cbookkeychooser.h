@@ -55,7 +55,7 @@ public Q_SLOTS:
     /** \brief Updates the keychoosers for the given key but emit no signal. */
     void updateKey(CSwordKey * key) final override;
 
-protected: /* Methods: */
+protected: // methods:
 
     /**
        Fills the combo given by depth with the items from the key having depth
@@ -65,7 +65,7 @@ protected: /* Methods: */
                     int const depth,
                     int const currentItem);
 
-private: /* Methods: */
+private: // methods:
 
     void adjustFont();
     void handleHistoryMoved(QString const & newKey) final override;
@@ -75,7 +75,7 @@ private Q_SLOTS:
     /** \brief A keychooser changed. Update and emit a signal if necessary. */
     void keyChooserChanged(int);
 
-private: /* Fields: */
+private: // fields:
 
     QList<CKeyChooserWidget *> m_chooserWidgets;
     QList<CSwordBookModuleInfo const *> m_modules;

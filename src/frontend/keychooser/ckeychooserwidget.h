@@ -33,11 +33,11 @@ class CKCComboBox: public QComboBox {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CKCComboBox(QWidget * parent = nullptr);
 
-protected: /* Methods: */
+protected: // methods:
 
     bool eventFilter(QObject * o, QEvent * e) override;
 
@@ -61,7 +61,7 @@ class CKeyChooserWidget: public QWidget  {
 
     Q_OBJECT
 
-public: /* Methods: */
+public: // methods:
 
     CKeyChooserWidget(QStringList * list = nullptr,
                       QWidget * parent = nullptr);
@@ -127,7 +127,7 @@ Q_SIGNALS:
     */
     void focusOut(int index);
 
-private: /* Fields: */
+private: // fields:
 
     QStringList m_list;
     bool updatelock;
