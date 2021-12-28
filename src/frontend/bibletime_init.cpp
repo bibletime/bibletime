@@ -922,8 +922,6 @@ void BibleTime::slotShowDebugWindow(bool show) {
 
 void BibleTime::deleteDebugWindow() {
     if (m_debugWindow != nullptr) {
-        disconnect(m_debugWindow, &QObject::destroyed,
-                   this,          &BibleTime::slotDebugWindowClosing);
         delete m_debugWindow;
         m_debugWindow = nullptr;
     }
