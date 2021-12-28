@@ -353,16 +353,8 @@ bool CExportManager::printKeyList(
     for (auto const & keyPtr : list) {
         if (progressWasCancelled())
             return false;
-        sword::SWKey const * const swKey = keyPtr.get();
-        if (sword::VerseKey const * const vKey =
-                    dynamic_cast<const sword::VerseKey*>(swKey))
-        {
-            QString const startKey = vKey->getText();
-            tree.emplace_back(startKey, startKey, module, settings);
-        } else {
-            QString const key = swKey->getText();
-            tree.emplace_back(key, key, module, settings);
-        }
+        QString const key = keyPtr->getText();
+        tree.emplace_back(key, key, module, settings);
         incProgress();
     }
     BtPrinter{displayOptions, filterOptions}.printKeyTree(tree);
