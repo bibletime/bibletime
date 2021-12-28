@@ -504,7 +504,6 @@ public Q_SLOTS:
 
 #ifndef NDEBUG
     private:
-        void slotDebugTimeout();
         void slotShowDebugWindow(bool);
     private:
         QAction *m_debugWidgetAction;

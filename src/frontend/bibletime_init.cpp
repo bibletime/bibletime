@@ -21,6 +21,7 @@
 #include <QMenuBar>
 #include <QPointer>
 #include <QSplitter>
+#include <QTimerEvent>
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -53,9 +54,67 @@
 #ifndef NDEBUG
 #include <QLabel>
 #include <QMetaObject>
-#include <QTimer>
-#endif
 
+
+namespace {
+
+class DebugWindow : public QLabel {
+
+public: // Methods:
+
+    DebugWindow()
+        : QLabel(nullptr, Qt::Dialog)
+        , m_updateTimerId(startTimer(100))
+    {
+        setAttribute(Qt::WA_DeleteOnClose);
+        setTextFormat(Qt::RichText);
+        setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        retranslateUi();
+        show();
+    }
+
+    void retranslateUi()
+    { setWindowTitle(tr("What's this widget?")); }
+
+    void timerEvent(QTimerEvent * const event) override {
+        if (event->timerId() == m_updateTimerId) {
+            if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
+                QString objectHierarchy;
+                do {
+                    QMetaObject const * m = w->metaObject();
+                    QString classHierarchy;
+                    do {
+                        if (!classHierarchy.isEmpty())
+                            classHierarchy += ": ";
+                        classHierarchy += m->className();
+                        m = m->superClass();
+                    } while (m);
+                    if (!objectHierarchy.isEmpty()) {
+                        objectHierarchy += "<br/><b>child of:</b> ";
+                    } else {
+                        objectHierarchy += "<b>This widget is:</b> ";
+                    }
+                    objectHierarchy += classHierarchy;
+                    w = w->parent();
+                } while (w);
+                setText(objectHierarchy);
+            } else {
+                setText("No widget");
+            }
+            resize(minimumSizeHint());
+        } else {
+            QLabel::timerEvent(event);
+        }
+    }
+
+private: // Fields:
+
+    int const m_updateTimerId;
+
+}; // class DebugWindow
+
+} // anonymous namespace
+#endif
 
 using namespace InfoDisplay;
 
@@ -902,49 +961,13 @@ void BibleTime::initBackends() {
 void BibleTime::slotShowDebugWindow(bool show) {
     if (show) {
         BT_ASSERT(!m_debugWindow);
-        m_debugWindow = new QLabel(nullptr, Qt::Dialog);
-        m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
-        m_debugWindow->setTextFormat(Qt::RichText);
-        m_debugWindow->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        m_debugWindow->setWindowTitle(tr("What's this widget?"));
-        m_debugWindow->show();
+        m_debugWindow = new DebugWindow();
         BT_CONNECT(m_debugWindow, &QObject::destroyed, m_debugWidgetAction,
                    [action=m_debugWidgetAction] { action->setChecked(false); },
                    Qt::DirectConnection);
-        QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
     } else {
         delete m_debugWindow;
     }
-}
-
-void BibleTime::slotDebugTimeout() {
-    if (!m_debugWindow || m_debugWindow->isVisible() == false)
-        return;
-    QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
-    if (QObject const * w = QApplication::widgetAt(QCursor::pos())) {
-        QString objectHierarchy;
-        do {
-            QMetaObject const * m = w->metaObject();
-            QString classHierarchy;
-            do {
-                if (!classHierarchy.isEmpty())
-                    classHierarchy += ": ";
-                classHierarchy += m->className();
-                m = m->superClass();
-            } while (m);
-            if (!objectHierarchy.isEmpty()) {
-                objectHierarchy += "<br/><b>child of:</b> ";
-            } else {
-                objectHierarchy += "<b>This widget is:</b> ";
-            }
-            objectHierarchy += classHierarchy;
-            w = w->parent();
-        } while (w);
-        m_debugWindow->setText(objectHierarchy);
-    } else {
-        m_debugWindow->setText("No widget");
-    }
-    m_debugWindow->resize(m_debugWindow->minimumSizeHint());
 }
 
 #endif
