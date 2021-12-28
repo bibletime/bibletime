@@ -156,7 +156,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey *> const & list,
             return false;
         tree.emplace_back(k->key(), k->module(), itemSettings);
         incProgress();
-    };
+    }
 
     QString const text = newRenderer(format, addText)->renderKeyTree(tree);
     util::tool::savePlainFile(filename, text, getCodec(format));
@@ -242,7 +242,7 @@ bool CExportManager::copyKeyList(QList<CSwordKey *> const & list,
             return false;
         tree.emplace_back(k->key(), k->module(), itemSettings);
         incProgress();
-    };
+    }
 
     copyToClipboard(newRenderer(format, addText)->renderKeyTree(tree));
     closeProgressDialog();
