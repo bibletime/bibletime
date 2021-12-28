@@ -127,385 +127,339 @@ class QSplitter;
  * This is the general way of all BibleTime classes.
  */
 class BibleTime : public QMainWindow {
-        friend class CDisplayWindow;
-        Q_OBJECT
 
-    public:
+    Q_OBJECT
 
-        BibleTime(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
+    friend class CDisplayWindow;
 
-        ~BibleTime() override;
+public:
 
-        static BibleTime * instance() { return m_instance; }
+    BibleTime(QWidget * parent = nullptr,
+              Qt::WindowFlags flags = Qt::WindowFlags());
 
-        /**
-        *  Save the configuration dialog settings, don't open dialog
-        */
-        void saveConfigSettings();
-        /**
-        * Get pointer to Navigation toolbar
-        */
-        QToolBar * navToolBar() const { return m_navToolBar; }
-        /**
-        * Get pointer to Works toolbar
-        */
-        BtModuleChooserBar * worksToolBar() const { return m_worksToolBar; }
-        /**
-        * Get pointer to Tools toolbar
-        */
-        QToolBar * toolsToolBar() const { return m_toolsToolBar; }
+    ~BibleTime() override;
 
-        /**
-          \returns a pointer to the info display.
-        */
-        InfoDisplay::CInfoDisplay * infoDisplay() const
-        { return m_infoDisplay; }
+    static BibleTime * instance() noexcept { return m_instance; }
 
-        /**
-        * Clears the actions of the MDI related toolbars
-        */
-        void clearMdiToolBars();
+    /** Saves the configuration dialog settings, doesn't open dialog. */
+    void saveConfigSettings();
 
-        /**
-        * Returns the main window CKeyChooser
-        */
-        CKeyChooser* keyChooser() const;
+    /** \returns a pointer to the Navigation toolbar. */
+    QToolBar * navToolBar() const noexcept { return m_navToolBar; }
 
-        /**
-          Displays a dialog which asks the user an unlock key for the given module and tries
-          to unlock the module. If an invalid unlock key is given, a warning message is
-          issued and the user is again asked for the key.
-          \param[in] module The module to unlock.
-          \param[in] parent The parent widget for the unlock dialogs.
-          \returns whether the module was successfully unlocked.
-        */
-        static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = nullptr);
+    /** \returns a pointer to the Works toolbar. */
+    BtModuleChooserBar * worksToolBar() const noexcept
+    { return m_worksToolBar; }
 
-        /**
-          Get a pointer to the module associated with the current window
-        */
-        const CSwordModuleInfo* getCurrentModule();
-        /**
-          Get a pointer to the display associated with the current window
-        */
-        BtModelViewReadDisplay * getCurrentDisplay();
-        /**
-          Open the BtFindWidget below the mdi area
-        */
-        void openFindWidget();
-        /**
-          Set the focus on the display widget
-          */
-        void setDisplayFocus();
+    /** \returns a pointer to the Tools toolbar. */
+    QToolBar * toolsToolBar() const noexcept { return m_toolsToolBar; }
 
-        void openSearchDialog(BtConstModuleList modules,
-                              QString const & searchText = QString());
+    /** \returns a pointer to the info display. */
+    InfoDisplay::CInfoDisplay * infoDisplay() const noexcept
+    { return m_infoDisplay; }
+
+    /** Clears the actions of the MDI related toolbars. */
+    void clearMdiToolBars();
+
+    /** \returns the main window CKeyChooser. */
+    CKeyChooser * keyChooser() const;
+
+    /**
+      Displays a dialog which asks the user an unlock key for the given module
+      and tries to unlock the module. If an invalid unlock key is given, a
+      warning message is issued and the user is again asked for the key.
+      \param[in] module The module to unlock.
+      \param[in] parent The parent widget for the unlock dialogs.
+      \returns whether the module was successfully unlocked.
+    */
+    static bool moduleUnlock(CSwordModuleInfo * module,
+                             QWidget * parent = nullptr);
+
+    /** \returns a pointer to the module associated with the current window. */
+    CSwordModuleInfo const * getCurrentModule();
+
+    /** \returns a pointer to the display associated with the current window. */
+    BtModelViewReadDisplay * getCurrentDisplay();
+
+    /** Opens the BtFindWidget below the MDI area. */
+    void openFindWidget();
+
+    /** Sets the focus on the display widget. */
+    void setDisplayFocus();
+
+    void openSearchDialog(BtConstModuleList modules,
+                          QString const & searchText = {});
 
 public Q_SLOTS:
-        /**
-        * Opens the optionsdialog of BibleTime.
-        */
-        void slotSettingsOptions();
-        /**
-        * Opens the bookshelf wizard.
-        */
-        void slotBookshelfWizard();
-        /**
-        * Opens the handbook.
-        */
-        void openOnlineHelp_Handbook();
-        /**
-        * Opens the bible study howto.
-        */
-        void openOnlineHelp_Howto();
 
-        /**
-        * Open the Tip Dialog
-        */
-        void slotOpenTipDialog();
+    /** Opens the optionsdialog of BibleTime. */
+    void slotSettingsOptions();
 
-        /**
-          Processes the command-line options given to BibleTime.
-          \param[in] ignoreSession Specifies whether --ignore-session was used.
-          \param[in] bibleKey If --open-default-bible was used, the bible key
-                              specified, or null otherwise.
-        */
-        void processCommandline(bool ignoreSession, const QString &bibleKey);
+    /** Opens the bookshelf wizard. */
+    void slotBookshelfWizard();
 
-        /**
-        * Creates QAction's that have keyboard shortcuts
-        */
-        static void insertKeyboardActions( BtActionCollection* const a );
+    /** Opens the handbook. */
+    void openOnlineHelp_Handbook();
 
-        void autoScrollStop();
+    /** Opens the bible study howto. */
+    void openOnlineHelp_Howto();
 
-    protected: // Protected methods
-        /**
-        * Catch QMainWindow events
-        */
-        bool event(QEvent* event) override;
-        /**
-        * Create the main window menu and toolbar
-        */
-        void createMenuAndToolBar();
-        /**
-          Creates mdi and and BtFindWidget
-        */
-        void createCentralWidget();
-        /**
-        * Initializes the sword.conf in the $HOME\Sword directory
-        */
-        void initSwordConfigFile();
-        /**
-        * Initializes the view of this widget
-        */
-        void initView();
-        /**
-        * Initializes the menubar of BibleTime.
-        */
-        void initMenubar();
-        /**
-        * Initializes the SIGNAL / SLOT connections
-        */
-        void initConnections();
-        /**
-        * Initializes the backend
-        */
-        void initBackends();
-        /**
-        * Initializes the action objects of the GUI
-        */
-        void initActions();
-        /**
-          Initializes the toolbars.
-        */
-        void initToolbars();
-        /**
-          Retranslates the UI.
-        */
-        void retranslateUi();
-        /**
-          Retranslates the UI actions.
-        */
-        static void retranslateUiActions(BtActionCollection* ac);
-        /**
-        * Refreshes all presenter supporting at least in of the features given as parameter.
-        */
-        void refreshDisplayWindows() const;
+    /** Opens the Tip Dialog. */
+    void slotOpenTipDialog();
 
-    protected Q_SLOTS:
-        /**
-         * Creates a new presenter in the MDI area according to the type of the module.
-         */
-        CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
-        CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString());
-        void slotModuleUnlock(CSwordModuleInfo *module);
-        void moduleAbout(CSwordModuleInfo *module);
+    /**
+      Processes the command-line options given to BibleTime.
+      \param[in] ignoreSession Specifies whether --ignore-session was used.
+      \param[in] bibleKey If --open-default-bible was used, the bible key
+                          specified, or null otherwise.
+    */
+    void processCommandline(bool ignoreSession, QString const & bibleKey);
 
-        /**
-          Automatically scroll the display
-          */
-        void slotAutoScroll();
-        /**
-         * Is called when the window menu is about to show ;-)
-         */
-        void slotWindowMenuAboutToShow();
-        /**
-         * Is called when the open windows menu is about to show ;-)
-         */
-        void slotOpenWindowsMenuAboutToShow();
-        void slotUpdateWindowArrangementActions(QAction * trigerredAction);
+    /** Creates QAction's that have keyboard shortcuts. */
+    static void insertKeyboardActions(BtActionCollection * const a);
 
-        void slotCascade();
-        void slotTile();
-        void slotTileVertical();
-        void slotTileHorizontal();
+    void autoScrollStop();
 
-        /**
-         * Shows/hides the main toolbar
-         */
-        void slotToggleMainToolbar();
-        void slotToggleToolsToolbar();
-        void slotToggleNavigatorToolbar();
-        void slotToggleWorksToolbar();
+Q_SIGNALS:
 
-        void slotToggleToolBarsInEachWindow();
+    void toggledTextWindowHeader(bool newState);
+    void toggledTextWindowNavigator(bool newState);
+    void toggledTextWindowToolButtons(bool newState);
+    void toggledTextWindowModuleChooser(bool newState);
+    void colorThemeChanged();
 
-        /**
-        * Shows/hides the text window text area headers and sets
-        * configuration that newly opened windows don't user headers.
-        */
-        void slotToggleTextWindowHeader();
+protected: // Protected methods
 
-        /**
-         * Used to set the active menu
-         */
-        void slotSetActiveSubWindow(QWidget* window);
-        /**
-         * The active window was changed
-         */
-        void slotActiveWindowChanged(QMdiSubWindow* window);
-        /**
-        * Saves the current settings into the currently activated profile.
-        */
-        void saveProfile();
-        /**
-        * Deletes the chosen session from the menu and from disk.
-        */
-        void deleteProfile(QAction* action);
-        /**
-        * Loads the profile with the menu id ID
-        */
-        void loadProfile(QAction * action);
-        /**
-        * Loads the profile with the given key
-        */
-        void loadProfile(const QString & profileKey);
-        /**
-        * Reloads the current profile
-        */
-        void reloadProfile();
-        /**
-        * Toggles between normal and fullscreen mode.
-        */
-        void toggleFullscreen();
+    bool event(QEvent * event) override;
 
-        void autoScrollPause();
-        bool autoScrollAnyKey();
+    /** Creates the main window menu and toolbar. */
+    void createMenuAndToolBar();
 
-        /**
-         * Called when search button is pressed
-         **/
-        void slotSearchModules();
-        /**
-         * Called for search default bible
-         **/
-        void slotSearchDefaultBible();
-        /**
-         Saves current settings into a new profile.
-        */
-        void saveToNewProfile();
-        /**
-        * Slot to refresh the save profile and load profile menus.
-        */
-        void refreshProfileMenus();
+    /** Creates MDI and and BtFindWidget. */
+    void createCentralWidget();
 
-        /**
-        * Open the About Dialog
-        */
-        void slotOpenAboutDialog();
+    /** Initializes the sword.conf in the $HOME\Sword directory, if needed. */
+    void initSwordConfigFile();
 
-    Q_SIGNALS:
-        void toggledTextWindowHeader(bool newState);
-        void toggledTextWindowNavigator(bool newState);
-        void toggledTextWindowToolButtons(bool newState);
-        void toggledTextWindowModuleChooser(bool newState);
-        void colorThemeChanged();
+    /** Initializes the view of this widget. */
+    void initView();
 
-    private:
-        static BibleTime *m_instance;
+    /** Initializes the menubar of BibleTime. */
+    void initMenubar();
 
-        // Docking widgets and their respective content widgets:
-        BtBookshelfDockWidget* m_bookshelfDock;
-        QDockWidget* m_bookmarksDock;
-        CBookmarkIndex* m_bookmarksPage;
-        QDockWidget* m_magDock;
-        InfoDisplay::CInfoDisplay* m_infoDisplay;
+    /** Initializes the SIGNAL / SLOT connections. */
+    void initConnections();
 
-        QToolBar* m_mainToolBar;
-        QToolBar* m_navToolBar;
-        BtModuleChooserBar* m_worksToolBar;
-        QToolBar* m_toolsToolBar;
+    /** Initializes the backend. */
+    void initBackends();
 
-        // File menu:
-        QMenu *m_fileMenu;
-        BtOpenWorkAction *m_openWorkAction;
-        QAction *m_quitAction;
+    /** Initializes the action objects of the GUI. */
+    void initActions();
 
-        // View menu:
-        QMenu *m_viewMenu;
-        QAction *m_showBookshelfAction;
-        QAction *m_showBookmarksAction;
-        QAction *m_showMagAction;
-        QMenu *m_toolBarsMenu;
-        QMenu *m_scrollMenu;
-        QAction* m_showMainWindowToolbarAction;
-        QAction *m_showTextAreaHeadersAction;
-        QAction *m_showTextWindowNavigationAction;
-        QAction *m_showTextWindowModuleChooserAction;
-        QAction *m_showTextWindowToolButtonsAction;
-        QAction *m_toolbarsInEachWindow;
+    /** Initializes the toolbars. */
+    void initToolbars();
 
-        // Search menu:
-        QMenu *m_searchMenu;
-        QAction *m_searchOpenWorksAction;
-        QAction *m_searchStandardBibleAction;
+    /** Retranslates the UI. */
+    void retranslateUi();
 
-        // Window menu:
-        QMenu *m_windowMenu;
-        QMenu *m_openWindowsMenu;
-        QAction *m_windowCascadeAction;
-        QAction *m_windowTileAction;
-        QAction *m_windowTileHorizontalAction;
-        QAction *m_windowTileVerticalAction;
-        QAction *m_windowManualModeAction;
-        QMenu *m_windowArrangementMenu;
-        QActionGroup *m_windowArrangementActionGroup;
-        QAction *m_windowAutoCascadeAction;
-        QAction *m_windowAutoTileAction;
-        QAction *m_windowAutoTabbedAction;
-        QAction *m_windowAutoTileVerticalAction;
-        QAction *m_windowAutoTileHorizontalAction;
-        QAction *m_windowCloseAction;
-        QAction *m_windowCloseAllAction;
-        QAction* m_windowSaveToNewProfileAction;
-        QMenu* m_windowLoadProfileMenu;
-        QActionGroup* m_windowLoadProfileActionGroup;
-        QMenu* m_windowDeleteProfileMenu;
+    /** Retranslates the UI actions. */
+    static void retranslateUiActions(BtActionCollection * ac);
 
-        // Settings menu:
-        QMenu *m_settingsMenu;
-        QAction *m_setPreferencesAction;
-        QAction *m_bookshelfManagerAction;
-        QAction *m_bookshelfWizardAction;
+    /**
+      Refreshes all presenter supporting at least in of the features given as
+      parameter.
+    */
+    void refreshDisplayWindows() const;
 
-        // Help menu:
-        QMenu *m_helpMenu;
-        QAction *m_openHandbookAction;
-        QAction *m_bibleStudyHowtoAction;
-        QAction *m_aboutBibleTimeAction;
-        QAction *m_tipOfTheDayAction;
+protected Q_SLOTS:
 
-        BtActionCollection* m_actionCollection;
+    /**
+      Creates a new presenter in the MDI area according to the type of the
+      module.
+    */
+    CDisplayWindow * createReadDisplayWindow(QList<CSwordModuleInfo *> modules,
+                                             QString const & key);
+    CDisplayWindow * createReadDisplayWindow(CSwordModuleInfo * module,
+                                             QString const & key = {});
+    void slotModuleUnlock(CSwordModuleInfo * module);
+    void moduleAbout(CSwordModuleInfo * module);
 
-        QAction* m_autoScrollUpAction;
-        QAction* m_autoScrollDownAction;
-        QAction* m_autoScrollPauseAction;
+    /** Automatically scrolls the display. */
+    void slotAutoScroll();
 
-        QAction* m_windowFullscreenAction;
+    /** Called when the window menu is about to show. */
+    void slotWindowMenuAboutToShow();
 
-        CMDIArea* m_mdi;
-        BtFindWidget* m_findWidget;
+    /** Called when the open windows menu is about to show. */
+    void slotOpenWindowsMenuAboutToShow();
 
-        int m_autoScrollSpeed = 0;
-        QTimer m_autoScrollTimer;
-        QPointer<Search::CSearchDialog> m_searchDialog;
+    void slotUpdateWindowArrangementActions(QAction * trigerredAction);
 
-        QAction * m_debugWidgetAction = nullptr;
-        QPointer<QLabel> m_debugWindow;
+    void slotCascade();
+    void slotTile();
+    void slotTileVertical();
+    void slotTileHorizontal();
 
-    private:
+    /** Shows or hides the main toolbar. */
+    void slotToggleMainToolbar();
+    void slotToggleToolsToolbar();
+    void slotToggleNavigatorToolbar();
+    void slotToggleWorksToolbar();
 
-        template <bool goingUp>
-        void autoScroll();
+    void slotToggleToolBarsInEachWindow();
 
-        /**
-         * Set the visibility of all tool bars according to the configuration
-         * taking the toolbarsInEachWindow setting into account.
-         */
-        void showOrHideToolBars();
+    /**
+      Shows or hides the text window text area headers and sets configuration
+      that newly opened windows don't user headers.
+    */
+    void slotToggleTextWindowHeader();
 
-        void slotShowDebugWindow(bool);
+    /** Used to set the active menu. */
+    void slotSetActiveSubWindow(QWidget * window);
+
+    void slotActiveWindowChanged(QMdiSubWindow * window);
+
+    /** Saves the current settings into the currently activated profile. */
+    void saveProfile();
+
+    /** Deletes the chosen session from the menu and from disk. */
+    void deleteProfile(QAction * action);
+
+    /** Loads the profile with the menu id ID. */
+    void loadProfile(QAction * action);
+
+    /** Loads the profile with the given key. */
+    void loadProfile(QString const & profileKey);
+
+    /** Reloads the current profile. */
+    void reloadProfile();
+
+    /** Toggles between normal and fullscreen mode. */
+    void toggleFullscreen();
+
+    void autoScrollPause();
+    bool autoScrollAnyKey();
+
+    /** Called when search button is pressed. */
+    void slotSearchModules();
+
+    /** Called for search default bible. */
+    void slotSearchDefaultBible();
+
+    /** Saves current settings into a new profile. */
+    void saveToNewProfile();
+
+    /** Refreshes the save profile and load profile menus. */
+    void refreshProfileMenus();
+
+    /** Open the About Dialog. */
+    void slotOpenAboutDialog();
+
+private: // Methods:
+
+    template <bool goingUp>
+    void autoScroll();
+
+    /**
+      Set the visibility of all tool bars according to the configuration taking
+      the toolbarsInEachWindow setting into account.
+    */
+    void showOrHideToolBars();
+
+    void slotShowDebugWindow(bool);
+
+private: // Fields:
+
+    static BibleTime * m_instance;
+
+    // Docking widgets and their respective content widgets:
+    BtBookshelfDockWidget * m_bookshelfDock;
+    QDockWidget * m_bookmarksDock;
+    CBookmarkIndex * m_bookmarksPage;
+    QDockWidget * m_magDock;
+    InfoDisplay::CInfoDisplay * m_infoDisplay;
+
+    QToolBar * m_mainToolBar;
+    QToolBar * m_navToolBar;
+    BtModuleChooserBar * m_worksToolBar;
+    QToolBar * m_toolsToolBar;
+
+    // File menu:
+    QMenu * m_fileMenu;
+    BtOpenWorkAction * m_openWorkAction;
+    QAction * m_quitAction;
+
+    // View menu:
+    QMenu * m_viewMenu;
+    QAction * m_showBookshelfAction;
+    QAction * m_showBookmarksAction;
+    QAction * m_showMagAction;
+    QMenu * m_toolBarsMenu;
+    QMenu * m_scrollMenu;
+    QAction * m_showMainWindowToolbarAction;
+    QAction * m_showTextAreaHeadersAction;
+    QAction * m_showTextWindowNavigationAction;
+    QAction * m_showTextWindowModuleChooserAction;
+    QAction * m_showTextWindowToolButtonsAction;
+    QAction * m_toolbarsInEachWindow;
+
+    // Search menu:
+    QMenu * m_searchMenu;
+    QAction * m_searchOpenWorksAction;
+    QAction * m_searchStandardBibleAction;
+
+    // Window menu:
+    QMenu * m_windowMenu;
+    QMenu * m_openWindowsMenu;
+    QAction * m_windowCascadeAction;
+    QAction * m_windowTileAction;
+    QAction * m_windowTileHorizontalAction;
+    QAction * m_windowTileVerticalAction;
+    QAction * m_windowManualModeAction;
+    QMenu * m_windowArrangementMenu;
+    QActionGroup * m_windowArrangementActionGroup;
+    QAction * m_windowAutoCascadeAction;
+    QAction * m_windowAutoTileAction;
+    QAction * m_windowAutoTabbedAction;
+    QAction * m_windowAutoTileVerticalAction;
+    QAction * m_windowAutoTileHorizontalAction;
+    QAction * m_windowCloseAction;
+    QAction * m_windowCloseAllAction;
+    QAction * m_windowSaveToNewProfileAction;
+    QMenu * m_windowLoadProfileMenu;
+    QActionGroup * m_windowLoadProfileActionGroup;
+    QMenu * m_windowDeleteProfileMenu;
+
+    // Settings menu:
+    QMenu * m_settingsMenu;
+    QAction * m_setPreferencesAction;
+    QAction * m_bookshelfManagerAction;
+    QAction * m_bookshelfWizardAction;
+
+    // Help menu:
+    QMenu * m_helpMenu;
+    QAction * m_openHandbookAction;
+    QAction * m_bibleStudyHowtoAction;
+    QAction * m_aboutBibleTimeAction;
+    QAction * m_tipOfTheDayAction;
+
+    BtActionCollection * m_actionCollection;
+
+    QAction * m_autoScrollUpAction;
+    QAction * m_autoScrollDownAction;
+    QAction * m_autoScrollPauseAction;
+
+    QAction * m_windowFullscreenAction;
+
+    CMDIArea * m_mdi;
+    BtFindWidget * m_findWidget;
+
+    int m_autoScrollSpeed = 0;
+    QTimer m_autoScrollTimer;
+    QPointer<Search::CSearchDialog> m_searchDialog;
+
+    QAction * m_debugWidgetAction = nullptr;
+    QPointer<QLabel> m_debugWindow;
 
 };
 
