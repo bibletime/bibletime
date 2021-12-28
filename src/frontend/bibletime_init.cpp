@@ -19,6 +19,7 @@
 #include <QMdiSubWindow>
 #include <QMenu>
 #include <QMenuBar>
+#include <QMetaObject>
 #include <QPointer>
 #include <QSplitter>
 #include <QTimerEvent>
@@ -50,10 +51,6 @@
 #include <swlog.h>
 #include <swmgr.h>
 #pragma GCC diagnostic pop
-
-#ifndef NDEBUG
-#include <QLabel>
-#include <QMetaObject>
 
 
 namespace {
@@ -118,7 +115,6 @@ private: // Fields:
 }; // class DebugWindow
 
 } // anonymous namespace
-#endif
 
 using namespace InfoDisplay;
 
@@ -663,12 +659,12 @@ void BibleTime::initActions() {
     BT_CONNECT(m_tipOfTheDayAction, &QAction::triggered,
                this,                &BibleTime::slotOpenTipDialog);
 
-    #ifndef NDEBUG
-    m_debugWidgetAction = new QAction(this);
-    m_debugWidgetAction->setCheckable(true);
-    BT_CONNECT(m_debugWidgetAction, &QAction::triggered,
-               this,                &BibleTime::slotShowDebugWindow);
-    #endif
+    if (btApp->debugMode()) {
+        m_debugWidgetAction = new QAction(this);
+        m_debugWidgetAction->setCheckable(true);
+        BT_CONNECT(m_debugWidgetAction, &QAction::triggered,
+                   this,                &BibleTime::slotShowDebugWindow);
+    }
 
     retranslateUiActions(m_actionCollection);
 }
@@ -781,10 +777,10 @@ void BibleTime::initMenubar() {
     m_helpMenu->addAction(m_tipOfTheDayAction);
     m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_aboutBibleTimeAction);
-    #ifndef NDEBUG
-    m_helpMenu->addSeparator();
-    m_helpMenu->addAction(m_debugWidgetAction);
-    #endif
+    if (m_debugWidgetAction) {
+        m_helpMenu->addSeparator();
+        m_helpMenu->addAction(m_debugWidgetAction);
+    }
     menuBar()->addMenu(m_helpMenu);
 }
 
@@ -829,9 +825,8 @@ void BibleTime::retranslateUi() {
 
     m_helpMenu->setTitle(tr("&Help"));
 
-    #ifndef NDEBUG
-    m_debugWidgetAction->setText(tr("Show \"What's this widget\" dialog"));
-    #endif
+    if (m_debugWidgetAction)
+        m_debugWidgetAction->setText(tr("Show \"What's this widget\" dialog"));
 
     retranslateUiActions(m_actionCollection);
 }
@@ -960,8 +955,6 @@ void BibleTime::initBackends() {
 
 }
 
-#ifndef NDEBUG
-
 void BibleTime::slotShowDebugWindow(bool show) {
     if (show) {
         BT_ASSERT(!m_debugWindow);
@@ -973,5 +966,3 @@ void BibleTime::slotShowDebugWindow(bool show) {
         delete m_debugWindow;
     }
 }
-
-#endif

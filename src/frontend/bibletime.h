@@ -491,6 +491,9 @@ public Q_SLOTS:
         QTimer m_autoScrollTimer;
         QPointer<Search::CSearchDialog> m_searchDialog;
 
+        QAction * m_debugWidgetAction = nullptr;
+        QPointer<QLabel> m_debugWindow;
+
     private:
 
         template <bool goingUp>
@@ -502,13 +505,8 @@ public Q_SLOTS:
          */
         void showOrHideToolBars();
 
-#ifndef NDEBUG
-    private:
         void slotShowDebugWindow(bool);
-    private:
-        QAction *m_debugWidgetAction;
-        QPointer<QLabel> m_debugWindow;
-#endif
+
 };
 
 extern template void BibleTime::autoScroll<true>();
