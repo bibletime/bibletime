@@ -503,14 +503,12 @@ public Q_SLOTS:
         void showOrHideToolBars();
 
 #ifndef NDEBUG
-        void deleteDebugWindow();
     private:
-        void slotDebugWindowClosing();
         void slotDebugTimeout();
         void slotShowDebugWindow(bool);
     private:
         QAction *m_debugWidgetAction;
-        static QLabel *m_debugWindow;
+        QPointer<QLabel> m_debugWindow;
 #endif
 };
 

@@ -899,37 +899,22 @@ void BibleTime::initBackends() {
 
 #ifndef NDEBUG
 
-QLabel *BibleTime::m_debugWindow = nullptr;
-
 void BibleTime::slotShowDebugWindow(bool show) {
     if (show) {
-        if (m_debugWindow == nullptr) {
-            m_debugWindow = new QLabel(nullptr, Qt::Dialog);
-            m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
-            m_debugWindow->setTextFormat(Qt::RichText);
-            m_debugWindow->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-            m_debugWindow->setWindowTitle(tr("Whats this widget?"));
-        }
+        BT_ASSERT(!m_debugWindow);
+        m_debugWindow = new QLabel(nullptr, Qt::Dialog);
+        m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
+        m_debugWindow->setTextFormat(Qt::RichText);
+        m_debugWindow->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        m_debugWindow->setWindowTitle(tr("Whats this widget?"));
         m_debugWindow->show();
-        BT_CONNECT(m_debugWindow, &QObject::destroyed,
-                   this,          &BibleTime::slotDebugWindowClosing,
+        BT_CONNECT(m_debugWindow, &QObject::destroyed, m_debugWidgetAction,
+                   [action=m_debugWidgetAction] { action->setChecked(false); },
                    Qt::DirectConnection);
         QTimer::singleShot(0, this, &BibleTime::slotDebugTimeout);
     } else {
-        deleteDebugWindow();
-    }
-}
-
-void BibleTime::deleteDebugWindow() {
-    if (m_debugWindow != nullptr) {
         delete m_debugWindow;
-        m_debugWindow = nullptr;
     }
-}
-
-void BibleTime::slotDebugWindowClosing() {
-    m_debugWindow = nullptr;
-    m_debugWidgetAction->setChecked(false);
 }
 
 void BibleTime::slotDebugTimeout() {

@@ -21,6 +21,7 @@
 #include <QCloseEvent>
 #include <QDebug>
 #include <QInputDialog>
+#include <QLabel>
 #include <QMdiSubWindow>
 #include <QSplashScreen>
 #include <QSplitter>
@@ -135,7 +136,7 @@ BibleTime::~BibleTime() {
     //  delete m_dcopInterface;
     // The backend is deleted by the BibleTimeApp instance
 #ifndef NDEBUG
-    deleteDebugWindow();
+    delete m_debugWindow;
 #endif
     m_bookshelfDock->saveBookshelfState();
     saveProfile();
