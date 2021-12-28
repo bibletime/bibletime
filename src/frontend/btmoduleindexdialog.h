@@ -19,39 +19,43 @@ class CSwordModuleInfo;
 
 /**
   This dialog is used to index a list of modules and to show progress for that.
-  While the indexing is in progress it creates a blocking, top level dialog which shows the progress
- * while the indexing is done.
+  While the indexing is in progress it creates a blocking, top level dialog
+  which shows the progress while the indexing is done.
 */
 class BtModuleIndexDialog: public QProgressDialog {
-        Q_OBJECT
 
-    public: /* Methods: */
-        /**
-          Creates and shows the indexing progress dialog and starts the actual
-          indexing. It shows the dialog with progress information. In case
-          indexing some module is unsuccessful or cancelled, any indices that
-          were created for other given modules are deleted. After indexing, the
-          dialog is closed.
-          \param[in] modules The list of modules to index.
-          \pre all given modules are unindexed
-          \returns whether the indexing was finished successfully.
-        */
-        static bool indexAllModules(const QList<CSwordModuleInfo*> &modules);
+    Q_OBJECT
 
-    private: /* Methods: */
-        BtModuleIndexDialog(int numModules);
+public: /* Methods: */
 
-        /**
-          Shows the indexing progress dialog and starts the actual indexing. It
-          shows the dialog with progress information. In case indexing some
-          module is unsuccessful or cancelled, any indices that were created for
-          other given modules are deleted. After indexing, the dialog is closed.
-          \param[in] modules The list of modules to index.
-          \pre all given modules are unindexed
-          \returns whether the indexing was finished successfully.
-        */
-        bool indexAllModulesPrivate(const QList<CSwordModuleInfo*> &modules);
+    /**
+      Creates and shows the indexing progress dialog and starts the actual
+      indexing. It shows the dialog with progress information. In case indexing
+      some module is unsuccessful or cancelled, any indices that were created
+      for other given modules are deleted. After indexing, the dialog is closed.
+      \param[in] modules The list of modules to index.
+      \pre all given modules are unindexed
+      \returns whether the indexing was finished successfully.
+    */
+    static bool indexAllModules(QList<CSwordModuleInfo *> const & modules);
 
-    private: /* Fields: */
-        int m_currentModuleIndex;
+private: /* Methods: */
+
+    BtModuleIndexDialog(int numModules);
+
+    /**
+      Shows the indexing progress dialog and starts the actual indexing. It
+      shows the dialog with progress information. In case indexing some module
+      is unsuccessful or cancelled, any indices that were created for other
+      given modules are deleted. After indexing, the dialog is closed.
+      \param[in] modules The list of modules to index.
+      \pre all given modules are unindexed
+      \returns whether the indexing was finished successfully.
+    */
+    bool indexAllModulesPrivate(QList<CSwordModuleInfo *> const & modules);
+
+private: /* Fields: */
+
+    int m_currentModuleIndex;
+
 };
