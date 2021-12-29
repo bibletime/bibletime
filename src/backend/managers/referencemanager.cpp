@@ -88,7 +88,7 @@ ReferenceManager::decodeHyperlink(QString const & hyperlink) {
                 char const * typeStr;
                 switch (type) {
                     #define RET_CASE(t,str) \
-                        case t: typeStr = "standard" str; break;
+                        case t: typeStr = "standard" str; break
                     RET_CASE(Bible, "Bible");
                     RET_CASE(Commentary, "Commentary");
                     RET_CASE(Lexicon, "Lexicon");
