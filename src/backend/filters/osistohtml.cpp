@@ -13,6 +13,7 @@
 #include "osistohtml.h"
 
 #include <QString>
+#include <string_view>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
@@ -134,22 +135,24 @@ Filters::OsisToHtml::OsisToHtml() : sword::OSISHTMLHREF() {
 }
 
 bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+    using namespace std::literals;
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
         UserData* myUserData = dynamic_cast<UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack
 
-        sword::XMLTag tag(token);
+        sword::XMLTag const tag(token);
         //     qWarning("found %s", token);
         const bool osisQToTick = ((!userData->module->getConfigEntry("OSISqToTick")) || (strcmp(userData->module->getConfigEntry("OSISqToTick"), "false")));
 
-        if (!tag.getName()) {
+        auto const tagNameC = tag.getName();
+        if (!tagNameC) {
             return false;
         }
+        std::string_view const tagName(tagNameC);
 
-        // <div> tag
-        if (!strcmp(tag.getName(), "div")) {
+        if (tagName == "div"sv) {
             if (tag.isEndTag()) {
                 buf.append("</div>");
             } else {
@@ -172,7 +175,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 }
             }
         }
-        else if (!strcmp(tag.getName(), "w")) {
+        else if (tagName == "w"sv) {
             if ((!tag.isEmpty()) && (!tag.isEndTag())) { //start tag
                 const char *attrib;
                 const char *val;
@@ -304,9 +307,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("</span>");
             }
         }
-
-        // <note> tag
-        else if (!strcmp(tag.getName(), "note")) {
+        else if (tagName == "note"sv) {
             if (!tag.isEndTag()) { //start tag
                 const sword::SWBuf type( tag.getAttribute("type") );
 
@@ -372,7 +373,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 myUserData->suspendTextPassThru = false;
             }
         }
-        else if (!strcmp(tag.getName(), "reference")) { // <reference> tag
+        else if (tagName == "reference"sv) {
             if (!tag.isEndTag() && !tag.isEmpty()) {
                 renderReference(tag.getAttribute("osisRef"),
                                 buf,
@@ -386,10 +387,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 // -- what should we do?  nothing for now.
             }
         }
-
-        // <l> is handled by OSISHTMLHref
-        // <title>
-        else if (!strcmp(tag.getName(), "title")) {
+        else if (tagName == "title"sv) {
             if (!tag.isEndTag() && !tag.isEmpty()) {
                 buf.append("<div class=\"sectiontitle\">");
             }
@@ -401,9 +399,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("<br/>");
             }
         }
-
-        // <hi> highlighted text
-        else if (!strcmp(tag.getName(), "hi")) {
+        else if (tagName == "hi"sv) { // <hi> highlighted text
             const sword::SWBuf type = tag.getAttribute("type");
 
             if ((!tag.isEndTag()) && (!tag.isEmpty())) {
@@ -436,9 +432,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("</span>");
             }
         }
-
-        //name
-        else if (!strcmp(tag.getName(), "name")) {
+        else if (tagName == "name"sv) {
             const sword::SWBuf type = tag.getAttribute("type");
 
             if ((!tag.isEndTag()) && (!tag.isEmpty())) {
@@ -465,7 +459,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("</span></span> ");
             }
         }
-        else if (!strcmp(tag.getName(), "transChange")) {
+        else if (tagName == "transChange"sv) {
             sword::SWBuf type( tag.getAttribute("type") );
 
             if ( !type.length() ) {
@@ -503,16 +497,14 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("</span></span>");
             }
         }
-        else if (!strcmp(tag.getName(), "p")) {
+        else if (tagName == "p"sv) {
             if (tag.isEndTag())
                 buf.append("</p>");
             else
                 buf.append("<p>");
 
         }
-
-        // <q> quote
-        else if (!strcmp(tag.getName(), "q")) {
+        else if (tagName == "q"sv) { // <q> quote
             //sword::SWBuf type = tag.getAttribute("type");
             sword::SWBuf who = tag.getAttribute("who");
             const char *lev = tag.getAttribute("level");
@@ -548,9 +540,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 myUserData->quote.who = "";
             }
         }
-
-        // abbr tag
-        else if (!strcmp(tag.getName(), "abbr")) {
+        else if (tagName == "abbr"sv) {
             if (!tag.isEndTag() && !tag.isEmpty()) {
                 const sword::SWBuf expansion = tag.getAttribute("expansion");
 
@@ -562,9 +552,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("</span>");
             }
         }
-
-        // <milestone> tag
-        else if (!strcmp(tag.getName(), "milestone")) {
+        else if (tagName == "milestone"sv) {
             const sword::SWBuf type = tag.getAttribute("type");
 
             if ((type == "screen") || (type == "line")) {//line break
@@ -579,8 +567,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 }
             }
         }
-        //seg tag
-        else if (!strcmp(tag.getName(), "seg")) {
+        else if (tagName == "seg"sv) {
             if (!tag.isEndTag() && !tag.isEmpty()) {
 
                 const sword::SWBuf type = tag.getAttribute("type");
@@ -608,9 +595,8 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
             }
             //qWarning(QString("handled <seg> token. result: %1").arg(buf.c_str()).latin1());
         }
-
         //divine name, don't use simple tag replacing because it may have attributes
-        else if (!strcmp(tag.getName(), "divineName")) {
+        else if (tagName == "divineName"sv) {
             if (!tag.isEndTag()) {
                 buf.append("<span class=\"name\"><span class=\"divine\">");
             }
@@ -618,7 +604,6 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 buf.append("</span></span>");
             }
         }
-
         else { //all tokens handled by OSISHTMLHref will run through the filter now
             return sword::OSISHTMLHREF::handleToken(buf, token, userData);
         }
