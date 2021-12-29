@@ -50,7 +50,7 @@ QString ReferenceManager::encodeHyperlink(CSwordModuleInfo const & module,
                 case CSwordModuleInfo::Commentary: return "sword://Commentary/";
                 case CSwordModuleInfo::Lexicon: return "sword://Lexicon/";
                 case CSwordModuleInfo::GenericBook: return "sword://Book/";
-                case CSwordModuleInfo::Unknown: default: return nullptr;
+                default: return nullptr;
             }
         }();
     if (!initStr)
