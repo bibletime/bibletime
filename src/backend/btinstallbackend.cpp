@@ -12,7 +12,6 @@
 
 #include "btinstallbackend.h"
 
-#include <cstring>
 #include <map>
 #include <QByteArray>
 #include <QDebug>
@@ -49,20 +48,21 @@ bool addSource(sword::InstallSource& source) {
         if (source.directory[ source.directory.length()-1 ] == '/') {
             source.directory--;
         }
-    if (!std::strcmp(source.type, "FTP")) {
+    static_assert(std::is_same_v<decltype(source.type), SWBuf>);
+    if (source.type == "FTP") {
             config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
         }
-        else if (!std::strcmp(source.type, "SFTP")) {
+        else if (source.type == "SFTP") {
             config["Sources"].insert( std::make_pair(SWBuf("SFTPSource"), source.getConfEnt()) );
         }
-        else if (!std::strcmp(source.type, "HTTP")) {
+        else if (source.type == "HTTP") {
             config["Sources"].insert( std::make_pair(SWBuf("HTTPSource"), source.getConfEnt()) );
         }
-        else if (!std::strcmp(source.type, "HTTPS")) {
+        else if (source.type == "HTTPS") {
             config["Sources"].insert( std::make_pair(SWBuf("HTTPSSource"), source.getConfEnt()) );
         }
     }
-    else if (!std::strcmp(source.type, "DIR")) {
+    else if (source.type == "DIR") {
         config["Sources"].insert( std::make_pair(SWBuf("DIRSource"), source.getConfEnt()) );
     }
     config.save();
@@ -88,7 +88,7 @@ sword::InstallSource source(const QString &name) {
 
             while (sourceBegin != sourceEnd) {
                 InstallSource is("DIR", sourceBegin->second.c_str());
-                if (!std::strcmp(is.caption, name.toLatin1()) ) { //found local dir source
+                if (is.caption == name) { // found local dir source
                     return is;
                 }
 
@@ -145,10 +145,10 @@ bool deleteSource(const QString &name) {
 }
 
 bool isRemote(const sword::InstallSource& source) {
-    return !std::strcmp(source.type, "FTP") ||
-            !std::strcmp(source.type, "SFTP") ||
-            !std::strcmp(source.type, "HTTP") ||
-            !std::strcmp(source.type, "HTTPS");
+    return source.type == "FTP"
+           || source.type == "SFTP"
+           || source.type == "HTTP"
+           || source.type == "HTTPS";
 }
 
 QString configPath() {
