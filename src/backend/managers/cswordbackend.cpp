@@ -18,6 +18,7 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
+#include <string_view>
 #include "../../util/btconnect.h"
 #include "../../util/directory.h"
 #include "../btglobal.h"
@@ -188,19 +189,20 @@ CSwordBackend::LoadError CSwordBackend::initModules(const SetupChangedReason rea
         BT_ASSERT(curMod);
         std::unique_ptr<CSwordModuleInfo> newModule;
 
-        const char * const modType = curMod->getType();
-        if (!strcmp(modType, "Biblical Texts")) {
+        std::string_view const modType = curMod->getType();
+        using namespace std::literals;
+        if (modType == "Biblical Texts"sv) {
             newModule = std::make_unique<CSwordBibleModuleInfo>(*curMod, *this);
             newModule->setDisplay(&m_chapterDisplay);
-        } else if (!strcmp(modType, "Commentaries")) {
+        } else if (modType == "Commentaries"sv) {
             newModule = std::make_unique<CSwordCommentaryModuleInfo>(*curMod,
                                                                      *this);
             newModule->setDisplay(&m_entryDisplay);
-        } else if (!strcmp(modType, "Lexicons / Dictionaries")) {
+        } else if (modType == "Lexicons / Dictionaries"sv) {
             newModule = std::make_unique<CSwordLexiconModuleInfo>(*curMod,
                                                                   *this);
             newModule->setDisplay(&m_entryDisplay);
-        } else if (!strcmp(modType, "Generic Books")) {
+        } else if (modType == "Generic Books"sv) {
             newModule = std::make_unique<CSwordBookModuleInfo>(*curMod, *this);
             newModule->setDisplay(&m_bookDisplay);
         } else {
