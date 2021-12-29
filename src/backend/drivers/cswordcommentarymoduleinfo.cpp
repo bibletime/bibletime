@@ -12,6 +12,8 @@
 
 #include "cswordcommentarymoduleinfo.h"
 
+#include <string_view>
+
 // Sword includes:
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wextra-semi"
@@ -26,6 +28,7 @@ bool CSwordCommentaryModuleInfo::isWritable() const {
       A module is only writable if it's a RawFiles module with writable
       returning true.
     */
-    return !qstrcmp(module().getConfigEntry("ModDrv"), "RawFiles")
+    using namespace std::literals;
+    return module().getConfigEntry("ModDrv") == "RawFiles"sv
            && module().isWritable();
 }
