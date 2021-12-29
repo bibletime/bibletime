@@ -13,6 +13,7 @@
 #include "teitohtml.h"
 
 #include <QString>
+#include <string_view>
 #include "../config/btconfig.h"
 #include "../drivers/cswordmoduleinfo.h"
 #include "../language.h"
@@ -39,13 +40,15 @@ TeiToHtml::TeiToHtml()
 bool TeiToHtml::handleToken(sword::SWBuf &buf, const char *token,
                             sword::BasicFilterUserData *userData)
 {
+    using namespace std::literals;
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
 
-        sword::XMLTag tag(token);
+        sword::XMLTag const tag(token);
+        std::string_view const tagName(tag.getName());
 
-        if (!strcmp(tag.getName(), "ref")) {
+        if (tagName == "ref"sv) {
 
             if (!tag.isEndTag() && !tag.isEmpty()) {
 
@@ -65,8 +68,7 @@ bool TeiToHtml::handleToken(sword::SWBuf &buf, const char *token,
                 // -- what should we do?  nothing for now.
             }
         }
-        // <hi> highlighted text
-        else if (!strcmp(tag.getName(), "hi")) {
+        else if (tagName == "hi"sv) { // <hi> highlighted text
             const sword::SWBuf type = tag.getAttribute("rend");
 
             if ((!tag.isEndTag()) && (!tag.isEmpty())) {
