@@ -144,7 +144,10 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 
         sword::XMLTag const tag(token);
         //     qWarning("found %s", token);
-        const bool osisQToTick = ((!userData->module->getConfigEntry("OSISqToTick")) || (strcmp(userData->module->getConfigEntry("OSISqToTick"), "false")));
+        auto const osisQToTickEntry =
+                userData->module->getConfigEntry("OSISqToTick");
+        bool const osisQToTick =
+                !osisQToTickEntry || osisQToTickEntry != "false"sv;
 
         std::string_view const tagName(tag.getName());
 
