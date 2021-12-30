@@ -63,10 +63,7 @@ QStringList queryParser(QString const & queryString) {
     for (int cnt = 0; cnt < queryString.length(); cnt++) {
         auto const c = queryString[cnt];
         // add to token
-        if (c.isLetterOrNumber() || (c == '*')) {
-            token = token + c;
-        }
-        else if (c.isLetterOrNumber() || (c == '?')) {
+        if (c.isLetterOrNumber() || (c == '*') || (c == '?')) {
             token = token + c;
         }
         // token break
