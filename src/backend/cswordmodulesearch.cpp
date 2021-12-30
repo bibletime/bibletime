@@ -258,7 +258,10 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
         }
         // the || token is also a token break
         else {
-            if ((queryString[cnt] == '|') && (queryString[cnt+1] == '|')) {
+            if ((queryString[cnt] == '|')
+                && (cnt + 1 < queryString.length())
+                && (queryString[cnt + 1] == '|'))
+            {
                 // store away current token
                 token = token.simplified();
                 if ((token != "*") && (token != ""))
@@ -267,7 +270,10 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
                 tokenList.append("||");
             }
             // the && token is also a token break
-            else if ((queryString[cnt] == '&') && (queryString[cnt+1] == '&')) {
+            else if ((queryString[cnt] == '&')
+                     && (cnt + 1 < queryString.length())
+                     && (queryString[cnt + 1] == '&'))
+            {
                 // store away current token
                 token = token.simplified();
                 if ((token != "*") && (token != ""))
