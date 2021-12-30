@@ -321,7 +321,6 @@ public: // methods:
 
     /** Create a new item from a document element. */
     BookmarkItemBase * handleXmlElement(QDomElement & element, BookmarkItemBase * parent) {
-        BookmarkItemBase* newItem = nullptr;
         if (element.tagName() == "Folder") {
             BookmarkFolder* newFolder = new BookmarkFolder(QString(), parent);
             if (element.hasAttribute("caption")) {
@@ -332,9 +331,9 @@ public: // methods:
                 QDomElement newElement = childList.at(i).toElement();
                 handleXmlElement(newElement, newFolder); // passing parent in constructor will add items to tree
             }
-            newItem = newFolder;
+            return newFolder;
         }
-        else if (element.tagName() == "Bookmark") {
+        if (element.tagName() == "Bookmark") {
             BookmarkItem* newBookmarkItem = new BookmarkItem(parent);
             if (element.hasAttribute("modulename")) {
                 //we use the name in all cases, even if the module isn't installed anymore
@@ -349,9 +348,9 @@ public: // methods:
             if (element.hasAttribute("title")) {
                 newBookmarkItem->setText(element.attribute("title"));
             }
-            newItem = newBookmarkItem;
+            return newBookmarkItem;
         }
-        return newItem;
+        return nullptr;
     }
 
     /** Loads a bookmark XML document from a named file or from the default bookmarks file. */
