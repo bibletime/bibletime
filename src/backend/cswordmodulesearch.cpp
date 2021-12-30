@@ -61,7 +61,6 @@ QStringList queryParser(QString const & queryString) {
     QString token("");
     QStringList tokenList;
     for (int cnt = 0; cnt < queryString.length(); cnt++) {
-    loop1_body:
         auto const c = queryString[cnt];
         // add to token
         if (c.isLetterOrNumber() || (c == '*')) {
@@ -121,29 +120,18 @@ QStringList queryParser(QString const & queryString) {
             token = "";
         }
         // the || token is also a token break
-        else {
-            if ((c == '|') && (queryString[cnt+1] == '|')) {
-                // store away current token
-                token = token.simplified();
-                if ((token != "*") && (token != ""))
-                    tokenList.append(token);
-                // add the || token
-                tokenList.append("||");
-            }
-            // the && token is also a token break
-            else if ((c == '&') && (queryString[cnt+1] == '&')) {
-                // store away current token
-                token = token.simplified();
-                if ((token != "*") && (token != ""))
-                    tokenList.append(token);
-                // add the || token
-                tokenList.append("&&");
-            } else {
-                continue;
-            }
+        else if ((c == '|' || c == '&')
+                 && cnt + 1 < queryString.size()
+                 && queryString[cnt + 1] == c)
+        {
+            // store away current token:
+            token = token.simplified();
+            if ((token != "*") && (token != ""))
+                tokenList.append(token);
+            // add the || or && token:
+            tokenList.append(QString(2, c));
             token = "";
-            cnt += 2;
-            goto loop1_body;
+            ++cnt;
         }
     }
     token = token.simplified();
