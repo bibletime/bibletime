@@ -226,7 +226,7 @@ public: // methods:
         : m_rootItem(new BookmarkFolder("Root"))
         , q_ptr(parent)
     {
-        m_saveTimer.setInterval(0.5 * 60 * 1000);
+        m_saveTimer.setInterval(30 * 1000);
         m_saveTimer.setSingleShot(true);
     }
     ~BtBookmarksModelPrivate() { delete m_rootItem; }
