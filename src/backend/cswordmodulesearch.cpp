@@ -269,7 +269,6 @@ QString highlightSearchedText(QString const & content,
     // since I could not figure out the lucene query parser, I
     // made a simple parser.
     //===========================================================
-    int length = searchedText.length();
     int matchLen = 0;
     for (QStringList words(queryParser(searchedText));
          !words.empty();
@@ -277,20 +276,20 @@ QString highlightSearchedText(QString const & content,
     {
         QString & word = words.first();
         QRegExp findExp;
+        auto length = word.length();
         if (word.contains("*")) {
-            length = word.length() - 1;
+            --length;
             word.replace('*', "\\S*"); //match within a word
             findExp = QRegExp(word);
             findExp.setMinimal(true);
         }
         else if (word.contains("?")) {
-            length = word.length() - 1;
+            --length;
             word.replace('?', "\\S?"); //match within a word
             findExp = QRegExp(word);
             findExp.setMinimal(true);
         }
         else {
-            length = word.length();
             findExp = QRegExp("\\b" + word + "\\b");
         }
 
