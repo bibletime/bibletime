@@ -58,82 +58,47 @@ Results search(QString const & searchText,
 namespace {
 
 QStringList queryParser(QString const & queryString) {
-    QString token("");
     QStringList tokenList;
-    for (int cnt = 0; cnt < queryString.length(); cnt++) {
-        auto const c = queryString[cnt];
-        // add to token
-        if (c.isLetterOrNumber() || (c == '*') || (c == '?')) {
-            token = token + c;
+    {
+        QString token;
+        bool tokenHasLetterOrNumber = false;
+        bool tokenHasStar = false;
+        auto const pushToken =
+                [&] {
+                    if (tokenHasLetterOrNumber
+                        // Ignore empty tokens and those equivalent to glob (*):
+                        || (!tokenHasStar && !token.isEmpty()))
+                        tokenList.append(token);
+                    token.clear();
+                    tokenHasLetterOrNumber = false;
+                    tokenHasStar = false;
+                };
+        for (int cnt = 0; cnt < queryString.size(); cnt++) {
+            auto const c = queryString[cnt];
+            if (c.isLetterOrNumber()) {
+                token.append(c);
+                tokenHasLetterOrNumber = true;
+            } else if (c == '*') {
+                token.append(c);
+                tokenHasStar = true;
+            } else  if (c == '?') {
+                token.append(c);
+            } else if (c == '!' || c == '-' || c == '+') {
+                pushToken();
+                tokenList.append(c);
+            } else if ((c == '|' || c == '&')
+                       && cnt + 1 < queryString.size()
+                       && queryString[cnt + 1] == c)
+            {
+                pushToken();
+                tokenList.append(QString(2, c));
+                ++cnt;
+            } else { // Spaces and other unrecognized stuff act as separators:
+                pushToken();
+            }
         }
-        // token break
-        else if (c == ' ') {
-            token = token.simplified();
-            if ((token != "*") && (token != ""))
-                tokenList.append(token);
-            token = "";
-        }
-        // clucene appears to ignore quoted strings in the sence
-        // that it treats all the words within quoted strings as
-        // regular tokens and not as a single token.
-        else if (c == '"') {}
-        // wild card - treat as a special token break
-        //else if (c == '*') {
-        //    token = token + c;
-        //    token = token.simplified();
-        //    if ((token != "*") && (token != ""))
-        //        tokenList.append(token);
-        //    // start next token with wildcard (kin*m -> kin* *m)
-        //    token = "*";
-        //}
-        // the ! token is also a token break
-        else if (c == '!') {
-            // store away current token
-            token = token.simplified();
-            if ((token != "*") && (token != ""))
-                tokenList.append(token);
-            // add the ! token
-            tokenList.append("!");
-            token = "";
-        }
-        // the - token is also a token break
-        else if (c == '-') {
-            // store away current token
-            token = token.simplified();
-            if ((token != "*") && (token != ""))
-                tokenList.append(token);
-            // add the ! token
-            tokenList.append("-");
-            token = "";
-        }
-        // the + token is also a token break
-        else if (c == '+') {
-            // store away current token
-            token = token.simplified();
-            if ((token != "*") && (token != ""))
-                tokenList.append(token);
-            // add the + token
-            tokenList.append("+");
-            token = "";
-        }
-        // the || token is also a token break
-        else if ((c == '|' || c == '&')
-                 && cnt + 1 < queryString.size()
-                 && queryString[cnt + 1] == c)
-        {
-            // store away current token:
-            token = token.simplified();
-            if ((token != "*") && (token != ""))
-                tokenList.append(token);
-            // add the || or && token:
-            tokenList.append(QString(2, c));
-            token = "";
-            ++cnt;
-        }
+        pushToken();
     }
-    token = token.simplified();
-    if ((token != "*") && (token != ""))
-        tokenList.append(token);
 
     for (auto it = tokenList.begin(); it != tokenList.end(); ++it) {
         int pos;
