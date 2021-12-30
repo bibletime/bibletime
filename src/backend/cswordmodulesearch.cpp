@@ -62,15 +62,16 @@ QStringList queryParser(QString const & queryString) {
     QStringList tokenList;
     for (int cnt = 0; cnt < queryString.length(); cnt++) {
     loop1_body:
+        auto const c = queryString[cnt];
         // add to token
-        if ((queryString[cnt]).isLetterOrNumber() || (queryString[cnt] == '*')) {
-            token = token + queryString[cnt];
+        if (c.isLetterOrNumber() || (c == '*')) {
+            token = token + c;
         }
-        else if ((queryString[cnt]).isLetterOrNumber() || (queryString[cnt] == '?')) {
-            token = token + queryString[cnt];
+        else if (c.isLetterOrNumber() || (c == '?')) {
+            token = token + c;
         }
         // token break
-        else if (queryString[cnt] == ' ') {
+        else if (c == ' ') {
             token = token.simplified();
             if ((token != "*") && (token != ""))
                 tokenList.append(token);
@@ -79,10 +80,10 @@ QStringList queryParser(QString const & queryString) {
         // clucene appears to ignore quoted strings in the sence
         // that it treats all the words within quoted strings as
         // regular tokens and not as a single token.
-        else if (queryString[cnt] == '"') {}
+        else if (c == '"') {}
         // wild card - treat as a special token break
-        //else if (queryString[cnt] == '*') {
-        //    token = token + queryString[cnt];
+        //else if (c == '*') {
+        //    token = token + c;
         //    token = token.simplified();
         //    if ((token != "*") && (token != ""))
         //        tokenList.append(token);
@@ -90,7 +91,7 @@ QStringList queryParser(QString const & queryString) {
         //    token = "*";
         //}
         // the ! token is also a token break
-        else if (queryString[cnt] == '!') {
+        else if (c == '!') {
             // store away current token
             token = token.simplified();
             if ((token != "*") && (token != ""))
@@ -100,7 +101,7 @@ QStringList queryParser(QString const & queryString) {
             token = "";
         }
         // the - token is also a token break
-        else if (queryString[cnt] == '-') {
+        else if (c == '-') {
             // store away current token
             token = token.simplified();
             if ((token != "*") && (token != ""))
@@ -110,7 +111,7 @@ QStringList queryParser(QString const & queryString) {
             token = "";
         }
         // the + token is also a token break
-        else if (queryString[cnt] == '+') {
+        else if (c == '+') {
             // store away current token
             token = token.simplified();
             if ((token != "*") && (token != ""))
@@ -121,7 +122,7 @@ QStringList queryParser(QString const & queryString) {
         }
         // the || token is also a token break
         else {
-            if ((queryString[cnt] == '|') && (queryString[cnt+1] == '|')) {
+            if ((c == '|') && (queryString[cnt+1] == '|')) {
                 // store away current token
                 token = token.simplified();
                 if ((token != "*") && (token != ""))
@@ -130,7 +131,7 @@ QStringList queryParser(QString const & queryString) {
                 tokenList.append("||");
             }
             // the && token is also a token break
-            else if ((queryString[cnt] == '&') && (queryString[cnt+1] == '&')) {
+            else if ((c == '&') && (queryString[cnt+1] == '&')) {
                 // store away current token
                 token = token.simplified();
                 if ((token != "*") && (token != ""))
