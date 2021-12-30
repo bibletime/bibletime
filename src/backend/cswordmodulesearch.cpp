@@ -198,7 +198,6 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
     QString token("");
     QStringList tokenList;
     for (int cnt = 0; cnt < queryString.length(); cnt++) {
-    loop1_body:
         // add to token
         if ((queryString[cnt]).isLetterOrNumber() || (queryString[cnt] == '*')) {
             token = token + queryString[cnt];
@@ -284,8 +283,7 @@ QStringList CSwordModuleSearch::queryParser(const QString& queryString) {
                 continue;
             }
             token = "";
-            cnt += 2;
-            goto loop1_body;
+            ++cnt;
         }
     }
     token = token.simplified();
