@@ -57,6 +57,9 @@ Results search(QString const & searchText,
 
 namespace {
 
+/** This function does a terrible job of trying to parse a CLucene query string
+    into a list of words (potentially containing the * or ? glob characters) for
+    word highlighting purposes. */
 QStringList queryParser(QString const & queryString) {
     QStringList tokenList;
     {
