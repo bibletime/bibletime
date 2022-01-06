@@ -97,7 +97,7 @@ Item {
     TextEdit {
         id: columnText
 
-        anchors.bottom: parent.bottom
+        anchors.top: columnTitle.visible ? columnTitle.bottom : parent.top
         anchors.left: columnView.left
         color: columnView.textColor
         font: columnView.font
