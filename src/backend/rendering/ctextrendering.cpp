@@ -79,7 +79,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
                                          KeyTreeItem::Settings{
                                              false,
                                              settings.keyRenderingFace});
-                ok = start.next(CSwordVerseKey::UseVerse);
+                ok = start.next();
             }
         }
         else if (m_key.isEmpty()) {
@@ -212,7 +212,7 @@ const QString CTextRendering::renderKeyRange(
             curKey.setVerse(0);
         }
         tree.emplace_back(curKey.key(), modules, settings);
-        if (!curKey.next(CSwordVerseKey::UseVerse)) {
+        if (!curKey.next()) {
             /// \todo Notify the user about this failure.
             break;
         }

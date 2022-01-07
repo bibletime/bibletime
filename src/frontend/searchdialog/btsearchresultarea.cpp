@@ -165,8 +165,8 @@ void BtSearchResultArea::updatePreview(const QString& key) {
                     ->setIntros(true);
 
             //first go back and then go forward the keys to be in context
-            vk.previous(CSwordVerseKey::UseVerse);
-            vk.previous(CSwordVerseKey::UseVerse);
+            vk.previous();
+            vk.previous();
 
             //include Headings in display, they are indexed and searched too
             if (vk.verse() == 1) {
@@ -180,8 +180,8 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
             vk.setKey(key);
 
-            vk.next(CSwordVerseKey::UseVerse);
-            vk.next(CSwordVerseKey::UseVerse);
+            vk.next();
+            vk.next();
 
             settings.keyRenderingFace = CTextRendering::KeyTreeItem::Settings::CompleteShort;
             text = render.renderKeyRange(startKey, vk, modules, key, settings);

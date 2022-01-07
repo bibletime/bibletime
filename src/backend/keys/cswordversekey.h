@@ -116,11 +116,11 @@ class CSwordVerseKey final : public CSwordKey {
         /**
         * Jumps to the next entry of the given type
         */
-        bool next( const JumpType type );
+        bool next( const JumpType type = JumpType::UseVerse );
         /**
         * Jumps to the previous entry of the given type
         */
-        bool previous ( const JumpType type );
+        bool previous ( const JumpType type = JumpType::UseVerse );
         /**
         * This functions returns the current book as localised text, not as book numer.
         *
