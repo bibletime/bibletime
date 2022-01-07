@@ -305,24 +305,8 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
                 QString(" xml:lang=\"%1\" lang=\"%1\"").arg(
                     modulePtr->language()->abbrev());
 
-        if (key->isValid() && i.key() == key->key()) {
+        if (key->isValid()) {
             key_renderedText = key->renderedText();
-
-            // if key was expanded
-            if (CSwordVerseKey const * const vk =
-                    dynamic_cast<CSwordVerseKey *>(key))
-            {
-                if (vk->isBoundSet()) {
-                    CSwordVerseKey pk(*vk);
-                    auto const lowerBoundIndex = vk->lowerBound().index();
-                    auto const upperBoundIndex = vk->upperBound().index();
-                    for (auto i = lowerBoundIndex; i < upperBoundIndex; ++i) {
-                        key_renderedText += " ";
-                        pk.setIndex(i + 1);
-                        key_renderedText += pk.renderedText();
-                    }
-                }
-            }
         } else {
             key_renderedText = "<span class=\"inactive\">&#8212;</span>";
         }
