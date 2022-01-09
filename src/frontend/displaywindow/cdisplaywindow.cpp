@@ -58,7 +58,6 @@ CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIAr
       m_mdi(parent),
       m_keyChooser(nullptr),
       m_swordKey(nullptr),
-      m_isReady(false),
       m_moduleChooserBar(nullptr),
       m_mainToolBar(nullptr),
       m_buttonsToolBar(nullptr),
@@ -711,7 +710,7 @@ void CDisplayWindow::modulesChanged() {
 void CDisplayWindow::lookupSwordKey(CSwordKey * newKey) {
     BT_ASSERT(newKey);
 
-    if (!isReady() || !newKey || modules().empty() || !modules().first())
+    if (!m_isInitialized || !newKey || modules().empty() || !modules().first())
         return;
 
     if (m_swordKey != newKey)
@@ -769,7 +768,7 @@ bool CDisplayWindow::init() {
     Q_EMIT sigFilterOptionsChanged(m_filterOptions);
     Q_EMIT sigModulesChanged(modules());
 
-    m_isReady = true;
+    m_isInitialized = true;
     return true;
 }
 
@@ -830,7 +829,7 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
     */
     BT_ASSERT(modules().first());
 
-    if (!isReady()) {
+    if (!m_isInitialized) {
         return;
     }
 

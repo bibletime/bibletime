@@ -79,9 +79,6 @@ public:
     /** Returns the filter options used by this window. */
     FilterOptions const & filterOptions() const { return m_filterOptions; }
 
-    /** Returns true if the widget is ready for use. */
-    bool isReady() const { return m_isReady; }
-
     /** Returns history for this window */
     BTHistory* history();
 
@@ -314,7 +311,7 @@ private:
 
     CKeyChooser* m_keyChooser;
     CSwordKey* m_swordKey;
-    bool m_isReady;
+    bool m_isInitialized = false; ///< Whether init() has been called
     BtModuleChooserBar* m_moduleChooserBar;
     QToolBar* m_mainToolBar;
     QToolBar* m_buttonsToolBar;
