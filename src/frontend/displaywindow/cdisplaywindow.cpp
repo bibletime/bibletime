@@ -294,7 +294,7 @@ void CDisplayWindow::initActions() {
                             "GUI/showToolbarsInEachWindow",
                             true))
                     {
-                        keyChooser()->setFocus();
+                        m_keyChooser->setFocus();
                     } else if (auto * const kc = btMainWindow()->keyChooser()) {
                         kc->setFocus();
                     }
@@ -320,10 +320,10 @@ void CDisplayWindow::initActions() {
                   m_displayWidget,
                   &BtModelViewReadDisplay::openFindTextDialog);
     initAddAction(DWG::backInHistory::actionName,
-                  keyChooser()->history(),
+                  m_keyChooser->history(),
                   &BTHistory::back);
     initAddAction(DWG::forwardInHistory::actionName,
-                  keyChooser()->history(),
+                  m_keyChooser->history(),
                   &BTHistory::fw);
 
     auto * const ac = m_actionCollection;
@@ -410,14 +410,14 @@ void CDisplayWindow::initActions() {
 }
 
 void CDisplayWindow::initConnections() {
-    BT_ASSERT(keyChooser());
+    BT_ASSERT(m_keyChooser);
 
-    BT_CONNECT(keyChooser(), &CKeyChooser::keyChanged,
+    BT_CONNECT(m_keyChooser, &CKeyChooser::keyChanged,
                this,         &CDisplayWindow::lookupSwordKey);
     BT_CONNECT(history(), &BTHistory::historyChanged,
                [this](bool const backEnabled, bool const fwEnabled) {
                    BT_ASSERT(m_actions.backInHistory);
-                   BT_ASSERT(keyChooser());
+                   BT_ASSERT(m_keyChooser);
 
                    m_actions.backInHistory->setEnabled(backEnabled);
                    m_actions.forwardInHistory->setEnabled(fwEnabled);
@@ -430,22 +430,22 @@ void CDisplayWindow::initConnections() {
                    QMenu * menu = m_actions.backInHistory->popupMenu();
                    menu->clear();
                    for (auto * const actionPtr
-                        : keyChooser()->history()->getBackList())
+                        : m_keyChooser->history()->getBackList())
                        menu->addAction(actionPtr);
                });
     BT_CONNECT(m_actions.backInHistory->popupMenu(), &QMenu::triggered,
-               keyChooser()->history(), &BTHistory::move);
+               m_keyChooser->history(), &BTHistory::move);
     BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::aboutToShow,
                this, // Needed
                [this]{
                    QMenu* menu = m_actions.forwardInHistory->popupMenu();
                    menu->clear();
                    for (auto * const actionPtr
-                        : keyChooser()->history()->getFwList())
+                        : m_keyChooser->history()->getFwList())
                        menu->addAction(actionPtr);
                });
     BT_CONNECT(m_actions.forwardInHistory->popupMenu(), &QMenu::triggered,
-               keyChooser()->history(), &BTHistory::move);
+               m_keyChooser->history(), &BTHistory::move);
 }
 
 void CDisplayWindow::initView() {
@@ -488,7 +488,7 @@ void CDisplayWindow::initView() {
 void CDisplayWindow::initToolbars() {
     //Navigation toolbar
     BT_ASSERT(m_actions.backInHistory);
-    mainToolBar()->addWidget(keyChooser());
+    mainToolBar()->addWidget(m_keyChooser);
     mainToolBar()->addAction(m_actions.backInHistory); //1st button
     mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
@@ -639,7 +639,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     } else {
         m_displayWidget->reloadModules();
 
-        if (CKeyChooser * const kc = keyChooser())
+        if (auto * const kc = m_keyChooser)
             kc->setModules(modules(), false);
 
         lookup();
@@ -704,7 +704,7 @@ void CDisplayWindow::modulesChanged() {
     else {
         Q_EMIT sigModulesChanged(modules());
         m_swordKey->setModule(modules().first());
-        keyChooser()->setModules(modules());
+        m_keyChooser->setModules(modules());
     }
 }
 
@@ -844,7 +844,7 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
     /// \todo check for containsRef compat
     if (m && modules().contains(m)) {
         m_swordKey->setKey(keyName);
-        keyChooser()->setKey(m_swordKey); //the key chooser does send an update signal
+        m_keyChooser->setKey(m_swordKey); //the key chooser does send an update signal
         Q_EMIT sigKeyChanged(m_swordKey);
     }
     else {     //given module not displayed in this window
