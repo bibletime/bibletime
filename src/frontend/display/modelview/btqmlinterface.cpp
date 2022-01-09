@@ -250,39 +250,31 @@ QString BtQmlInterface::getBibleUrlFromLink(const QString& url) {
 }
 
 QString BtQmlInterface::getReferenceFromUrl(const QString& url) {
-    QString reference;
-
-
-    QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)(\\|\\|)", Qt::CaseInsensitive);
-    rx.setMinimal(false);
-    int pos1 = rx.indexIn(url);
-    if (pos1 > -1) {
-        reference = "href=sword://" + rx.cap(1) + "/" + rx.cap(2) + "/" + rx.cap(3);
-    } else {
-        QRegExp rx0("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
-        rx0.setMinimal(false);
-        int pos1 = rx0.indexIn(url);
-        if (pos1 > -1) {
-            reference = "href=sword://" + rx0.cap(1) + "/" + rx0.cap(2) + "/" + rx0.cap(3);
-
-        } else {
-            QRegExp rx1("sword://footnote/(.*)=(.*)", Qt::CaseInsensitive);
-            rx1.setMinimal(false);
-            int pos1 = rx1.indexIn(url);
-            if (pos1 > -1) {
-                reference = "note=" + rx1.cap(1);
-
-            } else {
-                QRegExp rx2("sword://lemmamorph/(.*)=(.*)/(.*)", Qt::CaseInsensitive);
-                rx2.setMinimal(false);
-                int pos1 = rx2.indexIn(url);
-                if (pos1 > -1) {
-                    reference = rx2.cap(1) + "=" + rx2.cap(2);
-                }
-            }
-        }
+    {
+        QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)(\\|\\|)",
+                   Qt::CaseInsensitive);
+        rx.setMinimal(false);
+        if (rx.indexIn(url) > -1)
+            return "href=sword://" + rx.cap(1) + "/" + rx.cap(2) + "/"
+                   + rx.cap(3);
+    }{
+        QRegExp rx("sword://(bible|lexicon)/(.*)/(.*)", Qt::CaseInsensitive);
+        rx.setMinimal(false);
+        if (rx.indexIn(url) > -1)
+            return "href=sword://" + rx.cap(1) + "/" + rx.cap(2) + "/"
+                   + rx.cap(3);
+    }{
+        QRegExp rx("sword://footnote/(.*)=(.*)", Qt::CaseInsensitive);
+        rx.setMinimal(false);
+        if (rx.indexIn(url) > -1)
+            return "note=" + rx.cap(1);
+    }{
+        QRegExp rx("sword://lemmamorph/(.*)=(.*)/(.*)", Qt::CaseInsensitive);
+        rx.setMinimal(false);
+        if (rx.indexIn(url) > -1)
+            return rx.cap(1) + "=" + rx.cap(2);
     }
-    return reference;
+    return {};
 }
 
 void BtQmlInterface::setRawText(int row, int column, const QString& text) {
