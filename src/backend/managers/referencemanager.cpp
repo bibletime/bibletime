@@ -14,6 +14,7 @@
 
 #include <QRegExp>
 #include <QDebug>
+#include <utility>
 #include "../../util/btassert.h"
 #include "../config/btconfig.h"
 #include "../keys/cswordversekey.h"
@@ -183,7 +184,7 @@ QString ReferenceManager::parseVerseReference(
     QString sourceLanguage = options.sourceLanguage;
 
     bool const haveLocaleForSourceLanguage =
-            [&locale = sourceLanguage]() {
+            [&locale = std::as_const(sourceLanguage)]() {
                 if (locale == "locales")
                     return false;
                 auto const & locales = BtLocaleMgr::internalSwordLocales();
