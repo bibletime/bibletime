@@ -89,11 +89,10 @@ void BtModuleTextModel::reloadModules() {
     beginResetModel();
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);
     if (isBible() || isCommentary()) {
-        auto & m = firstModule->swordModule();
-        m.setPosition(sword::TOP);
-        m_firstEntry = m.getIndex();
-        m.setPosition(sword::BOTTOM);
-        m_maxEntries = m.getIndex() - m_firstEntry + 1;
+        CSwordBibleModuleInfo const * const m =
+            static_cast<const CSwordBibleModuleInfo *>(firstModule);
+        m_firstEntry = m->lowerBound().index();
+        m_maxEntries = m->upperBound().index() - m_firstEntry + 1;
     } else if(isLexicon()) {
         m_maxEntries =
                 static_cast<CSwordLexiconModuleInfo const *>(firstModule)
