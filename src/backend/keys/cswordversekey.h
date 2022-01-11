@@ -159,6 +159,12 @@ class CSwordVerseKey final : public CSwordKey {
         long index() const { return m_key.getIndex(); }
         void setIndex(long v) { m_key.setIndex(v); }
         void positionToTop() { m_key.setPosition(sword::TOP); }
+        QString versification() const {
+            return m_key.getVersificationSystem();
+        }
+        void setVersification(const char * name) {
+            m_key.setVersificationSystem(name);
+        }
 
     protected:
 
