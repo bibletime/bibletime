@@ -20,6 +20,9 @@
 #include <memory>
 #include <QByteArray>
 #include <QDebug>
+#ifdef Q_OS_WIN
+#include <QDir>
+#endif
 #include <QFile>
 #include <QIODevice>
 #include <QMessageBox>
@@ -120,7 +123,7 @@ BibleTimeApp::BibleTimeApp(int &argc, char **argv)
     #ifdef Q_OS_WIN
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
-    if (showDebugMessages) {
+    if (m_debugMode) {
         debugStream.reset(
                     new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
         debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
