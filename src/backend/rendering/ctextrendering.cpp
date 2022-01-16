@@ -50,6 +50,17 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
     , m_key(key)
 {}
 
+CTextRendering::KeyTreeItem::KeyTreeItem(const CSwordKey * key,
+                                         const BtConstModuleList & mods,
+                                         const Settings & settings)
+    : m_settings(settings)
+    , m_moduleList(mods)
+    , m_key(key->key())
+    , m_swordKey(key->copy())
+    , m_childList()
+    , m_stopKey(QString())
+    , m_alternativeContent(QString()) {}
+
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
                                          const QString &stopKey,
                                          const CSwordModuleInfo *module,
@@ -262,15 +273,6 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
     if (modules.isEmpty())
         return ""; // no module present for rendering
 
-    std::unique_ptr<CSwordKey> scoped_key(
-            !k ? CSwordKey::createInstance(modules.first()) : nullptr);
-    CSwordKey * const key = k ? k : scoped_key.get();
-    BT_ASSERT(key);
-
-    CSwordVerseKey * const myVK = dynamic_cast<CSwordVerseKey *>(key);
-    if (myVK)
-        myVK->setIntros(true);
-
     QString renderedText((modules.count() > 1) ? "\n\t\t<tr>\n" : "\n");
     // Only insert the table stuff if we are displaying parallel.
 
@@ -282,20 +284,15 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
 
     for (auto const & modulePtr : modules) {
         BT_ASSERT(modulePtr);
-        if (myVK) {
-            key->setModule(*modules.begin());
-            key->setKey(i.key());
-
-            // this would change key position due to v11n translation
-            key->setModule(modulePtr);
-        } else {
-            key->setModule(modulePtr);
-            key->setKey(i.key());
-        }
-
-        // indicate that key was changed
-        i.setMappedKey(key->key() != i.key() ? key : nullptr);
-
+        std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(
+            i.swordKey() ? i.swordKey()->module() : modulePtr));
+        CSwordVerseKey * const verseKey =
+            dynamic_cast<CSwordVerseKey *>(key.get());
+        if (verseKey)
+            verseKey->setIntros(true);
+        key->setKey(i.key());
+        // changing module may translate verse to different v11n
+        key->setModule(modulePtr);
 
         isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString();

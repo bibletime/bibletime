@@ -40,10 +40,6 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
     CSwordVerseKey vk(&module); // only valid for bible modules, i.e. isBible == true
     vk.setIntros(true);
 
-    if (isBible) {
-        vk.setKey(item.mappedKey() ? item.mappedKey()->key() : item.key());
-    }
-
     if (isBible && (vk.verse() == 0)) {
         return QString(); //Warning: return already here
     }

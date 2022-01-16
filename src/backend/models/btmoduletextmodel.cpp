@@ -188,11 +188,11 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
         Rendering::CEntryDisplay entryDisplay;
         BtConstModuleList moduleList;
         moduleList << bookModule;
-        QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
-                                                     m_displayOptions, m_filterOptions,
-                                                     m_displayOptions.verseNumbers ?
-                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
-                                                     Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
+        QString text = entryDisplay.textKeyRendering(
+            moduleList, key, m_displayOptions, m_filterOptions,
+            m_displayOptions.verseNumbers
+                ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
+                : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
         text.replace("#CHAPTERTITLE#", "");
         return text;
     }
@@ -255,11 +255,11 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             }
         }
 
-        text += Rendering::CEntryDisplay().textKeyRendering(modules,
-                                                            key.key(), m_displayOptions, m_filterOptions,
-                                                            m_displayOptions.verseNumbers ?
-                                                            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey :
-                                                            Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
+        text += Rendering::CEntryDisplay().textKeyRendering(
+            modules, key, m_displayOptions, m_filterOptions,
+            m_displayOptions.verseNumbers
+                ? Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey
+                : Rendering::CTextRendering::KeyTreeItem::Settings::NoKey);
 
         text.replace("#CHAPTERTITLE#", chapterTitle);
         text = ColorManager::instance().replaceColors(text);

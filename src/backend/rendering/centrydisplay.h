@@ -14,6 +14,7 @@
 
 #include <QString>
 #include "../drivers/btmodulelist.h"
+#include "../keys/cswordkey.h"
 #include "ctextrendering.h"
 
 
@@ -37,11 +38,13 @@ class CEntryDisplay {
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
 
-    const QString textKeyRendering(const BtConstModuleList &modules,
-                               const QString &key,
-                               const DisplayOptions &displayOptions,
-                               const FilterOptions &filterOptions,
-                               CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering);
+        const QString textKeyRendering(
+            const BtConstModuleList & modules,
+            const CSwordKey & key,
+            const DisplayOptions & displayOptions,
+            const FilterOptions & filterOptions,
+            CTextRendering::KeyTreeItem::Settings::KeyRenderingFace
+                keyRendering);
 
         virtual char display(CSwordModuleInfo & mod) { (void)mod; return 'c';}
 
