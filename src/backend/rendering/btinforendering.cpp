@@ -275,7 +275,7 @@ QString decodeFootnote(QString const & data) {
     key->setKey(keyname);
     key->renderedText(CSwordKey::ProcessEntryAttributesOnly); // force entryAttributes
 
-    auto & m = module->module();
+    auto & m = module->swordModule();
     const char * const note =
         m.getEntryAttributes()
             ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();

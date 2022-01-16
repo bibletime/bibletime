@@ -45,7 +45,7 @@ QString CSwordKey::rawText() {
     if (!m_module)
         return QString();
 
-    auto & m = m_module->module();
+    auto & m = m_module->swordModule();
     m.getKey()->setText( rawKey() );
 
     if (key().isNull())
@@ -57,7 +57,7 @@ QString CSwordKey::rawText() {
 QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     BT_ASSERT(m_module);
 
-    auto & m = m_module->module();
+    auto & m = m_module->swordModule();
     sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey());
     if (vk_mod)
         vk_mod->setIntros(true);
@@ -136,7 +136,7 @@ QString CSwordKey::strippedText() {
     if (!m_module)
         return QString();
 
-    auto & m = m_module->module();
+    auto & m = m_module->swordModule();
     m.getKey()->setText(std::string(rawKey()).c_str());
 
     return QString::fromUtf8(m.stripText());
@@ -151,7 +151,7 @@ CSwordKey * CSwordKey::createInstance(const CSwordModuleInfo * module) {
     if (!module)
         return nullptr;
 
-    sword::SWKey * const key = module->module().getKey();
+    sword::SWKey * const key = module->swordModule().getKey();
 
     switch (module->type()) {
 

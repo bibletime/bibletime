@@ -82,7 +82,7 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
      */
     qDebug() << "Read all entries of lexicon" << name();
 
-    auto & m = module();
+    auto & m = swordModule();
     m.setSkipConsecutiveLinks(true);
     m.setPosition(sword::TOP);
     snap(); //snap to top entry
@@ -127,10 +127,11 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     return m_entries;
 }
 
-bool CSwordLexiconModuleInfo::snap() const { return module().getRawEntry(); }
+bool CSwordLexiconModuleInfo::snap() const
+{ return swordModule().getRawEntry(); }
 
 void CSwordLexiconModuleInfo::testForStrongsKeys() {
-    auto & m = module();
+    auto & m = swordModule();
     m.setPosition(sword::TOP);
     m.increment();
     QString key = QString::fromUtf8(m.getKeyText());

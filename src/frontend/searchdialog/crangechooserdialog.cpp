@@ -151,7 +151,8 @@ void CRangeChooserDialog::initConnections() {
                        if (!module)
                            continue;
                        auto const verses(
-                                   sword::VerseKey(module->module().getKey())
+                                   sword::VerseKey(
+                                       module->swordModule().getKey())
                                         .parseVerseList(
                                                 range.toUtf8().constData(),
                                                 "Genesis 1:1",

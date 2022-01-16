@@ -153,7 +153,7 @@ void CSwordBackend::uninstallModules(BtConstModuleSet const & toBeDeleted) {
             mgr = mgrDict[prefixPath];
         }
         qDebug() << "Removing the module" << mInfo->name() << "...";
-        installMgr.removeModule(mgr, mInfo->module().getName());
+        installMgr.removeModule(mgr, mInfo->swordModule().getName());
     }
     qDeleteAll(toBeDeleted);
     qDeleteAll(mgrDict);
@@ -347,7 +347,7 @@ CSwordModuleInfo * CSwordBackend::findModuleByName(const QString & name) const {
 
 CSwordModuleInfo * CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
     for (auto * const mod : m_dataModel->moduleList())
-        if (&mod->module() == swmodule)
+        if (&mod->swordModule() == swmodule)
             return mod;
     return nullptr;
 }
@@ -459,7 +459,7 @@ void CSwordBackend::setBooknameLanguage(QString const & language) {
         {
             // Create a new key, it will get the default bookname language:
             using VK = sword::VerseKey;
-            VK & vk = *static_cast<VK *>(mod->module().getKey());
+            VK & vk = *static_cast<VK *>(mod->swordModule().getKey());
             vk.setLocale(newLocaleName.constData());
         }
     }

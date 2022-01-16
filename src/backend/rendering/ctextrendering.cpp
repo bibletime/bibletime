@@ -300,7 +300,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         isRTL = (modulePtr->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString();
 
-        auto & swModule = modulePtr->module();
+        auto & swModule = modulePtr->swordModule();
         auto const langAttr =
                 QString(" xml:lang=\"%1\" lang=\"%1\"").arg(
                     modulePtr->language()->abbrev());

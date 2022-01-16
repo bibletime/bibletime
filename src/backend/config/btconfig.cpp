@@ -442,7 +442,7 @@ sword::ListKey BtConfig::parseVerseListWithModules(const QString& data, const QS
         auto module = CSwordBackend::instance()->findModuleByName(moduleName);
         if (module == nullptr)
             continue;
-        sword::VerseKey vk = module->module().getKey();
+        sword::VerseKey vk = module->swordModule().getKey();
         sword::ListKey list(vk.parseVerseList(data.toUtf8(), "Genesis 1:1", true));
         if (list.getCount() > 0)
             return list;

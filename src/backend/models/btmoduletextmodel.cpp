@@ -89,7 +89,7 @@ void BtModuleTextModel::reloadModules() {
     beginResetModel();
     const CSwordModuleInfo* firstModule = m_moduleInfoList.at(0);
     if (isBible() || isCommentary()) {
-        auto & m = firstModule->module();
+        auto & m = firstModule->swordModule();
         m.setPosition(sword::TOP);
         m_firstEntry = m.getIndex();
         m.setPosition(sword::BOTTOM);

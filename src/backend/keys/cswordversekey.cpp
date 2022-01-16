@@ -35,7 +35,7 @@ CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
             dynamic_cast<CSwordBibleModuleInfo const *>(module))
     {
         // Copy important settings like versification system
-        m_key.copyFrom(bible->module().getKey());
+        m_key.copyFrom(bible->swordModule().getKey());
         setKey(bible->lowerBound().key());
     }
     m_key.setAutoNormalize(true);
@@ -68,7 +68,8 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
 
     CSwordBibleModuleInfo const * bible = static_cast<CSwordBibleModuleInfo const *>(newModule);
     const char * newVersification =
-            static_cast<sword::VerseKey *>(bible->module().getKey())->getVersificationSystem();
+            static_cast<sword::VerseKey *>(
+                bible->swordModule().getKey())->getVersificationSystem();
     bool inVersification = true;
 
     if (strcmp(m_key.getVersificationSystem(), newVersification)) {
@@ -222,7 +223,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
             if (!m_module) {
                 m_key.setVerse(m_key.getVerse() + 1);
             } else {
-                auto & m = m_module->module();
+                auto & m = m_module->swordModule();
                 const bool oldStatus = m.isSkipConsecutiveLinks();
                 m.setSkipConsecutiveLinks(true);
 
@@ -312,7 +313,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
             if (!m_module) {
                 m_key.setVerse(m_key.getVerse() - 1);
             } else {
-                auto & m = m_module->module();
+                auto & m = m_module->swordModule();
                 auto * vKey = static_cast<sword::VerseKey *>(m.getKey());
                 bool const oldHeadingsStatus = vKey->isIntros();
                 vKey->setIntros(true);

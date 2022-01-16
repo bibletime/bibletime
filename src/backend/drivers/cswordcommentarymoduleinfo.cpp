@@ -29,6 +29,6 @@ bool CSwordCommentaryModuleInfo::isWritable() const {
       returning true.
     */
     using namespace std::literals;
-    return module().getConfigEntry("ModDrv") == "RawFiles"sv
-           && module().isWritable();
+    return swordModule().getConfigEntry("ModDrv") == "RawFiles"sv
+           && swordModule().isWritable();
 }

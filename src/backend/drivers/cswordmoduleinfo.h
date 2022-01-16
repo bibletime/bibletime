@@ -190,7 +190,7 @@ public: // methods:
     /**
     * Returns the module object so all objects can access the original Sword module.
     */
-    sword::SWModule & module() const { return m_module; }
+    sword::SWModule & swordModule() const { return m_swordModule; }
 
     /**
     * Sets the unlock key of the modules and writes the key into the config file.
@@ -421,7 +421,7 @@ Q_SIGNALS:
 private: // fields:
 
     Rendering::CEntryDisplay * m_display = nullptr;
-    sword::SWModule & m_module;
+    sword::SWModule & m_swordModule;
     CSwordBackend & m_backend;
     ModuleType const m_type;
     bool m_hidden;

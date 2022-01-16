@@ -95,7 +95,7 @@ bool CSwordLDKey::setKey(const char *newKey) {
 
     if (newKey) {
         m_key = newKey; //set the key
-        m_module->module().setKey(&m_key);
+        m_module->swordModule().setKey(&m_key);
         m_module->snap();
     }
 
@@ -104,7 +104,7 @@ bool CSwordLDKey::setKey(const char *newKey) {
 
 /** Uses the parameter to returns the next entry afer this key. */
 CSwordLDKey* CSwordLDKey::NextEntry() {
-    auto & m = m_module->module();
+    auto & m = m_module->swordModule();
     m.setKey(&m_key); // use this key as base for the next one!
     //   m.getKey()->setText( (const char*)key().utf8() );
 
@@ -120,7 +120,7 @@ CSwordLDKey* CSwordLDKey::NextEntry() {
 
 /** Uses the parameter to returns the next entry afer this key. */
 CSwordLDKey* CSwordLDKey::PreviousEntry() {
-    auto & m = m_module->module();
+    auto & m = m_module->swordModule();
     m.setKey(&m_key); // use this key as base for the next one!
     //   m.getKey()->setText( (const char*)key().utf8() );
 

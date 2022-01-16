@@ -107,7 +107,7 @@ static const TCHAR * stop_words[] = { nullptr };
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule & module,
                                    CSwordBackend & backend,
                                    ModuleType type)
-    : m_module(module)
+    : m_swordModule(module)
     , m_backend(backend)
     , m_type(type)
     , m_cancelIndexing(false)
@@ -156,7 +156,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
        backend->setCipherKey() does not work correctly for modules from which
        data was already fetched. Therefore we have to reload the modules in
        bibletime.cpp */
-    m_backend.raw().setCipherKey(m_module.getName(),
+    m_backend.raw().setCipherKey(m_swordModule.getName(),
                                  unlockKey.toUtf8().constData());
 
     /// \todo write to Sword config as well
@@ -191,11 +191,11 @@ bool CSwordModuleInfo::isEncrypted() const {
 }
 
 bool CSwordModuleInfo::unlockKeyIsValid() const {
-    sword::SWKey * const key = m_module.getKey();
+    sword::SWKey * const key = m_swordModule.getKey();
     sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(key);
     if (vk)
         vk->setIntros(false);
-    m_module.setPosition(sword::TOP);
+    m_swordModule.setPosition(sword::TOP);
 
     /* This needs to use ::fromLatin1 because if the text is still locked, a lot
        of garbage will show up. It will also work with properly decrypted
@@ -203,8 +203,8 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
        and therefore contain no control (nonprintable) characters, which are all
        <127. */
     const QString test(isUnicode()
-                       ? QString::fromUtf8(m_module.getRawEntry())
-                       : QString::fromLatin1(m_module.getRawEntry()));
+                       ? QString::fromUtf8(m_swordModule.getRawEntry())
+                       : QString::fromLatin1(m_swordModule.getRawEntry()));
 
     if (test.isEmpty())
         return false;
@@ -216,7 +216,7 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
 }
 
 QString CSwordModuleInfo::getUnlockInfo() {
-    return m_module.getConfigEntry("UnlockInfo");
+    return m_swordModule.getConfigEntry("UnlockInfo");
 }
 
 QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
@@ -333,10 +333,10 @@ void CSwordModuleInfo::buildIndex() {
         }
         else
         {
-            m_module.setPosition(sword::TOP);
-            verseLowIndex = m_module.getIndex();
-            m_module.setPosition(sword::BOTTOM);
-            verseHighIndex = m_module.getIndex();
+            m_swordModule.setPosition(sword::TOP);
+            verseLowIndex = m_swordModule.getIndex();
+            m_swordModule.setPosition(sword::BOTTOM);
+            verseHighIndex = m_swordModule.getIndex();
         }
 
         // verseLowIndex is not 0 in all cases (i.e. NT-only modules)
@@ -352,7 +352,7 @@ void CSwordModuleInfo::buildIndex() {
 
         Q_EMIT indexingProgress(0);
 
-        sword::SWKey * const key = m_module.getKey();
+        sword::SWKey * const key = m_swordModule.getKey();
         sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(key);
 
         if (vk) {
@@ -368,7 +368,7 @@ void CSwordModuleInfo::buildIndex() {
 
         // we start with the first module entry, key is automatically updated
         // because key is a pointer to the modules key
-        m_module.setSkipConsecutiveLinks(true);
+        m_swordModule.setSkipConsecutiveLinks(true);
 
         std::unique_ptr<wchar_t[]> sPwcharBuffer(
                 new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
@@ -378,11 +378,11 @@ void CSwordModuleInfo::buildIndex() {
         if(bm && vk) // Implied that vk could be null due to cast above
             vk->setIndex(bm->lowerBound().index());
         else
-            m_module.setPosition(sword::TOP);
+            m_swordModule.setPosition(sword::TOP);
 
         bool importantFilterOption = hasImportantFilterOption();
 
-        while (!(m_module.popError()) && !CANCEL_INDEXING) {
+        while (!(m_swordModule.popError()) && !CANCEL_INDEXING) {
 
             /* Also index Chapter 0 and Verse 0, because they might have
                information in the entry attributes. We used to just put their
@@ -404,7 +404,7 @@ void CSwordModuleInfo::buildIndex() {
             if (importantFilterOption) {
                 // Index text including strongs, morph, footnotes, and headings.
                 setImportantFilterOptions(true);
-                textBuffer.append(m_module.stripText());
+                textBuffer.append(m_swordModule.stripText());
                 lucene_utf8towcs(wcharBuffer,
                                  static_cast<const char *>(textBuffer),
                                  BT_MAX_LUCENE_FIELD_LENGTH);
@@ -417,7 +417,7 @@ void CSwordModuleInfo::buildIndex() {
 
             // Index text without strongs, morph, footnotes, and headings.
             setImportantFilterOptions(false);
-            textBuffer.append(m_module.stripText());
+            textBuffer.append(m_swordModule.stripText());
             lucene_utf8towcs(wcharBuffer,
                              static_cast<const char *>(textBuffer),
                              BT_MAX_LUCENE_FIELD_LENGTH);
@@ -427,7 +427,7 @@ void CSwordModuleInfo::buildIndex() {
                                                    | lucene::document::Field::INDEX_TOKENIZED)));
             textBuffer.clear();
 
-            for (auto & vp : m_module.getEntryAttributes()["Footnote"]) {
+            for (auto & vp : m_swordModule.getEntryAttributes()["Footnote"]) {
                 lucene_utf8towcs(wcharBuffer, vp.second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
                 doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("footnote")),
                                                        static_cast<const TCHAR *>(wcharBuffer),
@@ -437,7 +437,7 @@ void CSwordModuleInfo::buildIndex() {
 
             // Headings
             for (auto & vp
-                 : m_module.getEntryAttributes()["Heading"]["Preverse"])
+                 : m_swordModule.getEntryAttributes()["Heading"]["Preverse"])
             {
                 lucene_utf8towcs(wcharBuffer, vp.second, BT_MAX_LUCENE_FIELD_LENGTH);
                 doc->add(*(new lucene::document::Field(static_cast<const TCHAR *>(_T("heading")),
@@ -447,7 +447,7 @@ void CSwordModuleInfo::buildIndex() {
             }
 
             // Strongs/Morphs
-            for (auto const & vp : m_module.getEntryAttributes()["Word"]) {
+            for (auto const & vp : m_swordModule.getEntryAttributes()["Word"]) {
                 auto const & attrs = vp.second;
                 auto const partCountIter(attrs.find("PartCount"));
                 int partCount = (partCountIter != attrs.end())
@@ -485,7 +485,7 @@ void CSwordModuleInfo::buildIndex() {
             if (m_type == CSwordModuleInfo::Lexicon) {
                 verseIndex++;
             } else {
-                verseIndex = m_module.getIndex();
+                verseIndex = m_swordModule.getIndex();
             }
 
             if (verseIndex % 200 == 0) {
@@ -499,7 +499,7 @@ void CSwordModuleInfo::buildIndex() {
                 }
             }
 
-            m_module.increment();
+            m_swordModule.increment();
         } // while (!(m_module.Error()) && !CANCEL_INDEXING)
 
         if (!CANCEL_INDEXING)
@@ -554,7 +554,7 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     BT_ASSERT(wcharBuffer);
 
     // work around Swords thread insafety for Bibles and Commentaries
-    m_module.setKey(CSwordKey::createInstance(this)->asSwordKey());
+    m_swordModule.setKey(CSwordKey::createInstance(this)->asSwordKey());
 
     // do not use any stop words
     lucene::analysis::standard::StandardAnalyzer analyzer(stop_words);
@@ -570,7 +570,7 @@ CSwordModuleInfo::searchIndexed(QString const & searchedText,
     const bool useScope = (scope.getCount() > 0);
 
     lucene::document::Document * doc = nullptr;
-    std::unique_ptr<sword::SWKey> swKey(m_module.createKey());
+    std::unique_ptr<sword::SWKey> swKey(m_swordModule.createKey());
 
     sword::VerseKey * const vk = dynamic_cast<sword::VerseKey *>(swKey.get());
     if (vk)
@@ -618,7 +618,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
 
         case CipherKey: {
             if (btConfig().getModuleEncryptionKey(m_cachedName).isNull()) {
-                return QString(m_module.getConfigEntry("CipherKey")); // Fallback
+                return QString(m_swordModule.getConfigEntry("CipherKey")); // Fallback
             } else {
                 return btConfig().getModuleEncryptionKey(m_cachedName);
             }
@@ -728,10 +728,10 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
     switch (feature) {
-        case GreekDef: return m_module.getConfig().has("Feature", "GreekDef");
-        case HebrewDef: return m_module.getConfig().has("Feature", "HebrewDef");
-        case GreekParse: return m_module.getConfig().has("Feature", "GreekParse");
-        case HebrewParse: return m_module.getConfig().has("Feature", "HebrewParse");
+        case GreekDef: return m_swordModule.getConfig().has("Feature", "GreekDef");
+        case HebrewDef: return m_swordModule.getConfig().has("Feature", "HebrewDef");
+        case GreekParse: return m_swordModule.getConfig().has("Feature", "GreekParse");
+        case HebrewParse: return m_swordModule.getConfig().has("Feature", "HebrewParse");
     }
     return false;
 }
@@ -748,7 +748,7 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
         originalOptionName
     };
     for (auto [it, end] =
-                m_module.getConfig().equal_range("GlobalOptionFilter");
+                m_swordModule.getConfig().equal_range("GlobalOptionFilter");
          it != end;
          ++it)
     {
@@ -768,21 +768,21 @@ char const * CSwordModuleInfo::textDirectionAsHtml() const
 { return textDirection() == RightToLeft ? "rtl" : "ltr"; }
 
 void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
-    m_module.setKey(key->key().toUtf8().constData());
+    m_swordModule.setKey(key->key().toUtf8().constData());
 
     /* Don't store a pointer to the const char* value somewhere because QCString
       doesn't keep the value of it. */
-    m_module.setEntry(isUnicode()
+    m_swordModule.setEntry(isUnicode()
                       ? newText.toUtf8().constData()
                       : newText.toLocal8Bit().constData());
 }
 
 void CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
     BT_ASSERT(key);
-    m_module.setKey(isUnicode()
+    m_swordModule.setKey(isUnicode()
                     ? key->key().toUtf8().constData()
                     : key->key().toLocal8Bit().constData());
-    m_module.deleteEntry();
+    m_swordModule.deleteEntry();
 }
 
 QString CSwordModuleInfo::aboutText() const {
@@ -798,7 +798,7 @@ QString CSwordModuleInfo::aboutText() const {
                  : tr("unknown"));
 
     {
-        const QString sourceType(m_module.getConfigEntry("SourceType"));
+        const QString sourceType(m_swordModule.getConfigEntry("SourceType"));
         text += row
                 .arg(tr("Markup"))
                 .arg(!sourceType.isEmpty()
@@ -814,11 +814,11 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(tr("Language"))
             .arg(m_cachedLanguage->translatedName().toHtmlEscaped());
 
-    if (char const * const e = m_module.getConfigEntry("Category"))
+    if (char const * const e = m_swordModule.getConfigEntry("Category"))
         text += row.arg(tr("Category"))
                    .arg(QString{e}.toHtmlEscaped());
 
-    if (char const * const e = m_module.getConfigEntry("LCSH"))
+    if (char const * const e = m_swordModule.getConfigEntry("LCSH"))
         text += row.arg(tr("LCSH"))
                    .arg(QString{e}.toHtmlEscaped());
 
@@ -830,7 +830,7 @@ QString CSwordModuleInfo::aboutText() const {
         text += row
                 .arg(tr("Unlock key"))
                 .arg(config(CSwordModuleInfo::CipherKey).toHtmlEscaped());
-        if (char const * const e = m_module.getConfigEntry("UnlockInfo"))
+        if (char const * const e = m_swordModule.getConfigEntry("UnlockInfo"))
             text += row.arg(tr("Unlock info")).arg(QString(e).toHtmlEscaped());
     }
 
@@ -907,7 +907,7 @@ QString CSwordModuleInfo::aboutText() const {
 }
 
 bool CSwordModuleInfo::isUnicode() const noexcept
-{ return m_module.isUnicode(); }
+{ return m_swordModule.isUnicode(); }
 
 QIcon const & CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
     CSwordModuleInfo::Category const cat(module.m_cachedCategory);
@@ -1014,8 +1014,8 @@ QString CSwordModuleInfo::englishCategoryName(const CSwordModuleInfo::Category &
 
 QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
     QString ret = isUnicode()
-                  ? QString::fromUtf8(m_module.getConfigEntry(name.toUtf8().constData()))
-                  : QString::fromLatin1(m_module.getConfigEntry(name.toUtf8().constData()));
+                  ? QString::fromUtf8(m_swordModule.getConfigEntry(name.toUtf8().constData()))
+                  : QString::fromLatin1(m_swordModule.getConfigEntry(name.toUtf8().constData()));
 
     return ret.isEmpty() ? QString() : ret;
 }
@@ -1025,7 +1025,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
     const QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
     for (int i = localeNames.size() - 1; i >= -1; --i) {
         sword::SWBuf RTF_Buffer =
-                m_module.getConfigEntry(
+                m_swordModule.getConfigEntry(
                     QString(i >= 0 ? name + "_" + localeNames[i] : name)
                         .toUtf8().constData());
         if (RTF_Buffer.length() > 0) {
