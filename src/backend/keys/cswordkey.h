@@ -26,8 +26,8 @@ class CSwordKey {
 public: // types:
 
     enum TextRenderType {
-        Normal = 0,
-        ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
+        Normal,
+        ProcessEntryAttributesOnly // in this case, renderText() will not return text, but only cause EntryAttribute processing
     };
 
 public: // methods:
