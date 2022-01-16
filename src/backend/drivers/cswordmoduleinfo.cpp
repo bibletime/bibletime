@@ -24,6 +24,8 @@
 #include <QScopeGuard>
 #include <QSettings>
 #include <QTextDocument>
+#include <string>
+#include <string_view>
 #include "../../util/btassert.h"
 #include "../../util/cresmgr.h"
 #include "../../util/directory.h"
@@ -736,17 +738,27 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
-    const QString name = m_backend.configOptionName(option);
-    return m_module.getConfig().has("GlobalOptionFilter",
-                                    QString("OSIS").append(name).toUtf8().constData())
-        || m_module.getConfig().has("GlobalOptionFilter",
-                                    QString("GBF").append(name).toUtf8().constData())
-        || m_module.getConfig().has("GlobalOptionFilter",
-                                    QString("ThML").append(name).toUtf8().constData())
-        || m_module.getConfig().has("GlobalOptionFilter",
-                                    QString("UTF8").append(name).toUtf8().constData())
-        || m_module.getConfig().has("GlobalOptionFilter",
-                                    name.toUtf8().constData());
+    auto const originalOptionName =
+            m_backend.configOptionName(option).toStdString();
+    std::string const optionNames[] = {
+        "OSIS" + originalOptionName,
+        "GBF" + originalOptionName,
+        "ThML" + originalOptionName,
+        "UTF8" + originalOptionName,
+        originalOptionName
+    };
+    for (auto [it, end] =
+                m_module.getConfig().equal_range("GlobalOptionFilter");
+         it != end;
+         ++it)
+    {
+        auto const & valueBuf = it->second;
+        std::string_view const value(valueBuf.c_str(), valueBuf.size());
+        for (auto const & optionName : optionNames)
+            if (value == optionName)
+                return true;
+    }
+    return false;
 }
 
 CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const
