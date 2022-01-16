@@ -124,9 +124,10 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
                     isStrongs = (attrValue == "Strongs");
                 } else if (attrName == "value") {
                     value = attrValue;
-                } else {
-                    BT_ASSERT(attrName == "class");
+                } else if (attrName == "class") {
                     valueClass = attrValue;
+                } else { // optional 3rd attribute pair is not present:
+                    BT_ASSERT(attrName.isEmpty());
                 }
             }
 
