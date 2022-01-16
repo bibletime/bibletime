@@ -308,7 +308,7 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
             key_renderedText = "<span class=\"inactive\">&#8212;</span>";
         }
 
-        if (m_filterOptions.headings && key->isValid() && i.key() == key->key()) {
+        if (m_filterOptions.headings && key->isValid()) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
             swModule.renderText(nullptr, -1, 0);
@@ -356,8 +356,10 @@ QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
         entry.append(langAttr).append(isRTL ? " dir=\"rtl\">" : " dir=\"ltr\">");
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
-        if(key->isValid() && i.key() == key->key())
-            entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, *modulePtr)).append("</span>");
+        if(key->isValid())
+            entry.append("<span class=\"entryname\" dir=\"ltr\">")
+                .append(entryLink(i, key.get()))
+                .append("</span>");
 
         if (m_addText)
             entry.append(key_renderedText);
@@ -411,5 +413,6 @@ QString CTextRendering::finishText(QString const & text, KeyTree const & tree) {
     \fn CTextRendering::entryLink( KeyTreeItem& item )
  */
 QString CTextRendering::entryLink(KeyTreeItem const & item,
-                                  CSwordModuleInfo const &)
-{ return item.key(); }
+                                  CSwordKey const *) {
+    return item.key();
+}

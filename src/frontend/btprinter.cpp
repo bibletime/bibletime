@@ -52,26 +52,25 @@ void BtPrinter::printKeyTree(KeyTree const & tree) {
 }
 
 QString BtPrinter::entryLink(KeyTreeItem const & item,
-                             CSwordModuleInfo const & module)
+                             CSwordKey const * key)
 {
-    if (module.type() != CSwordModuleInfo::Bible)
+    if (key->module()->type() != CSwordModuleInfo::Bible)
         return item.key();
 
-    CSwordVerseKey vk(&module);
-    vk.setKey(item.key());
+    CSwordVerseKey const * const vk = static_cast<CSwordVerseKey const *>(key);
     switch (item.settings().keyRenderingFace) {
         case KeyTreeItem::Settings::CompleteShort:
-            return vk.shortText();
+            return vk->shortText();
 
         case KeyTreeItem::Settings::CompleteLong:
-            return vk.key();
+            return vk->key();
 
         case KeyTreeItem::Settings::NoKey:
             return QString();
 
         case KeyTreeItem::Settings::SimpleKey: // fall through:
         default:
-            return QString::number(vk.verse());
+            return QString::number(vk->verse());
     }
 }
 

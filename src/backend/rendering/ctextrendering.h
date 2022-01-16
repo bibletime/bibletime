@@ -151,8 +151,10 @@ class CTextRendering {
         BtConstModuleList collectModules(const KeyTree &tree) const;
         virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
         virtual QString finishText(const QString &text, const KeyTree &tree);
+
+        /** \returns link for given key in context of render item */
         virtual QString entryLink(KeyTreeItem const & item,
-                                  CSwordModuleInfo const & module);
+                                  CSwordKey const * key);
 
     protected: // fields:
 
