@@ -36,8 +36,7 @@ private: // methods:
     QString entryLink(KeyTreeItem const & item,
                       const CSwordKey * key) override;
 
-    QString renderEntry(KeyTreeItem const & item,
-                        CSwordKey * const key = nullptr) override;
+    QString renderEntry(KeyTreeItem const & item) override;
     QString finishText(QString const & text, KeyTree const & tree) override;
 
 };

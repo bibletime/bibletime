@@ -167,26 +167,12 @@ BtConstModuleList CTextRendering::collectModules(const KeyTree &tree) const {
 const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
     CSwordBackend::instance()->setFilterOptions(m_filterOptions);
+    QString text;
 
-    const BtConstModuleList modules = collectModules(tree);
-    QString t;
+    for (auto const & item : tree)
+        text.append(renderEntry(item));
 
-    //optimization for entries with the same key
-
-    if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
-        std::unique_ptr<CSwordKey> key(
-                CSwordKey::createInstance(modules.first()));
-        for (auto const & item : tree) {
-            key->setKey(item.key());
-            t.append(renderEntry(item, key.get()));
-        }
-    }
-    else {
-        for (auto const & item : tree)
-            t.append(renderEntry(item));
-    }
-
-    return finishText(t, tree);
+    return finishText(text, tree);
 }
 
 const QString CTextRendering::renderKeyRange(
@@ -241,7 +227,7 @@ const QString CTextRendering::renderSingleKey(
     return renderKeyTree(tree);
 }
 
-QString CTextRendering::renderEntry(KeyTreeItem const & i, CSwordKey * k)
+QString CTextRendering::renderEntry(KeyTreeItem const & i)
 {
     if (i.hasAlternativeContent()) {
         QString ret = i.settings().highlight
