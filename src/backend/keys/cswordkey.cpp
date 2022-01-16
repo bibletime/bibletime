@@ -106,30 +106,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
             pos += rx.matchedLength();
         }
     }
-
-    if (mode == HTMLEscaped) {
-        /*
-          Here we encode all non-latin1 characters as HTML unicode entities
-          in the form &#<decimal unicode value here>;
-        */
-        QString ret;
-
-        // Reserve characters to reduce number of memory allocations:
-        ret.reserve(text.size());
-
-        for (auto const & c : text) {
-            if (c.toLatin1()) {
-                ret.append(c);
-            } else {
-                ret.append("&#").append(c.unicode()).append(";");
-            }
-        }
-
-        return ret;
-    }
-    else {
-        return text;
-    }
+    return text;
 }
 
 QString CSwordKey::strippedText() {
