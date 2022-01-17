@@ -59,8 +59,21 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
 
     auto & m = m_module->swordModule();
     sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m.getKey());
-    if (vk_mod)
+    if (vk_mod) {
+        CSwordVerseKey * verseKey = static_cast<CSwordVerseKey *>(this);
+        if (verseKey->isBoundSet()) {
+            QString text("");
+            CSwordVerseKey i(verseKey->lowerBound()); 
+            do {
+                if (!text.isEmpty())
+                    text += ' ';
+                text += i.renderedText(mode);
+            } while (i.next() && i <= verseKey->upperBound());
+            return text;
+        }
+
         vk_mod->setIntros(true);
+    }
 
     m.getKey()->setText(rawKey());
 
