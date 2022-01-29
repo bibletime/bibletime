@@ -24,39 +24,30 @@ class SWModule;
 class TreeKeyIdx;
 }
 
-/**
-  \brief Class for generic book support
-*/
+/** \brief Class for generic book support. */
 class CSwordBookModuleInfo: public CSwordModuleInfo {
-        Q_OBJECT
 
-    public: // methods:
-        /**
-          \param module The module which belongs to this object
-          \param backend The parent backend for this book module.
-        */
-        CSwordBookModuleInfo(sword::SWModule & module,
-                             CSwordBackend & usedBackend);
+    Q_OBJECT
 
-        /**
-          \returns the maximal depth of sections and subsections.
-        */
-        int depth() const noexcept { return m_depth; }
+public: // Methods:
 
-        /**
-          \returns A treekey filled with the structure of this module. Don't
-                   delete the returned key because it's casted from the module
-                   object.
-        */
-        sword::TreeKeyIdx *tree() const;
+    /**
+      \param module The module which belongs to this object.
+      \param backend The parent backend for this book module.
+    */
+    CSwordBookModuleInfo(sword::SWModule & module, CSwordBackend & usedBackend);
 
-    private: // methods:
+    /** \returns the maximal depth of sections and subsections. */
+    int depth() const noexcept { return m_depth; }
 
-        /**
-        * A recursive helper function to help computng the module depth!
-        */
-        void computeDepth(sword::TreeKeyIdx * const key, const int level = 0);
+    /**
+      \returns A treekey filled with the structure of this module. Don't delete
+               the returned key because it's casted from the module object.
+    */
+    sword::TreeKeyIdx * tree() const;
 
-    private: // fields:
-        int const m_depth;
+private: // Fields:
+
+    int const m_depth;
+
 };
