@@ -29,31 +29,29 @@
 CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule & module,
                                            CSwordBackend & backend)
     : CSwordModuleInfo(module, backend, CSwordModuleInfo::GenericBook)
-    , m_depth(-1)
-{
-    sword::TreeKeyIdx *key = tree();
-    if (key) {
-        key->root();
-        computeDepth(key, 0);
-    }
-}
-
-void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx * const key,
-                                        const int level)
-{
-    const QByteArray savedKey(key->getText());
-    if (level > m_depth)
-        m_depth = level;
-
-    if (key->hasChildren()) {
-        key->firstChild();
-        computeDepth(key, level + 1u);
-        key->setText(savedKey.constData()); // Return to the initial value
-    }
-
-    if (key->nextSibling())
-        computeDepth(key, level);
-}
+    , m_depth(
+        [this]{
+            if (auto * const key = tree()) {
+                key->root();
+                int maxDepth = 0;
+                for (int depth = 0;;) {
+                    do {
+                        while (key->firstChild()) {
+                            ++depth;
+                        }
+                    } while (key->nextSibling());
+                    if (depth > maxDepth)
+                        maxDepth = depth;
+                    do {
+                        if (!key->parent())
+                            return maxDepth;
+                        --depth;
+                    } while (!key->nextSibling());
+                }
+            }
+            return -1;
+        }())
+{}
 
 /** Returns a treekey filled with the structure of this module */
 sword::TreeKeyIdx* CSwordBookModuleInfo::tree() const {

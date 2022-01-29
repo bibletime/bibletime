@@ -41,7 +41,7 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         /**
           \returns the maximal depth of sections and subsections.
         */
-        int depth() const { return m_depth; }
+        int depth() const noexcept { return m_depth; }
 
         /**
           \returns A treekey filled with the structure of this module. Don't
@@ -58,5 +58,5 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         void computeDepth(sword::TreeKeyIdx * const key, const int level = 0);
 
     private: // fields:
-        int m_depth;
+        int const m_depth;
 };
