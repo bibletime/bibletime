@@ -243,7 +243,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
           .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath());
 
     if (templateIsCss)
-        output.replace("#THEME_STYLE#", readFileToString(m_cssMap[name]));
+        output.replace("#THEME_STYLE#", m_cssMap[name]);
 
     return output;
 }
@@ -270,7 +270,7 @@ void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
     const QFileInfo fi(filename);
     BT_ASSERT(fi.isFile());
     if (fi.isReadable())
-        m_cssMap.insert(fi.fileName(), filename);
+        m_cssMap.insert(fi.fileName(), readFileToString(filename));
 }
 
 void CDisplayTemplateMgr::setMultiModuleHeadersVisible(bool visible) {
