@@ -54,8 +54,7 @@ CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule & module,
 {}
 
 sword::TreeKeyIdx * CSwordBookModuleInfo::tree() const {
-    auto * const treeKey =
-            dynamic_cast<sword::TreeKeyIdx *>(swordModule().getKey());
-    BT_ASSERT(treeKey);
-    return treeKey;
+    auto * const currentKey = swordModule().getKey();
+    BT_ASSERT(dynamic_cast<sword::TreeKeyIdx *>(currentKey));
+    return static_cast<sword::TreeKeyIdx *>(currentKey);
 }
