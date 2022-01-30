@@ -41,7 +41,7 @@ QStringList splitText(QString const & text) {
 
 void fixDoubleBR(QStringList & parts) {
     for (int index = 2; index < parts.count(); ++index) {
-        QRegExp rx("<br\\s+/>");
+        QRegExp rx("<br\\s*/>");
         if (parts.at(index).contains(rx) && parts.at(index-2).contains(rx))
             parts[index] = "";
     }
