@@ -70,7 +70,7 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
 // Typical input: <a name="Luke11_29" href="sword://Bible/ESV2011/Luke 11:29">
 // Output:        <a href="sword://Bible/ESV2011/Luke 11:29||name=Luke11_29">
 
-int rewriteHref(QStringList & parts, int i, QString const & part) {
+void rewriteHref(QStringList & parts, int i, QString const & part) {
     QRegExp rx1("<a\\s(\\w+)=\"([\\s\\S]*)\"\\s(\\w+)=\"([\\s\\S]*)\"");
     rx1.setMinimal(false);
     if (rx1.indexIn(part) >= 0) {
@@ -79,7 +79,6 @@ int rewriteHref(QStringList & parts, int i, QString const & part) {
         else
             parts[i] = "<a " + rx1.cap(3) + "=\"" + rx1.cap(4) + "||" + rx1.cap(1) + "=" + rx1.cap(2) + "\" name=\"crossref\">";
     }
-    return 1;
 }
 
 // Typical input: <span lemma="H07225">God</span>
@@ -137,7 +136,8 @@ QString BtTextFilter::processText(const QString &text) {
         if (partIsTag && part.contains("class=\"footnote\"")) {
             i += rewriteFootnoteAsLink(parts, i, part);
         } else if (partIsTag && (part.contains("href=\""))) {
-            i += rewriteHref(parts, i, part);
+            rewriteHref(parts, i, part);
+            ++i;
         } else if (partIsTag
                    && (part.contains("lemma=\"") || part.contains("morph=\"")))
         {
