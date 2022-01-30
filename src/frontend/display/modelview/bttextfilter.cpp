@@ -117,7 +117,7 @@ int BtTextFilter::rewriteFootnoteAsLink(int i, const QString& part) {
 // Output:        <a href="sword://Bible/ESV2011/Luke 11:29||name=Luke11_29">
 
 int BtTextFilter::rewriteHref(int i, const QString& part) {
-    QRegExp rx1("<a\\s(\\w+)=\"([\\s\\S]*)\"\\s(\\w+)=\"([\\s\\S]*)\"");
+    QRegExp rx1("<a\\s+(\\w+)=\"([^\"]*)\"\\s+(\\w+)=\"([^\"]*)\"");
     rx1.setMinimal(false);
     int pos1 = rx1.indexIn(part);
     if (pos1 >= 0 && rx1.captureCount() == 4) {
