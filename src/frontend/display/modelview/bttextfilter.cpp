@@ -71,7 +71,7 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
 // Output:        <a href="sword://Bible/ESV2011/Luke 11:29||name=Luke11_29">
 
 void rewriteHref(QStringList & parts, int i, QString const & part) {
-    QRegExp rx1("<a\\s(\\w+)=\"([\\s\\S]*)\"\\s(\\w+)=\"([\\s\\S]*)\"");
+    QRegExp rx1("<a\\s+(\\w+)=\"([^\"]*)\"\\s+(\\w+)=\"([^\"]*)\"");
     rx1.setMinimal(false);
     if (rx1.indexIn(part) >= 0) {
         if (rx1.cap(1) == "href")
