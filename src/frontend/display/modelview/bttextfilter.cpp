@@ -13,6 +13,8 @@
 #include "bttextfilter.h"
 
 #include <QDebug>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 
 
 namespace {
@@ -40,8 +42,8 @@ QStringList splitText(QString const & text) {
 }
 
 void fixDoubleBR(QStringList & parts) {
+    static QRegularExpression const rx(R"regex(<br\s*/>)regex");
     for (int index = 2; index < parts.count(); ++index) {
-        QRegExp rx("<br\\s*/>");
         if (parts.at(index).contains(rx) && parts.at(index-2).contains(rx))
             parts[index] = "";
     }
@@ -54,11 +56,11 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
     if (i + 2 >= parts.count())
         return 1;
 
-    QRegExp rxlen("note=\"([^\"]*)");
-    if (rxlen.indexIn(part) > -1) {
+    static QRegularExpression const rx(R"regex(note="([^"]*))regex");
+    if (auto const match = rx.match(part); match.hasMatch()) {
         auto const & footnoteText = parts.at(i + 1);
         parts[i] = "<a class=\"footnote\" href=\"sword://footnote/"
-                   + rxlen.cap(1) + "=" + footnoteText + "\">";
+                   + match.captured(1) + "=" + footnoteText + "\">";
         parts[i+1] = "(" + footnoteText + ")";
         parts[i+2] = "</a>";
         return 3;
@@ -71,13 +73,17 @@ int rewriteFootnoteAsLink(QStringList & parts, int i, QString const & part) {
 // Output:        <a href="sword://Bible/ESV2011/Luke 11:29||name=Luke11_29">
 
 void rewriteHref(QStringList & parts, int i, QString const & part) {
-    QRegExp rx1("<a\\s+(\\w+)=\"([^\"]*)\"\\s+(\\w+)=\"([^\"]*)\"");
-    rx1.setMinimal(false);
-    if (rx1.indexIn(part) >= 0) {
-        if (rx1.cap(1) == "href")
-            parts[i] = "<a " + rx1.cap(1) + "=\"" + rx1.cap(2) + "||" + rx1.cap(3) + "=" + rx1.cap(4) + "\" name=\"crossref\">";
+    static QRegularExpression const rx(
+                R"regex(<a\s+(\w+)="([^"]*)"\s+(\w+)="([^"]*)")regex");
+    if (auto const match = rx.match(part); match.hasMatch()) {
+        if (match.captured(1) == "href")
+            parts[i] = "<a " + match.captured(1) + "=\"" + match.captured(2)
+                       + "||" + match.captured(3) + "=" + match.captured(4)
+                       + R"HTML(" name="crossref">)HTML";
         else
-            parts[i] = "<a " + rx1.cap(3) + "=\"" + rx1.cap(4) + "||" + rx1.cap(1) + "=" + rx1.cap(2) + "\" name=\"crossref\">";
+            parts[i] = "<a " + match.captured(3) + "=\"" + match.captured(4)
+                       + "||" + match.captured(1) + "=" + match.captured(2)
+                       + R"HTML(" name="crossref">)HTML";
     }
 }
 
@@ -90,17 +96,18 @@ int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, QString const & part)
 
     QString value;
     {
-        QRegExp rx1("lemma=\"([^\"]*)*");
-        if (rx1.indexIn(part) > -1)
-            value = "lemma=" + rx1.cap(1);
+        static QRegularExpression const rx(R"regex(lemma="([^"]*)")regex");
+        if (auto const match = rx.match(part); match.hasMatch())
+            value = "lemma=" + match.captured(1);
     }{
-        QRegExp rx2("morph=\"([^\"]*)(\"){0,1}");
-        if (rx2.indexIn(part) > -1) {
+        static QRegularExpression const rx(R"regex(morph="([^"]*)")regex");
+        if (auto const match = rx.match(part); match.hasMatch()) {
             if (value.isEmpty()) {
-                value = "morph=" + rx2.cap(1);
+                value = "morph=";
             } else {
-                value += "||morph=" + rx2.cap(1);
+                value += "||morph=";
             }
+            value += match.captured(1);
         }
     }
 
