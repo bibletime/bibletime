@@ -155,7 +155,7 @@ int BtTextFilter::rewriteLemmaOrMorphAsLink(int i, const QString& part) {
     QString refText = m_parts.at(i+1);
     QString url = "sword://lemmamorph/" + value + "/" + refText;
     QString newEntry;
-    newEntry = "<a id=lemmamorph href=\"" + url + "\">";
+    newEntry = "<a id=\"lemmamorph\" href=\"" + url + "\">";
     m_parts[i] = newEntry;
     m_parts[i+2] = "</a>";
     return 3;
