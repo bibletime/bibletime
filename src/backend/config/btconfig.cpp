@@ -45,14 +45,14 @@ BtConfig::BtConfig(const QString & settingsFile)
     m_instance = this;
 
     if (m_defaultSearchScopes.isEmpty()) {
-        m_defaultSearchScopes.insert(tr("Old testament"),          QString("Gen - Mal"));
-        m_defaultSearchScopes.insert(tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-        m_defaultSearchScopes.insert(tr("History"),                QString("Jos - Est"));
-        m_defaultSearchScopes.insert(tr("Prophets"),               QString("Isa - Mal"));
-        m_defaultSearchScopes.insert(tr("New testament"),          QString("Mat - Rev"));
-        m_defaultSearchScopes.insert(tr("Gospels"),                QString("Mat - Joh"));
-        m_defaultSearchScopes.insert(tr("Letters/Epistles"),       QString("Rom - Jude"));
-        m_defaultSearchScopes.insert(tr("Paul's Epistles"),        QString("Rom - Phile"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Old testament"),          QString("Gen - Mal"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("History"),                QString("Jos - Est"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Prophets"),               QString("Isa - Mal"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("New testament"),          QString("Mat - Rev"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Gospels"),                QString("Mat - Joh"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Letters/Epistles"),       QString("Rom - Jude"));
+        m_defaultSearchScopes.insert(QT_TR_NOOP("Paul's Epistles"),        QString("Rom - Phile"));
     }
 
 #ifdef Q_OS_WIN
@@ -274,7 +274,18 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
 }
 
 BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale(const QStringList& scopeModules) {
-    StringMap map = value<BtConfig::StringMap>("properties/searchScopes", m_defaultSearchScopes);
+    auto const storedMap = value<BtConfig::StringMap>("properties/searchScopes",
+                                                      m_defaultSearchScopes);
+    StringMap map;
+
+    // Apply translation for default search scope names:
+    for (auto it = storedMap.cbegin(); it != storedMap.cend(); ++it) {
+        if (m_defaultSearchScopes.contains(it.key())) {
+            map.insert(tr(it.key().toUtf8()), it.value());
+        } else {
+            map.insert(it.key(), it.value());
+        }
+    }
 
 
     // Convert map to current locale:
