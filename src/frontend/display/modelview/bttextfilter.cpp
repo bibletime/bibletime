@@ -84,7 +84,7 @@ void BtTextFilter::splitText(const QString& text) {
 
 void BtTextFilter::fixDoubleBR() {
     for (int index = 2; index < m_parts.count(); ++index) {
-        QRegExp rx("<br\\s+/>");
+        QRegExp rx("<br\\s*/>");
         if (m_parts.at(index).contains(rx) && m_parts.at(index-2).contains(rx))
             m_parts[index] = "";
     }
