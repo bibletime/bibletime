@@ -105,7 +105,7 @@ int rewriteLemmaOrMorphAsLink(QStringList & parts, int i, QString const & part)
     }
 
     auto const & refText = parts.at(i + 1);
-    parts[i] = "<a id=lemmamorph href=\"sword://lemmamorph/"
+    parts[i] = "<a id=\"lemmamorph\" href=\"sword://lemmamorph/"
                + value + "/" + refText + "\">";
     parts[i+2] = "</a>";
     return 3;
