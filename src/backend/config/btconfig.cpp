@@ -176,7 +176,7 @@ QString BtConfig::addSession(QString const & name) {
             } else {
                 i++;
             }
-        };
+        }
     }
     BT_ASSERT(!m_sessionNames.contains(key));
     m_sessionNames.insert(key, name);
