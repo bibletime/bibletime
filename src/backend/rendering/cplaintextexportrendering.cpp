@@ -32,11 +32,8 @@ CPlainTextExportRendering::CPlainTextExportRendering(
     // Intentionally empty
 }
 
-QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
-                                               CSwordKey * k)
+QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i)
 {
-    Q_UNUSED(k)
-
     if (!m_addText)
         return QString(i.key()).append("\n");
 

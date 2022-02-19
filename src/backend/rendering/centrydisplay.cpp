@@ -39,18 +39,21 @@ const QString CEntryDisplay::text(
         const QString &keyName,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions) {
-    return textKeyRendering(modules, keyName, displayOptions, filterOptions,
-                     CTextRendering::KeyTreeItem::Settings::CompleteShort);
+    std::unique_ptr<CSwordKey> key(CSwordKey::createInstance(modules.at(0)));
+    key->setKey(keyName);
+    return textKeyRendering(
+        modules, *key, displayOptions, filterOptions,
+        CTextRendering::KeyTreeItem::Settings::CompleteShort);
 }
 
 const QString CEntryDisplay::textKeyRendering(
         const BtConstModuleList &modules,
-        const QString &keyName,
+        const CSwordKey &key,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions,
         CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering) {
 
-    if (keyName.isEmpty())
+    if (!key.isValid())
         return QString("");
 
     CDisplayRendering render(displayOptions, filterOptions);
@@ -69,7 +72,7 @@ const QString CEntryDisplay::textKeyRendering(
 
         CSwordVerseKey k1(module);
         k1.setIntros(true);
-        k1.setKey(keyName);
+        k1.setKey(key.key());
 
         // don't print the key
         CTextRendering::KeyTreeItem::Settings preverse_settings{
@@ -81,14 +84,14 @@ const QString CEntryDisplay::textKeyRendering(
                 k1.setChapter(0);
                 k1.setVerse(0);
                 if (k1.rawText().length() > 0)
-                    tree.emplace_back(k1.key(), modules, preverse_settings);
+                    tree.emplace_back(&k1, modules, preverse_settings);
                 k1.setChapter(1);
             }
             k1.setVerse(0);
             if (k1.rawText().length() > 0)
-                tree.emplace_back(k1.key(), modules, preverse_settings);
+                tree.emplace_back(&k1, modules, preverse_settings);
         }
     }
-    tree.emplace_back(keyName, modules, normal_settings);
+    tree.emplace_back(&key, modules, normal_settings);
     return render.renderKeyTree(tree);
 }

@@ -70,7 +70,7 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
     const char * newVersification =
             static_cast<sword::VerseKey *>(
                 bible->swordModule().getKey())->getVersificationSystem();
-    bool inVersification = true;
+    bool valid = true;
 
     if (strcmp(m_key.getVersificationSystem(), newVersification)) {
         /// Remap key position to new versification
@@ -79,24 +79,24 @@ void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
         m_key.setVersificationSystem(newVersification);
 
         m_key.positionFrom(oldKey);
-        inVersification = !m_key.popError();
+        valid = !m_key.popError();
     }
 
     m_module = newModule;
 
     emitAfterChanged();
 
-    if(inVersification) {
+    if (valid) {
         /// Limit to Bible bounds
         if (m_key._compare(bible->lowerBound().m_key) < 0) {
             setKey(bible->lowerBound().m_key);
-        }
-        if (m_key._compare(bible->upperBound().m_key) > 0) {
+            valid = false;
+        } else if (m_key._compare(bible->upperBound().m_key) > 0) {
             setKey(bible->upperBound().m_key);
+            valid = false;
         }
     }
-
-    m_valid = inVersification;
+    m_valid = valid;
 }
 
 CSwordVerseKey CSwordVerseKey::lowerBound() const

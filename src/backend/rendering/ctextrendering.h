@@ -17,6 +17,7 @@
 #include "../btglobal.h"
 #include "../config/btconfig.h"
 #include "../drivers/btmodulelist.h"
+#include "../keys/cswordkey.h"
 
 
 class CSwordKey;
@@ -73,6 +74,10 @@ class CTextRendering {
                             const BtConstModuleList &modules,
                             const Settings &settings);
 
+                KeyTreeItem(const CSwordKey * key,
+                            const BtConstModuleList & modules,
+                            const Settings & settings);
+
                 KeyTreeItem(const QString &startKey,
                             const QString &stopKey,
                             const CSwordModuleInfo *module,
@@ -93,22 +98,22 @@ class CTextRendering {
                 { return m_moduleList; }
 
                 QString const & key() const { return m_key; }
+                
+                inline const CSwordKey * swordKey() const {
+                    return m_swordKey.get();
+                }
 
                 Settings const & settings() const { return m_settings; }
 
                 KeyTree & childList() const noexcept { return m_childList; }
 
-                void setMappedKey(CSwordKey const * key) const
-                { m_mappedKey = key; }
-
-                CSwordKey const * mappedKey() const { return m_mappedKey; }
-
             private: // fields:
 
                 Settings m_settings;
                 BtConstModuleList m_moduleList;
-                QString m_key;
-                mutable CSwordKey const * m_mappedKey = nullptr;
+                QString m_key; // TODO optimize
+                std::unique_ptr<CSwordKey> m_swordKey = nullptr;
+
                 mutable KeyTree m_childList;
 
                 QString m_stopKey;
@@ -144,10 +149,12 @@ class CTextRendering {
     protected: // methods:
 
         BtConstModuleList collectModules(const KeyTree &tree) const;
-        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = nullptr);
+        virtual QString renderEntry(const KeyTreeItem &item);
         virtual QString finishText(const QString &text, const KeyTree &tree);
+
+        /** \returns link for given key in context of render item */
         virtual QString entryLink(KeyTreeItem const & item,
-                                  CSwordModuleInfo const & module);
+                                  CSwordKey const * key);
 
     protected: // fields:
 

@@ -32,17 +32,14 @@ CDisplayRendering::CDisplayRendering(const DisplayOptions &displayOptions,
 }
 
 QString CDisplayRendering::entryLink(KeyTreeItem const & item,
-                                     CSwordModuleInfo const & module)
+                                     CSwordKey const * key)
 {
     QString linkText;
 
+    CSwordModuleInfo const & const module = *key->module();
     const bool isBible = module.type() == CSwordModuleInfo::Bible;
-    CSwordVerseKey vk(&module); // only valid for bible modules, i.e. isBible == true
+    CSwordVerseKey vk(*static_cast<CSwordVerseKey const *>(key));
     vk.setIntros(true);
-
-    if (isBible) {
-        vk.setKey(item.mappedKey() ? item.mappedKey()->key() : item.key());
-    }
 
     if (isBible && (vk.verse() == 0)) {
         return QString(); //Warning: return already here
@@ -84,27 +81,29 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
 
     case KeyTreeItem::Settings::SimpleKey:
         if (isBible) {
-            if(item.mappedKey() != nullptr) {
-                CSwordVerseKey baseKey(*item.modules().begin());
-                baseKey.setKey(item.key());
+            if (item.key() != vk.key()) {
+                CSwordVerseKey const & const baseKey =
+                    *static_cast<const CSwordVerseKey *>(item.swordKey());
 
                 if (vk.bookName() != baseKey.bookName()) {
                     linkText = vk.shortText();
                 } else if (vk.chapter() != baseKey.chapter()) {
-                    linkText = QString("%1:%2").arg(vk.chapter()).arg(vk.verse());
+                    linkText = QString("%1:%2")
+                                   .arg(vk.chapter()).arg(vk.verse());
                 } else {
                     linkText = QString::number(vk.verse());
                 }
 
-                if(vk.isBoundSet()) {
+                if (vk.isBoundSet()) {
                     linkText += "-";
-                    auto const upper = vk.upperBound();
-                    auto const lower = vk.lowerBound();
-                    if (upper.book() != lower.book()) {
+                    CSwordVerseKey const & const upper = vk.upperBound();
+                    CSwordVerseKey const & const lower = vk.lowerBound();
+                    if (upper.bookName() != lower.bookName()) {
                         linkText += upper.shortText();
                     } else if(upper.chapter() != lower.chapter()) {
-                        linkText += QString("%1:%2").arg(upper.chapter())
-                                                    .arg(lower.verse());
+                        linkText += QString("%1:%2")
+                                       .arg(upper.chapter())
+                                       .arg(upper.verse());
                     } else {
                         linkText += QString::number(upper.verse());
                     }
@@ -129,7 +128,7 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
     else {
         return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" ")
                .append("href=\"")
-               .append(ReferenceManager::encodeHyperlink(module, item.key()))
+               .append(ReferenceManager::encodeHyperlink(module, key->key()))
                .append("\">").append(linkText).append("</a>\n");
     }
 }
