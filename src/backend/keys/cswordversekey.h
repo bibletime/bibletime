@@ -172,6 +172,8 @@ class CSwordVerseKey final : public CSwordKey {
 
         const char * rawKey() const final override;
 
+        bool jump(const JumpType type, const int amount);
+
     private: // fields:
 
         sword::VerseKey m_key;

@@ -13,6 +13,7 @@
 #include "cswordbiblemoduleinfo.h"
 
 #include <memory>
+#include <QDebug>
 #include <QFile>
 #include "../../util/btassert.h"
 #include "../managers/cswordbackend.h"
@@ -56,6 +57,7 @@ void CSwordBibleModuleInfo::initBounds() const {
 
     m.setSkipConsecutiveLinks(oldStatus);
     m_boundsInitialized = true;
+    qDebug() << "BOUNDS" << this->name() << this << m_lowerBound.key() << m_upperBound.key();
 }
 
 
@@ -78,6 +80,7 @@ QStringList const & CSwordBibleModuleInfo::books() const {
 
         CSwordVerseKey key(this);
         key.setKey(m_lowerBound.key());
+        qDebug() << "enumerate books" << key.key();
         do {
             m_bookList->append(key.bookName());
         } while (key.next(CSwordVerseKey::JumpType::UseBook) &&
