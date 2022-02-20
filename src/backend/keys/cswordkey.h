@@ -101,7 +101,11 @@ public: // methods:
     */
     static CSwordKey * createInstance(const CSwordModuleInfo * module);
 
-    /** Check whether key is valid. Can be invalidated during av11n mapping. */
+    /** Check whether key is valid and can render correct text.
+     * It will be invalid if it cross the module boundary, or by passing wrong
+     * argument ot setKey() or after translating to different versification
+     * that have no corresponding key.
+     */
     bool isValid() const { return m_valid; }
 
     /**
