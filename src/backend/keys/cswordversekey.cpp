@@ -114,37 +114,19 @@ void CSwordVerseKey::setUpperBound(CSwordVerseKey const & bound)
 /** Returns the current book as Text, not as integer. */
 QString CSwordVerseKey::bookName() const {
     using CSBMI = CSwordBibleModuleInfo;
-    int min = 0;
-    int max = 1;
-
-    const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
+    const CSBMI * bible = dynamic_cast<const CSBMI *>(module());
+    bool valid = m_valid;
     if (bible != nullptr) {
-        const bool hasOT = bible->hasOldTestament();
-        const bool hasNT = bible->hasNewTestament();
-
-        if (hasOT && hasNT) {
-            min = 0;
-            max = 1;
-        }
-        else if (hasOT && !hasNT) {
-            min = 0;
-            max = 0;
-        }
-        else if (!hasOT && hasNT) {
-            min = 1;
-            max = 1;
-        }
-        else if (!hasOT && !hasNT) {
-            min = 0;
-            max = -1; //no loop
+        // not sure why bounds (testament persistance) check was here, just
+        // preserve it to initialize module boundaries
+        if (*this < bible->lowerBound() && *this > bible->upperBound()) {
+            valid = false;
         }
     }
 
-    if ((m_key.getTestament() >= min + 1) && (m_key.getTestament() <= max + 1) && (m_key.getBook() <= m_key.BMAX[min])) {
+    if (valid) {
         return QString::fromUtf8(m_key.getBookName());
     }
-
-    //return QString::fromUtf8( books[min][0].name ); //return the first book, i.e. Genesis
     return QString();
 }
 

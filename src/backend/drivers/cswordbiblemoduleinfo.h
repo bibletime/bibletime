@@ -72,24 +72,6 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         unsigned int bookNumber(const QString &book) const;
 
         /**
-          \returns whether this module has the Old Testament texts.
-        */
-        bool hasOldTestament() const {
-            if (!m_boundsInitialized)
-                initBounds();
-            return m_hasOT;
-        }
-
-        /**
-          \returns whether this module has the New Testament texts.
-        */
-        bool hasNewTestament() const {
-            if (!m_boundsInitialized)
-                initBounds();
-            return m_hasNT;
-        }
-
-        /**
           \returns the key which represents the lower bound of this module.
         */
         CSwordVerseKey const & lowerBound() const {
