@@ -76,7 +76,8 @@ QStringList const & CSwordBibleModuleInfo::books() const {
         if (!m_boundsInitialized)
             initBounds();
 
-        CSwordVerseKey key(m_lowerBound);
+        CSwordVerseKey key(this);
+        key.setKey(m_lowerBound.key());
         do {
             m_bookList->append(key.bookName());
         } while (key.next(CSwordVerseKey::JumpType::UseBook) &&
