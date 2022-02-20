@@ -114,11 +114,13 @@ class CSwordVerseKey final : public CSwordKey {
         bool setKey(const char *key) final override;
 
         /**
-        * Jumps to the next entry of the given type
+        * Jumps to the next entry of the given type or return false if jump
+        * failed. Key still would change to most close position.
         */
         bool next( const JumpType type = JumpType::UseVerse );
         /**
-        * Jumps to the previous entry of the given type
+        * Jumps to the previous entry of the given type or return false if jump
+        * failed. Key still would change to most close position.
         */
         bool previous ( const JumpType type = JumpType::UseVerse );
         /**
