@@ -177,6 +177,7 @@ void BtAboutDialog::retranslateContributorsTab() {
         MAKE_CONTR(content, "Thomas Hagedorn", tr("domain sponsor"))
         MAKE_CONTR(content, "Bob Harman", tr("howto"))
         MAKE_CONTR(content, "Gary Holmlund", developer)
+        MAKE_CONTR(content, "Jim Howk", developer)
         MAKE_CONTR(content, "Nikolay Igotti", developer)
         MAKE_CONTR(content, "Laurent Valentin Jospin", artist)
         MAKE_CONTR(content, "Eeli Kaikkonnen", developer)
@@ -197,7 +198,6 @@ void BtAboutDialog::retranslateContributorsTab() {
         MAKE_CONTR(content, "David White", developer)
         MAKE_CONTR(content, "Mark Zealey", developer)
         MAKE_CONTR(content, "Patrick Sebastian Zimmermann", developer)
-        MAKE_CONTR(content, "Jim Howk", developer)
     "</ul><p><b>";
 
 
