@@ -144,7 +144,7 @@ void BtQuickWidget::mousePressEvent(QMouseEvent *event) {
         event->accept();
         return;
     }
-    return QQuickWidget::mousePressEvent(event);
+    QQuickWidget::mousePressEvent(event);
 }
 
 void BtQuickWidget::mouseMoveEvent(QMouseEvent *event) {
