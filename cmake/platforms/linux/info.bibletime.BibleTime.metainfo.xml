@@ -12,32 +12,22 @@
   </p>
  </description>
  <content_rating type="oars-1.1" />
- <url type="homepage">http://bibletime.info/</url>
+ <url type="homepage">https://bibletime.info/</url>
  <update_contact>bt-devel@crosswire.org</update_contact>
  <screenshots>
   <screenshot type="default">
-   <image>http://bibletime.info/screenshots/BibleTime-Main-Screen.png</image>
+   <image>https://bibletime.info/screenshots/BibleTime-Main-Screen.png</image>
    <caption>Main window</caption>
   </screenshot>
   <screenshot>
-   <image>http://bibletime.info/screenshots/BibleTime-Search-Screen.png</image>
+   <image>https://bibletime.info/screenshots/BibleTime-Search-Screen.png</image>
    <caption>Search window</caption>
   </screenshot>
  </screenshots>
  <releases>
-  <release version="3.0.0_rc1" date="2020-05-10">
+  <release version="@BT_VERSION_FULL@">
    <description>
-    <p>Notable changes since 2.11.2:</p>
-     <ul>
-      <li>Text windows now have continuous scrolling from the beginning to end of a module. At the end of a chapter just keep scrolling to see the next chapter.</li>
-      <li>You don't have to open the Personal Commentary for writing. Edit it in a normal text window or even when it is a parallel column in a text window.</li>
-      <li>Automatic text scrolling up or down with variable speed and pause.</li>
-      <li>Copy to clipboard by choosing the beginning and ending reference.</li>
-      <li>A search filter was added in the "Install Works" page of the Bookshelf Manager</li>
-      <li>You can select text from a single column when using parallel texts in a window.</li>
-      <li>Added a user interface to delete or create search indices.</li>
-      <li>The first time the Bookshelf Manager is used in a session, the remote libraries are updated.</li>
-     </ul>
+    <p>See the website https://bibletime.info for more information.</p>
    </description>
   </release>
  </releases>
