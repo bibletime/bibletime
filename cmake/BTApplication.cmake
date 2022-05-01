@@ -215,13 +215,19 @@ INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
 # Linux: application icon and desktop file:
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
         DESTINATION "${BT_DATAROOTDIR}/icons/hicolor/scalable/apps" RENAME "info.bibletime.BibleTime.svg")
+
+
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake"
                "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" @ONLY)
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
         DESTINATION "${BT_DATAROOTDIR}/applications/" RENAME "info.bibletime.BibleTime.desktop")
 
-INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.BibleTime.metainfo.xml"
+
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/info.bibletime.BibleTime.metainfo.xml"
+        "${CMAKE_CURRENT_BINARY_DIR}/info.bibletime.BibleTime.metainfo.xml" @ONLY)
+INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/info.bibletime.BibleTime.metainfo.xml"
         DESTINATION "${BT_DATAROOTDIR}/metainfo/")
+
 
 
 IF(MSVC) # Windows:
