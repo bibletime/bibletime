@@ -90,7 +90,7 @@ public:
     Q_INVOKABLE int indexToVerse(int index);
 
     BtQmlInterface(QObject *parent = nullptr);
-    ~BtQmlInterface();
+    ~BtQmlInterface() override;
 
     int countHighlightsInItem(int index);
     void findText(const QString& text, bool caseSensitive, bool backward);

@@ -32,7 +32,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
                               CSwordBackend & backend,
                               ModuleType type = Bible);
 
-        ~CSwordBibleModuleInfo() noexcept;
+        ~CSwordBibleModuleInfo() noexcept override;
 
         /**
           \returns the number of avalable verses for the given chapter and book.

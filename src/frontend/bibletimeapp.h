@@ -31,7 +31,7 @@ class BibleTimeApp : public QApplication {
     public: // methods:
 
         BibleTimeApp(int &argc, char **argv);
-        ~BibleTimeApp();
+        ~BibleTimeApp() override;
 
         void startInit() { m_init = true; }
 

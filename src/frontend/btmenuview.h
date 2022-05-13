@@ -49,7 +49,7 @@ class BtMenuView: public QMenu {
     public:
         BtMenuView(QWidget * parent = nullptr);
         BtMenuView(QString const & title, QWidget * parent = nullptr);
-        virtual ~BtMenuView();
+        ~BtMenuView() override;
 
         /**
           Sets or resets the data model for this menu and resets the parent index to an

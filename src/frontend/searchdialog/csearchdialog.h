@@ -34,7 +34,7 @@ class CSearchDialog final: public QDialog {
     public:
 
         CSearchDialog(QWidget *parent);
-        ~CSearchDialog();
+        ~CSearchDialog() override;
 
         /**
         * Resets the parts to the default.

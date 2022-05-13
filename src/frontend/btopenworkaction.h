@@ -71,7 +71,7 @@ class BtOpenWorkAction: public QAction {
         explicit BtOpenWorkAction(BtConfigCore groupingConfigGroup,
                                   QString groupingConfigKey,
                                   QObject * parent = nullptr);
-        ~BtOpenWorkAction();
+        ~BtOpenWorkAction() override;
 
     Q_SIGNALS:
         void triggered(CSwordModuleInfo *module);

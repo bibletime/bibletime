@@ -27,7 +27,7 @@ class CHistoryComboBox : public QComboBox {
         Q_OBJECT
     public:
         CHistoryComboBox(QWidget* parent = nullptr);
-        ~CHistoryComboBox();
+        ~CHistoryComboBox() override;
         void addToHistory(const QString& item);
         QStringList historyItems() const;
 

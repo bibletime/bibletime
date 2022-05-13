@@ -65,7 +65,7 @@ public: // methods:
 
     static std::shared_ptr<BtBookshelfModel> newInstance();
 
-    ~BtBookshelfModel() noexcept;
+    ~BtBookshelfModel() noexcept override;
 
     BtBookshelfModel & operator=(BtBookshelfModel &&) = delete;
     BtBookshelfModel & operator=(BtBookshelfModel const &) = delete;

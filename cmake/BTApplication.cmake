@@ -117,6 +117,7 @@ BtAddCxxCompilerFlags(bibletime_backend PUBLIC
     "-Wno-padded"
     "-Wno-switch-enum"
     "-Wpointer-arith"
+    "-Wsuggest-destructor-override"
     "-Wsuggest-override"
     "-Wunused-parameter"
     "-Wzero-as-null-pointer-constant"

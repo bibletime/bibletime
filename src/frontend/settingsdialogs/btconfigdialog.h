@@ -47,7 +47,7 @@ public: // types:
     public: // methods:
 
         Page(QIcon const & icon, QWidget * const parent = nullptr);
-        ~Page() noexcept;
+        ~Page() noexcept override;
 
         void setHeaderText(QString const & headerText);
 

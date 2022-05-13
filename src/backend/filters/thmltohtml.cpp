@@ -29,10 +29,17 @@
 #pragma GCC diagnostic ignored "-Wextra-semi"
 #pragma GCC diagnostic ignored "-Wsuggest-override"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wsuggest-destructor-override"
+#endif
 #include <swmodule.h>
 #include <utilstr.h>
 #include <utilxml.h>
 #include <versekey.h>
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 #pragma GCC diagnostic pop
 
 
