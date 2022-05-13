@@ -226,6 +226,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Jaak Ristioja</li>"
                    "<li>Igor Rykhlin</li>"
                    "<li>Vlad Savitsky</li>"
+                   "<li>Flavio Theodor de Lima Silva</li>"
                    "<li>Henrik Sonesson</li>"
                    "<li>Johan van der Lingen</li>"
                    "<li>Damian Wrzalski</li>"
@@ -235,6 +236,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Giovanni Tedaldi</li>"
                    "<li>Dmitry Yurevich</li>"
                    "<li>Esteban Zeller</li>"
+                   "<li>Aaron Zhou</li>"
                "</ul><p>";
     content += tr("Some names may be missing, please file an issue at %1 if "
                   "you notice errors or omissions.").arg(MAKE_LINK_STATIC(
