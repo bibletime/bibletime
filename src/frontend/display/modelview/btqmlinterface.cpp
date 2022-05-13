@@ -393,12 +393,8 @@ void BtQmlInterface::dragHandler(int index, const QString& activeLink) {
     Q_EMIT dragOccuring(moduleName, keyName);
 }
 
-const CSwordModuleInfo* BtQmlInterface::module() const {
-    if (!m_swordKey)
-        return nullptr;
-    const CSwordModuleInfo* module = m_swordKey->module();
-    return module;
-}
+const CSwordModuleInfo* BtQmlInterface::module() const
+{ return m_swordKey ? m_swordKey->module() : nullptr; }
 
 CSwordKey* BtQmlInterface::getKey() const {
     return m_swordKey;
