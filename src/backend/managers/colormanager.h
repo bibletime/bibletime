@@ -31,6 +31,7 @@ public: // methods:
     void initLightDarkPalette();
     void loadColorMaps();
     QString replaceColors(QString content);
+    QString replaceColors(QString content, QString const & templateName);
     QString getBackgroundColor(QString const & style = QString());
     QString getBackgroundHighlightColor(QString const & style = QString());
     QString getForegroundColor(QString const & style = QString());

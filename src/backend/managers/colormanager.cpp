@@ -126,9 +126,14 @@ void ColorManager::loadColorMaps() {
 }
 
 QString ColorManager::replaceColors(QString content) {
-    auto const activeTemplate(CDisplayTemplateMgr::activeTemplateName());
+    return replaceColors(std::move(content),
+                         CDisplayTemplateMgr::activeTemplateName());
+}
+
+QString
+ColorManager::replaceColors(QString content, QString const & templateName) {
     static QString const pattern("#%1#");
-    for (auto const & [key, value] : m_colorMaps[activeTemplate])
+    for (auto const & [key, value] : m_colorMaps[templateName])
         content.replace(pattern.arg(key), value);
     return content;
 }
