@@ -14,6 +14,7 @@
 
 #include "ctextrendering.h"
 
+#include <utility>
 #include "../config/btconfig.h"
 
 
@@ -34,12 +35,22 @@ public: // methods:
         DisplayOptions const & displayOptions = btConfig().getDisplayOptions(),
         FilterOptions const & filterOptions = btConfig().getFilterOptions());
 
+    QString const & displayTemplateName() const noexcept
+    { return m_displayTemplateName; }
+
+    void setDisplayTemplateName(QString displayTemplateName) noexcept
+    { m_displayTemplateName = std::move(displayTemplateName); }
+
 protected: // methods:
 
     QString entryLink(KeyTreeItem const & item,
                       CSwordModuleInfo const & module) override;
 
     QString finishText(QString const & text, KeyTree const & tree) override;
+
+private: // Fields:
+
+    QString m_displayTemplateName;
 
 }; /* class CDisplayRendering */
 

@@ -185,6 +185,10 @@ CDisplayRendering::finishText(QString const & text, KeyTree const & tree) {
     if (modules.count() == 1)
         settings.textDirection = modules.first()->textDirection();
 
-    return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
+    return tMgr->fillTemplate(m_displayTemplateName.isEmpty()
+                              ? CDisplayTemplateMgr::activeTemplateName()
+                              : m_displayTemplateName,
+                              text,
+                              settings);
 }
 }
