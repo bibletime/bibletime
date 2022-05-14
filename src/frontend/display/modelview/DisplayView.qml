@@ -232,12 +232,6 @@ Rectangle {
         listView.scroll(value);
     }
 
-    function textIsHtml(dtext) {
-        if (dtext.includes("<!DOCTYPE") || dtext.includes("<span"))
-            return Text.RichText;
-        return Text.PlainText;
-    }
-
     function isBlank(text) {
         var t = text;
         t.trim();
