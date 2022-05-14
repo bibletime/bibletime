@@ -19,6 +19,7 @@
 #include <cstdlib>
 #include <memory>
 #include <QByteArray>
+#include <QColor>
 #include <QDebug>
 #ifdef Q_OS_WIN
 #include <QDir>
@@ -26,6 +27,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QMessageBox>
+#include <QPalette>
 #include <QString>
 #include <Qt>
 #include <QtGlobal>
@@ -191,6 +193,55 @@ bool BibleTimeApp::initBtConfig() {
     }
     BtConfig::forceMigrate();
     return true;
+}
+
+void BibleTimeApp::initLightDarkPalette() {
+    enum LightDarkMode {
+        systemDefault = 0,
+        light = 1,
+        dark = 2
+    };
+
+    int lightDarkMode = btConfig().value<int>("GUI/lightDarkMode", 0);
+    if (lightDarkMode == LightDarkMode::systemDefault)
+        return;
+    QPalette p;
+    if (lightDarkMode == LightDarkMode::dark) {
+        p.setColor(QPalette::WindowText,QColor(0xfc, 0xfc, 0xfc));
+        p.setColor(QPalette::Button,QColor(0x31, 0x36, 0x3b));
+        p.setColor(QPalette::Light,QColor(0x18, 0x1b, 0x1d));
+        p.setColor(QPalette::Midlight,QColor(0x25, 0x29, 0x2c));
+        p.setColor(QPalette::Dark,QColor(0x62, 0x6c, 0x76));
+        p.setColor(QPalette::Mid,QColor(0x41, 0x48, 0x4e));
+        p.setColor(QPalette::Text,QColor(0xfc, 0xfc, 0xfc));
+        p.setColor(QPalette::BrightText,QColor(0xff, 0xff, 0xff));
+        p.setColor(QPalette::ButtonText,QColor(0xfc, 0xfc, 0xfc));
+        p.setColor(QPalette::Base,QColor(0x1b, 0x1e, 0x20));
+        p.setColor(QPalette::Window,QColor(0x2a, 0x2e, 0x32));
+        p.setColor(QPalette::Shadow,QColor(0x76, 0x76, 0x76));
+        p.setColor(QPalette::Highlight,QColor(0x3d, 0xae, 0xe9));
+        p.setColor(QPalette::HighlightedText,QColor(0xfc, 0xfc, 0xfc));
+        p.setColor(QPalette::Link,QColor(0x1d, 0x99, 0xf3));
+        p.setColor(QPalette::LinkVisited,QColor(0x9b, 0x59, 0xb6));
+    } else {
+        p.setColor(QPalette::WindowText,QColor(0x23, 0x26, 0x29));
+        p.setColor(QPalette::Button,QColor(0xf7, 0xf7, 0xf7));
+        p.setColor(QPalette::Light,QColor(0x0, 0x0, 0x0));
+        p.setColor(QPalette::Midlight,QColor(0x0, 0x0, 0x0));
+        p.setColor(QPalette::Dark,QColor(0x7b, 0x7b, 0x7b));
+        p.setColor(QPalette::Mid,QColor(0xa5, 0xa5, 0xa5));
+        p.setColor(QPalette::Text,QColor(0x23, 0x26, 0x29));
+        p.setColor(QPalette::BrightText,QColor(0xff, 0xff, 0xff));
+        p.setColor(QPalette::ButtonText,QColor(0x23, 0x26, 0x29));
+        p.setColor(QPalette::Base,QColor(0xff, 0xff, 0xff));
+        p.setColor(QPalette::Window,QColor(0xef, 0xf0, 0xf1));
+        p.setColor(QPalette::Shadow,QColor(0x76, 0x76, 0x76));
+        p.setColor(QPalette::Highlight,QColor(0x3d, 0xae, 0xe9));
+        p.setColor(QPalette::HighlightedText,QColor(0xff, 0xff, 0xff));
+        p.setColor(QPalette::Link,QColor(0x29, 0x80, 0xb9));
+        p.setColor(QPalette::LinkVisited,QColor(0x9b, 0x59, 0xb6));
+    }
+    setPalette(p);
 }
 
 bool BibleTimeApp::initDisplayTemplateManager() {

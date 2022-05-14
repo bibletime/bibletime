@@ -182,7 +182,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    ColorManager::instance().initLightDarkPalette();
+    app.initLightDarkPalette();
 
 #ifdef Q_OS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that
