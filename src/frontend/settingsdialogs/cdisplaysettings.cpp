@@ -319,7 +319,15 @@ void CDisplaySettingsPage::updateStylePreview() {
     CDisplayRendering render;
     QString text = render.renderKeyTree(tree);
     text.replace("#CHAPTERTITLE#", "");
-    updateColors();
+
+    // Update colors:
+    QPalette p = m_stylePreviewViewer->palette();
+    p.setColor(QPalette::Window,
+               ColorManager::instance().getBackgroundColor());
+    p.setColor(QPalette::WindowText,
+               ColorManager::instance().getForegroundColor());
+    m_stylePreviewViewer->setPalette(p);
+
     text = ColorManager::instance().replaceColors(text);
     m_stylePreviewViewer->setText(text);
 
@@ -331,11 +339,4 @@ void CDisplaySettingsPage::save() const {
     btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
     btConfig().setValue("GUI/booknameLanguage", m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()));
     btConfig().setValue("GUI/lightDarkMode", m_lightDarkCombo->currentIndex());
-}
-
-void CDisplaySettingsPage::updateColors(const QString& style) {
-    QPalette p = m_stylePreviewViewer->palette();
-    p.setColor(QPalette::Window, ColorManager::instance().getBackgroundColor(style));
-    p.setColor(QPalette::WindowText, ColorManager::instance().getForegroundColor(style));
-    m_stylePreviewViewer->setPalette(p);
 }
