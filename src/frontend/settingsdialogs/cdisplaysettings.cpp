@@ -313,25 +313,21 @@ void CDisplaySettingsPage::updateStylePreview() {
 "</span>"
 )));
 
-    /// \todo Remove the following hack:
-    const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
-    btConfig().setValue("GUI/activeTemplateName", styleName);
     CDisplayRendering render;
+    render.setDisplayTemplateName(styleName);
     QString text = render.renderKeyTree(tree);
     text.replace("#CHAPTERTITLE#", "");
 
     // Update colors:
     QPalette p = m_stylePreviewViewer->palette();
     p.setColor(QPalette::Window,
-               ColorManager::instance().getBackgroundColor());
+               ColorManager::instance().getBackgroundColor(styleName));
     p.setColor(QPalette::WindowText,
-               ColorManager::instance().getForegroundColor());
+               ColorManager::instance().getForegroundColor(styleName));
     m_stylePreviewViewer->setPalette(p);
 
-    text = ColorManager::instance().replaceColors(text);
+    text = ColorManager::instance().replaceColors(text, styleName);
     m_stylePreviewViewer->setText(text);
-
-    btConfig().setValue("GUI/activeTemplateName", oldStyleName);
 }
 
 void CDisplaySettingsPage::save() const {
