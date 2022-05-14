@@ -24,12 +24,10 @@
 
 namespace Rendering {
 
-CDisplayRendering::CDisplayRendering(const DisplayOptions &displayOptions,
-                                     const FilterOptions &filterOptions)
-        : CTextRendering(true, displayOptions, filterOptions)
-{
-    // Intentionally empty
-}
+CDisplayRendering::CDisplayRendering(DisplayOptions const & displayOptions,
+                                     FilterOptions const & filterOptions)
+    : CTextRendering(true, displayOptions, filterOptions)
+{}
 
 QString CDisplayRendering::entryLink(KeyTreeItem const & item,
                                      CSwordModuleInfo const & module)
@@ -134,13 +132,14 @@ QString CDisplayRendering::entryLink(KeyTreeItem const & item,
     }
 }
 
-QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
+QString CDisplayRendering::keyToHTMLAnchor(QString const & key) {
     // Be careful not to remove non-ASCII characters, this causes problems
     // with many languages.
     return key.trimmed().remove(QRegExp("\\s")).replace(QString(":"), QString("_"));
 }
 
-QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) {
+QString
+CDisplayRendering::finishText(QString const & text, KeyTree const & tree) {
     BtConstModuleList modules = collectModules(tree);
 
     //marking words is very slow, we have to find a better solution

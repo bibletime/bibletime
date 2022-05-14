@@ -26,20 +26,20 @@ namespace Rendering {
 
 class CDisplayRendering : public CTextRendering {
 
-    public: // methods:
+public: // methods:
 
-        static QString keyToHTMLAnchor(const QString &key);
+    static QString keyToHTMLAnchor(QString const& key);
 
-        CDisplayRendering(
-            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = btConfig().getFilterOptions());
+    CDisplayRendering(
+        DisplayOptions const & displayOptions = btConfig().getDisplayOptions(),
+        FilterOptions const & filterOptions = btConfig().getFilterOptions());
 
-    protected: // methods:
+protected: // methods:
 
-        QString entryLink(KeyTreeItem const & item,
-                          CSwordModuleInfo const & module) override;
+    QString entryLink(KeyTreeItem const & item,
+                      CSwordModuleInfo const & module) override;
 
-        QString finishText(const QString &text, const KeyTree &tree) override;
+    QString finishText(QString const & text, KeyTree const & tree) override;
 
 }; /* class CDisplayRendering */
 
